@@ -310,6 +310,25 @@ a { color: inherit; }
 .popup-title { font-weight: 800; font-size: 1rem; margin: 2px 0 4px; }
 .popup-meta { color: var(--muted); font-size: 0.85rem; margin: 0; }
 
+/* "You are here" marker */
+.user-marker { background: transparent; border: none; }
+.user-dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 0 rgba(47, 107, 214, 0.5);
+  animation: userPulse 2s infinite;
+}
+@keyframes userPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(47, 107, 214, 0.45); }
+  70%  { box-shadow: 0 0 0 14px rgba(47, 107, 214, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 107, 214, 0); }
+}
+
 /* ===================== Footer ===================== */
 .site-footer {
   background: var(--ink);

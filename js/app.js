@@ -10,6 +10,11 @@
 
 const EDINBURGH = [55.9486, -3.1881];
 
+/* Default "you are here" pin — central Edinburgh (Royal Mile, near the Tron
+ * Kirk) so the UI has a sensible starting point before / unless the user
+ * shares their real location. */
+const USER_DEFAULT = [55.9505, -3.1875];
+
 /* The official-style Fringe genre categories. */
 const GENRES = [
   "Cabaret and Variety",
@@ -35,6 +40,8 @@ const state = {
   travelMode: "Walking",
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
   selectedShowId: "",          // the pinned "next show"
+  userLatLng: USER_DEFAULT,    // current "you are here" location
+  userMarker: null,            // Leaflet marker for the user
 };
 
 /* ---------- Boot ---------- */
@@ -42,6 +49,8 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   initMap();
+  setUserLocation(USER_DEFAULT, { recenter: false }); // central-Edinburgh default
+  requestUserLocation();                              // then ask for the real thing
   buildGenrePanel();
   buildTravelPanel();
   wirePanels();
@@ -68,23 +77,73 @@ function initMap() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  // "Locate me" control
+  // "Locate me" control — (re)asks the browser for the real location
   const locate = L.control({ position: "topright" });
   locate.onAdd = function () {
     const btn = L.DomUtil.create("button", "locate-btn");
     btn.innerHTML = "◎";
-    btn.title = "Find me";
+    btn.title = "Use my location";
     btn.style.cssText =
       "width:34px;height:34px;border:none;background:#c62024;color:#fff;font-size:18px;cursor:pointer;border-radius:4px;";
     L.DomEvent.on(btn, "click", (e) => {
       L.DomEvent.stop(e);
-      map.locate({ setView: true, maxZoom: 15 });
+      requestUserLocation();
     });
     return btn;
   };
   locate.addTo(map);
 
   state.map = map;
+}
+
+/* ---------- User location ---------- */
+function userIcon() {
+  return L.divIcon({
+    className: "user-marker",
+    html: '<span class="user-dot"></span>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  });
+}
+
+/* Drop or move the "you are here" marker. opts.recenter pans the map to it. */
+function setUserLocation(latlng, { recenter = true, real = false } = {}) {
+  state.userLatLng = latlng;
+  const label = real ? "You are here" : "You are here (approx. central Edinburgh)";
+
+  if (state.userMarker) {
+    state.userMarker.setLatLng(latlng);
+  } else {
+    state.userMarker = L.marker(latlng, {
+      icon: userIcon(),
+      zIndexOffset: 1000,
+      keyboard: false,
+    }).addTo(state.map);
+  }
+  state.userMarker.bindPopup(`<p class="popup-title">${label}</p>`);
+
+  if (recenter && state.map) state.map.setView(latlng, 15, { animate: true });
+}
+
+/* Ask the browser for the user's real location and move the pin there. */
+function requestUserLocation() {
+  if (!("geolocation" in navigator)) {
+    console.warn("Geolocation not supported; keeping default location.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      setUserLocation([pos.coords.latitude, pos.coords.longitude], {
+        recenter: true,
+        real: true,
+      });
+    },
+    (err) => {
+      // Denied / unavailable / timed out — keep the central-Edinburgh default.
+      console.info("Using default location:", err && err.message);
+    },
+    { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+  );
 }
 
 function genreColor(genre) {
