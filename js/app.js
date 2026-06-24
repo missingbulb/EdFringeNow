@@ -37,7 +37,9 @@ const GENRES = [
  * (km/h) used to estimate travel time. */
 const TRAVEL_MODES = ["Walking", "Taxi/Car", "Bus", "Bicycle"];
 const TRAVEL_SPEEDS_KMH = {
-  Walking: 5,
+  // Walking dialled down to ~2/3 of a brisk 5 km/h — Edinburgh's closes, hills,
+  // stairs and festival crowds make real walking slower than the crow flies.
+  Walking: (5 * 2) / 3,
   "Taxi/Car": 30,
   Bus: 18,
   Bicycle: 15,
@@ -391,28 +393,34 @@ function renderRoute() {
 
   if (leg) {
     const legPt = [leg.lat, leg.lng];
-    // You -> stop, arriving in time for its start.
+    // Leg 1: leave now, arrive before this show starts.
+    const arriveLeg = NOW.minutes + travelMinutes(state.userLatLng, legPt);
     drawLeg(state.userLatLng, legPt, {
-      checkAt: legPt,
-      checkText: leg.time,
+      departMin: NOW.minutes,
+      arriveMin: arriveLeg,
+      checkMin: timeToMinutes(leg.time), // show start (your arrival is before this)
     });
-    // Stop -> destination, arriving by (stop end + travel).
-    const arrival = timeToMinutes(leg.time) + leg.duration + travelMinutes(legPt, destPt);
+    // Leg 2: leave when this show ends, arrive before your next commitment.
+    const showEnd = timeToMinutes(leg.time) + leg.duration;
     drawLeg(legPt, destPt, {
-      checkAt: destPt,
-      checkText: minutesToTime(arrival),
+      departMin: showEnd,
+      arriveMin: showEnd + travelMinutes(legPt, destPt),
+      checkMin: timeToMinutes(dest.time), // constraint start
     });
   } else {
-    // Straight line: You -> destination.
-    drawLeg(state.userLatLng, destPt, {});
+    // Single leg: leave now, arrive before your next commitment.
+    drawLeg(state.userLatLng, destPt, {
+      departMin: NOW.minutes,
+      arriveMin: NOW.minutes + travelMinutes(state.userLatLng, destPt),
+      checkMin: timeToMinutes(dest.time),
+    });
   }
 }
 
-/* Draw one animated arrow leg with a travel-time pill, and optionally a green
- * "you'll be there by HH:MM" check near its end point. */
-function drawLeg(from, to, { checkAt, checkText } = {}) {
-  const mins = Math.max(1, Math.round(travelMinutes(from, to)));
-
+/* Draw one animated arrow leg. The pill shows the leg's clock window
+ * (depart → arrive); the green check at the end shows the deadline that
+ * arrival comfortably beats (a show start, or your next commitment). */
+function drawLeg(from, to, { departMin, arriveMin, checkMin } = {}) {
   const line = L.polyline([from, to], {
     className: "route-line",
     color: "#141414",
@@ -435,23 +443,23 @@ function drawLeg(from, to, { checkAt, checkText } = {}) {
   }).addTo(state.map);
   state.routeLayers.push(head);
 
-  // Travel-time pill at the midpoint.
+  // Journey-window pill at the midpoint: "🚶 15:44 → 15:52".
   const pill = L.marker(midpoint(from, to), {
     icon: L.divIcon({
       className: "route-label route-pill",
-      html: `${escapeHtml(travelGlyph())} ${mins} min`,
+      html: `${escapeHtml(travelGlyph())} ${minutesToTime(departMin)} &rarr; ${minutesToTime(arriveMin)}`,
     }),
     interactive: false,
     keyboard: false,
   }).addTo(state.map);
   state.routeLayers.push(pill);
 
-  // Green check with the arrival/start time near the end point.
-  if (checkText) {
-    const chk = L.marker(checkAt, {
+  // Green check with the deadline you're beating, near the end point.
+  if (checkMin != null) {
+    const chk = L.marker(to, {
       icon: L.divIcon({
         className: "route-label route-check",
-        html: `<span class="tick">✓</span> ${escapeHtml(checkText)}`,
+        html: `<span class="tick">✓</span> ${minutesToTime(checkMin)}`,
       }),
       interactive: false,
       keyboard: false,
