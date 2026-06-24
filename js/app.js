@@ -33,8 +33,21 @@ const GENRES = [
   "Theatre",
 ];
 
-/* How the user might travel between shows. */
+/* How the user might travel between shows, and rough door-to-door speeds
+ * (km/h) used to estimate travel time. */
 const TRAVEL_MODES = ["Walking", "Taxi/Car", "Bus", "Bicycle"];
+const TRAVEL_SPEEDS_KMH = {
+  Walking: 5,
+  "Taxi/Car": 30,
+  Bus: 18,
+  Bicycle: 15,
+};
+
+/* Reachability window. We show shows you could reach within REACH_MINUTES of
+ * travel (the circle on the map). A show that starts up to GRACE_MINUTES before
+ * you'd actually arrive is still shown, but faded — you'd only just miss it. */
+const REACH_MINUTES = 15;
+const GRACE_MINUTES = 5;
 
 /* ===== DEBUG: simulated "now" =====================================
  * The whole flow is scoped to "the next few hours today", so for testing we
@@ -55,8 +68,10 @@ const state = {
   travelMode: "Walking",
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
   selectedShowId: "",          // the pinned "next show"
+  freeOnly: false,             // "Only Free Shows" toggle
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
+  reachCircle: null,           // Leaflet circle for the travel radius
 };
 
 /* ---------- Boot ---------- */
@@ -69,6 +84,7 @@ async function init() {
   requestUserLocation();                              // then ask for the real thing
   buildGenrePanel();
   buildTravelPanel();
+  wireFreeToggle();
   wirePanels();
   try {
     const res = await fetch("data/shows.json");
@@ -80,7 +96,7 @@ async function init() {
     state.shows = [];
   }
   buildConstraintPanel();
-  renderMarkers();
+  refreshMap();
   renderShowList();
   updateGenreValue();
 }
@@ -139,6 +155,7 @@ function setUserLocation(latlng, { recenter = true, real = false } = {}) {
   state.userMarker.bindPopup(`<p class="popup-title">${label}</p>`);
 
   if (recenter && state.map) state.map.setView(latlng, 15, { animate: true });
+  if (state.shows.length) refreshMap(); // reachable set depends on where we are
 }
 
 /* Ask the browser for the user's real location and move the pin there. */
@@ -184,44 +201,156 @@ function genreColor(genre) {
   return map[genre] || "#141414";
 }
 
-/* Shows passing the current genre filter (empty selection = show all). */
-function visibleShows() {
-  if (!state.selectedGenres.size) return state.shows;
-  return state.shows.filter((s) => state.selectedGenres.has(s.genre));
+function isFree(show) {
+  return /free/i.test(show.price);
 }
 
-/* Genre-filtered shows that haven't started yet by the simulated "now". */
+/* Shows passing the current genre + free filters (empty genre set = all). */
+function visibleShows() {
+  let list = state.shows;
+  if (state.selectedGenres.size) {
+    list = list.filter((s) => state.selectedGenres.has(s.genre));
+  }
+  if (state.freeOnly) list = list.filter(isFree);
+  return list;
+}
+
+/* Genre/free-filtered shows that haven't started yet by the simulated "now". */
 function upcomingShows() {
   return visibleShows().filter((s) => timeToMinutes(s.time) >= NOW.minutes);
 }
 
+/* Minutes of travel, by the selected mode, from A to B ([lat,lng] each). */
+function travelMinutes(a, b) {
+  const speed = TRAVEL_SPEEDS_KMH[state.travelMode] || TRAVEL_SPEEDS_KMH.Walking;
+  return (distanceKm(a, b) / speed) * 60;
+}
+
+/* Metres covered in REACH_MINUTES at the selected travel speed. */
+function reachRadiusMeters() {
+  const speed = TRAVEL_SPEEDS_KMH[state.travelMode] || TRAVEL_SPEEDS_KMH.Walking;
+  return speed * (REACH_MINUTES / 60) * 1000;
+}
+
+/* Classify a show for the map relative to the user and (optionally) the chosen
+ * "next show" constraint. Returns "selected" | "ok" | "tight" | "hidden".
+ *   - ok     : you can travel there and arrive before it starts
+ *   - tight  : you'd arrive up to GRACE_MINUTES after it starts (faded)
+ *   - hidden : out of reach, already missed, or won't leave time for your
+ *              next show
+ */
+function classifyShow(show, constraint) {
+  if (constraint && show.id === constraint.id) return "selected";
+
+  const here = state.userLatLng;
+  const there = [show.lat, show.lng];
+  const travel = travelMinutes(here, there);
+  if (travel > REACH_MINUTES) return "hidden"; // outside the walk/ride circle
+
+  const arrival = NOW.minutes + travel;
+  const start = timeToMinutes(show.time);
+  const reachInTime = arrival <= start;
+  const tight = !reachInTime && arrival - start <= GRACE_MINUTES;
+
+  // With a next show chosen, also require leaving in time to make it.
+  if (constraint) {
+    const end = start + show.duration;
+    const onward = travelMinutes(there, [constraint.lat, constraint.lng]);
+    const makesConstraint = end + onward <= timeToMinutes(constraint.time);
+    if (!makesConstraint) return "hidden";
+    // Once committed to a plan, only keep shows you can comfortably reach.
+    return reachInTime ? "ok" : "hidden";
+  }
+
+  if (reachInTime) return "ok";
+  if (tight) return "tight";
+  return "hidden";
+}
+
+/* The shows to draw on the map, each with its status. */
+function displayedShows() {
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
+
+  const out = [];
+  visibleShows().forEach((show) => {
+    const status = classifyShow(show, constraint);
+    if (status !== "hidden") out.push({ show, status });
+  });
+  // Always keep the chosen next show pinned, even if it's beyond the circle.
+  if (constraint && !out.some((o) => o.show.id === constraint.id)) {
+    out.push({ show: constraint, status: "selected" });
+  }
+  // Draw the selected pin last so it sits on top.
+  out.sort((a, b) => (a.status === "selected") - (b.status === "selected"));
+  return out;
+}
+
+const MARKER_STYLE = {
+  selected: { radius: 13, color: "#141414", weight: 3, fillOpacity: 1 },
+  ok: { radius: 9, color: "#fff", weight: 2, fillOpacity: 1 },
+  tight: { radius: 8, color: "#9aa0a6", weight: 2, fillOpacity: 0.32 },
+};
+
+/* Re-draw the reach circle and all show markers together. */
+function refreshMap() {
+  renderReachCircle();
+  renderMarkers();
+}
+
+function renderReachCircle() {
+  if (!state.map) return;
+  const opts = {
+    radius: reachRadiusMeters(),
+    color: "#2f6bd6",
+    weight: 1.5,
+    fillColor: "#2f6bd6",
+    fillOpacity: 0.08,
+    interactive: false,
+  };
+  if (state.reachCircle) {
+    state.reachCircle.setLatLng(state.userLatLng).setRadius(opts.radius);
+  } else {
+    state.reachCircle = L.circle(state.userLatLng, opts).addTo(state.map);
+  }
+  state.reachCircle.bindTooltip(`~${REACH_MINUTES} min by ${state.travelMode}`, {
+    permanent: false,
+    direction: "top",
+  });
+}
+
 function renderMarkers() {
+  if (!state.map) return;
   // Clear any existing markers
   Object.values(state.markers).forEach((m) => state.map.removeLayer(m));
   state.markers = {};
 
-  visibleShows().forEach((show) => {
-    const isPinned = show.id === state.selectedShowId;
+  displayedShows().forEach(({ show, status }) => {
+    const style = MARKER_STYLE[status] || MARKER_STYLE.ok;
     const marker = L.circleMarker([show.lat, show.lng], {
-      radius: isPinned ? 13 : 9,
-      color: isPinned ? "#141414" : "#fff",
-      weight: isPinned ? 3 : 2,
-      fillColor: genreColor(show.genre),
-      fillOpacity: 1,
+      ...style,
+      fillColor: status === "tight" ? "#b9bcc1" : genreColor(show.genre),
     }).addTo(state.map);
 
-    marker.bindPopup(popupHtml(show));
+    marker.bindPopup(popupHtml(show, status));
     state.markers[show.id] = marker;
   });
 }
 
-function popupHtml(show) {
-  const pinned = show.id === state.selectedShowId
-    ? '<span class="popup-genre">★ Your next show</span>'
-    : "";
+function statusNote(show, status) {
+  if (status === "selected") return "★ Your next show";
+  if (status === "tight") return "Cuts it fine — starts before you'd arrive";
+  if (status === "ok" && state.selectedShowId) return "Fits before your next show";
+  return "";
+}
+
+function popupHtml(show, status = "ok") {
+  const note = statusNote(show, status);
+  const noteHtml = note ? `<span class="popup-genre">${escapeHtml(note)}</span>` : "";
   return `
     <div class="popup">
-      ${pinned}
+      ${noteHtml}
       <span class="popup-genre">${escapeHtml(show.genre)}</span>
       <p class="popup-title">${escapeHtml(show.title)}</p>
       <p class="popup-meta">${escapeHtml(show.venue)}</p>
@@ -237,7 +366,7 @@ function renderShowList() {
 
   const shows = visibleShows();
   if (!shows.length) {
-    grid.innerHTML = '<p class="show-meta">No shows match your selected genres.</p>';
+    grid.innerHTML = '<p class="show-meta">No shows match your current filters.</p>';
     return;
   }
 
@@ -258,11 +387,9 @@ function renderShowList() {
 }
 
 function focusShow(show) {
+  if (state.map) state.map.setView([show.lat, show.lng], 16, { animate: true });
   const marker = state.markers[show.id];
-  if (marker && state.map) {
-    state.map.setView([show.lat, show.lng], 16, { animate: true });
-    marker.openPopup();
-  }
+  if (marker) marker.openPopup();
   document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
@@ -291,7 +418,7 @@ function buildGenrePanel() {
 
 function onGenreChange() {
   updateGenreValue();
-  renderMarkers();
+  refreshMap();
   renderShowList();
   buildConstraintPanel(); // time/show options depend on the genre filter
 }
@@ -319,8 +446,23 @@ function buildTravelPanel() {
       state.travelMode = mode;
       const el = document.querySelector('[data-value="travel"]');
       if (el) el.textContent = mode;
+      refreshMap(); // travel speed changes the reach circle and what's reachable
     });
     wrap.appendChild(label);
+  });
+}
+
+/* ---------- "Only Free Shows" toggle ---------- */
+function wireFreeToggle() {
+  const btn = document.getElementById("freeToggle");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    state.freeOnly = !state.freeOnly;
+    btn.classList.toggle("is-active", state.freeOnly);
+    btn.setAttribute("aria-pressed", String(state.freeOnly));
+    refreshMap();
+    renderShowList();
+    buildConstraintPanel();
   });
 }
 
@@ -358,13 +500,13 @@ function buildConstraintPanel() {
     state.selectedShowId = "";
     populateShowSelect();
     refreshConstraintValue();
-    renderMarkers();
+    refreshMap();
   };
 
   showSelect.onchange = () => {
     state.selectedShowId = showSelect.value;
     refreshConstraintValue();
-    renderMarkers();
+    refreshMap();
     const show = state.shows.find((s) => s.id === state.selectedShowId);
     if (show) focusShow(show);
   };

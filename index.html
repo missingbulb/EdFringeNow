@@ -107,11 +107,24 @@
           </div>
         </article>
       </div>
+
+      <!-- Quick filters -->
+      <div class="quick-filters">
+        <button type="button" class="toggle-pill" id="freeToggle" aria-pressed="false">
+          <span class="toggle-dot" aria-hidden="true"></span>
+          Only Free Shows
+        </button>
+      </div>
     </section>
 
     <!-- ===================== Map ===================== -->
     <section id="map" class="map-section container">
       <div id="leaflet-map" role="application" aria-label="Map of Edinburgh Fringe shows"></div>
+      <p class="map-legend">
+        <span class="legend-item"><span class="legend-dot legend-dot--ok"></span> Reachable now</span>
+        <span class="legend-item"><span class="legend-dot legend-dot--tight"></span> You'd just miss it</span>
+        <span class="legend-item"><span class="legend-dot legend-dot--circle"></span> ~15 min travel radius</span>
+      </p>
     </section>
 
     <!-- ===================== Shows list ===================== -->

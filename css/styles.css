@@ -285,6 +285,69 @@ a { color: inherit; }
   z-index: 0;
 }
 
+/* Map legend */
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 12px 2px 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.legend-item { display: inline-flex; align-items: center; gap: 7px; }
+.legend-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.legend-dot--ok { background: var(--red); border: 2px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+.legend-dot--tight { background: #b9bcc1; border: 2px solid #9aa0a6; opacity: 0.7; }
+.legend-dot--circle { background: rgba(47, 107, 214, 0.18); border: 1.5px solid var(--blue); }
+
+/* ===================== Quick filters (Free toggle) ===================== */
+.quick-filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+.toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 11px 20px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.toggle-pill:hover { background: var(--line); }
+.toggle-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: transparent;
+  transition: background 0.12s ease, box-shadow 0.12s ease;
+}
+.toggle-pill.is-active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.toggle-pill.is-active .toggle-dot {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: inset 0 0 0 3px var(--red);
+}
+
 /* ===================== Shows list ===================== */
 .shows-section { padding: 36px 24px 56px; }
 .shows-title {
