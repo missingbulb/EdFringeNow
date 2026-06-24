@@ -1,7 +1,7 @@
 # EdFringeNow
 Website to help find a fringe show — **Fringe Discover**.
 
-🌐 **Live site:** https://missingbulb.github.io/edfringenow/
+🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/
 
 A single-page site for finding the nearest Edinburgh Fringe show happening
 right now ("Fringe Rush"): editable constraint cards (genre, travel mode, next
