@@ -123,26 +123,96 @@ a { color: inherit; }
   background: var(--paper);
   border: 2px solid var(--ink);
   border-radius: var(--radius);
-  padding: 28px 22px 26px;
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
+.card.is-open,
 .card:hover {
   transform: translate(-2px, -2px);
   box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--ink);
 }
-.card-edit {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  border: none;
+.card-trigger {
+  display: block;
+  width: 100%;
+  text-align: left;
   background: transparent;
-  color: var(--muted);
+  border: none;
+  font: inherit;
+  color: inherit;
   cursor: pointer;
-  padding: 4px;
-  border-radius: var(--radius);
+  padding: 28px 22px 22px;
 }
-.card-edit:hover { color: var(--ink); background: var(--line); }
+
+/* Pop-over panels */
+.card-panel {
+  position: absolute;
+  z-index: 1200;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+  padding: 18px 18px 20px;
+}
+.card-panel[hidden] { display: none; }
+.panel-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.panel-options { display: grid; gap: 4px; }
+.panel-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.panel-option:hover { background: var(--line); }
+.panel-option input { accent-color: var(--red); width: 16px; height: 16px; }
+.panel-field-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 12px 0 6px;
+}
+.panel-select {
+  width: 100%;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 12px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--paper);
+  cursor: pointer;
+}
+.panel-select:disabled { opacity: 0.5; cursor: not-allowed; }
+.panel-note {
+  margin: 14px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.card-caret {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
 .card-icon {
   display: inline-grid;
@@ -176,63 +246,20 @@ a { color: inherit; }
 }
 
 /* ===================== Map ===================== */
-.map-section { margin: 16px 0 0; }
+.map-section { margin: 16px auto 0; }
 #leaflet-map {
   width: 100%;
   height: 460px;
   background: #dfe6e3;
-}
-
-/* ===================== Discovery journey ===================== */
-.journey-section { padding: 44px 24px; }
-.journey-card {
-  position: relative;
   border: 2px solid var(--ink);
   border-radius: var(--radius);
-  background: var(--paper);
-  padding: 26px 28px;
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
-}
-.journey-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 18px;
-}
-.journey-title {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 1.15rem;
-  margin: 0 0 4px;
-}
-.journey-hint { margin: 0; color: var(--muted); font-style: italic; }
-.journey-badge {
-  background: var(--yellow-badge);
-  color: var(--ink);
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.5px;
-  padding: 8px 12px;
-  border-radius: var(--radius);
-  white-space: nowrap;
-}
-.progress {
-  height: 14px;
-  background: #efefef;
-  border-radius: 999px;
   overflow: hidden;
-}
-.progress-bar {
-  height: 100%;
-  background: var(--red);
-  border-radius: 999px;
-  transition: width 0.4s ease;
+  z-index: 0;
 }
 
 /* ===================== Shows list ===================== */
-.shows-section { padding: 8px 24px 56px; }
+.shows-section { padding: 36px 24px 56px; }
 .shows-title {
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -319,7 +346,6 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .main-nav { display: none; }
   .constraint-cards { grid-template-columns: 1fr; gap: 24px; }
-  .journey-head { flex-direction: column; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-actions { grid-column: 1 / -1; }

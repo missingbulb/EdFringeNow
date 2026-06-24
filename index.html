@@ -29,7 +29,7 @@
       <nav class="main-nav" aria-label="Primary">
         <a href="#" class="nav-link is-active">Home</a>
         <a href="#shows" class="nav-link">Shows</a>
-        <a href="#planner" class="nav-link">My Planner</a>
+        <a href="#constraintCards" class="nav-link">My Planner</a>
         <a href="#map" class="nav-link">Map</a>
       </nav>
       <div class="header-icons">
@@ -52,61 +52,63 @@
       <div class="constraint-cards" id="constraintCards">
         <!-- Genre -->
         <article class="card card--genre" data-card="genre">
-          <button class="card-edit" aria-label="Edit genre">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="m14.06 9.02.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29Zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75Z"/></svg>
+          <button class="card-trigger" data-panel="genrePanel" aria-expanded="false" aria-haspopup="true">
+            <span class="card-icon card-icon--red" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3C7 3 3 5 3 5s0 6 3 9c1.7 1.7 4 2 4 2s-1-2-1-4 1-3 1-3-2 .5-3.5-.5C8 8 12 7 12 7s4 1 5.5 1.5C16 9.5 14 9 14 9s1 1 1 3-1 4-1 4 2.3-.3 4-2c3-3 3-9 3-9s-4-2-9-2Z"/></svg>
+            </span>
+            <p class="card-label">Which genres?</p>
+            <p class="card-value" data-value="genre">Comedy, Cabaret and Variety</p>
+            <span class="card-caret" aria-hidden="true">Tap to filter ▾</span>
           </button>
-          <span class="card-icon card-icon--red" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3C7 3 3 5 3 5s0 6 3 9c1.7 1.7 4 2 4 2s-1-2-1-4 1-3 1-3-2 .5-3.5-.5C8 8 12 7 12 7s4 1 5.5 1.5C16 9.5 14 9 14 9s1 1 1 3-1 4-1 4 2.3-.3 4-2c3-3 3-9 3-9s-4-2-9-2Z"/></svg>
-          </span>
-          <p class="card-label">Genre Recommendation</p>
-          <p class="card-value" data-value="genre">Comedy, Theatre, Dance</p>
+          <div class="card-panel" id="genrePanel" role="menu" hidden>
+            <p class="panel-title">Select genres</p>
+            <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
+          </div>
         </article>
 
         <!-- Travel -->
         <article class="card card--travel" data-card="travel">
-          <button class="card-edit" aria-label="Edit travel mode">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="m14.06 9.02.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29Zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75Z"/></svg>
+          <button class="card-trigger" data-panel="travelPanel" aria-expanded="false" aria-haspopup="true">
+            <span class="card-icon card-icon--gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2c-4 0-8 .5-8 4v9.5A2.5 2.5 0 0 0 6.5 18L5 19.5V20h2l2-2h6l2 2h2v-.5L17.5 18a2.5 2.5 0 0 0 2.5-2.5V6c0-3.5-4-4-8-4ZM7.5 16A1.5 1.5 0 1 1 9 14.5 1.5 1.5 0 0 1 7.5 16Zm9 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM18 11H6V6h12Z"/></svg>
+            </span>
+            <p class="card-label">How am I traveling?</p>
+            <p class="card-value" data-value="travel">Walking</p>
+            <span class="card-caret" aria-hidden="true">Tap to change ▾</span>
           </button>
-          <span class="card-icon card-icon--gold" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2c-4 0-8 .5-8 4v9.5A2.5 2.5 0 0 0 6.5 18L5 19.5V20h2l2-2h6l2 2h2v-.5L17.5 18a2.5 2.5 0 0 0 2.5-2.5V6c0-3.5-4-4-8-4ZM7.5 16A1.5 1.5 0 1 1 9 14.5 1.5 1.5 0 0 1 7.5 16Zm9 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM18 11H6V6h12Z"/></svg>
-          </span>
-          <p class="card-label">How am I traveling?</p>
-          <p class="card-value" data-value="travel">Walk, Bus, Taxi</p>
+          <div class="card-panel" id="travelPanel" role="menu" hidden>
+            <p class="panel-title">How are you getting there?</p>
+            <div class="panel-options" id="travelOptions"><!-- populated by JS --></div>
+          </div>
         </article>
 
         <!-- Next constraint -->
         <article class="card card--constraint" data-card="constraint">
-          <button class="card-edit" aria-label="Edit next constraint">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="m14.06 9.02.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 0 0 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29Zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75Z"/></svg>
+          <button class="card-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
+            <span class="card-icon card-icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></svg>
+            </span>
+            <p class="card-label">When does your next show start?</p>
+            <p class="card-value" data-value="constraint">Pick a start time</p>
+            <span class="card-caret" aria-hidden="true">Tap to choose ▾</span>
           </button>
-          <span class="card-icon card-icon--blue" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M5 3a1 1 0 0 1 1 1v.5c2-1 4 1 6 .2s4-.7 5 .3v8c-1-1-3-1.2-5-.3s-4-1.2-6-.2V21a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Z"/></svg>
-          </span>
-          <p class="card-label">Next Constraint</p>
-          <p class="card-value" data-value="constraint">Scott Monument – 16:00</p>
+          <div class="card-panel" id="constraintPanel" role="menu" hidden>
+            <p class="panel-title">
+              Shows starting <strong id="constraintDateLabel">today</strong>
+            </p>
+            <label class="panel-field-label" for="timeSelect">Exact start time</label>
+            <select id="timeSelect" class="panel-select"></select>
+            <label class="panel-field-label" for="showSelect">Show at that time</label>
+            <select id="showSelect" class="panel-select"></select>
+            <p class="panel-note" id="constraintNote">We only care about the time — everything here is happening today.</p>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- ===================== Map ===================== -->
-    <section id="map" class="map-section">
+    <section id="map" class="map-section container">
       <div id="leaflet-map" role="application" aria-label="Map of Edinburgh Fringe shows"></div>
-    </section>
-
-    <!-- ===================== Discovery Journey ===================== -->
-    <section id="planner" class="journey-section container">
-      <div class="journey-card">
-        <div class="journey-head">
-          <div>
-            <h2 class="journey-title">Your Discovery Journey</h2>
-            <p class="journey-hint" id="journeyHint">Try a Dance show to unlock a free venue drink voucher!</p>
-          </div>
-          <span class="journey-badge" id="journeyBadge">6/10 categories explored</span>
-        </div>
-        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="6">
-          <div class="progress-bar" id="progressBar" style="width:60%"></div>
-        </div>
-      </div>
     </section>
 
     <!-- ===================== Shows list ===================== -->
