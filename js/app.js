@@ -36,6 +36,17 @@ const GENRES = [
 /* How the user might travel between shows. */
 const TRAVEL_MODES = ["Walking", "Taxi/Car", "Bus", "Bicycle"];
 
+/* ===== DEBUG: simulated "now" =====================================
+ * The whole flow is scoped to "the next few hours today", so for testing we
+ * pin a fixed clock instead of the real one. A red on-screen badge makes it
+ * obvious the app is running against a faked time. */
+const NOW = {
+  dateLabel: "Thu 14 Aug",
+  time: "15:44",
+  tz: "BST",            // British Summer Time
+  minutes: 15 * 60 + 44,
+};
+
 const state = {
   shows: [],
   markers: {},                 // id -> Leaflet marker
@@ -52,6 +63,7 @@ const state = {
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
+  renderDebugBanner();
   initMap();
   setUserLocation(USER_DEFAULT, { recenter: false }); // central-Edinburgh default
   requestUserLocation();                              // then ask for the real thing
@@ -178,6 +190,11 @@ function visibleShows() {
   return state.shows.filter((s) => state.selectedGenres.has(s.genre));
 }
 
+/* Genre-filtered shows that haven't started yet by the simulated "now". */
+function upcomingShows() {
+  return visibleShows().filter((s) => timeToMinutes(s.time) >= NOW.minutes);
+}
+
 function renderMarkers() {
   // Clear any existing markers
   Object.values(state.markers).forEach((m) => state.map.removeLayer(m));
@@ -208,7 +225,7 @@ function popupHtml(show) {
       <span class="popup-genre">${escapeHtml(show.genre)}</span>
       <p class="popup-title">${escapeHtml(show.title)}</p>
       <p class="popup-meta">${escapeHtml(show.venue)}</p>
-      <p class="popup-meta">Today · ${escapeHtml(show.time)} · ${show.duration} min · ${escapeHtml(show.price)}</p>
+      <p class="popup-meta">${escapeHtml(NOW.dateLabel)} · ${escapeHtml(show.time)} · ${show.duration} min · ${escapeHtml(show.price)}</p>
     </div>`;
 }
 
@@ -234,7 +251,7 @@ function renderShowList() {
         <span class="show-genre">${escapeHtml(show.genre)}</span>
         <h3 class="show-name">${escapeHtml(show.title)}</h3>
         <p class="show-meta">${escapeHtml(show.venue)}</p>
-        <p class="show-meta"><span class="show-time">Today ${escapeHtml(show.time)}</span> · ${escapeHtml(show.price)}</p>`;
+        <p class="show-meta"><span class="show-time">${escapeHtml(NOW.dateLabel)} ${escapeHtml(show.time)}</span> · ${escapeHtml(show.price)}</p>`;
       item.addEventListener("click", () => focusShow(show));
       grid.appendChild(item);
     });
@@ -313,8 +330,18 @@ function buildConstraintPanel() {
   const showSelect = document.getElementById("showSelect");
   if (!timeSelect || !showSelect) return;
 
-  // Unique start times among the genre-filtered shows, sorted chronologically.
-  const times = [...new Set(visibleShows().map((s) => s.time))].sort((a, b) =>
+  // Reflect the simulated date in the panel.
+  const dateLabel = document.getElementById("constraintDateLabel");
+  if (dateLabel) dateLabel.textContent = NOW.dateLabel;
+  const note = document.getElementById("constraintNote");
+  if (note) {
+    note.textContent =
+      `It's ${NOW.time} — we only show start times still to come today.`;
+  }
+
+  // Unique *upcoming* start times among the genre-filtered shows (shows that
+  // already started by the simulated "now" are dropped), sorted chronologically.
+  const times = [...new Set(upcomingShows().map((s) => s.time))].sort((a, b) =>
     a.localeCompare(b)
   );
 
@@ -323,7 +350,7 @@ function buildConstraintPanel() {
 
   timeSelect.innerHTML =
     '<option value="">— choose a time —</option>' +
-    times.map((t) => `<option value="${t}">Today ${t}</option>`).join("");
+    times.map((t) => `<option value="${t}">${NOW.dateLabel}, ${t}</option>`).join("");
   timeSelect.value = state.selectedTime;
 
   timeSelect.onchange = () => {
@@ -417,7 +444,22 @@ function closeAllPanels() {
   document.querySelectorAll(".card.is-open").forEach((c) => c.classList.remove("is-open"));
 }
 
+/* ---------- Debug clock ---------- */
+function renderDebugBanner() {
+  const el = document.getElementById("debugBanner");
+  if (!el) return;
+  el.innerHTML =
+    `<strong>DEBUG MODE</strong> — Simulated “now”: ` +
+    `${escapeHtml(NOW.dateLabel)}, ${escapeHtml(NOW.time)} ${escapeHtml(NOW.tz)}`;
+}
+
 /* ---------- utils ---------- */
+/* "HH:MM" -> minutes since midnight. */
+function timeToMinutes(t) {
+  const [h, m] = String(t).split(":").map(Number);
+  return h * 60 + m;
+}
+
 /* Great-circle distance between two [lat, lng] points, in kilometres. */
 function distanceKm([lat1, lng1], [lat2, lng2]) {
   const R = 6371;
