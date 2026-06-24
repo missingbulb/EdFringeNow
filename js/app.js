@@ -10,10 +10,14 @@
 
 const EDINBURGH = [55.9486, -3.1881];
 
-/* Default "you are here" pin — central Edinburgh (Royal Mile, near the Tron
- * Kirk) so the UI has a sensible starting point before / unless the user
- * shares their real location. */
-const USER_DEFAULT = [55.9505, -3.1875];
+/* Default "you are here" pin — central Edinburgh (Princes Street / Royal Mile
+ * area) so the UI has a sensible starting point before / unless the user shares
+ * their real location. */
+const USER_DEFAULT = [55.9523946827963, -3.188258484671504];
+
+/* During the testing period, ignore a real location that's nowhere near
+ * Edinburgh (in km) and keep the central default instead. */
+const MAX_DISTANCE_KM = 40;
 
 /* The official-style Fringe genre categories. */
 const GENRES = [
@@ -133,10 +137,16 @@ function requestUserLocation() {
   }
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      setUserLocation([pos.coords.latitude, pos.coords.longitude], {
-        recenter: true,
-        real: true,
-      });
+      const here = [pos.coords.latitude, pos.coords.longitude];
+      // Testing guard: if we're way outside Edinburgh, stay on the default pin.
+      if (distanceKm(here, EDINBURGH) > MAX_DISTANCE_KM) {
+        console.info(
+          `Real location is ${Math.round(distanceKm(here, EDINBURGH))} km from ` +
+            "Edinburgh — keeping the central default for testing."
+        );
+        return;
+      }
+      setUserLocation(here, { recenter: true, real: true });
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.
@@ -408,6 +418,18 @@ function closeAllPanels() {
 }
 
 /* ---------- utils ---------- */
+/* Great-circle distance between two [lat, lng] points, in kilometres. */
+function distanceKm([lat1, lng1], [lat2, lng2]) {
+  const R = 6371;
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
