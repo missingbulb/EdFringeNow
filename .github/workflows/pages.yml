@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-      # Temporary: lets us preview this feature branch before it is merged.
-      # Remove once the work lands on main.
-      - claude/nice-brown-aop4be
   workflow_dispatch:
 
 permissions:
