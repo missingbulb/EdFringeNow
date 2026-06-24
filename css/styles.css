@@ -131,6 +131,8 @@ a { color: inherit; }
   transform: translate(-2px, -2px);
   box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--ink);
 }
+/* Lift the open card (and its pop-over) above the map's stacking context. */
+.card.is-open { z-index: 1500; }
 .card-trigger {
   display: block;
   width: 100%;
@@ -255,6 +257,10 @@ a { color: inherit; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
   overflow: hidden;
+  /* Positioned + z-index:0 caps Leaflet's internal panes/controls (which go up
+     to z-index 1000) inside this stacking context, so the card pop-overs above
+     the map can render over it. */
+  position: relative;
   z-index: 0;
 }
 
