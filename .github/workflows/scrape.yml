@@ -58,6 +58,7 @@ jobs:
           python3 -c "import json; d=json.load(open('data/days/index.json')); print('shows:',d['shows'],'venues:',d['venues'],'days:',len(d['dates']))" 2>/dev/null || echo "n/a"
 
       - name: Upload raw scrape artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: edfringe-raw
