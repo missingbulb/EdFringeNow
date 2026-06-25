@@ -1,1 +1,1 @@
-@.claudinite/README.md
+@.claudinite/CLAUDE.md
