@@ -53,15 +53,17 @@ const DEFAULT_MAX_TRAVEL = 10;
 const TRAVEL_TIME_STOPS = [5, 10, 15, 20, 30, 45, 60];
 const GRACE_MINUTES = 5;
 
-/* Max-price filter stops (£). Infinity = no limit ("£20+"). */
-const PRICE_STOPS = [0, 5, 10, 15, 20, Infinity];
+/* Price filter. The source data only distinguishes free vs paid (no amounts),
+ * so this is a two-stop toggle: free-only … all shows. */
+const PRICE_STOPS = [0, Infinity];
 
 /* ===== DEBUG: simulated "now" =====================================
  * The whole flow is scoped to "the next few hours today", so for testing we
  * pin a fixed clock instead of the real one. A red on-screen badge makes it
  * obvious the app is running against a faked time. */
 const NOW = {
-  dateLabel: "Thu 14 Aug",
+  date: "2026-08-14",   // which day's data file to load (data/days/<date>.json)
+  dateLabel: "Fri 14 Aug",
   time: "15:44",
   tz: "BST",            // British Summer Time
   minutes: 15 * 60 + 44,
@@ -69,6 +71,7 @@ const NOW = {
 
 const state = {
   shows: [],
+  venues: {},                  // venue code -> { name, address, postcode, lat, lng }
   markers: {},                 // id -> Leaflet marker
   map: null,
   selectedGenres: new Set(["Comedy", "Cabaret and Variety"]),
@@ -96,19 +99,60 @@ async function init() {
   buildGenrePanel();
   buildTravelPanel();
   wirePanels();
-  try {
-    const res = await fetch("data/shows.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    state.shows = data.shows || [];
-  } catch (err) {
-    console.error("Could not load shows.json:", err);
-    state.shows = [];
-  }
+  await loadShows();
   buildConstraintPanel();
   refreshMap();
   renderShowList();
   updateGenreValue();
+}
+
+/* ---------- Data loading ---------- */
+/* Load today's shows: the per-day file (only today's performances, kept small)
+ * joined with the venue lookup (names + coordinates), reshaped for the map and
+ * list. Only the current day is fetched, so the payload stays light. */
+async function loadShows() {
+  try {
+    const [venuesRes, dayRes] = await Promise.all([
+      fetch("data/venues.json"),
+      fetch(`data/days/${NOW.date}.json`),
+    ]);
+    if (!venuesRes.ok) throw new Error(`venues HTTP ${venuesRes.status}`);
+    if (!dayRes.ok) throw new Error(`day ${NOW.date} HTTP ${dayRes.status}`);
+    state.venues = await venuesRes.json();
+    const day = await dayRes.json();
+    // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
+    state.shows = day
+      .map((entry) => adaptShow(entry, state.venues))
+      .filter((s) => s.lat != null && s.lng != null);
+  } catch (err) {
+    console.error("Could not load show data:", err);
+    state.shows = [];
+  }
+}
+
+/* Join a minimal per-day record with its venue and expand to the model the map
+ * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price,
+ * blurb }). A show can perform more than once a day, so the internal id is made
+ * unique per performance. */
+function adaptShow(entry, venues) {
+  const v = venues[entry.venue] || {};
+  const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
+  return {
+    id: `${entry.id}__${entry.start}`,
+    showId: entry.id,
+    slug: entry.slug,
+    title: entry.title,
+    genre: entry.genre,
+    venue: entry.room ? `${venueName} — ${entry.room}` : venueName,
+    lat: v.lat ?? null,
+    lng: v.lng ?? null,
+    time: entry.start,
+    duration: entry.duration || 60,
+    free: !!entry.free,
+    price: entry.free ? "Free" : "Paid",
+    soldOut: !!entry.soldOut,
+    blurb: entry.blurb || "",
+  };
 }
 
 /* ---------- Map ---------- */
@@ -211,11 +255,10 @@ function genreColor(genre) {
   return map[genre] || "#141414";
 }
 
-/* Numeric price for a show. "Free" -> 0, "£12" -> 12. */
+/* Price bucket for filtering: free -> 0, paid -> 1. The source data has no
+ * ticket amounts, so paid shows are only distinguished from free ones. */
 function priceValue(show) {
-  if (/free/i.test(show.price)) return 0;
-  const m = String(show.price).match(/\d+/);
-  return m ? Number(m[0]) : 0;
+  return show.free || /free/i.test(show.price) ? 0 : 1;
 }
 
 /* Shows passing the current genre + max-price filters (empty genre set = all). */
@@ -550,7 +593,7 @@ function buildGenrePanel() {
     wrap.appendChild(label);
   });
 
-  // Max-price slider (Free … £20+).
+  // Price toggle (Free only … All shows).
   const range = document.getElementById("priceRange");
   if (range) {
     range.max = String(PRICE_STOPS.length - 1);
@@ -565,9 +608,7 @@ function buildGenrePanel() {
 }
 
 function priceStopLabel(v) {
-  if (v === 0) return "Free only";
-  if (v === Infinity) return "Any price (£20+)";
-  return `Up to £${v}`;
+  return v === 0 ? "Free only" : "All shows";
 }
 
 function updatePriceLabel() {
@@ -586,7 +627,7 @@ function updateGenreValue() {
   if (!el) return;
   const list = [...state.selectedGenres];
   const genres = list.length ? list.join(", ") : "All genres";
-  const price = state.maxPrice === Infinity ? "any price" : `≤ £${state.maxPrice}`;
+  const price = state.maxPrice === 0 ? "free only" : "any price";
   el.textContent = `${genres} · ${price}`;
 }
 
