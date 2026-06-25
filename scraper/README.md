@@ -2,35 +2,54 @@
 
 Tools for scraping show data from [edfringe.com](https://www.edfringe.com).
 
-## Stage 1 — download listing pages
+## How edfringe.com serves listings
 
-`fetch_pages.py` downloads the paginated "What's On" listing HTML and stores
-it under `data/raw_pages/` so that later extraction can run offline without
-hammering the live site.
+The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page
+app**. The server returns the same ~20 KB JavaScript shell for every page and
+the shows are loaded **client-side from a GraphQL API**. So fetching the HTML
+yields empty pages — there is no show data in the markup to extract.
+
+The shows come from:
 
 ```
-python3 scraper/fetch_pages.py
+POST https://edfringe-tikketr-web-api.equhost.com/graphql
 ```
 
-- Source pages: `https://www.edfringe.com/tickets/whats-on?page=N` for N = 1..77.
-- Output: `data/raw_pages/page_NN.html` (one file per page).
-- A random delay of 4–9 seconds is inserted between requests to be polite.
-- The run is **resumable**: existing pages are skipped, so you can re-run it
-  after an interruption. Use `--force` to re-download everything.
+authenticated with a bearer token from `POST .../token` using the site's public
+anonymous credentials. The `EventsSearch` operation returns structured JSON
+(title, genre, dates, venues, spaces, performances, prices, images, …), 50
+shows per page, ~3,800 shows over ~77 pages.
+
+## fetch_shows.py — download all shows from the API
+
+```
+python3 scraper/fetch_shows.py
+```
+
+- Authenticates, then pages through every show via the GraphQL API.
+- Output (default `data/raw_pages/`):
+  - `page_NN.json` — the raw `events` payload per page (kept for re-processing).
+  - `shows.json` — all show results flattened into a single array.
+- A random 4–9 s delay is inserted between requests.
+- **Resumable**: existing `page_NN.json` files are skipped; use `--force` to
+  re-fetch. A fixed `--seed` keeps the server ordering stable across pages so
+  paging never skips or duplicates shows.
 
 Options:
 
 ```
-python3 scraper/fetch_pages.py --start 1 --end 77 \
-    --min-delay 4 --max-delay 9 --out-dir data/raw_pages
+python3 scraper/fetch_shows.py \
+    --per 50 --seed 123 --min-delay 4 --max-delay 9 \
+    --out-dir data/raw_pages [--max-pages N] [--force]
 ```
 
-The raw HTML is intentionally **git-ignored** (see `.gitignore`) — it is a
-regenerable cache, not source.
+The raw output is **git-ignored** (see `.gitignore`) — it is a regenerable
+cache, not source.
 
-### Network access
+## Running it
 
-The pages must be fetched from an environment where `www.edfringe.com` is
-reachable. Claude Code web sessions run behind an egress proxy whose policy
-may block that host (a `403 CONNECT` from the proxy); in that case run this
-script locally or from an environment whose network policy allows the domain.
+`equhost.com` must be reachable from wherever you run this. Claude Code web
+sessions sit behind an egress proxy that may block it; in that case run the
+script locally, or use the **`Scrape edfringe listing pages`** GitHub Action
+(`.github/workflows/scrape.yml`), which runs on a GitHub-hosted runner with open
+network access and uploads the result as an artifact.

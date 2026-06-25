@@ -1,22 +1,18 @@
-name: Scrape edfringe listing pages
+name: Scrape edfringe shows
 
-# Stage 1 of scraping edfringe.com: download the paginated "What's On" listing
-# HTML and upload it as a build artifact for later offline extraction.
+# Download all Edinburgh Fringe shows from the edfringe.com GraphQL data API and
+# upload the structured JSON as a build artifact for later use.
 #
 # Run it manually from the Actions tab (workflow_dispatch). GitHub-hosted
-# runners can reach www.edfringe.com directly.
+# runners can reach the API directly.
 
 on:
   workflow_dispatch:
     inputs:
-      start:
-        description: First page number
+      per:
+        description: Shows per page
         required: false
-        default: "1"
-      end:
-        description: Last page number (inclusive)
-        required: false
-        default: "77"
+        default: "50"
       min_delay:
         description: Minimum delay between requests (seconds)
         required: false
@@ -25,6 +21,10 @@ on:
         description: Maximum delay between requests (seconds)
         required: false
         default: "9"
+      max_pages:
+        description: Optional cap on number of pages (blank = all)
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -32,7 +32,6 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # 77 pages * up to 9s of delay is well under an hour, but give headroom.
     timeout-minutes: 60
     steps:
       - name: Checkout
@@ -43,25 +42,27 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch listing pages
+      - name: Fetch shows from the API
         run: |
-          python3 scraper/fetch_pages.py \
-            --start "${{ inputs.start }}" \
-            --end "${{ inputs.end }}" \
+          python3 scraper/fetch_shows.py \
+            --per "${{ inputs.per }}" \
             --min-delay "${{ inputs.min_delay }}" \
-            --max-delay "${{ inputs.max_delay }}"
+            --max-delay "${{ inputs.max_delay }}" \
+            ${{ inputs.max_pages && format('--max-pages {0}', inputs.max_pages) || '' }}
 
-      - name: Summarise download
+      - name: Summarise
         if: always()
         run: |
-          echo "Pages downloaded:"
-          ls -1 data/raw_pages 2>/dev/null | wc -l
+          echo "Page files:"
+          ls -1 data/raw_pages/page_*.json 2>/dev/null | wc -l
+          echo "Shows in shows.json:"
+          python3 -c "import json,sys; print(len(json.load(open('data/raw_pages/shows.json'))))" 2>/dev/null || echo "n/a"
           du -sh data/raw_pages 2>/dev/null || true
 
-      - name: Upload raw pages artifact
+      - name: Upload shows artifact
         uses: actions/upload-artifact@v4
         with:
-          name: edfringe-raw-pages
+          name: edfringe-shows
           path: data/raw_pages/
           retention-days: 90
           if-no-files-found: error
