@@ -79,7 +79,7 @@ const state = {
   venues: {},                  // venue code -> { name, address, postcode, lat, lng }
   markers: {},                 // id -> Leaflet marker
   map: null,
-  selectedGenres: new Set(["Comedy", "Cabaret and Variety"]),
+  selectedGenres: new Set(["Comedy"]),
   maxPrice: Infinity,          // £ cap from the genre card's price slider
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
@@ -277,9 +277,20 @@ function visibleShows() {
   return list;
 }
 
-/* Genre/price-filtered shows that haven't started yet by the simulated "now". */
-function upcomingShows() {
-  return visibleShows().filter((s) => timeToMinutes(s.time) >= NOW.minutes);
+/* How far ahead a "next commitment" must start to be worth picking. There's no
+ * point letting the user constrain their search to something starting in the
+ * next few minutes — they couldn't act on it — so we only offer start times at
+ * least CONSTRAINT_LEAD_MINUTES from now. */
+const CONSTRAINT_LEAD_MINUTES = 40;
+
+/* Candidate shows for the "next commitment" constraint. This is whatever the
+ * user already has lined up, NOT part of the current genre/price search, so it
+ * deliberately ignores the genre + price filter. Only start times at least
+ * CONSTRAINT_LEAD_MINUTES from now are offered. */
+function constraintShows() {
+  return state.shows.filter(
+    (s) => timeToMinutes(s.time) >= NOW.minutes + CONSTRAINT_LEAD_MINUTES
+  );
 }
 
 /* Minutes of travel, by the selected mode, from A to B ([lat,lng] each). */
@@ -690,12 +701,13 @@ function buildConstraintPanel() {
   const note = document.getElementById("constraintNote");
   if (note) {
     note.textContent =
-      `It's ${NOW.time} — we only show start times still to come today.`;
+      `It's ${NOW.time} — we only show start times at least ${CONSTRAINT_LEAD_MINUTES} min away.`;
   }
 
-  // Unique *upcoming* start times among the filtered shows (shows that already
-  // started by the simulated "now" are dropped), sorted chronologically.
-  const times = [...new Set(upcomingShows().map((s) => s.time))].sort((a, b) =>
+  // Unique start times among the constraint candidates — every show today, not
+  // just the genre/price-filtered ones, and only those starting at least
+  // CONSTRAINT_LEAD_MINUTES from now — sorted chronologically.
+  const times = [...new Set(constraintShows().map((s) => s.time))].sort((a, b) =>
     a.localeCompare(b)
   );
 
@@ -762,7 +774,7 @@ function populateShowSelect() {
     return;
   }
 
-  const atTime = upcomingShows().filter((s) => s.time === state.selectedTime);
+  const atTime = constraintShows().filter((s) => s.time === state.selectedTime);
   showSelect.disabled = false;
   showSelect.innerHTML = atTime
     .map(
