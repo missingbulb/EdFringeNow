@@ -1,10 +1,8 @@
-name: Scrape edfringe shows
+name: Scrape edfringe shows (full)
 
-# Download all Edinburgh Fringe shows from the edfringe.com GraphQL data API and
-# upload the structured JSON as a build artifact for later use.
-#
-# Run it manually from the Actions tab (workflow_dispatch). GitHub-hosted
-# runners can reach the API directly.
+# Full rebuild: download every show from the edfringe.com GraphQL API, normalize
+# into the website-ready data files, and commit them. Run manually from the
+# Actions tab. For the lightweight daily top-up see refresh.yml.
 
 on:
   workflow_dispatch:
@@ -21,13 +19,14 @@ on:
         description: Maximum delay between requests (seconds)
         required: false
         default: "9"
-      max_pages:
-        description: Optional cap on number of pages (blank = all)
+      commit:
+        description: Commit the normalized data back to the repo
+        type: boolean
         required: false
-        default: ""
+        default: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   scrape:
@@ -42,27 +41,39 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch shows from the API
+      - name: Fetch all shows from the API
         run: |
           python3 scraper/fetch_shows.py \
+            --recently-added ANY \
             --per "${{ inputs.per }}" \
             --min-delay "${{ inputs.min_delay }}" \
-            --max-delay "${{ inputs.max_delay }}" \
-            ${{ inputs.max_pages && format('--max-pages {0}', inputs.max_pages) || '' }}
+            --max-delay "${{ inputs.max_delay }}"
+
+      - name: Normalize into website data
+        run: python3 scraper/normalize.py
 
       - name: Summarise
         if: always()
         run: |
-          echo "Page files:"
-          ls -1 data/raw_pages/page_*.json 2>/dev/null | wc -l
-          echo "Shows in shows.json:"
-          python3 -c "import json,sys; print(len(json.load(open('data/raw_pages/shows.json'))))" 2>/dev/null || echo "n/a"
-          du -sh data/raw_pages 2>/dev/null || true
+          python3 -c "import json; d=json.load(open('data/days/index.json')); print('shows:',d['shows'],'venues:',d['venues'],'days:',len(d['dates']))" 2>/dev/null || echo "n/a"
 
-      - name: Upload shows artifact
+      - name: Upload raw scrape artifact
         uses: actions/upload-artifact@v4
         with:
-          name: edfringe-shows
+          name: edfringe-raw
           path: data/raw_pages/
           retention-days: 90
           if-no-files-found: error
+
+      - name: Commit normalized data
+        if: ${{ inputs.commit }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/normalized data/venues.json data/days
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update Fringe data (full scrape)"
+            git push
+          fi

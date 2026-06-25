@@ -54,6 +54,40 @@ DEFAULT_PER = 50
 DEFAULT_SEED = "123"
 
 # The exact EventsSearch operation the website sends (captured from the app).
+VENUES_QUERY = """
+    query VenueTypeAhead($geoLocation: GeoSearchDtoInput, $sort: SortBy) {
+  venues(input: {page: 0, per: 1000, geo: $geoLocation, sortBy: $sort}) {
+    total
+    per
+    page
+    results {
+      ...VenueTypeAhead
+    }
+  }
+}
+
+    fragment VenueTypeAhead on VenueDetail {
+  id
+  title
+  description
+  venueCode
+  address1
+  address2
+  postCode
+  distance
+}
+    """
+
+GENRES_QUERY = """
+    query Genres {
+  genres {
+    label
+    iconName
+    value
+  }
+}
+    """
+
 EVENTS_SEARCH_QUERY = """
     query EventsSearch($criteria: SearchCriteriaInput!) {
   events(input: $criteria) {
@@ -193,7 +227,8 @@ def get_token(username: str, password: str) -> str:
     return token
 
 
-def fetch_events_page(token: str, page: int, per: int, seed: str) -> dict:
+def fetch_events_page(token: str, page: int, per: int, seed: str,
+                      recently_added: str = "ANY") -> dict:
     payload = {
         "query": EVENTS_SEARCH_QUERY,
         "variables": {"criteria": {
@@ -201,7 +236,7 @@ def fetch_events_page(token: str, page: int, per: int, seed: str) -> dict:
             "per": per,
             "sortBy": "TITLE",
             "sortBySeed": seed,
-            "recentlyAdded": "ANY",
+            "recentlyAdded": recently_added,
         }},
         "operationName": "EventsSearch",
     }
@@ -209,6 +244,26 @@ def fetch_events_page(token: str, page: int, per: int, seed: str) -> dict:
     if "errors" in data:
         raise RuntimeError(f"GraphQL errors on page {page}: {data['errors']}")
     return data["data"]["events"]
+
+
+def fetch_venues(token: str) -> dict:
+    payload = {
+        "query": VENUES_QUERY,
+        "variables": {"sort": "TITLE"},
+        "operationName": "VenueTypeAhead",
+    }
+    data = post_json(GRAPHQL_URL, payload, token=token)
+    if "errors" in data:
+        raise RuntimeError(f"GraphQL errors fetching venues: {data['errors']}")
+    return data["data"]["venues"]
+
+
+def fetch_genres(token: str) -> list:
+    payload = {"query": GENRES_QUERY, "operationName": "Genres"}
+    data = post_json(GRAPHQL_URL, payload, token=token)
+    if "errors" in data:
+        raise RuntimeError(f"GraphQL errors fetching genres: {data['errors']}")
+    return data["data"]["genres"]
 
 
 def main() -> int:
@@ -230,6 +285,10 @@ def main() -> int:
                         help="maximum delay between requests, seconds (default 9)")
     parser.add_argument("--max-pages", type=int, default=None,
                         help="cap the number of pages (default: all)")
+    parser.add_argument("--recently-added", default="ANY",
+                        choices=["ANY", "LAST_SEVEN_DAYS", "LAST_TWENTY_FOUR_HOURS"],
+                        help="filter to recently added shows (default ANY; use "
+                             "LAST_SEVEN_DAYS for a daily refresh)")
     parser.add_argument("--force", action="store_true",
                         help="re-fetch pages even if they already exist")
     args = parser.parse_args()
@@ -243,9 +302,20 @@ def main() -> int:
     print("Authenticating...")
     token = get_token(args.username, args.password)
 
+    # Reference data: genres (for mapping) and venues (for addresses). Small,
+    # so always refresh them alongside the events.
+    print("Fetching genres and venues...")
+    genres = fetch_genres(token)
+    (out_dir / "genres_raw.json").write_text(
+        json.dumps(genres, ensure_ascii=False, indent=1))
+    venues = fetch_venues(token)
+    (out_dir / "venues_raw.json").write_text(
+        json.dumps(venues, ensure_ascii=False, indent=1))
+    print(f"  {len(genres)} genres, {venues.get('total', '?')} venues")
+
     # First page tells us the total so we know how many pages to fetch.
-    print("Fetching page 1 to determine total...")
-    first = fetch_events_page(token, 1, args.per, args.seed)
+    print(f"Fetching page 1 (recentlyAdded={args.recently_added}) to determine total...")
+    first = fetch_events_page(token, 1, args.per, args.seed, args.recently_added)
     total = first["total"]
     total_pages = max(1, math.ceil(total / args.per))
     if args.max_pages:
@@ -279,7 +349,8 @@ def main() -> int:
         else:
             print(f"[{page}/{total_pages}] EventsSearch page={page}")
             try:
-                events = fetch_events_page(token, page, args.per, args.seed)
+                events = fetch_events_page(token, page, args.per, args.seed,
+                                           args.recently_added)
             except Exception as exc:  # noqa: BLE001
                 print(f"    ERROR: {exc}", file=sys.stderr)
                 failed += 1

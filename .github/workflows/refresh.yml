@@ -1,0 +1,54 @@
+name: Refresh edfringe shows (daily)
+
+# Lightweight daily top-up: fetch only shows added/updated in the last seven days
+# (recentlyAdded=LAST_SEVEN_DAYS), merge them into the existing normalized
+# master, regenerate the venue + per-day files, and commit any changes.
+
+on:
+  schedule:
+    - cron: "20 5 * * *"   # 05:20 UTC daily
+  workflow_dispatch:
+    inputs:
+      window:
+        description: Recently-added window
+        type: choice
+        options: [LAST_SEVEN_DAYS, LAST_TWENTY_FOUR_HOURS, ANY]
+        required: false
+        default: LAST_SEVEN_DAYS
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch recently added shows
+        run: |
+          python3 scraper/fetch_shows.py \
+            --recently-added "${{ inputs.window || 'LAST_SEVEN_DAYS' }}" \
+            --min-delay 4 --max-delay 9
+
+      - name: Merge into normalized data
+        run: python3 scraper/normalize.py --merge
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/normalized data/venues.json data/days
+          if git diff --staged --quiet; then
+            echo "No data changes today."
+          else
+            git commit -m "Refresh Fringe data (daily top-up)"
+            git push
+          fi

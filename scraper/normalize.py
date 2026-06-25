@@ -1,0 +1,391 @@
+#!/usr/bin/env python3
+"""Normalize scraped edfringe show data into website-ready JSON.
+
+Reads the raw scrape (events + venues + genres produced by fetch_shows.py) and
+emits three layers of data:
+
+  data/normalized/shows.json   master, normalized, one record per show with all
+                               its performances. The source of truth for later
+                               processing / regenerating the day files. NOT sent
+                               to the browser.
+
+  data/venues.json             venue lookup keyed by venue code ("venue number")
+                               -> name, address, postcode, lat, lng. Sent once.
+
+  data/days/2026-08-DD.json    one file per August day, holding only the shows
+                               performing that day with the minimum a card needs
+                               (venue is referenced by code; details live in
+                               venues.json). This is what the site loads on open.
+  data/days/index.json         list of available days + per-day counts.
+
+Locations are normalized to a venue code plus the specific room (space) of the
+show. Price is reduced to a free/paid flag (the listing API exposes no amount).
+Venue coordinates are geocoded from UK postcodes via postcodes.io and cached in
+venues.json so a refresh only geocodes new venues.
+
+Usage:
+    python3 scraper/normalize.py                 # full rebuild from raw scrape
+    python3 scraper/normalize.py --merge         # upsert raw into existing master
+    python3 scraper/normalize.py --no-geocode    # skip postcode lookups
+    python3 scraper/normalize.py --selftest      # run the built-in fixture test
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
+
+ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_RAW_DIR = ROOT / "data" / "raw_pages"
+DEFAULT_MASTER = ROOT / "data" / "normalized" / "shows.json"
+DEFAULT_VENUES = ROOT / "data" / "venues.json"
+DEFAULT_DAYS_DIR = ROOT / "data" / "days"
+
+AUGUST_PREFIX = "2026-08"
+BLURB_MAX = 160
+
+POSTCODES_IO_BULK = "https://api.postcodes.io/postcodes"
+
+# The site's ten official genre categories (must match js/app.js GENRES).
+SITE_GENRES = [
+    "Cabaret and Variety",
+    "Children's Shows",
+    "Comedy",
+    "Dance, Physical Theatre & Circus",
+    "Events",
+    "Exhibitions",
+    "Music",
+    "Musicals and Opera",
+    "Spoken Word",
+    "Theatre",
+]
+
+
+def map_genre(value: str | None, label: str | None) -> str:
+    """Map an API genre (enum value + human label) to a site category."""
+    text = f"{value or ''} {label or ''}".lower().replace("&", "and")
+    # Order matters: check the more specific categories first.
+    if "cabaret" in text or "variety" in text:
+        return "Cabaret and Variety"
+    if "child" in text or "kid" in text:
+        return "Children's Shows"
+    if "comedy" in text:
+        return "Comedy"
+    if "dance" in text or "physical" in text or "circus" in text:
+        return "Dance, Physical Theatre & Circus"
+    if "musical" in text or "opera" in text:
+        return "Musicals and Opera"
+    if "music" in text:
+        return "Music"
+    if "spoken" in text or "word" in text:
+        return "Spoken Word"
+    if "exhibition" in text:
+        return "Exhibitions"
+    if "theatre" in text or "theater" in text:
+        return "Theatre"
+    if "event" in text:
+        return "Events"
+    # Fall back to the label as-is so nothing is silently dropped.
+    return (label or value or "Events").strip()
+
+
+def short_blurb(description: str | None) -> str:
+    """A compact one-line blurb: strip markdown, collapse space, truncate."""
+    if not description:
+        return ""
+    text = re.sub(r"[*_#>`]", "", description)        # drop markdown markers
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= BLURB_MAX:
+        return text
+    cut = text[:BLURB_MAX].rsplit(" ", 1)[0].rstrip(",.;:")
+    return cut + "…"
+
+
+def primary_image(images: list | None) -> str | None:
+    for img in images or []:
+        if img.get("url"):
+            return img["url"]
+    return None
+
+
+def is_free(event: dict) -> bool:
+    if event.get("freeTicketed"):
+        return True
+    pt = (event.get("priceType") or "").upper()
+    return "FREE" in pt
+
+
+def normalize_event(event: dict) -> dict:
+    """Reduce one raw API event to the master normalized record."""
+    spaces = event.get("spaces") or []
+    space = spaces[0] if spaces else {}
+    venues = event.get("venues") or []
+
+    venue_code = space.get("venueCode")
+    venue_name = space.get("venueName") or (venues[0].get("title") if venues else None)
+    room = space.get("title")
+
+    duration = event.get("duration")
+    try:
+        duration = int(duration) if duration not in (None, "") else None
+    except (ValueError, TypeError):
+        duration = None
+
+    performances = []
+    for p in event.get("performances") or []:
+        dt = p.get("dateTime")
+        if not dt or p.get("cancelled"):
+            continue
+        # The API stores Edinburgh wall-clock time; take date/time literally.
+        performances.append({
+            "date": dt[:10],
+            "start": dt[11:16],
+            "soldOut": bool(p.get("soldOut")),
+            "status": p.get("ticketStatus") or p.get("status"),
+        })
+    performances.sort(key=lambda x: (x["date"], x["start"]))
+
+    return {
+        "id": event.get("cmsRef") or str(event.get("id")),
+        "title": event.get("title"),
+        "slug": event.get("slug"),
+        "genre": map_genre(event.get("genre"), event.get("genre")),
+        "company": event.get("presentedBy") or None,
+        "duration": duration,
+        "ageRestriction": event.get("ageRestriction") or None,
+        "free": is_free(event),
+        "image": primary_image(event.get("images")),
+        "blurb": short_blurb(event.get("description")),
+        "venue": venue_code,
+        "venueName": venue_name,
+        "room": room,
+        "performances": performances,
+    }
+
+
+def build_venues(venues_raw: dict, existing: dict, geocode: bool) -> dict:
+    """venue code -> {name, address, postcode, lat, lng}, geocoding new ones."""
+    results = (venues_raw or {}).get("results") or []
+    out: dict[str, dict] = {}
+    to_geocode: dict[str, str] = {}   # postcode -> first venue code needing it
+
+    for v in results:
+        code = v.get("venueCode")
+        if not code:
+            continue
+        addr = ", ".join(p for p in (v.get("address1"), v.get("address2")) if p)
+        postcode = (v.get("postCode") or "").strip()
+        prev = existing.get(code, {})
+        rec = {
+            "name": v.get("title"),
+            "address": addr,
+            "postcode": postcode,
+            "lat": None,
+            "lng": None,
+        }
+        # Reuse cached coordinates when the postcode is unchanged.
+        if prev.get("lat") is not None and prev.get("postcode") == postcode:
+            rec["lat"], rec["lng"] = prev["lat"], prev["lng"]
+        elif postcode:
+            to_geocode.setdefault(postcode, code)
+        out[code] = rec
+
+    if geocode and to_geocode:
+        coords = geocode_postcodes(list(to_geocode.keys()))
+        for code, rec in out.items():
+            if rec["lat"] is None and rec["postcode"] in coords:
+                rec["lat"], rec["lng"] = coords[rec["postcode"]]
+        hits = sum(1 for r in out.values() if r["lat"] is not None)
+        print(f"  geocoded {len(coords)} new postcodes; {hits}/{len(out)} venues located")
+    return out
+
+
+def geocode_postcodes(postcodes: list[str]) -> dict[str, tuple[float, float]]:
+    """Bulk-geocode UK postcodes via postcodes.io. Best-effort: returns what it can."""
+    coords: dict[str, tuple[float, float]] = {}
+    for i in range(0, len(postcodes), 100):
+        chunk = postcodes[i:i + 100]
+        body = json.dumps({"postcodes": chunk}).encode("utf-8")
+        req = Request(POSTCODES_IO_BULK, data=body,
+                      headers={"Content-Type": "application/json"}, method="POST")
+        try:
+            with urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+        except (URLError, HTTPError, json.JSONDecodeError) as exc:
+            print(f"  WARNING: geocoding failed for a chunk: {exc}", file=sys.stderr)
+            continue
+        for item in data.get("result", []):
+            res = item.get("result")
+            if res and res.get("latitude") is not None:
+                coords[item["query"]] = (round(res["latitude"], 6),
+                                         round(res["longitude"], 6))
+    return coords
+
+
+def build_day_files(master: list[dict]) -> dict[str, list]:
+    """Bucket shows by August performance date into minimal per-day records."""
+    days: dict[str, list] = {}
+    for show in master:
+        for p in show.get("performances", []):
+            date = p["date"]
+            if not date.startswith(AUGUST_PREFIX):
+                continue
+            days.setdefault(date, []).append({
+                "id": show["id"],
+                "title": show["title"],
+                "genre": show["genre"],
+                "venue": show["venue"],
+                "room": show["room"],
+                "start": p["start"],
+                "duration": show["duration"],
+                "free": show["free"],
+                "soldOut": p["soldOut"],
+                "slug": show["slug"],
+                "blurb": show["blurb"],
+            })
+    for date in days:
+        days[date].sort(key=lambda x: (x["start"], x["title"] or ""))
+    return days
+
+
+def load_events(raw_dir: Path) -> list[dict]:
+    shows_json = raw_dir / "shows.json"
+    if shows_json.exists():
+        return json.loads(shows_json.read_text())
+    events: list[dict] = []
+    for page in sorted(raw_dir.glob("page_*.json")):
+        events.extend(json.loads(page.read_text()).get("results", []))
+    return events
+
+
+def write_json(path: Path, obj) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")))
+    tmp.replace(path)
+
+
+def run(args) -> int:
+    raw_dir = Path(args.raw_dir)
+    events = load_events(raw_dir)
+    print(f"Loaded {len(events)} raw events from {raw_dir}")
+
+    normalized = [normalize_event(e) for e in events if e]
+
+    # Master: merge (upsert by id) or replace.
+    master_path = Path(args.master)
+    if args.merge and master_path.exists():
+        by_id = {s["id"]: s for s in json.loads(master_path.read_text())}
+        for s in normalized:
+            by_id[s["id"]] = s
+        master = list(by_id.values())
+        print(f"Merged {len(normalized)} into master -> {len(master)} shows")
+    else:
+        master = normalized
+        print(f"Master rebuilt with {len(master)} shows")
+    master.sort(key=lambda s: (s["title"] or "").lower())
+    write_json(master_path, master)
+
+    # Venues (always rebuilt from the full venue list, coordinates cached).
+    venues_path = Path(args.venues)
+    existing_venues = json.loads(venues_path.read_text()) if venues_path.exists() else {}
+    venues_raw_path = raw_dir / "venues_raw.json"
+    venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
+    venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
+    write_json(venues_path, venues)
+
+    # Per-day August files + index.
+    days_dir = Path(args.days_dir)
+    days = build_day_files(master)
+    for date, items in days.items():
+        write_json(days_dir / f"{date}.json", items)
+    index = {
+        "dates": sorted(days.keys()),
+        "counts": {d: len(v) for d, v in sorted(days.items())},
+        "shows": len(master),
+        "venues": len(venues),
+    }
+    write_json(days_dir / "index.json", index)
+
+    print(f"\nWrote: {master_path} ({len(master)} shows), "
+          f"{venues_path} ({len(venues)} venues), "
+          f"{len(days)} day files in {days_dir}")
+    return 0
+
+
+# --------------------------------------------------------------------------- #
+# Self-test: exercises the transform on a tiny fixture, no network or raw data.
+# --------------------------------------------------------------------------- #
+FIXTURE_EVENT = {
+    "id": 103540, "title": "10 Things They Hate About Me", "genre": "COMEDY",
+    "duration": "60", "boxOfficeRef": "202610THING_CLZ", "cmsRef": "202610THING",
+    "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
+    "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
+    "description": "A **razor-sharp** hour of comedy.\n\nReally funny.",
+    "images": [{"url": "https://img/thumb.jpg", "imageType": "THUMBNAIL"}],
+    "venues": [{"title": "Pleasance Courtyard", "slug": "pleasance-courtyard"}],
+    "spaces": [{"id": 5, "title": "Beneath", "venueName": "Pleasance Courtyard",
+                "venueCode": "33"}],
+    "performances": [
+        {"id": 1, "dateTime": "2026-08-06T11:45:00.000Z", "soldOut": False,
+         "cancelled": False, "ticketStatus": "AVAILABLE"},
+        {"id": 2, "dateTime": "2026-08-07T11:45:00.000Z", "soldOut": True,
+         "cancelled": False, "ticketStatus": "SOLD_OUT"},
+        {"id": 3, "dateTime": "2026-08-08T11:45:00.000Z", "cancelled": True},
+    ],
+}
+
+
+def selftest() -> int:
+    rec = normalize_event(FIXTURE_EVENT)
+    assert rec["id"] == "202610THING", rec["id"]
+    assert rec["genre"] == "Comedy", rec["genre"]
+    assert rec["venue"] == "33" and rec["room"] == "Beneath", rec
+    assert rec["free"] is False
+    assert rec["duration"] == 60
+    assert rec["blurb"] == "A razor-sharp hour of comedy. Really funny.", rec["blurb"]
+    assert len(rec["performances"]) == 2, "cancelled performance must be dropped"
+    assert rec["performances"][0] == {
+        "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
+
+    days = build_day_files([rec])
+    assert set(days) == {"2026-08-06", "2026-08-07"}, days
+    d6 = days["2026-08-06"][0]
+    assert d6["venue"] == "33" and d6["room"] == "Beneath"
+    assert "venueName" not in d6 and "performances" not in d6, "day record must be minimal"
+    assert d6["start"] == "11:45" and d6["soldOut"] is False
+
+    assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
+    assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"
+    assert map_genre("CHILDRENS_SHOWS", "Children's Shows") == "Children's Shows"
+    print("selftest OK")
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--raw-dir", default=str(DEFAULT_RAW_DIR))
+    parser.add_argument("--master", default=str(DEFAULT_MASTER))
+    parser.add_argument("--venues", default=str(DEFAULT_VENUES))
+    parser.add_argument("--days-dir", default=str(DEFAULT_DAYS_DIR))
+    parser.add_argument("--merge", action="store_true",
+                        help="upsert into the existing master instead of replacing")
+    parser.add_argument("--no-geocode", action="store_true",
+                        help="skip postcode geocoding (leave lat/lng null)")
+    parser.add_argument("--selftest", action="store_true",
+                        help="run the built-in fixture test and exit")
+    args = parser.parse_args()
+
+    if args.selftest:
+        return selftest()
+    return run(args)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
