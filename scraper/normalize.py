@@ -116,8 +116,14 @@ def primary_image(images: list | None) -> str | None:
 def is_free(event: dict) -> bool:
     if event.get("freeTicketed"):
         return True
-    pt = (event.get("priceType") or "").upper()
-    return "FREE" in pt
+    pt = event.get("priceType")
+    if not pt:
+        return False
+    # priceType may be a string, or a list of strings/objects. Treat the show
+    # as free only when every price type it offers is a free one.
+    items = pt if isinstance(pt, list) else [pt]
+    texts = [json.dumps(x).upper() for x in items]
+    return bool(texts) and all("FREE" in t for t in texts)
 
 
 def normalize_event(event: dict) -> dict:
@@ -275,7 +281,18 @@ def run(args) -> int:
     events = load_events(raw_dir)
     print(f"Loaded {len(events)} raw events from {raw_dir}")
 
-    normalized = [normalize_event(e) for e in events if e]
+    normalized = []
+    skipped = 0
+    for e in events:
+        if not e:
+            continue
+        try:
+            normalized.append(normalize_event(e))
+        except Exception as exc:  # noqa: BLE001 - resilience over one bad record
+            skipped += 1
+            print(f"  WARNING: skipped event {e.get('id')}: {exc}", file=sys.stderr)
+    if skipped:
+        print(f"  skipped {skipped} unparseable events")
 
     # Master: merge (upsert by id) or replace.
     master_path = Path(args.master)
@@ -359,6 +376,14 @@ def selftest() -> int:
     assert d6["venue"] == "33" and d6["room"] == "Beneath"
     assert "venueName" not in d6 and "performances" not in d6, "day record must be minimal"
     assert d6["start"] == "11:45" and d6["soldOut"] is False
+
+    # priceType can be a list (of strings or objects) in real data.
+    assert is_free({"priceType": ["PAID"], "freeTicketed": False}) is False
+    assert is_free({"priceType": ["FREE_NON_TICKETED"]}) is True
+    assert is_free({"priceType": [{"value": "FREE"}], "freeTicketed": False}) is True
+    assert is_free({"priceType": ["FREE", "PAID"]}) is False
+    assert is_free({"priceType": "PAID"}) is False
+    assert is_free({"freeTicketed": True}) is True
 
     assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
     assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"
