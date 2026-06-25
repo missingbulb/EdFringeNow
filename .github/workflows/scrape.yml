@@ -1,0 +1,67 @@
+name: Scrape edfringe listing pages
+
+# Stage 1 of scraping edfringe.com: download the paginated "What's On" listing
+# HTML and upload it as a build artifact for later offline extraction.
+#
+# Run it manually from the Actions tab (workflow_dispatch). GitHub-hosted
+# runners can reach www.edfringe.com directly.
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First page number
+        required: false
+        default: "1"
+      end:
+        description: Last page number (inclusive)
+        required: false
+        default: "77"
+      min_delay:
+        description: Minimum delay between requests (seconds)
+        required: false
+        default: "4"
+      max_delay:
+        description: Maximum delay between requests (seconds)
+        required: false
+        default: "9"
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    # 77 pages * up to 9s of delay is well under an hour, but give headroom.
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch listing pages
+        run: |
+          python3 scraper/fetch_pages.py \
+            --start "${{ inputs.start }}" \
+            --end "${{ inputs.end }}" \
+            --min-delay "${{ inputs.min_delay }}" \
+            --max-delay "${{ inputs.max_delay }}"
+
+      - name: Summarise download
+        if: always()
+        run: |
+          echo "Pages downloaded:"
+          ls -1 data/raw_pages 2>/dev/null | wc -l
+          du -sh data/raw_pages 2>/dev/null || true
+
+      - name: Upload raw pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: edfringe-raw-pages
+          path: data/raw_pages/
+          retention-days: 90
+          if-no-files-found: error
