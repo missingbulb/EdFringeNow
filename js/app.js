@@ -380,6 +380,7 @@ function refreshMap() {
   renderMarkers();
   renderRoute();
   renderShowList();
+  renderJourneyStrip();
 }
 
 function renderReachCircle() {
@@ -586,6 +587,148 @@ function renderShowList() {
       });
       grid.appendChild(item);
     });
+}
+
+/* ---------- Journey strip ---------- */
+/* A narrow, always-visible timeline between the filters and the map. It mirrors
+ * the journey the map is drawing, left → right:
+ *   • origin  — "You are here", now (always shown, styled dull)
+ *   • middle  — nothing chosen yet: an animated walker idling in place;
+ *               a destination chosen: the leg(s) to it with travel time + slack
+ *   • right   — your next commitment, once chosen
+ * The slack chip notes how long you'd have before each show starts. */
+function renderJourneyStrip() {
+  const strip = document.getElementById("journeyStrip");
+  if (!strip) return;
+
+  const origin = state.userLatLng;
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
+
+  // A clicked stop only counts when it's a valid leg on the way to the
+  // constraint (same rule the map uses for the green "leg" pin).
+  let leg = null;
+  if (constraint && state.legShowId && state.legShowId !== constraint.id) {
+    const cand = state.shows.find((s) => s.id === state.legShowId);
+    if (cand && classifyShow(cand, constraint) === "ok") leg = cand;
+  }
+
+  const parts = [originNodeHtml()];
+
+  if (!constraint) {
+    // Nothing chosen — idle walker, then nothing.
+    parts.push(idleSegHtml());
+  } else if (leg) {
+    const legPt = [leg.lat, leg.lng];
+    const destPt = [constraint.lat, constraint.lng];
+    // Leg 1: leave now, arrive before the stop's show starts.
+    const arriveLeg = NOW.minutes + travelMinutes(origin, legPt);
+    parts.push(segHtml(travelMinutes(origin, legPt)));
+    parts.push(stopNodeHtml(leg, timeToMinutes(leg.time) - arriveLeg));
+    // Leg 2: leave when the stop's show ends, arrive before the commitment.
+    const departFromLeg = timeToMinutes(leg.time) + leg.duration;
+    const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
+    parts.push(segHtml(travelMinutes(legPt, destPt)));
+    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+  } else {
+    // Constraint only — one long line straight to your next commitment.
+    const destPt = [constraint.lat, constraint.lng];
+    const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
+    parts.push(segHtml(travelMinutes(origin, destPt), { long: true }));
+    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+  }
+
+  strip.innerHTML = parts.join("");
+}
+
+/* Left "you are here, now" node. */
+function originNodeHtml() {
+  return `
+    <div class="journey-node journey-node--origin">
+      <span class="journey-flag journey-flag--dull">&#9873; You are here</span>
+      <span class="journey-sub">(now) &middot; ${escapeHtml(NOW.time)}</span>
+    </div>`;
+}
+
+/* Idle middle: a walker bobbing in place, then dots, then nothing. */
+function idleSegHtml() {
+  return `
+    <div class="journey-seg journey-seg--idle">
+      <span class="journey-idle-row">
+        <span class="journey-walker" aria-hidden="true">&#128694;</span>
+        <span class="journey-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </span>
+      <span class="journey-hint">Pick where you need to be next</span>
+    </div>`;
+}
+
+/* A travel connector: glyph + duration above a dashed line with a walker
+ * tracking across it. `opts.long` lets the single direct leg stretch wider. */
+function segHtml(mins, { long = false } = {}) {
+  return `
+    <div class="journey-seg journey-seg--line${long ? " journey-seg--long" : ""}">
+      <span class="journey-line-label">${escapeHtml(travelGlyph())} ${formatMins(mins)}</span>
+      <span class="journey-line"><span class="journey-line-walker" aria-hidden="true">&#128694;</span></span>
+    </div>`;
+}
+
+/* The intermediate stop the user clicked on the map. */
+function stopNodeHtml(show, slackMin) {
+  return `
+    <div class="journey-node journey-node--stop">
+      <span class="journey-flag journey-flag--stop">&#9873; ${escapeHtml(show.title)}</span>
+      <span class="journey-sub">${escapeHtml(show.venue)}</span>
+      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
+      ${slackHtml(slackMin)}
+      ${buyHtml(show)}
+    </div>`;
+}
+
+/* The user's next commitment (the destination). */
+function destNodeHtml(show, slackMin) {
+  return `
+    <div class="journey-node journey-node--dest">
+      <span class="journey-flag journey-flag--dest">&#9873; ${escapeHtml(destinationLabel())}</span>
+      <span class="journey-sub">Your next commitment</span>
+      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
+      ${slackHtml(slackMin)}
+      ${destShowMatchesLabel(show) ? buyHtml(show) : ""}
+    </div>`;
+}
+
+/* True when the destination box still points at the chosen show (the user
+ * hasn't retyped it as some non-Fringe place) — only then is a ticket relevant. */
+function destShowMatchesLabel(show) {
+  const label = (state.destLabel || "").trim();
+  return label === "" || label === show.venue;
+}
+
+/* A "buy now" call-to-action for a paid show. Buying ahead skips the on-site
+ * box-office queue — worth ~5 minutes, which matters when the plan is tight. */
+function buyHtml(show) {
+  if (!show || show.free) return "";
+  if (show.soldOut) return `<span class="journey-soldout">Sold out</span>`;
+  const url = show.slug
+    ? `https://tickets.edfringe.com/whats-on/${encodeURIComponent(show.slug)}`
+    : "#";
+  return `<a class="journey-buy" href="${escapeHtml(url)}" target="_blank" rel="noopener"
+            title="Buy now and skip the box-office queue — save about 5 minutes on the spot"
+          >&#127915; Buy now &middot; save 5 min at the door</a>`;
+}
+
+/* A chip noting the cushion before a show starts (or by how much you'd miss it). */
+function slackHtml(mins) {
+  const m = Math.round(mins);
+  if (m >= 0) {
+    return `<span class="journey-slack journey-slack--ok">${m} min to spare</span>`;
+  }
+  return `<span class="journey-slack journey-slack--late">${-m} min late</span>`;
+}
+
+/* Travel duration rounded to whole minutes (never below 1). */
+function formatMins(mins) {
+  return `${Math.max(1, Math.round(mins))} min`;
 }
 
 /* ---------- Genre filter ---------- */

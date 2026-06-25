@@ -403,6 +403,172 @@ a { color: inherit; }
 }
 .route-check .tick { color: #1e7d34; font-weight: 800; }
 
+/* ===================== Journey strip ===================== */
+/* Narrow timeline that mirrors the plan: origin → optional stop → commitment. */
+.journey {
+  display: flex;
+  align-items: stretch;
+  margin: 18px auto 0;
+  padding: 10px 16px;
+  min-height: 66px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  background: #fbfbf8;
+  box-shadow: 3px 3px 0 var(--ink);
+  overflow-x: auto;
+}
+.journey:empty { display: none; }
+
+/* Nodes (origin / stop / destination) */
+.journey-node {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  flex: 0 0 auto;
+  max-width: 220px;
+  padding: 2px 6px;
+}
+.journey-flag {
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
+}
+.journey-flag--dull { color: var(--muted); }
+.journey-flag--stop { color: #1e7d34; }
+.journey-flag--dest { color: var(--blue); }
+.journey-sub {
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
+}
+.journey-slack {
+  margin-top: 3px;
+  align-self: flex-start;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.journey-slack--ok { background: #e3f4e6; color: #14601f; border: 1px solid #1e7d34; }
+.journey-slack--late { background: #fde7e7; color: var(--red-dark); border: 1px solid var(--red); }
+
+/* Connector segments */
+.journey-seg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex: 1 1 80px;
+  min-width: 78px;
+  padding: 0 8px;
+}
+.journey-seg--long { flex-grow: 3; }
+.journey-line-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.journey-line {
+  position: relative;
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed var(--ink);
+}
+.journey-line-walker {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  font-size: 0.9rem;
+  animation: journeyWalk 2.6s linear infinite;
+}
+@keyframes journeyWalk {
+  from { left: 0; }
+  to { left: calc(100% - 14px); }
+}
+
+/* Idle middle: walker bobbing in place + trailing dots */
+.journey-seg--idle { flex: 1 1 auto; gap: 6px; }
+.journey-idle-row { display: inline-flex; align-items: center; gap: 8px; }
+.journey-walker {
+  font-size: 1.35rem;
+  animation: journeyBob 0.55s ease-in-out infinite alternate;
+}
+@keyframes journeyBob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
+}
+.journey-dots { display: inline-flex; gap: 4px; }
+.journey-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: journeyDot 1.2s ease-in-out infinite;
+}
+.journey-dots i:nth-child(2) { animation-delay: 0.2s; }
+.journey-dots i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes journeyDot {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.journey-hint { font-size: 0.72rem; color: var(--muted); }
+
+/* "Buy now" CTA on a selected paid show */
+.journey-buy {
+  margin-top: 4px;
+  align-self: flex-start;
+  display: inline-block;
+  max-width: 210px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--red);
+  border: 1px solid var(--red-dark);
+  box-shadow: 0 1px 0 var(--red-dark);
+  animation: journeyPulse 1.6s ease-in-out infinite;
+}
+.journey-buy:hover { background: var(--red-dark); }
+@keyframes journeyPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.journey-soldout {
+  margin-top: 4px;
+  align-self: flex-start;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-walker,
+  .journey-line-walker,
+  .journey-dots i,
+  .journey-buy { animation: none; }
+}
+
 /* ===================== Shows list ===================== */
 .shows-section { padding: 36px 24px 56px; }
 .shows-title {
