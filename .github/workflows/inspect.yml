@@ -35,24 +35,22 @@ jobs:
           const browser = await chromium.launch();
           const ctx = await browser.newContext({ userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' });
           const pg = await ctx.newPage();
-          const calls = [];
-          pg.on('response', async (resp) => {
-            const u = resp.url();
-            const ct = (resp.headers()['content-type'] || '');
-            if (ct.includes('json') || /api|graphql|search|event/i.test(u)) {
-              let bodyLen = 0, sample = '';
-              try { const b = await resp.body(); bodyLen = b.length; sample = b.toString('utf8').slice(0, 600); } catch {}
-              calls.push({ status: resp.status(), ct, u, bodyLen, sample });
+          const reqs = [];
+          pg.on('request', (req) => {
+            const u = req.url();
+            if (u.includes('equhost.com')) {
+              const h = req.headers();
+              reqs.push({ method: req.method(), u, auth: (h['authorization'] ? h['authorization'].slice(0,16)+'...' : ''), ct: h['content-type'] || '', post: req.postData() || '' });
             }
           });
           await pg.goto(url, { waitUntil: 'networkidle', timeout: 60000 }).catch(e => console.log('goto:', e.message));
           await pg.waitForTimeout(4000);
-          console.log('=== JSON / api-ish responses ===');
-          for (const c of calls) {
-            console.log('\n----');
-            console.log(c.status, c.ct, c.bodyLen, 'bytes');
-            console.log(c.u);
-            console.log('SAMPLE:', c.sample.replace(/\n/g, ' '));
+          console.log('=== Requests to the data API (equhost.com) ===');
+          for (const r of reqs) {
+            console.log('\n========');
+            console.log(r.method, r.u);
+            console.log('auth:', r.auth, '| content-type:', r.ct);
+            console.log('POST:', r.post.slice(0, 3000));
           }
           // How many show-card-ish nodes ended up in the DOM?
           const counts = await pg.evaluate(() => ({
