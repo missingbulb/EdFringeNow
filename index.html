@@ -22,9 +22,6 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- ===================== Debug clock badge ===================== -->
-  <div id="debugBanner" class="debug-banner" role="status" aria-live="polite"></div>
-
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -51,6 +48,28 @@
     <section class="hero container">
       <h1 class="hero-title">Fringe Rush</h1>
       <p class="hero-subtitle">Find the nearest magic happening right now. Your spontaneous adventure starts here.</p>
+
+      <!-- ===================== Debug clock badge ===================== -->
+      <div id="debugBanner" class="debug-banner" role="status" aria-live="polite">
+        <div class="debug-banner__status">
+          <strong>DEBUG MODE</strong> — Simulated “now”: <span id="debugNowText"></span>
+        </div>
+        <div class="debug-banner__controls">
+          <label class="debug-control" for="debugDateTime">
+            <span>Change date &amp; time</span>
+            <input type="datetime-local" id="debugDateTime" />
+          </label>
+          <div class="debug-control">
+            <span>Move “my location” (100 m)</span>
+            <div class="debug-move-grid">
+              <button type="button" class="debug-btn" data-move="north">↑ North</button>
+              <button type="button" class="debug-btn" data-move="south">↓ South</button>
+              <button type="button" class="debug-btn" data-move="east">→ East</button>
+              <button type="button" class="debug-btn" data-move="west">← West</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="constraint-cards" id="constraintCards">
         <!-- Genre -->

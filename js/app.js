@@ -69,6 +69,11 @@ const NOW = {
   minutes: 15 * 60 + 44,
 };
 
+/* Backing Date for the simulated clock. The debug date/time picker reads and
+ * writes this, and we project it onto NOW (which is used throughout the app).
+ * The year is arbitrary — only the day/time matter to the demo. */
+let simNowDate = new Date(2025, 7, 14, 15, 44); // Thu 14 Aug 2025, 15:44
+
 const state = {
   shows: [],
   venues: {},                  // venue code -> { name, address, postcode, lat, lng }
@@ -93,6 +98,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   renderDebugBanner();
+  wireDebugControls();
   initMap();
   setUserLocation(USER_DEFAULT, { recenter: false }); // central-Edinburgh default
   requestUserLocation();                              // then ask for the real thing
@@ -832,11 +838,82 @@ function closeAllPanels() {
 
 /* ---------- Debug clock ---------- */
 function renderDebugBanner() {
-  const el = document.getElementById("debugBanner");
+  const el = document.getElementById("debugNowText");
   if (!el) return;
-  el.innerHTML =
-    `<strong>DEBUG MODE</strong> — Simulated “now”: ` +
-    `${escapeHtml(NOW.dateLabel)}, ${escapeHtml(NOW.time)} ${escapeHtml(NOW.tz)}`;
+  el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
+}
+
+/* Wire up the debug panel: the date/time picker and the four "move my
+ * location" buttons. */
+function wireDebugControls() {
+  const dt = document.getElementById("debugDateTime");
+  if (dt) {
+    dt.value = toDatetimeLocalValue(simNowDate);
+    dt.addEventListener("change", () => {
+      const d = new Date(dt.value);
+      if (!isNaN(d.getTime())) applySimulatedNow(d);
+    });
+  }
+
+  document.querySelectorAll(".debug-btn[data-move]").forEach((btn) => {
+    btn.addEventListener("click", () => moveUserLocation(btn.dataset.move));
+  });
+}
+
+/* Project a chosen Date onto the simulated NOW and re-render everything that
+ * depends on the current time. */
+function applySimulatedNow(date) {
+  simNowDate = date;
+  NOW.dateLabel = formatDateLabel(date);
+  NOW.time = formatClock(date);
+  NOW.minutes = date.getHours() * 60 + date.getMinutes();
+  renderDebugBanner();
+  // Reachability, the "happening now" list and the time picker all key off NOW.
+  if (state.shows.length) {
+    buildConstraintPanel();
+    refreshMap();
+    renderShowList();
+  }
+}
+
+/* Shift the "you are here" pin 100 m in a compass direction. */
+function moveUserLocation(direction) {
+  const metres = 100;
+  const [lat, lng] = state.userLatLng;
+  const dLat = metres / 111320;                               // metres per degree latitude
+  const dLng = metres / (111320 * Math.cos((lat * Math.PI) / 180));
+  let nLat = lat;
+  let nLng = lng;
+  if (direction === "north") nLat += dLat;
+  else if (direction === "south") nLat -= dLat;
+  else if (direction === "east") nLng += dLng;
+  else if (direction === "west") nLng -= dLng;
+  setUserLocation([nLat, nLng], { recenter: false });
+}
+
+/* "Thu 14 Aug" from a Date. */
+function formatDateLabel(date) {
+  return date.toLocaleDateString("en-GB", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+  });
+}
+
+/* "15:44" from a Date. */
+function formatClock(date) {
+  return `${String(date.getHours()).padStart(2, "0")}:${String(
+    date.getMinutes()
+  ).padStart(2, "0")}`;
+}
+
+/* "YYYY-MM-DDTHH:MM" for a datetime-local input. */
+function toDatetimeLocalValue(date) {
+  const pad = (n) => String(n).padStart(2, "0");
+  return (
+    `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}` +
+    `T${pad(date.getHours())}:${pad(date.getMinutes())}`
+  );
 }
 
 /* ---------- utils ---------- */

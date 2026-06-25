@@ -19,24 +19,65 @@
 
 /* ===================== Debug clock badge ===================== */
 .debug-banner {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 3000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+  margin: 0 0 24px;
   background: var(--red);
   color: #fff;
-  font-weight: 700;
   font-size: 0.92rem;
   letter-spacing: 0.3px;
-  padding: 12px 18px;
+  padding: 14px 18px;
   border: 2px solid #fff;
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-  max-width: calc(100vw - 32px);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 .debug-banner:empty { display: none; }
 .debug-banner strong { text-transform: uppercase; letter-spacing: 0.6px; }
+.debug-banner__status { font-weight: 700; }
+.debug-banner__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 18px;
+}
+.debug-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.debug-control input[type="datetime-local"] {
+  font: inherit;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 5px 8px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.debug-move-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.debug-btn {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: var(--red);
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.debug-btn:hover { background: #ffe5e5; }
+.debug-btn:active { transform: translateY(1px); }
 
 html { scroll-behavior: smooth; }
 
