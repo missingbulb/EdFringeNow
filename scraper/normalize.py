@@ -51,6 +51,16 @@ BLURB_MAX = 160
 
 POSTCODES_IO_BULK = "https://api.postcodes.io/postcodes"
 
+# Manual coordinate overrides for venues whose postcode the open geocoder can't
+# resolve (large-user postcodes, park/marquee sites, etc.). Applied last, so
+# they always win and survive a refresh. code -> (lat, lng).
+MANUAL_COORDS = {
+    "360": (55.940946, -3.190175),   # Underbelly's Circus Hub on the Meadows
+    "147": (55.948692, -3.191961),   # National Library of Scotland
+    "320": (55.977521, -3.169072),   # Brown's of Leith
+    "560": (55.946273, -3.206378),   # Scott Lawrie Gallery
+}
+
 # The site's ten official genre categories (must match js/app.js GENRES).
 SITE_GENRES = [
     "Cabaret and Variety",
@@ -208,6 +218,11 @@ def build_venues(venues_raw: dict, existing: dict, geocode: bool) -> dict:
                 rec["lat"], rec["lng"] = coords[rec["postcode"]]
         hits = sum(1 for r in out.values() if r["lat"] is not None)
         print(f"  geocoded {len(coords)} new postcodes; {hits}/{len(out)} venues located")
+
+    # Manual overrides win over (and backfill) whatever geocoding produced.
+    for code, (lat, lng) in MANUAL_COORDS.items():
+        if code in out:
+            out[code]["lat"], out[code]["lng"] = lat, lng
     return out
 
 
