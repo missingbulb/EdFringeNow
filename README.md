@@ -36,10 +36,17 @@ data/shows.json   mock Edinburgh Fringe shows
 
 Shared Claude guidelines are mounted at `.claudinite/` via [Claudinite](https://github.com/missingbulb/Claudinite).
 
-This is a git submodule, so it is not pulled automatically. After cloning, run:
+These are synced over plain HTTPS by a `SessionStart` hook
+(`.claude/hooks/sync-claudinite.sh`), which fetches the latest `main` as a
+tarball into a gitignored `.claudinite/` each session. No git submodule or
+credential is needed (the submodule clone 403s in Claude Code on the web, where
+the git credential is scoped to this repo only).
+
+To populate `.claudinite/` manually outside a Claude session, just run the hook:
 
 ```
-git submodule update --init --recursive
+.claude/hooks/sync-claudinite.sh
 ```
 
-(or clone with `git clone --recurse-submodules`). A `SessionStart` hook runs this automatically for Claude Code sessions.
+Set `CLAUDINITE_REF` to a tag or SHA to pin a specific version instead of
+tracking `main`.

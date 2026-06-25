@@ -2,3 +2,8 @@
 # The normalized, website-ready data under data/normalized, data/venues.json and
 # data/days IS committed; only the bulky raw cache is ignored.
 data/raw_pages/
+
+# Claudinite shared guidelines, synced over HTTPS by a SessionStart hook
+# (see .claude/hooks/sync-claudinite.sh). Not committed — refreshed each session.
+.claudinite/
+.claudinite.new/
