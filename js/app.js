@@ -79,7 +79,7 @@ const state = {
   venues: {},                  // venue code -> { name, address, postcode, lat, lng }
   markers: {},                 // id -> Leaflet marker
   map: null,
-  selectedGenres: new Set(["Comedy", "Cabaret and Variety"]),
+  selectedGenres: new Set(["Comedy"]),
   maxPrice: Infinity,          // £ cap from the genre card's price slider
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
@@ -277,9 +277,20 @@ function visibleShows() {
   return list;
 }
 
-/* Genre/price-filtered shows that haven't started yet by the simulated "now". */
-function upcomingShows() {
-  return visibleShows().filter((s) => timeToMinutes(s.time) >= NOW.minutes);
+/* How far ahead a "next commitment" must start to be worth picking. There's no
+ * point letting the user constrain their search to something starting in the
+ * next few minutes — they couldn't act on it — so we only offer start times at
+ * least CONSTRAINT_LEAD_MINUTES from now. */
+const CONSTRAINT_LEAD_MINUTES = 40;
+
+/* Candidate shows for the "next commitment" constraint. This is whatever the
+ * user already has lined up, NOT part of the current genre/price search, so it
+ * deliberately ignores the genre + price filter. Only start times at least
+ * CONSTRAINT_LEAD_MINUTES from now are offered. */
+function constraintShows() {
+  return state.shows.filter(
+    (s) => timeToMinutes(s.time) >= NOW.minutes + CONSTRAINT_LEAD_MINUTES
+  );
 }
 
 /* Minutes of travel, by the selected mode, from A to B ([lat,lng] each). */
@@ -369,6 +380,7 @@ function refreshMap() {
   renderMarkers();
   renderRoute();
   renderShowList();
+  renderJourneyStrip();
 }
 
 function renderReachCircle() {
@@ -577,6 +589,149 @@ function renderShowList() {
     });
 }
 
+/* ---------- Journey strip ---------- */
+/* A narrow, always-visible timeline between the filters and the map. It mirrors
+ * the journey the map is drawing, left → right:
+ *   • origin  — "You are here", now (always shown, styled dull)
+ *   • middle  — nothing chosen yet: an animated walker idling in place;
+ *               a destination chosen: the leg(s) to it with travel time + slack
+ *   • right   — your next commitment, once chosen
+ * The slack chip notes how long you'd have before each show starts. */
+function renderJourneyStrip() {
+  const strip = document.getElementById("journeyStrip");
+  if (!strip) return;
+
+  const origin = state.userLatLng;
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
+
+  // A clicked stop only counts when it's a valid leg on the way to the
+  // constraint (same rule the map uses for the green "leg" pin).
+  let leg = null;
+  if (constraint && state.legShowId && state.legShowId !== constraint.id) {
+    const cand = state.shows.find((s) => s.id === state.legShowId);
+    if (cand && classifyShow(cand, constraint) === "ok") leg = cand;
+  }
+
+  const parts = [originNodeHtml()];
+
+  if (!constraint) {
+    // Nothing chosen — idle walker, then nothing.
+    parts.push(idleSegHtml());
+  } else if (leg) {
+    const legPt = [leg.lat, leg.lng];
+    const destPt = [constraint.lat, constraint.lng];
+    // Leg 1: leave now, arrive before the stop's show starts.
+    const arriveLeg = NOW.minutes + travelMinutes(origin, legPt);
+    parts.push(segHtml(travelMinutes(origin, legPt)));
+    parts.push(stopNodeHtml(leg, timeToMinutes(leg.time) - arriveLeg));
+    // Leg 2: leave when the stop's show ends, arrive before the commitment.
+    const departFromLeg = timeToMinutes(leg.time) + leg.duration;
+    const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
+    parts.push(segHtml(travelMinutes(legPt, destPt)));
+    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+  } else {
+    // Constraint only — one long line straight to your next commitment.
+    const destPt = [constraint.lat, constraint.lng];
+    const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
+    parts.push(segHtml(travelMinutes(origin, destPt), { long: true }));
+    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+  }
+
+  strip.innerHTML = parts.join("");
+}
+
+/* Left "you are here, now" node. */
+function originNodeHtml() {
+  return `
+    <div class="journey-node journey-node--origin">
+      <span class="journey-flag journey-flag--dull">&#9873; You are here</span>
+      <span class="journey-sub">(now) &middot; ${escapeHtml(NOW.time)}</span>
+    </div>`;
+}
+
+/* Idle middle: a walker bobbing in place, then dots, then nothing. */
+function idleSegHtml() {
+  return `
+    <div class="journey-seg journey-seg--idle">
+      <span class="journey-idle-row">
+        <span class="journey-walker" aria-hidden="true">&#128694;</span>
+        <span class="journey-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </span>
+      <span class="journey-hint">Pick where you need to be next</span>
+    </div>`;
+}
+
+/* A travel connector: glyph + duration above a dashed line with a walker
+ * tracking across it. `opts.long` lets the single direct leg stretch wider. */
+function segHtml(mins, { long = false } = {}) {
+  return `
+    <div class="journey-seg journey-seg--line${long ? " journey-seg--long" : ""}">
+      <span class="journey-line-label">${escapeHtml(travelGlyph())} ${formatMins(mins)}</span>
+      <span class="journey-line"><span class="journey-line-walker" aria-hidden="true">&#128694;</span></span>
+    </div>`;
+}
+
+/* The intermediate stop the user clicked on the map. */
+function stopNodeHtml(show, slackMin) {
+  return `
+    <div class="journey-node journey-node--stop">
+      <span class="journey-flag journey-flag--stop">&#9873; ${escapeHtml(show.title)}</span>
+      <span class="journey-sub">${escapeHtml(show.venue)}</span>
+      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
+      ${slackHtml(slackMin)}
+      ${buyHtml(show)}
+    </div>`;
+}
+
+/* The user's next commitment (the destination). This is somewhere they already
+ * need to be — not a show we sell a ticket for — so it carries no buy CTA. */
+function destNodeHtml(show, slackMin) {
+  return `
+    <div class="journey-node journey-node--dest">
+      <span class="journey-flag journey-flag--dest">&#9873; ${escapeHtml(destinationLabel())}</span>
+      <span class="journey-sub">Your next commitment</span>
+      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
+      ${slackHtml(slackMin)}
+    </div>`;
+}
+
+/* Booking link for a show on the official Fringe box office. Every show in the
+ * data carries a `slug`; the page lives at /tickets/whats-on/<slug>. */
+function ticketUrl(show) {
+  return show && show.slug
+    ? `https://www.edfringe.com/tickets/whats-on/${encodeURIComponent(show.slug)}`
+    : "";
+}
+
+/* A "buy now" call-to-action for the chosen show (the middle stop the user
+ * selected to go see). Buying ahead skips the on-site box-office queue — worth
+ * ~5 minutes, which matters when the plan is tight. Clicking opens the show's
+ * official Fringe booking page. Free shows need no ticket; sold-out shows say so. */
+function buyHtml(show) {
+  if (!show || show.free) return "";
+  if (show.soldOut) return `<span class="journey-soldout">Sold out</span>`;
+  const url = ticketUrl(show) || "#";
+  return `<a class="journey-buy" href="${escapeHtml(url)}" target="_blank" rel="noopener"
+            title="Buy a ticket on edfringe.com — booking ahead skips the box-office queue and saves about 5 minutes on the spot"
+          >&#127915; Buy now &middot; save 5 min at the door</a>`;
+}
+
+/* A chip noting the cushion before a show starts (or by how much you'd miss it). */
+function slackHtml(mins) {
+  const m = Math.round(mins);
+  if (m >= 0) {
+    return `<span class="journey-slack journey-slack--ok">${m} min to spare</span>`;
+  }
+  return `<span class="journey-slack journey-slack--late">${-m} min late</span>`;
+}
+
+/* Travel duration rounded to whole minutes (never below 1). */
+function formatMins(mins) {
+  return `${Math.max(1, Math.round(mins))} min`;
+}
+
 /* ---------- Genre filter ---------- */
 function buildGenrePanel() {
   const wrap = document.getElementById("genreOptions");
@@ -690,12 +845,13 @@ function buildConstraintPanel() {
   const note = document.getElementById("constraintNote");
   if (note) {
     note.textContent =
-      `It's ${NOW.time} — we only show start times still to come today.`;
+      `It's ${NOW.time} — we only show start times at least ${CONSTRAINT_LEAD_MINUTES} min away.`;
   }
 
-  // Unique *upcoming* start times among the filtered shows (shows that already
-  // started by the simulated "now" are dropped), sorted chronologically.
-  const times = [...new Set(upcomingShows().map((s) => s.time))].sort((a, b) =>
+  // Unique start times among the constraint candidates — every show today, not
+  // just the genre/price-filtered ones, and only those starting at least
+  // CONSTRAINT_LEAD_MINUTES from now — sorted chronologically.
+  const times = [...new Set(constraintShows().map((s) => s.time))].sort((a, b) =>
     a.localeCompare(b)
   );
 
@@ -762,7 +918,7 @@ function populateShowSelect() {
     return;
   }
 
-  const atTime = upcomingShows().filter((s) => s.time === state.selectedTime);
+  const atTime = constraintShows().filter((s) => s.time === state.selectedTime);
   showSelect.disabled = false;
   showSelect.innerHTML = atTime
     .map(
