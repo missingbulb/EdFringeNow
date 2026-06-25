@@ -46,6 +46,50 @@ python3 scraper/fetch_shows.py \
 The raw output is **git-ignored** (see `.gitignore`) — it is a regenerable
 cache, not source.
 
+## normalize.py — turn the raw scrape into website data
+
+```
+python3 scraper/normalize.py
+```
+
+Reads the raw scrape and emits three layers (these **are** committed, since the
+site serves them):
+
+| file | purpose | sent to browser |
+|---|---|---|
+| `data/normalized/shows.json` | master: one record per show with all performances; source for regenerating the day files | no |
+| `data/venues.json` | venue lookup keyed by venue code → name, address, postcode, lat, lng | yes (once) |
+| `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue referenced by code) | yes (today's) |
+| `data/days/index.json` | available days + per-day counts | yes |
+
+Normalization rules:
+- **Location** = venue code (the "venue number") + the show's room (space); venue
+  name/address/coords live only in `venues.json`.
+- **Price** = a `free` boolean (the listing API exposes no amount).
+- **Coordinates** are geocoded from each venue's UK postcode via
+  [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
+  only geocodes new venues. Use `--no-geocode` to skip.
+- **Genre** is mapped to the site's ten categories.
+
+`python3 scraper/normalize.py --selftest` runs a built-in transform test (no
+network or scraped data needed).
+
+## Refreshing data (daily)
+
+A full re-scrape isn't needed to stay current. The **daily** path fetches only
+shows added/updated in the last seven days and merges them in:
+
+```
+python3 scraper/fetch_shows.py --recently-added LAST_SEVEN_DAYS
+python3 scraper/normalize.py --merge
+```
+
+`--merge` upserts the new shows into the existing master (by id) and regenerates
+the venue and per-day files. This runs automatically via the
+**`Refresh edfringe shows (daily)`** workflow (`.github/workflows/refresh.yml`,
+scheduled daily); the full rebuild is **`Scrape edfringe shows (full)`**
+(`.github/workflows/scrape.yml`). Both commit the updated data back to the repo.
+
 ## Running it
 
 `equhost.com` must be reachable from wherever you run this. Claude Code web
