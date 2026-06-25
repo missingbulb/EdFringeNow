@@ -236,11 +236,16 @@ def geocode_postcodes(postcodes: list[str]) -> dict[str, tuple[float, float]]:
 def build_day_files(master: list[dict]) -> dict[str, list]:
     """Bucket shows by August performance date into minimal per-day records."""
     days: dict[str, list] = {}
+    seen: set[tuple] = set()   # (id, date, start) — drop duplicate performances
     for show in master:
         for p in show.get("performances", []):
             date = p["date"]
             if not date.startswith(AUGUST_PREFIX):
                 continue
+            key = (show["id"], date, p["start"])
+            if key in seen:
+                continue
+            seen.add(key)
             days.setdefault(date, []).append({
                 "id": show["id"],
                 "title": show["title"],

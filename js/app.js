@@ -72,7 +72,7 @@ const NOW = {
 /* Backing Date for the simulated clock. The debug date/time picker reads and
  * writes this, and we project it onto NOW (which is used throughout the app).
  * The year is arbitrary — only the day/time matter to the demo. */
-let simNowDate = new Date(2025, 7, 14, 15, 44); // Thu 14 Aug 2025, 15:44
+let simNowDate = new Date(2026, 7, 14, 15, 44); // Fri 14 Aug 2026, 15:44 (matches the data year)
 
 const state = {
   shows: [],
@@ -128,7 +128,7 @@ async function loadShows() {
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
     state.shows = day
-      .map((entry) => adaptShow(entry, state.venues))
+      .map((entry, i) => adaptShow(entry, state.venues, i))
       .filter((s) => s.lat != null && s.lng != null);
   } catch (err) {
     console.error("Could not load show data:", err);
@@ -140,11 +140,11 @@ async function loadShows() {
  * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price,
  * blurb }). A show can perform more than once a day, so the internal id is made
  * unique per performance. */
-function adaptShow(entry, venues) {
+function adaptShow(entry, venues, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
   return {
-    id: `${entry.id}__${entry.start}`,
+    id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
     slug: entry.slug,
     title: entry.title,
@@ -861,19 +861,23 @@ function wireDebugControls() {
 }
 
 /* Project a chosen Date onto the simulated NOW and re-render everything that
- * depends on the current time. */
-function applySimulatedNow(date) {
+ * depends on the current time. Changing the day loads that day's data file. */
+async function applySimulatedNow(date) {
+  const prevDate = NOW.date;
   simNowDate = date;
+  NOW.date = toISODate(date);
   NOW.dateLabel = formatDateLabel(date);
   NOW.time = formatClock(date);
   NOW.minutes = date.getHours() * 60 + date.getMinutes();
   renderDebugBanner();
-  // Reachability, the "happening now" list and the time picker all key off NOW.
-  if (state.shows.length) {
-    buildConstraintPanel();
-    refreshMap();
-    renderShowList();
+  // A different day means a different per-day file; reload before re-rendering.
+  if (NOW.date !== prevDate) {
+    await loadShows();
   }
+  // Reachability, the "happening now" list and the time picker all key off NOW.
+  buildConstraintPanel();
+  refreshMap();
+  renderShowList();
 }
 
 /* Shift the "you are here" pin 100 m in a compass direction. */
@@ -898,6 +902,13 @@ function formatDateLabel(date) {
     day: "numeric",
     month: "short",
   });
+}
+
+/* "2026-08-14" (local date) from a Date — selects the per-day data file. */
+function toISODate(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(
+    date.getDate()
+  ).padStart(2, "0")}`;
 }
 
 /* "15:44" from a Date. */
