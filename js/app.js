@@ -555,13 +555,15 @@ function popupHtml(show, status = "ok") {
 }
 
 /* ---------- Show list ---------- */
-/* The list mirrors exactly what's on the map. */
+/* The list mirrors what's on the map, minus the chosen next commitment: that
+ * show is a future destination the user has already locked in, not something
+ * "Happening Now", so we pin it on the map but keep it out of this list. */
 function renderShowList() {
   const grid = document.getElementById("showsGrid");
   if (!grid) return;
   grid.innerHTML = "";
 
-  const shows = displayedShows();
+  const shows = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
   if (!shows.length) {
     grid.innerHTML =
       '<p class="show-meta">No reachable shows match your current filters.</p>';
