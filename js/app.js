@@ -685,7 +685,8 @@ function stopNodeHtml(show, slackMin) {
     </div>`;
 }
 
-/* The user's next commitment (the destination). */
+/* The user's next commitment (the destination). This is somewhere they already
+ * need to be — not a show we sell a ticket for — so it carries no buy CTA. */
 function destNodeHtml(show, slackMin) {
   return `
     <div class="journey-node journey-node--dest">
@@ -693,27 +694,27 @@ function destNodeHtml(show, slackMin) {
       <span class="journey-sub">Your next commitment</span>
       <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
       ${slackHtml(slackMin)}
-      ${destShowMatchesLabel(show) ? buyHtml(show) : ""}
     </div>`;
 }
 
-/* True when the destination box still points at the chosen show (the user
- * hasn't retyped it as some non-Fringe place) — only then is a ticket relevant. */
-function destShowMatchesLabel(show) {
-  const label = (state.destLabel || "").trim();
-  return label === "" || label === show.venue;
+/* Booking link for a show on the official Fringe box office. Every show in the
+ * data carries a `slug`; the page lives at /tickets/whats-on/<slug>. */
+function ticketUrl(show) {
+  return show && show.slug
+    ? `https://www.edfringe.com/tickets/whats-on/${encodeURIComponent(show.slug)}`
+    : "";
 }
 
-/* A "buy now" call-to-action for a paid show. Buying ahead skips the on-site
- * box-office queue — worth ~5 minutes, which matters when the plan is tight. */
+/* A "buy now" call-to-action for the chosen show (the middle stop the user
+ * selected to go see). Buying ahead skips the on-site box-office queue — worth
+ * ~5 minutes, which matters when the plan is tight. Clicking opens the show's
+ * official Fringe booking page. Free shows need no ticket; sold-out shows say so. */
 function buyHtml(show) {
   if (!show || show.free) return "";
   if (show.soldOut) return `<span class="journey-soldout">Sold out</span>`;
-  const url = show.slug
-    ? `https://tickets.edfringe.com/whats-on/${encodeURIComponent(show.slug)}`
-    : "#";
+  const url = ticketUrl(show) || "#";
   return `<a class="journey-buy" href="${escapeHtml(url)}" target="_blank" rel="noopener"
-            title="Buy now and skip the box-office queue — save about 5 minutes on the spot"
+            title="Buy a ticket on edfringe.com — booking ahead skips the box-office queue and saves about 5 minutes on the spot"
           >&#127915; Buy now &middot; save 5 min at the door</a>`;
 }
 
