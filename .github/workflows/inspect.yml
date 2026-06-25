@@ -1,0 +1,45 @@
+name: Inspect edfringe page
+
+# Diagnostic: fetch a single listing page from a GitHub-hosted runner (which
+# can reach edfringe.com) and dump its real content, so we can tell whether the
+# listing is server-rendered HTML or a JS shell, and find the underlying data
+# source (JSON API, __NEXT_DATA__, etc.).
+
+on:
+  workflow_dispatch:
+    inputs:
+      page:
+        description: Page number to inspect
+        required: false
+        default: "2"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch and analyse one page
+        env:
+          UA: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          PAGE: ${{ inputs.page }}
+        run: |
+          set -euo pipefail
+          URL="https://www.edfringe.com/tickets/whats-on?page=${PAGE}"
+          echo "=== GET $URL ==="
+          curl -sS -A "$UA" -D headers.txt -o page.html "$URL"
+          echo "--- response headers ---"
+          cat headers.txt
+          echo "--- size ---"
+          wc -c page.html
+          echo "--- marker counts ---"
+          for m in "__NEXT_DATA__" "application/ld+json" "window.__" "no results" "No results" "data-show" "ticket" "<script" "venue" "showCard" "search-result"; do
+            printf '%-22s %s\n' "$m" "$(grep -c -- "$m" page.html || true)"
+          done
+          echo "--- any JSON/api URLs referenced ---"
+          grep -oaE 'https?://[a-zA-Z0-9./_-]*(api|algolia|search|graphql)[a-zA-Z0-9./_-]*' page.html | sort -u | head -40 || true
+          echo "--- first 120 lines ---"
+          head -n 120 page.html
+          echo "--- last 60 lines ---"
+          tail -n 60 page.html
