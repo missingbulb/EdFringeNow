@@ -139,9 +139,10 @@
     <!-- ===================== Journey strip ===================== -->
     <!-- Narrow timeline between the filters and the map: it mirrors the plan,
          left-to-right — "you are here, now" → an optional chosen stop → your
-         next commitment. Populated by renderJourneyStrip(). The "Open route in
-         Google Maps" link sits to its right and only appears once both stops
-         (chosen show + destination) exist. -->
+         next commitment. Populated by renderJourneyStrip(). The Google Maps
+         link sits to its right: with nothing chosen it opens the map at your
+         location, with a chosen show and/or destination it opens directions
+         through them. -->
     <div class="journey-row container">
       <section id="journeyStrip" class="journey" aria-label="Your journey"></section>
       <a
@@ -150,7 +151,7 @@
         href="#"
         target="_blank"
         rel="noopener"
-        title="Open directions between your chosen show and your destination in Google Maps"
+        title="Open your plan in Google Maps — the map at your location, or directions through your chosen show and destination"
         hidden
       >
         <span class="maps-route-btn__pin" aria-hidden="true">📍</span>
