@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fringe Discover — the flow, stage by stage (Departure Board theme)</title>
+<meta name="description" content="One design theme shown across the five real stages of a session: cold start, set the next-show constraint (time then show), browse the many shows that fit, and commit to a plan with buy + Google Maps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --board:#0c1118; --bezel:#04070b; --row:#151d27; --row2:#172230;
+    --amber:#f4d089; --go:#39e08b; --go-deep:#0c7a4e; --tight:#ffb22e; --miss:#ff6b6b;
+    --ink:#e9eef3; --dim:#9fb0c0; --faint:#6f7f8e; --line:#26323f; --line2:#1d2630;
+    --violet:#b69cf0;
+    --page:#eceef1; --paper:#ffffff; --pink:#c62024;
+    --mono:"DM Mono",ui-monospace,Menlo,monospace;
+    --cond:"Barlow Semi Condensed",system-ui,sans-serif;
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--page); color:#1a212a; font-family:var(--sans); line-height:1.5; }
+  .page{ max-width:1280px; margin:0 auto; padding:38px 22px 70px; }
+
+  /* ---- storyboard intro ---- */
+  .lead .kick{ font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--pink); margin:0 0 10px; }
+  .lead h1{ font-family:var(--cond); font-weight:700; font-size:clamp(1.8rem,4.6vw,2.7rem); letter-spacing:.2px; margin:0 0 12px; line-height:1.05; }
+  .lead p{ max-width:74ch; margin:0 0 8px; color:#3c4753; font-size:1.03rem; }
+  .lead .note{ font-size:.92rem; color:#5b6873; }
+  .lead .note b{ color:#1a212a; }
+  .scenario{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 4px; }
+  .scenario span{ background:var(--paper); border:1px solid #dfe2e6; border-radius:999px; padding:6px 12px; font-size:.83rem; font-weight:600; }
+  .scenario b{ color:var(--pink); }
+
+  /* ---- storyboard rail ---- */
+  .rail{ display:flex; gap:30px; margin-top:30px; overflow-x:auto; padding-bottom:18px; scroll-snap-type:x mandatory; }
+  .stage{ margin:0; flex:0 0 auto; width:360px; scroll-snap-align:start; }
+  @media (max-width:820px){ .rail{ flex-direction:column; align-items:center; overflow:visible; } .stage{ width:100%; max-width:380px; } }
+
+  .cap{ margin:0 0 14px; }
+  .cap .num{
+    display:inline-grid; place-items:center; width:26px; height:26px; border-radius:50%;
+    background:#0c1118; color:var(--amber); font-family:var(--mono); font-size:.82rem; font-weight:500; vertical-align:middle;
+  }
+  .cap .t{ font-family:var(--cond); font-weight:700; font-size:1.12rem; margin-left:8px; }
+  .cap .s{ display:block; margin-top:7px; color:#4b5763; font-size:.9rem; }
+  .cap .s b{ color:#1a212a; }
+
+  /* ---- phone ---- */
+  .phone{ background:var(--bezel); border-radius:38px; padding:9px; box-shadow:0 22px 46px rgba(15,22,33,.26); }
+  .screen{ position:relative; background:var(--board); border-radius:30px; overflow:hidden; color:var(--ink); height:720px; display:flex; flex-direction:column; }
+  .screen.scroll{ overflow:hidden; }
+  .scrollarea{ overflow-y:auto; flex:1 1 auto; }
+  .scrollarea::-webkit-scrollbar{ width:0; }
+
+  /* app bar + context */
+  .appbar{ display:flex; align-items:center; justify-content:space-between; padding:16px 18px 10px; }
+  .brand{ font-family:var(--cond); font-weight:700; letter-spacing:.4px; font-size:1.04rem; }
+  .brand .fd{ color:var(--amber); }
+  .live{ font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; color:var(--go); display:flex; align-items:center; gap:6px; }
+  .live i{ width:7px; height:7px; border-radius:50%; background:var(--go); box-shadow:0 0 0 3px rgba(57,224,139,.18); }
+  .ctx{ display:flex; align-items:center; gap:8px; padding:0 18px 12px; font-family:var(--mono); font-size:.72rem; color:var(--dim); flex-wrap:wrap; }
+  .ctx .flap{ background:#000; color:var(--amber); padding:3px 7px; border-radius:4px; letter-spacing:.04em; }
+  .ctx .sep{ color:var(--line); }
+
+  /* default filter chips */
+  .filters{ display:flex; gap:8px; padding:2px 18px 14px; flex-wrap:wrap; }
+  .fchip{ display:inline-flex; align-items:center; gap:7px; background:var(--row); border:1px solid var(--line); border-radius:999px; padding:7px 12px; font-size:.8rem; font-weight:600; color:var(--ink); }
+  .fchip .lab{ font-family:var(--mono); font-size:.6rem; letter-spacing:.12em; color:var(--faint); text-transform:uppercase; }
+  .fchip .car{ color:var(--faint); font-size:.7rem; }
+  .fchip.default::after{ content:"DEFAULT"; font-family:var(--mono); font-size:.52rem; letter-spacing:.1em; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 4px; }
+
+  /* unset constraint card */
+  .setnext{ margin:0 16px 14px; border:1.5px dashed #33414f; border-radius:14px; padding:14px 14px; background:rgba(255,255,255,.015); }
+  .setnext .h{ display:flex; align-items:center; justify-content:space-between; }
+  .setnext .lab{ font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; color:var(--faint); text-transform:uppercase; }
+  .setnext .val{ font-family:var(--cond); font-weight:700; font-size:1.12rem; color:var(--ink); margin-top:2px; }
+  .setnext .opt{ font-family:var(--mono); font-size:.6rem; color:var(--faint); letter-spacing:.1em; }
+  .setnext .hint{ margin:8px 0 0; font-size:.8rem; color:var(--dim); }
+  .setnext .add{ margin-top:11px; display:inline-flex; align-items:center; gap:7px; background:var(--amber); color:#15212c; font-weight:700; font-size:.82rem; border:none; border-radius:9px; padding:8px 13px; }
+
+  .seclab{ font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); padding:4px 18px 8px; display:flex; justify-content:space-between; align-items:baseline; }
+  .seclab .cnt{ color:var(--dim); }
+
+  /* feed row (boarding pass) */
+  .row{ position:relative; margin:0 16px 11px; background:var(--row); border:1px solid var(--line); border-radius:13px; padding:13px 14px; overflow:hidden; }
+  .row::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; }
+  .row.go::before{ background:var(--go); } .row.tight::before{ background:var(--tight); } .row.miss::before{ background:var(--miss); }
+  .rtop{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:7px; }
+  .stat{ font-family:var(--mono); font-size:.58rem; font-weight:500; letter-spacing:.1em; padding:3px 8px; border-radius:999px; display:inline-flex; align-items:center; gap:6px; }
+  .stat i{ width:7px; height:7px; border-radius:50%; }
+  .stat.go{ color:var(--go); background:rgba(57,224,139,.1); } .stat.go i{ background:var(--go); }
+  .stat.tight{ color:var(--tight); background:rgba(255,178,46,.1); } .stat.tight i{ background:var(--tight); }
+  .stat.miss{ color:var(--miss); background:rgba(255,107,107,.1); } .stat.miss i{ background:var(--miss); }
+  .gtag{ font-family:var(--mono); font-size:.56rem; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; }
+  .ttl{ font-family:var(--cond); font-weight:700; font-size:1.16rem; line-height:1.12; margin:0 0 3px; }
+  .gate{ font-size:.78rem; color:var(--dim); margin:0 0 9px; }
+  .metrics{ display:grid; grid-template-columns:1.3fr .9fr .8fr; gap:6px; border-top:1px solid var(--line2); padding-top:8px; }
+  .metrics .m .k{ font-family:var(--mono); font-size:.52rem; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; }
+  .metrics .m .v{ font-family:var(--mono); font-size:.82rem; color:var(--ink); margin-top:2px; }
+  .metrics .m .v.go{ color:var(--go); } .metrics .m .v.tight{ color:var(--tight); }
+  .slackline{ margin-top:9px; font-size:.78rem; }
+  .slackline.go{ color:var(--go); } .slackline.tight{ color:var(--tight); }
+  .slackline .sub{ display:block; color:var(--faint); font-family:var(--mono); font-size:.66rem; margin-top:2px; }
+  .walkglyph{ width:12px; height:12px; vertical-align:-1px; }
+
+  /* ---- overlay sheet (constraint steps) ---- */
+  .dim{ position:absolute; inset:0; background:rgba(4,7,11,.55); backdrop-filter:blur(1.5px); }
+  .sheet{ position:absolute; left:0; right:0; bottom:0; background:#0f1721; border-top:1px solid var(--line); border-radius:22px 22px 0 0; padding:8px 16px 18px; }
+  .grab{ width:38px; height:5px; border-radius:99px; background:#2b3744; margin:6px auto 12px; }
+  .sheet h2{ font-family:var(--cond); font-weight:700; font-size:1.2rem; margin:0 0 3px; }
+  .sheet .lede{ font-size:.82rem; color:var(--dim); margin:0 0 14px; }
+  .seg{ display:flex; gap:6px; background:#0b1219; border:1px solid var(--line); border-radius:11px; padding:4px; margin-bottom:16px; }
+  .seg button{ flex:1; font-family:var(--sans); font-weight:600; font-size:.82rem; color:var(--dim); background:transparent; border:none; border-radius:8px; padding:9px 6px; }
+  .seg button.on{ background:var(--row2); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+  .qlab{ font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin:2px 0 10px; }
+
+  .timegrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:6px; }
+  .tslot{ font-family:var(--mono); font-size:.94rem; text-align:center; padding:12px 4px; border-radius:10px; border:1px solid var(--line); background:var(--row); color:var(--ink); }
+  .tslot.sel{ background:var(--amber); color:#15212c; border-color:var(--amber); font-weight:500; }
+  .tslot.dim{ color:var(--faint); }
+  .micro{ font-family:var(--mono); font-size:.62rem; color:var(--faint); margin:12px 0 0; letter-spacing:.03em; }
+  .cta{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:16px; background:var(--go); color:#05281a; font-weight:700; font-size:.9rem; border:none; border-radius:11px; padding:13px; }
+  .cta.amber{ background:var(--amber); color:#15212c; }
+
+  .search{ display:flex; align-items:center; gap:9px; background:#0b1219; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:12px; color:var(--faint); font-size:.82rem; }
+  .pick{ display:flex; align-items:center; gap:11px; padding:12px 12px; border:1px solid var(--line); border-radius:11px; margin-bottom:8px; background:var(--row); }
+  .pick.sel{ border-color:var(--go); background:rgba(57,224,139,.07); }
+  .radio{ width:18px; height:18px; border-radius:50%; border:2px solid var(--faint); flex:0 0 auto; }
+  .pick.sel .radio{ border-color:var(--go); background:radial-gradient(circle at 50% 50%, var(--go) 0 5px, transparent 6px); }
+  .pick .pt{ font-family:var(--cond); font-weight:700; font-size:1.02rem; line-height:1.1; }
+  .pick .pv{ font-size:.76rem; color:var(--dim); }
+  .pick .pg{ font-family:var(--mono); font-size:.54rem; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; margin-top:3px; }
+  .pickfoot{ margin-top:12px; display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:13px; border-top:1px dashed var(--line); }
+  .pickfoot .tx{ font-size:.8rem; color:var(--dim); }
+  .pickfoot .tx b{ color:var(--ink); }
+  .linkish{ font-family:var(--mono); font-size:.66rem; color:var(--amber); letter-spacing:.06em; }
+
+  /* ---- plan header (frames 4 & 5) ---- */
+  .planhdr{ margin:2px 16px 12px; background:linear-gradient(180deg,#101a24,#0d151d); border:1px solid var(--line); border-radius:13px; padding:11px 13px; }
+  .planhdr .mini{ display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:.66rem; color:var(--dim); }
+  .planhdr .mini .nowdot{ width:8px; height:8px; border-radius:50%; background:var(--go); flex:0 0 auto; }
+  .planhdr .mini .arrow{ flex:1; height:0; border-top:1.5px dashed #33414f; }
+  .planhdr .mini .end{ width:8px; height:8px; border-radius:50%; border:2px solid var(--amber); flex:0 0 auto; }
+  .planhdr .dest{ margin-top:8px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .planhdr .dest .d1{ font-family:var(--cond); font-weight:700; font-size:1.02rem; }
+  .planhdr .dest .d2{ font-size:.74rem; color:var(--dim); }
+  .planhdr .edit{ font-family:var(--mono); font-size:.6rem; color:var(--amber); border:1px solid var(--line); border-radius:7px; padding:4px 8px; letter-spacing:.08em; }
+
+  .resulthd{ padding:4px 18px 10px; }
+  .resulthd .big{ font-family:var(--cond); font-weight:700; font-size:1.18rem; }
+  .resulthd .big b{ color:var(--go); }
+  .resulthd .sub{ font-size:.78rem; color:var(--dim); margin-top:2px; }
+  .controls{ display:flex; gap:8px; padding:0 16px 12px; flex-wrap:wrap; align-items:center; }
+  .sortbtn{ font-family:var(--mono); font-size:.66rem; color:var(--ink); background:var(--row); border:1px solid var(--line); border-radius:8px; padding:7px 10px; letter-spacing:.04em; }
+  .gchips{ display:flex; gap:6px; flex-wrap:wrap; }
+  .gc{ font-size:.72rem; font-weight:600; border-radius:999px; padding:5px 10px; border:1px solid var(--line); color:var(--dim); background:transparent; }
+  .gc.on{ background:rgba(57,224,139,.12); color:var(--go); border-color:rgba(57,224,139,.4); }
+  .gc.add{ color:var(--faint); }
+
+  .tgroup{ font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; color:var(--amber); text-transform:uppercase; padding:8px 18px 8px; display:flex; align-items:center; gap:10px; }
+  .tgroup .ln{ flex:1; height:0; border-top:1px solid var(--line2); }
+  .crow{ display:flex; align-items:center; gap:11px; margin:0 16px 8px; background:var(--row); border:1px solid var(--line); border-radius:11px; padding:10px 12px; }
+  .crow::before{ content:""; width:4px; align-self:stretch; border-radius:4px; background:var(--go); margin:-10px 0 -10px -12px; }
+  .crow .cc{ flex:1; min-width:0; }
+  .crow .ct{ font-family:var(--cond); font-weight:700; font-size:1rem; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .crow .cv{ font-size:.73rem; color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .crow .cr{ text-align:right; flex:0 0 auto; }
+  .crow .cr .cw{ font-family:var(--mono); font-size:.74rem; color:var(--ink); }
+  .crow .cr .cs{ font-family:var(--mono); font-size:.58rem; color:var(--go); }
+  .morerow{ margin:0 16px 8px; text-align:center; font-family:var(--mono); font-size:.66rem; color:var(--amber); border:1px dashed var(--line); border-radius:10px; padding:9px; letter-spacing:.05em; }
+  .tapfoot{ position:sticky; bottom:0; background:linear-gradient(180deg,rgba(12,17,24,0),var(--board) 40%); padding:14px 16px 16px; text-align:center; font-size:.76rem; color:var(--faint); }
+
+  /* ---- plan (frame 5) ---- */
+  .planwrap{ padding:6px 18px 18px; }
+  .ptitle{ font-family:var(--cond); font-weight:700; font-size:1.24rem; margin:6px 0 2px; }
+  .psub{ font-size:.8rem; color:var(--dim); margin:0 0 16px; }
+  .tl{ position:relative; margin:0 0 8px; padding-left:8px; }
+  .tlnode{ position:relative; padding:0 0 4px 26px; }
+  .tlnode::before{ content:""; position:absolute; left:0; top:3px; width:15px; height:15px; border-radius:50%; }
+  .tlnode.you::before{ background:var(--go); box-shadow:0 0 0 4px rgba(57,224,139,.16); }
+  .tlnode.stop::before{ background:var(--amber); box-shadow:0 0 0 4px rgba(244,208,137,.14); }
+  .tlnode.dest::before{ background:transparent; border:3px solid var(--violet); }
+  .tlleg{ position:relative; margin:4px 0 4px 7px; padding:8px 0 8px 19px; border-left:2px dashed #33414f; }
+  .tlleg .lg{ font-family:var(--mono); font-size:.7rem; color:var(--dim); display:flex; align-items:center; gap:7px; }
+  .nodetime{ font-family:var(--mono); font-size:.74rem; color:var(--amber); }
+  .nodettl{ font-family:var(--cond); font-weight:700; font-size:1.08rem; line-height:1.12; margin:1px 0 1px; }
+  .nodesub{ font-size:.76rem; color:var(--dim); }
+  .nodechip{ display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-family:var(--mono); font-size:.6rem; letter-spacing:.06em; padding:3px 9px; border-radius:999px; }
+  .nodechip.go{ color:var(--go); background:rgba(57,224,139,.1); }
+  .nodechip.dest{ color:var(--violet); background:rgba(182,156,240,.12); }
+  .actions{ margin-top:18px; display:flex; flex-direction:column; gap:10px; }
+  .btn{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%; border-radius:12px; padding:14px; font-weight:700; font-size:.92rem; border:none; }
+  .btn.buy{ background:var(--go); color:#04281a; }
+  .btn.buy .small{ font-family:var(--mono); font-weight:400; font-size:.64rem; opacity:.8; }
+  .btn.maps{ background:transparent; color:var(--ink); border:1.5px solid var(--line); }
+  .finehint{ margin:12px 2px 0; font-size:.72rem; color:var(--faint); line-height:1.45; }
+
+  footer{ margin-top:40px; color:#5b6873; font-size:.85rem; text-align:center; }
+  footer a{ color:var(--pink); }
+  .legendbar{ display:flex; gap:16px; flex-wrap:wrap; margin:22px 0 0; font-size:.82rem; color:#4b5763; }
+  .legendbar b{ color:#1a212a; }
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="lead">
+    <p class="kick">Fringe Discover · flow storyboard</p>
+    <h1>The same app, walked through one real session</h1>
+    <p>Not five designs — <b>five stages of one journey</b>. A visitor opens the app cold, sets their next commitment the way the product actually works (pick a <em>time</em>, then pick the <em>show</em> we know starts then — no address typing), browses the many things that fit the gap, and commits to a plan with a ticket and directions.</p>
+    <p class="note">Themed here as the <b>Departure Board</b> (concept A) so we have a concrete skin to react to — but what I'm asking you to approve is the <b>format</b>: this sequence of stages. Once it's right, I'll re-skin it across the other themes.</p>
+    <div class="scenario" aria-label="The session this storyboard follows">
+      <span>🕒 Now <b>15:44</b>, Fri 14 Aug</span>
+      <span>📍 <b>Bristo Square</b></span>
+      <span>🎭 Default taste: Comedy</span>
+      <span>🚶 Default travel: walking ≤10 min</span>
+      <span>➡ Next commitment: <b>set during the flow</b></span>
+    </div>
+  </section>
+
+  <div class="rail">
+
+    <!-- ============== STAGE 1 — COLD START ============== -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">1</span><span class="t">Cold start — zero input</span>
+        <span class="s">Opens roughly where you are on the app's <b>defaults</b> (Comedy, walking ≤10 min) with <b>no commitment set yet</b>. Pure serendipity: what can I catch right now? Nothing has been chosen.</span></figcaption>
+      <div class="phone"><div class="screen scroll">
+        <div class="appbar"><div class="brand"><span class="fd">Fringe</span> Discover</div><div class="live"><i></i>LIVE BOARD</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>now</span><span class="sep">·</span><span>📍 Bristo Square</span></div>
+        <div class="filters">
+          <span class="fchip default"><span class="lab">Taste</span> Comedy <span class="car">▾</span></span>
+          <span class="fchip default"><span class="lab">Travel</span> Walk ≤10 min <span class="car">▾</span></span>
+        </div>
+        <div class="setnext">
+          <div class="h"><span class="lab">Where next?</span><span class="opt">OPTIONAL</span></div>
+          <div class="val">Not set</div>
+          <p class="hint">Got a show or a table booked later? Add it and we'll only show what you can squeeze in <em>and still make it</em>.</p>
+          <button class="add">＋ Set my next commitment</button>
+        </div>
+        <div class="seclab"><span>Happening now · near you</span><span class="cnt">4 catchable</span></div>
+        <div class="scrollarea">
+          <div class="row go">
+            <div class="rtop"><span class="stat go"><i></i>GO NOW</span><span class="gtag">Comedy</span></div>
+            <p class="ttl">Absolute Monopoly</p><p class="gate">Assembly George Square — Studios</p>
+            <div class="metrics"><div class="m"><div class="k">Starts in</div><div class="v go">16 min</div></div><div class="m"><div class="k">Walk</div><div class="v">6 min</div></div><div class="m"><div class="k">Ticket</div><div class="v">Paid</div></div></div>
+          </div>
+          <div class="row go">
+            <div class="rtop"><span class="stat go"><i></i>GO NOW</span><span class="gtag">Comedy</span></div>
+            <p class="ttl">Harry Stachini: Lobster</p><p class="gate">Hoots @ The Apex</p>
+            <div class="metrics"><div class="m"><div class="k">Starts in</div><div class="v go">16 min</div></div><div class="m"><div class="k">Walk</div><div class="v">8 min</div></div><div class="m"><div class="k">Ticket</div><div class="v">Paid</div></div></div>
+          </div>
+          <div class="row tight">
+            <div class="rtop"><span class="stat tight"><i></i>RUNNING · SLIP IN</span><span class="gtag">Comedy</span></div>
+            <p class="ttl">Garrett Millerick: We Tried It Your Way</p><p class="gate">Pleasance Courtyard</p>
+            <div class="metrics"><div class="m"><div class="k">Started</div><div class="v tight">9 min ago</div></div><div class="m"><div class="k">Walk</div><div class="v">7 min</div></div><div class="m"><div class="k">Ticket</div><div class="v">Paid</div></div></div>
+          </div>
+          <div class="row tight">
+            <div class="rtop"><span class="stat tight"><i></i>RUNNING · SLIP IN</span><span class="gtag">Comedy</span></div>
+            <p class="ttl">Eva Peroni: Jungled</p><p class="gate">Gilded Balloon Teviot</p>
+            <div class="metrics"><div class="m"><div class="k">Started</div><div class="v tight">4 min ago</div></div><div class="m"><div class="k">Walk</div><div class="v">9 min</div></div><div class="m"><div class="k">Ticket</div><div class="v">Paid</div></div></div>
+          </div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============== STAGE 2 — SET CONSTRAINT: TIME ============== -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">2</span><span class="t">Set your next thing — the time</span>
+        <span class="s">Your next stop is usually <b>another show</b>. Rather than ask you to type a venue, we ask <b>when it starts</b> — we already know the rest. (Times under 40 min away are hidden; you couldn't act on them.)</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="fd">Fringe</span> Discover</div><div class="live"><i></i>LIVE BOARD</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>now</span><span class="sep">·</span><span>📍 Bristo Square</span></div>
+        <div style="flex:1"></div>
+        <div class="dim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>Where do you need to be next?</h2>
+          <p class="lede">We'll keep only the shows you can fit in before it — with time to spare.</p>
+          <div class="seg"><button class="on">🎭 Another show</button><button>📍 Somewhere else</button></div>
+          <p class="qlab">What time does it start?</p>
+          <div class="timegrid">
+            <span class="tslot">16:30</span><span class="tslot">17:00</span><span class="tslot">17:30</span><span class="tslot">18:00</span>
+            <span class="tslot sel">18:30</span><span class="tslot">19:00</span><span class="tslot">19:30</span><span class="tslot">20:00</span>
+          </div>
+          <p class="micro">Only start times ≥ 40 min from now — enough to actually make it.</p>
+          <button class="cta">Pick from 18:30 shows →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============== STAGE 3 — SET CONSTRAINT: SHOW ============== -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">3</span><span class="t">…then the show (no typing)</span>
+        <span class="s">We list the shows we know start at 18:30. Pick one and we've got your <b>destination — its venue</b>, automatically. Any genre (this is where you're <em>headed</em>, not what we're filtering). Not a show? Type a place instead.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="fd">Fringe</span> Discover</div><div class="live"><i></i>LIVE BOARD</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>now</span><span class="sep">·</span><span>📍 Bristo Square</span></div>
+        <div style="flex:1"></div>
+        <div class="dim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>← Starts 18:30 · which one?</h2>
+          <p class="lede">23 shows start at 18:30. Filter, or just pick.</p>
+          <div class="search">🔍 Filter 18:30 shows…</div>
+          <div class="pick sel"><span class="radio"></span><div class="cc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><div class="pg">Comedy</div></div></div>
+          <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><div class="pg">Cabaret &amp; Variety</div></div></div>
+          <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><div class="pg">Theatre</div></div></div>
+          <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">Best of Cabaret 2026</div><div class="pv">Just the Tonic at The Caves</div><div class="pg">Cabaret &amp; Variety</div></div></div>
+          <div class="pickfoot"><span class="tx">Not a show? <b>Type where you need to be</b> — a restaurant, a train…</span><span class="linkish">TYPE ▾</span></div>
+          <button class="cta">Use Ahir Shah: Golden →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============== STAGE 4 — MANY SHOWS THAT FIT ============== -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">4</span><span class="t">Everything that fits the gap</span>
+        <span class="s">With 18:30 locked, the board re-fills with every show you could catch <em>and</em> still make it — often <b>20+</b>. Handled by a live <b>count</b>, <b>sort</b>, genre <b>broaden</b> chips, and <b>grouping by start time</b> so a long list stays scannable.</span></figcaption>
+      <div class="phone"><div class="screen scroll">
+        <div class="appbar"><div class="brand"><span class="fd">Fringe</span> Discover</div><div class="live"><i></i>LIVE BOARD</div></div>
+        <div class="planhdr">
+          <div class="mini"><span class="nowdot"></span><span>15:44 · YOU</span><span class="arrow"></span><span>18:30</span><span class="end"></span></div>
+          <div class="dest"><div><div class="d1">Ahir Shah: Golden</div><div class="d2">Pleasance Courtyard · your 18:30</div></div><span class="edit">EDIT</span></div>
+        </div>
+        <div class="resulthd"><div class="big"><b>26</b> comedy shows fit your gap</div><div class="sub">Reach it, watch it, still make your 18:30.</div></div>
+        <div class="controls">
+          <span class="sortbtn">↑ Soonest first ▾</span>
+          <span class="gchips"><span class="gc on">Comedy ✓</span><span class="gc add">＋ Cabaret</span><span class="gc add">＋ Theatre</span></span>
+        </div>
+        <div class="scrollarea">
+          <div class="tgroup"><span>Starting 16:00</span><span class="ln"></span></div>
+          <div class="crow"><div class="cc"><div class="ct">Absolute Monopoly</div><div class="cv">Assembly George Square — Studios</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 min spare</div></div></div>
+          <div class="crow"><div class="cc"><div class="ct">Harry Stachini: Lobster</div><div class="cv">Hoots @ The Apex</div></div><div class="cr"><div class="cw">🚶 8 min</div><div class="cs">+51 min spare</div></div></div>
+          <div class="tgroup"><span>Starting 16:30</span><span class="ln"></span></div>
+          <div class="crow"><div class="cc"><div class="ct">Eli Matthewson: Blood Bender</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 min spare</div></div></div>
+          <div class="crow"><div class="cc"><div class="ct">Sam Morrison: DUCK</div><div class="cv">Gilded Balloon Teviot</div></div><div class="cr"><div class="cw">🚶 9 min</div><div class="cs">+47 min spare</div></div></div>
+          <div class="crow"><div class="cc"><div class="ct">Amy Annette: Say What You Like</div><div class="cv">Pleasance Dome</div></div><div class="cr"><div class="cw">🚶 7 min</div><div class="cs">+51 min spare</div></div></div>
+          <div class="morerow">＋ 8 more starting 16:30 ▾</div>
+          <div class="tgroup"><span>Starting 17:00</span><span class="ln"></span></div>
+          <div class="crow"><div class="cc"><div class="ct">The Stand's Pick of the Fringe</div><div class="cv">The Stand Comedy Club 3 &amp; 4</div></div><div class="cr"><div class="cw">🚶 10 min</div><div class="cs">+23 min spare</div></div></div>
+          <div class="morerow">＋ 11 more at 17:00 · scroll for later ▾</div>
+          <div class="tapfoot">Tap any show to build the plan →</div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============== STAGE 5 — THE PLAN ============== -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">5</span><span class="t">One tap → a plan you can trust</span>
+        <span class="s">Pick one and it becomes a two-leg plan with the cushion at every hop — plus the <b>buy-ahead</b> button (locks your seat, skips the box-office queue ~5 min) and a one-tap <b>Open in Google Maps</b> for the whole route.</span></figcaption>
+      <div class="phone"><div class="screen scroll">
+        <div class="appbar"><div class="brand"><span class="fd">Fringe</span> Discover</div><div class="live"><i></i>LIVE BOARD</div></div>
+        <div class="scrollarea">
+        <div class="planwrap">
+          <div class="ptitle">Your plan</div>
+          <p class="psub">Catch one show, then stroll to your 18:30 — proven to fit.</p>
+          <div class="tl">
+            <div class="tlnode you">
+              <div class="nodetime">15:44 · now</div>
+              <div class="nodettl">You — Bristo Square</div>
+              <div class="nodesub">on foot</div>
+            </div>
+            <div class="tlleg"><span class="lg">🚶 6 min walk · leave by ~16:24</span></div>
+            <div class="tlnode stop">
+              <div class="nodetime">16:30 – 17:30</div>
+              <div class="nodettl">Eli Matthewson: Blood Bender</div>
+              <div class="nodesub">Assembly George Square · Comedy</div>
+              <span class="nodechip go">✓ GO · arrive with time to spare</span>
+            </div>
+            <div class="tlleg"><span class="lg">🚶 7 min walk · ends 17:30 → 17:37</span></div>
+            <div class="tlnode dest">
+              <div class="nodetime">18:30</div>
+              <div class="nodettl">Ahir Shah: Golden</div>
+              <div class="nodesub">Pleasance Courtyard · your next commitment</div>
+              <span class="nodechip dest">53 min to spare before it starts</span>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn buy">🎟 Buy ahead for Blood Bender <span class="small">· skip the queue, ~5 min</span></button>
+            <button class="btn maps">📍 Open route in Google Maps</button>
+          </div>
+          <p class="finehint">Buying ahead on edfringe.com locks your seat and skips the on-site box-office queue — worth ~5 minutes when a plan is tight. Google Maps opens directions through both stops in your travel mode.</p>
+        </div>
+        </div>
+      </div></div>
+    </figure>
+
+  </div>
+
+  <div class="legendbar">
+    <span><b>Reachability:</b> green = go now · amber = running, slip in late · (out-of-reach simply never appears).</span>
+    <span><b>Honest data:</b> free vs paid only — no invented prices or live seat counts.</span>
+  </div>
+
+  <footer>
+    One theme, five stages — <a href="index.html">back to the four themes</a>. · Fringe Discover · flow storyboard (concept mockup)
+  </footer>
+</main>
+</body>
+</html>
