@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EdFringeNow — the flow, stage by stage (Map-first)</title>
+<meta name="description" content="The five stages of an EdFringeNow session in a dark, map-first ride-hail style: cold open over the map, set the next-show constraint (time then show), see every show that fits the gap as pins, and commit to a two-leg plan with a ticket and directions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     EdFringeNow — flow storyboard · "MAP-FIRST" theme
+     Dark ride-hail / Citymapper energy. A stylised abstract
+     Edinburgh map is the primary surface in every stage,
+     hand-built in inline SVG (designed once, reused x5).
+     Light storyboard page · horizontal rail of 5 phone frames.
+     Core look renders with zero JavaScript.
+     ============================================================ */
+  :root{
+    /* page chrome (light storyboard) */
+    --page:#0f1115;            /* deep slate page so dark frames sit on a calm field */
+    --page-ink:#e8ebf0;
+    --page-dim:#9aa4b2;
+    --page-faint:#6b7585;
+    --page-card:#161a21;
+    --page-line:#262c36;
+
+    /* the map surface (dark) */
+    --map-0:#11161f;           /* land base top */
+    --map-1:#0c1018;           /* land base bottom */
+    --block:#1a212c;           /* building blocks */
+    --block-2:#202836;
+    --park:#16271f;            /* the Meadows green, muted */
+    --park-edge:#1f3a2c;
+    --water:#152433;           /* sliver of water */
+    --road:#222b38;            /* pale-on-dark streets */
+    --road-2:#2c3747;
+
+    /* dark floating UI */
+    --sheet:#161b24;
+    --sheet-2:#1b212c;
+    --ink:#eef2f7;
+    --dim:#9fabbb;             /* AA on sheet */
+    --faint:#74808f;
+    --line:#283040;
+    --line-2:#1f2632;
+
+    /* one accent colour family (cyan-teal) */
+    --acc:#34e0c8;
+    --acc-deep:#13b69e;
+    --acc-ink:#0a1512;         /* text on accent */
+    --acc-soft:rgba(52,224,200,.13);
+
+    /* reachability (calm, never garish) */
+    --go:#3ecf8e;              /* go / reachable */
+    --go-soft:rgba(62,207,142,.14);
+    --tight:#e0a64e;           /* tight */
+    --tight-soft:rgba(224,166,78,.15);
+    --out:#5d6675;             /* out of reach (faint grey) */
+
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --disp:"Sora",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+
+    --shadow-soft:0 1px 2px rgba(0,0,0,.4), 0 8px 22px rgba(0,0,0,.34);
+    --shadow-lift:0 2px 8px rgba(0,0,0,.4), 0 22px 50px rgba(0,0,0,.5);
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 20% -5%, #161c27 0%, transparent 60%),
+      var(--page);
+    color:var(--page-ink); font-family:var(--sans); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ max-width:1320px; margin:0 auto; padding:40px 22px 72px; }
+
+  /* ---- intro ---- */
+  .lead .kick{ font-family:var(--mono); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--acc); margin:0 0 12px; }
+  .lead h1{ font-family:var(--disp); font-weight:700; font-size:clamp(1.9rem,4.6vw,2.7rem); letter-spacing:-.01em; margin:0 0 12px; line-height:1.04; }
+  .lead p{ max-width:72ch; margin:0 0 7px; color:var(--page-dim); font-size:1.02rem; }
+  .lead .note{ font-size:.9rem; color:var(--page-faint); }
+  .lead .note b{ color:var(--page-ink); }
+  .scenario{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 4px; }
+  .scenario span{ background:var(--page-card); border:1px solid var(--page-line); border-radius:999px; padding:7px 13px; font-size:.82rem; font-weight:600; }
+  .scenario b{ color:var(--acc); }
+
+  /* ---- rail ---- */
+  .rail{ display:flex; gap:30px; margin-top:30px; overflow-x:auto; padding-bottom:18px; scroll-snap-type:x mandatory; }
+  .stage{ margin:0; flex:0 0 auto; width:360px; scroll-snap-align:start; }
+  @media (max-width:820px){ .rail{ flex-direction:column; align-items:center; overflow:visible; } .stage{ width:100%; max-width:380px; } }
+
+  .cap{ margin:0 0 14px; }
+  .cap .num{ display:inline-grid; place-items:center; width:26px; height:26px; border-radius:8px; background:var(--acc); color:var(--acc-ink); font-family:var(--mono); font-weight:600; font-size:.82rem; vertical-align:middle; }
+  .cap .t{ font-family:var(--disp); font-weight:700; font-size:1.1rem; margin-left:9px; letter-spacing:-.01em; }
+  .cap .s{ display:block; margin-top:7px; color:var(--page-dim); font-size:.87rem; }
+  .cap .s b{ color:var(--page-ink); }
+
+  /* ---- phone ---- */
+  .phone{ background:#05070b; border-radius:40px; padding:9px; box-shadow:0 28px 60px rgba(0,0,0,.5), 0 4px 14px rgba(0,0,0,.4); }
+  .screen{ position:relative; background:var(--map-1); border-radius:31px; overflow:hidden; color:var(--ink); height:720px; }
+
+  /* ============================================================
+     THE MAP  — full bleed, hand-built inline SVG, renders offline.
+     Designed once; the same geometry/pins appear in every frame.
+     ============================================================ */
+  .map{ position:absolute; inset:0; z-index:0; }
+  .map svg{ width:100%; height:100%; display:block; }
+
+  /* you-are-here pulse */
+  @keyframes pulse{ 0%{ r:13; opacity:.5; } 70%{ r:46; opacity:0; } 100%{ r:46; opacity:0; } }
+  .pulse-ring{ animation:pulse 3.6s ease-out infinite; }
+  /* dashed onward-leg flow */
+  @keyframes flow{ to{ stroke-dashoffset:-40; } }
+  .leg-dash{ stroke-dasharray:6 7; animation:flow 2s linear infinite; }
+  @media (prefers-reduced-motion:reduce){
+    .pulse-ring{ animation:none; opacity:.2; r:30; }
+    .leg-dash{ animation:none; }
+  }
+
+  /* map text styles */
+  .m-place{ font-family:var(--sans); font-size:8.5px; font-weight:700; letter-spacing:.12em; fill:#3c4a5e; }
+  .m-name{ font-family:var(--sans); font-size:8.5px; font-weight:700; }
+  .m-leg{ font-family:var(--mono); font-size:8px; font-weight:600; fill:#fff; }
+  .m-ring{ font-family:var(--mono); font-size:7.5px; font-weight:600; letter-spacing:.1em; }
+
+  /* ============================================================
+     FLOATING UI — shared
+     ============================================================ */
+  .topbar{ position:absolute; top:0; left:0; right:0; z-index:30;
+    display:flex; align-items:flex-start; justify-content:space-between; gap:8px; padding:14px 14px 0; pointer-events:none; }
+  .glass{ background:rgba(20,25,34,.74); backdrop-filter:blur(13px); -webkit-backdrop-filter:blur(13px);
+    border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow-soft); }
+  .pill{ display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:8px 13px; font-size:.78rem; font-weight:600; }
+  .pill .dot-now{ width:8px; height:8px; border-radius:50%; background:var(--go); box-shadow:0 0 0 4px var(--go-soft); }
+  .pill .brand{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; }
+  .pill .brand .nw{ color:var(--acc); }
+  .pill .sep{ color:var(--faint); font-weight:400; }
+  .pill .muted{ color:var(--dim); font-weight:500; }
+  .tools{ display:flex; flex-direction:column; gap:8px; pointer-events:auto; }
+  .tool{ width:38px; height:38px; border-radius:12px; display:grid; place-items:center; color:var(--ink); }
+  .tool.locate{ color:var(--acc); }
+  .tool svg{ width:18px; height:18px; }
+
+  /* map legend chip-row, sits just under topbar */
+  .legend{ position:absolute; z-index:30; left:14px; top:54px; display:flex; gap:6px; pointer-events:none; }
+  .lchip{ display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:4px 9px; font-size:.66rem; font-weight:600; color:var(--ink); }
+  .lchip i{ width:8px; height:8px; border-radius:50%; }
+  .lchip i.go{ background:var(--go); }
+  .lchip i.tight{ background:var(--tight); }
+  .lchip i.out{ background:transparent; border:1.5px solid var(--out); }
+
+  /* ============================================================
+     BOTTOM SHEET (dark, floating, partially expanded)
+     ============================================================ */
+  .sheet{ position:absolute; left:0; right:0; bottom:0; z-index:40;
+    background:linear-gradient(180deg,var(--sheet),var(--sheet-2));
+    border-top:1px solid rgba(255,255,255,.06);
+    border-radius:26px 26px 0 0; box-shadow:var(--shadow-lift);
+    display:flex; flex-direction:column; overflow:hidden; }
+  .grab{ width:38px; height:5px; border-radius:99px; background:#33404f; margin:9px auto 6px; flex:0 0 auto; }
+  .dim{ position:absolute; inset:0; z-index:35; background:rgba(5,8,12,.5); }
+
+  /* STAGE 1 — primary CTA leads */
+  .cta-hero{ margin:8px 16px 6px; padding:16px 15px 15px; border-radius:18px;
+    background:linear-gradient(180deg,rgba(52,224,200,.10),rgba(52,224,200,.03));
+    border:1px solid rgba(52,224,200,.34); }
+  .cta-hero .lab{ font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--acc-deep); }
+  .cta-hero h2{ font-family:var(--disp); font-weight:700; font-size:1.34rem; line-height:1.08; margin:6px 0 5px; color:var(--ink); letter-spacing:-.01em; }
+  .cta-hero p{ margin:0 0 13px; font-size:.82rem; color:var(--dim); }
+  .cta-primary{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%;
+    background:var(--acc); color:var(--acc-ink); font-family:var(--sans); font-weight:700; font-size:.98rem;
+    border:none; border-radius:13px; padding:14px; box-shadow:0 10px 26px rgba(52,224,200,.34); cursor:pointer; }
+  .cta-primary svg{ width:18px; height:18px; }
+
+  .quietlab{ display:flex; align-items:center; gap:8px; padding:12px 18px 8px; font-family:var(--mono);
+    font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+  .quietlab .ln{ flex:1; height:0; border-top:1px solid var(--line-2); }
+  .filters{ display:flex; gap:8px; padding:0 16px 10px; flex-wrap:wrap; }
+  .fchip{ display:inline-flex; align-items:center; gap:7px; background:var(--sheet-2); border:1px solid var(--line); border-radius:999px; padding:6px 11px; font-size:.76rem; font-weight:600; color:var(--dim); }
+  .fchip .k{ font-family:var(--mono); font-size:.54rem; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; }
+  .fchip .car{ color:var(--faint); font-size:.66rem; }
+
+  .qlist{ overflow-y:auto; padding:0 16px 14px; }
+  .qlist::-webkit-scrollbar{ width:0; }
+  .qrow{ display:flex; align-items:center; gap:11px; padding:10px 12px; margin-bottom:8px;
+    background:rgba(255,255,255,.018); border:1px solid var(--line-2); border-radius:13px; }
+  .qrow .qdot{ width:8px; height:8px; border-radius:50%; flex:0 0 auto; }
+  .qrow .qdot.go{ background:var(--go); } .qrow .qdot.tight{ background:var(--tight); }
+  .qrow .qc{ flex:1; min-width:0; }
+  .qrow .qt{ font-family:var(--disp); font-weight:600; font-size:.98rem; line-height:1.12; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .qrow .qm{ font-family:var(--mono); font-size:.66rem; color:var(--faint); margin-top:2px; }
+  .qrow .qr{ text-align:right; flex:0 0 auto; }
+  .qrow .qstat{ font-family:var(--mono); font-size:.56rem; font-weight:600; letter-spacing:.06em; }
+  .qrow .qstat.go{ color:var(--go); } .qrow .qstat.tight{ color:var(--tight); }
+  .qrow .qg{ font-family:var(--mono); font-size:.54rem; letter-spacing:.08em; color:var(--faint); text-transform:uppercase; margin-top:3px; }
+
+  /* STAGE 2/3 — overlay sheets */
+  .sheet h2.sh{ font-family:var(--disp); font-weight:700; font-size:1.18rem; margin:2px 16px 3px; letter-spacing:-.01em; }
+  .sheet .lede{ font-size:.81rem; color:var(--dim); margin:0 16px 14px; }
+  .seg{ display:flex; gap:6px; margin:0 16px 16px; background:#10151d; border:1px solid var(--line); border-radius:12px; padding:4px; }
+  .seg button{ flex:1; font-family:var(--sans); font-weight:600; font-size:.8rem; color:var(--dim); background:transparent; border:none; border-radius:9px; padding:9px 6px; cursor:pointer; }
+  .seg button.on{ background:var(--sheet-2); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+  .qlab{ font-family:var(--mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin:2px 16px 10px; }
+  .timegrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:0 16px; }
+  .tslot{ font-family:var(--mono); font-size:.92rem; text-align:center; padding:13px 4px; border-radius:11px; border:1px solid var(--line); background:var(--sheet-2); color:var(--ink); }
+  .tslot.sel{ background:var(--acc); color:var(--acc-ink); border-color:var(--acc); font-weight:600; box-shadow:0 8px 20px rgba(52,224,200,.28); }
+  .micro{ font-family:var(--mono); font-size:.62rem; color:var(--faint); margin:12px 16px 0; }
+  .cta{ display:flex; align-items:center; justify-content:center; gap:8px; margin:14px 16px 18px; background:var(--acc); color:var(--acc-ink); font-weight:700; font-size:.9rem; border:none; border-radius:13px; padding:13px; box-shadow:0 10px 24px rgba(52,224,200,.3); cursor:pointer; }
+  .cta.ghost{ background:transparent; color:var(--ink); border:1.5px solid var(--line); box-shadow:none; }
+
+  .search{ display:flex; align-items:center; gap:9px; margin:0 16px 12px; background:#10151d; border:1px solid var(--line); border-radius:11px; padding:10px 12px; color:var(--faint); font-size:.81rem; }
+  .picks{ padding:0 16px; }
+  .pick{ display:flex; align-items:center; gap:11px; padding:11px 12px; border:1px solid var(--line); border-radius:12px; margin-bottom:8px; background:var(--sheet-2); }
+  .pick.sel{ border-color:var(--acc); background:var(--acc-soft); }
+  .radio{ width:18px; height:18px; border-radius:50%; border:2px solid var(--faint); flex:0 0 auto; }
+  .pick.sel .radio{ border-color:var(--acc); background:radial-gradient(circle at 50% 50%, var(--acc) 0 5px, transparent 6px); }
+  .pick .pc{ flex:1; min-width:0; }
+  .pick .pt{ font-family:var(--disp); font-weight:700; font-size:1rem; line-height:1.1; }
+  .pick .pv{ font-size:.74rem; color:var(--dim); margin-top:1px; }
+  .pick .pg{ font-family:var(--mono); font-size:.52rem; letter-spacing:.08em; color:var(--faint); text-transform:uppercase; margin-top:3px; }
+  .pick .ppin{ width:9px; height:9px; border-radius:50%; background:var(--acc); flex:0 0 auto; box-shadow:0 0 0 4px var(--acc-soft); }
+  .pickfoot{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin:3px 16px 0; padding:12px 0 0; border-top:1px dashed var(--line); }
+  .pickfoot .tx{ font-size:.77rem; color:var(--dim); } .pickfoot .tx b{ color:var(--ink); }
+  .linkish{ font-family:var(--mono); font-size:.62rem; color:var(--acc); }
+
+  /* STAGE 4 — plan header + grouped list */
+  .planhdr{ margin:8px 16px 10px; background:linear-gradient(180deg,#19202b,#141a23); border:1px solid var(--line); border-radius:14px; padding:11px 13px; }
+  .planhdr .mini{ display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:.64rem; color:var(--dim); }
+  .planhdr .mini .nd{ width:8px; height:8px; border-radius:50%; background:var(--go); flex:0 0 auto; }
+  .planhdr .mini .arrow{ flex:1; height:0; border-top:1.5px dashed #3a4658; }
+  .planhdr .mini .end{ width:9px; height:9px; border-radius:50%; border:2px solid var(--acc); flex:0 0 auto; }
+  .planhdr .dest{ margin-top:8px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .planhdr .d1{ font-family:var(--disp); font-weight:700; font-size:1rem; }
+  .planhdr .d2{ font-size:.72rem; color:var(--dim); margin-top:1px; }
+  .planhdr .edit{ font-family:var(--mono); font-size:.58rem; color:var(--acc); border:1px solid var(--line); border-radius:8px; padding:5px 9px; }
+
+  .resulthd{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:2px 18px 10px; }
+  .resulthd .big{ font-family:var(--disp); font-weight:700; font-size:1.06rem; }
+  .resulthd .big b{ color:var(--acc); }
+  .resulthd .sortbtn{ font-family:var(--mono); font-size:.62rem; color:var(--ink); background:var(--sheet-2); border:1px solid var(--line); border-radius:9px; padding:7px 9px; white-space:nowrap; }
+  .gchips{ display:flex; gap:6px; padding:0 16px 10px; flex-wrap:wrap; }
+  .gc{ font-size:.72rem; font-weight:600; border-radius:999px; padding:5px 11px; border:1px solid var(--line); color:var(--dim); background:transparent; }
+  .gc.on{ background:var(--sheet-2); color:var(--ink); }
+  .gc.add{ color:var(--faint); }
+
+  .tgroup{ font-family:var(--mono); font-size:.6rem; letter-spacing:.14em; color:var(--acc-deep); text-transform:uppercase; padding:8px 18px 6px; display:flex; align-items:center; gap:10px; }
+  .tgroup .ln{ flex:1; height:0; border-top:1px solid var(--line-2); }
+  .crow{ display:flex; align-items:center; gap:11px; margin:0 16px 8px; background:rgba(255,255,255,.018); border:1px solid var(--line-2); border-radius:12px; padding:10px 12px; }
+  .crow .cdot{ width:8px; height:8px; border-radius:50%; flex:0 0 auto; }
+  .crow .cdot.go{ background:var(--go); } .crow .cdot.tight{ background:var(--tight); }
+  .crow .cc{ flex:1; min-width:0; }
+  .crow .ct{ font-family:var(--disp); font-weight:600; font-size:.96rem; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .crow .cv{ font-size:.72rem; color:var(--faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px; }
+  .crow .cr{ text-align:right; flex:0 0 auto; font-family:var(--mono); }
+  .crow .cw{ font-size:.72rem; color:var(--dim); }
+  .crow .cs{ font-size:.56rem; }
+  .crow .cs.go{ color:var(--go); } .crow .cs.tight{ color:var(--tight); }
+  .morerow{ margin:0 16px 8px; text-align:center; font-family:var(--mono); font-size:.64rem; color:var(--acc-deep); border:1px dashed var(--line); border-radius:11px; padding:9px; }
+  .scrollarea{ overflow-y:auto; }
+  .scrollarea::-webkit-scrollbar{ width:0; }
+  .tapfoot{ position:sticky; bottom:0; background:linear-gradient(180deg,rgba(22,27,36,0),var(--sheet) 55%); padding:12px 16px 14px; text-align:center; font-size:.73rem; color:var(--faint); }
+
+  /* STAGE 5 — plan card */
+  .planwrap{ padding:6px 18px 18px; overflow-y:auto; }
+  .planwrap::-webkit-scrollbar{ width:0; }
+  .ptitle{ font-family:var(--disp); font-weight:700; font-size:1.24rem; margin:4px 0 2px; letter-spacing:-.01em; }
+  .psub{ font-size:.79rem; color:var(--dim); margin:0 0 15px; }
+  .tlnode{ position:relative; padding:0 0 2px 26px; }
+  .tlnode::before{ content:""; position:absolute; left:0; top:3px; width:15px; height:15px; border-radius:50%; }
+  .tlnode.you::before{ background:var(--go); }
+  .tlnode.stop::before{ background:var(--go); }
+  .tlnode.dest::before{ background:transparent; border:3px solid var(--acc); }
+  .tlleg{ margin:4px 0 4px 7px; padding:7px 0 7px 19px; border-left:2px dashed #3a4658; font-family:var(--mono); font-size:.69rem; color:var(--dim); }
+  .nodetime{ font-family:var(--mono); font-size:.7rem; color:var(--acc); }
+  .nodettl{ font-family:var(--disp); font-weight:700; font-size:1.04rem; line-height:1.12; margin:1px 0; }
+  .nodesub{ font-size:.73rem; color:var(--dim); }
+  .nodechip{ display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-family:var(--mono); font-size:.58rem; padding:4px 9px; border-radius:999px; }
+  .nodechip.go{ color:var(--go); background:var(--go-soft); }
+  .nodechip.dest{ color:var(--acc); background:var(--acc-soft); }
+  .actions{ margin-top:18px; display:flex; flex-direction:column; gap:10px; }
+  .btn{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%; border-radius:13px; padding:14px; font-weight:700; font-size:.9rem; border:none; cursor:pointer; }
+  .btn svg{ width:17px; height:17px; }
+  .btn.buy{ background:var(--acc); color:var(--acc-ink); box-shadow:0 10px 24px rgba(52,224,200,.3); }
+  .btn.buy .small{ font-family:var(--mono); font-weight:500; font-size:.6rem; opacity:.72; }
+  .btn.maps{ background:transparent; color:var(--ink); border:1.5px solid var(--line); }
+
+  footer{ margin-top:40px; color:var(--page-faint); font-size:.85rem; text-align:center; }
+  footer a{ color:var(--acc); }
+</style>
+</head>
+<body>
+<!-- Shared SVG defs (gradients + soft drop-shadow), defined once for all five map frames.
+     Self-contained — referenced via url(#id) by every frame; renders offline. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="land1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#11161f"/><stop offset="1" stop-color="#0b0f17"/>
+    </linearGradient>
+    <radialGradient id="ring1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34e0c8" stop-opacity="0"/>
+      <stop offset="72%" stop-color="#34e0c8" stop-opacity="0"/>
+      <stop offset="92%" stop-color="#34e0c8" stop-opacity=".09"/>
+      <stop offset="100%" stop-color="#34e0c8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ps1" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.6" flood-color="#000" flood-opacity=".5"/>
+    </filter>
+  </defs>
+</svg>
+<main class="page">
+  <section class="lead">
+    <p class="kick">EdFringeNow · flow storyboard · map-first</p>
+    <h1>One session, five stages — on the map</h1>
+    <p>The same app from cold open to committed plan, this time on a calm dark map. You set your next stop by <b>time, then show</b> (no address typing), watch the reachable shows light up as pins, and go.</p>
+    <p class="note">Themed <b>Map-first</b> — a ride-hail / Citymapper feel where a stylised Edinburgh map is the surface in every stage. Same approved <b>stage sequence</b> and scenario as the Departure Board; a different skin over the same flow.</p>
+    <div class="scenario" aria-label="The session this follows">
+      <span>🕒 <b>15:44</b>, Fri 14 Aug</span>
+      <span>📍 <b>Bristo Square</b></span>
+      <span>🎭 Default: Comedy</span>
+      <span>🚶 Default: walk ≤10 min</span>
+      <span>🎯 Next: <b>18:30 Ahir Shah</b> · Pleasance Courtyard</span>
+    </div>
+  </section>
+
+  <div class="rail">
+
+    <!-- =================================================================
+         STAGE 1 — COLD START
+         ================================================================= -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">1</span><span class="t">Cold start</span>
+        <span class="s">Full-bleed map; the one real action — <b>set your next commitment</b> — leads the sheet. On-now pins stay calm and don't outshout it.</span></figcaption>
+      <div class="phone"><div class="screen">
+
+        <!-- MAP (defaults: nothing set; on-now venues as calm pins) -->
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 360 720" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="720" fill="url(#land1)"/>
+            <!-- water sliver, top-right -->
+            <path d="M276,-10 L370,-10 L370,150 C338,150 326,86 306,54 C292,32 280,12 276,-10 Z" fill="#152433" opacity=".9"/>
+            <!-- The Meadows park, lower-left -->
+            <path d="M-10,508 L150,486 C176,506 182,560 168,602 L52,660 L-10,648 Z" fill="#16271f" stroke="#1f3a2c" stroke-width="2"/>
+            <g fill="#1f3a2c"><circle cx="38" cy="560" r="5"/><circle cx="74" cy="544" r="4.4"/><circle cx="58" cy="600" r="5"/><circle cx="108" cy="578" r="4.4"/><circle cx="94" cy="616" r="5"/></g>
+            <!-- building blocks -->
+            <g fill="#1a212c">
+              <rect x="34" y="150" width="64" height="50" rx="6"/><rect x="116" y="180" width="48" height="42" rx="6"/>
+              <rect x="58" y="278" width="54" height="56" rx="6"/><rect x="150" y="282" width="74" height="46" rx="6"/>
+              <rect x="246" y="296" width="64" height="60" rx="6"/><rect x="40" y="384" width="58" height="52" rx="6"/>
+              <rect x="276" y="460" width="74" height="64" rx="6"/><rect x="232" y="572" width="62" height="54" rx="6"/>
+            </g>
+            <g fill="#202836">
+              <rect x="168" y="150" width="56" height="42" rx="6"/><rect x="290" y="150" width="60" height="44" rx="6"/>
+              <rect x="118" y="368" width="74" height="58" rx="6"/><rect x="40" y="672" width="80" height="56" rx="6"/>
+            </g>
+            <!-- streets -->
+            <g stroke="#222b38" stroke-width="10" fill="none" stroke-linecap="round">
+              <path d="M-10,232 H370"/><path d="M-10,352 H370"/><path d="M-10,470 H370"/><path d="M-10,648 H370"/>
+              <path d="M112,-10 V740"/><path d="M226,-10 V740"/><path d="M150,408 L300,176"/>
+            </g>
+            <g stroke="#2c3747" stroke-width="4" fill="none" stroke-linecap="round" opacity=".75">
+              <path d="M58,-10 V740"/><path d="M300,-10 V740"/><path d="M-10,172 H370"/><path d="M-10,560 H370"/>
+            </g>
+            <text x="28" y="588" class="m-place" transform="rotate(-6 28 588)">THE MEADOWS</text>
+            <text x="250" y="120" class="m-place">PRINCES ST</text>
+
+            <!-- reachable ring around YOU (default ≤10 min walk) -->
+            <circle cx="180" cy="392" r="138" fill="url(#ring1)"/>
+            <circle cx="180" cy="392" r="138" fill="none" stroke="#34e0c8" stroke-width="1.3" stroke-dasharray="2 7" opacity=".4"/>
+            <g transform="translate(86,512)"><rect x="-4" y="-11" width="118" height="17" rx="8.5" fill="#0c1018" opacity=".7"/><text x="55" y="1.5" text-anchor="middle" class="m-ring" fill="#13b69e">10-MIN WALK · NOW</text></g>
+
+            <!-- ON-NOW pins (calm; small; no labels shouting) — the live shows -->
+            <!-- Assembly George Square (Absolute Monopoly) GO -->
+            <g filter="url(#ps1)"><circle cx="150" cy="448" r="9" fill="#0c1018"/><circle cx="150" cy="448" r="5.4" fill="#3ecf8e"/></g>
+            <g transform="translate(150,470)"><rect x="-44" y="-8.5" width="88" height="15" rx="7.5" fill="#0c1018" opacity=".82"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#7e8b9a">Assembly George Sq</text></g>
+            <!-- Hoots @ The Apex (Harry Stachini) GO -->
+            <g filter="url(#ps1)"><circle cx="212" cy="214" r="9" fill="#0c1018"/><circle cx="212" cy="214" r="5.4" fill="#3ecf8e"/></g>
+            <g transform="translate(212,236)"><rect x="-46" y="-8.5" width="92" height="15" rx="7.5" fill="#0c1018" opacity=".82"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#7e8b9a">Hoots @ The Apex</text></g>
+            <!-- Pleasance Courtyard (Garrett Millerick running) TIGHT -->
+            <g filter="url(#ps1)"><circle cx="266" cy="322" r="9" fill="#0c1018"/><circle cx="266" cy="322" r="5.4" fill="#e0a64e"/></g>
+            <g transform="translate(266,344)"><rect x="-48" y="-8.5" width="96" height="15" rx="7.5" fill="#0c1018" opacity=".82"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#a07c3e">Pleasance Courtyard</text></g>
+            <!-- The Stand (out of taste/reach right now) OUT -->
+            <g opacity=".75"><circle cx="92" cy="172" r="7.5" fill="#0c1018"/><circle cx="92" cy="172" r="6.6" fill="none" stroke="#5d6675" stroke-width="1.6" stroke-dasharray="2.2 2.4"/></g>
+
+            <!-- YOU dot (last, on top) -->
+            <circle class="pulse-ring" cx="180" cy="392" r="13" fill="#3ecf8e"/>
+            <circle cx="180" cy="392" r="12" fill="#fff" filter="url(#ps1)"/>
+            <circle cx="180" cy="392" r="7.5" fill="#0c1018"/><circle cx="180" cy="392" r="3.2" fill="#34e0c8"/>
+            <g transform="translate(180,416)"><rect x="-56" y="-9" width="112" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#dfe6ee">YOU · BRISTO SQUARE</text></g>
+          </svg>
+        </div>
+
+        <!-- top chrome -->
+        <div class="topbar">
+          <div class="glass pill"><span class="dot-now"></span><span class="brand">EdFringe<span class="nw">Now</span></span><span class="sep">·</span><span class="muted">15:44</span></div>
+          <div class="tools">
+            <div class="glass tool" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 6v12M6 12h12"/></svg></div>
+            <div class="glass tool locate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+          </div>
+        </div>
+        <div class="legend">
+          <span class="glass lchip"><i class="go"></i>Go</span>
+          <span class="glass lchip"><i class="tight"></i>Tight</span>
+          <span class="glass lchip"><i class="out"></i>Out</span>
+        </div>
+
+        <!-- bottom sheet: CTA leads -->
+        <section class="sheet" style="height:46%" aria-label="Set your next commitment">
+          <div class="grab"></div>
+          <div class="cta-hero">
+            <span class="lab">Start here</span>
+            <h2>Where do you need<br>to be next?</h2>
+            <p>We'll show only what you can catch before it.</p>
+            <button class="cta-primary">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              Set my next commitment
+            </button>
+          </div>
+          <div class="quietlab"><span>Meanwhile · on now nearby</span><span class="ln"></span></div>
+          <div class="filters">
+            <span class="fchip"><span class="k">Taste</span> Comedy <span class="car">▾</span></span>
+            <span class="fchip"><span class="k">Travel</span> Walk ≤10 min <span class="car">▾</span></span>
+          </div>
+          <div class="qlist">
+            <div class="qrow"><span class="qdot go"></span><div class="qc"><div class="qt">Absolute Monopoly</div><div class="qm">in 16 min · 🚶 6 min · Assembly George Sq</div></div><div class="qr"><div class="qstat go">GO NOW</div><div class="qg">Comedy</div></div></div>
+            <div class="qrow"><span class="qdot go"></span><div class="qc"><div class="qt">Harry Stachini: Lobster</div><div class="qm">in 16 min · 🚶 8 min · Hoots @ The Apex</div></div><div class="qr"><div class="qstat go">GO NOW</div><div class="qg">Comedy</div></div></div>
+            <div class="qrow"><span class="qdot tight"></span><div class="qc"><div class="qt">Garrett Millerick</div><div class="qm">started 9 min ago · 🚶 7 min · Pleasance Courtyard</div></div><div class="qr"><div class="qstat tight">RUNNING</div><div class="qg">Comedy</div></div></div>
+          </div>
+        </section>
+
+      </div></div>
+    </figure>
+
+    <!-- =================================================================
+         STAGE 2 — SET TIME
+         ================================================================= -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">2</span><span class="t">Set it — the time</span>
+        <span class="s">A picker floats over the dimmed map. Your next stop is usually another show — tell us <b>when it starts</b>.</span></figcaption>
+      <div class="phone"><div class="screen">
+
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 360 720" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="720" fill="url(#land1)"/>
+            <path d="M276,-10 L370,-10 L370,150 C338,150 326,86 306,54 C292,32 280,12 276,-10 Z" fill="#152433" opacity=".9"/>
+            <path d="M-10,508 L150,486 C176,506 182,560 168,602 L52,660 L-10,648 Z" fill="#16271f" stroke="#1f3a2c" stroke-width="2"/>
+            <g fill="#1a212c"><rect x="34" y="150" width="64" height="50" rx="6"/><rect x="58" y="278" width="54" height="56" rx="6"/><rect x="150" y="282" width="74" height="46" rx="6"/><rect x="246" y="296" width="64" height="60" rx="6"/><rect x="40" y="384" width="58" height="52" rx="6"/><rect x="276" y="460" width="74" height="64" rx="6"/></g>
+            <g stroke="#222b38" stroke-width="10" fill="none" stroke-linecap="round"><path d="M-10,232 H370"/><path d="M-10,352 H370"/><path d="M-10,470 H370"/><path d="M112,-10 V740"/><path d="M226,-10 V740"/><path d="M150,408 L300,176"/></g>
+            <circle cx="180" cy="320" r="120" fill="url(#ring1)"/>
+            <circle class="pulse-ring" cx="180" cy="320" r="13" fill="#3ecf8e"/>
+            <circle cx="180" cy="320" r="12" fill="#fff" filter="url(#ps1)"/><circle cx="180" cy="320" r="7.5" fill="#0c1018"/><circle cx="180" cy="320" r="3.2" fill="#34e0c8"/>
+          </svg>
+        </div>
+
+        <div class="topbar">
+          <div class="glass pill"><span class="dot-now"></span><span class="brand">EdFringe<span class="nw">Now</span></span><span class="sep">·</span><span class="muted">15:44</span></div>
+        </div>
+
+        <div class="dim"></div>
+        <section class="sheet" style="z-index:40" aria-label="Set the time of your next stop">
+          <div class="grab"></div>
+          <h2 class="sh">Where to next?</h2>
+          <p class="lede">We'll keep only what you can fit in before it.</p>
+          <div class="seg"><button class="on">🎭 Another show</button><button>📍 Somewhere else</button></div>
+          <p class="qlab">What time does it start?</p>
+          <div class="timegrid">
+            <span class="tslot">16:30</span><span class="tslot">17:00</span><span class="tslot">17:30</span><span class="tslot">18:00</span>
+            <span class="tslot sel">18:30</span><span class="tslot">19:00</span><span class="tslot">19:30</span><span class="tslot">20:00</span>
+          </div>
+          <p class="micro">Only times ≥ 40 min away — enough to make it.</p>
+          <button class="cta">See 18:30 shows →</button>
+        </section>
+
+      </div></div>
+    </figure>
+
+    <!-- =================================================================
+         STAGE 3 — PICK SHOW
+         ================================================================= -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">3</span><span class="t">…then the show</span>
+        <span class="s">Candidate 18:30 venues hint as pins behind the sheet. Pick one — its <b>venue becomes your destination</b>. Or type a place.</span></figcaption>
+      <div class="phone"><div class="screen">
+
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 360 720" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="720" fill="url(#land1)"/>
+            <path d="M276,-10 L370,-10 L370,150 C338,150 326,86 306,54 C292,32 280,12 276,-10 Z" fill="#152433" opacity=".9"/>
+            <g fill="#1a212c"><rect x="150" y="282" width="74" height="46" rx="6"/><rect x="246" y="296" width="64" height="60" rx="6"/><rect x="40" y="384" width="58" height="52" rx="6"/></g>
+            <g stroke="#222b38" stroke-width="10" fill="none" stroke-linecap="round"><path d="M-10,232 H370"/><path d="M-10,300 H370"/><path d="M112,-10 V740"/><path d="M226,-10 V740"/><path d="M150,300 L300,140"/></g>
+            <!-- candidate 18:30 venues, hinted as accent pins -->
+            <g filter="url(#ps1)"><circle cx="250" cy="206" r="10" fill="#0c1018"/><circle cx="250" cy="206" r="6" fill="#34e0c8"/></g>
+            <g transform="translate(250,186)"><rect x="-50" y="-9" width="100" height="16" rx="8" fill="#0c1018" opacity=".85"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#34e0c8">Pleasance Courtyard</text></g>
+            <g filter="url(#ps1)"><circle cx="124" cy="246" r="10" fill="#0c1018"/><circle cx="124" cy="246" r="6" fill="#34e0c8"/></g>
+            <g transform="translate(124,226)"><rect x="-50" y="-9" width="100" height="16" rx="8" fill="#0c1018" opacity=".85"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#34e0c8">Assembly George Sq</text></g>
+            <circle class="pulse-ring" cx="180" cy="300" r="13" fill="#3ecf8e"/>
+            <circle cx="180" cy="300" r="12" fill="#fff" filter="url(#ps1)"/><circle cx="180" cy="300" r="7.5" fill="#0c1018"/><circle cx="180" cy="300" r="3.2" fill="#34e0c8"/>
+          </svg>
+        </div>
+
+        <div class="topbar">
+          <div class="glass pill"><span class="dot-now"></span><span class="brand">EdFringe<span class="nw">Now</span></span><span class="sep">·</span><span class="muted">18:30 stop</span></div>
+        </div>
+
+        <div class="dim"></div>
+        <section class="sheet" style="z-index:40" aria-label="Pick the 18:30 show">
+          <div class="grab"></div>
+          <h2 class="sh">← 18:30 · which one?</h2>
+          <p class="lede">23 shows start at 18:30. Its venue is your destination.</p>
+          <div class="search">🔍 Filter…</div>
+          <div class="picks">
+            <div class="pick sel"><span class="radio"></span><div class="pc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><div class="pg">Comedy</div></div><span class="ppin"></span></div>
+            <div class="pick"><span class="radio"></span><div class="pc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><div class="pg">Cabaret &amp; Variety</div></div></div>
+            <div class="pick"><span class="radio"></span><div class="pc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><div class="pg">Theatre</div></div></div>
+          </div>
+          <div class="pickfoot"><span class="tx">Not a show? <b>Type a place</b></span><span class="linkish">TYPE ▾</span></div>
+          <button class="cta">Use Ahir Shah: Golden →</button>
+        </section>
+
+      </div></div>
+    </figure>
+
+    <!-- =================================================================
+         STAGE 4 — WHAT FITS
+         ================================================================= -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">4</span><span class="t">What fits the gap</span>
+        <span class="s">18:30 locked: every catchable show lights up as a calm pin, and the sheet lists them — <b>counted, sorted, grouped by start time</b>.</span></figcaption>
+      <div class="phone"><div class="screen">
+
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 360 720" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="720" fill="url(#land1)"/>
+            <path d="M276,-10 L370,-10 L370,150 C338,150 326,86 306,54 C292,32 280,12 276,-10 Z" fill="#152433" opacity=".9"/>
+            <path d="M-10,300 L120,288 C146,300 152,330 144,356 L40,392 L-10,386 Z" fill="#16271f" stroke="#1f3a2c" stroke-width="1.6"/>
+            <g fill="#1a212c"><rect x="150" y="118" width="74" height="44" rx="6"/><rect x="246" y="132" width="64" height="56" rx="6"/><rect x="40" y="208" width="58" height="50" rx="6"/><rect x="262" y="232" width="70" height="56" rx="6"/></g>
+            <g stroke="#222b38" stroke-width="9" fill="none" stroke-linecap="round"><path d="M-10,118 H370"/><path d="M-10,196 H370"/><path d="M-10,300 H370"/><path d="M112,-10 V420"/><path d="M226,-10 V420"/><path d="M150,236 L300,80"/></g>
+            <text x="250" y="60" class="m-place">PRINCES ST</text>
+
+            <!-- reachable ring (to 18:30) -->
+            <circle cx="180" cy="226" r="150" fill="url(#ring1)"/>
+            <circle cx="180" cy="226" r="150" fill="none" stroke="#34e0c8" stroke-width="1.2" stroke-dasharray="2 7" opacity=".35"/>
+
+            <!-- 18:30 CONSTRAINT pin (Pleasance Courtyard) — accent teardrop -->
+            <g filter="url(#ps1)">
+              <path d="M252,116 c-11,0 -19,8.5 -19,19 c0,13 19,28 19,28 c0,0 19,-15 19,-28 c0,-10.5 -8,-19 -19,-19 z" fill="#34e0c8"/>
+              <circle cx="252" cy="135" r="7.5" fill="#0c1018"/><text x="252" y="139" text-anchor="middle" font-size="9" fill="#34e0c8">★</text>
+            </g>
+            <g transform="translate(252,96)"><rect x="-40" y="-9" width="80" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#34e0c8">18:30 · YOUR STOP</text></g>
+
+            <!-- GO pins (calm) with name tags -->
+            <g filter="url(#ps1)"><circle cx="150" cy="262" r="9" fill="#0c1018"/><circle cx="150" cy="262" r="5.4" fill="#3ecf8e"/></g>
+            <g transform="translate(150,283)"><rect x="-46" y="-8.5" width="92" height="15" rx="7.5" fill="#0c1018" opacity=".84"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#8fd9b4">Eli Matthewson</text></g>
+            <g filter="url(#ps1)"><circle cx="120" cy="204" r="8" fill="#0c1018"/><circle cx="120" cy="204" r="5" fill="#3ecf8e"/></g>
+            <g transform="translate(120,186)"><rect x="-42" y="-8" width="84" height="14" rx="7" fill="#0c1018" opacity=".8"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#7e8b9a">Gilded Balloon</text></g>
+            <g filter="url(#ps1)"><circle cx="208" cy="160" r="8" fill="#0c1018"/><circle cx="208" cy="160" r="5" fill="#3ecf8e"/></g>
+            <g filter="url(#ps1)"><circle cx="96" cy="118" r="8" fill="#0c1018"/><circle cx="96" cy="118" r="5" fill="#3ecf8e"/></g>
+            <!-- TIGHT pin -->
+            <g filter="url(#ps1)"><circle cx="270" cy="276" r="8" fill="#0c1018"/><circle cx="270" cy="276" r="5" fill="#e0a64e"/></g>
+            <g transform="translate(270,296)"><rect x="-30" y="-8" width="60" height="14" rx="7" fill="#0c1018" opacity=".8"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#a07c3e">The Stand</text></g>
+            <!-- OUT pin -->
+            <g opacity=".7"><circle cx="312" cy="338" r="7" fill="#0c1018"/><circle cx="312" cy="338" r="6.2" fill="none" stroke="#5d6675" stroke-width="1.5" stroke-dasharray="2.2 2.4"/></g>
+
+            <!-- YOU dot -->
+            <circle class="pulse-ring" cx="180" cy="226" r="13" fill="#3ecf8e"/>
+            <circle cx="180" cy="226" r="12" fill="#fff" filter="url(#ps1)"/><circle cx="180" cy="226" r="7.5" fill="#0c1018"/><circle cx="180" cy="226" r="3.2" fill="#34e0c8"/>
+            <g transform="translate(180,250)"><rect x="-22" y="-9" width="44" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#dfe6ee">YOU</text></g>
+          </svg>
+        </div>
+
+        <div class="topbar">
+          <div class="glass pill"><span class="dot-now"></span><span class="brand">EdFringe<span class="nw">Now</span></span></div>
+          <div class="tools"><div class="glass tool locate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div></div>
+        </div>
+
+        <!-- bottom sheet: plan header + grouped results -->
+        <section class="sheet" style="height:62%" aria-label="Shows that fit before 18:30">
+          <div class="grab"></div>
+          <div class="planhdr">
+            <div class="mini"><span class="nd"></span><span>15:44 · YOU</span><span class="arrow"></span><span>18:30</span><span class="end"></span></div>
+            <div class="dest"><div><div class="d1">Ahir Shah: Golden</div><div class="d2">Pleasance Courtyard · your 18:30</div></div><span class="edit">EDIT</span></div>
+          </div>
+          <div class="resulthd"><div class="big"><b>26</b> fit before 18:30</div><span class="sortbtn">↑ Soonest ▾</span></div>
+          <div class="gchips">
+            <span class="gc on">Comedy</span><span class="gc add">＋ Cabaret</span><span class="gc add">＋ Theatre</span>
+          </div>
+          <div class="scrollarea">
+            <div class="tgroup"><span>16:00</span><span class="ln"></span></div>
+            <div class="crow"><span class="cdot go"></span><div class="cc"><div class="ct">Absolute Monopoly</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs go">+53 spare</div></div></div>
+            <div class="crow"><span class="cdot go"></span><div class="cc"><div class="ct">Harry Stachini: Lobster</div><div class="cv">Hoots @ The Apex</div></div><div class="cr"><div class="cw">🚶 8 min</div><div class="cs go">+51 spare</div></div></div>
+            <div class="tgroup"><span>16:30</span><span class="ln"></span></div>
+            <div class="crow"><span class="cdot go"></span><div class="cc"><div class="ct">Eli Matthewson: Blood Bender</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs go">+53 spare</div></div></div>
+            <div class="crow"><span class="cdot go"></span><div class="cc"><div class="ct">Sam Morrison: DUCK</div><div class="cv">Gilded Balloon Teviot</div></div><div class="cr"><div class="cw">🚶 9 min</div><div class="cs go">+47 spare</div></div></div>
+            <div class="morerow">＋ 8 more at 16:30 ▾</div>
+            <div class="tgroup"><span>17:00</span><span class="ln"></span></div>
+            <div class="crow"><span class="cdot tight"></span><div class="cc"><div class="ct">The Stand's Pick of the Fringe</div><div class="cv">The Stand</div></div><div class="cr"><div class="cw">🚶 10 min</div><div class="cs tight">+23 spare</div></div></div>
+            <div class="morerow">＋ 11 more at 17:00 ▾</div>
+            <div class="tapfoot">Tap a show — or a pin — to build the plan →</div>
+          </div>
+        </section>
+
+      </div></div>
+    </figure>
+
+    <!-- =================================================================
+         STAGE 5 — THE PLAN
+         ================================================================= -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">5</span><span class="t">The plan</span>
+        <span class="s">The map draws the two-leg route — you → Eli Matthewson → 18:30 — with the cushion at each hop, a ticket, and directions.</span></figcaption>
+      <div class="phone"><div class="screen">
+
+        <div class="map" aria-hidden="true">
+          <svg viewBox="0 0 360 720" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="720" fill="url(#land1)"/>
+            <path d="M276,-10 L370,-10 L370,130 C338,130 326,76 306,48 C292,28 280,10 276,-10 Z" fill="#152433" opacity=".9"/>
+            <g fill="#1a212c"><rect x="150" y="96" width="74" height="42" rx="6"/><rect x="246" y="108" width="64" height="52" rx="6"/><rect x="40" y="176" width="58" height="48" rx="6"/><rect x="116" y="296" width="70" height="54" rx="6"/></g>
+            <g stroke="#222b38" stroke-width="9" fill="none" stroke-linecap="round"><path d="M-10,160 H370"/><path d="M-10,300 H370"/><path d="M112,-10 V460"/><path d="M226,-10 V460"/><path d="M140,320 L300,110"/></g>
+            <text x="246" y="44" class="m-place">PRINCES ST</text>
+
+            <!-- TWO-LEG ROUTE: YOU (320) → Eli (236) → 18:30 (110) -->
+            <!-- leg 1: walk to show, solid accent -->
+            <path d="M174,318 C168,300 162,272 158,250" fill="none" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round" filter="url(#ps1)"/>
+            <!-- leg 2: onward to 18:30, dashed accent -->
+            <path d="M160,222 C176,186 210,150 248,118" fill="none" stroke="#34e0c8" stroke-width="3.4" stroke-linecap="round" class="leg-dash" stroke-dasharray="6 7" opacity=".92"/>
+            <!-- per-leg time labels -->
+            <g><g transform="translate(140,288)"><rect x="-21" y="-10" width="42" height="16" rx="8" fill="#3ecf8e" filter="url(#ps1)"/><text x="0" y="1.5" text-anchor="middle" class="m-leg">6 min</text></g>
+               <g transform="translate(214,176)"><rect x="-21" y="-10" width="42" height="16" rx="8" fill="#13b69e" filter="url(#ps1)"/><text x="0" y="1.5" text-anchor="middle" class="m-leg">7 min</text></g></g>
+
+            <!-- STOP pin (Eli Matthewson) — accent teardrop -->
+            <g filter="url(#ps1)">
+              <path d="M158,222 c-11,0 -19,8.5 -19,19 c0,13 19,28 19,28 c0,0 19,-15 19,-28 c0,-10.5 -8,-19 -19,-19 z" fill="#3ecf8e"/>
+              <circle cx="158" cy="241" r="7.5" fill="#0c1018"/><text x="158" y="245" text-anchor="middle" font-size="8" fill="#3ecf8e">1</text>
+            </g>
+            <g transform="translate(158,202)"><rect x="-44" y="-9" width="88" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#8fd9b4">Eli Matthewson 16:30</text></g>
+
+            <!-- 18:30 destination pin (Pleasance Courtyard) -->
+            <g filter="url(#ps1)">
+              <path d="M248,96 c-11,0 -19,8.5 -19,19 c0,13 19,28 19,28 c0,0 19,-15 19,-28 c0,-10.5 -8,-19 -19,-19 z" fill="#34e0c8"/>
+              <circle cx="248" cy="115" r="7.5" fill="#0c1018"/><text x="248" y="119" text-anchor="middle" font-size="9" fill="#34e0c8">★</text>
+            </g>
+            <g transform="translate(248,76)"><rect x="-48" y="-9" width="96" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#34e0c8">Ahir Shah 18:30</text></g>
+
+            <!-- YOU dot -->
+            <circle class="pulse-ring" cx="180" cy="320" r="13" fill="#3ecf8e"/>
+            <circle cx="180" cy="320" r="12" fill="#fff" filter="url(#ps1)"/><circle cx="180" cy="320" r="7.5" fill="#0c1018"/><circle cx="180" cy="320" r="3.2" fill="#34e0c8"/>
+            <g transform="translate(180,344)"><rect x="-56" y="-9" width="112" height="16" rx="8" fill="#0c1018" filter="url(#ps1)"/><text x="0" y="2.5" text-anchor="middle" class="m-name" fill="#dfe6ee">YOU · 15:44</text></g>
+          </svg>
+        </div>
+
+        <div class="topbar">
+          <div class="glass pill"><span class="dot-now"></span><span class="brand">EdFringe<span class="nw">Now</span></span><span class="sep">·</span><span class="muted">your plan</span></div>
+        </div>
+
+        <!-- plan card sheet -->
+        <section class="sheet" style="height:60%" aria-label="Your plan">
+          <div class="grab"></div>
+          <div class="planwrap">
+            <div class="ptitle">Your plan</div>
+            <p class="psub">One show, then your 18:30. Proven to fit.</p>
+            <div class="tlnode you">
+              <div class="nodetime">15:44 · now</div>
+              <div class="nodettl">You — Bristo Square</div>
+              <div class="nodesub">on foot</div>
+            </div>
+            <div class="tlleg">🚶 6 min · leave by ~16:24</div>
+            <div class="tlnode stop">
+              <div class="nodetime">16:30 – 17:30</div>
+              <div class="nodettl">Eli Matthewson: Blood Bender</div>
+              <div class="nodesub">Assembly George Square · Comedy</div>
+              <span class="nodechip go">✓ arrive with time to spare</span>
+            </div>
+            <div class="tlleg">🚶 7 min · ends 17:30 → 17:37</div>
+            <div class="tlnode dest">
+              <div class="nodetime">18:30</div>
+              <div class="nodettl">Ahir Shah: Golden</div>
+              <div class="nodesub">Pleasance Courtyard · your next stop</div>
+              <span class="nodechip dest">53 min to spare</span>
+            </div>
+            <div class="actions">
+              <button class="btn buy">
+                <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4v2a2 2 0 0 0 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4v-2a2 2 0 0 0 0-4Z"/></svg>
+                Buy ahead <span class="small">· skip the queue ~5 min</span>
+              </button>
+              <button class="btn maps">
+                <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                Open route in Google Maps
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div></div>
+    </figure>
+
+  </div>
+
+  <footer>One theme, five stages — <a href="index.html">the four themes</a>. · EdFringeNow · flow storyboard · Map-first (concept mockup)</footer>
+</main>
+</body>
+</html>
