@@ -139,8 +139,24 @@
     <!-- ===================== Journey strip ===================== -->
     <!-- Narrow timeline between the filters and the map: it mirrors the plan,
          left-to-right — "you are here, now" → an optional chosen stop → your
-         next commitment. Populated by renderJourneyStrip(). -->
-    <section id="journeyStrip" class="journey container" aria-label="Your journey"></section>
+         next commitment. Populated by renderJourneyStrip(). The "Open route in
+         Google Maps" link sits to its right and only appears once both stops
+         (chosen show + destination) exist. -->
+    <div class="journey-row container">
+      <section id="journeyStrip" class="journey" aria-label="Your journey"></section>
+      <a
+        id="mapsRouteLink"
+        class="maps-route-btn"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        title="Open directions between your chosen show and your destination in Google Maps"
+        hidden
+      >
+        <span class="maps-route-btn__pin" aria-hidden="true">📍</span>
+        <span class="maps-route-btn__text">Open route in Google Maps</span>
+      </a>
+    </div>
 
     <!-- ===================== Map ===================== -->
     <section id="map" class="map-section container">

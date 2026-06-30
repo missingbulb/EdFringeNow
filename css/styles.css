@@ -405,6 +405,17 @@ a { color: inherit; }
 
 /* ===================== Journey strip ===================== */
 /* Narrow timeline that mirrors the plan: origin → optional stop → commitment. */
+/* Row holding the journey summary box and, on its right, the Google Maps
+   route link. The strip flexes to fill; the link keeps its content width. */
+.journey-row {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 18px;
+}
+.journey-row > .journey { flex: 1 1 auto; min-width: 0; margin: 0; }
+.journey-row:has(> #journeyStrip:empty) { display: none; }
+
 .journey {
   display: flex;
   align-items: stretch;
@@ -560,6 +571,47 @@ a { color: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.4px;
   color: var(--muted);
+}
+
+/* Google Maps route link — its own bordered box matching the journey strip's
+   neobrutalist style, sitting to the strip's right. */
+.maps-route-btn {
+  flex: 0 0 auto;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  max-width: 150px;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+.maps-route-btn:hover { background: var(--blue-dark, #1746a2); }
+.maps-route-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+.maps-route-btn[hidden] { display: none; }
+.maps-route-btn__pin { font-size: 1.2rem; }
+
+@media (max-width: 560px) {
+  .journey-row { flex-direction: column; }
+  .maps-route-btn {
+    max-width: none;
+    flex-direction: row;
+    align-self: stretch;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -642,6 +642,43 @@ function renderJourneyStrip() {
   }
 
   strip.innerHTML = parts.join("");
+  updateMapsRouteLink(leg, constraint);
+}
+
+/* Build a Google Maps directions URL between two shows ([lat,lng] each). The
+ * travel mode follows the user's current selection so the route matches the
+ * plan the strip is showing. */
+function googleMapsRouteUrl(fromShow, toShow) {
+  const modeMap = {
+    Walking: "walking",
+    "Taxi/Car": "driving",
+    Bus: "transit",
+    Bicycle: "bicycling",
+  };
+  const travelmode = modeMap[state.travelMode] || "walking";
+  const origin = `${fromShow.lat},${fromShow.lng}`;
+  const destination = `${toShow.lat},${toShow.lng}`;
+  return (
+    "https://www.google.com/maps/dir/?api=1" +
+    `&origin=${encodeURIComponent(origin)}` +
+    `&destination=${encodeURIComponent(destination)}` +
+    `&travelmode=${travelmode}`
+  );
+}
+
+/* Show the "Open route in Google Maps" link only when both stops exist — the
+ * chosen show (`leg`) on the way to the destination (`constraint`) — and point
+ * it at directions between the two. */
+function updateMapsRouteLink(leg, constraint) {
+  const link = document.getElementById("mapsRouteLink");
+  if (!link) return;
+  if (leg && constraint) {
+    link.href = googleMapsRouteUrl(leg, constraint);
+    link.hidden = false;
+  } else {
+    link.hidden = true;
+    link.removeAttribute("href");
+  }
 }
 
 /* Left "you are here, now" node. */
