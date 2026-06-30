@@ -642,6 +642,78 @@ function renderJourneyStrip() {
   }
 
   strip.innerHTML = parts.join("");
+  updateMapsRouteLink();
+}
+
+/* Google Maps travel mode matching the user's currently selected one. */
+function googleMapsTravelMode() {
+  return (
+    { Walking: "walking", "Taxi/Car": "driving", Bus: "transit", Bicycle: "bicycling" }[
+      state.travelMode
+    ] || "walking"
+  );
+}
+
+/* Build the Google Maps URL for the current plan. The journey always starts at
+ * "you are here"; the shape depends on how many stops are chosen on top of it:
+ *   • none           → just open the map centred on the user.
+ *   • one (chosen OR
+ *     destination)   → directions from here to that single show.
+ *   • two (chosen +
+ *     destination)   → directions here → chosen show → destination, with the
+ *                      chosen show passed as a waypoint.
+ * Travel mode follows the user's selection. */
+function googleMapsUrl() {
+  const origin = state.userLatLng; // [lat, lng] — "you are here"
+  const fmt = ([lat, lng]) => `${lat},${lng}`;
+
+  const destShow = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
+  let legShow = null;
+  if (state.legShowId && (!destShow || state.legShowId !== destShow.id)) {
+    legShow = state.shows.find((s) => s.id === state.legShowId) || null;
+  }
+
+  // Ordered geographic stops after the origin: chosen show first, then the
+  // destination. The final one is the route's destination; any before it are
+  // waypoints.
+  const stops = [];
+  if (legShow) stops.push([legShow.lat, legShow.lng]);
+  if (destShow) stops.push([destShow.lat, destShow.lng]);
+
+  // Nothing chosen — just open the map centred on the user.
+  if (stops.length === 0) {
+    return `https://www.google.com/maps/@${fmt(origin)},15z`;
+  }
+
+  const destination = stops[stops.length - 1];
+  const waypoints = stops.slice(0, -1);
+  let url =
+    "https://www.google.com/maps/dir/?api=1" +
+    `&origin=${encodeURIComponent(fmt(origin))}` +
+    `&destination=${encodeURIComponent(fmt(destination))}` +
+    `&travelmode=${googleMapsTravelMode()}`;
+  if (waypoints.length) {
+    url += `&waypoints=${encodeURIComponent(waypoints.map(fmt).join("|"))}`;
+  }
+  return url;
+}
+
+/* Keep the Google Maps link pointed at the current plan. The link is always
+ * available: with no stops it opens the map at the user; with one or two shows
+ * it opens directions through them. The label drops "route" when there's no
+ * actual route to draw. */
+function updateMapsRouteLink() {
+  const link = document.getElementById("mapsRouteLink");
+  if (!link) return;
+  link.hidden = false;
+  link.href = googleMapsUrl();
+  const hasRoute = Boolean(state.selectedShowId || state.legShowId);
+  const text = link.querySelector(".maps-route-btn__text");
+  if (text) {
+    text.textContent = hasRoute ? "Open route in Google Maps" : "Open in Google Maps";
+  }
 }
 
 /* Left "you are here, now" node. */
