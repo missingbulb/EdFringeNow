@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fringe Discover — redesign concepts</title>
+  <meta name="description" content="Four explorative redesign directions for Fringe Discover, all built on the same shows and the same 'right now' scenario." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --paper:#f7f6f2; --card:#ffffff; --ink:#1a211e; --muted:#5c655f;
+      --line:#e6e4dc; --accent:#1f7a6d; --accent-soft:#e4f0ed;
+      --a:#c62024; --b:#1ba87e; --c:#ff4d3d; --d:#1f7a6d;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.5;
+    }
+    .wrap{ max-width:1040px; margin:0 auto; padding:40px 22px 64px; }
+    .kicker{
+      font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--accent); margin:0 0 10px;
+    }
+    h1{
+      font-family:"Fraunces",Georgia,serif; font-weight:600; letter-spacing:-.01em;
+      font-size:clamp(1.9rem,5vw,2.8rem); margin:0 0 12px; line-height:1.08;
+    }
+    .lede{ max-width:60ch; margin:0 0 22px; color:var(--muted); font-size:1.04rem; }
+    .scenario{
+      display:flex; flex-wrap:wrap; gap:8px; margin:0 0 36px;
+    }
+    .scenario span{
+      background:var(--card); border:1px solid var(--line); border-radius:999px;
+      padding:7px 13px; font-size:.84rem; font-weight:600;
+    }
+    .scenario b{ color:var(--accent); }
+    .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    @media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+    .card{
+      display:flex; flex-direction:column; background:var(--card);
+      border:1px solid var(--line); border-radius:16px; padding:22px 22px 20px;
+      text-decoration:none; color:inherit;
+      transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .card:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(20,30,26,.10); border-color:#d6d3c9; }
+    .card:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px; align-self:flex-start;
+      font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      padding:5px 11px; border-radius:999px; margin-bottom:14px;
+    }
+    .tag i{ width:9px; height:9px; border-radius:50%; }
+    .card.a .tag{ background:rgba(198,32,36,.10); color:#9c181b; } .card.a .tag i{ background:var(--a); }
+    .card.b .tag{ background:rgba(27,168,126,.12); color:#0f7a5b; } .card.b .tag i{ background:var(--b); }
+    .card.c .tag{ background:rgba(255,77,61,.12);  color:#c0271c; } .card.c .tag i{ background:var(--c); }
+    .card.d .tag{ background:var(--accent-soft);   color:#155d52; } .card.d .tag i{ background:var(--d); }
+    .card h2{ font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:1.34rem; margin:0 0 4px; }
+    .card .one{ color:var(--muted); font-size:.95rem; margin:0 0 16px; }
+    .meta{ margin-top:auto; display:grid; gap:8px; border-top:1px solid var(--line); padding-top:14px; }
+    .meta div{ display:flex; gap:8px; font-size:.86rem; }
+    .meta dt{ flex:0 0 86px; color:var(--muted); font-weight:600; margin:0; }
+    .meta dd{ margin:0; }
+    .open{ margin-top:16px; font-weight:700; color:var(--accent); font-size:.92rem; }
+    .open::after{ content:" →"; }
+    footer{ margin-top:40px; color:var(--muted); font-size:.85rem; }
+    footer a{ color:var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Fringe Discover · design exploration</p>
+    <h1>Four ways the next show could find you</h1>
+    <p class="lede">
+      Same shows, same moment — four very different answers to the one question the app exists for:
+      <em>what can I catch right now, near here, and still make my next thing?</em>
+      Each is a clickable, self-contained mockup. Open them on a phone-width window for the intended feel.
+    </p>
+
+    <div class="scenario" aria-label="The shared scenario every concept renders">
+      <span>🕒 Now <b>15:10</b></span>
+      <span>📍 <b>Bristo Square</b></span>
+      <span>🚶 Walking · <b>≤15 min</b></span>
+      <span>🎭 Comedy &amp; Cabaret</span>
+      <span>🍽 Dinner <b>18:30</b> · Dishoom</span>
+    </div>
+
+    <div class="grid">
+      <a class="card a" href="a-departure-board.html">
+        <span class="tag"><i></i>Concept A</span>
+        <h2>Departure Board</h2>
+        <p class="one">Your shows as a live transit departures board — ranked by urgency, each a boarding pass with a countdown and an honest “you’ll still make dinner” cushion.</p>
+        <dl class="meta">
+          <div><dt>Leads with</dt><dd>An urgency-sorted feed (no map)</dd></div>
+          <div><dt>Best for</dt><dd>The in-a-hurry glance — what do I bolt to <em>now?</em></dd></div>
+          <div><dt>Feel</dt><dd>Dark transit board, split-flap, mono numerals</dd></div>
+        </dl>
+        <span class="open">View concept</span>
+      </a>
+
+      <a class="card b" href="b-map-first-sheet.html">
+        <span class="tag"><i></i>Concept B</span>
+        <h2>Map-first bottom sheet</h2>
+        <p class="one">The map <em>is</em> the answer: a calm Citymapper-style map with colour-coded reachability pins and a draggable sheet that traces your walk there and onward to dinner.</p>
+        <dl class="meta">
+          <div><dt>Leads with</dt><dd>A full-bleed map + draggable sheet</dd></div>
+          <div><dt>Best for</dt><dd>Orientation &amp; the two-leg journey</dd></div>
+          <div><dt>Feel</dt><dd>Pale-mint cartography, soft floating UI</dd></div>
+        </dl>
+        <span class="open">View concept</span>
+      </a>
+
+      <a class="card c" href="c-poster-serendipity.html">
+        <span class="tag"><i></i>Concept C</span>
+        <h2>Deal Me a Show</h2>
+        <p class="one">A joyful Fringe-poster take built around “deal me a show” — it lands on one reachable pick as a torn ticket stub: <em>you can make this, leave by ~15:25, back for dinner.</em></p>
+        <dl class="meta">
+          <div><dt>Leads with</dt><dd>A serendipity result (one dealt show)</dd></div>
+          <div><dt>Best for</dt><dd>“Just pick one I can make” — no choosing</dd></div>
+          <div><dt>Feel</dt><dd>Warm riso print, oversized poster type</dd></div>
+        </dl>
+        <span class="open">View concept</span>
+      </a>
+
+      <a class="card d" href="d-calm-timeline.html">
+        <span class="tag"><i></i>Concept D</span>
+        <h2>Calm Timeline</h2>
+        <p class="one">A calm, Swiss timeline that drops one show into your 3pm-to-dinner gap and proves it fits — with a green slack-cushion bar and a plain two-leg plan to Dishoom.</p>
+        <dl class="meta">
+          <div><dt>Leads with</dt><dd>A journey rail: now → your pick → dinner</dd></div>
+          <div><dt>Best for</dt><dd>Trust — fitting a show into a real gap</dd></div>
+          <div><dt>Feel</dt><dd>Airy paper, one accent, editorial serif</dd></div>
+        </dl>
+        <span class="open">View concept</span>
+      </a>
+    </div>
+
+    <footer>
+      All four reuse the product’s reachability-first soul and the same honest data (free-vs-paid only, no live seat counts).
+      Compare against the <a href="../index.html">current site</a>. · Fringe Discover · concept mockups
+    </footer>
+  </main>
+</body>
+</html>

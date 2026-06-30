@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Fringe Discover — Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     Fringe Discover — "Map-first bottom sheet" concept
+     Calm, modern, Citymapper-energy. Full-bleed abstract CSS/SVG
+     map + soft floating UI. Core look renders with zero JS.
+     ============================================================ */
+
+  :root{
+    --bg:#eef3f1;              /* paper-pale map base */
+    --land:#e7ede9;
+    --land-2:#dfe7e3;
+    --block:#d4ddd8;          /* building blocks */
+    --block-2:#cdd7d1;
+    --park:#bfe0c0;           /* the green Meadows */
+    --park-edge:#a9d3ac;
+    --water:#bcd9e8;          /* sliver of water */
+    --road:#fbfcfc;
+    --road-edge:#dfe6e2;
+
+    --ink:#10231d;
+    --muted:#516159;          /* AA on white (6.5:1) */
+    --faint:#63756d;          /* AA on white for small UI text (~4.9:1) */
+    --line:#e4ebe7;
+
+    --go:#1ba87e;             /* comfortably reachable */
+    --go-ink:#0f7a5b;         /* go, as readable text */
+    --go-soft:#d6f1e7;
+    --tight:#e8973a;          /* tight / just-missed */
+    --tight-ink:#a85f12;      /* tight, as readable text (AA on white) */
+    --tight-soft:#fbe9d4;
+    --out:#7c8a84;            /* out of reach (darker for text) */
+    --dinner:#7b61c9;        /* next commitment accent */
+    --dinner-ink:#5a48a0;    /* dinner, as readable text */
+
+    --sheet:#ffffff;
+    --shadow-soft:0 1px 2px rgba(16,35,29,.05), 0 8px 24px rgba(16,35,29,.10);
+    --shadow-lift:0 2px 6px rgba(16,35,29,.08), 0 18px 44px rgba(16,35,29,.18);
+
+    --r-lg:22px;
+    --r-md:16px;
+    --r-sm:11px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  /* visible keyboard focus everywhere interactive */
+  :focus-visible{
+    outline:3px solid var(--dinner);
+    outline-offset:2px;
+    border-radius:6px;
+  }
+  .row:focus-visible{ outline-offset:-2px; border-radius:var(--r-md); }
+  .foot-cta:focus-visible{ outline-color:#10231d; }
+
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:#c9d3cf;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ---- phone frame: mobile-first, intentional in a wide panel ---- */
+  .frame{
+    position:relative;
+    width:100%;
+    max-width:440px;
+    height:100dvh;
+    min-height:760px;
+    max-height:940px;
+    margin:0 auto;
+    background:var(--bg);
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(16,35,29,.28);
+  }
+  @media (min-width:560px){
+    body{ display:grid; place-items:center; padding:26px; }
+    .frame{ border-radius:34px; height:min(92dvh,900px); }
+  }
+
+  /* ============================================================
+     THE MAP  — full bleed, hand-built, renders offline
+     ============================================================ */
+  .map{ position:absolute; inset:0; z-index:0; }
+  .map svg{ width:100%; height:100%; display:block; }
+
+  /* gentle ambient drift so the map feels alive, not static */
+  @keyframes drift{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(-6px,-5px); }
+  }
+  .map-layer{ animation:drift 26s ease-in-out infinite; transform-origin:center; }
+
+  /* you-are-here pulse */
+  @keyframes pulse{
+    0%{ r:14; opacity:.45; }
+    70%{ r:60; opacity:0; }
+    100%{ r:60; opacity:0; }
+  }
+  .pulse-ring{ animation:pulse 3.4s ease-out infinite; transform-box:fill-box; transform-origin:center; }
+
+  /* dashed dinner / route leg animation */
+  @keyframes flow{ to{ stroke-dashoffset:-44; } }
+  .leg-dash{ stroke-dasharray:7 7; animation:flow 1.8s linear infinite; }
+
+  @media (prefers-reduced-motion:reduce){
+    .map-layer, .pulse-ring, .leg-dash{ animation:none !important; }
+    .pulse-ring{ opacity:.18; r:34; }
+  }
+
+  /* ============================================================
+     FLOATING UI
+     ============================================================ */
+
+  /* top context pill */
+  .context{
+    position:absolute; top:0; left:0; right:64px; z-index:30;
+    padding:max(14px,env(safe-area-inset-top)) 14px 0;
+    display:flex; flex-direction:column; gap:9px;
+    pointer-events:none;
+  }
+  .pill{
+    pointer-events:auto;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:999px;
+    box-shadow:var(--shadow-soft);
+    display:flex; align-items:center; gap:9px;
+    padding:9px 14px;
+    font-size:13px; font-weight:600; color:var(--ink);
+    width:max-content; max-width:100%;
+  }
+  .pill .dot-now{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--go); box-shadow:0 0 0 4px var(--go-soft);
+    flex:0 0 auto;
+  }
+  .pill .sep{ color:var(--line); font-weight:400; }
+  .pill .muted{ color:var(--muted); font-weight:500; }
+  .pill .strong{ color:var(--ink); }
+  .pill-row{ display:flex; gap:9px; }
+  .pill.secondary{
+    font-size:12px; padding:7px 13px;
+    max-width:100%; overflow-x:auto; flex-wrap:nowrap;
+    scrollbar-width:none;
+  }
+  .pill.secondary::-webkit-scrollbar{ height:0; }
+  .pill.secondary > *{ white-space:nowrap; flex:0 0 auto; }
+  .pill.secondary .ico{ color:var(--dinner); display:flex; }
+
+  /* round map controls top-right */
+  .map-tools{
+    position:absolute; z-index:30; top:max(14px,env(safe-area-inset-top)); right:14px;
+    display:flex; flex-direction:column; gap:9px;
+  }
+  .tool{
+    width:42px; height:42px; border-radius:14px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.7);
+    box-shadow:var(--shadow-soft);
+    display:grid; place-items:center; color:var(--ink);
+    cursor:pointer;
+  }
+  .tool svg{ width:20px; height:20px; }
+  .tool.locate{ color:var(--go); }
+
+  /* map key — sits in the top context stack, clear of the pins and the sheet */
+  .legend{
+    display:flex; gap:6px; flex-wrap:wrap;
+    pointer-events:none;
+  }
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:999px; padding:5px 10px;
+    font-size:11px; font-weight:600; color:var(--ink);
+    box-shadow:var(--shadow-soft);
+  }
+  .chip i{ width:9px; height:9px; border-radius:50%; flex:0 0 auto; }
+  .chip .go{ background:var(--go); box-shadow:0 0 0 3px var(--go-soft); }
+  .chip .tight{ background:var(--tight); box-shadow:0 0 0 3px var(--tight-soft); }
+  .chip .out{ background:transparent; border:2px dashed var(--out); }
+
+  /* ============================================================
+     BOTTOM SHEET — partially expanded by default
+     ============================================================ */
+  .sheet{
+    position:absolute; left:0; right:0; bottom:0; z-index:40;
+    height:56%;
+    background:var(--sheet);
+    border-radius:26px 26px 0 0;
+    box-shadow:var(--shadow-lift);
+    display:flex; flex-direction:column;
+    overflow:hidden;
+  }
+  /* progressive enhancement: a checkbox lets the sheet snap up.
+     Kept off-screen but focusable so the grabber works by keyboard too. */
+  #expand{ position:absolute; width:1px; height:1px; opacity:0; margin:-1px; overflow:hidden; }
+  #expand:focus-visible ~ .sheet .sheet-grab span{
+    box-shadow:0 0 0 3px var(--dinner); background:var(--dinner);
+  }
+  #expand:checked ~ .sheet{ height:88%; }
+  .sheet{ transition:height .34s cubic-bezier(.22,.61,.36,1); }
+  @media (prefers-reduced-motion:reduce){ .sheet{ transition:none; } }
+
+  .sheet-grab{
+    flex:0 0 auto; padding:9px 0 4px;
+    display:grid; place-items:center; cursor:grab;
+  }
+  .sheet-grab span{
+    width:38px; height:5px; border-radius:99px; background:#d3ddd8;
+  }
+
+  .sheet-head{
+    flex:0 0 auto;
+    padding:4px 18px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  .sheet-title{
+    display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+  }
+  .sheet-title h1{
+    margin:0; font-family:"Bricolage Grotesque",sans-serif;
+    font-size:19px; font-weight:700; letter-spacing:-.01em; line-height:1.1;
+  }
+  .sheet-title .count{
+    font-size:12px; font-weight:600; color:var(--go);
+    background:var(--go-soft); padding:4px 9px; border-radius:99px;
+    white-space:nowrap;
+  }
+  .sheet-sub{
+    margin:6px 0 0; font-size:12.5px; color:var(--muted);
+    display:flex; align-items:center; gap:7px; flex-wrap:wrap;
+  }
+  .sheet-sub b{ color:var(--ink); font-weight:600; }
+  .sort-tag{
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:11px; font-weight:600; color:var(--faint);
+  }
+  .sort-tag svg{ width:13px; height:13px; }
+
+  /* scrolling list */
+  .list{
+    flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch;
+    padding:8px 12px calc(20px + env(safe-area-inset-bottom));
+  }
+  .list::-webkit-scrollbar{ width:0; }
+
+  .row{
+    position:relative;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:12px;
+    align-items:center;
+    padding:13px 13px;
+    border-radius:var(--r-md);
+    border:1px solid transparent;
+    cursor:pointer;
+  }
+  .row + .row{ margin-top:2px; }
+
+  /* reachability dot + walk pin */
+  .row-dot{
+    position:relative; flex:0 0 auto;
+    width:36px; height:36px; border-radius:50%;
+    display:grid; place-items:center;
+    font-size:12px; font-weight:700; color:#fff;
+  }
+  .row-dot.go{ background:var(--go); }
+  .row-dot.tight{ background:var(--tight); }
+  .row-dot.out{ background:var(--out); }
+  .row-dot small{ font-size:9px; font-weight:600; line-height:1; opacity:.92; }
+  .row-dot .walk-no{ display:flex; flex-direction:column; align-items:center; }
+
+  .row-main{ min-width:0; }
+  .row-top{ display:flex; align-items:center; gap:7px; }
+  .row-title{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-size:15.5px; font-weight:600; letter-spacing:-.01em;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .row-venue{
+    margin:2px 0 0; font-size:12px; color:var(--muted);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .row-venue .vsep{ color:var(--line); }
+  .row-slack{
+    margin:5px 0 0; font-size:11.5px; font-weight:600;
+    display:flex; align-items:center; gap:6px;
+  }
+  .row-slack .si{ width:13px; height:13px; flex:0 0 auto; }
+  .row.go .row-slack{ color:var(--go-ink); }
+  .row.tight .row-slack{ color:var(--tight-ink); }
+  .row.out .row-slack{ color:var(--out); }
+
+  .row-right{ text-align:right; flex:0 0 auto; display:flex; flex-direction:column; align-items:flex-end; gap:5px; }
+  .row-time{ font-size:13.5px; font-weight:700; letter-spacing:-.01em; }
+  .row-price{
+    font-size:11px; font-weight:600; color:var(--muted);
+    background:var(--land); padding:2px 7px; border-radius:99px;
+  }
+  .row-walk{
+    font-size:10.5px; color:var(--faint); font-weight:600;
+    display:flex; align-items:center; gap:3px; white-space:nowrap;
+  }
+  .row-walk svg{ width:11px; height:11px; }
+
+  /* SELECTED row — shows the two-leg plan inline */
+  .row.is-selected{
+    border-color:var(--go-soft);
+    background:linear-gradient(180deg,#f3fbf8,#ffffff);
+    box-shadow:0 1px 0 rgba(16,35,29,.02), 0 10px 26px rgba(27,168,126,.16);
+  }
+  .row.is-selected.tight{
+    border-color:var(--tight-soft);
+    background:linear-gradient(180deg,#fef7ee,#ffffff);
+    box-shadow:0 10px 26px rgba(232,151,58,.16);
+  }
+
+  .plan{
+    grid-column:1 / -1;
+    margin-top:11px; padding-top:11px;
+    border-top:1px dashed var(--line);
+    display:flex; flex-direction:column; gap:9px;
+  }
+  /* the journey ribbon: you → show → dinner */
+  .journey{
+    display:flex; align-items:center; gap:0;
+    font-size:11px; font-weight:600; color:var(--muted);
+  }
+  .j-node{ display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center; flex:0 0 auto; }
+  .j-ico{
+    width:26px; height:26px; border-radius:50%;
+    display:grid; place-items:center; color:#fff;
+  }
+  .j-ico.you{ background:var(--ink); }
+  .j-ico.show{ background:var(--go); }
+  .j-ico.show.tight{ background:var(--tight); }
+  .j-ico.dinner{ background:var(--dinner); font-size:13px; }
+  .j-ico svg{ width:14px; height:14px; }
+  .j-node span{ font-size:10px; color:var(--muted); max-width:62px; line-height:1.15; }
+  .j-leg{
+    flex:1 1 auto; display:flex; flex-direction:column; align-items:center;
+    gap:2px; padding:0 2px; min-width:0;
+  }
+  .j-leg .line{
+    width:100%; height:0; border-top:2px solid var(--go);
+    position:relative; opacity:.55;
+  }
+  .j-leg.dashed .line{ border-top:2px dashed var(--dinner); opacity:.5; }
+  .j-leg b{ font-size:10px; font-weight:700; color:var(--muted); white-space:nowrap; }
+  .row.tight .j-leg:first-of-type .line{ border-top-color:var(--tight); }
+
+  .plan-verdict{
+    display:flex; align-items:center; gap:8px;
+    font-size:12px; font-weight:600;
+    background:var(--go-soft); color:var(--go-ink);
+    padding:8px 11px; border-radius:var(--r-sm);
+    line-height:1.3;
+  }
+  .row.tight .plan-verdict{ background:var(--tight-soft); color:var(--tight-ink); }
+  .plan-verdict svg{ width:15px; height:15px; flex:0 0 auto; }
+  .plan-verdict .cushion{ margin-left:auto; font-weight:700; white-space:nowrap; }
+
+  /* a quiet out-of-reach footnote so all 3 states are present */
+  .out-head{
+    margin:14px 4px 6px; font-size:11px; font-weight:700;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--faint);
+  }
+  .outnote{
+    margin-top:0; padding:11px 13px;
+    display:flex; align-items:center; gap:10px;
+    border-radius:var(--r-md);
+    background:var(--land);
+    color:var(--out); font-size:12px;
+  }
+  .outnote .row-dot{ width:30px; height:30px; }
+  .outnote .ot{ color:var(--muted); font-weight:600; }
+  .outnote .os{ font-size:11px; margin-top:1px; color:var(--out); }
+  .outnote .x{ font-size:11px; color:var(--out); font-weight:700; white-space:nowrap; }
+
+  /* CTA pinned at the foot of the sheet for the selected show */
+  .sheet-foot{
+    flex:0 0 auto;
+    padding:11px 14px calc(14px + env(safe-area-inset-bottom));
+    border-top:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,0),#fff 30%);
+    display:flex; align-items:center; gap:12px;
+  }
+  .foot-info{ min-width:0; }
+  .foot-info .fl{ font-size:11px; color:var(--muted); font-weight:600; }
+  .foot-info .ft{ font-family:"Bricolage Grotesque",sans-serif; font-size:14px; font-weight:700; }
+  .foot-cta{
+    margin-left:auto; flex:0 0 auto;
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--go); color:#fff;
+    font-size:14px; font-weight:700; font-family:"Inter";
+    border:none; border-radius:14px; padding:13px 18px;
+    box-shadow:0 8px 20px rgba(27,168,126,.34);
+    cursor:pointer; text-decoration:none;
+  }
+  .foot-cta svg{ width:16px; height:16px; }
+
+  .credit{
+    position:absolute; z-index:50; left:0; right:0;
+    bottom:6px; text-align:center;
+    font-size:10px; color:rgba(255,255,255,.85);
+    letter-spacing:.02em; pointer-events:none;
+    text-shadow:0 1px 3px rgba(16,35,29,.4);
+  }
+
+  /* label badges floating on the map */
+  .map-label{ font-size:9.5px; font-weight:700; fill:#5f756c; letter-spacing:.04em; }
+  .pin-cap{ font-size:9px; font-weight:700; }
+  .pin-name{ font-family:"Inter",sans-serif; font-size:9px; font-weight:700; letter-spacing:.01em; }
+  /* venue name tags fade with the reachable-radius ring */
+  .pin-tag{ pointer-events:none; }
+</style>
+</head>
+<body>
+  <div class="frame" role="application" aria-label="Fringe Discover map of shows you can catch now">
+
+    <!-- ============================================================
+         MAP (inline SVG, abstract Edinburgh — renders offline)
+         viewBox 0..390 x 0..760
+         ============================================================ -->
+    <div class="map" aria-hidden="true">
+      <svg viewBox="0 0 390 760" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef3f1"/>
+            <stop offset="1" stop-color="#e6ede9"/>
+          </linearGradient>
+          <radialGradient id="ringGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1ba87e" stop-opacity="0"/>
+            <stop offset="74%" stop-color="#1ba87e" stop-opacity="0"/>
+            <stop offset="92%" stop-color="#1ba87e" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#1ba87e" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2.4" flood-color="#10231d" flood-opacity="0.30"/>
+          </filter>
+          <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="1.4" stdDeviation="1.6" flood-color="#10231d" flood-opacity="0.22"/>
+          </filter>
+        </defs>
+
+        <rect x="0" y="0" width="390" height="760" fill="url(#base)"/>
+
+        <g class="map-layer">
+          <!-- water sliver (top-right, a canal/loch hint) -->
+          <path d="M300,-10 L390,-10 L390,150 C360,150 350,90 330,60 C315,38 300,20 300,-10 Z"
+                fill="#bcd9e8" opacity="0.9"/>
+          <path d="M312,0 C330,40 350,70 390,80" fill="none" stroke="#a8cddf" stroke-width="3" opacity="0.6"/>
+
+          <!-- The Meadows: big green park block, lower-left -->
+          <path d="M-10,470 L150,452 C175,470 180,520 168,560 L60,620 L-10,610 Z"
+                fill="#bfe0c0" stroke="#a9d3ac" stroke-width="2"/>
+          <!-- tree dots in park -->
+          <g fill="#a9d3ac">
+            <circle cx="40" cy="520" r="6"/><circle cx="72" cy="505" r="5"/>
+            <circle cx="58" cy="558" r="6"/><circle cx="105" cy="540" r="5"/>
+            <circle cx="92" cy="575" r="6"/><circle cx="135" cy="512" r="5"/>
+          </g>
+          <!-- a second small green square (Princes St gardens hint) -->
+          <rect x="250" y="180" width="64" height="40" rx="8" fill="#bfe0c0" stroke="#a9d3ac" stroke-width="1.6"/>
+
+          <!-- building blocks scattered -->
+          <g fill="#d4ddd8">
+            <rect x="36" y="120" width="70" height="56" rx="6"/>
+            <rect x="120" y="150" width="52" height="46" rx="6"/>
+            <rect x="60" y="250" width="58" height="60" rx="6"/>
+            <rect x="150" y="250" width="80" height="50" rx="6"/>
+            <rect x="250" y="270" width="70" height="64" rx="6"/>
+            <rect x="40" y="350" width="64" height="56" rx="6"/>
+            <rect x="280" y="430" width="80" height="70" rx="6"/>
+            <rect x="240" y="540" width="66" height="58" rx="6"/>
+            <rect x="150" y="620" width="74" height="56" rx="6"/>
+          </g>
+          <g fill="#cdd7d1">
+            <rect x="170" y="120" width="60" height="46" rx="6"/>
+            <rect x="300" y="120" width="60" height="48" rx="6"/>
+            <rect x="120" y="340" width="80" height="62" rx="6"/>
+            <rect x="40" y="640" width="86" height="60" rx="6"/>
+            <rect x="300" y="610" width="70" height="70" rx="6"/>
+          </g>
+
+          <!-- ROADS: a calm grid of pale streets -->
+          <g stroke="#ffffff" stroke-width="11" fill="none" stroke-linecap="round" opacity="0.95">
+            <!-- horizontals -->
+            <path d="M-10,210 H400"/>
+            <path d="M-10,330 H400"/>
+            <path d="M-10,432 H400"/>
+            <path d="M-10,610 H400"/>
+            <!-- verticals -->
+            <path d="M118,-10 V770"/>
+            <path d="M232,-10 V770"/>
+            <!-- a diagonal artery (Bristo→St Andrew feel) -->
+            <path d="M150,380 L300,150"/>
+          </g>
+          <g stroke="#dfe6e2" stroke-width="11" fill="none" stroke-linecap="round" opacity="0.5"
+             style="mix-blend-mode:multiply">
+            <path d="M-10,210 H400"/><path d="M-10,330 H400"/><path d="M-10,432 H400"/>
+            <path d="M118,-10 V770"/><path d="M232,-10 V770"/><path d="M150,380 L300,150"/>
+          </g>
+          <!-- thin secondary lanes -->
+          <g stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85">
+            <path d="M60,-10 V770"/><path d="M300,-10 V770"/>
+            <path d="M-10,150 H400"/><path d="M-10,510 H400"/>
+          </g>
+
+          <!-- map place labels -->
+          <text x="30" y="540" class="map-label" transform="rotate(-6 30 540)">THE MEADOWS</text>
+          <text x="255" y="172" class="map-label">PRINCES ST</text>
+        </g>
+
+        <!-- ============================================================
+             ROUTE + PINS  (NOT drifting — anchored to the action)
+             Key coords:
+               YOU (Bristo Square)  ≈ (150,380)
+               Variety Hour (Patter)≈ (110,300)  go
+               Punchline (Underbelly)≈(176,352)  go  (selected)
+               Sketch Riot (Monkey) ≈ (96,236)   tight
+               Midnight Cab (Assembly)≈(212,300) tight
+               Last Laugh (The Stand)≈ (250,150)  tight (far)
+               DINNER (Dishoom/StAndrew)≈(300,118) out-route end
+             ============================================================ -->
+
+        <!-- 15-min reachable ring around YOU -->
+        <circle cx="150" cy="380" r="150" fill="url(#ringGrad)"/>
+        <circle cx="150" cy="380" r="150" fill="none" stroke="#1ba87e" stroke-width="1.6"
+                stroke-dasharray="2 7" opacity="0.5"/>
+        <!-- ring caption sits on the lower arc, clear of the route -->
+        <g transform="translate(56,512)">
+          <rect x="-3" y="-12" width="118" height="18" rx="9" fill="#ffffff" opacity="0.82"/>
+          <text x="55" y="1" text-anchor="middle" class="map-label" fill="#16936e" opacity="1">15-MIN WALK RING</text>
+        </g>
+
+        <!-- SELECTED route: YOU → Punchline → (dashed) → Dinner -->
+        <!-- leg 1 (walk to show) solid green -->
+        <path d="M150,380 C158,374 168,370 176,366" fill="none"
+              stroke="#1ba87e" stroke-width="4" stroke-linecap="round" filter="url(#softShadow)"/>
+        <!-- leg 2 (onward to dinner) dashed violet -->
+        <path d="M176,346 C214,290 252,200 300,128" fill="none"
+              stroke="#7b61c9" stroke-width="3.4" stroke-linecap="round"
+              class="leg-dash" stroke-dasharray="7 7" opacity="0.92"/>
+
+        <!-- tiny time labels on the legs -->
+        <g font-family="Inter, sans-serif" font-weight="700" font-size="9.5">
+          <g transform="translate(128,376)">
+            <rect x="-22" y="-10.5" width="44" height="17" rx="8.5" fill="#1ba87e" filter="url(#softShadow)"/>
+            <text x="0" y="1.5" text-anchor="middle" fill="#fff">3 min</text>
+          </g>
+          <g transform="translate(252,250)">
+            <rect x="-27" y="-10.5" width="54" height="17" rx="8.5" fill="#7b61c9" filter="url(#softShadow)"/>
+            <text x="0" y="1.5" text-anchor="middle" fill="#fff">10 min</text>
+          </g>
+        </g>
+
+        <!-- OUT-OF-REACH pin (hollow dashed grey, de-emphasised) -->
+        <!-- The Long Goodbye is off-taste + blows dinner -->
+        <g opacity="0.7">
+          <circle cx="316" cy="486" r="9" fill="#eef3f1"/>
+          <circle cx="316" cy="486" r="8.2" fill="none" stroke="#7c8a84" stroke-width="2" stroke-dasharray="2.4 2.6"/>
+          <path d="M312,482 l8,8 M320,482 l-8,8" stroke="#7c8a84" stroke-width="1.6" stroke-linecap="round"/>
+          <g transform="translate(316,506)">
+            <rect x="-44" y="-8.5" width="88" height="16" rx="8" fill="#ffffff" opacity="0.78"/>
+            <text x="0" y="3" text-anchor="middle" class="pin-name" fill="#7c8a84">The Long Goodbye</text>
+          </g>
+        </g>
+
+        <!-- TIGHT pins (amber, white ring) -->
+        <g filter="url(#pinShadow)">
+          <!-- Sketch Riot -->
+          <circle cx="96" cy="236" r="11" fill="#fff"/><circle cx="96" cy="236" r="7.5" fill="#e8973a"/>
+          <!-- Midnight Cabaret -->
+          <circle cx="212" cy="300" r="11" fill="#fff"/><circle cx="212" cy="300" r="7.5" fill="#e8973a"/>
+          <!-- Last Laugh (far edge) -->
+          <circle cx="252" cy="150" r="11" fill="#fff"/><circle cx="252" cy="150" r="7.5" fill="#e8973a"/>
+        </g>
+        <!-- tight pin name tags -->
+        <g class="pin-tag">
+          <g transform="translate(96,214)"><rect x="-32" y="-9" width="64" height="16" rx="8" fill="#fff" filter="url(#softShadow)"/><text x="0" y="2.5" text-anchor="middle" class="pin-name" fill="#a85f12">Sketch Riot</text></g>
+          <g transform="translate(212,322)"><rect x="-44" y="-9" width="88" height="16" rx="8" fill="#fff" filter="url(#softShadow)"/><text x="0" y="2.5" text-anchor="middle" class="pin-name" fill="#a85f12">Midnight Cabaret</text></g>
+          <g transform="translate(252,128)"><rect x="-32" y="-9" width="64" height="16" rx="8" fill="#fff" filter="url(#softShadow)"/><text x="0" y="2.5" text-anchor="middle" class="pin-name" fill="#a85f12">Last Laugh</text></g>
+        </g>
+
+        <!-- GO pin (Variety Hour) -->
+        <g filter="url(#pinShadow)">
+          <circle cx="110" cy="300" r="12" fill="#fff"/><circle cx="110" cy="300" r="8" fill="#1ba87e"/>
+        </g>
+        <g transform="translate(110,278)" class="pin-tag">
+          <rect x="-42" y="-9" width="84" height="16" rx="8" fill="#fff" filter="url(#softShadow)"/>
+          <text x="0" y="2.5" text-anchor="middle" class="pin-name" fill="#0f7a5b">Variety Hour</text>
+        </g>
+
+        <!-- SELECTED show pin (Punchline) — larger teardrop with name tag -->
+        <g transform="translate(176,330)" class="pin-tag">
+          <rect x="-46" y="-13" width="92" height="19" rx="9.5" fill="#1ba87e" filter="url(#softShadow)"/>
+          <text x="0" y="0" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="700" fill="#fff">★ Punchline Party</text>
+        </g>
+        <g filter="url(#pinShadow)">
+          <path d="M176,346 c-12,0 -20,9 -20,20 c0,14 20,30 20,30 c0,0 20,-16 20,-30 c0,-11 -8,-20 -20,-20 z"
+                fill="#1ba87e"/>
+          <circle cx="176" cy="366" r="8.5" fill="#fff"/>
+          <text x="176" y="370" text-anchor="middle" class="pin-cap" fill="#1ba87e">★</text>
+        </g>
+
+        <!-- DINNER destination pin (Dishoom) -->
+        <g filter="url(#pinShadow)">
+          <path d="M300,103 c-12,0 -20,9 -20,20 c0,14 20,30 20,30 c0,0 20,-16 20,-30 c0,-11 -8,-20 -20,-20 z"
+                fill="#7b61c9"/>
+          <circle cx="300" cy="123" r="8.5" fill="#fff"/>
+          <text x="300" y="127" text-anchor="middle" font-size="11">🍴</text>
+        </g>
+        <g transform="translate(300,84)">
+          <rect x="-34" y="-13" width="68" height="19" rx="9.5" fill="#fff" filter="url(#softShadow)"/>
+          <text x="0" y="0" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="700" fill="#5a48a0">DINNER 18:30</text>
+        </g>
+
+        <!-- YOU ARE HERE dot (drawn last, on top) -->
+        <circle class="pulse-ring" cx="150" cy="380" r="14" fill="#1ba87e"/>
+        <circle cx="150" cy="380" r="13" fill="#fff" filter="url(#pinShadow)"/>
+        <circle cx="150" cy="380" r="8" fill="#10231d"/>
+        <circle cx="150" cy="380" r="3.4" fill="#fff"/>
+        <g transform="translate(150,404)">
+          <rect x="-58" y="-9" width="116" height="17" rx="8.5" fill="#10231d" filter="url(#softShadow)"/>
+          <text x="0" y="3" text-anchor="middle" class="pin-name" fill="#fff">YOU · BRISTO SQUARE</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ============================================================
+         TOP CONTEXT PILLS
+         ============================================================ -->
+    <div class="context">
+      <div class="pill-row">
+        <div class="pill">
+          <span class="dot-now"></span>
+          <span class="strong">15:10</span>
+          <span class="sep">·</span>
+          <span class="muted">Bristo Square</span>
+        </div>
+      </div>
+      <div class="pill-row">
+        <div class="pill secondary">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1M5 13l-2 6"/></svg>
+          </span>
+          <span class="strong">Walking · 15 min</span>
+          <span class="sep">·</span>
+          <span class="muted">Comedy, Cabaret &amp; Variety</span>
+          <span class="sep">·</span>
+          <span class="muted">before <b style="color:#5a48a0">18:30 dinner</b></span>
+        </div>
+      </div>
+      <!-- map key -->
+      <div class="legend" aria-hidden="true">
+        <span class="chip"><i class="go"></i>Go now</span>
+        <span class="chip"><i class="tight"></i>Tight</span>
+        <span class="chip"><i class="out"></i>Out of reach</span>
+      </div>
+    </div>
+
+    <!-- map controls -->
+    <div class="map-tools">
+      <button class="tool" aria-label="Zoom in">
+        <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 6v12M6 12h12"/></svg>
+      </button>
+      <button class="tool locate" aria-label="Recenter on me">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      </button>
+    </div>
+
+    <!-- progressive-enhancement toggle target (keyboard-operable, no JS) -->
+    <input type="checkbox" id="expand" aria-label="Expand the list of shows" />
+
+    <!-- ============================================================
+         BOTTOM SHEET (partially expanded)
+         ============================================================ -->
+    <section class="sheet" aria-label="Shows you can catch">
+      <label class="sheet-grab" for="expand" aria-label="Expand list"><span></span></label>
+
+      <header class="sheet-head">
+        <div class="sheet-title">
+          <h1>5 shows you can catch</h1>
+          <span class="count">2 go now</span>
+        </div>
+        <p class="sheet-sub">
+          Near <b>Bristo Square</b>, all make your <b style="color:#5a48a0">18:30 dinner</b>
+          <span class="sort-tag">
+            <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6-6 6 6M12 3v18"/></svg>
+            sorted by time cushion
+          </span>
+        </p>
+      </header>
+
+      <div class="list" role="list">
+
+        <!-- ===== SELECTED: Punchline Party (GO) ===== -->
+        <div class="row go is-selected" role="listitem" tabindex="0" aria-current="true">
+          <div class="row-dot go" aria-label="Reachable, 3 min walk">
+            <div class="walk-no">3<small>min</small></div>
+          </div>
+          <div class="row-main">
+            <div class="row-top">
+              <span class="row-title">Punchline Party</span>
+            </div>
+            <p class="row-venue">Underbelly Bristo Sq <span class="vsep">·</span> Friesian</p>
+            <div class="row-slack">
+              <svg class="si" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+              Comfy — leave by ~15:57
+            </div>
+          </div>
+          <div class="row-right">
+            <span class="row-time">16:00</span>
+            <span class="row-price">£13</span>
+            <span class="row-walk">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1"/></svg>
+              starts in 50 min
+            </span>
+          </div>
+
+          <!-- two-leg micro-journey -->
+          <div class="plan">
+            <div class="journey" aria-label="You to show to dinner">
+              <div class="j-node">
+                <div class="j-ico you">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4" fill="#fff"/><path fill="#fff" d="M5 20c0-4 3.5-6 7-6s7 2 7 6Z"/></svg>
+                </div>
+                <span>You · now</span>
+              </div>
+              <div class="j-leg">
+                <b>3 min walk</b>
+                <span class="line"></span>
+              </div>
+              <div class="j-node">
+                <div class="j-ico show">
+                  <svg viewBox="0 0 24 24"><path fill="#fff" d="M4 5h16v3H4zM6 9h12l-1 10H7z"/></svg>
+                </div>
+                <span>Show 16:00–17:00</span>
+              </div>
+              <div class="j-leg dashed">
+                <b>10 min walk</b>
+                <span class="line"></span>
+              </div>
+              <div class="j-node">
+                <div class="j-ico dinner">🍴</div>
+                <span>Dinner 18:30</span>
+              </div>
+            </div>
+            <div class="plan-verdict">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Ends 17:00 → 10 min walk → at Dishoom for 18:30
+              <span class="cushion">80 min to spare</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Variety Hour Spectacular (GO) ===== -->
+        <div class="row go" role="listitem" tabindex="0">
+          <div class="row-dot go" aria-label="Reachable, 5 min walk">
+            <div class="walk-no">5<small>min</small></div>
+          </div>
+          <div class="row-main">
+            <div class="row-top"><span class="row-title">Variety Hour Spectacular</span></div>
+            <p class="row-venue">Gilded Balloon Patter House <span class="vsep">·</span> Snug</p>
+            <div class="row-slack">
+              <svg class="si" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+              Leave in ~15 min · still makes dinner
+            </div>
+          </div>
+          <div class="row-right">
+            <span class="row-time">15:30</span>
+            <span class="row-price">£14</span>
+            <span class="row-walk">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1"/></svg>
+              starts in 20 min
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== Sketch Riot (TIGHT) ===== -->
+        <div class="row tight" role="listitem" tabindex="0">
+          <div class="row-dot tight" aria-label="Tight, 6 min walk">
+            <div class="walk-no">6<small>min</small></div>
+          </div>
+          <div class="row-main">
+            <div class="row-top"><span class="row-title">Sketch Riot</span></div>
+            <p class="row-venue">Monkey Barrel Comedy <span class="vsep">·</span> The Hive</p>
+            <div class="row-slack">
+              <svg class="si" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+              Started 10 min ago — slip in late · arrive ~15:16
+            </div>
+          </div>
+          <div class="row-right">
+            <span class="row-time">15:00</span>
+            <span class="row-price">£11</span>
+            <span class="row-walk">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1"/></svg>
+              miss ~16 min
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== Midnight Cabaret (Matinee) (TIGHT) ===== -->
+        <div class="row tight" role="listitem" tabindex="0">
+          <div class="row-dot tight" aria-label="Tight, 7 min walk">
+            <div class="walk-no">7<small>min</small></div>
+          </div>
+          <div class="row-main">
+            <div class="row-top"><span class="row-title">Midnight Cabaret (Matinee)</span></div>
+            <p class="row-venue">Assembly George Square <span class="vsep">·</span> Studio</p>
+            <div class="row-slack">
+              <svg class="si" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+              Started — you'd miss ~17 min · arrive ~15:17
+            </div>
+          </div>
+          <div class="row-right">
+            <span class="row-time">15:00</span>
+            <span class="row-price">£18</span>
+            <span class="row-walk">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1"/></svg>
+              still makes dinner
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== Last Laugh Stand-Up (TIGHT, far) ===== -->
+        <div class="row tight" role="listitem" tabindex="0">
+          <div class="row-dot tight" aria-label="Tight, 11 min walk">
+            <div class="walk-no">11<small>min</small></div>
+          </div>
+          <div class="row-main">
+            <div class="row-top"><span class="row-title">Last Laugh Stand-Up</span></div>
+            <p class="row-venue">The Stand Comedy Club <span class="vsep">·</span> Stand 1</p>
+            <div class="row-slack">
+              <svg class="si" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+              11 min away — you'd miss ~20 min · only the back half
+            </div>
+          </div>
+          <div class="row-right">
+            <span class="row-time">15:00</span>
+            <span class="row-price">£12</span>
+            <span class="row-walk">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 4v4l3 5-4 7M6 7l2 3 5-1"/></svg>
+              borderline
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== OUT OF REACH (3rd state) — clearly demoted ===== -->
+        <p class="out-head">Won't make dinner — hidden by default</p>
+        <div class="outnote" role="listitem">
+          <div class="row-dot out" aria-label="Out of reach">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+          </div>
+          <div style="min-width:0">
+            <div class="ot">The Long Goodbye · Pleasance Dome · 17:30</div>
+            <div class="os">Off-taste, and ends 18:45 — after your dinner</div>
+          </div>
+          <span class="x" style="margin-left:auto">Misses 18:30 ✗</span>
+        </div>
+
+      </div>
+
+      <!-- sticky CTA for the selected show -->
+      <footer class="sheet-foot">
+        <div class="foot-info">
+          <div class="fl">Selected · Punchline Party</div>
+          <div class="ft">16:00 · £13 · 3 min away</div>
+        </div>
+        <a class="foot-cta" href="#">
+          Go now
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </footer>
+    </section>
+
+    <div class="credit">Fringe Discover · concept mockup</div>
+  </div>
+</body>
+</html>
