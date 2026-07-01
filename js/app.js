@@ -176,7 +176,7 @@ function initMap() {
     btn.innerHTML = "◎";
     btn.title = "Use my location";
     btn.style.cssText =
-      "width:34px;height:34px;border:none;background:#c62024;color:#fff;font-size:18px;cursor:pointer;border-radius:4px;";
+      "width:34px;height:34px;border:none;background:#0f8f86;color:#fff;font-size:18px;cursor:pointer;border-radius:8px;";
     L.DomEvent.on(btn, "click", (e) => {
       L.DomEvent.stop(e);
       requestUserLocation();
@@ -387,9 +387,9 @@ function renderReachCircle() {
   if (!state.map) return;
   const opts = {
     radius: reachRadiusMeters(),
-    color: "#2f6bd6",
+    color: "#0f8f86",
     weight: 1.5,
-    fillColor: "#2f6bd6",
+    fillColor: "#0f8f86",
     fillOpacity: 0.08,
     interactive: false,
   };

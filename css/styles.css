@@ -1,17 +1,22 @@
 /* ===================== Design tokens ===================== */
 :root {
-  --red: #c62024;
-  --red-dark: #9c181b;
-  --gold: #c79a36;
-  --blue: #2f6bd6;
-  --ink: #141414;
-  --paper: #ffffff;
-  --muted: #6b6b6b;
-  --line: #e7e7e7;
+  /* EdFringeNow light-map palette (P1 foundation). Variable names kept so the
+     existing rules keep resolving; values retuned to the approved theme. */
+  --red: #0f8f86;        /* primary action — teal */
+  --red-dark: #0a6f68;
+  --gold: #5b54c9;       /* commitment / secondary — indigo */
+  --blue: #5b54c9;       /* destination / user pin — indigo */
+  --ink: #222a24;        /* warm near-black */
+  --paper: #fffdf8;      /* card surface */
+  --bg: #f3efe5;         /* page background */
+  --muted: #6b7268;
+  --line: #e6e1d5;
   --yellow-badge: #f4d645;
+  --shadow-soft: 0 10px 26px rgba(34, 42, 36, 0.10);
   --shadow-offset: 6px;
   --maxw: 1120px;
-  --radius: 4px;
+  --radius: 14px;
+  --serif: "Fraunces", Georgia, serif;
   font-synthesis: none;
 }
 
@@ -83,9 +88,9 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "Archivo", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--bg);
   line-height: 1.5;
 }
 
@@ -115,15 +120,15 @@ a { color: inherit; }
   gap: 24px;
 }
 .logo {
-  font-weight: 800;
-  font-style: italic;
+  font-family: var(--serif);
+  font-weight: 700;
   font-size: 1.4rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--red);
+  letter-spacing: -0.01em;
+  color: var(--ink);
   text-decoration: none;
   white-space: nowrap;
 }
+.logo-now { color: var(--red); }
 .main-nav {
   display: flex;
   gap: 28px;
@@ -160,10 +165,10 @@ a { color: inherit; }
 /* ===================== Hero ===================== */
 .hero { text-align: center; padding: 56px 24px 40px; }
 .hero-title {
-  font-weight: 800;
+  font-family: var(--serif);
+  font-weight: 600;
   font-size: clamp(2.4rem, 6vw, 3.6rem);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   margin: 0 0 12px;
 }
 .hero-subtitle {
@@ -183,15 +188,15 @@ a { color: inherit; }
 .card {
   position: relative;
   background: var(--paper);
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 .card.is-open,
 .card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--ink);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(34, 42, 36, 0.14);
 }
 /* Lift the open card (and its pop-over) above the map's stacking context. */
 .card.is-open { z-index: 1500; }
@@ -215,9 +220,9 @@ a { color: inherit; }
   left: 0;
   right: 0;
   background: var(--paper);
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+  box-shadow: 0 18px 40px rgba(34, 42, 36, 0.18);
   padding: 18px 18px 20px;
 }
 .card-panel[hidden] { display: none; }
@@ -336,10 +341,10 @@ a { color: inherit; }
 #leaflet-map {
   width: 100%;
   height: 460px;
-  background: #dfe6e3;
-  border: 2px solid var(--ink);
+  background: #e9eee7;
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   /* Positioned + z-index:0 caps Leaflet's internal panes/controls (which go up
      to z-index 1000) inside this stacking context, so the card pop-overs above
@@ -422,10 +427,10 @@ a { color: inherit; }
   margin: 18px auto 0;
   padding: 10px 16px;
   min-height: 66px;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fbfbf8;
-  box-shadow: 3px 3px 0 var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
   overflow-x: auto;
 }
 .journey:empty { display: none; }
@@ -592,9 +597,9 @@ a { color: inherit; }
   line-height: 1.2;
   color: #fff;
   background: var(--blue);
-  border: 2px solid var(--ink);
+  border: none;
   border-radius: var(--radius);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: var(--shadow-soft);
   transition: transform 0.06s ease, box-shadow 0.06s ease;
 }
 .maps-route-btn:hover { background: var(--blue-dark, #1746a2); }
@@ -624,9 +629,9 @@ a { color: inherit; }
 /* ===================== Shows list ===================== */
 .shows-section { padding: 36px 24px 56px; }
 .shows-title {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 1.3rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.5rem;
   margin: 0 0 22px;
 }
 .shows-grid {
@@ -645,7 +650,7 @@ a { color: inherit; }
 .show-item:hover { border-color: var(--ink); transform: translateY(-2px); }
 .show-item--tight { opacity: 0.55; }
 .show-item--leg { border-color: #1e7d34; border-width: 2px; }
-.show-item--selected { border-color: var(--ink); border-width: 2px; box-shadow: 3px 3px 0 var(--ink); }
+.show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: var(--shadow-soft); }
 .show-genre {
   display: inline-block;
   font-size: 0.72rem;
