@@ -92,20 +92,28 @@
   .seg button{ flex:1; font-family:var(--sans); font-weight:600; font-size:.82rem; color:var(--muted); background:transparent; border:none; border-radius:8px; padding:9px 6px; }
   .seg button.on{ background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
 
-  .clockwrap{ display:flex; flex-direction:column; align-items:center; }
-  .clock{ position:relative; width:240px; height:240px; }
-  .clock svg{ position:absolute; inset:0; }
-  .tick{ position:absolute; transform:translate(-50%,-50%); text-align:center; width:54px; }
-  .tick .tm{ font-family:var(--sans); font-weight:600; font-size:.74rem; color:var(--muted); }
-  .tick .cn{ font-size:.58rem; color:var(--faint); }
-  .tick.sel{ }
-  .tick.sel .tm{ color:#fff; }
-  .tick.sel .cn{ color:rgba(255,255,255,.85); }
-  .tick .selbg{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:50px; height:42px; border-radius:13px; background:var(--indigo); z-index:-1; box-shadow:0 4px 12px rgba(91,84,201,.3); }
-  .clockface{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; }
-  .clockface .big{ font-family:var(--serif); font-weight:700; font-size:1.7rem; line-height:1; }
-  .clockface .cnt{ font-size:.66rem; font-weight:600; color:var(--teal-deep); margin-top:3px; }
-  .clockhint{ font-size:.68rem; color:var(--faint); margin:8px 0 2px; }
+  /* rolling time picker (hour / minute wheels) */
+  .picker{ display:flex; align-items:center; justify-content:center; gap:8px; margin:2px 0 6px; }
+  .roller{ display:flex; flex-direction:column; align-items:center; }
+  .rbtn{ background:none; border:none; color:var(--faint); font-size:.85rem; padding:3px 12px; cursor:pointer; line-height:1; border-radius:8px; }
+  .rbtn:hover{ color:var(--indigo); background:var(--indigo-soft); }
+  .rwin{ position:relative; width:82px; height:132px; overflow:hidden; text-align:center; }
+  .rwin::before{ content:""; position:absolute; left:2px; right:2px; top:44px; height:44px; border-radius:12px; background:var(--indigo-soft); border:1px solid rgba(91,84,201,.25); }
+  .rwin ul{ list-style:none; margin:0; padding:0; position:relative; z-index:1; }
+  .rwin li{ height:44px; line-height:44px; font-family:var(--serif); font-weight:600; font-size:1.6rem; color:var(--faint); }
+  .rwin li.on{ color:var(--indigo); }
+  .rwin ul.flip{ animation:rollflip .26s ease; }
+  @keyframes rollflip{ from{ opacity:.25; transform:translateY(var(--rd,6px)); } to{ opacity:1; transform:none; } }
+  .pcolon{ font-family:var(--serif); font-weight:700; font-size:1.6rem; color:var(--ink); padding-bottom:2px; }
+  .countwrap{ text-align:center; margin:4px 0 2px; }
+  .countnum{ display:inline-block; font-family:var(--serif); font-weight:700; font-size:2rem; line-height:1; color:var(--teal-deep); }
+  .countnum.bump{ animation:bump .42s ease; }
+  @keyframes bump{ 0%{ transform:scale(1); } 42%{ transform:scale(1.2); color:var(--teal); } 100%{ transform:scale(1); } }
+  .countlab{ font-size:.72rem; font-weight:600; color:var(--muted); margin-top:2px; }
+  .toosoon{ font-size:.8rem; color:var(--tight); font-weight:600; padding:14px 0; text-align:center; }
+  @keyframes cardin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+  .pick.anim{ animation:cardin .34s ease both; }
+  @media (prefers-reduced-motion:reduce){ .rwin ul.flip{ animation:none; } .countnum.bump{ animation:none; } .pick.anim{ animation:none; } }
 
   .mlist{ margin-top:14px; }
   .mlab{ font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin:0 0 8px; }
@@ -185,7 +193,7 @@
   <section class="lead">
     <p class="kick">EdFringeNow · merged light-map design</p>
     <h1>A map you can act on, a clock you can read</h1>
-    <p>The light-map opening (map + nearby shows, zero input) with the dark version's <b>pull-up tab</b> so there's instantly something to do — and time &amp; show <b>merged into one screen</b>, picked with a clock that shows <b>how many shows start at each time</b>.</p>
+    <p>The light-map opening (map + nearby shows, zero input) with the dark version's <b>pull-up tab</b> so there's instantly something to do — and time &amp; show <b>merged into one screen</b>, picked with a <b>rolling time picker</b> that live-counts the shows and animates the list as you change the time.</p>
     <p class="note">It's a <b>responsive website</b>, not an app — same Leaflet/OpenStreetMap your live site uses, the pull-up tab is plain CSS. A <b>desktop view</b> is shown at the bottom.</p>
     <div class="scenario">
       <span>🕒 <b>15:44</b>, Fri 14 Aug</span><span>📍 <b>Bristo Square</b></span><span>🎭 Default: Comedy</span><span>🚶 walk ≤10 min</span>
@@ -231,41 +239,40 @@
     <!-- ===== 2 — MERGED: clock + shows ===== -->
     <figure class="stage">
       <figcaption class="cap"><span class="num">2</span><span class="t">Time &amp; show — one screen</span>
-        <span class="s">Turn the <b>clock</b> to a time (each tick shows how many shows start then), and pick from that time's shows right below.</span></figcaption>
+        <span class="s">Roll the <b>hour / minute picker</b>; the count and the show list <b>re-render with a little animation</b> each change. Try it — it's live.</span></figcaption>
       <div class="phone"><div class="screen">
         <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live">STEP · WHERE NEXT</div></div>
         <div class="scrollarea"><div class="pad">
           <div class="seg"><button class="on">🎭 Another show</button><button>📍 Somewhere else</button></div>
-          <div class="clockwrap">
-            <div class="clock">
-              <svg viewBox="0 0 240 240" aria-hidden="true">
-                <circle cx="120" cy="120" r="104" fill="#fffdf8" stroke="#e5e0d4" stroke-width="2"/>
-                <circle cx="120" cy="120" r="104" fill="none" stroke="#efebe1" stroke-width="1"/>
-                <line x1="120" y1="120" x2="120" y2="196" stroke="#5b54c9" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="120" cy="120" r="6" fill="#5b54c9"/>
-              </svg>
-              <div class="clockface"><div class="big" style="margin-top:-26px">18:30</div></div>
-              <div class="tick" style="left:120px; top:34px;"><div class="tm">16:30</div><div class="cn">18 shows</div></div>
-              <div class="tick" style="left:181px; top:59px;"><div class="tm">17:00</div><div class="cn">20</div></div>
-              <div class="tick" style="left:206px; top:120px;"><div class="tm">17:30</div><div class="cn">24</div></div>
-              <div class="tick" style="left:181px; top:181px;"><div class="tm">18:00</div><div class="cn">26</div></div>
-              <div class="tick sel" style="left:120px; top:206px;"><div class="selbg"></div><div class="tm">18:30</div><div class="cn">23</div></div>
-              <div class="tick" style="left:59px; top:181px;"><div class="tm">19:00</div><div class="cn">19</div></div>
-              <div class="tick" style="left:34px; top:120px;"><div class="tm">19:30</div><div class="cn">14</div></div>
-              <div class="tick" style="left:59px; top:59px;"><div class="tm">20:00</div><div class="cn">9</div></div>
+          <p class="mlab" style="text-align:center; margin-bottom:6px">When does your next thing start?</p>
+          <div class="picker">
+            <div class="roller">
+              <button class="rbtn" data-step="hour" data-dir="1" aria-label="Hour up">▲</button>
+              <div class="rwin"><ul id="hourRoll"><li>17</li><li class="on">18</li><li>19</li></ul></div>
+              <button class="rbtn" data-step="hour" data-dir="-1" aria-label="Hour down">▼</button>
             </div>
-            <div class="clockface" style="position:static; transform:none; margin-top:-6px"><div class="cnt">23 shows start at 18:30</div></div>
-            <div class="clockhint">Drag the hand · counts update per time</div>
+            <span class="pcolon">:</span>
+            <div class="roller">
+              <button class="rbtn" data-step="min" data-dir="1" aria-label="Minutes up">▲</button>
+              <div class="rwin"><ul id="minRoll"><li>15</li><li class="on">30</li><li>45</li></ul></div>
+              <button class="rbtn" data-step="min" data-dir="-1" aria-label="Minutes down">▼</button>
+            </div>
+          </div>
+          <div class="countwrap">
+            <span class="countnum" id="countNum">23</span>
+            <div class="countlab"><span id="timeLab">18:30</span> · shows starting then</div>
           </div>
           <div class="mlist">
-            <p class="mlab">Pick your 18:30 show — any genre</p>
-            <div class="pick sel"><span class="radio"></span><div class="cc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><div class="pg">Comedy</div></div></div>
-            <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><div class="pg">Cabaret &amp; Variety</div></div></div>
-            <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><div class="pg">Theatre</div></div></div>
-            <div class="moremini">＋ 20 more at 18:30 ▾</div>
+            <p class="mlab" id="listLab">Pick your 18:30 show — any genre</p>
+            <div id="showList">
+              <div class="pick sel"><span class="radio"></span><div class="cc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><div class="pg">Comedy</div></div></div>
+              <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><div class="pg">Cabaret &amp; Variety</div></div></div>
+              <div class="pick"><span class="radio"></span><div class="cc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><div class="pg">Theatre</div></div></div>
+            </div>
+            <div class="moremini" id="moreMini">＋ 20 more at 18:30 ▾</div>
             <div class="typ"><span>Not a show? <b>Type a place</b></span><span style="color:var(--teal-deep);font-weight:700">TYPE ▾</span></div>
           </div>
-          <button class="confirm">Use Ahir Shah: Golden →</button>
+          <button class="confirm" id="confirmBtn">Use Ahir Shah: Golden →</button>
         </div></div>
       </div></div>
     </figure>
@@ -386,5 +393,99 @@
 
   <footer>A synthesis of the two map themes — <a href="index.html">all concepts</a>. · EdFringeNow · concept mockup</footer>
 </main>
+
+<script>
+/* Stage 2 only: rolling hour/minute picker that live-counts shows and
+   animates the list on change. Purely illustrative data; the real build
+   computes counts + lists from data/shows.json. Renders fine without JS
+   (the static 18:30 state is in the markup). */
+(function(){
+  var NOW = 15*60 + 44, LEAD = 40;                 // "now" 15:44; only offer >= 40 min out
+  var MINS = [0, 15, 30, 45];
+  var pool = [
+    {t:'Absolute Monopoly', v:'Assembly George Square', g:'Comedy'},
+    {t:'Sam Morrison: DUCK', v:'Gilded Balloon Teviot', g:'Comedy'},
+    {t:'Emma Doran: Emmaculate', v:'Pleasance Courtyard', g:'Comedy'},
+    {t:'Best of Cabaret 2026', v:'Just the Tonic at The Caves', g:'Cabaret & Variety'},
+    {t:'5 Headliners for £10', v:'Hoots @ The Apex', g:'Comedy'},
+    {t:"The Stand's Pick of the Fringe", v:'The Stand', g:'Comedy'},
+    {t:'Julian Clary: Fully Dilated', v:'Assembly Rooms', g:'Comedy'},
+    {t:'Escape Room: The Musical', v:'Just the Tonic at The Caves', g:'Musicals & Opera'},
+    {t:'Eli Matthewson: Blood Bender', v:'Assembly George Square', g:'Comedy'}
+  ];
+  var CANON = [
+    {t:'Ahir Shah: Golden', v:'Pleasance Courtyard', g:'Comedy'},
+    {t:'Colin Cloud: Hoax', v:'Pleasance Courtyard', g:'Cabaret & Variety'},
+    {t:'FLIGHT', v:'Assembly George Square', g:'Theatre'}
+  ];
+  var h = 18, mi = 2;                               // 18:30
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var $ = function(id){ return document.getElementById(id); };
+  var hourRoll=$('hourRoll'), minRoll=$('minRoll'), countNum=$('countNum'), timeLab=$('timeLab'),
+      listEl=$('showList'), listLab=$('listLab'), moreMini=$('moreMini'), confirmBtn=$('confirmBtn');
+  if(!hourRoll) return;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function m(){ return MINS[mi]; }
+  function tmins(){ return h*60 + m(); }
+  function key(){ return pad(h)+':'+pad(m()); }
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function data(){
+    if(tmins() < NOW+LEAD) return {tooSoon:true};
+    if(h===18 && m()===30) return {count:23, shows:CANON};
+    var c = Math.max(6, Math.min(28, Math.round(28 - Math.abs(tmins()-1080)/14)));
+    var i = (h*7 + m()) % pool.length;
+    return {count:c, shows:[pool[i%pool.length], pool[(i+3)%pool.length], pool[(i+6)%pool.length]]};
+  }
+  function setRoller(el, prev, cur, next, dir){
+    el.innerHTML = '<li>'+prev+'</li><li class="on">'+cur+'</li><li>'+next+'</li>';
+    if(!reduce && dir){ el.style.setProperty('--rd', (dir>0?9:-9)+'px'); el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); }
+  }
+  function renderRollers(dir){
+    setRoller(hourRoll, h>16?pad(h-1):'·', pad(h), h<20?pad(h+1):'·', dir&&dir.hour);
+    setRoller(minRoll, pad(MINS[(mi+3)%4]), pad(m()), pad(MINS[(mi+1)%4]), dir&&dir.min);
+  }
+  function tweenCount(to){
+    countNum.classList.remove('bump'); void countNum.offsetWidth; countNum.classList.add('bump');
+    var from = parseInt(countNum.textContent, 10); if(isNaN(from)) from = to;
+    if(reduce || from===to){ countNum.textContent = to; return; }
+    var t0 = null, dur = 420;
+    function step(ts){ if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur);
+      countNum.textContent = Math.round(from + (to-from)*(1-Math.pow(1-p,3)));
+      if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  function render(dir){
+    renderRollers(dir);
+    timeLab.textContent = key();
+    var d = data();
+    if(d.tooSoon){
+      countNum.textContent = '–';
+      listLab.textContent = 'Pick your show';
+      listEl.innerHTML = '<div class="toosoon">Too soon — choose a time at least 40 min from now.</div>';
+      moreMini.style.display = 'none';
+      confirmBtn.textContent = 'Pick a later time';
+      return;
+    }
+    moreMini.style.display = '';
+    tweenCount(d.count);
+    listLab.textContent = 'Pick your '+key()+' show — any genre';
+    listEl.innerHTML = d.shows.map(function(s, i){
+      return '<div class="pick'+(i===0?' sel':'')+(dir?' anim':'')+'" style="animation-delay:'+(i*55)+'ms">'
+        + '<span class="radio"></span><div class="cc"><div class="pt">'+esc(s.t)+'</div>'
+        + '<div class="pv">'+esc(s.v)+'</div><div class="pg">'+esc(s.g)+'</div></div></div>';
+    }).join('');
+    moreMini.textContent = '＋ '+Math.max(0, d.count-3)+' more at '+key()+' ▾';
+    confirmBtn.textContent = 'Use '+d.shows[0].t+' →';
+  }
+  document.querySelectorAll('.rbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var dir = +btn.dataset.dir, which = {};
+      if(btn.dataset.step==='hour'){ h = Math.max(16, Math.min(20, h+dir)); which.hour = dir; }
+      else { mi = (mi + (dir>0?1:3)) % 4; which.min = dir; }
+      render(which);
+    });
+  });
+})();
+</script>
 </body>
 </html>
