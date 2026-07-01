@@ -558,74 +558,95 @@ function popupHtml(show, status = "ok") {
 /* The list mirrors what's on the map, minus the chosen next commitment: that
  * show is a future destination the user has already locked in, not something
  * "Happening Now", so we pin it on the map but keep it out of this list. */
+/* How many list rows to show before the "Show more" button; grows on demand. */
+const SHOW_PAGE = 12;
+
 function renderShowList() {
   const grid = document.getElementById("showsGrid");
   const title = document.querySelector(".shows-title");
+  const moreBtn = document.getElementById("showMore");
   if (!grid) return;
   grid.innerHTML = "";
 
   const constraint = state.selectedShowId
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
-  const shows = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
 
-  // The heading reflects the head-state: browsing "now", or fitting a gap.
+  let all = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+  // Without a commitment, "on now" means the next couple of hours — not the
+  // whole day — so the list stays about spontaneity, not a full catalogue.
+  if (!constraint) {
+    all = all.filter(({ show }) => timeToMinutes(show.time) <= NOW.minutes + 120);
+  }
+  all.sort((a, b) => a.show.time.localeCompare(b.show.time));
+
   if (title) {
     title.textContent = constraint
-      ? `${shows.length} ${shows.length === 1 ? "show fits" : "shows fit"} before ${constraint.time}`
-      : "Happening now near you";
+      ? `${all.length} ${all.length === 1 ? "show fits" : "shows fit"} before ${constraint.time}`
+      : `${all.length} ${all.length === 1 ? "show" : "shows"} you can still catch`;
   }
 
-  if (!shows.length) {
+  if (!all.length) {
     grid.innerHTML =
       '<p class="show-meta">' +
       (constraint
         ? "Nothing fits before your next commitment — try a later time or a wider travel window."
-        : "No reachable shows match your current filters.") +
+        : "Nothing reachable in the next couple of hours — widen your travel window or taste.") +
       "</p>";
+    if (moreBtn) moreBtn.hidden = true;
     return;
   }
 
-  // Grouped by start time so a long list stays scannable.
+  const cap = state.showCap || SHOW_PAGE;
+  const shown = all.slice(0, cap);
+
+  // Compact rows, grouped by start time.
   let group = null;
-  shows
-    .slice()
-    .sort((a, b) => a.show.time.localeCompare(b.show.time))
-    .forEach(({ show, status }) => {
-      if (show.time !== group) {
-        group = show.time;
-        const head = document.createElement("h3");
-        head.className = "shows-group-head";
-        head.textContent = group;
-        grid.appendChild(head);
-      }
-      const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
-      const item = document.createElement("article");
-      item.className = `show-item show-item--${status}`;
-      item.tabIndex = 0;
-      item.setAttribute("role", "button");
-      item.innerHTML = `
+  shown.forEach(({ show, status }) => {
+    if (show.time !== group) {
+      group = show.time;
+      const head = document.createElement("h3");
+      head.className = "shows-group-head";
+      head.textContent = show.time;
+      grid.appendChild(head);
+    }
+    const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
+    const item = document.createElement("article");
+    item.className = `show-item show-item--${status}`;
+    item.tabIndex = 0;
+    item.setAttribute("role", "button");
+    item.innerHTML = `
+      <span class="si-main">
         <span class="show-genre">${escapeHtml(show.genre)}</span>
-        <h4 class="show-name">${escapeHtml(show.title)}</h4>
-        <p class="show-meta">${escapeHtml(show.venue)}</p>
-        <p class="show-meta"><span class="walk-glyph" aria-hidden="true">🚶</span> ${walk} min · ${escapeHtml(show.price)}${
-          constraint ? ' · <span class="fits-tag">fits</span>' : ""
-        }</p>`;
-      const activate = () => {
-        onShowClick(show);
-        document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
-        const marker = state.markers[show.id];
-        if (marker) marker.openPopup();
-      };
-      item.addEventListener("click", activate);
-      item.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          activate();
-        }
-      });
-      grid.appendChild(item);
+        <span class="show-name">${escapeHtml(show.title)}</span>
+        <span class="show-meta">${escapeHtml(show.venue)}</span>
+      </span>
+      <span class="si-side">
+        <span class="si-time">${escapeHtml(show.time)}</span><br />
+        <span class="si-walk">🚶 ${walk} min · ${escapeHtml(show.price)}</span>
+        ${constraint ? '<br /><span class="si-fits">fits</span>' : ""}
+      </span>`;
+    const activate = () => {
+      onShowClick(show);
+      document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
+      const marker = state.markers[show.id];
+      if (marker) marker.openPopup();
+    };
+    item.addEventListener("click", activate);
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activate();
+      }
     });
+    grid.appendChild(item);
+  });
+
+  if (moreBtn) {
+    const remaining = all.length - shown.length;
+    moreBtn.hidden = remaining <= 0;
+    moreBtn.textContent = `Show ${Math.min(SHOW_PAGE, remaining)} more · ${remaining} left`;
+  }
 }
 
 /* ---------- Journey strip ---------- */
@@ -645,37 +666,54 @@ function renderJourneyStrip() {
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
 
+  // No commitment yet — no plan to show; the list heading carries the state.
+  if (!constraint) {
+    strip.innerHTML = "";
+    updateMapsRouteLink();
+    return;
+  }
+
   // A clicked stop only counts when it's a valid leg on the way to the
   // constraint (same rule the map uses for the green "leg" pin).
   let leg = null;
-  if (constraint && state.legShowId && state.legShowId !== constraint.id) {
+  if (state.legShowId && state.legShowId !== constraint.id) {
     const cand = state.shows.find((s) => s.id === state.legShowId);
     if (cand && classifyShow(cand, constraint) === "ok") leg = cand;
   }
 
-  const parts = [originNodeHtml()];
+  const destPt = [constraint.lat, constraint.lng];
+  const parts = ['<p class="plan-head">Your plan</p>'];
+  parts.push(planNode("you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
 
-  if (!constraint) {
-    // Nothing chosen — idle walker, then nothing.
-    parts.push(idleSegHtml());
-  } else if (leg) {
+  if (leg) {
     const legPt = [leg.lat, leg.lng];
-    const destPt = [constraint.lat, constraint.lng];
-    // Leg 1: leave now, arrive before the stop's show starts.
     const arriveLeg = NOW.minutes + travelMinutes(origin, legPt);
-    parts.push(segHtml(travelMinutes(origin, legPt)));
-    parts.push(stopNodeHtml(leg, timeToMinutes(leg.time) - arriveLeg));
-    // Leg 2: leave when the stop's show ends, arrive before the commitment.
+    parts.push(planLeg(travelMinutes(origin, legPt)));
+    parts.push(
+      planNode(
+        "stop",
+        `${leg.time}–${minutesToTime(timeToMinutes(leg.time) + leg.duration)}`,
+        leg.title,
+        `${leg.venue} · ${leg.genre}`,
+        planSlack(timeToMinutes(leg.time) - arriveLeg),
+        planBuy(leg)
+      )
+    );
     const departFromLeg = timeToMinutes(leg.time) + leg.duration;
     const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
-    parts.push(segHtml(travelMinutes(legPt, destPt)));
-    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+    parts.push(planLeg(travelMinutes(legPt, destPt)));
+    parts.push(
+      planNode("dest", constraint.time, destinationLabel(), "Your next commitment",
+        planSlack(timeToMinutes(constraint.time) - arriveDest), "")
+    );
   } else {
-    // Constraint only — one long line straight to your next commitment.
-    const destPt = [constraint.lat, constraint.lng];
     const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
-    parts.push(segHtml(travelMinutes(origin, destPt), { long: true }));
-    parts.push(destNodeHtml(constraint, timeToMinutes(constraint.time) - arriveDest));
+    parts.push(planLeg(travelMinutes(origin, destPt)));
+    parts.push(
+      planNode("dest", constraint.time, destinationLabel(), "Your next commitment",
+        planSlack(timeToMinutes(constraint.time) - arriveDest), "")
+    );
+    parts.push('<p class="plan-hint">Tap a show below to slot it in before this.</p>');
   }
 
   strip.innerHTML = parts.join("");
@@ -744,68 +782,30 @@ function googleMapsUrl() {
 function updateMapsRouteLink() {
   const link = document.getElementById("mapsRouteLink");
   if (!link) return;
-  link.hidden = false;
+  const hasPlan = Boolean(state.selectedShowId || state.legShowId);
+  link.hidden = !hasPlan; // only offer directions once there's a plan to route
+  if (!hasPlan) return;
   link.href = googleMapsUrl();
-  const hasRoute = Boolean(state.selectedShowId || state.legShowId);
   const text = link.querySelector(".maps-route-btn__text");
-  if (text) {
-    text.textContent = hasRoute ? "Open route in Google Maps" : "Open in Google Maps";
-  }
+  if (text) text.textContent = "Open route in Google Maps";
 }
 
-/* Left "you are here, now" node. */
-function originNodeHtml() {
+/* One node in the vertical plan: a dot, time, title, subtitle, an optional
+ * slack chip and an optional extra (e.g. a buy button). */
+function planNode(kind, time, title, sub, slackHtmlStr, extraHtml) {
   return `
-    <div class="journey-node journey-node--origin">
-      <span class="journey-flag journey-flag--dull">&#9873; You are here</span>
-      <span class="journey-sub">(now) &middot; ${escapeHtml(NOW.time)}</span>
+    <div class="plan-node ${kind}">
+      <div class="plan-time">${escapeHtml(time)}</div>
+      <div class="plan-title">${escapeHtml(title)}</div>
+      ${sub ? `<div class="plan-sub">${escapeHtml(sub)}</div>` : ""}
+      ${slackHtmlStr || ""}
+      ${extraHtml || ""}
     </div>`;
 }
 
-/* Idle middle: a walker bobbing in place, then dots, then nothing. */
-function idleSegHtml() {
-  return `
-    <div class="journey-seg journey-seg--idle">
-      <span class="journey-idle-row">
-        <span class="journey-walker" aria-hidden="true">&#128694;</span>
-        <span class="journey-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-      </span>
-      <span class="journey-hint">Pick where you need to be next</span>
-    </div>`;
-}
-
-/* A travel connector: glyph + duration above a dashed line with a walker
- * tracking across it. `opts.long` lets the single direct leg stretch wider. */
-function segHtml(mins, { long = false } = {}) {
-  return `
-    <div class="journey-seg journey-seg--line${long ? " journey-seg--long" : ""}">
-      <span class="journey-line-label">${escapeHtml(travelGlyph())} ${formatMins(mins)}</span>
-      <span class="journey-line"><span class="journey-line-walker" aria-hidden="true">&#128694;</span></span>
-    </div>`;
-}
-
-/* The intermediate stop the user clicked on the map. */
-function stopNodeHtml(show, slackMin) {
-  return `
-    <div class="journey-node journey-node--stop">
-      <span class="journey-flag journey-flag--stop">&#9873; ${escapeHtml(show.title)}</span>
-      <span class="journey-sub">${escapeHtml(show.venue)}</span>
-      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
-      ${slackHtml(slackMin)}
-      ${buyHtml(show)}
-    </div>`;
-}
-
-/* The user's next commitment (the destination). This is somewhere they already
- * need to be — not a show we sell a ticket for — so it carries no buy CTA. */
-function destNodeHtml(show, slackMin) {
-  return `
-    <div class="journey-node journey-node--dest">
-      <span class="journey-flag journey-flag--dest">&#9873; ${escapeHtml(destinationLabel())}</span>
-      <span class="journey-sub">Your next commitment</span>
-      <span class="journey-sub">Starts ${escapeHtml(show.time)}</span>
-      ${slackHtml(slackMin)}
-    </div>`;
+/* A walking connector between two plan nodes. */
+function planLeg(mins) {
+  return `<div class="plan-leg">${escapeHtml(travelGlyph())} ${formatMins(mins)} walk</div>`;
 }
 
 /* Booking link for a show on the official Fringe box office. Every show in the
@@ -816,26 +816,24 @@ function ticketUrl(show) {
     : "";
 }
 
-/* A "buy now" call-to-action for the chosen show (the middle stop the user
- * selected to go see). Buying ahead skips the on-site box-office queue — worth
- * ~5 minutes, which matters when the plan is tight. Clicking opens the show's
- * official Fringe booking page. Free shows need no ticket; sold-out shows say so. */
-function buyHtml(show) {
+/* Buy-ahead link for the chosen stop. Buying ahead skips the on-site box-office
+ * queue (~5 min), which matters when a plan is tight. Free shows need no ticket;
+ * sold-out shows say so. */
+function planBuy(show) {
   if (!show || show.free) return "";
-  if (show.soldOut) return `<span class="journey-soldout">Sold out</span>`;
+  if (show.soldOut) return `<span class="plan-soldout">Sold out</span>`;
   const url = ticketUrl(show) || "#";
-  return `<a class="journey-buy" href="${escapeHtml(url)}" target="_blank" rel="noopener"
-            title="Buy a ticket on edfringe.com — booking ahead skips the box-office queue and saves about 5 minutes on the spot"
-          >&#127915; Buy now &middot; save 5 min at the door</a>`;
+  return `<a class="plan-buy-inline" href="${escapeHtml(url)}" target="_blank" rel="noopener"
+            title="Buy ahead on edfringe.com — skips the box-office queue (~5 min)"
+          >&#127915; Buy ahead &middot; skip the queue</a>`;
 }
 
 /* A chip noting the cushion before a show starts (or by how much you'd miss it). */
-function slackHtml(mins) {
+function planSlack(mins) {
   const m = Math.round(mins);
-  if (m >= 0) {
-    return `<span class="journey-slack journey-slack--ok">${m} min to spare</span>`;
-  }
-  return `<span class="journey-slack journey-slack--late">${-m} min late</span>`;
+  return m >= 0
+    ? `<span class="plan-slack ok">${m} min to spare</span>`
+    : `<span class="plan-slack late">${-m} min late</span>`;
 }
 
 /* Travel duration rounded to whole minutes (never below 1). */
@@ -889,18 +887,20 @@ function updatePriceLabel() {
 }
 
 function onGenreChange() {
+  state.showCap = SHOW_PAGE; // a changed filter resets the list to the first page
   updateGenreValue();
   buildConstraintPanel(); // time/show options depend on the genre + price filter
   refreshMap();           // also re-renders the (mirrored) show list
 }
 
+/* Concise label for the genre filter chip. */
 function updateGenreValue() {
   const el = document.querySelector('[data-value="genre"]');
   if (!el) return;
   const list = [...state.selectedGenres];
-  const genres = list.length ? list.join(", ") : "All genres";
-  const price = state.maxPrice === 0 ? "free only" : "any price";
-  el.textContent = `${genres} · ${price}`;
+  let label = list.length === 0 ? "All genres" : list.length === 1 ? list[0] : `${list.length} genres`;
+  if (state.maxPrice === 0) label += " · free";
+  el.textContent = label;
 }
 
 /* ---------- Travel mode + reach window ---------- */
@@ -917,6 +917,7 @@ function buildTravelPanel() {
       <span>${escapeHtml(mode)}</span>`;
     label.querySelector("input").addEventListener("change", () => {
       state.travelMode = mode;
+      state.showCap = SHOW_PAGE;
       updateTravelLabels();
       refreshMap(); // travel speed changes the reach circle and what's reachable
     });
@@ -931,6 +932,7 @@ function buildTravelPanel() {
     updateTravelLabels();
     range.addEventListener("input", () => {
       state.maxTravelMinutes = TRAVEL_TIME_STOPS[Number(range.value)];
+      state.showCap = SHOW_PAGE;
       updateTravelLabels();
       refreshMap();
     });
@@ -941,7 +943,10 @@ function updateTravelLabels() {
   const v = document.getElementById("travelValue");
   if (v) v.textContent = `${state.maxTravelMinutes} min max`;
   const card = document.querySelector('[data-value="travel"]');
-  if (card) card.textContent = `${state.travelMode} · ≤ ${state.maxTravelMinutes} min`;
+  if (card) {
+    const short = { Walking: "Walk", "Taxi/Car": "Taxi", Bus: "Bus", Bicycle: "Bike" }[state.travelMode] || state.travelMode;
+    card.textContent = `${short} ≤ ${state.maxTravelMinutes} min`;
+  }
 }
 
 /* ---------- Next-show (time + place) constraint ----------
@@ -957,24 +962,30 @@ function availableTimes() {
     a.localeCompare(b)
   );
 }
-function timeHours(times) {
-  return [...new Set(times.map((t) => t.slice(0, 2)))].sort();
-}
-function minutesForHour(times, hh) {
-  return times.filter((t) => t.slice(0, 2) === hh).map((t) => t.slice(3, 5)).sort();
+
+/* The n times (from `times`) closest to `target`, in chronological order. */
+function nearestTimes(times, target, n) {
+  const t = timeToMinutes(target);
+  return times
+    .slice()
+    .sort((a, b) => Math.abs(timeToMinutes(a) - t) - Math.abs(timeToMinutes(b) - t))
+    .slice(0, n)
+    .sort((a, b) => a.localeCompare(b));
 }
 
+/* The next commitment is set with a STANDARD time picker (`<input type=time>`,
+ * which on mobile is the OS wheel) plus a live list of the shows we know start
+ * at that time. Changing the time browses; tapping a show commits it. */
 function buildConstraintPanel() {
-  const hourRoll = document.getElementById("hourRoll");
-  const minRoll = document.getElementById("minRoll");
-  if (!hourRoll || !minRoll) return;
+  const timeInput = document.getElementById("constraintTime");
+  if (!timeInput) return;
 
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
   const note = document.getElementById("constraintNote");
   if (note) {
     note.textContent =
-      `It's ${NOW.time} — we only offer start times at least ${CONSTRAINT_LEAD_MINUTES} min away.`;
+      `It's ${NOW.time} — pick a time at least ${CONSTRAINT_LEAD_MINUTES} min from now.`;
   }
 
   const times = availableTimes();
@@ -986,14 +997,17 @@ function buildConstraintPanel() {
     state.legShowId = "";
     state.destLabel = "";
   }
-  // Seed the wheels on the first available time (display only — no show chosen
-  // yet, so nothing is committed until the user taps a show).
+  // Seed the picker on the first available time (display only — nothing is
+  // committed until the user taps a show).
   if (!state.selectedTime && times.length) state.selectedTime = times[0];
 
-  // Wire the roll buttons, the show list and the free-text box.
-  document.querySelectorAll("#constraintPanel .rbtn").forEach((btn) => {
-    btn.onclick = () => rollConstraintTime(btn.dataset.roll, Number(btn.dataset.dir));
-  });
+  if (times.length) {
+    timeInput.min = times[0];
+    timeInput.max = times[times.length - 1];
+  }
+  timeInput.value = state.selectedTime || "";
+  timeInput.onchange = () => setConstraintTime(timeInput.value);
+
   const list = document.getElementById("showPickList");
   if (list) {
     list.onclick = (e) => {
@@ -1010,36 +1024,21 @@ function buildConstraintPanel() {
     };
   }
 
-  renderConstraintPicker(null);
+  renderConstraintShows(false);
   refreshConstraintValue();
 }
 
-/* Move a wheel by dir (+1 later / -1 earlier), snapping to real start times,
- * then browse the shows at the new time. Changing the time clears any show that
- * no longer applies. */
-function rollConstraintTime(which, dir) {
-  const times = availableTimes();
-  if (!times.length) return;
-  let [hh, mm] = (state.selectedTime || times[0]).split(":");
-  const hours = timeHours(times);
-
-  if (which === "hour") {
-    let i = Math.min(hours.length - 1, Math.max(0, hours.indexOf(hh) + dir));
-    hh = hours[i];
-    const mins = minutesForHour(times, hh);
-    if (!mins.includes(mm)) mm = mins[0]; // land on the first slot in the new hour
-  } else {
-    const mins = minutesForHour(times, hh);
-    let i = Math.min(mins.length - 1, Math.max(0, mins.indexOf(mm) + dir));
-    mm = mins[i];
-  }
-
-  state.selectedTime = `${hh}:${mm}`;
+/* Point the picker at a new time: browse the shows starting then (no commitment
+ * until the user taps one). */
+function setConstraintTime(hhmm) {
+  if (!hhmm) return;
+  state.selectedTime = hhmm;
   state.selectedShowId = "";
   state.legShowId = "";
   state.destLabel = "";
+  state.showCap = SHOW_PAGE;
   syncDestInput();
-  renderConstraintPicker({ [which]: dir });
+  renderConstraintShows(true);
   refreshConstraintValue();
   refreshMap();
 }
@@ -1049,35 +1048,30 @@ function rollConstraintTime(which, dir) {
 function selectConstraintShow(id) {
   state.selectedShowId = id;
   state.legShowId = "";
+  state.showCap = SHOW_PAGE;
   syncDestInput();
   refreshConstraintValue();
   refreshMap();
   closeAllPanels();
 }
 
-/* Draw both wheels, the live count and the list of shows at the chosen time. */
-function renderConstraintPicker(dir) {
-  const hourRoll = document.getElementById("hourRoll");
-  const minRoll = document.getElementById("minRoll");
+/* The live count + the list of shows at the chosen time. If no show starts at
+ * exactly that minute, suggest the nearest times that do. */
+function renderConstraintShows(animate) {
   const countEl = document.getElementById("constraintCount");
   const countLab = document.getElementById("constraintCountLab");
   const list = document.getElementById("showPickList");
-  if (!hourRoll || !minRoll) return;
+  const timeInput = document.getElementById("constraintTime");
+  if (!list) return;
 
   const times = availableTimes();
   if (!times.length) {
-    hourRoll.innerHTML = minRoll.innerHTML = '<li class="on">–</li>';
     if (countEl) countEl.textContent = "0";
     if (countLab) countLab.textContent = "shows later today";
-    if (list) list.innerHTML = '<p class="picklist-empty">No later shows to aim for today.</p>';
+    list.innerHTML = '<p class="picklist-empty">No later shows to aim for today.</p>';
     return;
   }
-
-  const [hh, mm] = state.selectedTime.split(":");
-  const hours = timeHours(times);
-  const mins = minutesForHour(times, hh);
-  setRoller(hourRoll, hours, hours.indexOf(hh), dir && dir.hour);
-  setRoller(minRoll, mins, mins.indexOf(mm), dir && dir.min);
+  if (timeInput && timeInput.value !== state.selectedTime) timeInput.value = state.selectedTime;
 
   const atTime = constraintShows().filter((s) => s.time === state.selectedTime);
   if (countEl) tweenCount(countEl, atTime.length);
@@ -1086,36 +1080,40 @@ function renderConstraintPicker(dir) {
       (atTime.length === 1 ? "show starts at " : "shows start at ") + state.selectedTime;
   }
 
-  if (list) {
-    const anim = dir ? " anim" : "";
-    list.innerHTML = atTime
-      .map(
-        (s, i) => `
-      <button type="button" class="show-pick${s.id === state.selectedShowId ? " is-sel" : ""}${anim}" data-id="${s.id}" style="animation-delay:${i * 45}ms">
-        <span class="sp-radio" aria-hidden="true"></span>
-        <span class="sp-body">
-          <span class="sp-title">${escapeHtml(s.title)}</span>
-          <span class="sp-venue">${escapeHtml(s.venue)}</span>
-          <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
-        </span>
-      </button>`
-      )
-      .join("");
+  if (!atTime.length) {
+    const nearest = nearestTimes(times, state.selectedTime, 4);
+    list.innerHTML =
+      '<p class="picklist-empty">No shows start exactly then. Nearest:</p>' +
+      '<div class="timepick-suggest">' +
+      nearest
+        .map(
+          (t) =>
+            `<button type="button" data-time="${t}">${t} · ${
+              constraintShows().filter((s) => s.time === t).length
+            }</button>`
+        )
+        .join("") +
+      "</div>";
+    list.querySelectorAll(".timepick-suggest button").forEach((b) => {
+      b.onclick = () => setConstraintTime(b.dataset.time);
+    });
+    return;
   }
-}
 
-/* One wheel: previous / current / next value, with a brief roll animation. */
-function setRoller(ul, vals, idx, dir) {
-  const prev = idx > 0 ? vals[idx - 1] : "·";
-  const cur = idx >= 0 ? vals[idx] : "–";
-  const next = idx >= 0 && idx < vals.length - 1 ? vals[idx + 1] : "·";
-  ul.innerHTML = `<li>${prev}</li><li class="on">${cur}</li><li>${next}</li>`;
-  if (dir) {
-    ul.style.setProperty("--rd", (dir > 0 ? 9 : -9) + "px");
-    ul.classList.remove("flip");
-    void ul.offsetWidth; // restart the animation
-    ul.classList.add("flip");
-  }
+  const anim = animate ? " anim" : "";
+  list.innerHTML = atTime
+    .map(
+      (s, i) => `
+    <button type="button" class="show-pick${s.id === state.selectedShowId ? " is-sel" : ""}${anim}" data-id="${s.id}" style="animation-delay:${i * 40}ms">
+      <span class="sp-radio" aria-hidden="true"></span>
+      <span class="sp-body">
+        <span class="sp-title">${escapeHtml(s.title)}</span>
+        <span class="sp-venue">${escapeHtml(s.venue)}</span>
+        <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
+      </span>
+    </button>`
+    )
+    .join("");
 }
 
 /* Animate a counter from its current value to `to`. */
@@ -1204,13 +1202,25 @@ function closeAllPanels() {
 /* ---------- Debug clock ---------- */
 function renderDebugBanner() {
   const el = document.getElementById("debugNowText");
-  if (!el) return;
-  el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
+  if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
+  const now = document.getElementById("nowText");
+  if (now) now.textContent = NOW.time;
 }
 
-/* Wire up the debug panel: the date/time picker and the four "move my
- * location" buttons. */
+/* Wire up the debug panel: the header toggle chip, the date/time picker and the
+ * four "move my location" buttons. */
 function wireDebugControls() {
+  // The debug panel is hidden by default behind a red header chip.
+  const toggle = document.getElementById("debugToggle");
+  const banner = document.getElementById("debugBanner");
+  if (toggle && banner) {
+    toggle.addEventListener("click", () => {
+      const show = banner.hasAttribute("hidden");
+      banner.toggleAttribute("hidden", !show);
+      toggle.setAttribute("aria-expanded", String(show));
+    });
+  }
+
   const dt = document.getElementById("debugDateTime");
   if (dt) {
     dt.value = toDatetimeLocalValue(simNowDate);
@@ -1223,6 +1233,15 @@ function wireDebugControls() {
   document.querySelectorAll(".debug-btn[data-move]").forEach((btn) => {
     btn.addEventListener("click", () => moveUserLocation(btn.dataset.move));
   });
+
+  // "Show more" grows the list a page at a time.
+  const moreBtn = document.getElementById("showMore");
+  if (moreBtn) {
+    moreBtn.addEventListener("click", () => {
+      state.showCap = (state.showCap || SHOW_PAGE) + SHOW_PAGE;
+      renderShowList();
+    });
+  }
 }
 
 /* Project a chosen Date onto the simulated NOW and re-render everything that

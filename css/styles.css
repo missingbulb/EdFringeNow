@@ -6,6 +6,7 @@
   --red-dark: #0a6f68;
   --gold: #5b54c9;       /* commitment / secondary — indigo */
   --blue: #5b54c9;       /* destination / user pin — indigo */
+  --pink: #c62024;       /* warning red — debug chip only */
   --ink: #222a24;        /* warm near-black */
   --paper: #fffdf8;      /* card surface */
   --bg: #f3efe5;         /* page background */
@@ -741,108 +742,78 @@ a { color: inherit; }
   .footer-actions { grid-column: 1 / -1; }
 }
 
-/* ===================== P2: map-first + planner sheet ===================== */
+/* ============================================================
+   Redesign v2 — one calm centered column on every screen size.
+   Standard time picker, vertical plan, compact capped list,
+   collapsible debug, and a supporting (not dominant) map.
+   ============================================================ */
 .app { width: 100%; }
-.debug-wrap { padding-top: 14px; }
+.wrap { width: 100%; max-width: 680px; margin: 0 auto; padding: 16px 20px 60px; }
 
-/* The map is the primary surface: full-bleed, tall. */
-.map-section { margin: 0; }
-#leaflet-map {
-  height: clamp(320px, 48vh, 520px);
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
+.now-line { font-size: 0.92rem; color: var(--muted); margin: 2px 0 16px; }
+.now-line b { color: var(--ink); }
 
-/* Planner sheet — pulls up over the map. */
-.sheet {
-  position: relative;
-  z-index: 1;
-  background: var(--paper);
-  border-radius: 22px 22px 0 0;
-  margin-top: -22px;
-  box-shadow: 0 -10px 30px rgba(34, 42, 36, 0.12);
+/* --- Debug collapsed behind a red header chip --- */
+.debug-chip {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #fff; background: var(--pink); border: none; border-radius: 999px; padding: 7px 12px;
 }
-.sheet-inner { padding-top: 6px; padding-bottom: 48px; }
-.sheet-grab {
-  width: 44px; height: 5px; border-radius: 99px;
-  background: #dcd6c8; margin: 8px auto 14px;
+.debug-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
+.debug-chip[aria-expanded="true"] { background: #9c181b; }
+.debug-chip:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+/* The (otherwise loud) debug banner, compacted into a tidy dropdown card. */
+.debug-banner {
+  display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: flex-end;
+  background: #fff5f4; color: var(--ink); border: 1px solid #f2c9c4;
+  border-radius: 12px; padding: 14px 16px; margin: 0 0 16px;
+  box-shadow: none; font-size: 0.82rem;
 }
-.sheet .map-legend { justify-content: center; margin: 0 0 18px; }
+.debug-banner[hidden] { display: none; }
+.debug-banner strong { color: var(--pink); text-transform: uppercase; letter-spacing: 0.5px; }
+.debug-banner__status { font-weight: 700; }
+.debug-banner__controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+.debug-control { display: flex; flex-direction: column; gap: 6px; font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.debug-control input[type="datetime-local"] { font: inherit; font-size: 0.82rem; text-transform: none; letter-spacing: normal; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; color: var(--ink); background: #fff; }
+.debug-move-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.debug-btn { font: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 5px 9px; color: var(--pink); background: #fff; border: 1px solid var(--line); border-radius: 7px; }
+.debug-btn:hover { background: #ffecea; }
 
-/* Primary action: your next commitment (a filled CTA that opens the picker). */
-.sheet-lead { margin: 0 0 6px; }
+/* --- Primary CTA (opens the next-commitment picker) --- */
 .cta-card { border: none; box-shadow: none; background: transparent; }
 .cta-card:hover { transform: none; box-shadow: none; }
 .cta-card.is-open { z-index: 1500; }
 .cta-trigger {
   display: block; width: 100%; text-align: left; cursor: pointer;
   background: var(--red); color: #fff; border: none; border-radius: 16px;
-  padding: 18px 20px; box-shadow: 0 10px 24px rgba(15, 143, 134, 0.28);
+  padding: 17px 20px; box-shadow: 0 10px 24px rgba(15, 143, 134, 0.26);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
-.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(15, 143, 134, 0.34); }
+.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(15, 143, 134, 0.32); }
 .cta-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-.cta-kicker {
-  display: block; font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
-}
-.cta-title {
-  display: block; font-family: var(--serif); font-weight: 700;
-  font-size: 1.5rem; line-height: 1.12; margin: 5px 0 6px;
-  color: #fff; text-transform: none;
-}
-.cta-hint { display: block; font-size: 0.84rem; color: rgba(255, 255, 255, 0.92); }
+.cta-kicker { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+.cta-title { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.4rem; line-height: 1.12; margin: 5px 0 6px; color: #fff; text-transform: none; }
+.cta-hint { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.92); }
 
-/* Filters row: taste + travel, compact chips below the CTA. */
-.filters-row { display: flex; gap: 12px; margin: 18px 0 4px; flex-wrap: wrap; }
-.filter-card { flex: 1 1 220px; }
-.filter-card .card-trigger { padding: 14px 16px; }
-.filter-card .card-icon { width: 34px; height: 34px; margin-bottom: 10px; }
-.filter-card .card-label { font-size: 0.7rem; margin-bottom: 3px; }
-.filter-card .card-value { font-size: 1rem; }
-.filter-card .card-caret { margin-top: 8px; }
-
-/* Reachable-now list, inside the sheet's padded container. */
-.shows-section { padding: 26px 0 0; }
-
-/* ===================== P3: rolling time picker + show list ===================== */
-.timepick { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 4px; }
-.roller { display: flex; flex-direction: column; align-items: center; }
-.rbtn {
-  background: none; border: none; color: var(--muted); font-size: 0.8rem;
-  padding: 3px 14px; cursor: pointer; border-radius: 8px; line-height: 1;
+/* --- Constraint picker: a standard <input type=time> + a show list --- */
+.time-input {
+  width: 100%; font: inherit; font-family: var(--serif); font-weight: 600; font-size: 1.5rem;
+  padding: 10px 14px; border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--paper); color: var(--ink); text-align: center;
 }
-.rbtn:hover { color: var(--gold); background: rgba(91, 84, 201, 0.08); }
-.rbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
-.rwin { position: relative; width: 80px; height: 120px; overflow: hidden; text-align: center; }
-.rwin::before {
-  content: ""; position: absolute; left: 2px; right: 2px; top: 40px; height: 40px;
-  border-radius: 11px; background: rgba(91, 84, 201, 0.10); border: 1px solid rgba(91, 84, 201, 0.25);
-}
-.rwin ul { list-style: none; margin: 0; padding: 0; position: relative; z-index: 1; }
-.rwin li { height: 40px; line-height: 40px; font-family: var(--serif); font-weight: 700; font-size: 1.5rem; color: #9aa39c; }
-.rwin li.on { color: var(--gold); }
-.rwin ul.flip { animation: rollflip 0.26s ease; }
-@keyframes rollflip { from { opacity: 0.25; transform: translateY(var(--rd, 6px)); } to { opacity: 1; transform: none; } }
-.pcolon { font-family: var(--serif); font-weight: 700; font-size: 1.5rem; color: var(--ink); padding-bottom: 2px; }
-
-.timepick-count { text-align: center; margin: 2px 0 12px; font-size: 0.82rem; color: var(--muted); }
-.timepick-count .countnum {
-  font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
-  color: var(--red-dark); display: inline-block; vertical-align: -2px;
-}
+.time-input:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
+.timepick-count { text-align: center; margin: 10px 0 10px; font-size: 0.82rem; color: var(--muted); }
+.timepick-count .countnum { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; color: var(--red-dark); display: inline-block; vertical-align: -2px; }
 .timepick-count .countnum.bump { animation: countbump 0.4s ease; }
-@keyframes countbump { 0% { transform: scale(1); } 42% { transform: scale(1.18); color: var(--red); } 100% { transform: scale(1); } }
+@keyframes countbump { 0% { transform: scale(1); } 42% { transform: scale(1.16); color: var(--red); } 100% { transform: scale(1); } }
+.timepick-suggest { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.timepick-suggest button { font: inherit; font-size: 0.8rem; font-weight: 600; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--red-dark); cursor: pointer; }
+.timepick-suggest button:hover { border-color: var(--red); }
 
-.show-picklist { display: flex; flex-direction: column; gap: 8px; max-height: 280px; overflow-y: auto; margin: 2px 0 8px; }
-.show-pick {
-  display: flex; align-items: center; gap: 11px; text-align: left; width: 100%;
-  padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px;
-  background: var(--paper); cursor: pointer; font: inherit; color: inherit;
-}
+.show-picklist { display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto; margin: 2px 0 8px; }
+.show-pick { display: flex; align-items: center; gap: 11px; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); cursor: pointer; font: inherit; color: inherit; }
 .show-pick:hover { border-color: #cfc9bb; }
-.show-pick.is-sel { border-color: var(--gold); background: rgba(91, 84, 201, 0.07); }
+.show-pick.is-sel { border-color: var(--gold); background: rgba(91,84,201,0.07); }
 .show-pick:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
 .sp-radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #9aa39c; flex: 0 0 auto; }
 .show-pick.is-sel .sp-radio { border-color: var(--gold); background: radial-gradient(circle at 50% 50%, var(--gold) 0 5px, transparent 6px); }
@@ -854,63 +825,93 @@ a { color: inherit; }
 @keyframes pickin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .picklist-empty { font-size: 0.85rem; color: var(--muted); margin: 4px 0; }
 
-@media (prefers-reduced-motion: reduce) {
-  .rwin ul.flip, .timepick-count .countnum.bump, .show-pick.anim { animation: none; }
+/* --- Filters as compact chips --- */
+.filters-row { display: flex; align-items: center; gap: 8px; margin: 16px 0 4px; flex-wrap: wrap; }
+.filters-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #8c958c; }
+.filter-chip { position: relative; border: none; box-shadow: none; background: transparent; border-radius: 999px; }
+.filter-chip:hover { transform: none; box-shadow: none; }
+.filter-chip.is-open { z-index: 1500; }
+.filter-chip .card-trigger {
+  display: inline-flex; align-items: center; gap: 7px; width: auto;
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  padding: 8px 14px; cursor: pointer; font: inherit; color: var(--ink);
 }
+.filter-chip .card-trigger:hover { border-color: #cfc9bb; }
+.filter-chip .card-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.filter-chip .fc-ico { font-size: 1rem; }
+.filter-chip .card-value { font-weight: 700; font-size: 0.9rem; text-transform: none; letter-spacing: 0; }
+.filter-chip .fc-caret { color: var(--muted); font-size: 0.72rem; }
+.filter-chip .card-panel { left: 0; right: auto; min-width: 260px; }
 
-/* ===================== P4: grouped "what fits" list ===================== */
-.shows-group-head {
-  grid-column: 1 / -1;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.02rem;
-  color: var(--red-dark);
-  margin: 16px 0 0;
-  padding-top: 8px;
-  border-top: 1px solid var(--line);
+/* --- The plan: a compact vertical itinerary (works on narrow screens) --- */
+.plan { margin: 16px 0 0; }
+.plan:empty { display: none; }
+.plan-head { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin: 4px 0 12px; }
+.plan-node { position: relative; padding: 0 0 2px 26px; }
+.plan-node::before { content: ""; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; }
+.plan-node.you::before { background: var(--red); }
+.plan-node.stop::before { background: #2e9e7e; }
+.plan-node.dest::before { background: #fff; border: 3px solid var(--blue); }
+.plan-leg { margin: 3px 0 3px 6px; padding: 7px 0 7px 19px; border-left: 2px dashed #cfc9bb; font-size: 0.74rem; color: var(--muted); }
+.plan-time { font-size: 0.74rem; font-weight: 700; color: var(--red-dark); }
+.plan-title { font-family: var(--serif); font-weight: 600; font-size: 1.06rem; line-height: 1.18; margin: 1px 0; }
+.plan-sub { font-size: 0.78rem; color: var(--muted); }
+.plan-slack { display: inline-block; margin-top: 6px; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
+.plan-slack.ok { color: #14601f; background: #e3f4e6; }
+.plan-slack.late { color: var(--red-dark); background: #fde7e7; }
+.plan-buy-inline { display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; text-decoration: none; padding: 5px 11px; border-radius: 999px; color: #fff; background: var(--red); }
+.plan-buy-inline:hover { background: var(--red-dark); }
+.plan-soldout { display: inline-block; margin-top: 8px; font-size: 0.7rem; font-weight: 700; color: var(--muted); }
+.plan-hint { font-size: 0.82rem; color: var(--muted); margin: 8px 0 0; }
+.plan-maps { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 14px; padding: 13px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #fff; background: var(--blue); border: none; box-shadow: none; }
+.plan-maps:hover { filter: brightness(0.95); }
+.plan-maps[hidden] { display: none; }
+
+/* --- Map: supporting, calm, modest --- */
+.map-section { margin: 20px 0 0; }
+#leaflet-map { height: 260px; border: 1px solid var(--line); border-radius: 14px; box-shadow: none; }
+/* Desaturate the tiles a touch so the map reads as informative, not the main thing. */
+.leaflet-tile-pane { filter: saturate(0.82) brightness(1.03); }
+
+/* --- Reachable list: compact rows, capped --- */
+.shows-section { padding: 24px 0 0; }
+.shows-title { font-size: 1.3rem; }
+.shows-grid { display: flex; flex-direction: column; gap: 8px; grid-template-columns: none; }
+.show-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper);
+  cursor: pointer; transition: border-color 0.12s ease;
 }
+.show-item:hover { border-color: #cfc9bb; transform: none; }
+.show-item--tight { opacity: 0.6; }
+.show-item--leg { border-color: #2e9e7e; border-width: 2px; }
+.show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: none; }
+.si-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.show-genre { align-self: flex-start; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 2px; }
+.show-name { font-family: var(--serif); font-weight: 600; font-size: 1rem; margin: 0 0 2px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.show-meta { color: var(--muted); font-size: 0.78rem; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.si-side { flex: 0 0 auto; text-align: right; }
+.si-time { font-family: var(--serif); font-weight: 700; font-size: 1rem; color: var(--ink); }
+.si-walk { font-size: 0.72rem; color: var(--muted); }
+.si-fits { font-size: 0.66rem; font-weight: 700; color: #1f7a4d; }
+.shows-group-head { font-family: var(--serif); font-weight: 600; font-size: 0.95rem; color: var(--red-dark); margin: 14px 0 2px; padding-top: 8px; border-top: 1px solid var(--line); }
 .shows-group-head:first-child { border-top: none; padding-top: 0; margin-top: 2px; }
-.fits-tag { color: #1f7a4d; font-weight: 700; }
-.walk-glyph { font-size: 0.9em; }
+.show-more { display: block; width: 100%; margin: 14px 0 0; padding: 12px; font: inherit; font-weight: 700; font-size: 0.9rem; color: var(--red-dark); background: #fff; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
+.show-more:hover { border-color: var(--red); }
+.show-more[hidden] { display: none; }
 
-/* ===================== P5: desktop layout + a11y polish ===================== */
-/* Keyboard focus is always visible on interactive things. */
-.nav-link:focus-visible,
-.icon-btn:focus-visible,
-.footer-link:focus-visible,
-.show-item:focus-visible,
-.filter-card .card-trigger:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
-  border-radius: 6px;
+/* --- Focus visibility --- */
+.nav-link:focus-visible, .icon-btn:focus-visible, .footer-link:focus-visible,
+.show-item:focus-visible, .show-more:focus-visible {
+  outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px;
 }
 
-/* On a wide screen the bottom-sheet becomes a side panel beside a sticky map —
-   the same components, reflowed (no pull-up metaphor). */
-@media (min-width: 920px) {
-  .app {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(400px, 1fr);
-    grid-template-areas:
-      "debug debug"
-      "map   sheet";
-    align-items: start;
-  }
-  .debug-wrap { grid-area: debug; }
+@media (prefers-reduced-motion: reduce) {
+  .timepick-count .countnum.bump, .show-pick.anim { animation: none; }
+}
 
-  .map-section { grid-area: map; position: sticky; top: 64px; }
-  #leaflet-map { height: calc(100vh - 64px); }
-
-  .sheet {
-    grid-area: sheet;
-    margin-top: 0;
-    border-radius: 0;
-    box-shadow: -12px 0 30px rgba(34, 42, 36, 0.06);
-    min-height: calc(100vh - 64px);
-  }
-  .sheet-grab { display: none; }
-  .sheet-inner { padding-top: 22px; }
-  .sheet .map-legend { justify-content: flex-start; }
-  /* One column of show cards in the narrower side panel reads better. */
-  .shows-grid { grid-template-columns: 1fr; }
+/* Desktop keeps the same centered single column as mobile — just a wider gutter. */
+@media (min-width: 720px) {
+  .wrap { padding-left: 28px; padding-right: 28px; }
+  #leaflet-map { height: 300px; }
 }
