@@ -34,28 +34,29 @@ const GENRES = [
 ];
 
 /* How the user might travel between shows, and rough door-to-door speeds
- * (km/h) used to estimate travel time. */
-const TRAVEL_MODES = ["Walking", "Taxi/Car", "Bus", "Bicycle"];
+ * (km/h) used to estimate travel time. (No bus mode — we can't give honest
+ * schedules, so it would mislead more than help.) */
+const TRAVEL_MODES = ["Walking", "Taxi/Car", "Bicycle"];
 const TRAVEL_SPEEDS_KMH = {
   // Walking dialled down to ~2/3 of a brisk 5 km/h — Edinburgh's closes, hills,
   // stairs and festival crowds make real walking slower than the crow flies.
   Walking: (5 * 2) / 3,
   "Taxi/Car": 30,
-  Bus: 18,
   Bicycle: 15,
 };
 
 /* Reachability window. The user picks how far they'll travel (in minutes) in
- * the travel card; DEFAULT_MAX_TRAVEL seeds it. A show that starts up to
- * GRACE_MINUTES before you'd actually arrive is still shown, but faded — you'd
- * only just miss it. */
+ * the travel card; DEFAULT_MAX_TRAVEL seeds it. The slider runs 1–60 min in
+ * one-minute steps. A show that starts up to GRACE_MINUTES before you'd
+ * actually arrive is still shown, but faded — you'd only just miss it. */
 const DEFAULT_MAX_TRAVEL = 10;
-const TRAVEL_TIME_STOPS = [5, 10, 15, 20, 30, 45, 60];
+const MIN_TRAVEL_MINUTES = 1;
+const MAX_TRAVEL_MINUTES = 60;
 const GRACE_MINUTES = 5;
 
-/* Price filter. The source data only distinguishes free vs paid (no amounts),
- * so this is a two-stop toggle: free-only … all shows. */
-const PRICE_STOPS = [0, Infinity];
+/* Price filter — the source data only distinguishes free vs paid (no amounts),
+ * so it's a three-way choice: both | free | paid. */
+const PRICE_FILTERS = ["both", "free", "paid"];
 
 /* ===== DEBUG: simulated "now" =====================================
  * The whole flow is scoped to "the next few hours today", so for testing we
@@ -80,13 +81,14 @@ const state = {
   markers: {},                 // id -> Leaflet marker
   map: null,
   selectedGenres: new Set(["Comedy"]),
-  maxPrice: Infinity,          // £ cap from the genre card's price slider
+  priceFilter: "both",         // "both" | "free" | "paid" (genre card)
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
   selectedShowId: "",          // the pinned "next show" (destination)
   destLabel: "",               // editable destination text (defaults to the show's venue)
   legShowId: "",               // a show clicked on the map (stop before the destination)
+  editingCommitment: false,    // constraint panel opened from the plan to change it
   sortBy: "time",              // reachable-list order: "time" | "distance"
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
@@ -269,13 +271,14 @@ function priceValue(show) {
   return show.free || /free/i.test(show.price) ? 0 : 1;
 }
 
-/* Shows passing the current genre + max-price filters (empty genre set = all). */
+/* Shows passing the current genre + price filters (empty genre set = all). */
 function visibleShows() {
   let list = state.shows;
   if (state.selectedGenres.size) {
     list = list.filter((s) => state.selectedGenres.has(s.genre));
   }
-  list = list.filter((s) => priceValue(s) <= state.maxPrice);
+  if (state.priceFilter === "free") list = list.filter((s) => priceValue(s) === 0);
+  else if (state.priceFilter === "paid") list = list.filter((s) => priceValue(s) === 1);
   return list;
 }
 
@@ -385,6 +388,28 @@ function refreshMap() {
   renderShowList();
   renderJourneyStrip();
   renderFocusCard();
+  updateCtaVisibility();
+}
+
+/* Once a show is committed, the big top "Set my next commitment" box is
+ * redundant — the plan carries it, and its destination node reopens the editor.
+ * Hide the box while a commitment exists (or while editing one). */
+function updateCtaVisibility() {
+  const editing = state.editingCommitment;
+  document.body.classList.toggle("has-plan", Boolean(state.selectedShowId) || editing);
+}
+
+/* Reopen the constraint panel from the plan's destination node, so the user can
+ * change the time / show / place without the top box hanging around. */
+function openConstraintEditor() {
+  const trigger = document.querySelector(".cta-trigger");
+  const panel = document.getElementById("constraintPanel");
+  if (!trigger || !panel) return;
+  state.editingCommitment = true;
+  closeAllPanels();
+  state.editingCommitment = true; // closeAllPanels cleared it; we're re-opening
+  openPanel(trigger, panel);
+  panel.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function renderReachCircle() {
@@ -543,7 +568,7 @@ function drawLeg(from, to, { departMin, arriveMin, checkMin } = {}) {
 }
 
 function travelGlyph() {
-  return { Walking: "🚶", "Taxi/Car": "🚕", Bus: "🚌", Bicycle: "🚲" }[state.travelMode] || "🚶";
+  return { Walking: "🚶", "Taxi/Car": "🚕", Bicycle: "🚲" }[state.travelMode] || "🚶";
 }
 
 /* The card for the show the user tapped (list row or map pin). It renders above
@@ -798,6 +823,32 @@ function renderJourneyStrip() {
   }
 
   strip.innerHTML = parts.join("");
+
+  // The destination node is the entry point for changing the commitment now that
+  // the big top box is gone — make it a button that reopens the editor.
+  const destNode = strip.querySelector(".plan-node.dest");
+  if (destNode) {
+    destNode.classList.add("plan-editable");
+    destNode.setAttribute("role", "button");
+    destNode.tabIndex = 0;
+    destNode.setAttribute("aria-label", "Change your next commitment");
+    const hint = document.createElement("span");
+    hint.className = "plan-edit-hint";
+    hint.textContent = "Tap to change ▾";
+    destNode.appendChild(hint);
+    destNode.addEventListener("click", (e) => {
+      e.stopPropagation(); // don't let the doc click-outside handler close it
+      openConstraintEditor();
+    });
+    destNode.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        e.stopPropagation();
+        openConstraintEditor();
+      }
+    });
+  }
+
   updateMapsRouteLink();
   renderSpareCta();
 }
@@ -805,9 +856,8 @@ function renderJourneyStrip() {
 /* Google Maps travel mode matching the user's currently selected one. */
 function googleMapsTravelMode() {
   return (
-    { Walking: "walking", "Taxi/Car": "driving", Bus: "transit", Bicycle: "bicycling" }[
-      state.travelMode
-    ] || "walking"
+    { Walking: "walking", "Taxi/Car": "driving", Bicycle: "bicycling" }[state.travelMode] ||
+    "walking"
   );
 }
 
@@ -996,27 +1046,36 @@ function buildGenrePanel() {
     wrap.appendChild(label);
   });
 
-  // Price toggle (Free only … All shows).
-  const range = document.getElementById("priceRange");
-  if (range) {
-    range.max = String(PRICE_STOPS.length - 1);
-    range.value = String(PRICE_STOPS.indexOf(state.maxPrice));
-    updatePriceLabel();
-    range.addEventListener("input", () => {
-      state.maxPrice = PRICE_STOPS[Number(range.value)];
-      updatePriceLabel();
+  // Price: Free / Paid / Both segmented control (idempotent handlers so a
+  // Reset-driven rebuild can't double-bind).
+  document.querySelectorAll("#priceOptions .seg-btn").forEach((btn) => {
+    btn.onclick = () => {
+      state.priceFilter = btn.dataset.price;
+      updatePriceButtons();
       onGenreChange();
-    });
+    };
+  });
+  updatePriceButtons();
+
+  // Reset every show filter back to "show everything".
+  const reset = document.getElementById("filterReset");
+  if (reset) {
+    reset.onclick = () => {
+      state.selectedGenres = new Set(GENRES);
+      state.priceFilter = "both";
+      buildGenrePanel(); // re-render checkboxes + price state
+      onGenreChange();
+    };
   }
 }
 
-function priceStopLabel(v) {
-  return v === 0 ? "Free only" : "All shows";
-}
-
-function updatePriceLabel() {
-  const el = document.getElementById("priceValue");
-  if (el) el.textContent = priceStopLabel(state.maxPrice);
+/* Reflect the active price choice on the Both/Free/Paid segmented control. */
+function updatePriceButtons() {
+  document.querySelectorAll("#priceOptions .seg-btn").forEach((b) => {
+    const on = b.dataset.price === state.priceFilter;
+    b.classList.toggle("is-active", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
 }
 
 function onGenreChange() {
@@ -1026,13 +1085,20 @@ function onGenreChange() {
   refreshMap();           // also re-renders the (mirrored) show list
 }
 
-/* Concise label for the genre filter chip. */
+/* Concise label for the genre filter chip. All (or none) selected reads as
+ * "All genres"; a price filter is appended. */
 function updateGenreValue() {
   const el = document.querySelector('[data-value="genre"]');
   if (!el) return;
-  const list = [...state.selectedGenres];
-  let label = list.length === 0 ? "All genres" : list.length === 1 ? list[0] : `${list.length} genres`;
-  if (state.maxPrice === 0) label += " · free";
+  const n = state.selectedGenres.size;
+  let label =
+    n === 0 || n === GENRES.length
+      ? "All genres"
+      : n === 1
+      ? [...state.selectedGenres][0]
+      : `${n} genres`;
+  if (state.priceFilter === "free") label += " · free";
+  else if (state.priceFilter === "paid") label += " · paid";
   el.textContent = label;
 }
 
@@ -1044,10 +1110,12 @@ function buildTravelPanel() {
   TRAVEL_MODES.forEach((mode) => {
     const label = document.createElement("label");
     label.className = "panel-option";
+    // The parenthetical shows the speed we actually estimate with, so the
+    // reachability maths isn't a black box.
     label.innerHTML = `
       <input type="radio" name="travel" value="${escapeHtml(mode)}"
         ${state.travelMode === mode ? "checked" : ""} />
-      <span>${escapeHtml(mode)}</span>`;
+      <span>${escapeHtml(mode)} <small class="opt-speed">(${modeSpeedLabel(mode)} km/h)</small></span>`;
     label.querySelector("input").addEventListener("change", () => {
       state.travelMode = mode;
       state.showCap = SHOW_PAGE;
@@ -1057,14 +1125,16 @@ function buildTravelPanel() {
     wrap.appendChild(label);
   });
 
-  // Max-travel-time slider (replaces the old fixed reach window).
+  // Max-travel-time slider: continuous 1–60 min in one-minute steps.
   const range = document.getElementById("travelRange");
   if (range) {
-    range.max = String(TRAVEL_TIME_STOPS.length - 1);
-    range.value = String(TRAVEL_TIME_STOPS.indexOf(state.maxTravelMinutes));
+    range.min = String(MIN_TRAVEL_MINUTES);
+    range.max = String(MAX_TRAVEL_MINUTES);
+    range.step = "1";
+    range.value = String(state.maxTravelMinutes);
     updateTravelLabels();
     range.addEventListener("input", () => {
-      state.maxTravelMinutes = TRAVEL_TIME_STOPS[Number(range.value)];
+      state.maxTravelMinutes = Number(range.value);
       state.showCap = SHOW_PAGE;
       updateTravelLabels();
       refreshMap();
@@ -1072,12 +1142,18 @@ function buildTravelPanel() {
   }
 }
 
+/* The estimated speed for a mode, rounded to one decimal (e.g. 3.3, 30, 15). */
+function modeSpeedLabel(mode) {
+  const s = TRAVEL_SPEEDS_KMH[mode] || TRAVEL_SPEEDS_KMH.Walking;
+  return Number(s.toFixed(1));
+}
+
 function updateTravelLabels() {
   const v = document.getElementById("travelValue");
   if (v) v.textContent = `${state.maxTravelMinutes} min max`;
   const card = document.querySelector('[data-value="travel"]');
   if (card) {
-    const short = { Walking: "Walk", "Taxi/Car": "Taxi", Bus: "Bus", Bicycle: "Bike" }[state.travelMode] || state.travelMode;
+    const short = { Walking: "Walk", "Taxi/Car": "Taxi", Bicycle: "Bike" }[state.travelMode] || state.travelMode;
     card.textContent = `${short} ≤ ${state.maxTravelMinutes} min`;
   }
 }
@@ -1387,12 +1463,15 @@ function openPanel(trigger, panel) {
   if (panel.id === "constraintPanel") {
     requestAnimationFrame(() => syncWheels(false));
   }
+  updateCtaVisibility();
 }
 
 function closeAllPanels() {
   document.querySelectorAll(".card-panel").forEach((p) => p.setAttribute("hidden", ""));
   document.querySelectorAll(".card-trigger").forEach((t) => t.setAttribute("aria-expanded", "false"));
   document.querySelectorAll(".card.is-open").forEach((c) => c.classList.remove("is-open"));
+  state.editingCommitment = false;
+  updateCtaVisibility();
 }
 
 /* ---------- Debug clock ---------- */
