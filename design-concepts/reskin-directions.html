@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EdFringeNow — graphic-design re-skin directions</title>
+  <meta name="description" content="Same layout and flow, four different graphic-design skins. A quick comparison to pick a direction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #1a211e;
+      background: #edece6;
+      line-height: 1.5;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 40px 22px 72px; }
+    .kicker { font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #0f8f86; margin: 0 0 10px; }
+    h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.01em; font-size: clamp(1.9rem, 5vw, 2.7rem); margin: 0 0 12px; line-height: 1.08; }
+    .lede { max-width: 66ch; margin: 0 0 10px; color: #5c655f; font-size: 1.04rem; }
+    .lede b { color: #1a211e; }
+    .note { max-width: 66ch; margin: 0 0 34px; color: #5c655f; font-size: .92rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+
+    .dir { }
+    .dir-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 12px; }
+    .dir-name { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.28rem; margin: 0; }
+    .dir-one { color: #5c655f; font-size: .88rem; margin: 0; }
+    .swatches { display: flex; gap: 6px; margin: 8px 0 12px; }
+    .sw { width: 26px; height: 26px; border-radius: 6px; border: 1px solid rgba(0,0,0,.12); }
+
+    /* ===== The re-skinnable mini-app (shared structure) ===== */
+    .demo {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(20, 30, 26, .12);
+    }
+    .d-inner { padding: 16px 16px 18px; }
+    .d-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .d-logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; }
+    .d-loc { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; font-size: .95rem; }
+
+    .d-cta { border-radius: 14px; padding: 13px 15px; margin-bottom: 16px; }
+    .d-cta-kicker { display: block; font-size: .64rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 4px; }
+    .d-cta-title { display: block; font-size: 1.25rem; line-height: 1.1; margin-bottom: 5px; }
+    .d-cta-hint { display: block; font-size: .74rem; }
+
+    .d-title-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+    .d-title { font-size: 1.02rem; font-weight: 700; margin: 0; }
+    .d-count { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+
+    .d-chips { display: flex; gap: 6px; margin-bottom: 14px; }
+    .d-chip { display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; font-weight: 700; padding: 6px 10px; border-radius: 999px; }
+
+    .d-show { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 12px; margin-bottom: 8px; }
+    .d-show-main { flex: 1; min-width: 0; }
+    .d-show-g { font-size: .58rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; display: block; margin-bottom: 2px; }
+    .d-show-n { font-size: .98rem; font-weight: 700; line-height: 1.15; margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .d-show-m { font-size: .74rem; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .d-show-side { flex: 0 0 auto; text-align: right; }
+    .d-show-t { font-size: 1rem; font-weight: 700; display: block; }
+    .d-show-w { font-size: .68rem; display: block; }
+    .d-show-fit { font-size: .62rem; font-weight: 700; display: block; }
+
+    .d-plan { margin-top: 14px; padding: 13px 14px; border-radius: 12px; }
+    .d-plan-h { font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 9px; }
+    .d-plan-node { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+    .d-plan-ico { flex: 0 0 auto; width: 20px; text-align: center; }
+    .d-plan-txt { font-size: .82rem; font-weight: 600; }
+    .d-plan-sub { font-size: .7rem; }
+    .d-plan-badge { display: inline-block; margin-top: 4px; font-size: .64rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+
+    /* ============================================================
+       THEME 1 — Bold & Playful (festival poster)
+       ============================================================ */
+    .t-bold .demo { background: #FFF8F0; border: 3px solid #1A1A1A; box-shadow: 8px 8px 0 #1A1A1A; }
+    .t-bold .d-logo { font-family: "Anton", sans-serif; font-weight: 400; letter-spacing: .01em; text-transform: uppercase; color: #1A1A1A; }
+    .t-bold .d-logo b { color: #FF4D3D; font-weight: 400; }
+    .t-bold .d-loc { background: #FFC53D; border: 2px solid #1A1A1A; }
+    .t-bold .d-cta { background: #FF4D3D; color: #fff; border: 3px solid #1A1A1A; box-shadow: 4px 4px 0 #1A1A1A; }
+    .t-bold .d-cta-kicker { color: #FFE7A0; }
+    .t-bold .d-cta-title { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .01em; font-size: 1.5rem; }
+    .t-bold .d-cta-hint { color: #fff; opacity: .92; }
+    .t-bold .d-title { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .01em; }
+    .t-bold .d-count { background: #FFC53D; color: #1A1A1A; border: 2px solid #1A1A1A; }
+    .t-bold .d-chip { background: #fff; color: #1A1A1A; border: 2px solid #1A1A1A; box-shadow: 2px 2px 0 #1A1A1A; }
+    .t-bold .d-show { background: #fff; border: 2px solid #1A1A1A; box-shadow: 3px 3px 0 #1A1A1A; }
+    .t-bold .d-show-g { color: #fff; background: #FF4D3D; display: inline-block; padding: 1px 6px; border-radius: 4px; }
+    .t-bold .d-show-n { color: #1A1A1A; }
+    .t-bold .d-show-m { color: #6b6b6b; }
+    .t-bold .d-show-t { color: #1A1A1A; }
+    .t-bold .d-show-w { color: #6b6b6b; }
+    .t-bold .d-show-fit { color: #1B7A3D; }
+    .t-bold .d-plan { background: #FFC53D; border: 3px solid #1A1A1A; box-shadow: 4px 4px 0 #1A1A1A; }
+    .t-bold .d-plan-h { color: #1A1A1A; }
+    .t-bold .d-plan-txt { color: #1A1A1A; }
+    .t-bold .d-plan-sub { color: #7a5f14; }
+    .t-bold .d-plan-badge { background: #1A1A1A; color: #FFC53D; }
+
+    /* ============================================================
+       THEME 2 — Sleek Dark (a night at the Fringe)
+       ============================================================ */
+    .t-dark .demo { background: #0E0E12; border: 1px solid #24242e; }
+    .t-dark .d-logo { font-family: "Space Grotesk", sans-serif; color: #EDEDF2; }
+    .t-dark .d-logo b { color: #FFB020; }
+    .t-dark .d-loc { background: #1b1b24; color: #FFB020; border: 1px solid #2c2c38; }
+    .t-dark .d-cta { background: linear-gradient(135deg, #1d1430, #241826); border: 1px solid #3a2f44; box-shadow: 0 0 28px rgba(255, 77, 141, .18); }
+    .t-dark .d-cta-kicker { color: #FF4D8D; }
+    .t-dark .d-cta-title { font-family: "Space Grotesk", sans-serif; font-weight: 600; color: #EDEDF2; }
+    .t-dark .d-cta-hint { color: #A0A0B0; }
+    .t-dark .d-title { font-family: "Space Grotesk", sans-serif; color: #EDEDF2; }
+    .t-dark .d-count { background: rgba(255, 176, 32, .16); color: #FFB020; }
+    .t-dark .d-chip { background: #17171F; color: #C8C8D4; border: 1px solid #2c2c38; }
+    .t-dark .d-show { background: #15151c; border: 1px solid #24242e; }
+    .t-dark .d-show-g { color: #FF4D8D; }
+    .t-dark .d-show-n { color: #EDEDF2; }
+    .t-dark .d-show-m { color: #8b8b98; }
+    .t-dark .d-show-t { font-family: "Space Grotesk", sans-serif; color: #FFB020; }
+    .t-dark .d-show-w { color: #8b8b98; }
+    .t-dark .d-show-fit { color: #46d29a; }
+    .t-dark .d-plan { background: #13131a; border: 1px solid #24242e; }
+    .t-dark .d-plan-h { color: #A0A0B0; }
+    .t-dark .d-plan-txt { color: #EDEDF2; }
+    .t-dark .d-plan-sub { color: #8b8b98; }
+    .t-dark .d-plan-badge { background: rgba(70, 210, 154, .16); color: #46d29a; }
+
+    /* ============================================================
+       THEME 3 — Refined Editorial (broadsheet listings)
+       ============================================================ */
+    .t-editorial .demo { background: #FAF7F0; border: 1px solid #e2ddd0; box-shadow: 0 10px 26px rgba(20, 19, 15, .08); }
+    .t-editorial .d-logo { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: #12130F; }
+    .t-editorial .d-logo b { color: #7A231E; font-weight: 600; }
+    .t-editorial .d-loc { background: transparent; color: #7A231E; border: 1px solid #d8d0bf; }
+    .t-editorial .d-cta { background: transparent; border: 1px solid #12130F; border-radius: 4px; padding: 15px; }
+    .t-editorial .d-cta-kicker { color: #B08A3E; letter-spacing: .16em; }
+    .t-editorial .d-cta-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: #12130F; font-size: 1.42rem; }
+    .t-editorial .d-cta-hint { color: #6a6a5f; font-style: italic; }
+    .t-editorial .d-title { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: #12130F; }
+    .t-editorial .d-count { background: transparent; color: #7A231E; border: 1px solid #7A231E; border-radius: 3px; }
+    .t-editorial .d-chip { background: transparent; color: #12130F; border: 1px solid #cfc7b5; border-radius: 3px; }
+    .t-editorial .d-show { background: transparent; border: 0; border-bottom: 1px solid #e2ddd0; border-radius: 0; padding: 12px 2px; }
+    .t-editorial .d-show-g { color: #B08A3E; letter-spacing: .1em; }
+    .t-editorial .d-show-n { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: #12130F; }
+    .t-editorial .d-show-m { color: #6a6a5f; }
+    .t-editorial .d-show-t { font-family: "Fraunces", Georgia, serif; color: #12130F; }
+    .t-editorial .d-show-w { color: #6a6a5f; }
+    .t-editorial .d-show-fit { color: #5a6d2f; font-style: italic; }
+    .t-editorial .d-plan { background: transparent; border: 1px solid #12130F; border-radius: 4px; }
+    .t-editorial .d-plan-h { color: #B08A3E; letter-spacing: .12em; }
+    .t-editorial .d-plan-txt { color: #12130F; }
+    .t-editorial .d-plan-sub { color: #6a6a5f; }
+    .t-editorial .d-plan-badge { background: transparent; color: #5a6d2f; border: 1px solid #a9b487; }
+
+    /* ============================================================
+       THEME 4 — Retro Playbill (vintage theatre)
+       ============================================================ */
+    .t-retro .demo { background: #F4E9D2; border: 2px solid #5A4632; box-shadow: 0 12px 28px rgba(90, 70, 50, .22); }
+    .t-retro .d-logo { font-family: "Oswald", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #B22222; }
+    .t-retro .d-logo b { color: #1F4D3A; font-weight: 700; }
+    .t-retro .d-loc { background: #F4E9D2; color: #B22222; border: 2px solid #5A4632; }
+    .t-retro .d-cta { background: #B22222; color: #F4E9D2; border: 2px solid #5A4632; box-shadow: inset 0 0 0 2px #F4E9D2; }
+    .t-retro .d-cta-kicker { color: #F6D9A0; letter-spacing: .12em; }
+    .t-retro .d-cta-title { font-family: "Oswald", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; font-size: 1.4rem; }
+    .t-retro .d-cta-hint { color: #F4E9D2; font-family: "Spectral", Georgia, serif; font-style: italic; }
+    .t-retro .d-title { font-family: "Oswald", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #5A4632; }
+    .t-retro .d-count { background: #1F4D3A; color: #F4E9D2; }
+    .t-retro .d-chip { background: #F4E9D2; color: #5A4632; border: 2px dashed #5A4632; }
+    .t-retro .d-show { background: #fbf4e4; border: 1px dashed #5A4632; }
+    .t-retro .d-show-g { color: #B22222; letter-spacing: .08em; }
+    .t-retro .d-show-n { font-family: "Spectral", Georgia, serif; font-weight: 600; color: #3a2f22; }
+    .t-retro .d-show-m { font-family: "Spectral", Georgia, serif; color: #6b5a44; }
+    .t-retro .d-show-t { font-family: "Oswald", sans-serif; color: #B22222; }
+    .t-retro .d-show-w { color: #6b5a44; }
+    .t-retro .d-show-fit { color: #1F4D3A; }
+    .t-retro .d-plan { background: #1F4D3A; color: #F4E9D2; border: 2px solid #5A4632; }
+    .t-retro .d-plan-h { color: #F6D9A0; }
+    .t-retro .d-plan-txt { font-family: "Spectral", Georgia, serif; color: #F4E9D2; }
+    .t-retro .d-plan-sub { color: #cdbfa3; }
+    .t-retro .d-plan-badge { background: #F4E9D2; color: #1F4D3A; }
+
+    footer { margin-top: 42px; color: #5c655f; font-size: .88rem; }
+    footer b { color: #1a211e; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="kicker">EdFringeNow · graphic-design directions</p>
+    <h1>Same app, four different skins</h1>
+    <p class="lede">
+      Every panel below is the <b>same layout and flow you already have</b> — the logo, the
+      "next commitment" call-to-action, the filter chips, the reachable-now show rows, and the
+      plan strip. Only the <b>graphic design</b> changes: colour, type, texture, mood.
+    </p>
+    <p class="note">
+      These are quick swatches to convey each idea, not finished screens. Tell me which
+      direction feels right (or mix bits of a few) and I'll apply it to the real site.
+    </p>
+
+    <div class="grid">
+
+      <!-- ============ 1. BOLD & PLAYFUL ============ -->
+      <section class="dir t-bold">
+        <div class="dir-head">
+          <h2 class="dir-name">1 · Bold &amp; Playful</h2>
+          <p class="dir-one">Festival-poster energy</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#FF4D3D"></span>
+          <span class="sw" style="background:#FFC53D"></span>
+          <span class="sw" style="background:#1A1A1A"></span>
+          <span class="sw" style="background:#FFF8F0"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top">
+            <span class="d-logo">EdFringe<b>Now</b></span>
+            <span class="d-loc">📍</span>
+          </div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row">
+            <h3 class="d-title">Happening now near you</h3>
+            <span class="d-count">12</span>
+          </div>
+          <div class="d-chips">
+            <span class="d-chip">🎭 Comedy ▾</span>
+            <span class="d-chip">🚶 Walk ≤ 10 min ▾</span>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Comedy</span>
+              <p class="d-show-n">The 4pm Panic Hour</p>
+              <p class="d-show-m">Pleasance Courtyard · Bunker Two</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:30</span>
+              <span class="d-show-w">6 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Cabaret</span>
+              <p class="d-show-n">Midnight Ukulele Riot</p>
+              <p class="d-show-m">Underbelly · Iron Belly</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:45</span>
+              <span class="d-show-w">3 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30
+              <br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 2. SLEEK DARK ============ -->
+      <section class="dir t-dark">
+        <div class="dir-head">
+          <h2 class="dir-name">2 · Sleek Dark</h2>
+          <p class="dir-one">A night at the Fringe</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#0E0E12"></span>
+          <span class="sw" style="background:#FFB020"></span>
+          <span class="sw" style="background:#FF4D8D"></span>
+          <span class="sw" style="background:#A0A0B0"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top">
+            <span class="d-logo">EdFringe<b>Now</b></span>
+            <span class="d-loc">📍</span>
+          </div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row">
+            <h3 class="d-title">Happening now near you</h3>
+            <span class="d-count">12</span>
+          </div>
+          <div class="d-chips">
+            <span class="d-chip">🎭 Comedy ▾</span>
+            <span class="d-chip">🚶 Walk ≤ 10 min ▾</span>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Comedy</span>
+              <p class="d-show-n">The 4pm Panic Hour</p>
+              <p class="d-show-m">Pleasance Courtyard · Bunker Two</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:30</span>
+              <span class="d-show-w">6 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Cabaret</span>
+              <p class="d-show-n">Midnight Ukulele Riot</p>
+              <p class="d-show-m">Underbelly · Iron Belly</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:45</span>
+              <span class="d-show-w">3 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30
+              <br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 3. REFINED EDITORIAL ============ -->
+      <section class="dir t-editorial">
+        <div class="dir-head">
+          <h2 class="dir-name">3 · Refined Editorial</h2>
+          <p class="dir-one">Broadsheet listings</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#FAF7F0"></span>
+          <span class="sw" style="background:#12130F"></span>
+          <span class="sw" style="background:#7A231E"></span>
+          <span class="sw" style="background:#B08A3E"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top">
+            <span class="d-logo">EdFringe<b>Now</b></span>
+            <span class="d-loc">📍</span>
+          </div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row">
+            <h3 class="d-title">Happening now near you</h3>
+            <span class="d-count">12</span>
+          </div>
+          <div class="d-chips">
+            <span class="d-chip">🎭 Comedy ▾</span>
+            <span class="d-chip">🚶 Walk ≤ 10 min ▾</span>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Comedy</span>
+              <p class="d-show-n">The 4pm Panic Hour</p>
+              <p class="d-show-m">Pleasance Courtyard · Bunker Two</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:30</span>
+              <span class="d-show-w">6 min walk</span>
+              <span class="d-show-fit">fits</span>
+            </div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Cabaret</span>
+              <p class="d-show-n">Midnight Ukulele Riot</p>
+              <p class="d-show-m">Underbelly · Iron Belly</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:45</span>
+              <span class="d-show-w">3 min walk</span>
+              <span class="d-show-fit">fits</span>
+            </div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30
+              <br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 4. RETRO PLAYBILL ============ -->
+      <section class="dir t-retro">
+        <div class="dir-head">
+          <h2 class="dir-name">4 · Retro Playbill</h2>
+          <p class="dir-one">Vintage theatre</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#F4E9D2"></span>
+          <span class="sw" style="background:#B22222"></span>
+          <span class="sw" style="background:#1F4D3A"></span>
+          <span class="sw" style="background:#5A4632"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top">
+            <span class="d-logo">EdFringe<b>Now</b></span>
+            <span class="d-loc">📍</span>
+          </div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row">
+            <h3 class="d-title">Happening now near you</h3>
+            <span class="d-count">12</span>
+          </div>
+          <div class="d-chips">
+            <span class="d-chip">🎭 Comedy ▾</span>
+            <span class="d-chip">🚶 Walk ≤ 10 min ▾</span>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Comedy</span>
+              <p class="d-show-n">The 4pm Panic Hour</p>
+              <p class="d-show-m">Pleasance Courtyard · Bunker Two</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:30</span>
+              <span class="d-show-w">6 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main">
+              <span class="d-show-g">Cabaret</span>
+              <p class="d-show-n">Midnight Ukulele Riot</p>
+              <p class="d-show-m">Underbelly · Iron Belly</p>
+            </div>
+            <div class="d-show-side">
+              <span class="d-show-t">4:45</span>
+              <span class="d-show-w">3 min walk</span>
+              <span class="d-show-fit">✓ fits</span>
+            </div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30
+              <br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p>Same structure as the live app — only the <b>graphic design</b> differs. Pick a direction (issue <b>#33</b>) and I'll re-skin <b>index.html</b> / <b>css/styles.css</b> to match.</p>
+    </footer>
+  </main>
+</body>
+</html>
