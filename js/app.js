@@ -602,6 +602,8 @@ function renderShowList() {
       const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
       const item = document.createElement("article");
       item.className = `show-item show-item--${status}`;
+      item.tabIndex = 0;
+      item.setAttribute("role", "button");
       item.innerHTML = `
         <span class="show-genre">${escapeHtml(show.genre)}</span>
         <h4 class="show-name">${escapeHtml(show.title)}</h4>
@@ -609,11 +611,18 @@ function renderShowList() {
         <p class="show-meta"><span class="walk-glyph" aria-hidden="true">🚶</span> ${walk} min · ${escapeHtml(show.price)}${
           constraint ? ' · <span class="fits-tag">fits</span>' : ""
         }</p>`;
-      item.addEventListener("click", () => {
+      const activate = () => {
         onShowClick(show);
         document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
         const marker = state.markers[show.id];
         if (marker) marker.openPopup();
+      };
+      item.addEventListener("click", activate);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activate();
+        }
       });
       grid.appendChild(item);
     });

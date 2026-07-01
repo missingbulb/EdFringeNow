@@ -872,3 +872,45 @@ a { color: inherit; }
 .shows-group-head:first-child { border-top: none; padding-top: 0; margin-top: 2px; }
 .fits-tag { color: #1f7a4d; font-weight: 700; }
 .walk-glyph { font-size: 0.9em; }
+
+/* ===================== P5: desktop layout + a11y polish ===================== */
+/* Keyboard focus is always visible on interactive things. */
+.nav-link:focus-visible,
+.icon-btn:focus-visible,
+.footer-link:focus-visible,
+.show-item:focus-visible,
+.filter-card .card-trigger:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* On a wide screen the bottom-sheet becomes a side panel beside a sticky map —
+   the same components, reflowed (no pull-up metaphor). */
+@media (min-width: 920px) {
+  .app {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(400px, 1fr);
+    grid-template-areas:
+      "debug debug"
+      "map   sheet";
+    align-items: start;
+  }
+  .debug-wrap { grid-area: debug; }
+
+  .map-section { grid-area: map; position: sticky; top: 64px; }
+  #leaflet-map { height: calc(100vh - 64px); }
+
+  .sheet {
+    grid-area: sheet;
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: -12px 0 30px rgba(34, 42, 36, 0.06);
+    min-height: calc(100vh - 64px);
+  }
+  .sheet-grab { display: none; }
+  .sheet-inner { padding-top: 22px; }
+  .sheet .map-legend { justify-content: flex-start; }
+  /* One column of show cards in the narrower side panel reads better. */
+  .shows-grid { grid-template-columns: 1fr; }
+}
