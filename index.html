@@ -160,7 +160,10 @@
       <!-- ===================== Reachable-now list ===================== -->
       <section id="shows" class="shows-section">
         <div class="sort-row">
-          <button type="button" id="sortToggle" class="sort-cycle" aria-label="Change ordering">By time</button>
+          <div class="sort-toggle" role="group" aria-label="Sort shows by">
+            <button type="button" class="sort-btn is-active" data-sort="time">Time</button>
+            <button type="button" class="sort-btn" data-sort="distance">Distance</button>
+          </div>
         </div>
         <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
         <button id="showMore" class="show-more" type="button" hidden>Show more</button>
