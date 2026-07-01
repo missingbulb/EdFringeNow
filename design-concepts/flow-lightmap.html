@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EdFringeNow — the flow, stage by stage (Light Map)</title>
+<meta name="description" content="The same five-stage session on a calm, warm light-mode map: cold open, set the next-show constraint (time then show), browse what fits the gap, commit to a two-leg plan with a ticket and directions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     EdFringeNow — "Light Map" flow storyboard
+     A calm, warm, LIGHT-mode map experience. The map is a
+     prominent PANEL paired with structured light content —
+     not full-bleed. Core look renders with zero JavaScript.
+     Hand-built abstract Edinburgh map (inline SVG), designed
+     once and reused across the frames.
+     ============================================================ */
+  :root{
+    /* paper + ink */
+    --page:#f3efe7;          /* warm storyboard paper */
+    --paper:#fffdf9;         /* card / screen surface */
+    --ink:#22201b;           /* primary text */
+    --muted:#5d574c;         /* secondary text (AA on paper) */
+    --faint:#867e70;         /* tertiary / labels */
+    --hair:#e8e2d6;          /* hairline on paper */
+    --hair-soft:#efeade;
+
+    /* one calm accent — teal */
+    --teal:#1f7a6d;
+    --teal-deep:#155d52;
+    --teal-soft:#e3efec;
+    --teal-tint:#f0f6f4;
+
+    /* reachability — calm, never garish */
+    --go:#2f8f74;            /* comfortably reachable */
+    --go-ink:#1d6b53;
+    --go-soft:#e2f0ea;
+    --tight:#c98a2e;         /* tight / running */
+    --tight-ink:#9a6512;
+    --tight-soft:#f6ecdc;
+    --out:#9a9286;           /* out of reach */
+    --out-soft:#ece7dd;
+
+    /* the 18:30 constraint accent — indigo (clearly not the teal action) */
+    --pin:#5b54a8;
+    --pin-ink:#46408a;
+    --pin-soft:#eceaf6;
+
+    /* map cartography — warm paper, pale streets, soft park, water sliver */
+    --map-paper:#f7f1e6;
+    --map-paper2:#f1e9da;
+    --map-block:#efe6d5;
+    --map-block2:#eadfca;
+    --map-street:#fffdf8;
+    --map-street-edge:#e7ddca;
+    --map-park:#d9e7cf;
+    --map-park-edge:#c7dbb8;
+    --map-water:#cfe2e4;
+    --map-water-edge:#bcd6d9;
+
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+
+    --r-lg:20px; --r-md:14px; --r-sm:10px;
+    --shadow-card:0 1px 2px rgba(40,34,22,.05), 0 14px 34px rgba(40,34,22,.10);
+    --shadow-soft:0 1px 2px rgba(40,34,22,.05), 0 6px 16px rgba(40,34,22,.07);
+    --shadow-pop:0 2px 6px rgba(40,34,22,.08), 0 18px 40px rgba(40,34,22,.16);
+  }
+  *{ box-sizing:border-box; }
+  :focus-visible{ outline:3px solid var(--teal); outline-offset:2px; border-radius:6px; }
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:var(--sans); line-height:1.5;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .page{ max-width:1320px; margin:0 auto; padding:40px 22px 72px; }
+
+  /* ---------- intro ---------- */
+  .lead .kick{ font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin:0 0 12px; }
+  .lead h1{ font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem,4.6vw,2.7rem); letter-spacing:-.01em; line-height:1.06; margin:0 0 12px; }
+  .lead p{ max-width:68ch; margin:0 0 6px; color:var(--muted); font-size:1.02rem; }
+  .lead .note{ font-size:.9rem; color:var(--faint); }
+  .lead .note b{ color:var(--ink); }
+  .scenario{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 2px; }
+  .scenario span{ background:var(--paper); border:1px solid var(--hair); border-radius:999px; padding:7px 13px; font-size:.82rem; font-weight:600; box-shadow:var(--shadow-soft); }
+  .scenario b{ color:var(--teal); }
+
+  /* ---------- rail ---------- */
+  .rail{ display:flex; gap:30px; margin-top:30px; overflow-x:auto; padding-bottom:18px; scroll-snap-type:x mandatory; }
+  .stage{ margin:0; flex:0 0 auto; width:360px; scroll-snap-align:start; }
+  @media (max-width:820px){ .rail{ flex-direction:column; align-items:center; overflow:visible; } .stage{ width:100%; max-width:380px; } }
+
+  .cap{ margin:0 0 14px; }
+  .cap .num{ display:inline-grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--teal); color:#fff; font-weight:700; font-size:.8rem; vertical-align:middle; }
+  .cap .t{ font-family:var(--serif); font-weight:600; font-size:1.16rem; margin-left:9px; }
+  .cap .s{ display:block; margin-top:7px; color:var(--muted); font-size:.88rem; }
+  .cap .s b{ color:var(--ink); }
+
+  /* ---------- phone ---------- */
+  .phone{ background:#dfd8c8; border-radius:38px; padding:9px; box-shadow:0 22px 50px rgba(40,34,22,.20); }
+  .screen{ position:relative; background:var(--paper); border-radius:30px; overflow:hidden; color:var(--ink); height:720px; display:flex; flex-direction:column; }
+  .scrollarea{ overflow-y:auto; flex:1 1 auto; }
+  .scrollarea::-webkit-scrollbar{ width:0; }
+
+  .appbar{ display:flex; align-items:center; justify-content:space-between; padding:15px 18px 9px; }
+  .brand{ font-family:var(--serif); font-weight:600; letter-spacing:.1px; font-size:1.08rem; color:var(--ink); }
+  .brand .nw{ color:var(--teal); }
+  .live{ font-size:.6rem; font-weight:700; letter-spacing:.14em; color:var(--go-ink); display:flex; align-items:center; gap:6px; }
+  .live i{ width:7px; height:7px; border-radius:50%; background:var(--go); }
+  .ctx{ display:flex; align-items:center; gap:8px; padding:0 18px 12px; font-size:.74rem; color:var(--muted); flex-wrap:wrap; }
+  .ctx .now{ background:var(--ink); color:#fff; padding:3px 8px; border-radius:6px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .ctx .loc{ font-weight:600; }
+
+  /* ============================================================
+     THE MAP — hand-built once, reused. A prominent panel.
+     ============================================================ */
+  .mappanel{ position:relative; margin:2px 16px 0; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-soft); border:1px solid var(--hair); }
+  .mappanel svg{ display:block; width:100%; height:100%; }
+  .mappanel .maptag{ position:absolute; left:10px; bottom:9px; font-size:.58rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); background:rgba(255,253,249,.82); padding:3px 8px; border-radius:999px; backdrop-filter:blur(2px); }
+  .mappanel .legend{ position:absolute; right:10px; bottom:9px; display:flex; gap:9px; background:rgba(255,253,249,.82); padding:4px 9px; border-radius:999px; backdrop-filter:blur(2px); }
+  .mappanel .legend span{ display:flex; align-items:center; gap:4px; font-size:.56rem; font-weight:700; color:var(--muted); }
+  .mappanel .legend i{ width:8px; height:8px; border-radius:50%; }
+  .lg-go{ background:var(--go); } .lg-tight{ background:var(--tight); } .lg-out{ background:var(--out); }
+
+  /* SVG pin label chips (foreignObject-free; pure SVG text on a rounded rect) */
+  .pinlabel{ font-family:var(--sans); font-size:9px; font-weight:700; }
+  .pinlabel-bg{ fill:#fffdf9; stroke:#e8e2d6; stroke-width:1; }
+
+  /* you-are-here pulse + route flow (decoration only; off when reduced motion) */
+  @keyframes pulse{ 0%{ r:8; opacity:.5; } 70%{ r:30; opacity:0; } 100%{ r:30; opacity:0; } }
+  .you-pulse{ animation:pulse 3.6s ease-out infinite; transform-box:fill-box; transform-origin:center; }
+  @keyframes flow{ to{ stroke-dashoffset:-32; } }
+  .route-flow{ stroke-dasharray:6 7; animation:flow 1.9s linear infinite; }
+  @media (prefers-reduced-motion:reduce){
+    .you-pulse{ animation:none; opacity:.2; r:18; }
+    .route-flow{ animation:none; }
+  }
+
+  /* ============================================================
+     STAGE 1 — the CTA is the bright PRIMARY at top
+     ============================================================ */
+  .cta-primary{ margin:2px 16px 14px; }
+  .cta-primary .lab{ font-size:.6rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-deep); margin:0 0 6px; }
+  .cta-primary h2{ font-family:var(--serif); font-weight:600; font-size:1.34rem; line-height:1.08; margin:0 0 11px; color:var(--ink); }
+  .gobtn{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%;
+    background:var(--teal); color:#fff; font-weight:700; font-size:1rem; font-family:var(--sans);
+    border:none; border-radius:13px; padding:15px; cursor:pointer;
+    box-shadow:0 10px 24px rgba(31,122,109,.30), inset 0 1px 0 rgba(255,255,255,.18); }
+  .gobtn .plus{ font-size:1.15rem; line-height:0; }
+  .cta-primary .sub{ margin:9px 2px 0; font-size:.78rem; color:var(--muted); text-align:center; }
+
+  /* quiet on-now band (filters live here, after the CTA + map) */
+  .quietlab{ display:flex; align-items:center; justify-content:space-between; padding:14px 18px 7px;
+    font-size:.6rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+  .filters{ display:flex; gap:8px; padding:0 16px 12px; flex-wrap:wrap; }
+  .fchip{ display:inline-flex; align-items:center; gap:7px; background:var(--paper); border:1px solid var(--hair); border-radius:999px; padding:7px 12px; font-size:.78rem; font-weight:600; color:var(--ink); box-shadow:var(--shadow-soft); }
+  .fchip .k{ font-size:.55rem; font-weight:700; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; }
+  .fchip .car{ color:var(--faint); font-size:.66rem; }
+
+  .qrow{ display:flex; align-items:center; gap:11px; margin:0 16px 9px; background:var(--paper); border:1px solid var(--hair); border-radius:var(--r-sm); padding:11px 13px; box-shadow:var(--shadow-soft); }
+  .qrow .qdot{ width:9px; height:9px; border-radius:50%; flex:0 0 auto; background:var(--go); }
+  .qrow .qdot.tight{ background:var(--tight); }
+  .qrow .qc{ flex:1; min-width:0; }
+  .qrow .qttl{ font-family:var(--serif); font-weight:600; font-size:1.04rem; line-height:1.12; color:var(--ink); }
+  .qrow .qmeta{ font-size:.72rem; color:var(--muted); margin-top:2px; }
+  .qrow .qstat{ text-align:right; flex:0 0 auto; }
+  .qrow .qstat .qw{ font-size:.74rem; font-weight:700; color:var(--ink); }
+  .qrow .qstat .qs{ font-size:.58rem; font-weight:700; letter-spacing:.04em; color:var(--go-ink); }
+  .qrow .qstat .qs.tight{ color:var(--tight-ink); }
+
+  /* ============================================================
+     STAGES 2 & 3 — bottom sheet over a dimmed screen
+     ============================================================ */
+  .spacer{ flex:1; }
+  .dim{ position:absolute; inset:0; background:rgba(34,32,27,.34); }
+  .sheet{ position:absolute; left:0; right:0; bottom:0; background:var(--paper); border-radius:22px 22px 0 0; padding:8px 16px 18px; box-shadow:0 -10px 40px rgba(40,34,22,.18); }
+  .grab{ width:40px; height:5px; border-radius:99px; background:var(--hair); margin:6px auto 13px; }
+  .sheet h2{ font-family:var(--serif); font-weight:600; font-size:1.24rem; margin:0 0 4px; color:var(--ink); }
+  .sheet .lede{ font-size:.82rem; color:var(--muted); margin:0 0 15px; }
+
+  .seg{ display:flex; gap:5px; background:var(--teal-tint); border:1px solid var(--hair); border-radius:12px; padding:4px; margin-bottom:16px; }
+  .seg button{ flex:1; font-family:var(--sans); font-weight:600; font-size:.82rem; color:var(--muted); background:transparent; border:none; border-radius:9px; padding:10px 6px; cursor:pointer; }
+  .seg button.on{ background:var(--paper); color:var(--teal-deep); box-shadow:var(--shadow-soft); }
+  .qlab{ font-size:.62rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--faint); margin:2px 0 11px; }
+  .timegrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .tslot{ font-size:.96rem; font-weight:600; font-variant-numeric:tabular-nums; text-align:center; padding:13px 4px; border-radius:11px; border:1px solid var(--hair); background:var(--paper); color:var(--ink); }
+  .tslot.sel{ background:var(--teal); color:#fff; border-color:var(--teal); box-shadow:0 8px 18px rgba(31,122,109,.26); }
+  .micro{ font-size:.66rem; color:var(--faint); margin:13px 0 0; }
+  .cta{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:14px;
+    background:var(--teal); color:#fff; font-weight:700; font-size:.92rem; font-family:var(--sans);
+    border:none; border-radius:12px; padding:14px; cursor:pointer; box-shadow:0 10px 22px rgba(31,122,109,.28); }
+
+  .search{ display:flex; align-items:center; gap:9px; background:var(--teal-tint); border:1px solid var(--hair); border-radius:11px; padding:11px 12px; margin-bottom:12px; color:var(--faint); font-size:.82rem; }
+  .pick{ display:flex; align-items:center; gap:11px; padding:12px; border:1px solid var(--hair); border-radius:12px; margin-bottom:8px; background:var(--paper); }
+  .pick.sel{ border-color:var(--teal); background:var(--teal-tint); box-shadow:0 8px 20px rgba(31,122,109,.12); }
+  .radio{ width:18px; height:18px; border-radius:50%; border:2px solid var(--faint); flex:0 0 auto; }
+  .pick.sel .radio{ border-color:var(--teal); background:radial-gradient(circle at 50% 50%, var(--teal) 0 5px, transparent 6px); }
+  .pick .pc{ flex:1; min-width:0; }
+  .pick .pt{ font-family:var(--serif); font-weight:600; font-size:1.02rem; line-height:1.12; color:var(--ink); }
+  .pick .pv{ font-size:.76rem; color:var(--muted); margin-top:1px; }
+  .pick .pg{ font-size:.55rem; font-weight:700; letter-spacing:.07em; color:var(--faint); text-transform:uppercase; margin-top:4px; }
+  .pickfoot{ margin-top:11px; display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:12px; border-top:1px dashed var(--hair); }
+  .pickfoot .tx{ font-size:.78rem; color:var(--muted); }
+  .pickfoot .tx b{ color:var(--ink); }
+  .linkish{ font-size:.66rem; font-weight:700; letter-spacing:.04em; color:var(--teal); }
+
+  /* mini map preview inside the pick sheet (stage 3) */
+  .sheetmap{ margin:0 0 14px; border-radius:var(--r-sm); overflow:hidden; border:1px solid var(--hair); box-shadow:var(--shadow-soft); position:relative; }
+  .sheetmap svg{ display:block; width:100%; height:100%; }
+  .sheetmap .cap2{ position:absolute; left:8px; bottom:7px; font-size:.55rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); background:rgba(255,253,249,.82); padding:2px 7px; border-radius:999px; }
+
+  /* ============================================================
+     STAGE 4 — plan header, map panel, grouped list
+     ============================================================ */
+  .planhdr{ margin:2px 16px 11px; background:var(--teal-tint); border:1px solid var(--hair); border-radius:var(--r-md); padding:11px 13px; }
+  .planhdr .mini{ display:flex; align-items:center; gap:7px; font-size:.66rem; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .planhdr .mini .nowdot{ width:8px; height:8px; border-radius:50%; background:var(--go); flex:0 0 auto; }
+  .planhdr .mini .arrow{ flex:1; height:0; border-top:1.5px dashed #c6bda9; }
+  .planhdr .mini .end{ width:9px; height:9px; border-radius:50%; border:2.5px solid var(--pin); flex:0 0 auto; }
+  .planhdr .dest{ margin-top:8px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .planhdr .dest .d1{ font-family:var(--serif); font-weight:600; font-size:1.02rem; color:var(--ink); }
+  .planhdr .dest .d2{ font-size:.72rem; color:var(--muted); margin-top:1px; }
+  .planhdr .edit{ font-size:.6rem; font-weight:700; letter-spacing:.04em; color:var(--teal); border:1px solid var(--hair); border-radius:8px; padding:5px 9px; background:var(--paper); }
+
+  .resulthd{ padding:6px 18px 9px; }
+  .resulthd .big{ font-family:var(--serif); font-weight:600; font-size:1.18rem; color:var(--ink); }
+  .resulthd .big b{ color:var(--teal); }
+  .controls{ display:flex; gap:8px; padding:0 16px 12px; flex-wrap:wrap; align-items:center; }
+  .sortbtn{ font-size:.68rem; font-weight:600; color:var(--ink); background:var(--paper); border:1px solid var(--hair); border-radius:9px; padding:8px 11px; box-shadow:var(--shadow-soft); }
+  .gchips{ display:flex; gap:6px; flex-wrap:wrap; }
+  .gc{ font-size:.72rem; font-weight:600; border-radius:999px; padding:6px 11px; border:1px solid var(--hair); color:var(--muted); background:var(--paper); }
+  .gc.on{ background:var(--teal); color:#fff; border-color:var(--teal); }
+  .gc.add{ color:var(--teal-deep); background:var(--teal-tint); }
+
+  .tgroup{ font-size:.62rem; font-weight:700; letter-spacing:.13em; color:var(--teal-deep); text-transform:uppercase; padding:9px 18px 7px; display:flex; align-items:center; gap:10px; }
+  .tgroup .ln{ flex:1; height:0; border-top:1px solid var(--hair); }
+  .crow{ display:flex; align-items:center; gap:11px; margin:0 16px 8px; background:var(--paper); border:1px solid var(--hair); border-radius:11px; padding:10px 12px; box-shadow:var(--shadow-soft); }
+  .crow .cdot{ width:8px; height:8px; border-radius:50%; flex:0 0 auto; background:var(--go); }
+  .crow .cdot.tight{ background:var(--tight); }
+  .crow .cc{ flex:1; min-width:0; }
+  .crow .ct{ font-family:var(--serif); font-weight:600; font-size:1rem; line-height:1.12; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .crow .cv{ font-size:.72rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px; }
+  .crow .cr{ text-align:right; flex:0 0 auto; }
+  .crow .cr .cw{ font-size:.74rem; font-weight:700; color:var(--ink); white-space:nowrap; }
+  .crow .cr .cs{ font-size:.58rem; font-weight:700; color:var(--go-ink); }
+  .crow .cr .cs.tight{ color:var(--tight-ink); }
+  .morerow{ margin:0 16px 8px; text-align:center; font-size:.68rem; font-weight:700; color:var(--teal-deep); border:1px dashed var(--hair); border-radius:11px; padding:10px; }
+  .tapfoot{ position:sticky; bottom:0; background:linear-gradient(180deg,rgba(255,253,249,0),var(--paper) 45%); padding:14px 16px 16px; text-align:center; font-size:.74rem; color:var(--muted); }
+
+  /* ============================================================
+     STAGE 5 — two-leg plan: map route + itinerary card
+     ============================================================ */
+  .planwrap{ padding:8px 18px 20px; }
+  .ptitle{ font-family:var(--serif); font-weight:600; font-size:1.28rem; margin:4px 0 2px; color:var(--ink); }
+  .psub{ font-size:.8rem; color:var(--muted); margin:0 0 14px; }
+
+  .itin{ background:var(--paper); border:1px solid var(--hair); border-radius:var(--r-md); padding:14px 14px 6px; box-shadow:var(--shadow-soft); margin-top:14px; }
+  .tlnode{ position:relative; padding:0 0 2px 26px; }
+  .tlnode::before{ content:""; position:absolute; left:0; top:3px; width:14px; height:14px; border-radius:50%; }
+  .tlnode.you::before{ background:var(--go); }
+  .tlnode.stop::before{ background:var(--teal); }
+  .tlnode.dest::before{ background:#fff; border:3px solid var(--pin); width:13px; height:13px; }
+  .tlleg{ margin:5px 0 5px 6px; padding:7px 0 7px 19px; border-left:2px dashed #cabf9f; font-size:.72rem; font-weight:600; color:var(--muted); }
+  .nodetime{ font-size:.72rem; font-weight:700; color:var(--teal-deep); font-variant-numeric:tabular-nums; }
+  .nodetime.dest{ color:var(--pin-ink); }
+  .nodettl{ font-family:var(--serif); font-weight:600; font-size:1.06rem; line-height:1.14; margin:1px 0; color:var(--ink); }
+  .nodesub{ font-size:.74rem; color:var(--muted); }
+  .nodechip{ display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-size:.62rem; font-weight:700; padding:4px 10px; border-radius:999px; }
+  .nodechip.go{ color:var(--go-ink); background:var(--go-soft); }
+  .nodechip.dest{ color:var(--pin-ink); background:var(--pin-soft); }
+  .actions{ margin-top:16px; display:flex; flex-direction:column; gap:10px; }
+  .btn{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%; border-radius:13px; padding:15px; font-weight:700; font-size:.92rem; border:none; font-family:var(--sans); cursor:pointer; }
+  .btn.buy{ background:var(--teal); color:#fff; box-shadow:0 10px 22px rgba(31,122,109,.28); }
+  .btn.buy .small{ font-weight:500; font-size:.66rem; opacity:.85; }
+  .btn.maps{ background:var(--paper); color:var(--ink); border:1.5px solid var(--hair); box-shadow:var(--shadow-soft); }
+
+  footer{ margin-top:40px; color:var(--muted); font-size:.86rem; text-align:center; }
+  footer a{ color:var(--teal); font-weight:600; }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- ============ INTRO ============ -->
+  <section class="lead">
+    <p class="kick">EdFringeNow · flow storyboard · Light Map</p>
+    <h1>One session, five stages — on a calm light map</h1>
+    <p>The same reachability-first flow, themed as a warm, light-mode map. You set your next stop by <b>time, then show</b> (no address typing), see what fits the gap, and go — with the map as a quiet companion, never the boss.</p>
+    <p class="note">Same stage sequence and data as the approved <b>Departure Board</b> — re-skinned <b>light</b>, with the map paired beside structured content rather than full-bleed.</p>
+    <div class="scenario" aria-label="The session this follows">
+      <span>🕒 <b>15:44</b>, Fri 14 Aug</span>
+      <span>📍 <b>Bristo Square</b></span>
+      <span>🎭 Default: Comedy</span>
+      <span>🚶 Default: walk ≤10 min</span>
+    </div>
+  </section>
+
+  <div class="rail">
+
+    <!-- ============================================================
+         1 — COLD START
+         ============================================================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">1</span><span class="t">Cold start</span>
+        <span class="s">The one real action — <b>set your next commitment</b> — leads. A calm map shows you and what's on now; the list and filters sit below.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live"><i></i>LIVE</div></div>
+        <div class="ctx"><span class="now">15:44</span><span class="loc">📍 Bristo Square</span></div>
+
+        <div class="cta-primary">
+          <p class="lab">Start here</p>
+          <h2>Where do you need to be next?</h2>
+          <button class="gobtn"><span class="plus">＋</span> Set my next commitment</button>
+          <p class="sub">We'll show only what you can catch before it.</p>
+        </div>
+
+        <!-- MAP PANEL — calm: you + nearby on-now pins -->
+        <div class="mappanel">
+          <svg viewBox="0 0 328 190" role="img" aria-label="Light map of central Edinburgh: you at Bristo Square with calm pins for shows on now nearby.">
+            <!-- base -->
+            <rect x="0" y="0" width="328" height="190" fill="#f7f1e6"/>
+            <!-- water sliver (top-right) -->
+            <path d="M252 0 L328 0 L328 44 Q300 36 286 20 Q272 6 252 0 Z" fill="#cfe2e4" stroke="#bcd6d9" stroke-width="1"/>
+            <!-- park green block (the Meadows, lower-left) -->
+            <path d="M12 122 Q70 110 120 124 L132 178 Q70 190 6 178 Z" fill="#d9e7cf" stroke="#c7dbb8" stroke-width="1.2"/>
+            <!-- building blocks -->
+            <g fill="#efe6d5" stroke="#eadfca" stroke-width="1">
+              <rect x="40" y="30" width="48" height="34" rx="4"/>
+              <rect x="150" y="22" width="40" height="40" rx="4"/>
+              <rect x="206" y="58" width="46" height="34" rx="4"/>
+              <rect x="250" y="108" width="50" height="40" rx="4"/>
+              <rect x="96" y="74" width="34" height="30" rx="4"/>
+              <rect x="160" y="118" width="44" height="34" rx="4"/>
+            </g>
+            <!-- pale streets -->
+            <g stroke="#fffdf8" stroke-width="7" fill="none" stroke-linecap="round">
+              <path d="M0 96 H328"/>
+              <path d="M124 0 V190"/>
+              <path d="M-4 150 Q120 130 220 156 T332 140"/>
+              <path d="M210 0 Q220 60 196 110 T230 190"/>
+            </g>
+            <g stroke="#e7ddca" stroke-width="1" fill="none">
+              <path d="M0 96 H328"/>
+              <path d="M124 0 V190"/>
+            </g>
+
+            <!-- soft reachable ring around YOU -->
+            <circle cx="124" cy="96" r="62" fill="rgba(47,143,116,.07)" stroke="rgba(47,143,116,.30)" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+            <!-- nearby on-now pins (calm dots + tiny labels) -->
+            <!-- GO: Assembly George Square -->
+            <g>
+              <rect class="pinlabel-bg" x="156" y="64" width="92" height="15" rx="7.5"/>
+              <text class="pinlabel" x="163" y="74.5" fill="#1d6b53">Assembly Geo. Sq</text>
+              <circle cx="150" cy="72" r="5.5" fill="#2f8f74" stroke="#fffdf9" stroke-width="2"/>
+            </g>
+            <!-- GO: Hoots @ The Apex -->
+            <g>
+              <rect class="pinlabel-bg" x="44" y="48" width="74" height="15" rx="7.5"/>
+              <text class="pinlabel" x="51" y="58.5" fill="#1d6b53">Hoots · Apex</text>
+              <circle cx="74" cy="48" r="5.5" fill="#2f8f74" stroke="#fffdf9" stroke-width="2"/>
+            </g>
+            <!-- TIGHT (running): Pleasance Courtyard -->
+            <g>
+              <rect class="pinlabel-bg" x="196" y="120" width="84" height="15" rx="7.5"/>
+              <text class="pinlabel" x="203" y="130.5" fill="#9a6512">Pleasance Ct</text>
+              <circle cx="190" cy="128" r="5.5" fill="#c98a2e" stroke="#fffdf9" stroke-width="2"/>
+            </g>
+
+            <!-- YOU at Bristo Square -->
+            <circle class="you-pulse" cx="124" cy="96" r="8" fill="rgba(31,122,109,.35)"/>
+            <circle cx="124" cy="96" r="7" fill="#1f7a6d" stroke="#fffdf9" stroke-width="3"/>
+            <rect class="pinlabel-bg" x="86" y="100" width="76" height="15" rx="7.5"/>
+            <text class="pinlabel" x="93" y="110.5" fill="#22201b">You · Bristo Sq</text>
+          </svg>
+          <span class="maptag">On now · near you</span>
+          <div class="legend"><span><i class="lg-go"></i>Go</span><span><i class="lg-tight"></i>Running</span></div>
+        </div>
+
+        <div class="quietlab"><span>Meanwhile · on now nearby</span></div>
+        <div class="filters">
+          <span class="fchip"><span class="k">Taste</span> Comedy <span class="car">▾</span></span>
+          <span class="fchip"><span class="k">Travel</span> Walk ≤10 min <span class="car">▾</span></span>
+        </div>
+        <div class="scrollarea">
+          <div class="qrow"><span class="qdot"></span><div class="qc"><div class="qttl">Absolute Monopoly</div><div class="qmeta">in 16 min · 🚶 6 min · Assembly George Sq</div></div><div class="qstat"><div class="qw">🚶 6m</div><div class="qs">GO NOW</div></div></div>
+          <div class="qrow"><span class="qdot"></span><div class="qc"><div class="qttl">Harry Stachini: Lobster</div><div class="qmeta">in 16 min · 🚶 8 min · Hoots @ The Apex</div></div><div class="qstat"><div class="qw">🚶 8m</div><div class="qs">GO NOW</div></div></div>
+          <div class="qrow"><span class="qdot tight"></span><div class="qc"><div class="qttl">Garrett Millerick: We Tried It Your Way</div><div class="qmeta">started 9 min ago · 🚶 7 min · Pleasance Courtyard</div></div><div class="qstat"><div class="qw">🚶 7m</div><div class="qs tight">RUNNING</div></div></div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================================================
+         2 — SET TIME
+         ============================================================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">2</span><span class="t">Set it — the time</span>
+        <span class="s">Your next stop is usually another show. Tell us <b>when it starts</b>.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live"><i></i>LIVE</div></div>
+        <div class="ctx"><span class="now">15:44</span><span class="loc">📍 Bristo Square</span></div>
+
+        <!-- a quiet map peeks behind the sheet -->
+        <div class="mappanel" style="margin:2px 16px 0; opacity:.6;">
+          <svg viewBox="0 0 328 120" role="presentation" aria-hidden="true">
+            <rect x="0" y="0" width="328" height="120" fill="#f7f1e6"/>
+            <path d="M252 0 L328 0 L328 30 Q296 24 282 12 Z" fill="#cfe2e4"/>
+            <path d="M12 86 Q70 76 120 88 L128 120 L6 120 Z" fill="#d9e7cf"/>
+            <g stroke="#fffdf8" stroke-width="7" fill="none" stroke-linecap="round"><path d="M0 70 H328"/><path d="M124 0 V120"/></g>
+            <circle cx="124" cy="62" r="7" fill="#1f7a6d" stroke="#fffdf9" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="spacer"></div>
+
+        <div class="dim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>Where to next?</h2>
+          <p class="lede">We'll keep only what you can fit in before it.</p>
+          <div class="seg"><button class="on">🎭 Another show</button><button>📍 Somewhere else</button></div>
+          <p class="qlab">What time does it start?</p>
+          <div class="timegrid">
+            <span class="tslot">16:30</span><span class="tslot">17:00</span><span class="tslot">17:30</span><span class="tslot">18:00</span>
+            <span class="tslot sel">18:30</span><span class="tslot">19:00</span><span class="tslot">19:30</span><span class="tslot">20:00</span>
+          </div>
+          <p class="micro">Only times ≥ 40 min away — enough to make it.</p>
+          <button class="cta">See 18:30 shows →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================================================
+         3 — PICK SHOW
+         ============================================================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">3</span><span class="t">…then the show</span>
+        <span class="s">Pick from the shows we know start then — its <b>venue becomes your destination</b>. Or type a place.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live"><i></i>LIVE</div></div>
+        <div class="ctx"><span class="now">15:44</span><span class="loc">📍 Bristo Square</span></div>
+        <div class="spacer"></div>
+
+        <div class="dim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>← 18:30 · which one?</h2>
+          <p class="lede">23 shows start at 18:30.</p>
+
+          <!-- map previews the candidate 18:30 venues -->
+          <div class="sheetmap">
+            <svg viewBox="0 0 296 96" role="img" aria-label="Map preview of the venues where the 18:30 candidate shows start.">
+              <rect x="0" y="0" width="296" height="96" fill="#f7f1e6"/>
+              <path d="M236 0 L296 0 L296 26 Q272 20 258 8 Z" fill="#cfe2e4"/>
+              <path d="M10 70 Q60 62 104 72 L110 96 L6 96 Z" fill="#d9e7cf"/>
+              <g stroke="#fffdf8" stroke-width="6" fill="none" stroke-linecap="round"><path d="M0 54 H296"/><path d="M112 0 V96"/><path d="M196 0 Q204 44 184 96"/></g>
+              <!-- candidate venue pins (indigo = part of the 18:30 set) -->
+              <g>
+                <circle cx="188" cy="40" r="5" fill="#5b54a8" stroke="#fffdf9" stroke-width="2"/>
+                <rect class="pinlabel-bg" x="194" y="32" width="86" height="14" rx="7"/>
+                <text class="pinlabel" x="200" y="42" fill="#46408a" style="font-size:8.5px">Pleasance Ct</text>
+              </g>
+              <g>
+                <circle cx="132" cy="60" r="5" fill="#5b54a8" stroke="#fffdf9" stroke-width="2"/>
+                <rect class="pinlabel-bg" x="138" y="52" width="92" height="14" rx="7"/>
+                <text class="pinlabel" x="144" y="62" fill="#46408a" style="font-size:8.5px">Assembly Geo. Sq</text>
+              </g>
+              <circle cx="112" cy="48" r="6" fill="#1f7a6d" stroke="#fffdf9" stroke-width="2.5"/>
+            </svg>
+            <span class="cap2">18:30 venues</span>
+          </div>
+
+          <div class="search">🔍 Filter…</div>
+          <div class="pick sel"><span class="radio"></span><div class="pc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><div class="pg">Comedy</div></div></div>
+          <div class="pick"><span class="radio"></span><div class="pc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><div class="pg">Cabaret &amp; Variety</div></div></div>
+          <div class="pick"><span class="radio"></span><div class="pc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><div class="pg">Theatre</div></div></div>
+          <div class="pickfoot"><span class="tx">Not a show? <b>Type a place</b></span><span class="linkish">TYPE ▾</span></div>
+          <button class="cta">Use Ahir Shah: Golden →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================================================
+         4 — WHAT FITS
+         ============================================================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">4</span><span class="t">What fits the gap</span>
+        <span class="s">Everything you can catch and still make 18:30 — on the map, then <b>counted, sorted, grouped by start time</b>.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live"><i></i>LIVE</div></div>
+
+        <div class="planhdr">
+          <div class="mini"><span class="nowdot"></span><span>15:44 · YOU</span><span class="arrow"></span><span>18:30</span><span class="end"></span></div>
+          <div class="dest"><div><div class="d1">Ahir Shah: Golden</div><div class="d2">Pleasance Courtyard · your 18:30</div></div><span class="edit">EDIT</span></div>
+        </div>
+
+        <!-- MAP PANEL — fitting-show pins + the constraint pin -->
+        <div class="mappanel">
+          <svg viewBox="0 0 328 168" role="img" aria-label="Light map: pins for shows that fit before your 18:30, plus the indigo 18:30 constraint pin at Pleasance Courtyard.">
+            <rect x="0" y="0" width="328" height="168" fill="#f7f1e6"/>
+            <path d="M252 0 L328 0 L328 40 Q300 32 286 18 Q272 6 252 0 Z" fill="#cfe2e4" stroke="#bcd6d9" stroke-width="1"/>
+            <path d="M10 110 Q66 100 116 112 L126 162 Q66 168 6 158 Z" fill="#d9e7cf" stroke="#c7dbb8" stroke-width="1.2"/>
+            <g fill="#efe6d5" stroke="#eadfca" stroke-width="1">
+              <rect x="42" y="26" width="46" height="30" rx="4"/>
+              <rect x="150" y="20" width="38" height="36" rx="4"/>
+              <rect x="246" y="100" width="50" height="36" rx="4"/>
+              <rect x="160" y="110" width="42" height="30" rx="4"/>
+            </g>
+            <g stroke="#fffdf8" stroke-width="7" fill="none" stroke-linecap="round">
+              <path d="M0 86 H328"/><path d="M124 0 V168"/>
+              <path d="M-4 134 Q120 116 220 140 T332 124"/>
+              <path d="M210 0 Q220 54 196 100 T228 168"/>
+            </g>
+            <circle cx="124" cy="86" r="58" fill="rgba(47,143,116,.06)" stroke="rgba(47,143,116,.28)" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+            <!-- fitting pins (calm GO) -->
+            <g>
+              <circle cx="150" cy="64" r="5.5" fill="#2f8f74" stroke="#fffdf9" stroke-width="2"/>
+              <rect class="pinlabel-bg" x="156" y="56" width="92" height="15" rx="7.5"/>
+              <text class="pinlabel" x="163" y="66.5" fill="#1d6b53">Assembly Geo. Sq</text>
+            </g>
+            <g>
+              <circle cx="76" cy="44" r="5.5" fill="#2f8f74" stroke="#fffdf9" stroke-width="2"/>
+              <rect class="pinlabel-bg" x="20" y="36" width="52" height="15" rx="7.5"/>
+              <text class="pinlabel" x="26" y="46.5" fill="#1d6b53">Gilded B.</text>
+            </g>
+            <g>
+              <circle cx="60" cy="118" r="5.5" fill="#2f8f74" stroke="#fffdf9" stroke-width="2"/>
+              <rect class="pinlabel-bg" x="66" y="110" width="58" height="15" rx="7.5"/>
+              <text class="pinlabel" x="72" y="120.5" fill="#1d6b53">The Stand</text>
+            </g>
+
+            <!-- the 18:30 CONSTRAINT pin (indigo, distinct) -->
+            <g>
+              <circle cx="200" cy="116" r="8" fill="#5b54a8" stroke="#fffdf9" stroke-width="2.5"/>
+              <path d="M200 124 L195 134 L205 134 Z" fill="#5b54a8"/>
+              <rect class="pinlabel-bg" x="194" y="138" width="98" height="16" rx="8" style="stroke:#cfcbe9"/>
+              <text class="pinlabel" x="201" y="149" fill="#46408a">18:30 · Pleasance</text>
+            </g>
+
+            <!-- YOU -->
+            <circle class="you-pulse" cx="124" cy="86" r="8" fill="rgba(31,122,109,.35)"/>
+            <circle cx="124" cy="86" r="7" fill="#1f7a6d" stroke="#fffdf9" stroke-width="3"/>
+          </svg>
+          <span class="maptag">Fits before 18:30</span>
+          <div class="legend"><span><i class="lg-go"></i>Fits</span><span><i style="background:#5b54a8" class="lg-go"></i>18:30</span></div>
+        </div>
+
+        <div class="resulthd"><div class="big"><b>26</b> shows fit before 18:30</div></div>
+        <div class="controls">
+          <span class="sortbtn">↑ Soonest ▾</span>
+          <span class="gchips"><span class="gc on">Comedy</span><span class="gc add">＋ Cabaret</span><span class="gc add">＋ Theatre</span></span>
+        </div>
+        <div class="scrollarea">
+          <div class="tgroup"><span>16:00</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Absolute Monopoly</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 spare</div></div></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Harry Stachini: Lobster</div><div class="cv">Hoots @ The Apex</div></div><div class="cr"><div class="cw">🚶 8 min</div><div class="cs">+51 spare</div></div></div>
+          <div class="tgroup"><span>16:30</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Eli Matthewson: Blood Bender</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 spare</div></div></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Sam Morrison: DUCK</div><div class="cv">Gilded Balloon Teviot</div></div><div class="cr"><div class="cw">🚶 9 min</div><div class="cs">+47 spare</div></div></div>
+          <div class="morerow">＋ 8 more at 16:30 ▾</div>
+          <div class="tgroup"><span>17:00</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot tight"></span><div class="cc"><div class="ct">The Stand's Pick of the Fringe</div><div class="cv">The Stand</div></div><div class="cr"><div class="cw">🚶 10 min</div><div class="cs tight">+23 spare</div></div></div>
+          <div class="morerow">＋ 11 more at 17:00 ▾</div>
+          <div class="tapfoot">Tap a show to build the plan →</div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================================================
+         5 — THE PLAN
+         ============================================================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">5</span><span class="t">The plan</span>
+        <span class="s">The two-leg route drawn on the map, the cushion at each hop, a ticket, and directions.</span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand">EdFringe<span class="nw">Now</span></div><div class="live"><i></i>LIVE</div></div>
+        <div class="scrollarea">
+
+        <!-- MAP PANEL — the two-leg route -->
+        <div class="mappanel">
+          <svg viewBox="0 0 328 176" role="img" aria-label="Light map drawing the two-leg route: you at Bristo Square to Eli Matthewson at Assembly George Square, then on to your 18:30 at Pleasance Courtyard.">
+            <rect x="0" y="0" width="328" height="176" fill="#f7f1e6"/>
+            <path d="M252 0 L328 0 L328 42 Q300 34 286 18 Q272 6 252 0 Z" fill="#cfe2e4" stroke="#bcd6d9" stroke-width="1"/>
+            <path d="M10 116 Q66 106 116 118 L126 170 Q66 176 6 166 Z" fill="#d9e7cf" stroke="#c7dbb8" stroke-width="1.2"/>
+            <g fill="#efe6d5" stroke="#eadfca" stroke-width="1">
+              <rect x="44" y="28" width="46" height="30" rx="4"/>
+              <rect x="206" y="48" width="44" height="32" rx="4"/>
+              <rect x="244" y="106" width="52" height="38" rx="4"/>
+              <rect x="150" y="116" width="42" height="30" rx="4"/>
+            </g>
+            <g stroke="#fffdf8" stroke-width="7" fill="none" stroke-linecap="round">
+              <path d="M0 90 H328"/><path d="M124 0 V176"/>
+              <path d="M-4 138 Q120 120 220 144 T332 128"/>
+            </g>
+
+            <!-- LEG 1: you -> Eli Matthewson (teal, solid-ish flow) -->
+            <path class="route-flow" d="M124 90 Q142 80 160 70" fill="none" stroke="#1f7a6d" stroke-width="3.5" stroke-linecap="round" opacity=".9"/>
+            <!-- LEG 2: Eli Matthewson -> 18:30 Pleasance (indigo, dashed) -->
+            <path class="route-flow" d="M160 70 Q186 86 200 120" fill="none" stroke="#5b54a8" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 7" opacity=".85"/>
+
+            <!-- YOU -->
+            <circle cx="124" cy="90" r="7" fill="#1f7a6d" stroke="#fffdf9" stroke-width="3"/>
+            <rect class="pinlabel-bg" x="86" y="94" width="48" height="15" rx="7.5"/>
+            <text class="pinlabel" x="92" y="104.5" fill="#22201b">You 15:44</text>
+
+            <!-- STOP: Eli Matthewson -->
+            <circle cx="160" cy="70" r="7" fill="#2f8f74" stroke="#fffdf9" stroke-width="3"/>
+            <rect class="pinlabel-bg" x="166" y="56" width="118" height="15" rx="7.5"/>
+            <text class="pinlabel" x="172" y="66.5" fill="#1d6b53">16:30 Assembly Geo. Sq</text>
+
+            <!-- DEST: 18:30 Pleasance (indigo) -->
+            <circle cx="200" cy="120" r="8" fill="#5b54a8" stroke="#fffdf9" stroke-width="2.5"/>
+            <path d="M200 128 L195 138 L205 138 Z" fill="#5b54a8"/>
+            <rect class="pinlabel-bg" x="180" y="142" width="116" height="16" rx="8" style="stroke:#cfcbe9"/>
+            <text class="pinlabel" x="187" y="153" fill="#46408a">18:30 Pleasance Ct</text>
+          </svg>
+          <span class="maptag">Your route · 2 legs</span>
+        </div>
+
+        <div class="planwrap">
+          <div class="ptitle">Your plan</div>
+          <p class="psub">One show, then your 18:30. Proven to fit.</p>
+
+          <div class="itin">
+            <div class="tlnode you">
+              <div class="nodetime">15:44 · now</div>
+              <div class="nodettl">You — Bristo Square</div>
+              <div class="nodesub">on foot</div>
+            </div>
+            <div class="tlleg">🚶 6 min · leave by ~16:24</div>
+            <div class="tlnode stop">
+              <div class="nodetime">16:30 – 17:30</div>
+              <div class="nodettl">Eli Matthewson: Blood Bender</div>
+              <div class="nodesub">Assembly George Square · Comedy</div>
+              <span class="nodechip go">✓ arrive with time to spare</span>
+            </div>
+            <div class="tlleg">🚶 7 min · ends 17:30 → 17:37</div>
+            <div class="tlnode dest">
+              <div class="nodetime dest">18:30</div>
+              <div class="nodettl">Ahir Shah: Golden</div>
+              <div class="nodesub">Pleasance Courtyard · your next stop</div>
+              <span class="nodechip dest">53 min to spare</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn buy">🎟 Buy ahead <span class="small">· skip the queue ~5 min</span></button>
+            <button class="btn maps">📍 Open route in Google Maps</button>
+          </div>
+        </div>
+        </div>
+      </div></div>
+    </figure>
+
+  </div>
+
+  <footer>One theme, five stages — <a href="index.html">the themes index</a>. · EdFringeNow · flow storyboard (concept mockup) · honest data: free vs paid only, no live seat counts</footer>
+</main>
+</body>
+</html>

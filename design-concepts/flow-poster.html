@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EdFringeNow — the flow, stage by stage (Festival Poster)</title>
+<meta name="description" content="One festival-poster theme across the five stages of a session: cold open, set the next-show constraint (time then show), browse what fits the gap, and a torn-ticket plan with directions. No in-app map — the only mapping is the Open in Google Maps hand-off." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Caveat:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     EdFringeNow — "FESTIVAL POSTER" flow storyboard
+     Warm riso/print energy. Cream stock + coral/tangerine + fresh teal.
+     Deliberately different from the dark Departure Board exemplar and the
+     map variations: NO in-app map anywhere — the only mapping is the
+     "Open in Google Maps" hand-off button in stage 5.
+     Core look renders with zero JavaScript; the one external resource is
+     the Google Fonts <link> above.
+     ============================================================ */
+  :root{
+    /* --- the warm punchy palette (invented; NOT the site red/gold/blue) --- */
+    --stock:#fdf1dd;          /* cream poster stock */
+    --stock-2:#ffe7c9;        /* warmer cream for inset cards */
+    --ink:#241a17;            /* warm near-black ink */
+    --ink-soft:#5d4b41;       /* softened ink for secondary text (~7:1 on cream) */
+    --coral:#ff5a47;          /* hot riso coral — decorative shadows/fills */
+    --coral-deep:#d8341f;     /* coral for text/buttons — passes AA on cream */
+    --tang:#ff9e2c;           /* tangerine — accents, the selected time */
+    --teal:#15bfa3;           /* fresh riso teal — bright GO accent (decorative) */
+    --teal-ink:#06745f;       /* deep teal — white text passes AA */
+    --grape:#6a3df0;          /* riso violet — the destination accent */
+
+    /* three honest reachability states, all text-safe on cream */
+    --go:#0a8a78;             /* GO / comfy — green */
+    --tight:#b5650a;          /* RUNNING / tight — amber */
+    --miss:#9c4a37;           /* just-missed — muted brick */
+
+    /* CSS-only print texture (halftone dot + ink fleck) */
+    --halftone: radial-gradient(circle at center, rgba(36,26,23,.16) 1.1px, transparent 1.4px);
+
+    /* font roles, each with characterful offline fallbacks */
+    --f-poster:'Archivo Black','Haettenschweiler','Arial Narrow Bold',system-ui,sans-serif;
+    --f-title:'Fraunces','Georgia','Times New Roman',serif;
+    --f-hand:'Caveat','Segoe Print','Bradley Hand','Comic Sans MS',cursive;
+    --f-ui:'Space Grotesk',system-ui,'Segoe UI',Roboto,sans-serif;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    font-family:var(--f-ui);
+    color:var(--ink);
+    background:var(--stock);
+    background-image:
+      radial-gradient(120% 80% at 88% -12%, rgba(255,158,44,.30), transparent 58%),
+      radial-gradient(110% 75% at -12% 112%, rgba(21,191,163,.20), transparent 56%),
+      var(--halftone);
+    background-size:auto, auto, 7px 7px;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  /* keyboard focus — a bold riso ring legible on any warm surface */
+  a:focus-visible, button:focus-visible{ outline:3px solid var(--grape); outline-offset:3px; border-radius:6px; }
+  a:focus:not(:focus-visible), button:focus:not(:focus-visible){ outline:none; }
+  button{ font:inherit; color:inherit; cursor:pointer; }
+
+  .page{ max-width:1320px; margin:0 auto; padding:40px 22px 72px; }
+
+  /* ============================ intro ============================ */
+  .lead .kick{
+    font-family:var(--f-ui); font-weight:700; font-size:.74rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--coral-deep); margin:0 0 12px;
+  }
+  .lead h1{
+    font-family:var(--f-poster); font-weight:400; text-transform:uppercase;
+    font-size:clamp(2.1rem,6vw,3.3rem); line-height:.92; letter-spacing:.4px; margin:0 0 14px;
+  }
+  .lead h1 em{ font-style:normal; color:var(--coral); display:inline-block; transform:rotate(-2deg); text-shadow:3px 3px 0 var(--ink); }
+  .lead p{ max-width:66ch; margin:0 0 8px; color:var(--ink-soft); font-size:1.02rem; }
+  .lead .note{ font-size:.9rem; color:var(--ink-soft); }
+  .lead .note b{ color:var(--ink); }
+
+  .scenario{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 2px; }
+  .scenario span{
+    background:var(--stock-2); border:2px solid var(--ink); border-radius:999px;
+    padding:6px 12px; font-size:.82rem; font-weight:700;
+    box-shadow:2px 2px 0 rgba(36,26,23,.85);
+  }
+  .scenario span:nth-child(2n){ transform:rotate(-1deg); }
+  .scenario span:nth-child(2n+1){ transform:rotate(.8deg); }
+  .scenario b{ color:var(--coral-deep); }
+
+  /* ============================ rail ============================ */
+  .rail{
+    display:flex; gap:34px; margin-top:30px; overflow-x:auto; padding:6px 4px 20px;
+    scroll-snap-type:x mandatory;
+  }
+  .rail::-webkit-scrollbar{ height:10px; }
+  .rail::-webkit-scrollbar-thumb{ background:rgba(36,26,23,.3); border-radius:99px; }
+  .stage{ margin:0; flex:0 0 auto; width:360px; scroll-snap-align:start; }
+  @media (max-width:840px){
+    .rail{ flex-direction:column; align-items:center; overflow:visible; }
+    .stage{ width:100%; max-width:382px; }
+  }
+
+  /* caption: number stamp + title + one concise sentence */
+  .cap{ margin:0 0 16px; display:flex; gap:11px; align-items:flex-start; }
+  .cap .num{
+    flex:0 0 auto; display:grid; place-items:center; width:34px; height:34px; border-radius:8px;
+    background:var(--ink); color:var(--tang); font-family:var(--f-poster); font-size:1.05rem;
+    transform:rotate(-3deg); box-shadow:2px 2px 0 var(--coral);
+  }
+  .cap .ct{ min-width:0; }
+  .cap .t{ font-family:var(--f-title); font-weight:700; font-size:1.18rem; line-height:1.05; letter-spacing:-.2px; }
+  .cap .s{ display:block; margin-top:4px; color:var(--ink-soft); font-size:.88rem; line-height:1.32; }
+  .cap .s b{ color:var(--ink); }
+
+  /* ============================ phone frame ============================ */
+  .phone{
+    background:var(--ink); border-radius:40px; padding:9px;
+    box-shadow:10px 14px 0 rgba(36,26,23,.16), 0 22px 46px rgba(36,26,23,.22);
+  }
+  .stage:nth-child(2n) .phone{ transform:rotate(-.5deg); }
+  .stage:nth-child(2n+1) .phone{ transform:rotate(.4deg); }
+  .screen{
+    position:relative; background:var(--stock); border-radius:31px; overflow:hidden;
+    color:var(--ink); height:720px; display:flex; flex-direction:column;
+    background-image:var(--halftone); background-size:7px 7px;
+  }
+  .scrollarea{ overflow-y:auto; flex:1 1 auto; }
+  .scrollarea::-webkit-scrollbar{ width:0; }
+
+  /* app bar — playful brand lockup */
+  .appbar{ display:flex; align-items:center; justify-content:space-between; padding:15px 16px 9px; }
+  .brand{ font-family:var(--f-poster); text-transform:uppercase; font-size:1.12rem; letter-spacing:.3px; line-height:1; }
+  .brand .ed{ color:var(--ink); }
+  .brand .now{ color:var(--coral-deep); display:inline-block; transform:rotate(-2deg); }
+  .live{
+    display:inline-flex; align-items:center; gap:6px; font-size:.62rem; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase; background:var(--ink); color:var(--stock);
+    padding:5px 9px; border-radius:999px;
+  }
+  .live i{ width:7px; height:7px; border-radius:50%; background:var(--teal); }
+  .ctx{ display:flex; align-items:center; gap:8px; padding:0 16px 12px; font-size:.74rem; font-weight:600; color:var(--ink-soft); flex-wrap:wrap; }
+  .ctx .flap{ font-family:var(--f-ui); font-weight:700; background:var(--ink); color:var(--tang); padding:3px 8px; border-radius:6px; letter-spacing:.4px; }
+
+  /* ============================ STAGE 1 — the hero CTA leads ============================ */
+  .hero{
+    position:relative; margin:2px 14px 16px; padding:18px 16px 17px; border-radius:16px;
+    background:var(--coral-deep);
+    background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0) 0 17px, rgba(255,255,255,.08) 17px 19px);
+    color:#fff; border:3px solid var(--ink); box-shadow:6px 7px 0 var(--ink);
+    transform:rotate(-.8deg);
+  }
+  .hero .lab{ font-family:var(--f-hand); font-size:1.2rem; line-height:1; color:#ffe7c9; transform:rotate(-1.5deg); display:inline-block; }
+  .hero h2{ font-family:var(--f-poster); text-transform:uppercase; font-size:1.78rem; line-height:.92; letter-spacing:.3px; margin:5px 0 8px; }
+  .hero p{ margin:0 0 14px; font-size:.86rem; color:#ffeede; max-width:30ch; }
+  .hero .go{
+    display:flex; align-items:center; justify-content:center; gap:9px; width:100%;
+    background:var(--tang); color:var(--ink); font-family:var(--f-ui); font-weight:700; font-size:1.05rem;
+    border:3px solid var(--ink); border-radius:12px; padding:15px; min-height:54px;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .hero .go .plus{ font-family:var(--f-poster); font-size:1.2rem; line-height:1; }
+  .hero .stamp{
+    position:absolute; top:-13px; right:14px; font-family:var(--f-poster); text-transform:uppercase;
+    font-size:.66rem; letter-spacing:.5px; color:var(--ink); background:var(--teal);
+    border:2.5px solid var(--ink); border-radius:6px; padding:4px 8px; transform:rotate(6deg);
+  }
+
+  /* quiet on-now strip — filters live here, after the CTA */
+  .quietlab{
+    display:flex; align-items:center; gap:9px; padding:4px 16px 9px;
+    font-family:var(--f-ui); font-weight:700; font-size:.64rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft);
+  }
+  .quietlab .ln{ flex:1; height:3px; background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 13px); opacity:.5; }
+  .filters{ display:flex; gap:8px; padding:0 14px 12px; flex-wrap:wrap; }
+  .fchip{
+    display:inline-flex; align-items:center; gap:7px; background:var(--stock-2); border:2px solid var(--ink);
+    border-radius:999px; padding:6px 11px; font-size:.78rem; font-weight:700; color:var(--ink);
+    box-shadow:2px 2px 0 rgba(36,26,23,.85);
+  }
+  .fchip .k{ font-family:var(--f-ui); font-weight:700; font-size:.56rem; letter-spacing:.08em; color:var(--coral-deep); text-transform:uppercase; }
+  .fchip .car{ color:var(--ink-soft); font-size:.7rem; }
+
+  /* calm ticket cards (do NOT steal focus from the hero) */
+  .qrow{
+    position:relative; margin:0 14px 10px; background:var(--stock); border:2px solid var(--ink);
+    border-radius:12px; padding:11px 13px 11px; box-shadow:3px 3px 0 rgba(36,26,23,.7);
+  }
+  .qrow:nth-of-type(2n){ transform:rotate(.4deg); }
+  .qrow .qt{ display:flex; align-items:center; gap:8px; margin-bottom:3px; }
+  /* reachability stamp — calm, never garish */
+  .qstat{ font-family:var(--f-ui); font-weight:700; font-size:.58rem; letter-spacing:.06em; text-transform:uppercase;
+    display:inline-flex; align-items:center; gap:6px; padding:2px 8px; border-radius:6px; border:2px solid currentColor; }
+  .qstat i{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .qstat.go{ color:var(--go); background:rgba(10,138,120,.1); }
+  .qstat.tight{ color:var(--tight); background:rgba(181,101,10,.1); }
+  .qrow .qg{ font-family:var(--f-ui); font-weight:700; font-size:.56rem; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; margin-left:auto; }
+  .qrow .qttl{ font-family:var(--f-title); font-weight:700; font-size:1.12rem; line-height:1.05; letter-spacing:-.3px; }
+  .qrow .qmeta{ font-family:var(--f-ui); font-size:.74rem; color:var(--ink-soft); margin-top:3px; font-weight:500; }
+
+  /* ============================ overlay sheet (stages 2 & 3) ============================ */
+  .spacer{ flex:1; }
+  .scrim{ position:absolute; inset:0; background:rgba(36,26,23,.5); }
+  .sheet{
+    position:absolute; left:0; right:0; bottom:0; background:var(--stock);
+    border-top:3px solid var(--ink); border-radius:24px 24px 0 0; padding:8px 16px 20px;
+    background-image:var(--halftone); background-size:7px 7px;
+    box-shadow:0 -10px 30px rgba(36,26,23,.25);
+  }
+  .grab{ width:42px; height:5px; border-radius:99px; background:var(--ink); opacity:.4; margin:7px auto 13px; }
+  .sheet h2{ font-family:var(--f-poster); text-transform:uppercase; font-size:1.4rem; line-height:.95; letter-spacing:.3px; margin:0 0 5px; }
+  .sheet .lede{ font-size:.84rem; color:var(--ink-soft); margin:0 0 14px; font-weight:500; }
+  .sheet .lede b{ color:var(--ink); }
+
+  .seg{ display:flex; gap:7px; margin-bottom:16px; }
+  .seg button{
+    flex:1; font-family:var(--f-ui); font-weight:700; font-size:.84rem; color:var(--ink);
+    background:var(--stock-2); border:2.5px solid var(--ink); border-radius:11px; padding:11px 6px;
+    display:flex; align-items:center; justify-content:center; gap:6px; min-height:46px;
+  }
+  .seg button.on{ background:var(--teal); color:var(--ink); box-shadow:3px 3px 0 var(--ink); }
+
+  .qlab{ font-family:var(--f-ui); font-weight:700; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin:2px 0 11px; }
+  /* chunky big time buttons — this look suits them */
+  .timegrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:9px; }
+  .tslot{
+    font-family:var(--f-poster); font-size:1.04rem; letter-spacing:.2px; text-align:center; padding:15px 4px;
+    border-radius:11px; border:3px solid var(--ink); background:var(--stock); color:var(--ink);
+    box-shadow:3px 3px 0 rgba(36,26,23,.78); min-height:54px; display:grid; place-items:center;
+  }
+  .tslot.sel{ background:var(--tang); color:var(--ink); box-shadow:4px 4px 0 var(--ink); transform:rotate(-1.5deg); }
+  .micro{ font-family:var(--f-ui); font-size:.72rem; color:var(--ink-soft); margin:13px 0 0; font-weight:600; }
+  .micro b{ color:var(--ink); }
+  .cta{
+    display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:15px;
+    background:var(--coral-deep); color:#fff; font-family:var(--f-ui); font-weight:700; font-size:.98rem;
+    border:3px solid var(--ink); border-radius:12px; padding:15px; min-height:54px; box-shadow:4px 4px 0 var(--ink);
+  }
+
+  /* stage 3 — pick the 18:30 show as ticket-stub cards */
+  .search{
+    display:flex; align-items:center; gap:9px; background:var(--stock-2); border:2.5px solid var(--ink);
+    border-radius:11px; padding:11px 13px; margin-bottom:12px; color:var(--ink-soft); font-size:.84rem; font-weight:600;
+  }
+  .stub-pick{
+    position:relative; display:flex; align-items:flex-start; gap:11px; padding:12px 13px;
+    border:3px solid var(--ink); border-radius:11px; margin-bottom:9px; background:var(--stock);
+    box-shadow:3px 3px 0 rgba(36,26,23,.7);
+  }
+  /* left perforated edge to read as a ticket stub */
+  .stub-pick::before{
+    content:""; position:absolute; left:32px; top:8px; bottom:8px; width:0;
+    border-left:2.5px dashed rgba(36,26,23,.45);
+  }
+  .stub-pick.sel{ background:var(--stock-2); box-shadow:5px 5px 0 var(--tang); transform:rotate(-.5deg); }
+  .radio{ width:20px; height:20px; border-radius:50%; border:3px solid var(--ink); flex:0 0 auto; margin-top:2px; background:var(--stock); }
+  .stub-pick.sel .radio{ background:radial-gradient(circle at 50% 50%, var(--coral) 0 5px, var(--stock) 6px); }
+  .stub-pick .pt{ font-family:var(--f-title); font-weight:700; font-size:1.08rem; line-height:1.05; letter-spacing:-.3px; }
+  .stub-pick .pv{ font-size:.78rem; color:var(--ink-soft); font-weight:500; margin-top:1px; }
+  .stub-pick .pg{ display:inline-block; font-family:var(--f-ui); font-weight:700; font-size:.56rem; letter-spacing:.06em; color:var(--coral-deep); text-transform:uppercase; margin-top:5px; }
+  .stub-pick .free{
+    position:absolute; top:10px; right:11px; font-family:var(--f-ui); font-weight:700; font-size:.58rem;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--teal-ink); border:2px solid var(--teal-ink);
+    background:rgba(21,191,163,.12); border-radius:5px; padding:2px 6px; transform:rotate(4deg);
+  }
+  .pickfoot{
+    margin-top:11px; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding-top:12px; border-top:2.5px dashed rgba(36,26,23,.4);
+  }
+  .pickfoot .tx{ font-size:.8rem; color:var(--ink-soft); font-weight:500; }
+  .pickfoot .tx b{ color:var(--ink); }
+  .linkish{ font-family:var(--f-ui); font-weight:700; font-size:.66rem; letter-spacing:.06em; color:var(--coral-deep); border:2px solid var(--ink); border-radius:7px; padding:5px 9px; background:var(--stock-2); }
+
+  /* ============================ STAGE 4 — what fits ============================ */
+  .planhdr{
+    margin:2px 14px 12px; background:var(--ink); color:var(--stock); border-radius:13px; padding:11px 13px;
+    box-shadow:4px 4px 0 var(--coral);
+  }
+  .planhdr .mini{ display:flex; align-items:center; gap:8px; font-family:var(--f-ui); font-weight:700; font-size:.68rem; letter-spacing:.02em; }
+  .planhdr .mini .nowdot{ width:9px; height:9px; border-radius:50%; background:var(--teal); flex:0 0 auto; }
+  .planhdr .mini .arrow{ flex:1; height:0; border-top:2px dashed rgba(253,241,221,.5); }
+  .planhdr .mini .end{ width:10px; height:10px; border-radius:50%; border:3px solid var(--grape); flex:0 0 auto; }
+  .planhdr .mini .pin{ color:var(--tang); }
+  .planhdr .dest{ margin-top:9px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .planhdr .dest .d1{ font-family:var(--f-title); font-weight:700; font-size:1.04rem; line-height:1.05; }
+  .planhdr .dest .d2{ font-size:.74rem; color:rgba(253,241,221,.78); margin-top:1px; }
+  .planhdr .edit{ font-family:var(--f-ui); font-weight:700; font-size:.62rem; letter-spacing:.06em; color:var(--ink); background:var(--tang); border:2px solid var(--tang); border-radius:7px; padding:5px 9px; }
+
+  /* the bold poster headline count */
+  .resulthd{ padding:5px 16px 11px; }
+  .resulthd .big{ font-family:var(--f-poster); text-transform:uppercase; font-size:1.7rem; line-height:.92; letter-spacing:.2px; }
+  .resulthd .big b{ color:var(--coral-deep); }
+  .resulthd .sub{ font-family:var(--f-ui); font-size:.76rem; color:var(--ink-soft); font-weight:600; margin-top:4px; }
+
+  .controls{ display:flex; gap:8px; padding:0 14px 12px; flex-wrap:wrap; align-items:center; }
+  .sortbtn{ font-family:var(--f-ui); font-weight:700; font-size:.7rem; color:var(--ink); background:var(--stock-2); border:2px solid var(--ink); border-radius:8px; padding:7px 10px; box-shadow:2px 2px 0 rgba(36,26,23,.8); }
+  .gchips{ display:flex; gap:6px; flex-wrap:wrap; }
+  .gc{ font-family:var(--f-ui); font-size:.72rem; font-weight:700; border-radius:999px; padding:6px 11px; border:2px solid var(--ink); color:var(--ink); background:var(--stock); }
+  .gc.on{ background:var(--teal); color:var(--ink); box-shadow:2px 2px 0 var(--ink); }
+  .gc.add{ color:var(--ink-soft); background:transparent; border-style:dashed; }
+
+  .tgroup{
+    font-family:var(--f-poster); text-transform:uppercase; font-size:.82rem; letter-spacing:.4px; color:var(--ink);
+    padding:9px 16px 8px; display:flex; align-items:center; gap:10px;
+  }
+  .tgroup .gtime{ background:var(--ink); color:var(--tang); border-radius:6px; padding:2px 8px; transform:rotate(-2deg); }
+  .tgroup .ln{ flex:1; height:3px; background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 13px); opacity:.5; }
+
+  .crow{
+    display:flex; align-items:center; gap:11px; margin:0 14px 9px; background:var(--stock); border:2px solid var(--ink);
+    border-radius:11px; padding:10px 12px; box-shadow:3px 3px 0 rgba(36,26,23,.62);
+  }
+  .crow:nth-of-type(2n){ transform:rotate(.3deg); }
+  .crow .cdot{ width:9px; height:9px; border-radius:50%; background:var(--go); flex:0 0 auto; box-shadow:0 0 0 3px rgba(10,138,120,.18); }
+  .crow .cc{ flex:1; min-width:0; }
+  .crow .ct{ font-family:var(--f-title); font-weight:700; font-size:1.02rem; line-height:1.06; letter-spacing:-.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .crow .cv{ font-size:.74rem; color:var(--ink-soft); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px; }
+  .crow .cr{ text-align:right; flex:0 0 auto; font-family:var(--f-ui); }
+  .crow .cr .cw{ font-size:.76rem; color:var(--ink); font-weight:700; }
+  .crow .cr .cs{ font-size:.6rem; color:var(--go); font-weight:700; }
+  .morerow{
+    margin:0 14px 9px; text-align:center; font-family:var(--f-ui); font-weight:700; font-size:.72rem;
+    color:var(--coral-deep); border:2.5px dashed var(--ink); border-radius:10px; padding:10px;
+  }
+  .tapfoot{
+    position:sticky; bottom:0; background:linear-gradient(180deg,rgba(253,241,221,0),var(--stock) 48%);
+    padding:14px 16px 16px; text-align:center; font-family:var(--f-ui); font-weight:700; font-size:.76rem; color:var(--ink-soft);
+  }
+
+  /* ============================ STAGE 5 — torn-ticket itinerary ============================ */
+  .planwrap{ padding:10px 16px 20px; }
+  .ptitle{ font-family:var(--f-poster); text-transform:uppercase; font-size:1.7rem; line-height:.92; letter-spacing:.3px; margin:4px 0 3px; }
+  .ptitle em{ font-style:normal; color:var(--coral); }
+  .psub{ font-size:.82rem; color:var(--ink-soft); font-weight:600; margin:0 0 16px; }
+  .psub b{ color:var(--go); }
+
+  /* the torn ticket holding the two legs */
+  .ticket{
+    position:relative; background:var(--stock); border:3px solid var(--ink); border-radius:12px;
+    padding:15px 15px 16px; box-shadow:7px 8px 0 var(--coral); margin-bottom:16px;
+  }
+  .ticket .tnum{
+    position:absolute; top:-12px; left:16px; font-family:var(--f-ui); font-weight:700; font-size:.6rem;
+    letter-spacing:.1em; text-transform:uppercase; background:var(--ink); color:var(--tang);
+    padding:3px 9px; border-radius:6px; transform:rotate(-2deg);
+  }
+  .tlnode{ position:relative; padding:0 0 2px 28px; }
+  .tlnode::before{ content:""; position:absolute; left:0; top:3px; width:16px; height:16px; border-radius:50%; border:3px solid var(--ink); }
+  .tlnode.you::before{ background:var(--teal); }
+  .tlnode.stop::before{ background:var(--coral); }
+  .tlnode.dest::before{ background:var(--grape); }
+  .tlleg{
+    margin:4px 0 4px 7px; padding:8px 0 8px 21px; border-left:3px dashed rgba(36,26,23,.45);
+    font-family:var(--f-ui); font-weight:600; font-size:.74rem; color:var(--ink-soft);
+  }
+  .tlleg .cush{ color:var(--go); font-weight:700; }
+  .nodetime{ font-family:var(--f-ui); font-weight:700; font-size:.74rem; color:var(--coral-deep); letter-spacing:.02em; }
+  .nodettl{ font-family:var(--f-title); font-weight:700; font-size:1.12rem; line-height:1.06; letter-spacing:-.3px; margin:1px 0; }
+  .nodesub{ font-size:.76rem; color:var(--ink-soft); font-weight:500; }
+  .nodechip{
+    display:inline-flex; align-items:center; gap:6px; margin-top:6px; font-family:var(--f-ui); font-weight:700;
+    font-size:.62rem; letter-spacing:.02em; padding:3px 9px; border-radius:999px; border:2px solid currentColor;
+  }
+  .nodechip.go{ color:var(--go); background:rgba(10,138,120,.12); }
+  .nodechip.dest{ color:var(--grape); background:rgba(106,61,240,.1); }
+
+  .honest{ font-size:.74rem; color:var(--ink-soft); text-align:center; margin:0 0 16px; font-weight:500; }
+  .honest b{ color:var(--ink); }
+
+  .actions{ display:flex; flex-direction:column; gap:11px; }
+  .btn{
+    display:flex; align-items:center; justify-content:center; gap:9px; width:100%; border-radius:12px;
+    padding:15px; font-family:var(--f-ui); font-weight:700; font-size:.95rem; border:3px solid var(--ink);
+    min-height:54px; box-shadow:4px 4px 0 var(--ink); text-decoration:none; color:var(--ink);
+  }
+  .btn.buy{ background:var(--coral-deep); color:#fff; }
+  .btn.buy .small{ font-family:var(--f-ui); font-weight:500; font-size:.64rem; opacity:.85; }
+  .btn.maps{ background:var(--stock); }
+  .btn.maps .small{ font-family:var(--f-ui); font-weight:500; font-size:.64rem; color:var(--ink-soft); }
+
+  /* ============================ footer ============================ */
+  footer{ margin-top:42px; text-align:center; color:var(--ink-soft); font-size:.9rem; }
+  footer a{ color:var(--coral-deep); font-weight:700; }
+  footer .hand{ font-family:var(--f-hand); font-size:1.15rem; color:var(--ink); display:block; margin-bottom:4px; }
+
+  /* very narrow phones — keep grids/headlines from crowding */
+  @media (max-width:380px){
+    .hero h2{ font-size:1.6rem; }
+    .resulthd .big, .ptitle{ font-size:1.5rem; }
+    .tslot{ font-size:.96rem; }
+  }
+
+  /* honor reduced-motion — there is no essential motion, but be safe */
+  @media (prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- ============================ intro ============================ -->
+  <section class="lead">
+    <p class="kick">EdFringeNow · flow storyboard · festival poster</p>
+    <h1>One session,<br><em>five stages</em></h1>
+    <p>The same app from cold open to committed plan. You set your next stop by <b>time, then show</b> (no address typing), see what fits the gap, and go — wrapped in the brand's joyful, riso-print side.</p>
+    <p class="note">This theme is the <b>Festival Poster</b> — warm, bold, playful. <b>No in-app map:</b> the only mapping is the <b>Open in Google Maps</b> hand-off in stage 5. It's the <b>stage sequence</b> we're approving here.</p>
+    <div class="scenario" aria-label="The session this follows">
+      <span>🕒 <b>15:44</b>, Fri 14 Aug</span>
+      <span>📍 <b>Bristo Square</b></span>
+      <span>🎭 Default: Comedy</span>
+      <span>🚶 Default: walk ≤10 min</span>
+    </div>
+  </section>
+
+  <div class="rail">
+
+    <!-- ============================ 1 — COLD START ============================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">1</span><span class="ct">
+        <span class="t">Cold start</span>
+        <span class="s">The one bright action — <b>set your next commitment</b> — leads. What's on now waits quietly below, with its filters.</span></span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="ed">EDFRINGE</span><span class="now">NOW</span></div><div class="live"><i></i>Live</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>📍 Bristo Square</span></div>
+
+        <div class="hero">
+          <span class="stamp">Start here</span>
+          <span class="lab">first things first…</span>
+          <h2>Where do you<br>need to be next?</h2>
+          <p>We'll show only what you can catch before it.</p>
+          <button class="go"><span class="plus">＋</span> Set my next commitment</button>
+        </div>
+
+        <div class="quietlab"><span>Meanwhile · on now nearby</span><span class="ln"></span></div>
+        <div class="filters">
+          <span class="fchip"><span class="k">Taste</span> Comedy <span class="car">▾</span></span>
+          <span class="fchip"><span class="k">Travel</span> Walk ≤10 min <span class="car">▾</span></span>
+        </div>
+
+        <div class="scrollarea">
+          <div class="qrow"><div class="qt"><span class="qstat go"><i></i>Go now</span><span class="qg">Comedy</span></div>
+            <div class="qttl">Absolute Monopoly</div><div class="qmeta">in 16 min · 🚶 6 min · Assembly George Square</div></div>
+          <div class="qrow"><div class="qt"><span class="qstat go"><i></i>Go now</span><span class="qg">Comedy</span></div>
+            <div class="qttl">Harry Stachini: Lobster</div><div class="qmeta">in 16 min · 🚶 8 min · Hoots @ The Apex</div></div>
+          <div class="qrow"><div class="qt"><span class="qstat tight"><i></i>Running</span><span class="qg">Comedy</span></div>
+            <div class="qttl">Garrett Millerick</div><div class="qmeta">started 9 min ago · 🚶 7 min · Pleasance Courtyard</div></div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================ 2 — SET TIME ============================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">2</span><span class="ct">
+        <span class="t">Set it — the time</span>
+        <span class="s">Your next stop is usually another show. Tell us <b>when it starts</b> — big buttons, ≥ 40 min out.</span></span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="ed">EDFRINGE</span><span class="now">NOW</span></div><div class="live"><i></i>Live</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>📍 Bristo Square</span></div>
+        <div class="spacer"></div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>Where to next?</h2>
+          <p class="lede">We'll keep only what you can fit in <b>before</b> it.</p>
+          <div class="seg"><button class="on">🎭 Another show</button><button>📍 Somewhere else</button></div>
+          <p class="qlab">What time does it start?</p>
+          <div class="timegrid">
+            <span class="tslot">16:30</span><span class="tslot">17:00</span><span class="tslot">17:30</span><span class="tslot">18:00</span>
+            <span class="tslot sel">18:30</span><span class="tslot">19:00</span><span class="tslot">19:30</span><span class="tslot">20:00</span>
+          </div>
+          <p class="micro">Only times <b>≥ 40 min</b> away — enough to make it.</p>
+          <button class="cta">See 18:30 shows →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================ 3 — PICK SHOW ============================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">3</span><span class="ct">
+        <span class="t">…then the show</span>
+        <span class="s">Pick from the shows we know start then — its <b>venue becomes your destination</b>. Or type a place.</span></span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="ed">EDFRINGE</span><span class="now">NOW</span></div><div class="live"><i></i>Live</div></div>
+        <div class="ctx"><span class="flap">15:44</span><span>📍 Bristo Square</span></div>
+        <div class="spacer"></div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <h2>← 18:30 · which one?</h2>
+          <p class="lede"><b>23 shows</b> start at 18:30.</p>
+          <div class="search">🔍 Filter…</div>
+          <div class="stub-pick sel"><span class="radio"></span><div class="cc"><div class="pt">Ahir Shah: Golden</div><div class="pv">Pleasance Courtyard</div><span class="pg">Comedy</span></div></div>
+          <div class="stub-pick"><span class="radio"></span><div class="cc"><div class="pt">Colin Cloud: Hoax</div><div class="pv">Pleasance Courtyard</div><span class="pg">Cabaret &amp; Variety</span></div></div>
+          <div class="stub-pick"><span class="radio"></span><div class="cc"><div class="pt">FLIGHT</div><div class="pv">Assembly George Square</div><span class="pg">Theatre</span></div><span class="free">Free</span></div>
+          <div class="pickfoot"><span class="tx">Not a show? <b>Type a place</b></span><span class="linkish">TYPE ▾</span></div>
+          <button class="cta">Use Ahir Shah: Golden →</button>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================ 4 — WHAT FITS ============================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">4</span><span class="ct">
+        <span class="t">What fits the gap</span>
+        <span class="s">Everything you can catch and still make 18:30 — <b>counted, sorted, grouped by start time</b>.</span></span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="ed">EDFRINGE</span><span class="now">NOW</span></div><div class="live"><i></i>Live</div></div>
+        <div class="planhdr">
+          <div class="mini"><span class="nowdot"></span><span>15:44 · YOU</span><span class="arrow"></span><span class="pin">📍</span><span>18:30</span><span class="end"></span></div>
+          <div class="dest"><div><div class="d1">Ahir Shah: Golden</div><div class="d2">Pleasance Courtyard · your 18:30</div></div><span class="edit">EDIT</span></div>
+        </div>
+        <div class="resulthd">
+          <div class="big"><b>26 fit</b> before 18:30</div>
+          <div class="sub">Plenty of room — pick one for the gap.</div>
+        </div>
+        <div class="controls">
+          <span class="sortbtn">↑ Soonest ▾</span>
+          <span class="gchips"><span class="gc on">Comedy</span><span class="gc add">＋ Cabaret</span><span class="gc add">＋ Theatre</span></span>
+        </div>
+        <div class="scrollarea">
+          <div class="tgroup"><span class="gtime">16:00</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Absolute Monopoly</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 spare</div></div></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Harry Stachini: Lobster</div><div class="cv">Hoots @ The Apex</div></div><div class="cr"><div class="cw">🚶 8 min</div><div class="cs">+51 spare</div></div></div>
+          <div class="tgroup"><span class="gtime">16:30</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Eli Matthewson: Blood Bender</div><div class="cv">Assembly George Square</div></div><div class="cr"><div class="cw">🚶 6 min</div><div class="cs">+53 spare</div></div></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">Sam Morrison: DUCK</div><div class="cv">Gilded Balloon Teviot</div></div><div class="cr"><div class="cw">🚶 9 min</div><div class="cs">+47 spare</div></div></div>
+          <div class="morerow">＋ 8 more at 16:30 ▾</div>
+          <div class="tgroup"><span class="gtime">17:00</span><span class="ln"></span></div>
+          <div class="crow"><span class="cdot"></span><div class="cc"><div class="ct">The Stand's Pick of the Fringe</div><div class="cv">The Stand</div></div><div class="cr"><div class="cw">🚶 10 min</div><div class="cs">+23 spare</div></div></div>
+          <div class="morerow">＋ 11 more at 17:00 ▾</div>
+          <div class="tapfoot">Tap a show to build the plan →</div>
+        </div>
+      </div></div>
+    </figure>
+
+    <!-- ============================ 5 — THE PLAN ============================ -->
+    <figure class="stage">
+      <figcaption class="cap"><span class="num">5</span><span class="ct">
+        <span class="t">The plan</span>
+        <span class="s">A torn-ticket itinerary: two legs, the cushion at each hop, buy ahead, and directions.</span></span></figcaption>
+      <div class="phone"><div class="screen">
+        <div class="appbar"><div class="brand"><span class="ed">EDFRINGE</span><span class="now">NOW</span></div><div class="live"><i></i>Live</div></div>
+        <div class="scrollarea">
+        <div class="planwrap">
+          <div class="ptitle">Your <em>plan</em></div>
+          <p class="psub">One show, then your 18:30. <b>Proven to fit.</b></p>
+
+          <div class="ticket">
+            <span class="tnum">Admit one · two legs</span>
+            <div class="tlnode you">
+              <div class="nodetime">15:44 · now</div>
+              <div class="nodettl">You — Bristo Square</div>
+              <div class="nodesub">on foot</div>
+            </div>
+            <div class="tlleg">🚶 6 min · <span class="cush">leave by ~16:24</span></div>
+            <div class="tlnode stop">
+              <div class="nodetime">16:30 – 17:30</div>
+              <div class="nodettl">Eli Matthewson: Blood Bender</div>
+              <div class="nodesub">Assembly George Square · Comedy</div>
+              <span class="nodechip go">✓ arrive with time to spare</span>
+            </div>
+            <div class="tlleg">🚶 7 min · ends 17:30 → <span class="cush">arrive 17:37</span></div>
+            <div class="tlnode dest">
+              <div class="nodetime">18:30</div>
+              <div class="nodettl">Ahir Shah: Golden</div>
+              <div class="nodesub">Pleasance Courtyard · your next stop</div>
+              <span class="nodechip dest">53 min to spare</span>
+            </div>
+          </div>
+
+          <p class="honest">We show <b>free vs paid</b> only — no live seat counts, so just turn up (or buy ahead).</p>
+
+          <div class="actions">
+            <button class="btn buy">🎟 Buy ahead <span class="small">· skip the box-office queue ~5 min</span></button>
+            <a class="btn maps" href="#">📍 Open in Google Maps <span class="small">· two-leg route</span></a>
+          </div>
+        </div>
+        </div>
+      </div></div>
+    </figure>
+
+  </div>
+
+  <footer>
+    <span class="hand">one theme, five stages ✦</span>
+    The Festival Poster cut — see <a href="index.html">the four themes</a>. · EdFringeNow · flow storyboard (concept mockup)
+  </footer>
+</main>
+</body>
+</html>

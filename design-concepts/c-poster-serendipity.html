@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fringe Discover — Deal Me a Show</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===================== Riso-poster palette (NOT the site red/gold/blue) ===================== */
+  :root{
+    --paper:#fff3e2;          /* warm cream stock */
+    --paper-2:#ffe9cf;
+    --ink:#241a17;            /* near-black warm ink */
+    --ink-soft:#5a4a42;
+    --coral:#ff4d3d;          /* hot riso coral (decorative shadows/accents) */
+    --coral-deep:#e02f23;     /* coral for text/buttons — passes AA on white */
+    --tang:#ff9b1e;           /* tangerine */
+    --teal:#0fb39a;           /* riso teal — bright GO accent (decorative only) */
+    --teal-ink:#07735f;       /* deep teal — white text passes AA (5.8:1) */
+    --grape:#6a3df0;          /* riso violet accent */
+    --catch:#0a8a78;          /* catchable green (text-safe) */
+    --miss:#9c5d00;           /* just-missed amber (text-safe, ~4.9:1 on paper) */
+    --out:#6f655f;            /* out of reach grey — readable (4.9:1 on paper) */
+    --halftone: radial-gradient(circle at center, rgba(36,26,23,.18) 1.1px, transparent 1.3px);
+
+    /* Font roles with characterful fallbacks so the poster still reads if
+       Google Fonts is blocked/offline: condensed-impact for display, a real
+       serif for titles, a casual hand for notes, a grotesk for UI/data. */
+    --f-display:'Anton','Oswald','Haettenschweiler','Arial Narrow Bold',sans-serif;
+    --f-title:'Fraunces','Georgia','Times New Roman',serif;
+    --f-hand:'Caveat','Segoe Print','Bradley Hand','Comic Sans MS',cursive;
+    --f-ui:'Space Grotesk',system-ui,'Segoe UI',Roboto,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+
+  /* keyboard focus — a bold riso outline that reads on any of the warm surfaces */
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--grape);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+  /* don't show the ring on mouse/touch press, only keyboard */
+  a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none;}
+  button{font:inherit;}
+
+  body{
+    font-family:var(--f-ui);
+    color:var(--ink);
+    background:var(--paper);
+    /* riso print texture: halftone dots + warm vignette + faint paper grain */
+    background-image:
+      radial-gradient(120% 80% at 80% -10%, rgba(255,155,30,.28), transparent 60%),
+      radial-gradient(110% 70% at -10% 110%, rgba(106,61,240,.16), transparent 55%),
+      var(--halftone);
+    background-size:auto, auto, 7px 7px;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.45;
+    padding:0 0 40px;
+  }
+
+  .wrap{
+    max-width:520px;
+    margin:0 auto;
+    padding:14px 16px 0;
+  }
+  @media (min-width:600px){
+    .wrap{max-width:560px;padding-top:22px;}
+  }
+
+  /* ===================== Top brand strip ===================== */
+  .brandbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;margin-bottom:12px;
+  }
+  .brand{
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .brand b{
+    font-family:var(--f-display);font-weight:400;
+    font-size:1.5rem;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--coral-deep);
+    transform:rotate(-2deg);
+  }
+  .brand span{
+    font-family:var(--f-hand);font-size:1.15rem;color:var(--ink-soft);
+    transform:rotate(-1deg);
+  }
+  .live{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);
+    padding:5px 9px;border-radius:999px;
+  }
+  .live i{width:7px;height:7px;border-radius:50%;background:var(--teal);
+    box-shadow:0 0 0 0 rgba(15,179,154,.7);animation:pulse 2.4s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(15,179,154,.6);}70%{box-shadow:0 0 0 7px rgba(15,179,154,0);}100%{box-shadow:0 0 0 0 rgba(15,179,154,0);}}
+
+  /* ===================== Hand-written scenario note ===================== */
+  .note{
+    position:relative;
+    background:var(--paper-2);
+    border:2.5px solid var(--ink);
+    border-radius:14px;
+    padding:13px 15px 14px;
+    box-shadow:5px 6px 0 rgba(36,26,23,.9);
+    transform:rotate(-.7deg);
+    margin-bottom:22px;
+  }
+  .note::before{
+    /* taped-on corner */
+    content:"";position:absolute;top:-9px;left:24px;width:54px;height:18px;
+    background:rgba(255,155,30,.55);border:1.5px dashed rgba(36,26,23,.5);
+    transform:rotate(-6deg);
+  }
+  .note p{
+    font-family:var(--f-hand);font-size:1.32rem;line-height:1.3;color:var(--ink);
+  }
+  .note .pins{
+    margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;
+    transform:rotate(.7deg);
+  }
+  .pin{
+    font-family:var(--f-ui);
+    font-size:.7rem;font-weight:700;letter-spacing:.3px;
+    padding:4px 9px;border-radius:999px;border:2px solid var(--ink);
+    background:var(--paper);display:inline-flex;align-items:center;gap:5px;
+  }
+  .pin.now{background:var(--ink);color:var(--paper);}
+  .pin.dinner{background:var(--grape);color:#fff;border-color:var(--ink);}
+
+  /* ===================== "DEAL ME A SHOW" hero header ===================== */
+  .dealhead{
+    text-align:center;margin-bottom:14px;
+  }
+  .dealhead .kick{
+    font-family:var(--f-hand);font-size:1.2rem;color:var(--ink-soft);
+    transform:rotate(-1.5deg);display:inline-block;
+  }
+  .dealhead h1{
+    font-family:var(--f-display);font-weight:400;text-transform:uppercase;
+    font-size:clamp(2.5rem,13vw,3.6rem);line-height:.86;letter-spacing:.5px;
+    color:var(--ink);
+    margin:2px 0 0;
+  }
+  .dealhead h1 em{
+    font-style:normal;color:var(--coral);
+    display:inline-block;transform:rotate(-2deg);
+    text-shadow:3px 3px 0 var(--ink);
+  }
+
+  /* ===================== TORN TICKET STUB hero result ===================== */
+  .stub-shadow{
+    position:relative;margin:8px 2px 8px;
+  }
+  .stub{
+    position:relative;
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:8px;
+    box-shadow:8px 9px 0 var(--coral);
+    overflow:hidden;
+    transform:rotate(-1deg);
+  }
+  /* perforation seam dividing stub head from body */
+  .stub .perf{
+    position:relative;height:0;border-top:3px dashed var(--ink);
+    margin:0;
+  }
+  .stub .perf::before,.stub .perf::after{
+    content:"";position:absolute;top:-13px;width:22px;height:22px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--ink);
+  }
+  .stub .perf::before{left:-14px;}
+  .stub .perf::after{right:-14px;}
+
+  .stub-top{
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0) 0 16px, rgba(255,255,255,.07) 16px 18px),
+      var(--teal-ink);
+    color:#fff;padding:13px 16px 14px;position:relative;
+  }
+  .stub-top .verdict-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .stub-top .tick{
+    width:28px;height:28px;flex:0 0 auto;border-radius:50%;
+    background:#fff;color:var(--teal-ink);display:grid;place-items:center;
+    font-weight:700;font-size:1.05rem;border:2.5px solid var(--ink);
+  }
+  .stub-top .verdict{
+    font-family:var(--f-display);text-transform:uppercase;letter-spacing:.6px;
+    font-size:1.22rem;line-height:1;
+  }
+  .stub-top .leaveby{
+    margin-top:8px;font-size:.95rem;font-weight:600;
+    background:rgba(36,26,23,.92);display:inline-block;padding:5px 10px;border-radius:6px;
+  }
+  .stub-top .leaveby b{color:var(--tang);}
+
+  .stub-body{padding:15px 16px 6px;}
+  .dealt-tag{
+    font-family:var(--f-hand);font-size:1.05rem;color:var(--coral-deep);
+    transform:rotate(-1deg);display:inline-block;margin-bottom:2px;
+  }
+  .stub-body h2{
+    font-family:var(--f-title);font-weight:900;font-size:2.05rem;line-height:.98;
+    letter-spacing:-.5px;margin:1px 0 4px;
+  }
+  .stub-body .genre{
+    display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+    background:var(--tang);color:var(--ink);border:2px solid var(--ink);
+    padding:3px 8px;border-radius:6px;transform:rotate(-1deg);margin-bottom:9px;
+  }
+  .stub-body .blurb{font-size:.95rem;color:var(--ink-soft);margin-bottom:12px;max-width:46ch;}
+
+  .stub-meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:13px;
+  }
+  .mcell{
+    border:2px solid var(--ink);border-radius:8px;padding:8px 10px;background:var(--paper-2);
+  }
+  .mcell .lab{font-size:.62rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink-soft);}
+  .mcell .val{font-family:var(--f-ui);font-weight:700;font-size:1.02rem;line-height:1.15;margin-top:1px;}
+  .mcell .val small{font-weight:500;font-size:.78rem;color:var(--ink-soft);}
+
+  /* two-leg micro-journey rail */
+  .journey{
+    border:2.5px dashed var(--ink);border-radius:10px;padding:11px 12px 12px;
+    background:repeating-linear-gradient(90deg,rgba(15,179,154,.07) 0 9px,transparent 9px 18px);
+    margin-bottom:14px;
+  }
+  .journey .jh{font-size:.66rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+  .legs{display:flex;align-items:stretch;gap:2px;}
+  .leg{flex:1 1 0;min-width:0;text-align:center;}
+  .leg .dot{
+    width:13px;height:13px;border-radius:50%;margin:0 auto 5px;border:2.5px solid var(--ink);background:var(--paper);
+  }
+  .leg.you .dot{background:var(--grape);}
+  .leg.show .dot{background:var(--teal);}
+  .leg.dinner .dot{background:var(--coral);}
+  .leg .ttl{font-size:.74rem;font-weight:700;line-height:1.05;}
+  .leg .sub{font-size:.64rem;color:var(--ink-soft);margin-top:2px;line-height:1.15;}
+  .leg .clk{font-family:var(--f-ui);font-weight:700;font-size:.8rem;margin-top:2px;}
+  .hop{flex:0 1 auto;align-self:center;display:flex;flex-direction:column;align-items:center;min-width:44px;max-width:62px;}
+  .hop .arr{font-size:1rem;line-height:1;color:var(--ink);}
+  .hop .cush{
+    font-size:.58rem;font-weight:700;color:var(--teal-ink);
+    background:rgba(15,179,154,.2);border-radius:9px;padding:3px 5px;margin-top:3px;
+    line-height:1.1;text-align:center;
+  }
+
+  .stub-cta{
+    display:flex;gap:9px;margin:2px 0 16px;
+  }
+  .btn{
+    font-family:var(--f-ui);font-weight:700;font-size:.95rem;
+    border:3px solid var(--ink);border-radius:10px;padding:14px 14px;cursor:pointer;
+    min-height:50px;line-height:1.1;
+    text-align:center;text-decoration:none;color:var(--ink);
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    transition:transform .06s ease, box-shadow .06s ease;
+  }
+  .btn-go{flex:1.4;background:var(--coral-deep);color:#fff;box-shadow:4px 4px 0 var(--ink);}
+  .btn-go:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink);}
+  .btn-redeal{flex:1;background:var(--paper);box-shadow:4px 4px 0 var(--ink);}
+  .btn-redeal:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink);}
+
+  /* honest data-gap note inside stub */
+  .honest{
+    font-size:.72rem;color:var(--ink-soft);text-align:center;padding:0 14px 13px;
+  }
+
+  /* ===================== "or pick from these" curated strip ===================== */
+  .strip-head{
+    display:flex;align-items:center;gap:10px;margin:26px 2px 12px;
+  }
+  .strip-head h3{
+    font-family:var(--f-display);font-weight:400;text-transform:uppercase;
+    font-size:1.45rem;letter-spacing:.5px;line-height:.9;transform:rotate(-1deg);
+  }
+  .strip-head .ln{flex:1;height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 14px);}
+
+  .cards{display:flex;flex-direction:column;gap:14px;}
+  .card{
+    position:relative;background:var(--paper);
+    border:3px solid var(--ink);border-radius:10px;padding:13px 14px 12px;
+    box-shadow:5px 6px 0 rgba(36,26,23,.85);
+  }
+  .card:nth-child(1){transform:rotate(-.6deg);}
+  .card:nth-child(2){transform:rotate(.5deg);}
+  .card:nth-child(3){transform:rotate(-.4deg);}
+  /* reserve the top-right corner for the stamp so the title/venue never run under it */
+  .card h4{font-family:var(--f-title);font-weight:700;font-size:1.3rem;line-height:1.02;letter-spacing:-.3px;padding-right:96px;}
+  .card .where{font-size:.78rem;color:var(--ink-soft);margin-top:3px;padding-right:96px;}
+  .card .when{font-family:var(--f-ui);font-weight:700;font-size:.92rem;margin-top:7px;
+    display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+  .card .when b{color:var(--coral-deep);}
+  .card .price{
+    font-family:var(--f-display);font-size:1rem;color:var(--ink);
+    border:2px solid var(--ink);border-radius:7px;padding:1px 8px;background:var(--paper-2);
+    transform:rotate(1.5deg);margin-left:auto;
+  }
+
+  /* CATCHABLE / JUST-MISSED stamps */
+  .stamp{
+    position:absolute;top:9px;right:11px;
+    font-family:var(--f-display);text-transform:uppercase;letter-spacing:1px;
+    font-size:.78rem;padding:4px 8px;border-radius:4px;
+    border:2.5px solid currentColor;line-height:1;
+  }
+  .stamp.catch{color:var(--catch);transform:rotate(7deg);
+    background:rgba(15,179,154,.12);
+    box-shadow:0 0 0 2px rgba(10,138,120,.22) inset;}
+  .stamp.miss{color:var(--miss);transform:rotate(-6deg);opacity:.78;
+    background:repeating-linear-gradient(45deg,rgba(156,93,0,.04) 0 4px,rgba(156,93,0,.12) 4px 6px);}
+
+  .slack{
+    margin-top:10px;display:flex;align-items:flex-start;gap:8px;
+    font-size:.82rem;font-weight:600;padding:9px 11px;border-radius:8px;border:2px solid var(--ink);
+  }
+  .slack.catch{background:rgba(15,179,154,.16);}
+  .slack.miss{background:rgba(255,155,30,.18);}
+  .slack .ico{font-size:1rem;line-height:1.2;flex:0 0 auto;}
+  .slack.catch .ico{color:var(--catch);}
+  .slack.miss .ico{color:var(--miss);}
+  .slack .plan{display:block;font-size:.74rem;font-weight:500;color:var(--ink-soft);margin-top:3px;}
+
+  /* faded card for just-missed — dimmed but still fully legible */
+  .card.dim{filter:saturate(.82);background:#fbeedd;}
+  .card.dim h4{color:var(--ink-soft);}
+
+  /* ===================== out-of-reach footnote ===================== */
+  .footnote{
+    margin:18px 2px 6px;
+    display:flex;align-items:center;gap:9px;
+    font-size:.78rem;color:var(--out);
+    border:2px dashed var(--out);border-radius:9px;padding:9px 11px;
+    background:rgba(154,143,136,.07);
+  }
+  .footnote .x{font-family:var(--f-display);font-size:1rem;color:var(--out);flex:0 0 auto;}
+  .footnote b{color:var(--ink-soft);}
+
+  /* ===================== footer ===================== */
+  .foot{
+    text-align:center;margin-top:26px;color:var(--ink-soft);
+    font-family:var(--f-hand);font-size:1.05rem;
+  }
+
+  /* very narrow phones — keep the two-leg rail and meta grid from crowding */
+  @media (max-width:360px){
+    .wrap{padding-left:12px;padding-right:12px;}
+    .dealhead h1{font-size:clamp(2.1rem,12vw,3rem);}
+    .stub-meta{grid-template-columns:1fr;}
+    .leg .sub{font-size:.6rem;}
+    .hop{min-width:40px;}
+    .hop .cush{font-size:.55rem;}
+  }
+
+  /* side-panel / wider view — the poster gets a touch more air */
+  @media (min-width:600px){
+    .stub-body h2{font-size:2.25rem;}
+    .stub-cta .btn{font-size:1rem;}
+  }
+
+  /* Honor reduced-motion: kill the pulse + press transitions only.
+     The static poster rotations are layout, not motion, so they stay. */
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- brand strip -->
+  <header class="brandbar">
+    <div class="brand">
+      <b>Fringe Discover</b>
+      <span>now-o'clock</span>
+    </div>
+    <span class="live"><i aria-hidden="true"></i> Live</span>
+  </header>
+
+  <!-- friendly hand-written scenario note (not a form) -->
+  <div class="note">
+    <p>It's <b>15:10</b>, you're at <b>Bristo Square</b>, dinner's at <b>18:30</b> — here's something to see <em>right now.</em></p>
+    <div class="pins">
+      <span class="pin now"><span aria-hidden="true">◷</span> Now 15:10</span>
+      <span class="pin"><span aria-hidden="true">🚶</span> Walking · 15 min</span>
+      <span class="pin"><span aria-hidden="true">🎭</span> Comedy &amp; Cabaret</span>
+      <span class="pin dinner"><span aria-hidden="true">🍛</span> Dinner 18:30 · Dishoom</span>
+    </div>
+  </div>
+
+  <!-- DEAL ME A SHOW header -->
+  <div class="dealhead">
+    <span class="kick">don't want to choose? we dealt you one →</span>
+    <h1>DEAL ME<br><em>A SHOW</em></h1>
+  </div>
+
+  <!-- TORN TICKET STUB result (rendered as the landed result state) -->
+  <div class="stub-shadow">
+    <div class="stub">
+
+      <!-- top: the reassuring verdict -->
+      <div class="stub-top" role="status">
+        <div class="verdict-row">
+          <span class="tick" aria-hidden="true">✓</span>
+          <span class="verdict">You can make this</span>
+        </div>
+        <div class="leaveby">Leave by <b>~15:25</b> · back in time for dinner</div>
+      </div>
+
+      <!-- perforation seam -->
+      <div class="perf"></div>
+
+      <!-- body: the dealt show -->
+      <div class="stub-body">
+        <span class="dealt-tag"><span aria-hidden="true">★</span> your lucky pick <span aria-hidden="true">★</span></span>
+        <h2>Variety Hour Spectacular</h2>
+        <span class="genre">Cabaret &amp; Variety</span>
+        <p class="blurb">Jugglers, crooners and a compère with no off-switch.</p>
+
+        <div class="stub-meta">
+          <div class="mcell">
+            <div class="lab">Where</div>
+            <div class="val">Gilded Balloon Patter House<br><small>The Snug · 5 min walk</small></div>
+          </div>
+          <div class="mcell">
+            <div class="lab">When · Price</div>
+            <div class="val">15:30 – 16:30<br><small>Starts in ~20 min · £14</small></div>
+          </div>
+        </div>
+
+        <!-- two-leg micro-journey -->
+        <div class="journey">
+          <div class="jh">Your two-leg plan</div>
+          <div class="legs">
+            <div class="leg you">
+              <div class="dot" aria-hidden="true"></div>
+              <div class="ttl">You, here</div>
+              <div class="sub">Bristo Square</div>
+              <div class="clk">15:10</div>
+            </div>
+            <div class="hop">
+              <div class="arr" aria-hidden="true">🚶&#8202;→</div>
+              <div class="cush">5 min walk<br>+15 spare</div>
+            </div>
+            <div class="leg show">
+              <div class="dot" aria-hidden="true"></div>
+              <div class="ttl">The show</div>
+              <div class="sub">15:30–16:30</div>
+              <div class="clk">ends 16:30</div>
+            </div>
+            <div class="hop">
+              <div class="arr" aria-hidden="true">🚶&#8202;→</div>
+              <div class="cush">11 min walk<br>easily made</div>
+            </div>
+            <div class="leg dinner">
+              <div class="dot" aria-hidden="true"></div>
+              <div class="ttl">Dinner</div>
+              <div class="sub">Dishoom</div>
+              <div class="clk">18:30</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stub-cta">
+          <a class="btn btn-go" href="#">Take it — go now <span aria-hidden="true">✦</span></a>
+          <button type="button" class="btn btn-redeal"><span aria-hidden="true">↻</span> Re-deal</button>
+        </div>
+      </div>
+
+      <p class="honest">We only know free-vs-paid &amp; the price — no live seat counts, so just turn up.</p>
+    </div>
+  </div>
+
+  <!-- curated strip: or pick from these near you -->
+  <div class="strip-head">
+    <h3>or pick from these</h3>
+    <div class="ln"></div>
+  </div>
+
+  <div class="cards">
+
+    <!-- CATCHABLE (go) -->
+    <div class="card">
+      <span class="stamp catch">Catchable</span>
+      <div class="ctop">
+        <h4>Punchline Party</h4>
+        <div class="where">Underbelly Bristo Square · Friesian · 3 min walk</div>
+        <div class="when"><b>16:00 – 17:00</b> · starts in ~50 min <span class="price">£13</span></div>
+      </div>
+      <div class="slack catch">
+        <span class="ico" aria-hidden="true">✓</span>
+        <div>
+          Comfy — leave by ~15:57
+          <span class="plan">Ends 17:00 → 10 min walk → dinner 18:30, 80 min to spare.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUST-MISSED (tight) — started 10 min ago, slip in late -->
+    <div class="card dim">
+      <span class="stamp miss">Just missed</span>
+      <div class="ctop">
+        <h4>Sketch Riot</h4>
+        <div class="where">Monkey Barrel Comedy · The Hive · 6 min walk</div>
+        <div class="when"><b>15:00 – 16:00</b> · started 10 min ago <span class="price">£11</span></div>
+      </div>
+      <div class="slack miss">
+        <span class="ico" aria-hidden="true">⏱</span>
+        <div>
+          Slip in late — you'd miss ~16 min
+          <span class="plan">Arrive ~15:16 → ends 16:00 → 10 min walk → dinner 18:30, easily made.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUST-MISSED (tight) — borderline, only the back half -->
+    <div class="card dim">
+      <span class="stamp miss">Just missed</span>
+      <div class="ctop">
+        <h4>Last Laugh Stand-Up</h4>
+        <div class="where">The Stand Comedy Club · Stand 1 · 11 min walk</div>
+        <div class="when"><b>15:00 – 16:00</b> · started 10 min ago <span class="price">£12</span></div>
+      </div>
+      <div class="slack miss">
+        <span class="ico" aria-hidden="true">⏱</span>
+        <div>
+          Borderline — 11 min away, you'd miss ~20 min
+          <span class="plan">Catch only the back half → ends 16:00 → dinner 18:30, still made.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- out-of-reach footnote -->
+  <div class="footnote">
+    <span class="x" aria-hidden="true">✗</span>
+    <div><b>1 won't fit before dinner</b> — “The Long Goodbye” (Pleasance Dome, 17:30–18:45) ends after your 18:30, and it's off your taste anyway.</div>
+  </div>
+
+  <div class="foot">Fringe Discover · concept mockup</div>
+
+</main>
+
+<script>
+  /* Progressive enhancement only — the page renders fully without it.
+     Re-deal swaps the dealt hero between the two reachable "go" shows,
+     keeping the honest verdict + two-leg plan in sync. Default state is
+     already the dealt result, so a static screenshot looks complete. */
+  (function(){
+    // Only the two genuinely reachable "go" shows are ever dealt — re-deal
+    // never hands you a tight/just-missed show, so the reassuring verdict
+    // stays honest no matter how many times you tap.
+    var deals = [
+      {
+        name:"Variety Hour Spectacular", genre:"Cabaret & Variety",
+        blurb:"Jugglers, crooners and a compère with no off-switch.",
+        where:"Gilded Balloon Patter House", room:"The Snug · 5 min walk",
+        when:"15:30 – 16:30", whenSub:"Starts in ~20 min · £14",
+        leaveBy:"~15:25",
+        hop1:"5 min walk<br>+15 spare", showSub:"15:30–16:30", showClk:"ends 16:30",
+        hop2:"11 min walk<br>easily made"
+      },
+      {
+        name:"Punchline Party", genre:"Comedy",
+        blurb:"A rapid-fire showcase of the Fringe's freshest comics.",
+        where:"Underbelly Bristo Square", room:"Friesian · 3 min walk",
+        when:"16:00 – 17:00", whenSub:"Starts in ~50 min · £13",
+        leaveBy:"~15:57",
+        hop1:"3 min walk<br>loads spare", showSub:"16:00–17:00", showClk:"ends 17:00",
+        hop2:"10 min walk<br>80 min spare"
+      }
+    ];
+    var i = 0;
+    var btn = document.querySelector('.btn-redeal');
+    if(!btn) return;
+    var q = function(s){return document.querySelector(s);};
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      i = (i+1) % deals.length;
+      var d = deals[i];
+      q('.stub-body h2').textContent = d.name;
+      q('.stub-body .genre').textContent = d.genre;
+      q('.stub-body .blurb').textContent = d.blurb;
+      q('.stub-meta .mcell:nth-child(1) .val').innerHTML = d.where + '<br><small>' + d.room + '</small>';
+      q('.stub-meta .mcell:nth-child(2) .val').innerHTML = d.when + '<br><small>' + d.whenSub + '</small>';
+      q('.stub-top .leaveby').innerHTML = 'Leave by <b>'+d.leaveBy+'</b> · back in time for dinner';
+      var hops = document.querySelectorAll('.journey .hop .cush');
+      if(hops[0]) hops[0].innerHTML = d.hop1;
+      if(hops[1]) hops[1].innerHTML = d.hop2;
+      q('.leg.show .sub').textContent = d.showSub;
+      q('.leg.show .clk').textContent = d.showClk;
+    });
+  })();
+</script>
+</body>
+</html>
