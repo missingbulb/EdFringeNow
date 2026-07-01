@@ -393,15 +393,12 @@ function genreIcon(genre) {
   return GENRE_ICONS[genre] || "🎭";
 }
 
-/* A map pin as a genre-emoji badge, ringed in the genre's colour (or the
- * plan colours for the committed / focused shows). */
+/* A map pin as the bare genre emoji — no circle, no background, just the icon
+ * (with a faint shadow for legibility over the tiles). Committed / focused shows
+ * are drawn a little larger. */
 function genrePin(show, status) {
-  const size = status === "selected" ? 36 : status === "leg" ? 34 : 30;
-  const ring =
-    status === "selected" ? "#5b54c9" : status === "leg" ? "#2e9e7e" : genreColor(show.genre);
-  const html =
-    `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;border-color:${ring}">` +
-    `${genreIcon(show.genre)}</span>`;
+  const size = status === "selected" ? 30 : status === "leg" ? 28 : 22;
+  const html = `<span class="gpin gpin--${status}" style="font-size:${size}px">${genreIcon(show.genre)}</span>`;
   return L.divIcon({
     html,
     className: "genre-pin",
@@ -837,7 +834,7 @@ function renderJourneyStrip() {
       '<span aria-hidden="true">🗺</span> Open in Maps</a>' +
     "</div>",
   ];
-  parts.push(planNode("you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
+  parts.push(planNode("📍", "you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
 
   if (leg) {
     const legPt = [leg.lat, leg.lng];
@@ -845,6 +842,7 @@ function renderJourneyStrip() {
     parts.push(planLeg(travelMinutes(origin, legPt)));
     parts.push(
       planNode(
+        genreIcon(leg.genre),
         "stop",
         `${leg.time}–${minutesToTime(timeToMinutes(leg.time) + leg.duration)}`,
         leg.title,
@@ -857,14 +855,14 @@ function renderJourneyStrip() {
     const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
     parts.push(planLeg(travelMinutes(legPt, destPt)));
     parts.push(
-      planNode("dest", constraint.time, destinationLabel(), "Your next commitment",
+      planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
         planSlack(timeToMinutes(constraint.time) - arriveDest), "")
     );
   } else {
     const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
     parts.push(planLeg(travelMinutes(origin, destPt)));
     parts.push(
-      planNode("dest", constraint.time, destinationLabel(), "Your next commitment",
+      planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
         planSlack(timeToMinutes(constraint.time) - arriveDest), "")
     );
   }
@@ -1020,11 +1018,13 @@ function renderSpareCta() {
     `<p class="spare-line">You have <b>${spare} min</b> to spare — want to see a show? ${countHtml}</p>`;
 }
 
-/* One node in the vertical plan: a dot, time, title, subtitle, an optional
- * slack chip and an optional extra (e.g. a buy button). */
-function planNode(kind, time, title, sub, slackHtmlStr, extraHtml) {
+/* One node in the vertical plan: a leading glyph (📍 for "you", the genre emoji
+ * for a show), time, title, subtitle, an optional slack chip and an optional
+ * extra (e.g. a buy button). */
+function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
   return `
     <div class="plan-node ${kind}">
+      <span class="plan-ico" aria-hidden="true">${icon}</span>
       <div class="plan-time">${escapeHtml(time)}</div>
       <div class="plan-title">${escapeHtml(title)}</div>
       ${sub ? `<div class="plan-sub">${escapeHtml(sub)}</div>` : ""}

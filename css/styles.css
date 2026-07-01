@@ -893,14 +893,13 @@ a { color: inherit; }
 .plan { margin: 16px 0 0; }
 .plan:empty { display: none; }
 .plan-head { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin: 4px 0 12px; }
-.plan-node { position: relative; padding: 0 0 2px 26px; }
-.plan-node::before { content: ""; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; }
-.plan-node.you::before { background: var(--red); }
-.plan-node.stop::before { background: #2e9e7e; }
-.plan-node.dest::before { background: #fff; border: 3px solid var(--blue); }
+.plan-node { position: relative; padding: 0 0 2px 30px; }
+/* A leading glyph in place of the old coloured dot: 📍 for "you", the show's
+   genre emoji for the stop/destination. */
+.plan-ico { position: absolute; left: 0; top: 0; width: 24px; text-align: center; font-size: 16px; line-height: 1.3; }
 /* The destination node is tappable — it reopens the constraint editor. */
-.plan-editable { cursor: pointer; margin: 2px -8px; padding: 6px 8px 8px 34px; border-radius: 12px; transition: background 0.12s ease; }
-.plan-editable::before { left: 8px; top: 10px; }
+.plan-editable { cursor: pointer; margin: 2px -8px; padding: 6px 8px 8px 38px; border-radius: 12px; transition: background 0.12s ease; }
+.plan-editable .plan-ico { left: 8px; top: 7px; }
 .plan-editable:hover { background: rgba(91, 84, 201, 0.07); }
 .plan-editable:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .plan-edit-hint { display: inline-block; margin-top: 6px; font-size: 0.72rem; font-weight: 700; color: var(--blue); }
@@ -934,11 +933,10 @@ a { color: inherit; }
 #leaflet-map { height: 260px; border: 1px solid var(--line); border-radius: 14px; box-shadow: none; }
 /* Desaturate the tiles a touch so the map reads as informative, not the main thing. */
 .leaflet-tile-pane { filter: saturate(0.82) brightness(1.03); }
-/* Genre-emoji map pins (override Leaflet's default white div-icon box). */
+/* Genre-emoji map pins — just the emoji, no circle/box (override Leaflet's
+   default white div-icon box). A faint shadow keeps it legible over tiles. */
 .genre-pin { background: none !important; border: none !important; }
-.gpin { display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; border: 2px solid #999; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); font-size: 15px; line-height: 1; }
-.gpin--selected { border-width: 3px; font-size: 18px; box-shadow: 0 2px 9px rgba(0, 0, 0, 0.38); }
-.gpin--leg { border-width: 3px; }
+.gpin { display: flex; align-items: center; justify-content: center; line-height: 1; filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.5)); }
 /* Titles for the committed / focused shows only (few, so no collisions). */
 .leaflet-tooltip.pin-label { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; font-weight: 700; font-size: 0.72rem; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); white-space: nowrap; }
 .leaflet-tooltip.pin-label::before { display: none; }
