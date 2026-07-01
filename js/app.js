@@ -560,27 +560,55 @@ function popupHtml(show, status = "ok") {
  * "Happening Now", so we pin it on the map but keep it out of this list. */
 function renderShowList() {
   const grid = document.getElementById("showsGrid");
+  const title = document.querySelector(".shows-title");
   if (!grid) return;
   grid.innerHTML = "";
 
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
   const shows = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+
+  // The heading reflects the head-state: browsing "now", or fitting a gap.
+  if (title) {
+    title.textContent = constraint
+      ? `${shows.length} ${shows.length === 1 ? "show fits" : "shows fit"} before ${constraint.time}`
+      : "Happening now near you";
+  }
+
   if (!shows.length) {
     grid.innerHTML =
-      '<p class="show-meta">No reachable shows match your current filters.</p>';
+      '<p class="show-meta">' +
+      (constraint
+        ? "Nothing fits before your next commitment — try a later time or a wider travel window."
+        : "No reachable shows match your current filters.") +
+      "</p>";
     return;
   }
 
+  // Grouped by start time so a long list stays scannable.
+  let group = null;
   shows
     .slice()
     .sort((a, b) => a.show.time.localeCompare(b.show.time))
     .forEach(({ show, status }) => {
+      if (show.time !== group) {
+        group = show.time;
+        const head = document.createElement("h3");
+        head.className = "shows-group-head";
+        head.textContent = group;
+        grid.appendChild(head);
+      }
+      const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
       const item = document.createElement("article");
       item.className = `show-item show-item--${status}`;
       item.innerHTML = `
         <span class="show-genre">${escapeHtml(show.genre)}</span>
-        <h3 class="show-name">${escapeHtml(show.title)}</h3>
+        <h4 class="show-name">${escapeHtml(show.title)}</h4>
         <p class="show-meta">${escapeHtml(show.venue)}</p>
-        <p class="show-meta"><span class="show-time">${escapeHtml(NOW.dateLabel)} ${escapeHtml(show.time)}</span> · ${escapeHtml(show.price)}</p>`;
+        <p class="show-meta"><span class="walk-glyph" aria-hidden="true">🚶</span> ${walk} min · ${escapeHtml(show.price)}${
+          constraint ? ' · <span class="fits-tag">fits</span>' : ""
+        }</p>`;
       item.addEventListener("click", () => {
         onShowClick(show);
         document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });

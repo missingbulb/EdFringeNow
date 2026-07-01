@@ -857,3 +857,18 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .rwin ul.flip, .timepick-count .countnum.bump, .show-pick.anim { animation: none; }
 }
+
+/* ===================== P4: grouped "what fits" list ===================== */
+.shows-group-head {
+  grid-column: 1 / -1;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--red-dark);
+  margin: 16px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.shows-group-head:first-child { border-top: none; padding-top: 0; margin-top: 2px; }
+.fits-tag { color: #1f7a4d; font-weight: 700; }
+.walk-glyph { font-size: 0.9em; }
