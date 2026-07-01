@@ -247,7 +247,7 @@ a { color: inherit; }
   font-weight: 600;
 }
 .panel-option:hover { background: var(--line); }
-.panel-option input { accent-color: var(--red); width: 16px; height: 16px; }
+.panel-option input { flex: 0 0 auto; accent-color: var(--red); width: 16px; height: 16px; }
 .panel-field-label {
   display: block;
   text-transform: uppercase;
@@ -278,6 +278,11 @@ a { color: inherit; }
   background: var(--paper);
 }
 .panel-input:disabled { opacity: 0.5; }
+/* "Find on map" — resolves a typed place and closes the picker. */
+.panel-find { display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 2px; font: inherit; font-weight: 700; font-size: 0.85rem; color: #fff; background: var(--blue); border: none; border-radius: 12px; padding: 10px 16px; cursor: pointer; }
+.panel-find:hover { filter: brightness(0.96); }
+.panel-find:disabled { opacity: 0.45; cursor: not-allowed; }
+.panel-find:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .panel-range {
   width: 100%;
   accent-color: var(--red);
@@ -762,9 +767,6 @@ a { color: inherit; }
 .app { width: 100%; }
 .wrap { width: 100%; max-width: 680px; margin: 0 auto; padding: 16px 20px 60px; }
 
-.now-line { font-size: 0.92rem; color: var(--muted); margin: 2px 0 16px; }
-.now-line b { color: var(--ink); }
-
 /* --- Debug collapsed behind a red header chip --- */
 .debug-chip {
   display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
@@ -951,13 +953,12 @@ a { color: inherit; }
 .shows-section { padding: 8px 0 0; }
 /* The count heading now sits above the filters + map, framing the whole area. */
 .shows-title { font-size: 1.3rem; margin: 18px 0 8px; }
-/* Order-by row sits directly above the list. */
-.sort-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 4px 0 12px; }
-.sort-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8c958c; }
-.sort-toggle { display: inline-flex; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 999px; background: #fff; padding: 2px; }
-.sort-btn { font: inherit; font-size: 0.78rem; font-weight: 700; color: var(--muted); background: transparent; border: none; padding: 5px 13px; border-radius: 999px; cursor: pointer; transition: color 0.12s ease, background 0.12s ease; }
-.sort-btn.is-active { color: #fff; background: var(--red); }
-.sort-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+/* Order-by control: a single centred button that flips time ↔ distance. */
+.sort-row { display: flex; justify-content: center; margin: 6px 0 14px; }
+.sort-cycle { font: inherit; font-weight: 700; font-size: 0.86rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 20px; cursor: pointer; transition: border-color 0.12s ease; }
+.sort-cycle::before { content: "⇅ "; color: var(--red); }
+.sort-cycle:hover { border-color: var(--red); }
+.sort-cycle:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .shows-grid { display: flex; flex-direction: column; gap: 8px; grid-template-columns: none; }
 .show-item {
   display: flex; align-items: center; gap: 12px; padding: 12px 14px;
