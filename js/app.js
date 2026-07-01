@@ -109,6 +109,10 @@ async function init() {
   buildTravelPanel();
   wirePanels();
   wireSortControls();
+  // The header pin re-asks the browser for the user's location (same as the
+  // map's ◎ control) and recentres on it.
+  const locBtn = document.getElementById("locBtn");
+  if (locBtn) locBtn.addEventListener("click", requestUserLocation);
   await loadShows();
   buildConstraintPanel();
   refreshMap();
@@ -726,24 +730,22 @@ function renderShowList() {
   }
 }
 
-/* Reflect the active sort on the Time/Distance toggle. */
+/* Label the single sort button with the current ordering. */
 function updateSortButtons() {
-  document.querySelectorAll(".sort-btn[data-sort]").forEach((b) => {
-    b.classList.toggle("is-active", b.dataset.sort === state.sortBy);
-    b.setAttribute("aria-pressed", String(b.dataset.sort === state.sortBy));
-  });
+  const btn = document.getElementById("sortToggle");
+  if (btn) btn.textContent = state.sortBy === "distance" ? "By distance" : "By time";
 }
 
-/* Wire the Time / Distance sort toggle above the reachable list. */
+/* Wire the single, centred sort button — each tap flips time ↔ distance. */
 function wireSortControls() {
-  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
+  const btn = document.getElementById("sortToggle");
+  if (btn) {
     btn.addEventListener("click", () => {
-      if (state.sortBy === btn.dataset.sort) return;
-      state.sortBy = btn.dataset.sort;
+      state.sortBy = state.sortBy === "time" ? "distance" : "time";
       state.showCap = SHOW_PAGE; // a new order starts from the first page
       renderShowList();
     });
-  });
+  }
   updateSortButtons();
 }
 
@@ -1231,11 +1233,6 @@ function buildConstraintPanel() {
 
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
-  const note = document.getElementById("constraintNote");
-  if (note) {
-    note.textContent =
-      `It's ${NOW.time} — pick a time at least ${CONSTRAINT_LEAD_MINUTES} min from now.`;
-  }
 
   const times = availableTimes();
   if (state.selectedTime && !times.includes(state.selectedTime)) {
@@ -1281,11 +1278,29 @@ function buildConstraintPanel() {
     };
   }
   const destInput = document.getElementById("destInput");
+  const destFind = document.getElementById("destFind");
   if (destInput) {
     destInput.oninput = () => {
       state.destLabel = destInput.value;
+      if (destFind) destFind.disabled = !destInput.value.trim();
       refreshConstraintValue();
       renderRoute();
+    };
+  }
+  // "Find on map" resolves a typed place: it commits it as the next commitment
+  // and closes the picker. (We can't geocode free text yet, so there's no route
+  // to draw — but the constraint is set and the panel gets out of the way.)
+  if (destFind && destInput) {
+    destFind.disabled = !destInput.value.trim();
+    destFind.onclick = () => {
+      const val = destInput.value.trim();
+      if (!val) return;
+      state.destLabel = val;
+      state.selectedShowId = ""; // a typed place isn't one of our shows
+      state.legShowId = "";
+      refreshConstraintValue();
+      refreshMap();
+      closeAllPanels();
     };
   }
 
@@ -1426,9 +1441,10 @@ function refreshConstraintValue() {
   const el = document.querySelector('[data-value="constraint"]');
   if (!el) return;
   const show = state.shows.find((s) => s.id === state.selectedShowId);
-  el.textContent = show
-    ? `${destinationLabel()} · by ${show.time}`
-    : "Set my next commitment";
+  const place = state.destLabel && state.destLabel.trim();
+  if (show) el.textContent = `${destinationLabel()} · by ${show.time}`;
+  else if (place && state.selectedTime) el.textContent = `${place} · by ${state.selectedTime}`;
+  else el.textContent = "Set my next commitment";
 }
 
 /* ---------- Panel open/close plumbing ---------- */
@@ -1478,8 +1494,6 @@ function closeAllPanels() {
 function renderDebugBanner() {
   const el = document.getElementById("debugNowText");
   if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
-  const now = document.getElementById("nowText");
-  if (now) now.textContent = NOW.time;
 }
 
 /* Wire up the debug panel: the header toggle chip, the date/time picker and the

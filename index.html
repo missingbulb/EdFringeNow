@@ -34,7 +34,7 @@
       <div class="header-icons">
         <!-- Debug is hidden behind this red chip so it doesn't dominate the UI. -->
         <button id="debugToggle" class="debug-chip" type="button" aria-expanded="false" aria-controls="debugBanner" title="Testing controls">DEBUG</button>
-        <button class="icon-btn" aria-label="Set location" title="Set location">
+        <button id="locBtn" class="icon-btn" type="button" aria-label="Use my location" title="Use my location">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
         </button>
       </div>
@@ -65,8 +65,6 @@
         </div>
       </div>
 
-      <p class="now-line"><b>Now</b> <span id="nowText"></span> · what can you catch near you?</p>
-
       <!-- ===================== Primary action: next commitment ===================== -->
       <article class="cta-card card card--constraint" data-card="constraint">
         <button class="card-trigger cta-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
@@ -94,7 +92,7 @@
 
           <label class="panel-field-label" for="destInput">Not a show? Type a place</label>
           <input type="text" id="destInput" class="panel-input" placeholder="A restaurant, a train…" />
-          <p class="panel-note" id="constraintNote"></p>
+          <button type="button" id="destFind" class="panel-find" disabled>🔎 Find on map</button>
         </div>
       </article>
 
@@ -129,7 +127,7 @@
             </div>
             <p class="panel-title panel-title--spaced">Which genres?</p>
             <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
-            <button type="button" class="panel-reset" id="filterReset">↺ Reset filters</button>
+            <button type="button" class="panel-reset" id="filterReset">Show me everything!</button>
           </div>
         </article>
 
@@ -162,11 +160,7 @@
       <!-- ===================== Reachable-now list ===================== -->
       <section id="shows" class="shows-section">
         <div class="sort-row">
-          <span class="sort-label">Order by</span>
-          <div class="sort-toggle" role="group" aria-label="Sort shows by">
-            <button type="button" class="sort-btn is-active" data-sort="time">Time</button>
-            <button type="button" class="sort-btn" data-sort="distance">Distance</button>
-          </div>
+          <button type="button" id="sortToggle" class="sort-cycle" aria-label="Change ordering">By time</button>
         </div>
         <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
         <button id="showMore" class="show-more" type="button" hidden>Show more</button>
@@ -179,8 +173,8 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <p class="logo logo--footer">EdFringe<span class="logo-now">Now</span></p>
-        <p class="footer-tagline">Helping you navigate the chaos and find your new favorite shows.</p>
-        <p class="footer-copy">© 2024 Edinburgh Festival Fringe Society</p>
+        <p class="footer-tagline">Helping you navigate the chaos and catch another show!</p>
+        <p class="footer-copy">© 2026 Missing Bulb</p>
       </div>
       <div class="footer-col">
         <h3 class="footer-heading">Quick Links</h3>
