@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EdFringeNow — graphic-design re-skin directions (set 2)</title>
+  <meta name="description" content="Four more graphic-design skins on the same layout and flow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #1a211e;
+      background: #edece6;
+      line-height: 1.5;
+    }
+    .page { max-width: 1180px; margin: 0 auto; padding: 40px 22px 72px; }
+    .kicker { font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #0f8f86; margin: 0 0 10px; }
+    h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.01em; font-size: clamp(1.9rem, 5vw, 2.7rem); margin: 0 0 12px; line-height: 1.08; }
+    .lede { max-width: 66ch; margin: 0 0 10px; color: #5c655f; font-size: 1.04rem; }
+    .lede b { color: #1a211e; }
+    .note { max-width: 66ch; margin: 0 0 34px; color: #5c655f; font-size: .92rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+
+    .dir-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 12px; }
+    .dir-name { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.28rem; margin: 0; }
+    .dir-one { color: #5c655f; font-size: .88rem; margin: 0; }
+    .swatches { display: flex; gap: 6px; margin: 8px 0 12px; }
+    .sw { width: 26px; height: 26px; border-radius: 6px; border: 1px solid rgba(0,0,0,.12); }
+
+    /* ===== The re-skinnable mini-app (shared structure) ===== */
+    .demo { border-radius: 20px; overflow: hidden; box-shadow: 0 14px 34px rgba(20, 30, 26, .12); }
+    .d-inner { padding: 16px 16px 18px; }
+    .d-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .d-logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; }
+    .d-loc { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; font-size: .95rem; }
+
+    .d-cta { border-radius: 14px; padding: 13px 15px; margin-bottom: 16px; }
+    .d-cta-kicker { display: block; font-size: .64rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 4px; }
+    .d-cta-title { display: block; font-size: 1.25rem; line-height: 1.1; margin-bottom: 5px; }
+    .d-cta-hint { display: block; font-size: .74rem; }
+
+    .d-title-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+    .d-title { font-size: 1.02rem; font-weight: 700; margin: 0; }
+    .d-count { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+
+    .d-chips { display: flex; gap: 6px; margin-bottom: 14px; }
+    .d-chip { display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; font-weight: 700; padding: 6px 10px; border-radius: 999px; }
+
+    .d-show { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 12px; margin-bottom: 8px; }
+    .d-show-main { flex: 1; min-width: 0; }
+    .d-show-g { font-size: .58rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; display: block; margin-bottom: 2px; }
+    .d-show-n { font-size: .98rem; font-weight: 700; line-height: 1.15; margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .d-show-m { font-size: .74rem; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .d-show-side { flex: 0 0 auto; text-align: right; }
+    .d-show-t { font-size: 1rem; font-weight: 700; display: block; }
+    .d-show-w { font-size: .68rem; display: block; }
+    .d-show-fit { font-size: .62rem; font-weight: 700; display: block; }
+
+    .d-plan { margin-top: 14px; padding: 13px 14px; border-radius: 12px; }
+    .d-plan-h { font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 9px; }
+    .d-plan-node { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+    .d-plan-ico { flex: 0 0 auto; width: 20px; text-align: center; }
+    .d-plan-txt { font-size: .82rem; font-weight: 600; }
+    .d-plan-sub { font-size: .7rem; }
+    .d-plan-badge { display: inline-block; margin-top: 4px; font-size: .64rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+
+    /* ============================================================
+       THEME 5 — Riso Zine (two-tone overprint, DIY)
+       ============================================================ */
+    .t-riso .demo { background: #EFE9DA; border: 2px solid #1b1b1b; box-shadow: 6px 6px 0 #2438C4; }
+    .t-riso .d-logo { font-family: "Archivo Black", sans-serif; text-transform: uppercase; letter-spacing: .01em; color: #2438C4; text-shadow: 1.5px 1.5px 0 #EC3B83; }
+    .t-riso .d-logo b { color: #EC3B83; font-weight: 400; text-shadow: 1.5px 1.5px 0 #2438C4; }
+    .t-riso .d-loc { background: #EC3B83; color: #fff; border: 2px solid #1b1b1b; }
+    .t-riso .d-cta { background: #2438C4; color: #fff; border: 2px solid #1b1b1b; box-shadow: 4px 4px 0 #EC3B83; }
+    .t-riso .d-cta-kicker { color: #ffd6e7; }
+    .t-riso .d-cta-title { font-family: "Archivo Black", sans-serif; text-transform: uppercase; letter-spacing: .01em; font-size: 1.4rem; }
+    .t-riso .d-cta-hint { color: #e3e6ff; }
+    .t-riso .d-title { font-family: "Archivo Black", sans-serif; text-transform: uppercase; color: #1b1b1b; font-size: .96rem; }
+    .t-riso .d-count { background: #EC3B83; color: #fff; border: 2px solid #1b1b1b; }
+    .t-riso .d-chip { background: #EFE9DA; color: #1b1b1b; border: 2px solid #1b1b1b; box-shadow: 2px 2px 0 #2438C4; }
+    .t-riso .d-show { background: #fbf7ee; border: 2px solid #1b1b1b; box-shadow: 3px 3px 0 #EC3B83; }
+    .t-riso .d-show-g { color: #fff; background: #2438C4; display: inline-block; padding: 1px 6px; }
+    .t-riso .d-show-n { color: #1b1b1b; }
+    .t-riso .d-show-m { color: #6b6459; }
+    .t-riso .d-show-t { font-family: "Archivo Black", sans-serif; color: #EC3B83; }
+    .t-riso .d-show-w { color: #6b6459; }
+    .t-riso .d-show-fit { color: #2438C4; }
+    .t-riso .d-plan { background: #EC3B83; color: #fff; border: 2px solid #1b1b1b; box-shadow: 4px 4px 0 #2438C4; }
+    .t-riso .d-plan-h { color: #ffd6e7; }
+    .t-riso .d-plan-txt { color: #fff; }
+    .t-riso .d-plan-sub { color: #ffd6e7; }
+    .t-riso .d-plan-badge { background: #fff; color: #2438C4; border: 1px solid #1b1b1b; }
+
+    /* ============================================================
+       THEME 6 — Fresh & Minimal (clean modern product)
+       ============================================================ */
+    .t-fresh .demo { background: #FFFFFF; border: 1px solid #EAECF0; box-shadow: 0 12px 30px rgba(16, 24, 40, .08); }
+    .t-fresh .d-logo { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; color: #101828; }
+    .t-fresh .d-logo b { color: #6C4CF1; font-weight: 800; }
+    .t-fresh .d-loc { background: #EEF0FE; color: #6C4CF1; }
+    .t-fresh .d-cta { background: #6C4CF1; color: #fff; border-radius: 16px; box-shadow: 0 8px 20px rgba(108, 76, 241, .28); }
+    .t-fresh .d-cta-kicker { color: #d9d1ff; }
+    .t-fresh .d-cta-title { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; }
+    .t-fresh .d-cta-hint { color: #ece8ff; }
+    .t-fresh .d-title { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: #101828; }
+    .t-fresh .d-count { background: #EEF0FE; color: #6C4CF1; }
+    .t-fresh .d-chip { background: #F9FAFB; color: #344054; border: 1px solid #EAECF0; }
+    .t-fresh .d-show { background: #fff; border: 1px solid #EAECF0; border-radius: 14px; }
+    .t-fresh .d-show-g { color: #6C4CF1; }
+    .t-fresh .d-show-n { color: #101828; }
+    .t-fresh .d-show-m { color: #667085; }
+    .t-fresh .d-show-t { font-family: "Plus Jakarta Sans", sans-serif; color: #101828; }
+    .t-fresh .d-show-w { color: #667085; }
+    .t-fresh .d-show-fit { color: #12B76A; }
+    .t-fresh .d-plan { background: #F9F8FF; border: 1px solid #E4DEFF; }
+    .t-fresh .d-plan-h { color: #6C4CF1; }
+    .t-fresh .d-plan-txt { color: #101828; }
+    .t-fresh .d-plan-sub { color: #667085; }
+    .t-fresh .d-plan-badge { background: #E6F7EE; color: #059669; }
+
+    /* ============================================================
+       THEME 7 — Electric Mono (stark, one neon, underground)
+       ============================================================ */
+    .t-mono .demo { background: #0B0B0B; border: 1px solid #C6FF3D; border-radius: 6px; box-shadow: 0 0 0 4px #0B0B0B, 0 14px 34px rgba(0,0,0,.5); }
+    .t-mono .d-logo { font-family: "Space Mono", monospace; font-weight: 700; text-transform: uppercase; color: #EDEDED; }
+    .t-mono .d-logo b { color: #C6FF3D; }
+    .t-mono .d-loc { background: transparent; color: #C6FF3D; border: 1px solid #333; border-radius: 4px; }
+    .t-mono .d-cta { background: #C6FF3D; color: #0B0B0B; border-radius: 6px; }
+    .t-mono .d-cta-kicker { color: #0B0B0B; opacity: .7; font-family: "Space Mono", monospace; }
+    .t-mono .d-cta-title { font-family: "Space Mono", monospace; font-weight: 700; text-transform: uppercase; font-size: 1.14rem; }
+    .t-mono .d-cta-hint { color: #0B0B0B; opacity: .78; font-family: "Space Mono", monospace; font-size: .68rem; }
+    .t-mono .d-title { font-family: "Space Mono", monospace; font-weight: 700; text-transform: uppercase; color: #EDEDED; font-size: .92rem; }
+    .t-mono .d-count { background: #C6FF3D; color: #0B0B0B; border-radius: 3px; font-family: "Space Mono", monospace; }
+    .t-mono .d-chip { background: transparent; color: #EDEDED; border: 1px solid #333; border-radius: 4px; font-family: "Space Mono", monospace; }
+    .t-mono .d-show { background: #111; border: 1px solid #262626; border-radius: 4px; }
+    .t-mono .d-show-g { color: #C6FF3D; font-family: "Space Mono", monospace; }
+    .t-mono .d-show-n { color: #EDEDED; }
+    .t-mono .d-show-m { color: #7A7A7A; font-family: "Space Mono", monospace; font-size: .7rem; }
+    .t-mono .d-show-t { font-family: "Space Mono", monospace; color: #C6FF3D; }
+    .t-mono .d-show-w { color: #7A7A7A; font-family: "Space Mono", monospace; }
+    .t-mono .d-show-fit { color: #C6FF3D; font-family: "Space Mono", monospace; }
+    .t-mono .d-plan { background: #111; border: 1px solid #C6FF3D; border-radius: 4px; }
+    .t-mono .d-plan-h { color: #C6FF3D; font-family: "Space Mono", monospace; }
+    .t-mono .d-plan-txt { color: #EDEDED; font-family: "Space Mono", monospace; font-size: .78rem; }
+    .t-mono .d-plan-sub { color: #7A7A7A; }
+    .t-mono .d-plan-badge { background: #C6FF3D; color: #0B0B0B; border-radius: 3px; font-family: "Space Mono", monospace; }
+
+    /* ============================================================
+       THEME 8 — Heather & Stone (Edinburgh heritage)
+       ============================================================ */
+    .t-heather .demo { background: #EDEAE3; border: 1px solid #D8D2C6; box-shadow: 0 12px 30px rgba(44, 42, 46, .12); }
+    .t-heather .d-logo { font-family: "Playfair Display", Georgia, serif; font-weight: 700; color: #2C2A2E; }
+    .t-heather .d-logo b { color: #6E4E8F; font-weight: 700; }
+    .t-heather .d-loc { background: #fff; color: #6E4E8F; border: 1px solid #D8D2C6; }
+    .t-heather .d-cta { background: #6E4E8F; color: #fff; border-radius: 12px; }
+    .t-heather .d-cta-kicker { color: #e5d6f2; letter-spacing: .12em; }
+    .t-heather .d-cta-title { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 1.4rem; }
+    .t-heather .d-cta-hint { color: #efe6f6; }
+    .t-heather .d-title { font-family: "Playfair Display", Georgia, serif; font-weight: 700; color: #2C2A2E; }
+    .t-heather .d-count { background: #6E4E8F; color: #fff; }
+    .t-heather .d-chip { background: #fff; color: #2C2A2E; border: 1px solid #D8D2C6; }
+    .t-heather .d-show { background: #F6F4EE; border: 1px solid #D8D2C6; }
+    .t-heather .d-show-g { color: #A56FB5; }
+    .t-heather .d-show-n { font-family: "Playfair Display", Georgia, serif; font-weight: 600; color: #2C2A2E; }
+    .t-heather .d-show-m { color: #6b6560; }
+    .t-heather .d-show-t { font-family: "Playfair Display", Georgia, serif; color: #6E4E8F; }
+    .t-heather .d-show-w { color: #6b6560; }
+    .t-heather .d-show-fit { color: #4d7a52; }
+    /* tartan hairline: layered background lines on the plan block */
+    .t-heather .d-plan { background: #2C2A2E; color: #EDEAE3; border-radius: 12px;
+      background-image: repeating-linear-gradient(90deg, rgba(165,111,181,.22) 0 2px, transparent 2px 26px),
+                        repeating-linear-gradient(0deg, rgba(165,111,181,.14) 0 2px, transparent 2px 26px); }
+    .t-heather .d-plan-h { color: #cbb0dd; }
+    .t-heather .d-plan-txt { color: #EDEAE3; }
+    .t-heather .d-plan-sub { color: #b7b1a8; }
+    .t-heather .d-plan-badge { background: #EDEAE3; color: #4d7a52; }
+
+    footer { margin-top: 42px; color: #5c655f; font-size: .88rem; }
+    footer b { color: #1a211e; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="kicker">EdFringeNow · graphic-design directions · set 2</p>
+    <h1>Four more skins</h1>
+    <p class="lede">
+      Same idea as the first set — every panel is your <b>current layout and flow</b>, only the
+      <b>graphic design</b> changes. These four lean further from the current calm look for a wider
+      spread to react to.
+    </p>
+    <p class="note">
+      Quick swatches, not finished screens. Numbering continues from the first page (5–8).
+      Say which one clicks — or mix a palette from one with the type of another — and I'll build it out.
+    </p>
+
+    <div class="grid">
+
+      <!-- ============ 5. RISO ZINE ============ -->
+      <section class="dir t-riso">
+        <div class="dir-head">
+          <h2 class="dir-name">5 · Riso Zine</h2>
+          <p class="dir-one">Two-tone, DIY, indie</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#2438C4"></span>
+          <span class="sw" style="background:#EC3B83"></span>
+          <span class="sw" style="background:#EFE9DA"></span>
+          <span class="sw" style="background:#1b1b1b"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top"><span class="d-logo">EdFringe<b>Now</b></span><span class="d-loc">📍</span></div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row"><h3 class="d-title">Happening now near you</h3><span class="d-count">12</span></div>
+          <div class="d-chips"><span class="d-chip">🎭 Comedy ▾</span><span class="d-chip">🚶 Walk ≤ 10 min ▾</span></div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Comedy</span><p class="d-show-n">The 4pm Panic Hour</p><p class="d-show-m">Pleasance Courtyard · Bunker Two</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:30</span><span class="d-show-w">6 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Cabaret</span><p class="d-show-n">Midnight Ukulele Riot</p><p class="d-show-m">Underbelly · Iron Belly</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:45</span><span class="d-show-w">3 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30<br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 6. FRESH & MINIMAL ============ -->
+      <section class="dir t-fresh">
+        <div class="dir-head">
+          <h2 class="dir-name">6 · Fresh &amp; Minimal</h2>
+          <p class="dir-one">Clean, modern, airy</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#6C4CF1"></span>
+          <span class="sw" style="background:#EEF0FE"></span>
+          <span class="sw" style="background:#101828"></span>
+          <span class="sw" style="background:#FFFFFF"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top"><span class="d-logo">EdFringe<b>Now</b></span><span class="d-loc">📍</span></div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row"><h3 class="d-title">Happening now near you</h3><span class="d-count">12</span></div>
+          <div class="d-chips"><span class="d-chip">🎭 Comedy ▾</span><span class="d-chip">🚶 Walk ≤ 10 min ▾</span></div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Comedy</span><p class="d-show-n">The 4pm Panic Hour</p><p class="d-show-m">Pleasance Courtyard · Bunker Two</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:30</span><span class="d-show-w">6 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Cabaret</span><p class="d-show-n">Midnight Ukulele Riot</p><p class="d-show-m">Underbelly · Iron Belly</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:45</span><span class="d-show-w">3 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30<br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 7. ELECTRIC MONO ============ -->
+      <section class="dir t-mono">
+        <div class="dir-head">
+          <h2 class="dir-name">7 · Electric Mono</h2>
+          <p class="dir-one">Stark, neon, underground</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#0B0B0B"></span>
+          <span class="sw" style="background:#C6FF3D"></span>
+          <span class="sw" style="background:#262626"></span>
+          <span class="sw" style="background:#EDEDED"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top"><span class="d-logo">EdFringe<b>Now</b></span><span class="d-loc">📍</span></div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row"><h3 class="d-title">Happening now near you</h3><span class="d-count">12</span></div>
+          <div class="d-chips"><span class="d-chip">🎭 Comedy ▾</span><span class="d-chip">🚶 Walk ≤ 10 min ▾</span></div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Comedy</span><p class="d-show-n">The 4pm Panic Hour</p><p class="d-show-m">Pleasance Courtyard · Bunker Two</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:30</span><span class="d-show-w">6 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Cabaret</span><p class="d-show-n">Midnight Ukulele Riot</p><p class="d-show-m">Underbelly · Iron Belly</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:45</span><span class="d-show-w">3 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30<br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- ============ 8. HEATHER & STONE ============ -->
+      <section class="dir t-heather">
+        <div class="dir-head">
+          <h2 class="dir-name">8 · Heather &amp; Stone</h2>
+          <p class="dir-one">Edinburgh heritage</p>
+        </div>
+        <div class="swatches">
+          <span class="sw" style="background:#6E4E8F"></span>
+          <span class="sw" style="background:#A56FB5"></span>
+          <span class="sw" style="background:#EDEAE3"></span>
+          <span class="sw" style="background:#2C2A2E"></span>
+        </div>
+        <div class="demo"><div class="d-inner">
+          <div class="d-top"><span class="d-logo">EdFringe<b>Now</b></span><span class="d-loc">📍</span></div>
+          <div class="d-cta">
+            <span class="d-cta-kicker">Where do you need to be next?</span>
+            <span class="d-cta-title">Set my next commitment</span>
+            <span class="d-cta-hint">Pick a time, then the show — we'll show only what fits ▾</span>
+          </div>
+          <div class="d-title-row"><h3 class="d-title">Happening now near you</h3><span class="d-count">12</span></div>
+          <div class="d-chips"><span class="d-chip">🎭 Comedy ▾</span><span class="d-chip">🚶 Walk ≤ 10 min ▾</span></div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Comedy</span><p class="d-show-n">The 4pm Panic Hour</p><p class="d-show-m">Pleasance Courtyard · Bunker Two</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:30</span><span class="d-show-w">6 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-show">
+            <div class="d-show-main"><span class="d-show-g">Cabaret</span><p class="d-show-n">Midnight Ukulele Riot</p><p class="d-show-m">Underbelly · Iron Belly</p></div>
+            <div class="d-show-side"><span class="d-show-t">4:45</span><span class="d-show-w">3 min walk</span><span class="d-show-fit">✓ fits</span></div>
+          </div>
+          <div class="d-plan">
+            <p class="d-plan-h">Your plan</p>
+            <div class="d-plan-node"><span class="d-plan-ico">📍</span><span class="d-plan-txt">You are here</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🎭</span><span class="d-plan-txt">The 4pm Panic Hour · 4:30</span></div>
+            <div class="d-plan-node"><span class="d-plan-ico">🍽️</span><span class="d-plan-txt">Dinner, Grassmarket · 6:30<br><span class="d-plan-badge">18 min to spare</span></span></div>
+          </div>
+        </div></div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p>Options 5–8 · companions to <b>reskin-directions.html</b> (1–4). Same structure as the live app — only the <b>graphic design</b> differs. Pick a direction (issue <b>#33</b>) and I'll re-skin <b>index.html</b> / <b>css/styles.css</b>.</p>
+    </footer>
+  </main>
+</body>
+</html>
