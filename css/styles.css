@@ -805,3 +805,55 @@ a { color: inherit; }
 
 /* Reachable-now list, inside the sheet's padded container. */
 .shows-section { padding: 26px 0 0; }
+
+/* ===================== P3: rolling time picker + show list ===================== */
+.timepick { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 4px; }
+.roller { display: flex; flex-direction: column; align-items: center; }
+.rbtn {
+  background: none; border: none; color: var(--muted); font-size: 0.8rem;
+  padding: 3px 14px; cursor: pointer; border-radius: 8px; line-height: 1;
+}
+.rbtn:hover { color: var(--gold); background: rgba(91, 84, 201, 0.08); }
+.rbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.rwin { position: relative; width: 80px; height: 120px; overflow: hidden; text-align: center; }
+.rwin::before {
+  content: ""; position: absolute; left: 2px; right: 2px; top: 40px; height: 40px;
+  border-radius: 11px; background: rgba(91, 84, 201, 0.10); border: 1px solid rgba(91, 84, 201, 0.25);
+}
+.rwin ul { list-style: none; margin: 0; padding: 0; position: relative; z-index: 1; }
+.rwin li { height: 40px; line-height: 40px; font-family: var(--serif); font-weight: 700; font-size: 1.5rem; color: #9aa39c; }
+.rwin li.on { color: var(--gold); }
+.rwin ul.flip { animation: rollflip 0.26s ease; }
+@keyframes rollflip { from { opacity: 0.25; transform: translateY(var(--rd, 6px)); } to { opacity: 1; transform: none; } }
+.pcolon { font-family: var(--serif); font-weight: 700; font-size: 1.5rem; color: var(--ink); padding-bottom: 2px; }
+
+.timepick-count { text-align: center; margin: 2px 0 12px; font-size: 0.82rem; color: var(--muted); }
+.timepick-count .countnum {
+  font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
+  color: var(--red-dark); display: inline-block; vertical-align: -2px;
+}
+.timepick-count .countnum.bump { animation: countbump 0.4s ease; }
+@keyframes countbump { 0% { transform: scale(1); } 42% { transform: scale(1.18); color: var(--red); } 100% { transform: scale(1); } }
+
+.show-picklist { display: flex; flex-direction: column; gap: 8px; max-height: 280px; overflow-y: auto; margin: 2px 0 8px; }
+.show-pick {
+  display: flex; align-items: center; gap: 11px; text-align: left; width: 100%;
+  padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--paper); cursor: pointer; font: inherit; color: inherit;
+}
+.show-pick:hover { border-color: #cfc9bb; }
+.show-pick.is-sel { border-color: var(--gold); background: rgba(91, 84, 201, 0.07); }
+.show-pick:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.sp-radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #9aa39c; flex: 0 0 auto; }
+.show-pick.is-sel .sp-radio { border-color: var(--gold); background: radial-gradient(circle at 50% 50%, var(--gold) 0 5px, transparent 6px); }
+.sp-body { min-width: 0; }
+.sp-title { display: block; font-family: var(--serif); font-weight: 600; font-size: 1rem; line-height: 1.15; }
+.sp-venue { display: block; font-size: 0.78rem; color: var(--muted); }
+.sp-genre { display: block; font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; color: #9aa39c; margin-top: 2px; }
+.show-pick.anim { animation: pickin 0.32s ease both; }
+@keyframes pickin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.picklist-empty { font-size: 0.85rem; color: var(--muted); margin: 4px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rwin ul.flip, .timepick-count .countnum.bump, .show-pick.anim { animation: none; }
+}

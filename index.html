@@ -99,13 +99,32 @@
               <p class="panel-title">
                 Your next commitment <strong id="constraintDateLabel">today</strong>
               </p>
-              <label class="panel-field-label" for="timeSelect">When it starts</label>
-              <select id="timeSelect" class="panel-select"></select>
-              <label class="panel-field-label" for="showSelect">Which show</label>
-              <select id="showSelect" class="panel-select"></select>
-              <label class="panel-field-label" for="destInput">Destination</label>
-              <input type="text" id="destInput" class="panel-input" placeholder="Pick a show, or type where you need to be" disabled />
-              <p class="panel-note" id="constraintNote">We only use this to find where you need to be — it's all happening today.</p>
+
+              <p class="panel-field-label">When does it start?</p>
+              <div class="timepick">
+                <div class="roller">
+                  <button type="button" class="rbtn" data-roll="hour" data-dir="1" aria-label="Later hour">▲</button>
+                  <div class="rwin"><ul id="hourRoll"></ul></div>
+                  <button type="button" class="rbtn" data-roll="hour" data-dir="-1" aria-label="Earlier hour">▼</button>
+                </div>
+                <span class="pcolon">:</span>
+                <div class="roller">
+                  <button type="button" class="rbtn" data-roll="min" data-dir="1" aria-label="Later minutes">▲</button>
+                  <div class="rwin"><ul id="minRoll"></ul></div>
+                  <button type="button" class="rbtn" data-roll="min" data-dir="-1" aria-label="Earlier minutes">▼</button>
+                </div>
+              </div>
+              <p class="timepick-count">
+                <span class="countnum" id="constraintCount">—</span>
+                <span id="constraintCountLab">shows start then</span>
+              </p>
+
+              <p class="panel-field-label">Pick your show — any genre</p>
+              <div class="show-picklist" id="showPickList"><!-- populated by JS --></div>
+
+              <label class="panel-field-label" for="destInput">Not a show? Type a place</label>
+              <input type="text" id="destInput" class="panel-input" placeholder="A restaurant, a train…" />
+              <p class="panel-note" id="constraintNote"></p>
             </div>
           </article>
         </div>
