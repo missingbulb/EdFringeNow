@@ -376,12 +376,40 @@ function displayedShows() {
   return out;
 }
 
-const MARKER_STYLE = {
-  selected: { radius: 13, color: "#141414", weight: 3, fillOpacity: 1 },
-  leg: { radius: 11, color: "#1e7d34", weight: 4, fillOpacity: 1 },
-  ok: { radius: 9, color: "#fff", weight: 2, fillOpacity: 1 },
-  tight: { radius: 8, color: "#9aa0a6", weight: 2, fillOpacity: 0.32 },
+/* A little emoji per genre — shown in the genre filter and as the map pin. */
+const GENRE_ICONS = {
+  "Cabaret and Variety": "🎪",
+  "Children's Shows": "🧸",
+  Comedy: "😂",
+  "Dance, Physical Theatre & Circus": "💃",
+  Events: "🎉",
+  Exhibitions: "🖼️",
+  Music: "🎵",
+  "Musicals and Opera": "🎼",
+  "Spoken Word": "🗣️",
+  Theatre: "🎭",
 };
+function genreIcon(genre) {
+  return GENRE_ICONS[genre] || "🎭";
+}
+
+/* A map pin as a genre-emoji badge, ringed in the genre's colour (or the
+ * plan colours for the committed / focused shows). */
+function genrePin(show, status) {
+  const size = status === "selected" ? 36 : status === "leg" ? 34 : 30;
+  const ring =
+    status === "selected" ? "#5b54c9" : status === "leg" ? "#2e9e7e" : genreColor(show.genre);
+  const html =
+    `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;border-color:${ring}">` +
+    `${genreIcon(show.genre)}</span>`;
+  return L.divIcon({
+    html,
+    className: "genre-pin",
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+    tooltipAnchor: [0, -size / 2],
+  });
+}
 
 /* Re-draw the reach circle, show markers, journey arrows and the (mirrored)
  * show list together. */
@@ -443,19 +471,30 @@ function renderMarkers() {
   Object.values(state.markers).forEach((m) => state.map.removeLayer(m));
   state.markers = {};
 
-  // With a show in focus (a committed next show or one the user tapped), every
-  // other pin steps back to ~30% opacity so the one that matters reads first.
-  const anyFocus = Boolean(state.selectedShowId || state.legShowId);
+  // Only when the user has actually tapped a show to focus it do the other pins
+  // step back — a committed next commitment on its own shouldn't grey out the
+  // options you're browsing to fill the gap.
+  const anyFocus = Boolean(state.legShowId);
   displayedShows().forEach(({ show, status }) => {
-    const style = MARKER_STYLE[status] || MARKER_STYLE.ok;
     const prominent = status === "selected" || status === "leg";
     const dim = anyFocus && !prominent;
-    const marker = L.circleMarker([show.lat, show.lng], {
-      ...style,
-      fillColor: status === "tight" ? "#b9bcc1" : genreColor(show.genre),
-      fillOpacity: dim ? 0.3 : style.fillOpacity,
-      opacity: dim ? 0.3 : style.opacity ?? 1,
+    const marker = L.marker([show.lat, show.lng], {
+      icon: genrePin(show, status),
+      zIndexOffset: status === "selected" ? 1000 : status === "leg" ? 600 : 0,
+      keyboard: false,
     }).addTo(state.map);
+    marker.setOpacity(dim ? 0.3 : status === "tight" ? 0.55 : 1);
+
+    // Label only the committed / focused shows — at most a couple, so the text
+    // can't collide the way it would across every reachable pin.
+    if (prominent) {
+      marker.bindTooltip(show.title, {
+        permanent: true,
+        direction: "top",
+        className: "pin-label",
+        opacity: 1,
+      });
+    }
 
     // No popup — tapping a pin surfaces the show in the focus card instead.
     marker.on("click", () => onShowClick(show));
@@ -661,9 +700,11 @@ function renderShowList() {
   updateSortButtons();
 
   if (title) {
+    const n = all.length;
+    const shows = n === 1 ? "show" : "shows";
     title.textContent = constraint
-      ? `${all.length} ${all.length === 1 ? "show fits" : "shows fit"} before ${constraint.time}`
-      : `${all.length} ${all.length === 1 ? "show" : "shows"} you can still catch`;
+      ? `${n} ${shows} you can slip in before ${constraint.time}`
+      : `${n} ${shows} you could wander into right now`;
   }
 
   if (!all.length) {
@@ -730,22 +771,26 @@ function renderShowList() {
   }
 }
 
-/* Label the single sort button with the current ordering. */
+/* Reflect the active sort on the Time / Distance toggle. */
 function updateSortButtons() {
-  const btn = document.getElementById("sortToggle");
-  if (btn) btn.textContent = state.sortBy === "distance" ? "By distance" : "By time";
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((b) => {
+    const on = b.dataset.sort === state.sortBy;
+    b.classList.toggle("is-active", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
 }
 
-/* Wire the single, centred sort button — each tap flips time ↔ distance. */
+/* Wire the centred Time / Distance toggle — a two-position switch, so the
+ * inactive side is always visible to click. */
 function wireSortControls() {
-  const btn = document.getElementById("sortToggle");
-  if (btn) {
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      state.sortBy = state.sortBy === "time" ? "distance" : "time";
+      if (state.sortBy === btn.dataset.sort) return;
+      state.sortBy = btn.dataset.sort;
       state.showCap = SHOW_PAGE; // a new order starts from the first page
       renderShowList();
     });
-  }
+  });
   updateSortButtons();
 }
 
@@ -1038,7 +1083,7 @@ function buildGenrePanel() {
     label.innerHTML = `
       <input type="checkbox" id="${id}" value="${escapeHtml(genre)}"
         ${state.selectedGenres.has(genre) ? "checked" : ""} />
-      <span>${escapeHtml(genre)}</span>`;
+      <span><span class="opt-ico" aria-hidden="true">${genreIcon(genre)}</span> ${escapeHtml(genre)}</span>`;
     const input = label.querySelector("input");
     input.addEventListener("change", () => {
       if (input.checked) state.selectedGenres.add(genre);
@@ -1102,6 +1147,10 @@ function updateGenreValue() {
   if (state.priceFilter === "free") label += " · free";
   else if (state.priceFilter === "paid") label += " · paid";
   el.textContent = label;
+  // Mirror the single-genre icon onto the chip; a generic mask stands in for
+  // "all" or a mix.
+  const ico = document.querySelector(".card--genre .fc-ico");
+  if (ico) ico.textContent = n === 1 ? genreIcon([...state.selectedGenres][0]) : "🎭";
 }
 
 /* ---------- Travel mode + reach window ---------- */
