@@ -1,23 +1,26 @@
 /* ===================== Design tokens ===================== */
 :root {
-  /* EdFringeNow light-map palette (P1 foundation). Variable names kept so the
-     existing rules keep resolving; values retuned to the approved theme. */
-  --red: #0f8f86;        /* primary action — teal */
-  --red-dark: #0a6f68;
-  --gold: #5b54c9;       /* commitment / secondary — indigo */
-  --blue: #5b54c9;       /* destination / user pin — indigo */
-  --pink: #c62024;       /* warning red — debug chip only */
-  --ink: #222a24;        /* warm near-black */
-  --paper: #fffdf8;      /* card surface */
-  --bg: #f3efe5;         /* page background */
-  --muted: #6b7268;
-  --line: #e6e1d5;
+  /* Fresh & Minimal skin (design direction #6). Token NAMES are kept so the
+     existing rules keep resolving; VALUES retuned to a clean, modern
+     violet-on-white theme. --serif now holds a sans (Plus Jakarta Sans) — the
+     name is a historical hook, not a promise of a serif face. */
+  --red: #6c4cf1;        /* primary action — violet */
+  --red-dark: #5a3fd6;
+  --gold: #6c4cf1;       /* selection / focus accent — violet */
+  --blue: #6c4cf1;       /* destination / user pin — violet */
+  --blue-dark: #5a3fd6;
+  --pink: #ef4444;       /* warning red — debug chip only */
+  --ink: #101828;        /* near-black */
+  --paper: #ffffff;      /* card surface */
+  --bg: #f7f8fa;         /* page background */
+  --muted: #667085;
+  --line: #eaecf0;
   --yellow-badge: #f4d645;
-  --shadow-soft: 0 10px 26px rgba(34, 42, 36, 0.10);
+  --shadow-soft: 0 12px 30px rgba(16, 24, 40, 0.08);
   --shadow-offset: 6px;
   --maxw: 1120px;
-  --radius: 14px;
-  --serif: "Fraunces", Georgia, serif;
+  --radius: 16px;
+  --serif: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
   font-synthesis: none;
 }
 
@@ -161,7 +164,7 @@ a { color: inherit; }
   color: var(--red);
   cursor: pointer;
 }
-.icon-btn:hover { background: rgba(198, 32, 36, 0.08); }
+.icon-btn:hover { background: rgba(108, 76, 241, 0.08); }
 
 /* ===================== Hero ===================== */
 .hero { text-align: center; padding: 56px 24px 40px; }
@@ -705,13 +708,13 @@ a { color: inherit; }
   border-radius: 50%;
   background: var(--blue);
   border: 3px solid #fff;
-  box-shadow: 0 0 0 0 rgba(47, 107, 214, 0.5);
+  box-shadow: 0 0 0 0 rgba(108, 76, 241, 0.5);
   animation: userPulse 2s infinite;
 }
 @keyframes userPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(47, 107, 214, 0.45); }
-  70%  { box-shadow: 0 0 0 14px rgba(47, 107, 214, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(47, 107, 214, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(108, 76, 241, 0.45); }
+  70%  { box-shadow: 0 0 0 14px rgba(108, 76, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 76, 241, 0); }
 }
 
 /* ===================== Footer ===================== */
@@ -802,10 +805,10 @@ a { color: inherit; }
 .cta-trigger {
   display: block; width: 100%; text-align: left; cursor: pointer;
   background: var(--red); color: #fff; border: none; border-radius: 16px;
-  padding: 17px 20px; box-shadow: 0 10px 24px rgba(15, 143, 134, 0.26);
+  padding: 17px 20px; box-shadow: 0 10px 24px rgba(108, 76, 241, 0.26);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
-.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(15, 143, 134, 0.32); }
+.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(108, 76, 241, 0.32); }
 .cta-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .cta-kicker { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
 .cta-title { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.4rem; line-height: 1.12; margin: 5px 0 6px; color: #fff; text-transform: none; }
@@ -842,8 +845,8 @@ a { color: inherit; }
 /* The highlighted centre band. */
 .wheel-band {
   position: absolute; left: 8px; right: 8px; top: 80px; height: 40px; z-index: 0;
-  border-radius: 10px; background: rgba(91, 84, 201, 0.10);
-  border: 1px solid rgba(91, 84, 201, 0.28); pointer-events: none;
+  border-radius: 10px; background: rgba(108, 76, 241, 0.10);
+  border: 1px solid rgba(108, 76, 241, 0.28); pointer-events: none;
 }
 .timepick-count { text-align: center; margin: 10px 0 10px; font-size: 0.82rem; color: var(--muted); }
 .timepick-count .countnum { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; color: var(--red-dark); display: inline-block; vertical-align: -2px; }
@@ -856,7 +859,7 @@ a { color: inherit; }
 .show-picklist { display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto; margin: 2px 0 8px; }
 .show-pick { display: flex; align-items: center; gap: 11px; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); cursor: pointer; font: inherit; color: inherit; }
 .show-pick:hover { border-color: #cfc9bb; }
-.show-pick.is-sel { border-color: var(--gold); background: rgba(91,84,201,0.07); }
+.show-pick.is-sel { border-color: var(--gold); background: rgba(108,76,241,0.07); }
 .show-pick:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
 .sp-radio { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #9aa39c; flex: 0 0 auto; }
 .show-pick.is-sel .sp-radio { border-color: var(--gold); background: radial-gradient(circle at 50% 50%, var(--gold) 0 5px, transparent 6px); }
@@ -900,7 +903,7 @@ a { color: inherit; }
 /* The destination node is tappable — it reopens the constraint editor. */
 .plan-editable { cursor: pointer; margin: 2px -8px; padding: 6px 8px 8px 38px; border-radius: 12px; transition: background 0.12s ease; }
 .plan-editable .plan-ico { left: 8px; top: 7px; }
-.plan-editable:hover { background: rgba(91, 84, 201, 0.07); }
+.plan-editable:hover { background: rgba(108, 76, 241, 0.07); }
 .plan-editable:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .plan-edit-hint { display: inline-block; margin-top: 6px; font-size: 0.72rem; font-weight: 700; color: var(--blue); }
 .plan-leg { margin: 3px 0 3px 6px; padding: 7px 0 7px 19px; border-left: 2px dashed #cfc9bb; font-size: 0.74rem; color: var(--muted); }
