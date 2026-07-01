@@ -29,7 +29,7 @@
       <nav class="main-nav" aria-label="Primary">
         <a href="#" class="nav-link is-active">Home</a>
         <a href="#shows" class="nav-link">Shows</a>
-        <a href="#constraintCards" class="nav-link">My Planner</a>
+        <a href="#planner" class="nav-link">My Planner</a>
         <a href="#map" class="nav-link">Map</a>
       </nav>
       <div class="header-icons">
@@ -43,13 +43,9 @@
     </div>
   </header>
 
-  <main>
-    <!-- ===================== Hero: Fringe Rush ===================== -->
-    <section class="hero container">
-      <h1 class="hero-title">Fringe Rush</h1>
-      <p class="hero-subtitle">Find the nearest magic happening right now. Your spontaneous adventure starts here.</p>
-
-      <!-- ===================== Debug clock badge ===================== -->
+  <main class="app">
+    <!-- ===================== Debug clock badge ===================== -->
+    <div class="debug-wrap container">
       <div id="debugBanner" class="debug-banner" role="status" aria-live="polite">
         <div class="debug-banner__status">
           <strong>DEBUG MODE</strong> — Simulated “now”: <span id="debugNowText"></span>
@@ -70,110 +66,112 @@
           </div>
         </div>
       </div>
-
-      <div class="constraint-cards" id="constraintCards">
-        <!-- Genre -->
-        <article class="card card--genre" data-card="genre">
-          <button class="card-trigger" data-panel="genrePanel" aria-expanded="false" aria-haspopup="true">
-            <span class="card-icon card-icon--red" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3C7 3 3 5 3 5s0 6 3 9c1.7 1.7 4 2 4 2s-1-2-1-4 1-3 1-3-2 .5-3.5-.5C8 8 12 7 12 7s4 1 5.5 1.5C16 9.5 14 9 14 9s1 1 1 3-1 4-1 4 2.3-.3 4-2c3-3 3-9 3-9s-4-2-9-2Z"/></svg>
-            </span>
-            <p class="card-label">Which genres?</p>
-            <p class="card-value" data-value="genre">Comedy, Cabaret and Variety</p>
-            <span class="card-caret" aria-hidden="true">Tap to filter ▾</span>
-          </button>
-          <div class="card-panel" id="genrePanel" role="menu" hidden>
-            <p class="panel-title">Select genres</p>
-            <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
-            <label class="panel-field-label" for="priceRange">Ticket price</label>
-            <input type="range" id="priceRange" class="panel-range" min="0" max="1" step="1" value="1" />
-            <p class="range-value" id="priceValue">All shows</p>
-          </div>
-        </article>
-
-        <!-- Travel -->
-        <article class="card card--travel" data-card="travel">
-          <button class="card-trigger" data-panel="travelPanel" aria-expanded="false" aria-haspopup="true">
-            <span class="card-icon card-icon--gold" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2c-4 0-8 .5-8 4v9.5A2.5 2.5 0 0 0 6.5 18L5 19.5V20h2l2-2h6l2 2h2v-.5L17.5 18a2.5 2.5 0 0 0 2.5-2.5V6c0-3.5-4-4-8-4ZM7.5 16A1.5 1.5 0 1 1 9 14.5 1.5 1.5 0 0 1 7.5 16Zm9 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM18 11H6V6h12Z"/></svg>
-            </span>
-            <p class="card-label">How am I traveling?</p>
-            <p class="card-value" data-value="travel">Walking · ≤ 10 min</p>
-            <span class="card-caret" aria-hidden="true">Tap to change ▾</span>
-          </button>
-          <div class="card-panel" id="travelPanel" role="menu" hidden>
-            <p class="panel-title">How are you getting there?</p>
-            <div class="panel-options" id="travelOptions"><!-- populated by JS --></div>
-            <label class="panel-field-label" for="travelRange">Max travel time</label>
-            <input type="range" id="travelRange" class="panel-range" min="0" max="6" step="1" value="1" />
-            <p class="range-value" id="travelValue">10 min max</p>
-          </div>
-        </article>
-
-        <!-- Next constraint -->
-        <article class="card card--constraint" data-card="constraint">
-          <button class="card-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
-            <span class="card-icon card-icon--blue" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></svg>
-            </span>
-            <p class="card-label">Where do you need to be next?</p>
-            <p class="card-value" data-value="constraint">Pick a start time</p>
-            <span class="card-caret" aria-hidden="true">Tap to choose ▾</span>
-          </button>
-          <div class="card-panel" id="constraintPanel" role="menu" hidden>
-            <p class="panel-title">
-              Your next commitment <strong id="constraintDateLabel">today</strong>
-            </p>
-            <label class="panel-field-label" for="timeSelect">When it starts</label>
-            <select id="timeSelect" class="panel-select"></select>
-            <label class="panel-field-label" for="showSelect">Which show</label>
-            <select id="showSelect" class="panel-select"></select>
-            <label class="panel-field-label" for="destInput">Destination</label>
-            <input type="text" id="destInput" class="panel-input" placeholder="Pick a show, or type where you need to be" disabled />
-            <p class="panel-note" id="constraintNote">We only use this to find where you need to be — it's all happening today.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== Journey strip ===================== -->
-    <!-- Narrow timeline between the filters and the map: it mirrors the plan,
-         left-to-right — "you are here, now" → an optional chosen stop → your
-         next commitment. Populated by renderJourneyStrip(). The Google Maps
-         link sits to its right: with nothing chosen it opens the map at your
-         location, with a chosen show and/or destination it opens directions
-         through them. -->
-    <div class="journey-row container">
-      <section id="journeyStrip" class="journey" aria-label="Your journey"></section>
-      <a
-        id="mapsRouteLink"
-        class="maps-route-btn"
-        href="#"
-        target="_blank"
-        rel="noopener"
-        title="Open your plan in Google Maps — the map at your location, or directions through your chosen show and destination"
-        hidden
-      >
-        <span class="maps-route-btn__pin" aria-hidden="true">📍</span>
-        <span class="maps-route-btn__text">Open route in Google Maps</span>
-      </a>
     </div>
 
-    <!-- ===================== Map ===================== -->
-    <section id="map" class="map-section container">
+    <!-- ===================== Map: the primary surface ===================== -->
+    <section id="map" class="map-section">
       <div id="leaflet-map" role="application" aria-label="Map of Edinburgh Fringe shows"></div>
-      <p class="map-legend">
-        <span class="legend-item"><span class="legend-dot legend-dot--ok"></span> Reachable now</span>
-        <span class="legend-item"><span class="legend-dot legend-dot--tight"></span> You'd just miss it</span>
-        <span class="legend-item"><span class="legend-dot legend-dot--leg"></span> Your chosen stop</span>
-        <span class="legend-item"><span class="legend-dot legend-dot--circle"></span> Your travel radius</span>
-      </p>
     </section>
 
-    <!-- ===================== Shows list ===================== -->
-    <section id="shows" class="shows-section container">
-      <h2 class="shows-title">Happening Now</h2>
-      <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
+    <!-- ===================== Planner sheet ===================== -->
+    <!-- Pulls up over the map. Leads with the one real action (set your next
+         commitment); the plan, filters and the reachable-now list follow. -->
+    <section id="planner" class="sheet" aria-label="Plan your next hour">
+      <div class="sheet-inner container">
+        <div class="sheet-grab" aria-hidden="true"></div>
+
+        <p class="map-legend" aria-label="Map key">
+          <span class="legend-item"><span class="legend-dot legend-dot--ok"></span> Reachable now</span>
+          <span class="legend-item"><span class="legend-dot legend-dot--tight"></span> You'd just miss it</span>
+          <span class="legend-item"><span class="legend-dot legend-dot--leg"></span> Your chosen stop</span>
+          <span class="legend-item"><span class="legend-dot legend-dot--circle"></span> Your travel radius</span>
+        </p>
+
+        <!-- Primary action: your next commitment -->
+        <div class="sheet-lead">
+          <article class="card card--constraint cta-card" data-card="constraint">
+            <button class="card-trigger cta-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
+              <span class="cta-kicker">Where do you need to be next?</span>
+              <span class="card-value cta-title" data-value="constraint">Set my next commitment</span>
+              <span class="cta-hint" aria-hidden="true">Pick a time, then the show — we'll show only what fits ▾</span>
+            </button>
+            <div class="card-panel" id="constraintPanel" role="menu" hidden>
+              <p class="panel-title">
+                Your next commitment <strong id="constraintDateLabel">today</strong>
+              </p>
+              <label class="panel-field-label" for="timeSelect">When it starts</label>
+              <select id="timeSelect" class="panel-select"></select>
+              <label class="panel-field-label" for="showSelect">Which show</label>
+              <select id="showSelect" class="panel-select"></select>
+              <label class="panel-field-label" for="destInput">Destination</label>
+              <input type="text" id="destInput" class="panel-input" placeholder="Pick a show, or type where you need to be" disabled />
+              <p class="panel-note" id="constraintNote">We only use this to find where you need to be — it's all happening today.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- The plan (appears once a next commitment is chosen) -->
+        <div class="journey-row">
+          <section id="journeyStrip" class="journey" aria-label="Your journey"></section>
+          <a
+            id="mapsRouteLink"
+            class="maps-route-btn"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            title="Open your plan in Google Maps — the map at your location, or directions through your chosen show and destination"
+            hidden
+          >
+            <span class="maps-route-btn__pin" aria-hidden="true">📍</span>
+            <span class="maps-route-btn__text">Open route in Google Maps</span>
+          </a>
+        </div>
+
+        <!-- Filters: taste + travel (they refine the list below) -->
+        <div class="filters-row" aria-label="Filters">
+          <article class="card card--genre filter-card" data-card="genre">
+            <button class="card-trigger" data-panel="genrePanel" aria-expanded="false" aria-haspopup="true">
+              <span class="card-icon card-icon--red" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 3C7 3 3 5 3 5s0 6 3 9c1.7 1.7 4 2 4 2s-1-2-1-4 1-3 1-3-2 .5-3.5-.5C8 8 12 7 12 7s4 1 5.5 1.5C16 9.5 14 9 14 9s1 1 1 3-1 4-1 4 2.3-.3 4-2c3-3 3-9 3-9s-4-2-9-2Z"/></svg>
+              </span>
+              <p class="card-label">Taste</p>
+              <p class="card-value" data-value="genre">Comedy, Cabaret and Variety</p>
+              <span class="card-caret" aria-hidden="true">Tap to filter ▾</span>
+            </button>
+            <div class="card-panel" id="genrePanel" role="menu" hidden>
+              <p class="panel-title">Select genres</p>
+              <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
+              <label class="panel-field-label" for="priceRange">Ticket price</label>
+              <input type="range" id="priceRange" class="panel-range" min="0" max="1" step="1" value="1" />
+              <p class="range-value" id="priceValue">All shows</p>
+            </div>
+          </article>
+
+          <article class="card card--travel filter-card" data-card="travel">
+            <button class="card-trigger" data-panel="travelPanel" aria-expanded="false" aria-haspopup="true">
+              <span class="card-icon card-icon--gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2c-4 0-8 .5-8 4v9.5A2.5 2.5 0 0 0 6.5 18L5 19.5V20h2l2-2h6l2 2h2v-.5L17.5 18a2.5 2.5 0 0 0 2.5-2.5V6c0-3.5-4-4-8-4ZM7.5 16A1.5 1.5 0 1 1 9 14.5 1.5 1.5 0 0 1 7.5 16Zm9 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM18 11H6V6h12Z"/></svg>
+              </span>
+              <p class="card-label">Travel</p>
+              <p class="card-value" data-value="travel">Walking · ≤ 10 min</p>
+              <span class="card-caret" aria-hidden="true">Tap to change ▾</span>
+            </button>
+            <div class="card-panel" id="travelPanel" role="menu" hidden>
+              <p class="panel-title">How are you getting there?</p>
+              <div class="panel-options" id="travelOptions"><!-- populated by JS --></div>
+              <label class="panel-field-label" for="travelRange">Max travel time</label>
+              <input type="range" id="travelRange" class="panel-range" min="0" max="6" step="1" value="1" />
+              <p class="range-value" id="travelValue">10 min max</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Reachable-now list -->
+        <section id="shows" class="shows-section">
+          <h2 class="shows-title">Happening now near you</h2>
+          <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
+        </section>
+      </div>
     </section>
   </main>
 

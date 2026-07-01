@@ -1027,7 +1027,7 @@ function refreshConstraintValue() {
   } else if (state.selectedTime) {
     el.textContent = `Shows at ${state.selectedTime}`;
   } else {
-    el.textContent = "Pick a start time";
+    el.textContent = "Set my next commitment";
   }
 }
 

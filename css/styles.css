@@ -740,3 +740,68 @@ a { color: inherit; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-actions { grid-column: 1 / -1; }
 }
+
+/* ===================== P2: map-first + planner sheet ===================== */
+.app { width: 100%; }
+.debug-wrap { padding-top: 14px; }
+
+/* The map is the primary surface: full-bleed, tall. */
+.map-section { margin: 0; }
+#leaflet-map {
+  height: clamp(320px, 48vh, 520px);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Planner sheet — pulls up over the map. */
+.sheet {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  border-radius: 22px 22px 0 0;
+  margin-top: -22px;
+  box-shadow: 0 -10px 30px rgba(34, 42, 36, 0.12);
+}
+.sheet-inner { padding-top: 6px; padding-bottom: 48px; }
+.sheet-grab {
+  width: 44px; height: 5px; border-radius: 99px;
+  background: #dcd6c8; margin: 8px auto 14px;
+}
+.sheet .map-legend { justify-content: center; margin: 0 0 18px; }
+
+/* Primary action: your next commitment (a filled CTA that opens the picker). */
+.sheet-lead { margin: 0 0 6px; }
+.cta-card { border: none; box-shadow: none; background: transparent; }
+.cta-card:hover { transform: none; box-shadow: none; }
+.cta-card.is-open { z-index: 1500; }
+.cta-trigger {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  background: var(--red); color: #fff; border: none; border-radius: 16px;
+  padding: 18px 20px; box-shadow: 0 10px 24px rgba(15, 143, 134, 0.28);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(15, 143, 134, 0.34); }
+.cta-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.cta-kicker {
+  display: block; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
+}
+.cta-title {
+  display: block; font-family: var(--serif); font-weight: 700;
+  font-size: 1.5rem; line-height: 1.12; margin: 5px 0 6px;
+  color: #fff; text-transform: none;
+}
+.cta-hint { display: block; font-size: 0.84rem; color: rgba(255, 255, 255, 0.92); }
+
+/* Filters row: taste + travel, compact chips below the CTA. */
+.filters-row { display: flex; gap: 12px; margin: 18px 0 4px; flex-wrap: wrap; }
+.filter-card { flex: 1 1 220px; }
+.filter-card .card-trigger { padding: 14px 16px; }
+.filter-card .card-icon { width: 34px; height: 34px; margin-bottom: 10px; }
+.filter-card .card-label { font-size: 0.7rem; margin-bottom: 3px; }
+.filter-card .card-value { font-size: 1rem; }
+.filter-card .card-caret { margin-top: 8px; }
+
+/* Reachable-now list, inside the sheet's padded container. */
+.shows-section { padding: 26px 0 0; }
