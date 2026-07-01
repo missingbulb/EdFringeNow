@@ -108,9 +108,12 @@
       <!-- Only appears once a next commitment is set. -->
       <section id="spareCta" class="spare-cta" aria-live="polite" hidden></section>
 
+      <!-- ===================== Shows heading (count) — above filters + map ===================== -->
+      <h2 class="shows-title" id="showsTitle">Happening now near you</h2>
+
       <!-- ===================== Filters ===================== -->
       <div class="filters-row" aria-label="Filters">
-        <span class="filters-label">Showing</span>
+        <span class="filters-label">Filter</span>
         <article class="filter-chip card card--genre" data-card="genre">
           <button class="card-trigger" data-panel="genrePanel" aria-expanded="false" aria-haspopup="true">
             <span class="fc-ico" aria-hidden="true">🎭</span>
@@ -118,11 +121,15 @@
             <span class="fc-caret" aria-hidden="true">▾</span>
           </button>
           <div class="card-panel" id="genrePanel" role="menu" hidden>
-            <p class="panel-title">Which genres?</p>
+            <p class="panel-field-label">Ticket price</p>
+            <div class="segmented" id="priceOptions" role="group" aria-label="Ticket price">
+              <button type="button" class="seg-btn" data-price="both">Both</button>
+              <button type="button" class="seg-btn" data-price="free">Free</button>
+              <button type="button" class="seg-btn" data-price="paid">Paid</button>
+            </div>
+            <p class="panel-title panel-title--spaced">Which genres?</p>
             <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
-            <label class="panel-field-label" for="priceRange">Ticket price</label>
-            <input type="range" id="priceRange" class="panel-range" min="0" max="1" step="1" value="1" />
-            <p class="range-value" id="priceValue">All shows</p>
+            <button type="button" class="panel-reset" id="filterReset">↺ Reset filters</button>
           </div>
         </article>
 
@@ -136,7 +143,7 @@
             <p class="panel-title">How are you getting there?</p>
             <div class="panel-options" id="travelOptions"><!-- populated by JS --></div>
             <label class="panel-field-label" for="travelRange">Max travel time</label>
-            <input type="range" id="travelRange" class="panel-range" min="0" max="6" step="1" value="1" />
+            <input type="range" id="travelRange" class="panel-range" min="1" max="60" step="1" value="10" />
             <p class="range-value" id="travelValue">10 min max</p>
           </div>
         </article>
@@ -154,8 +161,8 @@
 
       <!-- ===================== Reachable-now list ===================== -->
       <section id="shows" class="shows-section">
-        <div class="shows-head">
-          <h2 class="shows-title">Happening now near you</h2>
+        <div class="sort-row">
+          <span class="sort-label">Order by</span>
           <div class="sort-toggle" role="group" aria-label="Sort shows by">
             <button type="button" class="sort-btn is-active" data-sort="time">Time</button>
             <button type="button" class="sort-btn" data-sort="distance">Distance</button>
