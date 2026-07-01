@@ -87,6 +87,7 @@ const state = {
   selectedShowId: "",          // the pinned "next show" (destination)
   destLabel: "",               // editable destination text (defaults to the show's venue)
   legShowId: "",               // a show clicked on the map (stop before the destination)
+  sortBy: "time",              // reachable-list order: "time" | "distance"
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
   reachCircle: null,           // Leaflet circle for the travel radius
@@ -105,6 +106,7 @@ async function init() {
   buildGenrePanel();
   buildTravelPanel();
   wirePanels();
+  wireSortControls();
   await loadShows();
   buildConstraintPanel();
   refreshMap();
@@ -355,10 +357,11 @@ function displayedShows() {
   if (constraint && !out.some((o) => o.show.id === constraint.id)) {
     out.push({ show: constraint, status: "selected" });
   }
-  // Highlight the show the user clicked as their stop before the destination.
-  if (constraint && state.legShowId) {
-    const leg = out.find((o) => o.show.id === state.legShowId && o.status === "ok");
-    if (leg) leg.status = "leg";
+  // Highlight the show the user tapped to focus — a stop before the destination
+  // when a plan exists, or just the focused pin otherwise.
+  if (state.legShowId) {
+    const focus = out.find((o) => o.show.id === state.legShowId && o.status !== "selected");
+    if (focus) focus.status = "leg";
   }
   // Draw highlighted pins last so they sit on top.
   const z = { ok: 0, tight: 0, leg: 1, selected: 2 };
@@ -381,6 +384,7 @@ function refreshMap() {
   renderRoute();
   renderShowList();
   renderJourneyStrip();
+  renderFocusCard();
 }
 
 function renderReachCircle() {
@@ -410,26 +414,34 @@ function renderMarkers() {
   Object.values(state.markers).forEach((m) => state.map.removeLayer(m));
   state.markers = {};
 
+  // With a show in focus (a committed next show or one the user tapped), every
+  // other pin steps back to ~30% opacity so the one that matters reads first.
+  const anyFocus = Boolean(state.selectedShowId || state.legShowId);
   displayedShows().forEach(({ show, status }) => {
     const style = MARKER_STYLE[status] || MARKER_STYLE.ok;
+    const prominent = status === "selected" || status === "leg";
+    const dim = anyFocus && !prominent;
     const marker = L.circleMarker([show.lat, show.lng], {
       ...style,
       fillColor: status === "tight" ? "#b9bcc1" : genreColor(show.genre),
+      fillOpacity: dim ? 0.3 : style.fillOpacity,
+      opacity: dim ? 0.3 : style.opacity ?? 1,
     }).addTo(state.map);
 
-    marker.bindPopup(popupHtml(show, status));
+    // No popup — tapping a pin surfaces the show in the focus card instead.
     marker.on("click", () => onShowClick(show));
     state.markers[show.id] = marker;
   });
 }
 
-/* Clicking a show: if a destination is chosen, treat the click as the stop the
- * user wants to make on the way there; otherwise just show its popup. */
+/* Tapping a show (list row or map pin) focuses it: its card opens above the
+ * list and the other pins dim. With a next commitment set, the focused show is
+ * also the stop on the way there. Tapping it again clears the focus. The
+ * committed destination itself isn't a re-selectable focus. */
 function onShowClick(show) {
-  if (state.selectedShowId && show.id !== state.selectedShowId) {
-    state.legShowId = state.legShowId === show.id ? "" : show.id; // toggle
-    refreshMap();
-  }
+  if (show.id === state.selectedShowId) return; // already the committed destination
+  state.legShowId = state.legShowId === show.id ? "" : show.id; // toggle focus
+  refreshMap();
 }
 
 /* ---------- Journey arrows ---------- */
@@ -534,24 +546,48 @@ function travelGlyph() {
   return { Walking: "🚶", "Taxi/Car": "🚕", Bus: "🚌", Bicycle: "🚲" }[state.travelMode] || "🚶";
 }
 
-function statusNote(show, status) {
-  if (status === "selected") return "★ Your next show";
-  if (status === "tight") return "Cuts it fine — starts before you'd arrive";
-  if (status === "ok" && state.selectedShowId) return "Fits before your next show";
-  return "";
-}
+/* The card for the show the user tapped (list row or map pin). It renders above
+ * the list — replacing the old map popup — with the show's essentials and a
+ * buy-ahead link. Hidden when nothing is focused or the focused show has
+ * dropped off the map (e.g. a filter change). */
+function renderFocusCard() {
+  const el = document.getElementById("focusCard");
+  if (!el) return;
 
-function popupHtml(show, status = "ok") {
-  const note = statusNote(show, status);
-  const noteHtml = note ? `<span class="popup-genre">${escapeHtml(note)}</span>` : "";
-  return `
-    <div class="popup">
-      ${noteHtml}
-      <span class="popup-genre">${escapeHtml(show.genre)}</span>
-      <p class="popup-title">${escapeHtml(show.title)}</p>
-      <p class="popup-meta">${escapeHtml(show.venue)}</p>
-      <p class="popup-meta">${escapeHtml(NOW.dateLabel)} · ${escapeHtml(show.time)} · ${show.duration} min · ${escapeHtml(show.price)}</p>
-    </div>`;
+  const show = state.legShowId ? state.shows.find((s) => s.id === state.legShowId) : null;
+  if (!show || !state.markers[show.id]) {
+    el.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+
+  const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
+  const genreLine = escapeHtml(show.genre) + (show.free ? " · Free" : "");
+  const fits = state.selectedShowId
+    ? '<span class="focus-fits">✓ Fits before your next commitment</span>'
+    : "";
+  let buy = "";
+  if (show.soldOut) buy = '<span class="focus-soldout">Sold out</span>';
+  else if (!show.free) {
+    buy =
+      `<a class="focus-buy" href="${escapeHtml(ticketUrl(show) || "#")}" target="_blank" rel="noopener" ` +
+      `title="Buy ahead on edfringe.com — skips the box-office queue (~5 min)">&#127915; Buy ahead</a>`;
+  }
+
+  el.hidden = false;
+  el.innerHTML = `
+    <button type="button" class="focus-close" aria-label="Dismiss">&times;</button>
+    <span class="focus-genre">${genreLine}</span>
+    <h3 class="focus-title">${escapeHtml(show.title)}</h3>
+    <p class="focus-meta">${escapeHtml(show.venue)}</p>
+    <p class="focus-meta">${escapeHtml(show.time)} · ${show.duration} min · 🚶 ${walk} min walk · ${escapeHtml(show.price)}</p>
+    ${fits}
+    ${buy ? `<div class="focus-actions">${buy}</div>` : ""}`;
+
+  el.querySelector(".focus-close").onclick = () => {
+    state.legShowId = "";
+    refreshMap();
+  };
 }
 
 /* ---------- Show list ---------- */
@@ -560,6 +596,19 @@ function popupHtml(show, status = "ok") {
  * "Happening Now", so we pin it on the map but keep it out of this list. */
 /* How many list rows to show before the "Show more" button; grows on demand. */
 const SHOW_PAGE = 12;
+
+/* The reachable shows to list (excluding the chosen next show). Without a
+ * commitment, "on now" means the next couple of hours — not the whole day — so
+ * the list stays about spontaneity, not a full catalogue. Order-independent:
+ * the caller sorts by time or distance. */
+function fittingShows() {
+  const constrained = Boolean(state.selectedShowId);
+  let all = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+  if (!constrained) {
+    all = all.filter(({ show }) => timeToMinutes(show.time) <= NOW.minutes + 120);
+  }
+  return all;
+}
 
 function renderShowList() {
   const grid = document.getElementById("showsGrid");
@@ -572,13 +621,15 @@ function renderShowList() {
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
 
-  let all = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
-  // Without a commitment, "on now" means the next couple of hours — not the
-  // whole day — so the list stays about spontaneity, not a full catalogue.
-  if (!constraint) {
-    all = all.filter(({ show }) => timeToMinutes(show.time) <= NOW.minutes + 120);
-  }
-  all.sort((a, b) => a.show.time.localeCompare(b.show.time));
+  const all = fittingShows();
+  // Walk minutes: computed once, reused for the row label and distance sort.
+  all.forEach((o) => {
+    o.walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [o.show.lat, o.show.lng])));
+  });
+  const byDistance = state.sortBy === "distance";
+  if (byDistance) all.sort((a, b) => a.walk - b.walk || a.show.time.localeCompare(b.show.time));
+  else all.sort((a, b) => a.show.time.localeCompare(b.show.time));
+  updateSortButtons();
 
   if (title) {
     title.textContent = constraint
@@ -600,17 +651,17 @@ function renderShowList() {
   const cap = state.showCap || SHOW_PAGE;
   const shown = all.slice(0, cap);
 
-  // Compact rows, grouped by start time.
+  // Compact rows. Sorting by time groups under start-time headings; sorting by
+  // distance is a flat nearest-first list (each row still shows its time).
   let group = null;
-  shown.forEach(({ show, status }) => {
-    if (show.time !== group) {
+  shown.forEach(({ show, status, walk }) => {
+    if (!byDistance && show.time !== group) {
       group = show.time;
       const head = document.createElement("h3");
       head.className = "shows-group-head";
       head.textContent = show.time;
       grid.appendChild(head);
     }
-    const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
     const item = document.createElement("article");
     item.className = `show-item show-item--${status}`;
     item.tabIndex = 0;
@@ -628,9 +679,10 @@ function renderShowList() {
       </span>`;
     const activate = () => {
       onShowClick(show);
-      document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
-      const marker = state.markers[show.id];
-      if (marker) marker.openPopup();
+      // Bring the focus card (rendered above the list) into view — unless the
+      // tap just cleared the focus.
+      const card = document.getElementById("focusCard");
+      if (card && !card.hidden) card.scrollIntoView({ behavior: "smooth", block: "center" });
     };
     item.addEventListener("click", activate);
     item.addEventListener("keydown", (e) => {
@@ -647,6 +699,27 @@ function renderShowList() {
     moreBtn.hidden = remaining <= 0;
     moreBtn.textContent = `Show ${Math.min(SHOW_PAGE, remaining)} more · ${remaining} left`;
   }
+}
+
+/* Reflect the active sort on the Time/Distance toggle. */
+function updateSortButtons() {
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((b) => {
+    b.classList.toggle("is-active", b.dataset.sort === state.sortBy);
+    b.setAttribute("aria-pressed", String(b.dataset.sort === state.sortBy));
+  });
+}
+
+/* Wire the Time / Distance sort toggle above the reachable list. */
+function wireSortControls() {
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (state.sortBy === btn.dataset.sort) return;
+      state.sortBy = btn.dataset.sort;
+      state.showCap = SHOW_PAGE; // a new order starts from the first page
+      renderShowList();
+    });
+  });
+  updateSortButtons();
 }
 
 /* ---------- Journey strip ---------- */
@@ -669,7 +742,7 @@ function renderJourneyStrip() {
   // No commitment yet — no plan to show; the list heading carries the state.
   if (!constraint) {
     strip.innerHTML = "";
-    updateMapsRouteLink();
+    renderSpareCta();
     return;
   }
 
@@ -682,7 +755,16 @@ function renderJourneyStrip() {
   }
 
   const destPt = [constraint.lat, constraint.lng];
-  const parts = ['<p class="plan-head">Your plan</p>'];
+  // The plan header carries a mild "open in Maps" link on its right — a quiet
+  // offer, not the big button it used to be.
+  const parts = [
+    '<div class="plan-head-row">' +
+      '<p class="plan-head">Your plan</p>' +
+      '<a id="mapsRouteLink" class="plan-maps-mild" href="#" target="_blank" rel="noopener" ' +
+      'title="Open this route in Google Maps">' +
+      '<span aria-hidden="true">🗺</span> Open in Maps</a>' +
+    "</div>",
+  ];
   parts.push(planNode("you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
 
   if (leg) {
@@ -713,11 +795,11 @@ function renderJourneyStrip() {
       planNode("dest", constraint.time, destinationLabel(), "Your next commitment",
         planSlack(timeToMinutes(constraint.time) - arriveDest), "")
     );
-    parts.push('<p class="plan-hint">Tap a show below to slot it in before this.</p>');
   }
 
   strip.innerHTML = parts.join("");
   updateMapsRouteLink();
+  renderSpareCta();
 }
 
 /* Google Maps travel mode matching the user's currently selected one. */
@@ -775,19 +857,70 @@ function googleMapsUrl() {
   return url;
 }
 
-/* Keep the Google Maps link pointed at the current plan. The link is always
- * available: with no stops it opens the map at the user; with one or two shows
- * it opens directions through them. The label drops "route" when there's no
- * actual route to draw. */
+/* Point the plan-header Maps link at the current route. The link only exists in
+ * the DOM while a plan is rendered (renderJourneyStrip builds it), so there's
+ * nothing to show/hide here — just keep its href current. */
 function updateMapsRouteLink() {
   const link = document.getElementById("mapsRouteLink");
   if (!link) return;
-  const hasPlan = Boolean(state.selectedShowId || state.legShowId);
-  link.hidden = !hasPlan; // only offer directions once there's a plan to route
-  if (!hasPlan) return;
   link.href = googleMapsUrl();
-  const text = link.querySelector(".maps-route-btn__text");
-  if (text) text.textContent = "Open route in Google Maps";
+}
+
+/* Minutes of slack before the next commitment on the current plan — i.e. the
+ * free time you could still fill with a show. Accounts for a chosen leg. Returns
+ * null when no commitment is set. */
+function planSpareMinutes() {
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
+  if (!constraint) return null;
+
+  const origin = state.userLatLng;
+  const destPt = [constraint.lat, constraint.lng];
+
+  let leg = null;
+  if (state.legShowId && state.legShowId !== constraint.id) {
+    const cand = state.shows.find((s) => s.id === state.legShowId);
+    if (cand && classifyShow(cand, constraint) === "ok") leg = cand;
+  }
+
+  let arriveDest;
+  if (leg) {
+    const departFromLeg = timeToMinutes(leg.time) + leg.duration;
+    arriveDest = departFromLeg + travelMinutes([leg.lat, leg.lng], destPt);
+  } else {
+    arriveDest = NOW.minutes + travelMinutes(origin, destPt);
+  }
+  return Math.round(timeToMinutes(constraint.time) - arriveDest);
+}
+
+/* Turn the plan's slack into a prompt beneath it: "X min to spare — want to see
+ * a show? (N fit)". The parenthetical count mirrors the reachable list below.
+ * Hidden until a next commitment is set. */
+function renderSpareCta() {
+  const el = document.getElementById("spareCta");
+  if (!el) return;
+
+  const spare = planSpareMinutes();
+  if (spare === null) {
+    el.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+
+  el.hidden = false;
+  if (spare <= 0) {
+    el.innerHTML =
+      '<p class="spare-line spare-line--tight">Your plan is tight — no time to spare for another show.</p>';
+    return;
+  }
+
+  const n = fittingShows().length;
+  const countHtml = n
+    ? `<span class="spare-count">${n} ${n === 1 ? "fits" : "fit"} below</span>`
+    : "";
+  el.innerHTML =
+    `<p class="spare-line">You have <b>${spare} min</b> to spare — want to see a show? ${countHtml}</p>`;
 }
 
 /* One node in the vertical plan: a dot, time, title, subtitle, an optional
@@ -973,12 +1106,52 @@ function nearestTimes(times, target, n) {
     .sort((a, b) => a.localeCompare(b));
 }
 
-/* The next commitment is set with a STANDARD time picker (`<input type=time>`,
- * which on mobile is the OS wheel) plus a live list of the shows we know start
- * at that time. Changing the time browses; tapping a show commits it. */
+/* The next commitment is set with a scroll-snap time WHEEL (real native momentum
+ * scrolling, like an iOS picker) plus a live list of the shows we know start at
+ * that time. Scrolling a wheel browses; tapping a show commits it. */
+const WHEEL_ITEM_H = 40;
+const WHEEL_MINUTES = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"];
+
+function populateWheel(el, values) {
+  el._values = values;
+  el.innerHTML =
+    '<div class="wheel-pad"></div>' +
+    values.map((v) => `<div class="wheel-item" data-v="${v}">${v}</div>`).join("") +
+    '<div class="wheel-pad"></div>';
+}
+function wheelIndex(el) {
+  const n = (el._values || []).length;
+  return Math.max(0, Math.min(n - 1, Math.round(el.scrollTop / WHEEL_ITEM_H)));
+}
+function readWheel(el) {
+  return (el._values || [])[wheelIndex(el)];
+}
+function markWheelSel(el) {
+  const idx = wheelIndex(el);
+  el.querySelectorAll(".wheel-item").forEach((it, i) => it.classList.toggle("sel", i === idx));
+}
+function scrollWheelTo(el, v, smooth) {
+  const i = Math.max(0, (el._values || []).indexOf(v));
+  el.scrollTo({ top: i * WHEEL_ITEM_H, behavior: smooth ? "smooth" : "auto" });
+  markWheelSel(el);
+}
+/* Point both wheels at state.selectedTime (used on init and suggestion jumps). */
+function syncWheels(smooth) {
+  const hw = document.getElementById("hourWheel");
+  const mw = document.getElementById("minWheel");
+  if (!hw || !mw || !state.selectedTime) return;
+  const [hh, mm] = state.selectedTime.split(":");
+  scrollWheelTo(hw, hh, smooth);
+  const mmVal = WHEEL_MINUTES.includes(mm)
+    ? mm
+    : WHEEL_MINUTES.reduce((a, b) => (Math.abs(+b - +mm) < Math.abs(+a - +mm) ? b : a), WHEEL_MINUTES[0]);
+  scrollWheelTo(mw, mmVal, smooth);
+}
+
 function buildConstraintPanel() {
-  const timeInput = document.getElementById("constraintTime");
-  if (!timeInput) return;
+  const hw = document.getElementById("hourWheel");
+  const mw = document.getElementById("minWheel");
+  if (!hw || !mw) return;
 
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
@@ -989,24 +1162,40 @@ function buildConstraintPanel() {
   }
 
   const times = availableTimes();
-
-  // Drop a stale selection whose time no longer exists.
   if (state.selectedTime && !times.includes(state.selectedTime)) {
     state.selectedTime = "";
     state.selectedShowId = "";
     state.legShowId = "";
     state.destLabel = "";
   }
-  // Seed the picker on the first available time (display only — nothing is
-  // committed until the user taps a show).
   if (!state.selectedTime && times.length) state.selectedTime = times[0];
 
-  if (times.length) {
-    timeInput.min = times[0];
-    timeInput.max = times[times.length - 1];
-  }
-  timeInput.value = state.selectedTime || "";
-  timeInput.onchange = () => setConstraintTime(timeInput.value);
+  // Hours from the first offered hour to end of day; minutes in fives.
+  const hours = [];
+  const h0 = times.length ? parseInt(times[0].slice(0, 2), 10) : 0;
+  for (let h = h0; h <= 23; h++) hours.push(String(h).padStart(2, "0"));
+  populateWheel(hw, hours);
+  populateWheel(mw, WHEEL_MINUTES);
+
+  [hw, mw].forEach((el) => {
+    // Read the settled value ~130 ms after scrolling stops (native snap handles
+    // the visual settle; this reads it and re-runs the query).
+    el.onscroll = () => {
+      markWheelSel(el);
+      clearTimeout(el._settle);
+      el._settle = setTimeout(() => {
+        const t = `${readWheel(hw)}:${readWheel(mw)}`;
+        if (t !== state.selectedTime) setConstraintTime(t); // wheels already positioned
+      }, 130);
+    };
+    el.onkeydown = (e) => {
+      if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+      e.preventDefault();
+      const i = wheelIndex(el) + (e.key === "ArrowDown" ? 1 : -1);
+      const clamped = Math.max(0, Math.min((el._values || []).length - 1, i));
+      el.scrollTo({ top: clamped * WHEEL_ITEM_H, behavior: "smooth" });
+    };
+  });
 
   const list = document.getElementById("showPickList");
   if (list) {
@@ -1024,6 +1213,7 @@ function buildConstraintPanel() {
     };
   }
 
+  syncWheels(false);
   renderConstraintShows(false);
   refreshConstraintValue();
 }
@@ -1061,7 +1251,6 @@ function renderConstraintShows(animate) {
   const countEl = document.getElementById("constraintCount");
   const countLab = document.getElementById("constraintCountLab");
   const list = document.getElementById("showPickList");
-  const timeInput = document.getElementById("constraintTime");
   if (!list) return;
 
   const times = availableTimes();
@@ -1071,7 +1260,6 @@ function renderConstraintShows(animate) {
     list.innerHTML = '<p class="picklist-empty">No later shows to aim for today.</p>';
     return;
   }
-  if (timeInput && timeInput.value !== state.selectedTime) timeInput.value = state.selectedTime;
 
   const atTime = constraintShows().filter((s) => s.time === state.selectedTime);
   if (countEl) tweenCount(countEl, atTime.length);
@@ -1095,7 +1283,10 @@ function renderConstraintShows(animate) {
         .join("") +
       "</div>";
     list.querySelectorAll(".timepick-suggest button").forEach((b) => {
-      b.onclick = () => setConstraintTime(b.dataset.time);
+      b.onclick = () => {
+        setConstraintTime(b.dataset.time);
+        syncWheels(true);
+      };
     });
     return;
   }
@@ -1191,6 +1382,11 @@ function openPanel(trigger, panel) {
   panel.removeAttribute("hidden");
   trigger.setAttribute("aria-expanded", "true");
   trigger.closest(".card").classList.add("is-open");
+  // The wheels can't be positioned while the panel is display:none (no layout),
+  // so align them to the current time now that the panel is visible.
+  if (panel.id === "constraintPanel") {
+    requestAnimationFrame(() => syncWheels(false));
+  }
 }
 
 function closeAllPanels() {

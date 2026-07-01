@@ -77,8 +77,13 @@
         <div class="card-panel" id="constraintPanel" role="menu" hidden>
           <p class="panel-title">Your next commitment <strong id="constraintDateLabel">today</strong></p>
 
-          <label class="panel-field-label" for="constraintTime">When does it start?</label>
-          <input type="time" id="constraintTime" class="time-input" step="300" />
+          <p class="panel-field-label">When does it start?</p>
+          <div class="wheel-time" role="group" aria-label="Start time">
+            <div class="wheel" id="hourWheel" data-unit="hour" tabindex="0" role="spinbutton" aria-label="Hour"></div>
+            <span class="wheel-sep">:</span>
+            <div class="wheel" id="minWheel" data-unit="min" tabindex="0" role="spinbutton" aria-label="Minute"></div>
+            <div class="wheel-band" aria-hidden="true"></div>
+          </div>
           <p class="timepick-count">
             <span class="countnum" id="constraintCount">—</span>
             <span id="constraintCountLab">shows start then</span>
@@ -94,19 +99,14 @@
       </article>
 
       <!-- ===================== The plan (vertical; appears once set) ===================== -->
+      <!-- The "Open in Maps" link is rendered inside the plan header (mild, on -->
+      <!-- the right of "Your plan") — see renderJourneyStrip. -->
       <section id="journeyStrip" class="plan" aria-label="Your plan"></section>
-      <a
-        id="mapsRouteLink"
-        class="plan-maps"
-        href="#"
-        target="_blank"
-        rel="noopener"
-        title="Open directions through your plan in Google Maps"
-        hidden
-      >
-        <span class="maps-route-btn__pin" aria-hidden="true">📍</span>
-        <span class="maps-route-btn__text">Open route in Google Maps</span>
-      </a>
+
+      <!-- ===================== Spare-time call to action ===================== -->
+      <!-- Turns the plan's slack into a prompt: "X min to spare — see a show?" -->
+      <!-- Only appears once a next commitment is set. -->
+      <section id="spareCta" class="spare-cta" aria-live="polite" hidden></section>
 
       <!-- ===================== Filters ===================== -->
       <div class="filters-row" aria-label="Filters">
@@ -147,9 +147,20 @@
         <div id="leaflet-map" role="application" aria-label="Map of nearby Edinburgh Fringe shows"></div>
       </section>
 
+      <!-- ===================== Focused show ===================== -->
+      <!-- Tapping a show (list row or map pin) shows its card here — beside the -->
+      <!-- map, above the list — instead of opening a popup on top of the map. -->
+      <article id="focusCard" class="focus-card" aria-live="polite" hidden></article>
+
       <!-- ===================== Reachable-now list ===================== -->
       <section id="shows" class="shows-section">
-        <h2 class="shows-title">Happening now near you</h2>
+        <div class="shows-head">
+          <h2 class="shows-title">Happening now near you</h2>
+          <div class="sort-toggle" role="group" aria-label="Sort shows by">
+            <button type="button" class="sort-btn is-active" data-sort="time">Time</button>
+            <button type="button" class="sort-btn" data-sort="distance">Distance</button>
+          </div>
+        </div>
         <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
         <button id="showMore" class="show-more" type="button" hidden>Show more</button>
       </section>
