@@ -176,7 +176,7 @@ function initMap() {
     btn.innerHTML = "◎";
     btn.title = "Use my location";
     btn.style.cssText =
-      "width:34px;height:34px;border:none;background:#c62024;color:#fff;font-size:18px;cursor:pointer;border-radius:4px;";
+      "width:34px;height:34px;border:none;background:#0f8f86;color:#fff;font-size:18px;cursor:pointer;border-radius:8px;";
     L.DomEvent.on(btn, "click", (e) => {
       L.DomEvent.stop(e);
       requestUserLocation();
@@ -387,9 +387,9 @@ function renderReachCircle() {
   if (!state.map) return;
   const opts = {
     radius: reachRadiusMeters(),
-    color: "#2f6bd6",
+    color: "#0f8f86",
     weight: 1.5,
-    fillColor: "#2f6bd6",
+    fillColor: "#0f8f86",
     fillOpacity: 0.08,
     interactive: false,
   };
@@ -560,32 +560,69 @@ function popupHtml(show, status = "ok") {
  * "Happening Now", so we pin it on the map but keep it out of this list. */
 function renderShowList() {
   const grid = document.getElementById("showsGrid");
+  const title = document.querySelector(".shows-title");
   if (!grid) return;
   grid.innerHTML = "";
 
+  const constraint = state.selectedShowId
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
   const shows = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+
+  // The heading reflects the head-state: browsing "now", or fitting a gap.
+  if (title) {
+    title.textContent = constraint
+      ? `${shows.length} ${shows.length === 1 ? "show fits" : "shows fit"} before ${constraint.time}`
+      : "Happening now near you";
+  }
+
   if (!shows.length) {
     grid.innerHTML =
-      '<p class="show-meta">No reachable shows match your current filters.</p>';
+      '<p class="show-meta">' +
+      (constraint
+        ? "Nothing fits before your next commitment — try a later time or a wider travel window."
+        : "No reachable shows match your current filters.") +
+      "</p>";
     return;
   }
 
+  // Grouped by start time so a long list stays scannable.
+  let group = null;
   shows
     .slice()
     .sort((a, b) => a.show.time.localeCompare(b.show.time))
     .forEach(({ show, status }) => {
+      if (show.time !== group) {
+        group = show.time;
+        const head = document.createElement("h3");
+        head.className = "shows-group-head";
+        head.textContent = group;
+        grid.appendChild(head);
+      }
+      const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
       const item = document.createElement("article");
       item.className = `show-item show-item--${status}`;
+      item.tabIndex = 0;
+      item.setAttribute("role", "button");
       item.innerHTML = `
         <span class="show-genre">${escapeHtml(show.genre)}</span>
-        <h3 class="show-name">${escapeHtml(show.title)}</h3>
+        <h4 class="show-name">${escapeHtml(show.title)}</h4>
         <p class="show-meta">${escapeHtml(show.venue)}</p>
-        <p class="show-meta"><span class="show-time">${escapeHtml(NOW.dateLabel)} ${escapeHtml(show.time)}</span> · ${escapeHtml(show.price)}</p>`;
-      item.addEventListener("click", () => {
+        <p class="show-meta"><span class="walk-glyph" aria-hidden="true">🚶</span> ${walk} min · ${escapeHtml(show.price)}${
+          constraint ? ' · <span class="fits-tag">fits</span>' : ""
+        }</p>`;
+      const activate = () => {
         onShowClick(show);
         document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
         const marker = state.markers[show.id];
         if (marker) marker.openPopup();
+      };
+      item.addEventListener("click", activate);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activate();
+        }
       });
       grid.appendChild(item);
     });
@@ -907,62 +944,63 @@ function updateTravelLabels() {
   if (card) card.textContent = `${state.travelMode} · ≤ ${state.maxTravelMinutes} min`;
 }
 
-/* ---------- Next-show (time + place) constraint ---------- */
-function buildConstraintPanel() {
-  const timeSelect = document.getElementById("timeSelect");
-  const showSelect = document.getElementById("showSelect");
-  if (!timeSelect || !showSelect) return;
+/* ---------- Next-show (time + place) constraint ----------
+ * A rolling hour/minute picker over the real start times we have, a live count
+ * of shows at the chosen time, and a tappable list of those shows. Rolling the
+ * wheels *browses* (updates the list + count); tapping a show *commits* it as
+ * the next commitment (its venue becomes the destination). A free-text box is a
+ * fallback for a non-show place. */
 
-  // Reflect the simulated date in the panel.
+/* Distinct start times worth aiming for (>= now + lead), chronological. */
+function availableTimes() {
+  return [...new Set(constraintShows().map((s) => s.time))].sort((a, b) =>
+    a.localeCompare(b)
+  );
+}
+function timeHours(times) {
+  return [...new Set(times.map((t) => t.slice(0, 2)))].sort();
+}
+function minutesForHour(times, hh) {
+  return times.filter((t) => t.slice(0, 2) === hh).map((t) => t.slice(3, 5)).sort();
+}
+
+function buildConstraintPanel() {
+  const hourRoll = document.getElementById("hourRoll");
+  const minRoll = document.getElementById("minRoll");
+  if (!hourRoll || !minRoll) return;
+
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
   const note = document.getElementById("constraintNote");
   if (note) {
     note.textContent =
-      `It's ${NOW.time} — we only show start times at least ${CONSTRAINT_LEAD_MINUTES} min away.`;
+      `It's ${NOW.time} — we only offer start times at least ${CONSTRAINT_LEAD_MINUTES} min away.`;
   }
 
-  // Unique start times among the constraint candidates — every show today, not
-  // just the genre/price-filtered ones, and only those starting at least
-  // CONSTRAINT_LEAD_MINUTES from now — sorted chronologically.
-  const times = [...new Set(constraintShows().map((s) => s.time))].sort((a, b) =>
-    a.localeCompare(b)
-  );
+  const times = availableTimes();
 
-  // Drop a stale selection if its time is no longer available.
-  if (!times.includes(state.selectedTime)) {
+  // Drop a stale selection whose time no longer exists.
+  if (state.selectedTime && !times.includes(state.selectedTime)) {
     state.selectedTime = "";
     state.selectedShowId = "";
     state.legShowId = "";
     state.destLabel = "";
   }
+  // Seed the wheels on the first available time (display only — no show chosen
+  // yet, so nothing is committed until the user taps a show).
+  if (!state.selectedTime && times.length) state.selectedTime = times[0];
 
-  timeSelect.innerHTML =
-    '<option value="">— choose a time —</option>' +
-    times.map((t) => `<option value="${t}">${NOW.dateLabel}, ${t}</option>`).join("");
-  timeSelect.value = state.selectedTime;
-
-  timeSelect.onchange = () => {
-    state.selectedTime = timeSelect.value;
-    state.legShowId = "";
-    populateShowSelect();
-    // Auto-pick the first available show — no need for a second click.
-    const first = showSelect.querySelector('option[value]:not([value=""])');
-    state.selectedShowId = first ? first.value : "";
-    showSelect.value = state.selectedShowId;
-    syncDestInput();
-    refreshConstraintValue();
-    refreshMap();
-  };
-
-  showSelect.onchange = () => {
-    state.selectedShowId = showSelect.value;
-    state.legShowId = "";
-    syncDestInput();
-    refreshConstraintValue();
-    refreshMap(); // highlight on the map (no zoom)
-  };
-
+  // Wire the roll buttons, the show list and the free-text box.
+  document.querySelectorAll("#constraintPanel .rbtn").forEach((btn) => {
+    btn.onclick = () => rollConstraintTime(btn.dataset.roll, Number(btn.dataset.dir));
+  });
+  const list = document.getElementById("showPickList");
+  if (list) {
+    list.onclick = (e) => {
+      const row = e.target.closest(".show-pick");
+      if (row) selectConstraintShow(row.dataset.id);
+    };
+  }
   const destInput = document.getElementById("destInput");
   if (destInput) {
     destInput.oninput = () => {
@@ -972,44 +1010,145 @@ function buildConstraintPanel() {
     };
   }
 
-  populateShowSelect();
-  if (state.selectedShowId) {
-    showSelect.value = state.selectedShowId;
-    syncDestInput();
-  } else {
-    syncDestInput();
-  }
+  renderConstraintPicker(null);
   refreshConstraintValue();
 }
 
-function populateShowSelect() {
-  const showSelect = document.getElementById("showSelect");
-  if (!showSelect) return;
+/* Move a wheel by dir (+1 later / -1 earlier), snapping to real start times,
+ * then browse the shows at the new time. Changing the time clears any show that
+ * no longer applies. */
+function rollConstraintTime(which, dir) {
+  const times = availableTimes();
+  if (!times.length) return;
+  let [hh, mm] = (state.selectedTime || times[0]).split(":");
+  const hours = timeHours(times);
 
-  if (!state.selectedTime) {
-    showSelect.innerHTML = '<option value="">Pick a time first</option>';
-    showSelect.disabled = true;
+  if (which === "hour") {
+    let i = Math.min(hours.length - 1, Math.max(0, hours.indexOf(hh) + dir));
+    hh = hours[i];
+    const mins = minutesForHour(times, hh);
+    if (!mins.includes(mm)) mm = mins[0]; // land on the first slot in the new hour
+  } else {
+    const mins = minutesForHour(times, hh);
+    let i = Math.min(mins.length - 1, Math.max(0, mins.indexOf(mm) + dir));
+    mm = mins[i];
+  }
+
+  state.selectedTime = `${hh}:${mm}`;
+  state.selectedShowId = "";
+  state.legShowId = "";
+  state.destLabel = "";
+  syncDestInput();
+  renderConstraintPicker({ [which]: dir });
+  refreshConstraintValue();
+  refreshMap();
+}
+
+/* Commit a show as the next commitment, then close the picker to reveal the
+ * plan and the shows that now fit the gap. */
+function selectConstraintShow(id) {
+  state.selectedShowId = id;
+  state.legShowId = "";
+  syncDestInput();
+  refreshConstraintValue();
+  refreshMap();
+  closeAllPanels();
+}
+
+/* Draw both wheels, the live count and the list of shows at the chosen time. */
+function renderConstraintPicker(dir) {
+  const hourRoll = document.getElementById("hourRoll");
+  const minRoll = document.getElementById("minRoll");
+  const countEl = document.getElementById("constraintCount");
+  const countLab = document.getElementById("constraintCountLab");
+  const list = document.getElementById("showPickList");
+  if (!hourRoll || !minRoll) return;
+
+  const times = availableTimes();
+  if (!times.length) {
+    hourRoll.innerHTML = minRoll.innerHTML = '<li class="on">–</li>';
+    if (countEl) countEl.textContent = "0";
+    if (countLab) countLab.textContent = "shows later today";
+    if (list) list.innerHTML = '<p class="picklist-empty">No later shows to aim for today.</p>';
     return;
   }
 
+  const [hh, mm] = state.selectedTime.split(":");
+  const hours = timeHours(times);
+  const mins = minutesForHour(times, hh);
+  setRoller(hourRoll, hours, hours.indexOf(hh), dir && dir.hour);
+  setRoller(minRoll, mins, mins.indexOf(mm), dir && dir.min);
+
   const atTime = constraintShows().filter((s) => s.time === state.selectedTime);
-  showSelect.disabled = false;
-  showSelect.innerHTML = atTime
-    .map(
-      (s) => `<option value="${s.id}">${escapeHtml(s.title)} · ${escapeHtml(s.venue)}</option>`
-    )
-    .join("");
+  if (countEl) tweenCount(countEl, atTime.length);
+  if (countLab) {
+    countLab.textContent =
+      (atTime.length === 1 ? "show starts at " : "shows start at ") + state.selectedTime;
+  }
+
+  if (list) {
+    const anim = dir ? " anim" : "";
+    list.innerHTML = atTime
+      .map(
+        (s, i) => `
+      <button type="button" class="show-pick${s.id === state.selectedShowId ? " is-sel" : ""}${anim}" data-id="${s.id}" style="animation-delay:${i * 45}ms">
+        <span class="sp-radio" aria-hidden="true"></span>
+        <span class="sp-body">
+          <span class="sp-title">${escapeHtml(s.title)}</span>
+          <span class="sp-venue">${escapeHtml(s.venue)}</span>
+          <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
+        </span>
+      </button>`
+      )
+      .join("");
+  }
+}
+
+/* One wheel: previous / current / next value, with a brief roll animation. */
+function setRoller(ul, vals, idx, dir) {
+  const prev = idx > 0 ? vals[idx - 1] : "·";
+  const cur = idx >= 0 ? vals[idx] : "–";
+  const next = idx >= 0 && idx < vals.length - 1 ? vals[idx + 1] : "·";
+  ul.innerHTML = `<li>${prev}</li><li class="on">${cur}</li><li>${next}</li>`;
+  if (dir) {
+    ul.style.setProperty("--rd", (dir > 0 ? 9 : -9) + "px");
+    ul.classList.remove("flip");
+    void ul.offsetWidth; // restart the animation
+    ul.classList.add("flip");
+  }
+}
+
+/* Animate a counter from its current value to `to`. */
+function tweenCount(el, to) {
+  const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches;
+  el.classList.remove("bump");
+  void el.offsetWidth;
+  el.classList.add("bump");
+  const from = parseInt(el.textContent, 10);
+  if (reduce || isNaN(from) || from === to) {
+    el.textContent = String(to);
+    return;
+  }
+  let t0 = null;
+  const dur = 380;
+  function step(ts) {
+    if (t0 === null) t0 = ts;
+    const p = Math.min(1, (ts - t0) / dur);
+    el.textContent = String(Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3))));
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
 }
 
 /* Mirror the chosen show's venue into the editable destination box. The user
  * can overwrite it if their next commitment isn't actually a Fringe show. */
 function syncDestInput() {
   const show = state.shows.find((s) => s.id === state.selectedShowId);
-  state.destLabel = show ? show.venue : "";
+  if (show) state.destLabel = show.venue;
   const destInput = document.getElementById("destInput");
   if (destInput) {
-    destInput.value = state.destLabel;
-    destInput.disabled = !show;
+    destInput.value = show ? show.venue : state.destLabel || "";
+    destInput.disabled = false; // always a usable free-text fallback
   }
 }
 
@@ -1022,13 +1161,9 @@ function refreshConstraintValue() {
   const el = document.querySelector('[data-value="constraint"]');
   if (!el) return;
   const show = state.shows.find((s) => s.id === state.selectedShowId);
-  if (show) {
-    el.textContent = `${destinationLabel()} – by ${show.time}`;
-  } else if (state.selectedTime) {
-    el.textContent = `Shows at ${state.selectedTime}`;
-  } else {
-    el.textContent = "Pick a start time";
-  }
+  el.textContent = show
+    ? `${destinationLabel()} · by ${show.time}`
+    : "Set my next commitment";
 }
 
 /* ---------- Panel open/close plumbing ---------- */
