@@ -698,7 +698,19 @@ const SHOW_PAGE = 12;
  * the caller sorts by time or distance. */
 function fittingShows() {
   const constrained = Boolean(state.selectedShowId);
+  const constraint = constrained
+    ? state.shows.find((s) => s.id === state.selectedShowId)
+    : null;
   let all = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+  // A selected show that can't actually be slipped in before the commitment isn't
+  // a real option — keep it on the map and the itinerary, but out of this list
+  // and its count (so "N shows you can slip in" stays honest).
+  if (constraint && state.legShowId) {
+    const leg = state.shows.find((s) => s.id === state.legShowId);
+    if (leg && classifyShow(leg, constraint) !== "ok") {
+      all = all.filter(({ show }) => show.id !== state.legShowId);
+    }
+  }
   if (!constrained) {
     all = all.filter(({ show }) => timeToMinutes(show.time) <= NOW.minutes + 120);
   }
@@ -869,6 +881,10 @@ function renderJourneyStrip() {
   if (leg) {
     const legPt = [leg.lat, leg.lng];
     const arriveLeg = NOW.minutes + travelMinutes(origin, legPt);
+    // Can you slip this show in and still make the commitment? If not, the show —
+    // not the commitment — is where the problem belongs.
+    const legFits = !constraint || classifyShow(leg, constraint) === "ok";
+
     parts.push(planLeg(travelMinutes(origin, legPt)));
     parts.push(
       planNode(
@@ -877,19 +893,33 @@ function renderJourneyStrip() {
         `${leg.time}–${minutesToTime(timeToMinutes(leg.time) + leg.duration)}`,
         leg.title,
         `${leg.venue} · ${leg.genre}`,
-        planSlack(timeToMinutes(leg.time) - arriveLeg),
+        legFits
+          ? planSlack(timeToMinutes(leg.time) - arriveLeg)
+          : '<span class="plan-slack wontfit">You\'ll be late</span>',
         planBuy(leg)
       )
     );
     if (constraint) {
       const destPt = [constraint.lat, constraint.lng];
-      const departFromLeg = timeToMinutes(leg.time) + leg.duration;
-      const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
-      parts.push(planLeg(travelMinutes(legPt, destPt)));
-      parts.push(
-        planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
-          planSlack(timeToMinutes(constraint.time) - arriveDest), "")
-      );
+      if (legFits) {
+        // Sequential detour: leave when the show ends, then on to the commitment.
+        const departFromLeg = timeToMinutes(leg.time) + leg.duration;
+        const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
+        parts.push(planLeg(travelMinutes(legPt, destPt)));
+        parts.push(
+          planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
+            planSlack(timeToMinutes(constraint.time) - arriveDest), "")
+        );
+      } else {
+        // The show breaks this plan — present the commitment as reachable directly
+        // (skip the show), with no alarming pill of its own: it isn't the problem.
+        const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
+        parts.push(planLeg(travelMinutes(origin, destPt)));
+        parts.push(
+          planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
+            planSlack(timeToMinutes(constraint.time) - arriveDest), "")
+        );
+      }
     }
   } else {
     const destPt = [constraint.lat, constraint.lng];
