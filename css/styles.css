@@ -16,6 +16,9 @@
   --muted: #667085;
   --line: #eaecf0;
   --yellow-badge: #f4d645;
+  --ok: #059669;         /* success / "fits" — Fresh green (accents, borders) */
+  --ok-text: #047857;    /* success text — darker for AA contrast on white/tint */
+  --ok-bg: #e6f7ee;      /* success badge background */
   --shadow-soft: 0 12px 30px rgba(16, 24, 40, 0.08);
   --shadow-offset: 6px;
   --maxw: 1120px;
@@ -328,18 +331,6 @@ a { color: inherit; }
   color: var(--muted);
 }
 
-.card-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  margin-bottom: 18px;
-}
-.card-icon--red { background: rgba(198, 32, 36, 0.12); color: var(--red); }
-.card-icon--gold { background: rgba(199, 154, 54, 0.18); color: var(--gold); }
-.card-icon--blue { background: rgba(47, 107, 214, 0.14); color: var(--blue); }
-
 .card-label {
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -376,27 +367,6 @@ a { color: inherit; }
   z-index: 0;
 }
 
-/* Map legend */
-.map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 12px 2px 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-.legend-item { display: inline-flex; align-items: center; gap: 7px; }
-.legend-dot {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.legend-dot--ok { background: var(--red); border: 2px solid #fff; box-shadow: 0 0 0 1px var(--line); }
-.legend-dot--tight { background: #b9bcc1; border: 2px solid #9aa0a6; opacity: 0.7; }
-.legend-dot--leg { background: var(--red); border: 3px solid #1e7d34; }
-.legend-dot--circle { background: rgba(47, 107, 214, 0.18); border: 1.5px solid var(--blue); }
-
 /* Journey arrows drawn on the map */
 .leaflet-overlay-pane path.route-line {
   stroke-dasharray: 10 8;
@@ -426,10 +396,10 @@ a { color: inherit; }
   transform: translate(-50%, -130%);
 }
 .route-check {
-  border-color: #1e7d34;
-  color: #14601f;
+  border-color: var(--ok);
+  color: var(--ok-text);
 }
-.route-check .tick { color: #1e7d34; font-weight: 800; }
+.route-check .tick { color: var(--ok-text); font-weight: 800; }
 
 /* ===================== Journey strip ===================== */
 /* Narrow timeline that mirrors the plan: origin → optional stop → commitment. */
@@ -478,7 +448,7 @@ a { color: inherit; }
   max-width: 210px;
 }
 .journey-flag--dull { color: var(--muted); }
-.journey-flag--stop { color: #1e7d34; }
+.journey-flag--stop { color: var(--ok-text); }
 .journey-flag--dest { color: var(--blue); }
 .journey-sub {
   font-size: 0.74rem;
@@ -499,7 +469,7 @@ a { color: inherit; }
   border-radius: 999px;
   white-space: nowrap;
 }
-.journey-slack--ok { background: #e3f4e6; color: #14601f; border: 1px solid #1e7d34; }
+.journey-slack--ok { background: var(--ok-bg); color: var(--ok-text); border: 1px solid var(--ok); }
 .journey-slack--late { background: #fde7e7; color: var(--red-dark); border: 1px solid var(--red); }
 
 /* Connector segments */
@@ -672,7 +642,7 @@ a { color: inherit; }
 }
 .show-item:hover { border-color: var(--ink); transform: translateY(-2px); }
 .show-item--tight { opacity: 0.55; }
-.show-item--leg { border-color: #1e7d34; border-width: 2px; }
+.show-item--leg { border-color: var(--ok); border-width: 2px; }
 .show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: var(--shadow-soft); }
 .show-genre {
   display: inline-block;
@@ -911,7 +881,7 @@ a { color: inherit; }
 .plan-title { font-family: var(--serif); font-weight: 600; font-size: 1.06rem; line-height: 1.18; margin: 1px 0; }
 .plan-sub { font-size: 0.78rem; color: var(--muted); }
 .plan-slack { display: inline-block; margin-top: 6px; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
-.plan-slack.ok { color: #14601f; background: #e3f4e6; }
+.plan-slack.ok { color: var(--ok-text); background: var(--ok-bg); }
 .plan-slack.late { color: var(--red-dark); background: #fde7e7; }
 .plan-buy-inline { display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; text-decoration: none; padding: 5px 11px; border-radius: 999px; color: #fff; background: var(--red); }
 .plan-buy-inline:hover { background: var(--red-dark); }
@@ -957,7 +927,7 @@ a { color: inherit; }
 .focus-genre { display: inline-block; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 4px; }
 .focus-title { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; line-height: 1.18; margin: 0 0 4px; padding-right: 30px; }
 .focus-meta { color: var(--muted); font-size: 0.82rem; margin: 2px 0; }
-.focus-fits { display: inline-block; margin: 6px 0 0; font-size: 0.72rem; font-weight: 700; color: #1f7a4d; }
+.focus-fits { display: inline-block; margin: 6px 0 0; font-size: 0.72rem; font-weight: 700; color: var(--ok-text); }
 .focus-actions { margin: 10px 0 0; }
 .focus-buy { display: inline-block; font-size: 0.78rem; font-weight: 700; text-decoration: none; padding: 8px 14px; border-radius: 999px; color: #fff; background: var(--red); }
 .focus-buy:hover { background: var(--red-dark); }
@@ -983,7 +953,7 @@ a { color: inherit; }
 }
 .show-item:hover { border-color: #cfc9bb; transform: none; }
 .show-item--tight { opacity: 0.6; }
-.show-item--leg { border-color: #2e9e7e; border-width: 2px; }
+.show-item--leg { border-color: var(--ok); border-width: 2px; }
 .show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: none; }
 .si-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .show-genre { align-self: flex-start; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 2px; }
@@ -992,7 +962,7 @@ a { color: inherit; }
 .si-side { flex: 0 0 auto; text-align: right; }
 .si-time { font-family: var(--serif); font-weight: 700; font-size: 1rem; color: var(--ink); }
 .si-walk { font-size: 0.72rem; color: var(--muted); }
-.si-fits { font-size: 0.66rem; font-weight: 700; color: #1f7a4d; }
+.si-fits { font-size: 0.66rem; font-weight: 700; color: var(--ok-text); }
 .shows-group-head { font-family: var(--serif); font-weight: 600; font-size: 0.95rem; color: var(--red-dark); margin: 14px 0 2px; padding-top: 8px; border-top: 1px solid var(--line); }
 .shows-group-head:first-child { border-top: none; padding-top: 0; margin-top: 2px; }
 .show-more { display: block; width: 100%; margin: 14px 0 0; padding: 12px; font: inherit; font-weight: 700; font-size: 0.9rem; color: var(--red-dark); background: #fff; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
