@@ -430,9 +430,9 @@ function renderReachCircle() {
   if (!state.map) return;
   const opts = {
     radius: reachRadiusMeters(),
-    color: "#0f8f86",
+    color: "#6c4cf1",
     weight: 1.5,
-    fillColor: "#0f8f86",
+    fillColor: "#6c4cf1",
     fillOpacity: 0.08,
     interactive: false,
   };
