@@ -15,6 +15,18 @@ const EDINBURGH = [55.9486, -3.1881];
  * their real location. */
 const USER_DEFAULT = [55.9523946827963, -3.188258484671504];
 
+/* Google Maps logo (marks the "Open in Maps" link that opens Google Maps).
+ * Inline SVG so it needs no network and inherits crisp scaling. */
+const GMAPS_LOGO =
+  '<svg class="gmaps-logo" viewBox="0 0 40 40" width="15" height="15" aria-hidden="true" focusable="false">' +
+  '<defs><clipPath id="gmapsPin"><path d="M20 2C12.8 2 7 7.8 7 15c0 8.6 10.3 19.5 12.2 21.5.4.5 1.2.5 1.6 0C22.7 34.5 33 23.6 33 15 33 7.8 27.2 2 20 2z"/></clipPath></defs>' +
+  '<g clip-path="url(#gmapsPin)">' +
+  '<path fill="#4285F4" d="M20 15 L0 40 L0 0 Z"/>' +
+  '<path fill="#EA4335" d="M20 15 L0 0 L40 0 Z"/>' +
+  '<path fill="#FBBC04" d="M20 15 L40 0 L40 40 Z"/>' +
+  '<path fill="#34A853" d="M20 15 L40 40 L0 40 Z"/>' +
+  '</g><circle cx="20" cy="15" r="4.6" fill="#fff"/></svg>';
+
 /* During the testing period, ignore a real location that's nowhere near
  * Edinburgh (in km) and keep the central default instead. */
 const MAX_DISTANCE_KM = 40;
@@ -89,6 +101,7 @@ const state = {
   destLabel: "",               // editable destination text (defaults to the show's venue)
   legShowId: "",               // a show clicked on the map (stop before the destination)
   editingCommitment: false,    // constraint panel opened from the plan to change it
+  spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
   sortBy: "time",              // reachable-list order: "time" | "distance"
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
@@ -796,7 +809,6 @@ function renderJourneyStrip() {
   // No commitment yet — no plan to show; the list heading carries the state.
   if (!constraint) {
     strip.innerHTML = "";
-    renderSpareCta();
     return;
   }
 
@@ -816,7 +828,7 @@ function renderJourneyStrip() {
       '<p class="plan-head">Your plan</p>' +
       '<a id="mapsRouteLink" class="plan-maps-mild" href="#" target="_blank" rel="noopener" ' +
       'title="Open this route in Google Maps">' +
-      '<span aria-hidden="true">🗺</span> Open in Maps</a>' +
+      GMAPS_LOGO + " Open in Maps</a>" +
     "</div>",
   ];
   parts.push(planNode("📍", "you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
@@ -845,7 +857,12 @@ function renderJourneyStrip() {
     );
   } else {
     const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
-    parts.push(planLeg(travelMinutes(origin, destPt)));
+    // Middle slot: until a show is slipped in, offer the plan's spare time as a
+    // prompt where the chosen show will go. It's dismissable, and gets replaced
+    // by the show's own node once one is picked (the `leg` branch above). When
+    // there's nothing to offer it falls back to a plain walk connector.
+    const spareNode = spareCtaNode();
+    parts.push(spareNode || planLeg(travelMinutes(origin, destPt)));
     parts.push(
       planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
         planSlack(timeToMinutes(constraint.time) - arriveDest), "")
@@ -880,7 +897,7 @@ function renderJourneyStrip() {
   }
 
   updateMapsRouteLink();
-  renderSpareCta();
+  wireSpareCta(strip);
 }
 
 /* Google Maps travel mode matching the user's currently selected one. */
@@ -974,33 +991,45 @@ function planSpareMinutes() {
   return Math.round(timeToMinutes(constraint.time) - arriveDest);
 }
 
-/* Turn the plan's slack into a prompt beneath it: "X min to spare — want to see
- * a show? (N fit)". The parenthetical count mirrors the reachable list below.
- * Hidden until a next commitment is set. */
-function renderSpareCta() {
-  const el = document.getElementById("spareCta");
-  if (!el) return;
-
+/* The plan's spare-time prompt, rendered in the plan's middle slot (where a
+ * slipped-in show will go): "X min to spare — want to see a show? (N fit below)".
+ * The count mirrors the reachable list. Returns "" when there's nothing to
+ * offer — no spare time, nothing fits, or the user dismissed it — so the plan
+ * falls back to a plain walk connector. */
+function spareCtaNode() {
+  if (state.spareCtaDismissed) return "";
   const spare = planSpareMinutes();
-  if (spare === null) {
-    el.hidden = true;
-    el.innerHTML = "";
-    return;
-  }
-
-  el.hidden = false;
-  if (spare <= 0) {
-    el.innerHTML =
-      '<p class="spare-line spare-line--tight">Your plan is tight — no time to spare for another show.</p>';
-    return;
-  }
-
+  if (spare === null || spare <= 0) return "";
   const n = fittingShows().length;
-  const countHtml = n
-    ? `<span class="spare-count">${n} ${n === 1 ? "fits" : "fit"} below</span>`
-    : "";
-  el.innerHTML =
-    `<p class="spare-line">You have <b>${spare} min</b> to spare — want to see a show? ${countHtml}</p>`;
+  if (!n) return "";
+  const count = `<a class="spare-count spare-jump" href="#shows">${n} ${n === 1 ? "fits" : "fit"} below</a>`;
+  return (
+    '<div class="plan-spare">' +
+    '<button type="button" class="plan-spare-x" aria-label="Dismiss — hide this suggestion" title="Dismiss">&times;</button>' +
+    `<p class="spare-line">You have <b>${spare} min</b> to spare — want to see a show? ${count}</p>` +
+    "</div>"
+  );
+}
+
+/* Wire the in-plan spare prompt: the × dismisses it (revealing a clean plan)
+ * and the "N fit below" link jumps down to the selectable show list. */
+function wireSpareCta(strip) {
+  const x = strip.querySelector(".plan-spare-x");
+  if (x) {
+    x.addEventListener("click", (e) => {
+      e.stopPropagation();
+      state.spareCtaDismissed = true;
+      renderJourneyStrip();
+    });
+  }
+  const jump = strip.querySelector(".spare-jump");
+  if (jump) {
+    jump.addEventListener("click", (e) => {
+      e.preventDefault();
+      const shows = document.getElementById("shows");
+      if (shows) shows.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 /* One node in the vertical plan: a leading glyph (📍 for "you", the genre emoji
@@ -1350,6 +1379,7 @@ function setConstraintTime(hhmm) {
   state.selectedTime = hhmm;
   state.selectedShowId = "";
   state.legShowId = "";
+  state.spareCtaDismissed = false;
   state.destLabel = "";
   state.showCap = SHOW_PAGE;
   syncDestInput();
@@ -1363,6 +1393,7 @@ function setConstraintTime(hhmm) {
 function selectConstraintShow(id) {
   state.selectedShowId = id;
   state.legShowId = "";
+  state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
   state.showCap = SHOW_PAGE;
   syncDestInput();
   refreshConstraintValue();

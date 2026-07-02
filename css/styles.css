@@ -889,17 +889,27 @@ a { color: inherit; }
 /* Plan header row: "Your plan" on the left, a mild Maps link on the right. */
 .plan-head-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 4px 0 12px; }
 .plan-head-row .plan-head { margin: 0; }
-.plan-maps-mild { flex: 0 0 auto; font-size: 0.8rem; font-weight: 700; text-decoration: none; color: var(--blue); white-space: nowrap; }
+.plan-maps-mild { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; font-weight: 700; text-decoration: none; color: var(--blue); white-space: nowrap; }
+.plan-maps-mild .gmaps-logo { flex: 0 0 auto; }
 .plan-maps-mild:hover { text-decoration: underline; }
 .plan-maps-mild:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
 
 /* Spare-time CTA: turns the plan's slack into a prompt to browse shows. */
-.spare-cta { margin: 14px 0 0; }
-.spare-cta[hidden] { display: none; }
+/* Spare-time prompt — rendered in the plan's middle slot (see spareCtaNode).
+   Visually identical to the old standalone box; positioned relative so the
+   dismiss × can sit in its corner. */
+.plan-spare { position: relative; margin: 6px 0 8px; }
 .spare-line { margin: 0; padding: 13px 16px; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 12px; background: var(--paper); font-size: 0.98rem; line-height: 1.4; color: var(--ink); }
+.plan-spare .spare-line { padding-right: 36px; }
 .spare-line b { color: var(--blue); }
-.spare-line--tight { border-left-color: var(--muted); color: var(--muted); }
 .spare-count { display: inline-block; margin-left: 4px; font-size: 0.82rem; font-weight: 700; color: var(--red-dark); white-space: nowrap; }
+.spare-jump { cursor: pointer; text-decoration: underline; }
+.spare-jump:hover { color: var(--red); }
+.spare-jump:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+/* Dismiss × — mirrors the focus-card close button, sized for the corner. */
+.plan-spare-x { position: absolute; top: 6px; right: 8px; width: 24px; height: 24px; display: grid; place-items: center; border: none; background: transparent; color: var(--muted); font-size: 1.2rem; line-height: 1; cursor: pointer; border-radius: 6px; }
+.plan-spare-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
+.plan-spare-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 /* --- Map: supporting, calm, modest --- */
 .map-section { margin: 20px 0 0; }
