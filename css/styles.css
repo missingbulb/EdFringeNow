@@ -944,6 +944,7 @@ a { color: inherit; }
 .leaflet-tooltip.pin-label { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; font-weight: 700; font-size: 0.72rem; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); white-space: nowrap; }
 .leaflet-tooltip.pin-label::before { display: none; }
 /* Leaflet attribution links — styled in site purple */
+.leaflet-control-attribution { font-size: 0.65rem; }
 .leaflet-control-attribution a { color: var(--blue); text-decoration: underline; }
 .leaflet-control-attribution a:hover { color: var(--blue-dark); }
 
