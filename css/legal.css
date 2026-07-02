@@ -1,0 +1,26 @@
+/* Legal / info pages (privacy, accessibility, terms). Reuses the site's design
+   tokens, fonts, header and logo from css/styles.css; this file only adds the
+   reading column and a slim footer for these standalone pages. */
+
+.legal { max-width: 720px; margin: 0 auto; padding: 40px 24px 56px; }
+.legal h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: -0.01em; margin: 0 0 6px; }
+.legal-updated { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+.legal-lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 24px; }
+.legal h2 { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; margin: 26px 0 8px; }
+.legal p { margin: 0 0 14px; }
+.legal ul { margin: 0 0 14px; padding-left: 20px; }
+.legal li { margin: 0 0 7px; }
+.legal a { color: var(--red); text-decoration: underline; }
+.legal a:hover { color: var(--red-dark); }
+.legal strong { font-weight: 700; }
+
+/* A back-to-app link sitting where the nav normally is. */
+.legal-back { text-decoration: none; color: var(--muted); font-size: 0.92rem; font-weight: 600; }
+.legal-back:hover { color: var(--red); }
+.legal-back:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+
+/* Slim footer: copyright + cross-links to the other info pages. */
+.legal-foot { max-width: 720px; margin: 0 auto; padding: 20px 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+.legal-foot a { color: var(--red); text-decoration: none; }
+.legal-foot a:hover { text-decoration: underline; }
+.legal-foot .sep { margin: 0 7px; color: var(--line); }
