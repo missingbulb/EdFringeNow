@@ -481,7 +481,7 @@ function renderMarkers() {
       zIndexOffset: status === "selected" ? 1000 : status === "leg" ? 600 : 0,
       keyboard: false,
     }).addTo(state.map);
-    marker.setOpacity(dim ? 0.2 : status === "tight" ? 0.55 : 1);
+    marker.setOpacity(dim ? 0.25 : status === "tight" ? 0.55 : 1);
 
     // Label only the committed / focused shows — at most a couple, so the text
     // can't collide the way it would across every reachable pin.
