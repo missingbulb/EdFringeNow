@@ -929,6 +929,10 @@ a { color: inherit; }
    violet — the same 1px ring as every other pin, just recoloured, plus a faint
    violet tint. No size change, so the map's density is unaffected. */
 .gpin--selected, .gpin--leg { background: rgba(108, 76, 241, 0.18); border: 1px solid var(--gold); }
+/* Marker-cluster count bubble — violet disc in the page palette (replaces the
+   plugin's default coloured circles, whose skin CSS we don't load). */
+.genre-cluster { background: none; }
+.gcluster { display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--gold); color: #fff; font-weight: 700; font-size: 0.78rem; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(16, 24, 40, 0.35); }
 /* Titles for the committed / focused shows only (few, so no collisions). */
 .leaflet-tooltip.pin-label { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; font-weight: 700; font-size: 0.72rem; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); white-space: nowrap; }
 .leaflet-tooltip.pin-label::before { display: none; }

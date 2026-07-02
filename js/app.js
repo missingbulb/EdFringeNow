@@ -91,6 +91,7 @@ const state = {
   shows: [],
   venues: {},                  // venue code -> { name, address, postcode, lat, lng }
   markers: {},                 // id -> Leaflet marker
+  clusterGroup: null,          // Leaflet.markercluster group for the non-focused pins
   map: null,
   selectedGenres: new Set(["Comedy"]),
   priceFilter: "both",         // "both" | "free" | "paid" (genre card)
@@ -409,6 +410,19 @@ function genrePin(show, status) {
   });
 }
 
+/* Cluster bubble for Leaflet.markercluster — a violet count disc in the page's
+ * palette, sized up a touch for busier clusters. */
+function clusterIcon(cluster) {
+  const n = cluster.getChildCount();
+  const size = n < 10 ? 30 : n < 50 ? 36 : 42;
+  return L.divIcon({
+    html: `<span class="gcluster" style="width:${size}px;height:${size}px">${n}</span>`,
+    className: "genre-cluster",
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+}
+
 /* Re-draw the reach circle, show markers, journey arrows and the (mirrored)
  * show list together. */
 function refreshMap() {
@@ -465,8 +479,27 @@ function renderReachCircle() {
 
 function renderMarkers() {
   if (!state.map) return;
-  // Clear any existing markers
-  Object.values(state.markers).forEach((m) => state.map.removeLayer(m));
+
+  // Cluster group for the ordinary pins — collapses dense / overlapping shows
+  // into a count bubble that splits (and spiderfies coincident pins) on zoom.
+  // Guarded: if the plugin CDN failed to load, we degrade to plain markers so
+  // the map still works rather than throwing.
+  if (!state.clusterGroup && typeof L.markerClusterGroup === "function") {
+    state.clusterGroup = L.markerClusterGroup({
+      maxClusterRadius: 44,      // px; how close pins must be to merge
+      spiderfyOnMaxZoom: true,   // fan out pins sharing a spot when fully zoomed
+      showCoverageOnHover: false,
+      iconCreateFunction: clusterIcon,
+    });
+    state.map.addLayer(state.clusterGroup);
+  }
+
+  // Clear the previous render: clustered pins live in the group, the focused /
+  // destination pins are added straight to the map, so clear both.
+  if (state.clusterGroup) state.clusterGroup.clearLayers();
+  Object.values(state.markers).forEach((m) => {
+    if (state.map.hasLayer(m)) state.map.removeLayer(m);
+  });
   state.markers = {};
 
   // Only when the user has actually tapped a show to focus it do the other pins
@@ -480,7 +513,7 @@ function renderMarkers() {
       icon: genrePin(show, status),
       zIndexOffset: status === "selected" ? 1000 : status === "leg" ? 600 : 0,
       keyboard: false,
-    }).addTo(state.map);
+    });
     marker.setOpacity(dim ? 0.25 : status === "tight" ? 0.55 : 1);
 
     // Label only the committed / focused shows — at most a couple, so the text
@@ -492,6 +525,12 @@ function renderMarkers() {
         className: "pin-label",
         opacity: 1,
       });
+      // Keep the highlighted pins out of clusters so they're always visible.
+      marker.addTo(state.map);
+    } else if (state.clusterGroup) {
+      state.clusterGroup.addLayer(marker);
+    } else {
+      marker.addTo(state.map); // plugin unavailable — plain marker fallback
     }
 
     // No popup — tapping a pin surfaces the show in the focus card instead.
