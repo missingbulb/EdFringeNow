@@ -911,6 +911,10 @@ a { color: inherit; }
 .plan-spare-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
 .plan-spare-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
+/* Hairline between the top actionable card (plan, or the CTA before one
+   exists) and the browse section (shows title, filters, map, list). */
+.section-divider { border: 0; height: 1px; background: var(--line); margin: 28px 0 4px; }
+
 /* --- Map: supporting, calm, modest --- */
 .map-section { margin: 20px 0 0; }
 #leaflet-map { height: 260px; border: 1px solid var(--line); border-radius: 14px; box-shadow: none; }
