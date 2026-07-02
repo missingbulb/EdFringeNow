@@ -26,10 +26,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Stamp build info
         run: |
-          HASH=$(git rev-parse --short=4 HEAD)
-          TIME=$(TZ='Europe/London' git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd)
-          printf 'window.__BUILD__ = { hash: "%s", time: "%s" };\n' "$HASH" "$TIME" > js/build-info.js
-          echo "Stamped build $HASH ($TIME) into js/build-info.js"
+          TIME=$(TZ='Asia/Jerusalem' git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd)
+          printf 'window.__BUILD__ = { time: "%s" };\n' "$TIME" > js/build-info.js
+          echo "Stamped build time $TIME (Israel) into js/build-info.js"
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:

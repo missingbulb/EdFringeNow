@@ -1657,17 +1657,16 @@ function wireDebugControls() {
     });
   }
 
-  // Stamp the deployed build (short commit hash + time) onto the chip, so it's
-  // easy to tell which release is live. Values come from build-info.js, which the
-  // Pages workflow overwrites at deploy time; local dev shows "dev".
+  // Stamp the deployed build's commit time (Israel tz) onto the chip, so it's easy
+  // to tell which release is live. Value comes from build-info.js, which the Pages
+  // workflow overwrites at deploy time; local dev leaves it blank (no stamp).
   const build = window.__BUILD__;
-  if (toggle && build && build.hash) {
-    const hhmm = build.time ? build.time.slice(11, 16) : "";
+  if (toggle && build && build.time) {
     const stamp = document.createElement("span");
     stamp.className = "debug-build";
-    stamp.textContent = hhmm ? `${build.hash} · ${hhmm}` : build.hash;
+    stamp.textContent = build.time.slice(11, 16); // HH:MM
     toggle.appendChild(stamp);
-    toggle.title = build.time ? `Build ${build.hash} · ${build.time}` : `Build ${build.hash}`;
+    toggle.title = `Build ${build.time} (Israel time)`;
   }
 
   const dt = document.getElementById("debugDateTime");
