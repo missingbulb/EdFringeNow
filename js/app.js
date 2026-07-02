@@ -391,12 +391,12 @@ function genreIcon(genre) {
   return GENRE_ICONS[genre] || "🎭";
 }
 
-/* A map pin as the genre emoji sitting on a small white disc — the chip gives a
- * clean, intentional marker and hides the emoji's ragged edge on the tiles.
- * Committed / focused shows are drawn a little larger. */
+/* A map pin as the genre emoji inside a subtle transparent ring — a thin,
+ * semi-transparent white border defines the marker without the heavy white disc
+ * crowding the map. Committed / focused shows are drawn a little larger. */
 function genrePin(show, status) {
-  const size = status === "selected" ? 34 : status === "leg" ? 30 : 26;
-  const font = Math.round(size * 0.58);
+  const size = status === "selected" ? 30 : status === "leg" ? 26 : 22;
+  const font = Math.round(size * 0.74);
   const html = `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;font-size:${font}px">${genreIcon(show.genre)}</span>`;
   return L.divIcon({
     html,
