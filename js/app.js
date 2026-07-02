@@ -177,21 +177,6 @@ function initMap() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  // "Locate me" control — (re)asks the browser for the real location
-  const locate = L.control({ position: "topright" });
-  locate.onAdd = function () {
-    const btn = L.DomUtil.create("button", "locate-btn");
-    btn.innerHTML = "◎";
-    btn.title = "Use my location";
-    btn.style.cssText =
-      "width:34px;height:34px;border:none;background:#0f8f86;color:#fff;font-size:18px;cursor:pointer;border-radius:8px;";
-    L.DomEvent.on(btn, "click", (e) => {
-      L.DomEvent.stop(e);
-      requestUserLocation();
-    });
-    return btn;
-  };
-  locate.addTo(map);
 
   state.map = map;
 }
