@@ -753,6 +753,8 @@ a { color: inherit; }
 .debug-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
 .debug-chip[aria-expanded="true"] { background: #9c181b; }
 .debug-chip:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+/* Deployed-build stamp (hash · time) — secondary, so it doesn't shout over DEBUG. */
+.debug-build { letter-spacing: 0; text-transform: none; font-weight: 700; opacity: 0.85; font-variant-numeric: tabular-nums; }
 /* The (otherwise loud) debug banner, compacted into a tidy dropdown card. */
 .debug-banner {
   display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: flex-end;
