@@ -879,8 +879,9 @@ a { color: inherit; }
 .chg-x { border: none; background: transparent; color: var(--muted); font-size: 1.25rem; line-height: 1; cursor: pointer; width: 26px; height: 26px; border-radius: 8px; }
 .chg-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
 .chg-link:focus-visible, .chg-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-/* Destination-node controls sit top-right, on the hour line. */
-.plan-node.dest { padding-right: 96px; }
+/* Node controls sit top-right, on the hour line; reserve room so long titles
+   don't run under them. */
+.plan-node.has-node-controls { padding-right: 96px; }
 .node-controls { position: absolute; top: -3px; right: 0; display: flex; align-items: center; gap: 2px; }
 .plan-leg { margin: 3px 0 3px 6px; padding: 7px 0 7px 19px; border-left: 2px dashed #cfc9bb; font-size: 0.74rem; color: var(--muted); }
 .plan-time { font-size: 0.74rem; font-weight: 700; color: var(--red-dark); }
@@ -912,7 +913,7 @@ a { color: inherit; }
 .spare-jump { cursor: pointer; text-decoration: underline; }
 .spare-jump:hover { color: var(--red); }
 .spare-jump:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
-/* Dismiss × — mirrors the focus-card close button, sized for the corner. */
+/* Dismiss × for the spare prompt, sized for the corner. */
 .plan-spare-x { position: absolute; top: 6px; right: 8px; width: 24px; height: 24px; display: grid; place-items: center; border: none; background: transparent; color: var(--muted); font-size: 1.2rem; line-height: 1; cursor: pointer; border-radius: 6px; }
 .plan-spare-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
 .plan-spare-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -945,22 +946,6 @@ a { color: inherit; }
 .leaflet-control-attribution { font-size: 0.65rem; }
 .leaflet-control-attribution a { color: var(--blue); text-decoration: underline; }
 .leaflet-control-attribution a:hover { color: var(--blue-dark); }
-
-/* --- Focus card: the tapped show, shown above the list (not a map popup) --- */
-.focus-card { position: relative; margin: 12px 0 0; padding: 14px 16px; border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: 12px; background: var(--paper); box-shadow: var(--shadow-soft); }
-.focus-card[hidden] { display: none; }
-/* Top row: the "why is this here" heading on the left, Change/× on the right. */
-.focus-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 6px; }
-.focus-kicker { font-family: var(--serif); font-weight: 700; font-size: 0.98rem; line-height: 1.15; color: var(--ink); }
-.sel-controls { display: flex; align-items: center; gap: 2px; flex: 0 0 auto; }
-.focus-genre { display: inline-block; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 4px; }
-.focus-title { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; line-height: 1.18; margin: 0 0 4px; }
-.focus-meta { color: var(--muted); font-size: 0.82rem; margin: 2px 0; }
-.focus-actions { margin: 10px 0 0; }
-.focus-buy { display: inline-block; font-size: 0.78rem; font-weight: 700; text-decoration: none; padding: 8px 14px; border-radius: 999px; color: #fff; background: var(--red); }
-.focus-buy:hover { background: var(--red-dark); }
-.focus-buy:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.focus-soldout { display: inline-block; margin: 4px 0 0; font-size: 0.76rem; font-weight: 700; color: var(--muted); }
 
 /* --- Reachable list: compact rows, capped --- */
 .shows-section { padding: 8px 0 0; }

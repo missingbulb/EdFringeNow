@@ -363,8 +363,18 @@ function displayedShows() {
   if (constraint && !out.some((o) => o.show.id === constraint.id)) {
     out.push({ show: constraint, status: "selected" });
   }
-  // Highlight the show the user tapped to focus — a stop before the destination
-  // when a plan exists, or just the focused pin otherwise.
+  // Keep the user's selected show pinned too — it stays selected until they
+  // change it, even if the current commitment/window would otherwise hide it.
+  if (
+    state.legShowId &&
+    state.legShowId !== state.selectedShowId &&
+    !out.some((o) => o.show.id === state.legShowId)
+  ) {
+    const sel = state.shows.find((s) => s.id === state.legShowId);
+    if (sel) out.push({ show: sel, status: "leg" });
+  }
+  // Highlight the show the user selected — a stop before the destination when a
+  // plan exists, or just the highlighted pin otherwise.
   if (state.legShowId) {
     const focus = out.find((o) => o.show.id === state.legShowId && o.status !== "selected");
     if (focus) focus.status = "leg";
@@ -434,7 +444,6 @@ function refreshMap() {
   renderRoute();
   renderShowList();
   renderJourneyStrip();
-  renderFocusCard();
   updateCtaVisibility();
 }
 
@@ -460,11 +469,11 @@ function openConstraintEditor() {
 }
 
 /* Drop the next commitment entirely (the plan's "×"), returning to the initial
- * "Set my next commitment" state. */
+ * "Set my next commitment" state. The selected show is intentionally kept — the
+ * commitment and the show you picked are independent choices. */
 function clearCommitment() {
   state.selectedShowId = "";
   state.selectedTime = "";
-  state.legShowId = "";
   state.destLabel = "";
   state.editingCommitment = false;
   state.spareCtaDismissed = false;
@@ -544,19 +553,19 @@ function renderMarkers() {
       marker.addTo(state.map); // plugin unavailable — plain marker fallback
     }
 
-    // No popup — tapping a pin surfaces the show in the focus card instead.
-    marker.on("click", () => onShowClick(show));
+    // Pins are intentionally inert: the map is for spatial browsing, so tapping
+    // one must not change the selection. Selecting a show happens in the list.
     state.markers[show.id] = marker;
   });
 }
 
-/* Tapping a show (list row or map pin) focuses it: its card opens above the
- * list and the other pins dim. With a next commitment set, the focused show is
- * also the stop on the way there. Tapping it again clears the focus. The
- * committed destination itself isn't a re-selectable focus. */
+/* Selecting a show from the list promotes it into the plan (the stop on the way
+ * to any commitment) and the other pins dim. Selecting it again clears it. Map
+ * pins don't call this — the map is browse-only. The committed destination
+ * itself isn't a re-selectable focus. */
 function onShowClick(show) {
   if (show.id === state.selectedShowId) return; // already the committed destination
-  state.legShowId = state.legShowId === show.id ? "" : show.id; // toggle focus
+  state.legShowId = state.legShowId === show.id ? "" : show.id; // toggle selection
   refreshMap();
 }
 
@@ -662,60 +671,6 @@ function travelGlyph() {
   return { Walking: "🚶", "Taxi/Car": "🚕", Bicycle: "🚲" }[state.travelMode] || "🚶";
 }
 
-/* The card for the show the user tapped (list row or map pin). It renders above
- * the list — replacing the old map popup — with the show's essentials and a
- * buy-ahead link. Hidden when nothing is focused or the focused show has
- * dropped off the map (e.g. a filter change). */
-function renderFocusCard() {
-  const el = document.getElementById("focusCard");
-  if (!el) return;
-
-  const show = state.legShowId ? state.shows.find((s) => s.id === state.legShowId) : null;
-  if (!show || !state.markers[show.id]) {
-    el.hidden = true;
-    el.innerHTML = "";
-    return;
-  }
-
-  const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
-  const genreLine = escapeHtml(show.genre) + (show.free ? " · Free" : "");
-  // A heading so it's obvious why this card is here: it's the show you tapped.
-  const heading = state.selectedShowId
-    ? "You found a show that fits!"
-    : "A show happening now";
-  let buy = "";
-  if (show.soldOut) buy = '<span class="focus-soldout">Sold out</span>';
-  else if (!show.free) {
-    buy =
-      `<a class="focus-buy" href="${escapeHtml(ticketUrl(show) || "#")}" target="_blank" rel="noopener" ` +
-      `title="Buy ahead on edfringe.com — skips the box-office queue (~5 min)">&#127915; Buy ahead</a>`;
-  }
-
-  el.hidden = false;
-  el.innerHTML = `
-    <div class="focus-top">
-      <span class="focus-kicker">${heading}</span>
-      <div class="sel-controls">
-        <button type="button" class="chg-link" data-act="change">Change ▾</button>
-        <button type="button" class="chg-x" data-act="remove" aria-label="Remove selected show">&times;</button>
-      </div>
-    </div>
-    <span class="focus-genre">${genreLine}</span>
-    <h3 class="focus-title">${escapeHtml(show.title)}</h3>
-    <p class="focus-meta">${escapeHtml(show.venue)}</p>
-    <p class="focus-meta">${escapeHtml(show.time)} · ${show.duration} min · 🚶 ${walk} min walk · ${escapeHtml(show.price)}</p>
-    ${buy ? `<div class="focus-actions">${buy}</div>` : ""}`;
-
-  // Remove clears the selection; Change scrolls down to the list to pick another.
-  el.querySelector('[data-act="remove"]').onclick = () => {
-    state.legShowId = "";
-    refreshMap();
-  };
-  el.querySelector('[data-act="change"]').onclick = () => {
-    document.getElementById("shows")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-}
-
 /* ---------- Show list ---------- */
 /* The list mirrors what's on the map, minus the chosen next commitment: that
  * show is a future destination the user has already locked in, not something
@@ -807,10 +762,13 @@ function renderShowList() {
       </span>`;
     const activate = () => {
       onShowClick(show);
-      // Bring the focus card (rendered above the list) into view — unless the
-      // tap just cleared the focus.
-      const card = document.getElementById("focusCard");
-      if (card && !card.hidden) card.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Selecting from the list promotes the show into the plan above — scroll
+      // all the way up to it so the user sees it land (with its Change / ×).
+      if (state.legShowId === show.id) {
+        document
+          .getElementById("journeyStrip")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     };
     item.addEventListener("click", activate);
     item.addEventListener("keydown", (e) => {
@@ -868,30 +826,29 @@ function renderJourneyStrip() {
   const constraint = state.selectedShowId
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
+  // The selected show to slip in — kept independent of the commitment. It shows
+  // in the plan whenever one is selected (and it isn't the commitment itself),
+  // even if it no longer neatly fits: the slack chip tells that story.
+  const leg =
+    state.legShowId && (!constraint || state.legShowId !== constraint.id)
+      ? state.shows.find((s) => s.id === state.legShowId)
+      : null;
 
-  // No commitment yet — no plan to show; the list heading carries the state.
-  if (!constraint) {
+  // Nothing chosen at all — no plan to show; the list heading carries the state.
+  if (!constraint && !leg) {
     strip.innerHTML = "";
     return;
   }
 
-  // A clicked stop only counts when it's a valid leg on the way to the
-  // constraint (same rule the map uses for the green "leg" pin).
-  let leg = null;
-  if (state.legShowId && state.legShowId !== constraint.id) {
-    const cand = state.shows.find((s) => s.id === state.legShowId);
-    if (cand && classifyShow(cand, constraint) === "ok") leg = cand;
-  }
-
-  const destPt = [constraint.lat, constraint.lng];
-  // The plan header carries a mild "open in Maps" link on its right — a quiet
-  // offer, not the big button it used to be.
+  // The plan header carries a mild "open in Maps" link on its right (only useful
+  // once there's a commitment to route toward) — a quiet offer, not a big button.
   const parts = [
     '<div class="plan-head-row">' +
       '<p class="plan-head">Your plan</p>' +
-      '<a id="mapsRouteLink" class="plan-maps-mild" href="#" target="_blank" rel="noopener" ' +
-      'title="Open this route in Google Maps">' +
-      GMAPS_LOGO + " Open in Maps</a>" +
+      (constraint
+        ? '<a id="mapsRouteLink" class="plan-maps-mild" href="#" target="_blank" rel="noopener" ' +
+          'title="Open this route in Google Maps">' + GMAPS_LOGO + " Open in Maps</a>"
+        : "") +
     "</div>",
   ];
   parts.push(planNode("📍", "you", `${NOW.time} · now`, "You are here", state.travelMode.toLowerCase(), "", ""));
@@ -911,14 +868,18 @@ function renderJourneyStrip() {
         planBuy(leg)
       )
     );
-    const departFromLeg = timeToMinutes(leg.time) + leg.duration;
-    const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
-    parts.push(planLeg(travelMinutes(legPt, destPt)));
-    parts.push(
-      planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
-        planSlack(timeToMinutes(constraint.time) - arriveDest), "")
-    );
+    if (constraint) {
+      const destPt = [constraint.lat, constraint.lng];
+      const departFromLeg = timeToMinutes(leg.time) + leg.duration;
+      const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
+      parts.push(planLeg(travelMinutes(legPt, destPt)));
+      parts.push(
+        planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
+          planSlack(timeToMinutes(constraint.time) - arriveDest), "")
+      );
+    }
   } else {
+    const destPt = [constraint.lat, constraint.lng];
     const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
     // Middle slot: until a show is slipped in, offer the plan's spare time as a
     // prompt where the chosen show will go. It's dismissable, and gets replaced
@@ -934,31 +895,46 @@ function renderJourneyStrip() {
 
   strip.innerHTML = parts.join("");
 
-  // The destination node is the entry point for changing the commitment now that
-  // the big top box is gone — make it a button that reopens the editor.
-  // Small, explicit controls on the destination node (top-right, on the hour
-  // line) instead of making the whole node a mystery click target: "Change ▾"
-  // reopens the picker, "×" drops the commitment entirely.
-  const destNode = strip.querySelector(".plan-node.dest");
-  if (destNode) {
-    const controls = document.createElement("div");
-    controls.className = "node-controls";
-    controls.innerHTML =
-      '<button type="button" class="chg-link" data-act="change">Change ▾</button>' +
-      '<button type="button" class="chg-x" data-act="remove" aria-label="Remove your next commitment">&times;</button>';
-    destNode.appendChild(controls);
-    controls.querySelector('[data-act="change"]').addEventListener("click", (e) => {
-      e.stopPropagation(); // don't let the doc click-outside handler interfere
-      openConstraintEditor();
-    });
-    controls.querySelector('[data-act="remove"]').addEventListener("click", (e) => {
-      e.stopPropagation();
-      clearCommitment();
-    });
-  }
+  // Small, explicit controls (top-right, on the hour line) instead of a whole-
+  // node mystery click. Same design on both the selected show and the commitment.
+  wireNodeControls(strip.querySelector(".plan-node.stop"), {
+    change: () =>
+      document.getElementById("shows")?.scrollIntoView({ behavior: "smooth", block: "start" }),
+    remove: () => { state.legShowId = ""; refreshMap(); },
+    changeLabel: "Pick a different show",
+    removeLabel: "Remove selected show",
+  });
+  wireNodeControls(strip.querySelector(".plan-node.dest"), {
+    change: openConstraintEditor,
+    remove: clearCommitment,
+    changeLabel: "Change your next commitment",
+    removeLabel: "Remove your next commitment",
+  });
 
   updateMapsRouteLink();
   wireSpareCta(strip);
+}
+
+/* Attach the shared "Change ▾ / ×" controls to a plan node (top-right, on the
+ * hour line). Both callbacks stop propagation so the doc click-outside handler
+ * doesn't interfere. */
+function wireNodeControls(node, { change, remove, changeLabel, removeLabel }) {
+  if (!node) return;
+  node.classList.add("has-node-controls");
+  const controls = document.createElement("div");
+  controls.className = "node-controls";
+  controls.innerHTML =
+    `<button type="button" class="chg-link" data-act="change" aria-label="${changeLabel}">Change ▾</button>` +
+    `<button type="button" class="chg-x" data-act="remove" aria-label="${removeLabel}">&times;</button>`;
+  node.appendChild(controls);
+  controls.querySelector('[data-act="change"]').addEventListener("click", (e) => {
+    e.stopPropagation();
+    change();
+  });
+  controls.querySelector('[data-act="remove"]').addEventListener("click", (e) => {
+    e.stopPropagation();
+    remove();
+  });
 }
 
 /* Google Maps travel mode matching the user's currently selected one. */
@@ -1439,7 +1415,6 @@ function setConstraintTime(hhmm) {
   if (!hhmm) return;
   state.selectedTime = hhmm;
   state.selectedShowId = "";
-  state.legShowId = "";
   state.spareCtaDismissed = false;
   state.destLabel = "";
   state.showCap = SHOW_PAGE;
@@ -1450,10 +1425,11 @@ function setConstraintTime(hhmm) {
 }
 
 /* Commit a show as the next commitment, then close the picker to reveal the
- * plan and the shows that now fit the gap. */
+ * plan and the shows that now fit the gap. Any previously selected show is kept
+ * (unless it's the very show now being committed — it can't be both). */
 function selectConstraintShow(id) {
   state.selectedShowId = id;
-  state.legShowId = "";
+  if (state.legShowId === id) state.legShowId = "";
   state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
   state.showCap = SHOW_PAGE;
   syncDestInput();
