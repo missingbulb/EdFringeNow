@@ -393,9 +393,11 @@ function genreIcon(genre) {
 
 /* A map pin as the genre emoji inside a subtle transparent ring — a thin,
  * semi-transparent white border defines the marker without the heavy white disc
- * crowding the map. Committed / focused shows are drawn a little larger. */
+ * crowding the map. Every pin is the same size; the focused show and committed
+ * destination are highlighted by a violet ring (see .gpin--selected/--leg), not
+ * by growing, so they never disturb the map's density. */
 function genrePin(show, status) {
-  const size = status === "selected" ? 30 : status === "leg" ? 26 : 22;
+  const size = 22;
   const font = Math.round(size * 0.74);
   const html = `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;font-size:${font}px">${genreIcon(show.genre)}</span>`;
   return L.divIcon({
@@ -479,7 +481,7 @@ function renderMarkers() {
       zIndexOffset: status === "selected" ? 1000 : status === "leg" ? 600 : 0,
       keyboard: false,
     }).addTo(state.map);
-    marker.setOpacity(dim ? 0.3 : status === "tight" ? 0.55 : 1);
+    marker.setOpacity(dim ? 0.2 : status === "tight" ? 0.55 : 1);
 
     // Label only the committed / focused shows — at most a couple, so the text
     // can't collide the way it would across every reachable pin.

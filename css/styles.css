@@ -925,6 +925,11 @@ a { color: inherit; }
    so pins stay light on a busy map; a soft shadow keeps the emoji legible. */
 .genre-pin { background: none !important; border: none !important; }
 .gpin { display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1; border-radius: 50%; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); filter: drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.3)); }
+/* The focused show and the committed destination are highlighted in the page's
+   violet — a slightly thicker purple ring + faint tint, never a size change, so
+   the map's density is unaffected. (box-sizing: border-box keeps the outer size
+   identical to every other pin.) */
+.gpin--selected, .gpin--leg { background: rgba(108, 76, 241, 0.18); border: 2px solid var(--gold); }
 /* Titles for the committed / focused shows only (few, so no collisions). */
 .leaflet-tooltip.pin-label { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; font-weight: 700; font-size: 0.72rem; color: var(--ink); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); white-space: nowrap; }
 .leaflet-tooltip.pin-label::before { display: none; }
