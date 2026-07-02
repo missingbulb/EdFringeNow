@@ -553,16 +553,17 @@ function renderMarkers() {
       marker.addTo(state.map); // plugin unavailable — plain marker fallback
     }
 
-    // Pins are intentionally inert: the map is for spatial browsing, so tapping
-    // one must not change the selection. Selecting a show happens in the list.
+    // Tapping a pin selects the show (updates the map + draws its path) but,
+    // unlike the list, does NOT scroll the page — map browsing stays put.
+    marker.on("click", () => onShowClick(show));
     state.markers[show.id] = marker;
   });
 }
 
-/* Selecting a show from the list promotes it into the plan (the stop on the way
- * to any commitment) and the other pins dim. Selecting it again clears it. Map
- * pins don't call this — the map is browse-only. The committed destination
- * itself isn't a re-selectable focus. */
+/* Select a show (from the list or a map pin): it becomes the stop on the way to
+ * any commitment, draws its path, and the other pins dim. Selecting it again
+ * clears it. The list additionally scrolls up to the plan; the map does not. The
+ * committed destination itself isn't a re-selectable focus. */
 function onShowClick(show) {
   if (show.id === state.selectedShowId) return; // already the committed destination
   state.legShowId = state.legShowId === show.id ? "" : show.id; // toggle selection
@@ -579,7 +580,20 @@ function renderRoute() {
   const dest = state.selectedShowId
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
-  if (!dest) return; // arrows only exist once a "next show" is chosen
+
+  // No commitment yet, but a show is selected: still draw the walk to it, with
+  // the same travel pill and the ✓ "you make its start" check.
+  if (!dest) {
+    const sel = state.legShowId ? state.shows.find((s) => s.id === state.legShowId) : null;
+    if (sel) {
+      drawLeg(state.userLatLng, [sel.lat, sel.lng], {
+        departMin: NOW.minutes,
+        arriveMin: NOW.minutes + travelMinutes(state.userLatLng, [sel.lat, sel.lng]),
+        checkMin: timeToMinutes(sel.time),
+      });
+    }
+    return;
+  }
   const destPt = [dest.lat, dest.lng];
 
   // Is there a valid intermediate stop the user clicked?
@@ -762,12 +776,11 @@ function renderShowList() {
       </span>`;
     const activate = () => {
       onShowClick(show);
-      // Selecting from the list promotes the show into the plan above — scroll
-      // all the way up to it so the user sees it land (with its Change / ×).
+      // Selecting from the list promotes the show into the plan at the top of the
+      // page — scroll all the way up so the whole itinerary reads top-to-bottom
+      // (scrolling only to the plan tucked its header under the sticky nav).
       if (state.legShowId === show.id) {
-        document
-          .getElementById("journeyStrip")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
     item.addEventListener("click", activate);
@@ -1073,13 +1086,15 @@ function wireSpareCta(strip) {
  * for a show), time, title, subtitle, an optional slack chip and an optional
  * extra (e.g. a buy button). */
 function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
+  // Slack chip sits on the time line, to the left of the event time: it reads as
+  // the payoff of the walk connector just above ("N min walk" → "made it, X to
+  // spare · 15:30–16:30").
   return `
     <div class="plan-node ${kind}">
       <span class="plan-ico" aria-hidden="true">${icon}</span>
-      <div class="plan-time">${escapeHtml(time)}</div>
+      <div class="plan-timerow">${slackHtmlStr || ""}<span class="plan-time">${escapeHtml(time)}</span></div>
       <div class="plan-title">${escapeHtml(title)}</div>
       ${sub ? `<div class="plan-sub">${escapeHtml(sub)}</div>` : ""}
-      ${slackHtmlStr || ""}
       ${extraHtml || ""}
     </div>`;
 }

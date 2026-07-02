@@ -884,10 +884,12 @@ a { color: inherit; }
 .plan-node.has-node-controls { padding-right: 96px; }
 .node-controls { position: absolute; top: -3px; right: 0; display: flex; align-items: center; gap: 2px; }
 .plan-leg { margin: 3px 0 3px 6px; padding: 7px 0 7px 19px; border-left: 2px dashed #cfc9bb; font-size: 0.74rem; color: var(--muted); }
+/* Time line: the slack chip sits to the left of the event time. */
+.plan-timerow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .plan-time { font-size: 0.74rem; font-weight: 700; color: var(--red-dark); }
 .plan-title { font-family: var(--serif); font-weight: 600; font-size: 1.06rem; line-height: 1.18; margin: 1px 0; }
 .plan-sub { font-size: 0.78rem; color: var(--muted); }
-.plan-slack { display: inline-block; margin-top: 6px; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
+.plan-slack { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
 .plan-slack.ok { color: var(--ok-text); background: var(--ok-bg); }
 .plan-slack.late { color: var(--red-dark); background: #fde7e7; }
 .plan-buy-inline { display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; text-decoration: none; padding: 5px 11px; border-radius: 999px; color: #fff; background: var(--red); }
