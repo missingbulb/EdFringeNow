@@ -19,8 +19,12 @@
 .legal-back:hover { color: var(--red); }
 .legal-back:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
 
-/* Slim footer: copyright + cross-links to the other info pages. */
-.legal-foot { max-width: 720px; margin: 0 auto; padding: 20px 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
-.legal-foot a { color: var(--red); text-decoration: none; }
-.legal-foot a:hover { text-decoration: underline; }
-.legal-foot .sep { margin: 0 7px; color: var(--line); }
+/* Slim footer: copyright + cross-links. Flex-wraps so on a narrow screen the
+   links drop to their own line as a group — the copyright ("© 2026 Missing
+   Bulb") never breaks mid-phrase. */
+.legal-foot { max-width: 720px; margin: 0 auto; padding: 20px 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.legal-foot-copy { margin: 0; white-space: nowrap; }
+.legal-foot-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.legal-foot-links a { color: var(--red); text-decoration: none; white-space: nowrap; }
+.legal-foot-links a:hover { text-decoration: underline; }
+.legal-foot-links a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
