@@ -415,8 +415,11 @@ function genrePin(show, status) {
 function clusterIcon(cluster) {
   const n = cluster.getChildCount();
   const size = n < 10 ? 30 : n < 50 ? 36 : 42;
+  // When a show is focused, the individual pins step back — so the count bubbles
+  // must fade too, or they'd sit there loud and opaque while everything else dims.
+  const dim = state.legShowId ? " gcluster--dim" : "";
   return L.divIcon({
-    html: `<span class="gcluster" style="width:${size}px;height:${size}px">${n}</span>`,
+    html: `<span class="gcluster${dim}" style="width:${size}px;height:${size}px">${n}</span>`,
     className: "genre-cluster",
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
@@ -456,6 +459,20 @@ function openConstraintEditor() {
   panel.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+/* Drop the next commitment entirely (the plan's "×"), returning to the initial
+ * "Set my next commitment" state. */
+function clearCommitment() {
+  state.selectedShowId = "";
+  state.selectedTime = "";
+  state.legShowId = "";
+  state.destLabel = "";
+  state.editingCommitment = false;
+  state.spareCtaDismissed = false;
+  syncDestInput();
+  refreshConstraintValue();
+  refreshMap();
+}
+
 function renderReachCircle() {
   if (!state.map) return;
   const opts = {
@@ -486,7 +503,7 @@ function renderMarkers() {
   // the map still works rather than throwing.
   if (!state.clusterGroup && typeof L.markerClusterGroup === "function") {
     state.clusterGroup = L.markerClusterGroup({
-      maxClusterRadius: 44,      // px; how close pins must be to merge
+      maxClusterRadius: 26,      // px; smaller = only genuinely close pins merge
       spiderfyOnMaxZoom: true,   // fan out pins sharing a spot when fully zoomed
       showCoverageOnHover: false,
       iconCreateFunction: clusterIcon,
@@ -516,16 +533,10 @@ function renderMarkers() {
     });
     marker.setOpacity(dim ? 0.25 : status === "tight" ? 0.55 : 1);
 
-    // Label only the committed / focused shows — at most a couple, so the text
-    // can't collide the way it would across every reachable pin.
     if (prominent) {
-      marker.bindTooltip(show.title, {
-        permanent: true,
-        direction: "top",
-        className: "pin-label",
-        opacity: 1,
-      });
       // Keep the highlighted pins out of clusters so they're always visible.
+      // (No name tooltip — the focus card / plan carries the title; a permanent
+      // label here just added noise. The ✓-arrival time sits above instead.)
       marker.addTo(state.map);
     } else if (state.clusterGroup) {
       state.clusterGroup.addLayer(marker);
@@ -668,9 +679,10 @@ function renderFocusCard() {
 
   const walk = Math.max(1, Math.round(travelMinutes(state.userLatLng, [show.lat, show.lng])));
   const genreLine = escapeHtml(show.genre) + (show.free ? " · Free" : "");
-  const fits = state.selectedShowId
-    ? '<span class="focus-fits">✓ Fits before your next commitment</span>'
-    : "";
+  // A heading so it's obvious why this card is here: it's the show you tapped.
+  const heading = state.selectedShowId
+    ? "You found a show that fits!"
+    : "A show happening now";
   let buy = "";
   if (show.soldOut) buy = '<span class="focus-soldout">Sold out</span>';
   else if (!show.free) {
@@ -681,17 +693,26 @@ function renderFocusCard() {
 
   el.hidden = false;
   el.innerHTML = `
-    <button type="button" class="focus-close" aria-label="Dismiss">&times;</button>
+    <div class="focus-top">
+      <span class="focus-kicker">${heading}</span>
+      <div class="sel-controls">
+        <button type="button" class="chg-link" data-act="change">Change ▾</button>
+        <button type="button" class="chg-x" data-act="remove" aria-label="Remove selected show">&times;</button>
+      </div>
+    </div>
     <span class="focus-genre">${genreLine}</span>
     <h3 class="focus-title">${escapeHtml(show.title)}</h3>
     <p class="focus-meta">${escapeHtml(show.venue)}</p>
     <p class="focus-meta">${escapeHtml(show.time)} · ${show.duration} min · 🚶 ${walk} min walk · ${escapeHtml(show.price)}</p>
-    ${fits}
     ${buy ? `<div class="focus-actions">${buy}</div>` : ""}`;
 
-  el.querySelector(".focus-close").onclick = () => {
+  // Remove clears the selection; Change scrolls down to the list to pick another.
+  el.querySelector('[data-act="remove"]').onclick = () => {
     state.legShowId = "";
     refreshMap();
+  };
+  el.querySelector('[data-act="change"]').onclick = () => {
+    document.getElementById("shows")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 }
 
@@ -915,26 +936,24 @@ function renderJourneyStrip() {
 
   // The destination node is the entry point for changing the commitment now that
   // the big top box is gone — make it a button that reopens the editor.
+  // Small, explicit controls on the destination node (top-right, on the hour
+  // line) instead of making the whole node a mystery click target: "Change ▾"
+  // reopens the picker, "×" drops the commitment entirely.
   const destNode = strip.querySelector(".plan-node.dest");
   if (destNode) {
-    destNode.classList.add("plan-editable");
-    destNode.setAttribute("role", "button");
-    destNode.tabIndex = 0;
-    destNode.setAttribute("aria-label", "Change your next commitment");
-    const hint = document.createElement("span");
-    hint.className = "plan-edit-hint";
-    hint.textContent = "Tap to change ▾";
-    destNode.appendChild(hint);
-    destNode.addEventListener("click", (e) => {
-      e.stopPropagation(); // don't let the doc click-outside handler close it
+    const controls = document.createElement("div");
+    controls.className = "node-controls";
+    controls.innerHTML =
+      '<button type="button" class="chg-link" data-act="change">Change ▾</button>' +
+      '<button type="button" class="chg-x" data-act="remove" aria-label="Remove your next commitment">&times;</button>';
+    destNode.appendChild(controls);
+    controls.querySelector('[data-act="change"]').addEventListener("click", (e) => {
+      e.stopPropagation(); // don't let the doc click-outside handler interfere
       openConstraintEditor();
     });
-    destNode.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        e.stopPropagation();
-        openConstraintEditor();
-      }
+    controls.querySelector('[data-act="remove"]').addEventListener("click", (e) => {
+      e.stopPropagation();
+      clearCommitment();
     });
   }
 
