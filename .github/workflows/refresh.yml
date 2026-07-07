@@ -52,3 +52,26 @@ jobs:
             git commit -m "Refresh Fringe data (daily top-up)"
             git push
           fi
+
+  # A scheduled run is watched by no one, so surface a failure to a human by
+  # opening (or updating) a standing tracking issue found by title.
+  report-failure:
+    needs: refresh
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the failure-tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Daily Fringe data refresh is failing"
+          body="The scheduled \`Refresh edfringe shows (daily)\` workflow failed. Latest run: $RUN_URL"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
