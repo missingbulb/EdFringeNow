@@ -35,13 +35,13 @@ jobs:
         # analytics.js; when unset, the placeholder stays and analytics no-ops.
         # sed uses '#' as its delimiter so the line contains no shell pipe.
         env:
-          CF_ANALYTICS_TOKEN: ${{ vars.CF_ANALYTICS_TOKEN }}
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.CLOUDFLARE_ANALYTICS_TOKEN }}
         run: |
-          if [ -n "$CF_ANALYTICS_TOKEN" ]; then
-            sed -i "s#REPLACE_WITH_CLOUDFLARE_WEB_ANALYTICS_TOKEN#${CF_ANALYTICS_TOKEN}#" js/analytics.js
-            echo "Injected Cloudflare Web Analytics token from the CF_ANALYTICS_TOKEN variable."
+          if [ -n "$CLOUDFLARE_ANALYTICS_TOKEN" ]; then
+            sed -i "s#REPLACE_WITH_CLOUDFLARE_WEB_ANALYTICS_TOKEN#${CLOUDFLARE_ANALYTICS_TOKEN}#" js/analytics.js
+            echo "Injected Cloudflare Web Analytics token from the CLOUDFLARE_ANALYTICS_TOKEN variable."
           else
-            echo "CF_ANALYTICS_TOKEN variable not set — analytics stays off (placeholder retained)."
+            echo "CLOUDFLARE_ANALYTICS_TOKEN variable not set — analytics stays off (placeholder retained)."
           fi
       - name: Configure Pages
         uses: actions/configure-pages@v5

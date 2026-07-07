@@ -6,12 +6,12 @@
 // The beacon token is NOT a secret — it ships in the client and is visible to
 // every visitor — so it lives in a GitHub Actions *variable* (not a secret):
 //   repo Settings -> Secrets and variables -> Actions -> Variables ->
-//   CF_ANALYTICS_TOKEN
+//   CLOUDFLARE_ANALYTICS_TOKEN
 // The Pages deploy (.github/workflows/pages.yml) injects that value into the
 // placeholder below at build time, the same way js/build-info.js is stamped.
 //
 // TO ENABLE: create a free site in the Cloudflare dashboard (Web Analytics ->
-// "Add a site"), then add its token as the CF_ANALYTICS_TOKEN repo variable.
+// "Add a site"), then add its token as the CLOUDFLARE_ANALYTICS_TOKEN repo variable.
 // It works on GitHub Pages as-is — no hosting or DNS move to Cloudflare needed.
 //
 // Until a real token is injected (variable unset, or running locally), this
