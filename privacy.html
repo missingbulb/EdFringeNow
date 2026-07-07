@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy — EdFringeNow</title>
-  <meta name="description" content="EdFringeNow doesn't collect, see, store or share your data. Here's the short version." />
+  <meta name="description" content="EdFringeNow sets no cookies and collects no personal data — only anonymous, aggregate visitor counts. Here's the short version." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -22,11 +22,14 @@
   <main class="legal">
     <h1>Privacy</h1>
     <p class="legal-updated">Last updated 2 July 2026</p>
-    <p class="legal-lede">The short version: we don't collect your data, because there's nowhere for it to go.</p>
+    <p class="legal-lede">The short version: no cookies, no tracking, no personal data — just an anonymous count of how many people visit.</p>
 
-    <p><strong>EdFringeNow is a static website.</strong> It runs entirely in your browser. There are no accounts, no sign-up, and no server of ours behind it — so there is nothing for us to receive, log, or keep.</p>
+    <p><strong>EdFringeNow is a static website.</strong> It runs entirely in your browser. There are no accounts, no sign-up, and no server of ours behind it — so there is nothing <em>about you</em> for us to receive, log, or keep.</p>
 
-    <p><strong>We don't see, collect, store, share, or sell your data.</strong> No ads. No trackers. No analytics. No cookies set by us.</p>
+    <p><strong>We don't sell your data, and we don't track you across the web.</strong> No ads. No advertising trackers. No cookies set by us. The one thing we do measure is anonymous, aggregate visitor numbers — see <a href="#analytics">Analytics</a> below.</p>
+
+    <h2 id="analytics">Analytics</h2>
+    <p>To understand roughly how many people use EdFringeNow, we use <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare Web Analytics</a> — a privacy-first tool chosen precisely because it <strong>doesn't</strong> use cookies, doesn't store personal data, and can't identify you or follow you to other sites. It records anonymous, aggregate signals only: page views, the referring site, and a broad region worked out from your request (your IP address is used to derive that, but is never stored). No cross-site tracking, no advertising profile — which is also why there's no cookie-consent banner to click through.</p>
 
     <h2>Your location</h2>
     <p>If you allow location access, your position is used <strong>only in your browser</strong> to work out which shows are near you. It is never sent to us or to anyone else. Deny it and the app simply falls back to central Edinburgh — everything still works.</p>
@@ -36,6 +39,7 @@
     <ul>
       <li>Map tiles from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.</li>
       <li>The map library (unpkg) and typefaces (Google Fonts) from their content delivery networks.</li>
+      <li>The privacy-first analytics beacon (a small script) from <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare</a>.</li>
     </ul>
     <p>The show and venue listings are plain files served from this site. They describe the festival, not you.</p>
 
@@ -49,5 +53,7 @@
   <footer class="legal-foot">
     <p>© 2026 Missing Bulb<span class="sep">·</span><a href="privacy.html">Privacy</a><span class="sep">·</span><a href="accessibility.html">Accessibility</a><span class="sep">·</span><a href="terms.html">Terms</a><span class="sep">·</span><a href="mailto:support@edfringenow.com">Contact</a></p>
   </footer>
+  <!-- Privacy-first, cookieless visitor analytics (see js/analytics.js) -->
+  <script defer src="js/analytics.js"></script>
 </body>
 </html>
