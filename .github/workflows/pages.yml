@@ -29,6 +29,20 @@ jobs:
           TIME=$(TZ='Asia/Jerusalem' git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd)
           printf 'window.__BUILD__ = { time: "%s" };\n' "$TIME" > js/build-info.js
           echo "Stamped build time $TIME (Israel) into js/build-info.js"
+      - name: Inject Cloudflare Web Analytics token
+        # The beacon token is public (it ships in the client), so it lives in a
+        # repo *variable*, not a secret. When set, substitute it into the served
+        # analytics.js; when unset, the placeholder stays and analytics no-ops.
+        # sed uses '#' as its delimiter so the line contains no shell pipe.
+        env:
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.CLOUDFLARE_ANALYTICS_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_ANALYTICS_TOKEN" ]; then
+            sed -i "s#REPLACE_WITH_CLOUDFLARE_WEB_ANALYTICS_TOKEN#${CLOUDFLARE_ANALYTICS_TOKEN}#" js/analytics.js
+            echo "Injected Cloudflare Web Analytics token from the CLOUDFLARE_ANALYTICS_TOKEN variable."
+          else
+            echo "CLOUDFLARE_ANALYTICS_TOKEN variable not set — analytics stays off (placeholder retained)."
+          fi
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
