@@ -43,6 +43,13 @@ jobs:
           else
             echo "CLOUDFLARE_ANALYTICS_TOKEN variable not set — analytics stays off (placeholder retained)."
           fi
+      - name: Prune non-site files from the Pages artifact
+        # .claude/skills/* are symlinks into the gitignored .claudinite/ corpus,
+        # which is empty on the runner (the corpus is synced by a SessionStart
+        # hook that never runs in CI). upload-pages-artifact tars with
+        # --dereference, which follows those dangling links and fails. These are
+        # agent-tooling dirs, not part of the published site, so drop them.
+        run: rm -rf .claude .claudinite
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
