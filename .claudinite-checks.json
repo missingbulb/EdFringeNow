@@ -1,0 +1,18 @@
+{
+  "packs": [
+    "github-actions",
+    "html"
+  ],
+  "rules": {},
+  "accept": [
+    { "rule": "squash-merge-history", "path": "main@0c1bd95", "reason": "Legacy merge commit predating Claudinite adoption (Merge API-based show scraper); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@12c7572", "reason": "Legacy merge commit predating Claudinite adoption (Merge inspect workflow fix); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@2024109", "reason": "Legacy merge commit predating Claudinite adoption (Merge normalizer hardening); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@307f70f", "reason": "Legacy merge commit predating Claudinite adoption (manual venue coordinates); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@5f9ab1d", "reason": "Legacy merge commit predating Claudinite adoption (Comedy default, journey strip, buy-ticket CTA, #7); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@ef31784", "reason": "Legacy merge commit predating Claudinite adoption (capture API request payloads); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@ef651f4", "reason": "Legacy merge commit predating Claudinite adoption (Merge normalization pipeline and daily refresh); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@fde8f54", "reason": "Legacy merge commit predating Claudinite adoption (Merge Playwright inspect workflow); squash-only enforced going forward." },
+    { "rule": "squash-merge-history", "path": "main@fea7886", "reason": "Legacy merge commit predating Claudinite adoption (wire site to per-day data files + venues lookup); squash-only enforced going forward." }
+  ]
+}
