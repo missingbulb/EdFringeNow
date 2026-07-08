@@ -49,6 +49,13 @@
   line-gap-override: 0%;
 }
 
+/* Which web-font WEIGHTS load is set by the Google Fonts <link> in each page's
+   <head> — and that link is duplicated across all four HTML pages (index,
+   privacy, terms, accessibility). Keep the loaded weights in sync with the
+   weights this stylesheet actually uses: add a weight here, add it to all four
+   links; stop using one, trim it from all four (an unused weight is font files
+   downloaded for nothing — that's why 500 was dropped). Currently 400/600/700/800. */
+
 * { box-sizing: border-box; }
 
 /* ===================== Debug clock badge ===================== */
