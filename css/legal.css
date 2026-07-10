@@ -21,7 +21,10 @@
 
 /* Slim footer: copyright + cross-links. Flex-wraps so on a narrow screen the
    links drop to their own line as a group — the copyright ("© 2026 Missing
-   Bulb") never breaks mid-phrase. */
+   Bulb") never breaks mid-phrase. Space the links with flex `gap`, NOT inline
+   `·`/separator spans between them: a separator orphans onto a line by itself
+   at a wrap point (this replaced exactly that). Test footer/header layout at
+   ~375px, the narrow-phone width where mid-phrase breaks first show up. */
 .legal-foot { max-width: 720px; margin: 0 auto; padding: 20px 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
 .legal-foot-copy { margin: 0; white-space: nowrap; }
 .legal-foot-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
