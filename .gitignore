@@ -4,7 +4,7 @@
 data/raw_pages/
 
 # Claudinite shared guidelines, synced over HTTPS by a SessionStart hook
-# (see .claude/hooks/sync-claudinite.sh). Not committed — refreshed each session.
+# (see .claudinite/sync-claudinite.sh). Not committed — refreshed each session.
 /.claudinite/*
-!/.claudinite/.gitkeep
+!/.claudinite/sync-claudinite.sh
 /.claudinite.new/
