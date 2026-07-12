@@ -1,8 +1,12 @@
 {
   "packs": [
+    "basics",
     "github-actions",
     "html"
   ],
   "rules": {},
-  "accept": []
+  "accept": [],
+  "maintenance": {
+    "delivery": "push"
+  }
 }
