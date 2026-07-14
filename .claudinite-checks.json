@@ -2,7 +2,9 @@
   "packs": [
     "basics",
     "github-actions",
-    "html"
+    "html",
+    "tidy-repo",
+    "grow_with_claudinite"
   ],
   "rules": {},
   "accept": [],
