@@ -5,11 +5,13 @@ data/raw_pages/
 
 # Claudinite shared guidelines, synced over HTTPS by a SessionStart hook
 # (see .claudinite/mount/sync-claudinite.sh). Not committed — refreshed each session;
-# only the tracked hook under mount/ is committed as the mount signal.
+# only the tracked hook under mount/ and the repo's own .claudinite/local_packs/
+# (project packs) are committed.
 /.claudinite/*
 /.claudinite.new/
 !/.claudinite/mount/
 /.claudinite/mount/*
 !/.claudinite/mount/sync-claudinite.sh
+!/.claudinite/local_packs/
 /.claudinite-hooks.log
 /.claudinite-hooks.log.tmp
