@@ -181,7 +181,7 @@ function adaptShow(entry, { venues, rooms, genres, subgenres }, index) {
     slug: entry.slug,
     title: entry.title,
     genre: genres[entry.genre],
-    subgenres: (entry.subs || []).map((i) => subgenres[i]).filter(Boolean),
+    subgenres: (entry.subs || []).map((i) => (subgenres || [])[i]).filter(Boolean),
     venue: room ? `${venueName} — ${room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,
