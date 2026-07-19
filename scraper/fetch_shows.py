@@ -104,6 +104,8 @@ EVENTS_SEARCH_QUERY = """
   id
   title
   genre
+  subGenre
+  subgenres
   startingDate
   endingDate
   datesDisplay

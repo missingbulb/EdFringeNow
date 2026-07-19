@@ -152,6 +152,7 @@ async function loadShows() {
     state.venues = lookups.venues;
     state.rooms = lookups.rooms || [];
     state.genres = lookups.genres || [];
+    state.subgenres = lookups.subgenres || [];
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
     state.shows = day
@@ -165,11 +166,12 @@ async function loadShows() {
 
 /* Join a minimal per-day record with its venue and expand to the model the map
  * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price }).
- * The day record references genre and room by index into the global
- * `state.genres`/`state.rooms` lookup lists (room index -1, or an unknown room,
- * resolves to no room), and stores free/soldOut as 1/0. A show can perform more
- * than once a day, so the internal id is made unique per performance. */
-function adaptShow(entry, { venues, rooms, genres }, index) {
+ * The day record references genre, room and subgenres by index into the global
+ * `state.genres`/`state.rooms`/`state.subgenres` lookup lists (room index -1, or
+ * an unknown room, resolves to no room), and stores free/soldOut as 1/0. A show
+ * can perform more than once a day, so the internal id is made unique per
+ * performance. */
+function adaptShow(entry, { venues, rooms, genres, subgenres }, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
   const room = rooms[entry.room];
@@ -179,6 +181,7 @@ function adaptShow(entry, { venues, rooms, genres }, index) {
     slug: entry.slug,
     title: entry.title,
     genre: genres[entry.genre],
+    subgenres: (entry.subs || []).map((i) => (subgenres || [])[i]).filter(Boolean),
     venue: room ? `${venueName} — ${room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,
@@ -787,6 +790,7 @@ function renderShowList() {
         <span class="show-genre">${escapeHtml(show.genre)}</span>
         <span class="show-name">${escapeHtml(show.title)}</span>
         <span class="show-meta">${escapeHtml(show.venue)}</span>
+        ${subgenreTags(show)}
       </span>
       <span class="si-side">
         <span class="si-time">${escapeHtml(show.time)}</span><br />
@@ -903,7 +907,7 @@ function renderJourneyStrip() {
         legFits
           ? planSlack(timeToMinutes(leg.time) - arriveLeg)
           : '<span class="plan-slack wontfit">You\'ll be late</span>',
-        planBuy(leg)
+        `${subgenreTags(leg)}${planBuy(leg)}`
       )
     );
     if (constraint) {
@@ -1546,6 +1550,7 @@ function renderConstraintShows(animate) {
         <span class="sp-title">${escapeHtml(s.title)}</span>
         <span class="sp-venue">${escapeHtml(s.venue)}</span>
         <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
+        ${subgenreTags(s)}
       </span>
     </button>`
     )
@@ -1814,4 +1819,15 @@ function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
   );
+}
+
+/* Subgenre tags for a show, e.g. Stand-up · Improv. These are finer descriptors
+ * than the ten headline genres and are display-only (not a filter). Returns ""
+ * for the ~2% of shows the festival tags with none, so callers can drop the row. */
+function subgenreTags(show) {
+  const subs = show.subgenres || [];
+  if (!subs.length) return "";
+  return `<span class="show-subs">${subs
+    .map((s) => `<span class="show-sub">${escapeHtml(s)}</span>`)
+    .join("")}</span>`;
 }

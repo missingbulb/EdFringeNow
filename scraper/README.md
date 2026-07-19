@@ -80,6 +80,10 @@ Normalization rules:
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
   only geocodes new venues. Use `--no-geocode` to skip.
 - **Genre** is mapped to the site's ten categories.
+- **Subgenres** are the finer descriptors the festival tags each show with
+  (e.g. Stand-up, Improv, New writing, Drama) — carried through from the API's
+  `subGenre`/`subgenres` fields as a list of display labels, for display only
+  (not a filter). About 2% of shows carry none.
 
 `python3 scraper/normalize.py --selftest` runs a built-in transform test (no
 network or scraped data needed).

@@ -9,11 +9,12 @@ emits three layers of data:
                                processing / regenerating the day files. NOT sent
                                to the browser.
 
-  data/venues.json             shared lookup, sent once: {venues, rooms, genres}.
-                               `venues` is keyed by venue code ("venue number")
-                               -> name, address, postcode, lat, lng; `rooms` and
-                               `genres` are the global de-duplicated string lists
-                               the day files index into.
+  data/venues.json             shared lookup, sent once:
+                               {venues, rooms, genres, subgenres}. `venues` is
+                               keyed by venue code ("venue number") -> name,
+                               address, postcode, lat, lng; `rooms`, `genres` and
+                               `subgenres` are the global de-duplicated string
+                               lists the day files index into.
 
   data/days/2026-08-DD.json    one file per August day, holding only the shows
                                performing that day with the minimum a card needs.
@@ -109,6 +110,30 @@ def map_genre(value: str | None, label: str | None) -> str:
     return (label or value or "Events").strip()
 
 
+def subgenre_labels(event: dict) -> list[str]:
+    """A show's subgenres as display labels (e.g. ["Stand-up", "Improv"]).
+
+    The API gives both `subGenre` (a comma-joined human string) and `subgenres`
+    (the enum list). Prefer the human string — it carries the festival's own
+    casing ("Sci-Fi", "LGBTQ+", "Artist(s) of colour") that title-casing the
+    enum can't reproduce — and fall back to humanising the enum. About 2% of
+    shows carry no subgenre, so the list may be empty.
+    """
+    raw = event.get("subGenre")
+    if raw:
+        labels = [s.strip() for s in raw.split(",")]
+    else:
+        labels = [v.replace("_", " ").title() for v in event.get("subgenres") or []]
+    seen: set[str] = set()
+    out: list[str] = []
+    for label in labels:
+        key = label.lower()
+        if label and key not in seen:
+            seen.add(key)
+            out.append(label)
+    return out
+
+
 def short_blurb(description: str | None) -> str:
     """A compact one-line blurb: strip markdown, collapse space, truncate."""
     if not description:
@@ -176,6 +201,7 @@ def normalize_event(event: dict) -> dict:
         "title": event.get("title"),
         "slug": event.get("slug"),
         "genre": map_genre(event.get("genre"), event.get("genre")),
+        "subgenres": subgenre_labels(event),
         "company": event.get("presentedBy") or None,
         "duration": duration,
         "ageRestriction": event.get("ageRestriction") or None,
@@ -253,17 +279,53 @@ def geocode_postcodes(postcodes: list[str]) -> dict[str, tuple[float, float]]:
     return coords
 
 
-def build_lookups(master: list[dict]) -> tuple[list[str], list[str]]:
-    """The global (genres, rooms) lookup lists: every distinct genre and room
-    string across all shows, sorted. A show references them by index in the day
-    files; the lists themselves ship once, alongside the venues (see run())."""
+def unify_subgenre_casing(master: list[dict]) -> None:
+    """Collapse case-variant subgenres to one display casing, in place.
+
+    The festival's free-text `subGenre` is inconsistently cased across shows, so
+    the same tag arrives as both "Alternative Comedy" and "Alternative comedy" —
+    which would otherwise show as two distinct tags. For each case-folded
+    subgenre, pick the most title-cased variant (the festival's own labels are
+    Title Case; the lowercase forms are data-entry slips, even when commoner),
+    breaking ties by frequency then alphabetically. Deterministic across runs,
+    and it keeps the nicer form ("LGBTQ+", "Sci-Fi", "Artist(s) of Colour").
+    """
+    counts: dict[str, int] = {}
+    variants: dict[str, set[str]] = {}
+    for show in master:
+        for label in show.get("subgenres") or []:
+            counts[label] = counts.get(label, 0) + 1
+            variants.setdefault(label.casefold(), set()).add(label)
+
+    def rank(v: str) -> tuple:
+        titleish = sum(1 for w in v.split() if w[:1].isupper())
+        return (-titleish, -counts[v], v)
+
+    canon = {key: sorted(vs, key=rank)[0] for key, vs in variants.items()}
+    for show in master:
+        seen: set[str] = set()
+        out: list[str] = []
+        for label in show.get("subgenres") or []:
+            picked = canon.get(label.casefold(), label)
+            if picked.casefold() not in seen:
+                seen.add(picked.casefold())
+                out.append(picked)
+        show["subgenres"] = out
+
+
+def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str]]:
+    """The global (genres, rooms, subgenres) lookup lists: every distinct genre,
+    room and subgenre string across all shows, sorted. A show references them by
+    index in the day files; the lists ship once, alongside the venues (run())."""
     genres = sorted({s["genre"] for s in master if s.get("genre")})
     rooms = sorted({s["room"] for s in master if s.get("room")})
-    return genres, rooms
+    subgenres = sorted({sg for s in master for sg in s.get("subgenres") or []})
+    return genres, rooms, subgenres
 
 
 def build_day_files(master: list[dict], genre_ix: dict[str, int],
-                    room_ix: dict[str, int]) -> dict[str, list]:
+                    room_ix: dict[str, int],
+                    sub_ix: dict[str, int]) -> dict[str, list]:
     """Bucket shows by August performance date into minimal per-day records.
 
     Each record is kept small:
@@ -271,6 +333,8 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
       * `genre` / `room` — pointers into the global `genres` / `rooms` lookup
         lists (shipped once with the venues), not the strings themselves.
         `room` is -1 when the show has no specific room.
+      * `subs` — the show's subgenres as pointers into the global `subgenres`
+        lookup list; an empty list when the festival tagged none (~2%).
       * `free` / `soldOut` — 1/0 rather than true/false.
       * `blurb` — omitted. It is kept in the master (the scraped data) but the
         site never renders it, so it is left out of the per-day payload.
@@ -290,6 +354,8 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
                 "id": show["id"],
                 "title": show["title"],
                 "genre": genre_ix.get(show.get("genre"), -1),
+                "subs": [sub_ix[sg] for sg in show.get("subgenres") or []
+                         if sg in sub_ix],
                 "venue": show["venue"],
                 "room": room_ix.get(show.get("room"), -1),
                 "start": p["start"],
@@ -350,6 +416,7 @@ def run(args) -> int:
         master = normalized
         print(f"Master rebuilt with {len(master)} shows")
     master.sort(key=lambda s: (s["title"] or "").lower())
+    unify_subgenre_casing(master)  # one display casing per subgenre across all shows
     write_json(master_path, master)
 
     # Global lookup file: the venue map plus the shared rooms/genres lists that
@@ -362,14 +429,16 @@ def run(args) -> int:
     venues_raw_path = raw_dir / "venues_raw.json"
     venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
-    genres, rooms = build_lookups(master)
-    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres})
+    genres, rooms, subgenres = build_lookups(master)
+    write_json(venues_path, {"venues": venues, "rooms": rooms,
+                             "genres": genres, "subgenres": subgenres})
 
     # Per-day August files + index.
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
+    sub_ix = {s: i for i, s in enumerate(subgenres)}
     days_dir = Path(args.days_dir)
-    days = build_day_files(master, genre_ix, room_ix)
+    days = build_day_files(master, genre_ix, room_ix, sub_ix)
     for date, items in days.items():
         write_json(days_dir / f"{date}.json", items)
     index = {
@@ -391,6 +460,7 @@ def run(args) -> int:
 # --------------------------------------------------------------------------- #
 FIXTURE_EVENT = {
     "id": 103540, "title": "10 Things They Hate About Me", "genre": "COMEDY",
+    "subGenre": "Stand-up,Character Comedy", "subgenres": ["STAND_UP", "CHARACTER_COMEDY"],
     "duration": "60", "boxOfficeRef": "202610THING_CLZ", "cmsRef": "202610THING",
     "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
     "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
@@ -413,6 +483,7 @@ def selftest() -> int:
     rec = normalize_event(FIXTURE_EVENT)
     assert rec["id"] == "202610THING", rec["id"]
     assert rec["genre"] == "Comedy", rec["genre"]
+    assert rec["subgenres"] == ["Stand-up", "Character Comedy"], rec["subgenres"]
     assert rec["venue"] == "33" and rec["room"] == "Beneath", rec
     assert rec["free"] is False
     assert rec["duration"] == 60
@@ -421,17 +492,20 @@ def selftest() -> int:
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
 
-    genres, rooms = build_lookups([rec])
+    genres, rooms, subgenres = build_lookups([rec])
     assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
+    assert subgenres == ["Character Comedy", "Stand-up"], subgenres
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
-    days = build_day_files([rec], genre_ix, room_ix)
+    sub_ix = {s: i for i, s in enumerate(subgenres)}
+    days = build_day_files([rec], genre_ix, room_ix, sub_ix)
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
     d6 = days["2026-08-06"][0]
-    # genre and room are pointers into the global lookup lists.
+    # genre, room and subgenres are pointers into the global lookup lists.
     assert genres[d6["genre"]] == "Comedy", d6
     assert d6["venue"] == "33" and rooms[d6["room"]] == "Beneath", d6
-    for dropped in ("venueName", "performances", "blurb"):
+    assert [subgenres[i] for i in d6["subs"]] == ["Stand-up", "Character Comedy"], d6
+    for dropped in ("venueName", "performances", "blurb", "subgenres"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
     assert d6["start"] == "11:45"
     # Binary flags are 1/0, not booleans.
@@ -445,6 +519,24 @@ def selftest() -> int:
     assert is_free({"priceType": ["FREE", "PAID"]}) is False
     assert is_free({"priceType": "PAID"}) is False
     assert is_free({"freeTicketed": True}) is True
+
+    # Subgenres: prefer the human string; fall back to humanising the enum;
+    # de-dupe case-insensitively; empty when neither is present.
+    assert subgenre_labels({"subGenre": "Stand-up,Improv"}) == ["Stand-up", "Improv"]
+    assert subgenre_labels({"subgenres": ["NEW_WRITING", "DARK_COMEDY"]}) == ["New Writing", "Dark Comedy"]
+    assert subgenre_labels({"subGenre": "Comedy,comedy"}) == ["Comedy"]
+    assert subgenre_labels({"subGenre": ""}) == []
+    assert subgenre_labels({}) == []
+
+    # Case-variant subgenres across shows collapse to one display casing (most
+    # capitals wins, keeping the nicer form), de-duped within each show.
+    fixture = [
+        {"subgenres": ["Alternative comedy", "LGBTQ+"]},
+        {"subgenres": ["Alternative Comedy", "Lgbtq+", "alternative COMEDY"]},
+    ]
+    unify_subgenre_casing(fixture)
+    assert fixture[0]["subgenres"] == ["Alternative Comedy", "LGBTQ+"], fixture[0]
+    assert fixture[1]["subgenres"] == ["Alternative Comedy", "LGBTQ+"], fixture[1]
 
     assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
     assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"
