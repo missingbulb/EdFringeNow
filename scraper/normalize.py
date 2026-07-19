@@ -279,6 +279,40 @@ def geocode_postcodes(postcodes: list[str]) -> dict[str, tuple[float, float]]:
     return coords
 
 
+def unify_subgenre_casing(master: list[dict]) -> None:
+    """Collapse case-variant subgenres to one display casing, in place.
+
+    The festival's free-text `subGenre` is inconsistently cased across shows, so
+    the same tag arrives as both "Alternative Comedy" and "Alternative comedy" —
+    which would otherwise show as two distinct tags. For each case-folded
+    subgenre, pick the most title-cased variant (the festival's own labels are
+    Title Case; the lowercase forms are data-entry slips, even when commoner),
+    breaking ties by frequency then alphabetically. Deterministic across runs,
+    and it keeps the nicer form ("LGBTQ+", "Sci-Fi", "Artist(s) of Colour").
+    """
+    counts: dict[str, int] = {}
+    variants: dict[str, set[str]] = {}
+    for show in master:
+        for label in show.get("subgenres") or []:
+            counts[label] = counts.get(label, 0) + 1
+            variants.setdefault(label.casefold(), set()).add(label)
+
+    def rank(v: str) -> tuple:
+        titleish = sum(1 for w in v.split() if w[:1].isupper())
+        return (-titleish, -counts[v], v)
+
+    canon = {key: sorted(vs, key=rank)[0] for key, vs in variants.items()}
+    for show in master:
+        seen: set[str] = set()
+        out: list[str] = []
+        for label in show.get("subgenres") or []:
+            picked = canon.get(label.casefold(), label)
+            if picked.casefold() not in seen:
+                seen.add(picked.casefold())
+                out.append(picked)
+        show["subgenres"] = out
+
+
 def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str]]:
     """The global (genres, rooms, subgenres) lookup lists: every distinct genre,
     room and subgenre string across all shows, sorted. A show references them by
@@ -382,6 +416,7 @@ def run(args) -> int:
         master = normalized
         print(f"Master rebuilt with {len(master)} shows")
     master.sort(key=lambda s: (s["title"] or "").lower())
+    unify_subgenre_casing(master)  # one display casing per subgenre across all shows
     write_json(master_path, master)
 
     # Global lookup file: the venue map plus the shared rooms/genres lists that
@@ -492,6 +527,16 @@ def selftest() -> int:
     assert subgenre_labels({"subGenre": "Comedy,comedy"}) == ["Comedy"]
     assert subgenre_labels({"subGenre": ""}) == []
     assert subgenre_labels({}) == []
+
+    # Case-variant subgenres across shows collapse to one display casing (most
+    # capitals wins, keeping the nicer form), de-duped within each show.
+    fixture = [
+        {"subgenres": ["Alternative comedy", "LGBTQ+"]},
+        {"subgenres": ["Alternative Comedy", "Lgbtq+", "alternative COMEDY"]},
+    ]
+    unify_subgenre_casing(fixture)
+    assert fixture[0]["subgenres"] == ["Alternative Comedy", "LGBTQ+"], fixture[0]
+    assert fixture[1]["subgenres"] == ["Alternative Comedy", "LGBTQ+"], fixture[1]
 
     assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
     assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"
