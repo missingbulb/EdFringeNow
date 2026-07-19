@@ -1,108 +1,103 @@
 #!/usr/bin/env python3
-"""One-off probe: discover where a show's *subgenre* lives in the edfringe API.
+"""One-off probe: inspect the edfringe API's subgenre fields and their values.
 
 Runs against the live GraphQL API (needs open network — use the discover
-workflow on a GitHub runner, not a proxied web session). It:
+workflow on a GitHub runner, not a proxied web session).
 
-  1. Introspects the `EventDetail` type and prints every field + its type.
-  2. Lists every schema type whose name mentions "genre" (enums, objects).
-  3. Lists the Query root fields (to spot a subgenre-specific query).
-  4. Fetches one page of events and dumps, for a few sample shows, their
-     `genre` and full `attributes` array — the likely home of subgenre tags.
+`EventDetail` exposes `subGenre: String` and `subgenres: [String]` (plus a
+`subgenreOptions` query root). This probe fetches those for a page of real
+shows and dumps the reference `subgenreOptions` list, so we can see the exact
+values and pick what to display.
 
-This is throwaway scaffolding; delete it once the subgenre source is known.
+Throwaway scaffolding; delete once the format is known.
 """
 
 from __future__ import annotations
 
 import json
-import sys
 
 from fetch_shows import (
     DEFAULT_PASSWORD,
     DEFAULT_USERNAME,
     GRAPHQL_URL,
-    fetch_events_page,
     get_token,
     post_json,
 )
 
-INTROSPECT_TYPE = """
-query T($name: String!) {
-  __type(name: $name) {
-    name
-    kind
-    enumValues { name }
-    fields {
-      name
-      type { name kind ofType { name kind ofType { name kind } } }
-    }
+EVENTS_WITH_SUBGENRE = """
+query EventsSearch($criteria: SearchCriteriaInput!) {
+  events(input: $criteria) {
+    total
+    results { title genre subGenre subgenres }
   }
 }
 """
 
-INTROSPECT_SCHEMA = """
-query S {
-  __schema {
-    types { name kind }
-    queryType { fields { name } }
+# Introspect the return type of `subgenreOptions` so we can select its fields.
+INTROSPECT_QUERY = """
+query {
+  __type(name: "Query") {
+    fields { name type { name kind ofType { name kind ofType { name } } } }
   }
 }
 """
+
+
+def field_type_name(f: dict) -> str:
+    t = f.get("type") or {}
+    return t.get("name") or (t.get("ofType") or {}).get("name") \
+        or ((t.get("ofType") or {}).get("ofType") or {}).get("name") or "?"
 
 
 def introspect_type(token: str, name: str) -> dict:
-    data = post_json(GRAPHQL_URL, {"query": INTROSPECT_TYPE,
-                                   "variables": {"name": name}}, token=token)
+    q = ("query T($n:String!){__type(name:$n){name kind "
+         "enumValues{name} fields{name type{name kind ofType{name}}}}}")
+    data = post_json(GRAPHQL_URL, {"query": q, "variables": {"n": name}}, token=token)
     return (data.get("data") or {}).get("__type") or {}
 
 
 def main() -> int:
     token = get_token(DEFAULT_USERNAME, DEFAULT_PASSWORD)
 
-    print("=" * 70)
-    print("EventDetail fields")
-    print("=" * 70)
-    ed = introspect_type(token, "EventDetail")
-    for f in ed.get("fields") or []:
-        t = f.get("type") or {}
-        tname = t.get("name") or (t.get("ofType") or {}).get("name") \
-            or ((t.get("ofType") or {}).get("ofType") or {}).get("name")
-        print(f"  {f['name']:32s} {t.get('kind'):10s} -> {tname}")
+    # 1. Figure out subgenreOptions' return type + fields, then query it.
+    q = post_json(GRAPHQL_URL, {"query": INTROSPECT_QUERY}, token=token)
+    qfields = ((q.get("data") or {}).get("__type") or {}).get("fields") or []
+    sub_field = next((f for f in qfields if f["name"] == "subgenreOptions"), None)
+    print("subgenreOptions ->", field_type_name(sub_field) if sub_field else "MISSING")
+    if sub_field:
+        tname = field_type_name(sub_field)
+        detail = introspect_type(token, tname)
+        scalar_fields = [f["name"] for f in (detail.get("fields") or [])
+                         if (f.get("type") or {}).get("kind") in ("SCALAR", "NON_NULL")]
+        print(f"  {tname} fields: {[f['name'] for f in detail.get('fields') or []]}")
+        sel = " ".join(scalar_fields) or "value label"
+        opt_q = f"query {{ subgenreOptions {{ {sel} }} }}"
+        try:
+            data = post_json(GRAPHQL_URL, {"query": opt_q}, token=token)
+            opts = (data.get("data") or {}).get("subgenreOptions")
+            print(f"  subgenreOptions ({len(opts or [])}):")
+            print("   ", json.dumps(opts, ensure_ascii=False)[:4000])
+        except Exception as exc:  # noqa: BLE001
+            print("  subgenreOptions query failed:", exc)
 
-    print("\n" + "=" * 70)
-    print("Schema types mentioning 'genre'")
-    print("=" * 70)
-    schema = post_json(GRAPHQL_URL, {"query": INTROSPECT_SCHEMA}, token=token)
-    sd = (schema.get("data") or {}).get("__schema") or {}
-    for t in sd.get("types") or []:
-        if "genre" in (t.get("name") or "").lower():
-            print(f"  {t['name']} ({t['kind']})")
-            detail = introspect_type(token, t["name"])
-            if detail.get("enumValues"):
-                print("    enum:", [e["name"] for e in detail["enumValues"]])
-            if detail.get("fields"):
-                print("    fields:", [f["name"] for f in detail["fields"]])
-
-    print("\n" + "=" * 70)
-    print("Query root fields")
-    print("=" * 70)
-    for f in (sd.get("queryType") or {}).get("fields") or []:
-        print("  ", f["name"])
-
-    print("\n" + "=" * 70)
-    print("Sample events: genre + attributes")
-    print("=" * 70)
-    events = fetch_events_page(token, 1, 50, "123", "ANY")
-    for ev in (events.get("results") or [])[:8]:
-        print(f"\n- {ev.get('title')!r}  genre={ev.get('genre')!r}")
-        for a in ev.get("attributes") or []:
-            print(f"    attr key={a.get('key')!r} types={a.get('attributeTypes')!r} "
-                  f"value={a.get('value')!r}")
-    # Also dump one full raw event so nothing is missed.
-    if events.get("results"):
-        print("\n--- FULL RAW EVENT[0] ---")
-        print(json.dumps(events["results"][0], ensure_ascii=False, indent=1))
+    # 2. Real shows with subGenre + subgenres.
+    print("\n" + "=" * 60)
+    print("Sample shows: genre / subGenre / subgenres")
+    print("=" * 60)
+    payload = {"query": EVENTS_WITH_SUBGENRE,
+               "variables": {"criteria": {"page": 1, "per": 60, "sortBy": "TITLE",
+                                          "sortBySeed": "123", "recentlyAdded": "ANY"}}}
+    data = post_json(GRAPHQL_URL, payload, token=token)
+    if "errors" in data:
+        print("ERRORS:", json.dumps(data["errors"])[:2000])
+        return 1
+    results = data["data"]["events"]["results"]
+    n_sg = sum(1 for r in results if r.get("subGenre"))
+    n_sgs = sum(1 for r in results if r.get("subgenres"))
+    print(f"{len(results)} shows: {n_sg} have subGenre, {n_sgs} have subgenres\n")
+    for r in results:
+        print(f"- {r.get('genre'):16s} subGenre={r.get('subGenre')!r:28s} "
+              f"subgenres={r.get('subgenres')!r}  | {r.get('title')}")
     return 0
 
 
