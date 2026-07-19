@@ -2,6 +2,10 @@
 
 Tools for scraping show data from [edfringe.com](https://www.edfringe.com).
 
+> For the API itself — endpoints, auth, the full `EventDetail` field surface, and
+> the non-obvious bits (pricing lives behind a separate per-performance query;
+> `ticketStatus` vs the `soldOut` flag) — see **[SCRAPING.md](SCRAPING.md)**.
+
 ## How edfringe.com serves listings
 
 The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page
