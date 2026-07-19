@@ -1038,12 +1038,14 @@ a { color: inherit; }
   border: 3px solid currentColor; border-radius: 4px;
   background: transparent;
   opacity: 0.85;
-  /* Wavy edges (#stamp-ink displacement) + coarse blotchy holes eaten out of the
-   * letters and border, like ink that pooled and skipped — a well-worn stamp. */
+  /* Straight-ish edges (small displacement) — the worn look comes from the mask,
+   * not from warping the box. */
   filter: url(#stamp-ink);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.055'%20numOctaves='2'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncG%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncB%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.055'%20numOctaves='2'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncG%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncB%20type='gamma'%20amplitude='2.2'%20exponent='0.5'%20offset='-0.38'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
-  -webkit-mask-size: 135% 155%; mask-size: 135% 155%;
+  /* Dry-ink erosion: a FINE, fairly uniform fractal-noise speckle eats little
+   * flecks out of the letters and border everywhere (not big blotches). */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.34'%20numOctaves='3'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncG%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncB%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.34'%20numOctaves='3'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncG%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncB%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
   -webkit-mask-position: center; mask-position: center;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
 }
