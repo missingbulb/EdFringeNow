@@ -146,11 +146,16 @@ async function loadShows() {
     ]);
     if (!venuesRes.ok) throw new Error(`venues HTTP ${venuesRes.status}`);
     if (!dayRes.ok) throw new Error(`day ${NOW.date} HTTP ${dayRes.status}`);
-    state.venues = await venuesRes.json();
+    // The shared lookup file carries the venue map plus the global rooms/genres
+    // lists that the day records index into. Fetched once.
+    const lookups = await venuesRes.json();
+    state.venues = lookups.venues;
+    state.rooms = lookups.rooms || [];
+    state.genres = lookups.genres || [];
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
-    state.shows = day.shows
-      .map((entry, i) => adaptShow(entry, state.venues, day, i))
+    state.shows = day
+      .map((entry, i) => adaptShow(entry, state, i))
       .filter((s) => s.lat != null && s.lng != null);
   } catch (err) {
     console.error("Could not load show data:", err);
@@ -160,20 +165,20 @@ async function loadShows() {
 
 /* Join a minimal per-day record with its venue and expand to the model the map
  * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price }).
- * The per-day file normalizes genre and room to indices into its `genres`/`rooms`
- * lookup lists (room index -1, or an unknown room, resolves to no room), and
- * stores free/soldOut as 1/0. A show can perform more than once a day, so the
- * internal id is made unique per performance. */
-function adaptShow(entry, venues, day, index) {
+ * The day record references genre and room by index into the global
+ * `state.genres`/`state.rooms` lookup lists (room index -1, or an unknown room,
+ * resolves to no room), and stores free/soldOut as 1/0. A show can perform more
+ * than once a day, so the internal id is made unique per performance. */
+function adaptShow(entry, { venues, rooms, genres }, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
-  const room = day.rooms[entry.room];
+  const room = rooms[entry.room];
   return {
     id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
     slug: entry.slug,
     title: entry.title,
-    genre: day.genres[entry.genre],
+    genre: genres[entry.genre],
     venue: room ? `${venueName} — ${room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,

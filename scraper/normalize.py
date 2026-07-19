@@ -9,15 +9,18 @@ emits three layers of data:
                                processing / regenerating the day files. NOT sent
                                to the browser.
 
-  data/venues.json             venue lookup keyed by venue code ("venue number")
-                               -> name, address, postcode, lat, lng. Sent once.
+  data/venues.json             shared lookup, sent once: {venues, rooms, genres}.
+                               `venues` is keyed by venue code ("venue number")
+                               -> name, address, postcode, lat, lng; `rooms` and
+                               `genres` are the global de-duplicated string lists
+                               the day files index into.
 
   data/days/2026-08-DD.json    one file per August day, holding only the shows
                                performing that day with the minimum a card needs.
-                               Normalized: venue is referenced by code (details
-                               live in venues.json) and genre/room are referenced
-                               by index into per-day `genres`/`rooms` lookup
-                               lists. This is what the site loads on open.
+                               Normalized: venue is referenced by code and
+                               genre/room by index into the global rooms/genres
+                               lists (all in venues.json). This is what the site
+                               loads on open.
   data/days/index.json         list of available days + per-day counts.
 
 Locations are normalized to a venue code plus the specific room (space) of the
@@ -250,21 +253,29 @@ def geocode_postcodes(postcodes: list[str]) -> dict[str, tuple[float, float]]:
     return coords
 
 
-def build_day_files(master: list[dict]) -> dict[str, dict]:
+def build_lookups(master: list[dict]) -> tuple[list[str], list[str]]:
+    """The global (genres, rooms) lookup lists: every distinct genre and room
+    string across all shows, sorted. A show references them by index in the day
+    files; the lists themselves ship once, alongside the venues (see run())."""
+    genres = sorted({s["genre"] for s in master if s.get("genre")})
+    rooms = sorted({s["room"] for s in master if s.get("room")})
+    return genres, rooms
+
+
+def build_day_files(master: list[dict], genre_ix: dict[str, int],
+                    room_ix: dict[str, int]) -> dict[str, list]:
     """Bucket shows by August performance date into minimal per-day records.
 
-    Each day file is normalized to keep it small:
+    Each record is kept small:
 
-      * `genres` / `rooms` — per-day lookup lists of the distinct genre and room
-        strings used that day. A show references them by index: its `genre` and
-        `room` are pointers into those lists (`room` is -1 when the show has no
-        specific room). The strings are stored once per day instead of repeated
-        on every show.
+      * `genre` / `room` — pointers into the global `genres` / `rooms` lookup
+        lists (shipped once with the venues), not the strings themselves.
+        `room` is -1 when the show has no specific room.
       * `free` / `soldOut` — 1/0 rather than true/false.
       * `blurb` — omitted. It is kept in the master (the scraped data) but the
         site never renders it, so it is left out of the per-day payload.
     """
-    raw_days: dict[str, list] = {}
+    days: dict[str, list] = {}
     seen: set[tuple] = set()   # (id, date, start) — drop duplicate performances
     for show in master:
         for p in show.get("performances", []):
@@ -275,28 +286,20 @@ def build_day_files(master: list[dict]) -> dict[str, dict]:
             if key in seen:
                 continue
             seen.add(key)
-            raw_days.setdefault(date, []).append((show, p))
-
-    days: dict[str, dict] = {}
-    for date, entries in raw_days.items():
-        genres = sorted({s["genre"] for s, _ in entries if s.get("genre")})
-        rooms = sorted({s["room"] for s, _ in entries if s.get("room")})
-        genre_ix = {g: i for i, g in enumerate(genres)}
-        room_ix = {r: i for i, r in enumerate(rooms)}
-        shows = [{
-            "id": s["id"],
-            "title": s["title"],
-            "genre": genre_ix.get(s.get("genre"), -1),
-            "venue": s["venue"],
-            "room": room_ix.get(s.get("room"), -1),
-            "start": p["start"],
-            "duration": s["duration"],
-            "free": 1 if s["free"] else 0,
-            "soldOut": 1 if p["soldOut"] else 0,
-            "slug": s["slug"],
-        } for s, p in entries]
-        shows.sort(key=lambda x: (x["start"], x["title"] or ""))
-        days[date] = {"genres": genres, "rooms": rooms, "shows": shows}
+            days.setdefault(date, []).append({
+                "id": show["id"],
+                "title": show["title"],
+                "genre": genre_ix.get(show.get("genre"), -1),
+                "venue": show["venue"],
+                "room": room_ix.get(show.get("room"), -1),
+                "start": p["start"],
+                "duration": show["duration"],
+                "free": 1 if show["free"] else 0,
+                "soldOut": 1 if p["soldOut"] else 0,
+                "slug": show["slug"],
+            })
+    for date in days:
+        days[date].sort(key=lambda x: (x["start"], x["title"] or ""))
     return days
 
 
@@ -349,22 +352,29 @@ def run(args) -> int:
     master.sort(key=lambda s: (s["title"] or "").lower())
     write_json(master_path, master)
 
-    # Venues (always rebuilt from the full venue list, coordinates cached).
+    # Global lookup file: the venue map plus the shared rooms/genres lists that
+    # the day files index into. Sent to the browser once. Venues are always
+    # rebuilt from the full venue list, coordinates cached. Accepts either the
+    # bare venue map (old format) or the {venues, ...} container as prior state.
     venues_path = Path(args.venues)
-    existing_venues = json.loads(venues_path.read_text()) if venues_path.exists() else {}
+    prior = json.loads(venues_path.read_text()) if venues_path.exists() else {}
+    existing_venues = prior.get("venues", prior)
     venues_raw_path = raw_dir / "venues_raw.json"
     venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
-    write_json(venues_path, venues)
+    genres, rooms = build_lookups(master)
+    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres})
 
     # Per-day August files + index.
+    genre_ix = {g: i for i, g in enumerate(genres)}
+    room_ix = {r: i for i, r in enumerate(rooms)}
     days_dir = Path(args.days_dir)
-    days = build_day_files(master)
+    days = build_day_files(master, genre_ix, room_ix)
     for date, items in days.items():
         write_json(days_dir / f"{date}.json", items)
     index = {
         "dates": sorted(days.keys()),
-        "counts": {d: len(days[d]["shows"]) for d in sorted(days)},
+        "counts": {d: len(days[d]) for d in sorted(days)},
         "shows": len(master),
         "venues": len(venues),
     }
@@ -411,21 +421,22 @@ def selftest() -> int:
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
 
-    days = build_day_files([rec])
+    genres, rooms = build_lookups([rec])
+    assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
+    genre_ix = {g: i for i, g in enumerate(genres)}
+    room_ix = {r: i for i, r in enumerate(rooms)}
+    days = build_day_files([rec], genre_ix, room_ix)
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
-    day6 = days["2026-08-06"]
-    assert set(day6) == {"genres", "rooms", "shows"}, day6
-    d6 = day6["shows"][0]
-    # genre and room are pointers into the day's lookup lists.
-    assert day6["genres"][d6["genre"]] == "Comedy", day6
-    assert d6["venue"] == "33" and day6["rooms"][d6["room"]] == "Beneath", day6
+    d6 = days["2026-08-06"][0]
+    # genre and room are pointers into the global lookup lists.
+    assert genres[d6["genre"]] == "Comedy", d6
+    assert d6["venue"] == "33" and rooms[d6["room"]] == "Beneath", d6
     for dropped in ("venueName", "performances", "blurb"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
     assert d6["start"] == "11:45"
     # Binary flags are 1/0, not booleans.
     assert d6["soldOut"] == 0 and d6["free"] == 0, d6
-    day7 = days["2026-08-07"]
-    assert day7["shows"][0]["soldOut"] == 1, day7
+    assert days["2026-08-07"][0]["soldOut"] == 1, days["2026-08-07"]
 
     # priceType can be a list (of strings or objects) in real data.
     assert is_free({"priceType": ["PAID"], "freeTicketed": False}) is False
