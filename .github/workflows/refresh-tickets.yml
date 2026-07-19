@@ -1,0 +1,50 @@
+name: Refresh today's ticket status (hourly)
+
+# In-festival, live-ish availability: once an hour during August, re-fetch the
+# listing and update only *today's* per-performance ticket status in its day
+# file (drives the SOLD OUT stamp). Light — one paged pass, no per-show queries.
+# A no-op on any date with no day file, so off-season firings cost nothing.
+
+on:
+  schedule:
+    - cron: "0 * * 8 *"   # every hour, on the hour, every day in August (UTC)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Override date (YYYY-MM-DD), for testing
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: refresh-tickets
+      cancel-in-progress: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh today's ticket status
+        run: |
+          python3 scraper/refresh_ticket_status.py ${{ inputs.date && format('--date {0}', inputs.date) || '' }}
+
+      - name: Commit any changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/days data/venues.json
+          if git diff --staged --quiet; then
+            echo "No ticket-status changes this hour."
+          else
+            git commit -m "Refresh today's ticket status"
+            git push
+          fi

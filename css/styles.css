@@ -1010,14 +1010,33 @@ a { color: inherit; }
 .sort-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .shows-grid { display: flex; flex-direction: column; gap: 8px; grid-template-columns: none; }
 .show-item {
+  position: relative;
   display: flex; align-items: center; gap: 12px; padding: 12px 14px;
   border: 1px solid var(--line); border-radius: 12px; background: var(--paper);
   cursor: pointer; transition: border-color 0.12s ease;
 }
 .show-item:hover { border-color: #cfc9bb; transform: none; }
 .show-item--tight { opacity: 0.6; }
+.show-item--soldout { opacity: 0.6; }
 .show-item--leg { border-color: var(--ok); border-width: 2px; }
 .show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: none; }
+
+/* Rubber-stamp overlay on cards that are sold out / no longer reachable. The
+ * card stays clickable — the stamp ignores pointer events. */
+.show-stamp {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  z-index: 3; pointer-events: none;
+  font-weight: 900; font-size: 1.05rem; line-height: 1;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 14px; border: 3px solid currentColor; border-radius: 9px;
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.12);
+}
+.show-stamp--soldout { color: #c62828; }
+.show-stamp--late { color: #a06a12; }
+.show-item--selected .show-stamp { opacity: 0.55; } /* recede when the row is the active pick */
 .si-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .show-genre { align-self: flex-start; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 2px; }
 .show-name { font-family: var(--serif); font-weight: 600; font-size: 1rem; margin: 0 0 2px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

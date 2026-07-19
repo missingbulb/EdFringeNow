@@ -153,6 +153,14 @@ def primary_image(images: list | None) -> str | None:
     return None
 
 
+def small_image(images: list | None) -> str | None:
+    """The show's card-sized image: prefer the API's "Small" variant, else any."""
+    for img in images or []:
+        if img.get("url") and (img.get("imageType") or "").lower() == "small":
+            return img["url"]
+    return primary_image(images)
+
+
 def is_free(event: dict) -> bool:
     if event.get("freeTicketed"):
         return True
@@ -207,6 +215,7 @@ def normalize_event(event: dict) -> dict:
         "ageRestriction": event.get("ageRestriction") or None,
         "free": is_free(event),
         "image": primary_image(event.get("images")),
+        "smallImage": small_image(event.get("images")),
         "blurb": short_blurb(event.get("description")),
         "venue": venue_code,
         "venueName": venue_name,
@@ -313,19 +322,22 @@ def unify_subgenre_casing(master: list[dict]) -> None:
         show["subgenres"] = out
 
 
-def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str]]:
-    """The global (genres, rooms, subgenres) lookup lists: every distinct genre,
-    room and subgenre string across all shows, sorted. A show references them by
-    index in the day files; the lists ship once, alongside the venues (run())."""
+def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str], list[str]]:
+    """The global (genres, rooms, subgenres, ticketStatuses) lookup lists: every
+    distinct genre, room, subgenre and per-performance ticket status across all
+    shows, sorted. A show references them by index in the day files; the lists
+    ship once, alongside the venues (run())."""
     genres = sorted({s["genre"] for s in master if s.get("genre")})
     rooms = sorted({s["room"] for s in master if s.get("room")})
     subgenres = sorted({sg for s in master for sg in s.get("subgenres") or []})
-    return genres, rooms, subgenres
+    ticket_statuses = sorted({p.get("status") for s in master
+                              for p in s.get("performances") or [] if p.get("status")})
+    return genres, rooms, subgenres, ticket_statuses
 
 
 def build_day_files(master: list[dict], genre_ix: dict[str, int],
-                    room_ix: dict[str, int],
-                    sub_ix: dict[str, int]) -> dict[str, list]:
+                    room_ix: dict[str, int], sub_ix: dict[str, int],
+                    ts_ix: dict[str, int]) -> dict[str, list]:
     """Bucket shows by August performance date into minimal per-day records.
 
     Each record is kept small:
@@ -335,6 +347,10 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
         `room` is -1 when the show has no specific room.
       * `subs` — the show's subgenres as pointers into the global `subgenres`
         lookup list; an empty list when the festival tagged none (~2%).
+      * `ts` — this performance's ticket status as a pointer into the global
+        `ticketStatuses` lookup (-1 if unknown). This is the reliable "can I get
+        a ticket" signal; the `soldOut` flag is not (a show can be soldOut:false
+        yet have no online allocation).
       * `free` / `soldOut` — 1/0 rather than true/false.
       * `blurb` — omitted. It is kept in the master (the scraped data) but the
         site never renders it, so it is left out of the per-day payload.
@@ -362,6 +378,7 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
                 "duration": show["duration"],
                 "free": 1 if show["free"] else 0,
                 "soldOut": 1 if p["soldOut"] else 0,
+                "ts": ts_ix.get(p.get("status"), -1),
                 "slug": show["slug"],
             })
     for date in days:
@@ -429,16 +446,17 @@ def run(args) -> int:
     venues_raw_path = raw_dir / "venues_raw.json"
     venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
-    genres, rooms, subgenres = build_lookups(master)
-    write_json(venues_path, {"venues": venues, "rooms": rooms,
-                             "genres": genres, "subgenres": subgenres})
+    genres, rooms, subgenres, ticket_statuses = build_lookups(master)
+    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
+                             "subgenres": subgenres, "ticketStatuses": ticket_statuses})
 
     # Per-day August files + index.
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
     sub_ix = {s: i for i, s in enumerate(subgenres)}
+    ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
     days_dir = Path(args.days_dir)
-    days = build_day_files(master, genre_ix, room_ix, sub_ix)
+    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix)
     for date, items in days.items():
         write_json(days_dir / f"{date}.json", items)
     index = {
@@ -465,7 +483,8 @@ FIXTURE_EVENT = {
     "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
     "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
     "description": "A **razor-sharp** hour of comedy.\n\nReally funny.",
-    "images": [{"url": "https://img/thumb.jpg", "imageType": "THUMBNAIL"}],
+    "images": [{"url": "https://img/large.jpg", "imageType": "Large"},
+               {"url": "https://img/small.jpg", "imageType": "Small"}],
     "venues": [{"title": "Pleasance Courtyard", "slug": "pleasance-courtyard"}],
     "spaces": [{"id": 5, "title": "Beneath", "venueName": "Pleasance Courtyard",
                 "venueCode": "33"}],
@@ -488,29 +507,36 @@ def selftest() -> int:
     assert rec["free"] is False
     assert rec["duration"] == 60
     assert rec["blurb"] == "A razor-sharp hour of comedy. Really funny.", rec["blurb"]
+    # smallImage prefers the API's "Small" variant; `image` stays the first url.
+    assert rec["smallImage"] == "https://img/small.jpg", rec["smallImage"]
+    assert rec["image"] == "https://img/large.jpg", rec["image"]
     assert len(rec["performances"]) == 2, "cancelled performance must be dropped"
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
 
-    genres, rooms, subgenres = build_lookups([rec])
+    genres, rooms, subgenres, ticket_statuses = build_lookups([rec])
     assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
     assert subgenres == ["Character Comedy", "Stand-up"], subgenres
+    assert ticket_statuses == ["AVAILABLE", "SOLD_OUT"], ticket_statuses
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
     sub_ix = {s: i for i, s in enumerate(subgenres)}
-    days = build_day_files([rec], genre_ix, room_ix, sub_ix)
+    ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
+    days = build_day_files([rec], genre_ix, room_ix, sub_ix, ts_ix)
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
     d6 = days["2026-08-06"][0]
-    # genre, room and subgenres are pointers into the global lookup lists.
+    # genre, room, subgenres and ticket status are pointers into the lookup lists.
     assert genres[d6["genre"]] == "Comedy", d6
     assert d6["venue"] == "33" and rooms[d6["room"]] == "Beneath", d6
     assert [subgenres[i] for i in d6["subs"]] == ["Stand-up", "Character Comedy"], d6
-    for dropped in ("venueName", "performances", "blurb", "subgenres"):
+    assert ticket_statuses[d6["ts"]] == "AVAILABLE", d6
+    for dropped in ("venueName", "performances", "blurb", "subgenres", "smallImage"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
     assert d6["start"] == "11:45"
     # Binary flags are 1/0, not booleans.
     assert d6["soldOut"] == 0 and d6["free"] == 0, d6
-    assert days["2026-08-07"][0]["soldOut"] == 1, days["2026-08-07"]
+    d7 = days["2026-08-07"][0]
+    assert d7["soldOut"] == 1 and ticket_statuses[d7["ts"]] == "SOLD_OUT", d7
 
     # priceType can be a list (of strings or objects) in real data.
     assert is_free({"priceType": ["PAID"], "freeTicketed": False}) is False
