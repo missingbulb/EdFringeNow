@@ -134,32 +134,16 @@ def main() -> int:
     print("  event args:", [(a["name"], a["type"]["name"]) for a in ev_args])
     selection = build_selection(token, "EventDetail", 2)
 
+    # The site's URLs are slugs, so fetch by id with isSlug:true.
     event = None
-    slug_arg = next((a for a in ev_args if a["type"]["name"] == "String"), None)
-    if slug_arg:
-        q = (f"query($v:String!){{ event({slug_arg['name']}:$v){{ {selection} }} }}")
-        try:
-            data = post_json(GRAPHQL_URL, {"query": q, "variables": {"v": slug}}, token=token)
-            if data.get("errors"):
-                print("  event() errors:", json.dumps(data["errors"])[:1500])
-            event = (data.get("data") or {}).get("event")
-        except Exception as exc:  # noqa: BLE001
-            print("  event() request failed:", exc)
-
-    if not event:
-        # Fallback: scan the events search for a matching slug (bounded).
-        print("  event() gave nothing; scanning events search for the slug...")
-        esel = build_selection(token, "EventDetail", 2)
-        for page in range(1, 8):
-            payload = {"query": f"query($c:SearchCriteriaInput!){{ events(input:$c){{ results {{ {esel} }} }} }}",
-                       "variables": {"c": {"page": page, "per": 50, "sortBy": "TITLE",
-                                           "sortBySeed": "123", "recentlyAdded": "ANY"}}}
-            data = post_json(GRAPHQL_URL, payload, token=token)
-            hits = [r for r in (((data.get("data") or {}).get("events") or {}).get("results") or [])
-                    if r.get("slug") == slug]
-            if hits:
-                event = hits[0]
-                break
+    q = f"query($v:String!){{ event(id:$v, isSlug:true){{ {selection} }} }}"
+    try:
+        data = post_json(GRAPHQL_URL, {"query": q, "variables": {"v": slug}}, token=token)
+        if data.get("errors"):
+            print("  event() errors:", json.dumps(data["errors"])[:2000])
+        event = (data.get("data") or {}).get("event")
+    except Exception as exc:  # noqa: BLE001
+        print("  event() request failed:", exc)
 
     if not event:
         print("  Could not locate the show. Dumping nothing.")
@@ -173,7 +157,13 @@ def main() -> int:
     pp_ret = query_field_return(token, "performancePrices")
     print("  performancePrices args:", [(a["name"], a["type"]["name"], a["type"]["kind"]) for a in pp_args])
     print("  returns:", pp_ret)
-    pp_sel = build_selection(token, pp_ret["name"], 1) if pp_ret.get("name") and pp_ret["kind"] == "OBJECT" else None
+    for tn in (pp_ret.get("name"), "PerformancePriceDto", "Price", "Concession", "Seat"):
+        if tn:
+            t = introspect_type(token, tn)
+            if t.get("fields"):
+                print(f"  type {tn} fields:", [f["name"] for f in t["fields"]])
+    # Deep selection so we reach the nested Price bands / concessions.
+    pp_sel = build_selection(token, pp_ret["name"], 3) if pp_ret.get("name") and pp_ret["kind"] == "OBJECT" else None
 
     perfs = (event.get("performances") or [])[:2]
     candidates_for = lambda p: [p.get("boxOfficeId"), p.get("boxOfficeRef"),
