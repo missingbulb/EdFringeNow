@@ -1029,10 +1029,12 @@ a { color: inherit; }
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%) rotate(-7deg);
   z-index: 3; pointer-events: none;
-  font-family: "Arial Narrow", "Helvetica Neue", var(--serif), sans-serif;
-  font-weight: 900; font-size: 1.4rem; line-height: 0.95;
-  letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
-  padding: 5px 15px;
+  /* Heavy slab display face — the chunky letterform is what reads as a stamp
+   * (loaded via Google Fonts in index.html). Alfa Slab One is already bold. */
+  font-family: "Alfa Slab One", Rockwell, "Roboto Slab", var(--serif), serif;
+  font-weight: 400; font-size: 1.1rem; line-height: 1;
+  letter-spacing: 0.01em; text-transform: uppercase; white-space: nowrap;
+  padding: 6px 15px 3px;
   border: 4px solid currentColor; border-radius: 5px;
   background: transparent;
   opacity: 0.9;
