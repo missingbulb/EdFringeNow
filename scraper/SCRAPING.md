@@ -98,12 +98,16 @@ are served from `registration.edfringe.com/resource/image/<uuid>`.
 **`ticketStatus`**, `boxOfficeId`, `boxOfficeRef`, `accessibility` ([enum]),
 `badges` ({label, colour}), `concessions`.
 
-**`ticketStatus` is the signal for "can I get a ticket".** Observed values include
-`TICKETS_AVAILABLE`, `NO_ALLOCATION_CONTACT_VENUE`, `PREVIEW_SHOW`, `TWO_FOR_ONE`
-(the authoritative full set is `ticketStatusOptions`, not yet captured). **Do not
-rely on the `soldOut` boolean** — a performance can be `soldOut: false` yet
-`ticketStatus: NO_ALLOCATION_CONTACT_VENUE` (nothing to sell online). e.g. Daniel
-Sloss 14 Aug: `soldOut:false`, `ticketStatus:NO_ALLOCATION_CONTACT_VENUE`.
+**`ticketStatus` is the signal for "can I get a ticket".** Values seen in a full
+scrape: `TICKETS_AVAILABLE`, `TWO_FOR_ONE`, `FREE_NON_TICKETED`, `FREE_TICKETED`,
+`PREVIEW_SHOW`, `EVENT_SPECIFIC`, `NO_ALLOCATION_CONTACT_VENUE` (and `SOLD_OUT`
+appears once tickets actually sell out; the authoritative set is
+`ticketStatusOptions`). The site treats `SOLD_OUT` and
+`NO_ALLOCATION_CONTACT_VENUE` as "no ticket available" (→ SOLD OUT stamp) and
+everything else as available. **Do not rely on the `soldOut` boolean** — a
+performance can be `soldOut: false` yet `ticketStatus: NO_ALLOCATION_CONTACT_VENUE`
+(nothing to sell online). e.g. Daniel Sloss 14 Aug: `soldOut:false`,
+`ticketStatus:NO_ALLOCATION_CONTACT_VENUE`.
 
 ## Pricing (the non-obvious part)
 
