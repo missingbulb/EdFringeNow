@@ -146,11 +146,17 @@ async function loadShows() {
     ]);
     if (!venuesRes.ok) throw new Error(`venues HTTP ${venuesRes.status}`);
     if (!dayRes.ok) throw new Error(`day ${NOW.date} HTTP ${dayRes.status}`);
-    state.venues = await venuesRes.json();
+    // The shared lookup file carries the venue map plus the global rooms/genres
+    // lists that the day records index into. Fetched once.
+    const lookups = await venuesRes.json();
+    state.venues = lookups.venues;
+    state.rooms = lookups.rooms || [];
+    state.genres = lookups.genres || [];
+    state.subgenres = lookups.subgenres || [];
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
     state.shows = day
-      .map((entry, i) => adaptShow(entry, state.venues, i))
+      .map((entry, i) => adaptShow(entry, state, i))
       .filter((s) => s.lat != null && s.lng != null);
   } catch (err) {
     console.error("Could not load show data:", err);
@@ -159,20 +165,24 @@ async function loadShows() {
 }
 
 /* Join a minimal per-day record with its venue and expand to the model the map
- * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price,
- * blurb }). A show can perform more than once a day, so the internal id is made
- * unique per performance. */
-function adaptShow(entry, venues, index) {
+ * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price }).
+ * The day record references genre, room and subgenres by index into the global
+ * `state.genres`/`state.rooms`/`state.subgenres` lookup lists (room index -1, or
+ * an unknown room, resolves to no room), and stores free/soldOut as 1/0. A show
+ * can perform more than once a day, so the internal id is made unique per
+ * performance. */
+function adaptShow(entry, { venues, rooms, genres, subgenres }, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
+  const room = rooms[entry.room];
   return {
     id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
     slug: entry.slug,
     title: entry.title,
-    genre: entry.genre,
-    subgenres: entry.subgenres || [],
-    venue: entry.room ? `${venueName} — ${entry.room}` : venueName,
+    genre: genres[entry.genre],
+    subgenres: (entry.subs || []).map((i) => subgenres[i]).filter(Boolean),
+    venue: room ? `${venueName} — ${room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,
     time: entry.start,
@@ -180,7 +190,6 @@ function adaptShow(entry, venues, index) {
     free: !!entry.free,
     price: entry.free ? "Free" : "Paid",
     soldOut: !!entry.soldOut,
-    blurb: entry.blurb || "",
   };
 }
 
@@ -1308,11 +1317,11 @@ function updateTravelLabels() {
 }
 
 /* ---------- Next-show (time + place) constraint ----------
- * A native <input type="time"> for the exact start time, a live count of shows
- * at the chosen time, and a tappable list of those shows. Changing the time
- * *browses* (updates the list + count); tapping a show *commits* it as the next
- * commitment (its venue becomes the destination). A free-text box is a fallback
- * for a non-show place. */
+ * A rolling hour/minute picker over the real start times we have, a live count
+ * of shows at the chosen time, and a tappable list of those shows. Rolling the
+ * wheels *browses* (updates the list + count); tapping a show *commits* it as
+ * the next commitment (its venue becomes the destination). A free-text box is a
+ * fallback for a non-show place. */
 
 /* Distinct start times worth aiming for (>= now + lead), chronological. */
 function availableTimes() {
@@ -1331,20 +1340,52 @@ function nearestTimes(times, target, n) {
     .sort((a, b) => a.localeCompare(b));
 }
 
-/* The next commitment's start time is set with a native <input type="time">,
- * which delegates to the OS picker (drum on iOS, dial on Android) and reads back
- * as "HH:MM". Changing the time browses the shows we know start then; tapping a
- * show commits it. */
+/* The next commitment is set with a scroll-snap time WHEEL (real native momentum
+ * scrolling, like an iOS picker) plus a live list of the shows we know start at
+ * that time. Scrolling a wheel browses; tapping a show commits it. */
+const WHEEL_ITEM_H = 40;
+const WHEEL_MINUTES = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"];
 
-/* Push state.selectedTime into the native time input (init + suggestion jumps). */
-function syncTimeInput() {
-  const el = document.getElementById("constraintTime");
-  if (el && state.selectedTime) el.value = state.selectedTime;
+function populateWheel(el, values) {
+  el._values = values;
+  el.innerHTML =
+    '<div class="wheel-pad"></div>' +
+    values.map((v) => `<div class="wheel-item" data-v="${v}">${v}</div>`).join("") +
+    '<div class="wheel-pad"></div>';
+}
+function wheelIndex(el) {
+  const n = (el._values || []).length;
+  return Math.max(0, Math.min(n - 1, Math.round(el.scrollTop / WHEEL_ITEM_H)));
+}
+function readWheel(el) {
+  return (el._values || [])[wheelIndex(el)];
+}
+function markWheelSel(el) {
+  const idx = wheelIndex(el);
+  el.querySelectorAll(".wheel-item").forEach((it, i) => it.classList.toggle("sel", i === idx));
+}
+function scrollWheelTo(el, v, smooth) {
+  const i = Math.max(0, (el._values || []).indexOf(v));
+  el.scrollTo({ top: i * WHEEL_ITEM_H, behavior: smooth ? "smooth" : "auto" });
+  markWheelSel(el);
+}
+/* Point both wheels at state.selectedTime (used on init and suggestion jumps). */
+function syncWheels(smooth) {
+  const hw = document.getElementById("hourWheel");
+  const mw = document.getElementById("minWheel");
+  if (!hw || !mw || !state.selectedTime) return;
+  const [hh, mm] = state.selectedTime.split(":");
+  scrollWheelTo(hw, hh, smooth);
+  const mmVal = WHEEL_MINUTES.includes(mm)
+    ? mm
+    : WHEEL_MINUTES.reduce((a, b) => (Math.abs(+b - +mm) < Math.abs(+a - +mm) ? b : a), WHEEL_MINUTES[0]);
+  scrollWheelTo(mw, mmVal, smooth);
 }
 
 function buildConstraintPanel() {
-  const timeEl = document.getElementById("constraintTime");
-  if (!timeEl) return;
+  const hw = document.getElementById("hourWheel");
+  const mw = document.getElementById("minWheel");
+  if (!hw || !mw) return;
 
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
@@ -1357,12 +1398,33 @@ function buildConstraintPanel() {
     state.destLabel = "";
   }
   if (!state.selectedTime && times.length) state.selectedTime = times[0];
-  syncTimeInput();
 
-  // Any minute the OS picker offers browses live (value is already "HH:MM").
-  timeEl.oninput = timeEl.onchange = () => {
-    if (timeEl.value && timeEl.value !== state.selectedTime) setConstraintTime(timeEl.value);
-  };
+  // Hours from the first offered hour to end of day; minutes in fives.
+  const hours = [];
+  const h0 = times.length ? parseInt(times[0].slice(0, 2), 10) : 0;
+  for (let h = h0; h <= 23; h++) hours.push(String(h).padStart(2, "0"));
+  populateWheel(hw, hours);
+  populateWheel(mw, WHEEL_MINUTES);
+
+  [hw, mw].forEach((el) => {
+    // Read the settled value ~130 ms after scrolling stops (native snap handles
+    // the visual settle; this reads it and re-runs the query).
+    el.onscroll = () => {
+      markWheelSel(el);
+      clearTimeout(el._settle);
+      el._settle = setTimeout(() => {
+        const t = `${readWheel(hw)}:${readWheel(mw)}`;
+        if (t !== state.selectedTime) setConstraintTime(t); // wheels already positioned
+      }, 130);
+    };
+    el.onkeydown = (e) => {
+      if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+      e.preventDefault();
+      const i = wheelIndex(el) + (e.key === "ArrowDown" ? 1 : -1);
+      const clamped = Math.max(0, Math.min((el._values || []).length - 1, i));
+      el.scrollTo({ top: clamped * WHEEL_ITEM_H, behavior: "smooth" });
+    };
+  });
 
   const list = document.getElementById("showPickList");
   if (list) {
@@ -1398,6 +1460,7 @@ function buildConstraintPanel() {
     };
   }
 
+  syncWheels(false);
   renderConstraintShows(false);
   refreshConstraintValue();
 }
@@ -1471,7 +1534,7 @@ function renderConstraintShows(animate) {
     list.querySelectorAll(".timepick-suggest button").forEach((b) => {
       b.onclick = () => {
         setConstraintTime(b.dataset.time);
-        syncTimeInput();
+        syncWheels(true);
       };
     });
     return;
@@ -1570,8 +1633,11 @@ function openPanel(trigger, panel) {
   panel.removeAttribute("hidden");
   trigger.setAttribute("aria-expanded", "true");
   trigger.closest(".card").classList.add("is-open");
-  // Reflect the current selected time in the native input as the panel opens.
-  if (panel.id === "constraintPanel") syncTimeInput();
+  // The wheels can't be positioned while the panel is display:none (no layout),
+  // so align them to the current time now that the panel is visible.
+  if (panel.id === "constraintPanel") {
+    requestAnimationFrame(() => syncWheels(false));
+  }
   updateCtaVisibility();
 }
 

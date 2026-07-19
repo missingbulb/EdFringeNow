@@ -15,3 +15,7 @@ data/raw_pages/
 !/.claudinite/local_packs/
 /.claudinite-hooks.log
 /.claudinite-hooks.log.tmp
+
+# Python bytecode cache
+__pycache__/
+*.pyc

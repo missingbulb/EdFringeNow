@@ -58,14 +58,24 @@ site serves them):
 | file | purpose | sent to browser |
 |---|---|---|
 | `data/normalized/shows.json` | master: one record per show with all performances; source for regenerating the day files | no |
-| `data/venues.json` | venue lookup keyed by venue code → name, address, postcode, lat, lng | yes (once) |
-| `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue referenced by code) | yes (today's) |
+| `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres }` — venue map (code → name, address, postcode, lat, lng) plus the global rooms/genres string lists | yes (once) |
+| `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre and room referenced by index) | yes (today's) |
 | `data/days/index.json` | available days + per-day counts | yes |
 
 Normalization rules:
 - **Location** = venue code (the "venue number") + the show's room (space); venue
   name/address/coords live only in `venues.json`.
-- **Price** = a `free` boolean (the listing API exposes no amount).
+- **Shared lookups live once, in `venues.json`.** It is a
+  `{ "venues": {...}, "rooms": [...], "genres": [...] }` container: `rooms` and
+  `genres` are the global de-duplicated string lists (~420 rooms, 10 genres).
+  The browser already fetches this file once, so the lists cost one small
+  download rather than being repeated in every day file.
+- **Day files are compact.** Each `2026-08-DD.json` is a plain array of shows; a
+  show's `genre` and `room` are indices into the global `genres`/`rooms` lists
+  (`room` is -1 when the show has no specific room). Binary flags (`free`,
+  `soldOut`) are 1/0, and the `blurb` — kept in the master but never rendered by
+  the site — is dropped. This more than halves the day payload.
+- **Price** = a `free` flag (the listing API exposes no amount).
 - **Coordinates** are geocoded from each venue's UK postcode via
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
   only geocodes new venues. Use `--no-geocode` to skip.
