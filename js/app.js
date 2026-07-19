@@ -149,8 +149,8 @@ async function loadShows() {
     state.venues = await venuesRes.json();
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
-    state.shows = day
-      .map((entry, i) => adaptShow(entry, state.venues, i))
+    state.shows = day.shows
+      .map((entry, i) => adaptShow(entry, state.venues, day, i))
       .filter((s) => s.lat != null && s.lng != null);
   } catch (err) {
     console.error("Could not load show data:", err);
@@ -159,19 +159,22 @@ async function loadShows() {
 }
 
 /* Join a minimal per-day record with its venue and expand to the model the map
- * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price,
- * blurb }). A show can perform more than once a day, so the internal id is made
- * unique per performance. */
-function adaptShow(entry, venues, index) {
+ * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price }).
+ * The per-day file normalizes genre and room to indices into its `genres`/`rooms`
+ * lookup lists (room index -1, or an unknown room, resolves to no room), and
+ * stores free/soldOut as 1/0. A show can perform more than once a day, so the
+ * internal id is made unique per performance. */
+function adaptShow(entry, venues, day, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
+  const room = day.rooms[entry.room];
   return {
     id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
     slug: entry.slug,
     title: entry.title,
-    genre: entry.genre,
-    venue: entry.room ? `${venueName} — ${entry.room}` : venueName,
+    genre: day.genres[entry.genre],
+    venue: room ? `${venueName} — ${room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,
     time: entry.start,
@@ -179,7 +182,6 @@ function adaptShow(entry, venues, index) {
     free: !!entry.free,
     price: entry.free ? "Free" : "Paid",
     soldOut: !!entry.soldOut,
-    blurb: entry.blurb || "",
   };
 }
 
