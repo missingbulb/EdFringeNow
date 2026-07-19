@@ -2,6 +2,10 @@
 
 Tools for scraping show data from [edfringe.com](https://www.edfringe.com).
 
+> For the API itself — endpoints, auth, the full `EventDetail` field surface, and
+> the non-obvious bits (pricing lives behind a separate per-performance query;
+> `ticketStatus` vs the `soldOut` flag) — see **[SCRAPING.md](SCRAPING.md)**.
+
 ## How edfringe.com serves listings
 
 The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page
@@ -58,8 +62,8 @@ site serves them):
 | file | purpose | sent to browser |
 |---|---|---|
 | `data/normalized/shows.json` | master: one record per show with all performances; source for regenerating the day files | no |
-| `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres }` — venue map (code → name, address, postcode, lat, lng) plus the global rooms/genres string lists | yes (once) |
-| `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre and room referenced by index) | yes (today's) |
+| `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
+| `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
 | `data/days/index.json` | available days + per-day counts | yes |
 
 Normalization rules:
@@ -71,10 +75,18 @@ Normalization rules:
   The browser already fetches this file once, so the lists cost one small
   download rather than being repeated in every day file.
 - **Day files are compact.** Each `2026-08-DD.json` is a plain array of shows; a
-  show's `genre` and `room` are indices into the global `genres`/`rooms` lists
-  (`room` is -1 when the show has no specific room). Binary flags (`free`,
-  `soldOut`) are 1/0, and the `blurb` — kept in the master but never rendered by
-  the site — is dropped. This more than halves the day payload.
+  show's `genre`, `room`, `subs` (subgenres) and `ts` (ticket status) are indices
+  into the matching global lists (`room`/`ts` are -1 when unknown). Binary flags
+  (`free`, `soldOut`) are 1/0, and the `blurb` — kept in the master but never
+  rendered by the site — is dropped. This more than halves the day payload.
+- **Ticket status** (`ts` → `ticketStatuses`) is the reliable "can I get a
+  ticket" signal, not the `soldOut` flag (a show can be `soldOut:false` yet have
+  no online allocation). Because it changes through the day, the
+  `Refresh today's ticket status (hourly)` workflow (`refresh_ticket_status.py`)
+  updates just today's `ts` values each hour during the festival — a light paged
+  pass, no per-show queries.
+- **Images**: the master keeps `smallImage` (the API's "Small" variant) for use
+  on cards. Not in the day files yet.
 - **Price** = a `free` flag (the listing API exposes no amount).
 - **Coordinates** are geocoded from each venue's UK postcode via
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh

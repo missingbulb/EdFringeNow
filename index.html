@@ -22,13 +22,24 @@
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Alfa Slab One is used only for the "Sold out!" / "Too late!" ink stamps. -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Inky-edge filter for the "Sold out!" / "Too late!" rubber stamps. Roughens
+       the border + letter edges so they read as a real ink stamp (see .show-stamp). -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="stamp-ink">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="4" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"
+        xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container header-inner">

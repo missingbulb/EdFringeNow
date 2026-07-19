@@ -153,6 +153,7 @@ async function loadShows() {
     state.rooms = lookups.rooms || [];
     state.genres = lookups.genres || [];
     state.subgenres = lookups.subgenres || [];
+    state.ticketStatuses = lookups.ticketStatuses || [];
     const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
     state.shows = day
@@ -166,15 +167,16 @@ async function loadShows() {
 
 /* Join a minimal per-day record with its venue and expand to the model the map
  * and list expect ({ id, title, genre, venue, lat, lng, time, duration, price }).
- * The day record references genre, room and subgenres by index into the global
- * `state.genres`/`state.rooms`/`state.subgenres` lookup lists (room index -1, or
- * an unknown room, resolves to no room), and stores free/soldOut as 1/0. A show
- * can perform more than once a day, so the internal id is made unique per
- * performance. */
-function adaptShow(entry, { venues, rooms, genres, subgenres }, index) {
+ * The day record references genre, room, subgenres and ticket status by index
+ * into the global `state.genres`/`state.rooms`/`state.subgenres`/
+ * `state.ticketStatuses` lookup lists (room index -1, or an unknown room,
+ * resolves to no room), and stores free/soldOut as 1/0. A show can perform more
+ * than once a day, so the internal id is made unique per performance. */
+function adaptShow(entry, { venues, rooms, genres, subgenres, ticketStatuses }, index) {
   const v = venues[entry.venue] || {};
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
   const room = rooms[entry.room];
+  const ticketStatus = (ticketStatuses || [])[entry.ts] || null;
   return {
     id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
@@ -190,8 +192,16 @@ function adaptShow(entry, { venues, rooms, genres, subgenres }, index) {
     free: !!entry.free,
     price: entry.free ? "Free" : "Paid",
     soldOut: !!entry.soldOut,
+    ticketStatus,
+    // Can you actually get a ticket online? ticketStatus is the reliable signal
+    // (the soldOut flag isn't — see scraper/SCRAPING.md). Unknown ⇒ assume yes.
+    available: !NO_TICKETS_STATUSES.has(ticketStatus),
   };
 }
+
+/* Ticket statuses that mean "no ticket available online" → SOLD OUT stamp.
+ * Anything else (incl. unknown) is treated as available. */
+const NO_TICKETS_STATUSES = new Set(["SOLD_OUT", "NO_ALLOCATION_CONTACT_VENUE"]);
 
 /* ---------- Map ---------- */
 function initMap() {
@@ -782,10 +792,11 @@ function renderShowList() {
       grid.appendChild(head);
     }
     const item = document.createElement("article");
-    item.className = `show-item show-item--${status}`;
+    item.className = `show-item show-item--${status}${show.available ? "" : " show-item--soldout"}`;
     item.tabIndex = 0;
     item.setAttribute("role", "button");
     item.innerHTML = `
+      ${showStamp(show, status)}
       <span class="si-main">
         <span class="show-genre">${escapeHtml(show.genre)}</span>
         <span class="show-name">${escapeHtml(show.title)}</span>
@@ -1158,7 +1169,8 @@ function ticketUrl(show) {
  * sold-out shows say so. */
 function planBuy(show) {
   if (!show || show.free) return "";
-  if (show.soldOut) return `<span class="plan-soldout">Sold out</span>`;
+  // `available` (from ticketStatus) is the reliable signal, not the soldOut flag.
+  if (show.available === false) return `<span class="plan-soldout">Sold out</span>`;
   const url = ticketUrl(show) || "#";
   return `<a class="plan-buy-inline" href="${escapeHtml(url)}" target="_blank" rel="noopener"
             title="Buy ahead on edfringe.com — skips the box-office queue (~5 min)"
@@ -1830,4 +1842,13 @@ function subgenreTags(show) {
   return `<span class="show-subs">${subs
     .map((s) => `<span class="show-sub">${escapeHtml(s)}</span>`)
     .join("")}</span>`;
+}
+
+/* A diagonal stamp for a card: "SOLD OUT!" when no ticket is available online,
+ * else "TOO LATE!" for a show you can no longer reach in time (status "tight").
+ * Both are display-only — the card stays selectable. */
+function showStamp(show, status) {
+  if (!show.available) return '<span class="show-stamp show-stamp--soldout">Sold out!</span>';
+  if (status === "tight") return '<span class="show-stamp show-stamp--late">Too late!</span>';
+  return "";
 }

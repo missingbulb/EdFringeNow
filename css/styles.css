@@ -1013,14 +1013,48 @@ a { color: inherit; }
 .sort-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .shows-grid { display: flex; flex-direction: column; gap: 8px; grid-template-columns: none; }
 .show-item {
+  position: relative;
   display: flex; align-items: center; gap: 12px; padding: 12px 14px;
   border: 1px solid var(--line); border-radius: 12px; background: var(--paper);
   cursor: pointer; transition: border-color 0.12s ease;
 }
 .show-item:hover { border-color: #cfc9bb; transform: none; }
 .show-item--tight { opacity: 0.6; }
+.show-item--soldout { opacity: 0.6; }
 .show-item--leg { border-color: var(--ok); border-width: 2px; }
 .show-item--selected { border-color: var(--red); border-width: 2px; box-shadow: none; }
+
+/* Ink-stamp overlay on cards that are sold out / no longer reachable — a bold
+ * boxed word, roughened at the edges (SVG #stamp-ink filter) and eaten away in
+ * patches (a turbulence mask) so it reads like a real rubber stamp. The card
+ * stays clickable — the stamp ignores pointer events. */
+.show-stamp {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+  z-index: 3; pointer-events: none;
+  /* Heavy slab display face — the chunky letterform is what reads as a stamp
+   * (loaded via Google Fonts in index.html). Alfa Slab One is already bold. */
+  font-family: "Alfa Slab One", Rockwell, "Roboto Slab", var(--serif), serif;
+  font-weight: 400; font-size: 1.1rem; line-height: 1;
+  letter-spacing: 0.01em; text-transform: uppercase; white-space: nowrap;
+  padding: 6px 15px 3px;
+  border: 3px solid currentColor; border-radius: 4px;
+  background: transparent;
+  opacity: 0.85;
+  /* Straight-ish edges (small displacement) — the worn look comes from the mask,
+   * not from warping the box. */
+  filter: url(#stamp-ink);
+  /* Dry-ink erosion: a FINE, fairly uniform fractal-noise speckle eats little
+   * flecks out of the letters and border everywhere (not big blotches). */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.34'%20numOctaves='3'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncG%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncB%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='120'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.34'%20numOctaves='3'%20seed='7'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncG%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncB%20type='gamma'%20amplitude='1.9'%20exponent='0.55'%20offset='-0.28'/%3E%3CfeFuncA%20type='linear'%20slope='0'%20intercept='1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23g)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-position: center; mask-position: center;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+.show-stamp--soldout { color: #e2726b; }
+.show-stamp--late { color: #d09a5b; }
+.show-item--selected .show-stamp { opacity: 0.5; } /* recede when the row is the active pick */
 .si-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .show-genre { align-self: flex-start; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--red); margin: 0 0 2px; }
 .show-name { font-family: var(--serif); font-weight: 600; font-size: 1rem; margin: 0 0 2px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
