@@ -171,6 +171,7 @@ function adaptShow(entry, venues, index) {
     slug: entry.slug,
     title: entry.title,
     genre: entry.genre,
+    subgenres: entry.subgenres || [],
     venue: entry.room ? `${venueName} — ${entry.room}` : venueName,
     lat: v.lat ?? null,
     lng: v.lng ?? null,
@@ -780,6 +781,7 @@ function renderShowList() {
         <span class="show-genre">${escapeHtml(show.genre)}</span>
         <span class="show-name">${escapeHtml(show.title)}</span>
         <span class="show-meta">${escapeHtml(show.venue)}</span>
+        ${subgenreTags(show)}
       </span>
       <span class="si-side">
         <span class="si-time">${escapeHtml(show.time)}</span><br />
@@ -896,7 +898,7 @@ function renderJourneyStrip() {
         legFits
           ? planSlack(timeToMinutes(leg.time) - arriveLeg)
           : '<span class="plan-slack wontfit">You\'ll be late</span>',
-        planBuy(leg)
+        `${subgenreTags(leg)}${planBuy(leg)}`
       )
     );
     if (constraint) {
@@ -1485,6 +1487,7 @@ function renderConstraintShows(animate) {
         <span class="sp-title">${escapeHtml(s.title)}</span>
         <span class="sp-venue">${escapeHtml(s.venue)}</span>
         <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
+        ${subgenreTags(s)}
       </span>
     </button>`
     )
@@ -1750,4 +1753,15 @@ function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
   );
+}
+
+/* Subgenre tags for a show, e.g. Stand-up · Improv. These are finer descriptors
+ * than the ten headline genres and are display-only (not a filter). Returns ""
+ * for the ~2% of shows the festival tags with none, so callers can drop the row. */
+function subgenreTags(show) {
+  const subs = show.subgenres || [];
+  if (!subs.length) return "";
+  return `<span class="show-subs">${subs
+    .map((s) => `<span class="show-sub">${escapeHtml(s)}</span>`)
+    .join("")}</span>`;
 }

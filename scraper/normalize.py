@@ -104,6 +104,30 @@ def map_genre(value: str | None, label: str | None) -> str:
     return (label or value or "Events").strip()
 
 
+def subgenre_labels(event: dict) -> list[str]:
+    """A show's subgenres as display labels (e.g. ["Stand-up", "Improv"]).
+
+    The API gives both `subGenre` (a comma-joined human string) and `subgenres`
+    (the enum list). Prefer the human string — it carries the festival's own
+    casing ("Sci-Fi", "LGBTQ+", "Artist(s) of colour") that title-casing the
+    enum can't reproduce — and fall back to humanising the enum. About 2% of
+    shows carry no subgenre, so the list may be empty.
+    """
+    raw = event.get("subGenre")
+    if raw:
+        labels = [s.strip() for s in raw.split(",")]
+    else:
+        labels = [v.replace("_", " ").title() for v in event.get("subgenres") or []]
+    seen: set[str] = set()
+    out: list[str] = []
+    for label in labels:
+        key = label.lower()
+        if label and key not in seen:
+            seen.add(key)
+            out.append(label)
+    return out
+
+
 def short_blurb(description: str | None) -> str:
     """A compact one-line blurb: strip markdown, collapse space, truncate."""
     if not description:
@@ -171,6 +195,7 @@ def normalize_event(event: dict) -> dict:
         "title": event.get("title"),
         "slug": event.get("slug"),
         "genre": map_genre(event.get("genre"), event.get("genre")),
+        "subgenres": subgenre_labels(event),
         "company": event.get("presentedBy") or None,
         "duration": duration,
         "ageRestriction": event.get("ageRestriction") or None,
@@ -265,6 +290,7 @@ def build_day_files(master: list[dict]) -> dict[str, list]:
                 "id": show["id"],
                 "title": show["title"],
                 "genre": show["genre"],
+                "subgenres": show["subgenres"],
                 "venue": show["venue"],
                 "room": show["room"],
                 "start": p["start"],
@@ -360,6 +386,7 @@ def run(args) -> int:
 # --------------------------------------------------------------------------- #
 FIXTURE_EVENT = {
     "id": 103540, "title": "10 Things They Hate About Me", "genre": "COMEDY",
+    "subGenre": "Stand-up,Character Comedy", "subgenres": ["STAND_UP", "CHARACTER_COMEDY"],
     "duration": "60", "boxOfficeRef": "202610THING_CLZ", "cmsRef": "202610THING",
     "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
     "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
@@ -382,6 +409,7 @@ def selftest() -> int:
     rec = normalize_event(FIXTURE_EVENT)
     assert rec["id"] == "202610THING", rec["id"]
     assert rec["genre"] == "Comedy", rec["genre"]
+    assert rec["subgenres"] == ["Stand-up", "Character Comedy"], rec["subgenres"]
     assert rec["venue"] == "33" and rec["room"] == "Beneath", rec
     assert rec["free"] is False
     assert rec["duration"] == 60
@@ -393,6 +421,7 @@ def selftest() -> int:
     days = build_day_files([rec])
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
     d6 = days["2026-08-06"][0]
+    assert d6["subgenres"] == ["Stand-up", "Character Comedy"], d6["subgenres"]
     assert d6["venue"] == "33" and d6["room"] == "Beneath"
     assert "venueName" not in d6 and "performances" not in d6, "day record must be minimal"
     assert d6["start"] == "11:45" and d6["soldOut"] is False
@@ -404,6 +433,14 @@ def selftest() -> int:
     assert is_free({"priceType": ["FREE", "PAID"]}) is False
     assert is_free({"priceType": "PAID"}) is False
     assert is_free({"freeTicketed": True}) is True
+
+    # Subgenres: prefer the human string; fall back to humanising the enum;
+    # de-dupe case-insensitively; empty when neither is present.
+    assert subgenre_labels({"subGenre": "Stand-up,Improv"}) == ["Stand-up", "Improv"]
+    assert subgenre_labels({"subgenres": ["NEW_WRITING", "DARK_COMEDY"]}) == ["New Writing", "Dark Comedy"]
+    assert subgenre_labels({"subGenre": "Comedy,comedy"}) == ["Comedy"]
+    assert subgenre_labels({"subGenre": ""}) == []
+    assert subgenre_labels({}) == []
 
     assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
     assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"

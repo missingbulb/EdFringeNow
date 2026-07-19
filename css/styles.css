@@ -874,6 +874,20 @@ a { color: inherit; }
 @keyframes pickin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .picklist-empty { font-size: 0.85rem; color: var(--muted); margin: 4px 0; }
 
+/* Subgenre tags — finer, display-only descriptors shown under the headline
+ * genre on show rows, the picker and the plan. Wrap; never a filter. */
+.show-subs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.show-sub {
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(108, 76, 241, 0.09);
+  color: var(--red);
+  white-space: nowrap;
+}
+
 /* --- Filters as compact chips (must fit one line at 375px) --- */
 .filters-row { display: flex; align-items: center; gap: 6px; margin: 10px 0 6px; flex-wrap: nowrap; }
 .filters-label { flex: 0 0 auto; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8c958c; }
