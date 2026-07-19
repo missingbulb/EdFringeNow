@@ -893,7 +893,10 @@ a { color: inherit; }
 .filters-label { flex: 0 0 auto; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8c958c; }
 .filter-chip { position: relative; min-width: 0; border: none; box-shadow: none; background: transparent; border-radius: 999px; }
 .filter-chip:hover { transform: none; box-shadow: none; }
-.filter-chip.is-open { z-index: 1500; }
+/* Filter chips stay flat when open too — without this override the
+   .card.is-open lift (translateY(-3px)) only applies once the pointer
+   leaves, so the chip visibly jumps up as the mouse moves away. */
+.filter-chip.is-open { z-index: 1500; transform: none; box-shadow: none; }
 .filter-chip .card-trigger {
   display: inline-flex; align-items: center; gap: 5px; width: auto; min-width: 0;
   background: #fff; border: 1px solid var(--line); border-radius: 999px;
