@@ -82,13 +82,9 @@
         <div class="card-panel" id="constraintPanel" role="menu" hidden>
           <p class="panel-title">Your next commitment <strong id="constraintDateLabel">today</strong></p>
 
-          <p class="panel-field-label">When does it start?</p>
-          <div class="wheel-time" role="group" aria-label="Start time">
-            <div class="wheel" id="hourWheel" data-unit="hour" tabindex="0" role="spinbutton" aria-label="Hour"></div>
-            <span class="wheel-sep">:</span>
-            <div class="wheel" id="minWheel" data-unit="min" tabindex="0" role="spinbutton" aria-label="Minute"></div>
-            <div class="wheel-band" aria-hidden="true"></div>
-          </div>
+          <label class="panel-field-label" for="constraintTime">When does it start?</label>
+          <input type="time" id="constraintTime" class="time-input" step="300"
+                 value="18:00" aria-label="Start time" aria-describedby="constraintCountLab" />
           <p class="timepick-count">
             <span class="countnum" id="constraintCount">—</span>
             <span id="constraintCountLab">shows start then</span>
