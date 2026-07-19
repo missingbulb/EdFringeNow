@@ -822,35 +822,35 @@ a { color: inherit; }
 .has-plan .cta-card { margin: 0; }
 
 /* --- Constraint picker: a standard <input type=time> + a show list --- */
-/* Native start-time input — delegates to the OS picker (drum on iOS, dial on
- * Android) and reads back as "HH:MM". Reuses the field tokens (font, 2px ink
- * border, radius, gold focus ring) but sized up and centred so the time reads
- * as the headline choice it is. */
-.time-input {
-  width: 100%;
-  box-sizing: border-box;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 2rem;
-  text-align: center;
-  color: var(--ink);
-  padding: 12px 12px;
-  margin: 4px 0 2px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  background: var(--paper);
-  cursor: pointer;
+/* Scroll-snap time wheel (real native momentum scrolling, like an iOS picker). */
+.wheel-time {
+  position: relative; display: flex; align-items: stretch; justify-content: center;
+  gap: 4px; height: 200px; margin: 4px 0 2px;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--paper);
 }
-.time-input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-/* Centre the editable digits and give the OS picker button a touch of accent. */
-.time-input::-webkit-datetime-edit { text-align: center; }
-.time-input::-webkit-datetime-edit-fields-wrapper { padding: 0; }
-.time-input::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  opacity: 0.65;
-  filter: saturate(0) brightness(0.35);
+.wheel {
+  position: relative; z-index: 1; height: 200px; width: 88px; overflow-y: scroll;
+  scroll-snap-type: y mandatory; text-align: center; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 32%, #000 68%, transparent);
+          mask-image: linear-gradient(to bottom, transparent, #000 32%, #000 68%, transparent);
 }
-.time-input::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+.wheel::-webkit-scrollbar { display: none; }
+.wheel:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 10px; }
+.wheel-item {
+  height: 40px; line-height: 40px; scroll-snap-align: center;
+  font-family: var(--serif); font-weight: 600; font-size: 1.55rem; color: #b3bab2;
+  transition: color 0.12s ease;
+}
+.wheel-item.sel { color: var(--ink); }
+.wheel-pad { height: 80px; }
+.wheel-sep { align-self: center; font-family: var(--serif); font-weight: 700; font-size: 1.55rem; color: var(--ink); }
+/* The highlighted centre band. */
+.wheel-band {
+  position: absolute; left: 8px; right: 8px; top: 80px; height: 40px; z-index: 0;
+  border-radius: 10px; background: rgba(108, 76, 241, 0.10);
+  border: 1px solid rgba(108, 76, 241, 0.28); pointer-events: none;
+}
 .timepick-count { text-align: center; margin: 10px 0 10px; font-size: 0.82rem; color: var(--muted); }
 .timepick-count .countnum { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; color: var(--red-dark); display: inline-block; vertical-align: -2px; }
 .timepick-count .countnum.bump { animation: countbump 0.4s ease; }
