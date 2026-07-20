@@ -1,6 +1,12 @@
 {
   "packs": [
     "basics",
+    {
+      "id": "barriers",
+      "via": [
+        "basics"
+      ]
+    },
     "github-actions",
     "html",
     "tidy-repo",
