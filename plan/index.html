@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fringe Planner · EdFringeNow</title>
+  <meta name="description" content="Turn your Edinburgh Fringe favourites into a plan: upload your favourites CSV, then scrub across August to see when — and whether — you can catch them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="plan.css" />
+</head>
+<body>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="logo">EdFringe<span class="logo-now">Now</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="../" class="nav-link">Home</a>
+        <a href="./" class="nav-link is-active">Planner</a>
+      </nav>
+      <span class="header-hint">Edinburgh Fringe · 1&ndash;25 Aug 2026</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <span class="page-kicker">Fringe Planner</span>
+      <h1 class="page-title">Turn your favourites into a plan.</h1>
+      <p class="page-sub">Bring the shows you've hearted on edfringe.com, then scrub across August to see
+        when — and whether — you can actually catch them.</p>
+    </div>
+
+    <!-- ===================== Loading state ===================== -->
+    <div id="loadingState" class="state-panel" role="status" aria-live="polite">
+      <div class="state-spinner" aria-hidden="true"></div>
+      <p class="state-title">Loading this year's show data&hellip;</p>
+      <p class="state-sub">Fetching the full Fringe programme (a few MB) — just a moment.</p>
+    </div>
+
+    <!-- ===================== Error state ===================== -->
+    <div id="errorState" class="state-panel state-error" hidden role="alert">
+      <span class="state-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9" /><path d="M12 8v5" /><path d="M12 16.5v.01" />
+        </svg>
+      </span>
+      <p class="state-title">We couldn't load the show data.</p>
+      <p class="state-sub" id="errorDetail">Check your connection and try again.</p>
+      <button type="button" class="btn" id="retryBtn">Try again</button>
+    </div>
+
+    <!-- ===================== SCREEN 1 — Input ===================== -->
+    <section class="panel intake" id="screen1" aria-labelledby="intakeTitle" hidden>
+      <p class="step-kicker">Step 1 of 2</p>
+      <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
+      <p class="intake-sub">
+        Export the shows you've hearted:
+        <span class="crumbs">log in to edfringe.com<span class="crumb-sep">→</span>your favourites<span class="crumb-sep">→</span>Export CSV</span>
+        — then drop the file here.
+      </p>
+
+      <label class="dropzone" for="csvInput" id="dropzone">
+        <span class="dz-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 15V4" /><path d="m7 9 5-5 5 5" /><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
+          </svg>
+        </span>
+        <span class="dz-line1">Drag your favourites CSV here</span>
+        <span class="dz-line2">…or pick the file from your computer</span>
+        <span class="btn">Upload favourites</span>
+        <input type="file" id="csvInput" accept=".csv,.txt" hidden />
+      </label>
+      <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
+
+      <p class="statecap" id="summaryCap" hidden>Your favourites</p>
+      <div class="upload-summary" role="status" id="uploadSummary" hidden>
+        <span class="us-tick" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7" /></svg>
+        </span>
+        <div class="us-body">
+          <div class="us-main" id="usMain"></div>
+          <div class="us-sub" id="usSub"></div>
+        </div>
+        <span class="us-file" id="usFile"></span>
+      </div>
+      <ul class="missing-list" id="missingList" hidden></ul>
+
+      <div class="continue-row" id="continueRow" hidden>
+        <span class="continue-note">Nothing is uploaded to a server — your list stays in this browser.</span>
+        <button class="btn" type="button" id="continueBtn">See your calendar
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+
+      <!-- TODO: these controls are collapsed placeholders for a future milestone —
+           genre chips, minimum-gap, and trip-dates are not wired to the engine yet.
+           Do not fake behaviour here; wire them up once the engine/UI contract for
+           them is defined. -->
+      <details class="more">
+        <summary>
+          More settings <span class="more-caret" aria-hidden="true">▾</span>
+          <span class="more-hint">Optional — the defaults work well</span>
+        </summary>
+        <div class="more-grid">
+          <div class="chips-wrap">
+            <span class="more-field-label">Only these genres</span>
+            <div class="chips">
+              <span class="chip is-on">Comedy</span>
+              <span class="chip is-on">Theatre</span>
+              <span class="chip is-on">Cabaret &amp; Variety</span>
+              <span class="chip">Musicals &amp; Opera</span>
+              <span class="chip">Children's Shows</span>
+              <span class="chip">Spoken Word</span>
+            </div>
+          </div>
+          <div>
+            <span class="more-field-label">Minimum gap between shows</span>
+            <div class="faux-input"><span>30 minutes</span><span class="fi-caret">▾</span></div>
+          </div>
+          <div>
+            <span class="more-field-label">Trip dates (if you know them)</span>
+            <div class="faux-input"><span>Sat 15 Aug — Sat 22 Aug</span><span class="fi-caret">▾</span></div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ===================== SCREEN 2 — Availability calendar ===================== -->
+    <section class="panel cal-card" id="screen2" aria-labelledby="calTitle" hidden>
+      <div class="cal-top">
+        <div>
+          <p class="step-kicker">Step 2 of 2</p>
+          <h2 class="cal-title" id="calTitle">When are your shows catchable?</h2>
+          <p class="cal-sub">Each row is one of your favourites; the marks are dates with tickets still
+            available. Drag the <strong>start</strong> and <strong>end</strong> flags to frame your visit.</p>
+        </div>
+        <div class="hero-count" aria-live="polite">
+          <div class="hc-num"><span id="hcIn">0</span> <span class="hc-of">/ <span id="hcAll">0</span></span></div>
+          <div class="hc-label">shows catchable in your window</div>
+          <div class="hc-detail" id="hcDetail"></div>
+        </div>
+      </div>
+
+      <div class="cal-toolbar">
+        <div class="legend" aria-hidden="true">
+          <span class="lg lg-av"><i></i>Tickets available</span>
+          <span class="lg lg-sold"><i></i>Sold out</span>
+          <span class="lg lg-dim"><i></i>Outside your window</span>
+        </div>
+        <div class="tod">
+          <div class="tod-label">
+            <span>Show start time</span>
+            <span class="tod-value"><span id="todFrom">08:00</span> – <span id="todTo">24:00</span></span>
+          </div>
+          <div class="tslider" id="tslider">
+            <div class="ts-track"></div>
+            <div class="ts-fill" id="tsFill"></div>
+            <div class="ts-handle" id="tsH0" role="slider" tabindex="0" aria-label="Earliest show start time"
+                 aria-valuemin="480" aria-valuemax="1440" aria-valuenow="480" aria-valuetext="08:00">
+              <span class="ts-bubble" id="tsB0">08:00</span>
+            </div>
+            <div class="ts-handle" id="tsH1" role="slider" tabindex="0" aria-label="Latest show start time"
+                 aria-valuemin="480" aria-valuemax="1440" aria-valuenow="1440" aria-valuetext="24:00">
+              <span class="ts-bubble" id="tsB1">24:00</span>
+            </div>
+          </div>
+          <div class="ts-scale" aria-hidden="true">
+            <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span><span>24:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cal-wrap" id="calWrap">
+        <div class="cal-inner" id="calInner">
+          <!-- Post-festival zone (26–31 Aug) shaded by JS -->
+          <div class="festend" id="festEnd" title="The Fringe's core run ends Mon 25 Aug"></div>
+
+          <div class="cal-row cal-head">
+            <div class="cal-head-left">Your favourites</div>
+            <div class="days" id="dayHead"><!-- day columns (JS) --></div>
+            <div class="cal-head-right">In your window</div>
+          </div>
+
+          <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
+
+          <!-- Date-window overlay: dim panels + band + start/end handles -->
+          <div class="win" id="win">
+            <div class="win-dim" id="dimL"></div>
+            <div class="win-dim" id="dimR"></div>
+            <div class="win-band" id="band" title="Drag to move your date window"></div>
+            <div class="win-handle win-handle--start" id="hStart" role="slider" tabindex="0" aria-label="Window start date"
+                 aria-valuemin="1" aria-valuemax="31" aria-valuenow="7" aria-valuetext="7 August">
+              <span class="win-flag"><span class="grip" aria-hidden="true"><i></i><i></i></span>Start · <span id="flagStart">7 Aug</span></span>
+            </div>
+            <div class="win-handle win-handle--end" id="hEnd" role="slider" tabindex="0" aria-label="Window end date"
+                 aria-valuemin="1" aria-valuemax="31" aria-valuenow="24" aria-valuetext="24 August">
+              <span class="win-flag">End · <span id="flagEnd">24 Aug</span><span class="grip" aria-hidden="true"><i></i><i></i></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cal-foot">
+        <span>Dimmed rows have nothing you can catch — widen the dates or the start times to bring them back.</span>
+        <span>August 2026 · the Fringe's core run ends Mon 25 Aug</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="../" class="logo">EdFringe<span class="logo-now">Now</span></a>
+      <span class="footer-copy">Fringe Planner · © 2026 Missing Bulb</span>
+    </div>
+  </footer>
+
+  <script type="module" src="plan.js"></script>
+</body>
+</html>
