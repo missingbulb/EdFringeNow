@@ -3,13 +3,7 @@
 # data/days IS committed; only the bulky raw cache is ignored.
 data/raw_pages/
 
-# Claudinite: .claudinite/* stays ignored wholesale with re-includes — only shared/
-# (the vendored canon, refreshed by the nightly maintenance) and local_packs/ (the
-# repo's own packs) are tracked, so legacy flat leftovers or a stale environment's
-# stray sync stay invisible.
-/.claudinite/*
-!/.claudinite/shared/
-!/.claudinite/local_packs/
+# Claudinite hook logs (the vendored corpus under .claudinite/shared/ is ordinary tracked content)
 /.claudinite-hooks.log
 /.claudinite-hooks.log.tmp
 

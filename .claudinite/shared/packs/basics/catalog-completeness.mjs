@@ -1,4 +1,4 @@
-import { finding } from '../../checks/lib/findings.mjs';
+import { finding } from '../../engine/checks_helpers/findings.mjs';
 
 // Corpus-integrity rule: the two catalog READMEs must list every collection
 // member on disk, so a hand-maintained index can't silently drift behind a
@@ -8,10 +8,17 @@ import { finding } from '../../checks/lib/findings.mjs';
 //
 // Membership token per catalog matches that catalog's own listing convention:
 // every pack row links `<name>/README.md`; every skill row is the backticked
-// `<name>`. A missing member means its token is absent from the README.
+// `<name>`. A missing member means its token is absent from the README. Skills
+// live inside their owning pack (`<pack>/skills/<skill>/` — canon packs and the
+// canon home's own local packs alike), so the skill catalog walks both trees.
 const CATALOGS = [
   { kind: 'pack', member: /^packs\/([^/]+)\/pack\.mjs$/, readme: 'packs/README.md', token: (n) => `${n}/README.md` },
-  { kind: 'skill', member: /^skills\/([^/]+)\/SKILL\.md$/, readme: 'skills/README.md', token: (n) => `\`${n}\`` },
+  {
+    kind: 'skill',
+    member: /^(?:packs|\.claudinite\/local_packs)\/[^/]+\/skills\/([^/]+)\/SKILL\.md$/,
+    readme: 'skills/README.md',
+    token: (n) => `\`${n}\``,
+  },
 ];
 
 const rule = {
@@ -22,7 +29,7 @@ const rule = {
   why: 'a hand-maintained catalog that omits a real pack or skill misroutes readers and hides capability; the check keeps the index honest against the tree',
 
   run(ctx) {
-    if (!ctx.tracked.includes('packs/registry.mjs') || !ctx.tracked.includes('skills/registry.mjs')) {
+    if (!ctx.tracked.includes('engine/pack_loader/registry.mjs')) {
       return [];
     }
     const out = [];
