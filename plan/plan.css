@@ -17,6 +17,18 @@
   --ok-text: #047857;
   --ok-bg: #e6f7ee;
   --warn: #ef4444;
+  /* Performance-date availability palette — taken from edfringe.com's own
+     ticket day-picker legend so the calendar reads the same as the official
+     site. Violet stays reserved for the date-window instrument + chrome. */
+  --fr-avail: #2ac9de;    /* tickets available */
+  --fr-2for1: #ffce00;    /* 2-for-1 */
+  --fr-preview: #3438ff;  /* preview show */
+  --fr-free: #00bf57;     /* free (ticketed / non-ticketed) */
+  --fr-event: #8c4fd9;    /* event-specific */
+  --fr-noalloc: #ef3934;  /* no allocation — contact venue */
+  --fr-sold-bg: #e6e9ef;  /* sold out — greyed, as the official picker disables it */
+  --fr-sold-line: #c6cdda;
+  --fr-ink: #00243d;      /* edfringe.com ink */
   --shadow-soft: 0 12px 30px rgba(16, 24, 40, 0.08);
   --maxw: 1120px;
   --radius: 16px;
@@ -261,55 +273,28 @@ a { color: inherit; }
 .hc-label { font-size: 0.84rem; font-weight: 600; color: var(--ink); margin-top: 2px; }
 .hc-detail { font-size: 0.78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-/* Toolbar: legend on the left, time-of-day range on the right */
+/* Toolbar: the availability legend. Colours mirror edfringe.com's own
+   day-picker legend (see plan.js segClass / the --fr-* tokens below). */
 .cal-toolbar {
-  display: flex; align-items: flex-end; justify-content: space-between; gap: 28px;
+  display: flex; align-items: center; gap: 14px 20px;
   margin: 22px 0 6px; padding-top: 18px; border-top: 1px solid var(--line);
   flex-wrap: wrap;
 }
-.legend { display: flex; gap: 18px; flex-wrap: wrap; padding-bottom: 10px; }
-.lg { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--muted); }
-.lg i { width: 16px; height: 10px; border-radius: 3px; display: block; }
-.lg-av i { background: var(--violet); }
-.lg-sold i { background: transparent; border: 1.5px solid #c6cdda; }
-.lg-dim i { background: var(--violet); opacity: 0.22; }
-
-/* Time-of-day dual-handle slider */
-.tod { flex: 0 0 400px; max-width: 100%; }
-.tod-label {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
-}
-.tod-value { font-weight: 700; letter-spacing: 0; text-transform: none; font-size: 0.82rem; color: var(--ink); font-variant-numeric: tabular-nums; }
-.tslider { position: relative; height: 20px; }
-.ts-track {
-  position: absolute; left: 0; right: 0; top: 50%; height: 6px;
-  transform: translateY(-50%); border-radius: 999px; background: #e7e9f0;
-}
-.ts-fill {
-  position: absolute; top: 50%; height: 6px; transform: translateY(-50%);
-  border-radius: 999px; background: var(--violet);
-}
-.ts-handle {
-  position: absolute; top: 50%; width: 20px; height: 20px;
-  transform: translate(-50%, -50%); border-radius: 50%;
-  background: #fff; border: 2px solid var(--violet);
-  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.18);
-  cursor: grab; touch-action: none; z-index: 2;
-}
-.ts-handle:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.12); }
-.ts-handle:focus-visible { outline: 3px solid rgba(108, 76, 241, 0.45); outline-offset: 2px; }
-.ts-bubble {
-  position: absolute; bottom: 24px; transform: translateX(-50%);
-  font-size: 0.72rem; font-weight: 700; color: var(--violet-dark);
-  background: rgba(108, 76, 241, 0.09); border-radius: 6px; padding: 2px 7px;
-  white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none;
-}
-.ts-scale {
-  display: flex; justify-content: space-between; margin-top: 8px;
-  font-size: 0.66rem; color: #98a2b3; font-variant-numeric: tabular-nums;
-}
+.legend { display: flex; gap: 10px 16px; flex-wrap: wrap; }
+.lg { display: inline-flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
+.lg i { width: 14px; height: 11px; border-radius: 3px; display: block; }
+.lg-avail i   { background: var(--fr-avail); }
+.lg-2for1 i   { background: var(--fr-2for1); }
+.lg-preview i { background: var(--fr-preview); }
+.lg-free i    { background: var(--fr-free); }
+.lg-event i   { background: var(--fr-event); }
+.lg-noalloc i { background: var(--fr-noalloc); }
+.lg-sold i    { background: var(--fr-sold-bg); box-shadow: inset 0 0 0 1.5px var(--fr-sold-line); }
+/* A miniature two-segment cell, matching the split used in the calendar. */
+.lg-multi i.multi { display: inline-flex; gap: 1.5px; background: none; width: 16px; }
+.lg-multi i.multi b { flex: 1; border-radius: 2px; }
+.lg-multi i.multi b:first-child { background: var(--fr-avail); }
+.lg-multi i.multi b:last-child { background: var(--fr-2for1); }
 
 /* --- The calendar canvas --- */
 /* .cal-wrap is the scroll container: day-header stays sticky at its top while
@@ -322,14 +307,14 @@ a { color: inherit; }
 }
 .cal-inner { position: relative; padding-top: 40px; /* room for the handle flags */ }
 
-.cal-row { display: grid; grid-template-columns: 248px 1fr 118px; gap: 0 14px; align-items: center; }
+.cal-row { display: grid; grid-template-columns: 190px 1fr 52px; gap: 0 14px; align-items: center; }
 
 .cal-head {
   border-bottom: 1px solid var(--line); padding-bottom: 6px;
   position: sticky; top: 0; z-index: 4; background: var(--paper);
 }
 .cal-head-left { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
-.cal-head-right { font-size: 0.68rem; font-weight: 600; color: #98a2b3; text-align: left; }
+.cal-head-right { font-size: 0.62rem; font-weight: 600; color: #98a2b3; text-align: center; line-height: 1.15; }
 .days { display: grid; grid-template-columns: repeat(31, 1fr); gap: 3px; }
 .day-col { text-align: center; line-height: 1.15; }
 .day-dow { display: block; font-size: 0.56rem; font-weight: 600; color: #b0b7c3; }
@@ -338,28 +323,37 @@ a { color: inherit; }
 .day-col.post .day-num, .day-col.post .day-dow { color: #cfd4de; }
 
 .lanes { position: relative; z-index: 1; }
-.lane { min-height: 52px; padding: 5px 0; border-bottom: 1px solid #f1f2f6; }
+/* One tight single-line row per show — this screen is an overview of the shows
+   you want, so each row is deliberately compact (title only, no meta line). */
+.lane { min-height: 30px; padding: 3px 0; border-bottom: 1px solid #f1f2f6; }
 .lane:last-child { border-bottom: none; }
 .lane-label { min-width: 0; }
 .lane-title {
-  font-family: var(--display); font-weight: 600; font-size: 0.92rem; line-height: 1.2;
+  font-family: var(--display); font-weight: 600; font-size: 0.82rem; line-height: 1.25;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.lane-meta {
-  font-size: 0.72rem; color: var(--muted); line-height: 1.3;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.lane-meta .lm-time { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 .lane-track { display: grid; grid-template-columns: repeat(31, 1fr); gap: 3px; align-items: center; height: 100%; }
-.cell { height: 12px; border-radius: 4px; }
-.cell-av { background: var(--violet); }
-.cell-sold { background: transparent; border: 1.5px solid #c6cdda; }
-.lane-status { font-size: 0.74rem; line-height: 1.3; }
-.lane-status .st-ok { font-weight: 700; color: var(--ok-text); }
-.lane-status .st-why { color: var(--muted); }
-/* A show with nothing catchable recedes as a whole */
-.lane--out .lane-title, .lane--out .lane-meta { opacity: 0.42; }
-.lane--out .cell-av { background: #c4c9d6; }
+
+/* A day cell holds one coloured segment per performance; two performances on a
+   day render as two side-by-side segments — the split IS the "two shows that
+   day" cue. Single-performance days read as one solid bar. */
+.cell { height: 12px; border-radius: 4px; display: flex; gap: 0; overflow: hidden; }
+.cell-multi { gap: 1.5px; }
+.seg { flex: 1 1 0; min-width: 0; border-radius: 3px; }
+.seg-avail   { background: var(--fr-avail); }
+.seg-2for1   { background: var(--fr-2for1); }
+.seg-preview { background: var(--fr-preview); }
+.seg-free    { background: var(--fr-free); }
+.seg-event   { background: var(--fr-event); }
+.seg-noalloc { background: var(--fr-noalloc); }
+.seg-sold    { background: var(--fr-sold-bg); box-shadow: inset 0 0 0 1.5px var(--fr-sold-line); }
+
+.lane-status { font-size: 0.78rem; line-height: 1.2; text-align: center; }
+.lane-status .st-ok { font-weight: 700; color: var(--ok-text); font-variant-numeric: tabular-nums; }
+.lane-status .st-no { color: #c2c8d2; font-weight: 700; }
+/* A show with nothing catchable in the window recedes as a whole. */
+.lane--out .lane-title { opacity: 0.42; }
+.lane--out .lane-track { opacity: 0.35; }
 
 /* --- Window overlay: dim panels, highlight band, drag handles --- */
 .win { position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; }

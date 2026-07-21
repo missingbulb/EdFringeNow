@@ -69,14 +69,15 @@ Availability uses the same denylist as the Python (`SOLD_OUT`, `OFF_SALE`,
 
 ## Known limitations / next steps (milestone 1)
 
-- **Time-of-day floor is 08:00.** The start-time slider spans 08:00–24:00, which
-  covers ~230 morning shows; the ~4 catalogue shows starting before 08:00
-  (midnight/early exhibitions) fall off. A data-driven floor (the earliest of
-  *your* matched favourites) is the clean fix.
 - **Calendar axis is Aug 1–31.** The data spans Jul 24–Aug 31; a handful of
   July preview performances fall off the axis.
-- **Time filter is on *start* time only** ("latest acceptable start"), not "must
-  finish by".
+- **The date window is the only filter.** A start-time selector was tried and
+  dropped — as a whole-stack filter it wasn't useful (per-show start times
+  matter mainly at the window's first/last day, which is a later refinement).
+- **Day-cell colours follow edfringe.com.** Each performance mark uses the same
+  status palette as edfringe.com's ticket day-picker (tickets available, 2-for-1,
+  preview, free, event-specific, no-allocation, sold out); a day with two shows
+  renders as two side-by-side segments.
 - **"More settings"** (genre filter, min-gap, trip dates) is a placeholder — not
   wired yet.
 - **Data loading** fetches the full normalized file; a slimmer planner-only index

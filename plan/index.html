@@ -145,8 +145,8 @@
         <div>
           <p class="step-kicker">Step 2 of 2</p>
           <h2 class="cal-title" id="calTitle">When are your shows catchable?</h2>
-          <p class="cal-sub">Each row is one of your favourites; the marks are dates with tickets still
-            available. Drag the <strong>start</strong> and <strong>end</strong> flags to frame your visit.</p>
+          <p class="cal-sub">Each row is one of your favourites; a coloured mark is a performance date, using the
+            same colours as edfringe.com. Drag the <strong>start</strong> and <strong>end</strong> flags to frame your visit.</p>
         </div>
         <div class="hero-count" aria-live="polite">
           <div class="hc-num"><span id="hcIn">0</span> <span class="hc-of">/ <span id="hcAll">0</span></span></div>
@@ -157,30 +157,14 @@
 
       <div class="cal-toolbar">
         <div class="legend" aria-hidden="true">
-          <span class="lg lg-av"><i></i>Tickets available</span>
+          <span class="lg lg-avail"><i></i>Tickets available</span>
+          <span class="lg lg-2for1"><i></i>2-for-1</span>
+          <span class="lg lg-preview"><i></i>Preview</span>
+          <span class="lg lg-free"><i></i>Free</span>
+          <span class="lg lg-event"><i></i>Event-specific</span>
+          <span class="lg lg-noalloc"><i></i>No allocation</span>
           <span class="lg lg-sold"><i></i>Sold out</span>
-          <span class="lg lg-dim"><i></i>Outside your window</span>
-        </div>
-        <div class="tod">
-          <div class="tod-label">
-            <span>Show start time</span>
-            <span class="tod-value"><span id="todFrom">08:00</span> – <span id="todTo">24:00</span></span>
-          </div>
-          <div class="tslider" id="tslider">
-            <div class="ts-track"></div>
-            <div class="ts-fill" id="tsFill"></div>
-            <div class="ts-handle" id="tsH0" role="slider" tabindex="0" aria-label="Earliest show start time"
-                 aria-valuemin="480" aria-valuemax="1440" aria-valuenow="480" aria-valuetext="08:00">
-              <span class="ts-bubble" id="tsB0">08:00</span>
-            </div>
-            <div class="ts-handle" id="tsH1" role="slider" tabindex="0" aria-label="Latest show start time"
-                 aria-valuemin="480" aria-valuemax="1440" aria-valuenow="1440" aria-valuetext="24:00">
-              <span class="ts-bubble" id="tsB1">24:00</span>
-            </div>
-          </div>
-          <div class="ts-scale" aria-hidden="true">
-            <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span><span>24:00</span>
-          </div>
+          <span class="lg lg-multi"><i class="multi"><b></b><b></b></i>Two shows that day</span>
         </div>
       </div>
 
@@ -192,7 +176,7 @@
           <div class="cal-row cal-head">
             <div class="cal-head-left">Your favourites</div>
             <div class="days" id="dayHead"><!-- day columns (JS) --></div>
-            <div class="cal-head-right">In your window</div>
+            <div class="cal-head-right">In window</div>
           </div>
 
           <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
@@ -215,7 +199,7 @@
       </div>
 
       <div class="cal-foot">
-        <span>Dimmed rows have nothing you can catch — widen the dates or the start times to bring them back.</span>
+        <span>Dimmed rows have nothing you can catch — widen the date window to bring them back.</span>
         <span>August 2026 · the Fringe's core run ends Mon 25 Aug</span>
       </div>
     </section>
