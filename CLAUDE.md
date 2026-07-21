@@ -1,1 +1,0 @@
-@.claudinite/shared/CLAUDE.md

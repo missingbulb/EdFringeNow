@@ -7,16 +7,22 @@
         "basics"
       ]
     },
+    {
+      "id": "git-github",
+      "via": [
+        "basics"
+      ]
+    },
     "github-actions",
     "html",
     "tidy-repo",
     "grow_with_claudinite"
   ],
   "maintenance": {
-    "delivery": "auto"
+    "delivery": "auto-merge"
   },
   "claudinite": {
-    "updated": "2026-07-21T13:53:57.848Z",
-    "ref": "6019d8628aa2dc1351f2e6f33ce60e26be2ea29d"
+    "updated": "2026-07-21T14:25:26.370Z",
+    "ref": "8e39f9bda5a9346635713ab1f04d8aa23590af93"
   }
 }
