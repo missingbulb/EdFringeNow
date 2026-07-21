@@ -79,6 +79,7 @@ const state = {
   missingSlugs: [],
   filename: "",
   savedAt: null, // epoch ms the current set was uploaded/saved (drives the "from …" label)
+  pendingUpload: null, // {slugs, filename, savedAt, scroll} retained so a failed load can retry it
   // Date window (drives summarize()'s filter):
   d0: DEFAULT_D0,
   d1: DEFAULT_D1,
@@ -90,24 +91,45 @@ const state = {
 
 // --- Data loading -----------------------------------------------------
 
-async function loadData() {
-  $("loadingState").hidden = false;
-  $("errorState").hidden = true;
-  $("screen1").hidden = true;
-  try {
+// The show catalogue is a few MB and isn't needed until the user brings their
+// favourites, so it loads in the background: the upload screen is usable right
+// away, and we only make anyone wait (via ensureData) if they upload before the
+// fetch lands. `dataPromise` resolves to state.index or rejects on failure.
+let dataPromise = null;
+
+function loadData() {
+  dataPromise = (async () => {
     const res = await fetch(DATA_URL);
     if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${DATA_URL}`);
     const shows = await res.json();
     state.index = buildIndex(shows);
-    $("loadingState").hidden = true;
-    $("screen1").hidden = false;
+    // Now the catalogue is available, re-hydrate any favourites saved from a
+    // previous visit (fire-and-forget; a return visitor's calendar appears as
+    // soon as the data lands, without ever blocking the upload screen).
     restoreStoredFavourites();
+    return state.index;
+  })();
+  // Failures are surfaced at the await site (ensureData); swallow here so an
+  // unconsumed background rejection doesn't log as "unhandled".
+  dataPromise.catch(() => {});
+  return dataPromise;
+}
+
+// Resolve the catalogue for a consumer that actually needs it now. Shows the
+// loading panel only if the background fetch is still in flight, so the user is
+// never delayed unless their own action is waiting on the data.
+async function ensureData() {
+  if (state.index) return state.index;
+  if (!dataPromise) loadData();
+  $("errorState").hidden = true;
+  $("loadingState").hidden = false;
+  try {
+    return await dataPromise;
   } catch (err) {
-    console.error("Fringe Planner: failed to load show data", err);
+    dataPromise = null; // clear the rejected promise so the next attempt re-fetches
+    throw err;
+  } finally {
     $("loadingState").hidden = true;
-    $("errorDetail").textContent =
-      "Check your connection and try again. (" + (err && err.message ? err.message : "unknown error") + ")";
-    $("errorState").hidden = false;
   }
 }
 
@@ -231,8 +253,26 @@ function processFavouritesText(text, filename) {
  * Match a slug list against the catalogue and render both screens. Shared by
  * fresh uploads (scroll to the calendar) and storage restores (stay put).
  */
-function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
-  const { matched, missingSlugs } = matchFavourites(slugs, state.index);
+async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
+  // Retained so the error state's "Try again" can re-run this exact set once
+  // the catalogue fetch is retried.
+  state.pendingUpload = { slugs, filename, savedAt, scroll };
+
+  // The catalogue is fetched in the background; wait for it now (only blocks if
+  // it hasn't landed yet) before matching.
+  let index;
+  try {
+    index = await ensureData();
+  } catch (err) {
+    console.error("Fringe Planner: failed to load show data", err);
+    $("errorDetail").textContent =
+      "Check your connection and try again. (" + (err && err.message ? err.message : "unknown error") + ")";
+    $("errorState").hidden = false;
+    return;
+  }
+
+  const { matched, missingSlugs } = matchFavourites(slugs, index);
+  state.pendingUpload = null;
 
   state.totalFavourites = slugs.length;
   state.matched = matched;
@@ -726,7 +766,15 @@ function wireClearButton() {
 }
 
 function wireRetry() {
-  $("retryBtn").addEventListener("click", loadData);
+  $("retryBtn").addEventListener("click", () => {
+    $("errorState").hidden = true;
+    loadData(); // fresh fetch, replacing the rejected promise
+    if (state.pendingUpload) {
+      // Re-run the set the user was waiting on; ensureData awaits the retry.
+      const { slugs, filename, savedAt, scroll } = state.pendingUpload;
+      applyFavourites(slugs, filename, savedAt, { scroll });
+    }
+  });
 }
 
 function wireCalendarControls() {
@@ -761,4 +809,8 @@ wireContinueButton();
 wireClearButton();
 wireRetry();
 wireCalendarControls();
+
+// The upload screen is visible from first paint; fetch the catalogue in the
+// background so the user can read the instructions and export their CSV while it
+// loads, and only waits (if at all) at the moment they actually upload.
 loadData();
