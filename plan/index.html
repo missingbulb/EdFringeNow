@@ -37,7 +37,9 @@
     </div>
 
     <!-- ===================== Loading state ===================== -->
-    <div id="loadingState" class="state-panel" role="status" aria-live="polite">
+    <!-- Hidden by default: the catalogue loads in the background, so this only
+         appears if the user uploads their favourites before the fetch lands. -->
+    <div id="loadingState" class="state-panel" hidden role="status" aria-live="polite">
       <div class="state-spinner" aria-hidden="true"></div>
       <p class="state-title">Loading this year's show data&hellip;</p>
       <p class="state-sub">Fetching the full Fringe programme (a few MB) — just a moment.</p>
@@ -56,7 +58,7 @@
     </div>
 
     <!-- ===================== SCREEN 1 — Input ===================== -->
-    <section class="panel intake" id="screen1" aria-labelledby="intakeTitle" hidden>
+    <section class="panel intake" id="screen1" aria-labelledby="intakeTitle">
       <p class="step-kicker">Step 1 of 2</p>
       <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
       <p class="intake-sub">
