@@ -45,7 +45,7 @@ def london_today() -> str:
     try:
         from zoneinfo import ZoneInfo
         return datetime.now(ZoneInfo("Europe/London")).date().isoformat()
-    except Exception:  # noqa: BLE001
+    except Exception:  # noqa: BLE001 — no tz database on this host; fall back to the docstring's BST assumption
         return (datetime.now(timezone.utc) + timedelta(hours=1)).date().isoformat()
 
 
