@@ -1,8 +1,8 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
-import { parseEntries } from './transcript.mjs';
-import { SHARED_SUBDIR, packEntryId } from '../pack_loader/registry.mjs';
+import { parseEntries } from './session-transcript.mjs';
+import { SHARED_SUBDIR, packEntryId } from '../../pack_loader/pack-registry.mjs';
 
 function sh(root, cmd, args, { allowFail = false, input = undefined } = {}) {
   const r = spawnSync(cmd, args, { cwd: root, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, input });
@@ -57,7 +57,7 @@ function vendoredSet(root, files) {
 // below) so a straggler gets the unknown-setting error.
 // `claudinite` is the vendored-mount stamp — { updated: "<ISO datetime>", ref: "<sha>" },
 // written by the nightly update pass, selecting which migration notes still apply
-// (engine/mount/DESIGN.md owns the model); the checks engine itself only tolerates it.
+// (engine/vendoring/DESIGN.md owns the model); the checks engine itself only tolerates it.
 export const CONFIG_KEYS = ['packs', 'rules', 'accept', 'sharedConstants', 'packConfig', 'maintenance', 'claudinite'];
 
 // The properties a `packs` entry object may carry: the pack's parameters
@@ -66,7 +66,7 @@ export const CONFIG_KEYS = ['packs', 'rules', 'accept', 'sharedConstants', 'pack
 // question id; read by the adoption skill's interview machinery), and the rule overrides / acceptances that
 // exist BECAUSE this pack is declared (`rules`, `accept` — they may name any
 // rule; the entry is their provenance). `via` is written by
-// resolveDeclaredPacks on materialized dependencies (engine/pack_loader/registry.mjs).
+// resolveDeclaredPacks on materialized dependencies (engine/pack_loader/pack-registry.mjs).
 export const PACK_ENTRY_KEYS = ['id', 'config', 'answers', 'rules', 'accept', 'via'];
 
 // Load and validate the project's settings. Validity is checked at load — the
@@ -152,7 +152,7 @@ export function loadConfig(root) {
     }
     if (entry.via !== undefined) {
       // Written by the declaration resolver on materialized dependencies
-      // (engine/pack_loader/registry.mjs) — normalized through so readers (the adoption
+      // (engine/pack_loader/pack-registry.mjs) — normalized through so readers (the adoption
       // interview) can tell a chosen pack from a pulled-in one.
       if (Array.isArray(entry.via) && entry.via.every((v) => typeof v === 'string')) normalized.via = entry.via;
       else badShape('via', 'an array of pack ids (the declaration resolver writes it)');
@@ -353,7 +353,7 @@ export function buildContext({ root, mode = 'changed', baseOverride = null, tran
 
     // Fixed-string search across tracked files; git grep exits 1 on no match.
     // The vendored shared mount is structurally out of the sweep (canon-owned,
-    // never the project's own code — engine/mount/DESIGN.md item 6), so it is
+    // never the project's own code — engine/vendoring/DESIGN.md item 6), so it is
     // excluded here exactly as it is from the scanned file set above: a hit
     // inside it must never become a finding.
     grepTracked(needle) {

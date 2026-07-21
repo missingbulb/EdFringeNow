@@ -34,7 +34,7 @@ export function applyConfig(findings, config) {
         what: `acceptance for ${f.rule}${acceptance.path ? ` on ${acceptance.path}` : ''}${acceptance.pack ? ` (on the "${acceptance.pack}" pack entry)` : ''} has no reason`,
         why: 'the reason string is what makes an accepted violation reviewable',
         fix: 'add a non-empty "reason" to the acceptance entry',
-        doc: 'engine/README.md',
+        doc: 'engine/checks/README.md',
       });
     }
     out.push(f);

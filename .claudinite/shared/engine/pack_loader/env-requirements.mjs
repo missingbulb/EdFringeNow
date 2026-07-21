@@ -28,8 +28,8 @@
 //   }
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { loadPacks, isActive } from './registry.mjs';
-import { loadConfig } from '../checks_helpers/context.mjs';
+import { loadPacks, isActive } from './pack-registry.mjs';
+import { loadConfig } from '../checks/helpers/repo-context.mjs';
 
 const resolveField = (field, params) =>
   typeof field === 'function' ? field(params) : field;

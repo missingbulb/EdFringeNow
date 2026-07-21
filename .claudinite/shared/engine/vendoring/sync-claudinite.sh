@@ -51,7 +51,7 @@ hooklog() {
 # Code discard the stdout the steps just emitted into the session context.
 fan_out() {
   local s
-  for s in "$dest/engine/hooks/session-start.sh" "$dest/mount/session-start.sh" "$dest/session-start.sh"; do
+  for s in "$dest/engine/hooks/session-start-command.sh" "$dest/engine/hooks/session-start.sh" "$dest/mount/session-start.sh" "$dest/session-start.sh"; do
     if [ -f "$s" ]; then bash "$s" || true; return 0; fi
   done
   return 0

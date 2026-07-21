@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # GENERIC Claudinite cloud environment setup — identical across projects and
-# owned by the corpus (vendored into every consumer's .claudinite/shared/engine/mount/),
+# owned by the corpus (vendored into every consumer's .claudinite/shared/engine/vendoring/),
 # so a project commits NO copy of its own.
 #
 # HOW TO USE: copy this full body into the Claude Code Web environment's "Setup
 # script" field (environment settings). It runs once when the environment is
 # created; the filesystem is snapshotted and reused, so installs aren't repaid
 # per session. Per-toolchain install logic lives in Claudinite packs
-# (engine/pack_loader/env.mjs, driven by the repo's .claudinite-checks.json), NOT here — so
+# (engine/pack_loader/env-requirements.mjs, driven by the repo's .claudinite-checks.json), NOT here — so
 # this script never changes as requirements evolve.
 #
-# Vendored-mount only (engine/mount/DESIGN.md): the corpus is tracked, already in the
+# Vendored-mount only (engine/vendoring/DESIGN.md): the corpus is tracked, already in the
 # checkout — nothing is fetched here, ever. A repo still on the legacy
 # fetch-at-session-start mount keeps its previously pasted script (pasted
 # scripts are snapshots); pasting THIS body there fails fast at step 2 below,
@@ -30,4 +30,4 @@ git config rerere.enabled true
 
 # 2. Install every active pack's declared environment requirement (Flutter SDK,
 #    node deps, …). The SessionStart `env.mjs check` then probes each directly.
-node .claudinite/shared/engine/pack_loader/env.mjs install
+node .claudinite/shared/engine/pack_loader/env-requirements.mjs install

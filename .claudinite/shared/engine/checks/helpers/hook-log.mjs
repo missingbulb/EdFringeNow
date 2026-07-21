@@ -5,7 +5,7 @@
 // a `start` with no matching `done` ⇒ it triggered but failed mid-execution.
 //
 // The line format is mirrored by the bash loggers inlined in
-// mount/sync-claudinite.sh and engine/hooks/session-start.sh — keep the three in step:
+// mount/sync-claudinite.sh and engine/hooks/session-start-command.sh — keep the three in step:
 //   <iso-utc> run=<id> <hook>: <message>
 //
 // Best effort: logging must never throw or block a hook, so every failure is

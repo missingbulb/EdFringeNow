@@ -9,15 +9,15 @@
 import { writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildContext, loadConfig } from './checks_helpers/context.mjs';
-import { applyConfig, render } from './checks_helpers/findings.mjs';
-import { discoverPacks, isActive, resolveDeclaredPacks } from './pack_loader/registry.mjs';
+import { buildContext, loadConfig } from './helpers/repo-context.mjs';
+import { applyConfig, render } from './helpers/findings.mjs';
+import { discoverPacks, isActive, resolveDeclaredPacks } from '../pack_loader/pack-registry.mjs';
 
 // The adoption-interview machinery is the adopt-claudinite skill's, bundled in
 // the Claudinite-lifecycle pack (packs/grow_with_claudinite/skills/adopt-claudinite/).
 // A consumer that doesn't declare that pack doesn't vendor it — no lifecycle
 // pack, no interview — so resolve it fail-soft: absent file, inert interview.
-const interviewUrl = new URL('../packs/grow_with_claudinite/skills/adopt-claudinite/interview.mjs', import.meta.url);
+const interviewUrl = new URL('../../packs/grow_with_claudinite/skills/adopt-claudinite/interview.mjs', import.meta.url);
 const { interviewState } = existsSync(fileURLToPath(interviewUrl))
   ? await import(interviewUrl.href)
   : { interviewState: () => ({ pending: [], stale: [], errors: [] }) };
@@ -79,7 +79,7 @@ if (has('--init')) {
   // `requires` closure into the declaration so it's complete and visible.
   const declared = resolveDeclaredPacks(detected, packs);
   // maintenance.delivery is deliberately materialized, not defaulted — the selection
-  // must be visible in the file where a project would change it (see engine/README.md).
+  // must be visible in the file where a project would change it (see engine/checks/README.md).
   // Only what carries a decision: the declaration and the always-explicit
   // delivery. Empty rules/accept boilerplate is noise, not settings (#385);
   // loadConfig defaults absent keys.
@@ -106,7 +106,7 @@ const ctx = buildContext({ root, mode, baseOverride: value('--base'), transcript
 
 const configError = (what, fix) => ({
   rule: 'config', severity: 'blocking', file: '.claudinite-checks.json', line: null,
-  what, why: 'the settings file is what executes — a bad key, value, or pack name silently changes what runs', fix, doc: 'engine/README.md',
+  what, why: 'the settings file is what executes — a bad key, value, or pack name silently changes what runs', fix, doc: 'engine/checks/README.md',
 });
 
 let findings = [];

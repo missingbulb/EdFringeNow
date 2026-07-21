@@ -1,4 +1,4 @@
-import { parseYaml } from './yaml.mjs';
+import { parseYaml } from './minimal-yaml.mjs';
 
 // Every resource across the repo's tracked SAM templates, parsed.
 // Returns [{ templatePath, name, resource }].

@@ -12,7 +12,7 @@ const packsDir = join(canonRoot, 'packs');
 export const LOCAL_PACKS_SUBDIR = join('.claudinite', 'local_packs');
 export const localPacksDir = (root) => join(resolve(root), LOCAL_PACKS_SUBDIR);
 
-// Where a consumer materializes the vendored canon (engine/mount/DESIGN.md): the
+// Where a consumer materializes the vendored canon (engine/vendoring/DESIGN.md): the
 // corpus mirrored at canon-relative paths under this subdir. Tracked files in
 // the interim; the planned future is a git submodule mounted at this same path
 // — which is why nothing consumer-owned (local_packs/ above) lives inside it.
@@ -178,7 +178,7 @@ export const declTokenFor = (pack) =>
 
 // A `packs` declaration entry is either a plain id string or an entry object
 // `{ id, config?, rules?, accept?, via? }` carrying that pack's own settings
-// (see engine/README.md). This is the one id-extractor every reader shares, so
+// (see engine/checks/README.md). This is the one id-extractor every reader shares, so
 // raw-JSON consumers (the SessionStart hooks, the fleet routines) and the
 // engine agree on both shapes — and on both declaration forms: it returns the
 // BARE pack id, stripping a `local_packs/` namespace where one is declared.

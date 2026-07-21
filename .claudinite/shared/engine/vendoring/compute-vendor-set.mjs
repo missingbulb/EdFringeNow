@@ -1,8 +1,8 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadPacks, resolveDeclaredPacks, packEntryId, SHARED_SUBDIR } from '../pack_loader/registry.mjs';
-import { relativeImports, resolveRelative, ENGINE_DIR_ROOTS } from '../checks_helpers/imports.mjs';
+import { loadPacks, resolveDeclaredPacks, packEntryId, SHARED_SUBDIR } from '../pack_loader/pack-registry.mjs';
+import { relativeImports, resolveRelative, ENGINE_DIR_ROOTS } from '../checks/helpers/module-imports.mjs';
 
 // The vendor-set computation for the vendored mount (DESIGN.md): given a repo's
 // pack declaration, the minimal corpus file set that repo persists under
@@ -11,7 +11,7 @@ import { relativeImports, resolveRelative, ENGINE_DIR_ROOTS } from '../checks_he
 // against the canon tree THIS module ships in — the nightly runs it from the
 // home checkout, an on-demand refresh from the tree it just fetched — so the
 // set and the content can never come from different snapshots.
-const canonRoot = dirname(dirname(dirname(fileURLToPath(import.meta.url)))); // <canon>/engine/mount/
+const canonRoot = dirname(dirname(dirname(fileURLToPath(import.meta.url)))); // <canon>/engine/vendoring/
 
 // Re-exported for the writers (the nightly update pass, an on-demand refresh):
 // the consumer-side root the set materializes under.
@@ -19,13 +19,14 @@ export { SHARED_SUBDIR };
 
 // The engine is discovered structurally, never listed file-by-file: the engine
 // root vendors wholesale (a new engine file ships with no edit here). The list
-// lives in the engine lib (engine/checks_helpers/imports.mjs) — the same
+// lives in the engine lib (engine/checks/helpers/module-imports.mjs) — the same
 // surface the pack-independence barrier confines pack imports to, so "what a
 // pack may import" and "what every consumer carries" can never drift apart —
-// re-exported here as the vendor-set contract (DESIGN.md). Excluded within the
-// engine root: tests (*.test.mjs and test/ directories) and *.md — engine docs
-// are canon-maintainer reference, read upstream when needed, while a pack's
-// .md files are the payload and ride its directory below.
+// re-exported here as the vendor-set contract (DESIGN.md). engine/ carries no
+// tests (they live in engine-tests/, mirroring its structure — #385), so the
+// engine walk is a plain copy minus *.md — engine docs are canon-maintainer
+// reference, read upstream when needed, while a pack's .md files are the
+// payload and ride its directory below (pack tests are still filtered here).
 export { ENGINE_DIR_ROOTS };
 
 const isTest = (name) => name.endsWith('.test.mjs');

@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 // canonical shapes, no tolerance needed. The full registry
 // (migrations/registry.mjs) builds on this same surface canon-side.
 export const MIGRATIONS_SUBDIR = 'active_migrations';
-const specsDir = join(dirname(dirname(dirname(fileURLToPath(import.meta.url)))), 'migrations', MIGRATIONS_SUBDIR);
+const specsDir = join(dirname(dirname(dirname(dirname(fileURLToPath(import.meta.url))))), 'migrations', MIGRATIONS_SUBDIR); // <canon>/engine/checks/helpers/
 export const isSpec = (f) => f.endsWith('.mjs') && !f.endsWith('.test.mjs');
 // Tolerant of an absent/empty folder — a vendored consumer, or a canon
 // checkout after every record has retired.

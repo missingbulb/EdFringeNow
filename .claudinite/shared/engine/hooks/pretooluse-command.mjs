@@ -3,7 +3,7 @@
 // (the delete-push fails in this environment, so it can never succeed).
 // Exit 2 blocks the tool call and feeds stderr back to the agent. Registered
 // per-repo — see bootstrap.md.
-import { hooklog } from '../checks_helpers/hooklog.mjs';
+import { hooklog } from '../checks/helpers/hook-log.mjs';
 
 let input = '';
 process.stdin.on('data', (d) => { input += d; });

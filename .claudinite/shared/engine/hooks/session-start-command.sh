@@ -27,12 +27,12 @@ set -uo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"  # <corpus>/engine/hooks
 # This script lives in <corpus>/engine/hooks/. The preferences step lives
 # beside it (per-user content is never vendored, so its step is hook machinery —
-# see ../engine/mount/DESIGN.md); the remaining step scripts live in the engine's
+# see ../engine/vendoring/DESIGN.md); the remaining step scripts live in the engine's
 # loader dirs (<corpus>/engine/pack_loader, <corpus>/engine/skill_loader).
 corpus="$(dirname "$(dirname "$here")")"
 
 # --- durable hook log (format mirrored in sync-claudinite.sh and
-# --- engine/checks_helpers/hooklog.mjs — keep the three in step). Lives at the project
+# --- engine/checks/helpers/hook-log.mjs — keep the three in step). Lives at the project
 # --- root, OUTSIDE .claudinite/, so a sync's dir swap never wipes it. Best
 # --- effort: logging must never fail a hook.
 CLAUDINITE_LOG="${CLAUDE_PROJECT_DIR:-.}/.claudinite-hooks.log"
@@ -64,10 +64,10 @@ run_step() {
 }
 
 hooklog orchestrator "start"
-run_step inject-preferences bash "$here/inject-preferences.sh"
-run_step load-active-prose  node "$corpus/engine/pack_loader/load-active-prose.mjs"
+run_step inject-preferences bash "$here/steps/inject-preferences.sh"
+run_step load-active-prose  node "$corpus/engine/pack_loader/inject-pack-prose.mjs"
 run_step mount-skills       node "$corpus/engine/skill_loader/mount-skills.mjs"
-run_step env-check          node "$corpus/engine/pack_loader/env.mjs" check
+run_step env-check          node "$corpus/engine/pack_loader/env-requirements.mjs" check
 # The interview machinery is the adoption skill's, bundled in the
 # Claudinite-lifecycle pack — absent when the tree doesn't carry it, and then
 # there is no interview.

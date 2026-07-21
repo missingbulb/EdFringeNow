@@ -3,7 +3,7 @@
 # session context (stdout is forwarded by the session-start orchestrator).
 #
 # Preferences are PER-USER settings, not project content, so a consumer never
-# vendors them (engine/mount/DESIGN.md): read the local copy when this tree carries
+# vendors them (engine/vendoring/DESIGN.md): read the local copy when this tree carries
 # one (the canon repo itself; a future submodule mount; the interim full-tarball
 # sync), otherwise fetch just this user's file over HTTPS, fresh. Deliberately
 # FAIL-SOFT on every miss — the load-bearing cargo (packs, checks, skills) is
@@ -23,9 +23,9 @@ fi
 safe_email="$(printf '%s' "$email" | tr -d '"\\')"
 
 # Local first: <corpus>/preferences/<email>.md relative to this script's tree
-# (<corpus>/engine/hooks/).
+# (<corpus>/engine/hooks/steps/).
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-prefs="$here/../../preferences/$email.md"
+prefs="$here/../../../preferences/$email.md"
 if [ -f "$prefs" ]; then
   cat "$prefs"
   exit 0

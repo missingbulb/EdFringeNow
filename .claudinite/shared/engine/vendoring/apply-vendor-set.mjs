@@ -2,9 +2,9 @@ import { copyFileSync, mkdirSync, rmSync, readFileSync, writeFileSync, existsSyn
 import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { computeVendorSet, SHARED_SUBDIR } from './vendor.mjs';
+import { computeVendorSet, SHARED_SUBDIR } from './compute-vendor-set.mjs';
 
-// The vendor WRITER (engine/mount/DESIGN.md): converge a consumer's .claudinite/shared/
+// The vendor WRITER (engine/vendoring/DESIGN.md): converge a consumer's .claudinite/shared/
 // to this canon tree's vendor set and advance the stamp — the local half of the
 // transactional update. Callers: the adoption flow and an on-demand refresh run
 // it from a freshly fetched canon tree against the consumer checkout; the
@@ -21,13 +21,13 @@ import { computeVendorSet, SHARED_SUBDIR } from './vendor.mjs';
 // previously stamped ref must be an ancestor of it. A rootless canon tree
 // (bootstrap's fetched snapshot — no .git) skips both: it is head by
 // construction and carries no history to check ancestry against.
-const canonRoot = dirname(dirname(dirname(fileURLToPath(import.meta.url)))); // <canon>/engine/mount/
+const canonRoot = dirname(dirname(dirname(fileURLToPath(import.meta.url)))); // <canon>/engine/vendoring/
 
 // All git use is LOCAL introspection of the canon checkout (rev-parse,
 // merge-base read the object db — no network, no credential); the remote-head
 // comparison the guards can't make locally is the worker's, over MCP. Git
 // discovers .git by walking UP, and a VENDORED copy of this file runs inside
-// the consumer's own repo (.claudinite/shared/engine/mount/) — where git would answer
+// the consumer's own repo (.claudinite/shared/engine/vendoring/) — where git would answer
 // with the CONSUMER's HEAD — so only a checkout whose toplevel is the canon
 // root itself speaks for the canon; anything else is treated as rootless.
 const git = (...args) => execFileSync('git', args, { cwd: canonRoot, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
@@ -83,7 +83,7 @@ export async function applyVendor(targetRoot, { ref = null } = {}) {
   return { files: files.length, stamp: raw.claudinite, errors: [] };
 }
 
-// CLI: node <canon>/engine/mount/apply-vendor.mjs [--target <consumer-root>] [--ref <sha>]
+// CLI: node <canon>/engine/vendoring/apply-vendor-set.mjs [--target <consumer-root>] [--ref <sha>]
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const args = process.argv.slice(2);
   const opt = (name) => {

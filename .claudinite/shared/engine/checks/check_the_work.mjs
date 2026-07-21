@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { hooklog } from './checks_helpers/hooklog.mjs';
+import { hooklog } from './helpers/hook-log.mjs';
 
 const projectRoot = process.env.CLAUDE_PROJECT_DIR || process.cwd();
 const runner = join(dirname(fileURLToPath(import.meta.url)), 'check_the_world.mjs');
