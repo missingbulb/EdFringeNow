@@ -42,6 +42,14 @@ const T_GAP = 60; // minimum 1h span between the two time handles
 const DEFAULT_D0 = 7; // default date window: Aug 7 → Aug 24 (the festival trip window)
 const DEFAULT_D1 = 24;
 
+// Persist the uploaded favourites (as the raw slug list) in this browser so a
+// returning visitor doesn't have to re-export/re-upload. We store slugs, not
+// the matched show objects, so availability is always re-derived against the
+// freshest catalogue on restore. Keyed with a version suffix so the shape can
+// evolve without misreading an old record.
+const STORAGE_KEY = "edfringe.plan.favourites.v1";
+const TTL_MS = 3 * 24 * 60 * 60 * 1000; // keep for 3 days, then forget
+
 // --- Small helpers ------------------------------------------------------
 
 const $ = (id) => document.getElementById(id);
@@ -77,6 +85,7 @@ const state = {
   totalFavourites: 0,
   missingSlugs: [],
   filename: "",
+  savedAt: null, // epoch ms the current set was uploaded/saved (drives the "from …" label)
   // Date/time window (drives summarize()'s filter):
   d0: DEFAULT_D0,
   d1: DEFAULT_D1,
@@ -101,6 +110,7 @@ async function loadData() {
     state.index = buildIndex(shows);
     $("loadingState").hidden = true;
     $("screen1").hidden = false;
+    restoreStoredFavourites();
   } catch (err) {
     console.error("Fringe Planner: failed to load show data", err);
     $("loadingState").hidden = true;
@@ -108,6 +118,96 @@ async function loadData() {
       "Check your connection and try again. (" + (err && err.message ? err.message : "unknown error") + ")";
     $("errorState").hidden = false;
   }
+}
+
+// --- Local persistence (localStorage, 3-day TTL) --------------------------
+
+/** Persist the current favourite slugs so a return visit needn't re-upload. */
+function saveFavourites(slugs, filename, savedAt) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, slugs, filename, savedAt }));
+  } catch (err) {
+    // Private mode / quota / disabled storage — persistence is a bonus, not
+    // load-bearing, so swallow it and let the session run in-memory.
+    console.warn("Fringe Planner: couldn't save favourites locally", err);
+  }
+}
+
+/**
+ * Read the saved favourites, or null if there are none, they're malformed, or
+ * they've aged past the TTL (expired/corrupt records are removed as a side
+ * effect so we don't keep re-reading them).
+ * @returns {{slugs: string[], filename: string, savedAt: number} | null}
+ */
+function loadStoredFavourites() {
+  let raw = null;
+  try {
+    raw = localStorage.getItem(STORAGE_KEY);
+  } catch (err) {
+    console.warn("Fringe Planner: local storage unavailable", err);
+    return null;
+  }
+  if (!raw) return null;
+
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    clearStoredFavourites();
+    return null;
+  }
+  if (!data || !Array.isArray(data.slugs) || typeof data.savedAt !== "number") {
+    clearStoredFavourites();
+    return null;
+  }
+  if (Date.now() - data.savedAt > TTL_MS) {
+    clearStoredFavourites(); // stale — forget it
+    return null;
+  }
+  return {
+    slugs: data.slugs.filter((s) => typeof s === "string"),
+    filename: typeof data.filename === "string" ? data.filename : "",
+    savedAt: data.savedAt,
+  };
+}
+
+/** Remove the saved favourites from this browser. */
+function clearStoredFavourites() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't clear stored favourites", err);
+  }
+}
+
+/** On load, re-hydrate a still-valid saved set (no scroll — stay on screen 1). */
+function restoreStoredFavourites() {
+  const data = loadStoredFavourites();
+  if (!data || data.slugs.length === 0) return;
+  applyFavourites(data.slugs, data.filename, data.savedAt, { scroll: false });
+}
+
+/** Wipe the current favourites from both the UI and storage. */
+function clearFavourites() {
+  clearStoredFavourites();
+
+  state.totalFavourites = 0;
+  state.matched = [];
+  state.missingSlugs = [];
+  state.filename = "";
+  state.savedAt = null;
+
+  $("summaryCap").hidden = true;
+  const summaryEl = $("uploadSummary");
+  summaryEl.hidden = true;
+  summaryEl.classList.remove("is-partial");
+  $("missingList").hidden = true;
+  $("missingList").innerHTML = "";
+  $("continueRow").hidden = true;
+  $("savedBar").hidden = true;
+  $("screen2").hidden = true;
+
+  $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // --- Screen 1: favourites intake -----------------------------------------
@@ -124,28 +224,74 @@ function handleFile(file) {
   reader.readAsText(file);
 }
 
-/** Parse favourites text, match against the catalogue, and render the result. */
+/**
+ * Parse a fresh upload, persist it (when it yielded any slugs), and render.
+ * A file that parses to zero slugs leaves any previously saved set intact —
+ * picking the wrong file shouldn't wipe a good saved list.
+ */
 function processFavouritesText(text, filename) {
   const slugs = parseFavourites(text);
+  const savedAt = Date.now();
+  if (slugs.length > 0) saveFavourites(slugs, filename, savedAt);
+  applyFavourites(slugs, filename, savedAt, { scroll: true });
+}
+
+/**
+ * Match a slug list against the catalogue and render both screens. Shared by
+ * fresh uploads (scroll to the calendar) and storage restores (stay put).
+ */
+function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
   const { matched, missingSlugs } = matchFavourites(slugs, state.index);
 
   state.totalFavourites = slugs.length;
   state.matched = matched;
   state.missingSlugs = missingSlugs;
   state.filename = filename;
+  state.savedAt = savedAt;
 
   renderUploadSummary();
+  renderSavedBar();
 
   if (matched.length > 0) {
-    // Reset the window to the defaults on every fresh upload.
+    // Reset the window to the defaults on every fresh set.
     state.d0 = DEFAULT_D0;
     state.d1 = DEFAULT_D1;
     state.t0 = T_MIN;
     state.t1 = T_MAX;
     buildCalendar();
-    revealCalendar();
+    showCalendar({ scroll });
   } else {
     $("screen2").hidden = true;
+  }
+}
+
+/** Day boundaries in local time; number of whole days from `a` to `b`. */
+function dayDiff(a, b) {
+  const da = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+  const db = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+  return Math.round((db - da) / 86400000);
+}
+
+/** Friendly "when" for the saved-set label: today / yesterday / "18 Jul". */
+function fmtSavedWhen(ts) {
+  if (!ts) return "this session";
+  const then = new Date(ts);
+  const days = dayDiff(then, new Date());
+  if (days <= 0) return "today";
+  if (days === 1) return "yesterday";
+  return then.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+}
+
+/** The "N favourites from <when>" provenance line + Clear button visibility. */
+function renderSavedBar() {
+  const bar = $("savedBar");
+  if (state.totalFavourites > 0) {
+    const n = state.totalFavourites;
+    $("savedNote").textContent =
+      `${n} favourite${n === 1 ? "" : "s"} from ${fmtSavedWhen(state.savedAt)}`;
+    bar.hidden = false;
+  } else {
+    bar.hidden = true;
   }
 }
 
@@ -210,12 +356,14 @@ function toggleMissingList() {
   list.hidden = !list.hidden;
 }
 
-function revealCalendar() {
+/** Reveal the calendar panel; scroll to it only when the caller asks (fresh
+ *  uploads and the Continue button do; a silent storage restore does not). */
+function showCalendar({ scroll = false } = {}) {
   const screen2 = $("screen2");
   screen2.hidden = false;
   // Layout needs real geometry, which only exists once the panel is visible.
   requestAnimationFrame(() => layoutOverlay());
-  screen2.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (scroll) screen2.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // --- Screen 2: calendar ----------------------------------------------------
@@ -604,8 +752,12 @@ function wireSampleLink() {
 
 function wireContinueButton() {
   $("continueBtn").addEventListener("click", () => {
-    if (state.matched.length > 0) revealCalendar();
+    if (state.matched.length > 0) showCalendar({ scroll: true });
   });
+}
+
+function wireClearButton() {
+  $("clearFavBtn").addEventListener("click", clearFavourites);
 }
 
 function wireRetry() {
@@ -644,6 +796,7 @@ function wireCalendarControls() {
 wireDropzone();
 wireSampleLink();
 wireContinueButton();
+wireClearButton();
 wireRetry();
 wireCalendarControls();
 paintTime();

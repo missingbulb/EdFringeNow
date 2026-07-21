@@ -25,6 +25,12 @@ There is **no server and no build step**. Everything runs in the browser:
    favourites → available performances is computed entirely locally.
 3. The availability calendar, the draggable date window, and the start-time
    slider all recompute live via the pure engine in [`lib/`](lib/).
+4. Your uploaded favourites (the parsed slug list — never the show data) are
+   remembered in `localStorage` for **3 days**, so a return visit re-hydrates
+   the calendar without another export/upload. Availability is always
+   re-derived against the freshest catalogue on restore. A **Clear favourites**
+   button removes the set from both the page and storage, and a *"N favourites
+   from &lt;when&gt;"* label shows where the current set came from.
 
 Because the page fetches a data file, open it over HTTP (not `file://`):
 `python3 -m http.server` from the repo root, then visit `/plan/`.
