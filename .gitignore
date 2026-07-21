@@ -3,15 +3,12 @@
 # data/days IS committed; only the bulky raw cache is ignored.
 data/raw_pages/
 
-# Claudinite shared guidelines, synced over HTTPS by a SessionStart hook
-# (see .claudinite/mount/sync-claudinite.sh). Not committed — refreshed each session;
-# only the tracked hook under mount/ and the repo's own .claudinite/local_packs/
-# (project packs) are committed.
+# Claudinite vendored mount (mount/DESIGN.md at the canon): .claudinite/* is
+# ignored wholesale, re-including the two tracked trees — shared/ (the vendored
+# canon, refreshed by the nightly maintenance) and local_packs/ (this repo's own
+# packs). The hooks-log lines keep the durable hook log untracked.
 /.claudinite/*
-/.claudinite.new/
-!/.claudinite/mount/
-/.claudinite/mount/*
-!/.claudinite/mount/sync-claudinite.sh
+!/.claudinite/shared/
 !/.claudinite/local_packs/
 /.claudinite-hooks.log
 /.claudinite-hooks.log.tmp
