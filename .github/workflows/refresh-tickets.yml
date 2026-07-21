@@ -70,3 +70,29 @@ jobs:
             git commit -m "Refresh today's ticket status"
             git push
           fi
+
+  # A scheduled run is watched by no one, so surface a failure to a human by
+  # opening (or updating) a standing tracking issue found by title. (Mirrors
+  # the daily refresh.yml job; a cancelled run from the concurrency group's
+  # cancel-in-progress doesn't count as failure() so a superseded hourly
+  # firing never falsely triggers this.)
+  report-failure:
+    needs: refresh
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the failure-tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Hourly ticket-status refresh is failing"
+          body="The scheduled \`Refresh today's ticket status (hourly)\` workflow failed. Latest run: $RUN_URL"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
