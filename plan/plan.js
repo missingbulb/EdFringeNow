@@ -30,14 +30,12 @@ const DAYS_IN_MONTH = 31; // Aug 1–31 is the axis this calendar draws.
 // per the spec and rare in practice (previews are the main case).
 const FEST_END_DAY = 25; // Core run ends Mon 25 Aug; 26–31 draws as a shaded "after" zone.
 
-const T_MIN = 480; // 08:00 in minutes-since-midnight — low enough to include the
-// morning shows (~230 in the catalogue start 08:00–09:59); a 10:00 floor would
-// silently make an early favourite uncountable. Residual: the ~4 catalogue
-// shows starting before 08:00 (midnight/early exhibitions) still fall off; a
-// data-driven floor (earliest matched favourite) is the documented next step.
+// The whole calendar day — the engine's summarize() still takes a start-time
+// window, but the planner no longer exposes a start-time selector (it wasn't a
+// useful whole-stack filter), so we always pass the full day and never filter
+// on start time. Only the date window narrows the catchable set now.
+const T_MIN = 0; // 00:00
 const T_MAX = 1440; // 24:00
-const T_STEP = 30; // 30-minute snap
-const T_GAP = 60; // minimum 1h span between the two time handles
 
 const DEFAULT_D0 = 7; // default date window: Aug 7 → Aug 24 (the festival trip window)
 const DEFAULT_D1 = 24;
@@ -61,11 +59,6 @@ function dateStr(day) {
   return `${YEAR}-${MONTH}-${pad2(day)}`;
 }
 
-/** Minutes-since-midnight -> "HH:MM", with 1440 rendering as "24:00". */
-function fmtT(mins) {
-  return `${pad2(Math.floor(mins / 60))}:${pad2(mins % 60)}`;
-}
-
 // 1 Aug 2026 is a Saturday; compute weekday letters from real dates rather
 // than hardcoding, so this stays correct if the festival year ever changes.
 const DOW_SHORT = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
@@ -86,11 +79,9 @@ const state = {
   missingSlugs: [],
   filename: "",
   savedAt: null, // epoch ms the current set was uploaded/saved (drives the "from …" label)
-  // Date/time window (drives summarize()'s filter):
+  // Date window (drives summarize()'s filter):
   d0: DEFAULT_D0,
   d1: DEFAULT_D1,
-  t0: T_MIN,
-  t1: T_MAX,
   // Populated once per upload by buildCalendar():
   laneRefs: [], // [{ slug, el, statusEl }] in display (sorted) order
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
@@ -256,8 +247,6 @@ function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
     // Reset the window to the defaults on every fresh set.
     state.d0 = DEFAULT_D0;
     state.d1 = DEFAULT_D1;
-    state.t0 = T_MIN;
-    state.t1 = T_MAX;
     buildCalendar();
     showCalendar({ scroll });
   } else {
@@ -368,13 +357,14 @@ function showCalendar({ scroll = false } = {}) {
 
 // --- Screen 2: calendar ----------------------------------------------------
 
-/** Current summarize() filter derived from state.{d0,d1,t0,t1}. */
+/** Current summarize() filter derived from state.{d0,d1}. Start time is left
+ *  wide open (00:00–24:00) — the planner filters on the date window only. */
 function currentFilter() {
   return {
     dateStart: dateStr(state.d0),
     dateEnd: dateStr(state.d1),
-    startTimeMin: state.t0,
-    startTimeMax: state.t1,
+    startTimeMin: T_MIN,
+    startTimeMax: T_MAX,
   };
 }
 
@@ -420,7 +410,6 @@ function buildCalendar() {
   const filter = currentFilter();
   const result = summarize(state.matched, filter, state.totalFavourites);
   const bySlug = new Map(result.shows.map((s) => [s.slug, s]));
-  const metaBySlug = new Map(state.matched.map((s) => [s.slug, s]));
 
   const ordered = [...result.shows].sort(
     (a, b) => typicalStartTime(a.performances).localeCompare(typicalStartTime(b.performances))
@@ -431,19 +420,16 @@ function buildCalendar() {
   state.laneRefs = [];
 
   for (const show of ordered) {
-    const meta = metaBySlug.get(show.slug) || {};
-    const start = typicalStartTime(show.performances);
-
     const lane = document.createElement("div");
     lane.className = "cal-row lane";
     lane.dataset.slug = show.slug;
 
+    // Just the show title — this screen is an overview of the shows you want,
+    // not a per-show detail card, so no time / genre / venue line.
     const label = document.createElement("div");
     label.className = "lane-label";
-    label.title = `${show.title} — ${start} · ${meta.genre || ""} · ${meta.venueName || ""}`;
-    label.innerHTML =
-      `<div class="lane-title">${escapeHtml(show.title)}</div>` +
-      `<div class="lane-meta"><span class="lm-time">${start}</span> · ${escapeHtml(meta.genre || "")} · ${escapeHtml(meta.venueName || "")}</div>`;
+    label.title = show.title;
+    label.innerHTML = `<div class="lane-title">${escapeHtml(show.title)}</div>`;
 
     const track = document.createElement("div");
     track.className = "lane-track";
@@ -465,7 +451,44 @@ function buildCalendar() {
   layoutOverlay();
 }
 
-/** Build the 31 day cells (filled/hollow/absent) for one show's performances. */
+// Map a performance to the edfringe.com day-picker colour class (CSS defines
+// the actual hex — see plan.css). The status values come straight from
+// shows.json; the palette mirrors edfringe.com's own availability legend.
+function segClass(p) {
+  if (p.soldOut) return "seg-sold";
+  switch ((p.status || "").toUpperCase()) {
+    case "TICKETS_AVAILABLE": return "seg-avail";
+    case "TWO_FOR_ONE": return "seg-2for1";
+    case "PREVIEW_SHOW": return "seg-preview";
+    case "FREE_TICKETED":
+    case "FREE_NON_TICKETED": return "seg-free";
+    case "EVENT_SPECIFIC": return "seg-event";
+    case "NO_ALLOCATION_CONTACT_VENUE": return "seg-noalloc";
+    default: return p.available ? "seg-avail" : "seg-sold";
+  }
+}
+
+/** Human label for a performance's status, used in the day-cell tooltip. */
+function statusLabel(p) {
+  if (p.soldOut) return "sold out";
+  switch ((p.status || "").toUpperCase()) {
+    case "TICKETS_AVAILABLE": return "tickets available";
+    case "TWO_FOR_ONE": return "2-for-1";
+    case "PREVIEW_SHOW": return "preview";
+    case "FREE_TICKETED": return "free (ticketed)";
+    case "FREE_NON_TICKETED": return "free";
+    case "EVENT_SPECIFIC": return "event-specific";
+    case "NO_ALLOCATION_CONTACT_VENUE": return "no allocation — contact venue";
+    default: return p.available ? "available" : "unavailable";
+  }
+}
+
+/**
+ * Build the 31 day cells for one show. Each day with performances renders one
+ * coloured segment per performance (colour = edfringe.com availability status),
+ * so a day with two shows shows as two side-by-side segments — the split is the
+ * graphical cue that there's more than one performance that day.
+ */
 function buildDayCells(performances) {
   const byDay = new Map(); // day-of-month -> performances that land on it
   for (const p of performances) {
@@ -482,10 +505,16 @@ function buildDayCells(performances) {
     cell.style.gridColumn = String(d);
     const entries = byDay.get(d);
     if (entries && entries.length > 0) {
-      const anyAvailable = entries.some((p) => p.available);
-      cell.className = "cell " + (anyAvailable ? "cell-av" : "cell-sold");
+      // Earliest performance first, so matinee/evening segments read left→right.
+      entries.sort((a, b) => a.start.localeCompare(b.start));
+      cell.className = "cell" + (entries.length > 1 ? " cell-multi" : "");
+      for (const p of entries) {
+        const seg = document.createElement("span");
+        seg.className = "seg " + segClass(p);
+        cell.appendChild(seg);
+      }
       cell.title = entries
-        .map((p) => `${dowShort(d)} ${d} Aug · ${p.start} · ${p.available ? "tickets available" : "sold out"}`)
+        .map((p) => `${dowShort(d)} ${d} Aug · ${p.start} · ${statusLabel(p)}`)
         .join("; ");
     }
     frag.appendChild(cell);
@@ -506,30 +535,22 @@ function applyVerdicts(bySlug, filter) {
   for (const ref of state.laneRefs) {
     const show = bySlug.get(ref.slug);
     if (!show) continue;
-    const { catchable, count, reason } = laneVerdict(show.performances, filter);
+    const { catchable, count } = laneVerdict(show.performances, filter);
     ref.el.classList.toggle("lane--out", !catchable);
     ref.statusEl.innerHTML = catchable
-      ? `<span class="st-ok">&check; ${count} date${count === 1 ? "" : "s"}</span>`
-      : `<span class="st-why">${escapeHtml(reason)}</span>`;
+      ? `<span class="st-ok" title="${count} catchable date${count === 1 ? "" : "s"} in your window">&check;&nbsp;${count}</span>`
+      : `<span class="st-no" title="nothing catchable in your window">&ndash;</span>`;
   }
 }
 
-/** Per-show reason ladder mirroring the mock: sold out > not running > outside times. */
+/** Catchable = at least one available performance inside the date window. */
 function laneVerdict(performances, filter) {
-  const inRange = performances.filter((p) => p.date >= filter.dateStart && p.date <= filter.dateEnd);
-  if (inRange.length === 0) {
-    return { catchable: false, reason: "not running in this window" };
-  }
-  const availableInRange = inRange.filter((p) => p.available);
-  if (availableInRange.length === 0) {
-    return { catchable: false, reason: "sold out in this window" };
-  }
-  const inWindow = availableInRange.filter((p) => p.inWindow);
-  if (inWindow.length > 0) {
-    return { catchable: true, count: inWindow.length };
-  }
-  const times = [...new Set(availableInRange.map((p) => p.start))].sort();
-  return { catchable: false, reason: `starts ${times[0]} — outside your times` };
+  const availableInRange = performances.filter(
+    (p) => p.available && p.date >= filter.dateStart && p.date <= filter.dateEnd
+  );
+  return availableInRange.length > 0
+    ? { catchable: true, count: availableInRange.length }
+    : { catchable: false, count: 0 };
 }
 
 function updateHero(counts, filter) {
@@ -537,8 +558,7 @@ function updateHero(counts, filter) {
   const changed = hcIn.textContent !== String(counts.showsAvailableInWindow);
   hcIn.textContent = counts.showsAvailableInWindow;
   $("hcAll").textContent = counts.matchedShows;
-  $("hcDetail").textContent =
-    `${state.d0}–${state.d1} Aug · starting ${fmtT(state.t0)}–${fmtT(state.t1)}`;
+  $("hcDetail").textContent = `${state.d0}–${state.d1} Aug`;
   if (changed) {
     const num = hcIn.closest(".hc-num");
     num.classList.remove("bump");
@@ -652,61 +672,6 @@ function keysDate(el, fn) {
   });
 }
 
-// --- Time-of-day dual slider ------------------------------------------------
-
-function paintTime() {
-  const tsH = [$("tsH0"), $("tsH1")];
-  const tsB = [$("tsB0"), $("tsB1")];
-  const pct = (m) => ((m - T_MIN) / (T_MAX - T_MIN)) * 100;
-  tsH[0].style.left = pct(state.t0) + "%";
-  tsH[1].style.left = pct(state.t1) + "%";
-  $("tsFill").style.left = pct(state.t0) + "%";
-  $("tsFill").style.width = (pct(state.t1) - pct(state.t0)) + "%";
-  tsB[0].textContent = fmtT(state.t0);
-  tsB[1].textContent = fmtT(state.t1);
-  $("todFrom").textContent = fmtT(state.t0);
-  $("todTo").textContent = fmtT(state.t1);
-  tsH[0].setAttribute("aria-valuenow", state.t0);
-  tsH[0].setAttribute("aria-valuetext", fmtT(state.t0));
-  tsH[1].setAttribute("aria-valuenow", state.t1);
-  tsH[1].setAttribute("aria-valuetext", fmtT(state.t1));
-}
-
-function timeAt(clientX) {
-  const r = $("tslider").getBoundingClientRect();
-  const raw = T_MIN + ((clientX - r.left) / r.width) * (T_MAX - T_MIN);
-  return clamp(Math.round(raw / T_STEP) * T_STEP, T_MIN, T_MAX);
-}
-
-function dragTime(index) {
-  const el = index === 0 ? $("tsH0") : $("tsH1");
-  el.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    el.setPointerCapture(e.pointerId);
-    const move = (ev) => {
-      if (index === 0) state.t0 = clamp(timeAt(ev.clientX), T_MIN, state.t1 - T_GAP);
-      else state.t1 = clamp(timeAt(ev.clientX), state.t0 + T_GAP, T_MAX);
-      paintTime();
-      scheduleRecompute();
-    };
-    const up = () => {
-      el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerup", up);
-    };
-    el.addEventListener("pointermove", move);
-    el.addEventListener("pointerup", up);
-  });
-  el.addEventListener("keydown", (e) => {
-    const dd = e.key === "ArrowLeft" ? -T_STEP : e.key === "ArrowRight" ? T_STEP : 0;
-    if (!dd) return;
-    e.preventDefault();
-    if (index === 0) state.t0 = clamp(state.t0 + dd, T_MIN, state.t1 - T_GAP);
-    else state.t1 = clamp(state.t1 + dd, state.t0 + T_GAP, T_MAX);
-    paintTime();
-    scheduleRecompute();
-  });
-}
-
 // --- Wiring -----------------------------------------------------------
 
 function wireDropzone() {
@@ -785,9 +750,6 @@ function wireCalendarControls() {
     state.d1 = clamp(state.d1 + dd, state.d0, DAYS_IN_MONTH);
   });
 
-  dragTime(0);
-  dragTime(1);
-
   window.addEventListener("resize", () => layoutOverlay());
 }
 
@@ -799,5 +761,4 @@ wireContinueButton();
 wireClearButton();
 wireRetry();
 wireCalendarControls();
-paintTime();
 loadData();
