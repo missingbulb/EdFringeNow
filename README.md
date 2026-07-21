@@ -34,19 +34,9 @@ data/shows.json   mock Edinburgh Fringe shows
 
 ## Development
 
-Shared Claude guidelines are mounted at `.claudinite/` via [Claudinite](https://github.com/missingbulb/Claudinite).
-
-These are synced over plain HTTPS by a `SessionStart` hook
-(`.claude/hooks/sync-claudinite.sh`), which fetches the latest `main` as a
-tarball into a gitignored `.claudinite/` each session. No git submodule or
-credential is needed (the submodule clone 403s in Claude Code on the web, where
-the git credential is scoped to this repo only).
-
-To populate `.claudinite/` manually outside a Claude session, just run the hook:
-
-```
-.claude/hooks/sync-claudinite.sh
-```
-
-Set `CLAUDINITE_REF` to a tag or SHA to pin a specific version instead of
-tracking `main`.
+Shared Claude working guidelines are vendored into this repo as committed files
+via [Claudinite](https://github.com/missingbulb/Claudinite) and refreshed by its
+nightly maintenance — no session-time fetch. Session hooks and the
+`Claudinite checks` CI workflow run the conformance sweep from the committed
+snapshot, so every branch judges by the version it carries. How the vendored
+mount works lives in the Claudinite repo (`mount/DESIGN.md`).

@@ -353,7 +353,7 @@ def main() -> int:
             try:
                 events = fetch_events_page(token, page, args.per, args.seed,
                                            args.recently_added)
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001 — one bad page must not kill the whole crawl; the error is reported and counted in `failed`
                 print(f"    ERROR: {exc}", file=sys.stderr)
                 failed += 1
                 continue
