@@ -115,12 +115,8 @@ a { color: inherit; }
 }
 .state-error .btn { margin-top: 16px; }
 
-/* ============ Screen 1 — Input ============ */
+/* ============ Intake (no favourites yet) ============ */
 .intake { max-width: 660px; margin: 0 auto; padding: 36px 40px 30px; }
-.step-kicker {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--violet); margin: 0 0 6px;
-}
 .intake-title {
   font-family: var(--display); font-weight: 700; font-size: 1.5rem;
   letter-spacing: -0.01em; margin: 0 0 6px;
@@ -160,6 +156,7 @@ a { color: inherit; }
 .btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 .dz-alt { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+.dz-privacy { margin: 6px 0 0; font-size: 0.78rem; color: #98a2b3; }
 .link-quiet {
   font-weight: 700; color: var(--violet-dark); text-decoration: none;
   border-bottom: 1px solid rgba(108, 76, 241, 0.35);
@@ -168,13 +165,10 @@ a { color: inherit; }
 }
 .link-quiet:hover { color: var(--violet); border-bottom-color: var(--violet); }
 
-/* Upload summary */
-.statecap {
-  margin: 22px 0 8px; font-size: 0.64rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: #98a2b3;
-}
+/* Upload summary (failure feedback only — the calendar takes over on success) */
 .upload-summary {
   display: flex; align-items: center; gap: 14px;
+  margin-top: 22px;
   border: 1px solid #c7ecd9; background: var(--ok-bg);
   border-radius: 12px; padding: 13px 16px;
 }
@@ -191,19 +185,6 @@ a { color: inherit; }
   background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px;
   white-space: nowrap;
 }
-/* Saved-favourites provenance bar + clear control */
-.saved-bar {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  flex-wrap: wrap; margin-top: 10px; padding: 8px 14px;
-  border: 1px solid var(--line); border-radius: 10px; background: #fff;
-}
-.saved-note {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 0.82rem; font-weight: 600; color: var(--ink); min-width: 0;
-}
-.saved-ico { flex: 0 0 auto; color: var(--violet); }
-.saved-hint { font-weight: 400; color: var(--muted); }
-
 .missing-list {
   margin: 8px 0 0; padding: 10px 14px; list-style: none;
   border: 1px solid var(--line); border-radius: 10px; background: #fff;
@@ -212,21 +193,12 @@ a { color: inherit; }
 .missing-list li { padding: 2px 0; }
 .missing-list code { font-size: 0.8rem; color: var(--ink); }
 
-.continue-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
-.continue-note { font-size: 0.82rem; color: var(--muted); }
-
-/* Collapsed "More settings" placeholder */
+/* "More settings" placeholder block (always visible) */
 .more { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 6px; }
-.more summary {
-  display: flex; align-items: center; gap: 8px; list-style: none;
-  cursor: pointer; padding: 10px 4px; font-weight: 700; font-size: 0.9rem; color: var(--ink);
-  border-radius: 8px;
+.more-title {
+  display: flex; align-items: center; gap: 8px;
+  margin: 0; padding: 10px 4px; font-weight: 700; font-size: 0.9rem; color: var(--ink);
 }
-.more summary::-webkit-details-marker { display: none; }
-.more summary:hover { color: var(--violet-dark); }
-.more summary:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
-.more-caret { transition: transform 0.15s ease; color: var(--muted); font-size: 0.7rem; }
-.more[open] .more-caret { transform: rotate(180deg); }
 .more-hint { margin-left: auto; font-weight: 600; font-size: 0.74rem; color: #98a2b3; }
 .more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; padding: 8px 4px 14px; }
 .more-field-label {
@@ -248,14 +220,29 @@ a { color: inherit; }
 }
 .faux-input .fi-caret { color: var(--muted); font-size: 0.68rem; }
 
-/* ============ Screen 2 — Availability calendar ============ */
+/* ============ Availability calendar ============ */
 .cal-card { padding: 30px 28px 26px; }
 .cal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.cal-top-left { min-width: 0; max-width: 640px; }
 .cal-title {
   font-family: var(--display); font-weight: 700; font-size: 1.5rem;
   letter-spacing: -0.01em; margin: 0 0 6px;
 }
-.cal-sub { color: var(--muted); font-size: 0.92rem; margin: 0; max-width: 520px; }
+
+/* The favourites provenance line: what's loaded, plus quiet replace/clear
+   actions — deliberately low-key, no button chrome, no accent colour. */
+.fav-line {
+  display: flex; align-items: baseline; gap: 4px 8px; flex-wrap: wrap;
+  margin: 0; font-size: 0.85rem; color: var(--muted);
+}
+.fav-action {
+  font: inherit; font-size: 0.82rem; color: var(--muted);
+  background: none; border: none; padding: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-color: #c6cdda;
+}
+.fav-action:hover { color: var(--ink); text-decoration-color: currentColor; }
+.fav-sep { color: #c6cdda; }
 
 /* The payoff number */
 .hero-count { text-align: right; flex: 0 0 auto; }
@@ -273,13 +260,23 @@ a { color: inherit; }
 .hc-label { font-size: 0.84rem; font-weight: 600; color: var(--ink); margin-top: 2px; }
 .hc-detail { font-size: 0.78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-/* Toolbar: the availability legend. Colours mirror edfringe.com's own
-   day-picker legend (see plan.js segClass / the --fr-* tokens below). */
+/* Toolbar: the availability legend + the best-dates picker. Colours mirror
+   edfringe.com's own day-picker legend (see plan.js segClass / the --fr-*
+   tokens below). */
 .cal-toolbar {
   display: flex; align-items: center; gap: 14px 20px;
   margin: 22px 0 6px; padding-top: 18px; border-top: 1px solid var(--line);
   flex-wrap: wrap;
 }
+.optimize { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.opt-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.opt-select {
+  font: inherit; font-size: 0.84rem; font-weight: 600; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 10px; background: #fff;
+  padding: 7px 10px; cursor: pointer;
+}
+.opt-select:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+.btn-sm { padding: 8px 14px; font-size: 0.84rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(108, 76, 241, 0.22); }
 .legend { display: flex; gap: 10px 16px; flex-wrap: wrap; }
 .lg { display: inline-flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
 .lg i { width: 14px; height: 11px; border-radius: 3px; display: block; }
@@ -297,23 +294,22 @@ a { color: inherit; }
 .lg-multi i.multi b:last-child { background: var(--fr-2for1); }
 
 /* --- The calendar canvas --- */
-/* .cal-wrap is the scroll container: day-header stays sticky at its top while
-   the lane list scrolls beneath it. The toolbar/hero-count above are outside
-   this container entirely, so they never scroll away either. */
+/* .cal-wrap is the scroll container: the sticky block (window-control rail +
+   day header) stays at its top while the lane list scrolls beneath it. The
+   toolbar/hero-count above are outside this container entirely, so they never
+   scroll away either. */
 .cal-wrap {
   position: relative; margin-top: 14px;
   max-height: 62vh; overflow-y: auto; overflow-x: hidden;
   border-radius: 10px;
 }
-.cal-inner { position: relative; padding-top: 40px; /* room for the handle flags */ }
+.cal-inner { position: relative; }
+
+.cal-sticky { position: sticky; top: 0; z-index: 4; background: var(--paper); }
 
 .cal-row { display: grid; grid-template-columns: 190px 1fr 52px; gap: 0 14px; align-items: center; }
 
-.cal-head {
-  border-bottom: 1px solid var(--line); padding-bottom: 6px;
-  position: sticky; top: 0; z-index: 4; background: var(--paper);
-}
-.cal-head-left { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.cal-head { border-bottom: 1px solid var(--line); padding-bottom: 6px; }
 .cal-head-right { font-size: 0.62rem; font-weight: 600; color: #98a2b3; text-align: center; line-height: 1.15; }
 .days { display: grid; grid-template-columns: repeat(31, 1fr); gap: 3px; }
 .day-col { text-align: center; line-height: 1.15; }
@@ -338,6 +334,7 @@ a { color: inherit; }
    day render as two side-by-side segments — the split IS the "two shows that
    day" cue. Single-performance days read as one solid bar. */
 .cell { height: 10px; border-radius: 3px; display: flex; gap: 0; overflow: hidden; }
+.cell:hover { box-shadow: 0 0 0 2px rgba(16, 24, 40, 0.3); }
 .cell-multi { gap: 1.5px; }
 .seg { flex: 1 1 0; min-width: 0; border-radius: 3px; }
 .seg-avail   { background: var(--fr-avail); }
@@ -355,43 +352,80 @@ a { color: inherit; }
 .lane--out .lane-title { opacity: 0.42; }
 .lane--out .lane-track { opacity: 0.35; }
 
-/* --- Window overlay: dim panels, highlight band, drag handles --- */
-.win { position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; }
-.festend { position: absolute; top: 40px; bottom: 0; background: rgba(234, 236, 240, 0.35); border-left: 1px dashed #d5d9e2; pointer-events: none; z-index: 1; }
-.win-dim { position: absolute; top: 40px; bottom: 0; background: rgba(247, 248, 250, 0.72); }
-.win-band {
-  position: absolute; top: 40px; bottom: 0;
-  background: rgba(108, 76, 241, 0.05);
-  border-left: 2px solid var(--violet); border-right: 2px solid var(--violet);
-  cursor: grab; pointer-events: auto; touch-action: none;
+/* --- Window controls: the rail (sticky, above the day header) --- */
+/* All dragging lives here: the two handle tabs resize the window; the space
+   between them slides the whole window. */
+.win-rail { position: relative; height: 38px; }
+.rail-band {
+  position: absolute; top: 6px; bottom: 0;
+  background: rgba(108, 76, 241, 0.07);
+  border-radius: 8px 8px 0 0;
+  cursor: grab; touch-action: none;
 }
-.win-band:active { cursor: grabbing; }
+.rail-band:active { cursor: grabbing; }
+/* A centred grip bar so the between-space reads as draggable. */
+.rail-band::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px; height: 4px; border-radius: 2px;
+  background: rgba(108, 76, 241, 0.35);
+}
+.rail-band:hover::before { background: rgba(108, 76, 241, 0.6); }
+
 .win-handle {
   position: absolute; top: 0; bottom: 0; width: 26px;
   transform: translateX(-50%);
-  pointer-events: auto; cursor: ew-resize; touch-action: none;
+  cursor: ew-resize; touch-action: none; z-index: 1;
 }
-/* Flags anchor OUTWARD from their line (start points left, end points right),
-   so they never collide even when the window is dragged narrow. */
+/* The tab's stem: a short violet line down to the day header, continuing
+   visually into the band edge below the header. */
+.win-handle::before {
+  content: ""; position: absolute; left: 50%; top: 6px; bottom: 0;
+  width: 2px; margin-left: -1px; background: var(--violet);
+}
+/* Handle tabs anchor OUTWARD from their line (start points left, end points
+   right), so they never collide even when the window is dragged narrow. */
 .win-flag {
   position: absolute; top: 2px;
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 7px;
   font-size: 0.72rem; font-weight: 700; color: var(--violet-dark);
-  background: #fff; border: 1.5px solid var(--violet); border-radius: 999px;
-  padding: 4px 11px; white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.12);
+  background: #fff; border: 1.5px solid var(--violet); border-radius: 8px;
+  padding: 5px 10px; white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.15);
   font-variant-numeric: tabular-nums;
+  cursor: ew-resize;
 }
 .win-handle--start .win-flag { right: 50%; margin-right: -2px; }
 .win-handle--end .win-flag { left: 50%; margin-left: -2px; }
-.win-flag .grip { display: inline-flex; gap: 2px; }
-.win-flag .grip i { width: 2.5px; height: 9px; border-radius: 2px; background: rgba(108, 76, 241, 0.5); display: block; }
+.win-flag .grip { display: inline-flex; gap: 2.5px; }
+.win-flag .grip i { width: 3px; height: 12px; border-radius: 2px; background: rgba(108, 76, 241, 0.5); display: block; }
 .win-handle:hover .win-flag, .win-handle:focus-visible .win-flag {
   background: var(--violet); color: #fff; border-color: var(--violet);
 }
 .win-handle:hover .win-flag .grip i, .win-handle:focus-visible .win-flag .grip i { background: rgba(255, 255, 255, 0.75); }
 .win-handle:focus-visible { outline: none; }
 .win-handle:focus-visible .win-flag { box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.35); }
+
+/* --- Window overlay over the lanes: purely visual, never intercepts the
+   pointer — lane cells keep their hover tooltips. --- */
+.win { position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; }
+.festend { position: absolute; top: 0; bottom: 0; background: rgba(234, 236, 240, 0.35); border-left: 1px dashed #d5d9e2; pointer-events: none; z-index: 1; }
+.win-dim { position: absolute; top: 0; bottom: 0; background: rgba(247, 248, 250, 0.72); }
+.win-band {
+  position: absolute; top: 0; bottom: 0;
+  background: rgba(108, 76, 241, 0.05);
+  border-left: 2px solid var(--violet); border-right: 2px solid var(--violet);
+}
+
+/* Performance-time tooltip (follows the cursor over day cells). */
+.cal-tip {
+  position: fixed; z-index: 60; pointer-events: none;
+  background: var(--ink); color: #fff;
+  font-size: 0.74rem; line-height: 1.4; font-variant-numeric: tabular-nums;
+  padding: 6px 10px; border-radius: 8px; white-space: pre-line;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.25);
+  max-width: 280px;
+}
 
 .cal-foot {
   display: flex; justify-content: space-between; gap: 20px;

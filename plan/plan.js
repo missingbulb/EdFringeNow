@@ -2,16 +2,19 @@
 //
 // Self-contained ES module: no globals shared with the home site's js/app.js.
 // Wires the real computation engine (./lib/engine.js, ./lib/favourites.js —
-// pure, untouched here) to the two-screen UI described in
+// pure, untouched here) to the UI described in
 // plan/design/mock.html + plan/design/DESIGN_NOTES.md.
 //
-// Screen 1 (input): drag/drop or pick a favourites CSV, or load the bundled
-//   sample. Screen 2 (calendar): one lane per matched favourite across
-//   August 2026, with a draggable date window and a start-time range slider
-//   that filter live via engine.summarize().
+// The page has one state switch, keyed on whether a favourites set is in:
+// without one, the intake panel (drag/drop or pick a favourites CSV, or load
+// the bundled sample) is all there is; with one, the availability calendar
+// replaces it — one lane per matched favourite across August 2026, a
+// draggable date window filtering live via engine.summarize(), and quiet
+// replace/clear actions on the calendar's favourites line.
 
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize } from "./lib/engine.js";
+import { isAvailable } from "./lib/availability.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -62,11 +65,14 @@ function dateStr(day) {
 // 1 Aug 2026 is a Saturday; compute weekday letters from real dates rather
 // than hardcoding, so this stays correct if the festival year ever changes.
 const DOW_SHORT = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+function dow(day) {
+  return new Date(Date.UTC(YEAR, 7, day)).getUTCDay();
+}
 function dowShort(day) {
-  return DOW_SHORT[new Date(Date.UTC(YEAR, 7, day)).getUTCDay()];
+  return DOW_SHORT[dow(day)];
 }
 function isWeekend(day) {
-  const d = new Date(Date.UTC(YEAR, 7, day)).getUTCDay();
+  const d = dow(day);
   return d === 0 || d === 6;
 }
 
@@ -193,14 +199,14 @@ function clearStoredFavourites() {
   }
 }
 
-/** On load, re-hydrate a still-valid saved set (no scroll — stay on screen 1). */
+/** On load, re-hydrate a still-valid saved set (no scroll — no jump on open). */
 function restoreStoredFavourites() {
   const data = loadStoredFavourites();
   if (!data || data.slugs.length === 0) return;
   applyFavourites(data.slugs, data.filename, data.savedAt, { scroll: false });
 }
 
-/** Wipe the current favourites from both the UI and storage. */
+/** Wipe the current favourites from both the UI and storage (back to intake). */
 function clearFavourites() {
   clearStoredFavourites();
 
@@ -210,15 +216,13 @@ function clearFavourites() {
   state.filename = "";
   state.savedAt = null;
 
-  $("summaryCap").hidden = true;
   const summaryEl = $("uploadSummary");
   summaryEl.hidden = true;
   summaryEl.classList.remove("is-partial");
   $("missingList").hidden = true;
   $("missingList").innerHTML = "";
-  $("continueRow").hidden = true;
-  $("savedBar").hidden = true;
   $("screen2").hidden = true;
+  $("screen1").hidden = false;
 
   $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -280,16 +284,19 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}
   state.filename = filename;
   state.savedAt = savedAt;
 
-  renderUploadSummary();
-  renderSavedBar();
-
+  // The state switch: with any matched favourite the calendar replaces the
+  // intake panel entirely; otherwise stay on intake and explain what happened.
   if (matched.length > 0) {
     // Reset the window to the defaults on every fresh set.
     state.d0 = DEFAULT_D0;
     state.d1 = DEFAULT_D1;
+    renderFavLine();
     buildCalendar();
+    $("screen1").hidden = true;
     showCalendar({ scroll });
   } else {
+    renderUploadSummary();
+    $("screen1").hidden = false;
     $("screen2").hidden = true;
   }
 }
@@ -311,23 +318,40 @@ function fmtSavedWhen(ts) {
   return then.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 }
 
-/** The "N favourites from <when>" provenance line + Clear button visibility. */
-function renderSavedBar() {
-  const bar = $("savedBar");
-  if (state.totalFavourites > 0) {
-    const n = state.totalFavourites;
-    $("savedNote").textContent =
-      `${n} favourite${n === 1 ? "" : "s"} from ${fmtSavedWhen(state.savedAt)}`;
-    bar.hidden = false;
-  } else {
-    bar.hidden = true;
+/**
+ * The calendar's favourites provenance line: what's loaded, where it came
+ * from, which slugs didn't match, plus the quiet Replace/Clear actions
+ * (those are static in the HTML — only the summary text is rendered here).
+ */
+function renderFavLine() {
+  const { totalFavourites, matched, missingSlugs, filename, savedAt } = state;
+  const el = $("favSummary");
+  el.textContent = "";
+
+  let text =
+    missingSlugs.length > 0
+      ? `${matched.length} of ${totalFavourites} favourites matched`
+      : `${totalFavourites} favourite${totalFavourites === 1 ? "" : "s"}`;
+  text += ` · from ${fmtSavedWhen(savedAt)}`;
+  if (filename) text += ` · ${filename}`;
+  el.append(text);
+
+  if (missingSlugs.length > 0) {
+    el.append(" ");
+    const whichBtn = document.createElement("button");
+    whichBtn.type = "button";
+    whichBtn.className = "fav-action";
+    whichBtn.textContent = "(which didn't?)";
+    whichBtn.addEventListener("click", toggleMissingList);
+    el.appendChild(whichBtn);
   }
+  renderMissingList();
 }
 
+/** Intake-panel feedback for an upload that yielded nothing usable. */
 function renderUploadSummary() {
   const { totalFavourites, matched, missingSlugs, filename } = state;
 
-  $("summaryCap").hidden = false;
   const summaryEl = $("uploadSummary");
   summaryEl.hidden = false;
   summaryEl.classList.toggle("is-partial", missingSlugs.length > 0);
@@ -337,30 +361,11 @@ function renderUploadSummary() {
       ? "No favourites found in that file"
       : `${totalFavourites} favourite${totalFavourites === 1 ? "" : "s"} loaded`;
 
-  if (totalFavourites === 0) {
-    $("usSub").textContent = "We couldn't find any edfringe.com show links in that file.";
-  } else {
-    let sub = `${matched.length} matched to our show data`;
-    if (missingSlugs.length > 0) {
-      sub += ` · ${missingSlugs.length} we couldn't find `;
-    }
-    $("usSub").textContent = sub;
-    if (missingSlugs.length > 0) {
-      const whichBtn = document.createElement("button");
-      whichBtn.type = "button";
-      whichBtn.className = "link-quiet";
-      whichBtn.textContent = "(which?)";
-      whichBtn.addEventListener("click", toggleMissingList);
-      $("usSub").appendChild(whichBtn);
-    }
-  }
+  $("usSub").textContent =
+    totalFavourites === 0
+      ? "We couldn't find any edfringe.com show links in that file."
+      : `${matched.length} matched to our show data · ${missingSlugs.length} we couldn't find`;
   $("usFile").textContent = filename;
-
-  renderMissingList();
-
-  const continueRow = $("continueRow");
-  continueRow.hidden = matched.length === 0;
-  $("continueBtn").disabled = matched.length === 0;
 }
 
 function renderMissingList() {
@@ -386,7 +391,7 @@ function toggleMissingList() {
 }
 
 /** Reveal the calendar panel; scroll to it only when the caller asks (fresh
- *  uploads and the Continue button do; a silent storage restore does not). */
+ *  uploads do; a silent storage restore does not). */
 function showCalendar({ scroll = false } = {}) {
   const screen2 = $("screen2");
   screen2.hidden = false;
@@ -465,10 +470,11 @@ function buildCalendar() {
     lane.dataset.slug = show.slug;
 
     // Just the show title — this screen is an overview of the shows you want,
-    // not a per-show detail card, so no time / genre / venue line.
+    // not a per-show detail card, so no time / genre / venue line. The hover
+    // tooltip carries the full title plus the show's usual start time.
     const label = document.createElement("div");
     label.className = "lane-label";
-    label.title = show.title;
+    label.title = `${show.title} · usually ${typicalStartTime(show.performances)}`;
     label.innerHTML = `<div class="lane-title">${escapeHtml(show.title)}</div>`;
 
     const track = document.createElement("div");
@@ -553,9 +559,11 @@ function buildDayCells(performances) {
         seg.className = "seg " + segClass(p);
         cell.appendChild(seg);
       }
-      cell.title = entries
+      // Consumed by the custom hover tooltip (see wireCellTips) — one line per
+      // performance, so the time a show is on is visible on hover.
+      cell.dataset.tip = entries
         .map((p) => `${dowShort(d)} ${d} Aug · ${p.start} · ${statusLabel(p)}`)
-        .join("; ");
+        .join("\n");
     }
     frag.appendChild(cell);
   }
@@ -652,7 +660,7 @@ function layoutOverlay() {
 }
 
 function paintWindow() {
-  const { trackWidth, dayW } = state.layout;
+  const { trackLeft, trackWidth, dayW } = state.layout;
   const x0 = (state.d0 - 1) * dayW;
   const x1 = state.d1 * dayW;
   $("dimL").style.left = "0";
@@ -661,8 +669,12 @@ function paintWindow() {
   $("dimR").style.width = Math.max(0, trackWidth - x1) + "px";
   $("band").style.left = x0 + "px";
   $("band").style.width = (x1 - x0) + "px";
-  $("hStart").style.left = x0 + "px";
-  $("hEnd").style.left = x1 + "px";
+  // The rail (handles + between-space) spans the full cal-inner width, unlike
+  // the #win overlay, so its children carry the track offset themselves.
+  $("hStart").style.left = (trackLeft + x0) + "px";
+  $("hEnd").style.left = (trackLeft + x1) + "px";
+  $("railBand").style.left = (trackLeft + x0) + "px";
+  $("railBand").style.width = (x1 - x0) + "px";
   $("flagStart").textContent = `${state.d0} Aug`;
   $("flagEnd").textContent = `${state.d1} Aug`;
   const hStart = $("hStart");
@@ -755,13 +767,11 @@ function wireSampleLink() {
   });
 }
 
-function wireContinueButton() {
-  $("continueBtn").addEventListener("click", () => {
-    if (state.matched.length > 0) showCalendar({ scroll: true });
-  });
-}
-
-function wireClearButton() {
+function wireFavActions() {
+  // "Replace file" re-opens the same picker the intake dropzone uses; the
+  // change handler in wireDropzone routes the new file through the same
+  // upload pipeline.
+  $("replaceFavBtn").addEventListener("click", () => $("csvInput").click());
   $("clearFavBtn").addEventListener("click", clearFavourites);
 }
 
@@ -784,7 +794,8 @@ function wireCalendarControls() {
   dragDate($("hEnd"), (ev) => {
     state.d1 = clamp(dayAt(ev.clientX), state.d0, DAYS_IN_MONTH);
   });
-  dragDate($("band"), (ev, s0, s1, startX) => {
+  // The space between the two handles slides the whole window.
+  dragDate($("railBand"), (ev, s0, s1, startX) => {
     const { dayW } = state.layout;
     const dd = Math.round((ev.clientX - startX) / dayW);
     const len = s1 - s0;
@@ -801,14 +812,113 @@ function wireCalendarControls() {
   window.addEventListener("resize", () => layoutOverlay());
 }
 
+// --- "Pick my best dates": place the window where it catches the most shows --
+
+/** Catchable shows (primary) and catchable dates (tie-break) for a window. */
+function windowScore(d0, d1) {
+  const a = dateStr(d0);
+  const b = dateStr(d1);
+  let shows = 0;
+  let dates = 0;
+  for (const show of state.matched) {
+    let n = 0;
+    for (const p of show.performances || []) {
+      if (p.date >= a && p.date <= b && isAvailable(p)) n++;
+    }
+    if (n > 0) shows++;
+    dates += n;
+  }
+  return { shows, dates };
+}
+
+/** The best-scoring window among candidates; ties go to the earliest. */
+function bestWindow(candidates) {
+  let best = null;
+  for (const c of candidates) {
+    const score = windowScore(c.d0, c.d1);
+    if (
+      !best ||
+      score.shows > best.shows ||
+      (score.shows === best.shows && score.dates > best.dates)
+    ) {
+      best = { ...c, ...score };
+    }
+  }
+  return best;
+}
+
+function wireOptimizer() {
+  $("optimizeBtn").addEventListener("click", () => {
+    if (state.matched.length === 0) return;
+    const value = $("stayLen").value;
+    const candidates = [];
+    if (value === "wknd") {
+      // Every Sat–Sun pair on the axis.
+      for (let d = 1; d < DAYS_IN_MONTH; d++) {
+        if (dow(d) === 6) candidates.push({ d0: d, d1: d + 1 });
+      }
+    } else {
+      const len = Number(value);
+      for (let d0 = 1; d0 + len - 1 <= DAYS_IN_MONTH; d0++) {
+        candidates.push({ d0, d1: d0 + len - 1 });
+      }
+    }
+    const best = bestWindow(candidates);
+    if (!best) return;
+    state.d0 = best.d0;
+    state.d1 = best.d1;
+    paintWindow();
+    scheduleRecompute();
+  });
+}
+
+// --- Performance-time tooltip over the day cells ----------------------------
+
+function wireCellTips() {
+  const lanes = $("lanes");
+  const tip = $("calTip");
+
+  const position = (e) => {
+    // Beside the cursor, flipped left when it would run off the viewport.
+    const pad = 14;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - pad;
+    if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - pad;
+    tip.style.left = x + "px";
+    tip.style.top = y + "px";
+  };
+
+  lanes.addEventListener("pointerover", (e) => {
+    const cell = e.target.closest(".cell");
+    if (!cell || !cell.dataset.tip) {
+      tip.hidden = true;
+      return;
+    }
+    tip.textContent = cell.dataset.tip;
+    tip.hidden = false;
+    position(e);
+  });
+  lanes.addEventListener("pointermove", (e) => {
+    if (!tip.hidden) position(e);
+  });
+  lanes.addEventListener("pointerleave", () => {
+    tip.hidden = true;
+  });
+  calWrap().addEventListener("scroll", () => {
+    tip.hidden = true;
+  });
+}
+
 // --- Go ---------------------------------------------------------------
 
 wireDropzone();
 wireSampleLink();
-wireContinueButton();
-wireClearButton();
+wireFavActions();
 wireRetry();
 wireCalendarControls();
+wireOptimizer();
+wireCellTips();
 
 // The upload screen is visible from first paint; fetch the catalogue in the
 // background so the user can read the instructions and export their CSV while it
