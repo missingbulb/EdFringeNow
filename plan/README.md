@@ -6,11 +6,13 @@ site ("Fringe Discover") and does **not** touch it — the home site stays as-is
 until this matures.
 
 > **Status:** Milestone 1 — *favourites → availability calendar*. You upload your
-> edfringe.com favourites CSV export; the page shows each favourited show as a
-> lane across August and lets you scrub a date window + start-time range to see
-> **how many of your shows are actually catchable**. Scheduling a full itinerary
-> is a later milestone (the engine primitives for it are already ported — see
-> below).
+> edfringe.com favourites CSV export; the calendar then replaces the upload
+> panel (one page, one state switch — replace/clear live as quiet actions on
+> the calendar), showing each favourited show as a lane across August. Scrub a
+> date window — or let *"Pick my best dates"* place it for a given stay length
+> or the best Sat–Sun weekend — to see **how many of your shows are actually
+> catchable**. Scheduling a full itinerary is a later milestone (the engine
+> primitives for it are already ported — see below).
 
 ## 100% client-side
 
@@ -23,14 +25,15 @@ There is **no server and no build step**. Everything runs in the browser:
    browser with the `FileReader` API — nothing is uploaded anywhere. The CSV's
    `URL to Event Details` column yields a slug that matches `show.slug`, so
    favourites → available performances is computed entirely locally.
-3. The availability calendar, the draggable date window, and the start-time
-   slider all recompute live via the pure engine in [`lib/`](lib/).
+3. The availability calendar and the draggable date window recompute live via
+   the pure engine in [`lib/`](lib/); the *"Pick my best dates"* control scores
+   every candidate window in the browser the same way.
 4. Your uploaded favourites (the parsed slug list — never the show data) are
    remembered in `localStorage` for **3 days**, so a return visit re-hydrates
    the calendar without another export/upload. Availability is always
-   re-derived against the freshest catalogue on restore. A **Clear favourites**
-   button removes the set from both the page and storage, and a *"N favourites
-   from &lt;when&gt;"* label shows where the current set came from.
+   re-derived against the freshest catalogue on restore. The calendar's
+   favourites line shows where the current set came from (*"N favourites from
+   &lt;when&gt;"*) with quiet **Replace file** / **Clear** actions.
 
 Because the page fetches a data file, open it over HTTP (not `file://`):
 `python3 -m http.server` from the repo root, then visit `/plan/`.
@@ -39,7 +42,7 @@ Because the page fetches a data file, open it over HTTP (not `file://`):
 
 ```
 plan/
-  index.html          the page (two screens: upload, then calendar)
+  index.html          the page (intake panel, replaced by the calendar once favourites are in)
   plan.css            styles (adapted from the design mock)
   plan.js             page logic — wires lib/ to the UI, no globals shared with js/app.js
   lib/                pure, DOM-free computation engine (ported from EdFringeAllocator's

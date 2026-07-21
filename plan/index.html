@@ -57,9 +57,11 @@
       <button type="button" class="btn" id="retryBtn">Try again</button>
     </div>
 
-    <!-- ===================== SCREEN 1 — Input ===================== -->
+    <!-- ===================== Intake (no favourites yet) ===================== -->
+    <!-- The page has one state switch: this intake panel shows until a
+         favourites set is in, then the calendar replaces it (replace/clear
+         live as quiet actions on the calendar's favourites line). -->
     <section class="panel intake" id="screen1" aria-labelledby="intakeTitle">
-      <p class="step-kicker">Step 1 of 2</p>
       <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
       <p class="intake-sub">
         Export the shows you've hearted:
@@ -79,8 +81,10 @@
         <input type="file" id="csvInput" accept=".csv,.txt" hidden />
       </label>
       <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
+      <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
 
-      <p class="statecap" id="summaryCap" hidden>Your favourites</p>
+      <!-- Shown only when an upload yields nothing usable (the calendar takes
+           over as soon as at least one favourite matches). -->
       <div class="upload-summary" role="status" id="uploadSummary" hidden>
         <span class="us-tick" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7" /></svg>
@@ -91,32 +95,13 @@
         </div>
         <span class="us-file" id="usFile"></span>
       </div>
-      <div class="saved-bar" id="savedBar" hidden>
-        <span class="saved-note">
-          <svg class="saved-ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
-          <span id="savedNote"></span>
-          <span class="saved-hint">— kept in this browser for 3 days</span>
-        </span>
-        <button type="button" class="link-quiet" id="clearFavBtn">Clear favourites</button>
-      </div>
-      <ul class="missing-list" id="missingList" hidden></ul>
 
-      <div class="continue-row" id="continueRow" hidden>
-        <span class="continue-note">Nothing is uploaded to a server — your list stays in this browser.</span>
-        <button class="btn" type="button" id="continueBtn">See your calendar
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
-        </button>
-      </div>
-
-      <!-- TODO: these controls are collapsed placeholders for a future milestone —
+      <!-- TODO: these controls are placeholders for a future milestone —
            genre chips, minimum-gap, and trip-dates are not wired to the engine yet.
            Do not fake behaviour here; wire them up once the engine/UI contract for
            them is defined. -->
-      <details class="more">
-        <summary>
-          More settings <span class="more-caret" aria-hidden="true">▾</span>
-          <span class="more-hint">Optional — the defaults work well</span>
-        </summary>
+      <div class="more">
+        <h3 class="more-title">More settings <span class="more-hint">Optional — the defaults work well</span></h3>
         <div class="more-grid">
           <div class="chips-wrap">
             <span class="more-field-label">Only these genres</span>
@@ -138,17 +123,21 @@
             <div class="faux-input"><span>Sat 15 Aug — Sat 22 Aug</span><span class="fi-caret">▾</span></div>
           </div>
         </div>
-      </details>
+      </div>
     </section>
 
-    <!-- ===================== SCREEN 2 — Availability calendar ===================== -->
+    <!-- ===================== Availability calendar ===================== -->
     <section class="panel cal-card" id="screen2" aria-labelledby="calTitle" hidden>
       <div class="cal-top">
-        <div>
-          <p class="step-kicker">Step 2 of 2</p>
+        <div class="cal-top-left">
           <h2 class="cal-title" id="calTitle">When are your shows catchable?</h2>
-          <p class="cal-sub">Each row is one of your favourites; a coloured mark is a performance date, using the
-            same colours as edfringe.com. Drag the <strong>start</strong> and <strong>end</strong> flags to frame your visit.</p>
+          <p class="fav-line" id="favLine">
+            <span id="favSummary"></span>
+            <button type="button" class="fav-action" id="replaceFavBtn">Replace file</button>
+            <span class="fav-sep" aria-hidden="true">·</span>
+            <button type="button" class="fav-action" id="clearFavBtn">Clear</button>
+          </p>
+          <ul class="missing-list" id="missingList" hidden></ul>
         </div>
         <div class="hero-count" aria-live="polite">
           <div class="hc-num"><span id="hcIn">0</span> <span class="hc-of">/ <span id="hcAll">0</span></span></div>
@@ -168,40 +157,73 @@
           <span class="lg lg-sold"><i></i>Sold out</span>
           <span class="lg lg-multi"><i class="multi"><b></b><b></b></i>Two shows that day</span>
         </div>
+        <div class="optimize" role="group" aria-label="Pick the best dates for me">
+          <label class="opt-label" for="stayLen">I can be there for</label>
+          <select class="opt-select" id="stayLen">
+            <option value="wknd">a weekend (Sat–Sun)</option>
+            <option value="1">1 day</option>
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4" selected>4 days</option>
+            <option value="5">5 days</option>
+            <option value="6">6 days</option>
+            <option value="7">7 days</option>
+            <option value="8">8 days</option>
+            <option value="9">9 days</option>
+            <option value="10">10 days</option>
+            <option value="11">11 days</option>
+            <option value="12">12 days</option>
+            <option value="13">13 days</option>
+            <option value="14">14 days</option>
+          </select>
+          <button type="button" class="btn btn-sm" id="optimizeBtn">Pick my best dates</button>
+        </div>
       </div>
 
       <div class="cal-wrap" id="calWrap">
         <div class="cal-inner" id="calInner">
+          <!-- Sticky while the lane list scrolls: the window controls (start/end
+               handles + the between-space that drags the whole window) and the
+               day-of-month header stay visible together. -->
+          <div class="cal-sticky">
+            <div class="win-rail" id="winRail">
+              <div class="rail-band" id="railBand" title="Drag to move your date window"></div>
+              <div class="win-handle win-handle--start" id="hStart" role="slider" tabindex="0" aria-label="Window start date"
+                   aria-valuemin="1" aria-valuemax="31" aria-valuenow="7" aria-valuetext="7 August">
+                <span class="win-flag"><span class="grip" aria-hidden="true"><i></i><i></i><i></i></span>Start · <span id="flagStart">7 Aug</span></span>
+              </div>
+              <div class="win-handle win-handle--end" id="hEnd" role="slider" tabindex="0" aria-label="Window end date"
+                   aria-valuemin="1" aria-valuemax="31" aria-valuenow="24" aria-valuetext="24 August">
+                <span class="win-flag">End · <span id="flagEnd">24 Aug</span><span class="grip" aria-hidden="true"><i></i><i></i><i></i></span></span>
+              </div>
+            </div>
+            <div class="cal-row cal-head">
+              <div aria-hidden="true"></div>
+              <div class="days" id="dayHead"><!-- day columns (JS) --></div>
+              <div class="cal-head-right">In window</div>
+            </div>
+          </div>
+
           <!-- Post-festival zone (26–31 Aug) shaded by JS -->
           <div class="festend" id="festEnd" title="The Fringe's core run ends Mon 25 Aug"></div>
 
-          <div class="cal-row cal-head">
-            <div class="cal-head-left">Your favourites</div>
-            <div class="days" id="dayHead"><!-- day columns (JS) --></div>
-            <div class="cal-head-right">In window</div>
-          </div>
-
           <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
 
-          <!-- Date-window overlay: dim panels + band + start/end handles -->
-          <div class="win" id="win">
+          <!-- Date-window overlay: purely visual (dim panels + band edges);
+               all dragging happens on the rail above, so lane cells keep
+               their own hover affordances. -->
+          <div class="win" id="win" aria-hidden="true">
             <div class="win-dim" id="dimL"></div>
             <div class="win-dim" id="dimR"></div>
-            <div class="win-band" id="band" title="Drag to move your date window"></div>
-            <div class="win-handle win-handle--start" id="hStart" role="slider" tabindex="0" aria-label="Window start date"
-                 aria-valuemin="1" aria-valuemax="31" aria-valuenow="7" aria-valuetext="7 August">
-              <span class="win-flag"><span class="grip" aria-hidden="true"><i></i><i></i></span>Start · <span id="flagStart">7 Aug</span></span>
-            </div>
-            <div class="win-handle win-handle--end" id="hEnd" role="slider" tabindex="0" aria-label="Window end date"
-                 aria-valuemin="1" aria-valuemax="31" aria-valuenow="24" aria-valuetext="24 August">
-              <span class="win-flag">End · <span id="flagEnd">24 Aug</span><span class="grip" aria-hidden="true"><i></i><i></i></span></span>
-            </div>
+            <div class="win-band" id="band"></div>
           </div>
         </div>
       </div>
+      <div class="cal-tip" id="calTip" hidden></div>
 
       <div class="cal-foot">
         <span>Dimmed rows have nothing you can catch — widen the date window to bring them back.</span>
+        <span>Kept in this browser for 3 days — nothing is uploaded.</span>
         <span>August 2026 · the Fringe's core run ends Mon 25 Aug</span>
       </div>
     </section>
