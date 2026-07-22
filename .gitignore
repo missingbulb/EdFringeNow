@@ -7,6 +7,13 @@ data/raw_pages/
 /.claudinite-hooks.log
 /.claudinite-hooks.log.tmp
 
+# Claudinite full-corpus mount — synced into .claudinite/ at session start by the
+# vendored hook, not part of this repo (pages.yml calls it "the gitignored
+# .claudinite/ corpus"). Only the vendored subset .claudinite/shared/ is tracked
+# (see above); ignore everything else that lands under .claudinite/.
+/.claudinite/*
+!/.claudinite/shared/
+
 # Python bytecode cache
 __pycache__/
 *.pyc

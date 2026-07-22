@@ -166,6 +166,7 @@ function toMinutes(value) {
  * @property {string} startTime "HH:MM"
  * @property {number} start minutes since epoch
  * @property {number} end minutes since epoch
+ * @property {string|null} status raw ticketStatus from shows.json (for display/colour)
  * @property {string|null} venueCode
  * @property {string|null} venueName
  * @property {string|null} room
@@ -205,6 +206,7 @@ export function eligibleSlots(shows, options = {}) {
         startTime: perf.start,
         start,
         end,
+        status: perf.status ?? null,
         venueCode: show.venue ?? null,
         venueName: show.venueName ?? null,
         room: show.room ?? null,
@@ -247,4 +249,119 @@ export function requiredGapMinutes(a, b, options = {}) {
 export function compatible(a, b, options = {}) {
   const [earlier, later] = a.start <= b.start ? [a, b] : [b, a];
   return later.start >= earlier.end + requiredGapMinutes(earlier, later, options);
+}
+
+// --- building an itinerary from the eligible slots ------------------------
+
+/**
+ * Greedily allocate a conflict-free itinerary: at most one performance per
+ * show, no two performances on the same day overlapping (or closer than the
+ * required travel buffer), and at most `maxPerDay` shows on any one day.
+ *
+ * The heuristic is classic earliest-finish-first activity selection — the
+ * optimal greedy for "fit the most non-overlapping intervals on one machine" —
+ * extended for this domain: once a show is placed, its other performances are
+ * skipped (one-per-show), and a candidate is dropped if its day is already at
+ * the per-day cap. Ties break deterministically (earliest start, then slug),
+ * so the same inputs always yield the same plan — no wall-clock/random state.
+ *
+ * `minPerDay` is applied as a post-pass: a day holding fewer than the minimum
+ * is dropped whole (you don't trek into town for a single show), and its shows
+ * fall back to `unscheduled` with a "below your minimum" reason. Leave it at 1
+ * (the default) to keep every day.
+ *
+ * @param {object[]} shows shows to schedule (typically matchFavourites(...).matched)
+ * @param {{
+ *   windowStart?: string|Date, windowEnd?: string|Date,
+ *   minGapSameVenue?: number, minGapDifferentVenue?: number,
+ *   maxPerDay?: number, minPerDay?: number,
+ * }} [options]
+ * @returns {{
+ *   days: Array<{date: string, slots: Slot[]}>,
+ *   scheduled: Slot[],
+ *   unscheduled: Array<{slug: string, title: string, reason: string}>,
+ *   counts: {matchedShows: number, scheduledShows: number, days: number},
+ * }}
+ */
+export function buildSchedule(shows, options = {}) {
+  const windowStart = options.windowStart ?? DEFAULT_WINDOW_START;
+  const windowEnd = options.windowEnd ?? DEFAULT_WINDOW_END;
+  const gapOpts = {
+    minGapSameVenue: options.minGapSameVenue ?? DEFAULT_MIN_GAP_SAME_VENUE,
+    minGapDifferentVenue: options.minGapDifferentVenue ?? DEFAULT_MIN_GAP_DIFFERENT_VENUE,
+  };
+  const maxPerDay = options.maxPerDay ?? Infinity;
+  const minPerDay = options.minPerDay ?? 1;
+
+  const slotsByShow = eligibleSlots(shows, { windowStart, windowEnd });
+
+  // All candidate performances, earliest-finishing first (ties: earliest
+  // start, then slug/date for a stable, reproducible order).
+  const candidates = [];
+  for (const slots of slotsByShow.values()) {
+    for (const slot of slots) candidates.push(slot);
+  }
+  candidates.sort(
+    (a, b) =>
+      a.end - b.end ||
+      a.start - b.start ||
+      a.slug.localeCompare(b.slug) ||
+      a.date.localeCompare(b.date)
+  );
+
+  const chosen = [];
+  const placedShows = new Set();
+  const perDay = new Map(); // date -> Slot[] placed that day
+
+  for (const slot of candidates) {
+    if (placedShows.has(slot.slug)) continue; // one performance per show
+    const sameDay = perDay.get(slot.date) || [];
+    if (sameDay.length >= maxPerDay) continue; // day already full
+    if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
+    chosen.push(slot);
+    placedShows.add(slot.slug);
+    sameDay.push(slot);
+    perDay.set(slot.date, sameDay);
+  }
+
+  // Post-pass: drop under-populated days (min-per-day preference).
+  const droppedShows = new Set();
+  for (const [date, slots] of perDay) {
+    if (slots.length < minPerDay) {
+      for (const slot of slots) droppedShows.add(slot.slug);
+      perDay.delete(date);
+    }
+  }
+
+  const days = [...perDay.entries()]
+    .map(([date, slots]) => ({
+      date,
+      slots: [...slots].sort((a, b) => a.start - b.start || a.end - b.end),
+    }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const scheduled = days.flatMap((d) => d.slots);
+  const scheduledSlugs = new Set(scheduled.map((s) => s.slug));
+
+  const unscheduled = [];
+  for (const show of shows || []) {
+    if (scheduledSlugs.has(show.slug)) continue;
+    const hadSlots = (slotsByShow.get(show.slug) || []).length > 0;
+    let reason;
+    if (!hadSlots) reason = "no available performance in your dates";
+    else if (droppedShows.has(show.slug)) reason = "on a day below your minimum";
+    else reason = "clashes with shows already in your plan";
+    unscheduled.push({ slug: show.slug, title: show.title, reason });
+  }
+
+  return {
+    days,
+    scheduled,
+    unscheduled,
+    counts: {
+      matchedShows: (shows || []).length,
+      scheduledShows: scheduled.length,
+      days: days.length,
+    },
+  };
 }

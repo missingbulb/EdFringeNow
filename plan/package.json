@@ -1,0 +1,5 @@
+{
+  "//": "The planner's browser code (plan.js + lib/) is ES modules — loaded via <script type=module>. Declaring the type here silences Node's module-detection warning when the test/verify tooling imports these .js files, and scopes ESM to plan/ so the home site's classic js/app.js stays a plain script. No dependencies; not an npm package.",
+  "type": "module",
+  "private": true
+}
