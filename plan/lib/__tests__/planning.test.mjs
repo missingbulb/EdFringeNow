@@ -13,6 +13,8 @@ import {
   compatible,
   withinDayWindow,
   normalizeMealBreaks,
+  festivalNight,
+  placementDiagnostics,
 } from "../engine.js";
 import { distanceKm, travelMinutes, TRAVEL_SPEED_KMH } from "../travel.js";
 
@@ -235,4 +237,74 @@ test("buildSchedule: deterministic under the new options", () => {
   const first = buildSchedule(shows, opts);
   const second = buildSchedule(shows, opts);
   assert.deepEqual(first.scheduled, second.scheduled);
+});
+
+// --- after-midnight "festival night" folding -----------------------------
+
+test("festivalNight: an after-midnight start folds onto the previous evening", () => {
+  assert.deepEqual(festivalNight("2026-08-15", 45), {
+    festivalDate: "2026-08-14",
+    festivalStartMinute: 45 + 1440, // 00:45 → 24:45
+  });
+  // A normal evening start is untouched.
+  assert.deepEqual(festivalNight("2026-08-15", 23 * 60), {
+    festivalDate: "2026-08-15",
+    festivalStartMinute: 23 * 60,
+  });
+});
+
+test("eligibleSlots: a 00:30 show belongs to the night before, past 24:00, uncapped", () => {
+  const s = eligibleSlots([show("late", "A", [{ date: "2026-08-15", start: "00:30" }])], {
+    dateStart: "2026-08-14",
+    dateEnd: "2026-08-14",
+  }).get("late")[0];
+  assert.equal(s.date, "2026-08-14", "re-dated to the festival night");
+  assert.equal(s.realDate, "2026-08-15", "real date preserved for exports");
+  assert.equal(s.startMinuteOfDay, 24 * 60 + 30); // 24:30
+  assert.equal(s.endMinuteOfDay, 25 * 60 + 30); // 25:30 — not capped at 24:00
+  // The morning-after date is NOT in a window that ends on the 14th's night.
+  const none = eligibleSlots([show("late", "A", [{ date: "2026-08-15", start: "00:30" }])], {
+    dateStart: "2026-08-15",
+    dateEnd: "2026-08-15",
+  }).get("late");
+  assert.equal(none.length, 0);
+});
+
+test("eligibleSlots: an evening show keeps its true end past midnight", () => {
+  const s = eligibleSlots(
+    [show("owl", "A", [{ date: "2026-08-14", start: "23:30" }], { duration: 120 })],
+    { dateStart: "2026-08-14", dateEnd: "2026-08-14" }
+  ).get("owl")[0];
+  assert.equal(s.startMinuteOfDay, 23 * 60 + 30);
+  assert.equal(s.endMinuteOfDay, 25 * 60 + 30, "01:30 next day = 25:30, uncapped");
+  // Placeable only when the day end reaches past it.
+  assert.equal(withinDayWindow(s, { dayEndMin: 1440 }), false);
+  assert.equal(withinDayWindow(s, { dayEndMin: 25 * 60 + 30 }), true);
+});
+
+// --- placement diagnostics ----------------------------------------------
+
+test("placementDiagnostics: attributes blocked shows to the culpable control", () => {
+  const shows = [
+    // Only runs 08:30 — a 09:00 day-start shuts it out.
+    show("early", "A", [{ date: "2026-08-14", start: "08:30" }]),
+    // Only runs 23:30–00:30 — a 24:00 day-end shuts it out.
+    show("late", "A", [{ date: "2026-08-14", start: "23:30" }]),
+    // Only runs 12:45–13:45 — the lunch break shuts it out.
+    show("noon", "A", [{ date: "2026-08-14", start: "12:45" }]),
+    // Runs 15:00 — placeable, so never blamed.
+    show("fine", "A", [{ date: "2026-08-14", start: "15:00" }]),
+  ];
+  const diag = placementDiagnostics(shows, {
+    dateStart: "2026-08-14",
+    dateEnd: "2026-08-14",
+    dayStartMin: 9 * 60,
+    dayEndMin: 24 * 60,
+    mealBreaks: [{ id: "lunch", enabled: true, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30 }],
+  });
+  assert.deepEqual(diag.dayStart.map((s) => s.slug), ["early"]);
+  assert.deepEqual(diag.dayEnd.map((s) => s.slug), ["late"]);
+  assert.deepEqual(diag.meals.lunch.map((s) => s.slug), ["noon"]);
+  assert.equal(diag.blockedSlugs.has("fine"), false);
+  assert.deepEqual([...diag.blockedSlugs].sort(), ["early", "late", "noon"]);
 });

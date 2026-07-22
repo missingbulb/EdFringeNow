@@ -143,6 +143,39 @@ export const DEFAULT_WINDOW_END = "2026-08-24T17:00";
 export const DEFAULT_MIN_GAP_SAME_VENUE = 0;
 export const DEFAULT_MIN_GAP_DIFFERENT_VENUE = 30;
 
+// A Fringe evening runs past midnight: a performance that starts before this
+// clock time (05:00) belongs to the PREVIOUS calendar day's festival night,
+// drawn near the top of that day's 09:00–27:00 schedule column rather than at
+// the bottom of its own morning. Folding adds 1440 to its minute-of-day (so
+// 00:45 → 24:45) and re-dates it to the night before. 05:00 is a safe cutoff —
+// nothing in the catalogue starts between 01:00 and 08:59.
+export const NIGHT_FOLD_CUTOFF_MIN = 5 * 60;
+
+/** Previous calendar day for a "YYYY-MM-DD" string (deterministic, no clock). */
+function previousDate(dateISO) {
+  const [y, m, d] = dateISO.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d - 1));
+  const p2 = (n) => String(n).padStart(2, "0");
+  return `${dt.getUTCFullYear()}-${p2(dt.getUTCMonth() + 1)}-${p2(dt.getUTCDate())}`;
+}
+
+/**
+ * A performance's "festival night" placement. A show starting after midnight is
+ * folded onto the previous evening: same real wall-clock start/end (kept for
+ * exports and chronological ordering), but a festival date one day earlier and a
+ * minute-of-day past 24:00 so it lands at the top of that night's column.
+ * @param {string} date real "YYYY-MM-DD"
+ * @param {number} startMinuteOfDay real minutes-since-midnight of the start
+ * @param {number} cutoffMin fold shows starting before this clock minute
+ * @returns {{festivalDate: string, festivalStartMinute: number}}
+ */
+export function festivalNight(date, startMinuteOfDay, cutoffMin = NIGHT_FOLD_CUTOFF_MIN) {
+  if (startMinuteOfDay < cutoffMin) {
+    return { festivalDate: previousDate(date), festivalStartMinute: startMinuteOfDay + 1440 };
+  }
+  return { festivalDate: date, festivalStartMinute: startMinuteOfDay };
+}
+
 /**
  * Parse a "YYYY-MM-DDTHH:MM" (or Date) into minutes-since-epoch, consistent
  * with availability.js's wall-clock minute counting.
@@ -210,6 +243,11 @@ export function eligibleSlots(shows, options = {}) {
   const windowStart = toMinutes(options.windowStart ?? DEFAULT_WINDOW_START);
   const windowEnd = toMinutes(options.windowEnd ?? DEFAULT_WINDOW_END);
   const venueCoords = options.venueCoords ?? null;
+  const cutoff = options.nightCutoffMin ?? NIGHT_FOLD_CUTOFF_MIN;
+  // When date bounds are given, membership is by *festival* date (so a Friday
+  // 00:45 late show counts as Friday night, and a show on the morning after the
+  // last day does not leak in). Otherwise fall back to the epoch window filter.
+  const byFestivalDate = options.dateStart != null && options.dateEnd != null;
 
   const out = new Map();
   for (const show of shows || []) {
@@ -220,16 +258,27 @@ export function eligibleSlots(shows, options = {}) {
       if (!isAvailable(perf)) continue;
       const start = dateTimeToMinutes(perf.date, perf.start);
       const end = show.duration ? start + show.duration : start;
-      if (start < windowStart || end > windowEnd) continue;
-      const startMinuteOfDay = timeToMinutesOfDay(perf.start);
-      // A performance running past midnight closes out its own day rather than
-      // opening the next, so cap its end-of-day at 24:00 for the day-hours test.
-      const endMinuteOfDay = Math.min(1440, startMinuteOfDay + dur);
+      const realStartMinute = timeToMinutesOfDay(perf.start);
+      // Fold an after-midnight start onto the previous festival night: real
+      // date/epoch are preserved (for exports + ordering) while the display
+      // date and minute-of-day move to the night before.
+      const { festivalDate, festivalStartMinute } = festivalNight(perf.date, realStartMinute, cutoff);
+      if (byFestivalDate) {
+        if (festivalDate < options.dateStart || festivalDate > options.dateEnd) continue;
+      } else if (start < windowStart || end > windowEnd) {
+        continue;
+      }
+      const startMinuteOfDay = festivalStartMinute;
+      // The end-of-day is no longer capped at 24:00 — an evening show that runs
+      // past midnight keeps its true length so the day-hours test and the
+      // 09:00–27:00 axis can place and draw it honestly.
+      const endMinuteOfDay = startMinuteOfDay + dur;
       slots.push({
         slug: show.slug,
         title: show.title,
         genre: show.genre ?? null,
-        date: perf.date,
+        date: festivalDate,
+        realDate: perf.date,
         startTime: perf.start,
         start,
         end,
@@ -399,6 +448,8 @@ export function buildSchedule(shows, options = {}) {
   const slotsByShowAll = eligibleSlots(shows, {
     windowStart,
     windowEnd,
+    dateStart: options.dateStart,
+    dateEnd: options.dateEnd,
     venueCoords: options.venueCoords ?? null,
   });
   // …then narrowed to those inside the day-hours window and clear of meal
@@ -507,4 +558,75 @@ export function buildSchedule(shows, options = {}) {
       days: days.length,
     },
   };
+}
+
+/**
+ * Which day-hours / meal-break controls are, on their own, making a show
+ * un-placeable. A show counts as blocked when it has at least one available
+ * performance inside the date window but none survive the day-hours + meal
+ * filter. For each such show we attribute blame to every control that would —
+ * on its own, all others left as-is — rescue at least one performance if
+ * relaxed. So a control's list is exactly "the shows this control shuts out",
+ * ready for a "prevents N shows" label + tooltip and an at-a-glance grid mark.
+ *
+ * @param {object[]} shows shows to diagnose (typically the matched favourites)
+ * @param {{
+ *   dateStart: string, dateEnd: string,
+ *   dayStartMin?: number, dayEndMin?: number, dayEndCeil?: number,
+ *   mealBreaks?: Array<{id?:string, startMin?:number, endMin?:number, start?:string, end?:string, enabled?:boolean}>,
+ *   venueCoords?: Map<string,{lat:number,lng:number}>|object,
+ * }} options
+ * @returns {{
+ *   blockedSlugs: Set<string>,
+ *   dayStart: Array<{slug:string,title:string}>,
+ *   dayEnd: Array<{slug:string,title:string}>,
+ *   meals: Object<string, Array<{slug:string,title:string}>>,
+ * }}
+ */
+export function placementDiagnostics(shows, options = {}) {
+  const dayStartMin = options.dayStartMin ?? 0;
+  const dayEndMin = options.dayEndMin ?? 1440;
+  const dayEndCeil = options.dayEndCeil ?? 1620; // 27:00 — the axis' late edge
+  // Enabled meal breaks, keeping their ids for per-control attribution.
+  const meals = (options.mealBreaks || [])
+    .filter((m) => m && m.enabled !== false)
+    .map((m) => ({
+      id: m.id || "meal",
+      startMin: m.startMin ?? (m.start != null ? timeToMinutesOfDay(m.start) : null),
+      endMin: m.endMin ?? (m.end != null ? timeToMinutesOfDay(m.end) : null),
+    }))
+    .filter((m) => m.startMin != null && m.endMin != null && m.endMin > m.startMin);
+
+  const baseWin = { dayStartMin, dayEndMin, mealBreaks: meals };
+  const slotsByShow = eligibleSlots(shows, {
+    dateStart: options.dateStart,
+    dateEnd: options.dateEnd,
+    venueCoords: options.venueCoords ?? null,
+  });
+
+  const result = { blockedSlugs: new Set(), dayStart: [], dayEnd: [], meals: {} };
+  for (const m of meals) result.meals[m.id] = [];
+
+  for (const show of shows || []) {
+    const slots = slotsByShow.get(show.slug) || [];
+    if (slots.length === 0) continue; // nothing in the date window — a dates problem, not a day-hours one
+    if (slots.some((s) => withinDayWindow(s, baseWin))) continue; // already placeable
+    result.blockedSlugs.add(show.slug);
+    const entry = { slug: show.slug, title: show.title };
+
+    // A control is culpable if relaxing only it would let a performance back in.
+    if (slots.some((s) => withinDayWindow(s, { ...baseWin, dayStartMin: 0 }))) {
+      result.dayStart.push(entry);
+    }
+    if (slots.some((s) => withinDayWindow(s, { ...baseWin, dayEndMin: dayEndCeil }))) {
+      result.dayEnd.push(entry);
+    }
+    for (const m of meals) {
+      const without = meals.filter((x) => x.id !== m.id);
+      if (slots.some((s) => withinDayWindow(s, { ...baseWin, mealBreaks: without }))) {
+        result.meals[m.id].push(entry);
+      }
+    }
+  }
+  return result;
 }

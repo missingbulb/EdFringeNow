@@ -270,10 +270,14 @@
           <div class="ctl">
             <label class="ctl-label" for="ctlDayStart">Day starts</label>
             <input class="ctl-time" type="time" id="ctlDayStart" value="09:00" step="300" />
+            <button type="button" class="ctl-blocked" id="blkDayStart" hidden></button>
           </div>
           <div class="ctl">
             <label class="ctl-label" for="ctlDayEnd">Day ends</label>
-            <input class="ctl-time" type="time" id="ctlDayEnd" value="23:59" step="300" />
+            <!-- A Fringe day runs to 27:00 (03:00), past what a native time input
+                 allows, so the end is a select of 30-min steps (populated in JS). -->
+            <select class="opt-select" id="ctlDayEnd" aria-label="Day ends"></select>
+            <button type="button" class="ctl-blocked" id="blkDayEnd" hidden></button>
           </div>
           <div class="ctl">
             <label class="ctl-label" for="ctlMax">Most shows / day</label>
@@ -315,6 +319,7 @@
                 <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
                 <span class="meal-dash">–</span>
                 <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
+                <button type="button" class="ctl-blocked meal-blocked" id="blkMealLunch" hidden></button>
               </label>
               <label class="meal">
                 <input type="checkbox" id="mealDinnerOn" />
@@ -322,6 +327,7 @@
                 <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
                 <span class="meal-dash">–</span>
                 <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
+                <button type="button" class="ctl-blocked meal-blocked" id="blkMealDinner" hidden></button>
               </label>
             </div>
           </div>
