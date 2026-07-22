@@ -382,16 +382,22 @@ a { color: inherit; }
 .lane--forced .lane-pin { display: inline; }
 /* A scheduled row gets a faint green wash + accent so the grid mirrors the plan. */
 .lane--scheduled { background: rgba(5, 150, 105, 0.05); box-shadow: inset 3px 0 0 var(--ok); }
-.lane { cursor: context-menu; }
+/* The name and the performance marks are the two click targets (pin the show /
+   pin that performance). Everything else keeps the normal cursor. */
+.lane-label { cursor: pointer; }
+.lane-label:hover .lane-title { text-decoration: underline; }
 .lane-track { display: grid; grid-template-columns: repeat(31, 1fr); gap: 3px; align-items: center; height: 100%; }
 
 /* A day cell holds one coloured segment per performance; two performances on a
    day render as two side-by-side segments — the split IS the "two shows that
    day" cue. Single-performance days read as one solid bar. */
-.cell { height: 10px; border-radius: 3px; display: flex; gap: 0; overflow: hidden; }
+.cell { height: 10px; border-radius: 3px; display: flex; gap: 0; overflow: hidden; cursor: pointer; }
 .cell:hover { box-shadow: 0 0 0 2px rgba(16, 24, 40, 0.3); }
 .cell-multi { gap: 1.5px; }
 .seg { flex: 1 1 0; min-width: 0; border-radius: 3px; }
+/* The pinned performance: a solid inset ring (inset so the cell's overflow:hidden
+   doesn't clip it), legible on any segment colour. */
+.seg--pinned { box-shadow: inset 0 0 0 2px var(--ink); }
 .seg-avail   { background: var(--fr-avail); }
 .seg-2for1   { background: var(--fr-2for1); }
 .seg-preview { background: var(--fr-preview); }
@@ -630,7 +636,7 @@ a { color: inherit; }
   border-left: 4px solid var(--seg, var(--violet));
   box-shadow: 0 2px 6px rgba(16, 24, 40, 0.07);
   font-size: 0.72rem; line-height: 1.2;
-  display: flex; gap: 5px; align-items: flex-start; cursor: context-menu;
+  display: flex; gap: 5px; align-items: flex-start; cursor: pointer;
 }
 .sch-show:hover { box-shadow: 0 4px 12px rgba(16, 24, 40, 0.16); border-color: #d5d9e2; z-index: 3; }
 /* Genre emoji, pinned to the left edge. */
@@ -719,32 +725,15 @@ a { color: inherit; }
   background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
   box-shadow: 0 14px 34px rgba(16, 24, 40, 0.22); overflow: hidden;
 }
-.sch-card .card-img { height: 118px; background: #eef0f5; }
-.sch-card .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Show the whole poster at its natural aspect ratio — no crop, no letterbox. */
+.sch-card .card-img { background: #eef0f5; line-height: 0; }
+.sch-card .card-img img { width: 100%; height: auto; display: block; }
 .sch-card .card-body { padding: 10px 12px 12px; }
 .sch-card .card-genre { font-size: 0.68rem; font-weight: 700; color: var(--violet-dark); }
 .sch-card .card-title { font-family: var(--display); font-weight: 700; font-size: 0.98rem; line-height: 1.2; margin: 2px 0 4px; }
 .sch-card .card-meta { font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .sch-card .card-blurb { margin-top: 6px; font-size: 0.76rem; color: var(--ink); line-height: 1.4; }
 .sch-card .card-hint { margin-top: 8px; font-size: 0.66rem; color: #98a2b3; }
-
-/* --- Reusable context menu (lane force-into-plan, block edfringe link) --- */
-.ctx-menu {
-  position: fixed; z-index: 80; min-width: 190px;
-  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.2); padding: 5px; overflow: hidden;
-}
-.ctx-menu .ctx-head {
-  font-size: 0.68rem; font-weight: 700; color: var(--muted);
-  padding: 4px 8px 6px; border-bottom: 1px solid var(--line); margin-bottom: 4px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px;
-}
-.ctx-menu .ctx-item {
-  display: block; width: 100%; text-align: left; font: inherit; font-size: 0.84rem;
-  color: var(--ink); background: none; border: none; border-radius: 7px;
-  padding: 7px 9px; cursor: pointer;
-}
-.ctx-menu .ctx-item:hover { background: rgba(108, 76, 241, 0.08); color: var(--violet-dark); }
 
 /* Export actions */
 .plan-actions {

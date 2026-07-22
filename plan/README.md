@@ -15,7 +15,8 @@ until this matures.
 > into a clash-free, day-by-day itinerary (one performance each, travel time
 > between them) — no "Plan" button; it re-plans live as you drag the window or
 > tune the controls (day hours, meal breaks, travel mode, per-day limits, or
-> right-click a favourite to force it in). Export as a **CSV itinerary** or an
+> click a show name to pin it into the plan — or a day mark to pin that exact
+> performance). Export as a **CSV itinerary** or an
 > **ICS calendar feed**.
 
 ## 100% client-side
@@ -96,9 +97,11 @@ live whenever the date window or any control changes. Screen 3 reads into
   (`lib/travel.js`, haversine + per-mode speed, venue coordinates from
   `data/venues.json`), so far-apart shows need more slack and a bike/car needs
   less;
-- *forced (must-see) shows* — right-click a favourite in the grid to pin it into
-  the plan even if the greedy pass would drop it (it ignores the per-day cap and
-  survives the min-per-day drop).
+- *forced (must-see) shows* — click a show name in the grid to pin the whole
+  show into the plan, or click a day mark to pin that one specific performance,
+  even if the greedy pass would drop it (a pin ignores the per-day cap and
+  survives the min-per-day drop; a specific-performance pin also overrides the
+  day-hours window and meal breaks). Click again to lift the pin.
 
 The grid mirrors the plan: each row reads **In plan** / **Not placeable** / **In
 window** / *out*, and the hero count is *scheduled / in-window / total*. Between
