@@ -82,8 +82,12 @@ live whenever the date window or any control changes. Screen 3 reads into
 `options`:
 
 - *day starts / day ends* — a day-hours window; a performance must start no
-  earlier and end no later (drag the lines on the schedule, or use the time
-  pickers);
+  earlier and end no later (drag the lines on the schedule, or use the pickers).
+  A Fringe evening runs past midnight, so the schedule axis is a fixed **09:00 →
+  27:00** (03:00), the day end can be set as late as 27:00 (default **25:00 /
+  01:00**), and an after-midnight late show is folded onto the **previous
+  festival night** — same real time for exports, drawn at the top of that
+  night's column;
 - *meal breaks* — lunch/dinner bands no show may overlap (toggle + drag on the
   schedule);
 - *most / fewest shows per day*, *minimum gap*;
@@ -96,10 +100,26 @@ live whenever the date window or any control changes. Screen 3 reads into
   the plan even if the greedy pass would drop it (it ignores the per-day cap and
   survives the min-per-day drop).
 
-The grid mirrors the plan: each row reads **In plan** / **In window** / *out*,
-and the hero count is *scheduled / in-window / total*. Between two scheduled
-shows less than an hour apart, the schedule draws a **travel leg** (distance +
-time by the chosen mode).
+The grid mirrors the plan: each row reads **In plan** / **Not placeable** / **In
+window** / *out*, and the hero count is *scheduled / in-window / total*. Between
+two scheduled shows less than an hour apart, the schedule draws a **travel leg**
+(distance + time by the chosen mode).
+
+A show that's catchable in your dates but ruled out by *every* performance
+falling outside the day-hours window or on a meal break reads **Not placeable**.
+`placementDiagnostics` (in `lib/engine.js`) attributes each such show to the
+control that would rescue it — so the day-start, day-end and meal controls each
+carry a **"⚠ Prevents N shows"** chip (hover for the list, click to flash those
+lanes on the grid) and the matching boundary line / band on the schedule is
+marked **not placeable**.
+
+The board re-plans live, and the change is **animated** so a switch stays
+believable: a newly placed show eases in, the same show rescheduled flies to its
+new slot, and a dropped show fades out where it sat — never a card silently
+mutating into a different show at a different time. Scrubbing the date window
+tracks the pointer without the transition; **"Pick my best dates"** and keyboard
+nudges glide the window lines to their new spot. All of it is disabled under
+`prefers-reduced-motion`.
 
 `lib/itinerary.js` renders the result to a CSV (spreadsheet/print) or ICS feed
 (import into Google/Apple/Outlook), both built in the browser from a Blob —

@@ -10,7 +10,7 @@
 // recomputes live whenever the date window or any control changes.
 
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
-import { buildIndex, matchFavourites, summarize, buildSchedule } from "./lib/engine.js";
+import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
@@ -35,10 +35,17 @@ const T_MAX = 1440; // 24:00
 const DEFAULT_D0 = 7; // default date window: Aug 7 → Aug 24 (the festival trip window)
 const DEFAULT_D1 = 24;
 
-// Default day-hours window (minutes of day) and meal breaks. Day end 1439 is the
-// time input's "23:59"; it means "midnight / no cap" (see effectiveDayEnd).
+// The schedule axis, and the range a "day ends" can reach: a Fringe evening
+// runs past midnight, so the day is drawn from 09:00 to 27:00 (03:00) and a show
+// may be allowed to finish any time up to that late edge.
+const AXIS_TOP_MIN = 9 * 60; // 09:00 — top of every day column
+const AXIS_BOTTOM_MIN = 27 * 60; // 27:00 = 03:00 — bottom of every day column
+const DAY_END_CEIL = AXIS_BOTTOM_MIN; // a "day ends" can be set as late as 27:00
+
+// Default day-hours window (minutes of day). The day ends at 25:00 (01:00) by
+// default so ordinary late-night shows are catchable out of the box.
 const DEFAULT_DAY_START = 9 * 60; // 09:00
-const DEFAULT_DAY_END = 23 * 60 + 59; // 23:59 → treated as end-of-day
+const DEFAULT_DAY_END = 25 * 60; // 25:00 = 01:00
 
 const STORAGE_KEY = "edfringe.plan.favourites.v1";
 const TTL_MS = 3 * 24 * 60 * 60 * 1000; // keep for 3 days, then forget
@@ -83,6 +90,22 @@ function dateStr(day) {
 function minToHHMM(min) {
   const m = Math.min(1439, Math.max(0, Math.round(min)));
   return `${pad2(Math.floor(m / 60))}:${pad2(m % 60)}`;
+}
+/**
+ * Extended-hours clock for a minute-of-day that may run past midnight: 1500 →
+ * "25:00", 1470 → "24:30". Used for the "day ends" control and the after-hours
+ * lines/labels on the 09:00–27:00 schedule axis.
+ */
+function minToDayClock(min) {
+  const m = Math.max(0, Math.round(min));
+  return `${pad2(Math.floor(m / 60))}:${pad2(m % 60)}`;
+}
+/** A friendly wall-clock gloss for a past-midnight minute: 1500 → "1:00 am". */
+function afterMidnightGloss(min) {
+  if (min < 1440) return "";
+  const m = min - 1440;
+  const h = Math.floor(m / 60);
+  return `${h === 0 ? 12 : h}:${pad2(m % 60)} am`;
 }
 /** Parse an "HH:MM" time-input value to minutes of day (null if blank). */
 function hhmmToMin(str) {
@@ -135,6 +158,7 @@ const state = {
   // The latest plan.
   schedule: null,
   scheduledSlugs: new Set(),
+  diag: null, // latest placementDiagnostics(): which controls block which shows
   schedAxis: null, // { axisTopMin, axisBottomMin, hourPx, headPx } for overlay dragging
   // Build version + reschedule-timing telemetry (surfaced in the header pill).
   version: null,
@@ -567,18 +591,38 @@ function escapeHtml(s) {
  * The single live recompute: summarize the window, build the plan, and render
  * every dependent surface (lane verdicts, hero count, schedule, summary,
  * exports). Called after any date-window / control / must-see change.
+ *
+ * @param {{animate?: boolean}} [opts] pass `{animate: false}` for the frame-by
+ *   -frame path (dragging the date window / a resize), where the board should
+ *   track the pointer instantly rather than replay an enter/leave transition.
  */
-function refresh() {
+function refresh(opts) {
   if (state.matched.length === 0) return;
+  const animate = !(opts && opts.animate === false);
   const filter = currentFilter();
   const summ = summarize(state.matched, filter, state.totalFavourites);
 
   // Time the reschedule computation itself (buildSchedule) for the header pill.
   const t0 = performance.now();
-  const schedule = buildSchedule(state.matched, gatherPlanOptions());
+  const planOpts = gatherPlanOptions();
+  const schedule = buildSchedule(state.matched, planOpts);
   recordResched(performance.now() - t0);
   state.schedule = schedule;
   state.scheduledSlugs = new Set(schedule.scheduled.map((s) => s.slug));
+
+  // Which controls are, on their own, making a catchable show un-placeable —
+  // drives the "prevents N shows" labels, the lane marks, and the schedule
+  // overlay badges.
+  state.diag = placementDiagnostics(state.matched, {
+    dateStart: planOpts.dateStart,
+    dateEnd: planOpts.dateEnd,
+    dayStartMin: state.dayStartMin,
+    dayEndMin: effectiveDayEnd(),
+    dayEndCeil: DAY_END_CEIL,
+    mealBreaks: state.mealBreaks,
+    venueCoords: state.venueCoords,
+  });
+  updateBlockLabels(state.diag);
 
   const bySlug = new Map(summ.shows.map((s) => [s.slug, s]));
   applyVerdicts(bySlug, filter);
@@ -586,38 +630,93 @@ function refresh() {
   updatePlanWindowLabel();
 
   renderPlanSummary(schedule);
-  renderSchedule(schedule);
+  renderSchedule(schedule, animate);
   const hasShows = schedule.scheduled.length > 0;
   $("downloadCsvBtn").disabled = !hasShows;
   $("importIcsBtn").disabled = !hasShows;
 }
 
 /**
- * Update each lane's state and right-hand verdict. Three states now:
+ * Update each lane's state and right-hand verdict. Four states now:
  *   - scheduled: this show made the plan (green "In plan")
+ *   - not placeable: catchable in your dates, but your day hours / meal breaks
+ *     rule out every performance (amber "Not placeable")
  *   - in window: catchable in the date window but not placed (muted)
  *   - out: nothing catchable in the window (the whole lane dims)
  * A forced (must-see) lane carries a pin.
  */
 function applyVerdicts(bySlug, filter) {
+  const blocked = (state.diag && state.diag.blockedSlugs) || new Set();
   for (const ref of state.laneRefs) {
     const show = bySlug.get(ref.slug);
     if (!show) continue;
     const { catchable, count } = laneVerdict(show.performances, filter);
     const scheduled = state.scheduledSlugs.has(ref.slug);
     const forced = state.forced.has(ref.slug);
+    const notPlaceable = !scheduled && catchable && blocked.has(ref.slug);
 
     ref.el.classList.toggle("lane--out", !catchable);
     ref.el.classList.toggle("lane--scheduled", scheduled);
     ref.el.classList.toggle("lane--forced", forced);
+    ref.el.classList.toggle("lane--blocked", notPlaceable);
 
     if (scheduled) {
       ref.statusEl.innerHTML = `<span class="st-plan" title="in your plan">&check;&nbsp;In plan</span>`;
+    } else if (notPlaceable) {
+      ref.statusEl.innerHTML = `<span class="st-blocked" title="catchable in your dates, but your day hours or meal breaks rule out every performance">Not placeable</span>`;
     } else if (catchable) {
       ref.statusEl.innerHTML = `<span class="st-in" title="${count} catchable date${count === 1 ? "" : "s"} — not placed">In window</span>`;
     } else {
       ref.statusEl.innerHTML = `<span class="st-no" title="nothing catchable in your window">&ndash;</span>`;
     }
+  }
+}
+
+// --- "This control prevents N shows" labels + grid flash -------------------
+
+// Each blocking control's label + the diagnostics list it reads. The buttons
+// live in index.html; clicking one flashes the shut-out lanes on the grid.
+const BLOCK_CONTROLS = [
+  { id: "blkDayStart", label: "Your day start", pick: (d) => d.dayStart },
+  { id: "blkDayEnd", label: "Your day end", pick: (d) => d.dayEnd },
+  { id: "blkMealLunch", label: "Your lunch break", pick: (d) => d.meals.lunch || [] },
+  { id: "blkMealDinner", label: "Your dinner break", pick: (d) => d.meals.dinner || [] },
+];
+
+/** Human tooltip for a blocking control: "<label> rules out N shows: A, B, …". */
+function blockTip(label, list) {
+  const titles = list.map((s) => s.title);
+  const shown = titles.slice(0, 8).join(", ");
+  const more = titles.length > 8 ? `, +${titles.length - 8} more` : "";
+  return `${label} rules out ${list.length} show${list.length === 1 ? "" : "s"}: ${shown}${more}`;
+}
+
+/** Show/hide the "Prevents N" chips next to the day-hours and meal controls. */
+function updateBlockLabels(diag) {
+  for (const c of BLOCK_CONTROLS) {
+    const el = $(c.id);
+    if (!el) continue;
+    const list = (diag && c.pick(diag)) || [];
+    el.hidden = list.length === 0;
+    if (!list.length) continue;
+    el.textContent = `⚠ Prevents ${list.length}`;
+    const tip = blockTip(c.label, list);
+    el.title = tip;
+    el.setAttribute("aria-label", tip + " — click to highlight them on the grid");
+  }
+}
+
+/** Briefly highlight the shut-out shows' lanes on the availability grid. */
+function flashBlockedLanes(list) {
+  if (!list.length) return;
+  const slugs = new Set(list.map((s) => s.slug));
+  $("screen2")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  for (const ref of state.laneRefs) {
+    if (!slugs.has(ref.slug)) continue;
+    ref.el.classList.remove("lane--flash");
+    void ref.el.offsetWidth; // restart the animation
+    ref.el.classList.add("lane--flash");
+    ref.el.addEventListener("animationend", () => ref.el.classList.remove("lane--flash"), { once: true });
   }
 }
 
@@ -647,13 +746,19 @@ function updateHero(counts, planCounts) {
 }
 
 // rAF-throttled recompute, coalesced to once per frame (window dragging).
+// `animate` defaults off: the continuous drag path wants the board to track the
+// pointer, not replay a transition every frame. A keyboard nudge passes true.
 let recomputeScheduled = false;
-function scheduleRecompute() {
+let recomputeAnimate = false;
+function scheduleRecompute(animate = false) {
+  recomputeAnimate = recomputeAnimate || animate;
   if (recomputeScheduled) return;
   recomputeScheduled = true;
   requestAnimationFrame(() => {
     recomputeScheduled = false;
-    refresh();
+    const a = recomputeAnimate;
+    recomputeAnimate = false;
+    refresh({ animate: a });
   });
 }
 
@@ -683,7 +788,25 @@ function layoutOverlay() {
   paintWindow();
 }
 
-function paintWindow() {
+let slideTimer = null;
+/**
+ * Position the date-window overlay (dim panels, band, handles, flags) for the
+ * current d0/d1. Pass `animate = true` for a discrete jump — "Pick my best
+ * dates" or a keyboard nudge — so the lines glide to their new spot instead of
+ * teleporting; the drag path leaves it false so the window tracks the pointer.
+ */
+function paintWindow(animate = false) {
+  const win = $("win");
+  const rail = $("winRail");
+  if (animate && !prefersReducedMotion()) {
+    win.classList.add("is-sliding");
+    rail.classList.add("is-sliding");
+    clearTimeout(slideTimer);
+    slideTimer = setTimeout(() => {
+      win.classList.remove("is-sliding");
+      rail.classList.remove("is-sliding");
+    }, 460);
+  }
   const { trackLeft, trackWidth, dayW } = state.layout;
   const x0 = (state.d0 - 1) * dayW;
   const x1 = state.d1 * dayW;
@@ -740,8 +863,8 @@ function keysDate(el, fn) {
     if (!dd) return;
     e.preventDefault();
     fn(dd);
-    paintWindow();
-    scheduleRecompute();
+    paintWindow(true);
+    scheduleRecompute(true); // a discrete keyboard nudge animates the settle
   });
 }
 
@@ -855,7 +978,7 @@ function wireCalendarControls() {
 
   window.addEventListener("resize", () => {
     layoutOverlay();
-    refresh();
+    refresh({ animate: false });
   });
 }
 
@@ -907,7 +1030,7 @@ function wireOptimizer() {
     if (!best) return;
     state.d0 = best.d0;
     state.d1 = best.d1;
-    paintWindow();
+    paintWindow(true); // glide the window lines to the chosen dates
     refresh();
   });
 }
@@ -951,7 +1074,8 @@ function wireCellTips() {
 
 // --- Screen 3: the plan ----------------------------------------------------
 
-const SCH_HOUR_PX = 46;
+const SCH_HOUR_PX = 34; // the axis now spans a fixed 09:00–27:00 (18h), so a
+                        // shorter hour keeps the whole night on one calm board
 const SCH_MIN_BLOCK = 34;
 const SCH_HEAD_PX = 46;
 const SCH_GUTTER_PX = 52;
@@ -967,9 +1091,10 @@ function updatePlanWindowLabel() {
   if (el) el.textContent = planWindowText();
 }
 
-/** Day end 23:59 (1439) is the input's "no cap" sentinel → treat as midnight. */
+/** The day-end minute the scheduler and axis use, clamped to the drawable range
+ *  (never before 15 min past the day start, never past the 27:00 axis edge). */
 function effectiveDayEnd() {
-  return state.dayEndMin >= 1439 ? 1440 : state.dayEndMin;
+  return clamp(state.dayEndMin, state.dayStartMin + 15, DAY_END_CEIL);
 }
 
 function statusSegClass(status) {
@@ -987,6 +1112,11 @@ function statusSegClass(status) {
 /** Read every control + the current window into buildSchedule options. */
 function gatherPlanOptions() {
   return {
+    // Membership is by festival date so an after-midnight late show counts as
+    // the night before (see eligibleSlots); the epoch window is kept as a
+    // fallback for any caller that omits the date bounds.
+    dateStart: dateStr(state.d0),
+    dateEnd: dateStr(state.d1),
     windowStart: `${dateStr(state.d0)}T00:00`,
     windowEnd: `${dateStr(state.d1)}T23:59`,
     minGapDifferentVenue: Number($("ctlGap").value),
@@ -1030,9 +1160,12 @@ function renderPlanSummary(schedule) {
  * are drawn between shows less than an hour apart; and a draggable overlay holds
  * the day-start / day-end lines and the meal-break bands.
  */
-function renderSchedule(schedule) {
+function renderSchedule(schedule, animate = false) {
   const host = $("schedule");
   const empty = $("scheduleEmpty");
+  // Snapshot the outgoing board (block positions + which days were shown) before
+  // it's wiped, so the diff can play the right transition per block.
+  const prev = animate && !prefersReducedMotion() ? snapshotBoard(host) : null;
   host.innerHTML = "";
 
   if (schedule.days.length === 0) {
@@ -1044,10 +1177,12 @@ function renderSchedule(schedule) {
   host.hidden = false;
   empty.hidden = true;
 
-  // Shared axis: span the scheduled shows, the day-hours window and the meal
-  // breaks, padded 30 min so the boundary lines always have a visible margin.
-  const mins = [state.dayStartMin, effectiveDayEnd()];
-  const maxs = [state.dayStartMin, effectiveDayEnd()];
+  // Fixed festival axis: every day column runs 09:00 → 27:00 (03:00) so a late
+  // show has somewhere to land and the board never looks cramped or shifts as
+  // the plan changes. It only ever grows — never shrinks below that span — to
+  // hold an unusually early day-start or a show that runs to the small hours.
+  const mins = [AXIS_TOP_MIN, state.dayStartMin];
+  const maxs = [AXIS_BOTTOM_MIN, effectiveDayEnd()];
   for (const slot of schedule.scheduled) {
     mins.push(slot.startMinuteOfDay);
     maxs.push(slot.endMinuteOfDay);
@@ -1057,8 +1192,8 @@ function renderSchedule(schedule) {
     mins.push(m.startMin);
     maxs.push(m.endMin);
   }
-  const lo = Math.max(0, Math.min(...mins) - 30);
-  const hi = Math.min(1440, Math.max(...maxs) + 30);
+  const lo = Math.max(0, Math.min(...mins));
+  const hi = Math.max(...maxs);
   const minHour = Math.floor(lo / 60);
   let maxHour = Math.ceil(hi / 60);
   if (maxHour <= minHour) maxHour = minHour + 1;
@@ -1071,7 +1206,8 @@ function renderSchedule(schedule) {
   host.style.setProperty("--sch-hour-h", `${SCH_HOUR_PX}px`);
   host.style.setProperty("--sch-head-h", `${SCH_HEAD_PX}px`);
 
-  // Left hour gutter.
+  // Left hour gutter. Past midnight the labels keep counting (24:00, 25:00, …)
+  // so the "same festival night" reads as one continuous evening.
   const gutter = document.createElement("div");
   gutter.className = "sch-gutter";
   const gHead = document.createElement("div");
@@ -1081,9 +1217,9 @@ function renderSchedule(schedule) {
   gBody.style.height = `${axisH}px`;
   for (let h = minHour; h <= maxHour; h++) {
     const lab = document.createElement("div");
-    lab.className = "sch-hour";
+    lab.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
     lab.style.top = `${(h - minHour) * SCH_HOUR_PX}px`;
-    lab.textContent = `${pad2(h % 24)}:00`;
+    lab.textContent = `${pad2(h)}:00`;
     gBody.appendChild(lab);
   }
   gutter.append(gHead, gBody);
@@ -1094,6 +1230,7 @@ function renderSchedule(schedule) {
     const dayNum = Number(day.date.slice(8, 10));
     const col = document.createElement("div");
     col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "");
+    col.dataset.date = day.date;
 
     const head = document.createElement("div");
     head.className = "sch-day-head";
@@ -1124,6 +1261,126 @@ function renderSchedule(schedule) {
 
   // Draggable overlay: day-start / day-end lines + meal bands.
   host.appendChild(buildScheduleOverlay(axisH, y));
+
+  // Animate what actually changed since the last board: shows arrive, depart, or
+  // fly to a new slot; brand-new day columns ease in.
+  if (prev) animateBoardDiff(host, prev);
+}
+
+// --- Live re-plan animation ------------------------------------------------
+// The board is rebuilt wholesale on every re-plan. To keep a switch believable
+// (a different show is a new card arriving, not the old one sliding to a new
+// time) we diff against a snapshot of the previous board: same show in a new
+// slot → a FLIP move; a new show → an arrival; a dropped show → a ghost that
+// fades out where it sat. Skipped entirely while scrubbing the date window (the
+// board should track the pointer) and under prefers-reduced-motion.
+
+function prefersReducedMotion() {
+  return typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+/** Capture each show block (by slug) with its box relative to the host, plus the
+ *  set of day dates on screen — everything animateBoardDiff needs. */
+function snapshotBoard(host) {
+  const hostRect = host.getBoundingClientRect();
+  const blocks = new Map();
+  for (const el of host.querySelectorAll(".sch-show")) {
+    const r = el.getBoundingClientRect();
+    blocks.set(el.dataset.slug, {
+      left: r.left - hostRect.left,
+      top: r.top - hostRect.top,
+      width: r.width,
+      height: r.height,
+      html: el.outerHTML,
+    });
+  }
+  const days = new Set([...host.querySelectorAll(".sch-day")].map((c) => c.dataset.date));
+  return { blocks, days };
+}
+
+function animateBoardDiff(host, prev) {
+  const hostRect = host.getBoundingClientRect();
+  const newDays = new Set(
+    [...host.querySelectorAll(".sch-day")].map((c) => c.dataset.date).filter((d) => !prev.days.has(d))
+  );
+  const seen = new Set();
+  let enterIndex = 0;
+
+  for (const el of host.querySelectorAll(".sch-show")) {
+    const slug = el.dataset.slug;
+    seen.add(slug);
+    const before = prev.blocks.get(slug);
+    const inNewColumn = newDays.has(el.closest(".sch-day")?.dataset.date);
+    if (before) {
+      // Same show, possibly rescheduled: fly from where it was to where it is.
+      const r = el.getBoundingClientRect();
+      const dx = before.left - (r.left - hostRect.left);
+      const dy = before.top - (r.top - hostRect.top);
+      if (Math.abs(dx) > 1 || Math.abs(dy) > 1) flipMove(el, dx, dy);
+    } else if (!inNewColumn) {
+      // A newly placed show in an existing day: arrive in place. (Shows inside a
+      // brand-new column ride that column's entrance instead — no double motion.)
+      enterBlock(el, enterIndex++);
+    }
+  }
+
+  // Whole new day columns ease in.
+  for (const col of host.querySelectorAll(".sch-day")) {
+    if (newDays.has(col.dataset.date)) col.classList.add("sch-day--enter");
+  }
+
+  // Departed shows: float a ghost where they sat and fade it out.
+  for (const [slug, info] of prev.blocks) {
+    if (seen.has(slug)) continue;
+    ghostOut(host, info);
+  }
+}
+
+/** FLIP: invert to the old position, then release to animate to the new one. */
+function flipMove(el, dx, dy) {
+  el.style.transition = "none";
+  el.style.transform = `translate(${dx}px, ${dy}px)`;
+  el.classList.add("sch-show--moving");
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      el.style.transition = "";
+      el.style.transform = "";
+    })
+  );
+  el.addEventListener(
+    "transitionend",
+    () => {
+      el.classList.remove("sch-show--moving");
+      el.style.transform = "";
+      el.style.transition = "";
+    },
+    { once: true }
+  );
+}
+
+function enterBlock(el, i) {
+  el.style.animationDelay = `${Math.min(i * 26, 180)}ms`;
+  el.classList.add("sch-show--enter");
+  el.addEventListener(
+    "animationend",
+    () => {
+      el.classList.remove("sch-show--enter");
+      el.style.animationDelay = "";
+    },
+    { once: true }
+  );
+}
+
+function ghostOut(host, info) {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = info.html;
+  const ghost = tmp.firstElementChild;
+  if (!ghost) return;
+  ghost.classList.add("sch-ghost");
+  ghost.classList.remove("sch-show--enter", "sch-show--moving");
+  ghost.style.cssText = `left:${info.left}px;top:${info.top}px;width:${info.width}px;height:${info.height}px`;
+  host.appendChild(ghost);
+  ghost.addEventListener("animationend", () => ghost.remove(), { once: true });
 }
 
 /** One scheduled show block. */
@@ -1227,9 +1484,16 @@ function buildDayLine(which, min, y) {
   line.style.top = `${y(min)}px`;
   line.dataset.which = which;
   const label = which === "start" ? "Day starts" : "Day ends";
+  const clock = which === "end" ? minToDayClock(min) : minToHHMM(min);
+  const blocks = (state.diag && (which === "start" ? state.diag.dayStart : state.diag.dayEnd)) || [];
+  line.classList.toggle("sch-dayline--blocking", blocks.length > 0);
+  const badge = blocks.length
+    ? `<span class="dl-blocked" title="${escapeHtml(blockTip(which === "start" ? "Your day start" : "Your day end", blocks))}">not placeable · ${blocks.length}</span>`
+    : "";
   line.innerHTML =
     `<span class="dl-grip" aria-hidden="true"></span>` +
-    `<span class="dl-flag">${label} ${minToHHMM(min)}</span>`;
+    `<span class="dl-flag">${label} ${clock}</span>` +
+    badge;
   wireDayLineDrag(line, which);
   return line;
 }
@@ -1241,9 +1505,15 @@ function buildMealBand(meal, y) {
   band.style.height = `${Math.max(6, y(meal.endMin) - y(meal.startMin))}px`;
   band.dataset.meal = meal.id;
   const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
+  const blocks = (state.diag && state.diag.meals && state.diag.meals[meal.id]) || [];
+  band.classList.toggle("sch-meal--blocking", blocks.length > 0);
+  const badge = blocks.length
+    ? `<span class="dl-blocked" title="${escapeHtml(blockTip(`Your ${meal.id} break`, blocks))}">not placeable · ${blocks.length}</span>`
+    : "";
   band.innerHTML =
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
     `<span class="meal-label">🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}</span>` +
+    badge +
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
@@ -1283,7 +1553,7 @@ function repositionOverlayLive() {
   const endLine = overlay.querySelector(".sch-dayline--end");
   if (endLine) {
     endLine.style.top = `${y(dayEnd)}px`;
-    endLine.querySelector(".dl-flag").textContent = `Day ends ${minToHHMM(state.dayEndMin)}`;
+    endLine.querySelector(".dl-flag").textContent = `Day ends ${minToDayClock(dayEnd)}`;
   }
   for (const meal of state.mealBreaks) {
     if (!meal.enabled) continue;
@@ -1309,8 +1579,7 @@ function wireDayLineDrag(line, which) {
         state.dayStartMin = clamp(min, 0, effectiveDayEnd() - 15);
         syncDayInputs();
       } else {
-        const v = clamp(min, state.dayStartMin + 15, 1440);
-        state.dayEndMin = v >= 1440 ? 1439 : v;
+        state.dayEndMin = clamp(min, state.dayStartMin + 15, DAY_END_CEIL);
         syncDayInputs();
       }
       repositionOverlayLive();
@@ -1511,7 +1780,24 @@ function hideContextMenu() {
 
 function syncDayInputs() {
   $("ctlDayStart").value = minToHHMM(state.dayStartMin);
-  $("ctlDayEnd").value = minToHHMM(state.dayEndMin);
+  $("ctlDayEnd").value = String(state.dayEndMin);
+}
+
+/** Fill the "day ends" select with 30-min steps from 20:00 to 27:00 (03:00),
+ *  glossing the after-midnight ones ("25:00 · 1:00 am"). */
+function populateDayEndOptions() {
+  const sel = $("ctlDayEnd");
+  if (!sel || sel.options.length) return;
+  const frag = document.createDocumentFragment();
+  for (let m = 20 * 60; m <= DAY_END_CEIL; m += 30) {
+    const opt = document.createElement("option");
+    opt.value = String(m);
+    const gloss = afterMidnightGloss(m);
+    opt.textContent = gloss ? `${minToDayClock(m)} · ${gloss}` : minToDayClock(m);
+    frag.appendChild(opt);
+  }
+  sel.appendChild(frag);
+  sel.value = String(state.dayEndMin);
 }
 function syncMealInputs(meal) {
   $(`meal${cap(meal.id)}Start`).value = minToHHMM(meal.startMin);
@@ -1535,9 +1821,9 @@ function wirePlanControls() {
     refresh();
   });
   $("ctlDayEnd").addEventListener("change", () => {
-    const v = hhmmToMin($("ctlDayEnd").value);
-    if (v == null) return;
-    state.dayEndMin = clamp(v, state.dayStartMin + 15, 1439);
+    const v = Number($("ctlDayEnd").value);
+    if (Number.isNaN(v)) return;
+    state.dayEndMin = clamp(v, state.dayStartMin + 15, DAY_END_CEIL);
     syncDayInputs();
     refresh();
   });
@@ -1574,6 +1860,11 @@ function wirePlanControls() {
       syncMealInputs(meal);
       refresh();
     });
+  }
+
+  // "Prevents N" chips: clicking one flashes the shut-out shows on the grid.
+  for (const c of BLOCK_CONTROLS) {
+    $(c.id)?.addEventListener("click", () => flashBlockedLanes((state.diag && c.pick(state.diag)) || []));
   }
 }
 
@@ -1664,6 +1955,7 @@ wireOptimizer();
 wireCellTips();
 wireScheduleInteractions();
 wirePlanControls();
+populateDayEndOptions();
 wireExports();
 
 renderPerfPill(); // paint the version placeholder immediately
