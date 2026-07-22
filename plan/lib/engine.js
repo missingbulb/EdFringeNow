@@ -304,6 +304,20 @@ export function eligibleSlots(shows, options = {}) {
 }
 
 /**
+ * Stable identity for one performance within a show: its real date + start time
+ * ("YYYY-MM-DDTHH:MM"). The UI builds the same key from a favourite's raw
+ * performance (date + start) so a "pin this exact performance" request lines up
+ * with the slot the scheduler sees — one source of truth for both sides.
+ * @param {{realDate?: string, date?: string, startTime?: string, start?: string}} p
+ * @returns {string}
+ */
+export function slotKey(p) {
+  const date = p.realDate ?? p.date;
+  const start = p.startTime ?? p.start;
+  return `${date}T${start}`;
+}
+
+/**
  * Normalize meal-break specs into `{startMin, endMin}` minute-of-day ranges,
  * dropping ones that are disabled (`enabled === false`), malformed, or
  * zero/negative length. Accepts `{startMin, endMin}` numbers or `{start, end}`
@@ -405,6 +419,13 @@ export function compatible(a, b, options = {}) {
  * around them, and the min-per-day post-pass never drops a day that holds a
  * forced show.
  *
+ * `forcedPerformances` pins a must-see to one *specific* performance (keyed by
+ * `slotKey`, "YYYY-MM-DDTHH:MM") rather than letting pass 1 pick. A pinned slug
+ * is forced automatically (no need to also list it in `forcedSlugs`), and its
+ * chosen performance is honoured even if the day-hours window or a meal break
+ * would otherwise filter it out — the user asked for exactly this one. It can
+ * still be displaced only by a hard clash with another must-see.
+ *
  * `minPerDay` is applied as a post-pass: a day holding fewer than the minimum
  * (and no forced show) is dropped whole (you don't trek into town for a single
  * show), and its shows fall back to `unscheduled` with a "below your minimum"
@@ -418,6 +439,7 @@ export function compatible(a, b, options = {}) {
  *   dayStartMin?: number, dayEndMin?: number,
  *   mealBreaks?: Array<{startMin?:number,endMin?:number,start?:string,end?:string,enabled?:boolean}>,
  *   maxPerDay?: number, minPerDay?: number, forcedSlugs?: string[]|Set<string>,
+ *   forcedPerformances?: Map<string,string>|Object<string,string>,
  * }} [options]
  * @returns {{
  *   days: Array<{date: string, slots: Slot[]}>,
@@ -442,7 +464,14 @@ export function buildSchedule(shows, options = {}) {
     dayEndMin: options.dayEndMin ?? 1440,
     mealBreaks: normalizeMealBreaks(options.mealBreaks),
   };
+  // Pinned-to-a-specific-performance must-sees (slug -> slotKey). A pinned slug
+  // is forced too, so fold its keys into forcedSlugs.
+  const forcedPerformances =
+    options.forcedPerformances instanceof Map
+      ? new Map(options.forcedPerformances)
+      : new Map(Object.entries(options.forcedPerformances ?? {}));
   const forcedSlugs = new Set(options.forcedSlugs ?? []);
+  for (const slug of forcedPerformances.keys()) forcedSlugs.add(slug);
 
   // Every window+availability slot (with coords + minute-of-day annotations)…
   const slotsByShowAll = eligibleSlots(shows, {
@@ -480,9 +509,19 @@ export function buildSchedule(shows, options = {}) {
   // placed; it ignores the per-day cap (you insisted on it) but still can't
   // overlap another must-see.
   for (const slug of [...forcedSlugs].sort()) {
-    const slots = [...(slotsByShow.get(slug) || [])].sort(
-      (a, b) => a.end - b.end || a.start - b.start
-    );
+    const pinnedKey = forcedPerformances.get(slug);
+    let slots;
+    if (pinnedKey) {
+      // Pinned to one exact performance: take it straight from the full window
+      // set (pre day-hours filter) so an explicit pin overrides day hours and
+      // meal breaks. Only a hard must-see clash can still bump it.
+      const match = (slotsByShowAll.get(slug) || []).find((s) => slotKey(s) === pinnedKey);
+      slots = match ? [match] : [];
+    } else {
+      slots = [...(slotsByShow.get(slug) || [])].sort(
+        (a, b) => a.end - b.end || a.start - b.start
+      );
+    }
     for (const slot of slots) {
       const sameDay = perDay.get(slot.date) || [];
       if (sameDay.every((c) => compatible(c, slot, gapOpts))) {
@@ -538,8 +577,16 @@ export function buildSchedule(shows, options = {}) {
     if (scheduledSlugs.has(show.slug)) continue;
     const windowSlots = (slotsByShowAll.get(show.slug) || []).length;
     const daySlots = (slotsByShow.get(show.slug) || []).length;
+    // A pinned show overrides the day-hours filter, so if its exact performance
+    // exists in the window yet didn't place, the cause is a must-see clash — not
+    // a day-hours problem, even when the day-filtered pool is empty.
+    const pinnedInWindow =
+      forcedPerformances.has(show.slug) &&
+      windowSlots > 0 &&
+      (slotsByShowAll.get(show.slug) || []).some((s) => slotKey(s) === forcedPerformances.get(show.slug));
     let reason;
     if (windowSlots === 0) reason = "no available performance in your dates";
+    else if (pinnedInWindow) reason = "forced, but it clashes with another must-see";
     else if (daySlots === 0) reason = "only runs outside your day hours or meal breaks";
     else if (droppedShows.has(show.slug)) reason = "on a day below your minimum";
     else if (forcedSlugs.has(show.slug)) reason = "forced, but it clashes with another must-see";

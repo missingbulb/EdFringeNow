@@ -10,7 +10,7 @@
 // recomputes live whenever the date window or any control changes.
 
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
-import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics } from "./lib/engine.js";
+import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
@@ -150,7 +150,10 @@ const state = {
     { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60 },
   ],
   mode: "walk",
-  forced: new Set(), // slugs the user right-clicked to force into the plan
+  // Must-sees, keyed by slug. Value `true` = pin the show (the scheduler picks a
+  // performance); a slotKey string = pin that one specific performance. Click a
+  // show name to toggle the first, click a performance mark to toggle the second.
+  forced: new Map(),
   // Populated once per upload by buildCalendar():
   laneRefs: [], // [{ slug, el, statusEl }] in display (sorted) order
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
@@ -275,7 +278,7 @@ function clearFavourites() {
   state.missingSlugs = [];
   state.filename = "";
   state.savedAt = null;
-  state.forced = new Set();
+  state.forced = new Map();
 
   const summaryEl = $("uploadSummary");
   summaryEl.hidden = true;
@@ -332,7 +335,7 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}
   state.missingSlugs = missingSlugs;
   state.filename = filename;
   state.savedAt = savedAt;
-  state.forced = new Set(); // a fresh set clears any must-sees
+  state.forced = new Map(); // a fresh map clears any must-sees
 
   if (matched.length > 0) {
     state.d0 = DEFAULT_D0;
@@ -502,7 +505,7 @@ function buildCalendar() {
 
     const label = document.createElement("div");
     label.className = "lane-label";
-    label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · right-click to force into the plan`;
+    label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · click the name to pin the show into the plan`;
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true" title="Forced into the plan">📌</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
@@ -572,6 +575,9 @@ function buildDayCells(performances) {
       for (const p of entries) {
         const seg = document.createElement("span");
         seg.className = "seg " + segClass(p);
+        seg.dataset.date = p.date;
+        seg.dataset.start = p.start;
+        seg.title = `${dowShort(d)} ${d} Aug · ${p.start} · click to pin this performance`;
         cell.appendChild(seg);
       }
       cell.dataset.tip = entries
@@ -659,6 +665,15 @@ function applyVerdicts(bySlug, filter) {
     ref.el.classList.toggle("lane--scheduled", scheduled);
     ref.el.classList.toggle("lane--forced", forced);
     ref.el.classList.toggle("lane--blocked", notPlaceable);
+
+    // Ring the one performance mark that's pinned (if any) so the pin is legible.
+    const pin = state.forced.get(ref.slug);
+    const pinnedKey = typeof pin === "string" ? pin : null;
+    for (const seg of ref.el.querySelectorAll(".seg")) {
+      const isPinned =
+        pinnedKey != null && slotKey({ date: seg.dataset.date, start: seg.dataset.start }) === pinnedKey;
+      seg.classList.toggle("seg--pinned", isPinned);
+    }
 
     if (scheduled) {
       ref.statusEl.innerHTML = `<span class="st-plan" title="in your plan">&check;&nbsp;In plan</span>`;
@@ -955,25 +970,18 @@ function wireCalendarControls() {
     if (!collapsed) requestAnimationFrame(() => layoutOverlay());
   });
 
-  // Right-click a lane to force that show into the plan (or lift it out).
-  $("lanes").addEventListener("contextmenu", (e) => {
+  // Click a show name to pin the whole show into the plan; click a performance
+  // mark to pin that exact performance. Both toggle — click again to lift it.
+  $("lanes").addEventListener("click", (e) => {
     const lane = e.target.closest(".lane");
     if (!lane) return;
-    e.preventDefault();
     const slug = lane.dataset.slug;
-    const forced = state.forced.has(slug);
-    const show = state.index && state.index.get(slug);
-    showContextMenu(e.clientX, e.clientY, [
-      {
-        label: forced ? "📌 Lift from must-sees" : "📌 Force into plan",
-        onClick: () => {
-          if (forced) state.forced.delete(slug);
-          else state.forced.add(slug);
-          refresh();
-        },
-      },
-      { label: "Open on edfringe.com ↗", onClick: () => window.open(urlFromSlug(slug), "_blank", "noopener") },
-    ], show ? show.title : slug);
+    const seg = e.target.closest(".seg");
+    if (seg) {
+      togglePinPerformance(slug, seg.dataset.date, seg.dataset.start);
+    } else if (e.target.closest(".lane-label")) {
+      togglePinShow(slug);
+    }
   });
 
   window.addEventListener("resize", () => {
@@ -1126,10 +1134,39 @@ function gatherPlanOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: effectiveDayEnd(),
     mealBreaks: state.mealBreaks.filter((m) => m.enabled).map((m) => ({ startMin: m.startMin, endMin: m.endMin })),
-    forcedSlugs: [...state.forced],
+    forcedSlugs: [...state.forced.keys()],
+    forcedPerformances: forcedPerformanceMap(),
     travelMode: state.mode,
     venueCoords: state.venueCoords,
   };
+}
+
+/** The must-sees pinned to one exact performance (slug -> slotKey), for the engine. */
+function forcedPerformanceMap() {
+  const out = {};
+  for (const [slug, val] of state.forced) if (typeof val === "string") out[slug] = val;
+  return out;
+}
+
+/**
+ * Pin / unpin a whole show as a must-see (the scheduler picks the performance).
+ * Toggling off also clears a specific-performance pin on that show.
+ */
+function togglePinShow(slug) {
+  if (state.forced.has(slug)) state.forced.delete(slug);
+  else state.forced.set(slug, true);
+  refresh();
+}
+
+/**
+ * Pin / unpin one exact performance of a show. Pinning replaces any prior pin on
+ * that show; clicking the already-pinned performance clears it.
+ */
+function togglePinPerformance(slug, date, start) {
+  const key = slotKey({ date, start });
+  if (state.forced.get(slug) === key) state.forced.delete(slug);
+  else state.forced.set(slug, key);
+  refresh();
 }
 
 function renderPlanSummary(schedule) {
@@ -1671,18 +1708,14 @@ function wireScheduleInteractions() {
     card.hidden = true;
   });
 
-  // Right-click a scheduled block → open its edfringe page (via a small menu,
-  // so it isn't swallowed by a pop-up blocker).
-  host.addEventListener("contextmenu", (e) => {
+  // Click a scheduled block → open its edfringe page. (No right-click.)
+  host.addEventListener("click", (e) => {
     const block = e.target.closest(".sch-show");
     if (!block) return;
-    e.preventDefault();
     const slot = findSlot(block.dataset.slug);
     if (!slot) return;
     card.hidden = true;
-    showContextMenu(e.clientX, e.clientY, [
-      { label: "Open on edfringe.com ↗", onClick: () => window.open(slot.url, "_blank", "noopener") },
-    ], slot.title);
+    window.open(slot.url, "_blank", "noopener");
   });
 }
 
@@ -1720,60 +1753,8 @@ function fillShowCard(card, slot) {
     `<div class="card-title">${escapeHtml(slot.title)}</div>` +
     `<div class="card-meta">${escapeHtml(timeStr)}${venue ? " · " + escapeHtml(venue) : ""}</div>` +
     (blurb ? `<div class="card-blurb">${blurb}</div>` : "") +
-    `<div class="card-hint">Right-click for the edfringe.com page ↗</div>` +
+    `<div class="card-hint">Click to open the edfringe.com page ↗</div>` +
     `</div>`;
-}
-
-// --- A tiny reusable context menu ------------------------------------------
-
-let ctxMenuEl = null;
-function showContextMenu(x, y, items, headerText) {
-  hideContextMenu();
-  const menu = document.createElement("div");
-  menu.className = "ctx-menu";
-  if (headerText) {
-    const h = document.createElement("div");
-    h.className = "ctx-head";
-    h.textContent = headerText;
-    menu.appendChild(h);
-  }
-  for (const item of items) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "ctx-item";
-    btn.textContent = item.label;
-    btn.addEventListener("click", () => {
-      hideContextMenu();
-      item.onClick();
-    });
-    menu.appendChild(btn);
-  }
-  menu.style.left = "0px";
-  menu.style.top = "0px";
-  document.body.appendChild(menu);
-  // Flip so the menu stays on-screen.
-  const w = menu.offsetWidth;
-  const h = menu.offsetHeight;
-  menu.style.left = Math.min(x, window.innerWidth - w - 8) + "px";
-  menu.style.top = Math.min(y, window.innerHeight - h - 8) + "px";
-  ctxMenuEl = menu;
-  setTimeout(() => {
-    document.addEventListener("pointerdown", onDocPointerForMenu, true);
-    document.addEventListener("keydown", onEscForMenu, true);
-  }, 0);
-}
-function onDocPointerForMenu(e) {
-  if (ctxMenuEl && !ctxMenuEl.contains(e.target)) hideContextMenu();
-}
-function onEscForMenu(e) {
-  if (e.key === "Escape") hideContextMenu();
-}
-function hideContextMenu() {
-  if (!ctxMenuEl) return;
-  ctxMenuEl.remove();
-  ctxMenuEl = null;
-  document.removeEventListener("pointerdown", onDocPointerForMenu, true);
-  document.removeEventListener("keydown", onEscForMenu, true);
 }
 
 // --- Plan controls wiring --------------------------------------------------

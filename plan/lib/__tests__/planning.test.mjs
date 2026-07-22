@@ -9,6 +9,7 @@ import assert from "node:assert/strict";
 import {
   buildSchedule,
   eligibleSlots,
+  slotKey,
   requiredGapMinutes,
   compatible,
   withinDayWindow,
@@ -207,6 +208,56 @@ test("buildSchedule: two hard-clashing forced shows — one placed, one reported
   const left = forced.unscheduled;
   assert.equal(left.length, 1);
   assert.match(left[0].reason, /clashes with another must-see/);
+});
+
+// --- pinning a specific performance --------------------------------------
+
+test("slotKey: matches the identity eligibleSlots emits for a performance", () => {
+  const slots = eligibleSlots([show("a", "A", [{ start: "13:30", date: "2026-08-12" }])], WIDE);
+  assert.equal(slotKey(slots.get("a")[0]), "2026-08-12T13:30");
+});
+
+test("buildSchedule: forcedPerformances pins one exact performance", () => {
+  const shows = [show("m", "A", [{ start: "12:00" }, { start: "20:00" }])];
+  // A whole-show force takes the earliest-finishing performance (12:00)…
+  const def = buildSchedule(shows, { ...WIDE, forcedSlugs: ["m"] });
+  assert.equal(def.scheduled[0].startTime, "12:00");
+  // …but pinning the 20:00 performance places exactly that one (no forcedSlugs).
+  const pinned = buildSchedule(shows, { ...WIDE, forcedPerformances: { m: "2026-08-10T20:00" } });
+  assert.equal(pinned.counts.scheduledShows, 1);
+  assert.equal(pinned.scheduled[0].startTime, "20:00");
+  assert.deepEqual(pinned.forced, ["m"]);
+});
+
+test("buildSchedule: a pinned performance overrides the day-hours window", () => {
+  const shows = [show("late", "A", [{ start: "23:30" }])]; // 23:30–00:30
+  // A day ending at 22:00 rules the show out of a whole-show force…
+  const blocked = buildSchedule(shows, { ...WIDE, dayEndMin: 22 * 60, forcedSlugs: ["late"] });
+  assert.equal(blocked.counts.scheduledShows, 0);
+  // …but an explicit pin on that performance honours it anyway.
+  const pinned = buildSchedule(shows, {
+    ...WIDE,
+    dayEndMin: 22 * 60,
+    forcedPerformances: { late: "2026-08-10T23:30" },
+  });
+  assert.equal(pinned.counts.scheduledShows, 1);
+  assert.equal(pinned.scheduled[0].startTime, "23:30");
+});
+
+test("buildSchedule: a pinned performance that clashes with a must-see is reported", () => {
+  const shows = [
+    show("p", "A", [{ start: "19:00" }]), // 19:00–20:00, forced
+    show("q", "A", [{ start: "12:00" }, { start: "19:20" }]), // pin the clashing 19:20
+  ];
+  const out = buildSchedule(shows, {
+    ...WIDE,
+    forcedSlugs: ["p"],
+    forcedPerformances: { q: "2026-08-10T19:20" },
+  });
+  // p claims 19:00 first; q, pinned to the overlapping 19:20, can't be placed —
+  // and its free 12:00 slot is not a fallback, because the pin is exact.
+  assert.deepEqual(out.scheduled.map((s) => s.slug), ["p"]);
+  assert.match(out.unscheduled.find((u) => u.slug === "q").reason, /clashes with another must-see/);
 });
 
 // --- annotations & determinism ------------------------------------------
