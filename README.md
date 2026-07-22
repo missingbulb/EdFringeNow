@@ -32,6 +32,28 @@ js/app.js         data loading, map, show list, journey, editable cards
 data/shows.json   mock Edinburgh Fringe shows
 ```
 
+## Tests & CI
+
+The planner's computation engine (`plan/lib/`) is unit-tested with the built-in
+Node test runner — no dependencies, no install:
+
+```
+npm test          # node --test plan/lib/__tests__/*.test.mjs
+npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
+```
+
+`npm run verify` is the single gate: it runs the unit tests, syntax-checks every
+JavaScript source under `js/` and `plan/`, and byte-compiles the `scraper/`
+Python. The **CI** workflow (`.github/workflows/ci.yml`) runs it on every push
+to `main` and every pull request, and a **pre-commit hook** runs the same gate
+locally so nothing red is committed. Enable the hook once per clone:
+
+```
+npm run setup-hooks   # git config core.hooksPath .githooks
+```
+
+(Bypass a single commit with `git commit --no-verify`.)
+
 ## Development
 
 Shared Claude working guidelines are vendored into this repo as committed files

@@ -1,0 +1,11 @@
+{
+  "name": "edfringenow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EdFringeNow — client-side Edinburgh Fringe discovery + planner. No runtime dependencies; a build/serve-free static site.",
+  "scripts": {
+    "test": "node --test plan/lib/__tests__/*.test.mjs",
+    "verify": "bash scripts/verify.sh",
+    "setup-hooks": "bash scripts/setup-hooks.sh"
+  }
+}
