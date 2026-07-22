@@ -73,6 +73,15 @@ a { color: inherit; }
 .nav-link:hover { color: var(--violet); }
 .nav-link.is-active { color: var(--violet); border-bottom-color: var(--violet); }
 .header-hint { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+/* Red build/perf pill — version + live average reschedule (buildSchedule) time. */
+.perf-pill {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font-size: 0.64rem; font-weight: 800; letter-spacing: 0.03em;
+  color: #fff; background: var(--warn); border-radius: 999px; padding: 5px 11px;
+  font-variant-numeric: tabular-nums; cursor: default;
+}
+.perf-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
+@media (max-width: 640px) { .perf-pill { display: none; } }
 
 /* ============ Page head ============ */
 .page-head { padding: 44px 0 8px; }

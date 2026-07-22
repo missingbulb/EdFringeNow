@@ -22,6 +22,7 @@ import { distanceKm, travelMinutes } from "./lib/travel.js";
 const DATA_URL = "../data/normalized/shows.json";
 const VENUES_URL = "../data/venues.json";
 const SAMPLE_URL = "./sample-favourites.csv";
+const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
 const YEAR = 2026;
 const MONTH = "08"; // August, 2-digit
@@ -135,6 +136,9 @@ const state = {
   schedule: null,
   scheduledSlugs: new Set(),
   schedAxis: null, // { axisTopMin, axisBottomMin, hourPx, headPx } for overlay dragging
+  // Build version + reschedule-timing telemetry (surfaced in the header pill).
+  version: null,
+  perf: { count: 0, sum: 0, last: 0, min: Infinity, max: 0 },
 };
 
 // --- Data loading -----------------------------------------------------
@@ -569,7 +573,10 @@ function refresh() {
   const filter = currentFilter();
   const summ = summarize(state.matched, filter, state.totalFavourites);
 
+  // Time the reschedule computation itself (buildSchedule) for the header pill.
+  const t0 = performance.now();
   const schedule = buildSchedule(state.matched, gatherPlanOptions());
+  recordResched(performance.now() - t0);
   state.schedule = schedule;
   state.scheduledSlugs = new Set(schedule.scheduled.map((s) => s.slug));
 
@@ -1595,6 +1602,57 @@ function wireExports() {
   });
 }
 
+// --- Version + reschedule-timing pill --------------------------------------
+
+/** Fetch the app version (single-sourced from package.json) for the pill. */
+async function loadVersion() {
+  try {
+    const res = await fetch(APP_VERSION_URL);
+    if (res.ok) {
+      const pkg = await res.json();
+      if (pkg && typeof pkg.version === "string") state.version = pkg.version;
+    }
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't read app version", err);
+  }
+  renderPerfPill();
+}
+
+/** Fold one reschedule (buildSchedule) duration into the rolling stats. */
+function recordResched(ms) {
+  const p = state.perf;
+  p.count++;
+  p.sum += ms;
+  p.last = ms;
+  p.min = Math.min(p.min, ms);
+  p.max = Math.max(p.max, ms);
+  renderPerfPill();
+}
+
+function fmtMs(ms) {
+  if (ms >= 100) return `${Math.round(ms)} ms`;
+  if (ms >= 10) return `${ms.toFixed(1)} ms`;
+  return `${ms.toFixed(2)} ms`;
+}
+
+function renderPerfPill() {
+  const el = $("perfPill");
+  if (!el) return;
+  const v = state.version ? `v${state.version}` : "dev";
+  const p = state.perf;
+  if (p.count === 0) {
+    el.textContent = `${v} · plan —`;
+    el.title = "Reschedule timing appears after the first plan";
+    return;
+  }
+  const avg = p.sum / p.count;
+  el.textContent = `${v} · plan ${fmtMs(avg)}`;
+  el.title =
+    `Reschedule computation (buildSchedule)\n` +
+    `avg ${fmtMs(avg)} · last ${fmtMs(p.last)} · min ${fmtMs(p.min)} · max ${fmtMs(p.max)}\n` +
+    `over ${p.count} run${p.count === 1 ? "" : "s"} this session`;
+}
+
 // --- Go ---------------------------------------------------------------
 
 wireDropzone();
@@ -1608,4 +1666,6 @@ wireScheduleInteractions();
 wirePlanControls();
 wireExports();
 
+renderPerfPill(); // paint the version placeholder immediately
+loadVersion();
 loadData();
