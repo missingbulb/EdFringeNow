@@ -32,7 +32,7 @@ const DAYS_IN_MONTH = 31; // Aug 1–31 is the axis this calendar draws.
 // occur — the latest date in the dataset is Aug 31 itself). Performances
 // outside the Aug 1–31 axis simply fall off the calendar; this is expected
 // per the spec and rare in practice (previews are the main case).
-const FEST_END_DAY = 25; // Core run ends Mon 25 Aug; 26–31 draws as a shaded "after" zone.
+const FEST_START_DAY = 7; // The Fringe runs Fri 7 – Sun 31 Aug 2026; days 1–6 draw as a shaded "before it opens" zone (previews only).
 
 // The whole calendar day — the engine's summarize() still takes a start-time
 // window, but the planner no longer exposes a start-time selector (it wasn't a
@@ -453,7 +453,7 @@ function ensureDayHeader() {
   dayHead.innerHTML = "";
   for (let d = 1; d <= DAYS_IN_MONTH; d++) {
     const col = document.createElement("div");
-    col.className = "day-col" + (isWeekend(d) ? " wknd" : "") + (d > FEST_END_DAY ? " post" : "");
+    col.className = "day-col" + (isWeekend(d) ? " wknd" : "") + (d < FEST_START_DAY ? " pre" : "");
     col.innerHTML = `<span class="day-dow">${dowShort(d)}</span><span class="day-num">${d}</span>`;
     dayHead.appendChild(col);
   }
@@ -674,9 +674,10 @@ function layoutOverlay() {
   win.style.left = trackLeft + "px";
   win.style.width = trackWidth + "px";
 
+  // Shade the pre-opening head (Aug 1 → the day before the Fringe opens).
   const festEnd = $("festEnd");
-  festEnd.style.left = trackLeft + FEST_END_DAY * dayW + "px";
-  festEnd.style.width = (DAYS_IN_MONTH - FEST_END_DAY) * dayW + "px";
+  festEnd.style.left = trackLeft + "px";
+  festEnd.style.width = (FEST_START_DAY - 1) * dayW + "px";
 
   paintWindow();
 }

@@ -339,7 +339,7 @@ a { color: inherit; }
 .day-dow { display: block; font-size: 0.56rem; font-weight: 600; color: #b0b7c3; }
 .day-num { display: block; font-size: 0.7rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .day-col.wknd .day-num { color: var(--ink); font-weight: 700; }
-.day-col.post .day-num, .day-col.post .day-dow { color: #cfd4de; }
+.day-col.pre .day-num, .day-col.pre .day-dow { color: #cfd4de; }
 
 .lanes { position: relative; z-index: 1; }
 /* One tight single-line row per show — this screen is an overview of the shows
@@ -445,7 +445,7 @@ a { color: inherit; }
 /* --- Window overlay over the lanes: purely visual, never intercepts the
    pointer — lane cells keep their hover tooltips. --- */
 .win { position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; }
-.festend { position: absolute; top: 0; bottom: 0; background: rgba(234, 236, 240, 0.35); border-left: 1px dashed #d5d9e2; pointer-events: none; z-index: 1; }
+.festend { position: absolute; top: 0; bottom: 0; background: rgba(234, 236, 240, 0.35); border-right: 1px dashed #d5d9e2; pointer-events: none; z-index: 1; }
 .win-dim { position: absolute; top: 0; bottom: 0; background: rgba(247, 248, 250, 0.72); }
 .win-band {
   position: absolute; top: 0; bottom: 0;
