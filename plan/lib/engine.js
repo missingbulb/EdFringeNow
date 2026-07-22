@@ -12,6 +12,7 @@ import {
   dateTimeToMinutes,
   timeToMinutesOfDay,
 } from "./availability.js";
+import { travelMinutes, DEFAULT_TRAVEL_MODE } from "./travel.js";
 
 // --- indexing / matching --------------------------------------------------
 
@@ -166,38 +167,64 @@ function toMinutes(value) {
  * @property {string} startTime "HH:MM"
  * @property {number} start minutes since epoch
  * @property {number} end minutes since epoch
+ * @property {number} startMinuteOfDay minutes-since-midnight of the start
+ * @property {number} endMinuteOfDay minutes-since-midnight of the end (capped at
+ *   1440 for a performance that runs past midnight)
  * @property {string|null} status raw ticketStatus from shows.json (for display/colour)
  * @property {string|null} venueCode
  * @property {string|null} venueName
+ * @property {number|null} venueLat
+ * @property {number|null} venueLng
  * @property {string|null} room
+ * @property {string|null} image
+ * @property {string|null} blurb
+ * @property {number|null} duration minutes
  * @property {string} url
  * @property {boolean} freeNonTicketed
  */
 
+/** Resolve a venue code to {lat,lng} from a coords lookup (a Map or a plain
+ *  object keyed by venue code), or null when unknown / an online venue. */
+function lookupVenueCoord(venueCoords, code) {
+  if (!venueCoords || code == null) return null;
+  const key = String(code);
+  const v = venueCoords instanceof Map ? venueCoords.get(key) : venueCoords[key];
+  if (!v || v.lat == null || v.lng == null) return null;
+  return { lat: v.lat, lng: v.lng };
+}
+
 /**
  * Per-show available performances that fit entirely inside the trip window.
  * Mirrors scheduling.py's `eligible_slots` (window + availability filter only
- * — gap/overlap compatibility is a separate concern, see `compatible`).
+ * — gap/overlap compatibility and the day-hours/meal-break filter are separate
+ * concerns, see `compatible` / `withinDayWindow`).
  *
  * @param {object[]} shows
- * @param {{windowStart?: string|Date, windowEnd?: string|Date, minGap?: number}} [options]
- *   minGap is accepted for API symmetry with the gap-aware helpers below but is
- *   not applied here (Python's eligible_slots doesn't gap-filter either — that
- *   happens when building a schedule from the slots).
+ * @param {{windowStart?: string|Date, windowEnd?: string|Date,
+ *          venueCoords?: Map<string,{lat:number,lng:number}>|object}} [options]
+ *   venueCoords lets slots carry venue lat/lng so the scheduler can size
+ *   different-venue gaps by real travel time and the UI can draw travel legs.
  * @returns {Map<string, Slot[]>}
  */
 export function eligibleSlots(shows, options = {}) {
   const windowStart = toMinutes(options.windowStart ?? DEFAULT_WINDOW_START);
   const windowEnd = toMinutes(options.windowEnd ?? DEFAULT_WINDOW_END);
+  const venueCoords = options.venueCoords ?? null;
 
   const out = new Map();
   for (const show of shows || []) {
+    const coord = lookupVenueCoord(venueCoords, show.venue);
+    const dur = show.duration || 0;
     const slots = [];
     for (const perf of show.performances || []) {
       if (!isAvailable(perf)) continue;
       const start = dateTimeToMinutes(perf.date, perf.start);
       const end = show.duration ? start + show.duration : start;
       if (start < windowStart || end > windowEnd) continue;
+      const startMinuteOfDay = timeToMinutesOfDay(perf.start);
+      // A performance running past midnight closes out its own day rather than
+      // opening the next, so cap its end-of-day at 24:00 for the day-hours test.
+      const endMinuteOfDay = Math.min(1440, startMinuteOfDay + dur);
       slots.push({
         slug: show.slug,
         title: show.title,
@@ -206,10 +233,17 @@ export function eligibleSlots(shows, options = {}) {
         startTime: perf.start,
         start,
         end,
+        startMinuteOfDay,
+        endMinuteOfDay,
         status: perf.status ?? null,
         venueCode: show.venue ?? null,
         venueName: show.venueName ?? null,
+        venueLat: coord ? coord.lat : null,
+        venueLng: coord ? coord.lng : null,
         room: show.room ?? null,
+        image: show.image ?? show.smallImage ?? null,
+        blurb: show.blurb ?? null,
+        duration: show.duration ?? null,
         url: urlFromSlug(show.slug),
         freeNonTicketed: isNonTicketed(perf),
       });
@@ -221,12 +255,56 @@ export function eligibleSlots(shows, options = {}) {
 }
 
 /**
- * Minutes required between two slots: the same-venue buffer when both share a
- * known venue code, otherwise the different-venue buffer. Mirrors
- * scheduling.py's `required_gap_minutes`.
+ * Normalize meal-break specs into `{startMin, endMin}` minute-of-day ranges,
+ * dropping ones that are disabled (`enabled === false`), malformed, or
+ * zero/negative length. Accepts `{startMin, endMin}` numbers or `{start, end}`
+ * "HH:MM" strings.
+ * @param {Array<{startMin?:number,endMin?:number,start?:string,end?:string,enabled?:boolean}>} breaks
+ * @returns {Array<{startMin:number, endMin:number}>}
+ */
+export function normalizeMealBreaks(breaks) {
+  if (!Array.isArray(breaks)) return [];
+  const out = [];
+  for (const b of breaks) {
+    if (!b || b.enabled === false) continue;
+    const startMin = b.startMin ?? (b.start != null ? timeToMinutesOfDay(b.start) : null);
+    const endMin = b.endMin ?? (b.end != null ? timeToMinutesOfDay(b.end) : null);
+    if (startMin == null || endMin == null || endMin <= startMin) continue;
+    out.push({ startMin, endMin });
+  }
+  return out;
+}
+
+/**
+ * True if a slot starts no earlier than the day start, ends no later than the
+ * day end, and overlaps none of the meal breaks — the day-hours filter the
+ * scheduler applies before allocating.
+ * @param {Slot} slot
+ * @param {{dayStartMin?:number, dayEndMin?:number, mealBreaks?:Array<{startMin:number,endMin:number}>}} [win]
+ * @returns {boolean}
+ */
+export function withinDayWindow(slot, win = {}) {
+  const dayStartMin = win.dayStartMin ?? 0;
+  const dayEndMin = win.dayEndMin ?? 1440;
+  if (slot.startMinuteOfDay < dayStartMin) return false;
+  if (slot.endMinuteOfDay > dayEndMin) return false;
+  for (const b of win.mealBreaks || []) {
+    // Overlap (half-open): a show touching a break edge-to-edge is fine.
+    if (slot.startMinuteOfDay < b.endMin && slot.endMinuteOfDay > b.startMin) return false;
+  }
+  return true;
+}
+
+/**
+ * Minutes required between two slots. Same known venue → the same-venue buffer
+ * (a double bill needs no travel). Different venues → the greater of the
+ * different-venue buffer (a floor, also the value used when coordinates are
+ * unknown) and the estimated door-to-door travel time by the chosen mode, so
+ * the gap grows with distance and shrinks on a bike/car. Extends
+ * scheduling.py's `required_gap_minutes` with the travel estimate.
  * @param {Slot} a
  * @param {Slot} b
- * @param {{minGapSameVenue?: number, minGapDifferentVenue?: number}} [options]
+ * @param {{minGapSameVenue?: number, minGapDifferentVenue?: number, travelMode?: string}} [options]
  * @returns {number}
  */
 export function requiredGapMinutes(a, b, options = {}) {
@@ -235,7 +313,13 @@ export function requiredGapMinutes(a, b, options = {}) {
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     return minGapSameVenue;
   }
-  return minGapDifferentVenue;
+  const t = travelMinutes(
+    { lat: a.venueLat, lng: a.venueLng },
+    { lat: b.venueLat, lng: b.venueLng },
+    options.travelMode ?? DEFAULT_TRAVEL_MODE
+  );
+  if (t == null) return minGapDifferentVenue; // unknown coords — fall back to the flat buffer
+  return Math.max(minGapDifferentVenue, Math.ceil(t));
 }
 
 /**
@@ -256,7 +340,8 @@ export function compatible(a, b, options = {}) {
 /**
  * Greedily allocate a conflict-free itinerary: at most one performance per
  * show, no two performances on the same day overlapping (or closer than the
- * required travel buffer), and at most `maxPerDay` shows on any one day.
+ * required travel gap), at most `maxPerDay` shows on any one day, and only
+ * performances that fall within the day-hours window and miss the meal breaks.
  *
  * The heuristic is classic earliest-finish-first activity selection — the
  * optimal greedy for "fit the most non-overlapping intervals on one machine" —
@@ -265,21 +350,31 @@ export function compatible(a, b, options = {}) {
  * the per-day cap. Ties break deterministically (earliest start, then slug),
  * so the same inputs always yield the same plan — no wall-clock/random state.
  *
+ * `forcedSlugs` are must-see shows placed in a first pass before the greedy
+ * fill: each takes its earliest-finishing performance that doesn't clash with
+ * another forced show, ignoring the per-day cap. The greedy pass then fills
+ * around them, and the min-per-day post-pass never drops a day that holds a
+ * forced show.
+ *
  * `minPerDay` is applied as a post-pass: a day holding fewer than the minimum
- * is dropped whole (you don't trek into town for a single show), and its shows
- * fall back to `unscheduled` with a "below your minimum" reason. Leave it at 1
- * (the default) to keep every day.
+ * (and no forced show) is dropped whole (you don't trek into town for a single
+ * show), and its shows fall back to `unscheduled` with a "below your minimum"
+ * reason. Leave it at 1 (the default) to keep every day.
  *
  * @param {object[]} shows shows to schedule (typically matchFavourites(...).matched)
  * @param {{
  *   windowStart?: string|Date, windowEnd?: string|Date,
  *   minGapSameVenue?: number, minGapDifferentVenue?: number,
- *   maxPerDay?: number, minPerDay?: number,
+ *   travelMode?: string, venueCoords?: Map<string,{lat:number,lng:number}>|object,
+ *   dayStartMin?: number, dayEndMin?: number,
+ *   mealBreaks?: Array<{startMin?:number,endMin?:number,start?:string,end?:string,enabled?:boolean}>,
+ *   maxPerDay?: number, minPerDay?: number, forcedSlugs?: string[]|Set<string>,
  * }} [options]
  * @returns {{
  *   days: Array<{date: string, slots: Slot[]}>,
  *   scheduled: Slot[],
  *   unscheduled: Array<{slug: string, title: string, reason: string}>,
+ *   forced: string[],
  *   counts: {matchedShows: number, scheduledShows: number, days: number},
  * }}
  */
@@ -289,16 +384,67 @@ export function buildSchedule(shows, options = {}) {
   const gapOpts = {
     minGapSameVenue: options.minGapSameVenue ?? DEFAULT_MIN_GAP_SAME_VENUE,
     minGapDifferentVenue: options.minGapDifferentVenue ?? DEFAULT_MIN_GAP_DIFFERENT_VENUE,
+    travelMode: options.travelMode ?? DEFAULT_TRAVEL_MODE,
   };
   const maxPerDay = options.maxPerDay ?? Infinity;
   const minPerDay = options.minPerDay ?? 1;
+  const dayWindow = {
+    dayStartMin: options.dayStartMin ?? 0,
+    dayEndMin: options.dayEndMin ?? 1440,
+    mealBreaks: normalizeMealBreaks(options.mealBreaks),
+  };
+  const forcedSlugs = new Set(options.forcedSlugs ?? []);
 
-  const slotsByShow = eligibleSlots(shows, { windowStart, windowEnd });
+  // Every window+availability slot (with coords + minute-of-day annotations)…
+  const slotsByShowAll = eligibleSlots(shows, {
+    windowStart,
+    windowEnd,
+    venueCoords: options.venueCoords ?? null,
+  });
+  // …then narrowed to those inside the day-hours window and clear of meal
+  // breaks. `lostToDayWindow` remembers shows that had window slots but lost
+  // them all to that filter, for an honest unscheduled reason.
+  const slotsByShow = new Map();
+  for (const [slug, slots] of slotsByShowAll) {
+    slotsByShow.set(slug, slots.filter((s) => withinDayWindow(s, dayWindow)));
+  }
 
-  // All candidate performances, earliest-finishing first (ties: earliest
-  // start, then slug/date for a stable, reproducible order).
+  const chosen = [];
+  const placedShows = new Set();
+  const forcedPlaced = new Set();
+  const perDay = new Map(); // date -> Slot[] placed that day
+
+  const place = (slot, isForced) => {
+    chosen.push(slot);
+    placedShows.add(slot.slug);
+    if (isForced) forcedPlaced.add(slot.slug);
+    const day = perDay.get(slot.date) || [];
+    day.push(slot);
+    perDay.set(slot.date, day);
+  };
+
+  // --- Pass 1: forced (must-see) shows claim their slot first --------------
+  // Stable slug order so the plan is reproducible. Each forced show takes the
+  // earliest-finishing performance compatible with the forced shows already
+  // placed; it ignores the per-day cap (you insisted on it) but still can't
+  // overlap another must-see.
+  for (const slug of [...forcedSlugs].sort()) {
+    const slots = [...(slotsByShow.get(slug) || [])].sort(
+      (a, b) => a.end - b.end || a.start - b.start
+    );
+    for (const slot of slots) {
+      const sameDay = perDay.get(slot.date) || [];
+      if (sameDay.every((c) => compatible(c, slot, gapOpts))) {
+        place(slot, true);
+        break;
+      }
+    }
+  }
+
+  // --- Pass 2: greedy earliest-finish for everything else ------------------
   const candidates = [];
-  for (const slots of slotsByShow.values()) {
+  for (const [slug, slots] of slotsByShow) {
+    if (forcedSlugs.has(slug)) continue; // handled in pass 1
     for (const slot of slots) candidates.push(slot);
   }
   candidates.sort(
@@ -308,29 +454,22 @@ export function buildSchedule(shows, options = {}) {
       a.slug.localeCompare(b.slug) ||
       a.date.localeCompare(b.date)
   );
-
-  const chosen = [];
-  const placedShows = new Set();
-  const perDay = new Map(); // date -> Slot[] placed that day
-
   for (const slot of candidates) {
     if (placedShows.has(slot.slug)) continue; // one performance per show
     const sameDay = perDay.get(slot.date) || [];
     if (sameDay.length >= maxPerDay) continue; // day already full
     if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
-    chosen.push(slot);
-    placedShows.add(slot.slug);
-    sameDay.push(slot);
-    perDay.set(slot.date, sameDay);
+    place(slot, false);
   }
 
-  // Post-pass: drop under-populated days (min-per-day preference).
+  // Post-pass: drop under-populated days (min-per-day preference), but never a
+  // day that holds a forced show.
   const droppedShows = new Set();
   for (const [date, slots] of perDay) {
-    if (slots.length < minPerDay) {
-      for (const slot of slots) droppedShows.add(slot.slug);
-      perDay.delete(date);
-    }
+    if (slots.length >= minPerDay) continue;
+    if (slots.some((s) => forcedPlaced.has(s.slug))) continue;
+    for (const slot of slots) droppedShows.add(slot.slug);
+    perDay.delete(date);
   }
 
   const days = [...perDay.entries()]
@@ -346,10 +485,13 @@ export function buildSchedule(shows, options = {}) {
   const unscheduled = [];
   for (const show of shows || []) {
     if (scheduledSlugs.has(show.slug)) continue;
-    const hadSlots = (slotsByShow.get(show.slug) || []).length > 0;
+    const windowSlots = (slotsByShowAll.get(show.slug) || []).length;
+    const daySlots = (slotsByShow.get(show.slug) || []).length;
     let reason;
-    if (!hadSlots) reason = "no available performance in your dates";
+    if (windowSlots === 0) reason = "no available performance in your dates";
+    else if (daySlots === 0) reason = "only runs outside your day hours or meal breaks";
     else if (droppedShows.has(show.slug)) reason = "on a day below your minimum";
+    else if (forcedSlugs.has(show.slug)) reason = "forced, but it clashes with another must-see";
     else reason = "clashes with shows already in your plan";
     unscheduled.push({ slug: show.slug, title: show.title, reason });
   }
@@ -358,6 +500,7 @@ export function buildSchedule(shows, options = {}) {
     days,
     scheduled,
     unscheduled,
+    forced: [...forcedPlaced],
     counts: {
       matchedShows: (shows || []).length,
       scheduledShows: scheduled.length,

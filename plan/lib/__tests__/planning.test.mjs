@@ -1,0 +1,238 @@
+// Tests for the planner's new scheduling logic: travel-time gaps, the
+// day-hours window, meal breaks, and forced (must-see) scheduling. Plain
+// node:test + node:assert, no dependencies.
+//   node --test plan/lib/__tests__/planning.test.mjs
+
+import { test } from "node:test";
+import assert from "node:assert/strict";
+
+import {
+  buildSchedule,
+  eligibleSlots,
+  requiredGapMinutes,
+  compatible,
+  withinDayWindow,
+  normalizeMealBreaks,
+} from "../engine.js";
+import { distanceKm, travelMinutes, TRAVEL_SPEED_KMH } from "../travel.js";
+
+// --- Fixtures ------------------------------------------------------------
+
+// Two venues ~2 km apart (same longitude, ~0.018° of latitude ≈ 2 km at
+// Edinburgh). At that distance a walk (≈36 min) exceeds the 30-min flat buffer
+// but a bike/car (≈8/≈5 min) does not — the lever the travel-mode tests pull.
+const VENUE_COORDS = {
+  A: { lat: 55.9478, lng: -3.1861 },
+  B: { lat: 55.9658, lng: -3.1861 },
+  ONLINE: { lat: null, lng: null },
+};
+
+function show(slug, venue, perfs, extra = {}) {
+  return {
+    slug,
+    title: slug,
+    genre: "Comedy",
+    duration: 60,
+    venue,
+    venueName: venue,
+    performances: perfs.map((p) => ({
+      date: p.date ?? "2026-08-10",
+      start: p.start,
+      soldOut: false,
+      status: p.status ?? "TICKETS_AVAILABLE",
+    })),
+    ...extra,
+  };
+}
+
+const WIDE = { windowStart: "2026-08-01T00:00", windowEnd: "2026-08-31T23:59" };
+
+// --- travel.js -----------------------------------------------------------
+
+test("distanceKm: ~2 km between the two fixture venues, null when a coord is missing", () => {
+  const d = distanceKm(VENUE_COORDS.A, VENUE_COORDS.B);
+  assert.ok(d > 1.9 && d < 2.1, `expected ~2 km, got ${d}`);
+  assert.equal(distanceKm(VENUE_COORDS.A, VENUE_COORDS.ONLINE), null);
+  assert.equal(distanceKm(VENUE_COORDS.A, null), null);
+});
+
+test("travelMinutes: walk slower than bike slower than car; null on missing coords", () => {
+  const walk = travelMinutes(VENUE_COORDS.A, VENUE_COORDS.B, "walk");
+  const bike = travelMinutes(VENUE_COORDS.A, VENUE_COORDS.B, "bike");
+  const car = travelMinutes(VENUE_COORDS.A, VENUE_COORDS.B, "car");
+  assert.ok(walk > bike && bike > car, `walk ${walk} > bike ${bike} > car ${car}`);
+  assert.ok(TRAVEL_SPEED_KMH.walk < TRAVEL_SPEED_KMH.bike);
+  assert.equal(travelMinutes(VENUE_COORDS.A, VENUE_COORDS.ONLINE, "walk"), null);
+});
+
+// --- requiredGapMinutes / compatible with travel -------------------------
+
+test("requiredGapMinutes: travel time drives the different-venue gap, floored at the buffer", () => {
+  const slots = eligibleSlots(
+    [show("a", "A", [{ start: "12:00" }]), show("b", "B", [{ start: "14:00" }])],
+    { ...WIDE, venueCoords: VENUE_COORDS }
+  );
+  const a = slots.get("a")[0];
+  const b = slots.get("b")[0];
+  const walkGap = requiredGapMinutes(a, b, { minGapDifferentVenue: 30, travelMode: "walk" });
+  const carGap = requiredGapMinutes(a, b, { minGapDifferentVenue: 30, travelMode: "car" });
+  assert.ok(walkGap > 30, `walk gap should exceed the 30-min floor, got ${walkGap}`);
+  assert.equal(carGap, 30, "a short car hop stays at the 30-min floor");
+});
+
+test("requiredGapMinutes: unknown coords fall back to the flat buffer; same venue uses its own", () => {
+  const bare = { venueCode: "A" };
+  const bareOther = { venueCode: "B" };
+  assert.equal(requiredGapMinutes(bare, bareOther, { minGapDifferentVenue: 25 }), 25);
+  assert.equal(
+    requiredGapMinutes({ venueCode: "SAME" }, { venueCode: "SAME" }, { minGapSameVenue: 0, minGapDifferentVenue: 25 }),
+    0
+  );
+});
+
+test("compatible: travel mode flips a borderline different-venue pairing", () => {
+  const slots = eligibleSlots(
+    [show("a", "A", [{ start: "19:00" }]), show("b", "B", [{ start: "20:33" }])],
+    { ...WIDE, venueCoords: VENUE_COORDS }
+  );
+  const a = slots.get("a")[0]; // 19:00–20:00
+  const b = slots.get("b")[0]; // 20:33–21:33  → 33-min real gap
+  assert.equal(compatible(a, b, { minGapDifferentVenue: 30, travelMode: "walk" }), false);
+  assert.equal(compatible(a, b, { minGapDifferentVenue: 30, travelMode: "car" }), true);
+});
+
+// --- day-hours window ----------------------------------------------------
+
+test("withinDayWindow: start/end bounds and meal-break overlap", () => {
+  const slot = { startMinuteOfDay: 780, endMinuteOfDay: 840 }; // 13:00–14:00
+  assert.equal(withinDayWindow(slot, { dayStartMin: 600, dayEndMin: 1380 }), true);
+  assert.equal(withinDayWindow(slot, { dayStartMin: 810 }), false, "starts before day start");
+  assert.equal(withinDayWindow(slot, { dayEndMin: 810 }), false, "ends after day end");
+  // Meal break 12:30–13:30 overlaps the 13:00 start.
+  assert.equal(withinDayWindow(slot, { mealBreaks: [{ startMin: 750, endMin: 810 }] }), false);
+  // A break that only touches the 14:00 edge does not block it.
+  assert.equal(withinDayWindow(slot, { mealBreaks: [{ startMin: 840, endMin: 900 }] }), true);
+});
+
+test("buildSchedule: a show only running before day start is excluded, with a day-hours reason", () => {
+  const shows = [show("early", "A", [{ start: "09:00" }])];
+  const inHours = buildSchedule(shows, { ...WIDE, venueCoords: VENUE_COORDS, dayStartMin: 0 });
+  assert.equal(inHours.counts.scheduledShows, 1);
+
+  const outOfHours = buildSchedule(shows, { ...WIDE, venueCoords: VENUE_COORDS, dayStartMin: 600 });
+  assert.equal(outOfHours.counts.scheduledShows, 0);
+  assert.match(outOfHours.unscheduled[0].reason, /day hours|meal breaks/);
+});
+
+test("buildSchedule: a show ending after day end is excluded", () => {
+  const shows = [show("late", "A", [{ start: "22:00" }])]; // 22:00–23:00 (ends at minute-of-day 1380)
+  assert.equal(buildSchedule(shows, { ...WIDE, dayEndMin: 1440 }).counts.scheduledShows, 1);
+  assert.equal(buildSchedule(shows, { ...WIDE, dayEndMin: 1380 }).counts.scheduledShows, 1); // ends exactly at day end — allowed
+  assert.equal(buildSchedule(shows, { ...WIDE, dayEndMin: 1350 }).counts.scheduledShows, 0); // ends 23:00 > 22:30 — excluded
+});
+
+// --- meal breaks ---------------------------------------------------------
+
+test("normalizeMealBreaks: parses HH:MM, drops disabled / malformed / zero-length", () => {
+  const out = normalizeMealBreaks([
+    { start: "13:00", end: "14:00" },
+    { startMin: 1080, endMin: 1140 },
+    { start: "18:00", end: "18:00" }, // zero length
+    { start: "20:00", end: "19:00" }, // negative
+    { start: "12:00", end: "13:00", enabled: false }, // off
+    null,
+  ]);
+  assert.deepEqual(out, [
+    { startMin: 780, endMin: 840 },
+    { startMin: 1080, endMin: 1140 },
+  ]);
+});
+
+test("buildSchedule: a meal break blocks a show that overlaps it", () => {
+  const shows = [show("lunchclash", "A", [{ start: "13:00" }])]; // 13:00–14:00
+  const blocked = buildSchedule(shows, { ...WIDE, mealBreaks: [{ start: "12:30", end: "13:30" }] });
+  assert.equal(blocked.counts.scheduledShows, 0);
+  const clear = buildSchedule(shows, { ...WIDE, mealBreaks: [{ start: "17:00", end: "18:00" }] });
+  assert.equal(clear.counts.scheduledShows, 1);
+});
+
+// --- forced (must-see) scheduling ----------------------------------------
+
+test("buildSchedule: a forced show survives the min-per-day drop", () => {
+  const shows = [show("solo", "A", [{ start: "19:00" }])]; // one show, one day
+  const dropped = buildSchedule(shows, { ...WIDE, minPerDay: 2 });
+  assert.equal(dropped.counts.scheduledShows, 0);
+
+  const forced = buildSchedule(shows, { ...WIDE, minPerDay: 2, forcedSlugs: ["solo"] });
+  assert.equal(forced.counts.scheduledShows, 1);
+  assert.deepEqual(forced.forced, ["solo"]);
+});
+
+test("buildSchedule: forcing a clashing show displaces the earliest-finish default", () => {
+  // Same venue, overlapping → only one can be attended. Greedy prefers P
+  // (earliest finish); forcing Q flips it.
+  const shows = [
+    show("p", "A", [{ start: "19:00" }]), // 19:00–20:00
+    show("q", "A", [{ start: "19:30" }]), // 19:30–20:30
+  ];
+  const def = buildSchedule(shows, WIDE);
+  assert.deepEqual(def.scheduled.map((s) => s.slug), ["p"]);
+
+  const forced = buildSchedule(shows, { ...WIDE, forcedSlugs: ["q"] });
+  assert.deepEqual(forced.scheduled.map((s) => s.slug), ["q"]);
+  assert.equal(forced.unscheduled.find((u) => u.slug === "p").reason, "clashes with shows already in your plan");
+});
+
+test("buildSchedule: forced shows ignore the per-day cap", () => {
+  const shows = [
+    show("x", "A", [{ start: "12:00" }]),
+    show("y", "A", [{ start: "14:00" }]),
+    show("z", "A", [{ start: "16:00" }]),
+  ];
+  const forced = buildSchedule(shows, { ...WIDE, maxPerDay: 1, forcedSlugs: ["x", "y"] });
+  assert.equal(forced.counts.scheduledShows, 2, "both forced shows placed despite maxPerDay 1");
+  const slugs = forced.scheduled.map((s) => s.slug).sort();
+  assert.deepEqual(slugs, ["x", "y"]);
+});
+
+test("buildSchedule: two hard-clashing forced shows — one placed, one reported", () => {
+  const shows = [
+    show("m", "A", [{ start: "19:00" }]), // 19:00–20:00
+    show("n", "A", [{ start: "19:15" }]), // 19:15–20:15 overlaps m
+  ];
+  const forced = buildSchedule(shows, { ...WIDE, forcedSlugs: ["m", "n"] });
+  assert.equal(forced.counts.scheduledShows, 1);
+  const left = forced.unscheduled;
+  assert.equal(left.length, 1);
+  assert.match(left[0].reason, /clashes with another must-see/);
+});
+
+// --- annotations & determinism ------------------------------------------
+
+test("eligibleSlots: slots carry venue coords and minute-of-day annotations", () => {
+  const slots = eligibleSlots([show("a", "A", [{ start: "13:30" }])], { ...WIDE, venueCoords: VENUE_COORDS });
+  const s = slots.get("a")[0];
+  assert.equal(s.venueLat, VENUE_COORDS.A.lat);
+  assert.equal(s.venueLng, VENUE_COORDS.A.lng);
+  assert.equal(s.startMinuteOfDay, 13 * 60 + 30);
+  assert.equal(s.endMinuteOfDay, 14 * 60 + 30);
+});
+
+test("buildSchedule: deterministic under the new options", () => {
+  const shows = [
+    show("a", "A", [{ start: "12:00" }, { start: "18:00" }]),
+    show("b", "B", [{ start: "13:00" }, { start: "19:00" }]),
+  ];
+  const opts = {
+    ...WIDE,
+    venueCoords: VENUE_COORDS,
+    travelMode: "bike",
+    dayStartMin: 600,
+    dayEndMin: 1380,
+    mealBreaks: [{ start: "15:00", end: "16:00" }],
+    forcedSlugs: ["b"],
+  };
+  const first = buildSchedule(shows, opts);
+  const second = buildSchedule(shows, opts);
+  assert.deepEqual(first.scheduled, second.scheduled);
+});

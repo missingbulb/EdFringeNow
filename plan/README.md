@@ -11,10 +11,12 @@ until this matures.
 > live as quiet actions on the calendar), showing each favourited show as a lane
 > across August. Scrub a date window — or let *"Pick my best dates"* place it for
 > a given stay length or the best Sat–Sun weekend — to see **how many of your
-> shows are actually catchable**. Then **"Plan my Fringe"** slots those catchable
-> shows into a clash-free, day-by-day itinerary (one performance each, travel
-> time between them), rendered as a calendar-style schedule graphic you can tune
-> live and export as a **CSV itinerary** or an **ICS calendar feed**.
+> shows are actually catchable**. Those catchable shows are **instantly** slotted
+> into a clash-free, day-by-day itinerary (one performance each, travel time
+> between them) — no "Plan" button; it re-plans live as you drag the window or
+> tune the controls (day hours, meal breaks, travel mode, per-day limits, or
+> right-click a favourite to force it in). Export as a **CSV itinerary** or an
+> **ICS calendar feed**.
 
 ## 100% client-side
 
@@ -51,12 +53,15 @@ plan/
                       Python `edfringe/` package; unit-tested — see below)
     favourites.js       parseFavourites(text) -> slugs (CSV / URL-list)
     availability.js     isAvailable(perf) denylist + time helpers
+    travel.js           distanceKm / travelMinutes — haversine + per-mode speeds
     engine.js           buildIndex / matchFavourites / summarize + scheduling
-                        (eligibleSlots / compatible / requiredGapMinutes / buildSchedule)
+                        (eligibleSlots / withinDayWindow / compatible /
+                         requiredGapMinutes / normalizeMealBreaks / buildSchedule)
     itinerary.js        toCsv(slots) / toIcs(slots) — the CSV + ICS exporters
     __tests__/engine.test.mjs      node --test suite for the engine
+    __tests__/planning.test.mjs    day-hours / meal breaks / travel gaps / forcing
     __tests__/itinerary.test.mjs   node --test suite for the exporters
-      (run both: `node plan/lib/__tests__/engine.test.mjs && node plan/lib/__tests__/itinerary.test.mjs`)
+      (run all: `node --test plan/lib/__tests__/*.test.mjs`)
   sample-favourites.csv   a one-show example export (the "try the sample" link)
   design/                 Fable design mock + notes (reference, not shipped logic)
 ```
@@ -72,16 +77,34 @@ the travel buffer from `requiredGapMinutes`). `minPerDay` is a post-pass that
 drops any day below the threshold (no trek into town for a single show). Ties
 break on slug/date so the same inputs always yield the same plan.
 
-The UI (screen 3) reads its pacing controls — *time between shows*, *most/fewest
-shows per day* — plus the current date window into `options`, and re-plans live
-as any of them change. `lib/itinerary.js` then renders the result to a CSV
-(spreadsheet/print) or ICS feed (import into Google/Apple/Outlook), both built in
-the browser from a Blob — nothing is uploaded. ICS events use **floating local
-time** (Edinburgh wall clock), right for an on-the-ground festival plan.
+The plan is **instant** — there is no "Plan" button. The itinerary recomputes
+live whenever the date window or any control changes. Screen 3 reads into
+`options`:
 
-*Not yet built:* blocking out **meal-break windows** (lunch/dinner slots that
-shouldn't hold a show) — surfaced in the UI as a "Soon" affordance, no behaviour
-faked.
+- *day starts / day ends* — a day-hours window; a performance must start no
+  earlier and end no later (drag the lines on the schedule, or use the time
+  pickers);
+- *meal breaks* — lunch/dinner bands no show may overlap (toggle + drag on the
+  schedule);
+- *most / fewest shows per day*, *minimum gap*;
+- *getting around* — walk / bike / car. Different-venue gaps are the greater of
+  the minimum gap and the **estimated travel time** between the two venues
+  (`lib/travel.js`, haversine + per-mode speed, venue coordinates from
+  `data/venues.json`), so far-apart shows need more slack and a bike/car needs
+  less;
+- *forced (must-see) shows* — right-click a favourite in the grid to pin it into
+  the plan even if the greedy pass would drop it (it ignores the per-day cap and
+  survives the min-per-day drop).
+
+The grid mirrors the plan: each row reads **In plan** / **In window** / *out*,
+and the hero count is *scheduled / in-window / total*. Between two scheduled
+shows less than an hour apart, the schedule draws a **travel leg** (distance +
+time by the chosen mode).
+
+`lib/itinerary.js` renders the result to a CSV (spreadsheet/print) or ICS feed
+(import into Google/Apple/Outlook), both built in the browser from a Blob —
+nothing is uploaded. ICS events use **floating local time** (Edinburgh wall
+clock), right for an on-the-ground festival plan.
 
 ## The computation, ported from Python
 
@@ -108,8 +131,9 @@ Availability uses the same denylist as the Python (`SOLD_OUT`, `OFF_SALE`,
   status palette as edfringe.com's ticket day-picker (tickets available, 2-for-1,
   preview, free, event-specific, no-allocation, sold out); a day with two shows
   renders as two side-by-side segments.
-- **"More settings"** (genre filter, min-gap, trip dates) is a placeholder — not
-  wired yet.
+- **Intake "More settings"** (genre filter, trip dates on the upload screen) is a
+  placeholder — not wired yet. The plan screen's own controls (gap, day hours,
+  meal breaks, travel mode, per-day min/max) are live.
 - **Data loading** fetches the full normalized file; a slimmer planner-only index
   (~0.4 MB gzip) is a possible optimization if payload becomes a concern.
 - Mobile layout is out of scope for this milestone (desktop-first by design).

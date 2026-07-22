@@ -23,6 +23,9 @@
         <a href="../" class="nav-link">Now</a>
         <a href="./" class="nav-link is-active">Plan</a>
       </nav>
+      <!-- Build version + a live rolling average of the reschedule computation
+           (buildSchedule), so production planning times are visible at a glance. -->
+      <span class="perf-pill" id="perfPill" title="Reschedule timing appears after the first plan" role="status" aria-live="off">v… · plan —</span>
       <span class="header-hint">Edinburgh Fringe · 7&ndash;31 Aug 2026</span>
     </div>
   </header>
@@ -135,7 +138,14 @@
     <section class="panel cal-card" id="screen2" aria-labelledby="calTitle" hidden>
       <div class="cal-top">
         <div class="cal-top-left">
-          <h2 class="cal-title" id="calTitle">When are your shows catchable?</h2>
+          <div class="cal-title-row">
+            <h2 class="cal-title" id="calTitle">Your favourites across August</h2>
+            <button type="button" class="cal-collapse" id="calCollapseBtn" aria-expanded="true"
+                    aria-controls="calWrap calLegend" title="Collapse the grid of shows">
+              <svg class="cc-caret" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              <span class="cc-text">Hide grid</span>
+            </button>
+          </div>
           <p class="fav-line" id="favLine">
             <span id="favSummary"></span>
             <button type="button" class="fav-action" id="replaceFavBtn">Replace file</button>
@@ -145,23 +155,16 @@
           <ul class="missing-list" id="missingList" hidden></ul>
         </div>
         <div class="hero-count" aria-live="polite">
-          <div class="hc-num"><span id="hcIn">0</span> <span class="hc-of">/ <span id="hcAll">0</span></span></div>
-          <div class="hc-label">shows catchable in your window</div>
+          <div class="hc-num">
+            <span id="hcSched" title="scheduled in your plan">0</span><span class="hc-of"> / <span id="hcIn" title="catchable in your date window">0</span></span><span class="hc-of"> / <span id="hcAll" title="favourites matched">0</span></span>
+          </div>
+          <div class="hc-label">scheduled&nbsp;/&nbsp;in&nbsp;window&nbsp;/&nbsp;favourites</div>
           <div class="hc-detail" id="hcDetail"></div>
         </div>
       </div>
 
       <div class="cal-toolbar">
-        <div class="legend" aria-hidden="true">
-          <span class="lg lg-avail"><i></i>Tickets available</span>
-          <span class="lg lg-2for1"><i></i>2-for-1</span>
-          <span class="lg lg-preview"><i></i>Preview</span>
-          <span class="lg lg-free"><i></i>Free</span>
-          <span class="lg lg-event"><i></i>Event-specific</span>
-          <span class="lg lg-noalloc"><i></i>No allocation</span>
-          <span class="lg lg-sold"><i></i>Sold out</span>
-          <span class="lg lg-multi"><i class="multi"><b></b><b></b></i>Two shows that day</span>
-        </div>
+        <p class="cal-toolbar-hint">Drag the <b>Start</b>/<b>End</b> flags to set your dates, or&hellip;</p>
         <div class="optimize" role="group" aria-label="Pick the best dates for me">
           <label class="opt-label" for="stayLen">I can be there for</label>
           <select class="opt-select" id="stayLen">
@@ -205,7 +208,7 @@
             <div class="cal-row cal-head">
               <div aria-hidden="true"></div>
               <div class="days" id="dayHead"><!-- day columns (JS) --></div>
-              <div class="cal-head-right">In window</div>
+              <div class="cal-head-right">Status</div>
             </div>
           </div>
 
@@ -227,93 +230,115 @@
       </div>
       <div class="cal-tip" id="calTip" hidden></div>
 
-      <div class="cal-foot">
-        <span>Dimmed rows have nothing you can catch — widen the date window to bring them back.</span>
-        <span>Kept in this browser for 3 days — nothing is uploaded.</span>
-        <span>August 2026 · the Fringe runs Fri 7 – Sun 31 Aug</span>
+      <!-- Colour key for the day marks, moved below the grid. Right-click a row
+           to force that show into the plan (or lift it back out). -->
+      <div class="cal-legend" id="calLegend">
+        <div class="legend" aria-hidden="true">
+          <span class="lg lg-avail"><i></i>Tickets available</span>
+          <span class="lg lg-2for1"><i></i>2-for-1</span>
+          <span class="lg lg-preview"><i></i>Preview</span>
+          <span class="lg lg-free"><i></i>Free</span>
+          <span class="lg lg-event"><i></i>Event-specific</span>
+          <span class="lg lg-noalloc"><i></i>No allocation</span>
+          <span class="lg lg-sold"><i></i>Sold out</span>
+          <span class="lg lg-multi"><i class="multi"><b></b><b></b></i>Two shows that day</span>
+        </div>
+        <p class="legend-hint">Right-click a show to force it into the plan &middot; a dimmed row has nothing catchable in your window.</p>
       </div>
     </section>
 
     <!-- ===================== Allocate / itinerary ===================== -->
-    <!-- Appears with the calendar. "Plan my Fringe" slots the catchable shows
-         into a clash-free itinerary across the current date window; the result
-         (a day-by-day schedule graphic + CSV / calendar exports) renders below,
-         with the pacing controls sitting just above it. -->
+    <!-- Appears with the calendar and re-plans instantly: the catchable shows
+         are slotted into a clash-free itinerary across the current date window
+         every time a control or the window changes — no "Plan" button. The
+         result is a day-by-day schedule graphic with CSV / calendar exports. -->
     <section class="panel plan-card" id="screen3" aria-labelledby="planTitle" hidden>
       <div class="plan-head">
         <div class="plan-head-text">
-          <h2 class="plan-title" id="planTitle">Turn the catchable shows into a plan</h2>
-          <p class="plan-sub">We'll fit as many of your favourites as we can into a clash-free run across
-            <span id="planWindowLabel">your window</span> — one performance each, with travel time between them.</p>
+          <h2 class="plan-title" id="planTitle">Your Fringe, planned</h2>
+          <p class="plan-sub">Your catchable favourites, fitted into a clash-free run across
+            <span id="planWindowLabel">your window</span> — one performance each, with travel time between them.
+            Tune anything below and the plan updates instantly.</p>
         </div>
-        <button type="button" class="btn btn-plan" id="planBtn">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" /><path d="m9 16 2 2 4-4" />
-          </svg>
-          Plan my Fringe
-        </button>
       </div>
 
-      <!-- Result — hidden until the first plan is built. -->
-      <div class="plan-result" id="planResult" hidden>
+      <div class="plan-result" id="planResult">
 
-        <!-- Pacing controls: live — nudging any of them re-plans instantly.
-             They sit directly above the schedule they shape. -->
+        <!-- Live controls: nudging any of them re-plans instantly. Day hours and
+             meal breaks are also editable by dragging directly on the schedule. -->
         <div class="plan-controls" role="group" aria-label="Fine-tune your plan">
           <div class="ctl">
-            <label class="ctl-label" for="ctlGap">Time between shows</label>
-            <select class="opt-select" id="ctlGap">
-              <option value="0">Back-to-back (0 min)</option>
-              <option value="15">15 minutes</option>
-              <option value="30" selected>30 minutes</option>
-              <option value="45">45 minutes</option>
-              <option value="60">1 hour</option>
-              <option value="90">1½ hours</option>
-            </select>
+            <label class="ctl-label" for="ctlDayStart">Day starts</label>
+            <input class="ctl-time" type="time" id="ctlDayStart" value="09:00" step="300" />
           </div>
           <div class="ctl">
-            <label class="ctl-label" for="ctlMax">Most shows per day</label>
-            <select class="opt-select" id="ctlMax">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3" selected>3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
+            <label class="ctl-label" for="ctlDayEnd">Day ends</label>
+            <input class="ctl-time" type="time" id="ctlDayEnd" value="23:59" step="300" />
           </div>
           <div class="ctl">
-            <label class="ctl-label" for="ctlMin">Fewest shows per day</label>
+            <label class="ctl-label" for="ctlMax">Most shows / day</label>
+            <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric" />
+          </div>
+          <div class="ctl">
+            <label class="ctl-label" for="ctlMin">Fewest / day</label>
             <select class="opt-select" id="ctlMin">
               <option value="1" selected>Any (1+)</option>
               <option value="2">At least 2</option>
               <option value="3">At least 3</option>
             </select>
-            <span class="ctl-hint">Days below this are dropped — no trip for a single show.</span>
           </div>
-          <p class="plan-soon" title="Not available yet">
-            <span class="soon-tag">Soon</span>
-            Meal breaks — block out windows (lunch, dinner) that shouldn't hold a show.
-          </p>
+          <div class="ctl">
+            <label class="ctl-label" for="ctlGap">Min. gap</label>
+            <select class="opt-select" id="ctlGap">
+              <option value="0">0 min</option>
+              <option value="15">15 min</option>
+              <option value="30" selected>30 min</option>
+              <option value="45">45 min</option>
+              <option value="60">1 hour</option>
+              <option value="90">1½ hours</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <span class="ctl-label" id="modeLabel">Getting around</span>
+            <div class="tmode" id="ctlMode" role="group" aria-labelledby="modeLabel">
+              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true">🚶 Walk</button>
+              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false">🚲 Bike</button>
+              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false">🚗 Car</button>
+            </div>
+          </div>
+          <div class="ctl ctl-meals">
+            <span class="ctl-label">Meal breaks</span>
+            <div class="meals">
+              <label class="meal">
+                <input type="checkbox" id="mealLunchOn" checked />
+                <span class="meal-name">Lunch</span>
+                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
+                <span class="meal-dash">–</span>
+                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
+              </label>
+              <label class="meal">
+                <input type="checkbox" id="mealDinnerOn" />
+                <span class="meal-name">Dinner</span>
+                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
+                <span class="meal-dash">–</span>
+                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
+              </label>
+            </div>
+          </div>
         </div>
 
         <div class="plan-summary" id="planSummary" role="status" aria-live="polite"></div>
 
         <!-- The schedule graphic: one column per day, shows placed on a shared
-             time axis, coloured by edfringe.com availability status. -->
+             time axis, coloured by edfringe.com availability status. Day-start /
+             day-end lines and meal-break bands overlay it and are draggable. -->
         <div class="schedule-wrap" id="scheduleWrap">
-          <div class="schedule" id="schedule"><!-- day columns (JS) --></div>
+          <div class="schedule" id="schedule"><!-- day columns + overlay (JS) --></div>
           <p class="schedule-empty" id="scheduleEmpty" hidden>
             Nothing could be scheduled in this window. Try widening your dates, raising the per-day
-            maximum, or shortening the gap between shows.
+            maximum, shortening the gap, or relaxing your day hours / meal breaks.
           </p>
         </div>
-
-        <!-- Shows that couldn't be placed, with why. -->
-        <details class="plan-left-out" id="planLeftOut" hidden>
-          <summary><span id="leftOutCount">0</span> favourites didn't make the plan</summary>
-          <ul id="leftOutList"></ul>
-        </details>
 
         <div class="plan-actions">
           <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
