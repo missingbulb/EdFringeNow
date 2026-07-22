@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # the deploy bumps the version and commits it back to main
   pages: write
   id-token: write
 
@@ -24,6 +24,37 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Bump version
+        # Every production deploy advances the version. Scheme: 1.<mmdd>.<prev+1>
+        # (see scripts/bump-version.mjs). package.json stays the single source of
+        # truth, so the bumped file both ships in this deploy's artifact (the perf
+        # pill reads it) and is committed back to main below for the next deploy.
+        id: bump
+        run: |
+          NEW_VERSION=$(node scripts/bump-version.mjs)
+          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Bumped app version to $NEW_VERSION"
+      - name: Commit version bump
+        # Persist the bump to main. [skip ci] keeps this commit from re-triggering
+        # this (or any) workflow, so there's no deploy loop. Rebase-retry in case a
+        # data-refresh workflow pushed to main between checkout and now.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "Bump version to ${{ steps.bump.outputs.version }} [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Pushed version bump on attempt $attempt."
+              break
+            fi
+            if [ "$attempt" = "5" ]; then
+              echo "Failed to push version bump after $attempt attempts." >&2
+              exit 1
+            fi
+            echo "Push rejected — rebasing on latest main and retrying (attempt $attempt)."
+            git pull --rebase origin main
+          done
       - name: Stamp build info
         run: |
           TIME=$(TZ='Asia/Jerusalem' git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd)
