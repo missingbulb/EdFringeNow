@@ -320,7 +320,10 @@ a { color: inherit; }
    scroll away either. */
 .cal-wrap {
   position: relative; margin-top: 14px;
-  max-height: 62vh; overflow-y: auto; overflow-x: hidden;
+  /* Deliberately shallow: the calendar is now the "pick your window" step that
+     feeds the planner below it, so it stays compact and scrolls internally
+     rather than pushing the Plan card off-screen. */
+  max-height: 38vh; overflow-y: auto; overflow-x: hidden;
   border-radius: 10px;
 }
 .cal-inner { position: relative; }
@@ -465,6 +468,145 @@ a { color: inherit; }
   margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line);
   font-size: 0.78rem; color: var(--muted); flex-wrap: wrap;
 }
+
+/* ============ Allocate / itinerary (screen 3) ============ */
+.plan-card { padding: 28px 28px 26px; margin-top: 22px; }
+.plan-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 20px 28px; flex-wrap: wrap;
+}
+.plan-head-text { min-width: 0; max-width: 640px; }
+.plan-title {
+  font-family: var(--display); font-weight: 700; font-size: 1.4rem;
+  letter-spacing: -0.01em; margin: 0 0 6px;
+}
+.plan-sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
+.plan-sub #planWindowLabel { color: var(--ink); font-weight: 600; }
+/* The primary call-to-action — a touch larger than the standard button. */
+.btn-plan { font-size: 1rem; padding: 13px 24px; flex: 0 0 auto; }
+.btn-ghost {
+  color: var(--violet-dark); background: #fff;
+  border: 1.5px solid var(--violet); box-shadow: none;
+}
+.btn-ghost:hover { background: rgba(108, 76, 241, 0.06); color: var(--violet-dark); }
+.btn-ext {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em;
+  padding: 2px 6px; border-radius: 6px; margin-left: 2px;
+  background: rgba(108, 76, 241, 0.12); color: var(--violet-dark);
+}
+
+.plan-result { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 22px; }
+
+/* Pacing controls — sit directly above the schedule they shape; live re-plan. */
+.plan-controls {
+  display: flex; align-items: flex-start; gap: 14px 26px; flex-wrap: wrap;
+  padding: 16px 18px; margin-bottom: 20px;
+  background: #fafaff; border: 1px solid var(--line); border-radius: 12px;
+}
+.ctl { display: flex; flex-direction: column; gap: 6px; min-width: 150px; }
+.ctl-label {
+  text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+}
+.ctl-hint { font-size: 0.7rem; color: #98a2b3; max-width: 200px; line-height: 1.3; }
+/* The not-yet-built meal-breaks affordance: present as a promise, visibly
+   inactive so it never reads as broken. */
+.plan-soon {
+  flex: 1 1 220px; align-self: center; margin: 0;
+  font-size: 0.78rem; color: #98a2b3; line-height: 1.4;
+}
+.soon-tag {
+  display: inline-block; font-size: 0.62rem; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--violet-dark); background: rgba(108, 76, 241, 0.1);
+  border-radius: 999px; padding: 2px 8px; margin-right: 6px; vertical-align: 1px;
+}
+
+.plan-summary { font-size: 0.92rem; color: var(--ink); margin-bottom: 14px; }
+.plan-summary b { color: var(--violet-dark); font-weight: 800; }
+.plan-summary .ps-sub { color: var(--muted); font-weight: 400; }
+
+/* --- The schedule graphic --- */
+.schedule-wrap {
+  overflow-x: auto; border: 1px solid var(--line); border-radius: 12px;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    repeating-linear-gradient(90deg, #fbfbfd 0 1px, transparent 1px 100%);
+  padding: 0;
+}
+.schedule { display: flex; align-items: stretch; min-width: min-content; }
+/* Left time gutter: a head spacer (matching the day headers) then a body whose
+   hour labels line up with the day columns' gridlines. */
+.sch-gutter { flex: 0 0 52px; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
+.sch-gutter-head { height: var(--sch-head-h, 46px); border-bottom: 1px solid var(--line); }
+.sch-gutter-body { position: relative; flex: 1 0 auto; }
+.sch-hour {
+  position: absolute; right: 8px; font-size: 0.68rem; font-weight: 600;
+  color: #b0b7c3; font-variant-numeric: tabular-nums; transform: translateY(-50%);
+}
+.sch-day {
+  flex: 0 0 168px; border-right: 1px solid var(--line);
+  display: flex; flex-direction: column;
+}
+.sch-day:last-child { border-right: none; }
+.sch-day-head {
+  height: var(--sch-head-h, 46px); box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 6px 12px; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; background: var(--paper); z-index: 1;
+}
+.sch-day.wknd .sch-day-head { background: #fbfaff; }
+.sch-dow { font-size: 0.7rem; font-weight: 700; color: var(--ink); }
+.sch-dow .sch-date { color: var(--muted); font-weight: 600; }
+.sch-day-count { font-size: 0.66rem; color: var(--muted); }
+/* The day's time canvas: hour gridlines via a repeating gradient, shows
+   positioned absolutely against the shared axis. */
+.sch-body {
+  position: relative; flex: 1 0 auto;
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 calc(var(--sch-hour-h) - 1px), var(--line) calc(var(--sch-hour-h) - 1px) var(--sch-hour-h)
+  );
+  background-position: 0 0;
+}
+.sch-show {
+  position: absolute; left: 6px; right: 6px; overflow: hidden;
+  border-radius: 8px; padding: 5px 8px;
+  background: #fff; border: 1px solid var(--line);
+  border-left: 4px solid var(--seg, var(--violet));
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.07);
+  font-size: 0.72rem; line-height: 1.25;
+}
+.sch-time { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; font-size: 0.68rem; }
+.sch-name {
+  font-family: var(--display); font-weight: 600; color: var(--ink);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.sch-venue { color: var(--muted); font-size: 0.66rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Left-accent colours reuse the edfringe.com availability palette. */
+.seg-avail   { --seg: var(--fr-avail); }
+.seg-2for1   { --seg: var(--fr-2for1); }
+.seg-preview { --seg: var(--fr-preview); }
+.seg-free    { --seg: var(--fr-free); }
+.seg-event   { --seg: var(--fr-event); }
+.seg-noalloc { --seg: var(--fr-noalloc); }
+
+.schedule-empty { margin: 0; padding: 28px 20px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+/* Shows that couldn't be placed */
+.plan-left-out { margin-top: 18px; font-size: 0.86rem; }
+.plan-left-out summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.plan-left-out summary:hover { color: var(--ink); }
+.plan-left-out ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.plan-left-out li { padding: 2px 0; }
+.plan-left-out li b { color: var(--ink); font-weight: 600; }
+.plan-left-out li .lo-reason { color: #98a2b3; }
+
+/* Export actions */
+.plan-actions {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line);
+}
+.plan-actions-note { font-size: 0.76rem; color: #98a2b3; margin-left: auto; }
 
 /* ============ Footer ============ */
 .site-footer { background: var(--ink); color: #d9d9d9; padding: 28px 0; margin-top: 56px; }

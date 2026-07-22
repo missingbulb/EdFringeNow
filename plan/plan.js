@@ -13,8 +13,9 @@
 // replace/clear actions on the calendar's favourites line.
 
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
-import { buildIndex, matchFavourites, summarize } from "./lib/engine.js";
+import { buildIndex, matchFavourites, summarize, buildSchedule } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
+import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -93,6 +94,10 @@ const state = {
   laneRefs: [], // [{ slug, el, statusEl }] in display (sorted) order
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
   dayHeaderBuilt: false,
+  // Allocation (screen 3): once the user has built a plan, it re-plans live as
+  // the date window or pacing controls change.
+  planned: false,
+  schedule: null, // last buildSchedule() result
 };
 
 // --- Data loading -----------------------------------------------------
@@ -222,6 +227,8 @@ function clearFavourites() {
   $("missingList").hidden = true;
   $("missingList").innerHTML = "";
   $("screen2").hidden = true;
+  $("screen3").hidden = true;
+  resetPlan();
   $("screen1").hidden = false;
 
   $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -290,6 +297,7 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}
     // Reset the window to the defaults on every fresh set.
     state.d0 = DEFAULT_D0;
     state.d1 = DEFAULT_D1;
+    resetPlan(); // a fresh set starts before the plan step
     renderFavLine();
     buildCalendar();
     $("screen1").hidden = true;
@@ -391,13 +399,23 @@ function toggleMissingList() {
 }
 
 /** Reveal the calendar panel; scroll to it only when the caller asks (fresh
- *  uploads do; a silent storage restore does not). */
+ *  uploads do; a silent storage restore does not). The Plan card rides along
+ *  with the calendar, but its result stays folded away until "Plan my Fringe". */
 function showCalendar({ scroll = false } = {}) {
   const screen2 = $("screen2");
   screen2.hidden = false;
+  $("screen3").hidden = false;
+  updatePlanWindowLabel();
   // Layout needs real geometry, which only exists once the panel is visible.
   requestAnimationFrame(() => layoutOverlay());
   if (scroll) screen2.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/** Fold the plan away (a fresh favourites set / a clear starts from scratch). */
+function resetPlan() {
+  state.planned = false;
+  state.schedule = null;
+  $("planResult").hidden = true;
 }
 
 // --- Screen 2: calendar ----------------------------------------------------
@@ -631,6 +649,10 @@ function recomputeAndRender() {
   const bySlug = new Map(result.shows.map((s) => [s.slug, s]));
   applyVerdicts(bySlug, filter);
   updateHero(result.counts, filter);
+  updatePlanWindowLabel();
+  // A built plan re-shapes live as the window moves (same "nudge a control,
+  // watch the world change" loop as the calendar).
+  if (state.planned) runPlan();
 }
 
 // --- Window overlay geometry & date-window dragging ------------------------
@@ -910,6 +932,255 @@ function wireCellTips() {
   });
 }
 
+// --- Screen 3: allocate the shows into an itinerary -------------------------
+
+// The schedule graphic's vertical scale: pixels per hour on the shared time
+// axis, and a floor on a show block's height so its label always fits.
+const SCH_HOUR_PX = 46;
+const SCH_MIN_BLOCK = 34;
+const SCH_HEAD_PX = 46;
+
+const DOW_LONG = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+/** "7–24 Aug" for the current date window. */
+function planWindowText() {
+  return `${state.d0}–${state.d1} Aug`;
+}
+
+function updatePlanWindowLabel() {
+  const el = $("planWindowLabel");
+  if (el) el.textContent = planWindowText();
+}
+
+/** Minutes-since-midnight of a slot's epoch-minute value (wall clock). */
+function slotMinuteOfDay(epochMinutes) {
+  const d = new Date(epochMinutes * 60000);
+  return d.getUTCHours() * 60 + d.getUTCMinutes();
+}
+
+/** Left-accent colour class for a scheduled slot (all are bookable, so the
+ *  default is "available"). Mirrors the calendar's segClass palette. */
+function statusSegClass(status) {
+  switch ((status || "").toUpperCase()) {
+    case "TWO_FOR_ONE": return "seg-2for1";
+    case "PREVIEW_SHOW": return "seg-preview";
+    case "FREE_TICKETED":
+    case "FREE_NON_TICKETED": return "seg-free";
+    case "EVENT_SPECIFIC": return "seg-event";
+    case "NO_ALLOCATION_CONTACT_VENUE": return "seg-noalloc";
+    default: return "seg-avail";
+  }
+}
+
+/** Read the pacing controls + current date window into buildSchedule options. */
+function gatherPlanOptions() {
+  const gap = Number($("ctlGap").value);
+  return {
+    windowStart: `${dateStr(state.d0)}T00:00`,
+    windowEnd: `${dateStr(state.d1)}T23:59`,
+    // The chosen buffer is travel time between venues; back-to-back at the same
+    // venue (a double bill) needs no gap, matching the ported engine defaults.
+    minGapDifferentVenue: gap,
+    minGapSameVenue: 0,
+    maxPerDay: Number($("ctlMax").value),
+    minPerDay: Number($("ctlMin").value),
+  };
+}
+
+/** Build (or rebuild) the itinerary from the current window + controls, and
+ *  render every part of the result. */
+function runPlan() {
+  if (state.matched.length === 0) return;
+  const schedule = buildSchedule(state.matched, gatherPlanOptions());
+  state.schedule = schedule;
+  state.planned = true;
+  $("planResult").hidden = false;
+  renderPlanSummary(schedule);
+  renderSchedule(schedule);
+  renderLeftOut(schedule);
+  const hasShows = schedule.scheduled.length > 0;
+  $("downloadCsvBtn").disabled = !hasShows;
+  $("importIcsBtn").disabled = !hasShows;
+}
+
+function renderPlanSummary(schedule) {
+  const { scheduledShows, matchedShows, days } = schedule.counts;
+  const el = $("planSummary");
+  el.innerHTML = "";
+  if (scheduledShows === 0) {
+    el.textContent = "No clash-free plan fits in this window yet.";
+    return;
+  }
+  const strong = document.createElement("b");
+  strong.textContent = `${scheduledShows} of ${matchedShows} shows`;
+  el.append("Planned ", strong, ` across ${days} day${days === 1 ? "" : "s"} (${planWindowText()}). `);
+  const sub = document.createElement("span");
+  sub.className = "ps-sub";
+  const leftOut = matchedShows - scheduledShows;
+  sub.textContent = leftOut > 0
+    ? `${leftOut} couldn't be fitted — see below.`
+    : "Everything catchable made it in.";
+  el.append(sub);
+}
+
+/**
+ * Draw the schedule graphic: a shared hour axis down the left, then one column
+ * per scheduled day with each show placed by its start time and sized by its
+ * duration. Empty when nothing could be scheduled.
+ */
+function renderSchedule(schedule) {
+  const host = $("schedule");
+  const empty = $("scheduleEmpty");
+  host.innerHTML = "";
+
+  if (schedule.days.length === 0) {
+    host.hidden = true;
+    empty.hidden = false;
+    return;
+  }
+  host.hidden = false;
+  empty.hidden = true;
+
+  // Shared axis bounds across every day, rounded out to whole hours.
+  let minM = Infinity;
+  let maxM = -Infinity;
+  for (const slot of schedule.scheduled) {
+    const s = slotMinuteOfDay(slot.start);
+    let e = slotMinuteOfDay(slot.end);
+    if (e <= s) e = 24 * 60; // zero-duration or crossed midnight — clamp to end of day
+    minM = Math.min(minM, s);
+    maxM = Math.max(maxM, e);
+  }
+  const minHour = Math.floor(minM / 60);
+  let maxHour = Math.ceil(maxM / 60);
+  if (maxHour <= minHour) maxHour = minHour + 1;
+  const axisH = (maxHour - minHour) * SCH_HOUR_PX;
+
+  host.style.setProperty("--sch-hour-h", `${SCH_HOUR_PX}px`);
+  host.style.setProperty("--sch-head-h", `${SCH_HEAD_PX}px`);
+
+  // Left hour gutter.
+  const gutter = document.createElement("div");
+  gutter.className = "sch-gutter";
+  const gHead = document.createElement("div");
+  gHead.className = "sch-gutter-head";
+  const gBody = document.createElement("div");
+  gBody.className = "sch-gutter-body";
+  gBody.style.height = `${axisH}px`;
+  for (let h = minHour; h <= maxHour; h++) {
+    const lab = document.createElement("div");
+    lab.className = "sch-hour";
+    lab.style.top = `${(h - minHour) * SCH_HOUR_PX}px`;
+    lab.textContent = `${pad2(h)}:00`;
+    gBody.appendChild(lab);
+  }
+  gutter.append(gHead, gBody);
+  host.appendChild(gutter);
+
+  // One column per day.
+  for (const day of schedule.days) {
+    const dayNum = Number(day.date.slice(8, 10));
+    const col = document.createElement("div");
+    col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "");
+
+    const head = document.createElement("div");
+    head.className = "sch-day-head";
+    const dowEl = document.createElement("div");
+    dowEl.className = "sch-dow";
+    dowEl.innerHTML = `${DOW_LONG[dow(dayNum)]} <span class="sch-date">${dayNum} Aug</span>`;
+    const countEl = document.createElement("div");
+    countEl.className = "sch-day-count";
+    countEl.textContent = `${day.slots.length} show${day.slots.length === 1 ? "" : "s"}`;
+    head.append(dowEl, countEl);
+
+    const body = document.createElement("div");
+    body.className = "sch-body";
+    body.style.height = `${axisH}px`;
+
+    for (const slot of day.slots) {
+      const startMin = slotMinuteOfDay(slot.start);
+      let endMin = slotMinuteOfDay(slot.end);
+      if (endMin <= startMin) endMin = maxHour * 60;
+      const top = ((startMin - minHour * 60) / 60) * SCH_HOUR_PX;
+      const height = Math.max(SCH_MIN_BLOCK, ((endMin - startMin) / 60) * SCH_HOUR_PX);
+
+      const block = document.createElement("div");
+      block.className = "sch-show " + statusSegClass(slot.status);
+      block.style.top = `${top}px`;
+      block.style.height = `${height}px`;
+      const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
+      const venue = slot.venueName || slot.venueCode || "";
+      block.title = `${slot.title}\n${timeStr}${venue ? " · " + venue : ""}`;
+      block.innerHTML =
+        `<div class="sch-time">${escapeHtml(timeStr)}</div>` +
+        `<div class="sch-name">${escapeHtml(slot.title)}</div>` +
+        (venue ? `<div class="sch-venue">${escapeHtml(venue)}</div>` : "");
+      body.appendChild(block);
+    }
+
+    col.append(head, body);
+    host.appendChild(col);
+  }
+}
+
+function renderLeftOut(schedule) {
+  const box = $("planLeftOut");
+  const list = $("leftOutList");
+  const { unscheduled } = schedule;
+  list.innerHTML = "";
+  if (unscheduled.length === 0) {
+    box.hidden = true;
+    return;
+  }
+  box.hidden = false;
+  $("leftOutCount").textContent = unscheduled.length;
+  for (const item of unscheduled) {
+    const li = document.createElement("li");
+    li.innerHTML = `<b>${escapeHtml(item.title || item.slug)}</b> <span class="lo-reason">— ${escapeHtml(item.reason)}</span>`;
+    list.appendChild(li);
+  }
+}
+
+// --- Downloads (CSV / ICS), built in the browser ---------------------------
+
+/** Trigger a client-side download of `text` as `filename`. */
+function downloadText(filename, text, mime) {
+  const blob = new Blob([text], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function wirePlanner() {
+  $("planBtn").addEventListener("click", () => {
+    runPlan();
+    $("planResult").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  // The pacing controls re-plan live once a plan exists.
+  for (const id of ["ctlGap", "ctlMax", "ctlMin"]) {
+    $(id).addEventListener("change", () => {
+      if (state.planned) runPlan();
+    });
+  }
+
+  $("downloadCsvBtn").addEventListener("click", () => {
+    if (!state.schedule || state.schedule.scheduled.length === 0) return;
+    // A UTF-8 BOM (U+FEFF) so Excel reads accented show titles correctly.
+    downloadText("fringe-itinerary.csv", "﻿" + toCsv(state.schedule.scheduled), "text/csv;charset=utf-8");
+  });
+
+  $("importIcsBtn").addEventListener("click", () => {
+    if (!state.schedule || state.schedule.scheduled.length === 0) return;
+    downloadText("fringe-plan.ics", toIcs(state.schedule.scheduled, { now: new Date() }), "text/calendar;charset=utf-8");
+  });
+}
+
 // --- Go ---------------------------------------------------------------
 
 wireDropzone();
@@ -919,6 +1190,7 @@ wireRetry();
 wireCalendarControls();
 wireOptimizer();
 wireCellTips();
+wirePlanner();
 
 // The upload screen is visible from first paint; fetch the catalogue in the
 // background so the user can read the instructions and export their CSV while it

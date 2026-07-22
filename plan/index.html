@@ -233,6 +233,105 @@
       </div>
     </section>
 
+    <!-- ===================== Allocate / itinerary ===================== -->
+    <!-- Appears with the calendar. "Plan my Fringe" slots the catchable shows
+         into a clash-free itinerary across the current date window; the result
+         (a day-by-day schedule graphic + CSV / calendar exports) renders below,
+         with the pacing controls sitting just above it. -->
+    <section class="panel plan-card" id="screen3" aria-labelledby="planTitle" hidden>
+      <div class="plan-head">
+        <div class="plan-head-text">
+          <h2 class="plan-title" id="planTitle">Turn the catchable shows into a plan</h2>
+          <p class="plan-sub">We'll fit as many of your favourites as we can into a clash-free run across
+            <span id="planWindowLabel">your window</span> — one performance each, with travel time between them.</p>
+        </div>
+        <button type="button" class="btn btn-plan" id="planBtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" /><path d="m9 16 2 2 4-4" />
+          </svg>
+          Plan my Fringe
+        </button>
+      </div>
+
+      <!-- Result — hidden until the first plan is built. -->
+      <div class="plan-result" id="planResult" hidden>
+
+        <!-- Pacing controls: live — nudging any of them re-plans instantly.
+             They sit directly above the schedule they shape. -->
+        <div class="plan-controls" role="group" aria-label="Fine-tune your plan">
+          <div class="ctl">
+            <label class="ctl-label" for="ctlGap">Time between shows</label>
+            <select class="opt-select" id="ctlGap">
+              <option value="0">Back-to-back (0 min)</option>
+              <option value="15">15 minutes</option>
+              <option value="30" selected>30 minutes</option>
+              <option value="45">45 minutes</option>
+              <option value="60">1 hour</option>
+              <option value="90">1½ hours</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label class="ctl-label" for="ctlMax">Most shows per day</label>
+            <select class="opt-select" id="ctlMax">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="ctl">
+            <label class="ctl-label" for="ctlMin">Fewest shows per day</label>
+            <select class="opt-select" id="ctlMin">
+              <option value="1" selected>Any (1+)</option>
+              <option value="2">At least 2</option>
+              <option value="3">At least 3</option>
+            </select>
+            <span class="ctl-hint">Days below this are dropped — no trip for a single show.</span>
+          </div>
+          <p class="plan-soon" title="Not available yet">
+            <span class="soon-tag">Soon</span>
+            Meal breaks — block out windows (lunch, dinner) that shouldn't hold a show.
+          </p>
+        </div>
+
+        <div class="plan-summary" id="planSummary" role="status" aria-live="polite"></div>
+
+        <!-- The schedule graphic: one column per day, shows placed on a shared
+             time axis, coloured by edfringe.com availability status. -->
+        <div class="schedule-wrap" id="scheduleWrap">
+          <div class="schedule" id="schedule"><!-- day columns (JS) --></div>
+          <p class="schedule-empty" id="scheduleEmpty" hidden>
+            Nothing could be scheduled in this window. Try widening your dates, raising the per-day
+            maximum, or shortening the gap between shows.
+          </p>
+        </div>
+
+        <!-- Shows that couldn't be placed, with why. -->
+        <details class="plan-left-out" id="planLeftOut" hidden>
+          <summary><span id="leftOutCount">0</span> favourites didn't make the plan</summary>
+          <ul id="leftOutList"></ul>
+        </details>
+
+        <div class="plan-actions">
+          <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12" /><path d="m7 12 5 4 5-4" /><path d="M4 20h16" />
+            </svg>
+            Download itinerary <span class="btn-ext">CSV</span>
+          </button>
+          <button type="button" class="btn btn-ghost" id="importIcsBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" />
+            </svg>
+            Import to calendar <span class="btn-ext">ICS</span>
+          </button>
+          <span class="plan-actions-note">Both files are built here in your browser — nothing is uploaded.</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== Footer ===================== -->
