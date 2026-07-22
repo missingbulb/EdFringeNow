@@ -20,8 +20,8 @@
     <div class="container header-inner">
       <a href="../" class="logo">EdFringe<span class="logo-now">Now</span></a>
       <nav class="main-nav" aria-label="Primary">
-        <a href="../" class="nav-link">Home</a>
-        <a href="./" class="nav-link is-active">Planner</a>
+        <a href="../" class="nav-link">Now</a>
+        <a href="./" class="nav-link is-active">Plan</a>
       </nav>
       <span class="header-hint">Edinburgh Fringe · 1&ndash;25 Aug 2026</span>
     </div>
@@ -69,31 +69,36 @@
         — then drop the file here.
       </p>
 
-      <label class="dropzone" for="csvInput" id="dropzone">
-        <span class="dz-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 15V4" /><path d="m7 9 5-5 5 5" /><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
-          </svg>
-        </span>
-        <span class="dz-line1">Drag your favourites CSV here</span>
-        <span class="dz-line2">…or pick the file from your computer</span>
-        <span class="btn">Upload favourites</span>
-        <input type="file" id="csvInput" accept=".csv,.txt" hidden />
-      </label>
-      <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
-      <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
+      <!-- The drop box sits centred on a faint "empty lanes" backdrop, so this
+           waiting state reads as the same calendar grid the favourites will
+           fill — just empty for now. -->
+      <div class="intake-stage">
+        <label class="dropzone" for="csvInput" id="dropzone">
+          <span class="dz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 15V4" /><path d="m7 9 5-5 5 5" /><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
+            </svg>
+          </span>
+          <span class="dz-line1">Drag your favourites CSV here</span>
+          <span class="dz-line2">…or pick the file from your computer</span>
+          <span class="btn">Upload favourites</span>
+          <input type="file" id="csvInput" accept=".csv,.txt" hidden />
+        </label>
+        <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
+        <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
 
-      <!-- Shown only when an upload yields nothing usable (the calendar takes
-           over as soon as at least one favourite matches). -->
-      <div class="upload-summary" role="status" id="uploadSummary" hidden>
-        <span class="us-tick" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7" /></svg>
-        </span>
-        <div class="us-body">
-          <div class="us-main" id="usMain"></div>
-          <div class="us-sub" id="usSub"></div>
+        <!-- Shown only when an upload yields nothing usable (the calendar takes
+             over as soon as at least one favourite matches). -->
+        <div class="upload-summary" role="status" id="uploadSummary" hidden>
+          <span class="us-tick" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7" /></svg>
+          </span>
+          <div class="us-body">
+            <div class="us-main" id="usMain"></div>
+            <div class="us-sub" id="usSub"></div>
+          </div>
+          <span class="us-file" id="usFile"></span>
         </div>
-        <span class="us-file" id="usFile"></span>
       </div>
 
       <!-- TODO: these controls are placeholders for a future milestone —

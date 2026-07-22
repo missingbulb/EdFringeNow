@@ -606,11 +606,7 @@ function renderRoute() {
   if (!dest) {
     const sel = state.legShowId ? state.shows.find((s) => s.id === state.legShowId) : null;
     if (sel) {
-      drawLeg(state.userLatLng, [sel.lat, sel.lng], {
-        departMin: NOW.minutes,
-        arriveMin: NOW.minutes + travelMinutes(state.userLatLng, [sel.lat, sel.lng]),
-        checkMin: timeToMinutes(sel.time),
-      });
+      drawLeg(state.userLatLng, [sel.lat, sel.lng], { checkMin: timeToMinutes(sel.time) });
     }
     return;
   }
@@ -626,33 +622,23 @@ function renderRoute() {
   if (leg) {
     const legPt = [leg.lat, leg.lng];
     // Leg 1: leave now, arrive before this show starts.
-    const arriveLeg = NOW.minutes + travelMinutes(state.userLatLng, legPt);
     drawLeg(state.userLatLng, legPt, {
-      departMin: NOW.minutes,
-      arriveMin: arriveLeg,
       checkMin: timeToMinutes(leg.time), // show start (your arrival is before this)
     });
     // Leg 2: leave when this show ends, arrive before your next commitment.
-    const showEnd = timeToMinutes(leg.time) + leg.duration;
     drawLeg(legPt, destPt, {
-      departMin: showEnd,
-      arriveMin: showEnd + travelMinutes(legPt, destPt),
       checkMin: timeToMinutes(dest.time), // constraint start
     });
   } else {
     // Single leg: leave now, arrive before your next commitment.
-    drawLeg(state.userLatLng, destPt, {
-      departMin: NOW.minutes,
-      arriveMin: NOW.minutes + travelMinutes(state.userLatLng, destPt),
-      checkMin: timeToMinutes(dest.time),
-    });
+    drawLeg(state.userLatLng, destPt, { checkMin: timeToMinutes(dest.time) });
   }
 }
 
-/* Draw one animated arrow leg. The pill shows the leg's clock window
- * (depart → arrive); the green check at the end shows the deadline that
- * arrival comfortably beats (a show start, or your next commitment). */
-function drawLeg(from, to, { departMin, arriveMin, checkMin } = {}) {
+/* Draw one animated arrow leg. The green check above the destination pin shows
+ * the deadline that arrival comfortably beats (a show start, or your next
+ * commitment). The leg's clock window lives in the itinerary, not on the map. */
+function drawLeg(from, to, { checkMin } = {}) {
   const line = L.polyline([from, to], {
     className: "route-line",
     color: "#141414",
@@ -675,23 +661,18 @@ function drawLeg(from, to, { departMin, arriveMin, checkMin } = {}) {
   }).addTo(state.map);
   state.routeLayers.push(head);
 
-  // Journey-window pill at the midpoint: "🚶 15:44 → 15:52".
-  const pill = L.marker(midpoint(from, to), {
-    icon: L.divIcon({
-      className: "route-label route-pill",
-      html: `${escapeHtml(travelGlyph())} ${minutesToTime(departMin)} &rarr; ${minutesToTime(arriveMin)}`,
-    }),
-    interactive: false,
-    keyboard: false,
-  }).addTo(state.map);
-  state.routeLayers.push(pill);
-
-  // Green check with the deadline you're beating, near the end point.
+  // Green check with the deadline you're beating, sitting directly above the
+  // destination pin. The marker root is a zero-size anchor pinned exactly on the
+  // point; the visible pill is an inner span, so its centring transform survives
+  // (Leaflet writes its own inline transform on the root to place it, which would
+  // otherwise clobber a transform set on the root itself).
   if (checkMin != null) {
     const chk = L.marker(to, {
       icon: L.divIcon({
-        className: "route-label route-check",
-        html: `<span class="tick">✓</span> ${minutesToTime(checkMin)}`,
+        className: "route-check-marker",
+        html: `<span class="route-label route-check"><span class="tick">✓</span> ${minutesToTime(checkMin)}</span>`,
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
       }),
       interactive: false,
       keyboard: false,
@@ -703,6 +684,13 @@ function drawLeg(from, to, { departMin, arriveMin, checkMin } = {}) {
 
 function travelGlyph() {
   return { Walking: "🚶", "Taxi/Car": "🚕", Bicycle: "🚲" }[state.travelMode] || "🚶";
+}
+
+/* The verb for a leg, matching the selected travel mode: "5 min walk" /
+ * "5 min by taxi" / "5 min by bike". Keeps the itinerary honest when the mode
+ * switches away from walking. */
+function travelVerb() {
+  return { Walking: "walk", "Taxi/Car": "by taxi", Bicycle: "by bike" }[state.travelMode] || "walk";
 }
 
 /* ---------- Show list ---------- */
@@ -1139,7 +1127,7 @@ function wireSpareCta(strip) {
  * extra (e.g. a buy button). */
 function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
   // Slack chip sits on the time line, to the left of the event time: it reads as
-  // the payoff of the walk connector just above ("N min walk" → "made it, X to
+  // the payoff of the travel connector just above ("N min walk" → "made it, X to
   // spare · 15:30–16:30").
   return `
     <div class="plan-node ${kind}">
@@ -1151,9 +1139,9 @@ function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
     </div>`;
 }
 
-/* A walking connector between two plan nodes. */
+/* A travel connector between two plan nodes; verb follows the selected mode. */
 function planLeg(mins) {
-  return `<div class="plan-leg">${escapeHtml(travelGlyph())} ${formatMins(mins)} walk</div>`;
+  return `<div class="plan-leg">${escapeHtml(travelGlyph())} ${formatMins(mins)} ${travelVerb()}</div>`;
 }
 
 /* Booking link for a show on the official Fringe box office. Every show in the
@@ -1796,10 +1784,7 @@ function minutesToTime(mins) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
 }
 
-/* Midpoint and linear interpolation between two [lat,lng] points. */
-function midpoint(a, b) {
-  return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
-}
+/* Linear interpolation between two [lat,lng] points. */
 function lerp(a, b, t) {
   return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
 }
