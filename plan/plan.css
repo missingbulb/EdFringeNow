@@ -116,12 +116,32 @@ a { color: inherit; }
 .state-error .btn { margin-top: 16px; }
 
 /* ============ Intake (no favourites yet) ============ */
-.intake { max-width: 660px; margin: 0 auto; padding: 36px 40px 30px; }
+/* Full-width card, matching the calendar it becomes, so the switch between the
+   two states isn't a jarring change of frame. */
+.intake { padding: 30px 28px 26px; }
 .intake-title {
   font-family: var(--display); font-weight: 700; font-size: 1.5rem;
   letter-spacing: -0.01em; margin: 0 0 6px;
 }
 .intake-sub { color: var(--muted); font-size: 0.95rem; margin: 0 0 22px; }
+
+/* The empty-grid stage: faint horizontal lanes (echoing the calendar's lanes)
+   with the drop box floating centred over them, opaque so it reads as a card
+   sitting on the waiting grid. */
+.intake-stage {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; text-align: center;
+  min-height: 320px; padding: 40px 24px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: repeating-linear-gradient(to bottom, #fbfbfd 0 28px, #eef0f5 28px 29px);
+}
+.intake-stage .dropzone {
+  width: 100%; max-width: 460px;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+.intake-stage .dz-alt, .intake-stage .dz-privacy { margin-top: 0; }
 .intake-sub .crumbs { color: var(--ink); font-weight: 600; white-space: nowrap; }
 .intake-sub .crumb-sep { color: #b6bdc9; padding-inline: 2px; }
 
@@ -375,36 +395,49 @@ a { color: inherit; }
 .win-handle {
   position: absolute; top: 0; bottom: 0; width: 26px;
   transform: translateX(-50%);
-  cursor: ew-resize; touch-action: none; z-index: 1;
+  cursor: grab; touch-action: none; z-index: 1;
 }
+.win-handle:active { cursor: grabbing; }
 /* The tab's stem: a short violet line down to the day header, continuing
    visually into the band edge below the header. */
 .win-handle::before {
   content: ""; position: absolute; left: 50%; top: 6px; bottom: 0;
   width: 2px; margin-left: -1px; background: var(--violet);
 }
-/* Handle tabs anchor OUTWARD from their line (start points left, end points
-   right), so they never collide even when the window is dragged narrow. */
+/* The draggable knob. A raised pill button with a grip on its outer edge, so it
+   reads as grab-and-slide rather than a static date label. Tabs anchor OUTWARD
+   from their stem (start points left, end points right) so they never collide
+   even when the window is dragged narrow. The "0 2px 0" layer is a solid bottom
+   edge that gives the button height; the press state below sinks it. */
 .win-flag {
   position: absolute; top: 2px;
-  display: inline-flex; align-items: center; gap: 7px;
+  display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.72rem; font-weight: 700; color: var(--violet-dark);
-  background: #fff; border: 1.5px solid var(--violet); border-radius: 8px;
-  padding: 5px 10px; white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.15);
+  background: linear-gradient(#ffffff, #f1ecff);
+  border: 1.5px solid var(--violet); border-radius: 9px;
+  padding: 6px 11px; white-space: nowrap;
+  box-shadow: 0 2px 0 rgba(90, 63, 214, 0.35), 0 5px 12px rgba(16, 24, 40, 0.18);
   font-variant-numeric: tabular-nums;
-  cursor: ew-resize;
+  cursor: grab;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease, color 0.12s ease;
 }
 .win-handle--start .win-flag { right: 50%; margin-right: -2px; }
 .win-handle--end .win-flag { left: 50%; margin-left: -2px; }
+/* Grip bars inherit the flag's text colour (violet → white on hover). */
 .win-flag .grip { display: inline-flex; gap: 2.5px; }
-.win-flag .grip i { width: 3px; height: 12px; border-radius: 2px; background: rgba(108, 76, 241, 0.5); display: block; }
+.win-flag .grip i { width: 3px; height: 14px; border-radius: 2px; background: currentColor; opacity: 0.55; display: block; }
 .win-handle:hover .win-flag, .win-handle:focus-visible .win-flag {
   background: var(--violet); color: #fff; border-color: var(--violet);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 rgba(90, 63, 214, 0.5), 0 9px 18px rgba(16, 24, 40, 0.24);
 }
-.win-handle:hover .win-flag .grip i, .win-handle:focus-visible .win-flag .grip i { background: rgba(255, 255, 255, 0.75); }
+/* Pressed: sink the button and flatten its edge for a tactile grab. */
+.win-handle:active .win-flag {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(90, 63, 214, 0.4), 0 3px 8px rgba(16, 24, 40, 0.18);
+}
 .win-handle:focus-visible { outline: none; }
-.win-handle:focus-visible .win-flag { box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.35); }
+.win-handle:focus-visible .win-flag { box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.35), 0 5px 12px rgba(16, 24, 40, 0.18); }
 
 /* --- Window overlay over the lanes: purely visual, never intercepts the
    pointer — lane cells keep their hover tooltips. --- */
