@@ -26,6 +26,9 @@
       <!-- Build version + a live rolling average of the reschedule computation
            (buildSchedule), so production planning times are visible at a glance. -->
       <span class="perf-pill" id="perfPill" title="Reschedule timing appears after the first plan" role="status" aria-live="off">v… · plan —</span>
+      <!-- Testing-only: seed the favourites UI with 10 random shows from the
+           catalogue, so the calendar/plan can be exercised without a real export. -->
+      <button type="button" class="debug-chip" id="debugRandomBtn" title="Load 10 random shows to test the favourites UI">DEBUG · 10 random</button>
       <span class="header-hint">Edinburgh Fringe · 7&ndash;31 Aug 2026</span>
     </div>
   </header>

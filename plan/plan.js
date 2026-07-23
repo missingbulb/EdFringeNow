@@ -929,6 +929,38 @@ function wireFavActions() {
   $("clearFavBtn").addEventListener("click", clearFavourites);
 }
 
+/* Fisher–Yates shuffle, in place; returns the same array for chaining. */
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/* DEBUG: seed the favourites UI with a random set of shows so the calendar +
+ * plan can be exercised without a real edfringe.com export. Picks N distinct
+ * slugs from the loaded catalogue and runs them through the normal favourites
+ * path (persistence, matching, calendar, plan) — exactly as an upload would. */
+async function loadDebugRandomShows(count = 10) {
+  let index;
+  try {
+    index = await ensureData();
+  } catch (err) {
+    console.error("Fringe Planner: failed to load show data for debug set", err);
+    return;
+  }
+  const slugs = shuffle([...index.keys()]).slice(0, count);
+  if (slugs.length === 0) return;
+  const savedAt = Date.now();
+  saveFavourites(slugs, "debug-random.csv", savedAt);
+  applyFavourites(slugs, `debug · ${slugs.length} random shows`, savedAt, { scroll: true });
+}
+
+function wireDebugButton() {
+  $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+}
+
 function wireRetry() {
   $("retryBtn").addEventListener("click", () => {
     $("errorState").hidden = true;
@@ -1930,6 +1962,7 @@ function renderPerfPill() {
 wireDropzone();
 wireSampleLink();
 wireFavActions();
+wireDebugButton();
 wireRetry();
 wireCalendarControls();
 wireOptimizer();

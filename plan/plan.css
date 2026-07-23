@@ -82,6 +82,19 @@ a { color: inherit; }
 }
 .perf-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
 @media (max-width: 640px) { .perf-pill { display: none; } }
+/* Testing-only chip — a loud red affordance (matching the "Now" app's DEBUG
+   chip) that seeds the favourites UI with a random show set. */
+.debug-chip {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font: inherit; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #fff; background: var(--warn);
+  border: none; border-radius: 999px; padding: 5px 11px; cursor: pointer;
+}
+.debug-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
+.debug-chip:hover { filter: brightness(1.08); }
+.debug-chip:active { transform: translateY(1px); }
+.debug-chip:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+@media (max-width: 640px) { .debug-chip { display: none; } }
 
 /* ============ Page head ============ */
 .page-head { padding: 44px 0 8px; }
