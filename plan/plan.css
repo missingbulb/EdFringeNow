@@ -1,7 +1,12 @@
 /* Fringe Planner — stylesheet
  * Extracted/adapted from plan/design/mock.html. Brand tokens match the home
  * site's css/styles.css (violet #6c4cf1, ink/muted/hairline, 16px radius,
- * soft shadow, Plus Jakarta Sans display + Inter body, 1120px container).
+ * soft shadow, Plus Jakarta Sans display + Inter body).
+ * The container is wider than the home site's 1120px: the planner's payload is
+ * two dense grids (a 31-day availability calendar and a multi-week schedule),
+ * which were being squeezed into a narrow strip with big empty margins on wide
+ * screens — so this page gets more room, while the prose blocks inside stay
+ * capped at a readable width.
  * This stylesheet is self-contained — the planner does not load styles.css.
  */
 
@@ -34,7 +39,7 @@
   --fr-locked: linear-gradient(120deg, #fdf3c4 0%, #f3d269 45%, #eac247 100%); /* locked-in day mark — a gold bar */
   --fr-ink: #00243d;      /* edfringe.com ink */
   --shadow-soft: 0 12px 30px rgba(16, 24, 40, 0.08);
-  --maxw: 1120px;
+  --maxw: 1400px;
   --radius: 16px;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
@@ -162,6 +167,9 @@ a { color: inherit; }
   letter-spacing: -0.01em; margin: 0 0 6px;
 }
 .intake-sub { color: var(--muted); font-size: 0.95rem; margin: 0 0 22px; }
+/* The card is now full planner-width, but this intro copy reads best short — cap
+   the two prose lines so they don't sprawl across a wide empty card. */
+.intake-title, .intake-sub { max-width: 640px; }
 
 /* The empty-grid stage: faint horizontal lanes (echoing the calendar's lanes)
    with the drop box floating centred over them, opaque so it reads as a card
