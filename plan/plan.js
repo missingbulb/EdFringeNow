@@ -1470,8 +1470,11 @@ function renderSchedule(schedule, animate = false) {
     host.appendChild(col);
   }
 
-  // Draggable overlay: day-start / day-end lines + meal bands.
-  host.appendChild(buildScheduleOverlay(axisH, y));
+  // Draggable overlay: day-start / day-end lines + meal bands. The column count
+  // lets the day-start line + top zone skip the first (arrival) column and the
+  // day-end line + bottom zone skip the last (departure) column, where the trip
+  // blocks own the boundary instead.
+  host.appendChild(buildScheduleOverlay(axisH, y, renderDays.length));
 
   // Animate what actually changed since the last board: shows arrive, depart, or
   // fly to a new slot; brand-new day columns ease in.
@@ -1655,7 +1658,7 @@ function buildTravelLeg(a, b, top, bottom) {
 
 // --- The draggable day-hours / meal-break overlay --------------------------
 
-function buildScheduleOverlay(axisH, y) {
+function buildScheduleOverlay(axisH, y, numCols = 1) {
   const overlay = document.createElement("div");
   overlay.className = "sch-overlay";
   overlay.style.left = `${SCH_GUTTER_PX}px`;
@@ -1664,15 +1667,23 @@ function buildScheduleOverlay(axisH, y) {
   overlay.dataset.axisTop = state.schedAxis.axisTopMin;
 
   const dayEnd = effectiveDayEnd();
+  // Skip the boundary column where a trip block already owns the edge: the
+  // getting-there block replaces day-start on the first column, getting-out
+  // replaces day-end on the last.
+  const colPct = numCols > 0 ? 100 / numCols : 0;
+  const insetStart = state.arrival.enabled ? colPct : 0;
+  const insetEnd = state.departure.enabled ? colPct : 0;
 
   // Shaded "before day starts" / "after day ends" zones.
   const zoneTop = document.createElement("div");
   zoneTop.className = "sch-zone";
   zoneTop.style.top = "0px";
+  zoneTop.style.left = `${insetStart}%`;
   zoneTop.style.height = `${y(state.dayStartMin)}px`;
   const zoneBottom = document.createElement("div");
   zoneBottom.className = "sch-zone";
   zoneBottom.style.top = `${y(dayEnd)}px`;
+  zoneBottom.style.right = `${insetEnd}%`;
   zoneBottom.style.height = `${axisH - y(dayEnd)}px`;
   overlay.append(zoneTop, zoneBottom);
 
@@ -1682,17 +1693,19 @@ function buildScheduleOverlay(axisH, y) {
     overlay.appendChild(buildMealBand(meal, y));
   }
 
-  // Day-start / day-end draggable lines.
-  overlay.appendChild(buildDayLine("start", state.dayStartMin, y));
-  overlay.appendChild(buildDayLine("end", dayEnd, y));
+  // Day-start / day-end draggable lines (each skipping its boundary column).
+  overlay.appendChild(buildDayLine("start", state.dayStartMin, y, insetStart));
+  overlay.appendChild(buildDayLine("end", dayEnd, y, insetEnd));
 
   return overlay;
 }
 
-function buildDayLine(which, min, y) {
+function buildDayLine(which, min, y, insetPct = 0) {
   const line = document.createElement("div");
   line.className = `sch-dayline sch-dayline--${which}`;
   line.style.top = `${y(min)}px`;
+  if (which === "start") line.style.left = `${insetPct}%`;
+  else line.style.right = `${insetPct}%`;
   line.dataset.which = which;
   const label = which === "start" ? "Day starts" : "Day ends";
   const clock = which === "end" ? minToDayClock(min) : minToHHMM(min);

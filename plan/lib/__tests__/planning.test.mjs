@@ -187,6 +187,20 @@ test("buildSchedule: arrival/departure blocks only bite on their own date", () =
   assert.deepEqual(withDeparture.scheduled.map((s) => s.slug), ["morning"]);
 });
 
+test("buildSchedule: the getting-there block overrides day-start on the arrival day", () => {
+  // A 10:00 show on day one; a general day-start of 13:00 would bar it.
+  const shows = [show("early", "A", [{ date: "2026-08-10", start: "10:00" }])]; // 10:00–11:00
+  const opts = { ...WIDE, dateStart: "2026-08-10", dateEnd: "2026-08-12", dayStartMin: 13 * 60 };
+
+  // Without a trip block the 13:00 day-start bars the 10:00 show.
+  assert.equal(buildSchedule(shows, opts).counts.scheduledShows, 0);
+
+  // A getting-there block ending at 09:00 replaces the day-start on day one, so
+  // the 10:00 show now fits — an earlier first-day start than the rest of the trip.
+  const withArrival = buildSchedule(shows, { ...opts, arrival: { date: "2026-08-10", endMin: 9 * 60 } });
+  assert.equal(withArrival.counts.scheduledShows, 1);
+});
+
 // --- forced (must-see) scheduling ----------------------------------------
 
 test("buildSchedule: a forced show survives the min-per-day drop", () => {

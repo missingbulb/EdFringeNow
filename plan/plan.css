@@ -785,42 +785,69 @@ a { color: inherit; }
 .sch-meal {
   position: absolute; left: 0; right: 0; z-index: 5;
   background: repeating-linear-gradient(-45deg, rgba(16,24,40,0.05) 0 6px, rgba(16,24,40,0.02) 6px 12px);
-  border-block: 1px solid rgba(16, 24, 40, 0.08);
-  cursor: grab; pointer-events: auto; touch-action: none; overflow: hidden;
+  cursor: grab; pointer-events: auto; touch-action: none; overflow: visible;
 }
 .sch-meal.dragging { cursor: grabbing; }
 .sch-meal .meal-label {
   position: absolute; top: 50%; left: 6px; transform: translateY(-50%);
   font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
-  font-variant-numeric: tabular-nums; pointer-events: none;
+  font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-.sch-meal .meal-resize { position: absolute; left: 0; right: 0; height: 7px; cursor: ns-resize; }
-.sch-meal .meal-resize--top { top: -1px; }
-.sch-meal .meal-resize--bottom { bottom: -1px; }
 
 /* "Getting there" / "getting out" blocks — one per trip, inside their own day
-   column (behind the shows). Same hatch as the zones/meals; drag the inner edge
-   to resize. */
+   column. Same hatch as the zones/meals; drag the inner edge to resize. */
 .sch-trip {
   position: absolute; left: 0; right: 0; z-index: 5;
   background: repeating-linear-gradient(-45deg, rgba(16,24,40,0.05) 0 6px, rgba(16,24,40,0.02) 6px 12px);
-  border-block: 1px solid rgba(16, 24, 40, 0.08);
-  pointer-events: auto; touch-action: none; overflow: hidden;
+  pointer-events: auto; touch-action: none; overflow: visible;
 }
 .sch-trip .sch-trip-label {
   position: absolute; left: 6px; right: 6px;
   font-size: 0.6rem; font-weight: 700; color: var(--muted);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  font-variant-numeric: tabular-nums; pointer-events: none;
+  font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-.sch-trip--arrival .sch-trip-label { bottom: 4px; }
-.sch-trip--departure .sch-trip-label { top: 4px; }
+/* Label sits at the block's *outer* edge, away from the draggable inner edge. */
+.sch-trip--arrival .sch-trip-label { top: 4px; }
+.sch-trip--departure .sch-trip-label { bottom: 4px; }
 .sch-trip.dragging {
   background: repeating-linear-gradient(-45deg, rgba(108,76,241,0.12) 0 6px, rgba(108,76,241,0.04) 6px 12px);
 }
-.sch-trip .meal-resize { position: absolute; left: 0; right: 0; height: 9px; cursor: ns-resize; touch-action: none; }
-.sch-trip .meal-resize--top { top: -2px; }
-.sch-trip .meal-resize--bottom { bottom: -2px; }
+
+/* --- Shared drag handle: every draggable boundary (day-start/end lines, meal
+   edges, trip inner edge) shows the same violet line + centred grip pill, so
+   they all read as one grab affordance. The meal/trip resize strips straddle
+   their edge; the day line already draws its own line via border-top. --- */
+.sch-meal .meal-resize,
+.sch-trip .meal-resize {
+  position: absolute; left: 0; right: 0; height: 14px; cursor: ns-resize; touch-action: none; z-index: 2;
+}
+.sch-meal .meal-resize--top,
+.sch-trip .meal-resize--top { top: -7px; }
+.sch-meal .meal-resize--bottom,
+.sch-trip .meal-resize--bottom { bottom: -7px; }
+.sch-meal .meal-resize::before,
+.sch-trip .meal-resize::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%;
+  height: 2px; transform: translateY(-50%); background: var(--violet); pointer-events: none;
+}
+.dl-grip::after,
+.sch-meal .meal-resize::after,
+.sch-trip .meal-resize::after {
+  content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 26px; height: 12px; border-radius: 7px;
+  background-color: var(--violet);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat; background-size: 12px 1.5px;
+  background-position: center 4px, center 7.5px;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
+  transition: transform 0.12s ease; pointer-events: none;
+}
+.dl-grip:hover::after,
+.sch-meal .meal-resize:hover::after,
+.sch-trip .meal-resize:hover::after,
+.sch-meal.dragging .meal-resize::after,
+.sch-trip.dragging .meal-resize::after { transform: translate(-50%, -50%) scale(1.12); }
 
 /* --- Hover card over a scheduled block --- */
 .sch-card {
