@@ -187,6 +187,16 @@ USER_AGENT = (
 REQUEST_TIMEOUT = 30
 MAX_RETRIES = 3
 
+# Process start; used to prefix progress lines with elapsed time so a long,
+# mostly-sleeping crawl still shows visible movement in the CI log.
+START = time.monotonic()
+
+
+def elapsed() -> str:
+    """Elapsed wall time since start as m:ss, e.g. '3:07'."""
+    secs = int(time.monotonic() - START)
+    return f"{secs // 60}:{secs % 60:02d}"
+
 
 def post_json(url: str, payload: dict, token: str | None = None) -> dict:
     """POST JSON, retrying transient failures, returning the decoded response."""
@@ -295,35 +305,51 @@ def main() -> int:
                         help="re-fetch pages even if they already exist")
     args = parser.parse_args()
 
+    # In CI, stdout is a pipe (not a TTY), so Python fully buffers it and none
+    # of the progress below appears until the process exits — a multi-minute
+    # crawl looks frozen. Force line buffering so each line is flushed as it is
+    # printed. (`python -u` or PYTHONUNBUFFERED would also work; doing it here
+    # keeps the script self-contained regardless of how it is launched.)
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(line_buffering=True)
+        except (AttributeError, ValueError):
+            pass
+
     if args.min_delay > args.max_delay:
         parser.error("--min-delay must not exceed --max-delay")
 
     out_dir: Path = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    print("Authenticating...")
+    print(f"[{elapsed()}] Authenticating...")
     token = get_token(args.username, args.password)
 
     # Reference data: genres (for mapping) and venues (for addresses). Small,
     # so always refresh them alongside the events.
-    print("Fetching genres and venues...")
+    print(f"[{elapsed()}] Fetching genres and venues...")
     genres = fetch_genres(token)
     (out_dir / "genres_raw.json").write_text(
         json.dumps(genres, ensure_ascii=False, indent=1))
     venues = fetch_venues(token)
     (out_dir / "venues_raw.json").write_text(
         json.dumps(venues, ensure_ascii=False, indent=1))
-    print(f"  {len(genres)} genres, {venues.get('total', '?')} venues")
+    print(f"[{elapsed()}]   {len(genres)} genres, {venues.get('total', '?')} venues")
 
     # First page tells us the total so we know how many pages to fetch.
-    print(f"Fetching page 1 (recentlyAdded={args.recently_added}) to determine total...")
+    print(f"[{elapsed()}] Fetching page 1 (recentlyAdded={args.recently_added}) "
+          "to determine total...")
     first = fetch_events_page(token, 1, args.per, args.seed, args.recently_added)
     total = first["total"]
     total_pages = max(1, math.ceil(total / args.per))
     if args.max_pages:
         total_pages = min(total_pages, args.max_pages)
     width = max(2, len(str(total_pages)))
-    print(f"{total} shows across {total_pages} pages (per={args.per})")
+    # Rough finish estimate from the average inter-request delay (each page but
+    # the last is followed by one sleep).
+    est_secs = (total_pages - 1) * (args.min_delay + args.max_delay) / 2
+    print(f"[{elapsed()}] {total} shows across {total_pages} pages (per={args.per}); "
+          f"~{int(est_secs // 60)}m of throttled fetching to go")
 
     all_shows: list[dict] = []
 
@@ -340,7 +366,8 @@ def main() -> int:
             try:
                 events = json.loads(dest.read_text())
                 all_shows.extend(events.get("results", []))
-                print(f"[{page}/{total_pages}] skip (exists): {dest.name}")
+                print(f"[{elapsed()}] [{page}/{total_pages}] skip (exists): "
+                      f"{dest.name} ({len(all_shows)} shows so far)")
                 skipped += 1
                 continue
             except (json.JSONDecodeError, OSError):
@@ -349,31 +376,32 @@ def main() -> int:
         if page == 1:
             events = first
         else:
-            print(f"[{page}/{total_pages}] EventsSearch page={page}")
+            print(f"[{elapsed()}] [{page}/{total_pages}] EventsSearch page={page}")
             try:
                 events = fetch_events_page(token, page, args.per, args.seed,
                                            args.recently_added)
             except Exception as exc:  # noqa: BLE001 — one bad page must not kill the whole crawl; the error is reported and counted in `failed`
-                print(f"    ERROR: {exc}", file=sys.stderr)
+                print(f"[{elapsed()}]     ERROR: {exc}", file=sys.stderr)
                 failed += 1
                 continue
 
         results = events.get("results", [])
         save_page(page, events)
         all_shows.extend(results)
-        print(f"    saved {len(results)} shows -> {dest.name}")
+        print(f"[{elapsed()}]     saved {len(results)} shows -> {dest.name} "
+              f"({len(all_shows)} total, {fetched + 1}/{total_pages - skipped} fetched)")
         fetched += 1
 
         if page < total_pages:
             delay = random.uniform(args.min_delay, args.max_delay)
-            print(f"    sleeping {delay:.1f}s")
+            print(f"[{elapsed()}]     sleeping {delay:.1f}s before next page")
             time.sleep(delay)
 
     # Flatten everything into one file for convenience.
     shows_path = out_dir / "shows.json"
     shows_path.write_text(json.dumps(all_shows, ensure_ascii=False, indent=1))
-    print(f"\nDone. fetched={fetched} skipped={skipped} failed={failed}")
-    print(f"Total shows collected: {len(all_shows)} -> {shows_path}")
+    print(f"\n[{elapsed()}] Done. fetched={fetched} skipped={skipped} failed={failed}")
+    print(f"[{elapsed()}] Total shows collected: {len(all_shows)} -> {shows_path}")
     return 1 if failed else 0
 
 

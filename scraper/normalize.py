@@ -800,6 +800,15 @@ def main() -> int:
                         help="run the built-in fixture test and exit")
     args = parser.parse_args()
 
+    # Line-buffer output so progress shows up live in CI logs (stdout is a pipe
+    # there, which Python would otherwise fully buffer). Geocoding in particular
+    # can run for a while.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(line_buffering=True)
+        except (AttributeError, ValueError):
+            pass
+
     if args.selftest:
         return selftest()
     if args.minify_from_master:
