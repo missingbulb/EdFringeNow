@@ -789,9 +789,16 @@ a { color: inherit; }
 }
 .sch-meal.dragging { cursor: grabbing; }
 .sch-meal .meal-label {
-  position: absolute; top: 50%; left: 6px; transform: translateY(-50%);
+  position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%);
+  text-align: center;
   font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
   font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
+}
+/* Playful faint food scatter tiled across the break, behind the label. */
+.sch-meal .meal-decor {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+  display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: 4px 12px; padding: 0 8px; opacity: 0.16; font-size: 15px; line-height: 1;
 }
 
 /* "Getting there" / "getting out" blocks — one per trip, inside their own day
@@ -802,14 +809,14 @@ a { color: inherit; }
   pointer-events: auto; touch-action: none; overflow: visible;
 }
 .sch-trip .sch-trip-label {
-  position: absolute; left: 6px; right: 6px;
+  position: absolute; left: 6px; right: 6px; text-align: center;
   font-size: 0.6rem; font-weight: 700; color: var(--muted);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-/* Label sits at the block's *outer* edge, away from the draggable inner edge. */
-.sch-trip--arrival .sch-trip-label { top: 4px; }
-.sch-trip--departure .sch-trip-label { bottom: 4px; }
+/* Label sits just above the grip glyph on the block's draggable inner edge. */
+.sch-trip--arrival .sch-trip-label { bottom: 11px; }
+.sch-trip--departure .sch-trip-label { top: -16px; }
 .sch-trip.dragging {
   background: repeating-linear-gradient(-45deg, rgba(108,76,241,0.12) 0 6px, rgba(108,76,241,0.04) 6px 12px);
 }
@@ -932,7 +939,8 @@ a { color: inherit; }
    turns amber and carries a small "not placeable · N" tag. */
 .sch-dayline--blocking { border-top-color: #e2a815; }
 .sch-dayline--blocking .dl-flag { background: #c77700; }
-.sch-meal--blocking { background: rgba(226, 168, 21, 0.28); border-block-color: rgba(199, 119, 0, 0.7); }
+/* A meal break that's blocking a show reads only from the "not placeable" badge
+   now — the band itself stays the calm neutral hatch, like the day-end zone. */
 .dl-blocked {
   position: absolute; right: 4px; top: -9px; transform: translateY(-100%);
   font-size: 0.56rem; font-weight: 700; color: #fff; background: #c77700;

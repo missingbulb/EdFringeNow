@@ -1734,7 +1734,10 @@ function buildMealBand(meal, y) {
   const badge = blocks.length
     ? `<span class="dl-blocked" title="${escapeHtml(blockTip(`Your ${meal.id} break`, blocks))}">not placeable · ${blocks.length}</span>`
     : "";
+  // A faint, playful scatter of food emoji tiled across the break.
+  const decor = Array.from({ length: 44 }, (_, i) => (i % 2 ? "🍔" : "🍕")).join(" ");
   band.innerHTML =
+    `<span class="meal-decor" aria-hidden="true">${decor}</span>` +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
     `<span class="meal-label">🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}</span>` +
     badge +
