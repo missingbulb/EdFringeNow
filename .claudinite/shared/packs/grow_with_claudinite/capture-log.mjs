@@ -31,7 +31,7 @@ export const DEFAULT_BRANCH = 'conversation-logs';
 // Split a transcript into { raw, entry } pairs, preserving the original line
 // bytes — the capture must stay byte-faithful (re-encoding could reorder or
 // reformat), so raw is what gets written and entry is only read for slicing.
-// (checks/lib/transcript.mjs parseEntries returns parsed objects only, which is
+// (engine/checks/helpers/session-transcript.mjs parseEntries returns parsed objects only, which is
 // right for conversation rules but loses the fidelity capture needs.)
 export function parseLines(text) {
   const out = [];
@@ -170,7 +170,10 @@ export function parseLogFilename(name) {
 // --- git plumbing -------------------------------------------------------------
 
 function git(root, args, { input, allowFail = false } = {}) {
-  const r = spawnSync('git', args, { cwd: root, encoding: 'utf8', input });
+  // A capture blob easily tops spawnSync's default 1 MiB maxBuffer — `git show`
+  // of the prior capture then dies mid-read (ENOBUFS) and a long session can
+  // never append its delta.
+  const r = spawnSync('git', args, { cwd: root, encoding: 'utf8', input, maxBuffer: 256 * 1024 * 1024 });
   if (r.status !== 0 && !allowFail) {
     throw new Error(`git ${args.join(' ')} failed: ${(r.stderr || r.stdout || '').trim()}`);
   }
