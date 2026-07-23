@@ -753,6 +753,7 @@ a { color: inherit; }
 
 /* --- One neutral debug pill (version) that opens a dropdown of testing tools --- */
 .debug-menu { position: relative; display: inline-flex; }
+.debug-menu[hidden] { display: none; }
 .debug-pill {
   display: inline-flex; align-items: center; gap: 7px; cursor: pointer; white-space: nowrap;
   font: inherit; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.02em;

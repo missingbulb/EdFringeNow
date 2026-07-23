@@ -1039,6 +1039,32 @@ function removeFavourite(slug) {
   applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true });
 }
 
+// Very rough UK-mainland bounding box (mirrors js/app.js). The debug tools are
+// a testing affordance, so they only show when we're not clearly in the UK.
+const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
+function isInUK([lat, lng]) {
+  return (
+    lat >= UK_BOUNDS.minLat &&
+    lat <= UK_BOUNDS.maxLat &&
+    lng >= UK_BOUNDS.minLng &&
+    lng <= UK_BOUNDS.maxLng
+  );
+}
+
+// Hide the debug menu when the browser's real location is inside the UK. Left
+// visible (the default) for overseas testers or when the location is unknown.
+function hideDebugInUK() {
+  const menu = $("debugMenu");
+  if (!menu || !("geolocation" in navigator)) return;
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      if (isInUK([pos.coords.latitude, pos.coords.longitude])) menu.hidden = true;
+    },
+    () => {}, // denied / unavailable — keep the debug tools visible
+    { timeout: 8000, maximumAge: 60000 }
+  );
+}
+
 function wireDebugButton() {
   const menu = $("debugMenu");
   const pill = $("debugPill");
@@ -2237,6 +2263,7 @@ wireDropzone();
 wireSampleLink();
 wireFavActions();
 wireDebugButton();
+hideDebugInUK();
 wireRetry();
 wireCalendarControls();
 wireOptimizer();

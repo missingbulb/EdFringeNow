@@ -275,7 +275,10 @@ function requestUserLocation() {
         );
         return;
       }
+      // In the UK we trust the real location, so the pre-set values (and the
+      // debug tools that tweak them) are no longer relevant — hide them.
       setUserLocation(here, { recenter: true, real: true });
+      setDebugVisible(false);
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.
@@ -1663,6 +1666,14 @@ function closeAllPanels() {
 }
 
 /* ---------- Debug clock ---------- */
+/* Show or hide the whole debug menu (pill + dropdown). The testing tools only
+ * make sense alongside the pre-set values, so a confirmed in-UK location hides
+ * them; overseas / unknown locations keep them (the default). */
+function setDebugVisible(visible) {
+  const menu = document.getElementById("debugMenu");
+  if (menu) menu.hidden = !visible;
+}
+
 function renderDebugBanner() {
   const el = document.getElementById("debugNowText");
   if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
