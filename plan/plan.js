@@ -133,6 +133,10 @@ function isWeekend(day) {
 const state = {
   index: null, // Map<slug, show> — the full catalogue
   venueCoords: null, // { [venueCode]: {lat, lng} }
+  // The working favourites, as slugs — the single source of truth for what's on
+  // the grid and what we persist. Mutated by add (DEBUG) / remove-a-row, so the
+  // stored list always mirrors the shows on screen, not the original upload.
+  favSlugs: [],
   matched: [], // full show objects for the user's matched favourites
   totalFavourites: 0,
   missingSlugs: [],
@@ -276,6 +280,7 @@ function restoreStoredFavourites() {
 
 function clearFavourites() {
   clearStoredFavourites();
+  state.favSlugs = [];
   state.totalFavourites = 0;
   state.matched = [];
   state.missingSlugs = [];
@@ -316,7 +321,7 @@ function processFavouritesText(text, filename) {
   applyFavourites(slugs, filename, savedAt, { scroll: true });
 }
 
-async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
+async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepForced = false } = {}) {
   state.pendingUpload = { slugs, filename, savedAt, scroll };
 
   let index;
@@ -333,12 +338,17 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}
   const { matched, missingSlugs } = matchFavourites(slugs, index);
   state.pendingUpload = null;
 
+  state.favSlugs = slugs.slice();
   state.totalFavourites = slugs.length;
   state.matched = matched;
   state.missingSlugs = missingSlugs;
   state.filename = filename;
   state.savedAt = savedAt;
-  state.forced = new Map(); // a fresh map clears any must-sees
+  // A fresh upload clears must-sees; an add/remove keeps the pins still on the grid.
+  const survivingSlugs = new Set(matched.map((s) => s.slug));
+  state.forced = keepForced
+    ? new Map([...state.forced].filter(([slug]) => survivingSlugs.has(slug)))
+    : new Map();
 
   if (matched.length > 0) {
     state.d0 = DEFAULT_D0;
@@ -512,6 +522,14 @@ function buildCalendar() {
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true" title="Forced into the plan">📌</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "lane-remove";
+    remove.title = "Remove this show from the list";
+    remove.setAttribute("aria-label", `Remove ${show.title} from the list`);
+    remove.textContent = "×";
+    label.appendChild(remove);
 
     const track = document.createElement("div");
     track.className = "lane-track";
@@ -861,6 +879,8 @@ function paintWindow(animate = false) {
   $("dimR").style.width = Math.max(0, trackWidth - x1) + "px";
   $("band").style.left = x0 + "px";
   $("band").style.width = (x1 - x0) + "px";
+  $("edgeStart").style.left = x0 + "px";
+  $("edgeEnd").style.left = x1 + "px";
   $("hStart").style.left = (trackLeft + x0) + "px";
   $("hEnd").style.left = (trackLeft + x1) + "px";
   $("railBand").style.left = (trackLeft + x0) + "px";
@@ -885,6 +905,7 @@ function dragDate(el, apply) {
   el.addEventListener("pointerdown", (e) => {
     e.preventDefault();
     el.setPointerCapture(e.pointerId);
+    el.classList.add("dragging");
     const startX = e.clientX;
     const s0 = state.d0;
     const s1 = state.d1;
@@ -894,6 +915,7 @@ function dragDate(el, apply) {
       scheduleRecompute();
     };
     const up = () => {
+      el.classList.remove("dragging");
       el.removeEventListener("pointermove", move);
       el.removeEventListener("pointerup", up);
     };
@@ -968,10 +990,11 @@ function shuffle(arr) {
   return arr;
 }
 
-/* DEBUG: seed the favourites UI with a random set of shows so the calendar +
- * plan can be exercised without a real edfringe.com export. Picks N distinct
- * slugs from the loaded catalogue and runs them through the normal favourites
- * path (persistence, matching, calendar, plan) — exactly as an upload would. */
+/* DEBUG: top up the favourites UI with more random shows so the calendar +
+ * plan can be exercised without a real edfringe.com export. Picks N slugs the
+ * grid doesn't already carry and *appends* them to the working set (never
+ * replacing it), then runs the combined list through the normal favourites path
+ * — persistence, matching, calendar, plan — exactly as an upload would. */
 async function loadDebugRandomShows(count = 10) {
   let index;
   try {
@@ -980,15 +1003,57 @@ async function loadDebugRandomShows(count = 10) {
     console.error("Fringe Planner: failed to load show data for debug set", err);
     return;
   }
-  const slugs = shuffle([...index.keys()]).slice(0, count);
-  if (slugs.length === 0) return;
+  const existing = new Set(state.favSlugs);
+  const picks = shuffle([...index.keys()].filter((s) => !existing.has(s))).slice(0, count);
+  if (picks.length === 0) return;
+  const slugs = [...state.favSlugs, ...picks];
   const savedAt = Date.now();
-  saveFavourites(slugs, "debug-random.csv", savedAt);
-  applyFavourites(slugs, `debug · ${slugs.length} random shows`, savedAt, { scroll: true });
+  const filename = `debug · ${slugs.length} random shows`;
+  saveFavourites(slugs, filename, savedAt);
+  applyFavourites(slugs, filename, savedAt, { scroll: true, keepForced: true });
+}
+
+/* Drop one show from the working set — the row leaves the grid and the change
+ * is written straight back to the stored list, so a removed show stays gone on
+ * reload. Clearing the last row falls back to the empty-state reset. */
+function removeFavourite(slug) {
+  const slugs = state.favSlugs.filter((s) => s !== slug);
+  if (slugs.length === state.favSlugs.length) return; // nothing removed
+  if (slugs.length === 0) {
+    clearFavourites();
+    return;
+  }
+  const savedAt = state.savedAt || Date.now();
+  saveFavourites(slugs, state.filename, savedAt);
+  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true });
 }
 
 function wireDebugButton() {
-  $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+  const menu = $("debugMenu");
+  const pill = $("debugPill");
+  const pop = $("debugPop");
+  if (menu && pill && pop) {
+    const setOpen = (open) => {
+      pop.hidden = !open;
+      pill.setAttribute("aria-expanded", String(open));
+    };
+    pill.addEventListener("click", () => setOpen(pop.hidden));
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !pop.hidden) {
+        setOpen(false);
+        pill.focus();
+      }
+    });
+    $("debugRandomBtn")?.addEventListener("click", () => {
+      loadDebugRandomShows(10);
+      setOpen(false);
+    });
+  } else {
+    $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+  }
 }
 
 function wireRetry() {
@@ -1007,6 +1072,13 @@ function wireCalendarControls() {
     state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
   });
   dragDate($("hEnd"), (ev) => {
+    state.d1 = clamp(dayAt(ev.clientX), state.d0, DAYS_IN_MONTH);
+  });
+  // The two vertical band lines drag the same window edges as the rail flags.
+  dragDate($("edgeStart"), (ev) => {
+    state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
+  });
+  dragDate($("edgeEnd"), (ev) => {
     state.d1 = clamp(dayAt(ev.clientX), state.d0, DAYS_IN_MONTH);
   });
   dragDate($("railBand"), (ev, s0, s1, startX) => {
@@ -1038,6 +1110,10 @@ function wireCalendarControls() {
     const lane = e.target.closest(".lane");
     if (!lane) return;
     const slug = lane.dataset.slug;
+    if (e.target.closest(".lane-remove")) {
+      removeFavourite(slug);
+      return;
+    }
     const seg = e.target.closest(".seg");
     if (seg) {
       togglePinPerformance(slug, seg.dataset.date, seg.dataset.start);
@@ -1970,18 +2046,20 @@ function fmtMs(ms) {
 }
 
 function renderPerfPill() {
-  const el = $("perfPill");
-  if (!el) return;
-  const v = state.version ? `v${state.version}` : "dev";
+  const pill = $("debugPill");
+  if (pill) pill.textContent = state.version ? `debug v${state.version}` : "debug";
+
+  const stat = $("perfStat");
+  if (!stat) return;
   const p = state.perf;
   if (p.count === 0) {
-    el.textContent = `${v} · plan —`;
-    el.title = "Reschedule timing appears after the first plan";
+    stat.textContent = "Avg replanning time: —";
+    stat.title = "Timing appears after the first plan";
     return;
   }
   const avg = p.sum / p.count;
-  el.textContent = `${v} · plan ${fmtMs(avg)}`;
-  el.title =
+  stat.textContent = `Avg replanning time: ${fmtMs(avg)}`;
+  stat.title =
     `Reschedule computation (buildSchedule)\n` +
     `avg ${fmtMs(avg)} · last ${fmtMs(p.last)} · min ${fmtMs(p.min)} · max ${fmtMs(p.max)}\n` +
     `over ${p.count} run${p.count === 1 ? "" : "s"} this session`;

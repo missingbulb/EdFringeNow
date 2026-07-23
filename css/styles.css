@@ -58,31 +58,7 @@
 
 * { box-sizing: border-box; }
 
-/* ===================== Debug clock badge ===================== */
-.debug-banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px 28px;
-  margin: 0 0 24px;
-  background: var(--red);
-  color: #fff;
-  font-size: 0.92rem;
-  letter-spacing: 0.3px;
-  padding: 14px 18px;
-  border: 2px solid #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-}
-.debug-banner:empty { display: none; }
-.debug-banner strong { text-transform: uppercase; letter-spacing: 0.6px; }
-.debug-banner__status { font-weight: 700; }
-.debug-banner__controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 18px;
-}
+/* ===================== Debug controls (in the header pill dropdown) ========= */
 .debug-control {
   display: flex;
   flex-direction: column;
@@ -775,28 +751,28 @@ a { color: inherit; }
 .app { width: 100%; }
 .wrap { width: 100%; max-width: 680px; margin: 0 auto; padding: 16px 20px 60px; }
 
-/* --- Debug collapsed behind a red header chip --- */
-.debug-chip {
-  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
-  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-  color: #fff; background: var(--pink); border: none; border-radius: 999px; padding: 7px 12px;
+/* --- One neutral debug pill (version) that opens a dropdown of testing tools --- */
+.debug-menu { position: relative; display: inline-flex; }
+.debug-pill {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer; white-space: nowrap;
+  font: inherit; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 999px; padding: 5px 12px; font-variant-numeric: tabular-nums;
 }
-.debug-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; }
-.debug-chip[aria-expanded="true"] { background: #9c181b; }
-.debug-chip:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-/* Deployed-build stamp (hash · time) — secondary, so it doesn't shout over DEBUG. */
-.debug-build { letter-spacing: 0; text-transform: none; font-weight: 700; opacity: 0.85; font-variant-numeric: tabular-nums; }
-/* The (otherwise loud) debug banner, compacted into a tidy dropdown card. */
-.debug-banner {
-  display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: flex-end;
-  background: #fff5f4; color: var(--ink); border: 1px solid #f2c9c4;
-  border-radius: 12px; padding: 14px 16px; margin: 0 0 16px;
-  box-shadow: none; font-size: 0.82rem;
+.debug-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #c2c8d2; }
+.debug-pill:hover { border-color: #d4d8e0; color: var(--ink); }
+.debug-pill[aria-expanded="true"] { border-color: var(--red); color: var(--ink); }
+.debug-pill:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+/* The dropdown card, anchored under the pill. */
+.debug-pop {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 1600;
+  display: flex; flex-direction: column; gap: 14px; min-width: 232px;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow-soft);
+  font-size: 0.82rem;
 }
-.debug-banner[hidden] { display: none; }
-.debug-banner strong { color: var(--pink); text-transform: uppercase; letter-spacing: 0.5px; }
-.debug-banner__status { font-weight: 700; }
-.debug-banner__controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+.debug-pop[hidden] { display: none; }
+.debug-pop__now { margin: 0; font-weight: 700; font-size: 0.78rem; }
 .debug-control { display: flex; flex-direction: column; gap: 6px; font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
 .debug-control input[type="datetime-local"] { font: inherit; font-size: 0.82rem; text-transform: none; letter-spacing: normal; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; color: var(--ink); background: #fff; }
 .debug-move-grid { display: flex; flex-wrap: wrap; gap: 6px; }

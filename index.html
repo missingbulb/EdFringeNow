@@ -49,8 +49,27 @@
         <a href="plan/" class="nav-link">Plan</a>
       </nav>
       <div class="header-icons">
-        <!-- Debug is hidden behind this red chip so it doesn't dominate the UI. -->
-        <button id="debugToggle" class="debug-chip" type="button" aria-expanded="false" aria-controls="debugBanner" title="Testing controls">DEBUG</button>
+        <!-- One debug pill (version from package.json). Click opens a dropdown
+             with the simulated-time + move-location testing controls. -->
+        <div class="debug-menu" id="debugMenu">
+          <button id="debugToggle" class="debug-pill" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="debugPop" title="Debug tools">debug v&hellip;</button>
+          <div id="debugPop" class="debug-pop" role="menu" hidden>
+            <p class="debug-pop__now">Simulated &ldquo;now&rdquo;: <span id="debugNowText"></span></p>
+            <label class="debug-control" for="debugDateTime">
+              <span>Change date &amp; time</span>
+              <input type="datetime-local" id="debugDateTime" />
+            </label>
+            <div class="debug-control">
+              <span>Move &ldquo;my location&rdquo; (100 m)</span>
+              <div class="debug-move-grid">
+                <button type="button" class="debug-btn" data-move="north">&uarr; N</button>
+                <button type="button" class="debug-btn" data-move="south">&darr; S</button>
+                <button type="button" class="debug-btn" data-move="east">&rarr; E</button>
+                <button type="button" class="debug-btn" data-move="west">&larr; W</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <button id="locBtn" class="icon-btn" type="button" aria-label="Use my location" title="Use my location">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
         </button>
@@ -60,28 +79,6 @@
 
   <main class="app">
     <div class="wrap">
-      <!-- ===================== Debug clock (collapsed) ===================== -->
-      <div id="debugBanner" class="debug-banner" role="status" aria-live="polite" hidden>
-        <div class="debug-banner__status">
-          <strong>DEBUG</strong> — simulated “now”: <span id="debugNowText"></span>
-        </div>
-        <div class="debug-banner__controls">
-          <label class="debug-control" for="debugDateTime">
-            <span>Change date &amp; time</span>
-            <input type="datetime-local" id="debugDateTime" />
-          </label>
-          <div class="debug-control">
-            <span>Move “my location” (100 m)</span>
-            <div class="debug-move-grid">
-              <button type="button" class="debug-btn" data-move="north">↑ N</button>
-              <button type="button" class="debug-btn" data-move="south">↓ S</button>
-              <button type="button" class="debug-btn" data-move="east">→ E</button>
-              <button type="button" class="debug-btn" data-move="west">← W</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- ===================== Primary action: next commitment ===================== -->
       <article class="cta-card card card--constraint" data-card="constraint">
         <button class="card-trigger cta-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">

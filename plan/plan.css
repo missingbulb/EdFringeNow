@@ -73,33 +73,40 @@ a { color: inherit; }
 .nav-link:hover { color: var(--violet); }
 .nav-link.is-active { color: var(--violet); border-bottom-color: var(--violet); }
 .header-hint { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
-/* Red build/perf pill — version + live average reschedule (buildSchedule) time. */
-.perf-pill {
+/* One debug pill (version + a popover with testing tools + the live average
+   reschedule time). A quiet neutral chip — no longer a loud red banner. */
+.debug-menu { position: relative; }
+.debug-pill {
   display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-  font-size: 0.64rem; font-weight: 800; letter-spacing: 0.03em;
-  color: #fff; background: var(--warn); border-radius: 999px; padding: 5px 11px;
-  font-variant-numeric: tabular-nums; cursor: default;
+  font: inherit; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 11px; cursor: pointer;
+  font-variant-numeric: tabular-nums;
 }
-.perf-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
-/* Testing-only chip — a loud red affordance (matching the "Now" app's DEBUG
-   chip) that seeds the favourites UI with a random show set. */
-.debug-chip {
-  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-  font: inherit; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.06em;
-  text-transform: uppercase; color: #fff; background: var(--warn);
-  border: none; border-radius: 999px; padding: 5px 11px; cursor: pointer;
+.debug-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #c2c8d2; flex: 0 0 auto; }
+.debug-pill:hover { border-color: #d4d8e0; color: var(--ink); }
+.debug-pill[aria-expanded="true"] { border-color: var(--violet); color: var(--ink); }
+.debug-pill:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+/* The popover, anchored under the pill. */
+.debug-pop {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 50;
+  min-width: 220px; display: flex; flex-direction: column; gap: 10px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px; box-shadow: var(--shadow-soft);
 }
-.debug-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
-.debug-chip:hover { filter: brightness(1.08); }
-.debug-chip:active { transform: translateY(1px); }
-.debug-chip:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
-/* The header is a single nowrap flex row (~925px at full content), so a narrow
-   page overflowed horizontally rather than reflowing. Drop the chrome
-   progressively, least-important first, so logo + nav always fit: the decorative
-   date tagline goes first, then the testing chip, then the telemetry pill. */
+.debug-pop[hidden] { display: none; }
+.debug-pop__item {
+  font: inherit; font-size: 0.82rem; font-weight: 600; text-align: left; cursor: pointer;
+  color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px;
+}
+.debug-pop__item:hover { border-color: var(--violet); background: rgba(108, 76, 241, 0.06); }
+.debug-pop__item:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+.debug-pop__stat { margin: 0; font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* The header is a single nowrap flex row, so a narrow page dropped chrome
+   progressively. The debug pill now folds the telemetry + testing tools into one
+   small chip, so only the decorative date tagline needs to go on narrow pages. */
 @media (max-width: 940px) { .header-hint { display: none; } }
-@media (max-width: 700px) { .debug-chip { display: none; } }
-@media (max-width: 500px) { .perf-pill { display: none; } }
 
 /* ============ Page head ============ */
 .page-head { padding: 44px 0 8px; }
@@ -402,8 +409,19 @@ a { color: inherit; }
 /* The must-see pin — hidden unless the row is forced into the plan. */
 .lane-pin { flex: 0 0 auto; font-size: 0.72rem; display: none; }
 .lane--forced .lane-pin { display: inline; }
-/* A scheduled row gets a faint green wash + accent so the grid mirrors the plan. */
-.lane--scheduled { background: rgba(5, 150, 105, 0.05); box-shadow: inset 3px 0 0 var(--ok); }
+/* Drop this show from the list. Pushed to the right of the label, faint until
+   the row is hovered/focused so it stays out of the way on a dense grid. */
+.lane-remove {
+  flex: 0 0 auto; margin-left: auto;
+  border: 0; background: none; padding: 0 2px; cursor: pointer;
+  font-size: 0.95rem; line-height: 1; color: #c2c8d2;
+  opacity: 0.35; transition: opacity 0.12s ease, color 0.12s ease;
+}
+.lane:hover .lane-remove, .lane-remove:focus-visible { opacity: 1; }
+.lane-remove:hover { color: var(--warn); }
+/* A scheduled row gets a faint green wash so the grid mirrors the plan (the
+   Status column carries the ✓ In plan text; no coloured left bar). */
+.lane--scheduled { background: rgba(5, 150, 105, 0.05); }
 /* The name and the performance marks are the two click targets (pin the show /
    pin that performance). Everything else keeps the normal cursor. */
 .lane-label { cursor: pointer; }
@@ -536,6 +554,18 @@ a { color: inherit; }
   background: rgba(108, 76, 241, 0.05);
   border-left: 2px solid var(--violet); border-right: 2px solid var(--violet);
 }
+/* Draggable grips on the band's two vertical lines — a thin ew-resize strip
+   centred on each edge. pointer-events re-enabled here (the overlay itself is
+   inert), so the rest of the grid keeps its cell hovers. */
+.win-edge {
+  position: absolute; top: 0; bottom: 0; width: 12px; margin-left: -6px;
+  z-index: 3; pointer-events: auto; cursor: ew-resize; touch-action: none;
+}
+.win-edge::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px;
+  margin-left: -1px; background: transparent; transition: background 0.12s ease;
+}
+.win-edge:hover::before, .win-edge.dragging::before { background: rgba(108, 76, 241, 0.55); }
 
 /* Performance-time tooltip (follows the cursor over day cells). */
 .cal-tip {
@@ -829,7 +859,7 @@ a { color: inherit; }
 /* "Not placeable" is too wide for the status column on one line — let it wrap
    rather than clip (it's plain text, not a pill). */
 .lane-status .st-blocked { color: #9a6700; font-weight: 700; }
-.lane--blocked:not(.lane--scheduled) { box-shadow: inset 3px 0 0 #e2a815; background: rgba(226, 168, 21, 0.06); }
+.lane--blocked:not(.lane--scheduled) { background: rgba(226, 168, 21, 0.06); }
 .lane--flash { animation: laneFlash 1.1s ease; }
 @keyframes laneFlash {
   0%, 100% { background: transparent; }
