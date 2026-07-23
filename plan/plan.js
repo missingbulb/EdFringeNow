@@ -100,13 +100,6 @@ function minToDayClock(min) {
   const m = Math.max(0, Math.round(min));
   return `${pad2(Math.floor(m / 60))}:${pad2(m % 60)}`;
 }
-/** A friendly wall-clock gloss for a past-midnight minute: 1500 → "1:00 am". */
-function afterMidnightGloss(min) {
-  if (min < 1440) return "";
-  const m = min - 1440;
-  const h = Math.floor(m / 60);
-  return `${h === 0 ? 12 : h}:${pad2(m % 60)} am`;
-}
 /** Parse an "HH:MM" time-input value to minutes of day (null if blank). */
 function hhmmToMin(str) {
   if (!str) return null;
@@ -529,7 +522,7 @@ function buildCalendar() {
 
     const label = document.createElement("div");
     label.className = "lane-label";
-    label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · click the name to pin the show into the plan`;
+    label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · click the name to lock the show into the plan`;
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true" title="Forced into the plan">📌</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
@@ -609,7 +602,7 @@ function buildDayCells(performances) {
         seg.className = "seg " + segClass(p);
         seg.dataset.date = p.date;
         seg.dataset.start = p.start;
-        seg.title = `${dowShort(d)} ${d} Aug · ${p.start} · click to pin this performance`;
+        seg.title = `${dowShort(d)} ${d} Aug · ${p.start} · click to lock this performance`;
         cell.appendChild(seg);
       }
       cell.dataset.tip = entries
@@ -678,28 +671,81 @@ function refresh(opts) {
 }
 
 /**
- * Update each lane's state and right-hand verdict. Four states now:
- *   - scheduled: this show made the plan (green "In plan")
- *   - not placeable: catchable in your dates, but your day hours / meal breaks
- *     rule out every performance (amber "Not placeable")
- *   - in window: catchable in the date window but not placed (muted)
- *   - out: nothing catchable in the window (the whole lane dims)
- * A forced (must-see) lane carries a pin.
+ * The right-hand verdict a lane shows when it isn't in the plan. Distinct kinds
+ * so the reason a show didn't make it is legible at a glance:
+ *   - scheduled  : this show made the plan            ✓ Scheduled!
+ *   - early      : catchable, but only before day-start  ☀ Too early
+ *   - late       : catchable, but only after day-end     🌙 Too late
+ *   - cantfit    : catchable in the window, but a clash / meal / cap left no room
+ *   - sold       : every performance in the window (or the whole run) is sold out
+ *   - baddates   : has bookable performances, but all fall outside your dates
+ */
+function laneStatus(show, filter, sets) {
+  if (sets.scheduled) return { kind: "scheduled" };
+  const perfs = show.performances || [];
+  const inWindow = perfs.filter((p) => p.date >= filter.dateStart && p.date <= filter.dateEnd);
+  const availInWindow = inWindow.filter((p) => p.available);
+
+  if (availInWindow.length > 0) {
+    const early = sets.earlySet.has(show.slug);
+    const late = sets.lateSet.has(show.slug);
+    // A single culprit reads cleanly; a mix (some too early, some too late, or a
+    // meal break / clash) falls back to the honest "Can't fit".
+    if (early && !late) return { kind: "early" };
+    if (late && !early) return { kind: "late" };
+    return { kind: "cantfit" };
+  }
+
+  // Nothing catchable in the window. Sold out (in-window, or the whole run)
+  // takes priority over "bad dates" — a different window won't help a sold-out
+  // run, whereas bad dates are exactly what the date scrubber fixes.
+  const runSold = perfs.length > 0 && perfs.every((p) => p.soldOut);
+  const windowSold = inWindow.length > 0 && inWindow.every((p) => p.soldOut);
+  if (runSold || windowSold) return { kind: "sold" };
+  return { kind: "baddates" };
+}
+
+/** The status pill HTML for a lane verdict (see laneStatus for the kinds). */
+function statusPillHTML(status) {
+  switch (status.kind) {
+    case "scheduled":
+      return `<span class="st-plan" title="in your plan">&check;&nbsp;Scheduled!</span>`;
+    case "early":
+      return `<span class="st-blocked" title="its only performances start before your day start — drag the day-start line up to catch it">☀ Too early</span>`;
+    case "late":
+      return `<span class="st-blocked" title="its only performances end after your day end — drag the day-end line down to catch it">🌙 Too late</span>`;
+    case "cantfit":
+      return `<span class="st-cant" title="catchable in your dates, but it clashes with the plan (or a meal break / per-day cap) — click its name to lock it in and force it">Can't fit</span>`;
+    case "sold":
+      return `<span class="st-sold" title="every performance in your window is sold out">Sold out</span>`;
+    case "baddates":
+    default:
+      return `<span class="st-dates" title="it has bookable performances, but none inside your dates — try scrubbing the window">📅 Bad dates</span>`;
+  }
+}
+
+/**
+ * Update each lane's state and right-hand verdict (see laneStatus for the six
+ * kinds). The lane also mirrors the plan on its performance marks, and a forced
+ * (must-see) lane carries a pin.
  */
 function applyVerdicts(bySlug, filter) {
-  const blocked = (state.diag && state.diag.blockedSlugs) || new Set();
+  const diag = state.diag || {};
+  const earlySet = new Set((diag.dayStart || []).map((s) => s.slug));
+  const lateSet = new Set((diag.dayEnd || []).map((s) => s.slug));
   for (const ref of state.laneRefs) {
     const show = bySlug.get(ref.slug);
     if (!show) continue;
-    const { catchable, count } = laneVerdict(show.performances, filter);
     const scheduled = state.scheduledSlugs.has(ref.slug);
     const forced = state.forced.has(ref.slug);
-    const notPlaceable = !scheduled && catchable && blocked.has(ref.slug);
+    const status = laneStatus(show, filter, { scheduled, earlySet, lateSet });
+    const dimmed = status.kind === "baddates" || status.kind === "sold";
+    const amber = status.kind === "early" || status.kind === "late";
 
-    ref.el.classList.toggle("lane--out", !catchable);
+    ref.el.classList.toggle("lane--out", dimmed);
     ref.el.classList.toggle("lane--scheduled", scheduled);
     ref.el.classList.toggle("lane--forced", forced);
-    ref.el.classList.toggle("lane--blocked", notPlaceable);
+    ref.el.classList.toggle("lane--blocked", amber);
 
     // Mark the performance marks so the grid *shows the plan*, not just flags the
     // lane: the one performance the plan set gets a solid green ring; a whole-show
@@ -730,19 +776,11 @@ function applyVerdicts(bySlug, filter) {
       }
     }
 
-    // A pinned lane shows the pin in its status too, right next to the checkmark.
+    // A pinned lane shows the pin in its status too, right next to the verdict.
     const pinMark = forced
-      ? `<span class="st-pin" aria-hidden="true" title="pinned into your plan">📌</span>`
+      ? `<span class="st-pin" aria-hidden="true" title="locked into your plan">📌</span>`
       : "";
-    if (scheduled) {
-      ref.statusEl.innerHTML = `${pinMark}<span class="st-plan" title="in your plan">&check;&nbsp;In plan</span>`;
-    } else if (notPlaceable) {
-      ref.statusEl.innerHTML = `<span class="st-blocked" title="catchable in your dates, but your day hours or meal breaks rule out every performance">Not placeable</span>`;
-    } else if (catchable) {
-      ref.statusEl.innerHTML = `<span class="st-in" title="${count} catchable date${count === 1 ? "" : "s"} — not placed">In window</span>`;
-    } else {
-      ref.statusEl.innerHTML = `<span class="st-no" title="nothing catchable in your window">&ndash;</span>`;
-    }
+    ref.statusEl.innerHTML = pinMark + statusPillHTML(status);
   }
 }
 
@@ -792,15 +830,6 @@ function flashBlockedLanes(list) {
     ref.el.classList.add("lane--flash");
     ref.el.addEventListener("animationend", () => ref.el.classList.remove("lane--flash"), { once: true });
   }
-}
-
-function laneVerdict(performances, filter) {
-  const availableInRange = performances.filter(
-    (p) => p.available && p.date >= filter.dateStart && p.date <= filter.dateEnd
-  );
-  return availableInRange.length > 0
-    ? { catchable: true, count: availableInRange.length }
-    : { catchable: false, count: 0 };
 }
 
 /** Hero now reads scheduled / in-window / total. */
@@ -898,6 +927,9 @@ function paintWindow(animate = false) {
   $("railBand").style.width = (x1 - x0) + "px";
   $("flagStart").textContent = `${state.d0} Aug`;
   $("flagEnd").textContent = `${state.d1} Aug`;
+  const len = state.d1 - state.d0 + 1;
+  const railLen = $("railLen");
+  if (railLen) railLen.textContent = `${len} day${len === 1 ? "" : "s"}`;
   const hStart = $("hStart");
   hStart.setAttribute("aria-valuenow", state.d0);
   hStart.setAttribute("aria-valuetext", `${state.d0} August`);
@@ -1062,9 +1094,81 @@ function wireDebugButton() {
       loadDebugRandomShows(10);
       setOpen(false);
     });
+    $("debugDownloadBtn")?.addEventListener("click", () => {
+      downloadDebugState();
+      setOpen(false);
+    });
   } else {
     $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+    $("debugDownloadBtn")?.addEventListener("click", () => downloadDebugState());
   }
+}
+
+/* Dump the whole live planner state — favourites, every control, and the current
+ * plan + diagnostics — to a JSON file, so a bug report can carry an exact,
+ * reproducible snapshot. Nothing leaves the browser; it's a normal download. */
+function downloadDebugState() {
+  const planOptions = gatherPlanOptions();
+  delete planOptions.venueCoords; // large + not needed to reproduce a plan
+  const snapshot = {
+    exportedAt: new Date().toISOString(),
+    version: state.version,
+    userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    favourites: {
+      slugs: state.favSlugs,
+      filename: state.filename,
+      savedAt: state.savedAt,
+      totalFavourites: state.totalFavourites,
+      matchedCount: state.matched.length,
+      missingSlugs: state.missingSlugs,
+    },
+    settings: {
+      d0: state.d0,
+      d1: state.d1,
+      dayStartMin: state.dayStartMin,
+      dayEndMin: state.dayEndMin,
+      effectiveDayEnd: effectiveDayEnd(),
+      mealBreaks: state.mealBreaks,
+      arrival: state.arrival,
+      departure: state.departure,
+      mode: state.mode,
+      controls: {
+        gap: $("ctlGap")?.value,
+        max: $("ctlMax")?.value,
+        min: $("ctlMin")?.value,
+      },
+      forced: [...state.forced.entries()],
+    },
+    planOptions,
+    plan: state.schedule
+      ? {
+          counts: state.schedule.counts,
+          forced: state.schedule.forced,
+          scheduled: state.schedule.scheduled.map((s) => ({
+            slug: s.slug,
+            title: s.title,
+            date: s.date,
+            realDate: s.realDate,
+            startTime: s.startTime,
+            startMinuteOfDay: s.startMinuteOfDay,
+            endMinuteOfDay: s.endMinuteOfDay,
+            venueCode: s.venueCode,
+            status: s.status,
+          })),
+          unscheduled: state.schedule.unscheduled,
+        }
+      : null,
+    diagnostics: state.diag
+      ? {
+          blockedSlugs: [...state.diag.blockedSlugs],
+          dayStart: state.diag.dayStart,
+          dayEnd: state.diag.dayEnd,
+          meals: state.diag.meals,
+        }
+      : null,
+    perf: state.perf,
+  };
+  downloadText("fringe-plan-debug.json", JSON.stringify(snapshot, null, 2), "application/json");
 }
 
 function wireRetry() {
@@ -1157,33 +1261,75 @@ function windowScore(d0, d1) {
   return { shows, dates };
 }
 
-function bestWindow(candidates) {
+/** Count the weekend days (Sat/Sun) within an inclusive day-of-month range. */
+function weekendDays(d0, d1) {
+  let n = 0;
+  for (let d = d0; d <= d1; d++) if (isWeekend(d)) n++;
+  return n;
+}
+
+/**
+ * Best placement for a fixed-length window. Without "weekends", it maximises
+ * shows caught (then catchable dates). With "weekends" on, it first maximises
+ * the weekend days the window covers — so the trip lands on the busiest Fringe
+ * days — then breaks ties by shows, then dates.
+ */
+function optimizeDates(days, weekends) {
+  const len = clamp(days, 1, DAYS_IN_MONTH);
   let best = null;
-  for (const c of candidates) {
-    const score = windowScore(c.d0, c.d1);
-    if (!best || score.shows > best.shows || (score.shows === best.shows && score.dates > best.dates)) {
-      best = { ...c, ...score };
-    }
+  for (let d0 = 1; d0 + len - 1 <= DAYS_IN_MONTH; d0++) {
+    const d1 = d0 + len - 1;
+    const score = windowScore(d0, d1);
+    const cand = { d0, d1, wknd: weekends ? weekendDays(d0, d1) : 0, ...score };
+    if (!best) { best = cand; continue; }
+    const better = weekends
+      ? cand.wknd > best.wknd ||
+        (cand.wknd === best.wknd && (cand.shows > best.shows || (cand.shows === best.shows && cand.dates > best.dates)))
+      : cand.shows > best.shows || (cand.shows === best.shows && cand.dates > best.dates);
+    if (better) best = cand;
   }
   return best;
 }
 
-function wireOptimizer() {
-  $("optimizeBtn").addEventListener("click", () => {
-    if (state.matched.length === 0) return;
-    const value = $("stayLen").value;
-    const candidates = [];
-    if (value === "wknd") {
-      for (let d = 1; d < DAYS_IN_MONTH; d++) {
-        if (dow(d) === 6) candidates.push({ d0: d, d1: d + 1 });
-      }
-    } else {
-      const len = Number(value);
-      for (let d0 = 1; d0 + len - 1 <= DAYS_IN_MONTH; d0++) {
-        candidates.push({ d0, d1: d0 + len - 1 });
-      }
-    }
-    const best = bestWindow(candidates);
+/** The optimizer, folded into the window bar: an "Optimize?" link on the
+ *  draggable centre band opens a small popover (day count + weekends toggle). */
+function wireWindowOptimizer() {
+  const btn = $("railOptBtn");
+  const pop = $("railPop");
+  if (!btn || !pop) return;
+
+  const setOpen = (open) => {
+    btn.setAttribute("aria-expanded", String(open));
+    if (!open) { pop.hidden = true; return; }
+    $("optDays").value = String(state.d1 - state.d0 + 1);
+    pop.hidden = false; // unhide first so we can measure it
+    const r = btn.getBoundingClientRect();
+    const pw = pop.offsetWidth;
+    pop.style.top = `${r.bottom + 6}px`;
+    pop.style.left = `${clamp(r.left + r.width / 2 - pw / 2, 8, window.innerWidth - pw - 8)}px`;
+  };
+
+  // Keep clicks/drags on the control from starting a window drag or bubbling to
+  // the document "click-away" closer.
+  btn.addEventListener("pointerdown", (e) => e.stopPropagation());
+  pop.addEventListener("pointerdown", (e) => e.stopPropagation());
+  pop.addEventListener("click", (e) => e.stopPropagation());
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(pop.hidden);
+  });
+  document.addEventListener("click", (e) => {
+    if (!pop.hidden && e.target !== btn && !pop.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !pop.hidden) { setOpen(false); btn.focus(); }
+  });
+
+  $("optApplyBtn").addEventListener("click", () => {
+    if (state.matched.length === 0) { setOpen(false); return; }
+    const days = clamp(Number($("optDays").value) || 1, 1, DAYS_IN_MONTH);
+    const best = optimizeDates(days, $("optWeekends").checked);
+    setOpen(false);
     if (!best) return;
     state.d0 = best.d0;
     state.d1 = best.d1;
@@ -1324,6 +1470,7 @@ function renderPlanSummary(schedule) {
   const { scheduledShows, matchedShows, days } = schedule.counts;
   const el = $("planSummary");
   el.innerHTML = "";
+  el.classList.toggle("is-planned", scheduledShows > 0);
   if (scheduledShows === 0) {
     el.textContent = "No clash-free plan fits in this window yet — widen your dates or relax the controls.";
     return;
@@ -1427,6 +1574,15 @@ function renderSchedule(schedule, animate = false) {
   if (state.departure.enabled) ensureDay(dateStr(state.d1));
   renderDays.sort((a, b) => a.date.localeCompare(b.date));
 
+  // Columns flex to share the width, so on a many-day plan each one gets tight.
+  // Flag two breakpoints the CSS uses to shed chrome the block can't afford:
+  // narrow drops the tiny start–end time; tiny also drops the genre emoji, so
+  // the show title always wins the space.
+  const wrapW = ($("scheduleWrap").clientWidth || 800) - SCH_GUTTER_PX;
+  const colW = wrapW / Math.max(1, renderDays.length);
+  host.classList.toggle("cols-narrow", colW < 78);
+  host.classList.toggle("cols-tiny", colW < 56);
+
   // One column per day; columns flex to share the width.
   for (const day of renderDays) {
     const dayNum = Number(day.date.slice(8, 10));
@@ -1475,7 +1631,7 @@ function renderSchedule(schedule, animate = false) {
   // day-end line + bottom zone skip the last (departure) column, where the trip
   // blocks own the boundary instead.
   host.appendChild(buildScheduleOverlay(axisH, y, renderDays.length));
-  populateMealDecors(host); // fill the food scatter now the bands have a size
+  populateDecors(host); // fill every emoji scatter now the regions have a size
 
   // Animate what actually changed since the last board: shows arrive, depart, or
   // fly to a new slot; brand-new day columns ease in.
@@ -1598,19 +1754,31 @@ function ghostOut(host, info) {
   ghost.addEventListener("animationend", () => ghost.remove(), { once: true });
 }
 
-/** One scheduled show block. */
+/** One scheduled show block. It's an <a> to the edfringe.com page so a
+ *  right-click / middle-click / long-press "open link" works natively; a plain
+ *  left-click is intercepted (see wireScheduleInteractions) to lock the show in
+ *  instead. A locked (forced) show carries a pushpin. */
 function buildScheduleBlock(slot, top, rawBottom) {
   const height = Math.max(SCH_MIN_BLOCK, rawBottom - top);
-  const block = document.createElement("div");
-  block.className = "sch-show " + statusSegClass(slot.status);
+  const forced = state.forced.has(slot.slug);
+  const block = document.createElement("a");
+  block.className = "sch-show " + statusSegClass(slot.status) + (forced ? " sch-show--pinned" : "");
+  block.href = slot.url;
+  block.target = "_blank";
+  block.rel = "noopener";
+  block.draggable = false;
   block.style.top = `${top}px`;
   block.style.height = `${height}px`;
   block.dataset.slug = slot.slug;
 
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = slot.venueName || slot.venueCode || "";
-  block.title = `${slot.title}\n${timeStr}${venue ? " · " + venue : ""}`;
+  block.title =
+    `${slot.title}\n${timeStr}${venue ? " · " + venue : ""}\n` +
+    (forced ? "Locked in — click to unlock · " : "Click to lock into your plan · ") +
+    "right-click to open edfringe.com";
   block.innerHTML =
+    (forced ? `<span class="sch-pin" aria-hidden="true" title="locked into your plan">📌</span>` : "") +
     `<span class="sch-emoji" aria-hidden="true">${genreEmoji(slot.genre)}</span>` +
     `<span class="sch-body-text">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
@@ -1675,17 +1843,20 @@ function buildScheduleOverlay(axisH, y, numCols = 1) {
   const insetStart = state.arrival.enabled ? colPct : 0;
   const insetEnd = state.departure.enabled ? colPct : 0;
 
-  // Shaded "before day starts" / "after day ends" zones.
+  // Shaded "before day starts" / "after day ends" zones, each with a themed
+  // emoji scatter (breakfast up top, night at the bottom).
   const zoneTop = document.createElement("div");
   zoneTop.className = "sch-zone";
   zoneTop.style.top = "0px";
   zoneTop.style.left = `${insetStart}%`;
   zoneTop.style.height = `${y(state.dayStartMin)}px`;
+  zoneTop.innerHTML = decorSpan("morning", "daystart");
   const zoneBottom = document.createElement("div");
   zoneBottom.className = "sch-zone";
   zoneBottom.style.top = `${y(dayEnd)}px`;
   zoneBottom.style.right = `${insetEnd}%`;
   zoneBottom.style.height = `${axisH - y(dayEnd)}px`;
+  zoneBottom.innerHTML = decorSpan("night", "dayend");
   overlay.append(zoneTop, zoneBottom);
 
   // Meal-break bands (enabled only).
@@ -1713,7 +1884,7 @@ function buildDayLine(which, min, y, insetPct = 0) {
   const blocks = (state.diag && (which === "start" ? state.diag.dayStart : state.diag.dayEnd)) || [];
   line.classList.toggle("sch-dayline--blocking", blocks.length > 0);
   const badge = blocks.length
-    ? `<span class="dl-blocked" title="${escapeHtml(blockTip(which === "start" ? "Your day start" : "Your day end", blocks))}">not placeable · ${blocks.length}</span>`
+    ? `<span class="dl-blocked" data-excl="${exclData(blocks)}">excludes ${blocks.length} show${blocks.length === 1 ? "" : "s"}</span>`
     : "";
   line.innerHTML =
     `<span class="dl-grip" aria-hidden="true"></span>` +
@@ -1723,49 +1894,121 @@ function buildDayLine(which, min, y, insetPct = 0) {
   return line;
 }
 
-// Food emoji drawn faintly behind meal breaks — a wide set so the scatter feels
-// varied. Keep it to actual food/drink.
-const MEAL_FOODS = [
-  "🍕","🍔","🌭","🥪","🌮","🌯","🍟","🥗","🍣","🍱","🍜","🍝","🍛","🍲","🥘","🍳",
-  "🥞","🧇","🥐","🥨","🧀","🍗","🍖","🥩","🍤","🥟","🍢","🍩","🍪","🧁","🍰","🥧",
-  "🍦","🍨","🍎","🍓","🍇","🍊","🍌","🥑","🍅","🌶","🥕","🌽","🥦","☕","🍺","🥤","🧋",
-];
-// Randomised scatter, cached per (meal, width-bucket) so it stays put across
-// re-plans and only regenerates when the board width really changes.
-const mealDecorCache = new Map();
+// Faint emoji scatters drawn behind each "you can't be here" region, themed to
+// what that region *is*: food behind meal breaks, breakfast behind the pre-day
+// -start zone, night behind the post-day-end zone, and travel behind the
+// getting-there / getting-out trip blocks. Each set is deliberately wide so the
+// scatter feels varied.
+const DECOR_SETS = {
+  food: [
+    "🍕","🍔","🌭","🥪","🌮","🌯","🍟","🥗","🍣","🍱","🍜","🍝","🍛","🍲","🥘","🍳",
+    "🥞","🧇","🥐","🥨","🧀","🍗","🍖","🥩","🍤","🥟","🍢","🍩","🍪","🧁","🍰","🥧",
+    "🍦","🍨","🍎","🍓","🍇","🍊","🍌","🥑","🍅","🌶","🥕","🌽","🥦","☕","🍺","🥤","🧋",
+  ],
+  // Before the day starts — breakfasty / morningy.
+  morning: [
+    "☕","🍳","🥐","🥞","🧇","🥣","🥛","🍵","🫖","🥯","🥓","🍞","🧈","🍯","🌅","🌄",
+    "🌞","⏰","🐓","🍊","🗞️","🥁",
+  ],
+  // After the day ends — nightly / sleepy.
+  night: [
+    "🌙","🌛","🌜","⭐","🌟","✨","💤","🛏️","😴","🥱","🌃","🌌","🦉","🕯️","🌠","🍷",
+    "🌉","🔭","🧦","🫖",
+  ],
+  // Getting there / getting out — travel.
+  travel: [
+    "🧳","✈️","🚆","🚂","🚕","🚌","🚉","🎒","🗺️","🧭","🛫","🛬","🚄","🚏","🛄","⛴️",
+    "🚲","🛴","🪧","📸",
+  ],
+};
 
-function buildMealDecorHTML(w, h) {
-  // Cap density well under the "3 per square inch" ceiling for a minor distraction.
-  const sqIn = (w / 96) * (h / 96);
-  const count = Math.max(2, Math.min(180, Math.round(sqIn * 2.3)));
+/** A decor layer element for a region: `<span>` the fill routine paints into.
+ *  `set` names an emoji palette (DECOR_SETS); `seed` keeps two same-set regions
+ *  (lunch vs dinner, arrival vs departure) scattering differently. */
+function decorSpan(set, seed) {
+  return `<span class="sch-decor" data-decor="${set}" data-seed="${seed}" aria-hidden="true"></span>`;
+}
+
+// The scatter is laid on a fixed pixel grid (one jittered emoji per cell), not a
+// percentage cloud, so it never stretches: a wider region just gains more cells
+// at the same density. Positions/emoji are a deterministic hash of the cell
+// index + the region's seed, so it stays put across re-plans and a resize only
+// *appends* emoji — the ones already on screen don't jump. Cached by seed+set+
+// rounded size so re-plans at the same size reuse the string.
+const decorCache = new Map();
+
+// ~96px per inch; 5 emoji per square inch → one cell every 96/√5 ≈ 43px.
+const DECOR_CELL_PX = 43;
+
+/** A stable 0..1 pseudo-random from three integers (cell x, cell y, salt). */
+function decorHash(x, y, salt) {
+  let h = (Math.imul(x, 73856093) ^ Math.imul(y, 19349663) ^ Math.imul(salt, 83492791)) >>> 0;
+  h ^= h >>> 13;
+  h = Math.imul(h, 0x5bd1e995) >>> 0;
+  h ^= h >>> 15;
+  return (h >>> 0) / 4294967296;
+}
+
+/** A small integer seed from a string, so different regions scatter differently. */
+function decorSalt(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+  return h >>> 0;
+}
+
+function buildDecorHTML(w, h, setName, seed) {
+  const set = DECOR_SETS[setName] || DECOR_SETS.food;
+  const salt = decorSalt(`${seed}:${setName}`);
+  const cols = Math.max(1, Math.ceil(w / DECOR_CELL_PX));
+  const rows = Math.max(1, Math.ceil(h / DECOR_CELL_PX));
   let html = "";
-  for (let i = 0; i < count; i++) {
-    const emoji = MEAL_FOODS[Math.floor(Math.random() * MEAL_FOODS.length)];
-    const left = (Math.random() * 100).toFixed(1);
-    const top = (Math.random() * 100).toFixed(1);
-    const rot = Math.round(Math.random() * 80 - 40);
-    const size = (11 + Math.random() * 13).toFixed(1);
-    const op = (0.55 + Math.random() * 0.45).toFixed(2);
-    html += `<span style="left:${left}%;top:${top}%;font-size:${size}px;opacity:${op};transform:translate(-50%,-50%) rotate(${rot}deg)">${emoji}</span>`;
+  for (let j = 0; j < rows; j++) {
+    for (let i = 0; i < cols; i++) {
+      const jx = (decorHash(i, j, salt + 1) - 0.5) * DECOR_CELL_PX * 0.8;
+      const jy = (decorHash(i, j, salt + 2) - 0.5) * DECOR_CELL_PX * 0.8;
+      const cx = i * DECOR_CELL_PX + DECOR_CELL_PX / 2 + jx;
+      const cy = j * DECOR_CELL_PX + DECOR_CELL_PX / 2 + jy;
+      if (cx < 0 || cx > w || cy < 0 || cy > h) continue;
+      const emoji = set[Math.floor(decorHash(i, j, salt + 3) * set.length)];
+      const size = (11 + decorHash(i, j, salt + 4) * 13).toFixed(1);
+      const rot = Math.round(decorHash(i, j, salt + 5) * 80 - 40);
+      const op = (0.55 + decorHash(i, j, salt + 6) * 0.45).toFixed(2);
+      html += `<span style="left:${cx.toFixed(1)}px;top:${cy.toFixed(1)}px;font-size:${size}px;opacity:${op};transform:translate(-50%,-50%) rotate(${rot}deg)">${emoji}</span>`;
+    }
   }
   return html;
 }
 
-/** Fill each meal band's decor layer once its size is known. Cached by band id
- *  + width bucket so scrubbing the plan doesn't reshuffle the food. */
-function populateMealDecors(host) {
-  for (const decor of host.querySelectorAll(".sch-meal .meal-decor")) {
-    const band = decor.parentElement;
-    const w = band.clientWidth || 600;
-    const h = band.clientHeight || 34;
-    const key = `${band.dataset.meal || "meal"}:${Math.round(w / 120)}`;
-    let html = mealDecorCache.get(key);
+/** Fill every decor layer on the board once sizes are known (meal bands, the
+ *  day-start/day-end zones, the trip blocks). Cached by seed+set+rounded size so
+ *  scrubbing the plan doesn't reshuffle the emoji. */
+function populateDecors(host) {
+  for (const decor of host.querySelectorAll(".sch-decor")) {
+    const region = decor.parentElement;
+    const w = region.clientWidth || 600;
+    const h = region.clientHeight || 34;
+    const setName = decor.dataset.decor || "food";
+    const seed = decor.dataset.seed || setName;
+    const key = `${setName}:${seed}:${Math.round(w / 16)}:${Math.round(h / 16)}`;
+    let html = decorCache.get(key);
     if (html == null) {
-      html = buildMealDecorHTML(w, h);
-      mealDecorCache.set(key, html);
+      html = buildDecorHTML(w, h, setName, seed);
+      decorCache.set(key, html);
     }
     decor.innerHTML = html;
   }
+}
+
+/** The excluded-show titles, escaped + newline-joined, for a [data-excl] hover
+ *  target — the schedule's excludes popup reads them back on pointerover. */
+function exclData(list) {
+  return escapeHtml(list.map((s) => s.title).join("\n"));
+}
+
+/** The inline orange "(excludes N shows)" pill for a meal band's centre label. */
+function exclPillHTML(list) {
+  if (!list.length) return "";
+  return ` <span class="excl-pill" data-excl="${exclData(list)}">(excludes ${list.length} show${list.length === 1 ? "" : "s"})</span>`;
 }
 
 function buildMealBand(meal, y) {
@@ -1777,16 +2020,15 @@ function buildMealBand(meal, y) {
   const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
   const blocks = (state.diag && state.diag.meals && state.diag.meals[meal.id]) || [];
   band.classList.toggle("sch-meal--blocking", blocks.length > 0);
-  const badge = blocks.length
-    ? `<span class="dl-blocked" title="${escapeHtml(blockTip(`Your ${meal.id} break`, blocks))}">not placeable · ${blocks.length}</span>`
-    : "";
+  const timeStr = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}`;
   // A faint, playful scatter of food emoji — filled in once laid out
-  // (populateMealDecors), so the count matches the band's actual area.
+  // (populateDecors), so the count matches the band's actual area. The
+  // centre label carries the time + meal + an inline "(excludes N shows)" pill
+  // (hover it for the list) instead of a separate corner badge.
   band.innerHTML =
-    `<span class="meal-decor" aria-hidden="true"></span>` +
+    decorSpan("food", meal.id) +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
-    `<span class="meal-label">🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}</span>` +
-    badge +
+    `<span class="meal-label">${timeStr} · 🍽 ${name}${exclPillHTML(blocks)}</span>` +
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
@@ -1804,6 +2046,7 @@ function buildTripBlock(which, y, axisH) {
     block.style.height = `${y(state.arrival.endMin)}px`;
     block.title = "Getting there — drag the lower edge; no shows are placed before this on your first day";
     block.innerHTML =
+      decorSpan("travel", "arrival") +
       `<span class="sch-trip-label">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>` +
       `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   } else {
@@ -1811,6 +2054,7 @@ function buildTripBlock(which, y, axisH) {
     block.style.height = `${Math.max(6, axisH - y(state.departure.startMin))}px`;
     block.title = "Getting out — drag the upper edge; no shows are placed after this on your last day";
     block.innerHTML =
+      decorSpan("travel", "departure") +
       `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
       `<span class="sch-trip-label">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>`;
   }
@@ -1898,7 +2142,7 @@ function repositionOverlayLive() {
     band.style.top = `${y(meal.startMin)}px`;
     band.style.height = `${Math.max(6, y(meal.endMin) - y(meal.startMin))}px`;
     const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
-    band.querySelector(".meal-label").textContent = `🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}`;
+    band.querySelector(".meal-label").textContent = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)} · 🍽 ${name}`;
   }
 }
 
@@ -1987,6 +2231,13 @@ function wireScheduleInteractions() {
     card.style.top = y + "px";
   };
 
+  // The decorative food scatter only shows while the pointer is on the board
+  // (and never on touch, where there's no hover — see the CSS). Toggling a class
+  // on the host survives the wholesale re-render (innerHTML is replaced, not the
+  // element), so the reveal state persists across re-plans.
+  host.addEventListener("pointerenter", () => host.classList.add("is-grid-hover"));
+  host.addEventListener("pointerleave", () => host.classList.remove("is-grid-hover"));
+
   host.addEventListener("pointerover", (e) => {
     const block = e.target.closest(".sch-show");
     if (!block) return;
@@ -2007,15 +2258,70 @@ function wireScheduleInteractions() {
     card.hidden = true;
   });
 
-  // Click a scheduled block → open its edfringe page. (No right-click.)
+  // Left-click a scheduled block → lock that exact performance into the plan
+  // (click again to unlock). The block is an <a href> to edfringe.com, so a
+  // right-click / middle-click still opens the page natively — we only take over
+  // the plain primary click here.
   host.addEventListener("click", (e) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const block = e.target.closest(".sch-show");
     if (!block) return;
+    e.preventDefault();
     const slot = findSlot(block.dataset.slug);
     if (!slot) return;
     card.hidden = true;
-    window.open(slot.url, "_blank", "noopener");
+    togglePinPerformance(slot.slug, slot.realDate, slot.startTime);
   });
+}
+
+/**
+ * A cursor-following popup listing the shows a day-hours line or meal break
+ * excludes. Delegated over the schedule for any [data-excl] target (the day-line
+ * badge, the meal band's inline pill) — a nicer, narrower cousin of the show
+ * hover card.
+ */
+function wireExcludePopup() {
+  const host = $("schedule");
+  let pop = $("exclPop");
+  if (!pop) {
+    pop = document.createElement("div");
+    pop.id = "exclPop";
+    pop.className = "excl-pop";
+    pop.hidden = true;
+    document.body.appendChild(pop);
+  }
+  const position = (e) => {
+    const pad = 14;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+    if (x + pop.offsetWidth > window.innerWidth - 8) x = e.clientX - pop.offsetWidth - pad;
+    if (y + pop.offsetHeight > window.innerHeight - 8) y = e.clientY - pop.offsetHeight - pad;
+    pop.style.left = x + "px";
+    pop.style.top = Math.max(8, y) + "px";
+  };
+  const fill = (pill) => {
+    const titles = (pill.dataset.excl || "").split("\n").filter(Boolean);
+    const shown = titles.slice(0, 14);
+    const more = titles.length - shown.length;
+    pop.innerHTML =
+      `<div class="excl-pop-head">Excludes ${titles.length} show${titles.length === 1 ? "" : "s"}</div>` +
+      `<ul class="excl-pop-list">${shown.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>` +
+      (more > 0 ? `<div class="excl-pop-more">+${more} more</div>` : "");
+  };
+  host.addEventListener("pointerover", (e) => {
+    const pill = e.target.closest("[data-excl]");
+    if (!pill) return;
+    fill(pill);
+    pop.hidden = false;
+    position(e);
+  });
+  host.addEventListener("pointermove", (e) => {
+    if (pop.hidden) return;
+    if (e.target.closest("[data-excl]")) position(e);
+    else pop.hidden = true;
+  });
+  host.addEventListener("pointerleave", () => { pop.hidden = true; });
+  $("scheduleWrap").addEventListener("scroll", () => { pop.hidden = true; });
 }
 
 /** Find a scheduled slot by slug in the current plan. */
@@ -2057,32 +2363,27 @@ function fillShowCard(card, slot) {
     `<div class="card-title">${escapeHtml(slot.title)}</div>` +
     `<div class="card-meta">${escapeHtml(timeStr)}${venue ? " · " + escapeHtml(venue) : ""}</div>` +
     (blurb ? `<div class="card-blurb">${blurb}</div>` : "") +
-    `<div class="card-hint">Click to open the edfringe.com page ↗</div>` +
+    `<div class="card-hint">Click to lock into your plan 🔒 · right-click to open edfringe.com ↗</div>` +
     `</div>`;
 }
 
 // --- Plan controls wiring --------------------------------------------------
 
 function syncDayInputs() {
-  $("ctlDayStart").value = minToHHMM(state.dayStartMin);
-  $("ctlDayEnd").value = String(state.dayEndMin);
+  // Extended clock so a past-midnight day-end reads honestly ("25:00", not "01:00").
+  $("ctlDayStart").value = minToDayClock(state.dayStartMin);
+  $("ctlDayEnd").value = minToDayClock(state.dayEndMin);
 }
 
-/** Fill the "day ends" select with 30-min steps from 20:00 to 27:00 (03:00),
- *  glossing the after-midnight ones ("25:00 · 1:00 am"). */
-function populateDayEndOptions() {
-  const sel = $("ctlDayEnd");
-  if (!sel || sel.options.length) return;
-  const frag = document.createDocumentFragment();
-  for (let m = 20 * 60; m <= DAY_END_CEIL; m += 30) {
-    const opt = document.createElement("option");
-    opt.value = String(m);
-    const gloss = afterMidnightGloss(m);
-    opt.textContent = gloss ? `${minToDayClock(m)} · ${gloss}` : minToDayClock(m);
-    frag.appendChild(opt);
-  }
-  sel.appendChild(frag);
-  sel.value = String(state.dayEndMin);
+/** Parse an "HH:MM" day-clock string to minutes-of-day, allowing the extended
+ *  Fringe range (hours up to 27 for a 03:00 finish). Null if malformed. */
+function parseDayClock(str) {
+  const m = /^\s*(\d{1,2}):(\d{2})\s*$/.exec(str || "");
+  if (!m) return null;
+  const h = Number(m[1]);
+  const mi = Number(m[2]);
+  if (h > 27 || mi > 59) return null;
+  return h * 60 + mi;
 }
 function syncMealInputs(meal) {
   $(`meal${cap(meal.id)}Start`).value = minToHHMM(meal.startMin);
@@ -2098,17 +2399,17 @@ function wirePlanControls() {
   $("ctlMax").addEventListener("input", refresh);
 
   // Day-hours time pickers.
+  // Day start/end are HH:MM text boxes: parse + clamp on change; a malformed
+  // entry just reverts to the current value (syncDayInputs reformats either way).
   $("ctlDayStart").addEventListener("change", () => {
-    const v = hhmmToMin($("ctlDayStart").value);
-    if (v == null) return;
-    state.dayStartMin = clamp(v, 0, effectiveDayEnd() - 15);
+    const v = parseDayClock($("ctlDayStart").value);
+    if (v != null) state.dayStartMin = clamp(v, 0, effectiveDayEnd() - 15);
     syncDayInputs();
     refresh();
   });
   $("ctlDayEnd").addEventListener("change", () => {
-    const v = Number($("ctlDayEnd").value);
-    if (Number.isNaN(v)) return;
-    state.dayEndMin = clamp(v, state.dayStartMin + 15, DAY_END_CEIL);
+    const v = parseDayClock($("ctlDayEnd").value);
+    if (v != null) state.dayEndMin = clamp(v, state.dayStartMin + 15, DAY_END_CEIL);
     syncDayInputs();
     refresh();
   });
@@ -2239,11 +2540,11 @@ wireFavActions();
 wireDebugButton();
 wireRetry();
 wireCalendarControls();
-wireOptimizer();
+wireWindowOptimizer();
 wireCellTips();
 wireScheduleInteractions();
+wireExcludePopup();
 wirePlanControls();
-populateDayEndOptions();
 wireExports();
 
 renderPerfPill(); // paint the version placeholder immediately

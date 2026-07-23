@@ -34,6 +34,13 @@
   --radius: 16px;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  /* A small violet padlock, used as the cursor on every "click to lock into the
+     plan" target (show names, day marks, scheduled blocks) so the affordance is
+     shown, not spelled out. Falls back to the pointer where SVG cursors aren't
+     honoured. */
+  --lock-cursor:
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='26'%20height='26'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%236c4cf1'%20stroke-width='2.2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Crect%20x='5'%20y='11'%20width='14'%20height='10'%20rx='2'%20fill='%23ffffff'/%3E%3Cpath%20d='M8%2011V7a4%204%200%200%201%208%200v4'/%3E%3C/svg%3E")
+      12 6, pointer;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -293,7 +300,6 @@ a { color: inherit; }
 .cal-collapse:hover { color: var(--ink); border-color: #d5d9e2; }
 .cal-collapse .cc-caret { transition: transform 0.18s ease; }
 #screen2.is-collapsed .cal-collapse .cc-caret { transform: rotate(-90deg); }
-#screen2.is-collapsed .cal-toolbar,
 #screen2.is-collapsed .cal-wrap,
 #screen2.is-collapsed .cal-legend { display: none; }
 
@@ -329,18 +335,8 @@ a { color: inherit; }
 .hc-label { font-size: 0.84rem; font-weight: 600; color: var(--ink); margin-top: 2px; }
 .hc-detail { font-size: 0.78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-/* Toolbar: the availability legend + the best-dates picker. Colours mirror
-   edfringe.com's own day-picker legend (see plan.js segClass / the --fr-*
-   tokens below). */
-.cal-toolbar {
-  display: flex; align-items: center; gap: 14px 20px;
-  margin: 22px 0 6px; padding-top: 18px; border-top: 1px solid var(--line);
-  flex-wrap: wrap;
-}
-.cal-toolbar-hint { margin: 0; font-size: 0.8rem; color: var(--muted); }
-.cal-toolbar-hint b { color: var(--violet-dark); }
-.optimize { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
-.opt-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+/* The availability-status legend colours mirror edfringe.com's own day-picker
+   legend (see plan.js segClass / the --fr-* tokens below). */
 .opt-select {
   font: inherit; font-size: 0.84rem; font-weight: 600; color: var(--ink);
   border: 1px solid var(--line); border-radius: 10px; background: #fff;
@@ -370,7 +366,7 @@ a { color: inherit; }
    toolbar/hero-count above are outside this container entirely, so they never
    scroll away either. */
 .cal-wrap {
-  position: relative; margin-top: 14px;
+  position: relative; margin-top: 20px;
   /* Deliberately shallow: the calendar is now the "pick your window" step that
      feeds the planner below it, so it stays compact and scrolls internally
      rather than pushing the Plan card off-screen. */
@@ -385,7 +381,7 @@ a { color: inherit; }
    width instead of holding their content's min-width and forcing the whole grid
    (day header + lanes) to overflow — which clipped the "In plan" column and the
    window flags on a narrower page. */
-.cal-row { display: grid; grid-template-columns: 190px minmax(0, 1fr) 84px; gap: 0 14px; align-items: center; }
+.cal-row { display: grid; grid-template-columns: 184px minmax(0, 1fr) 104px; gap: 0 12px; align-items: center; }
 
 .cal-head { border-bottom: 1px solid var(--line); padding-bottom: 6px; }
 .cal-head-right { font-size: 0.62rem; font-weight: 600; color: #98a2b3; text-align: center; line-height: 1.15; }
@@ -422,16 +418,16 @@ a { color: inherit; }
 /* A scheduled row gets a faint green wash so the grid mirrors the plan (the
    Status column carries the ✓ In plan text; no coloured left bar). */
 .lane--scheduled { background: rgba(5, 150, 105, 0.05); }
-/* The name and the performance marks are the two click targets (pin the show /
-   pin that performance). Everything else keeps the normal cursor. */
-.lane-label { cursor: pointer; }
+/* The name and the performance marks are the two click targets (lock the show /
+   lock that performance). The padlock cursor carries that affordance. */
+.lane-label { cursor: var(--lock-cursor); }
 .lane-label:hover .lane-title { text-decoration: underline; }
 .lane-track { display: grid; grid-template-columns: repeat(31, minmax(0, 1fr)); gap: 3px; align-items: center; height: 100%; }
 
 /* A day cell holds one coloured segment per performance; two performances on a
    day render as two side-by-side segments — the split IS the "two shows that
    day" cue. Single-performance days read as one solid bar. */
-.cell { height: 10px; border-radius: 3px; display: flex; gap: 0; overflow: hidden; cursor: pointer; }
+.cell { height: 10px; border-radius: 3px; display: flex; gap: 0; overflow: hidden; cursor: var(--lock-cursor); }
 .cell:hover { box-shadow: 0 0 0 2px rgba(16, 24, 40, 0.3); }
 .cell-multi { gap: 1.5px; }
 .seg { flex: 1 1 0; min-width: 0; border-radius: 3px; }
@@ -463,15 +459,27 @@ a { color: inherit; }
 .seg-noalloc { background: var(--fr-noalloc); }
 .seg-sold    { background: var(--fr-sold-bg); box-shadow: inset 0 0 0 1.5px var(--fr-sold-line); }
 
-.lane-status { font-size: 0.72rem; line-height: 1.2; text-align: center; }
-/* The pin sits just left of the status pill on a forced lane. */
-.lane-status .st-pin { font-size: 0.7rem; margin-right: 2px; vertical-align: middle; }
+/* Fixed-height row so the pushpin (a tall glyph) can't stretch a lane taller
+   than its neighbours — there's no vertical room for that. Content is clamped
+   and centred; the pin sits just left of the status pill. */
+.lane-status {
+  font-size: 0.72rem; line-height: 1.1; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 2px;
+  height: 20px; overflow: hidden;
+}
+.lane-status .st-pin { font-size: 0.62rem; line-height: 1; flex: 0 0 auto; }
 .lane-status .st-plan {
   font-weight: 700; color: var(--ok-text); white-space: nowrap;
   background: var(--ok-bg); border-radius: 999px; padding: 2px 7px;
 }
 .lane-status .st-in { color: var(--violet-dark); font-weight: 600; white-space: nowrap; }
 .lane-status .st-no { color: #c2c8d2; font-weight: 700; }
+/* "Can't fit" — catchable but crowded out; muted, no alarm. */
+.lane-status .st-cant { color: var(--muted); font-weight: 600; white-space: nowrap; }
+/* "Sold out" — greyed, matching the sold-out day marks. */
+.lane-status .st-sold { color: #98a2b3; font-weight: 700; white-space: nowrap; }
+/* "Bad dates" — a dates problem the window scrubber fixes; quiet violet. */
+.lane-status .st-dates { color: var(--violet-dark); font-weight: 600; white-space: nowrap; }
 /* A show with nothing catchable in the window recedes as a whole. But a
    scheduled or forced row is never dimmed — it made the plan. */
 .lane--out:not(.lane--scheduled) .lane-title { opacity: 0.42; }
@@ -481,21 +489,54 @@ a { color: inherit; }
 /* All dragging lives here: the two handle tabs resize the window; the space
    between them slides the whole window. */
 .win-rail { position: relative; height: 38px; }
+/* The between-handles band both slides the window and carries the window
+   length + the optimizer link (the old separate toolbar folded in here). */
 .rail-band {
   position: absolute; top: 6px; bottom: 0;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  overflow: hidden; padding: 0 8px;
   background: rgba(108, 76, 241, 0.07);
   border-radius: 8px 8px 0 0;
   cursor: grab; touch-action: none;
 }
+.rail-band:hover { background: rgba(108, 76, 241, 0.12); }
 .rail-band:active { cursor: grabbing; }
-/* A centred grip bar so the between-space reads as draggable. */
-.rail-band::before {
-  content: ""; position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: 26px; height: 4px; border-radius: 2px;
-  background: rgba(108, 76, 241, 0.35);
+/* The window length — the "grip" text; inert so a drag starts through it. */
+.rail-len {
+  font-size: 0.7rem; font-weight: 700; color: var(--violet-dark);
+  white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none;
 }
-.rail-band:hover::before { background: rgba(108, 76, 241, 0.6); }
+/* A mild, low-key "Optimize?" link. Interactive (it opens the popover), so it
+   re-enables pointer events the band's label opts out of. */
+.rail-opt {
+  font: inherit; font-size: 0.68rem; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 0; cursor: pointer; pointer-events: auto;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-color: #b7bcc9;
+  white-space: nowrap;
+}
+.rail-opt:hover { color: var(--violet-dark); text-decoration-color: currentColor; }
+.rail-opt:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+/* The optimizer popover (positioned in JS, fixed, so it escapes the scroller). */
+.rail-pop {
+  position: fixed; z-index: 60; min-width: 224px;
+  display: flex; flex-direction: column; gap: 12px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px; box-shadow: var(--shadow-soft);
+}
+.rail-pop[hidden] { display: none; }
+.rail-pop-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-size: 0.84rem; font-weight: 600; color: var(--ink);
+}
+.rail-pop-row input {
+  width: 66px; font: inherit; font-size: 0.86rem; font-weight: 600; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 6px 8px;
+}
+.rail-pop-check { display: flex; align-items: center; gap: 8px; font-size: 0.84rem; color: var(--ink); cursor: pointer; }
+.rail-pop-check input { accent-color: var(--violet); width: 15px; height: 15px; }
+.rail-pop .btn-sm { justify-content: center; }
+.rail-pop-row input:focus-visible, .rail-pop-check input:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
 
 .win-handle {
   position: absolute; top: 0; bottom: 0; width: 26px;
@@ -514,35 +555,39 @@ a { color: inherit; }
    from their stem (start points left, end points right) so they never collide
    even when the window is dragged narrow. The "0 2px 0" layer is a solid bottom
    edge that gives the button height; the press state below sinks it. */
+/* A solid violet chip planted on the stem line — reads as a little flag/marker
+   on the date, not a text label. A quiet "From"/"To" cap disambiguates the two
+   ends; the inner-bottom corner squares off where the chip meets its stem so it
+   looks planted. No more grip bars. */
 .win-flag {
   position: absolute; top: 2px;
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.72rem; font-weight: 700; color: var(--violet-dark);
-  background: linear-gradient(#ffffff, #f1ecff);
-  border: 1.5px solid var(--violet); border-radius: 9px;
-  padding: 6px 11px; white-space: nowrap;
-  box-shadow: 0 2px 0 rgba(90, 63, 214, 0.35), 0 5px 12px rgba(16, 24, 40, 0.18);
+  display: inline-flex; align-items: baseline; gap: 5px;
+  font-size: 0.74rem; font-weight: 800; color: #fff;
+  background: linear-gradient(180deg, #7d5cf5, var(--violet));
+  border-radius: 9px;
+  padding: 5px 10px; white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(90, 63, 214, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   font-variant-numeric: tabular-nums;
   cursor: grab;
-  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease, color 0.12s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.12s ease;
 }
-.win-handle--start .win-flag { right: 50%; margin-right: -2px; }
-.win-handle--end .win-flag { left: 50%; margin-left: -2px; }
-/* Grip bars inherit the flag's text colour (violet → white on hover). */
-.win-flag .grip { display: inline-flex; gap: 2.5px; }
-.win-flag .grip i { width: 3px; height: 14px; border-radius: 2px; background: currentColor; opacity: 0.55; display: block; }
+.win-flag .wf-cap {
+  font-size: 0.56rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.72;
+}
+.win-handle--start .win-flag { right: 50%; margin-right: -1px; border-bottom-right-radius: 2px; }
+.win-handle--end .win-flag { left: 50%; margin-left: -1px; border-bottom-left-radius: 2px; }
 .win-handle:hover .win-flag, .win-handle:focus-visible .win-flag {
-  background: var(--violet); color: #fff; border-color: var(--violet);
+  background: linear-gradient(180deg, #6c4cf1, var(--violet-dark));
   transform: translateY(-1px);
-  box-shadow: 0 3px 0 rgba(90, 63, 214, 0.5), 0 9px 18px rgba(16, 24, 40, 0.24);
+  box-shadow: 0 6px 14px rgba(90, 63, 214, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-/* Pressed: sink the button and flatten its edge for a tactile grab. */
+/* Pressed: settle the chip for a tactile grab. */
 .win-handle:active .win-flag {
-  transform: translateY(1px);
-  box-shadow: 0 1px 0 rgba(90, 63, 214, 0.4), 0 3px 8px rgba(16, 24, 40, 0.18);
+  transform: translateY(0); cursor: grabbing;
+  box-shadow: 0 2px 6px rgba(90, 63, 214, 0.4);
 }
 .win-handle:focus-visible { outline: none; }
-.win-handle:focus-visible .win-flag { box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.35), 0 5px 12px rgba(16, 24, 40, 0.18); }
+.win-handle:focus-visible .win-flag { box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.4), 0 6px 14px rgba(16, 24, 40, 0.2); }
 
 /* --- Window overlay over the lanes: purely visual, never intercepts the
    pointer — lane cells keep their hover tooltips. --- */
@@ -577,11 +622,10 @@ a { color: inherit; }
   max-width: 280px;
 }
 
-/* Colour key + right-click hint, moved below the grid. */
+/* Colour key, below the grid. */
 .cal-legend {
   margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line);
 }
-.legend-hint { margin: 10px 0 0; font-size: 0.76rem; color: #98a2b3; }
 
 /* ============ Allocate / itinerary (screen 3) ============ */
 .plan-card { padding: 28px 28px 26px; margin-top: 22px; }
@@ -631,6 +675,9 @@ a { color: inherit; }
   padding: 6px 9px;
 }
 .ctl-num { width: 68px; }
+/* Plain HH:MM clock text boxes (day start / day end). */
+.ctl-clock { width: 76px; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.ctl-clock:invalid { border-color: var(--warn); }
 .ctl-time:focus-visible, .ctl-num:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
 /* Travel-mode segmented control. (Class name avoids the calendar's .seg.) */
 .tmode { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; align-self: flex-start; }
@@ -654,6 +701,28 @@ a { color: inherit; }
 .plan-summary { font-size: 0.92rem; color: var(--ink); margin-bottom: 14px; }
 .plan-summary b { color: var(--violet-dark); font-weight: 800; }
 .plan-summary .ps-sub { color: var(--muted); font-weight: 400; }
+/* A packed plan is a payoff — dress the summary as a shining gold bar with a
+   slow gleam sweeping across the metal (behind the text, so it stays legible). */
+.plan-summary.is-planned {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-bottom: 16px; padding: 11px 16px; border-radius: 12px;
+  font-size: 0.95rem; font-weight: 600; color: #6b4e00;
+  background: linear-gradient(120deg, #fbeeb0 0%, #f2cf5e 28%, #e7b52f 52%, #f6de8c 78%, #eac14a 100%);
+  border: 1px solid #e0b23a;
+  box-shadow: 0 6px 16px rgba(190, 145, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+.plan-summary.is-planned::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(105deg, transparent 34%, rgba(255, 255, 255, 0.75) 50%, transparent 66%);
+  transform: translateX(-130%);
+  animation: goldShine 4s ease-in-out infinite;
+}
+@keyframes goldShine {
+  0% { transform: translateX(-130%); }
+  55%, 100% { transform: translateX(130%); }
+}
+.plan-summary.is-planned b { color: #7a4d00; font-weight: 800; }
+.plan-summary.is-planned .ps-sub { color: #8a6a1e; font-weight: 500; }
 
 /* --- The schedule graphic --- */
 .schedule-wrap {
@@ -706,28 +775,48 @@ a { color: inherit; }
   background-position: 0 0;
 }
 .sch-show {
-  position: absolute; left: 5px; right: 5px; overflow: hidden;
-  border-radius: 8px; padding: 4px 6px;
+  position: absolute; left: 3px; right: 3px; overflow: hidden;
+  border-radius: 7px; padding: 2px 5px;
   background: #fff; border: 1px solid var(--line);
   border-left: 4px solid var(--seg, var(--violet));
   box-shadow: 0 2px 6px rgba(16, 24, 40, 0.07);
   font-size: 0.72rem; line-height: 1.2;
-  display: flex; gap: 5px; align-items: flex-start; cursor: pointer;
+  display: flex; gap: 4px; align-items: flex-start; cursor: var(--lock-cursor);
+  text-decoration: none; color: var(--ink); /* it's an <a> — strip link chrome */
 }
 .sch-show:hover { box-shadow: 0 4px 12px rgba(16, 24, 40, 0.16); border-color: #d5d9e2; z-index: 3; }
+.sch-show:focus-visible { outline: 3px solid var(--violet); outline-offset: 1px; z-index: 3; }
+/* A locked-in (forced) show wears a green ring + a pushpin, so the calendar
+   shows *why* the plan looks the way it does — this one was pinned. The badge
+   sits in the top-right corner (the block clips its overflow). */
+.sch-show--pinned { border-color: var(--ok); box-shadow: inset 0 0 0 1.5px var(--ok), 0 2px 6px rgba(16, 24, 40, 0.1); }
+.sch-show--pinned:hover { box-shadow: inset 0 0 0 1.5px var(--ok), 0 4px 12px rgba(16, 24, 40, 0.16); }
+.sch-pin {
+  position: absolute; top: 0; right: 1px; font-size: 0.72rem; line-height: 1;
+  z-index: 2; pointer-events: none; filter: drop-shadow(0 1px 1px rgba(16, 24, 40, 0.3));
+}
 /* Genre emoji, pinned to the left edge. */
 .sch-emoji { flex: 0 0 auto; font-size: 0.92rem; line-height: 1.1; }
 .sch-body-text { min-width: 0; flex: 1; }
-/* The start–end time is deliberately tiny — the name is what matters. */
+/* The start–end time is deliberately tiny + faint — the name is what matters. */
 .sch-time {
-  display: block; font-weight: 600; color: var(--muted);
+  display: block; font-weight: 600; color: var(--muted); opacity: 0.7;
   font-variant-numeric: tabular-nums; font-size: 0.56rem; letter-spacing: 0.01em;
 }
+/* The title carries the block. Regular weight (not bold) reads calmer and fits
+   more of the name before the 2-line clamp bites. */
 .sch-name {
-  font-family: var(--display); font-weight: 600; color: var(--ink); font-size: 0.72rem;
+  font-family: var(--display); font-weight: 500; color: var(--ink); font-size: 0.72rem;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .sch-venue { color: var(--muted); font-size: 0.64rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Tight columns shed chrome so the title keeps the room: narrow drops the time,
+   tiny drops the genre emoji and trims padding to the bone. */
+.schedule.cols-narrow .sch-show { padding: 2px 4px; }
+.schedule.cols-narrow .sch-time { display: none; }
+.schedule.cols-narrow .sch-venue { display: none; }
+.schedule.cols-tiny .sch-show { left: 2px; right: 2px; gap: 2px; border-left-width: 3px; }
+.schedule.cols-tiny .sch-emoji { display: none; }
 /* Left-accent colours reuse the edfringe.com availability palette. */
 .seg-avail   { --seg: var(--fr-avail); }
 .seg-2for1   { --seg: var(--fr-2for1); }
@@ -771,12 +860,12 @@ a { color: inherit; }
   cursor: ns-resize; pointer-events: auto; touch-action: none;
 }
 .sch-dayline .dl-flag {
-  position: absolute; right: 4px; top: -9px;
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px;
   font-size: 0.6rem; font-weight: 700; color: #fff; background: var(--violet);
   border-radius: 5px; padding: 1px 6px; white-space: nowrap; pointer-events: none;
   font-variant-numeric: tabular-nums;
 }
-.sch-dayline--end .dl-flag { top: 1px; }
+.sch-dayline--end .dl-flag { bottom: auto; top: 8px; }
 .sch-dayline.dragging .dl-flag, .sch-dayline .dl-grip:hover ~ .dl-flag { background: var(--violet-dark); }
 /* Meal-break band: draggable to move, edge handles to resize. Its background
    now matches the "before day starts / after day ends" zones (a neutral
@@ -794,13 +883,20 @@ a { color: inherit; }
   font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
   font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-/* Playful faint food scatter behind the label — randomised emoji, each placed,
-   rotated and sized in JS (populateMealDecors). */
-.sch-meal .meal-decor {
+/* Playful faint emoji scatter behind a blocker region (meal band, day-start /
+   day-end zone, or trip block) — deterministic emoji on a fixed pixel grid
+   (populateDecors). It only reveals while the pointer is on the board (the
+   .is-grid-hover class), and is dropped entirely on touch devices where there's
+   no hover to gate it. */
+.sch-decor {
   position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
-  opacity: 0.22;
+  opacity: 0; transition: opacity 0.2s ease;
 }
-.sch-meal .meal-decor span { position: absolute; display: block; line-height: 1; }
+.schedule.is-grid-hover .sch-decor { opacity: 0.22; }
+.sch-decor span { position: absolute; display: block; line-height: 1; }
+@media (hover: none) {
+  .sch-decor { display: none; }
+}
 
 /* "Getting there" / "getting out" blocks — one per trip, inside their own day
    column. Same hatch as the zones/meals; drag the inner edge to resize. */
@@ -815,9 +911,10 @@ a { color: inherit; }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-/* Label sits just above the grip glyph on the block's draggable inner edge. */
-.sch-trip--arrival .sch-trip-label { bottom: 11px; }
-.sch-trip--departure .sch-trip-label { top: -16px; }
+/* The label hugs the block's draggable inner edge: arrival just above its
+   bottom glyph, departure just below its top glyph (both inside the block). */
+.sch-trip--arrival .sch-trip-label { bottom: 4px; }
+.sch-trip--departure .sch-trip-label { top: 8px; }
 .sch-trip.dragging {
   background: repeating-linear-gradient(-45deg, rgba(108,76,241,0.12) 0 6px, rgba(108,76,241,0.04) 6px 12px);
 }
@@ -948,11 +1045,36 @@ a { color: inherit; }
   border-radius: 5px; padding: 1px 6px; white-space: nowrap; pointer-events: auto;
 }
 .sch-dayline--end .dl-blocked { top: 1px; transform: translateY(100%); }
-.sch-meal .dl-blocked { top: 50%; right: 6px; transform: translateY(-50%); }
+
+/* The inline "(excludes N shows)" pill on a meal band's centre label. Orange,
+   compact, and interactive (hover it for the list) — it replaces the old corner
+   "not placeable · N" badge on meal bands. */
+.excl-pill {
+  pointer-events: auto; cursor: help; vertical-align: middle;
+  font-size: 0.56rem; font-weight: 700; color: #fff; background: #c77700;
+  border-radius: 5px; padding: 0 5px; white-space: nowrap;
+}
+/* The excludes-list hover popup — a narrower cousin of the show card. */
+.excl-pop {
+  position: fixed; z-index: 70; pointer-events: none; max-width: 190px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(16, 24, 40, 0.2); padding: 8px 10px;
+}
+.excl-pop-head {
+  font-size: 0.62rem; font-weight: 800; color: #c77700;
+  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px;
+}
+.excl-pop-list { margin: 0; padding: 0; list-style: none; }
+.excl-pop-list li {
+  font-size: 0.72rem; color: var(--ink); line-height: 1.35;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px;
+}
+.excl-pop-more { margin-top: 4px; font-size: 0.66rem; font-weight: 700; color: var(--muted); }
 
 @media (prefers-reduced-motion: reduce) {
   .hc-num.bump { animation: none; }
   .sch-show--enter, .sch-show--moving, .sch-ghost, .sch-day--enter, .lane--flash { animation: none; transition: none; }
+  .plan-summary.is-planned::before { animation: none; opacity: 0; }
   #win.is-sliding .win-dim, #win.is-sliding .win-band,
   #winRail.is-sliding .rail-band, #winRail.is-sliding .win-handle { transition: none; }
   html { scroll-behavior: auto; }
