@@ -1,0 +1,30 @@
+{
+  "id": "2026HYSTERI",
+  "title": "#Hysterical",
+  "slug": "hysterical",
+  "genre": "Theatre",
+  "subgenres": ["Comedy", "LGBTQ+"],
+  "company": "Panad Productions®",
+  "duration": 50,
+  "ageRestriction": "EIGHTEEN",
+  "free": false,
+  "image": "9f3be440-5475-4726-ae27-1aa3158896a6",
+  "smallImage": "9f3be440-5475-4726-ae27-1aa3158896a6",
+  "blurb": "Hysterical: Synonym: Over-emotional, deranged. The Brighton, Camden and Lambeth Fringe sell-out show is back! A satirical, educational comedy show exploring…",
+  "venue": "39",
+  "venueName": "Space 2 at theSpace on the Mile",
+  "room": "Space 2",
+  "performances": [
+    {"date": "2026-08-07", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-08", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-09", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-10", "start": "21:30", "soldOut": false, "status": "TWO_FOR_ONE"},
+    {"date": "2026-08-11", "start": "21:30", "soldOut": false, "status": "TWO_FOR_ONE"},
+    {"date": "2026-08-19", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-20", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-21", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-22", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-24", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"},
+    {"date": "2026-08-28", "start": "21:30", "soldOut": false, "status": "TICKETS_AVAILABLE"}
+  ]
+}
