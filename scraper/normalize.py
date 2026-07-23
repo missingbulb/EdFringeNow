@@ -153,12 +153,26 @@ def primary_image(images: list | None) -> str | None:
     return None
 
 
+def image_of_type(images: list | None, image_type: str) -> str | None:
+    """First image url whose imageType matches (case-insensitive)."""
+    for img in images or []:
+        if img.get("url") and (img.get("imageType") or "").lower() == image_type:
+            return img["url"]
+    return None
+
+
+def large_image(images: list | None) -> str | None:
+    """The show's full-size image: prefer the API's "Large" variant, else any.
+
+    The API doesn't guarantee image order, so we can't rely on the first url
+    being the large one — match on imageType explicitly.
+    """
+    return image_of_type(images, "large") or primary_image(images)
+
+
 def small_image(images: list | None) -> str | None:
     """The show's card-sized image: prefer the API's "Small" variant, else any."""
-    for img in images or []:
-        if img.get("url") and (img.get("imageType") or "").lower() == "small":
-            return img["url"]
-    return primary_image(images)
+    return image_of_type(images, "small") or primary_image(images)
 
 
 def is_free(event: dict) -> bool:
@@ -214,7 +228,7 @@ def normalize_event(event: dict) -> dict:
         "duration": duration,
         "ageRestriction": event.get("ageRestriction") or None,
         "free": is_free(event),
-        "image": primary_image(event.get("images")),
+        "image": large_image(event.get("images")),
         "smallImage": small_image(event.get("images")),
         "blurb": short_blurb(event.get("description")),
         "venue": venue_code,
@@ -483,8 +497,10 @@ FIXTURE_EVENT = {
     "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
     "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
     "description": "A **razor-sharp** hour of comedy.\n\nReally funny.",
-    "images": [{"url": "https://img/large.jpg", "imageType": "Large"},
-               {"url": "https://img/small.jpg", "imageType": "Small"}],
+    # Small listed before Large, as the live API actually returns them, so the
+    # transform must not rely on order to pick the large image.
+    "images": [{"url": "https://img/small.jpg", "imageType": "Small"},
+               {"url": "https://img/large.jpg", "imageType": "Large"}],
     "venues": [{"title": "Pleasance Courtyard", "slug": "pleasance-courtyard"}],
     "spaces": [{"id": 5, "title": "Beneath", "venueName": "Pleasance Courtyard",
                 "venueCode": "33"}],
@@ -507,7 +523,8 @@ def selftest() -> int:
     assert rec["free"] is False
     assert rec["duration"] == 60
     assert rec["blurb"] == "A razor-sharp hour of comedy. Really funny.", rec["blurb"]
-    # smallImage prefers the API's "Small" variant; `image` stays the first url.
+    # `image` prefers the "Large" variant and smallImage the "Small" one,
+    # regardless of the order the API lists them in.
     assert rec["smallImage"] == "https://img/small.jpg", rec["smallImage"]
     assert rec["image"] == "https://img/large.jpg", rec["image"]
     assert len(rec["performances"]) == 2, "cancelled performance must be dropped"

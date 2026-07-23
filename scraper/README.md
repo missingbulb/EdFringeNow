@@ -85,8 +85,9 @@ Normalization rules:
   `Refresh today's ticket status (hourly)` workflow (`refresh_ticket_status.py`)
   updates just today's `ts` values each hour during the festival — a light paged
   pass, no per-show queries.
-- **Images**: the master keeps `smallImage` (the API's "Small" variant) for use
-  on cards. Not in the day files yet.
+- **Images**: the master keeps both `image` (the API's "Large" variant) and
+  `smallImage` (the "Small" variant), each selected by `imageType` rather than
+  list order. Not in the day files yet.
 - **Price** = a `free` flag (the listing API exposes no amount).
 - **Coordinates** are geocoded from each venue's UK postcode via
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
