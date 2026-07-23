@@ -161,6 +161,9 @@ const state = {
   // The latest plan.
   schedule: null,
   scheduledSlugs: new Set(),
+  // slug -> slotKey of the one performance the plan actually set for that show,
+  // so the grid can ring the chosen day/time (not just flag the whole lane).
+  selectedSlot: new Map(),
   diag: null, // latest placementDiagnostics(): which controls block which shows
   schedAxis: null, // { axisTopMin, axisBottomMin, hourPx, headPx } for overlay dragging
   // Build version + reschedule-timing telemetry (surfaced in the header pill).
@@ -615,6 +618,9 @@ function refresh(opts) {
   recordResched(performance.now() - t0);
   state.schedule = schedule;
   state.scheduledSlugs = new Set(schedule.scheduled.map((s) => s.slug));
+  // The exact performance the plan chose for each scheduled show, so the grid
+  // can ring that one mark (the "selected plan" the user sees on the lanes).
+  state.selectedSlot = new Map(schedule.scheduled.map((s) => [s.slug, slotKey(s)]));
 
   // Which controls are, on their own, making a catchable show un-placeable —
   // drives the "prevents N shows" labels, the lane marks, and the schedule
@@ -666,17 +672,41 @@ function applyVerdicts(bySlug, filter) {
     ref.el.classList.toggle("lane--forced", forced);
     ref.el.classList.toggle("lane--blocked", notPlaceable);
 
-    // Ring the one performance mark that's pinned (if any) so the pin is legible.
+    // Mark the performance marks so the grid *shows the plan*, not just flags the
+    // lane: the one performance the plan set gets a solid green ring; a whole-show
+    // pin dashes every performance (green); an exact-performance pin also carries
+    // a pushpin badge that sits above the mark (overlapping the row above is fine).
     const pin = state.forced.get(ref.slug);
     const pinnedKey = typeof pin === "string" ? pin : null;
+    const forcedShow = pin === true;
+    const selectedKey = state.selectedSlot.get(ref.slug) || null;
     for (const seg of ref.el.querySelectorAll(".seg")) {
-      const isPinned =
-        pinnedKey != null && slotKey({ date: seg.dataset.date, start: seg.dataset.start }) === pinnedKey;
+      const key = slotKey({ date: seg.dataset.date, start: seg.dataset.start });
+      const isSelected = selectedKey != null && key === selectedKey;
+      const isPinned = pinnedKey != null && key === pinnedKey;
+      seg.classList.toggle("seg--selected", isSelected);
       seg.classList.toggle("seg--pinned", isPinned);
+      seg.classList.toggle("seg--forced-all", forcedShow && !isSelected);
+      const cell = seg.parentElement;
+      cell.classList.toggle("cell--pin", isPinned);
+      let badge = seg.querySelector(".seg-pin");
+      if (isPinned && !badge) {
+        badge = document.createElement("span");
+        badge.className = "seg-pin";
+        badge.setAttribute("aria-hidden", "true");
+        badge.textContent = "📌";
+        seg.appendChild(badge);
+      } else if (!isPinned && badge) {
+        badge.remove();
+      }
     }
 
+    // A pinned lane shows the pin in its status too, right next to the checkmark.
+    const pinMark = forced
+      ? `<span class="st-pin" aria-hidden="true" title="pinned into your plan">📌</span>`
+      : "";
     if (scheduled) {
-      ref.statusEl.innerHTML = `<span class="st-plan" title="in your plan">&check;&nbsp;In plan</span>`;
+      ref.statusEl.innerHTML = `${pinMark}<span class="st-plan" title="in your plan">&check;&nbsp;In plan</span>`;
     } else if (notPlaceable) {
       ref.statusEl.innerHTML = `<span class="st-blocked" title="catchable in your dates, but your day hours or meal breaks rule out every performance">Not placeable</span>`;
     } else if (catchable) {
