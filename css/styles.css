@@ -998,6 +998,32 @@ a { color: inherit; }
    exists) and the browse section (shows title, filters, map, list). */
 .section-divider { border: 0; height: 1px; background: var(--line); margin: 28px 0 4px; }
 
+/* --- Map / list view switch: one view at a time, flipped from a right rail --- */
+.view-area { display: flex; align-items: stretch; gap: 10px; margin-top: 20px; }
+.view-panes { flex: 1 1 auto; min-width: 0; }
+/* Inside the flex row the panes own no top margin — .view-area supplies it. */
+.view-panes > .map-section,
+.view-panes > .shows-section { margin-top: 0; }
+/* The rail: a slim column pinned to the right, sticky so it stays reachable
+   while a long list scrolls. */
+.view-switch {
+  flex: 0 0 auto; align-self: flex-start;
+  position: sticky; top: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 5px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper);
+}
+.view-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  width: 52px; padding: 9px 4px;
+  font: inherit; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.01em;
+  color: var(--muted); background: transparent; border: none; border-radius: 10px;
+  cursor: pointer; transition: color 0.12s ease, background 0.12s ease;
+}
+.view-btn.is-active { color: #fff; background: var(--red); }
+.view-btn:not(.is-active):hover { color: var(--ink); background: rgba(0, 0, 0, 0.04); }
+.view-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.view-btn-label { line-height: 1; }
+
 /* --- Map: supporting, calm, modest --- */
 .map-section { margin: 20px 0 0; }
 #leaflet-map { height: 260px; border: 1px solid var(--line); border-radius: 14px; box-shadow: none; }

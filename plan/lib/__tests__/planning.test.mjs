@@ -213,6 +213,33 @@ test("buildSchedule: a forced show survives the min-per-day drop", () => {
   assert.deepEqual(forced.forced, ["solo"]);
 });
 
+test("buildSchedule: forcing a whole show overrides a meal break blocking its only performance", () => {
+  const shows = [show("lunchonly", "A", [{ start: "13:00" }])]; // 13:00–14:00, inside lunch
+  const meal = { mealBreaks: [{ start: "12:30", end: "13:30" }] };
+
+  // Unforced, the meal break blocks it (same as the plain meal-break test).
+  assert.equal(buildSchedule(shows, { ...WIDE, ...meal }).counts.scheduledShows, 0);
+
+  // Forcing the whole show must land it, overriding the meal break — the same
+  // override a pinned exact performance already gets.
+  const forced = buildSchedule(shows, { ...WIDE, ...meal, forcedSlugs: ["lunchonly"] });
+  assert.equal(forced.counts.scheduledShows, 1);
+  assert.deepEqual(forced.scheduled.map((s) => s.slug), ["lunchonly"]);
+});
+
+test("buildSchedule: a forced whole show still prefers an unblocked performance when one exists", () => {
+  // Two performances: one inside lunch, one clear of it. Forcing the show should
+  // keep the clear one rather than needlessly overriding the meal break.
+  const shows = [show("twotimes", "A", [{ start: "13:00" }, { start: "17:00" }])];
+  const forced = buildSchedule(shows, {
+    ...WIDE,
+    mealBreaks: [{ start: "12:30", end: "13:30" }],
+    forcedSlugs: ["twotimes"],
+  });
+  assert.equal(forced.counts.scheduledShows, 1);
+  assert.equal(forced.scheduled[0].startMinuteOfDay, 17 * 60); // the 17:00 performance, not the blocked 13:00
+});
+
 test("buildSchedule: forcing a clashing show displaces the earliest-finish default", () => {
   // Same venue, overlapping → only one can be attended. Greedy prefers P
   // (earliest finish); forcing Q flips it.
@@ -271,12 +298,16 @@ test("buildSchedule: forcedPerformances pins one exact performance", () => {
   assert.deepEqual(pinned.forced, ["m"]);
 });
 
-test("buildSchedule: a pinned performance overrides the day-hours window", () => {
+test("buildSchedule: forcing a show overrides the day-hours window", () => {
   const shows = [show("late", "A", [{ start: "23:30" }])]; // 23:30–00:30
-  // A day ending at 22:00 rules the show out of a whole-show force…
-  const blocked = buildSchedule(shows, { ...WIDE, dayEndMin: 22 * 60, forcedSlugs: ["late"] });
-  assert.equal(blocked.counts.scheduledShows, 0);
-  // …but an explicit pin on that performance honours it anyway.
+  // Unforced, a day ending at 22:00 rules the show out.
+  const dropped = buildSchedule(shows, { ...WIDE, dayEndMin: 22 * 60 });
+  assert.equal(dropped.counts.scheduledShows, 0);
+  // Forcing the whole show overrides the day-hours block (a must-see lands even
+  // outside your day hours) — the same override an explicit pin gets.
+  const forced = buildSchedule(shows, { ...WIDE, dayEndMin: 22 * 60, forcedSlugs: ["late"] });
+  assert.equal(forced.counts.scheduledShows, 1);
+  // An explicit pin on that performance honours it too.
   const pinned = buildSchedule(shows, {
     ...WIDE,
     dayEndMin: 22 * 60,

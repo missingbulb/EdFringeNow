@@ -116,6 +116,7 @@ const state = {
   editingCommitment: false,    // constraint panel opened from the plan to change it
   spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
   sortBy: "time",              // reachable-list order: "time" | "distance"
+  view: "map",                 // post-filters view: "map" | "list" (map is default)
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
   reachCircle: null,           // Leaflet circle for the travel radius
@@ -135,6 +136,7 @@ async function init() {
   buildTravelPanel();
   wirePanels();
   wireSortControls();
+  wireViewSwitch();
   // The header pin re-asks the browser for the user's location (same as the
   // map's ◎ control) and recentres on it.
   const locBtn = document.getElementById("locBtn");
@@ -859,6 +861,43 @@ function wireSortControls() {
     });
   });
   updateSortButtons();
+}
+
+/* ---------- Map / list view switch ---------- */
+/* The map and the reachable list are two views of the same shows; only one is
+ * mounted at a time, flipped from the right-hand rail. Map is the default. The
+ * filters above act on both, so nothing here touches them. */
+function applyView(view) {
+  state.view = view;
+  const mapPane = document.getElementById("map");
+  const listPane = document.getElementById("shows");
+  if (mapPane) mapPane.hidden = view !== "map";
+  if (listPane) listPane.hidden = view !== "list";
+
+  const area = document.querySelector(".view-area");
+  if (area) area.dataset.view = view;
+
+  document.querySelectorAll(".view-btn[data-view]").forEach((b) => {
+    const on = b.dataset.view === view;
+    b.classList.toggle("is-active", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
+
+  // Leaflet can't measure a display:none container, so a map hidden while the
+  // list showed comes back mis-sized — re-measure once it's visible again.
+  if (view === "map" && state.map) state.map.invalidateSize();
+}
+
+/* Wire the two-position rail (Map | List). Both buttons stay visible so either
+ * view is one click away. */
+function wireViewSwitch() {
+  document.querySelectorAll(".view-btn[data-view]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (state.view === btn.dataset.view) return;
+      applyView(btn.dataset.view);
+    });
+  });
+  applyView(state.view); // establish the default (map)
 }
 
 /* ---------- Journey strip ---------- */

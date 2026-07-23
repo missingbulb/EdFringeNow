@@ -14,10 +14,16 @@ import { buildIndex, matchFavourites, summarize, compatible, buildSchedule } fro
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SHOWS_PATH = path.join(__dirname, "..", "..", "..", "data", "normalized", "shows.json");
-const FAVOURITES_CSV_PATH = path.join(__dirname, "..", "..", "sample-favourites.csv");
 
 const shows = JSON.parse(readFileSync(SHOWS_PATH, "utf-8"));
-const favouritesCsvText = readFileSync(FAVOURITES_CSV_PATH, "utf-8");
+
+// The one-row favourites export that used to live at plan/sample-favourites.csv,
+// inlined here (with its leading BOM) so the parser tests keep their fixture
+// without the app shipping a sample file. parseFavourites reads the slug off the
+// event URL, so that column is the part under test.
+const favouritesCsvText =
+  "﻿Show Name,Genre,Venue Name,Space Name,Wheelchair Accessible Space,Enhanced Performances Available,Show Start Time,Performance Duration,Opted into Fringe Friends,Performer/Performance Company,URL to Event Details\n" +
+  "100% Badgers with Matt Hobs,Comedy,Laughing Horse @ City Cafe,Hollywood,No,,15:20,60 mins,No,Matt Hobs / Free Festival,https://www.edfringe.com/tickets/whats-on/100-badgers-with-matt-hobs\n";
 
 test("parseFavourites extracts exactly the one slug from the sample CSV", () => {
   const slugs = parseFavourites(favouritesCsvText);
