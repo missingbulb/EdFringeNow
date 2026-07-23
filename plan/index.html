@@ -45,10 +45,7 @@
          the top stops being wordy; the favourites line + hero counts on screen 2
          carry the context instead. -->
     <div class="page-head" id="pageHead">
-      <span class="page-kicker">Fringe Planner</span>
-      <h1 class="page-title">Turn your favourites into a plan.</h1>
-      <p class="page-sub">Bring the shows you've hearted on edfringe.com, then scrub across August to see
-        when — and whether — you can actually catch them.</p>
+      <h1 class="page-title">Plan your Fringe!</h1>
     </div>
 
     <!-- ===================== Loading state ===================== -->
@@ -79,9 +76,9 @@
     <section class="panel intake" id="screen1" aria-labelledby="intakeTitle">
       <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
       <p class="intake-sub">
-        Export the shows you've hearted:
-        <span class="crumbs">log in to edfringe.com<span class="crumb-sep">→</span>your favourites<span class="crumb-sep">→</span>Export CSV</span>
-        — then drop the file here.
+        Mark favourites on <a class="link-quiet" href="https://www.edfringe.com/" target="_blank" rel="noopener">EdFringe.com</a>,
+        go to your <a class="link-quiet" href="https://www.edfringe.com/tickets/my-account/favourites" target="_blank" rel="noopener">favourites page</a>,
+        and click &ldquo;Export to CSV&rdquo; — then drop the file here.
       </p>
 
       <!-- The drop box sits centred on a faint "empty lanes" backdrop, so this
@@ -99,7 +96,6 @@
           <span class="btn">Upload favourites</span>
           <input type="file" id="csvInput" accept=".csv,.txt" hidden />
         </label>
-        <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
         <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
 
         <!-- Shown only when an upload yields nothing usable (the calendar takes
@@ -153,7 +149,7 @@
           <div class="cal-title-row">
             <h2 class="cal-title" id="calTitle">Your favourites across August</h2>
             <button type="button" class="cal-collapse" id="calCollapseBtn" aria-expanded="true"
-                    aria-controls="calWrap calLegend" title="Collapse the grid of shows">
+                    aria-controls="calWrap calLegend">
               <svg class="cc-caret" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
               <span class="cc-text">Hide grid</span>
             </button>
@@ -168,7 +164,7 @@
         </div>
         <div class="hero-count" aria-live="polite">
           <div class="hc-num">
-            <span id="hcSched" title="scheduled in your plan">0</span><span class="hc-of"> / <span id="hcIn" title="catchable in your date window">0</span></span><span class="hc-of"> / <span id="hcAll" title="favourites matched">0</span></span>
+            <span id="hcSched">0</span><span class="hc-of"> / <span id="hcIn">0</span></span><span class="hc-of"> / <span id="hcAll">0</span></span>
           </div>
           <div class="hc-label">scheduled&nbsp;/&nbsp;in&nbsp;window&nbsp;/&nbsp;favourites</div>
           <div class="hc-detail" id="hcDetail"></div>
@@ -182,9 +178,9 @@
                day-of-month header stay visible together. -->
           <div class="cal-sticky">
             <div class="win-rail" id="winRail">
-              <div class="rail-band" id="railBand" title="Drag to move your date window">
+              <div class="rail-band" id="railBand">
                 <span class="rail-len" id="railLen">18 days</span>
-                <button type="button" class="rail-opt" id="railOptBtn" aria-haspopup="true" aria-expanded="false" aria-controls="railPop" title="Auto-pick the dates that catch the most shows">Optimize?</button>
+                <button type="button" class="rail-opt" id="railOptBtn" aria-haspopup="true" aria-expanded="false" aria-controls="railPop">Optimize?</button>
               </div>
               <!-- The optimizer, folded into the window bar. Positioned in JS on
                    open (fixed) so it escapes the calendar's scroll clip. -->
@@ -217,7 +213,7 @@
 
           <!-- Pre-opening zone (1–6 Aug) shaded by JS — previews only before
                the Fringe opens Fri 7 Aug. -->
-          <div class="festend" id="festEnd" title="Before the Fringe opens (Fri 7 Aug) — previews only"></div>
+          <div class="festend" id="festEnd"></div>
 
           <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
 
@@ -229,8 +225,8 @@
             <div class="win-dim" id="dimL"></div>
             <div class="win-dim" id="dimR"></div>
             <div class="win-band" id="band"></div>
-            <div class="win-edge win-edge--start" id="edgeStart" title="Drag to set the start date"></div>
-            <div class="win-edge win-edge--end" id="edgeEnd" title="Drag to set the end date"></div>
+            <div class="win-edge win-edge--start" id="edgeStart"></div>
+            <div class="win-edge win-edge--end" id="edgeEnd"></div>
           </div>
         </div>
       </div>
@@ -246,9 +242,7 @@
           <span class="lg lg-preview"><i></i>Preview</span>
           <span class="lg lg-free"><i></i>Free</span>
           <span class="lg lg-event"><i></i>Event-specific</span>
-          <span class="lg lg-noalloc"><i></i>No allocation</span>
-          <span class="lg lg-sold"><i></i>Sold out</span>
-          <span class="lg lg-multi"><i class="multi"><b></b><b></b></i>Two shows that day</span>
+          <span class="lg lg-noalloc"><i></i>Sold out</span>
         </div>
       </div>
     </section>

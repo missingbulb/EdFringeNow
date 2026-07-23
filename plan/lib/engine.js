@@ -542,9 +542,18 @@ export function buildSchedule(shows, options = {}) {
       const match = (slotsByShowAll.get(slug) || []).find((s) => slotKey(s) === pinnedKey);
       slots = match ? [match] : [];
     } else {
-      slots = [...(slotsByShow.get(slug) || [])].sort(
-        (a, b) => a.end - b.end || a.start - b.start
-      );
+      // Whole show forced: prefer a performance that fits the day-hours window
+      // and dodges meal breaks, but a must-see must still land — so fall back to
+      // any in-window performance, overriding those blocks (the same override an
+      // explicit performance pin gets). Unblocked slots are tried first, then
+      // blocked ones, each group earliest-finishing.
+      const byEnd = (a, b) => a.end - b.end || a.start - b.start;
+      const unblocked = [...(slotsByShow.get(slug) || [])].sort(byEnd);
+      const unblockedKeys = new Set(unblocked.map(slotKey));
+      const blocked = [...(slotsByShowAll.get(slug) || [])]
+        .filter((s) => !unblockedKeys.has(slotKey(s)))
+        .sort(byEnd);
+      slots = [...unblocked, ...blocked];
     }
     for (const slot of slots) {
       const sameDay = perDay.get(slot.date) || [];
