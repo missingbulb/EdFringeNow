@@ -1655,31 +1655,49 @@ function renderDebugBanner() {
   if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
 }
 
+/* Stamp the app version onto the debug pill (single-sourced from package.json,
+ * the same file the planner reads). Best-effort — the pill stays "debug" if the
+ * fetch fails (e.g. local file:// with no server). */
+async function loadAppVersion() {
+  const pill = document.getElementById("debugToggle");
+  if (!pill) return;
+  try {
+    const res = await fetch("package.json");
+    if (!res.ok) return;
+    const pkg = await res.json();
+    if (pkg && typeof pkg.version === "string") pill.textContent = `debug v${pkg.version}`;
+  } catch (err) {
+    console.warn("EdFringeNow: couldn't read app version", err);
+  }
+}
+
 /* Wire up the debug panel: the header toggle chip, the date/time picker and the
  * four "move my location" buttons. */
 function wireDebugControls() {
-  // The debug panel is hidden by default behind a red header chip.
+  // The debug tools live in a dropdown behind a neutral header pill.
+  const menu = document.getElementById("debugMenu");
   const toggle = document.getElementById("debugToggle");
-  const banner = document.getElementById("debugBanner");
-  if (toggle && banner) {
-    toggle.addEventListener("click", () => {
-      const show = banner.hasAttribute("hidden");
-      banner.toggleAttribute("hidden", !show);
-      toggle.setAttribute("aria-expanded", String(show));
+  const pop = document.getElementById("debugPop");
+  if (toggle && pop) {
+    const setOpen = (open) => {
+      pop.toggleAttribute("hidden", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+    };
+    toggle.addEventListener("click", () => setOpen(pop.hasAttribute("hidden")));
+    document.addEventListener("click", (e) => {
+      if (menu && !menu.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !pop.hasAttribute("hidden")) {
+        setOpen(false);
+        toggle.focus();
+      }
     });
   }
 
-  // Stamp the deployed build's commit time (Israel tz) onto the chip, so it's easy
-  // to tell which release is live. Value comes from build-info.js, which the Pages
-  // workflow overwrites at deploy time; local dev leaves it blank (no stamp).
-  const build = window.__BUILD__;
-  if (toggle && build && build.time) {
-    const stamp = document.createElement("span");
-    stamp.className = "debug-build";
-    stamp.textContent = build.time.slice(11, 16); // HH:MM
-    toggle.appendChild(stamp);
-    toggle.title = `Build ${build.time} (Israel time)`;
-  }
+  // The pill shows the app version (single-sourced from package.json), not the
+  // build time. Best-effort: on failure it just stays "debug".
+  loadAppVersion();
 
   const dt = document.getElementById("debugDateTime");
   if (dt) {

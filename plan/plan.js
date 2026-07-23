@@ -133,6 +133,10 @@ function isWeekend(day) {
 const state = {
   index: null, // Map<slug, show> — the full catalogue
   venueCoords: null, // { [venueCode]: {lat, lng} }
+  // The working favourites, as slugs — the single source of truth for what's on
+  // the grid and what we persist. Mutated by add (DEBUG) / remove-a-row, so the
+  // stored list always mirrors the shows on screen, not the original upload.
+  favSlugs: [],
   matched: [], // full show objects for the user's matched favourites
   totalFavourites: 0,
   missingSlugs: [],
@@ -149,6 +153,12 @@ const state = {
     { id: "lunch", enabled: true, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30 },
     { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60 },
   ],
+  // "Getting there" / "getting out" blocks (minute-of-day), applied to the first
+  // (arrival) and last (departure) day of the trip window. Like meal breaks but
+  // date-specific — the dates are derived from d0/d1 at plan time. Drag the block
+  // edge on the schedule to set how much of the day travel eats.
+  arrival: { endMin: 11 * 60, enabled: true },      // no shows before this on day one
+  departure: { startMin: 22 * 60, enabled: true },  // no shows after this on the last day
   mode: "walk",
   // Must-sees, keyed by slug. Value `true` = pin the show (the scheduler picks a
   // performance); a slotKey string = pin that one specific performance. Click a
@@ -276,6 +286,7 @@ function restoreStoredFavourites() {
 
 function clearFavourites() {
   clearStoredFavourites();
+  state.favSlugs = [];
   state.totalFavourites = 0;
   state.matched = [];
   state.missingSlugs = [];
@@ -292,6 +303,8 @@ function clearFavourites() {
   $("screen3").hidden = true;
   state.schedule = null;
   state.scheduledSlugs = new Set();
+  const pageHead = $("pageHead");
+  if (pageHead) pageHead.hidden = false; // bring the intro back on the empty state
   $("screen1").hidden = false;
   $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -316,7 +329,7 @@ function processFavouritesText(text, filename) {
   applyFavourites(slugs, filename, savedAt, { scroll: true });
 }
 
-async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}) {
+async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepForced = false } = {}) {
   state.pendingUpload = { slugs, filename, savedAt, scroll };
 
   let index;
@@ -333,12 +346,17 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false } = {}
   const { matched, missingSlugs } = matchFavourites(slugs, index);
   state.pendingUpload = null;
 
+  state.favSlugs = slugs.slice();
   state.totalFavourites = slugs.length;
   state.matched = matched;
   state.missingSlugs = missingSlugs;
   state.filename = filename;
   state.savedAt = savedAt;
-  state.forced = new Map(); // a fresh map clears any must-sees
+  // A fresh upload clears must-sees; an add/remove keeps the pins still on the grid.
+  const survivingSlugs = new Set(matched.map((s) => s.slug));
+  state.forced = keepForced
+    ? new Map([...state.forced].filter(([slug]) => survivingSlugs.has(slug)))
+    : new Map();
 
   if (matched.length > 0) {
     state.d0 = DEFAULT_D0;
@@ -434,6 +452,9 @@ function toggleMissingList() {
 }
 
 function showCalendar({ scroll = false } = {}) {
+  // The marketing intro is empty-state chrome; drop it now the grid is the hero.
+  const pageHead = $("pageHead");
+  if (pageHead) pageHead.hidden = true;
   const screen2 = $("screen2");
   screen2.hidden = false;
   $("screen3").hidden = false;
@@ -512,6 +533,14 @@ function buildCalendar() {
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true" title="Forced into the plan">📌</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "lane-remove";
+    remove.title = "Remove this show from the list";
+    remove.setAttribute("aria-label", `Remove ${show.title} from the list`);
+    remove.textContent = "×";
+    label.appendChild(remove);
 
     const track = document.createElement("div");
     track.className = "lane-track";
@@ -861,6 +890,8 @@ function paintWindow(animate = false) {
   $("dimR").style.width = Math.max(0, trackWidth - x1) + "px";
   $("band").style.left = x0 + "px";
   $("band").style.width = (x1 - x0) + "px";
+  $("edgeStart").style.left = x0 + "px";
+  $("edgeEnd").style.left = x1 + "px";
   $("hStart").style.left = (trackLeft + x0) + "px";
   $("hEnd").style.left = (trackLeft + x1) + "px";
   $("railBand").style.left = (trackLeft + x0) + "px";
@@ -885,6 +916,7 @@ function dragDate(el, apply) {
   el.addEventListener("pointerdown", (e) => {
     e.preventDefault();
     el.setPointerCapture(e.pointerId);
+    el.classList.add("dragging");
     const startX = e.clientX;
     const s0 = state.d0;
     const s1 = state.d1;
@@ -894,6 +926,7 @@ function dragDate(el, apply) {
       scheduleRecompute();
     };
     const up = () => {
+      el.classList.remove("dragging");
       el.removeEventListener("pointermove", move);
       el.removeEventListener("pointerup", up);
     };
@@ -968,10 +1001,11 @@ function shuffle(arr) {
   return arr;
 }
 
-/* DEBUG: seed the favourites UI with a random set of shows so the calendar +
- * plan can be exercised without a real edfringe.com export. Picks N distinct
- * slugs from the loaded catalogue and runs them through the normal favourites
- * path (persistence, matching, calendar, plan) — exactly as an upload would. */
+/* DEBUG: top up the favourites UI with more random shows so the calendar +
+ * plan can be exercised without a real edfringe.com export. Picks N slugs the
+ * grid doesn't already carry and *appends* them to the working set (never
+ * replacing it), then runs the combined list through the normal favourites path
+ * — persistence, matching, calendar, plan — exactly as an upload would. */
 async function loadDebugRandomShows(count = 10) {
   let index;
   try {
@@ -980,15 +1014,57 @@ async function loadDebugRandomShows(count = 10) {
     console.error("Fringe Planner: failed to load show data for debug set", err);
     return;
   }
-  const slugs = shuffle([...index.keys()]).slice(0, count);
-  if (slugs.length === 0) return;
+  const existing = new Set(state.favSlugs);
+  const picks = shuffle([...index.keys()].filter((s) => !existing.has(s))).slice(0, count);
+  if (picks.length === 0) return;
+  const slugs = [...state.favSlugs, ...picks];
   const savedAt = Date.now();
-  saveFavourites(slugs, "debug-random.csv", savedAt);
-  applyFavourites(slugs, `debug · ${slugs.length} random shows`, savedAt, { scroll: true });
+  const filename = `debug · ${slugs.length} random shows`;
+  saveFavourites(slugs, filename, savedAt);
+  applyFavourites(slugs, filename, savedAt, { scroll: true, keepForced: true });
+}
+
+/* Drop one show from the working set — the row leaves the grid and the change
+ * is written straight back to the stored list, so a removed show stays gone on
+ * reload. Clearing the last row falls back to the empty-state reset. */
+function removeFavourite(slug) {
+  const slugs = state.favSlugs.filter((s) => s !== slug);
+  if (slugs.length === state.favSlugs.length) return; // nothing removed
+  if (slugs.length === 0) {
+    clearFavourites();
+    return;
+  }
+  const savedAt = state.savedAt || Date.now();
+  saveFavourites(slugs, state.filename, savedAt);
+  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true });
 }
 
 function wireDebugButton() {
-  $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+  const menu = $("debugMenu");
+  const pill = $("debugPill");
+  const pop = $("debugPop");
+  if (menu && pill && pop) {
+    const setOpen = (open) => {
+      pop.hidden = !open;
+      pill.setAttribute("aria-expanded", String(open));
+    };
+    pill.addEventListener("click", () => setOpen(pop.hidden));
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !pop.hidden) {
+        setOpen(false);
+        pill.focus();
+      }
+    });
+    $("debugRandomBtn")?.addEventListener("click", () => {
+      loadDebugRandomShows(10);
+      setOpen(false);
+    });
+  } else {
+    $("debugRandomBtn")?.addEventListener("click", () => loadDebugRandomShows(10));
+  }
 }
 
 function wireRetry() {
@@ -1007,6 +1083,13 @@ function wireCalendarControls() {
     state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
   });
   dragDate($("hEnd"), (ev) => {
+    state.d1 = clamp(dayAt(ev.clientX), state.d0, DAYS_IN_MONTH);
+  });
+  // The two vertical band lines drag the same window edges as the rail flags.
+  dragDate($("edgeStart"), (ev) => {
+    state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
+  });
+  dragDate($("edgeEnd"), (ev) => {
     state.d1 = clamp(dayAt(ev.clientX), state.d0, DAYS_IN_MONTH);
   });
   dragDate($("railBand"), (ev, s0, s1, startX) => {
@@ -1038,6 +1121,10 @@ function wireCalendarControls() {
     const lane = e.target.closest(".lane");
     if (!lane) return;
     const slug = lane.dataset.slug;
+    if (e.target.closest(".lane-remove")) {
+      removeFavourite(slug);
+      return;
+    }
     const seg = e.target.closest(".seg");
     if (seg) {
       togglePinPerformance(slug, seg.dataset.date, seg.dataset.start);
@@ -1196,6 +1283,8 @@ function gatherPlanOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: effectiveDayEnd(),
     mealBreaks: state.mealBreaks.filter((m) => m.enabled).map((m) => ({ startMin: m.startMin, endMin: m.endMin })),
+    arrival: state.arrival.enabled ? { date: dateStr(state.d0), endMin: state.arrival.endMin } : null,
+    departure: state.departure.enabled ? { date: dateStr(state.d1), startMin: state.departure.startMin } : null,
     forcedSlugs: [...state.forced.keys()],
     forcedPerformances: forcedPerformanceMap(),
     travelMode: state.mode,
@@ -1324,8 +1413,22 @@ function renderSchedule(schedule, animate = false) {
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
+  // Days to draw: every day that got shows, plus the trip's first/last day so
+  // the "getting there" / "getting out" blocks always have a column to live on
+  // (an empty boundary day shows just its travel block).
+  const renderDays = schedule.days.slice();
+  const shownDates = new Set(renderDays.map((d) => d.date));
+  const ensureDay = (date) => {
+    if (shownDates.has(date)) return;
+    shownDates.add(date);
+    renderDays.push({ date, slots: [] });
+  };
+  if (state.arrival.enabled) ensureDay(dateStr(state.d0));
+  if (state.departure.enabled) ensureDay(dateStr(state.d1));
+  renderDays.sort((a, b) => a.date.localeCompare(b.date));
+
   // One column per day; columns flex to share the width.
-  for (const day of schedule.days) {
+  for (const day of renderDays) {
     const dayNum = Number(day.date.slice(8, 10));
     const col = document.createElement("div");
     col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "");
@@ -1350,6 +1453,15 @@ function renderSchedule(schedule, animate = false) {
       body.appendChild(buildTravelLeg(a, b, y(a.endMinuteOfDay), y(b.startMinuteOfDay)));
     }
 
+    // "Getting there" / "getting out" blocks live inside their own day column
+    // (first / last day of the trip window), behind the shows.
+    if (state.arrival.enabled && day.date === dateStr(state.d0)) {
+      body.appendChild(buildTripBlock("arrival", y, axisH));
+    }
+    if (state.departure.enabled && day.date === dateStr(state.d1)) {
+      body.appendChild(buildTripBlock("departure", y, axisH));
+    }
+
     for (const slot of day.slots) {
       body.appendChild(buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay)));
     }
@@ -1358,8 +1470,12 @@ function renderSchedule(schedule, animate = false) {
     host.appendChild(col);
   }
 
-  // Draggable overlay: day-start / day-end lines + meal bands.
-  host.appendChild(buildScheduleOverlay(axisH, y));
+  // Draggable overlay: day-start / day-end lines + meal bands. The column count
+  // lets the day-start line + top zone skip the first (arrival) column and the
+  // day-end line + bottom zone skip the last (departure) column, where the trip
+  // blocks own the boundary instead.
+  host.appendChild(buildScheduleOverlay(axisH, y, renderDays.length));
+  populateMealDecors(host); // fill the food scatter now the bands have a size
 
   // Animate what actually changed since the last board: shows arrive, depart, or
   // fly to a new slot; brand-new day columns ease in.
@@ -1543,7 +1659,7 @@ function buildTravelLeg(a, b, top, bottom) {
 
 // --- The draggable day-hours / meal-break overlay --------------------------
 
-function buildScheduleOverlay(axisH, y) {
+function buildScheduleOverlay(axisH, y, numCols = 1) {
   const overlay = document.createElement("div");
   overlay.className = "sch-overlay";
   overlay.style.left = `${SCH_GUTTER_PX}px`;
@@ -1552,15 +1668,23 @@ function buildScheduleOverlay(axisH, y) {
   overlay.dataset.axisTop = state.schedAxis.axisTopMin;
 
   const dayEnd = effectiveDayEnd();
+  // Skip the boundary column where a trip block already owns the edge: the
+  // getting-there block replaces day-start on the first column, getting-out
+  // replaces day-end on the last.
+  const colPct = numCols > 0 ? 100 / numCols : 0;
+  const insetStart = state.arrival.enabled ? colPct : 0;
+  const insetEnd = state.departure.enabled ? colPct : 0;
 
   // Shaded "before day starts" / "after day ends" zones.
   const zoneTop = document.createElement("div");
   zoneTop.className = "sch-zone";
   zoneTop.style.top = "0px";
+  zoneTop.style.left = `${insetStart}%`;
   zoneTop.style.height = `${y(state.dayStartMin)}px`;
   const zoneBottom = document.createElement("div");
   zoneBottom.className = "sch-zone";
   zoneBottom.style.top = `${y(dayEnd)}px`;
+  zoneBottom.style.right = `${insetEnd}%`;
   zoneBottom.style.height = `${axisH - y(dayEnd)}px`;
   overlay.append(zoneTop, zoneBottom);
 
@@ -1570,17 +1694,19 @@ function buildScheduleOverlay(axisH, y) {
     overlay.appendChild(buildMealBand(meal, y));
   }
 
-  // Day-start / day-end draggable lines.
-  overlay.appendChild(buildDayLine("start", state.dayStartMin, y));
-  overlay.appendChild(buildDayLine("end", dayEnd, y));
+  // Day-start / day-end draggable lines (each skipping its boundary column).
+  overlay.appendChild(buildDayLine("start", state.dayStartMin, y, insetStart));
+  overlay.appendChild(buildDayLine("end", dayEnd, y, insetEnd));
 
   return overlay;
 }
 
-function buildDayLine(which, min, y) {
+function buildDayLine(which, min, y, insetPct = 0) {
   const line = document.createElement("div");
   line.className = `sch-dayline sch-dayline--${which}`;
   line.style.top = `${y(min)}px`;
+  if (which === "start") line.style.left = `${insetPct}%`;
+  else line.style.right = `${insetPct}%`;
   line.dataset.which = which;
   const label = which === "start" ? "Day starts" : "Day ends";
   const clock = which === "end" ? minToDayClock(min) : minToHHMM(min);
@@ -1597,6 +1723,51 @@ function buildDayLine(which, min, y) {
   return line;
 }
 
+// Food emoji drawn faintly behind meal breaks — a wide set so the scatter feels
+// varied. Keep it to actual food/drink.
+const MEAL_FOODS = [
+  "🍕","🍔","🌭","🥪","🌮","🌯","🍟","🥗","🍣","🍱","🍜","🍝","🍛","🍲","🥘","🍳",
+  "🥞","🧇","🥐","🥨","🧀","🍗","🍖","🥩","🍤","🥟","🍢","🍩","🍪","🧁","🍰","🥧",
+  "🍦","🍨","🍎","🍓","🍇","🍊","🍌","🥑","🍅","🌶","🥕","🌽","🥦","☕","🍺","🥤","🧋",
+];
+// Randomised scatter, cached per (meal, width-bucket) so it stays put across
+// re-plans and only regenerates when the board width really changes.
+const mealDecorCache = new Map();
+
+function buildMealDecorHTML(w, h) {
+  // Cap density well under the "3 per square inch" ceiling for a minor distraction.
+  const sqIn = (w / 96) * (h / 96);
+  const count = Math.max(2, Math.min(180, Math.round(sqIn * 2.3)));
+  let html = "";
+  for (let i = 0; i < count; i++) {
+    const emoji = MEAL_FOODS[Math.floor(Math.random() * MEAL_FOODS.length)];
+    const left = (Math.random() * 100).toFixed(1);
+    const top = (Math.random() * 100).toFixed(1);
+    const rot = Math.round(Math.random() * 80 - 40);
+    const size = (11 + Math.random() * 13).toFixed(1);
+    const op = (0.55 + Math.random() * 0.45).toFixed(2);
+    html += `<span style="left:${left}%;top:${top}%;font-size:${size}px;opacity:${op};transform:translate(-50%,-50%) rotate(${rot}deg)">${emoji}</span>`;
+  }
+  return html;
+}
+
+/** Fill each meal band's decor layer once its size is known. Cached by band id
+ *  + width bucket so scrubbing the plan doesn't reshuffle the food. */
+function populateMealDecors(host) {
+  for (const decor of host.querySelectorAll(".sch-meal .meal-decor")) {
+    const band = decor.parentElement;
+    const w = band.clientWidth || 600;
+    const h = band.clientHeight || 34;
+    const key = `${band.dataset.meal || "meal"}:${Math.round(w / 120)}`;
+    let html = mealDecorCache.get(key);
+    if (html == null) {
+      html = buildMealDecorHTML(w, h);
+      mealDecorCache.set(key, html);
+    }
+    decor.innerHTML = html;
+  }
+}
+
 function buildMealBand(meal, y) {
   const band = document.createElement("div");
   band.className = "sch-meal";
@@ -1609,13 +1780,79 @@ function buildMealBand(meal, y) {
   const badge = blocks.length
     ? `<span class="dl-blocked" title="${escapeHtml(blockTip(`Your ${meal.id} break`, blocks))}">not placeable · ${blocks.length}</span>`
     : "";
+  // A faint, playful scatter of food emoji — filled in once laid out
+  // (populateMealDecors), so the count matches the band's actual area.
   band.innerHTML =
+    `<span class="meal-decor" aria-hidden="true"></span>` +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
     `<span class="meal-label">🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}</span>` +
     badge +
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
+}
+
+/* "Getting there" (top of the first day) / "getting out" (bottom of the last
+ * day) block. Rendered inside its own day-column body so it stays on that one
+ * day; you drag the inner edge to set how much of the day travel eats. */
+function buildTripBlock(which, y, axisH) {
+  const block = document.createElement("div");
+  block.className = `sch-trip sch-trip--${which}`;
+  block.dataset.trip = which;
+  if (which === "arrival") {
+    block.style.top = "0px";
+    block.style.height = `${y(state.arrival.endMin)}px`;
+    block.title = "Getting there — drag the lower edge; no shows are placed before this on your first day";
+    block.innerHTML =
+      `<span class="sch-trip-label">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>` +
+      `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
+  } else {
+    block.style.top = `${y(state.departure.startMin)}px`;
+    block.style.height = `${Math.max(6, axisH - y(state.departure.startMin))}px`;
+    block.title = "Getting out — drag the upper edge; no shows are placed after this on your last day";
+    block.innerHTML =
+      `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
+      `<span class="sch-trip-label">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>`;
+  }
+  wireTripDrag(block, which, axisH);
+  return block;
+}
+
+function wireTripDrag(block, which, axisH) {
+  const edge = block.querySelector(".meal-resize");
+  if (!edge) return;
+  edge.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    edge.setPointerCapture(e.pointerId);
+    block.classList.add("dragging");
+    const axis = state.schedAxis;
+    const yy = (min) => ((clamp(min, axis.axisTopMin, axis.axisBottomMin) - axis.axisTopMin) / 60) * axis.hourPx;
+    const move = (ev) => {
+      const min = minuteFromClientY(ev.clientY);
+      if (min == null) return;
+      if (which === "arrival") {
+        const v = clamp(min, axis.axisTopMin, effectiveDayEnd());
+        state.arrival.endMin = v;
+        block.style.height = `${yy(v)}px`;
+        block.querySelector(".sch-trip-label").textContent = `🚆 Arrive ${minToHHMM(v)}`;
+      } else {
+        const v = clamp(min, state.dayStartMin, axis.axisBottomMin);
+        state.departure.startMin = v;
+        block.style.top = `${yy(v)}px`;
+        block.style.height = `${Math.max(6, axisH - yy(v))}px`;
+        block.querySelector(".sch-trip-label").textContent = `🧳 Leave ${minToDayClock(v)}`;
+      }
+    };
+    const up = () => {
+      block.classList.remove("dragging");
+      edge.removeEventListener("pointermove", move);
+      edge.removeEventListener("pointerup", up);
+      refresh();
+    };
+    edge.addEventListener("pointermove", move);
+    edge.addEventListener("pointerup", up);
+  });
 }
 
 /** Minute-of-day for a clientY over the schedule overlay, snapped to 5 min. */
@@ -1975,18 +2212,20 @@ function fmtMs(ms) {
 }
 
 function renderPerfPill() {
-  const el = $("perfPill");
-  if (!el) return;
-  const v = state.version ? `v${state.version}` : "dev";
+  const pill = $("debugPill");
+  if (pill) pill.textContent = state.version ? `debug v${state.version}` : "debug";
+
+  const stat = $("perfStat");
+  if (!stat) return;
   const p = state.perf;
   if (p.count === 0) {
-    el.textContent = `${v} · plan —`;
-    el.title = "Reschedule timing appears after the first plan";
+    stat.textContent = "Avg replanning time: —";
+    stat.title = "Timing appears after the first plan";
     return;
   }
   const avg = p.sum / p.count;
-  el.textContent = `${v} · plan ${fmtMs(avg)}`;
-  el.title =
+  stat.textContent = `Avg replanning time: ${fmtMs(avg)}`;
+  stat.title =
     `Reschedule computation (buildSchedule)\n` +
     `avg ${fmtMs(avg)} · last ${fmtMs(p.last)} · min ${fmtMs(p.min)} · max ${fmtMs(p.max)}\n` +
     `over ${p.count} run${p.count === 1 ? "" : "s"} this session`;

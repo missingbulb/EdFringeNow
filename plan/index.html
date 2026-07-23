@@ -23,19 +23,27 @@
         <a href="../" class="nav-link">Now</a>
         <a href="./" class="nav-link is-active">Plan</a>
       </nav>
-      <!-- Build version + a live rolling average of the reschedule computation
-           (buildSchedule), so production planning times are visible at a glance. -->
-      <span class="perf-pill" id="perfPill" title="Reschedule timing appears after the first plan" role="status" aria-live="off">v… · plan —</span>
-      <!-- Testing-only: seed the favourites UI with 10 random shows from the
-           catalogue, so the calendar/plan can be exercised without a real export. -->
-      <button type="button" class="debug-chip" id="debugRandomBtn" title="Load 10 random shows to test the favourites UI">DEBUG · 10 random</button>
+      <!-- One debug pill (version from package.json). Click opens a small menu:
+           top up the grid with random shows, and read the live average
+           reschedule (buildSchedule) time. -->
+      <div class="debug-menu" id="debugMenu">
+        <button type="button" class="debug-pill" id="debugPill" aria-haspopup="true" aria-expanded="false" aria-controls="debugPop" title="Debug tools">debug v&hellip;</button>
+        <div class="debug-pop" id="debugPop" role="menu" hidden>
+          <button type="button" class="debug-pop__item" id="debugRandomBtn" role="menuitem" title="Adds 10 random shows to the grid — it doesn't replace what's there">&#43; Add 10 random shows</button>
+          <p class="debug-pop__stat" id="perfStat" role="status" aria-live="off">Avg replanning time: &mdash;</p>
+        </div>
+      </div>
       <span class="header-hint">Edinburgh Fringe · 7&ndash;31 Aug 2026</span>
     </div>
   </header>
 
   <main class="container">
 
-    <div class="page-head">
+    <!-- Marketing intro — only useful on the empty/upload state. Once a plan is
+         loaded it's hidden (see showCalendar) so the grid becomes the hero and
+         the top stops being wordy; the favourites line + hero counts on screen 2
+         carry the context instead. -->
+    <div class="page-head" id="pageHead">
       <span class="page-kicker">Fringe Planner</span>
       <h1 class="page-title">Turn your favourites into a plan.</h1>
       <p class="page-sub">Bring the shows you've hearted on edfringe.com, then scrub across August to see
@@ -221,13 +229,16 @@
 
           <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
 
-          <!-- Date-window overlay: purely visual (dim panels + band edges);
-               all dragging happens on the rail above, so lane cells keep
-               their own hover affordances. -->
+          <!-- Date-window overlay: dim panels + band, plus two draggable edge
+               grips sitting on the band's start/end lines. The rail flags above
+               and these edges both set the window; lane cells keep their own
+               hover affordances between the two thin edge strips. -->
           <div class="win" id="win" aria-hidden="true">
             <div class="win-dim" id="dimL"></div>
             <div class="win-dim" id="dimR"></div>
             <div class="win-band" id="band"></div>
+            <div class="win-edge win-edge--start" id="edgeStart" title="Drag to set the start date"></div>
+            <div class="win-edge win-edge--end" id="edgeEnd" title="Drag to set the end date"></div>
           </div>
         </div>
       </div>
