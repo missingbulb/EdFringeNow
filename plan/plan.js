@@ -21,7 +21,6 @@ import { distanceKm, travelMinutes } from "./lib/travel.js";
 
 const DATA_URL = "../data/normalized/shows.json";
 const VENUES_URL = "../data/venues.json";
-const SAMPLE_URL = "./sample-favourites.csv";
 const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
 const YEAR = 2026;
@@ -524,7 +523,7 @@ function buildCalendar() {
     label.className = "lane-label";
     label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · click the name to lock the show into the plan`;
     label.innerHTML =
-      `<span class="lane-pin" aria-hidden="true" title="Forced into the plan">📌</span>` +
+      `<span class="lane-pin" aria-hidden="true">🔒</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
 
     const remove = document.createElement("button");
@@ -769,7 +768,7 @@ function applyVerdicts(bySlug, filter) {
         badge = document.createElement("span");
         badge.className = "seg-pin";
         badge.setAttribute("aria-hidden", "true");
-        badge.textContent = "📌";
+        badge.textContent = "🔒";
         seg.appendChild(badge);
       } else if (!isPinned && badge) {
         badge.remove();
@@ -778,7 +777,7 @@ function applyVerdicts(bySlug, filter) {
 
     // A pinned lane shows the pin in its status too, right next to the verdict.
     const pinMark = forced
-      ? `<span class="st-pin" aria-hidden="true" title="locked into your plan">📌</span>`
+      ? `<span class="st-pin" aria-hidden="true" title="locked into your plan">🔒</span>`
       : "";
     ref.statusEl.innerHTML = pinMark + statusPillHTML(status);
   }
@@ -1001,21 +1000,6 @@ function wireDropzone() {
     dz.classList.remove("is-dragover");
     const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
     if (file) handleFile(file);
-  });
-}
-
-function wireSampleLink() {
-  $("sampleLink").addEventListener("click", async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch(SAMPLE_URL);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const text = await res.text();
-      processFavouritesText(text, "sample-favourites.csv");
-    } catch (err) {
-      console.error("Fringe Planner: failed to load sample favourites", err);
-      alert("Couldn't load the sample favourites — please try uploading a file instead.");
-    }
   });
 }
 
@@ -1799,12 +1783,10 @@ function buildScheduleBlock(slot, top, rawBottom) {
 
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = slot.venueName || slot.venueCode || "";
-  block.title =
-    `${slot.title}\n${timeStr}${venue ? " · " + venue : ""}\n` +
-    (forced ? "Locked in — click to unlock · " : "Click to lock into your plan · ") +
-    "right-click to open edfringe.com";
+  // No native title — the rich hover card (fillShowCard) carries all of this, and
+  // a title here would double up as a second, parallel tooltip on hover.
   block.innerHTML =
-    (forced ? `<span class="sch-pin" aria-hidden="true" title="locked into your plan — this is why it's here, even across a meal break or your day hours">🔒</span>` : "") +
+    (forced ? `<span class="sch-pin" aria-hidden="true">🔒</span>` : "") +
     `<span class="sch-emoji" aria-hidden="true">${genreEmoji(slot.genre)}</span>` +
     `<span class="sch-body-text">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
@@ -2016,6 +1998,11 @@ function populateDecors(host) {
     const setName = decor.dataset.decor || "food";
     const seed = decor.dataset.seed || setName;
     const key = `${setName}:${seed}:${Math.round(w / 16)}:${Math.round(h / 16)}`;
+    // Skip untouched layers: the same region at the same tile-count keeps its
+    // spans (and their in-flight CSS drift). This makes re-tiling on every drag
+    // frame a no-op until a region actually crosses a 16px tile boundary.
+    if (decor.dataset.decorKey === key) continue;
+    decor.dataset.decorKey = key;
     let html = decorCache.get(key);
     if (html == null) {
       html = buildDecorHTML(w, h, setName, seed);
@@ -2170,6 +2157,13 @@ function repositionOverlayLive() {
     const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
     band.querySelector(".meal-label").textContent = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)} · 🍽 ${name}`;
   }
+
+  // Re-tile the emoji scatter live as regions grow/shrink, so a dragged band or
+  // day-hours zone fills with emoji while it expands instead of popping in only
+  // on drop. The key-guard in populateDecors keeps this a no-op until a region
+  // crosses a tile boundary, so the ambient CSS drift keeps flowing between
+  // refills — and fresh emoji swim in wherever new space opens up.
+  populateDecors($("schedule"));
 }
 
 function wireDayLineDrag(line, which) {
@@ -2561,7 +2555,6 @@ function renderPerfPill() {
 // --- Go ---------------------------------------------------------------
 
 wireDropzone();
-wireSampleLink();
 wireFavActions();
 wireDebugButton();
 hideDebugInUK();

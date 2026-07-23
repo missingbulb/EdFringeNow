@@ -45,10 +45,7 @@
          the top stops being wordy; the favourites line + hero counts on screen 2
          carry the context instead. -->
     <div class="page-head" id="pageHead">
-      <span class="page-kicker">Fringe Planner</span>
-      <h1 class="page-title">Turn your favourites into a plan.</h1>
-      <p class="page-sub">Bring the shows you've hearted on edfringe.com, then scrub across August to see
-        when — and whether — you can actually catch them.</p>
+      <h1 class="page-title">Plan your Fringe!</h1>
     </div>
 
     <!-- ===================== Loading state ===================== -->
@@ -79,9 +76,9 @@
     <section class="panel intake" id="screen1" aria-labelledby="intakeTitle">
       <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
       <p class="intake-sub">
-        Export the shows you've hearted:
-        <span class="crumbs">log in to edfringe.com<span class="crumb-sep">→</span>your favourites<span class="crumb-sep">→</span>Export CSV</span>
-        — then drop the file here.
+        Mark favourites on <a class="link-quiet" href="https://www.edfringe.com/" target="_blank" rel="noopener">EdFringe.com</a>,
+        go to your <a class="link-quiet" href="https://www.edfringe.com/tickets/my-account/favourites" target="_blank" rel="noopener">favourites page</a>,
+        and click &ldquo;Export to CSV&rdquo; — then drop the file here.
       </p>
 
       <!-- The drop box sits centred on a faint "empty lanes" backdrop, so this
@@ -99,7 +96,6 @@
           <span class="btn">Upload favourites</span>
           <input type="file" id="csvInput" accept=".csv,.txt" hidden />
         </label>
-        <p class="dz-alt">No export handy? <a class="link-quiet" href="#" id="sampleLink">Try the sample favourites</a></p>
         <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
 
         <!-- Shown only when an upload yields nothing usable (the calendar takes
