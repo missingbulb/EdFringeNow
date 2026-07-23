@@ -1475,6 +1475,7 @@ function renderSchedule(schedule, animate = false) {
   // day-end line + bottom zone skip the last (departure) column, where the trip
   // blocks own the boundary instead.
   host.appendChild(buildScheduleOverlay(axisH, y, renderDays.length));
+  populateMealDecors(host); // fill the food scatter now the bands have a size
 
   // Animate what actually changed since the last board: shows arrive, depart, or
   // fly to a new slot; brand-new day columns ease in.
@@ -1722,6 +1723,51 @@ function buildDayLine(which, min, y, insetPct = 0) {
   return line;
 }
 
+// Food emoji drawn faintly behind meal breaks — a wide set so the scatter feels
+// varied. Keep it to actual food/drink.
+const MEAL_FOODS = [
+  "🍕","🍔","🌭","🥪","🌮","🌯","🍟","🥗","🍣","🍱","🍜","🍝","🍛","🍲","🥘","🍳",
+  "🥞","🧇","🥐","🥨","🧀","🍗","🍖","🥩","🍤","🥟","🍢","🍩","🍪","🧁","🍰","🥧",
+  "🍦","🍨","🍎","🍓","🍇","🍊","🍌","🥑","🍅","🌶","🥕","🌽","🥦","☕","🍺","🥤","🧋",
+];
+// Randomised scatter, cached per (meal, width-bucket) so it stays put across
+// re-plans and only regenerates when the board width really changes.
+const mealDecorCache = new Map();
+
+function buildMealDecorHTML(w, h) {
+  // Cap density well under the "3 per square inch" ceiling for a minor distraction.
+  const sqIn = (w / 96) * (h / 96);
+  const count = Math.max(2, Math.min(180, Math.round(sqIn * 2.3)));
+  let html = "";
+  for (let i = 0; i < count; i++) {
+    const emoji = MEAL_FOODS[Math.floor(Math.random() * MEAL_FOODS.length)];
+    const left = (Math.random() * 100).toFixed(1);
+    const top = (Math.random() * 100).toFixed(1);
+    const rot = Math.round(Math.random() * 80 - 40);
+    const size = (11 + Math.random() * 13).toFixed(1);
+    const op = (0.55 + Math.random() * 0.45).toFixed(2);
+    html += `<span style="left:${left}%;top:${top}%;font-size:${size}px;opacity:${op};transform:translate(-50%,-50%) rotate(${rot}deg)">${emoji}</span>`;
+  }
+  return html;
+}
+
+/** Fill each meal band's decor layer once its size is known. Cached by band id
+ *  + width bucket so scrubbing the plan doesn't reshuffle the food. */
+function populateMealDecors(host) {
+  for (const decor of host.querySelectorAll(".sch-meal .meal-decor")) {
+    const band = decor.parentElement;
+    const w = band.clientWidth || 600;
+    const h = band.clientHeight || 34;
+    const key = `${band.dataset.meal || "meal"}:${Math.round(w / 120)}`;
+    let html = mealDecorCache.get(key);
+    if (html == null) {
+      html = buildMealDecorHTML(w, h);
+      mealDecorCache.set(key, html);
+    }
+    decor.innerHTML = html;
+  }
+}
+
 function buildMealBand(meal, y) {
   const band = document.createElement("div");
   band.className = "sch-meal";
@@ -1734,10 +1780,10 @@ function buildMealBand(meal, y) {
   const badge = blocks.length
     ? `<span class="dl-blocked" title="${escapeHtml(blockTip(`Your ${meal.id} break`, blocks))}">not placeable · ${blocks.length}</span>`
     : "";
-  // A faint, playful scatter of food emoji tiled across the break.
-  const decor = Array.from({ length: 44 }, (_, i) => (i % 2 ? "🍔" : "🍕")).join(" ");
+  // A faint, playful scatter of food emoji — filled in once laid out
+  // (populateMealDecors), so the count matches the band's actual area.
   band.innerHTML =
-    `<span class="meal-decor" aria-hidden="true">${decor}</span>` +
+    `<span class="meal-decor" aria-hidden="true"></span>` +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
     `<span class="meal-label">🍽 ${name} ${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}</span>` +
     badge +

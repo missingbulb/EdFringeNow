@@ -794,12 +794,13 @@ a { color: inherit; }
   font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
   font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
-/* Playful faint food scatter tiled across the break, behind the label. */
+/* Playful faint food scatter behind the label — randomised emoji, each placed,
+   rotated and sized in JS (populateMealDecors). */
 .sch-meal .meal-decor {
   position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
-  display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
-  gap: 4px 12px; padding: 0 8px; opacity: 0.16; font-size: 15px; line-height: 1;
+  opacity: 0.22;
 }
+.sch-meal .meal-decor span { position: absolute; display: block; line-height: 1; }
 
 /* "Getting there" / "getting out" blocks — one per trip, inside their own day
    column. Same hatch as the zones/meals; drag the inner edge to resize. */
