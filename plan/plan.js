@@ -19,8 +19,8 @@ import { distanceKm, travelMinutes } from "./lib/travel.js";
 
 // --- Constants --------------------------------------------------------
 
-const DATA_URL = "../data/normalized/shows.json";
-const VENUES_URL = "../data/venues.json";
+const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehydrated against VENUES_URL
+const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
 const SAMPLE_URL = "./sample-favourites.csv";
 const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
@@ -174,17 +174,93 @@ const state = {
   perf: { count: 0, sum: 0, last: 0, min: Infinity, max: 0 },
 };
 
-// --- Data loading -----------------------------------------------------
+// --- Data loading + rehydration ---------------------------------------
+//
+// The planner downloads two files: the compact catalogue (shows.min.json, packed
+// by scraper/normalize.py) and the shared lookups (venues.json). rehydrateShows()
+// unpacks the first against the second back into the full records the engine
+// expects. This is the client half of the minification and owns the image-url
+// handling: every enum is an index into a venues.json list, venueName is rebuilt
+// from the venue code + room, dates are MMDD ints, and the bare image GUID gets
+// its host prefix re-attached here (§ imageUrl), so the rest of the app sees a
+// ready-to-use catalogue identical in shape to the old shows.json.
+
+// Every listing image is one GUID served from this host; the wire form stores
+// only the GUID (scraper/normalize.py strips the prefix) and it is re-attached
+// here, over https so it isn't blocked as mixed content. A value that already
+// carries a scheme is treated as an absolute url and only upgraded to https.
+const IMAGE_HOST_PREFIX = "https://registration.edfringe.com/resource/image/";
+function imageUrl(ref) {
+  if (!ref) return null;
+  if (/^https?:\/\//i.test(ref)) return ref.replace(/^http:\/\//i, "https://");
+  return IMAGE_HOST_PREFIX + ref;
+}
+
+/** MMDD int back to an ISO date in the festival year: 807 -> "2026-08-07". */
+function mmddToDate(mmdd) {
+  const s = String(mmdd).padStart(4, "0");
+  return `${YEAR}-${s.slice(0, 2)}-${s.slice(2)}`;
+}
+
+/** Rebuild the full show catalogue from the compact wire records + venues.json
+ *  lookups. Inverse of scraper/normalize.py:minify_master — see that for the
+ *  wire field map. Lossless: the records it returns match the old shows.json
+ *  (with image/smallImage already resolved to absolute https urls). */
+function rehydrateShows(wire, lookups) {
+  const { venues = {}, rooms = [], genres = [], subgenres = [],
+          ticketStatuses = [], ageRestrictions = [] } = lookups || {};
+  const at = (list, i) => (i >= 0 ? list[i] : null);
+  return (wire || []).map((r) => {
+    const room = at(rooms, r.rm);
+    // venueName was dropped when it rebuilds from the venue code + room; the wire
+    // form only carries `vn` for shows whose name can't be reconstructed.
+    let venueName;
+    if ("vn" in r) {
+      venueName = r.vn;
+    } else {
+      const name = venues[r.v] ? venues[r.v].name : null;
+      venueName = room ? `${room} at ${name}` : name;
+    }
+    const image = imageUrl(r.im);
+    return {
+      id: r.i,
+      title: r.t,
+      slug: r.sl,
+      genre: at(genres, r.g),
+      subgenres: (r.sg || []).map((i) => subgenres[i]),
+      company: r.c ?? null,
+      duration: r.d ?? null,
+      ageRestriction: at(ageRestrictions, r.ar),
+      free: r.f === 1,
+      image,
+      // smallImage is dropped when identical to image; the client mirrors it.
+      smallImage: "si" in r ? imageUrl(r.si) : image,
+      blurb: r.b ?? "",
+      venue: r.v ?? null,
+      venueName,
+      room,
+      performances: (r.p || []).map((p) => ({
+        date: mmddToDate(p.d),
+        start: p.s,
+        soldOut: p.o === 1,
+        status: at(ticketStatuses, p.t),
+      })),
+    };
+  });
+}
 
 let dataPromise = null;
 
 function loadData() {
   dataPromise = (async () => {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${DATA_URL}`);
-    const shows = await res.json();
-    state.index = buildIndex(shows);
-    loadVenues(); // fire-and-forget; travel legs/gaps degrade gracefully without it
+    // Both files are required to rehydrate: the compact catalogue and the lookups
+    // it indexes into. Fetch them together.
+    const [wire, lookups] = await Promise.all([
+      fetchJson(DATA_URL),
+      fetchJson(VENUES_URL),
+    ]);
+    state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
+    state.index = buildIndex(rehydrateShows(wire, lookups));
     restoreStoredFavourites();
     return state.index;
   })();
@@ -192,19 +268,10 @@ function loadData() {
   return dataPromise;
 }
 
-/** Load venue coordinates for travel-time estimates. Best-effort: if it fails,
- *  the planner falls back to the flat different-venue gap and hides distances. */
-async function loadVenues() {
-  try {
-    const res = await fetch(VENUES_URL);
-    if (!res.ok) return;
-    const data = await res.json();
-    state.venueCoords = data.venues || data || null;
-    // A plan built before the venues landed re-plans now that travel is known.
-    if (state.matched.length > 0) refresh();
-  } catch (err) {
-    console.warn("Fringe Planner: couldn't load venue coordinates", err);
-  }
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  return res.json();
 }
 
 async function ensureData() {
@@ -2367,18 +2434,10 @@ function ensureShowCard() {
   return card;
 }
 
-// shows.json stores each image as just its edfringe GUID; re-attach the host
-// here (over https so it isn't blocked as mixed content). A value that already
-// carries a scheme is treated as an absolute url and only upgraded to https.
-const IMAGE_HOST_PREFIX = "https://registration.edfringe.com/resource/image/";
-function imageUrl(ref) {
-  if (!ref) return "";
-  if (/^https?:\/\//i.test(ref)) return ref.replace(/^http:\/\//i, "https://");
-  return IMAGE_HOST_PREFIX + ref;
-}
-
 function fillShowCard(card, slot) {
-  const img = imageUrl(slot.image);
+  // slot.image is already an absolute https url — rehydrateShows() re-attaches the
+  // host prefix when it unpacks the catalogue (see § imageUrl).
+  const img = slot.image || "";
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = [slot.venueName, slot.room].filter(Boolean).join(" · ");
   const blurb = slot.blurb ? escapeHtml(slot.blurb.slice(0, 220)) + (slot.blurb.length > 220 ? "…" : "") : "";

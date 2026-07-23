@@ -9,12 +9,23 @@ emits three layers of data:
                                processing / regenerating the day files. NOT sent
                                to the browser.
 
+  data/normalized/shows.min.json
+                               the compact wire form of the master, and the file
+                               the planner actually downloads. Losslessly packed
+                               against the venues.json lookups: every enum (genre,
+                               room, subgenre, ticket status, age restriction) is
+                               an index into a shared list; venueName is rebuilt
+                               from the venue code + room; smallImage is dropped
+                               when it equals image; booleans are 1/0; dates are an
+                               MMDD int; field names are 1-3 chars. The planner
+                               rehydrates it with venues.json (see plan/plan.js).
+
   data/venues.json             shared lookup, sent once:
-                               {venues, rooms, genres, subgenres}. `venues` is
-                               keyed by venue code ("venue number") -> name,
-                               address, postcode, lat, lng; `rooms`, `genres` and
-                               `subgenres` are the global de-duplicated string
-                               lists the day files index into.
+                               {venues, rooms, genres, subgenres, ticketStatuses,
+                               ageRestrictions}. `venues` is keyed by venue code
+                               ("venue number") -> name, address, postcode, lat,
+                               lng; the rest are the global de-duplicated string
+                               lists the day files and shows.min.json index into.
 
   data/days/2026-08-DD.json    one file per August day, holding only the shows
                                performing that day with the minimum a card needs.
@@ -30,10 +41,13 @@ Venue coordinates are geocoded from UK postcodes via postcodes.io and cached in
 venues.json so a refresh only geocodes new venues.
 
 Usage:
-    python3 scraper/normalize.py                 # full rebuild from raw scrape
-    python3 scraper/normalize.py --merge         # upsert raw into existing master
-    python3 scraper/normalize.py --no-geocode    # skip postcode lookups
-    python3 scraper/normalize.py --selftest      # run the built-in fixture test
+    python3 scraper/normalize.py                     # full rebuild from raw scrape
+    python3 scraper/normalize.py --merge             # upsert raw into existing master
+    python3 scraper/normalize.py --no-geocode        # skip postcode lookups
+    python3 scraper/normalize.py --minify-from-master  # rebuild venues.json + the
+                                                     # compact shows.min.json from the
+                                                     # existing master (no raw scrape)
+    python3 scraper/normalize.py --selftest          # run the built-in fixture test
 """
 
 from __future__ import annotations
@@ -49,6 +63,7 @@ from urllib.error import URLError, HTTPError
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RAW_DIR = ROOT / "data" / "raw_pages"
 DEFAULT_MASTER = ROOT / "data" / "normalized" / "shows.json"
+DEFAULT_MASTER_MIN = ROOT / "data" / "normalized" / "shows.min.json"
 DEFAULT_VENUES = ROOT / "data" / "venues.json"
 DEFAULT_DAYS_DIR = ROOT / "data" / "days"
 
@@ -356,17 +371,19 @@ def unify_subgenre_casing(master: list[dict]) -> None:
         show["subgenres"] = out
 
 
-def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str], list[str]]:
-    """The global (genres, rooms, subgenres, ticketStatuses) lookup lists: every
-    distinct genre, room, subgenre and per-performance ticket status across all
-    shows, sorted. A show references them by index in the day files; the lists
-    ship once, alongside the venues (run())."""
+def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str], list[str], list[str]]:
+    """The global (genres, rooms, subgenres, ticketStatuses, ageRestrictions)
+    lookup lists: every distinct genre, room, subgenre, per-performance ticket
+    status and age restriction across all shows, sorted. A show references them by
+    index in the day files and in shows.min.json; the lists ship once, alongside
+    the venues (run())."""
     genres = sorted({s["genre"] for s in master if s.get("genre")})
     rooms = sorted({s["room"] for s in master if s.get("room")})
     subgenres = sorted({sg for s in master for sg in s.get("subgenres") or []})
     ticket_statuses = sorted({p.get("status") for s in master
                               for p in s.get("performances") or [] if p.get("status")})
-    return genres, rooms, subgenres, ticket_statuses
+    age_restrictions = sorted({s["ageRestriction"] for s in master if s.get("ageRestriction")})
+    return genres, rooms, subgenres, ticket_statuses, age_restrictions
 
 
 def build_day_files(master: list[dict], genre_ix: dict[str, int],
@@ -420,6 +437,91 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
     return days
 
 
+# --------------------------------------------------------------------------- #
+# Compact wire form of the master (data/normalized/shows.min.json).
+#
+# The planner downloads this, not the 7 MB master. It is packed against the same
+# venues.json lookups the day files use, so it carries no dictionaries of its own,
+# and the packing is lossless — plan/plan.js rebuilds the full records from it.
+# --------------------------------------------------------------------------- #
+
+def month_day_key(date: str) -> int:
+    """A 2026 date as an MMDD integer: "2026-08-07" -> 807, "2026-07-24" -> 724.
+
+    Every performance is in 2026 (the festival year), so the year is implied and
+    only the month/day need storing; the client re-attaches "2026-".
+    """
+    return int(date[5:7] + date[8:10])
+
+
+def venue_name_rebuildable(show: dict, venues: dict) -> bool:
+    """True when a show's venueName is exactly "<room> at <venue name>" (or the
+    bare venue name when it has no room), so it can be dropped from the wire form
+    and rebuilt client-side from the venue code + room. False for the handful of
+    shows with no resolvable venue (or any venueName that wouldn't rebuild
+    byte-for-byte) — those keep their venueName verbatim, so packing stays
+    lossless whatever the data does."""
+    code = show.get("venue")
+    if not code or code not in venues:
+        return False
+    name = venues[code].get("name")
+    room = show.get("room")
+    rebuilt = f"{room} at {name}" if room else name
+    return rebuilt == show.get("venueName")
+
+
+def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[str, int],
+                  sub_ix: dict[str, int], ts_ix: dict[str, int], age_ix: dict[str, int],
+                  venues: dict) -> list[dict]:
+    """Pack the full master into the compact records the planner downloads.
+
+    Each field is either shortened, indexed into a shared venues.json lookup, or
+    dropped when it can be reconstructed:
+
+      * `g`/`rm`/`ar` — genre, room and age restriction as indices into the
+        global genres/rooms/ageRestrictions lists (-1 when absent).
+      * `sg` — subgenres as indices into the global subgenres list.
+      * `p[].t` — the performance ticket status as an index into ticketStatuses
+        (-1 when absent).
+      * `vn` — venueName, kept ONLY when it can't be rebuilt from `v` + `rm`
+        (venue_name_rebuildable); present-but-null for the no-venue shows.
+      * `si` — smallImage, kept ONLY when it differs from `im` (image); otherwise
+        the client mirrors image.
+      * `f`/`p[].o` — free / soldOut as 1/0.
+      * `p[].d` — the performance date as an MMDD int.
+      * `im` — the bare image GUID; the client re-attaches the host prefix.
+    """
+    out: list[dict] = []
+    for s in master:
+        rec: dict = {
+            "i": s["id"],
+            "t": s["title"],
+            "sl": s["slug"],
+            "g": genre_ix.get(s.get("genre"), -1),
+            "sg": [sub_ix[sg] for sg in s.get("subgenres") or [] if sg in sub_ix],
+            "c": s.get("company"),
+            "d": s.get("duration"),
+            "ar": age_ix.get(s.get("ageRestriction"), -1),
+            "f": 1 if s.get("free") else 0,
+            "im": s.get("image"),
+        }
+        if s.get("smallImage") != s.get("image"):
+            rec["si"] = s.get("smallImage")
+        rec["b"] = s.get("blurb") or ""
+        rec["v"] = s.get("venue")
+        if not venue_name_rebuildable(s, venues):
+            rec["vn"] = s.get("venueName")
+        rec["rm"] = room_ix.get(s.get("room"), -1)
+        rec["p"] = [{
+            "d": month_day_key(p["date"]),
+            "s": p["start"],
+            "o": 1 if p["soldOut"] else 0,
+            "t": ts_ix.get(p.get("status"), -1),
+        } for p in s.get("performances") or []]
+        out.append(rec)
+    return out
+
+
 def load_events(raw_dir: Path) -> list[dict]:
     shows_json = raw_dir / "shows.json"
     if shows_json.exists():
@@ -435,6 +537,62 @@ def write_json(path: Path, obj) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")))
     tmp.replace(path)
+
+
+def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
+                          days_dir: Path, master_min_path: Path) -> int:
+    """Write everything derived from the master + venue map: the shared lookup
+    file (venues.json), the per-day now-page files, and the compact planner file
+    (shows.min.json). Returns the number of day files written.
+
+    The lookup lists are built once here and indexed into by both the day files
+    and shows.min.json, so the two stay in lockstep with a single source of truth.
+    """
+    genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups(master)
+    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
+                             "subgenres": subgenres, "ticketStatuses": ticket_statuses,
+                             "ageRestrictions": age_restrictions})
+
+    genre_ix = {g: i for i, g in enumerate(genres)}
+    room_ix = {r: i for i, r in enumerate(rooms)}
+    sub_ix = {s: i for i, s in enumerate(subgenres)}
+    ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
+    age_ix = {a: i for i, a in enumerate(age_restrictions)}
+
+    # Compact planner payload (packed against the lookups just written).
+    write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
+                                              ts_ix, age_ix, venues))
+
+    # Per-day August files + index.
+    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix)
+    for date, items in days.items():
+        write_json(days_dir / f"{date}.json", items)
+    write_json(days_dir / "index.json", {
+        "dates": sorted(days.keys()),
+        "counts": {d: len(days[d]) for d in sorted(days)},
+        "shows": len(master),
+        "venues": len(venues),
+    })
+    return len(days)
+
+
+def regen_from_master(args) -> int:
+    """Rebuild venues.json + the compact shows.min.json from the committed master,
+    without a raw scrape. Used to (re)generate the planner payload after a manual
+    master edit, or to backfill it the first time. The venue map (with its cached
+    coordinates) is carried over from the existing venues.json verbatim; only the
+    lookup lists and the derived files are rebuilt from the master."""
+    master_path = Path(args.master)
+    master = json.loads(master_path.read_text())
+    venues_path = Path(args.venues)
+    prior = json.loads(venues_path.read_text()) if venues_path.exists() else {}
+    venues = prior.get("venues", prior)
+    n_days = write_derived_outputs(master, venues, venues_path,
+                                   Path(args.days_dir), Path(args.master_min))
+    print(f"Regenerated from {master_path} ({len(master)} shows): "
+          f"{args.master_min}, {venues_path} ({len(venues)} venues), "
+          f"{n_days} day files in {args.days_dir}")
+    return 0
 
 
 def run(args) -> int:
@@ -480,30 +638,11 @@ def run(args) -> int:
     venues_raw_path = raw_dir / "venues_raw.json"
     venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
-    genres, rooms, subgenres, ticket_statuses = build_lookups(master)
-    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
-                             "subgenres": subgenres, "ticketStatuses": ticket_statuses})
+    n_days = write_derived_outputs(master, venues, venues_path,
+                                   Path(args.days_dir), Path(args.master_min))
 
-    # Per-day August files + index.
-    genre_ix = {g: i for i, g in enumerate(genres)}
-    room_ix = {r: i for i, r in enumerate(rooms)}
-    sub_ix = {s: i for i, s in enumerate(subgenres)}
-    ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
-    days_dir = Path(args.days_dir)
-    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix)
-    for date, items in days.items():
-        write_json(days_dir / f"{date}.json", items)
-    index = {
-        "dates": sorted(days.keys()),
-        "counts": {d: len(days[d]) for d in sorted(days)},
-        "shows": len(master),
-        "venues": len(venues),
-    }
-    write_json(days_dir / "index.json", index)
-
-    print(f"\nWrote: {master_path} ({len(master)} shows), "
-          f"{venues_path} ({len(venues)} venues), "
-          f"{len(days)} day files in {days_dir}")
+    print(f"\nWrote: {master_path} ({len(master)} shows), {args.master_min}, "
+          f"{venues_path} ({len(venues)} venues), {n_days} day files in {args.days_dir}")
     return 0
 
 
@@ -559,14 +698,40 @@ def selftest() -> int:
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
 
-    genres, rooms, subgenres, ticket_statuses = build_lookups([rec])
+    genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups([rec])
     assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
     assert subgenres == ["Character Comedy", "Stand-up"], subgenres
     assert ticket_statuses == ["AVAILABLE", "SOLD_OUT"], ticket_statuses
+    assert age_restrictions == ["14+"], age_restrictions
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
     sub_ix = {s: i for i, s in enumerate(subgenres)}
     ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
+    age_ix = {a: i for i, a in enumerate(age_restrictions)}
+
+    # Compact planner form (shows.min.json): enums become indices into the shared
+    # lookups, dates MMDD ints, flags 1/0, smallImage kept only when it differs
+    # from image, venueName dropped when it rebuilds from "<room> at <venue name>".
+    venues = {"33": {"name": "Pleasance Courtyard"}}
+    packed = minify_master([rec], genre_ix, room_ix, sub_ix, ts_ix, age_ix, venues)[0]
+    assert genres[packed["g"]] == "Comedy", packed
+    assert [subgenres[i] for i in packed["sg"]] == ["Stand-up", "Character Comedy"], packed
+    assert age_restrictions[packed["ar"]] == "14+" and rooms[packed["rm"]] == "Beneath", packed
+    assert packed["f"] == 0 and packed["im"] == "large-guid", packed
+    # This fixture's large/small images differ, so smallImage is carried; in real
+    # data they are identical and `si` is dropped entirely.
+    assert packed["si"] == "small-guid", packed
+    assert packed["p"][0] == {"d": 806, "s": "11:45", "o": 0, "t": ts_ix["AVAILABLE"]}, packed
+    assert packed["p"][1]["o"] == 1 and ticket_statuses[packed["p"][1]["t"]] == "SOLD_OUT", packed
+    # venueName here isn't "<room> at <venue name>", so it is kept verbatim (`vn`).
+    assert packed["vn"] == "Pleasance Courtyard", packed
+    # A venueName that IS "<room> at <name>" rebuilds from the code + room, so it
+    # is dropped from the wire form.
+    rebuildable = dict(rec, venue="33", room="Beneath",
+                       venueName="Beneath at Pleasance Courtyard")
+    packed2 = minify_master([rebuildable], genre_ix, room_ix, sub_ix, ts_ix, age_ix, venues)[0]
+    assert "vn" not in packed2, "rebuildable venueName must be dropped from the wire form"
+
     days = build_day_files([rec], genre_ix, room_ix, sub_ix, ts_ix)
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
     d6 = days["2026-08-06"][0]
@@ -621,18 +786,24 @@ def main() -> int:
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--raw-dir", default=str(DEFAULT_RAW_DIR))
     parser.add_argument("--master", default=str(DEFAULT_MASTER))
+    parser.add_argument("--master-min", default=str(DEFAULT_MASTER_MIN))
     parser.add_argument("--venues", default=str(DEFAULT_VENUES))
     parser.add_argument("--days-dir", default=str(DEFAULT_DAYS_DIR))
     parser.add_argument("--merge", action="store_true",
                         help="upsert into the existing master instead of replacing")
     parser.add_argument("--no-geocode", action="store_true",
                         help="skip postcode geocoding (leave lat/lng null)")
+    parser.add_argument("--minify-from-master", action="store_true",
+                        help="rebuild venues.json + shows.min.json from the existing "
+                             "master (no raw scrape) and exit")
     parser.add_argument("--selftest", action="store_true",
                         help="run the built-in fixture test and exit")
     args = parser.parse_args()
 
     if args.selftest:
         return selftest()
+    if args.minify_from_master:
+        return regen_from_master(args)
     return run(args)
 
 
