@@ -1778,7 +1778,7 @@ function buildScheduleBlock(slot, top, rawBottom) {
     (forced ? "Locked in — click to unlock · " : "Click to lock into your plan · ") +
     "right-click to open edfringe.com";
   block.innerHTML =
-    (forced ? `<span class="sch-pin" aria-hidden="true" title="locked into your plan">📌</span>` : "") +
+    (forced ? `<span class="sch-pin" aria-hidden="true" title="locked into your plan — this is why it's here, even across a meal break or your day hours">🔒</span>` : "") +
     `<span class="sch-emoji" aria-hidden="true">${genreEmoji(slot.genre)}</span>` +
     `<span class="sch-body-text">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
