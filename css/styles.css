@@ -784,20 +784,64 @@ a { color: inherit; }
 .cta-card { border: none; box-shadow: none; background: transparent; }
 .cta-card:hover { transform: none; box-shadow: none; }
 .cta-card.is-open { z-index: 1500; }
-.cta-trigger {
-  display: block; width: 100%; text-align: left; cursor: pointer;
-  background: var(--red); color: #fff; border: none; border-radius: 16px;
-  padding: 17px 20px; box-shadow: 0 10px 24px rgba(108, 76, 241, 0.26);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+/* Initial state: the faded placeholder itinerary and the "Tap to set
+   constraints" dropzone are stacked in one grid cell, so the box floats
+   centred over the skeleton — echoing the Plan page's upload interface. */
+.cta-intake { display: grid; }
+.cta-intake > * { grid-area: 1 / 1; }
+
+/* The greyed-out preview of the plan the picker will build. Non-interactive;
+   the dropzone sits over it and takes the clicks. */
+.cta-skeleton {
+  padding: 16px 18px 18px;
+  border: 1px solid var(--line); border-radius: 16px;
+  background: var(--paper);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
 }
-.cta-trigger:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(108, 76, 241, 0.32); }
+.cta-skeleton .plan-node { padding-left: 30px; }
+/* Skeleton bars stand in for the real show name / venue / time chip. */
+.skel-bar {
+  display: block; border-radius: 6px;
+  background: linear-gradient(90deg, #e7e9ef 0%, #eef0f5 50%, #e7e9ef 100%);
+}
+.skel-chip { width: 78px; height: 16px; border-radius: 999px; }
+.skel-title { width: 62%; height: 15px; margin: 3px 0; }
+.skel-sub { width: 44%; height: 11px; }
+
+/* The overlay: a dashed, tappable card matching the Plan page's .dropzone,
+   with a violet action pill reading "Tap to set constraints". */
+.cta-trigger {
+  align-self: center; justify-self: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; text-align: center; cursor: pointer;
+  width: min(100%, 420px); padding: 30px 24px;
+  color: inherit;
+  background: rgba(243, 241, 254, 0.94);
+  border: 2px dashed var(--red); border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(1px);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
+}
+.cta-trigger:hover { border-color: var(--red-dark); background: rgba(237, 233, 254, 0.97); transform: translateY(-1px); }
 .cta-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-.cta-kicker { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
-.cta-title { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.4rem; line-height: 1.12; margin: 5px 0 6px; color: #fff; text-transform: none; }
-.cta-hint { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.92); }
-/* Once a commitment is set the top box is redundant — the plan carries it and
-   its destination node reopens the editor. Hide the box, keep the panel usable. */
-.has-plan .cta-trigger { display: none; }
+.cta-dz-icon {
+  width: 46px; height: 46px; display: grid; place-items: center;
+  color: var(--red); background: rgba(108, 76, 241, 0.1); border-radius: 14px;
+}
+.cta-dz-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--serif); font-weight: 700; font-size: 1rem;
+  color: #fff; background: var(--red);
+  border-radius: 12px; padding: 12px 22px;
+  box-shadow: 0 8px 20px rgba(108, 76, 241, 0.28);
+}
+.cta-trigger:hover .cta-dz-btn { background: var(--red-dark); }
+/* Once a commitment is set the intake is redundant — the plan carries it and
+   its destination node reopens the editor. Hide it, keep the panel usable. */
+.has-plan .cta-intake { display: none; }
 .has-plan .cta-card { margin: 0; }
 
 /* --- Constraint picker: a standard <input type=time> + a show list --- */

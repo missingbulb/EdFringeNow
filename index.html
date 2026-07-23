@@ -81,11 +81,46 @@
     <div class="wrap">
       <!-- ===================== Primary action: next commitment ===================== -->
       <article class="cta-card card card--constraint" data-card="constraint">
-        <button class="card-trigger cta-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
-          <span class="cta-kicker">Where do you need to be next?</span>
-          <span class="card-value cta-title" data-value="constraint">Set my next commitment</span>
-          <span class="cta-hint" aria-hidden="true">Pick a time, then the show — we'll show only what fits ▾</span>
-        </button>
+        <!-- Initial (no-commitment) state: a faded, placeholder version of the
+             3-part itinerary the plan will become, with a "Tap to set
+             constraints" box floating over it — mirroring the Plan page's
+             upload-favourites dropzone. Once a commitment is set (.has-plan)
+             this whole intake is hidden and the real plan (#journeyStrip)
+             takes over. -->
+        <div class="cta-intake">
+          <div class="cta-skeleton" aria-hidden="true">
+            <div class="plan-head-row"><p class="plan-head">Your plan</p></div>
+            <div class="plan-node you">
+              <span class="plan-ico">📍</span>
+              <div class="plan-timerow"><span class="plan-time">Now</span></div>
+              <div class="plan-title">You are here</div>
+              <div class="plan-sub">walking</div>
+            </div>
+            <div class="plan-leg">🚶 — min walk</div>
+            <div class="plan-node stop">
+              <span class="plan-ico">🎭</span>
+              <div class="plan-timerow"><span class="skel-bar skel-chip"></span></div>
+              <span class="skel-bar skel-title"></span>
+              <span class="skel-bar skel-sub"></span>
+            </div>
+            <div class="plan-leg">🚶 — min walk</div>
+            <div class="plan-node dest">
+              <span class="plan-ico">🎭</span>
+              <div class="plan-timerow"><span class="skel-bar skel-chip"></span></div>
+              <span class="skel-bar skel-title"></span>
+              <div class="plan-sub">Your next commitment</div>
+            </div>
+          </div>
+
+          <button class="card-trigger cta-trigger" data-panel="constraintPanel" aria-expanded="false" aria-haspopup="true">
+            <span class="cta-dz-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" /><path d="M12 3v3" /><path d="M12 18v3" /><path d="M3 12h3" /><path d="M18 12h3" /><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+            <span class="cta-dz-btn">Tap to set constraints</span>
+          </button>
+        </div>
         <div class="card-panel" id="constraintPanel" role="menu" hidden>
           <p class="panel-title">Your next commitment <strong id="constraintDateLabel">today</strong></p>
 
