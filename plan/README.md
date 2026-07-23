@@ -63,7 +63,6 @@ plan/
     __tests__/planning.test.mjs    day-hours / meal breaks / travel gaps / forcing
     __tests__/itinerary.test.mjs   node --test suite for the exporters
       (run all: `node --test plan/lib/__tests__/*.test.mjs`)
-  sample-favourites.csv   a one-show example export (the "try the sample" link)
   design/                 Fable design mock + notes (reference, not shipped logic)
 ```
 

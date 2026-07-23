@@ -521,7 +521,8 @@ function buildCalendar() {
 
     const label = document.createElement("div");
     label.className = "lane-label";
-    label.title = `${show.title} · usually ${typicalStartTime(show.performances)} · click the name to lock the show into the plan`;
+    // No native title — the lock cursor + underline-on-hover already signal the
+    // "click to lock" affordance, and a title here is the ugly browser tooltip.
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true">🔒</span>` +
       `<span class="lane-title">${escapeHtml(show.title)}</span>`;
@@ -529,7 +530,6 @@ function buildCalendar() {
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "lane-remove";
-    remove.title = "Remove this show from the list";
     remove.setAttribute("aria-label", `Remove ${show.title} from the list`);
     remove.textContent = "×";
     label.appendChild(remove);
@@ -601,7 +601,8 @@ function buildDayCells(performances) {
         seg.className = "seg " + segClass(p);
         seg.dataset.date = p.date;
         seg.dataset.start = p.start;
-        seg.title = `${dowShort(d)} ${d} Aug · ${p.start} · click to lock this performance`;
+        // The custom cal-tip (cell.dataset.tip below) is the nicer hover — no
+        // native title, so the two don't stack as parallel tooltips.
         cell.appendChild(seg);
       }
       cell.dataset.tip = entries
@@ -706,20 +707,22 @@ function laneStatus(show, filter, sets) {
 
 /** The status pill HTML for a lane verdict (see laneStatus for the kinds). */
 function statusPillHTML(status) {
+  // No native title attributes — those are the browser's ugly tooltip; the short
+  // pill label carries the verdict on its own.
   switch (status.kind) {
     case "scheduled":
-      return `<span class="st-plan" title="in your plan">&check;&nbsp;Scheduled!</span>`;
+      return `<span class="st-plan">&check;&nbsp;Scheduled!</span>`;
     case "early":
-      return `<span class="st-blocked" title="its only performances start before your day start — drag the day-start line up to catch it">☀ Too early</span>`;
+      return `<span class="st-blocked">☀ Too early</span>`;
     case "late":
-      return `<span class="st-blocked" title="its only performances end after your day end — drag the day-end line down to catch it">🌙 Too late</span>`;
+      return `<span class="st-blocked">🌙 Too late</span>`;
     case "cantfit":
-      return `<span class="st-cant" title="catchable in your dates, but it clashes with the plan (or a meal break / per-day cap) — click its name to lock it in and force it">Can't fit</span>`;
+      return `<span class="st-cant">Can't fit</span>`;
     case "sold":
-      return `<span class="st-sold" title="every performance in your window is sold out">Sold out</span>`;
+      return `<span class="st-sold">Sold out</span>`;
     case "baddates":
     default:
-      return `<span class="st-dates" title="it has bookable performances, but none inside your dates — try scrubbing the window">📅 No dates</span>`;
+      return `<span class="st-dates">📅 No dates</span>`;
   }
 }
 
@@ -747,9 +750,9 @@ function applyVerdicts(bySlug, filter) {
     ref.el.classList.toggle("lane--blocked", amber);
 
     // Mark the performance marks so the grid *shows the plan*, not just flags the
-    // lane: the one performance the plan set gets a solid green ring; a whole-show
-    // pin dashes every performance (green); an exact-performance pin also carries
-    // a pushpin badge that sits above the mark (overlapping the row above is fine).
+    // lane: the one performance the plan set turns into a gold bar; a whole-show
+    // pin dashes every performance (gold); an exact-performance pin also carries a
+    // lock badge that sits above the mark (overlapping the row above is fine).
     const pin = state.forced.get(ref.slug);
     const pinnedKey = typeof pin === "string" ? pin : null;
     const forcedShow = pin === true;
@@ -777,7 +780,7 @@ function applyVerdicts(bySlug, filter) {
 
     // A pinned lane shows the pin in its status too, right next to the verdict.
     const pinMark = forced
-      ? `<span class="st-pin" aria-hidden="true" title="locked into your plan">🔒</span>`
+      ? `<span class="st-pin" aria-hidden="true">🔒</span>`
       : "";
     ref.statusEl.innerHTML = pinMark + statusPillHTML(status);
   }

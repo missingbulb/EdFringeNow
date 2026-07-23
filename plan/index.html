@@ -149,7 +149,7 @@
           <div class="cal-title-row">
             <h2 class="cal-title" id="calTitle">Your favourites across August</h2>
             <button type="button" class="cal-collapse" id="calCollapseBtn" aria-expanded="true"
-                    aria-controls="calWrap calLegend" title="Collapse the grid of shows">
+                    aria-controls="calWrap calLegend">
               <svg class="cc-caret" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
               <span class="cc-text">Hide grid</span>
             </button>
@@ -164,7 +164,7 @@
         </div>
         <div class="hero-count" aria-live="polite">
           <div class="hc-num">
-            <span id="hcSched" title="scheduled in your plan">0</span><span class="hc-of"> / <span id="hcIn" title="catchable in your date window">0</span></span><span class="hc-of"> / <span id="hcAll" title="favourites matched">0</span></span>
+            <span id="hcSched">0</span><span class="hc-of"> / <span id="hcIn">0</span></span><span class="hc-of"> / <span id="hcAll">0</span></span>
           </div>
           <div class="hc-label">scheduled&nbsp;/&nbsp;in&nbsp;window&nbsp;/&nbsp;favourites</div>
           <div class="hc-detail" id="hcDetail"></div>
@@ -178,9 +178,9 @@
                day-of-month header stay visible together. -->
           <div class="cal-sticky">
             <div class="win-rail" id="winRail">
-              <div class="rail-band" id="railBand" title="Drag to move your date window">
+              <div class="rail-band" id="railBand">
                 <span class="rail-len" id="railLen">18 days</span>
-                <button type="button" class="rail-opt" id="railOptBtn" aria-haspopup="true" aria-expanded="false" aria-controls="railPop" title="Auto-pick the dates that catch the most shows">Optimize?</button>
+                <button type="button" class="rail-opt" id="railOptBtn" aria-haspopup="true" aria-expanded="false" aria-controls="railPop">Optimize?</button>
               </div>
               <!-- The optimizer, folded into the window bar. Positioned in JS on
                    open (fixed) so it escapes the calendar's scroll clip. -->
@@ -213,7 +213,7 @@
 
           <!-- Pre-opening zone (1–6 Aug) shaded by JS — previews only before
                the Fringe opens Fri 7 Aug. -->
-          <div class="festend" id="festEnd" title="Before the Fringe opens (Fri 7 Aug) — previews only"></div>
+          <div class="festend" id="festEnd"></div>
 
           <div class="lanes" id="lanes"><!-- one lane per show (JS) --></div>
 
@@ -225,8 +225,8 @@
             <div class="win-dim" id="dimL"></div>
             <div class="win-dim" id="dimR"></div>
             <div class="win-band" id="band"></div>
-            <div class="win-edge win-edge--start" id="edgeStart" title="Drag to set the start date"></div>
-            <div class="win-edge win-edge--end" id="edgeEnd" title="Drag to set the end date"></div>
+            <div class="win-edge win-edge--start" id="edgeStart"></div>
+            <div class="win-edge win-edge--end" id="edgeEnd"></div>
           </div>
         </div>
       </div>
