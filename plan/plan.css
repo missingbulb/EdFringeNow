@@ -81,7 +81,6 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums; cursor: default;
 }
 .perf-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
-@media (max-width: 640px) { .perf-pill { display: none; } }
 /* Testing-only chip — a loud red affordance (matching the "Now" app's DEBUG
    chip) that seeds the favourites UI with a random show set. */
 .debug-chip {
@@ -94,7 +93,13 @@ a { color: inherit; }
 .debug-chip:hover { filter: brightness(1.08); }
 .debug-chip:active { transform: translateY(1px); }
 .debug-chip:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
-@media (max-width: 640px) { .debug-chip { display: none; } }
+/* The header is a single nowrap flex row (~925px at full content), so a narrow
+   page overflowed horizontally rather than reflowing. Drop the chrome
+   progressively, least-important first, so logo + nav always fit: the decorative
+   date tagline goes first, then the testing chip, then the telemetry pill. */
+@media (max-width: 940px) { .header-hint { display: none; } }
+@media (max-width: 700px) { .debug-chip { display: none; } }
+@media (max-width: 500px) { .perf-pill { display: none; } }
 
 /* ============ Page head ============ */
 .page-head { padding: 44px 0 8px; }
