@@ -27,9 +27,21 @@ const GMAPS_LOGO =
   '<path fill="#34A853" d="M20 15 L40 40 L0 40 Z"/>' +
   '</g><circle cx="20" cy="15" r="4.6" fill="#fff"/></svg>';
 
-/* During the testing period, ignore a real location that's nowhere near
- * Edinburgh (in km) and keep the central default instead. */
-const MAX_DISTANCE_KM = 40;
+/* Very rough bounding box for the UK mainland (lat/lng). If the real location
+ * falls outside this box (e.g. a tester overseas) we keep the central-Edinburgh
+ * default and show the pre-set values instead of moving the pin abroad. Kept
+ * deliberately loose — it only needs to tell "in the UK" from "not". */
+const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
+
+/* Is a [lat, lng] roughly within the UK mainland box above? */
+function isInUK([lat, lng]) {
+  return (
+    lat >= UK_BOUNDS.minLat &&
+    lat <= UK_BOUNDS.maxLat &&
+    lng >= UK_BOUNDS.minLng &&
+    lng <= UK_BOUNDS.maxLng
+  );
+}
 
 /* The official-style Fringe genre categories. */
 const GENRES = [
@@ -254,15 +266,19 @@ function requestUserLocation() {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       const here = [pos.coords.latitude, pos.coords.longitude];
-      // Testing guard: if we're way outside Edinburgh, stay on the default pin.
-      if (distanceKm(here, EDINBURGH) > MAX_DISTANCE_KM) {
+      // Testing guard: outside the UK (e.g. an overseas tester) keep the
+      // central-Edinburgh default and show the pre-set values instead.
+      if (!isInUK(here)) {
         console.info(
-          `Real location is ${Math.round(distanceKm(here, EDINBURGH))} km from ` +
-            "Edinburgh — keeping the central default for testing."
+          `Real location (${here[0].toFixed(3)}, ${here[1].toFixed(3)}) is outside the UK — ` +
+            "keeping the central Edinburgh default for testing."
         );
         return;
       }
+      // In the UK we trust the real location, so the pre-set values (and the
+      // debug tools that tweak them) are no longer relevant — hide them.
       setUserLocation(here, { recenter: true, real: true });
+      setDebugVisible(false);
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.
@@ -1650,6 +1666,14 @@ function closeAllPanels() {
 }
 
 /* ---------- Debug clock ---------- */
+/* Show or hide the whole debug menu (pill + dropdown). The testing tools only
+ * make sense alongside the pre-set values, so a confirmed in-UK location hides
+ * them; overseas / unknown locations keep them (the default). */
+function setDebugVisible(visible) {
+  const menu = document.getElementById("debugMenu");
+  if (menu) menu.hidden = !visible;
+}
+
 function renderDebugBanner() {
   const el = document.getElementById("debugNowText");
   if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
