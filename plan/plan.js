@@ -1798,13 +1798,18 @@ function ensureShowCard() {
   return card;
 }
 
-/** Upgrade the edfringe image host to https so it isn't blocked as mixed content. */
-function httpsImage(url) {
-  return url ? url.replace(/^http:\/\//i, "https://") : "";
+// shows.json stores each image as just its edfringe GUID; re-attach the host
+// here (over https so it isn't blocked as mixed content). A value that already
+// carries a scheme is treated as an absolute url and only upgraded to https.
+const IMAGE_HOST_PREFIX = "https://registration.edfringe.com/resource/image/";
+function imageUrl(ref) {
+  if (!ref) return "";
+  if (/^https?:\/\//i.test(ref)) return ref.replace(/^http:\/\//i, "https://");
+  return IMAGE_HOST_PREFIX + ref;
 }
 
 function fillShowCard(card, slot) {
-  const img = httpsImage(slot.image);
+  const img = imageUrl(slot.image);
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = [slot.venueName, slot.room].filter(Boolean).join(" · ");
   const blurb = slot.blurb ? escapeHtml(slot.blurb.slice(0, 220)) + (slot.blurb.length > 220 ? "…" : "") : "";

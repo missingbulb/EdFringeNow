@@ -146,6 +146,26 @@ def short_blurb(description: str | None) -> str:
     return cut + "…"
 
 
+# Every listing image is served from this single host. The master stores only
+# the trailing GUID and the client re-attaches the prefix, which trims ~50 bytes
+# off each of the thousands of image fields in shows.json.
+IMAGE_URL_PREFIX = "http://registration.edfringe.com/resource/image/"
+
+
+def image_ref(url: str | None) -> str | None:
+    """The client-facing image reference: just the GUID for the known host.
+
+    Anything not served from the edfringe image host is kept as a full url, so
+    an unexpected source still renders (the client treats a value that carries a
+    scheme as an absolute url).
+    """
+    if not url:
+        return None
+    if url.startswith(IMAGE_URL_PREFIX):
+        return url[len(IMAGE_URL_PREFIX):]
+    return url
+
+
 def primary_image(images: list | None) -> str | None:
     for img in images or []:
         if img.get("url"):
@@ -153,12 +173,26 @@ def primary_image(images: list | None) -> str | None:
     return None
 
 
-def small_image(images: list | None) -> str | None:
-    """The show's card-sized image: prefer the API's "Small" variant, else any."""
+def image_of_type(images: list | None, image_type: str) -> str | None:
+    """First image url whose imageType matches (case-insensitive)."""
     for img in images or []:
-        if img.get("url") and (img.get("imageType") or "").lower() == "small":
+        if img.get("url") and (img.get("imageType") or "").lower() == image_type:
             return img["url"]
-    return primary_image(images)
+    return None
+
+
+def large_image(images: list | None) -> str | None:
+    """The show's full-size image ref: prefer the API's "Large" variant, else any.
+
+    The API doesn't guarantee image order, so we can't rely on the first url
+    being the large one — match on imageType explicitly.
+    """
+    return image_ref(image_of_type(images, "large") or primary_image(images))
+
+
+def small_image(images: list | None) -> str | None:
+    """The show's card-sized image ref: prefer the API's "Small" variant, else any."""
+    return image_ref(image_of_type(images, "small") or primary_image(images))
 
 
 def is_free(event: dict) -> bool:
@@ -214,7 +248,7 @@ def normalize_event(event: dict) -> dict:
         "duration": duration,
         "ageRestriction": event.get("ageRestriction") or None,
         "free": is_free(event),
-        "image": primary_image(event.get("images")),
+        "image": large_image(event.get("images")),
         "smallImage": small_image(event.get("images")),
         "blurb": short_blurb(event.get("description")),
         "venue": venue_code,
@@ -483,8 +517,14 @@ FIXTURE_EVENT = {
     "slug": "10-things-they-hate-about-me", "presentedBy": "Some Company",
     "priceType": "PAID", "freeTicketed": False, "ageRestriction": "14+",
     "description": "A **razor-sharp** hour of comedy.\n\nReally funny.",
-    "images": [{"url": "https://img/large.jpg", "imageType": "Large"},
-               {"url": "https://img/small.jpg", "imageType": "Small"}],
+    # Small listed before Large, as the live API actually returns them, so the
+    # transform must not rely on order to pick the large image.
+    "images": [
+        {"url": "http://registration.edfringe.com/resource/image/small-guid",
+         "imageType": "Small"},
+        {"url": "http://registration.edfringe.com/resource/image/large-guid",
+         "imageType": "Large"},
+    ],
     "venues": [{"title": "Pleasance Courtyard", "slug": "pleasance-courtyard"}],
     "spaces": [{"id": 5, "title": "Beneath", "venueName": "Pleasance Courtyard",
                 "venueCode": "33"}],
@@ -507,9 +547,14 @@ def selftest() -> int:
     assert rec["free"] is False
     assert rec["duration"] == 60
     assert rec["blurb"] == "A razor-sharp hour of comedy. Really funny.", rec["blurb"]
-    # smallImage prefers the API's "Small" variant; `image` stays the first url.
-    assert rec["smallImage"] == "https://img/small.jpg", rec["smallImage"]
-    assert rec["image"] == "https://img/large.jpg", rec["image"]
+    # `image` prefers the "Large" variant and smallImage the "Small" one,
+    # regardless of the order the API lists them in, and both are stored as the
+    # bare GUID (the edfringe host prefix is stripped, re-attached client-side).
+    assert rec["smallImage"] == "small-guid", rec["smallImage"]
+    assert rec["image"] == "large-guid", rec["image"]
+    # A non-edfringe host is kept whole so it still renders.
+    assert image_ref("https://other.example/x.jpg") == "https://other.example/x.jpg"
+    assert image_ref(None) is None
     assert len(rec["performances"]) == 2, "cancelled performance must be dropped"
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
