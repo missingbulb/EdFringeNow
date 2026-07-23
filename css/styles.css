@@ -816,15 +816,15 @@ a { color: inherit; }
   align-self: center; justify-self: center;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 12px; text-align: center; cursor: pointer;
-  width: min(100%, 420px); padding: 26px 24px;
+  width: min(100%, 420px); padding: 30px 24px;
   color: inherit;
-  background: rgba(255, 255, 255, 0.92);
-  border: 2px dashed #d5d9e2; border-radius: 16px;
+  background: rgba(243, 241, 254, 0.94);
+  border: 2px dashed var(--red); border-radius: 16px;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(1px);
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
 }
-.cta-trigger:hover { border-color: var(--red); background: #fff; transform: translateY(-1px); }
+.cta-trigger:hover { border-color: var(--red-dark); background: rgba(237, 233, 254, 0.97); transform: translateY(-1px); }
 .cta-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .cta-dz-icon {
   width: 46px; height: 46px; display: grid; place-items: center;
