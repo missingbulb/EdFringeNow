@@ -38,4 +38,14 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
+step "Normalizer self-test — normalize.py --selftest"
+# Exercises the raw→master→day-file→shows.min.json transforms on a fixture (no
+# network / no raw data), so the packer and the day-file builder are covered here
+# and the round-trip decoder is covered by plan/lib/__tests__/hydrate.test.mjs.
+if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/normalize.py --selftest
+else
+  echo "python3 not installed — skipping (CI always has it)" >&2
+fi
+
 printf '\n\033[32m✓ all checks passed\033[0m\n'

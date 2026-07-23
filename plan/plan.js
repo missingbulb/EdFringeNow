@@ -14,6 +14,7 @@ import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnos
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
+import { rehydrateShows } from "./lib/hydrate.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -178,76 +179,11 @@ const state = {
 //
 // The planner downloads two files: the compact catalogue (shows.min.json, packed
 // by scraper/normalize.py) and the shared lookups (venues.json). rehydrateShows()
-// unpacks the first against the second back into the full records the engine
-// expects. This is the client half of the minification and owns the image-url
-// handling: every enum is an index into a venues.json list, venueName is rebuilt
-// from the venue code + room, dates are MMDD ints, and the bare image GUID gets
-// its host prefix re-attached here (§ imageUrl), so the rest of the app sees a
-// ready-to-use catalogue identical in shape to the old shows.json.
-
-// Every listing image is one GUID served from this host; the wire form stores
-// only the GUID (scraper/normalize.py strips the prefix) and it is re-attached
-// here, over https so it isn't blocked as mixed content. A value that already
-// carries a scheme is treated as an absolute url and only upgraded to https.
-const IMAGE_HOST_PREFIX = "https://registration.edfringe.com/resource/image/";
-function imageUrl(ref) {
-  if (!ref) return null;
-  if (/^https?:\/\//i.test(ref)) return ref.replace(/^http:\/\//i, "https://");
-  return IMAGE_HOST_PREFIX + ref;
-}
-
-/** MMDD int back to an ISO date in the festival year: 807 -> "2026-08-07". */
-function mmddToDate(mmdd) {
-  const s = String(mmdd).padStart(4, "0");
-  return `${YEAR}-${s.slice(0, 2)}-${s.slice(2)}`;
-}
-
-/** Rebuild the full show catalogue from the compact wire records + venues.json
- *  lookups. Inverse of scraper/normalize.py:minify_master — see that for the
- *  wire field map. Lossless: the records it returns match the old shows.json
- *  (with image/smallImage already resolved to absolute https urls). */
-function rehydrateShows(wire, lookups) {
-  const { venues = {}, rooms = [], genres = [], subgenres = [],
-          ticketStatuses = [], ageRestrictions = [] } = lookups || {};
-  const at = (list, i) => (i >= 0 ? list[i] : null);
-  return (wire || []).map((r) => {
-    const room = at(rooms, r.rm);
-    // venueName was dropped when it rebuilds from the venue code + room; the wire
-    // form only carries `vn` for shows whose name can't be reconstructed.
-    let venueName;
-    if ("vn" in r) {
-      venueName = r.vn;
-    } else {
-      const name = venues[r.v] ? venues[r.v].name : null;
-      venueName = room ? `${room} at ${name}` : name;
-    }
-    const image = imageUrl(r.im);
-    return {
-      id: r.i,
-      title: r.t,
-      slug: r.sl,
-      genre: at(genres, r.g),
-      subgenres: (r.sg || []).map((i) => subgenres[i]),
-      company: r.c ?? null,
-      duration: r.d ?? null,
-      ageRestriction: at(ageRestrictions, r.ar),
-      free: r.f === 1,
-      image,
-      // smallImage is dropped when identical to image; the client mirrors it.
-      smallImage: "si" in r ? imageUrl(r.si) : image,
-      blurb: r.b ?? "",
-      venue: r.v ?? null,
-      venueName,
-      room,
-      performances: (r.p || []).map((p) => ({
-        date: mmddToDate(p.d),
-        start: p.s,
-        soldOut: p.o === 1,
-        status: at(ticketStatuses, p.t),
-      })),
-    };
-  });
-}
+// (./lib/hydrate.js) unpacks the first against the second back into the full
+// records the engine expects — every enum is an index into a venues.json list,
+// venueName is rebuilt from the venue code + room, dates are MMDD ints, and the
+// bare image GUID gets its host prefix re-attached — so the rest of the app sees
+// a ready-to-use catalogue identical in shape to the old shows.json.
 
 let dataPromise = null;
 
@@ -260,7 +196,7 @@ function loadData() {
       fetchJson(VENUES_URL),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
-    state.index = buildIndex(rehydrateShows(wire, lookups));
+    state.index = buildIndex(rehydrateShows(wire, lookups, YEAR));
     restoreStoredFavourites();
     return state.index;
   })();
