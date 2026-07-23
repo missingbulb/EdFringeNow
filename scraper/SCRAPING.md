@@ -89,7 +89,10 @@ fields.
 ### `images[]`
 
 Each has `url`, `imageType` (`"Small"` / `"Large"`), `boxOfficeId`, `cmsId`. Images
-are served from `registration.edfringe.com/resource/image/<uuid>`.
+are served from `registration.edfringe.com/resource/image/<uuid>`. `normalize.py`
+keeps both the Large (`image`) and Small (`smallImage`) variants, selected by
+`imageType`, and stores just the trailing `<uuid>` — the client re-attaches the
+host prefix.
 
 ## Performances
 
