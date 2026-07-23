@@ -21,7 +21,10 @@
      ticket day-picker legend so the calendar reads the same as the official
      site. Violet stays reserved for the date-window instrument + chrome. */
   --fr-avail: #2ac9de;    /* tickets available */
-  --fr-2for1: #ffce00;    /* 2-for-1 */
+  --fr-2for1: #ffce00;    /* 2-for-1 (solid fallback, e.g. the thin schedule accent) */
+  /* 2-for-1 reads as its two halves — available + free — interlaced on the
+     diagonal, so the mark says "a bit of both" without a new colour. */
+  --fr-2for1-weave: repeating-linear-gradient(45deg, var(--fr-avail) 0 3px, var(--fr-free) 3px 6px);
   --fr-preview: #3438ff;  /* preview show */
   --fr-free: #00bf57;     /* free (ticketed / non-ticketed) */
   --fr-event: #8c4fd9;    /* event-specific */
@@ -338,17 +341,11 @@ a { color: inherit; }
 .lg { display: inline-flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
 .lg i { width: 14px; height: 11px; border-radius: 3px; display: block; }
 .lg-avail i   { background: var(--fr-avail); }
-.lg-2for1 i   { background: var(--fr-2for1); }
+.lg-2for1 i   { background: var(--fr-2for1-weave); }
 .lg-preview i { background: var(--fr-preview); }
 .lg-free i    { background: var(--fr-free); }
 .lg-event i   { background: var(--fr-event); }
 .lg-noalloc i { background: var(--fr-noalloc); }
-.lg-sold i    { background: var(--fr-sold-bg); box-shadow: inset 0 0 0 1.5px var(--fr-sold-line); }
-/* A miniature two-segment cell, matching the split used in the calendar. */
-.lg-multi i.multi { display: inline-flex; gap: 1.5px; background: none; width: 16px; }
-.lg-multi i.multi b { flex: 1; border-radius: 2px; }
-.lg-multi i.multi b:first-child { background: var(--fr-avail); }
-.lg-multi i.multi b:last-child { background: var(--fr-2for1); }
 
 /* --- The calendar canvas --- */
 /* .cal-wrap is the scroll container: the sticky block (window-control rail +
@@ -442,12 +439,13 @@ a { color: inherit; }
   filter: drop-shadow(0 1px 1px rgba(16, 24, 40, 0.35));
 }
 .seg-avail   { background: var(--fr-avail); }
-.seg-2for1   { background: var(--fr-2for1); }
+.seg-2for1   { background: var(--fr-2for1-weave); }
 .seg-preview { background: var(--fr-preview); }
 .seg-free    { background: var(--fr-free); }
 .seg-event   { background: var(--fr-event); }
 .seg-noalloc { background: var(--fr-noalloc); }
-.seg-sold    { background: var(--fr-sold-bg); box-shadow: inset 0 0 0 1.5px var(--fr-sold-line); }
+/* Sold out shares the red "no allocation" mark — both mean "no online ticket". */
+.seg-sold    { background: var(--fr-noalloc); }
 
 /* Fixed-height row so the pushpin (a tall glyph) can't stretch a lane taller
    than its neighbours — there's no vertical room for that. Content is clamped
@@ -470,10 +468,13 @@ a { color: inherit; }
 .lane-status .st-sold { color: #98a2b3; font-weight: 700; white-space: nowrap; }
 /* "Bad dates" — a dates problem the window scrubber fixes; quiet violet. */
 .lane-status .st-dates { color: var(--violet-dark); font-weight: 600; white-space: nowrap; }
-/* A show with nothing catchable in the window recedes as a whole. But a
-   scheduled or forced row is never dimmed — it made the plan. */
-.lane--out:not(.lane--scheduled) .lane-title { opacity: 0.42; }
-.lane--out:not(.lane--scheduled) .lane-track { opacity: 0.35; }
+/* Every show that isn't in the plan reads the same, whatever the reason (out of
+   window, can't fit, too early/late, sold out): one dimmed title. A scheduled or
+   forced row is never dimmed — it made the plan. Out-of-window shows also recede
+   their day marks, to the same transparency, since none fall in your dates;
+   in-window shows keep their marks bright (those marks still mean something). */
+.lane:not(.lane--scheduled) .lane-title { opacity: 0.42; }
+.lane--out:not(.lane--scheduled) .lane-track { opacity: 0.42; }
 
 /* --- Window controls: the rail (sticky, above the day header) --- */
 /* All dragging lives here: the two handle tabs resize the window; the space
@@ -612,9 +613,18 @@ a { color: inherit; }
   max-width: 280px;
 }
 
-/* Colour key, below the grid. */
+/* Colour key, below the grid. Hidden (and taking no space) until the pointer is
+   over the grid — a glanceable reference, not permanent chrome. Revealing on
+   :hover of the legend too keeps it up while you read it. */
 .cal-legend {
-  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line);
+  max-height: 0; margin-top: 0; padding-top: 0; opacity: 0; overflow: hidden;
+  border-top: 1px solid transparent;
+  transition: max-height 0.2s ease, opacity 0.2s ease, margin-top 0.2s ease, padding-top 0.2s ease;
+}
+#calWrap:hover ~ .cal-legend,
+.cal-legend:hover {
+  max-height: 120px; margin-top: 16px; padding-top: 14px; opacity: 1;
+  border-top-color: var(--line);
 }
 
 /* ============ Allocate / itinerary (screen 3) ============ */
@@ -795,9 +805,11 @@ a { color: inherit; }
 .schedule.cols-narrow .sch-venue { display: none; }
 .schedule.cols-tiny .sch-show { left: 2px; right: 2px; gap: 2px; border-left-width: 3px; }
 .schedule.cols-tiny .sch-emoji { display: none; }
-/* Left-accent colours reuse the edfringe.com availability palette. */
+/* Left-accent colours reuse the edfringe.com availability palette. The 2-for-1
+   accent is a single 4px rule, too thin for the diagonal weave, so it takes the
+   teal "available" half of that pairing. */
 .seg-avail   { --seg: var(--fr-avail); }
-.seg-2for1   { --seg: var(--fr-2for1); }
+.seg-2for1   { --seg: var(--fr-avail); }
 .seg-preview { --seg: var(--fr-preview); }
 .seg-free    { --seg: var(--fr-free); }
 .seg-event   { --seg: var(--fr-event); }

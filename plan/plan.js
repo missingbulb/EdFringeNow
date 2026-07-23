@@ -719,7 +719,7 @@ function statusPillHTML(status) {
       return `<span class="st-sold" title="every performance in your window is sold out">Sold out</span>`;
     case "baddates":
     default:
-      return `<span class="st-dates" title="it has bookable performances, but none inside your dates — try scrubbing the window">📅 Bad dates</span>`;
+      return `<span class="st-dates" title="it has bookable performances, but none inside your dates — try scrubbing the window">📅 No dates</span>`;
   }
 }
 
