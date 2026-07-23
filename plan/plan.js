@@ -14,13 +14,14 @@ import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnos
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
+import { rehydrateShows } from "./lib/hydrate.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
 // --- Constants --------------------------------------------------------
 
-const DATA_URL = "../data/normalized/shows.json";
-const VENUES_URL = "../data/venues.json";
+const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehydrated against VENUES_URL
+const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
 const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
 const YEAR = 2026;
@@ -173,17 +174,28 @@ const state = {
   perf: { count: 0, sum: 0, last: 0, min: Infinity, max: 0 },
 };
 
-// --- Data loading -----------------------------------------------------
+// --- Data loading + rehydration ---------------------------------------
+//
+// The planner downloads two files: the compact catalogue (shows.min.json, packed
+// by scraper/normalize.py) and the shared lookups (venues.json). rehydrateShows()
+// (./lib/hydrate.js) unpacks the first against the second back into the full
+// records the engine expects — every enum is an index into a venues.json list,
+// venueName is rebuilt from the venue code + room, dates are MMDD ints, and the
+// bare image GUID gets its host prefix re-attached — so the rest of the app sees
+// a ready-to-use catalogue identical in shape to the old shows.json.
 
 let dataPromise = null;
 
 function loadData() {
   dataPromise = (async () => {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${DATA_URL}`);
-    const shows = await res.json();
-    state.index = buildIndex(shows);
-    loadVenues(); // fire-and-forget; travel legs/gaps degrade gracefully without it
+    // Both files are required to rehydrate: the compact catalogue and the lookups
+    // it indexes into. Fetch them together.
+    const [wire, lookups] = await Promise.all([
+      fetchJson(DATA_URL),
+      fetchJson(VENUES_URL),
+    ]);
+    state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
+    state.index = buildIndex(rehydrateShows(wire, lookups, YEAR));
     restoreStoredFavourites();
     return state.index;
   })();
@@ -191,19 +203,10 @@ function loadData() {
   return dataPromise;
 }
 
-/** Load venue coordinates for travel-time estimates. Best-effort: if it fails,
- *  the planner falls back to the flat different-venue gap and hides distances. */
-async function loadVenues() {
-  try {
-    const res = await fetch(VENUES_URL);
-    if (!res.ok) return;
-    const data = await res.json();
-    state.venueCoords = data.venues || data || null;
-    // A plan built before the venues landed re-plans now that travel is known.
-    if (state.matched.length > 0) refresh();
-  } catch (err) {
-    console.warn("Fringe Planner: couldn't load venue coordinates", err);
-  }
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  return res.json();
 }
 
 async function ensureData() {
@@ -2364,18 +2367,10 @@ function ensureShowCard() {
   return card;
 }
 
-// shows.json stores each image as just its edfringe GUID; re-attach the host
-// here (over https so it isn't blocked as mixed content). A value that already
-// carries a scheme is treated as an absolute url and only upgraded to https.
-const IMAGE_HOST_PREFIX = "https://registration.edfringe.com/resource/image/";
-function imageUrl(ref) {
-  if (!ref) return "";
-  if (/^https?:\/\//i.test(ref)) return ref.replace(/^http:\/\//i, "https://");
-  return IMAGE_HOST_PREFIX + ref;
-}
-
 function fillShowCard(card, slot) {
-  const img = imageUrl(slot.image);
+  // slot.image is already an absolute https url — rehydrateShows() re-attaches the
+  // host prefix when it unpacks the catalogue (see § imageUrl).
+  const img = slot.image || "";
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = [slot.venueName, slot.room].filter(Boolean).join(" · ");
   const blurb = slot.blurb ? escapeHtml(slot.blurb.slice(0, 220)) + (slot.blurb.length > 220 ? "…" : "") : "";
