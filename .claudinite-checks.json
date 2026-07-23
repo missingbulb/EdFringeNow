@@ -16,7 +16,8 @@
     "github-actions",
     "html",
     "tidy-repo",
-    "grow_with_claudinite"
+    "grow_with_claudinite",
+    "local_packs/edfringe"
   ],
   "maintenance": {
     "delivery": "auto-merge"
