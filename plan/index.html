@@ -39,7 +39,11 @@
 
   <main class="container">
 
-    <div class="page-head">
+    <!-- Marketing intro — only useful on the empty/upload state. Once a plan is
+         loaded it's hidden (see showCalendar) so the grid becomes the hero and
+         the top stops being wordy; the favourites line + hero counts on screen 2
+         carry the context instead. -->
+    <div class="page-head" id="pageHead">
       <span class="page-kicker">Fringe Planner</span>
       <h1 class="page-title">Turn your favourites into a plan.</h1>
       <p class="page-sub">Bring the shows you've hearted on edfringe.com, then scrub across August to see

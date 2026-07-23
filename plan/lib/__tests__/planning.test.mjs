@@ -159,6 +159,34 @@ test("buildSchedule: a meal break blocks a show that overlaps it", () => {
   assert.equal(clear.counts.scheduledShows, 1);
 });
 
+test("buildSchedule: arrival/departure blocks only bite on their own date", () => {
+  // A morning show on the arrival day and an evening show on the departure day.
+  const shows = [
+    show("morning", "A", [{ date: "2026-08-10", start: "10:00" }]), // 10:00–11:00
+    show("evening", "A", [{ date: "2026-08-12", start: "20:00" }]), // 20:00–21:00
+  ];
+  const opts = { ...WIDE, dateStart: "2026-08-10", dateEnd: "2026-08-12" };
+
+  // No blocks: both place.
+  assert.equal(buildSchedule(shows, opts).counts.scheduledShows, 2);
+
+  // "Getting there" until 12:00 on the 10th drops the morning show but leaves
+  // the evening show (different date) untouched.
+  const withArrival = buildSchedule(shows, {
+    ...opts,
+    arrival: { date: "2026-08-10", endMin: 12 * 60 },
+  });
+  assert.deepEqual(withArrival.scheduled.map((s) => s.slug), ["evening"]);
+
+  // "Getting out" from 18:00 on the 12th drops the evening show; the morning
+  // show (its own date has no block) still places.
+  const withDeparture = buildSchedule(shows, {
+    ...opts,
+    departure: { date: "2026-08-12", startMin: 18 * 60 },
+  });
+  assert.deepEqual(withDeparture.scheduled.map((s) => s.slug), ["morning"]);
+});
+
 // --- forced (must-see) scheduling ----------------------------------------
 
 test("buildSchedule: a forced show survives the min-per-day drop", () => {

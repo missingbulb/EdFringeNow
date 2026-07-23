@@ -778,22 +778,49 @@ a { color: inherit; }
 }
 .sch-dayline--end .dl-flag { top: 1px; }
 .sch-dayline.dragging .dl-flag, .sch-dayline .dl-grip:hover ~ .dl-flag { background: var(--violet-dark); }
-/* Meal-break band: draggable to move, edge handles to resize. */
+/* Meal-break band: draggable to move, edge handles to resize. Its background
+   now matches the "before day starts / after day ends" zones (a neutral
+   diagonal hatch) so every "you can't be here" region on the board reads the
+   same; only the 🍽 label carries the meal identity. */
 .sch-meal {
   position: absolute; left: 0; right: 0; z-index: 5;
-  background: rgba(255, 176, 32, 0.16);
-  border-block: 1px solid rgba(214, 143, 20, 0.5);
+  background: repeating-linear-gradient(-45deg, rgba(16,24,40,0.05) 0 6px, rgba(16,24,40,0.02) 6px 12px);
+  border-block: 1px solid rgba(16, 24, 40, 0.08);
   cursor: grab; pointer-events: auto; touch-action: none; overflow: hidden;
 }
 .sch-meal.dragging { cursor: grabbing; }
 .sch-meal .meal-label {
   position: absolute; top: 50%; left: 6px; transform: translateY(-50%);
-  font-size: 0.6rem; font-weight: 700; color: #92640a; white-space: nowrap;
+  font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
   font-variant-numeric: tabular-nums; pointer-events: none;
 }
 .sch-meal .meal-resize { position: absolute; left: 0; right: 0; height: 7px; cursor: ns-resize; }
 .sch-meal .meal-resize--top { top: -1px; }
 .sch-meal .meal-resize--bottom { bottom: -1px; }
+
+/* "Getting there" / "getting out" blocks — one per trip, inside their own day
+   column (behind the shows). Same hatch as the zones/meals; drag the inner edge
+   to resize. */
+.sch-trip {
+  position: absolute; left: 0; right: 0; z-index: 5;
+  background: repeating-linear-gradient(-45deg, rgba(16,24,40,0.05) 0 6px, rgba(16,24,40,0.02) 6px 12px);
+  border-block: 1px solid rgba(16, 24, 40, 0.08);
+  pointer-events: auto; touch-action: none; overflow: hidden;
+}
+.sch-trip .sch-trip-label {
+  position: absolute; left: 6px; right: 6px;
+  font-size: 0.6rem; font-weight: 700; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums; pointer-events: none;
+}
+.sch-trip--arrival .sch-trip-label { bottom: 4px; }
+.sch-trip--departure .sch-trip-label { top: 4px; }
+.sch-trip.dragging {
+  background: repeating-linear-gradient(-45deg, rgba(108,76,241,0.12) 0 6px, rgba(108,76,241,0.04) 6px 12px);
+}
+.sch-trip .meal-resize { position: absolute; left: 0; right: 0; height: 9px; cursor: ns-resize; touch-action: none; }
+.sch-trip .meal-resize--top { top: -2px; }
+.sch-trip .meal-resize--bottom { bottom: -2px; }
 
 /* --- Hover card over a scheduled block --- */
 .sch-card {

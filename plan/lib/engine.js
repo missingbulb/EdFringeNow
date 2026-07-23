@@ -484,9 +484,25 @@ export function buildSchedule(shows, options = {}) {
   // …then narrowed to those inside the day-hours window and clear of meal
   // breaks. `lostToDayWindow` remembers shows that had window slots but lost
   // them all to that filter, for an honest unscheduled reason.
+  // Optional per-date "getting there" / "getting out" blocks. On the arrival
+  // date nothing may start before `arrival.endMin`; on the departure date
+  // nothing may run past `departure.startMin`. Modelled as date-specific meal
+  // breaks so they ride the same day-window filter (and, like meal breaks, an
+  // explicit performance pin still overrides them via slotsByShowAll).
+  const arrival = options.arrival && options.arrival.endMin != null ? options.arrival : null;
+  const departure = options.departure && options.departure.startMin != null ? options.departure : null;
+  const windowForDate = (date) => {
+    const isArrival = arrival && arrival.date === date;
+    const isDeparture = departure && departure.date === date;
+    if (!isArrival && !isDeparture) return dayWindow;
+    const mealBreaks = dayWindow.mealBreaks.slice();
+    if (isArrival) mealBreaks.push({ startMin: 0, endMin: arrival.endMin });
+    if (isDeparture) mealBreaks.push({ startMin: departure.startMin, endMin: 1440 });
+    return { ...dayWindow, mealBreaks };
+  };
   const slotsByShow = new Map();
   for (const [slug, slots] of slotsByShowAll) {
-    slotsByShow.set(slug, slots.filter((s) => withinDayWindow(s, dayWindow)));
+    slotsByShow.set(slug, slots.filter((s) => withinDayWindow(s, windowForDate(s.date))));
   }
 
   const chosen = [];

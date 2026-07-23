@@ -153,6 +153,12 @@ const state = {
     { id: "lunch", enabled: true, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30 },
     { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60 },
   ],
+  // "Getting there" / "getting out" blocks (minute-of-day), applied to the first
+  // (arrival) and last (departure) day of the trip window. Like meal breaks but
+  // date-specific — the dates are derived from d0/d1 at plan time. Drag the block
+  // edge on the schedule to set how much of the day travel eats.
+  arrival: { endMin: 11 * 60, enabled: true },      // no shows before this on day one
+  departure: { startMin: 22 * 60, enabled: true },  // no shows after this on the last day
   mode: "walk",
   // Must-sees, keyed by slug. Value `true` = pin the show (the scheduler picks a
   // performance); a slotKey string = pin that one specific performance. Click a
@@ -297,6 +303,8 @@ function clearFavourites() {
   $("screen3").hidden = true;
   state.schedule = null;
   state.scheduledSlugs = new Set();
+  const pageHead = $("pageHead");
+  if (pageHead) pageHead.hidden = false; // bring the intro back on the empty state
   $("screen1").hidden = false;
   $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -444,6 +452,9 @@ function toggleMissingList() {
 }
 
 function showCalendar({ scroll = false } = {}) {
+  // The marketing intro is empty-state chrome; drop it now the grid is the hero.
+  const pageHead = $("pageHead");
+  if (pageHead) pageHead.hidden = true;
   const screen2 = $("screen2");
   screen2.hidden = false;
   $("screen3").hidden = false;
@@ -1272,6 +1283,8 @@ function gatherPlanOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: effectiveDayEnd(),
     mealBreaks: state.mealBreaks.filter((m) => m.enabled).map((m) => ({ startMin: m.startMin, endMin: m.endMin })),
+    arrival: state.arrival.enabled ? { date: dateStr(state.d0), endMin: state.arrival.endMin } : null,
+    departure: state.departure.enabled ? { date: dateStr(state.d1), startMin: state.departure.startMin } : null,
     forcedSlugs: [...state.forced.keys()],
     forcedPerformances: forcedPerformanceMap(),
     travelMode: state.mode,
@@ -1400,8 +1413,22 @@ function renderSchedule(schedule, animate = false) {
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
+  // Days to draw: every day that got shows, plus the trip's first/last day so
+  // the "getting there" / "getting out" blocks always have a column to live on
+  // (an empty boundary day shows just its travel block).
+  const renderDays = schedule.days.slice();
+  const shownDates = new Set(renderDays.map((d) => d.date));
+  const ensureDay = (date) => {
+    if (shownDates.has(date)) return;
+    shownDates.add(date);
+    renderDays.push({ date, slots: [] });
+  };
+  if (state.arrival.enabled) ensureDay(dateStr(state.d0));
+  if (state.departure.enabled) ensureDay(dateStr(state.d1));
+  renderDays.sort((a, b) => a.date.localeCompare(b.date));
+
   // One column per day; columns flex to share the width.
-  for (const day of schedule.days) {
+  for (const day of renderDays) {
     const dayNum = Number(day.date.slice(8, 10));
     const col = document.createElement("div");
     col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "");
@@ -1424,6 +1451,15 @@ function renderSchedule(schedule, animate = false) {
       const gapMin = b.startMinuteOfDay - a.endMinuteOfDay;
       if (gapMin < 0 || gapMin >= 60) continue;
       body.appendChild(buildTravelLeg(a, b, y(a.endMinuteOfDay), y(b.startMinuteOfDay)));
+    }
+
+    // "Getting there" / "getting out" blocks live inside their own day column
+    // (first / last day of the trip window), behind the shows.
+    if (state.arrival.enabled && day.date === dateStr(state.d0)) {
+      body.appendChild(buildTripBlock("arrival", y, axisH));
+    }
+    if (state.departure.enabled && day.date === dateStr(state.d1)) {
+      body.appendChild(buildTripBlock("departure", y, axisH));
     }
 
     for (const slot of day.slots) {
@@ -1692,6 +1728,69 @@ function buildMealBand(meal, y) {
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
+}
+
+/* "Getting there" (top of the first day) / "getting out" (bottom of the last
+ * day) block. Rendered inside its own day-column body so it stays on that one
+ * day; you drag the inner edge to set how much of the day travel eats. */
+function buildTripBlock(which, y, axisH) {
+  const block = document.createElement("div");
+  block.className = `sch-trip sch-trip--${which}`;
+  block.dataset.trip = which;
+  if (which === "arrival") {
+    block.style.top = "0px";
+    block.style.height = `${y(state.arrival.endMin)}px`;
+    block.title = "Getting there — drag the lower edge; no shows are placed before this on your first day";
+    block.innerHTML =
+      `<span class="sch-trip-label">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>` +
+      `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
+  } else {
+    block.style.top = `${y(state.departure.startMin)}px`;
+    block.style.height = `${Math.max(6, axisH - y(state.departure.startMin))}px`;
+    block.title = "Getting out — drag the upper edge; no shows are placed after this on your last day";
+    block.innerHTML =
+      `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
+      `<span class="sch-trip-label">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>`;
+  }
+  wireTripDrag(block, which, axisH);
+  return block;
+}
+
+function wireTripDrag(block, which, axisH) {
+  const edge = block.querySelector(".meal-resize");
+  if (!edge) return;
+  edge.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    edge.setPointerCapture(e.pointerId);
+    block.classList.add("dragging");
+    const axis = state.schedAxis;
+    const yy = (min) => ((clamp(min, axis.axisTopMin, axis.axisBottomMin) - axis.axisTopMin) / 60) * axis.hourPx;
+    const move = (ev) => {
+      const min = minuteFromClientY(ev.clientY);
+      if (min == null) return;
+      if (which === "arrival") {
+        const v = clamp(min, axis.axisTopMin, effectiveDayEnd());
+        state.arrival.endMin = v;
+        block.style.height = `${yy(v)}px`;
+        block.querySelector(".sch-trip-label").textContent = `🚆 Arrive ${minToHHMM(v)}`;
+      } else {
+        const v = clamp(min, state.dayStartMin, axis.axisBottomMin);
+        state.departure.startMin = v;
+        block.style.top = `${yy(v)}px`;
+        block.style.height = `${Math.max(6, axisH - yy(v))}px`;
+        block.querySelector(".sch-trip-label").textContent = `🧳 Leave ${minToDayClock(v)}`;
+      }
+    };
+    const up = () => {
+      block.classList.remove("dragging");
+      edge.removeEventListener("pointermove", move);
+      edge.removeEventListener("pointerup", up);
+      refresh();
+    };
+    edge.addEventListener("pointermove", move);
+    edge.addEventListener("pointerup", up);
+  });
 }
 
 /** Minute-of-day for a clientY over the schedule overlay, snapped to 5 min. */
