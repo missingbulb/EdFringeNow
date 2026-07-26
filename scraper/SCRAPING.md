@@ -25,8 +25,8 @@ You **can't** hit the API from a web session: the egress proxy blocks
 `equhost.com` (and edfringe.com itself returns 403 to `WebFetch`). Anything that
 touches the live API has to run on an **open-network GitHub Actions runner**:
 
-- Bulk data → the `Scrape edfringe shows (full)` / `Refresh edfringe shows (daily)`
-  workflows.
+- Bulk data → the `Scrape edfringe shows (full)` workflow, or the `refresh-shows`
+  scheduled task (which runs on the same runners, under the Claudinite scheduler).
 - One-off schema introspection or a single-show dump → a **throwaway push-triggered
   probe**: add a small script under `scraper/` plus a workflow that runs on push to
   your branch (path-filtered to that script), push, read the run's job logs via the

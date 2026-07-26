@@ -2,7 +2,8 @@ name: Scrape edfringe shows (full)
 
 # Full rebuild: download every show from the edfringe.com GraphQL API, normalize
 # into the website-ready data files, and commit them. Run manually from the
-# Actions tab. For the lightweight daily top-up see refresh.yml.
+# Actions tab. For the lightweight daily top-up see the `refresh-shows` scheduled
+# task, which the Claudinite scheduler runs (scraper/README.md).
 
 on:
   workflow_dispatch:

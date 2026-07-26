@@ -82,9 +82,9 @@ Normalization rules:
 - **Ticket status** (`ts` → `ticketStatuses`) is the reliable "can I get a
   ticket" signal, not the `soldOut` flag (a show can be `soldOut:false` yet have
   no online allocation). Because it changes through the day, the
-  `Refresh today's ticket status (hourly)` workflow (`refresh_ticket_status.py`)
-  updates just today's `ts` values each hour during the festival — a light paged
-  pass, no per-show queries.
+  `refresh-tickets` scheduled task (`refresh_ticket_status.py`) updates just
+  today's `ts` values each hour during the festival — a light paged pass, no
+  per-show queries.
 - **Images**: the master keeps both `image` (the API's "Large" variant) and
   `smallImage` (the "Small" variant), each selected by `imageType` rather than
   list order. Every listing image lives under
@@ -115,10 +115,27 @@ python3 scraper/normalize.py --merge
 ```
 
 `--merge` upserts the new shows into the existing master (by id) and regenerates
-the venue and per-day files. This runs automatically via the
-**`Refresh edfringe shows (daily)`** workflow (`.github/workflows/refresh.yml`,
-scheduled daily); the full rebuild is **`Scrape edfringe shows (full)`**
+the venue and per-day files. This runs automatically once a day as the
+**`refresh-shows`** scheduled task (see *How the scheduled refreshes run* below);
+the full rebuild stays a manual workflow, **`Scrape edfringe shows (full)`**
 (`.github/workflows/scrape.yml`). Both commit the updated data back to the repo.
+
+## How the scheduled refreshes run
+
+Neither refresh has a workflow of its own. The repo's only cron is the Claudinite
+scheduler (`.github/workflows/claudinite-scheduler.yml`), which runs hourly and
+evaluates every declared task's precondition; the two data refreshes are declared
+as tasks under this repo's local pack, each with the shell it runs beside it:
+
+| Task | Runs | What it does |
+|---|---|---|
+| `refresh-shows` | daily | the `--recently-added LAST_SEVEN_DAYS` top-up above |
+| `refresh-tickets` | hourly, but only in August between 08:00 and 23:59 Edinburgh time | `refresh_ticket_status.py` for today |
+
+`refresh-tickets` is evaluated every hour year-round and its precondition decides
+whether to act — that August/hours window is the whole of what sixteen
+hand-written cron lines used to express. Both tasks run as plain subprocesses (no
+agent); a failure opens one tracking issue rather than passing silently.
 
 ## Running it
 
