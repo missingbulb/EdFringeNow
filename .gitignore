@@ -15,3 +15,6 @@ data/raw_pages/
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Agent-tool worktree isolation scratch space (ephemeral, per-session)
+/.claude/worktrees/
