@@ -15,3 +15,6 @@ data/raw_pages/
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Claude Code Agent-tool isolated worktrees (harness runtime scratch, never repo content)
+/.claude/worktrees/
