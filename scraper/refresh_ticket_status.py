@@ -8,8 +8,8 @@ per-performance queries. This re-fetches the listing once and updates the `ts`
 live-ish SOLD OUT stamps. Everything else in the data is left untouched.
 
 Light by design: a single paged pass over the listing, no `performancePrices`
-calls. Runs as the `Refresh today's ticket status (hourly)` workflow during
-August; a no-op on any date without a day file (i.e. outside the festival).
+calls. Runs hourly during August as the `refresh-tickets` scheduled task; a no-op
+on any date without a day file (i.e. outside the festival).
 
 Usage:
     python3 scraper/refresh_ticket_status.py                 # today (Europe/London)
