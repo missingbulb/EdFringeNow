@@ -18,6 +18,20 @@ browser is here, and a UI change isn't done until it has been looked at.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
+- **Never chain `pkill -f "http.server …"` with the rest of a command.** `-f`
+  matches full command lines, so the pattern matches the very shell running the
+  `pkill`: the shell kills itself (exit 144) and everything after the `;` or
+  `&&` — the commit, the verify run, the curl — silently never happens. Every
+  such call in this repo's captured sessions died this way, once misdiagnosed as
+  a heredoc bug. Bracket a character so the pattern can't match its own command
+  line (`pkill -f "[h]ttp.server 8099"`), or just leave the server up and serve
+  the next run on a fresh port.
+- **Known-noisy console output from the served page.** A page driven off
+  `python3 -m http.server` reliably logs a `favicon.ico` 404 (the repo ships
+  none) and often `net::ERR_CONNECTION_RESET` as the browser tears down. Neither
+  is an application error — filter both out of a smoke script's error assertion
+  so that a red run means something, rather than sending you chasing a phantom
+  404 through extra browser runs.
 - To match edfringe.com's live styling (e.g. the ticket-availability colours on
   the `/plan` grid), fetch the official site's CSS with `curl` through the agent
   proxy and read the palette out of it. `WebFetch` returns rendered text without
