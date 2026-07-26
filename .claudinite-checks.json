@@ -17,7 +17,8 @@
     "html",
     "tidy-repo",
     "grow_with_claudinite",
-    "local/edfringe"
+    "local/edfringe",
+    "local/edfringe-data"
   ],
   "maintenance": {
     "delivery": "auto-merge"
