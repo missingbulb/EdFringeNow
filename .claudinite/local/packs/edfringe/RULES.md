@@ -23,3 +23,13 @@ browser is here, and a UI change isn't done until it has been looked at.
   proxy and read the palette out of it. `WebFetch` returns rendered text without
   the CSS, and headless Chromium cannot tunnel the proxy to reach an external
   host — `curl` is the one path that works for off-box assets.
+
+## The site is two independent front-ends — cross-page behaviour lives twice
+
+The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
+share no code: no modules, no globals, and `plan/lib/` is the planner's own engine,
+not a common library. So anything that must behave the same on both pages exists as
+**two copies**, and changing one is only half the change — the UK-bounding-box
+location guard and the debug menu it gates, the header `debug v<version>` pill, and
+the Now/Plan nav each live in both files today. Grep the other file for the twin
+before calling a cross-page change done; it will not fail a test or a parse check.
