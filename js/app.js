@@ -30,7 +30,9 @@ const GMAPS_LOGO =
 /* Very rough bounding box for the UK mainland (lat/lng). If the real location
  * falls outside this box (e.g. a tester overseas) we keep the central-Edinburgh
  * default and show the pre-set values instead of moving the pin abroad. Kept
- * deliberately loose — it only needs to tell "in the UK" from "not". */
+ * deliberately loose — it only needs to tell "in the UK" from "not".
+ * MIRRORED in plan/plan.js (the two pages share no code) — the planner gates its
+ * debug menu on the same box, so change both or the two pages disagree. */
 const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
 
 /* Is a [lat, lng] roughly within the UK mainland box above? */
