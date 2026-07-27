@@ -15,3 +15,6 @@ data/raw_pages/
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Transient git worktrees created by the agent harness for isolated subagent runs
+.claude/worktrees/
