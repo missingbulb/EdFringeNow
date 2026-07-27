@@ -1,11 +1,11 @@
-// Red-first fixtures for this pack's check, plus a guard on the pack manifest.
+// Red-first fixtures for this pack's checks, plus a guard on the pack manifest.
 //
-// The check reads its files through the engine's `ctx`, so the fixtures here are
-// tiny in-memory contexts ({ files, read }) — no temp dirs, no mount, and the
+// The checks read their files through the engine's `ctx`, so the fixtures here
+// are tiny in-memory contexts ({ files, read }) — no temp dirs, no mount, and the
 // same shape the real runner passes (engine/checks/helpers/repo-context.mjs).
-// The last rule test runs it against this repo's ACTUAL package.json and
-// scripts/verify.sh, which is what makes the check a live gate rather than a
-// self-fulfilling unit test.
+// Each check's last fixture runs it against this repo's ACTUAL files (package.json
+// + scripts/verify.sh; js/app.js + plan/plan.js), which is what makes them live
+// gates rather than self-fulfilling unit tests.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -15,6 +15,7 @@ import path from "node:path";
 
 import pack from "./pack.mjs";
 import rule from "./test-globs-in-step.mjs";
+import mirrors from "./cross-page-mirrors.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -123,11 +124,109 @@ test("this repo's own package.json and verify.sh are in step", () => {
   assert.deepEqual(out, [], `the test globs have drifted:\n${out.map((f) => f.what).join("\n")}`);
 });
 
-test("the pack manifest declares the check and stays hand-declared", () => {
+// ---------------------------------------------------------------------------
+// edfringe-cross-page-mirrors — the Now page and the planner share no code, so a
+// value both must agree on lives as two copies (RULES.md, "two independent
+// front-ends"). These fixtures prove the check tells a real difference in the
+// values from a merely different-looking copy.
+// ---------------------------------------------------------------------------
+
+const APP = "js/app.js";
+const PLAN = "plan/plan.js";
+
+const APP_COPY = `
+/* Very rough bounding box for the UK mainland (lat/lng).
+ * MIRRORED in plan/plan.js — change both or the two pages disagree. */
+const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
+
+function isInUK([lat, lng]) {
+  return lat >= UK_BOUNDS.minLat && lat <= UK_BOUNDS.maxLat;
+}
+`;
+
+// Deliberately not byte-identical to APP_COPY: a different comment, different
+// wrapping, and a different key order. None of that is drift.
+const PLAN_COPY = `
+// Very rough UK-mainland bounding box (mirrors js/app.js).
+const UK_BOUNDS = {
+  maxLat: 59.0,
+  minLat: 49.8,
+  minLng: -8.2,
+  maxLng: 1.9,
+};
+`;
+
+test("identical mirrors produce no findings, whatever the formatting", () => {
+  const out = mirrors.run(ctxOf({ [APP]: APP_COPY, [PLAN]: PLAN_COPY }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a mirrored value changed on one page only is reported", () => {
+  // The exact regression this guards: the box is widened on the Now page and the
+  // planner keeps gating its debug menu on the old one.
+  const out = mirrors.run(ctxOf({
+    [APP]: APP_COPY,
+    [PLAN]: PLAN_COPY.replace("maxLat: 59.0", "maxLat: 61.0"),
+  }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-cross-page-mirrors");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, PLAN);
+  assert.match(out[0].what, /UK_BOUNDS differs between the two front-ends/);
+  assert.match(out[0].what, /maxLat: 59 in js\/app\.js vs 61 in plan\/plan\.js/);
+  assert.ok(out[0].fix.includes(APP) && out[0].fix.includes(PLAN), "the fix must name both copies");
+});
+
+test("a key added to one copy only is reported", () => {
+  const out = mirrors.run(ctxOf({
+    [APP]: APP_COPY.replace("minLng: -8.2,", "minLng: -8.2, maxAlt: 2,"),
+    [PLAN]: PLAN_COPY,
+  }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /maxAlt: 2 in js\/app\.js vs \(absent\) in plan\/plan\.js/);
+});
+
+test("the constant disappearing from one page is reported, from both is not", () => {
+  const dropped = mirrors.run(ctxOf({ [APP]: APP_COPY, [PLAN]: "// planner, no bounds here\n" }));
+  assert.equal(dropped.length, 1);
+  assert.match(dropped[0].what, /declared in js\/app\.js but not in plan\/plan\.js/);
+  assert.equal(dropped[0].file, APP);
+
+  // Removed on purpose from both pages: there is no mirror left to disagree.
+  assert.deepEqual(mirrors.run(ctxOf({ [APP]: "// nothing\n", [PLAN]: "// nothing\n" })), []);
+});
+
+test("a mention outside the declaration is not mistaken for a copy", () => {
+  // Grep would match this comment; parsing the declaration does not.
+  const out = mirrors.run(ctxOf({
+    [APP]: APP_COPY,
+    [PLAN]: `${PLAN_COPY}\n// see UK_BOUNDS = { minLat: 0 } in js/app.js for the real box\n`,
+  }));
+  assert.deepEqual(out, []);
+});
+
+test("only one of the two pages in the tree ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(mirrors.run(ctxOf({ [APP]: APP_COPY })), []);
+  assert.deepEqual(mirrors.run(ctxOf({ "README.md": "# hi" })), []);
+});
+
+test("this repo's two front-ends agree", () => {
+  // The live gate: the real files off disk.
+  const files = [APP, PLAN];
+  assert.ok(files.every((f) => existsSync(path.join(REPO, f))), "expected both front-ends to be present");
+  const out = mirrors.run({
+    files,
+    read: (p) => (files.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
+  });
+  assert.deepEqual(out, [], `the two pages disagree:\n${out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
+});
+
+test("the pack manifest declares both checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");
   assert.ok(pack.rules.includes(rule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.rules.includes(mirrors), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

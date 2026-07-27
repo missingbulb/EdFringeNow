@@ -1,3 +1,4 @@
+import crossPageMirrors from './cross-page-mirrors.mjs';
 import testGlobsInStep from './test-globs-in-step.mjs';
 
 // EdFringeNow's own local pack: project-specific working rules captured in this
@@ -9,5 +10,5 @@ export default {
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  rules: [testGlobsInStep],
+  rules: [crossPageMirrors, testGlobsInStep],
 };

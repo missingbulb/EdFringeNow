@@ -63,5 +63,12 @@ share no code: no modules, no globals, and `plan/lib/` is the planner's own engi
 not a common library. So anything that must behave the same on both pages exists as
 **two copies**, and changing one is only half the change — the UK-bounding-box
 location guard and the debug menu it gates, the header `debug v<version>` pill, and
-the Now/Plan nav each live in both files today. Grep the other file for the twin
-before calling a cross-page change done; it will not fail a test or a parse check.
+the Now/Plan nav each live in both files today.
+
+The mirrored `UK_BOUNDS` box is now enforced: the `edfringe-cross-page-mirrors`
+check parses the declaration out of both files and fails if the values disagree
+(canon's `shared-constants` can't hold it — it rejects a case whose files are all
+import-capable, and these two only look it — `index.html` loads `js/app.js` as a
+classic script, so it can't import anything). Everything else on that list is
+still on you: grep the other file for the twin before calling a cross-page change
+done, because nothing else will fail a test or a parse check.
