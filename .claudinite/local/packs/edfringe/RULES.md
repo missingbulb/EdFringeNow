@@ -15,6 +15,24 @@ browser is here, and a UI change isn't done until it has been looked at.
   served over HTTP rather than opened as a file — and `localhost` bypasses the
   agent proxy, so the browser reaches the page even though external hosts need
   the proxy.
+- **Launch Playwright with no `executablePath`, and import from `index.mjs`.**
+  `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` is already exported in this
+  sandbox, so `chromium.launch()` finds its browser on its own. Every captured
+  session instead hand-wrote a path and paid for it: `/opt/pw-browsers/chromium`
+  is a *directory*, and the real binary sits under a version-pinned
+  `chromium-<build>/chrome-linux/chrome` that moves with the image. Import the
+  global build by its ESM entry —
+  `import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs'`
+  (the sibling `index.js` is CJS, so a *named* import from it yields
+  `undefined`) — or `$(npm root -g)/playwright/index.mjs` if the prefix moved.
+  Path discovery and its sed-fix-up round-trips cost ~220s across five captured
+  sessions, every one of them re-deriving the same two facts.
+- **Keep one browser driver script per session and re-point it.** Authoring a
+  fresh throwaway Playwright script per screenshot cost 29 heredoc writes and
+  ~7 minutes of wall clock across the captured sessions (one session alone: 16
+  writes, 4.5 min). Write the driver once into the scratchpad, take the URL,
+  selector and output path from `process.argv`, and re-run it — a re-run is
+  seconds where a rewrite is 15–20s.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
