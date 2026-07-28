@@ -56,12 +56,34 @@ browser is here, and a UI change isn't done until it has been looked at.
   the CSS, and headless Chromium cannot tunnel the proxy to reach an external
   host — `curl` is the one path that works for off-box assets.
 
-## The site is two independent front-ends — cross-page behaviour lives twice
+## The site is two front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
-share no code: no modules, no globals, and `plan/lib/` is the planner's own engine,
-not a common library. So anything that must behave the same on both pages exists as
-**two copies**, and changing one is only half the change — the UK-bounding-box
-location guard and the debug menu it gates, the header `debug v<version>` pill, and
-the Now/Plan nav each live in both files today. Grep the other file for the twin
-before calling a cross-page change done; it will not fail a test or a parse check.
+are separate front-ends, and `plan/lib/` is the planner's own engine, not a common
+library. But both are now ES modules, so **anything that must behave the same on
+both pages belongs in `shared/`** and is imported by each — never copy-pasted.
+Both pages spell the import the same way (`../shared/geo.js` resolves to
+`/shared/geo.js` from either), so moving a value there is a small change.
+
+Do not add a second copy and a check to keep the copies honest: a duplicated
+constant that drifts is a bug the architecture should make impossible, not one to
+detect after the fact. `UK_BOUNDS` used to live twice and is the worked example —
+it is one export in `shared/geo.js` now.
+
+What is still genuinely twinned (untangled the same way when next touched): the
+header `debug v<version>` pill, the Now/Plan nav, and the haversine in
+`plan/lib/travel.js` that was ported from `js/app.js`.
+
+A shared module needs **no** `package.json` to mark it as ESM: the pinned Node 22
+detects module syntax in a `.js` file by itself, with no warning and no flag, so
+`node --check` and the test suite both handle it. Don't add one — `plan/package.json`
+predates that detection and its stated reason (silencing a module-detection warning)
+no longer applies; it is harmless, so it stays, but do not copy it as a pattern.
+`.js` and `.mjs` are both served as `text/javascript` by `python3 -m http.server`,
+so the extension is a style choice — use `.js`, matching `plan/lib/`.
+
+The one thing that does need doing: **add a new top-level source dir to
+`scripts/verify.sh`'s `git ls-files` list**, or nothing in it is ever parse-checked.
+Note that `git ls-files` only sees *tracked* files, so a new file silently sits
+outside the syntax sweep until it is committed — the "checked N files" count is
+not evidence your new file was among them.

@@ -1,7 +1,9 @@
 // Fringe Planner — page logic.
 //
-// Self-contained ES module: no globals shared with the home site's js/app.js.
-// Wires the pure computation engine (./lib/*.js) to the UI.
+// An ES module: shares no *globals* with the home site's js/app.js, but does
+// share real code with it — anything both pages must agree on is imported from
+// ../shared/, not copy-pasted. Wires the pure computation engine (./lib/*.js)
+// to the UI.
 //
 // The page has one state switch, keyed on whether a favourites set is in:
 // without one, the intake panel (drag/drop or pick a favourites CSV, or load
@@ -9,6 +11,7 @@
 // the instant plan replace it. There is no "Plan" button — the itinerary
 // recomputes live whenever the date window or any control changes.
 
+import { isInUK } from "../shared/geo.js";
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
@@ -1059,18 +1062,6 @@ function removeFavourite(slug) {
   const savedAt = state.savedAt || Date.now();
   saveFavourites(slugs, state.filename, savedAt);
   applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true });
-}
-
-// Very rough UK-mainland bounding box (mirrors js/app.js). The debug tools are
-// a testing affordance, so they only show when we're not clearly in the UK.
-const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
-function isInUK([lat, lng]) {
-  return (
-    lat >= UK_BOUNDS.minLat &&
-    lat <= UK_BOUNDS.maxLat &&
-    lng >= UK_BOUNDS.minLng &&
-    lng <= UK_BOUNDS.maxLng
-  );
 }
 
 // Hide the debug menu when the browser's real location is inside the UK. Left

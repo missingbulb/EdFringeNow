@@ -6,7 +6,12 @@
  *     1. Genre      — multi-select of Fringe categories (filters map + list)
  *     2. Travel     — how you're getting to the next show
  *     3. Next show  — pick the exact start time, then the show, and pin it
+ *
+ * Loaded as an ES module (`<script type="module">` in index.html) so it can share
+ * real code with the planner instead of copy-pasting it — see shared/geo.js.
  */
+
+import { isInUK } from "../shared/geo.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -26,24 +31,6 @@ const GMAPS_LOGO =
   '<path fill="#FBBC04" d="M20 15 L40 0 L40 40 Z"/>' +
   '<path fill="#34A853" d="M20 15 L40 40 L0 40 Z"/>' +
   '</g><circle cx="20" cy="15" r="4.6" fill="#fff"/></svg>';
-
-/* Very rough bounding box for the UK mainland (lat/lng). If the real location
- * falls outside this box (e.g. a tester overseas) we keep the central-Edinburgh
- * default and show the pre-set values instead of moving the pin abroad. Kept
- * deliberately loose — it only needs to tell "in the UK" from "not".
- * MIRRORED in plan/plan.js (the two pages share no code) — the planner gates its
- * debug menu on the same box, so change both or the two pages disagree. */
-const UK_BOUNDS = { minLat: 49.8, maxLat: 59.0, minLng: -8.2, maxLng: 1.9 };
-
-/* Is a [lat, lng] roughly within the UK mainland box above? */
-function isInUK([lat, lng]) {
-  return (
-    lat >= UK_BOUNDS.minLat &&
-    lat <= UK_BOUNDS.maxLat &&
-    lng >= UK_BOUNDS.minLng &&
-    lng <= UK_BOUNDS.maxLng
-  );
-}
 
 /* The official-style Fringe genre categories. */
 const GENRES = [
