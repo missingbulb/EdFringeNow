@@ -16,9 +16,33 @@
     "github-actions",
     "html",
     "tidy-repo",
-    "grow_with_claudinite",
+    {
+      "id": "grow_with_claudinite",
+      "config": {
+        "retention_days": 10
+      }
+    },
     "local/edfringe",
-    "local/edfringe-data"
+    "local/edfringe-data",
+    {
+      "id": "executable-requirements",
+      "config": {
+        "spec": "product/requirements.md"
+      },
+      "answers": {
+        "ui_testing": "Headless Chromium via Playwright (pre-installed in the environment): render the real single-page app — Leaflet map included, with map tiles and other network faked deterministically — and assert pixel-exact visual goldens the owner reviews by sight; short per-leaf tests drive to a state and capture. Pure planner rules (plan/lib) stay node --test logic leaves. No visual harness exists yet — this is the target mechanism.",
+        "requirements_source": "Authored fresh at product/requirements.md (config.spec), distilled from the existing product brief docs/product-spec.md. No prior formal requirements doc or issue-tracker backlog to extract."
+      }
+    },
+    "spec-driven-product",
+    {
+      "id": "product-wiki",
+      "answers": {
+        "product": "Fringe Discover: a spontaneity/reachability tool for the Edinburgh Festival Fringe. Where listings apps answer 'what exists?', this answers 'what can I actually make right now?' — given the user's location, how far they'll travel and how, and their next commitment, it collapses ~3,800 shows into a short list of genuinely reachable options that haven't started and still leave time to reach whatever is next.",
+        "users": "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'.",
+        "market": "Edinburgh Fringe discovery and planning tools. Alternatives: the official Fringe app (a 'Nearby now' + shake-to-search finder), Plan My Fringe (a schedule optimiser with a walking-time 'Fringe Trail'), the edfringe.com programme and filters, the Half Price Hut (same-day discounts), review outlets such as ThreeWeeks, plus street posters and word-of-mouth. None centres full reachability — travel mode plus next-commitment slack — the way Fringe Discover does."
+      }
+    }
   ],
   "maintenance": {
     "delivery": "auto-merge"
@@ -29,7 +53,7 @@
     "monthlyDay": 1
   },
   "claudinite": {
-    "updated": "2026-07-28T10:27:20.616Z",
-    "ref": "7e89c0cfe40c133739fdeb351e9d463f1d4b3097"
+    "updated": "2026-07-28T22:17:18.696Z",
+    "ref": "acd735d41a6f44959f804ec0c2c326d742ca8ca8"
   }
 }
