@@ -267,7 +267,10 @@
   ></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="js/build-info.js"></script>
-  <script src="js/app.js"></script>
+  <!-- A module so it can import shared/ code the planner also uses. Modules are
+       deferred, so this runs after the classic scripts above (Leaflet's `L` and
+       window.__BUILD__ are both ready) and before DOMContentLoaded fires. -->
+  <script type="module" src="js/app.js"></script>
   <!-- Privacy-first, cookieless visitor analytics (see js/analytics.js) -->
   <script defer src="js/analytics.js"></script>
 </body>
