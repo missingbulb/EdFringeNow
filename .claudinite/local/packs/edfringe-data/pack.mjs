@@ -1,4 +1,5 @@
 import lookupIndices from './lookup-indices.mjs';
+import dayFileDecoderKeys from './day-file-decoder-keys.mjs';
 
 // EdFringeNow's data-pipeline pack: the edfringe.com scrape and the committed
 // data layer it produces (scraper/, data/). Split out of the general `edfringe`
@@ -11,5 +12,5 @@ export default {
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  rules: [lookupIndices],
+  rules: [lookupIndices, dayFileDecoderKeys],
 };

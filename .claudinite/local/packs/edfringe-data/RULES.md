@@ -55,7 +55,11 @@ That encoding has one producer and two decoders, and they must move together:
   `minify_master`, round-tripped against the real committed files by
   `plan/lib/__tests__/hydrate.test.mjs`
 
-Add or drop an indexed field and all three change in the same commit. That the
-indices still *resolve* is enforced by the `edfringe-lookup-indices` check — it
-catches a lookup list regenerated without its day files, but nothing can catch a
-decoder left reading the old key, so check both decoders by hand.
+Add or drop an indexed field and all three change in the same commit. Two checks
+hold the mechanical half: `edfringe-lookup-indices` proves every index still
+*resolves* against its lookup list (catching a lookup list regenerated without
+its day files), and `edfringe-day-file-decoder-keys` proves `adaptShow` never
+reads a day-file field the committed data doesn't carry — decoder 2's equivalent
+is the `hydrate.test.mjs` round-trip above. What no check reads is *meaning*: a
+decoder pointed at the right key but the wrong lookup list, or a new producer
+field no decoder ever picks up. Eyeball both decoders for that.
