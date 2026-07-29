@@ -63,14 +63,15 @@ header `debug v<version>` pill, the Now/Plan nav, and the haversine in
 
 A shared module needs **no** `package.json` to mark it as ESM: the pinned Node 22
 detects module syntax in a `.js` file by itself, with no warning and no flag, so
-`node --check` and the test suite both handle it. Don't add one — `plan/package.json`
-predates that detection and its stated reason (silencing a module-detection warning)
-no longer applies; it is harmless, so it stays, but do not copy it as a pattern.
+`node --check` and the test suite both handle it. `plan/package.json` predates
+that detection and its stated reason (silencing a module-detection warning) no
+longer applies; it is harmless, so it stays, but do not copy it as a pattern —
+the `edfringe-no-stray-package-json` check flags any other one.
 `.js` and `.mjs` are both served as `text/javascript` by `python3 -m http.server`,
 so the extension is a style choice — use `.js`, matching `plan/lib/`.
 
-The one thing that does need doing: **add a new top-level source dir to
-`scripts/verify.sh`'s `git ls-files` list**, or nothing in it is ever parse-checked.
-Note that `git ls-files` only sees *tracked* files, so a new file silently sits
-outside the syntax sweep until it is committed — the "checked N files" count is
-not evidence your new file was among them.
+A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
+list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
+check catches an omission. Note that `git ls-files` only sees *tracked* files, so
+a new file silently sits outside the syntax sweep until it is committed — the
+"checked N files" count is not evidence your new file was among them.
