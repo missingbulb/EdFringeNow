@@ -1775,6 +1775,11 @@ function buildConstraintPanel() {
       markWheelSel(el);
       clearTimeout(el._settle);
       el._settle = setTimeout(() => {
+        // Closing the panel display:nones the wheels, which clamps their
+        // scrollTop to 0 and fires one last scroll event — a layout artifact,
+        // not the user picking hours[0]. Acting on it would wipe the very
+        // commitment that closed the panel, so only read visible wheels.
+        if (el.offsetParent === null) return;
         const t = `${readWheel(hw)}:${readWheel(mw)}`;
         if (t !== state.selectedTime) setConstraintTime(t); // wheels already positioned
       }, 130);
@@ -2136,13 +2141,17 @@ function writeStore(key, value) {
   }
 }
 
-/* The plan half of a snapshot: what the user is heading to, and when. */
+/* The plan half of a snapshot: what the user is heading to, and when. A
+ * non-show destination is part of the plan too — destPlace is a plain
+ * { label, area, lat, lng, kind } object, so it round-trips through JSON. */
 function planSnapshot() {
   return {
     selectedTime: state.selectedTime,
     selectedShowId: state.selectedShowId,
     legShowId: state.legShowId,
     destLabel: state.destLabel,
+    destPlace: state.destPlace,
+    destNote: state.destNote,
   };
 }
 
@@ -2186,6 +2195,8 @@ function restoreNowState() {
     selectedShowId: saved.selectedShowId || "",
     legShowId: saved.legShowId || "",
     destLabel: saved.destLabel || "",
+    destPlace: saved.destPlace || null,
+    destNote: saved.destNote || "",
   };
 }
 
@@ -2219,6 +2230,8 @@ function adoptRestoredPlan() {
     state.selectedTime = saved.selectedTime;
     state.selectedShowId = commitment ? commitment.id : "";
     state.destLabel = saved.destLabel;
+    state.destPlace = saved.destPlace;
+    state.destNote = saved.destNote;
   }
   if (!legStale) state.legShowId = leg ? leg.id : "";
 
@@ -2269,6 +2282,8 @@ function wireRestoreBar() {
         : "";
       state.legShowId = state.shows.some((s) => s.id === stale.legShowId) ? stale.legShowId : "";
       state.destLabel = stale.destLabel || "";
+      state.destPlace = stale.destPlace || null;
+      state.destNote = stale.destNote || "";
       forgetStalePlan();
       syncDestInput();
       refreshConstraintValue();
