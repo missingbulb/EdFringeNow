@@ -36,14 +36,6 @@ browser is here, and a UI change isn't done until it has been looked at.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
-- **Never chain `pkill -f "http.server …"` with the rest of a command.** `-f`
-  matches full command lines, so the pattern matches the very shell running the
-  `pkill`: the shell kills itself (exit 144) and everything after the `;` or
-  `&&` — the commit, the verify run, the curl — silently never happens. Every
-  such call in this repo's captured sessions died this way, once misdiagnosed as
-  a heredoc bug. Bracket a character so the pattern can't match its own command
-  line (`pkill -f "[h]ttp.server 8099"`), or just leave the server up and serve
-  the next run on a fresh port.
 - **Known-noisy console output from the served page.** A page driven off
   `python3 -m http.server` reliably logs a `favicon.ico` 404 (the repo ships
   none) and often `net::ERR_CONNECTION_RESET` as the browser tears down. Neither
@@ -65,10 +57,7 @@ both pages belongs in `shared/`** and is imported by each — never copy-pasted.
 Both pages spell the import the same way (`../shared/geo.js` resolves to
 `/shared/geo.js` from either), so moving a value there is a small change.
 
-Do not add a second copy and a check to keep the copies honest: a duplicated
-constant that drifts is a bug the architecture should make impossible, not one to
-detect after the fact. `UK_BOUNDS` used to live twice and is the worked example —
-it is one export in `shared/geo.js` now.
+`UK_BOUNDS` used to live twice — it is one export in `shared/geo.js` now.
 
 What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
