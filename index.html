@@ -196,10 +196,27 @@
         </article>
       </div>
 
+      <!-- Switch: sits directly under the filters, so the choice of view reads
+           as part of the same browse controls. Map is the default. -->
+      <div class="view-switch" role="group" aria-label="Show map or list">
+        <button type="button" class="view-btn is-active" data-view="map" aria-pressed="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Z" /><path d="M9 4v13" /><path d="M15 6.5v13" />
+          </svg>
+          <span class="view-btn-label">Show map</span>
+        </button>
+        <button type="button" class="view-btn" data-view="list" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 6h13" /><path d="M8 12h13" /><path d="M8 18h13" /><path d="M3.5 6h.01" /><path d="M3.5 12h.01" /><path d="M3.5 18h.01" />
+          </svg>
+          <span class="view-btn-label">Show list</span>
+        </button>
+      </div>
+
       <!-- ===================== Map / list — one at a time ===================== -->
       <!-- The map and the reachable-now list are two views of the same shows.
-           Only one shows at a time; the switch rail on the right flips between
-           them (map is the default). The filters above act on both. -->
+           Only one shows at a time; the toggle above flips between them (map is
+           the default). The filters above act on both. -->
       <div class="view-area" data-view="map">
         <div class="view-panes">
           <!-- Map (calm, supporting) -->
@@ -218,22 +235,6 @@
             <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
             <button id="showMore" class="show-more" type="button" hidden>Show more</button>
           </section>
-        </div>
-
-        <!-- Switch rail: quick flip between map and list, always visible. -->
-        <div class="view-switch" role="group" aria-label="Show map or list">
-          <button type="button" class="view-btn is-active" data-view="map" aria-pressed="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Z" /><path d="M9 4v13" /><path d="M15 6.5v13" />
-            </svg>
-            <span class="view-btn-label">Map</span>
-          </button>
-          <button type="button" class="view-btn" data-view="list" aria-pressed="false">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 6h13" /><path d="M8 12h13" /><path d="M8 18h13" /><path d="M3.5 6h.01" /><path d="M3.5 12h.01" /><path d="M3.5 18h.01" />
-            </svg>
-            <span class="view-btn-label">List</span>
-          </button>
         </div>
       </div>
     </div>

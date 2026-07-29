@@ -998,25 +998,25 @@ a { color: inherit; }
    exists) and the browse section (shows title, filters, map, list). */
 .section-divider { border: 0; height: 1px; background: var(--line); margin: 28px 0 4px; }
 
-/* --- Map / list view switch: one view at a time, flipped from a right rail --- */
-.view-area { display: flex; align-items: stretch; gap: 10px; margin-top: 20px; }
-.view-panes { flex: 1 1 auto; min-width: 0; }
-/* Inside the flex row the panes own no top margin — .view-area supplies it. */
+/* --- Map / list view switch: one view at a time, flipped from a segmented
+   toggle sitting directly under the filters --- */
+.view-area { margin-top: 10px; }
+.view-panes { min-width: 0; }
+/* The toggle above owns the gap to the panes, so they add none of their own. */
 .view-panes > .map-section,
 .view-panes > .shows-section { margin-top: 0; }
-/* The rail: a slim column pinned to the right, sticky so it stays reachable
-   while a long list scrolls. */
+/* Same pill idiom as the in-panel .segmented controls, full width under the
+   filter chips so either view is one tap away. */
 .view-switch {
-  flex: 0 0 auto; align-self: flex-start;
-  position: sticky; top: 12px;
-  display: flex; flex-direction: column; gap: 6px;
-  padding: 5px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper);
+  display: flex; gap: 4px; margin: 10px 0 0;
+  padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg);
 }
 .view-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  width: 52px; padding: 9px 4px;
-  font: inherit; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.01em;
-  color: var(--muted); background: transparent; border: none; border-radius: 10px;
+  flex: 1 1 0;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 6px;
+  font: inherit; font-size: 0.85rem; font-weight: 700;
+  color: var(--muted); background: transparent; border: none; border-radius: 999px;
   cursor: pointer; transition: color 0.12s ease, background 0.12s ease;
 }
 .view-btn.is-active { color: #fff; background: var(--red); }

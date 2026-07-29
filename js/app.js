@@ -854,8 +854,8 @@ function wireSortControls() {
 
 /* ---------- Map / list view switch ---------- */
 /* The map and the reachable list are two views of the same shows; only one is
- * mounted at a time, flipped from the right-hand rail. Map is the default. The
- * filters above act on both, so nothing here touches them. */
+ * mounted at a time, flipped from the toggle under the filters. Map is the
+ * default. The filters above act on both, so nothing here touches them. */
 function applyView(view) {
   state.view = view;
   const mapPane = document.getElementById("map");
@@ -877,8 +877,8 @@ function applyView(view) {
   if (view === "map" && state.map) state.map.invalidateSize();
 }
 
-/* Wire the two-position rail (Map | List). Both buttons stay visible so either
- * view is one click away. */
+/* Wire the two-position toggle (Show map | Show list). Both buttons stay
+ * visible so either view is one click away. */
 function wireViewSwitch() {
   document.querySelectorAll(".view-btn[data-view]").forEach((btn) => {
     btn.addEventListener("click", () => {
