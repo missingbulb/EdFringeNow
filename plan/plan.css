@@ -624,19 +624,16 @@ a { color: inherit; }
   max-width: 280px;
 }
 
-/* Colour key, below the grid. Hidden (and taking no space) until the pointer is
-   over the grid — a glanceable reference, not permanent chrome. Revealing on
-   :hover of the legend too keeps it up while you read it. */
+/* Colour key, below the grid. It always holds its row — only the ink fades — so
+   revealing it never resizes the card or shifts anything below it. Invisible
+   until the pointer is over the grid: a glanceable reference, not permanent
+   chrome. Revealing on :hover of the legend too keeps it up while you read it. */
 .cal-legend {
-  max-height: 0; margin-top: 0; padding-top: 0; opacity: 0; overflow: hidden;
-  border-top: 1px solid transparent;
-  transition: max-height 0.2s ease, opacity 0.2s ease, margin-top 0.2s ease, padding-top 0.2s ease;
+  margin-top: 14px; opacity: 0;
+  transition: opacity 0.2s ease;
 }
 #calWrap:hover ~ .cal-legend,
-.cal-legend:hover {
-  max-height: 120px; margin-top: 16px; padding-top: 14px; opacity: 1;
-  border-top-color: var(--line);
-}
+.cal-legend:hover { opacity: 1; }
 
 /* ============ Allocate / itinerary (screen 3) ============ */
 .plan-card { padding: 28px 28px 26px; margin-top: 22px; }
@@ -882,14 +879,12 @@ a { color: inherit; }
 }
 /* Playful faint emoji scatter behind a blocker region (meal band, day-start /
    day-end zone, or trip block) — deterministic emoji on a fixed pixel grid
-   (populateDecors). It only reveals while the pointer is on the board (the
-   .is-grid-hover class), and is dropped entirely on touch devices where there's
-   no hover to gate it. */
+   (populateDecors). Always visible — only the swim animation below is gated on
+   the pointer being on the board (the .is-grid-hover class). */
 .sch-decor {
   position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
-  opacity: 0; transition: opacity 0.2s ease;
+  opacity: 0.22;
 }
-.schedule.is-grid-hover .sch-decor { opacity: 0.22; }
 .sch-decor span { position: absolute; display: block; line-height: 1; }
 /* While the board is live (hovering, or mid-drag) the scatter gently swims:
    each emoji bobs and sways in place. `translate`/`rotate` are the independent
@@ -905,9 +900,6 @@ a { color: inherit; }
 @keyframes decor-swim {
   0%, 100% { translate: 0 0; rotate: -3deg; }
   50%      { translate: 0 -3px; rotate: 3deg; }
-}
-@media (hover: none) {
-  .sch-decor { display: none; }
 }
 
 /* "Getting there" / "getting out" blocks — one per trip, inside their own day
