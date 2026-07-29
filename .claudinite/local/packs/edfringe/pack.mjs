@@ -1,4 +1,6 @@
 import testGlobsInStep from './test-globs-in-step.mjs';
+import verifyShSourceDirs from './verify-sh-source-dirs.mjs';
+import noStrayPackageJson from './no-stray-package-json.mjs';
 
 // EdFringeNow's own local pack: project-specific working rules captured in this
 // repo, layered on the shared Claudinite canon. Declaration-authoritative (no
@@ -9,5 +11,5 @@ export default {
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  rules: [testGlobsInStep],
+  rules: [testGlobsInStep, verifyShSourceDirs, noStrayPackageJson],
 };
