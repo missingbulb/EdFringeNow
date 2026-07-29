@@ -14,14 +14,17 @@ set -euo pipefail
 UA="EdFringeNow test-fixture capture (https://github.com/missingbulb/EdFringeNow)"
 VIEWBOX="-3.46,56.0,-3.02,55.87" # lng,lat corners bounding greater Edinburgh
 
-for q in "The Piemaker" "Waverley station" "Camera Obscura" "Malmaison" "BrewDog" "Summerhall" "zzzqqqxyzzy"; do
+# Round 2: bounded=1 proved to search only amenity tags inside the box — it
+# missed Edinburgh Waverley for "Waverley station" and found no "The Piemaker"
+# at all. This round: viewbox as a ranking bias WITHOUT bounded, expecting the
+# app to filter to the Edinburgh box client-side.
+for q in "Waverley station" "Edinburgh Waverley" "The Piemaker" "Camera Obscura" "Malmaison" "BrewDog" "zzzqqqxyzzy"; do
   echo "=== BEGIN ${q} ==="
   curl -sS --max-time 30 -A "$UA" --get "https://nominatim.openstreetmap.org/search" \
     --data-urlencode "q=${q}" \
     --data-urlencode "format=jsonv2" \
     --data-urlencode "limit=5" \
     --data-urlencode "addressdetails=1" \
-    --data-urlencode "bounded=1" \
     --data-urlencode "viewbox=${VIEWBOX}"
   echo ""
   echo "=== END ${q} ==="
