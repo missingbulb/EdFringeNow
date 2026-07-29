@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "foldedThrough": "2026-07-28",
+  "days": {
+    "2026-07-21": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 4,
+      "userMessages": 15,
+      "userCommands": 0,
+      "skillLoads": {
+        "engineering-practices": 1,
+        "merge-to-main": 4,
+        "repo-text-sweeps": 1,
+        "writing-tests": 1
+      }
+    },
+    "2026-07-22": {
+      "captures": 1,
+      "merges": 1,
+      "sessions": 1,
+      "userMessages": 2,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 1
+      }
+    },
+    "2026-07-23": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 4,
+      "userMessages": 14,
+      "userCommands": 1,
+      "skillLoads": {
+        "merge-to-main": 4
+      }
+    },
+    "2026-07-28": {
+      "captures": 2,
+      "merges": 2,
+      "sessions": 2,
+      "userMessages": 8,
+      "userCommands": 2,
+      "skillLoads": {
+        "adopt-claudinite": 1,
+        "merge-to-main": 2,
+        "writing-claudinite-skills": 1
+      }
+    }
+  },
+  "weeks": {
+    "2026-W30": {
+      "days": 3,
+      "captures": 9,
+      "merges": 9,
+      "sessionDays": 9,
+      "userMessages": 31,
+      "userCommands": 1,
+      "skillLoads": {
+        "engineering-practices": 1,
+        "merge-to-main": 9,
+        "repo-text-sweeps": 1,
+        "writing-tests": 1
+      }
+    },
+    "2026-W31": {
+      "days": 1,
+      "captures": 2,
+      "merges": 2,
+      "sessionDays": 2,
+      "userMessages": 8,
+      "userCommands": 2,
+      "skillLoads": {
+        "adopt-claudinite": 1,
+        "merge-to-main": 2,
+        "writing-claudinite-skills": 1
+      }
+    }
+  }
+}
