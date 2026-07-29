@@ -85,12 +85,14 @@ export function catalogueFacets(shows) {
  * @property {string|string[]} [genre]         genre label(s); several = any of them
  * @property {string|string[]} [subgenre]      subgenre label(s) (matched in show.subgenres)
  * @property {string|string[]} [accessibility] enum value(s) the show must declare
+ * @property {string|string[]} [venue]         venue code(s) — `show.venue`, so every
+ *                                    room of a venue counts as that venue
  * @property {number} [maxAge]        highest admitted minimum age (inclusive):
  *                                    2 excludes nothing rated above 2; unknown excluded
  * @property {"free"|number} [price]  "free", or a cap in pounds (inclusive);
  *                                    unknown-price shows excluded either way
  *
- * The three label facets take one value or many. Many are OR'd — the UI offers
+ * The four label facets take one value or many. Many are OR'd — the UI offers
  * them as checkbox lists, where ticking a second box widens the search — while
  * separate facets are AND'd.
  */
@@ -108,6 +110,7 @@ export function hasActiveFilters(filters) {
     facetValues(f.genre).length > 0 ||
     facetValues(f.subgenre).length > 0 ||
     facetValues(f.accessibility).length > 0 ||
+    facetValues(f.venue).length > 0 ||
     typeof f.maxAge === "number" ||
     f.price === "free" ||
     typeof f.price === "number"
@@ -120,10 +123,12 @@ export function filterShows(shows, filters) {
   const genres = facetValues(f.genre);
   const subgenres = facetValues(f.subgenre);
   const access = facetValues(f.accessibility);
+  const venues = facetValues(f.venue);
   return (shows || []).filter((show) => {
     if (genres.length && !genres.includes(show.genre)) return false;
     if (subgenres.length && !subgenres.some((s) => (show.subgenres || []).includes(s))) return false;
     if (access.length && !access.some((a) => showAccessibility(show).includes(a))) return false;
+    if (venues.length && !venues.includes(String(show.venue))) return false;
     if (typeof f.maxAge === "number") {
       const age = ageLimitYears(show);
       if (age === null || age > f.maxAge) return false;
@@ -203,4 +208,86 @@ export function searchShows(shows, query, filters, { limit = 30 } = {}) {
   }
   scored.sort((a, b) => b.score - a.score || byTitle(a.show, b.show));
   return { results: scored.slice(0, limit).map((s) => s.show), total: scored.length };
+}
+
+// --- Facet suggestions ("you typed a venue, not a show") -------------------
+//
+// A query is often the name of a *category* rather than a show: "pleasance",
+// "cabaret", "stand-up". Those deserve an answer the show list can't give — set
+// the matching filter and see the whole slate — so the UI offers them as rows
+// above the show hits, and picking one ticks that facet.
+
+/**
+ * The venues that actually have shows, A→Z by name: `{value, label, count}`,
+ * where value is the venue code (`show.venue`) and count is its show tally —
+ * the tie-break that puts a hub above its satellite in a suggestion list.
+ */
+export function catalogueVenues(shows, venueMap) {
+  const counts = new Map();
+  for (const show of shows || []) {
+    const code = show && show.venue != null ? String(show.venue) : "";
+    if (!code) continue;
+    counts.set(code, (counts.get(code) || 0) + 1);
+  }
+  const out = [];
+  for (const [code, count] of counts) {
+    const entry = (venueMap || {})[code];
+    const label = (entry && entry.name) || null;
+    if (label) out.push({ value: code, label, count });
+  }
+  out.sort((a, b) => fold(a.label).localeCompare(fold(b.label)));
+  return out;
+}
+
+// A label match is worth ranking three ways, same idea as scoreShow: the query
+// starts the name > starts a word in it > lands anywhere in it.
+function scoreLabel(label, foldedQuery) {
+  const l = fold(label);
+  if (l.startsWith(foldedQuery)) return 3;
+  if (new RegExp(`\\b${reEscape(foldedQuery)}`).test(l)) return 2;
+  if (l.includes(foldedQuery)) return 1;
+  return 0;
+}
+
+// Which facet wins a score tie — the broader the category, the higher it sits.
+const FACET_ORDER = ["genre", "subgenre", "venue"];
+
+/**
+ * The genres, subgenres and venues whose names the query matches, best first.
+ *
+ * @param {string} query raw user text (under 2 characters yields nothing — a
+ *   single letter matches half the programme and would bury the show hits)
+ * @param {{genres?: string[], subgenres?: string[],
+ *          venues?: {value: string, label: string, count?: number}[]}} catalogue
+ *   the value sets to offer; venues carry a code (`value`) distinct from their
+ *   display name, and an optional show `count` that breaks score ties (so
+ *   "pleasance" offers the Courtyard before a one-room outpost)
+ * @param {{limit?: number}} [opts]
+ * @returns {{kind: "genre"|"subgenre"|"venue", value: string, label: string}[]}
+ */
+export function matchFacets(query, catalogue, { limit = 4 } = {}) {
+  const foldedQuery = fold(query).trim().replace(/\s+/g, " ");
+  if (foldedQuery.length < 2) return [];
+  const c = catalogue || {};
+  const pools = [
+    ["genre", (c.genres || []).map((v) => ({ value: v, label: v }))],
+    ["subgenre", (c.subgenres || []).map((v) => ({ value: v, label: v }))],
+    ["venue", c.venues || []],
+  ];
+
+  const hits = [];
+  for (const [kind, values] of pools) {
+    for (const { value, label, count } of values) {
+      const score = scoreLabel(label, foldedQuery);
+      if (score > 0) hits.push({ kind, value, label, score, count: count || 0 });
+    }
+  }
+  hits.sort(
+    (a, b) =>
+      b.score - a.score ||
+      FACET_ORDER.indexOf(a.kind) - FACET_ORDER.indexOf(b.kind) ||
+      b.count - a.count ||
+      fold(a.label).localeCompare(fold(b.label))
+  );
+  return hits.slice(0, limit).map(({ kind, value, label }) => ({ kind, value, label }));
 }
