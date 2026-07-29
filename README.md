@@ -1,4 +1,6 @@
 # EdFringeNow
+
+<!-- claudinite:packs -->![basics](../../../../../tmp/claudinite-canon-JZVA0B/packs/basics/badge.svg "basics") ![barriers](../../../../../tmp/claudinite-canon-JZVA0B/packs/barriers/badge.svg "barriers") ![git-github](../../../../../tmp/claudinite-canon-JZVA0B/packs/git-github/badge.svg "git-github") ![github-actions](../../../../../tmp/claudinite-canon-JZVA0B/packs/github-actions/badge.svg "github-actions") ![html](../../../../../tmp/claudinite-canon-JZVA0B/packs/html/badge.svg "html") ![tidy-repo](../../../../../tmp/claudinite-canon-JZVA0B/packs/tidy-repo/badge.svg "tidy-repo") ![grow_with_claudinite](../../../../../tmp/claudinite-canon-JZVA0B/packs/grow_with_claudinite/badge.svg "grow_with_claudinite") ![executable-requirements](../../../../../tmp/claudinite-canon-JZVA0B/packs/executable-requirements/badge.svg "executable-requirements") ![spec-driven-product](../../../../../tmp/claudinite-canon-JZVA0B/packs/spec-driven-product/badge.svg "spec-driven-product") ![product-wiki](../../../../../tmp/claudinite-canon-JZVA0B/packs/product-wiki/badge.svg "product-wiki")<!-- /claudinite:packs -->
 Website to help find a fringe show — **Fringe Discover**.
 
 🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/
