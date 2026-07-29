@@ -75,3 +75,5 @@ list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-
 check catches an omission. Note that `git ls-files` only sees *tracked* files, so
 a new file silently sits outside the syntax sweep until it is committed — the
 "checked N files" count is not evidence your new file was among them.
+
+## `.claudinite/shared/` is generated output — never hand-resolve its conflicts, always take the fresher version
