@@ -10,14 +10,24 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 import pack from "./pack.mjs";
 import rule from "./test-globs-in-step.mjs";
+import verifyShSourceDirsRule from "./verify-sh-source-dirs.mjs";
+import noStrayPackageJsonRule from "./no-stray-package-json.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
+
+/** The repo's real tracked files, for a live-gate test against actual content. */
+function trackedFiles() {
+  return execFileSync("git", ["ls-files"], { cwd: REPO, encoding: "utf8" })
+    .split("\n")
+    .filter(Boolean);
+}
 
 const GLOBS = "plan/lib/__tests__/*.test.mjs .claudinite/local/packs/*/*.test.mjs";
 
@@ -123,11 +133,129 @@ test("this repo's own package.json and verify.sh are in step", () => {
   assert.deepEqual(out, [], `the test globs have drifted:\n${out.map((f) => f.what).join("\n")}`);
 });
 
-test("the pack manifest declares the check and stays hand-declared", () => {
+// --- verify-sh-source-dirs: scripts/verify.sh's syntax-check step must name
+// every top-level directory that has committed .js/.mjs source ---
+
+const verifyShWithDirs = (...dirs) =>
+  `#!/usr/bin/env bash\nstep "JavaScript syntax — node --check"\n` +
+  `js_files=$(git ls-files ${dirs.map((d) => `'${d}'`).join(" ")} | { grep -E '\\.m?js$' || true; })\n`;
+
+test("every top-level source dir named in verify.sh ⇒ no findings", () => {
+  const out = verifyShSourceDirsRule.run(ctxOf({
+    "scripts/verify.sh": verifyShWithDirs("js", "plan", "scripts", "shared"),
+    "js/app.js": "",
+    "plan/plan.js": "",
+    "scripts/bump-version.mjs": "",
+    "shared/geo.js": "",
+  }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a top-level dir with .mjs source left off the git ls-files list is reported", () => {
+  // The exact regression this guards: scripts/bump-version.mjs shipped (#81) with
+  // scripts/ never added to verify.sh's syntax-check glob, so it was never
+  // node --check'd in the pre-commit hook or in CI.
+  const out = verifyShSourceDirsRule.run(ctxOf({
+    "scripts/verify.sh": verifyShWithDirs("js", "plan", "shared"),
+    "js/app.js": "",
+    "scripts/bump-version.mjs": "",
+  }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-verify-sh-covers-source-dirs");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, "scripts/verify.sh");
+  assert.match(out[0].what, /^scripts has committed \.js\/\.mjs files/);
+  assert.match(out[0].fix, /add 'scripts' to the `git ls-files` call/);
+});
+
+test("multiple missing dirs are named together, sorted", () => {
+  const out = verifyShSourceDirsRule.run(ctxOf({
+    "scripts/verify.sh": verifyShWithDirs("plan"),
+    "shared/geo.js": "",
+    "js/app.js": "",
+  }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /^js, shared /);
+});
+
+test("hidden dirs and bare top-level files are never flagged", () => {
+  const out = verifyShSourceDirsRule.run(ctxOf({
+    "scripts/verify.sh": verifyShWithDirs("js", "plan", "scripts", "shared"),
+    ".claudinite/shared/engine/x.mjs": "",
+    "build-info.js": "",
+  }));
+  assert.deepEqual(out, []);
+});
+
+test("no verify.sh in the tree ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(verifyShSourceDirsRule.run(ctxOf({ "shared/geo.js": "" })), []);
+});
+
+test("this repo's verify.sh covers every real top-level source dir", () => {
+  // The live gate: every tracked file, read straight from git.
+  const files = trackedFiles();
+  const out = verifyShSourceDirsRule.run({
+    files,
+    read: (p) => (files.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
+  });
+  assert.deepEqual(out, [], `scripts/verify.sh is missing a source dir:\n${out.map((f) => f.what).join("\n")}`);
+});
+
+// --- no-stray-package-json: only the repo root and the grandfathered
+// plan/package.json may carry one ---
+
+test("only the allowed package.json files ⇒ no findings", () => {
+  const out = noStrayPackageJsonRule.run(ctxOf({
+    "package.json": "{}",
+    "plan/package.json": "{}",
+    "js/app.js": "",
+  }));
+  assert.deepEqual(out, []);
+});
+
+test("a package.json copied into a new source dir is reported", () => {
+  const out = noStrayPackageJsonRule.run(ctxOf({
+    "package.json": "{}",
+    "plan/package.json": "{}",
+    "shared/package.json": "{}",
+  }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-no-stray-package-json");
+  assert.equal(out[0].severity, "advisory");
+  assert.equal(out[0].file, "shared/package.json");
+  assert.match(out[0].fix, /remove it/);
+});
+
+test("more than one stray package.json is reported individually", () => {
+  const out = noStrayPackageJsonRule.run(ctxOf({
+    "js/package.json": "{}",
+    "shared/package.json": "{}",
+  }));
+  assert.equal(out.length, 2);
+  assert.deepEqual(out.map((f) => f.file).sort(), ["js/package.json", "shared/package.json"]);
+});
+
+test("no package.json in the tree ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(noStrayPackageJsonRule.run(ctxOf({ "README.md": "hi" })), []);
+});
+
+test("this repo carries no stray package.json", () => {
+  // The live gate: every tracked file, read straight from git.
+  const files = trackedFiles();
+  const out = noStrayPackageJsonRule.run({
+    files,
+    read: (p) => (files.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
+  });
+  assert.deepEqual(out, [], `stray package.json found:\n${out.map((f) => f.file).join("\n")}`);
+});
+
+test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");
   assert.ok(pack.rules.includes(rule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.rules.includes(verifyShSourceDirsRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.rules.includes(noStrayPackageJsonRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

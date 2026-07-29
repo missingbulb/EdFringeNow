@@ -20,6 +20,11 @@ repo may reference `product-wiki/` except the reviewed distillation under
 ## Wikis
 
 - **[competitor-landscape/](competitor-landscape/README.md)** — the existing
-  Fringe discovery/planning tools and where the reachability gap is.
+  Fringe discovery/planning tools, split by which of the product's two questions
+  they answer, and where each gap is.
 - **[market-and-audience/](market-and-audience/README.md)** — festival scale, the
-  overwhelm problem, and the audience segments the product targets.
+  overwhelm problem, and the two audiences the product targets: the live
+  in-festival crowd and the trip planners.
+- **[audience-divergence/](audience-divergence/README.md)** — where those two
+  crowds' requirements pull apart, where they actively conflict, and the narrow
+  spine they share.

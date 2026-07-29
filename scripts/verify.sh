@@ -23,10 +23,10 @@ step "Unit tests — node --test"
 node --test shared/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe/tasks/*.test.mjs .claudinite/local/packs/edfringe/tasks/*/*.test.mjs
 
 step "JavaScript syntax — node --check"
-# Only our own tracked source: the js/ app, the plan/ planner, and the shared/
-# code both import. Never the vendored .claudinite mount (not our code) or the
-# plan/design/ mock (HTML).
-js_files=$(git ls-files 'js' 'plan' 'shared' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
+# Only our own tracked source: the js/ app, the plan/ planner, the shared/
+# code both import, and the scripts/ tooling. Never the vendored .claudinite
+# mount (not our code) or the plan/design/ mock (HTML).
+js_files=$(git ls-files 'js' 'plan' 'scripts' 'shared' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
 js_count=0
 for f in $js_files; do
   node --check "$f"
