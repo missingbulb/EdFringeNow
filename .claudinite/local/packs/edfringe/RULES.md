@@ -57,8 +57,6 @@ both pages belongs in `shared/`** and is imported by each — never copy-pasted.
 Both pages spell the import the same way (`../shared/geo.js` resolves to
 `/shared/geo.js` from either), so moving a value there is a small change.
 
-`UK_BOUNDS` used to live twice — it is one export in `shared/geo.js` now.
-
 What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
 `plan/lib/travel.js` that was ported from `js/app.js`.
