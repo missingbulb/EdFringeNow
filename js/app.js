@@ -12,6 +12,7 @@
  */
 
 import { isInUK } from "../shared/geo.js";
+import { geocodeUrl, parsePlaces, placeIcon, partnerLink } from "./places.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -102,6 +103,9 @@ const state = {
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
   selectedShowId: "",          // the pinned "next show" (destination)
   destLabel: "",               // editable destination text (defaults to the show's venue)
+  destPlace: null,             // geocoded non-show destination { label, area, lat, lng, kind }
+  destNote: "",                // label-only non-show destination (couldn't/didn't geocode)
+  placeMarker: null,           // Leaflet marker for the geocoded place
   legShowId: "",               // a show clicked on the map (stop before the destination)
   editingCommitment: false,    // constraint panel opened from the plan to change it
   spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
@@ -371,6 +375,23 @@ function reachRadiusMeters() {
   return speed * (state.maxTravelMinutes / 60) * 1000;
 }
 
+/* The committed next commitment as a route/classification constraint: the
+ * pinned show, or — when a typed place has been found on the map — a pseudo-show
+ * carrying the place's coordinates and the picked time. Null while nothing with
+ * coordinates is committed (a label-only place can't constrain anything
+ * measurable). Everything downstream (classify, route, plan, Maps link) reads
+ * the constraint through this, so shows and places behave identically. */
+const PLACE_ID = "__place__"; // can't collide with show ids (`<id>__<start>__<index>`)
+function commitmentConstraint() {
+  const show = state.shows.find((s) => s.id === state.selectedShowId);
+  if (show) return show;
+  if (state.destPlace && state.selectedTime) {
+    const p = state.destPlace;
+    return { id: PLACE_ID, isPlace: true, time: state.selectedTime, lat: p.lat, lng: p.lng, duration: 0 };
+  }
+  return null;
+}
+
 /* Classify a show for the map relative to the user and (optionally) the chosen
  * "next show" constraint. Returns "selected" | "ok" | "tight" | "hidden".
  *   - ok     : you can travel there and arrive before it starts
@@ -408,9 +429,7 @@ function classifyShow(show, constraint) {
 
 /* The shows to draw on the map, each with its status. */
 function displayedShows(except) {
-  const constraint = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const constraint = commitmentConstraint();
 
   const out = [];
   visibleShows(except).forEach((show) => {
@@ -418,7 +437,8 @@ function displayedShows(except) {
     if (status !== "hidden") out.push({ show, status });
   });
   // Always keep the chosen next show pinned, even if it's beyond the circle.
-  if (constraint && !out.some((o) => o.show.id === constraint.id)) {
+  // (A committed place isn't a show — it gets its own pin in renderPlaceMarker.)
+  if (constraint && !constraint.isPlace && !out.some((o) => o.show.id === constraint.id)) {
     out.push({ show: constraint, status: "selected" });
   }
   // Keep the user's selected show pinned too — it stays selected until they
@@ -466,9 +486,15 @@ function genreIcon(genre) {
  * destination are highlighted by a violet ring (see .gpin--selected/--leg), not
  * by growing, so they never disturb the map's density. */
 function genrePin(show, status) {
+  return pinIcon(genreIcon(show.genre), status);
+}
+
+/* The shared emoji-in-a-ring pin: show pins use their genre emoji, the committed
+ * non-show place uses its kind's emoji with the same "selected" violet ring. */
+function pinIcon(emoji, status) {
   const size = 22;
   const font = Math.round(size * 0.74);
-  const html = `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;font-size:${font}px">${genreIcon(show.genre)}</span>`;
+  const html = `<span class="gpin gpin--${status}" style="width:${size}px;height:${size}px;font-size:${font}px">${emoji}</span>`;
   return L.divIcon({
     html,
     className: "genre-pin",
@@ -476,6 +502,25 @@ function genrePin(show, status) {
     iconAnchor: [size / 2, size / 2],
     tooltipAnchor: [0, -size / 2],
   });
+}
+
+/* Pin (or clear) the committed non-show place. Styled like a committed show —
+ * violet ring — with the place's name as a hover tooltip, since no card or
+ * list row describes it on the map itself. */
+function renderPlaceMarker() {
+  if (!state.map) return;
+  if (state.placeMarker) {
+    state.map.removeLayer(state.placeMarker);
+    state.placeMarker = null;
+  }
+  const p = state.destPlace;
+  if (!p) return;
+  state.placeMarker = L.marker([p.lat, p.lng], {
+    icon: pinIcon(placeIcon(p.kind), "selected"),
+    zIndexOffset: 1000,
+    keyboard: false,
+  }).addTo(state.map);
+  state.placeMarker.bindTooltip(p.label, { direction: "top" });
 }
 
 /* Cluster bubble for Leaflet.markercluster — a violet count disc in the page's
@@ -499,6 +544,7 @@ function clusterIcon(cluster) {
 function refreshMap() {
   renderReachCircle();
   renderMarkers();
+  renderPlaceMarker();
   renderRoute();
   renderShowList();
   renderJourneyStrip();
@@ -511,7 +557,8 @@ function refreshMap() {
  * Hide the box while a commitment exists (or while editing one). */
 function updateCtaVisibility() {
   const editing = state.editingCommitment;
-  document.body.classList.toggle("has-plan", Boolean(state.selectedShowId) || editing);
+  const committed = Boolean(commitmentConstraint()) || Boolean(state.destNote);
+  document.body.classList.toggle("has-plan", committed || editing);
 }
 
 /* Reopen the constraint panel from the plan's destination node, so the user can
@@ -534,6 +581,9 @@ function clearCommitment() {
   state.selectedShowId = "";
   state.selectedTime = "";
   state.destLabel = "";
+  state.destPlace = null;
+  state.destNote = "";
+  clearPlaceResults();
   state.editingCommitment = false;
   state.spareCtaDismissed = false;
   syncDestInput();
@@ -636,9 +686,7 @@ function renderRoute() {
   state.routeLayers.forEach((l) => state.map.removeLayer(l));
   state.routeLayers = [];
 
-  const dest = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const dest = commitmentConstraint();
 
   // No commitment yet, but a show is selected: still draw the walk to it, with
   // the same travel pill and the ✓ "you make its start" check.
@@ -744,10 +792,8 @@ const SHOW_PAGE = 12;
  * the list stays about spontaneity, not a full catalogue. Order-independent:
  * the caller sorts by time or distance. */
 function fittingShows(except) {
-  const constrained = Boolean(state.selectedShowId);
-  const constraint = constrained
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const constraint = commitmentConstraint();
+  const constrained = Boolean(constraint);
   let all = displayedShows(except).filter(({ show }) => show.id !== state.selectedShowId);
   // A selected show that can't actually be slipped in before the commitment isn't
   // a real option — keep it on the map and the itinerary, but out of this list
@@ -771,9 +817,7 @@ function renderShowList() {
   if (!grid) return;
   grid.innerHTML = "";
 
-  const constraint = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const constraint = commitmentConstraint();
 
   const all = fittingShows();
   // Walk minutes: computed once, reused for the row label and distance sort.
@@ -937,9 +981,7 @@ function renderJourneyStrip() {
   if (!strip) return;
 
   const origin = state.userLatLng;
-  const constraint = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const constraint = commitmentConstraint();
   // The selected show to slip in — kept independent of the commitment. It shows
   // in the plan whenever one is selected (and it isn't the commitment itself),
   // even if it no longer neatly fits: the slack chip tells that story.
@@ -949,7 +991,7 @@ function renderJourneyStrip() {
       : null;
 
   // Nothing chosen at all — no plan to show; the list heading carries the state.
-  if (!constraint && !leg) {
+  if (!constraint && !leg && !state.destNote) {
     strip.innerHTML = "";
     return;
   }
@@ -995,21 +1037,21 @@ function renderJourneyStrip() {
         const departFromLeg = timeToMinutes(leg.time) + leg.duration;
         const arriveDest = departFromLeg + travelMinutes(legPt, destPt);
         parts.push(planLeg(travelMinutes(legPt, destPt)));
-        parts.push(
-          planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
-            planSlack(timeToMinutes(constraint.time) - arriveDest), "")
-        );
+        parts.push(destNode(constraint, planSlack(timeToMinutes(constraint.time) - arriveDest)));
       } else {
         // The show breaks this plan — present the commitment as reachable directly
         // (skip the show), with no alarming pill of its own: it isn't the problem.
         const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
         parts.push(planLeg(travelMinutes(origin, destPt)));
-        parts.push(
-          planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
-            planSlack(timeToMinutes(constraint.time) - arriveDest), "")
-        );
+        parts.push(destNode(constraint, planSlack(timeToMinutes(constraint.time) - arriveDest)));
       }
+    } else if (state.destNote) {
+      parts.push(noteLeg(), noteDestNode());
     }
+  } else if (!constraint) {
+    // A note commitment only: no coordinates, so no travel time or slack — the
+    // node keeps the commitment visible and editable, nothing more.
+    parts.push(noteLeg(), noteDestNode());
   } else {
     const destPt = [constraint.lat, constraint.lng];
     const arriveDest = NOW.minutes + travelMinutes(origin, destPt);
@@ -1019,10 +1061,7 @@ function renderJourneyStrip() {
     // there's nothing to offer it falls back to a plain walk connector.
     const spareNode = spareCtaNode();
     parts.push(spareNode || planLeg(travelMinutes(origin, destPt)));
-    parts.push(
-      planNode(genreIcon(constraint.genre), "dest", constraint.time, destinationLabel(), "Your next commitment",
-        planSlack(timeToMinutes(constraint.time) - arriveDest), "")
-    );
+    parts.push(destNode(constraint, planSlack(timeToMinutes(constraint.time) - arriveDest)));
   }
 
   strip.innerHTML = parts.join("");
@@ -1090,9 +1129,7 @@ function googleMapsUrl() {
   const origin = state.userLatLng; // [lat, lng] — "you are here"
   const fmt = ([lat, lng]) => `${lat},${lng}`;
 
-  const destShow = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const destShow = commitmentConstraint(); // a committed place routes the same way
   let legShow = null;
   if (state.legShowId && (!destShow || state.legShowId !== destShow.id)) {
     legShow = state.shows.find((s) => s.id === state.legShowId) || null;
@@ -1136,9 +1173,7 @@ function updateMapsRouteLink() {
  * free time you could still fill with a show. Accounts for a chosen leg. Returns
  * null when no commitment is set. */
 function planSpareMinutes() {
-  const constraint = state.selectedShowId
-    ? state.shows.find((s) => s.id === state.selectedShowId)
-    : null;
+  const constraint = commitmentConstraint();
   if (!constraint) return null;
 
   const origin = state.userLatLng;
@@ -1218,9 +1253,42 @@ function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
     </div>`;
 }
 
+/* The plan's destination node — the next commitment. A committed show wears its
+ * genre icon; a committed place wears its kind's icon (🍽️ 🚆 …) and carries the
+ * partner booking link where one exists. */
+function destNode(constraint, slackHtmlStr) {
+  const icon = constraint.isPlace ? placeIcon(state.destPlace.kind) : genreIcon(constraint.genre);
+  const extra = constraint.isPlace ? planPartnerLink() : "";
+  return planNode(icon, "dest", constraint.time, destinationLabel(), "Your next commitment", slackHtmlStr, extra);
+}
+
+/* Booking link for the committed non-show place — a table, train tickets, a
+ * room, tour tickets — rendered like the shows' "Buy ahead" pill. The link is
+ * useful on its own and doubles as the referral once the affiliate IDs in
+ * js/places.js are configured (rel="sponsored" declares that honestly). */
+function planPartnerLink() {
+  if (!state.destPlace) return "";
+  const link = partnerLink(state.destPlace);
+  if (!link) return "";
+  return `<a class="plan-buy-inline" href="${escapeHtml(link.url)}" target="_blank"
+            rel="noopener sponsored" title="Opens ${escapeHtml(link.partner)} — booking via this link supports EdFringeNow"
+          >${placeIcon(state.destPlace.kind)} ${escapeHtml(link.text)} &middot; ${escapeHtml(link.partner)}</a>`;
+}
+
 /* A travel connector between two plan nodes; verb follows the selected mode. */
 function planLeg(mins) {
   return `<div class="plan-leg">${escapeHtml(travelGlyph())} ${formatMins(mins)} ${travelVerb()}</div>`;
+}
+
+/* The connector and destination node for a label-only note commitment ("My
+ * cousin's flat") — we can't route to a place we couldn't pin, so the
+ * connector says so instead of faking a travel time. */
+function noteLeg() {
+  return `<div class="plan-leg">${escapeHtml(travelGlyph())} make your own way</div>`;
+}
+
+function noteDestNode() {
+  return planNode("📝", "dest", state.selectedTime, state.destNote, "Your next commitment", "", "");
 }
 
 /* Booking link for a show on the official Fringe box office. Every show in the
@@ -1659,6 +1727,8 @@ function buildConstraintPanel() {
     state.selectedShowId = "";
     state.legShowId = "";
     state.destLabel = "";
+    state.destPlace = null;
+    state.destNote = "";
   }
   if (!state.selectedTime && times.length) state.selectedTime = times[0];
 
@@ -1702,30 +1772,156 @@ function buildConstraintPanel() {
     destInput.oninput = () => {
       state.destLabel = destInput.value;
       if (destFind) destFind.disabled = !destInput.value.trim();
+      // Editing the text invalidates a previously found place or note — a pin
+      // or plan mustn't outlive the label that produced it.
+      const hadCommitment = Boolean(state.destPlace) || Boolean(state.destNote);
+      state.destPlace = null;
+      state.destNote = "";
+      clearPlaceResults();
       refreshConstraintValue();
-      renderRoute();
+      if (hadCommitment) refreshMap();
+      else renderRoute();
+    };
+    destInput.onkeydown = (e) => {
+      if (e.key === "Enter" && destInput.value.trim()) {
+        e.preventDefault();
+        findPlaceOnMap();
+      }
     };
   }
-  // "Find on map" resolves a typed place: it commits it as the next commitment
-  // and closes the picker. (We can't geocode free text yet, so there's no route
-  // to draw — but the constraint is set and the panel gets out of the way.)
+  // "Find on map" geocodes the typed place (see findPlaceOnMap) so a
+  // restaurant, a station or a hotel becomes a real destination: pinned on the
+  // map, routed to, and planned around — exactly like a committed show.
   if (destFind && destInput) {
     destFind.disabled = !destInput.value.trim();
-    destFind.onclick = () => {
-      const val = destInput.value.trim();
-      if (!val) return;
-      state.destLabel = val;
-      state.selectedShowId = ""; // a typed place isn't one of our shows
-      state.legShowId = "";
-      refreshConstraintValue();
-      refreshMap();
-      closeAllPanels();
-    };
+    destFind.onclick = () => findPlaceOnMap();
   }
 
   syncWheels(false);
   renderConstraintShows(false);
   refreshConstraintValue();
+}
+
+/* ---------- Non-show places ---------- */
+/* "Find on map" geocodes the typed place — Nominatim, bounded to Edinburgh (see
+ * js/places.js) — then commits a single match directly, or lists the candidates
+ * to pick from. If the search fails or finds nothing, the place can still be
+ * kept as a plain text note (the pre-geocoding behaviour), so the box keeps
+ * working offline and for places the map doesn't know. */
+let placeSearchInFlight = false; // one search at a time — also Nominatim's rate policy
+
+async function findPlaceOnMap() {
+  const input = document.getElementById("destInput");
+  const btn = document.getElementById("destFind");
+  const q = input ? input.value.trim() : "";
+  if (!q || placeSearchInFlight) return;
+
+  let places = null; // null = search unavailable, [] = searched, nothing found
+  placeSearchInFlight = true;
+  const idleLabel = btn ? btn.textContent : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Finding…";
+  }
+  try {
+    const res = await fetch(geocodeUrl(q));
+    if (!res.ok) throw new Error(`geocoder HTTP ${res.status}`);
+    places = parsePlaces(await res.json());
+  } catch (err) {
+    console.warn("Place search unavailable:", err);
+  }
+  placeSearchInFlight = false;
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = idleLabel;
+  }
+
+  if (places && places.length === 1) {
+    commitPlace(places[0]); // unambiguous — straight onto the plan
+    return;
+  }
+  renderPlaceResults(q, places);
+}
+
+/* The candidate rows under the place box: tap one to commit it. A trailing
+ * "keep as a note" row covers the search-failed / nothing-found / none-of-these
+ * cases without blocking the user on the geocoder. */
+function renderPlaceResults(q, places) {
+  const box = document.getElementById("destResults");
+  if (!box) return;
+  const msg =
+    places === null
+      ? "Map search isn’t reachable right now."
+      : places.length
+        ? "Which one?"
+        : `Couldn’t find “${q}” around Edinburgh.`;
+  const rows = (places || [])
+    .map(
+      (p, i) => `
+    <button type="button" class="place-hit" data-i="${i}">
+      <span class="ph-ico" aria-hidden="true">${placeIcon(p.kind)}</span>
+      <span class="ph-body">
+        <span class="ph-title">${escapeHtml(p.label)}</span>
+        ${p.area ? `<span class="ph-area">${escapeHtml(p.area)}</span>` : ""}
+      </span>
+    </button>`
+    )
+    .join("");
+  box.innerHTML =
+    `<p class="place-msg">${escapeHtml(msg)}</p>` +
+    rows +
+    `<button type="button" class="place-hit place-hit--note">
+      <span class="ph-ico" aria-hidden="true">📝</span>
+      <span class="ph-body"><span class="ph-title">Keep “${escapeHtml(q)}” as a note</span></span>
+    </button>`;
+  box.hidden = false;
+  box.querySelectorAll(".place-hit[data-i]").forEach((row) => {
+    row.onclick = () => commitPlace((places || [])[Number(row.dataset.i)]);
+  });
+  const note = box.querySelector(".place-hit--note");
+  if (note) note.onclick = () => commitPlaceNote(q);
+}
+
+function clearPlaceResults() {
+  const box = document.getElementById("destResults");
+  if (box) {
+    box.innerHTML = "";
+    box.hidden = true;
+  }
+}
+
+/* Commit a geocoded place as the next commitment: it gets pinned, routed to and
+ * planned around like a committed show. A selected show (the stop on the way)
+ * is kept — whether it still fits is the plan's story to tell. */
+function commitPlace(place) {
+  if (!place) return;
+  state.destPlace = place;
+  state.destNote = "";
+  state.destLabel = place.label;
+  state.selectedShowId = ""; // a typed place isn't one of our shows
+  state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
+  state.showCap = SHOW_PAGE;
+  const input = document.getElementById("destInput");
+  if (input) input.value = place.label;
+  clearPlaceResults();
+  refreshConstraintValue();
+  refreshMap();
+  closeAllPanels();
+}
+
+/* Commit the typed text as a label-only note — no coordinates, so no pin or
+ * route; the constraint card still records it. This is the pre-geocoding
+ * behaviour, kept as the fallback for offline / unfindable places. */
+function commitPlaceNote(label) {
+  state.destPlace = null;
+  state.destNote = label;
+  state.destLabel = label;
+  state.selectedShowId = "";
+  state.legShowId = ""; // without coordinates we can't tell whether a stop fits
+  clearPlaceResults();
+  refreshConstraintValue();
+  refreshMap();
+  closeAllPanels();
 }
 
 /* Point the picker at a new time: browse the shows starting then (no commitment
@@ -1736,6 +1932,9 @@ function setConstraintTime(hhmm) {
   state.selectedShowId = "";
   state.spareCtaDismissed = false;
   state.destLabel = "";
+  state.destPlace = null;
+  state.destNote = "";
+  clearPlaceResults();
   state.showCap = SHOW_PAGE;
   syncDestInput();
   renderConstraintShows(true);
@@ -1748,6 +1947,9 @@ function setConstraintTime(hhmm) {
  * (unless it's the very show now being committed — it can't be both). */
 function selectConstraintShow(id) {
   state.selectedShowId = id;
+  state.destPlace = null; // a show commitment replaces any found place or note
+  state.destNote = "";
+  clearPlaceResults();
   forgetStalePlan(); // a fresh commitment supersedes the offer of the old one
   if (state.legShowId === id) state.legShowId = "";
   state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt

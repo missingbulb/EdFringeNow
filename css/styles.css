@@ -297,6 +297,19 @@ a { color: inherit; }
 .panel-find:hover { filter: brightness(0.96); }
 .panel-find:disabled { opacity: 0.45; cursor: not-allowed; }
 .panel-find:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* Candidate places under "Find on map" — rows in the show-pick mould, plus a
+   dashed "keep as a note" fallback row (no coordinates, label only). */
+.place-results { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.place-msg { font-size: 0.85rem; color: var(--muted); margin: 0; }
+.place-hit { display: flex; align-items: center; gap: 11px; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); cursor: pointer; font: inherit; color: inherit; }
+.place-hit:hover { border-color: #cfc9bb; }
+.place-hit:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.place-hit--note { border-style: dashed; color: var(--muted); }
+.ph-ico { font-size: 1.05rem; }
+.ph-body { display: flex; flex-direction: column; gap: 2px; }
+.ph-title { font-weight: 700; font-size: 0.9rem; }
+.ph-area { font-size: 0.78rem; color: var(--muted); }
 .panel-range {
   width: 100%;
   accent-color: var(--red);

@@ -1,0 +1,73 @@
+[
+  {
+    "place_id": 274358944,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 290139267,
+    "lat": "55.9548538",
+    "lon": "-3.1941322",
+    "category": "tourism",
+    "type": "hotel",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "tourism",
+    "name": "Malmaison Edinburgh City",
+    "display_name": "Malmaison Edinburgh City, 21-22, St Andrew Square, Gayfield, New Town, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH2 1AF, United Kingdom",
+    "address": {
+      "tourism": "Malmaison Edinburgh City",
+      "house_number": "21-22",
+      "road": "St Andrew Square",
+      "neighbourhood": "Gayfield",
+      "suburb": "New Town",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH2 1AF",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9547549",
+      "55.9549723",
+      "-3.1943792",
+      "-3.1939117"
+    ]
+  },
+  {
+    "place_id": 274396998,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 574812212,
+    "lat": "55.9778416",
+    "lon": "-3.1685724",
+    "category": "tourism",
+    "type": "hotel",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "tourism",
+    "name": "Malmaison",
+    "display_name": "Malmaison, 1, Tower Place, The Shore, North Leith, Leith, City of Edinburgh, Alba / Scotland, EH6 7BZ, United Kingdom",
+    "address": {
+      "tourism": "Malmaison",
+      "house_number": "1",
+      "road": "Tower Place",
+      "neighbourhood": "The Shore",
+      "quarter": "North Leith",
+      "suburb": "Leith",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH6 7BZ",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9777916",
+      "55.9778916",
+      "-3.1686224",
+      "-3.1685224"
+    ]
+  }
+]
