@@ -79,6 +79,7 @@
         Mark favourites on <a class="link-quiet" href="https://www.edfringe.com/" target="_blank" rel="noopener">EdFringe.com</a>,
         go to your <a class="link-quiet" href="https://www.edfringe.com/tickets/my-account/favourites" target="_blank" rel="noopener">favourites page</a>,
         and click &ldquo;Export to CSV&rdquo; — then drop the file here.
+        Or skip the file and build your list show by show, with the search below.
       </p>
 
       <!-- The drop box sits centred on a faint "empty lanes" backdrop, so this
@@ -109,6 +110,79 @@
             <div class="us-sub" id="usSub"></div>
           </div>
           <span class="us-file" id="usFile"></span>
+        </div>
+
+        <!-- The second way in: the same search bar that lives at the bottom of
+             the grid once it has shows. It sits at the bottom of this empty
+             "waiting grid" too — the identical component in the identical spot,
+             so starting from scratch and topping up a full grid feel like one
+             feature. plan.js moves the #showSearch node between the two
+             slots (here and #ssSlotCal) on the state switch. -->
+        <div class="intake-or" aria-hidden="true"><span>or</span></div>
+        <p class="intake-search-lead">
+          No favourites list? Start your grid right here — search the programme
+          and <span class="ss-star-hint">☆</span> the shows you fancy.
+        </p>
+        <div class="ss-slot" id="ssSlotIntake">
+          <div class="show-search" id="showSearch">
+            <!-- "Search tools": a line of facet filters, folded above the box
+                 until the button on the bar expands it. Options for genre /
+                 subgenre / accessibility are filled from the loaded catalogue;
+                 accessibility and the price caps disable themselves while the
+                 data behind them hasn't landed (see initSearchUI). -->
+            <div class="ss-tools" id="ssTools" hidden>
+              <select class="opt-select ss-filter" id="ssfGenre" aria-label="Filter by genre">
+                <option value="">Any genre</option>
+              </select>
+              <select class="opt-select ss-filter" id="ssfSubgenre" aria-label="Filter by subgenre">
+                <option value="">Any subgenre</option>
+              </select>
+              <select class="opt-select ss-filter" id="ssfAccess" aria-label="Filter by accessibility option">
+                <option value="">Any accessibility</option>
+              </select>
+              <select class="opt-select ss-filter" id="ssfAge" aria-label="Filter by age limit"
+                      title="Shows with this age limit or lower">
+                <option value="">Any age limit</option>
+                <option value="0">0+ only</option>
+                <option value="3">Up to 3+</option>
+                <option value="5">Up to 5+</option>
+                <option value="8">Up to 8+</option>
+                <option value="12">Up to 12+</option>
+                <option value="14">Up to 14+</option>
+                <option value="16">Up to 16+</option>
+              </select>
+              <select class="opt-select ss-filter" id="ssfPrice" aria-label="Filter by price">
+                <option value="">Any price</option>
+                <option value="free">Free</option>
+                <option value="10">Up to £10</option>
+                <option value="15">Up to £15</option>
+                <option value="20">Up to £20</option>
+                <option value="30">Up to £30</option>
+              </select>
+              <button type="button" class="ss-reset" id="ssReset" hidden>&times; Clear filters</button>
+            </div>
+            <div class="ss-bar">
+              <span class="ss-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+              </span>
+              <input class="ss-input" id="ssInput" type="text" role="combobox"
+                     aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
+                     autocomplete="off" spellcheck="false"
+                     placeholder="Search shows to add &mdash; title, performer or venue" />
+              <button type="button" class="ss-tools-btn" id="ssToolsBtn" aria-expanded="false" aria-controls="ssTools">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" /></svg>
+                Search tools
+                <span class="ss-badge" id="ssBadge" hidden></span>
+              </button>
+            </div>
+            <!-- Results drop under the bar as an overlay; one line per show,
+                 the star on the left adds it to (or lifts it off) the grid. -->
+            <div class="ss-pop" id="ssPop" hidden>
+              <ul class="ss-results" id="ssResults" role="listbox" aria-label="Matching shows"></ul>
+              <p class="ss-empty" id="ssEmpty" hidden>No shows match &mdash; try fewer filters or a different spelling.</p>
+              <p class="ss-foot" id="ssFoot" hidden></p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -230,6 +304,12 @@
           </div>
         </div>
       </div>
+
+      <!-- The grid's bottom line: the show search moves in here (from
+           #ssSlotIntake) whenever the calendar is on screen, so topping up the
+           grid happens right under the lanes it feeds. -->
+      <div class="ss-slot" id="ssSlotCal"></div>
+
       <div class="cal-tip" id="calTip" hidden></div>
 
       <!-- Colour key for the day marks, moved below the grid. The lock cursor on
