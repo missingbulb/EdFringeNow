@@ -328,14 +328,70 @@ a { color: inherit; }
   font-size: 0.64rem; font-weight: 800; color: #fff; background: var(--violet);
 }
 
-/* The expanded line of search tools above the box. */
+/* The expanded line of search tools above the box. Each facet is a chip that
+   drops a panel of checkable options — the same instrument the Now page's
+   filters use, in this page's palette. */
 .ss-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
-.ss-filter { font-size: 0.78rem; padding: 6px 8px; max-width: 176px; }
-.ss-filter.is-set {
+.filter-chip { position: relative; }
+.chip-trigger {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 200px;
+  font: inherit; font-size: 0.78rem; font-weight: 600; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 12px; cursor: pointer;
+}
+.chip-trigger:hover { border-color: #d5d9e2; }
+.chip-trigger:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+.filter-chip.is-set .chip-trigger {
   border-color: var(--violet); color: var(--violet-dark);
   background: rgba(108, 76, 241, 0.05);
 }
-.ss-filter:disabled { opacity: 0.55; cursor: not-allowed; }
+.filter-chip.is-disabled .chip-trigger { opacity: 0.55; cursor: not-allowed; }
+.chip-value { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip-caret { flex: 0 0 auto; color: var(--muted); font-size: 0.66rem; }
+.chip-money { flex: 0 0 auto; font-weight: 800; color: var(--muted); }
+.filter-chip.is-set .chip-money { color: var(--violet); }
+
+/* The dropped panel. Anchored under its chip; JS nudges it back inside the
+   viewport when a wrapped chip row would push it off an edge. */
+.chip-panel {
+  position: absolute; z-index: 60; top: calc(100% + 6px); left: 0;
+  min-width: 250px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow-soft); padding: 14px 14px 15px;
+}
+.chip-panel[hidden] { display: none; }
+.chip-panel--mini { min-width: 215px; }
+.panel-title {
+  display: block; margin: 0 0 10px;
+  font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.panel-title--row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+/* "everything!" — a quiet link beside the question, not a button competing
+   with the options for attention. */
+.panel-everything {
+  font: inherit; font-weight: 700; font-size: 0.72rem; text-transform: none; letter-spacing: 0;
+  white-space: nowrap; color: var(--violet); background: none; border: none; padding: 0;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+}
+.panel-everything:hover { color: var(--violet-dark); }
+.panel-everything:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+.panel-options { display: grid; gap: 2px; }
+.panel-options--scroll { max-height: 44vh; overflow-y: auto; overscroll-behavior: contain; }
+.panel-option {
+  display: flex; align-items: center; gap: 9px;
+  padding: 6px 7px; border-radius: 8px; cursor: pointer;
+  font-size: 0.84rem; font-weight: 600;
+}
+.panel-option:hover { background: var(--bg); }
+.panel-option input { flex: 0 0 auto; accent-color: var(--violet); width: 15px; height: 15px; }
+.panel-option.is-empty { opacity: 0.55; }
+/* The grey per-option show count, pushed to the row's right edge. */
+.opt-count {
+  margin-left: auto; flex: 0 0 auto;
+  font-size: 0.74rem; font-weight: 700; color: #98a2b3; font-variant-numeric: tabular-nums;
+}
+.panel-note { margin: 2px 0 0; font-size: 0.78rem; color: var(--muted); font-style: italic; }
 .ss-reset {
   font: inherit; font-size: 0.76rem; font-weight: 600; color: var(--muted);
   background: none; border: none; padding: 2px 4px; cursor: pointer;

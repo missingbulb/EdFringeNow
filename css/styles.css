@@ -247,6 +247,9 @@ a { color: inherit; }
   color: var(--muted);
 }
 .panel-options { display: grid; gap: 4px; }
+/* Long option lists (genres, and especially the ~100 subgenres) scroll inside
+   the panel rather than growing it past the viewport. */
+.panel-options--scroll { max-height: 46vh; overflow-y: auto; overscroll-behavior: contain; }
 .panel-option {
   display: flex;
   align-items: center;
@@ -315,11 +318,20 @@ a { color: inherit; }
 .seg-btn { flex: 1 1 0; font: inherit; font-weight: 700; font-size: 0.85rem; color: var(--muted); background: transparent; border: none; padding: 8px 6px; border-radius: 999px; cursor: pointer; transition: color 0.12s ease, background 0.12s ease; }
 .seg-btn.is-active { color: #fff; background: var(--red); }
 .seg-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.panel-title--spaced { margin-top: 16px; }
-/* Reset-all-filters button at the foot of the genre panel. */
-.panel-reset { display: inline-flex; align-items: center; gap: 6px; margin: 14px 0 0; font: inherit; font-weight: 700; font-size: 0.82rem; color: var(--red-dark); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
-.panel-reset:hover { border-color: var(--red); background: #fff; }
-.panel-reset:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+/* A panel heading that carries its "everything!" clear link on the right. */
+.panel-title--row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+/* "everything!" — a link, not a button: clearing the filter is a quiet escape
+   hatch beside the question, not a call to action competing with the options. */
+.panel-everything {
+  font: inherit; font-weight: 700; font-size: 0.78rem; text-transform: none; letter-spacing: 0;
+  color: var(--blue); background: transparent; border: none; padding: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.panel-everything:hover { color: var(--red); }
+.panel-everything:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+/* The grey per-option show count, pushed to the right of the option row. */
+.opt-count { margin-left: auto; flex: 0 0 auto; font-size: 0.78rem; font-weight: 700; color: #9aa39a; font-variant-numeric: tabular-nums; }
+.panel-option.is-empty { opacity: 0.55; }
 .panel-note {
   margin: 14px 0 0;
   font-size: 0.82rem;
@@ -911,8 +923,10 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-/* --- Filters as compact chips (must fit one line at 375px) --- */
-.filters-row { display: flex; align-items: center; gap: 6px; margin: 10px 0 6px; flex-wrap: nowrap; }
+/* --- Filters as compact chips --- */
+/* Four chips (genre · subgenre · $ · travel) don't fit one 375px line, so the
+   row wraps rather than squeezing every label to an ellipsis. */
+.filters-row { display: flex; align-items: center; gap: 6px; margin: 10px 0 6px; flex-wrap: wrap; }
 .filters-label { flex: 0 0 auto; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8c958c; }
 .filter-chip { position: relative; min-width: 0; border: none; box-shadow: none; background: transparent; border-radius: 999px; }
 .filter-chip:hover { transform: none; box-shadow: none; }
@@ -931,9 +945,44 @@ a { color: inherit; }
 .filter-chip .card-value { font-weight: 700; font-size: 0.82rem; text-transform: none; letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .filter-chip .fc-caret { flex: 0 0 auto; color: var(--muted); font-size: 0.68rem; }
 .filter-chip .card-panel { left: 0; right: auto; min-width: 240px; }
-/* The right-most chip's panel opens toward the left so it can't spill off a
+/* Only the first chip on a row can safely drop its panel to the right; every
+   later one anchors its panel's right edge to its own, so nothing spills off a
    narrow (375px) viewport. */
-.card--travel .card-panel { left: auto; right: 0; }
+.card--travel .card-panel,
+.card--subgenre .card-panel,
+.card--price .card-panel { left: auto; right: 0; }
+/* The two long option lists earn a slightly wider panel — their headings carry
+   the "everything!" link alongside the question. */
+.card--genre .card-panel, .card--subgenre .card-panel { min-width: 288px; }
+.panel-everything { white-space: nowrap; }
+/* The $ chip: a narrow button carrying the mark alone until a price is chosen,
+   when it also spells out the current selection. */
+.filter-chip--mini .card-trigger { padding: 7px 9px; gap: 4px; }
+.fc-money { flex: 0 0 auto; font-weight: 800; font-size: 0.9rem; color: var(--muted); line-height: 1; }
+.card--price.is-set .fc-money { color: var(--red); }
+.filter-chip .card-value--price[hidden] { display: none; }
+/* A tiny dropdown — just the three price choices, so it needn't be panel-wide. */
+.card-panel--mini { min-width: 176px; padding: 14px 14px 15px; }
+.card-panel--mini .panel-title { margin-bottom: 8px; }
+.card-panel--mini .segmented { margin: 0; }
+
+/* --- "Your previous plan" restore bar --- */
+/* Sits where the plan would be, offering back a cached plan whose time has
+   already passed. Deliberately quiet: an offer, not an alert. */
+.restore-bar {
+  display: flex; align-items: center; gap: 8px; margin: 12px 0 0;
+  padding: 9px 12px; border: 1px dashed var(--line); border-radius: var(--radius);
+  background: var(--paper); font-size: 0.82rem; color: var(--muted);
+}
+.restore-bar[hidden] { display: none; }
+.restore-ico { flex: 0 0 auto; font-size: 0.9rem; }
+.restore-text { flex: 1 1 auto; min-width: 0; }
+.restore-text b { color: var(--ink); font-weight: 700; }
+.restore-btn { flex: 0 0 auto; font: inherit; font-weight: 700; font-size: 0.78rem; color: var(--blue); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.restore-btn:hover { border-color: var(--blue); background: #fff; }
+.restore-x { flex: 0 0 auto; border: none; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; cursor: pointer; width: 24px; height: 24px; border-radius: 8px; }
+.restore-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
+.restore-btn:focus-visible, .restore-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 /* --- The plan: a compact vertical itinerary (works on narrow screens) --- */
 .plan { margin: 16px 0 0; }

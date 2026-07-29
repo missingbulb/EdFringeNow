@@ -95,7 +95,8 @@ const state = {
   clusterGroup: null,          // Leaflet.markercluster group for the non-focused pins
   map: null,
   selectedGenres: new Set(["Comedy"]),
-  priceFilter: "both",         // "both" | "free" | "paid" (genre card)
+  selectedSubgenres: new Set(), // finer descriptors; empty = every subgenre
+  priceFilter: "both",         // "both" | "free" | "paid" ($ chip)
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
@@ -111,6 +112,9 @@ const state = {
   userMarker: null,            // Leaflet marker for the user
   reachCircle: null,           // Leaflet circle for the travel radius
   routeLayers: [],             // Leaflet layers for the journey arrows/labels
+  ready: false,                // booted + restored — only then do we write the cache
+  savedPlan: null,             // cached plan awaiting judgement (see adoptRestoredPlan)
+  stalePlan: null,             // a passed plan the restore bar can offer back
 };
 
 /* ---------- Boot ---------- */
@@ -122,19 +126,28 @@ async function init() {
   initMap();
   setUserLocation(USER_DEFAULT, { recenter: false }); // central-Edinburgh default
   requestUserLocation();                              // then ask for the real thing
+  restoreNowState();      // last visit's filters (+ its plan, if still ahead of us)
   buildGenrePanel();
+  buildPricePanel();
   buildTravelPanel();
   wirePanels();
+  wireRestoreBar();
   wireViewSwitch();
   // The header pin re-asks the browser for the user's location (same as the
   // map's ◎ control) and recentres on it.
   const locBtn = document.getElementById("locBtn");
   if (locBtn) locBtn.addEventListener("click", requestUserLocation);
   await loadShows();
+  adoptRestoredPlan();    // the cached plan, now that we know today's shows
+  buildSubgenrePanel();   // the option set comes from the loaded shows
   buildConstraintPanel();
   refreshMap();
   renderShowList();
   updateGenreValue();
+  updateSubgenreValue();
+  refreshFacetCounts();
+  state.ready = true;     // from here on, every change is written to the cache
+  saveNowState();
 }
 
 /* ---------- Data loading ---------- */
@@ -301,15 +314,32 @@ function priceValue(show) {
   return show.free || /free/i.test(show.price) ? 0 : 1;
 }
 
-/* Shows passing the current genre + price filters (empty genre set = all). */
-function visibleShows() {
+/* Does a show carry any of the selected subgenres? (Empty selection = all.) */
+function matchesSubgenres(show) {
+  if (!state.selectedSubgenres.size) return true;
+  return (show.subgenres || []).some((s) => state.selectedSubgenres.has(s));
+}
+
+/* Shows passing the current taste filters (an empty genre/subgenre set = all).
+ * `except` names one facet to leave unapplied — that's the pool a facet's own
+ * per-option counts are measured against, so each count answers "how many
+ * shows would ticking this give me", not "how many are already showing". */
+function filteredShows(except) {
   let list = state.shows;
-  if (state.selectedGenres.size) {
+  if (except !== "genre" && state.selectedGenres.size) {
     list = list.filter((s) => state.selectedGenres.has(s.genre));
   }
-  if (state.priceFilter === "free") list = list.filter((s) => priceValue(s) === 0);
-  else if (state.priceFilter === "paid") list = list.filter((s) => priceValue(s) === 1);
+  if (except !== "subgenre") list = list.filter(matchesSubgenres);
+  if (except !== "price") {
+    if (state.priceFilter === "free") list = list.filter((s) => priceValue(s) === 0);
+    else if (state.priceFilter === "paid") list = list.filter((s) => priceValue(s) === 1);
+  }
   return list;
+}
+
+/* Shows passing every taste filter — what the map and list draw from. */
+function visibleShows() {
+  return filteredShows(null);
 }
 
 /* How far ahead a "next commitment" must start to be worth picking. There's no
@@ -472,6 +502,7 @@ function refreshMap() {
   renderShowList();
   renderJourneyStrip();
   updateCtaVisibility();
+  saveNowState(); // every mutation lands here, so this is the one save point
 }
 
 /* Once a show is committed, the big top "Set my next commitment" box is
@@ -867,6 +898,8 @@ function applyViewMode(mode) {
   // Leaflet can't measure a display:none container, so a map hidden while the
   // list showed comes back mis-sized — re-measure once it's visible again.
   if (state.view === "map" && state.map) state.map.invalidateSize();
+
+  saveNowState(); // the chosen view is part of what we remember
 }
 
 /* Reflect the active mode on the three-position selector. */
@@ -1223,81 +1256,197 @@ function formatMins(mins) {
   return `${Math.max(1, Math.round(mins))} min`;
 }
 
-/* ---------- Genre filter ---------- */
+/* ---------- Taste filters: genre, subgenre, price ----------
+ * Three chips sharing one idiom: a dropdown listing every option with a grey
+ * count of how many of today's shows it would give you, and an "everything!"
+ * link beside the question that clears the filter. Price is the odd one out —
+ * a single either/or answer, so it gets a narrow "$" button and a tiny
+ * dropdown carrying just the current selection. */
+
+/* Build one checkbox option row: emoji (optional), label, grey count. */
+function facetOption(value, { icon, checked, count, onToggle }) {
+  const label = document.createElement("label");
+  label.className = "panel-option" + (count === 0 ? " is-empty" : "");
+  label.innerHTML = `
+    <input type="checkbox" value="${escapeHtml(value)}" ${checked ? "checked" : ""} />
+    <span>${icon ? `<span class="opt-ico" aria-hidden="true">${icon}</span> ` : ""}${escapeHtml(value)}</span>
+    <span class="opt-count" aria-label="${count} ${count === 1 ? "show" : "shows"}">${count}</span>`;
+  const input = label.querySelector("input");
+  input.addEventListener("change", () => onToggle(input.checked));
+  return label;
+}
+
+/* How many shows in `pool` fall under each value of a facet. `values` pulls the
+ * facet's value(s) out of a show (a genre is one, subgenres are many). */
+function facetCounts(pool, values) {
+  const counts = new Map();
+  for (const show of pool) {
+    for (const v of values(show)) counts.set(v, (counts.get(v) || 0) + 1);
+  }
+  return counts;
+}
+
 function buildGenrePanel() {
   const wrap = document.getElementById("genreOptions");
   if (!wrap) return;
+  const counts = facetCounts(filteredShows("genre"), (s) => [s.genre]);
   wrap.innerHTML = "";
   GENRES.forEach((genre) => {
-    const id = "genre-" + genre.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-    const label = document.createElement("label");
-    label.className = "panel-option";
-    label.innerHTML = `
-      <input type="checkbox" id="${id}" value="${escapeHtml(genre)}"
-        ${state.selectedGenres.has(genre) ? "checked" : ""} />
-      <span><span class="opt-ico" aria-hidden="true">${genreIcon(genre)}</span> ${escapeHtml(genre)}</span>`;
-    const input = label.querySelector("input");
-    input.addEventListener("change", () => {
-      if (input.checked) state.selectedGenres.add(genre);
-      else state.selectedGenres.delete(genre);
-      onGenreChange();
-    });
-    wrap.appendChild(label);
+    wrap.appendChild(
+      facetOption(genre, {
+        icon: genreIcon(genre),
+        checked: state.selectedGenres.has(genre),
+        count: counts.get(genre) || 0,
+        onToggle: (on) => {
+          if (on) state.selectedGenres.add(genre);
+          else state.selectedGenres.delete(genre);
+          onTasteChange({ rebuildSubgenres: true });
+        },
+      })
+    );
   });
 
-  // Price: Free / Paid / Both segmented control (idempotent handlers so a
-  // Reset-driven rebuild can't double-bind).
-  document.querySelectorAll("#priceOptions .seg-btn").forEach((btn) => {
-    btn.onclick = () => {
-      state.priceFilter = btn.dataset.price;
-      updatePriceButtons();
-      onGenreChange();
-    };
-  });
-  updatePriceButtons();
-
-  // Reset every show filter back to "show everything".
+  // "everything!" — every genre back on.
   const reset = document.getElementById("filterReset");
   if (reset) {
     reset.onclick = () => {
       state.selectedGenres = new Set(GENRES);
-      state.priceFilter = "both";
-      buildGenrePanel(); // re-render checkboxes + price state
-      onGenreChange();
+      buildGenrePanel(); // re-render the checkboxes
+      onTasteChange({ rebuildSubgenres: true });
     };
   }
 }
 
-/* Reflect the active price choice on the Both/Free/Paid segmented control. */
+/* The subgenre options: only the finer descriptors actually present in the
+ * shows the other filters leave standing (plus anything already ticked, so a
+ * selection never silently vanishes from its own list). */
+function subgenreOptionValues(counts) {
+  const values = new Set(counts.keys());
+  for (const s of state.selectedSubgenres) values.add(s);
+  return [...values].sort((a, b) => a.localeCompare(b));
+}
+
+function buildSubgenrePanel() {
+  const wrap = document.getElementById("subgenreOptions");
+  if (!wrap) return;
+  const counts = facetCounts(filteredShows("subgenre"), (s) => s.subgenres || []);
+  wrap.innerHTML = "";
+  const values = subgenreOptionValues(counts);
+  if (!values.length) {
+    wrap.innerHTML = '<p class="panel-note">No subgenres in what\'s left — widen your genres.</p>';
+  }
+  values.forEach((sub) => {
+    wrap.appendChild(
+      facetOption(sub, {
+        checked: state.selectedSubgenres.has(sub),
+        count: counts.get(sub) || 0,
+        onToggle: (on) => {
+          if (on) state.selectedSubgenres.add(sub);
+          else state.selectedSubgenres.delete(sub);
+          onTasteChange();
+        },
+      })
+    );
+  });
+
+  const reset = document.getElementById("subgenreReset");
+  if (reset) {
+    reset.onclick = () => {
+      state.selectedSubgenres.clear(); // none ticked = every subgenre
+      buildSubgenrePanel();
+      onTasteChange();
+    };
+  }
+}
+
+/* The $ chip's tiny dropdown: Both / Free / Paid. */
+function buildPricePanel() {
+  document.querySelectorAll("#priceOptions .seg-btn").forEach((btn) => {
+    btn.onclick = () => {
+      state.priceFilter = btn.dataset.price;
+      updatePriceButtons();
+      onTasteChange({ rebuildSubgenres: true });
+    };
+  });
+  updatePriceButtons();
+}
+
+/* Reflect the active price choice on the Both/Free/Paid segmented control, and
+ * on the chip itself: "$" alone while both are in, "$ Free" / "$ Paid" once the
+ * filter actually narrows anything. */
 function updatePriceButtons() {
   document.querySelectorAll("#priceOptions .seg-btn").forEach((b) => {
     const on = b.dataset.price === state.priceFilter;
     b.classList.toggle("is-active", on);
     b.setAttribute("aria-pressed", String(on));
   });
+  const set = state.priceFilter !== "both";
+  const chip = document.querySelector(".card--price");
+  if (chip) chip.classList.toggle("is-set", set);
+  const value = document.querySelector('[data-value="price"]');
+  if (value) {
+    value.hidden = !set;
+    value.textContent = state.priceFilter === "free" ? "Free" : "Paid";
+  }
 }
 
-function onGenreChange() {
+/* A taste filter changed: re-label the chips, refresh every facet's counts and
+ * redraw. The subgenre option *set* only shifts when a genre or the price
+ * changes, so only those ask for a rebuild. */
+function onTasteChange({ rebuildSubgenres = false } = {}) {
   state.showCap = SHOW_PAGE; // a changed filter resets the list to the first page
+  if (rebuildSubgenres) buildSubgenrePanel();
   updateGenreValue();
-  buildConstraintPanel(); // time/show options depend on the genre + price filter
+  updateSubgenreValue();
+  refreshFacetCounts();
+  // A re-labelled chip is a different width, which can re-flow the wrapped
+  // filter row under a panel that's still open — so re-fit whatever is open.
+  document.querySelectorAll(".card-panel:not([hidden])").forEach(clampPanel);
+  buildConstraintPanel(); // time/show options depend on the taste filters
   refreshMap();           // also re-renders the (mirrored) show list
 }
 
+/* Re-count the already-rendered option rows in place. Rebuilding the panels
+ * instead would drop focus mid-click, so only the numbers are rewritten. */
+function refreshFacetCounts() {
+  const facets = [
+    ["genreOptions", facetCounts(filteredShows("genre"), (s) => [s.genre])],
+    ["subgenreOptions", facetCounts(filteredShows("subgenre"), (s) => s.subgenres || [])],
+  ];
+  for (const [id, counts] of facets) {
+    const wrap = document.getElementById(id);
+    if (!wrap) continue;
+    wrap.querySelectorAll(".panel-option").forEach((row) => {
+      const n = counts.get(row.querySelector("input").value) || 0;
+      const out = row.querySelector(".opt-count");
+      out.textContent = String(n);
+      out.setAttribute("aria-label", `${n} ${n === 1 ? "show" : "shows"}`);
+      row.classList.toggle("is-empty", n === 0);
+    });
+  }
+}
+
+/* Concise label for the subgenre chip; none ticked reads as "All subgenres". */
+function updateSubgenreValue() {
+  const el = document.querySelector('[data-value="subgenre"]');
+  if (!el) return;
+  const n = state.selectedSubgenres.size;
+  el.textContent =
+    n === 0 ? "All subgenres" : n === 1 ? [...state.selectedSubgenres][0] : `${n} subgenres`;
+}
+
 /* Concise label for the genre filter chip. All (or none) selected reads as
- * "All genres"; a price filter is appended. */
+ * "All genres". */
 function updateGenreValue() {
   const el = document.querySelector('[data-value="genre"]');
   if (!el) return;
   const n = state.selectedGenres.size;
-  let label =
+  const label =
     n === 0 || n === GENRES.length
       ? "All genres"
       : n === 1
       ? [...state.selectedGenres][0]
       : `${n} genres`;
-  if (state.priceFilter === "free") label += " · free";
-  else if (state.priceFilter === "paid") label += " · paid";
   el.textContent = label;
   // Mirror the single-genre icon onto the chip; a generic mask stands in for
   // "all" or a mix.
@@ -1436,7 +1585,14 @@ function buildConstraintPanel() {
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
 
   const times = availableTimes();
-  if (state.selectedTime && !times.includes(state.selectedTime)) {
+  // A commitment with something real behind it — a show still in today's data,
+  // or a typed place — survives even when its start time is no longer offered
+  // as a *new* choice (too soon to aim for, or restored from a past plan). A
+  // time with nothing behind it is dropped.
+  const stillReal =
+    (state.selectedShowId && state.shows.some((s) => s.id === state.selectedShowId)) ||
+    Boolean(state.destLabel && state.destLabel.trim());
+  if (state.selectedTime && !times.includes(state.selectedTime) && !stillReal) {
     state.selectedTime = "";
     state.selectedShowId = "";
     state.legShowId = "";
@@ -1530,6 +1686,7 @@ function setConstraintTime(hhmm) {
  * (unless it's the very show now being committed — it can't be both). */
 function selectConstraintShow(id) {
   state.selectedShowId = id;
+  forgetStalePlan(); // a fresh commitment supersedes the offer of the old one
   if (state.legShowId === id) state.legShowId = "";
   state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
   state.showCap = SHOW_PAGE;
@@ -1651,6 +1808,190 @@ function refreshConstraintValue() {
   else el.textContent = "Set my next commitment";
 }
 
+/* ---------- Remembering the page between visits ----------
+ * Everything the user set on this page — the taste filters, how they're
+ * travelling, which view they're in, and the plan itself — is cached in
+ * localStorage and restored on the next visit, so coming back doesn't mean
+ * setting it all up again.
+ *
+ * The filters are timeless and always come back. The plan isn't: a commitment
+ * at 18:00 or a show you'd picked that has already started is no longer a plan,
+ * it's history. Those are dropped from the live state rather than restored —
+ * but they're kept in a second "stale" slot so the restore bar can offer them
+ * back on one tap, rather than the choice just evaporating. */
+const STORE_KEY = "edfringenow.now.v1";
+const STALE_KEY = "edfringenow.now.stale.v1";
+
+function readStore(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch (err) {
+    console.info("EdFringeNow: couldn't read saved settings", err);
+    return null;
+  }
+}
+
+function writeStore(key, value) {
+  try {
+    if (value === null) localStorage.removeItem(key);
+    else localStorage.setItem(key, JSON.stringify(value));
+  } catch (err) {
+    // Private browsing / a full quota — the page works fine unsaved.
+    console.info("EdFringeNow: couldn't save settings", err);
+  }
+}
+
+/* The plan half of a snapshot: what the user is heading to, and when. */
+function planSnapshot() {
+  return {
+    selectedTime: state.selectedTime,
+    selectedShowId: state.selectedShowId,
+    legShowId: state.legShowId,
+    destLabel: state.destLabel,
+  };
+}
+
+function saveNowState() {
+  if (!state.ready) return; // still booting — don't overwrite with defaults
+  writeStore(STORE_KEY, {
+    date: NOW.date,
+    genres: [...state.selectedGenres],
+    subgenres: [...state.selectedSubgenres],
+    price: state.priceFilter,
+    travelMode: state.travelMode,
+    maxTravelMinutes: state.maxTravelMinutes,
+    viewMode: state.viewMode,
+    ...planSnapshot(),
+  });
+}
+
+/* Restore the timeless settings (before the shows load), and park the plan for
+ * adoptRestoredPlan to judge once we know what's on today. */
+function restoreNowState() {
+  state.stalePlan = readStore(STALE_KEY);
+  const saved = readStore(STORE_KEY);
+  if (!saved) return;
+
+  if (Array.isArray(saved.genres)) {
+    state.selectedGenres = new Set(saved.genres.filter((g) => GENRES.includes(g)));
+  }
+  if (Array.isArray(saved.subgenres)) state.selectedSubgenres = new Set(saved.subgenres);
+  if (PRICE_FILTERS.includes(saved.price)) state.priceFilter = saved.price;
+  if (TRAVEL_MODES.includes(saved.travelMode)) state.travelMode = saved.travelMode;
+  if (Number.isFinite(saved.maxTravelMinutes)) {
+    state.maxTravelMinutes = Math.min(
+      MAX_TRAVEL_MINUTES,
+      Math.max(MIN_TRAVEL_MINUTES, Math.round(saved.maxTravelMinutes))
+    );
+  }
+  if (VIEW_MODES[saved.viewMode]) state.viewMode = saved.viewMode;
+  state.savedPlan = {
+    date: saved.date,
+    selectedTime: saved.selectedTime || "",
+    selectedShowId: saved.selectedShowId || "",
+    legShowId: saved.legShowId || "",
+    destLabel: saved.destLabel || "",
+  };
+}
+
+/* Has this moment already gone by on the simulated clock? */
+function isPastTime(hhmm) {
+  return Boolean(hhmm) && timeToMinutes(hhmm) <= NOW.minutes;
+}
+
+/* Bring back the cached plan, dropping whatever has since happened. Anything
+ * dropped moves to the stale slot, which the restore bar offers back. */
+function adoptRestoredPlan() {
+  const saved = state.savedPlan;
+  state.savedPlan = null;
+  if (!saved) return renderRestoreBar();
+
+  const sameDay = saved.date === NOW.date;
+  const show = (id) => (id ? state.shows.find((s) => s.id === id) : null);
+  const commitment = sameDay ? show(saved.selectedShowId) : null;
+  const leg = sameDay ? show(saved.legShowId) : null;
+
+  // A commitment is stale when its time has passed (or its show has vanished
+  // from today's data); a picked show is stale once it has started.
+  const commitmentStale =
+    !sameDay ||
+    isPastTime(saved.selectedTime) ||
+    (saved.selectedShowId && !commitment) ||
+    (commitment && isPastTime(commitment.time));
+  const legStale = !sameDay || (saved.legShowId && (!leg || isPastTime(leg.time)));
+
+  if (!commitmentStale) {
+    state.selectedTime = saved.selectedTime;
+    state.selectedShowId = commitment ? commitment.id : "";
+    state.destLabel = saved.destLabel;
+  }
+  if (!legStale) state.legShowId = leg ? leg.id : "";
+
+  const droppedSomething =
+    (commitmentStale && (saved.selectedTime || saved.selectedShowId || saved.destLabel)) ||
+    (legStale && saved.legShowId);
+  if (droppedSomething) {
+    state.stalePlan = saved;
+    writeStore(STALE_KEY, saved);
+  }
+  syncDestInput();
+  renderRestoreBar();
+}
+
+/* The offer to reinstate a plan we declined to restore. Quiet, and dismissable
+ * — it's a courtesy, not a task. */
+function renderRestoreBar() {
+  const bar = document.getElementById("restoreBar");
+  const text = document.getElementById("restoreText");
+  const stale = state.stalePlan;
+  if (!bar || !text) return;
+  if (!stale) {
+    bar.hidden = true;
+    return;
+  }
+  const legShow = stale.legShowId ? state.shows.find((s) => s.id === stale.legShowId) : null;
+  const where = stale.destLabel || (legShow && legShow.title) || "";
+  const when = stale.selectedTime || (legShow && legShow.time) || "";
+  text.innerHTML =
+    where && when
+      ? `Last time you were heading to <b>${escapeHtml(where)}</b> by ${escapeHtml(when)} — that has passed.`
+      : "You had a plan here last time — it has since passed.";
+  bar.hidden = false;
+}
+
+function wireRestoreBar() {
+  const restore = document.getElementById("restoreBtn");
+  const dismiss = document.getElementById("restoreDismiss");
+  if (restore) {
+    restore.addEventListener("click", () => {
+      const stale = state.stalePlan;
+      if (!stale) return;
+      // Deliberate: the user asked for it back, so it's reinstated as-is even
+      // though the clock has moved on — the plan's own slack chips say how badly.
+      state.selectedTime = stale.selectedTime || "";
+      state.selectedShowId = state.shows.some((s) => s.id === stale.selectedShowId)
+        ? stale.selectedShowId
+        : "";
+      state.legShowId = state.shows.some((s) => s.id === stale.legShowId) ? stale.legShowId : "";
+      state.destLabel = stale.destLabel || "";
+      forgetStalePlan();
+      syncDestInput();
+      refreshConstraintValue();
+      renderConstraintShows(false);
+      syncWheels(false);
+      refreshMap();
+    });
+  }
+  if (dismiss) dismiss.addEventListener("click", forgetStalePlan);
+}
+
+function forgetStalePlan() {
+  state.stalePlan = null;
+  writeStore(STALE_KEY, null);
+  renderRestoreBar();
+}
+
 /* ---------- Panel open/close plumbing ---------- */
 function wirePanels() {
   const triggers = document.querySelectorAll(".card-trigger");
@@ -1674,8 +2015,22 @@ function wirePanels() {
   });
 }
 
+/* Keep an open panel inside the viewport. The filter chips wrap and re-flow as
+ * their labels change, so whichever edge a panel is anchored to, it can end up
+ * hanging off one side — nudge it back rather than guessing per chip in CSS. */
+function clampPanel(panel) {
+  panel.style.transform = "";
+  const rect = panel.getBoundingClientRect();
+  const pad = 8;
+  let dx = 0;
+  if (rect.left < pad) dx = pad - rect.left;
+  else if (rect.right > window.innerWidth - pad) dx = window.innerWidth - pad - rect.right;
+  if (dx) panel.style.transform = `translateX(${Math.round(dx)}px)`;
+}
+
 function openPanel(trigger, panel) {
   panel.removeAttribute("hidden");
+  clampPanel(panel);
   trigger.setAttribute("aria-expanded", "true");
   trigger.closest(".card").classList.add("is-open");
   // The wheels can't be positioned while the panel is display:none (no layout),
@@ -1790,9 +2145,14 @@ async function applySimulatedNow(date) {
     await loadShows();
   }
   // Reachability, the "happening now" list and the time picker all key off NOW.
+  // A different day is a different set of shows, so the facet options and their
+  // counts are rebuilt from it too.
+  buildGenrePanel();
+  buildSubgenrePanel();
   buildConstraintPanel();
   refreshMap();
   renderShowList();
+  renderRestoreBar();
 }
 
 /* Shift the "you are here" pin 100 m in a compass direction. */
@@ -1890,7 +2250,7 @@ function escapeHtml(str) {
 }
 
 /* Subgenre tags for a show, e.g. Stand-up · Improv. These are finer descriptors
- * than the ten headline genres and are display-only (not a filter). Returns ""
+ * than the ten headline genres, and the subgenre chip filters on them. Returns ""
  * for the ~2% of shows the festival tags with none, so callers can drop the row. */
 function subgenreTags(show) {
   const subs = show.subgenres || [];

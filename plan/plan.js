@@ -18,7 +18,15 @@ import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
 import { rehydrateShows } from "./lib/hydrate.js";
-import { searchShows, catalogueFacets, hasActiveFilters } from "./lib/search.js";
+import {
+  searchShows,
+  catalogueFacets,
+  hasActiveFilters,
+  filterShows,
+  showPrice,
+  showAccessibility,
+  ageLimitYears,
+} from "./lib/search.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -1093,13 +1101,21 @@ function removeFavourite(slug) {
 // filtering itself is pure and lives in ./lib/search.js.
 
 const SEARCH_LIMIT = 30;
-const SEARCH_FILTER_IDS = ["ssfGenre", "ssfSubgenre", "ssfAccess", "ssfAge", "ssfPrice"];
 
 const searchUi = {
   active: -1, // index of the keyboard-highlighted row, -1 = none
   results: [],
   total: 0,
   debounce: null,
+  // One entry per facet: a Set for the multi-select lists, a string ("" = not
+  // set) for the two single-answer ones.
+  filters: {
+    genre: new Set(),
+    subgenre: new Set(),
+    accessibility: new Set(),
+    age: "",
+    price: "",
+  },
 };
 
 /** Park the search component in the intake stage or under the calendar grid. */
@@ -1113,66 +1129,231 @@ function mountSearch(where) {
   if (hadFocus) $("ssInput").focus({ preventScroll: true });
 }
 
-/** Read the five filter selects into a lib/search.js-shaped filters object. */
-function currentSearchFilters() {
-  const filters = {
-    genre: $("ssfGenre").value,
-    subgenre: $("ssfSubgenre").value,
-    accessibility: $("ssfAccess").value,
-  };
-  const age = $("ssfAge").value;
-  if (age !== "") filters.maxAge = Number(age);
-  const price = $("ssfPrice").value;
-  if (price === "free") filters.price = "free";
-  else if (price !== "") filters.price = Number(price);
-  return filters;
-}
-
 /** "AUDIO_DESCRIPTION" → "Audio description". */
 function humanizeEnum(v) {
   const s = String(v).replace(/_/g, " ").toLowerCase();
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+/* The five search facets, each rendered as a chip that drops a panel of
+ * options with a grey count of how many shows it would give you.
+ *   multi    — a checkbox list (ticking a second box widens the search); the
+ *              single-answer ones (age, price) are radios.
+ *   values   — the option list, once the catalogue is in.
+ *   valuesOf — a show's own value(s) for the facet, when it has a fixed set we
+ *              can tally in one pass. Facets without it (the "up to X" caps)
+ *              are counted by testing each option with `matches`.
+ */
+const SEARCH_FACETS = [
+  {
+    key: "genre",
+    id: "Genre",
+    multi: true,
+    any: "Any genre",
+    noun: "genres",
+    values: () => [...(state.lookups.genres || [])].sort(),
+    valuesOf: (show) => [show.genre].filter(Boolean),
+  },
+  {
+    key: "subgenre",
+    id: "Subgenre",
+    multi: true,
+    any: "Any subgenre",
+    noun: "subgenres",
+    values: () => [...(state.lookups.subgenres || [])].sort(),
+    valuesOf: (show) => show.subgenres || [],
+  },
+  {
+    key: "accessibility",
+    id: "Access",
+    multi: true,
+    any: "Any accessibility",
+    noun: "access needs",
+    label: humanizeEnum,
+    values: () => state.facets.accessibility,
+    valuesOf: showAccessibility,
+    // The scraper doesn't ship this field yet (see lib/search.js). A control
+    // that could only ever match nothing is presented as coming soon rather
+    // than left to look broken.
+    unavailable: () => state.facets.accessibility.length === 0,
+    unavailableHint: "Accessibility data hasn't landed in our catalogue yet — coming soon",
+  },
+  {
+    key: "age",
+    id: "Age",
+    multi: false,
+    any: "Any age limit",
+    values: () => ["0", "3", "5", "8", "12", "14", "16"],
+    label: (v) => (v === "0" ? "0+ only" : `Up to ${v}+`),
+    matches: (show, v) => {
+      const age = ageLimitYears(show);
+      return age !== null && age <= Number(v);
+    },
+  },
+  {
+    key: "price",
+    id: "Price",
+    multi: false,
+    any: "Any price",
+    money: true,
+    values: () => ["free", "10", "15", "20", "30"],
+    label: (v) => (v === "free" ? "Free" : `Up to £${v}`),
+    matches: (show, v) =>
+      v === "free" ? showPrice(show) === 0 : showPrice(show) !== null && showPrice(show) <= Number(v),
+    // Per-show pricing is still to land; "Free" already works off the flag.
+    optionUnavailable: (v) => v !== "free" && !state.facets.hasPrice,
+    optionUnavailableHint: "Per-show pricing is coming soon — “Free” already works",
+  },
+];
+
+const facetById = (key) => SEARCH_FACETS.find((f) => f.key === key);
+
+/** Is this facet narrowing the search right now? */
+function facetIsSet(facet) {
+  const v = searchUi.filters[facet.key];
+  return facet.multi ? v.size > 0 : v !== "";
+}
+
+/** The chosen value(s) of a facet, as a list. */
+function facetChosen(facet) {
+  const v = searchUi.filters[facet.key];
+  return facet.multi ? [...v] : v ? [v] : [];
+}
+
+/** Read the facet state into a lib/search.js-shaped filters object. */
+function currentSearchFilters() {
+  const f = searchUi.filters;
+  const filters = {
+    genre: [...f.genre],
+    subgenre: [...f.subgenre],
+    accessibility: [...f.accessibility],
+  };
+  if (f.age !== "") filters.maxAge = Number(f.age);
+  if (f.price === "free") filters.price = "free";
+  else if (f.price !== "") filters.price = Number(f.price);
+  return filters;
+}
+
+/** The same object with one facet left out — the pool a facet's own option
+ *  counts are measured against, so a count answers "how many shows would
+ *  ticking this give me". */
+function searchFiltersExcept(key) {
+  const filters = currentSearchFilters();
+  if (key === "age") delete filters.maxAge;
+  else if (key === "price") delete filters.price;
+  else filters[key] = [];
+  return filters;
+}
+
+/** How many catalogue shows each of a facet's options would match. */
+function facetOptionCounts(facet, values) {
+  const pool = filterShows(state.catalogue, searchFiltersExcept(facet.key));
+  const counts = new Map(values.map((v) => [v, 0]));
+  if (facet.valuesOf) {
+    for (const show of pool) {
+      for (const v of facet.valuesOf(show)) {
+        if (counts.has(v)) counts.set(v, counts.get(v) + 1);
+      }
+    }
+  } else {
+    for (const show of pool) {
+      for (const v of values) if (facet.matches(show, v)) counts.set(v, counts.get(v) + 1);
+    }
+  }
+  return counts;
+}
+
+/** Render one facet's option rows (checkboxes, or radios for the single-answer
+ *  facets), each with its grey show count. */
+function buildFacetPanel(facet) {
+  const wrap = $(`ssf${facet.id}Options`);
+  if (!wrap) return;
+  const values = facet.values();
+  wrap.innerHTML = "";
+  if (!values.length) {
+    wrap.innerHTML = `<p class="panel-note">${escapeHtml(facet.unavailableHint || "Nothing to filter by yet.")}</p>`;
+    return;
+  }
+  const counts = facetOptionCounts(facet, values);
+  const chosen = new Set(facetChosen(facet));
+  for (const v of values) {
+    const n = counts.get(v) || 0;
+    const off = facet.optionUnavailable ? facet.optionUnavailable(v) : false;
+    const row = document.createElement("label");
+    row.className = "panel-option" + (n === 0 || off ? " is-empty" : "");
+    if (off && facet.optionUnavailableHint) row.title = facet.optionUnavailableHint;
+    row.innerHTML =
+      `<input type="${facet.multi ? "checkbox" : "radio"}" name="ssf-${facet.key}"` +
+      ` value="${escapeHtml(v)}"${chosen.has(v) ? " checked" : ""}${off ? " disabled" : ""} />` +
+      `<span>${escapeHtml(facet.label ? facet.label(v) : v)}</span>` +
+      // An option we can't actually answer for gets an em dash, not a count
+      // that would read as a real (and wrong) number of matches.
+      (off
+        ? '<span class="opt-count" aria-label="no data yet">&mdash;</span>'
+        : `<span class="opt-count" aria-label="${n} ${n === 1 ? "show" : "shows"}">${n}</span>`);
+    const input = row.querySelector("input");
+    input.addEventListener("change", () => {
+      if (facet.multi) {
+        if (input.checked) searchUi.filters[facet.key].add(v);
+        else searchUi.filters[facet.key].delete(v);
+      } else {
+        // A radio can't be un-picked by clicking it — "everything!" beside the
+        // question is the way back to "any".
+        searchUi.filters[facet.key] = v;
+      }
+      onSearchFilterChange();
+    });
+    wrap.appendChild(row);
+  }
+}
+
+/** Rebuild every facet panel from scratch (once, when the catalogue lands). */
+function buildAllFacetPanels() {
+  for (const facet of SEARCH_FACETS) buildFacetPanel(facet);
+}
+
+/** Re-count every panel's rows in place. The option lists themselves never
+ *  change once the catalogue is in, and rebuilding them would drop focus
+ *  mid-click, so only the numbers and the ticks are rewritten. */
+function refreshFacetCounts() {
+  for (const facet of SEARCH_FACETS) {
+    const wrap = $(`ssf${facet.id}Options`);
+    if (!wrap) continue;
+    const rows = [...wrap.querySelectorAll(".panel-option")];
+    if (!rows.length) continue;
+    const counts = facetOptionCounts(facet, rows.map((r) => r.querySelector("input").value));
+    const chosen = new Set(facetChosen(facet));
+    for (const row of rows) {
+      const input = row.querySelector("input");
+      input.checked = chosen.has(input.value);
+      if (input.disabled) continue; // an "— no data yet" row keeps its dash
+      const n = counts.get(input.value) || 0;
+      const out = row.querySelector(".opt-count");
+      out.textContent = String(n);
+      out.setAttribute("aria-label", `${n} ${n === 1 ? "show" : "shows"}`);
+      row.classList.toggle("is-empty", n === 0);
+    }
+  }
+}
+
 /**
- * Fill the data-driven filter options + the placeholder once the catalogue is
- * in. The accessibility select and the price caps disable themselves while the
- * catalogue carries no data behind them — the filters are wired for the fields
- * the scraper will ship (see lib/search.js), but a control that could only
- * match nothing is presented as coming soon, not left to look broken.
+ * Fill the data-driven filter options + the search placeholder once the
+ * catalogue is in.
  */
 function initSearchUI() {
   const input = $("ssInput");
   if (!input || !state.lookups) return;
   input.placeholder =
     `Search all ${state.catalogue.length.toLocaleString("en-GB")} shows — title, performer or venue`;
+  buildAllFacetPanels();
+  updateFilterChrome();
+}
 
-  const fill = (sel, values, label) => {
-    for (const v of values) {
-      const opt = document.createElement("option");
-      opt.value = v;
-      opt.textContent = label ? label(v) : v;
-      sel.appendChild(opt);
-    }
-  };
-  fill($("ssfGenre"), [...(state.lookups.genres || [])].sort());
-  fill($("ssfSubgenre"), [...(state.lookups.subgenres || [])].sort());
-
-  const access = $("ssfAccess");
-  if (state.facets.accessibility.length > 0) {
-    fill(access, state.facets.accessibility, humanizeEnum);
-  } else {
-    access.disabled = true;
-    access.title = "Accessibility data hasn't landed in our catalogue yet — coming soon";
-  }
-
-  if (!state.facets.hasPrice) {
-    const priceSel = $("ssfPrice");
-    priceSel.title = "Per-show pricing is coming soon — “Free” already works";
-    for (const opt of priceSel.options) {
-      if (opt.value !== "" && opt.value !== "free") opt.disabled = true;
-    }
-  }
+/** A facet changed: re-count every panel, re-label the chips, search again. */
+function onSearchFilterChange() {
+  refreshFacetCounts();
+  updateFilterChrome();
+  runSearch();
 }
 
 function setSearchOpen(open) {
@@ -1297,19 +1478,98 @@ function setActiveRow(i) {
   }
 }
 
-/** Mark set filters, count them on the tools button, show/hide the reset. */
+/** Label each chip with its facet's answer, mark the set ones, count them on
+ *  the tools button and show/hide the reset. */
 function updateFilterChrome() {
   let active = 0;
-  for (const id of SEARCH_FILTER_IDS) {
-    const sel = $(id);
-    const set = sel.value !== "";
-    sel.classList.toggle("is-set", set);
+  for (const facet of SEARCH_FACETS) {
+    const chip = document.querySelector(`.filter-chip[data-facet="${facet.key}"]`);
+    const value = $(`ssf${facet.id}Value`);
+    const chosen = facetChosen(facet);
+    const set = chosen.length > 0;
     if (set) active++;
+    if (value) {
+      const one = (v) => (facet.label ? facet.label(v) : v);
+      value.textContent =
+        chosen.length === 0
+          ? facet.any
+          : chosen.length === 1
+          ? one(chosen[0])
+          : `${chosen.length} ${facet.noun}`;
+    }
+    if (chip) {
+      chip.classList.toggle("is-set", set);
+      const off = facet.unavailable ? facet.unavailable() : false;
+      chip.classList.toggle("is-disabled", off);
+      if (off && facet.unavailableHint) chip.title = facet.unavailableHint;
+    }
   }
   const badge = $("ssBadge");
   badge.hidden = active === 0;
   badge.textContent = String(active);
   $("ssReset").hidden = active === 0;
+  // A re-labelled chip is a different width, which can re-flow the wrapped
+  // chip row under a panel that's still open — so re-fit whatever is open.
+  for (const panel of document.querySelectorAll(".chip-panel:not([hidden])")) clampChipPanel(panel);
+}
+
+/** Clear every facet back to "any". */
+function clearSearchFilters() {
+  for (const facet of SEARCH_FACETS) {
+    if (facet.multi) searchUi.filters[facet.key].clear();
+    else searchUi.filters[facet.key] = "";
+  }
+}
+
+/* ---- The facet chips' dropdowns ---- */
+/** Keep an open panel inside the viewport: the chips wrap and re-flow as their
+ *  labels change, so one anchored to its chip's left edge can hang off. */
+function clampChipPanel(panel) {
+  panel.style.transform = "";
+  const rect = panel.getBoundingClientRect();
+  const pad = 8;
+  let dx = 0;
+  if (rect.left < pad) dx = pad - rect.left;
+  else if (rect.right > window.innerWidth - pad) dx = window.innerWidth - pad - rect.right;
+  if (dx) panel.style.transform = `translateX(${Math.round(dx)}px)`;
+}
+
+function closeFacetPanels() {
+  for (const panel of document.querySelectorAll(".chip-panel")) panel.hidden = true;
+  for (const t of document.querySelectorAll(".chip-trigger")) t.setAttribute("aria-expanded", "false");
+}
+
+function wireFacetChips() {
+  for (const trigger of document.querySelectorAll(".chip-trigger")) {
+    const panel = $(trigger.dataset.panel);
+    if (!panel) continue;
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = panel.hidden;
+      closeFacetPanels();
+      if (!willOpen) return;
+      panel.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      clampChipPanel(panel);
+    });
+  }
+  // "everything!" — this facet back to "any".
+  for (const link of document.querySelectorAll(".panel-everything[data-clear]")) {
+    link.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const facet = facetById(link.dataset.clear);
+      if (!facet) return;
+      if (facet.multi) searchUi.filters[facet.key].clear();
+      else searchUi.filters[facet.key] = "";
+      onSearchFilterChange();
+    });
+  }
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".filter-chip")) closeFacetPanels();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeFacetPanels();
+  });
 }
 
 function wireShowSearch() {
@@ -1352,19 +1612,14 @@ function wireShowSearch() {
   $("ssToolsBtn").addEventListener("click", () => {
     const tools = $("ssTools");
     tools.hidden = !tools.hidden;
+    if (tools.hidden) closeFacetPanels();
     $("ssToolsBtn").setAttribute("aria-expanded", String(!tools.hidden));
   });
 
-  for (const id of SEARCH_FILTER_IDS) {
-    $(id).addEventListener("change", () => {
-      updateFilterChrome();
-      runSearch();
-    });
-  }
+  wireFacetChips();
   $("ssReset").addEventListener("click", () => {
-    for (const id of SEARCH_FILTER_IDS) $(id).value = "";
-    updateFilterChrome();
-    runSearch();
+    clearSearchFilters();
+    onSearchFilterChange();
     input.focus({ preventScroll: true });
   });
 

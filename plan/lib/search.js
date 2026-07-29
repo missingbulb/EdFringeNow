@@ -82,29 +82,48 @@ export function catalogueFacets(shows) {
 
 /**
  * @typedef {object} SearchFilters
- * @property {string} [genre]         exact genre label
- * @property {string} [subgenre]      exact subgenre label (matched in show.subgenres)
- * @property {string} [accessibility] enum value the show must declare
+ * @property {string|string[]} [genre]         genre label(s); several = any of them
+ * @property {string|string[]} [subgenre]      subgenre label(s) (matched in show.subgenres)
+ * @property {string|string[]} [accessibility] enum value(s) the show must declare
  * @property {number} [maxAge]        highest admitted minimum age (inclusive):
  *                                    2 excludes nothing rated above 2; unknown excluded
  * @property {"free"|number} [price]  "free", or a cap in pounds (inclusive);
  *                                    unknown-price shows excluded either way
+ *
+ * The three label facets take one value or many. Many are OR'd — the UI offers
+ * them as checkbox lists, where ticking a second box widens the search — while
+ * separate facets are AND'd.
  */
+
+/** A facet's values as a list: "" / undefined / [] all mean "not set". */
+function facetValues(v) {
+  if (Array.isArray(v)) return v.filter(Boolean);
+  return v ? [v] : [];
+}
 
 /** True when any filter field is set (i.e. filtering would narrow the list). */
 export function hasActiveFilters(filters) {
   const f = filters || {};
-  return Boolean(f.genre || f.subgenre || f.accessibility) ||
-    typeof f.maxAge === "number" || f.price === "free" || typeof f.price === "number";
+  return (
+    facetValues(f.genre).length > 0 ||
+    facetValues(f.subgenre).length > 0 ||
+    facetValues(f.accessibility).length > 0 ||
+    typeof f.maxAge === "number" ||
+    f.price === "free" ||
+    typeof f.price === "number"
+  );
 }
 
 /** The shows passing every set filter (see SearchFilters for the semantics). */
 export function filterShows(shows, filters) {
   const f = filters || {};
+  const genres = facetValues(f.genre);
+  const subgenres = facetValues(f.subgenre);
+  const access = facetValues(f.accessibility);
   return (shows || []).filter((show) => {
-    if (f.genre && show.genre !== f.genre) return false;
-    if (f.subgenre && !(show.subgenres || []).includes(f.subgenre)) return false;
-    if (f.accessibility && !showAccessibility(show).includes(f.accessibility)) return false;
+    if (genres.length && !genres.includes(show.genre)) return false;
+    if (subgenres.length && !subgenres.some((s) => (show.subgenres || []).includes(s))) return false;
+    if (access.length && !access.some((a) => showAccessibility(show).includes(a))) return false;
     if (typeof f.maxAge === "number") {
       const age = ageLimitYears(show);
       if (age === null || age > f.maxAge) return false;
