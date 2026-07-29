@@ -12,6 +12,7 @@
 // recomputes live whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
+import { stayLink, travelLink } from "../shared/affiliates.js";
 import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
@@ -61,6 +62,11 @@ const DEFAULT_DAY_END = 25 * 60; // 25:00 = 01:00
 
 const STORAGE_KEY = "edfringe.plan.favourites.v1";
 const TTL_MS = 3 * 24 * 60 * 60 * 1000; // keep for 3 days, then forget
+
+// Dismissed partner nags (see buildNag). Kept in its own key with no TTL: an "I
+// don't need this" is an answer, not a stale cache, so it outlives the
+// favourites it was dismissed over.
+const NAGS_KEY = "edfringe.plan.nags.v1";
 
 // Genre → a small emoji drawn on the left of each scheduled block. Keys are the
 // ten headline genres in shows.json; anything else falls back to a ticket.
@@ -184,6 +190,9 @@ const state = {
   selectedSlot: new Map(),
   diag: null, // latest placementDiagnostics(): which controls block which shows
   schedAxis: null, // { axisTopMin, axisBottomMin, hourPx, headPx } for overlay dragging
+  // Partner nags the visitor has closed with the × (see buildNag); a Set of nag
+  // kinds ("sleep" / "travel"), restored from localStorage at boot.
+  nagsDismissed: loadDismissedNags(),
   // Build version + reschedule-timing telemetry (surfaced in the header pill).
   version: null,
   perf: { count: 0, sum: 0, last: 0, min: Infinity, max: 0 },
@@ -289,6 +298,27 @@ function clearStoredFavourites() {
     localStorage.removeItem(STORAGE_KEY);
   } catch (err) {
     console.warn("Fringe Planner: couldn't clear stored favourites", err);
+  }
+}
+
+/** The partner nags closed with the ×, as a Set of nag kinds. Anything
+ *  unreadable (no storage, private mode, hand-edited value) reads as "nothing
+ *  dismissed" — the nag is small and dismissible, so showing it again is the
+ *  harmless direction to fail in. */
+function loadDismissedNags() {
+  try {
+    const data = JSON.parse(localStorage.getItem(NAGS_KEY) || "{}");
+    return new Set(Array.isArray(data.dismissed) ? data.dismissed.filter((k) => typeof k === "string") : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveDismissedNags() {
+  try {
+    localStorage.setItem(NAGS_KEY, JSON.stringify({ v: 1, dismissed: [...state.nagsDismissed] }));
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't save dismissed suggestions", err);
   }
 }
 
@@ -2447,6 +2477,9 @@ function buildScheduleOverlay(axisH, y, numCols = 1) {
   zoneBottom.style.right = `${insetEnd}%`;
   zoneBottom.style.height = `${axisH - y(dayEnd)}px`;
   zoneBottom.innerHTML = decorSpan("night", "dayend");
+  // "Need a place to sleep?" — the night is exactly where that question lands.
+  const sleepNag = buildNag("sleep", axisH - y(dayEnd));
+  if (sleepNag) zoneBottom.appendChild(sleepNag);
   overlay.append(zoneTop, zoneBottom);
 
   // Meal-break bands (enabled only).
@@ -2629,6 +2662,92 @@ function buildMealBand(meal, y) {
   return band;
 }
 
+/* --- Partner nags -------------------------------------------------------
+ *
+ * The board already draws the two gaps a Fringe trip has to fill and this site
+ * doesn't sell: the night below "day ends" (where are you sleeping?) and the
+ * getting-there / getting-out blocks (how are you getting here?). Each grows one
+ * small partner link — the question, not a pitch — closed for good with its ×.
+ *
+ * The link itself (and the affiliate tagging on it) comes from
+ * ../shared/affiliates.js; everything here is presentation.
+ */
+const NAGS = {
+  sleep: {
+    emoji: "🛏️",
+    question: "Need a place to sleep?",
+    // The whole trip window: you need a bed for the nights between arriving on
+    // the first day and leaving on the last.
+    link: () => stayLink({ checkinISO: dateStr(state.d0), checkoutISO: dateStr(state.d1) }),
+  },
+  travel: {
+    emoji: "🎟️", // tickets — the block's own 🚆 / 🧳 already carry the journey
+    question: "Transportation sorted?",
+    link: () => travelLink(),
+  },
+};
+
+// A region shorter than this can't hold the pill without it spilling over the
+// region's edges, so the nag is simply left out (drag the boundary back and it
+// returns on the next re-plan).
+const NAG_MIN_PX = 30;
+
+/** The nag element for a region of `heightPx`, or null when it's dismissed or
+ *  the region is too short to host it. */
+function buildNag(kind, heightPx) {
+  if (state.nagsDismissed.has(kind) || heightPx < NAG_MIN_PX) return null;
+  const nag = NAGS[kind];
+  const { text, partner, url } = nag.link();
+
+  const el = document.createElement("div");
+  el.className = "sch-nag";
+  el.dataset.nag = kind;
+
+  const cta = document.createElement("a");
+  cta.className = "nag-cta";
+  cta.href = url;
+  cta.target = "_blank";
+  // sponsored: paid placement, per rel-attribute conventions. noopener/noreferrer
+  // keep the partner's tab away from ours.
+  cta.rel = "sponsored noopener noreferrer";
+  cta.title = `${nag.question} ${text} on ${partner} — partner link, we may earn a commission`;
+  cta.innerHTML =
+    `<span class="nag-emoji" aria-hidden="true">${nag.emoji}</span>` +
+    `<span class="nag-text">${escapeHtml(nag.question)}</span>`;
+
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "nag-x";
+  close.setAttribute("aria-label", `Hide the “${nag.question}” suggestion`);
+  close.textContent = "×";
+  close.addEventListener("click", (e) => {
+    // The nag sits on draggable furniture (the night zone's day-end line, the
+    // trip block's edge) — don't let the click reach it.
+    e.preventDefault();
+    e.stopPropagation();
+    dismissNag(kind);
+  });
+
+  el.append(cta, close);
+  return el;
+}
+
+/** Hide a region's nag while a drag squeezes that region below the pill's size,
+ *  instead of letting it spill past the edges; dropping the drag re-plans and
+ *  rebuilds the region from scratch. */
+function toggleNagFit(region, heightPx) {
+  const nag = region.querySelector(".sch-nag");
+  if (nag) nag.hidden = heightPx < NAG_MIN_PX;
+}
+
+/** Close a nag everywhere it's drawn (the travel one appears on both boundary
+ *  days) and remember it, so it stays closed on the next visit. */
+function dismissNag(kind) {
+  state.nagsDismissed.add(kind);
+  saveDismissedNags();
+  for (const el of $("schedule").querySelectorAll(`.sch-nag[data-nag="${kind}"]`)) el.remove();
+}
+
 /* "Getting there" (top of the first day) / "getting out" (bottom of the last
  * day) block. Rendered inside its own day-column body so it stays on that one
  * day; you drag the inner edge to set how much of the day travel eats. */
@@ -2636,7 +2755,9 @@ function buildTripBlock(which, y, axisH) {
   const block = document.createElement("div");
   block.className = `sch-trip sch-trip--${which}`;
   block.dataset.trip = which;
+  let blockH;
   if (which === "arrival") {
+    blockH = y(state.arrival.endMin);
     block.style.top = "0px";
     block.style.height = `${y(state.arrival.endMin)}px`;
     block.title = "Getting there — drag the lower edge; no shows are placed before this on your first day";
@@ -2645,14 +2766,20 @@ function buildTripBlock(which, y, axisH) {
       `<span class="sch-trip-label">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>` +
       `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   } else {
+    blockH = Math.max(6, axisH - y(state.departure.startMin));
     block.style.top = `${y(state.departure.startMin)}px`;
-    block.style.height = `${Math.max(6, axisH - y(state.departure.startMin))}px`;
+    block.style.height = `${blockH}px`;
     block.title = "Getting out — drag the upper edge; no shows are placed after this on your last day";
     block.innerHTML =
       decorSpan("travel", "departure") +
       `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
       `<span class="sch-trip-label">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>`;
   }
+  // "Transportation sorted?" on both trip blocks — the same question whether
+  // you're getting in or getting out. It hugs the block's *outer* edge (top of
+  // arrival, bottom of departure) so it never lands on the draggable inner one.
+  const travelNag = buildNag("travel", blockH);
+  if (travelNag) block.appendChild(travelNag);
   wireTripDrag(block, which, axisH);
   return block;
 }
@@ -2675,12 +2802,15 @@ function wireTripDrag(block, which, axisH) {
         state.arrival.endMin = v;
         block.style.height = `${yy(v)}px`;
         block.querySelector(".sch-trip-label").textContent = `🚆 Arrive ${minToHHMM(v)}`;
+        toggleNagFit(block, yy(v));
       } else {
         const v = clamp(min, state.dayStartMin, axis.axisBottomMin);
+        const h = Math.max(6, axisH - yy(v));
         state.departure.startMin = v;
         block.style.top = `${yy(v)}px`;
-        block.style.height = `${Math.max(6, axisH - yy(v))}px`;
+        block.style.height = `${h}px`;
         block.querySelector(".sch-trip-label").textContent = `🧳 Leave ${minToDayClock(v)}`;
+        toggleNagFit(block, h);
       }
     };
     const up = () => {
@@ -2719,6 +2849,7 @@ function repositionOverlayLive() {
   if (zones[1]) {
     zones[1].style.top = `${y(dayEnd)}px`;
     zones[1].style.height = `${axisH - y(dayEnd)}px`;
+    toggleNagFit(zones[1], axisH - y(dayEnd));
   }
   const startLine = overlay.querySelector(".sch-dayline--start");
   if (startLine) {
