@@ -283,6 +283,113 @@ a { color: inherit; }
 }
 .faux-input .fi-caret { color: var(--muted); font-size: 0.68rem; }
 
+/* ============ Show search (build / top up the grid one show at a time) ==== */
+/* One component, two homes: the bottom of the empty intake stage and the
+   bottom line of the availability grid (plan.js moves the #showSearch node
+   between the slots). Everything here is container-independent on purpose —
+   the bar must look the same before and after the grid has data. */
+.ss-slot { width: 100%; }
+.ss-slot:empty { display: none; }
+#ssSlotIntake { max-width: 640px; }
+#ssSlotCal { margin-top: 14px; }
+.show-search { position: relative; text-align: left; }
+.ss-bar {
+  display: flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 7px 8px 7px 14px; box-shadow: var(--shadow-soft);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.ss-bar:focus-within, .show-search.is-open .ss-bar {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(108, 76, 241, 0.13);
+}
+.ss-icon { flex: 0 0 auto; display: grid; place-items: center; color: var(--muted); }
+.ss-input {
+  flex: 1 1 auto; min-width: 0; border: none; outline: none; background: none;
+  font: inherit; font-size: 0.95rem; color: var(--ink); padding: 3px 0;
+}
+.ss-input::placeholder { color: #98a2b3; }
+.ss-tools-btn {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; font-size: 0.78rem; font-weight: 600; color: var(--muted);
+  background: var(--bg); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 12px; cursor: pointer; white-space: nowrap;
+}
+.ss-tools-btn:hover { color: var(--ink); border-color: #d5d9e2; }
+.ss-tools-btn[aria-expanded="true"] {
+  color: var(--violet-dark); border-color: var(--violet);
+  background: rgba(108, 76, 241, 0.07);
+}
+.ss-tools-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+/* Active-filter count on the tools button. */
+.ss-badge {
+  min-width: 17px; height: 17px; border-radius: 999px; padding: 0 5px;
+  display: grid; place-items: center;
+  font-size: 0.64rem; font-weight: 800; color: #fff; background: var(--violet);
+}
+
+/* The expanded line of search tools above the box. */
+.ss-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.ss-filter { font-size: 0.78rem; padding: 6px 8px; max-width: 176px; }
+.ss-filter.is-set {
+  border-color: var(--violet); color: var(--violet-dark);
+  background: rgba(108, 76, 241, 0.05);
+}
+.ss-filter:disabled { opacity: 0.55; cursor: not-allowed; }
+.ss-reset {
+  font: inherit; font-size: 0.76rem; font-weight: 600; color: var(--muted);
+  background: none; border: none; padding: 2px 4px; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-color: #c6cdda;
+}
+.ss-reset:hover { color: var(--ink); text-decoration-color: currentColor; }
+.ss-reset:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+/* The results popup — an overlay under the bar, never a layout push. */
+.ss-pop {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 45;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.18);
+  max-height: 342px; overflow-y: auto; overscroll-behavior: contain;
+}
+.ss-results { list-style: none; margin: 0; padding: 6px; }
+/* One line per show: star, title, then quiet meta pushed to the right. */
+.ss-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 3px 10px 3px 4px; border-radius: 8px; cursor: pointer;
+}
+.ss-row:hover, .ss-row.is-active { background: rgba(108, 76, 241, 0.06); }
+.ss-star {
+  flex: 0 0 auto; width: 28px; height: 28px; border-radius: 8px;
+  display: grid; place-items: center;
+  font-size: 1rem; line-height: 1; color: #b0b7c3;
+  border: none; background: none; cursor: pointer;
+}
+.ss-star:hover { background: rgba(108, 76, 241, 0.12); color: var(--violet-dark); }
+.ss-star:focus-visible { outline: 3px solid var(--violet); outline-offset: 1px; }
+.ss-row.is-on .ss-star { color: #e0b23a; }
+.ss-row-title {
+  min-width: 0; font-family: var(--display); font-weight: 600; font-size: 0.84rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ss-row.is-on .ss-row-title { color: var(--violet-dark); }
+.ss-row-meta {
+  margin-left: auto; flex: 0 0 auto; max-width: 46%;
+  font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ss-empty, .ss-foot { margin: 0; padding: 10px 14px; font-size: 0.8rem; color: var(--muted); }
+.ss-foot { border-top: 1px solid var(--line); padding: 7px 14px; font-size: 0.72rem; }
+
+/* The intake stage's "or" divider + one-line lead into the search path. */
+.intake-or {
+  display: flex; align-items: center; gap: 12px; width: 100%; max-width: 460px;
+  margin-top: 16px; color: #98a2b3;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.intake-or::before, .intake-or::after { content: ""; flex: 1; height: 1px; background: #dfe3ea; }
+.intake-search-lead { margin: 0; font-size: 0.86rem; color: var(--muted); }
+.intake-search-lead .ss-star-hint { color: #e0b23a; }
+
 /* ============ Availability calendar ============ */
 .cal-card { padding: 30px 28px 26px; }
 .cal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; flex-wrap: wrap; }

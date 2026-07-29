@@ -18,6 +18,7 @@ import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
 import { rehydrateShows } from "./lib/hydrate.js";
+import { searchShows, catalogueFacets, hasActiveFilters } from "./lib/search.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -128,6 +129,9 @@ function isWeekend(day) {
 
 const state = {
   index: null, // Map<slug, show> — the full catalogue
+  catalogue: [], // the same catalogue as an array — what the show search scans
+  lookups: null, // venues.json lists (genres, subgenres, …) — the search filters' options
+  facets: null, // catalogueFacets() over the catalogue: which optional facets have data
   venueCoords: null, // { [venueCode]: {lat, lng} }
   // The working favourites, as slugs — the single source of truth for what's on
   // the grid and what we persist. Mutated by add (DEBUG) / remove-a-row, so the
@@ -198,7 +202,11 @@ function loadData() {
       fetchJson(VENUES_URL),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
-    state.index = buildIndex(rehydrateShows(wire, lookups, YEAR));
+    state.lookups = lookups;
+    state.catalogue = rehydrateShows(wire, lookups, YEAR);
+    state.index = buildIndex(state.catalogue);
+    state.facets = catalogueFacets(state.catalogue);
+    initSearchUI();
     restoreStoredFavourites();
     return state.index;
   })();
@@ -303,6 +311,8 @@ function clearFavourites() {
   state.scheduledSlugs = new Set();
   const pageHead = $("pageHead");
   if (pageHead) pageHead.hidden = false; // bring the intro back on the empty state
+  mountSearch("intake");
+  syncSearchStars();
   $("screen1").hidden = false;
   $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -327,7 +337,7 @@ function processFavouritesText(text, filename) {
   applyFavourites(slugs, filename, savedAt, { scroll: true });
 }
 
-async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepForced = false } = {}) {
+async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepForced = false, keepWindow = false } = {}) {
   state.pendingUpload = { slugs, filename, savedAt, scroll };
 
   let index;
@@ -356,9 +366,15 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepF
     ? new Map([...state.forced].filter(([slug]) => survivingSlugs.has(slug)))
     : new Map();
 
+  syncSearchStars(); // the search popup's stars mirror the grid
+
   if (matched.length > 0) {
-    state.d0 = DEFAULT_D0;
-    state.d1 = DEFAULT_D1;
+    // A fresh upload starts from the default window; a one-by-one add/remove is
+    // a quiet tweak to a grid in use, so it leaves the user's dates alone.
+    if (!keepWindow) {
+      state.d0 = DEFAULT_D0;
+      state.d1 = DEFAULT_D1;
+    }
     renderFavLine();
     buildCalendar(); // builds the lanes DOM…
     refresh(); // …then the first plan + verdicts + hero
@@ -453,6 +469,7 @@ function showCalendar({ scroll = false } = {}) {
   // The marketing intro is empty-state chrome; drop it now the grid is the hero.
   const pageHead = $("pageHead");
   if (pageHead) pageHead.hidden = true;
+  mountSearch("cal");
   const screen2 = $("screen2");
   screen2.hidden = false;
   $("screen3").hidden = false;
@@ -1061,7 +1078,300 @@ function removeFavourite(slug) {
   }
   const savedAt = state.savedAt || Date.now();
   saveFavourites(slugs, state.filename, savedAt);
-  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true });
+  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true, keepWindow: true });
+}
+
+// --- Show search: build / top up the grid one show at a time ---------------
+//
+// One component (#showSearch), two homes: the bottom of the empty intake stage
+// and the bottom line of the availability grid. mountSearch() moves the node
+// itself between the two slots on the state switch, so the bar looks and
+// behaves identically before and after the grid has data. Results render as
+// one line per show; the star on the left adds the show to the working
+// favourites through the same path an upload takes (applyFavourites), so
+// persistence, matching and the live re-plan all follow. The matching/
+// filtering itself is pure and lives in ./lib/search.js.
+
+const SEARCH_LIMIT = 30;
+const SEARCH_FILTER_IDS = ["ssfGenre", "ssfSubgenre", "ssfAccess", "ssfAge", "ssfPrice"];
+
+const searchUi = {
+  active: -1, // index of the keyboard-highlighted row, -1 = none
+  results: [],
+  total: 0,
+  debounce: null,
+};
+
+/** Park the search component in the intake stage or under the calendar grid. */
+function mountSearch(where) {
+  const node = $("showSearch");
+  const slot = $(where === "cal" ? "ssSlotCal" : "ssSlotIntake");
+  if (!node || !slot || node.parentElement === slot) return;
+  // Moving a node drops focus; hand it back so "star one, keep typing" flows on.
+  const hadFocus = document.activeElement === $("ssInput");
+  slot.appendChild(node);
+  if (hadFocus) $("ssInput").focus({ preventScroll: true });
+}
+
+/** Read the five filter selects into a lib/search.js-shaped filters object. */
+function currentSearchFilters() {
+  const filters = {
+    genre: $("ssfGenre").value,
+    subgenre: $("ssfSubgenre").value,
+    accessibility: $("ssfAccess").value,
+  };
+  const age = $("ssfAge").value;
+  if (age !== "") filters.maxAge = Number(age);
+  const price = $("ssfPrice").value;
+  if (price === "free") filters.price = "free";
+  else if (price !== "") filters.price = Number(price);
+  return filters;
+}
+
+/** "AUDIO_DESCRIPTION" → "Audio description". */
+function humanizeEnum(v) {
+  const s = String(v).replace(/_/g, " ").toLowerCase();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/**
+ * Fill the data-driven filter options + the placeholder once the catalogue is
+ * in. The accessibility select and the price caps disable themselves while the
+ * catalogue carries no data behind them — the filters are wired for the fields
+ * the scraper will ship (see lib/search.js), but a control that could only
+ * match nothing is presented as coming soon, not left to look broken.
+ */
+function initSearchUI() {
+  const input = $("ssInput");
+  if (!input || !state.lookups) return;
+  input.placeholder =
+    `Search all ${state.catalogue.length.toLocaleString("en-GB")} shows — title, performer or venue`;
+
+  const fill = (sel, values, label) => {
+    for (const v of values) {
+      const opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = label ? label(v) : v;
+      sel.appendChild(opt);
+    }
+  };
+  fill($("ssfGenre"), [...(state.lookups.genres || [])].sort());
+  fill($("ssfSubgenre"), [...(state.lookups.subgenres || [])].sort());
+
+  const access = $("ssfAccess");
+  if (state.facets.accessibility.length > 0) {
+    fill(access, state.facets.accessibility, humanizeEnum);
+  } else {
+    access.disabled = true;
+    access.title = "Accessibility data hasn't landed in our catalogue yet — coming soon";
+  }
+
+  if (!state.facets.hasPrice) {
+    const priceSel = $("ssfPrice");
+    priceSel.title = "Per-show pricing is coming soon — “Free” already works";
+    for (const opt of priceSel.options) {
+      if (opt.value !== "" && opt.value !== "free") opt.disabled = true;
+    }
+  }
+}
+
+function setSearchOpen(open) {
+  $("ssPop").hidden = !open;
+  $("showSearch").classList.toggle("is-open", open);
+  $("ssInput").setAttribute("aria-expanded", String(open));
+  if (!open) setActiveRow(-1);
+}
+
+function runSearch() {
+  if (!state.index) return; // catalogue still loading — the input just holds the text
+  const query = $("ssInput").value;
+  const filters = currentSearchFilters();
+  if (query.trim() === "" && !hasActiveFilters(filters)) {
+    searchUi.results = [];
+    searchUi.total = 0;
+    setSearchOpen(false);
+    return;
+  }
+  const { results, total } = searchShows(state.catalogue, query, filters, { limit: SEARCH_LIMIT });
+  searchUi.results = results;
+  searchUi.total = total;
+  renderSearchResults();
+}
+
+function renderSearchResults() {
+  const list = $("ssResults");
+  list.innerHTML = "";
+  const favs = new Set(state.favSlugs);
+  searchUi.results.forEach((show, i) => {
+    list.appendChild(buildSearchRow(show, i, favs.has(show.slug)));
+  });
+  $("ssEmpty").hidden = searchUi.results.length > 0;
+  const foot = $("ssFoot");
+  const capped = searchUi.total > searchUi.results.length;
+  foot.hidden = !capped;
+  if (capped) {
+    foot.textContent =
+      `Showing ${searchUi.results.length} of ${searchUi.total} matches — keep typing to narrow it down`;
+  }
+  setActiveRow(-1);
+  setSearchOpen(true);
+}
+
+function starLabel(title, isOn) {
+  return isOn ? `Remove ${title} from your grid` : `Add ${title} to your grid`;
+}
+
+function buildSearchRow(show, i, isOn) {
+  const li = document.createElement("li");
+  li.className = "ss-row" + (isOn ? " is-on" : "");
+  li.id = `ssOpt${i}`;
+  li.setAttribute("role", "option");
+  li.setAttribute("aria-selected", "false");
+  li.dataset.slug = show.slug;
+  li.dataset.title = show.title;
+
+  const star = document.createElement("button");
+  star.type = "button";
+  star.className = "ss-star";
+  star.textContent = isOn ? "★" : "☆";
+  star.setAttribute("aria-label", starLabel(show.title, isOn));
+
+  const title = document.createElement("span");
+  title.className = "ss-row-title";
+  title.textContent = show.title;
+
+  const meta = document.createElement("span");
+  meta.className = "ss-row-meta";
+  meta.textContent = [
+    show.free ? "Free" : null,
+    show.genre,
+    show.venueName,
+    typicalStartTime(show.performances || []),
+  ].filter(Boolean).join(" · ");
+
+  li.append(star, title, meta);
+  return li;
+}
+
+/** Re-mark every rendered result row against the current favourites, so the
+ *  stars always mirror the grid (called on any favourites change). */
+function syncSearchStars() {
+  const list = $("ssResults");
+  if (!list) return;
+  const favs = new Set(state.favSlugs);
+  for (const row of list.querySelectorAll(".ss-row")) {
+    const on = favs.has(row.dataset.slug);
+    row.classList.toggle("is-on", on);
+    const star = row.querySelector(".ss-star");
+    star.textContent = on ? "★" : "☆";
+    star.setAttribute("aria-label", starLabel(row.dataset.title, on));
+  }
+}
+
+/** The star toggle: put the show on the grid (through the same path an upload
+ *  takes), or lift it back off. */
+function toggleShowOnGrid(slug) {
+  if (state.favSlugs.includes(slug)) {
+    removeFavourite(slug);
+    return;
+  }
+  const slugs = [...state.favSlugs, slug];
+  const savedAt = state.savedAt || Date.now();
+  saveFavourites(slugs, state.filename, savedAt);
+  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true, keepWindow: true });
+}
+
+function setActiveRow(i) {
+  const rows = [...$("ssResults").querySelectorAll(".ss-row")];
+  searchUi.active = i;
+  rows.forEach((row, j) => {
+    row.classList.toggle("is-active", j === i);
+    row.setAttribute("aria-selected", String(j === i));
+  });
+  const input = $("ssInput");
+  if (i >= 0 && rows[i]) {
+    input.setAttribute("aria-activedescendant", rows[i].id);
+    rows[i].scrollIntoView({ block: "nearest" });
+  } else {
+    input.removeAttribute("aria-activedescendant");
+  }
+}
+
+/** Mark set filters, count them on the tools button, show/hide the reset. */
+function updateFilterChrome() {
+  let active = 0;
+  for (const id of SEARCH_FILTER_IDS) {
+    const sel = $(id);
+    const set = sel.value !== "";
+    sel.classList.toggle("is-set", set);
+    if (set) active++;
+  }
+  const badge = $("ssBadge");
+  badge.hidden = active === 0;
+  badge.textContent = String(active);
+  $("ssReset").hidden = active === 0;
+}
+
+function wireShowSearch() {
+  const root = $("showSearch");
+  const input = $("ssInput");
+  if (!root || !input) return;
+
+  input.addEventListener("input", () => {
+    clearTimeout(searchUi.debounce);
+    searchUi.debounce = setTimeout(runSearch, 120);
+  });
+  // Re-focusing a bar that still holds a query (or live filters) reopens it.
+  input.addEventListener("focus", () => {
+    if (input.value.trim() !== "" || hasActiveFilters(currentSearchFilters())) runSearch();
+  });
+  input.addEventListener("keydown", (e) => {
+    const n = searchUi.results.length;
+    if (e.key === "ArrowDown" && n > 0) {
+      e.preventDefault();
+      if ($("ssPop").hidden) setSearchOpen(true);
+      setActiveRow((searchUi.active + 1) % n);
+    } else if (e.key === "ArrowUp" && n > 0) {
+      e.preventDefault();
+      setActiveRow((searchUi.active - 1 + n) % n);
+    } else if (e.key === "Enter" && searchUi.active >= 0 && searchUi.active < n) {
+      e.preventDefault();
+      toggleShowOnGrid(searchUi.results[searchUi.active].slug);
+    } else if (e.key === "Escape" && !$("ssPop").hidden) {
+      e.stopPropagation();
+      setSearchOpen(false);
+    }
+  });
+
+  // A row is one target: the star and the line both toggle the show.
+  $("ssResults").addEventListener("click", (e) => {
+    const row = e.target.closest(".ss-row");
+    if (row) toggleShowOnGrid(row.dataset.slug);
+  });
+
+  $("ssToolsBtn").addEventListener("click", () => {
+    const tools = $("ssTools");
+    tools.hidden = !tools.hidden;
+    $("ssToolsBtn").setAttribute("aria-expanded", String(!tools.hidden));
+  });
+
+  for (const id of SEARCH_FILTER_IDS) {
+    $(id).addEventListener("change", () => {
+      updateFilterChrome();
+      runSearch();
+    });
+  }
+  $("ssReset").addEventListener("click", () => {
+    for (const id of SEARCH_FILTER_IDS) $(id).value = "";
+    updateFilterChrome();
+    runSearch();
+    input.focus({ preventScroll: true });
+  });
+
+  // Click-away closes the results overlay (the tools line stays as set).
+  document.addEventListener("click", (e) => {
+    if (!root.contains(e.target)) setSearchOpen(false);
+  });
 }
 
 // Hide the debug menu when the browser's real location is inside the UK. Left
@@ -2545,6 +2855,7 @@ function renderPerfPill() {
 
 wireDropzone();
 wireFavActions();
+wireShowSearch();
 wireDebugButton();
 hideDebugInUK();
 wireRetry();
