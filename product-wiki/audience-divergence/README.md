@@ -11,6 +11,30 @@ It is research, not requirements: nothing here is a decision. The requirements
 implication (two tracks rather than one) is for a human to promote into
 `product-wiki/product-requirements/`.
 
+## Key insights
+
+- **The two surfaces do not reduce to one requirement set** — that is this page's
+  finding. It is evidence, not a decision: promoting it into requirements is a
+  human's call.
+- **Their objectives conflict outright.** The planner's greedy allocator
+  maximises shows placed; the audience evidence says a good day is two or three
+  shows with room left — the very gaps the live surface serves.
+- **One catalogue, two incompatible honesty obligations.** Sold-out is a live
+  *fact* for the live surface and a decaying *forecast* for a plan made in June;
+  the same field cannot be presented the same way on both.
+- **Zero input versus high-effort input.** The live surface's core virtue is
+  asking nothing; the planner's front door is a favourites CSV the user extracts
+  on another site, via a third-party browser extension.
+- **"When should I come?" has no live analogue** — and no profiled competitor
+  answers it. It is the planner's most valuable question and its least shared
+  one.
+- **What the two genuinely share is small**: one catalogue and venue geometry,
+  the travel model, honesty about missing data, and the same emotional promise of
+  lifting the overwhelm.
+- **The one place a shared requirement is justified is the handover** — plan →
+  live, "your plan says you're free until 19:00" — and nothing today connects
+  them.
+
 ## The two crowds in a line each
 
 - **Live, in-festival.** On the ground in Edinburgh during 7–31 August, deciding
@@ -152,3 +176,7 @@ Small, and worth keeping small deliberately:
   seven concrete requirement conflicts, and the shared spine, from the audience
   evidence gathered on the market-and-audience page plus the repo's two surfaces.
   Sources cited.
+- **2026-07-29** — added the page's `## Key insights` header, distilled from what
+  is already on the page (the non-reducibility finding, the sharpest of the seven
+  conflicts, the small shared spine, and the handover). Header only: no claim,
+  citation or open question changed.
