@@ -29,6 +29,7 @@ python3 -m http.server 8000
 index.html        page markup
 css/styles.css    styling
 js/app.js         data loading, map, show list, journey, editable cards
+js/places.js      non-show places: Nominatim geocoding + partner booking links
 data/shows.json   mock Edinburgh Fringe shows
 ```
 

@@ -1,0 +1,137 @@
+[
+  {
+    "place_id": 274961490,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1251687153,
+    "lat": "55.9523213",
+    "lon": "-3.1890095",
+    "category": "amenity",
+    "type": "pub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "BrewDog",
+    "display_name": "BrewDog, Waverley Concourse, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1BB, United Kingdom",
+    "address": {
+      "amenity": "BrewDog",
+      "road": "Waverley Concourse",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1BB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9522488",
+      "55.9523936",
+      "-3.1891333",
+      "-3.1888856"
+    ]
+  },
+  {
+    "place_id": 271621616,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 33179113,
+    "lat": "55.9474969",
+    "lon": "-3.2065848",
+    "category": "amenity",
+    "type": "pub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "BrewDog Lothian Road",
+    "display_name": "BrewDog Lothian Road, 50, Lothian Road, Lauriston, Tollcross, City of Edinburgh, Alba / Scotland, EH3 9BY, United Kingdom",
+    "address": {
+      "amenity": "BrewDog Lothian Road",
+      "house_number": "50",
+      "road": "Lothian Road",
+      "neighbourhood": "Lauriston",
+      "suburb": "Tollcross",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH3 9BY",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9474469",
+      "55.9475469",
+      "-3.2066348",
+      "-3.2065348"
+    ]
+  },
+  {
+    "place_id": 275139413,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 10233397493,
+    "lat": "55.9492029",
+    "lon": "-3.3628846",
+    "category": "amenity",
+    "type": "pub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "BrewDog",
+    "display_name": "BrewDog, Jubilee Road, Ingliston, Ratho Station, City of Edinburgh, Alba / Scotland, EH12 9DN, United Kingdom",
+    "address": {
+      "amenity": "BrewDog",
+      "road": "Jubilee Road",
+      "hamlet": "Ingliston",
+      "village": "Ratho Station",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH12 9DN",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9491529",
+      "55.9492529",
+      "-3.3629346",
+      "-3.3628346"
+    ]
+  },
+  {
+    "place_id": 274822201,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 9356174191,
+    "lat": "55.9514300",
+    "lon": "-3.1828272",
+    "category": "amenity",
+    "type": "pub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "Brewdog Doghouse Bar & Terrace",
+    "display_name": "Brewdog Doghouse Bar & Terrace, East Market Street, Canongate, Old Town, City of Edinburgh, Alba / Scotland, EH8 8FR, United Kingdom",
+    "address": {
+      "amenity": "Brewdog Doghouse Bar & Terrace",
+      "road": "East Market Street",
+      "suburb": "Canongate",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH8 8FR",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9513800",
+      "55.9514800",
+      "-3.1828772",
+      "-3.1827772"
+    ]
+  }
+]

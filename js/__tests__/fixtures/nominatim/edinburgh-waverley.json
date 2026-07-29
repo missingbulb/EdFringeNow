@@ -1,0 +1,167 @@
+[
+  {
+    "place_id": 274544131,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 7149998196,
+    "lat": "55.9519018",
+    "lon": "-3.1904199",
+    "category": "railway",
+    "type": "station",
+    "place_rank": 30,
+    "importance": 0.4932102822428882,
+    "addresstype": "railway",
+    "name": "Edinburgh Waverley",
+    "display_name": "Edinburgh Waverley, South Ramp, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1QB, United Kingdom",
+    "address": {
+      "railway": "Edinburgh Waverley",
+      "road": "South Ramp",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1QB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9469018",
+      "55.9569018",
+      "-3.1954199",
+      "-3.1854199"
+    ]
+  },
+  {
+    "place_id": 275059267,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 5208866,
+    "lat": "55.9520366",
+    "lon": "-3.1884080",
+    "category": "building",
+    "type": "train_station",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "building",
+    "name": "Edinburgh Waverley",
+    "display_name": "Edinburgh Waverley, North Bridge, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH2 2EQ, United Kingdom",
+    "address": {
+      "building": "Edinburgh Waverley",
+      "road": "North Bridge",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH2 2EQ",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9512417",
+      "55.9528613",
+      "-3.1917751",
+      "-3.1854756"
+    ]
+  },
+  {
+    "place_id": 275509069,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 240040,
+    "lat": "55.9520511",
+    "lon": "-3.1870896",
+    "category": "building",
+    "type": "roof",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "building",
+    "name": "Edinburgh Waverley",
+    "display_name": "Edinburgh Waverley, North Bridge, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH2 2EQ, United Kingdom",
+    "address": {
+      "building": "Edinburgh Waverley",
+      "road": "North Bridge",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH2 2EQ",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9512417",
+      "55.9528613",
+      "-3.1917751",
+      "-3.1854756"
+    ]
+  },
+  {
+    "place_id": 274536228,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 13882593,
+    "lat": "55.9522588",
+    "lon": "-3.1909071",
+    "category": "railway",
+    "type": "stop",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "railway",
+    "name": "Edinburgh Waverley",
+    "display_name": "Edinburgh Waverley, North Ramp, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH2 2QP, United Kingdom",
+    "address": {
+      "railway": "Edinburgh Waverley",
+      "road": "North Ramp",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH2 2QP",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9522088",
+      "55.9523088",
+      "-3.1909571",
+      "-3.1908571"
+    ]
+  },
+  {
+    "place_id": 274544260,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 835849776,
+    "lat": "55.9514816",
+    "lon": "-3.1914061",
+    "category": "railway",
+    "type": "stop",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "railway",
+    "name": "Edinburgh Waverley",
+    "display_name": "Edinburgh Waverley, South Ramp, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1QB, United Kingdom",
+    "address": {
+      "railway": "Edinburgh Waverley",
+      "road": "South Ramp",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1QB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9514316",
+      "55.9515316",
+      "-3.1914561",
+      "-3.1913561"
+    ]
+  }
+]

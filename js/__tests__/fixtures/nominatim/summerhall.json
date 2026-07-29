@@ -1,0 +1,166 @@
+[
+  {
+    "place_id": 274973862,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 75089989,
+    "lat": "55.9396535",
+    "lon": "-3.1824583",
+    "category": "highway",
+    "type": "primary",
+    "place_rank": 26,
+    "importance": 0.05341100404364077,
+    "addresstype": "road",
+    "name": "Summerhall",
+    "display_name": "Summerhall, Southside, City of Edinburgh, Alba / Scotland, EH9 1NH, United Kingdom",
+    "address": {
+      "road": "Summerhall",
+      "suburb": "Southside",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH9 1NH",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9394221",
+      "55.9398970",
+      "-3.1826495",
+      "-3.1822516"
+    ]
+  },
+  {
+    "place_id": 274772338,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 3819004,
+    "lat": "55.9402326",
+    "lon": "-3.1827183",
+    "category": "highway",
+    "type": "primary",
+    "place_rank": 26,
+    "importance": 0.05341100404364077,
+    "addresstype": "road",
+    "name": "Summerhall",
+    "display_name": "Summerhall, St Leonards, Newington, City of Edinburgh, Alba / Scotland, EH9 1ND, United Kingdom",
+    "address": {
+      "road": "Summerhall",
+      "neighbourhood": "St Leonards",
+      "suburb": "Newington",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH9 1ND",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9399892",
+      "55.9404775",
+      "-3.1827389",
+      "-3.1826857"
+    ]
+  },
+  {
+    "place_id": 272709461,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 79689765,
+    "lat": "55.9400811",
+    "lon": "-3.1818589",
+    "category": "amenity",
+    "type": "arts_centre",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "Summerhall",
+    "display_name": "Summerhall, Sciennes, Southside, City of Edinburgh, Alba / Scotland, EH9 1PG, United Kingdom",
+    "address": {
+      "amenity": "Summerhall",
+      "road": "Sciennes",
+      "suburb": "Southside",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH9 1PG",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9395354",
+      "55.9406312",
+      "-3.1825731",
+      "-3.1810202"
+    ]
+  },
+  {
+    "place_id": 274943975,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 5545343503,
+    "lat": "55.9396910",
+    "lon": "-3.1818686",
+    "category": "amenity",
+    "type": "library",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "Artiscience Library",
+    "display_name": "Artiscience Library, Summerhall, Southside, City of Edinburgh, Alba / Scotland, EH9 1NH, United Kingdom",
+    "address": {
+      "amenity": "Artiscience Library",
+      "road": "Summerhall",
+      "suburb": "Southside",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH9 1NH",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9396410",
+      "55.9397410",
+      "-3.1819186",
+      "-3.1818186"
+    ]
+  },
+  {
+    "place_id": 274403533,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 2061581555,
+    "lat": "55.9398367",
+    "lon": "-3.1821922",
+    "category": "amenity",
+    "type": "nightclub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "Summerhall",
+    "display_name": "Summerhall, Southside, City of Edinburgh, Alba / Scotland, EH9 1NH, United Kingdom",
+    "address": {
+      "amenity": "Summerhall",
+      "road": "Summerhall",
+      "suburb": "Southside",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH9 1NH",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9397867",
+      "55.9398867",
+      "-3.1822422",
+      "-3.1821422"
+    ]
+  }
+]

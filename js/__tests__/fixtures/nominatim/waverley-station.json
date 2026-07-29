@@ -1,0 +1,101 @@
+[
+  {
+    "place_id": 275670333,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1251687153,
+    "lat": "55.9523213",
+    "lon": "-3.1890095",
+    "category": "amenity",
+    "type": "pub",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "BrewDog",
+    "display_name": "BrewDog, Waverley Concourse, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1BB, United Kingdom",
+    "address": {
+      "amenity": "BrewDog",
+      "road": "Waverley Concourse",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1BB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9522488",
+      "55.9523936",
+      "-3.1891333",
+      "-3.1888856"
+    ]
+  },
+  {
+    "place_id": 275699850,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 13608984642,
+    "lat": "55.9519486",
+    "lon": "-3.1894443",
+    "category": "amenity",
+    "type": "atm",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "RBS",
+    "display_name": "RBS, Waverley Concourse, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1BB, United Kingdom",
+    "address": {
+      "amenity": "RBS",
+      "road": "Waverley Concourse",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1BB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9518986",
+      "55.9519986",
+      "-3.1894943",
+      "-3.1893943"
+    ]
+  },
+  {
+    "place_id": 276003007,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 3271025731,
+    "lat": "55.9521331",
+    "lon": "-3.1896204",
+    "category": "amenity",
+    "type": "cafe",
+    "place_rank": 30,
+    "importance": 0.00007767071030742378,
+    "addresstype": "amenity",
+    "name": "Costa",
+    "display_name": "Costa, Waverley Concourse, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1BB, United Kingdom",
+    "address": {
+      "amenity": "Costa",
+      "road": "Waverley Concourse",
+      "suburb": "Abbeyhill",
+      "city": "City of Edinburgh",
+      "ISO3166-2-lvl6": "GB-EDH",
+      "state": "Alba / Scotland",
+      "ISO3166-2-lvl4": "GB-SCT",
+      "postcode": "EH1 1BB",
+      "country": "United Kingdom",
+      "country_code": "gb"
+    },
+    "boundingbox": [
+      "55.9520831",
+      "55.9521831",
+      "-3.1896704",
+      "-3.1895704"
+    ]
+  }
+]
