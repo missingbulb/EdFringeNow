@@ -317,6 +317,10 @@ a { color: inherit; }
 .segmented { display: flex; gap: 4px; margin: 4px 0 4px; padding: 3px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; }
 .seg-btn { flex: 1 1 0; font: inherit; font-weight: 700; font-size: 0.85rem; color: var(--muted); background: transparent; border: none; padding: 8px 6px; border-radius: 999px; cursor: pointer; transition: color 0.12s ease, background 0.12s ease; }
 .seg-btn.is-active { color: #fff; background: var(--red); }
+/* The grey per-choice show count, matching the .opt-count on the option lists. */
+.seg-count { display: block; font-size: 0.72rem; font-weight: 700; color: #9aa39a; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.seg-btn.is-active .seg-count { color: rgba(255, 255, 255, 0.82); }
+.seg-count:empty { display: none; }
 .seg-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 /* A panel heading that carries its "everything!" clear link on the right. */
 .panel-title--row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }

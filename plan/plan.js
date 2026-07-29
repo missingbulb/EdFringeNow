@@ -1220,6 +1220,14 @@ function facetChosen(facet) {
   return facet.multi ? [...v] : v ? [v] : [];
 }
 
+/** Is every option this facet offers already ticked? (Never true for the
+ *  single-answer facets, which offer one radio at a time.) */
+function allOptionsChosen(facet) {
+  if (!facet.multi) return false;
+  const values = facet.values();
+  return values.length > 0 && values.every((v) => searchUi.filters[facet.key].has(v));
+}
+
 /** Read the facet state into a lib/search.js-shaped filters object. */
 function currentSearchFilters() {
   const f = searchUi.filters;
@@ -1497,6 +1505,12 @@ function updateFilterChrome() {
           ? one(chosen[0])
           : `${chosen.length} ${facet.noun}`;
     }
+    const link = document.querySelector(`.panel-everything[data-clear="${facet.key}"]`);
+    if (link) {
+      const all = allOptionsChosen(facet);
+      link.textContent = all ? "nothing!" : "everything!";
+      link.title = all ? "Untick every option" : facet.multi ? "Tick every option" : "Back to any";
+    }
     if (chip) {
       chip.classList.toggle("is-set", set);
       const off = facet.unavailable ? facet.unavailable() : false;
@@ -1553,14 +1567,20 @@ function wireFacetChips() {
       clampChipPanel(panel);
     });
   }
-  // "everything!" — this facet back to "any".
+  // "everything!" ticks every option in a checkbox list; once they all are, it
+  // reads "nothing!" and clears them. Near-equivalent searches — they differ
+  // only by the shows declaring no value for the facet at all, which "all
+  // ticked" excludes and "none ticked" keeps — but it hands you the slate you
+  // want to pick from. The two single-answer facets can never be "all", so
+  // theirs only ever clears.
   for (const link of document.querySelectorAll(".panel-everything[data-clear]")) {
     link.addEventListener("click", (e) => {
       e.stopPropagation();
       const facet = facetById(link.dataset.clear);
       if (!facet) return;
-      if (facet.multi) searchUi.filters[facet.key].clear();
-      else searchUi.filters[facet.key] = "";
+      if (!facet.multi) searchUi.filters[facet.key] = "";
+      else if (allOptionsChosen(facet)) searchUi.filters[facet.key].clear();
+      else for (const v of facet.values()) searchUi.filters[facet.key].add(v);
       onSearchFilterChange();
     });
   }
