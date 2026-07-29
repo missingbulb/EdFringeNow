@@ -1089,6 +1089,51 @@ a { color: inherit; }
   background: repeating-linear-gradient(-45deg, rgba(108,76,241,0.12) 0 6px, rgba(108,76,241,0.04) 6px 12px);
 }
 
+/* --- Partner nag: one small suggestion pill inside a board region (the night
+   below "day ends", the getting-there / getting-out blocks), with an × that
+   closes it for good. A quiet paper chip on the region's hatch — it must read as
+   an offer, never compete with the shows. --- */
+.sch-nag {
+  position: absolute; z-index: 2;
+  display: flex; align-items: stretch; gap: 0;
+  /* The overlay it sits in is pointer-events: none so drags pass through. */
+  pointer-events: auto;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.12);
+  overflow: hidden; max-width: calc(100% - 8px);
+}
+.sch-nag[hidden] { display: none; }
+.sch-nag .nag-cta {
+  display: flex; align-items: center; gap: 4px; min-width: 0;
+  padding: 3px 4px 3px 7px; text-decoration: none;
+  font-size: 0.6rem; font-weight: 700; color: var(--violet-dark); white-space: nowrap;
+}
+.sch-nag .nag-cta:hover { background: rgba(108, 76, 241, 0.08); color: var(--violet); }
+.sch-nag .nag-cta:focus-visible { outline: 3px solid var(--violet); outline-offset: -2px; }
+.sch-nag .nag-emoji { font-size: 0.74rem; line-height: 1; }
+.sch-nag .nag-text { overflow: hidden; text-overflow: ellipsis; }
+.sch-nag .nag-x {
+  flex: none; border: 0; border-left: 1px solid var(--line); background: transparent;
+  padding: 0 5px; cursor: pointer; line-height: 1;
+  font-size: 0.72rem; color: var(--muted);
+}
+.sch-nag .nag-x:hover { background: rgba(16, 24, 40, 0.06); color: var(--ink); }
+.sch-nag .nag-x:focus-visible { outline: 3px solid var(--violet); outline-offset: -2px; }
+/* Night zone: centred, hugging the bottom of the board — the small hours, where
+   "where am I sleeping?" actually bites. The zone spans every column, so there
+   is room for the full question. */
+.sch-zone .sch-nag { bottom: 5px; left: 50%; transform: translateX(-50%); }
+/* Trip blocks: stretched across their one narrow day column, against the
+   block's outer edge so the draggable inner edge stays clear. */
+.sch-trip .sch-nag { left: 4px; right: 4px; justify-content: center; }
+.sch-trip--arrival .sch-nag { top: 5px; }
+.sch-trip--departure .sch-nag { bottom: 5px; }
+/* A many-day plan squeezes each column: on a narrow one the trip nag keeps only
+   its emoji (the full question stays in the link's tooltip). The night zone is
+   board-wide, so its text is never dropped. */
+.schedule.cols-narrow .sch-trip .sch-nag .nag-text { display: none; }
+.schedule.cols-narrow .sch-trip .sch-nag .nag-cta { padding-right: 5px; }
+
 /* --- Shared drag handle: every draggable boundary (day-start/end lines, meal
    edges, trip inner edge) shows the same violet line + centred grip pill, so
    they all read as one grab affordance. The meal/trip resize strips straddle
