@@ -216,10 +216,12 @@
           </button>
           <div class="card-panel card-panel--mini" id="pricePanel" role="menu" hidden>
             <p class="panel-title">Ticket price</p>
+            <!-- Each choice carries the same grey count as the genre/subgenre
+                 options: how many reachable shows it would leave you. -->
             <div class="segmented" id="priceOptions" role="group" aria-label="Ticket price">
-              <button type="button" class="seg-btn" data-price="both">Both</button>
-              <button type="button" class="seg-btn" data-price="free">Free</button>
-              <button type="button" class="seg-btn" data-price="paid">Paid</button>
+              <button type="button" class="seg-btn" data-price="both">Both<span class="seg-count"></span></button>
+              <button type="button" class="seg-btn" data-price="free">Free<span class="seg-count"></span></button>
+              <button type="button" class="seg-btn" data-price="paid">Paid<span class="seg-count"></span></button>
             </div>
           </div>
         </article>

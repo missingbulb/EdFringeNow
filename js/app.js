@@ -337,9 +337,10 @@ function filteredShows(except) {
   return list;
 }
 
-/* Shows passing every taste filter — what the map and list draw from. */
-function visibleShows() {
-  return filteredShows(null);
+/* Shows passing every taste filter — what the map and list draw from. The
+ * `except` argument is passed straight down from the count queries. */
+function visibleShows(except) {
+  return filteredShows(except);
 }
 
 /* How far ahead a "next commitment" must start to be worth picking. There's no
@@ -406,13 +407,13 @@ function classifyShow(show, constraint) {
 }
 
 /* The shows to draw on the map, each with its status. */
-function displayedShows() {
+function displayedShows(except) {
   const constraint = state.selectedShowId
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
 
   const out = [];
-  visibleShows().forEach((show) => {
+  visibleShows(except).forEach((show) => {
     const status = classifyShow(show, constraint);
     if (status !== "hidden") out.push({ show, status });
   });
@@ -742,12 +743,12 @@ const SHOW_PAGE = 12;
  * commitment, "on now" means the next couple of hours — not the whole day — so
  * the list stays about spontaneity, not a full catalogue. Order-independent:
  * the caller sorts by time or distance. */
-function fittingShows() {
+function fittingShows(except) {
   const constrained = Boolean(state.selectedShowId);
   const constraint = constrained
     ? state.shows.find((s) => s.id === state.selectedShowId)
     : null;
-  let all = displayedShows().filter(({ show }) => show.id !== state.selectedShowId);
+  let all = displayedShows(except).filter(({ show }) => show.id !== state.selectedShowId);
   // A selected show that can't actually be slipped in before the commitment isn't
   // a real option — keep it on the map and the itinerary, but out of this list
   // and its count (so "N shows you can slip in" stays honest).
@@ -1276,6 +1277,16 @@ function facetOption(value, { icon, checked, count, onToggle }) {
   return label;
 }
 
+/* The pool a facet's per-option counts are measured against: the shows you
+ * could actually wander into — reachable in your travel window, not already
+ * started, and leaving time for your next commitment — with every filter
+ * applied *except* this facet's own. So a count answers "how many more could I
+ * catch if I ticked this", and the numbers add up against the heading above
+ * the filters rather than against the whole day's 3,800-show programme. */
+function facetPool(facet) {
+  return fittingShows(facet).map((o) => o.show);
+}
+
 /* How many shows in `pool` fall under each value of a facet. `values` pulls the
  * facet's value(s) out of a show (a genre is one, subgenres are many). */
 function facetCounts(pool, values) {
@@ -1289,7 +1300,7 @@ function facetCounts(pool, values) {
 function buildGenrePanel() {
   const wrap = document.getElementById("genreOptions");
   if (!wrap) return;
-  const counts = facetCounts(filteredShows("genre"), (s) => [s.genre]);
+  const counts = facetCounts(facetPool("genre"), (s) => [s.genre]);
   wrap.innerHTML = "";
   GENRES.forEach((genre) => {
     wrap.appendChild(
@@ -1306,15 +1317,43 @@ function buildGenrePanel() {
     );
   });
 
-  // "everything!" — every genre back on.
   const reset = document.getElementById("filterReset");
   if (reset) {
     reset.onclick = () => {
-      state.selectedGenres = new Set(GENRES);
+      // Ticked everything already → the link is "nothing!", clearing the boxes
+      // so you can pick a few from a blank slate.
+      state.selectedGenres =
+        state.selectedGenres.size === GENRES.length ? new Set() : new Set(GENRES);
       buildGenrePanel(); // re-render the checkboxes
       onTasteChange({ rebuildSubgenres: true });
     };
   }
+  updateEverythingLinks();
+}
+
+/* The "everything!" links flip to "nothing!" once every box in their panel is
+ * ticked — at which point the useful move is to clear them and start picking.
+ * For genres the two ends are the same search (every show has one genre, so
+ * "all ticked" and "none ticked" both narrow nothing); for subgenres they
+ * differ by the ~2% of shows the festival tags with none, which "all ticked"
+ * excludes and "none ticked" keeps. The counts show that difference. */
+function updateEverythingLinks() {
+  const links = [
+    ["filterReset", state.selectedGenres.size > 0 && state.selectedGenres.size === GENRES.length],
+    ["subgenreReset", allSubgenresSelected()],
+  ];
+  for (const [id, all] of links) {
+    const link = document.getElementById(id);
+    if (!link) continue;
+    link.textContent = all ? "nothing!" : "everything!";
+    link.title = all ? "Untick every option" : "Tick every option";
+  }
+}
+
+/* Is every subgenre currently offered already ticked? */
+function allSubgenresSelected() {
+  const rows = document.querySelectorAll("#subgenreOptions .panel-option input");
+  return rows.length > 0 && [...rows].every((i) => state.selectedSubgenres.has(i.value));
 }
 
 /* The subgenre options: only the finer descriptors actually present in the
@@ -1329,7 +1368,7 @@ function subgenreOptionValues(counts) {
 function buildSubgenrePanel() {
   const wrap = document.getElementById("subgenreOptions");
   if (!wrap) return;
-  const counts = facetCounts(filteredShows("subgenre"), (s) => s.subgenres || []);
+  const counts = facetCounts(facetPool("subgenre"), (s) => s.subgenres || []);
   wrap.innerHTML = "";
   const values = subgenreOptionValues(counts);
   if (!values.length) {
@@ -1352,11 +1391,15 @@ function buildSubgenrePanel() {
   const reset = document.getElementById("subgenreReset");
   if (reset) {
     reset.onclick = () => {
-      state.selectedSubgenres.clear(); // none ticked = every subgenre
+      // "everything!" ticks every subgenre on offer; once they all are, the
+      // link reads "nothing!" and clears them (both mean "don't narrow").
+      if (allSubgenresSelected()) state.selectedSubgenres.clear();
+      else for (const v of values) state.selectedSubgenres.add(v);
       buildSubgenrePanel();
       onTasteChange();
     };
   }
+  updateEverythingLinks();
 }
 
 /* The $ chip's tiny dropdown: Both / Free / Paid. */
@@ -1369,6 +1412,23 @@ function buildPricePanel() {
     };
   });
   updatePriceButtons();
+}
+
+/* How many reachable shows each price choice would leave you — the same
+ * question the genre/subgenre counts answer, measured over the same pool. */
+function refreshPriceCounts() {
+  const pool = facetPool("price");
+  const counts = {
+    both: pool.length,
+    free: pool.filter((s) => priceValue(s) === 0).length,
+    paid: pool.filter((s) => priceValue(s) === 1).length,
+  };
+  document.querySelectorAll("#priceOptions .seg-btn").forEach((b) => {
+    const n = counts[b.dataset.price] || 0;
+    const out = b.querySelector(".seg-count");
+    if (out) out.textContent = String(n);
+    b.setAttribute("aria-label", `${b.dataset.price === "both" ? "Both" : b.dataset.price === "free" ? "Free" : "Paid"} — ${n} ${n === 1 ? "show" : "shows"}`);
+  });
 }
 
 /* Reflect the active price choice on the Both/Free/Paid segmented control, and
@@ -1399,6 +1459,7 @@ function onTasteChange({ rebuildSubgenres = false } = {}) {
   updateGenreValue();
   updateSubgenreValue();
   refreshFacetCounts();
+  updateEverythingLinks();
   // A re-labelled chip is a different width, which can re-flow the wrapped
   // filter row under a panel that's still open — so re-fit whatever is open.
   document.querySelectorAll(".card-panel:not([hidden])").forEach(clampPanel);
@@ -1409,9 +1470,10 @@ function onTasteChange({ rebuildSubgenres = false } = {}) {
 /* Re-count the already-rendered option rows in place. Rebuilding the panels
  * instead would drop focus mid-click, so only the numbers are rewritten. */
 function refreshFacetCounts() {
+  refreshPriceCounts();
   const facets = [
-    ["genreOptions", facetCounts(filteredShows("genre"), (s) => [s.genre])],
-    ["subgenreOptions", facetCounts(filteredShows("subgenre"), (s) => s.subgenres || [])],
+    ["genreOptions", facetCounts(facetPool("genre"), (s) => [s.genre])],
+    ["subgenreOptions", facetCounts(facetPool("subgenre"), (s) => s.subgenres || [])],
   ];
   for (const [id, counts] of facets) {
     const wrap = document.getElementById(id);
