@@ -158,37 +158,85 @@ const train = { label: "Edinburgh Waverley", area: "", lat: 55.9519, lng: -3.190
 const hotel = { label: "Malmaison", area: "", lat: 55.9778, lng: -3.1686, kind: "hotel" };
 const sight = { label: "Camera Obscura & World of Illusions", area: "", lat: 55.949, lng: -3.1956, kind: "attraction" };
 
+const NO_IDS = { opentableRef: "", trainlineCamref: "", awinAffiliateId: "", bookingAwinMid: "", gygPartnerId: "" };
+
 test("every bookable kind gets a working plain link with no affiliate IDs configured", () => {
-  const none = { awinAffiliateId: "", trainlineAwinMid: "", opentableRef: "", bookingAid: "", gygPartnerId: "" };
-  const dining = partnerLink(eats, none);
+  const dining = partnerLink(eats, NO_IDS);
   assert.equal(dining.partner, "OpenTable");
   assert.match(dining.url, /^https:\/\/www\.opentable\.co\.uk\/s\?/);
   assert.match(dining.url, /term=Mother\+India's\+Cafe|term=Mother%20India/);
   assert.doesNotMatch(dining.url, /[?&]ref=/, "no empty ref param");
+  assert.doesNotMatch(dining.url, /dateTime=/, "no dateTime without a committed time");
 
-  assert.equal(partnerLink(train, none).url, "https://www.thetrainline.com/");
-  assert.match(partnerLink(hotel, none).url, /^https:\/\/www\.booking\.com\/searchresults\.html\?ss=/);
-  assert.doesNotMatch(partnerLink(hotel, none).url, /[?&]aid=/);
-  assert.match(partnerLink(sight, none).url, /^https:\/\/www\.getyourguide\.com\/s\/\?q=/);
-  assert.doesNotMatch(partnerLink(sight, none).url, /partner_id=/);
+  // Waverley deep-links to its own Trainline page even untagged. The slug is
+  // "edinburgh", not "edinburgh-waverley" — see TRAINLINE_STATION_SLUGS.
+  assert.equal(partnerLink(train, NO_IDS).url, "https://www.thetrainline.com/stations/edinburgh");
+  // A station whose Trainline slug we haven't verified falls back to the homepage.
+  assert.equal(
+    partnerLink({ ...train, label: "Haymarket" }, NO_IDS).url,
+    "https://www.thetrainline.com/"
+  );
+
+  assert.match(partnerLink(hotel, NO_IDS).url, /^https:\/\/www\.booking\.com\/searchresults\.html\?ss=/);
+  assert.doesNotMatch(partnerLink(hotel, NO_IDS).url, /checkin=/, "no dates without a committed time");
+  assert.match(partnerLink(sight, NO_IDS).url, /^https:\/\/www\.getyourguide\.com\/s\/\?q=/);
+  assert.doesNotMatch(partnerLink(sight, NO_IDS).url, /partner_id=/);
 });
 
-test("configured affiliate IDs tag every partner link", () => {
+test("links carry the user's own selection: their table time, their hotel night", () => {
+  const when = { dateISO: "2026-08-14", time: "18:25" };
+  const dining = partnerLink(eats, NO_IDS, when).url;
+  assert.match(dining, /dateTime=2026-08-14T18%3A25/, "OpenTable pre-fills the committed time");
+  assert.match(dining, /covers=2/);
+
+  const stay = partnerLink(hotel, NO_IDS, when).url;
+  assert.match(stay, /checkin=2026-08-14/, "Booking.com pre-fills tonight");
+  assert.match(stay, /checkout=2026-08-15/);
+
+  // The night maths must survive a month boundary.
+  const monthEnd = partnerLink(hotel, NO_IDS, { dateISO: "2026-08-31", time: "22:00" }).url;
+  assert.match(monthEnd, /checkin=2026-08-31/);
+  assert.match(monthEnd, /checkout=2026-09-01/);
+
+  // A time-less note of a `when` adds nothing rather than a malformed param.
+  const timeless = partnerLink(eats, NO_IDS, { dateISO: "2026-08-14", time: "" }).url;
+  assert.doesNotMatch(timeless, /dateTime=/);
+});
+
+test("configured affiliate IDs tag every partner link through its real 2026 programme", () => {
   const ids = {
-    awinAffiliateId: "123456",
-    trainlineAwinMid: "2586",
     opentableRef: "99999",
-    bookingAid: "304142",
+    trainlineCamref: "1101lAbCdEf", // Trainline's programme runs on Partnerize (camref links)
+    awinAffiliateId: "123456", //       Booking.com's programme runs on Awin
+    bookingAwinMid: "18119",
     gygPartnerId: "ABCDE",
   };
   assert.match(partnerLink(eats, ids).url, /[?&]ref=99999/);
+
   const t = partnerLink(train, ids).url;
-  assert.match(t, /^https:\/\/www\.awin1\.com\/cread\.php\?/);
-  assert.match(t, /awinmid=2586/);
-  assert.match(t, /awinaffid=123456/);
-  assert.match(t, /ued=https%3A%2F%2Fwww\.thetrainline\.com%2F/);
-  assert.match(partnerLink(hotel, ids).url, /[?&]aid=304142/);
+  assert.match(t, /^https:\/\/prf\.hn\/click\/camref:1101lAbCdEf\/destination:/);
+  assert.ok(
+    t.endsWith(`destination:${encodeURIComponent("https://www.thetrainline.com/stations/edinburgh")}`),
+    "the Partnerize wrapper still deep-links the station page"
+  );
+
+  const h = partnerLink(hotel, ids).url;
+  assert.match(h, /^https:\/\/www\.awin1\.com\/cread\.php\?/);
+  assert.match(h, /awinmid=18119/);
+  assert.match(h, /awinaffid=123456/);
+  assert.match(h, /ued=https%3A%2F%2Fwww\.booking\.com/);
+
   assert.match(partnerLink(sight, ids).url, /[?&]partner_id=ABCDE/);
+});
+
+test("a partial affiliate set-up tags only its own links", () => {
+  // Awin joined, Partnerize not yet: hotel wraps, train stays a plain deep link.
+  const ids = { ...NO_IDS, awinAffiliateId: "123456", bookingAwinMid: "18119" };
+  assert.match(partnerLink(hotel, ids).url, /^https:\/\/www\.awin1\.com\/cread\.php\?/);
+  assert.equal(partnerLink(train, ids).url, "https://www.thetrainline.com/stations/edinburgh");
+  // Awin publisher ID alone (no merchant ID) must not produce a half-built wrap.
+  const half = { ...NO_IDS, awinAffiliateId: "123456" };
+  assert.match(partnerLink(hotel, half).url, /^https:\/\/www\.booking\.com\//);
 });
 
 test("non-bookable kinds get no link, and the shipped config defaults to untagged", () => {

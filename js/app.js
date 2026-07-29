@@ -12,7 +12,7 @@
  */
 
 import { isInUK } from "../shared/geo.js";
-import { geocodeUrl, parsePlaces, placeIcon, partnerLink } from "./places.js";
+import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -109,6 +109,7 @@ const state = {
   legShowId: "",               // a show clicked on the map (stop before the destination)
   editingCommitment: false,    // constraint panel opened from the plan to change it
   spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
+  bookCtaDismissed: false,     // user hid the "Need to book it?" question on a committed place
   viewMode: "map",             // the one selector under the filters: "map" | "closest" | "soonest"
   view: "map",                 // pane the mode implies: "map" | "list" (map is default)
   sortBy: "time",              // reachable-list order the mode implies: "time" | "distance"
@@ -586,6 +587,7 @@ function clearCommitment() {
   clearPlaceResults();
   state.editingCommitment = false;
   state.spareCtaDismissed = false;
+  state.bookCtaDismissed = false;
   syncDestInput();
   refreshConstraintValue();
   refreshMap();
@@ -1084,6 +1086,7 @@ function renderJourneyStrip() {
 
   updateMapsRouteLink();
   wireSpareCta(strip);
+  wireBookCta(strip);
 }
 
 /* Attach the shared "Change ▾ / ×" controls to a plan node (top-right, on the
@@ -1263,16 +1266,42 @@ function destNode(constraint, slackHtmlStr) {
 }
 
 /* Booking link for the committed non-show place — a table, train tickets, a
- * room, tour tickets — rendered like the shows' "Buy ahead" pill. The link is
- * useful on its own and doubles as the referral once the affiliate IDs in
- * js/places.js are configured (rel="sponsored" declares that honestly). */
+ * room, tour tickets. It first asks outright ("Need to book it?") with a big
+ * button; the × shrinks it to a quiet pill rather than losing the link, and a
+ * fresh commitment re-asks. The link is useful on its own and doubles as the
+ * referral once the affiliate IDs in js/places.js are configured
+ * (rel="sponsored" declares that honestly). The deep link pre-fills what the
+ * user already told us: the committed time (a table) or tonight (a room). */
 function planPartnerLink() {
   if (!state.destPlace) return "";
-  const link = partnerLink(state.destPlace);
+  const link = partnerLink(state.destPlace, AFFILIATES, { dateISO: NOW.date, time: state.selectedTime });
   if (!link) return "";
-  return `<a class="plan-buy-inline" href="${escapeHtml(link.url)}" target="_blank"
-            rel="noopener sponsored" title="Opens ${escapeHtml(link.partner)} — booking via this link supports EdFringeNow"
-          >${placeIcon(state.destPlace.kind)} ${escapeHtml(link.text)} &middot; ${escapeHtml(link.partner)}</a>`;
+  const btnLabel = `${placeIcon(state.destPlace.kind)} ${escapeHtml(link.text)} &middot; ${escapeHtml(link.partner)}`;
+  const anchor = (cls) =>
+    `<a class="${cls}" href="${escapeHtml(link.url)}" target="_blank"
+       rel="noopener sponsored" title="Opens ${escapeHtml(link.partner)} — booking via this link supports EdFringeNow"
+     >${btnLabel}</a>`;
+  if (state.bookCtaDismissed) return anchor("plan-buy-inline");
+  return (
+    '<div class="plan-book-cta">' +
+    '<button type="button" class="plan-book-x" aria-label="Dismiss — hide the booking question" title="Dismiss">&times;</button>' +
+    '<p class="book-q">Need to book it?</p>' +
+    anchor("plan-book-btn") +
+    "</div>"
+  );
+}
+
+/* Wire the booking question's ×: dismissing keeps the quiet pill (the link
+ * survives, the question doesn't). */
+function wireBookCta(strip) {
+  const x = strip.querySelector(".plan-book-x");
+  if (x) {
+    x.addEventListener("click", (e) => {
+      e.stopPropagation();
+      state.bookCtaDismissed = true;
+      renderJourneyStrip();
+    });
+  }
 }
 
 /* A travel connector between two plan nodes; verb follows the selected mode. */
@@ -1900,6 +1929,7 @@ function commitPlace(place) {
   state.destLabel = place.label;
   state.selectedShowId = ""; // a typed place isn't one of our shows
   state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
+  state.bookCtaDismissed = false; // …and re-asks the booking question
   state.showCap = SHOW_PAGE;
   const input = document.getElementById("destInput");
   if (input) input.value = place.label;

@@ -38,22 +38,25 @@ export function inEdinburgh([lat, lng]) {
  * js/analytics.js — and they are empty by default: every link below works as a
  * plain deep link, and starts tagging referrals the moment an ID is filled in.
  *
- * TO MONETIZE, join the partner programmes and paste the IDs here:
- *   - Awin (awin.com) — one publisher account covers Trainline (and many other
- *     UK travel/dining merchants). awinAffiliateId is your publisher ID;
- *     trainlineAwinMid is Trainline's advertiser ID from your Awin dashboard.
- *   - OpenTable (opentable.com/affiliate-program) — opentableRef is the `ref`
- *     value OpenTable assigns you.
- *   - Booking.com (partners.booking.com) — bookingAid is your `aid` number.
- *   - GetYourGuide (partner.getyourguide.com) — gygPartnerId.
+ * TO MONETIZE, join the partner programmes and paste the IDs here. Each
+ * partner runs its programme where IT chooses (researched 2026-07-29; the
+ * step-by-step sign-up checklist lives in issue #161):
+ *   - OpenTable partner programme — opentableRef is the `ref` OpenTable
+ *     assigns you.
+ *   - Trainline runs on Partnerize — trainlineCamref is your campaign ref
+ *     (`camref`) from the Partnerize dashboard.
+ *   - Booking.com runs on Awin — awinAffiliateId is your Awin publisher ID,
+ *     bookingAwinMid is Booking.com's advertiser ID shown in your Awin
+ *     dashboard once accepted.
+ *   - GetYourGuide partner programme — gygPartnerId.
  * A link whose programme IDs are unset simply stays untagged — partial set-up
  * is fine.
  */
 export const AFFILIATES = {
-  awinAffiliateId: "",
-  trainlineAwinMid: "",
   opentableRef: "",
-  bookingAid: "",
+  trainlineCamref: "",
+  awinAffiliateId: "",
+  bookingAwinMid: "",
   gygPartnerId: "",
 };
 
@@ -173,8 +176,9 @@ export function parsePlaces(json) {
   return out;
 }
 
-/* Awin deep-link wrapper: routes a merchant URL through the affiliate network
- * so the click is credited. Only meaningful once both IDs are set. */
+/* Awin deep-link wrapper (Booking.com's programme): routes a merchant URL
+ * through the affiliate network so the click is credited. Only meaningful once
+ * both IDs are set. */
 function awinWrap(merchantId, affiliateId, url) {
   return (
     "https://www.awin1.com/cread.php" +
@@ -184,10 +188,35 @@ function awinWrap(merchantId, affiliateId, url) {
   );
 }
 
+/* Partnerize click wrapper (Trainline's programme): prf.hn is Partnerize's
+ * link domain; `destination:` keeps the deep link. */
+function partnerizeWrap(camref, url) {
+  return `https://prf.hn/click/camref:${encodeURIComponent(camref)}/destination:${encodeURIComponent(url)}`;
+}
+
+/* Trainline station pages we've verified the slug for (they don't follow a
+ * guessable rule — Waverley's page is /stations/edinburgh, not
+ * /stations/edinburgh-waverley). Keyed by the lowercased OSM station name;
+ * any station not listed links to the Trainline homepage instead of a
+ * guessed-and-possibly-404 page. Extend only with slugs checked against the
+ * live site. */
+const TRAINLINE_STATION_SLUGS = { "edinburgh waverley": "edinburgh" };
+
+/* The day after an ISO date, for a one-night hotel stay. Pure calendar maths
+ * (UTC noon dodges DST edges), so month/year boundaries just work. */
+function nextDayISO(dateISO) {
+  const d = new Date(`${dateISO}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
 /* The booking link for a place, or null for kinds with nothing sensible to
  * book. Returns { text, partner, url } — the caller renders "text · partner".
- * `affiliates` is injectable for tests; callers use the shipped config. */
-export function partnerLink(place, affiliates = AFFILIATES) {
+ * `affiliates` is injectable for tests; callers pass the shipped config.
+ * `when` ({ dateISO, time }) is the commitment the user picked — given, the
+ * link pre-fills their actual slot: the table booked for that time, the hotel
+ * for that night. */
+export function partnerLink(place, affiliates = AFFILIATES, when = null) {
   const { label, lat, lng, kind } = place;
 
   if (kind === "restaurant" || kind === "cafe" || kind === "pub") {
@@ -195,16 +224,16 @@ export function partnerLink(place, affiliates = AFFILIATES) {
       "https://www.opentable.co.uk/s" +
       `?term=${encodeURIComponent(label)}` +
       `&latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lng)}`;
+    if (when && when.dateISO && when.time)
+      url += `&covers=2&dateTime=${encodeURIComponent(`${when.dateISO}T${when.time}`)}`;
     if (affiliates.opentableRef) url += `&ref=${encodeURIComponent(affiliates.opentableRef)}`;
     return { text: "Book a table", partner: "OpenTable", url };
   }
 
   if (kind === "train") {
-    const base = "https://www.thetrainline.com/";
-    const wrapped =
-      affiliates.awinAffiliateId && affiliates.trainlineAwinMid
-        ? awinWrap(affiliates.trainlineAwinMid, affiliates.awinAffiliateId, base)
-        : base;
+    const slug = TRAINLINE_STATION_SLUGS[label.toLowerCase()];
+    const url = slug ? `https://www.thetrainline.com/stations/${slug}` : "https://www.thetrainline.com/";
+    const wrapped = affiliates.trainlineCamref ? partnerizeWrap(affiliates.trainlineCamref, url) : url;
     return { text: "Train times & tickets", partner: "Trainline", url: wrapped };
   }
 
@@ -212,8 +241,13 @@ export function partnerLink(place, affiliates = AFFILIATES) {
     let url =
       "https://www.booking.com/searchresults.html" +
       `?ss=${encodeURIComponent(`${label}, Edinburgh`)}`;
-    if (affiliates.bookingAid) url += `&aid=${encodeURIComponent(affiliates.bookingAid)}`;
-    return { text: "Check availability", partner: "Booking.com", url };
+    if (when && when.dateISO)
+      url += `&checkin=${encodeURIComponent(when.dateISO)}&checkout=${encodeURIComponent(nextDayISO(when.dateISO))}`;
+    const wrapped =
+      affiliates.awinAffiliateId && affiliates.bookingAwinMid
+        ? awinWrap(affiliates.bookingAwinMid, affiliates.awinAffiliateId, url)
+        : url;
+    return { text: "Check availability", partner: "Booking.com", url: wrapped };
   }
 
   if (kind === "attraction") {
