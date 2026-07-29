@@ -284,7 +284,9 @@ a { color: inherit; }
 .faux-input .fi-caret { color: var(--muted); font-size: 0.68rem; }
 
 /* ============ Availability calendar ============ */
-.cal-card { padding: 30px 28px 26px; }
+/* `relative` so the colour key can sit in the card's own bottom padding rather
+   than claiming a row of its own — see .cal-legend. */
+.cal-card { position: relative; padding: 30px 28px 34px; }
 .cal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
 .cal-top-left { min-width: 0; max-width: 640px; }
 .cal-title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -624,13 +626,14 @@ a { color: inherit; }
   max-width: 280px;
 }
 
-/* Colour key, below the grid. It always holds its row — only the ink fades — so
+/* Colour key, below the grid. It's lifted out of the flow into the card's own
+   bottom padding, so it claims no row of its own and only its ink fades —
    revealing it never resizes the card or shifts anything below it. Invisible
    until the pointer is over the grid: a glanceable reference, not permanent
    chrome. Revealing on :hover of the legend too keeps it up while you read it. */
 .cal-legend {
-  margin-top: 14px; opacity: 0;
-  transition: opacity 0.2s ease;
+  position: absolute; left: 28px; right: 28px; bottom: 9px;
+  opacity: 0; transition: opacity 0.2s ease;
 }
 #calWrap:hover ~ .cal-legend,
 .cal-legend:hover { opacity: 1; }
