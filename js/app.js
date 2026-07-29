@@ -104,8 +104,9 @@ const state = {
   legShowId: "",               // a show clicked on the map (stop before the destination)
   editingCommitment: false,    // constraint panel opened from the plan to change it
   spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
-  sortBy: "time",              // reachable-list order: "time" | "distance"
-  view: "map",                 // post-filters view: "map" | "list" (map is default)
+  viewMode: "map",             // the one selector under the filters: "map" | "closest" | "soonest"
+  view: "map",                 // pane the mode implies: "map" | "list" (map is default)
+  sortBy: "time",              // reachable-list order the mode implies: "time" | "distance"
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
   reachCircle: null,           // Leaflet circle for the travel radius
@@ -124,7 +125,6 @@ async function init() {
   buildGenrePanel();
   buildTravelPanel();
   wirePanels();
-  wireSortControls();
   wireViewSwitch();
   // The header pin re-asks the browser for the user's location (same as the
   // map's ◎ control) and recentres on it.
@@ -751,7 +751,6 @@ function renderShowList() {
   const byDistance = state.sortBy === "distance";
   if (byDistance) all.sort((a, b) => a.walk - b.walk || a.show.time.localeCompare(b.show.time));
   else all.sort((a, b) => a.show.time.localeCompare(b.show.time));
-  updateSortButtons();
 
   if (title) {
     const n = all.length;
@@ -829,64 +828,66 @@ function renderShowList() {
   }
 }
 
-/* Reflect the active sort on the Time / Distance toggle. */
-function updateSortButtons() {
-  document.querySelectorAll(".sort-btn[data-sort]").forEach((b) => {
-    const on = b.dataset.sort === state.sortBy;
-    b.classList.toggle("is-active", on);
-    b.setAttribute("aria-pressed", String(on));
-  });
-}
+/* ---------- View selector: Map | Closest | Soonest ---------- */
+/* One control carries both decisions. The map and the reachable list are two
+ * views of the same shows, and the list only ever has two useful orders — so
+ * rather than a view toggle plus a sort toggle, the three positions here are
+ * the three things you can actually be looking at. Map is the default. The
+ * filters above act on all three, so nothing here touches them. */
+const VIEW_MODES = {
+  map: { view: "map" },
+  closest: { view: "list", sortBy: "distance" },
+  soonest: { view: "list", sortBy: "time" },
+};
 
-/* Wire the centred Time / Distance toggle — a two-position switch, so the
- * inactive side is always visible to click. */
-function wireSortControls() {
-  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (state.sortBy === btn.dataset.sort) return;
-      state.sortBy = btn.dataset.sort;
-      state.showCap = SHOW_PAGE; // a new order starts from the first page
-      renderShowList();
-    });
-  });
-  updateSortButtons();
-}
+function applyViewMode(mode) {
+  const spec = VIEW_MODES[mode] || VIEW_MODES.map;
+  const orderChanged = spec.sortBy && spec.sortBy !== state.sortBy;
+  state.viewMode = mode;
+  state.view = spec.view;
+  if (spec.sortBy) state.sortBy = spec.sortBy;
 
-/* ---------- Map / list view switch ---------- */
-/* The map and the reachable list are two views of the same shows; only one is
- * mounted at a time, flipped from the toggle under the filters. Map is the
- * default. The filters above act on both, so nothing here touches them. */
-function applyView(view) {
-  state.view = view;
   const mapPane = document.getElementById("map");
   const listPane = document.getElementById("shows");
-  if (mapPane) mapPane.hidden = view !== "map";
-  if (listPane) listPane.hidden = view !== "list";
+  if (mapPane) mapPane.hidden = state.view !== "map";
+  if (listPane) listPane.hidden = state.view !== "list";
 
   const area = document.querySelector(".view-area");
-  if (area) area.dataset.view = view;
+  if (area) area.dataset.view = state.view;
 
-  document.querySelectorAll(".view-btn[data-view]").forEach((b) => {
-    const on = b.dataset.view === view;
-    b.classList.toggle("is-active", on);
-    b.setAttribute("aria-pressed", String(on));
-  });
+  updateViewButtons();
+
+  // A new order starts from the first page, so the top of the list is the part
+  // that actually answers "closest" / "soonest".
+  if (orderChanged) {
+    state.showCap = SHOW_PAGE;
+    renderShowList();
+  }
 
   // Leaflet can't measure a display:none container, so a map hidden while the
   // list showed comes back mis-sized — re-measure once it's visible again.
-  if (view === "map" && state.map) state.map.invalidateSize();
+  if (state.view === "map" && state.map) state.map.invalidateSize();
 }
 
-/* Wire the two-position toggle (Show map | Show list). Both buttons stay
- * visible so either view is one click away. */
+/* Reflect the active mode on the three-position selector. */
+function updateViewButtons() {
+  document.querySelectorAll(".view-btn[data-mode]").forEach((b) => {
+    const on = b.dataset.mode === state.viewMode;
+    b.classList.toggle("is-active", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
+}
+
+/* Wire the selector. All three positions stay visible, so any of them is one
+ * click away from any other. */
 function wireViewSwitch() {
-  document.querySelectorAll(".view-btn[data-view]").forEach((btn) => {
+  document.querySelectorAll(".view-btn[data-mode]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (state.view === btn.dataset.view) return;
-      applyView(btn.dataset.view);
+      if (state.viewMode === btn.dataset.mode) return;
+      applyViewMode(btn.dataset.mode);
     });
   });
-  applyView(state.view); // establish the default (map)
+  applyViewMode(state.viewMode); // establish the default (map)
 }
 
 /* ---------- Journey strip ---------- */
