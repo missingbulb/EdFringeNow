@@ -7,27 +7,13 @@ dates" (the planner at `/plan`). Compiled once, refined in place.
 
 ## Key insights
 
-- **3,649 shows across 258 venues in 2026** — two orders of magnitude more than
-  any one visitor can see, which is why a catalogue is the wrong shape for the
-  person deciding now.
-- **37% of audiences struggle to pick a show, and two thirds of ticket buyers buy
-  exactly one ticket** — for most people the Fringe is a single hard decision,
-  not a curated run of shows.
-- **78% come to see something they wouldn't otherwise go and see** — the appetite
-  is discovery, so the answer is not filtering harder but making a good option
-  reachable.
-- **There are two crowds, not one.** A third of the audience lives in Edinburgh
-  and decides by the hour; two thirds travel in and choose dates, beds and a
-  favourites list months ahead.
-- **The advice everyone repeats is "don't fill the day"** — two to three shows,
-  about a third of the time planned (the Fringe CEO's rule of thirds). The gaps a
-  planner leaves are exactly what the live surface exists to fill.
-- **Dates may be chosen against beds, not shows** — over half of would-be
-  attendees reportedly could not find affordable accommodation within a 90-minute
-  commute, a constraint `/plan`'s date scoring ignores.
-- **Nobody has data on how the in-street decision is actually made**, and the
-  product brief's audience segments cover the live crowd only — both remain
-  unvalidated.
+- 3,649 shows across 258 venues in 2026 — and the programme is smaller than 2025.
+- 37% of people struggle to pick a show. Two thirds buy just one ticket.
+- 78% come to see something they would not normally — they want surprise, not better filters.
+- A third of the audience lives in Edinburgh. Two thirds travel in and plan months ahead.
+- The advice everyone gives is: do not fill the day. Two or three shows.
+- Beds may pick the dates, not shows — over half cannot find an affordable room nearby.
+- Nobody has data on how people choose in the street. Not us, not anyone.
 
 ## Scale
 
@@ -224,7 +210,7 @@ segmentation for either crowd remains an open question.
   brief's segments cover crowd A only. Open questions rewritten in both
   directions. Requirements implication (two requirement tracks, not one) left for
   human review — see the audience-divergence page.
-- **2026-07-29** — added the page's `## Key insights` header, distilled from what
-  is already on the page (scale, the decision-difficulty figures, the two crowds,
-  the don't-fill-the-day advice, the accommodation constraint, and the two
-  evidence gaps). Header only: no claim, citation or open question changed.
+- **2026-07-29** — added the page's `## Key insights` header: seven terse lines
+  distilled from what the page already says (scale, the decision-difficulty
+  figures, the two crowds, the accommodation constraint, the evidence gaps).
+  Header only: no claim, citation or open question changed.

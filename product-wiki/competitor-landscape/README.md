@@ -12,25 +12,13 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 
 ## Key insights
 
-- **Live reachability is still unoccupied.** No tool combines location, travel
-  mode/time and next-commitment slack; the official app's "Nearby now" stops at
-  proximity plus starting-soon, and no 2026 description says otherwise.
-- **The official app is a bigger planning competitor than this page first
-  recorded** — My Planner saves shows by date and syncs to the user's calendar,
-  with e-tickets, offline mode, and 200,000+ downloads behind it.
-- **Clash-free, travel-aware scheduling is table stakes, not a moat.** Plan My
-  Fringe has shipped budget, walking speed, per-day caps, minimum gaps and
-  meal/sleep minimums for years, and 2026 added several more itinerary builders.
-- **Two planner-side claims are still unclaimed**: starting from the user's
-  existing edfringe.com favourites, and answering "which dates should I come?" —
-  the decision that precedes any scheduling question.
-- **Availability-aware planning is the one axis we are behind on** — Fringe
-  Finder plans from what is still on sale and claims (unverified) to be an
-  official festival pilot.
-- **A slice of live supply never reaches any app**: the Half Price Hut's same-day
-  tickets are browsable online but purchasable in person only.
-- **Every 2026 entrant here is profiled from published descriptions only** — no
-  tool has been driven end to end, so one hands-on pass could change the read.
+- Nobody does live reachability. "Nearby now" stops at close and starting soon.
+- The official app plans better than we assumed — calendar sync, offline, 200k downloads.
+- Clash-free, travel-aware scheduling is table stakes. Plan My Fringe shipped it years ago.
+- Two claims are still unclaimed: import my favourites, and pick my dates.
+- Fringe Finder plans around what is still on sale. That is the axis we are behind on.
+- Half Price Hut tickets are in person only — live supply no app can see.
+- Nobody here has used any 2026 rival. All of it is compiled from their own marketing.
 
 ## The incumbents
 
@@ -211,8 +199,8 @@ surfaces should not be reasoned about as one product — see
   question rather than closing it. Requirements implication (planner-side
   requirements resting on favourites-intake and date-choice, not on scheduling)
   left for human review.
-- **2026-07-29** — added the page's `## Key insights` header, distilled from what
-  is already on the page (the live-reachability gap, the official app's planning
-  strength, scheduling as table stakes, the two unclaimed planner claims, the
-  availability axis, the in-person supply slice, and the hands-on verification
+- **2026-07-29** — added the page's `## Key insights` header: seven terse lines
+  distilled from what the page already says (the live-reachability gap, the
+  official app's planning strength, scheduling as table stakes, the two
+  unclaimed claims, the availability axis, in-person supply, the verification
   gap). Header only: no claim, citation or open question changed.
