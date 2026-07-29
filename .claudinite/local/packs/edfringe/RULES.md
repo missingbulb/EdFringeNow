@@ -87,3 +87,32 @@ The one thing that does need doing: **add a new top-level source dir to
 Note that `git ls-files` only sees *tracked* files, so a new file silently sits
 outside the syntax sweep until it is committed — the "checked N files" count is
 not evidence your new file was among them.
+
+## `.claudinite/shared/` is generated output — never hand-resolve its conflicts
+
+The vendored canon under `.claudinite/shared/` is tracked but generated, exactly
+like `data/days/` and `data/venues.json` (see the `edfringe-data` pack). So when
+a branch that touched `.claudinite/` is rebased onto a main that has re-vendored,
+the conflicts it throws are almost all in that snapshot, and **hand-merging them
+is the wrong move**: a merged-by-hand `shared/` matches neither side, drifts from
+canon silently, and no check catches it.
+
+Resolve such a rebase in this order:
+
+1. Split the conflicts —
+   `git diff --name-only --diff-filter=U | grep -v '^\.claudinite/shared/'`.
+   Whatever that prints is the only part needing judgment; in practice it is
+   `.claudinite-checks.json` alone.
+2. **Merge the declaration by hand**, taking *both* sides' packs — main's newly
+   declared packs plus the branch's, keeping each entry's `config`/`answers`.
+   Take main's `claudinite.ref` stamp; re-vendoring rewrites it anyway. Rewrite
+   the file with `ensure_ascii=False` if you round-trip it through Python's
+   `json` — the default escapes the em-dashes the answers are full of.
+3. Resolve *everything* under `.claudinite/shared/` to the rebase target's side
+   wholesale (`git checkout --ours`, `git rm` for delete/modify pairs), finish
+   the rebase, then **re-run the vendor tool** so the snapshot is rebuilt from
+   canon rather than patched. Amend the result into the same commit.
+
+Before vendoring, confirm the stamped `claudinite.ref` is an ancestor of the
+canon checkout's HEAD (`git merge-base --is-ancestor`) — vendoring from an older
+canon silently rewinds the whole tree.
