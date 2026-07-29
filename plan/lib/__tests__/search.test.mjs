@@ -73,6 +73,47 @@ test("genre and subgenre filter exactly", () => {
   assert.deepEqual(filterShows([comedy, theatre], { genre: "Comedy", subgenre: "Devised" }), []);
 });
 
+test("a label facet takes several values, OR'd; facets are still AND'd", () => {
+  const comedy = show({ slug: "c", genre: "Comedy", subgenres: ["Stand-up"] });
+  const theatre = show({ slug: "t", genre: "Theatre", subgenres: ["Devised"] });
+  const music = show({ slug: "m", genre: "Music", subgenres: ["Folk", "Stand-up"] });
+  assert.deepEqual(filterShows([comedy, theatre, music], { genre: ["Comedy", "Music"] }), [
+    comedy,
+    music,
+  ]);
+  // Any one of the chosen subgenres is enough.
+  assert.deepEqual(filterShows([comedy, theatre, music], { subgenre: ["Devised", "Folk"] }), [
+    theatre,
+    music,
+  ]);
+  // Different facets still narrow each other.
+  assert.deepEqual(
+    filterShows([comedy, theatre, music], { genre: ["Comedy", "Music"], subgenre: ["Stand-up"] }),
+    [comedy, music]
+  );
+  assert.deepEqual(
+    filterShows([comedy, theatre, music], { genre: ["Theatre"], subgenre: ["Stand-up"] }),
+    []
+  );
+  assert.deepEqual(
+    filterShows(
+      [show({ slug: "a", accessibility: ["CAPTIONED"] }), show({ slug: "b", accessibility: ["SIGNED"] })],
+      { accessibility: ["SIGNED", "AUDIO_DESCRIPTION"] }
+    ).map((s) => s.slug),
+    ["b"]
+  );
+});
+
+test("an empty value list means the facet isn't set", () => {
+  const comedy = show({ slug: "c", genre: "Comedy" });
+  const theatre = show({ slug: "t", genre: "Theatre" });
+  assert.equal(hasActiveFilters({ genre: [], subgenre: [], accessibility: [] }), false);
+  assert.deepEqual(filterShows([comedy, theatre], { genre: [], subgenre: [] }), [comedy, theatre]);
+  assert.equal(hasActiveFilters({ genre: ["Comedy"] }), true);
+  // …and an unset facet doesn't open the search on its own.
+  assert.deepEqual(searchShows([comedy, theatre], "", { genre: [] }), { results: [], total: 0 });
+});
+
 test("maxAge keeps shows admitting that age: limit <= maxAge, unknown excluded", () => {
   const u = show({ slug: "u", ageRestriction: "ZERO" });
   const eight = show({ slug: "8", ageRestriction: "EIGHT" });

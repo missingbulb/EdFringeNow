@@ -130,35 +130,88 @@
                  subgenre / accessibility are filled from the loaded catalogue;
                  accessibility and the price caps disable themselves while the
                  data behind them hasn't landed (see initSearchUI). -->
+            <!-- Each facet is a chip that drops a panel of options, matching the
+                 Now page's filter chips: a grey per-option show count, and an
+                 "everything!" link beside the question that clears the facet.
+                 The option rows themselves are built in JS (buildFacetPanel)
+                 from the loaded catalogue. -->
             <div class="ss-tools" id="ssTools" hidden>
-              <select class="opt-select ss-filter" id="ssfGenre" aria-label="Filter by genre">
-                <option value="">Any genre</option>
-              </select>
-              <select class="opt-select ss-filter" id="ssfSubgenre" aria-label="Filter by subgenre">
-                <option value="">Any subgenre</option>
-              </select>
-              <select class="opt-select ss-filter" id="ssfAccess" aria-label="Filter by accessibility option">
-                <option value="">Any accessibility</option>
-              </select>
-              <select class="opt-select ss-filter" id="ssfAge" aria-label="Filter by age limit"
-                      title="Shows with this age limit or lower">
-                <option value="">Any age limit</option>
-                <option value="0">0+ only</option>
-                <option value="3">Up to 3+</option>
-                <option value="5">Up to 5+</option>
-                <option value="8">Up to 8+</option>
-                <option value="12">Up to 12+</option>
-                <option value="14">Up to 14+</option>
-                <option value="16">Up to 16+</option>
-              </select>
-              <select class="opt-select ss-filter" id="ssfPrice" aria-label="Filter by price">
-                <option value="">Any price</option>
-                <option value="free">Free</option>
-                <option value="10">Up to £10</option>
-                <option value="15">Up to £15</option>
-                <option value="20">Up to £20</option>
-                <option value="30">Up to £30</option>
-              </select>
+              <article class="filter-chip" data-facet="genre">
+                <button type="button" class="chip-trigger" data-panel="ssfGenrePanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-value" id="ssfGenreValue">Any genre</span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfGenrePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span>Which genres?</span>
+                    <button type="button" class="panel-everything" data-clear="genre">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfGenreOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="subgenre">
+                <button type="button" class="chip-trigger" data-panel="ssfSubgenrePanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-value" id="ssfSubgenreValue">Any subgenre</span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfSubgenrePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span>Which subgenres?</span>
+                    <button type="button" class="panel-everything" data-clear="subgenre">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfSubgenreOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="accessibility">
+                <button type="button" class="chip-trigger" data-panel="ssfAccessPanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-value" id="ssfAccessValue">Any accessibility</span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfAccessPanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span>Which access needs?</span>
+                    <button type="button" class="panel-everything" data-clear="accessibility">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfAccessOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="age">
+                <button type="button" class="chip-trigger" data-panel="ssfAgePanel"
+                        aria-expanded="false" aria-haspopup="true" title="Shows with this age limit or lower">
+                  <span class="chip-value" id="ssfAgeValue">Any age limit</span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel chip-panel--mini" id="ssfAgePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span>Age limit</span>
+                    <button type="button" class="panel-everything" data-clear="age">everything!</button>
+                  </p>
+                  <div class="panel-options" id="ssfAgeOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="price">
+                <button type="button" class="chip-trigger" data-panel="ssfPricePanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-money" aria-hidden="true">£</span>
+                  <span class="chip-value" id="ssfPriceValue">Any price</span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel chip-panel--mini" id="ssfPricePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span>Ticket price</span>
+                    <button type="button" class="panel-everything" data-clear="price">everything!</button>
+                  </p>
+                  <div class="panel-options" id="ssfPriceOptions"></div>
+                </div>
+              </article>
+
               <button type="button" class="ss-reset" id="ssReset" hidden>&times; Clear filters</button>
             </div>
             <div class="ss-bar">

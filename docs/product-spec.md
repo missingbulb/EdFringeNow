@@ -68,7 +68,7 @@ in rough priority order:
 | Input | Why we need it | Notes for design |
 |---|---|---|
 | **Location** | The origin for every reachability calculation. | Ask for device location, but degrade gracefully to "central Edinburgh" if denied. Let users move/set it manually — a visitor might be planning their *next* stop, not where they're standing. |
-| **Taste / genre** | Narrow ~3,800 shows to what they'd enjoy. | Ten festival categories (Comedy, Theatre, Music, Cabaret & Variety, Dance/Physical Theatre & Circus, Musicals & Opera, Spoken Word, Children's Shows, Exhibitions, Events). Multi-select. Consider richer notions of taste than category alone. |
+| **Taste / genre** | Narrow ~3,800 shows to what they'd enjoy. | Ten festival categories (Comedy, Theatre, Music, Cabaret & Variety, Dance/Physical Theatre & Circus, Musicals & Opera, Spoken Word, Children's Shows, Exhibitions, Events), plus the festival's ~100 finer **subgenres** (Stand-up, Improv, Clown, …) as a second, independent multi-select. Each option carries a live count of what it would give you. Consider richer notions of taste still. |
 | **Budget** | Some users only want free shows. | Today this is just free vs. all. Price *amounts* aren't available in the data — design around that limitation honestly. |
 | **Travel mode + tolerance** | Defines the reachable radius and arrival times. | Walking, bike, bus, taxi/car — each changes how far "10 minutes" reaches. A time budget (e.g. up to 5–60 min) matters more than distance. |
 | **Next commitment** *(optional but powerful)* | Turns discovery into a fittable plan: "what can I squeeze in before X?" | A time + a place (which can itself be another show, or a free-text destination like a restaurant or a train). This unlocks the app's best trick — see §5. |
@@ -179,8 +179,8 @@ You are not bound by the current map-plus-cards layout. Worth exploring:
 
 - Is a map even the best primary surface, or should "what can I catch" lead and
   the map play a supporting role?
-- How might **taste** go beyond ten coarse genres — mood, energy, "surprise me,"
-  social proof?
+- How might **taste** go beyond genre and subgenre — mood, energy, "surprise
+  me," social proof?
 - Could the next-commitment planner extend to **three or more hops** — a whole
   improvised festival evening?
 - How do we convey **slack and risk** at a glance, without numbers feeling cold?

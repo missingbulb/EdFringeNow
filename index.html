@@ -145,6 +145,17 @@
         </div>
       </article>
 
+      <!-- Your last visit's plan, when it has since gone stale (the commitment
+           time or the show you'd picked is now in the past). We don't reinstate
+           a plan that has already happened, but we don't throw it away either —
+           this offers it back on one tap. Populated + shown by JS. -->
+      <div class="restore-bar" id="restoreBar" role="status" hidden>
+        <span class="restore-ico" aria-hidden="true">↩</span>
+        <span class="restore-text" id="restoreText"></span>
+        <button type="button" class="restore-btn" id="restoreBtn">Restore</button>
+        <button type="button" class="restore-x" id="restoreDismiss" aria-label="Forget my previous plan" title="Forget it">&times;</button>
+      </div>
+
       <!-- ===================== The plan (vertical; appears once set) ===================== -->
       <!-- The "Open in Maps" link is rendered inside the plan header (mild, on -->
       <!-- the right of "Your plan") — see renderJourneyStrip. -->
@@ -168,15 +179,48 @@
             <span class="fc-caret" aria-hidden="true">▾</span>
           </button>
           <div class="card-panel" id="genrePanel" role="menu" hidden>
-            <p class="panel-field-label">Ticket price</p>
+            <!-- The heading carries its own "everything!" escape hatch on the
+                 right: clearing a filter belongs with the question it answers,
+                 not as a button parked at the foot of the list. -->
+            <p class="panel-title panel-title--row">
+              <span>Which genres?</span>
+              <button type="button" class="panel-everything" id="filterReset">everything!</button>
+            </p>
+            <div class="panel-options panel-options--scroll" id="genreOptions"><!-- populated by JS --></div>
+          </div>
+        </article>
+
+        <article class="filter-chip card card--subgenre" data-card="subgenre">
+          <button class="card-trigger" data-panel="subgenrePanel" aria-expanded="false" aria-haspopup="true">
+            <span class="fc-ico" aria-hidden="true">🏷️</span>
+            <span class="card-value" data-value="subgenre">All subgenres</span>
+            <span class="fc-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="card-panel" id="subgenrePanel" role="menu" hidden>
+            <p class="panel-title panel-title--row">
+              <span>Which subgenres?</span>
+              <button type="button" class="panel-everything" id="subgenreReset">everything!</button>
+            </p>
+            <div class="panel-options panel-options--scroll" id="subgenreOptions"><!-- populated by JS --></div>
+          </div>
+        </article>
+
+        <!-- Ticket price is one narrow "$" button of its own: it's a different
+             question from taste, so it no longer rides inside the genre panel. -->
+        <article class="filter-chip filter-chip--mini card card--price" data-card="price">
+          <button class="card-trigger" data-panel="pricePanel" aria-expanded="false" aria-haspopup="true"
+                  title="Ticket price" aria-label="Ticket price">
+            <span class="fc-money" aria-hidden="true">$</span>
+            <span class="card-value card-value--price" data-value="price" hidden></span>
+            <span class="fc-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="card-panel card-panel--mini" id="pricePanel" role="menu" hidden>
+            <p class="panel-title">Ticket price</p>
             <div class="segmented" id="priceOptions" role="group" aria-label="Ticket price">
               <button type="button" class="seg-btn" data-price="both">Both</button>
               <button type="button" class="seg-btn" data-price="free">Free</button>
               <button type="button" class="seg-btn" data-price="paid">Paid</button>
             </div>
-            <p class="panel-title panel-title--spaced">Which genres?</p>
-            <div class="panel-options" id="genreOptions"><!-- populated by JS --></div>
-            <button type="button" class="panel-reset" id="filterReset">Show me everything!</button>
           </div>
         </article>
 
