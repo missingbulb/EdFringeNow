@@ -5,6 +5,16 @@ for. Two decisions live here, not one: the in-the-moment "what can I make right
 now" (the home site, *Fringe Discover*) and the weeks-earlier "which shows, which
 dates" (the planner at `/plan`). Compiled once, refined in place.
 
+## Key insights
+
+- 3,649 shows across 258 venues in 2026 — and the programme is smaller than 2025.
+- 37% of people struggle to pick a show. Two thirds buy just one ticket.
+- 78% come to see something they would not normally — they want surprise, not better filters.
+- A third of the audience lives in Edinburgh. Two thirds travel in and plan months ahead.
+- The advice everyone gives is: do not fill the day. Two or three shows.
+- Beds may pick the dates, not shows — over half cannot find an affordable room nearby.
+- Nobody has data on how people choose in the street. Not us, not anyone.
+
 ## Scale
 
 ### 2026 festival (running 7–31 August 2026)
@@ -200,3 +210,7 @@ segmentation for either crowd remains an open question.
   brief's segments cover crowd A only. Open questions rewritten in both
   directions. Requirements implication (two requirement tracks, not one) left for
   human review — see the audience-divergence page.
+- **2026-07-29** — added the page's `## Key insights` header: seven terse lines
+  distilled from what the page already says (scale, the decision-difficulty
+  figures, the two crowds, the accommodation constraint, the evidence gaps).
+  Header only: no claim, citation or open question changed.

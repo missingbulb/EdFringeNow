@@ -11,6 +11,16 @@ It is research, not requirements: nothing here is a decision. The requirements
 implication (two tracks rather than one) is for a human to promote into
 `product-wiki/product-requirements/`.
 
+## Key insights
+
+- The two surfaces do not reduce to one set of requirements. That is the finding.
+- The planner packs the day; the evidence says a good day is half empty.
+- One sold-out flag: a fact for the live surface, a decaying guess for the planner.
+- Live asks the user for nothing. The planner needs a CSV from a third-party extension.
+- "When should I come?" has no live version — and no competitor answers it.
+- What they truly share is small: the catalogue, the travel model, the promise.
+- The plan-to-live handover is the one shared feature worth building. It does not exist.
+
 ## The two crowds in a line each
 
 - **Live, in-festival.** On the ground in Edinburgh during 7–31 August, deciding
@@ -152,3 +162,7 @@ Small, and worth keeping small deliberately:
   seven concrete requirement conflicts, and the shared spine, from the audience
   evidence gathered on the market-and-audience page plus the repo's two surfaces.
   Sources cited.
+- **2026-07-29** — added the page's `## Key insights` header: seven terse lines
+  distilled from what the page already says (the non-reducibility finding, the
+  sharpest conflicts, the small shared spine, the handover). Header only: no
+  claim, citation or open question changed.

@@ -10,6 +10,16 @@ The field is not one field. The live/in-the-moment side has essentially one
 incumbent; the planning side is crowded, and got noticeably more crowded for
 2026.
 
+## Key insights
+
+- Nobody does live reachability. "Nearby now" stops at close and starting soon.
+- The official app plans better than we assumed — calendar sync, offline, 200k downloads.
+- Clash-free, travel-aware scheduling is table stakes. Plan My Fringe shipped it years ago.
+- Two claims are still unclaimed: import my favourites, and pick my dates.
+- Fringe Finder plans around what is still on sale. That is the axis we are behind on.
+- Half Price Hut tickets are in person only — live supply no app can see.
+- Nobody here has used any 2026 rival. All of it is compiled from their own marketing.
+
 ## The incumbents
 
 ### Official Edinburgh Fringe app
@@ -189,3 +199,8 @@ surfaces should not be reasoned about as one product — see
   question rather than closing it. Requirements implication (planner-side
   requirements resting on favourites-intake and date-choice, not on scheduling)
   left for human review.
+- **2026-07-29** — added the page's `## Key insights` header: seven terse lines
+  distilled from what the page already says (the live-reachability gap, the
+  official app's planning strength, scheduling as table stakes, the two
+  unclaimed claims, the availability axis, in-person supply, the verification
+  gap). Header only: no claim, citation or open question changed.
