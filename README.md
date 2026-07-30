@@ -1,4 +1,6 @@
 # EdFringeNow
+
+<!-- claudinite:packs -->![basics](.claudinite/shared/packs/basics/badge.svg "basics") ![barriers](.claudinite/shared/packs/barriers/badge.svg "barriers") ![git-github](.claudinite/shared/packs/git-github/badge.svg "git-github") ![github-actions](.claudinite/shared/packs/github-actions/badge.svg "github-actions") ![html](.claudinite/shared/packs/html/badge.svg "html") ![tidy-repo](.claudinite/shared/packs/tidy-repo/badge.svg "tidy-repo") ![grow_with_claudinite](.claudinite/shared/packs/grow_with_claudinite/badge.svg "grow_with_claudinite") ![executable-requirements](.claudinite/shared/packs/executable-requirements/badge.svg "executable-requirements") ![spec-driven-product](.claudinite/shared/packs/spec-driven-product/badge.svg "spec-driven-product") ![product-wiki](.claudinite/shared/packs/product-wiki/badge.svg "product-wiki")<!-- /claudinite:packs -->
 Website to help find a fringe show — **Fringe Discover**.
 
 🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/

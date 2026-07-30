@@ -8,8 +8,13 @@ import lookupIndices from './lookup-indices.mjs';
 // Declaration-authoritative like every local pack (no fingerprint).
 export default {
   id: 'edfringe-data',
+  ruleRoutingGuidance: {
+    belongs: 'the edfringe.com scrape and the committed data layer it produces — external-API and wire-format knowledge',
+    excludes: 'UI work and general repo working rules — those are edfringe',
+  },
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  rules: [lookupIndices],
+  worldRules: [lookupIndices],
+  skills: ['probe-edfringe-api'],
 };
