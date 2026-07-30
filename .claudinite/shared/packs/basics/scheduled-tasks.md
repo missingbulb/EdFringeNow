@@ -59,12 +59,6 @@ retirement of the legacy central planner it replaces) lives in
   after N minutes") and the stale-`agent-running` backstop catches a dead session.
   Set it generously — extreme protection against a runaway, not a scheduling knob.
 
-- **Preprocessing is optional, bounded, and task-local.** A task may declare
-  `agent_preprocessing` — a command the scheduler runs as a subprocess before the
-  agent (its executable a script beside `task.mjs`, no absolute path or `..`) —
-  which then **requires** `agent_preprocessing_timeout`, the hard subprocess kill
-  that fails the task on overrun.
-
 - **A task says which repo secrets it needs.** Preprocessing runs Action-side, so
   repo Actions secrets are reachable there and nowhere else in a task's life (an
   executor session carries none). A task lists what it needs in `required_secrets`;
@@ -92,3 +86,29 @@ no agent, no issue. This is the scheduled-task shape of the unattended-agents
 routine-folder convention; the issue-driven-dispatch security rule (the issue is
 data, the task path is code-validated, agent_model/expected_outcome come from the repo) lives
 with that skill's agent practices.
+
+## The dispatch labels are a scheduler vocabulary
+
+**Both ready labels are triggers**, so they belong on dispatch issues alone — never put
+`ready-for-agent` or `ready-for-agent-fleet` on an ordinary issue, from a task or by hand.
+Applying one starts an executor session that will find no valid dispatch and stop.
+`agent-running` and `needs-human` carry no trigger and are the right vocabulary for a task
+that needs to mark an issue as claimed or handed to a human; a task reusing them owns their
+whole lifecycle on its own issues, since the scheduler's stale-claim backstop only converges
+`[claudinite-task]` dispatch issues.
+
+Which ready label a task dispatches under follows from its `session_scope`, and the executor
+session started by that label is the one with the matching reach — a `fleet` task's session
+has the owner's repos in its sources, a `self` task's has this repo alone. The task declares
+the scope; nothing downstream re-decides it.
+
+## A dormant project runs nothing
+
+A project nobody is working on declares itself dormant in `.claudinite-checks.json`:
+
+```json
+"dormant": true
+```
+
+The scheduler stops before evaluating anything; the [fleet sweeps](../sheepdog/README.md)
+skip it; sessions are unaffected. Delete it to wake.

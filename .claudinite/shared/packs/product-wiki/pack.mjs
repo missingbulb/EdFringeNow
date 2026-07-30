@@ -7,6 +7,7 @@
 import { SINK_README } from './lib.mjs';
 import layout from './layout.mjs';
 import pageSections from './page-sections.mjs';
+import keyInsights from './key-insights.mjs';
 import growthLog from './growth-log.mjs';
 import sources from './sources.mjs';
 import freshness from './freshness.mjs';
@@ -14,6 +15,11 @@ import isolation from './isolation.mjs';
 
 export default {
   id: 'product-wiki',
+  ruleRoutingGuidance: {
+    belongs: 'agent-maintained market, user and competitor research wikis — cited pages, growth logs, the reviewed product-requirements sink',
+    excludes: 'how the product is built or specced — that is spec-driven-product; requirement proofs are executable-requirements',
+  },
+  badge: 'badge.svg',
   marker: SINK_README,
   detect: (ctx) => ctx.tracked.includes(SINK_README),
   prose: 'RULES.md',
@@ -44,7 +50,7 @@ export default {
       distill: 'recorded as intent; names the competitor set the initial competitor-landscape wiki is seeded from',
     },
   ],
-  rules: [layout, pageSections, growthLog, sources, freshness],
+  worldRules: [layout, pageSections, keyInsights, growthLog, sources, freshness],
   // The pack's scheduled task — wiki-growth, the weekly research pass — lives in
   // this pack's `tasks/wiki-growth/`, discovered by the scheduler's filesystem
   // scan (engine/scheduler/discover.mjs), not declared here.
