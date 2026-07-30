@@ -19,9 +19,12 @@ skill. Never "verify" a scraper change by reasoning about what the API probably
 returns — either run it on a runner, or say plainly that it is unverified.
 
 `python3 scraper/normalize.py --selftest` is the one transform check that runs
-offline (it is a step in `scripts/verify.sh`); it exercises
-raw→master→day-file→`shows.min.json` on a fixture, so a normalizer change is
-verifiable here even though a fetch change is not.
+offline; it exercises raw→master→day-file→`shows.min.json` on a fixture, so a
+normalizer change is verifiable here even though a fetch change is not. Because
+it is the only offline verification a scraper change can get, it must stay wired
+into `scripts/verify.sh` — the `edfringe-normalizer-selftest-in-verify` check
+enforces that (a step *label* naming the self-test does not count; only a command
+line does).
 
 ## `ticketStatus`, never the `soldOut` boolean
 

@@ -14,9 +14,28 @@ import path from "node:path";
 
 import pack from "./pack.mjs";
 import rule from "./lookup-indices.mjs";
+import selftestRule from "./normalizer-selftest-in-verify.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
+
+/** A context over an in-memory {path: string} map, for the text-reading checks. */
+function textCtx(tree) {
+  const files = Object.keys(tree);
+  return { files, read: (p) => (p in tree ? tree[p] : null) };
+}
+
+/** A context over real files on disk, for the live-gate tests. */
+function diskCtx(paths) {
+  const present = paths.filter((f) => existsSync(path.join(REPO, f)));
+  return {
+    present,
+    ctx: {
+      files: present,
+      read: (p) => (present.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
+    },
+  };
+}
 
 const LOOKUPS = {
   venues: { "33": { name: "Pleasance Courtyard" } },
@@ -127,11 +146,95 @@ test("this repo's committed data satisfies the invariant", () => {
     out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
 });
 
-test("the pack manifest declares the check and stays hand-declared", () => {
+// --- normalizer-selftest-in-verify: the one offline transform check must stay
+// wired into scripts/verify.sh ---
+
+const NORMALIZER_PY = `import sys\nif "--selftest" in sys.argv:\n    run_selftest()\n`;
+
+const verifyWithSelftest = `#!/usr/bin/env bash
+set -euo pipefail
+
+step "Normalizer self-test — normalize.py --selftest"
+if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/normalize.py --selftest
+fi
+`;
+
+// The label survives; the invocation is gone. A grep for the two tokens passes
+// here — which is precisely why the check strips `step "..."` before looking.
+const verifyLabelOnly = `#!/usr/bin/env bash
+set -euo pipefail
+
+step "Normalizer self-test — normalize.py --selftest"
+echo "skipped"
+`;
+
+test("verify.sh invoking the self-test ⇒ no findings", () => {
+  const out = selftestRule.run(textCtx({
+    "scraper/normalize.py": NORMALIZER_PY,
+    "scripts/verify.sh": verifyWithSelftest,
+  }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a verify.sh left with only the step label is reported", () => {
+  // The exact regression this guards: the step is gutted, the heading stays, and
+  // the only offline verification a scraper change can get silently disappears.
+  const out = selftestRule.run(textCtx({
+    "scraper/normalize.py": NORMALIZER_PY,
+    "scripts/verify.sh": verifyLabelOnly,
+  }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-normalizer-selftest-in-verify");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, "scripts/verify.sh");
+  assert.match(out[0].what, /never invokes it/);
+  assert.ok(out[0].fix.includes("--selftest"), "the fix must name the command to restore");
+});
+
+test("a commented-out invocation does not count as wired", () => {
+  const out = selftestRule.run(textCtx({
+    "scraper/normalize.py": NORMALIZER_PY,
+    "scripts/verify.sh": `#!/usr/bin/env bash\n# python3 scraper/normalize.py --selftest\necho hi\n`,
+  }));
+  assert.equal(out.length, 1);
+});
+
+test("a trailing comment naming the command does not count as wired", () => {
+  const out = selftestRule.run(textCtx({
+    "scraper/normalize.py": NORMALIZER_PY,
+    "scripts/verify.sh": `#!/usr/bin/env bash\nnode --check js/app.js  # unlike normalize.py --selftest, this is syntax only\n`,
+  }));
+  assert.equal(out.length, 1);
+});
+
+test("a normalizer with no --selftest to run ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(selftestRule.run(textCtx({
+    "scraper/normalize.py": "def main():\n    pass\n",
+    "scripts/verify.sh": verifyLabelOnly,
+  })), []);
+});
+
+test("no normalizer or no verify.sh in the tree ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(selftestRule.run(textCtx({ "scripts/verify.sh": verifyLabelOnly })), []);
+  assert.deepEqual(selftestRule.run(textCtx({ "scraper/normalize.py": NORMALIZER_PY })), []);
+});
+
+test("this repo's verify.sh still runs the normalizer self-test", () => {
+  // The live gate: the real script and the real normalizer, read off disk.
+  const { present, ctx } = diskCtx(["scraper/normalize.py", "scripts/verify.sh"]);
+  assert.equal(present.length, 2, "expected both files to be present");
+  const out = selftestRule.run(ctx);
+  assert.deepEqual(out, [], `the offline transform check has fallen out of the gate:\n${
+    out.map((f) => f.what).join("\n")}`);
+});
+
+test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe-data");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");
   assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(selftestRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });
