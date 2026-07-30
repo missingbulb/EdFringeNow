@@ -13,14 +13,14 @@ cd "$(git rev-parse --show-toplevel)"
 step() { printf '\n\033[1m▶ %s\033[0m\n' "$1"; }
 
 step "Unit tests — node --test"
-# The shared/ helpers both front-ends import, the planner's own tests, plus the
-# local packs' — one glob for each pack's own
+# The shared/ helpers both front-ends import, the Now page's own js/ tests, the
+# planner's own tests, plus the local packs' — one glob for each pack's own
 # pack.test.mjs (its checks' red-first fixtures), one for the shared task
 # declaration test, one for the per-task tests beside each task. Those tests import
 # every pack manifest and task declaration, so they are also what parse-checks that
 # tree (the syntax sweep below deliberately stays off the .claudinite mount).
 # Keep in step with the "test" script in package.json.
-node --test shared/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe/tasks/*.test.mjs .claudinite/local/packs/edfringe/tasks/*/*.test.mjs
+node --test shared/__tests__/*.test.mjs js/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe/tasks/*.test.mjs .claudinite/local/packs/edfringe/tasks/*/*.test.mjs
 
 step "JavaScript syntax — node --check"
 # Only our own tracked source: the js/ app, the plan/ planner, the shared/
