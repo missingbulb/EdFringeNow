@@ -41,11 +41,10 @@
 
   <main class="container">
 
-    <!-- Marketing intro — only useful on the empty/upload state. Once a plan is
-         loaded it's hidden (see showCalendar) so the grid becomes the hero and
-         the top stops being wordy; the favourites line + hero counts on screen 2
-         carry the context instead. -->
-    <div class="page-head" id="pageHead">
+    <!-- The title stays put in both states. Everything that used to appear and
+         vanish around it (intro copy, a grid heading, provenance lines) is gone:
+         adding the first show must not shunt the page around. -->
+    <div class="page-head">
       <h1 class="page-title">Plan your Fringe!</h1>
     </div>
 
@@ -70,41 +69,45 @@
       <button type="button" class="btn" id="retryBtn">Try again</button>
     </div>
 
-    <!-- ===================== Intake (no favourites yet) ===================== -->
-    <!-- The page has one state switch: this intake panel shows until a
-         favourites set is in, then the calendar replaces it (replace/clear
-         live as quiet actions on the calendar's favourites line). -->
-    <section class="panel intake" id="screen1" aria-labelledby="intakeTitle">
-      <h2 class="intake-title" id="intakeTitle">Bring your favourites</h2>
-      <p class="intake-sub">
-        Mark favourites on <a class="link-quiet" href="https://www.edfringe.com/" target="_blank" rel="noopener">EdFringe.com</a>,
-        go to your <a class="link-quiet" href="https://www.edfringe.com/tickets/my-account/favourites" target="_blank" rel="noopener">favourites page</a>,
-        and click &ldquo;Export to CSV&rdquo; — then drop the file here.
-        Or skip the file and build your list show by show, with the search below.
-      </p>
+    <!-- ===================== The board ===================== -->
+    <!-- One card with one state switch, and the switch only swaps the card's
+         *body*: the drop stage becomes the availability grid at exactly the same
+         height. The count line above it and the search bar below it are the same
+         nodes in the same place in both states, so the first show you add can't
+         shunt the page. -->
+    <section class="panel board" id="board" aria-labelledby="boardCount">
 
-      <!-- The drop box sits centred on a faint "empty lanes" backdrop, so this
-           waiting state reads as the same calendar grid the favourites will
-           fill — just empty for now. -->
-      <div class="intake-stage">
+      <!-- The whole top area: one line of counts, and the only way back to an
+           empty board. Deliberately the same in both states. -->
+      <div class="board-head">
+        <p class="board-count" id="boardCount" role="status" aria-live="polite">No shows planned, no shows selected</p>
+        <button type="button" class="board-clear" id="clearFavBtn" hidden>&times; Clear</button>
+      </div>
+
+      <!-- Empty state: the drop box centred on a faint "empty lanes" backdrop,
+           so waiting reads as the same grid the favourites will fill. -->
+      <div class="board-body intake-stage" id="intakeStage">
         <label class="dropzone" for="csvInput" id="dropzone">
           <span class="dz-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 15V4" /><path d="m7 9 5-5 5 5" /><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
             </svg>
           </span>
-          <span class="dz-line1">Drag your favourites CSV here</span>
-          <span class="dz-line2">…or pick the file from your computer</span>
+          <span class="dz-line1">Drag EdFringe favourites file here</span>
           <span class="btn">Upload favourites</span>
-          <input type="file" id="csvInput" accept=".csv,.txt" hidden />
+          <!-- CSV only: the edfringe.com export is a CSV, and anything else
+               dropped here used to be "parsed" into nonsense slugs. -->
+          <input type="file" id="csvInput" accept=".csv" hidden />
         </label>
-        <p class="dz-privacy">Nothing is uploaded to a server — your list stays in this browser.</p>
 
-        <!-- Shown only when an upload yields nothing usable (the calendar takes
-             over as soon as at least one favourite matches). -->
-        <div class="upload-summary" role="status" id="uploadSummary" hidden>
-          <span class="us-tick" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7" /></svg>
+        <!-- Upload feedback. A file that yields shows switches the board to the
+             grid, so whatever appears here is a problem — the wrong kind of
+             file, or favourites that aren't in this year's programme. -->
+        <div class="upload-summary" role="alert" id="uploadSummary" hidden>
+          <span class="us-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" /><path d="M12 7.5v5" /><path d="M12 16.2v.01" />
+            </svg>
           </span>
           <div class="us-body">
             <div class="us-main" id="usMain"></div>
@@ -112,194 +115,11 @@
           </div>
           <span class="us-file" id="usFile"></span>
         </div>
-
-        <!-- The second way in: the same search bar that lives at the bottom of
-             the grid once it has shows. It sits at the bottom of this empty
-             "waiting grid" too — the identical component in the identical spot,
-             so starting from scratch and topping up a full grid feel like one
-             feature. plan.js moves the #showSearch node between the two
-             slots (here and #ssSlotCal) on the state switch. -->
-        <div class="intake-or" aria-hidden="true"><span>or</span></div>
-        <p class="intake-search-lead">
-          No favourites list? Start your grid right here — search the programme
-          and <span class="ss-star-hint">☆</span> the shows you fancy.
-        </p>
-        <div class="ss-slot" id="ssSlotIntake">
-          <div class="show-search" id="showSearch">
-            <!-- "Search tools": a line of facet filters, folded above the box
-                 until the button on the bar expands it. Options for genre /
-                 subgenre / accessibility are filled from the loaded catalogue;
-                 accessibility and the price caps disable themselves while the
-                 data behind them hasn't landed (see initSearchUI). -->
-            <!-- Each facet is a chip that drops a panel of options, matching the
-                 Now page's filter chips: a grey per-option show count, and an
-                 "everything!" link beside the question that clears the facet.
-                 The option rows themselves are built in JS (buildFacetPanel)
-                 from the loaded catalogue. -->
-            <div class="ss-tools" id="ssTools" hidden>
-              <article class="filter-chip" data-facet="genre">
-                <button type="button" class="chip-trigger" data-panel="ssfGenrePanel"
-                        aria-expanded="false" aria-haspopup="true">
-                  <span class="chip-value" id="ssfGenreValue">Any genre</span>
-                  <span class="chip-caret" aria-hidden="true">▾</span>
-                </button>
-                <div class="chip-panel" id="ssfGenrePanel" role="menu" hidden>
-                  <p class="panel-title panel-title--row">
-                    <span>Which genres?</span>
-                    <button type="button" class="panel-everything" data-clear="genre">everything!</button>
-                  </p>
-                  <div class="panel-options panel-options--scroll" id="ssfGenreOptions"></div>
-                </div>
-              </article>
-
-              <article class="filter-chip" data-facet="subgenre">
-                <button type="button" class="chip-trigger" data-panel="ssfSubgenrePanel"
-                        aria-expanded="false" aria-haspopup="true">
-                  <span class="chip-value" id="ssfSubgenreValue">Any subgenre</span>
-                  <span class="chip-caret" aria-hidden="true">▾</span>
-                </button>
-                <div class="chip-panel" id="ssfSubgenrePanel" role="menu" hidden>
-                  <p class="panel-title panel-title--row">
-                    <span>Which subgenres?</span>
-                    <button type="button" class="panel-everything" data-clear="subgenre">everything!</button>
-                  </p>
-                  <div class="panel-options panel-options--scroll" id="ssfSubgenreOptions"></div>
-                </div>
-              </article>
-
-              <article class="filter-chip" data-facet="accessibility">
-                <button type="button" class="chip-trigger" data-panel="ssfAccessPanel"
-                        aria-expanded="false" aria-haspopup="true">
-                  <span class="chip-value" id="ssfAccessValue">Any accessibility</span>
-                  <span class="chip-caret" aria-hidden="true">▾</span>
-                </button>
-                <div class="chip-panel" id="ssfAccessPanel" role="menu" hidden>
-                  <p class="panel-title panel-title--row">
-                    <span>Which access needs?</span>
-                    <button type="button" class="panel-everything" data-clear="accessibility">everything!</button>
-                  </p>
-                  <div class="panel-options panel-options--scroll" id="ssfAccessOptions"></div>
-                </div>
-              </article>
-
-              <article class="filter-chip" data-facet="age">
-                <button type="button" class="chip-trigger" data-panel="ssfAgePanel"
-                        aria-expanded="false" aria-haspopup="true" title="Shows with this age limit or lower">
-                  <span class="chip-value" id="ssfAgeValue">Any age limit</span>
-                  <span class="chip-caret" aria-hidden="true">▾</span>
-                </button>
-                <div class="chip-panel chip-panel--mini" id="ssfAgePanel" role="menu" hidden>
-                  <p class="panel-title panel-title--row">
-                    <span>Age limit</span>
-                    <button type="button" class="panel-everything" data-clear="age">everything!</button>
-                  </p>
-                  <div class="panel-options" id="ssfAgeOptions"></div>
-                </div>
-              </article>
-
-              <article class="filter-chip" data-facet="price">
-                <button type="button" class="chip-trigger" data-panel="ssfPricePanel"
-                        aria-expanded="false" aria-haspopup="true">
-                  <span class="chip-money" aria-hidden="true">£</span>
-                  <span class="chip-value" id="ssfPriceValue">Any price</span>
-                  <span class="chip-caret" aria-hidden="true">▾</span>
-                </button>
-                <div class="chip-panel chip-panel--mini" id="ssfPricePanel" role="menu" hidden>
-                  <p class="panel-title panel-title--row">
-                    <span>Ticket price</span>
-                    <button type="button" class="panel-everything" data-clear="price">everything!</button>
-                  </p>
-                  <div class="panel-options" id="ssfPriceOptions"></div>
-                </div>
-              </article>
-
-              <button type="button" class="ss-reset" id="ssReset" hidden>&times; Clear filters</button>
-            </div>
-            <div class="ss-bar">
-              <span class="ss-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
-              </span>
-              <input class="ss-input" id="ssInput" type="text" role="combobox"
-                     aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
-                     autocomplete="off" spellcheck="false"
-                     placeholder="Search shows to add &mdash; title, performer or venue" />
-              <button type="button" class="ss-tools-btn" id="ssToolsBtn" aria-expanded="false" aria-controls="ssTools">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" /></svg>
-                Search tools
-                <span class="ss-badge" id="ssBadge" hidden></span>
-              </button>
-            </div>
-            <!-- Results drop under the bar as an overlay; one line per show,
-                 the star on the left adds it to (or lifts it off) the grid. -->
-            <div class="ss-pop" id="ssPop" hidden>
-              <ul class="ss-results" id="ssResults" role="listbox" aria-label="Matching shows"></ul>
-              <p class="ss-empty" id="ssEmpty" hidden>No shows match &mdash; try fewer filters or a different spelling.</p>
-              <p class="ss-foot" id="ssFoot" hidden></p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- TODO: these controls are placeholders for a future milestone —
-           genre chips, minimum-gap, and trip-dates are not wired to the engine yet.
-           Do not fake behaviour here; wire them up once the engine/UI contract for
-           them is defined. -->
-      <div class="more">
-        <h3 class="more-title">More settings <span class="more-hint">Optional — the defaults work well</span></h3>
-        <div class="more-grid">
-          <div class="chips-wrap">
-            <span class="more-field-label">Only these genres</span>
-            <div class="chips">
-              <span class="chip is-on">Comedy</span>
-              <span class="chip is-on">Theatre</span>
-              <span class="chip is-on">Cabaret &amp; Variety</span>
-              <span class="chip">Musicals &amp; Opera</span>
-              <span class="chip">Children's Shows</span>
-              <span class="chip">Spoken Word</span>
-            </div>
-          </div>
-          <div>
-            <span class="more-field-label">Minimum gap between shows</span>
-            <div class="faux-input"><span>30 minutes</span><span class="fi-caret">▾</span></div>
-          </div>
-          <div>
-            <span class="more-field-label">Trip dates (if you know them)</span>
-            <div class="faux-input"><span>Sat 15 Aug — Sat 22 Aug</span><span class="fi-caret">▾</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== Availability calendar ===================== -->
-    <section class="panel cal-card" id="screen2" aria-labelledby="calTitle" hidden>
-      <div class="cal-top">
-        <div class="cal-top-left">
-          <div class="cal-title-row">
-            <h2 class="cal-title" id="calTitle">Your favourites across August</h2>
-            <button type="button" class="cal-collapse" id="calCollapseBtn" aria-expanded="true"
-                    aria-controls="calWrap calLegend">
-              <svg class="cc-caret" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
-              <span class="cc-text">Hide grid</span>
-            </button>
-          </div>
-          <p class="fav-line" id="favLine">
-            <span id="favSummary"></span>
-            <button type="button" class="fav-action" id="replaceFavBtn">Replace file</button>
-            <span class="fav-sep" aria-hidden="true">·</span>
-            <button type="button" class="fav-action" id="clearFavBtn">Clear</button>
-          </p>
-          <ul class="missing-list" id="missingList" hidden></ul>
-        </div>
-        <div class="hero-count" aria-live="polite">
-          <div class="hc-num">
-            <span id="hcSched">0</span><span class="hc-of"> / <span id="hcIn">0</span></span><span class="hc-of"> / <span id="hcAll">0</span></span>
-          </div>
-          <div class="hc-label">scheduled&nbsp;/&nbsp;in&nbsp;window&nbsp;/&nbsp;favourites</div>
-          <div class="hc-detail" id="hcDetail"></div>
-        </div>
-      </div>
-
-      <div class="cal-wrap" id="calWrap">
+      <!-- Populated state: the availability grid, same height as the stage it
+           replaces. -->
+      <div class="board-body cal-wrap" id="calWrap" hidden>
         <div class="cal-inner" id="calInner">
           <!-- Sticky while the lane list scrolls: the window controls (start/end
                handles + the between-space that drags the whole window) and the
@@ -359,17 +179,156 @@
         </div>
       </div>
 
-      <!-- The grid's bottom line: the show search moves in here (from
-           #ssSlotIntake) whenever the calendar is on screen, so topping up the
-           grid happens right under the lanes it feeds. -->
-      <div class="ss-slot" id="ssSlotCal"></div>
+      <!-- The other way to build the list: search the programme and star shows
+           one at a time. One home, directly under the board body in both states,
+           so it never moves when the grid arrives. -->
+      <div class="ss-slot">
+        <div class="show-search" id="showSearch">
+          <div class="ss-bar">
+            <span class="ss-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+            </span>
+            <input class="ss-input" id="ssInput" type="text" role="combobox"
+                   aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
+                   autocomplete="off" spellcheck="false"
+                   placeholder="Search shows to add &mdash; title, performer or venue" />
+            <button type="button" class="ss-tools-btn" id="ssToolsBtn" aria-expanded="false" aria-controls="ssTools">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" /></svg>
+              Search tools
+              <span class="ss-badge" id="ssBadge" hidden></span>
+            </button>
+          </div>
+
+          <!-- "Search tools": a line of facet filters, folded *below* the box
+               until the button on the bar expands it — everything this bar opens
+               drops downward. Each facet is a chip that drops a panel of options,
+               matching the Now page's filter chips: a grey per-option show count,
+               and an "everything!" link beside the question that clears the
+               facet. The option rows are built in JS (buildFacetPanel) from the
+               loaded catalogue; accessibility and the price caps present
+               themselves as coming soon while the data behind them hasn't
+               landed (see SEARCH_FACETS). -->
+          <div class="ss-tools" id="ssTools" hidden>
+            <article class="filter-chip" data-facet="genre">
+              <button type="button" class="chip-trigger" data-panel="ssfGenrePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">🎭</span>
+                <span class="chip-value" id="ssfGenreValue">Any genre</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfGenrePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which genres?</span>
+                  <button type="button" class="panel-everything" data-clear="genre">everything!</button>
+                </p>
+                <div class="panel-options panel-options--scroll" id="ssfGenreOptions"></div>
+              </div>
+            </article>
+
+            <article class="filter-chip" data-facet="subgenre">
+              <button type="button" class="chip-trigger" data-panel="ssfSubgenrePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">🏷️</span>
+                <span class="chip-value" id="ssfSubgenreValue">Any subgenre</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfSubgenrePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which subgenres?</span>
+                  <button type="button" class="panel-everything" data-clear="subgenre">everything!</button>
+                </p>
+                <div class="panel-options panel-options--scroll" id="ssfSubgenreOptions"></div>
+              </div>
+            </article>
+
+            <!-- Venue is a long list, so its panel gets a type-to-narrow box. -->
+            <article class="filter-chip" data-facet="venue">
+              <button type="button" class="chip-trigger" data-panel="ssfVenuePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">📍</span>
+                <span class="chip-value" id="ssfVenueValue">Any venue</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfVenuePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which venues?</span>
+                  <button type="button" class="panel-everything" data-clear="venue">everything!</button>
+                </p>
+                <input type="text" class="panel-filter" id="ssfVenueFind" autocomplete="off"
+                       spellcheck="false" placeholder="Find a venue&hellip;" aria-label="Find a venue in this list" />
+                <div class="panel-options panel-options--scroll" id="ssfVenueOptions"></div>
+              </div>
+            </article>
+
+            <article class="filter-chip" data-facet="accessibility">
+              <button type="button" class="chip-trigger" data-panel="ssfAccessPanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">♿️</span>
+                <span class="chip-value" id="ssfAccessValue">Any accessibility</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfAccessPanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which access needs?</span>
+                  <button type="button" class="panel-everything" data-clear="accessibility">everything!</button>
+                </p>
+                <div class="panel-options panel-options--scroll" id="ssfAccessOptions"></div>
+              </div>
+            </article>
+
+            <article class="filter-chip" data-facet="age">
+              <button type="button" class="chip-trigger" data-panel="ssfAgePanel"
+                      aria-expanded="false" aria-haspopup="true" title="Shows with this age limit or lower">
+                <span class="chip-ico" aria-hidden="true">🧒</span>
+                <span class="chip-value" id="ssfAgeValue">Any age limit</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel chip-panel--mini" id="ssfAgePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Age limit</span>
+                  <button type="button" class="panel-everything" data-clear="age">everything!</button>
+                </p>
+                <div class="panel-options" id="ssfAgeOptions"></div>
+              </div>
+            </article>
+
+            <article class="filter-chip" data-facet="price">
+              <button type="button" class="chip-trigger" data-panel="ssfPricePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-money" aria-hidden="true">£</span>
+                <span class="chip-value" id="ssfPriceValue">Any price</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel chip-panel--mini" id="ssfPricePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Ticket price</span>
+                  <button type="button" class="panel-everything" data-clear="price">everything!</button>
+                </p>
+                <div class="panel-options" id="ssfPriceOptions"></div>
+              </div>
+            </article>
+
+            <button type="button" class="ss-reset" id="ssReset" hidden>&times; Clear filters</button>
+          </div>
+
+          <!-- Results drop under the bar (and under the tools, when they're
+               open) as an overlay. One line per show, the star on the left adds
+               it to — or lifts it off — the grid. When the query also names a
+               genre, subgenre or venue, those come first as category rows that
+               set the matching filter instead of adding one show. -->
+          <div class="ss-pop" id="ssPop" hidden>
+            <ul class="ss-results" id="ssResults" role="listbox" aria-label="Matching categories and shows"></ul>
+            <p class="ss-empty" id="ssEmpty" hidden>No shows match &mdash; try fewer filters or a different spelling.</p>
+            <p class="ss-foot" id="ssFoot" hidden></p>
+          </div>
+        </div>
+      </div>
 
       <div class="cal-tip" id="calTip" hidden></div>
 
-      <!-- Colour key for the day marks, moved below the grid. The lock cursor on
-           show names and day marks now carries the "click to lock into the plan"
-           affordance, so no explanatory line is needed here. -->
-      <div class="cal-legend" id="calLegend">
+      <!-- Colour key for the day marks, lifted into the card's own bottom
+           padding so revealing it never resizes anything. -->
+      <div class="cal-legend" id="calLegend" hidden>
         <div class="legend" aria-hidden="true">
           <span class="lg lg-avail"><i></i>Tickets available</span>
           <span class="lg lg-2for1"><i></i>2-for-1</span>
@@ -386,7 +345,7 @@
          are slotted into a clash-free itinerary across the current date window
          every time a control or the window changes — no "Plan" button. The
          result is a day-by-day schedule graphic with CSV / calendar exports. -->
-    <section class="panel plan-card" id="screen3" aria-labelledby="planTitle" hidden>
+    <section class="panel plan-card" id="planPanel" aria-labelledby="planTitle" hidden>
       <div class="plan-head">
         <div class="plan-head-text">
           <h2 class="plan-title" id="planTitle">Your Fringe, planned</h2>

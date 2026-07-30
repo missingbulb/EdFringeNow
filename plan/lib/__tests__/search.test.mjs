@@ -9,8 +9,10 @@ import {
   ageLimitYears,
   showPrice,
   catalogueFacets,
+  catalogueVenues,
   hasActiveFilters,
   filterShows,
+  matchFacets,
   searchShows,
 } from "../search.js";
 
@@ -148,9 +150,85 @@ test("hasActiveFilters spots each facet, ignores empties", () => {
   assert.equal(hasActiveFilters({}), false);
   assert.equal(hasActiveFilters({ genre: "", subgenre: "" }), false);
   assert.equal(hasActiveFilters({ genre: "Comedy" }), true);
+  assert.equal(hasActiveFilters({ venue: ["12"] }), true);
   assert.equal(hasActiveFilters({ maxAge: 0 }), true); // 0 is a real value, not "unset"
   assert.equal(hasActiveFilters({ price: "free" }), true);
   assert.equal(hasActiveFilters({ price: 15 }), true);
+});
+
+test("venue filter matches the venue code, so every room counts", () => {
+  const above = show({ slug: "a", venue: 12, venueName: "Above at The Bar" });
+  const below = show({ slug: "b", venue: "12", venueName: "Below at The Bar" });
+  const other = show({ slug: "o", venue: 99, venueName: "Elsewhere" });
+  assert.deepEqual(filterShows([above, below, other], { venue: "12" }), [above, below]);
+  assert.deepEqual(filterShows([above, below, other], { venue: ["12", "99"] }), [above, below, other]);
+  assert.deepEqual(filterShows([above, below, other], { venue: [] }), [above, below, other]);
+});
+
+// --- venue options ---------------------------------------------------------
+
+test("catalogueVenues lists only venues with shows, A→Z, code + name + tally", () => {
+  const map = { 12: { name: "Zoo Southside" }, 7: { name: "Assembly" }, 99: { name: "Never Used" } };
+  const shows = [show({ venue: 12 }), show({ venue: "12" }), show({ venue: 7 }), show({ venue: null })];
+  assert.deepEqual(catalogueVenues(shows, map), [
+    { value: "7", label: "Assembly", count: 1 },
+    { value: "12", label: "Zoo Southside", count: 2 },
+  ]);
+  // A venue the lookup map doesn't name can't be offered as an option.
+  assert.deepEqual(catalogueVenues([show({ venue: 404 })], map), []);
+});
+
+// --- facet suggestions -----------------------------------------------------
+
+const FACET_CATALOGUE = {
+  genres: ["Comedy", "Cabaret and Variety"],
+  subgenres: ["Stand-up", "Sketch comedy"],
+  venues: [
+    { value: "1", label: "Pleasance Courtyard" },
+    { value: "2", label: "The Stand Comedy Club" },
+  ],
+};
+
+test("matchFacets ranks prefix > word start > substring, broader facet first on a tie", () => {
+  // "comedy" starts a genre, starts a word in a subgenre and a venue, and sits
+  // mid-word in nothing — so the genre leads and the tie below it goes to the
+  // subgenre before the venue.
+  assert.deepEqual(matchFacets("comedy", FACET_CATALOGUE), [
+    { kind: "genre", value: "Comedy", label: "Comedy" },
+    { kind: "subgenre", value: "Sketch comedy", label: "Sketch comedy" },
+    { kind: "venue", value: "2", label: "The Stand Comedy Club" },
+  ]);
+  assert.deepEqual(matchFacets("pleasance", FACET_CATALOGUE), [
+    { kind: "venue", value: "1", label: "Pleasance Courtyard" },
+  ]);
+});
+
+test("matchFacets breaks a tie between equal matches on the bigger venue", () => {
+  const venues = [
+    { value: "1", label: "Pleasance at EICC", count: 4 },
+    { value: "2", label: "Pleasance Courtyard", count: 90 },
+  ];
+  assert.deepEqual(matchFacets("pleasance", { venues }).map((f) => f.label), [
+    "Pleasance Courtyard",
+    "Pleasance at EICC",
+  ]);
+  // No counts to compare → A→Z, so the order is still deterministic.
+  assert.deepEqual(
+    matchFacets("pleasance", { venues: venues.map(({ value, label }) => ({ value, label })) })
+      .map((f) => f.label),
+    ["Pleasance at EICC", "Pleasance Courtyard"]
+  );
+});
+
+test("matchFacets folds case/accents, needs two characters, and caps its list", () => {
+  assert.deepEqual(matchFacets("CABARET", FACET_CATALOGUE), [
+    { kind: "genre", value: "Cabaret and Variety", label: "Cabaret and Variety" },
+  ]);
+  assert.deepEqual(matchFacets("c", FACET_CATALOGUE), []); // one letter matches half the programme
+  assert.deepEqual(matchFacets("  ", FACET_CATALOGUE), []);
+  assert.deepEqual(matchFacets("zzz", FACET_CATALOGUE), []);
+  assert.equal(matchFacets("co", FACET_CATALOGUE, { limit: 2 }).length, 2);
+  assert.deepEqual(matchFacets("comedy", {}), []); // nothing to suggest from
 });
 
 // --- search ----------------------------------------------------------------

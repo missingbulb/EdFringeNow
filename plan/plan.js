@@ -5,15 +5,16 @@
 // ../shared/, not copy-pasted. Wires the pure computation engine (./lib/*.js)
 // to the UI.
 //
-// The page has one state switch, keyed on whether a favourites set is in:
-// without one, the intake panel (drag/drop or pick a favourites CSV, or load
-// the bundled sample) is all there is; with one, the availability calendar +
-// the instant plan replace it. There is no "Plan" button — the itinerary
-// recomputes live whenever the date window or any control changes.
+// The page has one state switch, keyed on whether a favourites set is in — and
+// it swaps only the *body* of the board: the drop stage (drag/drop or pick a
+// favourites CSV) becomes the availability grid, at the same height, while the
+// count line above it and the search bar below it stay put. The plan panel
+// appears underneath. There is no "Plan" button — the itinerary recomputes live
+// whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
-import { parseFavourites, urlFromSlug } from "./lib/favourites.js";
+import { parseFavourites } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
@@ -22,8 +23,10 @@ import { rehydrateShows } from "./lib/hydrate.js";
 import {
   searchShows,
   catalogueFacets,
+  catalogueVenues,
   hasActiveFilters,
   filterShows,
+  matchFacets,
   showPrice,
   showAccessibility,
   ageLimitYears,
@@ -325,7 +328,7 @@ function saveDismissedNags() {
 function restoreStoredFavourites() {
   const data = loadStoredFavourites();
   if (!data || data.slugs.length === 0) return;
-  applyFavourites(data.slugs, data.filename, data.savedAt, { scroll: false });
+  applyFavourites(data.slugs, data.filename, data.savedAt, { source: "restore" });
 }
 
 function clearFavourites() {
@@ -337,46 +340,79 @@ function clearFavourites() {
   state.filename = "";
   state.savedAt = null;
   state.forced = new Map();
-
-  const summaryEl = $("uploadSummary");
-  summaryEl.hidden = true;
-  summaryEl.classList.remove("is-partial");
-  $("missingList").hidden = true;
-  $("missingList").innerHTML = "";
-  $("screen2").hidden = true;
-  $("screen3").hidden = true;
   state.schedule = null;
   state.scheduledSlugs = new Set();
-  const pageHead = $("pageHead");
-  if (pageHead) pageHead.hidden = false; // bring the intro back on the empty state
-  mountSearch("intake");
+
+  clearUploadError();
   syncSearchStars();
-  $("screen1").hidden = false;
-  $("screen1").scrollIntoView({ behavior: "smooth", block: "start" });
+  showIntake();
 }
 
-// --- Screen 1: favourites intake -----------------------------------------
+// --- Favourites intake ----------------------------------------------------
+
+// The edfringe.com export is a CSV, and it's the only thing this box takes: a
+// PDF or a screenshot used to be run through the slug parser, which happily
+// invented "favourites" out of any word-ish line it found and then reported them
+// as loaded. Anything else is refused before it's read.
+const CSV_RE = /\.csv$/i;
+
+/** Could this dragged item plausibly be a CSV? Filenames aren't exposed during
+ *  a drag, only MIME types — and a CSV often drags with an empty or
+ *  spreadsheet-y type — so this only refuses what it can positively identify as
+ *  something else. The filename check on drop is the real gate. */
+function dragLooksLikeCsv(dataTransfer) {
+  const items = dataTransfer && dataTransfer.items;
+  if (!items || items.length === 0) return true; // nothing to judge on
+  for (const item of items) {
+    if (item.kind !== "file") continue;
+    const type = (item.type || "").toLowerCase();
+    if (type === "" || type.includes("csv") || type === "text/plain" || type.includes("excel")) return true;
+  }
+  return false;
+}
 
 function handleFile(file) {
   if (!file) return;
+  if (!CSV_RE.test(file.name)) {
+    showUploadError(
+      "That's not a CSV file",
+      "Export your favourites from edfringe.com as CSV, then drop that file here.",
+      file.name
+    );
+    return;
+  }
   const reader = new FileReader();
   reader.onload = () => processFavouritesText(String(reader.result || ""), file.name);
   reader.onerror = () => {
     console.error("Fringe Planner: failed to read file", reader.error);
-    alert("Couldn't read that file — please try again.");
+    showUploadError("We couldn't read that file", "Try exporting your favourites again.", file.name);
   };
   reader.readAsText(file);
 }
 
 function processFavouritesText(text, filename) {
   const slugs = parseFavourites(text);
-  const savedAt = Date.now();
-  if (slugs.length > 0) saveFavourites(slugs, filename, savedAt);
-  applyFavourites(slugs, filename, savedAt, { scroll: true });
+  // Nothing is stored — and nothing is claimed as loaded — until the file has
+  // actually yielded shows we can put on the grid (see applyFavourites).
+  applyFavourites(slugs, filename, Date.now(), { source: "upload" });
 }
 
-async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepForced = false, keepWindow = false } = {}) {
-  state.pendingUpload = { slugs, filename, savedAt, scroll };
+/**
+ * The one funnel every favourites change goes through — an upload, a restored
+ * list, or a single show starred / dropped. It matches the slugs against the
+ * catalogue, persists the working set, and repaints the board.
+ *
+ * @param {"upload"|"restore"|"edit"} source what to do when nothing matches:
+ *   an upload says so (and leaves the board alone), a stale stored list is
+ *   quietly forgotten. An edit always matches, since it came from the catalogue.
+ */
+async function applyFavourites(
+  slugs,
+  filename,
+  savedAt,
+  { keepForced = false, keepWindow = false, source = "edit" } = {}
+) {
+  state.pendingUpload = { slugs, filename, savedAt, source };
 
   let index;
   try {
@@ -392,6 +428,14 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepF
   const { matched, missingSlugs } = matchFavourites(slugs, index);
   state.pendingUpload = null;
 
+  // Nothing to put on the grid: that's a failed upload, not an empty one. The
+  // board — and the stored list behind it — stays exactly as it was.
+  if (matched.length === 0) {
+    if (source === "upload") reportUnusableFile(slugs, filename);
+    else clearStoredFavourites(); // a stored list this year's catalogue no longer knows
+    return;
+  }
+
   state.favSlugs = slugs.slice();
   state.totalFavourites = slugs.length;
   state.matched = matched;
@@ -403,120 +447,87 @@ async function applyFavourites(slugs, filename, savedAt, { scroll = false, keepF
   state.forced = keepForced
     ? new Map([...state.forced].filter(([slug]) => survivingSlugs.has(slug)))
     : new Map();
+  saveFavourites(state.favSlugs, filename, savedAt);
 
+  clearUploadError();
   syncSearchStars(); // the search popup's stars mirror the grid
 
-  if (matched.length > 0) {
-    // A fresh upload starts from the default window; a one-by-one add/remove is
-    // a quiet tweak to a grid in use, so it leaves the user's dates alone.
-    if (!keepWindow) {
-      state.d0 = DEFAULT_D0;
-      state.d1 = DEFAULT_D1;
-    }
-    renderFavLine();
-    buildCalendar(); // builds the lanes DOM…
-    refresh(); // …then the first plan + verdicts + hero
-    $("screen1").hidden = true;
-    showCalendar({ scroll });
+  // A fresh upload starts from the default window; a one-by-one add/remove is
+  // a quiet tweak to a grid in use, so it leaves the user's dates alone.
+  if (!keepWindow) {
+    state.d0 = DEFAULT_D0;
+    state.d1 = DEFAULT_D1;
+  }
+  buildCalendar(); // builds the lanes DOM…
+  refresh(); // …then the first plan + verdicts + counts
+  showCalendar();
+}
+
+/** Say why a dropped file gave us nothing, without touching the board. */
+function reportUnusableFile(slugs, filename) {
+  if (slugs.length === 0) {
+    showUploadError(
+      "No favourites in that file",
+      "It carries no edfringe.com show links — check you exported your favourites page as CSV.",
+      filename
+    );
   } else {
-    renderUploadSummary();
-    $("screen1").hidden = false;
-    $("screen2").hidden = true;
+    showUploadError(
+      `None of those ${slugs.length} favourites are in this year's programme`,
+      "That looks like an export from a previous Fringe.",
+      filename
+    );
   }
 }
 
-function dayDiff(a, b) {
-  const da = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-  const db = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-  return Math.round((db - da) / 86400000);
+// Where the file comes from. The empty board deliberately carries no how-to
+// copy, so the one place that explains the export is the message you get when
+// your file was the wrong thing — which is exactly when you need it.
+const FAVOURITES_PAGE_URL = "https://www.edfringe.com/tickets/my-account/favourites";
+
+function showUploadError(main, sub, filename) {
+  $("usMain").textContent = main;
+  $("usSub").innerHTML =
+    `${escapeHtml(sub)} ` +
+    `<a class="link-quiet" href="${FAVOURITES_PAGE_URL}" target="_blank" rel="noopener">Your favourites page</a>`;
+  $("usFile").textContent = filename || "";
+  $("usFile").hidden = !filename;
+  $("uploadSummary").hidden = false;
 }
 
-function fmtSavedWhen(ts) {
-  if (!ts) return "this session";
-  const then = new Date(ts);
-  const days = dayDiff(then, new Date());
-  if (days <= 0) return "today";
-  if (days === 1) return "yesterday";
-  return then.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+function clearUploadError() {
+  $("uploadSummary").hidden = true;
+  $("dropzone").classList.remove("is-reject");
 }
 
-function renderFavLine() {
-  const { totalFavourites, matched, missingSlugs, filename, savedAt } = state;
-  const el = $("favSummary");
-  el.textContent = "";
-
-  let text =
-    missingSlugs.length > 0
-      ? `${matched.length} of ${totalFavourites} favourites matched`
-      : `${totalFavourites} favourite${totalFavourites === 1 ? "" : "s"}`;
-  text += ` · from ${fmtSavedWhen(savedAt)}`;
-  if (filename) text += ` · ${filename}`;
-  el.append(text);
-
-  if (missingSlugs.length > 0) {
-    el.append(" ");
-    const whichBtn = document.createElement("button");
-    whichBtn.type = "button";
-    whichBtn.className = "fav-action";
-    whichBtn.textContent = "(which didn't?)";
-    whichBtn.addEventListener("click", toggleMissingList);
-    el.appendChild(whichBtn);
-  }
-  renderMissingList();
-}
-
-function renderUploadSummary() {
-  const { totalFavourites, matched, missingSlugs, filename } = state;
-  const summaryEl = $("uploadSummary");
-  summaryEl.hidden = false;
-  summaryEl.classList.toggle("is-partial", missingSlugs.length > 0);
-  $("usMain").textContent =
-    totalFavourites === 0
-      ? "No favourites found in that file"
-      : `${totalFavourites} favourite${totalFavourites === 1 ? "" : "s"} loaded`;
-  $("usSub").textContent =
-    totalFavourites === 0
-      ? "We couldn't find any edfringe.com show links in that file."
-      : `${matched.length} matched to our show data · ${missingSlugs.length} we couldn't find`;
-  $("usFile").textContent = filename;
-}
-
-function renderMissingList() {
-  const list = $("missingList");
-  list.innerHTML = "";
-  list.hidden = true;
-  for (const slug of state.missingSlugs) {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = urlFromSlug(slug);
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.className = "link-quiet";
-    a.innerHTML = `<code>${slug}</code>`;
-    li.appendChild(a);
-    list.appendChild(li);
-  }
-}
-
-function toggleMissingList() {
-  const list = $("missingList");
-  list.hidden = !list.hidden;
-}
-
-function showCalendar({ scroll = false } = {}) {
-  // The marketing intro is empty-state chrome; drop it now the grid is the hero.
-  const pageHead = $("pageHead");
-  if (pageHead) pageHead.hidden = true;
-  mountSearch("cal");
-  const screen2 = $("screen2");
-  screen2.hidden = false;
-  $("screen3").hidden = false;
+/**
+ * Swap the board's body to the grid (and show the plan panel below it). Nothing
+ * scrolls: the board is the same box in the same place either way, and a page
+ * that jumps under you on the first added show was the whole complaint.
+ */
+function showCalendar() {
+  $("intakeStage").hidden = true;
+  $("calWrap").hidden = false;
+  $("calLegend").hidden = false;
+  $("clearFavBtn").hidden = false;
+  $("planPanel").hidden = false;
   updatePlanWindowLabel();
   requestAnimationFrame(() => {
     layoutOverlay();
     refresh(); // schedule geometry needs a laid-out panel
   });
-  if (scroll) screen2.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/** …and back: the empty board, with the drop stage in the body. */
+function showIntake() {
+  $("calWrap").hidden = true;
+  $("calLegend").hidden = true;
+  $("intakeStage").hidden = false;
+  $("clearFavBtn").hidden = true;
+  $("planPanel").hidden = true;
+  $("lanes").innerHTML = "";
+  state.laneRefs = [];
+  renderCounts();
 }
 
 // --- Screen 2: calendar ----------------------------------------------------
@@ -721,7 +732,7 @@ function refresh(opts) {
 
   const bySlug = new Map(summ.shows.map((s) => [s.slug, s]));
   applyVerdicts(bySlug, filter);
-  updateHero(summ.counts, schedule.counts);
+  renderCounts(schedule.counts.scheduledShows);
   updatePlanWindowLabel();
 
   renderPlanSummary(schedule);
@@ -737,7 +748,10 @@ function refresh(opts) {
  *   - scheduled  : this show made the plan            ✓ Scheduled!
  *   - early      : catchable, but only before day-start  ☀ Too early
  *   - late       : catchable, but only after day-end     🌙 Too late
- *   - cantfit    : catchable in the window, but a clash / meal / cap left no room
+ *   - lunch      : every performance lands on your lunch break  🍽 Lunch conflict
+ *   - dinner     : …or on your dinner break                     🍽 Dinner conflict
+ *   - meal       : both meal breaks, together, shut it out      🍽 Meal conflict
+ *   - cantfit    : catchable in the window, but a clash / cap left no room
  *   - sold       : every performance in the window (or the whole run) is sold out
  *   - baddates   : has bookable performances, but all fall outside your dates
  */
@@ -748,12 +762,21 @@ function laneStatus(show, filter, sets) {
   const availInWindow = inWindow.filter((p) => p.available);
 
   if (availInWindow.length > 0) {
+    // placementDiagnostics lists a show under every control that would rescue it
+    // on its own, so name the culprit when there's exactly one kind of culprit —
+    // a break the user can move reads far better than a flat "can't fit".
     const early = sets.earlySet.has(show.slug);
     const late = sets.lateSet.has(show.slug);
-    // A single culprit reads cleanly; a mix (some too early, some too late, or a
-    // meal break / clash) falls back to the honest "Can't fit".
-    if (early && !late) return { kind: "early" };
-    if (late && !early) return { kind: "late" };
+    const lunch = sets.lunchSet.has(show.slug);
+    const dinner = sets.dinnerSet.has(show.slug);
+    if (!lunch && !dinner) {
+      if (early && !late) return { kind: "early" };
+      if (late && !early) return { kind: "late" };
+    } else if (!early && !late) {
+      if (lunch && !dinner) return { kind: "lunch" };
+      if (dinner && !lunch) return { kind: "dinner" };
+      return { kind: "meal" };
+    }
     return { kind: "cantfit" };
   }
 
@@ -777,6 +800,12 @@ function statusPillHTML(status) {
       return `<span class="st-blocked">☀ Too early</span>`;
     case "late":
       return `<span class="st-blocked">🌙 Too late</span>`;
+    case "lunch":
+      return `<span class="st-blocked">🍽 Lunch conflict</span>`;
+    case "dinner":
+      return `<span class="st-blocked">🍽 Dinner conflict</span>`;
+    case "meal":
+      return `<span class="st-blocked">🍽 Meal conflict</span>`;
     case "cantfit":
       return `<span class="st-cant">Can't fit</span>`;
     case "sold":
@@ -788,22 +817,29 @@ function statusPillHTML(status) {
 }
 
 /**
- * Update each lane's state and right-hand verdict (see laneStatus for the six
+ * Update each lane's state and right-hand verdict (see laneStatus for the
  * kinds). The lane also mirrors the plan on its performance marks, and a forced
  * (must-see) lane carries a pin.
  */
+const BLOCKED_KINDS = new Set(["early", "late", "lunch", "dinner", "meal"]);
+
 function applyVerdicts(bySlug, filter) {
   const diag = state.diag || {};
-  const earlySet = new Set((diag.dayStart || []).map((s) => s.slug));
-  const lateSet = new Set((diag.dayEnd || []).map((s) => s.slug));
+  const slugsOf = (list) => new Set((list || []).map((s) => s.slug));
+  const sets = {
+    earlySet: slugsOf(diag.dayStart),
+    lateSet: slugsOf(diag.dayEnd),
+    lunchSet: slugsOf(diag.meals && diag.meals.lunch),
+    dinnerSet: slugsOf(diag.meals && diag.meals.dinner),
+  };
   for (const ref of state.laneRefs) {
     const show = bySlug.get(ref.slug);
     if (!show) continue;
     const scheduled = state.scheduledSlugs.has(ref.slug);
     const forced = state.forced.has(ref.slug);
-    const status = laneStatus(show, filter, { scheduled, earlySet, lateSet });
+    const status = laneStatus(show, filter, { scheduled, ...sets });
     const dimmed = status.kind === "baddates" || status.kind === "sold";
-    const amber = status.kind === "early" || status.kind === "late";
+    const amber = BLOCKED_KINDS.has(status.kind);
 
     ref.el.classList.toggle("lane--out", dimmed);
     ref.el.classList.toggle("lane--scheduled", scheduled);
@@ -885,7 +921,7 @@ function updateBlockLabels(diag) {
 function flashBlockedLanes(list) {
   if (!list.length) return;
   const slugs = new Set(list.map((s) => s.slug));
-  $("screen2")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  $("board")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   for (const ref of state.laneRefs) {
     if (!slugs.has(ref.slug)) continue;
     ref.el.classList.remove("lane--flash");
@@ -895,19 +931,33 @@ function flashBlockedLanes(list) {
   }
 }
 
-/** Hero now reads scheduled / in-window / total. */
-function updateHero(counts, planCounts) {
-  const hcSched = $("hcSched");
-  const changed = hcSched.textContent !== String(planCounts.scheduledShows);
-  hcSched.textContent = planCounts.scheduledShows;
-  $("hcIn").textContent = counts.showsAvailableInWindow;
-  $("hcAll").textContent = counts.matchedShows;
-  $("hcDetail").textContent = `${state.d0}–${state.d1} Aug`;
+/**
+ * The board's one line of text: how much of what you've picked is actually in
+ * the plan. It's the whole top area, in both states — empty it reads as the
+ * standing invitation, filled it reads as the score.
+ *
+ * @param {number} scheduled shows the current plan placed (0 when the board is
+ *   empty, which is also the empty-state wording's cue)
+ */
+function renderCounts(scheduled = 0) {
+  const el = $("boardCount");
+  if (!el) return;
+  const selected = state.matched.length;
+  if (selected === 0) {
+    el.classList.remove("is-live");
+    el.textContent = "No shows planned, no shows selected";
+    return;
+  }
+  const changed = el.dataset.planned !== String(scheduled);
+  el.dataset.planned = String(scheduled);
+  el.classList.add("is-live");
+  el.innerHTML =
+    `<span class="bc-planned">${scheduled}</span> show${scheduled === 1 ? "" : "s"} planned ` +
+    `out of <span class="bc-selected">${selected}</span> selected!`;
   if (changed) {
-    const num = hcSched.closest(".hc-num");
-    num.classList.remove("bump");
-    void num.offsetWidth;
-    num.classList.add("bump");
+    el.classList.remove("bump");
+    void el.offsetWidth; // restart the animation
+    el.classList.add("bump");
   }
 }
 
@@ -1050,25 +1100,30 @@ function wireDropzone() {
     if (input.files && input.files[0]) handleFile(input.files[0]);
     input.value = "";
   });
+  // The box shows, mid-drag, whether it will take what's over it: a CSV gets the
+  // violet "yes", anything we can already tell isn't one gets a red "no" and a
+  // dropEffect of "none", so the browser's own cursor refuses it too.
   ["dragenter", "dragover"].forEach((evt) =>
     dz.addEventListener(evt, (e) => {
       e.preventDefault();
-      dz.classList.add("is-dragover");
+      const ok = dragLooksLikeCsv(e.dataTransfer);
+      if (e.dataTransfer) e.dataTransfer.dropEffect = ok ? "copy" : "none";
+      dz.classList.toggle("is-dragover", ok);
+      dz.classList.toggle("is-reject", !ok);
     })
   );
   ["dragleave", "dragend"].forEach((evt) =>
-    dz.addEventListener(evt, () => dz.classList.remove("is-dragover"))
+    dz.addEventListener(evt, () => dz.classList.remove("is-dragover", "is-reject"))
   );
   dz.addEventListener("drop", (e) => {
     e.preventDefault();
-    dz.classList.remove("is-dragover");
+    dz.classList.remove("is-dragover", "is-reject");
     const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
     if (file) handleFile(file);
   });
 }
 
 function wireFavActions() {
-  $("replaceFavBtn").addEventListener("click", () => $("csvInput").click());
   $("clearFavBtn").addEventListener("click", clearFavourites);
 }
 
@@ -1098,10 +1153,8 @@ async function loadDebugRandomShows(count = 10) {
   const picks = shuffle([...index.keys()].filter((s) => !existing.has(s))).slice(0, count);
   if (picks.length === 0) return;
   const slugs = [...state.favSlugs, ...picks];
-  const savedAt = Date.now();
   const filename = `debug · ${slugs.length} random shows`;
-  saveFavourites(slugs, filename, savedAt);
-  applyFavourites(slugs, filename, savedAt, { scroll: true, keepForced: true });
+  applyFavourites(slugs, filename, Date.now(), { keepForced: true });
 }
 
 /* Drop one show from the working set — the row leaves the grid and the change
@@ -1114,50 +1167,45 @@ function removeFavourite(slug) {
     clearFavourites();
     return;
   }
-  const savedAt = state.savedAt || Date.now();
-  saveFavourites(slugs, state.filename, savedAt);
-  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true, keepWindow: true });
+  applyFavourites(slugs, state.filename, state.savedAt || Date.now(), {
+    keepForced: true, keepWindow: true,
+  });
 }
 
 // --- Show search: build / top up the grid one show at a time ---------------
 //
-// One component (#showSearch), two homes: the bottom of the empty intake stage
-// and the bottom line of the availability grid. mountSearch() moves the node
-// itself between the two slots on the state switch, so the bar looks and
-// behaves identically before and after the grid has data. Results render as
-// one line per show; the star on the left adds the show to the working
-// favourites through the same path an upload takes (applyFavourites), so
-// persistence, matching and the live re-plan all follow. The matching/
-// filtering itself is pure and lives in ./lib/search.js.
+// One component (#showSearch) in one place — under the board body, whichever
+// state the board is in — so building a grid from scratch and topping up a full
+// one are the same gesture in the same spot. Results render as one line per
+// show; the star on the left adds the show to the working favourites through the
+// same path an upload takes (applyFavourites), so persistence, matching and the
+// live re-plan all follow. When the query names a genre, subgenre or venue, those
+// come first as category rows that set the matching filter (see renderResultRows).
+// The matching/filtering itself is pure and lives in ./lib/search.js.
 
 const SEARCH_LIMIT = 30;
+const FACET_SUGGESTION_LIMIT = 4;
 
 const searchUi = {
   active: -1, // index of the keyboard-highlighted row, -1 = none
-  results: [],
+  // The popup's rows, in display order: the category suggestions first, then the
+  // show hits. One list so arrow keys walk both.
+  rows: [],
   total: 0,
+  shown: 0,
   debounce: null,
+  venues: [], // [{value: code, label: name}] — filled once the catalogue lands
   // One entry per facet: a Set for the multi-select lists, a string ("" = not
   // set) for the two single-answer ones.
   filters: {
     genre: new Set(),
     subgenre: new Set(),
     accessibility: new Set(),
+    venue: new Set(),
     age: "",
     price: "",
   },
 };
-
-/** Park the search component in the intake stage or under the calendar grid. */
-function mountSearch(where) {
-  const node = $("showSearch");
-  const slot = $(where === "cal" ? "ssSlotCal" : "ssSlotIntake");
-  if (!node || !slot || node.parentElement === slot) return;
-  // Moving a node drops focus; hand it back so "star one, keep typing" flows on.
-  const hadFocus = document.activeElement === $("ssInput");
-  slot.appendChild(node);
-  if (hadFocus) $("ssInput").focus({ preventScroll: true });
-}
 
 /** "AUDIO_DESCRIPTION" → "Audio description". */
 function humanizeEnum(v) {
@@ -1165,7 +1213,7 @@ function humanizeEnum(v) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-/* The five search facets, each rendered as a chip that drops a panel of
+/* The six search facets, each rendered as a chip that drops a panel of
  * options with a grey count of how many shows it would give you.
  *   multi    — a checkbox list (ticking a second box widens the search); the
  *              single-answer ones (age, price) are radios.
@@ -1173,6 +1221,8 @@ function humanizeEnum(v) {
  *   valuesOf — a show's own value(s) for the facet, when it has a fixed set we
  *              can tally in one pass. Facets without it (the "up to X" caps)
  *              are counted by testing each option with `matches`.
+ *   label    — how a value is written for people (venue codes, enums, caps).
+ *   find     — the facet's panel gets a type-to-narrow box over a long list.
  */
 const SEARCH_FACETS = [
   {
@@ -1192,6 +1242,19 @@ const SEARCH_FACETS = [
     noun: "subgenres",
     values: () => [...(state.lookups.subgenres || [])].sort(),
     valuesOf: (show) => show.subgenres || [],
+  },
+  {
+    // Keyed on the venue *code*, so picking "Pleasance Courtyard" takes every
+    // room in it. 300-odd options, hence the find box.
+    key: "venue",
+    id: "Venue",
+    multi: true,
+    any: "Any venue",
+    noun: "venues",
+    find: true,
+    values: () => searchUi.venues.map((v) => v.value),
+    label: (v) => venueLabel(v),
+    valuesOf: (show) => (show.venue != null ? [String(show.venue)] : []),
   },
   {
     key: "accessibility",
@@ -1238,12 +1301,6 @@ const SEARCH_FACETS = [
 
 const facetById = (key) => SEARCH_FACETS.find((f) => f.key === key);
 
-/** Is this facet narrowing the search right now? */
-function facetIsSet(facet) {
-  const v = searchUi.filters[facet.key];
-  return facet.multi ? v.size > 0 : v !== "";
-}
-
 /** The chosen value(s) of a facet, as a list. */
 function facetChosen(facet) {
   const v = searchUi.filters[facet.key];
@@ -1265,6 +1322,7 @@ function currentSearchFilters() {
     genre: [...f.genre],
     subgenre: [...f.subgenre],
     accessibility: [...f.accessibility],
+    venue: [...f.venue],
   };
   if (f.age !== "") filters.maxAge = Number(f.age);
   if (f.price === "free") filters.price = "free";
@@ -1374,6 +1432,36 @@ function refreshFacetCounts() {
   }
 }
 
+/** A venue code as people read it ("Pleasance Courtyard"). */
+function venueLabel(code) {
+  const venues = (state.lookups && state.lookups.venues) || {};
+  const entry = venues[code];
+  return (entry && entry.name) || String(code);
+}
+
+/** Narrow a long option list to the rows matching what's typed in its find box. */
+function wireFacetFind(facet) {
+  const box = $(`ssf${facet.id}Find`);
+  const wrap = $(`ssf${facet.id}Options`);
+  if (!box || !wrap) return;
+  box.addEventListener("input", () => {
+    const q = box.value.trim().toLowerCase();
+    for (const row of wrap.querySelectorAll(".panel-option")) {
+      const text = (row.textContent || "").toLowerCase();
+      row.hidden = q !== "" && !text.includes(q);
+    }
+  });
+  // Typing in the box must not be read as "pick the first row" by the bar's
+  // keyboard handling, and Escape should clear the box before closing anything.
+  box.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && box.value !== "") {
+      e.stopPropagation();
+      box.value = "";
+      box.dispatchEvent(new Event("input"));
+    }
+  });
+}
+
 /**
  * Fill the data-driven filter options + the search placeholder once the
  * catalogue is in.
@@ -1383,7 +1471,9 @@ function initSearchUI() {
   if (!input || !state.lookups) return;
   input.placeholder =
     `Search all ${state.catalogue.length.toLocaleString("en-GB")} shows — title, performer or venue`;
+  searchUi.venues = catalogueVenues(state.catalogue, state.lookups.venues);
   buildAllFacetPanels();
+  for (const facet of SEARCH_FACETS) if (facet.find) wireFacetFind(facet);
   updateFilterChrome();
 }
 
@@ -1406,14 +1496,27 @@ function runSearch() {
   const query = $("ssInput").value;
   const filters = currentSearchFilters();
   if (query.trim() === "" && !hasActiveFilters(filters)) {
-    searchUi.results = [];
+    searchUi.rows = [];
     searchUi.total = 0;
+    searchUi.shown = 0;
     setSearchOpen(false);
     return;
   }
   const { results, total } = searchShows(state.catalogue, query, filters, { limit: SEARCH_LIMIT });
-  searchUi.results = results;
+  // Categories the query names, minus any already ticked — offering a filter
+  // that's already on would be a dead row.
+  const suggestions = matchFacets(
+    query,
+    { genres: state.lookups.genres, subgenres: state.lookups.subgenres, venues: searchUi.venues },
+    { limit: FACET_SUGGESTION_LIMIT }
+  ).filter((s) => !searchUi.filters[s.kind].has(s.value));
+
+  searchUi.rows = [
+    ...suggestions.map((facet) => ({ kind: "facet", facet })),
+    ...results.map((show) => ({ kind: "show", show })),
+  ];
   searchUi.total = total;
+  searchUi.shown = results.length;
   renderSearchResults();
 }
 
@@ -1421,16 +1524,18 @@ function renderSearchResults() {
   const list = $("ssResults");
   list.innerHTML = "";
   const favs = new Set(state.favSlugs);
-  searchUi.results.forEach((show, i) => {
-    list.appendChild(buildSearchRow(show, i, favs.has(show.slug)));
+  searchUi.rows.forEach((row, i) => {
+    list.appendChild(
+      row.kind === "facet" ? buildFacetRow(row.facet, i) : buildSearchRow(row.show, i, favs.has(row.show.slug))
+    );
   });
-  $("ssEmpty").hidden = searchUi.results.length > 0;
+  $("ssEmpty").hidden = searchUi.rows.length > 0;
   const foot = $("ssFoot");
-  const capped = searchUi.total > searchUi.results.length;
+  const capped = searchUi.total > searchUi.shown;
   foot.hidden = !capped;
   if (capped) {
     foot.textContent =
-      `Showing ${searchUi.results.length} of ${searchUi.total} matches — keep typing to narrow it down`;
+      `Showing ${searchUi.shown} of ${searchUi.total} matches — keep typing to narrow it down`;
   }
   setActiveRow(-1);
   setSearchOpen(true);
@@ -1438,6 +1543,31 @@ function renderSearchResults() {
 
 function starLabel(title, isOn) {
   return isOn ? `Remove ${title} from your grid` : `Add ${title} to your grid`;
+}
+
+const FACET_KIND_LABEL = { genre: "Genre", subgenre: "Subgenre", venue: "Venue" };
+
+/** A category row: picking it sets a filter rather than adding a show, so it
+ *  looks like the filter chips it feeds, not like the show rows below it. */
+function buildFacetRow(facet, i) {
+  const li = document.createElement("li");
+  li.className = "ss-row ss-row--facet";
+  li.id = `ssOpt${i}`;
+  li.setAttribute("role", "option");
+  li.setAttribute("aria-selected", "false");
+  li.dataset.facetKind = facet.kind;
+  li.dataset.facetValue = facet.value;
+
+  const count = filterShows(state.catalogue, { [facet.kind]: [facet.value] }).length;
+  li.innerHTML =
+    `<span class="ss-facet-ico" aria-hidden="true">` +
+    `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M7 12h10M10 17h4" /></svg>` +
+    `</span>` +
+    `<span class="ss-facet-kind">${FACET_KIND_LABEL[facet.kind]}</span>` +
+    `<span class="ss-row-title">${escapeHtml(facet.label)}</span>` +
+    `<span class="ss-facet-hint">Filter to ${count} show${count === 1 ? "" : "s"}</span>`;
+  li.setAttribute("aria-label", `Filter to ${FACET_KIND_LABEL[facet.kind]} ${facet.label} — ${count} shows`);
+  return li;
 }
 
 function buildSearchRow(show, i, isOn) {
@@ -1472,6 +1602,20 @@ function buildSearchRow(show, i, isOn) {
   return li;
 }
 
+/**
+ * Pick a category row: tick that value in its facet, drop the query it came from
+ * (the text and the filter would fight — "comedy" as free text only matches
+ * shows with the word in them), and open the tools so the chip that just changed
+ * is on screen.
+ */
+function applyFacetSuggestion(kind, value) {
+  searchUi.filters[kind].add(value);
+  $("ssInput").value = "";
+  setToolsOpen(true);
+  onSearchFilterChange();
+  $("ssInput").focus({ preventScroll: true });
+}
+
 /** Re-mark every rendered result row against the current favourites, so the
  *  stars always mirror the grid (called on any favourites change). */
 function syncSearchStars() {
@@ -1479,6 +1623,7 @@ function syncSearchStars() {
   if (!list) return;
   const favs = new Set(state.favSlugs);
   for (const row of list.querySelectorAll(".ss-row")) {
+    if (!row.dataset.slug) continue; // a category row has no star to sync
     const on = favs.has(row.dataset.slug);
     row.classList.toggle("is-on", on);
     const star = row.querySelector(".ss-star");
@@ -1495,9 +1640,9 @@ function toggleShowOnGrid(slug) {
     return;
   }
   const slugs = [...state.favSlugs, slug];
-  const savedAt = state.savedAt || Date.now();
-  saveFavourites(slugs, state.filename, savedAt);
-  applyFavourites(slugs, state.filename, savedAt, { scroll: false, keepForced: true, keepWindow: true });
+  applyFavourites(slugs, state.filename, state.savedAt || Date.now(), {
+    keepForced: true, keepWindow: true,
+  });
 }
 
 function setActiveRow(i) {
@@ -1583,6 +1728,20 @@ function closeFacetPanels() {
   for (const t of document.querySelectorAll(".chip-trigger")) t.setAttribute("aria-expanded", "false");
 }
 
+/** Fold the facet-chip row under the bar open or shut. */
+function setToolsOpen(open) {
+  $("ssTools").hidden = !open;
+  $("ssToolsBtn").setAttribute("aria-expanded", String(open));
+  if (!open) closeFacetPanels();
+}
+
+/** What a result row does when it's clicked or Entered. */
+function activateRow(row) {
+  if (!row) return;
+  if (row.kind === "facet") applyFacetSuggestion(row.facet.kind, row.facet.value);
+  else toggleShowOnGrid(row.show.slug);
+}
+
 function wireFacetChips() {
   for (const trigger of document.querySelectorAll(".chip-trigger")) {
     const panel = $(trigger.dataset.panel);
@@ -1636,7 +1795,7 @@ function wireShowSearch() {
     if (input.value.trim() !== "" || hasActiveFilters(currentSearchFilters())) runSearch();
   });
   input.addEventListener("keydown", (e) => {
-    const n = searchUi.results.length;
+    const n = searchUi.rows.length;
     if (e.key === "ArrowDown" && n > 0) {
       e.preventDefault();
       if ($("ssPop").hidden) setSearchOpen(true);
@@ -1646,25 +1805,23 @@ function wireShowSearch() {
       setActiveRow((searchUi.active - 1 + n) % n);
     } else if (e.key === "Enter" && searchUi.active >= 0 && searchUi.active < n) {
       e.preventDefault();
-      toggleShowOnGrid(searchUi.results[searchUi.active].slug);
+      activateRow(searchUi.rows[searchUi.active]);
     } else if (e.key === "Escape" && !$("ssPop").hidden) {
       e.stopPropagation();
       setSearchOpen(false);
     }
   });
 
-  // A row is one target: the star and the line both toggle the show.
+  // A row is one target: the star and the line do the same thing — add/remove
+  // the show, or (on a category row) set that filter.
   $("ssResults").addEventListener("click", (e) => {
-    const row = e.target.closest(".ss-row");
-    if (row) toggleShowOnGrid(row.dataset.slug);
+    const el = e.target.closest(".ss-row");
+    if (!el) return;
+    const i = [...$("ssResults").children].indexOf(el);
+    if (i >= 0) activateRow(searchUi.rows[i]);
   });
 
-  $("ssToolsBtn").addEventListener("click", () => {
-    const tools = $("ssTools");
-    tools.hidden = !tools.hidden;
-    if (tools.hidden) closeFacetPanels();
-    $("ssToolsBtn").setAttribute("aria-expanded", String(!tools.hidden));
-  });
+  $("ssToolsBtn").addEventListener("click", () => setToolsOpen($("ssTools").hidden));
 
   wireFacetChips();
   $("ssReset").addEventListener("click", () => {
@@ -1675,6 +1832,9 @@ function wireShowSearch() {
 
   // Click-away closes the results overlay (the tools line stays as set).
   document.addEventListener("click", (e) => {
+    // Picking a category row re-renders the list, so by the time the click
+    // reaches the document its target is a detached node — which is not "away".
+    if (!e.target.isConnected) return;
     if (!root.contains(e.target)) setSearchOpen(false);
   });
 }
@@ -1798,8 +1958,8 @@ function wireRetry() {
     $("errorState").hidden = true;
     loadData();
     if (state.pendingUpload) {
-      const { slugs, filename, savedAt, scroll } = state.pendingUpload;
-      applyFavourites(slugs, filename, savedAt, { scroll });
+      const { slugs, filename, savedAt, source } = state.pendingUpload;
+      applyFavourites(slugs, filename, savedAt, { source });
     }
   });
 }
@@ -1830,15 +1990,6 @@ function wireCalendarControls() {
   });
   keysDate($("hEnd"), (dd) => {
     state.d1 = clamp(state.d1 + dd, state.d0, DAYS_IN_MONTH);
-  });
-
-  // Collapse / expand the grid canvas (schedule stays the focus below).
-  $("calCollapseBtn").addEventListener("click", () => {
-    const btn = $("calCollapseBtn");
-    const collapsed = $("screen2").classList.toggle("is-collapsed");
-    btn.setAttribute("aria-expanded", String(!collapsed));
-    btn.querySelector(".cc-text").textContent = collapsed ? "Show grid" : "Hide grid";
-    if (!collapsed) requestAnimationFrame(() => layoutOverlay());
   });
 
   // Click a show name to pin the whole show into the plan; click a performance
