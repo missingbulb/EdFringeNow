@@ -38,6 +38,19 @@ import {
 
 const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehydrated against VENUES_URL
 const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
+const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug → full text, fetched lazily
+
+/* How long a downloaded data file may be reused before we ask the network
+ * again. The catalogue turns over daily — ticket statuses go stale and shows
+ * get added — so a day is the most it can be trusted. Descriptions are close to
+ * immutable (a show's blurb doesn't change mid-festival) and are the bulkiest
+ * file, so they are held far longer; a week means a returning visitor pays for
+ * them once. Both are served from the Cache Storage API rather than
+ * localStorage, whose ~5 MB ceiling neither file would fit under. */
+const CATALOGUE_TTL_MS = 24 * 60 * 60 * 1000;
+const DESCRIPTIONS_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+const DATA_CACHE = "edfringe-data-v1";
+const FETCHED_KEY = "edfringe.plan.fetched.v1"; // url → epoch ms of the last fetch
 const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
 const YEAR = 2026;
@@ -70,6 +83,10 @@ const TTL_MS = 3 * 24 * 60 * 60 * 1000; // keep for 3 days, then forget
 // don't need this" is an answer, not a stale cache, so it outlives the
 // favourites it was dismissed over.
 const NAGS_KEY = "edfringe.plan.nags.v1";
+/* Whether the colour key is folded away. Its own key, not part of the
+ * favourites snapshot: it is a preference about the person, and it must not
+ * expire with the 3-day favourites TTL below. */
+const LEGEND_KEY = "edfringe.plan.legend.v1";
 
 // Genre → a small emoji drawn on the left of each scheduled block. Keys are the
 // ten headline genres in shows.json; anything else falls back to a ticket.
@@ -196,6 +213,12 @@ const state = {
   // Partner nags the visitor has closed with the × (see buildNag); a Set of nag
   // kinds ("sleep" / "travel"), restored from localStorage at boot.
   nagsDismissed: loadDismissedNags(),
+  // The descriptions sidecar (see loadDescriptions): slug → full text. Empty
+  // until it lands, and it may never land — every reader falls back to the
+  // catalogue's blurb.
+  descriptions: new Map(),
+  descriptionsPromise: null,
+
   // Build version + reschedule-timing telemetry (surfaced in the header pill).
   version: null,
   perf: { count: 0, sum: 0, last: 0, min: Infinity, max: 0 },
@@ -210,6 +233,9 @@ const state = {
 // venueName is rebuilt from the venue code + room, dates are MMDD ints, and the
 // bare image GUID gets its host prefix re-attached — so the rest of the app sees
 // a ready-to-use catalogue identical in shape to the old shows.json.
+//
+// A third file — the descriptions sidecar — follows *after* those two have
+// landed, and nothing waits for it: see loadDescriptions.
 
 let dataPromise = null;
 
@@ -218,8 +244,8 @@ function loadData() {
     // Both files are required to rehydrate: the compact catalogue and the lookups
     // it indexes into. Fetch them together.
     const [wire, lookups] = await Promise.all([
-      fetchJson(DATA_URL),
-      fetchJson(VENUES_URL),
+      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS),
+      cachedFetchJson(VENUES_URL, CATALOGUE_TTL_MS),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
     state.lookups = lookups;
@@ -228,6 +254,10 @@ function loadData() {
     state.facets = catalogueFacets(state.catalogue);
     initSearchUI();
     restoreStoredFavourites();
+    // Deliberately not awaited: the page is fully usable without descriptions,
+    // and starting them here rather than alongside the catalogue keeps them off
+    // the critical path entirely.
+    loadDescriptions();
     return state.index;
   })();
   dataPromise.catch(() => {});
@@ -238,6 +268,103 @@ async function fetchJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
   return res.json();
+}
+
+/* When each cached URL was last fetched. A plain localStorage map — the
+ * payloads live in Cache Storage, this is only the clock beside them. */
+function fetchStamps() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(FETCHED_KEY) || "{}");
+    return raw && typeof raw === "object" ? raw : {};
+  } catch {
+    return {};
+  }
+}
+
+function stampFetch(url) {
+  try {
+    localStorage.setItem(FETCHED_KEY, JSON.stringify({ ...fetchStamps(), [url]: Date.now() }));
+  } catch {
+    /* private mode / full quota — we just re-fetch next time */
+  }
+}
+
+/**
+ * fetchJson with a local copy kept for `ttlMs`.
+ *
+ * Inside the TTL the cached body is returned without touching the network.
+ * Outside it — or with nothing cached — the network is asked, and the answer
+ * replaces the copy. If that request fails and a stale copy exists, the stale
+ * copy wins: a week-old description or yesterday's catalogue is far better than
+ * an error page, and the caller has no way to draw anything without one.
+ *
+ * Degrades to a plain fetch wherever Cache Storage isn't available (it needs a
+ * secure context, so `file://` and plain http get the uncached path).
+ */
+async function cachedFetchJson(url, ttlMs) {
+  let cache = null;
+  try {
+    if (typeof caches !== "undefined") cache = await caches.open(DATA_CACHE);
+  } catch {
+    cache = null;
+  }
+  if (!cache) return fetchJson(url);
+
+  const fetchedAt = fetchStamps()[url];
+  if (fetchedAt && Date.now() - fetchedAt < ttlMs) {
+    const hit = await cache.match(url);
+    if (hit) return hit.json();
+  }
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+    try {
+      await cache.put(url, res.clone());
+      stampFetch(url);
+    } catch (err) {
+      console.info("Fringe Planner: couldn't cache", url, err);
+    }
+    return res.json();
+  } catch (err) {
+    const stale = await cache.match(url);
+    if (stale) {
+      console.info("Fringe Planner: using the cached copy of", url, err);
+      return stale.json();
+    }
+    throw err;
+  }
+}
+
+/**
+ * The descriptions sidecar: slug → the show's full text, fetched once per page
+ * and cached for a week. Everything it feeds already works without it — the
+ * hover card falls back to the catalogue's one-line blurb, and so does search —
+ * so a failure here is logged and dropped, never surfaced. When it does land,
+ * an open search re-runs so the results deepen under the query already typed.
+ */
+function loadDescriptions() {
+  if (state.descriptionsPromise) return state.descriptionsPromise;
+  state.descriptionsPromise = cachedFetchJson(DESCRIPTIONS_URL, DESCRIPTIONS_TTL_MS)
+    .then((payload) => {
+      state.descriptions = new Map(Object.entries((payload && payload.d) || {}));
+      if (!$("ssPop").hidden) runSearch();
+      return state.descriptions;
+    })
+    .catch((err) => {
+      console.info("Fringe Planner: descriptions unavailable — using blurbs", err);
+      return null;
+    });
+  return state.descriptionsPromise;
+}
+
+/** A show's description: the sidecar's full text when it has arrived, and the
+ *  catalogue's own truncated blurb until then. */
+function descriptionFor(slug) {
+  const full = state.descriptions.get(slug);
+  if (full) return full;
+  const show = showBySlug(slug);
+  return (show && show.blurb) || "";
 }
 
 async function ensureData() {
@@ -323,6 +450,27 @@ function saveDismissedNags() {
   } catch (err) {
     console.warn("Fringe Planner: couldn't save dismissed suggestions", err);
   }
+}
+
+/* The colour key is permanent chrome, but foldable: someone who has learned the
+ * marks can collapse it and expect it to stay collapsed. Unreadable storage
+ * reads as "open", which is the state that teaches rather than the one that
+ * hides. */
+function wireLegendFold() {
+  const el = $("calLegend");
+  if (!el) return;
+  try {
+    if (localStorage.getItem(LEGEND_KEY) === "closed") el.open = false;
+  } catch {
+    /* private mode — leave it open */
+  }
+  el.addEventListener("toggle", () => {
+    try {
+      localStorage.setItem(LEGEND_KEY, el.open ? "open" : "closed");
+    } catch (err) {
+      console.warn("Fringe Planner: couldn't save the colour-key state", err);
+    }
+  });
 }
 
 function restoreStoredFavourites() {
@@ -677,9 +825,9 @@ function buildDayCells(performances) {
         // native title, so the two don't stack as parallel tooltips.
         cell.appendChild(seg);
       }
-      cell.dataset.tip = entries
-        .map((p) => `${dowShort(d)} ${d} Aug · ${p.start} · ${statusLabel(p)}`)
-        .join("\n");
+      // Which day this is; the popup (buildCellTip) reads the performances
+      // themselves back off the show record, so the cell only has to say when.
+      cell.dataset.day = String(d);
     }
     frag.appendChild(cell);
   }
@@ -789,23 +937,35 @@ function laneStatus(show, filter, sets) {
   return { kind: "baddates" };
 }
 
+/* The verdicts caused by a control the user owns — a meal break, the day's
+ * start or end. Each is drawn as a button that carries you to the setting
+ * responsible (see wireConflictJumps), because the useful next move on
+ * "Lunch conflict" is to look at your lunch. */
+const CONFLICT_KINDS = {
+  early: { label: "Too early", control: "ctlDayStart" },
+  late: { label: "Too late", control: "ctlDayEnd" },
+  lunch: { label: "Lunch conflict", control: "mealLunchStart" },
+  dinner: { label: "Dinner conflict", control: "mealDinnerStart" },
+  meal: { label: "Meal conflict", control: "mealLunchStart" },
+};
+
 /** The status pill HTML for a lane verdict (see laneStatus for the kinds). */
 function statusPillHTML(status) {
   // No native title attributes — those are the browser's ugly tooltip; the short
-  // pill label carries the verdict on its own.
+  // pill label carries the verdict on its own, and the conflict pills below
+  // open a real explanation on hover (see conflictTipHTML).
+  const conflict = CONFLICT_KINDS[status.kind];
+  if (conflict) {
+    // A red triangle, not a dinner plate: this is the one verdict the user can
+    // fix in a second, and it was reading as decoration.
+    return (
+      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}">` +
+      `<span class="st-warn" aria-hidden="true">▲</span>${conflict.label}</button>`
+    );
+  }
   switch (status.kind) {
     case "scheduled":
       return `<span class="st-plan">&check;&nbsp;Scheduled!</span>`;
-    case "early":
-      return `<span class="st-blocked">☀ Too early</span>`;
-    case "late":
-      return `<span class="st-blocked">🌙 Too late</span>`;
-    case "lunch":
-      return `<span class="st-blocked">🍽 Lunch conflict</span>`;
-    case "dinner":
-      return `<span class="st-blocked">🍽 Dinner conflict</span>`;
-    case "meal":
-      return `<span class="st-blocked">🍽 Meal conflict</span>`;
     case "cantfit":
       return `<span class="st-cant">Can't fit</span>`;
     case "sold":
@@ -814,6 +974,19 @@ function statusPillHTML(status) {
     default:
       return `<span class="st-dates">📅 No dates</span>`;
   }
+}
+
+/**
+ * Play the one-shot "this just entered the plan" swell on a day mark. The class
+ * is stripped first (and a reflow forced) so a mark that wins the slot twice in
+ * quick succession restarts the animation rather than sitting still — without
+ * that, `add` on an already-present class is a no-op.
+ */
+function flashLockIn(seg) {
+  seg.classList.remove("seg--justlocked");
+  void seg.offsetWidth; // reflow: makes the re-add a fresh animation
+  seg.classList.add("seg--justlocked");
+  seg.addEventListener("animationend", () => seg.classList.remove("seg--justlocked"), { once: true });
 }
 
 /**
@@ -858,6 +1031,10 @@ function applyVerdicts(bySlug, filter) {
       const key = slotKey({ date: seg.dataset.date, start: seg.dataset.start });
       const isSelected = selectedKey != null && key === selectedKey;
       const isPinned = pinnedKey != null && key === pinnedKey;
+      // Gold arriving is news; gold that was already gold is not. Compare
+      // against the mark's current state *before* toggling, so a replan only
+      // animates the performances that actually changed hands.
+      if (isSelected && !seg.classList.contains("seg--selected")) flashLockIn(seg);
       seg.classList.toggle("seg--selected", isSelected);
       seg.classList.toggle("seg--pinned", isPinned);
       seg.classList.toggle("seg--forced-all", forcedShow && !isSelected);
@@ -915,6 +1092,80 @@ function updateBlockLabels(diag) {
     el.title = tip;
     el.setAttribute("aria-label", tip + " — click to highlight them on the grid");
   }
+}
+
+/* --- Conflict pills: explain, then take you to the cause ------------------ */
+
+/** "HH:MM" for a minute-of-day. */
+function hhmm(min) {
+  return `${String(Math.floor(min / 60) % 24).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
+}
+
+/** The hover card for a conflict pill: what is blocking the show, in the user's
+ *  own numbers, and what clicking will do about it. */
+function conflictTipHTML(kind) {
+  const meal = state.mealBreaks.find((m) => m.id === kind);
+  let what;
+  if (meal) {
+    what =
+      `Every performance of this show runs during your ${kind} break ` +
+      `(${hhmm(meal.startMin)}–${hhmm(meal.endMin)}), so the plan can't take it.`;
+  } else if (kind === "meal") {
+    what = "Every performance of this show runs during one of your meal breaks, so the plan can't take it.";
+  } else if (kind === "early") {
+    what = `Every performance starts before your day does (${hhmm(state.dayStartMin)}).`;
+  } else {
+    what = `Every performance runs past the end of your day (${hhmm(effectiveDayEnd())}).`;
+  }
+  return (
+    `<p class="tip-title">${CONFLICT_KINDS[kind].label}</p>` +
+    `<p class="tip-desc tip-desc--lead">${what}</p>` +
+    `<p class="tip-hint">Click to go to the setting and change it</p>`
+  );
+}
+
+/**
+ * Wire the conflict pills, delegated from the lanes container so it survives
+ * every re-render: hover explains the block, clicking scrolls to the control
+ * that caused it and flashes it — the shortest path from "why isn't this in my
+ * plan?" to the thing that would fix it.
+ */
+function wireConflictJumps() {
+  const lanes = $("lanes");
+  const tip = $("calTip");
+
+  lanes.addEventListener("click", (e) => {
+    const btn = e.target.closest(".st-conflict");
+    if (!btn) return;
+    const spec = CONFLICT_KINDS[btn.dataset.conflict];
+    const el = spec && $(spec.control);
+    if (!el) return;
+    tip.hidden = true;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    const ctl = el.closest(".ctl") || el;
+    ctl.classList.remove("ctl--flash");
+    void ctl.offsetWidth; // restart the animation
+    ctl.classList.add("ctl--flash");
+    ctl.addEventListener("animationend", () => ctl.classList.remove("ctl--flash"), { once: true });
+  });
+
+  // Registered after wireCellTips, whose handler hides the popup for anything
+  // that isn't a day cell — this one then claims it back for the pill.
+  lanes.addEventListener("pointerover", (e) => {
+    const btn = e.target.closest(".st-conflict");
+    if (!btn) return;
+    const kind = btn.dataset.conflict;
+    if (!tip.hidden && tip.dataset.conflict === kind) return; // already up
+    tip.dataset.conflict = kind;
+    tip.innerHTML = conflictTipHTML(kind);
+    tip.hidden = false;
+    const r = btn.getBoundingClientRect();
+    const x = Math.min(Math.max(8, r.left + r.width / 2 - tip.offsetWidth / 2),
+                       window.innerWidth - tip.offsetWidth - 8);
+    const above = r.top - tip.offsetHeight - 10;
+    tip.style.left = `${x}px`;
+    tip.style.top = `${above < 8 ? r.bottom + 10 : above}px`;
+  });
 }
 
 /** Briefly highlight the shut-out shows' lanes on the availability grid. */
@@ -1123,8 +1374,42 @@ function wireDropzone() {
   });
 }
 
+/* Clearing throws away every show on the board — an upload, or an evening of
+ * searching and starring — and it sat one stray click away from doing it
+ * silently. So the button asks first, in place: the first click arms it and
+ * names what is about to go, the second does it. Anything else — five seconds,
+ * Escape, a click elsewhere on the page — puts it back. No modal: the button is
+ * small, and a dialog for this would be heavier than the action. */
 function wireFavActions() {
-  $("clearFavBtn").addEventListener("click", clearFavourites);
+  const btn = $("clearFavBtn");
+  let armed = null; // the auto-disarm timer while it waits for a second click
+
+  const disarm = () => {
+    clearTimeout(armed);
+    armed = null;
+    btn.classList.remove("is-armed");
+    btn.textContent = "× Clear";
+  };
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // don't trip the document listener that disarms it
+    if (armed) {
+      disarm();
+      clearFavourites();
+      return;
+    }
+    const n = state.totalFavourites || state.favSlugs.length;
+    btn.textContent = `Clear all ${n} show${n === 1 ? "" : "s"}? Click again`;
+    btn.classList.add("is-armed");
+    armed = setTimeout(disarm, 5000);
+  });
+
+  document.addEventListener("click", () => {
+    if (armed) disarm();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && armed) disarm();
+  });
 }
 
 /* Fisher–Yates shuffle, in place; returns the same array for chaining. */
@@ -1502,7 +1787,12 @@ function runSearch() {
     setSearchOpen(false);
     return;
   }
-  const { results, total } = searchShows(state.catalogue, query, filters, { limit: SEARCH_LIMIT });
+  const { results, total } = searchShows(state.catalogue, query, filters, {
+    limit: SEARCH_LIMIT,
+    // Search the fullest text we have for each show: the sidecar's if it has
+    // downloaded, the catalogue's blurb until then. Same query, deeper reach.
+    describe: (show) => state.descriptions.get(show.slug) || show.blurb || "",
+  });
   // Categories the query names, minus any already ticked — offering a filter
   // that's already on would be a dead row.
   const suggestions = matchFacets(
@@ -2111,41 +2401,130 @@ function wireWindowOptimizer() {
   });
 }
 
-// --- Performance-time tooltip over the day cells ----------------------------
+// --- The day-mark popup ----------------------------------------------------
+
+/** The matched show a lane is showing, by slug. */
+function showBySlug(slug) {
+  return state.matched.find((s) => s.slug === slug) || null;
+}
+
+/** Text cut to `max` characters on a word boundary, with an ellipsis when it
+ *  actually had to cut. */
+function trimTo(text, max) {
+  const s = String(text || "").trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max).replace(/\s+\S*$/, "") + "…";
+}
+
+/**
+ * The popup for one day cell: the show, that day's performances with their
+ * ticket status, what the plan did with them, and a line of description when
+ * the sidecar has arrived (see loadDescriptions — it may never arrive, and the
+ * card is complete without it).
+ *
+ * @param {HTMLElement} lane the .lane the cell belongs to (carries the slug)
+ * @param {HTMLElement} cell the hovered .cell (carries the day of month)
+ * @returns {string} popup HTML, or "" when there's nothing to say
+ */
+function buildCellTip(lane, cell) {
+  const show = showBySlug(lane.dataset.slug);
+  const day = Number(cell.dataset.day);
+  if (!show || !day) return "";
+
+  const date = `${YEAR}-${MONTH}-${String(day).padStart(2, "0")}`;
+  const perfs = show.performances
+    .filter((p) => p.date === date)
+    .sort((a, b) => a.start.localeCompare(b.start));
+  if (perfs.length === 0) return "";
+
+  const selectedKey = state.selectedSlot.get(show.slug) || null;
+  const pin = state.forced.get(show.slug);
+  const pinnedKey = typeof pin === "string" ? pin : null;
+
+  const rows = perfs
+    .map((p) => {
+      const key = slotKey({ date: p.date, start: p.start });
+      const planned = selectedKey != null && key === selectedKey;
+      const pinned = pinnedKey != null && key === pinnedKey;
+      const note = pinned ? "locked into your plan" : planned ? "in your plan" : statusLabel(p);
+      return (
+        `<li class="tip-perf${planned || pinned ? " tip-perf--planned" : ""}">` +
+        // Same classes the grid mark itself wears, so the swatch and the bar it
+        // describes can never drift apart.
+        `<i class="seg ${planned || pinned ? "seg--selected" : segClass(p)}"></i>` +
+        `<b>${escapeHtml(p.start)}</b>` +
+        `<span class="tip-status">${escapeHtml(note)}</span>` +
+        `</li>`
+      );
+    })
+    .join("");
+
+  const meta = [show.genre, show.venueName].filter(Boolean).map(escapeHtml).join(" · ");
+  // A full description can run several paragraphs; the card is a glance, not a
+  // programme entry, so it shows the opening and stops on a word boundary.
+  const desc = trimTo(descriptionFor(show.slug), 240);
+  const hint = pinnedKey != null && perfs.some((p) => slotKey(p) === pinnedKey)
+    ? "Click the locked mark to unlock it"
+    : "Click a mark to lock that performance in";
+
+  return (
+    `<p class="tip-title">${escapeHtml(show.title)}</p>` +
+    (meta ? `<p class="tip-meta">${meta}</p>` : "") +
+    `<p class="tip-date">${dowShort(day)} ${day} Aug</p>` +
+    `<ul class="tip-perfs">${rows}</ul>` +
+    (desc ? `<p class="tip-desc">${escapeHtml(desc)}</p>` : "") +
+    `<p class="tip-hint">${hint}</p>`
+  );
+}
 
 function wireCellTips() {
   const lanes = $("lanes");
   const tip = $("calTip");
+  let shownFor = null; // the cell the popup currently describes
 
-  const position = (e) => {
-    const pad = 14;
-    let x = e.clientX + pad;
-    let y = e.clientY + pad;
-    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - pad;
-    if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - pad;
-    tip.style.left = x + "px";
-    tip.style.top = y + "px";
+  /* Anchored to the cell, not the cursor: centred on the mark, above it when
+   * there's room and below it when there isn't, and always clamped inside the
+   * viewport. */
+  const position = (cell) => {
+    const gap = 10;
+    const r = cell.getBoundingClientRect();
+    const w = tip.offsetWidth;
+    const h = tip.offsetHeight;
+    let x = r.left + r.width / 2 - w / 2;
+    x = Math.min(Math.max(8, x), window.innerWidth - w - 8);
+    let y = r.top - h - gap;
+    if (y < 8) y = r.bottom + gap;
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+  };
+
+  const hide = () => {
+    tip.hidden = true;
+    shownFor = null;
   };
 
   lanes.addEventListener("pointerover", (e) => {
     const cell = e.target.closest(".cell");
-    if (!cell || !cell.dataset.tip) {
-      tip.hidden = true;
+    const lane = cell && cell.closest(".lane");
+    if (!cell || !lane || !cell.dataset.day) {
+      hide();
       return;
     }
-    tip.textContent = cell.dataset.tip;
+    if (cell === shownFor) return; // same mark — leave the card where it is
+    const html = buildCellTip(lane, cell);
+    if (!html) {
+      hide();
+      return;
+    }
+    tip.innerHTML = html;
+    delete tip.dataset.conflict; // this card is a day mark, not a conflict
     tip.hidden = false;
-    position(e);
+    shownFor = cell;
+    position(cell);
   });
-  lanes.addEventListener("pointermove", (e) => {
-    if (!tip.hidden) position(e);
-  });
-  lanes.addEventListener("pointerleave", () => {
-    tip.hidden = true;
-  });
-  calWrap().addEventListener("scroll", () => {
-    tip.hidden = true;
-  });
+  lanes.addEventListener("pointerleave", hide);
+  calWrap().addEventListener("scroll", hide);
+  window.addEventListener("resize", hide);
 }
 
 // --- Screen 3: the plan ----------------------------------------------------
@@ -2153,6 +2532,10 @@ function wireCellTips() {
 const SCH_HOUR_PX = 34; // the axis now spans a fixed 09:00–27:00 (18h), so a
                         // shorter hour keeps the whole night on one calm board
 const SCH_MIN_BLOCK = 34;
+// The width of a day with nothing planned in it. Wide enough to carry the date
+// and read as a day, narrow enough that a fortnight of blanks doesn't squeeze
+// the days you're actually going out on.
+const SCH_EMPTY_COL_PX = 30;
 const SCH_HEAD_PX = 46;
 const SCH_GUTTER_PX = 52;
 
@@ -2250,15 +2633,10 @@ function renderPlanSummary(schedule) {
   }
   const strong = document.createElement("b");
   strong.textContent = `${scheduledShows} of ${matchedShows} shows`;
-  el.append("Planned ", strong, ` across ${days} day${days === 1 ? "" : "s"} (${planWindowText()}). `);
-  const forcedCount = schedule.forced.length;
-  const sub = document.createElement("span");
-  sub.className = "ps-sub";
-  const bits = [];
-  if (forcedCount > 0) bits.push(`${forcedCount} forced in`);
-  bits.push(`by ${MODE_META[state.mode].verb.replace(/^by /, "")}`);
-  sub.textContent = bits.join(" · ");
-  el.append(sub);
+  // One sentence, and nothing after it. The old "3 forced in · by walk" tail
+  // restated two things the page already shows — the pinned lanes carry their
+  // own padlocks, and the travel mode is a lit button a few inches above.
+  el.append("Planned ", strong, ` across ${days} day${days === 1 ? "" : "s"} (${planWindowText()}).`);
 }
 
 /**
@@ -2333,41 +2711,63 @@ function renderSchedule(schedule, animate = false) {
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
-  // Days to draw: every day that got shows, plus the trip's first/last day so
-  // the "getting there" / "getting out" blocks always have a column to live on
-  // (an empty boundary day shows just its travel block).
-  const renderDays = schedule.days.slice();
-  const shownDates = new Set(renderDays.map((d) => d.date));
-  const ensureDay = (date) => {
-    if (shownDates.has(date)) return;
-    shownDates.add(date);
-    renderDays.push({ date, slots: [] });
-  };
-  if (state.arrival.enabled) ensureDay(dateStr(state.d0));
-  if (state.departure.enabled) ensureDay(dateStr(state.d1));
+  // Days to draw: EVERY day in the window, not only the ones that got shows.
+  // Drawing just the full days made a plan look denser than it was — three
+  // columns side by side read as three consecutive days even when a blank
+  // Wednesday sat between them. The blank days are still not worth a full
+  // column, so they collapse to a narrow placeholder (.sch-day--empty): the gap
+  // is visible, and it costs the real days almost nothing.
+  const bySchedDate = new Map(schedule.days.map((d) => [d.date, d]));
+  const renderDays = [];
+  for (let d = state.d0; d <= state.d1; d++) {
+    const date = dateStr(d);
+    renderDays.push(bySchedDate.get(date) || { date, slots: [] });
+  }
+  // A scheduled day outside the current window shouldn't silently vanish.
+  for (const day of schedule.days) {
+    if (!renderDays.some((d) => d.date === day.date)) renderDays.push(day);
+  }
   renderDays.sort((a, b) => a.date.localeCompare(b.date));
+
+  // A day earns a full column when it has shows, or when it is a trip boundary
+  // whose "getting there" / "getting out" block needs somewhere to live.
+  // Everything else collapses to SCH_EMPTY_COL_PX.
+  const isFullColumn = (day) =>
+    day.slots.length > 0 ||
+    (state.arrival.enabled && day.date === dateStr(state.d0)) ||
+    (state.departure.enabled && day.date === dateStr(state.d1));
 
   // Columns flex to share the width, so on a many-day plan each one gets tight.
   // Flag two breakpoints the CSS uses to shed chrome the block can't afford:
   // narrow drops the tiny start–end time; tiny also drops the genre emoji, so
-  // the show title always wins the space.
+  // the show title always wins the space. The collapsed days are subtracted
+  // first — they take a fixed sliver, not a share.
   const wrapW = ($("scheduleWrap").clientWidth || 800) - SCH_GUTTER_PX;
-  const colW = wrapW / Math.max(1, renderDays.length);
+  const emptyCount = renderDays.filter((d) => !isFullColumn(d)).length;
+  const fullCount = Math.max(1, renderDays.length - emptyCount);
+  const colW = Math.max(1, (wrapW - emptyCount * SCH_EMPTY_COL_PX) / fullCount);
   host.classList.toggle("cols-narrow", colW < 78);
   host.classList.toggle("cols-tiny", colW < 56);
 
-  // One column per day; columns flex to share the width.
+  // One column per day; the full ones flex to share the width, the empty ones
+  // hold a fixed sliver so the gap in the plan is visible without costing the
+  // days that have something in them.
   for (const day of renderDays) {
     const dayNum = Number(day.date.slice(8, 10));
+    const full = isFullColumn(day);
     const col = document.createElement("div");
-    col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "");
+    col.className = "sch-day" + (isWeekend(dayNum) ? " wknd" : "") + (full ? "" : " sch-day--empty");
     col.dataset.date = day.date;
 
     const head = document.createElement("div");
     head.className = "sch-day-head";
-    head.innerHTML =
-      `<div class="sch-dow">${DOW_LONG[dow(dayNum)]} <span class="sch-date">${dayNum} Aug</span></div>` +
-      `<div class="sch-day-count">${day.slots.length} show${day.slots.length === 1 ? "" : "s"}</div>`;
+    // A collapsed day has room for the date and nothing else; the day of the
+    // week and the "0 shows" count would only be truncated into noise.
+    head.innerHTML = full
+      ? `<div class="sch-dow">${DOW_LONG[dow(dayNum)]} <span class="sch-date">${dayNum} Aug</span></div>` +
+        `<div class="sch-day-count">${day.slots.length} show${day.slots.length === 1 ? "" : "s"}</div>`
+      : `<div class="sch-dow sch-dow--empty">${dayNum}</div>`;
+    if (!full) col.title = `${DOW_LONG[dow(dayNum)]} ${dayNum} Aug — nothing planned`;
 
     const body = document.createElement("div");
     body.className = "sch-body";
@@ -2399,11 +2799,18 @@ function renderSchedule(schedule, animate = false) {
     host.appendChild(col);
   }
 
-  // Draggable overlay: day-start / day-end lines + meal bands. The column count
-  // lets the day-start line + top zone skip the first (arrival) column and the
-  // day-end line + bottom zone skip the last (departure) column, where the trip
-  // blocks own the boundary instead.
-  host.appendChild(buildScheduleOverlay(axisH, y, renderDays.length));
+  // Draggable overlay: day-start / day-end lines + meal bands. It needs the
+  // real width of the first and last columns (as a percentage of the board) so
+  // the day-start line + top zone can skip the first (arrival) column and the
+  // day-end line + bottom zone the last (departure) one, where the trip blocks
+  // own the boundary instead. Not 100/columns any more — the collapsed days
+  // make the columns unequal.
+  const boardW = emptyCount * SCH_EMPTY_COL_PX + fullCount * colW;
+  const pctOf = (day) => ((isFullColumn(day) ? colW : SCH_EMPTY_COL_PX) / boardW) * 100;
+  host.appendChild(buildScheduleOverlay(axisH, y, {
+    start: pctOf(renderDays[0]),
+    end: pctOf(renderDays[renderDays.length - 1]),
+  }));
   populateDecors(host); // fill every emoji scatter now the regions have a size
 
   // Animate what actually changed since the last board: shows arrive, depart, or
@@ -2438,8 +2845,14 @@ function snapshotBoard(host) {
       html: el.outerHTML,
     });
   }
-  const days = new Set([...host.querySelectorAll(".sch-day")].map((c) => c.dataset.date));
-  return { blocks, days };
+  // Column widths too: a day that gains or loses its last show collapses or
+  // expands, and that is a change the eye should be able to follow.
+  const widths = new Map();
+  for (const col of host.querySelectorAll(".sch-day")) {
+    widths.set(col.dataset.date, col.getBoundingClientRect().width);
+  }
+  const days = new Set(widths.keys());
+  return { blocks, days, widths };
 }
 
 function animateBoardDiff(host, prev) {
@@ -2468,9 +2881,16 @@ function animateBoardDiff(host, prev) {
     }
   }
 
-  // Whole new day columns ease in.
+  // Whole new day columns ease in; surviving ones whose width changed (a day
+  // that just lost its last show collapses, one that just gained a show opens
+  // up) slide between the two widths instead of snapping.
   for (const col of host.querySelectorAll(".sch-day")) {
-    if (newDays.has(col.dataset.date)) col.classList.add("sch-day--enter");
+    if (newDays.has(col.dataset.date)) {
+      col.classList.add("sch-day--enter");
+      continue;
+    }
+    const was = prev.widths ? prev.widths.get(col.dataset.date) : undefined;
+    if (was != null) widthTween(col, was);
   }
 
   // Departed shows: float a ghost where they sat and fade it out.
@@ -2478,6 +2898,35 @@ function animateBoardDiff(host, prev) {
     if (seen.has(slug)) continue;
     ghostOut(host, info);
   }
+}
+
+/**
+ * Width FLIP for a day column. The board is rebuilt from scratch on every
+ * re-plan, so there is no element left to transition — instead the fresh column
+ * is pinned to the width its predecessor had, then released on the next frame
+ * so it animates to the width it actually wants. The inline flex is dropped
+ * afterwards, handing the column back to the flex layout.
+ *
+ * @param {HTMLElement} col the freshly rendered column
+ * @param {number} fromWidth the width the same date had a moment ago, in px
+ */
+function widthTween(col, fromWidth) {
+  const to = col.getBoundingClientRect().width;
+  if (Math.abs(to - fromWidth) < 1) return;
+  const done = () => {
+    col.style.transition = "";
+    col.style.flex = "";
+  };
+  col.style.transition = "none";
+  col.style.flex = `0 0 ${fromWidth}px`;
+  requestAnimationFrame(() => {
+    col.style.transition = "flex-basis 0.32s ease";
+    col.style.flex = `0 0 ${to}px`;
+    col.addEventListener("transitionend", done, { once: true });
+    // A transition that never fires (an interrupted render, a tab in the
+    // background) must not strand the column at a fixed width.
+    setTimeout(done, 600);
+  });
 }
 
 /** FLIP: invert to the old position, then release to animate to the new one. */
@@ -2598,7 +3047,7 @@ function buildTravelLeg(a, b, top, bottom) {
 
 // --- The draggable day-hours / meal-break overlay --------------------------
 
-function buildScheduleOverlay(axisH, y, numCols = 1) {
+function buildScheduleOverlay(axisH, y, boundaryPct = { start: 0, end: 0 }) {
   const overlay = document.createElement("div");
   overlay.className = "sch-overlay";
   overlay.style.left = `${SCH_GUTTER_PX}px`;
@@ -2610,9 +3059,8 @@ function buildScheduleOverlay(axisH, y, numCols = 1) {
   // Skip the boundary column where a trip block already owns the edge: the
   // getting-there block replaces day-start on the first column, getting-out
   // replaces day-end on the last.
-  const colPct = numCols > 0 ? 100 / numCols : 0;
-  const insetStart = state.arrival.enabled ? colPct : 0;
-  const insetEnd = state.departure.enabled ? colPct : 0;
+  const insetStart = state.arrival.enabled ? boundaryPct.start : 0;
+  const insetEnd = state.departure.enabled ? boundaryPct.end : 0;
 
   // Shaded "before day starts" / "after day ends" zones, each with a themed
   // emoji scatter (breakfast up top, night at the bottom).
@@ -3351,7 +3799,23 @@ function wireExports() {
   });
   $("importIcsBtn").addEventListener("click", () => {
     if (!state.schedule || state.schedule.scheduled.length === 0) return;
-    downloadText("fringe-plan.ics", toIcs(state.schedule.scheduled, { now: new Date() }), "text/calendar;charset=utf-8");
+    downloadText(
+      "fringe-plan.ics",
+      toIcs(state.schedule.scheduled, {
+        now: new Date(),
+        calendarName: `Fringe ${YEAR} · ${planWindowText()}`,
+      }),
+      "text/calendar;charset=utf-8"
+    );
+    // A downloaded .ics is only half the job — most people then stall on
+    // Google Calendar's import, or import into their main calendar and can't
+    // get the plan back out. Say how, at the moment they need it.
+    const howto = $("icsHowto");
+    howto.hidden = false;
+    howto.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  $("icsHowtoClose").addEventListener("click", () => {
+    $("icsHowto").hidden = true;
   });
 }
 
@@ -3418,7 +3882,9 @@ hideDebugInUK();
 wireRetry();
 wireCalendarControls();
 wireWindowOptimizer();
+wireLegendFold();
 wireCellTips();
+wireConflictJumps(); // after wireCellTips — see the comment on its pointerover
 wireScheduleInteractions();
 wireExcludePopup();
 wirePlanControls();

@@ -809,6 +809,182 @@ a { color: inherit; }
 .debug-btn { font: inherit; font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 5px 9px; color: var(--pink); background: #fff; border: 1px solid var(--line); border-radius: 7px; }
 .debug-btn:hover { background: #ffecea; }
 
+/* ===================== First-run explainer ===================== */
+/* Shown once, above everything, until dismissed (initIntro in js/app.js).
+   The stage animates one 9-second loop split into three equal phases that
+   match the three captions beneath it — commitment, reach, pick — so the
+   picture and the words are never describing different steps. Every phase
+   boundary below is a percentage of that shared --loop, which is why the
+   captions can drive off the same keyframes with a 3s / 6s delay. */
+.intro {
+  --loop: 9s;
+  position: relative;
+  margin: 0 0 22px;
+  padding: 20px 22px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.intro[hidden] { display: none; }
+.intro-kicker {
+  margin: 0; font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--red);
+}
+.intro-title {
+  margin: 5px 0 14px; max-width: 30ch;
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 800;
+  line-height: 1.25; color: var(--ink);
+}
+.intro-x {
+  position: absolute; top: 12px; right: 12px;
+  width: 30px; height: 30px; display: grid; place-items: center;
+  font: inherit; font-size: 1.25rem; line-height: 1; cursor: pointer;
+  color: var(--muted); background: #fff;
+  border: 1px solid var(--line); border-radius: 9px;
+}
+.intro-x:hover { color: var(--ink); background: #f3f4f8; }
+
+/* --- The animated stage --- */
+.intro-stage {
+  margin: 0 0 14px; padding: 6px;
+  background: linear-gradient(180deg, #f7f6ff, #fcfcfe);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+.intro-svg { display: block; width: 100%; height: auto; }
+.i-streets { fill: none; stroke: #e6e4f6; stroke-width: 2; }
+
+/* Phase 2's reach ring. Scaled rather than animated on `r`, which is a CSS
+   property only in newer engines — a transform works everywhere. */
+.i-ring {
+  fill: rgba(108, 76, 241, 0.09);
+  stroke: var(--red); stroke-width: 2; stroke-dasharray: 5 5;
+  transform-box: fill-box; transform-origin: center;
+  opacity: 0;
+  animation: iRing var(--loop) linear infinite;
+}
+@keyframes iRing {
+  0%, 33% { transform: scale(0.12); opacity: 0; }
+  38%     { opacity: 1; }
+  52%     { transform: scale(1); opacity: 0.95; }
+  94%     { transform: scale(1); opacity: 0.95; }
+  100%    { transform: scale(1); opacity: 0; }
+}
+
+/* Phase 1: you are here. The halo beats on its own short cycle — it is a
+   "live" signal, not part of the three-phase story. */
+.i-you {
+  fill: var(--red); stroke: #fff; stroke-width: 2.5;
+  opacity: 0; animation: iFade var(--loop) linear infinite;
+}
+@keyframes iFade { 0% { opacity: 0; } 4%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.i-pulse {
+  fill: rgba(108, 76, 241, 0.22);
+  transform-box: fill-box; transform-origin: center;
+  animation: iPulse 2.2s ease-out infinite;
+}
+@keyframes iPulse {
+  0%        { transform: scale(0.5); opacity: 0.75; }
+  70%, 100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* Phase 2: the shows the ring swept up, popping in a beat apart. */
+.i-pin {
+  transform-box: fill-box; transform-origin: center;
+  opacity: 0; animation: iPin var(--loop) linear infinite;
+}
+.i-pin circle { fill: #fff; stroke: var(--red); stroke-width: 2; }
+.i-pin text { font-size: 11px; text-anchor: middle; }
+.i-pin.is-pick circle { fill: #f1eefe; stroke-width: 3; }
+.i-pin--2 { animation-delay: 0.3s; }
+.i-pin--3 { animation-delay: 0.6s; }
+@keyframes iPin {
+  0%, 40%   { opacity: 0; transform: scale(0.3); }
+  48%       { opacity: 1; transform: scale(1.14); }
+  52%, 94%  { opacity: 1; transform: scale(1); }
+  100%      { opacity: 0; transform: scale(1); }
+}
+
+/* Phase 3: the route drawing you → the show → where you have to be. */
+.i-route {
+  fill: none; stroke: var(--red); stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 220; stroke-dashoffset: 220;
+  animation: iRoute var(--loop) linear infinite;
+}
+@keyframes iRoute {
+  0%, 66%  { stroke-dashoffset: 220; opacity: 1; }
+  84%, 94% { stroke-dashoffset: 0; opacity: 1; }
+  100%     { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* The next commitment (phase 1) and the verdict it earns (phase 3). */
+.i-dest { opacity: 0; animation: iDest var(--loop) linear infinite; }
+.i-dest rect { fill: #fff; stroke: var(--ink); stroke-width: 1.5; }
+.i-dest text { font-size: 12px; font-weight: 700; text-anchor: middle; fill: var(--ink); }
+@keyframes iDest { 0%, 12% { opacity: 0; } 20%, 94% { opacity: 1; } 100% { opacity: 0; } }
+
+.i-verdict { opacity: 0; animation: iVerdict var(--loop) linear infinite; }
+.i-verdict rect { fill: var(--ok-bg); }
+.i-verdict text { font-size: 12px; font-weight: 700; text-anchor: middle; fill: var(--ok-text); }
+@keyframes iVerdict { 0%, 84% { opacity: 0; } 90%, 96% { opacity: 1; } 100% { opacity: 0; } }
+
+/* --- The three captions, lit in step with the stage --- */
+.intro-steps {
+  list-style: none; margin: 0 0 15px; padding: 0;
+  display: grid; gap: 8px; counter-reset: istep;
+}
+.intro-step {
+  position: relative; padding: 9px 12px 9px 42px;
+  font-size: 0.9rem; line-height: 1.4; color: var(--muted);
+  background: #fbfbfe; border: 1px solid transparent; border-radius: 11px;
+  counter-increment: istep;
+  animation: iStep var(--loop) linear infinite;
+}
+.intro-step b { color: var(--ink); font-weight: 700; }
+.intro-step::before {
+  content: counter(istep);
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  width: 21px; height: 21px; display: grid; place-items: center;
+  font-size: 0.72rem; font-weight: 800; color: #fff;
+  background: #c7c2e8; border-radius: 50%;
+  animation: iStepNum var(--loop) linear infinite;
+}
+.intro-step:nth-child(2), .intro-step:nth-child(2)::before { animation-delay: 3s; }
+.intro-step:nth-child(3), .intro-step:nth-child(3)::before { animation-delay: 6s; }
+@keyframes iStep {
+  0%, 2%    { background: #fbfbfe; border-color: transparent; }
+  5%, 30%   { background: #f3f1fe; border-color: #ddd7fb; }
+  34%, 100% { background: #fbfbfe; border-color: transparent; }
+}
+@keyframes iStepNum {
+  0%, 2%    { background: #c7c2e8; }
+  5%, 30%   { background: var(--red); }
+  34%, 100% { background: #c7c2e8; }
+}
+
+.intro-got {
+  font: inherit; font-family: var(--serif); font-weight: 700; font-size: 0.92rem;
+  color: #fff; background: var(--red); border: none; border-radius: 11px;
+  padding: 10px 18px; cursor: pointer;
+  box-shadow: 0 8px 18px rgba(108, 76, 241, 0.24);
+}
+.intro-got:hover { background: var(--red-dark); }
+.intro-got:focus-visible, .intro-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* Reduced motion gets the loop's *last* frame held still — every element
+   visible, the route drawn — which is exactly the summary the animation
+   spends nine seconds building up to. */
+@media (prefers-reduced-motion: reduce) {
+  .intro-stage *, .intro-step, .intro-step::before { animation: none; }
+  .i-you, .i-dest, .i-pin, .i-verdict { opacity: 1; }
+  .i-ring { opacity: 0.95; transform: scale(1); }
+  .i-route { stroke-dashoffset: 0; }
+  .i-pulse { opacity: 0; }
+  .intro-step { background: #f3f1fe; border-color: #ddd7fb; }
+  .intro-step::before { background: var(--red); }
+}
+
 /* --- Primary CTA (opens the next-commitment picker) --- */
 .cta-card { border: none; box-shadow: none; background: transparent; }
 .cta-card:hover { transform: none; box-shadow: none; }

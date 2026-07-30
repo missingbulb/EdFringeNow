@@ -20,6 +20,16 @@ emits three layers of data:
                                MMDD int; field names are 1-3 chars. The planner
                                rehydrates it with venues.json (see plan/plan.js).
 
+  data/normalized/descriptions.min.json
+                               slug -> full show description, as a sidecar the
+                               planner fetches SEPARATELY and lazily. It exists
+                               so the catalogue above stays small enough to block
+                               on: descriptions are the bulkiest field and are
+                               needed by nothing on first paint — only by the
+                               hover card and by search, both of which work
+                               (from the 160-char `blurb` in the catalogue) and
+                               simply reach further once this lands.
+
   data/venues.json             shared lookup, sent once:
                                {venues, rooms, genres, subgenres, ticketStatuses,
                                ageRestrictions}. `venues` is keyed by venue code
@@ -64,6 +74,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RAW_DIR = ROOT / "data" / "raw_pages"
 DEFAULT_MASTER = ROOT / "data" / "normalized" / "shows.json"
 DEFAULT_MASTER_MIN = ROOT / "data" / "normalized" / "shows.min.json"
+DEFAULT_DESCRIPTIONS = ROOT / "data" / "normalized" / "descriptions.min.json"
 DEFAULT_VENUES = ROOT / "data" / "venues.json"
 DEFAULT_DAYS_DIR = ROOT / "data" / "days"
 
@@ -149,12 +160,21 @@ def subgenre_labels(event: dict) -> list[str]:
     return out
 
 
-def short_blurb(description: str | None) -> str:
-    """A compact one-line blurb: strip markdown, collapse space, truncate."""
+def clean_description(description: str | None) -> str:
+    """The full description as plain text: markdown markers dropped, whitespace
+    collapsed, nothing truncated. This is what the descriptions sidecar carries;
+    short_blurb() below is the same text cut to a single line for the catalogue."""
     if not description:
         return ""
     text = re.sub(r"[*_#>`]", "", description)        # drop markdown markers
-    text = re.sub(r"\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def short_blurb(description: str | None) -> str:
+    """A compact one-line blurb: strip markdown, collapse space, truncate."""
+    text = clean_description(description)
+    if not text:
+        return ""
     if len(text) <= BLURB_MAX:
         return text
     cut = text[:BLURB_MAX].rsplit(" ", 1)[0].rstrip(",.;:")
@@ -266,6 +286,10 @@ def normalize_event(event: dict) -> dict:
         "image": large_image(event.get("images")),
         "smallImage": small_image(event.get("images")),
         "blurb": short_blurb(event.get("description")),
+        # The untruncated text. Master-only: it is stripped out of the compact
+        # catalogue (minify_master) and shipped separately, see the descriptions
+        # sidecar in write_derived_outputs.
+        "description": clean_description(event.get("description")),
         "venue": venue_code,
         "venueName": venue_name,
         "room": room,
@@ -522,6 +546,28 @@ def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[st
     return out
 
 
+def build_descriptions(master: list[dict]) -> dict:
+    """The descriptions sidecar: {"v": 1, "d": {slug: text}}.
+
+    Falls back to a show's `blurb` when it has no `description` — masters
+    scraped before descriptions were retained carry only the truncated blurb,
+    and half a sentence is still better for search than nothing. Shows with
+    neither are omitted entirely rather than mapped to "", which keeps the file
+    to what it is actually for.
+
+    Not packed against venues.json like the other wire files: it is keyed by
+    slug and indexes into nothing, so it can be regenerated, cached and expired
+    on its own schedule without touching the lookup lists.
+    """
+    out: dict[str, str] = {}
+    for show in master:
+        slug = show.get("slug")
+        text = show.get("description") or show.get("blurb") or ""
+        if slug and text:
+            out[slug] = text
+    return {"v": 1, "d": out}
+
+
 def load_events(raw_dir: Path) -> list[dict]:
     shows_json = raw_dir / "shows.json"
     if shows_json.exists():
@@ -540,10 +586,12 @@ def write_json(path: Path, obj) -> None:
 
 
 def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
-                          days_dir: Path, master_min_path: Path) -> int:
+                          days_dir: Path, master_min_path: Path,
+                          descriptions_path: Path) -> int:
     """Write everything derived from the master + venue map: the shared lookup
-    file (venues.json), the per-day now-page files, and the compact planner file
-    (shows.min.json). Returns the number of day files written.
+    file (venues.json), the per-day now-page files, the compact planner file
+    (shows.min.json) and its descriptions sidecar. Returns the number of day
+    files written.
 
     The lookup lists are built once here and indexed into by both the day files
     and shows.min.json, so the two stay in lockstep with a single source of truth.
@@ -559,9 +607,11 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     ts_ix = {t: i for i, t in enumerate(ticket_statuses)}
     age_ix = {a: i for i, a in enumerate(age_restrictions)}
 
-    # Compact planner payload (packed against the lookups just written).
+    # Compact planner payload (packed against the lookups just written), and the
+    # descriptions it deliberately leaves behind.
     write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
                                               ts_ix, age_ix, venues))
+    write_json(descriptions_path, build_descriptions(master))
 
     # Per-day August files + index.
     days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix)
@@ -588,10 +638,11 @@ def regen_from_master(args) -> int:
     prior = json.loads(venues_path.read_text()) if venues_path.exists() else {}
     venues = prior.get("venues", prior)
     n_days = write_derived_outputs(master, venues, venues_path,
-                                   Path(args.days_dir), Path(args.master_min))
+                                   Path(args.days_dir), Path(args.master_min),
+                                   Path(args.descriptions))
     print(f"Regenerated from {master_path} ({len(master)} shows): "
-          f"{args.master_min}, {venues_path} ({len(venues)} venues), "
-          f"{n_days} day files in {args.days_dir}")
+          f"{args.master_min}, {args.descriptions}, {venues_path} "
+          f"({len(venues)} venues), {n_days} day files in {args.days_dir}")
     return 0
 
 
@@ -639,10 +690,12 @@ def run(args) -> int:
     venues_raw = json.loads(venues_raw_path.read_text()) if venues_raw_path.exists() else {}
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
     n_days = write_derived_outputs(master, venues, venues_path,
-                                   Path(args.days_dir), Path(args.master_min))
+                                   Path(args.days_dir), Path(args.master_min),
+                                   Path(args.descriptions))
 
     print(f"\nWrote: {master_path} ({len(master)} shows), {args.master_min}, "
-          f"{venues_path} ({len(venues)} venues), {n_days} day files in {args.days_dir}")
+          f"{args.descriptions}, {venues_path} ({len(venues)} venues), "
+          f"{n_days} day files in {args.days_dir}")
     return 0
 
 
@@ -686,6 +739,13 @@ def selftest() -> int:
     assert rec["free"] is False
     assert rec["duration"] == 60
     assert rec["blurb"] == "A razor-sharp hour of comedy. Really funny.", rec["blurb"]
+    # The master keeps the untruncated text too; the blurb is the same string
+    # cut down. (This fixture is short enough that they coincide — the cut
+    # itself is asserted below.)
+    assert rec["description"] == "A razor-sharp hour of comedy. Really funny.", rec["description"]
+    long_desc = "word " * 60
+    assert len(clean_description(long_desc)) == 299, "clean_description must not truncate"
+    assert short_blurb(long_desc).endswith("…"), "short_blurb must truncate"
     # `image` prefers the "Large" variant and smallImage the "Small" one,
     # regardless of the order the API lists them in, and both are stored as the
     # bare GUID (the edfringe host prefix is stripped, re-attached client-side).
@@ -740,7 +800,8 @@ def selftest() -> int:
     assert d6["venue"] == "33" and rooms[d6["room"]] == "Beneath", d6
     assert [subgenres[i] for i in d6["subs"]] == ["Stand-up", "Character Comedy"], d6
     assert ticket_statuses[d6["ts"]] == "AVAILABLE", d6
-    for dropped in ("venueName", "performances", "blurb", "subgenres", "smallImage"):
+    for dropped in ("venueName", "performances", "blurb", "subgenres", "smallImage",
+                    "description"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
     assert d6["start"] == "11:45"
     # Binary flags are 1/0, not booleans.
@@ -777,6 +838,21 @@ def selftest() -> int:
     assert map_genre("DANCE_PHYSICAL_THEATRE_AND_CIRCUS", None) == "Dance, Physical Theatre & Circus"
     assert map_genre("MUSICALS_AND_OPERA", "Musicals and Opera") == "Musicals and Opera"
     assert map_genre("CHILDRENS_SHOWS", "Children's Shows") == "Children's Shows"
+
+    # The descriptions sidecar: keyed by slug, full text, and never carrying an
+    # entry it has nothing to say for. A master with only the older truncated
+    # blurb still yields a usable sidecar.
+    side = build_descriptions([rec])
+    assert side["v"] == 1, side
+    assert side["d"]["10-things-they-hate-about-me"] == rec["description"], side
+    legacy = {"slug": "old-show", "blurb": "Only a blurb survived."}
+    assert build_descriptions([legacy])["d"] == {"old-show": "Only a blurb survived."}
+    assert build_descriptions([{"slug": "empty", "blurb": ""}])["d"] == {}
+    # The packed catalogue must NOT carry the description — that separation is
+    # the entire reason the sidecar exists.
+    assert "description" not in packed, packed
+    assert "de" not in packed, packed
+
     print("selftest OK")
     return 0
 
@@ -787,6 +863,7 @@ def main() -> int:
     parser.add_argument("--raw-dir", default=str(DEFAULT_RAW_DIR))
     parser.add_argument("--master", default=str(DEFAULT_MASTER))
     parser.add_argument("--master-min", default=str(DEFAULT_MASTER_MIN))
+    parser.add_argument("--descriptions", default=str(DEFAULT_DESCRIPTIONS))
     parser.add_argument("--venues", default=str(DEFAULT_VENUES))
     parser.add_argument("--days-dir", default=str(DEFAULT_DAYS_DIR))
     parser.add_argument("--merge", action="store_true",
