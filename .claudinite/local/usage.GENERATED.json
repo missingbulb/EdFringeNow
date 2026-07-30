@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "foldedThrough": "2026-07-29",
+  "runsFoldedThrough": "2026-07-30T01:04:01Z",
+  "days": {
+    "2026-07-21": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 4,
+      "userMessages": 15,
+      "userCommands": 0,
+      "skillLoads": {
+        "engineering-practices": 1,
+        "merge-to-main": 4,
+        "repo-text-sweeps": 1,
+        "writing-tests": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 5,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 49,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "barrier": {
+          "blocking": 8,
+          "advisory": 0
+        },
+        "claudinite-isolation": {
+          "blocking": 6,
+          "advisory": 0
+        },
+        "config": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "markdown-link-labels": {
+          "blocking": 15,
+          "advisory": 0
+        },
+        "pack-independence": {
+          "blocking": 9,
+          "advisory": 0
+        },
+        "reference-integrity": {
+          "blocking": 104,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 4,
+          "advisory": 0
+        },
+        "warning-suppression": {
+          "blocking": 8,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    },
+    "2026-07-22": {
+      "captures": 1,
+      "merges": 1,
+      "sessions": 1,
+      "userMessages": 2,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 1
+      },
+      "checks": {},
+      "checkFindings": {},
+      "tasks": {}
+    },
+    "2026-07-23": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 4,
+      "userMessages": 14,
+      "userCommands": 1,
+      "skillLoads": {
+        "merge-to-main": 4
+      },
+      "checks": {
+        "work": {
+          "runs": 6,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 1,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    },
+    "2026-07-28": {
+      "captures": 2,
+      "merges": 2,
+      "sessions": 2,
+      "userMessages": 8,
+      "userCommands": 2,
+      "skillLoads": {
+        "adopt-claudinite": 1,
+        "merge-to-main": 2,
+        "writing-claudinite-skills": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 28,
+          "failures": 7,
+          "errors": 0,
+          "blocking": 7,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 25,
+          "failures": 2,
+          "errors": 0,
+          "blocking": 4,
+          "advisory": 12,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "adoption-answers-pending": {
+          "blocking": 5,
+          "advisory": 0
+        },
+        "comment-classification": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "edfringe-cross-page-mirrors": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 4
+        },
+        "interview-answer-stale": {
+          "blocking": 0,
+          "advisory": 1
+        },
+        "product-wiki-isolation": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "product-wiki-layout": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 4,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    },
+    "2026-07-29": {
+      "captures": 12,
+      "merges": 11,
+      "sessions": 11,
+      "userMessages": 29,
+      "userCommands": 2,
+      "skillLoads": {
+        "engineering-practices": 3,
+        "file-placement": 2,
+        "merge-to-main": 12,
+        "prose-to-checks": 1,
+        "writing-tests": 3
+      },
+      "checks": {
+        "work": {
+          "runs": 37,
+          "failures": 15,
+          "errors": 0,
+          "blocking": 20,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 9,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 7,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 12,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 7,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    }
+  },
+  "weeks": {
+    "2026-W30": {
+      "days": 3,
+      "captures": 9,
+      "merges": 9,
+      "sessionDays": 9,
+      "userMessages": 31,
+      "userCommands": 1,
+      "skillLoads": {
+        "engineering-practices": 1,
+        "merge-to-main": 9,
+        "repo-text-sweeps": 1,
+        "writing-tests": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 11,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 49,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "barrier": {
+          "blocking": 8,
+          "advisory": 0
+        },
+        "claudinite-isolation": {
+          "blocking": 6,
+          "advisory": 0
+        },
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "config": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "markdown-link-labels": {
+          "blocking": 15,
+          "advisory": 0
+        },
+        "pack-independence": {
+          "blocking": 9,
+          "advisory": 0
+        },
+        "reference-integrity": {
+          "blocking": 104,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 4,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "warning-suppression": {
+          "blocking": 8,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    },
+    "2026-W31": {
+      "days": 2,
+      "captures": 14,
+      "merges": 13,
+      "sessionDays": 13,
+      "userMessages": 37,
+      "userCommands": 4,
+      "skillLoads": {
+        "adopt-claudinite": 1,
+        "engineering-practices": 3,
+        "file-placement": 2,
+        "merge-to-main": 14,
+        "prose-to-checks": 1,
+        "writing-claudinite-skills": 1,
+        "writing-tests": 3
+      },
+      "checks": {
+        "work": {
+          "runs": 65,
+          "failures": 22,
+          "errors": 0,
+          "blocking": 27,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 34,
+          "failures": 2,
+          "errors": 0,
+          "blocking": 4,
+          "advisory": 19,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "adoption-answers-pending": {
+          "blocking": 5,
+          "advisory": 0
+        },
+        "comment-classification": {
+          "blocking": 14,
+          "advisory": 0
+        },
+        "edfringe-cross-page-mirrors": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 4
+        },
+        "interview-answer-stale": {
+          "blocking": 0,
+          "advisory": 1
+        },
+        "product-wiki-isolation": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "product-wiki-layout": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 3,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 11,
+          "advisory": 0
+        }
+      },
+      "tasks": {}
+    }
+  }
+}
