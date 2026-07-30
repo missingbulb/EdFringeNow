@@ -254,8 +254,8 @@ test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");
-  assert.ok(pack.rules.includes(rule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.rules.includes(verifyShSourceDirsRule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.rules.includes(noStrayPackageJsonRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(verifyShSourceDirsRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(noStrayPackageJsonRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });
