@@ -8,8 +8,12 @@ import noStrayPackageJson from './no-stray-package-json.mjs';
 // and its checks run against the tree.
 export default {
   id: 'edfringe',
+  ruleRoutingGuidance: {
+    belongs: "EdFringeNow's own working rules — its build steps, shell scripts, and repo layout conventions",
+    excludes: 'the edfringe.com scrape and the data layer it produces — those are edfringe-data',
+  },
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  rules: [testGlobsInStep, verifyShSourceDirs, noStrayPackageJson],
+  worldRules: [testGlobsInStep, verifyShSourceDirs, noStrayPackageJson],
 };
