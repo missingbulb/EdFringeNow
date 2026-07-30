@@ -326,18 +326,26 @@
 
       <div class="cal-tip" id="calTip" hidden></div>
 
-      <!-- Colour key for the day marks, lifted into the card's own bottom
-           padding so revealing it never resizes anything. -->
-      <div class="cal-legend" id="calLegend" hidden>
-        <div class="legend" aria-hidden="true">
+      <!-- Colour key for the day marks. Permanent rather than hover-revealed —
+           the marks are the grid's whole vocabulary, and a key you have to
+           discover by hovering is a key most people never read — but
+           collapsible, so anyone who has learned it can fold it away. The
+           open/closed choice is remembered between visits. -->
+      <details class="cal-legend" id="calLegend" hidden open>
+        <summary class="legend-toggle">Colour key</summary>
+        <div class="legend">
           <span class="lg lg-avail"><i></i>Tickets available</span>
           <span class="lg lg-2for1"><i></i>2-for-1</span>
           <span class="lg lg-preview"><i></i>Preview</span>
           <span class="lg lg-free"><i></i>Free</span>
           <span class="lg lg-event"><i></i>Event-specific</span>
           <span class="lg lg-noalloc"><i></i>Sold out</span>
+          <!-- Gold is the only mark the grid draws itself (the others come
+               from edfringe.com's availability), and it is the one that
+               answers "what did the plan pick?" — so it belongs in the key. -->
+          <span class="lg lg-locked"><i></i>In your plan</span>
         </div>
-      </div>
+      </details>
     </section>
 
     <!-- ===================== Allocate / itinerary ===================== -->
@@ -358,78 +366,107 @@
       <div class="plan-result" id="planResult">
 
         <!-- Live controls: nudging any of them re-plans instantly. Day hours and
-             meal breaks are also editable by dragging directly on the schedule. -->
-        <div class="plan-controls" role="group" aria-label="Fine-tune your plan">
-          <!-- Day start/end are plain HH:MM text boxes (the native time picker /
-               a long select felt heavy for a control most people set by dragging
-               the lines on the schedule). The day may run to 27:00 (03:00), which
-               a native time input can't express, so a text box is the honest fit. -->
-          <div class="ctl">
-            <label class="ctl-label" for="ctlDayStart">Day starts</label>
-            <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
-                   inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                   aria-label="Day starts (24-hour HH:MM)" />
-            <button type="button" class="ctl-blocked" id="blkDayStart" hidden></button>
-          </div>
-          <div class="ctl">
-            <label class="ctl-label" for="ctlDayEnd">Day ends</label>
-            <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
-                   inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                   aria-label="Day ends (HH:MM, up to 27:00 for 03:00)" />
-            <button type="button" class="ctl-blocked" id="blkDayEnd" hidden></button>
-          </div>
-          <div class="ctl">
-            <label class="ctl-label" for="ctlMax">Most shows / day</label>
-            <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric" />
-          </div>
-          <div class="ctl">
-            <label class="ctl-label" for="ctlMin">Fewest / day</label>
-            <select class="opt-select" id="ctlMin">
-              <option value="1" selected>Any (1+)</option>
-              <option value="2">At least 2</option>
-              <option value="3">At least 3</option>
-            </select>
-          </div>
-          <div class="ctl">
-            <label class="ctl-label" for="ctlGap">Min. gap</label>
-            <select class="opt-select" id="ctlGap">
-              <option value="0">0 min</option>
-              <option value="15">15 min</option>
-              <option value="30" selected>30 min</option>
-              <option value="45">45 min</option>
-              <option value="60">1 hour</option>
-              <option value="90">1½ hours</option>
-            </select>
-          </div>
-          <div class="ctl">
-            <span class="ctl-label" id="modeLabel">Getting around</span>
-            <div class="tmode" id="ctlMode" role="group" aria-labelledby="modeLabel">
-              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true">🚶 Walk</button>
-              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false">🚲 Bike</button>
-              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false">🚗 Car</button>
+             meal breaks are also editable by dragging directly on the schedule.
+
+             Grouped into the three questions they actually answer — how long
+             your day is, how hard you're pushing it, and how you're getting
+             between venues. As one flat wrapping row of seven mismatched
+             controls (68px number boxes beside a two-row meal block) it wrapped
+             into ragged, unrelated-looking rows; each group is a fieldset so
+             the heading is a real label for the controls under it, not just
+             text above them. -->
+        <div class="plan-controls">
+          <fieldset class="ctl-group ctl-group--day">
+            <legend class="ctl-group-title">Your day</legend>
+            <div class="ctl-group-body">
+              <!-- Day start/end are plain HH:MM text boxes (the native time picker /
+                   a long select felt heavy for a control most people set by dragging
+                   the lines on the schedule). The day may run to 27:00 (03:00), which
+                   a native time input can't express, so a text box is the honest fit. -->
+              <div class="ctl">
+                <label class="ctl-label" for="ctlDayStart">Starts</label>
+                <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
+                       inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                       aria-label="Day starts (24-hour HH:MM)" />
+                <button type="button" class="ctl-blocked" id="blkDayStart" hidden></button>
+              </div>
+              <div class="ctl">
+                <label class="ctl-label" for="ctlDayEnd">Ends</label>
+                <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
+                       inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                       aria-label="Day ends (HH:MM, up to 27:00 for 03:00)" />
+                <button type="button" class="ctl-blocked" id="blkDayEnd" hidden></button>
+              </div>
+              <div class="ctl ctl-meals">
+                <span class="ctl-label">Meal breaks</span>
+                <div class="meals">
+                  <label class="meal">
+                    <input type="checkbox" id="mealLunchOn" checked />
+                    <span class="meal-name">Lunch</span>
+                    <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
+                    <span class="meal-dash">–</span>
+                    <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
+                    <button type="button" class="ctl-blocked meal-blocked" id="blkMealLunch" hidden></button>
+                  </label>
+                  <label class="meal">
+                    <input type="checkbox" id="mealDinnerOn" />
+                    <span class="meal-name">Dinner</span>
+                    <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
+                    <span class="meal-dash">–</span>
+                    <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
+                    <button type="button" class="ctl-blocked meal-blocked" id="blkMealDinner" hidden></button>
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="ctl ctl-meals">
-            <span class="ctl-label">Meal breaks</span>
-            <div class="meals">
-              <label class="meal">
-                <input type="checkbox" id="mealLunchOn" checked />
-                <span class="meal-name">Lunch</span>
-                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
-                <span class="meal-dash">–</span>
-                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
-                <button type="button" class="ctl-blocked meal-blocked" id="blkMealLunch" hidden></button>
-              </label>
-              <label class="meal">
-                <input type="checkbox" id="mealDinnerOn" />
-                <span class="meal-name">Dinner</span>
-                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
-                <span class="meal-dash">–</span>
-                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
-                <button type="button" class="ctl-blocked meal-blocked" id="blkMealDinner" hidden></button>
-              </label>
+          </fieldset>
+
+          <fieldset class="ctl-group ctl-group--pace">
+            <legend class="ctl-group-title">Pace</legend>
+            <div class="ctl-group-body">
+              <div class="ctl">
+                <label class="ctl-label" for="ctlMax">Most / day</label>
+                <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric" />
+              </div>
+              <div class="ctl">
+                <label class="ctl-label" for="ctlMin">Fewest / day</label>
+                <select class="opt-select" id="ctlMin">
+                  <option value="1" selected>Any (1+)</option>
+                  <option value="2">At least 2</option>
+                  <option value="3">At least 3</option>
+                </select>
+              </div>
+              <div class="ctl">
+                <label class="ctl-label" for="ctlGap">Min. gap</label>
+                <select class="opt-select" id="ctlGap">
+                  <option value="0">0 min</option>
+                  <option value="15">15 min</option>
+                  <option value="30" selected>30 min</option>
+                  <option value="45">45 min</option>
+                  <option value="60">1 hour</option>
+                  <option value="90">1½ hours</option>
+                </select>
+              </div>
             </div>
-          </div>
+          </fieldset>
+
+          <fieldset class="ctl-group ctl-group--travel">
+            <legend class="ctl-group-title" id="modeLabel">Getting around</legend>
+            <div class="ctl-group-body">
+              <div class="ctl">
+                <div class="tmode" id="ctlMode" role="group" aria-labelledby="modeLabel">
+                  <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true">🚶 Walk</button>
+                  <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false">🚲 Bike</button>
+                  <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false">🚗 Car</button>
+                </div>
+                <!-- Travel time is only *added* when it exceeds the gap above,
+                     so saying what the buttons do avoids the reasonable
+                     assumption that bike and car simply mean "faster". -->
+                <p class="ctl-hint">Sets travel time between venues — used when it's
+                  longer than the gap.</p>
+              </div>
+            </div>
+          </fieldset>
         </div>
 
         <div class="plan-summary" id="planSummary" role="status" aria-live="polite"></div>
@@ -459,6 +496,30 @@
             Import to calendar <span class="btn-ext">ICS</span>
           </button>
           <span class="plan-actions-note">Both files are built here in your browser — nothing is uploaded.</span>
+        </div>
+
+        <!-- Shown once the .ics has been downloaded. Google Calendar can't be
+             handed a file directly from a web page, so the honest thing is to
+             make the two-step import painless — and to steer it into its own
+             calendar, which is what makes the plan removable and re-importable
+             later. -->
+        <div class="ics-howto" id="icsHowto" hidden role="status">
+          <button type="button" class="ics-howto-x" id="icsHowtoClose"
+                  aria-label="Hide these instructions" title="Hide">&times;</button>
+          <p class="ics-howto-title">Downloaded — now into Google Calendar</p>
+          <ol class="ics-howto-steps">
+            <li>In Google Calendar, create a calendar called <b>Fringe 2026</b>
+              (Settings → Add calendar → Create new calendar).</li>
+            <li>Open
+              <a href="https://calendar.google.com/calendar/u/0/r/settings/export"
+                 target="_blank" rel="noopener">Settings → Import &amp; export</a>,
+              choose <b>fringe-plan.ics</b>, and set the destination to
+              <b>Fringe 2026</b>.</li>
+          </ol>
+          <p class="ics-howto-note">Its own calendar means you can hide or delete the whole
+            plan in one click. Change your plan later and re-import: the events update in
+            place rather than doubling up. Times are pinned to Edinburgh (Europe/London),
+            so they stay right wherever your calendar lives.</p>
         </div>
       </div>
     </section>

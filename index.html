@@ -79,6 +79,77 @@
 
   <main class="app">
     <div class="wrap">
+      <!-- ===================== First-run explainer ===================== -->
+      <!-- Arriving here cold, nothing on the page says what it is for: the
+           constraint card asks for a commitment before the user knows why one
+           would help. This says the idea once, in the order the app works —
+           when you must leave, how far that reaches, what you can make — and
+           animates it, because "reachability" is a spatial idea that a diagram
+           lands faster than a paragraph.
+
+           Hidden by default and revealed by JS (initIntro) only when it hasn't
+           been dismissed before, so a returning visitor never sees a flash of
+           it. Dismissal is remembered in localStorage. -->
+      <aside class="intro" id="intro" hidden aria-labelledby="introTitle">
+        <button type="button" class="intro-x" id="introDismiss"
+                aria-label="Hide this explanation" title="Hide this">&times;</button>
+        <p class="intro-kicker">3,800 shows. One free hour.</p>
+        <h2 class="intro-title" id="introTitle">See what you can actually get to — right now.</h2>
+
+        <!-- The animation is decoration: the three captions below carry the
+             same content in text, so screen readers get the flow without it. -->
+        <div class="intro-stage" aria-hidden="true">
+          <svg class="intro-svg" viewBox="0 0 320 132" role="img" focusable="false">
+            <!-- Faint street grid, so the stage reads as a map rather than an
+                 abstract diagram. -->
+            <g class="i-streets">
+              <path d="M0 46h320M0 92h320M84 0v132M196 0v132" />
+              <path d="M196 20 320 2" />
+            </g>
+
+            <!-- The reach ring: how far you can get before you must leave.
+                 Scaled rather than r-animated so it works the same everywhere;
+                 sized to sit fully inside the viewBox at full extent, and every
+                 show pin below falls within it — the whole point is that these
+                 are the ones you can make. -->
+            <circle class="i-ring" cx="64" cy="80" r="52" />
+
+            <!-- The route: you → the show you picked → where you have to be.
+                 Drawn before the pins so it passes behind them. -->
+            <path class="i-route" d="M64 80 L112 66 L269 27" />
+
+            <!-- Reachable shows, appearing once the ring has swept them up. -->
+            <g class="i-pin i-pin--1"><circle cx="88" cy="48" r="11" /><text x="88" y="52">🎭</text></g>
+            <g class="i-pin i-pin--2"><circle cx="98" cy="112" r="11" /><text x="98" y="116">🎪</text></g>
+            <g class="i-pin i-pin--3 is-pick"><circle cx="112" cy="66" r="11" /><text x="112" y="70">🎤</text></g>
+
+            <!-- You are here. -->
+            <circle class="i-pulse" cx="64" cy="80" r="10" />
+            <circle class="i-you" cx="64" cy="80" r="6" />
+
+            <!-- The next commitment. -->
+            <g class="i-dest">
+              <rect x="236" y="14" width="66" height="26" rx="13" />
+              <text x="269" y="31">18:00</text>
+            </g>
+
+            <!-- The payoff, once the route has drawn. -->
+            <g class="i-verdict">
+              <rect x="134" y="98" width="170" height="26" rx="13" />
+              <text x="219" y="115">✓ 20 minutes to spare</text>
+            </g>
+          </svg>
+        </div>
+
+        <ol class="intro-steps">
+          <li class="intro-step"><b>Say when you next have to be somewhere.</b> A show, dinner, a train.</li>
+          <li class="intro-step"><b>We work out how far that leaves you.</b> On foot, bike, bus or taxi.</li>
+          <li class="intro-step"><b>Pick something you can make</b> — and still get to your next thing.</li>
+        </ol>
+
+        <button type="button" class="intro-got" id="introGot">Got it — let's go</button>
+      </aside>
+
       <!-- ===================== Primary action: next commitment ===================== -->
       <article class="cta-card card card--constraint" data-card="constraint">
         <!-- Initial (no-commitment) state: a faded, placeholder version of the
@@ -245,17 +316,13 @@
 
       <!-- One selector for both decisions: which view, and — for the list —
            which order. Sits directly under the filters so the whole browse
-           control set reads as one block. Map is the default. -->
+           control set reads as one block. Closest leads and is the default: a
+           ranked list answers "what can I make?" outright, where the map asks
+           you to rank it by eye. The map sits third, as the orientation view. -->
       <div class="view-row" aria-label="View">
         <span class="filters-label">Show</span>
-        <div class="view-switch" role="group" aria-label="Show map, closest first, or soonest first">
-          <button type="button" class="view-btn is-active" data-mode="map" aria-pressed="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Z" /><path d="M9 4v13" /><path d="M15 6.5v13" />
-            </svg>
-            <span class="view-btn-label">Map</span>
-          </button>
-          <button type="button" class="view-btn" data-mode="closest" aria-pressed="false">
+        <div class="view-switch" role="group" aria-label="Show closest first, soonest first, or the map">
+          <button type="button" class="view-btn is-active" data-mode="closest" aria-pressed="true">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 21s7-7.75 7-13a7 7 0 1 0-14 0c0 5.25 7 13 7 13Z" /><circle cx="12" cy="8" r="2.4" />
             </svg>
@@ -267,24 +334,29 @@
             </svg>
             <span class="view-btn-label">Soonest</span>
           </button>
+          <button type="button" class="view-btn" data-mode="map" aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Z" /><path d="M9 4v13" /><path d="M15 6.5v13" />
+            </svg>
+            <span class="view-btn-label">Map</span>
+          </button>
         </div>
       </div>
 
-      <!-- ===================== Map / list — one at a time ===================== -->
-      <!-- The map and the reachable-now list are two views of the same shows.
-           Only one shows at a time; the toggle above flips between them (map is
-           the default). The filters above act on both. -->
-      <div class="view-area" data-view="map">
+      <!-- ===================== List / map — one at a time ===================== -->
+      <!-- The reachable-now list and the map are two views of the same shows.
+           Only one shows at a time; the toggle above flips between them (the
+           list, closest first, is the default). The filters act on both. -->
+      <div class="view-area" data-view="list">
         <div class="view-panes">
-          <!-- Map (calm, supporting) -->
-          <section id="map" class="map-section">
+          <!-- Map (calm, supporting — hidden until Map is chosen) -->
+          <section id="map" class="map-section" hidden>
             <div id="leaflet-map" role="application" aria-label="Map of nearby Edinburgh Fringe shows"></div>
           </section>
 
-          <!-- Reachable-now list (hidden until Closest or Soonest is chosen —
-               the selector above carries the order, so the list owns no sort
-               control of its own). -->
-          <section id="shows" class="shows-section" hidden>
+          <!-- Reachable-now list. The selector above carries the order, so the
+               list owns no sort control of its own. -->
+          <section id="shows" class="shows-section">
             <div class="shows-grid" id="showsGrid"><!-- populated by JS --></div>
             <button id="showMore" class="show-more" type="button" hidden>Show more</button>
           </section>

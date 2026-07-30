@@ -156,18 +156,35 @@ function reEscape(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/** What a show's searchable description text is, when the caller doesn't say.
+ *  The one-line blurb travels in the catalogue itself, so description search
+ *  works from the first byte; a caller with the fuller descriptions sidecar
+ *  loaded passes its own `describe` and the same search simply reaches
+ *  further. */
+const defaultDescribe = (show) => show.blurb || "";
+
 /**
  * Rank one show against a folded query. 0 = no match. Title matches outrank
- * company/venue matches, and within the title: prefix > word start > anywhere.
- * Multi-word queries must land every word somewhere in title+company+venue.
+ * company/venue matches, which outrank a hit found only in the description;
+ * within the title: prefix > word start > anywhere. Multi-word queries must
+ * land every word somewhere in the text considered.
  */
-function scoreShow(show, foldedQuery, tokens) {
+function scoreShow(show, foldedQuery, tokens, describe) {
   const title = fold(show.title);
   const rest = fold(`${show.company || ""} ${show.venueName || ""}`);
   const hay = `${title} ${rest}`;
-  for (const t of tokens) {
-    if (!hay.includes(t)) return 0;
+
+  if (!tokens.every((t) => hay.includes(t))) {
+    // Nothing in the name, company or venue — try the description before
+    // giving up. A show found only this way ranks below every named match, so
+    // description hits extend the tail of the results rather than reordering
+    // the head someone was already looking at.
+    const desc = fold(describe(show) || "");
+    if (!desc) return 0;
+    const deep = `${hay} ${desc}`;
+    return tokens.every((t) => deep.includes(t)) ? 0.5 : 0;
   }
+
   if (title.startsWith(foldedQuery)) return 4;
   if (new RegExp(`\\b${reEscape(foldedQuery)}`).test(title)) return 3;
   if (title.includes(foldedQuery)) return 2;
@@ -184,11 +201,15 @@ function scoreShow(show, foldedQuery, tokens) {
  * @param {object[]} shows        the catalogue (e.g. [...index.values()])
  * @param {string} query          raw user text
  * @param {SearchFilters} filters
- * @param {{limit?: number}} [opts]
+ * @param {{limit?: number, describe?: (show: object) => string}} [opts]
+ *   `describe` supplies the description text to search for a show; it defaults
+ *   to the catalogue's own one-line blurb. The planner passes a function that
+ *   prefers the fuller descriptions sidecar once it has downloaded, so the same
+ *   query reaches deeper the longer the page has been open.
  * @returns {{results: object[], total: number}} results capped at limit;
  *   total is the uncapped match count (for a "showing X of Y" footer)
  */
-export function searchShows(shows, query, filters, { limit = 30 } = {}) {
+export function searchShows(shows, query, filters, { limit = 30, describe = defaultDescribe } = {}) {
   const foldedQuery = fold(query).trim().replace(/\s+/g, " ");
   const tokens = foldedQuery ? foldedQuery.split(" ") : [];
   if (tokens.length === 0 && !hasActiveFilters(filters)) return { results: [], total: 0 };
@@ -203,7 +224,7 @@ export function searchShows(shows, query, filters, { limit = 30 } = {}) {
 
   const scored = [];
   for (const show of pool) {
-    const score = scoreShow(show, foldedQuery, tokens);
+    const score = scoreShow(show, foldedQuery, tokens, describe);
     if (score > 0) scored.push({ show, score });
   }
   scored.sort((a, b) => b.score - a.score || byTitle(a.show, b.show));

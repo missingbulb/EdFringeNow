@@ -276,3 +276,52 @@ test("filters and query compose; limit caps results but total counts all", () =>
   assert.equal(results.length, 5);
   assert.ok(results.every((s) => s.genre === "Comedy"));
 });
+
+// --- description search ----------------------------------------------------
+//
+// A query that matches nothing in a show's name, company or venue used to score
+// 0 and vanish. It now falls through to the description — the catalogue's own
+// blurb by default, or whatever `describe` supplies once the fuller
+// descriptions sidecar has downloaded. These pin both the reach and the rank:
+// a description-only hit must never displace a named match.
+
+test("a query found only in the blurb still matches", () => {
+  const named = show({ slug: "n", title: "Puppet Hour" });
+  const buried = show({ slug: "b", title: "The Long Afternoon", blurb: "An hour of anarchic puppetry." });
+  const miss = show({ slug: "m", title: "Something Else", blurb: "Nothing like it." });
+  const { results, total } = searchShows([miss, buried, named], "puppet", {});
+  // Named match first; the blurb-only hit trails it.
+  assert.deepEqual(results.map((s) => s.slug), ["n", "b"]);
+  assert.equal(total, 2);
+});
+
+test("a description-only hit ranks below every company/venue hit", () => {
+  // Titles chosen so the alphabetical tie-break would put the description hit
+  // FIRST: the expected order can only come from the venue hit outscoring it.
+  const venue = show({ slug: "v", title: "Zebra Night", venueName: "Puppet Lab" });
+  const blurb = show({ slug: "b", title: "Anarchic Afternoon", blurb: "An hour of puppetry." });
+  const { results } = searchShows([blurb, venue], "puppet", {});
+  assert.deepEqual(results.map((s) => s.slug), ["v", "b"]);
+});
+
+test("multi-word queries may span the name and the description", () => {
+  const spans = show({ slug: "s", title: "Anarchic Hour", blurb: "A puppet show for grown-ups." });
+  const partial = show({ slug: "p", title: "Anarchic Evening", blurb: "No marionettes here." });
+  const { results } = searchShows([spans, partial], "anarchic puppet", {});
+  assert.deepEqual(results.map((s) => s.slug), ["s"]);
+});
+
+test("a supplied describe() searches text the catalogue doesn't carry", () => {
+  const s = show({ slug: "s", title: "The Long Afternoon", blurb: "" });
+  const sidecar = new Map([["s", "A meditation on beekeeping in Fife."]]);
+  const describe = (sh) => sidecar.get(sh.slug) || sh.blurb || "";
+  // Without the sidecar text there is nothing to find…
+  assert.deepEqual(searchShows([s], "beekeeping", {}).results, []);
+  // …and with it, the same query lands.
+  assert.deepEqual(searchShows([s], "beekeeping", {}, { describe }).results.map((x) => x.slug), ["s"]);
+});
+
+test("a show with no description text at all is simply skipped", () => {
+  const s = show({ slug: "s", title: "The Long Afternoon" });
+  assert.deepEqual(searchShows([s], "beekeeping", {}), { results: [], total: 0 });
+});

@@ -61,7 +61,9 @@ site serves them):
 
 | file | purpose | sent to browser |
 |---|---|---|
-| `data/normalized/shows.json` | master: one record per show with all performances; source for regenerating the day files | no |
+| `data/normalized/shows.json` | master: one record per show with all performances (including each show's full `description`); source for regenerating everything below | no |
+| `data/normalized/shows.min.json` | the compact catalogue the planner downloads: the master packed losslessly against the `venues.json` lookups | yes (planner) |
+| `data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Fetched lazily by the planner and cached for a week; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
 | `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
 | `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
 | `data/days/index.json` | available days + per-day counts | yes |

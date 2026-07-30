@@ -12,6 +12,7 @@
  */
 
 import { isInUK } from "../shared/geo.js";
+import { friendlyDuration } from "../shared/duration.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 
 const EDINBURGH = [55.9486, -3.1881];
@@ -110,9 +111,9 @@ const state = {
   editingCommitment: false,    // constraint panel opened from the plan to change it
   spareCtaDismissed: false,    // user hid the in-plan "time to spare" prompt
   bookCtaDismissed: false,     // user hid the "Need to book it?" question on a committed place
-  viewMode: "map",             // the one selector under the filters: "map" | "closest" | "soonest"
-  view: "map",                 // pane the mode implies: "map" | "list" (map is default)
-  sortBy: "time",              // reachable-list order the mode implies: "time" | "distance"
+  viewMode: "closest",         // the one selector under the filters: "closest" | "soonest" | "map"
+  view: "list",                // pane the mode implies: "map" | "list" (the list is default)
+  sortBy: "distance",          // reachable-list order the mode implies: "time" | "distance"
   userLatLng: USER_DEFAULT,    // current "you are here" location
   userMarker: null,            // Leaflet marker for the user
   reachCircle: null,           // Leaflet circle for the travel radius
@@ -132,6 +133,7 @@ async function init() {
   setUserLocation(USER_DEFAULT, { recenter: false }); // central-Edinburgh default
   requestUserLocation();                              // then ask for the real thing
   restoreNowState();      // last visit's filters (+ its plan, if still ahead of us)
+  initIntro();            // the first-run explainer, unless it's been dismissed
   buildGenrePanel();
   buildPricePanel();
   buildTravelPanel();
@@ -906,20 +908,25 @@ function renderShowList() {
   }
 }
 
-/* ---------- View selector: Map | Closest | Soonest ---------- */
+/* ---------- View selector: Closest | Soonest | Map ---------- */
 /* One control carries both decisions. The map and the reachable list are two
  * views of the same shows, and the list only ever has two useful orders — so
  * rather than a view toggle plus a sort toggle, the three positions here are
- * the three things you can actually be looking at. Map is the default. The
- * filters above act on all three, so nothing here touches them. */
+ * the three things you can actually be looking at. The filters above act on all
+ * three, so nothing here touches them.
+ *
+ * "Closest" leads and is the default: a ranked list answers "what can I make?"
+ * directly, where the map asks the user to do the ranking themselves by eye.
+ * The map sits third as the orientation view you reach for once you know what
+ * the options are. */
 const VIEW_MODES = {
-  map: { view: "map" },
   closest: { view: "list", sortBy: "distance" },
   soonest: { view: "list", sortBy: "time" },
+  map: { view: "map" },
 };
 
 function applyViewMode(mode) {
-  const spec = VIEW_MODES[mode] || VIEW_MODES.map;
+  const spec = VIEW_MODES[mode] || VIEW_MODES.closest;
   const orderChanged = spec.sortBy && spec.sortBy !== state.sortBy;
   state.viewMode = mode;
   state.view = spec.view;
@@ -967,7 +974,28 @@ function wireViewSwitch() {
       applyViewMode(btn.dataset.mode);
     });
   });
-  applyViewMode(state.viewMode); // establish the default (map)
+  applyViewMode(state.viewMode); // establish the default (closest)
+}
+
+/* ---------- First-run explainer ---------- */
+/* The page opens on a constraint card that asks for a commitment before saying
+ * why one helps, so a first-time visitor gets the idea stated once, in the
+ * order the app works. It earns its space exactly once: dismissing it writes a
+ * flag that survives the visit, and the markup starts `hidden` so a returning
+ * visitor never sees it flash before the flag is read. */
+function initIntro() {
+  const el = document.getElementById("intro");
+  if (!el || readStore(INTRO_KEY)) return;
+  el.hidden = false;
+
+  const dismiss = () => {
+    el.hidden = true;
+    writeStore(INTRO_KEY, { dismissed: true });
+  };
+  const x = document.getElementById("introDismiss");
+  const got = document.getElementById("introGot");
+  if (x) x.addEventListener("click", dismiss);
+  if (got) got.addEventListener("click", dismiss);
 }
 
 /* ---------- Journey strip ---------- */
@@ -1199,7 +1227,9 @@ function planSpareMinutes() {
 }
 
 /* The plan's spare-time prompt, rendered in the plan's middle slot (where a
- * slipped-in show will go): "X min to spare — want to see a show? (N fit below)".
+ * slipped-in show will go): "You have about 2½ hours to spare — want to see a
+ * show? (N fit below)". The gap is phrased rather than counted in minutes (see
+ * shared/duration.js): a raw "287 min" is a number nobody converts in their head.
  * The count mirrors the reachable list. Returns "" when there's nothing to
  * offer — no spare time, nothing fits, or the user dismissed it — so the plan
  * falls back to a plain walk connector. */
@@ -1213,7 +1243,7 @@ function spareCtaNode() {
   return (
     '<div class="plan-spare">' +
     '<button type="button" class="plan-spare-x" aria-label="Dismiss — hide this suggestion" title="Dismiss">&times;</button>' +
-    `<p class="spare-line">You have <b>${spare} min</b> to spare — want to see a show? ${count}</p>` +
+    `<p class="spare-line">You have <b>${friendlyDuration(spare)}</b> to spare — want to see a show? ${count}</p>` +
     "</div>"
   );
 }
@@ -1341,11 +1371,13 @@ function planBuy(show) {
           >&#127915; Buy ahead &middot; skip the queue</a>`;
 }
 
-/* A chip noting the cushion before a show starts (or by how much you'd miss it). */
+/* A chip noting the cushion before a show starts (or by how much you'd miss it).
+ * The cushion is phrased (shared/duration.js); being late is not — "20 min late"
+ * is a number you want exactly, however big it is. */
 function planSlack(mins) {
   const m = Math.round(mins);
   return m >= 0
-    ? `<span class="plan-slack ok">${m} min to spare</span>`
+    ? `<span class="plan-slack ok">${friendlyDuration(m)} to spare</span>`
     : `<span class="plan-slack late">${-m} min late</span>`;
 }
 
@@ -2120,6 +2152,10 @@ function refreshConstraintValue() {
  * back on one tap, rather than the choice just evaporating. */
 const STORE_KEY = "edfringenow.now.v1";
 const STALE_KEY = "edfringenow.now.stale.v1";
+/* The first-run explainer's own key, deliberately separate from the settings
+ * snapshot above: "I've read this" is a fact about the person, not about this
+ * visit's filters, and it must not be cleared when a plan goes stale. */
+const INTRO_KEY = "edfringenow.now.intro.v1";
 
 function readStore(key) {
   try {

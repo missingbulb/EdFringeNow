@@ -127,17 +127,60 @@ function foldLine(line) {
   return out.join("\r\n ");
 }
 
+/* The festival's timezone, shipped inside the file.
+ *
+ * Times used to go out "floating" (no zone at all), which every calendar app is
+ * entitled to read as the *importing user's* local time — so a visitor whose
+ * Google Calendar is set to New York imported an Edinburgh plan five hours out.
+ * Naming Europe/London and defining it here removes the guess: the events land
+ * at Edinburgh wall-clock time whatever the reader's own zone is, and the
+ * definition travels with the file so a reader that doesn't know the zone by
+ * name can still resolve it. The rules are the UK's standing ones (BST from the
+ * last Sunday in March to the last Sunday in October), not a 2026 special case.
+ */
+const TZID = "Europe/London";
+const VTIMEZONE = [
+  "BEGIN:VTIMEZONE",
+  `TZID:${TZID}`,
+  "BEGIN:DAYLIGHT",
+  "TZOFFSETFROM:+0000",
+  "TZOFFSETTO:+0100",
+  "TZNAME:BST",
+  "DTSTART:19700329T010000",
+  "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU",
+  "END:DAYLIGHT",
+  "BEGIN:STANDARD",
+  "TZOFFSETFROM:+0100",
+  "TZOFFSETTO:+0000",
+  "TZNAME:GMT",
+  "DTSTART:19701025T020000",
+  "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
+  "END:STANDARD",
+  "END:VTIMEZONE",
+];
+
 /**
  * An ICS (iCalendar) feed of the scheduled performances as VEVENTs.
+ *
+ * Written to survive the trip through Google Calendar's importer, which is
+ * where these files actually end up: zoned times (see VTIMEZONE above), a UID
+ * that stays put so re-importing an edited plan updates the events instead of
+ * duplicating them, GEO alongside the text address so the map pin is right, and
+ * a reminder early enough to walk there.
+ *
  * @param {import("./engine.js").Slot[]} slots buildSchedule(...).scheduled
- * @param {{now?: Date, prodId?: string}} [options] `now` stamps DTSTAMP (pass
- *   the current time from the browser; defaults to a fixed festival date so the
- *   function stays pure/testable when omitted).
+ * @param {{now?: Date, prodId?: string, calendarName?: string,
+ *          alarmMinutes?: number|null}} [options]
+ *   `now` stamps DTSTAMP (pass the current time from the browser; defaults to a
+ *   fixed festival date so the function stays pure/testable when omitted).
+ *   `alarmMinutes` sets the reminder lead time; pass null for no VALARM.
  * @returns {string} ICS text (CRLF line endings)
  */
 export function toIcs(slots, options = {}) {
   const stamp = icsStamp(options.now ?? new Date(Date.UTC(2026, 7, 1)));
   const prodId = options.prodId || "-//EdFringeNow//Fringe Planner//EN";
+  const calendarName = options.calendarName || "My Fringe Plan";
+  const alarmMinutes = options.alarmMinutes === undefined ? 30 : options.alarmMinutes;
 
   const lines = [
     "BEGIN:VCALENDAR",
@@ -145,7 +188,9 @@ export function toIcs(slots, options = {}) {
     `PRODID:${prodId}`,
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    "X-WR-CALNAME:My Fringe Plan",
+    foldLine(`X-WR-CALNAME:${icsText(calendarName)}`),
+    `X-WR-TIMEZONE:${TZID}`,
+    ...VTIMEZONE,
   ];
 
   for (const slot of slots || []) {
@@ -155,17 +200,34 @@ export function toIcs(slots, options = {}) {
     if (slot.genre) descParts.push(slot.genre);
     if (slot.freeNonTicketed) descParts.push("Free — non-ticketed");
     if (slot.url) descParts.push(slot.url);
+    descParts.push("Planned with EdFringeNow");
     lines.push(
       "BEGIN:VEVENT",
       foldLine(`UID:${uid}`),
       `DTSTAMP:${stamp}`,
-      `DTSTART:${icsLocal(slot.start)}`,
-      `DTEND:${icsLocal(slot.end)}`,
+      `DTSTART;TZID=${TZID}:${icsLocal(slot.start)}`,
+      `DTEND;TZID=${TZID}:${icsLocal(slot.end)}`,
       foldLine(`SUMMARY:${icsText(slot.title)}`),
       foldLine(`LOCATION:${icsText(location)}`),
-      foldLine(`DESCRIPTION:${icsText(descParts.join("\n"))}`)
+      foldLine(`DESCRIPTION:${icsText(descParts.join("\n"))}`),
+      "STATUS:CONFIRMED",
+      "TRANSP:OPAQUE"
     );
+    // The venue's own coordinates, so the calendar pins the room rather than
+    // geocoding a venue name that half a dozen Fringe venues share.
+    if (slot.venueLat != null && slot.venueLng != null) {
+      lines.push(`GEO:${slot.venueLat};${slot.venueLng}`);
+    }
     if (slot.url) lines.push(foldLine(`URL:${icsText(slot.url)}`));
+    if (alarmMinutes != null && alarmMinutes > 0) {
+      lines.push(
+        "BEGIN:VALARM",
+        "ACTION:DISPLAY",
+        foldLine(`DESCRIPTION:${icsText(slot.title)}`),
+        `TRIGGER:-PT${Math.round(alarmMinutes)}M`,
+        "END:VALARM"
+      );
+    }
     lines.push("END:VEVENT");
   }
 
