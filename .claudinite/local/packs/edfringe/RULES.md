@@ -3,6 +3,23 @@
 Lessons captured while working in this repo, layered on the shared Claudinite
 canon. Terse and concrete; read the matching one before working in that area.
 
+## The owner asks in plain words — open the issue yourself, before the first commit
+
+Work here arrives as a chat request ("Maybe we can just put a 'Show list/Show Map'
+toggle selector just under the filter…"), never as a filed issue. The
+`task-lifecycle` check still wants a commit on the branch to reference one, so
+**open the issue as your first step and put `Closes #N` in the original commit
+message** — write it from the owner's own words, since it is the only record of
+what was asked.
+
+Leaving it to the stop hook is the expensive path, and it is the path every
+session took: 7 of the 12 sessions captured on 2026-07-29 declared the work done,
+got blocked, and then paid create-issue + `git commit --amend` +
+`git push --force-with-lease` + a second reply that added nothing (#134 33s,
+#150 45s, #152 35s, #154 43s, #156 43s, #158 57s, #160 20s — ~4.6 min of pure
+rework). Worse, by then the PR is already open, so the fix rewrites the commit
+underneath it.
+
 ## Verifying UI changes visually (the `index.html` page and everything under `plan/`)
 
 Visual verification of the pages **is** available in this sandbox. Don't skip it
