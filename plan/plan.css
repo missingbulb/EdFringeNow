@@ -593,8 +593,37 @@ a { color: inherit; }
    itinerary, turning the chosen day/time into a gold bar (the higher-specificity
    .seg.seg--selected wins over the availability colour), so a locked-in mark
    reads as a little gold bar rather than a green-ringed availability chip. */
-.seg.seg--selected, .seg.seg--pinned { background: var(--fr-locked); }
+.seg.seg--selected, .seg.seg--pinned { background: var(--fr-locked); position: relative; }
 .seg--selected, .seg--pinned { box-shadow: inset 0 0 0 1px #e0b23a, 0 1px 2px rgba(190, 145, 20, 0.4); }
+
+/* Flat gold at 10px reads as "a yellow mark" rather than as metal, so the marks
+   catch the light: a specular band travels the length of every gold bar. The
+   start is phase-staggered by day column and lane (--sheen-col / --sheen-lane,
+   set at render time by renderLanes / buildDayCells), so the highlight crosses
+   the grid as one diagonal wave rather than as forty marks flashing
+   independently — the picks read as a set.
+   The highlight is a ::before because the mark's own background is already
+   spoken for (the gold gradient), and it animates background-position rather
+   than a transform because a pinned mark's lock badge escapes the mark upward:
+   the seg can never be overflow:hidden, so a travelling child couldn't be
+   clipped to the bar. */
+.seg--selected::before, .seg--pinned::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; background-repeat: no-repeat;
+  background-image: linear-gradient(102deg,
+    rgba(255, 255, 255, 0) 38%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 62%);
+  background-size: 260% 100%;
+  animation: segSheen 3.2s linear infinite;
+  /* The vars carry positive seconds and are negated here — a negative delay
+     starts the mark part-way through its sweep, which is what staggers them. */
+  animation-delay: calc(-1 * (var(--sheen-col, 0s) + var(--sheen-lane, 0s)));
+}
+@keyframes segSheen {
+  from { background-position: 150% 0; }
+  to   { background-position: -110% 0; }
+}
 /* Gold arriving is the grid's one piece of good news — a performance just
    entered the plan — and a silent recolour on a 10px bar is easy to miss when
    a replan moves several at once. So the mark announces itself: a single
@@ -608,6 +637,9 @@ a { color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) {
   .seg--justlocked { animation: none; }
+  /* No sheen either — the mark falls back to flat gold, which still carries the
+     meaning on its own. */
+  .seg--selected::before, .seg--pinned::before { animation: none; opacity: 0; }
 }
 /* A whole-show pin: every performance gets a dashed gold border (you've forced
    the show in; the scheduler still picks which one, and that one goes solid gold
