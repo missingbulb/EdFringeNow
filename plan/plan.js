@@ -734,10 +734,15 @@ function buildCalendar() {
   lanesEl.innerHTML = "";
   state.laneRefs = [];
 
-  for (const show of ordered) {
+  for (const [i, show] of ordered.entries()) {
     const lane = document.createElement("div");
     lane.className = "cal-row lane";
     lane.dataset.slug = show.slug;
+    // Row half of the gold marks' sheen phase (see segSheen): each lane starts
+    // its sweep fractionally after the one above, so the highlight travels down
+    // the grid as well as across it. Wrapped so a long favourites list can't
+    // wander off into an ever-growing offset.
+    lane.style.setProperty("--sheen-lane", `${((i % 24) * 0.12).toFixed(2)}s`);
 
     const label = document.createElement("div");
     label.className = "lane-label";
@@ -828,6 +833,11 @@ function buildDayCells(performances) {
       // Which day this is; the popup (buildCellTip) reads the performances
       // themselves back off the show record, so the cell only has to say when.
       cell.dataset.day = String(d);
+      // Column half of the gold marks' sheen phase (see segSheen). Set on every
+      // day cell rather than only the gold ones: which performance the plan
+      // picks changes on every replan, and the phase has to be a property of
+      // *where the mark is*, not of when it turned gold.
+      cell.style.setProperty("--sheen-col", `${((d - 1) * 0.055).toFixed(3)}s`);
     }
     frag.appendChild(cell);
   }
