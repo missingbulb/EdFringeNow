@@ -1,5 +1,6 @@
 import lookupIndices from './lookup-indices.mjs';
 import normalizerSelftestInVerify from './normalizer-selftest-in-verify.mjs';
+import dataDirIsGeneratorOutput from './data-dir-is-generator-output.mjs';
 
 // EdFringeNow's data-pipeline pack: the edfringe.com scrape and the committed
 // data layer it produces (scraper/, data/). Split out of the general `edfringe`
@@ -16,6 +17,6 @@ export default {
   detect: null,
   marker: null,
   prose: 'RULES.md',
-  worldRules: [lookupIndices, normalizerSelftestInVerify],
+  worldRules: [lookupIndices, normalizerSelftestInVerify, dataDirIsGeneratorOutput],
   skills: ['probe-edfringe-api'],
 };

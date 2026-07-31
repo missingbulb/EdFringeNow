@@ -9,12 +9,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 import pack from "./pack.mjs";
 import rule from "./lookup-indices.mjs";
 import selftestRule from "./normalizer-selftest-in-verify.mjs";
+import dataDirRule from "./data-dir-is-generator-output.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -229,6 +231,73 @@ test("this repo's verify.sh still runs the normalizer self-test", () => {
     out.map((f) => f.what).join("\n")}`);
 });
 
+// --- data-dir-is-generator-output: every committed file under data/ must be
+// something scraper/normalize.py produces ---
+
+const cleanDataTree = {
+  "data/venues.json": "",
+  "data/shows.json": "",
+  "data/normalized/shows.json": "",
+  "data/normalized/shows.min.json": "",
+  "data/normalized/descriptions.min.json": "",
+  "data/days/index.json": "",
+  "data/days/2026-08-07.json": "",
+  "js/app.js": "",
+};
+
+test("a data/ holding only normalizer output ⇒ no findings", () => {
+  const out = dataDirRule.run(textCtx(cleanDataTree));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a probe's output committed under data/ is reported", () => {
+  // The exact regression this guards: a throwaway probe's answer is parked in
+  // data/ as if it were data, where nothing regenerates it and the next
+  // refresh-shows run neither maintains nor removes it.
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/ticket-status-enum.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-data-dir-is-generator-output");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, "data/ticket-status-enum.json");
+  assert.match(out[0].what, /is not something scraper\/normalize\.py produces/);
+  assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the producer to fix instead");
+});
+
+test("a force-added raw scrape cache file gets its own un-track fix", () => {
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/raw_pages/events_1.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "data/raw_pages/events_1.json");
+  assert.match(out[0].fix, /git rm --cached data\/raw_pages\/events_1\.json/);
+});
+
+test("a hand-written note dropped beside the normalized files is reported", () => {
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/normalized/NOTES.md": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "data/normalized/NOTES.md");
+});
+
+test("a whole new output directory is reported, per file, sorted", () => {
+  const out = dataDirRule.run(textCtx({
+    ...cleanDataTree,
+    "data/weeks/2026-w32.json": "",
+    "data/hand/notes.json": "",
+  }));
+  assert.equal(out.length, 2);
+  assert.deepEqual(out.map((f) => f.file), ["data/hand/notes.json", "data/weeks/2026-w32.json"]);
+});
+
+test("no data/ in the tree ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(dataDirRule.run(textCtx({ "README.md": "hi", "scraper/normalize.py": "" })), []);
+});
+
+test("this repo's committed data/ holds only generator output", () => {
+  // The live gate: every tracked file, read straight from git.
+  const files = execFileSync("git", ["ls-files"], { cwd: REPO, encoding: "utf8" }).split("\n").filter(Boolean);
+  const out = dataDirRule.run({ files, read: () => null });
+  assert.deepEqual(out, [], `data/ holds something the normalizer does not produce:\n${
+    out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
+});
+
 test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe-data");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
@@ -236,5 +305,6 @@ test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.prose, "RULES.md");
   assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(selftestRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(dataDirRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

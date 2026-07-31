@@ -43,5 +43,3 @@ there burns a runner for nothing.
   anonymous credentials stop working for everyone.
 - **`performancePrices` is per performance** — there is no bulk price endpoint.
   A probe that loops it over a whole day is thousands of calls; sample one show.
-- **Never commit a probe's output as data.** `data/` is `normalize.py`'s output;
-  a probe informs the normalizer, it does not feed it.
