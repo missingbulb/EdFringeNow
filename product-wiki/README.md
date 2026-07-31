@@ -28,3 +28,7 @@ repo may reference `product-wiki/` except the reviewed distillation under
 - **[audience-divergence/](audience-divergence/README.md)** — where those two
   crowds' requirements pull apart, where they actively conflict, and the narrow
   spine they share.
+- **[festival-season/](festival-season/README.md)** — the other Edinburgh
+  festivals in August and across the summer: their scale, diversity, locations,
+  the six different shapes an "event" takes across them, and whether the data is
+  reachable.

@@ -7,7 +7,7 @@ dates" (the planner at `/plan`). Compiled once, refined in place.
 
 ## Key insights
 
-- 3,649 shows across 258 venues in 2026 — and the programme is smaller than 2025.
+- 3,649 Fringe shows across 258 venues in 2026 — plus ~900 more events from seven other August festivals.
 - 37% of people struggle to pick a show. Two thirds buy just one ticket.
 - 78% come to see something they would not normally — they want surprise, not better filters.
 - A third of the audience lives in Edinburgh. Two thirds travel in and plan months ahead.
@@ -41,6 +41,24 @@ data after the festival closes, so 2026's cannot land before late August 2026.)*
 
 This scale is the product premise: the official programme is a catalogue that
 rewards planning ahead and overwhelms the person deciding in the moment.
+
+### The Fringe is not all of August
+
+The page's scale figures — and the product built on them — cover one festival.
+Seven others run concurrently: the International Festival (147 performances),
+the Military Tattoo (nightly), the Deaf Festival (80+ events), the Film Festival
+(38 features), the Art Festival (40+ mostly-free exhibitions), the Book Festival
+(~600 events) and Fringe by the Sea. Roughly 900 further events, overlapping the
+Fringe almost completely in time and largely in place.
+
+That changes the overwhelm problem's shape rather than only its size. The Fringe
+is ~80% of August's events, so any relevance- or proximity-ranked list shows a
+Fringe-only city; and the non-Fringe events are the *scarcer* ones — a Fringe
+show plays ~25 times, a Book Festival author appears once. The programme's scale
+buries exactly what cannot be seen twice. Dates, counts, locations, the six
+different shapes an "event" takes across these festivals, and whether the data is
+obtainable are all worked through on
+[festival-season/](../festival-season/README.md).
 
 ## The overwhelm / decision problem
 
@@ -190,6 +208,10 @@ segmentation for either crowd remains an open question.
   series found (guide-site figures only). If beds constrain dates more than shows
   do, "pick my best dates" optimises the wrong variable — worth evidence before
   acting on it.
+- **Do Fringe-goers attend a second festival?** No data found on cross-festival
+  attendance, or on whether the eight August audiences are one crowd or eight.
+  It matters: the case for widening the product past the Fringe currently rests
+  on an unmeasured assumption that people would go if they knew.
 - Refresh the ticket/audience figures once the 2026 festival's data is published.
 
 ## Growth log
@@ -214,3 +236,11 @@ segmentation for either crowd remains an open question.
   distilled from what the page already says (scale, the decision-difficulty
   figures, the two crowds, the accommodation constraint, the evidence gaps).
   Header only: no claim, citation or open question changed.
+- **2026-07-31** — recorded that the market is eight overlapping August
+  festivals, not one: added "The Fringe is not all of August" under Scale (~900
+  further events, the Fringe at ~80% of volume, and the inversion that the
+  scarcer events are the ones volume ranking buries), pointing at the new
+  festival-season page for dates, counts, locations and data availability. Key
+  insight 1 rewritten from the year-on-year shrink to the cluster; the shrink
+  claim stays in the body. Added the cross-festival attendance open question.
+  Requirements implication left for human review.
