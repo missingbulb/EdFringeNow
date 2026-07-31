@@ -326,8 +326,13 @@ a { color: inherit; }
 .opt-speed { font-weight: 600; font-size: 0.8rem; color: var(--muted); }
 /* Genre emoji prefix in the genre dropdown options. */
 .opt-ico { display: inline-block; width: 1.4em; text-align: center; }
-/* Segmented control — used for the Free/Paid/Both price choice. */
+/* Segmented control — used for the ticket-price choice. */
 .segmented { display: flex; gap: 4px; margin: 4px 0 4px; padding: 3px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; }
+/* Six price options don't fit one pill row, so this variant wraps them onto two
+   rows of three. The pill's fully-round ends stop making sense once it is two
+   rows tall, hence the softer radius. */
+.segmented--wrap { flex-wrap: wrap; border-radius: 16px; }
+.segmented--wrap .seg-btn { flex: 1 1 28%; padding: 7px 4px; }
 .seg-btn { flex: 1 1 0; font: inherit; font-weight: 700; font-size: 0.85rem; color: var(--muted); background: transparent; border: none; padding: 8px 6px; border-radius: 999px; cursor: pointer; transition: color 0.12s ease, background 0.12s ease; }
 .seg-btn.is-active { color: #fff; background: var(--red); }
 /* The grey per-choice show count, matching the .opt-count on the option lists. */
@@ -1154,10 +1159,14 @@ a { color: inherit; }
 .fc-money { flex: 0 0 auto; font-weight: 800; font-size: 0.9rem; color: var(--muted); line-height: 1; }
 .card--price.is-set .fc-money { color: var(--red); }
 .filter-chip .card-value--price[hidden] { display: none; }
-/* A tiny dropdown — just the three price choices, so it needn't be panel-wide. */
-.card-panel--mini { min-width: 176px; padding: 14px 14px 15px; }
-.card-panel--mini .panel-title { margin-bottom: 8px; }
+/* A tiny dropdown — only the price choices, so it needn't be panel-wide. Wide
+   enough for three cap buttons per row (see .segmented--wrap). */
+.card-panel--mini { min-width: 232px; padding: 14px 14px 15px; }
+.card-panel--mini .panel-title { margin-bottom: 4px; }
 .card-panel--mini .segmented { margin: 0; }
+/* Sentence-case gloss under an ALL-CAPS panel title — carries the qualifier
+   ("up to") that the compact buttons drop, so it is said once, not six times. */
+.panel-hint { margin: 0 0 8px; font-size: 0.76rem; color: var(--muted); }
 
 /* --- "Your previous plan" restore bar --- */
 /* Sits where the plan would be, offering back a cached plan whose time has

@@ -27,6 +27,17 @@ const ALLOWED_PATTERNS = [
 // else. Do not add to this list — new data comes from the normalizer.
 const ALLOWED_FILES = new Set(['data/venues.json', 'data/shows.json']);
 
+// The one committed file under data/ that is an *input* to normalize.py rather
+// than an output of it: the fetch-once ticket-price cache written by
+// scraper/fetch_prices.py. It satisfies what this rule is actually protecting —
+// a script in this repo produces it, and nothing silently destroys it (the
+// normalizer only ever reads it) — so it is named here rather than exempted by
+// shape. Anything else claiming to be a second input needs the same scrutiny
+// this entry got, which is why it is one name and not a pattern.
+const ALLOWED_INPUTS = new Map([
+  ['data/prices.json', 'scraper/fetch_prices.py'],
+]);
+
 // The bulky raw scrape cache is git-ignored (`.gitignore`) precisely because it
 // is regenerable by `scraper/fetch_shows.py`. It reaches the tree only via a
 // deliberate `git add -f`, so it gets its own finding: the fix is to un-stage
@@ -50,9 +61,10 @@ const rule = {
         ));
         continue;
       }
-      if (ALLOWED_FILES.has(f) || ALLOWED_PATTERNS.some((re) => re.test(f))) continue;
+      if (ALLOWED_FILES.has(f) || ALLOWED_INPUTS.has(f)) continue;
+      if (ALLOWED_PATTERNS.some((re) => re.test(f))) continue;
       out.push(finding(f,
-        `delete ${f} — everything under data/ is scraper/normalize.py's output (data/venues.json, data/normalized/*.json, data/days/*.json). A probe informs the normalizer, it does not feed it: fix scraper/normalize.py and re-run it instead. If normalize.py genuinely writes ${f} now, add its shape to this check's allowlist in the same commit`,
+        `delete ${f} — everything under data/ is scraper/normalize.py's output (data/venues.json, data/normalized/*.json, data/days/*.json), plus the named scraper inputs (${[...ALLOWED_INPUTS.keys()].join(', ')}). A probe informs the normalizer, it does not feed it: fix scraper/normalize.py and re-run it instead. If normalize.py genuinely writes ${f} now, add its shape to this check's allowlist in the same commit; if another scraper produces it as an input, add it to ALLOWED_INPUTS naming that script`,
       ));
     }
     return out;

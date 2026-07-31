@@ -74,6 +74,11 @@ export function rehydrateShows(wire, lookups, year = 2026) {
         soldOut: p.o === 1,
         status: at(ticketStatuses, p.t),
       })),
+      // Real ticket prices in pounds, or null when the price cache doesn't
+      // know this show. null is NOT £0 — only `free` means free. `px` is
+      // dropped when the show has a single band, so max mirrors min.
+      priceMin: r.pm ?? null,
+      priceMax: r.px ?? r.pm ?? null,
     };
   });
 }

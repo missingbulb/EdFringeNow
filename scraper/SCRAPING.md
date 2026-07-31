@@ -38,7 +38,7 @@ touches the live API has to run on an **open-network GitHub Actions runner**:
 | query | purpose |
 |---|---|
 | `events(input: SearchCriteriaInput)` — "EventsSearch" | the paged listing. `per: 50`, `sortBy: TITLE`, a fixed `sortBySeed` for stable paging, `recentlyAdded: ANY \| LAST_SEVEN_DAYS \| LAST_TWENTY_FOUR_HOURS`. ~3,900 shows over ~77 pages. Returns a subset of `EventDetail`. |
-| `event(id: String, isSlug: Boolean)` | a single show. Pass the slug with `isSlug: true` (the site's URLs are slugs); pass a bare id with `isSlug` false/omitted. Returns the **full** `EventDetail`. |
+| `event(id: String!, isSlug: Boolean)` | a single show. Pass the slug with `isSlug: true` (the site's URLs are slugs); pass a bare id with `isSlug` false/omitted. Returns the **full** `EventDetail`. Note `id` is **non-null** — a `$id: String` variable is rejected ("not compatible with the type of the current location"); declare `String!`. |
 | `performancePrices(performanceRef: String)` | **live pricing** for one performance (see below). `performanceRef` = the performance's `boxOfficeId` (e.g. `"1:790001"`). |
 | `genres` | `GenreOption { label, iconName, value }` — the 10 headline categories. |
 | `subgenreOptions` | 104 `{ value, label }` subgenre tags. |
@@ -144,6 +144,32 @@ Key facts:
 - `performancePrices` returns **live** availability (`seatPercentageRemaining`,
   `performancePercentageRemaining`) — real-time, not something to bake into the
   nightly static scrape.
+
+### What the response actually looks like
+
+Captured from `performancePrices("1:790001")` — Daniel Sloss: BITTER, 14 Aug —
+by the probe that `scraper/fetch_prices.py` grew out of. Four things the field
+list above doesn't tell you, each of which the extraction has to handle:
+
+- **Amounts are JSON *strings***, not numbers: `"priceValue": "29.50"`. Parse,
+  don't assume.
+- **`totalPrice` equals `priceValue`.** The booking fee is broken out in
+  `transactionFeesPrice` (`"1.50"`) with `feeInTicketPrice: false` — so the band
+  value *is* the advertised face price and the fee is added at checkout. Don't
+  read `totalPrice` as "price with fees".
+- **`concessions` is dominated by a £0.00 "Personal Assistant" band** (code
+  `PA`) — the companion ticket for a disabled patron's carer, present on
+  essentially every show. Taking the literal cheapest concession records a
+  £29.50 show as costing nothing; only concessions **above £0** are prices.
+- **A sold-out performance still returns prices.** The 14 Aug performance is
+  `performancePercentageRemaining: 0` /
+  `ticketStatus: NO_ALLOCATION_CONTACT_VENUE` and prices come back regardless,
+  so the price pass needn't pick an available performance.
+
+The three bands ("Price A/B/C" at £29.50 / £25.00 / £22.50) were **identical
+across both of that show's performances**, which is the assumption
+`fetch_prices.py --sample-performances N` re-checks: it prices N performances of
+a show and reports whether the bands agree.
 
 ## How the repo turns this into the site
 

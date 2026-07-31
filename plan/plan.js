@@ -31,6 +31,7 @@ import {
   showAccessibility,
   ageLimitYears,
 } from "./lib/search.js";
+import { PRICE_OPTIONS, matchesPrice, priceLabel } from "../shared/price.js";
 
 // ES modules are always strict mode, so no "use strict" directive is needed.
 
@@ -1584,13 +1585,17 @@ const SEARCH_FACETS = [
     multi: false,
     any: "Any price",
     money: true,
-    values: () => ["free", "10", "15", "20", "30"],
-    label: (v) => (v === "free" ? "Free" : `Up to £${v}`),
-    matches: (show, v) =>
-      v === "free" ? showPrice(show) === 0 : showPrice(show) !== null && showPrice(show) <= Number(v),
-    // Per-show pricing is still to land; "Free" already works off the flag.
+    // The same ladder the Now page's "$" chip offers, minus its "any" option —
+    // this facet expresses "any" as no radio chosen. Sharing it is what keeps
+    // the two pages from quoting different budgets for the same catalogue.
+    values: () => PRICE_OPTIONS.filter((o) => o.value !== "any").map((o) => o.value),
+    label: (v) => (PRICE_OPTIONS.find((o) => o.value === v) || {}).label || v,
+    matches: (show, v) => matchesPrice(show, v),
+    // The price cache is fetched once while the festival keeps adding shows, so
+    // some shows have no amount; the caps stay offered as long as *any* paid
+    // show is priced, and simply exclude the unknowns (shared/price.js).
     optionUnavailable: (v) => v !== "free" && !state.facets.hasPrice,
-    optionUnavailableHint: "Per-show pricing is coming soon — “Free” already works",
+    optionUnavailableHint: "No ticket prices scraped yet — “Free” already works",
   },
 ];
 
@@ -1892,7 +1897,10 @@ function buildSearchRow(show, i, isOn) {
   const meta = document.createElement("span");
   meta.className = "ss-row-meta";
   meta.textContent = [
-    show.free ? "Free" : null,
+    // The real price where we have one ("£12", "£22.50–£29.50"), "Free" where
+    // the flag says so, and nothing at all where we don't know — a search row
+    // is no place to advertise a gap in the price cache.
+    showPrice(show) === null ? null : priceLabel(show),
     show.genre,
     show.venueName,
     typicalStartTime(show.performances || []),

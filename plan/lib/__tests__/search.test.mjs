@@ -40,12 +40,14 @@ test("ageLimitYears maps the enum, null for unknown", () => {
   assert.equal(ageLimitYears(show({ ageRestriction: "MYSTERY" })), null);
 });
 
-test("showPrice reads numbers and £-strings, falls back to the free flag", () => {
-  assert.equal(showPrice(show({ price: 12 })), 12);
-  assert.equal(showPrice(show({ price: "£12.50" })), 12.5);
-  assert.equal(showPrice(show({ price: "from £8" })), 8);
+// showPrice itself is shared/price.js's (and tested there); this is the
+// planner's check that the catalogue field it reads is the one the scraper
+// ships — `priceMin`, not the old free/paid guess.
+test("showPrice reads the catalogue's priceMin, falling back to the free flag", () => {
+  assert.equal(showPrice(show({ priceMin: 12, priceMax: 18 })), 12);
+  assert.equal(showPrice(show({ priceMin: 12.5 })), 12.5);
   assert.equal(showPrice(show({ free: true })), 0);
-  assert.equal(showPrice(show({ price: 5, free: true })), 5); // explicit price wins
+  assert.equal(showPrice(show({ priceMin: null, free: false })), null);
   assert.equal(showPrice(show({})), null);
 });
 
@@ -55,13 +57,15 @@ test("catalogueFacets: accessibility union sorted; price only counts explicit da
   const shows = [
     show({ accessibility: ["CAPTIONED", "AUDIO_DESCRIPTION"] }),
     show({ accessibility: ["CAPTIONED"] }),
-    show({ free: true }), // free flag alone is not price *data*
+    // Free shows alone don't make the "up to £X" caps worth offering: every
+    // cap would return exactly the free list, which the Free option gives.
+    show({ free: true, priceMin: 0 }),
   ];
   assert.deepEqual(catalogueFacets(shows), {
     accessibility: ["AUDIO_DESCRIPTION", "CAPTIONED"],
     hasPrice: false,
   });
-  assert.equal(catalogueFacets([show({ price: "£10" })]).hasPrice, true);
+  assert.equal(catalogueFacets([show({ priceMin: 10 })]).hasPrice, true);
   assert.deepEqual(catalogueFacets([]), { accessibility: [], hasPrice: false });
 });
 
@@ -135,10 +139,10 @@ test("accessibility filter requires the declared option; undeclared excluded", (
 });
 
 test("price 'free' and caps; unknown price excluded under any price filter", () => {
-  const free = show({ slug: "f", free: true });
-  const tenner = show({ slug: "10", price: "£10" });
-  const twenty = show({ slug: "20", price: 20 });
-  const unknown = show({ slug: "?" });
+  const free = show({ slug: "f", free: true, priceMin: 0 });
+  const tenner = show({ slug: "10", priceMin: 10 });
+  const twenty = show({ slug: "20", priceMin: 20 });
+  const unknown = show({ slug: "?", priceMin: null });
   assert.deepEqual(filterShows([free, tenner, twenty, unknown], { price: "free" }), [free]);
   assert.deepEqual(filterShows([free, tenner, twenty, unknown], { price: 15 }), [free, tenner]);
   assert.deepEqual(filterShows([free, tenner, twenty, unknown], { price: 20 }), [free, tenner, twenty]);
