@@ -10,7 +10,7 @@ knowledge.
 |---|---|
 | Live API unreachable from a session | prose + `probe-edfringe-api` skill |
 | `ticketStatus`, not `soldOut` | prose |
-| Committed data is generated output | prose |
+| Committed data is generated output | prose + check `edfringe-data-dir-is-generator-output` |
 | Wire format is a four-file change | check `edfringe-lookup-indices` + prose |
 
 ## The check
