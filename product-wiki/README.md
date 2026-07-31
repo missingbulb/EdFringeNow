@@ -36,3 +36,7 @@ repo may reference `product-wiki/` except the reviewed distillation under
   Fringe ticket (the Society, the venues, edfest.com), the definitive operator
   census, why no third party can sell or earn commission on tickets, and why
   the edfringe scrape has no full replacement.
+- **[festival-cities-beyond-edinburgh/](festival-cities-beyond-edinburgh/README.md)** —
+  the same question pointed outward: which *other cities* carry the
+  Edinburgh-in-August pattern, ranked by how close they are structurally rather
+  than by fame, plus the candidate tail.
