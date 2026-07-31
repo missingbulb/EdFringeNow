@@ -15,7 +15,7 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 - Nobody does live reachability. "Nearby now" stops at close and starting soon.
 - The official app plans better than we assumed — calendar sync, offline, 200k downloads.
 - Clash-free, travel-aware scheduling is table stakes. Plan My Fringe shipped it years ago.
-- Two claims are still unclaimed: import my favourites, and pick my dates.
+- Three claims are unclaimed: import my favourites, pick my dates, and the other seven August festivals.
 - Fringe Finder plans around what is still on sale. That is the axis we are behind on.
 - Half Price Hut tickets are in person only — live supply no app can see.
 - Nobody here has used any 2026 rival. All of it is compiled from their own marketing.
@@ -108,6 +108,29 @@ read on where the gap is.
 - **[Edinburgh Fringe Planner](https://edfringeplanner.co.uk/)** — a further
   independent planner surfaced in the same sweep, not yet examined.
 
+## The cross-festival field (almost empty)
+
+Every tool above is a *Fringe* tool. The city runs eight overlapping festivals in
+August, and only one profiled competitor spans them:
+
+- **[Data Thistle](https://edinburghfestival.datathistle.com/)** — combined
+  listings across the Fringe, International, Book, Jazz, Tattoo, Art, Film, Free
+  Fringe, Free Festival and Fringe by the Sea, plus a commercial events API. A
+  listings directory rather than a planner: no reachability, no itinerary, no
+  favourites. The closest thing found to a multi-festival competitor.
+- The **[Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/projects)**
+  publishes a gallery of 13 apps built on it — Plan My Fringe, FringeFlow,
+  TicketBadger, Frindr, myFestival, Festival Clock, Fringe Vibes and others.
+  The data covers all 11 festivals; almost every app on it is named and framed
+  around the **Fringe alone**. Nobody in the gallery claims cross-festival
+  planning.
+
+Two caveats on how strong that reads. The gallery blurbs are the only evidence —
+nobody here has used these tools, and the gallery may simply be stale. And a
+cross-festival tool would not necessarily be *listed* there, since the API is not
+the only source. Treat "the cross-festival claim is unclaimed" as the current
+best reading, not a settled finding.
+
 ## Where the gaps are
 
 **Live reachability — still open.** No tool centres full reachability: location
@@ -155,6 +178,8 @@ surfaces should not be reasoned about as one product — see
 - [Edinburgh Festival Fringe Box Office](https://www.edfringe.com/experience/plan-your-visit/fringe-box-office/)
 - [We've published our review of the year 2025 (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/weve-published-our-review-of-the-year-2025/)
 - [ThreeWeeks (Wikipedia)](https://en.wikipedia.org/wiki/ThreeWeeks)
+- [Edinburgh Festival 2026 — combined listings (Data Thistle)](https://edinburghfestival.datathistle.com/)
+- [Projects built on the Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/projects)
 
 ## Open questions
 
@@ -176,6 +201,13 @@ surfaces should not be reasoned about as one product — see
   does.
 - **Does anything else score date windows** ("when should I come?"), or is that
   genuinely unoccupied?
+- **Is anything actually planning across festivals?** The Listings API gallery
+  says no, but the gallery is self-reported and possibly stale, and a
+  cross-festival tool need not appear on it. Data Thistle lists everything and
+  plans nothing — is that the whole field, or just the visible part of it?
+- **Does Data Thistle's events API compete with us or supply us?** It is a paid
+  feed over the same listings the free official API already gives away; what it
+  adds is unexamined.
 - "FRiNGE.Travel" surfaced in an earlier sweep and was never examined.
 - What do users actually do in the "free hour" moment today — official app,
   posters, ask a friend? Still no cited behavioural source (the same gap is
@@ -204,3 +236,13 @@ surfaces should not be reasoned about as one product — see
   official app's planning strength, scheduling as table stakes, the two
   unclaimed claims, the availability axis, in-person supply, the verification
   gap). Header only: no claim, citation or open question changed.
+- **2026-07-31** — added the cross-festival field, found while researching the
+  other Edinburgh festivals: Data Thistle (combined listings across ten
+  festivals plus a paid events API — a directory, not a planner) and the
+  official Listings API's gallery of 13 apps, almost all Fringe-only despite the
+  data covering all 11 festivals. Recorded the evidence's weakness (self-reported
+  blurbs, possibly stale, not exhaustive) rather than claiming the field empty.
+  Key insight 4 rewritten from two unclaimed claims to three — the other seven
+  August festivals joins favourites-import and date-choice. Two open questions
+  added. Requirements implication left for human review — see the
+  festival-season page and the multi-festival design proposal.
