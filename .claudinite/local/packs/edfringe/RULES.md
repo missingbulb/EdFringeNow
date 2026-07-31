@@ -94,3 +94,34 @@ a new file silently sits outside the syntax sweep until it is committed — the
 "checked N files" count is not evidence your new file was among them.
 
 ## `.claudinite/shared/` is generated output — never hand-resolve its conflicts, always take the fresher version
+
+## A pack rule or check encodes a *work procedure*, never product behaviour
+
+Rules and checks in `.claudinite/local/packs/` are about **how work is done here**
+— the gate that must stay wired, the tool that must be launched a certain way, the
+files that must move together. **Product behaviour is not a rule.** What the site
+does — which ticket statuses count as unavailable, what the Now page shows, how
+far "walkable" reaches — is a **requirement**, and it belongs in the requirements
+spec (`product/requirements.md`, the `executable-requirements` pack) and its
+tests, never in a pack's `rules`.
+
+The trap is that product behaviour reads exactly like a good check candidate: it
+is deterministic, statically detectable, and genuinely worth enforcing, so a
+prose-to-checks sweep will happily convert it. The 2026-07-30 sweep did: it turned
+the `ticketStatus`-not-`soldOut` rule into an `edfringe-ticket-status-unavailable`
+check, with a clean scoped parse and a see-it-fail proof against mutated real repo
+content — a well-built check of the wrong kind, which the owner rejected on sight
+("Rules shouldn't be about product requirements, only work procedures"). The
+sibling conversion in the same PR, `edfringe-normalizer-selftest-in-verify` ("the
+offline self-test must stay wired into `verify.sh`"), was the right kind and
+stayed.
+
+Apply the test **before** writing the check, since the build quality of the check
+tells you nothing about whether it belongs: *if the product changed its mind
+tomorrow, would this rule be wrong?* If yes it is a requirement — a red check
+would then be reporting a product decision as a process violation, and the
+requirements spec is where that decision is already supposed to live. If instead
+it would still hold because it describes how we work regardless of what the
+product does, it is a rule. Prose in a `RULES.md` gets the same test: the
+`ticketStatus` paragraph in the `edfringe-data` pack is background a scraper
+editor needs, not a rule, and it is not convertible.
