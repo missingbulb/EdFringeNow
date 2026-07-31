@@ -97,7 +97,8 @@ const state = {
   clusterGroup: null,          // Leaflet.markercluster group for the non-focused pins
   map: null,
   selectedGenres: new Set(["Comedy"]),
-  selectedSubgenres: new Set(), // finer descriptors; empty = every subgenre
+  selectedSubgenres: new Set(), // finer descriptors; empty (or all) = every subgenre
+  subgenreOptions: [],         // the subgenre values the panel currently offers
   priceFilter: "both",         // "both" | "free" | "paid" ($ chip)
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
@@ -321,22 +322,35 @@ function priceValue(show) {
   return show.free || /free/i.test(show.price) ? 0 : 1;
 }
 
-/* Does a show carry any of the selected subgenres? (Empty selection = all.) */
+/* Does a show carry any of the selected subgenres? */
 function matchesSubgenres(show) {
-  if (!state.selectedSubgenres.size) return true;
   return (show.subgenres || []).some((s) => state.selectedSubgenres.has(s));
 }
 
-/* Shows passing the current taste filters (an empty genre/subgenre set = all).
- * `except` names one facet to leave unapplied — that's the pool a facet's own
- * per-option counts are measured against, so each count answers "how many
- * shows would ticking this give me", not "how many are already showing". */
+/* Both ends of a checkbox panel mean "don't narrow": none ticked is the obvious
+ * one, and every box ticked is the same answer said the other way round. They
+ * only look different — so a full panel filters nothing at all, which also
+ * keeps the handful of shows carrying no subgenre (or a genre outside the ten
+ * headline ones) in view instead of quietly dropping them. */
+function genreFilterActive() {
+  return state.selectedGenres.size > 0 && !allGenresSelected();
+}
+
+function subgenreFilterActive() {
+  return state.selectedSubgenres.size > 0 && !allSubgenresSelected();
+}
+
+/* Shows passing the current taste filters (an empty *or* full genre/subgenre
+ * set = all). `except` names one facet to leave unapplied — that's the pool a
+ * facet's own per-option counts are measured against, so each count answers
+ * "how many shows would ticking this give me", not "how many are already
+ * showing". */
 function filteredShows(except) {
   let list = state.shows;
-  if (except !== "genre" && state.selectedGenres.size) {
+  if (except !== "genre" && genreFilterActive()) {
     list = list.filter((s) => state.selectedGenres.has(s.genre));
   }
-  if (except !== "subgenre") list = list.filter(matchesSubgenres);
+  if (except !== "subgenre" && subgenreFilterActive()) list = list.filter(matchesSubgenres);
   if (except !== "price") {
     if (state.priceFilter === "free") list = list.filter((s) => priceValue(s) === 0);
     else if (state.priceFilter === "paid") list = list.filter((s) => priceValue(s) === 1);
@@ -1451,8 +1465,7 @@ function buildGenrePanel() {
     reset.onclick = () => {
       // Ticked everything already → the link is "nothing!", clearing the boxes
       // so you can pick a few from a blank slate.
-      state.selectedGenres =
-        state.selectedGenres.size === GENRES.length ? new Set() : new Set(GENRES);
+      state.selectedGenres = allGenresSelected() ? new Set() : new Set(GENRES);
       buildGenrePanel(); // re-render the checkboxes
       onTasteChange({ rebuildSubgenres: true });
     };
@@ -1462,13 +1475,11 @@ function buildGenrePanel() {
 
 /* The "everything!" links flip to "nothing!" once every box in their panel is
  * ticked — at which point the useful move is to clear them and start picking.
- * For genres the two ends are the same search (every show has one genre, so
- * "all ticked" and "none ticked" both narrow nothing); for subgenres they
- * differ by the ~2% of shows the festival tags with none, which "all ticked"
- * excludes and "none ticked" keeps. The counts show that difference. */
+ * Both ends run the same search: all ticked and none ticked alike leave the
+ * facet unfiltered (see genreFilterActive/subgenreFilterActive). */
 function updateEverythingLinks() {
   const links = [
-    ["filterReset", state.selectedGenres.size > 0 && state.selectedGenres.size === GENRES.length],
+    ["filterReset", allGenresSelected()],
     ["subgenreReset", allSubgenresSelected()],
   ];
   for (const [id, all] of links) {
@@ -1479,10 +1490,17 @@ function updateEverythingLinks() {
   }
 }
 
-/* Is every subgenre currently offered already ticked? */
+/* Is every genre ticked? */
+function allGenresSelected() {
+  return state.selectedGenres.size >= GENRES.length;
+}
+
+/* Is every subgenre currently offered already ticked? The option set is the one
+ * the panel last built (state.subgenreOptions), not the DOM — the filter asks
+ * this question too, and it must answer the same before any render. */
 function allSubgenresSelected() {
-  const rows = document.querySelectorAll("#subgenreOptions .panel-option input");
-  return rows.length > 0 && [...rows].every((i) => state.selectedSubgenres.has(i.value));
+  const values = state.subgenreOptions;
+  return values.length > 0 && values.every((v) => state.selectedSubgenres.has(v));
 }
 
 /* The subgenre options: only the finer descriptors actually present in the
@@ -1500,6 +1518,7 @@ function buildSubgenrePanel() {
   const counts = facetCounts(facetPool("subgenre"), (s) => s.subgenres || []);
   wrap.innerHTML = "";
   const values = subgenreOptionValues(counts);
+  state.subgenreOptions = values;
   if (!values.length) {
     wrap.innerHTML = '<p class="panel-note">No subgenres in what\'s left — widen your genres.</p>';
   }
@@ -1617,13 +1636,18 @@ function refreshFacetCounts() {
   }
 }
 
-/* Concise label for the subgenre chip; none ticked reads as "All subgenres". */
+/* Concise label for the subgenre chip; none ticked — or every option ticked,
+ * which is the same search — reads as "All subgenres". */
 function updateSubgenreValue() {
   const el = document.querySelector('[data-value="subgenre"]');
   if (!el) return;
   const n = state.selectedSubgenres.size;
   el.textContent =
-    n === 0 ? "All subgenres" : n === 1 ? [...state.selectedSubgenres][0] : `${n} subgenres`;
+    n === 0 || allSubgenresSelected()
+      ? "All subgenres"
+      : n === 1
+      ? [...state.selectedSubgenres][0]
+      : `${n} subgenres`;
 }
 
 /* Concise label for the genre filter chip. All (or none) selected reads as
@@ -1633,7 +1657,7 @@ function updateGenreValue() {
   if (!el) return;
   const n = state.selectedGenres.size;
   const label =
-    n === 0 || n === GENRES.length
+    n === 0 || allGenresSelected()
       ? "All genres"
       : n === 1
       ? [...state.selectedGenres][0]
