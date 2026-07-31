@@ -342,6 +342,13 @@ resolve: one email.
 Fallbacks if the answer is no: fetch client-side per user (but then the key is
 public), or serve only a reduced derivative and link out for detail.
 
+Two further Fringe-specific gates, verified against the API's own pages
+(2026-07-31): live Fringe data is **approval-gated** — you build against a
+randomised `demofringe` dataset and [submit the app for review](https://api.edinburghfestivalcity.com/documentation/fringe_approval) —
+and the Fringe terms require that show links go **only to edfringe.com**, "not…
+any other ticketing site, including the venue's own site". Both belong in the
+same Phase-0 conversation with Festivals Edinburgh as the static-file question.
+
 ### 5.3 Keep the Fringe on its own scraper
 
 The existing edfringe GraphQL scraper stays the better Fringe source:

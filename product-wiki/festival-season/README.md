@@ -178,6 +178,16 @@ repo and serves it as a static JSON file from GitHub Pages** — a pattern that
 needs an explicit answer from Festivals Edinburgh before it is used with their
 data. It is the one genuine blocker found.
 
+**Edge 3 — Fringe data specifically is approval-gated and link-restricted**
+(found 2026-07-31 in the ticketing pass): developers build against a randomised
+`demofringe` dataset and must [submit the app for review](https://api.edinburghfestivalcity.com/documentation/fringe_approval)
+before live Fringe access; the Fringe terms require that show links go **only to
+edfringe.com** — "not… any other ticketing site, including the venue's own
+site". Sync is near-real-time (`modified_from`, "a delay of a few minutes"), and
+a beta [MCP endpoint](https://api.edinburghfestivalcity.com/documentation/mcp)
+exists. The full ticketing/provider picture is on
+[fringe-ticketing/](../fringe-ticketing/README.md).
+
 ### Keeping the Fringe on its own source
 
 The existing edfringe GraphQL scraper stays the better Fringe source: it carries
@@ -243,9 +253,11 @@ blurbs and belongs in the competitor page once someone actually uses them.
   from GitHub Pages may read as redistributing a data dump. Needs a direct
   answer from Festivals Edinburgh, not an inference from the terms page.
 - **What does the API actually return?** Every field claim here comes from the
-  documentation, not from a response. Nobody has registered a key or made a
-  call. Event counts per festival, how `is_at_fixed_time` is really populated,
-  and whether prices are complete are all unverified.
+  documentation, not from an authenticated response — nobody has registered a
+  key. (Narrowed 2026-07-31: the public explorer confirms 2026 Fringe data is
+  loaded, and the per-performance field list was verified against the events
+  documentation; per-festival event counts and `is_at_fixed_time` population
+  remain unchecked.)
 - **Is `is_at_fixed_time` enough to derive event shape?** It separates timed from
   drop-in, but not one-off from run from nightly. Those may be derivable by
   counting performances per event — unconfirmed.
@@ -280,3 +292,11 @@ blurbs and belongs in the competitor page once someone actually uses them.
   programme claim, none verified against a live API response. Requirements
   implications (the Now page and planner design) left for human review — the
   proposal is written up outside the wiki.
+- **2026-07-31** *(second pass)* — added Edge 3 to the Listings API section from
+  the fringe-ticketing research pass: Fringe data is approval-gated
+  (`demofringe` review process) and Fringe show links must go only to
+  edfringe.com — never a venue's own site; recorded the near-real-time
+  `modified_from` sync and the beta MCP endpoint, and narrowed the "what does
+  the API actually return" open question (2026 Fringe data confirmed loaded via
+  the public explorer; still no authenticated call). Cross-linked the new
+  fringe-ticketing page.

@@ -32,3 +32,7 @@ repo may reference `product-wiki/` except the reviewed distillation under
   festivals in August and across the summer: their scale, diversity, locations,
   the six different shapes an "event" takes across them, and whether the data is
   reachable.
+- **[fringe-ticketing/](fringe-ticketing/README.md)** — who actually sells a
+  Fringe ticket (the Society, the venues, edfest.com), the definitive operator
+  census, why no third party can sell or earn commission on tickets, and why
+  the edfringe scrape has no full replacement.
