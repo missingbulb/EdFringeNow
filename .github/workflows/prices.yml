@@ -1,0 +1,98 @@
+name: Fetch ticket prices (one-off)
+
+# Real ticket amounts for every paid show, into the fetch-once cache
+# data/prices.json — then regenerate the site data from it.
+#
+# Deliberately manual, and deliberately NOT on the nightly path. A show's price
+# bands don't change through the festival the way its ticket status does, and
+# there is no bulk price endpoint: this is one `performancePrices` call per
+# show, ~3,500 of them. Run it once; re-run it only if the festival re-prices.
+#
+# The pass is resumable — shows already in the cache are skipped — so `limit`
+# lets a big run be taken in bites across several runs, each committing what it
+# got. See scraper/README.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Stop after this many newly priced shows (blank = all remaining)
+        required: false
+        default: ""
+      slug:
+        description: Price a single show by slug instead (e.g. daniel-sloss-bitter)
+        required: false
+        default: ""
+      min_delay:
+        description: Minimum delay between requests (seconds)
+        required: false
+        default: "1"
+      max_delay:
+        description: Maximum delay between requests (seconds)
+        required: false
+        default: "2.5"
+      commit:
+        description: Commit the price cache and regenerated data back to the repo
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  # Two concurrent runs would both write data/prices.json and race on the push.
+  group: fetch-prices
+  cancel-in-progress: false
+
+jobs:
+  prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Transform self-test (offline)
+        run: python3 scraper/fetch_prices.py --selftest
+
+      - name: Fetch prices
+        run: |
+          python3 scraper/fetch_prices.py \
+            ${{ inputs.slug && format('--slug {0}', inputs.slug) || '--all' }} \
+            ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
+            --min-delay "${{ inputs.min_delay }}" \
+            --max-delay "${{ inputs.max_delay }}"
+
+      - name: Fold the prices into the site data
+        # `always()`, to match the commit step below: when the fetch dies
+        # part-way the cache still holds every show it did price, and those
+        # belong in the committed site data too. Skipping this on failure would
+        # commit a prices.json the day files hadn't caught up with.
+        if: always()
+        run: python3 scraper/normalize.py --minify-from-master
+
+      - name: Summarise
+        if: always()
+        run: |
+          python3 -c "import json; c=json.load(open('data/prices.json')); p=list(c['shows'].values()); print('priced shows:', len(p)); print('cheapest:', min(s['min'] for s in p) if p else 'n/a'); print('dearest:', max(s['max'] for s in p) if p else 'n/a')" 2>/dev/null || echo "n/a"
+
+      - name: Commit prices and regenerated data
+        # `always()` so an interrupted or partly-failed pass still banks the
+        # shows it did price — the cache is resumable and a re-run continues.
+        if: ${{ always() && inputs.commit }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/prices.json data/normalized data/venues.json data/days
+          if git diff --staged --quiet; then
+            echo "No price changes to commit."
+          else
+            git commit -m "Update ticket prices"
+            git push
+          fi

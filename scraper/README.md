@@ -6,6 +6,14 @@ Tools for scraping show data from [edfringe.com](https://www.edfringe.com).
 > the non-obvious bits (pricing lives behind a separate per-performance query;
 > `ticketStatus` vs the `soldOut` flag) — see **[SCRAPING.md](SCRAPING.md)**.
 
+Three scripts, on three different clocks:
+
+| script | what it gets | how often |
+|---|---|---|
+| `fetch_shows.py` | the listing: shows, venues, genres | daily top-up, full rebuild on demand |
+| `fetch_prices.py` | real ticket amounts, per show | **once** — prices don't move; see below |
+| `normalize.py` | turns both into the committed site data | after either of the above |
+
 ## How edfringe.com serves listings
 
 The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page
@@ -50,6 +58,54 @@ python3 scraper/fetch_shows.py \
 The raw output is **git-ignored** (see `.gitignore`) — it is a regenerable
 cache, not source.
 
+## fetch_prices.py — real ticket prices, fetched once
+
+```bash
+python3 scraper/fetch_prices.py --slug daniel-sloss-bitter   # one show
+python3 scraper/fetch_prices.py --all                        # every paid show
+python3 scraper/fetch_prices.py --selftest                   # offline transform test
+```
+
+The listing API carries **no amounts** — `priceType` is a set of flags, which is
+why the site knew only "free vs paid" for so long. Money comes from a separate
+`performancePrices(performanceRef)` query, **one call per performance**, with no
+bulk endpoint. Price *bands* are set per show and repeat across its
+performances, so one call per show is enough; `--sample-performances N` prices N
+of a show's performances and reports whether the bands actually agree.
+
+Output is `data/prices.json` — **committed, and fetched once**:
+
+```json
+{"v": 1, "fetchedAt": "2026-07-30",
+ "shows": {"2026DANIELS": {"min": 22.5, "max": 29.5, "fee": 1.5,
+                           "bands": [{"type": "Price C", "value": 22.5}, …],
+                           "slug": "daniel-sloss-bitter", "ref": "1:790001"}}}
+```
+
+Why once, and why it is *not* on the nightly path:
+
+- **A show's price doesn't move.** Ticket *status* changes hourly (hence
+  `refresh-tickets`) and the listing gains shows daily (hence `refresh-shows`),
+  but the bands a show sells at are set when it goes on sale. Re-fetching them
+  nightly would be ~3,500 API calls a day to re-learn the same numbers.
+- **The pass is resumable.** Shows already in the cache are skipped, so `--limit
+  N` takes the festival in bites and `--force` re-prices deliberately. The cache
+  is rewritten every 25 shows, so a mid-run crash loses at most that many —
+  but note what "resumable" is measured against: **the cache file on disk**. On
+  a runner that file is only durable once the workflow's commit step pushes it,
+  which it does at the end of the job (including when the fetch step failed).
+  Against a *script* failure that is enough; against the runner itself dying,
+  nothing in the job runs and the whole run is lost. If that matters, chunk the
+  festival with `limit` — each run commits what it got.
+- **Free shows are skipped**, not called: there is nothing to price, and
+  `normalize.py` already reads £0 off the listing's `free` flag.
+- **A missing show means the price is unknown, not free.** The festival keeps
+  adding shows after the price run, so gaps are normal and permanent. Every
+  consumer treats unknown as its own state (`shared/price.js`).
+
+Run it on a runner via the **`Fetch ticket prices (one-off)`** workflow
+(`.github/workflows/prices.yml`), which fetches, regenerates and commits.
+
 ## normalize.py — turn the raw scrape into website data
 
 ```
@@ -67,6 +123,11 @@ site serves them):
 | `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
 | `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
 | `data/days/index.json` | available days + per-day counts | yes |
+
+`normalize.py` has a **second input** besides the raw scrape: `data/prices.json`
+(above), which it folds into the master and both wire forms. It is an input, not
+an output — `normalize.py` never writes it, and runs happily without it (every
+show simply has an unknown price, and it says so).
 
 Normalization rules:
 - **Location** = venue code (the "venue number") + the show's room (space); venue
@@ -93,7 +154,14 @@ Normalization rules:
   `http://registration.edfringe.com/resource/image/<guid>`, so the master stores
   only the bare `<guid>` and the client re-attaches the host (over https); this
   trims ~50 bytes off each image field in `shows.json`. Not in the day files yet.
-- **Price** = a `free` flag (the listing API exposes no amount).
+- **Price** = `priceMin` / `priceMax` in pounds, folded in from
+  `data/prices.json` (see `fetch_prices.py` above), plus the listing's `free`
+  flag. A free show is a known £0; a show the price cache hasn't reached is
+  `null` — **unknown, which is not the same as free**. The wire forms carry
+  `pm` (cheapest band) and, in the catalogue only, `px` (dearest), both omitted
+  when unknown so the client can tell the two apart. The day files carry `pm`
+  alone: the Now page's filter asks "what can I see for up to £X", which the
+  cheapest band answers, and a day file is the one payload where size bites.
 - **Coordinates** are geocoded from each venue's UK postcode via
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
   only geocodes new venues. Use `--no-geocode` to skip.
@@ -133,6 +201,12 @@ as tasks under this repo's local pack, each with the shell it runs beside it:
 |---|---|---|
 | `refresh-shows` | daily | the `--recently-added LAST_SEVEN_DAYS` top-up above |
 | `refresh-tickets` | hourly, but only in August between 08:00 and 23:59 Edinburgh time | `refresh_ticket_status.py` for today |
+
+Ticket **prices** are deliberately absent from that table: they are fetched once
+by hand (`fetch_prices.py`, above), not on any schedule. `refresh-shows` reads
+the price cache and carries the amounts through untouched, so a daily top-up
+keeps prices without re-fetching them — and shows added after the price run
+simply have an unknown price until it is run again.
 
 `refresh-tickets` is evaluated every hour year-round and its precondition decides
 whether to act — that August/hours window is the whole of what sixteen

@@ -46,9 +46,14 @@ emits three layers of data:
   data/days/index.json         list of available days + per-day counts.
 
 Locations are normalized to a venue code plus the specific room (space) of the
-show. Price is reduced to a free/paid flag (the listing API exposes no amount).
-Venue coordinates are geocoded from UK postcodes via postcodes.io and cached in
-venues.json so a refresh only geocodes new venues.
+show. Venue coordinates are geocoded from UK postcodes via postcodes.io and
+cached in venues.json so a refresh only geocodes new venues.
+
+Ticket prices come from a **second input**: data/prices.json, the fetch-once
+cache written by scraper/fetch_prices.py. The listing API exposes no amounts —
+only a free/paid flag — so real money is folded in here (apply_prices) and
+reaches the site as `priceMin`/`priceMax`. A show absent from the cache has an
+*unknown* price, which is not the same as free.
 
 Usage:
     python3 scraper/normalize.py                     # full rebuild from raw scrape
@@ -77,6 +82,7 @@ DEFAULT_MASTER_MIN = ROOT / "data" / "normalized" / "shows.min.json"
 DEFAULT_DESCRIPTIONS = ROOT / "data" / "normalized" / "descriptions.min.json"
 DEFAULT_VENUES = ROOT / "data" / "venues.json"
 DEFAULT_DAYS_DIR = ROOT / "data" / "days"
+DEFAULT_PRICES = ROOT / "data" / "prices.json"
 
 AUGUST_PREFIX = "2026-08"
 BLURB_MAX = 160
@@ -294,7 +300,44 @@ def normalize_event(event: dict) -> dict:
         "venueName": venue_name,
         "room": room,
         "performances": performances,
+        # Real amounts don't come from the listing API at all — apply_prices
+        # fills these from data/prices.json. Declared here (last, so the record
+        # order is the same whether it was built from a raw scrape or reloaded
+        # from an existing master) so every show has the shape, priced or not.
+        "priceMin": None,
+        "priceMax": None,
     }
+
+
+def apply_prices(master: list[dict], prices: dict) -> int:
+    """Attach real ticket amounts from the price cache to the master, in place.
+
+    `prices` is `data/prices.json` as written by `fetch_prices.py` — a
+    fetch-once cache keyed by the same show id the master uses. A show with no
+    entry keeps `priceMin`/`priceMax` of None, which the site reads as "price
+    unknown" and is *not* the same as free: only the `free` flag says free.
+
+    Free shows are given £0 rather than left unknown. They are skipped by the
+    price pass (there is nothing to call `performancePrices` for), but their
+    price is known perfectly well from the listing flag, and a filter asking
+    "what can I see for under £10" must include them.
+
+    Returns how many shows came out with a known price.
+    """
+    by_id = (prices or {}).get("shows") or {}
+    known = 0
+    for show in master:
+        entry = by_id.get(show["id"])
+        if entry and entry.get("min") is not None:
+            show["priceMin"] = entry["min"]
+            show["priceMax"] = entry.get("max", entry["min"])
+        elif show.get("free"):
+            show["priceMin"] = show["priceMax"] = 0.0
+        else:
+            show["priceMin"] = show["priceMax"] = None
+        if show["priceMin"] is not None:
+            known += 1
+    return known
 
 
 def build_venues(venues_raw: dict, existing: dict, geocode: bool) -> dict:
@@ -441,7 +484,7 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
             if key in seen:
                 continue
             seen.add(key)
-            days.setdefault(date, []).append({
+            rec = {
                 "id": show["id"],
                 "title": show["title"],
                 "genre": genre_ix.get(show.get("genre"), -1),
@@ -455,7 +498,14 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
                 "soldOut": 1 if p["soldOut"] else 0,
                 "ts": ts_ix.get(p.get("status"), -1),
                 "slug": show["slug"],
-            })
+            }
+            # Cheapest band only: the Now page's price filter asks "what can I
+            # see for up to £X", which the lowest band answers. The full range
+            # lives in the planner's catalogue, which isn't size-constrained the
+            # way a day file is. Omitted when the price is unknown.
+            if show.get("priceMin") is not None:
+                rec["pm"] = show["priceMin"]
+            days.setdefault(date, []).append(rec)
     for date in days:
         days[date].sort(key=lambda x: (x["start"], x["title"] or ""))
     return days
@@ -529,6 +579,12 @@ def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[st
             "f": 1 if s.get("free") else 0,
             "im": s.get("image"),
         }
+        # Real ticket prices, in pounds. Omitted entirely when unknown, which
+        # the client must not confuse with free (`f`) — see apply_prices.
+        if s.get("priceMin") is not None:
+            rec["pm"] = s["priceMin"]
+            if s.get("priceMax") not in (None, s["priceMin"]):
+                rec["px"] = s["priceMax"]
         if s.get("smallImage") != s.get("image"):
             rec["si"] = s.get("smallImage")
         rec["b"] = s.get("blurb") or ""
@@ -585,9 +641,29 @@ def write_json(path: Path, obj) -> None:
     tmp.replace(path)
 
 
+def load_prices(path: Path) -> dict:
+    """The ticket-price cache, or an empty one when it hasn't been fetched yet.
+
+    Deliberately forgiving: prices are a separate, manually-run pass
+    (`fetch_prices.py`), so a normalize run must not fail — or silently produce
+    a site with no prices *without saying so* — just because the cache is
+    missing. The caller reports the coverage it got.
+    """
+    if not path.exists():
+        print(f"  no price cache at {path} — every show's price will be unknown "
+              f"(run scraper/fetch_prices.py --all)", file=sys.stderr)
+        return {}
+    try:
+        return json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"  WARNING: unreadable price cache at {path} ({exc}); "
+              f"prices will be unknown", file=sys.stderr)
+        return {}
+
+
 def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
                           days_dir: Path, master_min_path: Path,
-                          descriptions_path: Path) -> int:
+                          descriptions_path: Path, prices_path: Path) -> int:
     """Write everything derived from the master + venue map: the shared lookup
     file (venues.json), the per-day now-page files, the compact planner file
     (shows.min.json) and its descriptions sidecar. Returns the number of day
@@ -596,6 +672,11 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     The lookup lists are built once here and indexed into by both the day files
     and shows.min.json, so the two stay in lockstep with a single source of truth.
     """
+    # Real ticket amounts, folded in before anything is packed so the master and
+    # both wire forms agree on what a show costs.
+    known = apply_prices(master, load_prices(prices_path))
+    print(f"  priced {known}/{len(master)} shows from {prices_path.name}")
+
     genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups(master)
     write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
                              "subgenres": subgenres, "ticketStatuses": ticket_statuses,
@@ -629,9 +710,12 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
 def regen_from_master(args) -> int:
     """Rebuild venues.json + the compact shows.min.json from the committed master,
     without a raw scrape. Used to (re)generate the planner payload after a manual
-    master edit, or to backfill it the first time. The venue map (with its cached
-    coordinates) is carried over from the existing venues.json verbatim; only the
-    lookup lists and the derived files are rebuilt from the master."""
+    master edit, to backfill it the first time, or to fold in a fresh run of
+    `fetch_prices.py` — the price cache is the one input that changes without a
+    re-scrape, so this is the command that publishes new prices. The venue map
+    (with its cached coordinates) is carried over from the existing venues.json
+    verbatim; only the lookup lists and the derived files are rebuilt from the
+    master, which is itself rewritten with the prices folded in."""
     master_path = Path(args.master)
     master = json.loads(master_path.read_text())
     venues_path = Path(args.venues)
@@ -639,7 +723,8 @@ def regen_from_master(args) -> int:
     venues = prior.get("venues", prior)
     n_days = write_derived_outputs(master, venues, venues_path,
                                    Path(args.days_dir), Path(args.master_min),
-                                   Path(args.descriptions))
+                                   Path(args.descriptions), Path(args.prices))
+    write_json(master_path, master)
     print(f"Regenerated from {master_path} ({len(master)} shows): "
           f"{args.master_min}, {args.descriptions}, {venues_path} "
           f"({len(venues)} venues), {n_days} day files in {args.days_dir}")
@@ -677,7 +762,6 @@ def run(args) -> int:
         print(f"Master rebuilt with {len(master)} shows")
     master.sort(key=lambda s: (s["title"] or "").lower())
     unify_subgenre_casing(master)  # one display casing per subgenre across all shows
-    write_json(master_path, master)
 
     # Global lookup file: the venue map plus the shared rooms/genres lists that
     # the day files index into. Sent to the browser once. Venues are always
@@ -691,7 +775,10 @@ def run(args) -> int:
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
     n_days = write_derived_outputs(master, venues, venues_path,
                                    Path(args.days_dir), Path(args.master_min),
-                                   Path(args.descriptions))
+                                   Path(args.descriptions), Path(args.prices))
+    # After the derived outputs, because that is where prices are folded in and
+    # the master is the record of what they were.
+    write_json(master_path, master)
 
     print(f"\nWrote: {master_path} ({len(master)} shows), {args.master_min}, "
           f"{args.descriptions}, {venues_path} ({len(venues)} venues), "
@@ -758,6 +845,23 @@ def selftest() -> int:
     assert rec["performances"][0] == {
         "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
 
+    # Prices arrive from the separate fetch-once cache, keyed by the same show
+    # id. A cache miss on a paid show leaves the price *unknown* (None) — the
+    # site must not read that as free — while a free show is a known £0.
+    priced = dict(rec)
+    apply_prices([priced], {"shows": {"202610THING": {"min": 22.5, "max": 29.5}}})
+    assert priced["priceMin"] == 22.5 and priced["priceMax"] == 29.5, priced
+    unknown = dict(rec)
+    assert apply_prices([unknown], {"shows": {}}) == 0
+    assert unknown["priceMin"] is None and unknown["priceMax"] is None, unknown
+    free_show = dict(rec, free=True)
+    apply_prices([free_show], {})
+    assert free_show["priceMin"] == 0.0 and free_show["priceMax"] == 0.0, free_show
+    # A single-band show reports the same min and max.
+    one_band = dict(rec)
+    apply_prices([one_band], {"shows": {"202610THING": {"min": 12.0}}})
+    assert one_band["priceMax"] == 12.0, one_band
+
     genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups([rec])
     assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
     assert subgenres == ["Character Comedy", "Stand-up"], subgenres
@@ -785,6 +889,18 @@ def selftest() -> int:
     assert packed["p"][1]["o"] == 1 and ticket_statuses[packed["p"][1]["t"]] == "SOLD_OUT", packed
     # venueName here isn't "<room> at <venue name>", so it is kept verbatim (`vn`).
     assert packed["vn"] == "Pleasance Courtyard", packed
+    # An unpriced show carries no price keys at all, so the client can tell
+    # "unknown" from "£0" — `f` (free) is the only thing that means free.
+    assert "pm" not in packed and "px" not in packed, packed
+
+    # A priced show carries `pm`, and `px` only when the range is wider than one
+    # band, in both the catalogue and (pm alone) the day files.
+    packed_priced = minify_master([priced], genre_ix, room_ix, sub_ix, ts_ix,
+                                  age_ix, venues)[0]
+    assert packed_priced["pm"] == 22.5 and packed_priced["px"] == 29.5, packed_priced
+    packed_one = minify_master([one_band], genre_ix, room_ix, sub_ix, ts_ix,
+                               age_ix, venues)[0]
+    assert packed_one["pm"] == 12.0 and "px" not in packed_one, packed_one
     # A venueName that IS "<room> at <name>" rebuilds from the code + room, so it
     # is dropped from the wire form.
     rebuildable = dict(rec, venue="33", room="Beneath",
@@ -804,6 +920,11 @@ def selftest() -> int:
                     "description"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
     assert d6["start"] == "11:45"
+    # No price known -> no `pm` key; a priced show carries the cheapest band.
+    assert "pm" not in d6, d6
+    d6_priced = build_day_files([priced], genre_ix, room_ix, sub_ix,
+                                ts_ix)["2026-08-06"][0]
+    assert d6_priced["pm"] == 22.5, d6_priced
     # Binary flags are 1/0, not booleans.
     assert d6["soldOut"] == 0 and d6["free"] == 0, d6
     d7 = days["2026-08-07"][0]
@@ -866,6 +987,9 @@ def main() -> int:
     parser.add_argument("--descriptions", default=str(DEFAULT_DESCRIPTIONS))
     parser.add_argument("--venues", default=str(DEFAULT_VENUES))
     parser.add_argument("--days-dir", default=str(DEFAULT_DAYS_DIR))
+    parser.add_argument("--prices", default=str(DEFAULT_PRICES),
+                        help="ticket-price cache from fetch_prices.py "
+                             f"(default {DEFAULT_PRICES})")
     parser.add_argument("--merge", action="store_true",
                         help="upsert into the existing master instead of replacing")
     parser.add_argument("--no-geocode", action="store_true",

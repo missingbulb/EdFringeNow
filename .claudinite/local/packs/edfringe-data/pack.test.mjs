@@ -250,6 +250,18 @@ test("a data/ holding only normalizer output ⇒ no findings", () => {
   assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
 });
 
+test("the named scraper input data/prices.json is allowed; a lookalike is not", () => {
+  // prices.json is the one committed file under data/ that normalize.py READS
+  // rather than writes (scraper/fetch_prices.py produces it). It is allowed by
+  // name, so a second file cannot ride in on its shape.
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "data/prices.json": "" })), []);
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/prices.backup.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "data/prices.backup.json");
+  assert.ok(out[0].fix.includes("data/prices.json"),
+    "the fix must name the inputs that ARE allowed, so the reader can tell the two apart");
+});
+
 test("a probe's output committed under data/ is reported", () => {
   // The exact regression this guards: a throwaway probe's answer is parked in
   // data/ as if it were data, where nothing regenerates it and the next

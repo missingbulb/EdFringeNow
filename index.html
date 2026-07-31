@@ -288,13 +288,16 @@
           </button>
           <div class="card-panel card-panel--mini" id="pricePanel" role="menu" hidden>
             <p class="panel-title">Ticket price</p>
+            <!-- The caps are inclusive and cumulative, so "up to" is said once
+                 here rather than repeated on all four buttons — which is what
+                 lets six choices share one narrow dropdown. -->
+            <p class="panel-hint">Cheapest ticket, up to:</p>
             <!-- Each choice carries the same grey count as the genre/subgenre
                  options: how many reachable shows it would leave you. -->
-            <div class="segmented" id="priceOptions" role="group" aria-label="Ticket price">
-              <button type="button" class="seg-btn" data-price="both">Both<span class="seg-count"></span></button>
-              <button type="button" class="seg-btn" data-price="free">Free<span class="seg-count"></span></button>
-              <button type="button" class="seg-btn" data-price="paid">Paid<span class="seg-count"></span></button>
-            </div>
+            <!-- Populated by JS from shared/price.js's ladder (Any / Free /
+                 Up to £N…), so the Now page and the planner offer the same
+                 budgets rather than two hand-written lists that drift. -->
+            <div class="segmented segmented--wrap" id="priceOptions" role="group" aria-label="Ticket price"></div>
           </div>
         </article>
 

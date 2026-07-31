@@ -13,6 +13,7 @@
 
 import { isInUK } from "../shared/geo.js";
 import { friendlyDuration } from "../shared/duration.js";
+import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 
 const EDINBURGH = [55.9486, -3.1881];
@@ -69,9 +70,10 @@ const MIN_TRAVEL_MINUTES = 1;
 const MAX_TRAVEL_MINUTES = 60;
 const GRACE_MINUTES = 5;
 
-/* Price filter — the source data only distinguishes free vs paid (no amounts),
- * so it's a three-way choice: both | free | paid. */
-const PRICE_FILTERS = ["both", "free", "paid"];
+/* Price filter — real ticket amounts, shared with the planner so the two pages
+ * offer the same money: "any", "free", then a ladder of inclusive caps
+ * (shared/price.js). The day files carry each show's cheapest band as `pm`. */
+const PRICE_FILTERS = PRICE_OPTIONS.map((o) => o.value);
 
 /* ===== DEBUG: simulated "now" =====================================
  * The whole flow is scoped to "the next few hours today", so for testing we
@@ -99,7 +101,7 @@ const state = {
   selectedGenres: new Set(["Comedy"]),
   selectedSubgenres: new Set(), // finer descriptors; empty (or all) = every subgenre
   subgenreOptions: [],         // the subgenre values the panel currently offers
-  priceFilter: "both",         // "both" | "free" | "paid" ($ chip)
+  priceFilter: "any",          // "any" | "free" | a cap in pounds, e.g. "15" ($ chip)
   travelMode: "Walking",
   maxTravelMinutes: DEFAULT_MAX_TRAVEL, // reach window from the travel card
   selectedTime: "",            // chosen exact start time, e.g. "16:30"
@@ -201,6 +203,7 @@ function adaptShow(entry, { venues, rooms, genres, subgenres, ticketStatuses }, 
   const venueName = v.name || (entry.venue ? `Venue ${entry.venue}` : "Venue TBC");
   const room = rooms[entry.room];
   const ticketStatus = (ticketStatuses || [])[entry.ts] || null;
+  const price = typeof entry.pm === "number" ? entry.pm : entry.free ? 0 : null;
   return {
     id: `${entry.id}__${entry.start}__${index}`,
     showId: entry.id,
@@ -214,7 +217,11 @@ function adaptShow(entry, { venues, rooms, genres, subgenres, ticketStatuses }, 
     time: entry.start,
     duration: entry.duration || 60,
     free: !!entry.free,
-    price: entry.free ? "Free" : "Paid",
+    // `pm` is the show's cheapest band in pounds, absent when the price cache
+    // doesn't know it — which is NOT the same as free (see shared/price.js).
+    // priceMin is what the filter reads; `price` is the label a card renders.
+    priceMin: price,
+    price: priceLabel({ priceMin: price, free: !!entry.free }),
     soldOut: !!entry.soldOut,
     ticketStatus,
     // Can you actually get a ticket online? ticketStatus is the reliable signal
@@ -316,11 +323,6 @@ function genreColor(genre) {
   return map[genre] || "#141414";
 }
 
-/* Price bucket for filtering: free -> 0, paid -> 1. The source data has no
- * ticket amounts, so paid shows are only distinguished from free ones. */
-function priceValue(show) {
-  return show.free || /free/i.test(show.price) ? 0 : 1;
-}
 
 /* Does a show carry any of the selected subgenres? */
 function matchesSubgenres(show) {
@@ -351,10 +353,7 @@ function filteredShows(except) {
     list = list.filter((s) => state.selectedGenres.has(s.genre));
   }
   if (except !== "subgenre" && subgenreFilterActive()) list = list.filter(matchesSubgenres);
-  if (except !== "price") {
-    if (state.priceFilter === "free") list = list.filter((s) => priceValue(s) === 0);
-    else if (state.priceFilter === "paid") list = list.filter((s) => priceValue(s) === 1);
-  }
+  if (except !== "price") list = list.filter((s) => matchesPrice(s, state.priceFilter));
   return list;
 }
 
@@ -1550,8 +1549,17 @@ function buildSubgenrePanel() {
   updateEverythingLinks();
 }
 
-/* The $ chip's tiny dropdown: Both / Free / Paid. */
+/* The $ chip's tiny dropdown: Any / Free / Up to £N…, built from the shared
+ * ladder rather than spelled out in the markup, so the Now page and the planner
+ * can never drift into offering different budgets. */
 function buildPricePanel() {
+  const row = document.getElementById("priceOptions");
+  if (row) {
+    row.innerHTML = PRICE_OPTIONS.map(
+      (o) => `<button type="button" class="seg-btn" data-price="${o.value}">` +
+             `${escapeHtml(o.short)}<span class="seg-count"></span></button>`
+    ).join("");
+  }
   document.querySelectorAll("#priceOptions .seg-btn").forEach((btn) => {
     btn.onclick = () => {
       state.priceFilter = btn.dataset.price;
@@ -1566,21 +1574,19 @@ function buildPricePanel() {
  * question the genre/subgenre counts answer, measured over the same pool. */
 function refreshPriceCounts() {
   const pool = facetPool("price");
-  const counts = {
-    both: pool.length,
-    free: pool.filter((s) => priceValue(s) === 0).length,
-    paid: pool.filter((s) => priceValue(s) === 1).length,
-  };
+  const labels = new Map(PRICE_OPTIONS.map((o) => [o.value, o.label]));
   document.querySelectorAll("#priceOptions .seg-btn").forEach((b) => {
-    const n = counts[b.dataset.price] || 0;
+    const choice = b.dataset.price;
+    const n = pool.filter((s) => matchesPrice(s, choice)).length;
     const out = b.querySelector(".seg-count");
     if (out) out.textContent = String(n);
-    b.setAttribute("aria-label", `${b.dataset.price === "both" ? "Both" : b.dataset.price === "free" ? "Free" : "Paid"} — ${n} ${n === 1 ? "show" : "shows"}`);
+    b.setAttribute("aria-label",
+      `${labels.get(choice) || choice} — ${n} ${n === 1 ? "show" : "shows"}`);
   });
 }
 
-/* Reflect the active price choice on the Both/Free/Paid segmented control, and
- * on the chip itself: "$" alone while both are in, "$ Free" / "$ Paid" once the
+/* Reflect the active price choice on the segmented control, and on the chip
+ * itself: "$" alone while every price is in, "$ Free" / "$ Up to £15" once the
  * filter actually narrows anything. */
 function updatePriceButtons() {
   document.querySelectorAll("#priceOptions .seg-btn").forEach((b) => {
@@ -1588,13 +1594,14 @@ function updatePriceButtons() {
     b.classList.toggle("is-active", on);
     b.setAttribute("aria-pressed", String(on));
   });
-  const set = state.priceFilter !== "both";
+  const set = state.priceFilter !== "any";
   const chip = document.querySelector(".card--price");
   if (chip) chip.classList.toggle("is-set", set);
   const value = document.querySelector('[data-value="price"]');
   if (value) {
     value.hidden = !set;
-    value.textContent = state.priceFilter === "free" ? "Free" : "Paid";
+    const chosen = PRICE_OPTIONS.find((o) => o.value === state.priceFilter);
+    value.textContent = chosen ? chosen.label : "";
   }
 }
 
@@ -2106,7 +2113,7 @@ function renderConstraintShows(animate) {
       <span class="sp-body">
         <span class="sp-title">${escapeHtml(s.title)}</span>
         <span class="sp-venue">${escapeHtml(s.venue)}</span>
-        <span class="sp-genre">${escapeHtml(s.genre)}${s.free ? " · Free" : ""}</span>
+        <span class="sp-genre">${escapeHtml(s.genre)}${showPrice(s) === null ? "" : ` · ${escapeHtml(priceLabel(s))}`}</span>
         ${subgenreTags(s)}
       </span>
     </button>`

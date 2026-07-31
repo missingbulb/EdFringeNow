@@ -5,13 +5,12 @@
 // Pure — no DOM, no fetch. plan.js feeds it the catalogue from buildIndex and
 // renders the results; the unit tests live in __tests__/search.test.mjs.
 //
-// Two facets read fields the scraper doesn't ship yet (see scraper/SCRAPING.md
-// for both upstream sources):
+// Two facets read fields that may simply be absent for a show:
 //   - `show.accessibility` — an array of enum strings (the API's per-show
-//     `accessibility` list).
-//   - `show.price` — pounds, as a number or a "£12" / "£12.50" string
-//     (per-show pricing comes from the per-performance `performancePrices`
-//     call and is planned to land as one representative value per show).
+//     `accessibility` list). Not shipped by the scraper yet.
+//   - `show.priceMin` — the cheapest band in pounds, from the price cache
+//     (scraper/fetch_prices.py). Present for free shows and for anything the
+//     price pass has reached; null otherwise, and null is *not* £0.
 // Absence means unknown, and an active filter on these facets excludes
 // unknowns — a filter must never claim a show matches on data it doesn't
 // have. catalogueFacets() tells the UI whether either facet has any data at
@@ -37,25 +36,12 @@ export function ageLimitYears(show) {
   return v === undefined ? null : v;
 }
 
-function parsePrice(raw) {
-  if (typeof raw === "number" && Number.isFinite(raw)) return raw;
-  if (typeof raw === "string") {
-    const m = /(\d+(?:\.\d+)?)/.exec(raw);
-    if (m) return Number(m[1]);
-  }
-  return null;
-}
+// The price vocabulary is shared with the Now page rather than defined twice —
+// two pages disagreeing about what a show costs is worse than either being
+// wrong. Re-exported so this module stays the planner's one search import.
+import { showPrice } from "../../shared/price.js";
 
-/**
- * The show's price in pounds, or null when unknown. A free show is £0 even
- * with no price field — the `free` flag is reliable today.
- */
-export function showPrice(show) {
-  if (!show) return null;
-  const p = parsePrice(show.price);
-  if (p !== null) return p;
-  return show.free ? 0 : null;
-}
+export { showPrice };
 
 /** The show's declared accessibility options ([] when none / unknown). */
 export function showAccessibility(show) {
@@ -75,7 +61,10 @@ export function catalogueFacets(shows) {
   let hasPrice = false;
   for (const show of shows || []) {
     for (const a of showAccessibility(show)) access.add(a);
-    if (!hasPrice && parsePrice(show && show.price) !== null) hasPrice = true;
+    // A *paid* show with a known amount is what makes the "up to £X" caps
+    // worth offering. Free shows alone don't: every cap would return exactly
+    // the free list, which the Free option already gives.
+    if (!hasPrice && showPrice(show) > 0) hasPrice = true;
   }
   return { accessibility: [...access].sort(), hasPrice };
 }
