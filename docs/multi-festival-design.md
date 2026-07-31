@@ -396,7 +396,7 @@ Stated plainly, because each is a real trade:
 
 | Phase | What | Gate |
 |---|---|---|
-| **0** | Email Festivals Edinburgh about the static-file question; register a key; make one real call | Blocks everything |
+| **0** | Send the licence questions ([draft](festivals-edinburgh-licence-email.md)); register a key; make one real call | Blocks everything |
 | **1** | Schema + adapter. Fringe only, everything `shape: "run"`. **No visible change** | The refactor is provably inert |
 | **2** | Now page: festival filter, festival marks, scarcity line, drop-in empty state | The cheapest real user value |
 | **3** | Planner: two-band grid, anchors, scarcity-weighted best dates, gap offers | The intricate part |
@@ -407,7 +407,10 @@ effect is what proves the abstraction holds before any of it is load-bearing.
 
 ## 8. Decisions this proposal cannot make
 
-1. **Does the licence permit our architecture?** (§5.2 — blocks phase 1.)
+1. **Does the licence permit our architecture?** (§5.2 — blocks phase 1. The
+   questions are drafted in
+   [festivals-edinburgh-licence-email.md](festivals-edinburgh-licence-email.md);
+   they need sending, and best after the festival.)
 2. **Should ranking deliberately favour festival diversity over proximity?**
    (§3.3 — a product-values call.)
 3. **Should the planner ever return fewer events to return more festivals?**
