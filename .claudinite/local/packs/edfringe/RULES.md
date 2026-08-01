@@ -20,6 +20,23 @@ got blocked, and then paid create-issue + `git commit --amend` +
 rework). Worse, by then the PR is already open, so the fix rewrites the commit
 underneath it.
 
+## A dispatched run still has to classify its trigger comment
+
+The `comment-classification` check reads the last message addressed to you and
+wants a `Comment class:` line in the reply to it. In a scheduled run that message
+is the executor prompt ("Execute the Claudinite executor: …"), not anything the
+owner wrote — but the check does not distinguish them, and it is BLOCKING at the
+Stop hook. 19 of the sessions captured across 2026-07-29…07-31 were stopped by
+exactly this finding, every one of them citing the dispatch prompt, and each paid
+an extra closing reply to clear it (the two runs where the block lands at the end
+and the cost is cleanly isolable: #183 115s, #160 121s).
+
+So **close a dispatched run's final reply with an explicit `Comment class:` line
+classifying the dispatch itself** — `process-change` for an executor/scheduled-task
+prompt — instead of discovering the requirement at Stop. On a real owner comment
+the classification is the substance; on a dispatch it is a formality, but it is
+far cheaper paid up front than as a second reply.
+
 ## Verifying UI changes visually (the `index.html` page and everything under `plan/`)
 
 Visual verification of the pages **is** available in this sandbox. Don't skip it
