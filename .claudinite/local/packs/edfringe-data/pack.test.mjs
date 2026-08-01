@@ -17,6 +17,7 @@ import pack from "./pack.mjs";
 import rule from "./lookup-indices.mjs";
 import selftestRule from "./normalizer-selftest-in-verify.mjs";
 import dataDirRule from "./data-dir-is-generator-output.mjs";
+import pushWorkflowRule from "./push-workflow-pinned-to-main.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -310,6 +311,114 @@ test("this repo's committed data/ holds only generator output", () => {
     out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
 });
 
+// --- push-workflow-pinned-to-main: a push-triggered workflow that isn't pinned
+// to main is the live wire a throwaway API probe leaves behind ---
+
+const ciYml = `name: CI
+
+# Verification on every push to main and every pull request.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+`;
+
+// The exact regression this guards: probe-edfringe-api step 1–2 scaffolding that
+// was never deleted before the PR. Path-filtered so it "cannot fire on anything
+// else" — but on a push to ANY branch, unattended, against the live API.
+const probeYml = `name: Probe ticketStatus enum
+
+on:
+  push:
+    paths:
+      - 'scraper/probe_ticket_status.py'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+`;
+
+test("a push workflow pinned to main ⇒ no findings", () => {
+  const out = pushWorkflowRule.run(textCtx({ ".github/workflows/ci.yml": ciYml }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a leftover probe workflow with no branches filter is reported", () => {
+  const out = pushWorkflowRule.run(textCtx({
+    ".github/workflows/ci.yml": ciYml,
+    ".github/workflows/probe.yml": probeYml,
+  }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-push-workflow-pinned-to-main");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, ".github/workflows/probe.yml");
+  assert.match(out[0].what, /names no branches/);
+  assert.ok(out[0].fix.includes("probe-edfringe-api"), "the fix must point at the procedure that creates this shape");
+});
+
+test("a push workflow pinned to a working branch is reported", () => {
+  const out = pushWorkflowRule.run(textCtx({
+    ".github/workflows/probe.yml": probeYml.replace(
+      "    paths:\n      - 'scraper/probe_ticket_status.py'\n",
+      "    branches: [claude/probe-ticket-status]\n",
+    ),
+  }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /pinned to claude\/probe-ticket-status rather than main/);
+});
+
+test("the inline and block-sequence trigger forms are read too", () => {
+  const inline = pushWorkflowRule.run(textCtx({ ".github/workflows/a.yml": "name: A\non: push\n" }));
+  assert.equal(inline.length, 1);
+  const flow = pushWorkflowRule.run(textCtx({ ".github/workflows/b.yml": "name: B\non: [push, pull_request]\n" }));
+  assert.equal(flow.length, 1);
+  const seq = pushWorkflowRule.run(textCtx({ ".github/workflows/c.yml": "name: C\non:\n  - push\n  - workflow_dispatch\n" }));
+  assert.equal(seq.length, 1);
+});
+
+test("branches-ignore pins nothing and is reported as such", () => {
+  const out = pushWorkflowRule.run(textCtx({
+    ".github/workflows/d.yml": "name: D\non:\n  push:\n    branches-ignore:\n      - gh-pages\n",
+  }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /branches-ignore/);
+});
+
+test("`on: push` written only in a header comment is not a trigger", () => {
+  // Why the check parses the on: block instead of grepping: this repo's real
+  // workflows describe their triggers in prose above them.
+  const out = pushWorkflowRule.run(textCtx({
+    ".github/workflows/scrape.yml":
+      "name: Scrape\n\n# Not on: push — run it manually from the Actions tab.\n\non:\n  workflow_dispatch:\n",
+  }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a workflow with no push trigger ⇒ no findings (relevance-first)", () => {
+  assert.deepEqual(pushWorkflowRule.run(textCtx({
+    ".github/workflows/sched.yml": "name: S\non:\n  schedule:\n    - cron: '49 * * * *'\n  workflow_dispatch:\n",
+  })), []);
+  assert.deepEqual(pushWorkflowRule.run(textCtx({ "README.md": "hi" })), []);
+});
+
+test("this repo's own workflows are all pinned or trigger-free", () => {
+  // The live gate: every real workflow file, read off disk.
+  const files = execFileSync("git", ["ls-files", ".github/workflows"], { cwd: REPO, encoding: "utf8" })
+    .split("\n").filter(Boolean);
+  assert.ok(files.length >= 3, "expected the repo's workflows to be present");
+  const { ctx } = diskCtx(files);
+  const out = pushWorkflowRule.run(ctx);
+  assert.deepEqual(out, [], `a push-triggered workflow is unpinned:\n${
+    out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
+});
+
 test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe-data");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
@@ -318,5 +427,6 @@ test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(selftestRule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(dataDirRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(pushWorkflowRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

@@ -34,7 +34,9 @@ there burns a runner for nothing.
 4. **Record what you learned in `scraper/SCRAPING.md`** — the point of the probe
    is that the next session doesn't have to repeat it.
 5. **Delete the probe script and its workflow before opening the PR.** They are
-   scaffolding, and a push-triggered workflow left in the tree is a live wire.
+   scaffolding, and a push-triggered workflow left in the tree is a live wire —
+   the `edfringe-push-workflow-pinned-to-main` check catches the workflow half of
+   that (nothing catches an orphaned probe script, so delete both).
 
 ## Guardrails
 
