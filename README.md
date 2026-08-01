@@ -48,9 +48,11 @@ npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
 
 `npm run verify` is the single gate: it runs the unit tests, syntax-checks every
 JavaScript source under `js/` and `plan/`, and byte-compiles the `scraper/`
-Python. The **CI** workflow (`.github/workflows/ci.yml`) runs it on every push
-to `main` and every pull request, and a **pre-commit hook** runs the same gate
-locally so nothing red is committed. Enable the hook once per clone:
+Python. The **CI** workflow (`.github/workflows/static-site-ci.yml`, vendored
+from the `static-website` pack, which runs it as this repo's `test_command`)
+runs it on every push to `main` and every pull request, and a **pre-commit
+hook** runs the same gate locally so nothing red is committed. Enable the hook
+once per clone:
 
 ```
 npm run setup-hooks   # git config core.hooksPath .githooks

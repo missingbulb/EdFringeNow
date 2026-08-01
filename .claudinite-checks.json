@@ -42,6 +42,13 @@
         "users": "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'.",
         "market": "Edinburgh Fringe discovery and planning tools. Alternatives: the official Fringe app (a 'Nearby now' + shake-to-search finder), Plan My Fringe (a schedule optimiser with a walking-time 'Fringe Trail'), the edfringe.com programme and filters, the Half Price Hut (same-day discounts), review outlets such as ThreeWeeks, plus street posters and word-of-mouth. None centres full reachability — travel mode plus next-commitment slack — the way Fringe Discover does."
       }
+    },
+    {
+      "id": "static-website",
+      "answers": {
+        "hosting": "GitHub Pages, from this repo — the existing pages.yml is an artifact-flow Pages deploy of the repo root, so the full release-on-push → Pages pipeline applies.",
+        "publish_set": "The site is served from the repo root: .nojekyll, the four pages (index, accessibility, privacy, terms), css/, js/, shared/, data/, package.json (the debug pill fetches it for the version), and the planner front-end (plan/index.html, plan.css, plan.js, lib/). The trees that MAKE the site — scraper/, docs/, design-concepts/, plan/design/, product-wiki/, scripts/ — were served by the old whole-root upload and are deliberately not published."
+      }
     }
   ],
   "maintenance": {
@@ -53,10 +60,7 @@
     "monthlyDay": 1
   },
   "claudinite": {
-    "updated": "2026-08-06T10:56:46.859Z",
-    "ref": "fa7ead79407afb442b2c01276f94b3167d5aade6"
-  },
-  "badges": {
-    "readme": "auto"
+    "updated": "2026-08-06T14:24:41.441Z",
+    "ref": "a05b1c192f1f85c92d6f0f8b0af5c424ef576479"
   }
 }
