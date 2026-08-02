@@ -37,6 +37,31 @@ prompt — instead of discovering the requirement at Stop. On a real owner comme
 the classification is the substance; on a dispatch it is a formality, but it is
 far cheaper paid up front than as a second reply.
 
+## Read the PR's state, then merge — never loop on `enable_pr_auto_merge`
+
+`mcp__github__enable_pr_auto_merge` only accepts a PR whose required checks are
+still **pending**. This repo's `ci.yml` runs on `pull_request` and finishes in
+well under a minute, so by the time an agent reaches the arming step the PR is
+usually already `clean` and the call errors — *"already in clean status (all
+checks passed) … you can merge directly."* That is not a failure to work around:
+take it as the answer and call `mcp__github__merge_pull_request` with `SQUASH`.
+
+The other refusal, *"in unstable status (required checks are failing)"*, is not a
+verdict either — a check that is queued, or held at the Actions approval gate,
+reads identically to one that failed. Re-read the PR
+(`mcp__github__pull_request_read`) or the run list (`mcp__github__actions_list`)
+to find out which, and never re-arm on a loop: PR #188 answered "unstable" and
+then "clean" 27s later with nothing changed in between, and PR #182 answered
+"unstable" three times across ~4 minutes before answering "clean".
+
+The cost is measured. The 2026-08-01 baselining run spent ~350s of its 765s — 4
+arm attempts, 9 `pull_request_read`s and 5 `ScheduleWakeup` polls — circling PR
+#182's merge state, and still ended without merging it; the owner merged it by
+hand the next evening. The same morning's conversation-extract run took its one
+refusal as an answer and squash-merged 22s later. Check state first, merge
+directly when it is clean, and arm auto-merge only while checks are genuinely
+pending.
+
 ## Verifying UI changes visually (the `index.html` page and everything under `plan/`)
 
 Visual verification of the pages **is** available in this sandbox. Don't skip it
