@@ -93,8 +93,15 @@ network; Perth's own materials put the figure above 400. The count is large and
 the tail is thin — only three sell over a quarter of a million tickets.
 
 - **Perth, Australia — FRINGE WORLD** (Jan–Feb). The third-largest fringe on the
-  planet: **600+ shows across 110 venues** in 2026, ~3,000 artists, off **256,000
-  tickets** sold in 2025.
+  planet: **600+ shows across 110 venues** advertised ahead of the 2026 edition
+  (21 Jan–15 Feb 2026), ~3,000 artists, off **256,000 tickets** sold in 2025. That
+  2026 edition has since run and closed (this repo's clock is now 2 Aug 2026):
+  its own final report counts **599 events**, more than 3,000 artists, **nearly
+  500,000 attendees**, and **$10.9m spent at the Box Office** ($8.34m paid to
+  artists and venues) — up from 2025's 570 events / 492,369 attendees / $10.78m
+  box office. Note "attendees" and "tickets sold" are not the same metric (the
+  256,000 figure is a narrower paid-ticket count); both are kept because neither
+  source reconciles them into one number.
 - **Brighton, UK** (1–31 May). Open access, around **400,000 in-person
   attendances**, with over 30% of events from Brighton & Hove companies. English
   language, UK ticketing conventions — the cheapest possible second market.
@@ -194,6 +201,7 @@ Two findings cut against expanding, and both should be said plainly:
 - [Edinburgh Festivals Listings API — Fringe listings approval](https://api.edinburghfestivalcity.com/documentation/fringe_approval)
 - [Edinburgh Festivals Listings API — licence](https://api.edinburghfestivalcity.com/licence)
 - [New Fringe boss reveals record festival spend (InDaily)](https://www.indailysa.com.au/news/just-in/2026/07/14/new-fringe-boss-reveals-record-festival-spend)
+- [About Us — FRINGE WORLD (fringeworld.com.au)](https://fringeworld.com.au/about-us) — "a global landscape of more than 400 Fringe festivals"; the 2026 edition's final count (599 events, ~500,000 attendees, $10.9m box office) and the 2025 comparison figures.
 - [About Adelaide Fringe (adelaidefringe.com.au)](https://adelaidefringe.com.au/about-us)
 - [Adelaide Fringe FAQ (adelaidefringe.com.au)](https://adelaidefringe.com.au/faq)
 - [Off d'Avignon 2026 : la 60e édition proposera cet été plus de 1 700 spectacles et 27 000 représentations (franceinfo)](https://www.franceinfo.fr/culture/spectacles/theatre/off-d-avignon-2026-la-60e-edition-proposera-cet-ete-plus-de-1-700-spectacles-et-27-000-representations_7967651.html)
@@ -241,9 +249,15 @@ Two findings cut against expanding, and both should be said plainly:
 - **Is there any audience overlap between festivals?** Whether a Fringe-goer is
   also an Avignon or Adelaide-goer decides whether a second city is a new product
   or a new market for the same users. No data found.
-- **Perth cites 400+ fringes, World Fringe cites 300+.** Unreconciled; probably
-  members-versus-all-known, but the real count of *fringes above 100,000 tickets*
-  is the number that matters and it is unknown.
+- **Perth cites 400+ fringes, World Fringe cites 300+.** Narrowed 2026-08-02:
+  FRINGE WORLD's own about-us page says "a global landscape of more than 400
+  Fringe festivals" — a broad claim about fringes generally, not a stated count
+  of the World Fringe network specifically, which is what worldfringe.com's own
+  page puts at 300. The two may simply be counting different things (all known
+  fringes vs. paid network members) rather than disagreeing, but neither site
+  states its methodology, so this is a narrower guess, not a resolution. The
+  real count of *fringes above 100,000 tickets* is still the number that matters
+  and is still unknown.
 - **The candidates in this page's tail are unassessed on everything** — scale
   figures for Cannes, Miami Beach, Documenta, Manifesta, Melbourne, Prague,
   Dublin, Winnipeg, Orlando, Minnesota, Wellington and Camden are not yet cited.
@@ -285,3 +299,13 @@ Two findings cut against expanding, and both should be said plainly:
   more than any other — its entire candidate tail is cited from launch
   announcements, not delivered totals — and that is added as an open question
   rather than assumed away.
+- **2026-08-02** — the Perth FRINGE WORLD entry cited a still-upcoming 2026
+  edition; that edition (21 Jan–15 Feb 2026) has since run and published final
+  results, so added them alongside the original preview figures rather than
+  replacing them (599 events / ~500,000 attendees / $10.9m box office, vs the
+  2025 comparison of 570 events / 492,369 attendees / $10.78m), with a note that
+  "attendees" and "tickets sold" are different metrics so this does not resolve
+  the existing 256,000-tickets figure. Narrowed the "400+ vs 300+ fringes" open
+  question with FRINGE WORLD's exact wording, without closing it. Checked (not
+  resolved) whether any tool plans across festivals — see the same-day
+  competitor-landscape update.
