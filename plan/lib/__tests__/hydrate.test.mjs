@@ -18,14 +18,23 @@ const DATA = path.join(__dirname, "..", "..", "..", "data");
 const master = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.json"), "utf-8"));
 const wire = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.min.json"), "utf-8"));
 const lookups = JSON.parse(readFileSync(path.join(DATA, "venues.json"), "utf-8"));
+const descriptions = JSON.parse(
+  readFileSync(path.join(DATA, "normalized", "descriptions.min.json"), "utf-8"));
 
 const YEAR = 2026;
 
 // The intended client record is the master with image/smallImage resolved to
 // absolute https urls — the client always renders imageUrl(image), so that
 // transform is intended, not loss.
+//
+// `description` is the one field the packer deliberately leaves behind: it is
+// the bulkiest thing a show carries and ships in its own sidecar
+// (descriptions.min.json), so the catalogue never carries it and rehydration
+// can never produce it. Dropping it here is not a hole in the round-trip — the
+// test below asserts the sidecar carries every description the master has.
 function expected(show) {
-  return { ...show, image: imageUrl(show.image), smallImage: imageUrl(show.smallImage) };
+  const { description, ...rest } = show;
+  return { ...rest, image: imageUrl(show.image), smallImage: imageUrl(show.smallImage) };
 }
 
 test("shows.min.json rehydrates byte-identical to the master shows.json", () => {
@@ -44,6 +53,18 @@ test("shows.min.json rehydrates byte-identical to the master shows.json", () => 
   }
   assert.equal(mismatches, 0,
     `every show must round-trip losslessly; first mismatch: ${JSON.stringify(firstBad)}`);
+});
+
+// The other half of the round-trip: what the catalogue drops, the sidecar must
+// carry. Without this, `expected()` dropping `description` would let the packer
+// lose descriptions entirely and still pass.
+test("every master description survives in the descriptions sidecar", () => {
+  const side = descriptions.d || {};
+  const missing = master
+    .filter((s) => s.description && side[s.slug] !== s.description)
+    .map((s) => s.id);
+  assert.deepEqual(missing, [],
+    `descriptions.min.json must carry each master description verbatim; missing/stale: ${missing.slice(0, 5)}`);
 });
 
 test("imageUrl re-attaches the host, upgrades http, passes https through", () => {
