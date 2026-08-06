@@ -77,8 +77,9 @@ const PRICE_FILTERS = PRICE_OPTIONS.map((o) => o.value);
 
 /* ===== DEBUG: simulated "now" =====================================
  * The whole flow is scoped to "the next few hours today", so for testing we
- * pin a fixed clock instead of the real one. A red on-screen badge makes it
- * obvious the app is running against a faked time. */
+ * pin a fixed clock instead of the real one. This is a testing pre-set exactly
+ * like the pre-set location: a confirmed in-UK location replaces it with the
+ * device's real clock (see requestUserLocation / adoptRealClock). */
 const NOW = {
   date: "2026-08-14",   // which day's data file to load (data/days/<date>.json)
   dateLabel: "Fri 14 Aug",
@@ -294,10 +295,12 @@ function requestUserLocation() {
         );
         return;
       }
-      // In the UK we trust the real location, so the pre-set values (and the
-      // debug tools that tweak them) are no longer relevant — hide them.
+      // In the UK we trust the device, so every pre-set goes: the real location
+      // replaces the default pin, the real clock replaces the simulated "now",
+      // and the debug tools that tweak them are hidden.
       setUserLocation(here, { recenter: true, real: true });
       setDebugVisible(false);
+      adoptRealClock();
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.
@@ -2439,6 +2442,13 @@ function renderDebugBanner() {
   if (el) el.textContent = `${NOW.dateLabel}, ${NOW.time} ${NOW.tz}`;
 }
 
+/* Keep the debug date/time picker showing whatever "now" currently is, so it
+ * doesn't contradict the clock the app is actually running against. */
+function syncDebugPicker() {
+  const dt = document.getElementById("debugDateTime");
+  if (dt) dt.value = toDatetimeLocalValue(simNowDate);
+}
+
 /* Stamp the app version onto the debug pill (single-sourced from package.json,
  * the same file the planner reads). Best-effort — the pill stays "debug" if the
  * fetch fails (e.g. local file:// with no server). */
@@ -2485,10 +2495,10 @@ function wireDebugControls() {
 
   const dt = document.getElementById("debugDateTime");
   if (dt) {
-    dt.value = toDatetimeLocalValue(simNowDate);
+    syncDebugPicker();
     dt.addEventListener("change", () => {
       const d = new Date(dt.value);
-      if (!isNaN(d.getTime())) applySimulatedNow(d);
+      if (!isNaN(d.getTime())) applyNow(d);
     });
   }
 
@@ -2506,16 +2516,26 @@ function wireDebugControls() {
   }
 }
 
-/* Project a chosen Date onto the simulated NOW and re-render everything that
- * depends on the current time. Changing the day loads that day's data file. */
-async function applySimulatedNow(date) {
+/* Switch from the pre-set clock to the device's real one. Called once the real
+ * location confirms we're in the UK — the fake date/time is a testing pre-set
+ * just like the fake location, so it goes at the same moment. */
+function adoptRealClock() {
+  return applyNow(new Date());
+}
+
+/* Project a chosen Date onto NOW and re-render everything that depends on the
+ * current time. Changing the day loads that day's data file. Driven by the
+ * debug date/time picker and by adoptRealClock. */
+async function applyNow(date) {
   const prevDate = NOW.date;
   simNowDate = date;
   NOW.date = toISODate(date);
   NOW.dateLabel = formatDateLabel(date);
   NOW.time = formatClock(date);
+  NOW.tz = timeZoneLabel(date) || NOW.tz;
   NOW.minutes = date.getHours() * 60 + date.getMinutes();
   renderDebugBanner();
+  syncDebugPicker();
   // A different day means a different per-day file; reload before re-rendering.
   if (NOW.date !== prevDate) {
     await loadShows();
@@ -2567,6 +2587,19 @@ function formatClock(date) {
   return `${String(date.getHours()).padStart(2, "0")}:${String(
     date.getMinutes()
   ).padStart(2, "0")}`;
+}
+
+/* "BST" / "GMT" for the device's own zone — the label beside the clock. Empty
+ * if the browser won't tell us, in which case the caller keeps the old label. */
+function timeZoneLabel(date) {
+  try {
+    const part = new Intl.DateTimeFormat("en-GB", { timeZoneName: "short" })
+      .formatToParts(date)
+      .find((p) => p.type === "timeZoneName");
+    return part ? part.value : "";
+  } catch (err) {
+    return "";
+  }
 }
 
 /* "YYYY-MM-DDTHH:MM" for a datetime-local input. */
