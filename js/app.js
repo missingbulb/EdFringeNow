@@ -15,6 +15,7 @@ import { isInUK } from "../shared/geo.js";
 import { friendlyDuration } from "../shared/duration.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
+import { msToNextMinute, timeZoneLabel } from "./clock.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -2520,7 +2521,43 @@ function wireDebugControls() {
  * location confirms we're in the UK — the fake date/time is a testing pre-set
  * just like the fake location, so it goes at the same moment. */
 function adoptRealClock() {
+  startClockTicks();
   return applyNow(new Date());
+}
+
+/* Handle for the real-clock ticker. Also the "already running" flag: the header
+ * pin re-asks for the location, so adoptRealClock can be called more than once
+ * and must not stack a second timer. */
+let clockTimer = null;
+
+/* Keep "now" moving once we're on the real clock. A page left open otherwise
+ * drifts into the past — still offering shows that have since started, and
+ * showing a stale time in the header. Re-arms against the next turn of the
+ * minute each time (see msToNextMinute) so it fires with the real clock rather
+ * than sliding later, and re-syncs when a backgrounded tab comes back, since
+ * timers there are throttled and can be many minutes late. */
+function startClockTicks() {
+  if (clockTimer) return;
+  const tick = () => {
+    clockTimer = setTimeout(tick, msToNextMinute(new Date()));
+    syncToRealClock();
+  };
+  clockTimer = setTimeout(tick, msToNextMinute(new Date()));
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) syncToRealClock();
+  });
+}
+
+/* Move NOW on to the real clock — unless nothing has changed, or the user is in
+ * the middle of something. Re-rendering rebuilds the constraint panel, which
+ * repopulates the time wheels and would scroll them out from under whoever is
+ * using them; with an open card we let this tick pass and the next one (a
+ * minute later, or the moment the tab is refocused) catches up. */
+function syncToRealClock() {
+  const now = new Date();
+  if (toISODate(now) === NOW.date && formatClock(now) === NOW.time) return;
+  if (document.querySelector(".card.is-open")) return;
+  applyNow(now);
 }
 
 /* Project a chosen Date onto NOW and re-render everything that depends on the
@@ -2587,19 +2624,6 @@ function formatClock(date) {
   return `${String(date.getHours()).padStart(2, "0")}:${String(
     date.getMinutes()
   ).padStart(2, "0")}`;
-}
-
-/* "BST" / "GMT" for the device's own zone — the label beside the clock. Empty
- * if the browser won't tell us, in which case the caller keeps the old label. */
-function timeZoneLabel(date) {
-  try {
-    const part = new Intl.DateTimeFormat("en-GB", { timeZoneName: "short" })
-      .formatToParts(date)
-      .find((p) => p.type === "timeZoneName");
-    return part ? part.value : "";
-  } catch (err) {
-    return "";
-  }
 }
 
 /* "YYYY-MM-DDTHH:MM" for a datetime-local input. */
