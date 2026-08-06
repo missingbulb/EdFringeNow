@@ -40,5 +40,8 @@ if git diff --staged --quiet; then
   echo "No ticket-status changes this hour."
 else
   git commit -m "Refresh today's ticket status"
-  git push
+  # Explicit refspec: the scheduler's `actions/checkout` leaves the checked-out
+  # branch with no upstream, so a bare `git push` aborts ("no upstream branch",
+  # exit 128) and every hourly run files a needs-human issue (#231).
+  git push origin HEAD:main
 fi

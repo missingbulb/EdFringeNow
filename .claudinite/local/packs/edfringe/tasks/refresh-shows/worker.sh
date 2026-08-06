@@ -39,5 +39,7 @@ if git diff --staged --quiet; then
   echo "No data changes today."
 else
   git commit -m "Refresh Fringe data (daily top-up)"
-  git push
+  # Explicit refspec, same as refresh-tickets: `actions/checkout` leaves no
+  # upstream, so a bare `git push` aborts with exit 128 (#231, #141).
+  git push origin HEAD:main
 fi
