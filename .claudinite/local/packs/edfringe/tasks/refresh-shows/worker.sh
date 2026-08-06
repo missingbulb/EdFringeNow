@@ -26,6 +26,16 @@ if ! command -v python3 >/dev/null 2>&1; then
   exit 1
 fi
 
+# Return the checkout to `main` first — same reason as refresh-tickets, and this
+# task is the one that hit it hardest: it shares the daily slot with
+# `basics/baselining`, whose deliver() leaves the tree on its maintenance branch
+# (`git checkout -B`, never switched back). #141 is that failure.
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$current_branch" != "main" ]; then
+  echo "refresh-shows: checkout was left on '$current_branch' — returning to main." >&2
+  git checkout main
+fi
+
 # The retired workflow exposed a `window` dispatch input; a task has no inputs, so
 # the scheduled default is the only mode. A one-off wider sweep is still available
 # by hand: `python3 scraper/fetch_shows.py --recently-added ANY`.
@@ -39,7 +49,5 @@ if git diff --staged --quiet; then
   echo "No data changes today."
 else
   git commit -m "Refresh Fringe data (daily top-up)"
-  # Explicit refspec, same as refresh-tickets: `actions/checkout` leaves no
-  # upstream, so a bare `git push` aborts with exit 128 (#231, #141).
-  git push origin HEAD:main
+  git push
 fi
