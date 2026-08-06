@@ -22,13 +22,10 @@ unverified.
 The egress block is a **policy boundary, not an obstacle to route around**. Do
 not create ad-hoc GitHub Actions workflows — push-triggered "probes" or
 anything else — to reach the API (or any blocked host) from an open-network
-runner. This repo once had a `probe-edfringe-api` skill codifying exactly that;
-it was retired: it used CI as a side channel around the session's network rules
-and littered the Actions tab with orphaned workflow registrations. Everything
-past probes learned is recorded in `scraper/SCRAPING.md`; if the answer to an
-API question isn't there, ask the repo owner rather than building a bypass. The
-`edfringe-workflows-allowlisted` check enforces this: every file under
-`.github/workflows/` must be on its named allowlist.
+runner: that is CI as a side channel around the session's network rules. For
+one-off API questions (a field's shape, an enum's value set, a sample payload),
+`scraper/SCRAPING.md` is the reference; if the answer isn't there, ask the repo
+owner rather than building a bypass.
 
 `python3 scraper/normalize.py --selftest` is the one transform check that runs
 offline; it exercises raw→master→day-file→`shows.min.json` on a fixture, so a

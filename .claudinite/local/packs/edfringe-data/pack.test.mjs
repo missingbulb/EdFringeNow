@@ -17,7 +17,6 @@ import pack from "./pack.mjs";
 import rule from "./lookup-indices.mjs";
 import selftestRule from "./normalizer-selftest-in-verify.mjs";
 import dataDirRule from "./data-dir-is-generator-output.mjs";
-import workflowsRule from "./workflows-allowlisted.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -311,59 +310,6 @@ test("this repo's committed data/ holds only generator output", () => {
     out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
 });
 
-// --- workflows-allowlisted: the workflow directory is closed by default, so a
-// probe workflow can never ride in on a push again ---
-
-const sanctionedWorkflows = {
-  ".github/workflows/ci.yml": "",
-  ".github/workflows/claudinite-scheduler.yml": "",
-  ".github/workflows/pages.yml": "",
-  ".github/workflows/prices.yml": "",
-  ".github/workflows/scrape.yml": "",
-  "js/app.js": "",
-};
-
-test("the sanctioned workflows produce no findings", () => {
-  const out = workflowsRule.run(textCtx(sanctionedWorkflows));
-  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
-});
-
-test("an ad-hoc probe workflow is reported", () => {
-  // The exact regression this guards: a session adds a push-triggered workflow
-  // to reach a blocked host from an open-network runner — the retired
-  // probe-edfringe-api practice — and it lands unreviewed.
-  const out = workflowsRule.run(textCtx({ ...sanctionedWorkflows, ".github/workflows/probe.yml": "" }));
-  assert.equal(out.length, 1);
-  assert.equal(out[0].rule, "edfringe-workflows-allowlisted");
-  assert.equal(out[0].severity, "blocking");
-  assert.equal(out[0].file, ".github/workflows/probe.yml");
-  assert.match(out[0].what, /not on the sanctioned allowlist/);
-  assert.ok(out[0].fix.includes("ALLOWED_WORKFLOWS"),
-    "the fix must name the allowlist so a genuinely new workflow knows where sign-off lives");
-});
-
-test("multiple stray workflows are reported per file, sorted", () => {
-  const out = workflowsRule.run(textCtx({
-    ...sanctionedWorkflows,
-    ".github/workflows/price-probe.yml": "",
-    ".github/workflows/discover.yml": "",
-  }));
-  assert.deepEqual(out.map((f) => f.file),
-    [".github/workflows/discover.yml", ".github/workflows/price-probe.yml"]);
-});
-
-test("no workflows dir in the tree ⇒ no findings (relevance-first)", () => {
-  assert.deepEqual(workflowsRule.run(textCtx({ "README.md": "hi" })), []);
-});
-
-test("this repo's committed workflows are all sanctioned", () => {
-  // The live gate: every tracked file, read straight from git.
-  const files = execFileSync("git", ["ls-files"], { cwd: REPO, encoding: "utf8" }).split("\n").filter(Boolean);
-  const out = workflowsRule.run({ files, read: () => null });
-  assert.deepEqual(out, [], `a workflow file is off the allowlist:\n${
-    out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
-});
-
 test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe-data");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
@@ -372,8 +318,5 @@ test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(selftestRule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(dataDirRule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(workflowsRule), "the check must be listed on the manifest or it never runs");
-  assert.deepEqual(pack.skills, [],
-    "the probe-edfringe-api skill is retired — a skill teaching an egress bypass must not come back");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

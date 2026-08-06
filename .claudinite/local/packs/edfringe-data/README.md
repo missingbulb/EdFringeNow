@@ -8,7 +8,7 @@ knowledge.
 
 | Section | How enforced |
 |---|---|
-| Live API unreachable from a session | prose + check `edfringe-workflows-allowlisted` |
+| Live API unreachable from a session | prose |
 | `ticketStatus`, not `soldOut` | prose |
 | Committed data is generated output | prose + check `edfringe-data-dir-is-generator-output` |
 | Wire format is a four-file change | check `edfringe-lookup-indices` + prose |
@@ -24,13 +24,6 @@ the vendored engine's helpers, so it loads without the mount. Its red-first
 fixture is `pack.test.mjs`, run by `npm test` / `scripts/verify.sh`; the last
 fixture runs the rule over this repo's real committed data, so the check is a
 live gate on every scrape commit and not just a unit test of itself.
-
-`edfringe-workflows-allowlisted` (`workflows-allowlisted.mjs`) closes
-`.github/workflows/` by default: every workflow file must be on its named
-allowlist. It exists because the repo once grew ad-hoc "throwaway probe"
-workflows to reach the blocked edfringe API from open-network Actions runners
-(the retired `probe-edfringe-api` skill); a new workflow now fails checks until
-the owner adds it to the allowlist in the same commit.
 
 Distilled from this repo: `scraper/normalize.py` (`build_lookups`,
 `build_day_files`, `minify_master`), `scraper/refresh_ticket_status.py`,

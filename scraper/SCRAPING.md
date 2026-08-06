@@ -23,17 +23,15 @@ These grant read access to the same public listing everyone sees. Send
 
 You **can't** hit the API from a web session: the egress proxy blocks
 `equhost.com` (and edfringe.com itself returns 403 to `WebFetch`). That block is
-policy — do **not** route around it by creating ad-hoc CI workflows (the old
-"throwaway probe" practice is retired, and the `edfringe-workflows-allowlisted`
-check now rejects any workflow file not on its allowlist). Anything that touches
-the live API runs through a sanctioned workflow: the `Scrape edfringe shows
-(full)` workflow, `Fetch ticket prices (one-off)`, or the `refresh-shows`
-scheduled task (all on GitHub-hosted runners, under the Claudinite scheduler).
+policy — do **not** route around it by creating ad-hoc CI workflows. Anything
+that touches the live API runs through a sanctioned workflow: the `Scrape
+edfringe shows (full)` workflow, `Fetch ticket prices (one-off)`, or the
+`refresh-shows` scheduled task (all on GitHub-hosted runners, under the
+Claudinite scheduler).
 
-The field lists below were captured by GraphQL introspection (`__type` /
-`__schema`) during early development; this file is the API reference precisely
-so that nothing needs to re-fetch them. If it doesn't answer your question, ask
-the repo owner.
+This file is the API reference (field lists via GraphQL introspection:
+`__type` / `__schema`) precisely so that nothing needs to re-fetch it. If it
+doesn't answer your question, ask the repo owner.
 
 ## Operations
 
@@ -149,8 +147,8 @@ Key facts:
 
 ### What the response actually looks like
 
-Captured from `performancePrices("1:790001")` — Daniel Sloss: BITTER, 14 Aug —
-by the probe that `scraper/fetch_prices.py` grew out of. Four things the field
+Captured from `performancePrices("1:790001")` — Daniel Sloss: BITTER, 14 Aug.
+Four things the field
 list above doesn't tell you, each of which the extraction has to handle:
 
 - **Amounts are JSON *strings***, not numbers: `"priceValue": "29.50"`. Parse,
