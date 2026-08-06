@@ -12,11 +12,23 @@ judgment those two don't carry.
 `edfringe-tikketr-web-api.equhost.com` is blocked by the sandbox egress proxy and
 `edfringe.com` returns 403 to `WebFetch`. So: no session — this one included —
 can verify a scraper change against live data. Anything that must touch the API
-runs on a GitHub-hosted runner: the `Scrape edfringe shows (full)` workflow
-(`.github/workflows/scrape.yml`), the `refresh-shows` / `refresh-tickets`
-scheduled tasks, or the throwaway probe procedure in the `probe-edfringe-api`
-skill. Never "verify" a scraper change by reasoning about what the API probably
-returns — either run it on a runner, or say plainly that it is unverified.
+runs through a sanctioned workflow: the `Scrape edfringe shows (full)` workflow
+(`.github/workflows/scrape.yml`), `Fetch ticket prices (one-off)`
+(`prices.yml`), or the `refresh-shows` / `refresh-tickets` scheduled tasks.
+Never "verify" a scraper change by reasoning about what the API probably
+returns — either have a sanctioned workflow run it, or say plainly that it is
+unverified.
+
+The egress block is a **policy boundary, not an obstacle to route around**. Do
+not create ad-hoc GitHub Actions workflows — push-triggered "probes" or
+anything else — to reach the API (or any blocked host) from an open-network
+runner. This repo once had a `probe-edfringe-api` skill codifying exactly that;
+it was retired: it used CI as a side channel around the session's network rules
+and littered the Actions tab with orphaned workflow registrations. Everything
+past probes learned is recorded in `scraper/SCRAPING.md`; if the answer to an
+API question isn't there, ask the repo owner rather than building a bypass. The
+`edfringe-workflows-allowlisted` check enforces this: every file under
+`.github/workflows/` must be on its named allowlist.
 
 `python3 scraper/normalize.py --selftest` is the one transform check that runs
 offline; it exercises raw→master→day-file→`shows.min.json` on a fixture, so a
