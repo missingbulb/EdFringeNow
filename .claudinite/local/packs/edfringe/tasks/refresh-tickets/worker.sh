@@ -27,6 +27,21 @@ if ! command -v python3 >/dev/null 2>&1; then
   exit 1
 fi
 
+# Return the checkout to `main` before touching anything. The scheduler runs
+# EVERY due task in ONE checkout, and `basics/baselining`'s deliver() does
+# `git checkout -B <maintenance branch>` and never switches back — so a task
+# ordered after a delivering baselining inherits a branch that has no upstream,
+# which is what killed the push with exit 128 in #231 and #141 (both slots where
+# baselining delivered first). Switching back here — BEFORE the scraper writes
+# anything — puts the commit on the branch it was always meant to land on.
+# Not `git push origin HEAD:main`: from a polluted checkout that would push
+# baselining's unreviewed converge straight to main, past its maintenance PR.
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$current_branch" != "main" ]; then
+  echo "refresh-tickets: checkout was left on '$current_branch' — returning to main." >&2
+  git checkout main
+fi
+
 # The retired workflow exposed a `date` dispatch input for testing; a task has no
 # inputs, so the scheduled default (today, Europe/London) is the only mode. A
 # one-off is still available by hand:
@@ -40,8 +55,7 @@ if git diff --staged --quiet; then
   echo "No ticket-status changes this hour."
 else
   git commit -m "Refresh today's ticket status"
-  # Explicit refspec: the scheduler's `actions/checkout` leaves the checked-out
-  # branch with no upstream, so a bare `git push` aborts ("no upstream branch",
-  # exit 128) and every hourly run files a needs-human issue (#231).
-  git push origin HEAD:main
+  # `main` is the branch actions/checkout created and set tracking on, so a bare
+  # push resolves correctly; the guard above is what guarantees we are on it.
+  git push
 fi
