@@ -13,7 +13,7 @@
 // this repo against the rest of the fleet, which is all the jitter was for.
 //
 // `agent_model: 'none'` — the whole job is deterministic, so there is no agent
-// and no dispatch issue: the scheduler runs `agent_preprocessing` as a subprocess
+// and no dispatch issue: the scheduler runs `prework` as a subprocess
 // and that is the entire task. A non-zero exit converges the task to one open
 // `needs-human` issue, replacing the old workflow's `report-failure` job.
 //
@@ -67,8 +67,8 @@ export default {
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits today's ticket statuses straight to the default branch, as the workflow did
   agent_instructions: 'worker.sh', // vestigial for an agentless task; the real work is the command below
-  agent_preprocessing: 'bash worker.sh',
-  agent_preprocessing_timeout: 900, // the retired workflow's `timeout-minutes: 15`, in seconds
+  prework: 'bash worker.sh',
+  prework_timeout: 900, // the retired workflow's `timeout-minutes: 15`, in seconds
 
   precondition() {
     return ticketWindow(new Date());
