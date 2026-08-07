@@ -50,8 +50,10 @@
       </nav>
       <div class="header-icons">
         <!-- One debug pill (version from package.json). Click opens a dropdown
-             with the simulated-time + move-location testing controls. -->
-        <div class="debug-menu" id="debugMenu">
+             with the simulated-time + move-location testing controls. Starts
+             hidden so it never flashes for the in-UK majority; app.js reveals
+             it once the location check says the pre-set values are in play. -->
+        <div class="debug-menu" id="debugMenu" hidden>
           <button id="debugToggle" class="debug-pill" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="debugPop" title="Debug tools">debug v&hellip;</button>
           <div id="debugPop" class="debug-pop" role="menu" hidden>
             <p class="debug-pop__now">Simulated &ldquo;now&rdquo;: <span id="debugNowText"></span></p>
