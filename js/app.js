@@ -280,6 +280,7 @@ function setUserLocation(latlng, { recenter = true, real = false } = {}) {
 function requestUserLocation() {
   if (!("geolocation" in navigator)) {
     console.warn("Geolocation not supported; keeping default location.");
+    setDebugVisible(true);
     return;
   }
   navigator.geolocation.getCurrentPosition(
@@ -292,18 +293,20 @@ function requestUserLocation() {
           `Real location (${here[0].toFixed(3)}, ${here[1].toFixed(3)}) is outside the UK — ` +
             "keeping the central Edinburgh default for testing."
         );
+        setDebugVisible(true);
         return;
       }
       // In the UK we trust the device, so every pre-set goes: the real location
-      // replaces the default pin, the real clock replaces the simulated "now",
-      // and the debug tools that tweak them are hidden.
+      // replaces the default pin and the real clock replaces the simulated
+      // "now". The debug tools that tweak them stay hidden.
       setUserLocation(here, { recenter: true, real: true });
-      setDebugVisible(false);
       adoptRealClock();
     },
     (err) => {
-      // Denied / unavailable / timed out — keep the central-Edinburgh default.
+      // Denied / unavailable / timed out — keep the central-Edinburgh default,
+      // and surface the debug tools that tweak those pre-set values.
       console.info("Using default location:", err && err.message);
+      setDebugVisible(true);
     },
     { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
   );
@@ -2368,9 +2371,10 @@ function closeAllPanels() {
 }
 
 /* ---------- Debug clock ---------- */
-/* Show or hide the whole debug menu (pill + dropdown). The testing tools only
- * make sense alongside the pre-set values, so a confirmed in-UK location hides
- * them; overseas / unknown locations keep them (the default). */
+/* Show or hide the whole debug menu (pill + dropdown). The markup starts it
+ * hidden so the in-UK majority never sees it flash; the testing tools only make
+ * sense alongside the pre-set values, so we reveal it once the location check
+ * says those pre-sets are staying (overseas / denied / unknown location). */
 function setDebugVisible(visible) {
   const menu = document.getElementById("debugMenu");
   if (menu) menu.hidden = !visible;

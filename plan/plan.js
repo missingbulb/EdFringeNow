@@ -2365,16 +2365,24 @@ function wireShowSearch() {
   });
 }
 
-// Hide the debug menu when the browser's real location is inside the UK. Left
-// visible (the default) for overseas testers or when the location is unknown.
-function hideDebugInUK() {
+// The debug menu starts hidden in the markup so it never flashes for the in-UK
+// majority, and is revealed only for overseas testers or when the browser's
+// real location is unknown (denied / unavailable / no geolocation at all).
+function showDebugOutsideUK() {
   const menu = $("debugMenu");
-  if (!menu || !("geolocation" in navigator)) return;
+  if (!menu) return;
+  const reveal = () => {
+    menu.hidden = false;
+  };
+  if (!("geolocation" in navigator)) {
+    reveal();
+    return;
+  }
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      if (isInUK([pos.coords.latitude, pos.coords.longitude])) menu.hidden = true;
+      if (!isInUK([pos.coords.latitude, pos.coords.longitude])) reveal();
     },
-    () => {}, // denied / unavailable — keep the debug tools visible
+    reveal, // denied / unavailable — show the debug tools
     { timeout: 8000, maximumAge: 60000 }
   );
 }
@@ -4148,7 +4156,7 @@ wireDropzone();
 wireFavActions();
 wireShowSearch();
 wireDebugButton();
-hideDebugInUK();
+showDebugOutsideUK();
 wireRetry();
 wireCalendarControls();
 wireWindowOptimizer();
