@@ -1184,9 +1184,11 @@ a { color: inherit; }
    width it used to take out of the title, and turns the accent colour into
    something that reads as a label rather than a stripe. Centred on the line:
    the line is 4px outside the padding box, so -2px is its middle, less half the
-   disc. */
+   disc. Vertically it sits at the block's midpoint — centred on the accent line
+   in both axes, so it reads as a marker for the whole block rather than a
+   bullet hanging off the first line. */
 .sch-emoji {
-  position: absolute; left: -11px; top: 2px; z-index: 2;
+  position: absolute; left: -11px; top: 50%; transform: translateY(-50%); z-index: 2;
   width: 18px; height: 18px; border-radius: 50%;
   display: grid; place-items: center;
   font-size: 0.76rem; line-height: 1;
