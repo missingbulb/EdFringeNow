@@ -76,16 +76,28 @@ browser is here, and a UI change isn't done until it has been looked at.
   the proxy.
 - **Launch Playwright with no `executablePath`, and import from `index.mjs`.**
   `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` is already exported in this
-  sandbox, so `chromium.launch()` finds its browser on its own. Every captured
-  session instead hand-wrote a path and paid for it: `/opt/pw-browsers/chromium`
-  is a *directory*, and the real binary sits under a version-pinned
-  `chromium-<build>/chrome-linux/chrome` that moves with the image. Import the
+  sandbox, so `chromium.launch()` finds its browser on its own. Import the
   global build by its ESM entry —
   `import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs'`
   (the sibling `index.js` is CJS, so a *named* import from it yields
   `undefined`) — or `$(npm root -g)/playwright/index.mjs` if the prefix moved.
   Path discovery and its sed-fix-up round-trips cost ~220s across five captured
   sessions, every one of them re-deriving the same two facts.
+  `/opt/pw-browsers/chromium` is a **symlink** onto the version-pinned
+  `chromium-<build>/chrome-linux/chrome`, so it is a valid `executablePath` if
+  you ever need one — but you don't, and the build it points at moves with the
+  image.
+- **Never `npm i playwright` into the scratchpad to make the import resolve.**
+  A bare `import { chromium } from 'playwright'` in a scratchpad script fails
+  with `ERR_MODULE_NOT_FOUND` — the global install is not on the resolution
+  path, and `NODE_PATH` does not apply to ESM, so exporting it changes nothing.
+  The obvious next move is the wrong one: a fresh `npm i playwright` pulls a
+  **newer** Playwright than the image's, which then hunts for a browser build
+  the image does not ship (`chromium_headless_shell-1234` against the vendored
+  `-1194`) and dies asking for `npx playwright install` — a download the
+  sandbox cannot make. Three sessions on 2026-08-07 (#251, #258, #264) each
+  took that detour and then backed out of it. Use the absolute path to the
+  global build instead: it is the one matched to the vendored browsers.
 - **Keep one browser driver script per session and re-point it.** Authoring a
   fresh throwaway Playwright script per screenshot cost 29 heredoc writes and
   ~7 minutes of wall clock across the captured sessions (one session alone: 16
@@ -134,6 +146,24 @@ Two caveats before you trust what comes back:
 As with the off-box CSS fetch above, `curl` is the working path: headless
 Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
 than the raw JSON or asset you usually want here.
+
+## Watching a workflow or scheduler run — ask the MCP Actions tools, never poll with `curl`
+
+A run's state comes from `mcp__github__actions_get` / `mcp__github__actions_list`.
+Do **not** poll `https://api.github.com/…` from the shell. `gh` is not installed
+here, and shell egress to the API is a per-environment policy that has been
+*denied* mid-session — and a denied `CONNECT` returns a proxy error body rather
+than JSON, so an `until`-loop testing `.status == "completed"` neither
+terminates nor says why. Both sessions that reached for it on 2026-08-07 lost
+the poll silently: #249 burned two round-trips on a `curl` that "never actually
+worked" before the MCP call answered in 5s, and #251 backgrounded an
+`until curl …; sleep 15; done`, abandoned it, and fell back to a blind
+`sleep 90` — for a run `actions_get` reported *already complete* five seconds
+later. The orphaned sleep then fired two `task-notification`s that had to be
+explained away to the owner.
+
+So: ask the MCP tool, and if the run is still going ask it again. Never a blind
+fixed sleep, and never a shell poll.
 
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
