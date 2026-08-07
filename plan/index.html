@@ -24,20 +24,24 @@
         <a href="../" class="nav-link">Now</a>
         <a href="./" class="nav-link is-active">Plan</a>
       </nav>
-      <!-- One debug pill (version from package.json). Click opens a small menu:
-           top up the grid with random shows, and read the live average
-           reschedule (buildSchedule) time. Starts hidden so it never flashes
-           for the in-UK majority; plan.js reveals it for overseas testers and
-           when the real location is unknown. -->
-      <div class="debug-menu" id="debugMenu" hidden>
-        <button type="button" class="debug-pill" id="debugPill" aria-haspopup="true" aria-expanded="false" aria-controls="debugPop" title="Debug tools">debug v&hellip;</button>
-        <div class="debug-pop" id="debugPop" role="menu" hidden>
-          <button type="button" class="debug-pop__item" id="debugRandomBtn" role="menuitem" title="Adds 10 random shows to the grid — it doesn't replace what's there">&#43; Add 10 random shows</button>
-          <button type="button" class="debug-pop__item" id="debugDownloadBtn" role="menuitem" title="Download favourites, settings and the current plan as JSON — attach it to a bug report">&#8595; Download state (bug report)</button>
-          <p class="debug-pop__stat" id="perfStat" role="status" aria-live="off">Avg replanning time: &mdash;</p>
+      <!-- Everything to the right of the nav travels together as one column, so
+           the nav can sit on the page's centre line. -->
+      <div class="header-side">
+        <!-- One debug pill (version from package.json). Click opens a small menu:
+             top up the grid with random shows, and read the live average
+             reschedule (buildSchedule) time. Starts hidden so it never flashes
+             for the in-UK majority; plan.js reveals it for overseas testers and
+             when the real location is unknown. -->
+        <div class="debug-menu" id="debugMenu" hidden>
+          <button type="button" class="debug-pill" id="debugPill" aria-haspopup="true" aria-expanded="false" aria-controls="debugPop" title="Debug tools">debug v&hellip;</button>
+          <div class="debug-pop" id="debugPop" role="menu" hidden>
+            <button type="button" class="debug-pop__item" id="debugRandomBtn" role="menuitem" title="Adds 10 random shows to the grid — it doesn't replace what's there">&#43; Add 10 random shows</button>
+            <button type="button" class="debug-pop__item" id="debugDownloadBtn" role="menuitem" title="Download favourites, settings and the current plan as JSON — attach it to a bug report">&#8595; Download state (bug report)</button>
+            <p class="debug-pop__stat" id="perfStat" role="status" aria-live="off">Avg replanning time: &mdash;</p>
+          </div>
         </div>
+        <span class="header-hint">Edinburgh Fringe · 7&ndash;31 Aug 2026</span>
       </div>
-      <span class="header-hint">Edinburgh Fringe · 7&ndash;31 Aug 2026</span>
     </div>
   </header>
 

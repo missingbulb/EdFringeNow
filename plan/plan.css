@@ -86,13 +86,23 @@ a { color: inherit; }
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
 }
-.header-inner { display: flex; align-items: center; height: 64px; gap: 24px; }
+/* Three columns, not a flex row with auto margins on the nav: the logo and the
+   right-hand cluster are never the same width, so auto margins centre "Now /
+   Plan" in the leftover space rather than on the page's centre line. */
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 64px;
+  gap: 24px;
+}
+.header-side { display: flex; align-items: center; gap: 12px; justify-self: end; }
 .logo {
   font-family: var(--display); font-weight: 700; font-size: 1.4rem;
   letter-spacing: -0.01em; text-decoration: none; white-space: nowrap;
 }
 .logo-now { color: var(--violet); }
-.main-nav { display: flex; gap: 28px; margin-inline: auto; }
+.main-nav { display: flex; gap: 28px; }
 .nav-link {
   text-decoration: none; font-size: 0.98rem; padding-bottom: 2px;
   border-bottom: 2px solid transparent; color: var(--ink);
