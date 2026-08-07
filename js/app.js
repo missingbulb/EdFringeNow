@@ -17,6 +17,13 @@ import { friendlyDuration } from "../shared/duration.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 import { msToNextMinute, timeZoneLabel } from "./clock.js";
+import {
+  WHEEL_MINUTES,
+  defaultConstraintTime,
+  earliestWheelMinutes,
+  minutesForHour,
+  wheelHours,
+} from "./constraint-time.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -392,20 +399,14 @@ function visibleShows(except) {
   return filteredShows(except);
 }
 
-/* How far ahead a "next commitment" must start to be worth picking. There's no
- * point letting the user constrain their search to something starting in the
- * next few minutes — they couldn't act on it — so we only offer start times at
- * least CONSTRAINT_LEAD_MINUTES from now. */
-const CONSTRAINT_LEAD_MINUTES = 40;
-
 /* Candidate shows for the "next commitment" constraint. This is whatever the
  * user already has lined up, NOT part of the current genre/price search, so it
- * deliberately ignores the genre + price filter. Only start times at least
- * CONSTRAINT_LEAD_MINUTES from now are offered. */
+ * deliberately ignores the genre + price filter. Anything still ahead counts:
+ * the time wheel offers every slot from now on, so the list under it has to
+ * answer for those slots too — an hour the wheel offers but the list refuses to
+ * populate reads as a bug. */
 function constraintShows() {
-  return state.shows.filter(
-    (s) => timeToMinutes(s.time) >= NOW.minutes + CONSTRAINT_LEAD_MINUTES
-  );
+  return state.shows.filter((s) => timeToMinutes(s.time) >= NOW.minutes);
 }
 
 /* Minutes of travel, by the selected mode, from A to B ([lat,lng] each). */
@@ -1789,7 +1790,6 @@ function nearestTimes(times, target, n) {
  * scrolling, like an iOS picker) plus a live list of the shows we know start at
  * that time. Scrolling a wheel browses; tapping a show commits it. */
 const WHEEL_ITEM_H = 40;
-const WHEEL_MINUTES = ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"];
 
 function populateWheel(el, values) {
   el._values = values;
@@ -1814,6 +1814,22 @@ function scrollWheelTo(el, v, smooth) {
   el.scrollTo({ top: i * WHEEL_ITEM_H, behavior: smooth ? "smooth" : "auto" });
   markWheelSel(el);
 }
+/* Keep the minute wheel's range in step with the chosen hour: only the current
+ * hour is trimmed, so this is a no-op for every other hour. The chosen minute is
+ * kept where it survives the new range. */
+function syncMinuteWheelRange(hh, smooth) {
+  const mw = document.getElementById("minWheel");
+  if (!mw) return;
+  const values = minutesForHour(hh, NOW.minutes);
+  const same =
+    (mw._values || []).length === values.length &&
+    (mw._values || []).every((v, i) => v === values[i]);
+  if (same) return;
+  const prev = readWheel(mw);
+  populateWheel(mw, values);
+  scrollWheelTo(mw, values.includes(prev) ? prev : values[0], smooth);
+}
+
 /* Point both wheels at state.selectedTime (used on init and suggestion jumps). */
 function syncWheels(smooth) {
   const hw = document.getElementById("hourWheel");
@@ -1821,9 +1837,11 @@ function syncWheels(smooth) {
   if (!hw || !mw || !state.selectedTime) return;
   const [hh, mm] = state.selectedTime.split(":");
   scrollWheelTo(hw, hh, smooth);
-  const mmVal = WHEEL_MINUTES.includes(mm)
+  syncMinuteWheelRange(hh, false);
+  const values = mw._values || WHEEL_MINUTES;
+  const mmVal = values.includes(mm)
     ? mm
-    : WHEEL_MINUTES.reduce((a, b) => (Math.abs(+b - +mm) < Math.abs(+a - +mm) ? b : a), WHEEL_MINUTES[0]);
+    : values.reduce((a, b) => (Math.abs(+b - +mm) < Math.abs(+a - +mm) ? b : a), values[0]);
   scrollWheelTo(mw, mmVal, smooth);
 }
 
@@ -1835,15 +1853,18 @@ function buildConstraintPanel() {
   const dateLabel = document.getElementById("constraintDateLabel");
   if (dateLabel) dateLabel.textContent = NOW.dateLabel;
 
-  const times = availableTimes();
   // A commitment with something real behind it — a show still in today's data,
   // or a typed place — survives even when its start time is no longer offered
-  // as a *new* choice (too soon to aim for, or restored from a past plan). A
-  // time with nothing behind it is dropped.
+  // as a *new* choice (restored from a past plan, or simply overtaken by the
+  // clock). A past time with nothing behind it is dropped.
   const stillReal =
     (state.selectedShowId && state.shows.some((s) => s.id === state.selectedShowId)) ||
     Boolean(state.destLabel && state.destLabel.trim());
-  if (state.selectedTime && !times.includes(state.selectedTime) && !stillReal) {
+  if (
+    state.selectedTime &&
+    !stillReal &&
+    timeToMinutes(state.selectedTime) < earliestWheelMinutes(NOW.minutes)
+  ) {
     state.selectedTime = "";
     state.selectedShowId = "";
     state.legShowId = "";
@@ -1851,14 +1872,12 @@ function buildConstraintPanel() {
     state.destPlace = null;
     state.destNote = "";
   }
-  if (!state.selectedTime && times.length) state.selectedTime = times[0];
+  if (!state.selectedTime) state.selectedTime = defaultConstraintTime(NOW.minutes);
 
-  // Hours from the first offered hour to end of day; minutes in fives.
-  const hours = [];
-  const h0 = times.length ? parseInt(times[0].slice(0, 2), 10) : 0;
-  for (let h = h0; h <= 23; h++) hours.push(String(h).padStart(2, "0"));
-  populateWheel(hw, hours);
-  populateWheel(mw, WHEEL_MINUTES);
+  // Hours from the current hour to end of day; minutes in fives, trimmed to
+  // what's still ahead in the current hour.
+  populateWheel(hw, wheelHours(NOW.minutes));
+  populateWheel(mw, minutesForHour(state.selectedTime.slice(0, 2), NOW.minutes));
 
   [hw, mw].forEach((el) => {
     // Read the settled value ~130 ms after scrolling stops (native snap handles
@@ -1872,7 +1891,10 @@ function buildConstraintPanel() {
         // not the user picking hours[0]. Acting on it would wipe the very
         // commitment that closed the panel, so only read visible wheels.
         if (el.offsetParent === null) return;
-        const t = `${readWheel(hw)}:${readWheel(mw)}`;
+        const hh = readWheel(hw);
+        // Scrolling back to the current hour re-trims the minutes on offer.
+        if (el === hw) syncMinuteWheelRange(hh, true);
+        const t = `${hh}:${readWheel(mw)}`;
         if (t !== state.selectedTime) setConstraintTime(t); // wheels already positioned
       }, 130);
     };
