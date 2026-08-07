@@ -827,24 +827,32 @@ a { color: inherit; }
   margin-left: -1px; background: transparent; transition: background 0.12s ease;
 }
 .win-edge:hover::before, .win-edge.dragging::before { background: rgba(108, 76, 241, 0.55); }
-/* A grip planted halfway down each edge line. The lines themselves are 2px of
-   window chrome and read as a boundary, not a control — so the date window got
-   resized from the flags up top and these were never touched. The glyph is the
-   invitation: a graspable knob, on the line, where the hand already is. */
+/* A grip planted on each edge line. The lines themselves are 2px of window
+   chrome and read as a boundary, not a control — so the date window got resized
+   from the flags up top and these were never touched. The glyph is the
+   invitation: a graspable knob, on the line, where the hand already is.
+
+   Same pill as every other draggable boundary (see the shared grip rule below),
+   turned a quarter so its bars run along the vertical line it grabs — one grab
+   affordance across the whole planner rather than two dialects.
+
+   `--grip-y` is set by positionWindowGrips() to the middle of the *visible*
+   grid. The overlay spans the full scroll height, so a plain `top: 50%` centres
+   on the middle of the lane list — which on a long list is wherever the list
+   happens to be halfway, often nowhere near the screen. */
 .win-edge::after {
-  content: ""; position: absolute; left: 50%; top: 50%;
-  width: 13px; height: 28px; margin-left: -6.5px; transform: translateY(-50%);
-  border-radius: 5px;
-  background: var(--violet)
-    linear-gradient(90deg,
-      transparent 0 3.5px, rgba(255, 255, 255, 0.9) 3.5px 5px,
-      transparent 5px 8px, rgba(255, 255, 255, 0.9) 8px 9.5px, transparent 9.5px);
-  box-shadow: 0 2px 6px rgba(90, 63, 214, 0.4);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  content: ""; position: absolute; left: 50%; top: var(--grip-y, 50%);
+  width: 26px; height: 12px; border-radius: 7px;
+  transform: translate(-50%, -50%) rotate(90deg);
+  background-color: var(--violet);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat; background-size: 12px 1.5px;
+  background-position: center 4px, center 7.5px;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
+  transition: transform 0.12s ease;
 }
 .win-edge:hover::after, .win-edge.dragging::after {
-  transform: translateY(-50%) scale(1.12);
-  box-shadow: 0 3px 10px rgba(90, 63, 214, 0.55);
+  transform: translate(-50%, -50%) rotate(90deg) scale(1.12);
 }
 
 /* Performance-time tooltip (follows the cursor over day cells). */

@@ -1426,6 +1426,33 @@ function layoutOverlay() {
   paintWindow();
 }
 
+/* Park the two date-window edge grips at the middle of the grid the visitor can
+ * actually see. The overlay they live on spans the full scroll height, so CSS
+ * alone can only centre them on the whole lane list — on a long list that puts
+ * the knob off-screen, and the edges go back to looking like inert chrome.
+ *
+ * Measured against the scroller's visible band, below the sticky header that
+ * covers its top, then clamped to the lanes so the knob never rides up into the
+ * day header or past the last row. */
+function positionWindowGrips() {
+  const wrap = $("calWrap");
+  const win = $("win");
+  const lanes = $("lanes");
+  if (!wrap || !win || !lanes) return;
+  const stickyH = document.querySelector(".cal-sticky")?.offsetHeight || 0;
+  const visibleTop = wrap.scrollTop + stickyH;
+  const visibleBottom = wrap.scrollTop + wrap.clientHeight;
+  const lanesTop = lanes.offsetTop;
+  const lanesBottom = lanesTop + lanes.offsetHeight;
+  // Half the grip's long side, so a clamped knob still sits fully on the lanes.
+  const inset = 13;
+  const mid = (visibleTop + visibleBottom) / 2;
+  const y = lanesBottom - lanesTop < inset * 2
+    ? (lanesTop + lanesBottom) / 2 // too few lanes to inset against — just centre
+    : clamp(mid, lanesTop + inset, lanesBottom - inset);
+  win.style.setProperty("--grip-y", `${Math.round(y)}px`);
+}
+
 let slideTimer = null;
 /**
  * Position the date-window overlay (dim panels, band, handles, flags) for the
@@ -1471,6 +1498,7 @@ function paintWindow(animate = false) {
   const hEnd = $("hEnd");
   hEnd.setAttribute("aria-valuenow", state.d1);
   hEnd.setAttribute("aria-valuetext", `${state.d1} August`);
+  positionWindowGrips();
 }
 
 function dayAt(clientX) {
@@ -2482,6 +2510,11 @@ function wireCalendarControls() {
     layoutOverlay();
     refresh({ animate: false });
   });
+
+  // Scrolling the lane list moves what "the middle of the grid" means, and it's
+  // the one thing that changes it without a repaint — so the grips follow it
+  // directly. Passive: this only ever writes a custom property.
+  $("calWrap")?.addEventListener("scroll", positionWindowGrips, { passive: true });
 }
 
 // --- "Pick my best dates": place the window where it catches the most shows --
