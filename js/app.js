@@ -125,7 +125,6 @@ const state = {
   routeLayers: [],             // Leaflet layers for the journey arrows/labels
   ready: false,                // booted + restored — only then do we write the cache
   savedPlan: null,             // cached plan awaiting judgement (see adoptRestoredPlan)
-  stalePlan: null,             // a passed plan the restore bar can offer back
 };
 
 /* ---------- Boot ---------- */
@@ -143,7 +142,6 @@ async function init() {
   buildPricePanel();
   buildTravelPanel();
   wirePanels();
-  wireRestoreBar();
   wireViewSwitch();
   // The header pin re-asks the browser for the user's location (same as the
   // map's ◎ control) and recentres on it.
@@ -2052,7 +2050,6 @@ function selectConstraintShow(id) {
   state.destPlace = null; // a show commitment replaces any found place or note
   state.destNote = "";
   clearPlaceResults();
-  forgetStalePlan(); // a fresh commitment supersedes the offer of the old one
   if (state.legShowId === id) state.legShowId = "";
   state.spareCtaDismissed = false; // a fresh commitment re-offers the spare-time prompt
   state.showCap = SHOW_PAGE;
@@ -2182,11 +2179,13 @@ function refreshConstraintValue() {
  *
  * The filters are timeless and always come back. The plan isn't: a commitment
  * at 18:00 or a show you'd picked that has already started is no longer a plan,
- * it's history. Those are dropped from the live state rather than restored —
- * but they're kept in a second "stale" slot so the restore bar can offer them
- * back on one tap, rather than the choice just evaporating. */
+ * it's history. Those are simply dropped — a plan whose time has gone is not
+ * worth handing back, so there's nothing to offer and nothing to dismiss. */
 const STORE_KEY = "edfringenow.now.v1";
-const STALE_KEY = "edfringenow.now.stale.v1";
+/* Retired: the passed-plan slot that used to back the "Restore" bar. The key is
+ * kept only so restoreNowState can delete whatever an earlier visit left in a
+ * returning browser — remove it once no live browser can still be carrying one. */
+const LEGACY_STALE_KEY = "edfringenow.now.stale.v1";
 /* The first-run explainer's own key, deliberately separate from the settings
  * snapshot above: "I've read this" is a fact about the person, not about this
  * visit's filters, and it must not be cleared when a plan goes stale. */
@@ -2243,7 +2242,9 @@ function saveNowState() {
 /* Restore the timeless settings (before the shows load), and park the plan for
  * adoptRestoredPlan to judge once we know what's on today. */
 function restoreNowState() {
-  state.stalePlan = readStore(STALE_KEY);
+  // Nothing reads the passed-plan slot any more, so clear it on sight rather
+  // than leaving dead state parked in a returning visitor's browser.
+  writeStore(LEGACY_STALE_KEY, null);
   const saved = readStore(STORE_KEY);
   if (!saved) return;
 
@@ -2276,12 +2277,12 @@ function isPastTime(hhmm) {
   return Boolean(hhmm) && timeToMinutes(hhmm) <= NOW.minutes;
 }
 
-/* Bring back the cached plan, dropping whatever has since happened. Anything
- * dropped moves to the stale slot, which the restore bar offers back. */
+/* Bring back the cached plan, dropping whatever has since happened. What's
+ * dropped is gone for good — a plan whose moment has passed isn't offered back. */
 function adoptRestoredPlan() {
   const saved = state.savedPlan;
   state.savedPlan = null;
-  if (!saved) return renderRestoreBar();
+  if (!saved) return;
 
   const sameDay = saved.date === NOW.date;
   const show = (id) => (id ? state.shows.find((s) => s.id === id) : null);
@@ -2306,70 +2307,7 @@ function adoptRestoredPlan() {
   }
   if (!legStale) state.legShowId = leg ? leg.id : "";
 
-  const droppedSomething =
-    (commitmentStale && (saved.selectedTime || saved.selectedShowId || saved.destLabel)) ||
-    (legStale && saved.legShowId);
-  if (droppedSomething) {
-    state.stalePlan = saved;
-    writeStore(STALE_KEY, saved);
-  }
   syncDestInput();
-  renderRestoreBar();
-}
-
-/* The offer to reinstate a plan we declined to restore. Quiet, and dismissable
- * — it's a courtesy, not a task. */
-function renderRestoreBar() {
-  const bar = document.getElementById("restoreBar");
-  const text = document.getElementById("restoreText");
-  const stale = state.stalePlan;
-  if (!bar || !text) return;
-  if (!stale) {
-    bar.hidden = true;
-    return;
-  }
-  const legShow = stale.legShowId ? state.shows.find((s) => s.id === stale.legShowId) : null;
-  const where = stale.destLabel || (legShow && legShow.title) || "";
-  const when = stale.selectedTime || (legShow && legShow.time) || "";
-  text.innerHTML =
-    where && when
-      ? `Last time you were heading to <b>${escapeHtml(where)}</b> by ${escapeHtml(when)} — that has passed.`
-      : "You had a plan here last time — it has since passed.";
-  bar.hidden = false;
-}
-
-function wireRestoreBar() {
-  const restore = document.getElementById("restoreBtn");
-  const dismiss = document.getElementById("restoreDismiss");
-  if (restore) {
-    restore.addEventListener("click", () => {
-      const stale = state.stalePlan;
-      if (!stale) return;
-      // Deliberate: the user asked for it back, so it's reinstated as-is even
-      // though the clock has moved on — the plan's own slack chips say how badly.
-      state.selectedTime = stale.selectedTime || "";
-      state.selectedShowId = state.shows.some((s) => s.id === stale.selectedShowId)
-        ? stale.selectedShowId
-        : "";
-      state.legShowId = state.shows.some((s) => s.id === stale.legShowId) ? stale.legShowId : "";
-      state.destLabel = stale.destLabel || "";
-      state.destPlace = stale.destPlace || null;
-      state.destNote = stale.destNote || "";
-      forgetStalePlan();
-      syncDestInput();
-      refreshConstraintValue();
-      renderConstraintShows(false);
-      syncWheels(false);
-      refreshMap();
-    });
-  }
-  if (dismiss) dismiss.addEventListener("click", forgetStalePlan);
-}
-
-function forgetStalePlan() {
-  state.stalePlan = null;
-  writeStore(STALE_KEY, null);
-  renderRestoreBar();
 }
 
 /* ---------- Panel open/close plumbing ---------- */
@@ -2585,7 +2523,6 @@ async function applyNow(date) {
   buildConstraintPanel();
   refreshMap();
   renderShowList();
-  renderRestoreBar();
 }
 
 /* Shift the "you are here" pin 100 m in a compass direction. */

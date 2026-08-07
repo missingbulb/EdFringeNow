@@ -88,6 +88,12 @@ const NAGS_KEY = "edfringe.plan.nags.v1";
  * favourites snapshot: it is a preference about the person, and it must not
  * expire with the 3-day favourites TTL below. */
 const LEGEND_KEY = "edfringe.plan.legend.v1";
+/* The scheduling preferences: the date window, day hours, meal breaks, the
+ * arrival/departure blocks, travel mode, the pacing controls and the must-sees.
+ * Its own key, like the two above — these shape *how* the plan is built, and a
+ * visitor who set them expects them back on the next visit, so they must not
+ * expire with the 3-day favourites TTL. */
+const PREFS_KEY = "edfringe.plan.prefs.v1";
 
 // Genre → a small emoji drawn on the left of each scheduled block. Keys are the
 // ten headline genres in shows.json; anything else falls back to a ticket.
@@ -453,31 +459,204 @@ function saveDismissedNags() {
   }
 }
 
-/* The colour key is permanent chrome, but foldable: someone who has learned the
- * marks can collapse it and expect it to stay collapsed. Unreadable storage
- * reads as "open", which is the state that teaches rather than the one that
- * hides. */
-function wireLegendFold() {
-  const el = $("calLegend");
-  if (!el) return;
-  try {
-    if (localStorage.getItem(LEGEND_KEY) === "closed") el.open = false;
-  } catch {
-    /* private mode — leave it open */
+/* The colour key opens in a column beside the grid, from a button next to
+ * Clear. Closed it renders nothing — the grid takes the width back — so the
+ * default is closed: the marks are legible enough to work from, and a panel
+ * that eats grid width by default would be paid for by everyone who already
+ * knows them. Unreadable storage reads as closed for the same reason. */
+let legendOpen = false;
+
+function setLegendOpen(open, { persist = true } = {}) {
+  legendOpen = Boolean(open);
+  const panel = $("calLegend");
+  const btn = $("legendBtn");
+  // The panel stays `hidden` whenever the board is empty, whatever the stored
+  // preference says — showCalendar/showIntake own that, and this respects it by
+  // only ever unhiding alongside a visible grid.
+  if (panel && !$("calWrap").hidden) panel.hidden = !legendOpen;
+  if (btn) {
+    btn.classList.toggle("is-on", legendOpen);
+    btn.setAttribute("aria-expanded", String(legendOpen));
   }
-  el.addEventListener("toggle", () => {
-    try {
-      localStorage.setItem(LEGEND_KEY, el.open ? "open" : "closed");
-    } catch (err) {
-      console.warn("Fringe Planner: couldn't save the colour-key state", err);
+  // The grid's usable width just changed, so the overlay geometry it is drawn
+  // against has to be remeasured before the window lines can be repainted.
+  if (!$("calWrap").hidden) {
+    layoutOverlay();
+    positionWindowGrips();
+  }
+  if (!persist) return;
+  try {
+    localStorage.setItem(LEGEND_KEY, legendOpen ? "open" : "closed");
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't save the colour-key state", err);
+  }
+}
+
+function wireLegendFold() {
+  const btn = $("legendBtn");
+  if (!btn) return;
+  try {
+    legendOpen = localStorage.getItem(LEGEND_KEY) === "open";
+  } catch {
+    legendOpen = false; // private mode — closed is the no-cost default
+  }
+  btn.addEventListener("click", () => setLegendOpen(!legendOpen));
+}
+
+/* --- Scheduling preferences ---------------------------------------------
+ * Everything the planner's controls set, as opposed to *what* is on the grid
+ * (the favourites, stored separately under their own TTL). Written after every
+ * refresh() and read back at boot, so a reload returns the plan the visitor had
+ * shaped rather than the defaults. */
+function savePlanPrefs() {
+  try {
+    localStorage.setItem(
+      PREFS_KEY,
+      JSON.stringify({
+        v: 1,
+        d0: state.d0,
+        d1: state.d1,
+        dayStartMin: state.dayStartMin,
+        dayEndMin: state.dayEndMin,
+        mode: state.mode,
+        meals: state.mealBreaks.map((m) => ({
+          id: m.id,
+          enabled: m.enabled,
+          startMin: m.startMin,
+          endMin: m.endMin,
+        })),
+        arrival: { ...state.arrival },
+        departure: { ...state.departure },
+        forced: [...state.forced],
+        pacing: { gap: $("ctlGap").value, max: $("ctlMax").value, min: $("ctlMin").value },
+      })
+    );
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't save scheduling preferences", err);
+  }
+}
+
+/* refresh() runs once per pointer-frame while the date window is dragged, and
+ * localStorage writes are synchronous — so the save trails the interaction
+ * rather than riding inside it. */
+let prefsSaveTimer = null;
+function schedulePrefsSave() {
+  if (prefsSaveTimer) clearTimeout(prefsSaveTimer);
+  prefsSaveTimer = setTimeout(() => {
+    prefsSaveTimer = null;
+    savePlanPrefs();
+  }, 400);
+}
+
+/* Land a pending debounced save before the page goes away, so preferences
+ * changed in the last moments of a visit aren't the ones that get lost. */
+function flushPlanPrefs() {
+  if (!prefsSaveTimer) return;
+  clearTimeout(prefsSaveTimer);
+  prefsSaveTimer = null;
+  savePlanPrefs();
+}
+
+/* Read the stored preferences back into state. Every field is validated and
+ * clamped against the same bounds its control enforces: anything missing,
+ * malformed or out of range leaves that preference at its default rather than
+ * failing the whole restore, so one bad value can't cost the visitor the rest. */
+function restorePlanPrefs() {
+  let data;
+  try {
+    data = JSON.parse(localStorage.getItem(PREFS_KEY) || "null");
+  } catch {
+    return; // private mode, or a hand-edited value — the defaults are fine
+  }
+  if (!data || data.v !== 1) return;
+
+  const int = (v, lo, hi, fallback) => (Number.isFinite(v) ? clamp(Math.round(v), lo, hi) : fallback);
+
+  // d1 first: it's the ceiling d0 is clamped against, so a stored window can
+  // never restore inverted.
+  state.d1 = int(data.d1, 1, DAYS_IN_MONTH, state.d1);
+  state.d0 = int(data.d0, 1, state.d1, state.d0);
+  state.dayStartMin = int(data.dayStartMin, 0, DAY_END_CEIL - 15, state.dayStartMin);
+  state.dayEndMin = int(data.dayEndMin, state.dayStartMin + 15, DAY_END_CEIL, state.dayEndMin);
+  if (MODE_META[data.mode]) state.mode = data.mode;
+
+  if (Array.isArray(data.meals)) {
+    // Matched by id rather than position, so reordering or adding a meal break
+    // doesn't misapply a stored one.
+    for (const meal of state.mealBreaks) {
+      const saved = data.meals.find((m) => m && m.id === meal.id);
+      if (!saved) continue;
+      meal.enabled = Boolean(saved.enabled);
+      meal.endMin = int(saved.endMin, 5, 1440, meal.endMin);
+      meal.startMin = int(saved.startMin, 0, meal.endMin - 5, meal.startMin);
     }
-  });
+  }
+  if (data.arrival) {
+    state.arrival.enabled = Boolean(data.arrival.enabled);
+    state.arrival.endMin = int(data.arrival.endMin, 0, DAY_END_CEIL, state.arrival.endMin);
+  }
+  if (data.departure) {
+    state.departure.enabled = Boolean(data.departure.enabled);
+    state.departure.startMin = int(data.departure.startMin, 0, DAY_END_CEIL, state.departure.startMin);
+  }
+  // Must-sees are re-filtered against the catalogue when the favourites land
+  // (applyFavourites' keepForced path), so a pin on a show no longer on the
+  // grid drops itself there rather than needing a check here.
+  if (Array.isArray(data.forced)) {
+    state.forced = new Map(
+      data.forced.filter(
+        (e) => Array.isArray(e) && typeof e[0] === "string" && (e[1] === true || typeof e[1] === "string")
+      )
+    );
+  }
+  if (data.pacing) restorePacingControls(data.pacing);
+  syncPlanControls();
+}
+
+/* The three pacing controls keep their value in the DOM rather than in `state`,
+ * so they restore by writing it back — and only if the control still offers it,
+ * so an option that has since been renamed falls back to the markup's default
+ * instead of leaving the control blank. */
+function restorePacingControls(pacing) {
+  for (const [id, val] of [["ctlGap", pacing.gap], ["ctlMax", pacing.max], ["ctlMin", pacing.min]]) {
+    const el = $(id);
+    if (!el || typeof val !== "string") continue;
+    const before = el.value;
+    el.value = val;
+    if (el.value === "") el.value = before;
+  }
+}
+
+/* Push restored preferences out to the controls that display them. Arrival and
+ * departure need nothing here — they have no static inputs, being drawn from
+ * state straight onto the schedule overlay. */
+function syncPlanControls() {
+  syncDayInputs();
+  for (const meal of state.mealBreaks) {
+    const on = $(`meal${cap(meal.id)}On`);
+    if (on) on.checked = meal.enabled;
+    syncMealInputs(meal);
+  }
+  const modeWrap = $("ctlMode");
+  if (!modeWrap) return;
+  for (const b of modeWrap.querySelectorAll(".tmode-btn")) {
+    const on = b.dataset.mode === state.mode;
+    b.classList.toggle("is-on", on);
+    b.setAttribute("aria-pressed", String(on));
+  }
 }
 
 function restoreStoredFavourites() {
   const data = loadStoredFavourites();
   if (!data || data.slugs.length === 0) return;
-  applyFavourites(data.slugs, data.filename, data.savedAt, { source: "restore" });
+  // Restoring a stored board is not a fresh upload: the date window and the
+  // must-sees that came back with the preferences are the visitor's own, so
+  // they survive here rather than being reset to the defaults.
+  applyFavourites(data.slugs, data.filename, data.savedAt, {
+    source: "restore",
+    keepWindow: true,
+    keepForced: true,
+  });
 }
 
 function clearFavourites() {
@@ -657,8 +836,12 @@ function clearUploadError() {
 function showCalendar() {
   $("intakeStage").hidden = true;
   $("calWrap").hidden = false;
-  $("calLegend").hidden = false;
   $("clearFavBtn").hidden = false;
+  $("legendBtn").hidden = false;
+  // Re-apply the stored choice rather than forcing it open: the key belongs to
+  // the visitor, not to the act of loading a board. Not persisted — nothing was
+  // chosen here.
+  setLegendOpen(legendOpen, { persist: false });
   $("planPanel").hidden = false;
   updatePlanWindowLabel();
   requestAnimationFrame(() => {
@@ -673,6 +856,7 @@ function showIntake() {
   $("calLegend").hidden = true;
   $("intakeStage").hidden = false;
   $("clearFavBtn").hidden = true;
+  $("legendBtn").hidden = true;
   $("planPanel").hidden = true;
   $("lanes").innerHTML = "";
   state.laneRefs = [];
@@ -859,6 +1043,10 @@ function escapeHtml(s) {
  *   track the pointer instantly rather than replay an enter/leave transition.
  */
 function refresh(opts) {
+  // Ahead of the empty-board bail: the controls are preferences in their own
+  // right, and a change to them is worth keeping whether or not there is
+  // anything on the grid to re-plan yet.
+  schedulePrefsSave();
   if (state.matched.length === 0) return;
   const animate = !(opts && opts.animate === false);
   const filter = currentFilter();
@@ -967,11 +1155,13 @@ function statusPillHTML(status) {
   // open a real explanation on hover (see conflictTipHTML).
   const conflict = CONFLICT_KINDS[status.kind];
   if (conflict) {
-    // A red triangle, not a dinner plate: this is the one verdict the user can
-    // fix in a second, and it was reading as decoration.
+    // The triangle alone. The label spelled out what the hover card explains
+    // properly anyway, and it was the widest thing in the status column — a
+    // mark that says "something here" is enough to earn the hover.
     return (
-      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}">` +
-      `<span class="st-warn" aria-hidden="true">▲</span>${conflict.label}</button>`
+      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}" ` +
+      `aria-label="${escapeHtml(conflict.label)}">` +
+      `<span class="st-warn" aria-hidden="true">▲</span></button>`
     );
   }
   switch (status.kind) {
@@ -1266,6 +1456,33 @@ function layoutOverlay() {
   paintWindow();
 }
 
+/* Park the two date-window edge grips at the middle of the grid the visitor can
+ * actually see. The overlay they live on spans the full scroll height, so CSS
+ * alone can only centre them on the whole lane list — on a long list that puts
+ * the knob off-screen, and the edges go back to looking like inert chrome.
+ *
+ * Measured against the scroller's visible band, below the sticky header that
+ * covers its top, then clamped to the lanes so the knob never rides up into the
+ * day header or past the last row. */
+function positionWindowGrips() {
+  const wrap = $("calWrap");
+  const win = $("win");
+  const lanes = $("lanes");
+  if (!wrap || !win || !lanes) return;
+  const stickyH = document.querySelector(".cal-sticky")?.offsetHeight || 0;
+  const visibleTop = wrap.scrollTop + stickyH;
+  const visibleBottom = wrap.scrollTop + wrap.clientHeight;
+  const lanesTop = lanes.offsetTop;
+  const lanesBottom = lanesTop + lanes.offsetHeight;
+  // Half the grip's long side, so a clamped knob still sits fully on the lanes.
+  const inset = 13;
+  const mid = (visibleTop + visibleBottom) / 2;
+  const y = lanesBottom - lanesTop < inset * 2
+    ? (lanesTop + lanesBottom) / 2 // too few lanes to inset against — just centre
+    : clamp(mid, lanesTop + inset, lanesBottom - inset);
+  win.style.setProperty("--grip-y", `${Math.round(y)}px`);
+}
+
 let slideTimer = null;
 /**
  * Position the date-window overlay (dim panels, band, handles, flags) for the
@@ -1311,6 +1528,7 @@ function paintWindow(animate = false) {
   const hEnd = $("hEnd");
   hEnd.setAttribute("aria-valuenow", state.d1);
   hEnd.setAttribute("aria-valuetext", `${state.d1} August`);
+  positionWindowGrips();
 }
 
 function dayAt(clientX) {
@@ -2322,6 +2540,11 @@ function wireCalendarControls() {
     layoutOverlay();
     refresh({ animate: false });
   });
+
+  // Scrolling the lane list moves what "the middle of the grid" means, and it's
+  // the one thing that changes it without a repaint — so the grips follow it
+  // directly. Passive: this only ever writes a custom property.
+  $("calWrap")?.addEventListener("scroll", positionWindowGrips, { passive: true });
 }
 
 // --- "Pick my best dates": place the window where it catches the most shows --
@@ -2550,6 +2773,12 @@ function wireCellTips() {
 const SCH_HOUR_PX = 34; // the axis now spans a fixed 09:00–27:00 (18h), so a
                         // shorter hour keeps the whole night on one calm board
 const SCH_MIN_BLOCK = 34;
+/* Below this, a block can't carry a two-line title *and* its meta line, so the
+ * start–end time goes and the title clamps to one line — the axis beside the
+ * block already says when it is, and the venue is the fact you can't get
+ * anywhere else. Blocks never fall below SCH_MIN_BLOCK, and a floor-height
+ * block still fits a title line plus the meta line comfortably. */
+const SCH_TIGHT_PX = 42;
 // The width of a day with nothing planned in it. Wide enough to carry the date
 // and read as a day, narrow enough that a fortnight of blanks doesn't squeeze
 // the days you're actually going out on.
@@ -3010,19 +3239,26 @@ function buildScheduleBlock(slot, top, rawBottom) {
   block.style.top = `${top}px`;
   block.style.height = `${height}px`;
   block.dataset.slug = slot.slug;
+  // What actually fits, measured off the block's own height rather than the
+  // column width — an hour-long slot is cramped on any screen. The title and
+  // the venue are what survive; the clock is readable off the axis beside it.
+  if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
 
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = slot.venueName || slot.venueCode || "";
+  // Title first, then one meta line carrying time and venue together — they used
+  // to be a line each, which spent two thirds of a small block on chrome.
   // No native title — the rich hover card (fillShowCard) carries all of this, and
   // a title here would double up as a second, parallel tooltip on hover.
   block.innerHTML =
     (forced ? `<span class="sch-pin" aria-hidden="true">🔒</span>` : "") +
     `<span class="sch-emoji" aria-hidden="true">${genreEmoji(slot.genre)}</span>` +
     `<span class="sch-body-text">` +
-    `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     `<span class="sch-name">${escapeHtml(slot.title)}</span>` +
+    `<span class="sch-meta">` +
+    `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     (venue ? `<span class="sch-venue">${escapeHtml(venue)}</span>` : "") +
-    `</span>`;
+    `</span></span>`;
   return block;
 }
 
@@ -3033,12 +3269,21 @@ function buildTravelLeg(a, b, top, bottom) {
   leg.style.top = `${top}px`;
   leg.style.height = `${Math.max(0, bottom - top)}px`;
 
+  // How long the gap actually is, so the leg can say what's left after the
+  // journey rather than only how long the journey takes — "12 min walk" in a
+  // 15-minute gap and in an hour-long one are very different facts.
+  const gapMin = Math.max(0, b.startMinuteOfDay - a.endMinuteOfDay);
+  const spareStr = (travelMin) => {
+    const spare = Math.round(gapMin - travelMin);
+    return spare >= 0 ? `+${spare}′` : `${spare}′`;
+  };
+
   const sameVenue = a.venueCode && b.venueCode && a.venueCode === b.venueCode;
   let text;
   let title;
   if (sameVenue) {
-    text = "same venue";
-    title = `${a.venueName || "Same venue"} — no travel`;
+    text = `same venue · ${gapMin}′ gap`;
+    title = `${a.venueName || "Same venue"} — no travel, ${gapMin} min between shows`;
   } else {
     const km = distanceKm(
       { lat: a.venueLat, lng: a.venueLng },
@@ -3050,12 +3295,19 @@ function buildTravelLeg(a, b, top, bottom) {
       state.mode
     );
     if (km == null || mins == null) {
-      text = "nearby";
+      text = `nearby · ${gapMin}′ gap`;
       title = "Travel time unknown (venue has no coordinates)";
     } else {
       const meta = MODE_META[state.mode];
-      text = `${Math.round(mins)} min ${meta.verb.replace(/^by /, "")} · ${km.toFixed(1)} km`;
-      title = `${meta.emoji} ${Math.round(mins)} min ${meta.verb} · ${km.toFixed(1)} km from ${a.venueName || "there"} to ${b.venueName || "there"}`;
+      // Primes rather than "min": three facts fit on the line that one and a
+      // half used to, and the leg is read at a glance, not parsed. The signed
+      // slack goes unlabelled — spelling out "spare" pushed the line past the
+      // pill in a normal-width column, and the hover title says it in full.
+      text = `${Math.round(mins)}′ · ${km.toFixed(1)}km · ${spareStr(mins)}`;
+      title =
+        `${meta.emoji} ${Math.round(mins)} min ${meta.verb} · ${km.toFixed(1)} km ` +
+        `from ${a.venueName || "there"} to ${b.venueName || "there"} — ` +
+        `${gapMin} min gap, ${Math.round(gapMin - mins)} min spare`;
     }
   }
   leg.title = title;
@@ -3907,6 +4159,11 @@ wireScheduleInteractions();
 wireExcludePopup();
 wirePlanControls();
 wireExports();
+
+// After the controls are wired (so syncPlanControls has them to write to) and
+// before loadData(), whose restoreStoredFavourites plans against these values.
+restorePlanPrefs();
+window.addEventListener("pagehide", flushPlanPrefs);
 
 renderPerfPill(); // paint the version placeholder immediately
 loadVersion();

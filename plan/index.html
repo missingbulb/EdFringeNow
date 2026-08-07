@@ -82,6 +82,10 @@
       <div class="board-head">
         <p class="board-count" id="boardCount" role="status" aria-live="polite">No shows planned, no shows selected</p>
         <button type="button" class="board-clear" id="clearFavBtn" hidden>&times; Clear</button>
+        <!-- Opens the colour key beside the grid. A button rather than a fold
+             under the board: closed, the key costs nothing but this. -->
+        <button type="button" class="board-legend-btn" id="legendBtn" hidden
+                aria-expanded="false" aria-controls="calLegend">Legend</button>
       </div>
 
       <!-- Empty state: the drop box centred on a faint "empty lanes" backdrop,
@@ -117,8 +121,10 @@
         </div>
       </div>
 
-      <!-- Populated state: the availability grid, same height as the stage it
-           replaces. -->
+      <!-- Populated state: the availability grid, and the colour key that opens
+           to its right. The row is the grid's whole width until the key is
+           opened, at which point the grid gives up the space the key takes. -->
+      <div class="board-main" id="boardMain">
       <div class="board-body cal-wrap" id="calWrap" hidden>
         <div class="cal-inner" id="calInner">
           <!-- Sticky while the lane list scrolls: the window controls (start/end
@@ -177,6 +183,29 @@
             <div class="win-edge win-edge--end" id="edgeEnd"></div>
           </div>
         </div>
+      </div>
+
+      <!-- Colour key for the day marks — the marks are the grid's whole
+           vocabulary, so the key is a panel you can open rather than something
+           discovered by hovering. It sits beside the grid: horizontally that
+           costs more than a strip underneath, but it's a key, and a key gets
+           read once and closed. Closed it renders nothing at all — only the
+           header button remains. The open/closed choice is remembered between
+           visits. -->
+      <aside class="cal-legend" id="calLegend" hidden aria-label="Colour key">
+        <div class="legend">
+          <span class="lg lg-avail"><i></i>Tickets available</span>
+          <span class="lg lg-2for1"><i></i>2-for-1</span>
+          <span class="lg lg-preview"><i></i>Preview</span>
+          <span class="lg lg-free"><i></i>Free</span>
+          <span class="lg lg-event"><i></i>Event-specific</span>
+          <span class="lg lg-noalloc"><i></i>Sold out</span>
+          <!-- Gold is the only mark the grid draws itself (the others come
+               from edfringe.com's availability), and it is the one that
+               answers "what did the plan pick?" — so it belongs in the key. -->
+          <span class="lg lg-locked"><i></i>In your plan</span>
+        </div>
+      </aside>
       </div>
 
       <!-- The other way to build the list: search the programme and star shows
@@ -326,26 +355,7 @@
 
       <div class="cal-tip" id="calTip" hidden></div>
 
-      <!-- Colour key for the day marks. Permanent rather than hover-revealed —
-           the marks are the grid's whole vocabulary, and a key you have to
-           discover by hovering is a key most people never read — but
-           collapsible, so anyone who has learned it can fold it away. The
-           open/closed choice is remembered between visits. -->
-      <details class="cal-legend" id="calLegend" hidden open>
-        <summary class="legend-toggle">Colour key</summary>
-        <div class="legend">
-          <span class="lg lg-avail"><i></i>Tickets available</span>
-          <span class="lg lg-2for1"><i></i>2-for-1</span>
-          <span class="lg lg-preview"><i></i>Preview</span>
-          <span class="lg lg-free"><i></i>Free</span>
-          <span class="lg lg-event"><i></i>Event-specific</span>
-          <span class="lg lg-noalloc"><i></i>Sold out</span>
-          <!-- Gold is the only mark the grid draws itself (the others come
-               from edfringe.com's availability), and it is the one that
-               answers "what did the plan pick?" — so it belongs in the key. -->
-          <span class="lg lg-locked"><i></i>In your plan</span>
-        </div>
-      </details>
+      <!-- Colour key for the day marks — the marks are the grid's whole
     </section>
 
     <!-- ===================== Allocate / itinerary ===================== -->
