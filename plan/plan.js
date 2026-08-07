@@ -1112,13 +1112,9 @@ function statusPillHTML(status) {
   // open a real explanation on hover (see conflictTipHTML).
   const conflict = CONFLICT_KINDS[status.kind];
   if (conflict) {
-    // The triangle alone. The label spelled out what the hover card explains
-    // properly anyway, and it was the widest thing in the status column — a
-    // mark that says "something here" is enough to earn the hover.
     return (
-      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}" ` +
-      `aria-label="${escapeHtml(conflict.label)}">` +
-      `<span class="st-warn" aria-hidden="true">▲</span></button>`
+      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}">` +
+      `<span class="st-warn" aria-hidden="true">▲</span>${conflict.label}</button>`
     );
   }
   switch (status.kind) {
@@ -3461,10 +3457,13 @@ function exclData(list) {
   return escapeHtml(list.map((s) => s.title).join("\n"));
 }
 
-/** The inline orange "(excludes N shows)" pill for a meal band's centre label. */
-function exclPillHTML(list) {
+/** The conflict mark for a meal band's centre label — the same red triangle the
+ *  lane's status pill uses, so "this break is shutting shows out" reads the same
+ *  on the board as it does in the grid. Hover it for the list of what it excludes. */
+function exclMarkHTML(list) {
   if (!list.length) return "";
-  return ` <span class="excl-pill" data-excl="${exclData(list)}">(excludes ${list.length} show${list.length === 1 ? "" : "s"})</span>`;
+  const label = `excludes ${list.length} show${list.length === 1 ? "" : "s"}`;
+  return ` <span class="excl-mark" data-excl="${exclData(list)}" aria-label="${label}">▲</span>`;
 }
 
 function buildMealBand(meal, y) {
@@ -3479,12 +3478,13 @@ function buildMealBand(meal, y) {
   const timeStr = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}`;
   // A faint, playful scatter of food emoji — filled in once laid out
   // (populateDecors), so the count matches the band's actual area. The
-  // centre label carries the time + meal + an inline "(excludes N shows)" pill
-  // (hover it for the list) instead of a separate corner badge.
+  // centre label carries the time + meal + the red conflict triangle when the
+  // break is shutting shows out (hover it for the list), instead of a separate
+  // corner badge.
   band.innerHTML =
     decorSpan("food", meal.id) +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
-    `<span class="meal-label">${timeStr} · 🍽 ${name}${exclPillHTML(blocks)}</span>` +
+    `<span class="meal-label">${timeStr} · 🍽 ${name}${exclMarkHTML(blocks)}</span>` +
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
@@ -3838,7 +3838,7 @@ function wireScheduleInteractions() {
 /**
  * A cursor-following popup listing the shows a day-hours line or meal break
  * excludes. Delegated over the schedule for any [data-excl] target (the day-line
- * badge, the meal band's inline pill) — a nicer, narrower cousin of the show
+ * badge, the meal band's conflict mark) — a nicer, narrower cousin of the show
  * hover card.
  */
 function wireExcludePopup() {
