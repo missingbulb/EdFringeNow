@@ -1055,6 +1055,9 @@ function refresh(opts) {
  *   - lunch      : every performance lands on your lunch break  🍽 Lunch conflict
  *   - dinner     : …or on your dinner break                     🍽 Dinner conflict
  *   - meal       : both meal breaks, together, shut it out      🍽 Meal conflict
+ *   - combo      : a mix of controls — some performances hit one setting, the
+ *                  rest another (or every performance hits two at once); carries
+ *                  `kinds`, the culpable controls, for the label and the tip
  *   - cantfit    : catchable in the window, but a clash / cap left no room
  *   - sold       : every performance in the window (or the whole run) is sold out
  *   - baddates   : has bookable performances, but all fall outside your dates
@@ -1067,20 +1070,19 @@ function laneStatus(show, filter, sets) {
 
   if (availInWindow.length > 0) {
     // placementDiagnostics lists a show under every control that would rescue it
-    // on its own, so name the culprit when there's exactly one kind of culprit —
-    // a break the user can move reads far better than a flat "can't fit".
-    const early = sets.earlySet.has(show.slug);
-    const late = sets.lateSet.has(show.slug);
-    const lunch = sets.lunchSet.has(show.slug);
-    const dinner = sets.dinnerSet.has(show.slug);
-    if (!lunch && !dinner) {
-      if (early && !late) return { kind: "early" };
-      if (late && !early) return { kind: "late" };
-    } else if (!early && !late) {
-      if (lunch && !dinner) return { kind: "lunch" };
-      if (dinner && !lunch) return { kind: "dinner" };
-      return { kind: "meal" };
-    }
+    // on its own — name the culprit when there is one, and name the *mix* when
+    // there are several, because "lunch + day end" is something the user can act
+    // on where a flat "can't fit" is not. Display order: meals first (they're
+    // the draggable bands), then the day edges.
+    const culprits = ["lunch", "dinner", "early", "late"].filter((k) => sets[`${k}Set`].has(show.slug));
+    if (culprits.length === 1) return { kind: culprits[0] };
+    if (culprits.length === 2 && culprits[0] === "lunch" && culprits[1] === "dinner") return { kind: "meal" };
+    if (culprits.length > 1) return { kind: "combo", kinds: culprits };
+    // Blocked by the day-hours/meal filter, yet no *single* control would rescue
+    // it: every performance trips two settings at once (say, a long show that
+    // spans lunch and runs past the day end). Still a settings problem, not a
+    // clash — say so, with no one control to name.
+    if (sets.blockedSet.has(show.slug)) return { kind: "combo", kinds: [] };
     return { kind: "cantfit" };
   }
 
@@ -1105,6 +1107,32 @@ const CONFLICT_KINDS = {
   meal: { label: "Meal conflict", control: "mealLunchStart" },
 };
 
+/* The combo verdict names each culpable control; two vocabularies because the
+ * pill has ~14 characters of column and the tip title has room for full words. */
+const COMBO_SHORT = { lunch: "lunch", dinner: "dinner", early: "early", late: "late" };
+const COMBO_FULL = { lunch: "Lunch break", dinner: "Dinner break", early: "Day start", late: "Day end" };
+
+/** "Lunch + late" — the combo pill's label. Three or more culprits (or none
+ *  nameable, when every performance trips two settings at once) collapse to the
+ *  control groups, since the point is "several of your settings", not a list. */
+function comboLabel(kinds) {
+  if (kinds.length === 2) {
+    const s = kinds.map((k) => COMBO_SHORT[k]).join(" + ");
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  const mealsOn = state.mealBreaks.some((m) => m.enabled !== false);
+  return mealsOn ? "Hours + meals" : "Day hours";
+}
+
+/** The kinds a combo pill's click should light up. An empty list (no single
+ *  culprit) means the settings gang up in pairs — flash all of them. */
+function comboJumpKinds(kinds) {
+  if (kinds.length) return kinds;
+  const all = ["early", "late"];
+  for (const m of state.mealBreaks) if (m.enabled !== false && CONFLICT_KINDS[m.id]) all.push(m.id);
+  return all;
+}
+
 /** The status pill HTML for a lane verdict (see laneStatus for the kinds). */
 function statusPillHTML(status) {
   // No native title attributes — those are the browser's ugly tooltip; the short
@@ -1115,6 +1143,12 @@ function statusPillHTML(status) {
     return (
       `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}">` +
       `<span class="st-warn" aria-hidden="true">▲</span>${conflict.label}</button>`
+    );
+  }
+  if (status.kind === "combo") {
+    return (
+      `<button type="button" class="st-blocked st-conflict" data-conflict="combo" data-kinds="${status.kinds.join(",")}">` +
+      `<span class="st-warn" aria-hidden="true">▲</span>${comboLabel(status.kinds)}</button>`
     );
   }
   switch (status.kind) {
@@ -1148,7 +1182,7 @@ function flashLockIn(seg) {
  * kinds). The lane also mirrors the plan on its performance marks, and a forced
  * (must-see) lane carries a pin.
  */
-const BLOCKED_KINDS = new Set(["early", "late", "lunch", "dinner", "meal"]);
+const BLOCKED_KINDS = new Set(["early", "late", "lunch", "dinner", "meal", "combo"]);
 
 function applyVerdicts(bySlug, filter) {
   const diag = state.diag || {};
@@ -1158,6 +1192,9 @@ function applyVerdicts(bySlug, filter) {
     lateSet: slugsOf(diag.dayEnd),
     lunchSet: slugsOf(diag.meals && diag.meals.lunch),
     dinnerSet: slugsOf(diag.meals && diag.meals.dinner),
+    // Every show the day-hours/meal filter shuts out — a superset of the four
+    // above, because a show can be blocked with no single control to blame.
+    blockedSet: diag.blockedSlugs || new Set(),
   };
   for (const ref of state.laneRefs) {
     const show = bySlug.get(ref.slug);
@@ -1255,9 +1292,39 @@ function hhmm(min) {
   return `${String(Math.floor(min / 60) % 24).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
 }
 
+/** One combo-tip clause per culpable control, in the user's own numbers. */
+function comboClause(kind) {
+  const meal = state.mealBreaks.find((m) => m.id === kind);
+  if (meal) return `some run during your ${kind} break (${hhmm(meal.startMin)}–${hhmm(meal.endMin)})`;
+  if (kind === "early") return `some start before your day does (${hhmm(state.dayStartMin)})`;
+  return `some run past the end of your day (${hhmm(effectiveDayEnd())})`;
+}
+
 /** The hover card for a conflict pill: what is blocking the show, in the user's
- *  own numbers, and what clicking will do about it. */
-function conflictTipHTML(kind) {
+ *  own numbers, and what clicking will do about it. A combo pill carries the
+ *  culpable kinds and gets a clause per culprit — the point being that no one
+ *  setting is to blame, but changing any one of them frees a performance. */
+function conflictTipHTML(kind, kinds) {
+  if (kind === "combo") {
+    if (kinds.length) {
+      const title = kinds.map((k) => COMBO_FULL[k]).join(" + ");
+      const what =
+        `No single setting blocks this show — together they do: ` +
+        `${kinds.map(comboClause).join("; ")}. ` +
+        `Changing any one of these would free at least one performance.`;
+      return (
+        `<p class="tip-title">${title}</p>` +
+        `<p class="tip-desc tip-desc--lead">${what}</p>` +
+        `<p class="tip-hint">Click to go to the settings responsible</p>`
+      );
+    }
+    return (
+      `<p class="tip-title">Day hours + meal breaks</p>` +
+      `<p class="tip-desc tip-desc--lead">Every performance of this show trips two of your settings at once ` +
+      `(day hours, meal breaks), so no single change will free one — it takes two.</p>` +
+      `<p class="tip-hint">Click to go to the settings responsible</p>`
+    );
+  }
   const meal = state.mealBreaks.find((m) => m.id === kind);
   let what;
   if (meal) {
@@ -1291,16 +1358,23 @@ function wireConflictJumps() {
   lanes.addEventListener("click", (e) => {
     const btn = e.target.closest(".st-conflict");
     if (!btn) return;
-    const spec = CONFLICT_KINDS[btn.dataset.conflict];
-    const el = spec && $(spec.control);
-    if (!el) return;
+    // A combo pill has several settings to answer for: scroll to the first and
+    // flash them all, so the mix reads as a mix on arrival.
+    const kinds =
+      btn.dataset.conflict === "combo"
+        ? comboJumpKinds((btn.dataset.kinds || "").split(",").filter(Boolean))
+        : [btn.dataset.conflict];
+    const els = kinds.map((k) => CONFLICT_KINDS[k] && $(CONFLICT_KINDS[k].control)).filter(Boolean);
+    if (!els.length) return;
     tip.hidden = true;
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
-    const ctl = el.closest(".ctl") || el;
-    ctl.classList.remove("ctl--flash");
-    void ctl.offsetWidth; // restart the animation
-    ctl.classList.add("ctl--flash");
-    ctl.addEventListener("animationend", () => ctl.classList.remove("ctl--flash"), { once: true });
+    els[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    for (const el of els) {
+      const ctl = el.closest(".ctl") || el;
+      ctl.classList.remove("ctl--flash");
+      void ctl.offsetWidth; // restart the animation
+      ctl.classList.add("ctl--flash");
+      ctl.addEventListener("animationend", () => ctl.classList.remove("ctl--flash"), { once: true });
+    }
   });
 
   // Registered after wireCellTips, whose handler hides the popup for anything
@@ -1309,9 +1383,12 @@ function wireConflictJumps() {
     const btn = e.target.closest(".st-conflict");
     if (!btn) return;
     const kind = btn.dataset.conflict;
-    if (!tip.hidden && tip.dataset.conflict === kind) return; // already up
-    tip.dataset.conflict = kind;
-    tip.innerHTML = conflictTipHTML(kind);
+    // Two combo pills can name different mixes — key the "already up" check on
+    // the whole identity, kinds included.
+    const key = kind + ":" + (btn.dataset.kinds || "");
+    if (!tip.hidden && tip.dataset.conflict === key) return; // already up
+    tip.dataset.conflict = key;
+    tip.innerHTML = conflictTipHTML(kind, (btn.dataset.kinds || "").split(",").filter(Boolean));
     tip.hidden = false;
     const r = btn.getBoundingClientRect();
     const x = Math.min(Math.max(8, r.left + r.width / 2 - tip.offsetWidth / 2),
