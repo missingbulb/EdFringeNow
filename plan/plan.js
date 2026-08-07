@@ -88,6 +88,12 @@ const NAGS_KEY = "edfringe.plan.nags.v1";
  * favourites snapshot: it is a preference about the person, and it must not
  * expire with the 3-day favourites TTL below. */
 const LEGEND_KEY = "edfringe.plan.legend.v1";
+/* The scheduling preferences: the date window, day hours, meal breaks, the
+ * arrival/departure blocks, travel mode, the pacing controls and the must-sees.
+ * Its own key, like the two above — these shape *how* the plan is built, and a
+ * visitor who set them expects them back on the next visit, so they must not
+ * expire with the 3-day favourites TTL. */
+const PREFS_KEY = "edfringe.plan.prefs.v1";
 
 // Genre → a small emoji drawn on the left of each scheduled block. Keys are the
 // ten headline genres in shows.json; anything else falls back to a ticket.
@@ -474,10 +480,160 @@ function wireLegendFold() {
   });
 }
 
+/* --- Scheduling preferences ---------------------------------------------
+ * Everything the planner's controls set, as opposed to *what* is on the grid
+ * (the favourites, stored separately under their own TTL). Written after every
+ * refresh() and read back at boot, so a reload returns the plan the visitor had
+ * shaped rather than the defaults. */
+function savePlanPrefs() {
+  try {
+    localStorage.setItem(
+      PREFS_KEY,
+      JSON.stringify({
+        v: 1,
+        d0: state.d0,
+        d1: state.d1,
+        dayStartMin: state.dayStartMin,
+        dayEndMin: state.dayEndMin,
+        mode: state.mode,
+        meals: state.mealBreaks.map((m) => ({
+          id: m.id,
+          enabled: m.enabled,
+          startMin: m.startMin,
+          endMin: m.endMin,
+        })),
+        arrival: { ...state.arrival },
+        departure: { ...state.departure },
+        forced: [...state.forced],
+        pacing: { gap: $("ctlGap").value, max: $("ctlMax").value, min: $("ctlMin").value },
+      })
+    );
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't save scheduling preferences", err);
+  }
+}
+
+/* refresh() runs once per pointer-frame while the date window is dragged, and
+ * localStorage writes are synchronous — so the save trails the interaction
+ * rather than riding inside it. */
+let prefsSaveTimer = null;
+function schedulePrefsSave() {
+  if (prefsSaveTimer) clearTimeout(prefsSaveTimer);
+  prefsSaveTimer = setTimeout(() => {
+    prefsSaveTimer = null;
+    savePlanPrefs();
+  }, 400);
+}
+
+/* Land a pending debounced save before the page goes away, so preferences
+ * changed in the last moments of a visit aren't the ones that get lost. */
+function flushPlanPrefs() {
+  if (!prefsSaveTimer) return;
+  clearTimeout(prefsSaveTimer);
+  prefsSaveTimer = null;
+  savePlanPrefs();
+}
+
+/* Read the stored preferences back into state. Every field is validated and
+ * clamped against the same bounds its control enforces: anything missing,
+ * malformed or out of range leaves that preference at its default rather than
+ * failing the whole restore, so one bad value can't cost the visitor the rest. */
+function restorePlanPrefs() {
+  let data;
+  try {
+    data = JSON.parse(localStorage.getItem(PREFS_KEY) || "null");
+  } catch {
+    return; // private mode, or a hand-edited value — the defaults are fine
+  }
+  if (!data || data.v !== 1) return;
+
+  const int = (v, lo, hi, fallback) => (Number.isFinite(v) ? clamp(Math.round(v), lo, hi) : fallback);
+
+  // d1 first: it's the ceiling d0 is clamped against, so a stored window can
+  // never restore inverted.
+  state.d1 = int(data.d1, 1, DAYS_IN_MONTH, state.d1);
+  state.d0 = int(data.d0, 1, state.d1, state.d0);
+  state.dayStartMin = int(data.dayStartMin, 0, DAY_END_CEIL - 15, state.dayStartMin);
+  state.dayEndMin = int(data.dayEndMin, state.dayStartMin + 15, DAY_END_CEIL, state.dayEndMin);
+  if (MODE_META[data.mode]) state.mode = data.mode;
+
+  if (Array.isArray(data.meals)) {
+    // Matched by id rather than position, so reordering or adding a meal break
+    // doesn't misapply a stored one.
+    for (const meal of state.mealBreaks) {
+      const saved = data.meals.find((m) => m && m.id === meal.id);
+      if (!saved) continue;
+      meal.enabled = Boolean(saved.enabled);
+      meal.endMin = int(saved.endMin, 5, 1440, meal.endMin);
+      meal.startMin = int(saved.startMin, 0, meal.endMin - 5, meal.startMin);
+    }
+  }
+  if (data.arrival) {
+    state.arrival.enabled = Boolean(data.arrival.enabled);
+    state.arrival.endMin = int(data.arrival.endMin, 0, DAY_END_CEIL, state.arrival.endMin);
+  }
+  if (data.departure) {
+    state.departure.enabled = Boolean(data.departure.enabled);
+    state.departure.startMin = int(data.departure.startMin, 0, DAY_END_CEIL, state.departure.startMin);
+  }
+  // Must-sees are re-filtered against the catalogue when the favourites land
+  // (applyFavourites' keepForced path), so a pin on a show no longer on the
+  // grid drops itself there rather than needing a check here.
+  if (Array.isArray(data.forced)) {
+    state.forced = new Map(
+      data.forced.filter(
+        (e) => Array.isArray(e) && typeof e[0] === "string" && (e[1] === true || typeof e[1] === "string")
+      )
+    );
+  }
+  if (data.pacing) restorePacingControls(data.pacing);
+  syncPlanControls();
+}
+
+/* The three pacing controls keep their value in the DOM rather than in `state`,
+ * so they restore by writing it back — and only if the control still offers it,
+ * so an option that has since been renamed falls back to the markup's default
+ * instead of leaving the control blank. */
+function restorePacingControls(pacing) {
+  for (const [id, val] of [["ctlGap", pacing.gap], ["ctlMax", pacing.max], ["ctlMin", pacing.min]]) {
+    const el = $(id);
+    if (!el || typeof val !== "string") continue;
+    const before = el.value;
+    el.value = val;
+    if (el.value === "") el.value = before;
+  }
+}
+
+/* Push restored preferences out to the controls that display them. Arrival and
+ * departure need nothing here — they have no static inputs, being drawn from
+ * state straight onto the schedule overlay. */
+function syncPlanControls() {
+  syncDayInputs();
+  for (const meal of state.mealBreaks) {
+    const on = $(`meal${cap(meal.id)}On`);
+    if (on) on.checked = meal.enabled;
+    syncMealInputs(meal);
+  }
+  const modeWrap = $("ctlMode");
+  if (!modeWrap) return;
+  for (const b of modeWrap.querySelectorAll(".tmode-btn")) {
+    const on = b.dataset.mode === state.mode;
+    b.classList.toggle("is-on", on);
+    b.setAttribute("aria-pressed", String(on));
+  }
+}
+
 function restoreStoredFavourites() {
   const data = loadStoredFavourites();
   if (!data || data.slugs.length === 0) return;
-  applyFavourites(data.slugs, data.filename, data.savedAt, { source: "restore" });
+  // Restoring a stored board is not a fresh upload: the date window and the
+  // must-sees that came back with the preferences are the visitor's own, so
+  // they survive here rather than being reset to the defaults.
+  applyFavourites(data.slugs, data.filename, data.savedAt, {
+    source: "restore",
+    keepWindow: true,
+    keepForced: true,
+  });
 }
 
 function clearFavourites() {
@@ -859,6 +1015,10 @@ function escapeHtml(s) {
  *   track the pointer instantly rather than replay an enter/leave transition.
  */
 function refresh(opts) {
+  // Ahead of the empty-board bail: the controls are preferences in their own
+  // right, and a change to them is worth keeping whether or not there is
+  // anything on the grid to re-plan yet.
+  schedulePrefsSave();
   if (state.matched.length === 0) return;
   const animate = !(opts && opts.animate === false);
   const filter = currentFilter();
@@ -3907,6 +4067,11 @@ wireScheduleInteractions();
 wireExcludePopup();
 wirePlanControls();
 wireExports();
+
+// After the controls are wired (so syncPlanControls has them to write to) and
+// before loadData(), whose restoreStoredFavourites plans against these values.
+restorePlanPrefs();
+window.addEventListener("pagehide", flushPlanPrefs);
 
 renderPerfPill(); // paint the version placeholder immediately
 loadVersion();
