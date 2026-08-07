@@ -238,7 +238,7 @@ separate file precisely so the catalogue can sit in the top row:
 | `shows.min.json` | 4 days | 948 KB gzipped, and nothing in it changes through the day |
 | `availability.min.json` | 1 day | ticket status moves hourly; 149 KB gzipped, so re-fetching daily is cheap |
 | `venues.json` | 1 day | small, and its lookup lists are indexed into by the cached catalogue |
-| `days/2026-08-DD.json` | 1 day | carries ticket status; keyed by date, so this is within-the-day reuse |
+| `days/2026-08-DD.json` | 1 hour | the now page's whole premise is live availability, and `refresh-tickets` rewrites this hourly — the TTL matches the refresh that feeds it |
 | `descriptions.min.json` | 7 days | a show's description doesn't change mid-festival |
 
 Two invariants hold this up, and breaking either is silent:

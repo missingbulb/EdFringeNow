@@ -56,6 +56,8 @@ const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug →
  *  - venues.json is small and its lookup lists are append-only, so refetching
  *    it daily keeps it at least as new as any cached catalogue that indexes
  *    into it;
+ *  - (the now page holds its day file for an hour, not a day — it draws live
+ *    SOLD OUT stamps, so it tracks the hourly refresh; see js/app.js);
  *  - descriptions are effectively immutable, so a week means a returning
  *    visitor pays for them once. */
 const CATALOGUE_TTL_MS = 4 * DAY_MS;

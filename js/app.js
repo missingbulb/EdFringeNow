@@ -163,14 +163,26 @@ async function init() {
 
 /* ---------- Data loading ---------- */
 /* How long a downloaded data file may be reused before we ask the network again
- * (shared/data-cache.js). Both of these carry ticket status, which turns over
- * through the day, so neither is held longer than a day — the planner's much
- * bulkier catalogue is what earns a longer life, and it earns it by carrying no
- * availability at all.
+ * (shared/data-cache.js).
  *
- * The day file is keyed by date, so this is a within-the-day reuse: tomorrow
- * asks for a different url and downloads it fresh regardless. */
-const DAY_TTL_MS = DAY_MS;
+ * The day file gets an HOUR, not a day, and the reason is this page's whole
+ * premise: it answers "what can I get into right now", and the SOLD OUT stamps
+ * it draws are refreshed hourly by the `refresh-tickets` task. A day-long reuse
+ * would have been a cache that outlived its own data — a visitor returning after
+ * lunch would see the morning's availability. An hour matches the refresh that
+ * feeds it, so the page is never showing something staler than the pipeline can
+ * make it.
+ *
+ * That still buys the reuse worth having. The url is keyed by date, so this only
+ * ever concerns revisits within one day, and the common ones — a reload, a
+ * reopened tab, a return an hour either side of a show — skip the download
+ * entirely. The planner's catalogue is the file that earns a long TTL, and it
+ * earns it by carrying no availability at all.
+ *
+ * venues.json holds for a day: it carries no ticket status, and its lookup lists
+ * are append-only, so a copy fetched today decodes anything the day file can say.
+ */
+const DAY_TTL_MS = 60 * 60 * 1000;
 const LOOKUPS_TTL_MS = DAY_MS;
 
 /* Load today's shows: the per-day file (only today's performances, kept small)
