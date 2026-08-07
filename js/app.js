@@ -280,7 +280,6 @@ function setUserLocation(latlng, { recenter = true, real = false } = {}) {
 function requestUserLocation() {
   if (!("geolocation" in navigator)) {
     console.warn("Geolocation not supported; keeping default location.");
-    setDebugVisible(true);
     return;
   }
   navigator.geolocation.getCurrentPosition(
@@ -303,10 +302,9 @@ function requestUserLocation() {
       adoptRealClock();
     },
     (err) => {
-      // Denied / unavailable / timed out — keep the central-Edinburgh default,
-      // and surface the debug tools that tweak those pre-set values.
+      // Denied / unavailable / timed out — keep the central-Edinburgh default.
+      // An unknown location is not a debug session, so the tools stay hidden.
       console.info("Using default location:", err && err.message);
-      setDebugVisible(true);
     },
     { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
   );
@@ -2372,9 +2370,10 @@ function closeAllPanels() {
 
 /* ---------- Debug clock ---------- */
 /* Show or hide the whole debug menu (pill + dropdown). The markup starts it
- * hidden so the in-UK majority never sees it flash; the testing tools only make
- * sense alongside the pre-set values, so we reveal it once the location check
- * says those pre-sets are staying (overseas / denied / unknown location). */
+ * hidden and only a location confirmed outside the UK reveals it — that is the
+ * overseas-tester case the tools exist for. An unknown location (denied,
+ * unavailable, no geolocation API) is an ordinary visitor, not a tester, so it
+ * leaves the tools hidden. */
 function setDebugVisible(visible) {
   const menu = document.getElementById("debugMenu");
   if (menu) menu.hidden = !visible;

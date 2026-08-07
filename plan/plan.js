@@ -2365,24 +2365,18 @@ function wireShowSearch() {
   });
 }
 
-// The debug menu starts hidden in the markup so it never flashes for the in-UK
-// majority, and is revealed only for overseas testers or when the browser's
-// real location is unknown (denied / unavailable / no geolocation at all).
+// The debug menu starts hidden in the markup and is revealed only for a
+// location confirmed outside the UK — the overseas-tester case. An unknown
+// location (denied / unavailable / no geolocation API) is an ordinary visitor,
+// not a tester, so the tools stay hidden.
 function showDebugOutsideUK() {
   const menu = $("debugMenu");
-  if (!menu) return;
-  const reveal = () => {
-    menu.hidden = false;
-  };
-  if (!("geolocation" in navigator)) {
-    reveal();
-    return;
-  }
+  if (!menu || !("geolocation" in navigator)) return;
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      if (!isInUK([pos.coords.latitude, pos.coords.longitude])) reveal();
+      if (!isInUK([pos.coords.latitude, pos.coords.longitude])) menu.hidden = false;
     },
-    reveal, // denied / unavailable — show the debug tools
+    () => {}, // denied / unavailable — keep the debug tools hidden
     { timeout: 8000, maximumAge: 60000 }
   );
 }
