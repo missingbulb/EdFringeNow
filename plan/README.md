@@ -127,7 +127,8 @@ live whenever the date window or any control changes. Screen 3 reads into
 
 The grid mirrors the plan: each lane's Status names its own verdict —
 **✓ Scheduled!**, **☀ Too early** / **🌙 Too late**, **🍽 Lunch conflict** /
-**🍽 Dinner conflict**, **Can't fit**, **Sold out**, **📅 No dates** — and the
+**🍽 Dinner conflict**, a combined **Lunch + late**, **Can't fit**, **Sold
+out**, **📅 No dates** — and the
 board's count line reads *N shows planned out of M selected*. Between two
 scheduled shows less than an hour apart, the schedule draws a **travel leg**
 (distance + time by the chosen mode).
@@ -135,8 +136,11 @@ scheduled shows less than an hour apart, the schedule draws a **travel leg**
 The named verdicts come from `placementDiagnostics` (in `lib/engine.js`), which
 attributes each catchable-but-unplaceable show to the control that would rescue
 it. Where exactly one *kind* of control is culpable the lane names it (a meal
-break by name, since that's a thing you can drag); a mix falls back to
-**Can't fit**. The same diagnostics give the day-start, day-end and meal controls
+break by name, since that's a thing you can drag); a mix names the mix — a
+**Lunch + late** pill whose hover card lists each culprit in the user's own
+numbers and whose click flashes every setting responsible — so the flat
+**Can't fit** is reserved for the true clash/cap case (room ran out, no
+setting to blame). The same diagnostics give the day-start, day-end and meal controls
 their **"⚠ Prevents N shows"** chip (hover for the list, click to flash those
 lanes on the grid) and mark the matching boundary line / band on the schedule.
 
