@@ -1030,6 +1030,8 @@ function refresh(opts) {
     dayEndMin: effectiveDayEnd(),
     dayEndCeil: DAY_END_CEIL,
     mealBreaks: state.mealBreaks,
+    arrival: planOpts.arrival,
+    departure: planOpts.departure,
     venueCoords: state.venueCoords,
   });
   updateBlockLabels(state.diag);
@@ -2427,6 +2429,8 @@ function downloadDebugState() {
           dayStart: state.diag.dayStart,
           dayEnd: state.diag.dayEnd,
           meals: state.diag.meals,
+          arrival: state.diag.arrival,
+          departure: state.diag.departure,
         }
       : null,
     perf: state.perf,
@@ -3329,14 +3333,9 @@ function buildDayLine(which, min, y, insetPct = 0) {
   const label = which === "start" ? "Day starts" : "Day ends";
   const clock = which === "end" ? minToDayClock(min) : minToHHMM(min);
   const blocks = (state.diag && (which === "start" ? state.diag.dayStart : state.diag.dayEnd)) || [];
-  line.classList.toggle("sch-dayline--blocking", blocks.length > 0);
-  const badge = blocks.length
-    ? `<span class="dl-blocked" data-excl="${exclData(blocks)}">excludes ${blocks.length} show${blocks.length === 1 ? "" : "s"}</span>`
-    : "";
   line.innerHTML =
     `<span class="dl-grip" aria-hidden="true"></span>` +
-    `<span class="dl-flag">${label} ${clock}</span>` +
-    badge;
+    `<span class="dl-flag"><span class="ov-text">${label} ${clock}</span>${exclMarkHTML(blocks)}</span>`;
   wireDayLineDrag(line, which);
   return line;
 }
@@ -3457,13 +3456,14 @@ function exclData(list) {
   return escapeHtml(list.map((s) => s.title).join("\n"));
 }
 
-/** The conflict mark for a meal band's centre label — the same red triangle the
- *  lane's status pill uses, so "this break is shutting shows out" reads the same
- *  on the board as it does in the grid. Hover it for the list of what it excludes. */
+/** The conflict mark a blocker label carries when its constraint is shutting
+ *  shows out — the same red triangle the lane's status pills use, so "conflict"
+ *  reads the same on every board label (day lines, meal bands, trip blocks) as
+ *  it does in the grid. Hover it for the list of what it excludes. */
 function exclMarkHTML(list) {
   if (!list.length) return "";
   const label = `excludes ${list.length} show${list.length === 1 ? "" : "s"}`;
-  return ` <span class="excl-mark" data-excl="${exclData(list)}" aria-label="${label}">▲</span>`;
+  return `<span class="excl-mark" data-excl="${exclData(list)}" aria-label="${label}">▲</span>`;
 }
 
 function buildMealBand(meal, y) {
@@ -3474,7 +3474,6 @@ function buildMealBand(meal, y) {
   band.dataset.meal = meal.id;
   const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
   const blocks = (state.diag && state.diag.meals && state.diag.meals[meal.id]) || [];
-  band.classList.toggle("sch-meal--blocking", blocks.length > 0);
   const timeStr = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)}`;
   // A faint, playful scatter of food emoji — filled in once laid out
   // (populateDecors), so the count matches the band's actual area. The
@@ -3484,7 +3483,7 @@ function buildMealBand(meal, y) {
   band.innerHTML =
     decorSpan("food", meal.id) +
     `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
-    `<span class="meal-label">${timeStr} · 🍽 ${name}${exclMarkHTML(blocks)}</span>` +
+    `<span class="meal-label"><span class="ov-text">${timeStr} · 🍽 ${name}</span>${exclMarkHTML(blocks)}</span>` +
     `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   wireMealDrag(band, meal);
   return band;
@@ -3583,6 +3582,9 @@ function buildTripBlock(which, y, axisH) {
   const block = document.createElement("div");
   block.className = `sch-trip sch-trip--${which}`;
   block.dataset.trip = which;
+  // The trip block's label carries the same conflict triangle as the day lines
+  // and meal bands when the block alone is shutting shows out of the plan.
+  const blocks = (state.diag && (which === "arrival" ? state.diag.arrival : state.diag.departure)) || [];
   let blockH;
   if (which === "arrival") {
     blockH = y(state.arrival.endMin);
@@ -3591,7 +3593,7 @@ function buildTripBlock(which, y, axisH) {
     block.title = "Getting there — drag the lower edge; no shows are placed before this on your first day";
     block.innerHTML =
       decorSpan("travel", "arrival") +
-      `<span class="sch-trip-label">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>` +
+      `<span class="sch-trip-label"><span class="ov-text">🚆 Arrive ${minToHHMM(state.arrival.endMin)}</span>${exclMarkHTML(blocks)}</span>` +
       `<span class="meal-resize meal-resize--bottom" data-edge="bottom"></span>`;
   } else {
     blockH = Math.max(6, axisH - y(state.departure.startMin));
@@ -3601,7 +3603,7 @@ function buildTripBlock(which, y, axisH) {
     block.innerHTML =
       decorSpan("travel", "departure") +
       `<span class="meal-resize meal-resize--top" data-edge="top"></span>` +
-      `<span class="sch-trip-label">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>`;
+      `<span class="sch-trip-label"><span class="ov-text">🧳 Leave ${minToDayClock(state.departure.startMin)}</span>${exclMarkHTML(blocks)}</span>`;
   }
   // "Transportation sorted?" on both trip blocks — the same question whether
   // you're getting in or getting out. It hugs the block's *outer* edge (top of
@@ -3629,7 +3631,7 @@ function wireTripDrag(block, which, axisH) {
         const v = clamp(min, axis.axisTopMin, effectiveDayEnd());
         state.arrival.endMin = v;
         block.style.height = `${yy(v)}px`;
-        block.querySelector(".sch-trip-label").textContent = `🚆 Arrive ${minToHHMM(v)}`;
+        block.querySelector(".sch-trip-label .ov-text").textContent = `🚆 Arrive ${minToHHMM(v)}`;
         toggleNagFit(block, yy(v));
       } else {
         const v = clamp(min, state.dayStartMin, axis.axisBottomMin);
@@ -3637,7 +3639,7 @@ function wireTripDrag(block, which, axisH) {
         state.departure.startMin = v;
         block.style.top = `${yy(v)}px`;
         block.style.height = `${h}px`;
-        block.querySelector(".sch-trip-label").textContent = `🧳 Leave ${minToDayClock(v)}`;
+        block.querySelector(".sch-trip-label .ov-text").textContent = `🧳 Leave ${minToDayClock(v)}`;
         toggleNagFit(block, h);
       }
     };
@@ -3682,12 +3684,12 @@ function repositionOverlayLive() {
   const startLine = overlay.querySelector(".sch-dayline--start");
   if (startLine) {
     startLine.style.top = `${y(state.dayStartMin)}px`;
-    startLine.querySelector(".dl-flag").textContent = `Day starts ${minToHHMM(state.dayStartMin)}`;
+    startLine.querySelector(".dl-flag .ov-text").textContent = `Day starts ${minToHHMM(state.dayStartMin)}`;
   }
   const endLine = overlay.querySelector(".sch-dayline--end");
   if (endLine) {
     endLine.style.top = `${y(dayEnd)}px`;
-    endLine.querySelector(".dl-flag").textContent = `Day ends ${minToDayClock(dayEnd)}`;
+    endLine.querySelector(".dl-flag .ov-text").textContent = `Day ends ${minToDayClock(dayEnd)}`;
   }
   for (const meal of state.mealBreaks) {
     if (!meal.enabled) continue;
@@ -3696,7 +3698,7 @@ function repositionOverlayLive() {
     band.style.top = `${y(meal.startMin)}px`;
     band.style.height = `${Math.max(6, y(meal.endMin) - y(meal.startMin))}px`;
     const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
-    band.querySelector(".meal-label").textContent = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)} · 🍽 ${name}`;
+    band.querySelector(".meal-label .ov-text").textContent = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)} · 🍽 ${name}`;
   }
 
   // Re-tile the emoji scatter live as regions grow/shrink, so a dragged band or
@@ -3836,10 +3838,10 @@ function wireScheduleInteractions() {
 }
 
 /**
- * A cursor-following popup listing the shows a day-hours line or meal break
- * excludes. Delegated over the schedule for any [data-excl] target (the day-line
- * badge, the meal band's conflict mark) — a nicer, narrower cousin of the show
- * hover card.
+ * A cursor-following popup listing the shows a day-hours line, meal break, or
+ * trip block excludes. Delegated over the schedule for any [data-excl] target
+ * (the conflict triangle on any board label pill) — a nicer, narrower cousin
+ * of the show hover card.
  */
 function wireExcludePopup() {
   const host = $("schedule");
