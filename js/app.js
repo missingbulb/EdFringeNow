@@ -16,7 +16,13 @@ import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
-import { msToNextMinute, timeZoneLabel } from "./clock.js";
+import {
+  FESTIVAL_TZ,
+  festivalDate,
+  festivalNow,
+  msToNextMinute,
+  timeZoneLabel,
+} from "./clock.js";
 import {
   WHEEL_MINUTES,
   defaultConstraintTime,
@@ -88,7 +94,10 @@ const PRICE_FILTERS = PRICE_OPTIONS.map((o) => o.value);
  * The whole flow is scoped to "the next few hours today", so for testing we
  * pin a fixed clock instead of the real one. This is a testing pre-set exactly
  * like the pre-set location: a confirmed in-UK location replaces it with the
- * device's real clock (see requestUserLocation / adoptRealClock). */
+ * device's real clock (see requestUserLocation / adoptRealClock).
+ *
+ * Every field here is Edinburgh wall-clock — the same footing the show times
+ * are on — so `minutes` can be compared against a show's start directly. */
 const NOW = {
   date: "2026-08-14",   // which day's data file to load (data/days/<date>.json)
   dateLabel: "Fri 14 Aug",
@@ -99,8 +108,9 @@ const NOW = {
 
 /* Backing Date for the simulated clock. The debug date/time picker reads and
  * writes this, and we project it onto NOW (which is used throughout the app).
- * The year is arbitrary — only the day/time matter to the demo. */
-let simNowDate = new Date(2026, 7, 14, 15, 44); // Fri 14 Aug 2026, 15:44 (matches the data year)
+ * The year is arbitrary — only the day/time matter to the demo. Built through
+ * festivalDate so the pre-set is 15:44 *in Edinburgh* on any device. */
+let simNowDate = festivalDate("2026-08-14T15:44"); // Fri 14 Aug 2026, 15:44
 
 const state = {
   shows: [],
@@ -2493,7 +2503,8 @@ function wireDebugControls() {
   if (dt) {
     syncDebugPicker();
     dt.addEventListener("change", () => {
-      const d = new Date(dt.value);
+      // What's typed is Edinburgh time, whatever zone the device is in.
+      const d = festivalDate(dt.value);
       if (!isNaN(d.getTime())) applyNow(d);
     });
   }
@@ -2512,9 +2523,10 @@ function wireDebugControls() {
   }
 }
 
-/* Switch from the pre-set clock to the device's real one. Called once the real
- * location confirms we're in the UK — the fake date/time is a testing pre-set
- * just like the fake location, so it goes at the same moment. */
+/* Switch from the pre-set clock to the real one. Called once the real location
+ * confirms we're in the UK — the fake date/time is a testing pre-set just like
+ * the fake location, so it goes at the same moment. The device supplies the
+ * instant; applyNow reads it in Edinburgh, not in the device's zone. */
 function adoptRealClock() {
   startClockTicks();
   return applyNow(new Date());
@@ -2561,11 +2573,15 @@ function syncToRealClock() {
 async function applyNow(date) {
   const prevDate = NOW.date;
   simNowDate = date;
-  NOW.date = toISODate(date);
+  // Read in Edinburgh, not on the device: show times are Edinburgh wall-clock,
+  // so the clock they're measured against has to be the same one or every
+  // comparison on the page is off by the visitor's offset.
+  const here = festivalNow(date);
+  NOW.date = here.date;
   NOW.dateLabel = formatDateLabel(date);
-  NOW.time = formatClock(date);
-  NOW.tz = timeZoneLabel(date) || NOW.tz;
-  NOW.minutes = date.getHours() * 60 + date.getMinutes();
+  NOW.time = here.time;
+  NOW.tz = timeZoneLabel(date, FESTIVAL_TZ) || NOW.tz;
+  NOW.minutes = here.minutes;
   renderDebugBanner();
   syncDebugPicker();
   // A different day means a different per-day file; reload before re-rendering.
@@ -2597,36 +2613,32 @@ function moveUserLocation(direction) {
   setUserLocation([nLat, nLng], { recenter: false });
 }
 
-/* "Thu 14 Aug" from a Date. */
+/* "Thu 14 Aug" from a Date — the Edinburgh day, so it can't name yesterday for
+ * a visitor whose own date hasn't turned over yet. */
 function formatDateLabel(date) {
   return date.toLocaleDateString("en-GB", {
+    timeZone: FESTIVAL_TZ,
     weekday: "short",
     day: "numeric",
     month: "short",
   });
 }
 
-/* "2026-08-14" (local date) from a Date — selects the per-day data file. */
+/* "2026-08-14" (Edinburgh date) from a Date — selects the per-day data file. */
 function toISODate(date) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(
-    date.getDate()
-  ).padStart(2, "0")}`;
+  return festivalNow(date).date;
 }
 
-/* "15:44" from a Date. */
+/* "15:44" in Edinburgh from a Date. */
 function formatClock(date) {
-  return `${String(date.getHours()).padStart(2, "0")}:${String(
-    date.getMinutes()
-  ).padStart(2, "0")}`;
+  return festivalNow(date).time;
 }
 
-/* "YYYY-MM-DDTHH:MM" for a datetime-local input. */
+/* "YYYY-MM-DDTHH:MM" for a datetime-local input. The picker sets the festival
+ * clock, so it shows and takes Edinburgh time (festivalDate reads it back). */
 function toDatetimeLocalValue(date) {
-  const pad = (n) => String(n).padStart(2, "0");
-  return (
-    `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}` +
-    `T${pad(date.getHours())}:${pad(date.getMinutes())}`
-  );
+  const here = festivalNow(date);
+  return `${here.date}T${here.time}`;
 }
 
 /* ---------- utils ---------- */
