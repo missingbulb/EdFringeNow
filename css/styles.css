@@ -746,6 +746,8 @@ a { color: inherit; }
 .logo--footer { color: var(--red); margin: 0 0 12px; }
 .footer-tagline { max-width: 320px; margin: 0 0 16px; color: #cfcfcf; }
 .footer-copy { color: #8c8c8c; font-size: 0.85rem; margin: 0; }
+/* The copyright doubles as the site-version tooltip (title set by app.js). */
+.footer-version { cursor: help; }
 .footer-heading {
   color: var(--red);
   text-transform: uppercase;

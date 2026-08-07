@@ -365,7 +365,10 @@
       <div class="footer-brand">
         <p class="logo logo--footer">EdFringe<span class="logo-now">Now</span></p>
         <p class="footer-tagline">Helping you navigate the chaos and catch another show!</p>
-        <p class="footer-copy">© 2026 Missing Bulb</p>
+        <!-- The site version rides in this line's tooltip (app.js fills the
+             title from package.json) — the debug pill that used to carry it is
+             hidden for most visitors. -->
+        <p class="footer-copy"><span id="footerVersion" class="footer-version">© 2026 Missing Bulb</span></p>
         <p class="footer-copy">Booking links on plans (tables, trains, stays, tours) may earn us a small commission, at no extra cost to you.</p>
       </div>
       <div class="footer-col">

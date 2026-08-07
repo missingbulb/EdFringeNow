@@ -1461,6 +1461,8 @@ a { color: inherit; }
 .site-footer { background: var(--ink); color: #d9d9d9; padding: 28px 0; margin-top: 56px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .footer-copy { color: #8c8c8c; font-size: 0.85rem; }
+/* The copyright doubles as the site-version tooltip (title set by plan.js). */
+.footer-version { cursor: help; }
 
 /* ============ Live re-plan animation ============ */
 /* A newly placed show eases in; the same show rescheduled flies to its new slot

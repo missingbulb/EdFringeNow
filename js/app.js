@@ -2440,17 +2440,22 @@ function syncDebugPicker() {
   if (dt) dt.value = toDatetimeLocalValue(simNowDate);
 }
 
-/* Stamp the app version onto the debug pill (single-sourced from package.json,
- * the same file the planner reads). Best-effort — the pill stays "debug" if the
- * fetch fails (e.g. local file:// with no server). */
+/* Stamp the app version onto the debug pill and the footer copyright's tooltip
+ * (single-sourced from package.json, the same file the planner reads). The debug
+ * pill is hidden for most visitors, so the footer hover is the version anyone can
+ * reach. Best-effort — the pill stays "debug" and the footer gets no tooltip if
+ * the fetch fails (e.g. local file:// with no server). */
 async function loadAppVersion() {
   const pill = document.getElementById("debugToggle");
-  if (!pill) return;
+  const copy = document.getElementById("footerVersion");
+  if (!pill && !copy) return;
   try {
     const res = await fetch("package.json");
     if (!res.ok) return;
     const pkg = await res.json();
-    if (pkg && typeof pkg.version === "string") pill.textContent = `debug v${pkg.version}`;
+    if (!pkg || typeof pkg.version !== "string") return;
+    if (pill) pill.textContent = `debug v${pkg.version}`;
+    if (copy) copy.title = `EdFringeNow v${pkg.version}`;
   } catch (err) {
     console.warn("EdFringeNow: couldn't read app version", err);
   }
