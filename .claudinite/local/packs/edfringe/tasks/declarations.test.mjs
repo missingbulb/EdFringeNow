@@ -44,8 +44,8 @@ for (const [dir, decl, frequency] of DECLARED) {
     // Both of these tasks are deterministic ports of retired workflows: no agent,
     // so the contract requires the work to be a bounded preprocessing subprocess.
     assert.equal(decl.agent_model, "none");
-    assert.equal(decl.agent_preprocessing, "bash worker.sh");
-    assert.ok(Number.isInteger(decl.agent_preprocessing_timeout) && decl.agent_preprocessing_timeout > 0);
+    assert.equal(decl.prework, "bash worker.sh");
+    assert.ok(Number.isInteger(decl.prework_timeout) && decl.prework_timeout > 0);
     assert.ok(existsSync(path.join(__dirname, dir, "worker.sh")), "the declared worker must exist beside task.mjs");
   });
 

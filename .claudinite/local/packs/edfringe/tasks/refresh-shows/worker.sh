@@ -3,8 +3,8 @@
 # refresh-shows worker — the ported body of the retired
 # "Refresh edfringe shows (daily)" workflow's job.
 #
-# The Claudinite scheduler runs this as its `agent_preprocessing` subprocess with
-# cwd = this task directory and a hard kill at `agent_preprocessing_timeout`, so
+# The Claudinite scheduler runs this as its `prework` subprocess with
+# cwd = this task directory and a hard kill at `prework_timeout`, so
 # the first thing it does is move to the repo root the scheduler hands it. There
 # is no agent: a non-zero exit is the failure signal, and the scheduler converges
 # that to one open `needs-human` issue (the old job's `report-failure` twin).
