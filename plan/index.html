@@ -52,6 +52,10 @@
          adding the first show must not shunt the page around. -->
     <div class="page-head">
       <h1 class="page-title">Plan your Fringe!</h1>
+      <!-- The running count, on the title's line rather than over the board:
+           it's the page's headline number, and up here it can't shunt the
+           board's own header around as it changes. -->
+      <p class="board-count" id="boardCount" role="status" aria-live="polite">No shows planned, no shows selected</p>
     </div>
 
     <!-- ===================== Loading state ===================== -->
@@ -82,17 +86,6 @@
          nodes in the same place in both states, so the first show you add can't
          shunt the page. -->
     <section class="panel board" id="board" aria-labelledby="boardCount">
-
-      <!-- The whole top area: one line of counts, and the only way back to an
-           empty board. Deliberately the same in both states. -->
-      <div class="board-head">
-        <p class="board-count" id="boardCount" role="status" aria-live="polite">No shows planned, no shows selected</p>
-        <button type="button" class="board-clear" id="clearFavBtn" hidden>&times; Clear</button>
-        <!-- Opens the colour key beside the grid. A button rather than a fold
-             under the board: closed, the key costs nothing but this. -->
-        <button type="button" class="board-legend-btn" id="legendBtn" hidden
-                aria-expanded="false" aria-controls="calLegend">Legend</button>
-      </div>
 
       <!-- Empty state: the drop box centred on a faint "empty lanes" backdrop,
            so waiting reads as the same grid the favourites will fill. -->
@@ -165,9 +158,21 @@
               </div>
             </div>
             <div class="cal-row cal-head">
-              <div aria-hidden="true"></div>
+              <!-- The grid's top-left corner: the show-name column has no header
+                   of its own, so Clear lives here — over the names it throws
+                   away, rather than up in the count line. -->
+              <div class="cal-head-left">
+                <button type="button" class="board-clear" id="clearFavBtn" hidden>&times; Clear</button>
+              </div>
               <div class="days" id="dayHead"><!-- day columns (JS) --></div>
-              <div class="cal-head-right">Status</div>
+              <!-- The right-hand corner: the Status column's heading, with the
+                   colour-key toggle directly above it. The key it opens is a
+                   popup over the grid, so it needs no room of its own. -->
+              <div class="cal-head-right">
+                <button type="button" class="board-legend-btn" id="legendBtn" hidden
+                        aria-expanded="false" aria-controls="calLegend">Legend</button>
+                <span class="cal-head-right-label">Status</span>
+              </div>
             </div>
           </div>
 
@@ -193,12 +198,11 @@
 
       <!-- Colour key for the day marks — the marks are the grid's whole
            vocabulary, so the key is a panel you can open rather than something
-           discovered by hovering. It sits beside the grid: horizontally that
-           costs more than a strip underneath, but it's a key, and a key gets
-           read once and closed. Closed it renders nothing at all — only the
-           header button remains. The open/closed choice is remembered between
-           visits. -->
-      <aside class="cal-legend" id="calLegend" hidden aria-label="Colour key">
+           discovered by hovering. It opens as a popup over the grid's top-right
+           corner, positioned in JS from its button: a key is read once and
+           dismissed, and it never resizes or shifts the grid underneath it.
+           Click anywhere else, or press Escape, and it's gone. -->
+      <aside class="cal-legend" id="calLegend" hidden role="dialog" aria-label="Colour key">
         <div class="legend">
           <span class="lg lg-avail"><i></i>Tickets available</span>
           <span class="lg lg-2for1"><i></i>2-for-1</span>

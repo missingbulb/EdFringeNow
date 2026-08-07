@@ -146,7 +146,15 @@ a { color: inherit; }
 @media (max-width: 940px) { .header-hint { display: none; } }
 
 /* ============ Page head ============ */
-.page-head { padding: 44px 0 8px; }
+/* Title left, running count right, on one line. `baseline` puts the two
+   different type sizes on the same line of writing rather than centring the
+   smaller one against the larger; on a narrow page the count wraps under the
+   title and stays right-aligned. */
+.page-head {
+  padding: 44px 0 8px;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 8px 24px; flex-wrap: wrap;
+}
 .page-title {
   font-family: var(--display); font-weight: 700; letter-spacing: -0.01em;
   font-size: 2.3rem; line-height: 1.12; margin: 0;
@@ -186,15 +194,9 @@ a { color: inherit; }
    reserves room for it. */
 .board { position: relative; padding: 22px 28px 22px; }
 
-/* The top area: the count line, and Clear. Its height is the same in both
-   states — nothing appears or vanishes here when the grid fills. */
-.board-head {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  margin-bottom: 16px;
-}
 /* One sentence, sized like a heading because it *is* the heading now. */
 .board-count {
-  margin: 0; min-width: 0;
+  margin: 0 0 0 auto; min-width: 0; text-align: right;
   font-family: var(--display); font-weight: 700; font-size: 1.32rem;
   letter-spacing: -0.01em; color: var(--muted);
 }
@@ -204,12 +206,17 @@ a { color: inherit; }
 .board-count .bc-selected { color: var(--ink); }
 .board-count.is-live { color: var(--ink); }
 .board-count.bump { animation: countbump 0.4s ease; }
+/* Clear sits in the grid's top-left corner (see .cal-head-left), so it has the
+   show-name column's width and no more: `max-width` keeps the armed question
+   inside that column instead of running under the day numbers. */
 .board-clear {
-  flex: 0 0 auto; font: inherit; font-size: 0.78rem; font-weight: 600;
+  flex: 0 0 auto; max-width: 100%; font: inherit; font-size: 0.78rem; font-weight: 600;
   color: var(--muted); background: #fff;
   border: 1px solid var(--line); border-radius: 999px;
   padding: 5px 13px; cursor: pointer;
+  line-height: 1.25; text-align: center;
 }
+.board-clear[hidden] { display: none; }
 .board-clear:hover { color: var(--warn); border-color: #f3bcbc; }
 .board-clear:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
 /* Armed: the first click turned it into a question naming what is about to be
@@ -217,6 +224,9 @@ a { color: inherit; }
    destructive button rather than a quiet utility one. */
 .board-clear.is-armed {
   color: #fff; background: var(--warn); border-color: var(--warn); font-weight: 700;
+  /* The question is longer than the column is wide, so it wraps to two lines —
+     which the corner cell already has room for, so arming shifts nothing. */
+  font-size: 0.72rem; padding: 5px 11px; border-radius: 12px;
 }
 .board-clear.is-armed:hover { color: #fff; border-color: var(--warn); }
 
@@ -547,7 +557,20 @@ a { color: inherit; }
 .cal-row { display: grid; grid-template-columns: 184px minmax(0, 1fr) 104px; gap: 0 12px; align-items: center; }
 
 .cal-head { border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-.cal-head-right { font-size: 0.62rem; font-weight: 600; color: #98a2b3; text-align: center; line-height: 1.15; }
+/* The corner above the show names, holding Clear. The min-height is the armed
+   two-line pill's height, so the header — and the whole grid under it — stays
+   put whether the button is idle, armed, or hidden on an empty board. */
+.cal-head-left {
+  display: flex; align-items: center; min-width: 0; min-height: 40px;
+}
+/* The mirror of the left corner: the Legend toggle stacked over the Status
+   heading. Both corners sit inside the scroller, so neither costs the card any
+   height — the board is the same box whether it holds the grid or the dropzone. */
+.cal-head-right {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 40px;
+  justify-content: center;
+}
+.cal-head-right-label { font-size: 0.62rem; font-weight: 600; color: #98a2b3; text-align: center; line-height: 1.15; }
 .days { display: grid; grid-template-columns: repeat(31, minmax(0, 1fr)); gap: 3px; }
 .day-col { text-align: center; line-height: 1.15; }
 .day-dow { display: block; font-size: 0.56rem; font-weight: 600; color: #b0b7c3; }
@@ -909,38 +932,33 @@ a { color: inherit; }
   margin: 8px 0 0; font-size: 0.7rem; font-weight: 600; color: var(--violet-dark);
 }
 
-/* Colour key, below the grid. It's lifted out of the flow into the card's own
-   bottom padding, so it claims no row of its own and only its ink fades —
-   revealing it never resizes the card or shifts anything below it. Invisible
-   until the pointer is over the grid: a glanceable reference, not permanent
-   chrome. Revealing on :hover of the legend too keeps it up while you read it. */
-/* Grid and key side by side. The grid is the flexible one, so opening the key
-   takes its width from the grid rather than widening the card; `min-width: 0`
-   lets it actually shrink instead of holding its content's intrinsic width. */
+/* The grid owns the card's whole width now that the key floats over it. */
 .board-main { display: flex; align-items: stretch; gap: 0; }
 .board-main > .cal-wrap { flex: 1 1 auto; min-width: 0; }
 
-/* Closed, the key is `hidden` — display:none, so it occupies nothing at all and
-   the grid has the full width back. Open, it's a fixed-width column: the marks
-   are short labels and a column that flexed with them would jitter as the grid
-   resized. */
+/* The key, as a popup over the grid's top-right corner. `fixed` (placed in JS
+   from the Legend button, like .rail-pop) rather than absolute: the button
+   lives inside the calendar's scroll box, which would clip a panel positioned
+   against it. Nothing under the popup moves when it opens or closes. */
 .cal-legend {
-  flex: 0 0 168px;
-  margin-left: 16px; padding-left: 16px;
-  border-left: 1px solid var(--line);
+  position: fixed; z-index: 60; width: 176px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+  padding: 13px 14px; box-shadow: var(--shadow-soft);
 }
 .cal-legend[hidden] { display: none; }
 /* Stacked rather than the wrapping row it was under the grid — one mark per
    line reads as a key to scan down. */
 .cal-legend .legend { flex-direction: column; gap: 9px; flex-wrap: nowrap; }
 
-/* The header toggle, sitting next to Clear and matching its shape. Its `is-on`
-   state is the panel's only other affordance, so it has to read as pressed. */
+/* The toggle in the grid's right corner, over the Status heading — the same
+   pill as Clear opposite it, a size down to sit in that narrow column. Its
+   `is-on` state is the panel's only other affordance, so it has to read as
+   pressed. */
 .board-legend-btn {
-  flex: 0 0 auto; font: inherit; font-size: 0.78rem; font-weight: 600;
+  flex: 0 0 auto; max-width: 100%; font: inherit; font-size: 0.7rem; font-weight: 600;
   color: var(--muted); background: #fff;
   border: 1px solid var(--line); border-radius: 999px;
-  padding: 5px 13px; cursor: pointer;
+  padding: 3px 11px; cursor: pointer; line-height: 1.3;
 }
 .board-legend-btn:hover { color: var(--ink); border-color: #c9cedb; }
 .board-legend-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
@@ -950,18 +968,6 @@ a { color: inherit; }
 }
 .board-legend-btn[hidden] { display: none; }
 
-/* Narrow screens have no horizontal room to give away, so the key returns to a
-   strip under the grid — same panel, same button, stacked instead of beside. */
-@media (max-width: 720px) {
-  .board-main { flex-direction: column; }
-  .cal-legend {
-    flex: 0 0 auto;
-    margin-left: 0; padding-left: 0;
-    margin-top: 14px; padding-top: 12px;
-    border-left: none; border-top: 1px solid var(--line);
-  }
-  .cal-legend .legend { flex-direction: row; flex-wrap: wrap; gap: 10px 16px; }
-}
 
 /* ============ Allocate / itinerary (the plan panel) ============ */
 .plan-card { padding: 28px 28px 26px; margin-top: 22px; }

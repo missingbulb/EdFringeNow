@@ -96,10 +96,6 @@ const TTL_MS = 3 * 24 * 60 * 60 * 1000; // keep for 3 days, then forget
 // don't need this" is an answer, not a stale cache, so it outlives the
 // favourites it was dismissed over.
 const NAGS_KEY = "edfringe.plan.nags.v1";
-/* Whether the colour key is folded away. Its own key, not part of the
- * favourites snapshot: it is a preference about the person, and it must not
- * expire with the 3-day favourites TTL below. */
-const LEGEND_KEY = "edfringe.plan.legend.v1";
 /* The scheduling preferences: the date window, day hours, meal breaks, the
  * arrival/departure blocks, travel mode, the pacing controls and the must-sees.
  * Its own key, like the two above — these shape *how* the plan is built, and a
@@ -418,48 +414,53 @@ function saveDismissedNags() {
   }
 }
 
-/* The colour key opens in a column beside the grid, from a button next to
- * Clear. Closed it renders nothing — the grid takes the width back — so the
- * default is closed: the marks are legible enough to work from, and a panel
- * that eats grid width by default would be paid for by everyone who already
- * knows them. Unreadable storage reads as closed for the same reason. */
+/* The colour key opens as a popup over the grid's top-right corner, from the
+ * button above the Status column. It used to be a column beside the grid, which
+ * meant every open and close resized the calendar under the pointer; as a popup
+ * it costs the grid nothing, so it can simply appear and be dismissed. It is
+ * transient like the optimizer popover — closed on every load, and closed again
+ * by a click elsewhere or Escape — so there is no stored state to restore. */
 let legendOpen = false;
 
-function setLegendOpen(open, { persist = true } = {}) {
+function setLegendOpen(open) {
   legendOpen = Boolean(open);
   const panel = $("calLegend");
   const btn = $("legendBtn");
-  // The panel stays `hidden` whenever the board is empty, whatever the stored
-  // preference says — showCalendar/showIntake own that, and this respects it by
-  // only ever unhiding alongside a visible grid.
-  if (panel && !$("calWrap").hidden) panel.hidden = !legendOpen;
+  // The key stays `hidden` whenever the board is empty: there are no marks to
+  // key, and showCalendar/showIntake own that state.
+  if (panel) panel.hidden = !legendOpen || $("calWrap").hidden;
   if (btn) {
     btn.classList.toggle("is-on", legendOpen);
     btn.setAttribute("aria-expanded", String(legendOpen));
   }
-  // The grid's usable width just changed, so the overlay geometry it is drawn
-  // against has to be remeasured before the window lines can be repainted.
-  if (!$("calWrap").hidden) {
-    layoutOverlay();
-    positionWindowGrips();
-  }
-  if (!persist) return;
-  try {
-    localStorage.setItem(LEGEND_KEY, legendOpen ? "open" : "closed");
-  } catch (err) {
-    console.warn("Fringe Planner: couldn't save the colour-key state", err);
+  // Placed from the button, unhidden first so the panel can be measured. Right
+  // edges aligned, so it hangs into the grid rather than off the card.
+  if (panel && !panel.hidden && btn) {
+    const r = btn.getBoundingClientRect();
+    const pw = panel.offsetWidth;
+    panel.style.top = `${r.bottom + 6}px`;
+    panel.style.left = `${clamp(r.right - pw, 8, Math.max(8, window.innerWidth - pw - 8))}px`;
   }
 }
 
 function wireLegendFold() {
   const btn = $("legendBtn");
-  if (!btn) return;
-  try {
-    legendOpen = localStorage.getItem(LEGEND_KEY) === "open";
-  } catch {
-    legendOpen = false; // private mode — closed is the no-cost default
-  }
-  btn.addEventListener("click", () => setLegendOpen(!legendOpen));
+  const panel = $("calLegend");
+  if (!btn || !panel) return;
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // don't trip the click-away closer below
+    setLegendOpen(!legendOpen);
+  });
+  panel.addEventListener("click", (e) => e.stopPropagation());
+  document.addEventListener("click", () => {
+    if (legendOpen) setLegendOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && legendOpen) { setLegendOpen(false); btn.focus(); }
+  });
+  // Fixed to the viewport, so a page scroll would leave it hanging where the
+  // button no longer is: re-place it against the button instead.
+  window.addEventListener("scroll", () => { if (legendOpen) setLegendOpen(true); }, { passive: true });
 }
 
 /* --- Scheduling preferences ---------------------------------------------
@@ -797,10 +798,7 @@ function showCalendar() {
   $("calWrap").hidden = false;
   $("clearFavBtn").hidden = false;
   $("legendBtn").hidden = false;
-  // Re-apply the stored choice rather than forcing it open: the key belongs to
-  // the visitor, not to the act of loading a board. Not persisted — nothing was
-  // chosen here.
-  setLegendOpen(legendOpen, { persist: false });
+  setLegendOpen(false); // a fresh board opens with the key closed
   $("planPanel").hidden = false;
   updatePlanWindowLabel();
   requestAnimationFrame(() => {
@@ -812,7 +810,7 @@ function showCalendar() {
 /** …and back: the empty board, with the drop stage in the body. */
 function showIntake() {
   $("calWrap").hidden = true;
-  $("calLegend").hidden = true;
+  setLegendOpen(false); // no grid to key
   $("intakeStage").hidden = false;
   $("clearFavBtn").hidden = true;
   $("legendBtn").hidden = true;
