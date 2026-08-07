@@ -4087,6 +4087,11 @@ function renderPerfPill() {
   const pill = $("debugPill");
   if (pill) pill.textContent = state.version ? `debug v${state.version}` : "debug";
 
+  // The pill is hidden for most visitors, so the footer copyright carries the
+  // version too — as a hover tooltip.
+  const copy = $("footerVersion");
+  if (copy && state.version) copy.title = `EdFringeNow v${state.version}`;
+
   const stat = $("perfStat");
   if (!stat) return;
   const p = state.perf;
