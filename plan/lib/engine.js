@@ -13,6 +13,7 @@ import {
   timeToMinutesOfDay,
 } from "./availability.js";
 import { travelMinutes, DEFAULT_TRAVEL_MODE } from "./travel.js";
+import { FRINGE_DAY_START_MINUTES, shiftDate } from "../../shared/fringe-day.js";
 
 // --- indexing / matching --------------------------------------------------
 
@@ -144,19 +145,22 @@ export const DEFAULT_MIN_GAP_SAME_VENUE = 0;
 export const DEFAULT_MIN_GAP_DIFFERENT_VENUE = 30;
 
 // A Fringe evening runs past midnight: a performance that starts before this
-// clock time (05:00) belongs to the PREVIOUS calendar day's festival night,
-// drawn near the top of that day's 09:00–27:00 schedule column rather than at
-// the bottom of its own morning. Folding adds 1440 to its minute-of-day (so
-// 00:45 → 24:45) and re-dates it to the night before. 05:00 is a safe cutoff —
-// nothing in the catalogue starts between 01:00 and 08:59.
-export const NIGHT_FOLD_CUTOFF_MIN = 5 * 60;
+// clock time belongs to the PREVIOUS calendar day's festival night, drawn near
+// the top of that day's 09:00–27:00 schedule column rather than at the bottom of
+// its own morning. Folding adds 1440 to its minute-of-day (so 00:45 → 24:45) and
+// re-dates it to the night before.
+//
+// The cutoff is the one the whole site cuts its days at (06:00 —
+// shared/fringe-day.js), not a number of the planner's own: the Now page buckets
+// its day files by it and the scraper writes them by it, and a planner that
+// disagreed would place the same late show on a different night from the page
+// beside it. Safe either way — nothing in the catalogue starts between 00:30
+// and 06:00.
+export const NIGHT_FOLD_CUTOFF_MIN = FRINGE_DAY_START_MINUTES;
 
 /** Previous calendar day for a "YYYY-MM-DD" string (deterministic, no clock). */
 function previousDate(dateISO) {
-  const [y, m, d] = dateISO.split("-").map(Number);
-  const dt = new Date(Date.UTC(y, m - 1, d - 1));
-  const p2 = (n) => String(n).padStart(2, "0");
-  return `${dt.getUTCFullYear()}-${p2(dt.getUTCMonth() + 1)}-${p2(dt.getUTCDate())}`;
+  return shiftDate(dateISO, -1);
 }
 
 /**

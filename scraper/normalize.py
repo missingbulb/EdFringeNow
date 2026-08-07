@@ -52,8 +52,12 @@ emits the site's data layers:
                                lng; the rest are the global de-duplicated string
                                lists the day files and shows.min.json index into.
 
-  data/days/2026-08-DD.json    one file per August day, holding only the shows
-                               performing that day with the minimum a card needs.
+  data/days/2026-08-DD.json    one file per August FRINGE day, holding only the
+                               shows performing that day with the minimum a card
+                               needs. A fringe day runs 06:00 → 06:00 (see
+                               FRINGE_DAY_START), so the file also carries the
+                               small hours of the next morning, written with an
+                               extended start time ("24:30" for 00:30).
                                Normalized: venue is referenced by code and
                                genre/room by index into the global rooms/genres
                                lists (all in venues.json). This is what the site
@@ -92,7 +96,7 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from urllib.request import Request, urlopen
@@ -115,6 +119,24 @@ BLURB_MAX = 160
 # reading here — what the printed programme says, and what a visitor's watch
 # says while they're standing outside the venue. See local_date_start.
 FESTIVAL_TZ = ZoneInfo("Europe/London")
+
+# Where one festival day ends and the next begins — 06:00, not midnight. The
+# Now page asks "what can I still get into tonight", and at 23:50 the honest
+# answer includes the 00:30 show; a midnight cut would empty the page at exactly
+# the moment someone is looking for a later show. So the day file named
+# 2026-08-14 holds everything from 06:00 on the 14th to 06:00 on the 15th, and a
+# performance after midnight is written with an EXTENDED start time — 00:30
+# becomes "24:30" — which keeps the file sorted and lets every client compare
+# start times without knowing which calendar day each one falls on.
+#
+# THIS NUMBER IS SHARED with the front-end, which reads it from
+# shared/fringe-day.js: the day the page loads, the times its wheel offers and
+# the planner's night-fold all cut here too. Two different cut-offs would mean
+# shows that exist on one screen and not the other, so the two copies are held
+# together by a test (shared/__tests__/fringe-day.test.mjs) that reads this file.
+FRINGE_DAY_START = "06:00"
+FRINGE_DAY_START_MIN = 6 * 60
+DAY_MINUTES = 1440
 
 POSTCODES_IO_BULK = "https://api.postcodes.io/postcodes"
 
@@ -550,10 +572,34 @@ def build_lookups(master: list[dict],
     return genres, rooms, subgenres, ticket_statuses, age_restrictions
 
 
+def fringe_day(date: str, start: str) -> tuple[str, str]:
+    """Which fringe day a performance belongs to, and its start within that day.
+
+    A performance before FRINGE_DAY_START is part of the night before: its date
+    moves back one and its start time moves forward past 24:00, so 00:30 on the
+    15th is the 14th at "24:30". Everything from 06:00 on is left exactly as it
+    is — including the 06:00 breakfast shows, which belong to the morning they
+    happen in and not to the night that just ended.
+
+    >>> fringe_day("2026-08-15", "00:30")
+    ('2026-08-14', '24:30')
+    >>> fringe_day("2026-08-15", "06:00")
+    ('2026-08-15', '06:00')
+    """
+    hh, mm = int(start[:2]), int(start[3:5])
+    minutes = hh * 60 + mm
+    if minutes >= FRINGE_DAY_START_MIN:
+        return date, start
+    prev = (datetime.strptime(date, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
+    return prev, f"{hh + 24:02d}:{mm:02d}"
+
+
 def build_day_files(master: list[dict], genre_ix: dict[str, int],
                     room_ix: dict[str, int], sub_ix: dict[str, int],
                     ts_ix: dict[str, int]) -> dict[str, list]:
-    """Bucket shows by August performance date into minimal per-day records.
+    """Bucket shows by fringe day (06:00 → 06:00, see FRINGE_DAY_START) into
+    minimal per-day records. A performance after midnight lands in the previous
+    day's file with an extended `start` ("24:30" for 00:30) — see fringe_day.
 
     Each record is kept small:
 
@@ -571,13 +617,16 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
         site never renders it, so it is left out of the per-day payload.
     """
     days: dict[str, list] = {}
-    seen: set[tuple] = set()   # (id, date, start) — drop duplicate performances
+    seen: set[tuple] = set()   # (id, day, start) — drop duplicate performances
     for show in master:
         for p in show.get("performances", []):
-            date = p["date"]
+            # Bucket by the fringe day, not the calendar one: a 1 September
+            # 00:30 show is the last night of the run, and a 1 August 00:30 show
+            # belongs to a July night the festival never had, so it drops out.
+            date, start = fringe_day(p["date"], p["start"])
             if not date.startswith(AUGUST_PREFIX):
                 continue
-            key = (show["id"], date, p["start"])
+            key = (show["id"], date, start)
             if key in seen:
                 continue
             seen.add(key)
@@ -589,7 +638,7 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
                          if sg in sub_ix],
                 "venue": show["venue"],
                 "room": room_ix.get(show.get("room"), -1),
-                "start": p["start"],
+                "start": start,
                 "duration": show["duration"],
                 "free": 1 if show["free"] else 0,
                 "soldOut": 1 if p["soldOut"] else 0,
@@ -1167,6 +1216,30 @@ def selftest() -> int:
     assert d6["soldOut"] == 0 and d6["free"] == 0, d6
     d7 = days["2026-08-07"][0]
     assert d7["soldOut"] == 1 and ticket_statuses[d7["ts"]] == "SOLD_OUT", d7
+
+    # The fringe day runs 06:00 → 06:00, so a show after midnight belongs to the
+    # night before and is written with an extended start. 06:00 itself does not
+    # fold — a breakfast show is part of the morning it happens in.
+    assert fringe_day("2026-08-15", "00:30") == ("2026-08-14", "24:30")
+    assert fringe_day("2026-08-15", "05:59") == ("2026-08-14", "29:59")
+    assert fringe_day("2026-08-15", "06:00") == ("2026-08-15", "06:00")
+    assert fringe_day("2026-08-15", "23:45") == ("2026-08-15", "23:45")
+    assert fringe_day("2026-09-01", "00:30") == ("2026-08-31", "24:30")
+
+    late = dict(rec, id="LATE", performances=[
+        {"date": "2026-08-07", "start": "22:00", "soldOut": False, "status": "AVAILABLE"},
+        {"date": "2026-08-08", "start": "00:30", "soldOut": False, "status": "AVAILABLE"},
+    ])
+    late_days = build_day_files([late], genre_ix, room_ix, sub_ix, ts_ix)
+    # Both performances are the same night out, so they share one day file...
+    assert set(late_days) == {"2026-08-07"}, late_days
+    # ...sorted by the extended start, which keeps the after-midnight one last.
+    assert [r["start"] for r in late_days["2026-08-07"]] == ["22:00", "24:30"], late_days
+    # A show whose only performance is on the first morning of the run folds onto
+    # a July night the festival never had, so it is dropped rather than mis-dated.
+    july = dict(rec, id="JULY", performances=[
+        {"date": "2026-08-01", "start": "00:30", "soldOut": False, "status": "AVAILABLE"}])
+    assert build_day_files([july], genre_ix, room_ix, sub_ix, ts_ix) == {}
 
     # priceType can be a list (of strings or objects) in real data.
     assert is_free({"priceType": ["PAID"], "freeTicketed": False}) is False

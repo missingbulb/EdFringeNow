@@ -13,6 +13,7 @@ import {
   minutesForHour,
   wheelHours,
 } from "../constraint-time.js";
+import { FRINGE_DAY_END_MINUTES, FRINGE_DAY_START_MINUTES } from "../../shared/fringe-day.js";
 
 const at = (h, m) => h * 60 + m;
 
@@ -25,8 +26,10 @@ test("the wheel starts at the next five-minute slot from now", () => {
 test("the wheel's first hour is the current hour, not the first show's", () => {
   const hours = wheelHours(at(14, 31));
   assert.equal(hours[0], "14");
-  assert.equal(hours.at(-1), "23");
-  assert.equal(hours.length, 10);
+  // ...and it runs to the end of the FRINGE day, not the calendar one: 29 is
+  // 05:00 tomorrow, the last hour a late show can start in.
+  assert.equal(hours.at(-1), "29");
+  assert.equal(hours.length, 16);
 });
 
 test("the current hour only offers minutes still ahead", () => {
@@ -48,17 +51,34 @@ test("the wheel opens two hours out, on the five-minute grid", () => {
   assert.equal(defaultConstraintTime(at(10, 3)), "12:05");
 });
 
-test("late in the day the default clamps to the last slot, never past midnight", () => {
-  assert.equal(defaultConstraintTime(at(22, 30)), "23:55");
-  assert.equal(defaultConstraintTime(at(23, 50)), "23:55");
+test("the evening rolls through midnight rather than stopping at it", () => {
+  // The point of the whole change: at 23:50 the wheel's next offer is a show
+  // after midnight, not nothing at all.
+  assert.equal(defaultConstraintTime(at(22, 30)), "24:30");
+  assert.equal(defaultConstraintTime(at(23, 50)), "25:50");
+  assert.deepEqual(wheelHours(at(23, 58)), ["24", "25", "26", "27", "28", "29"]);
+  assert.deepEqual(minutesForHour("24", at(23, 58)), WHEEL_MINUTES);
+});
+
+test("past midnight the wheel keeps counting up, not round", () => {
+  // 00:30 is 24:30 of the fringe day that started yesterday morning.
+  const nowMin = 24 * 60 + 30;
+  assert.equal(earliestWheelMinutes(nowMin), nowMin);
+  assert.equal(wheelHours(nowMin)[0], "24");
+  assert.equal(defaultConstraintTime(nowMin), "26:30");
+});
+
+test("the fringe day ends at 06:00, and the last slot is 05:55", () => {
+  assert.equal(defaultConstraintTime(at(28, 30)), "29:55");
+  assert.equal(defaultConstraintTime(at(29, 50)), "29:55");
   // ...and the wheel still has that one slot to offer.
-  assert.equal(earliestWheelMinutes(at(23, 58)), at(23, 55));
-  assert.deepEqual(wheelHours(at(23, 58)), ["23"]);
-  assert.deepEqual(minutesForHour("23", at(23, 58)), ["55"]);
+  assert.equal(earliestWheelMinutes(at(29, 58)), at(29, 55));
+  assert.deepEqual(wheelHours(at(29, 58)), ["29"]);
+  assert.deepEqual(minutesForHour("29", at(29, 58)), ["55"]);
 });
 
 test("the default is never a time already gone", () => {
-  for (let m = 0; m < 24 * 60; m += 7) {
+  for (let m = FRINGE_DAY_START_MINUTES; m < FRINGE_DAY_END_MINUTES; m += 7) {
     const [h, mm] = defaultConstraintTime(m).split(":").map(Number);
     assert.ok(h * 60 + mm >= earliestWheelMinutes(m), `default too early at ${m}`);
   }
