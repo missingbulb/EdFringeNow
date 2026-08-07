@@ -13,6 +13,13 @@
 # merge them into the existing normalized master, regenerate the venue + per-day
 # files, and commit any changes.
 #
+# This is a CATALOGUE top-up, and only that. `--recently-added LAST_SEVEN_DAYS`
+# never re-reads a show the festival hasn't touched, so it is not — and was never
+# — a source of fresh ticket status for the existing catalogue (#249). That job
+# belongs to refresh-tickets, which runs hourly during August and now covers
+# every remaining date rather than only today. Widening this task's window would
+# duplicate that work at a much higher fetch cost.
+#
 # Python: the scheduler workflow is a vendored thin shim and cannot carry a
 # `setup-python` step, so this uses the runner's own `python3` rather than the
 # retired workflow's pinned 3.11. The scraper is standard-library only, so any

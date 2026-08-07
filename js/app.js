@@ -12,6 +12,7 @@
  */
 
 import { isInUK } from "../shared/geo.js";
+import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
@@ -161,26 +162,33 @@ async function init() {
 }
 
 /* ---------- Data loading ---------- */
+/* How long a downloaded data file may be reused before we ask the network again
+ * (shared/data-cache.js). Both of these carry ticket status, which turns over
+ * through the day, so neither is held longer than a day — the planner's much
+ * bulkier catalogue is what earns a longer life, and it earns it by carrying no
+ * availability at all.
+ *
+ * The day file is keyed by date, so this is a within-the-day reuse: tomorrow
+ * asks for a different url and downloads it fresh regardless. */
+const DAY_TTL_MS = DAY_MS;
+const LOOKUPS_TTL_MS = DAY_MS;
+
 /* Load today's shows: the per-day file (only today's performances, kept small)
  * joined with the venue lookup (names + coordinates), reshaped for the map and
  * list. Only the current day is fetched, so the payload stays light. */
 async function loadShows() {
   try {
-    const [venuesRes, dayRes] = await Promise.all([
-      fetch("data/venues.json"),
-      fetch(`data/days/${NOW.date}.json`),
+    const [lookups, day] = await Promise.all([
+      cachedFetchJson("data/venues.json", LOOKUPS_TTL_MS, noteCache),
+      cachedFetchJson(`data/days/${NOW.date}.json`, DAY_TTL_MS, noteCache),
     ]);
-    if (!venuesRes.ok) throw new Error(`venues HTTP ${venuesRes.status}`);
-    if (!dayRes.ok) throw new Error(`day ${NOW.date} HTTP ${dayRes.status}`);
     // The shared lookup file carries the venue map plus the global rooms/genres
     // lists that the day records index into. Fetched once.
-    const lookups = await venuesRes.json();
     state.venues = lookups.venues;
     state.rooms = lookups.rooms || [];
     state.genres = lookups.genres || [];
     state.subgenres = lookups.subgenres || [];
     state.ticketStatuses = lookups.ticketStatuses || [];
-    const day = await dayRes.json();
     // Drop shows whose venue we couldn't geocode — they can't be placed on the map.
     state.shows = day
       .map((entry, i) => adaptShow(entry, state, i))
@@ -189,6 +197,13 @@ async function loadShows() {
     console.error("Could not load show data:", err);
     state.shows = [];
   }
+}
+
+/* Where the shared data cache (shared/data-cache.js) reports a cache write it
+ * couldn't make or a stale copy it fell back on. Never surfaced in the UI: in
+ * both cases the caller still got its data. */
+function noteCache(err, url) {
+  console.info("Data cache —", url, err);
 }
 
 /* Join a minimal per-day record with its venue and expand to the model the map

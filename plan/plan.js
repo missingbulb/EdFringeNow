@@ -13,6 +13,7 @@
 // whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
+import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
 import { parseFavourites } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
@@ -39,19 +40,28 @@ import { PRICE_OPTIONS, matchesPrice, priceLabel } from "../shared/price.js";
 
 const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehydrated against VENUES_URL
 const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
+const AVAILABILITY_URL = "../data/normalized/availability.min.json"; // per-performance ticket status
 const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug → full text, fetched lazily
 
 /* How long a downloaded data file may be reused before we ask the network
- * again. The catalogue turns over daily — ticket statuses go stale and shows
- * get added — so a day is the most it can be trusted. Descriptions are close to
- * immutable (a show's blurb doesn't change mid-festival) and are the bulkiest
- * file, so they are held far longer; a week means a returning visitor pays for
- * them once. Both are served from the Cache Storage API rather than
- * localStorage, whose ~5 MB ceiling neither file would fit under. */
-const CATALOGUE_TTL_MS = 24 * 60 * 60 * 1000;
-const DESCRIPTIONS_TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const DATA_CACHE = "edfringe-data-v1";
-const FETCHED_KEY = "edfringe.plan.fetched.v1"; // url → epoch ms of the last fetch
+ * again (shared/data-cache.js). Each file gets the lifetime its content has,
+ * which is the whole reason availability was split out of the catalogue:
+ *
+ *  - the catalogue is the bulkiest blocking download (3.0 MB, 948 KB gzipped)
+ *    and now carries nothing that changes through the day, so four days of
+ *    reuse costs a returning visitor only the shows added since;
+ *  - availability moves hourly, so a day is the most it can be trusted — and at
+ *    149 KB gzipped that daily re-download is a sixth of what re-fetching the
+ *    catalogue with it would have cost;
+ *  - venues.json is small and its lookup lists are append-only, so refetching
+ *    it daily keeps it at least as new as any cached catalogue that indexes
+ *    into it;
+ *  - descriptions are effectively immutable, so a week means a returning
+ *    visitor pays for them once. */
+const CATALOGUE_TTL_MS = 4 * DAY_MS;
+const AVAILABILITY_TTL_MS = DAY_MS;
+const LOOKUPS_TTL_MS = DAY_MS;
+const DESCRIPTIONS_TTL_MS = 7 * DAY_MS;
 const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
 
 const YEAR = 2026;
@@ -227,30 +237,42 @@ const state = {
 
 // --- Data loading + rehydration ---------------------------------------
 //
-// The planner downloads two files: the compact catalogue (shows.min.json, packed
-// by scraper/normalize.py) and the shared lookups (venues.json). rehydrateShows()
-// (./lib/hydrate.js) unpacks the first against the second back into the full
-// records the engine expects — every enum is an index into a venues.json list,
-// venueName is rebuilt from the venue code + room, dates are MMDD ints, and the
-// bare image GUID gets its host prefix re-attached — so the rest of the app sees
-// a ready-to-use catalogue identical in shape to the old shows.json.
+// The planner downloads three files up front: the compact catalogue
+// (shows.min.json, packed by scraper/normalize.py), the shared lookups
+// (venues.json) and the availability sidecar (availability.min.json).
+// rehydrateShows() (./lib/hydrate.js) joins them back into the full records the
+// engine expects — every enum is an index into a venues.json list, venueName is
+// rebuilt from the venue code + room, dates are MMDD ints, the bare image GUID
+// gets its host prefix re-attached, and each performance picks up its ticket
+// status from the sidecar — so the rest of the app sees a ready-to-use
+// catalogue identical in shape to the old shows.json.
 //
-// A third file — the descriptions sidecar — follows *after* those two have
-// landed, and nothing waits for it: see loadDescriptions.
+// The three are split the way they are so each can be cached for as long as its
+// contents actually last: see the TTL constants above. Availability is the only
+// one of them that moves through the day, and it is the smallest.
+//
+// A fourth file — the descriptions sidecar — follows *after* those have landed,
+// and nothing waits for it: see loadDescriptions.
 
 let dataPromise = null;
 
 function loadData() {
   dataPromise = (async () => {
-    // Both files are required to rehydrate: the compact catalogue and the lookups
-    // it indexes into. Fetch them together.
-    const [wire, lookups] = await Promise.all([
-      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS),
-      cachedFetchJson(VENUES_URL, CATALOGUE_TTL_MS),
+    // All three are wanted to rehydrate, so they are fetched together. Only
+    // availability is allowed to fail: without it every performance is
+    // status-unknown, which the grid already draws, and a planner with no
+    // availability beats no planner at all.
+    const [wire, lookups, availability] = await Promise.all([
+      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache),
+      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache),
+      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache).catch((err) => {
+        console.info("Fringe Planner: ticket availability unavailable", err);
+        return null;
+      }),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
     state.lookups = lookups;
-    state.catalogue = rehydrateShows(wire, lookups, YEAR);
+    state.catalogue = rehydrateShows(wire, lookups, YEAR, availability);
     state.index = buildIndex(state.catalogue);
     state.facets = catalogueFacets(state.catalogue);
     initSearchUI();
@@ -265,76 +287,11 @@ function loadData() {
   return dataPromise;
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.json();
-}
-
-/* When each cached URL was last fetched. A plain localStorage map — the
- * payloads live in Cache Storage, this is only the clock beside them. */
-function fetchStamps() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(FETCHED_KEY) || "{}");
-    return raw && typeof raw === "object" ? raw : {};
-  } catch {
-    return {};
-  }
-}
-
-function stampFetch(url) {
-  try {
-    localStorage.setItem(FETCHED_KEY, JSON.stringify({ ...fetchStamps(), [url]: Date.now() }));
-  } catch {
-    /* private mode / full quota — we just re-fetch next time */
-  }
-}
-
-/**
- * fetchJson with a local copy kept for `ttlMs`.
- *
- * Inside the TTL the cached body is returned without touching the network.
- * Outside it — or with nothing cached — the network is asked, and the answer
- * replaces the copy. If that request fails and a stale copy exists, the stale
- * copy wins: a week-old description or yesterday's catalogue is far better than
- * an error page, and the caller has no way to draw anything without one.
- *
- * Degrades to a plain fetch wherever Cache Storage isn't available (it needs a
- * secure context, so `file://` and plain http get the uncached path).
- */
-async function cachedFetchJson(url, ttlMs) {
-  let cache = null;
-  try {
-    if (typeof caches !== "undefined") cache = await caches.open(DATA_CACHE);
-  } catch {
-    cache = null;
-  }
-  if (!cache) return fetchJson(url);
-
-  const fetchedAt = fetchStamps()[url];
-  if (fetchedAt && Date.now() - fetchedAt < ttlMs) {
-    const hit = await cache.match(url);
-    if (hit) return hit.json();
-  }
-
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-    try {
-      await cache.put(url, res.clone());
-      stampFetch(url);
-    } catch (err) {
-      console.info("Fringe Planner: couldn't cache", url, err);
-    }
-    return res.json();
-  } catch (err) {
-    const stale = await cache.match(url);
-    if (stale) {
-      console.info("Fringe Planner: using the cached copy of", url, err);
-      return stale.json();
-    }
-    throw err;
-  }
+/* Where the shared data cache (shared/data-cache.js) reports a cache write it
+ * couldn't make or a stale copy it fell back on. Never surfaced in the UI: in
+ * both cases the caller still got its data. */
+function noteCache(err, url) {
+  console.info("Fringe Planner: data cache —", url, err);
 }
 
 /**
@@ -346,7 +303,7 @@ async function cachedFetchJson(url, ttlMs) {
  */
 function loadDescriptions() {
   if (state.descriptionsPromise) return state.descriptionsPromise;
-  state.descriptionsPromise = cachedFetchJson(DESCRIPTIONS_URL, DESCRIPTIONS_TTL_MS)
+  state.descriptionsPromise = cachedFetchJson(DESCRIPTIONS_URL, DESCRIPTIONS_TTL_MS, noteCache)
     .then((payload) => {
       state.descriptions = new Map(Object.entries((payload && payload.d) || {}));
       if (!$("ssPop").hidden) runSearch();
