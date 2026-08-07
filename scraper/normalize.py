@@ -64,6 +64,12 @@ Locations are normalized to a venue code plus the specific room (space) of the
 show. Venue coordinates are geocoded from UK postcodes via postcodes.io and
 cached in venues.json so a refresh only geocodes new venues.
 
+Times are normalized the same way, and it matters just as much: the API stamps
+performances in UTC, every file written from here carries **Edinburgh
+wall-clock** ("HH:MM" against a local date), and the single conversion between
+the two lives in `local_date_start`. Downstream — day files, the Now page, the
+planner — no code touches a time zone; a "19:30" is 19:30 on the door.
+
 Ticket prices come from a **second input**: data/prices.json, the fetch-once
 cache written by scraper/fetch_prices.py. The listing API exposes no amounts —
 only a free/paid flag — so real money is folded in here (apply_prices) and
@@ -86,7 +92,9 @@ import argparse
 import json
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
@@ -102,6 +110,11 @@ DEFAULT_PRICES = ROOT / "data" / "prices.json"
 
 AUGUST_PREFIX = "2026-08"
 BLURB_MAX = 160
+
+# The festival's own clock. Every time this pipeline writes is a wall-clock
+# reading here — what the printed programme says, and what a visitor's watch
+# says while they're standing outside the venue. See local_date_start.
+FESTIVAL_TZ = ZoneInfo("Europe/London")
 
 POSTCODES_IO_BULK = "https://api.postcodes.io/postcodes"
 
@@ -203,6 +216,39 @@ def short_blurb(description: str | None) -> str:
     return cut + "…"
 
 
+def local_date_start(dt: str | None) -> tuple[str, str] | None:
+    """A performance's API `dateTime` as Edinburgh wall-clock: (date, "HH:MM").
+
+    The API stamps performances in **UTC**: "2026-08-06T11:45:00.000Z" is the
+    11:45 *Zulu* instant, not a quarter to noon in Edinburgh. August runs on
+    BST, an hour ahead, so reading those digits literally — which this pipeline
+    used to do — filed every show an hour early. The data said so itself: the
+    "7am Oboe Rave" sat at 06:00, "Jokes At Noon" at 11:00, and Shakespeare for
+    Breakfast (a 10am institution) at 09:00.
+
+    Everything downstream — the day files, the Now page's "on next", the
+    planner's timeline — reads these strings as Edinburgh wall-clock and shows
+    them to a visitor standing in Edinburgh. So the one conversion the pipeline
+    needs happens here, at the single boundary where the API's instants become
+    the site's local times, and nothing after this point touches a time zone.
+
+    A stamp carrying no zone is read as UTC (the API has never sent one).
+    Returns None for a missing or unparseable value, so callers can skip the
+    performance rather than invent a time for it.
+    """
+    if not dt:
+        return None
+    try:
+        # fromisoformat only learned "Z" in 3.11; spell it out for older runners.
+        parsed = datetime.fromisoformat(dt.strip().replace("Z", "+00:00"))
+    except (ValueError, AttributeError):
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    local = parsed.astimezone(FESTIVAL_TZ)
+    return local.strftime("%Y-%m-%d"), local.strftime("%H:%M")
+
+
 # Every listing image is served from this single host. The master stores only
 # the trailing GUID and the client re-attaches the prefix, which trims ~50 bytes
 # off each of the thousands of image fields in shows.json.
@@ -283,13 +329,15 @@ def normalize_event(event: dict) -> dict:
 
     performances = []
     for p in event.get("performances") or []:
-        dt = p.get("dateTime")
-        if not dt or p.get("cancelled"):
+        if p.get("cancelled"):
             continue
-        # The API stores Edinburgh wall-clock time; take date/time literally.
+        when = local_date_start(p.get("dateTime"))
+        if not when:
+            continue
+        date, start = when
         performances.append({
-            "date": dt[:10],
-            "start": dt[11:16],
+            "date": date,
+            "start": start,
             "soldOut": bool(p.get("soldOut")),
             "status": p.get("ticketStatus") or p.get("status"),
         })
@@ -980,8 +1028,24 @@ def selftest() -> int:
     assert image_ref("https://other.example/x.jpg") == "https://other.example/x.jpg"
     assert image_ref(None) is None
     assert len(rec["performances"]) == 2, "cancelled performance must be dropped"
+    # 11:45Z in August is 12:45 in Edinburgh. The fixture's stamps are UTC
+    # because the API's are, and every time this file writes is local.
     assert rec["performances"][0] == {
-        "date": "2026-08-06", "start": "11:45", "soldOut": False, "status": "AVAILABLE"}
+        "date": "2026-08-06", "start": "12:45", "soldOut": False, "status": "AVAILABLE"}
+
+    # local_date_start is the pipeline's only time-zone crossing, so pin the
+    # cases that would silently file a show on the wrong hour or the wrong day.
+    assert local_date_start("2026-08-06T11:45:00.000Z") == ("2026-08-06", "12:45")
+    # A late show crosses midnight into the next date, as it does on the door.
+    assert local_date_start("2026-08-09T23:30:00.000Z") == ("2026-08-10", "00:30")
+    # Outside BST the offset is zero and the digits pass through unchanged.
+    assert local_date_start("2026-01-15T19:00:00.000Z") == ("2026-01-15", "19:00")
+    # An explicit offset is honoured rather than re-read as UTC.
+    assert local_date_start("2026-08-06T13:45:00+02:00") == ("2026-08-06", "12:45")
+    # A zone-less stamp is read as UTC; junk yields nothing to file.
+    assert local_date_start("2026-08-06T11:45:00") == ("2026-08-06", "12:45")
+    assert local_date_start(None) is None and local_date_start("") is None
+    assert local_date_start("not a date") is None
 
     # Prices arrive from the separate fetch-once cache, keyed by the same show
     # id. A cache miss on a paid show leaves the price *unknown* (None) — the
@@ -1026,8 +1090,8 @@ def selftest() -> int:
     # A performance carries only what NAMES it. Status and soldOut are the two
     # fields that move through the day and they live in the sidecar instead, so
     # this file can be cached for days without freezing availability.
-    assert packed["p"][0] == {"d": 806, "s": "11:45"}, packed
-    assert packed["p"][1] == {"d": 807, "s": "11:45"}, packed
+    assert packed["p"][0] == {"d": 806, "s": "12:45"}, packed
+    assert packed["p"][1] == {"d": 807, "s": "12:45"}, packed
     # venueName here isn't "<room> at <venue name>", so it is kept verbatim (`vn`).
     assert packed["vn"] == "Pleasance Courtyard", packed
     # An unpriced show carries no price keys at all, so the client can tell
@@ -1055,9 +1119,9 @@ def selftest() -> int:
     avail = build_availability([rec])
     assert avail["v"] == 1 and avail["ts"] == ["AVAILABLE", "SOLD_OUT"], avail
     a_ix = {s: i for i, s in enumerate(avail["ts"])}
-    assert avail["a"]["202610THING"] == {"806|11:45": a_ix["AVAILABLE"],
-                                         "807|11:45": a_ix["SOLD_OUT"]}, avail
-    assert avail["o"] == {"202610THING": ["807|11:45"]}, avail
+    assert avail["a"]["202610THING"] == {"806|12:45": a_ix["AVAILABLE"],
+                                         "807|12:45": a_ix["SOLD_OUT"]}, avail
+    assert avail["o"] == {"202610THING": ["807|12:45"]}, avail
     # Every performance in the catalogue must be findable in the sidecar under
     # the same key — this is the join the client depends on.
     for perf in packed["p"]:
@@ -1065,7 +1129,7 @@ def selftest() -> int:
         assert key in avail["a"]["202610THING"], (key, avail)
     # A show with no statuses at all is omitted rather than carried as -1s: a
     # missing entry IS "unknown", and saying so twice costs bytes.
-    blank = dict(rec, id="NOSTATUS", performances=[{"date": "2026-08-06", "start": "11:45",
+    blank = dict(rec, id="NOSTATUS", performances=[{"date": "2026-08-06", "start": "12:45",
                                                     "soldOut": False, "status": None}])
     assert build_availability([blank])["a"] == {}, build_availability([blank])
 
@@ -1093,7 +1157,7 @@ def selftest() -> int:
     for dropped in ("venueName", "performances", "blurb", "subgenres", "smallImage",
                     "description"):
         assert dropped not in d6, f"day record must be minimal: {dropped}"
-    assert d6["start"] == "11:45"
+    assert d6["start"] == "12:45"
     # No price known -> no `pm` key; a priced show carries the cheapest band.
     assert "pm" not in d6, d6
     d6_priced = build_day_files([priced], genre_ix, room_ix, sub_ix,

@@ -56,7 +56,7 @@ from fetch_shows import (
     get_token,
     post_json,
 )
-from normalize import is_free
+from normalize import is_free, local_date_start
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "data" / "prices.json"
@@ -410,7 +410,9 @@ def price_one_show(token: str, event: dict, samples: int, delay: tuple[float, fl
     rec = dict(rec)
     rec["slug"] = event.get("slug")
     rec["ref"] = perf["boxOfficeId"]
-    rec["date"] = (perf.get("dateTime") or "")[:10]
+    # Which performance the amounts were read off, as the local date the rest of
+    # the site names that performance by (local_date_start, not the UTC stamp).
+    rec["date"] = (local_date_start(perf.get("dateTime")) or ("", ""))[0]
 
     note = ""
     if len(records) > 1:

@@ -61,6 +61,7 @@ from normalize import (
     DEFAULT_MASTER_MIN,
     DEFAULT_PRICES,
     DEFAULT_VENUES,
+    local_date_start,
     write_derived_outputs,
     write_json,
 )
@@ -91,12 +92,16 @@ def collect_statuses(events: dict, since: str,
     for ev in events.get("results") or []:
         eid = event_id(ev)
         for p in ev.get("performances") or []:
-            dt = p.get("dateTime")
-            if not dt or p.get("cancelled") or dt[:10] < since:
+            if p.get("cancelled"):
+                continue
+            # Edinburgh wall-clock, exactly as the master keys performances —
+            # the API's UTC stamp would miss by an hour and match nothing.
+            when = local_date_start(p.get("dateTime"))
+            if not when or when[0] < since:
                 continue
             status = p.get("ticketStatus") or p.get("status")
             if status:
-                into[(eid, dt[:10], dt[11:16])] = status
+                into[(eid, when[0], when[1])] = status
 
 
 def apply_statuses(master: list[dict], statuses: dict[tuple[str, str, str], str],

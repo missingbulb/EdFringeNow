@@ -101,6 +101,17 @@ host prefix.
 **`ticketStatus`**, `boxOfficeId`, `boxOfficeRef`, `accessibility` ([enum]),
 `badges` ({label, colour}), `concessions`.
 
+**`dateTime` is UTC, not Edinburgh wall-clock.** It arrives as
+`"2026-08-06T11:45:00.000Z"` and the `Z` is real: that show opens its doors at
+**12:45** during the festival, because August is BST (UTC+1). Slicing the digits
+straight out of the string — which `normalize.py` did until #time-zone — files
+every performance an hour early, and the resulting data quietly looks fine: the
+"7am Oboe Rave" sat at 06:00, "Jokes At Noon" at 11:00, and Shakespeare for
+Breakfast (a 10am institution) at 09:00. Those shows-named-after-their-own-time
+are the cheapest way to check a fresh scrape landed on the right hour. The
+conversion lives in `normalize.local_date_start` and happens exactly once, at
+the edge; everything the pipeline writes downstream is Edinburgh wall-clock.
+
 **`ticketStatus` is the signal for "can I get a ticket".** Values seen in a full
 scrape: `TICKETS_AVAILABLE`, `TWO_FOR_ONE`, `FREE_NON_TICKETED`, `FREE_TICKETED`,
 `PREVIEW_SHOW`, `EVENT_SPECIFIC`, `NO_ALLOCATION_CONTACT_VENUE` (and `SOLD_OUT`
