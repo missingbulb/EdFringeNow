@@ -8,7 +8,7 @@ knowledge.
 
 | Section | How enforced |
 |---|---|
-| Live API unreachable from a session | prose + `probe-edfringe-api` skill |
+| Live API unreachable from a session | prose |
 | `ticketStatus`, not `soldOut` | prose |
 | Committed data is generated output | prose + check `edfringe-data-dir-is-generator-output` |
 | Wire format is a four-file change | check `edfringe-lookup-indices` + prose |

@@ -18,5 +18,5 @@ export default {
   marker: null,
   prose: 'RULES.md',
   worldRules: [lookupIndices, normalizerSelftestInVerify, dataDirIsGeneratorOutput],
-  skills: ['probe-edfringe-api'],
+  skills: [],
 };
