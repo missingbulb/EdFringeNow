@@ -1155,11 +1155,13 @@ function statusPillHTML(status) {
   // open a real explanation on hover (see conflictTipHTML).
   const conflict = CONFLICT_KINDS[status.kind];
   if (conflict) {
-    // A red triangle, not a dinner plate: this is the one verdict the user can
-    // fix in a second, and it was reading as decoration.
+    // The triangle alone. The label spelled out what the hover card explains
+    // properly anyway, and it was the widest thing in the status column — a
+    // mark that says "something here" is enough to earn the hover.
     return (
-      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}">` +
-      `<span class="st-warn" aria-hidden="true">▲</span>${conflict.label}</button>`
+      `<button type="button" class="st-blocked st-conflict" data-conflict="${status.kind}" ` +
+      `aria-label="${escapeHtml(conflict.label)}">` +
+      `<span class="st-warn" aria-hidden="true">▲</span></button>`
     );
   }
   switch (status.kind) {
@@ -2771,6 +2773,12 @@ function wireCellTips() {
 const SCH_HOUR_PX = 34; // the axis now spans a fixed 09:00–27:00 (18h), so a
                         // shorter hour keeps the whole night on one calm board
 const SCH_MIN_BLOCK = 34;
+/* Below this, a block can't carry a two-line title *and* its meta line, so the
+ * start–end time goes and the title clamps to one line — the axis beside the
+ * block already says when it is, and the venue is the fact you can't get
+ * anywhere else. Blocks never fall below SCH_MIN_BLOCK, and a floor-height
+ * block still fits a title line plus the meta line comfortably. */
+const SCH_TIGHT_PX = 42;
 // The width of a day with nothing planned in it. Wide enough to carry the date
 // and read as a day, narrow enough that a fortnight of blanks doesn't squeeze
 // the days you're actually going out on.
@@ -3231,19 +3239,26 @@ function buildScheduleBlock(slot, top, rawBottom) {
   block.style.top = `${top}px`;
   block.style.height = `${height}px`;
   block.dataset.slug = slot.slug;
+  // What actually fits, measured off the block's own height rather than the
+  // column width — an hour-long slot is cramped on any screen. The title and
+  // the venue are what survive; the clock is readable off the axis beside it.
+  if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
 
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = slot.venueName || slot.venueCode || "";
+  // Title first, then one meta line carrying time and venue together — they used
+  // to be a line each, which spent two thirds of a small block on chrome.
   // No native title — the rich hover card (fillShowCard) carries all of this, and
   // a title here would double up as a second, parallel tooltip on hover.
   block.innerHTML =
     (forced ? `<span class="sch-pin" aria-hidden="true">🔒</span>` : "") +
     `<span class="sch-emoji" aria-hidden="true">${genreEmoji(slot.genre)}</span>` +
     `<span class="sch-body-text">` +
-    `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     `<span class="sch-name">${escapeHtml(slot.title)}</span>` +
+    `<span class="sch-meta">` +
+    `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     (venue ? `<span class="sch-venue">${escapeHtml(venue)}</span>` : "") +
-    `</span>`;
+    `</span></span>`;
   return block;
 }
 
@@ -3254,12 +3269,21 @@ function buildTravelLeg(a, b, top, bottom) {
   leg.style.top = `${top}px`;
   leg.style.height = `${Math.max(0, bottom - top)}px`;
 
+  // How long the gap actually is, so the leg can say what's left after the
+  // journey rather than only how long the journey takes — "12 min walk" in a
+  // 15-minute gap and in an hour-long one are very different facts.
+  const gapMin = Math.max(0, b.startMinuteOfDay - a.endMinuteOfDay);
+  const spareStr = (travelMin) => {
+    const spare = Math.round(gapMin - travelMin);
+    return spare >= 0 ? `+${spare}′` : `${spare}′`;
+  };
+
   const sameVenue = a.venueCode && b.venueCode && a.venueCode === b.venueCode;
   let text;
   let title;
   if (sameVenue) {
-    text = "same venue";
-    title = `${a.venueName || "Same venue"} — no travel`;
+    text = `same venue · ${gapMin}′ gap`;
+    title = `${a.venueName || "Same venue"} — no travel, ${gapMin} min between shows`;
   } else {
     const km = distanceKm(
       { lat: a.venueLat, lng: a.venueLng },
@@ -3271,12 +3295,19 @@ function buildTravelLeg(a, b, top, bottom) {
       state.mode
     );
     if (km == null || mins == null) {
-      text = "nearby";
+      text = `nearby · ${gapMin}′ gap`;
       title = "Travel time unknown (venue has no coordinates)";
     } else {
       const meta = MODE_META[state.mode];
-      text = `${Math.round(mins)} min ${meta.verb.replace(/^by /, "")} · ${km.toFixed(1)} km`;
-      title = `${meta.emoji} ${Math.round(mins)} min ${meta.verb} · ${km.toFixed(1)} km from ${a.venueName || "there"} to ${b.venueName || "there"}`;
+      // Primes rather than "min": three facts fit on the line that one and a
+      // half used to, and the leg is read at a glance, not parsed. The signed
+      // slack goes unlabelled — spelling out "spare" pushed the line past the
+      // pill in a normal-width column, and the hover title says it in full.
+      text = `${Math.round(mins)}′ · ${km.toFixed(1)}km · ${spareStr(mins)}`;
+      title =
+        `${meta.emoji} ${Math.round(mins)} min ${meta.verb} · ${km.toFixed(1)} km ` +
+        `from ${a.venueName || "there"} to ${b.venueName || "there"} — ` +
+        `${gapMin} min gap, ${Math.round(gapMin - mins)} min spare`;
     }
   }
   leg.title = title;
