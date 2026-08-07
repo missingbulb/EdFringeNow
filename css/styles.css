@@ -1168,24 +1168,6 @@ a { color: inherit; }
    ("up to") that the compact buttons drop, so it is said once, not six times. */
 .panel-hint { margin: 0 0 8px; font-size: 0.76rem; color: var(--muted); }
 
-/* --- "Your previous plan" restore bar --- */
-/* Sits where the plan would be, offering back a cached plan whose time has
-   already passed. Deliberately quiet: an offer, not an alert. */
-.restore-bar {
-  display: flex; align-items: center; gap: 8px; margin: 12px 0 0;
-  padding: 9px 12px; border: 1px dashed var(--line); border-radius: var(--radius);
-  background: var(--paper); font-size: 0.82rem; color: var(--muted);
-}
-.restore-bar[hidden] { display: none; }
-.restore-ico { flex: 0 0 auto; font-size: 0.9rem; }
-.restore-text { flex: 1 1 auto; min-width: 0; }
-.restore-text b { color: var(--ink); font-weight: 700; }
-.restore-btn { flex: 0 0 auto; font: inherit; font-weight: 700; font-size: 0.78rem; color: var(--blue); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
-.restore-btn:hover { border-color: var(--blue); background: #fff; }
-.restore-x { flex: 0 0 auto; border: none; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; cursor: pointer; width: 24px; height: 24px; border-radius: 8px; }
-.restore-x:hover { color: var(--ink); background: rgba(0, 0, 0, 0.05); }
-.restore-btn:focus-visible, .restore-x:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-
 /* --- The plan: a compact vertical itinerary (works on narrow screens) --- */
 .plan { margin: 16px 0 0; }
 .plan:empty { display: none; }
