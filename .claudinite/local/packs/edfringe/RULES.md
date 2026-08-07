@@ -107,6 +107,34 @@ browser is here, and a UI change isn't done until it has been looked at.
   the CSS, and headless Chromium cannot tunnel the proxy to reach an external
   host — `curl` is the one path that works for off-box assets.
 
+## The live site is reachable — check real state at `*.edfringenow.com`, allowing for CDN lag
+
+The environment's egress policy allows `*.edfringenow.com`, the live site's own
+domain. So a question about what the deployed site actually serves — is the new
+field in `data/shows.json`? did the deploy land? — is answerable directly, with
+`curl https://www.edfringenow.com/…` through the agent proxy, rather than by
+reasoning from the working tree. General egress is still closed: everything
+*except* the allowed domain fails the same way, so this is a single-domain
+window, not open internet.
+
+Two caveats before you trust what comes back:
+
+- **The response is CDN-cached, so a fresh push may not be visible yet.** A
+  200 with stale content is not evidence the deploy failed — re-check after a
+  delay, and never conclude "the change didn't ship" from one read taken
+  seconds after the push.
+- **Confirm the allowance is live in *your* session before relying on it.** The
+  policy is per-environment and a session can be running under an older one; on
+  2026-08-07 a probe of both `www.edfringenow.com` and the apex returned
+  `curl: (56) CONNECT tunnel failed, response 403`. A 403 at CONNECT is a policy
+  denial, not a site outage — `curl -sS "$HTTPS_PROXY/__agentproxy/status"`
+  lists the recent rejections and confirms which it is. When it's denied, say so
+  and fall back to the repo, rather than reporting the live site as down.
+
+As with the off-box CSS fetch above, `curl` is the working path: headless
+Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
+than the raw JSON or asset you usually want here.
+
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
