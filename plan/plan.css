@@ -1520,18 +1520,15 @@ a { color: inherit; }
    day's hours) are buttons: hover explains, click goes to the setting. Styled
    as text so a row of them doesn't read as a row of controls — the red
    triangle, not a button chrome, is what earns the glance. */
-/* The mark alone — no label. It only has to be findable enough to be hovered,
-   and the hover card is where the explanation actually lives. */
 .lane-status .st-conflict {
-  font: inherit; line-height: 1;
-  display: inline-grid; place-items: center;
-  width: 18px; height: 18px; border-radius: 5px;
-  background: none; border: none; padding: 0;
-  cursor: pointer;
+  font: inherit; font-size: 0.72rem; font-weight: 700; line-height: 1.1;
+  display: inline-flex; align-items: center; gap: 3px;
+  color: #9a6700; background: none; border: none; padding: 0;
+  cursor: pointer; white-space: nowrap;
 }
-.lane-status .st-conflict:hover { background: rgba(239, 68, 68, 0.12); }
-.lane-status .st-conflict:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
-.lane-status .st-warn { color: var(--warn); font-size: 0.78rem; }
+.lane-status .st-conflict:hover { text-decoration: underline; text-underline-offset: 2px; }
+.lane-status .st-conflict:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+.lane-status .st-warn { color: var(--warn); font-size: 0.62rem; }
 /* The setting a conflict pill sends you to, flashed on arrival so the scroll
    lands on something rather than just somewhere. */
 .ctl--flash { animation: ctlFlash 1.4s ease; border-radius: 10px; }
@@ -1570,13 +1567,12 @@ a { color: inherit; }
 }
 .sch-dayline--end .dl-blocked { top: 1px; transform: translateY(100%); }
 
-/* The inline "(excludes N shows)" pill on a meal band's centre label. Orange,
-   compact, and interactive (hover it for the list) — it replaces the old corner
-   "not placeable · N" badge on meal bands. */
-.excl-pill {
+/* The conflict triangle on a meal band's centre label — the same mark the lane
+   status pills carry, so the board and the grid say "conflict" the same way.
+   Interactive: hover it for the list of shows the break excludes. */
+.excl-mark {
   pointer-events: auto; cursor: help; vertical-align: middle;
-  font-size: 0.56rem; font-weight: 700; color: #fff; background: #c77700;
-  border-radius: 5px; padding: 0 5px; white-space: nowrap;
+  color: var(--warn); font-size: 0.66rem; line-height: 1;
 }
 /* The excludes-list hover popup — a narrower cousin of the show card. */
 .excl-pop {
