@@ -26,9 +26,21 @@ until this matures.
 
 There is **no server and no build step**. Everything runs in the browser:
 
-1. On load, `plan.js` `fetch()`es the show catalogue already shipped in this repo
-   — `../data/normalized/shows.json` (4,078 shows, each with a `performances[]`
-   of `{date, start, soldOut, status}`). GitHub Pages serves it gzipped (~1.1 MB).
+1. On load, `plan.js` fetches three files already shipped in this repo and joins
+   them into the catalogue the engine consumes (`lib/hydrate.js`): the compact
+   catalogue `../data/normalized/shows.min.json` (4,114 shows, each with a
+   `performances[]` of `{date, start}`), the shared lookups `../data/venues.json`
+   it indexes into, and `../data/normalized/availability.min.json`, which supplies
+   each performance's `{soldOut, status}`.
+
+   They are three files rather than one so each can be cached for as long as its
+   contents last — 4 days for the catalogue (948 KB gzipped), 1 day for
+   availability (149 KB), which is the only one of them that moves through the
+   day. See
+   [`shared/data-cache.js`](../shared/data-cache.js) and the caching table in
+   [`scraper/README.md`](../scraper/README.md). Availability is the one fetch
+   allowed to fail: without it every performance is status-unknown, which the
+   grid already draws.
 2. You upload your **favourites CSV** (the edfringe export). It is parsed in the
    browser with the `FileReader` API — nothing is uploaded anywhere. The CSV's
    `URL to Event Details` column yields a slug that matches `show.slug`, so
@@ -193,6 +205,6 @@ Availability uses the same denylist as the Python (`SOLD_OUT`, `OFF_SALE`,
   nothing) is gone: the search tools now offer a real genre/subgenre/venue
   filter, and gap / day hours / meal breaks / travel mode / per-day min-max are
   live controls on the plan panel.
-- **Data loading** fetches the full normalized file; a slimmer planner-only index
-  (~0.4 MB gzip) is a possible optimization if payload becomes a concern.
+- **Data loading** blocks on the catalogue + lookups + availability; the
+  descriptions sidecar follows lazily and nothing waits for it.
 - Mobile layout is out of scope for this milestone (desktop-first by design).

@@ -2,7 +2,7 @@
 """Normalize scraped edfringe show data into website-ready JSON.
 
 Reads the raw scrape (events + venues + genres produced by fetch_shows.py) and
-emits three layers of data:
+emits the site's data layers:
 
   data/normalized/shows.json   master, normalized, one record per show with all
                                its performances. The source of truth for later
@@ -13,12 +13,27 @@ emits three layers of data:
                                the compact wire form of the master, and the file
                                the planner actually downloads. Losslessly packed
                                against the venues.json lookups: every enum (genre,
-                               room, subgenre, ticket status, age restriction) is
-                               an index into a shared list; venueName is rebuilt
-                               from the venue code + room; smallImage is dropped
-                               when it equals image; booleans are 1/0; dates are an
-                               MMDD int; field names are 1-3 chars. The planner
-                               rehydrates it with venues.json (see plan/plan.js).
+                               room, subgenre, age restriction) is an index into a
+                               shared list; venueName is rebuilt from the venue
+                               code + room; smallImage is dropped when it equals
+                               image; booleans are 1/0; dates are an MMDD int;
+                               field names are 1-3 chars. The planner rehydrates it
+                               with venues.json + the availability sidecar below
+                               (see plan/plan.js). Deliberately carries NOTHING
+                               that changes through the day, so an unchanged
+                               festival regenerates it byte-for-byte and a client
+                               can hold it for days.
+
+  data/normalized/availability.min.json
+                               per-performance ticket status, split OUT of the
+                               catalogue above precisely because it is the one
+                               thing that moves hourly. Self-contained (it carries
+                               its own status list and indexes into nothing), so
+                               the hourly refresh rewrites this file alone and
+                               every other artifact stays untouched. 149 KB
+                               gzipped against the catalogue's 948 KB, which is
+                               the point: a returning visitor re-downloads
+                               availability, not 3 MB of unchanged listings.
 
   data/normalized/descriptions.min.json
                                slug -> full show description, as a sidecar the
@@ -79,6 +94,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RAW_DIR = ROOT / "data" / "raw_pages"
 DEFAULT_MASTER = ROOT / "data" / "normalized" / "shows.json"
 DEFAULT_MASTER_MIN = ROOT / "data" / "normalized" / "shows.min.json"
+DEFAULT_AVAILABILITY = ROOT / "data" / "normalized" / "availability.min.json"
 DEFAULT_DESCRIPTIONS = ROOT / "data" / "normalized" / "descriptions.min.json"
 DEFAULT_VENUES = ROOT / "data" / "venues.json"
 DEFAULT_DAYS_DIR = ROOT / "data" / "days"
@@ -438,18 +454,51 @@ def unify_subgenre_casing(master: list[dict]) -> None:
         show["subgenres"] = out
 
 
-def build_lookups(master: list[dict]) -> tuple[list[str], list[str], list[str], list[str], list[str]]:
+def extend_lookup(prior: list[str] | None, values: set[str]) -> list[str]:
+    """One lookup list, extended APPEND-ONLY: every entry the previous
+    venues.json published keeps its index forever, and anything new is appended
+    (sorted, so a rebuild is deterministic).
+
+    This is a correctness constraint, not tidiness. A browser holds these files
+    on independent clocks — shows.min.json for four days, venues.json for one
+    (shared/data-cache.js) — so a four-day-old catalogue is routinely decoded
+    against a venues.json fetched today. Re-sorting the whole list from scratch
+    would silently shift every index under that stale catalogue and relabel
+    shows' genres and rooms. Appending cannot: an index minted at any point
+    stays valid for every version that follows.
+
+    The corollary is that an entry is never dropped once published, even when
+    the current master no longer uses it. These are a few hundred short strings;
+    a stale-free decode is worth more than the bytes.
+    """
+    out = list(prior or [])
+    known = set(out)
+    out.extend(sorted(v for v in values if v not in known))
+    return out
+
+
+def build_lookups(master: list[dict],
+                  prior: dict | None = None
+                  ) -> tuple[list[str], list[str], list[str], list[str], list[str]]:
     """The global (genres, rooms, subgenres, ticketStatuses, ageRestrictions)
     lookup lists: every distinct genre, room, subgenre, per-performance ticket
-    status and age restriction across all shows, sorted. A show references them by
-    index in the day files and in shows.min.json; the lists ship once, alongside
-    the venues (run())."""
-    genres = sorted({s["genre"] for s in master if s.get("genre")})
-    rooms = sorted({s["room"] for s in master if s.get("room")})
-    subgenres = sorted({sg for s in master for sg in s.get("subgenres") or []})
-    ticket_statuses = sorted({p.get("status") for s in master
-                              for p in s.get("performances") or [] if p.get("status")})
-    age_restrictions = sorted({s["ageRestriction"] for s in master if s.get("ageRestriction")})
+    status and age restriction across all shows. A show references them by index
+    in the day files and in shows.min.json; the lists ship once, alongside the
+    venues (run()).
+
+    `prior` is the previously published venues.json, whose ordering is preserved
+    verbatim — see extend_lookup for why the lists are append-only.
+    """
+    prior = prior or {}
+    genres = extend_lookup(prior.get("genres"), {s["genre"] for s in master if s.get("genre")})
+    rooms = extend_lookup(prior.get("rooms"), {s["room"] for s in master if s.get("room")})
+    subgenres = extend_lookup(prior.get("subgenres"),
+                              {sg for s in master for sg in s.get("subgenres") or []})
+    ticket_statuses = extend_lookup(prior.get("ticketStatuses"),
+                                    {p.get("status") for s in master
+                                     for p in s.get("performances") or [] if p.get("status")})
+    age_restrictions = extend_lookup(prior.get("ageRestrictions"),
+                                     {s["ageRestriction"] for s in master if s.get("ageRestriction")})
     return genres, rooms, subgenres, ticket_statuses, age_restrictions
 
 
@@ -545,7 +594,7 @@ def venue_name_rebuildable(show: dict, venues: dict) -> bool:
 
 
 def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[str, int],
-                  sub_ix: dict[str, int], ts_ix: dict[str, int], age_ix: dict[str, int],
+                  sub_ix: dict[str, int], age_ix: dict[str, int],
                   venues: dict) -> list[dict]:
     """Pack the full master into the compact records the planner downloads.
 
@@ -555,15 +604,19 @@ def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[st
       * `g`/`rm`/`ar` — genre, room and age restriction as indices into the
         global genres/rooms/ageRestrictions lists (-1 when absent).
       * `sg` — subgenres as indices into the global subgenres list.
-      * `p[].t` — the performance ticket status as an index into ticketStatuses
-        (-1 when absent).
       * `vn` — venueName, kept ONLY when it can't be rebuilt from `v` + `rm`
         (venue_name_rebuildable); present-but-null for the no-venue shows.
       * `si` — smallImage, kept ONLY when it differs from `im` (image); otherwise
         the client mirrors image.
-      * `f`/`p[].o` — free / soldOut as 1/0.
+      * `f` — free as 1/0.
       * `p[].d` — the performance date as an MMDD int.
       * `im` — the bare image GUID; the client re-attaches the host prefix.
+
+    Each performance keeps only its identity — the date and start time that name
+    it. Its ticket status and soldOut flag are the two fields that change through
+    the day, and they live in the availability sidecar (build_availability) so
+    this file can be cached for days without freezing them. rehydrateShows in
+    plan/lib/hydrate.js puts the two halves back together.
     """
     out: list[dict] = []
     for s in master:
@@ -595,11 +648,80 @@ def minify_master(master: list[dict], genre_ix: dict[str, int], room_ix: dict[st
         rec["p"] = [{
             "d": month_day_key(p["date"]),
             "s": p["start"],
-            "o": 1 if p["soldOut"] else 0,
-            "t": ts_ix.get(p.get("status"), -1),
         } for p in s.get("performances") or []]
         out.append(rec)
     return out
+
+
+def performance_keys(performances: list[dict]) -> list[str]:
+    """Name each of a show's performances: ["807|21:15", "807|21:15#1", ...].
+
+    Deliberately content-addressed rather than positional. The sidecar and the
+    catalogue are cached on different clocks, so the client may hold a
+    four-day-old catalogue beside availability fetched an hour ago; a bare index
+    into the performance array would silently misalign the moment a show gained
+    or lost a date. A date plus a start time names the same performance in both
+    files or matches nothing at all.
+
+    A handful of shows (4 of 4114) list the same date and start twice, with
+    genuinely different ticket statuses — a preview and a regular sitting, say.
+    Those are not the same performance and must not collapse into one, so the
+    second and later occurrences carry a "#n" suffix. It is positional, and so
+    carries the misalignment risk the rest of this scheme avoids; it is confined
+    to the duplicates, where there is nothing else to tell them apart.
+
+    plan/lib/hydrate.js walks the same array in the same order — keep the two in
+    step.
+    """
+    seen: dict[str, int] = {}
+    keys: list[str] = []
+    for p in performances:
+        base = f"{month_day_key(p['date'])}|{p['start']}"
+        n = seen.get(base, 0)
+        seen[base] = n + 1
+        keys.append(base if n == 0 else f"{base}#{n}")
+    return keys
+
+
+def build_availability(master: list[dict]) -> dict:
+    """The availability sidecar: {"v", "ts", "a", "o"}.
+
+      * `ts` — this file's OWN ticket-status list. Unlike the day files and the
+        catalogue, the sidecar indexes into nothing external: it is rewritten
+        hourly and must not depend on venues.json having been refetched in the
+        same breath.
+      * `a`  — {show id: {performance key: index into `ts`}}. Performances with
+        no status at all are omitted rather than mapped to -1; the client reads a
+        missing entry as "unknown", which is what it is.
+      * `o`  — {show id: [performance key, ...]} for sold-out performances only.
+        A separate map because the flag is almost always false (the festival
+        reports a lost allocation as a *status*, not as soldOut — see
+        SCRAPING.md), so a per-performance boolean would cost far more than the
+        handful of keys it carries.
+
+    Everything here is derived from the master, which stays the single source of
+    truth: the sidecar is a projection of it, never an input.
+    """
+    statuses = sorted({p.get("status") for s in master
+                       for p in s.get("performances") or [] if p.get("status")})
+    ix = {s: i for i, s in enumerate(statuses)}
+    avail: dict[str, dict[str, int]] = {}
+    sold: dict[str, list[str]] = {}
+    for show in master:
+        performances = show.get("performances") or []
+        by_key: dict[str, int] = {}
+        sold_keys: list[str] = []
+        for key, p in zip(performance_keys(performances), performances):
+            status = p.get("status")
+            if status:
+                by_key[key] = ix[status]
+            if p.get("soldOut"):
+                sold_keys.append(key)
+        if by_key:
+            avail[show["id"]] = by_key
+        if sold_keys:
+            sold[show["id"]] = sold_keys
+    return {"v": 1, "ts": statuses, "a": avail, "o": sold}
 
 
 def build_descriptions(master: list[dict]) -> dict:
@@ -663,21 +785,33 @@ def load_prices(path: Path) -> dict:
 
 def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
                           days_dir: Path, master_min_path: Path,
-                          descriptions_path: Path, prices_path: Path) -> int:
+                          descriptions_path: Path, prices_path: Path,
+                          availability_path: Path) -> int:
     """Write everything derived from the master + venue map: the shared lookup
     file (venues.json), the per-day now-page files, the compact planner file
-    (shows.min.json) and its descriptions sidecar. Returns the number of day
-    files written.
+    (shows.min.json) and its availability + descriptions sidecars. Returns the
+    number of day files written.
 
     The lookup lists are built once here and indexed into by both the day files
     and shows.min.json, so the two stay in lockstep with a single source of truth.
+
+    Every output is a pure function of the master, the venue map and the price
+    cache, so re-running it over an unchanged master rewrites every file
+    byte-for-byte identically. The hourly ticket refresh leans on exactly that:
+    it touches the master's statuses and calls this, and only the files that
+    actually carry a status come back changed.
     """
     # Real ticket amounts, folded in before anything is packed so the master and
     # both wire forms agree on what a show costs.
     known = apply_prices(master, load_prices(prices_path))
     print(f"  priced {known}/{len(master)} shows from {prices_path.name}")
 
-    genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups(master)
+    # The lookup lists extend the ones already published rather than being
+    # re-derived from scratch — see extend_lookup: clients decode a cached
+    # catalogue against a newer venues.json, so indices must never move.
+    prior_lookups = json.loads(venues_path.read_text()) if venues_path.exists() else {}
+    genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups(
+        master, prior_lookups)
     write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
                              "subgenres": subgenres, "ticketStatuses": ticket_statuses,
                              "ageRestrictions": age_restrictions})
@@ -689,9 +823,11 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     age_ix = {a: i for i, a in enumerate(age_restrictions)}
 
     # Compact planner payload (packed against the lookups just written), and the
-    # descriptions it deliberately leaves behind.
+    # two things it deliberately leaves behind: the availability that moves
+    # hourly, and the descriptions that are too bulky to block on.
     write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
-                                              ts_ix, age_ix, venues))
+                                              age_ix, venues))
+    write_json(availability_path, build_availability(master))
     write_json(descriptions_path, build_descriptions(master))
 
     # Per-day August files + index.
@@ -723,10 +859,11 @@ def regen_from_master(args) -> int:
     venues = prior.get("venues", prior)
     n_days = write_derived_outputs(master, venues, venues_path,
                                    Path(args.days_dir), Path(args.master_min),
-                                   Path(args.descriptions), Path(args.prices))
+                                   Path(args.descriptions), Path(args.prices),
+                                   Path(args.availability))
     write_json(master_path, master)
     print(f"Regenerated from {master_path} ({len(master)} shows): "
-          f"{args.master_min}, {args.descriptions}, {venues_path} "
+          f"{args.master_min}, {args.availability}, {args.descriptions}, {venues_path} "
           f"({len(venues)} venues), {n_days} day files in {args.days_dir}")
     return 0
 
@@ -775,13 +912,14 @@ def run(args) -> int:
     venues = build_venues(venues_raw, existing_venues, geocode=not args.no_geocode)
     n_days = write_derived_outputs(master, venues, venues_path,
                                    Path(args.days_dir), Path(args.master_min),
-                                   Path(args.descriptions), Path(args.prices))
+                                   Path(args.descriptions), Path(args.prices),
+                                   Path(args.availability))
     # After the derived outputs, because that is where prices are folded in and
     # the master is the record of what they were.
     write_json(master_path, master)
 
     print(f"\nWrote: {master_path} ({len(master)} shows), {args.master_min}, "
-          f"{args.descriptions}, {venues_path} ({len(venues)} venues), "
+          f"{args.availability}, {args.descriptions}, {venues_path} ({len(venues)} venues), "
           f"{n_days} day files in {args.days_dir}")
     return 0
 
@@ -877,7 +1015,7 @@ def selftest() -> int:
     # lookups, dates MMDD ints, flags 1/0, smallImage kept only when it differs
     # from image, venueName dropped when it rebuilds from "<room> at <venue name>".
     venues = {"33": {"name": "Pleasance Courtyard"}}
-    packed = minify_master([rec], genre_ix, room_ix, sub_ix, ts_ix, age_ix, venues)[0]
+    packed = minify_master([rec], genre_ix, room_ix, sub_ix, age_ix, venues)[0]
     assert genres[packed["g"]] == "Comedy", packed
     assert [subgenres[i] for i in packed["sg"]] == ["Stand-up", "Character Comedy"], packed
     assert age_restrictions[packed["ar"]] == "14+" and rooms[packed["rm"]] == "Beneath", packed
@@ -885,8 +1023,11 @@ def selftest() -> int:
     # This fixture's large/small images differ, so smallImage is carried; in real
     # data they are identical and `si` is dropped entirely.
     assert packed["si"] == "small-guid", packed
-    assert packed["p"][0] == {"d": 806, "s": "11:45", "o": 0, "t": ts_ix["AVAILABLE"]}, packed
-    assert packed["p"][1]["o"] == 1 and ticket_statuses[packed["p"][1]["t"]] == "SOLD_OUT", packed
+    # A performance carries only what NAMES it. Status and soldOut are the two
+    # fields that move through the day and they live in the sidecar instead, so
+    # this file can be cached for days without freezing availability.
+    assert packed["p"][0] == {"d": 806, "s": "11:45"}, packed
+    assert packed["p"][1] == {"d": 807, "s": "11:45"}, packed
     # venueName here isn't "<room> at <venue name>", so it is kept verbatim (`vn`).
     assert packed["vn"] == "Pleasance Courtyard", packed
     # An unpriced show carries no price keys at all, so the client can tell
@@ -895,18 +1036,51 @@ def selftest() -> int:
 
     # A priced show carries `pm`, and `px` only when the range is wider than one
     # band, in both the catalogue and (pm alone) the day files.
-    packed_priced = minify_master([priced], genre_ix, room_ix, sub_ix, ts_ix,
+    packed_priced = minify_master([priced], genre_ix, room_ix, sub_ix,
                                   age_ix, venues)[0]
     assert packed_priced["pm"] == 22.5 and packed_priced["px"] == 29.5, packed_priced
-    packed_one = minify_master([one_band], genre_ix, room_ix, sub_ix, ts_ix,
+    packed_one = minify_master([one_band], genre_ix, room_ix, sub_ix,
                                age_ix, venues)[0]
     assert packed_one["pm"] == 12.0 and "px" not in packed_one, packed_one
     # A venueName that IS "<room> at <name>" rebuilds from the code + room, so it
     # is dropped from the wire form.
     rebuildable = dict(rec, venue="33", room="Beneath",
                        venueName="Beneath at Pleasance Courtyard")
-    packed2 = minify_master([rebuildable], genre_ix, room_ix, sub_ix, ts_ix, age_ix, venues)[0]
+    packed2 = minify_master([rebuildable], genre_ix, room_ix, sub_ix, age_ix, venues)[0]
     assert "vn" not in packed2, "rebuildable venueName must be dropped from the wire form"
+
+    # Availability sidecar: its own status list (indexing into nothing external),
+    # performances named by "MMDD|HH:MM" so a stale catalogue can still be joined
+    # against a fresh sidecar, and soldOut kept as a separate sparse map.
+    avail = build_availability([rec])
+    assert avail["v"] == 1 and avail["ts"] == ["AVAILABLE", "SOLD_OUT"], avail
+    a_ix = {s: i for i, s in enumerate(avail["ts"])}
+    assert avail["a"]["202610THING"] == {"806|11:45": a_ix["AVAILABLE"],
+                                         "807|11:45": a_ix["SOLD_OUT"]}, avail
+    assert avail["o"] == {"202610THING": ["807|11:45"]}, avail
+    # Every performance in the catalogue must be findable in the sidecar under
+    # the same key — this is the join the client depends on.
+    for perf in packed["p"]:
+        key = f"{perf['d']}|{perf['s']}"
+        assert key in avail["a"]["202610THING"], (key, avail)
+    # A show with no statuses at all is omitted rather than carried as -1s: a
+    # missing entry IS "unknown", and saying so twice costs bytes.
+    blank = dict(rec, id="NOSTATUS", performances=[{"date": "2026-08-06", "start": "11:45",
+                                                    "soldOut": False, "status": None}])
+    assert build_availability([blank])["a"] == {}, build_availability([blank])
+
+    # Lookup lists are append-only: a prior list keeps its order and its indices,
+    # and anything new lands after it. A four-day-old catalogue is decoded
+    # against a venues.json fetched today, so a moved index would relabel shows.
+    assert extend_lookup(["Zebra", "Apple"], {"Apple", "Mango", "Zebra"}) == \
+        ["Zebra", "Apple", "Mango"], "published entries must keep their index"
+    assert extend_lookup(["Gone"], {"New"}) == ["Gone", "New"], \
+        "an entry the master no longer uses must still not be dropped"
+    assert extend_lookup(None, {"B", "A"}) == ["A", "B"], "a fresh list is sorted"
+    prior = {"genres": ["Theatre", "Comedy"], "rooms": [], "subgenres": [],
+             "ticketStatuses": [], "ageRestrictions": []}
+    assert build_lookups([rec], prior)[0] == ["Theatre", "Comedy"], \
+        "build_lookups must extend the published order, not re-sort it"
 
     days = build_day_files([rec], genre_ix, room_ix, sub_ix, ts_ix)
     assert set(days) == {"2026-08-06", "2026-08-07"}, days
@@ -985,6 +1159,7 @@ def main() -> int:
     parser.add_argument("--master", default=str(DEFAULT_MASTER))
     parser.add_argument("--master-min", default=str(DEFAULT_MASTER_MIN))
     parser.add_argument("--descriptions", default=str(DEFAULT_DESCRIPTIONS))
+    parser.add_argument("--availability", default=str(DEFAULT_AVAILABILITY))
     parser.add_argument("--venues", default=str(DEFAULT_VENUES))
     parser.add_argument("--days-dir", default=str(DEFAULT_DAYS_DIR))
     parser.add_argument("--prices", default=str(DEFAULT_PRICES),

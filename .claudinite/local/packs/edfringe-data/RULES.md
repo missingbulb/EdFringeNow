@@ -102,11 +102,11 @@ so a second file can't ride in on its shape.
 ## Changing the wire format is a four-file change
 
 The day files and `shows.min.json` reference `data/venues.json`'s global lists
-**by position** (`genre`, `room`, `subs`, `ts`; `g`, `rm`, `sg`, `ar`, `p[].t`).
-That encoding has one producer and two decoders, and they must move together:
+**by position** (`genre`, `room`, `subs`, `ts`; `g`, `rm`, `sg`, `ar`). That
+encoding has one producer and two decoders, and they must move together:
 
 - producer — `scraper/normalize.py` (`build_lookups` / `build_day_files` /
-  `minify_master`)
+  `minify_master` / `build_availability`)
 - decoder 1 — `js/app.js` `adaptShow`, for the day files
 - decoder 2 — `plan/lib/hydrate.js` `rehydrateShows`, the exact inverse of
   `minify_master`, round-tripped against the real committed files by
@@ -116,6 +116,21 @@ Add or drop an indexed field and all three change in the same commit. That the
 indices still *resolve* is enforced by the `edfringe-lookup-indices` check — it
 catches a lookup list regenerated without its day files, but nothing can catch a
 decoder left reading the old key, so check both decoders by hand.
+
+Two properties of that encoding are load-bearing for caching, and both fail
+silently:
+
+- **The lookup lists are append-only** (`extend_lookup`). The browser holds
+  `shows.min.json` for four days and `venues.json` for one, so a stale catalogue
+  is routinely decoded against a newer lookup file. An entry that changed index
+  would relabel shows' genres and rooms with no error anywhere. Entries are never
+  dropped, even once the master stops using them.
+- **`shows.min.json` carries nothing that changes through the day.** Ticket
+  status lives in `availability.min.json` (its own status list, indexing into
+  nothing, so the hourly refresh can rewrite it alone). Putting a status back in
+  the catalogue would restart its hourly churn *and* freeze availability for
+  anyone holding a cached copy — the bug in #249, re-created from the other end.
+  `hydrate.test.mjs` asserts each wire performance carries only `d` and `s`.
 
 The same three-way move applies to plain (non-indexed) wire keys such as the
 price fields `pm` / `px`, with one extra hazard: the round-trip test compares the

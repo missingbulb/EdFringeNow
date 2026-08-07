@@ -1,5 +1,11 @@
 // edfringe task: refresh-tickets — the in-festival, live-ish availability refresh.
 //
+// Scope note (#249): this refreshes ticket status for today AND every remaining
+// festival date, not just today, and it writes through the master so the
+// planner's availability sidecar is regenerated too. One listing pass covers the
+// whole window — every page returns every performance of the shows on it — so
+// widening it cost nothing here; the hourly frequency below is unchanged.
+//
 // REPLACES the "Refresh today's ticket status (hourly)" workflow, deleted in the
 // same commit that added this file. That workflow hand-spelled SIXTEEN cron lines to get
 // "hourly during August, 08:00–23:00 Edinburgh time, on a jittered minute":

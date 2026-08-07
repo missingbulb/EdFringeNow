@@ -112,13 +112,14 @@ Run it on a runner via the **`Fetch ticket prices (one-off)`** workflow
 python3 scraper/normalize.py
 ```
 
-Reads the raw scrape and emits three layers (these **are** committed, since the
-site serves them):
+Reads the raw scrape and emits the site's data layers (these **are** committed,
+since the site serves them):
 
 | file | purpose | sent to browser |
 |---|---|---|
 | `data/normalized/shows.json` | master: one record per show with all performances (including each show's full `description`); source for regenerating everything below | no |
-| `data/normalized/shows.min.json` | the compact catalogue the planner downloads: the master packed losslessly against the `venues.json` lookups | yes (planner) |
+| `data/normalized/shows.min.json` | the compact catalogue the planner downloads (3.0 MB, 948 KB gzipped): the master packed losslessly against the `venues.json` lookups. Carries **no ticket status** — see the sidecar below — so an unchanged festival regenerates it byte-for-byte and the browser can hold it for 4 days | yes (planner) |
+| `data/normalized/availability.min.json` | `{v, ts, a: {show id → {"MMDD\|HH:MM" → status index}}, o}` — per-performance ticket status, split out of the catalogue because it is the one thing that moves hourly. Self-contained (its own status list, indexes into nothing), 149 KB gzipped, cached for 1 day | yes (planner) |
 | `data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Fetched lazily by the planner and cached for a week; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
 | `data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
 | `data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
@@ -200,7 +201,7 @@ as tasks under this repo's local pack, each with the shell it runs beside it:
 | Task | Runs | What it does |
 |---|---|---|
 | `refresh-shows` | daily | the `--recently-added LAST_SEVEN_DAYS` top-up above |
-| `refresh-tickets` | hourly, but only in August between 08:00 and 23:59 Edinburgh time | `refresh_ticket_status.py` for today |
+| `refresh-tickets` | hourly, but only in August between 08:00 and 23:59 Edinburgh time | `refresh_ticket_status.py` for today **and every remaining festival date** |
 
 Ticket **prices** are deliberately absent from that table: they are fetched once
 by hand (`fetch_prices.py`, above), not on any schedule. `refresh-shows` reads
@@ -212,6 +213,44 @@ simply have an unknown price until it is run again.
 whether to act — that August/hours window is the whole of what sixteen
 hand-written cron lines used to express. Both tasks run as plain subprocesses (no
 agent); a failure opens one tracking issue rather than passing silently.
+
+`refresh-tickets` writes fresh statuses **into the master** and then regenerates
+every derived file from it. That matters twice over. It is what makes the refresh
+visible to the planner at all — the planner loads `availability.min.json` and has
+never loaded the day files, so the old day-files-only refresh committed every
+hour and changed nothing it could see (#249). And because every output is a pure
+function of the master, the files carrying no ticket status come back identical
+and never enter the commit.
+
+## How long the browser keeps each file
+
+GitHub Pages sets its own `Cache-Control` and offers no way to vary it per file,
+so the freshness policy lives on the client, in
+[`shared/data-cache.js`](../shared/data-cache.js). Payloads go in the Cache
+Storage API (the catalogue alone would breach localStorage's ~5 MB ceiling) with
+a small localStorage map recording when each url was last fetched.
+
+The shape of the data above exists to serve this table — availability is a
+separate file precisely so the catalogue can sit in the top row:
+
+| file | kept for | why |
+|---|---|---|
+| `shows.min.json` | 4 days | 948 KB gzipped, and nothing in it changes through the day |
+| `availability.min.json` | 1 day | ticket status moves hourly; 149 KB gzipped, so re-fetching daily is cheap |
+| `venues.json` | 1 day | small, and its lookup lists are indexed into by the cached catalogue |
+| `days/2026-08-DD.json` | 1 hour | the now page's whole premise is live availability, and `refresh-tickets` rewrites this hourly — the TTL matches the refresh that feeds it |
+| `descriptions.min.json` | 7 days | a show's description doesn't change mid-festival |
+
+Two invariants hold this up, and breaking either is silent:
+
+1. **`shows.min.json` must carry nothing that changes through the day.** A ticket
+   status leaking back into it would make it churn hourly again *and* freeze
+   availability for anyone holding a cached copy. `plan/lib/__tests__/hydrate.test.mjs`
+   asserts each wire performance carries only its date and start.
+2. **The `venues.json` lookup lists are append-only** (`extend_lookup`). A
+   4-day-old catalogue is routinely decoded against a `venues.json` fetched
+   today, so an entry that moved index would silently relabel shows' genres and
+   rooms. Entries are never dropped, even when the master stops using them.
 
 ## Running it
 

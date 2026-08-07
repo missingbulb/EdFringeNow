@@ -1,9 +1,14 @@
 // Tests for the compact-catalogue rehydration (plan/lib/hydrate.js), the client
 // half of the shows.min.json minification. The headline test round-trips the
 // REAL committed artifacts: it packs nothing itself but asserts that the
-// shipped shows.min.json, unpacked against the shipped venues.json, reproduces
-// the master shows.json exactly — so any drift between scraper/normalize.py's
-// packer and this unpacker (or a stale shows.min.json) fails the build.
+// shipped shows.min.json, unpacked against the shipped venues.json AND the
+// shipped availability.min.json, reproduces the master shows.json exactly — so
+// any drift between scraper/normalize.py's packer and this unpacker (or a stale
+// wire file) fails the build.
+//
+// That the round-trip needs all three files is the point of the split: ticket
+// status lives in the sidecar so the catalogue can be cached for days
+// (shared/data-cache.js), and this test is what keeps the join honest.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -11,7 +16,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import { imageUrl, mmddToDate, rehydrateShows } from "../hydrate.js";
+import { imageUrl, mmddToDate, performanceKeys, performanceAvailability, rehydrateShows } from "../hydrate.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(__dirname, "..", "..", "..", "data");
@@ -20,6 +25,8 @@ const wire = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.min.js
 const lookups = JSON.parse(readFileSync(path.join(DATA, "venues.json"), "utf-8"));
 const descriptions = JSON.parse(
   readFileSync(path.join(DATA, "normalized", "descriptions.min.json"), "utf-8"));
+const availability = JSON.parse(
+  readFileSync(path.join(DATA, "normalized", "availability.min.json"), "utf-8"));
 
 const YEAR = 2026;
 
@@ -38,7 +45,7 @@ function expected(show) {
 }
 
 test("shows.min.json rehydrates byte-identical to the master shows.json", () => {
-  const rehydrated = rehydrateShows(wire, lookups, YEAR);
+  const rehydrated = rehydrateShows(wire, lookups, YEAR, availability);
   assert.equal(rehydrated.length, master.length, "show count must match");
 
   let mismatches = 0;
@@ -110,10 +117,14 @@ test("flags become booleans and enum indices resolve through the lookups", () =>
     venues: {}, rooms: ["Room A"], genres: ["Comedy", "Theatre"],
     subgenres: ["Improv", "Sketch"], ticketStatuses: ["AVAILABLE", "SOLD_OUT"], ageRestrictions: ["ZERO", "EIGHTEEN"],
   };
+  const avail = {
+    v: 1, ts: ["AVAILABLE", "SOLD_OUT"],
+    a: { z: { "810|20:00": 1 } }, o: { z: ["810|20:00"] },
+  };
   const [show] = rehydrateShows([{
     i: "z", t: "T", sl: "t", g: 1, sg: [1, 0], ar: 1, f: 1, im: "g", rm: 0, v: null, vn: null,
-    p: [{ d: 810, s: "20:00", o: 1, t: 1 }],
-  }], lk, YEAR);
+    p: [{ d: 810, s: "20:00" }],
+  }], lk, YEAR, avail);
   assert.equal(show.genre, "Theatre");
   assert.deepEqual(show.subgenres, ["Sketch", "Improv"]);
   assert.equal(show.ageRestriction, "EIGHTEEN");
@@ -121,4 +132,68 @@ test("flags become booleans and enum indices resolve through the lookups", () =>
   assert.deepEqual(show.performances[0], {
     date: "2026-08-10", start: "20:00", soldOut: true, status: "SOLD_OUT",
   });
+});
+
+// --- The availability join ------------------------------------------------
+//
+// The catalogue and the sidecar are cached on different clocks (four days vs.
+// one), so the client routinely joins a stale catalogue to fresh availability.
+// These pin down what that join does when the two disagree — the failure mode
+// worth caring about is a performance silently inheriting a status that isn't
+// its own.
+
+test("a performance is named by date + start, duplicates suffixed by position", () => {
+  assert.deepEqual(performanceKeys([{ d: 807, s: "21:15" }]), ["807|21:15"]);
+  // A few shows in the real data sit the same date and start twice with
+  // different statuses; they must not collapse into one entry.
+  assert.deepEqual(
+    performanceKeys([{ d: 807, s: "13:20" }, { d: 807, s: "13:20" }, { d: 808, s: "13:20" }]),
+    ["807|13:20", "807|13:20#1", "808|13:20"]);
+  assert.deepEqual(performanceKeys(undefined), []);
+});
+
+test("availability missing entirely leaves every performance status-unknown", () => {
+  const lk = { venues: {}, rooms: [], genres: ["Comedy"], subgenres: [], ageRestrictions: [] };
+  const wireRec = [{ i: "z", g: 0, rm: -1, v: null, vn: null, p: [{ d: 810, s: "20:00" }] }];
+  for (const missing of [null, undefined, {}]) {
+    const [show] = rehydrateShows(wireRec, lk, YEAR, missing);
+    assert.deepEqual(show.performances[0], {
+      date: "2026-08-10", start: "20:00", soldOut: false, status: null,
+    }, "an absent sidecar must read as unknown, never as available");
+  }
+});
+
+test("a performance the sidecar doesn't name reads as unknown, not as its neighbour's", () => {
+  // The catalogue is four days old and still lists a date the show has since
+  // dropped; the sidecar knows only the surviving one.
+  const avail = { v: 1, ts: ["TICKETS_AVAILABLE"], a: { z: { "811|20:00": 0 } }, o: {} };
+  assert.deepEqual(performanceAvailability(avail, "z", "810|20:00"),
+    { status: null, soldOut: false });
+  assert.deepEqual(performanceAvailability(avail, "z", "811|20:00"),
+    { status: "TICKETS_AVAILABLE", soldOut: false });
+  // A show the sidecar has never heard of behaves the same way.
+  assert.deepEqual(performanceAvailability(avail, "nosuchshow", "811|20:00"),
+    { status: null, soldOut: false });
+});
+
+test("soldOut comes from the sparse `o` map, per performance", () => {
+  const avail = {
+    v: 1, ts: ["TICKETS_AVAILABLE"],
+    a: { z: { "810|20:00": 0, "811|20:00": 0 } },
+    o: { z: ["811|20:00"] },
+  };
+  assert.equal(performanceAvailability(avail, "z", "810|20:00").soldOut, false);
+  assert.equal(performanceAvailability(avail, "z", "811|20:00").soldOut, true);
+});
+
+test("the shipped catalogue carries no availability of its own", () => {
+  // The whole four-day cache rests on this: if a ticket status ever leaks back
+  // into shows.min.json, that file starts changing hourly again and a cached
+  // copy starts freezing availability.
+  for (const rec of wire) {
+    for (const p of rec.p || []) {
+      assert.deepEqual(Object.keys(p).sort(), ["d", "s"],
+        `performance of ${rec.i} must carry only its date and start, got ${JSON.stringify(p)}`);
+    }
+  }
 });

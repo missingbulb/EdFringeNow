@@ -69,8 +69,11 @@ test("clean day file + master produce no findings", () => {
     "data/venues.json": LOOKUPS,
     "data/days/2026-08-07.json": cleanDay,
     "data/normalized/shows.min.json": [
-      { i: "X", t: "A show", g: 1, sg: [0], rm: 0, ar: 1, p: [{ t: 1 }] },
+      { i: "X", t: "A show", g: 1, sg: [0], rm: 0, ar: 1, p: [{ d: 807, s: "20:00" }] },
     ],
+    "data/normalized/availability.min.json": {
+      v: 1, ts: ["TICKETS_AVAILABLE"], a: { X: { "807|20:00": 0 } }, o: {},
+    },
   }));
   assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
 });
@@ -105,18 +108,49 @@ test("out-of-range subgenre, room and ticket-status indices are reported too", (
   assert.match(out[2].what, /ts = 5 is outside venues\.json "ticketStatuses"/);
 });
 
-test("the master's own keys (g / rm / ar / sg / p[].t) are checked", () => {
+test("the master's own keys (g / rm / ar / sg) are checked", () => {
   const out = rule.run(ctxOf({
     "data/venues.json": LOOKUPS,
     "data/normalized/shows.min.json": [
-      { i: "X", t: "A show", g: 0, sg: [3], rm: 0, ar: 0, p: [{ t: 1 }] },
-      { i: "Y", t: "Bad status", g: 0, sg: [], rm: 0, ar: 0, p: [{ t: 9 }] },
+      { i: "X", t: "A show", g: 0, sg: [3], rm: 0, ar: 0, p: [{ d: 807, s: "20:00" }] },
+      { i: "Y", t: "Bad room", g: 0, sg: [], rm: 4, ar: 0, p: [] },
     ],
   }));
   assert.equal(out.length, 2);
   assert.ok(out.every((f) => f.file === "data/normalized/shows.min.json"));
   assert.match(out[0].what, /sg\[\] = 3 is outside venues\.json "subgenres"/);
-  assert.match(out[1].what, /p\[0\]\.t = 9 is outside venues\.json "ticketStatuses"/);
+  assert.match(out[1].what, /rm = 4 is outside venues\.json "rooms"/);
+});
+
+test("the sidecar's status indices are checked against its OWN ts list", () => {
+  // Not against venues.json: the sidecar is rewritten hourly and must not depend
+  // on the lookup file having been regenerated alongside it.
+  const out = rule.run(ctxOf({
+    "data/venues.json": LOOKUPS,
+    "data/normalized/availability.min.json": {
+      v: 1,
+      ts: ["TICKETS_AVAILABLE", "SOLD_OUT"],
+      a: { X: { "807|20:00": 1 }, Y: { "807|20:00": 4 }, Z: { "807|20:00": "SOLD_OUT" } },
+      o: {},
+    },
+  }));
+  assert.equal(out.length, 2, JSON.stringify(out, null, 2));
+  assert.ok(out.every((f) => f.file === "data/normalized/availability.min.json"));
+  assert.match(out[0].what, /Y 807\|20:00 = 4 is outside this file's own "ts" \(2 entries\)/);
+  assert.match(out[1].what, /Z 807\|20:00 is "SOLD_OUT", not an integer index/);
+  assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the regeneration command");
+});
+
+test("a sidecar index that venues.json would reject but its own list allows is fine", () => {
+  // venues.json here has 3 ticketStatuses; the sidecar's own list has 5. Index 4
+  // is valid for the sidecar and must not be reported.
+  const out = rule.run(ctxOf({
+    "data/venues.json": LOOKUPS,
+    "data/normalized/availability.min.json": {
+      v: 1, ts: ["A", "B", "C", "D", "E"], a: { X: { "807|20:00": 4 } }, o: {},
+    },
+  }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
 });
 
 test("a non-integer index is reported rather than silently coerced", () => {
@@ -133,12 +167,14 @@ test("no data layer in the tree ⇒ no findings (relevance-first)", () => {
 });
 
 test("this repo's committed data satisfies the invariant", () => {
-  // The live gate: every real day file plus the master, read off disk.
-  const tree = ["data/venues.json", "data/normalized/shows.min.json"];
+  // The live gate: every real day file plus the master and the availability
+  // sidecar, read off disk.
+  const tree = ["data/venues.json", "data/normalized/shows.min.json",
+                "data/normalized/availability.min.json"];
   const days = readFileSync(path.join(REPO, "data/days/index.json"), "utf8");
   for (const d of JSON.parse(days).dates) tree.push(`data/days/${d}.json`);
   const present = tree.filter((f) => existsSync(path.join(REPO, f)));
-  assert.ok(present.length > 2, "expected the committed day files to be present");
+  assert.ok(present.length > 3, "expected the committed day files to be present");
 
   const out = rule.run({
     files: present,

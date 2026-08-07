@@ -43,18 +43,30 @@ if [ "$current_branch" != "main" ]; then
 fi
 
 # The retired workflow exposed a `date` dispatch input for testing; a task has no
-# inputs, so the scheduled default (today, Europe/London) is the only mode. A
-# one-off is still available by hand:
+# inputs, so the scheduled default (today onward, Europe/London) is the only mode.
+# A one-off is still available by hand:
 # `python3 scraper/refresh_ticket_status.py --date 2026-08-10`.
 python3 scraper/refresh_ticket_status.py
 
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-git add data/days data/venues.json
+# `data/normalized` is what makes this reach the planner at all: the script now
+# writes fresh statuses through the master and regenerates from it, so the file
+# the planner actually loads (availability.min.json) is in this commit. Staging
+# only the day files — as this did until #249 — meant the hourly refresh
+# succeeded every hour and changed nothing the planner could see.
+#
+# The bulky catalogue is staged too but will not normally appear in the diff:
+# it carries no ticket status any more, so regenerating it over an unchanged
+# master reproduces it byte-for-byte. That is deliberate — a catalogue that
+# stopped churning hourly is what lets the browser cache it for days.
+git add data/normalized data/days data/venues.json
 if git diff --staged --quiet; then
   echo "No ticket-status changes this hour."
 else
-  git commit -m "Refresh today's ticket status"
+  # Not "today's" any more: the refresh covers today through the end of the run
+  # (#249), so the old subject would have understated every commit it made.
+  git commit -m "Refresh ticket status"
   # `main` is the branch actions/checkout created and set tracking on, so a bare
   # push resolves correctly; the guard above is what guarantees we are on it.
   git push
