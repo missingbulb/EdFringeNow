@@ -22,16 +22,16 @@ These grant read access to the same public listing everyone sees. Send
 ## Reaching it from a Claude Code web session
 
 You **can't** hit the API from a web session: the egress proxy blocks
-`equhost.com` (and edfringe.com itself returns 403 to `WebFetch`). Anything that
-touches the live API has to run on an **open-network GitHub Actions runner**:
+`equhost.com` (and edfringe.com itself returns 403 to `WebFetch`). That block is
+policy — do **not** route around it by creating ad-hoc CI workflows. Anything
+that touches the live API runs through a sanctioned workflow: the `Scrape
+edfringe shows (full)` workflow, `Fetch ticket prices (one-off)`, or the
+`refresh-shows` scheduled task (all on GitHub-hosted runners, under the
+Claudinite scheduler).
 
-- Bulk data → the `Scrape edfringe shows (full)` workflow, or the `refresh-shows`
-  scheduled task (which runs on the same runners, under the Claudinite scheduler).
-- One-off schema introspection or a single-show dump → a **throwaway push-triggered
-  probe**: add a small script under `scraper/` plus a workflow that runs on push to
-  your branch (path-filtered to that script), push, read the run's job logs via the
-  Actions API, then delete the scaffolding before the PR. This is how the field
-  lists below were captured (GraphQL introspection: `__type` / `__schema`).
+This file is the API reference (field lists via GraphQL introspection:
+`__type` / `__schema`) precisely so that nothing needs to re-fetch it. If it
+doesn't answer your question, ask the repo owner.
 
 ## Operations
 
@@ -147,8 +147,8 @@ Key facts:
 
 ### What the response actually looks like
 
-Captured from `performancePrices("1:790001")` — Daniel Sloss: BITTER, 14 Aug —
-by the probe that `scraper/fetch_prices.py` grew out of. Four things the field
+Captured from `performancePrices("1:790001")` — Daniel Sloss: BITTER, 14 Aug.
+Four things the field
 list above doesn't tell you, each of which the extraction has to handle:
 
 - **Amounts are JSON *strings***, not numbers: `"priceValue": "29.50"`. Parse,

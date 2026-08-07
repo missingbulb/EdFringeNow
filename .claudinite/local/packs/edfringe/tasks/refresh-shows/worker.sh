@@ -3,8 +3,8 @@
 # refresh-shows worker — the ported body of the retired
 # "Refresh edfringe shows (daily)" workflow's job.
 #
-# The Claudinite scheduler runs this as its `agent_preprocessing` subprocess with
-# cwd = this task directory and a hard kill at `agent_preprocessing_timeout`, so
+# The Claudinite scheduler runs this as its `prework` subprocess with
+# cwd = this task directory and a hard kill at `prework_timeout`, so
 # the first thing it does is move to the repo root the scheduler hands it. There
 # is no agent: a non-zero exit is the failure signal, and the scheduler converges
 # that to one open `needs-human` issue (the old job's `report-failure` twin).
@@ -31,6 +31,16 @@ cd "${CLAUDINITE_REPO_ROOT:-$(git rev-parse --show-toplevel)}"
 if ! command -v python3 >/dev/null 2>&1; then
   echo "refresh-shows: no python3 on the runner" >&2
   exit 1
+fi
+
+# Return the checkout to `main` first — same reason as refresh-tickets, and this
+# task is the one that hit it hardest: it shares the daily slot with
+# `basics/baselining`, whose deliver() leaves the tree on its maintenance branch
+# (`git checkout -B`, never switched back). #141 is that failure.
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$current_branch" != "main" ]; then
+  echo "refresh-shows: checkout was left on '$current_branch' — returning to main." >&2
+  git checkout main
 fi
 
 # The retired workflow exposed a `window` dispatch input; a task has no inputs, so

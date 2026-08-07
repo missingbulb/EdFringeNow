@@ -23,8 +23,10 @@ const DATA = path.join(__dirname, "..", "..", "..", "data");
 const master = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.json"), "utf-8"));
 const wire = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.min.json"), "utf-8"));
 const lookups = JSON.parse(readFileSync(path.join(DATA, "venues.json"), "utf-8"));
-const availability = JSON.parse(readFileSync(path.join(DATA, "normalized", "availability.min.json"), "utf-8"));
-const descriptions = JSON.parse(readFileSync(path.join(DATA, "normalized", "descriptions.min.json"), "utf-8"));
+const descriptions = JSON.parse(
+  readFileSync(path.join(DATA, "normalized", "descriptions.min.json"), "utf-8"));
+const availability = JSON.parse(
+  readFileSync(path.join(DATA, "normalized", "availability.min.json"), "utf-8"));
 
 const YEAR = 2026;
 
@@ -32,13 +34,14 @@ const YEAR = 2026;
 // absolute https urls — the client always renders imageUrl(image), so that
 // transform is intended, not loss.
 //
-// `description` is the one field the catalogue deliberately does NOT carry: it
-// is the bulkiest thing in the master and ships in descriptions.min.json, which
-// the planner fetches lazily. So it is stripped here rather than expected back
-// — and the test below checks it landed in that sidecar, so "moved" can't
-// quietly become "lost".
-function expected({ description, ...show }) {
-  return { ...show, image: imageUrl(show.image), smallImage: imageUrl(show.smallImage) };
+// `description` is the one field the packer deliberately leaves behind: it is
+// the bulkiest thing a show carries and ships in its own sidecar
+// (descriptions.min.json), so the catalogue never carries it and rehydration
+// can never produce it. Dropping it here is not a hole in the round-trip — the
+// test below asserts the sidecar carries every description the master has.
+function expected(show) {
+  const { description, ...rest } = show;
+  return { ...rest, image: imageUrl(show.image), smallImage: imageUrl(show.smallImage) };
 }
 
 test("shows.min.json rehydrates byte-identical to the master shows.json", () => {
@@ -59,13 +62,16 @@ test("shows.min.json rehydrates byte-identical to the master shows.json", () => 
     `every show must round-trip losslessly; first mismatch: ${JSON.stringify(firstBad)}`);
 });
 
-test("descriptions are moved to their sidecar, not dropped", () => {
-  const described = master.filter((s) => s.description);
-  assert.ok(described.length > 0, "the master must carry some descriptions to check");
-  for (const show of described) {
-    assert.equal(descriptions.d[show.slug], show.description,
-      `${show.slug}'s description must survive in descriptions.min.json`);
-  }
+// The other half of the round-trip: what the catalogue drops, the sidecar must
+// carry. Without this, `expected()` dropping `description` would let the packer
+// lose descriptions entirely and still pass.
+test("every master description survives in the descriptions sidecar", () => {
+  const side = descriptions.d || {};
+  const missing = master
+    .filter((s) => s.description && side[s.slug] !== s.description)
+    .map((s) => s.id);
+  assert.deepEqual(missing, [],
+    `descriptions.min.json must carry each master description verbatim; missing/stale: ${missing.slice(0, 5)}`);
 });
 
 test("imageUrl re-attaches the host, upgrades http, passes https through", () => {
@@ -138,7 +144,7 @@ test("flags become booleans and enum indices resolve through the lookups", () =>
 
 test("a performance is named by date + start, duplicates suffixed by position", () => {
   assert.deepEqual(performanceKeys([{ d: 807, s: "21:15" }]), ["807|21:15"]);
-  // Four shows in the real data sit the same date and start twice with
+  // A few shows in the real data sit the same date and start twice with
   // different statuses; they must not collapse into one entry.
   assert.deepEqual(
     performanceKeys([{ d: 807, s: "13:20" }, { d: 807, s: "13:20" }, { d: 808, s: "13:20" }]),

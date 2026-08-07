@@ -217,17 +217,6 @@
         </div>
       </article>
 
-      <!-- Your last visit's plan, when it has since gone stale (the commitment
-           time or the show you'd picked is now in the past). We don't reinstate
-           a plan that has already happened, but we don't throw it away either —
-           this offers it back on one tap. Populated + shown by JS. -->
-      <div class="restore-bar" id="restoreBar" role="status" hidden>
-        <span class="restore-ico" aria-hidden="true">↩</span>
-        <span class="restore-text" id="restoreText"></span>
-        <button type="button" class="restore-btn" id="restoreBtn">Restore</button>
-        <button type="button" class="restore-x" id="restoreDismiss" aria-label="Forget my previous plan" title="Forget it">&times;</button>
-      </div>
-
       <!-- ===================== The plan (vertical; appears once set) ===================== -->
       <!-- The "Open in Maps" link is rendered inside the plan header (mild, on -->
       <!-- the right of "Your plan") — see renderJourneyStrip. -->
