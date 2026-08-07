@@ -459,25 +459,48 @@ function saveDismissedNags() {
   }
 }
 
-/* The colour key is permanent chrome, but foldable: someone who has learned the
- * marks can collapse it and expect it to stay collapsed. Unreadable storage
- * reads as "open", which is the state that teaches rather than the one that
- * hides. */
-function wireLegendFold() {
-  const el = $("calLegend");
-  if (!el) return;
-  try {
-    if (localStorage.getItem(LEGEND_KEY) === "closed") el.open = false;
-  } catch {
-    /* private mode — leave it open */
+/* The colour key opens in a column beside the grid, from a button next to
+ * Clear. Closed it renders nothing — the grid takes the width back — so the
+ * default is closed: the marks are legible enough to work from, and a panel
+ * that eats grid width by default would be paid for by everyone who already
+ * knows them. Unreadable storage reads as closed for the same reason. */
+let legendOpen = false;
+
+function setLegendOpen(open, { persist = true } = {}) {
+  legendOpen = Boolean(open);
+  const panel = $("calLegend");
+  const btn = $("legendBtn");
+  // The panel stays `hidden` whenever the board is empty, whatever the stored
+  // preference says — showCalendar/showIntake own that, and this respects it by
+  // only ever unhiding alongside a visible grid.
+  if (panel && !$("calWrap").hidden) panel.hidden = !legendOpen;
+  if (btn) {
+    btn.classList.toggle("is-on", legendOpen);
+    btn.setAttribute("aria-expanded", String(legendOpen));
   }
-  el.addEventListener("toggle", () => {
-    try {
-      localStorage.setItem(LEGEND_KEY, el.open ? "open" : "closed");
-    } catch (err) {
-      console.warn("Fringe Planner: couldn't save the colour-key state", err);
-    }
-  });
+  // The grid's usable width just changed, so the overlay geometry it is drawn
+  // against has to be remeasured before the window lines can be repainted.
+  if (!$("calWrap").hidden) {
+    layoutOverlay();
+    positionWindowGrips();
+  }
+  if (!persist) return;
+  try {
+    localStorage.setItem(LEGEND_KEY, legendOpen ? "open" : "closed");
+  } catch (err) {
+    console.warn("Fringe Planner: couldn't save the colour-key state", err);
+  }
+}
+
+function wireLegendFold() {
+  const btn = $("legendBtn");
+  if (!btn) return;
+  try {
+    legendOpen = localStorage.getItem(LEGEND_KEY) === "open";
+  } catch {
+    legendOpen = false; // private mode — closed is the no-cost default
+  }
+  btn.addEventListener("click", () => setLegendOpen(!legendOpen));
 }
 
 /* --- Scheduling preferences ---------------------------------------------
@@ -813,8 +836,12 @@ function clearUploadError() {
 function showCalendar() {
   $("intakeStage").hidden = true;
   $("calWrap").hidden = false;
-  $("calLegend").hidden = false;
   $("clearFavBtn").hidden = false;
+  $("legendBtn").hidden = false;
+  // Re-apply the stored choice rather than forcing it open: the key belongs to
+  // the visitor, not to the act of loading a board. Not persisted — nothing was
+  // chosen here.
+  setLegendOpen(legendOpen, { persist: false });
   $("planPanel").hidden = false;
   updatePlanWindowLabel();
   requestAnimationFrame(() => {
@@ -829,6 +856,7 @@ function showIntake() {
   $("calLegend").hidden = true;
   $("intakeStage").hidden = false;
   $("clearFavBtn").hidden = true;
+  $("legendBtn").hidden = true;
   $("planPanel").hidden = true;
   $("lanes").innerHTML = "";
   state.laneRefs = [];

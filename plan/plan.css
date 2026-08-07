@@ -904,30 +904,54 @@ a { color: inherit; }
    revealing it never resizes the card or shifts anything below it. Invisible
    until the pointer is over the grid: a glanceable reference, not permanent
    chrome. Revealing on :hover of the legend too keeps it up while you read it. */
+/* Grid and key side by side. The grid is the flexible one, so opening the key
+   takes its width from the grid rather than widening the card; `min-width: 0`
+   lets it actually shrink instead of holding its content's intrinsic width. */
+.board-main { display: flex; align-items: stretch; gap: 0; }
+.board-main > .cal-wrap { flex: 1 1 auto; min-width: 0; }
+
+/* Closed, the key is `hidden` — display:none, so it occupies nothing at all and
+   the grid has the full width back. Open, it's a fixed-width column: the marks
+   are short labels and a column that flexed with them would jitter as the grid
+   resized. */
 .cal-legend {
-  margin: 14px 0 0; padding-top: 12px;
-  border-top: 1px solid var(--line);
+  flex: 0 0 168px;
+  margin-left: 16px; padding-left: 16px;
+  border-left: 1px solid var(--line);
 }
 .cal-legend[hidden] { display: none; }
-/* The fold control. `list-style: none` (plus the WebKit pseudo-element) drops
-   the native triangle so we can draw our own, which rotates with the state. */
-.legend-toggle {
-  list-style: none; cursor: pointer; width: fit-content;
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--muted);
+/* Stacked rather than the wrapping row it was under the grid — one mark per
+   line reads as a key to scan down. */
+.cal-legend .legend { flex-direction: column; gap: 9px; flex-wrap: nowrap; }
+
+/* The header toggle, sitting next to Clear and matching its shape. Its `is-on`
+   state is the panel's only other affordance, so it has to read as pressed. */
+.board-legend-btn {
+  flex: 0 0 auto; font: inherit; font-size: 0.78rem; font-weight: 600;
+  color: var(--muted); background: #fff;
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 5px 13px; cursor: pointer;
 }
-.legend-toggle::-webkit-details-marker { display: none; }
-.legend-toggle::before {
-  content: ""; width: 0; height: 0;
-  border: 4px solid transparent; border-left-color: currentColor;
-  border-right-width: 0;
-  transition: transform 0.15s ease;
+.board-legend-btn:hover { color: var(--ink); border-color: #c9cedb; }
+.board-legend-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+.board-legend-btn.is-on {
+  color: var(--violet); border-color: var(--violet);
+  background: rgba(108, 76, 241, 0.07);
 }
-.cal-legend[open] .legend-toggle::before { transform: rotate(90deg); }
-.legend-toggle:hover { color: var(--ink); }
-.legend-toggle:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; border-radius: 5px; }
-.cal-legend[open] .legend { margin-top: 10px; }
+.board-legend-btn[hidden] { display: none; }
+
+/* Narrow screens have no horizontal room to give away, so the key returns to a
+   strip under the grid — same panel, same button, stacked instead of beside. */
+@media (max-width: 720px) {
+  .board-main { flex-direction: column; }
+  .cal-legend {
+    flex: 0 0 auto;
+    margin-left: 0; padding-left: 0;
+    margin-top: 14px; padding-top: 12px;
+    border-left: none; border-top: 1px solid var(--line);
+  }
+  .cal-legend .legend { flex-direction: row; flex-wrap: wrap; gap: 10px 16px; }
+}
 
 /* ============ Allocate / itinerary (the plan panel) ============ */
 .plan-card { padding: 28px 28px 26px; margin-top: 22px; }
