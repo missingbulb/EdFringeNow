@@ -225,3 +225,30 @@ it would still hold because it describes how we work regardless of what the
 product does, it is a rule. Prose in a `RULES.md` gets the same test: the
 `ticketStatus` paragraph in the `edfringe-data` pack is background a scraper
 editor needs, not a rule, and it is not convertible.
+
+## Retiring a practice: delete it, state the rule that replaces it, don't narrate the change
+
+When a practice is withdrawn, the docs that taught it get **rewritten into the
+current rule in the present tense** — not amended with a paragraph explaining what
+used to be done and why it stopped. The owner's words on PR #240: *"make sure the
+rules and comments are describing current state, not past changes. Describe the
+rules, not the history."*
+
+The first pass at retiring the `probe-edfringe-api` skill did the opposite, and
+every part of it read as diligence at the time: the pack `RULES.md`, its `README.md`
+and `scraper/SCRAPING.md` each gained a passage narrating the retired probe practice
+so a future reader would understand the ban. All of it came back out on review. A
+reader who never knew the practice does not need to be taught it in order to be told
+the rule, and describing it is how a withdrawn technique keeps getting rediscovered.
+
+The same pass also added a new `edfringe-workflows-allowlisted` check — every file
+under `.github/workflows/` had to sit on a named allowlist — built properly, with
+red-first fixtures and a live gate over the real tree. The owner removed it too:
+retiring one practice is not the moment to install a guard against it. State the
+rule; a check earns its place on its own, from a mistake that actually repeats, not
+as the enforcement arm of the deletion that prompted it.
+
+This does **not** ban evidence. The measured costs cited throughout this file are
+what argue a rule is worth its space, and they stay. What goes is narration of a
+*superseded* way of working: the rule is what the reader needs, and the history
+belongs to the commit that removed it.
