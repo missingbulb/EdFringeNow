@@ -116,10 +116,37 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/prices.json data/normalized data/venues.json data/days
-          if git diff --staged --quiet; then
-            echo "No price changes to commit."
-          else
-            git commit -m "Update ticket prices"
-            git push
-          fi
+
+          # This step retries, because a plain push here is guaranteed to lose
+          # the run (#292). The full pass takes ~2.6 hours and refresh-tickets
+          # pushes to main every hour during the festival, so main has always
+          # moved by the time we get here — and the commit exists only on the
+          # runner, which is then reclaimed with the data on it.
+          #
+          # Recovery RE-DERIVES rather than merges. Everything staged except
+          # data/prices.json is generator output, and refresh-tickets rewrites
+          # exactly the day files and availability sidecar we did — so a rebase
+          # would conflict on generated content whose correct value is "whatever
+          # the generator says", not either side. Instead: keep our prices,
+          # take their generated data, regenerate from their master plus our
+          # prices. data/prices.json itself can't conflict; this workflow is its
+          # only writer.
+          for attempt in 1 2 3 4 5; do
+            git add data/prices.json data/normalized data/venues.json data/days
+            if git diff --staged --quiet; then
+              echo "No price changes to commit."
+              exit 0
+            fi
+            git commit -q -m "Update ticket prices"
+            if git push; then
+              echo "pushed on attempt ${attempt}"
+              exit 0
+            fi
+            echo "push rejected on attempt ${attempt}; re-deriving onto latest main"
+            git fetch -q origin main
+            git reset -q --soft origin/main
+            git checkout -q origin/main -- data/normalized data/venues.json data/days
+            python3 scraper/normalize.py --minify-from-master
+          done
+          echo "::error::could not push the price data after 5 attempts"
+          exit 1
