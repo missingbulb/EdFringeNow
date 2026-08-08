@@ -575,7 +575,12 @@ a { color: inherit; }
 .day-col { text-align: center; line-height: 1.15; }
 .day-dow { display: block; font-size: 0.56rem; font-weight: 600; color: #b0b7c3; }
 .day-num { display: block; font-size: 0.7rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* Weekend days (Sat/Sun) carry a faint violet wash and a darker, bolder date —
+   enough to pick the weekends out of the row at a glance, quiet enough that it
+   never competes with the availability colours in the cells below. */
+.day-col.wknd { background: rgba(108, 76, 241, 0.055); border-radius: 4px; }
 .day-col.wknd .day-num { color: var(--ink); font-weight: 700; }
+.day-col.wknd .day-dow { color: #9aa0ad; }
 .day-col.pre .day-num, .day-col.pre .day-dow { color: #cfd4de; }
 
 .lanes { position: relative; z-index: 1; }
@@ -841,6 +846,11 @@ a { color: inherit; }
 /* --- Window overlay over the lanes: purely visual, never intercepts the
    pointer — lane cells keep their hover tooltips. --- */
 .win { position: absolute; top: 0; bottom: 0; z-index: 2; pointer-events: none; }
+/* The weekend stripes: below the lanes and the window overlay, so they tint the
+   board without touching any of its interactions (see layoutWeekendStripes). */
+.wknd-cols { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.wknd-col { position: absolute; top: 0; bottom: 0; background: rgba(108, 76, 241, 0.04); }
+
 .festend { position: absolute; top: 0; bottom: 0; background: rgba(234, 236, 240, 0.35); border-right: 1px dashed #d5d9e2; pointer-events: none; z-index: 1; }
 .win-dim { position: absolute; top: 0; bottom: 0; background: rgba(247, 248, 250, 0.72); }
 .win-band {
@@ -1138,7 +1148,10 @@ a { color: inherit; }
   position: sticky; top: 0; background: var(--paper); z-index: 1;
   overflow: hidden;
 }
-.sch-day.wknd .sch-day-head { background: #fbfaff; }
+/* Same weekend cue as the availability calendar's header, so a Sat/Sun reads
+   the same on both grids. The head is sticky over the day's canvas, so the
+   tint is composited over paper rather than set as a translucent wash. */
+.sch-day.wknd .sch-day-head { background: #f4f2fe; }
 .sch-dow { font-size: 0.7rem; font-weight: 700; color: var(--ink); line-height: 1.15; }
 /* At a narrow column the date drops under the weekday rather than overflowing. */
 .sch-dow .sch-date { display: inline-block; color: var(--muted); font-weight: 600; }
