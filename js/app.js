@@ -30,6 +30,7 @@ import {
   minutesForHour,
   wheelHours,
 } from "./constraint-time.js";
+import { clockLabel, fringeMoment, hourLabel, realMoment } from "../shared/fringe-day.js";
 
 const EDINBURGH = [55.9486, -3.1881];
 
@@ -97,13 +98,21 @@ const PRICE_FILTERS = PRICE_OPTIONS.map((o) => o.value);
  * device's real clock (see requestUserLocation / adoptRealClock).
  *
  * Every field here is Edinburgh wall-clock — the same footing the show times
- * are on — so `minutes` can be compared against a show's start directly. */
+ * are on — so `minutes` can be compared against a show's start directly.
+ *
+ * `date` / `dateLabel` / `time` are the real calendar moment: what the header
+ * shows and what a booking link needs. `fringeDate` and `minutes` are that same
+ * moment expressed as a fringe day (shared/fringe-day.js), which runs 06:00 →
+ * 06:00 — they name the day file to load and the position within it, so at
+ * 00:30 they still point at last night's file with `minutes` past 1440.
+ * Everything that compares against a show's start time uses `minutes`. */
 const NOW = {
-  date: "2026-08-14",   // which day's data file to load (data/days/<date>.json)
+  date: "2026-08-14",       // real calendar date
   dateLabel: "Fri 14 Aug",
   time: "15:44",
-  tz: "BST",            // British Summer Time
-  minutes: 15 * 60 + 44,
+  tz: "BST",                // British Summer Time
+  fringeDate: "2026-08-14", // which day's data file to load (data/days/<date>.json)
+  minutes: 15 * 60 + 44,    // minutes into the fringe day (>= 1440 after midnight)
 };
 
 /* Backing Date for the simulated clock. The debug date/time picker reads and
@@ -202,14 +211,20 @@ async function init() {
 const DAY_TTL_MS = 60 * 60 * 1000;
 const LOOKUPS_TTL_MS = DAY_MS;
 
-/* Load today's shows: the per-day file (only today's performances, kept small)
- * joined with the venue lookup (names + coordinates), reshaped for the map and
- * list. Only the current day is fetched, so the payload stays light. */
+/* Load today's shows: the per-day file (only this fringe day's performances,
+ * kept small) joined with the venue lookup (names + coordinates), reshaped for
+ * the map and list. Only the current day is fetched, so the payload stays light.
+ *
+ * "Today" is the fringe day, 06:00 → 06:00 (shared/fringe-day.js), so the file
+ * also carries tomorrow's small hours — the late shows someone at 23:50 is
+ * actually looking for. Their `start` comes through extended ("24:30" for
+ * 00:30), which is what keeps them sorting and comparing after 23:00 rather
+ * than before 06:00. */
 async function loadShows() {
   try {
     const [lookups, day] = await Promise.all([
       cachedFetchJson("data/venues.json", LOOKUPS_TTL_MS, noteCache),
-      cachedFetchJson(`data/days/${NOW.date}.json`, DAY_TTL_MS, noteCache),
+      cachedFetchJson(`data/days/${NOW.fringeDate}.json`, DAY_TTL_MS, noteCache),
     ]);
     // The shared lookup file carries the venue map plus the global rooms/genres
     // lists that the day records index into. Fetched once.
@@ -890,7 +905,7 @@ function renderShowList() {
     const n = all.length;
     const shows = n === 1 ? "show" : "shows";
     title.textContent = constraint
-      ? `${n} ${shows} you can slip in before ${constraint.time}`
+      ? `${n} ${shows} you can slip in before ${clockLabel(constraint.time)}`
       : `${n} ${shows} you could wander into right now`;
   }
 
@@ -916,7 +931,7 @@ function renderShowList() {
       group = show.time;
       const head = document.createElement("h3");
       head.className = "shows-group-head";
-      head.textContent = show.time;
+      head.textContent = clockLabel(show.time);
       grid.appendChild(head);
     }
     const item = document.createElement("article");
@@ -932,7 +947,7 @@ function renderShowList() {
         ${subgenreTags(show)}
       </span>
       <span class="si-side">
-        <span class="si-time">${escapeHtml(show.time)}</span><br />
+        <span class="si-time">${escapeHtml(clockLabel(show.time))}</span><br />
         <span class="si-walk">🚶 ${walk} min · ${escapeHtml(show.price)}</span>
         ${constraint ? '<br /><span class="si-fits">fits</span>' : ""}
       </span>`;
@@ -1105,7 +1120,7 @@ function renderJourneyStrip() {
       planNode(
         genreIcon(leg.genre),
         "stop",
-        `${leg.time}–${minutesToTime(timeToMinutes(leg.time) + leg.duration)}`,
+        `${clockLabel(leg.time)}–${minutesToTime(timeToMinutes(leg.time) + leg.duration)}`,
         leg.title,
         `${leg.venue} · ${leg.genre}`,
         legFits
@@ -1346,7 +1361,7 @@ function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
 function destNode(constraint, slackHtmlStr) {
   const icon = constraint.isPlace ? placeIcon(state.destPlace.kind) : genreIcon(constraint.genre);
   const extra = constraint.isPlace ? planPartnerLink() : "";
-  return planNode(icon, "dest", constraint.time, destinationLabel(), "Your next commitment", slackHtmlStr, extra);
+  return planNode(icon, "dest", clockLabel(constraint.time), destinationLabel(), "Your next commitment", slackHtmlStr, extra);
 }
 
 /* Booking link for the committed non-show place — a table, train tickets, a
@@ -1358,7 +1373,13 @@ function destNode(constraint, slackHtmlStr) {
  * user already told us: the committed time (a table) or tonight (a room). */
 function planPartnerLink() {
   if (!state.destPlace) return "";
-  const link = partnerLink(state.destPlace, AFFILIATES, { dateISO: NOW.date, time: state.selectedTime });
+  // A partner books against the real calendar, not the fringe day: a table at
+  // "25:00" on the 14th is a table at 01:00 on the 15th, and sending the former
+  // would either fail or book the wrong night.
+  const when = state.selectedTime
+    ? realMoment(NOW.fringeDate, state.selectedTime)
+    : { date: NOW.date, time: "" };
+  const link = partnerLink(state.destPlace, AFFILIATES, { dateISO: when.date, time: when.time });
   if (!link) return "";
   const btnLabel = `${placeIcon(state.destPlace.kind)} ${escapeHtml(link.text)} &middot; ${escapeHtml(link.partner)}`;
   const anchor = (cls) =>
@@ -1401,7 +1422,7 @@ function noteLeg() {
 }
 
 function noteDestNode() {
-  return planNode("📝", "dest", state.selectedTime, state.destNote, "Your next commitment", "", "");
+  return planNode("📝", "dest", clockLabel(state.selectedTime), state.destNote, "Your next commitment", "", "");
 }
 
 /* Booking link for a show on the official Fringe box office. Every show in the
@@ -1802,11 +1823,15 @@ function nearestTimes(times, target, n) {
  * that time. Scrolling a wheel browses; tapping a show commits it. */
 const WHEEL_ITEM_H = 40;
 
-function populateWheel(el, values) {
+/* `label` renders a value for the eye without changing the value itself — the
+ * hour wheel rolls past 23 into the fringe day's small hours (24–29) and must
+ * still read 00–05, because nobody asks for a show at twenty-five o'clock. */
+function populateWheel(el, values, label) {
   el._values = values;
+  const text = label || ((v) => v);
   el.innerHTML =
     '<div class="wheel-pad"></div>' +
-    values.map((v) => `<div class="wheel-item" data-v="${v}">${v}</div>`).join("") +
+    values.map((v) => `<div class="wheel-item" data-v="${v}">${text(v)}</div>`).join("") +
     '<div class="wheel-pad"></div>';
 }
 function wheelIndex(el) {
@@ -1885,9 +1910,10 @@ function buildConstraintPanel() {
   }
   if (!state.selectedTime) state.selectedTime = defaultConstraintTime(NOW.minutes);
 
-  // Hours from the current hour to end of day; minutes in fives, trimmed to
-  // what's still ahead in the current hour.
-  populateWheel(hw, wheelHours(NOW.minutes));
+  // Hours from the current hour to the end of the fringe day (06:00 tomorrow,
+  // so late in the evening the wheel rolls on through midnight); minutes in
+  // fives, trimmed to what's still ahead in the current hour.
+  populateWheel(hw, wheelHours(NOW.minutes), hourLabel);
   populateWheel(mw, minutesForHour(state.selectedTime.slice(0, 2), NOW.minutes));
 
   [hw, mw].forEach((el) => {
@@ -2139,7 +2165,7 @@ function renderConstraintShows(animate) {
   if (countEl) tweenCount(countEl, atTime.length);
   if (countLab) {
     countLab.textContent =
-      (atTime.length === 1 ? "show starts at " : "shows start at ") + state.selectedTime;
+      (atTime.length === 1 ? "show starts at " : "shows start at ") + clockLabel(state.selectedTime);
   }
 
   if (!atTime.length) {
@@ -2150,7 +2176,7 @@ function renderConstraintShows(animate) {
       nearest
         .map(
           (t) =>
-            `<button type="button" data-time="${t}">${t} · ${
+            `<button type="button" data-time="${t}">${clockLabel(t)} · ${
               constraintShows().filter((s) => s.time === t).length
             }</button>`
         )
@@ -2226,8 +2252,9 @@ function refreshConstraintValue() {
   if (!el) return;
   const show = state.shows.find((s) => s.id === state.selectedShowId);
   const place = state.destLabel && state.destLabel.trim();
-  if (show) el.textContent = `${destinationLabel()} · by ${show.time}`;
-  else if (place && state.selectedTime) el.textContent = `${place} · by ${state.selectedTime}`;
+  if (show) el.textContent = `${destinationLabel()} · by ${clockLabel(show.time)}`;
+  else if (place && state.selectedTime)
+    el.textContent = `${place} · by ${clockLabel(state.selectedTime)}`;
   else el.textContent = "Set my next commitment";
 }
 
@@ -2288,7 +2315,8 @@ function planSnapshot() {
 function saveNowState() {
   if (!state.ready) return; // still booting — don't overwrite with defaults
   writeStore(STORE_KEY, {
-    date: NOW.date,
+    // The fringe day, so a plan made at 23:00 is still the same plan at 00:30.
+    date: NOW.fringeDate,
     genres: [...state.selectedGenres],
     subgenres: [...state.selectedSubgenres],
     price: state.priceFilter,
@@ -2344,7 +2372,7 @@ function adoptRestoredPlan() {
   state.savedPlan = null;
   if (!saved) return;
 
-  const sameDay = saved.date === NOW.date;
+  const sameDay = saved.date === NOW.fringeDate;
   const show = (id) => (id ? state.shows.find((s) => s.id === id) : null);
   const commitment = sameDay ? show(saved.selectedShowId) : null;
   const leg = sameDay ? show(saved.legShowId) : null;
@@ -2571,7 +2599,7 @@ function syncToRealClock() {
  * current time. Changing the day loads that day's data file. Driven by the
  * debug date/time picker and by adoptRealClock. */
 async function applyNow(date) {
-  const prevDate = NOW.date;
+  const prevDate = NOW.fringeDate;
   simNowDate = date;
   // Read in Edinburgh, not on the device: show times are Edinburgh wall-clock,
   // so the clock they're measured against has to be the same one or every
@@ -2581,11 +2609,18 @@ async function applyNow(date) {
   NOW.dateLabel = formatDateLabel(date);
   NOW.time = here.time;
   NOW.tz = timeZoneLabel(date, FESTIVAL_TZ) || NOW.tz;
-  NOW.minutes = here.minutes;
+  // The fringe day that Edinburgh reading sits in — before 06:00 it is still
+  // last night, so the date steps back and the minutes run on past 24:00.
+  const fringe = fringeMoment(here.date, here.minutes);
+  NOW.fringeDate = fringe.date;
+  NOW.minutes = fringe.minutes;
   renderDebugBanner();
   syncDebugPicker();
   // A different day means a different per-day file; reload before re-rendering.
-  if (NOW.date !== prevDate) {
+  // Midnight is NOT such a boundary — the whole point of the fringe day is that
+  // the page doesn't change under someone mid-evening — so this compares fringe
+  // days, and the reload happens at 06:00 instead.
+  if (NOW.fringeDate !== prevDate) {
     await loadShows();
   }
   // Reachability, the "happening now" list and the time picker all key off NOW.

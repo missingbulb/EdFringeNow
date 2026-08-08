@@ -15,8 +15,10 @@ import {
   withinDayWindow,
   normalizeMealBreaks,
   festivalNight,
+  NIGHT_FOLD_CUTOFF_MIN,
   placementDiagnostics,
 } from "../engine.js";
+import { FRINGE_DAY_START_MINUTES } from "../../../shared/fringe-day.js";
 import { distanceKm, travelMinutes, TRAVEL_SPEED_KMH } from "../travel.js";
 
 // --- Fixtures ------------------------------------------------------------
@@ -375,6 +377,14 @@ test("festivalNight: an after-midnight start folds onto the previous evening", (
     festivalDate: "2026-08-15",
     festivalStartMinute: 23 * 60,
   });
+});
+
+test("festivalNight folds at the same hour the rest of the site cuts its days", () => {
+  // The planner must not disagree with the Now page about which night a late
+  // show belongs to — both cut at 06:00 (shared/fringe-day.js).
+  assert.equal(NIGHT_FOLD_CUTOFF_MIN, FRINGE_DAY_START_MINUTES);
+  assert.equal(festivalNight("2026-08-15", 5 * 60 + 59).festivalDate, "2026-08-14");
+  assert.equal(festivalNight("2026-08-15", 6 * 60).festivalDate, "2026-08-15");
 });
 
 test("eligibleSlots: a 00:30 show belongs to the night before, past 24:00, uncapped", () => {
