@@ -1009,89 +1009,89 @@ a { color: inherit; }
 
 /* Live controls — sit directly above the schedule they shape; every change
    re-plans instantly. Day hours + meal breaks are also draggable on the graphic. */
-/* Three groups side by side, each a fieldset with its question as the legend;
-   they stack into one column when the row can't hold them. "Your day" gets the
-   most room because the meal breaks live there. The dividers are borders on the
-   groups rather than gaps, so the box reads as one panel with sections. */
+/* One slim strip in place of the old three-fieldset panel: segments divided by
+   thin rules, each phrasing its inputs as a value in a sentence fragment. The
+   strip wraps whole segments when the row runs out (the dividers on a wrapped
+   row read as list separators, which is what they are). */
 .plan-controls {
-  display: grid;
-  /* The first two groups take exactly what their controls need — sized to
-     content, they never wrap a lone control onto a second row with empty space
-     beside it — and the travel group absorbs the remainder, where its hint has
-     somewhere to sit. */
-  /* `auto`, not `max-content`: the first two size to their content but will
-     yield when the row is tight, so the travel group always keeps enough width
-     for its three buttons instead of clipping the last one. */
-  grid-template-columns: auto auto minmax(244px, 1fr);
-  margin-bottom: 20px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0;
+  margin-bottom: 20px; padding: 9px 4px;
   background: #fafaff; border: 1px solid var(--line); border-radius: 12px;
 }
-.ctl-group {
-  min-width: 0; margin: 0; padding: 14px 18px;
-  border: none; border-left: 1px solid var(--line);
+.pc-seg {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 7px;
+  padding: 0 9px; min-height: 30px; min-width: 0;
+  border-left: 1px solid var(--line);
 }
-.ctl-group:first-child { border-left: none; }
-.ctl-group-title {
-  padding: 0; margin-bottom: 12px;
-  font-family: var(--display); font-size: 0.78rem; font-weight: 700;
-  color: var(--ink);
-}
-.ctl-group-body { display: flex; align-items: flex-start; gap: 12px 18px; flex-wrap: wrap; }
-/* Side by side, "Your day" is deliberately two rows — the clocks, then the meal
-   breaks underneath — rather than letting a wrap decide. The meal row is much
-   wider than the two clocks, so any width where they'd share a line makes this
-   group wider than the other two can spare. Stacked (below), the group has the
-   full width and they sit happily on one line, so this only applies up here. */
-@media (min-width: 1081px) {
-  .ctl-group--day .ctl-group-body { display: grid; grid-template-columns: auto auto 1fr; }
-  .ctl-group--day .ctl-meals { grid-column: 1 / -1; }
-}
-/* Below this the three groups can't sit side by side without the content-sized
-   columns overflowing, so they stack. */
-@media (max-width: 1080px) {
-  .plan-controls { grid-template-columns: 1fr; }
-  .ctl-group { border-left: none; border-top: 1px solid var(--line); }
-  .ctl-group:first-child { border-top: none; }
-}
-
-.ctl { display: flex; flex-direction: column; gap: 6px; min-width: 84px; }
-.ctl-label {
+.pc-seg:first-child { border-left: none; }
+/* The connective tissue: "Day", "shows/day", "between shows", and the range
+   dashes. Muted so the values are what the eye lands on. */
+.pc-cap {
   text-transform: uppercase; letter-spacing: 0.05em;
-  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+  font-size: 0.66rem; font-weight: 700; color: var(--muted); white-space: nowrap;
 }
-.ctl-hint { font-size: 0.7rem; color: #98a2b3; max-width: 220px; line-height: 1.35; margin: 2px 0 0; }
-/* Time + number inputs, matched to the .opt-select chrome. One height across
-   every control in the box — the mismatched ones were most of why it looked
-   thrown together. */
+.pc-dash { color: var(--muted); font-weight: 600; font-size: 0.84rem; }
+/* .ctl is the flash target the conflict pills scroll to (see wireConflictJumps):
+   one value plus its "⚠ Prevents N" chip, inline in the strip. */
+.ctl { display: inline-flex; align-items: center; gap: 6px; }
+/* Time + number inputs, matched to the .opt-select chrome at the strip's own
+   30px height (the shared .opt-select rule says 34px, for its other homes). */
 .ctl-time, .ctl-num {
-  font: inherit; font-size: 0.86rem; font-weight: 600; color: var(--ink);
-  border: 1px solid var(--line); border-radius: 10px; background: #fff;
-  padding: 0 9px; height: 34px;
+  font: inherit; font-size: 0.84rem; font-weight: 600; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; background: #fff;
+  padding: 0 7px; height: 30px;
 }
-.ctl-num { width: 68px; }
+.plan-controls .opt-select { height: 30px; border-radius: 8px; padding: 0 8px; font-size: 0.84rem; }
+.ctl-num { width: 52px; }
 /* Plain HH:MM clock text boxes (day start / day end). */
-.ctl-clock { width: 76px; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.ctl-clock { width: 66px; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
 .ctl-clock:invalid { border-color: var(--warn); }
 .ctl-time:focus-visible, .ctl-num:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
 /* Travel-mode segmented control. (Class name avoids the calendar's .seg.) */
-.tmode { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; align-self: flex-start; height: 34px; }
+.tmode { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; height: 30px; }
 .tmode-btn {
-  font: inherit; font-size: 0.82rem; font-weight: 600; color: var(--muted);
-  background: #fff; border: none; padding: 0 11px; cursor: pointer;
+  font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--muted);
+  background: #fff; border: none; padding: 0 10px; cursor: pointer;
   border-right: 1px solid var(--line); white-space: nowrap;
 }
 .tmode-btn:last-child { border-right: none; }
 .tmode-btn:hover { background: rgba(108, 76, 241, 0.05); }
 .tmode-btn.is-on { background: var(--violet); color: #fff; }
-/* Meal-break toggles. */
-.ctl-meals { min-width: 232px; }
-.meals { display: flex; flex-direction: column; gap: 6px; }
-.meal { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink); cursor: pointer; }
-.meal input[type="checkbox"] { accent-color: var(--violet); width: 15px; height: 15px; }
-.meal-name { min-width: 46px; font-weight: 600; }
-/* Shorter than the day-hours boxes — two of them plus a dash sit on one line,
-   and matching the 34px would make the meal rows tower over their neighbours. */
-.meal .meal-time { padding: 0 6px; height: 28px; font-size: 0.78rem; }
+.tmode-word { margin-left: 5px; }
+/* Phone: the strip becomes a stacked list; shave the segment padding and let
+   the travel buttons stand on their emoji (each keeps an aria-label + title). */
+@media (max-width: 520px) {
+  .pc-seg { padding: 0 8px; }
+  .tmode-word { display: none; }
+  .tmode-btn { padding: 0 12px; }
+}
+/* Meal-break toggles: the checkbox hides behind a pill that wears its state
+   (＋ off / ✓ on), and the time boxes only exist while the meal is on — an
+   off meal is one word, not a row of disabled-looking clocks. */
+.meal { position: relative; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; cursor: pointer; min-width: 0; }
+.meal input[type="checkbox"] { position: absolute; opacity: 0; pointer-events: none; }
+.meal-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.78rem; font-weight: 700; color: var(--muted); line-height: 1;
+  border: 1px dashed #c9cede; border-radius: 999px; padding: 7px 11px; background: #fff;
+  white-space: nowrap;
+}
+.meal-pill::before { content: "＋"; font-size: 0.72rem; }
+.meal input:checked ~ .meal-pill {
+  color: var(--violet-dark); background: rgba(108, 76, 241, 0.08);
+  border: 1px solid rgba(108, 76, 241, 0.35);
+}
+.meal input:checked ~ .meal-pill::before { content: "✓"; }
+.meal input:focus-visible ~ .meal-pill { outline: 3px solid var(--violet); outline-offset: 2px; }
+.meal:hover .meal-pill { border-color: var(--violet); }
+.meal input:not(:checked) ~ .meal-times { display: none; }
+.meal-times { display: inline-flex; align-items: center; gap: 4px; }
+/* Slightly shorter than the strip's other boxes so the pill + times pair
+   doesn't tower over its neighbours. Fixed width with the browser's clock
+   icon hidden — the icon doubled each box's width for a picker the step
+   attribute makes near-useless, and four of them cost the strip a line. */
+.meal .meal-time { padding: 0 5px; height: 28px; font-size: 0.78rem; width: 84px; text-align: center; }
+.meal .meal-time::-webkit-calendar-picker-indicator { display: none; }
 .meal-dash { color: var(--muted); }
 
 .plan-summary { font-size: 0.92rem; color: var(--ink); margin-bottom: 14px; }
@@ -1574,7 +1574,7 @@ a { color: inherit; }
 }
 /* "⚠ Prevents N" chip next to a blocking control. */
 .ctl-blocked {
-  align-self: flex-start; font: inherit; font-size: 0.66rem; font-weight: 700;
+  align-self: center; font: inherit; font-size: 0.66rem; font-weight: 700;
   color: #9a6700; background: #fff4d6; border: 1px solid #f0c65a; border-radius: 999px;
   padding: 2px 8px; cursor: pointer; white-space: nowrap; line-height: 1.3;
 }
