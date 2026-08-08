@@ -82,6 +82,37 @@ re-introducing: amounts arrive as **strings**, and nearly every show carries a
 be read as the cheapest price. See the pricing section of
 [scraper/SCRAPING.md](../../../../scraper/SCRAPING.md).
 
+## The API stamps performances in UTC — cross the zone once, at the edge
+
+The listing API's `dateTime` is a real UTC instant (`"2026-08-06T11:45:00.000Z"`),
+**not** Edinburgh wall-clock with a decorative `Z`. Slicing the digits out of that
+string is the trap: it looks like it works — every date and time in it is
+plausible — and in August it is silently an hour wrong for the whole catalogue.
+That is exactly what shipped, and what #275 cost to undo: 60,115 performances
+listed an hour early, with the tell being shows that name their own time (a 10am
+"Shakespeare for Breakfast" sitting at 09:00).
+
+The pipeline has **one** time-zone crossing, and it is `normalize.local_date_start`.
+`refresh_ticket_status.py` and `fetch_prices.py` share it so a performance is keyed
+by the same local date and start everywhere. Everything written after it — the
+master, `data/days/*.json`, `availability.min.json`, `shows.min.json` — is already
+Edinburgh wall-clock, so **no stage downstream parses, converts, or re-offsets a
+time**. Treating a stored value as UTC a second time is the same bug from the other
+end.
+
+Two consequences to hold on to when touching this:
+
+- **A "now" compared against these times is read in Edinburgh too** — `js/clock.js`
+  (`festivalNow` / `festivalDate`), never the device clock. A UK visitor cannot see
+  the difference, which is why a device clock survives review; a visitor planning
+  from another zone reintroduces the whole drift.
+- **A conversion change is a full-snapshot change.** The committed data is generator
+  output, so the fix is not complete until the master is rebuilt through the new
+  conversion and every derived artifact regenerated from it. Shifting the boundary
+  moves performances between day files (two late 31 Aug performances now fall into
+  1 Sep, outside the August day files, and live only in the master and the planner's
+  catalogue) — expect that and check it, rather than reading it as data loss.
+
 ## The committed data is generated output — regenerate it, never hand-edit it
 
 `data/raw_pages/` is a git-ignored regenerable cache. `data/normalized/`,
