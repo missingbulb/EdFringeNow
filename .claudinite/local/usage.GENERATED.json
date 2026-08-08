@@ -1,0 +1,795 @@
+{
+  "version": 1,
+  "foldedThrough": "2026-08-07",
+  "runsFoldedThrough": "2026-08-08T03:58:19Z",
+  "days": {
+    "2026-07-29": {
+      "captures": 12,
+      "merges": 11,
+      "sessions": 11,
+      "userMessages": 29,
+      "userCommands": 2,
+      "skillLoads": {
+        "engineering-practices": 3,
+        "file-placement": 2,
+        "merge-to-main": 12,
+        "prose-to-checks": 1,
+        "writing-tests": 3
+      },
+      "checks": {
+        "work": {
+          "runs": 37,
+          "failures": 15,
+          "errors": 0,
+          "blocking": 20,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 9,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 7,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 12,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 7,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-07-30": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 4,
+      "userMessages": 11,
+      "userCommands": 1,
+      "skillLoads": {
+        "merge-to-main": 4
+      },
+      "checks": {
+        "work": {
+          "runs": 9,
+          "failures": 4,
+          "errors": 0,
+          "blocking": 5,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 2,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 3,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 1,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-07-31": {
+      "captures": 12,
+      "merges": 10,
+      "sessions": 10,
+      "userMessages": 30,
+      "userCommands": 3,
+      "skillLoads": {
+        "artifact-design": 1,
+        "engineering-practices": 1,
+        "git-github-advanced": 1,
+        "merge-to-main": 8,
+        "probe-edfringe-api": 1,
+        "run": 1,
+        "single-issue-triage": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 49,
+          "failures": 9,
+          "errors": 0,
+          "blocking": 13,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 31,
+          "failures": 3,
+          "errors": 0,
+          "blocking": 3,
+          "advisory": 4,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 9,
+          "advisory": 0
+        },
+        "edfringe-data-dir-is-generator-output": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "interview-answer-stale": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "product-wiki-page-sections": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 3,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-01": {
+      "captures": 5,
+      "merges": 4,
+      "sessions": 3,
+      "userMessages": 1,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 7,
+          "failures": 3,
+          "errors": 0,
+          "blocking": 4,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 3,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 3,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 3
+        },
+        "task-lifecycle": {
+          "blocking": 3,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-02": {
+      "captures": 11,
+      "merges": 8,
+      "sessions": 8,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {
+        "single-issue-triage": 1,
+        "single-pr-status": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 3,
+          "failures": 1,
+          "errors": 0,
+          "blocking": 1,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 5,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 4,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 4
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-03": {
+      "captures": 1,
+      "merges": 1,
+      "sessions": 1,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {},
+      "checks": {
+        "work": {
+          "runs": 1,
+          "failures": 1,
+          "errors": 0,
+          "blocking": 2,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 2,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 2,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "task-lifecycle": {
+          "blocking": 1,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-04": {
+      "captures": 2,
+      "merges": 1,
+      "sessions": 1,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {},
+      "checks": {
+        "work": {
+          "runs": 2,
+          "failures": 2,
+          "errors": 0,
+          "blocking": 3,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 2,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 2,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "task-lifecycle": {
+          "blocking": 2,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-05": {
+      "captures": 2,
+      "merges": 2,
+      "sessions": 2,
+      "userMessages": 2,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 2,
+          "failures": 1,
+          "errors": 0,
+          "blocking": 2,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 2,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 2,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "task-lifecycle": {
+          "blocking": 1,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-08-06": {
+      "captures": 4,
+      "merges": 4,
+      "sessions": 3,
+      "userMessages": 11,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 2
+      },
+      "checks": {
+        "work": {
+          "runs": 33,
+          "failures": 6,
+          "errors": 0,
+          "blocking": 8,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 1,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 1,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 6,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 1
+        },
+        "task-lifecycle": {
+          "blocking": 2,
+          "advisory": 0
+        }
+      },
+      "tasks": {
+        "basics/baselining": {
+          "agent": 0,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 3
+        },
+        "edfringe/refresh-tickets": {
+          "agent": 0,
+          "prework": 3,
+          "skipped": 0,
+          "failed": 3,
+          "deferred": 0
+        }
+      },
+      "taskExec": {}
+    },
+    "2026-08-07": {
+      "captures": 17,
+      "merges": 16,
+      "sessions": 17,
+      "userMessages": 33,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 13,
+        "run": 1,
+        "single-issue-triage": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 33,
+          "failures": 16,
+          "errors": 0,
+          "blocking": 20,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 3,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 2,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 22,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "task-lifecycle": {
+          "blocking": 16,
+          "advisory": 0
+        }
+      },
+      "tasks": {
+        "basics/baselining": {
+          "agent": 2,
+          "prework": 3,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 1
+        },
+        "edfringe/refresh-shows": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "edfringe/refresh-tickets": {
+          "agent": 0,
+          "prework": 16,
+          "skipped": 5,
+          "failed": 0,
+          "deferred": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 2
+        },
+        "grow_with_claudinite/usage-fold": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "tidy-repo/tidy-issues": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        }
+      },
+      "taskExec": {
+        "basics/baselining": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        }
+      }
+    },
+    "2026-08-08": {
+      "captures": 1,
+      "merges": 1,
+      "sessions": 1,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {},
+      "checks": {
+        "work": {
+          "runs": 1,
+          "failures": 1,
+          "errors": 0,
+          "blocking": 1,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        }
+      },
+      "tasks": {
+        "basics/baselining": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "edfringe/refresh-tickets": {
+          "agent": 0,
+          "prework": 0,
+          "skipped": 3,
+          "failed": 0,
+          "deferred": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        }
+      },
+      "taskExec": {
+        "grow_with_claudinite/growth-extract": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        }
+      }
+    }
+  },
+  "weeks": {
+    "2026-W31": {
+      "days": 5,
+      "captures": 44,
+      "merges": 37,
+      "sessionDays": 36,
+      "userMessages": 71,
+      "userCommands": 6,
+      "skillLoads": {
+        "artifact-design": 1,
+        "engineering-practices": 4,
+        "file-placement": 2,
+        "git-github-advanced": 1,
+        "merge-to-main": 25,
+        "probe-edfringe-api": 1,
+        "prose-to-checks": 1,
+        "run": 1,
+        "single-issue-triage": 2,
+        "single-pr-status": 1,
+        "writing-tests": 3
+      },
+      "checks": {
+        "work": {
+          "runs": 105,
+          "failures": 32,
+          "errors": 0,
+          "blocking": 43,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 50,
+          "failures": 3,
+          "errors": 0,
+          "blocking": 3,
+          "advisory": 18,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 26,
+          "advisory": 0
+        },
+        "edfringe-data-dir-is-generator-output": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 9
+        },
+        "interview-answer-stale": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "product-wiki-page-sections": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "squash-merge-history": {
+          "blocking": 3,
+          "advisory": 0
+        },
+        "task-lifecycle": {
+          "blocking": 14,
+          "advisory": 0
+        }
+      },
+      "tasks": {},
+      "taskExec": {}
+    },
+    "2026-W32": {
+      "days": 5,
+      "captures": 26,
+      "merges": 24,
+      "sessionDays": 24,
+      "userMessages": 46,
+      "userCommands": 0,
+      "skillLoads": {
+        "merge-to-main": 16,
+        "run": 1,
+        "single-issue-triage": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 71,
+          "failures": 26,
+          "errors": 0,
+          "blocking": 35,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 10,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 9,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 31,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 9
+        },
+        "task-lifecycle": {
+          "blocking": 22,
+          "advisory": 0
+        }
+      },
+      "tasks": {
+        "basics/baselining": {
+          "agent": 2,
+          "prework": 3,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 4
+        },
+        "edfringe/refresh-shows": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "edfringe/refresh-tickets": {
+          "agent": 0,
+          "prework": 19,
+          "skipped": 5,
+          "failed": 3,
+          "deferred": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 2
+        },
+        "grow_with_claudinite/usage-fold": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "tidy-repo/tidy-issues": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        }
+      },
+      "taskExec": {
+        "basics/baselining": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        }
+      }
+    }
+  }
+}
