@@ -1467,6 +1467,30 @@ function scheduleRecompute(animate = false) {
 const calWrap = () => $("calWrap");
 const calInner = () => $("calInner");
 
+/* A faint stripe down every Sat/Sun column, the full height of the board. The
+ * day header already bolds the weekend numbers, but on a tall grid the lanes
+ * are far from that row — the stripe carries the same "this is a weekend" cue
+ * all the way down. Built once, then re-placed with the rest of the overlay
+ * geometry (the columns flex, so the widths move with the board). */
+function layoutWeekendStripes(trackLeft, dayW) {
+  const host = $("wkndCols");
+  if (!host) return;
+  if (host.childElementCount === 0) {
+    for (let d = 1; d <= DAYS_IN_MONTH; d++) {
+      if (!isWeekend(d)) continue;
+      const stripe = document.createElement("div");
+      stripe.className = "wknd-col";
+      stripe.dataset.day = String(d);
+      host.appendChild(stripe);
+    }
+  }
+  for (const stripe of host.children) {
+    const d = Number(stripe.dataset.day);
+    stripe.style.left = trackLeft + (d - 1) * dayW + "px";
+    stripe.style.width = dayW + "px";
+  }
+}
+
 function layoutOverlay() {
   const daysEl = $("dayHead");
   const dr = daysEl.getBoundingClientRect();
@@ -1484,6 +1508,8 @@ function layoutOverlay() {
   const festEnd = $("festEnd");
   festEnd.style.left = trackLeft + "px";
   festEnd.style.width = (FEST_START_DAY - 1) * dayW + "px";
+
+  layoutWeekendStripes(trackLeft, dayW);
 
   paintWindow();
 }
