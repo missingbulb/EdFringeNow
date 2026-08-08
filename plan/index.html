@@ -392,105 +392,106 @@
         <!-- Live controls: nudging any of them re-plans instantly. Day hours and
              meal breaks are also editable by dragging directly on the schedule.
 
-             Grouped into the three questions they actually answer — how long
-             your day is, how hard you're pushing it, and how you're getting
-             between venues. As one flat wrapping row of seven mismatched
-             controls (68px number boxes beside a two-row meal block) it wrapped
-             into ragged, unrelated-looking rows; each group is a fieldset so
-             the heading is a real label for the controls under it, not just
-             text above them. -->
-        <div class="plan-controls">
-          <fieldset class="ctl-group ctl-group--day">
-            <legend class="ctl-group-title">Your day</legend>
-            <div class="ctl-group-body">
-              <!-- Day start/end are plain HH:MM text boxes (the native time picker /
-                   a long select felt heavy for a control most people set by dragging
-                   the lines on the schedule). The day may run to 27:00 (03:00), which
-                   a native time input can't express, so a text box is the honest fit. -->
-              <div class="ctl">
-                <label class="ctl-label" for="ctlDayStart">Starts</label>
-                <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
-                       inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                       aria-label="Day starts (24-hour HH:MM)" />
-                <button type="button" class="ctl-blocked" id="blkDayStart" hidden></button>
-              </div>
-              <div class="ctl">
-                <label class="ctl-label" for="ctlDayEnd">Ends</label>
-                <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
-                       inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                       aria-label="Day ends (HH:MM, up to 27:00 for 03:00)" />
-                <button type="button" class="ctl-blocked" id="blkDayEnd" hidden></button>
-              </div>
-              <div class="ctl ctl-meals">
-                <span class="ctl-label">Meal breaks</span>
-                <div class="meals">
-                  <label class="meal">
-                    <input type="checkbox" id="mealLunchOn" checked />
-                    <span class="meal-name">Lunch</span>
-                    <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
-                    <span class="meal-dash">–</span>
-                    <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
-                    <button type="button" class="ctl-blocked meal-blocked" id="blkMealLunch" hidden></button>
-                  </label>
-                  <label class="meal">
-                    <input type="checkbox" id="mealDinnerOn" />
-                    <span class="meal-name">Dinner</span>
-                    <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
-                    <span class="meal-dash">–</span>
-                    <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
-                    <button type="button" class="ctl-blocked meal-blocked" id="blkMealDinner" hidden></button>
-                  </label>
-                </div>
-              </div>
+             One slim strip that reads left to right as the plan's ground rules:
+             day hours, meal breaks, how many shows and how far apart, how you
+             travel. Each segment phrases its inputs as a value in a sentence
+             fragment ("10 – 3 shows/day") rather than a labelled form field —
+             the strip is a summary you can grab and change, not a form. A meal
+             that's off collapses to its pill, so the times only take room when
+             they can matter. -->
+        <div class="plan-controls" role="group" aria-label="Plan preferences">
+          <div class="pc-seg" role="group" aria-label="Day hours">
+            <span class="pc-cap">Day</span>
+            <!-- Day start/end are plain HH:MM text boxes (the native time picker /
+                 a long select felt heavy for a control most people set by dragging
+                 the lines on the schedule). The day may run to 27:00 (03:00), which
+                 a native time input can't express, so a text box is the honest fit. -->
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     aria-label="Day starts (24-hour HH:MM)" />
+              <button type="button" class="ctl-blocked" id="blkDayStart" hidden></button>
             </div>
-          </fieldset>
+            <span class="pc-dash" aria-hidden="true">&ndash;</span>
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     aria-label="Day ends (HH:MM, up to 27:00 for 03:00)" />
+              <button type="button" class="ctl-blocked" id="blkDayEnd" hidden></button>
+            </div>
+          </div>
 
-          <fieldset class="ctl-group ctl-group--pace">
-            <legend class="ctl-group-title">Pace</legend>
-            <div class="ctl-group-body">
-              <div class="ctl">
-                <label class="ctl-label" for="ctlMax">Most / day</label>
-                <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric" />
-              </div>
-              <div class="ctl">
-                <label class="ctl-label" for="ctlMin">Fewest / day</label>
-                <select class="opt-select" id="ctlMin">
-                  <option value="1" selected>Any (1+)</option>
-                  <option value="2">At least 2</option>
-                  <option value="3">At least 3</option>
-                </select>
-              </div>
-              <div class="ctl">
-                <label class="ctl-label" for="ctlGap">Min. gap</label>
-                <select class="opt-select" id="ctlGap">
-                  <option value="0">0 min</option>
-                  <option value="15">15 min</option>
-                  <option value="30" selected>30 min</option>
-                  <option value="45">45 min</option>
-                  <option value="60">1 hour</option>
-                  <option value="90">1½ hours</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
+          <!-- Each meal is one label: the pill toggles it, and the time boxes
+               beside it only exist while it's on (CSS hides them off-state). -->
+          <div class="pc-seg" role="group" aria-label="Meal breaks">
+            <label class="meal ctl">
+              <input type="checkbox" id="mealLunchOn" checked />
+              <span class="meal-pill">Lunch</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
+              </span>
+              <button type="button" class="ctl-blocked meal-blocked" id="blkMealLunch" hidden></button>
+            </label>
+            <label class="meal ctl">
+              <input type="checkbox" id="mealDinnerOn" />
+              <span class="meal-pill">Dinner</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
+              </span>
+              <button type="button" class="ctl-blocked meal-blocked" id="blkMealDinner" hidden></button>
+            </label>
+          </div>
 
-          <fieldset class="ctl-group ctl-group--travel">
-            <legend class="ctl-group-title" id="modeLabel">Getting around</legend>
-            <div class="ctl-group-body">
-              <div class="ctl">
-                <div class="tmode" id="ctlMode" role="group" aria-labelledby="modeLabel">
-                  <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true">🚶 Walk</button>
-                  <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false">🚲 Bike</button>
-                  <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false">🚗 Car</button>
-                </div>
-                <!-- Travel time is only *added* when it exceeds the gap above,
-                     so saying what the buttons do avoids the reasonable
-                     assumption that bike and car simply mean "faster". -->
-                <p class="ctl-hint">Sets travel time between venues — used when it's
-                  longer than the gap.</p>
-              </div>
+          <!-- Fewest and most per day, phrased as the range they are. The
+               option values (1/2/3) are what savePlanPrefs stores, so only the
+               labels changed from the old "Any (1+) / At least 2" wording. -->
+          <div class="pc-seg" role="group" aria-label="Shows per day">
+            <div class="ctl">
+              <select class="opt-select" id="ctlMin" aria-label="Fewest shows per day">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
             </div>
-          </fieldset>
+            <span class="pc-dash" aria-hidden="true">&ndash;</span>
+            <div class="ctl">
+              <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric"
+                     aria-label="Most shows per day" />
+            </div>
+            <span class="pc-cap">shows/day</span>
+          </div>
+
+          <div class="pc-seg" role="group" aria-label="Gap between shows">
+            <div class="ctl">
+              <select class="opt-select" id="ctlGap" aria-label="Minimum gap between shows">
+                <option value="0">0 min</option>
+                <option value="15">15 min</option>
+                <option value="30" selected>30 min</option>
+                <option value="45">45 min</option>
+                <option value="60">1 hour</option>
+                <option value="90">1½ hours</option>
+              </select>
+            </div>
+            <span class="pc-cap">apart</span>
+          </div>
+
+          <div class="pc-seg">
+            <!-- Travel time is only *added* when it exceeds the gap, so the
+                 tooltips say what the buttons do — this avoids the reasonable
+                 assumption that bike and car simply mean "faster". -->
+            <div class="tmode" id="ctlMode" role="group" aria-label="Travel between venues">
+              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true" aria-label="Walk"
+                      title="Walking time between venues — used when it's longer than the gap">🚶<span class="tmode-word">Walk</span></button>
+              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false" aria-label="Bike"
+                      title="Cycling time between venues — used when it's longer than the gap">🚲<span class="tmode-word">Bike</span></button>
+              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false" aria-label="Car"
+                      title="Driving time between venues — used when it's longer than the gap">🚗<span class="tmode-word">Car</span></button>
+            </div>
+          </div>
         </div>
 
         <div class="plan-summary" id="planSummary" role="status" aria-live="polite"></div>
