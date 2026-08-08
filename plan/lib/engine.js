@@ -641,19 +641,22 @@ export function buildSchedule(shows, options = {}) {
 }
 
 /**
- * Which day-hours / meal-break controls are, on their own, making a show
- * un-placeable. A show counts as blocked when it has at least one available
- * performance inside the date window but none survive the day-hours + meal
- * filter. For each such show we attribute blame to every control that would —
- * on its own, all others left as-is — rescue at least one performance if
- * relaxed. So a control's list is exactly "the shows this control shuts out",
- * ready for a "prevents N shows" label + tooltip and an at-a-glance grid mark.
+ * Which day-hours / meal-break / trip-block controls are, on their own, making
+ * a show un-placeable. A show counts as blocked when it has at least one
+ * available performance inside the date window but none survive the day-hours
+ * + meal + arrival/departure filter. For each such show we attribute blame to
+ * every control that would — on its own, all others left as-is — rescue at
+ * least one performance if relaxed. So a control's list is exactly "the shows
+ * this control shuts out", ready for a "prevents N shows" label + tooltip and
+ * an at-a-glance grid mark.
  *
  * @param {object[]} shows shows to diagnose (typically the matched favourites)
  * @param {{
  *   dateStart: string, dateEnd: string,
  *   dayStartMin?: number, dayEndMin?: number, dayEndCeil?: number,
  *   mealBreaks?: Array<{id?:string, startMin?:number, endMin?:number, start?:string, end?:string, enabled?:boolean}>,
+ *   arrival?: {date:string, endMin:number}|null,
+ *   departure?: {date:string, startMin:number}|null,
  *   venueCoords?: Map<string,{lat:number,lng:number}>|object,
  * }} options
  * @returns {{
@@ -661,6 +664,8 @@ export function buildSchedule(shows, options = {}) {
  *   dayStart: Array<{slug:string,title:string}>,
  *   dayEnd: Array<{slug:string,title:string}>,
  *   meals: Object<string, Array<{slug:string,title:string}>>,
+ *   arrival: Array<{slug:string,title:string}>,
+ *   departure: Array<{slug:string,title:string}>,
  * }}
  */
 export function placementDiagnostics(shows, options = {}) {
@@ -676,36 +681,65 @@ export function placementDiagnostics(shows, options = {}) {
       endMin: m.endMin ?? (m.end != null ? timeToMinutesOfDay(m.end) : null),
     }))
     .filter((m) => m.startMin != null && m.endMin != null && m.endMin > m.startMin);
+  const arrival = options.arrival && options.arrival.endMin != null ? options.arrival : null;
+  const departure = options.departure && options.departure.startMin != null ? options.departure : null;
 
-  const baseWin = { dayStartMin, dayEndMin, mealBreaks: meals };
+  // Whether a slot survives the day-hours filter under a partial relaxation.
+  // The trip blocks bite only on their own date and own that date's boundary
+  // outright, exactly as buildSchedule models them: the getting-there block
+  // replaces day-start on the arrival date, the getting-out block replaces
+  // day-end on the departure date.
+  const fits = (slot, ov = {}) => {
+    let startMin = ov.dayStartMin ?? dayStartMin;
+    let endMin = ov.dayEndMin ?? dayEndMin;
+    let breaks = ov.mealBreaks ?? meals;
+    const arr = "arrival" in ov ? ov.arrival : arrival;
+    const dep = "departure" in ov ? ov.departure : departure;
+    if (arr && slot.date === arr.date) {
+      startMin = 0;
+      breaks = [...breaks, { startMin: 0, endMin: arr.endMin }];
+    }
+    if (dep && slot.date === dep.date) {
+      endMin = Infinity;
+      breaks = [...breaks, { startMin: dep.startMin, endMin: Infinity }];
+    }
+    return withinDayWindow(slot, { dayStartMin: startMin, dayEndMin: endMin, mealBreaks: breaks });
+  };
+
   const slotsByShow = eligibleSlots(shows, {
     dateStart: options.dateStart,
     dateEnd: options.dateEnd,
     venueCoords: options.venueCoords ?? null,
   });
 
-  const result = { blockedSlugs: new Set(), dayStart: [], dayEnd: [], meals: {} };
+  const result = { blockedSlugs: new Set(), dayStart: [], dayEnd: [], meals: {}, arrival: [], departure: [] };
   for (const m of meals) result.meals[m.id] = [];
 
   for (const show of shows || []) {
     const slots = slotsByShow.get(show.slug) || [];
     if (slots.length === 0) continue; // nothing in the date window — a dates problem, not a day-hours one
-    if (slots.some((s) => withinDayWindow(s, baseWin))) continue; // already placeable
+    if (slots.some((s) => fits(s))) continue; // already placeable
     result.blockedSlugs.add(show.slug);
     const entry = { slug: show.slug, title: show.title };
 
     // A control is culpable if relaxing only it would let a performance back in.
-    if (slots.some((s) => withinDayWindow(s, { ...baseWin, dayStartMin: 0 }))) {
+    if (slots.some((s) => fits(s, { dayStartMin: 0 }))) {
       result.dayStart.push(entry);
     }
-    if (slots.some((s) => withinDayWindow(s, { ...baseWin, dayEndMin: dayEndCeil }))) {
+    if (slots.some((s) => fits(s, { dayEndMin: dayEndCeil }))) {
       result.dayEnd.push(entry);
     }
     for (const m of meals) {
       const without = meals.filter((x) => x.id !== m.id);
-      if (slots.some((s) => withinDayWindow(s, { ...baseWin, mealBreaks: without }))) {
+      if (slots.some((s) => fits(s, { mealBreaks: without }))) {
         result.meals[m.id].push(entry);
       }
+    }
+    if (arrival && slots.some((s) => fits(s, { arrival: null }))) {
+      result.arrival.push(entry);
+    }
+    if (departure && slots.some((s) => fits(s, { departure: null }))) {
+      result.departure.push(entry);
     }
   }
   return result;

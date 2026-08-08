@@ -431,4 +431,33 @@ test("placementDiagnostics: attributes blocked shows to the culpable control", (
   assert.deepEqual(diag.meals.lunch.map((s) => s.slug), ["noon"]);
   assert.equal(diag.blockedSlugs.has("fine"), false);
   assert.deepEqual([...diag.blockedSlugs].sort(), ["early", "late", "noon"]);
+  // No trip blocks passed — the lists still exist, just empty.
+  assert.deepEqual(diag.arrival, []);
+  assert.deepEqual(diag.departure, []);
+});
+
+test("placementDiagnostics: attributes blocked shows to the trip blocks", () => {
+  const shows = [
+    // Only runs 10:00 on the arrival day — the getting-there block (ends 12:00)
+    // shuts it out, and relaxing the 09:00 day-start would not rescue it.
+    show("first-morning", "A", [{ date: "2026-08-10", start: "10:00" }]),
+    // Only runs 19:00 on the departure day — the getting-out block (starts
+    // 18:00) shuts it out, and relaxing the day-end would not rescue it.
+    show("last-evening", "A", [{ date: "2026-08-12", start: "19:00" }]),
+    // Runs 14:00 on the arrival day — inside the day, never blamed.
+    show("fine", "A", [{ date: "2026-08-10", start: "14:00" }]),
+  ];
+  const diag = placementDiagnostics(shows, {
+    dateStart: "2026-08-10",
+    dateEnd: "2026-08-12",
+    dayStartMin: 9 * 60,
+    dayEndMin: 24 * 60,
+    arrival: { date: "2026-08-10", endMin: 12 * 60 },
+    departure: { date: "2026-08-12", startMin: 18 * 60 },
+  });
+  assert.deepEqual(diag.arrival.map((s) => s.slug), ["first-morning"]);
+  assert.deepEqual(diag.departure.map((s) => s.slug), ["last-evening"]);
+  assert.deepEqual(diag.dayStart, [], "the arrival block owns day one's start, not the day-start control");
+  assert.deepEqual(diag.dayEnd, [], "the departure block owns the last day's end, not the day-end control");
+  assert.deepEqual([...diag.blockedSlugs].sort(), ["first-morning", "last-evening"]);
 });

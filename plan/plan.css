@@ -1271,14 +1271,37 @@ a { color: inherit; }
   position: absolute; left: 0; top: -5px; width: 100%; height: 11px;
   cursor: ns-resize; pointer-events: auto; touch-action: none;
 }
-.sch-dayline .dl-flag {
-  position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px;
-  font-size: 0.6rem; font-weight: 700; color: #fff; background: var(--violet);
-  border-radius: 5px; padding: 1px 6px; white-space: nowrap; pointer-events: none;
-  font-variant-numeric: tabular-nums;
+/* Every constraint the user owns on the board — the day-start / day-end lines,
+   the meal bands, the arrival / departure trip blocks — names itself with the
+   same label pill: violet text in a violet-bordered pill over a transparent
+   fill, so "this is a boundary you set" reads the same everywhere. When the
+   constraint is shutting shows out, the label gains the same red conflict
+   triangle the lane status pills use (.excl-mark — hover it for the list). */
+.sch-dayline .dl-flag,
+.sch-meal .meal-label,
+.sch-trip .sch-trip-label {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 4px;
+  max-width: calc(100% - 8px);
+  font-size: 0.6rem; font-weight: 700; line-height: 1.4;
+  color: var(--violet-dark);
+  background: transparent; border: 1px solid var(--violet); border-radius: 999px;
+  padding: 0 7px;
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+  pointer-events: none; z-index: 1;
 }
+/* The live-updating text inside the pill; a narrow day column trims it with an
+   ellipsis rather than pushing the conflict triangle out of the pill. */
+.sch-dayline .ov-text, .sch-meal .ov-text, .sch-trip .ov-text {
+  min-width: 0; overflow: hidden; text-overflow: ellipsis;
+}
+.sch-dayline .dl-flag { bottom: 8px; }
 .sch-dayline--end .dl-flag { bottom: auto; top: 8px; }
-.sch-dayline.dragging .dl-flag, .sch-dayline .dl-grip:hover ~ .dl-flag { background: var(--violet-dark); }
+/* While its boundary is grabbed (or hovered), the pill fills in — the same
+   emphasis for all three label kinds. */
+.sch-dayline.dragging .dl-flag, .sch-dayline .dl-grip:hover ~ .dl-flag,
+.sch-meal.dragging .meal-label,
+.sch-trip.dragging .sch-trip-label { background: var(--violet); color: #fff; }
 /* Meal-break band: draggable to move, edge handles to resize. Its background
    now matches the "before day starts / after day ends" zones (a neutral
    diagonal hatch) so every "you can't be here" region on the board reads the
@@ -1291,12 +1314,7 @@ a { color: inherit; }
 .sch-meal.dragging { cursor: grabbing; }
 /* Pinned to the top of the band (like the day-end flag) rather than floating in
    the middle, so it stays put as the band is dragged / resized. */
-.sch-meal .meal-label {
-  position: absolute; top: 6px; left: 0; right: 0;
-  text-align: center;
-  font-size: 0.6rem; font-weight: 700; color: var(--muted); white-space: nowrap;
-  font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
-}
+.sch-meal .meal-label { top: 4px; }
 /* Playful faint emoji scatter behind a blocker region (meal band, day-start /
    day-end zone, or trip block) — deterministic emoji on a fixed pixel grid
    (populateDecors). Always visible — only the swim animation below is gated on
@@ -1328,12 +1346,6 @@ a { color: inherit; }
   position: absolute; left: 0; right: 0; z-index: 5;
   background: repeating-linear-gradient(-45deg, rgba(16,24,40,0.05) 0 6px, rgba(16,24,40,0.02) 6px 12px);
   pointer-events: auto; touch-action: none; overflow: visible;
-}
-.sch-trip .sch-trip-label {
-  position: absolute; left: 6px; right: 6px; text-align: center;
-  font-size: 0.6rem; font-weight: 700; color: var(--muted);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  font-variant-numeric: tabular-nums; pointer-events: none; z-index: 1;
 }
 /* The label hugs the block's draggable inner edge: arrival just above its
    bottom glyph, departure just below its top glyph (both inside the block). */
@@ -1556,24 +1568,13 @@ a { color: inherit; }
 .ctl-blocked:hover { background: #ffeab3; }
 .ctl-blocked:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
 .meal-blocked { align-self: center; margin-left: 2px; }
-/* On the schedule overlay, a boundary line / meal band that shuts shows out
-   turns amber and carries a small "not placeable · N" tag. */
-.sch-dayline--blocking { border-top-color: #e2a815; }
-.sch-dayline--blocking .dl-flag { background: #c77700; }
-/* A meal break that's blocking a show reads only from the "not placeable" badge
-   now — the band itself stays the calm neutral hatch, like the day-end zone. */
-.dl-blocked {
-  position: absolute; right: 4px; top: -9px; transform: translateY(-100%);
-  font-size: 0.56rem; font-weight: 700; color: #fff; background: #c77700;
-  border-radius: 5px; padding: 1px 6px; white-space: nowrap; pointer-events: auto;
-}
-.sch-dayline--end .dl-blocked { top: 1px; transform: translateY(100%); }
 
-/* The conflict triangle on a meal band's centre label — the same mark the lane
-   status pills carry, so the board and the grid say "conflict" the same way.
-   Interactive: hover it for the list of shows the break excludes. */
+/* The conflict triangle on a board label pill (day line, meal band, trip
+   block) — the same mark the lane status pills carry, so the board and the
+   grid say "conflict" the same way. Interactive: hover it for the list of
+   shows the constraint excludes. */
 .excl-mark {
-  pointer-events: auto; cursor: help; vertical-align: middle;
+  flex: none; pointer-events: auto; cursor: help;
   color: var(--warn); font-size: 0.66rem; line-height: 1;
 }
 /* The excludes-list hover popup — a narrower cousin of the show card. */
