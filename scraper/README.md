@@ -11,7 +11,7 @@ Three scripts, on three different clocks:
 | script | what it gets | how often |
 |---|---|---|
 | `fetch_shows.py` | the listing: shows, venues, genres | daily top-up, full rebuild on demand |
-| `fetch_prices.py` | real ticket amounts, per show | **once** — prices don't move; see below |
+| `fetch_prices.py` | real ticket amounts, per performance | **once** — prices don't move; see below |
 | `normalize.py` | turns both into the committed site data | after either of the above |
 
 ## How edfringe.com serves listings
@@ -63,32 +63,51 @@ cache, not source.
 ```bash
 python3 scraper/fetch_prices.py --slug daniel-sloss-bitter   # one show
 python3 scraper/fetch_prices.py --all                        # every paid show
+python3 scraper/fetch_prices.py --all --batch-size 10        # smaller requests
 python3 scraper/fetch_prices.py --selftest                   # offline transform test
 ```
 
 The listing API carries **no amounts** — `priceType` is a set of flags, which is
 why the site knew only "free vs paid" for so long. Money comes from a separate
-`performancePrices(performanceRef)` query, **one call per performance**, with no
-bulk endpoint. Price *bands* are set per show and repeat across its
-performances, so one call per show is enough; `--sample-performances N` prices N
-of a show's performances and reports whether the bands actually agree.
+`performancePrices(performanceRef)` query, one performance at a time.
 
-Output is `data/prices.json` — **committed, and fetched once**:
+**Every performance is priced, because a price belongs to a performance.** The
+same run sells at several prices — previews cheaper, weekends dearer — so the
+old pass, which priced one performance per show and filed the answer under the
+show, published a quarter of the catalogue at its preview price. There is no
+bulk price *field*, but GraphQL aliases let one request carry every performance
+of a show, so full per-night pricing costs the same ~3,700 requests the old pass
+did. `--batch-size` caps the aliases per request; a rejected batch is halved and
+retried, so it is a throughput knob, never an accuracy one.
+
+Output is `data/prices.json` — **committed, and fetched once**. Performances
+sharing a price point share a set, so a show priced the same all run stores one:
 
 ```json
-{"v": 1, "fetchedAt": "2026-07-30",
- "shows": {"2026DANIELS": {"min": 22.5, "max": 29.5, "fee": 1.5,
-                           "bands": [{"type": "Price C", "value": 22.5}, …],
-                           "slug": "daniel-sloss-bitter", "ref": "1:790001"}}}
+{"v": 2, "fetchedAt": "2026-07-30",
+ "shows": {"2026ALFIEBR": {
+    "slug": "alfie-brown-the-entertainer",
+    "min": 8.5, "max": 16.0,
+    "sets": [{"min": 8.5, "max": 8.5, "bands": [{"type": "Standard", "value": 8.5}]},
+             {"min": 16.0, "max": 16.0, "bands": [{"type": "Standard", "value": 16.0}]}],
+    "perfs": {"2026-08-05|17:50": 0, "2026-08-08|17:50": 1, …}}}}
 ```
+
+`perfs` names a performance by local date and start time — the same identity the
+master and the day files use, so `normalize.py` joins on it exactly. Entries
+left by the old pass (no `perfs`) still read as whole-show prices and are
+re-priced when the pass next reaches them, so a part-finished migration never
+blanks the site's prices.
 
 Why once, and why it is *not* on the nightly path:
 
 - **A show's price doesn't move.** Ticket *status* changes hourly (hence
   `refresh-tickets`) and the listing gains shows daily (hence `refresh-shows`),
   but the bands a show sells at are set when it goes on sale. Re-fetching them
-  nightly would be ~3,500 API calls a day to re-learn the same numbers.
-- **The pass is resumable.** Shows already in the cache are skipped, so `--limit
+  nightly would be ~3,500 API calls a day to re-learn the same numbers. (A
+  performance costing *different* money from its neighbour is not the price
+  moving — that is the schedule, and it is fetched once like everything else.)
+- **The pass is resumable.** Shows already priced per performance are skipped, so `--limit
   N` takes the festival in bites and `--force` re-prices deliberately. The cache
   is rewritten every 25 shows, so a mid-run crash loses at most that many —
   but note what "resumable" is measured against: **the cache file on disk**. On
@@ -160,9 +179,18 @@ Normalization rules:
   flag. A free show is a known £0; a show the price cache hasn't reached is
   `null` — **unknown, which is not the same as free**. The wire forms carry
   `pm` (cheapest band) and, in the catalogue only, `px` (dearest), both omitted
-  when unknown so the client can tell the two apart. The day files carry `pm`
-  alone: the Now page's filter asks "what can I see for up to £X", which the
-  cheapest band answers, and a day file is the one payload where size bites.
+  when unknown so the client can tell the two apart.
+
+  The two payloads answer **different questions**, which is why they carry
+  different numbers for the same show. The master and the catalogue quote the
+  **run-wide** range (`priceMin`..`priceMax`) — "this show costs £8.50–£16",
+  true of the run as a whole. A day file holds *performances*, so its `pm` is
+  **that night's** cheapest band: £8.50 in the preview file, £16 in the Saturday
+  one. Only `pm` goes into a day file — the Now page's filter asks "what can I
+  see for up to £X" tonight, which the cheapest band on the night answers, and a
+  day file is the one payload where size bites. A performance the price cache
+  has no entry for carries no `pm` at all rather than borrowing another night's
+  figure; the client renders that as "Price TBC".
 - **Coordinates** are geocoded from each venue's UK postcode via
   [postcodes.io](https://postcodes.io) and cached in `venues.json`, so a refresh
   only geocodes new venues. Use `--no-geocode` to skip.

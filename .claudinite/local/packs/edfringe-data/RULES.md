@@ -9,8 +9,8 @@ judgment those two don't carry.
 
 ## The live API is unreachable from a session — don't try, and don't fake it
 
-`edfringe-tikketr-web-api.equhost.com` is blocked by the sandbox egress proxy and
-`edfringe.com` returns 403 to `WebFetch`. So: no session — this one included —
+`edfringe-tikketr-web-api.equhost.com` is blocked by the sandbox egress proxy
+(403 at the CONNECT). So: no session — this one included —
 can verify a scraper change against live data. Anything that must touch the API
 runs through a sanctioned workflow: the `Scrape edfringe shows (full)` workflow
 (`.github/workflows/scrape.yml`), `Fetch ticket prices (one-off)`
@@ -22,10 +22,19 @@ unverified.
 The egress block is a **policy boundary, not an obstacle to route around**. Do
 not create ad-hoc GitHub Actions workflows — push-triggered "probes" or
 anything else — to reach the API (or any blocked host) from an open-network
-runner: that is CI as a side channel around the session's network rules. For
-one-off API questions (a field's shape, an enum's value set, a sample payload),
-`scraper/SCRAPING.md` is the reference; if the answer isn't there, ask the repo
-owner rather than building a bypass.
+runner: that is CI as a side channel around the session's network rules.
+
+For one-off API questions (a field's shape, an enum's value set, whether an
+operation exists at all), `scraper/SCRAPING.md` is the reference. When it falls
+short there is one legitimate source short of asking the owner:
+**`www.edfringe.com` itself is reachable**, and its Next.js bundles carry the
+client's complete GraphQL operation set — every query, mutation and fragment,
+with full field selections. Recipe in SCRAPING.md ("Reaching it from a Claude
+Code web session"). That is reading a public asset from an allowed host, and it
+is how the "no bulk price endpoint" claim was finally settled. It tells you what
+a query would look like, never what it returns — so a change checked only that
+way is still unverified against live data and must be reported as such. If that
+doesn't answer it either, ask the repo owner rather than building a bypass.
 
 `python3 scraper/normalize.py --selftest` is the one transform check that runs
 offline; it exercises raw→master→day-file→`shows.min.json` on a fixture, so a
@@ -45,6 +54,35 @@ sell online (`NO_ALLOCATION_CONTACT_VENUE`). The site treats `SOLD_OUT` and
 availability logic — client or scraper — keys off `ticketStatus`; `soldOut` is
 carried through for display only.
 
+## A price belongs to a performance, not to a show
+
+The same run sells at several prices: previews cheaper than the main run,
+weekends dearer than weekdays. The first price pass didn't know that — it
+called `performancePrices` for **one** performance per show and filed the answer
+under the show. Pre-festival the performance it picked was almost always the
+earliest, i.e. a preview, so **1,016 of 3,664 priced shows (28%) published their
+cheapest night as their price**: Alfie Brown's £15/£16 run shipped as £8.50.
+
+The fix is not a rule about previews, and adding a "skip previews" or
+"price after date X" heuristic re-creates the same class of bug from a different
+angle — it still picks one performance and hopes it represents the rest.
+**Price every performance.** There is no bulk price *field*, but GraphQL aliases
+make one request carry a whole show's run (`fetch_prices.prices_query`), so full
+per-night pricing costs roughly the same ~3,700 requests as the old pass. There
+is no call budget to economise against here, so don't design as if there were.
+
+Which payload gets which number is the load-bearing distinction:
+
+| payload | question it answers | price |
+|---|---|---|
+| master, `shows.min.json` (planner) | what does this *show* cost? | run-wide `priceMin`..`priceMax` |
+| `data/days/*.json` (Now page) | what does it cost *tonight*? | that performance's own `pm` |
+
+A performance the cache has no entry for gets **no `pm` at all** — "Price TBC" —
+rather than the show's minimum. Borrowing a neighbouring night's figure is
+exactly the bug above, and a lower bound presented as the price is a lie about
+money even when every number in it is real.
+
 ## Prices are fetched once, and "unknown" is a third state the encoding must keep
 
 `data/prices.json` is a fetch-once cache (`scraper/fetch_prices.py`), off the
@@ -53,6 +91,12 @@ ticket status. `refresh-shows` reads the cache and carries the amounts through
 untouched — it never re-fetches them. So the festival keeps adding shows the
 cache has never seen, and **a show with no price is a normal, permanent state of
 the data**, not a gap the pipeline should close.
+
+The cache carries two entry shapes and both must stay readable: current entries
+have `sets` + `perfs` (per performance), and entries from the old pass have a
+bare whole-show `min`/`max`. The migration completes one show per re-run, so
+dropping the legacy shape — or emptying the cache to "start clean" — would blank
+every price on the site until a full pass finished. `price_sets` reads both.
 
 Which means the encoding carries three states, not two, and every stage has to
 preserve the distinction:

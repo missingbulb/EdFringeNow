@@ -4,13 +4,16 @@ name: Fetch ticket prices (one-off)
 # data/prices.json — then regenerate the site data from it.
 #
 # Deliberately manual, and deliberately NOT on the nightly path. A show's price
-# bands don't change through the festival the way its ticket status does, and
-# there is no bulk price endpoint: this is one `performancePrices` call per
-# show, ~3,500 of them. Run it once; re-run it only if the festival re-prices.
+# bands don't change through the festival the way its ticket status does. Every
+# performance is priced — previews and weekends genuinely cost different money —
+# and GraphQL alias batching fits a whole show's run into one request, so this
+# is still ~3,500 requests. Run it once; re-run it only if the festival
+# re-prices.
 #
-# The pass is resumable — shows already in the cache are skipped — so `limit`
-# lets a big run be taken in bites across several runs, each committing what it
-# got. See scraper/README.md.
+# The pass is resumable — shows already priced per performance are skipped — so
+# `limit` lets a big run be taken in bites across several runs, each committing
+# what it got. Entries from the old whole-show pass are re-priced rather than
+# skipped, which is how the cache migrates. See scraper/README.md.
 
 on:
   workflow_dispatch:
@@ -23,6 +26,13 @@ on:
         description: Price a single show by slug instead (e.g. daniel-sloss-bitter)
         required: false
         default: ""
+      batch_size:
+        description: >-
+          Performances priced per request, as GraphQL aliases. A rejected batch
+          is halved and retried, so lowering this only costs requests — try 1 to
+          confirm whether alias batching works at all against the live API.
+        required: false
+        default: "25"
       min_delay:
         description: Minimum delay between requests (seconds)
         required: false
@@ -66,6 +76,7 @@ jobs:
           python3 scraper/fetch_prices.py \
             ${{ inputs.slug && format('--slug {0}', inputs.slug) || '--all' }} \
             ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
+            --batch-size "${{ inputs.batch_size }}" \
             --min-delay "${{ inputs.min_delay }}" \
             --max-delay "${{ inputs.max_delay }}"
 
@@ -80,7 +91,19 @@ jobs:
       - name: Summarise
         if: always()
         run: |
-          python3 -c "import json; c=json.load(open('data/prices.json')); p=list(c['shows'].values()); print('priced shows:', len(p)); print('cheapest:', min(s['min'] for s in p) if p else 'n/a'); print('dearest:', max(s['max'] for s in p) if p else 'n/a')" 2>/dev/null || echo "n/a"
+          python3 - <<'PY' 2>/dev/null || echo "n/a"
+          import json
+          shows = list(json.load(open('data/prices.json'))['shows'].values())
+          per = [s for s in shows if s.get('perfs')]
+          varied = [s for s in per if len(s.get('sets') or []) > 1]
+          print('priced shows:', len(shows))
+          print('  per performance:', len(per),
+                '| legacy whole-show:', len(shows) - len(per))
+          print('  with >1 price point across the run:', len(varied))
+          print('performances priced:', sum(len(s['perfs']) for s in per))
+          print('cheapest:', min((s['min'] for s in shows), default='n/a'))
+          print('dearest:', max((s['max'] for s in shows), default='n/a'))
+          PY
 
       - name: Commit prices and regenerated data
         # `always()` so an interrupted or partly-failed pass still banks the
