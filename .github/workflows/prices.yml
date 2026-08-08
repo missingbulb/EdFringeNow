@@ -50,6 +50,10 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   # Two concurrent runs would both write data/prices.json and race on the push.
   group: fetch-prices
