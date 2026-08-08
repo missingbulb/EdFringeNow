@@ -42,6 +42,12 @@
         "users": "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'.",
         "market": "Edinburgh Fringe discovery and planning tools. Alternatives: the official Fringe app (a 'Nearby now' + shake-to-search finder), Plan My Fringe (a schedule optimiser with a walking-time 'Fringe Trail'), the edfringe.com programme and filters, the Half Price Hut (same-day discounts), review outlets such as ThreeWeeks, plus street posters and word-of-mouth. None centres full reachability — travel mode plus next-commitment slack — the way Fringe Discover does."
       }
+    },
+    {
+      "id": "claude-code-web-users-support",
+      "config": {
+        "repo": "missingbulb/Sheepdog"
+      }
     }
   ],
   "maintenance": {
@@ -53,7 +59,7 @@
     "monthlyDay": 1
   },
   "claudinite": {
-    "updated": "2026-08-07T14:46:50.830Z",
-    "ref": "7bf58aa03f3ea4684aa6777cb7c837293f08cd46"
+    "updated": "2026-08-08T18:17:05.519Z",
+    "ref": "26cbe2e650c194930b5cf535bc9fd77a88822741"
   }
 }
