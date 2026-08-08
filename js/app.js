@@ -88,7 +88,9 @@ const GRACE_MINUTES = 5;
 
 /* Price filter — real ticket amounts, shared with the planner so the two pages
  * offer the same money: "any", "free", then a ladder of inclusive caps
- * (shared/price.js). The day files carry each show's cheapest band as `pm`. */
+ * (shared/price.js). The day files carry each PERFORMANCE's cheapest band as
+ * `pm` — a preview and a Saturday of the same show cost different money, and
+ * this page only ever shows one night at a time. */
 const PRICE_FILTERS = PRICE_OPTIONS.map((o) => o.value);
 
 /* ===== DEBUG: simulated "now" =====================================
@@ -276,8 +278,8 @@ function adaptShow(entry, { venues, rooms, genres, subgenres, ticketStatuses }, 
     time: entry.start,
     duration: entry.duration || 60,
     free: !!entry.free,
-    // `pm` is the show's cheapest band in pounds, absent when the price cache
-    // doesn't know it — which is NOT the same as free (see shared/price.js).
+    // `pm` is THIS performance's cheapest band in pounds, absent when the price
+    // cache doesn't know it — NOT the same as free (see shared/price.js).
     // priceMin is what the filter reads; `price` is the label a card renders.
     priceMin: price,
     price: priceLabel({ priceMin: price, free: !!entry.free }),

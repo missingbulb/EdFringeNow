@@ -4,33 +4,59 @@
 The listing API carries no money: `priceType` is a set of flags
 (FREE / TWO_FOR_ONE / PAY_WHAT_YOU_WANT / …) and that is all `fetch_shows.py`
 can see, which is why the site has only ever known "free vs paid". Amounts live
-behind a **separate, per-performance** query:
+behind a **per-performance** query:
 
     performancePrices(performanceRef: "1:790001") -> { prices: [ Price ] }
 
-There is no bulk endpoint. Price *bands*, though, are set per show and repeat
-across that show's performances, so one call per show is enough to learn what a
-ticket costs — and `--sample-performances` re-checks that assumption by pricing
-several performances of the same show and comparing the bands.
+**A price belongs to a performance, not to a show.** The same run routinely
+sells at three different prices — previews cheaper than the main run, weekends
+dearer than weekdays — and this script used to price one performance per show
+and file the answer under the show. Pre-festival that one performance was
+almost always the *earliest*, i.e. a preview, so a quarter of the catalogue
+recorded its cheapest night as its price: Alfie Brown's £15/£16 run was
+published as £8.50, read off the 5 August preview.
 
-The result is a **cache, fetched once**: prices are a property of the show, not
-of the day, so unlike `data/days/*.json` this file is not on the nightly refresh
-path. `refresh-shows` never touches it; re-run this script by hand if the
-festival re-prices.
+There is no bulk price *field* — `performancePrices` takes one ref, and the
+`performances(input:)` listing query returns no amounts at all. But that is a
+schema constraint, not a network one: GraphQL lets the same field be **aliased**
+many times in one document, so a single request prices every performance of a
+show (25 aliases ≈ 2 KB). Pricing the whole run therefore costs the same ~3,700
+requests the old one-per-show pass did, which is why there is no sampling
+heuristic here and no rule about previews — every performance is simply priced.
+`--batch-size` caps the aliases per request; a batch the server rejects is
+halved and retried, down to a single ref, so a complexity limit costs accuracy
+nothing.
 
-Output (default `data/prices.json`, committed):
+The result is a **cache, fetched once**: prices are set when a show goes on sale
+and don't move the way ticket status does, so unlike `data/days/*.json` this
+file is not on the nightly refresh path. `refresh-shows` never touches it;
+re-run this script by hand if the festival re-prices.
 
-    {"v": 1, "fetchedAt": "2026-07-30",
-     "shows": {"<cmsRef>": {"slug", "min", "max", "conc", "bands": [...], ...}}}
+Output (default `data/prices.json`, committed). Performances that share a price
+point in the same set, so a show priced identically all run stores one:
 
-`normalize.py` folds `min`/`max`/`conc` into the master and the wire files; see
-scraper/README.md.
+    {"v": 2, "fetchedAt": "2026-07-30",
+     "shows": {"<cmsRef>": {
+        "slug": "alfie-brown-the-entertainer",
+        "min": 8.5, "max": 16.0,               # run-wide, across every set
+        "sets": [{"min", "max", "bands": [...], "conc", "fee"}, ...],
+        "perfs": {"2026-08-05|17:50": 0, "2026-08-08|17:50": 1, ...}}}}
+
+`perfs` keys a performance the way the rest of the pipeline names one — local
+date and start time, via `normalize.local_date_start` — so the join needs no
+box-office refs. `normalize.py` folds each performance's own price into that
+day's file and the run-wide min/max into the catalogue; see scraper/README.md.
+
+Entries written by the old pass (no `perfs`) are left alone and still read, as
+whole-show prices, until this pass reaches them — so a part-finished migration
+never blanks the site's prices.
 
 Usage:
     python3 scraper/fetch_prices.py --slug daniel-sloss-bitter --print-raw
-    python3 scraper/fetch_prices.py --slug daniel-sloss-bitter --sample-performances 3
+    python3 scraper/fetch_prices.py --slug alfie-brown-the-entertainer
     python3 scraper/fetch_prices.py --all                # every paid show (slow)
     python3 scraper/fetch_prices.py --all --limit 200    # resumable chunk
+    python3 scraper/fetch_prices.py --all --batch-size 10 # smaller requests
     python3 scraper/fetch_prices.py --selftest           # offline transform test
 """
 
@@ -43,6 +69,7 @@ import sys
 import time
 from datetime import date
 from pathlib import Path
+from urllib.error import HTTPError
 
 # Same directory as this script, so a plain import works however it is launched.
 from fetch_shows import (
@@ -61,13 +88,19 @@ from normalize import is_free, local_date_start
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "data" / "prices.json"
 
-# Prices are per show, not per day: one call per show is the whole festival.
-# Kinder delays than the listing crawl would make ~3,800 calls take a working
-# day, so the price pass runs a little faster while still spacing every request.
+# Alias batching keeps this at ~one request per show even though every
+# performance is priced. Kinder delays than the listing crawl would make ~3,800
+# requests take a working day, so the price pass runs a little faster while
+# still spacing every request.
 DEFAULT_MIN_DELAY = 1.0
 DEFAULT_MAX_DELAY = 2.5
 
-CACHE_VERSION = 1
+# Aliases per request. Most shows run under 30 performances, so the default
+# prices a whole show in one go; the split-and-retry in `fetch_chunk` means this
+# is a throughput knob rather than a correctness one.
+DEFAULT_BATCH_SIZE = 25
+
+CACHE_VERSION = 2
 
 # One show by slug — the site's own URLs are slugs (/tickets/whats-on/<slug>).
 # Only the fields the price pass needs: which performances exist, and the
@@ -98,10 +131,9 @@ EVENT_QUERY = """
 }
     """
 
-# The money query. `pricetype` really is lower-cased in their schema.
-PRICES_QUERY = """
-    query PerformancePrices($performanceRef: String!) {
-  performancePrices(performanceRef: $performanceRef) {
+# The money selection, i.e. everything inside one `performancePrices { … }`.
+# `pricetype` really is lower-cased in their schema.
+PRICE_FIELDS = """
     success
     error
     message
@@ -128,15 +160,11 @@ PRICES_QUERY = """
         }
       }
     }
-  }
-}
-    """
+"""
 
 # If the API rejects a field above (their schema drifts), fall back to the
 # handful of fields the cache actually needs rather than losing the whole run.
-PRICES_QUERY_MINIMAL = """
-    query PerformancePrices($performanceRef: String!) {
-  performancePrices(performanceRef: $performanceRef) {
+PRICE_FIELDS_MINIMAL = """
     success
     message
     result {
@@ -153,9 +181,31 @@ PRICES_QUERY_MINIMAL = """
         }
       }
     }
-  }
-}
+"""
+
+
+def prices_query(count: int, minimal: bool = False) -> str:
+    """One query asking for `count` performances' prices at once.
+
+    `performancePrices` takes a single ref, but a GraphQL document may select
+    the same field repeatedly under different **aliases** — so N performances
+    cost one request rather than N. The refs are passed as variables (`$r0`,
+    `$r1`, …) rather than inlined, which keeps the document identical for every
+    batch of the same size and puts the box-office refs where they can't be
+    misread as query syntax.
+
+    The selection set is repeated per alias rather than shared through a
+    fragment: a fragment would have to name the wrapper type, and a wrong or
+    drifted type name would fail the whole document, where repeating the fields
+    depends on nothing but the fields themselves.
     """
+    fields = PRICE_FIELDS_MINIMAL if minimal else PRICE_FIELDS
+    decls = ", ".join(f"$r{i}: String!" for i in range(count))
+    aliases = "\n".join(
+        f"  p{i}: performancePrices(performanceRef: $r{i}) {{{fields}  }}"
+        for i in range(count)
+    )
+    return f"query PerformancePrices({decls}) {{\n{aliases}\n}}"
 
 
 # --------------------------------------------------------------------------- #
@@ -264,12 +314,79 @@ def price_record(result: dict) -> dict | None:
     return rec
 
 
-def band_fingerprint(rec: dict | None) -> tuple:
-    """Comparable identity of a price record — what `--sample-performances`
-    checks is stable across a show's performances."""
+def set_fingerprint(rec: dict | None) -> tuple:
+    """Comparable identity of a price record — two performances sharing this
+    are selling exactly the same thing and collapse into one stored set.
+
+    Covers the concession and the booking fee as well as the bands: a preview
+    that costs the same as the main run but carries a different concession is
+    still a different price point, and folding the two together would lose it.
+    """
     if not rec:
         return ()
-    return tuple((b["type"], b["value"]) for b in rec["bands"])
+    return (
+        tuple((b["type"], b["value"], b.get("total")) for b in rec["bands"]),
+        rec.get("conc"),
+        rec.get("fee"),
+    )
+
+
+def performance_key(perf: dict) -> str | None:
+    """How the cache names one performance: "2026-08-05|17:50".
+
+    Local date and start time, from the pipeline's single time-zone crossing
+    (`normalize.local_date_start`) — the same identity the master, the day files
+    and the availability sidecar use, so `normalize.py` joins prices onto
+    performances without needing box-office refs on either side. None when the
+    stamp is missing or unparseable, so the caller can skip rather than invent.
+    """
+    when = local_date_start(perf.get("dateTime"))
+    if not when:
+        return None
+    return f"{when[0]}|{when[1]}"
+
+
+def build_show_entry(slug: str | None, priced: list[tuple[str, dict]]) -> dict | None:
+    """One show's cache entry from its performances' price records.
+
+    `priced` is [(performance key, price record), …]. Records are de-duplicated
+    by `set_fingerprint` into `sets`, and `perfs` maps each performance to the
+    set it sells — so a show priced identically all run stores one set and 25
+    small integers, while one with previews and a weekend uplift stores three.
+
+    `min`/`max` are the run-wide extremes across every set: what the catalogue
+    quotes as the show's price range, and the only price the planner shows.
+    """
+    if not priced:
+        return None
+    sets: list[dict] = []
+    index: dict[tuple, int] = {}
+    perfs: dict[str, int] = {}
+    for key, rec in priced:
+        fp = set_fingerprint(rec)
+        if fp not in index:
+            index[fp] = len(sets)
+            sets.append(rec)
+        perfs[key] = index[fp]
+    values = [b["value"] for s in sets for b in s["bands"]]
+    return {
+        "slug": slug,
+        "min": min(values),
+        "max": max(values),
+        "sets": sets,
+        "perfs": dict(sorted(perfs.items())),
+    }
+
+
+def is_per_performance(entry: dict | None) -> bool:
+    """Whether a cache entry carries per-performance prices (this pass) rather
+    than a single whole-show amount (the old one).
+
+    Drives resumption: `--all` skips a show already priced this way, but
+    re-prices one left over from the old pass, so a migration completes by
+    simply re-running rather than needing the cache thrown away.
+    """
+    return bool(entry) and isinstance(entry.get("perfs"), dict) and bool(entry["perfs"])
 
 
 def priceable_performances(event: dict) -> list[dict]:
@@ -306,21 +423,72 @@ def fetch_event(token: str, slug: str) -> dict:
     return event
 
 
-def fetch_performance_prices(token: str, ref: str, minimal: bool = False) -> dict:
-    """The raw `performancePrices` wrapper for one performance reference."""
-    query = PRICES_QUERY_MINIMAL if minimal else PRICES_QUERY
-    data = post_json(GRAPHQL_URL, {
-        "query": query,
-        "variables": {"performanceRef": ref},
-        "operationName": "PerformancePrices",
-    }, token=token)
-    if "errors" in data:
-        if not minimal:
-            print(f"    field error on the full price query, retrying minimal: "
-                  f"{data['errors']}", file=sys.stderr)
-            return fetch_performance_prices(token, ref, minimal=True)
-        raise RuntimeError(f"GraphQL errors for performanceRef {ref!r}: {data['errors']}")
-    return (data.get("data") or {}).get("performancePrices") or {}
+class BatchRejected(RuntimeError):
+    """The server refused a batched document — too many aliases, too complex, or
+    a field it doesn't like. Recoverable by sending fewer aliases."""
+
+
+def fetch_chunk(token: str, refs: list[str], print_raw: bool = False,
+                minimal: bool = False) -> dict[str, dict]:
+    """`{ref: performancePrices wrapper}` for one batch, in a single request.
+
+    Alias batching is standard GraphQL, but servers are entitled to cap document
+    complexity or alias count, and this one's limit is unknown. So a rejected
+    batch is **halved and retried** rather than failed: whatever the cap turns
+    out to be, the pass converges on it automatically and still prices every
+    performance — just in more requests. Down at a single ref the fallback is
+    the smaller selection (a drifted field), and only then is that one
+    performance given up on, as an empty wrapper the caller reads as "no price".
+
+    Auth failures are re-raised immediately: they are not a batch-size problem
+    and splitting would just replay them.
+    """
+    try:
+        data = post_json(GRAPHQL_URL, {
+            "query": prices_query(len(refs), minimal),
+            "variables": {f"r{i}": ref for i, ref in enumerate(refs)},
+            "operationName": "PerformancePrices",
+        }, token=token)
+        if data.get("errors"):
+            raise BatchRejected(str(data["errors"]))
+        payload = data.get("data") or {}
+        out = {ref: payload.get(f"p{i}") or {} for i, ref in enumerate(refs)}
+        if print_raw:
+            print(f"--- raw performancePrices x{len(refs)} ---")
+            print(json.dumps(out, ensure_ascii=False, indent=2))
+        return out
+    except HTTPError as exc:
+        if exc.code in (401, 403):
+            raise
+        err: Exception = exc
+    except RuntimeError as exc:      # BatchRejected, or post_json giving up
+        err = exc
+
+    if len(refs) > 1:
+        mid = len(refs) // 2
+        print(f"    batch of {len(refs)} rejected ({err}); splitting",
+              file=sys.stderr)
+        out = fetch_chunk(token, refs[:mid], print_raw, minimal)
+        out.update(fetch_chunk(token, refs[mid:], print_raw, minimal))
+        return out
+    if not minimal:
+        print(f"    field error on the full price query, retrying minimal: {err}",
+              file=sys.stderr)
+        return fetch_chunk(token, refs, print_raw, minimal=True)
+    print(f"    no prices for {refs[0]}: {err}", file=sys.stderr)
+    return {refs[0]: {}}
+
+
+def fetch_performance_prices(token: str, refs: list[str], batch_size: int,
+                             delay: tuple[float, float],
+                             print_raw: bool = False) -> dict[str, dict]:
+    """Every ref's price wrapper, in `ceil(len(refs) / batch_size)` requests."""
+    out: dict[str, dict] = {}
+    for i in range(0, len(refs), batch_size):
+        out.update(fetch_chunk(token, refs[i:i + batch_size], print_raw))
+        if i + batch_size < len(refs):
+            time.sleep(random.uniform(*delay))
+    return out
 
 
 def collect_shows(token: str, per: int, seed: str, delay: tuple[float, float],
@@ -355,6 +523,13 @@ def collect_shows(token: str, per: int, seed: str, delay: tuple[float, float],
 # --------------------------------------------------------------------------- #
 
 def load_cache(path: Path) -> dict:
+    """The existing cache, or an empty one.
+
+    A v1 cache (whole-show prices) is loaded as-is rather than discarded: its
+    entries stay readable by normalize.py, and `run` re-prices them one show at
+    a time. Throwing it away would blank every price on the site until a full
+    ~3,700-request pass finished.
+    """
     if path.exists():
         try:
             cache = json.loads(path.read_text())
@@ -376,56 +551,47 @@ def save_cache(path: Path, cache: dict) -> None:
     tmp.replace(path)
 
 
-def price_one_show(token: str, event: dict, samples: int, delay: tuple[float, float],
+def price_one_show(token: str, event: dict, batch_size: int,
+                   delay: tuple[float, float],
                    print_raw: bool) -> tuple[dict | None, str]:
-    """Price one show. Returns (cache entry, note).
+    """Price every performance of one show. Returns (cache entry, note).
 
-    `samples` > 1 prices several performances and reports whether their bands
-    agree — the check behind "one call per show is enough".
+    No sampling and no choosing a "representative" performance: the whole run is
+    priced, which is what makes the day files able to quote the price of the
+    night someone is actually looking at.
     """
     perfs = priceable_performances(event)
     if not perfs:
         return None, "no priceable performance (all cancelled or no boxOfficeId)"
 
-    picked = perfs[:max(1, samples)]
-    records: list[tuple[dict, dict | None]] = []
-    for i, perf in enumerate(picked):
-        ref = perf["boxOfficeId"]
-        wrapper = fetch_performance_prices(token, ref)
-        if print_raw:
-            print(f"--- raw performancePrices({ref}) "
-                  f"[{perf.get('dateTime')}] ---")
-            print(json.dumps(wrapper, ensure_ascii=False, indent=2))
-        if not wrapper.get("success", True):
-            print(f"    performancePrices({ref}) unsuccessful: "
-                  f"{wrapper.get('message') or wrapper.get('error')}", file=sys.stderr)
-        records.append((perf, price_record(wrapper.get("result") or {})))
-        if i + 1 < len(picked):
-            time.sleep(random.uniform(*delay))
+    refs = [p["boxOfficeId"] for p in perfs]
+    wrappers = fetch_performance_prices(token, refs, batch_size, delay, print_raw)
 
-    perf, rec = records[0]
-    if rec is None:
-        return None, f"no price bands on {perf.get('dateTime')}"
+    priced: list[tuple[str, dict]] = []
+    for perf in perfs:
+        wrapper = wrappers.get(perf["boxOfficeId"]) or {}
+        if wrapper and not wrapper.get("success", True):
+            print(f"    performancePrices({perf['boxOfficeId']}) unsuccessful: "
+                  f"{wrapper.get('message') or wrapper.get('error')}",
+                  file=sys.stderr)
+        rec = price_record(wrapper.get("result") or {})
+        key = performance_key(perf)
+        if rec is None or key is None:
+            continue
+        priced.append((key, rec))
 
-    rec = dict(rec)
-    rec["slug"] = event.get("slug")
-    rec["ref"] = perf["boxOfficeId"]
-    # Which performance the amounts were read off, as the local date the rest of
-    # the site names that performance by (local_date_start, not the UTC stamp).
-    rec["date"] = (local_date_start(perf.get("dateTime")) or ("", ""))[0]
+    entry = build_show_entry(event.get("slug"), priced)
+    if entry is None:
+        return None, f"no price bands on any of {len(perfs)} performances"
 
-    note = ""
-    if len(records) > 1:
-        prints = {band_fingerprint(r) for _, r in records if r}
-        agree = len(prints) == 1
-        rec["sampled"] = len(records)
-        if not agree:
-            # Bands differ across performances; the cache keeps the first, but
-            # say so loudly — it would mean per-show pricing is not the whole story.
-            rec["varies"] = True
-        note = (f"bands {'agree' if agree else 'DIFFER'} across "
-                f"{len(records)} performances")
-    return rec, note
+    n_sets = len(entry["sets"])
+    note = f"{len(priced)}/{len(perfs)} performances"
+    if n_sets > 1:
+        # The whole reason this pass exists: one show, several price points.
+        note += f", {n_sets} price points"
+    if len(priced) < len(perfs):
+        note += " (some unpriced)"
+    return entry, note
 
 
 def run(args) -> int:
@@ -451,7 +617,10 @@ def run(args) -> int:
     priced = skipped = empty = failed = 0
     for i, event in enumerate(events, 1):
         key = show_key(event)
-        if key in cache["shows"] and not args.force:
+        # Already priced per performance -> nothing to do. An entry left by the
+        # old whole-show pass is NOT skipped: re-running is how the cache
+        # migrates, one show at a time, without ever being emptied.
+        if is_per_performance(cache["shows"].get(key)) and not args.force:
             skipped += 1
             continue
         if args.limit and priced + empty + failed >= args.limit:
@@ -459,7 +628,7 @@ def run(args) -> int:
                   f"(re-run to continue)")
             break
         try:
-            rec, note = price_one_show(token, event, args.sample_performances,
+            rec, note = price_one_show(token, event, args.batch_size,
                                        delay, args.print_raw)
         except Exception as exc:  # noqa: BLE001 — one bad show must not end the pass
             print(f"[{elapsed()}] [{i}/{len(events)}] {key}: ERROR {exc}",
@@ -471,21 +640,23 @@ def run(args) -> int:
             empty += 1
         else:
             cache["shows"][key] = rec
-            conc = f", conc £{rec['conc']:.2f}" if "conc" in rec else ""
             print(f"[{elapsed()}] [{i}/{len(events)}] {key} "
                   f"{event.get('title')!r}: £{rec['min']:.2f}–£{rec['max']:.2f}"
-                  f"{conc} ({len(rec['bands'])} bands){' — ' + note if note else ''}")
+                  f"{' — ' + note if note else ''}")
             priced += 1
-            # Written as we go: a 3,800-call pass must survive being interrupted.
+            # Written as we go: a 3,800-request pass must survive interruption.
             if priced % 25 == 0:
                 save_cache(out_path, cache)
         if i < len(events):
             time.sleep(random.uniform(*delay))
 
     save_cache(out_path, cache)
+    legacy = sum(1 for e in cache["shows"].values() if not is_per_performance(e))
     print(f"\n[{elapsed()}] Done. priced={priced} cached-already={skipped} "
           f"no-price={empty} failed={failed}")
-    print(f"[{elapsed()}] {len(cache['shows'])} shows in {out_path}")
+    print(f"[{elapsed()}] {len(cache['shows'])} shows in {out_path}"
+          + (f" — {legacy} still on whole-show prices from the old pass "
+             f"(re-run to migrate them)" if legacy else ""))
     return 1 if failed else 0
 
 
@@ -578,12 +749,64 @@ def selftest() -> int:
     # No concessions -> no `conc` key at all (rather than a null to filter on).
     assert "conc" not in price_record({"prices": [{"pricetype": "A", "priceValue": 9.0}]})
 
-    # Two performances priced identically share a fingerprint; a re-priced band
-    # breaks it — that difference is what --sample-performances reports.
-    assert band_fingerprint(rec) == band_fingerprint(price_record(FIXTURE_RESULT))
-    cheaper = {"prices": [{"pricetype": "Price A", "priceValue": 10.0}]}
-    assert band_fingerprint(rec) != band_fingerprint(price_record(cheaper))
-    assert band_fingerprint(None) == ()
+    # Two performances priced identically share a fingerprint, so they collapse
+    # into one stored set; a re-priced band breaks it and earns its own.
+    cheaper = price_record({"prices": [{"pricetype": "Price A", "priceValue": 10.0}]})
+    assert set_fingerprint(rec) == set_fingerprint(price_record(FIXTURE_RESULT))
+    assert set_fingerprint(rec) != set_fingerprint(cheaper)
+    assert set_fingerprint(None) == ()
+    # Same bands, different concession -> still a different price point.
+    conc_a = price_record({"prices": [{"pricetype": "A", "priceValue": 18.0,
+                                       "concessions": [{"title": "Student",
+                                                        "concPrice": "14.00"}]}]})
+    conc_b = price_record({"prices": [{"pricetype": "A", "priceValue": 18.0}]})
+    assert set_fingerprint(conc_a) != set_fingerprint(conc_b)
+
+    # A performance is named by local date + start — the pipeline's own identity
+    # for one, so normalize.py can join prices on without box-office refs. 16:50Z
+    # in August is 17:50 in Edinburgh (BST), as it is everywhere else here.
+    assert performance_key({"dateTime": "2026-08-05T16:50:00.000Z"}) == "2026-08-05|17:50"
+    assert performance_key({"dateTime": None}) is None
+    assert performance_key({}) is None
+
+    # The whole point of the rewrite: one show, several price points, each
+    # performance mapped to the one it actually sells. The preview and the main
+    # run differ, so both are kept; the two main-run dates share a set.
+    entry = build_show_entry("a-show", [
+        ("2026-08-05|17:50", cheaper),
+        ("2026-08-08|17:50", rec),
+        ("2026-08-09|17:50", price_record(FIXTURE_RESULT)),
+    ])
+    assert len(entry["sets"]) == 2, entry["sets"]
+    assert entry["perfs"] == {"2026-08-05|17:50": 0, "2026-08-08|17:50": 1,
+                              "2026-08-09|17:50": 1}, entry["perfs"]
+    # Run-wide extremes span every set — £10 preview through the £29.50 top band.
+    assert entry["min"] == 10.0 and entry["max"] == 29.5, entry
+    assert entry["slug"] == "a-show"
+    # A show priced the same all run stores exactly one set, not one per date.
+    same = build_show_entry("s", [(f"2026-08-{d:02d}|20:00", price_record(FIXTURE_RESULT))
+                                  for d in range(5, 25)])
+    assert len(same["sets"]) == 1 and len(same["perfs"]) == 20, same
+    assert build_show_entry("s", []) is None
+
+    # Resumption keys off per-performance data, so the old pass's entries are
+    # re-priced rather than skipped — that is how the cache migrates.
+    assert is_per_performance(entry) is True
+    assert is_per_performance({"min": 8.5, "max": 8.5, "bands": []}) is False
+    assert is_per_performance({"perfs": {}}) is False
+    assert is_per_performance(None) is False
+
+    # The batched document: one alias and one variable per ref, every alias
+    # asking the same question of a different performance.
+    q = prices_query(3)
+    assert q.count("performancePrices(performanceRef:") == 3, q
+    assert "$r0: String!, $r1: String!, $r2: String!" in q, q
+    assert "p2: performancePrices(performanceRef: $r2)" in q, q
+    assert "priceBandId" in q and "concPrice" in q
+    # The minimal fallback drops the fields the cache doesn't need, and keeps
+    # the alias structure so a split batch can still use it.
+    assert "priceBandId" not in prices_query(2, minimal=True)
+    assert prices_query(1, minimal=True).count("performancePrices(") == 1
 
     # Only performances that can be priced are offered up, in date order.
     event = {"performances": [
@@ -612,9 +835,12 @@ def main() -> int:
                         help="price every paid show in the listing (~3,800 calls)")
     parser.add_argument("--out", default=str(DEFAULT_OUT),
                         help=f"cache file (default {DEFAULT_OUT})")
-    parser.add_argument("--sample-performances", type=int, default=1, metavar="N",
-                        help="price N performances per show and report whether "
-                             "their bands agree (default 1)")
+    parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE,
+                        metavar="N",
+                        help="performances priced per request, as GraphQL "
+                             "aliases (default %(default)s). A batch the server "
+                             "rejects is halved and retried, so this trades "
+                             "requests for document size, never accuracy")
     parser.add_argument("--limit", type=int, default=None,
                         help="stop after N newly priced shows (resumable chunk)")
     parser.add_argument("--force", action="store_true",
@@ -642,6 +868,8 @@ def main() -> int:
         return selftest()
     if args.min_delay > args.max_delay:
         parser.error("--min-delay must not exceed --max-delay")
+    if args.batch_size < 1:
+        parser.error("--batch-size must be at least 1")
     # The whole-festival pass is thousands of live calls; it has to be asked for.
     if not args.slug and not args.all:
         parser.error("pass --slug SLUG for one show, or --all for the full pass")

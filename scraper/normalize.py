@@ -395,6 +395,76 @@ def normalize_event(event: dict) -> dict:
     }
 
 
+def price_sets(entry: dict | None) -> list[dict]:
+    """The distinct price points a show sells, as `{"min", "max", …}` records.
+
+    Two cache shapes are read, because the migration to per-performance prices
+    completes one show per re-run of `fetch_prices.py` (see its `load_cache`):
+
+      * current — `sets`, one entry per distinct price point across the run.
+      * legacy  — a single whole-show `min`/`max`, from the old pass that priced
+        one performance and filed the answer under the show. Read as one set
+        covering everything, which is exactly what the site did with it before.
+
+    A legacy entry is very often a *preview* price (the old pass took the
+    earliest performance, and pre-festival that was a preview), so it is a lower
+    bound on the run rather than a reading of it. Nothing here can repair that —
+    only re-fetching can — but keeping the two shapes readable means the site
+    never loses its prices mid-migration.
+    """
+    if not entry:
+        return []
+    sets = entry.get("sets")
+    if isinstance(sets, list) and sets:
+        return [s for s in sets if s.get("min") is not None]
+    if entry.get("min") is not None:
+        return [{"min": entry["min"], "max": entry.get("max", entry["min"])}]
+    return []
+
+
+def show_price_range(entry: dict | None) -> tuple[float | None, float | None]:
+    """A show's run-wide cheapest and dearest ticket, across every price point.
+
+    This is the catalogue's answer to "what does this show cost" — a range, not
+    a single figure, because a run with cheap previews and a weekend uplift
+    genuinely costs a range. The day files answer the sharper question (what
+    does it cost *that night*) from `performance_prices` below.
+    """
+    sets = price_sets(entry)
+    if not sets:
+        return None, None
+    return (min(s["min"] for s in sets),
+            max(s.get("max", s["min"]) for s in sets))
+
+
+def performance_prices(prices: dict) -> dict[str, dict[str, float]]:
+    """`{show id: {"YYYY-MM-DD|HH:MM": cheapest band}}` — the per-night prices.
+
+    Built only from entries carrying `perfs`; a legacy whole-show entry
+    contributes nothing here and is served by the fallback in `build_day_files`,
+    which keeps its old behaviour rather than inventing per-night detail the
+    cache doesn't have.
+
+    The key is the performance's local date and start time, which is how
+    `fetch_prices.performance_key` writes it and how the master names the same
+    performance — the join is exact or it misses, never approximate.
+    """
+    out: dict[str, dict[str, float]] = {}
+    for show_id, entry in ((prices or {}).get("shows") or {}).items():
+        perfs, sets = entry.get("perfs"), entry.get("sets")
+        if not isinstance(perfs, dict) or not isinstance(sets, list):
+            continue
+        by_key: dict[str, float] = {}
+        for key, ix in perfs.items():
+            if isinstance(ix, int) and 0 <= ix < len(sets):
+                value = sets[ix].get("min")
+                if value is not None:
+                    by_key[key] = value
+        if by_key:
+            out[show_id] = by_key
+    return out
+
+
 def apply_prices(master: list[dict], prices: dict) -> int:
     """Attach real ticket amounts from the price cache to the master, in place.
 
@@ -402,6 +472,12 @@ def apply_prices(master: list[dict], prices: dict) -> int:
     fetch-once cache keyed by the same show id the master uses. A show with no
     entry keeps `priceMin`/`priceMax` of None, which the site reads as "price
     unknown" and is *not* the same as free: only the `free` flag says free.
+
+    What lands on the master is the **run-wide** range: `priceMin` is the
+    cheapest ticket anywhere in the run and `priceMax` the dearest. The master
+    is per show, so a per-night price has nowhere to live here — it goes
+    straight from the cache into the day files (`build_day_files`), which are
+    per performance and are the one place a single figure is honest.
 
     Free shows are given £0 rather than left unknown. They are skipped by the
     price pass (there is nothing to call `performancePrices` for), but their
@@ -413,10 +489,9 @@ def apply_prices(master: list[dict], prices: dict) -> int:
     by_id = (prices or {}).get("shows") or {}
     known = 0
     for show in master:
-        entry = by_id.get(show["id"])
-        if entry and entry.get("min") is not None:
-            show["priceMin"] = entry["min"]
-            show["priceMax"] = entry.get("max", entry["min"])
+        low, high = show_price_range(by_id.get(show["id"]))
+        if low is not None:
+            show["priceMin"], show["priceMax"] = low, high
         elif show.get("free"):
             show["priceMin"] = show["priceMax"] = 0.0
         else:
@@ -596,7 +671,9 @@ def fringe_day(date: str, start: str) -> tuple[str, str]:
 
 def build_day_files(master: list[dict], genre_ix: dict[str, int],
                     room_ix: dict[str, int], sub_ix: dict[str, int],
-                    ts_ix: dict[str, int]) -> dict[str, list]:
+                    ts_ix: dict[str, int],
+                    perf_prices: dict[str, dict[str, float]] | None = None
+                    ) -> dict[str, list]:
     """Bucket shows by fringe day (06:00 → 06:00, see FRINGE_DAY_START) into
     minimal per-day records. A performance after midnight lands in the previous
     day's file with an extended `start` ("24:30" for 00:30) — see fringe_day.
@@ -613,8 +690,28 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
         a ticket" signal; the `soldOut` flag is not (a show can be soldOut:false
         yet have no online allocation).
       * `free` / `soldOut` — 1/0 rather than true/false.
+      * `pm` — **this performance's** cheapest band, from `perf_prices`. See
+        below; the key and its meaning to the client are unchanged.
       * `blurb` — omitted. It is kept in the master (the scraped data) but the
         site never renders it, so it is left out of the per-day payload.
+
+    `pm` is the one field here that is not a projection of the show. A day file
+    holds performances, and a performance has a price of its own: previews are
+    cheaper than the main run and weekends dearer than weekdays, so the show's
+    range would be wrong on most nights and its minimum wrong on all but the
+    cheapest. `perf_prices` (from `performance_prices`) supplies the actual
+    figure for the night this record is on.
+
+    Three cases, in order:
+
+      * the performance is in `perf_prices` — use its own price.
+      * the show has *no* per-performance prices at all (a legacy cache entry,
+        or a free show priced from the listing flag) — fall back to the show's
+        `priceMin`, which is what the day files carried before.
+      * the show has per-performance prices but not for *this* one, i.e. a date
+        added after the last price pass — leave `pm` off. The client reads that
+        as "Price TBC", which is true. Borrowing another night's figure is the
+        exact error this whole path exists to stop.
     """
     days: dict[str, list] = {}
     seen: set[tuple] = set()   # (id, day, start) — drop duplicate performances
@@ -645,12 +742,17 @@ def build_day_files(master: list[dict], genre_ix: dict[str, int],
                 "ts": ts_ix.get(p.get("status"), -1),
                 "slug": show["slug"],
             }
-            # Cheapest band only: the Now page's price filter asks "what can I
-            # see for up to £X", which the lowest band answers. The full range
-            # lives in the planner's catalogue, which isn't size-constrained the
-            # way a day file is. Omitted when the price is unknown.
-            if show.get("priceMin") is not None:
-                rec["pm"] = show["priceMin"]
+            # Cheapest band of THIS performance: the Now page's price filter
+            # asks "what can I see for up to £X" tonight, which the lowest band
+            # on the night answers. The run-wide range lives in the planner's
+            # catalogue, which isn't size-constrained the way a day file is.
+            # Omitted when the price is unknown — see the docstring.
+            by_key = (perf_prices or {}).get(show["id"])
+            price = (by_key or {}).get(f"{p['date']}|{p['start']}")
+            if price is None and not by_key:
+                price = show.get("priceMin")
+            if price is not None:
+                rec["pm"] = price
             days.setdefault(date, []).append(rec)
     for date in days:
         days[date].sort(key=lambda x: (x["start"], x["title"] or ""))
@@ -899,9 +1001,21 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     actually carry a status come back changed.
     """
     # Real ticket amounts, folded in before anything is packed so the master and
-    # both wire forms agree on what a show costs.
-    known = apply_prices(master, load_prices(prices_path))
-    print(f"  priced {known}/{len(master)} shows from {prices_path.name}")
+    # both wire forms agree on what a show costs. The master (and so the
+    # planner's catalogue) gets the run-wide range; the day files below get each
+    # performance's own price, which is a different and sharper claim.
+    prices = load_prices(prices_path)
+    known = apply_prices(master, prices)
+    perf_prices = performance_prices(prices)
+    per_night = sum(1 for s in master if s["id"] in perf_prices)
+    print(f"  priced {known}/{len(master)} shows from {prices_path.name} "
+          f"({per_night} per performance)")
+    legacy = known - per_night - sum(1 for s in master if s.get("free")
+                                     and s["id"] not in perf_prices)
+    if legacy > 0:
+        print(f"  WARNING: {legacy} shows still carry a single whole-show price "
+              f"from the old pass — usually a preview, so understated. Re-run "
+              f"scraper/fetch_prices.py --all to migrate them.", file=sys.stderr)
 
     # The lookup lists extend the ones already published rather than being
     # re-derived from scratch — see extend_lookup: clients decode a cached
@@ -928,7 +1042,7 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     write_json(descriptions_path, build_descriptions(master))
 
     # Per-day August files + index.
-    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix)
+    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix, perf_prices)
     for date, items in days.items():
         write_json(days_dir / f"{date}.json", items)
     write_json(days_dir / "index.json", {
@@ -1113,6 +1227,48 @@ def selftest() -> int:
     apply_prices([one_band], {"shows": {"202610THING": {"min": 12.0}}})
     assert one_band["priceMax"] == 12.0, one_band
 
+    # ---- per-performance prices -------------------------------------------
+    # The cache the current fetch_prices.py writes: distinct price points once,
+    # each performance mapped to the one it sells. This show previews at £8.50
+    # on the 6th and runs at £15 on the 7th — the case that shipped as a single
+    # £8.50 for the whole run and is the reason this shape exists.
+    PER_PERF = {"shows": {"202610THING": {
+        "slug": "10-things-they-hate-about-me",
+        "min": 8.5, "max": 15.0,
+        "sets": [{"min": 8.5, "max": 8.5, "bands": [{"type": "Standard", "value": 8.5}]},
+                 {"min": 15.0, "max": 15.0, "bands": [{"type": "Standard", "value": 15.0}]}],
+        "perfs": {"2026-08-06|12:45": 0, "2026-08-07|12:45": 1}}}}
+
+    # The master carries the RUN-WIDE range: cheapest night to dearest, not one
+    # night's figure standing in for the run.
+    per_perf_show = dict(rec)
+    assert apply_prices([per_perf_show], PER_PERF) == 1
+    assert per_perf_show["priceMin"] == 8.5, per_perf_show
+    assert per_perf_show["priceMax"] == 15.0, per_perf_show
+    assert show_price_range(PER_PERF["shows"]["202610THING"]) == (8.5, 15.0)
+    # A legacy whole-show entry still reads, as one set covering everything —
+    # the site keeps its prices while the cache migrates show by show.
+    assert show_price_range({"min": 12.0, "max": 18.0}) == (12.0, 18.0)
+    assert show_price_range({"min": 12.0}) == (12.0, 12.0)
+    assert show_price_range({}) == (None, None)
+    assert show_price_range(None) == (None, None)
+    assert price_sets({"sets": [], "min": 9.0}) == [{"min": 9.0, "max": 9.0}], \
+        "an empty sets list must fall back to the whole-show price, not vanish"
+
+    # The join index: performance key -> that night's cheapest band. Built only
+    # from entries that actually carry per-performance data.
+    index = performance_prices(PER_PERF)
+    assert index == {"202610THING": {"2026-08-06|12:45": 8.5,
+                                     "2026-08-07|12:45": 15.0}}, index
+    assert performance_prices({"shows": {"X": {"min": 9.0}}}) == {}, \
+        "a legacy entry contributes no per-performance prices"
+    assert performance_prices({}) == {}
+    # A `perfs` pointing outside `sets` is dropped rather than crashing or
+    # defaulting to something wrong — a truncated cache must not invent money.
+    assert performance_prices({"shows": {"X": {"sets": [], "perfs": {"a": 0}}}}) == {}
+    assert performance_prices({"shows": {"X": {"sets": [{"min": 5.0}],
+                                               "perfs": {"a": 7}}}}) == {}
+
     genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups([rec])
     assert genres == ["Comedy"] and rooms == ["Beneath"], (genres, rooms)
     assert subgenres == ["Character Comedy", "Stand-up"], subgenres
@@ -1212,6 +1368,41 @@ def selftest() -> int:
     d6_priced = build_day_files([priced], genre_ix, room_ix, sub_ix,
                                 ts_ix)["2026-08-06"][0]
     assert d6_priced["pm"] == 22.5, d6_priced
+
+    # Each day file quotes the price of ITS OWN night. Same show, two dates,
+    # two figures — the preview at £8.50 and the main run at £15. Publishing
+    # £8.50 on both is the bug this replaced.
+    per_perf_days = build_day_files([per_perf_show], genre_ix, room_ix, sub_ix,
+                                    ts_ix, index)
+    assert per_perf_days["2026-08-06"][0]["pm"] == 8.5, per_perf_days["2026-08-06"]
+    assert per_perf_days["2026-08-07"][0]["pm"] == 15.0, per_perf_days["2026-08-07"]
+    # ...while the catalogue keeps the run-wide range, so the planner still
+    # says "£8.50–£15" for the show as a whole.
+    packed_run = minify_master([per_perf_show], genre_ix, room_ix, sub_ix,
+                               age_ix, venues)[0]
+    assert packed_run["pm"] == 8.5 and packed_run["px"] == 15.0, packed_run
+
+    # A show with no per-performance data at all keeps the old behaviour: the
+    # show-level price on every night. This is what holds the site's prices up
+    # while the cache migrates one show per re-run of the price pass.
+    legacy_days = build_day_files([priced], genre_ix, room_ix, sub_ix, ts_ix, {})
+    assert legacy_days["2026-08-06"][0]["pm"] == 22.5, legacy_days
+    assert legacy_days["2026-08-07"][0]["pm"] == 22.5, legacy_days
+
+    # But a show that HAS per-performance prices and simply lacks this one — a
+    # date added after the last price pass — says nothing rather than borrowing
+    # the other night's figure. "Price TBC" is true; £8.50 would not be.
+    partial = build_day_files([per_perf_show], genre_ix, room_ix, sub_ix, ts_ix,
+                              {"202610THING": {"2026-08-06|12:45": 8.5}})
+    assert partial["2026-08-06"][0]["pm"] == 8.5, partial
+    assert "pm" not in partial["2026-08-07"][0], partial["2026-08-07"]
+
+    # A free show is priced from the listing flag, not the cache, so it still
+    # reads £0 on every night even with per-performance data in play.
+    free_priced = dict(rec, id="FREEBIE", free=True)
+    apply_prices([free_priced], PER_PERF)
+    free_days = build_day_files([free_priced], genre_ix, room_ix, sub_ix, ts_ix, index)
+    assert free_days["2026-08-06"][0]["pm"] == 0.0, free_days
     # Binary flags are 1/0, not booleans.
     assert d6["soldOut"] == 0 and d6["free"] == 0, d6
     d7 = days["2026-08-07"][0]

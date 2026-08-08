@@ -22,16 +22,36 @@ These grant read access to the same public listing everyone sees. Send
 ## Reaching it from a Claude Code web session
 
 You **can't** hit the API from a web session: the egress proxy blocks
-`equhost.com` (and edfringe.com itself returns 403 to `WebFetch`). That block is
-policy — do **not** route around it by creating ad-hoc CI workflows. Anything
-that touches the live API runs through a sanctioned workflow: the `Scrape
-edfringe shows (full)` workflow, `Fetch ticket prices (one-off)`, or the
-`refresh-shows` scheduled task (all on GitHub-hosted runners, under the
-Claudinite scheduler).
+`equhost.com` with a 403 at the CONNECT. That block is policy — do **not** route
+around it by creating ad-hoc CI workflows. Anything that touches the live API
+runs through a sanctioned workflow: the `Scrape edfringe shows (full)` workflow,
+`Fetch ticket prices (one-off)`, or the `refresh-shows` scheduled task (all on
+GitHub-hosted runners, under the Claudinite scheduler).
 
 This file is the API reference (field lists via GraphQL introspection:
 `__type` / `__schema`) precisely so that nothing needs to re-fetch it. If it
 doesn't answer your question, ask the repo owner.
+
+**One thing a session CAN read: the site's own JavaScript.** `www.edfringe.com`
+itself is reachable (200), and the What's On page is a Next.js app whose bundles
+carry the **complete set of GraphQL operations the client is built against** —
+every query, mutation and fragment, with full field selections. That is the
+authoritative answer to "what can this API be asked, and for which fields",
+short of introspection, and it needs no access to the blocked host:
+
+```sh
+curl -s https://www.edfringe.com/tickets/whats-on/<any-slug> -o page.html
+# note assetPrefix "/tickets" — the script src paths include it
+grep -oE 'src="/tickets/_next/static/[^"]+\.js"' page.html | sed 's/src="//;s/"//' |
+  sort -u | while read -r u; do curl -s "https://www.edfringe.com$u"; done > bundle.js
+grep -oE '(query|mutation) [A-Za-z]+' bundle.js | sort -u    # operation names
+```
+
+The escaped `\n` in the embedded query strings unescape to readable SDL. The
+page's `__NEXT_DATA__` also carries the server-rendered `event` for that show —
+useful for a real payload shape, though it holds **no** price amounts. This is
+reading a public asset from an allowed host, not a bypass: it cannot execute a
+query, only tell you what one would look like.
 
 ## Operations
 
@@ -39,7 +59,8 @@ doesn't answer your question, ask the repo owner.
 |---|---|
 | `events(input: SearchCriteriaInput)` — "EventsSearch" | the paged listing. `per: 50`, `sortBy: TITLE`, a fixed `sortBySeed` for stable paging, `recentlyAdded: ANY \| LAST_SEVEN_DAYS \| LAST_TWENTY_FOUR_HOURS`. ~3,900 shows over ~77 pages. Returns a subset of `EventDetail`. |
 | `event(id: String!, isSlug: Boolean)` | a single show. Pass the slug with `isSlug: true` (the site's URLs are slugs); pass a bare id with `isSlug` false/omitted. Returns the **full** `EventDetail`. Note `id` is **non-null** — a `$id: String` variable is rejected ("not compatible with the type of the current location"); declare `String!`. |
-| `performancePrices(performanceRef: String)` | **live pricing** for one performance (see below). `performanceRef` = the performance's `boxOfficeId` (e.g. `"1:790001"`). |
+| `performancePrices(performanceRef: String)` | **live pricing** for one performance (see below). `performanceRef` = the performance's `boxOfficeId` (e.g. `"1:790001"`). Alias it N times for N performances in one request. |
+| `performances(input: SearchCriteriaInput!)` — "GetPerformances" | the paged performance listing, returning `PerformanceDetail` (id, title, dateTime, status, ticketStatus, boxOfficeId, venue, space, event, concessions). Carries **no price fields** — it is not a bulk price endpoint. `performance(id:)` returns one of the same. |
 | `genres` | `GenreOption { label, iconName, value }` — the 10 headline categories. |
 | `subgenreOptions` | 104 `{ value, label }` subgenre tags. |
 | `venues` — "VenueTypeAhead" | venue directory (name, address, postcode). |
@@ -148,10 +169,29 @@ performancePrices(performanceRef: "1:790001")
 ([{code, title, concPrice, feeExempt, …}]), `eventFeeExempt`, `handlingFeeExempt`.
 
 Key facts:
-- **There is no bulk price endpoint** — amounts are one call **per performance**.
-- Price bands are typically **identical across a show's performances**, so ~one
-  call per *show* gives representative pricing (still ~3,900 calls for the whole
-  festival).
+- **There is no bulk price *field*.** `performancePrices` takes exactly one
+  `performanceRef`; there is no list variant and no event-level price query. The
+  paged `performances(input:)` query (below) returns no amounts at all, and
+  `EventDetail` carries only `priceType` flags.
+- **But one *request* can price many performances**, because GraphQL allows the
+  same field under many aliases. 25 aliases ≈ 2 KB of document:
+
+  ```graphql
+  query PerformancePrices($r0: String!, $r1: String!) {
+    p0: performancePrices(performanceRef: $r0) { success result { prices { … } } }
+    p1: performancePrices(performanceRef: $r1) { success result { prices { … } } }
+  }
+  ```
+
+  So pricing **every** performance of every show costs about the same ~3,700
+  requests as pricing one per show did. `fetch_prices.py` builds these documents
+  (`prices_query`) and halves a batch the server rejects, since the alias or
+  complexity cap — if there is one — is not documented anywhere we can read.
+- **Bands are NOT identical across a show's performances**, which the old
+  one-call-per-show pass assumed. Previews are cheaper than the main run and
+  weekends dearer than weekdays; Alfie Brown's 2026 run sold at £8.50 (preview),
+  £15 and £16, and the API labels those performances `PREVIEW` / `2 for 1` / ``
+  in `title` accordingly. Price per performance, always.
 - `performancePrices` returns **live** availability (`seatPercentageRemaining`,
   `performancePercentageRemaining`) — real-time, not something to bake into the
   nightly static scrape.
