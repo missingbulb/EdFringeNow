@@ -882,8 +882,48 @@ def performance_keys(performances: list[dict]) -> list[str]:
     return keys
 
 
+def join_fingerprint(master: list[dict]) -> str:
+    """A short hash of the join surface between shows.min.json and this sidecar:
+    every show id and every performance key, in catalogue order.
+
+    The sidecar names performances by date and start time, which is stable right
+    up until a start time is *corrected* — and then it isn't. #274 shifted every
+    performance by an hour (the API's dateTime is UTC), and a client holding the
+    previous day's catalogue against the next day's sidecar matched 6% of its
+    keys, so 94% of the festival came back status-unknown and drew as sold out
+    (#309). The two files are cached on different clocks (four days vs one), so
+    they are routinely joined across generations; nothing told the client when
+    those generations had stopped agreeing.
+
+    This does. Both files are written from the same master in the same breath, so
+    the sidecar can record the catalogue it was built for, and the client can
+    recompute it from the catalogue it actually holds.
+
+    FNV-1a/32 over UTF-8: small, dependency-free, and cheap enough to mirror in
+    JavaScript — see joinFingerprint in plan/lib/hydrate.js, which MUST produce
+    the same value. plan/lib/__tests__/hydrate.test.mjs pins the two together by
+    checking the committed catalogue against the committed sidecar's "k".
+    """
+    h = 0x811C9DC5
+    def feed(text: str) -> None:
+        nonlocal h
+        for byte in text.encode("utf-8"):
+            h ^= byte
+            h = (h * 0x01000193) & 0xFFFFFFFF
+    for show in master:
+        feed(f'{show["id"]}\n')
+        for key in performance_keys(show.get("performances") or []):
+            feed(f"{key},")
+    return format(h, "08x")
+
+
 def build_availability(master: list[dict]) -> dict:
-    """The availability sidecar: {"v", "ts", "a", "o"}.
+    """The availability sidecar: {"v", "k", "ts", "a", "o"}.
+
+      * `k`  — the join fingerprint of the catalogue this was built alongside
+        (see join_fingerprint). A client whose catalogue hashes to something else
+        is holding two files that no longer describe the same festival, and must
+        refetch rather than join them.
 
       * `ts` — this file's OWN ticket-status list. Unlike the day files and the
         catalogue, the sidecar indexes into nothing external: it is rewritten
@@ -920,7 +960,8 @@ def build_availability(master: list[dict]) -> dict:
             avail[show["id"]] = by_key
         if sold_keys:
             sold[show["id"]] = sold_keys
-    return {"v": 1, "ts": statuses, "a": avail, "o": sold}
+    return {"v": 1, "k": join_fingerprint(master), "ts": statuses,
+            "a": avail, "o": sold}
 
 
 def build_descriptions(master: list[dict]) -> dict:
@@ -1327,6 +1368,18 @@ def selftest() -> int:
     assert avail["a"]["202610THING"] == {"806|12:45": a_ix["AVAILABLE"],
                                          "807|12:45": a_ix["SOLD_OUT"]}, avail
     assert avail["o"] == {"202610THING": ["807|12:45"]}, avail
+    # The sidecar names the catalogue generation it belongs to, and that name
+    # tracks the join keys and nothing else: correcting a start time (#274) must
+    # move it, repricing a show must not. plan/lib/hydrate.js recomputes the same
+    # value client-side; hydrate.test.mjs pins the two implementations together
+    # against the committed files.
+    assert avail["k"] == join_fingerprint([rec]), avail
+    shifted = json.loads(json.dumps(rec))
+    shifted["performances"][0]["start"] = "11:45"
+    assert join_fingerprint([shifted]) != avail["k"], "a moved start time must change the fingerprint"
+    repriced = json.loads(json.dumps(rec))
+    repriced["priceMin"] = (repriced.get("priceMin") or 0) + 5
+    assert join_fingerprint([repriced]) == avail["k"], "a price change must not change the fingerprint"
     # Every performance in the catalogue must be findable in the sidecar under
     # the same key — this is the join the client depends on.
     for perf in packed["p"]:

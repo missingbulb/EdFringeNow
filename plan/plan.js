@@ -13,14 +13,14 @@
 // whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
-import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
+import { cachedFetchJson, evictCached, DAY_MS } from "../shared/data-cache.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
 import { parseFavourites } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
 import { toCsv, toIcs, slotEndTime } from "./lib/itinerary.js";
 import { distanceKm, travelMinutes } from "./lib/travel.js";
-import { rehydrateShows } from "./lib/hydrate.js";
+import { rehydrateShows, joinFingerprint } from "./lib/hydrate.js";
 import {
   searchShows,
   catalogueFacets,
@@ -272,60 +272,115 @@ const isAvailabilitySidecar = (d) =>
   Boolean(d) && d.v === 1 && Array.isArray(d.ts) && d.ts.length > 0 &&
   Boolean(d.a) && typeof d.a === "object" && Object.keys(d.a).length > 0;
 
+/* How much of the catalogue must come back with a ticket status before we are
+ * willing to draw it.
+ *
+ * The catalogue is cached for four days and the sidecar for one, so they are
+ * routinely joined across generations, and a few misses are the honest cost of
+ * that: a show that added or dropped a date since the catalogue was packed
+ * finds no status, which is exactly what the date-and-time naming scheme was
+ * designed to do. Real drift over four days is a fraction of a percent.
+ *
+ * A systematic key change is a different animal. #274 corrected every start
+ * time by an hour, and the next day's sidecar matched 6% of the previous day's
+ * catalogue — 94% of the festival status-unknown, drawn as unavailable (#309).
+ * Nothing between 6% and 99% is a state we can tell a coherent story about, so
+ * the line sits where it separates drift from breakage rather than where it
+ * splits the difference. */
+const MIN_STATUS_COVERAGE = 0.9;
+
 /**
- * The last line of defence, and the one that speaks the planner's own language
- * rather than the wire format's.
+ * Do these two files describe the same festival?
  *
- * The validators above check that the sidecar is shaped like a sidecar; this
- * checks that it actually described *this* catalogue. Between them sits the one
- * failure the file formats can't rule out — two files that are each individually
- * fine but describe different generations of the festival, so every lookup misses
- * and every performance ends up status-null.
+ * Two independent answers, because they fail in different places. The
+ * fingerprint is exact and cheap and settles it outright — but only for a
+ * sidecar new enough to carry one, which a cached copy predating that field
+ * won't. Coverage is the fallback: approximate, but it reads the join itself
+ * rather than a claim about it, so it also catches whatever the fingerprint
+ * hasn't thought of.
  *
- * Downstream, a null status is indistinguishable from "not bookable": that is
- * the whole of #309. A total join miss is never a real festival state — some
- * show somewhere is always on sale — so it is a bug in what we loaded, and it
- * belongs in the error panel rather than on the grid.
+ * @returns {{ok: boolean, why?: string}}
  */
-function assertStatusesJoined(catalogue) {
+function joinIsSound(wire, availability, catalogue) {
+  const stamped = availability && typeof availability.k === "string";
+  if (stamped) {
+    const mine = joinFingerprint(wire);
+    if (mine !== availability.k) {
+      return { ok: false, why: `catalogue ${mine} vs availability ${availability.k}` };
+    }
+  }
+
   let performances = 0;
+  let withStatus = 0;
   for (const show of catalogue) {
     for (const perf of show.performances || []) {
       performances++;
-      if (perf.status) return; // one is enough: the join works
+      if (perf.status) withStatus++;
     }
   }
-  if (performances === 0) return; // an empty catalogue is a different problem
-  throw new Error(
-    `ticket availability matched none of ${performances} performances — ` +
-    "the catalogue and the availability sidecar disagree"
-  );
+  if (performances === 0) return { ok: true }; // an empty catalogue is a different problem
+  const coverage = withStatus / performances;
+  if (coverage < MIN_STATUS_COVERAGE) {
+    return {
+      ok: false,
+      why: `only ${withStatus} of ${performances} performances (${Math.round(coverage * 100)}%) ` +
+           "carry a ticket status",
+    };
+  }
+  return { ok: true };
+}
+
+/**
+ * The three files the planner is built from, joined — refetched once from source
+ * if the copies we were given don't agree with each other.
+ *
+ * All three are required. Availability used to be allowed to fail on the theory
+ * that status-unknown is a state the grid already draws — it isn't. An empty
+ * status reads as not-bookable everywhere downstream (isAvailable, segClass,
+ * laneStatus), so continuing without the sidecar doesn't degrade the planner, it
+ * inverts it: every performance turns red and every show reports "No dates", for
+ * a festival that is very much on sale (#309).
+ *
+ * The retry is the substance. A generation disagreement is not a network failure
+ * and not a corrupt file — it is two perfectly good files that have drifted
+ * apart on their separate TTLs, and the fix is simply to go and get today's, so
+ * that is what happens. Only if freshly-downloaded copies *still* disagree is
+ * this a real failure, and then it belongs in the error panel: at that point we
+ * genuinely don't know what's bookable, and a wrong plan is worse than no plan.
+ */
+async function loadCatalogue() {
+  for (const attempt of [1, 2]) {
+    const [wire, lookups, availability] = await Promise.all([
+      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache, isCatalogue),
+      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache, isLookups),
+      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache, isAvailabilitySidecar),
+    ]);
+    const catalogue = rehydrateShows(wire, lookups, YEAR, availability);
+    const verdict = joinIsSound(wire, availability, catalogue);
+    if (verdict.ok) return { lookups, catalogue };
+
+    if (attempt === 2) {
+      throw new Error(
+        `the catalogue and the ticket availability don't match (${verdict.why})`
+      );
+    }
+    // Drop both and go again. Which of the two is stale isn't knowable from
+    // here — the catalogue's four-day TTL makes it the usual suspect, but a
+    // sidecar can be the stale one too — and this costs one extra download of
+    // each on a path that only runs when they've already disagreed.
+    console.warn("Fringe Planner: catalogue/availability mismatch, refetching both —", verdict.why);
+    await Promise.all([evictCached(DATA_URL), evictCached(AVAILABILITY_URL)]);
+  }
 }
 
 let dataPromise = null;
 
 function loadData() {
   dataPromise = (async () => {
-    // All three are wanted to rehydrate, so they are fetched together, and all
-    // three are required. Availability used to be allowed to fail on the theory
-    // that status-unknown is a state the grid already draws — it isn't. An empty
-    // status reads as not-bookable everywhere downstream (isAvailable, segClass,
-    // laneStatus), so continuing without the sidecar doesn't degrade the planner,
-    // it inverts it: every performance turns red and every show reports
-    // "No dates", for a festival that is very much on sale (#309).
-    //
-    // A wrong plan is worse than no plan. So a failure here throws like any
-    // other, and ensureData surfaces the error panel with its retry — the one
-    // honest answer when we don't know what's bookable.
-    const [wire, lookups, availability] = await Promise.all([
-      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache, isCatalogue),
-      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache, isLookups),
-      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache, isAvailabilitySidecar),
-    ]);
+    const { lookups, catalogue } = await loadCatalogue();
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
     state.lookups = lookups;
-    state.catalogue = rehydrateShows(wire, lookups, YEAR, availability);
-    assertStatusesJoined(state.catalogue);
+    state.catalogue = catalogue;
     state.index = buildIndex(state.catalogue);
     state.facets = catalogueFacets(state.catalogue);
     initSearchUI();

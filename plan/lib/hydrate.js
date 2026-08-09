@@ -54,6 +54,46 @@ export function performanceKeys(performances) {
 }
 
 /**
+ * The join surface between a catalogue and a sidecar, hashed: every show id and
+ * every performance key, in catalogue order.
+ *
+ * Must produce exactly what join_fingerprint() in scraper/normalize.py produces
+ * for the master the catalogue was packed from — FNV-1a/32 over UTF-8, rendered
+ * as eight hex digits. __tests__/hydrate.test.mjs holds the two implementations
+ * together by checking this against the committed sidecar's own `k`.
+ *
+ * Why it exists: naming performances by date and start time survives a show
+ * gaining or losing a date, which is what it was designed for, but not a start
+ * time being *corrected*. #274 moved every performance an hour (the API's
+ * dateTime is UTC); a client holding the previous day's catalogue matched 6% of
+ * its keys against the next day's sidecar, and the 94% that missed came back
+ * status-unknown, which the planner draws as unavailable (#309). The catalogue
+ * is cached for four days and the sidecar for one, so this is a routine pairing,
+ * not an exotic one — and a partial miss is silent by construction. Comparing
+ * fingerprints is what makes it loud.
+ *
+ * @param {{i: string, p: {d: number, s: string}[]}[]} wire parsed shows.min.json
+ * @returns {string} eight hex digits
+ */
+export function joinFingerprint(wire) {
+  let h = 0x811c9dc5;
+  const feed = (text) => {
+    for (let i = 0; i < text.length; i++) {
+      // Ids and performance keys are ASCII, so a code unit is a UTF-8 byte and
+      // this matches Python's byte-wise walk. TextEncoder would too, at the cost
+      // of an allocation per show on a 4,000-show catalogue.
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 0x01000193) >>> 0;
+    }
+  };
+  for (const r of wire || []) {
+    feed(`${r.i}\n`);
+    for (const key of performanceKeys(r.p)) feed(`${key},`);
+  }
+  return h.toString(16).padStart(8, "0");
+}
+
+/**
  * Read one performance's availability out of the sidecar.
  *
  * A missing show, a missing key, or no sidecar at all all mean the same thing:

@@ -16,7 +16,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import { imageUrl, mmddToDate, performanceKeys, performanceAvailability, rehydrateShows } from "../hydrate.js";
+import { imageUrl, mmddToDate, performanceKeys, performanceAvailability, rehydrateShows, joinFingerprint } from "../hydrate.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(__dirname, "..", "..", "..", "data");
@@ -196,4 +196,34 @@ test("the shipped catalogue carries no availability of its own", () => {
         `performance of ${rec.i} must carry only its date and start, got ${JSON.stringify(p)}`);
     }
   }
+});
+
+test("the JS join fingerprint agrees with the Python one that stamped the sidecar", () => {
+  // The one test holding two implementations in two languages together: this
+  // recomputes, from the committed catalogue, the value scraper/normalize.py's
+  // join_fingerprint() wrote into the committed sidecar. They are only useful
+  // while they agree, and nothing else would notice them drifting apart — the
+  // client would simply start refetching on every load, which looks like a
+  // network problem rather than a hashing one.
+  assert.equal(typeof availability.k, "string",
+    "the sidecar must carry the fingerprint of the catalogue it was built for");
+  assert.equal(joinFingerprint(wire), availability.k);
+});
+
+test("the fingerprint moves when a start time is corrected", () => {
+  // The failure it exists for. #274 shifted every performance by an hour and the
+  // sidecar's date|start keys moved with it, so the previous day's catalogue
+  // joined to almost nothing — silently, because a missed key is indistinguishable
+  // from a performance with no status yet (#309).
+  const shifted = wire.slice(0, 50).map((r) => ({
+    ...r, p: (r.p || []).map((p) => ({ ...p, s: "0" + p.s.slice(1) })),
+  }));
+  assert.notEqual(joinFingerprint(shifted), joinFingerprint(wire.slice(0, 50)));
+});
+
+test("the fingerprint is stable across rehydration, and blind to what isn't joined", () => {
+  // It must pin the *join surface* and nothing else, or every price refresh would
+  // invalidate a catalogue that still joins perfectly.
+  const repriced = wire.slice(0, 50).map((r) => ({ ...r, pm: (r.pm ?? 0) + 1, b: "different blurb" }));
+  assert.equal(joinFingerprint(repriced), joinFingerprint(wire.slice(0, 50)));
 });

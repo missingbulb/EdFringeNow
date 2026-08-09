@@ -78,6 +78,28 @@ async function dropCached(cache, url, note) {
 }
 
 /**
+ * Throw away a cached copy from outside this module, for the caller that can see
+ * something this module can't: that two separately-cached files, each valid on
+ * its own, no longer describe the same thing. Evicting both and refetching is
+ * how that gets repaired without making the visitor clear their storage.
+ *
+ * A no-op wherever Cache Storage isn't available, since there is nothing to
+ * evict and the next read goes to the network anyway.
+ *
+ * @param {string} url
+ */
+export async function evictCached(url) {
+  let cache = null;
+  try {
+    if (typeof caches !== "undefined") cache = await caches.open(CACHE_NAME);
+  } catch {
+    cache = null;
+  }
+  if (!cache) return;
+  await dropCached(cache, url, () => {});
+}
+
+/**
  * A cached copy we can actually use, or null.
  *
  * Every failure here is a miss, never a throw. A cached copy is an optimisation,
