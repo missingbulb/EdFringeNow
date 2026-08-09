@@ -4,7 +4,7 @@ Everything else happening in Edinburgh alongside the Fringe — the other August
 festivals, the rest of the summer, and the seasonal things that are not
 festivals at all. Compiled once, refined in place.
 
-This page exists because the product's premise ("3,649 shows is too many") is
+This page exists because the product's premise ("4,206 shows is too many") is
 only true of one festival. In August the city runs at least eight programmes
 concurrently, and they are not variations on the Fringe: they differ in scale by
 two orders of magnitude, in how an event behaves in time, in whether a ticket
@@ -28,7 +28,7 @@ whether they know it or not.
 
 | Festival | Dates | Scale | Where |
 |---|---|---|---|
-| **Festival Fringe** | 7–31 Aug | 3,649 shows / 53,884 performances / 258 venues / 71 countries | citywide |
+| **Festival Fringe** | 7–31 Aug | 4,206 shows / 60,000+ performances / 299 venues / 74 countries | citywide |
 | **International Festival (EIF)** | 7–30 Aug | 147 performances / 44 countries / 2 exhibitions | a few large halls |
 | **Royal Edinburgh Military Tattoo** | 7–29 Aug (not Sundays) | one show, ~800 performers, ~9,000 seats a night, ~230,000 a year | one venue |
 | **Edinburgh Deaf Festival** | 7–16 Aug | 80+ events | Deaf Action + Fringe venues |
@@ -40,8 +40,13 @@ whether they know it or not.
 Two things fall out of the table:
 
 - **Volume is overwhelmingly Fringe.** Every non-Fringe August festival added
-  together is roughly 900 events against the Fringe's 3,649 shows. Any ranking
-  that sorts purely on relevance or proximity will show a Fringe-only city.
+  together is roughly 900 events against the Fringe's 4,206 shows — the Fringe is
+  ~82% of the cluster. (Corrected 2026-08-09: this read 3,649, the 4 June
+  programme-launch figure, which was ~15% short of the delivered festival; the
+  conclusion is unchanged and slightly stronger. See
+  [market-and-audience/](../market-and-audience/README.md) for the correction.)
+  Any ranking that sorts purely on relevance or proximity will show a Fringe-only
+  city.
 - **Scarcity runs the other way.** A Fringe show typically plays ~25 times. A
   Book Festival author appears once. An EIFF screening is often a single
   showing. The events that are hardest to replace are the ones the volume
@@ -119,7 +124,7 @@ no start time to reach in time for.
 
 ## Locations
 
-- **The Fringe is citywide** (258 venues); everything else is concentrated.
+- **The Fringe is citywide** (299 venues); everything else is concentrated.
 - **The Book Festival is effectively one campus** — Edinburgh Futures Institute
   (1 Lauriston Place), plus McEwan Hall and, new for 2026, Greyfriars Kirk. All
   within a few minutes' walk of each other and of the Fringe's Bristo Square
@@ -213,6 +218,7 @@ blurbs and belongs in the competitor page once someone actually uses them.
 
 ## Sources
 
+- [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — the Fringe's delivered 2026 scale: 4,206 shows, 299 venues, 74 countries, 60,000+ performances.
 - [Edinburgh Festivals: What's On in 2026 (Edinburgh Festival City)](https://www.edinburghfestivalcity.com/inspiration/573-edinburgh-festivals-whats-on-in-2026)
 - [Edinburgh Festivals (VisitScotland)](https://www.visitscotland.com/things-to-do/events/edinburgh-festivals)
 - [Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/)
@@ -300,3 +306,11 @@ blurbs and belongs in the competitor page once someone actually uses them.
   the API actually return" open question (2026 Fringe data confirmed loaded via
   the public explorer; still no authenticated call). Cross-linked the new
   fringe-ticketing page.
+- **2026-08-09** — corrected the Fringe's row in the August cluster table and the
+  volume arithmetic beneath it from the 4 June programme-launch snapshot (3,649
+  shows / 53,884 performances / 258 venues / 71 countries) to the Fringe
+  Society's opening-day figures (4,206 / 60,000+ / 299 / 74). The superseded
+  numbers and the reason they were wrong are kept on
+  [market-and-audience/](../market-and-audience/README.md), which owns them. The
+  Fringe's share of the cluster moves from ~80% to ~82%, so the page's
+  conclusions and its Key insights header are unchanged — only the figures moved.
