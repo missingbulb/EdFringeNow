@@ -2067,6 +2067,20 @@ function setSearchOpen(open) {
   if (!open) setActiveRow(-1);
 }
 
+/* Focus has left the search for good: close the overlay and drop the query
+ * text with it. A finished search is spent — coming back to the bar should
+ * start a new one, not the leftovers of the one whose shows are already
+ * starred. Filters are deliberately kept: they live on the tools line, which
+ * stays as set. */
+function dismissSearch() {
+  const input = $("ssInput");
+  input.value = "";
+  searchUi.rows = [];
+  searchUi.total = 0;
+  searchUi.shown = 0;
+  setSearchOpen(false);
+}
+
 function runSearch() {
   if (!state.index) return; // catalogue still loading — the input just holds the text
   const query = $("ssInput").value;
@@ -2414,12 +2428,20 @@ function wireShowSearch() {
     input.focus({ preventScroll: true });
   });
 
-  // Click-away closes the results overlay (the tools line stays as set).
+  // Click-away closes the results overlay and clears the query (the tools
+  // line stays as set).
   document.addEventListener("click", (e) => {
     // Picking a category row re-renders the list, so by the time the click
     // reaches the document its target is a detached node — which is not "away".
     if (!e.target.isConnected) return;
-    if (!root.contains(e.target)) setSearchOpen(false);
+    if (!root.contains(e.target)) dismissSearch();
+  });
+  // Same for tabbing out. Only a known destination outside the component
+  // counts: a null relatedTarget is the ambiguous case (clicking a
+  // non-focusable result row lands there too), and the click handler above
+  // already covers the pointer path.
+  root.addEventListener("focusout", (e) => {
+    if (e.relatedTarget && !root.contains(e.relatedTarget)) dismissSearch();
   });
 }
 
