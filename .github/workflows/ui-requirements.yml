@@ -1,0 +1,53 @@
+name: UI requirements
+
+# The executable-requirements UI lane: renders the real pages in the pinned
+# headless Chromium and compares pixel-exact against the committed goldens
+# (product/requirements/). Deliberately NOT part of the static-website pack's
+# vendored `static-site-ci.yml` — that file belongs to the pack and is
+# overwritten on every re-vendor, and this lane is this repo's own. The fast
+# gate (`scripts/verify.sh`, which includes the requirements coverage and
+# gallery checks) runs there as the declared `test_command`; only the browser
+# work lives here, so the fast lane stays browser-free.
+#
+# The Playwright version installed here must match the harness's pin
+# (product/requirements/shared/harness/browser.js) or the run refuses to
+# compare. workflow_dispatch so a run can be started by hand on a branch whose
+# pull_request event never fired.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-requirements-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui-requirements:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Playwright + Chromium
+        run: |
+          npm i --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: UI requirements (screen + behavior)
+        run: npm run test:ui
+      - name: Upload failure artifacts (actual/diff renders)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: requirements-failure-artifacts
+          path: product/requirements/shared/.artifacts/
+          if-no-files-found: ignore
