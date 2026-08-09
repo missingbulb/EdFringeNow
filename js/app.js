@@ -11,6 +11,7 @@
  * real code with the planner instead of copy-pasting it — see shared/geo.js.
  */
 
+import { showUrl } from "../shared/edfringe.js";
 import { isInUK } from "../shared/geo.js";
 import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
@@ -953,6 +954,7 @@ function renderShowList() {
         <span class="show-name">${escapeHtml(show.title)}</span>
         <span class="show-meta">${escapeHtml(show.venue)}</span>
         ${subgenreTags(show)}
+        ${showLink(show, "si-link", "What's it about? &#8599;")}
       </span>
       <span class="si-side">
         <span class="si-time">${escapeHtml(clockLabel(show.time))}</span><br />
@@ -975,6 +977,7 @@ function renderShowList() {
         activate();
       }
     });
+    wireShowLinks(item);
     grid.appendChild(item);
   });
 
@@ -1134,7 +1137,8 @@ function renderJourneyStrip() {
         legFits
           ? planSlack(timeToMinutes(leg.time) - arriveLeg)
           : '<span class="plan-slack wontfit">You\'ll be late</span>',
-        `${subgenreTags(leg)}${planBuy(leg)}`
+        `${subgenreTags(leg)}${planBuy(leg)}`,
+        leg
       )
     );
     if (constraint) {
@@ -1192,6 +1196,7 @@ function renderJourneyStrip() {
   updateMapsRouteLink();
   wireSpareCta(strip);
   wireBookCta(strip);
+  wireShowLinks(strip);
 }
 
 /* Attach the shared "Change ▾ / ×" controls to a plan node (top-right, on the
@@ -1349,7 +1354,13 @@ function wireSpareCta(strip) {
 /* One node in the vertical plan: a leading glyph (📍 for "you", the genre emoji
  * for a show), time, title, subtitle, an optional slack chip and an optional
  * extra (e.g. a buy button). */
-function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
+function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml, linkShow) {
+  // A node standing for a show wears its title as the link to that show's page
+  // on edfringe.com — the node names the show, so the name is where you'd click
+  // to find out what it is.
+  const titleHtml =
+    showLink(linkShow, "plan-title-link", `${escapeHtml(title)} <span class="plan-title-out">&#8599;</span>`) ||
+    escapeHtml(title);
   // Slack chip sits on the time line, to the left of the event time: it reads as
   // the payoff of the travel connector just above ("N min walk" → "made it, X to
   // spare · 15:30–16:30").
@@ -1357,18 +1368,23 @@ function planNode(icon, kind, time, title, sub, slackHtmlStr, extraHtml) {
     <div class="plan-node ${kind}">
       <span class="plan-ico" aria-hidden="true">${icon}</span>
       <div class="plan-timerow">${slackHtmlStr || ""}<span class="plan-time">${escapeHtml(time)}</span></div>
-      <div class="plan-title">${escapeHtml(title)}</div>
+      <div class="plan-title">${titleHtml}</div>
       ${sub ? `<div class="plan-sub">${escapeHtml(sub)}</div>` : ""}
       ${extraHtml || ""}
     </div>`;
 }
 
 /* The plan's destination node — the next commitment. A committed show wears its
- * genre icon; a committed place wears its kind's icon (🍽️ 🚆 …) and carries the
- * partner booking link where one exists. */
+ * genre icon, and names the show under the label so the commitment is readable
+ * as a show (the label itself is the venue, and the user may have overwritten
+ * it); a committed place wears its kind's icon (🍽️ 🚆 …) and carries the partner
+ * booking link where one exists. */
 function destNode(constraint, slackHtmlStr) {
+  const show = constraint.isPlace ? null : constraint;
   const icon = constraint.isPlace ? placeIcon(state.destPlace.kind) : genreIcon(constraint.genre);
-  const extra = constraint.isPlace ? planPartnerLink() : "";
+  const extra = constraint.isPlace
+    ? planPartnerLink()
+    : showLink(show, "plan-dest-show", `${escapeHtml(show.title)} &#8599;`);
   return planNode(icon, "dest", clockLabel(constraint.time), destinationLabel(), "Your next commitment", slackHtmlStr, extra);
 }
 
@@ -1433,12 +1449,34 @@ function noteDestNode() {
   return planNode("📝", "dest", clockLabel(state.selectedTime), state.destNote, "Your next commitment", "", "");
 }
 
-/* Booking link for a show on the official Fringe box office. Every show in the
- * data carries a `slug`; the page lives at /tickets/whats-on/<slug>. */
+/* The show's own page on the official Fringe site — its blurb, images, reviews
+ * and box office (shared/edfringe.js). This page says when, where and how much;
+ * everything about what the show *is* lives on the other end of this link. */
 function ticketUrl(show) {
-  return show && show.slug
-    ? `https://www.edfringe.com/tickets/whats-on/${encodeURIComponent(show.slug)}`
-    : "";
+  return show ? showUrl(show.slug) : "";
+}
+
+/* The out-link every named show on this page carries: opens edfringe.com in a
+ * new tab, so a half-built plan survives the trip. `stopPropagation` is the
+ * point of the wiring below — the rows and plan nodes this sits inside are
+ * themselves clickable (they select the show), and following the link must not
+ * also change the plan. */
+function showLink(show, cls, label) {
+  const url = ticketUrl(show);
+  if (!url) return "";
+  return `<a class="${cls} show-out" href="${escapeHtml(url)}" target="_blank" rel="noopener"
+            title="Read about ${escapeHtml(show.title)} on edfringe.com"
+          >${label}</a>`;
+}
+
+/* Keep clicks (and keyboard activation) on an out-link from reaching the
+ * clickable row / node underneath it. */
+function wireShowLinks(root) {
+  if (!root) return;
+  root.querySelectorAll(".show-out").forEach((a) => {
+    a.addEventListener("click", (e) => e.stopPropagation());
+    a.addEventListener("keydown", (e) => e.stopPropagation());
+  });
 }
 
 /* Buy-ahead link for the chosen stop. Buying ahead skips the on-site box-office
