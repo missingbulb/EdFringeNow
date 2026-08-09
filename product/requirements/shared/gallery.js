@@ -18,12 +18,27 @@ const NOTES = {
   logic: "\u{1F527} _Logic leaf._",
 };
 
+// A rule about how values are written has no picture, but it does have a
+// exhaustive answer: the values themselves. A case may declare a `table`, and
+// its rows are the ones its verify() proves against the shipped code — so the
+// table in the doc is generated evidence, not hand-typed prose. Emitted as
+// inline HTML on one line, because the managed unit here is a single line.
+function managedTable(table) {
+  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const head = table.columns.map((c) => `<th align="left">${esc(c)}</th>`).join("");
+  const body = table.rows
+    .map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join("")}</tr>`)
+    .join("");
+  return `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+}
+
 function managedLine(id, testCase) {
   const marker = `<!-- req-gallery:${id} -->`;
   if (!testCase) return `❓ _No case claims this leaf yet — the coverage gate is red._ ${marker}`;
   if (testCase.image) {
     return `![${testCase.name}](requirements/${testCase.kind}/cases/${testCase.name}.png) ${marker}`;
   }
+  if (testCase.table) return `${managedTable(testCase.table)} ${marker}`;
   return `${NOTES[testCase.kind] || `_${testCase.kind} leaf._`} ${marker}`;
 }
 

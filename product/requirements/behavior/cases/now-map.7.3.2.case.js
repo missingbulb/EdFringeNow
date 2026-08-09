@@ -2,7 +2,7 @@
 const { nowStorage, nowSettings, nowReady } = require("../../shared/case-helpers");
 
 module.exports = {
-  description: "a pin click selects without scrolling; list and map are one-at-a-time views",
+  description: "a pin click does not scroll the page",
   localStorage: { ...nowStorage(), ...nowSettings({ genres: [] }) },
   async verify(page, { origin, assert }) {
     await page.goto(`${origin}/`, { waitUntil: "load" });

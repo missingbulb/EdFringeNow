@@ -12,11 +12,18 @@ const SHOT_OPTS = { animations: "disabled" };
 // The neutral ground behind a stitch seam and behind animation padding.
 const GAP_RGB = [226, 228, 233];
 
-// Bounding box of the first match, in page coordinates.
+// Bounding box of the first match, in DOCUMENT coordinates.
+//
+// boundingBox() answers in viewport coordinates, which go stale the moment
+// anything scrolls — and Playwright scrolls an element into view before
+// clicking it, so a rect measured before a click means something else after
+// one. Converting here, once, at the moment of measurement, makes every rect
+// in this module document-space and immune to later scrolling.
 async function rectOf(page, selector) {
   const box = await page.locator(selector).first().boundingBox();
   if (!box) throw new Error(`no visible element for ${selector}`);
-  return box;
+  const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
+  return { x: box.x + sx, y: box.y + sy, width: box.width, height: box.height };
 }
 
 function union(rects) {
@@ -32,27 +39,21 @@ function pad(rect, px = 6) {
   return { x: Math.max(0, rect.x - px), y: Math.max(0, rect.y - px), width: rect.width + 2 * px, height: rect.height + 2 * px };
 }
 
-// boundingBox() speaks viewport coordinates, but a fullPage clip wants
-// document coordinates — convert by the scroll offset, pad a whisker (so
-// shadows/descenders aren't shaved), and clamp to the page's bounds. Every
-// rect a case hands the tools is a boundingBox rect; this is the one place
-// the coordinate space changes.
+// Pad a document-space rect a whisker (so shadows and descenders aren't
+// shaved) and clamp it to the page's bounds — a clip outside the rendered
+// image is an error, not a crop.
 async function padToPage(page, rect, px = 6) {
   const m = await page.evaluate(() => ({
     w: document.documentElement.scrollWidth,
     h: document.documentElement.scrollHeight,
-    sx: window.scrollX,
-    sy: window.scrollY,
   }));
-  const rx = rect.x + m.sx;
-  const ry = rect.y + m.sy;
-  const x = Math.max(0, rx - px);
-  const y = Math.max(0, ry - px);
+  const x = Math.max(0, rect.x - px);
+  const y = Math.max(0, rect.y - px);
   return {
     x,
     y,
-    width: Math.min(m.w, rx + rect.width + px) - x,
-    height: Math.min(m.h, ry + rect.height + px) - y,
+    width: Math.min(m.w, rect.x + rect.width + px) - x,
+    height: Math.min(m.h, rect.y + rect.height + px) - y,
   };
 }
 

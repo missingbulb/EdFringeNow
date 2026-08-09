@@ -238,22 +238,18 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   `https://www.google.com/maps/dir/?api=1&origin=<lat,lng>&destination=<lat,lng>&travelmode=walking|driving|bicycling` + `&waypoints=` when a leg show is set.
   </details>
 
-- `4.7` The ✕ on the destination clears the commitment but keeps a selected show; the ✕ on the stop clears just the selected show.
+- `4.7` Removing one part of the plan leaves the other.
 
-  <details><summary>Proof</summary>
+  - `4.7.1` The ✕ on the commitment clears it and keeps the show you picked.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:4.7 -->
-  </details>
+    ![now-plan-strip.4.7.1](requirements/screen/cases/now-plan-strip.4.7.1.png) <!-- req-gallery:4.7.1 -->
 
-- `4.8` Durations are phrased for humans: minutes under an hour, **"1 hour and 20 minutes"** up to two hours, **"about 2½ hours"** beyond.
+  - `4.7.2` The ✕ on the show clears just the show.
 
-  <details><summary>Proof</summary>
+    ![now-plan-strip.4.7.2](requirements/screen/cases/now-plan-strip.4.7.2.png) <!-- req-gallery:4.7.2 -->
+- `4.8` Durations are phrased for humans.
 
-  🔧 _Logic leaf._ <!-- req-gallery:4.8 -->
-
-  `shared/duration.js` `friendlyDuration`: `<60` → `45 minutes`; exact hours → `1 hour`/`2 hours`; 60–120 → `1 hour and 20 minutes`; `>120` → `about 2½ hours` (nearest half hour); negative/non-finite → empty.
-  </details>
-
+  <table><thead><tr><th align="left">Minutes</th><th align="left">Reads</th></tr></thead><tbody><tr><td>1</td><td>1 minute</td></tr><tr><td>45</td><td>45 minutes</td></tr><tr><td>60</td><td>1 hour</td></tr><tr><td>80</td><td>1 hour and 20 minutes</td></tr><tr><td>120</td><td>2 hours</td></tr><tr><td>150</td><td>about 2½ hours</td></tr><tr><td>200</td><td>about 3½ hours</td></tr><tr><td>-5</td><td>(nothing)</td></tr></tbody></table> <!-- req-gallery:4.8 -->
 ## 5. Filters
 
 - `5.1` The genre panel: ten genres, each counted, with an **everything!** hatch.
@@ -277,20 +273,12 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   ![now-filters.5.4](requirements/screen/cases/now-filters.5.4.png) <!-- req-gallery:5.4 -->
 
-- `5.5` The chips summarise their state: one genre by name, several as **"n genres"**, all/none as **"All genres"**; a set price cap turns the **$** red and shows **"Up to £N"**; travel reads **"\<Walk|Taxi|Bike\> ≤ N min"**.
+- `5.5` Each chip says what it is set to.
 
-  <details><summary>Proof</summary>
+  ![now-filters.5.5](requirements/screen/cases/now-filters.5.5.png) <!-- req-gallery:5.5 -->
+- `5.6` **everything!** ticks them all, then flips to **nothing!** and clears them.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:5.5 -->
-  </details>
-
-- `5.6` The escape hatch flips: **everything!** ticks every option; once everything is ticked it reads **nothing!** and clears them all.
-
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:5.6 -->
-  </details>
-
+  ![now-filters.5.6](requirements/screen/cases/now-filters.5.6.png) <!-- req-gallery:5.6 -->
 - `5.7` Price filtering is honest about unknowns: caps are inclusive (`£10` keeps a £10 show), **Free** means exactly £0, and a show with no known price matches no cap — never smuggled in under one.
 
   <details><summary>Proof</summary>
@@ -353,28 +341,13 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   ![now-list.6.9](requirements/screen/cases/now-list.6.9.png) <!-- req-gallery:6.9 -->
 
-- `6.10` Clicking **Show more** appends the next page to the list.
+- `6.10` **Show more** appends the next page.
 
-  <details><summary>Proof</summary>
+  ![now-list.6.10](requirements/screen/cases/now-list.6.10.png) <!-- req-gallery:6.10 -->
 
-  🚩 _Behavior leaf._ <!-- req-gallery:6.10 -->
-  </details>
+- `6.11` Tapping a card slips the show into the plan; tapping again takes it out.
 
-- `6.11` Tapping a card slips that show into the plan (and scrolls to it); tapping it again takes it back out.
-
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:6.11 -->
-  </details>
-
-- `6.12` A show beyond the travel budget never appears in the list, however good it is.
-
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:6.12 -->
-
-  The fixture carries a show ~28 walking minutes out; at the default 10-minute budget it must be absent from the DOM, and present once the budget is raised to 60.
-  </details>
+  ![now-list.6.11](requirements/screen/cases/now-list.6.11.png) <!-- req-gallery:6.11 -->
 
 ## 7. The map
 
@@ -396,13 +369,20 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   With a slipped-in show the route runs you → show → commitment (two legs); unrelated pins dim to 0.25.
   </details>
 
-- `7.3` Tapping a pin selects the show without scrolling the page; the list and map are two views of the same shows, one visible at a time.
+- `7.3` Tapping a pin on the map.
 
-  <details><summary>Proof</summary>
+  - `7.3.1` It selects that show.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:7.3 -->
-  </details>
+    ![now-map.7.3.1](requirements/screen/cases/now-map.7.3.1.png) <!-- req-gallery:7.3.1 -->
 
+  - `7.3.2` The page does not scroll — unlike tapping a card in the list.
+
+    <details><summary>Proof</summary>
+
+    🚩 _Behavior leaf._ <!-- req-gallery:7.3.2 -->
+
+    A scroll position is not something a picture of the map can show.
+    </details>
 ## 8. Time rules (shared)
 
 - `8.1` A fringe day runs **06:00 to 06:00**: a 00:30 show belongs to the evening before, carried as the extended string `24:30` so ordering never breaks, and wrapped back to `00:30` only for display.
@@ -482,26 +462,34 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   ![plan-chrome.9.3](requirements/screen/cases/plan-chrome.9.3.png) <!-- req-gallery:9.3 -->
 
-- `9.4` **Try again** re-fetches and, when the data lands, recovers to the working page.
+- `9.4` **Try again** recovers to the working page.
 
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:9.4 -->
-  </details>
-
+  ![plan-chrome.9.4](requirements/screen/cases/plan-chrome.9.4.png) <!-- req-gallery:9.4 -->
 - `9.5` With shows on the board, the count line reports planned out of selected.
 
   ![plan-chrome.9.5](requirements/screen/cases/plan-chrome.9.5.png) <!-- req-gallery:9.5 -->
 
 ## 10. Favourites intake
 
-- `10.1` Uploading the edfringe.com favourites CSV fills the board with every favourite the catalogue knows, and the list survives a reload (kept three days).
+- `10.1` Uploading the edfringe.com favourites CSV.
 
-  <details><summary>Proof</summary>
+  - `10.1.1` It fills the board with every favourite the catalogue knows.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:10.1 -->
-  </details>
+    ![plan-favourites.10.1.1](requirements/screen/cases/plan-favourites.10.1.1.png) <!-- req-gallery:10.1.1 -->
 
+  - `10.1.2` The board survives a reload.
+
+    ![plan-favourites.10.1.2](requirements/screen/cases/plan-favourites.10.1.2.png) <!-- req-gallery:10.1.2 -->
+
+  - `10.1.3` The list is kept for three days.
+
+    <details><summary>Proof</summary>
+
+    🚩 _Behavior leaf._ <!-- req-gallery:10.1.3 -->
+
+    A retention window is a property of stored data over time — no rendering of
+    the board can show it.
+    </details>
 - `10.2` A file that isn’t a CSV is refused.
 
   ![plan-favourites.10.2](requirements/screen/cases/plan-favourites.10.2.png) <!-- req-gallery:10.2 -->
@@ -514,13 +502,9 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   ![plan-favourites.10.4](requirements/screen/cases/plan-favourites.10.4.png) <!-- req-gallery:10.4 -->
 
-- `10.5` A failed upload never touches an existing grid — the board and stored list stay exactly as they were.
+- `10.5` A failed upload leaves an existing board untouched.
 
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:10.5 -->
-  </details>
-
+  ![plan-favourites.10.5](requirements/screen/cases/plan-favourites.10.5.png) <!-- req-gallery:10.5 -->
 - `10.6` The favourites parser reads real exports: quoted RFC-4180 cells, `""` escapes, any line ending, BOM; every cell is scanned for `edfringe.com/tickets/whats-on/<slug>` URLs, de-duplicated in first-seen order; a link-less file falls back to a plain list of URLs or bare slugs.
 
   <details><summary>Proof</summary>
@@ -530,13 +514,9 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   `plan/lib/favourites.js`.
   </details>
 
-- `10.7` **Clear** asks before it wipes: first click arms **"Clear all \<n\> shows? Click again"**, a second click within five seconds clears the board; anything else disarms it.
+- `10.7` **Clear** asks before it wipes.
 
-  <details><summary>Proof</summary>
-
-  🚩 _Behavior leaf._ <!-- req-gallery:10.7 -->
-  </details>
-
+  ![plan-favourites.10.7](requirements/screen/cases/plan-favourites.10.7.png) <!-- req-gallery:10.7 -->
 ## 11. The show search
 
 - `11.1` The search bar invites the whole catalogue.

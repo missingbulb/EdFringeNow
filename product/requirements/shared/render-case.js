@@ -5,7 +5,7 @@
 
 const { newPage, ORIGIN } = require("./harness/browser");
 const { nowReady, planReady } = require("./case-helpers");
-const { makeTools, padToPage } = require("./capture-tools");
+const { makeTools } = require("./capture-tools");
 
 async function renderScreenCase(testCase) {
   const { page, context } = await newPage({
@@ -33,9 +33,8 @@ async function renderScreenCase(testCase) {
     if (typeof testCase.capture === "string") {
       // Clip at the element's box rather than element.screenshot(): a clip
       // never scrolls, so a hover card or popup can't be dismissed mid-shot.
-      const box = await page.locator(testCase.capture).first().boundingBox();
-      if (!box) throw new Error(`${testCase.name}: no visible element for ${testCase.capture}`);
-      return await page.screenshot({ clip: await padToPage(page, box), fullPage: true, animations: "disabled" });
+      const tools = makeTools(page);
+      return await tools.element(testCase.capture);
     }
     if (typeof testCase.capture === "function") {
       return await testCase.capture(page, makeTools(page));
