@@ -224,9 +224,15 @@ const LOOKUPS_TTL_MS = DAY_MS;
  * than before 06:00. */
 async function loadShows() {
   try {
+    // Both are validated on the way out of the cache: a stored copy from an older
+    // generation parses fine and then reads as an empty festival, with nothing
+    // logged anywhere (#309). venues.json in particular is the same Cache Storage
+    // entry the planner uses — one bad copy would take out both pages.
     const [lookups, day] = await Promise.all([
-      cachedFetchJson("data/venues.json", LOOKUPS_TTL_MS, noteCache),
-      cachedFetchJson(`data/days/${NOW.fringeDate}.json`, DAY_TTL_MS, noteCache),
+      cachedFetchJson("data/venues.json", LOOKUPS_TTL_MS, noteCache,
+        (d) => Boolean(d) && typeof d.venues === "object" && d.venues !== null),
+      cachedFetchJson(`data/days/${NOW.fringeDate}.json`, DAY_TTL_MS, noteCache,
+        (d) => Array.isArray(d)),
     ]);
     // The shared lookup file carries the venue map plus the global rooms/genres
     // lists that the day records index into. Fetched once.
