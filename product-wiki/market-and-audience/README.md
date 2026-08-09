@@ -7,11 +7,11 @@ dates" (the planner at `/plan`). Compiled once, refined in place.
 
 ## Key insights
 
-- 3,649 Fringe shows across 258 venues in 2026 — plus ~900 more events from seven other August festivals.
+- 4,206 Fringe shows across 299 venues — 15% more than June's programme claimed. Plus ~900 non-Fringe events.
+- Average ticket is £13, and 1,253 shows are free or pay-what-you-want — nearly a third of the programme.
 - 37% of people struggle to pick a show. Two thirds buy just one ticket.
 - 78% come to see something they would not normally — they want surprise, not better filters.
 - A third of the audience lives in Edinburgh. Two thirds travel in and plan months ahead.
-- The advice everyone gives is: do not fill the day. Two or three shows.
 - Beds may pick the dates, not shows — over half cannot find an affordable room nearby.
 - Nobody has data on how people choose in the street. Not us, not anyone.
 
@@ -19,12 +19,30 @@ dates" (the planner at `/plan`). Compiled once, refined in place.
 
 ### 2026 festival (running 7–31 August 2026)
 
-- **3,649 shows** across **258 venues**, **53,884 performances**, artists from
-  **71 countries** — announced at the programme launch on 4 June 2026.
-- Genre split at launch: **1,401 comedy**, **1,025 theatre**, **168 musicals and
-  opera**.
-- Smaller than 2025 on both counts (3,893 shows / 301 venues), and still two
-  orders of magnitude more than any one visitor can see.
+As delivered, from the Fringe Society's opening-day release (7 August 2026):
+
+- **4,206 shows** across **299 venues**, **over 60,000 performances**, artists
+  from **74 countries**, plus 14 country showcases and four spotlight projects.
+- **440 free shows** and **813 pay-what-you-want/can shows** — 1,253 together,
+  close to 30% of the programme. The **average ticket price is £13**.
+- **Over 1,600 accredited industry and media** from 53 countries attend.
+- Genre split at the 4 June launch: **1,401 comedy**, **1,025 theatre**, **168
+  musicals and opera** (not restated in the opening-day figures).
+
+**Correction — the launch snapshot undercounts, and this page had it backwards.**
+Until this pass the page recorded 3,649 shows / 258 venues / 53,884 performances
+/ 71 countries and concluded that 2026 was **"smaller than 2025 on both counts
+(3,893 shows / 301 venues)"**. That conclusion was wrong, because it compared a
+*programme-launch snapshot* with a *delivered festival*. The Society states that
+**a further 553 shows registered after the printed programme launched on 4
+June** — so the June number was ~15% short of the August one, and 2026 in fact
+finished **larger** than 2025 on shows (4,206 vs 3,893) and level on venues (299
+vs 301). The 4 June figures are kept above only as the launch-day genre split;
+they are not the festival's size. The general lesson for anything that reads
+these numbers: **a Fringe count is only final once the festival opens**, and
+registration continues right up to it.
+
+This is still two orders of magnitude more than any one visitor can see.
 
 ### 2025 festival (latest full ticket data)
 
@@ -166,6 +184,7 @@ segmentation for either crowd remains an open question.
 
 ## Sources
 
+- [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — the opening-day release: 4,206 shows, 299 venues, 74 countries, 60,000+ performances, 440 free and 813 pay-what-you-want shows, £13 average ticket, 1,600+ accredited industry/media from 53 countries, and 553 shows registered since the 4 June programme launch.
 - [The 2026 Edinburgh Festival Fringe programme is now live (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/mixitup-with-the-2026-edinburgh-festival-fringe-programme/)
 - [Edinburgh Festival Fringe 2026 programme launched with 3,649 shows from 71 countries (Theatre Weekly)](https://theatreweekly.com/edinburgh-festival-fringe-2026-programme-launched-with-3649-shows-from-71-countries/)
 - [Key dates for your diary in the lead-up to Fringe 2026 (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/key-dates-for-your-diary-in-the-lead-up-to-fringe-2026/)
@@ -203,7 +222,21 @@ segmentation for either crowd remains an open question.
 - **Does the favourites list have a native export?** The third-party CSV
   extension exists; whether edfringe.com itself offers an export — and how many
   people ever produce one — is unconfirmed, and the planner's intake depends on
-  it.
+  it. (Sharpened 2026-08-09: a rival planner, edfringeplanner.co.uk, advertises
+  that it "takes your favourites from edfringe.com", so *some* route out exists —
+  whether it is a native export, the same extension, or a login-scrape is
+  unknown. See [competitor-landscape/](../competitor-landscape/README.md).)
+- **Do the price figures survive contact with the data?** New this pass: a £13
+  average ticket and 1,253 free / pay-what-you-want shows are the first cited
+  price numbers this wiki has. The product brief still says we hold no price
+  beyond a free/paid flag, and the scraped GraphQL only carries `priceType` —
+  so this is a published aggregate we cannot currently reproduce or attribute
+  per show. Whether the official Listings API's `price` field would close that
+  is on [festival-season/](../festival-season/README.md).
+- **How much does the programme still move during the run?** Registration
+  demonstrably continued past 4 June (+553 shows by opening day). Whether shows
+  are also added, cancelled or pulled *during* 7–31 August is unmeasured, and it
+  decides how often the catalogue must be refreshed to stay honest.
 - **Accommodation as a planning input.** No authoritative price/availability
   series found (guide-site figures only). If beds constrain dates more than shows
   do, "pick my best dates" optimises the wrong variable — worth evidence before
@@ -244,3 +277,22 @@ segmentation for either crowd remains an open question.
   insight 1 rewritten from the year-on-year shrink to the cluster; the shrink
   claim stays in the body. Added the cross-festival attendance open question.
   Requirements implication left for human review.
+- **2026-08-09** — spot-checked the 2026 scale figures two days into the festival
+  and found them stale *and* wrong in direction. Replaced the 4 June
+  programme-launch snapshot (3,649 shows / 258 venues / 53,884 performances / 71
+  countries) with the Fringe Society's opening-day release (4,206 shows / 299
+  venues / 60,000+ performances / 74 countries), and corrected — with the reason
+  kept in the body rather than deleted — the page's "smaller than 2025 on both
+  counts" conclusion, which had compared a launch snapshot against a delivered
+  festival; 553 shows registered after the programme launched, so 2026 finished
+  larger than 2025 on shows. Added the first cited price data in this wiki (£13
+  average ticket; 440 free plus 813 pay-what-you-want shows, ~30% of the
+  programme) and the 1,600+ accredited industry/media figure. Key insights 1 and
+  2 rewritten; the "don't fill the day" bullet dropped from the header to stay
+  inside the seven-bullet cap — it is unchanged in the body, and the sharper
+  version of it already leads
+  [audience-divergence/](../audience-divergence/README.md). Three open questions
+  added (price reproducibility, in-run programme churn, a sharpened
+  favourites-export question); no requirement touched. The superseded figures
+  also propagate to festival-season and festival-cities-beyond-edinburgh, both
+  corrected in the same pass.
