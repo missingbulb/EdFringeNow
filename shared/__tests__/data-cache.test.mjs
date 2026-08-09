@@ -20,8 +20,9 @@ import { cachedFetchJson, fetchJson, DAY_MS } from "../data-cache.js";
 
 function installStubs({ bodies = {}, failFetch = false, noCaches = false,
                         putThrows = false, putPoisonsBody = false, now = 1_000_000 } = {}) {
-  const calls = { fetch: [], put: [] };
+  const calls = { fetch: [], put: [], delete: [] };
   const store = new Map();       // url -> serialized body (the Cache Storage stand-in)
+  const corruptCached = new Set(); // urls whose stored body reads back as an error
   const local = new Map();       // the localStorage stand-in
 
   const saved = {
@@ -57,7 +58,19 @@ function installStubs({ bodies = {}, failFetch = false, noCaches = false,
 
   globalThis.caches = noCaches ? undefined : {
     open: async () => ({
-      match: async (url) => (store.has(url) ? response(store.get(url)) : undefined),
+      match: async (url) => {
+        if (!store.has(url)) return undefined;
+        // A stored body that can't be read back: a write truncated by a dropped
+        // connection, an entry evicted mid-read, a storage-layer error.
+        if (corruptCached.has(url)) {
+          return { ok: true, status: 200, stream: {},
+                   text: async () => { throw new TypeError("Failed to read cached response"); },
+                   json: async () => { throw new TypeError("Failed to read cached response"); },
+                   clone() { return this; } };
+        }
+        return response(store.get(url));
+      },
+      delete: async (url) => { calls.delete.push(url); corruptCached.delete(url); return store.delete(url); },
       put: async (url, res) => {
         calls.put.push(url);
         // Cache.put() reads the body it is handed. A write that dies partway
@@ -84,6 +97,8 @@ function installStubs({ bodies = {}, failFetch = false, noCaches = false,
     calls,
     clock,
     seed: (url, body) => store.set(url, body),
+    corrupt: (url) => corruptCached.add(url),
+    stamps: () => JSON.parse(local.get("edfringe.data.fetched.v1") || "{}"),
     restore: () => {
       globalThis.fetch = saved.fetch;
       globalThis.caches = saved.caches;
@@ -227,6 +242,90 @@ test("a cache write that dies mid-body must not cost the caller its download", a
       await cachedFetchJson(URL_A, DAY_MS, (err, url) => notes.push(url)), { v: 1 },
       "the payload was downloaded intact — a failed cache write must not discard it");
     assert.deepEqual(notes, [URL_A], "the write that failed is still worth logging");
+  } finally {
+    s.restore();
+  }
+});
+
+test("an unreadable cached copy falls through to the network instead of throwing", async () => {
+  // The production failure in #309, and the half of it the first fix missed. The
+  // network panel for the broken page showed NO request for any data file: all
+  // four were served from Cache Storage. So the read that failed was the *cache*
+  // read, and that path had no fall-through — a truncated or unreadable entry
+  // propagated straight out, and because the stamp stayed fresh it failed
+  // identically on every load for the whole TTL. A day for availability; four
+  // days for the catalogue.
+  const s = installStubs({ bodies: { [URL_A]: { v: 1 } } });
+  try {
+    await cachedFetchJson(URL_A, DAY_MS);            // populate + stamp
+    assert.equal(s.calls.fetch.length, 1);
+    s.corrupt(URL_A);                                // the entry goes bad in place
+
+    const notes = [];
+    assert.deepEqual(await cachedFetchJson(URL_A, DAY_MS, (err, url) => notes.push(url)), { v: 1 },
+      "a cached copy we can't read is a miss, not a failure");
+    assert.equal(s.calls.fetch.length, 2, "the network must be asked when the cache can't answer");
+    assert.deepEqual(notes, [URL_A], "the unreadable entry is worth logging");
+    assert.deepEqual(s.calls.delete, [URL_A], "and worth evicting, so it can't fail again tomorrow");
+  } finally {
+    s.restore();
+  }
+});
+
+test("a cached copy of the wrong shape is refetched rather than trusted", async () => {
+  // The other way a cache read produces no data and no error: an entry from an
+  // older generation of the file. It parses, so nothing throws — it simply joins
+  // to nothing downstream, which the planner drew as "every show unavailable".
+  // The sidecar carries a `v` for exactly this; the caller knows the schema, so
+  // the caller gets to reject the copy.
+  const isSidecar = (d) => Boolean(d) && d.v === 1 && d.a && Object.keys(d.a).length > 0;
+  const s = installStubs({ bodies: { [URL_A]: { v: 1, a: { SHOW: {} } } } });
+  try {
+    s.seed(URL_A, { version: 1, shows: {} });        // a previous generation's shape
+    localStorage.setItem("edfringe.data.fetched.v1", JSON.stringify({ [URL_A]: 1_000_000 }));
+
+    const notes = [];
+    assert.deepEqual(
+      await cachedFetchJson(URL_A, DAY_MS, (err, url) => notes.push(url), isSidecar),
+      { v: 1, a: { SHOW: {} } }, "a copy that fails validation must not be served");
+    assert.equal(s.calls.fetch.length, 1, "it goes to the network instead");
+    assert.deepEqual(s.calls.delete, [URL_A]);
+    assert.deepEqual(s.stamps(), { [URL_A]: 1_000_000 },
+      "and the fresh copy is stamped in its place");
+  } finally {
+    s.restore();
+  }
+});
+
+test("a validator that rejects the network's answer too surfaces the error", async () => {
+  // Belt and braces: if neither the cache nor the network can produce something
+  // usable, that is a real failure and must be raised, not papered over.
+  const s = installStubs({ bodies: { [URL_A]: { v: 0 } } });
+  try {
+    await assert.rejects(
+      () => cachedFetchJson(URL_A, DAY_MS, undefined, (d) => d.v === 1),
+      /failed validation/);
+  } finally {
+    s.restore();
+  }
+});
+
+test("an unreadable stale copy doesn't mask the network error behind it", async () => {
+  const s = installStubs({ bodies: { [URL_A]: { v: 1 } } });
+  try {
+    await cachedFetchJson(URL_A, DAY_MS);
+    s.restore();
+
+    const offline = installStubs({ failFetch: true, now: 1_000_000 + DAY_MS + 1 });
+    offline.seed(URL_A, { v: 1 });
+    offline.corrupt(URL_A);
+    try {
+      // The fallback read fails too — the caller must hear about the network,
+      // not about the cache.
+      await assert.rejects(() => cachedFetchJson(URL_A, DAY_MS, () => {}), /offline/);
+    } finally {
+      offline.restore();
+    }
   } finally {
     s.restore();
   }

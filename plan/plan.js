@@ -258,6 +258,50 @@ const state = {
 // A fourth file — the descriptions sidecar — follows *after* those have landed,
 // and nothing waits for it: see loadDescriptions.
 
+/* What each file has to look like before we'll build a planner out of it.
+ *
+ * These exist because a cached copy from an older generation of a file parses
+ * perfectly and then joins to nothing — no exception, no console line, just a
+ * planner quietly reporting that the whole festival is unavailable (#309). The
+ * sidecar has carried a `v` for this all along; nothing was reading it. Kept
+ * deliberately shallow: enough to tell "this is the file I think it is" from
+ * "this is something else", not a schema validator. */
+const isCatalogue = (d) => Array.isArray(d) && d.length > 0;
+const isLookups = (d) => Boolean(d) && typeof d.venues === "object" && d.venues !== null;
+const isAvailabilitySidecar = (d) =>
+  Boolean(d) && d.v === 1 && Array.isArray(d.ts) && d.ts.length > 0 &&
+  Boolean(d.a) && typeof d.a === "object" && Object.keys(d.a).length > 0;
+
+/**
+ * The last line of defence, and the one that speaks the planner's own language
+ * rather than the wire format's.
+ *
+ * The validators above check that the sidecar is shaped like a sidecar; this
+ * checks that it actually described *this* catalogue. Between them sits the one
+ * failure the file formats can't rule out — two files that are each individually
+ * fine but describe different generations of the festival, so every lookup misses
+ * and every performance ends up status-null.
+ *
+ * Downstream, a null status is indistinguishable from "not bookable": that is
+ * the whole of #309. A total join miss is never a real festival state — some
+ * show somewhere is always on sale — so it is a bug in what we loaded, and it
+ * belongs in the error panel rather than on the grid.
+ */
+function assertStatusesJoined(catalogue) {
+  let performances = 0;
+  for (const show of catalogue) {
+    for (const perf of show.performances || []) {
+      performances++;
+      if (perf.status) return; // one is enough: the join works
+    }
+  }
+  if (performances === 0) return; // an empty catalogue is a different problem
+  throw new Error(
+    `ticket availability matched none of ${performances} performances — ` +
+    "the catalogue and the availability sidecar disagree"
+  );
+}
+
 let dataPromise = null;
 
 function loadData() {
@@ -274,13 +318,14 @@ function loadData() {
     // other, and ensureData surfaces the error panel with its retry — the one
     // honest answer when we don't know what's bookable.
     const [wire, lookups, availability] = await Promise.all([
-      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache),
-      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache),
-      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache),
+      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache, isCatalogue),
+      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache, isLookups),
+      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache, isAvailabilitySidecar),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
     state.lookups = lookups;
     state.catalogue = rehydrateShows(wire, lookups, YEAR, availability);
+    assertStatusesJoined(state.catalogue);
     state.index = buildIndex(state.catalogue);
     state.facets = catalogueFacets(state.catalogue);
     initSearchUI();

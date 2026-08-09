@@ -50,6 +50,79 @@ function stampFetch(url) {
   }
 }
 
+function unstampFetch(url) {
+  try {
+    const stamps = fetchStamps();
+    delete stamps[url];
+    localStorage.setItem(STAMPS_KEY, JSON.stringify(stamps));
+  } catch {
+    /* as above — the worst case is one extra fetch */
+  }
+}
+
+/**
+ * Throw away a cached copy we've judged unusable, clock and all.
+ *
+ * The clock matters as much as the payload: a stamp left behind keeps pointing
+ * at an entry we've already rejected, so the next load makes the same bad
+ * decision, and the next — for a day on availability, four days on the
+ * catalogue.
+ */
+async function dropCached(cache, url, note) {
+  try {
+    await cache.delete(url);
+  } catch (err) {
+    note(err, url);
+  }
+  unstampFetch(url);
+}
+
+/**
+ * A cached copy we can actually use, or null.
+ *
+ * Every failure here is a miss, never a throw. A cached copy is an optimisation,
+ * and the one thing it must never do is stand between the caller and the
+ * network — but that is exactly what it did in #309: `cache.match(url)` and
+ * `hit.json()` both ran unguarded with no fall-through, so an entry that read
+ * back as an error propagated straight out of cachedFetchJson. The network was
+ * never asked. With the stamp still fresh it failed the same way on every load
+ * until the TTL expired.
+ *
+ * `validate` covers the quieter version of the same problem: a stored copy from
+ * an older generation of the file, which parses cleanly and then joins to
+ * nothing downstream. This module can't know one file's schema from another's,
+ * so the caller that does gets to reject it.
+ *
+ * @returns {Promise<{data: unknown}|null>} boxed so a validly-null payload is
+ *   distinguishable from a miss
+ */
+async function readCached(cache, url, validate, note) {
+  let hit;
+  try {
+    hit = await cache.match(url);
+  } catch (err) {
+    note(err, url);
+    return null;
+  }
+  if (!hit) return null;
+
+  let data;
+  try {
+    data = await hit.json();
+  } catch (err) {
+    note(err, url);
+    await dropCached(cache, url, note);
+    return null;
+  }
+
+  if (validate && !validate(data)) {
+    note(new Error(`cached copy of ${url} failed validation`), url);
+    await dropCached(cache, url, note);
+    return null;
+  }
+  return { data };
+}
+
 /**
  * fetchJson with a local copy kept for `ttlMs`.
  *
@@ -66,20 +139,24 @@ function stampFetch(url) {
  * @param {number} ttlMs how long a downloaded copy may be reused
  * @param {(err: unknown, url: string) => void} [onNote] optional log sink
  */
-export async function cachedFetchJson(url, ttlMs, onNote) {
+export async function cachedFetchJson(url, ttlMs, onNote, validate) {
   const note = onNote || (() => {});
+  const check = (data) => {
+    if (validate && !validate(data)) throw new Error(`${url} failed validation`);
+    return data;
+  };
   let cache = null;
   try {
     if (typeof caches !== "undefined") cache = await caches.open(CACHE_NAME);
   } catch {
     cache = null;
   }
-  if (!cache) return fetchJson(url);
+  if (!cache) return check(await fetchJson(url));
 
   const fetchedAt = fetchStamps()[url];
   if (fetchedAt && Date.now() - fetchedAt < ttlMs) {
-    const hit = await cache.match(url);
-    if (hit) return hit.json();
+    const hit = await readCached(cache, url, validate, note);
+    if (hit) return hit.data;
   }
 
   try {
@@ -94,7 +171,7 @@ export async function cachedFetchJson(url, ttlMs, onNote) {
     // planner lost availability.min.json and drew every show as unavailable
     // (#309). The cache is an optimisation; the payload is the point.
     const text = await res.text();
-    const data = JSON.parse(text);
+    const data = check(JSON.parse(text));
     try {
       await cache.put(url, new Response(text, { headers: { "Content-Type": "application/json" } }));
       stampFetch(url);
@@ -103,10 +180,14 @@ export async function cachedFetchJson(url, ttlMs, onNote) {
     }
     return data;
   } catch (err) {
-    const stale = await cache.match(url);
+    // Same read as above, and the same rule: a stale copy that can't be read (or
+    // that validation rejects) is no copy at all. It must not become the error
+    // the caller sees — that would report a cache problem for what is really a
+    // network one, and send them chasing the wrong thing.
+    const stale = await readCached(cache, url, validate, note);
     if (stale) {
       note(err, url);
-      return stale.json();
+      return stale.data;
     }
     throw err;
   }
