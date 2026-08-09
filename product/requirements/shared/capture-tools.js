@@ -5,9 +5,12 @@
 // lane, so a golden can't be produced one way and checked another.
 "use strict";
 
-const { decode, encode } = require("./png");
+const { decode, encode, encodeAnimated } = require("./png");
 
 const SHOT_OPTS = { animations: "disabled" };
+
+// The neutral ground behind a stitch seam and behind animation padding.
+const GAP_RGB = [226, 228, 233];
 
 // Bounding box of the first match, in page coordinates.
 async function rectOf(page, selector) {
@@ -73,13 +76,46 @@ function makeTools(page) {
     },
     stitchV: (buffers, gap = 10) => stitch(buffers, "v", gap),
     stitchH: (buffers, gap = 10) => stitch(buffers, "h", gap),
+    animate,
   };
+}
+
+// How long each frame of a flow is held, in milliseconds. Long enough to read
+// the state before it changes; the last frame holds longer so the loop doesn't
+// snap back the instant the story lands.
+const FRAME_HOLD_MS = 1400;
+const LAST_FRAME_HOLD_MS = 2200;
+
+/**
+ * Compose captured frames into one animated golden (APNG — see png.js for why
+ * not GIF). Frames of differing sizes are padded to the largest, top-left, on
+ * the same neutral ground the stitches use, so a region that grows or shrinks
+ * between frames still animates in place instead of jumping scale.
+ */
+function animate(buffers, { holdMs = FRAME_HOLD_MS, lastHoldMs = LAST_FRAME_HOLD_MS } = {}) {
+  const images = buffers.map((b) => decode(b));
+  const width = Math.max(...images.map((i) => i.width));
+  const height = Math.max(...images.map((i) => i.height));
+  const frames = images.map((img, i) => {
+    const rgba = Buffer.alloc(width * height * 4);
+    for (let p = 0; p < width * height; p++) {
+      const o = p * 4;
+      rgba[o] = GAP_RGB[0];
+      rgba[o + 1] = GAP_RGB[1];
+      rgba[o + 2] = GAP_RGB[2];
+      rgba[o + 3] = 255;
+    }
+    for (let y = 0; y < img.height; y++) {
+      img.rgba.copy(rgba, (y * width) * 4, y * img.width * 4, (y + 1) * img.width * 4);
+    }
+    return { rgba, holdMs: i === images.length - 1 ? lastHoldMs : holdMs };
+  });
+  return encodeAnimated(frames, { width, height });
 }
 
 // Compose crops into one golden, on a neutral gap so the seams are visible.
 function stitch(buffers, direction, gap) {
   const images = buffers.map((b) => decode(b));
-  const GAP_RGB = [226, 228, 233];
   let width, height;
   if (direction === "v") {
     width = Math.max(...images.map((i) => i.width));

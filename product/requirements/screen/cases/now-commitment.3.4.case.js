@@ -18,6 +18,6 @@ module.exports = {
     await page.click('.show-pick:has-text("Masala")');
     await page.waitForSelector("#journeyStrip .plan-node");
     await page.waitForTimeout(200);
-    return t.stitchV([picker, await t.unionClip([".cta-card", "#journeyStrip"])]);
+    return t.animate([picker, await t.unionClip([".cta-card", "#journeyStrip"])]);
   },
 };

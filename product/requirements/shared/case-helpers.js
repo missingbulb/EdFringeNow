@@ -64,9 +64,11 @@ async function settle(page) {
 // the async version fetch has landed in the footer tooltip.
 async function nowReady(page) {
   await page.waitForSelector("#showsGrid .show-item, #showsGrid .show-meta", { timeout: 20000 });
+  // The version lands in the footer's popup element (shared/version-popup.js),
+  // which is also the signal that the async package.json read has returned.
   await page.waitForFunction(() => {
-    const v = document.getElementById("footerVersion");
-    return v && v.title.includes("v0.0.0-spec");
+    const pop = document.querySelector("#footerVersion .version-pop");
+    return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
   // The app boots on its built-in simulated day and only adopts the (fixed)
   // real clock once the in-UK geolocation fix lands — wait for the reference
@@ -85,9 +87,11 @@ async function planReady(page) {
     const i = document.getElementById("ssInput");
     return i && i.placeholder.startsWith("Search all");
   }, { timeout: 20000 });
+  // The version lands in the footer's popup element (shared/version-popup.js),
+  // which is also the signal that the async package.json read has returned.
   await page.waitForFunction(() => {
-    const v = document.getElementById("footerVersion");
-    return v && v.title.includes("v0.0.0-spec");
+    const pop = document.querySelector("#footerVersion .version-pop");
+    return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
   await settle(page);
 }

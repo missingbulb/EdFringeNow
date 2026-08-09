@@ -6,7 +6,7 @@
 "use strict";
 
 const fs = require("node:fs");
-const { decode, encode } = require("./png");
+const { decode, encode, isAnimated } = require("./png");
 const { artifactPath } = require("./artifacts-dir");
 
 /**
@@ -28,6 +28,22 @@ function compareToGolden(name, actualBuffer, expectedPath) {
 
   const expectedBuffer = fs.readFileSync(expectedPath);
   if (expectedBuffer.equals(actualBuffer)) return { ok: true };
+
+  // An animated golden is compared on byte-identity alone: the pixel differ
+  // reads a single still image, so diffing one frame of a flow would describe
+  // the wrong thing. Both files are written for the owner to play side by side.
+  if (isAnimated(actualBuffer) || isAnimated(expectedBuffer)) {
+    const actualPath = artifactPath(`${name}.actual.png`);
+    fs.writeFileSync(actualPath, actualBuffer);
+    return {
+      ok: false,
+      reason:
+        `${name}: the animated golden changed (${expectedBuffer.length} bytes committed, ` +
+        `${actualBuffer.length} rendered). Play ${actualPath} against ${expectedPath}. ` +
+        "If the change is intended, the re-baselining procedure applies: surface both to " +
+        "the owner and refresh only on approval.",
+    };
+  }
 
   // Byte-different: decode and diff pixel-by-pixel so the artifact shows where.
   const actual = decode(actualBuffer);

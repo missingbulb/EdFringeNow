@@ -1,8 +1,9 @@
 "use strict";
 const { nowReady } = require("../../shared/case-helpers");
 
-// The same page-top region three times: the explainer shown, gone after the
-// dismissal, and still gone after a reload — the whole requirement, no words.
+// The same page-top region three times — the explainer shown, gone after the
+// dismissal, and still gone after a reload — played as one animation, so the
+// requirement reads as the flow it is.
 const REGION = { x: 0, y: 0, width: 390, height: 560 };
 
 module.exports = {
@@ -17,6 +18,6 @@ module.exports = {
     await page.reload({ waitUntil: "load" });
     await nowReady(page);
     const afterReload = await t.clip(REGION);
-    return t.stitchV([shown, dismissed, afterReload]);
+    return t.animate([shown, dismissed, afterReload]);
   },
 };

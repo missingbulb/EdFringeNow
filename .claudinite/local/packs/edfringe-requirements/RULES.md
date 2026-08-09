@@ -29,11 +29,21 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   `shared/capture-tools.js`); whole-page capture is a deliberate exception,
   not a default. Scoping is judgment: crop to what the leaf asserts, keep just
   enough surroundings to orient.
-- **A change over time is a strip of frames, not a coded assertion.** When a
+- **A change over time is an animation, not a coded assertion.** When a
   requirement is about what an action *changes* — a dismissal that sticks, a
   pick that swaps one card for another — capture the same region before and
-  after (and after a reload, where persistence is the point) and stitch them.
-  The contrast is the proof.
+  after (and after a reload, where persistence is the point) and play the
+  frames as one animated golden (`tools.animate`). A flow is shown as a flow.
+  Reserve `stitchV`/`stitchH` for things that are genuinely side by side rather
+  than sequential.
+- **An animated golden is an APNG, never a GIF** — the choice
+  ShoutsAndWhispers made for its sagas, for two reasons that both matter here:
+  APNG is lossless, so the golden stays a faithful pixel record of the UI
+  instead of a 256-colour approximation of it, and every byte is ours, so the
+  comparison stays exact byte-identity. It animates in GitHub markdown exactly
+  like a GIF. The encoder is `shared/png.js`'s `encodeAnimated`; the comparator
+  detects an animated golden and compares bytes only, since a pixel differ
+  reads one still frame and would describe the wrong thing.
 
 ## Prefer several pictures over one coded leaf
 
@@ -91,8 +101,13 @@ is a real finding about the UI, not just a testing limitation.
   and scroll dismisses tips/legends/optimizer pops). A popup-state case sets
   `viewportOnly: true` and captures the viewport crop.
 - **"Ready" is not `networkidle`.** The pages settle their async work into
-  observable state — the footer version tooltip, the search placeholder's
+  observable state — the footer version popup's text, the search placeholder's
   show count. Wait on those (`case-helpers.js`), plus `document.fonts.ready`.
+- **Hover-driven UI must be opened inside `capture()`, not `drive()`.** The
+  runner settles the scroll between the two, and scrolling moves an element out
+  from under the pointer — which fires `mouseleave` and closes anything the
+  hover opened. That is correct product behaviour; the capture just has to
+  happen on the right side of it.
 
 ## The fixture freeze
 

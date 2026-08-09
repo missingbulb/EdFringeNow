@@ -110,4 +110,88 @@ function encode({ width, height, rgba }) {
   ]);
 }
 
-module.exports = { decode, encode };
+// Is this buffer an animated PNG (does it carry an `acTL` control chunk)?
+// The pixel differ decodes only a still image, so the comparator asks first.
+function isAnimated(buffer) {
+  if (buffer.length < 8 || !SIGNATURE.equals(buffer.subarray(0, 8))) return false;
+  let pos = 8;
+  while (pos + 8 <= buffer.length) {
+    const len = buffer.readUInt32BE(pos);
+    const type = buffer.toString("ascii", pos + 4, pos + 8);
+    if (type === "acTL") return true;
+    if (type === "IDAT" || type === "IEND") return false; // acTL precedes IDAT
+    pos += 12 + len;
+  }
+  return false;
+}
+
+/**
+ * Encode frames as one APNG — a flow shown as a flow.
+ *
+ * APNG rather than GIF (the same choice ShoutsAndWhispers made for its sagas):
+ * it is lossless, so the golden stays a faithful pixel record of the UI rather
+ * than a 256-colour approximation of it, and every byte is ours, so the
+ * comparison stays exact byte-identity. Frames must share one size; each
+ * carries its own hold in milliseconds.
+ *
+ * @param {{rgba: Buffer, holdMs: number}[]} frames
+ * @param {{width: number, height: number, loops?: number}} opts
+ */
+function encodeAnimated(frames, { width, height, loops = 0 }) {
+  if (!frames.length) throw new Error("an animation needs at least one frame");
+
+  const ihdr = Buffer.alloc(13);
+  ihdr.writeUInt32BE(width, 0);
+  ihdr.writeUInt32BE(height, 4);
+  ihdr[8] = 8; // bit depth
+  ihdr[9] = 6; // RGBA
+
+  const actl = Buffer.alloc(8);
+  actl.writeUInt32BE(frames.length, 0);
+  actl.writeUInt32BE(loops, 4); // 0 = forever
+
+  const stride = width * 4;
+  const deflate = (rgba) => {
+    const raw = Buffer.alloc(height * (stride + 1));
+    for (let y = 0; y < height; y++) {
+      rgba.copy(raw, y * (stride + 1) + 1, y * stride, (y + 1) * stride);
+    }
+    return zlib.deflateSync(raw, { level: 9 });
+  };
+
+  // A hold is sent as an exact fraction (ms / 1000) so no rounding creeps in.
+  const fctl = (seq, holdMs) => {
+    const b = Buffer.alloc(26);
+    b.writeUInt32BE(seq, 0);
+    b.writeUInt32BE(width, 4);
+    b.writeUInt32BE(height, 8);
+    b.writeUInt32BE(0, 12); // x offset
+    b.writeUInt32BE(0, 16); // y offset
+    b.writeUInt16BE(holdMs, 20); // delay numerator
+    b.writeUInt16BE(1000, 22); // delay denominator
+    b[24] = 0; // dispose: none — frames are full-size and opaque
+    b[25] = 0; // blend: source — replace, never composite
+    return b;
+  };
+
+  const out = [SIGNATURE, chunk("IHDR", ihdr), chunk("acTL", actl)];
+  let seq = 0;
+  frames.forEach((frame, i) => {
+    out.push(chunk("fcTL", fctl(seq++, frame.holdMs)));
+    const data = deflate(frame.rgba);
+    if (i === 0) {
+      // The first frame is the still image too, so a viewer that ignores
+      // animation still shows the story's opening state.
+      out.push(chunk("IDAT", data));
+    } else {
+      const fdat = Buffer.alloc(4 + data.length);
+      fdat.writeUInt32BE(seq++, 0);
+      data.copy(fdat, 4);
+      out.push(chunk("fdAT", fdat));
+    }
+  });
+  out.push(chunk("IEND", Buffer.alloc(0)));
+  return Buffer.concat(out);
+}
+
+module.exports = { decode, encode, encodeAnimated, isAnimated };
