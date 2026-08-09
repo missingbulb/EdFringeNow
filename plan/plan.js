@@ -3532,6 +3532,10 @@ function buildScheduleOverlay(axisH, y, boundaryPct = { start: 0, end: 0 }) {
   overlay.style.top = `${SCH_HEAD_PX}px`;
   overlay.style.height = `${axisH}px`;
   overlay.dataset.axisTop = state.schedAxis.axisTopMin;
+  // Kept on the element so the live drag pass (repositionOverlayLive) can
+  // recompute the meal bands' boundary insets without re-measuring the columns.
+  overlay.dataset.boundaryStart = boundaryPct.start;
+  overlay.dataset.boundaryEnd = boundaryPct.end;
 
   const dayEnd = effectiveDayEnd();
   // Skip the boundary column where a trip block already owns the edge: the
@@ -3559,10 +3563,11 @@ function buildScheduleOverlay(axisH, y, boundaryPct = { start: 0, end: 0 }) {
   if (sleepNag) zoneBottom.appendChild(sleepNag);
   overlay.append(zoneTop, zoneBottom);
 
-  // Meal-break bands (enabled only).
+  // Meal-break bands (enabled only), each stopping short of a boundary column
+  // whose trip block already owns that stretch of the day.
   for (const meal of state.mealBreaks) {
     if (!meal.enabled) continue;
-    overlay.appendChild(buildMealBand(meal, y));
+    overlay.appendChild(buildMealBand(meal, y, boundaryPct));
   }
 
   // Day-start / day-end draggable lines (each skipping its boundary column).
@@ -3715,11 +3720,31 @@ function exclMarkHTML(list) {
   return `<span class="excl-mark" data-excl="${exclData(list)}" aria-label="${label}">▲</span>`;
 }
 
-function buildMealBand(meal, y) {
+/* How far a meal band pulls back from the first / last day column, as a
+ * percentage of the board width. The trip blocks own the top of the first day
+ * and the bottom of the last, and two "you can't be here" hatches stacked on the
+ * same minutes read as one confused region — so a band only spans a boundary
+ * column when it clears that column's trip block: arriving *before* the meal
+ * starts leaves a real meal window on day one, arriving after it doesn't.
+ * Mirrored for the departure at the other end. */
+function mealInsets(meal, boundaryPct = { start: 0, end: 0 }) {
+  const left = state.arrival.enabled && state.arrival.endMin > meal.startMin ? boundaryPct.start : 0;
+  const right = state.departure.enabled && state.departure.startMin < meal.endMin ? boundaryPct.end : 0;
+  // A one-day window makes the first and last column the same one, so insetting
+  // from both ends would leave nothing to draw (and nothing to grab). Let the
+  // band span it instead — there is no other column to move it to.
+  if (left + right >= 100) return { left: 0, right: 0 };
+  return { left, right };
+}
+
+function buildMealBand(meal, y, boundaryPct) {
   const band = document.createElement("div");
   band.className = "sch-meal";
   band.style.top = `${y(meal.startMin)}px`;
   band.style.height = `${Math.max(6, y(meal.endMin) - y(meal.startMin))}px`;
+  const inset = mealInsets(meal, boundaryPct);
+  band.style.left = `${inset.left}%`;
+  band.style.right = `${inset.right}%`;
   band.dataset.meal = meal.id;
   const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
   const blocks = (state.diag && state.diag.meals && state.diag.meals[meal.id]) || [];
@@ -3891,6 +3916,9 @@ function wireTripDrag(block, which, axisH) {
         block.querySelector(".sch-trip-label .ov-text").textContent = `🧳 Leave ${minToDayClock(v)}`;
         toggleNagFit(block, h);
       }
+      // The meal bands stop at this column only while it overlaps them, so they
+      // follow the edge as it's dragged past a meal break.
+      repositionOverlayLive();
     };
     const up = () => {
       block.classList.remove("dragging");
@@ -3940,12 +3968,21 @@ function repositionOverlayLive() {
     endLine.style.top = `${y(dayEnd)}px`;
     endLine.querySelector(".dl-flag .ov-text").textContent = `Day ends ${minToDayClock(dayEnd)}`;
   }
+  const boundaryPct = {
+    start: Number(overlay.dataset.boundaryStart) || 0,
+    end: Number(overlay.dataset.boundaryEnd) || 0,
+  };
   for (const meal of state.mealBreaks) {
     if (!meal.enabled) continue;
     const band = overlay.querySelector(`.sch-meal[data-meal="${meal.id}"]`);
     if (!band) continue;
     band.style.top = `${y(meal.startMin)}px`;
     band.style.height = `${Math.max(6, y(meal.endMin) - y(meal.startMin))}px`;
+    // Dragging the band (or a trip block) can cross a boundary block, so the
+    // first/last-column pull-back is recomputed on every frame, not just on drop.
+    const inset = mealInsets(meal, boundaryPct);
+    band.style.left = `${inset.left}%`;
+    band.style.right = `${inset.right}%`;
     const name = meal.id.charAt(0).toUpperCase() + meal.id.slice(1);
     band.querySelector(".meal-label .ov-text").textContent = `${minToHHMM(meal.startMin)}–${minToHHMM(meal.endMin)} · 🍽 ${name}`;
   }
