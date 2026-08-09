@@ -14,8 +14,8 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 
 - Nobody does live reachability. "Nearby now" stops at close and starting soon.
 - The official app plans better than we assumed — calendar sync, offline, 200k downloads.
-- Clash-free, travel-aware scheduling is table stakes. Plan My Fringe shipped it years ago.
-- Three claims are unclaimed: import my favourites, pick my dates, and the other seven August festivals.
+- Scheduling is table stakes: Plan My Fringe years ago, FringePlan now — plus iCal, sharing and edfringe basket handoff.
+- Favourites import is taken. edfringeplanner does it. Only date-choice and the other festivals are still unclaimed.
 - Fringe Finder plans around what is still on sale. That is the axis we are behind on.
 - Half Price Hut tickets are in person only — live supply no app can see.
 - Nobody here has used any 2026 rival. All of it is compiled from their own marketing.
@@ -105,8 +105,23 @@ read on where the gap is.
 - **[Ed Fringe Guide](https://edfringeguide.com/index.html)** and **[Another
   Fringe Guide](https://www.anotherfringeguide.com/)** — unofficial show finders /
   browsers, comedy-leaning.
-- **[Edinburgh Fringe Planner](https://edfringeplanner.co.uk/)** — a further
-  independent planner surfaced in the same sweep, not yet examined.
+- **[Edinburgh Fringe Planner](https://edfringeplanner.co.uk/)** — examined
+  2026-08-09, and it is the one that matters. Its own one-line pitch is that it
+  **"takes your favourites from edfringe.com and helps you work out what to do
+  when"** — i.e. exactly `/plan`'s intake, the thing this page previously
+  recorded as unclaimed. See the correction under *Where the gaps are*.
+- **[FringePlan](https://fringeplan.com/)** — surfaced 2026-08-09 and not
+  previously in this wiki. Free ("free for everyone, forever… no subscriptions,
+  no ticket markups, and no hidden fees"). It takes a show list by pasted link,
+  by name search, or "a whole list at once", pulling titles, venues, dates and
+  performance times automatically; shows are marked high/medium/low priority;
+  the schedule respects **travel time, meals and priorities**, and the user sets
+  arrival/departure once so days can start from their hotel. Outputs are the
+  broadest of any tool profiled here — a read-only share link, a **live iCal
+  feed**, and a **markdown export**. Two features nothing else on this page
+  claims: a bookmark that **sends a whole day of shows to an edfringe.com basket
+  in one go**, and plans that **flag a delisted show or a moved performance
+  rather than going stale**.
 
 ## The cross-festival field (almost empty)
 
@@ -143,19 +158,36 @@ position — see the product brief (`docs/product-spec.md`).
 **Planning — crowded, and the moat is narrower than it looks.** Clash-free,
 travel-aware, meal-break-aware scheduling with per-day limits is **table stakes**
 on this side of the field: Plan My Fringe has shipped all of it for years, and
-2026 added at least two more itinerary builders. What no profiled competitor
-does:
+2026 added at least three more itinerary builders.
 
-1. start from the user's **existing favourites list** rather than making them
-   re-pick shows inside the tool; and
-2. answer **"when should I come?"** — scoring date windows across the whole
+**Correction (2026-08-09) — the favourites-intake claim is taken.** This page
+previously asserted that *no* profiled competitor starts from the user's
+existing favourites list, and rested half of `/plan`'s remaining distinctness on
+it. That is no longer supportable:
+[edfringeplanner.co.uk](https://edfringeplanner.co.uk/) advertises precisely
+that as its whole premise ("takes your favourites from edfringe.com"), and
+[FringePlan](https://fringeplan.com/) accepts a whole pasted list in one go and
+pushes a finished day back into an edfringe.com basket. The claim is left here
+rather than deleted so the change of position is visible. What *survives* of it
+is narrower and worth stating precisely: nobody was found taking the specific
+**CSV produced by the third-party favourites extension**, and no competitor
+documents where its favourites come from — so whether these tools use a native
+export, the same extension, or a logged-in scrape is unknown, and that is now the
+open question rather than the differentiator.
+
+What no profiled competitor still does:
+
+1. answer **"when should I come?"** — scoring date windows across the whole
    festival, the decision a visitor makes *before* any scheduling question
-   exists.
+   exists. Re-checked this pass across Plan Your Fringe, Fringe Finder,
+   edfringeplanner, FringePlan and Plan My Fringe: every one of them takes the
+   visit dates as an **input** and optimises inside them. Still unoccupied.
+2. plan across the **other seven August festivals** (see the section above).
 
-Those two, not the scheduler, are what a planner-side requirement set would rest
-on. They are also a different claim from the live surface's, which is why the two
-surfaces should not be reasoned about as one product — see
-[audience-divergence/](../audience-divergence/README.md).
+Those two, not the scheduler and no longer the favourites intake, are what a
+planner-side requirement set would rest on. They are also a different claim from
+the live surface's, which is why the two surfaces should not be reasoned about as
+one product — see [audience-divergence/](../audience-divergence/README.md).
 
 ## Sources
 
@@ -171,7 +203,9 @@ surfaces should not be reasoned about as one product — see
 - [Fringe Planner 2026 — interactive map (edfringemap.com)](https://edfringemap.com/)
 - [Ed Fringe Guide — unofficial Edinburgh Fringe show finder 2026](https://edfringeguide.com/index.html)
 - [Another Edinburgh Fringe Show Finder](https://www.anotherfringeguide.com/)
-- [Edinburgh Fringe Planner](https://edfringeplanner.co.uk/)
+- [Edinburgh Fringe Planner](https://edfringeplanner.co.uk/) — "takes your favourites from edfringe.com and helps you work out what to do when."
+- [Edinburgh Fringe Planner — sign up](https://edfringeplanner.co.uk/signup)
+- [FringePlan — Edinburgh Fringe Planner](https://fringeplan.com/) — clash-free schedule with travel time, meals and priorities; read-only share link, live iCal feed, markdown export, one-go edfringe.com basket, and stale-plan flagging.
 - [EdFringe Favourites to CSV (Chrome Web Store)](https://chromewebstore.google.com/detail/edfringe-favourites-to-cs/ebbiecdkhoclnlgfibfhhnpfhmmgdbcc)
 - [Edinburgh Festival Fringe (programme)](https://www.edfringe.com/)
 - [Half Price Hut — Edinburgh Festival Fringe](https://www.edfringe.com/tickets/half-price-hut)
@@ -187,7 +221,13 @@ surfaces should not be reasoned about as one product — see
   was compiled from published descriptions and search results; no tool was driven
   end to end. Fringe Finder's "official festival pilot" claim in particular is
   unverified and matters — an official pilot on the planning side would change
-  the competitive read.
+  the competitive read. (Worse than it was on 2026-08-09: that pass tried to
+  fetch fringe-finder.netlify.app, edfringeplanner.co.uk, fringeplan.com and
+  planyourfringe.com directly and **every one was blocked by the network egress
+  proxy**, so even their own pages were read second-hand through a search
+  engine's index of them. Everything recorded about these four is their own
+  marketing copy at one remove. A human on an unrestricted network could close
+  this in twenty minutes.)
 - **Does the shipped 2026 official app add travel-time or next-commitment logic
   to "Nearby now"?** Published descriptions still say proximity + starting soon,
   but nobody here has used the 2026 build. (Narrowed 2026-07-28 from "unknown" to
@@ -196,11 +236,24 @@ surfaces should not be reasoned about as one product — see
   Discover's live status does? Fringe Finder claims availability-aware planning
   ("what's actually still on sale"); how live that is, and where it comes from,
   is unconfirmed.
-- **Does Plan My Fringe (or any planner) accept a favourites import?** If one
-  does, `/plan`'s intake advantage disappears; nothing found so far says one
-  does.
-- **Does anything else score date windows** ("when should I come?"), or is that
-  genuinely unoccupied?
+- ~~**Does Plan My Fringe (or any planner) accept a favourites import?**~~
+  **Answered 2026-08-09: yes — not Plan My Fringe, but edfringeplanner.co.uk,
+  whose entire premise is it.** `/plan`'s intake advantage is gone. See the
+  correction under *Where the gaps are*.
+- **Where do these tools get the favourites from?** The successor question, and
+  the one that decides whether anything is left of the intake position. No
+  competitor documents the mechanism — native edfringe.com export, the
+  third-party CSV extension, or a logged-in scrape are all consistent with what
+  they say. If there is a native export nobody here has found, the
+  market-and-audience page's intake assumption is wrong too.
+- **Does FringePlan's "flag a delisted show or moved performance" mean it holds
+  live availability?** It is the only claim on this page that sounds like
+  post-plan freshness checking rather than a one-shot itinerary. If it is real,
+  Fringe Finder is not the only tool on the availability axis.
+- **Does anything else score date windows** ("when should I come?")? Re-checked
+  2026-08-09 across five planners and found nothing — every one takes dates as an
+  input. Narrowed from "or is that genuinely unoccupied?" to: still unoccupied on
+  the evidence, but the evidence is five tools' marketing copy, not a survey.
 - **Is anything actually planning across festivals?** The Listings API gallery
   says no, but the gallery is self-reported and possibly stale, and a
   cross-festival tool need not appear on it. Data Thistle lists everything and
@@ -246,3 +299,23 @@ surfaces should not be reasoned about as one product — see
   August festivals joins favourites-import and date-choice. Two open questions
   added. Requirements implication left for human review — see the
   festival-season page and the multi-festival design proposal.
+- **2026-08-09** — worked the page's top open question (hands-on verification of
+  the 2026 entrants) and it cost the page a claim. Examined the two planners left
+  unexamined: **edfringeplanner.co.uk**, whose stated premise is taking the
+  user's edfringe.com favourites, and **FringePlan** (fringeplan.com), new to
+  this wiki — travel-time-, meal- and priority-aware scheduling plus a live iCal
+  feed, markdown export, share links, a one-go edfringe.com basket handoff, and
+  plans that flag delisted or moved performances. Together they supersede this
+  page's "no profiled competitor starts from the user's existing favourites list"
+  claim, which is corrected in place with the reason kept rather than deleted;
+  what survives of it is narrowed to the unknown *mechanism* of their import.
+  Re-checked the date-choice claim across five planners and it held — every one
+  takes dates as an input — so that question is narrowed, not closed. Key
+  insights 3 and 4 rewritten; insight 4 goes from three unclaimed claims to two.
+  Recorded honestly that all four target sites were blocked by the network
+  egress proxy this pass and were read second-hand via search-engine indexing of
+  their own pages, which makes the verification gap worse, not better. Two open
+  questions added (favourites mechanism; whether FringePlan's stale-plan flagging
+  implies live availability). Requirements implication — a planner-side
+  requirement set can no longer rest on favourites intake, leaving date-choice
+  and cross-festival — left for human review.
