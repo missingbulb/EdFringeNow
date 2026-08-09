@@ -5,6 +5,7 @@
 
 const { newPage, ORIGIN } = require("./harness/browser");
 const { nowReady, planReady } = require("./case-helpers");
+const { makeTools, padToPage } = require("./capture-tools");
 
 async function renderScreenCase(testCase) {
   const { page, context } = await newPage({
@@ -20,6 +21,25 @@ async function renderScreenCase(testCase) {
     else if (pagePath.startsWith("/plan")) await planReady(page);
     else await nowReady(page);
     if (testCase.drive) await testCase.drive(page, { origin: ORIGIN });
+    // Capture from a settled scroll position: drives that clicked through the
+    // page may have left it part-scrolled (and mid-momentum), which skews
+    // viewport→document rect conversion. Already-at-top pages fire no scroll
+    // event here, so hover cards and popups survive.
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(120);
+    // The golden is the smallest surface that proves the leaf: a selector
+    // (element crop), or a capture(page, tools) composing clips/stitches.
+    // Whole-page capture is the deliberate exception, not the default.
+    if (typeof testCase.capture === "string") {
+      // Clip at the element's box rather than element.screenshot(): a clip
+      // never scrolls, so a hover card or popup can't be dismissed mid-shot.
+      const box = await page.locator(testCase.capture).first().boundingBox();
+      if (!box) throw new Error(`${testCase.name}: no visible element for ${testCase.capture}`);
+      return await page.screenshot({ clip: await padToPage(page, box), fullPage: true, animations: "disabled" });
+    }
+    if (typeof testCase.capture === "function") {
+      return await testCase.capture(page, makeTools(page));
+    }
     return await page.screenshot({ fullPage: !testCase.viewportOnly, animations: "disabled" });
   } finally {
     await context.close();

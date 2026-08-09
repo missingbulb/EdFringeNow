@@ -3,6 +3,7 @@ const { planFavourites } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the Legend popup: the grid's seven-entry colour vocabulary, verbatim",
+  capture: "#calLegend",
   page: "/plan/",
   viewport: "desktop",
   // A floating popup: a full-page capture scrolls (which dismisses it) — the

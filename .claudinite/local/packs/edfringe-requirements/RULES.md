@@ -9,6 +9,21 @@ first Playwright port) and the local approval/fixture policy. Layout, lanes and
 commands live in [product/requirements/README.md](../../../../product/requirements/README.md)
 — don't restate them; this file is the judgment and the traps.
 
+## The document reads as pictures
+
+- `product/requirements.md` is scanned by sight: under each visual leaf its
+  golden is **visible, uncollapsed**; every textual expansion (acceptance
+  notes, proof pointers) is **collapsed** in a `<details>` block. An optimal
+  requirements document has almost no words on the page.
+- **A golden is the smallest surface that proves its leaf** — an element crop,
+  a clipped region, or a stitched composite (e.g. one grid lane narrowed to a
+  few days, recomposed with its label and verdict columns, no header) — never
+  the whole page or even the whole control. The capture recipe lives on the
+  case (`capture: "<selector>"` or `capture(page, tools)`; see
+  `shared/capture-tools.js`); whole-page capture is a deliberate exception,
+  not a default. Scoping is judgment: crop to what the leaf asserts, keep just
+  enough surroundings to orient.
+
 ## The browser is part of the expected
 
 - A golden is only comparable under the **exact Chromium that rendered it**.

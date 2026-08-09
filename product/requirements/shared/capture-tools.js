@@ -1,0 +1,111 @@
+// Capture tools for screen cases: a golden should show the smallest surface
+// that proves its requirement — an element, a clipped region, or a small
+// composite — never the whole page. render-case.js hands these to a case's
+// `capture(page, tools)`; the same tools serve the runner and the refresh
+// lane, so a golden can't be produced one way and checked another.
+"use strict";
+
+const { decode, encode } = require("./png");
+
+const SHOT_OPTS = { animations: "disabled" };
+
+// Bounding box of the first match, in page coordinates.
+async function rectOf(page, selector) {
+  const box = await page.locator(selector).first().boundingBox();
+  if (!box) throw new Error(`no visible element for ${selector}`);
+  return box;
+}
+
+function union(rects) {
+  const x0 = Math.min(...rects.map((r) => r.x));
+  const y0 = Math.min(...rects.map((r) => r.y));
+  const x1 = Math.max(...rects.map((r) => r.x + r.width));
+  const y1 = Math.max(...rects.map((r) => r.y + r.height));
+  return { x: x0, y: y0, width: x1 - x0, height: y1 - y0 };
+}
+
+// Pad a rect a little so borders/shadows aren't shaved mid-pixel.
+function pad(rect, px = 6) {
+  return { x: Math.max(0, rect.x - px), y: Math.max(0, rect.y - px), width: rect.width + 2 * px, height: rect.height + 2 * px };
+}
+
+// boundingBox() speaks viewport coordinates, but a fullPage clip wants
+// document coordinates — convert by the scroll offset, pad a whisker (so
+// shadows/descenders aren't shaved), and clamp to the page's bounds. Every
+// rect a case hands the tools is a boundingBox rect; this is the one place
+// the coordinate space changes.
+async function padToPage(page, rect, px = 6) {
+  const m = await page.evaluate(() => ({
+    w: document.documentElement.scrollWidth,
+    h: document.documentElement.scrollHeight,
+    sx: window.scrollX,
+    sy: window.scrollY,
+  }));
+  const rx = rect.x + m.sx;
+  const ry = rect.y + m.sy;
+  const x = Math.max(0, rx - px);
+  const y = Math.max(0, ry - px);
+  return {
+    x,
+    y,
+    width: Math.min(m.w, rx + rect.width + px) - x,
+    height: Math.min(m.h, ry + rect.height + px) - y,
+  };
+}
+
+function makeTools(page) {
+  // fullPage so a clip below the fold is still inside the rendered image;
+  // padToPage converts the boundingBox rect into document space.
+  const clip = async (rect) => page.screenshot({ clip: await padToPage(page, rect, 0), fullPage: true, ...SHOT_OPTS });
+  return {
+    rectOf: (sel) => rectOf(page, sel),
+    union,
+    pad,
+    clip,
+    async element(sel) {
+      return clip(await padToPage(page, await rectOf(page, sel)));
+    },
+    // The union of several elements' boxes, as one clip.
+    async unionClip(selectors, padding = 6) {
+      const rects = [];
+      for (const s of selectors) rects.push(await rectOf(page, s));
+      return clip(pad(union(rects), padding));
+    },
+    stitchV: (buffers, gap = 10) => stitch(buffers, "v", gap),
+    stitchH: (buffers, gap = 10) => stitch(buffers, "h", gap),
+  };
+}
+
+// Compose crops into one golden, on a neutral gap so the seams are visible.
+function stitch(buffers, direction, gap) {
+  const images = buffers.map((b) => decode(b));
+  const GAP_RGB = [226, 228, 233];
+  let width, height;
+  if (direction === "v") {
+    width = Math.max(...images.map((i) => i.width));
+    height = images.reduce((a, i) => a + i.height, 0) + gap * (images.length - 1);
+  } else {
+    width = images.reduce((a, i) => a + i.width, 0) + gap * (images.length - 1);
+    height = Math.max(...images.map((i) => i.height));
+  }
+  const rgba = Buffer.alloc(width * height * 4);
+  for (let i = 0; i < rgba.length; i += 4) {
+    rgba[i] = GAP_RGB[0];
+    rgba[i + 1] = GAP_RGB[1];
+    rgba[i + 2] = GAP_RGB[2];
+    rgba[i + 3] = 255;
+  }
+  let ox = 0, oy = 0;
+  for (const img of images) {
+    for (let y = 0; y < img.height; y++) {
+      const src = y * img.width * 4;
+      const dst = ((oy + y) * width + ox) * 4;
+      img.rgba.copy(rgba, dst, src, src + img.width * 4);
+    }
+    if (direction === "v") oy += img.height + gap;
+    else ox += img.width + gap;
+  }
+  return encode({ width, height, rgba });
+}
+
+module.exports = { makeTools, padToPage };

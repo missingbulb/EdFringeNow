@@ -3,6 +3,7 @@ const { nowStorage } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "price panel: 'Cheapest ticket, up to:' over the shared six-step ladder with counts",
+  capture: "#pricePanel",
   localStorage: nowStorage(),
   async drive(page) {
     await page.click('[data-panel="pricePanel"]');

@@ -3,6 +3,7 @@ const { planFavourites } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "conflict tip: 'Every performance of this show runs during your lunch break (12:30–13:30)…'",
+  capture: "#calTip",
   page: "/plan/",
   viewport: "desktop",
   // A floating popup: a full-page capture scrolls (which dismisses it) — the

@@ -3,6 +3,7 @@ const { planFavourites } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "after the ICS download: 'Downloaded — now into Google Calendar' with the two steps",
+  capture: "#icsHowto",
   page: "/plan/",
   viewport: "desktop",
   localStorage: planFavourites(),

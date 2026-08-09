@@ -3,6 +3,7 @@ const { planFavourites } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the optimizer popup: day count, 'Include the most weekends' checked, Find best dates",
+  capture: "#railPop",
   page: "/plan/",
   viewport: "desktop",
   // A floating popup: a full-page capture scrolls (which dismisses it) — the

@@ -3,6 +3,7 @@ const { planFavourites } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "day-mark hover card: title, meta, date, per-performance status rows, pin hint",
+  capture: "#calTip",
   page: "/plan/",
   viewport: "desktop",
   // A floating popup: a full-page capture scrolls (which dismisses it) — the

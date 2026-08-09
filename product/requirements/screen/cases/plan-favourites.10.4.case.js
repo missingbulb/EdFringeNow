@@ -3,6 +3,7 @@ const { uploadFile } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "last year's favourites: 'None of those N favourites are in this year's programme'",
+  capture: "#uploadSummary",
   page: "/plan/",
   viewport: "desktop",
   async drive(page) {

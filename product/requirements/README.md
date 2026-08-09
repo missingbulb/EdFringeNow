@@ -38,6 +38,13 @@ product/
   gate and gallery all iterate the registry.
 - **Goldens live beside their case**; failure artifacts (actual/diff) go to the
   gitignored `shared/.artifacts/`, never beside the goldens.
+- **A golden is the smallest surface that proves its leaf.** A screen case
+  declares its scope: `capture: "<selector>"` (a clip at that element's box),
+  or `async capture(page, tools)` composing clips and stitches
+  (`shared/capture-tools.js` — `element`, `clip`, `unionClip`, `stitchV/H`)
+  for composites like one grid lane over three days with its label and pill.
+  Omitting `capture` means full-page — a deliberate exception, not a default.
+  The spec doc embeds these crops uncollapsed; the words stay folded.
 
 ## Lanes
 

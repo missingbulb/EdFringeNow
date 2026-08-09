@@ -68,6 +68,13 @@ async function nowReady(page) {
     const v = document.getElementById("footerVersion");
     return v && v.title.includes("v0.0.0-spec");
   }, { timeout: 20000 });
+  // The app boots on its built-in simulated day and only adopts the (fixed)
+  // real clock once the in-UK geolocation fix lands — wait for the reference
+  // day to actually be in force, or a slow fix leaves the preset day rendered.
+  await page.waitForFunction(() => {
+    const l = document.getElementById("constraintDateLabel");
+    return l && l.textContent.includes("15 Aug");
+  }, { timeout: 20000 });
   await settle(page);
 }
 

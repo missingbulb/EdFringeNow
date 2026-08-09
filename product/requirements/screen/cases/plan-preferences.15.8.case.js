@@ -3,6 +3,9 @@ const { planFavourites, planPrefs } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "nothing schedulable: the widen-your-dates message",
+  async capture(page, t) {
+    return t.stitchV([await t.element("#planSummary"), await t.element("#scheduleEmpty")]);
+  },
   page: "/plan/",
   viewport: "desktop",
   // A 24:45–25:00 day, trip blocks off (they replace the day edges on the

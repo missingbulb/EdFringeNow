@@ -3,6 +3,7 @@ const { uploadFile, FIXTURE_CSV, settle } = require("../../shared/case-helpers")
 
 module.exports = {
   description: "failed catalogue load: 'We couldn't load the show data.' + reason + Try again",
+  capture: "#errorState",
   page: "/plan/",
   viewport: "desktop",
   failData: ["normalized/shows.min.json"],
