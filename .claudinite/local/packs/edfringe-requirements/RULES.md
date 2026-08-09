@@ -15,6 +15,12 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   golden is **visible, uncollapsed**; every textual expansion (acceptance
   notes, proof pointers) is **collapsed** in a `<details>` block. An optimal
   requirements document has almost no words on the page.
+- **A visual leaf's statement is a line, not a paragraph.** The golden already
+  carries the exact copy, counts, colours and placement — restating them in
+  prose only competes with the picture. Say what is being asserted; let the
+  image say how it looks. Anything genuinely not visible (a threshold, a rule
+  behind the state, a condition that produced it) goes in a collapsed
+  **Notes** block, never in the statement.
 - **A golden is the smallest surface that proves its leaf** — an element crop,
   a clipped region, or a stitched composite (e.g. one grid lane narrowed to a
   few days, recomposed with its label and verdict columns, no header) — never
@@ -23,6 +29,32 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   `shared/capture-tools.js`); whole-page capture is a deliberate exception,
   not a default. Scoping is judgment: crop to what the leaf asserts, keep just
   enough surroundings to orient.
+- **A change over time is a strip of frames, not a coded assertion.** When a
+  requirement is about what an action *changes* — a dismissal that sticks, a
+  pick that swaps one card for another — capture the same region before and
+  after (and after a reload, where persistence is the point) and stitch them.
+  The contrast is the proof.
+
+## Prefer several pictures over one coded leaf
+
+Before routing a leaf to `behavior` or `logic`, ask whether it **decomposes
+into observable states**. A statement joined by "and" usually does, and each
+part is then its own numbered sub-leaf with its own picture — the parent
+becomes a heading. The time wheel went this way: "5-minute steps, opens at
+now + 2 h, ends at 29:55" was one coded leaf and is now `3.7.1`–`3.7.3`, three
+crops anyone can check by eye. Sub-leaves are cheap; a coded assertion the
+owner has to read code to trust is not.
+
+Reserve the coded kinds for what genuinely has no picture:
+
+- **`behavior`** — a gesture's outgoing consequence (a URL built, bytes
+  downloaded, storage written), or a fact the OS paints rather than the page
+  (a native `title` tooltip, a cursor — neither can appear in a screenshot).
+- **`logic`** — a pure rule with no rendered surface at all.
+
+When a leaf lands in a coded kind *because* the product makes it invisible,
+say so in its Notes and name what product change would make it visual — that
+is a real finding about the UI, not just a testing limitation.
 
 ## The browser is part of the expected
 

@@ -75,7 +75,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Disclosure text: `Booking links on plans (tables, trains, stays, tours) may earn us a small commission, at no extra cost to you.` Quick Links column: `Contact Us` (mailto:support@edfringenow.com), `Privacy Policy`; Legal column: `Accessibility`, `Terms of Use`.
   </details>
 
-- `1.4` The site version is reachable by anyone: the footer's **© 2026 Missing Bulb** line shows a **help cursor** and carries tooltip **"EdFringeNow v\<version\>"** read from `package.json`.
+- `1.4` The footer's copyright line shows a help cursor and the version in its tooltip.
 
   <details><summary>Proof</summary>
 
@@ -88,11 +88,18 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 - `1.5` The **debug pill** appears only when geolocation reports a position outside the UK.
 
-  - `1.5.1` Outside the UK, the header carries the pill reading **"debug v\<version\>"**, and the app keeps its simulated clock.
+  - `1.5.1` Outside the UK, the header carries the debug pill.
 
     ![now-chrome.1.5.1](requirements/screen/cases/now-chrome.1.5.1.png) <!-- req-gallery:1.5.1 -->
 
-  - `1.5.2` In the UK — and when location is unknown or refused — the header carries no pill at all.
+    <details><summary>Notes</summary>
+
+    The app also keeps its own simulated clock in this state — it adopts the
+    device clock only on an in-UK fix — which is why the pill's tools offer a
+    simulated "now".
+    </details>
+
+  - `1.5.2` In the UK — or with no location at all — no pill.
 
     ![now-chrome.1.5.2](requirements/screen/cases/now-chrome.1.5.2.png) <!-- req-gallery:1.5.2 -->
 

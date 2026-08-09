@@ -76,9 +76,11 @@ bytes), CSS + WAAPI animations (frozen).
 
 ## Adding a requirement
 
-1. Add the leaf to `../requirements.md` (new number, one-line statement, a
-   `<details>` block carrying its acceptance notes and a
-   `<!-- req-gallery:<id> -->` line). The coverage gate is now **red**.
+1. Add the leaf to `../requirements.md` (new number, a **one-line** statement,
+   and a `<!-- req-gallery:<id> -->` line; anything not visible in the picture
+   goes in a collapsed `<details>` Notes block). If the statement joins two
+   claims with "and", it is probably two sub-leaves with two pictures. The
+   coverage gate is now **red**.
 2. Add its one case: `<kind>/cases/<slug>.<id>.case.js` — slug = the section's
    stable feature name.
 3. For a screen leaf run `npm run refresh:ui <slug>.<id>` and get the golden
