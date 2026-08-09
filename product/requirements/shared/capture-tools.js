@@ -47,13 +47,16 @@ async function padToPage(page, rect, px = 6) {
     w: document.documentElement.scrollWidth,
     h: document.documentElement.scrollHeight,
   }));
-  const x = Math.max(0, rect.x - px);
-  const y = Math.max(0, rect.y - px);
+  // Whole pixels: a layout rect is fractional, and letting a fractional clip
+  // reach the screenshot leaves the rounding to the renderer — where a
+  // half-pixel either way is a different image.
+  const x = Math.max(0, Math.floor(rect.x - px));
+  const y = Math.max(0, Math.floor(rect.y - px));
   return {
     x,
     y,
-    width: Math.min(m.w, rect.x + rect.width + px) - x,
-    height: Math.min(m.h, rect.y + rect.height + px) - y,
+    width: Math.min(m.w, Math.ceil(rect.x + rect.width + px)) - x,
+    height: Math.min(m.h, Math.ceil(rect.y + rect.height + px)) - y,
   };
 }
 

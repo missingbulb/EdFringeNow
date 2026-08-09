@@ -51,3 +51,7 @@ jobs:
           name: requirements-failure-artifacts
           path: product/requirements/shared/.artifacts/
           if-no-files-found: ignore
+          # The artifacts dir is dot-prefixed, and this action skips hidden
+          # paths by default — without this the diffs silently never upload,
+          # which is exactly when they are needed.
+          include-hidden-files: true
