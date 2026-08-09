@@ -2,6 +2,8 @@
 // list of show slugs. Pure, no I/O: the caller reads the file text and passes it
 // in (browser FileReader or Node fs), this module never touches the filesystem.
 
+import { showUrl } from "../../shared/edfringe.js";
+
 // Matches https://www.edfringe.com/tickets/whats-on/<slug> (with or without
 // "www.", case-insensitive scheme/host), capturing the slug.
 const URL_RE = /https?:\/\/(?:www\.)?edfringe\.com\/tickets\/whats-on\/([a-z0-9-]+)/i;
@@ -25,7 +27,7 @@ export function slugFromUrl(url) {
  * @returns {string}
  */
 export function urlFromSlug(slug) {
-  return `https://www.edfringe.com/tickets/whats-on/${slug}`;
+  return showUrl(slug);
 }
 
 // --- CSV parsing (RFC 4180-ish: quoted fields, "" escaped quote, CRLF/LF) ---
