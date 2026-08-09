@@ -85,13 +85,23 @@ export async function cachedFetchJson(url, ttlMs, onNote) {
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+    // Read the payload BEFORE touching Cache Storage, and hand the cache a fresh
+    // Response built from the text rather than a clone of this one. Cache.put()
+    // consumes the body it is given, and clone() tees a single stream into two —
+    // so a put that dies partway (quota, an evicted cache, a dropped connection)
+    // errors the response we still have to read. Writing first therefore let a
+    // failed *cache write* discard a *successful download*: that is how the
+    // planner lost availability.min.json and drew every show as unavailable
+    // (#309). The cache is an optimisation; the payload is the point.
+    const text = await res.text();
+    const data = JSON.parse(text);
     try {
-      await cache.put(url, res.clone());
+      await cache.put(url, new Response(text, { headers: { "Content-Type": "application/json" } }));
       stampFetch(url);
     } catch (err) {
       note(err, url);
     }
-    return res.json();
+    return data;
   } catch (err) {
     const stale = await cache.match(url);
     if (stale) {

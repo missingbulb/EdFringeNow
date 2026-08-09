@@ -262,17 +262,21 @@ let dataPromise = null;
 
 function loadData() {
   dataPromise = (async () => {
-    // All three are wanted to rehydrate, so they are fetched together. Only
-    // availability is allowed to fail: without it every performance is
-    // status-unknown, which the grid already draws, and a planner with no
-    // availability beats no planner at all.
+    // All three are wanted to rehydrate, so they are fetched together, and all
+    // three are required. Availability used to be allowed to fail on the theory
+    // that status-unknown is a state the grid already draws — it isn't. An empty
+    // status reads as not-bookable everywhere downstream (isAvailable, segClass,
+    // laneStatus), so continuing without the sidecar doesn't degrade the planner,
+    // it inverts it: every performance turns red and every show reports
+    // "No dates", for a festival that is very much on sale (#309).
+    //
+    // A wrong plan is worse than no plan. So a failure here throws like any
+    // other, and ensureData surfaces the error panel with its retry — the one
+    // honest answer when we don't know what's bookable.
     const [wire, lookups, availability] = await Promise.all([
       cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache),
       cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache),
-      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache).catch((err) => {
-        console.info("Fringe Planner: ticket availability unavailable", err);
-        return null;
-      }),
+      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache),
     ]);
     state.venueCoords = lookups.venues || null; // venue map drives travel legs/gaps
     state.lookups = lookups;
@@ -296,6 +300,25 @@ function loadData() {
  * both cases the caller still got its data. */
 function noteCache(err, url) {
   console.info("Fringe Planner: data cache —", url, err);
+}
+
+/**
+ * The one place a data-load failure becomes visible, shared by every entry point
+ * that can trigger one: an upload (applyFavourites), the boot load, and the
+ * retry button.
+ *
+ * The boot load is the reason this is factored out. It has no upload to report
+ * through, so its rejection used to land in a no-op catch and leave the page
+ * sitting in its empty "drop your favourites" state — indistinguishable from a
+ * first-time visitor, while the real story was that we couldn't say what was
+ * bookable (#309). Not knowing is worth saying out loud; it's the half-loaded
+ * board that lies.
+ */
+function showLoadError(err) {
+  console.error("Fringe Planner: failed to load show data", err);
+  $("errorDetail").textContent =
+    "Check your connection and try again. (" + (err && err.message ? err.message : "unknown error") + ")";
+  $("errorState").hidden = false;
 }
 
 /**
@@ -706,10 +729,7 @@ async function applyFavourites(
   try {
     index = await ensureData();
   } catch (err) {
-    console.error("Fringe Planner: failed to load show data", err);
-    $("errorDetail").textContent =
-      "Check your connection and try again. (" + (err && err.message ? err.message : "unknown error") + ")";
-    $("errorState").hidden = false;
+    showLoadError(err);
     return;
   }
 
@@ -2544,10 +2564,14 @@ function downloadDebugState() {
 function wireRetry() {
   $("retryBtn").addEventListener("click", () => {
     $("errorState").hidden = true;
-    loadData();
+    const retried = loadData();
     if (state.pendingUpload) {
       const { slugs, filename, savedAt, source } = state.pendingUpload;
-      applyFavourites(slugs, filename, savedAt, { source });
+      applyFavourites(slugs, filename, savedAt, { source }); // reports its own failure
+    } else {
+      // A boot-load retry: nothing downstream is watching, so this is the only
+      // thing that would put the panel back if it fails again.
+      retried.catch(showLoadError);
     }
   });
 }
@@ -4236,4 +4260,4 @@ window.addEventListener("pagehide", flushPlanPrefs);
 
 renderPerfPill(); // paint the version placeholder immediately
 loadVersion();
-loadData();
+loadData().catch(showLoadError);

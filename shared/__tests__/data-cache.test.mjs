@@ -19,7 +19,7 @@ import { cachedFetchJson, fetchJson, DAY_MS } from "../data-cache.js";
 // --- Stubs ----------------------------------------------------------------
 
 function installStubs({ bodies = {}, failFetch = false, noCaches = false,
-                        putThrows = false, now = 1_000_000 } = {}) {
+                        putThrows = false, putPoisonsBody = false, now = 1_000_000 } = {}) {
   const calls = { fetch: [], put: [] };
   const store = new Map();       // url -> serialized body (the Cache Storage stand-in)
   const local = new Map();       // the localStorage stand-in
@@ -37,9 +37,22 @@ function installStubs({ bodies = {}, failFetch = false, noCaches = false,
     return response(bodies[url]);
   };
 
-  function response(body) {
+  /* A response and its clones share one body, the way a real one does: clone()
+   * tees a single stream into two, so whatever kills one branch kills both.
+   * `stream.dead` is that shared fate — see the putPoisonsBody test for why
+   * modelling it matters. */
+  function response(body, stream = { dead: false }) {
     const text = JSON.stringify(body);
-    return { ok: true, status: 200, json: async () => JSON.parse(text), clone: () => response(body) };
+    const read = async () => {
+      if (stream.dead) throw new TypeError("Failed to fetch");
+      return text;
+    };
+    return {
+      ok: true, status: 200, stream,
+      text: read,
+      json: async () => JSON.parse(await read()),
+      clone: () => response(body, stream),
+    };
   }
 
   globalThis.caches = noCaches ? undefined : {
@@ -47,6 +60,12 @@ function installStubs({ bodies = {}, failFetch = false, noCaches = false,
       match: async (url) => (store.has(url) ? response(store.get(url)) : undefined),
       put: async (url, res) => {
         calls.put.push(url);
+        // Cache.put() reads the body it is handed. A write that dies partway
+        // leaves that stream — and so its twin — unreadable.
+        if (putPoisonsBody) {
+          if (res.stream) res.stream.dead = true;
+          throw new TypeError("Cache.put() encountered a network error");
+        }
         if (putThrows) throw new Error("quota exceeded");
         store.set(url, await res.json());
       },
@@ -187,6 +206,27 @@ test("a cache write that fails still returns the data, and doesn't stamp it fres
     assert.deepEqual(notes, [URL_A]);
     assert.deepEqual(await cachedFetchJson(URL_A, DAY_MS), { v: 1 });
     assert.equal(s.calls.fetch.length, 2, "an unstamped url must be re-fetched");
+  } finally {
+    s.restore();
+  }
+});
+
+test("a cache write that dies mid-body must not cost the caller its download", async () => {
+  // The regression behind the "every show is sold out" planner (#309). Cache.put()
+  // consumes the body it is given, and clone() tees one stream into two — so a put
+  // that fails partway errors the response we still have to read. Writing to the
+  // cache before reading the payload therefore threw away a download that had
+  // already succeeded: availability.min.json went missing, every performance
+  // became status-unknown, and the grid drew all 4,122 shows as unavailable.
+  //
+  // The cache write may fail. Losing the data because of it may not.
+  const s = installStubs({ bodies: { [URL_A]: { v: 1 } }, putPoisonsBody: true });
+  try {
+    const notes = [];
+    assert.deepEqual(
+      await cachedFetchJson(URL_A, DAY_MS, (err, url) => notes.push(url)), { v: 1 },
+      "the payload was downloaded intact — a failed cache write must not discard it");
+    assert.deepEqual(notes, [URL_A], "the write that failed is still worth logging");
   } finally {
     s.restore();
   }

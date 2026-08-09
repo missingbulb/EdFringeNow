@@ -84,9 +84,13 @@ export function performanceAvailability(availability, showId, key) {
  *
  * Ticket status and soldOut do NOT come from the catalogue — they are the two
  * fields that move through the day, so they ship in their own sidecar
- * (availability.min.json) and are joined back on here. Without it every
- * performance is simply status-unknown, which is a state the engine and the
- * grid already draw: the planner stays usable if that fetch fails.
+ * (availability.min.json) and are joined back on here.
+ *
+ * `availability` is nullable so this stays a pure function of what it is given,
+ * but callers must not treat that as a supported mode: an empty status reads as
+ * not-bookable in isAvailable/segClass/laneStatus, so hydrating without the
+ * sidecar marks the whole festival unavailable rather than unknown (#309).
+ * plan.js requires all three files and surfaces its error panel instead.
  *
  * @param {object[]} wire   parsed shows.min.json
  * @param {object}   lookups parsed venues.json ({venues, rooms, genres,
