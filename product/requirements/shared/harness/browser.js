@@ -12,6 +12,7 @@
 "use strict";
 
 const fs = require("node:fs");
+const os = require("node:os");
 const path = require("node:path");
 const { execSync } = require("node:child_process");
 const { pathToFileURL } = require("node:url");
@@ -202,6 +203,47 @@ async function routeAll(context, { dataDir, failData }) {
   });
 }
 
+// ------------------------------------------------------------- font jail --
+// The web fonts are vendored, but they are not the only fonts on the page: any
+// character they don't carry — an emoji, an arrow, a Cyrillic show title — is
+// drawn by whatever the *machine* has installed. That made the goldens a
+// record of the renderer's font set, and CI's set is not the sandbox's: the
+// walk-time line ("🚶 5 min · £16") measured a different width there and
+// wrapped, making every card one line taller.
+//
+// So the harness gives Chromium its own fontconfig world: a generated config
+// whose only font directory is `vendor/systemfonts/`, with the generic
+// families aliased into it. Nothing installed on the host can reach the page.
+const SYSTEM_FONTS_DIR = path.join(VENDOR_DIR, "systemfonts");
+
+function fontconfigFile() {
+  const dir = path.join(os.tmpdir(), "edfringe-req-fontconfig");
+  const cache = path.join(dir, "cache");
+  fs.mkdirSync(cache, { recursive: true });
+  const alias = (from, to) =>
+    `  <alias binding="strong"><family>${from}</family><prefer><family>${to}</family></prefer></alias>`;
+  const conf = `<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+<fontconfig>
+  <dir>${SYSTEM_FONTS_DIR}</dir>
+  <cachedir>${cache}</cachedir>
+${[
+  alias("sans-serif", "DejaVu Sans"),
+  alias("serif", "DejaVu Sans"),
+  alias("monospace", "DejaVu Sans"),
+  alias("system-ui", "DejaVu Sans"),
+  alias("emoji", "Noto Color Emoji"),
+  // The product's metric-matched fallback faces are `src: local("Arial")`.
+  alias("Arial", "Liberation Sans"),
+  alias("Helvetica", "Liberation Sans"),
+].join("\n")}
+</fontconfig>
+`;
+  const file = path.join(dir, "fonts.conf");
+  fs.writeFileSync(file, conf);
+  return file;
+}
+
 let browserPromise = null;
 
 async function launchBrowser() {
@@ -216,6 +258,7 @@ async function launchBrowser() {
       }
       const { chromium } = await loadPlaywright();
       return chromium.launch({
+        env: { ...process.env, FONTCONFIG_FILE: fontconfigFile() },
         args: [
           "--font-render-hinting=none",
           "--force-color-profile=srgb",

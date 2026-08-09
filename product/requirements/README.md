@@ -29,7 +29,8 @@ product/
       render-case.js refresh.js gallery.js      render/refresh/gallery lanes
       case-helpers.js                           storage seeds, waits, drives
       harness/browser.js                        the hermetic Playwright page
-      harness/vendor/                           Leaflet + fonts, committed
+      harness/vendor/                           Leaflet + web fonts, committed
+      harness/vendor/systemfonts/               the font jail (see its README)
       fixtures/                                 the frozen dataset + builder
 ```
 
@@ -60,7 +61,11 @@ ships it globally; CI installs it per run; any other version refuses to
 compare. Everything nondeterministic is faked once, in the harness: the clock
 (Sat 15 Aug 2026 19:30 Edinburgh), geolocation (central Edinburgh),
 `Math.random`, fonts/Leaflet/tiles/geocoder/data (committed vendor + fixture
-bytes), CSS + WAAPI animations (frozen).
+bytes), CSS + WAAPI animations (frozen). Fonts go further than the web faces:
+Chromium runs under a generated `FONTCONFIG_FILE` whose only font directory is
+`harness/vendor/systemfonts/`, so the emoji and symbols the web fonts don't
+carry come from committed bytes rather than from whatever the machine has
+installed.
 
 ## The owner-approval contract
 

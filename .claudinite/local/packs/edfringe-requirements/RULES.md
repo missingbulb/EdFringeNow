@@ -114,6 +114,16 @@ is a real finding about the UI, not just a testing limitation.
   `url(/__vendor/…)` references resolve against `fonts.googleapis.com` — the
   vendor route must match on path, host-agnostic, or every glyph silently
   falls back and all text shifts by a pixel.
+- **Vendoring the web fonts is only half the font problem.** Every character
+  they don't carry — an emoji, `▾`, `≤`, a Cyrillic show title — is drawn from
+  the fonts *installed on the machine*, so the goldens quietly become a record
+  of the renderer's font set. It cost a red CI lane: the walk-time line
+  (`🚶 5 min · £16`) measured wider on the GitHub runner, wrapped, and every
+  show card came out 21px taller. The harness now launches Chromium under a
+  generated `FONTCONFIG_FILE` whose only font directory is
+  `harness/vendor/systemfonts/` — the host's fonts cannot reach the page. A new
+  emoji or script in the product or the fixtures needs that subset rebuilt
+  (see the folder's README), or it renders as tofu.
 - **A floating popup dies under a full-page screenshot** (the capture scrolls,
   and scroll dismisses tips/legends/optimizer pops). A popup-state case sets
   `viewportOnly: true` and captures the viewport crop.
