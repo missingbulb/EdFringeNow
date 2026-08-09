@@ -1,7 +1,7 @@
 # EdFringeNow
 
 <!-- claudinite:packs -->
-![basics](../../../../../tmp/claudinite-canon-azqRRV/packs/basics/badge.svg "basics") ![barriers](../../../../../tmp/claudinite-canon-azqRRV/packs/barriers/badge.svg "barriers") ![git-github](../../../../../tmp/claudinite-canon-azqRRV/packs/git-github/badge.svg "git-github") ![github-actions](../../../../../tmp/claudinite-canon-azqRRV/packs/github-actions/badge.svg "github-actions") ![html](../../../../../tmp/claudinite-canon-azqRRV/packs/html/badge.svg "html") ![tidy-repo](../../../../../tmp/claudinite-canon-azqRRV/packs/tidy-repo/badge.svg "tidy-repo") ![grow_with_claudinite](../../../../../tmp/claudinite-canon-azqRRV/packs/grow_with_claudinite/badge.svg "grow_with_claudinite") ![executable-requirements](../../../../../tmp/claudinite-canon-azqRRV/packs/executable-requirements/badge.svg "executable-requirements") ![spec-driven-product](../../../../../tmp/claudinite-canon-azqRRV/packs/spec-driven-product/badge.svg "spec-driven-product") ![product-wiki](../../../../../tmp/claudinite-canon-azqRRV/packs/product-wiki/badge.svg "product-wiki")<!-- /claudinite:packs -->
+![basics](.claudinite/shared/packs/basics/badge.svg "basics") ![barriers](.claudinite/shared/packs/barriers/badge.svg "barriers") ![git-github](.claudinite/shared/packs/git-github/badge.svg "git-github") ![github-actions](.claudinite/shared/packs/github-actions/badge.svg "github-actions") ![html](.claudinite/shared/packs/html/badge.svg "html") ![tidy-repo](.claudinite/shared/packs/tidy-repo/badge.svg "tidy-repo") ![grow_with_claudinite](.claudinite/shared/packs/grow_with_claudinite/badge.svg "grow_with_claudinite") ![executable-requirements](.claudinite/shared/packs/executable-requirements/badge.svg "executable-requirements") ![spec-driven-product](.claudinite/shared/packs/spec-driven-product/badge.svg "spec-driven-product") ![static-website](.claudinite/shared/packs/static-website/badge.svg "static-website") ![product-wiki](.claudinite/shared/packs/product-wiki/badge.svg "product-wiki") ![claude-code-web-users-support](.claudinite/shared/packs/claude-code-web-users-support/badge.svg "claude-code-web-users-support")<!-- /claudinite:packs -->
 Website to help find a fringe show — **Fringe Discover**.
 
 🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/
@@ -48,8 +48,9 @@ npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
 
 `npm run verify` is the single gate: it runs the unit tests, syntax-checks every
 JavaScript source under `js/` and `plan/`, and byte-compiles the `scraper/`
-Python. The **CI** workflow (`.github/workflows/ci.yml`) runs it on every push
-to `main` and every pull request, and a **pre-commit hook** runs the same gate
+Python. The release pipeline's PR gate (`.github/workflows/static-site-ci.yml`)
+runs it as the repo's `test_command` on every push to `main` and every pull
+request, and a **pre-commit hook** runs the same gate
 locally so nothing red is committed. Enable the hook once per clone:
 
 ```

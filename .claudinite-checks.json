@@ -36,6 +36,13 @@
     },
     "spec-driven-product",
     {
+      "id": "static-website",
+      "answers": {
+        "hosting": "GitHub Pages from this repo — confirmed from the repo rather than asked: the hand-rolled Pages workflow this adoption replaces already deployed to Pages on push to main via actions/deploy-pages, with no CNAME and no other host. So the full set is vendored: orchestrator + publish/deploy reusables + the three composite actions.",
+        "publish_set": "Rooted at the repo root. The site is the four pages (index, accessibility, privacy, terms), the favicons and .nojekyll, css/, js/, shared/, the planner's own paths (plan/index.html, plan/plan.css, plan/plan.js, plan/lib), package.json (the debug pill fetches it for the version), and only the data the browser actually fetches: data/venues.json, data/days/, and the three normalized sidecars the planner loads (shows.min.json, availability.min.json, descriptions.min.json). Derived from the fetch call sites in js/app.js and plan/plan.js, not from 'everything except the tooling'. Deliberately excluded: data/normalized/shows.json (7.4M) and data/prices.json (2.9M) are scraper-side inputs no page fetches, plus scraper/, docs/, design-concepts/, product-wiki/, plan/design/, scripts/ and the agent tooling."
+      }
+    },
+    {
       "id": "product-wiki",
       "answers": {
         "product": "Fringe Discover: a spontaneity/reachability tool for the Edinburgh Festival Fringe. Where listings apps answer 'what exists?', this answers 'what can I actually make right now?' — given the user's location, how far they'll travel and how, and their next commitment, it collapses ~3,800 shows into a short list of genuinely reachable options that haven't started and still leave time to reach whatever is next.",
@@ -59,7 +66,7 @@
     "monthlyDay": 1
   },
   "claudinite": {
-    "updated": "2026-08-09T14:11:00.781Z",
-    "ref": "d76c7d9ccb25f2f4f243056686694c9664ec2263"
+    "updated": "2026-08-09T19:52:08.379Z",
+    "ref": "b6dffe1944776b5eee15a4150dd04077f0e9b32e"
   }
 }
