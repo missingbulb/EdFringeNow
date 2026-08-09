@@ -145,20 +145,21 @@ test("every top-level source dir named in verify.sh ⇒ no findings", () => {
     "scripts/verify.sh": verifyShWithDirs("js", "plan", "scripts", "shared"),
     "js/app.js": "",
     "plan/plan.js": "",
-    "scripts/bump-version.mjs": "",
+    "scripts/release-tool.mjs": "",
     "shared/geo.js": "",
   }));
   assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
 });
 
 test("a top-level dir with .mjs source left off the git ls-files list is reported", () => {
-  // The exact regression this guards: scripts/bump-version.mjs shipped (#81) with
-  // scripts/ never added to verify.sh's syntax-check glob, so it was never
-  // node --check'd in the pre-commit hook or in CI.
+  // The exact regression this guards: a .mjs script shipped under scripts/ (#81)
+  // while scripts/ was never added to verify.sh's syntax-check glob, so it was
+  // never node --check'd in the pre-commit hook or in CI. The paths here are
+  // synthetic — the rule is about any .mjs under a top-level source dir.
   const out = verifyShSourceDirsRule.run(ctxOf({
     "scripts/verify.sh": verifyShWithDirs("js", "plan", "shared"),
     "js/app.js": "",
-    "scripts/bump-version.mjs": "",
+    "scripts/release-tool.mjs": "",
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-verify-sh-covers-source-dirs");

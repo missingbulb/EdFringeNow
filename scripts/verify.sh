@@ -2,8 +2,9 @@
 #
 # The repo's single verification gate: unit tests, JavaScript parse-checks, and
 # Python byte-compilation. Both the pre-commit hook (.githooks/pre-commit) and
-# CI (.github/workflows/ci.yml) run *this* script, so "green locally" and
-# "green on GitHub" mean exactly the same thing.
+# the pipeline's PR gate (.github/workflows/static-site-ci.yml, which runs it as
+# the test_command named in .github/site.config) run *this* script, so "green
+# locally" and "green on GitHub" mean exactly the same thing.
 #
 # Fast (well under a second) and dependency-free — everything uses the node /
 # python already needed to work on the project.
