@@ -24,6 +24,7 @@
     },
     "local/edfringe",
     "local/edfringe-data",
+    "local/edfringe-requirements",
     {
       "id": "executable-requirements",
       "config": {
@@ -55,6 +56,13 @@
       "config": {
         "repo": "missingbulb/Sheepdog"
       }
+    }
+  ],
+  "accept": [
+    {
+      "rule": "file-placement",
+      "path": "product/requirements/",
+      "reason": "the executable-requirements layout is a framework contract: cases live in <kind>/cases/ and the harness in shared/, so every case's reach to shared/ and to the shipped modules under js/, plan/ and shared/ is fixed by the pack's layout standard, not a placement choice"
     }
   ],
   "maintenance": {

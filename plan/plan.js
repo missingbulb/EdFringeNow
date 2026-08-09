@@ -15,6 +15,7 @@
 import { isInUK } from "../shared/geo.js";
 import { cachedFetchJson, evictCached, DAY_MS } from "../shared/data-cache.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
+import { attachVersionPopup } from "../shared/version-popup.js";
 import { parseFavourites } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
@@ -4374,9 +4375,9 @@ function renderPerfPill() {
   if (pill) pill.textContent = state.version ? `debug v${state.version}` : "debug";
 
   // The pill is hidden for most visitors, so the footer copyright carries the
-  // version too — as a hover tooltip.
+  // version too — in a popup of its own (shared with the Now page).
   const copy = $("footerVersion");
-  if (copy && state.version) copy.title = `EdFringeNow v${state.version}`;
+  if (copy && state.version) attachVersionPopup(copy, `EdFringeNow v${state.version}`);
 
   const stat = $("perfStat");
   if (!stat) return;

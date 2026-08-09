@@ -755,8 +755,34 @@ a { color: inherit; }
 .logo--footer { color: var(--red); margin: 0 0 12px; }
 .footer-tagline { max-width: 320px; margin: 0 0 16px; color: #cfcfcf; }
 .footer-copy { color: #8c8c8c; font-size: 0.85rem; margin: 0; }
-/* The copyright doubles as the site-version tooltip (title set by app.js). */
-.footer-version { cursor: help; }
+/* The site-version popup on the copyright line (shared/version-popup.js builds
+   the element; this is its skin). No help cursor — the popup is the
+   affordance, and it must be reachable by keyboard and touch, not by hover
+   alone. */
+.footer-version { position: relative; }
+.footer-version:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.version-pop {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #1f2430;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+.version-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 14px;
+  border: 6px solid transparent;
+  border-top-color: #1f2430;
+}
 .footer-heading {
   color: var(--red);
   text-transform: uppercase;

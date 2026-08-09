@@ -10,6 +10,15 @@ A single-page site for finding the nearest Edinburgh Fringe show happening
 right now ("Fringe Rush"): editable constraint cards (genre, travel mode, next
 constraint), an interactive map of venues, and a gamified "discovery journey".
 
+## The executable spec
+
+What the UI must render and how it must behave is specified leaf by leaf in
+[product/requirements.md](product/requirements.md) — a numbered spec where
+every requirement is proven by exactly one executable case (a pixel-exact
+golden, a driven-gesture assertion, or a pure-rule test). The framework, its
+lanes and the owner-approval contract live in
+[product/requirements/README.md](product/requirements/README.md).
+
 ## Running
 
 No build step. Because the app fetches `data/shows.json`, serve the folder over

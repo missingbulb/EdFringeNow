@@ -15,6 +15,7 @@ import { showUrl } from "../shared/edfringe.js";
 import { isInUK } from "../shared/geo.js";
 import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
+import { attachVersionPopup } from "../shared/version-popup.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 import {
@@ -2526,9 +2527,9 @@ function syncDebugPicker() {
 
 /* Stamp the app version onto the debug pill and the footer copyright's tooltip
  * (single-sourced from package.json, the same file the planner reads). The debug
- * pill is hidden for most visitors, so the footer hover is the version anyone can
- * reach. Best-effort — the pill stays "debug" and the footer gets no tooltip if
- * the fetch fails (e.g. local file:// with no server). */
+ * pill is hidden for most visitors, so the footer popup is the version anyone
+ * can reach. Best-effort — the pill stays "debug" and the footer gets no popup
+ * if the fetch fails (e.g. local file:// with no server). */
 async function loadAppVersion() {
   const pill = document.getElementById("debugToggle");
   const copy = document.getElementById("footerVersion");
@@ -2539,7 +2540,7 @@ async function loadAppVersion() {
     const pkg = await res.json();
     if (!pkg || typeof pkg.version !== "string") return;
     if (pill) pill.textContent = `debug v${pkg.version}`;
-    if (copy) copy.title = `EdFringeNow v${pkg.version}`;
+    if (copy) attachVersionPopup(copy, `EdFringeNow v${pkg.version}`);
   } catch (err) {
     console.warn("EdFringeNow: couldn't read app version", err);
   }

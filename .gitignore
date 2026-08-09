@@ -12,6 +12,10 @@ data/raw_pages/
 # mount and this repo's own local/packs/ — are ordinary tracked content, so
 # ignoring the directory would have hidden the local pack's task folders.)
 
+# Failure artifacts from the executable-requirements comparator (actual/diff
+# renders on a red case) — debugging output, never committed goldens.
+product/requirements/shared/.artifacts/
+
 # Python bytecode cache
 __pycache__/
 *.pyc
