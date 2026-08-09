@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EdFringeNow">
+  <title>EdFringeNow</title>
+  <!-- A map pin whose head is a clock face: "a show near you, starting now". -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d60f5" />
+      <stop offset="1" stop-color="#5a3fd6" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#tile)" />
+  <path d="M32 53.5 L21.6 33.6 A14 14 0 1 1 42.4 33.6 Z" fill="#ffffff" />
+  <g stroke="#5a3fd6" stroke-width="3.2" stroke-linecap="round" fill="none">
+    <path d="M32 24 V15.6" />
+    <path d="M32 24 H39.4" />
+  </g>
+</svg>
