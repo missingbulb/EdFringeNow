@@ -48,7 +48,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 1. Page chrome
 
-- `1.1` At desktop width the header shows the **EdFringeNow** logo, a centred **Now | Plan** nav with **Now** active (red, underlined), and a **Use my location** button on the right.
+- `1.1` The desktop header: logo, centred **Now | Plan** nav with **Now** active, location button.
 
   ![now-chrome.1.1](requirements/screen/cases/now-chrome.1.1.png) <!-- req-gallery:1.1 -->
 
@@ -57,7 +57,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   The logo reads `EdFringe` + red `Now`; the nav links are `Now` (`./`, active) and `Plan` (`plan/`); the location button carries `aria-label="Use my location"`. Header is sticky, white, 64px.
   </details>
 
-- `1.2` Below 860px the **Now | Plan** nav is hidden — the mobile header is logo + location button only.
+- `1.2` Below 860px the nav is gone — logo and location button only.
 
   ![now-chrome.1.2](requirements/screen/cases/now-chrome.1.2.png) <!-- req-gallery:1.2 -->
 
@@ -66,7 +66,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Golden renders the whole resting page at the 390px reference viewport: no nav links between the logo and the location button.
   </details>
 
-- `1.3` The footer carries the tagline **"Helping you navigate the chaos and catch another show!"**, the **© 2026 Missing Bulb** line, the commission disclosure, and the **Contact Us / Privacy Policy / Accessibility / Terms of Use** links.
+- `1.3` The footer: tagline, copyright, commission disclosure, quick and legal links.
 
   ![now-chrome.1.3](requirements/screen/cases/now-chrome.1.3.png) <!-- req-gallery:1.3 -->
 
@@ -98,7 +98,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 2. First-run explainer
 
-- `2.1` A first-time visitor sees the explainer: kicker **"3,800 shows. One free hour."**, title **"See what you can actually get to — right now."**, the three numbered steps, and the **"Got it — let's go"** button.
+- `2.1` A first-time visitor meets the explainer.
 
   ![now-intro.2.1](requirements/screen/cases/now-intro.2.1.png) <!-- req-gallery:2.1 -->
 
@@ -107,7 +107,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Steps, verbatim: **Say when you next have to be somewhere.** A show, dinner, a train. / **We work out how far that leaves you.** On foot, bike, bus or taxi. / **Pick something you can make** — and still get to your next thing.
   </details>
 
-- `2.2` Dismissing the explainer (✕ or **Got it — let's go**) hides it, and it stays hidden on every later visit — three frames: shown, dismissed, and after a reload.
+- `2.2` Dismissing the explainer hides it, and a reload keeps it hidden.
 
   ![now-intro.2.2](requirements/screen/cases/now-intro.2.2.png) <!-- req-gallery:2.2 -->
 
@@ -118,11 +118,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 3. The next-commitment card
 
-- `3.1` With no commitment set, the card shows a faded skeleton of the plan-to-be ("Your plan" / "You are here" / "Your next commitment") under a **"Tap to set constraints"** trigger.
+- `3.1` With no commitment, a faded plan skeleton under **Tap to set constraints**.
 
   ![now-commitment.3.1](requirements/screen/cases/now-commitment.3.1.png) <!-- req-gallery:3.1 -->
 
-- `3.2` Opening the card shows **"Your next commitment \<date\>"** with the time wheels preset to now + 2 hours, a live count of shows starting then, the any-genre pick list, and the **"Not a show? Type a place"** input with a disabled **🔎 Find on map** button.
+- `3.2` The open card: wheels at now + 2 hours, a live count, the pick list, a place input.
 
   ![now-commitment.3.2](requirements/screen/cases/now-commitment.3.2.png) <!-- req-gallery:3.2 -->
 
@@ -131,11 +131,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   At the reference moment the wheels read `21:30` and the count line reads `2` `shows start at 21:30`; each pick row shows radio, title, venue, genre` · `price. The Find button is disabled while the place input is empty.
   </details>
 
-- `3.3` A chosen minute at which nothing starts reads **"No shows start exactly then. Nearest:"** with up to four **"HH:MM · n"** suggestion buttons.
+- `3.3` A minute nothing starts on offers the nearest times instead.
 
   ![now-commitment.3.3](requirements/screen/cases/now-commitment.3.3.png) <!-- req-gallery:3.3 -->
 
-- `3.4` Picking a show commits it: the panel closes, the intake card gives way to the plan — before and after.
+- `3.4` Picking a show closes the picker and swaps the intake card for the plan.
 
   ![now-commitment.3.4](requirements/screen/cases/now-commitment.3.4.png) <!-- req-gallery:3.4 -->
 
@@ -144,7 +144,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   The same card region before and after the pick: the open picker, then the rendered plan with no intake and no open panel.
   </details>
 
-- `3.5` Finding a typed place lists the matches under **"Which one?"** with a kind icon per hit, keeps only results around Edinburgh, and always ends with a **"Keep "\<q\>" as a note"** row.
+- `3.5` ⚠️ **UNDER-SPECIFIED** — typed-place results: matches around Edinburgh, then a keep-as-note row.
 
   ![now-commitment.3.5](requirements/screen/cases/now-commitment.3.5.png) <!-- req-gallery:3.5 -->
 
@@ -153,22 +153,33 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   The fixture geocoder answers three hits; the out-of-Edinburgh one is dropped, so the list shows 🍽️ The Witchery by the Castle and 🚆 Edinburgh Waverley, then the 📝 note row.
   </details>
 
-- `3.6` When the geocoder can't be reached the card says **"Map search isn't reachable right now."** — the only user-facing error string on the page.
+- `3.6` An unreachable geocoder says so — the page’s only error message.
 
   ![now-commitment.3.6](requirements/screen/cases/now-commitment.3.6.png) <!-- req-gallery:3.6 -->
 
-- `3.7` The time wheel offers 5-minute steps from the current minute to 29:55 (the 06:00 fringe-day end), opens at now + 120 minutes snapped to 5, and displays hours past midnight as 00–05.
+- `3.7` The time wheel.
 
-  <details><summary>Proof</summary>
+  - `3.7.1` Minutes step by five.
 
-  🔧 _Logic leaf._ <!-- req-gallery:3.7 -->
+    ![now-commitment.3.7.1](requirements/screen/cases/now-commitment.3.7.1.png) <!-- req-gallery:3.7.1 -->
 
-  Proved against `js/constraint-time.js`: `defaultConstraintTime`, `earliestWheelMinutes`, `minutesForHour`, `WHEEL_MINUTES`, and `hourLabel`'s 24→00 wrap.
-  </details>
+  - `3.7.2` It opens at now + 2 hours.
+
+    ![now-commitment.3.7.2](requirements/screen/cases/now-commitment.3.7.2.png) <!-- req-gallery:3.7.2 -->
+
+  - `3.7.3` It ends at 29:55 — the last slot of the fringe day, shown as 05:55.
+
+    ![now-commitment.3.7.3](requirements/screen/cases/now-commitment.3.7.3.png) <!-- req-gallery:3.7.3 -->
+
+    <details><summary>Notes</summary>
+
+    The fringe day ends at 06:00, so the wheel stops five minutes short of it;
+    hours past midnight display as 00–05 while the value stays extended (29:55).
+    </details>
 
 ## 4. The plan strip
 
-- `4.1` A committed destination renders the plan: **"Your plan"** with an **Open in Maps** link, the origin node (**"You are here"**, current time, travel mode), a **"🚶 N min walk"** leg, and the destination node subtitled **"Your next commitment"**.
+- `4.1` A committed destination renders the plan: you, the walk, the commitment.
 
   ![now-plan-strip.4.1](requirements/screen/cases/now-plan-strip.4.1.png) <!-- req-gallery:4.1 -->
 
@@ -177,7 +188,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Leg minutes are never shown below 1. Each of the stop/destination nodes carries `Change ▾` and `×` controls.
   </details>
 
-- `4.2` With spare time before the commitment and shows that fit, the strip offers **"You have \<duration\> to spare — want to see a show? \<n\> fit below"**, dismissible with ✕.
+- `4.2` Spare time before the commitment offers what would fit in it.
 
   ![now-plan-strip.4.2](requirements/screen/cases/now-plan-strip.4.2.png) <!-- req-gallery:4.2 -->
 
@@ -186,7 +197,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   "fits" when n = 1, "fit" otherwise; the link smooth-scrolls to the list.
   </details>
 
-- `4.3` A show slipped into the plan renders as a stop node: time range, title, venue · genre, a slack chip **"\<duration\> to spare"**, and the **"🎟 Buy ahead · skip the queue"** link.
+- `4.3` A show slipped into the plan shows its slack and a buy-ahead link.
 
   ![now-plan-strip.4.3](requirements/screen/cases/now-plan-strip.4.3.png) <!-- req-gallery:4.3 -->
 
@@ -195,7 +206,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   A free show renders no buy link; a sold-out one renders a `Sold out` pill instead (see `6.4` for the list-side stamp).
   </details>
 
-- `4.4` A selected show that would make you late for the commitment wears the **"You'll be late"** chip.
+- `4.4` A show that would make you late wears the **You’ll be late** chip.
 
   ![now-plan-strip.4.4](requirements/screen/cases/now-plan-strip.4.4.png) <!-- req-gallery:4.4 -->
 
@@ -235,7 +246,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 5. Filters
 
-- `5.1` The genre panel asks **"Which genres?"** with an **everything!** escape hatch and the ten festival genres, each with its emoji and a grey count of what ticking it would leave.
+- `5.1` The genre panel: ten genres, each counted, with an **everything!** hatch.
 
   ![now-filters.5.1](requirements/screen/cases/now-filters.5.1.png) <!-- req-gallery:5.1 -->
 
@@ -244,15 +255,15 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   The ten genres, in order: Cabaret and Variety, Children's Shows, Comedy, Dance, Physical Theatre & Circus, Events, Exhibitions, Music, Musicals and Opera, Spoken Word, Theatre. A zero-count row fades. Counts are measured with every filter applied *except* the panel's own.
   </details>
 
-- `5.2` The subgenre panel asks **"Which subgenres?"** offering only the subgenres present in what the other filters leave, with counts; when nothing is left it says **"No subgenres in what's left — widen your genres."**
+- `5.2` The subgenre panel offers only what the other filters leave standing.
 
   ![now-filters.5.2](requirements/screen/cases/now-filters.5.2.png) <!-- req-gallery:5.2 -->
 
-- `5.3` The price panel says **"Cheapest ticket, up to:"** over the shared six-step ladder — **Any / Free / £10 / £15 / £20 / £30** — each with a count.
+- `5.3` The price panel: the shared ladder, each step counted.
 
   ![now-filters.5.3](requirements/screen/cases/now-filters.5.3.png) <!-- req-gallery:5.3 -->
 
-- `5.4` The travel panel asks **"How are you getting there?"** with Walking (3.3 km/h), Taxi/Car (30 km/h), Bicycle (15 km/h) and a 1–60 minute slider reading **"N min max"**.
+- `5.4` The travel panel: three modes with their speeds, and a 1–60 minute budget.
 
   ![now-filters.5.4](requirements/screen/cases/now-filters.5.4.png) <!-- req-gallery:5.4 -->
 
@@ -281,11 +292,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 6. View switch and the show list
 
-- `6.1` One selector chooses the view and the order — **Closest / Soonest / Map** — with **Closest** active by default.
+- `6.1` One selector for view and order: **Closest / Soonest / Map**.
 
   ![now-list.6.1](requirements/screen/cases/now-list.6.1.png) <!-- req-gallery:6.1 -->
 
-- `6.2` With a commitment the heading counts what still fits: **"\<n\> shows you can slip in before \<HH:MM\>"**, and every card's corner says **fits**.
+- `6.2` With a commitment the heading counts what still fits, and cards say **fits**.
 
   ![now-list.6.2](requirements/screen/cases/now-list.6.2.png) <!-- req-gallery:6.2 -->
 
@@ -294,11 +305,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Without a commitment the heading reads `<n> shows you could wander into right now` and only shows starting within the next two hours are listed (singular `show` when n = 1). Card anatomy: genre in red caps, serif title, venue, subgenre tags; right column start time, `🚶 N min · <price>`.
   </details>
 
-- `6.3` **Soonest** re-orders the same cards by start time under **"HH:MM"** group headings.
+- `6.3` **Soonest** groups the same cards under their start times.
 
   ![now-list.6.3](requirements/screen/cases/now-list.6.3.png) <!-- req-gallery:6.3 -->
 
-- `6.4` A show with no online tickets wears the diagonal **"SOLD OUT!"** ink stamp and dims — but stays selectable.
+- `6.4` A show with no online tickets is stamped **SOLD OUT!** and dims.
 
   ![now-list.6.4](requirements/screen/cases/now-list.6.4.png) <!-- req-gallery:6.4 -->
 
@@ -307,7 +318,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   "No online tickets" is decided by `ticketStatus` ∈ {SOLD_OUT, NO_ALLOCATION_CONTACT_VENUE}; unknown status counts as available; the `soldOut` boolean is display-only and never trusted.
   </details>
 
-- `6.5` A show you'd reach up to five minutes after its start wears the **"TOO LATE!"** stamp and dims; later than that it simply doesn't appear.
+- `6.5` A show you’d reach just after it starts is stamped **TOO LATE!** and dims.
 
   ![now-list.6.5](requirements/screen/cases/now-list.6.5.png) <!-- req-gallery:6.5 -->
 
@@ -316,19 +327,19 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Travel time is straight-line (haversine) at the mode's speed; with a commitment set, tight shows are hidden too — only shows you fully make are offered.
   </details>
 
-- `6.6` Price on a card is exact about what it knows: **"Free"**, **"£N"**, or **"Price TBC"** when the price is unknown.
+- `6.6` A card is exact about price: **Free**, **£N**, or **Price TBC**.
 
   ![now-list.6.6](requirements/screen/cases/now-list.6.6.png) <!-- req-gallery:6.6 -->
 
-- `6.7` With nothing reachable and no commitment, the list says **"Nothing reachable in the next couple of hours — widen your travel window or taste."**
+- `6.7` Nothing reachable, and the list says what would help.
 
   ![now-list.6.7](requirements/screen/cases/now-list.6.7.png) <!-- req-gallery:6.7 -->
 
-- `6.8` With a commitment and nothing that fits, it says **"Nothing fits before your next commitment — try a later time or a wider travel window."**
+- `6.8` Nothing fits before the commitment, and the list says what would help.
 
   ![now-list.6.8](requirements/screen/cases/now-list.6.8.png) <!-- req-gallery:6.8 -->
 
-- `6.9` The list pages by twelve: the button reads **"Show \<k\> more · \<m\> left"**.
+- `6.9` The list pages by twelve.
 
   ![now-list.6.9](requirements/screen/cases/now-list.6.9.png) <!-- req-gallery:6.9 -->
 
@@ -357,7 +368,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 7. The map
 
-- `7.1` The map view shows the user dot, the violet reach circle sized to the travel budget, one emoji pin per reachable show, and cluster bubbles where pins crowd.
+- `7.1` The map: you, how far you can reach, and a pin per show.
 
   ![now-map.7.1](requirements/screen/cases/now-map.7.1.png) <!-- req-gallery:7.1 -->
 
@@ -366,7 +377,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   OpenStreetMap tiles (faked in the harness), attribution visible. Pins carry the genre emoji; sold-out/tight pins dim.
   </details>
 
-- `7.2` A committed destination draws the route: a dark line with an arrowhead per leg and a green **"✓ HH:MM"** pill on the destination — the deadline your arrival beats.
+- `7.2` A commitment draws the route, ending on the deadline you beat.
 
   ![now-map.7.2](requirements/screen/cases/now-map.7.2.png) <!-- req-gallery:7.2 -->
 
@@ -444,7 +455,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 9. Page chrome and board states
 
-- `9.1` The planner header shows the logo, the **Now | Plan** nav with **Plan** active (violet), and the hint **"Edinburgh Fringe · 7–31 Aug 2026"**; the page opens with **"Plan your Fringe!"** over the count line **"No shows planned, no shows selected"**.
+- `9.1` The planner’s chrome: **Plan** active, the title, the count, the footer.
 
   ![plan-chrome.9.1](requirements/screen/cases/plan-chrome.9.1.png) <!-- req-gallery:9.1 -->
 
@@ -453,11 +464,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Footer: `Fringe Planner · © 2026 Missing Bulb` + the partner-links disclosure; the © carries the `EdFringeNow v<version>` tooltip.
   </details>
 
-- `9.2` The empty board is the intake: **"Drag EdFringe favourites file here"** over an **Upload favourites** button, with the show search bar directly below — the same slot it keeps once the grid exists.
+- `9.2` The empty board is the favourites dropzone, search bar beneath it.
 
   ![plan-chrome.9.2](requirements/screen/cases/plan-chrome.9.2.png) <!-- req-gallery:9.2 -->
 
-- `9.3` A failed catalogue load shows **"We couldn't load the show data."** with the reason and a **Try again** button.
+- `9.3` A catalogue that won’t load says so, and offers a retry.
 
   ![plan-chrome.9.3](requirements/screen/cases/plan-chrome.9.3.png) <!-- req-gallery:9.3 -->
 
@@ -468,7 +479,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🚩 _Behavior leaf._ <!-- req-gallery:9.4 -->
   </details>
 
-- `9.5` With shows on the board the count line reads **"\<n\> show(s) planned out of \<m\> selected!"**.
+- `9.5` With shows on the board, the count line reports planned out of selected.
 
   ![plan-chrome.9.5](requirements/screen/cases/plan-chrome.9.5.png) <!-- req-gallery:9.5 -->
 
@@ -481,15 +492,15 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🚩 _Behavior leaf._ <!-- req-gallery:10.1 -->
   </details>
 
-- `10.2` A non-CSV file is refused: **"That's not a CSV file"** — **"Export your favourites from edfringe.com as CSV, then drop that file here."** with a link to **Your favourites page**.
+- `10.2` A file that isn’t a CSV is refused.
 
   ![plan-favourites.10.2](requirements/screen/cases/plan-favourites.10.2.png) <!-- req-gallery:10.2 -->
 
-- `10.3` A CSV with no show links reads **"No favourites in that file"** — **"It carries no edfringe.com show links — check you exported your favourites page as CSV."**
+- `10.3` A CSV carrying no show links is refused.
 
   ![plan-favourites.10.3](requirements/screen/cases/plan-favourites.10.3.png) <!-- req-gallery:10.3 -->
 
-- `10.4` Favourites from a previous year read **"None of those \<n\> favourites are in this year's programme"** — **"That looks like an export from a previous Fringe."**
+- `10.4` Favourites from a previous Fringe are refused.
 
   ![plan-favourites.10.4](requirements/screen/cases/plan-favourites.10.4.png) <!-- req-gallery:10.4 -->
 
@@ -518,23 +529,23 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 11. The show search
 
-- `11.1` Once the catalogue lands the search bar invites **"Search all \<n\> shows — title, performer or venue"** beside the **Search tools** button.
+- `11.1` The search bar invites the whole catalogue.
 
   ![plan-search.11.1](requirements/screen/cases/plan-search.11.1.png) <!-- req-gallery:11.1 -->
 
-- `11.2` Result rows carry a ☆/★ star (add to / lift off the grid), the title, and **price · genre · venue · start time** — omitting an unknown price entirely; a capped list ends **"Showing 30 of \<n\> matches — keep typing to narrow it down"**.
+- `11.2` A result row: star, title, price · genre · venue · time; a capped list says so.
 
   ![plan-search.11.2](requirements/screen/cases/plan-search.11.2.png) <!-- req-gallery:11.2 -->
 
-- `11.3` A query that names a genre, subgenre or venue offers **category rows first** — "Genre/Subgenre/Venue \<name\> — Filter to \<n\> shows" — which set the filter instead of adding a show.
+- `11.3` A query naming a category offers the category first.
 
   ![plan-search.11.3](requirements/screen/cases/plan-search.11.3.png) <!-- req-gallery:11.3 -->
 
-- `11.4` No matches reads **"No shows match — try fewer filters or a different spelling."**
+- `11.4` Nothing matches, and the search says so.
 
   ![plan-search.11.4](requirements/screen/cases/plan-search.11.4.png) <!-- req-gallery:11.4 -->
 
-- `11.5` **Search tools** unfolds six facet chips — genre, subgenre, venue (with a find box), accessibility, age limit, price — each panel with per-option counts and an **everything!** clear; facets whose data hasn't landed present themselves as coming soon, disabled.
+- `11.5` Search tools: six facets, each option counted, each clearable.
 
   ![plan-search.11.5](requirements/screen/cases/plan-search.11.5.png) <!-- req-gallery:11.5 -->
 
@@ -568,11 +579,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 12. The day grid
 
-- `12.1` The grid shows one row per favourite (sorted by typical start time) across all 31 August days: two-letter weekday header, violet weekend stripes, greyed pre-festival days 1–6, one coloured mark per performance, and a **Status** column of verdict pills.
+- `12.1` The grid: a lane per favourite, a mark per performance, a verdict per row.
 
   ![plan-grid.12.1](requirements/screen/cases/plan-grid.12.1.png) <!-- req-gallery:12.1 -->
 
-- `12.2` The **Legend** popup names the grid's whole vocabulary, verbatim: **Tickets available / 2-for-1 / Preview / Free / Event-specific / Sold out / In your plan**.
+- `12.2` The legend names every mark.
 
   ![plan-grid.12.2](requirements/screen/cases/plan-grid.12.2.png) <!-- req-gallery:12.2 -->
 
@@ -581,7 +592,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   The colours are edfringe.com's own day-picker palette; gold ("In your plan") is the only mark the grid draws itself.
   </details>
 
-- `12.3` Hovering a day mark opens the day card: title, genre · venue, **"\<Dw\> \<d\> Aug"**, one row per performance with its colour swatch, start and status note, the blurb, and the pin hint.
+- `12.3` A mark’s day card: the show, the date, each performance and its status.
 
   ![plan-grid.12.3](requirements/screen/cases/plan-grid.12.3.png) <!-- req-gallery:12.3 -->
 
@@ -613,7 +624,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 13. The date window
 
-- `13.1` The window rail shows draggable **From / To** flags, the band reading **"\<n\> days"**, an **Optimize?** button, and dims the days outside the window (default 7–24 Aug).
+- `13.1` The window rail: **From** and **To** over a dimmed outside.
 
   ![plan-window.13.1](requirements/screen/cases/plan-window.13.1.png) <!-- req-gallery:13.1 -->
 
@@ -624,7 +635,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🚩 _Behavior leaf._ <!-- req-gallery:13.2 -->
   </details>
 
-- `13.3` **Optimize?** opens **"Pick the best dates"**: a day count (prefilled with the window's length), **"Include the most weekends"** on by default, and **Find best dates** — which glides the window to the best-scoring dates.
+- `13.3` The optimizer picks the best dates for you.
 
   ![plan-window.13.3](requirements/screen/cases/plan-window.13.3.png) <!-- req-gallery:13.3 -->
 
@@ -713,7 +724,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
 ## 15. Preferences and the schedule
 
-- `15.1` The preferences strip reads as one sentence of ground rules, with these defaults: **Day 09:00–25:00**, **Lunch on 12:30–13:30**, **Dinner off**, **1–3 shows/day**, **30 min apart**, **Walk**.
+- `15.1` The preferences strip, and what it defaults to.
 
   ![plan-preferences.15.1](requirements/screen/cases/plan-preferences.15.1.png) <!-- req-gallery:15.1 -->
 
@@ -722,7 +733,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Day end accepts up to `27:00` (03:00) — which is why it's a text box, not a native time input. Mode tooltips explain travel is used only when longer than the gap.
   </details>
 
-- `15.2` The schedule draws each planned day as a column on one 09:00→27:00 time axis: availability-coloured show blocks, travel legs between close shows, the lunch band **"12:30–13:30 · 🍽 Lunch"**, shaded before/after-hours zones, and the **"🚆 Arrive"** / **"🧳 Leave"** trip blocks on the boundary days.
+- `15.2` The schedule: every planned day on one axis, coloured by availability.
 
   ![plan-preferences.15.2](requirements/screen/cases/plan-preferences.15.2.png) <!-- req-gallery:15.2 -->
 
@@ -731,7 +742,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Hours past midnight keep counting (`24:00`, `25:00`, …) so the night reads as one evening. Empty days collapse to slivers. Blocks link to edfringe.com; plain click pins instead.
   </details>
 
-- `15.3` Every row wears an honest verdict pill: **✓ Scheduled!**, amber **▲** conflicts (**Too early / Too late / Lunch conflict / Dinner conflict / Meal conflict** or the two-culprit combo), **Can't fit**, **Sold out**, or **📅 No dates**.
+- `15.3` Every row carries an honest verdict.
 
   ![plan-preferences.15.3](requirements/screen/cases/plan-preferences.15.3.png) <!-- req-gallery:15.3 -->
 
@@ -740,11 +751,11 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Sold-out wins over no-dates (a different window won't help). A pinned row's pill is preceded by 🔒.
   </details>
 
-- `15.4` Hovering a conflict pill explains it in the user's own numbers — e.g. **"Every performance of this show runs during your lunch break (12:30–13:30), so the plan can't take it."** — with **"Click to go to the setting and change it"**.
+- `15.4` A conflict explains itself in your own numbers.
 
   ![plan-preferences.15.4](requirements/screen/cases/plan-preferences.15.4.png) <!-- req-gallery:15.4 -->
 
-- `15.5` A setting that shuts shows out wears **"⚠ Prevents \<n\>"** beside it, naming the shows in its tooltip.
+- `15.5` A setting that shuts shows out says how many.
 
   ![plan-preferences.15.5](requirements/screen/cases/plan-preferences.15.5.png) <!-- req-gallery:15.5 -->
 
@@ -762,15 +773,15 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Editing the day-end box immediately changes the schedule and summary.
   </details>
 
-- `15.7` The summary is one sentence: **"Planned \<n\> of \<m\> shows across \<d\> days (\<d0\>–\<d1\> Aug)."**
+- `15.7` The plan summarises itself in one sentence.
 
   ![plan-preferences.15.7](requirements/screen/cases/plan-preferences.15.7.png) <!-- req-gallery:15.7 -->
 
-- `15.8` When nothing fits at all: **"Nothing could be scheduled in this window. Try widening your dates, raising the per-day maximum, shortening the gap, or relaxing your day hours / meal breaks."**
+- `15.8` When nothing fits, the schedule says what to relax.
 
   ![plan-preferences.15.8](requirements/screen/cases/plan-preferences.15.8.png) <!-- req-gallery:15.8 -->
 
-- `15.9` The plan's edges carry the two partner nags — **"Need a place to sleep?"** in the night zone and **"Transportation sorted?"** on the trip blocks — each dismissible for good.
+- `15.9` The plan’s edges carry the two partner suggestions.
 
   ![plan-preferences.15.9](requirements/screen/cases/plan-preferences.15.9.png) <!-- req-gallery:15.9 -->
 
@@ -802,7 +813,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🚩 _Behavior leaf._ <!-- req-gallery:16.2 -->
   </details>
 
-- `16.3` After the ICS download the page walks you into Google Calendar: **"Downloaded — now into Google Calendar"** with the two steps and the own-calendar note.
+- `16.3` After the ICS download, the two steps into Google Calendar.
 
   ![plan-exports.16.3](requirements/screen/cases/plan-exports.16.3.png) <!-- req-gallery:16.3 -->
 
