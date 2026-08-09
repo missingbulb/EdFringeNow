@@ -98,12 +98,6 @@ browser is here, and a UI change isn't done until it has been looked at.
   sandbox cannot make. Three sessions on 2026-08-07 (#251, #258, #264) each
   took that detour and then backed out of it. Use the absolute path to the
   global build instead: it is the one matched to the vendored browsers.
-- **Keep one browser driver script per session and re-point it.** Authoring a
-  fresh throwaway Playwright script per screenshot cost 29 heredoc writes and
-  ~7 minutes of wall clock across the captured sessions (one session alone: 16
-  writes, 4.5 min). Write the driver once into the scratchpad, take the URL,
-  selector and output path from `process.argv`, and re-run it — a re-run is
-  seconds where a rewrite is 15–20s.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
@@ -147,23 +141,12 @@ As with the off-box CSS fetch above, `curl` is the working path: headless
 Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
 than the raw JSON or asset you usually want here.
 
-## Watching a workflow or scheduler run — ask the MCP Actions tools, never poll with `curl`
+## Watching a workflow or scheduler run — never a blind fixed sleep
 
-A run's state comes from `mcp__github__actions_get` / `mcp__github__actions_list`.
-Do **not** poll `https://api.github.com/…` from the shell. `gh` is not installed
-here, and shell egress to the API is a per-environment policy that has been
-*denied* mid-session — and a denied `CONNECT` returns a proxy error body rather
-than JSON, so an `until`-loop testing `.status == "completed"` neither
-terminates nor says why. Both sessions that reached for it on 2026-08-07 lost
-the poll silently: #249 burned two round-trips on a `curl` that "never actually
-worked" before the MCP call answered in 5s, and #251 backgrounded an
-`until curl …; sleep 15; done`, abandoned it, and fell back to a blind
-`sleep 90` — for a run `actions_get` reported *already complete* five seconds
-later. The orphaned sleep then fired two `task-notification`s that had to be
-explained away to the owner.
-
-So: ask the MCP tool, and if the run is still going ask it again. Never a blind
-fixed sleep, and never a shell poll.
+If the run is still going, ask again. On 2026-08-07 #251 abandoned its poll and
+fell back to a blind `sleep 90` — for a run `actions_get` reported *already
+complete* five seconds later. The orphaned sleep then fired two
+`task-notification`s that had to be explained away to the owner.
 
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
@@ -189,9 +172,7 @@ so the extension is a style choice — use `.js`, matching `plan/lib/`.
 
 A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
-check catches an omission. Note that `git ls-files` only sees *tracked* files, so
-a new file silently sits outside the syntax sweep until it is committed — the
-"checked N files" count is not evidence your new file was among them.
+check catches an omission.
 
 ## `.claudinite/shared/` is generated output — never hand-resolve its conflicts, always take the fresher version
 
