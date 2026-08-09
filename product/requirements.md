@@ -75,15 +75,15 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Disclosure text: `Booking links on plans (tables, trains, stays, tours) may earn us a small commission, at no extra cost to you.` Quick Links column: `Contact Us` (mailto:support@edfringenow.com), `Privacy Policy`; Legal column: `Accessibility`, `Terms of Use`.
   </details>
 
-- `1.4` The footer's copyright line shows a help cursor and the version in its tooltip.
+- `1.4` The footer's copyright line opens a small popup carrying the version.
 
-  <details><summary>Proof</summary>
+  ![now-chrome.1.4](requirements/screen/cases/now-chrome.1.4.png) <!-- req-gallery:1.4 -->
 
-  🚩 _Behavior leaf._ <!-- req-gallery:1.4 -->
+  <details><summary>Notes</summary>
 
-  `#footerVersion`'s `title` equals `EdFringeNow v` + the version served by `package.json`, and its computed `cursor` is `help` — the cursor is what advertises the tooltip, so it is part of the requirement.
-
-  A native `title` tooltip is painted by the OS, not the page, so no screenshot can contain one; the same is true of a cursor. Making this leaf visual would mean changing the product to a real in-page tooltip element.
+  A real in-page element, not a native `title` tooltip — the browser paints those
+  itself, so nothing could ever show one to you here. It opens on hover, on focus
+  and on tap, closes on Escape, and carries no help cursor.
   </details>
 
 - `1.5` The **debug pill** appears only when geolocation reports a position outside the UK.
@@ -120,7 +120,9 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   <details><summary>Notes</summary>
 
-  The same page-top region each time. Remembered in `localStorage` under a key of its own, so clearing a stale plan never brings the explainer back.
+  An animated golden: the same page-top region shown, dismissed, and after a
+  reload. Remembered in `localStorage` under a key of its own, so clearing a
+  stale plan never brings the explainer back.
   </details>
 
 ## 3. The next-commitment card
@@ -148,7 +150,8 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   <details><summary>Notes</summary>
 
-  The same card region before and after the pick: the open picker, then the rendered plan with no intake and no open panel.
+  An animated golden: the same card region before and after the pick — the open
+  picker, then the plan, with no intake and no open panel.
   </details>
 
 - `3.5` ⚠️ **UNDER-SPECIFIED** — typed-place results: matches around Edinburgh, then a keep-as-note row.
