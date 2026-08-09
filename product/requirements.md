@@ -383,64 +383,6 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
     A scroll position is not something a picture of the map can show.
     </details>
-## 8. Time rules (shared)
-
-- `8.1` A fringe day runs **06:00 to 06:00**: a 00:30 show belongs to the evening before, carried as the extended string `24:30` so ordering never breaks, and wrapped back to `00:30` only for display.
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.1 -->
-
-  `shared/fringe-day.js`: `FRINGE_DAY_START_MINUTES`/`END`, `clockHHMM`, `clockLabel`, `hourLabel`.
-  </details>
-
-- `8.2` Every time the app shows or compares is **Edinburgh wall-clock**, whatever the device's zone.
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.2 -->
-
-  `js/clock.js` `festivalNow` reads any instant through Europe/London (BST in August).
-  </details>
-
-- `8.3` The simulated-clock picker round-trips: the instant computed for an Edinburgh wall-clock reading reads back as itself, across DST edges.
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.3 -->
-
-  `js/clock.js` `festivalDate` ∘ `festivalNow` = identity for valid input; invalid input yields an Invalid Date.
-  </details>
-
-- `8.4` The minute ticker re-arms **on** the minute and can never spin: the delay to the next minute is always in (0, 60000].
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.4 -->
-
-  `js/clock.js` `msToNextMinute`.
-  </details>
-
-- `8.5` Both pages offer the **same** price ladder — Any / Free / up to £10 / £15 / £20 / £30 — from one shared module.
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.5 -->
-
-  `shared/price.js` `PRICE_OPTIONS` / `PRICE_CAPS`.
-  </details>
-
-- `8.6` Price copy is exact: unknown → **"Price TBC"**, zero → **"Free"**, a real range → **"£12–£18"**, a single band → **"£12"**, and whole pounds never show ".00".
-
-  <details><summary>Proof</summary>
-
-  🔧 _Logic leaf._ <!-- req-gallery:8.6 -->
-
-  `shared/price.js` `priceLabel` / `formatPounds`.
-  </details>
-
----
-
 # Part II — the Plan page
 
 ## 9. Page chrome and board states
@@ -821,4 +763,71 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🔧 _Logic leaf._ <!-- req-gallery:16.5 -->
 
   `plan/lib/itinerary.js`.
+  </details>
+
+---
+
+# Part III — both pages
+
+Features neither page owns alone. Each is proven on the Now page **and** the
+planner, in one picture, because a rule that only half the site follows is not
+the feature.
+
+## 8. Time and money, everywhere
+
+- `8.1` Both pages run the festival day to 06:00 — a late show belongs to the night before.
+
+  ![shared-time.8.1](requirements/screen/cases/shared-time.8.1.png) <!-- req-gallery:8.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Now page's wheel stops at the day's last slot, shown as 05:55; the
+  planner's schedule counts on past midnight rather than wrapping — 24:00,
+  25:00, 26:00. Times are carried in that extended form so they sort correctly,
+  and wrapped only where they are displayed.
+  </details>
+
+- `8.2` Times are Edinburgh's, whatever your device says.
+
+  ![shared-time.8.2](requirements/screen/cases/shared-time.8.2.png) <!-- req-gallery:8.2 -->
+
+  <details><summary>Notes</summary>
+
+  The same two pages rendered twice — once with the device in London, once with
+  it in New York. Every time on both is identical: a doors-at-19:45 show is
+  19:45 wherever you are reading from.
+  </details>
+
+- `8.3` The page's clock can be driven, for testing.
+
+  ![shared-time.8.3](requirements/screen/cases/shared-time.8.3.png) <!-- req-gallery:8.3 -->
+
+  <details><summary>Notes</summary>
+
+  Now-page only — the planner has no live clock to drive. The picker round-trips:
+  the moment you set is the moment the page then reads as "now".
+  </details>
+
+- `8.4` The clock moves on by itself.
+
+  ![shared-time.8.4](requirements/screen/cases/shared-time.8.4.png) <!-- req-gallery:8.4 -->
+
+  <details><summary>Notes</summary>
+
+  Now-page only. The plan's "now" advances a minute at the turn of the minute,
+  not a minute after the page happened to load.
+  </details>
+
+- `8.5` Both pages offer the same ticket-price ladder.
+
+  ![shared-money.8.5](requirements/screen/cases/shared-money.8.5.png) <!-- req-gallery:8.5 -->
+
+- `8.6` Prices are written the same way everywhere.
+
+  <table><thead><tr><th align="left">What is known</th><th align="left">Reads</th></tr></thead><tbody><tr><td>nothing</td><td>Price TBC</td></tr><tr><td>£0</td><td>Free</td></tr><tr><td>one band, £12</td><td>£12</td></tr><tr><td>one band, £8.50</td><td>£8.50</td></tr><tr><td>£12 to £18</td><td>£12–£18</td></tr></tbody></table> <!-- req-gallery:8.6 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered on a card by `6.6` and on a search row by `11.2`; the rule itself is
+  the table. An unknown price is never quietly written as free or as £0.
   </details>

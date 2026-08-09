@@ -13,6 +13,8 @@ async function renderScreenCase(testCase) {
     localStorage: testCase.localStorage,
     geolocation: testCase.geolocation,
     failData: testCase.failData,
+    timezone: testCase.timezone,
+    advanceableClock: testCase.advanceableClock,
   });
   try {
     const pagePath = testCase.page || "/";

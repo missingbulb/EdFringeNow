@@ -1,15 +1,33 @@
 "use strict";
 
+// The rows are the requirement; the gallery renders them into the spec and
+// verify() proves each against the shipped formatter.
+const TABLE = {
+  columns: ["What is known", "Reads"],
+  rows: [
+    ["nothing", "Price TBC"],
+    ["£0", "Free"],
+    ["one band, £12", "£12"],
+    ["one band, £8.50", "£8.50"],
+    ["£12 to £18", "£12–£18"],
+  ],
+};
+
+const SHOWS = {
+  "nothing": { priceMin: null, free: false },
+  "£0": { priceMin: 0, free: true },
+  "one band, £12": { priceMin: 12, priceMax: 12 },
+  "one band, £8.50": { priceMin: 8.5, priceMax: 8.5 },
+  "£12 to £18": { priceMin: 12, priceMax: 18 },
+};
+
 module.exports = {
-  description: "price copy: unknown → Price TBC, £0 → Free, real range → £12–£18, single band → £12, no trailing .00",
+  description: "prices are written the same way everywhere",
+  table: TABLE,
   async verify(assert) {
-    const { priceLabel, formatPounds } = await import("../../../../shared/price.js");
-    assert.equal(priceLabel({ priceMin: null, free: false }), "Price TBC");
-    assert.equal(priceLabel({ priceMin: 0, free: true }), "Free");
-    assert.equal(priceLabel({ priceMin: 12, priceMax: 18 }), "£12–£18");
-    assert.equal(priceLabel({ priceMin: 12, priceMax: 12 }), "£12");
-    assert.equal(priceLabel({ priceMin: 8.5, priceMax: 8.5 }), "£8.50");
-    assert.equal(formatPounds(12), "£12");
-    assert.equal(formatPounds(8.5), "£8.50");
+    const { priceLabel } = await import("../../../../shared/price.js");
+    for (const [known, expected] of TABLE.rows) {
+      assert.equal(priceLabel(SHOWS[known]), expected, known);
+    }
   },
 };

@@ -257,7 +257,10 @@ async function newPage(opts = {}) {
     viewport: VIEWPORTS[opts.viewport || "mobile"],
     deviceScaleFactor: 1,
     locale: LOCALE,
-    timezoneId: TIMEZONE,
+    // The device's zone. Overridable so a case can prove the product reads
+    // Edinburgh's clock rather than the device's — a context's zone is fixed at
+    // creation, so showing two zones means two pages.
+    timezoneId: opts.timezone || TIMEZONE,
     ...(geolocation
       ? { geolocation, permissions: ["geolocation"] }
       : { permissions: [] }),
@@ -268,7 +271,16 @@ async function newPage(opts = {}) {
   });
 
   const page = await context.newPage();
-  await page.clock.setFixedTime(opts.nowUtcMs || REFERENCE_NOW_UTC_MS);
+  const now = opts.nowUtcMs || REFERENCE_NOW_UTC_MS;
+  if (opts.advanceableClock) {
+    // Time still stands still, but the page's timers exist and can be wound
+    // forward deliberately (page.clock.fastForward) — how a case proves
+    // something the passage of time is supposed to change.
+    await page.clock.install({ time: now });
+    await page.clock.pauseAt(now);
+  } else {
+    await page.clock.setFixedTime(now);
+  }
   await page.addInitScript(SEEDED_RANDOM);
   // The CSS freeze can't stop Web Animations API animations (the planner's
   // FLIP board diff) — stub element.animate so every WAAPI animation lands on

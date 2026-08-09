@@ -45,6 +45,19 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   detects an animated golden and compares bytes only, since a pixel differ
   reads one still frame and would describe the wrong thing.
 
+## A requirement is a feature, not a module
+
+The spec is organised by what the product *does*, never by how the code is
+arranged. "Shared code" is not a requirement category: a rule both front-ends
+follow is one feature, and its picture shows **both** the Now page and the
+planner — a rule only half the site follows is not the feature. Those
+cross-page features sit in their own part **after** the two page-by-page
+segments, so each page reads as a whole first.
+
+Cross-page proof is ordinary: a case may navigate between the pages (or open a
+second page, when something fixed at context creation — a device timezone —
+has to differ) and stitch or animate the surfaces into one golden.
+
 ## Prefer several pictures over one coded leaf
 
 Before routing a leaf to `behavior` or `logic`, ask whether it **decomposes
@@ -60,7 +73,11 @@ Reserve the coded kinds for what genuinely has no picture:
 - **`behavior`** — a gesture's outgoing consequence (a URL built, bytes
   downloaded, storage written), or a fact the OS paints rather than the page
   (a native `title` tooltip, a cursor — neither can appear in a screenshot).
-- **`logic`** — a pure rule with no rendered surface at all.
+- **`logic`** — a pure rule with no rendered surface at all. When the rule is
+  about *how values are written*, prefer a **table** over prose: a case may
+  declare `table: { columns, rows }`, the gallery renders it into the spec, and
+  its `verify()` proves every row against the shipped code — so the table a
+  reader sees is generated evidence, not a hand-typed claim.
 
 When a leaf lands in a coded kind *because* the product makes it invisible,
 say so in its Notes and name what product change would make it visual — that
