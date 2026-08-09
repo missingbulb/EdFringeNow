@@ -75,23 +75,26 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Disclosure text: `Booking links on plans (tables, trains, stays, tours) may earn us a small commission, at no extra cost to you.` Quick Links column: `Contact Us` (mailto:support@edfringenow.com), `Privacy Policy`; Legal column: `Accessibility`, `Terms of Use`.
   </details>
 
-- `1.4` The site version is reachable by anyone: the footer's **© 2026 Missing Bulb** line carries tooltip **"EdFringeNow v\<version\>"** read from `package.json`.
+- `1.4` The site version is reachable by anyone: the footer's **© 2026 Missing Bulb** line shows a **help cursor** and carries tooltip **"EdFringeNow v\<version\>"** read from `package.json`.
 
   <details><summary>Proof</summary>
 
   🚩 _Behavior leaf._ <!-- req-gallery:1.4 -->
 
-  `#footerVersion`'s `title` attribute equals `EdFringeNow v` + the version served by `package.json`.
+  `#footerVersion`'s `title` equals `EdFringeNow v` + the version served by `package.json`, and its computed `cursor` is `help` — the cursor is what advertises the tooltip, so it is part of the requirement.
+
+  A native `title` tooltip is painted by the OS, not the page, so no screenshot can contain one; the same is true of a cursor. Making this leaf visual would mean changing the product to a real in-page tooltip element.
   </details>
 
-- `1.5` The **debug pill** never shows for a visitor whose location is in the UK or unknown; it appears (reading `debug v<version>`, with the simulated-now and move-location tools) only when geolocation reports a position **outside** the UK.
+- `1.5` The **debug pill** appears only when geolocation reports a position outside the UK.
 
-  <details><summary>Proof</summary>
+  - `1.5.1` Outside the UK, the header carries the pill reading **"debug v\<version\>"**, and the app keeps its simulated clock.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:1.5 -->
+    ![now-chrome.1.5.1](requirements/screen/cases/now-chrome.1.5.1.png) <!-- req-gallery:1.5.1 -->
 
-  In-UK fix → `#debugMenu` stays `hidden` and the app adopts the real clock. Out-of-UK fix → pill visible, app keeps its simulated clock, and `#debugNowText` reads the simulated moment (`Fri 14 Aug, 15:44 BST`).
-  </details>
+  - `1.5.2` In the UK — and when location is unknown or refused — the header carries no pill at all.
+
+    ![now-chrome.1.5.2](requirements/screen/cases/now-chrome.1.5.2.png) <!-- req-gallery:1.5.2 -->
 
 ## 2. First-run explainer
 
@@ -104,13 +107,13 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   Steps, verbatim: **Say when you next have to be somewhere.** A show, dinner, a train. / **We work out how far that leaves you.** On foot, bike, bus or taxi. / **Pick something you can make** — and still get to your next thing.
   </details>
 
-- `2.2` Dismissing the explainer (✕ or **Got it — let's go**) hides it, and it stays hidden on every later visit.
+- `2.2` Dismissing the explainer (✕ or **Got it — let's go**) hides it, and it stays hidden on every later visit — three frames: shown, dismissed, and after a reload.
 
-  <details><summary>Proof</summary>
+  ![now-intro.2.2](requirements/screen/cases/now-intro.2.2.png) <!-- req-gallery:2.2 -->
 
-  🚩 _Behavior leaf._ <!-- req-gallery:2.2 -->
+  <details><summary>Notes</summary>
 
-  After dismissal `#intro` is hidden and a reload of the page never shows it again (remembered in `localStorage`, independent of the settings snapshot).
+  The same page-top region each time. Remembered in `localStorage` under a key of its own, so clearing a stale plan never brings the explainer back.
   </details>
 
 ## 3. The next-commitment card
@@ -132,13 +135,13 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
 
   ![now-commitment.3.3](requirements/screen/cases/now-commitment.3.3.png) <!-- req-gallery:3.3 -->
 
-- `3.4` Picking a show commits it: the intake card disappears, the plan strip renders, and every open panel closes.
+- `3.4` Picking a show commits it: the panel closes, the intake card gives way to the plan — before and after.
 
-  <details><summary>Proof</summary>
+  ![now-commitment.3.4](requirements/screen/cases/now-commitment.3.4.png) <!-- req-gallery:3.4 -->
 
-  🚩 _Behavior leaf._ <!-- req-gallery:3.4 -->
+  <details><summary>Notes</summary>
 
-  After clicking a `.show-pick` row: `body.has-plan` set, `#journeyStrip` populated, `#constraintPanel` hidden.
+  The same card region before and after the pick: the open picker, then the rendered plan with no intake and no open panel.
   </details>
 
 - `3.5` Finding a typed place lists the matches under **"Which one?"** with a kind icon per hit, keeps only results around Edinburgh, and always ends with a **"Keep "\<q\>" as a note"** row.
