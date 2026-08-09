@@ -7,8 +7,10 @@ module.exports = {
   localStorage: { ...nowStorage(), ...nowSettings({ genres: [] }) },
   async drive(page) {
     await page.click(".cta-trigger");
-    await page.waitForSelector("#constraintPanel:not([hidden])");
-    await page.waitForTimeout(400); // the wheels sync on the next frame
+    // Wait for the panel's pick list to actually be built, not for a guessed
+    // number of milliseconds: the wheels sync on a later frame, and on a slow
+    // runner a fixed 400ms landed before the list existed.
+    await page.waitForSelector("#constraintPanel:not([hidden]) .show-pick");
     await page.click('.show-pick:has-text("Masala")');
     await page.waitForSelector("#journeyStrip .plan-node");
     await page.click('.show-item:has-text("A Good Time Charlie")');
