@@ -10,7 +10,7 @@ produce the overwhelm?) rather than by fame. Compiled once, refined in place.
 
 ## Key insights
 
-- Adelaide is the only real peer, and still less than half of Edinburgh: 1,648 shows to 3,649.
+- Adelaide is the only real peer, and still under 40% of Edinburgh: 1,648 shows to 4,206.
 - Avignon OFF is the closest structural twin — 1,780 open-access shows in 141 theatres inside one walled town.
 - 300+ fringes exist worldwide, but only three sell more than 250,000 tickets.
 - Edinburgh has a free official cross-festival listings API. No other festival city found has an equivalent.
@@ -30,7 +30,7 @@ Underneath that, the thing that actually generates the overwhelm is the Fringe's
 **open-access** model: anyone who finds a room and pays a registration fee is
 listed, so supply is uncapped and the city converts itself into venues. Scale
 figures for the Fringe itself live on
-[market-and-audience/](../market-and-audience/README.md) — 3,649 shows across 258
+[market-and-audience/](../market-and-audience/README.md) — 4,206 shows across 299
 venues in 2026, ~2.6m tickets in 2025.
 
 Three distinct mechanisms produce an Edinburgh-shaped city, and they matter
@@ -160,11 +160,18 @@ the tail is thin — only three sell over a quarter of a million tickets.
 
 Two findings cut against expanding, and both should be said plainly:
 
-- **Nothing is close on density.** Edinburgh's Fringe alone is ~2.2× Adelaide on
-  show count (3,649 vs 1,648, both 2026) and ~2.4× on tickets (2.6m in 2025 vs
+- **Nothing is close on density.** Edinburgh's Fringe alone is ~2.6× Adelaide on
+  show count (4,206 vs 1,648, both 2026) and ~2.4× on tickets (2.6m in 2025 vs
   1.08m in 2026 — the newest full-year figure each publishes), in a smaller, more
   walkable centre, and it overlaps five other major festivals. The overwhelm the
-  product exists to solve is genuinely worst here.
+  product exists to solve is genuinely worst here. (Corrected 2026-08-09: the
+  Edinburgh side of this comparison was 3,649, the 4 June programme-launch
+  snapshot, against Adelaide's delivered total — an unfair comparison that
+  *understated* the gap, at ~2.2×. Both sides are now delivered figures. The
+  general trap is worth carrying to every candidate on this page: **a
+  festival's launch announcement and its delivered programme are different
+  numbers**, and this page's tail is built almost entirely from launch
+  announcements.)
 - **Edinburgh is the only candidate with an official aggregation layer.** The
   Edinburgh Festivals Listings API is a free API over the official listings
   database for all **11** Edinburgh festivals, carrying over **640,000
@@ -180,6 +187,7 @@ Two findings cut against expanding, and both should be said plainly:
 
 ## Sources
 
+- [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — Edinburgh's delivered 2026 comparison figures: 4,206 shows across 299 venues.
 - [Edinburgh Festivals: What's On in 2026 (Edinburgh Festival City)](https://www.edinburghfestivalcity.com/inspiration/573-edinburgh-festivals-whats-on-in-2026)
 - [Edinburgh's summer festivals (Forever Edinburgh)](https://edinburgh.org/blog/edinburghs-summer-festivals/)
 - [Edinburgh Festivals Listings API — documentation](https://api.edinburghfestivalcity.com/documentation)
@@ -239,6 +247,13 @@ Two findings cut against expanding, and both should be said plainly:
 - **The candidates in this page's tail are unassessed on everything** — scale
   figures for Cannes, Miami Beach, Documenta, Manifesta, Melbourne, Prague,
   Dublin, Winnipeg, Orlando, Minnesota, Wellington and Camden are not yet cited.
+- **Are the tail's scale figures launch announcements or delivered totals?**
+  Raised 2026-08-09 after Edinburgh's own figure turned out to be a launch
+  snapshot ~15% short of the delivered festival. Avignon OFF, Adelaide, Perth,
+  Makhanda, Sibiu and Piccolo Spoleto are all cited here from programme-launch
+  press. If open-access festivals generally keep registering shows after launch,
+  every ranking on this page is comparing numbers taken at different moments,
+  and the whole tail is understated by an unknown amount.
 
 ## Growth log
 
@@ -259,3 +274,14 @@ Two findings cut against expanding, and both should be said plainly:
   this page's open question: no longer "is the official API a better source" but
   whether the resulting two-source shape — a listings feed plus a separate
   ticketing source — is the general case for every city or an Edinburgh accident.
+- **2026-08-09** — corrected Edinburgh's side of every comparison on this page
+  from the 4 June programme-launch snapshot (3,649 shows / 258 venues) to the
+  delivered 2026 festival (4,206 / 299), per the correction on
+  [market-and-audience/](../market-and-audience/README.md). The Adelaide density
+  ratio moves from ~2.2× to ~2.6×, so Key insight 1 is rewritten ("less than
+  half" → "under 40%") and the *Where Edinburgh is still singular* finding gets
+  stronger, not weaker. The reason the old figure was wrong is kept in the body.
+  The correction also surfaced a methodological risk that applies to this page
+  more than any other — its entire candidate tail is cited from launch
+  announcements, not delivered totals — and that is added as an open question
+  rather than assumed away.
