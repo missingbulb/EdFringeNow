@@ -18,6 +18,7 @@ import pack from "./pack.mjs";
 import rule from "./test-globs-in-step.mjs";
 import verifyShSourceDirsRule from "./verify-sh-source-dirs.mjs";
 import noStrayPackageJsonRule from "./no-stray-package-json.mjs";
+import workerRestoresMainRule from "./worker-restores-main.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -250,6 +251,89 @@ test("this repo carries no stray package.json", () => {
   assert.deepEqual(out, [], `stray package.json found:\n${out.map((f) => f.file).join("\n")}`);
 });
 
+// --- worker-restores-main: a local task worker that commits or pushes must
+// return the shared checkout to `main` before it writes ---
+
+const WORKER_PATH = ".claudinite/local/packs/edfringe/tasks/refresh-widgets/worker.sh";
+
+const guard = `current_branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$current_branch" != "main" ]; then
+  git checkout main
+fi
+`;
+
+const writes = `python3 scraper/refresh.py
+git add data
+git commit -m "Refresh"
+git push
+`;
+
+test("a worker that restores main before writing ⇒ no findings", () => {
+  const out = workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: `set -euo pipefail\n${guard}${writes}` }));
+  assert.deepEqual(out, [], `expected no findings, got ${JSON.stringify(out, null, 2)}`);
+});
+
+test("a worker that pushes with no restore at all is reported", () => {
+  // The exact regression this guards: #141 and #231, where the scheduler ran the
+  // task after `basics/baselining` had left the one shared checkout on its
+  // maintenance branch, and the bare push aborted with exit 128.
+  const out = workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: `set -euo pipefail\n${writes}` }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].rule, "edfringe-worker-restores-main");
+  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].file, WORKER_PATH);
+  assert.match(out[0].what, /without ever returning the checkout to `main`/);
+  assert.match(out[0].fix, /git rev-parse --abbrev-ref HEAD/);
+  assert.match(out[0].fix, /HEAD:main/, "the fix must warn off the refspec workaround");
+});
+
+test("a restore placed after the write is reported", () => {
+  const out = workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: `set -euo pipefail\n${writes}${guard}` }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /only after it has already committed or pushed/);
+});
+
+test("`git switch main` satisfies the guard just as `git checkout main` does", () => {
+  const swap = guard.replace("git checkout main", "git switch main");
+  assert.deepEqual(workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: `${swap}${writes}` })), []);
+});
+
+test("a restore that only appears in a comment does not satisfy the guard", () => {
+  const commented = `# Not \`git checkout main\`: see the note above.\n${writes}`;
+  const out = workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: commented }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /without ever returning the checkout to `main`/);
+});
+
+test("a read-only worker is not this check's business (relevance-first)", () => {
+  const out = workerRestoresMainRule.run(ctxOf({
+    [WORKER_PATH]: "set -euo pipefail\npython3 scraper/report.py\n",
+  }));
+  assert.deepEqual(out, []);
+});
+
+test("non-worker scripts are never flagged", () => {
+  const out = workerRestoresMainRule.run(ctxOf({
+    "scripts/verify.sh": writes,
+    ".github/workflows/prices.yml": writes,
+    ".claudinite/local/packs/edfringe/tasks/refresh-widgets/task.mjs": writes,
+  }));
+  assert.deepEqual(out, []);
+});
+
+test("this repo's real task workers all restore main before writing", () => {
+  // The live gate: every tracked file, read straight from git.
+  const files = trackedFiles();
+  const workers = files.filter((f) => /\/tasks\/[^/]+\/worker\.sh$/.test(f));
+  assert.ok(workers.length > 0, "expected this repo to ship at least one task worker");
+
+  const out = workerRestoresMainRule.run({
+    files,
+    read: (p) => (files.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
+  });
+  assert.deepEqual(out, [], `a task worker can push from the wrong branch:\n${out.map((f) => f.what).join("\n")}`);
+});
+
 test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.equal(pack.id, "edfringe");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
@@ -258,5 +342,6 @@ test("the pack manifest declares the checks and stays hand-declared", () => {
   assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(verifyShSourceDirsRule), "the check must be listed on the manifest or it never runs");
   assert.ok(pack.worldRules.includes(noStrayPackageJsonRule), "the check must be listed on the manifest or it never runs");
+  assert.ok(pack.worldRules.includes(workerRestoresMainRule), "the check must be listed on the manifest or it never runs");
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });
