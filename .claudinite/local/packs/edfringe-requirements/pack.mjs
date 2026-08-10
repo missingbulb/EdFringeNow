@@ -1,3 +1,5 @@
+import caseNoLiveDataDir from './case-no-live-data-dir.mjs';
+
 // EdFringeNow's executable-requirements harness pack: the project-specific
 // process elements the shared executable-requirements / spec-driven-product
 // packs don't carry — the real-browser (Playwright) golden harness, the frozen
@@ -14,4 +16,5 @@ export default {
   detect: null,
   marker: null,
   prose: 'RULES.md',
+  worldRules: [caseNoLiveDataDir],
 };
