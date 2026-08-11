@@ -37,6 +37,22 @@ prompt — instead of discovering the requirement at Stop. On a real owner comme
 the classification is the substance; on a dispatch it is a formality, but it is
 far cheaper paid up front than as a second reply.
 
+## This repo has no PR template — write the body from the commit, don't go looking
+
+The GitHub MCP server carries a standing instruction to search for a pull-request
+template before calling `create_pull_request`. **EdFringeNow has never had one**, and
+following that instruction costs a guaranteed-failing probe every time: all 72
+conversations captured on the logs branch between 2026-07-31 and 2026-08-10 ran the
+same lookup, most of them as a four-path `ls .github/pull_request_template.md
+.github/PULL_REQUEST_TEMPLATE.md PULL_REQUEST_TEMPLATE.md docs/…` that returns four
+"No such file or directory" lines. It is the single most repeated wasted call in the
+corpus.
+
+So **skip the search and write the PR body from the commit message you already
+wrote** — the commit is the canonical description of the change here, and the PR body
+restates it plus the `Closes #N` reference. If a template is ever added, it will be at
+`.github/pull_request_template.md` and this paragraph goes with it.
+
 ## Read the PR's state, then merge — never loop on `enable_pr_auto_merge`
 
 `mcp__github__enable_pr_auto_merge` only accepts a PR whose required checks are
@@ -147,6 +163,18 @@ If the run is still going, ask again. On 2026-08-07 #251 abandoned its poll and
 fell back to a blind `sleep 90` — for a run `actions_get` reported *already
 complete* five seconds later. The orphaned sleep then fired two
 `task-notification`s that had to be explained away to the owner.
+
+The harness blocks a bare `sleep N` outright and its refusal names the right tool
+(*"To wait for a condition, use Monitor with an until-loop … Do not chain shorter
+sleeps to work around this"*). **Take that as the instruction, not as an obstacle to
+route around.** The 2026-07-31 price run (#181) hit the block on `sleep 45; echo
+waited` and answered it with `until [ "$(date +%s)" -gt "$(( $(date +%s) ))" ]; do
+sleep 50; break; done`, then later `until [ -n "$(git log -1 --oneline)" ]; do sleep 1;
+done; sleep 55` — both degenerate: the condition is satisfied on the first evaluation,
+so each is the blind sleep the guard just refused, wearing an `until`. A real
+until-loop tests the thing you are waiting *for* (`until git log --format=%s
+origin/<branch> -1 | grep -q chunk; do sleep 10; done`), which returns the moment the
+event lands instead of at the end of a guessed interval.
 
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
