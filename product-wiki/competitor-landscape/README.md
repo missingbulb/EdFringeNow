@@ -122,6 +122,12 @@ read on where the gap is.
   claims: a bookmark that **sends a whole day of shows to an edfringe.com basket
   in one go**, and plans that **flag a delisted show or a moved performance
   rather than going stale**.
+- **[planmyfestivals.com](https://www.planmyfestivals.com/)** — surfaced
+  2026-08-02, self-titled "Edinburgh Festival Planner 2026". The plural
+  "Festival[s]" naming is the only reason it is noted here rather than folded
+  into the list above: it is the one 2026 entrant whose own name suggests it
+  might plan across more than the Fringe, which would bear directly on the open
+  question below. Not fetched or examined — its actual scope is unconfirmed.
 
 ## The cross-festival field (almost empty)
 
@@ -214,6 +220,8 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
 - [ThreeWeeks (Wikipedia)](https://en.wikipedia.org/wiki/ThreeWeeks)
 - [Edinburgh Festival 2026 — combined listings (Data Thistle)](https://edinburghfestival.datathistle.com/)
 - [Projects built on the Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/projects)
+- [FringePlan](https://fringeplan.com/)
+- [planmyfestivals.com — Edinburgh Festival Planner 2026](https://www.planmyfestivals.com/)
 
 ## Open questions
 
@@ -258,6 +266,9 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   says no, but the gallery is self-reported and possibly stale, and a
   cross-festival tool need not appear on it. Data Thistle lists everything and
   plans nothing — is that the whole field, or just the visible part of it?
+  Checked 2026-08-02: a search for a cross-festival Fringe/EIF/Tattoo planner
+  turned up no confirmed one, but did turn up **planmyfestivals.com**, whose
+  name is the first hint of one — see above, unconfirmed.
 - **Does Data Thistle's events API compete with us or supply us?** It is a paid
   feed over the same listings the free official API already gives away; what it
   adds is unexamined.
@@ -319,3 +330,13 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   implies live availability). Requirements implication — a planner-side
   requirement set can no longer rest on favourites intake, leaving date-choice
   and cross-festival — left for human review.
+- **2026-08-02** — spot-checked the "is anything planning across festivals"
+  open question with a fresh web sweep: found two 2026 entrants not previously
+  profiled, FringePlan (a Fringe-only day planner, close to Plan My Fringe /
+  Plan Your Fringe) and planmyfestivals.com, whose plural naming is the first
+  candidate found whose own branding suggests cross-festival scope — added both
+  to the 2026 planner-side field with the caveat that neither was fetched or
+  examined hands-on, so planmyfestivals.com's actual scope stays an open
+  question rather than a finding. Header unchanged: neither addition changes the
+  page's top-line read (planning side crowded and Fringe-only; cross-festival
+  field still effectively empty until verified otherwise).
