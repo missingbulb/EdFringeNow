@@ -1894,7 +1894,27 @@ function markWheelSel(el) {
 }
 function scrollWheelTo(el, v, smooth) {
   const i = Math.max(0, (el._values || []).indexOf(v));
-  el.scrollTo({ top: i * WHEEL_ITEM_H, behavior: smooth ? "smooth" : "auto" });
+  const top = i * WHEEL_ITEM_H;
+  // Positioned from state, so whatever scroll events this produces carry no
+  // new choice — see the settle handler's `_userScrolled` gate.
+  el._userScrolled = false;
+  el.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+  // A wheel that hasn't been laid out yet cannot scroll: the panel is shown and
+  // the wheels are positioned on the very next frame, so on a slow frame
+  // `scrollTo` finds no scrollable height, silently leaves scrollTop at 0, and
+  // the settle handler below reads that layout artifact back as the user
+  // picking hours[0] — moving the commitment to the current hour, where usually
+  // nothing starts, so the picker shows "No shows start exactly then" and never
+  // recovers. Same trap as the clamp-to-0 the close path already guards against,
+  // in the opening direction; re-apply once the layout exists.
+  // (A smooth scroll is still animating towards `top`, so only the instant form
+  // can be checked synchronously.)
+  if (!smooth && top && el.scrollTop !== top) {
+    requestAnimationFrame(() => {
+      if (el.scrollTop !== top) el.scrollTo({ top, behavior: "auto" });
+      markWheelSel(el);
+    });
+  }
   markWheelSel(el);
 }
 /* Keep the minute wheel's range in step with the chosen hour: only the current
@@ -1964,6 +1984,13 @@ function buildConstraintPanel() {
   populateWheel(mw, minutesForHour(state.selectedTime.slice(0, 2), NOW.minutes));
 
   [hw, mw].forEach((el) => {
+    // What makes a scroll the user's: a drag, a wheel/trackpad turn, a touch,
+    // or the arrow keys below. Assigned as on* properties (not addEventListener)
+    // so rebuilding the panel re-points them instead of stacking duplicates.
+    const touched = () => { el._userScrolled = true; };
+    el.onpointerdown = touched;
+    el.onwheel = touched;
+    el.ontouchstart = touched;
     // Read the settled value ~130 ms after scrolling stops (native snap handles
     // the visual settle; this reads it and re-runs the query).
     el.onscroll = () => {
@@ -1975,6 +2002,13 @@ function buildConstraintPanel() {
         // not the user picking hours[0]. Acting on it would wipe the very
         // commitment that closed the panel, so only read visible wheels.
         if (el.offsetParent === null) return;
+        // Same trap, general form: a scroll the user did not cause carries no
+        // choice to read. Every programmatic position (scrollWheelTo) already
+        // matches state.selectedTime, so reading one back can only ever repeat
+        // it — or, when layout clamped scrollTop to 0 before the position took,
+        // silently move the commitment to hours[0]. Only a wheel the user has
+        // actually touched since it was last positioned has something to say.
+        if (!el._userScrolled) return;
         const hh = readWheel(hw);
         // Scrolling back to the current hour re-trims the minutes on offer.
         if (el === hw) syncMinuteWheelRange(hh, true);
@@ -1985,6 +2019,7 @@ function buildConstraintPanel() {
     el.onkeydown = (e) => {
       if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
       e.preventDefault();
+      el._userScrolled = true;
       const i = wheelIndex(el) + (e.key === "ArrowDown" ? 1 : -1);
       const clamped = Math.max(0, Math.min((el._values || []).length - 1, i));
       el.scrollTo({ top: clamped * WHEEL_ITEM_H, behavior: "smooth" });
