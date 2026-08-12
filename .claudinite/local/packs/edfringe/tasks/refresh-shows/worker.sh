@@ -14,12 +14,10 @@
 # files, and commit any changes.
 #
 # This is a CATALOGUE top-up, and only that. `--recently-added LAST_SEVEN_DAYS`
-# never re-reads a show the festival hasn't touched, so it is not — and was never
-# — a source of fresh ticket status for the existing catalogue (#249). That job
-# belongs to refresh-tickets, which runs once a day during August (in the slot an
-# hour after this one) and covers every remaining date, not only today. Widening
-# this task's window would
-# duplicate that work at a much higher fetch cost.
+# never re-reads a show the festival hasn't touched, so it is not a source of
+# fresh ticket status for the existing catalogue (#249) — that job belongs to
+# refresh-tickets. Widening this task's window would duplicate that work at a
+# much higher fetch cost.
 #
 # Python: the scheduler workflow is a vendored thin shim and cannot carry a
 # `setup-python` step, so this uses the runner's own `python3` rather than the

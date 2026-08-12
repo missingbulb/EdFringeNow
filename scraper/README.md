@@ -102,9 +102,9 @@ blanks the site's prices.
 Why once, and why it is *not* on the nightly path:
 
 - **A show's price doesn't move.** Ticket *status* changes through the festival
-  (hence `refresh-tickets`) and the listing gains shows daily (hence
-  `refresh-shows`),
-  but the bands a show sells at are set when it goes on sale. Re-fetching them
+  (hence `refresh-tickets`) and the listing keeps gaining shows (hence
+  `refresh-shows`), but the bands a show sells at are set when it goes on sale.
+  Re-fetching them
   nightly would be ~3,500 API calls a day to re-learn the same numbers. (A
   performance costing *different* money from its neighbour is not the price
   moving — that is the schedule, and it is fetched once like everything else.)
@@ -165,10 +165,10 @@ Normalization rules:
   rendered by the site — is dropped. This more than halves the day payload.
 - **Ticket status** (`ts` → `ticketStatuses`) is the reliable "can I get a
   ticket" signal, not the `soldOut` flag (a show can be `soldOut:false` yet have
-  no online allocation). Because it changes through the day, the
-  `refresh-tickets` scheduled task (`refresh_ticket_status.py`) updates the `ts`
-  values for today and every remaining festival date once a day during the
-  festival — a light paged pass, no per-show queries.
+  no online allocation). Because it changes through the festival, the
+  `refresh-tickets` scheduled task (`refresh_ticket_status.py`) refreshes the
+  `ts` values for today and every remaining festival date — a light paged pass,
+  no per-show queries.
 - **Images**: the master keeps both `image` (the API's "Large" variant) and
   `smallImage` (the "Small" variant), each selected by `imageType` rather than
   list order. Every listing image lives under
@@ -230,7 +230,7 @@ as tasks under this repo's local pack, each with the shell it runs beside it:
 | Task | Runs | What it does |
 |---|---|---|
 | `refresh-shows` | daily | the `--recently-added LAST_SEVEN_DAYS` top-up above |
-| `refresh-tickets` | daily at 05:00 UTC (`daily+1h`), but only in August | `refresh_ticket_status.py` for today **and every remaining festival date** |
+| `refresh-tickets` | daily, during August only | `refresh_ticket_status.py` for today **and every remaining festival date** |
 
 Ticket **prices** are deliberately absent from that table: they are fetched once
 by hand (`fetch_prices.py`, above), not on any schedule. `refresh-shows` reads
@@ -238,19 +238,13 @@ the price cache and carries the amounts through untouched, so a daily top-up
 keeps prices without re-fetching them — and shows added after the price run
 simply have an unknown price until it is run again.
 
-`refresh-tickets` is evaluated once a day year-round and its precondition decides
-whether to act: in August it refreshes, the rest of the year it skips. It ran
-hourly through August until the churn was judged not worth the freshness — a
-festival day put up to sixteen `Refresh ticket status` commits into `main` and
-expired every browser's copy of the day file as many times, for a status that is
-a snapshot however often you take it. Its slot is an hour after `refresh-shows`'
-so availability is refreshed after the catalogue top-up that may have added the
-shows it is about, and so the two data-committing tasks never share a checkout.
-Both tasks run as plain subprocesses (no agent); a failure opens one tracking
-issue rather than passing silently.
-
-A date that needs fresher status than the daily pass gives it can be refreshed by
-hand: `python3 scraper/refresh_ticket_status.py --date 2026-08-10`, then commit
+Each task's precondition decides whether its slot acts (that is where
+`refresh-tickets`' August gate lives); the declarations under
+`.claudinite/local/packs/edfringe/tasks/` are the source of truth for when they
+run. Both run as plain subprocesses (no agent); a failure opens one tracking
+issue rather than passing silently. A date that needs fresher status than the
+scheduled pass gives it can be refreshed by hand:
+`python3 scraper/refresh_ticket_status.py --date 2026-08-10`, then commit
 `data/normalized`, `data/days` and `data/venues.json` as the task's worker does.
 
 `refresh-tickets` writes fresh statuses **into the master** and then regenerates
@@ -275,18 +269,18 @@ separate file precisely so the catalogue can sit in the top row:
 | file | kept for | why |
 |---|---|---|
 | `shows.min.json` | 4 days | 948 KB gzipped, and nothing in it changes through the day |
-| `availability.min.json` | 1 day | matches `refresh-tickets`, which rewrites it once a day; 149 KB gzipped, so re-fetching daily is cheap |
+| `availability.min.json` | 1 day | the one file that changes through the festival, and small enough that a daily re-fetch is cheap |
 | `venues.json` | 1 day | small, and its lookup lists are indexed into by the cached catalogue |
-| `days/2026-08-DD.json` | 1 hour | the now page's whole premise is availability, and a short TTL keeps a hand-run refresh reaching open tabs; deliberately shorter than the daily `refresh-tickets` pass that feeds it, since the file is small and a re-fetch of unchanged bytes costs little |
+| `days/2026-08-DD.json` | 1 hour | the now page's whole premise is fresh availability, and the file is small enough that re-fetching often costs little |
 | `descriptions.min.json` | 7 days | a show's description doesn't change mid-festival |
 
 Two invariants hold this up, and breaking either is silent:
 
 1. **`shows.min.json` must carry nothing that changes through the day.** A ticket
-   status leaking back into it would tie that 948 KB download to the ticket
-   refresh *and* freeze
-   availability for anyone holding a cached copy. `plan/lib/__tests__/hydrate.test.mjs`
-   asserts each wire performance carries only its date and start.
+   status leaking back into it would make the bulky catalogue churn with every
+   ticket refresh *and* freeze availability for anyone holding a cached copy.
+   `plan/lib/__tests__/hydrate.test.mjs` asserts each wire performance carries
+   only its date and start.
 2. **The `venues.json` lookup lists are append-only** (`extend_lookup`). A
    4-day-old catalogue is routinely decoded against a `venues.json` fetched
    today, so an entry that moved index would silently relabel shows' genres and
