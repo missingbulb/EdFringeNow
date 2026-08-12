@@ -196,12 +196,13 @@ async function init() {
  * (shared/data-cache.js).
  *
  * The day file gets an HOUR, not a day, and the reason is this page's whole
- * premise: it answers "what can I get into right now", and the SOLD OUT stamps
- * it draws are refreshed hourly by the `refresh-tickets` task. A day-long reuse
- * would have been a cache that outlived its own data — a visitor returning after
- * lunch would see the morning's availability. An hour matches the refresh that
- * feeds it, so the page is never showing something staler than the pipeline can
- * make it.
+ * premise: it answers "what can I get into right now", so it should hold the
+ * freshest availability the pipeline has. `refresh-tickets` now rewrites that
+ * once a day rather than hourly, so most of these re-fetches return the bytes
+ * already cached — deliberately. The file is small, an unchanged re-fetch costs
+ * almost nothing, and the hour is what lets a hand-run refresh (or a shifted
+ * scheduler slot) reach an open tab the same day instead of the next one. A
+ * day-long TTL would have pinned this page to one snapshot per visitor.
  *
  * That still buys the reuse worth having. The url is keyed by date, so this only
  * ever concerns revisits within one day, and the common ones — a reload, a

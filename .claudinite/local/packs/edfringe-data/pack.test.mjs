@@ -123,8 +123,9 @@ test("the master's own keys (g / rm / ar / sg) are checked", () => {
 });
 
 test("the sidecar's status indices are checked against its OWN ts list", () => {
-  // Not against venues.json: the sidecar is rewritten hourly and must not depend
-  // on the lookup file having been regenerated alongside it.
+  // Not against venues.json: the sidecar is rewritten on its own by
+  // refresh-tickets and must not depend on the lookup file having been
+  // regenerated alongside it.
   const out = rule.run(ctxOf({
     "data/venues.json": LOOKUPS,
     "data/normalized/availability.min.json": {

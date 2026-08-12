@@ -1,22 +1,39 @@
-// edfringe task: refresh-tickets — the in-festival, live-ish availability refresh.
+// edfringe task: refresh-tickets — the in-festival availability refresh.
 //
 // Scope note (#249): this refreshes ticket status for today AND every remaining
 // festival date, not just today, and it writes through the master so the
 // planner's availability sidecar is regenerated too. One listing pass covers the
 // whole window — every page returns every performance of the shows on it — so
-// widening it cost nothing here; the hourly frequency below is unchanged.
+// widening it cost nothing.
 //
-// REPLACES the "Refresh today's ticket status (hourly)" workflow, deleted in the
-// same commit that added this file. That workflow hand-spelled SIXTEEN cron lines to get
+// ONCE A DAY, not hourly. It ran hourly through August until the churn was
+// judged not worth the freshness: every firing that moved a single status
+// rewrote `availability.min.json` and committed it, so a festival day put up to
+// sixteen commits into the default branch's history and expired every browser's
+// copy of the day file sixteen times over — for data that is already a snapshot
+// by the time anyone reads it. Daily keeps the same freshness *shape* (a
+// morning snapshot the site serves all day) at a sixteenth of the commits.
+//
+// `daily+1h`, not plain `daily`, for two reasons: the anchor slot (04:00 UTC) is
+// `refresh-shows`, and availability should be refreshed AFTER the catalogue
+// top-up that may have added the shows it is about; and it keeps the repo's two
+// data-committing tasks in separate scheduler runs rather than sharing one
+// checkout, which is the arrangement worker.sh's branch guard exists to survive.
+// So the pass lands at 05:00 UTC — 06:00 Edinburgh, before the day's audience
+// looks at it.
+//
+// This started life as the "Refresh today's ticket status (hourly)" workflow,
+// deleted when this file was added. That workflow hand-spelled SIXTEEN cron lines to get
 // "hourly during August, 08:00–23:00 Edinburgh time, on a jittered minute":
 // `9 7 * 8 *`, `12 8 * 8 *`, `7 9 * 8 *`, … `8 22 * 8 *`. The Claudinite
-// scheduler is now the repo's only cron, and the migration rule for a cron whose
-// shape has no frequency token is to declare the frequency and put the
-// irregularity in the PRECONDITION: the seven cron tokens say *when to evaluate*,
-// the precondition says *whether to act*. So this is `frequency: 'hourly'` with
-// an August / 08:00–23:00-Edinburgh gate below. The hand-rolled minute jitter is
-// dropped outright — the repo's hashed scheduler minute (:49) already staggers
-// this repo against the rest of the fleet, which is all the jitter was for.
+// scheduler is now the repo's only cron, and the migration rule is to declare
+// the frequency and put any irregularity in the PRECONDITION: the schedule says
+// *when to evaluate*, the precondition says *whether to act*. The daily hours
+// gate is gone with the hourly cadence — a once-a-day slot has exactly one
+// evaluation to spend, and an 08:00–23:59 window would reject the 06:00 one
+// every time, silencing the task outright. What remains is the August gate,
+// which is the part that was ever about the data: ticket status only moves while
+// the festival is on.
 //
 // `agent_model: 'none'` — the whole job is deterministic, so there is no agent
 // and no dispatch issue: the scheduler runs `prework` as a subprocess
@@ -27,11 +44,8 @@
 // exported beside the declaration so the window is unit-tested directly
 // (window.test.mjs) rather than only reasoned about.
 
-// August, and the local hours the retired crons covered. The old lines fired at
-// UTC hours 7…22 inclusive — sixteen firings — which is local 08:xx…23:xx.
+// The only calendar gate left: the festival month, read on the Edinburgh clock.
 export const FESTIVAL_MONTH = 8;
-export const FIRST_LOCAL_HOUR = 8;
-export const LAST_LOCAL_HOUR = 23;
 
 // Europe/London is UTC+1 for the ENTIRE window, so the conversion is a fixed
 // one-hour shift and needs no timezone database. British Summer Time runs from
@@ -40,9 +54,11 @@ export const LAST_LOCAL_HOUR = 23;
 // anywhere near this window, and any instant whose Edinburgh wall clock reads
 // August is necessarily under BST. (Instants that shift into any other month are
 // rejected by the month test regardless, so the offset cannot matter there.)
-// This is the correction the port had to get right: the scheduler's slot math is
-// UTC, and reading the UTC hour as if it were local would shift the whole
-// festival window an hour early.
+// The scheduler's slot math is UTC, so this shift is what decides the month at
+// the two instants where UTC and Edinburgh disagree about it — 23:xx UTC on 31
+// July and on 31 August, which are already the 1st locally. The daily slot never
+// lands there, but the gate is a pure function of any instant and is tested as
+// one, so it reads the local clock rather than relying on where the slot falls.
 const BST_OFFSET_MS = 60 * 60 * 1000;
 
 // The Edinburgh wall-clock month (1–12) and hour (0–23) at UTC instant `now`.
@@ -58,18 +74,15 @@ export function ticketWindow(now) {
   if (month !== FESTIVAL_MONTH) {
     return { run: false, reason: `outside the festival — ${clock}; ticket status only moves during August` };
   }
-  // The upper bound is the last hour of the day, so it excludes nothing a
-  // 0–23 hour could be; it is stated so the window's intent survives an edit.
-  if (hour < FIRST_LOCAL_HOUR || hour > LAST_LOCAL_HOUR) {
-    return { run: false, reason: `outside the daily window — ${clock}; the box office moves between ${FIRST_LOCAL_HOUR}:00 and ${LAST_LOCAL_HOUR}:59` };
-  }
-  return { run: true, reason: `in-festival and in-window — ${clock}` };
+  // No hour gate: the cadence is once a day, so the hour is whatever the slot is
+  // and gating on it could only ever reject the single evaluation the day gets.
+  return { run: true, reason: `in-festival — ${clock}; refreshing the day's ticket status` };
 }
 
 export default {
   id: 'refresh-tickets',
-  frequency: 'hourly',             // evaluate every hour; the precondition decides whether to act
-  precondition_signals: [],        // the gate is the calendar and the clock, not repo state
+  frequency: 'daily+1h',           // 05:00 UTC — an hour after refresh-shows' anchor slot; the precondition decides whether to act
+  precondition_signals: [],        // the gate is the calendar, not repo state
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits today's ticket statuses straight to the default branch, as the workflow did
   agent_instructions: 'worker.sh', // vestigial for an agentless task; the real work is the command below

@@ -10,9 +10,9 @@
 # that to one open `needs-human` issue (the old job's `report-failure` twin).
 #
 # It only reaches here when task.mjs's precondition says the Edinburgh clock is in
-# August, between 08:00 and 23:59 — that gate is the whole of the retired
-# workflow's sixteen cron lines. The script itself stays a no-op on any date with
-# no day file, so a mis-timed run costs nothing.
+# August — the whole gate, now that the cadence is once a day rather than the
+# retired workflow's sixteen cron lines. The script itself stays a no-op on any
+# date with no day file, so a mis-timed run costs nothing.
 #
 # Python: the scheduler workflow is a vendored thin shim and cannot carry a
 # `setup-python` step, so this uses the runner's own `python3` rather than the
@@ -53,16 +53,16 @@ git config user.email "github-actions[bot]@users.noreply.github.com"
 # `data/normalized` is what makes this reach the planner at all: the script now
 # writes fresh statuses through the master and regenerates from it, so the file
 # the planner actually loads (availability.min.json) is in this commit. Staging
-# only the day files — as this did until #249 — meant the hourly refresh
-# succeeded every hour and changed nothing the planner could see.
+# only the day files — as this did until #249 — meant the refresh succeeded on
+# every firing and changed nothing the planner could see.
 #
 # The bulky catalogue is staged too but will not normally appear in the diff:
 # it carries no ticket status any more, so regenerating it over an unchanged
 # master reproduces it byte-for-byte. That is deliberate — a catalogue that
-# stopped churning hourly is what lets the browser cache it for days.
+# does not churn with ticket status is what lets the browser cache it for days.
 git add data/normalized data/days data/venues.json
 if git diff --staged --quiet; then
-  echo "No ticket-status changes this hour."
+  echo "No ticket-status changes today."
 else
   # Not "today's" any more: the refresh covers today through the end of the run
   # (#249), so the old subject would have understated every commit it made.

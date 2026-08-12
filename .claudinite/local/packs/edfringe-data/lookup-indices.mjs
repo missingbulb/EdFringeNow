@@ -45,7 +45,7 @@ const rule = {
       ['ts', 'ticketStatuses', true],
     ];
     // shows.min.json's shorter keys, same lists. No ticket status here: it moved
-    // to availability.min.json so the catalogue could stop changing hourly (#249),
+    // to availability.min.json so the catalogue could stop changing with it (#249),
     // and it is checked separately below against that file's own status list.
     const masterFields = [
       ['g', 'genres', false],
@@ -134,9 +134,10 @@ const rule = {
     }
 
     // The availability sidecar indexes into its OWN `ts` list, not venues.json —
-    // it is rewritten hourly and must not depend on the lookup file having been
-    // regenerated in the same breath. Same failure mode, though: a status index
-    // the list no longer has relabels a performance's availability silently.
+    // it is rewritten by refresh-tickets on its own and must not depend on the
+    // lookup file having been regenerated in the same breath. Same failure mode,
+    // though: a status index the list no longer has relabels a performance's
+    // availability silently.
     const availText = ctx.files.includes(AVAILABILITY) ? ctx.read(AVAILABILITY) : null;
     if (availText !== null) {
       let sidecar;

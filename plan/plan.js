@@ -51,14 +51,16 @@ const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug →
  *  - the catalogue is the bulkiest blocking download (3.0 MB, 948 KB gzipped)
  *    and now carries nothing that changes through the day, so four days of
  *    reuse costs a returning visitor only the shows added since;
- *  - availability moves hourly, so a day is the most it can be trusted — and at
- *    149 KB gzipped that daily re-download is a sixth of what re-fetching the
- *    catalogue with it would have cost;
+ *  - availability is refreshed once a day by `refresh-tickets`, so a day is
+ *    exactly what it can be trusted for — and at 149 KB gzipped that daily
+ *    re-download is a sixth of what re-fetching the catalogue with it would
+ *    have cost;
  *  - venues.json is small and its lookup lists are append-only, so refetching
  *    it daily keeps it at least as new as any cached catalogue that indexes
  *    into it;
- *  - (the now page holds its day file for an hour, not a day — it draws live
- *    SOLD OUT stamps, so it tracks the hourly refresh; see js/app.js);
+ *  - (the now page holds its day file for an hour, not a day — it draws SOLD
+ *    OUT stamps and wants the freshest copy going, even though the refresh
+ *    behind them is daily; see js/app.js);
  *  - descriptions are effectively immutable, so a week means a returning
  *    visitor pays for them once. */
 const CATALOGUE_TTL_MS = 4 * DAY_MS;

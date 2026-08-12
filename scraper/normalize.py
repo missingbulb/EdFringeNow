@@ -27,9 +27,9 @@ emits the site's data layers:
   data/normalized/availability.min.json
                                per-performance ticket status, split OUT of the
                                catalogue above precisely because it is the one
-                               thing that moves hourly. Self-contained (it carries
-                               its own status list and indexes into nothing), so
-                               the hourly refresh rewrites this file alone and
+                               thing that moves during the festival. Self-contained
+                               (it carries its own status list and indexes into
+                               nothing), so the daily refresh rewrites this file alone and
                                every other artifact stays untouched. 149 KB
                                gzipped against the catalogue's 948 KB, which is
                                the point: a returning visitor re-downloads
@@ -926,9 +926,9 @@ def build_availability(master: list[dict]) -> dict:
         refetch rather than join them.
 
       * `ts` — this file's OWN ticket-status list. Unlike the day files and the
-        catalogue, the sidecar indexes into nothing external: it is rewritten
-        hourly and must not depend on venues.json having been refetched in the
-        same breath.
+        catalogue, the sidecar indexes into nothing external: the ticket refresh
+        rewrites it alone, and it must not depend on venues.json having been
+        refetched in the same breath.
       * `a`  — {show id: {performance key: index into `ts`}}. Performances with
         no status at all are omitted rather than mapped to -1; the client reads a
         missing entry as "unknown", which is what it is.
@@ -1037,7 +1037,7 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
 
     Every output is a pure function of the master, the venue map and the price
     cache, so re-running it over an unchanged master rewrites every file
-    byte-for-byte identically. The hourly ticket refresh leans on exactly that:
+    byte-for-byte identically. The daily ticket refresh leans on exactly that:
     it touches the master's statuses and calls this, and only the files that
     actually carry a status come back changed.
     """
@@ -1075,8 +1075,8 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     age_ix = {a: i for i, a in enumerate(age_restrictions)}
 
     # Compact planner payload (packed against the lookups just written), and the
-    # two things it deliberately leaves behind: the availability that moves
-    # hourly, and the descriptions that are too bulky to block on.
+    # two things it deliberately leaves behind: the availability that the daily
+    # ticket refresh rewrites, and the descriptions too bulky to block on.
     write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
                                               age_ix, venues))
     write_json(availability_path, build_availability(master))
