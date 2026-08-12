@@ -239,10 +239,9 @@ keeps prices without re-fetching them — and shows added after the price run
 simply have an unknown price until it is run again.
 
 Each task's precondition decides whether its slot acts (that is where
-`refresh-tickets`' August gate lives); the declarations under
-`.claudinite/local/packs/edfringe/tasks/` are the source of truth for when they
-run. Both run as plain subprocesses (no agent); a failure opens one tracking
-issue rather than passing silently. A date that needs fresher status than the
+`refresh-tickets`' August gate lives); the task declarations themselves are the
+source of truth for when they run. Both run as plain subprocesses (no agent); a
+failure opens one tracking issue rather than passing silently. A date that needs fresher status than the
 scheduled pass gives it can be refreshed by hand:
 `python3 scraper/refresh_ticket_status.py --date 2026-08-10`, then commit
 `data/normalized`, `data/days` and `data/venues.json` as the task's worker does.
