@@ -202,9 +202,10 @@ silently:
   dropped, even once the master stops using them.
 - **`shows.min.json` carries nothing that changes through the day.** Ticket
   status lives in `availability.min.json` (its own status list, indexing into
-  nothing, so the hourly refresh can rewrite it alone). Putting a status back in
-  the catalogue would restart its hourly churn *and* freeze availability for
-  anyone holding a cached copy — the bug in #249, re-created from the other end.
+  nothing, so `refresh-tickets` can rewrite it alone). Putting a status back in
+  the catalogue would tie that bulky download to the ticket refresh *and*
+  freeze availability for anyone holding a cached copy — the bug in #249,
+  re-created from the other end.
   `hydrate.test.mjs` asserts each wire performance carries only `d` and `s`.
 
 The same three-way move applies to plain (non-indexed) wire keys such as the

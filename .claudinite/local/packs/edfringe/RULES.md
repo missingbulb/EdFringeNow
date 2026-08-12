@@ -176,6 +176,31 @@ until-loop tests the thing you are waiting *for* (`until git log --format=%s
 origin/<branch> -1 | grep -q chunk; do sleep 10; done`), which returns the moment the
 event lands instead of at the end of a guessed interval.
 
+## A comment names its neighbour, never the neighbour's specifics
+
+When a comment refers to another task, job, or file, do not restate that
+neighbour's specifics — not its cadence, not its file locations (beyond an
+artifact the reader genuinely needs), not sizes, not the reasoning behind how it
+works, and not the history of how it got that way. Write "the periodic refresh"
+and move on; the neighbour's own declaration is the single home of its details,
+and every specific repeated elsewhere is a claim that silently drifts when the
+neighbour changes.
+
+This sharpens the canon's separation-of-concerns rule (A never re-spells how B
+does its job) with what this repo actually paid: changing one task's cadence
+from hourly to daily forced comment edits across a dozen files — README tables,
+Python module docs, client cache comments, check comments — because each had
+copied "hourly" instead of saying "periodically". The impulse behind the copying
+is wanting comments to be precise; resist it — precision about someone else's
+implementation is exactly the precision that rots. History and change reasoning
+belong in commit messages and issues, never in the comment.
+
+The litmus test for any tech detail in a comment: **if this detail changes, does
+this site actually care?** The now page does not care *how often* the data
+behind it refreshes, only that it wants the freshest copy — so its comment has
+no business saying "hourly". A detail that would change without this code
+changing is someone else's detail; leave it out.
+
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)

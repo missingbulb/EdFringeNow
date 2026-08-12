@@ -25,7 +25,7 @@ const OUTCOMES = ["none", "open-pr", "merged-pr"];
 
 const DECLARED = [
   ["refresh-shows", refreshShows, "daily"],
-  ["refresh-tickets", refreshTickets, "hourly"],
+  ["refresh-tickets", refreshTickets, "daily+1h"],
 ];
 
 for (const [dir, decl, frequency] of DECLARED) {

@@ -188,8 +188,8 @@ test("soldOut comes from the sparse `o` map, per performance", () => {
 
 test("the shipped catalogue carries no availability of its own", () => {
   // The whole four-day cache rests on this: if a ticket status ever leaks back
-  // into shows.min.json, that file starts changing hourly again and a cached
-  // copy starts freezing availability.
+  // into shows.min.json, that bulky file starts churning with every ticket
+  // refresh and a cached copy starts freezing availability.
   for (const rec of wire) {
     for (const p of rec.p || []) {
       assert.deepEqual(Object.keys(p).sort(), ["d", "s"],

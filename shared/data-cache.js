@@ -7,7 +7,7 @@
  *
  *   - the catalogue the planner searches turns over rarely and is the bulkiest
  *     blocking download, so it is held for days;
- *   - ticket availability moves hourly and is held for a day;
+ *   - ticket availability changes through the festival and is held for a day;
  *   - descriptions are effectively immutable and are held for a week.
  *
  * Payloads go into the Cache Storage API rather than localStorage, whose ~5 MB

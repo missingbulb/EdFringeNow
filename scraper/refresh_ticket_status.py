@@ -22,13 +22,14 @@ Two things this deliberately does NOT do, both of which it used to (see #249):
     out of step with the others again.
 
 Light by design: a single paged pass over the listing, no `performancePrices`
-calls. Runs hourly during August as the `refresh-tickets` scheduled task; a no-op
-on any date outside the festival.
+calls. Runs as the `refresh-tickets` scheduled task; a no-op on any date outside
+the festival. Run it by hand (see Usage below) when a date needs fresher status
+than the scheduled pass gives it.
 
 Because the regeneration is a pure function of the master, the files that carry
 no ticket status — the catalogue above all — come back byte-for-byte identical
-and never appear in the commit. That is what lets the browser cache the 3.8 MB
-catalogue for days while still seeing availability refreshed hourly.
+and never appear in the commit. That is what lets the browser cache the bulky
+catalogue for days while still picking up refreshed availability.
 
 Usage:
     python3 scraper/refresh_ticket_status.py                 # today onward (Europe/London)
