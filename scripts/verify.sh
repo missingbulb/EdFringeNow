@@ -1,13 +1,29 @@
 #!/usr/bin/env bash
 #
-# The repo's single verification gate: unit tests, JavaScript parse-checks, and
-# Python byte-compilation. Both the pre-commit hook (.githooks/pre-commit) and
-# the pipeline's PR gate (.github/workflows/static-site-ci.yml, which runs it as
-# the test_command named in .github/site.config) run *this* script, so "green
-# locally" and "green on GitHub" mean exactly the same thing.
+# The repo's single verification gate: unit tests, JavaScript parse-checks,
+# Python byte-compilation, and the Claudinite conformance sweep. Both the
+# pre-commit hook (.githooks/pre-commit) and the pipeline's PR gate
+# (.github/workflows/static-site-ci.yml, which runs it as the test_command named
+# in .github/site.config) run *this* script.
 #
-# Fast (well under a second) and dependency-free — everything uses the node /
-# python already needed to work on the project.
+# The conformance sweep is here because it was the one CI step this script did
+# not cover, and the gap was not theoretical: a commit that passed `npm run
+# verify` went red on GitHub for a blocking `claudinite-isolation` finding, and
+# cost an extra round trip to notice and a third commit to fix. A gate you can
+# pass and still break CI is not a gate. It is the slowest step by an order of
+# magnitude, so it runs last — a syntax error should still fail in a second.
+#
+# CI runs the sweep again in its own earlier step (that workflow is vendored
+# from the static-website pack and re-vendored on refresh, so it is not ours to
+# trim). The duplicate costs CI ~9s and buys separate attribution there; the
+# point of this copy is the pre-commit and local path, where nothing ran it.
+#
+# Still NOT the whole of CI: `npm run test:ui` (the ui-requirements job),
+# scripts/build-site.sh and the assemble-site dry run are outside this script.
+# Green here means the fast lanes are green, not that GitHub will be.
+#
+# A few seconds and dependency-free — everything uses the node / python already
+# needed to work on the project.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 
@@ -32,12 +48,16 @@ step "JavaScript syntax — node --check"
 # code both import, and the scripts/ tooling. Never the vendored .claudinite
 # mount (not our code) or the plan/design/ mock (HTML).
 js_files=$(git ls-files 'js' 'plan' 'scripts' 'shared' 'product' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
-js_count=0
-for f in $js_files; do
-  node --check "$f"
-  js_count=$((js_count + 1))
-done
-echo "checked ${js_count} JavaScript file(s)"
+# `node --check` takes one file per process, and ~170 sequential node startups
+# was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
+# the cores instead; -n 1 because the flag genuinely accepts only one path.
+# xargs exits 123 if any invocation failed, which `set -e` turns into a failure.
+if [ -n "$js_files" ]; then
+  printf '%s\n' "$js_files" | xargs -P "$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 4)" -n 1 node --check
+  echo "checked $(printf '%s\n' "$js_files" | wc -l | tr -d ' ') JavaScript file(s)"
+else
+  echo "no JavaScript sources found — skipping"
+fi
 
 step "Python syntax — py_compile"
 py_files=$(git ls-files 'scraper/*.py')
@@ -60,5 +80,18 @@ if command -v python3 >/dev/null 2>&1; then
 else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
+
+step "Claudinite conformance — check_the_world.mjs"
+# The same command CI's "Conformance sweep" step runs. World scope: the rules
+# that audit repo state as it is now (the work-scope half runs from the Stop
+# hook). Blocking findings exit non-zero and fail this script; advisories print
+# and pass. `--root .` rather than letting it fall back to CLAUDE_PROJECT_DIR,
+# so the sweep always covers the tree this script already cd'd into.
+#
+# Naming a path inside the mount is the one thing claudinite-isolation forbids
+# outside the wiring files; it is excused by name in .claudinite-checks.json's
+# `accept` list, with the reason, rather than left to slip through the rule's
+# unquoted-path blind spot.
+node .claudinite/shared/engine/checks/check_the_world.mjs --root .
 
 printf '\n\033[32m✓ all checks passed\033[0m\n'
