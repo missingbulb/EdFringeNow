@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 #
-# Pre-commit gate — runs the repo's verification suite (tests + JS/Python syntax)
-# before a commit is created, so nothing red lands in history.
+# Pre-commit gate — runs the repo's verification suite (tests, JS/Python syntax,
+# and the Claudinite conformance sweep) before a commit is created, so nothing
+# red lands in history. The sweep makes this ~10s rather than ~2s; that is the
+# deliberate trade for a local gate that covers what CI blocks on.
 #
 # Enable once per clone (tracked hooks aren't active by default):
 #   git config core.hooksPath .githooks      # or: npm run setup-hooks

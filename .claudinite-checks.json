@@ -63,6 +63,11 @@
       "rule": "file-placement",
       "path": "product/requirements/",
       "reason": "the executable-requirements layout is a framework contract: cases live in <kind>/cases/ and the harness in shared/, so every case's reach to shared/ and to the shipped modules under js/, plan/ and shared/ is fixed by the pack's layout standard, not a placement choice"
+    },
+    {
+      "rule": "claudinite-isolation",
+      "path": "scripts/verify.sh",
+      "reason": "the repo's one verification gate invokes the world sweep (engine/checks/check_the_world.mjs) so that passing it locally means what passing CI means — a commit that passed verify and went red on CI for a blocking conformance finding is what prompted this. Not the coupling the rule guards against: no canon internals are imported and nothing is inlined, it is the same documented CLI entry point .github/workflows/ already spells under the rule's own carve-out. A canon rename of that one path breaks the workflow and this script identically, and the fix is the same one line"
     }
   ],
   "maintenance": {
