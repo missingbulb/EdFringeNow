@@ -227,4 +227,49 @@ A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
 check catches an omission.
 
+## `npm run verify` is not the CI gate — run the conformance sweep before you push
+
+`scripts/verify.sh` is the repo's **test** gate: unit tests, `node --check`, Python
+byte-compile, the normalizer selftest. Its own header claims that "green locally" and
+"green on GitHub" mean exactly the same thing. **They don't.**
+`.github/workflows/static-site-ci.yml` runs a *separate, earlier* step —
+`node .claudinite/shared/engine/checks/check_the_world.mjs` — and that sweep is what fails
+a PR on a Claudinite conformance rule, none of which `verify.sh` knows about.
+
+So before pushing, run **both**:
+
+```
+npm run verify && node .claudinite/shared/engine/checks/check_the_world.mjs
+```
+
+The gap is not theoretical and it is not cheap. On 2026-08-12 the second commit of PR #340
+(`4894bc2`) passed `npm run verify` locally and red-flagged CI on `claudinite-isolation` —
+a README sentence had begun pointing at `.claudinite/local/packs/edfringe/tasks/`, and that
+check bars a consumer file from naming any path inside the mount. Nobody noticed until the
+owner said "the Ci is failing"; the fix cost a third commit (`f753266`), a round of
+`actions_list` archaeology, and the owner's attention. The trap is generic — the sweep
+covers file placement, isolation and the rest — so treat a green `verify` as *necessary*,
+never sufficient.
+
+(The two most likely ways to trip `claudinite-isolation`: a doc or comment that cites a
+path under `.claudinite/`, and a "helpful" pointer to a task declaration. Name the thing,
+not its path — which is the same instinct the comment rule above asks for.)
+
+## CI's uploaded artifacts are unreachable from here — reproduce the visual failure locally
+
+When a `ui-requirements` run fails, the impulse is to download its artifact and look at the
+`.diff.png`. **You can't.** GitHub serves Actions artifacts from
+`*.blob.core.windows.net`, which the agent proxy denies — `curl` dies with
+`(56) CONNECT tunnel failed, response 403`, exactly like any other non-allowlisted host, and
+`$HTTPS_PROXY/__agentproxy/status` will confirm it is a policy denial rather than an outage.
+There is no flag, no header and no re-probe that changes this.
+
+Reproduce the case locally instead: the visual harness writes
+`shared/.artifacts/<case>.actual.png` and `.diff.png` on your own machine, which is the same
+evidence and better — you can re-run it, load the CPU, and re-render as many times as the
+flake needs. On 2026-08-11 a session chasing two `ui-requirements` failures burned the
+artifact fetch, moved on, then came back ~5 minutes later to re-probe the proxy for the same
+image; the local re-run it eventually did is what actually found the bug (a `scrollTop`
+readback clamped to 0 on a cold render). Go there first.
+
 ## `.claudinite/shared/` is generated output — never hand-resolve its conflicts, always take the fresher version
