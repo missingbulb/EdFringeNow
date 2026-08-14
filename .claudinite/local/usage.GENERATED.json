@@ -1,52 +1,8 @@
 {
   "version": 1,
-  "foldedThrough": "2026-08-12",
-  "runsFoldedThrough": "2026-08-13T03:16:22Z",
+  "foldedThrough": "2026-08-13",
+  "runsFoldedThrough": "2026-08-14T03:13:23Z",
   "days": {
-    "2026-08-03": {
-      "captures": 1,
-      "merges": 1,
-      "sessions": 1,
-      "userMessages": 0,
-      "userCommands": 0,
-      "skillLoads": {},
-      "checks": {
-        "work": {
-          "runs": 1,
-          "failures": 1,
-          "errors": 0,
-          "blocking": 2,
-          "advisory": 0,
-          "ciRuns": 0,
-          "ciFailures": 0
-        },
-        "world": {
-          "runs": 2,
-          "failures": 0,
-          "errors": 0,
-          "blocking": 0,
-          "advisory": 2,
-          "ciRuns": 0,
-          "ciFailures": 0
-        }
-      },
-      "checkFindings": {
-        "comment-classification": {
-          "blocking": 1,
-          "advisory": 0
-        },
-        "file-placement": {
-          "blocking": 0,
-          "advisory": 2
-        },
-        "task-lifecycle": {
-          "blocking": 1,
-          "advisory": 0
-        }
-      },
-      "tasks": {},
-      "taskExec": {}
-    },
     "2026-08-04": {
       "captures": 2,
       "merges": 1,
@@ -919,27 +875,50 @@
       }
     },
     "2026-08-13": {
-      "captures": 1,
-      "merges": 1,
-      "sessions": 1,
-      "userMessages": 0,
+      "captures": 3,
+      "merges": 2,
+      "sessions": 3,
+      "userMessages": 4,
       "userCommands": 0,
-      "skillLoads": {},
+      "skillLoads": {
+        "merge-to-main": 1
+      },
       "checks": {
+        "work": {
+          "runs": 5,
+          "failures": 5,
+          "errors": 0,
+          "blocking": 5,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
         "world": {
-          "runs": 1,
+          "runs": 6,
           "failures": 0,
           "errors": 0,
           "blocking": 0,
-          "advisory": 5,
+          "advisory": 30,
           "ciRuns": 0,
           "ciFailures": 0
         }
       },
       "checkFindings": {
+        "comment-classification": {
+          "blocking": 1,
+          "advisory": 0
+        },
+        "feature-requirements-first": {
+          "blocking": 4,
+          "advisory": 0
+        },
         "file-placement": {
           "blocking": 0,
-          "advisory": 1
+          "advisory": 13
+        },
+        "rules-line-length": {
+          "blocking": 0,
+          "advisory": 6
         }
       },
       "tasks": {
@@ -950,9 +929,126 @@
           "failed": 0,
           "deferred": 0
         },
-        "basics/update": {
+        "basics/task-janitor": {
           "agent": 0,
           "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "basics/update": {
+          "agent": 1,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "edfringe/refresh-shows": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "edfringe/refresh-tickets": {
+          "agent": 0,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 1,
+          "deferred": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "agent": 1,
+          "prework": 0,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "grow_with_claudinite/usage-fold": {
+          "agent": 0,
+          "prework": 1,
+          "skipped": 0,
+          "failed": 0,
+          "deferred": 0
+        },
+        "tidy-repo/tidy-issues": {
+          "agent": 0,
+          "prework": 0,
+          "skipped": 1,
+          "failed": 0,
+          "deferred": 0
+        }
+      },
+      "taskExec": {
+        "basics/update": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        },
+        "grow_with_claudinite/growth-extract": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        }
+      }
+    },
+    "2026-08-14": {
+      "captures": 3,
+      "merges": 3,
+      "sessions": 2,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {
+        "claudinite:executor": 1
+      },
+      "checks": {
+        "work": {
+          "runs": 9,
+          "failures": 6,
+          "errors": 0,
+          "blocking": 8,
+          "advisory": 0,
+          "ciRuns": 0,
+          "ciFailures": 0
+        },
+        "world": {
+          "runs": 2,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 10,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "comment-classification": {
+          "blocking": 2,
+          "advisory": 0
+        },
+        "feature-requirements-first": {
+          "blocking": 4,
+          "advisory": 0
+        },
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 5
+        },
+        "rules-line-length": {
+          "blocking": 0,
+          "advisory": 2
+        },
+        "task-lifecycle": {
+          "blocking": 2,
+          "advisory": 0
+        }
+      },
+      "tasks": {
+        "basics/update": {
+          "agent": 1,
+          "prework": 0,
           "skipped": 0,
           "failed": 0,
           "deferred": 0
@@ -966,6 +1062,12 @@
         }
       },
       "taskExec": {
+        "basics/update": {
+          "success": 1,
+          "failed": 1,
+          "task-gone": 0,
+          "invalid": 0
+        },
         "grow_with_claudinite/growth-extract": {
           "success": 1,
           "failed": 0,
@@ -1253,32 +1355,32 @@
       }
     },
     "2026-W33": {
-      "days": 3,
-      "captures": 9,
-      "merges": 9,
-      "sessionDays": 9,
-      "userMessages": 6,
+      "days": 4,
+      "captures": 12,
+      "merges": 11,
+      "sessionDays": 12,
+      "userMessages": 10,
       "userCommands": 1,
       "skillLoads": {
-        "merge-to-main": 2,
+        "merge-to-main": 3,
         "single-issue-triage": 1
       },
       "checks": {
         "work": {
-          "runs": 14,
-          "failures": 5,
+          "runs": 19,
+          "failures": 10,
           "errors": 0,
-          "blocking": 7,
+          "blocking": 12,
           "advisory": 0,
           "ciRuns": 0,
           "ciFailures": 0
         },
         "world": {
-          "runs": 5,
+          "runs": 11,
           "failures": 1,
           "errors": 0,
           "blocking": 1,
-          "advisory": 15,
+          "advisory": 45,
           "ciRuns": 1,
           "ciFailures": 1
         }
@@ -1289,12 +1391,20 @@
           "advisory": 0
         },
         "comment-classification": {
-          "blocking": 5,
+          "blocking": 6,
+          "advisory": 0
+        },
+        "feature-requirements-first": {
+          "blocking": 4,
           "advisory": 0
         },
         "file-placement": {
           "blocking": 0,
-          "advisory": 12
+          "advisory": 25
+        },
+        "rules-line-length": {
+          "blocking": 0,
+          "advisory": 6
         },
         "task-lifecycle": {
           "blocking": 2,
@@ -1304,28 +1414,28 @@
       "tasks": {
         "basics/baselining": {
           "agent": 2,
-          "prework": 3,
+          "prework": 4,
           "skipped": 0,
           "failed": 0,
           "deferred": 0
         },
         "basics/task-janitor": {
           "agent": 0,
-          "prework": 3,
+          "prework": 4,
           "skipped": 0,
           "failed": 0,
           "deferred": 0
         },
         "basics/update": {
-          "agent": 0,
-          "prework": 1,
+          "agent": 1,
+          "prework": 2,
           "skipped": 0,
           "failed": 0,
           "deferred": 0
         },
         "edfringe/refresh-shows": {
           "agent": 0,
-          "prework": 1,
+          "prework": 2,
           "skipped": 0,
           "failed": 2,
           "deferred": 0
@@ -1334,11 +1444,11 @@
           "agent": 0,
           "prework": 0,
           "skipped": 14,
-          "failed": 31,
+          "failed": 32,
           "deferred": 0
         },
         "grow_with_claudinite/growth-extract": {
-          "agent": 1,
+          "agent": 2,
           "prework": 0,
           "skipped": 0,
           "failed": 0,
@@ -1346,7 +1456,7 @@
         },
         "grow_with_claudinite/usage-fold": {
           "agent": 0,
-          "prework": 3,
+          "prework": 4,
           "skipped": 0,
           "failed": 0,
           "deferred": 0
@@ -1354,7 +1464,7 @@
         "tidy-repo/tidy-issues": {
           "agent": 2,
           "prework": 0,
-          "skipped": 1,
+          "skipped": 2,
           "failed": 0,
           "deferred": 0
         }
@@ -1366,8 +1476,14 @@
           "task-gone": 0,
           "invalid": 0
         },
+        "basics/update": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        },
         "grow_with_claudinite/growth-extract": {
-          "success": 2,
+          "success": 3,
           "failed": 0,
           "task-gone": 0,
           "invalid": 0
