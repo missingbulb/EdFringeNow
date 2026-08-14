@@ -37,6 +37,44 @@ prompt — instead of discovering the requirement at Stop. On a real owner comme
 the classification is the substance; on a dispatch it is a formality, but it is
 far cheaper paid up front than as a second reply.
 
+## `Comment class:` arms rules — repo tooling is never a `feature` here
+
+The class is machinery, not a label. `feature` arms `feature-requirements-first`,
+which demands a commit touching `product/requirements.md` **before** any code
+commit — and this repo's spec cannot hold a build-tooling requirement. Its scope
+is "what the site's two front-ends must render and how they must behave", and
+its coverage gate is a bijection: every backticked leaf needs exactly one case of
+kind `screen`/`behavior`/`logic`. A `verify.sh` wiring assertion is none of
+those, so adding a real leaf for it fails the gate (measured: `# fail 1`). The
+remedy the finding prescribes is simply not available.
+
+So **classify what the owner's message actually is**, and reserve `feature` for a
+change to what the two front-ends render or do. "Merge these two gates and speed
+one up" is `process-change`; "that reason is bad" is `correction`. The class
+**cannot be retracted** once declared (basics), so the first reply is the only
+place this is cheap.
+
+And when you have already mislabelled: **don't launder it.** Do not rebase a
+token spec commit in front of the code, and do not add an `accept` entry — its
+`path` would have to be `(branch)`, which disables doc-first for every future
+real feature. On 2026-08-13 a session labelled the verify/pre-commit change
+`feature`, armed the rule, and then spent ~35 minutes and three
+`AskUserQuestion` rounds — the first two rejected outright by the owner —
+offering a menu of ways out of a finding it had created by mislabelling. The
+owner's answer was "leave it red". Naming the mistake once and leaving the
+work-scope finding red is the cheap ending; the Stop hook will re-fire on it,
+and that is not an instruction to keep trying.
+
+## `npm run verify` green is not CI green — the UI lane runs elsewhere
+
+Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, so the local
+gate and the pre-commit hook now cover the conformance findings CI blocks on.
+It still does **not** cover `npm run test:ui` — the separate `ui-requirements`
+workflow, real Chromium against the committed goldens — nor `build-site.sh` or
+the assemble-site dry run. So anything that can move a rendered pixel (`js/`,
+`plan/`, `shared/`, `index.html`, the CSS, the fixtures) is unverified until
+`npm run test:ui` has been run locally, however green `verify` is.
+
 ## This repo has no PR template — write the body from the commit, don't go looking
 
 The GitHub MCP server carries a standing instruction to search for a pull-request
