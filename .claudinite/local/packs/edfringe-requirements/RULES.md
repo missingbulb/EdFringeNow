@@ -124,6 +124,16 @@ is a real finding about the UI, not just a testing limitation.
   `harness/vendor/systemfonts/` — the host's fonts cannot reach the page. A new
   emoji or script in the product or the fixtures needs that subset rebuilt
   (see the folder's README), or it renders as tofu.
+- **A red CI lane's diff image is unreachable from a session — reproduce it
+  locally.** `ui-requirements` uploads a `requirements-failure-artifacts`
+  artifact, but `download_workflow_run_artifact` hands back a
+  `*.blob.core.windows.net` URL and the egress proxy denies it at CONNECT
+  (`curl: (56) CONNECT tunnel failed, response 403`). On 2026-08-11 a session
+  burned the download and then came back ~4.5 minutes later to re-probe the
+  proxy for the same image; the golden it was chasing ended the session
+  undiagnosed. Use `get_job_logs` with a large `tail_lines` to learn *which*
+  case failed, then re-run that case locally — `npm run test:ui` writes the
+  `.actual.png` / `.diff.png` into `shared/.artifacts/` itself.
 - **A floating popup dies under a full-page screenshot** (the capture scrolls,
   and scroll dismisses tips/legends/optimizer pops). A popup-state case sets
   `viewportOnly: true` and captures the viewport crop.
