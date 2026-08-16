@@ -273,10 +273,14 @@ blurbs and belongs in the competitor page once someone actually uses them.
   festival invisible in a festival filter.
 - **Jazz & Blues event count.** Sources say "over 170 performances", "more than
   100 concerts" and "over 150 concerts" — no authoritative figure found.
-- **Cross-festival audience behaviour.** No data found on how many Fringe-goers
-  attend a second festival, or whether the two are the same crowd. The whole
-  "help people see the diversity of Edinburgh" goal rests on an unmeasured
-  assumption that they would if they knew.
+- **Cross-festival audience behaviour.** Still no *current*, Fringe-specific
+  data on how many Fringe-goers attend a second festival, or whether the two
+  are the same crowd — [market-and-audience/](../market-and-audience/README.md)
+  worked this open question 2026-08-16 and found only a 15-year-old,
+  unverifiable lead plus a forthcoming 2026 study worth watching; see that
+  page rather than duplicating the finding here. The whole "help people see
+  the diversity of Edinburgh" goal still rests on an unmeasured assumption
+  that they would attend a second festival if they knew.
 - **Non-festival seasonal has no source of truth.** If a curated places list
   ships, who maintains it and how does it stay true?
 - **Is a multi-festival product still called EdFringeNow?** A naming/brand
@@ -314,3 +318,9 @@ blurbs and belongs in the competitor page once someone actually uses them.
   [market-and-audience/](../market-and-audience/README.md), which owns them. The
   Fringe's share of the cluster moves from ~80% to ~82%, so the page's
   conclusions and its Key insights header are unchanged — only the figures moved.
+- **2026-08-16** — narrowed the cross-festival-audience open question to point
+  at [market-and-audience/](../market-and-audience/README.md), which worked it
+  this pass in full (a forthcoming 2026 Fringe-specific impact study, and why
+  the one cross-festival figure found is not trustworthy enough to cite as
+  fact) rather than duplicate the finding on both pages. No claim on this page
+  itself changed; header unchanged.

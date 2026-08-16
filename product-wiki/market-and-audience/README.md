@@ -60,6 +60,20 @@ data after the festival closes, so 2026's cannot land before late August 2026.)*
 This scale is the product premise: the official programme is a catalogue that
 rewards planning ahead and overwhelms the person deciding in the moment.
 
+### A Fringe-only impact study, commissioned but not yet published
+
+Every independent audience study found so far — including the ETAG/Festivals
+Edinburgh impact studies from 2011 and 2015/16 — measured **all** the Edinburgh
+festivals together, never the Fringe on its own. That changes in 2026: the
+University of Glasgow announced an AHRC-funded study, led by Professor Murray
+Pittock, examining the Fringe's *own* economic and social impact specifically —
+jobs, businesses, tourism and the longer-term value of careers that start at the
+festival. Its announcement is also the first source found here to give an
+attendee headcount distinct from ticket volume: **~750,000 attendees** issuing
+the 2025 season's 2.6m tickets and supporting an estimated **3,000 jobs** —
+consistent with "two thirds buy just one ticket" above (repeat local attendance
+plausibly accounts for the gap between attendee and ticket counts).
+
 ### The Fringe is not all of August
 
 The page's scale figures — and the product built on them — cover one festival.
@@ -204,6 +218,10 @@ segmentation for either crowd remains an open question.
 - [Marketing at the Fringe: Everyone Has Theories. No One Has Data. (Danielle Solof)](https://www.daniellesolof.com/home/2025/10/23/marketing-at-the-fringe-everyone-has-theories-no-one-has-data)
 - [3,000 Shows, So Little Time! How to Choose (Playbill)](https://playbill.com/article/3-000-shows-so-little-time-how-to-pick-what-to-see-at-the-edinburgh-festival-fringe)
 - [How to choose which shows to see at the Fringe (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/how-to-choose-which-shows-to-see-at-the-edinburgh-festival-fringe/)
+- [Study to examine economic and social impact of Edinburgh Festival Fringe (University of Glasgow)](https://www.gla.ac.uk/news/headline_1266521_en.html) — Prof Murray Pittock's AHRC-funded study; ~750,000 attendees, 2.6m tickets in 2025, ~3,000 jobs supported; the first Fringe-only (not whole-cluster) impact study found.
+- [Study to examine economic and social impact of Edinburgh Festival Fringe (The Scotsman)](https://www.scotsman.com/arts-and-culture/study-to-examine-economic-and-social-impact-of-edinburgh-festival-fringe-8555482) — independent corroboration of the announcement.
+- [Edinburgh Festivals Impact Study Technical Report, May 2011 (ETAG)](https://www.etag.org.uk/wp-content/uploads/2013/11/110520-edinburgh-festivalstechnical-report-bop_final.pdf) — read second-hand via search-engine indexing only (the domain is blocked by this environment's network egress, like every non-edfringe.com site probed on this page's sibling pages); reportedly finds substantial cross-festival attendance (figures around 50–70% depending on festival, by search-engine summary), but unverified against the primary document and now 15 years old. Cited here as a lead, not a fact — see the open question below.
+- [Edinburgh Festivals 2015 Impact Study — announcement (ETAG)](https://www.etag.org.uk/2016/08/edinburgh-festivals-2015-impact-study/) — a newer (2016) whole-cluster study, 29,273 surveyed, £280m Edinburgh / £313m Scotland economic impact, 4.5m+ combined audiences; same egress-block caveat, and the search-indexed summary found no Fringe-specific crossover breakdown in it.
 
 ## Open questions
 
@@ -241,10 +259,23 @@ segmentation for either crowd remains an open question.
   series found (guide-site figures only). If beds constrain dates more than shows
   do, "pick my best dates" optimises the wrong variable — worth evidence before
   acting on it.
-- **Do Fringe-goers attend a second festival?** No data found on cross-festival
-  attendance, or on whether the eight August audiences are one crowd or eight.
-  It matters: the case for widening the product past the Fringe currently rests
-  on an unmeasured assumption that people would go if they knew.
+- **Do Fringe-goers attend a second festival?** Narrowed 2026-08-16, not
+  answered: no *Fringe-specific* crossover figure was found with byte-verified
+  sourcing (this environment's network egress blocks every source domain that
+  might carry one). The closest lead is second-hand and imperfect: ETAG's
+  2011 and 2015/16 Edinburgh Festivals Impact Studies both measured audience
+  behaviour across **all** the Edinburgh festivals together, never the Fringe
+  specifically, and only the older one's search-indexed summary mentions a
+  cross-festival attendance figure at all (~50-70% depending on festival) —
+  unverifiable and now 15 years stale. The 2026 Pittock study (see Scale,
+  above) is the one to watch: if it surveys audiences rather than only
+  desk-modelling economic flows, it may be the first source able to answer
+  this with current, Fringe-specific data. Still matters for the same reason:
+  the case for widening the product past the Fringe rests on an unmeasured
+  assumption that people would go if they knew.
+- **When will the Pittock study publish, and what will it measure?**
+  Announced 2026 (University of Glasgow, AHRC-funded); no publication date or
+  methodology detail found. Worth a follow-up pass once it lands.
 - Refresh the ticket/audience figures once the 2026 festival's data is published.
 
 ## Growth log
@@ -296,3 +327,19 @@ segmentation for either crowd remains an open question.
   favourites-export question); no requirement touched. The superseded figures
   also propagate to festival-season and festival-cities-beyond-edinburgh, both
   corrected in the same pass.
+- **2026-08-16** — worked the "do Fringe-goers attend a second festival?" open
+  question and found a genuinely new lead rather than an answer: a University
+  of Glasgow study (Prof Murray Pittock, AHRC-funded) announced in 2026 is the
+  first impact study found that examines the Fringe on its own, rather than
+  bundled with the other Edinburgh festivals as ETAG's 2011 and 2015/16 studies
+  did — added under Scale, with the first attendee-headcount figure (~750,000,
+  distinct from the 2.6m ticket count) found in this research, plus ~3,000 jobs
+  supported. The cross-festival open question is narrowed, not closed: the only
+  cross-festival attendance figure found is second-hand (via search-engine
+  indexing, this environment's egress proxy blocking the source domain) and 15
+  years stale, so it is recorded as an unverified lead rather than a fact. New
+  open question added for when the Pittock study publishes. Spot-checked
+  competitor-landscape and festival-cities-beyond-edinburgh (the pages last
+  touched, 2026-08-11) for claims this pass's research might supersede — found
+  nothing to correct; their unreached competitor-site open questions remain
+  blocked by the same egress proxy as before, not new. No requirement touched.
