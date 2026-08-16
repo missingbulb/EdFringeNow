@@ -1,10 +1,7 @@
 import rulesIndexCurrent from './rules-index-current.mjs';
-import coreDeclared from './core-declared.mjs';
 import conformanceWorkflow from './conformance-workflow.mjs';
-import schedulerWorkflowShape from './scheduler-workflow-shape.mjs';
 import taskDeclarationShape from './task-declaration-shape.mjs';
 import taskDeclarationMatchesFolder from './task-declaration-matches-folder.mjs';
-import taskPhaseDiscipline from './task-phase-discipline.mjs';
 
 // Claudinite's own surface in a repo that runs it: the vendored mount, the
 // declaration that activates a pack, adopting Claudinite and adopting a pack,
@@ -40,20 +37,19 @@ export default {
   // required for the per-repo config rule members' own edges ride.
   requires: ['barriers'],
   worldRules: [
-    // The declaration itself, and the index the declaration produces — the two
-    // things that decide whether this member is running Claudinite at all.
-    coreDeclared,
+    // The index the declaration produces; the declaration itself is guarded by
+    // core-declared, a declared check in this pack's declared-checks.json.
     rulesIndexCurrent,
-    // The member's plumbing — the CI gate its maintenance PR merges through, and
-    // the scheduler workflow that fires its tasks. Both relevance-first: inert
-    // until the repo carries the artifact.
+    // The member's plumbing — the CI gate its maintenance PR merges through
+    // (relevance-first: inert until the repo carries the artifact). The
+    // scheduler workflow's shape rule (scheduler-workflow-shape) is a declared
+    // check in this pack's declared-checks.json.
     conformanceWorkflow,
-    schedulerWorkflowShape,
     // The scheduled-task contract (scheduled-tasks.md), likewise inert until the
-    // repo carries a tasks/<name>/task.mjs of its own.
+    // repo carries a tasks/<name>/task.mjs of its own; its third rule
+    // (task-phase-discipline) is a declared check in declared-checks.json.
     taskDeclarationShape,
     taskDeclarationMatchesFolder,
-    taskPhaseDiscipline,
   ],
   workRules: [],
   // Bootstrapping a repo, and adding a pack to one already bootstrapped. Both
