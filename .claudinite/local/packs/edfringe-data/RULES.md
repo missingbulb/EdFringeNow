@@ -19,11 +19,6 @@ Never "verify" a scraper change by reasoning about what the API probably
 returns — either have a sanctioned workflow run it, or say plainly that it is
 unverified.
 
-The egress block is a **policy boundary, not an obstacle to route around**. Do
-not create ad-hoc GitHub Actions workflows — push-triggered "probes" or
-anything else — to reach the API (or any blocked host) from an open-network
-runner: that is CI as a side channel around the session's network rules.
-
 For one-off API questions (a field's shape, an enum's value set, whether an
 operation exists at all), `scraper/SCRAPING.md` is the reference. When it falls
 short there is one legitimate source short of asking the owner:

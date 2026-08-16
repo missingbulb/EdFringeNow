@@ -20,23 +20,6 @@ got blocked, and then paid create-issue + `git commit --amend` +
 rework). Worse, by then the PR is already open, so the fix rewrites the commit
 underneath it.
 
-## A dispatched run still has to classify its trigger comment
-
-The `comment-classification` check reads the last message addressed to you and
-wants a `Comment class:` line in the reply to it. In a scheduled run that message
-is the executor prompt ("Execute the Claudinite executor: …"), not anything the
-owner wrote — but the check does not distinguish them, and it is BLOCKING at the
-Stop hook. 19 of the sessions captured across 2026-07-29…07-31 were stopped by
-exactly this finding, every one of them citing the dispatch prompt, and each paid
-an extra closing reply to clear it (the two runs where the block lands at the end
-and the cost is cleanly isolable: #183 115s, #160 121s).
-
-So **close a dispatched run's final reply with an explicit `Comment class:` line
-classifying the dispatch itself** — `process-change` for an executor/scheduled-task
-prompt — instead of discovering the requirement at Stop. On a real owner comment
-the classification is the substance; on a dispatch it is a formality, but it is
-far cheaper paid up front than as a second reply.
-
 ## `Comment class:` arms rules — repo tooling is never a `feature` here
 
 The class is machinery, not a label. `feature` arms `feature-requirements-first`,
@@ -90,31 +73,6 @@ So **skip the search and write the PR body from the commit message you already
 wrote** — the commit is the canonical description of the change here, and the PR body
 restates it plus the `Closes #N` reference. If a template is ever added, it will be at
 `.github/pull_request_template.md` and this paragraph goes with it.
-
-## Read the PR's state, then merge — never loop on `enable_pr_auto_merge`
-
-`mcp__github__enable_pr_auto_merge` only accepts a PR whose required checks are
-still **pending**. This repo's `ci.yml` runs on `pull_request` and finishes in
-well under a minute, so by the time an agent reaches the arming step the PR is
-usually already `clean` and the call errors — *"already in clean status (all
-checks passed) … you can merge directly."* That is not a failure to work around:
-take it as the answer and call `mcp__github__merge_pull_request` with `SQUASH`.
-
-The other refusal, *"in unstable status (required checks are failing)"*, is not a
-verdict either — a check that is queued, or held at the Actions approval gate,
-reads identically to one that failed. Re-read the PR
-(`mcp__github__pull_request_read`) or the run list (`mcp__github__actions_list`)
-to find out which, and never re-arm on a loop: PR #188 answered "unstable" and
-then "clean" 27s later with nothing changed in between, and PR #182 answered
-"unstable" three times across ~4 minutes before answering "clean".
-
-The cost is measured. The 2026-08-01 baselining run spent ~350s of its 765s — 4
-arm attempts, 9 `pull_request_read`s and 5 `ScheduleWakeup` polls — circling PR
-#182's merge state, and still ended without merging it; the owner merged it by
-hand the next evening. The same morning's conversation-extract run took its one
-refusal as an answer and squash-merged 22s later. Check state first, merge
-directly when it is clean, and arm auto-merge only while checks are genuinely
-pending.
 
 ## Verifying UI changes visually (the `index.html` page and everything under `plan/`)
 
@@ -277,5 +235,3 @@ so the extension is a style choice — use `.js`, matching `plan/lib/`.
 A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
 check catches an omission.
-
-## `.claudinite/shared/` is generated output — never hand-resolve its conflicts, always take the fresher version
