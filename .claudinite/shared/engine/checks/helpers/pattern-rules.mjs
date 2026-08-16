@@ -53,10 +53,16 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //   excludeFileClasses named shared file sets removed from scope (the same
 //                      class names — testFiles is the usual one)
 //   scanIgnoringComments  true = content assertions (matchLines, checkEachFile,
-//                      repoWide) read each file with its JS/TS comments blanked
+//                      repoWide, and requireIndexCoverage's whoseTextMatches)
+//                      read each file with its JS/TS comments blanked
 //                      (string-aware, line count preserved — code-scanning.mjs
 //                      stripComments), so a comment merely naming a forbidden
 //                      token never fires
+//   scanIgnoringMarkdownFences  true = content assertions read each markdown
+//                      file with its fenced code blocks blanked (line count
+//                      preserved — the view checkSections always gets), so an
+//                      example inside a fence never satisfies or trips a
+//                      pattern; non-markdown files are untouched
 //   scanTracked        true = scan every git-tracked file (mode-independent);
 //                      default is ctx.files (the run's scanned set —
 //                      tracked+untracked minus vendored, and only the changed
@@ -67,9 +73,12 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //                        trackedFileMatches               some tracked path matches
 //                        noTrackedFileMatches             no tracked path matches
 //                        exactlyOneTrackedFileMatches     exactly one tracked path matches
-//                        someTrackedFileContains          { pathMatching, text } — some
+//                        someTrackedFileContains          { pathMatching, text,
+//                                                           ignoringComments } — some
 //                                                         tracked path matching the first
 //                                                         has text matching the second
+//                                                         (ignoringComments: true reads it
+//                                                         with JS/TS comments blanked)
 //                        scanningWholeRepo                true = only under a whole-repo
 //                                                         sweep (mode 'all'), never a
 //                                                         --changed run
@@ -78,13 +87,28 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //                                                         if findings exist
 //   whenMissing        { what, fix } — fires when an exact-path scanFiles is absent
 //   maxLines           { limit, what, fix } — fires past `limit` lines, anchored there
+//   maxLineLength      { bytes, what, fix } — one finding per file whose lines
+//                      run past `bytes` (UTF-8 bytes, so wide characters count
+//                      what they cost), anchored at the first over-long line;
+//                      {count}/{longest}/{bytes} interpolate
 //   skipLinesMatching  RegExp — lines it matches are invisible to matchLines
-//   matchLines         [{ match, unlessLineMatches, whenFileMatches,
-//                         unlessFileMatches, what, fix }]
-//                      flag each line `match` hits (unless `unlessLineMatches`
-//                      hits it too), in files where every `whenFileMatches`
-//                      matches and `unlessFileMatches` does not; per line, the
-//                      first matching assertion wins
+//   matchLines         [{ match, andLineMatches, unlessLineMatches,
+//                         unlessPreviousLineMatches, whenPathMatches,
+//                         whenFileMatches, unlessFileMatches, what, fix }]
+//                      flag each line `match` hits — provided `andLineMatches`
+//                      (if declared) also hits it, `unlessLineMatches` does
+//                      not, and `unlessPreviousLineMatches` does not hit the
+//                      line above (the first line has none) — in files whose
+//                      path matches `whenPathMatches` (absent = every scanned
+//                      file), where every `whenFileMatches` matches the text
+//                      and `unlessFileMatches` does not; per line, the first
+//                      matching assertion wins
+//   countMatchingLines [{ linesMatching, atLeast, atMost, what, fix }]
+//                      per file, the number of lines `linesMatching` hits must
+//                      sit within the declared bounds (at least one bound;
+//                      atMost: 0 forbids the pattern); too many anchors at the
+//                      first line past atMost, too few at the file;
+//                      {count}/{atLeast}/{atMost} interpolate
 //   checkEachFile      [{ relevantWhen, whenFileMatches, require, forbid, what, fix }]
 //                      one finding per file: where every `whenFileMatches`
 //                      matches, `require` must match / `forbid` must not
@@ -99,15 +123,27 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //   requirePaths       [{ path, what, fix }] — each path must exist on disk
 //   requireIndexCoverage [{ eachTrackedPathMatching | eachScannedPathMatching
 //                         (+ includeVendored: true to widen scanned to
-//                         ctx.allFiles), indexFile,
-//                         coveredByText | coveredByGlobLinesMatching,
+//                         ctx.allFiles, + whoseTextMatches to keep only files
+//                         whose content matches — read comment-blind under
+//                         scanIgnoringComments)
+//                         | eachValueInParsedArray: { file | filesMatching
+//                           (+ whereFileContains), atField } — the string
+//                           values of the array at `atField` of each selected
+//                           parsed document ({value} interpolates),
+//                         indexFile,
+//                         coveredByText | coveredByGlobLinesMatching
+//                         | coveredByValueInArrayAtField: { atField, value,
+//                           ignoreCase, matchingEntryObjectsByField },
 //                         whenIndexFileAbsent, anchorFindingsAt, what, fix }]
-//                      every path the quantifier's RegExp matches must be
+//                      every path or value the quantifier selects must be
 //                      covered in `indexFile`: by containing the filled
 //                      `coveredByText` template, or — full path or basename —
 //                      by the first-token glob of some non-comment index line
-//                      `coveredByGlobLinesMatching` matches. The divergent
-//                      semantics are declared, never defaulted:
+//                      `coveredByGlobLinesMatching` matches (path quantifiers
+//                      only), or by the parsed index's array at `atField`
+//                      holding the filled `value` template (an entry object
+//                      counts by its `matchingEntryObjectsByField` field). The
+//                      divergent semantics are declared, never defaulted:
 //                      whenIndexFileAbsent = "assertNothing" | "flagEveryPath",
 //                      anchorFindingsAt = "indexFile" (deduped, sorted) |
 //                      "eachUncoveredPath"
@@ -122,7 +158,9 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //                           { field, equals },
 //                         whenFieldPresent,
 //                         requireField, forbidField,
-//                         forbidValueInArray: { atField, value, ignoreCase },
+//                         forbidValueInArray | requireValueInArray:
+//                           { atField, value, ignoreCase,
+//                             matchingEntryObjectsByField },
 //                         requireEqualFields: { field, inFile, atField,
 //                           whenFileMissing, whenUnequal },
 //                         what, fix }]
@@ -134,10 +172,13 @@ import { normalizeEdges, barrierFindings, staleFindings } from './reference-scan
 //                      holds; {entry} interpolates), gate on `whenFieldPresent`,
 //                      then assert: `requireField` present / `forbidField`
 //                      absent / the array at `forbidValueInArray.atField` free
-//                      of the value / the base's `field` equal to `inFile`'s
-//                      `atField` (an absent `inFile` fires `whenFileMissing` at
-//                      its path; a mismatch fires `whenUnequal` with
-//                      {first}/{second})
+//                      of the value, or holding it under `requireValueInArray`
+//                      (either way an entry that is an object counts by its
+//                      `matchingEntryObjectsByField` field; a missing or
+//                      non-array field satisfies forbid and fails require) /
+//                      the base's `field` equal to `inFile`'s `atField` (an
+//                      absent `inFile` fires `whenFileMissing` at its path; a
+//                      mismatch fires `whenUnequal` with {first}/{second})
 //   checkKeyValueFile  [{ file, keys, whenMissing, whenLineNotKeyValue,
 //                         whenKeyUnknown, whenKeyMissing }]
 //                      the dotenv-style file must exist, hold only KEY=value
@@ -221,29 +262,37 @@ const excluded = (path, exclude) =>
 const MSG = ['what', 'fix'];
 const SPEC_KEYS = {
   spec: ['id', 'severity', 'failureMessage', 'fix', 'scanFiles', 'scanTracked', 'excludeFiles',
-    'scanFileClasses', 'excludeFileClasses', 'scanIgnoringComments', 'relevantWhen', 'whenMissing',
-    'maxLines', 'skipLinesMatching', 'matchLines', 'checkEachFile', 'repoWide', 'requirePaths',
+    'scanFileClasses', 'excludeFileClasses', 'scanIgnoringComments', 'scanIgnoringMarkdownFences',
+    'relevantWhen', 'whenMissing',
+    'maxLines', 'maxLineLength', 'skipLinesMatching', 'matchLines', 'countMatchingLines',
+    'checkEachFile', 'repoWide', 'requirePaths',
     'requireIndexCoverage', 'checkParsedFiles', 'forbidReferences',
     'listedInFile', 'coveredByGlobLine', 'checkParsedFile', 'equalParsedValues',
     'forEachParsedEntry', 'checkKeyValueFile', 'checkSections'],
   checkParsedFiles: ['file', 'filesMatching', 'whereFileContains', 'forEachEntryAtField',
     'whereEntryFieldEquals', 'whenFieldPresent', 'requireField', 'forbidField',
-    'forbidValueInArray', 'requireEqualFields', ...MSG],
+    'forbidValueInArray', 'requireValueInArray', 'requireEqualFields', ...MSG],
   whereEntryFieldEquals: ['field', 'equals'],
   requireEqualFields: ['field', 'inFile', 'atField', 'whenFileMissing', 'whenUnequal'],
   whenFileMissing: MSG,
   requireIndexCoverage: ['eachTrackedPathMatching', 'eachScannedPathMatching', 'includeVendored',
-    'indexFile', 'coveredByText', 'coveredByGlobLinesMatching', 'whenIndexFileAbsent',
-    'anchorFindingsAt', ...MSG],
+    'whoseTextMatches', 'eachValueInParsedArray',
+    'indexFile', 'coveredByText', 'coveredByGlobLinesMatching', 'coveredByValueInArrayAtField',
+    'whenIndexFileAbsent', 'anchorFindingsAt', ...MSG],
+  eachValueInParsedArray: ['file', 'filesMatching', 'whereFileContains', 'atField'],
+  coveredByValueInArrayAtField: ['atField', 'value', 'ignoreCase', 'matchingEntryObjectsByField'],
   forbidReferences: ['from', 'to', 'between', 'siblings', 'scope', 'allow', 'except',
     'matchNames', 'alsoMatchNames', 'matchUniqueFilenames', 'reason'],
   except: ['path', 'to', 'reason'],
   relevantWhen: ['pathExists', 'pathAbsent', 'trackedFileMatches', 'noTrackedFileMatches',
     'exactlyOneTrackedFileMatches', 'someTrackedFileContains', 'scanningWholeRepo', 'repoContains'],
-  someTrackedFileContains: ['pathMatching', 'text'],
+  someTrackedFileContains: ['pathMatching', 'text', 'ignoringComments'],
   whenMissing: MSG,
   maxLines: ['limit', ...MSG],
-  matchLines: ['match', 'unlessLineMatches', 'whenFileMatches', 'unlessFileMatches', ...MSG],
+  maxLineLength: ['bytes', ...MSG],
+  matchLines: ['match', 'andLineMatches', 'unlessLineMatches', 'unlessPreviousLineMatches',
+    'whenPathMatches', 'whenFileMatches', 'unlessFileMatches', ...MSG],
+  countMatchingLines: ['linesMatching', 'atLeast', 'atMost', ...MSG],
   checkEachFile: ['relevantWhen', 'whenFileMatches', 'require', 'forbid', ...MSG],
   repoWide: ['unlessSomeFileMatches', 'flagFilesMatching', 'neverFlagFiles', ...MSG],
   requirePaths: ['path', ...MSG],
@@ -257,7 +306,8 @@ const SPEC_KEYS = {
   whenUnequal: MSG,
   forEachParsedEntry: ['inFilesMatching', 'entriesAtField', 'whereFieldEquals', 'forbidValueInArray', ...MSG],
   whereFieldEquals: ['field', 'equals'],
-  forbidValueInArray: ['atField', 'value', 'ignoreCase'],
+  forbidValueInArray: ['atField', 'value', 'ignoreCase', 'matchingEntryObjectsByField'],
+  requireValueInArray: ['atField', 'value', 'ignoreCase', 'matchingEntryObjectsByField'],
   checkKeyValueFile: ['file', 'keys', 'whenMissing', 'whenLineNotKeyValue', 'whenKeyUnknown', 'whenKeyMissing'],
   whenLineNotKeyValue: MSG,
   whenKeyUnknown: MSG,
@@ -345,8 +395,24 @@ function normalizeLegacySpellings(spec) {
 }
 
 // Shape rules the key table can't state: each merged-family entry needs exactly
-// one selector, at least one assertion, and closed-vocabulary mode values.
-function validateMergedEntries(spec, where) {
+// one selector, at least one assertion, and closed-vocabulary mode values; a
+// count entry needs its pattern and a coherent bound.
+function validateEntryShapes(spec, where) {
+  for (const a of spec.countMatchingLines ?? []) {
+    if (!(a.linesMatching instanceof RegExp)) {
+      throw new Error(`${where}: a countMatchingLines entry needs "linesMatching", the pattern it counts`);
+    }
+    const bounds = [a.atLeast, a.atMost].filter((b) => b !== undefined);
+    if (!bounds.length) {
+      throw new Error(`${where}: a countMatchingLines entry needs a bound — "atLeast", "atMost", or both`);
+    }
+    if (bounds.some((b) => !Number.isInteger(b) || b < 0)) {
+      throw new Error(`${where}: countMatchingLines bounds ("atLeast"/"atMost") are whole numbers of lines`);
+    }
+    if (a.atLeast !== undefined && a.atMost !== undefined && a.atLeast > a.atMost) {
+      throw new Error(`${where}: countMatchingLines declares "atLeast" above "atMost" — no count can satisfy it`);
+    }
+  }
   for (const a of spec.checkParsedFiles ?? []) {
     if ((a.file === undefined) === (a.filesMatching === undefined)) {
       throw new Error(`${where}: a checkParsedFiles entry selects by exactly one of "file" or "filesMatching"`);
@@ -354,16 +420,32 @@ function validateMergedEntries(spec, where) {
     if (a.whereFileContains && a.filesMatching === undefined) {
       throw new Error(`${where}: "whereFileContains" refines "filesMatching" and cannot go with "file"`);
     }
-    if (!a.requireField && !a.forbidField && !a.forbidValueInArray && !a.requireEqualFields) {
-      throw new Error(`${where}: a checkParsedFiles entry asserts nothing — add requireField, forbidField, forbidValueInArray, or requireEqualFields`);
+    if (!a.requireField && !a.forbidField && !a.forbidValueInArray && !a.requireValueInArray && !a.requireEqualFields) {
+      throw new Error(`${where}: a checkParsedFiles entry asserts nothing — add requireField, forbidField, forbidValueInArray, requireValueInArray, or requireEqualFields`);
     }
   }
   for (const a of spec.requireIndexCoverage ?? []) {
-    if ((a.eachTrackedPathMatching === undefined) === (a.eachScannedPathMatching === undefined)) {
-      throw new Error(`${where}: a requireIndexCoverage entry quantifies by exactly one of "eachTrackedPathMatching" or "eachScannedPathMatching"`);
+    const quantifiers = [a.eachTrackedPathMatching, a.eachScannedPathMatching, a.eachValueInParsedArray]
+      .filter((q) => q !== undefined);
+    if (quantifiers.length !== 1) {
+      throw new Error(`${where}: a requireIndexCoverage entry quantifies by exactly one of "eachTrackedPathMatching", "eachScannedPathMatching", or "eachValueInParsedArray"`);
     }
-    if ((a.coveredByText === undefined) === (a.coveredByGlobLinesMatching === undefined)) {
-      throw new Error(`${where}: a requireIndexCoverage entry declares exactly one coverage form — "coveredByText" or "coveredByGlobLinesMatching"`);
+    if (a.eachValueInParsedArray !== undefined) {
+      const source = a.eachValueInParsedArray;
+      if ((source.file === undefined) === (source.filesMatching === undefined)) {
+        throw new Error(`${where}: "eachValueInParsedArray" selects its documents by exactly one of "file" or "filesMatching"`);
+      }
+      if (a.whoseTextMatches !== undefined) {
+        throw new Error(`${where}: "whoseTextMatches" refines a path quantifier and cannot go with "eachValueInParsedArray"`);
+      }
+      if (a.coveredByGlobLinesMatching !== undefined) {
+        throw new Error(`${where}: "coveredByGlobLinesMatching" covers paths and cannot go with "eachValueInParsedArray"`);
+      }
+    }
+    const coverageForms = [a.coveredByText, a.coveredByGlobLinesMatching, a.coveredByValueInArrayAtField]
+      .filter((c) => c !== undefined);
+    if (coverageForms.length !== 1) {
+      throw new Error(`${where}: a requireIndexCoverage entry declares exactly one coverage form — "coveredByText", "coveredByGlobLinesMatching", or "coveredByValueInArrayAtField"`);
     }
     if (a.whenIndexFileAbsent !== 'assertNothing' && a.whenIndexFileAbsent !== 'flagEveryPath') {
       throw new Error(`${where}: "whenIndexFileAbsent" must be "assertNothing" or "flagEveryPath" — the divergent case is declared, never defaulted`);
@@ -394,9 +476,11 @@ function relevant(ctx, when) {
   if (when.noTrackedFileMatches && ctx.tracked.some((f) => when.noTrackedFileMatches.test(f))) return false;
   if (when.exactlyOneTrackedFileMatches &&
       ctx.tracked.filter((f) => when.exactlyOneTrackedFileMatches.test(f)).length !== 1) return false;
-  if (when.someTrackedFileContains &&
-      !ctx.tracked.some((f) => when.someTrackedFileContains.pathMatching.test(f) &&
-        when.someTrackedFileContains.text.test(ctx.read(f) ?? ''))) return false;
+  if (when.someTrackedFileContains) {
+    const probe = when.someTrackedFileContains;
+    const view = (f) => (probe.ignoringComments ? stripComments(ctx.read(f) ?? '') : ctx.read(f) ?? '');
+    if (!ctx.tracked.some((f) => probe.pathMatching.test(f) && probe.text.test(view(f)))) return false;
+  }
   if (when.scanningWholeRepo && ctx.mode !== 'all') return false;
   return true; // repoContains resolves after the pass, and only when findings exist
 }
@@ -417,16 +501,22 @@ function realDateUTC(y, mo, d) {
     ? dt.getTime() : null;
 }
 
-// One parse of a page's section structure, shared by every subscribing rule:
-// fenced lines blanked (count preserved, so line numbers never shift), the
-// first `## ` heading, and each named section's body ({ line, text } entries,
-// 1-indexed) memoized per name.
-function markdownIndex(text) {
+// Fenced code blocks blanked line-for-line, so line numbers never shift — the
+// view markdownIndex always reads, and the one scanIgnoringMarkdownFences
+// hands the content assertions.
+function blankMarkdownFences(text) {
   let inFence = false;
-  const stripped = text.split('\n').map((l) => {
+  return text.split('\n').map((l) => {
     if (/^\s*(```|~~~)/.test(l)) { inFence = !inFence; return ''; }
     return inFence ? '' : l;
-  });
+  }).join('\n');
+}
+
+// One parse of a page's section structure, shared by every subscribing rule:
+// fenced lines blanked, the first `## ` heading, and each named section's body
+// ({ line, text } entries, 1-indexed) memoized per name.
+function markdownIndex(text) {
+  const stripped = blankMarkdownFences(text).split('\n');
   const firstLine = stripped.find((l) => /^##\s/.test(l));
   const sections = new Map();
   return {
@@ -530,15 +620,33 @@ function assertSections(ctx, j, path, md) {
 const fieldAt = (doc, path) =>
   path.split('.').reduce((v, key) => (v && typeof v === 'object' ? v[key] : undefined), doc);
 
+// The one membership test every value-in-array key shares (forbidValueInArray,
+// requireValueInArray, coveredByValueInArrayAtField): a missing or non-array
+// field holds nothing, and an entry that is an object counts by the field
+// matchingEntryObjectsByField names — the shape a raw `packs` declaration
+// carries, where "core" and { "id": "core" } declare the same pack.
+function arrayHoldsValue(values, matcher, sought) {
+  if (!Array.isArray(values)) return false;
+  const norm = (v) => (matcher.ignoreCase ? String(v).toLowerCase() : String(v));
+  const target = norm(sought);
+  return values.some((entry) => {
+    if (matcher.matchingEntryObjectsByField && entry && typeof entry === 'object') {
+      return norm(fieldAt(entry, matcher.matchingEntryObjectsByField)) === target;
+    }
+    return norm(entry) === target;
+  });
+}
+
 function globToRe(glob) {
   return new RegExp(
     `^${glob.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\?/g, '.')}$`
   );
 }
 
-// The tree/index assertions — they match paths and read at most one index file,
-// so they run directly per rule rather than riding the content pass.
-function assertTreeShape(ctx, j) {
+// The tree/index assertions — they match paths and read a few named documents
+// through the scan's shared parse cache, so they run directly per rule rather
+// than riding the content pass.
+function assertTreeShape(ctx, j, parsed) {
   const s = j.spec;
   for (const a of s.requirePaths ?? []) {
     if (ctx.exists(a.path)) continue;
@@ -546,41 +654,75 @@ function assertTreeShape(ctx, j) {
     j.out.push(finding(j.rule, { file: a.path, what: fill(a.what, vars), fix: fill(a.fix, vars) }));
   }
 
-  // Index coverage: every selected path must be covered in the index file —
-  // by its filled coveredByText token, or by the first-token glob of some
-  // non-comment index line coveredByGlobLinesMatching selects (full path or
-  // basename). Absence handling and anchoring are declared per entry, never
-  // defaulted, because the two families this merged genuinely diverged there.
+  // Index coverage: every subject the quantifier selects — a path, or a value
+  // read out of a parsed array — must be covered in the index file: by its
+  // filled coveredByText token, by the first-token glob of some non-comment
+  // index line coveredByGlobLinesMatching selects (full path or basename), or
+  // by membership in the parsed index's array at coveredByValueInArrayAtField.
+  // Absence handling and anchoring are declared per entry, never defaulted,
+  // because the two families this merged genuinely diverged there.
   for (const a of s.requireIndexCoverage ?? []) {
     const indexText = ctx.read(a.indexFile);
     if (indexText === null && a.whenIndexFileAbsent === 'assertNothing') continue;
     const globs = a.coveredByGlobLinesMatching === undefined ? [] : (indexText ?? '').split('\n')
       .filter((line) => a.coveredByGlobLinesMatching.test(line) && !line.trim().startsWith('#'))
       .map((line) => globToRe(line.trim().split(/\s+/)[0]));
-    const matcher = a.eachTrackedPathMatching ?? a.eachScannedPathMatching;
-    const paths = a.eachTrackedPathMatching ? ctx.tracked
-      : (a.includeVendored ? ctx.allFiles : ctx.files);
+
+    // Each subject: its message vars, the path a per-subject finding anchors
+    // at, and the path the glob coverage form tests (null for a value subject).
+    const subjects = [];
+    if (a.eachValueInParsedArray) {
+      const source = a.eachValueInParsedArray;
+      const docPaths = source.file !== undefined ? [source.file]
+        : ctx.tracked.filter((f) => source.filesMatching.test(f) &&
+            (!source.whereFileContains || source.whereFileContains.test(ctx.read(f) ?? '')));
+      for (const docPath of docPaths) {
+        const doc = parsed(docPath);
+        if (doc == null) continue;
+        const values = fieldAt(doc, source.atField);
+        if (!Array.isArray(values)) continue;
+        for (const value of values) {
+          subjects.push({ vars: { path: docPath, value: String(value) }, anchorPath: docPath, globPath: null });
+        }
+      }
+    } else {
+      const matcher = a.eachTrackedPathMatching ?? a.eachScannedPathMatching;
+      const paths = a.eachTrackedPathMatching ? ctx.tracked
+        : (a.includeVendored ? ctx.allFiles : ctx.files);
+      for (const path of paths) {
+        const m = matcher.exec(path);
+        if (!m) continue;
+        if (a.whoseTextMatches) {
+          const text = ctx.read(path) ?? '';
+          if (!a.whoseTextMatches.test(s.scanIgnoringComments ? stripComments(text) : text)) continue;
+        }
+        subjects.push({ vars: { path, ...(m.groups ?? {}) }, anchorPath: path, globPath: path });
+      }
+    }
+
     const atIndex = new Map();
-    for (const path of paths) {
-      const m = matcher.exec(path);
-      if (!m) continue;
-      const vars = { path, ...(m.groups ?? {}) };
+    for (const { vars, anchorPath, globPath } of subjects) {
       let covered;
       let dedupKey;
       if (a.coveredByText !== undefined) {
         const token = fill(a.coveredByText, vars);
         covered = indexText !== null && indexText.includes(token);
         dedupKey = token;
+      } else if (a.coveredByValueInArrayAtField !== undefined) {
+        const membership = a.coveredByValueInArrayAtField;
+        const sought = fill(membership.value, vars);
+        covered = arrayHoldsValue(fieldAt(parsed(a.indexFile), membership.atField), membership, sought);
+        dedupKey = sought;
       } else {
-        const base = path.slice(path.lastIndexOf('/') + 1);
-        covered = globs.some((re) => re.test(path) || re.test(base));
-        dedupKey = path;
+        const base = globPath.slice(globPath.lastIndexOf('/') + 1);
+        covered = globs.some((re) => re.test(globPath) || re.test(base));
+        dedupKey = globPath;
       }
       if (covered) continue;
       if (a.anchorFindingsAt === 'indexFile') {
         if (!atIndex.has(dedupKey)) atIndex.set(dedupKey, vars);
       } else {
-        j.out.push(finding(j.rule, { file: path, what: fill(a.what, vars), fix: fill(a.fix, vars) }));
+        j.out.push(finding(j.rule, { file: anchorPath, what: fill(a.what, vars), fix: fill(a.fix, vars) }));
       }
     }
     for (const [, vars] of [...atIndex].sort(([k1], [k2]) => k1.localeCompare(k2))) {
@@ -627,12 +769,13 @@ function assertParsedShape(ctx, j, parsed) {
         }));
         if (a.requireField && fieldAt(base, a.requireField) === undefined) flag(a.what, a.fix);
         if (a.forbidField && fieldAt(base, a.forbidField) !== undefined) flag(a.what, a.fix);
-        if (a.forbidValueInArray) {
-          const values = fieldAt(base, a.forbidValueInArray.atField);
-          const norm = (v) => (a.forbidValueInArray.ignoreCase ? String(v).toLowerCase() : String(v));
-          if (Array.isArray(values) && values.some((v) => norm(v) === norm(a.forbidValueInArray.value))) {
-            flag(a.what, a.fix);
-          }
+        if (a.forbidValueInArray &&
+            arrayHoldsValue(fieldAt(base, a.forbidValueInArray.atField), a.forbidValueInArray, a.forbidValueInArray.value)) {
+          flag(a.what, a.fix);
+        }
+        if (a.requireValueInArray &&
+            !arrayHoldsValue(fieldAt(base, a.requireValueInArray.atField), a.requireValueInArray, a.requireValueInArray.value)) {
+          flag(a.what, a.fix);
         }
         if (a.requireEqualFields) {
           const eq = a.requireEqualFields;
@@ -699,18 +842,34 @@ function assertReferenceEdges(ctx, j) {
 
 // One file visited once for every subscribing rule: whole-text assertions and
 // repo-wide bookkeeping first, then a single walk of the lines shared by all
-// the rules' line assertions. A rule with scanIgnoringComments reads the
-// comment-blanked view of the same file (computed at most once per visit;
-// stripComments preserves line count, so both views' line numbers agree and
-// the markdown-section index stays on the raw text).
+// the rules' line assertions. A rule's scanIgnoring* keys pick its VIEW of the
+// same file — comments blanked, markdown fences blanked, or both — each view
+// computed at most once per visit; every blanking preserves line count, so all
+// views' line numbers agree and the markdown-section index stays on the raw
+// text (whose fences markdownIndex already blanks itself).
 function visit(ctx, subs, path, text) {
-  let strippedText = null;
-  const textFor = (j) => (j.spec.scanIgnoringComments ? (strippedText ??= stripComments(text)) : text);
-  let rawSplit = null;
-  let strippedSplit = null;
-  const lines = () => (rawSplit ??= text.split('\n'));
-  const linesFor = (j) => (j.spec.scanIgnoringComments
-    ? (strippedSplit ??= textFor(j).split('\n')) : lines());
+  const fenced = FILE_CLASSES.markdownFiles.test(path);
+  const viewKey = (j) => (j.spec.scanIgnoringComments ? 'c' : '') +
+    (j.spec.scanIgnoringMarkdownFences && fenced ? 'f' : '');
+  const textViews = new Map();
+  const lineViews = new Map();
+  const textFor = (j) => {
+    const key = viewKey(j);
+    if (!textViews.has(key)) {
+      let t = text;
+      if (key.includes('c')) t = stripComments(t);
+      if (key.includes('f')) t = blankMarkdownFences(t);
+      textViews.set(key, t);
+    }
+    return textViews.get(key);
+  };
+  const linesFor = (j) => {
+    const key = viewKey(j);
+    if (!lineViews.has(key)) lineViews.set(key, textFor(j).split('\n'));
+    return lineViews.get(key);
+  };
+  const RAW = { spec: {} };
+  const lines = () => linesFor(RAW);
   let mdIndex = null;
   const md = () => (mdIndex ??= markdownIndex(text));
   const lineJobs = [];
@@ -723,6 +882,37 @@ function visit(ctx, subs, path, text) {
       j.out.push(finding(j.rule, {
         file: path, line: s.maxLines.limit + 1,
         what: fill(s.maxLines.what, vars), fix: fill(s.maxLines.fix, vars),
+      }));
+    }
+    if (s.maxLineLength) {
+      const a = s.maxLineLength;
+      const over = linesFor(j)
+        .map((ln, i) => ({ n: i + 1, bytes: Buffer.byteLength(ln) }))
+        .filter((l) => l.bytes > a.bytes);
+      if (over.length) {
+        const vars = { count: over.length, bytes: a.bytes, longest: Math.max(...over.map((l) => l.bytes)) };
+        j.out.push(finding(j.rule, {
+          file: path, line: over[0].n, what: fill(a.what, vars), fix: fill(a.fix, vars),
+        }));
+      }
+    }
+    for (const a of s.countMatchingLines ?? []) {
+      const view = linesFor(j);
+      let count = 0;
+      let overflowAt = null;
+      for (let i = 0; i < view.length; i++) {
+        if (!a.linesMatching.test(view[i])) continue;
+        count += 1;
+        if (overflowAt === null && a.atMost !== undefined && count === a.atMost + 1) overflowAt = i + 1;
+      }
+      const under = a.atLeast !== undefined && count < a.atLeast;
+      if (!under && overflowAt === null) continue;
+      const vars = { count,
+        ...(a.atLeast !== undefined ? { atLeast: a.atLeast } : {}),
+        ...(a.atMost !== undefined ? { atMost: a.atMost } : {}) };
+      j.out.push(finding(j.rule, {
+        file: path, ...(under ? {} : { line: overflowAt }),
+        what: fill(a.what, vars), fix: fill(a.fix, vars),
       }));
     }
     for (const a of s.checkEachFile ?? []) {
@@ -742,6 +932,7 @@ function visit(ctx, subs, path, text) {
       }
     }
     const eligible = (s.matchLines ?? []).filter((a) =>
+      (!a.whenPathMatches || a.whenPathMatches.test(path)) &&
       arr(a.whenFileMatches).every((re) => re.test(textFor(j))) && !a.unlessFileMatches?.test(textFor(j)));
     if (eligible.length) lineJobs.push({ j, eligible, viewLines: linesFor(j) });
   }
@@ -753,7 +944,8 @@ function visit(ctx, subs, path, text) {
       if (j.spec.skipLinesMatching?.test(ln)) continue;
       for (const a of eligible) {
         const m = ln.match(a.match);
-        if (!m || a.unlessLineMatches?.test(ln)) continue;
+        if (!m || (a.andLineMatches && !a.andLineMatches.test(ln)) || a.unlessLineMatches?.test(ln)) continue;
+        if (a.unlessPreviousLineMatches && i > 0 && a.unlessPreviousLineMatches.test(viewLines[i - 1])) continue;
         const vars = { match: m[0] };
         j.out.push(finding(j.rule, {
           file: path, line: i + 1, what: fill(a.what, vars), fix: fill(a.fix, vars),
@@ -796,7 +988,7 @@ function results(ctx) {
   };
 
   for (const j of jobs) {
-    assertTreeShape(ctx, j);
+    assertTreeShape(ctx, j, parsed);
     assertParsedShape(ctx, j, parsed);
     if (j.spec.edges) assertReferenceEdges(ctx, j);
     if (typeof j.spec.scanFiles !== 'string') continue;
@@ -842,12 +1034,13 @@ function results(ctx) {
 // (scanFiles: "README.md" is read directly), an authoring error anywhere else.
 const PATH_OR_PATTERN_KEYS = new Set(['scanFiles', 'excludeFiles']);
 const PATTERN_KEYS = new Set([
-  'skipLinesMatching', 'match', 'unlessLineMatches', 'whenFileMatches', 'unlessFileMatches',
+  'skipLinesMatching', 'match', 'andLineMatches', 'unlessLineMatches',
+  'unlessPreviousLineMatches', 'whenPathMatches', 'whenFileMatches', 'unlessFileMatches',
   'require', 'forbid', 'trackedFileMatches', 'noTrackedFileMatches', 'exactlyOneTrackedFileMatches',
   'pathMatching', 'text', 'repoContains', 'unlessSomeFileMatches', 'flagFilesMatching',
   'neverFlagFiles', 'eachTrackedPathMatching', 'eachPathMatching', 'globLineMatching',
-  'filesMatching', 'whereFileContains', 'inFilesMatching', 'pattern',
-  'eachScannedPathMatching', 'coveredByGlobLinesMatching',
+  'filesMatching', 'whereFileContains', 'inFilesMatching', 'pattern', 'linesMatching',
+  'eachScannedPathMatching', 'coveredByGlobLinesMatching', 'whoseTextMatches',
 ]);
 const RE_FORM = /^\/(.*)\/([dgimsuvy]*)$/s;
 
@@ -885,7 +1078,7 @@ export function patternRule(declaration, { selfExclude = null } = {}) {
   validateSpecKeys(declaration, 'spec', where);
   const spec = compileSpec(declaration, null, where);
   normalizeLegacySpellings(spec);
-  validateMergedEntries(spec, where);
+  validateEntryShapes(spec, where);
   const classPatterns = (names) => (names ?? []).map((n) => {
     if (!FILE_CLASSES[n]) {
       throw new Error(`${where}: "${n}" is not a file class — the classes are: ${Object.keys(FILE_CLASSES).join(', ')}`);

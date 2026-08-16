@@ -2,11 +2,9 @@ import commentClassification from './comment-classification.mjs';
 import referenceIntegrity from './reference-integrity.mjs';
 import markdownLinkLabels from './markdown-link-labels.mjs';
 import taskLifecycle from './task-lifecycle.mjs';
-import warningSuppression from './warning-suppression.mjs';
 import filePlacement from './file-placement.mjs';
 import squashMergeHistory from './squash-merge-history.mjs';
 import sharedConstants from './shared-constants.mjs';
-import rulesLineLength from './rules-line-length.mjs';
 import declaredCheckMessages from './declared-check-messages.mjs';
 
 // The baseline pack: cross-project working discipline, the task lifecycle, and
@@ -40,11 +38,11 @@ export default {
   // lifecycle (#385).
   requires: ['core', 'git-github'],
   // Rules that audit the repo as it stands, whatever this session did.
+  // warning-suppression and rules-line-length are declared checks in this
+  // pack's declared-checks.json, discovered structurally beside these.
   worldRules: [
     markdownLinkLabels,
-    rulesLineLength,
     declaredCheckMessages,
-    warningSuppression,
     filePlacement,
     sharedConstants,
   ],
@@ -63,13 +61,14 @@ export default {
   // the pack whose projects need it and move this line with it (#385 moved the
   // git/GitHub and Claudinite-lifecycle skills out).
   //
-  // `task-janitor` is this pack's one scheduled task, discovered by the
-  // scheduler's filesystem scan (engine/scheduler/discover.mjs) rather than
-  // declared here.
+  // `task-janitor` and `ci-performance` are this pack's scheduled tasks,
+  // discovered by the scheduler's filesystem scan (engine/scheduler/discover.mjs)
+  // rather than declared here.
   skills: [
     'authoring-agent-docs',
     'bug-investigation',
     'bump-version',
+    'ci-performance-evaluation',
     'file-placement',
     'repo-text-sweeps',
     'writing-tests',
