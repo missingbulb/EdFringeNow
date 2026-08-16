@@ -36,14 +36,11 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   frames as one animated golden (`tools.animate`). A flow is shown as a flow.
   Reserve `stitchV`/`stitchH` for things that are genuinely side by side rather
   than sequential.
-- **An animated golden is an APNG, never a GIF** — the choice
-  ShoutsAndWhispers made for its sagas, for two reasons that both matter here:
-  APNG is lossless, so the golden stays a faithful pixel record of the UI
-  instead of a 256-colour approximation of it, and every byte is ours, so the
-  comparison stays exact byte-identity. It animates in GitHub markdown exactly
-  like a GIF. The encoder is `shared/png.js`'s `encodeAnimated`; the comparator
-  detects an animated golden and compares bytes only, since a pixel differ
-  reads one still frame and would describe the wrong thing.
+- **An animated golden is an APNG, never a GIF.** It animates in GitHub
+  markdown exactly like a GIF. The encoder is `shared/png.js`'s
+  `encodeAnimated`; the comparator detects an animated golden and compares
+  bytes only, since a pixel differ reads one still frame and would describe
+  the wrong thing.
 
 ## A requirement is a feature, not a module
 
@@ -160,12 +157,9 @@ is a real finding about the UI, not just a testing limitation.
 
 ## Golden approval, concretely
 
-- A red screen case is **never** fixed by `refresh:ui`. Surface the committed
-  golden, `shared/.artifacts/<case>.actual.png` and `.diff.png`, and ask the
-  owner (AskUserQuestion popup, per-item, per the owner's preferences) before
-  re-baselining anything.
-- A brand-new leaf's golden is a **proposal** until the owner has seen the
-  rendering: it lands in the PR diff, and merge approval is the pixel
-  approval. Say so in the PR body — the goldens are the review surface.
+- Surface the committed golden alongside `shared/.artifacts/<case>.actual.png`
+  and `.diff.png`, and ask the owner (AskUserQuestion popup, per-item, per the
+  owner's preferences).
+- Say so in the PR body — the goldens are the review surface.
 - An intended UI change lands as: spec edit (doc-first, red) → implementation →
   `npm run refresh:ui` → the refreshed PNGs ride the same diff.
