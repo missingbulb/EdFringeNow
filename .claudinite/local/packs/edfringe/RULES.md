@@ -185,6 +185,94 @@ short bounded `run_in_background` command whose result you actually consume,
 call it a poll interval, and re-read over MCP after it — a faked shell condition
 buys none of the responsiveness the guard exists to get you.
 
+A bare `wait` in its own Bash call is another way to fake that consume step —
+each Bash invocation is a fresh shell, so there is no earlier background job
+left in it to wait on, and the call just returns immediately. On 2026-08-16
+(#368) a session polled PR #388's checks nine times this way: it requested
+sleeps totalling 1,170s, but every `wait` returned in under 2.3s (~18s of real
+waiting spread across 146s of actual MCP polling) — then, worse, concluded its
+own perfectly fine MCP reads were "stale cached status" rather than noticing
+the waits it asked for had never happened. The nine orphaned sleeps also each
+fired a `task-notification`, several mid-convergence — the exact interruption
+this section already warns about. `run_in_background` plus `Monitor` (or an
+MCP re-read on the tick after) is the real version of that pattern; a follow-up
+`wait` alone is not it.
+
+A run that never executed any of the repo's own steps is not a CI failure to
+wait out — it's infrastructure, and re-running or waiting only spends more of
+it. Two tells, both cheap to check: a check stuck `queued` that auto-cancels
+around 15 minutes with `get_job_logs` then returning 404, or a job that dies in
+"Prepare all required actions" with "Failed to resolve action download info …
+Service Unavailable". Two sessions hit the same outage the same evening
+(2026-08-14): one (#239) kept offering "Keep waiting for CI (Recommended)"
+through two `AskUserQuestion` rounds and took 3h27m end to end, including 14
+blind sleeps totalling 60.6 minutes of real waiting on top of legitimate
+polling; the other (#237), same outage, put the honest options to the owner
+without recommending more waiting and closed in 42 minutes. Recognise the
+pattern, say plainly what local `verify`/`test:ui` already covers, and don't
+put "keep waiting" forward as the recommended choice.
+
+## GitHub MCP call shapes that cost round-trips here
+
+- **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
+  on this repo's history, and lowering `per_page` does not fix it.** Proven:
+  one session retried the same call at `per_page` 25, 10, 3, 2 and 1 and got a
+  byte-identical ~100–390K-character response every time. When it overflows,
+  read the spilled tool-result file yourself (`python3`/`jq`) and project out
+  only the fields you need — don't follow the overflow error's "read it in
+  sequential chunks" advice on a single-line JSON blob, and don't burn retries
+  lowering `per_page` first.
+- **`search_issues`, `list_pull_requests`, `pull_request_read` do shrink — with
+  `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
+  across the corpus have never overflowed, typically 100–250 bytes back
+  instead of six figures.
+- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
+  decodes `false` (absent from the response) and `merged_at` is never
+  populated, `fields` or not — confirmed live when it read PR #385 as
+  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
+  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
+  `(#N)`, or call `pull_request_read get` on the one PR you actually care
+  about.
+- **`get_job_logs` needs more than a bare `run_id`.** It rejects with "job_id
+  is required when failed_only is false" unless you pass `failed_only: true`
+  for a whole-run summary, or fetch a `job_id` first via
+  `actions_list method=list_workflow_jobs`. It also 404s for a job still
+  `in_progress` — wait for the job to finish before calling it.
+
+## The sandbox checkout is shallow — unshallow before comparing branch history
+
+`git rev-parse --is-shallow-repository` reads `true` here by default (one run
+measured 53 commits on `git log --oneline` against a real 454, two grafts).
+Every branch that predates the shallow graft then fails `git merge-base`
+against `main`, and `single-branch-status`'s own step 4 reads that failure as
+**orphaned — a human must look**. Left unfixed this silently turns a routine
+tidy-branches pass into "37 orphaned branches, escalate all" — caught once by
+luck (2026-08-16, #375) before it was written to the tracker. Before any
+cross-branch history comparison:
+`git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune && git fetch --unshallow`,
+then confirm `is-shallow-repository` reads `false`.
+
+## A `[claudinite-task]` needs-human issue is one failed slot, not proof of a recurring failure
+
+The pile of bot comments that accumulates on a stuck `[claudinite-task]` issue
+is the stale-dispatch watchdog nagging that nobody executed it — not the
+underlying job re-failing every cycle. Before accepting a "this has been
+failing every hour since X" framing and shipping a fix, count what actually
+landed (`git log --grep="<the worker's own commit subject>"`) and read that
+slot's own scheduler job log; the flagged run may be a single one-off (e.g. a
+manual `FORCE_TASKS` invocation), not a pattern. On 2026-08-06 a session
+(#237) accepted an owner's framing that `refresh-tickets` had been "failing
+every hour since 2026-08-05", shipped a one-line `git push origin HEAD:main`
+fix which the owner merged (PR #235), then an hour later — answering an
+unrelated question — read the actual run log and found the framing wrong:
+tracking was set the whole time, the bare push had landed 24 hourly commits
+including after the flagged slot, and the issue behind it (#231) was a single
+`FORCE_TASKS=baselining` run. Its own shipped fix would have pushed
+`baselining`'s unreviewed converge commit straight to `main`. The real defect
+(`actions/checkout` leaving the shared clone on no upstream) already has its
+fix as the `edfringe-worker-restores-main` check; this rule guards the
+diagnosis step, not that bug.
+
 ## A comment names its neighbour, never the neighbour's specifics
 
 When a comment refers to another task, job, or file, do not restate that
