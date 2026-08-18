@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "foldedThrough": "2026-08-16",
-  "runsFoldedThrough": "2026-08-17T03:34:03Z",
+  "foldedThrough": "2026-08-17",
+  "runsFoldedThrough": "2026-08-18T03:28:32Z",
   "days": {
     "2026-08-06": {
       "captures": 0,
@@ -31,50 +31,14 @@
       "taskExec": {}
     },
     "2026-08-07": {
-      "captures": 17,
-      "merges": 16,
-      "sessions": 17,
-      "userMessages": 33,
+      "captures": 0,
+      "merges": 0,
+      "sessions": 0,
+      "userMessages": 0,
       "userCommands": 0,
-      "skillLoads": {
-        "merge-to-main": 13,
-        "run": 1,
-        "single-issue-triage": 1
-      },
-      "checks": {
-        "work": {
-          "runs": 33,
-          "failures": 16,
-          "errors": 0,
-          "blocking": 20,
-          "advisory": 0,
-          "ciRuns": 0,
-          "ciFailures": 0
-        },
-        "world": {
-          "runs": 3,
-          "failures": 0,
-          "errors": 0,
-          "blocking": 0,
-          "advisory": 2,
-          "ciRuns": 0,
-          "ciFailures": 0
-        }
-      },
-      "checkFindings": {
-        "comment-classification": {
-          "blocking": 22,
-          "advisory": 0
-        },
-        "file-placement": {
-          "blocking": 0,
-          "advisory": 2
-        },
-        "task-lifecycle": {
-          "blocking": 16,
-          "advisory": 0
-        }
-      },
+      "skillLoads": {},
+      "checks": {},
+      "checkFindings": {},
       "tasks": {
         "basics/baselining": {
           "agent": 2,
@@ -119,20 +83,7 @@
           "deferred": 0
         }
       },
-      "taskExec": {
-        "basics/baselining": {
-          "success": 1,
-          "failed": 0,
-          "task-gone": 0,
-          "invalid": 0
-        },
-        "grow_with_claudinite/growth-extract": {
-          "success": 1,
-          "failed": 0,
-          "task-gone": 0,
-          "invalid": 0
-        }
-      }
+      "taskExec": {}
     },
     "2026-08-08": {
       "captures": 10,
@@ -1647,6 +1598,51 @@
         },
         "tidy-repo/tidy-issues": {
           "success": 2,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        }
+      }
+    },
+    "2026-W34": {
+      "days": 1,
+      "captures": 1,
+      "merges": 1,
+      "sessionDays": 1,
+      "userMessages": 0,
+      "userCommands": 0,
+      "skillLoads": {},
+      "checks": {
+        "world": {
+          "runs": 1,
+          "failures": 0,
+          "errors": 0,
+          "blocking": 0,
+          "advisory": 4,
+          "ciRuns": 0,
+          "ciFailures": 0
+        }
+      },
+      "checkFindings": {
+        "file-placement": {
+          "blocking": 0,
+          "advisory": 3
+        },
+        "rules-line-length": {
+          "blocking": 0,
+          "advisory": 1
+        }
+      },
+      "tasks": {},
+      "taskExec": {
+        "<pack>/<task>": {
+          "success": 1,
+          "failed": 0,
+          "task-gone": 0,
+          "invalid": 0
+        },
+        "core/update": {
+          "success": 1,
           "failed": 0,
           "task-gone": 0,
           "invalid": 0
