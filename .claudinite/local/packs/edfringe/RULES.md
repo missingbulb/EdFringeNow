@@ -20,6 +20,15 @@ got blocked, and then paid create-issue + `git commit --amend` +
 rework). Worse, by then the PR is already open, so the fix rewrites the commit
 underneath it.
 
+Once the hook has already fired, the remedy is a plain `git commit --amend` on
+the latest commit — the finding's own `Fix:` text says exactly that. On
+2026-08-07 (#251) a session instead wrote a custom `msg-filter` script and ran
+`git filter-branch` across all 5 commits since `origin/main` to backdate the
+issue reference into every one, verified the resulting tree was byte-identical,
+then force-pushed — history-rewriting machinery for a finding a single amend
+already satisfies, and needless risk (a wrong regex, a bad force-push) for no
+benefit over the one-line fix.
+
 ## `Comment class:` arms rules — repo tooling is never a `feature` here
 
 The class is machinery, not a label. `feature` arms `feature-requirements-first`,
@@ -110,6 +119,23 @@ browser is here, and a UI change isn't done until it has been looked at.
   sandbox cannot make. Three sessions on 2026-08-07 (#251, #258, #264) each
   took that detour and then backed out of it. Use the absolute path to the
   global build instead: it is the one matched to the vendored browsers.
+  The same footgun exists one level up, in the **repo root**: `npm i -D
+  playwright` there doesn't hit the version-mismatch failure (npm happens to
+  resolve a working revision), but it dirties `package.json`,
+  `package-lock.json` and `node_modules/`, needing a manual `git checkout
+  package.json && rm -rf node_modules package-lock.json` before committing —
+  paid twice in one session on 2026-08-07 (#267), once to re-verify after a
+  refactor. Nothing here ever needs an install, scratchpad or repo root.
+- **`index.html`'s Leaflet map loads from `unpkg.com`, which the sandbox proxy
+  blocks — stub it before driving the page.** A Playwright-driven browser
+  fails every `unpkg.com` request with `net::ERR_TUNNEL_CONNECTION_FAILED`
+  (the same proxy restriction as any other off-allowlist host — `curl`
+  confirms `403` at CONNECT) and the page throws `L is not defined`. Two
+  sessions on 2026-08-07 (#256, #267) hit this independently while driving the
+  same constraint-picker fix. Work around it by grepping `js/app.js` for the
+  `L.*` calls actually used (`L.map`, `L.marker`, `L.circle`, `L.divIcon`,
+  `L.markerClusterGroup`, `L.polyline`, `L.tileLayer`) and route-stubbing a
+  minimal no-op replacement before navigating.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
@@ -238,6 +264,28 @@ put "keep waiting" forward as the recommended choice.
   for a whole-run summary, or fetch a `job_id` first via
   `actions_list method=list_workflow_jobs`. It also 404s for a job still
   `in_progress` — wait for the job to finish before calling it.
+- **Don't `curl` `api.github.com` directly for a run's status — it returns a
+  look-alike JSON error, not real data.** A raw REST call there comes back
+  `{"message":"GitHub access is not enabled for this session..."}` — valid
+  JSON, no thrown exception, but with no `status`/`conclusion` field. A poll
+  loop that greps for one of those fields silently never matches and just
+  sleeps forever with nothing surfacing the failure (measured: 13m35s on
+  2026-08-07/#249, caught only because the user said "I think it's done").
+  Poll through the GitHub MCP tools (`actions_get`/`actions_list`) instead —
+  they're the credentialed path.
+- **`pull_request_read method=get_status` is a dead signal on this repo.** It
+  reports the legacy commit-status API, not check runs, and can read
+  `{"state":"pending","total_count":0}` on a PR whose checks have already
+  succeeded — which looks exactly like "CI hasn't started" if it's the first
+  thing you check. Use `method=get_check_runs` for the real answer.
+- **A deleted workflow file's old runs keep the workflow listed in the Actions
+  tab, and no session tool can clear them.** Removing a `.yml` from every
+  branch doesn't remove its run history, and clearing the ghost registration
+  needs `DELETE /repos/.../actions/runs/{run_id}` — an `actions: write`
+  endpoint the GitHub MCP server's toolset doesn't expose (read/list/get-logs/
+  dispatch only). Hand it to the owner (their own UI cleanup, or a one-time
+  owner-sanctioned cleanup workflow) rather than hunting for a session-side
+  fix that doesn't exist.
 
 ## The sandbox checkout is shallow — unshallow before comparing branch history
 
