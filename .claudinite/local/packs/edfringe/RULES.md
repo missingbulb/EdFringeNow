@@ -224,6 +224,19 @@ this section already warns about. `run_in_background` plus `Monitor` (or an
 MCP re-read on the tick after) is the real version of that pattern; a follow-up
 `wait` alone is not it.
 
+**The `gh` CLI is not installed in this sandbox — a poll built on it fails
+silently, not loudly.** On 2026-08-08 (#290) a session built
+`until gh run list ... 2>/dev/null | grep -q "completed"; do sleep 10; done`;
+because `gh` doesn't exist here and the stderr that would have said so was
+suppressed, the loop could never succeed or explain why, and it spun for the
+Bash tool's full 120s default timeout before being force-backgrounded. It then
+dispatched a second doomed attempt (a `Monitor` call built the same way, on
+`gh api ...`) before finally running `which gh` and getting `command not
+found`. Check a tool exists before building a loop's condition on it, and never
+suppress a poll condition's stderr — go straight to the GitHub MCP tools
+(`actions_get`/`actions_list`/`pull_request_read`) for anything about a run or
+a PR's checks.
+
 A run that never executed any of the repo's own steps is not a CI failure to
 wait out — it's infrastructure, and re-running or waiting only spends more of
 it. Two tells, both cheap to check: a check stuck `queued` that auto-cancels
