@@ -121,6 +121,14 @@ is a real finding about the UI, not just a testing limitation.
   `harness/vendor/systemfonts/` — the host's fonts cannot reach the page. A new
   emoji or script in the product or the fixtures needs that subset rebuilt
   (see the folder's README), or it renders as tofu.
+- **Reproducing a golden-flake locally: use the harness's own pixel comparator
+  (`compare.js`), not a raw byte/hash compare.** On 2026-08-11 (#335) a first
+  repro script hashed the rendered PNG's bytes across repeated cold renders
+  and found a hash difference — looked like a reproduction of the flake, but
+  `compare.js` (pixelmatch, zero tolerated diff) passed the identical images
+  at 0 pixels differing. A byte-hash compare is strictly tighter than what CI
+  actually enforces (bit-exact *pixels*, not encoder bytes), so it manufactures
+  false positives; the real comparator is what settles whether a flake is real.
 - **A red CI lane's diff image is unreachable from a session — reproduce it
   locally.** `ui-requirements` uploads a `requirements-failure-artifacts`
   artifact, but `download_workflow_run_artifact` hands back a

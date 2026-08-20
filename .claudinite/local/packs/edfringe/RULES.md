@@ -135,7 +135,20 @@ browser is here, and a UI change isn't done until it has been looked at.
   same constraint-picker fix. Work around it by grepping `js/app.js` for the
   `L.*` calls actually used (`L.map`, `L.marker`, `L.circle`, `L.divIcon`,
   `L.markerClusterGroup`, `L.polyline`, `L.tileLayer`) and route-stubbing a
-  minimal no-op replacement before navigating.
+  minimal no-op replacement before navigating. When the case needs the map
+  itself to render (markers, clustering, popups), the no-op stub isn't enough
+  — `curl` reaches `unpkg.com` fine through the agent proxy (confirmed:
+  `curl -sS -o leaflet.js https://unpkg.com/leaflet@1.9.4/dist/leaflet.js`
+  pulled 147552 bytes, `leaflet.css` 14806 bytes) even though headless
+  Chromium's own request to the same host fails (`net::ERR_CONNECTION_RESET` —
+  Chromium can't tunnel the proxy for any non-allowlisted host, same gap that
+  sends an in-page link to `www.edfringe.com` to `chrome-error://chromewebdata/`
+  instead of navigating). Curl the real `leaflet.js`/`leaflet.css` into the
+  scratchpad once and route-intercept `unpkg.com/leaflet@*` to serve them from
+  disk instead — a real, working map that never needs updating when `js/app.js`
+  starts calling a new `L.*` method (#318). The same proxy gap hits
+  `fonts.googleapis.com` (`ERR_CONNECTION_RESET`) — same fix if a case ever
+  needs real fonts loaded.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
@@ -178,6 +191,29 @@ Two caveats before you trust what comes back:
 As with the off-box CSS fetch above, `curl` is the working path: headless
 Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
 than the raw JSON or asset you usually want here.
+
+## Get the browser's own evidence before guessing a repro for a live-data bug report
+
+A locally-built reproduction can converge on a plausible but wrong root cause
+that produces the *identical* visible symptom the owner reported. On
+2026-08-09 (#309) the owner reported the live planner showing every favourite
+as unavailable ("no way all of those shows aren't available"). The first
+hypothesis — a Playwright harness's self-signed HTTPS origin making
+`shared/data-cache.js`'s `cache.put()` throw — reproduced the exact same
+all-red "📅 No dates" grid and shipped a fix (PR #310) for a bug that wasn't
+the owner's bug. It was overturned only ~12 minutes later when the owner
+supplied a screenshot of the browser's Network tab (zero requests for the four
+data files), and a further ~9 minutes after that when a second screenshot of
+the Application → Cache Storage panel finally pointed at the real cause (a
+stale-vs-fresh cache generation mismatch — see
+`.claudinite/local/packs/edfringe-data/RULES.md`).
+
+This site has three caching layers (the browser's own HTTP cache, the
+`caches` API in `shared/data-cache.js`, and `localStorage` TTL stamps), and
+only the browser's own evidence disambiguates which one is actually in play.
+Ask for a screenshot of DevTools' Network tab and Application → Cache Storage
+panel as the *first* response to a "the live site shows wrong data" report,
+before building a speculative local repro.
 
 ## Watching a workflow or scheduler run — never a blind fixed sleep
 
@@ -251,6 +287,44 @@ without recommending more waiting and closed in 42 minutes. Recognise the
 pattern, say plainly what local `verify`/`test:ui` already covers, and don't
 put "keep waiting" forward as the recommended choice.
 
+**A `Monitor` loop built on `curl … api.github.com/…/check-runs` can give a
+false-positive "done" signal in under a second**, not only the already-
+documented infinite hang. On 2026-08-13 (#349) a `Monitor` polling a PR's
+checks via curl hit the credentialed-403 look-alike JSON body (see below),
+computed a pending-count of 0 from that error, and fired "all checks
+concluded" about one second after starting — while `ci`/`ui-requirements`
+were still `in_progress` and didn't actually finish for another ~2.5 minutes.
+Caught only because the session cross-checked `pull_request_read
+get_check_runs` before merging. Build a `Monitor` loop's exit condition on the
+GitHub MCP tools directly, or verify any curl-based result against them before
+acting on it — an empty/error body can satisfy "no pending checks" as easily
+as a real answer can.
+
+Don't fire a new bounded `run_in_background` sleep before the previous one's
+result is in hand, either. The same #349 session, having just been burned by
+the false positive above, over-corrected by launching 8 separate
+`sleep N; echo done` background commands (60/90/180/240/240/240/300/300s) in
+82 seconds while also re-polling `get_check_runs` directly in between — the
+checks concluded via a plain poll a few seconds later, so most of the 8 were
+never needed, and each still queues its own later `task-notification`. One
+bounded sleep at a time, consumed before the next is fired, is the pattern
+above; a burst of overlapping ones doesn't wait faster, it just adds noise.
+
+A dispatched subagent's `completed` notification can mean only that its
+*turn* ended, not that its task did. When a subagent itself starts a
+`Monitor` to wait on a PR's checks and its turn ends there, the notification's
+final text can be a one-line placeholder ("Waiting for the checks-monitor to
+report completion.") rather than the structured report the task needs —
+reading `completed` as "done" and moving on skips the real report. On
+2026-08-11 (#332) the executor had to `SendMessage` an explicit "give me your
+full final status" nudge twice, ~85s apart, before the subagent produced real
+output — and by the second nudge the executor had *already* independently
+queried the same PR's checks over MCP and had the answer, so it just handed
+the subagent that answer rather than let it re-discover it. Read a
+"completed" subagent's actual final text before trusting it as a report; if
+it's a placeholder, nudge with `SendMessage` and hand it any answer you
+already have rather than let both sides poll the same state twice.
+
 ## GitHub MCP call shapes that cost round-trips here
 
 - **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
@@ -291,6 +365,13 @@ put "keep waiting" forward as the recommended choice.
   `{"state":"pending","total_count":0}` on a PR whose checks have already
   succeeded — which looks exactly like "CI hasn't started" if it's the first
   thing you check. Use `method=get_check_runs` for the real answer.
+- **`pull_request_read method=get_files` overflows the same way
+  `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
+  not something to retry.** PR #207 (46 files, +2554/-274) blew the token
+  limit on `get_files` at `perPage: 100`, spilling its output to a side file
+  instead of truncating. For a landed-status judgment the file-level diff
+  usually isn't needed — `get` (title/body) plus `list_commits` is normally
+  enough; don't chase the spill or retry at a lower `perPage`.
 - **A deleted workflow file's old runs keep the workflow listed in the Actions
   tab, and no session tool can clear them.** Removing a `.yml` from every
   branch doesn't remove its run history, and clearing the ghost registration
@@ -299,6 +380,35 @@ put "keep waiting" forward as the recommended choice.
   dispatch only). Hand it to the owner (their own UI cleanup, or a one-time
   owner-sanctioned cleanup workflow) rather than hunting for a session-side
   fix that doesn't exist.
+
+## `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
+
+Calling `mcp__github__subscribe_pr_activity` while actively driving a PR to
+green in the same turn has been denied by the owner every time it's been
+tried in this repo: three times waiting on one PR's checks (#335, 16:03/
+16:08/16:13) and again on a different PR the next day (#341, 10:56). Each
+denial silently stalled the turn until the owner noticed and sent "Continue
+from where you left off" roughly 5 minutes later — real idle wall time for
+nothing, since the very next action every time was to poll
+`pull_request_read method=get_check_runs` directly, which works fine. This
+doesn't contradict the owner's standing preference to use `subscribe_pr_activity`
+when *asked* to watch/babysit a PR — it's specifically the pattern of reaching
+for it as a substitute for synchronous polling of your own in-flight work.
+When you're actively waiting on your own PR's checks in the same turn, poll
+the GitHub MCP tools directly from the start; don't call `subscribe_pr_activity`
+first and retry after a denial.
+
+## A dispatched subagent's work is void if you don't actually wait for it
+
+On 2026-08-09 (#296) the executor backgrounded a `growth-dedup` subagent
+(model `opus`) and stated it would act on the subagent's completion
+notification — then, before that notification arrived, independently made the
+same three prune edits to this file itself, committed, pushed, and opened
+PR #304 at 04:59:14. The subagent's own report, reaching the identical
+three-item conclusion, didn't land until 04:59:58 — by then entirely
+redundant, its ~4m46s run wasted. After stating a wait-for-subagent plan,
+actually stop: don't perform the same mutation yourself in the same session
+before its notification (or your own scheduled wakeup) fires.
 
 ## The sandbox checkout is shallow — unshallow before comparing branch history
 
@@ -359,6 +469,14 @@ behind it refreshes, only that it wants the freshest copy — so its comment has
 no business saying "hourly". A detail that would change without this code
 changing is someone else's detail; leave it out.
 
+**Don't resolve that by pointing at a path inside `.claudinite/`.** On
+2026-08-12 (#341) the sweep applying this very rule replaced a trimmed
+comment in `scraper/README.md` with "see the declarations under
+`.claudinite/local/packs/edfringe/tasks/`" — which is exactly what the
+`claudinite-isolation` check bars (a consumer file referencing an internal
+`.claudinite` path) and turned CI red on the very next commit. Point at the
+pack's own repo-level docs instead, or say nothing.
+
 ## The site is two front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
@@ -384,6 +502,18 @@ so the extension is a style choice — use `.js`, matching `plan/lib/`.
 A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
 check catches an omission.
+
+## A `wiki-growth` pass's competitor research is WebSearch, not WebFetch
+
+Direct `WebFetch` calls to a third-party Fringe-planner site are a predictable
+dead end, not a defensible first attempt: on 2026-08-09 (#300) six different
+competitor domains (`fringe-finder.netlify.app`, `edfringeplanner.co.uk`,
+`fringeplan.com`, `planyourfringe.com`, `www.edinburghfestivalcity.com`,
+`www.edfringeplanner.co.uk`) all failed `EGRESS_BLOCKED` in the same run,
+while `WebSearch` snippets supplied every feature/claim/pricing detail the
+page itself would have. Go straight to `WebSearch` for an external
+competitor's product and cite the snippet's publisher, per the product-wiki
+pack's own sourcing rule, rather than trying a direct fetch first.
 
 ## A capture pass must never land a rule that teaches routing around a safety or permission denial
 
