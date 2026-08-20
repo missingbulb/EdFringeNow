@@ -152,6 +152,30 @@ Two consequences to hold on to when touching this:
   1 Sep, outside the August day files, and live only in the master and the planner's
   catalogue) — expect that and check it, rather than reading it as data loss.
 
+## Two client-cached files joined by key need a fingerprint, or a generation split breaks the join
+
+`shows.min.json` (catalogue) and `availability.min.json` (ticket-status
+sidecar) are cached independently in the browser and joined client-side by
+performance key (venue + date + time). The UTC time-shift fix (`c1bc2a6`,
+above) moved every one of those keys by an hour — a browser still holding the
+pre-fix sidecar cached alongside a post-fix catalogue joined at 6.2%
+(3,751/60,115) instead of 100%, rendering every planner favourite "No dates."
+even though both files were individually correct (#309). A per-file TTL has
+no way to detect that two files it's serving came from incompatible backend
+generations.
+
+The fix is `join_fingerprint(master)` in `scraper/normalize.py`, mirrored
+exactly as `joinFingerprint()` in `plan/lib/hydrate.js` (same algorithm in
+both languages — `normalize.py`'s self-test asserts they agree, and that a
+moved start time changes the fingerprint while a price change doesn't),
+carried as the sidecar's `k` field. `plan/plan.js` compares its own
+`joinFingerprint()` of the catalogue it holds against the sidecar's `k` and
+calls `evictCached()` on both URLs on a mismatch, forcing a refetch of the
+matching pair. Any future backend change that moves a performance's join key
+needs this same fingerprint-and-evict shape — a plain TTL bump doesn't cover
+it, because both files can be individually "fresh enough" by TTL and still
+belong to different generations.
+
 ## The committed data is generated output — regenerate it, never hand-edit it
 
 `data/raw_pages/` is a git-ignored regenerable cache. `data/normalized/`,
