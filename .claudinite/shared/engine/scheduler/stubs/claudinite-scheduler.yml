@@ -1,25 +1,34 @@
-# Claudinite per-repo task scheduler — the repo's ONLY cron
-# (per-project-scheduling DESIGN §3). A thin shim: all logic lives in the
-# vendored engine, so this file changes rarely (schema and behavior changes ride
-# the vendor refresh, not edits here). It runs hourly on a repo-hashed minute
-# constrained to :10–:50 — spreading the fleet, dodging GitHub's :00 stampede,
-# and staying clear of the hour boundary the slot math anchors on.
+# Claudinite work-item queue — the generator's scheduler run and its drain (tasks-dispatch
+# DESIGN §5, §10). This is the repo's ONLY cron, and it replaces the slot
+# scheduler's content at the same path when `taskScheduler.dispatch` is `"queue"`
+# — same file, same hashed minute, different mechanism, so the one-cron rule and
+# every reader that knows this workflow by name keep holding.
 #
-# The minute below is a placeholder; bootstrap/vendoring rewrites it to this
-# repo's stable hashed minute in :10–:50, computed by
-# `node .claudinite/shared/engine/scheduler/hash-minute.mjs <owner/repo>`
-# (scheduler-workflow-shape enforces the range; the update flows re-derive the value to
-# catch drift). `workflow_dispatch` allows a manual run; the concurrency group
-# serializes runs so a slow run and its successor never overlap.
+# A thin shim: all logic lives in the vendored engine, so this file changes
+# rarely. The minute below is a placeholder; bootstrap and the wiring converge
+# rewrite it to this repo's stable hashed minute in :10–:50, computed by
+# `node .claudinite/shared/engine/scheduler/hash-minute.mjs <owner/repo>`.
 #
-# A manual run may carry `overrides` — ONE free-form `KEY=value` string, because
-# GitHub cannot declare arbitrary named inputs. It reaches the engine as
-# `CLAUDINITE_OVERRIDES`, and the engine understands exactly one key:
-# `FORCE_TASKS=<comma-separated task ids>`.
-# It runs those tasks even though their slot has already passed, and
-# WITHOUT consulting their preconditions — forcing is the operator's decision, so
-# nothing asks the task whether it agrees. The engine learns "run these ids",
-# never what any of them do, and no task declaration mentions forcing at all.
+# TWO JOBS, IN ORDER. The scheduler run is pure label mechanics over the issue list —
+# instantiate each task's standing item at its anchor, ready what is due, reclaim
+# dead executor claims — and evaluates no precondition and collects no signal. The
+# drain then STARTS an executor run for what the scheduler run just created, which is what
+# keeps the common case's latency at zero even with no `labeled` event delivered.
+# Lost events are therefore never the only delivery — they are latency sugar,
+# which is what retires the re-arm.
+#
+# The drain dispatches rather than executes, and that is the point: this workflow's
+# concurrency group serializes SCHEDULER RUNS, and an executor run inside it would make each
+# hour's scheduler run queue behind the previous hour's work — which the heartbeat, by making
+# long work legal, turned from theoretical into likely (DESIGN §15.16).
+#
+# `workflow_dispatch` is not a convenience: it is the never-wait-for-the-cron
+# lever every forced run, migration and validation burst depends on. Its one
+# input is how that lever reaches ACROSS repos: the fleet enforcer dispatches
+# this workflow naming the tasks to run now, and this member wakes its own
+# standing items with its own token (DESIGN §8). The alternative — the enforcer
+# editing every member's issues directly — would widen the fleet PAT to issue
+# writes on every repository, for a job the member can do for itself.
 name: Claudinite scheduler
 
 on:
@@ -27,55 +36,75 @@ on:
     - cron: '10 * * * *'
   workflow_dispatch:
     inputs:
-      overrides:
-        description: 'Manual-run overrides: comma-separated KEY=value. FORCE_TASKS=<task ids> runs those tasks unconditionally, even when their slot has passed, e.g. FORCE_TASKS=update.'
+      wake:
+        description: 'Task ids to run now (`pack/task` or a bare task name, space-separated) — wakes each one’s standing item regardless of its anchor'
         required: false
-        default: ''
+        type: string
 
-# Scheduled (and plain manual) runs serialize in one group so a slow run and its
-# successor never overlap. A run carrying OVERRIDES gets a group of its own, keyed
-# by run id: a forced run does exactly one named task, and the fleet fan-out case
-# (an enforcer firing FORCE_TASKS at many members at once) must neither queue
-# behind the hourly cron nor be silently dropped by it — GitHub keeps at most ONE
-# pending run per group and cancels older pending ones, so a shared group can eat
-# a forced dispatch without a trace. The (task, slot) exactly-once dispatch guard
-# and the workers' idempotence are what make the rare overlap with a cron run safe.
+# One scheduler run at a time, always. The scheduler run's duplicate-standing-item self-heal is
+# written assuming exactly this — it closes every open family item but the oldest,
+# which is safe precisely because two scheduler runs never run at once.
 concurrency:
-  group: claudinite-scheduler${{ inputs.overrides != '' && inputs.overrides != null && format('-forced-{0}', github.run_id) || '' }}
+  group: claudinite-scheduler-run
   cancel-in-progress: false
 
 permissions:
-  contents: write        # read the repo + vendored engine; the update runner pushes its delivery branch (task-prework §7/E4)
-  issues: write          # file / label / close dispatch issues
-  pull-requests: write   # the update runner opens the per-cycle PR and arms auto-merge
-  actions: write         # read the run ledger (last successful run) for due-slot math, AND
-                         # dispatch a workflow a task drives (store-release fires the release
-                         # orchestrator's daily leg) — creating a workflow_dispatch event needs
-                         # write, not read, and `read` silently 403s the POST
+  contents: write        # read the repo + vendored engine; a task's code_work pushes its delivery branch
+  issues: write          # create / label / comment / close work items — the queue itself
+  pull-requests: write   # a task's code_work opens its PR and arms auto-merge
+  actions: write         # dispatch a workflow a task drives (creating a workflow_dispatch event needs write; `read` silently 403s the POST)
 
 jobs:
-  schedule:
+  scheduler-run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 24
-      - name: Evaluate schedule and dispatch due tasks
+      - name: Instantiate, ready and reclaim work items
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          # Empty on every scheduled run — `inputs` is only populated by
-          # workflow_dispatch. The engine reads only FORCE_TASKS out of it.
-          CLAUDINITE_OVERRIDES: ${{ inputs.overrides }}
-        run: node .claudinite/shared/engine/scheduler/run.mjs
+          CLAUDINITE_WAKE: ${{ inputs.wake }}
+          # The operator hold (DESIGN §8): set this repo variable to `true` and
+          # every entry point exits at its first act, having fired nothing.
+          CLAUDINITE_TASKS_SUSPEND_ALL: ${{ vars.CLAUDINITE_TASKS_SUSPEND_ALL }}
+        run: node .claudinite/shared/engine/scheduler/queue/scheduler-run.mjs
+
+  # THE POST-SCHEDULER RUN DRAIN, DISPATCHED RATHER THAN RUN HERE (DESIGN §10, §15.16).
+  # The scheduler run's concurrency group serializes scheduler runs — its duplicate-item self-heal
+  # depends on that — and a drain running inside the group would make every hour's
+  # scheduler run queue behind the previous hour's work. Since the heartbeat made long work
+  # legal, that is no longer a theoretical wait. So the drain is a `workflow_dispatch`
+  # of the executor workflow: it starts in its own group, on its own runner, and
+  # this job's success means "the drain was started", never "the drain finished".
+  #
+  # This is still the guaranteed delivery. A label event may be lost; this fires
+  # every hour whatever happens.
+  drain:
+    needs: scheduler-run
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'claudinite-executor.yml',
+              ref: context.payload.repository?.default_branch
+                ?? context.ref.replace('refs/heads/', ''),
+            });
+            core.info('dispatched the executor to drain whatever this scheduler run created');
 
   # A scheduled run reaches no one when it goes red, so escalate a whole-run
-  # failure to a human-visible `workflow-failure` issue (DESIGN §3.6,
-  # gha/scheduled-failure-escalation). Converges to ONE open issue by a fixed
-  # title (create-or-comment), and ensures the label first since a first-run
-  # failure may precede the scheduler's own label-ensure.
+  # failure to a human-visible `workflow-failure` issue. Converges to ONE open
+  # issue by a fixed title (create-or-comment), and ensures the label first since a
+  # first-run failure may precede any label-ensure.
   report-failure:
-    needs: schedule
+    needs: [scheduler-run, drain]
     if: failure()
     runs-on: ubuntu-latest
     permissions:
@@ -88,7 +117,7 @@ jobs:
             const title = 'Claudinite scheduler run failed';
             await github.rest.issues.createLabel({ owner, repo, name: 'workflow-failure', color: 'b60205', description: 'Claudinite scheduler: a scheduler run or task failed' }).catch(() => {});
             const run = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
-            const body = `The Claudinite scheduler run failed: ${run}`;
+            const body = `The Claudinite scheduler run/drain run failed: ${run}`;
             const found = await github.rest.search.issuesAndPullRequests({ q: `repo:${owner}/${repo} is:issue is:open in:title "${title}"` });
             if (found.data.total_count > 0) await github.rest.issues.createComment({ owner, repo, issue_number: found.data.items[0].number, body });
             else await github.rest.issues.create({ owner, repo, title, labels: ['workflow-failure'], body });
