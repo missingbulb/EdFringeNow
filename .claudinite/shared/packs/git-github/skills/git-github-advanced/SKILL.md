@@ -5,7 +5,7 @@ description: Git/GitHub procedures beyond the baseline lifecycle. Use for commit
 
 # Portable git & GitHub procedures
 
-The project-agnostic half of how we drive GitHub: the branch/commit-history rules for PR work, the CI-trigger rules, and how we keep merge-conflict churn cheap across parallel branches. (The issue → branch → PR task lifecycle that every task follows lives in [RULES.md](../../../../packs/basics/RULES.md), the `basics` baseline every project declares and every session loads — it's not task-gated, so it doesn't live here.) Project-specific GitHub procedures (the merge-to-main command, when to open a PR early, the merge-cheaply poll loop tuned to the local environment, and the generated-file merge rules) live in the consuming repo's own GitHub-procedures doc.
+The project-agnostic half of how we drive GitHub: the branch/commit-history rules for PR work, the CI-trigger rules, and how we keep merge-conflict churn cheap across parallel branches. (The issue → branch → PR task lifecycle that every task follows is baseline prose every session already loads — it's not task-gated, so it doesn't live here.) Project-specific GitHub procedures (the merge-to-main command, when to open a PR early, the merge-cheaply poll loop tuned to the local environment, and the generated-file merge rules) live in the consuming repo's own GitHub-procedures doc.
 
 ## Updating an issue's status: comment, don't overwrite
 
@@ -31,7 +31,7 @@ Removing a toolchain invites tidying away its ignore rules alongside it — but 
 
 While working a branch, commit frequently rather than landing one big commit at the end — small, ordered commits let the owner follow the work as it develops. Use commits to *layer* the work in the order you'd want it reviewed:
 
-- Write the failing test(s) first, commit them, **then** implement the feature — so the history shows the contract before the code that satisfies it (and you've seen the test fail before trusting it, per [the basics pack's RULES.md](../../../basics/RULES.md)).
+- Write the failing test(s) first, commit them, **then** implement the feature — so the history shows the contract before the code that satisfies it (and you've seen the test fail before trusting it).
 - Keep any documentation update as its own commit *after* the feature, not folded into it.
 
 There's no cost to a branch carrying many commits when the project uses a **squash** merge to `main` (one commit per PR): the squash collapses them into a single commit on `main`, so `main`'s one-commit-per-PR history is unaffected no matter how granularly the branch is committed.
@@ -138,6 +138,15 @@ GitHub **Actions** reports results as **check runs**, not the legacy **commit st
 ## To confirm a non-PR run (push / dispatch), read its job logs — it has no PR check runs
 
 A `push` or `workflow_dispatch` run isn't attached to a PR, so the PR-scoped check-run query above doesn't apply to it. Confirm such a run through the GitHub API/MCP tools: `get_job_logs(run_id, failed_only: true)` — "0 failed jobs" means green — or, for a release build, `get_release_by_tag`. `get_job_logs` needs more than a bare `run_id`: it rejects with "job_id is required when failed_only is false" unless you pass `failed_only: true` or fetch a `job_id` first (`list_workflow_jobs`), and it 404s for a job still `in_progress` — wait for the job to finish. Don't `curl` the run's status instead: in a sandboxed session `api.github.com` is proxy-blocked and returns an error body that never matches a success pattern, so a `curl`/`Monitor` poll silently reports "still running" until it times out.
+
+## A deleted workflow's old runs outlive it, and no session tool can clear them
+
+Removing a `.yml` from every branch does not remove its run history — the workflow stays listed in
+the Actions tab, a ghost registration attached only to runs that already happened. Clearing it
+needs `DELETE /repos/.../actions/runs/{run_id}`, an `actions: write` endpoint outside the read/
+list/get-logs/dispatch surface the GitHub MCP toolset exposes. Don't hunt for a session-side fix
+that doesn't exist — hand the cleanup to the owner (their own UI, or a one-time sanctioned
+workflow) instead.
 
 ## A green run is not evidence its job ran — read the job's own conclusion
 

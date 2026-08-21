@@ -5,9 +5,8 @@ read what the wiki already knows, research only what its own backlog flags, writ
 find little or nothing — no new citable material means no branch, no PR, and that is the documented good
 outcome.** A padded or fabricated update is worse than none.
 
-You run under the executor, dispatched by a `ready-for-agent` issue; GitHub access is the session's
-**GitHub MCP tools** (`mcp__github__*`) — never `gh`/`curl`/a clone. "Default branch" below means the repo's
-actual default branch. The wiki set is derived **structurally**: every `README.md` at depth ≥ 2 under
+GitHub access is the session's **GitHub MCP tools** (`mcp__github__*`) — never `gh`/`curl`/a clone.
+"Default branch" below means the repo's actual default branch. The wiki set is derived **structurally**: every `README.md` at depth ≥ 2 under
 `product-wiki/`, excluding the `product-wiki/product-requirements/` and `product-wiki/sample-data/` subtrees.
 
 There is no preflight: whether this run happens was decided by the task's **precondition** (it declines while
@@ -52,7 +51,7 @@ Neither mode yields citable material → stop. No commit, no log entry, no PR.
 A unique branch per run, commits touching only `product-wiki/**` minus `product-requirements/`, one
 **PR — never a push to the default branch directly** — carrying the **`product-wiki-growth` label**. The
 label is load-bearing: it is how the next run's precondition sees this PR at all, so a PR opened without it
-will be stacked on by the following slot — label it whether or not the PR then lands.
+will be stacked on by the following week's run — label it whether or not the PR then lands.
 Then hand it to the one delivery procedure (`deliver-pr.md`) and do what it says. PR body: the question(s)
 researched, what changed where, the citations added, and the open questions left for the next run.
 
@@ -64,8 +63,8 @@ title, never by number, never opened/closed as state (open it if missing). One d
 a failed unattended run). Clean no-ops stay silent — the pack's freshness advisory is the prolonged-silence
 observer.
 
-`agent_model: opus` — reading a wiki, judging which of its open questions is worth this run, and telling a
-citable finding from a plausible one is the heaviest judgment in the task set.
+Reading a wiki, judging which of its open questions is worth this run, and telling a citable finding from
+a plausible one is the heaviest judgment in the task set — weigh each accordingly.
 
 ## What this worker must never do
 

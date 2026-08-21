@@ -13,11 +13,10 @@
         "basics"
       ]
     },
-    "github-actions",
     "html",
     "tidy-repo",
     {
-      "id": "grow_with_claudinite",
+      "id": "claudinite-growth",
       "config": {
         "retention_days": 10
       }
@@ -57,7 +56,7 @@
         "repo": "missingbulb/Shepherd"
       }
     },
-    "core"
+    "claudinite-lifecycle"
   ],
   "accept": [
     {
@@ -89,21 +88,20 @@
   "claudinite": {
     "updated": "2026-08-12T23:02:44.700Z",
     "ref": "631a067f5a0413e154a0d4c1a66275f18b255af9",
-    "engineVersion": 4,
+    "engineVersion": "60820.1",
     "packVersions": {
-      "basics": 3,
-      "barriers": 2,
-      "git-github": 2,
-      "github-actions": 2,
-      "html": 2,
-      "tidy-repo": 2,
-      "grow_with_claudinite": 2,
-      "executable-requirements": 2,
-      "spec-driven-product": 2,
-      "static-website": 2,
-      "product-wiki": 2,
-      "claude-code-web-users-support": 2,
-      "core": 3
+      "basics": "60821.4",
+      "barriers": "60820.1",
+      "git-github": "60821.1",
+      "html": "60820.1",
+      "tidy-repo": "60820.1",
+      "claudinite-growth": "60821.2",
+      "executable-requirements": "60820.1",
+      "spec-driven-product": "60820.1",
+      "static-website": "60821.1",
+      "product-wiki": "60820.1",
+      "claude-code-web-users-support": "60821.2",
+      "claudinite-lifecycle": "60821.3"
     }
   }
 }

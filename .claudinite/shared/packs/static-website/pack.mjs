@@ -1,5 +1,6 @@
 import releaseWorkflows, { shipsPipeline, STUB_FILE, STUB_NAME } from './release-workflows.mjs';
 import siteConfig from './site-config.mjs';
+import versionBumped from './version-bumped.mjs';
 import versionScheme from './version-scheme.mjs';
 
 // The static-website standard: a plain static site that releases on push, carries
@@ -15,18 +16,19 @@ import versionScheme from './version-scheme.mjs';
 // fires on that repo. The declaration is still what activates the pack.
 export default {
   id: 'static-website',
-  version: 2,
+  version: '60821.1',
   minEngineVersion: 1,
   ruleRoutingGuidance: {
     belongs: 'shipping and serving a static site: date-anchored versioning, release on push, the publish set, Pages deploy, client-side caching',
-    excludes: 'hand-authored markup gotchas — html; generic workflow lint — github-actions; store publication — the release packs',
+    excludes: 'hand-authored markup gotchas — html; generic workflow lint — git-github; store publication — the release packs',
   },
   badge: 'badge.svg',
   marker: `.github/workflows/${STUB_FILE} (named "${STUB_NAME}")`,
   detect: shipsPipeline,
-  // The site is HTML served over GitHub Actions — the markup pack and the
-  // workflow-platform pack are what this standard is built on top of.
-  requires: ['html', 'github-actions'],
+  // The site is HTML served over GitHub Actions. Only the markup pack is named
+  // here: the workflow-platform rules live in git-github, which basics' own
+  // `requires` already materializes into every declaration.
+  requires: ['html'],
   prose: 'RULES.md',
 
   // Adoption interview. Two questions, both genuine forks in the road that the
@@ -49,4 +51,11 @@ export default {
   ],
 
   worldRules: [releaseWorkflows, siteConfig, versionScheme],
+  // Delivery, not state: the tree always carries a version, and only the diff
+  // says whether it moved with the published files beside it.
+  workRules: [versionBumped],
+  // The standard itself — the contract the three rules above judge against, and the
+  // setup a new site repo needs. A skill rather than prose: it is wanted when a
+  // pipeline is being set up or debugged, not carried by every session in the repo.
+  skills: ['static-site-releases'],
 };
