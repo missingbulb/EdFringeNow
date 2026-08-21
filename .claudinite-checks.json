@@ -13,11 +13,10 @@
         "basics"
       ]
     },
-    "github-actions",
     "html",
     "tidy-repo",
     {
-      "id": "grow_with_claudinite",
+      "id": "claudinite-growth",
       "config": {
         "retention_days": 10
       }
@@ -57,7 +56,7 @@
         "repo": "missingbulb/Shepherd"
       }
     },
-    "core"
+    "claudinite-lifecycle"
   ],
   "accept": [
     {
@@ -89,7 +88,7 @@
   "claudinite": {
     "updated": "2026-08-12T23:02:44.700Z",
     "ref": "631a067f5a0413e154a0d4c1a66275f18b255af9",
-    "engineVersion": 4,
+    "engineVersion": "60820.1",
     "packVersions": {
       "basics": 3,
       "barriers": 2,
