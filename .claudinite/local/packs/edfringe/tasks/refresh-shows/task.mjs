@@ -7,7 +7,7 @@
 //
 // `agent_model: 'none'` — the whole job is deterministic (fetch, merge,
 // regenerate, commit), so there is no agent and no dispatch issue: the scheduler
-// runs `prework` as a subprocess and that is the entire task. A
+// runs `code_work` as a subprocess and that is the entire task. A
 // non-zero exit converges the task to one open `needs-human` issue, which is the
 // replacement for the old workflow's `report-failure` job.
 //
@@ -20,8 +20,8 @@ export default {
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits regenerated data straight to the default branch, as the workflow did — it never opens a PR
   agent_instructions: 'worker.sh', // vestigial for an agentless task; the real work is the command below
-  prework: 'bash worker.sh',
-  prework_timeout: 1800, // the retired workflow's `timeout-minutes: 30`, in seconds
+  code_work: 'bash worker.sh',
+  code_work_timeout: 1800, // the retired workflow's `timeout-minutes: 30`, in seconds
 
   // Unconditional, exactly as the retired daily cron was. The thing this task
   // reacts to — shows added or edited on edfringe.com — leaves no trace in this
