@@ -2,8 +2,8 @@
 #
 # refresh-tickets worker — refreshes ticket status and commits the result.
 #
-# The Claudinite scheduler runs this as its `prework` subprocess with
-# cwd = this task directory and a hard kill at `prework_timeout`, so
+# The Claudinite scheduler runs this as its `code_work` subprocess with
+# cwd = this task directory and a hard kill at `code_work_timeout`, so
 # the first thing it does is move to the repo root the scheduler hands it. There
 # is no agent: a non-zero exit is the failure signal, and the scheduler converges
 # that to one open `needs-human` issue.

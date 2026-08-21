@@ -7,7 +7,7 @@
 // catalogue top-up, and the two data-committing tasks never share a checkout.
 //
 // `agent_model: 'none'` — the whole job is deterministic, so there is no agent
-// and no dispatch issue: the scheduler runs `prework` as a subprocess and that
+// and no dispatch issue: the scheduler runs `code_work` as a subprocess and that
 // is the entire task. A non-zero exit converges to one open `needs-human` issue.
 //
 // Self-contained (imports nothing). `edinburghClock` and `ticketWindow` are
@@ -53,8 +53,8 @@ export default {
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits refreshed statuses straight to the default branch — no PR
   agent_instructions: 'worker.sh', // vestigial for an agentless task; the real work is the command below
-  prework: 'bash worker.sh',
-  prework_timeout: 900,
+  code_work: 'bash worker.sh',
+  code_work_timeout: 900,
 
   precondition() {
     return ticketWindow(new Date());
