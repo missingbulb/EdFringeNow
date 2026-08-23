@@ -3,8 +3,9 @@
 // Refreshes ticket status for today and every remaining festival date, writing
 // through the master so every derived file regenerates from one source (#249).
 //
-// `daily+1h` rather than the plain `daily` anchor: it runs after refresh-shows'
-// catalogue top-up, and the two data-committing tasks never share a checkout.
+// `schedule_after: ['edfringe/refresh-shows']` rather than a bare `daily` anchor:
+// it runs after refresh-shows' catalogue top-up, and the two data-committing
+// tasks never share a checkout.
 //
 // `agent_model: 'none'` — the whole job is deterministic, so there is no agent
 // and no dispatch issue: the scheduler runs `code_work` as a subprocess and that
@@ -48,7 +49,8 @@ export function ticketWindow(now) {
 
 export default {
   id: 'refresh-tickets',
-  frequency: 'daily+1h',           // the slot after refresh-shows'; the precondition decides whether to act
+  frequency: 'daily',              // the anchor; schedule_after below is what actually orders it after refresh-shows
+  schedule_after: ['edfringe/refresh-shows'],
   precondition_signals: [],        // the gate is the calendar, not repo state
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits refreshed statuses straight to the default branch — no PR
