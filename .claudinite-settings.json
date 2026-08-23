@@ -1,22 +1,34 @@
 {
   "packs": [
-    "basics",
+    {
+      "id": "basics",
+      "version": "60823.1"
+    },
     {
       "id": "barriers",
+      "version": "60823.1",
       "via": [
         "basics"
       ]
     },
     {
       "id": "git-github",
+      "version": "60822.2",
       "via": [
         "basics"
       ]
     },
-    "html",
-    "tidy-repo",
+    {
+      "id": "html",
+      "version": "60822.1"
+    },
+    {
+      "id": "tidy-repo",
+      "version": "60823.1"
+    },
     {
       "id": "claudinite-growth",
+      "version": "60823.2",
       "config": {
         "retention_days": 10
       }
@@ -26,6 +38,7 @@
     "local/edfringe-requirements",
     {
       "id": "executable-requirements",
+      "version": "60822.1",
       "config": {
         "spec": "product/requirements.md"
       },
@@ -34,9 +47,13 @@
         "requirements_source": "Authored fresh at product/requirements.md (config.spec), distilled from the existing product brief docs/product-spec.md. No prior formal requirements doc or issue-tracker backlog to extract."
       }
     },
-    "spec-driven-product",
+    {
+      "id": "spec-driven-product",
+      "version": "60822.1"
+    },
     {
       "id": "static-website",
+      "version": "60823.1",
       "answers": {
         "hosting": "GitHub Pages from this repo — confirmed from the repo rather than asked: the hand-rolled Pages workflow this adoption replaces already deployed to Pages on push to main via actions/deploy-pages, with no CNAME and no other host. So the full set is vendored: orchestrator + publish/deploy reusables + the three composite actions.",
         "publish_set": "Rooted at the repo root. The site is the four pages (index, accessibility, privacy, terms), the favicons and .nojekyll, css/, js/, shared/, the planner's own paths (plan/index.html, plan/plan.css, plan/plan.js, plan/lib), package.json (the debug pill fetches it for the version), and only the data the browser actually fetches: data/venues.json, data/days/, and the three normalized sidecars the planner loads (shows.min.json, availability.min.json, descriptions.min.json). Derived from the fetch call sites in js/app.js and plan/plan.js, not from 'everything except the tooling'. Deliberately excluded: data/normalized/shows.json (7.4M) and data/prices.json (2.9M) are scraper-side inputs no page fetches, plus scraper/, docs/, design-concepts/, product-wiki/, plan/design/, scripts/ and the agent tooling."
@@ -44,6 +61,7 @@
     },
     {
       "id": "product-wiki",
+      "version": "60823.2",
       "answers": {
         "product": "Fringe Discover: a spontaneity/reachability tool for the Edinburgh Festival Fringe. Where listings apps answer 'what exists?', this answers 'what can I actually make right now?' — given the user's location, how far they'll travel and how, and their next commitment, it collapses ~3,800 shows into a short list of genuinely reachable options that haven't started and still leave time to reach whatever is next.",
         "users": "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'.",
@@ -52,11 +70,15 @@
     },
     {
       "id": "claude-code-web-users-support",
+      "version": "60823.1",
       "config": {
         "repo": "missingbulb/Shepherd"
       }
     },
-    "claudinite-lifecycle"
+    {
+      "id": "claudinite-lifecycle",
+      "version": "60823.1"
+    }
   ],
   "accept": [
     {
@@ -70,12 +92,8 @@
       "reason": "the repo's one verification gate invokes the world sweep (engine/checks/check_the_world.mjs) so that passing it locally means what passing CI means — a commit that passed verify and went red on CI for a blocking conformance finding is what prompted this. Not the coupling the rule guards against: no canon internals are imported and nothing is inlined, it is the same documented CLI entry point .github/workflows/ already spells under the rule's own carve-out. A canon rename of that one path breaks the workflow and this script identically, and the fix is the same one line"
     }
   ],
-  "maintenance": {
-    "delivery": "auto-merge",
-    "mechanism": "versioned"
-  },
   "taskScheduler": {
-    "endpoints": {
+    "agenticTaskInvocationEndpoints": {
       "default": {
         "url": "https://api.anthropic.com/v1/claude_code/routines/trig_019ysxedonGvJiDzVZbJamBd/fire",
         "tokenSecret": "CCR_ROUTINE_TOKEN"
@@ -85,23 +103,5 @@
     "weeklyDay": "Sun",
     "monthlyDay": 1
   },
-  "claudinite": {
-    "updated": "2026-08-12T23:02:44.700Z",
-    "ref": "631a067f5a0413e154a0d4c1a66275f18b255af9",
-    "engineVersion": "60820.1",
-    "packVersions": {
-      "basics": "60821.4",
-      "barriers": "60820.1",
-      "git-github": "60821.1",
-      "html": "60820.1",
-      "tidy-repo": "60820.1",
-      "claudinite-growth": "60821.2",
-      "executable-requirements": "60820.1",
-      "spec-driven-product": "60820.1",
-      "static-website": "60821.1",
-      "product-wiki": "60820.1",
-      "claude-code-web-users-support": "60821.2",
-      "claudinite-lifecycle": "60821.3"
-    }
-  }
+  "engineVersion": "60823.1"
 }
