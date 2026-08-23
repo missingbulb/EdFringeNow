@@ -1,5 +1,5 @@
-import { finding } from '../../engine/checks/helpers/findings.mjs';
-import { parseConfig } from './stubs/actions/read-site-config/read-config.mjs';
+import { finding } from '../../../engine/checks/helpers/findings.mjs';
+import { parseConfig } from '../stubs/actions/read-site-config/read-config.mjs';
 
 // The static-site release pipeline is VENDORED into each consumer's own
 // .github/: the orchestrator (STUB_FILE, named STUB_NAME) owns the triggers and

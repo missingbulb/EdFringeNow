@@ -19,13 +19,13 @@ import refreshTickets from "./refresh-tickets/task.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const FREQUENCIES = ["hourly", "daily-2h", "daily-1h", "daily", "daily+1h", "weekly", "monthly"];
+const FREQUENCIES = ["daily", "weekly", "monthly", "manual"];
 const MODELS = ["opus", "sonnet", "haiku", "none"];
 const OUTCOMES = ["none", "open-pr", "merged-pr"];
 
 const DECLARED = [
   ["refresh-shows", refreshShows, "daily"],
-  ["refresh-tickets", refreshTickets, "daily+1h"],
+  ["refresh-tickets", refreshTickets, "daily"],
 ];
 
 for (const [dir, decl, frequency] of DECLARED) {

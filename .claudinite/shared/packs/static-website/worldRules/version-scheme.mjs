@@ -1,6 +1,6 @@
-import { finding } from '../../engine/checks/helpers/findings.mjs';
-import { VERSION_RE, readVersion } from './stubs/actions/bump-site-version/bump.mjs';
-import { parseConfig } from './stubs/actions/read-site-config/read-config.mjs';
+import { finding } from '../../../engine/checks/helpers/findings.mjs';
+import { VERSION_RE, readVersion } from '../stubs/actions/bump-site-version/bump.mjs';
+import { parseConfig } from '../stubs/actions/read-site-config/read-config.mjs';
 import { CONFIG_PATH } from './site-config.mjs';
 
 // The date-anchored version — `<major>.<ymmdd>.<n>`, released as `v…` — is the

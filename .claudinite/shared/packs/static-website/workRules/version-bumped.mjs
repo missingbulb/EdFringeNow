@@ -1,8 +1,8 @@
-import { finding } from '../../engine/checks/helpers/findings.mjs';
-import { BumpError, compare, readVersion } from './stubs/actions/bump-site-version/bump.mjs';
-import { parseConfig } from './stubs/actions/read-site-config/read-config.mjs';
-import { shipsPipeline } from './release-workflows.mjs';
-import { CONFIG_PATH } from './site-config.mjs';
+import { finding } from '../../../engine/checks/helpers/findings.mjs';
+import { BumpError, compare, readVersion } from '../stubs/actions/bump-site-version/bump.mjs';
+import { parseConfig } from '../stubs/actions/read-site-config/read-config.mjs';
+import { shipsPipeline } from '../worldRules/release-workflows.mjs';
+import { CONFIG_PATH } from '../worldRules/site-config.mjs';
 
 // THE VERSION BELONGS TO THE CHANGE. The release flow ships whatever version it
 // finds on `main` and writes none of its own, so a change that alters the

@@ -1,5 +1,5 @@
-import { finding } from '../../engine/checks/helpers/findings.mjs';
-import { KEYS, parseConfig } from './stubs/actions/read-site-config/read-config.mjs';
+import { finding } from '../../../engine/checks/helpers/findings.mjs';
+import { KEYS, parseConfig } from '../stubs/actions/read-site-config/read-config.mjs';
 import { shipsPipeline } from './release-workflows.mjs';
 
 export const CONFIG_PATH = '.github/site.config';
