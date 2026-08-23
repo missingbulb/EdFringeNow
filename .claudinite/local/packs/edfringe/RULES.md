@@ -346,25 +346,6 @@ already have rather than let both sides poll the same state twice.
   For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
   `(#N)`, or call `pull_request_read get` on the one PR you actually care
   about.
-- **`get_job_logs` needs more than a bare `run_id`.** It rejects with "job_id
-  is required when failed_only is false" unless you pass `failed_only: true`
-  for a whole-run summary, or fetch a `job_id` first via
-  `actions_list method=list_workflow_jobs`. It also 404s for a job still
-  `in_progress` — wait for the job to finish before calling it.
-- **Don't `curl` `api.github.com` directly for a run's status — it returns a
-  look-alike JSON error, not real data.** A raw REST call there comes back
-  `{"message":"GitHub access is not enabled for this session..."}` — valid
-  JSON, no thrown exception, but with no `status`/`conclusion` field. A poll
-  loop that greps for one of those fields silently never matches and just
-  sleeps forever with nothing surfacing the failure (measured: 13m35s on
-  2026-08-07/#249, caught only because the user said "I think it's done").
-  Poll through the GitHub MCP tools (`actions_get`/`actions_list`) instead —
-  they're the credentialed path.
-- **`pull_request_read method=get_status` is a dead signal on this repo.** It
-  reports the legacy commit-status API, not check runs, and can read
-  `{"state":"pending","total_count":0}` on a PR whose checks have already
-  succeeded — which looks exactly like "CI hasn't started" if it's the first
-  thing you check. Use `method=get_check_runs` for the real answer.
 - **`pull_request_read method=get_files` overflows the same way
   `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
   not something to retry.** PR #207 (46 files, +2554/-274) blew the token
@@ -372,14 +353,6 @@ already have rather than let both sides poll the same state twice.
   instead of truncating. For a landed-status judgment the file-level diff
   usually isn't needed — `get` (title/body) plus `list_commits` is normally
   enough; don't chase the spill or retry at a lower `perPage`.
-- **A deleted workflow file's old runs keep the workflow listed in the Actions
-  tab, and no session tool can clear them.** Removing a `.yml` from every
-  branch doesn't remove its run history, and clearing the ghost registration
-  needs `DELETE /repos/.../actions/runs/{run_id}` — an `actions: write`
-  endpoint the GitHub MCP server's toolset doesn't expose (read/list/get-logs/
-  dispatch only). Hand it to the owner (their own UI cleanup, or a one-time
-  owner-sanctioned cleanup workflow) rather than hunting for a session-side
-  fix that doesn't exist.
 
 ## `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
 
@@ -409,19 +382,6 @@ three-item conclusion, didn't land until 04:59:58 — by then entirely
 redundant, its ~4m46s run wasted. After stating a wait-for-subagent plan,
 actually stop: don't perform the same mutation yourself in the same session
 before its notification (or your own scheduled wakeup) fires.
-
-## The sandbox checkout is shallow — unshallow before comparing branch history
-
-`git rev-parse --is-shallow-repository` reads `true` here by default (one run
-measured 53 commits on `git log --oneline` against a real 454, two grafts).
-Every branch that predates the shallow graft then fails `git merge-base`
-against `main`, and `single-branch-status`'s own step 4 reads that failure as
-**orphaned — a human must look**. Left unfixed this silently turns a routine
-tidy-branches pass into "37 orphaned branches, escalate all" — caught once by
-luck (2026-08-16, #375) before it was written to the tracker. Before any
-cross-branch history comparison:
-`git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune && git fetch --unshallow`,
-then confirm `is-shallow-repository` reads `false`.
 
 ## A `[claudinite-task]` needs-human issue is one failed slot, not proof of a recurring failure
 
