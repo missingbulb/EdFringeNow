@@ -339,13 +339,18 @@ already have rather than let both sides poll the same state twice.
   `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
   across the corpus have never overflowed, typically 100–250 bytes back
   instead of six figures.
-- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
-  decodes `false` (absent from the response) and `merged_at` is never
-  populated, `fields` or not — confirmed live when it read PR #385 as
-  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
-  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
-  `(#N)`, or call `pull_request_read get` on the one PR you actually care
-  about.
+- **`list_pull_requests`'s `merged` field still always reads `false`, but
+  `merged_at` now populates.** Reconfirmed 2026-08-23: five recently-merged
+  PRs (#480, #472, #469, #466, #464) all listed with `merged: false` and a
+  real `merged_at` timestamp, `fields` or not — `merged` is still unusable for
+  landed-ness, but `merged_at`'s presence is new (it used to read `null` on
+  every row, merged or not). Don't switch to reading it in place of a
+  targeted check, though: this run only confirmed it's populated for PRs that
+  really are merged, not that it stays `null` for one that's closed unmerged,
+  so it isn't proven as a bulk-listing substitute yet. For landed-ness, grep
+  `origin/main`'s commit subjects for the squash-merge's `(#N)`, or call
+  `pull_request_read get` on the one PR you actually care about — confirmed
+  today on #480: `merged: true`, `merged_at` populated, both correct.
 - **`get_job_logs` needs more than a bare `run_id`.** It rejects with "job_id
   is required when failed_only is false" unless you pass `failed_only: true`
   for a whole-run summary, or fetch a `job_id` first via
