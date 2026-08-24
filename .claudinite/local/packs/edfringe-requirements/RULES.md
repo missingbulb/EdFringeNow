@@ -131,12 +131,14 @@ is a real finding about the UI, not just a testing limitation.
   false positives; the real comparator is what settles whether a flake is real.
 - **A red CI lane's diff image is unreachable from a session — reproduce it
   locally.** `ui-requirements` uploads a `requirements-failure-artifacts`
-  artifact, but `download_workflow_run_artifact` hands back a
-  `*.blob.core.windows.net` URL and the egress proxy denies it at CONNECT
-  (`curl: (56) CONNECT tunnel failed, response 403`). On 2026-08-11 a session
-  burned the download and then came back ~4.5 minutes later to re-probe the
-  proxy for the same image; the golden it was chasing ended the session
-  undiagnosed. Use `get_job_logs` with a large `tail_lines` to learn *which*
+  artifact, but there is no GitHub MCP tool to fetch it: the server's tool set
+  carries no `download_workflow_run_artifact` or equivalent (confirmed via
+  `ToolSearch` — only a *listing* method, `actions_list
+  method=list_workflow_run_artifacts`, exists). Even a URL obtained some other
+  way wouldn't help — it resolves to `*.blob.core.windows.net`, and the egress
+  proxy denies that host at CONNECT (confirmed live: `curl` against a
+  `blob.core.windows.net` host returns `curl: (56) CONNECT tunnel failed,
+  response 403`). Use `get_job_logs` with a large `tail_lines` to learn *which*
   case failed, then re-run that case locally — `npm run test:ui` writes the
   `.actual.png` / `.diff.png` into `shared/.artifacts/` itself.
 - **A floating popup dies under a full-page screenshot** (the capture scrolls,

@@ -339,13 +339,16 @@ already have rather than let both sides poll the same state twice.
   `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
   across the corpus have never overflowed, typically 100–250 bytes back
   instead of six figures.
-- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
-  decodes `false` (absent from the response) and `merged_at` is never
-  populated, `fields` or not — confirmed live when it read PR #385 as
-  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
-  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
-  `(#N)`, or call `pull_request_read get` on the one PR you actually care
-  about.
+- **`list_pull_requests`'s `merged` field still always reads `false`, but
+  `merged_at` is now populated for a genuinely merged PR — read `merged_at`,
+  not `merged`.** Confirmed live: #493, #483 and #480 (each already
+  `origin/main`'s history under `(#N)`) all read `merged: false` from
+  `list_pull_requests`, yet each carried its real merge timestamp in
+  `merged_at`; a closed-and-never-merged PR (#433, #427, #426) reads
+  `merged_at: null`. So `merged_at != null` is a reliable landed-ness signal
+  straight from this tool now — grepping `origin/main`'s commit subjects for
+  the squash-merge's `(#N)`, or calling `pull_request_read get` on the one PR
+  you actually care about, are still fine but no longer the only way.
 - **`pull_request_read method=get_files` overflows the same way
   `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
   not something to retry.** PR #207 (46 files, +2554/-274) blew the token
