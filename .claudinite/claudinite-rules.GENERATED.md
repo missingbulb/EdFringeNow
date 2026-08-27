@@ -8,7 +8,6 @@
 @shared/packs/product-wiki/RULES.md
 @shared/packs/spec-driven-product/RULES.md
 @shared/packs/static-website/RULES.md
-@shared/packs/tidy-repo/RULES.md
 @local/packs/edfringe/RULES.md
 @local/packs/edfringe-data/RULES.md
 @local/packs/edfringe-requirements/RULES.md
