@@ -23,9 +23,12 @@ const FREQUENCIES = ["daily", "weekly", "monthly", "manual"];
 const MODELS = ["opus", "sonnet", "haiku", "none"];
 const OUTCOMES = ["none", "open-pr", "merged-pr"];
 
+// Both scraping tasks are OFF, and `manual` is what carries that: a manual task
+// has no occurrence for the scheduler to instantiate. Pinned here so turning one
+// back on is a deliberate edit to this file rather than a token nobody re-reads.
 const DECLARED = [
-  ["refresh-shows", refreshShows, "daily"],
-  ["refresh-tickets", refreshTickets, "daily"],
+  ["refresh-shows", refreshShows, "manual"],
+  ["refresh-tickets", refreshTickets, "manual"],
 ];
 
 for (const [dir, decl, frequency] of DECLARED) {
@@ -56,6 +59,6 @@ for (const [dir, decl, frequency] of DECLARED) {
   });
 }
 
-test("refresh-shows runs unconditionally, as its retired daily cron did", () => {
+test("refresh-shows runs unconditionally when it is pulled", () => {
   assert.equal(refreshShows.precondition({}, {}).run, true);
 });

@@ -1,9 +1,16 @@
-// edfringe task: refresh-tickets — the in-festival availability refresh.
+// edfringe task: refresh-tickets — the in-festival availability refresh,
+// currently OFF.
+//
+// `frequency: 'manual'` is the off switch: a manual task has no occurrence, so
+// the scheduler never instantiates it and it runs only from a work item created
+// by hand. The site's scraping is off — the owner's call, the festival being
+// over — and everything below is intact, so turning it back on is one token.
+// `ticketWindow` stays the calendar gate a restored cadence would run under.
 //
 // Refreshes ticket status for today and every remaining festival date, writing
 // through the master so every derived file regenerates from one source (#249).
 //
-// `schedule_after: ['edfringe/refresh-shows']` rather than a bare `daily` anchor:
+// `schedule_after: ['edfringe/refresh-shows']` rather than a bare cadence anchor:
 // it runs after refresh-shows' catalogue top-up, and the two data-committing
 // tasks never share a checkout.
 //
@@ -49,7 +56,7 @@ export function ticketWindow(now) {
 
 export default {
   id: 'refresh-tickets',
-  frequency: 'daily',              // the anchor; schedule_after below is what actually orders it after refresh-shows
+  frequency: 'manual',             // OFF — no occurrence; a hand-created work item is the only way it runs
   schedule_after: ['edfringe/refresh-shows'],
   precondition_signals: [],        // the gate is the calendar, not repo state
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
