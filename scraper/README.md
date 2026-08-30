@@ -166,7 +166,7 @@ Normalization rules:
 - **Ticket status** (`ts` → `ticketStatuses`) is the reliable "can I get a
   ticket" signal, not the `soldOut` flag (a show can be `soldOut:false` yet have
   no online allocation). Because it changes through the festival, the
-  `refresh-tickets` scheduled task (`refresh_ticket_status.py`) refreshes the
+  `refresh-tickets` task (`refresh_ticket_status.py`) refreshes the
   `ts` values for today and every remaining festival date — a light paged pass,
   no per-show queries.
 - **Images**: the master keeps both `image` (the API's "Large" variant) and
@@ -215,30 +215,32 @@ python3 scraper/normalize.py --merge
 ```
 
 `--merge` upserts the new shows into the existing master (by id) and regenerates
-the venue and per-day files. This runs automatically once a day as the
-**`refresh-shows`** scheduled task (see *How the scheduled refreshes run* below);
-the full rebuild stays a manual workflow, **`Scrape edfringe shows (full)`**
-(`.github/workflows/scrape.yml`). Both commit the updated data back to the repo.
+the venue and per-day files. It is the **`refresh-shows`** task's work (see *How
+the data refreshes run* below); the full rebuild stays a manual workflow,
+**`Scrape edfringe shows (full)`** (`.github/workflows/scrape.yml`). Both commit
+the updated data back to the repo.
 
-## How the scheduled refreshes run
+## How the data refreshes run
 
-Neither refresh has a workflow of its own. The repo's only cron is the Claudinite
-scheduler (`.github/workflows/claudinite-scheduler.yml`), which runs hourly and
-evaluates every declared task's precondition; the two data refreshes are declared
-as tasks under this repo's local pack, each with the shell it runs beside it:
+**Nothing scrapes on its own right now.** The two refreshes are declared as tasks
+under this repo's local pack, each with the shell it runs beside it, and both are
+declared `manual` — a manual task has no occurrence, so the Claudinite scheduler
+(`.github/workflows/claudinite-scheduler.yml`, the repo's only cron) never
+instantiates one and it runs only from a work item created by hand. Turning a
+refresh back on is a one-token edit to its declaration.
 
-| Task | Runs | What it does |
-|---|---|---|
-| `refresh-shows` | daily | the `--recently-added LAST_SEVEN_DAYS` top-up above |
-| `refresh-tickets` | daily, during August only | `refresh_ticket_status.py` for today **and every remaining festival date** |
+| Task | What it does |
+|---|---|
+| `refresh-shows` | the `--recently-added LAST_SEVEN_DAYS` top-up above |
+| `refresh-tickets` | `refresh_ticket_status.py` for today **and every remaining festival date** |
 
-Ticket **prices** are deliberately absent from that table: they are fetched once
-by hand (`fetch_prices.py`, above), not on any schedule. `refresh-shows` reads
-the price cache and carries the amounts through untouched, so a daily top-up
-keeps prices without re-fetching them — and shows added after the price run
-simply have an unknown price until it is run again.
+Ticket **prices** are absent from that table for a different reason: they are
+fetched once by hand (`fetch_prices.py`, above) even when the refreshes are
+running. `refresh-shows` reads the price cache and carries the amounts through
+untouched, so a top-up keeps prices without re-fetching them — and shows added
+after the price run simply have an unknown price until it is run again.
 
-Each task's precondition decides whether its slot acts (that is where
+Each task's precondition decides whether a slot it is given acts (that is where
 `refresh-tickets`' August gate lives); the task declarations themselves are the
 source of truth for when they run. Both run as plain subprocesses (no agent); a
 failure opens one tracking issue rather than passing silently. A date that needs fresher status than the

@@ -254,19 +254,24 @@ def local_date_start(dt: str | None) -> tuple[str, str] | None:
     the site's local times, and nothing after this point touches a time zone.
 
     A stamp carrying no zone is read as UTC (the API has never sent one).
-    Returns None for a missing or unparseable value, so callers can skip the
-    performance rather than invent a time for it.
+    Returns None for a missing or unfilable value, so callers can skip the
+    performance rather than invent a time for it. Unfilable covers two shapes:
+    a stamp `fromisoformat` cannot read at all, and one it reads happily whose
+    conversion then lands outside the representable range — `0001-01-01T00:00Z`
+    shifted onto London's pre-standard-time offset falls below `datetime.min`.
+    Both are one junk performance, and neither is a reason for the pass over the
+    whole catalogue to die.
     """
     if not dt:
         return None
     try:
         # fromisoformat only learned "Z" in 3.11; spell it out for older runners.
         parsed = datetime.fromisoformat(dt.strip().replace("Z", "+00:00"))
-    except (ValueError, AttributeError):
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        local = parsed.astimezone(FESTIVAL_TZ)
+    except (ValueError, AttributeError, OverflowError, OSError):
         return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    local = parsed.astimezone(FESTIVAL_TZ)
     return local.strftime("%Y-%m-%d"), local.strftime("%H:%M")
 
 
@@ -1249,6 +1254,9 @@ def selftest() -> int:
     assert local_date_start("2026-08-06T11:45:00") == ("2026-08-06", "12:45")
     assert local_date_start(None) is None and local_date_start("") is None
     assert local_date_start("not a date") is None
+    # A well-formed stamp whose conversion leaves the representable range is
+    # skipped like any other junk, not raised through the caller (#544).
+    assert local_date_start("0001-01-01T00:00:00.000Z") is None
 
     # Prices arrive from the separate fetch-once cache, keyed by the same show
     # id. A cache miss on a paid show leaves the price *unknown* (None) — the

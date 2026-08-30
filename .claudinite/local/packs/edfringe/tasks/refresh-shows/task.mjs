@@ -1,9 +1,14 @@
-// edfringe task: refresh-shows — the daily Fringe data top-up.
+// edfringe task: refresh-shows — the Fringe data top-up, currently OFF.
+//
+// `frequency: 'manual'` is the off switch: a manual task has no occurrence, so
+// the scheduler never instantiates it and it runs only from a work item created
+// by hand. The site's scraping is off — the owner's call, the festival being
+// over — and everything below is intact, so turning it back on is one token.
 //
 // REPLACES the "Refresh edfringe shows (daily)" workflow, deleted in the same
 // commit that added this file. That workflow carried its own `cron: "20 5 * * *"`;
-// the Claudinite scheduler is now the repo's only cron, so the schedule moves here
-// as `frequency: 'daily'` and the workflow's steps move into `worker.sh`.
+// the Claudinite scheduler is now the repo's only cron, so the cadence lives in
+// the frequency below and the workflow's steps in `worker.sh`.
 //
 // `agent_model: 'none'` — the whole job is deterministic (fetch, merge,
 // regenerate, commit), so there is no agent and no dispatch issue: the scheduler
@@ -15,7 +20,7 @@
 
 export default {
   id: 'refresh-shows',
-  frequency: 'daily',              // the dailyHour anchor (.claudinite-checks.json → taskScheduler.dailyHour = 4)
+  frequency: 'manual',             // OFF — no occurrence; a hand-created work item is the only way it runs
   precondition_signals: [],        // nothing in the repo's own state gates it — the trigger is upstream data
   agent_model: 'none',             // pure code; the work is the preprocessing subprocess below
   expected_outcome: 'none',        // it commits regenerated data straight to the default branch, as the workflow did — it never opens a PR
@@ -23,12 +28,13 @@ export default {
   code_work: 'bash worker.sh',
   code_work_timeout: 1800, // the retired workflow's `timeout-minutes: 30`, in seconds
 
-  // Unconditional, exactly as the retired daily cron was. The thing this task
-  // reacts to — shows added or edited on edfringe.com — leaves no trace in this
-  // repo, so there is no signal to precondition on: the only honest gate is the
-  // schedule itself. The run is cheap and self-limiting (one paged
+  // Unconditional — what a hand-pulled run gets, and what a restored cadence
+  // would get. The thing this task reacts to — shows added or edited on
+  // edfringe.com — leaves no trace in this repo, so there is no signal to
+  // precondition on: the only honest gate is the cadence itself, exactly as the
+  // retired daily cron was. The run is cheap and self-limiting (one paged
   // `recentlyAdded=LAST_SEVEN_DAYS` pass) and commits nothing when nothing moved.
   precondition() {
-    return { run: true, reason: 'the daily top-up is unconditional — upstream show edits leave no signal in this repo' };
+    return { run: true, reason: 'the top-up is unconditional — upstream show edits leave no signal in this repo' };
   },
 };
