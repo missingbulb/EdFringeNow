@@ -137,18 +137,22 @@ browser is here, and a UI change isn't done until it has been looked at.
   `L.markerClusterGroup`, `L.polyline`, `L.tileLayer`) and route-stubbing a
   minimal no-op replacement before navigating. When the case needs the map
   itself to render (markers, clustering, popups), the no-op stub isn't enough
-  — `curl` reaches `unpkg.com` fine through the agent proxy (confirmed:
-  `curl -sS -o leaflet.js https://unpkg.com/leaflet@1.9.4/dist/leaflet.js`
-  pulled 147552 bytes, `leaflet.css` 14806 bytes) even though headless
-  Chromium's own request to the same host fails (`net::ERR_CONNECTION_RESET` —
-  Chromium can't tunnel the proxy for any non-allowlisted host, same gap that
-  sends an in-page link to `www.edfringe.com` to `chrome-error://chromewebdata/`
-  instead of navigating). Curl the real `leaflet.js`/`leaflet.css` into the
-  scratchpad once and route-intercept `unpkg.com/leaflet@*` to serve them from
-  disk instead — a real, working map that never needs updating when `js/app.js`
-  starts calling a new `L.*` method (#318). The same proxy gap hits
-  `fonts.googleapis.com` (`ERR_CONNECTION_RESET`) — same fix if a case ever
-  needs real fonts loaded.
+  — and don't `curl` the CDN for the real files either: `unpkg.com`,
+  `cdn.jsdelivr.net` and `cdnjs.cloudflare.com` all answer `403` at CONNECT
+  for `curl` too. Take them from `registry.npmjs.org`, which is on the proxy's
+  `noProxy` allowlist: `npm pack leaflet@1.9.4` into the scratchpad, extract
+  `package/dist/leaflet.js` and `package/dist/leaflet.css` (byte-identical to
+  the CDN's copies), and route-intercept `unpkg.com/leaflet@*` to serve them
+  from disk — a real, working map that never needs updating when `js/app.js`
+  starts calling a new `L.*` method (#318). Reach for the registry for any
+  vendored browser library, not just Leaflet.
+- **Chromium's allowlist is narrower than `curl`'s — a host `curl` fetches
+  fine can still fail in the browser.** `www.edfringe.com` and
+  `fonts.googleapis.com` both answer `200` to `curl` and both fail
+  `net::ERR_CONNECTION_RESET` to a Playwright-driven page, because Chromium
+  can't tunnel the proxy. Never infer browser reachability from a successful
+  `curl`: fetch the asset with `curl` and route-fulfil it, the same shape as
+  the Leaflet fix above.
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
@@ -170,9 +174,12 @@ The environment's egress policy allows `*.edfringenow.com`, the live site's own
 domain. So a question about what the deployed site actually serves — is the new
 field in `data/shows.json`? did the deploy land? — is answerable directly, with
 `curl https://www.edfringenow.com/…` through the agent proxy, rather than by
-reasoning from the working tree. General egress is still closed: everything
-*except* the allowed domain fails the same way, so this is a single-domain
-window, not open internet.
+reasoning from the working tree. General egress is closed, but the allowance
+is not one domain — `www.edfringe.com` and `fonts.googleapis.com` are also
+reachable, on top of the always-on `registry.npmjs.org` and friends, while
+the CDN hosts above are not. So treat the allowlist as unknowable from this
+file: probe the host you actually need with one `curl` before planning
+around either answer.
 
 Two caveats before you trust what comes back:
 
@@ -327,32 +334,27 @@ already have rather than let both sides poll the same state twice.
 
 ## GitHub MCP call shapes that cost round-trips here
 
-- **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
-  on this repo's history, and lowering `per_page` does not fix it.** Proven:
-  one session retried the same call at `per_page` 25, 10, 3, 2 and 1 and got a
-  byte-identical ~100–390K-character response every time. When it overflows,
-  read the spilled tool-result file yourself (`python3`/`jq`) and project out
-  only the fields you need — don't follow the overflow error's "read it in
-  sequential chunks" advice on a single-line JSON blob, and don't burn retries
-  lowering `per_page` first.
-- **`search_issues`, `list_pull_requests`, `pull_request_read` do shrink — with
-  `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
-  across the corpus have never overflowed, typically 100–250 bytes back
-  instead of six figures.
-- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
-  decodes `false` (absent from the response) and `merged_at` is never
-  populated, `fields` or not — confirmed live when it read PR #385 as
-  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
-  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
-  `(#N)`, or call `pull_request_read get` on the one PR you actually care
-  about.
-- **`pull_request_read method=get_files` overflows the same way
-  `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
-  not something to retry.** PR #207 (46 files, +2554/-274) blew the token
-  limit on `get_files` at `perPage: 100`, spilling its output to a side file
-  instead of truncating. For a landed-status judgment the file-level diff
-  usually isn't needed — `get` (title/body) plus `list_commits` is normally
-  enough; don't chase the spill or retry at a lower `perPage`.
+- **When a call overflows the tool-result token limit, read the spill file —
+  never retry at a lower page size.** `actions_list`/`list_workflow_runs` and
+  `pull_request_read method=get_files` are the two that reach it on this
+  repo's scale, and neither honours `per_page`/`perPage` as a size lever: a
+  session that walked `per_page` down 25 → 1 got a byte-identical response
+  every time. Read the spilled file yourself with `python3`/`jq` and project
+  out the fields you need — the overflow error's "read it in sequential
+  chunks" advice is wrong for a single-line JSON blob. Better still, don't
+  request the bulk: for a landed-status judgment `get` (title/body) plus
+  `list_commits` beats `get_files`.
+- **Shrink a response with `fields`, and only where `fields` exists.**
+  `search_issues` and `list_pull_requests` take it; pass it from the start.
+  `pull_request_read` takes no `fields`-style parameter at all, and no tool
+  here takes `minimal_output` — narrow it by picking a cheaper `method`
+  instead. Read the schema before reaching for a shrink parameter.
+- **Judge a PR landed by `merged_at`, never by `merged`.**
+  `list_pull_requests` reports `merged: false` for PRs that are demonstrably
+  merged, while the `merged_at` timestamp beside it is correct. `merged` is
+  trustworthy only from `pull_request_read get`. Grepping `origin/main`'s
+  commit subjects for the squash-merge's `(#N)` settles it independently of
+  either.
 
 ## `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
 
