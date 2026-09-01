@@ -40,3 +40,8 @@ repo may reference `product-wiki/` except the reviewed distillation under
   the same question pointed outward: which *other cities* carry the
   Edinburgh-in-August pattern, ranked by how close they are structurally rather
   than by fame, plus the candidate tail.
+- **[comedy-festival-circuit/](comedy-festival-circuit/README.md)** — the
+  worldwide comedy-festival circuit as a market: the annual census, which
+  festivals are fringe-shaped (a real scheduling problem) vs showcase-shaped
+  (a lineup, few stages), each one's organizer, ticketing and data
+  reachability, and the trackers that follow the circuit.
