@@ -244,7 +244,17 @@ the scraper breaks on that timetable regardless).
   scraped from edfringe.com — and whether blending the two sources in one
   product is licence-compliant at all — is unresolved and decides the
   architecture. One email to Festivals Edinburgh covers this *and* the
-  static-file question already open on the festival-season page.
+  static-file question already open on the festival-season page. (New
+  evidence 2026-09-01, from
+  [competitor-landscape/](../competitor-landscape/README.md): the
+  cross-festival planner **planmyfestivals.com** carries exactly the API's
+  festival set, genre vocabulary, venue-facilities detail and a "Show data ©
+  the participating festivals" credit, and shows **no availability signal**
+  anywhere — consistent with an approved, availability-blind Listings API
+  consumer. If that inference is right, a planner-shaped product has already
+  been approved, which reads well for our chances — and its total silence on
+  availability is what the licence-plus-API shape produces without a second
+  source.)
 - **Does Tikketr/equ have any non-public partner API?** Nothing public exists;
   a private capability cannot be ruled out. The Society's arts-industry
   accreditation channel was also not examined.
@@ -283,3 +293,9 @@ the scraper breaks on that timetable regardless).
   availability source" is false for Traverse specifically). All claims cited.
   Requirements implications (monetisation ceiling, scrape-replacement
   architecture) left for human review.
+- **2026-09-01** — annotated the Listings API approval open question with new
+  circumstantial evidence from the competitor research: planmyfestivals.com
+  (profiled on [competitor-landscape/](../competitor-landscape/README.md))
+  appears to be an approved planner-shaped consumer of the API, and its UI's
+  total silence on availability matches the API's availability-blind shape.
+  Question narrowed, not closed — the inference is unconfirmed.
