@@ -251,10 +251,14 @@ the scraper breaks on that timetable regardless).
   festival set, genre vocabulary, venue-facilities detail and a "Show data ©
   the participating festivals" credit, and shows **no availability signal**
   anywhere — consistent with an approved, availability-blind Listings API
-  consumer. If that inference is right, a planner-shaped product has already
-  been approved, which reads well for our chances — and its total silence on
-  availability is what the licence-plus-API shape produces without a second
-  source.)
+  consumer. Later the same day, stronger: **edfringemap.com states outright**
+  on [its advertise page](https://edfringemap.com/advertise) that it runs on
+  "official festivals API data" — while listing every show free, selling
+  promoted placement on top, and linking tickets out. So one inferred and one
+  self-declared consumer both look approved, planner/map-shaped and
+  commercial, which reads well for our chances — and both products' total
+  silence on availability is what the licence-plus-API shape produces
+  without a second source.)
 - **Does Tikketr/equ have any non-public partner API?** Nothing public exists;
   a private capability cannot be ruled out. The Society's arts-industry
   accreditation channel was also not examined.
@@ -299,3 +303,9 @@ the scraper breaks on that timetable regardless).
   appears to be an approved planner-shaped consumer of the API, and its UI's
   total silence on availability matches the API's availability-blind shape.
   Question narrowed, not closed — the inference is unconfirmed.
+- **2026-09-01** *(second pass, same day)* — strengthened the same annotation:
+  edfringemap.com **self-declares** "official festivals API data" on its
+  advertise page while selling promoted placement over the free listings — a
+  second consumer, this time stated rather than inferred, and a commercial
+  one. The approval question stays open; what changed is that two live
+  products now suggest the path is passable.
