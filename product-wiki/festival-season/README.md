@@ -92,7 +92,12 @@ Two honest caveats:
 
 - **This is guide-site material, not a dataset.** There is no listings feed for
   "the Meadows is nice in August." Anything the product does here is a
-  hand-curated short list, and should be sized accordingly.
+  hand-curated short list, and should be sized accordingly. (Softened
+  2026-09-01: for *attractions* specifically, OSM + Wikidata are a free
+  machine-readable base layer, and the wider source landscape — for
+  Edinburgh and every other festival city — now has its own page,
+  [city-context-sources/](../city-context-sources/README.md). The claim
+  stands for the curated "nice in August" judgment itself.)
 - **The repo already has the seam.** `js/places.js` geocodes arbitrary
   non-show destinations through Nominatim, so a curated seasonal place is
   representable today without new infrastructure.
@@ -314,3 +319,10 @@ blurbs and belongs in the competitor page once someone actually uses them.
   [market-and-audience/](../market-and-audience/README.md), which owns them. The
   Fringe's share of the cluster moves from ~80% to ~82%, so the page's
   conclusions and its Key insights header are unchanged — only the figures moved.
+- **2026-09-01** — softened the "no listings feed" caveat under *The seasonal
+  city that is not a festival*: the new
+  [city-context-sources/](../city-context-sources/README.md) page now owns
+  the machine-readable source landscape for non-festival events and
+  attractions (OSM + Wikidata cover the attractions half for free); the
+  caveat's core — the curated judgment has no feed — stands. No other claim
+  changed.

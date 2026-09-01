@@ -44,4 +44,9 @@ repo may reference `product-wiki/` except the reviewed distillation under
   worldwide comedy-festival circuit as a market: the annual census, which
   festivals are fringe-shaped (a real scheduling problem) vs showcase-shaped
   (a lineup, few stages), each one's organizer, ticketing and data
-  reachability, and the trackers that follow the circuit.
+  reachability, the trackers that follow the circuit, and a light survey of
+  the film festivals that share the shape.
+- **[city-context-sources/](city-context-sources/README.md)** — where "what
+  else is going on" gets published in each festival city: the source classes
+  (licensed suppliers, open data, DMO calendars, discovery APIs, attractions
+  layers), how machine-readable each is, and the per-city best reads.
