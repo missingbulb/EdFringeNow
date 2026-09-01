@@ -1,22 +1,76 @@
 # Festival cities beyond Edinburgh
 
-Which other cities in the world carry the Edinburgh-in-August pattern — many
-overlapping festivals, thousands of temporary show runs and exhibitions, and a
-city swarming with visitors who have to *choose*. This page exists because the
-product's premise (overwhelm + reachability) is a property of that pattern, not
-of Edinburgh, so anywhere the pattern recurs is a candidate market. It ranks
-candidates by how close they are **structurally** (does the same mechanism
-produce the overwhelm?) rather than by fame. Compiled once, refined in place.
+Candidate environments for the product beyond Edinburgh-in-August, scored
+against an explicit bar — the **festmaxxing definition** below, extracted from
+the owner's stated product direction. The page began as a ranking of festival
+*cities* by structural closeness to Edinburgh; the definition generalizes it:
+anywhere — festival or not — that is time-boxed, abundant and complex enough
+that maximizing a stay there is a genuine optimization problem is a candidate
+market. Compiled once, refined in place.
 
 ## Key insights
 
+- The festmaxxing bar: week-plus window, options ≫ capacity, real clashes, binding travel, public tickets, same-city recurrence.
 - Adelaide is the only real peer, and still under 40% of Edinburgh: 1,648 shows to 4,206.
 - Avignon OFF is the closest structural twin — 1,780 open-access shows in 141 theatres inside one walled town.
 - 300+ fringes exist worldwide, but only three sell more than 250,000 tickets.
 - Edinburgh has a free official cross-festival listings API. No other festival city found has an equivalent.
 - Avignon and Montreal break the English-only assumption before any other candidate does.
-- Adelaide spreads over 562 venues — a compact walkable centre is an Edinburgh quirk, not a fringe property.
-- Milan's Fuorisalone is the same shape in another art form: 1,100+ events across 16 districts.
+- Milan's Fuorisalone swarms like a fringe but runs on opening hours, not showtimes — a routing problem, not a scheduling one.
+
+## The festmaxxing bar
+
+The owner's product direction (2026-09-01): the next evolution of EdFringeNow
+is **the planning tool for festival fanatics** — people who travel to an event
+to maximize their time there, weaving in time off, food and excursions, and who
+need a tool *because the environment is complex*. Handling that complexity is
+the reason to use the product; the owner's word for the behaviour is
+**festmaxxing**. Three characteristics name where such a tool matters — **time
+limitation, complexity, abundance** — and they unpack into eight testable
+dimensions.
+
+**The shape** — is a stay there an optimization problem at all?
+
+1. **Time-boxed window** — fixed dates, roughly a week or longer. A weekend
+   plans itself; a longer run forces choices about *which days to even be
+   there*. (Owner: don't focus on the quick 4-day events.)
+2. **Abundance** — the catalogue far exceeds one person's capacity; even a
+   maximal plan samples a fraction of it.
+3. **Simultaneity** — many options run at once, so every pick forecloses
+   others; conflicts are the norm, not the exception.
+4. **Venue spread** — venues scattered enough that travel time is a binding
+   constraint; a plan that ignores the map is infeasible, not merely
+   suboptimal.
+5. **Repeat chances** — items recur inside the window, turning "which do I
+   drop" into "which order do I go". This is the fringe-shaped vs
+   showcase-shaped axis worked through on
+   [comedy-festival-circuit/](../comedy-festival-circuit/README.md); both
+   shapes are planning problems, but recurrence is what makes the product
+   *optimization* rather than triage.
+
+**The qualifiers** — can our product serve it, and keep serving it?
+
+6. **Open per-event access** — a member of the public can buy a ticket (or
+   book a slot) to a specific item. Badge-only, invite-only and
+   one-wristband-for-everything environments can have the shape yet offer no
+   bookable unit for a planner to link to.
+7. **Anchored recurrence** — annual (or a fixed cycle) in the same city and
+   largely the same venues, so venue data, travel matrices and source
+   integrations compound year over year instead of resetting. (Owner: "very
+   important to know if a festival is an annual event in the same city/venues
+   … or a one-off.")
+
+**The enrichment axis** — the "time off" half of festmaxxing.
+
+8. **City context** — real non-event material around the event (food,
+   excursions, rest), because a festmaxxing plan is a *stay*, not a bare
+   schedule. Where each city publishes that layer is
+   [city-context-sources/](../city-context-sources/README.md)'s subject.
+
+Dimensions 1–5 decide whether the environment *has* the problem; 6–7 decide
+whether a product can serve it; 8 decides how rich the plan can be. The tiers
+below apply the bar to every candidate this page has gathered — festivals and,
+since 2026-09-01, non-festival environments that share the shape.
 
 ## What "another Edinburgh" actually means
 
@@ -45,11 +99,21 @@ separately because each implies a different data and product problem:
 
 A fourth, weaker pattern — **long temporary exhibition runs** (biennials) — makes
 a city swarm without producing a scheduling problem, because a months-long
-exhibition has no performance times to clash.
+exhibition has no performance times to clash. Non-festival environments reach
+the bar through mechanisms of their own (a convention's parallel programming
+tracks, a mega-event's session grid); the bar, not the mechanism, is what
+qualifies a candidate.
 
-## The two close analogues
+## The candidates, scored
 
-### Adelaide — the only peer by scale
+Every candidate keeps its mechanism label and gets a verdict against the bar.
+One standing caution applies to the whole list: scale figures are cited from
+programme-launch press unless marked delivered — the launch-vs-delivered trap
+recorded in the 2026-08-09 correction below.
+
+### Clears the bar
+
+#### Adelaide — the only peer by scale
 
 Adelaide Fringe is the world's second-largest annual arts festival and is
 explicitly open access ("welcomes anyone with an event to participate"). The 2026
@@ -66,9 +130,10 @@ Two structural differences that matter to the product:
 - **It is not one calendar month.** 20 Feb – 22 Mar spans two months. The
   planner's calendar axis is a single month.
 - **562 venues to Edinburgh's 258**, in a city with a far less compact core —
-  travel-time estimation is doing more work there, not less.
+  travel-time estimation is doing more work there, not less. On the bar: venue
+  spread (dimension 4) binds *harder* than in Edinburgh.
 
-### Avignon — the closest structural twin
+#### Avignon — the closest structural twin
 
 Avignon in July is the same *shape* as Edinburgh in August: a curated Festival
 d'Avignon ("the IN") plus the open-access **Festival OFF**, inside a small walled
@@ -78,96 +143,111 @@ theatres**, roughly **27,000 performances**, around 1,250 performances a day, fr
 the same "too much supply chasing too little attention" economics as the Fringe.
 
 If any city is EdFringeNow's second market on structure alone, it is this one.
-The blocker is not the model, it is that the entire corpus is in French.
+The blocker is not the bar — every dimension clears — it is that the entire
+corpus is in French.
 
-## Other potential candidate events
+#### The rest of the clear tier
 
-The longer tail, grouped by which mechanism produces the crowd. Each is a
-candidate, not a recommendation — none has been assessed for data accessibility
-beyond what is noted.
-
-### Open-access fringes (same mechanism, smaller)
-
-There are **more than 300** fringe festivals worldwide in the World Fringe
-network; Perth's own materials put the figure above 400. The count is large and
-the tail is thin — only three sell over a quarter of a million tickets.
-
-- **Perth, Australia — FRINGE WORLD** (Jan–Feb). The third-largest fringe on the
-  planet: **600+ shows across 110 venues** advertised ahead of the 2026 edition
-  (21 Jan–15 Feb 2026), ~3,000 artists, off **256,000 tickets** sold in 2025. That
-  2026 edition has since run and closed (this repo's clock is now 2 Aug 2026):
-  its own final report counts **599 events**, more than 3,000 artists, **nearly
-  500,000 attendees**, and **$10.9m spent at the Box Office** ($8.34m paid to
-  artists and venues) — up from 2025's 570 events / 492,369 attendees / $10.78m
-  box office. Note "attendees" and "tickets sold" are not the same metric (the
-  256,000 figure is a narrower paid-ticket count); both are kept because neither
-  source reconciles them into one number.
-- **Brighton, UK** (1–31 May). Open access, around **400,000 in-person
+- **Perth, Australia — FRINGE WORLD** (Jan–Feb; open access). The third-largest
+  fringe on the planet: **600+ shows across 110 venues** advertised ahead of the
+  2026 edition (21 Jan–15 Feb 2026), ~3,000 artists, off **256,000 tickets**
+  sold in 2025. That 2026 edition has since run and closed (this repo's clock
+  is now 2 Aug 2026): its own final report counts **599 events**, more than
+  3,000 artists, **nearly 500,000 attendees**, and **$10.9m spent at the Box
+  Office** ($8.34m paid to artists and venues) — up from 2025's 570 events /
+  492,369 attendees / $10.78m box office. Note "attendees" and "tickets sold"
+  are not the same metric (the 256,000 figure is a narrower paid-ticket count);
+  both are kept because neither source reconciles them into one number.
+- **Brighton, UK** (1–31 May; open access). Around **400,000 in-person
   attendances**, with over 30% of events from Brighton & Hove companies. English
   language, UK ticketing conventions — the cheapest possible second market.
-- **Makhanda (Grahamstown), South Africa — National Arts Festival** (late
-  June–July). **270+ productions** on the main programme in 2026 plus a Fringe of
-  **200+ new works**, in a town small enough that the visitor-to-resident ratio may
-  be the most extreme of any candidate here.
-- **Toronto, Canada** (30 Jun – 12 Jul 2026). **123 shows**, selected by
-  *lottery* rather than pure open access — a different supply mechanism, and small
-  enough that overwhelm is not really the user's problem.
-- Also in the network and unassessed: **Prague**, **Dublin**, **Winnipeg**,
-  **Orlando**, **Minnesota**, **Wellington**, **Camden**, **Melbourne**.
-
-### Curated core plus an unofficial "off"
-
-- **Milan — Salone del Mobile / Fuorisalone** (April). The purest non-theatre
-  version of the Edinburgh dynamic: a ticketed trade fair at Rho with 1,900+
-  exhibitors, plus **1,100+ events listed on the official Fuorisalone guide
-  (1,300+ across the city) spread over 16 districts** and **500,000+ visitors**.
-  Brera alone carried 320 events across 217 showrooms. Installations run for the
-  week rather than to performance times, so the *scheduling* problem is weaker
-  than the *reachability* problem — which is the half of the product the Now page
-  serves.
-- **Charleston, SC — Spoleto Festival USA / Piccolo Spoleto** (late May–June).
-  Piccolo Spoleto 2026 offered **250 events**, 190 of them produced by independent
-  arts and community groups, 113 free — a deliberately open companion to a
-  curated core, at a scale where a planner is plausible but not urgent.
-- **Miami Beach — Art Basel plus satellite fairs** (December). Same shape,
-  unassessed.
-- **Cannes**, **SXSW Austin** (March). Both convert a city into temporary venues
-  at high density with genuine clash-resolution problems, but both are
-  trade/badge-driven rather than public-audience-driven, and SXSW already ships
-  its own scheduling tool.
-
-### Festival seasons (many festivals, not one big one)
-
-- **Montreal** (summer). Festival International de Jazz de Montréal (25 Jun – 4
-  Jul 2026) puts **350+ shows** and 3,000 performers in front of a claimed 2m+
-  guests; Just For Laughs (15–26 Jul 2026) runs **250 shows across 25 downtown
-  venues** and 800+ artists **in both official languages**. Concentrated in the
-  Quartier des Spectacles, so reachability is real. Bilingual by default — the
-  first candidate that forces the localization question. (Corrected 2026-09-01:
-  this entry called JFL "the world's largest comedy festival". That label is
-  JFL marketing that survives on attendance counting its free outdoor crowds;
-  by ticketed shows it is roughly a third of Melbourne's 803, and the company
-  behind it went through 2024 receivership and a 2024 cancellation before its
-  2026 relaunch — see
+  Comedy share and its open Eventotron API are on
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+- **Melbourne — MICF** (Mar–Apr; open registration). The strongest
+  fringe-shaped candidate found anywhere outside the fringe network itself:
+  803 shows, 9,164 performances, 26 days, with open JSON endpoints.
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) owns the
+  detail; it sits in this tier on every dimension.
+- **Montreal in July** (festival season). Festival International de Jazz de
+  Montréal (25 Jun – 4 Jul 2026) puts **350+ shows** and 3,000 performers in
+  front of a claimed 2m+ guests; Just For Laughs (15–26 Jul 2026) runs **250
+  shows across 25 downtown venues** and 800+ artists **in both official
+  languages**, and the Fantasia film festival overlaps JFL for eleven shared
+  days. Concentrated in the Quartier des Spectacles, so reachability is real.
+  Bilingual by default — the first candidate that forces the localization
+  question. On the bar it clears as a *stacked season* rather than one
+  festival, which multiplies the data-source cost (each festival is separately
+  run). (Corrected 2026-09-01: this entry called JFL "the world's largest
+  comedy festival". That label is JFL marketing that survives on attendance
+  counting its free outdoor crowds; by ticketed shows it is roughly a third of
+  Melbourne's 803, and the company behind it went through 2024 receivership
+  and a 2024 cancellation before its 2026 relaunch — see
   [comedy-festival-circuit/](../comedy-festival-circuit/README.md), which now
   owns the comedy-festival detail for this and every other comedy entry.)
-- **Sibiu, Romania — FITS** (19–28 June 2026). **800+ events** in ten days in a
-  small old town; one of Europe's largest performing-arts festivals.
-- **Galway, Ireland — GIAF** (13–26 July 2026). Fourteen days, audiences well in
-  excess of 200,000, in a small city fully consumed by it.
-- **Salzburg, Austria** (17 Jul – 30 Aug 2026). **208 performances** across opera,
-  drama and concerts. The town is overwhelmed, but the programme is curated,
-  expensive and elite — 208 performances is a brochure, not an overwhelm problem.
-  Included as the boundary case: *city swarming* alone is not the pattern.
+- **Makhanda (Grahamstown), South Africa — National Arts Festival** (late
+  June–July; open-access fringe beside a curated core). **270+ productions** on
+  the main programme in 2026 plus a Fringe of **200+ new works**, in a town
+  small enough that the visitor-to-resident ratio may be the most extreme of
+  any candidate here. Clears the bar at the small end — abundance is relative
+  to the visitor's capacity, and eleven days of ~470 productions clears it.
+- **Sibiu, Romania — FITS** (19–28 June 2026; curated season). **800+ events**
+  in ten days in a small old town; one of Europe's largest performing-arts
+  festivals. Curated rather than open access, but 80 events a day produces
+  real simultaneity — the mechanism differs, the bar clears.
+- **The film festivals that clear it** — Berlinale above all (274 films, each
+  screened up to five times, public tickets €9–15), then TIFF and MIFF.
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s film
+  adjacency owns the detail and citations; they belong on this page's map
+  because each is an anchored, publicly-ticketed, repeat-screening city event.
 
-### Long exhibition runs (crowd without a clash problem)
+### Near misses — one dimension short
 
+- **Milan — Salone del Mobile / Fuorisalone** (April; curated core + off). The
+  purest non-theatre version of the Edinburgh dynamic: a ticketed trade fair at
+  Rho with 1,900+ exhibitors, plus **1,100+ events listed on the official
+  Fuorisalone guide (1,300+ across the city) spread over 16 districts** and
+  **500,000+ visitors**. Brera alone carried 320 events across 217 showrooms.
+  Installations run for the week rather than to performance times, so
+  simultaneity (dimension 3) never bites: the *scheduling* problem is weaker
+  than the *reachability* problem — which is the half of the product the Now
+  page serves.
+- **Charleston, SC — Spoleto Festival USA / Piccolo Spoleto** (late May–June;
+  curated core + open companion). Piccolo Spoleto 2026 offered **250 events**,
+  190 of them produced by independent arts and community groups, 113 free — a
+  deliberately open companion to a curated core, at a scale where a planner is
+  plausible but not urgent. Short of the bar on abundance (dimension 2).
+- **Toronto, Canada** (30 Jun – 12 Jul 2026; lottery-selected fringe). **123
+  shows**, selected by *lottery* rather than pure open access — a different
+  supply mechanism, and small enough that overwhelm is not really the user's
+  problem. Short on abundance (dimension 2).
+- **Galway, Ireland — GIAF** (13–26 July 2026; curated season). Fourteen days,
+  audiences well in excess of 200,000, in a small city fully consumed by it.
+  Programme size unassessed — provisionally here until a show count is cited.
+
+### Fails the bar, instructively
+
+- **Salzburg, Austria** (17 Jul – 30 Aug 2026). **208 performances** across
+  opera, drama and concerts. The town is overwhelmed, but the programme is
+  curated, expensive and elite — 208 performances is a brochure, not an
+  overwhelm problem. The boundary case this page keeps on purpose: *city
+  swarming* alone fails abundance (dimension 2).
 - **Venice — Biennale Arte** (9 May – 22 Nov 2026). **100 national
   participations** — 29 in the Giardini, 25 in the Arsenale and **46 scattered
-  across the city** — plus **31 collateral events** in venues around Venice. A
-  months-long run means opening hours, not performance times.
-- **Kassel — Documenta** (every five years, 100 days) and the roving **Manifesta**
-  are the same category, unassessed.
+  across the city** — plus **31 collateral events**. A months-long run means
+  opening hours, not performance times: fails time-boxing (1) and simultaneity
+  (3) at once. **Kassel — Documenta** (every five years, 100 days) fails the
+  cadence half of recurrence; the roving **Manifesta** fails the anchor half.
+- **Cannes**, **SXSW Austin** (March). Both convert a city into temporary
+  venues at high density with genuine clash-resolution problems, but both are
+  trade/badge-driven rather than public-audience-driven — failing open access
+  (dimension 6) — and SXSW already ships its own scheduling tool.
+
+### The unassessed tail
+
+Also in the fringe network and unassessed: **Prague**, **Dublin**, **Winnipeg**,
+**Orlando**, **Minnesota**, **Wellington**, **Camden**, **Melbourne Fringe**.
+**Miami Beach — Art Basel plus satellite fairs** (December) is the same
+curated-core-plus-off shape as Milan, unassessed.
 
 ## Where Edinburgh is still singular
 
@@ -240,6 +320,9 @@ Two findings cut against expanding, and both should be said plainly:
   developer API was found; Avignon OFF publishes a website and app but no
   documented feed; the only open Avignon dataset found is a historical venue-map
   file, not a programme. Each candidate needs a real probe, not a search.
+  (Narrowed 2026-09-01: the comedy candidates are now probed — MICF, Adelaide
+  and Brighton's actual endpoints are on
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md).)
 - **Does the Edinburgh source question have a portable answer?**
   [festival-season/](../festival-season/README.md) establishes that the Listings
   API cannot replace the Tikketr scrape here — it is availability-blind, so two
@@ -251,10 +334,14 @@ Two findings cut against expanding, and both should be said plainly:
   open access → overwhelm → the product. Salzburg (208 curated performances) and
   Venice (a six-month exhibition run) are both crowded cities with no scheduling
   problem. No evidence yet on where the threshold sits — how many parallel runs it
-  takes before "which of these can I make" is a real question.
+  takes before "which of these can I make" is a real question. (Reframed
+  2026-09-01: the festmaxxing bar names the dimensions, but the *threshold* on
+  each — how many events a day, how spread the venues — is still uncalibrated.)
 - **Is there any audience overlap between festivals?** Whether a Fringe-goer is
   also an Avignon or Adelaide-goer decides whether a second city is a new product
-  or a new market for the same users. No data found.
+  or a new market for the same users. No data found. The festmaxxing framing
+  sharpens this: does the "festival fanatic" who travels the circuit actually
+  exist at scale, and where do they congregate?
 - **Perth cites 400+ fringes, World Fringe cites 300+.** Narrowed 2026-08-02:
   FRINGE WORLD's own about-us page says "a global landscape of more than 400
   Fringe festivals" — a broad claim about fringes generally, not a stated count
@@ -280,6 +367,10 @@ Two findings cut against expanding, and both should be said plainly:
   press. If open-access festivals generally keep registering shows after launch,
   every ranking on this page is comparing numbers taken at different moments,
   and the whole tail is understated by an unknown amount.
+- **Should this page be renamed?** Since 2026-09-01 its scope is festmaxxing
+  *environments* (festival or not), but the folder is still
+  `festival-cities-beyond-edinburgh/`. Renaming breaks inbound links from four
+  sibling pages; kept as-is pending an owner call.
 
 ## Growth log
 
@@ -331,3 +422,15 @@ Two findings cut against expanding, and both should be said plainly:
   other comedy entry, and the unassessed-tail open question is narrowed
   accordingly (comedy side covered there; the cities' fringe-network
   festivals remain unassessed here).
+- **2026-09-01** — restructured the whole page around the **festmaxxing bar**,
+  extracted from the owner's stated product direction (a planning tool for
+  festival fanatics; time limitation, complexity, abundance; non-festival
+  activities woven into the plan). The bar is eight dimensions (shape 1–5,
+  qualifiers 6–7, enrichment 8); the mechanism-grouped candidate tail is
+  re-tiered into *clears / near miss / fails instructively*, with each entry's
+  failing dimension named. No candidate's facts changed — this is a
+  reorganization, all corrections kept in place. Melbourne (MICF), Brighton and
+  the film festivals (Berlinale, TIFF, MIFF) join the clear tier as
+  cross-references to [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+  Scope widened to non-festival environments sharing the shape; a rename
+  question is opened rather than acted on.

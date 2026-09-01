@@ -37,9 +37,10 @@ repo may reference `product-wiki/` except the reviewed distillation under
   census, why no third party can sell or earn commission on tickets, and why
   the edfringe scrape has no full replacement.
 - **[festival-cities-beyond-edinburgh/](festival-cities-beyond-edinburgh/README.md)** —
-  the same question pointed outward: which *other cities* carry the
-  Edinburgh-in-August pattern, ranked by how close they are structurally rather
-  than by fame, plus the candidate tail.
+  candidate environments beyond Edinburgh, scored against the **festmaxxing
+  bar** (the owner's time-limitation / complexity / abundance definition,
+  unpacked into eight dimensions): which festivals — and non-festival
+  environments — clear it, which nearly do, and which fail instructively.
 - **[comedy-festival-circuit/](comedy-festival-circuit/README.md)** — the
   worldwide comedy-festival circuit as a market: the annual census, which
   festivals are fringe-shaped (a real scheduling problem) vs showcase-shaped
