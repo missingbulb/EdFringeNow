@@ -140,11 +140,17 @@ the tail is thin — only three sell over a quarter of a million tickets.
 
 - **Montreal** (summer). Festival International de Jazz de Montréal (25 Jun – 4
   Jul 2026) puts **350+ shows** and 3,000 performers in front of a claimed 2m+
-  guests; Just For Laughs (15–26 Jul 2026) is the world's largest comedy festival
-  with **250 shows across 25 downtown venues** and 800+ artists **in both official
-  languages**. Concentrated in the Quartier des Spectacles, so reachability is
-  real. Bilingual by default — the first candidate that forces the localization
-  question.
+  guests; Just For Laughs (15–26 Jul 2026) runs **250 shows across 25 downtown
+  venues** and 800+ artists **in both official languages**. Concentrated in the
+  Quartier des Spectacles, so reachability is real. Bilingual by default — the
+  first candidate that forces the localization question. (Corrected 2026-09-01:
+  this entry called JFL "the world's largest comedy festival". That label is
+  JFL marketing that survives on attendance counting its free outdoor crowds;
+  by ticketed shows it is roughly a third of Melbourne's 803, and the company
+  behind it went through 2024 receivership and a 2024 cancellation before its
+  2026 relaunch — see
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md), which now
+  owns the comedy-festival detail for this and every other comedy entry.)
 - **Sibiu, Romania — FITS** (19–28 June 2026). **800+ events** in ten days in a
   small old town; one of Europe's largest performing-arts festivals.
 - **Galway, Ireland — GIAF** (13–26 July 2026). Fourteen days, audiences well in
@@ -261,6 +267,12 @@ Two findings cut against expanding, and both should be said plainly:
 - **The candidates in this page's tail are unassessed on everything** — scale
   figures for Cannes, Miami Beach, Documenta, Manifesta, Melbourne, Prague,
   Dublin, Winnipeg, Orlando, Minnesota, Wellington and Camden are not yet cited.
+  (Narrowed 2026-09-01: the **comedy-festival** side of Melbourne, Dublin,
+  Winnipeg and Wellington is now covered on
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) — MICF
+  turns out to be the strongest fringe-shaped candidate anywhere, 803 shows
+  with open JSON APIs. Those cities' *fringe-network* festivals — Melbourne
+  Fringe, Winnipeg Fringe, NZ Fringe — remain unassessed here.)
 - **Are the tail's scale figures launch announcements or delivered totals?**
   Raised 2026-08-09 after Edinburgh's own figure turned out to be a launch
   snapshot ~15% short of the delivered festival. Avignon OFF, Adelaide, Perth,
@@ -309,3 +321,13 @@ Two findings cut against expanding, and both should be said plainly:
   question with FRINGE WORLD's exact wording, without closing it. Checked (not
   resolved) whether any tool plans across festivals — see the same-day
   competitor-landscape update.
+- **2026-09-01** — corrected the Montreal entry's "world's largest comedy
+  festival" claim (a JFL marketing label resting on free-outdoor attendance;
+  by ticketed shows JFL Montreal is ~a third of Melbourne's MICF, and the
+  operator passed through 2024 receivership before relaunching), with the
+  reason kept in place. The new sibling page
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) now owns
+  comedy-festival detail — this page defers to it for MICF, JFL and every
+  other comedy entry, and the unassessed-tail open question is narrowed
+  accordingly (comedy side covered there; the cities' fringe-network
+  festivals remain unassessed here).
