@@ -5,6 +5,14 @@ for. Two decisions live here, not one: the in-the-moment "what can I make right
 now" (the home site, *Fringe Discover*) and the weeks-earlier "which shows, which
 dates" (the planner at `/plan`). Compiled once, refined in place.
 
+Scope note (2026-09-01): the product's ambition is no longer Edinburgh-bound —
+the owner's direction is to grow EdFringeNow into a festival-planning product.
+This page stays the **Edinburgh** evidence base; the wider comedy-festival
+market it would expand into is surveyed on
+[comedy-festival-circuit/](../comedy-festival-circuit/README.md), and the
+city-pattern question on
+[festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md).
+
 ## Key insights
 
 - 4,206 Fringe shows across 299 venues — 15% more than June's programme claimed. Plus ~900 non-Fringe events.
@@ -296,3 +304,9 @@ segmentation for either crowd remains an open question.
   favourites-export question); no requirement touched. The superseded figures
   also propagate to festival-season and festival-cities-beyond-edinburgh, both
   corrected in the same pass.
+- **2026-09-01** — added the scope note under the title: the owner's direction
+  is now a festival-planning product rather than an Edinburgh-only one, with
+  the wider comedy-festival market owned by the new
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) page. This
+  page's own claims, figures and open questions are untouched — it remains the
+  Edinburgh evidence base.
