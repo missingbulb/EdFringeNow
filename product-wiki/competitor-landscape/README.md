@@ -7,7 +7,7 @@ and *"which of my favourites can I actually catch, on which dates?"* (the planne
 at `/plan`). Since 2026-09-01 the page also holds the planner field **beyond**
 Edinburgh, because the product's direction is now festival planning generally —
 see *The field beyond Edinburgh* below, and
-[comedy-festival-circuit/](../comedy-festival-circuit/README.md) for the
+[festival-circuits/](../festival-circuits/README.md) for the
 festivals themselves. Compiled once, refined in place.
 
 The field is not one field. The live/in-the-moment side has essentially one
@@ -104,7 +104,7 @@ read on where the gap is.
   itinerary), the plan is delivered by **email-gated PDF** (name + address
   before the itinerary), the site still checks against **"3,649 shows"** — the
   stale 4 June launch snapshot, ~15% short of the delivered festival, the exact
-  trap [market-and-audience/](../market-and-audience/README.md) documents — and
+  trap [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) documents — and
   it now pushes a companion app, **FringePal** ("bigger and better than this
   site"), not previously in this wiki. Its early-access pitch names **live
   "near me now"** as a coming feature — the first competitor seen announcing
@@ -244,7 +244,7 @@ that it "may be a combined map"). It is not a map. It is the whole planner:
   coverage, taxonomy and licence terms — consistent with it being an
   **approved Listings API consumer**, which would be existence proof that the
   API's approval path is open to planner-shaped products (the question
-  [fringe-ticketing/](../fringe-ticketing/README.md) carries). Unconfirmed;
+  [edinburgh-fringe-ticketing/](../edinburgh-fringe-ticketing/README.md) carries). Unconfirmed;
   no availability signal appears anywhere in its UI, which also fits an
   availability-blind source.
 
@@ -307,7 +307,7 @@ year — and the strongest official planner anywhere is
 [Berlinale's "My Festival Planner"](https://www.berlinale.de/en/programme/festival-planner.html)
 (favourites → schedule → iCal). One tool for one festival, in the whole film
 circuit: the category is thin there too, not absent. Details on
-[comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s film
+[festival-circuits/](../festival-circuits/README.md)'s film
 adjacency section.
 
 The structural analogue where the category *is* proven: **music festivals.**
@@ -439,7 +439,7 @@ tours) may earn us a small commission"
 with configured affiliate IDs exercised by
 [`js/places.js`](https://github.com/missingbulb/EdFringeNow/blob/main/js/places.js)'s
 partner links). Worth holding beside
-[fringe-ticketing/](../fringe-ticketing/README.md)'s finding that
+[edinburgh-fringe-ticketing/](../edinburgh-fringe-ticketing/README.md)'s finding that
 **ticket-side** commission is structurally impossible at the Fringe — the
 non-ticket affiliate lane is the only affiliate lane there is, and no rival
 has entered it.
@@ -488,7 +488,7 @@ What no profiled competitor still does — a list that shrank twice in one day:
    which days you attend**. That is date-*selection*. What survives as
    unoccupied is date-*scoring*: recommending and ranking candidate windows
    for a fixed trip length against favourites coverage (and, per
-   [market-and-audience/](../market-and-audience/README.md), against
+   [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md), against
    accommodation) rather than silently emitting one packed answer. Every
    Fringe-only planner re-checked (Plan Your Fringe, Fringe Finder,
    edfringeplanner, FringePlan, Plan My Fringe) still takes dates as an
@@ -597,7 +597,7 @@ two surfaces should not be reasoned about as one product — see
   competitor documents the mechanism — native edfringe.com export, the
   third-party CSV extension, or a logged-in scrape are all consistent with what
   they say. If there is a native export nobody here has found, the
-  market-and-audience page's intake assumption is wrong too.
+  edinburgh-market-and-audience page's intake assumption is wrong too.
 - ~~**Does FringePlan's "flag a delisted show or moved performance" mean it holds
   live availability?**~~ **Answered 2026-09-01: yes.** Its own homepage states
   that adding shows pulls in "ticket availability colours … automatically" —
@@ -641,7 +641,7 @@ two surfaces should not be reasoned about as one product — see
   participating festivals" credit all match the API's schema and licence
   shape (see the profile above — an inference, not a finding). If confirmed,
   it is existence proof that the API approves planner-shaped products, which
-  bears directly on [fringe-ticketing/](../fringe-ticketing/README.md)'s
+  bears directly on [edinburgh-fringe-ticketing/](../edinburgh-fringe-ticketing/README.md)'s
   "would they approve us" question.
 - **How big is planmyfestivals' user base?** Invitation-only registration
   caps it deliberately; nothing public says at what size, or when (or
@@ -669,7 +669,7 @@ two surfaces should not be reasoned about as one product — see
 - "FRiNGE.Travel" surfaced in an earlier sweep and was never examined.
 - What do users actually do in the "free hour" moment today — official app,
   posters, ask a friend? Still no cited behavioural source (the same gap is
-  recorded on the market-and-audience page).
+  recorded on the edinburgh-market-and-audience page).
 
 ## Growth log
 
@@ -703,7 +703,7 @@ two surfaces should not be reasoned about as one product — see
   Key insight 4 rewritten from two unclaimed claims to three — the other seven
   August festivals joins favourites-import and date-choice. Two open questions
   added. Requirements implication left for human review — see the
-  festival-season page and the multi-festival design proposal.
+  edinburgh-festival-season page and the multi-festival design proposal.
 - **2026-08-09** — worked the page's top open question (hands-on verification of
   the 2026 entrants) and it cost the page a claim. Examined the two planners left
   unexamined: **edfringeplanner.co.uk**, whose stated premise is taking the
@@ -766,7 +766,7 @@ two surfaces should not be reasoned about as one product — see
   empty-category finding to stay inside the seven-bullet cap; intro widened
   beyond Edinburgh; two open questions added (demand-side vs supply-side
   vacuum; why no Fringe-scale Clashfinder). Sibling pages:
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) owns the
+  [festival-circuits/](../festival-circuits/README.md) owns the
   festivals themselves.
 - **2026-09-01** *(third pass, same day — the owner pointed at planmyfestivals'
   user guide and asked for a fuller feature comparison with UI screenshots)* —
@@ -809,10 +809,10 @@ two surfaces should not be reasoned about as one product — see
   serves display ads and none carries a single travel-booking affiliate
   fingerprint** — the affiliate lane is occupied only by our own shipped
   partner links, and ticket-side commission is structurally impossible per
-  fringe-ticketing. Along the way: edfringeguide.com and
+  edinburgh-fringe-ticketing. Along the way: edfringeguide.com and
   anotherfringeguide.com found byte-identical (the page's "two" unofficial
   guides are one site, corrected in place), and edfringemap found stating it
-  runs on "official festivals API data" — recorded on fringe-ticketing as a
+  runs on "official festivals API data" — recorded on edinburgh-fringe-ticketing as a
   second, this time explicit, Listings API consumer. Key insight 4 and three
   matrix funding cells rewritten; three open questions added (VisitScotland's
   role; edfringemap's sales volume; planmyfestivals' unpublished rates).

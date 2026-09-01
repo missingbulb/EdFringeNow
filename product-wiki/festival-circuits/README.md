@@ -1,4 +1,4 @@
-# The comedy-festival circuit
+# The festival circuits
 
 The world's comedy festivals as a market: what exists, what shape each one is,
 and what it would take to point EdFringeNow's planning product at any of them.
@@ -8,7 +8,7 @@ the art form the product already serves best — comedy is the Fringe's largest
 genre. Compiled once, refined in place.
 
 Division of labour with the neighbouring pages:
-[festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md)
+[festmaxxing-environments/](../festmaxxing-environments/README.md)
 owns the *city* question (which cities carry the Edinburgh-in-August overwhelm
 pattern, whatever the art form); this page owns the *comedy festival* question —
 the worldwide circuit, each festival's structure, organizer, ticketing and data
@@ -224,7 +224,7 @@ Fringe anywhere in comedy.
   A$38.20. That is ~350 performances a day — genuinely fringe-like clash
   density. Launch press said "over 750 shows", so ~50 more landed after
   launch: the launch-undercount trap
-  [market-and-audience/](../market-and-audience/README.md) documents holds
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) documents holds
   here too.
 - **Show model**: Edinburgh-style seasons — one show is the same hour repeated
   across the run (sampled runs of 7–24 performances; cheaper previews,
@@ -273,7 +273,7 @@ Fringe anywhere in comedy.
 ### Adelaide Fringe — covered elsewhere, plus the ticketing angle
 
 Scale, open access and the "Mad March" cluster are on
-[festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md);
+[festmaxxing-environments/](../festmaxxing-environments/README.md);
 what this pass adds is ticketing and data. Adelaide Fringe Inc. (a
 not-for-profit, incorporated 1975) runs **its own ticketing platform,
 FringeTIX** — [first used in 1998](https://en.wikipedia.org/wiki/Adelaide_Fringe),
@@ -380,7 +380,7 @@ was written.
 ### Brighton Fringe — half of it is a comedy festival
 
 Already profiled as a city on
-[festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md);
+[festmaxxing-environments/](../festmaxxing-environments/README.md);
 what this pass adds is measured comedy share, mechanics and the cluster.
 **Comedy is 46% of the live programme** — 394 of 864 events in its own
 events API carry the Comedy genre (fetched; cross-edition genre totals give
@@ -780,8 +780,8 @@ overlap the comedy window and change the visitor's calculus:
 
 | Comedy festival | Overlapping in the same city |
 |---|---|
-| Edinburgh Fringe (Aug) | seven other festivals — owned by [festival-season/](../festival-season/README.md) |
-| Adelaide Fringe (Feb–Mar) | Adelaide Festival, WOMADelaide, Writers' Week — "Mad March", on [festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md) |
+| Edinburgh Fringe (Aug) | seven other festivals — owned by [edinburgh-festival-season/](../edinburgh-festival-season/README.md) |
+| Adelaide Fringe (Feb–Mar) | Adelaide Festival, WOMADelaide, Writers' Week — "Mad March", on [festmaxxing-environments/](../festmaxxing-environments/README.md) |
 | Brighton Fringe (May) | Brighton Festival (105 curated events, 1–25 May) and The Great Escape (30+ music venues, 13–16 May), both wholly inside the Fringe's month |
 | NZICF, Auckland leg (May) | NZ Music Month all month + Auckland Writers Festival inside the window — [The Spinoff](https://thespinoff.co.nz/pop-culture/06-05-2026/auckland-has-a-problem-everything-awesome-is-happening-in-may-all-at-once): "everything awesome is happening in May, all at once" |
 | JFL Montreal (Jul) | Fantasia film festival in near-total overlap, Nuits d'Afrique on the first weekend, Complètement Cirque ending just before, Jazz Fest just before that — the Quartier des Spectacles is a festival machine all July |
@@ -818,7 +818,7 @@ Nashville/312 (Etix/AXS/TM), Dubai (Platinumlist + venues), JFL Sydney (six
 sellers). The vendor names recur — Tixr (Great Outdoors, Halifax,
 Skankfest), Eventbrite, Showpass, Fienta, See Tickets, TicketSource,
 SISTIC, Spektrix (Aberdeen — the same vendor whose public API the
-[fringe-ticketing/](../fringe-ticketing/README.md) census found at
+[edinburgh-fringe-ticketing/](../edinburgh-fringe-ticketing/README.md) census found at
 Edinburgh's Traverse), and post-collapse Leicester's challenger runs on
 TixEvery, which pays performers directly. Red61, which powers Edinburgh's
 venue side, appears nowhere else in this census.
@@ -862,7 +862,7 @@ first-hand this pass):
 session flags (sold-out/preview/cheap-night) are the one census-wide
 sighting of Edinburgh-scraper-grade availability data; everywhere else the
 best case is a binary sold-out badge on a sales page. The two-source shape
-[festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md)
+[festmaxxing-environments/](../festmaxxing-environments/README.md)
 worried about (a listings source plus a separate availability source) is
 not the general case — the general case is *worse*: one source for
 listings, and no availability source at all.
@@ -1117,7 +1117,7 @@ The film adjacency (light survey, 2026-09-01):
   quantified what the tracker misses.
 - **Does the fringe-shaped tier share an audience with Edinburgh?** The
   same unknown
-  [festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md)
+  [festmaxxing-environments/](../festmaxxing-environments/README.md)
   already carries for cities — unmeasured there, unmeasured here.
 - **Whether official-app planners satisfy the planning demand** at
   MICF/Adelaide scale is the competitor question —
@@ -1175,9 +1175,15 @@ The film adjacency (light survey, 2026-09-01):
   with the Sukkot holiday-week angle. All three share the cinematheque-hub
   limit (travel never binds; daily volume ≤~28 screenings), which places
   them as one near-miss entry on
-  [festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md).
+  [festmaxxing-environments/](../festmaxxing-environments/README.md).
   The Israeli tail (TLVFest, Solidarity, Epos, Utopia, Animix, Cinema
   South, TISFF) is recorded as one-cinematheque scale. Fact base fetched
   first-hand from the festivals' own 2026 pages (dates, prices, halls,
   repeat screenings); a Docaviv dates discrepancy (its official pages say
   28 May – 6 Jun, JPost says 30 May) is left to the fetched primary.
+- **2026-09-01** — renamed from `comedy-festival-circuit/` to
+  `festival-circuits/` on the owner's direction (folder names should reflect
+  the research topics): the film adjacency, now extended to Israel, made
+  "comedy-" an under-claim — the page covers the comedy circuit in depth and
+  the film circuit surveyed light. All inbound links updated in the same
+  change.

@@ -1,4 +1,4 @@
-# Festival cities beyond Edinburgh
+# Festmaxxing environments
 
 Candidate environments for the product beyond Edinburgh-in-August, scored
 against an explicit bar — the **festmaxxing definition** below, extracted from
@@ -44,7 +44,7 @@ dimensions.
 5. **Repeat chances** — items recur inside the window, turning "which do I
    drop" into "which order do I go". This is the fringe-shaped vs
    showcase-shaped axis worked through on
-   [comedy-festival-circuit/](../comedy-festival-circuit/README.md); both
+   [festival-circuits/](../festival-circuits/README.md); both
    shapes are planning problems, but recurrence is what makes the product
    *optimization* rather than triage.
 
@@ -95,7 +95,7 @@ Underneath that, the thing that actually generates the overwhelm is the Fringe's
 **open-access** model: anyone who finds a room and pays a registration fee is
 listed, so supply is uncapped and the city converts itself into venues. Scale
 figures for the Fringe itself live on
-[market-and-audience/](../market-and-audience/README.md) — 4,206 shows across 299
+[edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) — 4,206 shows across 299
 venues in 2026, ~2.6m tickets in 2025.
 
 Three distinct mechanisms produce an Edinburgh-shaped city, and they matter
@@ -173,11 +173,11 @@ corpus is in French.
   attendances**, with over 30% of events from Brighton & Hove companies. English
   language, UK ticketing conventions — the cheapest possible second market.
   Comedy share and its open Eventotron API are on
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+  [festival-circuits/](../festival-circuits/README.md).
 - **Melbourne — MICF** (Mar–Apr; open registration). The strongest
   fringe-shaped candidate found anywhere outside the fringe network itself:
   803 shows, 9,164 performances, 26 days, with open JSON endpoints.
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) owns the
+  [festival-circuits/](../festival-circuits/README.md) owns the
   detail; it sits in this tier on every dimension.
 - **Montreal in July** (festival season). Festival International de Jazz de
   Montréal (25 Jun – 4 Jul 2026) puts **350+ shows** and 3,000 performers in
@@ -193,7 +193,7 @@ corpus is in French.
   counting its free outdoor crowds; by ticketed shows it is roughly a third of
   Melbourne's 803, and the company behind it went through 2024 receivership
   and a 2024 cancellation before its 2026 relaunch — see
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md), which now
+  [festival-circuits/](../festival-circuits/README.md), which now
   owns the comedy-festival detail for this and every other comedy entry.)
 - **Makhanda (Grahamstown), South Africa — National Arts Festival** (late
   June–July; open-access fringe beside a curated core). **270+ productions** on
@@ -207,7 +207,7 @@ corpus is in French.
   real simultaneity — the mechanism differs, the bar clears.
 - **The film festivals that clear it** — Berlinale above all (274 films, each
   screened up to five times, public tickets €9–15), then TIFF and MIFF.
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s film
+  [festival-circuits/](../festival-circuits/README.md)'s film
   adjacency owns the detail and citations; they belong on this page's map
   because each is an anchored, publicly-ticketed, repeat-screening city event.
 - **Miami Art Week / Art Basel Miami Beach** (December; curated core + off —
@@ -259,7 +259,7 @@ corpus is in French.
   misses is venue spread (dimension 4): everything concentrates in one
   cinematheque hub, so travel never binds and daily volume tops out near 28
   screenings — a planner is useful there, not indispensable. Detail and
-  citations on [comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s
+  citations on [festival-circuits/](../festival-circuits/README.md)'s
   film adjacency, extended to Israel 2026-09-01.
 - **Gen Con, Indianapolis** (July–Aug; convention — badge plus per-event
   tickets). The closest non-festival analogue found anywhere: **nearly
@@ -382,7 +382,7 @@ Two findings cut against expanding, and both should be said plainly:
   key. Its coverage, fields, licence terms and the two edges that matter (it is
   **availability-blind**, and its no-redistribution clause sits awkwardly with
   this repo's committed static data) are worked through on
-  [festival-season/](../festival-season/README.md) and not repeated here. The
+  [edinburgh-festival-season/](../edinburgh-festival-season/README.md) and not repeated here. The
   point for *this* page is comparative: **no equivalent single-source feed was
   found for Adelaide, Avignon, Perth, Milan or Montreal** — those are
   per-festival scrapes or nothing. That asymmetry, not language, is the real cost
@@ -448,9 +448,9 @@ attributed to their publishers):
   file, not a programme. Each candidate needs a real probe, not a search.
   (Narrowed 2026-09-01: the comedy candidates are now probed — MICF, Adelaide
   and Brighton's actual endpoints are on
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md).)
+  [festival-circuits/](../festival-circuits/README.md).)
 - **Does the Edinburgh source question have a portable answer?**
-  [festival-season/](../festival-season/README.md) establishes that the Listings
+  [edinburgh-festival-season/](../edinburgh-festival-season/README.md) establishes that the Listings
   API cannot replace the Tikketr scrape here — it is availability-blind, so two
   adapters into one schema is the realistic architecture. Open question for *this*
   page: whether that two-source shape (a listings source plus a separate ticketing
@@ -482,7 +482,7 @@ attributed to their publishers):
   Dublin, Winnipeg, Orlando, Minnesota, Wellington and Camden are not yet cited.
   (Narrowed 2026-09-01: the **comedy-festival** side of Melbourne, Dublin,
   Winnipeg and Wellington is now covered on
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) — MICF
+  [festival-circuits/](../festival-circuits/README.md) — MICF
   turns out to be the strongest fringe-shaped candidate anywhere, 803 shows
   with open JSON APIs. Those cities' *fringe-network* festivals — Melbourne
   Fringe, Winnipeg Fringe, NZ Fringe — remain unassessed here.)
@@ -493,11 +493,6 @@ attributed to their publishers):
   press. If open-access festivals generally keep registering shows after launch,
   every ranking on this page is comparing numbers taken at different moments,
   and the whole tail is understated by an unknown amount.
-- **Should this page be renamed?** Since 2026-09-01 its scope is festmaxxing
-  *environments* (festival or not), but the folder is still
-  `festival-cities-beyond-edinburgh/`. Renaming breaks inbound links from four
-  sibling pages; kept as-is pending an owner call.
-
 ## Growth log
 
 - **2026-07-31** — initial seed, from an owner question ("are there any other
@@ -509,7 +504,7 @@ attributed to their publishers):
   listings API has no counterpart elsewhere — making data accessibility, not
   language, the binding constraint on a second city. All claims cited; data
   accessibility per candidate recorded as the top open question.
-- **2026-07-31** — reconciled with [festival-season/](../festival-season/README.md),
+- **2026-07-31** — reconciled with [edinburgh-festival-season/](../edinburgh-festival-season/README.md),
   seeded in parallel the same day. That page owns the Edinburgh Listings API in
   full, so this page's treatment was cut back to the comparative point (no other
   candidate city has an equivalent feed) and now defers rather than restates.
@@ -520,7 +515,7 @@ attributed to their publishers):
 - **2026-08-09** — corrected Edinburgh's side of every comparison on this page
   from the 4 June programme-launch snapshot (3,649 shows / 258 venues) to the
   delivered 2026 festival (4,206 / 299), per the correction on
-  [market-and-audience/](../market-and-audience/README.md). The Adelaide density
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md). The Adelaide density
   ratio moves from ~2.2× to ~2.6×, so Key insight 1 is rewritten ("less than
   half" → "under 40%") and the *Where Edinburgh is still singular* finding gets
   stronger, not weaker. The reason the old figure was wrong is kept in the body.
@@ -543,7 +538,7 @@ attributed to their publishers):
   by ticketed shows JFL Montreal is ~a third of Melbourne's MICF, and the
   operator passed through 2024 receivership before relaunching), with the
   reason kept in place. The new sibling page
-  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) now owns
+  [festival-circuits/](../festival-circuits/README.md) now owns
   comedy-festival detail — this page defers to it for MICF, JFL and every
   other comedy entry, and the unassessed-tail open question is narrowed
   accordingly (comedy side covered there; the cities' fringe-network
@@ -557,7 +552,7 @@ attributed to their publishers):
   failing dimension named. No candidate's facts changed — this is a
   reorganization, all corrections kept in place. Melbourne (MICF), Brighton and
   the film festivals (Berlinale, TIFF, MIFF) join the clear tier as
-  cross-references to [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+  cross-references to [festival-circuits/](../festival-circuits/README.md).
   Scope widened to non-festival environments sharing the shape; a rename
   question is opened rather than acted on.
 - **2026-09-01** — folded the two surveys the owner asked for into the
@@ -571,9 +566,15 @@ attributed to their publishers):
   itinerary optimization ($24.97/yr). Israel: the three cinematheque
   festivals (Jerusalem, Docaviv, Haifa) enter as one near-miss entry —
   seven dimensions clear, venue spread concentrated in single hubs — with
-  detail on [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+  detail on [festival-circuits/](../festival-circuits/README.md).
   Header rewritten: the fashion-week and Olympics answers and the
   cross-cutting finding (open per-event access is the rarest dimension;
   access + anchor is where data compounds) replace three bullets whose
   findings stay in the body (the 300-fringes count moves to the
   unassessed-tail paragraph).
+- **2026-09-01** — renamed from `festival-cities-beyond-edinburgh/` to
+  `festmaxxing-environments/` on the owner's direction, resolving the rename
+  question opened earlier the same day: the page scores *environments* —
+  festival or not — against the festmaxxing bar, so "cities" no longer
+  described the topic. All inbound links updated in the same change; the
+  resolved open question is removed.

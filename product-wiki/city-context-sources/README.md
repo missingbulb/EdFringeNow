@@ -7,9 +7,9 @@ attractions, markets — and the wiki's job is **not** to hold any particular
 weekend's events but to hold **the sources**: which publications, feeds and
 APIs carry a city's non-festival goings-on, per festival city, and how
 machine-readable each is. Scoped to the cities of the longer festivals
-([comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s
+([festival-circuits/](../festival-circuits/README.md)'s
 fringe-shaped tier), not the weekend showcases. Edinburgh's own August
-*festival* cluster is [festival-season/](../festival-season/README.md)'s;
+*festival* cluster is [edinburgh-festival-season/](../edinburgh-festival-season/README.md)'s;
 this page is about everything those pages don't list. Compiled once, refined
 in place.
 
@@ -99,7 +99,7 @@ layer is [OpenStreetMap's Overpass API](https://wiki.openstreetmap.org/wiki/Over
 with [Wikidata's SPARQL endpoint](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service)
 (CC0 entities, coordinates, images, Wikipedia links) — the "free hour near
 me" gazetteer, and the machine version of the hand-curated list
-[festival-season/](../festival-season/README.md) said couldn't exist as a
+[edinburgh-festival-season/](../edinburgh-festival-season/README.md) said couldn't exist as a
 feed. For *bookable* attractions,
 [Viator's Partner API basic-access tier is free with no pre-authorization](https://docs.viator.com/partner-api/technical/)
 (search, availability, pricing, commission on referred bookings) — which
@@ -155,7 +155,7 @@ this purpose and not worth integration effort.
 - **What does Data Thistle actually cost, and would its licence allow our
   static-file architecture?** Registration is free but commercial licensing
   is contact-priced — the same two questions
-  [festival-season/](../festival-season/README.md) has open against the
+  [edinburgh-festival-season/](../edinburgh-festival-season/README.md) has open against the
   Edinburgh Festivals Listings API (redistribution vs our committed-JSON
   model), now against the UK-wide supplier too. One conversation covers
   both of its roles (supplier here, competitor on

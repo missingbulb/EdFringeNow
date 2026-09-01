@@ -1,4 +1,4 @@
-# Fringe ticketing & providers
+# Edinburgh Fringe ticketing & providers
 
 Who actually sells an Edinburgh Fringe ticket, who all the venue operators
 ("providers") are, whether a third party can sell tickets itself, and whether
@@ -244,7 +244,7 @@ the scraper breaks on that timetable regardless).
   scraped from edfringe.com — and whether blending the two sources in one
   product is licence-compliant at all — is unresolved and decides the
   architecture. One email to Festivals Edinburgh covers this *and* the
-  static-file question already open on the festival-season page. (New
+  static-file question already open on the edinburgh-festival-season page. (New
   evidence 2026-09-01, from
   [competitor-landscape/](../competitor-landscape/README.md): the
   cross-festival planner **planmyfestivals.com** carries exactly the API's
@@ -309,3 +309,8 @@ the scraper breaks on that timetable regardless).
   second consumer, this time stated rather than inferred, and a commercial
   one. The approval question stays open; what changed is that two live
   products now suggest the path is passable.
+- **2026-09-01** — renamed from `fringe-ticketing/` to
+  `edinburgh-fringe-ticketing/` on the owner's direction: with the wiki's
+  scope now global (many fringes are in scope), the bare name was ambiguous —
+  this page is specifically the Edinburgh Fringe's operator census. Content
+  unchanged; all inbound links updated in the same change.
