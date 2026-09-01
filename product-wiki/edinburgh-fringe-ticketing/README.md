@@ -1,4 +1,4 @@
-# Fringe ticketing & providers
+# Edinburgh Fringe ticketing & providers
 
 Who actually sells an Edinburgh Fringe ticket, who all the venue operators
 ("providers") are, whether a third party can sell tickets itself, and whether
@@ -244,7 +244,21 @@ the scraper breaks on that timetable regardless).
   scraped from edfringe.com — and whether blending the two sources in one
   product is licence-compliant at all — is unresolved and decides the
   architecture. One email to Festivals Edinburgh covers this *and* the
-  static-file question already open on the festival-season page.
+  static-file question already open on the edinburgh-festival-season page. (New
+  evidence 2026-09-01, from
+  [competitor-landscape/](../competitor-landscape/README.md): the
+  cross-festival planner **planmyfestivals.com** carries exactly the API's
+  festival set, genre vocabulary, venue-facilities detail and a "Show data ©
+  the participating festivals" credit, and shows **no availability signal**
+  anywhere — consistent with an approved, availability-blind Listings API
+  consumer. Later the same day, stronger: **edfringemap.com states outright**
+  on [its advertise page](https://edfringemap.com/advertise) that it runs on
+  "official festivals API data" — while listing every show free, selling
+  promoted placement on top, and linking tickets out. So one inferred and one
+  self-declared consumer both look approved, planner/map-shaped and
+  commercial, which reads well for our chances — and both products' total
+  silence on availability is what the licence-plus-API shape produces
+  without a second source.)
 - **Does Tikketr/equ have any non-public partner API?** Nothing public exists;
   a private capability cannot be ruled out. The Society's arts-industry
   accreditation channel was also not examined.
@@ -283,3 +297,20 @@ the scraper breaks on that timetable regardless).
   availability source" is false for Traverse specifically). All claims cited.
   Requirements implications (monetisation ceiling, scrape-replacement
   architecture) left for human review.
+- **2026-09-01** — annotated the Listings API approval open question with new
+  circumstantial evidence from the competitor research: planmyfestivals.com
+  (profiled on [competitor-landscape/](../competitor-landscape/README.md))
+  appears to be an approved planner-shaped consumer of the API, and its UI's
+  total silence on availability matches the API's availability-blind shape.
+  Question narrowed, not closed — the inference is unconfirmed.
+- **2026-09-01** *(second pass, same day)* — strengthened the same annotation:
+  edfringemap.com **self-declares** "official festivals API data" on its
+  advertise page while selling promoted placement over the free listings — a
+  second consumer, this time stated rather than inferred, and a commercial
+  one. The approval question stays open; what changed is that two live
+  products now suggest the path is passable.
+- **2026-09-01** — renamed from `fringe-ticketing/` to
+  `edinburgh-fringe-ticketing/` on the owner's direction: with the wiki's
+  scope now global (many fringes are in scope), the bare name was ambiguous —
+  this page is specifically the Edinburgh Fringe's operator census. Content
+  unchanged; all inbound links updated in the same change.

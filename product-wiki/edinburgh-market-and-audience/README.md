@@ -1,9 +1,17 @@
-# Market & audience
+# Edinburgh market & audience
 
 The scale of the Edinburgh Fringe and the audience behaviour EdFringeNow is built
 for. Two decisions live here, not one: the in-the-moment "what can I make right
 now" (the home site, *Fringe Discover*) and the weeks-earlier "which shows, which
 dates" (the planner at `/plan`). Compiled once, refined in place.
+
+Scope note (2026-09-01): the product's ambition is no longer Edinburgh-bound —
+the owner's direction is to grow EdFringeNow into a festival-planning product.
+This page stays the **Edinburgh** evidence base; the wider comedy-festival
+market it would expand into is surveyed on
+[festival-circuits/](../festival-circuits/README.md), and the
+city-pattern question on
+[festmaxxing-environments/](../festmaxxing-environments/README.md).
 
 ## Key insights
 
@@ -76,7 +84,7 @@ show plays ~25 times, a Book Festival author appears once. The programme's scale
 buries exactly what cannot be seen twice. Dates, counts, locations, the six
 different shapes an "event" takes across these festivals, and whether the data is
 obtainable are all worked through on
-[festival-season/](../festival-season/README.md).
+[edinburgh-festival-season/](../edinburgh-festival-season/README.md).
 
 ## The overwhelm / decision problem
 
@@ -232,7 +240,7 @@ segmentation for either crowd remains an open question.
   beyond a free/paid flag, and the scraped GraphQL only carries `priceType` —
   so this is a published aggregate we cannot currently reproduce or attribute
   per show. Whether the official Listings API's `price` field would close that
-  is on [festival-season/](../festival-season/README.md).
+  is on [edinburgh-festival-season/](../edinburgh-festival-season/README.md).
 - **How much does the programme still move during the run?** Registration
   demonstrably continued past 4 June (+553 shows by opening day). Whether shows
   are also added, cancelled or pulled *during* 7–31 August is unmeasured, and it
@@ -273,7 +281,7 @@ segmentation for either crowd remains an open question.
   festivals, not one: added "The Fringe is not all of August" under Scale (~900
   further events, the Fringe at ~80% of volume, and the inversion that the
   scarcer events are the ones volume ranking buries), pointing at the new
-  festival-season page for dates, counts, locations and data availability. Key
+  edinburgh-festival-season page for dates, counts, locations and data availability. Key
   insight 1 rewritten from the year-on-year shrink to the cluster; the shrink
   claim stays in the body. Added the cross-festival attendance open question.
   Requirements implication left for human review.
@@ -294,5 +302,15 @@ segmentation for either crowd remains an open question.
   [audience-divergence/](../audience-divergence/README.md). Three open questions
   added (price reproducibility, in-run programme churn, a sharpened
   favourites-export question); no requirement touched. The superseded figures
-  also propagate to festival-season and festival-cities-beyond-edinburgh, both
+  also propagate to edinburgh-festival-season and festmaxxing-environments, both
   corrected in the same pass.
+- **2026-09-01** — added the scope note under the title: the owner's direction
+  is now a festival-planning product rather than an Edinburgh-only one, with
+  the wider comedy-festival market owned by the new
+  [festival-circuits/](../festival-circuits/README.md) page. This
+  page's own claims, figures and open questions are untouched — it remains the
+  Edinburgh evidence base.
+- **2026-09-01** — renamed from `market-and-audience/` to
+  `edinburgh-market-and-audience/` on the owner's direction: the page's own
+  scope note pins it as the Edinburgh evidence base, and the name now says
+  so. Content unchanged; all inbound links updated in the same change.

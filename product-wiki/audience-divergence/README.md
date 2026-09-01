@@ -160,7 +160,7 @@ Small, and worth keeping small deliberately:
   research covering both the live in-festival crowd and the trip-planning crowd
   without assuming a single requirement set. Compiled the divergence axes, the
   seven concrete requirement conflicts, and the shared spine, from the audience
-  evidence gathered on the market-and-audience page plus the repo's two surfaces.
+  evidence gathered on the edinburgh-market-and-audience page plus the repo's two surfaces.
   Sources cited.
 - **2026-07-29** — added the page's `## Key insights` header: seven terse lines
   distilled from what the page already says (the non-reducibility finding, the

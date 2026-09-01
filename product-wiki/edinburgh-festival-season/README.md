@@ -44,7 +44,7 @@ Two things fall out of the table:
   ~82% of the cluster. (Corrected 2026-08-09: this read 3,649, the 4 June
   programme-launch figure, which was ~15% short of the delivered festival; the
   conclusion is unchanged and slightly stronger. See
-  [market-and-audience/](../market-and-audience/README.md) for the correction.)
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) for the correction.)
   Any ranking that sorts purely on relevance or proximity will show a Fringe-only
   city.
 - **Scarcity runs the other way.** A Fringe show typically plays ~25 times. A
@@ -92,7 +92,12 @@ Two honest caveats:
 
 - **This is guide-site material, not a dataset.** There is no listings feed for
   "the Meadows is nice in August." Anything the product does here is a
-  hand-curated short list, and should be sized accordingly.
+  hand-curated short list, and should be sized accordingly. (Softened
+  2026-09-01: for *attractions* specifically, OSM + Wikidata are a free
+  machine-readable base layer, and the wider source landscape — for
+  Edinburgh and every other festival city — now has its own page,
+  [city-context-sources/](../city-context-sources/README.md). The claim
+  stands for the curated "nice in August" judgment itself.)
 - **The repo already has the seam.** `js/places.js` geocodes arbitrary
   non-show destinations through Nominatim, so a curated seasonal place is
   representable today without new infrastructure.
@@ -191,7 +196,7 @@ edfringe.com** — "not… any other ticketing site, including the venue's own
 site". Sync is near-real-time (`modified_from`, "a delay of a few minutes"), and
 a beta [MCP endpoint](https://api.edinburghfestivalcity.com/documentation/mcp)
 exists. The full ticketing/provider picture is on
-[fringe-ticketing/](../fringe-ticketing/README.md).
+[edinburgh-fringe-ticketing/](../edinburgh-fringe-ticketing/README.md).
 
 ### Keeping the Fringe on its own source
 
@@ -299,18 +304,29 @@ blurbs and belongs in the competitor page once someone actually uses them.
   implications (the Now page and planner design) left for human review — the
   proposal is written up outside the wiki.
 - **2026-07-31** *(second pass)* — added Edge 3 to the Listings API section from
-  the fringe-ticketing research pass: Fringe data is approval-gated
+  the edinburgh-fringe-ticketing research pass: Fringe data is approval-gated
   (`demofringe` review process) and Fringe show links must go only to
   edfringe.com — never a venue's own site; recorded the near-real-time
   `modified_from` sync and the beta MCP endpoint, and narrowed the "what does
   the API actually return" open question (2026 Fringe data confirmed loaded via
   the public explorer; still no authenticated call). Cross-linked the new
-  fringe-ticketing page.
+  edinburgh-fringe-ticketing page.
 - **2026-08-09** — corrected the Fringe's row in the August cluster table and the
   volume arithmetic beneath it from the 4 June programme-launch snapshot (3,649
   shows / 53,884 performances / 258 venues / 71 countries) to the Fringe
   Society's opening-day figures (4,206 / 60,000+ / 299 / 74). The superseded
   numbers and the reason they were wrong are kept on
-  [market-and-audience/](../market-and-audience/README.md), which owns them. The
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md), which owns them. The
   Fringe's share of the cluster moves from ~80% to ~82%, so the page's
   conclusions and its Key insights header are unchanged — only the figures moved.
+- **2026-09-01** — softened the "no listings feed" caveat under *The seasonal
+  city that is not a festival*: the new
+  [city-context-sources/](../city-context-sources/README.md) page now owns
+  the machine-readable source landscape for non-festival events and
+  attractions (OSM + Wikidata cover the attractions half for free); the
+  caveat's core — the curated judgment has no feed — stands. No other claim
+  changed.
+- **2026-09-01** — renamed from `festival-season/` to
+  `edinburgh-festival-season/` on the owner's direction: with the wiki's
+  scope now global, this page's Edinburgh-specific subject needs the city in
+  its name. Content unchanged; all inbound links updated in the same change.
