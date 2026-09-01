@@ -4,7 +4,11 @@ How people discover and schedule Edinburgh Fringe shows today, and how each
 existing tool handles — or ignores — the two questions EdFringeNow is built
 around: *"what can I actually make right now?"* (the home site, Fringe Discover)
 and *"which of my favourites can I actually catch, on which dates?"* (the planner
-at `/plan`). Compiled once, refined in place.
+at `/plan`). Since 2026-09-01 the page also holds the planner field **beyond**
+Edinburgh, because the product's direction is now festival planning generally —
+see *The field beyond Edinburgh* below, and
+[comedy-festival-circuit/](../comedy-festival-circuit/README.md) for the
+festivals themselves. Compiled once, refined in place.
 
 The field is not one field. The live/in-the-moment side has essentially one
 incumbent; the planning side is crowded, and got noticeably more crowded for
@@ -12,13 +16,13 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 
 ## Key insights
 
-- Nobody does live reachability. "Nearby now" stops at close and starting soon.
+- Nobody ships live reachability yet — but Plan Your Fringe now teases a live "near me now" as coming.
 - The official app plans better than we assumed — calendar sync, offline, 200k downloads.
 - Scheduling is table stakes: Plan My Fringe years ago, FringePlan now — plus iCal, sharing and edfringe basket handoff.
-- Favourites import is taken. edfringeplanner does it. Only date-choice and the other festivals are still unclaimed.
-- Fringe Finder plans around what is still on sale. That is the axis we are behind on.
-- Half Price Hut tickets are in person only — live supply no app can see.
-- Nobody here has used any 2026 rival. All of it is compiled from their own marketing.
+- Favourites import is taken, and cross-festival is now contested (planmyfestivals). Only date-choice is still clean.
+- Fringe Finder plans around what is still on sale, walking times included. That is the axis we are behind on.
+- Outside Edinburgh the planner category is empty — MICF (750+ shows) and Netflix Is A Joke (475+) have nobody.
+- Every 2026 rival's own page is now read first-hand. None has been driven end to end.
 
 ## The incumbents
 
@@ -93,11 +97,30 @@ read on where the gap is.
   against your dates, taste and budget and builds your day-by-day itinerary";
   free, independent, about two minutes end to end, itinerary downloadable as a
   PDF. Direct overlap with `/plan`'s output, without the favourites import.
+  Read first-hand 2026-09-01 (the egress block that forced second-hand reading
+  has lifted — see the correction under *Where the gaps are*), which added four
+  things its marketing summary hid: it is **built by a performing comedian**
+  (David William Bryan, who surfaces his own two shows beside the "impartial"
+  itinerary), the plan is delivered by **email-gated PDF** (name + address
+  before the itinerary), the site still checks against **"3,649 shows"** — the
+  stale 4 June launch snapshot, ~15% short of the delivered festival, the exact
+  trap [market-and-audience/](../market-and-audience/README.md) documents — and
+  it now pushes a companion app, **FringePal** ("bigger and better than this
+  site"), not previously in this wiki. Its early-access pitch names **live
+  "near me now"** as a coming feature — the first competitor seen announcing
+  intent on the live-reachability axis.
 - **[Fringe Finder](https://fringe-finder.netlify.app/)** — browse every 2026
   show, **track ticket availability**, and plan days with an **AI assistant** that
-  builds a day-by-day plan from what is *still on sale*; describes itself as an
-  official festival pilot (unverified). Availability-aware planning is the piece
-  most tools skip — and the one axis where we are behind rather than ahead.
+  builds a day-by-day plan from what is *still on sale*. Its own page (fetched
+  2026-09-01) asserts "an official pilot with the Edinburgh Festival Fringe" —
+  the claim is on the page, though still unconfirmed from the Fringe Society's
+  side — counts "4,128 shows", says listings are "refreshed several times a
+  day and may lag the box office", sends all ticket sales to edfringe.com, and
+  pitches concierge-built days "that actually work — **walking times
+  included**". Availability-aware planning is the piece most tools skip — and
+  the one axis where we are behind rather than ahead; walking-time-aware
+  itineraries bring it a step closer to the travel-model territory this wiki
+  previously recorded as ours alone.
 - **[Fringe Planner / edfringemap.com](https://edfringemap.com/)** — every show on
   one interactive map, filterable by day, genre, area, price and start time, then
   book. The closest thing to Fringe Discover's *map* surface, though as a
@@ -110,6 +133,10 @@ read on where the gap is.
   **"takes your favourites from edfringe.com and helps you work out what to do
   when"** — i.e. exactly `/plan`'s intake, the thing this page previously
   recorded as unclaimed. See the correction under *Where the gaps are*.
+  Verified first-hand 2026-09-01: the landing page carries exactly that pitch
+  plus "express stronger or weaker preferences… work out how to schedule your
+  days", behind a login — so the favourites *mechanism* stays invisible from
+  outside an account.
 - **[FringePlan](https://fringeplan.com/)** — surfaced 2026-08-09 and not
   previously in this wiki. Free ("free for everyone, forever… no subscriptions,
   no ticket markups, and no hidden fees"). It takes a show list by pasted link,
@@ -121,18 +148,37 @@ read on where the gap is.
   feed**, and a **markdown export**. Two features nothing else on this page
   claims: a bookmark that **sends a whole day of shows to an edfringe.com basket
   in one go**, and plans that **flag a delisted show or a moved performance
-  rather than going stale**.
+  rather than going stale**. Read first-hand 2026-09-01: the homepage states
+  that pasting shows pulls in "**ticket availability colours** …
+  automatically" — so it does hold per-performance availability (answering
+  this page's open question about its stale-plan flagging), and its stated
+  origin is a solo side project born of the official app being "rebuilt from
+  scratch" every year, arriving "far too late", and being "a listings browser,
+  not a planner".
 - **[planmyfestivals.com](https://www.planmyfestivals.com/)** — surfaced
-  2026-08-02, self-titled "Edinburgh Festival Planner 2026". The plural
-  "Festival[s]" naming is the only reason it is noted here rather than folded
-  into the list above: it is the one 2026 entrant whose own name suggests it
-  might plan across more than the Fringe, which would bear directly on the open
-  question below. Not fetched or examined — its actual scope is unconfirmed.
+  2026-08-02, self-titled "Edinburgh Festival Planner 2026". Fetched and
+  examined 2026-09-01, and the scope question its plural name raised is now
+  answered: it is an **Edinburgh cross-festival planner**, not a multi-city
+  one. The site is a Vue single-page app with a Leaflet + OpenStreetMap map,
+  and its [application bundle](https://www.planmyfestivals.com/assets/app-BRlWgudd.js)
+  carries the other Edinburgh festivals as first-class strings — Tattoo, Book,
+  International, Art, Jazz — alongside the Fringe. How much it *plans* across
+  them (itineraries vs a combined map/listing) can't be read from the shell
+  page alone, but the cluster scope is real — see *The cross-festival field*
+  below, whose "almost empty" reading this weakens.
 
-## The cross-festival field (almost empty)
+## The cross-festival field (thinner than it looked, no longer empty)
 
-Every tool above is a *Fringe* tool. The city runs eight overlapping festivals in
-August, and only one profiled competitor spans them:
+Every tool above except one is a *Fringe* tool. The city runs eight overlapping
+festivals in August; two profiled competitors now span them:
+
+- **[planmyfestivals.com](https://www.planmyfestivals.com/)** — the first
+  actual cross-festival *planner-shaped* entrant found (2026-09-01): an
+  Edinburgh cluster app whose bundle carries Fringe, Tattoo, Book,
+  International, Art and Jazz together, on a map. Depth unexamined — it may be
+  a combined map rather than an itinerary builder — but the claim this section
+  previously rested on ("no tool plans across the festivals") can no longer be
+  stated flatly.
 
 - **[Data Thistle](https://edinburghfestival.datathistle.com/)** — combined
   listings across the Fringe, International, Book, Jazz, Tattoo, Art, Film, Free
@@ -152,14 +198,69 @@ cross-festival tool would not necessarily be *listed* there, since the API is no
 the only source. Treat "the cross-festival claim is unclaimed" as the current
 best reading, not a settled finding.
 
+## The field beyond Edinburgh (empty, and verified empty)
+
+Researched 2026-09-01, festival by festival, for the widened product direction.
+The finding is stark: **outside Edinburgh, the third-party festival-planner
+category does not exist.** Searches for an Adelaide Fringe or Brighton Fringe
+planner return *Edinburgh's* Plan My Fringe as the top hits; nothing third-party
+was found for [Melbourne International Comedy Festival](https://www.comedyfestival.com.au/2026-program-guide/)
+(750+ shows), [Just For Laughs Montreal](https://www.mtl.org/en/experience/just-for-laughs-festival),
+[Netflix Is A Joke](https://www.hollywoodreporter.com/tv/tv-news/netflix-is-a-joke-festival-2026-lineup-schedule-los-angeles-1236478031/)
+(475+ shows across 35 LA venues, per The Hollywood Reporter — and no official
+app either), [SF Sketchfest](https://sfsketchfest2026.sched.com/), or SXSW's
+official programme. Where planning tooling exists at all, it is official or
+rented SaaS:
+
+- **[Sched](https://sfsketchfest2026.sched.com/)** — SF Sketchfest outsources
+  its schedule to a generic event-SaaS instance (personal schedules, calendar
+  sync).
+- **[SXSW GO](https://www.eventbase.com/sxsw-go)** — the official app, built on
+  Eventbase; schedule building and networking, with a documented gap (no
+  custom/unofficial events) that a third-party ecosystem fills only for
+  *parties*, via [Do512](https://2025.do512.com/) and
+  [RSVPATX](https://rsvpatx.com/rsvp-list) RSVP aggregators.
+- **[Adelaide Fringe's official app](https://adelaidefringe.com.au/our-app)**
+  (built by Katalyst) plus an on-site
+  ["My plan" web planner](https://adelaidefringe.com.au/my-fringe/plan) —
+  wishlist and sort-by-day, the closest official analogue to `/plan` found
+  anywhere.
+- **[Brighton Fringe's official app](https://www.dabapps.com/work/clients/brighton-fringe-app/)**
+  (built by agency DabApps, buying tickets through the festival's own APIs).
+- **MICF has no current official app found at all** — the only trace is a
+  [2010-era iPhone app](https://itwire.com/software/laugh-it-up-on-the-iphone-melbourne-international-comedy-festival-app.html).
+
+The structural analogue where the category *is* proven: **music festivals.**
+[Clashfinder](https://clashfinder.com/) is the closest cousin to what a
+generalized EdFringeNow would be — free, crowdsourced lineup-clash grids for
+hundreds of festivals, personal act highlighting, and **JSON, XML and iCalendar
+export**; it already hosts a few tiny UK comedy events
+([Exeter Comedy Festival](https://clashfinder.com/s/ecf26/),
+[Cambridge Fringe](https://clashfinder.com/m/cambridgefringe2025/)) but has
+no Edinburgh Fringe grid — plausibly because a 3,000-show open-access festival
+exceeds what a hand-edited grid can carry. Around it sit a dozen consumer
+set-time apps ([Festival Dust](https://www.festivaldust.com/),
+[Headliners](https://apps.apple.com/us/app/headliners-festival-planner/id6478820193),
+[Frontstage](https://www.frontstagefestivals.com/app), …), the organizer-side
+platform [Woov](https://woov.com/) (600+ partner festivals, B2B), and
+[Songkick's festivals directory and public API](https://www.songkick.com/developer)
+— the machine-readable festival dataset comedy entirely lacks. The read for the
+product: the planning-demand shape is proven at scale in music, unserved in
+comedy, and first-in-category open everywhere except Edinburgh.
+
 ## Where the gaps are
 
-**Live reachability — still open.** No tool centres full reachability: location
-_plus_ travel mode/time _plus_ next-commitment slack ("can I see this and still
-make my 7pm?"). The official app's "Nearby now" remains the nearest neighbour and
-stops at proximity + starting-soon; Plan My Fringe models walking time, but for a
-pre-curated plan. That live calculation is still Fringe Discover's distinct
-position — see the product brief (`docs/product-spec.md`).
+**Live reachability — still open, and no longer unnoticed.** No tool centres
+full reachability: location _plus_ travel mode/time _plus_ next-commitment slack
+("can I see this and still make my 7pm?"). The official app's "Nearby now"
+remains the nearest neighbour and stops at proximity + starting-soon; Plan My
+Fringe models walking time, but for a pre-curated plan. That live calculation is
+still Fringe Discover's distinct position — see the product brief
+(`docs/product-spec.md`). Two 2026-09-01 signals that the position is being
+approached from the planning side: Fringe Finder's concierge pitches days
+"that actually work — walking times included", and Plan Your Fringe's
+early-access pitch names **live "near me now"** as a feature it is building.
+Neither is shipped live reachability; both are competitors walking toward it.
 
 **Planning — crowded, and the moat is narrower than it looks.** Clash-free,
 travel-aware, meal-break-aware scheduling with per-day limits is **table stakes**
@@ -188,7 +289,10 @@ What no profiled competitor still does:
    exists. Re-checked this pass across Plan Your Fringe, Fringe Finder,
    edfringeplanner, FringePlan and Plan My Fringe: every one of them takes the
    visit dates as an **input** and optimises inside them. Still unoccupied.
-2. plan across the **other seven August festivals** (see the section above).
+2. plan across the **other seven August festivals** — weakened 2026-09-01 from
+   "unclaimed" to "contested": planmyfestivals.com demonstrably carries the
+   cluster (see the section above), though whether it *plans* across it or
+   only maps it is unexamined.
 
 Those two, not the scheduler and no longer the favourites intake, are what a
 planner-side requirement set would rest on. They are also a different claim from
@@ -221,29 +325,50 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
 - [Edinburgh Festival 2026 — combined listings (Data Thistle)](https://edinburghfestival.datathistle.com/)
 - [Projects built on the Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/projects)
 - [FringePlan](https://fringeplan.com/)
-- [planmyfestivals.com — Edinburgh Festival Planner 2026](https://www.planmyfestivals.com/)
+- [planmyfestivals.com — Edinburgh Festival Planner 2026](https://www.planmyfestivals.com/) — fetched first-hand 2026-09-01; a Vue SPA with a Leaflet/OpenStreetMap map.
+- [planmyfestivals.com application bundle](https://www.planmyfestivals.com/assets/app-BRlWgudd.js) — the 2026-09-01 bundle inspection behind the cross-festival scope finding: Fringe, Tattoo, Book, International, Art and Jazz carried as first-class strings.
+- [FringePal](https://fringepal.com/) — the companion app Plan Your Fringe promotes ("bigger and better than this site"); unexamined.
+- [Netflix Is A Joke Fest 2026 lineup and schedule (The Hollywood Reporter)](https://www.hollywoodreporter.com/tv/tv-news/netflix-is-a-joke-festival-2026-lineup-schedule-los-angeles-1236478031/) — 475+ shows across 35 LA venues; no planner, no official app found.
+- [MICF 2026 program guide (comedyfestival.com.au)](https://www.comedyfestival.com.au/2026-program-guide/) — the 750+ show count behind the beyond-Edinburgh comparison.
+- [SF Sketchfest 2026 on Sched](https://sfsketchfest2026.sched.com/) — planning outsourced to generic event-SaaS.
+- [SXSW GO, built on Eventbase](https://www.eventbase.com/sxsw-go) — the official-app planner model.
+- [Adelaide Fringe official app](https://adelaidefringe.com.au/our-app) and [My plan web planner](https://adelaidefringe.com.au/my-fringe/plan) — the closest official analogue to `/plan` found anywhere.
+- [Brighton Fringe app case study (DabApps)](https://www.dabapps.com/work/clients/brighton-fringe-app/)
+- [Clashfinder](https://clashfinder.com/) — crowdsourced music-festival clash grids with JSON/XML/iCal export; hosts [Exeter Comedy Festival](https://clashfinder.com/s/ecf26/) and [Cambridge Fringe](https://clashfinder.com/m/cambridgefringe2025/) grids, but no Edinburgh Fringe.
+- [Woov](https://woov.com/) — organizer-side festival-companion platform, 600+ partner festivals.
+- [Songkick developer API](https://www.songkick.com/developer) — the machine-readable festivals dataset music has and comedy lacks.
+- [Festival Dust](https://www.festivaldust.com/) — representative of the consumer set-time app field (with [Headliners](https://apps.apple.com/us/app/headliners-festival-planner/id6478820193), [Frontstage](https://www.frontstagefestivals.com/app) and others).
+- [Do512's SXSW hub](https://2025.do512.com/) and [RSVPATX](https://rsvpatx.com/rsvp-list) — the unofficial-party aggregators around SXSW's official programme.
 
 ## Open questions
 
-- **Hands-on verification is missing for every 2026 entrant.** All of the above
-  was compiled from published descriptions and search results; no tool was driven
-  end to end. Fringe Finder's "official festival pilot" claim in particular is
-  unverified and matters — an official pilot on the planning side would change
-  the competitive read. (Worse than it was on 2026-08-09: that pass tried to
-  fetch fringe-finder.netlify.app, edfringeplanner.co.uk, fringeplan.com and
-  planyourfringe.com directly and **every one was blocked by the network egress
-  proxy**, so even their own pages were read second-hand through a search
-  engine's index of them. Everything recorded about these four is their own
-  marketing copy at one remove. A human on an unrestricted network could close
-  this in twenty minutes.)
+- **No 2026 entrant has been driven end to end.** Narrowed 2026-09-01, in the
+  right direction at last: the egress proxy that blocked every rival's own site
+  on the 2026-08-09 pass no longer does, and fringe-finder.netlify.app,
+  edfringeplanner.co.uk, fringeplan.com, planyourfringe.com and
+  planmyfestivals.com were all fetched **first-hand** this pass — so the
+  profiles above now rest on the tools' own pages rather than a search engine's
+  memory of them. What remains open is *use*: nobody here has pasted a list
+  into FringePlan, generated a Plan Your Fringe itinerary, or logged into
+  edfringeplanner, and the SPA tools (planmyfestivals, Fringe Finder's
+  concierge) render client-side, so their actual behaviour is still unobserved.
+- **Does the Fringe Society confirm Fringe Finder's "official pilot"?** Its own
+  page asserts "an official pilot with the Edinburgh Festival Fringe"
+  (verified on-page 2026-09-01) — no confirmation found from the Society's
+  side, and an official pilot on the planning side would change the
+  competitive read. Related: what feeds its availability tracking and walking
+  times — the Listings API (availability-blind, so presumably not), a
+  Tikketr scrape like ours, or something granted by the pilot?
 - **Does the shipped 2026 official app add travel-time or next-commitment logic
   to "Nearby now"?** Published descriptions still say proximity + starting soon,
   but nobody here has used the 2026 build. (Narrowed 2026-07-28 from "unknown" to
   "no published evidence of it".)
 - **Does any tool expose real-time started / sold-out status** the way Fringe
-  Discover's live status does? Fringe Finder claims availability-aware planning
-  ("what's actually still on sale"); how live that is, and where it comes from,
-  is unconfirmed.
+  Discover's live status does? Two now claim the ingredients: Fringe Finder
+  plans around "what's actually still on sale" and says listings refresh
+  "several times a day"; FringePlan pulls availability colours (confirmed
+  2026-09-01, above). How live either is, and what each reads it from, is
+  unconfirmed.
 - ~~**Does Plan My Fringe (or any planner) accept a favourites import?**~~
   **Answered 2026-08-09: yes — not Plan My Fringe, but edfringeplanner.co.uk,
   whose entire premise is it.** `/plan`'s intake advantage is gone. See the
@@ -254,21 +379,37 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   third-party CSV extension, or a logged-in scrape are all consistent with what
   they say. If there is a native export nobody here has found, the
   market-and-audience page's intake assumption is wrong too.
-- **Does FringePlan's "flag a delisted show or moved performance" mean it holds
-  live availability?** It is the only claim on this page that sounds like
-  post-plan freshness checking rather than a one-shot itinerary. If it is real,
-  Fringe Finder is not the only tool on the availability axis.
+- ~~**Does FringePlan's "flag a delisted show or moved performance" mean it holds
+  live availability?**~~ **Answered 2026-09-01: yes.** Its own homepage states
+  that adding shows pulls in "ticket availability colours … automatically" —
+  so Fringe Finder is not the only tool on the availability axis. How fresh
+  those colours are, and where they come from, is the successor question.
+- **FringePal is unexamined.** Plan Your Fringe now routes visitors to a
+  companion app it calls "bigger and better than this site"; nothing else is
+  known about it.
+- **Is the beyond-Edinburgh planner vacuum demand-side or supply-side?** No
+  third-party planner exists for MICF, Netflix Is A Joke, Adelaide or Brighton
+  — but whether that is because official apps suffice, because those festivals'
+  showcase shapes don't create the clash problem, or because nobody has built
+  one yet is exactly the question the product direction turns on. Adelaide's
+  official "My plan" (wishlist + sort-by-day) is the strongest evidence that at
+  least the demand for *some* planning exists at open-access scale.
+- **Why is there no Edinburgh Fringe Clashfinder?** The crowdsourced-grid model
+  covers hundreds of music festivals and even two tiny UK comedy events, but
+  stops short of the 3,000-show open-access scale. If the reason is editorial
+  (hand-edited grids don't scale), that is evidence the Fringe-scale planning
+  problem needs generated data, not crowdsourcing — our architecture.
 - **Does anything else score date windows** ("when should I come?")? Re-checked
   2026-08-09 across five planners and found nothing — every one takes dates as an
   input. Narrowed from "or is that genuinely unoccupied?" to: still unoccupied on
   the evidence, but the evidence is five tools' marketing copy, not a survey.
-- **Is anything actually planning across festivals?** The Listings API gallery
-  says no, but the gallery is self-reported and possibly stale, and a
-  cross-festival tool need not appear on it. Data Thistle lists everything and
-  plans nothing — is that the whole field, or just the visible part of it?
-  Checked 2026-08-02: a search for a cross-festival Fringe/EIF/Tattoo planner
-  turned up no confirmed one, but did turn up **planmyfestivals.com**, whose
-  name is the first hint of one — see above, unconfirmed.
+- **Is anything actually planning across festivals?** Narrowed 2026-09-01 from
+  "no confirmed candidate" to "one confirmed carrier, depth unknown":
+  planmyfestivals.com demonstrably holds the Edinburgh cluster's festivals
+  (bundle inspection, see above), but whether it builds itineraries across
+  them or only maps them together is unobserved — the app renders client-side.
+  The Listings API gallery still shows nothing cross-festival, Data Thistle
+  still lists everything and plans nothing.
 - **Does Data Thistle's events API compete with us or supply us?** It is a paid
   feed over the same listings the free official API already gives away; what it
   adds is unexamined.
@@ -340,3 +481,37 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   question rather than a finding. Header unchanged: neither addition changes the
   page's top-line read (planning side crowded and Fringe-only; cross-festival
   field still effectively empty until verified otherwise).
+- **2026-09-01** — the egress block that had forced every rival profile to be
+  read second-hand lifted, and this pass fetched all five outstanding sites
+  first-hand (fringe-finder.netlify.app, edfringeplanner.co.uk, fringeplan.com,
+  planyourfringe.com, planmyfestivals.com). Yield: planmyfestivals.com's scope
+  question **answered** — an Edinburgh cross-festival planner, its bundle
+  carrying Tattoo/Book/International/Art/Jazz beside the Fringe — so the
+  cross-festival section is retitled from "almost empty" and the "unclaimed"
+  claim weakened to "contested"; FringePlan's availability question **answered**
+  (it pulls ticket-availability colours automatically); Fringe Finder's
+  official-pilot claim verified as asserted on its own page (Society-side
+  confirmation still missing) along with walking-time-aware planning and a
+  several-times-daily refresh cadence; Plan Your Fringe found to be
+  performer-built, email-gated, still checking against the stale 3,649-show
+  launch snapshot, promoting a previously unrecorded companion app
+  (**FringePal**), and teasing live "near me now" — the first competitor seen
+  moving toward the live-reachability axis. Key insights 1, 4, 5 and 7
+  rewritten; three open questions answered or narrowed, two added (FringePal;
+  what feeds Fringe Finder). Driving the tools end to end is now possible in
+  principle and remains undone.
+- **2026-09-01** *(second pass, same day)* — added *The field beyond Edinburgh*
+  for the widened product direction, from a dedicated research pass: no
+  third-party planner exists for any comedy festival outside Edinburgh
+  (verified per-festival for MICF, Adelaide, Brighton, JFL Montreal, Netflix
+  Is A Joke, SF Sketchfest and SXSW); where planning tooling exists it is
+  official or rented SaaS (Sched, Eventbase/SXSW GO, Katalyst/Adelaide,
+  DabApps/Brighton), and the crowded music-festival planner category
+  (Clashfinder's exportable crowdsourced grids, Woov, the consumer set-time
+  apps, Songkick's API) proves the demand shape comedy leaves unserved. Key
+  insight 6 (Half Price Hut, unchanged in the body) displaced by the
+  empty-category finding to stay inside the seven-bullet cap; intro widened
+  beyond Edinburgh; two open questions added (demand-side vs supply-side
+  vacuum; why no Fringe-scale Clashfinder). Sibling pages:
+  [comedy-festival-circuit/](../comedy-festival-circuit/README.md) owns the
+  festivals themselves.
