@@ -16,13 +16,13 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 
 ## Key insights
 
-- Nobody ships live reachability yet — but Plan Your Fringe now teases a live "near me now" as coming.
+- planmyfestivals shipped the cross-festival planner: 7 festivals, 4 travel modes, locked engagements, a gap finder. Invite-only.
+- Its whole-summer mode picks your days for you — date-choice is dented; only date-*scoring* is still unclaimed.
+- Live reachability is the one axis still ours alone — and rivals circle it: a plan-time gap finder, a "near me now" tease.
+- Producers pay planmyfestivals for carousel placement; Plan Your Fringe pledges no-pay-to-play. Monetisation is diverging.
 - The official app plans better than we assumed — calendar sync, offline, 200k downloads.
-- Scheduling is table stakes: Plan My Fringe years ago, FringePlan now — plus iCal, sharing and edfringe basket handoff.
-- Favourites import is taken, and cross-festival is now contested (planmyfestivals). Only date-choice is still clean.
-- Fringe Finder plans around what is still on sale, walking times included. That is the axis we are behind on.
+- Availability has two riders: Fringe Finder plans around what is on sale; FringePlan pulls availability colours.
 - Outside Edinburgh the planner category is empty — MICF (750+ shows) and Netflix Is A Joke (475+) have nobody.
-- Every 2026 rival's own page is now read first-hand. None has been driven end to end.
 
 ## The incumbents
 
@@ -156,29 +156,95 @@ read on where the gap is.
   scratch" every year, arriving "far too late", and being "a listings browser,
   not a planner".
 - **[planmyfestivals.com](https://www.planmyfestivals.com/)** — surfaced
-  2026-08-02, self-titled "Edinburgh Festival Planner 2026". Fetched and
-  examined 2026-09-01, and the scope question its plural name raised is now
-  answered: it is an **Edinburgh cross-festival planner**, not a multi-city
-  one. The site is a Vue single-page app with a Leaflet + OpenStreetMap map,
-  and its [application bundle](https://www.planmyfestivals.com/assets/app-BRlWgudd.js)
-  carries the other Edinburgh festivals as first-class strings — Tattoo, Book,
-  International, Art, Jazz — alongside the Fringe. How much it *plans* across
-  them (itineraries vs a combined map/listing) can't be read from the shell
-  page alone, but the cluster scope is real — see *The cross-festival field*
-  below, whose "almost empty" reading this weakens.
+  2026-08-02, self-titled "Edinburgh Festival Planner 2026", and now the
+  biggest story on this page: its published user guide (read in full
+  2026-09-01, on the owner's pointer) documents a complete **cross-festival
+  clash-free planner** across seven Edinburgh festivals. Profiled in its own
+  section under *The cross-festival field* below.
 
-## The cross-festival field (thinner than it looked, no longer empty)
+## The cross-festival field (claimed while we watched)
 
 Every tool above except one is a *Fringe* tool. The city runs eight overlapping
-festivals in August; two profiled competitors now span them:
+festivals in August — and the cross-festival planner this section spent a month
+calling unclaimed turns out to exist, invitation-gated and fully documented by
+its own user guide.
 
-- **[planmyfestivals.com](https://www.planmyfestivals.com/)** — the first
-  actual cross-festival *planner-shaped* entrant found (2026-09-01): an
-  Edinburgh cluster app whose bundle carries Fringe, Tattoo, Book,
-  International, Art and Jazz together, on a map. Depth unexamined — it may be
-  a combined map rather than an itinerary builder — but the claim this section
-  previously rested on ("no tool plans across the festivals") can no longer be
-  stated flatly.
+### planmyfestivals.com — the first shipped cross-festival planner
+
+Everything below is first-hand: the landing page and application bundle
+(fetched 2026-09-01) and its published 15-page
+[user guide PDF](https://www.planmyfestivals.com/static/guide/PlanMyFestivals-User-Guide.pdf)
+(read in full the same day, on the owner's pointer — this corrects the
+2026-09-01 morning read, which had inspected only the SPA shell and hedged
+that it "may be a combined map"). It is not a map. It is the whole planner:
+
+<img src="../sample-data/competitor-ui/2026-09-01-planmyfestivals-landing.png" width="640" alt="planmyfestivals.com landing page, 2026-09-01">
+
+- **Pitch, verbatim from the landing page**: "Build your perfect summer of
+  festivals, without the clashes. Browse the Fringe, International, Jazz,
+  Tattoo, Book, Film and Art festivals, favourite the shows you love, and let
+  the planner build a clash-free itinerary that accounts for travel time
+  between venues."
+- **The flow** (per the guide): a three-step wizard — plan rules, choose
+  shows, build. Rules include dates as **either specific days or "the whole
+  summer"** (any date across July and August; the planner then asks whether to
+  *spread* shows or **"concentrate them into as few days as possible"** — see
+  *Where the gaps are*: that is the planner choosing your days), one of
+  **four travel modes** (walking / public transport / driving / cycling)
+  driving venue-to-venue travel calculations with a stated **ten-minute
+  buffer on every journey**, and **"existing bookings and engagements"** —
+  fixed commitments (a dinner, a meeting) the planner locks and schedules
+  around, with travel time before and after.
+- **Choosing shows** is in-app hearts over a catalogue its own pagination
+  counted at **"4,296 shows" across 179 pages** (guide screenshot), filterable
+  by festival (all seven), genre, age, venue and free/paid — no edfringe
+  favourites import; its favourites live inside the walled account.
+- **The built plan** is a day-by-day timeline with per-leg travel arithmetic
+  ("twenty-one minutes travel and one hundred and forty-nine minutes free"),
+  an **unscheduled-shows panel** naming each show that would not fit with
+  every date it is actually performing — click one and the site offers to
+  **widen the plan** to a new day — and a **gap finder**: wherever the plan
+  leaves the user idle, a "Find a show" button lists everything that could
+  physically fit, with **shows at the venue you are already sitting in
+  promoted first ("same venue, starting soon")**, and one-click adds tagged
+  "lucky dip". That is the Now page's reachability concept, executed at plan
+  time.
+
+<img src="../sample-data/competitor-ui/2026-09-01-planmyfestivals-guide-p08-schedule.png" width="640" alt="planmyfestivals user guide p8: the built schedule with travel legs">
+<img src="../sample-data/competitor-ui/2026-09-01-planmyfestivals-guide-p10-gap-finder.png" width="640" alt="planmyfestivals user guide p10: the gap finder, same-venue-first, cross-festival pills">
+
+- **Outputs**: CSV (a row per slot **with the booking link per show**) and
+  PDF. It sells nothing — "You still have to book each show with the festival
+  or venue that is selling it."
+- **A venue map** with clustering and per-venue accessibility and facilities
+  detail (step-free access, accessible toilets, babychange, café, bike
+  parking).
+- **The gate**: **"Invitation only — registration is limited to invited email
+  addresses"**, and registration collects a postcode "to understand where you
+  are travelling from". So its user base is deliberately capped, and nothing
+  public reveals its size.
+- **The money**: a **producer side**. Producers request access, hold a bank of
+  paid **impressions**, and run campaigns that place their shows in the
+  featured carousel at the top of the chooser, with per-campaign
+  favourite-conversion tracking. The first paid-placement monetisation seen
+  anywhere in this field — the exact model Plan Your Fringe's "no show can
+  pay to be in your plan" pledge defines itself against. No prices published.
+- **Who runs it**: the footer says "© 2026 **180 Box Office**" and "Show data
+  © the participating festivals". A Companies House search for "180 Box
+  Office" returns **no results** (2026-09-01) — a trading name, or a non-UK
+  entity; unresolved.
+- **Where the data comes from** (inference, marked as such): the festival set
+  (Fringe + International + Jazz + Tattoo + Book + Film + Art), the genre
+  vocabulary visible in its UI ("Fiction (Adults)", "Dance, Physical Theatre
+  and Circus", "Cabaret and Variety"), the per-venue accessibility prose, and
+  the "Show data © the participating festivals" attribution line all match
+  the [Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/documentation/events)'s
+  coverage, taxonomy and licence terms — consistent with it being an
+  **approved Listings API consumer**, which would be existence proof that the
+  API's approval path is open to planner-shaped products (the question
+  [fringe-ticketing/](../fringe-ticketing/README.md) carries). Unconfirmed;
+  no availability signal appears anywhere in its UI, which also fits an
+  availability-blind source.
 
 - **[Data Thistle](https://edinburghfestival.datathistle.com/)** — combined
   listings across the Fringe, International, Book, Jazz, Tattoo, Art, Film, Free
@@ -192,11 +258,13 @@ festivals in August; two profiled competitors now span them:
   around the **Fringe alone**. Nobody in the gallery claims cross-festival
   planning.
 
-Two caveats on how strong that reads. The gallery blurbs are the only evidence —
-nobody here has used these tools, and the gallery may simply be stale. And a
-cross-festival tool would not necessarily be *listed* there, since the API is not
-the only source. Treat "the cross-festival claim is unclaimed" as the current
-best reading, not a settled finding.
+Two caveats on how strong the gallery evidence reads. The blurbs are
+self-reported and possibly stale, and a cross-festival tool would not
+necessarily be *listed* there — planmyfestivals itself is not, which is the
+proof. (Superseded 2026-09-01: this paragraph used to close "treat 'the
+cross-festival claim is unclaimed' as the current best reading" — the
+planmyfestivals user guide settles it the other way, and the sentence is
+corrected rather than deleted so the change of position stays visible.)
 
 ## The field beyond Edinburgh (empty, and verified empty)
 
@@ -248,6 +316,51 @@ platform [Woov](https://woov.com/) (600+ partner festivals, B2B), and
 product: the planning-demand shape is proven at scale in music, unserved in
 comedy, and first-in-category open everywhere except Edinburgh.
 
+## Feature comparison
+
+Compiled 2026-09-01. Every cell is the tool's own claim or a first-hand
+observation, traceable to that tool's entry above and the screenshots below;
+**none of these tools has been stress-tested end to end**, so this table
+compares what each *claims and shows*, not measured behaviour. "—" = not
+claimed anywhere we can see; "?" = unknowable from outside (login/invite
+walls). Our own two rows come from the shipped product
+([`docs/product-spec.md`](https://github.com/missingbulb/EdFringeNow/blob/main/docs/product-spec.md),
+[`plan/README.md`](https://github.com/missingbulb/EdFringeNow/blob/main/plan/README.md))
+so the comparison has its reference points.
+
+| Tool | Scope | Intake | Dates | Clash engine & travel | Meals / commitments | Availability | Gap-filling / nearby | Exports & handoff | Gate & funding |
+|---|---|---|---|---|---|---|---|---|---|
+| **EdFringeNow `/plan`** | Fringe | edfringe favourites CSV (third-party extension) | **scores best dates** in a window | ✓ travel legs per mode | — | sold-out overlay (a decaying forecast) | — | CSV, ICS | none; free |
+| **EdFringeNow Now page** | Fringe | none — zero-input | today | ✓ live slack vs **next commitment**, per mode | the commitment *is* the input | ✓ live sold-out / started | ✓ the whole product | — | none; free |
+| Official Fringe app | Fringe | native favourites (My Planner) | input | — (list + calendar, no engine) | — | booking-integrated | Nearby now: proximity + starting soon | calendar sync, QR tickets, offline | free |
+| Plan My Fringe | Fringe | in-app wishlist + ratings | input | ✓ walking speed, per-day max, min gap | ✓ meal + sleep minimums | — | Fringe Trail (walk-minimising); a NEARBY tab on the site | animated Google-Maps trail; web+app shared state | free; iOS + Android |
+| **planmyfestivals** | **7 festivals** | in-app hearts | input, **or whole-summer — the planner picks the days** | ✓ 4 modes, 10-min buffer | ✓ locked engagements | — | ✓ plan-time gap finder, same-venue-first | CSV with booking links, PDF | **invite-only; producer-paid placement** |
+| FringePlan | Fringe | paste link / name / whole list | input (+ arrival/departure) | ✓ travel + priorities | ✓ meals | ✓ availability colours; stale-plan flags | — | share link, **live iCal**, markdown, edfringe basket | free |
+| Plan Your Fringe (+ FringePal) | Fringe | taste wizard | input | builds day-by-day | — | — | live "near me now" **teased** | PDF by email | free; email-gated; no-pay-to-play pledge |
+| Fringe Finder | Fringe | AI concierge chat | input | walking times in day builds | — | ✓ plans around what's still on sale | concierge-built days | — | free; "official pilot" (asserted) |
+| edfringeplanner | Fringe | edfringe favourites (mechanism unknown) | input | preference-weighted scheduling | ? | ? | ? | ? | login-walled |
+| edfringemap | Fringe | — (browse) | day filter | — | — | — | — | out-links to booking | free; EN + 4 languages |
+| Data Thistle | 10 festivals | — | — | — | — | — | — | — | directory + paid API |
+
+Three readings the grid supports: the **live column belongs to one row** (ours
+— everything else is plan-time or a tease); the **cross-festival column
+belongs to one row** (planmyfestivals — invite-gated); and **no tool holds
+both** date-scoring and cross-festival scope, or either together with live
+reachability.
+
+### The UI record
+
+Captured 2026-09-01 (headless Chromium at 1280×900, network served through
+this environment's proxy via curl; planmyfestivals' app screens are its own
+guide's figures, since registration is invite-only). Full set in
+[`sample-data/competitor-ui/`](../sample-data/competitor-ui/) with a
+provenance README; the most comparison-relevant:
+
+<img src="../sample-data/competitor-ui/2026-09-01-edfringenow-now.png" width="480" alt="EdFringeNow Now page, 2026-09-01"> <img src="../sample-data/competitor-ui/2026-09-01-edfringenow-plan.png" width="480" alt="EdFringeNow /plan, 2026-09-01">
+<img src="../sample-data/competitor-ui/2026-09-01-planmyfestivals-guide-p07-show-chooser.png" width="480" alt="planmyfestivals show chooser (guide p7): featured carousel with all seven festivals' badges, 4,296 shows"> <img src="../sample-data/competitor-ui/2026-09-01-fringe-finder-landing.png" width="480" alt="Fringe Finder concierge landing, 2026-09-01">
+<img src="../sample-data/competitor-ui/2026-09-01-fringeplan-landing.png" width="480" alt="FringePlan landing, 2026-09-01"> <img src="../sample-data/competitor-ui/2026-09-01-planyourfringe-landing.jpg" width="480" alt="Plan Your Fringe landing with FringePal push, 2026-09-01">
+<img src="../sample-data/competitor-ui/2026-09-01-planmyfringe-landing.jpg" width="480" alt="Plan My Fringe landing with Fringey chatbot, apps and NEARBY tab, 2026-09-01"> <img src="../sample-data/competitor-ui/2026-09-01-edfringemap-landing.png" width="480" alt="edfringemap landing: 4,465 shows, 308 venues, four extra languages, 2026-09-01">
+
 ## Where the gaps are
 
 **Live reachability — still open, and no longer unnoticed.** No tool centres
@@ -282,22 +395,36 @@ documents where its favourites come from — so whether these tools use a native
 export, the same extension, or a logged-in scrape is unknown, and that is now the
 open question rather than the differentiator.
 
-What no profiled competitor still does:
+What no profiled competitor still does — a list that shrank twice in one day:
 
 1. answer **"when should I come?"** — scoring date windows across the whole
    festival, the decision a visitor makes *before* any scheduling question
-   exists. Re-checked this pass across Plan Your Fringe, Fringe Finder,
-   edfringeplanner, FringePlan and Plan My Fringe: every one of them takes the
-   visit dates as an **input** and optimises inside them. Still unoccupied.
-2. plan across the **other seven August festivals** — weakened 2026-09-01 from
-   "unclaimed" to "contested": planmyfestivals.com demonstrably carries the
-   cluster (see the section above), though whether it *plans* across it or
-   only maps it is unexamined.
+   exists. **Dented 2026-09-01** (was "still unoccupied"): planmyfestivals'
+   whole-summer mode takes July–August as a flexible window and — on the
+   "concentrate into as few days as possible" setting — **the planner chooses
+   which days you attend**. That is date-*selection*. What survives as
+   unoccupied is date-*scoring*: recommending and ranking candidate windows
+   for a fixed trip length against favourites coverage (and, per
+   [market-and-audience/](../market-and-audience/README.md), against
+   accommodation) rather than silently emitting one packed answer. Every
+   Fringe-only planner re-checked (Plan Your Fringe, Fringe Finder,
+   edfringeplanner, FringePlan, Plan My Fringe) still takes dates as an
+   input.
+2. plan across the **other seven August festivals** — **claimed, 2026-09-01**
+   (was "unclaimed", then "contested" earlier the same day): the
+   planmyfestivals user guide documents exactly this, shipped, across all
+   seven listed festivals. What survives here is narrower: the claim is
+   behind an **invitation wall** (its reach is deliberately capped and
+   unknown), its catalogue shows no availability signal at all, and Deaf
+   Festival / Fringe by the Sea sit outside its seven.
 
-Those two, not the scheduler and no longer the favourites intake, are what a
-planner-side requirement set would rest on. They are also a different claim from
-the live surface's, which is why the two surfaces should not be reasoned about as
-one product — see [audience-divergence/](../audience-divergence/README.md).
+Those were the two pillars a planner-side requirement set was going to rest
+on; after today the honest statement is that **the planner side has no
+unclaimed pillar left — only under-served versions of claimed ones** (scored
+date choice; cross-festival with availability, at open registration). The
+live surface's claim is untouched and is a different claim, which is why the
+two surfaces should not be reasoned about as one product — see
+[audience-divergence/](../audience-divergence/README.md).
 
 ## Sources
 
@@ -327,6 +454,8 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
 - [FringePlan](https://fringeplan.com/)
 - [planmyfestivals.com — Edinburgh Festival Planner 2026](https://www.planmyfestivals.com/) — fetched first-hand 2026-09-01; a Vue SPA with a Leaflet/OpenStreetMap map.
 - [planmyfestivals.com application bundle](https://www.planmyfestivals.com/assets/app-BRlWgudd.js) — the 2026-09-01 bundle inspection behind the cross-festival scope finding: Fringe, Tattoo, Book, International, Art and Jazz carried as first-class strings.
+- [PlanMyFestivals — a guide for new users (PDF)](https://www.planmyfestivals.com/static/guide/PlanMyFestivals-User-Guide.pdf) — the 15-page vendor user guide behind the full profile above: the three-step wizard, whole-summer vs specific dates, four travel modes and the ten-minute buffer, engagements, the unscheduled-shows panel and plan widening, the gap finder, CSV/PDF exports, the venue map, invitation-only registration, and the producer impression-bank campaigns. Read in full 2026-09-01; key figures archived to [`sample-data/competitor-ui/`](../sample-data/competitor-ui/).
+- [Companies House search: "180 box office"](https://find-and-update.company-information.service.gov.uk/search/companies?q=%22180+box+office%22) — no results, 2026-09-01; the operator name in planmyfestivals' footer has no matching UK registration. (The landing-page screenshots behind the UI record are first-hand captures of the tool URLs already listed above — provenance in [`sample-data/competitor-ui/`](../sample-data/competitor-ui/)'s README.)
 - [FringePal](https://fringepal.com/) — the companion app Plan Your Fringe promotes ("bigger and better than this site"); unexamined.
 - [Netflix Is A Joke Fest 2026 lineup and schedule (The Hollywood Reporter)](https://www.hollywoodreporter.com/tv/tv-news/netflix-is-a-joke-festival-2026-lineup-schedule-los-angeles-1236478031/) — 475+ shows across 35 LA venues; no planner, no official app found.
 - [MICF 2026 program guide (comedyfestival.com.au)](https://www.comedyfestival.com.au/2026-program-guide/) — the 750+ show count behind the beyond-Edinburgh comparison.
@@ -348,10 +477,13 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   edfringeplanner.co.uk, fringeplan.com, planyourfringe.com and
   planmyfestivals.com were all fetched **first-hand** this pass — so the
   profiles above now rest on the tools' own pages rather than a search engine's
-  memory of them. What remains open is *use*: nobody here has pasted a list
-  into FringePlan, generated a Plan Your Fringe itinerary, or logged into
-  edfringeplanner, and the SPA tools (planmyfestivals, Fringe Finder's
-  concierge) render client-side, so their actual behaviour is still unobserved.
+  memory of them. Narrowed again the same day for one tool: planmyfestivals'
+  **published user guide documents its entire UI** (twelve figures,
+  screenshotted into `sample-data/`), which is the next best thing to driving
+  it — and driving it is now the one thing this wiki *cannot* do, because
+  registration is invitation-only. What remains open for the rest is *use*:
+  nobody here has pasted a list into FringePlan, generated a Plan Your Fringe
+  itinerary, or logged into edfringeplanner.
 - **Does the Fringe Society confirm Fringe Finder's "official pilot"?** Its own
   page asserts "an official pilot with the Edinburgh Festival Fringe"
   (verified on-page 2026-09-01) — no confirmation found from the Society's
@@ -399,17 +531,43 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   stops short of the 3,000-show open-access scale. If the reason is editorial
   (hand-edited grids don't scale), that is evidence the Fringe-scale planning
   problem needs generated data, not crowdsourcing — our architecture.
-- **Does anything else score date windows** ("when should I come?")? Re-checked
-  2026-08-09 across five planners and found nothing — every one takes dates as an
-  input. Narrowed from "or is that genuinely unoccupied?" to: still unoccupied on
-  the evidence, but the evidence is five tools' marketing copy, not a survey.
-- **Is anything actually planning across festivals?** Narrowed 2026-09-01 from
-  "no confirmed candidate" to "one confirmed carrier, depth unknown":
-  planmyfestivals.com demonstrably holds the Edinburgh cluster's festivals
-  (bundle inspection, see above), but whether it builds itineraries across
-  them or only maps them together is unobserved — the app renders client-side.
-  The Listings API gallery still shows nothing cross-festival, Data Thistle
-  still lists everything and plans nothing.
+- **Does anything else score date windows** ("when should I come?")?
+  Re-narrowed 2026-09-01: planmyfestivals now *selects* days (whole-summer
+  mode, concentrate-or-spread — see *Where the gaps are*), so the question is
+  no longer "does anyone touch date choice" but "does anyone **score and
+  recommend** windows rather than silently emitting one packed answer". On
+  that narrower question: still nobody found.
+- ~~**Is anything actually planning across festivals?**~~ **Answered
+  2026-09-01: yes — planmyfestivals**, whose user guide documents clash-free
+  cross-festival itineraries with travel modes, engagements and a gap finder
+  (see its profile above). The morning's "one confirmed carrier, depth
+  unknown" hedge lasted a few hours. The Listings API gallery still shows
+  nothing cross-festival and Data Thistle still lists everything and plans
+  nothing — the field is planmyfestivals alone.
+- **Who or what is "180 Box Office"?** planmyfestivals' footer credit. A
+  Companies House search returns no such company (2026-09-01) — trading name,
+  non-UK entity, or something else. Whoever it is decided to build the
+  cross-festival planner invite-first and producer-funded; knowing them would
+  answer how seriously to take its rollout.
+- **Is planmyfestivals an approved Listings API consumer?** Its festival set,
+  genre vocabulary, venue-facilities detail and "Show data © the
+  participating festivals" credit all match the API's schema and licence
+  shape (see the profile above — an inference, not a finding). If confirmed,
+  it is existence proof that the API approves planner-shaped products, which
+  bears directly on [fringe-ticketing/](../fringe-ticketing/README.md)'s
+  "would they approve us" question.
+- **How big is planmyfestivals' user base?** Invitation-only registration
+  caps it deliberately; nothing public says at what size, or when (or
+  whether) it opens.
+- **What do planmyfestivals producer campaigns cost?** The guide documents
+  the impression-bank mechanics but no prices — the first paid-placement
+  model in this field is running with unpublished rates.
+- **Does Plan Your Fringe's stale catalogue miss late-registered shows?** It
+  advertises checking "every single show" while its counter still reads
+  3,649 — the 4 June launch snapshot, ~15% short of the delivered programme.
+  If the catalogue really is frozen at launch, its itineraries silently
+  exclude every show registered after early June — worth one re-check next
+  season as a data-freshness case study in this field.
 - **Does Data Thistle's events API compete with us or supply us?** It is a paid
   feed over the same listings the free official API already gives away; what it
   adds is unexamined.
@@ -515,3 +673,30 @@ one product — see [audience-divergence/](../audience-divergence/README.md).
   vacuum; why no Fringe-scale Clashfinder). Sibling pages:
   [comedy-festival-circuit/](../comedy-festival-circuit/README.md) owns the
   festivals themselves.
+- **2026-09-01** *(third pass, same day — the owner pointed at planmyfestivals'
+  user guide and asked for a fuller feature comparison with UI screenshots)* —
+  read the 15-page PlanMyFestivals user guide PDF in full, and it rewrote the
+  page's competitive read: planmyfestivals is a complete **cross-festival
+  clash-free planner** (three-step wizard; whole-summer or specific dates
+  with a spread-vs-concentrate choice; four travel modes with a ten-minute
+  buffer; locked engagements; an unscheduled-shows panel with plan-widening;
+  a same-venue-first gap finder; CSV-with-booking-links and PDF exports; a
+  venue map with accessibility detail; invitation-only registration; and a
+  producer impression-bank monetisation). The morning's "may be a combined
+  map" hedge is corrected in place; *Where the gaps are* item 2 moves from
+  "contested" to **claimed** and item 1 from "unoccupied" to **dented**
+  (whole-summer mode selects days; only window *scoring* survives
+  unclaimed); the cross-festival open question is answered. Added the
+  **Feature comparison** matrix (eleven tools × nine axes, ours included as
+  reference rows) and **The UI record** — twelve first-hand screenshots
+  (headless Chromium through the environment proxy, plus the guide's own
+  figures for the invite-walled app) archived under
+  [`sample-data/competitor-ui/`](../sample-data/competitor-ui/) with a
+  provenance README, per the owner's standing advice to keep UI evidence.
+  Key insights rewritten around the new top finding (scheduling-table-stakes
+  and the verification meta-line displaced, both unchanged in the body).
+  Five open questions added (180 Box Office's identity — no Companies House
+  match; Listings-API-consumer inference; invite-wall scale; producer
+  campaign pricing; Plan Your Fringe's frozen catalogue), two answered.
+  Requirements implication — the planner side now has no unclaimed pillar,
+  only under-served versions of claimed ones — left for human review.
