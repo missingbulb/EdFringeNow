@@ -907,6 +907,49 @@ The strongest planner-fits, ranked:
 5. Second tier: Fantasia (Montreal, 18 days, clustered, selective repeats),
    IDFA, Hot Docs, Glasgow.
 
+**The Israeli circuit** (owner question, 2026-09-01: does Docaviv fit the
+mold?). It does — Berlinale-shaped at half the scale — and it is not even
+Israel's strongest fit:
+
+- **Jerusalem Film Festival** (11 days each July, 43rd edition
+  [9–19 Jul 2026](https://jff.org.il/en/article/91360)) — the best planner
+  fit in the country: 200+ films from 60 countries, 22–28 screenings a day
+  across five halls (the Cinematheque's four plus Lev Smadar), films
+  verified screening twice across the window (e.g. the
+  [17 July](https://jff.org.il/en/festival-calendar/2026-07-17) and
+  [18 July](https://jff.org.il/en/festival-calendar/2026-07-18) calendar
+  days share four titles), singles at ₪48 (member ₪43) with 6- and
+  10-ticket [passes](https://jff.org.il/he/%D7%9E%D7%90%D7%9E%D7%A8/85822),
+  ~70,000 expected attendees, running since 1984 — and a real urgency
+  engine: the
+  [Jerusalem Post reports](https://www.jpost.com/israel-news/culture/article-900392)
+  more than three-quarters of its international films have no Israeli
+  distributor, so the festival screening is likely the only one.
+- **Docaviv** (Tel Aviv, 10 days late May–June, since 1998) — 123 film
+  pages on the 2026 site including shorts (press blurbs say "over 80
+  films"), each film screened 2–3 times across the window (premiere plus
+  [1–2 additional screenings](https://nfct.org.il/blog/docaviv-2026/)),
+  centred on the five-hall Tel Aviv Cinematheque with ten satellite venues
+  [listed for 2026](https://www.docaviv.co.il/%D7%9E%D7%A4%D7%94-%D7%95%D7%9E%D7%99%D7%93%D7%A2-%D7%A9%D7%99%D7%9E%D7%95%D7%A9%D7%99/),
+  singles at [₪49 (~€12.50) with carnets down to ~₪31](https://www.docaviv.co.il/tickets-and-benefits/),
+  ~40,000 attendance — Oscar-qualifying, self-described Israel's largest
+  international film festival.
+- **Haifa International Film Festival** (8 days, 42nd edition
+  [26 Sep – 3 Oct 2026](https://www.haifaff.co.il/eng), since 1983) — ~170
+  films, 4–5 parallel halls
+  [clustered on one Carmel Center boulevard](https://www.haifaff.co.il/eng/Screening_Halls)
+  (five of seven within ~400 m), films screened ~2×, singles ₪49 — and it
+  runs **inside the Sukkot national holiday week**
+  ([Wikipedia](https://en.wikipedia.org/wiki/Haifa_International_Film_Festival)),
+  a built-in "planning my time off" audience.
+
+The rest of the Israeli calendar (TLVFest, Solidarity, Epos, Utopia, Animix,
+Cinema South Sderot, the student festival) is one-cinematheque scale. The
+shared limit across all three majors: everything concentrates in a
+cinematheque hub, so travel never binds, and daily volume tops out near 28
+screenings against the Fringe's hundreds — a planner is useful there, not
+indispensable.
+
 Failing the bar, for the record: **Cannes** (no meaningful public
 ticketing), **Venice** (public tickets exist but premiere-driven, industry
 absorbs the seats), **SXSW Film** (badge-first, cut to 7 days), **Fantastic
@@ -1122,3 +1165,19 @@ The film adjacency (light survey, 2026-09-01):
   days. Key insight 5 widened to carry the film parallel; one open question
   added (the survey's own limits and the Sundance-to-Boulder re-check). No
   comedy claim changed.
+- **2026-09-01** *(third pass, same day — the owner asked whether Docaviv
+  fits the mold, and about other Israeli film festivals)* — extended the
+  film adjacency with *The Israeli circuit*: Docaviv does fit
+  (Berlinale-shaped at half the scale — ~120 films screened 2–3×, ₪49 open
+  tickets, annual Tel Aviv since 1998), Jerusalem FF outranks it as
+  Israel's best planner fit (200+ films, 22–28 screenings/day, verified
+  repeats, plus the no-Israeli-distributor urgency), and Haifa is third
+  with the Sukkot holiday-week angle. All three share the cinematheque-hub
+  limit (travel never binds; daily volume ≤~28 screenings), which places
+  them as one near-miss entry on
+  [festival-cities-beyond-edinburgh/](../festival-cities-beyond-edinburgh/README.md).
+  The Israeli tail (TLVFest, Solidarity, Epos, Utopia, Animix, Cinema
+  South, TISFF) is recorded as one-cinematheque scale. Fact base fetched
+  first-hand from the festivals' own 2026 pages (dates, prices, halls,
+  repeat screenings); a Docaviv dates discrepancy (its official pages say
+  28 May – 6 Jun, JPost says 30 May) is left to the fetched primary.

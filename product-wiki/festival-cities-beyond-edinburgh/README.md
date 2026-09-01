@@ -13,10 +13,10 @@ market. Compiled once, refined in place.
 - The festmaxxing bar: week-plus window, options ≫ capacity, real clashes, binding travel, public tickets, same-city recurrence.
 - Adelaide is the only real peer, and still under 40% of Edinburgh: 1,648 shows to 4,206.
 - Avignon OFF is the closest structural twin — 1,780 open-access shows in 141 theatres inside one walled town.
-- 300+ fringes exist worldwide, but only three sell more than 250,000 tickets.
 - Edinburgh has a free official cross-festival listings API. No other festival city found has an equivalent.
-- Avignon and Montreal break the English-only assumption before any other candidate does.
-- Milan's Fuorisalone swarms like a fringe but runs on opening hours, not showtimes — a routing problem, not a scheduling one.
+- Fashion week has the shape but no market: the real catalogue is invitation-only, and every show happens exactly once.
+- The Olympics sells 9.5m public tickets across 767 sessions — then moves cities, so a planner's data dies every four years.
+- Open per-event access is the rarest dimension at mega-events; where it meets an annual anchor, a planner's data compounds.
 
 ## The festmaxxing bar
 
@@ -71,6 +71,17 @@ Dimensions 1–5 decide whether the environment *has* the problem; 6–7 decide
 whether a product can serve it; 8 decides how rich the plan can be. The tiers
 below apply the bar to every candidate this page has gathered — festivals and,
 since 2026-09-01, non-festival environments that share the shape.
+
+**The shape already sells.** The nearest commercial proof that people pay for
+constrained-itinerary optimization is not a festival product at all:
+[TouringPlans](https://touringplans.com/) sells Walt Disney World visitors
+step-by-step touring plans, crowd calendars and live wait-time re-optimization
+for a **$24.97/year** subscription. A theme park fails the bar's first
+dimension — the park is continuous, and the time box is the visitor's own
+trip — but it holds the seventh absolutely, and that permanent anchor is what
+makes the model work: decades of wait-time data on the same rides. The lesson
+cuts both ways for a festival planner: the Fringe has the anchor, but only a
+25-day season to sell against.
 
 ## What "another Edinburgh" actually means
 
@@ -199,6 +210,23 @@ corpus is in French.
   [comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s film
   adjacency owns the detail and citations; they belong on this page's map
   because each is an anchored, publicly-ticketed, repeat-screening city event.
+- **Miami Art Week / Art Basel Miami Beach** (December; curated core + off —
+  promoted from this page's unassessed tail 2026-09-01). One fixed week (2–9
+  Dec in 2024) with **20+ art fairs and 1,200+ galleries in aggregate**
+  scattered across Miami Beach, Wynwood, the Design District, Downtown and
+  beyond; the anchor fair alone carried 280+ galleries with public day
+  tickets at $85. Each fair is separately publicly ticketed and open daily
+  through the week — sequencing, not triage — and metro traffic makes travel
+  the binding constraint. The strongest non-theatre clear found:
+  structurally a fringe whose shows are fairs.
+- **Open House Festival, London** (September; a city-wide open week). **Over
+  800 free open days and events across all 33 boroughs** in 9 days (12–20
+  Sep 2026, 35th edition): drop-in for most buildings, per-item booked slots
+  for the popular ones — free, but a real scarce-slot race (bookings open
+  ~3.5 weeks out and the hot buildings go in minutes). Venue spread is the
+  most extreme on this page. One caveat keeps it at the tier's edge: many
+  buildings open on a single day of the nine, so part of the catalogue is
+  triage rather than optimization (dimension 5, partial).
 
 ### Near misses — one dimension short
 
@@ -223,14 +251,44 @@ corpus is in French.
 - **Galway, Ireland — GIAF** (13–26 July 2026; curated season). Fourteen days,
   audiences well in excess of 200,000, in a small city fully consumed by it.
   Programme size unassessed — provisionally here until a show count is cited.
+- **Israel's cinematheque festivals — Jerusalem, Docaviv (Tel Aviv), Haifa**
+  (July / late May–June / the Sukkot holiday week; curated film festivals).
+  All three clear seven dimensions: 8–11 day windows, 120–200+ films each
+  screened 2–3 times, four to five parallel halls, open per-screening
+  tickets at ₪43–49, and 28–43 year anchors in the same cities. What each
+  misses is venue spread (dimension 4): everything concentrates in one
+  cinematheque hub, so travel never binds and daily volume tops out near 28
+  screenings — a planner is useful there, not indispensable. Detail and
+  citations on [comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s
+  film adjacency, extended to Israel 2026-09-01.
+- **Gen Con, Indianapolis** (July–Aug; convention — badge plus per-event
+  tickets). The closest non-festival analogue found anywhere: **nearly
+  30,000 unique ticketed events in four days** for ~72,000 attendees (2025,
+  sold out), every event booked individually on top of a ~$155 badge with $2
+  generic tickets as standby — the Fringe's model with a cover charge,
+  anchored to Indianapolis since 2003 and contracted there through 2030.
+  Event registration is itself a famous scarcity rush. What it misses: the
+  window (4 days, dimension 1) and venue spread (one connected downtown
+  campus — walking, not travel, is the constraint; dimension 4).
+- **NYC Restaurant Week** (twice yearly; the reservation-as-ticket model).
+  Nearly **600 restaurants across all five boroughs** on $30/$45/$60
+  prix-fixe menus for four weeks (summer 2025), booked through OpenTable —
+  a genuinely scarce per-item public slot that repeats daily through the
+  window. Misses on intensity (dimension 3): two or three meal slots a day
+  is planning, but rarely *conflict* — and the catalogue is the city's
+  ordinary restaurant scene, already served by incumbent dining tools.
 
 ### Fails the bar, instructively
 
-- **Salzburg, Austria** (17 Jul – 30 Aug 2026). **208 performances** across
-  opera, drama and concerts. The town is overwhelmed, but the programme is
-  curated, expensive and elite — 208 performances is a brochure, not an
-  overwhelm problem. The boundary case this page keeps on purpose: *city
-  swarming* alone fails abundance (dimension 2).
+- **Salzburg, Austria** (17 Jul – 30 Aug 2026). **208 performances**
+  announced for 2026; the delivered 2025 season was **174 performances over
+  45 days at 16 venues, at 98.4% occupancy** — roughly four a day, so an
+  evening rarely forecloses more than one alternative. The town is
+  overwhelmed, but the programme is curated, expensive and near-sold-out — a
+  season you *book*, not a schedule you optimize. The boundary case this
+  page keeps on purpose: *city swarming* alone fails abundance and
+  simultaneity (dimensions 2–3), even with the deepest anchor on this page
+  (annual in one town since 1920).
 - **Venice — Biennale Arte** (9 May – 22 Nov 2026). **100 national
   participations** — 29 in the Giardini, 25 in the Arsenale and **46 scattered
   across the city** — plus **31 collateral events**. A months-long run means
@@ -241,13 +299,65 @@ corpus is in French.
   venues at high density with genuine clash-resolution problems, but both are
   trade/badge-driven rather than public-audience-driven — failing open access
   (dimension 6) — and SXSW already ships its own scheduling tool.
+- **Fashion week — Paris, Milan, New York, London** (the owner's direct
+  question, 2026-09-01). It has festival *shape*: a fixed week per city
+  (NYFW's February 2026 official calendar ran 6 days with 60+ shows and
+  presentations; Paris womenswear runs 9 days with ~68 shows and 33
+  presentations), venues scattered across the city, twice-plus a year in
+  the same capitals. It fails the bar twice over. **The real catalogue is
+  invitation- and accreditation-only** — runway seats go to press, buyers
+  and clients, and what the public can buy (Runway 7-style independent
+  showcases in New York, London's £135 public-ticket experiment of 2019,
+  Copenhagen's partly-open schedule) is a parallel shadow programme, not
+  the shows that matter (dimension 6). And **every show happens exactly
+  once** (dimension 5), so even for insiders it is triage, not
+  optimization. The scheduling pain is real; the bookable market is absent.
+- **The Summer Olympics** (the owner's other direct question; mega-event).
+  Paris 2024 is the strongest possible showing for the shape: 17 days, **767
+  ticketed sessions across 35 venues** (~20 in and around one city), **9.5
+  million tickets sold** to the general public from €24, with an official
+  face-value resale app — better-behaved public access than most festivals,
+  plus genuine abundance and binding travel. It still fails the two
+  dimensions a planning product compounds on: sessions never repeat (the
+  100m final does not recur on Tuesday; dimension 5), and **the host city
+  rotates every four years** (dimension 7), so venue data, travel matrices
+  and source work are worthless at the next edition. A real planning
+  market — for exactly one summer per city. FIFA World Cup 2026 doubles the
+  failure: 104 matches across 16 cities in three countries, with flights as
+  the travel legs.
+- **The badge-and-queue worlds — San Diego Comic-Con, CES** (conventions).
+  SDCC: ~130,000 attendees and dozens of parallel programming tracks, but
+  **one badge and then first-come queueing** — no per-item slot exists to
+  book (Hall H is famously camped overnight), so the optimization is real
+  but unbookable (dimension 6), and its fan-run schedule guides are the
+  community routing around that. CES: 4,100+ exhibitors across two Las
+  Vegas campuses far enough apart that navigation is a product feature —
+  but trade-only badges, closed to the public (dimension 6 again, from the
+  other side).
+- **Burning Man** (temporary city). Nine days, one rebuilt city, and a
+  community-published catalogue of **4,300+ participant-run events** (the
+  2018 Playa Events count) — proof that an event catalogue emerges wherever
+  abundance meets a time box, even with no commerce at all. It fails on
+  access (one $550+ ticket covers everything; per-event ticketing is
+  unticketable by ideology; dimension 6) and on city context (dimension 8:
+  there is no surrounding city — food and rest are things you truck in).
 
 ### The unassessed tail
 
-Also in the fringe network and unassessed: **Prague**, **Dublin**, **Winnipeg**,
+The World Fringe network holds 300+ fringes worldwide (Perth's own materials
+say 400+), and the tail is thin — only three sell more than 250,000 tickets.
+In the network and unassessed here: **Prague**, **Dublin**, **Winnipeg**,
 **Orlando**, **Minnesota**, **Wellington**, **Camden**, **Melbourne Fringe**.
-**Miami Beach — Art Basel plus satellite fairs** (December) is the same
-curated-core-plus-off shape as Milan, unassessed.
+
+The cross-cutting finding from scoring the non-festival world (2026-09-01):
+**open per-event access is the definition's rarest dimension.** Big
+real-world events default to allocating scarcity by badge, invitation or
+queue; genuinely bookable per-item inventory is what festivals proper, Gen
+Con, the art fairs, Open House and restaurant weeks share. And it is the
+pairing of that access with an annual anchor that makes a planning product's
+data investment compound — where either half fails, the planning problem
+still exists but belongs to insiders (fashion week, CES), queue-campers
+(SDCC), or a single summer (each Olympics).
 
 ## Where Edinburgh is still singular
 
@@ -311,6 +421,22 @@ Two findings cut against expanding, and both should be said plainly:
 - [Galway International Arts Festival announces its 2026 Programme](https://www.giaf.ie/media/news/galway-international-arts-festival-announces-its-2026-programme)
 - [The Salzburg Festival Sets Dates and Programming For 2026 (BroadwayWorld)](https://www.broadwayworld.com/austria/article/The-Salzburg-Festival-Sets-Dates-and-Programming-For-2026-20251205)
 - [Biennale Arte 2026 — National Participations and Collateral Events](https://www.labiennale.org/en/news/national-participations-and-collateral-events-biennale-arte-2026)
+
+The non-festival survey (2026-09-01; facts read only from search snippets are
+attributed to their publishers):
+
+- [TouringPlans — Disney World touring plans, crowd calendar, Lines app](https://touringplans.com/)
+- Fashion-week access: [FHCM — Paris Fashion Week](https://www.fhcm.paris/en/paris-fashion-week); [CFDA — preliminary official NYFW February 2026 schedule](https://cfda.com/news/view-the-preliminary-official-nyfw-february-2026-schedule/); [Runway 7 — NYFW tickets, public vs invite](https://runway7fashion.com/new-york-fashion-week-tickets-public-vs-invite/); [Fashionista — London Fashion Week opens to the public (2019)](https://fashionista.com/2019/07/london-fashion-week-open-to-public); [Copenhagen Fashion Week — schedule information](https://copenhagenfashionweek.com/application/event-talk-schedule-information); [Complex — Paris Fashion Week SS27 womenswear schedule](https://www.complex.com/style/a/will-lavin/paris-fashion-week-ss27-women-schedule-2026)
+- Paris 2024 Olympics: [Paris.fr — the Paris 2024 Games in numbers](https://www.paris.fr/en/pages/the-paris-2024-games-in-numbers-28797); [olympics.com — single tickets for all 767 sessions](https://www.olympics.com/en/news/registration-phase-two-paris-2024-ticket-sale); [Wikipedia — 2024 Summer Olympics](https://en.wikipedia.org/wiki/2024_Summer_Olympics); [TheTicketingBusiness — Paris 2024 resale app launches](https://theticketingbusiness.com/2024/05/15/paris-2024-ticketing-app-launches); [Britannica — 2026 FIFA World Cup](https://www.britannica.com/event/2026-FIFA-World-Cup)
+- Gen Con: [Record-breaking Gen Con 2025 (gencon.com)](https://www.gencon.com/press/record-breaking-gencon-2025); [Gen Con — event registration](https://www.gencon.com/attend/event-registration); [Gen Con — what are generic tickets](https://gencon.zendesk.com/hc/en-us/articles/36966863600404-What-are-Generic-Tickets); [Wikipedia — Gen Con](https://en.wikipedia.org/wiki/Gen_Con)
+- San Diego Comic-Con: [Wikipedia — San Diego Comic-Con](https://en.wikipedia.org/wiki/San_Diego_Comic-Con); [SDCC Unofficial Blog — guide to Hall H](https://sdccblog.com/2026/07/guide-to-hall-h-at-san-diego-comic-con/)
+- CES: [CES 2025 opens today (ces.tech)](https://www.ces.tech/press-releases/dive-in-to-the-future-ces-2025-opens-today); [Exhibit City News — CES by the numbers](https://exhibitcitynews.com/ces-by-the-numbers/)
+- Open House London: [Open House Festival (Open City)](https://open-city.org.uk/open-house-festival); [Open City — 2025 programme launch, 800+ events](https://open-city.org.uk/blog/ohfprogrammelaunch); [Londonist — which buildings need booking](https://londonist.com/london/festivals/open-house-2025-which-buildings-are-open-which-need-booking)
+- Burning Man: [Burning Man Journal — 2025 ticket info](https://journal.burningman.org/2025/02/black-rock-city/ticketing/2025ticketinfo/); [Burning Man Journal — Playa Events counts](https://journal.burningman.org/2018/08/black-rock-city/participate-in-brc/playa-events-the-what-the-where-and-the-when/); [Wikipedia — Burning Man](https://en.wikipedia.org/wiki/Burning_Man)
+- NYC Restaurant Week: [NYC Tourism — Summer 2025 NYC Restaurant Week press release](https://www.business.nyctourism.com/press-media/press-releases/summer-2025-nyc-restaurant-week)
+- Salzburg delivered 2025: [Salzburg Festival — recap of the 2025 festival](https://www.salzburgerfestspiele.at/en/blog/recap-salzburg-festival-2025)
+- Miami Art Week: [miamiartweek.org](https://www.miamiartweek.org/); [Time Out Miami — Art Basel and Miami Art Week dates, schedules, tickets](https://www.timeout.com/miami/news/art-basel-and-miami-art-week-everything-to-know-about-dates-schedules-and-tickets-120324)
+- Israel (detail on the circuit page's film adjacency): [Docaviv — tickets and benefits 2026](https://www.docaviv.co.il/tickets-and-benefits/); [Jerusalem Film Festival — 2026 dates](https://jff.org.il/en/article/91360); [Haifa International Film Festival — 2026](https://www.haifaff.co.il/eng)
 
 ## Open questions
 
@@ -434,3 +560,20 @@ Two findings cut against expanding, and both should be said plainly:
   cross-references to [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
   Scope widened to non-festival environments sharing the shape; a rename
   question is opened rather than acted on.
+- **2026-09-01** — folded the two surveys the owner asked for into the
+  tiers. Non-festival: fashion week and the Olympics land in *fails
+  instructively* (access-less and anchor-less respectively); Miami Art Week
+  (promoted from the unassessed tail) and Open House London join the clear
+  tier; Gen Con and NYC Restaurant Week are near misses; SDCC, CES and
+  Burning Man record three flavours of the access failure; Salzburg gains
+  its delivered-2025 figures (174 performances, 98.4% occupancy);
+  TouringPlans is recorded under the bar as the commercial proof of paid
+  itinerary optimization ($24.97/yr). Israel: the three cinematheque
+  festivals (Jerusalem, Docaviv, Haifa) enter as one near-miss entry —
+  seven dimensions clear, venue spread concentrated in single hubs — with
+  detail on [comedy-festival-circuit/](../comedy-festival-circuit/README.md).
+  Header rewritten: the fashion-week and Olympics answers and the
+  cross-cutting finding (open per-event access is the rarest dimension;
+  access + anchor is where data compounds) replace three bullets whose
+  findings stay in the body (the 300-fringes count moves to the
+  unassessed-tail paragraph).
