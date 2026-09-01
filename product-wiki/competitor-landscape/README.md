@@ -19,7 +19,7 @@ incumbent; the planning side is crowded, and got noticeably more crowded for
 - planmyfestivals shipped the cross-festival planner: 7 festivals, 4 travel modes, locked engagements, a gap finder. Invite-only.
 - Its whole-summer mode picks your days for you — date-choice is dented; only date-*scoring* is still unclaimed.
 - Live reachability is the one axis still ours alone — and rivals circle it: a plan-time gap finder, a "near me now" tease.
-- Producers pay planmyfestivals for carousel placement; Plan Your Fringe pledges no-pay-to-play. Monetisation is diverging.
+- Rival revenue is paid placement (planmyfestivals; edfringemap's £99–£749 rate card) or donations — no ads, no travel affiliates.
 - The official app plans better than we assumed — calendar sync, offline, 200k downloads.
 - Availability has two riders: Fringe Finder plans around what is on sale; FringePlan pulls availability colours.
 - Outside Edinburgh the planner category is empty — MICF (750+ shows) and Netflix Is A Joke (475+) have nobody.
@@ -125,9 +125,11 @@ read on where the gap is.
   one interactive map, filterable by day, genre, area, price and start time, then
   book. The closest thing to Fringe Discover's *map* surface, though as a
   browse-and-filter map rather than a reachability calculation.
-- **[Ed Fringe Guide](https://edfringeguide.com/index.html)** and **[Another
-  Fringe Guide](https://www.anotherfringeguide.com/)** — unofficial show finders /
-  browsers, comedy-leaning.
+- **[Ed Fringe Guide](https://edfringeguide.com/)** — an unofficial, fan-made
+  show finder / browser, comedy-leaning. (Corrected 2026-09-01: this page
+  listed it and "[Another Fringe Guide](https://www.anotherfringeguide.com/)"
+  as two competitors since July; the two domains serve **byte-identical
+  pages** — one product, two doors.)
 - **[Edinburgh Fringe Planner](https://edfringeplanner.co.uk/)** — examined
   2026-08-09, and it is the one that matters. Its own one-line pitch is that it
   **"takes your favourites from edfringe.com and helps you work out what to do
@@ -330,16 +332,16 @@ so the comparison has its reference points.
 
 | Tool | Scope | Intake | Dates | Clash engine & travel | Meals / commitments | Availability | Gap-filling / nearby | Exports & handoff | Gate & funding |
 |---|---|---|---|---|---|---|---|---|---|
-| **EdFringeNow `/plan`** | Fringe | edfringe favourites CSV (third-party extension) | **scores best dates** in a window | ✓ travel legs per mode | — | sold-out overlay (a decaying forecast) | — | CSV, ICS | none; free |
-| **EdFringeNow Now page** | Fringe | none — zero-input | today | ✓ live slack vs **next commitment**, per mode | the commitment *is* the input | ✓ live sold-out / started | ✓ the whole product | — | none; free |
+| **EdFringeNow `/plan`** | Fringe | edfringe favourites CSV (third-party extension) | **scores best dates** in a window | ✓ travel legs per mode | — | sold-out overlay (a decaying forecast) | — | CSV, ICS | none; free; travel partner links (disclosed commission) |
+| **EdFringeNow Now page** | Fringe | none — zero-input | today | ✓ live slack vs **next commitment**, per mode | the commitment *is* the input | ✓ live sold-out / started | ✓ the whole product | — | none; free; travel partner links (disclosed commission) |
 | Official Fringe app | Fringe | native favourites (My Planner) | input | — (list + calendar, no engine) | — | booking-integrated | Nearby now: proximity + starting soon | calendar sync, QR tickets, offline | free |
-| Plan My Fringe | Fringe | in-app wishlist + ratings | input | ✓ walking speed, per-day max, min gap | ✓ meal + sleep minimums | — | Fringe Trail (walk-minimising); a NEARBY tab on the site | animated Google-Maps trail; web+app shared state | free; iOS + Android |
+| Plan My Fringe | Fringe | in-app wishlist + ratings | input | ✓ walking speed, per-day max, min gap | ✓ meal + sleep minimums | — | Fringe Trail (walk-minimising); a NEARBY tab on the site | animated Google-Maps trail; web+app shared state | free; donations; iOS + Android |
 | **planmyfestivals** | **7 festivals** | in-app hearts | input, **or whole-summer — the planner picks the days** | ✓ 4 modes, 10-min buffer | ✓ locked engagements | — | ✓ plan-time gap finder, same-venue-first | CSV with booking links, PDF | **invite-only; producer-paid placement** |
 | FringePlan | Fringe | paste link / name / whole list | input (+ arrival/departure) | ✓ travel + priorities | ✓ meals | ✓ availability colours; stale-plan flags | — | share link, **live iCal**, markdown, edfringe basket | free |
 | Plan Your Fringe (+ FringePal) | Fringe | taste wizard | input | builds day-by-day | — | — | live "near me now" **teased** | PDF by email | free; email-gated; no-pay-to-play pledge |
 | Fringe Finder | Fringe | AI concierge chat | input | walking times in day builds | — | ✓ plans around what's still on sale | concierge-built days | — | free; "official pilot" (asserted) |
 | edfringeplanner | Fringe | edfringe favourites (mechanism unknown) | input | preference-weighted scheduling | ? | ? | ? | ? | login-walled |
-| edfringemap | Fringe | — (browse) | day filter | — | — | — | — | out-links to booking | free; EN + 4 languages |
+| edfringemap | Fringe | — (browse) | day filter | — | — | — | — | out-links to booking | free; EN + 4 languages; promoted slots £99–£749 + sponsor tiers |
 | Data Thistle | 10 festivals | — | — | — | — | — | — | — | directory + paid API |
 
 Three readings the grid supports: the **live column belongs to one row** (ours
@@ -360,6 +362,77 @@ provenance README; the most comparison-relevant:
 <img src="../sample-data/competitor-ui/2026-09-01-planmyfestivals-guide-p07-show-chooser.png" width="480" alt="planmyfestivals show chooser (guide p7): featured carousel with all seven festivals' badges, 4,296 shows"> <img src="../sample-data/competitor-ui/2026-09-01-fringe-finder-landing.png" width="480" alt="Fringe Finder concierge landing, 2026-09-01">
 <img src="../sample-data/competitor-ui/2026-09-01-fringeplan-landing.png" width="480" alt="FringePlan landing, 2026-09-01"> <img src="../sample-data/competitor-ui/2026-09-01-planyourfringe-landing.jpg" width="480" alt="Plan Your Fringe landing with FringePal push, 2026-09-01">
 <img src="../sample-data/competitor-ui/2026-09-01-planmyfringe-landing.jpg" width="480" alt="Plan My Fringe landing with Fringey chatbot, apps and NEARBY tab, 2026-09-01"> <img src="../sample-data/competitor-ui/2026-09-01-edfringemap-landing.png" width="480" alt="edfringemap landing: 4,465 shows, 308 venues, four extra languages, 2026-09-01">
+
+## How the rivals make money
+
+Asked three ways on the owner's direction — local sponsorship? affiliate /
+rev-share to hotel, flight or restaurant booking? display ads? — and answered
+empirically (2026-09-01): every rival's first-hand-fetched pages and
+JavaScript bundles were fingerprint-searched for ad networks
+(AdSense/DoubleClick/Carbon), affiliate networks and booking-site parameters
+(AWIN, CJ, booking.com, Expedia, Skyscanner, GetYourGuide, Viator, Amazon),
+and donation platforms (Ko-fi, BuyMeACoffee, Patreon), and each tool's own
+commercial pages were read where they exist. Two false-positive classes were
+discarded (minified `_drawing` matching "awin"; React's `onDoubleClick`).
+
+**Paid placement — two rivals, two implementations:**
+
+- **edfringemap is the most commercially developed tool in the field**, and
+  publishes its whole model. A
+  [posted rate card for promoted show slots](https://edfringemap.com/advertise):
+  "Genre Featured" from **£99 for a whole run** (five slots per genre, price
+  stepping £99→£149→£199→£249→£299 as slots fill), "Featured in a Moment"
+  (Tonight / Free / Family / Late Night / Under £10 / Award Winners) at
+  **£249** with eligibility "check[ed] in code, not on trust", and
+  "Spotlight" at **£749** (ten slots festival-wide) — paid by Stripe, live in
+  minutes, "money never reorders the ordinary results", pitched as "less
+  than you pay one flyerer for one day". Beside it, a
+  [sponsorship page](https://edfringemap.com/sponsor) with three
+  enquiry-priced tiers: **presenting sponsor** ("Fringe Map, presented by
+  you"), **category/area partner**, and — precisely the local-sponsorship
+  lane the owner asked about — **"Bars, food & venues: get your place in
+  front of Fringe-goers nearby, right when they're planning their night"**.
+  The same page self-describes as "built by two Edinburgh locals" and the
+  advertise page states the map runs on **"official festivals API data"**
+  with "every show listed free — promotion is optional".
+- **planmyfestivals** sells producer **impression campaigns** in its featured
+  carousel (profiled above; rates unpublished) — and its footer component
+  carries a **"Supported by: VisitScotland"** logo (found in the application
+  bundle), i.e. national-tourism-body backing of some unstated kind, the
+  only public-body support visible anywhere in the field.
+
+**Donations:** [Plan My Fringe](https://www.planmyfringe.co.uk/) carries a
+"Donate" nav item to a DonationBucket page — the volunteer-project model.
+
+**Data sales:** Data Thistle sells its events API (already profiled).
+
+**Explicitly or apparently nothing:** FringePlan ("free for everyone,
+forever… no subscriptions, no ticket markups, and no hidden fees" — and its
+pages are fingerprint-clean); Ed Fringe Guide (fan-made, a gmail contact —
+and a correction: **edfringeguide.com and anotherfringeguide.com serve
+byte-identical pages** — the "two" unofficial guides this page has listed
+since July are one site on two domains); edfringeplanner (nothing visible
+outside the login); Fringe Finder (fingerprint-clean — if it is the official
+pilot it asserts, its funding may be the Society's, unconfirmed). Plan Your
+Fringe is free with a no-pay-to-play pledge and monetises indirectly if at
+all: it *buys* ads (its cookie banner: "one measurement cookie so we know
+which ads actually work") and routes users to its FringePal app, whose model
+is unexamined.
+
+**The two empty lanes, and who is in them:** across every rival, **zero
+display-ad fingerprints and zero travel-booking affiliate fingerprints** —
+nobody serves ads, and nobody earns on hotels, flights or restaurants. The
+one product in the field with travel affiliate revenue is **ours**: the
+shipped footer discloses "Booking links on plans (tables, trains, stays,
+tours) may earn us a small commission"
+([`index.html`](https://github.com/missingbulb/EdFringeNow/blob/main/index.html),
+with configured affiliate IDs exercised by
+[`js/places.js`](https://github.com/missingbulb/EdFringeNow/blob/main/js/places.js)'s
+partner links). Worth holding beside
+[fringe-ticketing/](../fringe-ticketing/README.md)'s finding that
+**ticket-side** commission is structurally impossible at the Fringe — the
+non-ticket affiliate lane is the only affiliate lane there is, and no rival
+has entered it.
 
 ## Where the gaps are
 
@@ -456,6 +529,10 @@ two surfaces should not be reasoned about as one product — see
 - [planmyfestivals.com application bundle](https://www.planmyfestivals.com/assets/app-BRlWgudd.js) — the 2026-09-01 bundle inspection behind the cross-festival scope finding: Fringe, Tattoo, Book, International, Art and Jazz carried as first-class strings.
 - [PlanMyFestivals — a guide for new users (PDF)](https://www.planmyfestivals.com/static/guide/PlanMyFestivals-User-Guide.pdf) — the 15-page vendor user guide behind the full profile above: the three-step wizard, whole-summer vs specific dates, four travel modes and the ten-minute buffer, engagements, the unscheduled-shows panel and plan widening, the gap finder, CSV/PDF exports, the venue map, invitation-only registration, and the producer impression-bank campaigns. Read in full 2026-09-01; key figures archived to [`sample-data/competitor-ui/`](../sample-data/competitor-ui/).
 - [Companies House search: "180 box office"](https://find-and-update.company-information.service.gov.uk/search/companies?q=%22180+box+office%22) — no results, 2026-09-01; the operator name in planmyfestivals' footer has no matching UK registration. (The landing-page screenshots behind the UI record are first-hand captures of the tool URLs already listed above — provenance in [`sample-data/competitor-ui/`](../sample-data/competitor-ui/)'s README.)
+- [Promote Your Show on Fringe Map (edfringemap.com/advertise)](https://edfringemap.com/advertise) — the posted rate card: Genre Featured £99–£299 stepped over five slots per genre, Featured in a Moment £249, Spotlight £749, Stripe, "money never reorders the ordinary results", "official festivals API data", fetched 2026-09-01.
+- [Sponsor the Fringe Map (edfringemap.com/sponsor)](https://edfringemap.com/sponsor) — the three enquiry-priced sponsorship tiers, including the local "bars, food & venues" tier; "built by two Edinburgh locals"; fetched 2026-09-01.
+- [Plan My Fringe — DonationBucket](https://www.planmyfringe.co.uk/DonationBucket) — the Donate page its site nav links; fetched 2026-09-01 via the homepage nav.
+- [EdFringeNow's own footer disclosure (`index.html`)](https://github.com/missingbulb/EdFringeNow/blob/main/index.html) — "Booking links on plans (tables, trains, stays, tours) may earn us a small commission" — the reference point for the affiliate-lane comparison.
 - [FringePal](https://fringepal.com/) — the companion app Plan Your Fringe promotes ("bigger and better than this site"); unexamined.
 - [Netflix Is A Joke Fest 2026 lineup and schedule (The Hollywood Reporter)](https://www.hollywoodreporter.com/tv/tv-news/netflix-is-a-joke-festival-2026-lineup-schedule-los-angeles-1236478031/) — 475+ shows across 35 LA venues; no planner, no official app found.
 - [MICF 2026 program guide (comedyfestival.com.au)](https://www.comedyfestival.com.au/2026-program-guide/) — the 750+ show count behind the beyond-Edinburgh comparison.
@@ -560,8 +637,16 @@ two surfaces should not be reasoned about as one product — see
   caps it deliberately; nothing public says at what size, or when (or
   whether) it opens.
 - **What do planmyfestivals producer campaigns cost?** The guide documents
-  the impression-bank mechanics but no prices — the first paid-placement
-  model in this field is running with unpublished rates.
+  the impression-bank mechanics but no prices — unlike edfringemap, whose
+  rates are posted, this paid-placement model runs with unpublished rates.
+- **What is VisitScotland's relationship to planmyfestivals?** Its bundle
+  footer says "Supported by: VisitScotland" — a grant, a marketing
+  partnership, or something looser. The only public-body backing visible in
+  the field, and unexplained.
+- **Does edfringemap's rate card actually sell?** The prices and slot caps
+  are posted (five per genre, eight per moment, ten spotlights) but nothing
+  public says how many slots sold in 2026 — the field's only visible revenue
+  experiment, results unknown.
 - **Does Plan Your Fringe's stale catalogue miss late-registered shows?** It
   advertises checking "every single show" while its counter still reads
   3,649 — the 4 June launch snapshot, ~15% short of the delivered programme.
@@ -700,3 +785,24 @@ two surfaces should not be reasoned about as one product — see
   campaign pricing; Plan Your Fringe's frozen catalogue), two answered.
   Requirements implication — the planner side now has no unclaimed pillar,
   only under-served versions of claimed ones — left for human review.
+- **2026-09-01** *(fourth pass, same day — the owner asked how the rivals make
+  money: local sponsorship, travel affiliates, ads)* — answered empirically by
+  fingerprint-searching every rival's first-hand-fetched pages and bundles for
+  ad networks, affiliate networks, booking-site parameters and donation
+  platforms, and reading the commercial pages that exist. Added *How the
+  rivals make money*: paid placement is the only earned revenue in the field
+  (edfringemap's fully posted rate card — £99–£749 promoted slots plus
+  enquiry-priced sponsorship tiers including a local bars-food-venues tier —
+  and planmyfestivals' unpriced producer impressions, with a "Supported by:
+  VisitScotland" footer found in its bundle), Plan My Fringe runs on
+  donations, Data Thistle sells data, and the rest show nothing; **no rival
+  serves display ads and none carries a single travel-booking affiliate
+  fingerprint** — the affiliate lane is occupied only by our own shipped
+  partner links, and ticket-side commission is structurally impossible per
+  fringe-ticketing. Along the way: edfringeguide.com and
+  anotherfringeguide.com found byte-identical (the page's "two" unofficial
+  guides are one site, corrected in place), and edfringemap found stating it
+  runs on "official festivals API data" — recorded on fringe-ticketing as a
+  second, this time explicit, Listings API consumer. Key insight 4 and three
+  matrix funding cells rewritten; three open questions added (VisitScotland's
+  role; edfringemap's sales volume; planmyfestivals' unpublished rates).
