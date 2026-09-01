@@ -300,6 +300,16 @@ rented SaaS:
 - **MICF has no current official app found at all** — the only trace is a
   [2010-era iPhone app](https://itwire.com/software/laugh-it-up-on-the-iphone-melbourne-international-comedy-festival-app.html).
 
+Precision added 2026-09-01 (film pass): the emptiness claim is about *comedy*
+festivals. In **film**, exactly one live third-party specimen was found —
+[tiffr](https://2026.tiffr.com/), an unofficial TIFF-only planner rebuilt per
+year — and the strongest official planner anywhere is
+[Berlinale's "My Festival Planner"](https://www.berlinale.de/en/programme/festival-planner.html)
+(favourites → schedule → iCal). One tool for one festival, in the whole film
+circuit: the category is thin there too, not absent. Details on
+[comedy-festival-circuit/](../comedy-festival-circuit/README.md)'s film
+adjacency section.
+
 The structural analogue where the category *is* proven: **music festivals.**
 [Clashfinder](https://clashfinder.com/) is the closest cousin to what a
 generalized EdFringeNow would be — free, crowdsourced lineup-clash grids for
@@ -806,3 +816,9 @@ two surfaces should not be reasoned about as one product — see
   second, this time explicit, Listings API consumer. Key insight 4 and three
   matrix funding cells rewritten; three open questions added (VisitScotland's
   role; edfringemap's sales volume; planmyfestivals' unpublished rates).
+- **2026-09-01** *(fifth pass, same day — riding the film survey)* — added
+  precision to *The field beyond Edinburgh*: the empty-category claim is
+  comedy's; film has exactly one live third-party planner (tiffr, TIFF-only)
+  and one strong official one (Berlinale's favourites→iCal planner), so the
+  category there is thin, not absent. One paragraph and two sources; no other
+  claim moved.

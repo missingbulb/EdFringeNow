@@ -12,7 +12,9 @@ Division of labour with the neighbouring pages:
 owns the *city* question (which cities carry the Edinburgh-in-August overwhelm
 pattern, whatever the art form); this page owns the *comedy festival* question —
 the worldwide circuit, each festival's structure, organizer, ticketing and data
-reachability. Planner-type competitors found along the way live on
+reachability — plus a deliberately light survey of the **film** festivals that
+share the planner-complex shape (its own section below). Planner-type
+competitors found along the way live on
 [competitor-landscape/](../competitor-landscape/README.md).
 
 ## Key insights
@@ -21,7 +23,7 @@ reachability. Planner-type competitors found along the way live on
 - MICF is the southern Edinburgh — 803 shows, 9,164 performances, open registration — with unauthenticated JSON APIs.
 - Leicester's operator went bust in Aug 2026 owing performers ticket money. Feb 2027 is two rival reboots.
 - Nearly everything is annual in the same city, but brands churn: JFL survived receivership, Netflix Is A Joke is biennial.
-- Recurrence decides the planning problem: a Fringe show plays ~14 times, a US festival show plays once — clashes there are terminal.
+- Recurrence decides planning — in film too: Fringe shows play ~14 times, Berlinale screens films up to 5×, US one-offs are terminal.
 - Leicester and Brighton share one platform (Eventotron) and identical open APIs — one adapter reads both.
 - No machine-readable comedy-festival calendar exists. The best tracker is one journalist's hand-kept page.
 
@@ -865,6 +867,60 @@ worried about (a listings source plus a separate availability source) is
 not the general case — the general case is *worse*: one source for
 listings, and no availability source at all.
 
+## The film adjacency — surveyed light, on the owner's direction
+
+Film festivals run on the same two axes as comedy, and the owner asked for
+the planner-complex ones flagged without deep research (2026-09-01; each
+entry is one look, not a dossier). The bar: multi-venue, many parallel
+screenings, public single tickets, ~8+ days, ideally **repeat screenings**
+— the recurrence property that turns triage into optimization.
+
+The strongest planner-fits, ranked:
+
+1. **Berlinale** (Berlin, 11 days each Feb) — film's closest thing to a
+   fringe: 274 films in 2026, **each screening up to five times**
+   ([its own entry guidelines](https://www.berlinale.de/en/film-entry/guidelines/general-guidelines.html)),
+   fully public tickets at €9–15 released online three days before each
+   screening, venues spread across the city — and an official
+   [**"My Festival Planner"**](https://www.berlinale.de/en/programme/festival-planner.html)
+   (favourites → schedule → iCal), the most planner-shaped official tool
+   seen in any circuit this wiki covers.
+2. **TIFF** (Toronto, 11 days each Sep) — 200+ films, ~2 public screenings
+   each, clustered downtown venues, an official app with favourites and
+   in-app tickets — and the only healthy **third-party festival planner
+   found in film**: [tiffr.com](https://2026.tiffr.com/), TIFF-only, one
+   site per year, alive for 2026.
+3. **MIFF** (Melbourne, **18 days** each Aug) — 275+ films, ~10 venues,
+   180,000+ attendees ([ACMI](https://www.acmi.net.au/whats-on/miff-2026/))
+   — the longest major, in a city we already track for MICF (different
+   months; no overlap).
+4. **IFFR Rotterdam** (11 days, ~480 films, 300k+ admissions citywide),
+   **SIFF Seattle** (11 days, 203 films, a walkable multi-screen cluster,
+   the most-attended US festival), **BFI London** (12 days, ~240 features,
+   7 venues), **Locarno** (11 days, public, an 8,000-seat open-air piazza),
+   **Sundance** (11 days, $35 public single tickets, two towns — **moving
+   to Boulder for 2027** on a ten-year deal, per
+   [THR](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/) —
+   the census's rare city *move*), **Sydney FF** (12 days, 13 spread
+   venues, on Eventival), **Busan** (10 days, 329 films on 31 screens in
+   one cluster, sell-out-in-minutes scarcity).
+5. Second tier: Fantasia (Montreal, 18 days, clustered, selective repeats),
+   IDFA, Hot Docs, Glasgow.
+
+Failing the bar, for the record: **Cannes** (no meaningful public
+ticketing), **Venice** (public tickets exist but premiere-driven, industry
+absorbs the seats), **SXSW Film** (badge-first, cut to 7 days), **Fantastic
+Fest** (one venue, badge-driven).
+
+What the light pass established for the taxonomy: **repeat screenings are
+the norm at the big public film festivals and absent at the premiere
+festivals** — the same recurrence split as comedy's fringe-vs-showcase; the
+**Fantasia × JFL overlap gives Montreal eleven shared days** of film ×
+comedy co-planning (the one such city found); and film's third-party
+planner category is one TIFF-only specimen — as empty as comedy's outside
+Edinburgh. A future film expansion would start at Berlinale/TIFF/MIFF, and
+each needs the deep pass this survey deliberately skipped.
+
 ## Festival trackers
 
 Sources that track the circuit itself — what a future multi-festival product
@@ -977,6 +1033,15 @@ UK & Ireland:
 - [Wells Comedy Festival](https://www.wellscomfest.com/) (Plosive) and [Beyond The Joke's 10th-anniversary piece](https://www.beyondthejoke.co.uk/content/16887/wells-comedy-festival); [Machynlleth Comedy Festival](https://machcomedyfest.co.uk/) and [its 2026 programme post (200+ shows)](https://machcomedyfest.co.uk/2026/04/02/the-2026-programme-has-been-released/).
 - [Greenwich Comedy Garden](https://www.greenwichcomedygarden.co.uk/) (57 Festivals); [Roundhouse Comedy Festival](https://www.roundhouse.org.uk/seasons/roundhouse-comedy-festival/) and [Theatre Weekly's dates piece](https://theatreweekly.com/roundhouse-comedy-festival-returns-to-camden-for-august-2026/); [London Clown Festival](https://www.londonclownfest.online/).
 
+The film adjacency (light survey, 2026-09-01):
+
+- [Berlinale — general entry guidelines (up to five screenings per film)](https://www.berlinale.de/en/film-entry/guidelines/general-guidelines.html), [My Festival Planner](https://www.berlinale.de/en/programme/festival-planner.html), [2026 press releases](https://www.berlinale.de/en/2026/news-press-releases/267074.html), and [Berlin.de on the public ticket presale](https://www.berlin.de/en/tourism/insider-tips/2925756-5766508-berlinale-ticket-presale-where-to-buy.en.html).
+- [tiffr — the unofficial TIFF planner, 2026 edition](https://2026.tiffr.com/); [TIFF's official app](https://tiff.net/the-review/welcome-to-the-official-tiff-app); [Now Toronto on TIFF 2026](https://nowtoronto.com/news/tiff-2026-first-movies-announced-tickets-venue/).
+- [MIFF 2026 at ACMI (275+ films, 180k+ attendees)](https://www.acmi.net.au/whats-on/miff-2026/); [SIFF 2026 full lineup (203 films)](https://www.siff.net/media/news/pr-fest26-full-lineup) and [2026 SIFF (Wikipedia — the walkable venue set)](https://en.wikipedia.org/wiki/2026_Seattle_International_Film_Festival); [IFFR (Wikipedia — ~480 films, 300k+ admissions)](https://en.wikipedia.org/wiki/International_Film_Festival_Rotterdam); [BFI London Film Festival (Wikipedia)](https://en.wikipedia.org/wiki/BFI_London_Film_Festival); [79th Locarno (Wikipedia)](https://en.wikipedia.org/wiki/79th_Locarno_Film_Festival); [Sydney Film Festival on Eventival](https://vp.eventival.com/sff/2026); [30th Busan (Wikipedia — 329 films, 31 screens)](https://en.wikipedia.org/wiki/30th_Busan_International_Film_Festival).
+- [Sundance's move to Boulder (The Hollywood Reporter)](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/) and [2026 single tickets (Park Record)](https://www.parkrecord.com/2026/01/09/2026-sundance-film-festival-tickets-on-sale-wednesday/).
+- [Fantasia 2026 (30th edition, 16 Jul–2 Aug)](https://fantasiafestival.com/en/fantasia-2026) and [Cult MTL's programme piece](https://cultmtl.com/2026/07/montreal-fantasia-film-festival-turns-30-with-an-incredible-program-for-2026/) — the JFL overlap.
+- The failed bar: [Cannes public access (Pearl)](https://joinpearl.co/blogs/cannes-film-festival-in-person-how-to-get-in-and-what-youll-see), [Venice accreditation (La Biennale)](https://www.labiennale.org/en/cinema/2026/cinema-accreditation), [SXSW 2026 badges (Austin American-Statesman)](https://www.statesman.com/story/entertainment/2025/03/16/sxsw-2026-schedule-half-price-badges-early-bird-available-now/82470583007/), [Fantastic Fest badges (Drafthouse)](https://drafthouse.com/show/fantastic-fest-badges).
+
 ## Open questions
 
 - **Which festival is Leicester in February 2027?** The council-backed
@@ -1014,6 +1079,13 @@ UK & Ireland:
 - **Whether official-app planners satisfy the planning demand** at
   MICF/Adelaide scale is the competitor question —
   [competitor-landscape/](../competitor-landscape/README.md) carries it.
+- **The film adjacency is a survey, not research.** Per-film repeat-screening
+  norms are confirmed only for Berlinale and TIFF; MIFF/SIFF run encores
+  rather than stated policies, and IFFR/BFI/Sydney are unverified on
+  repeats. Sundance's 2027 Boulder move needs a re-check once the first
+  Colorado edition is announced. If film expansion ever becomes live,
+  Berlinale/TIFF/MIFF each need the deep pass this page's comedy dossiers
+  got — likely as a page of their own.
 
 ## Growth log
 
@@ -1036,3 +1108,17 @@ UK & Ireland:
   listings); and the festival-tracker survey (no machine-readable calendar
   exists anywhere). All claims cited; per-festival deep dives deliberately
   deferred to adoption time.
+- **2026-09-01** *(second pass, same day — the owner asked for film festivals
+  with planner-complex characteristics, explicitly light-touch)* — added *The
+  film adjacency*: a ranked survey of the film festivals that clear the bar
+  (multi-venue, parallel screenings, public single tickets, 8+ days,
+  repeats), led by Berlinale (public short-notice ticketing, films screening
+  up to 5×, an official favourites→iCal planner), TIFF (with tiffr, the only
+  live third-party film planner found), and MIFF (18 days in a city we
+  already track), with the failed-bar cases recorded (Cannes, Venice, SXSW
+  Film, Fantastic Fest) and two cross-circuit facts: repeat screenings split
+  film's public majors from its premiere festivals exactly as recurrence
+  splits comedy, and Fantasia × JFL gives Montreal eleven shared film×comedy
+  days. Key insight 5 widened to carry the film parallel; one open question
+  added (the survey's own limits and the Sundance-to-Boulder re-check). No
+  comedy claim changed.
