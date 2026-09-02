@@ -2,7 +2,7 @@
   "packs": [
     {
       "id": "basics",
-      "version": "60901.2"
+      "version": "60901.5"
     },
     {
       "id": "barriers",
@@ -13,14 +13,14 @@
     },
     {
       "id": "git-github",
-      "version": "60822.2",
+      "version": "60901.1",
       "via": [
         "basics"
       ]
     },
     {
       "id": "html",
-      "version": "60822.1"
+      "version": "60901.1"
     },
     {
       "id": "tidy-repo",
@@ -28,7 +28,7 @@
     },
     {
       "id": "claudinite-growth",
-      "version": "60831.1",
+      "version": "60901.3",
       "config": {
         "retention_days": 10
       }
@@ -49,7 +49,7 @@
     },
     {
       "id": "spec-driven-product",
-      "version": "60822.1"
+      "version": "60901.1"
     },
     {
       "id": "static-website",
@@ -80,11 +80,11 @@
     },
     {
       "id": "claudinite-lifecycle",
-      "version": "60831.3"
+      "version": "60901.2"
     },
     {
       "id": "claudinite-tasks",
-      "version": "60831.9"
+      "version": "60901.2"
     }
   ],
   "accept": [
