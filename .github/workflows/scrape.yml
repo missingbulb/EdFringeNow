@@ -1,8 +1,8 @@
 name: Scrape edfringe shows (full)
 
 # Full rebuild: download every show from the edfringe.com GraphQL API, normalize
-# into the website-ready data files, and commit them. Run manually from the
-# Actions tab. For the lightweight daily top-up see the `refresh-shows` scheduled
+# into the website-ready data files, and commit them. Currently INERT — see the
+# `inert` job below; a dispatch reports the switch and fetches nothing. For the lightweight daily top-up see the `refresh-shows` scheduled
 # task, which the Claudinite scheduler runs (scraper/README.md).
 
 on:
@@ -30,7 +30,20 @@ permissions:
   contents: write
 
 jobs:
+  # The kill switch. Scraping is off — the owner's call — and a dispatchable
+  # workflow is a live route to the API, so the real job below is gated off and
+  # this reports why instead of a silently skipped run. Turning scraping back on
+  # is deleting this job and the `if: false` under it.
+  inert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update scraping is switched off
+        run: |
+          echo "This workflow is inert: update scraping is switched off."
+          echo "Nothing was fetched and no data file was touched."
+
   scrape:
+    if: false   # the kill switch above
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
