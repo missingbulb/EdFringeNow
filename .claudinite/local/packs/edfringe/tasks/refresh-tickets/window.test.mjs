@@ -1,4 +1,4 @@
-// Tests for the refresh-tickets precondition gate (task.mjs): August, read on
+// Tests for the refresh-tickets precondition gate (preconditions.mjs): August, read on
 // the Edinburgh clock. The instants where UTC and Edinburgh disagree about the
 // month — the last hours of 31 July and 31 August — are the cases that matter,
 // and the fixed +1h shift is cross-checked against the real Europe/London zone
@@ -7,7 +7,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { edinburghClock, ticketWindow } from "./task.mjs";
+import { edinburghClock, ticketWindow } from "./preconditions.mjs";
 
 // The real Europe/London wall clock at an instant, straight from the ICU tz data.
 const zoned = new Intl.DateTimeFormat("en-GB", {
