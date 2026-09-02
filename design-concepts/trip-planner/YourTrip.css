@@ -1,0 +1,41 @@
+    .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 22px; }
+    .block { padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; }
+    .block h2 { font-family: var(--display); font-size: 1.25rem; margin: 0; letter-spacing: -0.01em; }
+    .block .why { font-size: 0.86rem; color: var(--muted); margin: -8px 0 0; }
+    .dial { display: flex; flex-direction: column; gap: 8px; }
+    .dial-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .dial-head b { font-size: 0.95rem; }
+    .dial-head span { font-size: 0.8rem; font-weight: 700; color: var(--violet-dark); }
+    .seg { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 12px; background: #eef0f5; }
+    .seg i { display: block; height: 30px; border-radius: 8px; }
+    .seg i.on { background: var(--violet); box-shadow: 0 4px 12px rgba(108,76,241,0.3); }
+    .seg i.half { background: rgba(108,76,241,0.35); }
+    .dial-ends { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
+    .party { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .party-opt { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: #fff; font-weight: 700; font-size: 0.86rem; text-align: center; }
+    .party-opt svg { width: 28px; height: 28px; }
+    .party-opt.is-on { border-color: var(--violet); background: rgba(108,76,241,0.05); color: var(--violet-dark); box-shadow: 0 0 0 3px rgba(108,76,241,0.12); }
+    .party-note { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; border-radius: 12px; background: var(--ok-bg); font-size: 0.84rem; }
+    .party-note b { color: #047857; }
+    .kid-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .field { display: flex; flex-direction: column; gap: 4px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; flex: 1 1 0; min-width: 0; }
+    .field span { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .field b { font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .leg { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: var(--trip-bg); font-size: 0.88rem; }
+    .leg svg { width: 20px; height: 20px; color: var(--trip); }
+    .leg b { color: var(--trip); }
+    .pick2 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .pick { display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+    .pick b { font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; }
+    .pick small { color: var(--muted); font-size: 0.8rem; line-height: 1.35; }
+    .pick.is-on { border-color: var(--violet); background: rgba(108,76,241,0.05); }
+    .pick .box { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid #c2c8d2; display: grid; place-items: center; color: #fff; }
+    .pick.is-on .box { background: var(--violet); border-color: var(--violet); }
+    .stay { display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; align-items: center; padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
+    .stay-img { height: 92px; border-radius: 10px; background: #dfe3ee; position: relative; overflow: hidden; }
+    .stay-img i { position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: #b0b7c3; }
+    .stay-img em { position: absolute; left: 18px; bottom: 30px; width: 44px; height: 40px; background: #98a2b3; border-radius: 3px 3px 0 0; }
+    .stay h3 { margin: 0 0 2px; font-family: var(--display); font-size: 1.05rem; }
+    .stay p { margin: 0; font-size: 0.84rem; color: var(--muted); }
+    .price { font-family: var(--display); font-weight: 800; font-size: 1.3rem; text-align: right; }
+    .price small { display: block; font-size: 0.74rem; color: var(--muted); font-weight: 600; }

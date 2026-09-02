@@ -1,0 +1,28 @@
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .toolbar .search { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--muted); min-width: 320px; }
+    .group { margin-top: 22px; }
+    .group-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .group-head h2 { font-family: var(--display); font-size: 1.3rem; margin: 0; letter-spacing: -0.01em; }
+    .group-head .swatch { width: 12px; height: 26px; border-radius: 4px; }
+    .group-head .count { color: var(--muted); font-size: 0.9rem; }
+    .rows { display: flex; flex-direction: column; gap: 8px; }
+    .row { display: grid; grid-template-columns: 34px 1fr 210px 160px 90px; gap: 14px; align-items: center; padding: 10px 14px; border-radius: 12px; background: #fff; border: 1px solid var(--line); }
+    .row.is-starred { border-color: #f3d269; background: #fffdf3; }
+    .row.is-dim { opacity: 0.55; }
+    .star { width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center; border: 1px solid var(--line); color: #c2c8d2; }
+    .row.is-starred .star { background: var(--fr-locked); border-color: #eac247; color: #7a5b00; }
+    .row .title { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .row .sub { font-size: 0.8rem; color: var(--muted); }
+    .days { display: flex; gap: 3px; }
+    .days i { display: block; width: 36px; height: 24px; border-radius: 4px; background: #eef0f5; }
+    .days i.ok { background: #2ac9de; }
+    .days i.tight { background: #ffce00; }
+    .days i.sold { background: #e6e9ef; border: 1px dashed #c6cdda; }
+    .days i.in { background: var(--violet); box-shadow: 0 0 0 2px #fff inset; }
+    .why { font-size: 0.78rem; color: var(--muted); }
+    .why b { color: var(--ok); }
+    .price { font-family: var(--display); font-weight: 800; text-align: right; }
+    .more { display: flex; justify-content: center; margin-top: 10px; }
+    .fit { display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; background: var(--ok-bg); color: #047857; }
+    .fit-no { background: #fef3f2; color: #b42318; }
+    .why-sort { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; background: rgba(108,76,241,0.06); font-size: 0.84rem; margin-top: 14px; }
