@@ -27,11 +27,6 @@ export default {
   code_work: 'bash worker.sh',
   code_work_timeout: 1800, // the retired workflow's `timeout-minutes: 30`, in seconds
 
-  // `none` — the empty precondition, whose trigger is the calendar (or, while this
-  // is `manual`, the work item somebody filed). The thing this task reacts to —
-  // shows added or edited on edfringe.com — leaves no trace in this repo, so there
-  // is no signal to gate on: the cadence itself is the only honest gate, exactly as
-  // the retired daily cron was. The run is cheap and self-limiting (one paged
-  // `recentlyAdded=LAST_SEVEN_DAYS` pass) and commits nothing when nothing moved.
+  // Upstream show edits leave no trace in this repo, so there is nothing to gate on.
   preconditions: ['none'],
 };

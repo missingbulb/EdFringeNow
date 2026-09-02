@@ -33,7 +33,5 @@ export default {
   code_work: 'bash worker.sh',
   code_work_timeout: 900,
 
-  // The gate is the calendar, not repo state: `in-festival` is this task's own
-  // term, resolved from preconditions.mjs beside this file.
   preconditions: ['in-festival'],
 };
