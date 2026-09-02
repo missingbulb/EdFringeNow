@@ -475,6 +475,18 @@ page itself would have. Go straight to `WebSearch` for an external
 competitor's product and cite the snippet's publisher, per the product-wiki
 pack's own sourcing rule, rather than trying a direct fetch first.
 
+## Needing a real screenshot of a site headless Chromium can't tunnel to
+
+Route every request through Playwright's `page.route('**/*', …)`, fulfilled by `curl` —
+the sandbox proxy blocks a direct `chromium.launch()` request to an off-allowlist host
+even with the proxy passed explicitly, but allows `curl`. (1)
+
+## Dispatching a research subagent for a long, multi-round wiki pass
+
+Give it an explicit budget ("finish with a few NOT FOUNDs rather than dig exhaustively") —
+a subagent killed by a session rate-limit mid-run hands back no report at all, not a
+partial one. (2)
+
 ## A capture pass must never land a rule that teaches routing around a safety or permission denial
 
 On 2026-08-15 the growth-extract subagent (dispatched for issue #359) merged a rule into this
