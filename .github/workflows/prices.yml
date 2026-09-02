@@ -1,7 +1,8 @@
 name: Fetch ticket prices (one-off)
 
 # Real ticket amounts for every paid show, into the fetch-once cache
-# data/prices.json — then regenerate the site data from it.
+# data/prices.json — then regenerate the site data from it. Currently INERT —
+# see the `inert` job below; a dispatch reports the switch and fetches nothing.
 #
 # Deliberately manual, and deliberately NOT on the nightly path. A show's price
 # bands don't change through the festival the way its ticket status does. Every
@@ -60,7 +61,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The kill switch. Scraping is off — the owner's call — and a dispatchable
+  # workflow is a live route to the API, so the real job below is gated off and
+  # this reports why instead of a silently skipped run. Turning scraping back on
+  # is deleting this job and the `if: false` under it.
+  inert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update scraping is switched off
+        run: |
+          echo "This workflow is inert: update scraping is switched off."
+          echo "Nothing was fetched and no data file was touched."
+
   prices:
+    if: false   # the kill switch above
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:

@@ -100,6 +100,10 @@
     }
   ],
   "taskScheduler": {
+    "disabledTasks": [
+      "edfringe/refresh-shows",
+      "edfringe/refresh-tickets"
+    ],
     "agenticTaskInvocationEndpoints": {
       "default": {
         "url": "https://api.anthropic.com/v1/claude_code/routines/trig_019ysxedonGvJiDzVZbJamBd/fire",

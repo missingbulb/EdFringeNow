@@ -124,7 +124,9 @@ Why once, and why it is *not* on the nightly path:
   consumer treats unknown as its own state (`shared/price.js`).
 
 Run it on a runner via the **`Fetch ticket prices (one-off)`** workflow
-(`.github/workflows/prices.yml`), which fetches, regenerates and commits.
+(`.github/workflows/prices.yml`), which fetches, regenerates and commits — though
+that workflow is currently inert, so a dispatch reports the switch and fetches
+nothing. The script itself still runs by hand.
 
 ## normalize.py — turn the raw scrape into website data
 
@@ -218,16 +220,21 @@ python3 scraper/normalize.py --merge
 the venue and per-day files. It is the **`refresh-shows`** task's work (see *How
 the data refreshes run* below); the full rebuild stays a manual workflow,
 **`Scrape edfringe shows (full)`** (`.github/workflows/scrape.yml`). Both commit
-the updated data back to the repo.
+the updated data back to the repo — and both are currently switched off, so
+neither runs until they are turned back on.
 
 ## How the data refreshes run
 
 **Nothing scrapes on its own right now.** The two refreshes are declared as tasks
 under this repo's local pack, each with the shell it runs beside it, and both are
-declared `manual` — a manual task has no occurrence, so the Claudinite scheduler
+switched off twice over. They are declared `manual` — a manual task has no
+occurrence, so the Claudinite scheduler
 (`.github/workflows/claudinite-scheduler.yml`, the repo's only cron) never
-instantiates one and it runs only from a work item created by hand. Turning a
-refresh back on is a one-token edit to its declaration.
+instantiates one — and this repository names them both in
+`taskScheduler.disabledTasks` (`.claudinite-settings.json`), which says the repo
+does not run them at all: the scheduler skips them before instantiating anything
+and closes a sleeping work item that names one. Turning a refresh back on is
+taking it off that list and restoring its cadence.
 
 | Task | What it does |
 |---|---|
@@ -291,6 +298,6 @@ Two invariants hold this up, and breaking either is silent:
 
 `equhost.com` must be reachable from wherever you run this. Claude Code web
 sessions sit behind an egress proxy that may block it; in that case run the
-script locally, or use the **`Scrape edfringe listing pages`** GitHub Action
-(`.github/workflows/scrape.yml`), which runs on a GitHub-hosted runner with open
-network access and uploads the result as an artifact.
+script locally. The **`Scrape edfringe shows (full)`** GitHub Action
+(`.github/workflows/scrape.yml`) would otherwise run it on a GitHub-hosted runner
+with open network access, but it is currently inert.
