@@ -1,24 +1,25 @@
 // Shape tests for this pack's scheduled-task declarations.
 //
 // The Claudinite scheduler reads frequency / agent_model / expected_outcome from
-// task.mjs — never from anywhere else — so a typo'd enum or a missing field means
+// task.json — never from anywhere else — so a typo'd enum or a missing field means
 // a task silently never fires. The canon's own `task-declaration-shape` check
-// asserts that statically at author time; this asserts it by IMPORTING each
-// declaration, which additionally parse-checks the module and its worker wiring.
+// asserts that statically at author time; this asserts it by LOADING each
+// declaration, which additionally parse-checks the JSON and its worker wiring.
 // The contract's legal values are restated here as literals rather than imported
 // from the mount, so this file never couples to the vendored canon.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import refreshShows from "./refresh-shows/task.mjs";
-import refreshTickets from "./refresh-tickets/task.mjs";
 import { terms as ticketTerms } from "./refresh-tickets/preconditions.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const readDeclaration = (dir) => JSON.parse(readFileSync(path.join(__dirname, dir, "task.json"), "utf8"));
+const refreshShows = readDeclaration("refresh-shows");
+const refreshTickets = readDeclaration("refresh-tickets");
 
 const FREQUENCIES = ["daily", "weekly", "monthly", "manual"];
 const MODELS = ["opus", "sonnet", "haiku", "none"];
@@ -62,7 +63,7 @@ for (const [dir, decl, frequency, preconditions, terms] of DECLARED) {
     assert.equal(decl.agent_model, "none");
     assert.equal(decl.code_work, "bash worker.sh");
     assert.ok(Number.isInteger(decl.code_work_timeout) && decl.code_work_timeout > 0);
-    assert.ok(existsSync(path.join(__dirname, dir, "worker.sh")), "the declared worker must exist beside task.mjs");
+    assert.ok(existsSync(path.join(__dirname, dir, "worker.sh")), "the declared worker must exist beside task.json");
   });
 
   test(`${dir}'s own terms each return a verdict with a reason`, () => {
