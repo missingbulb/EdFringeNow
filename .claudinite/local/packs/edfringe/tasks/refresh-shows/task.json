@@ -1,6 +1,7 @@
 {
   "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "refresh-shows",
+  "description": "Fetches Fringe shows added or updated in the last seven days from the ticketing API, merges them into the normalized master, regenerates the venue and per-day files, and commits any changes straight to the default branch.",
   "frequency": "manual",
   "preconditions": [
     "none"

@@ -1,6 +1,7 @@
 {
   "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
   "id": "refresh-tickets",
+  "description": "Refreshes ticket availability status for today onward through the normalized master, regenerating every derived file from that one source, and commits any changes straight to the default branch.",
   "frequency": "manual",
   "schedule_after": [
     "edfringe/refresh-shows"
