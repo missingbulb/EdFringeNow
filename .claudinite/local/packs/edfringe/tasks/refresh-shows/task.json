@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
+  "id": "refresh-shows",
+  "frequency": "manual",
+  "preconditions": [
+    "none"
+  ],
+  "expected_outcome": "none",
+  "code_work": "bash worker.sh",
+  "code_work_timeout": 1800,
+  "agent_model": "none",
+  "agent_instructions": "worker.sh"
+}
