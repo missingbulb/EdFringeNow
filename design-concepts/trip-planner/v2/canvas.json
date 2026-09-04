@@ -1,0 +1,37 @@
+{
+  "pages": [
+    { "id": "lead", "name": "Lead — One big question" },
+    { "id": "directions", "name": "The three directions" }
+  ],
+  "artboards": [
+    { "file": "MainOpening.dc.html", "title": "1 · Which festival, when", "page": "lead", "x": 0, "y": 0, "w": 1440, "h": 1124 },
+    { "file": "MainQuestion.dc.html", "title": "2 · Who's coming", "page": "lead", "x": 1560, "y": 0, "w": 1440, "h": 960 },
+    { "file": "MainMatters.dc.html", "title": "3 · What matters (cost, then pace, then focus)", "page": "lead", "x": 3120, "y": 0, "w": 1440, "h": 960 },
+    { "file": "MainSleep.dc.html", "title": "4 · Where will you sleep", "page": "lead", "x": 0, "y": 1300, "w": 1440, "h": 960 },
+    { "file": "Main.dc.html", "title": "5 · Here's your trip", "page": "lead", "x": 1560, "y": 1300, "w": 1440, "h": 1092 },
+    { "file": "MainCorrect.dc.html", "title": "6 · Anything wrong?", "page": "lead", "x": 3120, "y": 1300, "w": 1440, "h": 1092 },
+
+    { "file": "PostcardOpening.dc.html", "title": "Postcard · opening", "page": "directions", "x": 0, "y": 0, "w": 1440, "h": 960 },
+    { "file": "PostcardQuestion.dc.html", "title": "Postcard · question", "page": "directions", "x": 1560, "y": 0, "w": 1440, "h": 960 },
+    { "file": "PostcardSchedule.dc.html", "title": "Postcard · draft", "page": "directions", "x": 3120, "y": 0, "w": 1440, "h": 1120 },
+    { "file": "PostcardCorrect.dc.html", "title": "Postcard · correction", "page": "directions", "x": 4680, "y": 0, "w": 1440, "h": 1120 },
+
+    { "file": "JourneyOpening.dc.html", "title": "Journey map · opening", "page": "directions", "x": 0, "y": 1400, "w": 1440, "h": 1008 },
+    { "file": "JourneyQuestion.dc.html", "title": "Journey map · question", "page": "directions", "x": 1560, "y": 1400, "w": 1440, "h": 991 },
+    { "file": "JourneySchedule.dc.html", "title": "Journey map · draft", "page": "directions", "x": 3120, "y": 1400, "w": 1440, "h": 1411 },
+    { "file": "JourneyCorrect.dc.html", "title": "Journey map · correction", "page": "directions", "x": 4680, "y": 1400, "w": 1440, "h": 1411 },
+
+    { "file": "BigQuestionOpening.dc.html", "title": "One big question · opening", "page": "directions", "x": 0, "y": 3100, "w": 1440, "h": 1124 },
+    { "file": "BigQuestionQuestion.dc.html", "title": "One big question · question", "page": "directions", "x": 1560, "y": 3100, "w": 1440, "h": 940 },
+    { "file": "BigQuestionSchedule.dc.html", "title": "One big question · draft", "page": "directions", "x": 3120, "y": 3100, "w": 1440, "h": 1000 },
+    { "file": "BigQuestionCorrect.dc.html", "title": "One big question · correction", "page": "directions", "x": 4680, "y": 3100, "w": 1440, "h": 1000 }
+  ],
+  "annotations": [
+    { "id": "lead-intro", "page": "lead", "x": 0, "y": -220, "w": 900, "text": "Lead direction after review: One big question. One picture-choice per screen; each answer shrinks into the token row and never comes back unless tapped (the pencil on a token is the tell). Pace and focus are two more screens like 3. Getting there (from/to) is the train token before 4. The draft is a celebration; the correction opens on click with a curled corner on every tile." },
+    { "id": "lead-reviews", "page": "lead", "x": 1560, "y": -220, "w": 900, "text": "Both reviews ranked this direction first: the only one all three simulated users could operate end to end, and the only tokens that explain themselves. Folded in from the reviews: prices on tiles + a totals block, 'Nothing booked yet', a faint picture of each question ahead, conductor and drum icons, 'book?' vs free time, no Shuffle, a landmark band per day (from Journey map), the curled corner (from Postcard)." },
+    { "id": "dir-postcard", "page": "directions", "x": 0, "y": -200, "w": 720, "text": "Postcard — ranked 3rd by both reviews. Most charming opening (dates as the postmark, festivals as stamps), but the card's back turns into the dense grid again, the peel gesture is invisible at rest, and screen 2 hides the answered tokens under the question." },
+    { "id": "dir-journey", "page": "directions", "x": 0, "y": 1200, "w": 720, "text": "Journey map — ranked 2nd. The most legible wizard mechanics (answered stops name their answer; the route shows what's left) and the cleanest copy; the arrive/leave panel and the 31-box strip read as the booking form the owner rejected. Its per-day landmark header and 'nothing booked yet' pill were taken into the lead." },
+    { "id": "dir-big", "page": "directions", "x": 0, "y": 2900, "w": 720, "text": "One big question — ranked 1st. Loudest holiday feel; the token row announces the questions before any is answered. Faults were affordance fixes, not structure: long-press, no money anywhere, moons unexplained, one dash meaning two things. All fixed in the lead set." }
+  ],
+  "launch": { "view": "canvas", "page": "lead" }
+}

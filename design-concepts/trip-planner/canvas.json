@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "ChooseFestival.dc.html", "title": "1 · Choose the festival", "x": 0, "y": 0, "w": 1440, "h": 1290 },
+    { "file": "YourTrip.dc.html", "title": "2 · Your trip", "x": 1560, "y": 0, "w": 1440, "h": 1330 },
+    { "file": "Main.dc.html", "title": "3 · Draft schedule", "x": 0, "y": 1560, "w": 1440, "h": 1140 },
+    { "file": "ContentChooser.dc.html", "title": "4 · Content chooser", "x": 1560, "y": 1560, "w": 1440, "h": 1380 }
+  ],
+  "annotations": [
+    { "id": "flow", "x": 0, "y": -170, "w": 640, "text": "Trip planner flow — festival → your trip → draft schedule → content chooser.\nOne visual system, lifted from the current planner: Plus Jakarta Sans + Inter, violet accent, 16px radii. Each festival keeps its own colour on every screen (Fringe violet, International Festival teal, Book/Tattoo amber & blue)." },
+    { "id": "note-schedule", "x": 0, "y": 1400, "w": 520, "text": "The draft is the product. Every block is a proposal; the popover is the whole correction vocabulary for a repeating show (time / show / genre / venue). A one-off event only offers Not interested. Starred = gold ring, never swapped." },
+    { "id": "note-chooser", "x": 1560, "y": 1400, "w": 520, "text": "The existing grid survives as the content chooser, one step deeper. Grouped by origin, all of it visible behind Show 20 more; starred rows pinned at the top of their group. The Best for your trip sort is a later feature — A–Z / By time keep the plain catalogue." }
+  ],
+  "launch": { "view": "canvas" }
+}

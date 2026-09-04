@@ -1,0 +1,4 @@
+# Assembled from *.body.html + _common.css + <Name>.css by assemble.sh
+*.dc.html
+# The seeded design canvas (~2 MiB, generated from the artboards)
+festival-trip-planner.html

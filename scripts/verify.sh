@@ -47,7 +47,7 @@ step "JavaScript syntax — node --check"
 # Only our own tracked source: the js/ app, the plan/ planner, the shared/
 # code both import, and the scripts/ tooling. Never the vendored .claudinite
 # mount (not our code) or the plan/design/ mock (HTML).
-js_files=$(git ls-files 'js' 'plan' 'scripts' 'shared' 'product' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
+js_files=$(git ls-files 'js' 'plan' 'scripts' 'shared' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
 # `node --check` takes one file per process, and ~170 sequential node startups
 # was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
 # the cores instead; -n 1 because the flag genuinely accepts only one path.
