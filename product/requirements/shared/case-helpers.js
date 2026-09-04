@@ -82,6 +82,13 @@ async function nowReady(page) {
 
 // Planner is ready when the catalogue has landed (the search placeholder
 // switches to the real count) and the version tooltip is in.
+// The postcard planner (/plan2): the page marks itself ready once the test
+// data and the symbol sheet are in and the first render has landed.
+async function plan2Ready(page) {
+  await page.waitForSelector("body[data-ready]", { timeout: 20000 });
+  await settle(page);
+}
+
 async function planReady(page) {
   await page.waitForFunction(() => {
     const i = document.getElementById("ssInput");
@@ -118,6 +125,7 @@ module.exports = {
   PLAN_FAVOURITES,
   nowReady,
   planReady,
+  plan2Ready,
   settle,
   openPanel,
   uploadFile,
