@@ -6,15 +6,15 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 declare -A NAME=( [postcard]=Postcard [journey]=Journey [bigquestion]=BigQuestion [main]=Main )
-declare -A SCREEN=( [01-opening]=Opening [02-question]=Question [03-schedule]=Schedule [04-correct]=Correct )
+declare -A SCREEN=( [01-opening]=Opening [02-question]=Question [03-schedule]=Schedule [04-correct]=Correct [03-matters]=Matters [04-sleep]=Sleep [05-schedule]=Schedule [06-correct]=Correct )
 args=()
 for dir in postcard journey bigquestion main; do
   [ -d "$dir" ] || continue
-  for f in "$dir"/0[1-4]-*.html; do
+  for f in "$dir"/0[1-6]-*.html; do
     base="$(basename "$f" .html)"
     stem="${NAME[$dir]}${SCREEN[$base]}"
     # The lead direction's schedule screen is the canvas entry artboard.
-    if [ "$dir" = main ] && [ "$base" = 03-schedule ]; then stem=Main; fi
+    if [ "$dir" = main ] && [ "$base" = 05-schedule ]; then stem=Main; fi
     node to-artboard.mjs "$f" "$stem.dc.html"
     args+=(--artboard "$stem.dc.html")
   done
