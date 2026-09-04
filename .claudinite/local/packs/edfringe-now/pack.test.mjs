@@ -71,7 +71,7 @@ test("a glob added to package.json but not to verify.sh is reported", () => {
   // The exact regression this guards: a new local pack's pack.test.mjs is wired
   // into `npm test`, the verify.sh copy is forgotten, and CI never runs it.
   const out = rule.run(ctxOf({
-    "package.json": packageJson(`${GLOBS} .claudinite/local/packs/edfringe/tasks/*/*.test.mjs`),
+    "package.json": packageJson(`${GLOBS} .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs`),
     "scripts/verify.sh": verifyScript(GLOBS),
   }));
   assert.equal(out.length, 1);
@@ -79,7 +79,7 @@ test("a glob added to package.json but not to verify.sh is reported", () => {
   assert.equal(out[0].severity, "blocking");
   assert.equal(out[0].file, "scripts/verify.sh");
   assert.match(out[0].what, /drifted apart/);
-  assert.match(out[0].what, /only in package\.json: \.claudinite\/local\/packs\/edfringe\/tasks\/\*\/\*\.test\.mjs/);
+  assert.match(out[0].what, /only in package\.json: \.claudinite\/local\/packs\/edfringe-now\/tasks\/\*\/\*\.test\.mjs/);
   assert.ok(out[0].fix.includes("npm test"), "the fix must name the single-source escape hatch");
 });
 
@@ -254,7 +254,7 @@ test("this repo carries no stray package.json", () => {
 // --- worker-restores-main: a local task worker that commits or pushes must
 // return the shared checkout to `main` before it writes ---
 
-const WORKER_PATH = ".claudinite/local/packs/edfringe/tasks/refresh-widgets/worker.sh";
+const WORKER_PATH = ".claudinite/local/packs/edfringe-now/tasks/refresh-widgets/worker.sh";
 
 const guard = `current_branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$current_branch" != "main" ]; then
@@ -316,7 +316,7 @@ test("non-worker scripts are never flagged", () => {
   const out = workerRestoresMainRule.run(ctxOf({
     "scripts/verify.sh": writes,
     ".github/workflows/prices.yml": writes,
-    ".claudinite/local/packs/edfringe/tasks/refresh-widgets/task.mjs": writes,
+    ".claudinite/local/packs/edfringe-now/tasks/refresh-widgets/task.mjs": writes,
   }));
   assert.deepEqual(out, []);
 });
@@ -335,7 +335,7 @@ test("this repo's real task workers all restore main before writing", () => {
 });
 
 test("the pack manifest declares the checks and stays hand-declared", () => {
-  assert.equal(pack.id, "edfringe");
+  assert.equal(pack.id, "edfringe-now");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");

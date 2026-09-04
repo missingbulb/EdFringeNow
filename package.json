@@ -4,7 +4,7 @@
   "private": true,
   "description": "EdFringeNow — client-side Edinburgh Fringe discovery + planner. No runtime dependencies; a build/serve-free static site.",
   "scripts": {
-    "test": "node --test shared/__tests__/*.test.mjs js/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs plan2/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe/tasks/*.test.mjs .claudinite/local/packs/edfringe/tasks/*/*.test.mjs",
+    "test": "node --test shared/__tests__/*.test.mjs js/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs plan2/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs",
     "test:ui": "node --test --test-concurrency=1 product/requirements/screen/screen.test.js product/requirements/behavior/behavior.test.js",
     "refresh:ui": "node product/requirements/shared/refresh.js",
     "verify": "bash scripts/verify.sh",

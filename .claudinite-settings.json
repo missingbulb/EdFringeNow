@@ -33,9 +33,7 @@
         "retention_days": 10
       }
     },
-    "local/edfringe",
-    "local/edfringe-data",
-    "local/edfringe-requirements",
+    "local/edfringe-now",
     {
       "id": "executable-requirements",
       "version": "60902.1",
