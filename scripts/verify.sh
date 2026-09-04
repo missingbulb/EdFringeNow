@@ -41,13 +41,13 @@ step "Unit tests — node --test"
 # bijection, the gallery gate, and the pure logic cases. The browser-driven
 # screen/behavior lanes are `npm run test:ui` (CI's ui-requirements job), not
 # this fast path.
-node --test shared/__tests__/*.test.mjs js/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
+node --test shared/__tests__/*.test.mjs js/__tests__/*.test.mjs plan/lib/__tests__/*.test.mjs plan2/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
 
 step "JavaScript syntax — node --check"
 # Only our own tracked source: the js/ app, the plan/ planner, the shared/
 # code both import, and the scripts/ tooling. Never the vendored .claudinite
 # mount (not our code) or the plan/design/ mock (HTML).
-js_files=$(git ls-files 'js' 'plan' 'scripts' 'shared' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
+js_files=$(git ls-files 'js' 'plan' 'plan2' 'scripts' 'shared' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
 # `node --check` takes one file per process, and ~170 sequential node startups
 # was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
 # the cores instead; -n 1 because the flag genuinely accepts only one path.

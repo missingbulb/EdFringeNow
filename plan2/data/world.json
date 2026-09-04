@@ -1,0 +1,2875 @@
+{
+  "note": "Hand-authored test data for the /plan2 prototype. Nothing here is live: cities, festivals, shows, tables, stays and journeys are illustrative, chosen for variety (many performances vs one-offs, family vs 16+, free vs dear, near vs far).",
+  "cities": [
+    {
+      "id": "edinburgh",
+      "name": "Edinburgh",
+      "country": "Scotland",
+      "picture": "il-skyline",
+      "lat": 55.9533,
+      "lng": -3.1883,
+      "currency": "£",
+      "arrivals": {
+        "train": {
+          "name": "Waverley",
+          "lat": 55.952,
+          "lng": -3.189
+        },
+        "plane": {
+          "name": "Edinburgh Airport",
+          "lat": 55.95,
+          "lng": -3.3725,
+          "transferMin": 35
+        },
+        "car": {
+          "name": "the guesthouse car park",
+          "lat": 55.943,
+          "lng": -3.183
+        },
+        "coach": {
+          "name": "St Andrew Square",
+          "lat": 55.954,
+          "lng": -3.192
+        }
+      },
+      "venues": [
+        {
+          "id": "pleasance",
+          "name": "Pleasance Courtyard",
+          "short": "Pleasance",
+          "lat": 55.9483,
+          "lng": -3.1817
+        },
+        {
+          "id": "assembly-gs",
+          "name": "Assembly George Square",
+          "short": "Assembly",
+          "lat": 55.9436,
+          "lng": -3.1889
+        },
+        {
+          "id": "underbelly",
+          "name": "Underbelly Cowgate",
+          "short": "Underbelly",
+          "lat": 55.9484,
+          "lng": -3.1888
+        },
+        {
+          "id": "gilded",
+          "name": "Gilded Balloon Teviot",
+          "short": "Gilded Balloon",
+          "lat": 55.945,
+          "lng": -3.1886
+        },
+        {
+          "id": "summerhall",
+          "name": "Summerhall",
+          "short": "Summerhall",
+          "lat": 55.9398,
+          "lng": -3.1798
+        },
+        {
+          "id": "usher",
+          "name": "Usher Hall",
+          "short": "Usher Hall",
+          "lat": 55.9468,
+          "lng": -3.2049
+        },
+        {
+          "id": "festival-theatre",
+          "name": "Festival Theatre",
+          "short": "Festival Theatre",
+          "lat": 55.9466,
+          "lng": -3.1846
+        },
+        {
+          "id": "queens-hall",
+          "name": "The Queen's Hall",
+          "short": "Queen's Hall",
+          "lat": 55.9405,
+          "lng": -3.1808
+        },
+        {
+          "id": "futures",
+          "name": "Edinburgh Futures Institute",
+          "short": "Futures Institute",
+          "lat": 55.943,
+          "lng": -3.1935
+        },
+        {
+          "id": "esplanade",
+          "name": "Castle Esplanade",
+          "short": "Esplanade",
+          "lat": 55.9486,
+          "lng": -3.199
+        },
+        {
+          "id": "stand",
+          "name": "The Stand",
+          "short": "The Stand",
+          "lat": 55.9557,
+          "lng": -3.1955
+        },
+        {
+          "id": "monkey-barrel",
+          "name": "Monkey Barrel",
+          "short": "Monkey Barrel",
+          "lat": 55.9497,
+          "lng": -3.1898
+        },
+        {
+          "id": "c-aurora",
+          "name": "C aurora",
+          "short": "C venues",
+          "lat": 55.9445,
+          "lng": -3.18
+        }
+      ],
+      "hotels": [
+        {
+          "id": "southside",
+          "name": "Southside Guesthouse",
+          "kind": "guesthouse",
+          "address": "12 Buccleuch Street, EH8 9LZ",
+          "lat": 55.943,
+          "lng": -3.183,
+          "perNight": 132,
+          "sleeps": 4,
+          "cost": 3,
+          "comfort": 1,
+          "location": 3
+        },
+        {
+          "id": "grassmarket-hostel",
+          "name": "Grassmarket Hostel",
+          "kind": "hostel",
+          "address": "37 Grassmarket, EH1 2HS",
+          "lat": 55.9474,
+          "lng": -3.1955,
+          "perNight": 38,
+          "sleeps": 1,
+          "cost": 3,
+          "comfort": 1,
+          "location": 3
+        },
+        {
+          "id": "old-town-boutique",
+          "name": "The Witchery Rooms",
+          "kind": "hotel",
+          "address": "Castlehill, EH1 2NF",
+          "lat": 55.9489,
+          "lng": -3.1949,
+          "perNight": 260,
+          "sleeps": 2,
+          "cost": 1,
+          "comfort": 3,
+          "location": 3
+        },
+        {
+          "id": "leith-apartment",
+          "name": "Shore Apartment, Leith",
+          "kind": "apartment",
+          "address": "The Shore, EH6 6QU",
+          "lat": 55.975,
+          "lng": -3.17,
+          "perNight": 150,
+          "sleeps": 5,
+          "cost": 2,
+          "comfort": 3,
+          "location": 1
+        },
+        {
+          "id": "new-town-hotel",
+          "name": "George Street Hotel",
+          "kind": "hotel",
+          "address": "George Street, EH2 2LR",
+          "lat": 55.9531,
+          "lng": -3.1974,
+          "perNight": 210,
+          "sleeps": 3,
+          "cost": 1,
+          "comfort": 3,
+          "location": 2
+        },
+        {
+          "id": "murrayfield-bnb",
+          "name": "Murrayfield B&B",
+          "kind": "guesthouse",
+          "address": "Corstorphine Road, EH12 6HP",
+          "lat": 55.9425,
+          "lng": -3.2415,
+          "perNight": 95,
+          "sleeps": 4,
+          "cost": 3,
+          "comfort": 2,
+          "location": 1
+        }
+      ],
+      "restaurants": [
+        {
+          "id": "mosque-kitchen",
+          "name": "Mosque Kitchen",
+          "cuisine": "Curry",
+          "area": "Southside",
+          "lat": 55.9445,
+          "lng": -3.1857,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "13:30",
+            "18:00"
+          ]
+        },
+        {
+          "id": "ting-thai",
+          "name": "Ting Thai Caravan",
+          "cuisine": "Thai",
+          "area": "Teviot Place",
+          "lat": 55.9457,
+          "lng": -3.1885,
+          "price": 1,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 6,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "17:30",
+            "18:45",
+            "20:15"
+          ]
+        },
+        {
+          "id": "civerinos",
+          "name": "Civerinos Slice",
+          "cuisine": "Pizza",
+          "area": "Forrest Road",
+          "lat": 55.9463,
+          "lng": -3.1913,
+          "price": 1,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 3,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:00",
+            "13:15",
+            "17:45",
+            "19:30"
+          ]
+        },
+        {
+          "id": "dishoom",
+          "name": "Dishoom",
+          "cuisine": "Bombay",
+          "area": "St Andrew Square",
+          "lat": 55.9542,
+          "lng": -3.1915,
+          "price": 2,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 2,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "18:15",
+            "19:40",
+            "21:00"
+          ]
+        },
+        {
+          "id": "makars",
+          "name": "Makars Mash Bar",
+          "cuisine": "Scottish",
+          "area": "The Mound",
+          "lat": 55.9505,
+          "lng": -3.1957,
+          "price": 2,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 5,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "18:00",
+            "19:30"
+          ]
+        },
+        {
+          "id": "wildflower",
+          "name": "Wildflower",
+          "cuisine": "Brunch",
+          "area": "Grassmarket",
+          "lat": 55.9471,
+          "lng": -3.196,
+          "price": 2,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 4,
+          "meals": [
+            "lunch"
+          ],
+          "slots": [
+            "11:30",
+            "13:00"
+          ]
+        },
+        {
+          "id": "stockbridge-market",
+          "name": "Stockbridge Market",
+          "cuisine": "Street food",
+          "area": "Stockbridge",
+          "lat": 55.9587,
+          "lng": -3.2072,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch"
+          ],
+          "slots": [
+            "12:00",
+            "13:00"
+          ],
+          "days": [
+            "Sun"
+          ]
+        },
+        {
+          "id": "courtyard-stalls",
+          "name": "Courtyard food stalls",
+          "cuisine": "Stalls",
+          "area": "Pleasance",
+          "lat": 55.9483,
+          "lng": -3.1817,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "13:30",
+            "18:00",
+            "19:00"
+          ]
+        },
+        {
+          "id": "timberyard",
+          "name": "Timberyard",
+          "cuisine": "Tasting menu",
+          "area": "Lady Lawson Street",
+          "lat": 55.9463,
+          "lng": -3.2035,
+          "price": 3,
+          "kids": false,
+          "bookable": true,
+          "tablesLeft": 1,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "18:30",
+            "20:30"
+          ]
+        },
+        {
+          "id": "ondine",
+          "name": "Ondine",
+          "cuisine": "Seafood",
+          "area": "George IV Bridge",
+          "lat": 55.9484,
+          "lng": -3.1917,
+          "price": 3,
+          "kids": false,
+          "bookable": true,
+          "tablesLeft": 2,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "18:30",
+            "20:00"
+          ]
+        }
+      ],
+      "excursions": [
+        {
+          "id": "arthurs-seat",
+          "name": "Arthur's Seat & Portobello beach",
+          "start": "09:30",
+          "hours": 5,
+          "price": 0,
+          "kidsMin": 4,
+          "picture": "il-picnic",
+          "sub": "picnic packed · bus 26 back"
+        },
+        {
+          "id": "rosslyn",
+          "name": "Rosslyn Chapel & Roslin Glen",
+          "start": "10:00",
+          "hours": 4,
+          "price": 12,
+          "kidsMin": 0,
+          "picture": "il-picnic",
+          "sub": "bus 37 from Princes Street"
+        },
+        {
+          "id": "forth-boat",
+          "name": "Forth bridges boat trip",
+          "start": "11:00",
+          "hours": 3,
+          "price": 22,
+          "kidsMin": 0,
+          "picture": "il-deckchair",
+          "sub": "from South Queensferry"
+        },
+        {
+          "id": "britannia",
+          "name": "Royal Yacht Britannia",
+          "start": "10:00",
+          "hours": 3,
+          "price": 20,
+          "kidsMin": 0,
+          "picture": "il-deckchair",
+          "sub": "Leith · tea on deck"
+        },
+        {
+          "id": "pentlands",
+          "name": "Pentland Hills walk",
+          "start": "09:00",
+          "hours": 6,
+          "price": 0,
+          "kidsMin": 8,
+          "picture": "il-picnic",
+          "sub": "boots · bus 4 to Hillend"
+        }
+      ]
+    },
+    {
+      "id": "brighton",
+      "name": "Brighton",
+      "country": "England",
+      "picture": "il-pier",
+      "lat": 50.8225,
+      "lng": -0.1372,
+      "currency": "£",
+      "arrivals": {
+        "train": {
+          "name": "Brighton station",
+          "lat": 50.829,
+          "lng": -0.141
+        },
+        "plane": {
+          "name": "Gatwick",
+          "lat": 51.153,
+          "lng": -0.182,
+          "transferMin": 30
+        },
+        "car": {
+          "name": "Regency Square car park",
+          "lat": 50.822,
+          "lng": -0.15
+        },
+        "coach": {
+          "name": "Pool Valley",
+          "lat": 50.82,
+          "lng": -0.139
+        }
+      },
+      "venues": [
+        {
+          "id": "warren",
+          "name": "The Warren",
+          "short": "The Warren",
+          "lat": 50.8226,
+          "lng": -0.1213
+        },
+        {
+          "id": "spiegeltent",
+          "name": "Spiegeltent, Old Steine",
+          "short": "Spiegeltent",
+          "lat": 50.8213,
+          "lng": -0.1367
+        },
+        {
+          "id": "komedia",
+          "name": "Komedia",
+          "short": "Komedia",
+          "lat": 50.8262,
+          "lng": -0.1394
+        },
+        {
+          "id": "dome",
+          "name": "Brighton Dome",
+          "short": "The Dome",
+          "lat": 50.8237,
+          "lng": -0.1384
+        }
+      ],
+      "hotels": [
+        {
+          "id": "kemptown-bnb",
+          "name": "Kemptown B&B",
+          "kind": "guesthouse",
+          "address": "Madeira Place, BN2 1TN",
+          "lat": 50.8195,
+          "lng": -0.1255,
+          "perNight": 110,
+          "sleeps": 3,
+          "cost": 3,
+          "comfort": 2,
+          "location": 3
+        },
+        {
+          "id": "seafront-hotel",
+          "name": "The Grand",
+          "kind": "hotel",
+          "address": "King's Road, BN1 2FW",
+          "lat": 50.8214,
+          "lng": -0.1478,
+          "perNight": 240,
+          "sleeps": 2,
+          "cost": 1,
+          "comfort": 3,
+          "location": 2
+        },
+        {
+          "id": "hove-flat",
+          "name": "Hove seafront flat",
+          "kind": "apartment",
+          "address": "Kingsway, BN3 2LR",
+          "lat": 50.8265,
+          "lng": -0.1745,
+          "perNight": 140,
+          "sleeps": 5,
+          "cost": 2,
+          "comfort": 3,
+          "location": 1
+        }
+      ],
+      "restaurants": [
+        {
+          "id": "bincho",
+          "name": "Bincho Yakitori",
+          "cuisine": "Japanese",
+          "area": "Preston Street",
+          "lat": 50.822,
+          "lng": -0.152,
+          "price": 2,
+          "kids": false,
+          "bookable": true,
+          "tablesLeft": 3,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "18:00",
+            "20:00"
+          ]
+        },
+        {
+          "id": "lanes-fish",
+          "name": "Bankers Fish & Chips",
+          "cuisine": "Fish and chips",
+          "area": "Western Road",
+          "lat": 50.824,
+          "lng": -0.148,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "18:00"
+          ]
+        },
+        {
+          "id": "food-for-friends",
+          "name": "Food for Friends",
+          "cuisine": "Vegetarian",
+          "area": "The Lanes",
+          "lat": 50.8223,
+          "lng": -0.1405,
+          "price": 2,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 4,
+          "meals": [
+            "lunch",
+            "dinner"
+          ],
+          "slots": [
+            "12:30",
+            "18:30"
+          ]
+        },
+        {
+          "id": "pier-doughnuts",
+          "name": "Pier doughnuts",
+          "cuisine": "Snack",
+          "area": "Palace Pier",
+          "lat": 50.8168,
+          "lng": -0.1332,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch"
+          ],
+          "slots": [
+            "13:00"
+          ]
+        }
+      ],
+      "excursions": [
+        {
+          "id": "seven-sisters",
+          "name": "Seven Sisters cliff walk",
+          "start": "09:30",
+          "hours": 6,
+          "price": 0,
+          "kidsMin": 8,
+          "picture": "il-picnic",
+          "sub": "bus 12 to Seaford"
+        },
+        {
+          "id": "pavilion",
+          "name": "Royal Pavilion & the Lanes",
+          "start": "10:30",
+          "hours": 3,
+          "price": 17,
+          "kidsMin": 0,
+          "picture": "il-deckchair",
+          "sub": "tickets at the door"
+        },
+        {
+          "id": "beach-day",
+          "name": "Beach & Palace Pier",
+          "start": "11:00",
+          "hours": 4,
+          "price": 0,
+          "kidsMin": 0,
+          "picture": "il-deckchair",
+          "sub": "deckchairs · arcade"
+        }
+      ]
+    },
+    {
+      "id": "adelaide",
+      "name": "Adelaide",
+      "country": "Australia",
+      "picture": "il-hills",
+      "lat": -34.9285,
+      "lng": 138.6007,
+      "currency": "A$",
+      "arrivals": {
+        "plane": {
+          "name": "Adelaide Airport",
+          "lat": -34.945,
+          "lng": 138.531,
+          "transferMin": 25
+        },
+        "train": {
+          "name": "Adelaide station",
+          "lat": -34.921,
+          "lng": 138.596
+        },
+        "car": {
+          "name": "the hotel car park",
+          "lat": -34.925,
+          "lng": 138.6
+        },
+        "coach": {
+          "name": "Franklin Street",
+          "lat": -34.93,
+          "lng": 138.594
+        }
+      },
+      "venues": [
+        {
+          "id": "garden",
+          "name": "Garden of Unearthly Delights",
+          "short": "The Garden",
+          "lat": -34.921,
+          "lng": 138.612
+        },
+        {
+          "id": "gluttony",
+          "name": "Gluttony, Rymill Park",
+          "short": "Gluttony",
+          "lat": -34.922,
+          "lng": 138.616
+        },
+        {
+          "id": "botanic",
+          "name": "Botanic Park",
+          "short": "Botanic Park",
+          "lat": -34.916,
+          "lng": 138.61
+        },
+        {
+          "id": "holden",
+          "name": "Holden Street Theatres",
+          "short": "Holden Street",
+          "lat": -34.9,
+          "lng": 138.6
+        }
+      ],
+      "hotels": [
+        {
+          "id": "east-end-apartment",
+          "name": "East End apartment",
+          "kind": "apartment",
+          "address": "Rundle Street",
+          "lat": -34.922,
+          "lng": 138.61,
+          "perNight": 190,
+          "sleeps": 4,
+          "cost": 2,
+          "comfort": 3,
+          "location": 3
+        },
+        {
+          "id": "backpackers",
+          "name": "Hindley Street backpackers",
+          "kind": "hostel",
+          "address": "Hindley Street",
+          "lat": -34.923,
+          "lng": 138.594,
+          "perNight": 45,
+          "sleeps": 1,
+          "cost": 3,
+          "comfort": 1,
+          "location": 2
+        },
+        {
+          "id": "glenelg-motel",
+          "name": "Glenelg beach motel",
+          "kind": "hotel",
+          "address": "Jetty Road, Glenelg",
+          "lat": -34.98,
+          "lng": 138.514,
+          "perNight": 120,
+          "sleeps": 4,
+          "cost": 3,
+          "comfort": 2,
+          "location": 1
+        }
+      ],
+      "restaurants": [
+        {
+          "id": "central-market",
+          "name": "Central Market",
+          "cuisine": "Market",
+          "area": "Gouger Street",
+          "lat": -34.93,
+          "lng": 138.597,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch"
+          ],
+          "slots": [
+            "12:00",
+            "13:00"
+          ]
+        },
+        {
+          "id": "africola",
+          "name": "Africola",
+          "cuisine": "South African",
+          "area": "East End",
+          "lat": -34.921,
+          "lng": 138.611,
+          "price": 3,
+          "kids": false,
+          "bookable": true,
+          "tablesLeft": 2,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "18:00",
+            "20:30"
+          ]
+        },
+        {
+          "id": "garden-stalls",
+          "name": "Garden food stalls",
+          "cuisine": "Stalls",
+          "area": "The Garden",
+          "lat": -34.921,
+          "lng": 138.612,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "18:00",
+            "19:30"
+          ]
+        }
+      ],
+      "excursions": [
+        {
+          "id": "hahndorf",
+          "name": "Hahndorf & the Adelaide Hills",
+          "start": "09:30",
+          "hours": 6,
+          "price": 0,
+          "kidsMin": 0,
+          "picture": "il-picnic",
+          "sub": "bus 864 from Currie Street"
+        },
+        {
+          "id": "glenelg-tram",
+          "name": "Glenelg beach by tram",
+          "start": "11:00",
+          "hours": 4,
+          "price": 0,
+          "kidsMin": 0,
+          "picture": "il-deckchair",
+          "sub": "tram from Victoria Square"
+        }
+      ]
+    },
+    {
+      "id": "avignon",
+      "name": "Avignon",
+      "country": "France",
+      "picture": "il-bridge",
+      "lat": 43.9493,
+      "lng": 4.8055,
+      "currency": "€",
+      "arrivals": {
+        "train": {
+          "name": "Avignon TGV",
+          "lat": 43.921,
+          "lng": 4.786,
+          "transferMin": 15
+        },
+        "plane": {
+          "name": "Marseille Provence",
+          "lat": 43.436,
+          "lng": 5.215,
+          "transferMin": 70
+        },
+        "car": {
+          "name": "Parking des Halles",
+          "lat": 43.948,
+          "lng": 4.809
+        },
+        "coach": {
+          "name": "Gare routière",
+          "lat": 43.941,
+          "lng": 4.806
+        }
+      },
+      "venues": [
+        {
+          "id": "cour-honneur",
+          "name": "Cour d'honneur du Palais des papes",
+          "short": "Palais des papes",
+          "lat": 43.951,
+          "lng": 4.807
+        },
+        {
+          "id": "chene-noir",
+          "name": "Théâtre du Chêne Noir",
+          "short": "Chêne Noir",
+          "lat": 43.948,
+          "lng": 4.813
+        },
+        {
+          "id": "chapeau-rouge",
+          "name": "Théâtre du Chapeau Rouge",
+          "short": "Chapeau Rouge",
+          "lat": 43.947,
+          "lng": 4.804
+        },
+        {
+          "id": "gymnase",
+          "name": "Gymnase du lycée Saint-Joseph",
+          "short": "Gymnase",
+          "lat": 43.944,
+          "lng": 4.801
+        }
+      ],
+      "hotels": [
+        {
+          "id": "intramuros-hotel",
+          "name": "Hôtel de l'Horloge",
+          "kind": "hotel",
+          "address": "Place de l'Horloge",
+          "lat": 43.949,
+          "lng": 4.806,
+          "perNight": 165,
+          "sleeps": 3,
+          "cost": 2,
+          "comfort": 3,
+          "location": 3
+        },
+        {
+          "id": "villeneuve-chambre",
+          "name": "Chambre d'hôtes, Villeneuve-lès-Avignon",
+          "kind": "guesthouse",
+          "address": "Rue de la République, Villeneuve",
+          "lat": 43.966,
+          "lng": 4.796,
+          "perNight": 88,
+          "sleeps": 4,
+          "cost": 3,
+          "comfort": 2,
+          "location": 1
+        }
+      ],
+      "restaurants": [
+        {
+          "id": "halles",
+          "name": "Les Halles d'Avignon",
+          "cuisine": "Market",
+          "area": "Place Pie",
+          "lat": 43.948,
+          "lng": 4.809,
+          "price": 1,
+          "kids": true,
+          "bookable": false,
+          "meals": [
+            "lunch"
+          ],
+          "slots": [
+            "12:00",
+            "13:00"
+          ]
+        },
+        {
+          "id": "fou-de-fafa",
+          "name": "Le Fou de Fafa",
+          "cuisine": "Bistro",
+          "area": "Rue des Trois Faucons",
+          "lat": 43.946,
+          "lng": 4.807,
+          "price": 2,
+          "kids": true,
+          "bookable": true,
+          "tablesLeft": 3,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "19:00",
+            "21:00"
+          ]
+        },
+        {
+          "id": "mirande",
+          "name": "La Mirande",
+          "cuisine": "Gastronomic",
+          "area": "Place de l'Amirande",
+          "lat": 43.951,
+          "lng": 4.808,
+          "price": 3,
+          "kids": false,
+          "bookable": true,
+          "tablesLeft": 1,
+          "meals": [
+            "dinner"
+          ],
+          "slots": [
+            "19:30",
+            "21:30"
+          ]
+        }
+      ],
+      "excursions": [
+        {
+          "id": "pont-du-gard",
+          "name": "Pont du Gard & a swim",
+          "start": "09:30",
+          "hours": 6,
+          "price": 9,
+          "kidsMin": 0,
+          "picture": "il-picnic",
+          "sub": "bus A15 · towels"
+        },
+        {
+          "id": "chateauneuf",
+          "name": "Châteauneuf-du-Pape vineyards",
+          "start": "10:00",
+          "hours": 5,
+          "price": 30,
+          "kidsMin": 16,
+          "picture": "il-deckchair",
+          "sub": "tasting · grown-ups only"
+        }
+      ]
+    }
+  ],
+  "festivals": [
+    {
+      "id": "fringe",
+      "name": "Edinburgh Festival Fringe",
+      "short": "Fringe",
+      "cityId": "edinburgh",
+      "from": "2026-08-07",
+      "to": "2026-08-31",
+      "colour": "#6c4cf1",
+      "icon": "ic-masks",
+      "genres": [
+        "Comedy",
+        "Theatre",
+        "Children's",
+        "Circus",
+        "Cabaret",
+        "Music",
+        "Magic",
+        "Dance",
+        "Spoken word"
+      ]
+    },
+    {
+      "id": "eif",
+      "name": "Edinburgh International Festival",
+      "short": "International Festival",
+      "cityId": "edinburgh",
+      "from": "2026-08-01",
+      "to": "2026-08-24",
+      "colour": "#2a8a84",
+      "icon": "ic-harp",
+      "genres": [
+        "Classical",
+        "Opera",
+        "Dance",
+        "Theatre"
+      ]
+    },
+    {
+      "id": "book",
+      "name": "Edinburgh International Book Festival",
+      "short": "Book Festival",
+      "cityId": "edinburgh",
+      "from": "2026-08-08",
+      "to": "2026-08-24",
+      "colour": "#c98a2b",
+      "icon": "ic-book",
+      "genres": [
+        "Talks",
+        "Children's"
+      ]
+    },
+    {
+      "id": "tattoo",
+      "name": "The Royal Edinburgh Military Tattoo",
+      "short": "Tattoo",
+      "cityId": "edinburgh",
+      "from": "2026-08-01",
+      "to": "2026-08-23",
+      "colour": "#d0432f",
+      "icon": "ic-castle",
+      "genres": [
+        "Spectacle"
+      ]
+    },
+    {
+      "id": "brighton-fringe",
+      "name": "Brighton Fringe",
+      "short": "Brighton Fringe",
+      "cityId": "brighton",
+      "from": "2026-05-01",
+      "to": "2026-05-31",
+      "colour": "#6c4cf1",
+      "icon": "ic-masks",
+      "genres": [
+        "Comedy",
+        "Theatre",
+        "Cabaret",
+        "Children's",
+        "Music"
+      ]
+    },
+    {
+      "id": "brighton-festival",
+      "name": "Brighton Festival",
+      "short": "Brighton Festival",
+      "cityId": "brighton",
+      "from": "2026-05-02",
+      "to": "2026-05-24",
+      "colour": "#2a8a84",
+      "icon": "ic-harp",
+      "genres": [
+        "Classical",
+        "Dance",
+        "Theatre",
+        "Talks"
+      ]
+    },
+    {
+      "id": "adelaide-fringe",
+      "name": "Adelaide Fringe",
+      "short": "Adelaide Fringe",
+      "cityId": "adelaide",
+      "from": "2026-02-20",
+      "to": "2026-03-22",
+      "colour": "#6c4cf1",
+      "icon": "ic-masks",
+      "genres": [
+        "Comedy",
+        "Circus",
+        "Cabaret",
+        "Theatre",
+        "Children's",
+        "Magic"
+      ]
+    },
+    {
+      "id": "womadelaide",
+      "name": "WOMADelaide",
+      "short": "WOMADelaide",
+      "cityId": "adelaide",
+      "from": "2026-03-06",
+      "to": "2026-03-09",
+      "colour": "#c98a2b",
+      "icon": "ic-sun",
+      "genres": [
+        "Music",
+        "Dance"
+      ]
+    },
+    {
+      "id": "avignon-off",
+      "name": "Festival Off d'Avignon",
+      "short": "Le Off",
+      "cityId": "avignon",
+      "from": "2026-07-04",
+      "to": "2026-07-26",
+      "colour": "#6c4cf1",
+      "icon": "ic-masks",
+      "genres": [
+        "Theatre",
+        "Comedy",
+        "Dance",
+        "Children's",
+        "Music"
+      ]
+    },
+    {
+      "id": "avignon-in",
+      "name": "Festival d'Avignon",
+      "short": "Le In",
+      "cityId": "avignon",
+      "from": "2026-07-04",
+      "to": "2026-07-25",
+      "colour": "#2a8a84",
+      "icon": "ic-harp",
+      "genres": [
+        "Theatre",
+        "Dance"
+      ]
+    }
+  ],
+  "shows": [
+    {
+      "id": "shakespeare-breakfast",
+      "title": "Shakespeare for Breakfast",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "c-aurora",
+      "ages": 0,
+      "price": 11,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "10:00",
+          "except": [
+            "2026-08-17",
+            "2026-08-24"
+          ]
+        }
+      }
+    },
+    {
+      "id": "circus-abyssinia",
+      "title": "Circus Abyssinia: Tulu",
+      "festivalId": "fringe",
+      "genre": "Circus",
+      "venueId": "underbelly",
+      "ages": 5,
+      "price": 12,
+      "minutes": 65,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-08",
+          "to": "2026-08-30",
+          "time": "16:10",
+          "except": [
+            "2026-08-19"
+          ]
+        }
+      }
+    },
+    {
+      "id": "potted-panto",
+      "title": "Potted Panto",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "pleasance",
+      "ages": 5,
+      "price": 13,
+      "minutes": 70,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "18:00",
+          "except": [
+            "2026-08-18"
+          ]
+        }
+      }
+    },
+    {
+      "id": "comedy-club-4-kids",
+      "title": "Comedy Club 4 Kids",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "pleasance",
+      "ages": 6,
+      "price": 10,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-08",
+          "to": "2026-08-30",
+          "time": "14:00"
+        }
+      }
+    },
+    {
+      "id": "bubble-man",
+      "title": "The Amazing Bubble Man",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "pleasance",
+      "ages": 3,
+      "price": 9.5,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "12:20"
+        }
+      }
+    },
+    {
+      "id": "dinosaur-world",
+      "title": "Dinosaur World Live",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "assembly-gs",
+      "ages": 3,
+      "price": 14,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-25",
+          "time": "16:30",
+          "except": [
+            "2026-08-11",
+            "2026-08-18"
+          ]
+        }
+      }
+    },
+    {
+      "id": "morgan-west",
+      "title": "Morgan & West: Kids' Magic",
+      "festivalId": "fringe",
+      "genre": "Magic",
+      "venueId": "pleasance",
+      "ages": 4,
+      "price": 10,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "11:00"
+        }
+      }
+    },
+    {
+      "id": "wild-child",
+      "title": "Wild Child: Science Show",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "pleasance",
+      "ages": 5,
+      "price": 10,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-10",
+          "to": "2026-08-30",
+          "time": "11:15",
+          "except": [
+            "2026-08-17"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tom-foolery",
+      "title": "Tom Foolery: Juggling Genius",
+      "festivalId": "fringe",
+      "genre": "Circus",
+      "venueId": "gilded",
+      "ages": 4,
+      "price": 9,
+      "minutes": 50,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "14:30"
+        }
+      }
+    },
+    {
+      "id": "showstoppers",
+      "title": "Showstopper! The Improvised Musical",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "pleasance",
+      "ages": 0,
+      "price": 14,
+      "minutes": 70,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "20:00",
+          "except": [
+            "2026-08-12",
+            "2026-08-19"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mark-watson",
+      "title": "Mark Watson: Work in Progress",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "monkey-barrel",
+      "ages": 16,
+      "price": 14,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "19:20",
+          "except": [
+            "2026-08-14",
+            "2026-08-21"
+          ]
+        }
+      }
+    },
+    {
+      "id": "late-n-live",
+      "title": "Late'n'Live",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "gilded",
+      "ages": 18,
+      "price": 16,
+      "minutes": 150,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "01:00"
+        }
+      }
+    },
+    {
+      "id": "stand-showcase",
+      "title": "The Stand Comedy Showcase",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "stand",
+      "ages": 16,
+      "price": 12,
+      "minutes": 90,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "22:30"
+        }
+      }
+    },
+    {
+      "id": "six-concert",
+      "title": "Six the Musical: In Concert",
+      "festivalId": "fringe",
+      "genre": "Music",
+      "venueId": "assembly-gs",
+      "ages": 8,
+      "price": 28,
+      "minutes": 75,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-09",
+            "19:00"
+          ],
+          [
+            "2026-08-16",
+            "19:00"
+          ],
+          [
+            "2026-08-23",
+            "19:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "gruffalo",
+      "title": "The Gruffalo, the Witch and the Warthog",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "pleasance",
+      "ages": 3,
+      "price": 10,
+      "minutes": 50,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "13:00"
+        }
+      }
+    },
+    {
+      "id": "ma-pa-bugs",
+      "title": "Ma & Pa Bugs: A Cabaret",
+      "festivalId": "fringe",
+      "genre": "Cabaret",
+      "venueId": "underbelly",
+      "ages": 18,
+      "price": 15,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "21:40",
+          "except": [
+            "2026-08-10",
+            "2026-08-17",
+            "2026-08-24"
+          ]
+        }
+      }
+    },
+    {
+      "id": "summerhall-dance",
+      "title": "Rooms Without Walls",
+      "festivalId": "fringe",
+      "genre": "Dance",
+      "venueId": "summerhall",
+      "ages": 12,
+      "price": 12,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-08",
+          "to": "2026-08-24",
+          "time": "15:15",
+          "except": [
+            "2026-08-11",
+            "2026-08-18"
+          ]
+        }
+      }
+    },
+    {
+      "id": "free-fringe-lunch",
+      "title": "Free Lunchtime Stand-up",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "underbelly",
+      "ages": 14,
+      "price": 0,
+      "minutes": 50,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "13:15"
+        }
+      }
+    },
+    {
+      "id": "haggis-histories",
+      "title": "Haggis Histories: Edinburgh Told Badly",
+      "festivalId": "fringe",
+      "genre": "Spoken word",
+      "venueId": "c-aurora",
+      "ages": 8,
+      "price": 8,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-12",
+          "to": "2026-08-30",
+          "time": "17:00"
+        }
+      }
+    },
+    {
+      "id": "one-night-drag",
+      "title": "The Big Drag Gala",
+      "festivalId": "fringe",
+      "genre": "Cabaret",
+      "venueId": "assembly-gs",
+      "ages": 16,
+      "price": 22,
+      "minutes": 120,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-15",
+            "22:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "chineke",
+      "title": "Chineke! Orchestra",
+      "festivalId": "eif",
+      "genre": "Classical",
+      "venueId": "usher",
+      "ages": 6,
+      "price": 12,
+      "minutes": 90,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-14",
+            "19:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "scottish-ballet",
+      "title": "Scottish Ballet: Twice-Born",
+      "festivalId": "eif",
+      "genre": "Dance",
+      "venueId": "festival-theatre",
+      "ages": 8,
+      "price": 20,
+      "minutes": 100,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-14",
+            "19:30"
+          ],
+          [
+            "2026-08-15",
+            "14:30"
+          ],
+          [
+            "2026-08-15",
+            "19:30"
+          ],
+          [
+            "2026-08-16",
+            "19:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "peter-wolf",
+      "title": "Family concert: Peter and the Wolf",
+      "festivalId": "eif",
+      "genre": "Classical",
+      "venueId": "queens-hall",
+      "ages": 4,
+      "price": 8,
+      "minutes": 60,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-15",
+            "11:00"
+          ],
+          [
+            "2026-08-22",
+            "11:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "macbeth-eif",
+      "title": "Macbeth (an undoing)",
+      "festivalId": "eif",
+      "genre": "Theatre",
+      "venueId": "festival-theatre",
+      "ages": 14,
+      "price": 25,
+      "minutes": 130,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-12",
+            "19:30"
+          ],
+          [
+            "2026-08-13",
+            "19:30"
+          ],
+          [
+            "2026-08-17",
+            "19:30"
+          ],
+          [
+            "2026-08-18",
+            "19:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "morning-recital",
+      "title": "Queen's Hall morning recital",
+      "festivalId": "eif",
+      "genre": "Classical",
+      "venueId": "queens-hall",
+      "ages": 8,
+      "price": 15,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-10",
+          "to": "2026-08-22",
+          "time": "11:00",
+          "except": [
+            "2026-08-15",
+            "2026-08-16"
+          ]
+        }
+      }
+    },
+    {
+      "id": "julia-donaldson",
+      "title": "Julia Donaldson",
+      "festivalId": "book",
+      "genre": "Children's",
+      "venueId": "futures",
+      "ages": 3,
+      "price": 8,
+      "minutes": 60,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-16",
+            "11:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ian-rankin",
+      "title": "Ian Rankin in conversation",
+      "festivalId": "book",
+      "genre": "Talks",
+      "venueId": "futures",
+      "ages": 12,
+      "price": 14,
+      "minutes": 60,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-15",
+            "18:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "story-hour",
+      "title": "Story Hour with Cressida Cowell",
+      "festivalId": "book",
+      "genre": "Children's",
+      "venueId": "futures",
+      "ages": 5,
+      "price": 6,
+      "minutes": 45,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-13",
+            "10:30"
+          ],
+          [
+            "2026-08-14",
+            "10:30"
+          ],
+          [
+            "2026-08-15",
+            "10:30"
+          ],
+          [
+            "2026-08-16",
+            "10:30"
+          ],
+          [
+            "2026-08-17",
+            "10:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tattoo-show",
+      "title": "The Royal Edinburgh Military Tattoo",
+      "festivalId": "tattoo",
+      "genre": "Spectacle",
+      "venueId": "esplanade",
+      "ages": 0,
+      "price": 35,
+      "minutes": 100,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-01",
+          "to": "2026-08-23",
+          "time": "21:00",
+          "skipDays": [
+            "Sun"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brighton-kids-magic",
+      "title": "The Wonder Show for Kids",
+      "festivalId": "brighton-fringe",
+      "genre": "Magic",
+      "venueId": "warren",
+      "ages": 4,
+      "price": 9,
+      "minutes": 50,
+      "perfs": {
+        "weekly": {
+          "days": [
+            "Sat",
+            "Sun"
+          ],
+          "from": "2026-05-02",
+          "to": "2026-05-31",
+          "time": "11:30"
+        }
+      }
+    },
+    {
+      "id": "brighton-standup",
+      "title": "Best of the Fringe Stand-up",
+      "festivalId": "brighton-fringe",
+      "genre": "Comedy",
+      "venueId": "komedia",
+      "ages": 16,
+      "price": 12,
+      "minutes": 90,
+      "perfs": {
+        "daily": {
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "time": "20:00"
+        }
+      }
+    },
+    {
+      "id": "brighton-cabaret",
+      "title": "Spiegeltent Cabaret",
+      "festivalId": "brighton-fringe",
+      "genre": "Cabaret",
+      "venueId": "spiegeltent",
+      "ages": 18,
+      "price": 18,
+      "minutes": 80,
+      "perfs": {
+        "daily": {
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "time": "21:30",
+          "skipDays": [
+            "Mon",
+            "Tue"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brighton-puppets",
+      "title": "Seaside Puppets",
+      "festivalId": "brighton-fringe",
+      "genre": "Children's",
+      "venueId": "warren",
+      "ages": 2,
+      "price": 7,
+      "minutes": 40,
+      "perfs": {
+        "daily": {
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "time": "14:00"
+        }
+      }
+    },
+    {
+      "id": "brighton-play",
+      "title": "The Lighthouse Keeper's Daughter",
+      "festivalId": "brighton-fringe",
+      "genre": "Theatre",
+      "venueId": "warren",
+      "ages": 12,
+      "price": 11,
+      "minutes": 65,
+      "perfs": {
+        "daily": {
+          "from": "2026-05-05",
+          "to": "2026-05-24",
+          "time": "17:30",
+          "skipDays": [
+            "Mon"
+          ]
+        }
+      }
+    },
+    {
+      "id": "brighton-lso",
+      "title": "London Symphony Orchestra",
+      "festivalId": "brighton-festival",
+      "genre": "Classical",
+      "venueId": "dome",
+      "ages": 8,
+      "price": 30,
+      "minutes": 100,
+      "perfs": {
+        "dates": [
+          [
+            "2026-05-09",
+            "19:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "brighton-dance",
+      "title": "Hofesh Shechter Company",
+      "festivalId": "brighton-festival",
+      "genre": "Dance",
+      "venueId": "dome",
+      "ages": 12,
+      "price": 22,
+      "minutes": 75,
+      "perfs": {
+        "dates": [
+          [
+            "2026-05-15",
+            "19:30"
+          ],
+          [
+            "2026-05-16",
+            "19:30"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "brighton-talk",
+      "title": "Ali Smith in conversation",
+      "festivalId": "brighton-festival",
+      "genre": "Talks",
+      "venueId": "dome",
+      "ages": 12,
+      "price": 12,
+      "minutes": 60,
+      "perfs": {
+        "dates": [
+          [
+            "2026-05-16",
+            "12:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "adl-circus",
+      "title": "Blanc de Blanc Encore",
+      "festivalId": "adelaide-fringe",
+      "genre": "Circus",
+      "venueId": "garden",
+      "ages": 18,
+      "price": 55,
+      "minutes": 90,
+      "perfs": {
+        "daily": {
+          "from": "2026-02-20",
+          "to": "2026-03-22",
+          "time": "21:00",
+          "skipDays": [
+            "Mon"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adl-kids-circus",
+      "title": "Circus Kids' Hour",
+      "festivalId": "adelaide-fringe",
+      "genre": "Circus",
+      "venueId": "gluttony",
+      "ages": 3,
+      "price": 18,
+      "minutes": 55,
+      "perfs": {
+        "weekly": {
+          "days": [
+            "Sat",
+            "Sun"
+          ],
+          "from": "2026-02-21",
+          "to": "2026-03-22",
+          "time": "10:30"
+        }
+      }
+    },
+    {
+      "id": "adl-comedy",
+      "title": "Garden late-night comedy",
+      "festivalId": "adelaide-fringe",
+      "genre": "Comedy",
+      "venueId": "garden",
+      "ages": 16,
+      "price": 25,
+      "minutes": 75,
+      "perfs": {
+        "daily": {
+          "from": "2026-02-20",
+          "to": "2026-03-22",
+          "time": "22:15"
+        }
+      }
+    },
+    {
+      "id": "adl-magic",
+      "title": "Magic at the Gluttony",
+      "festivalId": "adelaide-fringe",
+      "genre": "Magic",
+      "venueId": "gluttony",
+      "ages": 6,
+      "price": 22,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-02-24",
+          "to": "2026-03-15",
+          "time": "17:00"
+        }
+      }
+    },
+    {
+      "id": "adl-theatre",
+      "title": "Holden Street: The Nightingale",
+      "festivalId": "adelaide-fringe",
+      "genre": "Theatre",
+      "venueId": "holden",
+      "ages": 12,
+      "price": 28,
+      "minutes": 70,
+      "perfs": {
+        "daily": {
+          "from": "2026-03-03",
+          "to": "2026-03-15",
+          "time": "19:00",
+          "skipDays": [
+            "Mon",
+            "Tue"
+          ]
+        }
+      }
+    },
+    {
+      "id": "womad-saturday",
+      "title": "WOMADelaide Saturday",
+      "festivalId": "womadelaide",
+      "genre": "Music",
+      "venueId": "botanic",
+      "ages": 0,
+      "price": 150,
+      "minutes": 600,
+      "perfs": {
+        "dates": [
+          [
+            "2026-03-07",
+            "12:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "womad-sunday",
+      "title": "WOMADelaide Sunday",
+      "festivalId": "womadelaide",
+      "genre": "Music",
+      "venueId": "botanic",
+      "ages": 0,
+      "price": 150,
+      "minutes": 600,
+      "perfs": {
+        "dates": [
+          [
+            "2026-03-08",
+            "12:00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "avi-moliere",
+      "title": "Le Malade imaginaire",
+      "festivalId": "avignon-off",
+      "genre": "Theatre",
+      "venueId": "chene-noir",
+      "ages": 8,
+      "price": 20,
+      "minutes": 95,
+      "perfs": {
+        "daily": {
+          "from": "2026-07-04",
+          "to": "2026-07-26",
+          "time": "17:00",
+          "skipDays": [
+            "Tue"
+          ]
+        }
+      }
+    },
+    {
+      "id": "avi-kids",
+      "title": "Les Petits Contes du soir",
+      "festivalId": "avignon-off",
+      "genre": "Children's",
+      "venueId": "chapeau-rouge",
+      "ages": 3,
+      "price": 8,
+      "minutes": 45,
+      "perfs": {
+        "daily": {
+          "from": "2026-07-04",
+          "to": "2026-07-26",
+          "time": "10:30"
+        }
+      }
+    },
+    {
+      "id": "avi-standup",
+      "title": "Stand-up en VF",
+      "festivalId": "avignon-off",
+      "genre": "Comedy",
+      "venueId": "chapeau-rouge",
+      "ages": 14,
+      "price": 15,
+      "minutes": 70,
+      "perfs": {
+        "daily": {
+          "from": "2026-07-04",
+          "to": "2026-07-26",
+          "time": "21:30"
+        }
+      }
+    },
+    {
+      "id": "avi-danse",
+      "title": "Danse au Gymnase",
+      "festivalId": "avignon-off",
+      "genre": "Dance",
+      "venueId": "gymnase",
+      "ages": 10,
+      "price": 18,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-07-08",
+          "to": "2026-07-20",
+          "time": "15:00"
+        }
+      }
+    },
+    {
+      "id": "avi-cour",
+      "title": "Cour d'honneur: the opening production",
+      "festivalId": "avignon-in",
+      "genre": "Theatre",
+      "venueId": "cour-honneur",
+      "ages": 14,
+      "price": 45,
+      "minutes": 180,
+      "perfs": {
+        "daily": {
+          "from": "2026-07-05",
+          "to": "2026-07-14",
+          "time": "22:00",
+          "skipDays": [
+            "Thu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bee-wild",
+      "title": "Bee Wild!",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "assembly-gs",
+      "ages": 3,
+      "price": 9,
+      "minutes": 50,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "13:30",
+          "except": [
+            "2026-08-17"
+          ]
+        }
+      }
+    },
+    {
+      "id": "trash-test-dummies",
+      "title": "Trash Test Dummies",
+      "festivalId": "fringe",
+      "genre": "Circus",
+      "venueId": "underbelly",
+      "ages": 5,
+      "price": 12,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "15:15"
+        }
+      }
+    },
+    {
+      "id": "listies",
+      "title": "The Listies Make You LOL",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "gilded",
+      "ages": 6,
+      "price": 11,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-08",
+          "to": "2026-08-24",
+          "time": "16:00",
+          "except": [
+            "2026-08-12",
+            "2026-08-19"
+          ]
+        }
+      }
+    },
+    {
+      "id": "alice-wonderland",
+      "title": "Alice in Wonderland",
+      "festivalId": "fringe",
+      "genre": "Theatre",
+      "venueId": "c-aurora",
+      "ages": 6,
+      "price": 12.5,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "14:45"
+        }
+      }
+    },
+    {
+      "id": "magic-gareth",
+      "title": "Magic Gareth: Fantabulous",
+      "festivalId": "fringe",
+      "genre": "Magic",
+      "venueId": "gilded",
+      "ages": 4,
+      "price": 8,
+      "minutes": 50,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "12:00"
+        }
+      }
+    },
+    {
+      "id": "science-magic",
+      "title": "The Science Magic Show",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "summerhall",
+      "ages": 5,
+      "price": 10,
+      "minutes": 55,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "15:30",
+          "skipDays": [
+            "Mon"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tiger-tea",
+      "title": "The Tiger Who Came to Tea",
+      "festivalId": "fringe",
+      "genre": "Theatre",
+      "venueId": "assembly-gs",
+      "ages": 3,
+      "price": 14,
+      "minutes": 55,
+      "perfs": {
+        "weekly": {
+          "days": [
+            "Sat",
+            "Sun"
+          ],
+          "from": "2026-08-08",
+          "to": "2026-08-30",
+          "time": "11:30"
+        }
+      }
+    },
+    {
+      "id": "family-stand",
+      "title": "Family Hour at The Stand",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "stand",
+      "ages": 8,
+      "price": 9,
+      "minutes": 60,
+      "perfs": {
+        "weekly": {
+          "days": [
+            "Sat",
+            "Sun"
+          ],
+          "from": "2026-08-08",
+          "to": "2026-08-30",
+          "time": "13:00"
+        }
+      }
+    },
+    {
+      "id": "elf-lyons",
+      "title": "Elf Lyons: Chaos",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "monkey-barrel",
+      "ages": 16,
+      "price": 13,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "18:40",
+          "except": [
+            "2026-08-18"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fringe-ceilidh",
+      "title": "The Fringe Ceilidh",
+      "festivalId": "fringe",
+      "genre": "Dance",
+      "venueId": "assembly-gs",
+      "ages": 0,
+      "price": 10,
+      "minutes": 90,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "19:00",
+          "skipDays": [
+            "Sun"
+          ]
+        }
+      }
+    },
+    {
+      "id": "summerhall-blues",
+      "title": "Blues at Summerhall",
+      "festivalId": "fringe",
+      "genre": "Music",
+      "venueId": "summerhall",
+      "ages": 0,
+      "price": 12,
+      "minutes": 70,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "20:30"
+        }
+      }
+    },
+    {
+      "id": "wee-beasties",
+      "title": "Wee Beasties: A Puppet Safari",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "pleasance",
+      "ages": 2,
+      "price": 7,
+      "minutes": 40,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "10:15"
+        }
+      }
+    },
+    {
+      "id": "storytelling-evening",
+      "title": "An Evening of Storytelling",
+      "festivalId": "fringe",
+      "genre": "Spoken word",
+      "venueId": "c-aurora",
+      "ages": 12,
+      "price": 8,
+      "minutes": 60,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-10",
+          "to": "2026-08-28",
+          "time": "18:30",
+          "skipDays": [
+            "Mon"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cirque-berserk",
+      "title": "Cirque Berserk!",
+      "festivalId": "fringe",
+      "genre": "Circus",
+      "venueId": "assembly-gs",
+      "ages": 5,
+      "price": 18,
+      "minutes": 80,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-24",
+          "time": "17:30",
+          "except": [
+            "2026-08-11",
+            "2026-08-18"
+          ]
+        }
+      }
+    },
+    {
+      "id": "free-kids-show",
+      "title": "Free Fringe Kids' Show",
+      "festivalId": "fringe",
+      "genre": "Children's",
+      "venueId": "underbelly",
+      "ages": 3,
+      "price": 0,
+      "minutes": 45,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-31",
+          "time": "11:00"
+        }
+      }
+    },
+    {
+      "id": "daniel-sloss",
+      "title": "Daniel Sloss: New Hour",
+      "festivalId": "fringe",
+      "genre": "Comedy",
+      "venueId": "assembly-gs",
+      "ages": 16,
+      "price": 20,
+      "minutes": 65,
+      "perfs": {
+        "daily": {
+          "from": "2026-08-07",
+          "to": "2026-08-30",
+          "time": "21:15",
+          "except": [
+            "2026-08-13",
+            "2026-08-20"
+          ]
+        }
+      }
+    },
+    {
+      "id": "opera-eif",
+      "title": "Opera: The Marriage of Figaro",
+      "festivalId": "eif",
+      "genre": "Opera",
+      "venueId": "festival-theatre",
+      "ages": 10,
+      "price": 40,
+      "minutes": 190,
+      "perfs": {
+        "dates": [
+          [
+            "2026-08-13",
+            "19:00"
+          ],
+          [
+            "2026-08-15",
+            "19:00"
+          ],
+          [
+            "2026-08-17",
+            "19:00"
+          ]
+        ]
+      }
+    }
+  ],
+  "origins": [
+    {
+      "id": "london",
+      "name": "London",
+      "station": "King's Cross",
+      "lat": 51.53,
+      "lng": -0.124
+    },
+    {
+      "id": "manchester",
+      "name": "Manchester",
+      "station": "Piccadilly",
+      "lat": 53.477,
+      "lng": -2.231
+    },
+    {
+      "id": "glasgow",
+      "name": "Glasgow",
+      "station": "Queen Street",
+      "lat": 55.862,
+      "lng": -4.251
+    },
+    {
+      "id": "dublin",
+      "name": "Dublin",
+      "station": "Dublin Airport",
+      "lat": 53.421,
+      "lng": -6.27
+    },
+    {
+      "id": "paris",
+      "name": "Paris",
+      "station": "Gare de Lyon",
+      "lat": 48.844,
+      "lng": 2.373
+    },
+    {
+      "id": "new-york",
+      "name": "New York",
+      "station": "JFK",
+      "lat": 40.641,
+      "lng": -73.778
+    },
+    {
+      "id": "sydney",
+      "name": "Sydney",
+      "station": "Sydney Airport",
+      "lat": -33.946,
+      "lng": 151.177
+    },
+    {
+      "id": "melbourne",
+      "name": "Melbourne",
+      "station": "Southern Cross",
+      "lat": -37.818,
+      "lng": 144.952
+    }
+  ],
+  "routes": [
+    {
+      "originId": "london",
+      "cityId": "edinburgh",
+      "mode": "train",
+      "minutes": 260,
+      "price": 58,
+      "departures": [
+        "07:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "13:00",
+        "15:30",
+        "17:00"
+      ],
+      "operator": "LNER"
+    },
+    {
+      "originId": "london",
+      "cityId": "edinburgh",
+      "mode": "plane",
+      "minutes": 85,
+      "price": 69,
+      "departures": [
+        "06:40",
+        "09:15",
+        "12:30",
+        "16:05",
+        "19:20"
+      ],
+      "operator": "easyJet"
+    },
+    {
+      "originId": "london",
+      "cityId": "edinburgh",
+      "mode": "car",
+      "minutes": 450,
+      "price": 90,
+      "departures": [
+        "06:00",
+        "08:00",
+        "10:00"
+      ],
+      "operator": "M1 · A1"
+    },
+    {
+      "originId": "london",
+      "cityId": "edinburgh",
+      "mode": "coach",
+      "minutes": 560,
+      "price": 24,
+      "departures": [
+        "08:30",
+        "22:30"
+      ],
+      "operator": "Megabus"
+    },
+    {
+      "originId": "manchester",
+      "cityId": "edinburgh",
+      "mode": "train",
+      "minutes": 210,
+      "price": 45,
+      "departures": [
+        "07:15",
+        "09:15",
+        "11:15",
+        "13:15",
+        "15:15"
+      ],
+      "operator": "TransPennine"
+    },
+    {
+      "originId": "manchester",
+      "cityId": "edinburgh",
+      "mode": "car",
+      "minutes": 240,
+      "price": 45,
+      "departures": [
+        "07:00",
+        "09:00",
+        "11:00"
+      ],
+      "operator": "M6 · A702"
+    },
+    {
+      "originId": "glasgow",
+      "cityId": "edinburgh",
+      "mode": "train",
+      "minutes": 50,
+      "price": 15,
+      "departures": [
+        "08:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "14:00",
+        "16:00"
+      ],
+      "operator": "ScotRail"
+    },
+    {
+      "originId": "dublin",
+      "cityId": "edinburgh",
+      "mode": "plane",
+      "minutes": 70,
+      "price": 60,
+      "departures": [
+        "07:10",
+        "11:45",
+        "17:30"
+      ],
+      "operator": "Aer Lingus"
+    },
+    {
+      "originId": "paris",
+      "cityId": "edinburgh",
+      "mode": "plane",
+      "minutes": 120,
+      "price": 110,
+      "departures": [
+        "08:00",
+        "14:20"
+      ],
+      "operator": "Air France"
+    },
+    {
+      "originId": "new-york",
+      "cityId": "edinburgh",
+      "mode": "plane",
+      "minutes": 420,
+      "price": 520,
+      "departures": [
+        "20:30"
+      ],
+      "operator": "Delta",
+      "overnight": true
+    },
+    {
+      "originId": "london",
+      "cityId": "brighton",
+      "mode": "train",
+      "minutes": 60,
+      "price": 20,
+      "departures": [
+        "08:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "14:00",
+        "16:00",
+        "18:00"
+      ],
+      "operator": "Thameslink"
+    },
+    {
+      "originId": "london",
+      "cityId": "brighton",
+      "mode": "car",
+      "minutes": 110,
+      "price": 25,
+      "departures": [
+        "08:00",
+        "10:00",
+        "12:00"
+      ],
+      "operator": "M23"
+    },
+    {
+      "originId": "manchester",
+      "cityId": "brighton",
+      "mode": "train",
+      "minutes": 270,
+      "price": 65,
+      "departures": [
+        "07:00",
+        "09:00",
+        "11:00"
+      ],
+      "operator": "via Euston"
+    },
+    {
+      "originId": "paris",
+      "cityId": "brighton",
+      "mode": "train",
+      "minutes": 210,
+      "price": 95,
+      "departures": [
+        "07:15",
+        "11:15"
+      ],
+      "operator": "Eurostar + Thameslink"
+    },
+    {
+      "originId": "sydney",
+      "cityId": "adelaide",
+      "mode": "plane",
+      "minutes": 130,
+      "price": 180,
+      "departures": [
+        "07:00",
+        "10:30",
+        "15:00",
+        "18:30"
+      ],
+      "operator": "Qantas"
+    },
+    {
+      "originId": "melbourne",
+      "cityId": "adelaide",
+      "mode": "plane",
+      "minutes": 80,
+      "price": 120,
+      "departures": [
+        "06:30",
+        "09:00",
+        "12:00",
+        "17:00"
+      ],
+      "operator": "Jetstar"
+    },
+    {
+      "originId": "melbourne",
+      "cityId": "adelaide",
+      "mode": "train",
+      "minutes": 660,
+      "price": 140,
+      "departures": [
+        "07:50"
+      ],
+      "operator": "The Overland"
+    },
+    {
+      "originId": "melbourne",
+      "cityId": "adelaide",
+      "mode": "car",
+      "minutes": 480,
+      "price": 90,
+      "departures": [
+        "06:00",
+        "08:00"
+      ],
+      "operator": "Western Highway"
+    },
+    {
+      "originId": "paris",
+      "cityId": "avignon",
+      "mode": "train",
+      "minutes": 160,
+      "price": 80,
+      "departures": [
+        "07:07",
+        "09:07",
+        "11:07",
+        "13:07",
+        "15:07",
+        "17:07"
+      ],
+      "operator": "TGV"
+    },
+    {
+      "originId": "paris",
+      "cityId": "avignon",
+      "mode": "car",
+      "minutes": 400,
+      "price": 110,
+      "departures": [
+        "07:00",
+        "09:00"
+      ],
+      "operator": "A6 · A7"
+    },
+    {
+      "originId": "london",
+      "cityId": "avignon",
+      "mode": "train",
+      "minutes": 360,
+      "price": 150,
+      "departures": [
+        "07:30",
+        "09:30"
+      ],
+      "operator": "Eurostar + TGV"
+    },
+    {
+      "originId": "london",
+      "cityId": "avignon",
+      "mode": "plane",
+      "minutes": 120,
+      "price": 95,
+      "departures": [
+        "07:00",
+        "13:30"
+      ],
+      "operator": "to Marseille"
+    }
+  ],
+  "genreIcons": {
+    "Comedy": "ic-masks",
+    "Theatre": "il-curtain",
+    "Children's": "p-kid",
+    "Circus": "ic-ticket",
+    "Cabaret": "il-champagne",
+    "Music": "ic-harp",
+    "Magic": "ic-star",
+    "Dance": "il-sprint",
+    "Spoken word": "ic-book",
+    "Classical": "ic-harp",
+    "Opera": "ic-harp",
+    "Talks": "ic-book",
+    "Spectacle": "ic-castle"
+  }
+}
