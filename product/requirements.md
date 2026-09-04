@@ -831,3 +831,66 @@ the feature.
   Rendered on a card by `6.6` and on a search row by `11.2`; the rule itself is
   the table. An unknown price is never quietly written as free or as £0.
   </details>
+
+---
+
+# Part IV — the trip planner prototype (`/plan2`)
+
+A playable prototype of the illustrated trip planner (design-concepts/trip-planner):
+the Postcard direction's opening and question cards, a calendar draft with vertical
+day columns, and peel-to-correct tickets — running on committed test data for a
+handful of cities, festivals, shows, restaurants, stays, transport modes and day
+trips, so the experience can be played with before any of it touches live data.
+
+## 17. The postcard planner
+
+- `17.1` The opening: the city's postcard with its festivals as stamps, the dates as the postmark, and the first question card.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.1 -->
+
+  <details><summary>Notes</summary>
+
+  The card asks "Where to?" with four picture ways in (city, season, genre,
+  name); the postcard shows the chosen city; every festival the test data
+  knows in that city on those dates is a stamp, the planned-around one on the
+  postcard and the rest on an "Also on…" sheet to stick on. The postmark
+  carries the arrival and departure dates.
+  </details>
+
+- `17.2` A question is a card of picture options; the answer becomes a sticker on the postcard and the card is gone.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.2 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered on "Who's coming?" with the family option chosen and two kids'
+  ages set: the earlier answers (city, festivals, dates) already sit on the
+  postcard as stickers; the questions still to come are a stack of cards
+  behind the current one. A sticker reopens its question.
+  </details>
+
+- `17.3` The draft: the postcard turned over as a calendar, days as vertical columns with the hours running down, one ticket per plan item.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.3 -->
+
+  <details><summary>Notes</summary>
+
+  Each kind of item is its own ticket: travel legs, check-in and check-out,
+  shows (colour-banded by festival), meals, a day out spanning its hours, and
+  free time as a dashed gap. Starred tickets wear a gold ring and are never
+  swapped by a redraft. The address side carries the stay and the totals
+  (nights, travel, tickets); the "Stick on…" sheet offers a day out, a meal,
+  and picking shows yourself.
+  </details>
+
+- `17.4` Peeling a ticket reveals the correction stickers; a one-off event reveals only "Not for me".
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.4 -->
+
+  <details><summary>Notes</summary>
+
+  A repeating show peels to five stickers: not this time, not this show, no
+  more of its genre, not its venue, keep it (star). A show with one
+  performance on the trip's dates peels to "Not for me" and keep. Both peels
+  are rendered together, one on each kind of ticket.
+  </details>
