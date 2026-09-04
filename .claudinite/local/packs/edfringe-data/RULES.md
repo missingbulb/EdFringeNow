@@ -7,12 +7,13 @@ under `data/`. The API's own field reference lives in
 [scraper/README.md](../../../../scraper/README.md) — this is the working
 judgment those two don't carry.
 
-## The live API is unreachable from a session — don't try, and don't fake it
+## Verifying a scraper change against the live API
 
-`edfringe-tikketr-web-api.equhost.com` is blocked by the sandbox egress proxy
-(403 at the CONNECT). So: no session — this one included —
-can verify a scraper change against live data. Anything that must touch the API
-runs through a sanctioned workflow: the `Scrape edfringe shows (full)` workflow
+Reaching `edfringe-tikketr-web-api.equhost.com` is a live question — it was denied at the
+CONNECT in 2026-08 and answered a server-side 403 on 2026-09-04 — so probe it (the `edfringe`
+pack's egress section) rather than repeat either answer. Reaching the host is still not the
+same as being able to drive it, so anything that must touch the API runs through a sanctioned
+workflow: the `Scrape edfringe shows (full)` workflow
 (`.github/workflows/scrape.yml`), `Fetch ticket prices (one-off)`
 (`prices.yml`), or the `refresh-shows` / `refresh-tickets` scheduled tasks.
 Never "verify" a scraper change by reasoning about what the API probably
