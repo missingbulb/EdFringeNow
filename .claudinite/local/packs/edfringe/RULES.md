@@ -164,46 +164,29 @@ browser is here, and a UI change isn't done until it has been looked at.
   the CSS, and headless Chromium cannot tunnel the proxy to reach an external
   host — `curl` is the one path that works for off-box assets.
 
-## Probe the network yourself — never assert from these notes what egress does or doesn't allow
+## Reaching the network
 
-The egress policy is per-environment and it **moves**, so every statement below
-is a dated observation rather than the current state. Read them as history and
-settle the question with a probe — one `curl -sS -o /dev/null -w "%{http_code}"
---max-time 15 https://<host>/` costs a second and outranks anything written
-here.
+The egress policy is per-environment and moves, so every note here is a dated observation and
+not the current state. Settle the question with a probe:
 
-That obligation runs in **both** directions, and the second one is the one this
-file kept getting wrong. Never report a capability as *absent* without probing
-it in this session either: on 2026-09-04 a session answered a research question
-entirely from model knowledge, hedged it with "the egress policy here allows
-only `*.edfringenow.com`", and then wrote a prompt for the owner to hand to a
-different session — while `maze.co`, `www.lyssna.com` and `fringeplan.com` all
-returned 200 from the very session claiming they were unreachable. A rule
-saying a door is shut is not evidence the door is shut; pushing it is.
+```sh
+curl -sS -o /dev/null -w "%{http_code}\n" --max-time 15 https://<host>/
+```
 
-What has actually been observed:
+Observed so far: `*.edfringenow.com` allowed from 2026-08, denied at CONNECT on 2026-08-07,
+and general egress open on 2026-09-04 with `WebSearch` and `WebFetch` reaching arbitrary hosts.
 
-- **`*.edfringenow.com` is allowed** (2026-08 onward). A question about what the
-  deployed site serves — is the new field in `data/shows.json`? did the deploy
-  land? — is answerable with `curl https://www.edfringenow.com/…` rather than by
-  reasoning from the working tree.
-- **On 2026-09-04 general egress was open**, including `WebSearch` and `WebFetch`
-  to arbitrary hosts. That was not true in August. Neither reading is permanent.
+- **About to report a capability as unavailable** — probe it in this session first, whatever
+  this file says. A note that a door was shut is not evidence it is shut, and only the probe
+  distinguishes a policy that has changed from one that hasn't. (3)
 
-Two caveats before you trust what comes back:
+- **Reading a 403 from the proxy** — `curl -v` tells you whose it is: `CONNECT tunnel failed,
+  response 403` is a policy denial, the same code after a negotiated tunnel is the origin
+  refusing you. `curl -sS "$HTTPS_PROXY/__agentproxy/status"` lists recent policy rejections.
 
-- **The response is CDN-cached, so a fresh push may not be visible yet.** A
-  200 with stale content is not evidence the deploy failed — re-check after a
-  delay, and never conclude "the change didn't ship" from one read taken
-  seconds after the push.
-- **Read a 403 for what it is: proxy or server.** On 2026-08-07 a probe of both
-  `www.edfringenow.com` and the apex returned `curl: (56) CONNECT tunnel failed,
-  response 403` — a policy denial, not a site outage. A 403 *after* the tunnel
-  negotiates is the origin refusing the request, an entirely different fact.
-  `curl -v` distinguishes them on the `CONNECT tunnel` line, and
-  `curl -sS "$HTTPS_PROXY/__agentproxy/status"` lists recent policy rejections.
-  When it is genuinely denied, say so and fall back to the repo, rather than
-  reporting the live site as down.
+- **Checking what the deployed site serves** — `curl https://www.edfringenow.com/…` answers it
+  rather than reasoning from the working tree, but the response is CDN-cached: a 200 with stale
+  content is not evidence a deploy failed, so re-check after a delay before concluding anything.
 
 As with the off-box CSS fetch above, `curl` is the working path: headless
 Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
@@ -480,18 +463,11 @@ A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
 check catches an omission.
 
-## A `wiki-growth` pass's competitor research is WebSearch, not WebFetch
+## Researching a competitor's product for a `wiki-growth` pass
 
-Try the fetch, and fall back to `WebSearch` on an actual failure — the fallback
-is the lesson, not skipping the attempt. On 2026-08-09 (#300) six competitor
-domains (`fringe-finder.netlify.app`, `edfringeplanner.co.uk`, `fringeplan.com`,
-`planyourfringe.com`, `www.edinburghfestivalcity.com`, `www.edfringeplanner.co.uk`)
-all failed `EGRESS_BLOCKED` in one run, and `WebSearch` snippets supplied every
-feature, claim and pricing detail the pages would have. On 2026-09-04
-`fringeplan.com` fetched fine. So when a fetch does fail, go to `WebSearch` and
-cite the snippet's publisher per the product-wiki pack's sourcing rule — but a
-page read first-hand beats a snippet, and one attempt is what tells you which
-session you are in.
+Fetch the competitor's page, and fall back to `WebSearch` only once a fetch actually fails —
+citing the snippet's publisher, per the product-wiki pack's sourcing rule. Whether the fetch
+succeeds moves with the egress policy above, so the attempt is what tells you. (4)
 
 ## Needing a real screenshot of a site headless Chromium can't tunnel to
 
