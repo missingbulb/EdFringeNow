@@ -846,7 +846,7 @@ trips, so the experience can be played with before any of it touches live data.
 
 - `17.1` The opening: the city's postcard with its festivals as stamps, the dates as the postmark, and the first question card.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.1 -->
+  ![plan2-postcard.17.1](requirements/screen/cases/plan2-postcard.17.1.png) <!-- req-gallery:17.1 -->
 
   <details><summary>Notes</summary>
 
@@ -859,7 +859,7 @@ trips, so the experience can be played with before any of it touches live data.
 
 - `17.2` A question is a card of picture options; the answer becomes a sticker on the postcard and the card is gone.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.2 -->
+  ![plan2-postcard.17.2](requirements/screen/cases/plan2-postcard.17.2.png) <!-- req-gallery:17.2 -->
 
   <details><summary>Notes</summary>
 
@@ -871,7 +871,7 @@ trips, so the experience can be played with before any of it touches live data.
 
 - `17.3` The draft: the postcard turned over as a calendar, days as vertical columns with the hours running down, one ticket per plan item.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.3 -->
+  ![plan2-postcard.17.3](requirements/screen/cases/plan2-postcard.17.3.png) <!-- req-gallery:17.3 -->
 
   <details><summary>Notes</summary>
 
@@ -885,7 +885,7 @@ trips, so the experience can be played with before any of it touches live data.
 
 - `17.4` Peeling a ticket reveals the correction stickers; a one-off event reveals only "Not for me".
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.4 -->
+  ![plan2-postcard.17.4](requirements/screen/cases/plan2-postcard.17.4.png) <!-- req-gallery:17.4 -->
 
   <details><summary>Notes</summary>
 
