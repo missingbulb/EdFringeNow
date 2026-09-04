@@ -1,0 +1,355 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+    </filter>
+    <pattern id="stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(90)">
+      <rect width="8" height="8" fill="#fff"/><rect width="4" height="8" fill="var(--teal)"/>
+    </pattern>
+    <pattern id="check" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#fff"/><rect width="4" height="4" fill="var(--red)"/><rect x="4" y="4" width="4" height="4" fill="var(--red)"/>
+    </pattern>
+  
+    <!-- plan2 additions: three more city pictures, a coin jar, a stroller, a coach -->
+    <symbol id="il-pier" viewBox="0 0 900 360">
+      <rect width="900" height="360" fill="#a9d6ea"/>
+      <circle cx="760" cy="80" r="46" fill="#f6d77a" stroke="#2b2118" stroke-width="5"/>
+      <path d="M60 80c30-26 70-26 100 0M540 120c26-22 60-22 86 0M200 150c22-18 50-18 72 0" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+      <rect x="0" y="230" width="900" height="130" fill="#3f7fb3"/>
+      <path d="M0 250q45-16 90 0t90 0 90 0 90 0 90 0 90 0 90 0 90 0 90 0 90 0" fill="none" stroke="#fff" stroke-width="6" opacity=".7"/>
+      <rect x="300" y="200" width="520" height="22" fill="#8b5e3c" stroke="#2b2118" stroke-width="5"/>
+      <g stroke="#2b2118" stroke-width="5" fill="#a08b70"><rect x="330" y="222" width="14" height="110"/><rect x="430" y="222" width="14" height="110"/><rect x="530" y="222" width="14" height="110"/><rect x="630" y="222" width="14" height="110"/><rect x="730" y="222" width="14" height="110"/></g>
+      <rect x="560" y="130" width="220" height="72" rx="8" fill="#fbf4e6" stroke="#2b2118" stroke-width="5"/>
+      <path d="M580 130v-26h30v26M700 130v-26h30v26" fill="#f0a1b8" stroke="#2b2118" stroke-width="5"/>
+      <path d="M630 130c0-40 30-56 40-56s40 16 40 56z" fill="#f0a1b8" stroke="#2b2118" stroke-width="5"/>
+      <g fill="#fffdf8" stroke="#2b2118" stroke-width="5"><rect x="80" y="150" width="60" height="80"/><rect x="150" y="130" width="70" height="100"/><rect x="230" y="160" width="50" height="70"/></g>
+      <path d="M70 150c10-40 40-60 70-60s60 20 70 60z" fill="#fbf4e6" stroke="#2b2118" stroke-width="5"/>
+      <circle cx="105" cy="100" r="10" fill="#e8b64a"/><circle cx="105" cy="100" r="54" fill="none" stroke="#2b2118" stroke-width="5" stroke-dasharray="6 10"/>
+    </symbol>
+    <symbol id="il-hills" viewBox="0 0 900 360">
+      <rect width="900" height="360" fill="#f6d77a"/>
+      <circle cx="150" cy="90" r="52" fill="#e0857a" stroke="#2b2118" stroke-width="5"/>
+      <path d="M0 250c120-90 220-110 340-70 90 30 150 20 230-30 100-60 200-60 330-10v220H0z" fill="#86b862" stroke="#2b2118" stroke-width="5"/>
+      <path d="M0 300c150-50 300-40 450-10 150 30 300 20 450-30v100H0z" fill="#5f9a4a" stroke="#2b2118" stroke-width="5"/>
+      <g fill="#fffdf8" stroke="#2b2118" stroke-width="5"><rect x="560" y="120" width="40" height="120"/><rect x="610" y="90" width="50" height="150"/><rect x="670" y="140" width="36" height="100"/><rect x="716" y="110" width="44" height="130"/></g>
+      <g fill="#8b5e3c" stroke="#2b2118" stroke-width="5"><rect x="180" y="240" width="60" height="50"/><rect x="250" y="250" width="50" height="40"/></g>
+      <path d="M175 240l40-30 40 30zM248 250l30-24 30 24z" fill="#d0432f" stroke="#2b2118" stroke-width="5"/>
+      <path d="M380 200c0-40 30-60 60-60s60 20 60 60" fill="#2a8a84" stroke="#2b2118" stroke-width="5"/><rect x="434" y="200" width="12" height="50" fill="#8b5e3c" stroke="#2b2118" stroke-width="5"/>
+    </symbol>
+    <symbol id="il-bridge" viewBox="0 0 900 360">
+      <rect width="900" height="360" fill="#a9d6ea"/>
+      <circle cx="720" cy="80" r="48" fill="#f6d77a" stroke="#2b2118" stroke-width="5"/>
+      <rect x="0" y="240" width="900" height="120" fill="#3f7fb3"/>
+      <path d="M0 260q45-14 90 0t90 0 90 0 90 0 90 0 90 0 90 0 90 0 90 0 90 0" fill="none" stroke="#fff" stroke-width="6" opacity=".7"/>
+      <path d="M40 240v-70h480v70" fill="#e6d3a8" stroke="#2b2118" stroke-width="5"/>
+      <path d="M60 240v-40a50 50 0 0 1 100 0v40M180 240v-40a50 50 0 0 1 100 0v40M300 240v-40a50 50 0 0 1 100 0v40" fill="#3f7fb3" stroke="#2b2118" stroke-width="5"/>
+      <rect x="420" y="130" width="60" height="40" fill="#e6d3a8" stroke="#2b2118" stroke-width="5"/><path d="M415 130l35-30 35 30z" fill="#d0432f" stroke="#2b2118" stroke-width="5"/>
+      <g fill="#e6d3a8" stroke="#2b2118" stroke-width="5"><rect x="600" y="140" width="120" height="100"/><rect x="740" y="110" width="60" height="130"/><rect x="810" y="150" width="70" height="90"/></g>
+      <path d="M600 140l60-40 60 40zM740 110l30-30 30 30z" fill="#a08b70" stroke="#2b2118" stroke-width="5"/>
+      <g fill="#2b2118"><rect x="630" y="170" width="16" height="26"/><rect x="670" y="170" width="16" height="26"/><rect x="760" y="150" width="14" height="22"/></g>
+    </symbol>
+    <symbol id="il-jar" viewBox="0 0 64 64">
+      <rect x="18" y="8" width="28" height="8" rx="3" fill="#2a8a84" stroke="#2b2118" stroke-width="3"/>
+      <path d="M16 18h32v34a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill="#e9f5ee" stroke="#2b2118" stroke-width="3"/>
+      <g fill="#e8b64a" stroke="#2b2118" stroke-width="2.5"><ellipse cx="32" cy="50" rx="11" ry="4"/><ellipse cx="32" cy="43" rx="11" ry="4"/><ellipse cx="32" cy="36" rx="11" ry="4"/></g>
+    </symbol>
+    <symbol id="il-stroll" viewBox="0 0 64 64">
+      <circle cx="34" cy="12" r="7" fill="#f2c8a2" stroke="#2b2118" stroke-width="3"/>
+      <path d="M30 20h10l4 18h-6l-2 20h-6l-1-20h-4l-2-18z" fill="#2a8a84" stroke="#2b2118" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M26 22l-8 14M42 24l8 12M31 40l-8 16M39 40l6 16" fill="none" stroke="#2b2118" stroke-width="3" stroke-linecap="round"/>
+      <path d="M8 58h48" stroke="#2b2118" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+    </symbol>
+    <symbol id="il-coach" viewBox="0 0 64 64">
+      <rect x="6" y="16" width="52" height="32" rx="6" fill="#e8b64a" stroke="#2b2118" stroke-width="3"/>
+      <g fill="#a9d6ea" stroke="#2b2118" stroke-width="2.5"><rect x="11" y="21" width="10" height="11"/><rect x="24" y="21" width="10" height="11"/><rect x="37" y="21" width="10" height="11"/><rect x="50" y="21" width="5" height="11"/></g>
+      <circle cx="18" cy="50" r="6" fill="#2b2118"/><circle cx="46" cy="50" r="6" fill="#2b2118"/>
+      <circle cx="18" cy="50" r="2.5" fill="#fff"/><circle cx="46" cy="50" r="2.5" fill="#fff"/>
+    </symbol>
+  </defs>
+
+  <!-- people -->
+  <symbol id="p-adult" viewBox="0 0 32 64">
+    <rect x="1.5" y="27" width="6" height="17" rx="3" fill="var(--shirt,var(--teal))" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="24.5" y="27" width="6" height="17" rx="3" fill="var(--shirt,var(--teal))" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="8" y="42" width="7.5" height="17" rx="3" fill="var(--pants,var(--navy))" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="16.5" y="42" width="7.5" height="17" rx="3" fill="var(--pants,var(--navy))" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M6 43V29a10 8 0 0 1 20 0v14z" fill="var(--shirt,var(--teal))" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="16" cy="12" r="8.5" fill="var(--skin,#f2c8a2)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M7.5 11.5a8.5 8.5 0 0 1 17 0c-3-1.5-5-4-5.5-6.5-2.5 3-7 5-11.5 6.5z" fill="var(--hair,#3b2a1e)"/>
+    <circle cx="13" cy="13" r="1.1" fill="var(--ink)"/><circle cx="19" cy="13" r="1.1" fill="var(--ink)"/>
+    <path d="M13.5 16.5q2.5 2 5 0" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="p-kid" viewBox="0 0 24 44">
+    <rect x="1" y="21" width="4.5" height="12" rx="2.2" fill="var(--shirt,var(--gold))" stroke="var(--ink)" stroke-width="1.8"/>
+    <rect x="18.5" y="21" width="4.5" height="12" rx="2.2" fill="var(--shirt,var(--gold))" stroke="var(--ink)" stroke-width="1.8"/>
+    <rect x="6" y="31" width="5.5" height="11" rx="2.5" fill="var(--pants,var(--navy))" stroke="var(--ink)" stroke-width="1.8"/>
+    <rect x="12.5" y="31" width="5.5" height="11" rx="2.5" fill="var(--pants,var(--navy))" stroke="var(--ink)" stroke-width="1.8"/>
+    <path d="M4.5 32V23a7.5 6 0 0 1 15 0v9z" fill="var(--shirt,var(--gold))" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="12" cy="9" r="7" fill="var(--skin,#f2c8a2)" stroke="var(--ink)" stroke-width="1.8"/>
+    <path d="M5 8.5a7 7 0 0 1 14 0c-2.5-1-4.5-2.5-5-4.5-2 2.5-5.5 4-9 4.5z" fill="var(--hair,#3b2a1e)"/>
+    <circle cx="9.5" cy="10" r="1" fill="var(--ink)"/><circle cx="14.5" cy="10" r="1" fill="var(--ink)"/>
+    <path d="M10 13q2 1.8 4 0" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="il-solo" viewBox="0 0 120 72">
+    <rect x="36" y="30" width="14" height="24" rx="5" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <use href="#p-adult" x="44" y="6" width="32" height="64" style="--shirt:var(--red);--pants:var(--navy)"/>
+    <rect x="82" y="44" width="24" height="22" rx="3" fill="var(--teal)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M89 44v-5a5 5 0 0 1 10 0v5" fill="none" stroke="var(--ink)" stroke-width="2"/>
+    <line x1="88" y1="50" x2="88" y2="62" stroke="var(--paper)" stroke-width="2"/>
+    <line x1="100" y1="50" x2="100" y2="62" stroke="var(--paper)" stroke-width="2"/>
+  </symbol>
+  <symbol id="il-couple" viewBox="0 0 120 72">
+    <use href="#p-adult" x="28" y="8" width="32" height="64" style="--shirt:var(--teal);--pants:var(--navy);--hair:#5a3a22"/>
+    <use href="#p-adult" x="58" y="8" width="32" height="64" style="--shirt:var(--red);--pants:#7a5a3a;--hair:#1e1a18;--skin:#c98d5f"/>
+    <path d="M59 6c-3-4-9-1-7 4 1 3 7 7 7 7s6-4 7-7c2-5-4-8-7-4z" fill="var(--pink)" stroke="var(--ink)" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="il-family" viewBox="0 0 120 72">
+    <use href="#p-adult" x="6" y="8" width="32" height="64" style="--shirt:var(--red);--pants:var(--navy)"/>
+    <use href="#p-adult" x="38" y="8" width="32" height="64" style="--shirt:var(--teal);--pants:#7a5a3a;--hair:#6b3b1a;--skin:#e8b98e"/>
+    <use href="#p-kid" x="72" y="28" width="24" height="44" style="--shirt:var(--gold);--pants:var(--navy);--hair:#6b3b1a"/>
+    <use href="#p-kid" x="96" y="36" width="20" height="36" style="--shirt:var(--pink);--pants:var(--teal);--hair:#1e1a18"/>
+    <path d="M67 46q4 6 7 3" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="il-group" viewBox="0 0 120 72">
+    <use href="#p-adult" x="0" y="8" width="32" height="64" style="--shirt:var(--gold);--pants:var(--navy);--hair:#1e1a18;--skin:#c98d5f"/>
+    <use href="#p-adult" x="88" y="8" width="32" height="64" style="--shirt:var(--violet);--pants:#7a5a3a;--hair:#6b3b1a"/>
+    <use href="#p-adult" x="22" y="8" width="32" height="64" style="--shirt:var(--teal);--pants:var(--navy);--hair:#d9a25a"/>
+    <use href="#p-adult" x="66" y="8" width="32" height="64" style="--shirt:var(--pink);--pants:var(--navy);--hair:#3b2a1e;--skin:#e8b98e"/>
+    <use href="#p-adult" x="44" y="8" width="32" height="64" style="--shirt:var(--red);--pants:#7a5a3a;--hair:#1e1a18;--skin:#8d5a3b"/>
+  </symbol>
+
+  <!-- cost -->
+  <symbol id="il-wallet" viewBox="0 0 64 64">
+    <circle cx="46" cy="18" r="8" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="46" cy="18" r="4" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <rect x="8" y="22" width="46" height="32" rx="6" fill="var(--brown)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M8 34h46" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="40" y="34" width="14" height="12" rx="3" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="47" cy="40" r="2" fill="var(--ink)"/>
+  </symbol>
+  <symbol id="il-champagne" viewBox="0 0 64 64">
+    <circle cx="16" cy="12" r="2.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="48" cy="8" r="2" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="44" cy="18" r="3" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+    <path d="M22 6h20l-2.5 24c-.5 5-4 8-7.5 8s-7-3-7.5-8z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M23.5 14h17" stroke="#fff" stroke-width="2" opacity=".7"/>
+    <rect x="29.5" y="38" width="5" height="14" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <ellipse cx="32" cy="55" rx="12" ry="3.5" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+  </symbol>
+
+  <!-- pace -->
+  <symbol id="il-sprint" viewBox="0 0 64 64">
+    <path d="M4 22h10M2 30h9M6 38h8" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M34 34 22 44 12 40" fill="none" stroke="var(--navy)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M34 34 46 44 42 58" fill="none" stroke="var(--navy)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M42 20 34 34" stroke="var(--red)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M41 22 30 28 24 20" fill="none" stroke="var(--red)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M41 22 52 26 58 18" fill="none" stroke="var(--red)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="47" cy="11" r="7.5" fill="var(--skin,#f2c8a2)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M40 9.5a7.5 7.5 0 0 1 13 -3c-4 .5-8 3-13 3z" fill="#3b2a1e"/>
+  </symbol>
+  <symbol id="il-deckchair" viewBox="0 0 64 64">
+    <circle cx="14" cy="14" r="7" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M14 2v3M14 23v3M2 14h3M23 14h3M5.5 5.5l2 2M20.5 20.5l2 2M5.5 22.5l2-2M20.5 7.5l2-2" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M26 10h26v26l-6 14H32l-6-14z" fill="url(#stripes)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M26 36 16 58M52 36l10 22M32 50 24 58M46 50l8 8" stroke="var(--brown)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M4 60h56" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- focus -->
+  <symbol id="il-curtain" viewBox="0 0 64 64">
+    <rect x="6" y="8" width="52" height="48" rx="3" fill="#3a2b45" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="32" cy="42" r="10" fill="var(--gold)" opacity=".85"/>
+    <path d="M8 12c6 0 8 10 8 20s-2 16-8 22z" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M56 12c-6 0-8 10-8 20s2 16 8 22z" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M8 12c8 0 12 4 12 10 0 8-8 12-12 20" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M56 12c-8 0-12 4-12 10 0 8 8 12 12 20" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M4 10c8 6 16 6 28 6s20 0 28-6v-4H4z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="il-city" viewBox="0 0 64 64">
+    <circle cx="50" cy="14" r="7" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M30 46c6-14 16-20 30-18v18z" fill="var(--green)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M4 46c2-10 8-18 18-20l4 20z" fill="var(--brown)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M12 28v-8h4v4h4v-6h4v10z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M36 46V26l4-14 4 14v20" fill="#5b4a5e" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="2" y="46" width="60" height="10" fill="var(--sky)" stroke="var(--ink)" stroke-width="2"/>
+  </symbol>
+
+  <!-- travel -->
+  <symbol id="il-train" viewBox="0 0 64 64">
+    <path d="M6 16c0-4 3-7 7-7h30c6 0 13 5 15 12v16H6z" fill="var(--navy)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="12" y="15" width="10" height="10" rx="2" fill="var(--sky)" stroke="var(--ink)" stroke-width="1.5"/>
+    <rect x="27" y="15" width="10" height="10" rx="2" fill="var(--sky)" stroke="var(--ink)" stroke-width="1.5"/>
+    <path d="M42 15c6 0 10 4 12 10H42z" fill="var(--sky)" stroke="var(--ink)" stroke-width="1.5"/>
+    <path d="M6 30h52" stroke="var(--red)" stroke-width="4"/>
+    <rect x="4" y="36" width="56" height="8" rx="2" fill="#5b6b8a" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="16" cy="48" r="5" fill="var(--ink)"/><circle cx="32" cy="48" r="5" fill="var(--ink)"/><circle cx="48" cy="48" r="5" fill="var(--ink)"/>
+    <path d="M2 58h60" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="il-plane" viewBox="0 0 64 64">
+    <path d="M6 32c0-4 6-6 14-6h26c8 0 14 3 14 6s-6 6-14 6H20c-8 0-14-2-14-6z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M46 26 58 12h-8L38 26z" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M22 36 12 52h8l14-16z" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M28 26 20 14h8l10 12z" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="26" cy="32" r="2" fill="var(--sky)"/><circle cx="34" cy="32" r="2" fill="var(--sky)"/><circle cx="42" cy="32" r="2" fill="var(--sky)"/>
+    <path d="M8 12l6 2M4 20l6 1" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+  </symbol>
+  <symbol id="il-car" viewBox="0 0 64 64">
+    <path d="M6 44V32l10-12h30l12 12v12z" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M18 24h10v8H12zM32 24h12l7 8H32z" fill="var(--sky)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="18" cy="46" r="6" fill="var(--ink)"/><circle cx="46" cy="46" r="6" fill="var(--ink)"/>
+    <circle cx="18" cy="46" r="2.5" fill="var(--paper)"/><circle cx="46" cy="46" r="2.5" fill="var(--paper)"/>
+    <rect x="6" y="36" width="6" height="4" rx="1" fill="var(--gold)"/>
+  </symbol>
+
+  <!-- stay -->
+  <symbol id="il-guesthouse" viewBox="0 0 64 64">
+    <rect x="42" y="10" width="6" height="12" fill="var(--brown)" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="12" y="30" width="40" height="26" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M6 32 32 8l26 24z" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="27" y="40" width="10" height="16" rx="5" fill="var(--teal)" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="16" y="36" width="8" height="8" fill="var(--sky)" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="40" y="36" width="8" height="8" fill="var(--sky)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M14 46h12M38 46h12" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="18" cy="45" r="1.8" fill="var(--pink)"/><circle cx="22" cy="45" r="1.8" fill="var(--gold)"/><circle cx="42" cy="45" r="1.8" fill="var(--gold)"/><circle cx="46" cy="45" r="1.8" fill="var(--pink)"/>
+    <path d="M4 58h56" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="il-hotel" viewBox="0 0 64 64">
+    <rect x="14" y="10" width="36" height="48" fill="var(--navy)" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="10" y="6" width="44" height="6" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <g fill="var(--gold)"><rect x="19" y="17" width="6" height="6"/><rect x="29" y="17" width="6" height="6"/><rect x="39" y="17" width="6" height="6"/><rect x="19" y="27" width="6" height="6"/><rect x="29" y="27" width="6" height="6"/><rect x="39" y="27" width="6" height="6"/><rect x="19" y="37" width="6" height="6"/><rect x="29" y="37" width="6" height="6"/><rect x="39" y="37" width="6" height="6"/></g>
+    <rect x="26" y="46" width="12" height="12" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M20 46h24" stroke="var(--red)" stroke-width="4"/>
+    <path d="M4 58h56" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- extras -->
+  <symbol id="il-picnic" viewBox="0 0 64 64">
+    <circle cx="50" cy="14" r="7" fill="var(--gold)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M2 44c10-16 24-20 40-14 8 3 14 8 20 14z" fill="var(--green)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M10 56l8-12h30l8 12z" fill="url(#check)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M22 46h16v-2a4 4 0 0 0-4-4H26a4 4 0 0 0-4 4z" fill="var(--brown)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M25 40a5 5 0 0 1 10 0" fill="none" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M2 58h60" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="il-table" viewBox="0 0 64 64">
+    <path d="M10 22h10v16H10zM44 22h10v16H44z" fill="var(--brown)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M6 38h52v6c0 3-2 5-5 5H11c-3 0-5-2-5-5z" fill="var(--red)" stroke="var(--ink)" stroke-width="2"/>
+    <ellipse cx="32" cy="38" rx="26" ry="6" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="32" cy="36" r="6" fill="#fff" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="32" cy="36" r="3" fill="var(--gold)"/>
+    <path d="M18 30v6M46 30v6" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M44 22l2 6h4l2-6z" fill="var(--sky)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M18 24v4" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M16 49v9M48 49v9" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="il-booklet" viewBox="0 0 64 64">
+    <path d="M8 12h20v42H8zM36 12h20v42H36z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M28 12h8v42h-8z" fill="var(--violet)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M12 20h12M12 26h12M12 32h8M40 20h12M40 26h12M40 32h8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    <rect x="12" y="40" width="12" height="8" rx="1" fill="var(--gold)"/>
+    <rect x="40" y="40" width="12" height="8" rx="1" fill="var(--teal)"/>
+  </symbol>
+
+  <!-- small icons -->
+  <symbol id="ic-pin" viewBox="0 0 64 64">
+    <path d="M32 58S12 38 12 24a20 20 0 0 1 40 0c0 14-20 34-20 34z" fill="var(--red)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="32" cy="24" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/>
+  </symbol>
+  <symbol id="ic-sun" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="13" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5"/>
+    <path d="M32 6v8M32 50v8M6 32h8M50 32h8M13.6 13.6l5.6 5.6M44.8 44.8l5.6 5.6M13.6 50.4l5.6-5.6M44.8 19.2l5.6-5.6" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-masks" viewBox="0 0 64 64">
+    <path d="M6 12c10-4 18-4 26 0v16c0 10-6 18-13 18S6 38 6 28z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="14" cy="24" r="2.5" fill="var(--ink)"/><circle cx="24" cy="24" r="2.5" fill="var(--ink)"/>
+    <path d="M12 32q7 7 14 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M32 24c10-4 18-4 26 0v16c0 10-6 18-13 18s-13-8-13-18z" fill="var(--violet)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="40" cy="36" r="2.5" fill="var(--ink)"/><circle cx="50" cy="36" r="2.5" fill="var(--ink)"/>
+    <path d="M38 48q7-6 14 0" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-search" viewBox="0 0 64 64">
+    <circle cx="27" cy="27" r="17" fill="var(--sky)" stroke="var(--ink)" stroke-width="2.5"/>
+    <circle cx="27" cy="27" r="10" fill="var(--paper)" stroke="none"/>
+    <path d="M40 40l16 16" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M40 40l16 16" stroke="var(--brown)" stroke-width="3.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-book" viewBox="0 0 64 64">
+    <path d="M8 14c8-3 16-3 24 2v36c-8-5-16-5-24-2z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M56 14c-8-3-16-3-24 2v36c8-5 16-5 24-2z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M14 24h12M14 30h12M14 36h8M38 24h12M38 30h12M38 36h8" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+  </symbol>
+  <symbol id="ic-castle" viewBox="0 0 64 64">
+    <path d="M4 56c4-14 12-24 24-28h8c12 4 20 14 24 28z" fill="var(--brown)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M18 30V14h6v5h5v-7h6v7h5v-5h6v16z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="29" y="20" width="6" height="8" rx="3" fill="var(--ink)"/>
+    <path d="M32 12V4h8l-8 4" fill="var(--red)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-harp" viewBox="0 0 64 64">
+    <path d="M14 56V14c0-4 3-6 6-6 10 0 20 4 32 22V56z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M22 50V18M30 50V22M38 50v-22M46 50V36" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M10 56h46" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-clock" viewBox="0 0 64 64">
+    <circle cx="32" cy="34" r="22" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/>
+    <path d="M32 20v14l9 6" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 8l-10 8M44 8l10 8" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-ticket" viewBox="0 0 64 64">
+    <path d="M6 20a4 4 0 0 1 4-4h44a4 4 0 0 1 4 4v8a6 6 0 0 0 0 12v8a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4v-8a6 6 0 0 0 0-12z" fill="var(--violet)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M40 20v28" stroke="var(--paper)" stroke-width="2" stroke-dasharray="3 3"/>
+    <path d="M14 28h18M14 36h12" stroke="var(--paper)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-star" viewBox="0 0 64 64">
+    <path d="M32 6l7.6 16.2 17.8 2.2-13.1 12.2 3.4 17.6L32 45.5l-15.7 8.7 3.4-17.6L6.6 24.4l17.8-2.2z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-nope" viewBox="0 0 64 64">
+    <path d="M14 14l36 36M50 14 14 50" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M14 14l36 36M50 14 14 50" stroke="var(--red)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-arrow" viewBox="0 0 64 64">
+    <path d="M8 32h44M36 16l16 16-16 16" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-back" viewBox="0 0 64 64">
+    <path d="M56 32H12M28 16 12 32l16 16" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-plus" viewBox="0 0 64 64">
+    <path d="M32 10v44M10 32h44" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-tick" viewBox="0 0 64 64">
+    <path d="M10 34l14 14 30-32" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- the postcard front -->
+  <symbol id="il-skyline" viewBox="0 0 900 360" preserveAspectRatio="xMidYMax slice">
+    <rect width="900" height="360" fill="var(--sky)"/>
+    <circle cx="700" cy="90" r="44" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/>
+    <g fill="#fff" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round">
+      <path d="M120 110c0-16 14-24 26-20 6-12 26-14 34-2 12-6 30 2 28 16 6 4 4 14-6 14H130c-10 0-14-6-10-8z"/>
+      <path d="M400 60c0-14 12-20 22-16 6-10 22-12 30-2 10-6 26 2 24 14 6 4 4 12-5 12H410c-9 0-13-5-10-8z"/>
+      <path d="M790 150c2-12 12-16 20-12 5-8 18-10 24-2 8-4 20 2 18 12 4 4 2 10-4 10h-52c-8 0-10-5-6-8z"/>
+    </g>
+    <path d="M520 300c40-90 120-140 220-150 60-4 120 40 160 150z" fill="var(--green)" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M600 300c30-50 70-80 120-90 40 10 70 40 90 90z" fill="#6ea052" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M0 300c30-60 60-110 110-140 40-10 90-8 130 6 60 20 100 80 120 134z" fill="var(--brown)" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M90 168V136h16v14h16v-22h18v22h16v-14h16v32z" fill="var(--paper)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M170 168V126h18v10h18v-18h20v18h18v-10h18v42z" fill="#efe3cc" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="128" y="146" width="10" height="16" rx="5" fill="var(--ink)"/><rect x="200" y="138" width="10" height="16" rx="5" fill="var(--ink)"/>
+    <path d="M216 118v-24l22 8-22 8" fill="var(--red)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <g fill="#e9dcc2" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round">
+      <path d="M300 300V220l20-14 20 14v80z"/><path d="M340 300V240l24-12 24 12v60z"/><path d="M388 300V230l16-10 16 10v70z"/>
+      <path d="M700 300V250l14-8 14 8v50z"/><path d="M728 300V262l20-10 20 10v38z"/>
+    </g>
+    <g fill="var(--gold)"><rect x="312" y="240" width="8" height="10"/><rect x="328" y="240" width="8" height="10"/><rect x="312" y="264" width="8" height="10"/><rect x="328" y="264" width="8" height="10"/><rect x="356" y="256" width="8" height="10"/><rect x="372" y="256" width="8" height="10"/><rect x="396" y="250" width="8" height="10"/><rect x="740" y="272" width="8" height="10"/></g>
+    <path d="M440 300V160l16-70 16 70v140z" fill="#5b4a5e" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M430 300v-80h52v80z" fill="#5b4a5e" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M446 300v-40a10 10 0 0 1 20 0v40z" fill="var(--sky)" stroke="var(--ink)" stroke-width="3"/>
+    <rect x="0" y="298" width="900" height="62" fill="#5aa7c9" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M40 330q20-10 40 0t40 0M600 340q20-10 40 0t40 0M760 322q20-10 40 0t40 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+    <path d="M560 262h32l-4-18h-24z" fill="var(--red)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M520 262h40v6h-40z" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M530 258c8-12 18-14 30-8v12h-30z" fill="var(--paper)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+  </symbol>
+</svg>
