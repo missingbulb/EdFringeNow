@@ -348,7 +348,7 @@ test("this repo's committed data/ holds only generator output", () => {
 });
 
 test("the pack manifest declares the checks and stays hand-declared", () => {
-  assert.equal(pack.id, "edfringe-data");
+  assert.equal(pack.id, "edfringe-now");
   assert.equal(pack.detect, null, "a local pack is never fingerprinted");
   assert.equal(pack.marker, null);
   assert.equal(pack.prose, "RULES.md");
