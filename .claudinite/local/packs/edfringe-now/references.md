@@ -29,3 +29,9 @@ sends its reader here.
   (#300), which the rule turned into a standing ban on the first fetch attempt; `fringeplan.com`
   fetched fine on 2026-09-04. A first-hand page beats a search snippet, and one attempt costs
   less than the staleness. Retire alongside (RULES-3).
+- **(RULES-5)** On 2026-09-04 (issue #587, the trip-planner design pass) the owner rejected the
+  first mockup draft as looking "like a collection of buttons or an enterprise app" rather than
+  "a vacation planner," named minimal text as a mistake the drafts "often" make, and asked for
+  graphics-led wizard screens that hide a question once it's answered. The redo (three designer
+  subagents plus two reviews) won a clear owner pick and shipped as PR #589. Retire once a
+  future pass ships a graphics-first, minimal-text first draft without needing this correction.
