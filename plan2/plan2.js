@@ -75,6 +75,13 @@ function answered(step) {
   }
 }
 
+// The first question still without an answer, or null when the trip is
+// fully described. The draft is only ever rendered in the null case: a
+// question reopened and left half-answered comes back before the calendar.
+function firstUnanswered() {
+  return STEPS.find((step) => step !== "draft" && !answered(step)) || null;
+}
+
 function primaryFestival() {
   return world.festivals.find((f) => f.id === state.answers.festivalIds[0]);
 }
@@ -97,6 +104,8 @@ function dateRange() {
 
 function render() {
   if (!world) return;
+  const missing = firstUnanswered();
+  if (state.step === "draft" && missing) { state.step = missing; save(); }
   stage.innerHTML = state.step === "draft" ? renderBack() : renderFront();
   wire();
 }
@@ -147,7 +156,7 @@ function answerStickers(exceptStep) {
   }
   if (exceptStep !== "sleep" && answered("sleep") && city) {
     const stay = pickStay(city, { ...a, notStay: state.rules.notStay });
-    st("sleep", "rose", 3, `${use(stay.kind === "hotel" ? "il-hotel" : "il-guesthouse")}${esc(stay.name.split(" ")[0])}`);
+    st("sleep", "rose", 3, `${use(stay.kind === "hotel" ? "il-hotel" : "il-guesthouse")}${esc(stay.name.replace(/^the\s+/i, "").split(/[\s,]/)[0])}`);
   }
   return out.join("");
 }

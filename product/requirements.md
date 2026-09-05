@@ -897,7 +897,7 @@ trips, so the experience can be played with before any of it touches live data.
 
 - `17.5` The draft is never shown with a question unanswered: reopening one and leaving it half-answered brings that question back.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:17.5 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:17.5 -->
 
   <details><summary>Notes</summary>
 
