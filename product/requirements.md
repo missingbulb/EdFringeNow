@@ -894,3 +894,15 @@ trips, so the experience can be played with before any of it touches live data.
   performance on the trip's dates peels to "Not for me" and keep. Both peels
   are rendered together, one on each kind of ticket.
   </details>
+
+- `17.5` The draft is never shown with a question unanswered: reopening one and leaving it half-answered brings that question back.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:17.5 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: from a finished draft, reopen "When?" from its sticker, click one
+  day (which starts a new range), hop to another sticker and press Next
+  through to the end. The page lands on "When?" again, not on an empty
+  calendar; once the range is completed the draft has its day columns.
+  </details>
