@@ -2,11 +2,11 @@
   "packs": [
     {
       "id": "basics",
-      "version": "60904.3"
+      "version": "60906.3"
     },
     {
       "id": "git-github",
-      "version": "60903.1",
+      "version": "60906.1",
       "via": [
         "basics"
       ]
@@ -17,11 +17,11 @@
     },
     {
       "id": "tidy-repo",
-      "version": "60903.3"
+      "version": "60906.1"
     },
     {
       "id": "claudinite-growth",
-      "version": "60904.4",
+      "version": "60906.3",
       "config": {
         "retention_days": 10
       }
@@ -44,7 +44,7 @@
     },
     {
       "id": "static-website",
-      "version": "60903.3",
+      "version": "60905.1",
       "answers": {
         "hosting": "GitHub Pages from this repo — confirmed from the repo rather than asked: the hand-rolled Pages workflow this adoption replaces already deployed to Pages on push to main via actions/deploy-pages, with no CNAME and no other host. So the full set is vendored: orchestrator + publish/deploy reusables + the three composite actions.",
         "publish_set": "Rooted at the repo root. The site is the four pages (index, accessibility, privacy, terms), the favicons and .nojekyll, css/, js/, shared/, the planner's own paths (plan/index.html, plan/plan.css, plan/plan.js, plan/lib), package.json (the debug pill fetches it for the version), and only the data the browser actually fetches: data/venues.json, data/days/, and the three normalized sidecars the planner loads (shows.min.json, availability.min.json, descriptions.min.json). Derived from the fetch call sites in js/app.js and plan/plan.js, not from 'everything except the tooling'. Deliberately excluded: data/normalized/shows.json (7.4M) and data/prices.json (2.9M) are scraper-side inputs no page fetches, plus scraper/, docs/, design-concepts/, product-wiki/, plan/design/, scripts/ and the agent tooling."
@@ -52,7 +52,7 @@
     },
     {
       "id": "product-wiki",
-      "version": "60904.1",
+      "version": "60905.1",
       "answers": {
         "product": "Fringe Discover: a spontaneity/reachability tool for the Edinburgh Festival Fringe. Where listings apps answer 'what exists?', this answers 'what can I actually make right now?' — given the user's location, how far they'll travel and how, and their next commitment, it collapses ~3,800 shows into a short list of genuinely reachable options that haven't started and still leave time to reach whatever is next.",
         "users": "Fringe-goers mid-festival, usually on foot and without a fixed plan — visitors with a gap between a booked show and dinner, locals and tourists intimidated by the programme's scale. Decisive in the moment rather than researchers: they want a short list of good, reachable options, not 3,800 search results. Emotional target: 'delight + relief'.",
@@ -71,11 +71,11 @@
     },
     {
       "id": "claudinite-lifecycle",
-      "version": "60904.1"
+      "version": "60906.3"
     },
     {
       "id": "claudinite-tasks",
-      "version": "60904.2"
+      "version": "60906.5"
     }
   ],
   "accept": [
