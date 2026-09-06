@@ -180,8 +180,10 @@ not the current state. Settle the question with a probe:
 curl -sS -o /dev/null -w "%{http_code}\n" --max-time 15 https://<host>/
 ```
 
-Observed so far: `*.edfringenow.com` allowed from 2026-08, denied at CONNECT on 2026-08-07,
-and general egress open on 2026-09-04 with `WebSearch` and `WebFetch` reaching arbitrary hosts.
+Observed so far: denied at CONNECT on 2026-08-07, general egress open on 2026-09-04 with
+`WebSearch` and `WebFetch` reaching arbitrary hosts, denied at CONNECT again on 2026-09-06 —
+closed and open within two days of each other, so treat every prior observation here as expired
+on arrival and probe fresh.
 
 - **About to report a capability as unavailable** — probe it in this session first, whatever
   this file says. A note that a door was shut is not evidence it is shut, and only the probe
@@ -334,25 +336,28 @@ already have rather than let both sides poll the same state twice.
 
 ### GitHub MCP call shapes that cost round-trips here
 
-- **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
-  on this repo's history, and lowering `per_page` does not fix it.** Proven:
-  one session retried the same call at `per_page` 25, 10, 3, 2 and 1 and got a
-  byte-identical ~100–390K-character response every time. When it overflows,
-  read the spilled tool-result file yourself (`python3`/`jq`) and project out
-  only the fields you need — don't follow the overflow error's "read it in
-  sequential chunks" advice on a single-line JSON blob, and don't burn retries
-  lowering `per_page` first.
+- **`actions_list`/`list_workflow_runs` can still overflow the tool-result
+  token limit on this repo's history — each run embeds its full
+  `head_commit.message`, and a page of routine merge commits already runs to
+  several thousand tokens.** `perPage` is honored now: reprobed 2026-09-06,
+  `perPage: 1` came back as one ~700-byte run and `perPage: 25` scaled up
+  proportionally rather than repeating a fixed-size blob, so an earlier
+  finding that five different `per_page` values all produced a
+  byte-identical response no longer holds — lower it first. When a call
+  still overflows, read the spilled tool-result file yourself (`python3`/`jq`)
+  and project out only the fields you need — don't follow the overflow
+  error's "read it in sequential chunks" advice on a single-line JSON blob.
 - **`search_issues`, `list_pull_requests`, `pull_request_read` do shrink — with
   `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
   across the corpus have never overflowed, typically 100–250 bytes back
   instead of six figures.
-- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
-  decodes `false` (absent from the response) and `merged_at` is never
-  populated, `fields` or not — confirmed live when it read PR #385 as
-  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
-  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
-  `(#N)`, or call `pull_request_read get` on the one PR you actually care
-  about.
+- **`list_pull_requests`'s `merged` field still decodes `false` for a PR that
+  is genuinely merged — never trust it.** Its `merged_at`, though, is fixed:
+  reprobed 2026-09-06 across five merged PRs (#622–#636) it carried the real
+  merge timestamp, and a confirmed-unmerged closed PR (#433) came back with
+  the key absent, so `merged_at`'s presence is now the reliable landed-ness
+  check straight out of the list call — no need to grep `origin/main`'s
+  commit subjects or call `pull_request_read get` per candidate PR.
 - **`pull_request_read method=get_files` overflows the same way
   `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
   not something to retry.** PR #207 (46 files, +2554/-274) blew the token
