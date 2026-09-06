@@ -488,6 +488,12 @@ Give it an explicit budget ("finish with a few NOT FOUNDs rather than dig exhaus
 a subagent killed by a session rate-limit mid-run hands back no report at all, not a
 partial one. (2)
 
+### Building a first-pass UI/UX mockup for this product
+
+Default to graphics-first, minimal-text, wizard-style screens that hide answered questions —
+the owner has rejected a first pass that read as generic enterprise-app buttons-and-prose as a
+recurring mistake, not a one-off. (5)
+
 ### A capture pass must never land a rule that teaches routing around a safety or permission denial
 
 On 2026-08-15 the growth-extract subagent (dispatched for issue #359) merged a rule into this
