@@ -80,8 +80,6 @@ async function nowReady(page) {
   await settle(page);
 }
 
-// Planner is ready when the catalogue has landed (the search placeholder
-// switches to the real count) and the version tooltip is in.
 // The postcard planner (/plan2): the page marks itself ready once the test
 // data and the symbol sheet are in and the first render has landed.
 async function plan2Ready(page) {
@@ -89,6 +87,8 @@ async function plan2Ready(page) {
   await settle(page);
 }
 
+// Planner is ready when the catalogue has landed (the search placeholder
+// switches to the real count) and the version tooltip is in.
 async function planReady(page) {
   await page.waitForFunction(() => {
     const i = document.getElementById("ssInput");
