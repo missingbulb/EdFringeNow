@@ -5,6 +5,10 @@
       "version": "60906.3"
     },
     {
+      "id": "claudinite-lifecycle",
+      "version": "60906.3"
+    },
+    {
       "id": "git-github",
       "version": "60906.1",
       "via": [
@@ -14,10 +18,6 @@
     {
       "id": "html",
       "version": "60902.1"
-    },
-    {
-      "id": "tidy-repo",
-      "version": "60906.1"
     },
     {
       "id": "claudinite-growth",
@@ -70,12 +70,20 @@
       }
     },
     {
-      "id": "claudinite-lifecycle",
-      "version": "60906.3"
-    },
-    {
       "id": "claudinite-tasks",
       "version": "60906.5"
+    },
+    {
+      "id": "node",
+      "version": "60906.2"
+    },
+    {
+      "id": "headless-browser",
+      "version": "60902.1"
+    },
+    {
+      "id": "leaflet",
+      "version": "60902.1"
     }
   ],
   "accept": [
