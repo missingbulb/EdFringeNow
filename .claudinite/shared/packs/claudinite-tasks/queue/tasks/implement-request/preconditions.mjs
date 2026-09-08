@@ -1,14 +1,14 @@
 // THE SECURITY CHECK for the request implementer, as a precondition term — the
 // one gate that decides whether a marked issue actually runs. It happens where
-// every verdict happens: once, at pickup, on the executor (tasks-dispatch DESIGN
-// §6.4). It is task-local because its subject is one named issue rather than a
+// every verdict happens: once, at pickup, on the executor (docs/PRINCIPLES.md
+// PRINCIPLES.md). It is task-local because its subject is one named issue rather than a
 // window of repo activity, which is also why the term reads the `item` it is
 // handed.
 //
 // Three refusals, each a plain no-go that converges the item to the rejected
 // terminal — a refusal is nobody's inbox, and an ad-hoc item has no anchor to
-// roll to. On a marked issue that terminal stands on the OPEN issue: the run's
-// verdict is not the issue's validity (§16.5).
+// roll to. The terminal closes the issue it stands on, marked or filed: nothing
+// ran and nothing will, so there is no question left open (PRINCIPLES.md).
 //
 // A READ FAILURE IS NOT A VERDICT (F27). The decline's write-back cannot reach an
 // issue it cannot read, so declining on a rate limit or a 500 would strand the
@@ -36,6 +36,10 @@ export function eligibility(req) {
 export const terms = {
   'request-eligible': {
     signals: ['request'],
+    // About one named issue, so there is nothing to judge at the scheduler's own
+    // ask — which is why this task declares `trigger: 'request'` and runs only from
+    // a marked issue. The shape check holds the two together.
+    needsItem: true,
     holds(signals, { item }) {
       const req = signals.request;
       if (!req) {
