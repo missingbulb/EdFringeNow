@@ -1091,7 +1091,19 @@ The film adjacency (light survey, 2026-09-01):
   reboot and the performer-run Independent Comedy Festival both claim the
   slot and the venues; whichever wins also decides whether the open
   Eventotron API survives as the data source. Chortle is covering the story
-  — re-check after the autumn announcements.
+  — re-check after the autumn announcements. (Search-snippet signal only,
+  2026-09-11, not yet verified against a primary source: British Comedy
+  Guide, Beyond The Joke and coolasleicester.co.uk all carry an "Independent
+  Comedy Festival" launch — Colin Bowles and Alex Hylton, 3–21 Feb 2027,
+  "hundreds of shows across dozens of venues" in the city and wider county —
+  and Leicester City Council's own site reportedly says it will "ensure" a
+  2027 festival happens via a new delivery model, without stating whether
+  that model *is* the Independent Comedy Festival or a separate council
+  vehicle. Every one of those sites (chortle.co.uk, comedy.co.uk,
+  beyondthejoke.co.uk, coolasleicester.co.uk, news.leicester.gov.uk) was
+  domain-blocked by this session's network egress this pass, so none of it
+  is fetched or cited into the dossier above — it stays here as an unverified
+  lead for the next pass or an unblocked environment.)
 - **Comedy's share of the open-access programmes is only measured for
   Brighton (46%).** Adelaide publishes no genre counts; MICF's genre split
   wasn't captured from its API this pass. Both are one in-season API/page
@@ -1187,3 +1199,10 @@ The film adjacency (light survey, 2026-09-01):
   "comedy-" an under-claim — the page covers the comedy circuit in depth and
   the film circuit surveyed light. All inbound links updated in the same
   change.
+- **2026-09-11** — annotated the open Leicester 2027 question with an
+  unverified lead surfaced by web search (an "Independent Comedy Festival"
+  launch, 3–21 Feb 2027, and a council statement it will ensure a 2027
+  festival happens): every primary source for it was domain-blocked by this
+  session's egress proxy this pass, so nothing is fetched or added to the
+  dossier itself — the lead is recorded, flagged unverified, for a future
+  pass or an unblocked environment. No other claim on the page changed.

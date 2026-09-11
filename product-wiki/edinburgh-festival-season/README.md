@@ -28,7 +28,7 @@ whether they know it or not.
 
 | Festival | Dates | Scale | Where |
 |---|---|---|---|
-| **Festival Fringe** | 7–31 Aug | 4,206 shows / 60,000+ performances / 299 venues / 74 countries | citywide |
+| **Festival Fringe** | 7–31 Aug | 4,232 shows / 61,277 performances / 306 venues / 77 countries | citywide |
 | **International Festival (EIF)** | 7–30 Aug | 147 performances / 44 countries / 2 exhibitions | a few large halls |
 | **Royal Edinburgh Military Tattoo** | 7–29 Aug (not Sundays) | one show, ~800 performers, ~9,000 seats a night, ~230,000 a year | one venue |
 | **Edinburgh Deaf Festival** | 7–16 Aug | 80+ events | Deaf Action + Fringe venues |
@@ -40,11 +40,13 @@ whether they know it or not.
 Two things fall out of the table:
 
 - **Volume is overwhelmingly Fringe.** Every non-Fringe August festival added
-  together is roughly 900 events against the Fringe's 4,206 shows — the Fringe is
+  together is roughly 900 events against the Fringe's 4,232 shows — the Fringe is
   ~82% of the cluster. (Corrected 2026-08-09: this read 3,649, the 4 June
   programme-launch figure, which was ~15% short of the delivered festival; the
-  conclusion is unchanged and slightly stronger. See
-  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) for the correction.)
+  conclusion is unchanged and slightly stronger. Updated 2026-09-11 from the
+  opening-day 4,206 to the festival's final closing count, 4,232 — the ~82%
+  share is unchanged. See
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md) for both corrections.)
   Any ranking that sorts purely on relevance or proximity will show a Fringe-only
   city.
 - **Scarcity runs the other way.** A Fringe show typically plays ~25 times. A
@@ -129,7 +131,7 @@ no start time to reach in time for.
 
 ## Locations
 
-- **The Fringe is citywide** (299 venues); everything else is concentrated.
+- **The Fringe is citywide** (306 venues); everything else is concentrated.
 - **The Book Festival is effectively one campus** — Edinburgh Futures Institute
   (1 Lauriston Place), plus McEwan Hall and, new for 2026, Greyfriars Kirk. All
   within a few minutes' walk of each other and of the Fringe's Bristo Square
@@ -223,7 +225,8 @@ blurbs and belongs in the competitor page once someone actually uses them.
 
 ## Sources
 
-- [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — the Fringe's delivered 2026 scale: 4,206 shows, 299 venues, 74 countries, 60,000+ performances.
+- [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — the Fringe's opening-day 2026 scale: 4,206 shows, 299 venues, 74 countries, 60,000+ performances.
+- [Edinburgh Festival Fringe 2026 concludes with its 80th anniversary firmly in sight (edfringe.com, 31 August 2026)](https://www.edfringe.com/about-us/news-and-blog/edinburgh-festival-fringe-2026-concludes-with-its-80th-anniversary-firmly-in-sight/) — the Fringe's final delivered 2026 scale: 4,232 shows, 306 venues, 77 countries, 61,277 performances, used in the table above.
 - [Edinburgh Festivals: What's On in 2026 (Edinburgh Festival City)](https://www.edinburghfestivalcity.com/inspiration/573-edinburgh-festivals-whats-on-in-2026)
 - [Edinburgh Festivals (VisitScotland)](https://www.visitscotland.com/things-to-do/events/edinburgh-festivals)
 - [Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/)
@@ -330,3 +333,11 @@ blurbs and belongs in the competitor page once someone actually uses them.
   `edinburgh-festival-season/` on the owner's direction: with the wiki's
   scope now global, this page's Edinburgh-specific subject needs the city in
   its name. Content unchanged; all inbound links updated in the same change.
+- **2026-09-11** — updated the Fringe's row in the August cluster table and
+  the volume arithmetic beneath it, and the "citywide" venue count, from the
+  7 August opening-day figures (4,206 / 60,000+ / 299 / 74) to the Fringe
+  Society's 31 August closing figures, the festival now over (4,232 shows /
+  61,277 performances / 306 venues / 77 countries). The Fringe's share of the
+  cluster stays ~82%; no conclusion moved, only the figures — propagated from
+  the same update on
+  [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md).
