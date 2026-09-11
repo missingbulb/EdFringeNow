@@ -6,9 +6,9 @@
 //            focus, originId, mode, sleep: [two of cost|comfort|location] }
 // rules:   { notShow: [id], notGenre: [genre], notVenue: [venueId],
 //            notTime: ["showId@date"], notMeal: [id], notOut: [id],
-//            noDayOut: bool, noMeals: bool, travelShift: -1|0|1 }
+//            noDayOut: bool, noMeals: bool, travelShift: -1|0|1,
+//            notStay: [hotelId], stickOut: [date], stickMeal: [date] }
 // starred: [showId]   — must be in the plan, never swapped
-// picks:   [showId]   — chosen by hand in the content chooser (same as starred)
 
 import { perfsBetween, toMin, fromMin, daysBetween, dayOfWeek, walkMinutes, cityOf, venueOf, showsOf, routesFrom } from "./world.js";
 
@@ -197,8 +197,8 @@ export function draftTrip(world, answers, rules = {}, starred = []) {
     }
 
     // Shows: fit around what the day already holds (travel, the stay, a day
-    // out), starred and hand-picked shows first, then the best fit for each
-    // remaining hole — a late starred concert never blocks the afternoon.
+    // out), starred shows first, then the best fit for each remaining hole —
+    // a late starred concert never blocks the afternoon.
     const genresToday = new Set();
     const budget = perDay + starSet.size;
     let count = 0;
@@ -272,7 +272,7 @@ export function draftTrip(world, answers, rules = {}, starred = []) {
 }
 
 // Free gaps of an hour or more between a day's items, for the dashed "free"
-// tickets and for stick-on placement.
+// tickets on the calendar.
 export function gapsOf(day, from = DAY_START + 60, to = 23 * 60) {
   const gaps = [];
   let cursor = from;
