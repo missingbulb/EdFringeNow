@@ -1,14 +1,14 @@
-// The task declaration contract (per-project-scheduling DESIGN §1) — the single
+// The task declaration contract (docs/PRINCIPLES.md) — the single
 // source of truth for what a `tasks/<name>/task.json` must carry.
 // Both the author-time `task-declaration-shape` check and the executor-side
 // `validate-dispatch` validate against this one function, so the accepted shape
 // can never drift between the two surfaces.
 
-import { ACCEPTED_FREQUENCIES, normalizeFrequency } from './calendar.mjs';
+import { ACCEPTED_FREQUENCIES, cadenceTermFor, cadenceOf, statesConditions, DUE_TERM } from './calendar.mjs';
 import { MODEL_FAMILIES } from './model-map.mjs';
 import { EXECUTING_LEASH_MS } from './queue/leases.mjs';
 import { normalizePolicy } from './merge-policy.mjs';
-import { validatePreconditions, preconditionSignals } from './precondition-policy.mjs';
+import { validatePreconditions, preconditionSignals, preconditionNeedsItem, NONE } from './precondition-policy.mjs';
 import { applyTaskDefaults } from './task-defaults.mjs';
 
 // A declared timeout is always a whole number of seconds, > 0.
@@ -16,7 +16,7 @@ const isPositiveInt = (n) => Number.isInteger(n) && n > 0;
 
 // A code-work command must stay inside its own task directory — no absolute
 // path and no `..` traversal in the command string — the same containment the
-// worker-file rule gives agent_instructions (task-code-work DESIGN §2).
+// worker-file rule gives agent_instructions (docs/PRINCIPLES.md).
 const escapesTaskDir = (cmd) => /(^|\s)\//.test(cmd) || cmd.includes('..');
 
 // Task execution is two similar, consecutive phases — deterministic CODE-WORK,
@@ -48,13 +48,27 @@ export const LEGACY_FIELDS = {
 
 // The defaults live in task-defaults.mjs — a module with no imports, so the
 // dashboard's browser bundle can fill them the way the loader does.
-export { DEFAULT_PRECONDITIONS, DEFAULT_AUTOMERGE, DEFAULT_AGENT_MODEL } from './task-defaults.mjs';
+export { DEFAULT_AUTOMERGE, DEFAULT_AGENT_MODEL } from './task-defaults.mjs';
+
+// WHO MINTS AN OCCURRENCE, and WHAT MUST HOLD once one exists (docs/PRINCIPLES.md).
+// Two fields, one sentence: `trigger` says whether the scheduler asks
+// this task at every tick, `preconditions` says what has to be true for the run to
+// go ahead — judged identically at a tick and at a pick. A `request` task is asked
+// by nobody and runs from an item somebody created: a marked issue, a wake, a chain
+// link, a fan-out target.
+export const TRIGGER_SCHEDULE = 'schedule';
+export const TRIGGER_REQUEST = 'request';
+export const TRIGGERS = Object.freeze([TRIGGER_SCHEDULE, TRIGGER_REQUEST]);
+
+// The cadence a task keeps, as the term it states — `null` where it states none.
+export const taskCadence = (decl) => cadenceOf(decl?.preconditions);
+export const isScheduledTask = (decl) => decl?.trigger === TRIGGER_SCHEDULE;
 
 // Return the declaration with canonical field names and the defaults filled in.
 // Non-objects pass through untouched so validateTaskDeclaration still reports
 // them. Loaders (discover, resolve-dispatch) normalize once; everything
 // downstream sees only `code_work` and never an absent defaulted field.
-export function normalizeTaskDeclaration(decl) {
+export function normalizeTaskDeclaration(decl, terms = new Map()) {
   if (decl === null || typeof decl !== 'object' || Array.isArray(decl)) return decl;
   const out = { ...decl };
   // The editor's schema pointer, when a caller hands over a parsed task.json whole.
@@ -65,9 +79,49 @@ export function normalizeTaskDeclaration(decl) {
       delete out[legacy];
     }
   }
-  // THE ONE DOOR for the retired frequency spellings (DESIGN §17.1). Here rather than in the
-  // calendar because a frequency is read by more than the calendar — see `normalizeFrequency`.
-  if (out.frequency !== undefined) out.frequency = normalizeFrequency(out.frequency);
+  // THE FREQUENCY DOOR (docs/PRINCIPLES.md). `frequency` is retired: a task's
+  // cadence is one of its own preconditions, read off its run history. A declaration
+  // still carrying the field reads exactly as it always did — the field becomes the
+  // cadence term it always meant, first in the expression, and a `none` beside it
+  // (the empty precondition it used to need) drops; `manual` meant no schedule and
+  // adds no term. The field itself does not survive the door: nothing downstream
+  // reads it.
+  //
+  // Scaffolding, not a second vocabulary: `legacy-task-fields` reports the field,
+  // and the nightly update rewrites a member's own task files (the
+  // `task-cadence-terms` record), so the acceptance ends one convergence window
+  // after #1725 ships (#1732).
+  // @legacy-tolerance advisory:legacy-task-fields retire:#1732
+  if (out.frequency !== undefined) {
+    const stated = Array.isArray(out.preconditions) ? out.preconditions.filter((e) => String(e).trim() !== NONE) : [];
+    if (ACCEPTED_FREQUENCIES.includes(out.frequency)) {
+      const term = cadenceTermFor(out.frequency);
+      out.preconditions = term === null || stated.some((e) => String(e).trim() === term) ? stated : [term, ...stated];
+    } else {
+      // An illegal frequency is still reported, as the illegal condition it becomes.
+      out.preconditions = [`${DUE_TERM}:${out.frequency}`, ...stated];
+    }
+    delete out.frequency;
+  }
+  // A declaration stating no conditions carries the empty expression from here on,
+  // so every reader judges one array: at a pick it holds, at a tick it is never asked.
+  if (out.preconditions === undefined) out.preconditions = [];
+  // THE TRIGGER DOOR. A declaration written before the field existed is read the way
+  // the schedule was read then — off the SHAPE of the expression: conditions the
+  // scheduler can judge put the task on the schedule; no conditions, or one that
+  // reads the item itself, keep it off. Derived, never defaulted: the answer that
+  // declaration already gives, so nothing changes behaviour by passing through here.
+  //
+  // Scaffolding, not a second vocabulary: `legacy-task-fields` reports a declaration
+  // stating no trigger, and the nightly update writes the derived value into a
+  // member's own task files (the `task-cadence-terms` record), so the derivation ends
+  // one convergence window after that advisory ships (#1789).
+  // @legacy-tolerance advisory:legacy-task-fields retire:#1789
+  if (out.trigger === undefined) {
+    out.trigger = statesConditions(out.preconditions) && !preconditionNeedsItem(out.preconditions, terms)
+      ? TRIGGER_SCHEDULE
+      : TRIGGER_REQUEST;
+  }
   // The retired outcome ceilings become the outcome/policy pair. An explicit
   // `automerge` beside a legacy spelling wins: a half-migrated declaration
   // keeps the narrower intent it states.
@@ -79,8 +133,8 @@ export function normalizeTaskDeclaration(decl) {
   return applyTaskDefaults(out);
 }
 
-// What a task's run does to PULL REQUESTS (tasks-dispatch DESIGN §6.4b, decision
-// §15.32) — the write ceiling and the target in one word, resolved once by the
+// What a task's run does to PULL REQUESTS (docs/PRINCIPLES.md, decision
+// PRINCIPLES.md) — the write ceiling and the target in one word, resolved once by the
 // executor before code-work and handed to both phases:
 //   no_code_changes                  — never opens one.
 //   fresh_pr                         — one on a freshly minted branch; the task's
@@ -140,12 +194,12 @@ export function canonicalOutcome(outcome) {
 export const SESSION_SCOPES = ['self', 'fleet'];
 
 // What must happen to a task's work item when a recovery path would re-execute it
-// (tasks-dispatch DESIGN §6). `requeue` is the safe-side default for sweep-shaped
+// (docs/PRINCIPLES.md). `requeue` is the safe-side default for sweep-shaped
 // work; `needs-human` is the at-most-once dial a one-shot side effect declares.
 export const INTERRUPT_POLICIES = ['requeue', 'needs-human'];
 
 
-// The signal-collector vocabulary (DESIGN §3.3). A task collects only the union
+// The signal-collector vocabulary (PRINCIPLES.md). A task collects only the union
 // of what its due tasks declare. `fleet` is canon-only (consumers cannot declare
 // it) — that restriction is enforced where signals are collected, not here; the
 // shape check only asserts a declared name is a real collector.
@@ -173,9 +227,9 @@ export function descriptionProblem(description) {
 // empty means the declaration is well-formed. Pure: no I/O, no imports of the
 // task itself; the caller supplies the already-loaded default export.
 export function validateTaskDeclaration(raw, terms = new Map()) {
-  const decl = normalizeTaskDeclaration(raw);
+  const decl = normalizeTaskDeclaration(raw, terms);
   if (decl === null || typeof decl !== 'object' || Array.isArray(decl)) {
-    return [{ what: 'task.json is not a declaration object', fix: 'write one JSON object: { "id", "frequency", "preconditions", "expected_outcome", … }' }];
+    return [{ what: 'task.json is not a declaration object', fix: 'write one JSON object: { "id", "description", "expected_outcome", … }' }];
   }
   const problems = [];
   const bad = (what, fix) => problems.push({ what, fix });
@@ -188,14 +242,6 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
   if (decl.description !== undefined) {
     const problem = descriptionProblem(decl.description);
     if (problem) bad(problem.what, problem.fix);
-  }
-  // ACCEPTED, not FREQUENCIES: a member's own task file may still carry a retired spelling and
-  // must keep running, since nothing converges a member's task files. Stopping a NEW declaration
-  // from naming one is the author-time declaration-shape check's job, not this one's — the split
-  // is deliberate, and `FREQUENCIES` beside `ACCEPTED_FREQUENCIES` in calendar.mjs is where it is
-  // spelled out.
-  if (!ACCEPTED_FREQUENCIES.includes(decl.frequency)) {
-    bad(`"frequency" ${JSON.stringify(decl.frequency)} is not a legal frequency`, `set one of: ${ACCEPTED_FREQUENCIES.join(', ')}`);
   }
   // `precondition_signals` is retired with the function form it belonged to
   // (#1617). The union is DERIVED from the expression's terms, each of which
@@ -236,6 +282,13 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
   if (decl.agent_model !== 'none' && (typeof decl.agent_instructions !== 'string' || decl.agent_instructions.trim() === '')) {
     bad('an agentic task (agent_model !== "none") declares no string "agent_instructions"', 'point "agent_instructions" at the worker file beside task.json (e.g. "task.md")');
   }
+  // The trigger is always present by the time anything holds a declaration — stated,
+  // or derived at the door — so what is validated is the value, not its presence.
+  if (!TRIGGERS.includes(decl.trigger)) {
+    bad(`"${decl.trigger}" is not a legal trigger`,
+      `write one of: ${TRIGGERS.map((t) => `"${t}"`).join(', ')} — "${TRIGGER_SCHEDULE}" is asked by the scheduler at every tick, "${TRIGGER_REQUEST}" runs only from an item somebody creates`);
+  }
+
   // ONE MECHANISM (#1617). `preconditions` — a list of named conditions, all of
   // which must hold — is the only gate a task declares. The `precondition`
   // function it replaced is retired rather than tolerated: two forms meant every
@@ -250,9 +303,11 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
   if (decl.precondition !== undefined) {
     bad('the task declares a "precondition" function, which is retired', 'move the gate into "preconditions" — a built-in condition, or a term this task\'s preconditions.mjs exports');
   }
-  if (decl.preconditions === undefined) {
-    bad('the task declares no "preconditions"', 'add "preconditions": a list of named conditions, all of which must hold (e.g. ["substantive-change"], or ["none"] for a task the calendar triggers)');
-  } else {
+  // OPTIONAL (PRINCIPLES.md): a task may require nothing, and then every occurrence of
+  // it runs. What is NOT read off this list is whether the scheduler asks the task —
+  // `trigger` says that. A retired `frequency` arrives here already turned into its
+  // cadence term by the door.
+  if (decl.preconditions !== undefined) {
     for (const problem of validatePreconditions(decl.preconditions, terms)) bad(problem.what, problem.fix);
   }
 
@@ -261,7 +316,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
    * A task that declares it runs at the model the ITEM names (`Model:`, written by
    * the scheduler run from a write-gated label), falling back to `agent_model` when the item
    * names none. It is the only field that lets anything on an item define behaviour,
-   * so it is fenced rather than waved through (DESIGN §16.7): the shape check accepts
+   * so it is fenced rather than waved through (docs/PRINCIPLES.md, "Requests"): the shape check accepts
    * only `true`, and discovery gives pack tasks no way to be the built-in one.
    */
   if (decl.model_from_request !== undefined && decl.model_from_request !== true) {
@@ -282,7 +337,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     bad(`"session_scope" ${JSON.stringify(decl.session_scope)} is not a legal session scope`, `drop it — the field is read by nothing; name an "invocation_endpoint" if the task needs wider reach`);
   }
 
-  // Code-work (task-code-work DESIGN §2) — OPTIONAL. The deterministic first phase
+  // Code-work (docs/PRINCIPLES.md) — OPTIONAL. The deterministic first phase
   // of task execution, a command the scheduler runs as a subprocess. When present
   // it must be a non-empty, task-local command AND carry a positive-integer
   // code_work_timeout — the hard kill that bounds the subprocess.
@@ -305,9 +360,9 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     }
   }
 
-  // --- the work-item queue's three optional declarations (tasks-dispatch DESIGN) ---
+  // --- the work-item queue's three optional declarations (docs/PRINCIPLES.md) ---
 
-  // `schedule_after` — ordering, declared (DESIGN §9). A list of `<pack>/<task>` ids this
+  // `schedule_after` — ordering, declared (PRINCIPLES.md). A list of `<pack>/<task>` ids this
   // task yields to WHILE THEY ARE LIVE THIS CYCLE. It compiles to the executor's
   // pick-time yield, never to a `Blocked-by` edge: a standing item that rolls
   // never closes, so blocked-by would starve every dependent of a quiet upstream
@@ -319,7 +374,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     bad('"schedule_after" is not an array of "<pack>/<task>" ids', 'e.g. "schedule_after": ["claudinite-lifecycle/update"] — this task is not scheduled onto an executor while those are live this cycle');
   }
 
-  // `on_interrupt` — the ack-early/ack-late dial (DESIGN §6). Most of this fleet's
+  // `on_interrupt` — the ack-early/ack-late dial (PRINCIPLES.md). Most of this fleet's
   // tasks are sweep-shaped and converge safely on a re-run, so the default is
   // `requeue`. A genuinely one-shot side effect (a store submission, an external
   // notification) declares `needs-human`, and every recovery path that would
@@ -329,7 +384,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     bad(`"on_interrupt" ${JSON.stringify(decl.on_interrupt)} is not a legal policy`, `set one of: ${INTERRUPT_POLICIES.join(', ')} (default "requeue")`);
   }
 
-  // `invocation_endpoint` — a NAME, never a URL (DESIGN §12). The repo's config
+  // `invocation_endpoint` — a NAME, never a URL (PRINCIPLES.md). The repo's config
   // maps the name to the URL and to the name of the Actions secret holding its
   // token, so no vendored pack file carries deployment detail or anything adjacent
   // to a credential. This is also what replaces session_scope: reach is a property
@@ -339,7 +394,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     bad('"invocation_endpoint" is not a kebab-case endpoint name', 'name a key from the repo\'s taskScheduler.agenticTaskInvocationEndpoints map, e.g. "fleet" — never a URL');
   }
 
-  // The repo Actions secrets this task's code work needs configured (DESIGN §9). Purely
+  // The repo Actions secrets this task's code work needs configured (PRINCIPLES.md). Purely
   // DECLARATIVE — like a pack's adoption `questions`, its job is to drive the ask
   // (adoption interactively, the scheduler by owner issue), not to gate anything
   // here. So the only shape asserted is "a list of names"; whether the repo has
@@ -370,7 +425,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
     }
   }
 
-  // Execution bound (task-code-work DESIGN §2, §6) — an agentic task MUST
+  // Execution bound (docs/PRINCIPLES.md) — an agentic task MUST
   // declare a positive-integer agent_execution_timeout: there is no default,
   // because a running agent always has a bound. Enforcement is best-effort (the
   // executor surfaces the value to the subagent). A `none` task runs no agent,
@@ -380,7 +435,7 @@ export function validateTaskDeclaration(raw, terms = new Map()) {
   }
 
   // An agentless task (agent_model: none) runs no agent, so its ONLY work is
-  // code-work — a `none` task with no code-work does nothing (DESIGN §4, retiring
+  // code-work — a `none` task with no code-work does nothing (PRINCIPLES.md, retiring
   // the in-process inline path). Require the command.
   if (decl.agent_model === 'none' && decl.code_work === undefined) {
     bad('an agentless task (agent_model: "none") declares no "code_work"', 'add "code_work" (a none task does its work in that subprocess) — or give the task an agent_model');
