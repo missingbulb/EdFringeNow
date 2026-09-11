@@ -1,5 +1,5 @@
 // The scheduling CALENDAR — the frequency vocabulary and the anchor arithmetic
-// (tasks-dispatch DESIGN §5). Pure and stateless: given the repo's `schedule`
+// (docs/PRINCIPLES.md). Pure and stateless: given the repo's `schedule`
 // anchor (dailyHour, weeklyDay, monthlyDay), a frequency and a `now`, it answers
 // exactly one question — WHEN is that frequency's most recent occurrence at or
 // before `now`.
@@ -25,8 +25,8 @@
 export const FREQUENCIES = ['daily', 'weekly', 'monthly', 'manual'];
 
 // The retired spellings, and what each reads as. `hourly` cannot mean anything under a cron that
-// fires twice a day (DESIGN §17.1), and the `daily±Nh` offsets staggered dependent tasks by clock
-// hour where `after:` (§9) declares the same intent and actually enforces it.
+// fires twice a day (PRINCIPLES.md), and the `daily±Nh` offsets staggered dependent tasks by clock
+// hour where `after:` (PRINCIPLES.md) declares the same intent and actually enforces it.
 //
 // This map is PERMANENT, not a migration window. A task declaration is member-owned data that no
 // vendoring pass rewrites, so a member can carry a retired token indefinitely and must keep
@@ -43,7 +43,7 @@ export const LEGACY_FREQUENCIES = Object.freeze({});
 // What a declaration may CARRY, as against what a new one may be WRITTEN with.
 export const ACCEPTED_FREQUENCIES = [...FREQUENCIES, ...Object.keys(LEGACY_FREQUENCIES)];
 
-// THE ONE DOOR (DESIGN §17.1). Applied by `normalizeTaskDeclaration`, so every reader downstream
+// THE ONE DOOR (PRINCIPLES.md). Applied by `normalizeTaskDeclaration`, so every reader downstream
 // of a loaded declaration sees a canonical token — and there is more downstream than the
 // calendar: `periodMs` feeds the janitor's stale-ready bound (`queue/janitor-rules.mjs`) and the
 // precondition's signal window (`queue/signals.mjs`). Normalizing only the anchor would leave a
@@ -51,7 +51,7 @@ export const ACCEPTED_FREQUENCIES = [...FREQUENCIES, ...Object.keys(LEGACY_FREQU
 // exactly the members this tolerance exists for.
 export const normalizeFrequency = (frequency) => LEGACY_FREQUENCIES[frequency] ?? frequency;
 
-// The documented anchor defaults (per-project-scheduling DESIGN §2) — applied
+// The documented anchor defaults (docs/PRINCIPLES.md) — applied
 // when a repo omits `schedule` or any of its keys. This is the single source of
 // these values; the checks layer's load-time range validation
 // (engine/checks/helpers/repo-context.mjs) only bounds them, it does not
@@ -124,7 +124,7 @@ export function anchorInstant(frequency, schedule, now) {
     let year = at.getUTCFullYear();
     let month = at.getUTCMonth();
     for (;;) {
-      const day = Math.min(s.monthlyDay, daysInMonth(year, month)); // clamp to month length (DESIGN §2)
+      const day = Math.min(s.monthlyDay, daysInMonth(year, month)); // clamp to month length (docs/PRINCIPLES.md)
       const time = new Date(Date.UTC(year, month, day) + s.dailyHour * HOUR_MS);
       if (time.getTime() <= nowMs) return time;
       month -= 1;
@@ -134,3 +134,75 @@ export function anchorInstant(frequency, schedule, now) {
 
   throw new Error(`unknown frequency "${frequency}"`);
 }
+
+// --- the cadence terms ----------------------------------------------------------
+// How a task states WHEN it runs, inside its own `preconditions`
+// (docs/PRINCIPLES.md): the engine keeps no calendar of its own, so the cadence is one of the
+// task's conditions, read off its own run history at every scheduler tick.
+//
+//   due:<daily|weekly|monthly>   no run since that cadence's most recent anchor on
+//                                this repo's schedule — fixed hours, no drift
+//   last-run-over:<12h|1d|7d>    the newest run started more than that long ago
+//
+// Whether a task is asked at all is its `trigger`, not the shape of this list: a
+// task nothing asks may still state conditions, which are judged when somebody
+// creates an item for it (the retired `frequency: manual` is `trigger: 'request'`).
+//
+// The parse lives here, beside the frequency vocabulary it replaces, and imports
+// nothing: the dashboard's browser bundle reads a cadence the way the scheduler does.
+export const CADENCES = ['daily', 'weekly', 'monthly'];
+export const DUE_TERM = 'due';
+export const ELAPSED_TERM = 'last-run-over';
+export const NOT_FAILED_TERM = 'last-run-not-failed';
+
+// `12h`, `1d`, `7d` — a whole number of hours or days, nothing else.
+const DURATION_RE = /^(\d+)(h|d)$/;
+export function parseDuration(text) {
+  const m = DURATION_RE.exec(String(text ?? ''));
+  if (!m) return null;
+  const n = Number(m[1]);
+  return n > 0 ? n * (m[2] === 'h' ? HOUR_MS : DAY_MS) : null;
+}
+
+// The term references an expression carries: each entry split on `||`, each
+// reference `{ name, arg }` with the argument after the first colon. The same
+// grammar precondition-policy.mjs parses, re-spelled here so this module stays
+// import-free; the policy engine's parse is the one that validates.
+const alternativesOf = (entry) => String(entry ?? '').split('||').map((t) => t.trim()).filter(Boolean)
+  .map((t) => { const c = t.indexOf(':'); return c === -1 ? { name: t, arg: null } : { name: t.slice(0, c).trim(), arg: t.slice(c + 1).trim() }; });
+const entriesOf = (preconditions) => (Array.isArray(preconditions) ? preconditions : []).map(alternativesOf);
+
+// The cadence a declaration states — `{ kind: 'due', cadence }`, `{ kind:
+// 'elapsed', ms, text }`, or null for a task with no cadence term (asked at every
+// tick while it states any condition, it runs whenever those hold). The first
+// cadence term wins.
+export function cadenceOf(preconditions) {
+  for (const ref of entriesOf(preconditions).flat()) {
+    if (ref.name === DUE_TERM && CADENCES.includes(ref.arg)) return { kind: 'due', cadence: ref.arg };
+    if (ref.name === ELAPSED_TERM) {
+      const ms = parseDuration(ref.arg);
+      if (ms) return { kind: 'elapsed', ms, text: ref.arg };
+    }
+  }
+  return null;
+}
+
+// Whether the declaration states any condition at all. Not a scheduling answer on
+// its own — `trigger` is that — but what the contract's door reads to derive one
+// for a declaration written before the field existed (#1789). An entry carrying
+// only separators states nothing, which is why this is not a length test.
+export const statesConditions = (preconditions) => entriesOf(preconditions).some((alts) => alts.length > 0);
+
+// A term gates when it is a whole conjunct of the expression — `['x', …]` gates,
+// `['due:daily || x']` merely widens.
+const gatesOn = (preconditions, term) =>
+  entriesOf(preconditions).some((alts) => alts.length === 1 && alts[0].name === term && alts[0].arg === null);
+
+// A task stops past its own failure park only when it says so: nothing holds a
+// task's lane but its own `last-run-not-failed`.
+export const holdsOnFailure = (preconditions) => gatesOn(preconditions, NOT_FAILED_TERM);
+
+// What the retired `frequency` field always meant, as the term that now says it —
+// or null for `manual`, which meant no schedule at all and so adds no term.
+export const cadenceTermFor = (frequency) =>
+  (normalizeFrequency(frequency) === 'manual' ? null : `${DUE_TERM}:${normalizeFrequency(frequency)}`);

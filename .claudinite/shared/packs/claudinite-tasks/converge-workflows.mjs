@@ -22,24 +22,41 @@ import { DEFAULT_SCHEDULE } from './calendar.mjs';
 import { loadConfig, ENDPOINTS_KEY, LEGACY_ENDPOINTS_KEY } from '../../engine/checks/helpers/repo-context.mjs';
 
 export const SCHEDULER_WORKFLOW = '.github/workflows/claudinite-scheduler.yml';
-// The queue's second workflow (tasks-dispatch DESIGN §14). The first one keeps the
+// The queue's second workflow (docs/PRINCIPLES.md). The first one keeps the
 // path above: `claudinite-scheduler.yml` holds the scheduler run and its drain, so the repo
 // still has exactly one cron at one well-known path.
 export const EXECUTOR_WORKFLOW = '.github/workflows/claudinite-executor.yml';
-// The repo Actions secrets its scheduled tasks declare via `code_work_required_secrets`,
-// deduped and sorted. Async because task discovery is; pure otherwise.
+// Endpoint tokens ride the same rail as a task's declared secrets (PRINCIPLES.md,
+// PRINCIPLES.md): the config maps an endpoint name to a URL and to the NAME of the Actions
+// secret holding its token, and the stamp puts that name in the executor's env
+// exactly as a `code_work_required_secrets` entry. The executor reads it only at the
+// moment of the invocation call; nothing else in a task's life ever sees it.
+export function endpointTokenSecrets(config) {
+  return Object.values(config?.taskScheduler?.[ENDPOINTS_KEY] ?? config?.taskScheduler?.[LEGACY_ENDPOINTS_KEY] ?? {})
+    .map((e) => e?.tokenSecret).filter((n) => typeof n === 'string' && n);
+}
+
+// The repo Actions secrets a set of task declarations ask the executor to carry,
+// deduped and sorted. Sync and pure over declarations already in hand, so a check —
+// which runs synchronously and cannot await discovery — computes the same expectation
+// the converge writes rather than a second opinion of it. This half is the one the
+// `executor-workflow-secrets` check holds a member to: the tasks its packs contribute
+// are what the owner's list is, and an endpoint's token is config rather than a task's
+// declaration (the invocation call names its own missing token, queue/invoke.mjs).
+export function taskSecretNames(taskDeclarations) {
+  return [...new Set(taskDeclarations.flatMap((decl) => decl?.code_work_required_secrets ?? []))].sort();
+}
+
+// That list plus the endpoint tokens the config names — everything the stamp writes.
+export function secretNames(taskDeclarations, config) {
+  return [...new Set([...taskSecretNames(taskDeclarations), ...endpointTokenSecrets(config)])].sort();
+}
+
+// The same list, discovered from the tree. Async because task discovery is.
 export async function declaredSecrets(root, config) {
   const { discoverTasks } = await import('./discover.mjs');
   const { tasks } = await discoverTasks(root, config);
-  const names = tasks.flatMap((t) => t.decl?.code_work_required_secrets ?? []);
-  // Endpoint tokens ride the same rail (DESIGN §12, §14.6): the config maps an
-  // endpoint name to a URL and to the NAME of the Actions secret holding its token,
-  // and the stamp puts that name in the executor's env exactly as a
-  // `code_work_required_secrets` entry. The executor reads it only at the moment of the
-  // invocation call; nothing else in a task's life ever sees it.
-  const endpointTokens = Object.values(config?.taskScheduler?.[ENDPOINTS_KEY] ?? config?.taskScheduler?.[LEGACY_ENDPOINTS_KEY] ?? {})
-    .map((e) => e?.tokenSecret).filter((n) => typeof n === 'string' && n);
-  return [...new Set([...names, ...endpointTokens])].sort();
+  return secretNames(tasks.map((t) => t.decl), config);
 }
 
 // Stamp the declared secrets into the executor's work step, beside GITHUB_TOKEN.
@@ -59,17 +76,28 @@ export async function declaredSecrets(root, config) {
 // A stub says WHERE with the `# claudinite:secrets` marker. Marker or nothing: the
 // scheduler-run stub carries no marker and must not be stamped — it has two jobs
 // carrying GITHUB_TOKEN and only the executing one may ever see a secret, and its
-// drain dispatches the executor rather than running task code (§15.16).
-const SECRETS_MARKER = /^[ \t]*# claudinite:secrets\b.*$/m;
+// drain dispatches the executor rather than running task code (PRINCIPLES.md).
+export const SECRETS_MARKER = /^[ \t]*# claudinite:secrets\b.*$/m;
+
+// The env line one secret travels on, and the read of it. The stamp writes these
+// lines and the `executor-workflow-secrets` check reads them back, so the two cannot
+// disagree about what "the executor passes this secret" looks like. A name that is
+// not a legal Actions secret name matches nothing rather than reaching the regex.
+export const secretEnvLine = (name) => `          ${name}: \${{ secrets.${name} }}`;
+export function passesSecret(workflowText, name) {
+  if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(name)) return false;
+  return new RegExp(`^[ \\t]*${name}:[ \\t]*\\$\\{\\{[ \\t]*secrets\\.${name}[ \\t]*\\}\\}[ \\t]*$`, 'm').test(workflowText);
+}
+
 export function withDeclaredSecrets(stubText, names = []) {
   if (!names.length) return stubText;
-  const lines = names.map((n) => `          ${n}: \${{ secrets.${n} }}`).join('\n');
+  const lines = names.map(secretEnvLine).join('\n');
   return SECRETS_MARKER.test(stubText)
     ? stubText.replace(SECRETS_MARKER, (m) => `${m}\n${lines}`)
     : stubText;
 }
 
-// `dailyHour` picks BOTH of the cron's hours (DESIGN §17): the anchor tick and the drain tick
+// `dailyHour` picks BOTH of the cron's hours (PRINCIPLES.md): the anchor tick and the drain tick
 // twelve hours after it. Optional, and absent means the documented default — an unset key is the
 // default, never a misconfiguration — so a caller that does not read the repo's schedule still
 // writes the right cron for every repo that has not moved its anchor.
