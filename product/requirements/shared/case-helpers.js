@@ -94,8 +94,7 @@ async function planReady(page) {
     const i = document.getElementById("ssInput");
     return i && i.placeholder.startsWith("Search all");
   }, { timeout: 20000 });
-  // The version lands in the footer's popup element (shared/version-popup.js),
-  // which is also the signal that the async package.json read has returned.
+  // Same version-tooltip wait as nowReady, above.
   await page.waitForFunction(() => {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");

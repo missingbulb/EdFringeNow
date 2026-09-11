@@ -45,9 +45,7 @@ export function monthName(iso) {
 }
 
 // A show's performances as [{date, time}] — the JSON carries a rule, not the
-// list, so a run of a month reads as one line. Late-night starts (01:00) are
-// kept on the calendar day they fall on; the drafter treats them as the
-// previous evening's tail.
+// list, so a run of a month reads as one line.
 export function expandPerfs(show) {
   const p = show.perfs;
   if (p.dates) return p.dates.map(([date, time]) => ({ date, time }));
