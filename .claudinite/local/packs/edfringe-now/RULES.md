@@ -181,7 +181,11 @@ curl -sS -o /dev/null -w "%{http_code}\n" --max-time 15 https://<host>/
 ```
 
 Observed so far: `*.edfringenow.com` allowed from 2026-08, denied at CONNECT on 2026-08-07,
-and general egress open on 2026-09-04 with `WebSearch` and `WebFetch` reaching arbitrary hosts.
+general egress open on 2026-09-04 with `WebSearch` and `WebFetch` reaching arbitrary hosts, and
+denied at CONNECT again on 2026-09-13 for six of those same hosts (`fringeplan.com`, `maze.co`,
+`www.lyssna.com`, `unpkg.com`, `example.com`, `edfringe-tikketr-web-api.equhost.com`) while
+`www.edfringe.com` and `fonts.googleapis.com` still succeeded — the policy swings both ways
+within days, so this session's own probe is the only thing that was ever current.
 
 - **About to report a capability as unavailable** — probe it in this session first, whatever
   this file says. A note that a door was shut is not evidence it is shut, and only the probe
@@ -335,31 +339,28 @@ already have rather than let both sides poll the same state twice.
 ### GitHub MCP call shapes that cost round-trips here
 
 - **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
-  on this repo's history, and lowering `per_page` does not fix it.** Proven:
-  one session retried the same call at `per_page` 25, 10, 3, 2 and 1 and got a
-  byte-identical ~100–390K-character response every time. When it overflows,
-  read the spilled tool-result file yourself (`python3`/`jq`) and project out
-  only the fields you need — don't follow the overflow error's "read it in
-  sequential chunks" advice on a single-line JSON blob, and don't burn retries
-  lowering `per_page` first.
+  on this repo's history only when `perPage` is left unset** — confirmed
+  2026-09-13: the default call overflowed at ~59K characters, while an
+  explicit `perPage` (down to `1`) returned cleanly every time. Always pass
+  `perPage`; if a call still overflows, read the spilled tool-result file
+  yourself (`python3`/`jq`) rather than the error's "read it in sequential
+  chunks" advice on a single-line JSON blob.
 - **`search_issues`, `list_pull_requests`, `pull_request_read` do shrink — with
   `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
   across the corpus have never overflowed, typically 100–250 bytes back
   instead of six figures.
-- **`list_pull_requests` never reports a PR as merged.** Its `merged` field
-  decodes `false` (absent from the response) and `merged_at` is never
-  populated, `fields` or not — confirmed live when it read PR #385 as
-  `merged: false` while `0e8ec17 … (#385)` was already `origin/main`'s HEAD.
-  For landed-ness, grep `origin/main`'s commit subjects for the squash-merge's
-  `(#N)`, or call `pull_request_read get` on the one PR you actually care
-  about.
-- **`pull_request_read method=get_files` overflows the same way
-  `actions_list` does, on an ordinary large PR — treat it as "skip the diff,"
-  not something to retry.** PR #207 (46 files, +2554/-274) blew the token
-  limit on `get_files` at `perPage: 100`, spilling its output to a side file
-  instead of truncating. For a landed-status judgment the file-level diff
-  usually isn't needed — `get` (title/body) plus `list_commits` is normally
-  enough; don't chase the spill or retry at a lower `perPage`.
+- **`list_pull_requests`'s `merged` field always decodes `false`, but `merged_at`
+  is populated for a merged PR** (confirmed 2026-09-13 on three closed PRs,
+  `fields`-narrowed or not — the earlier "`merged_at` is never populated" finding
+  no longer holds). Check `merged_at` for non-null rather than grepping
+  `origin/main`'s commit subjects, or call `pull_request_read get` on the one PR
+  you actually care about.
+- **`pull_request_read method=get_files` overflows a large PR at `perPage: 100`,
+  but a lower `perPage` brings it back under the limit** — confirmed 2026-09-13:
+  `perPage: 10` on the same 46-file PR #207 that blew the limit at 100 returned
+  without erroring. Retry at a smaller page size before treating the diff as
+  unreachable; for a landed-status judgment it usually isn't needed anyway —
+  `get` (title/body) plus `list_commits` is normally enough.
 
 ### `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
 
@@ -526,9 +527,10 @@ judgment those two don't carry.
 ### Verifying a scraper change against the live API
 
 Reaching `edfringe-tikketr-web-api.equhost.com` is a live question — it was denied at the
-CONNECT in 2026-08 and answered a server-side 403 on 2026-09-04 — so probe it (the `edfringe`
-pack's egress section) rather than repeat either answer. Reaching the host is still not the
-same as being able to drive it, so anything that must touch the API runs through a sanctioned
+CONNECT in 2026-08, answered a server-side 403 on 2026-09-04, and denied at CONNECT again on
+2026-09-13 — so probe it (the egress section above) rather than repeat any of the three.
+Reaching the host is still not the same as being able to drive it, so anything that must
+touch the API runs through a sanctioned
 workflow: the `Scrape edfringe shows (full)` workflow
 (`.github/workflows/scrape.yml`), `Fetch ticket prices (one-off)`
 (`prices.yml`), or the `refresh-shows` / `refresh-tickets` scheduled tasks.
@@ -903,8 +905,10 @@ is a real finding about the UI, not just a testing limitation.
   false positives; the real comparator is what settles whether a flake is real.
 - **A red CI lane's diff image is unreachable from a session — reproduce it
   locally.** `ui-requirements` uploads a `requirements-failure-artifacts`
-  artifact, but `download_workflow_run_artifact` hands back a
-  `*.blob.core.windows.net` URL and the egress proxy denies it at CONNECT
+  artifact, but downloading it (`mcp__github__actions_get`, method
+  `download_workflow_run_artifact` — no longer a top-level tool of its own,
+  confirmed 2026-09-13) hands back a `*.blob.core.windows.net` URL, and the
+  egress proxy denies arbitrary hosts like that one at CONNECT
   (`curl: (56) CONNECT tunnel failed, response 403`). On 2026-08-11 a session
   burned the download and then came back ~4.5 minutes later to re-probe the
   proxy for the same image; the golden it was chasing ended the session
