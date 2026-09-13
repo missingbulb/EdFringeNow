@@ -367,15 +367,25 @@ was written.
   [its own 26 Aug 2026 statement](https://irp.cdn-website.com/b436dc39/files/uploaded/Statement+BDC+26_08_2026.docx)
   — with [debts over £215,000](https://www.chortle.co.uk/news/2026/08/22/61391/leicester_comedy_festival_charitys_debts_exceed_%c2%a3215,000)
   and performers owed their ticket money (the Feb 2026 festival *happened*;
-  Wikipedia's "cancelled" lede is wrong). February 2027 is now contested:
-  the [city council has pledged a successor festival](https://www.chortle.co.uk/news/2026/08/06/61209/leicester_mayor:_we_will_have_a_comedy_festival_next_year)
-  (3–21 Feb 2027 per the old site's banner) while comedian Alex Hylton's
+  Wikipedia's "cancelled" lede is wrong). February 2027 is now contested by
+  **two** efforts, sharpened this pass (2026-09-13, search-attributed — see
+  the open question below): the **city council's own interim programme**,
+  which its own news site describes as run with local promoters, venues and
+  "the expertise of its own festivals and De Montfort Hall teams" while it
+  works toward "a sustainable operation for the long-term" — not itself the
+  festival named below — and comedians **Colin Bowles and Alex Hylton's**
   [**Independent Comedy Festival**](https://www.chortle.co.uk/news/2026/08/11/61247/leicester_gets_a_new_comedy_festival)
-  launches in the same window and venues — on **TixEvery**, a platform that
-  pays comedians directly so the festival never holds box-office money (a
-  ticketing model born directly of the collapse). For the product: the
-  incumbent data source works today and its owner is in liquidation — which
-  festival "is" Leicester next year is genuinely open.
+  (3–21 Feb 2027; named venues include The Y Theatre, Firebug, Real Ale
+  Classroom and Oadby Royal British Legion), formed by promoters and acts
+  the collapse left unpaid. Both use different mechanics: the council effort
+  is a venue/promoter partnership, while the Independent Comedy Festival
+  runs on **TixEvery**, which pays comedians directly and routes ticket
+  revenue around any central organiser entirely — a ticketing model born
+  directly of the collapse. For the product: the incumbent data source works
+  today and its owner is in liquidation, and there is no single "successor"
+  — which of two parallel efforts (or both) constitutes "Leicester" next
+  year, and whether either exposes anything like the old Eventotron API, is
+  still genuinely open.
 
 ### Brighton Fringe — half of it is a comedy festival
 
@@ -1068,7 +1078,7 @@ Canada and rest of world:
 
 UK & Ireland:
 
-- Leicester: [comedy-festival.co.uk](https://comedy-festival.co.uk/) (successor-festival banner); [Big Difference Company's insolvency statement, 26 Aug 2026](https://irp.cdn-website.com/b436dc39/files/uploaded/Statement+BDC+26_08_2026.docx); Chortle's reporting — [the firm goes bust](https://chortle.co.uk/news/2026/08/05/61188/leicester_comedy_festival_firm_goes_bust), [debts exceed £215,000](https://www.chortle.co.uk/news/2026/08/22/61391/leicester_comedy_festival_charitys_debts_exceed_%c2%a3215,000), [the mayor's 2027 pledge](https://www.chortle.co.uk/news/2026/08/06/61209/leicester_mayor:_we_will_have_a_comedy_festival_next_year), [the Independent Comedy Festival on TixEvery](https://www.chortle.co.uk/news/2026/08/11/61247/leicester_gets_a_new_comedy_festival); [the 700+ shows launch (Leicester Times)](https://leicestertimes.com/leicester-news/leicester-comedy-festival-launches-with-over-700-shows-celebrating-the-art-of-comedy/52061/); [show registration via Eventotron](https://comedy-festival-takepart.co.uk/how-to-register-your-show); the fetched open API (`events.comedy-festival.co.uk/wp-json/wp/v2/events`, 753 events; peak-day counts from its dates taxonomy); [Leicester Comedy Festival (Wikipedia — history and stats table)](https://en.wikipedia.org/wiki/Leicester_Comedy_Festival).
+- Leicester: [comedy-festival.co.uk](https://comedy-festival.co.uk/) (successor-festival banner); [Big Difference Company's insolvency statement, 26 Aug 2026](https://irp.cdn-website.com/b436dc39/files/uploaded/Statement+BDC+26_08_2026.docx); Chortle's reporting — [the firm goes bust](https://chortle.co.uk/news/2026/08/05/61188/leicester_comedy_festival_firm_goes_bust), [debts exceed £215,000](https://www.chortle.co.uk/news/2026/08/22/61391/leicester_comedy_festival_charitys_debts_exceed_%c2%a3215,000), [the mayor's 2027 pledge](https://www.chortle.co.uk/news/2026/08/06/61209/leicester_mayor:_we_will_have_a_comedy_festival_next_year), [the Independent Comedy Festival on TixEvery](https://www.chortle.co.uk/news/2026/08/11/61247/leicester_gets_a_new_comedy_festival); [the 700+ shows launch (Leicester Times)](https://leicestertimes.com/leicester-news/leicester-comedy-festival-launches-with-over-700-shows-celebrating-the-art-of-comedy/52061/); [show registration via Eventotron](https://comedy-festival-takepart.co.uk/how-to-register-your-show); the fetched open API (`events.comedy-festival.co.uk/wp-json/wp/v2/events`, 753 events; peak-day counts from its dates taxonomy); [Leicester Comedy Festival (Wikipedia — history and stats table)](https://en.wikipedia.org/wiki/Leicester_Comedy_Festival). The 2027-succession detail added 2026-09-13 is **search-attributed, not fetched** (`WebFetch` still returns `EGRESS_BLOCKED` on every one of these hosts this session) — the council's own account of its interim-programme plan is quoted from a `WebSearch` snippet of [news.leicester.gov.uk's "City council to ensure comedy festival goes ahead in 2027"](https://news.leicester.gov.uk/news-articles/2026/august/city-council-to-ensure-comedy-festival-goes-ahead-in-2027/); the Independent Comedy Festival's named venues and organisers are snippet-attributed to [British Comedy Guide](https://www.comedy.co.uk/live/news/8813/independent-comedy-festival-leicester-2027/), [Beyond The Joke](https://www.beyondthejoke.co.uk/content/17735/leicester-new-festival), [Cool As Leicester](https://coolasleicester.co.uk/independent-comedy-festival/) and [Stand Out Magazine](https://www.standoutmagazine.co.uk/leicester-promoters-announce-details-of-new-comedy-festival/), all reporting the same launch independently.
 - Brighton: [brightonfringe.org](https://www.brightonfringe.org/) and its open events API (the 46% comedy measurement); [Brighton & Hove News on the 2026 launch](https://www.brightonandhovenews.org/2026/04/08/brighton-fringe-unveils-spectacular-2026-line-up-of-comedy-theatre-and-dance-for-21st-year/); [Brighton Festival 2026 launch](https://brightonfestival.org/press-office/press-release-brighton-festival-2026-launch/); [The Great Escape 2026 (Live Nation)](https://www.livenation.co.uk/event/the-great-escape-2026-brighton-tickets-edp1637482).
 - [Galway Comedy Festival](https://galwaycomedyfestival.ie/); [RTÉ's 2025 lineup piece (69 shows / 16 venues)](https://www.rte.ie/culture/2025/0911/1533013-galway-comedy-festival-reveals-2025-line-up-ahead-of-october-bash/).
 - Dublin: [dublincomedyfestival.ie ("West Dublin's Comedy Takeover")](https://www.dublincomedyfestival.ie/); [Paddy Power Comedy Festival (Aiken Promotions)](https://aikenpromotions.com/show/paddy-power-comedy-festival/); [Dublin Fringe](https://www.fringefest.com/news/dublin-fringe-festival).
@@ -1087,11 +1097,29 @@ The film adjacency (light survey, 2026-09-01):
 
 ## Open questions
 
-- **Which festival is Leicester in February 2027?** The council-backed
-  reboot and the performer-run Independent Comedy Festival both claim the
-  slot and the venues; whichever wins also decides whether the open
-  Eventotron API survives as the data source. Chortle is covering the story
-  — re-check after the autumn announcements.
+- **Which festival is Leicester in February 2027?** Sharpened 2026-09-13,
+  still unresolved and still search-attributed rather than primary-sourced
+  (below). What is now clearer: these read as **two distinct efforts**
+  rather than one contested slot — the city council's own account describes
+  an interim programme it runs itself (De Montfort Hall's team plus local
+  promoters and venues), separately from Colin Bowles and Alex Hylton's
+  Independent Comedy Festival (3–21 Feb 2027, named venues including The Y
+  Theatre and Firebug) — but neither source states whether the two
+  coordinate, compete for the same venues and dates, or simply both happen.
+  Whichever (or both) runs also decides whether anything like the open
+  Eventotron API survives as a data source; the council's own account gives
+  no technical detail at all. (Sourced this pass via `WebSearch`, which
+  returned live snippets from chortle.co.uk, comedy.co.uk (British Comedy
+  Guide), beyondthejoke.co.uk, coolasleicester.co.uk, standoutmagazine.co.uk
+  and news.leicester.gov.uk itself; `WebFetch` against every one of those
+  same URLs, plus en.wikipedia.org, still returned an explicit
+  `EGRESS_BLOCKED` this session — the same block recorded 2026-09-11, now
+  confirmed session-wide rather than domain-specific, since a general-web
+  `curl` probe to unrelated hosts (google.com, example.com) failed
+  identically. So this is a second, independently-worded confirmation of the
+  same claims from more outlets, not a primary-source verification — still a
+  lead for the next pass or an unblocked environment, not a citation to rest
+  the dossier's prose on.)
 - **Comedy's share of the open-access programmes is only measured for
   Brighton (46%).** Adelaide publishes no genre counts; MICF's genre split
   wasn't captured from its API this pass. Both are one in-season API/page
@@ -1187,3 +1215,26 @@ The film adjacency (light survey, 2026-09-01):
   "comedy-" an under-claim — the page covers the comedy circuit in depth and
   the film circuit surveyed light. All inbound links updated in the same
   change.
+- **2026-09-11** — annotated the open Leicester 2027 question with an
+  unverified lead surfaced by web search (an "Independent Comedy Festival"
+  launch, 3–21 Feb 2027, and a council statement it will ensure a 2027
+  festival happens): every primary source for it was domain-blocked by this
+  session's egress proxy this pass, so nothing is fetched or added to the
+  dossier itself — the lead is recorded, flagged unverified, for a future
+  pass or an unblocked environment. No other claim on the page changed.
+- **2026-09-13** — worked the Leicester 2027 open question again, this pass
+  with `WebSearch` available (returning live result snippets, unlike the
+  2026-09-11 pass) even though `WebFetch` still returns an explicit
+  `EGRESS_BLOCKED` on every one of the same hosts — confirmed session-wide
+  this time, not just for these domains, since a plain `curl` to unrelated
+  hosts (google.com, example.com) failed identically. The new snippets
+  sharpen rather than resolve the question: what looked like one contested
+  slot reads as **two distinct 2027 efforts** — the city council's own
+  interim programme (run with De Montfort Hall's team plus local promoters
+  and venues, aiming at "a sustainable operation for the long-term") and
+  Colin Bowles and Alex Hylton's Independent Comedy Festival (3–21 Feb 2027,
+  named venues including The Y Theatre and Firebug), each independently
+  reported by multiple UK comedy-press outlets. Added both to the Leicester
+  dossier and the open question, everything marked search-attributed since
+  no primary source was actually fetched. No other claim on the page
+  changed.

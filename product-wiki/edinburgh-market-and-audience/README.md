@@ -15,7 +15,7 @@ city-pattern question on
 
 ## Key insights
 
-- 4,206 Fringe shows across 299 venues — 15% more than June's programme claimed. Plus ~900 non-Fringe events.
+- 2026 delivered 4,232 shows, 2.81m tickets (+8% YoY), and broke the single-day attendance record set in 2019.
 - Average ticket is £13, and 1,253 shows are free or pay-what-you-want — nearly a third of the programme.
 - 37% of people struggle to pick a show. Two thirds buy just one ticket.
 - 78% come to see something they would not normally — they want surprise, not better filters.
@@ -25,17 +25,33 @@ city-pattern question on
 
 ## Scale
 
-### 2026 festival (running 7–31 August 2026)
+### 2026 festival (7–31 August 2026, now complete)
 
-As delivered, from the Fringe Society's opening-day release (7 August 2026):
+**Final, from the Fringe Society's [closing release](https://www.edfringe.com/about-us/news-and-blog/edinburgh-festival-fringe-2026-concludes-with-its-80th-anniversary-firmly-in-sight/)
+(31 August 2026):** **4,232 shows** across **306 venues**, **61,277
+performances**, artists from **77 countries** — **2,805,395 tickets issued**,
+an **8% rise on 2025**. The same release records a new single-day record:
+**over 164,000 tickets issued on Saturday 15 August**, 1% above the previous
+peak (Saturday 17 August 2019). **1,864 accredited industry from 63
+countries** and **1,091 accredited media from 30 countries** (702 of them
+reviewers) attended — a finer, larger breakdown than the opening-day "over
+1,600 industry and media from 53 countries" estimate below, which this
+supersedes for headcount and country split.
+
+**Opening-day release (7 August 2026)**, kept for the figures the closing
+release doesn't restate:
 
 - **4,206 shows** across **299 venues**, **over 60,000 performances**, artists
   from **74 countries**, plus 14 country showcases and four spotlight projects.
 - **440 free shows** and **813 pay-what-you-want/can shows** — 1,253 together,
   close to 30% of the programme. The **average ticket price is £13**.
-- **Over 1,600 accredited industry and media** from 53 countries attend.
 - Genre split at the 4 June launch: **1,401 comedy**, **1,025 theatre**, **168
-  musicals and opera** (not restated in the opening-day figures).
+  musicals and opera** (not restated in either release).
+
+**The gap between the two releases is itself a finding.** 26 more shows, 7
+more venues, 3 more countries and roughly 1,277 more performances appear
+between the 7 August opening-day count and the 31 August close — so a Fringe
+count is not final on opening day either; it keeps moving through the run.
 
 **Correction — the launch snapshot undercounts, and this page had it backwards.**
 Until this pass the page recorded 3,649 shows / 258 venues / 53,884 performances
@@ -43,27 +59,28 @@ Until this pass the page recorded 3,649 shows / 258 venues / 53,884 performances
 (3,893 shows / 301 venues)"**. That conclusion was wrong, because it compared a
 *programme-launch snapshot* with a *delivered festival*. The Society states that
 **a further 553 shows registered after the printed programme launched on 4
-June** — so the June number was ~15% short of the August one, and 2026 in fact
-finished **larger** than 2025 on shows (4,206 vs 3,893) and level on venues (299
-vs 301). The 4 June figures are kept above only as the launch-day genre split;
-they are not the festival's size. The general lesson for anything that reads
+June** — so the June number was ~15% short of the opening-day one, and 2026 in
+fact finished **larger** than 2025 on both counts (4,232 vs 3,893 shows, 306
+vs 301 venues, per the 31 August close). The 4 June figures are kept above
+only as the launch-day genre split; they are not the festival's size. The
+general lesson for anything that reads
 these numbers: **a Fringe count is only final once the festival opens**, and
-registration continues right up to it.
+registration continues right up to it — and, the 2026-09-11 pass above found,
+a little further still, into the festival itself.
 
 This is still two orders of magnitude more than any one visitor can see.
 
-### 2025 festival (latest full ticket data)
+### 2025 festival (still the newest site-traffic and review data)
 
 - **3,893 shows** across **301 venues**, **53,942 performances**, artists from
   **62 countries**.
 - **~2.6 million tickets** issued (2,604,404) — roughly flat on 2024, still below
-  the 2019 pre-pandemic peak of about 3 million.
+  the 2019 pre-pandemic peak of about 3 million. (Superseded as the newest
+  ticket count 2026-09-11: 2026's own 2,805,395, above.)
 - **edfringe.com took over 3 million visits and 37 million page views**, and
-  ~4,300 professional reviews were uploaded to the site to help audiences choose.
-
-*(2025's ticket figures stay on this page because they remain the newest
-issued-ticket data — the Fringe Society publishes each year's ticket and audience
-data after the festival closes, so 2026's cannot land before late August 2026.)*
+  ~4,300 professional reviews were uploaded to the site to help audiences choose
+  — no 2026 equivalent found yet, so these two figures are still the newest
+  on the page.
 
 This scale is the product premise: the official programme is a catalogue that
 rewards planning ahead and overwhelms the person deciding in the moment.
@@ -193,6 +210,7 @@ segmentation for either crowd remains an open question.
 ## Sources
 
 - [#MixItUp at the Edinburgh Festival Fringe and discover your new favourite show (edfringe.com, 7 August 2026)](https://www.edfringe.com/about-us/news-and-blog/mixitup-at-the-edinburgh-festival-fringe-and-discover-your-new-favourite-show/) — the opening-day release: 4,206 shows, 299 venues, 74 countries, 60,000+ performances, 440 free and 813 pay-what-you-want shows, £13 average ticket, 1,600+ accredited industry/media from 53 countries, and 553 shows registered since the 4 June programme launch.
+- [Edinburgh Festival Fringe 2026 concludes with its 80th anniversary firmly in sight (edfringe.com, 31 August 2026)](https://www.edfringe.com/about-us/news-and-blog/edinburgh-festival-fringe-2026-concludes-with-its-80th-anniversary-firmly-in-sight/) — the closing release: 4,232 shows, 306 venues, 77 countries, 61,277 performances, 2,805,395 tickets issued (+8% on 2025), a new single-day record (164,000+ tickets, Sat 15 Aug), 1,864 accredited industry (63 countries) and 1,091 accredited media (30 countries, 702 reviewers).
 - [The 2026 Edinburgh Festival Fringe programme is now live (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/mixitup-with-the-2026-edinburgh-festival-fringe-programme/)
 - [Edinburgh Festival Fringe 2026 programme launched with 3,649 shows from 71 countries (Theatre Weekly)](https://theatreweekly.com/edinburgh-festival-fringe-2026-programme-launched-with-3649-shows-from-71-countries/)
 - [Key dates for your diary in the lead-up to Fringe 2026 (edfringe.com)](https://www.edfringe.com/about-us/news-and-blog/key-dates-for-your-diary-in-the-lead-up-to-fringe-2026/)
@@ -241,10 +259,12 @@ segmentation for either crowd remains an open question.
   so this is a published aggregate we cannot currently reproduce or attribute
   per show. Whether the official Listings API's `price` field would close that
   is on [edinburgh-festival-season/](../edinburgh-festival-season/README.md).
-- **How much does the programme still move during the run?** Registration
-  demonstrably continued past 4 June (+553 shows by opening day). Whether shows
-  are also added, cancelled or pulled *during* 7–31 August is unmeasured, and it
-  decides how often the catalogue must be refreshed to stay honest.
+- **How much does the programme still move during the run?** Answered in part
+  2026-09-11: it does — 26 more shows, 7 more venues and 3 more countries
+  appear between the 7 August opening-day count and the 31 August close. What
+  remains open is the *shape* of that movement — net registrations, or a mix
+  of additions and cancellations/pulls — which decides how often the catalogue
+  must be refreshed to stay honest through the run, not just before it.
 - **Accommodation as a planning input.** No authoritative price/availability
   series found (guide-site figures only). If beds constrain dates more than shows
   do, "pick my best dates" optimises the wrong variable — worth evidence before
@@ -253,7 +273,10 @@ segmentation for either crowd remains an open question.
   attendance, or on whether the eight August audiences are one crowd or eight.
   It matters: the case for widening the product past the Fringe currently rests
   on an unmeasured assumption that people would go if they knew.
-- Refresh the ticket/audience figures once the 2026 festival's data is published.
+- **Does the record single-day attendance (164,000+ tickets, Sat 15 Aug 2026)
+  track a single cause** — a headline show, a weekend/weekday pattern, weather —
+  or is it simply proportional to the festival's own 8% YoY growth? New this
+  pass; unexamined.
 
 ## Growth log
 
@@ -314,3 +337,24 @@ segmentation for either crowd remains an open question.
   `edinburgh-market-and-audience/` on the owner's direction: the page's own
   scope note pins it as the Edinburgh evidence base, and the name now says
   so. Content unchanged; all inbound links updated in the same change.
+- **2026-09-11** — refreshed the 2026 scale section with the Fringe Society's
+  closing release (31 August, the festival having ended): 4,232 shows / 306
+  venues / 77 countries / 61,277 performances / 2,805,395 tickets (+8% on
+  2025), plus a new single-day attendance record (164,000+ tickets, Sat 15
+  Aug, edging out 2019's prior peak) and a finer industry/media breakdown
+  (1,864 industry from 63 countries; 1,091 media from 30 countries, 702
+  reviewers) that supersedes the opening-day "1,600+ from 53 countries"
+  estimate. New finding: the count moved again between the 7 August
+  opening-day figures and the close (+26 shows, +7 venues, +3 countries) —
+  answering in part the "does the programme move during the run" open
+  question and sharpening the existing 2026-08-09 correction, whose closing
+  sentence now points forward to this. Retitled the 2025 section, since 2026
+  ticket data now supersedes it — 2025's site-traffic and review figures stay
+  as the newest on those two points only. Key insight 1 rewritten around the
+  delivered totals and the new attendance record. One open question answered
+  in part, one added (what drove the record day); the "refresh once 2026 data
+  publishes" open question is removed, done. The same three figures (4,206
+  shows / 299 venues / 74 countries) are hardcoded on
+  [edinburgh-festival-season/](../edinburgh-festival-season/README.md) and
+  [festmaxxing-environments/](../festmaxxing-environments/README.md); both
+  updated in the same pass.
