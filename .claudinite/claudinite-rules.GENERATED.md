@@ -4,7 +4,10 @@
 @shared/packs/claudinite-growth/RULES.md
 @shared/packs/claudinite-lifecycle/RULES.md
 @shared/packs/executable-requirements/RULES.md
+@shared/packs/headless-browser/RULES.md
 @shared/packs/html/RULES.md
+@shared/packs/leaflet/RULES.md
+@shared/packs/node/RULES.md
 @shared/packs/product-wiki/RULES.md
 @shared/packs/spec-driven-product/RULES.md
 @shared/packs/static-website/RULES.md
