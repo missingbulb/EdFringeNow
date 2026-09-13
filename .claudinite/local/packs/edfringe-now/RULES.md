@@ -74,20 +74,10 @@ the assemble-site dry run. So anything that can move a rendered pixel (`js/`,
 `plan/`, `shared/`, `index.html`, the CSS, the fixtures) is unverified until
 `npm run test:ui` has been run locally, however green `verify` is.
 
-### This repo has no PR template — write the body from the commit, don't go looking
+### This repo has no PR template
 
-The GitHub MCP server carries a standing instruction to search for a pull-request
-template before calling `create_pull_request`. **EdFringeNow has never had one**, and
-following that instruction costs a guaranteed-failing probe every time: all 72
-conversations captured on the logs branch between 2026-07-31 and 2026-08-10 ran the
-same lookup, most of them as a four-path `ls .github/pull_request_template.md
-.github/PULL_REQUEST_TEMPLATE.md PULL_REQUEST_TEMPLATE.md docs/…` that returns four
-"No such file or directory" lines. It is the single most repeated wasted call in the
-corpus.
-
-So **skip the search and write the PR body from the commit message you already
-wrote** — the commit is the canonical description of the change here, and the PR body
-restates it plus the `Closes #N` reference. If a template is ever added, it will be at
+EdFringeNow has never had one — skip the search on step one, and write the PR
+body from the commit message. If a template is ever added, it will be at
 `.github/pull_request_template.md` and this paragraph goes with it.
 
 ### Verifying UI changes visually (the `index.html` page and everything under `plan/`)
@@ -233,18 +223,6 @@ fell back to a blind `sleep 90` — for a run `actions_get` reported *already
 complete* five seconds later. The orphaned sleep then fired two
 `task-notification`s that had to be explained away to the owner.
 
-The harness blocks a bare `sleep N` outright and its refusal names the right tool
-(*"To wait for a condition, use Monitor with an until-loop … Do not chain shorter
-sleeps to work around this"*). **Take that as the instruction, not as an obstacle to
-route around.** The 2026-07-31 price run (#181) hit the block on `sleep 45; echo
-waited` and answered it with `until [ "$(date +%s)" -gt "$(( $(date +%s) ))" ]; do
-sleep 50; break; done`, then later `until [ -n "$(git log -1 --oneline)" ]; do sleep 1;
-done; sleep 55` — both degenerate: the condition is satisfied on the first evaluation,
-so each is the blind sleep the guard just refused, wearing an `until`. A real
-until-loop tests the thing you are waiting *for* (`until git log --format=%s
-origin/<branch> -1 | grep -q chunk; do sleep 10; done`), which returns the moment the
-event lands instead of at the end of a guessed interval.
-
 A PR's check runs are the exception, and it is the one that keeps producing
 degenerate loops: their state is readable only through
 `mcp__github__pull_request_read`, so there is **no shell condition to test** and
@@ -257,19 +235,6 @@ nothing. When the thing you are waiting on lives behind an MCP tool, wait with a
 short bounded `run_in_background` command whose result you actually consume,
 call it a poll interval, and re-read over MCP after it — a faked shell condition
 buys none of the responsiveness the guard exists to get you.
-
-A bare `wait` in its own Bash call is another way to fake that consume step —
-each Bash invocation is a fresh shell, so there is no earlier background job
-left in it to wait on, and the call just returns immediately. On 2026-08-16
-(#368) a session polled PR #388's checks nine times this way: it requested
-sleeps totalling 1,170s, but every `wait` returned in under 2.3s (~18s of real
-waiting spread across 146s of actual MCP polling) — then, worse, concluded its
-own perfectly fine MCP reads were "stale cached status" rather than noticing
-the waits it asked for had never happened. The nine orphaned sleeps also each
-fired a `task-notification`, several mid-convergence — the exact interruption
-this section already warns about. `run_in_background` plus `Monitor` (or an
-MCP re-read on the tick after) is the real version of that pattern; a follow-up
-`wait` alone is not it.
 
 **The `gh` CLI is not installed in this sandbox — a poll built on it fails
 silently, not loudly.** On 2026-08-08 (#290) a session built
@@ -321,21 +286,6 @@ never needed, and each still queues its own later `task-notification`. One
 bounded sleep at a time, consumed before the next is fired, is the pattern
 above; a burst of overlapping ones doesn't wait faster, it just adds noise.
 
-A dispatched subagent's `completed` notification can mean only that its
-*turn* ended, not that its task did. When a subagent itself starts a
-`Monitor` to wait on a PR's checks and its turn ends there, the notification's
-final text can be a one-line placeholder ("Waiting for the checks-monitor to
-report completion.") rather than the structured report the task needs —
-reading `completed` as "done" and moving on skips the real report. On
-2026-08-11 (#332) the executor had to `SendMessage` an explicit "give me your
-full final status" nudge twice, ~85s apart, before the subagent produced real
-output — and by the second nudge the executor had *already* independently
-queried the same PR's checks over MCP and had the answer, so it just handed
-the subagent that answer rather than let it re-discover it. Read a
-"completed" subagent's actual final text before trusting it as a report; if
-it's a placeholder, nudge with `SendMessage` and hand it any answer you
-already have rather than let both sides poll the same state twice.
-
 ### GitHub MCP call shapes that cost round-trips here
 
 - **`actions_list`/`list_workflow_runs` overflows the tool-result token limit
@@ -378,18 +328,6 @@ for it as a substitute for synchronous polling of your own in-flight work.
 When you're actively waiting on your own PR's checks in the same turn, poll
 the GitHub MCP tools directly from the start; don't call `subscribe_pr_activity`
 first and retry after a denial.
-
-### A dispatched subagent's work is void if you don't actually wait for it
-
-On 2026-08-09 (#296) the executor backgrounded a `growth-dedup` subagent
-(model `opus`) and stated it would act on the subagent's completion
-notification — then, before that notification arrived, independently made the
-same three prune edits to this file itself, committed, pushed, and opened
-PR #304 at 04:59:14. The subagent's own report, reaching the identical
-three-item conclusion, didn't land until 04:59:58 — by then entirely
-redundant, its ~4m46s run wasted. After stating a wait-for-subagent plan,
-actually stop: don't perform the same mutation yourself in the same session
-before its notification (or your own scheduled wakeup) fires.
 
 ### A `[claudinite-task]` needs-human issue is one failed slot, not proof of a recurring failure
 
