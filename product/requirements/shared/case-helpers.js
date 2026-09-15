@@ -60,8 +60,9 @@ async function settle(page) {
   await page.waitForTimeout(250);
 }
 
-// Now page is ready when the list (or its empty-state note) has rendered and
-// the async version fetch has landed in the footer tooltip.
+// Now page is ready once the list (or its empty-state note) has rendered, the
+// async version fetch has landed in the footer tooltip, and the fixed-clock
+// reference day has taken over from the app's built-in simulated one.
 async function nowReady(page) {
   await page.waitForSelector("#showsGrid .show-item, #showsGrid .show-meta", { timeout: 20000 });
   // The version lands in the footer's popup element (shared/version-popup.js),
