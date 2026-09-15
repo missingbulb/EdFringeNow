@@ -17,7 +17,8 @@ toggle selector just under the filter…"), never as a filed issue. The
 `task-lifecycle` check still wants a commit on the branch to reference one, so
 **open the issue as your first step and put `Closes #N` in the original commit
 message** — write it from the owner's own words, since it is the only record of
-what was asked.
+what was asked. This is for an issue you filed yourself; a `[claudinite-work]`
+queue item's own tracking issue is the exception below.
 
 Leaving it to the stop hook is the expensive path, and it is the path every
 session took: 7 of the 12 sessions captured on 2026-07-29 declared the work done,
@@ -35,6 +36,15 @@ issue reference into every one, verified the resulting tree was byte-identical,
 then force-pushed — history-rewriting machinery for a finding a single amend
 already satisfies, and needless risk (a wrong regex, a bad force-push) for no
 benefit over the one-line fix.
+
+### Delivering a PR for a `[claudinite-work]` item — never `Closes #N` on that item's own issue
+
+That's for an issue you filed yourself; a queue item is different. GitHub's native auto-close on
+merge beats `converge-item.mjs` to the terminal transition, leaving the issue closed but still
+wearing its live `task:status:running-agent` label. On 2026-09-06 (#633) a PR body's
+`Closes #633` did exactly that — convergence then refused with "already closed — it was
+converged once already," and recovery cost reopening the issue and re-running convergence.
+Reference the item without closing it and let convergence own the close.
 
 ### `Comment class:` arms rules — repo tooling is never a `feature` here
 
@@ -311,6 +321,11 @@ above; a burst of overlapping ones doesn't wait faster, it just adds noise.
   without erroring. Retry at a smaller page size before treating the diff as
   unreachable; for a landed-status judgment it usually isn't needed anyway —
   `get` (title/body) plus `list_commits` is normally enough.
+- **`list_issues` can overflow even with `perPage` set — unlike `actions_list`, `perPage` alone
+  doesn't save it.** Confirmed 2026-09-06: `perPage: 50` against this repo's ~29 open issues still
+  overflowed (each issue's full `body` counts), where `actions_list` at the same page size doesn't.
+  Pass `fields` too (drop `body`) rather than trusting `perPage` on its own; the spilled-tool-result
+  fallback above still works if a call overflows anyway.
 
 ### `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
 
