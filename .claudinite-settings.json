@@ -17,7 +17,7 @@
     },
     {
       "id": "claudinite-growth",
-      "version": "60913.5",
+      "version": "60914.1",
       "config": {
         "retention_days": 10
       }
@@ -67,11 +67,11 @@
     },
     {
       "id": "claudinite-lifecycle",
-      "version": "60913.4"
+      "version": "60914.1"
     },
     {
       "id": "claudinite-tasks",
-      "version": "60913.6"
+      "version": "60915.1"
     }
   ],
   "accept": [
