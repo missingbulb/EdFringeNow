@@ -46,7 +46,6 @@ site/index.html        page markup
 site/css/styles.css    styling
 site/js/app.js         data loading, map, show list, journey, editable cards
 site/js/places.js      non-show places: Nominatim geocoding + partner booking links
-site/version.json      the released version, which the pages read for the footer stamp
 site/data/             the wire files the browser fetches (scraper/normalize.py writes them)
 data/                  the pipeline's own working files — the master and the price cache
 data/shows.json        mock Edinburgh Fringe shows, still loaded by design-concepts/
@@ -64,16 +63,25 @@ npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
 
 `npm run verify` is the single gate: it runs the unit tests, syntax-checks every
 JavaScript source under `site/`, and byte-compiles the `scraper/`
-Python. The release pipeline's PR gate (`.github/workflows/static-site-ci.yml`)
-runs it as the repo's `test_command` on every push to `main` and every pull
-request, and a **pre-commit hook** runs the same gate
-locally so nothing red is committed. Enable the hook once per clone:
+Python. The pull-request gate (`.github/workflows/ci.yml`) runs exactly this
+script on every push to `main` and every pull request, and a **pre-commit hook**
+runs it locally so nothing red is committed. Enable the hook once per clone:
 
 ```
 npm run setup-hooks   # git config core.hooksPath .githooks
 ```
 
 (Bypass a single commit with `git commit --no-verify`.)
+
+## Deploying
+
+The site is served from **Cloudflare**, as a Workers static-assets deployment:
+`wrangler.jsonc` names `site/` as the published tree and claims `edfringenow.com`
+and `www.edfringenow.com`. Nothing here deploys on push — the release is a
+scheduled Claudinite task (`cloudflare-site/site-release`) that cuts the next
+version, stamps it into the published pages, pushes that bump to `main` and
+uploads the tree. To publish immediately rather than wait for the nightly run,
+dispatch the scheduler with `wake=cloudflare-site/site-release`.
 
 ## Development
 

@@ -81,12 +81,13 @@ async function settle(page) {
 }
 
 // Now page is ready once the list (or its empty-state note) has rendered, the
-// async version fetch has landed in the footer tooltip, and the fixed-clock
-// reference day has taken over from the app's built-in simulated one.
+// version has landed in the footer popup, and the fixed-clock reference day has
+// taken over from the app's built-in simulated one.
 async function nowReady(page) {
   await page.waitForSelector("#showsGrid .show-item, #showsGrid .show-meta", { timeout: 20000 });
   // The version lands in the footer's popup element (shared/version-popup.js),
-  // which is also the signal that the async version.json read has returned.
+  // which is the signal that the page's own scripts have run — the number comes
+  // from the page's stamp, pinned by the harness.
   await page.waitForFunction(() => {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
@@ -109,13 +110,13 @@ async function plan2Ready(page) {
 }
 
 // Planner is ready when the catalogue has landed (the search placeholder
-// switches to the real count) and the version tooltip is in.
+// switches to the real count) and the version is in the footer popup.
 async function planReady(page) {
   await page.waitForFunction(() => {
     const i = document.getElementById("ssInput");
     return i && i.placeholder.startsWith("Search all");
   }, { timeout: 20000 });
-  // Same version-tooltip wait as nowReady, above.
+  // Same footer-popup wait as nowReady, above.
   await page.waitForFunction(() => {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
@@ -124,8 +125,8 @@ async function planReady(page) {
 }
 
 // The festival planner is ready once the programme has landed (the board has
-// either its browse list or its lanes) and the async version.json read has put
-// the version in the footer popup.
+// either its browse list or its lanes) and the page's scripts have put the
+// version in the footer popup.
 async function jerusalemReady(page) {
   // `attached`, not `visible`: the browse list and the grid are the board's two
   // states and exactly one of them is on screen, so a visibility wait on both

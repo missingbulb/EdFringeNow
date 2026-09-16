@@ -1,9 +1,12 @@
 /* A TTL cache for the JSON data files both pages download.
  *
- * The site ships no server it controls: GitHub Pages sets its own
- * `Cache-Control` and there is no way to vary it per file. So the freshness
- * policy lives here, on the client, where each file can be given the lifetime
- * its *content* actually has:
+ * The host serves every asset with `Cache-Control: public, max-age=0,
+ * must-revalidate` and an ETag, so a browser re-checks every file on every load
+ * and only saves the download itself. That is a round trip per data file, and
+ * the catalogue is the bulkiest blocking one. So the freshness policy lives
+ * here, on the client, where a file inside its window costs no request at all —
+ * which no response header can offer — and each is given the lifetime its
+ * *content* actually has:
  *
  *   - the catalogue the planner searches turns over rarely and is the bulkiest
  *     blocking download, so it is held for days;

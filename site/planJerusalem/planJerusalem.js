@@ -28,6 +28,7 @@ import {
 import { slotEndTime, toCsv, toIcs } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
+import { readVersionStamp } from "../shared/version.js";
 import { FESTIVAL, festivalStayLink, festivalTravelLinks } from "./festival.js";
 import { festivalDates, loadCatalogue, venueCoords } from "./catalogue.js";
 import { applyTranslations, currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
@@ -1257,20 +1258,10 @@ async function boot() {
 }
 
 /* The site version in the footer's popup, exactly as the other two pages carry
- * it. version.json is the published version record and ships in the publish set
- * for this. A failure here is silent on purpose: not knowing the version must
- * never stop the planner loading. */
-async function showVersion() {
-  try {
-    const response = await fetch("../version.json");
-    if (!response.ok) return;
-    const pkg = await response.json();
-    if (typeof pkg.version === "string") {
-      attachVersionPopup($("footerVersion"), `v${pkg.version}`);
-    }
-  } catch (error) {
-    console.warn("Festival planner: couldn't read app version", error);
-  }
+ * it — read from the stamp the release wrote into this page. */
+function showVersion() {
+  const version = readVersionStamp();
+  if (version) attachVersionPopup($("footerVersion"), `v${version}`);
 }
 
 showVersion();

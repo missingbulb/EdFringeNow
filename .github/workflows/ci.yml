@@ -1,0 +1,62 @@
+name: CI
+
+# The repo's own pull-request gate. This file is NOT vendored from a pack: the
+# release pipeline that used to carry one moved to Cloudflare, where the release
+# is a queue task rather than a workflow, and no canon pack owns generic CI. So
+# this is ours to keep in step with scripts/verify.sh.
+#
+# It runs one thing, because scripts/verify.sh is one thing: the unit tests, the
+# JS and Python parse checks, the normalizer self-tests, and the Claudinite
+# conformance sweep — the same script the pre-commit hook runs, so passing
+# locally and passing here mean the same.
+#
+# Deliberately NO `paths:` filter. A path-filtered conformance flow arms
+# auto-merge and then never runs, leaving the repo's own maintenance PRs waiting
+# forever (the basics `conformance-workflow` rule).
+#
+# What it deliberately does NOT do is deploy, or dry-run a deploy. The
+# site-release task is the one path to production, and `no-second-publisher`
+# refuses a `wrangler … deploy` line in any workflow — it cannot tell a dry run
+# from a real one, and that is the right trade. The wrangler config is validated
+# here anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
+# conformance sweep and fails on a config that names no published directory, a
+# directory that holds nothing, or a missing compatibility date.
+#
+# The browser-driven golden lane is ui-requirements.yml, not this one, so this
+# gate stays fast and browser-free.
+#
+# workflow_dispatch so a GITHUB_TOKEN-authored PR — whose opening GitHub never
+# turns into a pull_request event — can still have this started on its branch.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # The PR's real head, not the synthetic merge commit, so CI evaluates
+          # what the session's own Stop hook evaluated.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Verify
+        run: bash scripts/verify.sh

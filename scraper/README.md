@@ -265,9 +265,11 @@ and never enter the commit.
 
 ## How long the browser keeps each file
 
-GitHub Pages sets its own `Cache-Control` and offers no way to vary it per file,
-so the freshness policy lives on the client, in
-[`site/shared/data-cache.js`](../site/shared/data-cache.js). Payloads go in the Cache
+The host serves every asset `must-revalidate` with an ETag, so a browser
+re-checks each file on every load and only the download is saved. The freshness
+policy therefore lives on the client, in
+[`site/shared/data-cache.js`](../site/shared/data-cache.js), where a file inside
+its window costs no request at all. Payloads go in the Cache
 Storage API (the catalogue alone would breach localStorage's ~5 MB ceiling) with
 a small localStorage map recording when each url was last fetched.
 

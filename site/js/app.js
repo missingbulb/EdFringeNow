@@ -16,6 +16,7 @@ import { isInUK } from "../shared/geo.js";
 import { cachedFetchJson, DAY_MS } from "../shared/data-cache.js";
 import { friendlyDuration } from "../shared/duration.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
+import { readVersionStamp } from "../shared/version.js";
 import { PRICE_OPTIONS, matchesPrice, priceLabel, showPrice } from "../shared/price.js";
 import { geocodeUrl, parsePlaces, placeIcon, partnerLink, AFFILIATES } from "./places.js";
 import {
@@ -2557,25 +2558,18 @@ function syncDebugPicker() {
   if (dt) dt.value = toDatetimeLocalValue(simNowDate);
 }
 
-/* Stamp the app version onto the debug pill and the footer copyright's tooltip
- * (read from version.json, the same file the planner reads). The debug
- * pill is hidden for most visitors, so the footer popup is the version anyone
- * can reach. Best-effort — the pill stays "debug" and the footer gets no popup
- * if the fetch fails (e.g. local file:// with no server). */
-async function loadAppVersion() {
+/* Show the app version on the debug pill and the footer copyright's popup.
+ * The debug pill is hidden for most visitors, so the footer popup is the
+ * version anyone can reach. The number is already in the page (readVersionStamp),
+ * so there is nothing to wait for and nothing to fail. */
+function loadAppVersion() {
   const pill = document.getElementById("debugToggle");
   const copy = document.getElementById("footerVersion");
   if (!pill && !copy) return;
-  try {
-    const res = await fetch("version.json");
-    if (!res.ok) return;
-    const pkg = await res.json();
-    if (!pkg || typeof pkg.version !== "string") return;
-    if (pill) pill.textContent = `debug v${pkg.version}`;
-    if (copy) attachVersionPopup(copy, `EdFringeNow v${pkg.version}`);
-  } catch (err) {
-    console.warn("EdFringeNow: couldn't read app version", err);
-  }
+  const version = readVersionStamp();
+  if (!version) return;
+  if (pill) pill.textContent = `debug v${version}`;
+  if (copy) attachVersionPopup(copy, `EdFringeNow v${version}`);
 }
 
 /* Wire up the debug panel: the header toggle chip, the date/time picker and the
@@ -2602,7 +2596,7 @@ function wireDebugControls() {
     });
   }
 
-  // The pill shows the app version (single-sourced from version.json), not the
+  // The pill shows the app version (stamped into the page), not the
   // build time. Best-effort: on failure it just stays "debug".
   loadAppVersion();
 

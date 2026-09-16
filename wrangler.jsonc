@@ -1,0 +1,49 @@
+{
+  // What Cloudflare serves, and from where. The cloudflare-site pack's
+  // site-release task reads this file to learn both, and its checks hold the
+  // two answers honest.
+  "name": "edfringenow",
+
+  // Pinned, so the runtime a release lands on is a value in the repo rather
+  // than whatever the deploy day defaults to. Moving it is a deliberate commit.
+  "compatibility_date": "2026-09-16",
+
+  // There is no Worker script: this is a static site, so the whole deployment
+  // is the asset tree and `main` is deliberately absent.
+  "assets": {
+    // The ONE published directory, and the whole upload. A file outside it is
+    // absent from the live site with no error anywhere — which is why the
+    // scraper, the pipeline's working data, the vendored mount and the queue
+    // workers live outside it rather than being excluded by name. What is
+    // inside it but still not a page is held back by .assetsignore.
+    "directory": "./site",
+
+    // The default, stated: `/plan/` resolves to plan/index.html with the
+    // trailing slash, and `/privacy.html` is served without one — the URLs the
+    // site already had. Spelling it out is what makes a future change to this
+    // key a visible decision rather than a silent one.
+    "html_handling": "auto-trailing-slash",
+
+    // Serve site/404.html for a path matching no asset. The default is a bare,
+    // body-less 404, which would be a regression: Pages answered an unknown
+    // path with a real page. NOT "single-page-application" — this site is four
+    // pages and three planners, and answering every unknown path with
+    // index.html would serve the Now page under any URL a visitor mistyped.
+    "not_found_handling": "404-page"
+  },
+
+  // The hostnames a visitor types. Cloudflare writes each one's DNS record as
+  // the deploy attaches it, so no record is created by hand — but a record the
+  // PREVIOUS host left on one of these names blocks the attach, which the
+  // release's preflight resolves and parks on before consuming a version.
+  "routes": [
+    { "pattern": "edfringenow.com", "custom_domain": true },
+    { "pattern": "www.edfringenow.com", "custom_domain": true }
+  ],
+
+  // Off, because it defaults to ON: left alone it would publish this same site
+  // a second time at edfringenow.<account>.workers.dev — a public URL nobody
+  // chose, serving the product's pages under a name that is not the product's.
+  // Preview URLs take their default from this key, so they are off with it.
+  "workers_dev": false
+}

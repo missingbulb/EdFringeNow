@@ -54,7 +54,7 @@
         <a href="plan/" class="nav-link">Plan</a>
       </nav>
       <div class="header-icons">
-        <!-- One debug pill (version from version.json). Click opens a dropdown
+        <!-- One debug pill (version from the page's own stamp). Click opens a dropdown
              with the simulated-time + move-location testing controls. Starts
              hidden so it never flashes for the in-UK majority; app.js reveals
              it once the location check says the pre-set values are in play. -->
@@ -371,9 +371,9 @@
         <p class="logo logo--footer">EdFringe<span class="logo-now">Now</span></p>
         <p class="footer-tagline">Helping you navigate the chaos and catch another show!</p>
         <!-- The site version rides in this line's tooltip (app.js fills the
-             title from version.json) — the debug pill that used to carry it is
+             title from the page's own stamp) — the debug pill that used to carry it is
              hidden for most visitors. -->
-        <p class="footer-copy"><span id="footerVersion" class="footer-version">© 2026 Missing Bulb</span></p>
+        <p class="footer-copy"><span id="footerVersion" class="footer-version" title="version 1.60916.3">© 2026 Missing Bulb</span></p>
         <p class="footer-copy">Booking links on plans (tables, trains, stays, tours) may earn us a small commission, at no extra cost to you.</p>
       </div>
       <div class="footer-col">
@@ -395,10 +395,9 @@
     crossorigin=""
   ></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <script src="js/build-info.js"></script>
   <!-- A module so it can import shared/ code the planner also uses. Modules are
-       deferred, so this runs after the classic scripts above (Leaflet's `L` and
-       window.__BUILD__ are both ready) and before DOMContentLoaded fires. -->
+       deferred, so this runs after the classic scripts above (Leaflet's `L` is
+       ready) and before DOMContentLoaded fires. -->
   <script type="module" src="js/app.js"></script>
   <!-- Privacy-first, cookieless visitor analytics (see js/analytics.js) -->
   <script defer src="js/analytics.js"></script>

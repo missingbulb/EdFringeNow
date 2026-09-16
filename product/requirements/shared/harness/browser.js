@@ -131,6 +131,20 @@ function fulfillFile(route, filePath, status = 200) {
   });
 }
 
+// The released version is stamped into every published page, so the number the
+// footer popup and the debug pill show would otherwise move on every release and
+// take every golden with it. Serving the pages through here pins it: one
+// substitution, applied to whatever the stamp currently says, so the goldens
+// record the product rather than the day they were rendered.
+const PINNED_VERSION = "0.0.0-spec";
+const VERSION_STAMP = /title="version [^"]*"/g;
+
+function fulfillPage(route, filePath) {
+  if (!filePath.endsWith(".html")) return fulfillFile(route, filePath);
+  const html = fs.readFileSync(filePath, "utf8").replace(VERSION_STAMP, `title="version ${PINNED_VERSION}"`);
+  return route.fulfill({ status: 200, contentType: MIME[".html"], body: html });
+}
+
 // The routing table: URL → bytes, worked out once for the whole suite.
 //   - our fake origin: fixtures override, then vendor, then the repo tree;
 //   - Google Fonts CSS + unpkg Leaflet/markercluster: the committed vendor copies;
@@ -159,14 +173,6 @@ async function routeAll(context, { dataDir, failData }) {
     if (`${url.protocol}//${hostname}` === ORIGIN) {
       const rel = decodeURIComponent(pathname.replace(/^\/+/, "")) || "index.html";
       const withIndex = rel.endsWith("/") || rel === "" ? `${rel}index.html` : rel;
-      // The version the footer/debug pill shows must not drift with releases.
-      // (Stored as .fixture so the pinned number is not mistaken for the site's.)
-      if (withIndex === "version.json") {
-        return route.fulfill({
-          contentType: MIME[".json"],
-          body: fs.readFileSync(path.join(FIXTURES_DIR, "version.json.fixture")),
-        });
-      }
       // Live data is replaced wholesale by the committed fixture snapshot.
       if (withIndex.startsWith("data/")) {
         const fixture = path.join(dataDir, withIndex.slice("data/".length));
@@ -174,9 +180,9 @@ async function routeAll(context, { dataDir, failData }) {
         return route.fulfill({ status: 404, contentType: "text/plain", body: "no fixture" });
       }
       const onDisk = path.join(SITE_ROOT, withIndex);
-      if (fs.existsSync(onDisk) && fs.statSync(onDisk).isFile()) return fulfillFile(route, onDisk);
+      if (fs.existsSync(onDisk) && fs.statSync(onDisk).isFile()) return fulfillPage(route, onDisk);
       const asDir = path.join(SITE_ROOT, withIndex, "index.html");
-      if (fs.existsSync(asDir)) return fulfillFile(route, asDir);
+      if (fs.existsSync(asDir)) return fulfillPage(route, asDir);
       return route.fulfill({ status: 404, contentType: "text/plain", body: "not found" });
     }
 
