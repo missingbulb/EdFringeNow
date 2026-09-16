@@ -30,14 +30,12 @@ import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { FESTIVAL, festivalStayLink, festivalTravelLinks } from "./festival.js";
 import { festivalDates, loadCatalogue, venueCoords } from "./catalogue.js";
+import { applyTranslations, currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
 const pad2 = (n) => String(n).padStart(2, "0");
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
-const DOW_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const DOW_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const MONTH_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 // The schedule axis, in the same units and at the same scale as the Fringe
 // planner's, so the two boards read alike: one hour is SCH_HOUR_PX tall, a day
@@ -52,9 +50,9 @@ const SCH_GUTTER_PX = 44;
 const SCH_EMPTY_COL_PX = 26;
 
 const MODE_META = {
-  walk: { emoji: "🚶", verb: "walk" },
-  bike: { emoji: "🚲", verb: "cycle" },
-  car: { emoji: "🚗", verb: "drive" },
+  walk: { emoji: "🚶", verbKey: "travel.mode.walk" },
+  bike: { emoji: "🚲", verbKey: "travel.mode.bike" },
+  car: { emoji: "🚗", verbKey: "travel.mode.car" },
 };
 
 const KEY_STARRED = FESTIVAL.storagePrefix + "starred";
@@ -90,12 +88,6 @@ const state = {
 
 // --- small helpers --------------------------------------------------------
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, (c) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
-  );
-}
-
 /* Every string that came out of the programme is marked as the festival's own
  * language and direction. Without it a browser lays Hebrew out with the page's
  * `lang="en"`, which puts a trailing "?" or a Latin word on the wrong side of
@@ -109,9 +101,24 @@ function dateOf(iso) {
   return new Date(`${iso}T00:00:00Z`);
 }
 
+/* Dates are written by Intl in the reader's own language, so nothing here has
+ * a month or a weekday name of its own to translate. UTC throughout, because
+ * every date in this page is already Jerusalem wall clock (see catalogue.js). */
+function dates(options) {
+  return new Intl.DateTimeFormat(currentIntlLocale(), { timeZone: "UTC", ...options });
+}
+
 function dayLabel(iso) {
-  const d = dateOf(iso);
-  return `${d.getUTCDate()} ${MONTH_SHORT[d.getUTCMonth()]}`;
+  return dates({ day: "numeric", month: "short" }).format(dateOf(iso));
+}
+
+function dowShort(iso) {
+  return dates({ weekday: "short" }).format(dateOf(iso));
+}
+
+/** "Sunday 18 Oct" — the weekday and date a tooltip names together. */
+function dayAndDate(iso) {
+  return dates({ weekday: "long", day: "numeric", month: "short" }).format(dateOf(iso));
 }
 
 function dowOf(iso) {
@@ -205,23 +212,45 @@ function restorePrefs() {
 // --- chrome ---------------------------------------------------------------
 
 function renderChrome() {
+  // The wordmark is the festival's mark rather than a sentence, so it is the
+  // one piece of chrome that reads the same in every language.
   const [head, tail] = FESTIVAL.wordmark;
   $("wordmark").innerHTML = `${escapeHtml(head)}<span class="logo-now">${escapeHtml(tail)}</span>`;
-  $("pageTitle").textContent = FESTIVAL.title;
 
   const nav = $("siteNav");
   nav.innerHTML =
     FESTIVAL.siteNav
-      .map((link) => `<a href="${link.href}" class="nav-link">${escapeHtml(link.label)}</a>`)
-      .join("") + `<a href="./" class="nav-link is-active">${escapeHtml(FESTIVAL.navLabel)}</a>`;
+      .map(
+        (link) =>
+          `<a href="${link.href}" class="nav-link" data-i18n-slot="${link.labelKey}">` +
+          `${escapeHtml(t(link.labelKey))}</a>`
+      )
+      .join("") +
+    `<a href="./" class="nav-link is-active" data-i18n-slot="${FESTIVAL.navLabelKey}">` +
+    `${escapeHtml(t(FESTIVAL.navLabelKey))}</a>`;
+
+  // The festival's own two links in the footer: its programme's source, and
+  // the note that some of the trip links are paid.
+  $("footerData").innerHTML = tHtml(
+    "footer.dataFrom",
+    {},
+    {
+      source:
+        `<a href="${escapeHtml(FESTIVAL.sourceUrl)}" target="_blank" rel="noopener">` +
+        `${escapeHtml(FESTIVAL.sourceName)}</a>`,
+    }
+  );
 }
 
 function renderHeaderHint() {
-  const first = state.dates[0];
-  const last = state.dates[state.dates.length - 1];
-  const year = dateOf(first).getUTCFullYear();
-  $("headerHint").textContent =
-    `${FESTIVAL.city} · ${dateOf(first).getUTCDate()}–${dayLabel(last)} ${year}`;
+  const first = dateOf(state.dates[0]);
+  const last = dateOf(state.dates[state.dates.length - 1]);
+  $("headerHint").textContent = t("header.run", {
+    city: t("festival.city"),
+    // formatRange, not two formats spliced: only the locale's own data knows
+    // where the year goes and which part of a range is dropped as repeated.
+    range: dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(first, last),
+  });
 }
 
 // --- the board ------------------------------------------------------------
@@ -243,7 +272,7 @@ function buildDayHeader() {
     const col = document.createElement("div");
     col.className = "day-col" + (isWeekend(iso) ? " wknd" : "");
     col.innerHTML =
-      `<span class="day-dow">${DOW_SHORT[dowOf(iso)]}</span>` +
+      `<span class="day-dow">${escapeHtml(dowShort(iso))}</span>` +
       `<span class="day-num">${dateOf(iso).getUTCDate()}</span>`;
     head.appendChild(col);
   }
@@ -285,8 +314,10 @@ function buildDayCells(performances) {
         seg.className = segClass(p);
         seg.dataset.date = p.date;
         seg.dataset.start = p.start;
-        seg.title = `${DOW_LONG[dowOf(iso)]} ${dayLabel(iso)}, ${p.start}` +
-          (p.free ? " — free entry" : "");
+        seg.title = t(p.free ? "perf.tip.free" : "perf.tip", {
+          day: dayAndDate(iso),
+          time: p.start,
+        });
         cell.appendChild(seg);
       }
     }
@@ -311,7 +342,7 @@ function buildLanes() {
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "lane-remove";
-    remove.setAttribute("aria-label", `Remove ${show.title} from the list`);
+    remove.setAttribute("aria-label", t("lane.remove", { title: show.title }));
     remove.textContent = "×";
     label.appendChild(remove);
 
@@ -340,11 +371,20 @@ function applyVerdicts(summary, diagnostics) {
     lane.classList.toggle("lane--out", !inWindow);
     lane.classList.toggle("lane--blocked", diagnostics.blockedSlugs.has(slug));
 
+    // The pill's emoji is the page's, not the translation's: a marker a
+    // translator cannot lose, beside a word that is entirely theirs.
+    const [verdictClass, verdictKey, verdictMark] = scheduled
+      ? ["st-plan st-in", "lane.scheduled", "✓"]
+      : !inWindow
+        ? ["st-dates st-no", "lane.noDates", "📅"]
+        : diagnostics.blockedSlugs.has(slug)
+          ? ["st-conflict st-warn", "lane.outsideHours", "⏰"]
+          : ["st-cant", "lane.cantFit", ""];
     const statusEl = lane.querySelector(".lane-status");
-    if (scheduled) statusEl.innerHTML = `<span class="st-plan st-in">✓ Scheduled!</span>`;
-    else if (!inWindow) statusEl.innerHTML = `<span class="st-dates st-no">📅 No dates</span>`;
-    else if (diagnostics.blockedSlugs.has(slug)) statusEl.innerHTML = `<span class="st-conflict st-warn">⏰ Outside your hours</span>`;
-    else statusEl.innerHTML = `<span class="st-cant">Can't fit</span>`;
+    statusEl.innerHTML =
+      `<span class="${verdictClass}" data-i18n-slot="${verdictKey}">` +
+      (verdictMark ? `<span aria-hidden="true">${verdictMark}</span> ` : "") +
+      `${escapeHtml(t(verdictKey))}</span>`;
 
     // Ring the one performance the plan picked, the way the Fringe grid does.
     const picked = state.selectedSlot.get(slug);
@@ -380,36 +420,53 @@ function layoutOverlay() {
   paintWindow();
 }
 
+/* The overlay is positioned in physical pixels over a grid whose columns follow
+ * the page's direction, so on a right-to-left page day 1 is the rightmost
+ * column and every x below is measured from the other end. `boundaryX` is the
+ * one place that knows it; the rest of the window's maths is direction-blind. */
+const isRtl = () => currentDir() === "rtl";
+
+/** The physical offset of the boundary `days` days after the first night. */
+function boundaryX(days) {
+  const { trackWidth, dayW } = state.layout;
+  return isRtl() ? trackWidth - days * dayW : days * dayW;
+}
+
 function paintWindow() {
-  const { trackLeft, trackWidth, dayW } = state.layout;
-  const x0 = (state.d0 - 1) * dayW;
-  const x1 = state.d1 * dayW;
-  $("dimL").style.cssText = `left:0;width:${x0}px`;
-  $("dimR").style.cssText = `left:${x1}px;width:${Math.max(0, trackWidth - x1)}px`;
-  $("band").style.cssText = `left:${x0}px;width:${x1 - x0}px`;
+  const { trackLeft, trackWidth } = state.layout;
+  const x0 = boundaryX(state.d0 - 1);
+  const x1 = boundaryX(state.d1);
+  // The window's own edges keep their logical identity; the dimmed regions and
+  // the band are whatever lies outside and inside them on screen.
+  const near = Math.min(x0, x1);
+  const far = Math.max(x0, x1);
+  $("dimL").style.cssText = `left:0;width:${near}px`;
+  $("dimR").style.cssText = `left:${far}px;width:${Math.max(0, trackWidth - far)}px`;
+  $("band").style.cssText = `left:${near}px;width:${far - near}px`;
   $("edgeStart").style.left = `${x0}px`;
   $("edgeEnd").style.left = `${x1}px`;
   $("hStart").style.left = `${trackLeft + x0}px`;
   $("hEnd").style.left = `${trackLeft + x1}px`;
-  $("railBand").style.cssText = `left:${trackLeft + x0}px;width:${x1 - x0}px`;
+  $("railBand").style.cssText = `left:${trackLeft + near}px;width:${far - near}px`;
   $("flagStart").textContent = dayLabel(windowStartISO());
   $("flagEnd").textContent = dayLabel(windowEndISO());
   const len = state.d1 - state.d0 + 1;
-  $("railLen").textContent = `${len} night${len === 1 ? "" : "s"}`;
+  $("railLen").textContent = t("rail.nights", { count: len });
   for (const [el, value, iso] of [
     [$("hStart"), state.d0, windowStartISO()],
     [$("hEnd"), state.d1, windowEndISO()],
   ]) {
     el.setAttribute("aria-valuemax", String(state.dates.length));
     el.setAttribute("aria-valuenow", String(value));
-    el.setAttribute("aria-valuetext", `${DOW_LONG[dowOf(iso)]} ${dayLabel(iso)}`);
+    el.setAttribute("aria-valuetext", dayAndDate(iso));
   }
 }
 
 function dayAt(clientX) {
   const wr = $("calInner").getBoundingClientRect();
-  const { trackLeft, dayW } = state.layout;
-  return clamp(Math.round((clientX - wr.left - trackLeft) / dayW), 0, state.dates.length);
+  const { trackLeft, trackWidth, dayW } = state.layout;
+  const x = clientX - wr.left - trackLeft;
+  return clamp(Math.round((isRtl() ? trackWidth - x : x) / dayW), 0, state.dates.length);
 }
 
 function dragDate(el, apply) {
@@ -437,7 +494,10 @@ function dragDate(el, apply) {
 
 function keysDate(el, fn) {
   el.addEventListener("keydown", (e) => {
-    const step = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0;
+    // The arrow that moves the window later is the one that points along the
+    // page's reading direction, which is the way the grid itself runs.
+    const later = isRtl() ? "ArrowLeft" : "ArrowRight";
+    const step = e.key === later ? 1 : e.key === (isRtl() ? "ArrowRight" : "ArrowLeft") ? -1 : 0;
     if (!step) return;
     e.preventDefault();
     fn(step);
@@ -461,7 +521,8 @@ function wireWindow() {
     state.d1 = clamp(dayAt(ev.clientX), state.d0, n());
   });
   dragDate($("band"), (ev, s0, s1, startX) => {
-    const shift = Math.round((ev.clientX - startX) / state.layout.dayW);
+    const travelled = (ev.clientX - startX) * (isRtl() ? -1 : 1);
+    const shift = Math.round(travelled / state.layout.dayW);
     const span = s1 - s0;
     const d0 = clamp(s0 + shift, 1, n() - span);
     state.d0 = d0;
@@ -518,26 +579,50 @@ function replan() {
   renderPlanSummary(schedule);
   renderSchedule(schedule);
   renderTripLinks();
-  $("planWindowLabel").textContent =
-    state.d0 === state.d1
-      ? dayLabel(windowStartISO())
-      : `${dayLabel(windowStartISO())} – ${dayLabel(windowEndISO())}`;
+  renderPlanSub();
   savePrefs();
 }
 
+/* "…across 18–22 Oct…" — the window's dates sit inside the sentence, so the
+ * translation decides where they land rather than the markup. */
+function renderPlanSub() {
+  const window = state.dates.length
+    ? dates({ day: "numeric", month: "short" }).formatRange(
+        dateOf(windowStartISO()),
+        dateOf(windowEndISO())
+      )
+    : t("plan.window.placeholder");
+  $("planSub").innerHTML = tHtml(
+    "plan.sub",
+    {},
+    { window: `<span id="planWindowLabel">${escapeHtml(window)}</span>` }
+  );
+}
+
 function renderCounts(scheduled, selected) {
-  $("boardCount").innerHTML = selected
-    ? `<span class="bc-planned">${scheduled}</span> show${scheduled === 1 ? "" : "s"} planned out of ` +
-      `<span class="bc-selected">${selected}</span> selected`
-    : "No shows planned, no shows selected";
+  const el = $("boardCount");
+  el.dataset.i18nSlot = selected ? "board.count.some" : "board.count.none";
+  el.innerHTML = selected
+    ? tHtml(
+        "board.count.some",
+        { planned: scheduled, selected },
+        {
+          // The two numbers are wrapped where they land in the sentence, so the
+          // emphasis follows the translation's own word order.
+          planned: `<span class="bc-planned">${scheduled}</span>`,
+          selected: `<span class="bc-selected">${selected}</span>`,
+        }
+      )
+    : escapeHtml(t("board.count.none"));
 }
 
 function renderPlanSummary(schedule) {
   const nights = schedule.days.filter((d) => d.slots.length).length;
   $("planSummary").textContent = schedule.scheduled.length
-    ? `${schedule.scheduled.length} show${schedule.scheduled.length === 1 ? "" : "s"} across ` +
-      `${nights} night${nights === 1 ? "" : "s"}.` +
-      (schedule.unscheduled.length ? ` ${schedule.unscheduled.length} couldn't be fitted.` : "")
+    ? t("plan.summary", { shows: schedule.scheduled.length, nights }) +
+      (schedule.unscheduled.length
+        ? ` ${t("plan.summary.unfitted", { count: schedule.unscheduled.length })}`
+        : "")
     : "";
 }
 
@@ -614,10 +699,12 @@ function renderSchedule(schedule) {
     const head = document.createElement("div");
     head.className = "sch-day-head";
     head.innerHTML = full
-      ? `<div class="sch-dow">${DOW_LONG[dowOf(day.date)]} <span class="sch-date">${dayLabel(day.date)}</span></div>` +
-        `<div class="sch-day-count">${day.slots.length} show${day.slots.length === 1 ? "" : "s"}</div>`
+      ? `<div class="sch-dow">${escapeHtml(dates({ weekday: "long" }).format(dateOf(day.date)))} ` +
+        `<span class="sch-date">${escapeHtml(dayLabel(day.date))}</span></div>` +
+        `<div class="sch-day-count" data-i18n-slot="schedule.dayCount">` +
+        `${escapeHtml(t("schedule.dayCount", { count: day.slots.length }))}</div>`
       : `<div class="sch-dow sch-dow--empty">${dateOf(day.date).getUTCDate()}</div>`;
-    if (!full) col.title = `${DOW_LONG[dowOf(day.date)]} ${dayLabel(day.date)} — nothing planned`;
+    if (!full) col.title = t("schedule.nothingPlanned", { day: dayAndDate(day.date) });
 
     const body = document.createElement("div");
     body.className = "sch-body";
@@ -679,11 +766,15 @@ function buildTravelLeg(a, b, top, bottom) {
 
   const gapMin = Math.max(0, b.startMinuteOfDay - a.endMinuteOfDay);
   const meta = MODE_META[state.mode];
+  const km1 = (km) =>
+    new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(km);
   let text;
   let title;
+  let key;
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
-    text = `same venue · ${gapMin}′ gap`;
-    title = `${a.venueName || "Same venue"} — no travel, ${gapMin} min between shows`;
+    key = "leg.sameVenue";
+    text = t(key, { gap: gapMin });
+    title = t("leg.sameVenue.tip", { venue: a.venueName || "", gap: gapMin });
   } else {
     const km = distanceKm({ lat: a.venueLat, lng: a.venueLng }, { lat: b.venueLat, lng: b.venueLng });
     const mins = travelMinutes(
@@ -692,17 +783,28 @@ function buildTravelLeg(a, b, top, bottom) {
       state.mode
     );
     if (km == null || mins == null) {
-      text = `nearby · ${gapMin}′ gap`;
-      title = "Travel time unknown (venue has no coordinates)";
+      key = "leg.nearby";
+      text = t(key, { gap: gapMin });
+      title = t("leg.unknown.tip");
     } else {
       const spare = Math.round(gapMin - mins);
-      text = `${Math.round(mins)}′ · ${km.toFixed(1)}km · ${spare >= 0 ? "+" : ""}${spare}′`;
-      title =
-        `${meta.emoji} ${Math.round(mins)} min ${meta.verb} · ${km.toFixed(1)} km — ` +
-        `${gapMin} min gap, ${spare} min spare`;
+      key = "leg.travel";
+      text = t(key, {
+        minutes: Math.round(mins),
+        km: km1(km),
+        spare: `${spare >= 0 ? "+" : ""}${spare}`,
+      });
+      title = t("leg.travel.tip", {
+        minutes: Math.round(mins),
+        mode: t(meta.verbKey),
+        km: km1(km),
+        gap: gapMin,
+        spare,
+      });
     }
   }
   leg.title = title;
+  leg.dataset.i18nSlot = key;
   leg.innerHTML =
     `<span class="leg-emoji" aria-hidden="true">${meta.emoji}</span>` +
     `<span class="leg-text">${escapeHtml(text)}</span>`;
@@ -715,13 +817,17 @@ function renderTripLinks() {
   const row = $("tripLinksRow");
   const links = [festivalStayLink(windowStartISO(), windowEndISO()), ...festivalTravelLinks()];
   row.innerHTML = links
-    .map(
-      (link) =>
+    .map((link) => {
+      // The partner writes the URL; the page writes what the link is called,
+      // so the offer reads in the reader's language rather than the vendor's.
+      const label = t(link.labelKey);
+      return (
         `<a class="trip-link" href="${escapeHtml(link.url)}" target="_blank" rel="sponsored noopener noreferrer"` +
-        ` title="${escapeHtml(link.text)} on ${escapeHtml(link.partner)} — partner link, we may earn a commission">` +
-        `<span class="trip-link-text">${escapeHtml(link.text)}</span>` +
+        ` title="${escapeHtml(t("trip.partnerTip", { text: label, partner: link.partner }))}">` +
+        `<span class="trip-link-text" data-i18n-slot="${link.labelKey}">${escapeHtml(label)}</span>` +
         `<span class="trip-link-partner">${escapeHtml(link.partner)}</span></a>`
-    )
+      );
+    })
     .join("");
 }
 
@@ -735,8 +841,8 @@ function showMeta(show) {
   const parts = [
     show.genre ? foreign(show.genre) : null,
     venue ? foreign(venue) : null,
-    `${runs} performance${runs === 1 ? "" : "s"}`,
-    show.duration ? `${show.duration} min` : null,
+    escapeHtml(t("show.performances", { count: runs })),
+    show.duration ? escapeHtml(t("show.minutes", { count: show.duration })) : null,
   ].filter(Boolean);
   return parts.join(" · ");
 }
@@ -745,7 +851,8 @@ function rowHtml(show) {
   const on = state.starred.has(show.slug);
   return (
     `<button type="button" class="ss-star" data-slug="${escapeHtml(show.slug)}"` +
-    ` aria-pressed="${on}" aria-label="${on ? "Remove" : "Add"} ${escapeHtml(show.title)}">${on ? "★" : "☆"}</button>` +
+    ` aria-pressed="${on}" aria-label="${escapeHtml(t(on ? "search.star.remove" : "search.star.add", { title: show.title }))}">` +
+    `${on ? "★" : "☆"}</button>` +
     `<span class="ss-row-title">${foreign(show.title)}</span>` +
     `<span class="ss-row-meta">${showMeta(show)}</span>`
   );
@@ -766,7 +873,7 @@ function renderBrowse() {
   for (const show of state.catalogue.shows) {
     list.appendChild(rowElement(show, "li"));
   }
-  $("browseLine1").textContent = `Pick from ${state.catalogue.shows.length} shows`;
+  $("browseLine1").textContent = t("browse.pick", { count: state.catalogue.shows.length });
 }
 
 function matchesFilters(show) {
@@ -825,8 +932,14 @@ function buildFacets() {
 
 function syncFacetChrome() {
   const { genres, venues } = state.search;
-  $("ssfGenreValue").textContent = genres.size ? `${genres.size} kinds` : "Any kind";
-  $("ssfVenueValue").textContent = venues.size ? `${venues.size} venues` : "Any venue";
+  $("ssfGenreValue").textContent = genres.size
+    ? t("search.kindsChosen", { count: genres.size })
+    : t("search.anyKind");
+  $("ssfGenreValue").dataset.i18nSlot = genres.size ? "search.kindsChosen" : "search.anyKind";
+  $("ssfVenueValue").textContent = venues.size
+    ? t("search.venuesChosen", { count: venues.size })
+    : t("search.anyVenue");
+  $("ssfVenueValue").dataset.i18nSlot = venues.size ? "search.venuesChosen" : "search.anyVenue";
   const active = genres.size + venues.size;
   $("ssBadge").hidden = active === 0;
   $("ssBadge").textContent = String(active);
@@ -917,7 +1030,24 @@ function wireControls() {
   });
 }
 
+/* The two controls whose option text and field labels are words rather than
+ * numbers: the gap menu, and the meal time fields (whose label names the meal). */
+function syncControlWords() {
+  for (const option of $("ctlGap").options) {
+    const minutes = Number(option.value);
+    option.textContent =
+      minutes === 60 ? t("plan.gap.hour") : t("plan.gap.minutes", { count: minutes });
+  }
+  for (const meal of state.meals) {
+    const cap = meal.id[0].toUpperCase() + meal.id.slice(1);
+    const name = t(meal.id === "lunch" ? "plan.lunch" : "plan.dinner");
+    $(`meal${cap}Start`).setAttribute("aria-label", t("plan.mealStartLabel", { meal: name }));
+    $(`meal${cap}End`).setAttribute("aria-label", t("plan.mealEndLabel", { meal: name }));
+  }
+}
+
 function syncControls() {
+  syncControlWords();
   $("ctlDayStart").value = minToDayClock(state.dayStartMin);
   $("ctlDayEnd").value = minToDayClock(state.dayEndMin);
   for (const meal of state.meals) {
@@ -1050,7 +1180,7 @@ function wireExports() {
       toIcs(state.schedule.scheduled, {
         now: new Date(),
         timezone: state.catalogue.festival.timezone,
-        calendarName: `My ${state.catalogue.festival.name} plan`,
+        calendarName: t("export.calendarName", { festival: state.catalogue.festival.name }),
         prodId: "-//EdFringeNow//Festival Planner//EN",
       }),
       "text/calendar;charset=utf-8"
@@ -1060,15 +1190,41 @@ function wireExports() {
 
 // --- boot -----------------------------------------------------------------
 
-async function boot() {
+/* Everything the page drew itself, redrawn in the language just chosen. The
+ * static markup is the i18n module's own job; this is the rest. */
+function retranslate() {
   renderChrome();
+  syncControlWords();
+  if (!state.catalogue) return;
+  renderHeaderHint();
+  buildDayHeader();
+  buildFacets();
+  syncFacetChrome();
+  renderPlanSub();
+  rebuild();
+  layoutOverlay();
+}
+
+async function boot() {
+  initI18n({
+    storagePrefix: FESTIVAL.storagePrefix,
+    localeSelect: $("langSelect"),
+    themeButton: $("themeToggle"),
+    onChange: retranslate,
+  });
+  renderChrome();
+  syncControlWords();
+  renderCounts(0, 0);
+  renderPlanSub();
   $("loadingState").hidden = false;
   try {
     state.catalogue = await loadCatalogue(FESTIVAL.dataUrl);
   } catch (error) {
     $("loadingState").hidden = true;
     $("errorState").hidden = false;
-    $("errorDetail").textContent = String(error.message || error);
+    // The translated line stays; what the failure actually said goes beneath it,
+    // untranslated, because it came from the network rather than from us.
+    $("errorTech").textContent = String(error.message || error);
     return;
   }
   $("loadingState").hidden = true;

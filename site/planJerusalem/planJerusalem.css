@@ -16,27 +16,39 @@
 :root {
   /* Jerusalem stone and the brass of the city's doors — the accent the Fringe
      planner spends on violet. Kept to the same two-tone shape (a mid tone and
-     a darker one for hover/active) so every rule in plan.css that reaches for
-     --violet lands somewhere sensible without being restated here. */
-  --violet: #b8862b;
-  --violet-dark: #94691d;
-  --ink: #1d1a14;
-  --bg: #faf7f0;
-  --muted: #7a7160;
-  --line: #ece5d8;
+     a second for hover/active) so every rule in plan.css that reaches for
+     --violet lands somewhere sensible without being restated here. In the dark
+     the pair swaps direction: brass lifts towards the light rather than away
+     from it, because the hover state has to stay the brighter of the two. */
+  --violet: light-dark(#b8862b, #d7a340);
+  --violet-dark: light-dark(#94691d, #ecc06a);
+  --ink: light-dark(#1d1a14, #f2e9da);
+  --paper: light-dark(#ffffff, #221d16);
+  --bg: light-dark(#faf7f0, #14110c);
+  --muted: light-dark(#7a7160, #a89c86);
+  --line: light-dark(#ece5d8, #37301f);
+  /* light-dark() takes colours, not whole shadows — wrapping the lengths in it
+     too makes every box-shadow that reads this token invalid, i.e. no shadow at
+     all, in both themes. */
+  --shadow-soft: 0 12px 30px light-dark(rgba(16, 24, 40, 0.08), rgba(0, 0, 0, 0.55));
+  /* The "in your plan" pill, which plan.css paints as ink-on-wash. */
+  --ok-text: light-dark(#047857, #6fe0ab);
+  --ok-bg: light-dark(#e6f7ee, #123527);
 
   /* The grid's palette, cut down to what this festival publishes: a night is on
      sale or it is free. The Fringe's sold-out / 2-for-1 / preview colours are
      left defined by the import and simply never drawn. */
-  --fr-avail: #2a9d8f;
-  --fr-free: #1f9e55;
+  --fr-avail: light-dark(#2a9d8f, #35b6a6);
+  --fr-free: light-dark(#1f9e55, #2fbd6a);
+  --fr-ink: light-dark(#00243d, #f2e9da);
 
-  /* Hebrew: neither Inter nor Plus Jakarta Sans carries the script, so Heebo
-     goes in front of both. A Latin string still renders in the site's own face
-     — Heebo has no Latin coverage worth preferring, so the fallback order
-     decides, which is what we want. */
-  --sans: "Inter", "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --display: "Plus Jakarta Sans", "Heebo", "Inter", system-ui, sans-serif;
+  /* Hebrew, Japanese and Cyrillic: Inter carries the Cyrillic, and neither it
+     nor Plus Jakarta Sans carries the other two scripts, so Heebo and Noto Sans
+     JP go in front of both. A Latin string still renders in the site's own face
+     — neither added font has Latin coverage worth preferring, so the fallback
+     order decides, which is what we want. */
+  --sans: "Inter", "Heebo", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "Plus Jakarta Sans", "Heebo", "Noto Sans JP", "Inter", system-ui, sans-serif;
 
   /* How many nights the grid spans. The Fringe planner's calendar is a fixed
      month; a festival's is exactly as long as its programme, and both the day
@@ -44,18 +56,43 @@
   --fest-days: 5;
 }
 
+/* Every colour above picks its side with `light-dark()`, which reads the used
+   colour scheme — so the whole dark theme is these two rules: the device asks
+   for dark and the reader has not said otherwise, or the reader chose it. Light
+   declares nothing, deliberately: `color-scheme` shifts how the page's own
+   background composites by a unit per channel, and the light rendering is
+   committed in the goldens. Declaring it only on the dark side also darkens the
+   native select and time fields there, which is the rest of what it is for. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 /* Hebrew needs a little more line height than the Latin faces are set for, or
-   the nikud-less but tall letters clip in the dense grid rows. */
+   the nikud-less but tall letters clip in the dense grid rows. Japanese wants
+   the same room for the same reason. */
 [lang="he"] {
   font-family: "Heebo", var(--sans);
   line-height: 1.35;
+}
+[lang="ja"] {
+  font-family: "Noto Sans JP", var(--sans);
+  line-height: 1.4;
 }
 
 /* A warm stone wash behind the page's top, so the festival reads as its own
    place without touching a single component. One gradient, no images. */
 body.festival-page {
   background:
-    linear-gradient(180deg, #f6ecd8 0%, rgba(246, 236, 216, 0) 420px),
+    linear-gradient(
+      180deg,
+      light-dark(#f6ecd8, #241d12) 0%,
+      light-dark(rgba(246, 236, 216, 0), rgba(36, 29, 18, 0)) 420px
+    ),
     var(--bg);
 }
 
@@ -153,6 +190,215 @@ body.festival-page {
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--muted);
+}
+
+/* --- the reader's own two controls ---------------------------------------- */
+
+/* Language and theme sit at the end of the header, after the festival's dates:
+   they belong to the reader rather than to the festival, so they read as the
+   last thing in the bar rather than as part of its identity. */
+.chrome-prefs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-start: 10px;
+}
+.lang-select {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lang-select:hover,
+.theme-toggle:hover {
+  border-color: var(--violet);
+  color: var(--violet-dark);
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+/* The toggle shows the state a press would move to, which is the opposite of
+   the one in force — so the icons swap with the theme, on the reader's choice
+   or (with no choice made) on the device's. */
+.theme-ico--sun {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-ico--sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-ico--moon {
+    display: none;
+  }
+}
+:root[data-theme="dark"] .theme-ico--sun {
+  display: block;
+}
+:root[data-theme="dark"] .theme-ico--moon {
+  display: none;
+}
+
+/* The Fringe planner's header is a three-column grid sized for a logo, a nav
+   and one hint. This one carries two controls more, which is more than 390px
+   of phone can hold in a row — so below the width where the festival's dates
+   already drop out, the header becomes two rows and the nav takes the second.
+   (The board below it is a 1174px grid and stays a desktop instrument; this is
+   about the chrome not running off the edge on the way to it.) */
+@media (max-width: 940px) {
+  /* Flex rather than the imported grid: a grid column is shared down the rows,
+     so the wordmark's width would set the nav's and push the controls off the
+     edge — which is exactly what it did. */
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 6px;
+    column-gap: 12px;
+  }
+  .logo {
+    flex: 1 1 100%;
+  }
+  .main-nav {
+    gap: 20px;
+  }
+  .header-side {
+    margin-inline-start: auto;
+  }
+}
+
+/* What the failed fetch actually said, under the line that says it failed.
+   Untranslated on purpose — it is the network's words, not ours. */
+.state-tech {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* --- the components the Fringe planner paints white ----------------------- */
+
+/* plan.css was written for one theme and spells those surfaces `#fff`. They are
+   restated here against the token, which carries both themes, rather than
+   duplicated into a dark-only block — a rule that reads the same in the light
+   is a rule that cannot drift between the two. */
+.site-header {
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+}
+.board-clear,
+.btn-ghost,
+.board-legend-btn,
+.ss-bar,
+.chip-trigger,
+.panel-filter,
+.opt-select,
+.ctl-time,
+.ctl-num,
+.tmode,
+.tmode-btn,
+.meal-pill,
+.win-flag,
+.sch-show,
+.sch-pin,
+.sch-emoji {
+  background: var(--paper);
+}
+/* The light halves below are plan.css's own values, kept to the byte: this page
+   is restating those rules to give them a dark half, not to restyle the light
+   one. The schedule's own two-layer background is the exception that has to be
+   left alone in the light and overridden only in the dark — restating it at all
+   moves the antialiasing of its rounded corners, which the goldens hold. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .schedule-wrap {
+    background:
+      linear-gradient(var(--paper), var(--paper)) padding-box,
+      repeating-linear-gradient(90deg, #2b251c 0 1px, transparent 1px 100%);
+  }
+}
+:root[data-theme="dark"] .schedule-wrap {
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    repeating-linear-gradient(90deg, #2b251c 0 1px, transparent 1px 100%);
+}
+.sch-day--empty {
+  background: repeating-linear-gradient(
+    45deg,
+    light-dark(#fbfbfd, #1b170f) 0 5px,
+    light-dark(#f4f5f8, #231d14) 5px 10px
+  );
+}
+.browse-list .ss-row,
+.ss-results .ss-row {
+  color: var(--ink);
+}
+/* The footer is the one band that is dark in both themes, so it cannot follow
+   --ink (which flips) and states its own two. */
+.site-footer {
+  background: light-dark(#1d1a14, #0a0906);
+  color: light-dark(#d9d9d9, #b6ac99);
+}
+.sch-day--empty .sch-day-head {
+  background: light-dark(#f7f7fa, #1b170f);
+}
+.sch-day.wknd .sch-day-head {
+  background: light-dark(#f4f2fe, #241d12);
+}
+
+/* --- right to left -------------------------------------------------------- */
+
+/* The board's own geometry follows the page's direction on its own: the day
+   columns, the lanes and the schedule's days are grid and flex tracks, and the
+   date window's overlay is mirrored in planJerusalem.js. What is left here is
+   the handful of places plan.css states a physical side. */
+[dir="rtl"] .ss-icon {
+  left: auto;
+  right: 12px;
+}
+[dir="rtl"] .ss-input {
+  padding-left: 12px;
+  padding-right: 40px;
+}
+/* The status stripe, and the padding that clears it, move to the other edge —
+   with plan.css's own colour, which is the performance's status rather than
+   the block's text. */
+[dir="rtl"] .sch-show {
+  border-left: 1px solid var(--line);
+  border-right: 4px solid var(--seg, var(--violet));
+  padding: 1px 9px 1px 4px;
+}
+[dir="rtl"] .schedule.cols-tiny .sch-show {
+  padding-right: 5px;
+  border-right-width: 3px;
+  border-left-width: 1px;
+}
+[dir="rtl"] .sch-emoji {
+  left: auto;
+  right: -2px;
+  transform: translate(50%, -50%);
+}
+[dir="rtl"] .lane-remove {
+  right: auto;
+  left: 4px;
+}
+[dir="rtl"] .win-handle--start .win-flag {
+  transform: translateX(50%);
+}
+[dir="rtl"] .win-handle--end .win-flag {
+  transform: translateX(-50%);
 }
 
 /* --- the version popup --------------------------------------------------- */

@@ -27,6 +27,7 @@ for (const testCase of CASES) {
       localStorage: testCase.localStorage,
       geolocation: testCase.geolocation,
       failData: testCase.failData,
+      colorScheme: testCase.colorScheme,
     });
     try {
       await testCase.verify(page, { origin: ORIGIN, context, assert });
