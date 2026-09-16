@@ -922,7 +922,7 @@ third page.
 
 - `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.1 -->
+  ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
 
   <details><summary>Notes</summary>
 
@@ -931,20 +931,22 @@ third page.
   Edinburgh's.
   </details>
 
-- `18.2` The empty board: the whole programme offered for browsing, over the five festival nights.
+- `18.2` The empty board: the whole programme, listed to browse and star.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.2 -->
+  ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
 
   <details><summary>Notes</summary>
 
-  There is no favourites export to upload for this festival — the Edinburgh
-  planner's drop stage is replaced by a browse stage listing every show, and
-  the day header spans only the nights the programme actually uses.
+  There is no favourites export to upload for this festival, so the Edinburgh
+  planner's drop stage is a browse stage listing every show instead. The search
+  bar sits in the same place in both board states, which is what keeps the
+  whole programme reachable once the first star has swapped the body for the
+  grid.
   </details>
 
 - `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.3 -->
+  ![jerusalem-hebrew.18.3](requirements/screen/cases/jerusalem-hebrew.18.3.png) <!-- req-gallery:18.3 -->
 
   <details><summary>Notes</summary>
 
@@ -956,18 +958,19 @@ third page.
 
 - `18.4` The day grid: one lane per starred show, its performance nights marked, its verdict named.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.4 -->
+  ![jerusalem-grid.18.4](requirements/screen/cases/jerusalem-grid.18.4.png) <!-- req-gallery:18.4 -->
 
   <details><summary>Notes</summary>
 
-  The festival publishes no live availability and never cancels, so every
-  performance is drawn as bookable and the Edinburgh grid's sold-out and
-  offer-status colours never appear. A free event is marked as free.
+  Five columns, one per night the programme uses. The festival publishes no
+  live availability and never cancels, so a mark is only ever on sale or free
+  and the Edinburgh grid's sold-out and offer-status colours never appear; the
+  performance the plan picked is gold. The lane that cannot be fitted says so.
   </details>
 
 - `18.5` The schedule: the catchable shows fitted across the window, with the walk between venues.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.5 -->
+  ![jerusalem-schedule.18.5](requirements/screen/cases/jerusalem-schedule.18.5.png) <!-- req-gallery:18.5 -->
 
   <details><summary>Notes</summary>
 
@@ -978,7 +981,7 @@ third page.
 
 - `18.6` "Find a bed" opens Booking.com's Hebrew edition for Jerusalem, on the window's own nights.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.6 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:18.6 -->
 
   <details><summary>Notes</summary>
 
@@ -989,7 +992,7 @@ third page.
 
 - `18.7` "Getting here" offers the paid airport transfer and the train beside it.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.7 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:18.7 -->
 
   <details><summary>Notes</summary>
 
@@ -1000,7 +1003,7 @@ third page.
 
 - `18.8` Starred shows survive a reload, and never reach the Edinburgh planner's own stored list.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.8 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:18.8 -->
 
   <details><summary>Notes</summary>
 
@@ -1011,7 +1014,7 @@ third page.
 
 - `18.9` Exported times are Jerusalem wall clock, and a show with no published running time is exported as an instant.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.9 -->
+  🔧 _Logic leaf._ <!-- req-gallery:18.9 -->
 
   <details><summary>Notes</summary>
 

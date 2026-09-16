@@ -315,6 +315,14 @@ fs.writeFileSync(
   ]) + "\n"
 );
 
+// ------------------------------------------------- jerusalem fixtures --
+// Copied verbatim, no cast and no ADJUST: the whole festival is 34 shows and
+// 47 performances, which is smaller than any selection worth making, and the
+// spec's Part V asserts the real programme rather than a sample of it. The
+// copy is still made HERE rather than read live, because the freeze is what
+// stops a re-scrape moving a golden.
+write("jerusalem/shows.json", read("data/jerusalem/shows.json"));
+
 console.log("\nCast summary:");
 console.log("  Now:", NOW_SLUGS.join(", "));
 console.log("  Constraint:", CONSTRAINT_SLUGS.join(", "));

@@ -665,6 +665,12 @@ wrong: the edit survives, silently disagreeing with the box office forever. Re-r
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
 
+`data/jerusalem/` is a **second generator's** output, not this one's — the
+one-shot Jerusalem scrape writes it and nothing else reads or rewrites it. It is
+allowed by name for the same reason, which is also the rule for any third
+festival: name the file and the script that writes it, never the directory, so
+adding a festival stays the moment a person confirms what is in it.
+
 ### A long-running workflow that commits generated data will race the hourly refresh
 
 Any workflow that writes to `data/normalized/`, `data/venues.json` or `data/days/`
