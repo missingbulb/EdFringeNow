@@ -4,7 +4,7 @@ module.exports = {
   description: "travel is straight-line at honest August speeds: walk 3.33 km/h, bike 15, car 22",
   async verify(assert) {
     const { TRAVEL_SPEED_KMH, distanceKm, travelMinutes, DEFAULT_TRAVEL_MODE } = await import(
-      "../../../../plan/lib/travel.js"
+      "../../../../site/plan/lib/travel.js"
     );
     assert.ok(Math.abs(TRAVEL_SPEED_KMH.walk - 10 / 3) < 1e-9);
     assert.equal(TRAVEL_SPEED_KMH.bike, 15);

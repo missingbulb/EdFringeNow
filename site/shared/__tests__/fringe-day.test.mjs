@@ -24,7 +24,9 @@ import {
   timeToMinutes,
 } from "../fringe-day.js";
 
-const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// Up out of the published tree: the guarded Python copy lives in the pipeline,
+// which the site does not ship.
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 
 /* An Edinburgh wall-clock reading, in the (date, minutes) pair fringeMoment
  * takes — the shape js/clock.js's festivalNow hands the app. */

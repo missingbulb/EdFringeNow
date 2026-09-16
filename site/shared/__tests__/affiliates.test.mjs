@@ -24,7 +24,7 @@ import {
 } from "../affiliates.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = path.resolve(__dirname, "..", "..");
+const SITE = path.resolve(__dirname, "..", "..");
 
 /** The query of a built link, as a URLSearchParams. */
 function query(url) {
@@ -111,7 +111,7 @@ test("each link names its partner for the pill the planner renders", () => {
 // The planner must spend the shared IDs rather than growing its own copy — the
 // same regression shared/geo.js exists to prevent.
 test("the planner imports the links instead of declaring its own", () => {
-  const src = readFileSync(path.join(REPO, "plan", "plan.js"), "utf8");
+  const src = readFileSync(path.join(SITE, "plan", "plan.js"), "utf8");
   assert.match(src, /from\s+["']\.\.\/shared\/affiliates\.js["']/, "plan.js must import from shared/affiliates.js");
   assert.doesNotMatch(
     src,

@@ -146,7 +146,7 @@ jobs:
           # prices. data/prices.json itself can't conflict; this workflow is its
           # only writer.
           for attempt in 1 2 3 4 5; do
-            git add data/prices.json data/normalized data/venues.json data/days
+            git add data/prices.json data/normalized site/data
             if git diff --staged --quiet; then
               echo "No price changes to commit."
               exit 0
@@ -159,7 +159,7 @@ jobs:
             echo "push rejected on attempt ${attempt}; re-deriving onto latest main"
             git fetch -q origin main
             git reset -q --soft origin/main
-            git checkout -q origin/main -- data/normalized data/venues.json data/days
+            git checkout -q origin/main -- data/normalized site/data
             python3 scraper/normalize.py --minify-from-master
           done
           echo "::error::could not push the price data after 5 attempts"

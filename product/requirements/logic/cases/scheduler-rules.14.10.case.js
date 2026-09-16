@@ -12,7 +12,7 @@ const mkShow = (slug, start) => ({
 module.exports = {
   description: "no day is packed past the per-day maximum",
   async verify(assert) {
-    const { buildSchedule } = await import("../../../../plan/lib/engine.js");
+    const { buildSchedule } = await import("../../../../site/plan/lib/engine.js");
     const shows = [mkShow("a", "10:00"), mkShow("b", "13:00"), mkShow("c", "16:00"), mkShow("d", "19:00")];
     const plan = buildSchedule(shows, {
       dateStart: "2026-08-15",

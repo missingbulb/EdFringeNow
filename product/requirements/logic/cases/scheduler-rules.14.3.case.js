@@ -3,7 +3,7 @@
 module.exports = {
   description: "a slot must not overlap an enabled meal break — edge-to-edge contact is fine",
   async verify(assert) {
-    const { withinDayWindow, normalizeMealBreaks } = await import("../../../../plan/lib/engine.js");
+    const { withinDayWindow, normalizeMealBreaks } = await import("../../../../site/plan/lib/engine.js");
     const win = {
       dayStartMin: 0,
       dayEndMin: 1620,

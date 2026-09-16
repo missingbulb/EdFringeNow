@@ -86,7 +86,7 @@ async function settle(page) {
 async function nowReady(page) {
   await page.waitForSelector("#showsGrid .show-item, #showsGrid .show-meta", { timeout: 20000 });
   // The version lands in the footer's popup element (shared/version-popup.js),
-  // which is also the signal that the async package.json read has returned.
+  // which is also the signal that the async version.json read has returned.
   await page.waitForFunction(() => {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
@@ -124,7 +124,7 @@ async function planReady(page) {
 }
 
 // The festival planner is ready once the programme has landed (the board has
-// either its browse list or its lanes) and the async package.json read has put
+// either its browse list or its lanes) and the async version.json read has put
 // the version in the footer popup.
 async function jerusalemReady(page) {
   // `attached`, not `visible`: the browse list and the grid are the board's two

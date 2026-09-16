@@ -37,8 +37,8 @@ There is **no server and no build step**. Everything runs in the browser:
    contents last — 4 days for the catalogue (948 KB gzipped), 1 day for
    availability (149 KB), which is the only one of them that moves through the
    day. See
-   [`shared/data-cache.js`](../shared/data-cache.js) and the caching table in
-   [`scraper/README.md`](../scraper/README.md). Availability is the one fetch
+   [`site/shared/data-cache.js`](../shared/data-cache.js) and the caching table in
+   [`scraper/README.md`](../../scraper/README.md). Availability is the one fetch
    allowed to fail: without it every performance is status-unknown, which the
    grid already draws.
 2. You upload your **favourites CSV** (the edfringe export). It is parsed in the

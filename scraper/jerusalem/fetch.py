@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Scrape the Jerusalem Comedy Festival into data/jerusalem/.
+"""Scrape the Jerusalem Comedy Festival into site/data/jerusalem/.
 
 A ONE-SHOT scrape, deliberately: this festival publishes a fixed five-night
 programme, sells through two external ticketers, and posts no live availability
@@ -27,8 +27,10 @@ import parse as jparse  # noqa: E402  (path set above so this runs as a script)
 SITE = "https://comedy-festival.co.il"
 REST = SITE + "/wp-json/wp/v2"
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT_DIR = os.path.join(REPO_ROOT, "data", "jerusalem")
-CACHE_DIR = os.path.join(OUT_DIR, "raw_pages")
+# The catalogue is served to the browser, so it belongs in the published tree;
+# the raw page cache is this scrape's own working data and stays out of it.
+OUT_DIR = os.path.join(REPO_ROOT, "site", "data", "jerusalem")
+CACHE_DIR = os.path.join(REPO_ROOT, "data", "jerusalem", "raw_pages")
 
 # Nominatim asks every caller to identify itself and to stay under one request a
 # second; both are honoured here because the eight venues are geocoded once.

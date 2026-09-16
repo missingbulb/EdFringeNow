@@ -13,7 +13,9 @@ import { parseFavourites } from "../favourites.js";
 import { buildIndex, matchFavourites, summarize, compatible, buildSchedule } from "../engine.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const SHOWS_PATH = path.join(__dirname, "..", "..", "..", "data", "normalized", "shows.json");
+// The uncompacted master is the pipeline's, not the site's — it is the one
+// data file here that lives outside the published tree.
+const SHOWS_PATH = path.join(__dirname, "..", "..", "..", "..", "data", "normalized", "shows.json");
 
 const shows = JSON.parse(readFileSync(SHOWS_PATH, "utf-8"));
 

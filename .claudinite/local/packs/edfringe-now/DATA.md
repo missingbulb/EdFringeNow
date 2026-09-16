@@ -16,7 +16,7 @@ knowledge.
 ## The check
 
 `edfringe-lookup-indices` (`lookup-indices.mjs`) asserts that every positional
-reference in the committed wire files resolves inside `data/venues.json`'s lookup
+reference in the committed wire files resolves inside `site/data/venues.json`'s lookup
 lists: the day files' `genre` / `room` / `subs` / `ts` and `shows.min.json`'s
 `g` / `rm` / `sg` / `ar` / `p[].t` (`-1` is the producer's "unknown" and passes).
 It is dependency-free — it returns plain finding objects rather than importing
@@ -27,6 +27,6 @@ live gate on every scrape commit and not just a unit test of itself.
 
 Distilled from this repo: `scraper/normalize.py` (`build_lookups`,
 `build_day_files`, `minify_master`), `scraper/refresh_ticket_status.py`,
-`scraper/SCRAPING.md`, `scraper/README.md`, `js/app.js` (`adaptShow`,
-`NO_TICKETS_STATUSES`), `plan/lib/hydrate.js`, `.github/workflows/scrape.yml`,
+`scraper/SCRAPING.md`, `scraper/README.md`, `site/js/app.js` (`adaptShow`,
+`NO_TICKETS_STATUSES`), `site/plan/lib/hydrate.js`, `.github/workflows/scrape.yml`,
 `.gitignore`.

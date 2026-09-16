@@ -23,7 +23,7 @@ const SLOT = {
 module.exports = {
   description: "CSV cells are RFC-4180 escaped; ICS lines fold at 75 octets",
   async verify(assert) {
-    const { toCsv, toIcs } = await import("../../../../plan/lib/itinerary.js");
+    const { toCsv, toIcs } = await import("../../../../site/plan/lib/itinerary.js");
 
     const csv = toCsv([SLOT]);
     const [header, row] = csv.split("\r\n");

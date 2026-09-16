@@ -21,7 +21,7 @@ module.exports = {
   description: "durations read as prose",
   table: TABLE,
   async verify(assert) {
-    const { friendlyDuration } = await import("../../../../shared/duration.js");
+    const { friendlyDuration } = await import("../../../../site/shared/duration.js");
     for (const [mins, expected] of TABLE.rows) {
       const got = friendlyDuration(mins);
       assert.equal(got === "" ? "(nothing)" : got, expected, `friendlyDuration(${mins})`);

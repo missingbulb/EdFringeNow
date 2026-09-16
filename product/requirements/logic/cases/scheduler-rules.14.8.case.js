@@ -12,7 +12,7 @@ const mkShow = (slug, perfs) => ({
 module.exports = {
   description: "a day under the per-day minimum is dropped whole — unless a pinned show sits on it",
   async verify(assert) {
-    const { buildSchedule } = await import("../../../../plan/lib/engine.js");
+    const { buildSchedule } = await import("../../../../site/plan/lib/engine.js");
     const opts = { dateStart: "2026-08-15", dateEnd: "2026-08-16", minGapDifferentVenue: 0, minPerDay: 2 };
 
     // Two shows on the 15th, one lone show on the 16th → the 16th is dropped.

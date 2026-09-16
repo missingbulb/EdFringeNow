@@ -42,11 +42,13 @@ python3 scraper/refresh_ticket_status.py
 
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-# `data/normalized` is what makes this reach the planner at all: the script
-# writes fresh statuses through the master and regenerates from it, so the file
-# the planner actually loads (availability.min.json) is in this commit (#249).
+# Both trees, because the regeneration spans the publish boundary: the script
+# writes fresh statuses through the master in `data/normalized`, and regenerates
+# from it into `site/data`, where the file the planner actually loads
+# (availability.min.json) lives (#249). Staging only one of the two commits a
+# master nobody is served, or wire files no master explains.
 # Files the regeneration reproduces byte-for-byte simply never enter the diff.
-git add data/normalized data/days data/venues.json
+git add data/normalized site/data
 if git diff --staged --quiet; then
   echo "No ticket-status changes today."
 else

@@ -15,7 +15,7 @@ import path from "node:path";
 import { UK_BOUNDS, isInUK } from "../geo.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = path.resolve(__dirname, "..", "..");
+const SITE = path.resolve(__dirname, "..", "..");
 
 test("the box covers the UK mainland, including Edinburgh", () => {
   assert.ok(isInUK([55.9486, -3.1881]), "Edinburgh (the whole point) must be inside");
@@ -44,7 +44,7 @@ test("the box is inclusive at its own edges", () => {
 // import it rather than declare their own.
 test("neither front-end declares its own copy of the bounds", () => {
   for (const file of ["js/app.js", "plan/plan.js"]) {
-    const src = readFileSync(path.join(REPO, file), "utf8");
+    const src = readFileSync(path.join(SITE, file), "utf8");
     assert.doesNotMatch(
       src,
       /(?:const|let|var)\s+UK_BOUNDS\s*=/,

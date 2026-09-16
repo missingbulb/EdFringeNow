@@ -65,7 +65,7 @@ const CATALOGUE_TTL_MS = 4 * DAY_MS;
 const AVAILABILITY_TTL_MS = DAY_MS;
 const LOOKUPS_TTL_MS = DAY_MS;
 const DESCRIPTIONS_TTL_MS = 7 * DAY_MS;
-const APP_VERSION_URL = "../package.json"; // single source of truth for the version in the perf pill
+const APP_VERSION_URL = "../version.json"; // the published version record the perf pill reads
 
 const YEAR = 2026;
 const MONTH = "08"; // August, 2-digit
@@ -4339,7 +4339,7 @@ function wireExports() {
 
 // --- Version + reschedule-timing pill --------------------------------------
 
-/** Fetch the app version (single-sourced from package.json) for the pill. */
+/** Fetch the app version (single-sourced from version.json) for the pill. */
 async function loadVersion() {
   try {
     const res = await fetch(APP_VERSION_URL);

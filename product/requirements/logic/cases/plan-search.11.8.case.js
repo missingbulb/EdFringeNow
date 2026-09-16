@@ -15,7 +15,7 @@ const show = (over) => ({
 module.exports = {
   description: "search ranks title prefix > word boundary > in-title > performer/venue > description, accent-blind, all words required",
   async verify(assert) {
-    const { searchShows } = await import("../../../../plan/lib/search.js");
+    const { searchShows } = await import("../../../../site/plan/lib/search.js");
     const shows = [
       show({ title: "Improv Allstars" }), // prefix
       show({ title: "Big Improv Night" }), // word boundary

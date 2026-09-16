@@ -5,8 +5,9 @@
 # the release pipeline and the pull-request gate run exactly this, and a change
 # here is exercised on the PR before it can reach a deploy.
 #
-# These were two inline steps of the hand-rolled pages.yml the static-website
-# pack replaces; the logic is unchanged and it produces the same two files.
+# Everything it writes is generated output under site/, gitignored and never
+# committed: the published tree in the repo is the tracked source, and the build
+# is what turns it into the tree that ships.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 
@@ -14,8 +15,8 @@ cd "$(git rev-parse --show-toplevel)"
 # the festival is followed from, so "when was this built" reads the way a user
 # expects rather than in UTC.
 TIME=$(TZ='Asia/Jerusalem' git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd)
-printf 'window.__BUILD__ = { time: "%s" };\n' "$TIME" > js/build-info.js
-echo "Stamped build time $TIME (Israel) into js/build-info.js"
+printf 'window.__BUILD__ = { time: "%s" };\n' "$TIME" > site/js/build-info.js
+echo "Stamped build time $TIME (Israel) into site/js/build-info.js"
 
 # The Cloudflare Web Analytics beacon token, declared in site.config's build_vars
 # and exported into this script's environment by the pipeline.
@@ -26,7 +27,7 @@ echo "Stamped build time $TIME (Israel) into js/build-info.js"
 # caller — a local run or a fork, where the variable legitimately does not exist
 # and leaving the placeholder in place (analytics no-ops) is the right outcome.
 if [ -n "${CLOUDFLARE_ANALYTICS_TOKEN:-}" ]; then
-  sed -i "s#REPLACE_WITH_CLOUDFLARE_WEB_ANALYTICS_TOKEN#${CLOUDFLARE_ANALYTICS_TOKEN}#" js/analytics.js
+  sed -i "s#REPLACE_WITH_CLOUDFLARE_WEB_ANALYTICS_TOKEN#${CLOUDFLARE_ANALYTICS_TOKEN}#" site/js/analytics.js
   echo "Injected the Cloudflare Web Analytics token from CLOUDFLARE_ANALYTICS_TOKEN."
 else
   echo "CLOUDFLARE_ANALYTICS_TOKEN is not set (local run or fork) — analytics stays off, placeholder retained."

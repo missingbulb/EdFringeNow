@@ -7,7 +7,7 @@ const B = { venueCode: "2", venueLat: 55.9486, venueLng: -3.2041 };
 module.exports = {
   description: "gap between shows = max(chosen gap, travel time); same venue 0; unknown coords → flat gap",
   async verify(assert) {
-    const { requiredGapMinutes, compatible } = await import("../../../../plan/lib/engine.js");
+    const { requiredGapMinutes, compatible } = await import("../../../../site/plan/lib/engine.js");
     const opts = { minGapSameVenue: 0, minGapDifferentVenue: 30, travelMode: "walk" };
 
     // Same venue: a double bill needs no travel.

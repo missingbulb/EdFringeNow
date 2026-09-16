@@ -4,7 +4,7 @@ module.exports = {
   description: "a start before 06:00 folds onto the previous festival day (+1440), and the window is judged on that date",
   async verify(assert) {
     const { festivalNight, eligibleSlots, NIGHT_FOLD_CUTOFF_MIN } = await import(
-      "../../../../plan/lib/engine.js"
+      "../../../../site/plan/lib/engine.js"
     );
     assert.equal(NIGHT_FOLD_CUTOFF_MIN, 360);
 

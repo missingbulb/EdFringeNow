@@ -225,7 +225,7 @@ a show and reports whether the bands agree.
 ## How the repo turns this into the site
 
 `fetch_shows.py` → raw pages (git-ignored cache). `normalize.py` →
-`data/normalized/shows.json` (master), `data/venues.json` (the shared lookup:
-`{venues, rooms, genres, subgenres}`), and compact `data/days/2026-08-DD.json`
+`data/normalized/shows.json` (master), `site/data/venues.json` (the shared lookup:
+`{venues, rooms, genres, subgenres}`), and compact `site/data/days/2026-08-DD.json`
 (genre/room/subgenres referenced by index into the lookup, flags as 1/0). See
 [README.md](README.md) for the exact layout and the daily/full workflows.

@@ -66,11 +66,11 @@ const CONSTRAINT_SLUGS = [];
 const PLAN_FAVOURITE_SLUGS = [];
 
 // ---------------------------------------------------------------- load real --
-const venues = read("data/venues.json");
-const day15 = Object.values(read("data/days/2026-08-15.json"));
-const day14 = Object.values(read("data/days/2026-08-14.json"));
-const catalogue = read("data/normalized/shows.min.json");
-const availability = read("data/normalized/availability.min.json");
+const venues = read("site/data/venues.json");
+const day15 = Object.values(read("site/data/days/2026-08-15.json"));
+const day14 = Object.values(read("site/data/days/2026-08-14.json"));
+const catalogue = read("site/data/normalized/shows.min.json");
+const availability = read("site/data/normalized/availability.min.json");
 
 const TS = venues.ticketStatuses;
 const tsIndex = (name) => {
@@ -241,7 +241,7 @@ write("normalized/availability.min.json", availOut);
 
 // Descriptions sidecar: real shape ({v, d: slug→text}? mirror the committed
 // file's structure with just our cast).
-const desc = read("data/normalized/descriptions.min.json");
+const desc = read("site/data/normalized/descriptions.min.json");
 const descKey = Object.keys(desc).find((k) => k !== "v");
 const descOut = { v: desc.v };
 descOut[descKey] = {};
@@ -252,8 +252,8 @@ write("normalized/descriptions.min.json", descOut);
 
 // ------------------------------------------------------------ small fixtures --
 fs.writeFileSync(
-  path.join(__dirname, "package.json.fixture"),
-  JSON.stringify({ name: "edfringenow", version: "0.0.0-spec" }) + "\n"
+  path.join(__dirname, "version.json.fixture"),
+  JSON.stringify({ version: "0.0.0-spec" }) + "\n"
 );
 
 // Favourites CSV in the edfringe.com export shape (one URL per row cell).
@@ -321,7 +321,7 @@ fs.writeFileSync(
 // spec's Part V asserts the real programme rather than a sample of it. The
 // copy is still made HERE rather than read live, because the freeze is what
 // stops a re-scrape moving a golden.
-write("jerusalem/shows.json", read("data/jerusalem/shows.json"));
+write("jerusalem/shows.json", read("site/data/jerusalem/shows.json"));
 
 console.log("\nCast summary:");
 console.log("  Now:", NOW_SLUGS.join(", "));

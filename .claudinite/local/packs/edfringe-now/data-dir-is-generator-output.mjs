@@ -2,14 +2,18 @@
 // vendored mount, so this returns plain finding objects rather than importing
 // engine/checks/helpers/findings.mjs.
 
-// Everything the browser fetches out of `data/` is written by
-// `scraper/normalize.py` — its module header is the authoritative list:
+// The repo holds two data trees and normalize.py writes both: `site/data/`, the
+// wire files the browser fetches, and `data/`, the pipeline's own working files.
+// Its module header is the authoritative list:
 //
-//   data/normalized/shows.json, shows.min.json, descriptions.min.json
-//   data/venues.json
-//   data/days/<YYYY-MM-DD>.json + data/days/index.json
+//   site/data/normalized/shows.min.json, availability.min.json, descriptions.min.json
+//   site/data/venues.json
+//   site/data/days/<YYYY-MM-DD>.json + site/data/days/index.json
+//   data/normalized/shows.json                   the master, which no page fetches
 //
-// So a file under `data/` that isn't one of those shapes came from a hand, a
+// Both trees are scanned, because the hazard is the same on either side of the
+// publish boundary — worse on the published one, where an unowned file is served
+// to visitors. So a file under either that isn't one of those shapes came from a hand, a
 // throwaway probe, or a force-added raw cache — and the next `refresh-shows`
 // run neither maintains it nor knows about it. The patterns are deliberately
 // shape-based (a dir plus a `.json` leaf) rather than a literal file list, so a
@@ -17,15 +21,20 @@
 // output *directory* does, which is the moment a human should confirm the
 // producer really writes it.
 const ALLOWED_PATTERNS = [
+  /^site\/data\/normalized\/[^/]+\.json$/,
+  /^site\/data\/days\/[^/]+\.json$/,
   /^data\/normalized\/[^/]+\.json$/,
-  /^data\/days\/[^/]+\.json$/,
 ];
+
+// The two roots a committed data file may sit under. Named once so the scan, the
+// findings and this file's own prose cannot drift apart.
+const DATA_ROOTS = ['site/data/', 'data/'];
 
 // Grandfathered: the pre-pipeline mock dataset the design-concepts prototypes
 // still load, documented as such in README.md. It is not normalizer output and
 // never will be; it is exempt by name so the rule can stay strict for everything
 // else. Do not add to this list — new data comes from the normalizer.
-const ALLOWED_FILES = new Set(['data/venues.json', 'data/shows.json']);
+const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json']);
 
 // The one committed file under data/ that is an *input* to normalize.py rather
 // than an output of it: the fetch-once ticket-price cache written by
@@ -48,7 +57,7 @@ const ALLOWED_INPUTS = new Map([
 // human should confirm the producer really writes what is in it, so a file that
 // merely sits beside an allowed one still trips the rule.
 const ALLOWED_OUTPUTS = new Map([
-  ['data/jerusalem/shows.json', 'scraper/jerusalem/fetch.py'],
+  ['site/data/jerusalem/shows.json', 'scraper/jerusalem/fetch.py'],
 ]);
 
 // The bulky raw scrape caches are git-ignored (`.gitignore`) precisely because
@@ -63,14 +72,14 @@ const RAW_CACHES = new Map([
 const rule = {
   id: 'edfringe-data-dir-is-generator-output',
   severity: 'blocking',
-  description: "Every committed file under data/ is one of scraper/normalize.py's outputs — no hand-made files, no probe dumps, no raw cache",
+  description: "Every committed file under site/data/ or data/ is one of scraper/normalize.py's outputs — no hand-made files, no probe dumps, no raw cache",
   why:
-    'data/ is generator output that the browser fetches and the next refresh-shows run rewrites wholesale, so a file that the normalizer does not produce is either silently served to users or silently destroyed — and either way the thing that produced it is not in the repo',
+    'both data trees are generator output — site/data/ is fetched by the browser and the next refresh-shows run rewrites them wholesale, so a file that the normalizer does not produce is either silently served to users or silently destroyed — and either way the thing that produced it is not in the repo',
   doc: 'RULES.md',
 
   run(ctx) {
     const out = [];
-    for (const f of ctx.files.filter((p) => p.startsWith('data/')).sort()) {
+    for (const f of ctx.files.filter((p) => DATA_ROOTS.some((r) => p.startsWith(r))).sort()) {
       const cache = [...RAW_CACHES].find(([prefix]) => f.startsWith(prefix));
       if (cache) {
         out.push(finding(f,
@@ -81,7 +90,7 @@ const rule = {
       if (ALLOWED_FILES.has(f) || ALLOWED_INPUTS.has(f) || ALLOWED_OUTPUTS.has(f)) continue;
       if (ALLOWED_PATTERNS.some((re) => re.test(f))) continue;
       out.push(finding(f,
-        `delete ${f} — everything under data/ is scraper/normalize.py's output (data/venues.json, data/normalized/*.json, data/days/*.json), plus the named scraper inputs (${[...ALLOWED_INPUTS.keys()].join(', ')}) and the named outputs of this repo's other generators (${[...ALLOWED_OUTPUTS.keys()].join(', ')}). A probe informs the normalizer, it does not feed it: fix scraper/normalize.py and re-run it instead. If normalize.py genuinely writes ${f} now, add its shape to this check's allowlist in the same commit; if another scraper in this repo produces it, add it to ALLOWED_INPUTS or ALLOWED_OUTPUTS naming that script`,
+        `delete ${f} — everything under site/data/ and data/ is scraper/normalize.py's output (site/data/venues.json, site/data/normalized/*.json, site/data/days/*.json, data/normalized/shows.json), plus the named scraper inputs (${[...ALLOWED_INPUTS.keys()].join(', ')}) and the named outputs of this repo's other generators (${[...ALLOWED_OUTPUTS.keys()].join(', ')}). A probe informs the normalizer, it does not feed it: fix scraper/normalize.py and re-run it instead. If normalize.py genuinely writes ${f} now, add its shape to this check's allowlist in the same commit; if another scraper in this repo produces it, add it to ALLOWED_INPUTS or ALLOWED_OUTPUTS naming that script`,
       ));
     }
     return out;
@@ -94,7 +103,7 @@ function finding(file, fix) {
     severity: rule.severity,
     file,
     line: null,
-    what: `${file} is under data/ but is not something a generator in this repo produces`,
+    what: `${file} is under a data tree but is not something a generator in this repo produces`,
     why: rule.why,
     fix,
     doc: rule.doc,

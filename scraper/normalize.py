@@ -2,14 +2,16 @@
 """Normalize scraped edfringe show data into website-ready JSON.
 
 Reads the raw scrape (events + venues + genres produced by fetch_shows.py) and
-emits the site's data layers:
+emits the site's data layers. Where each one lands is the publish boundary: the
+wire artifacts the browser fetches are written under site/, the published tree,
+and the pipeline's own working files stay under data/, which nothing serves.
 
   data/normalized/shows.json   master, normalized, one record per show with all
                                its performances. The source of truth for later
                                processing / regenerating the day files. NOT sent
                                to the browser.
 
-  data/normalized/shows.min.json
+  site/data/normalized/shows.min.json
                                the compact wire form of the master, and the file
                                the planner actually downloads. Losslessly packed
                                against the venues.json lookups: every enum (genre,
@@ -24,7 +26,7 @@ emits the site's data layers:
                                festival regenerates it byte-for-byte and a client
                                can hold it for days.
 
-  data/normalized/availability.min.json
+  site/data/normalized/availability.min.json
                                per-performance ticket status, split OUT of the
                                catalogue above precisely because it is the one
                                thing that moves during the festival. Self-contained
@@ -34,7 +36,7 @@ emits the site's data layers:
                                a returning visitor re-downloads availability,
                                not the whole catalogue.
 
-  data/normalized/descriptions.min.json
+  site/data/normalized/descriptions.min.json
                                slug -> full show description, as a sidecar the
                                planner fetches SEPARATELY and lazily. It exists
                                so the catalogue above stays small enough to block
@@ -44,14 +46,15 @@ emits the site's data layers:
                                (from the 160-char `blurb` in the catalogue) and
                                simply reach further once this lands.
 
-  data/venues.json             shared lookup, sent once:
+  site/data/venues.json        shared lookup, sent once:
                                {venues, rooms, genres, subgenres, ticketStatuses,
                                ageRestrictions}. `venues` is keyed by venue code
                                ("venue number") -> name, address, postcode, lat,
                                lng; the rest are the global de-duplicated string
                                lists the day files and shows.min.json index into.
 
-  data/days/2026-08-DD.json    one file per August FRINGE day, holding only the
+  site/data/days/2026-08-DD.json
+                               one file per August FRINGE day, holding only the
                                shows performing that day with the minimum a card
                                needs. A fringe day runs 06:00 → 06:00 (see
                                FRINGE_DAY_START), so the file also carries the
@@ -61,7 +64,7 @@ emits the site's data layers:
                                genre/room by index into the global rooms/genres
                                lists (all in venues.json). This is what the site
                                loads on open.
-  data/days/index.json         list of available days + per-day counts.
+  site/data/days/index.json    list of available days + per-day counts.
 
 Locations are normalized to a venue code plus the specific room (space) of the
 show. Venue coordinates are geocoded from UK postcodes via postcodes.io and
@@ -102,14 +105,23 @@ from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_RAW_DIR = ROOT / "data" / "raw_pages"
-DEFAULT_MASTER = ROOT / "data" / "normalized" / "shows.json"
-DEFAULT_MASTER_MIN = ROOT / "data" / "normalized" / "shows.min.json"
-DEFAULT_AVAILABILITY = ROOT / "data" / "normalized" / "availability.min.json"
-DEFAULT_DESCRIPTIONS = ROOT / "data" / "normalized" / "descriptions.min.json"
-DEFAULT_VENUES = ROOT / "data" / "venues.json"
-DEFAULT_DAYS_DIR = ROOT / "data" / "days"
-DEFAULT_PRICES = ROOT / "data" / "prices.json"
+# The pipeline's own working data, which no page fetches: the raw cache, the
+# uncompacted master every derived artifact is built from, and the price cache.
+PIPELINE_DATA = ROOT / "data"
+# The published tree. Everything under it reaches a public URL, so only the wire
+# artifacts the browser actually fetches are written here — the split IS the
+# publish boundary, rather than a list of exclusions kept somewhere else.
+SITE_DATA = ROOT / "site" / "data"
+
+DEFAULT_RAW_DIR = PIPELINE_DATA / "raw_pages"
+DEFAULT_MASTER = PIPELINE_DATA / "normalized" / "shows.json"
+DEFAULT_PRICES = PIPELINE_DATA / "prices.json"
+
+DEFAULT_MASTER_MIN = SITE_DATA / "normalized" / "shows.min.json"
+DEFAULT_AVAILABILITY = SITE_DATA / "normalized" / "availability.min.json"
+DEFAULT_DESCRIPTIONS = SITE_DATA / "normalized" / "descriptions.min.json"
+DEFAULT_VENUES = SITE_DATA / "venues.json"
+DEFAULT_DAYS_DIR = SITE_DATA / "days"
 
 AUGUST_PREFIX = "2026-08"
 BLURB_MAX = 160

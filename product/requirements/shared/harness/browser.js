@@ -18,6 +18,10 @@ const { execSync } = require("node:child_process");
 const { pathToFileURL } = require("node:url");
 
 const REPO_ROOT = path.join(__dirname, "..", "..", "..", "..");
+// The served tree. The fake origin's "/" is the published site's root, not the
+// repo's — the repo around it holds the scraper, the mount and the tooling, none
+// of which a page can reach in production either.
+const SITE_ROOT = path.join(REPO_ROOT, "site");
 const VENDOR_DIR = path.join(__dirname, "vendor");
 const FIXTURES_DIR = path.join(__dirname, "..", "fixtures");
 const { REFERENCE_NOW_UTC_MS, TIMEZONE, LOCALE, GEOLOCATION } = require("../reference-now");
@@ -156,11 +160,11 @@ async function routeAll(context, { dataDir, failData }) {
       const rel = decodeURIComponent(pathname.replace(/^\/+/, "")) || "index.html";
       const withIndex = rel.endsWith("/") || rel === "" ? `${rel}index.html` : rel;
       // The version the footer/debug pill shows must not drift with releases.
-      // (Stored as .fixture so no stray package.json lands in the tree.)
-      if (withIndex === "package.json") {
+      // (Stored as .fixture so the pinned number is not mistaken for the site's.)
+      if (withIndex === "version.json") {
         return route.fulfill({
           contentType: MIME[".json"],
-          body: fs.readFileSync(path.join(FIXTURES_DIR, "package.json.fixture")),
+          body: fs.readFileSync(path.join(FIXTURES_DIR, "version.json.fixture")),
         });
       }
       // Live data is replaced wholesale by the committed fixture snapshot.
@@ -169,9 +173,9 @@ async function routeAll(context, { dataDir, failData }) {
         if (fs.existsSync(fixture)) return fulfillFile(route, fixture);
         return route.fulfill({ status: 404, contentType: "text/plain", body: "no fixture" });
       }
-      const onDisk = path.join(REPO_ROOT, withIndex);
+      const onDisk = path.join(SITE_ROOT, withIndex);
       if (fs.existsSync(onDisk) && fs.statSync(onDisk).isFile()) return fulfillFile(route, onDisk);
-      const asDir = path.join(REPO_ROOT, withIndex, "index.html");
+      const asDir = path.join(SITE_ROOT, withIndex, "index.html");
       if (fs.existsSync(asDir)) return fulfillFile(route, asDir);
       return route.fulfill({ status: 404, contentType: "text/plain", body: "not found" });
     }

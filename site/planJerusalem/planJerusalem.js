@@ -1101,12 +1101,12 @@ async function boot() {
 }
 
 /* The site version in the footer's popup, exactly as the other two pages carry
- * it. package.json is the single source of truth and ships in the publish set
+ * it. version.json is the published version record and ships in the publish set
  * for this. A failure here is silent on purpose: not knowing the version must
  * never stop the planner loading. */
 async function showVersion() {
   try {
-    const response = await fetch("../package.json");
+    const response = await fetch("../version.json");
     if (!response.ok) return;
     const pkg = await response.json();
     if (typeof pkg.version === "string") {

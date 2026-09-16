@@ -21,11 +21,12 @@ lanes and the owner-approval contract live in
 
 ## Running
 
-No build step. Because the app fetches `data/shows.json`, serve the folder over
-HTTP rather than opening the file directly:
+No build step. The published site is `site/` — serve that directory rather than
+the repo root, and over HTTP rather than as a file, because the pages fetch their
+data:
 
 ```
-python3 -m http.server 8000
+cd site && python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
@@ -37,26 +38,32 @@ python3 -m http.server 8000
 
 ## Structure
 
+Everything the site serves lives under `site/`, and nothing else does — that
+directory is the publish boundary, so a file outside it cannot reach a visitor.
+
 ```
-index.html        page markup
-css/styles.css    styling
-js/app.js         data loading, map, show list, journey, editable cards
-js/places.js      non-show places: Nominatim geocoding + partner booking links
-data/shows.json   mock Edinburgh Fringe shows
+site/index.html        page markup
+site/css/styles.css    styling
+site/js/app.js         data loading, map, show list, journey, editable cards
+site/js/places.js      non-show places: Nominatim geocoding + partner booking links
+site/version.json      the released version, which the pages read for the footer stamp
+site/data/             the wire files the browser fetches (scraper/normalize.py writes them)
+data/                  the pipeline's own working files — the master and the price cache
+data/shows.json        mock Edinburgh Fringe shows, still loaded by design-concepts/
 ```
 
 ## Tests & CI
 
-The planner's computation engine (`plan/lib/`) is unit-tested with the built-in
-Node test runner — no dependencies, no install:
+The planner's computation engine (`site/plan/lib/`) is unit-tested with the
+built-in Node test runner — no dependencies, no install:
 
 ```
-npm test          # node --test plan/lib/__tests__/*.test.mjs
+npm test          # node --test site/plan/lib/__tests__/*.test.mjs
 npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
 ```
 
 `npm run verify` is the single gate: it runs the unit tests, syntax-checks every
-JavaScript source under `js/` and `plan/`, and byte-compiles the `scraper/`
+JavaScript source under `site/`, and byte-compiles the `scraper/`
 Python. The release pipeline's PR gate (`.github/workflows/static-site-ci.yml`)
 runs it as the repo's `test_command` on every push to `main` and every pull
 request, and a **pre-commit hook** runs the same gate
