@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jerusalem Comedy Festival Planner · EdFringeNow</title>
+  <meta name="description" content="Plan the Jerusalem Comedy Festival: star the shows you want, scrub the five festival nights, and get a clash-free itinerary with the walk between venues." />
+  <link rel="icon" href="../favicon.ico" sizes="32x32" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Heebo carries Hebrew; Inter and Plus Jakarta Sans (the site's own faces)
+       do not, so without it every show name would fall back to whatever Hebrew
+       font the visitor's machine happens to have. -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Heebo:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="planJerusalem.css" />
+  <script defer src="../js/analytics.js"></script>
+</head>
+<body class="festival-page">
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="logo" id="wordmark"></a>
+      <nav class="main-nav" aria-label="Primary" id="siteNav"></nav>
+      <div class="header-side">
+        <span class="header-hint" id="headerHint"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <h1 class="page-title" id="pageTitle">Plan your festival!</h1>
+      <p class="board-count" id="boardCount" role="status" aria-live="polite">No shows planned, no shows selected</p>
+    </div>
+
+    <div id="loadingState" class="state-panel" hidden role="status" aria-live="polite">
+      <div class="state-spinner" aria-hidden="true"></div>
+      <p class="state-title">Loading the programme&hellip;</p>
+      <p class="state-sub">Fetching this year's shows — just a moment.</p>
+    </div>
+
+    <div id="errorState" class="state-panel state-error" hidden role="alert">
+      <span class="state-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9" /><path d="M12 8v5" /><path d="M12 16.5v.01" />
+        </svg>
+      </span>
+      <p class="state-title">We couldn't load the programme.</p>
+      <p class="state-sub" id="errorDetail">Check your connection and try again.</p>
+      <button type="button" class="btn" id="retryBtn">Try again</button>
+    </div>
+
+    <!-- ===================== The board ===================== -->
+    <!-- Same one-card, one-state-switch board as the Fringe planner, with one
+         difference that follows from the festival: there is no favourites export
+         to upload, so the empty state browses the whole programme instead of
+         asking for a file. -->
+    <section class="panel board" id="board" aria-labelledby="boardCount">
+
+      <div class="board-body browse-stage" id="browseStage">
+        <div class="browse-head">
+          <p class="browse-line1" id="browseLine1">Pick the shows you fancy</p>
+          <p class="browse-line2">Star one and it becomes a lane on the grid; the search bar below keeps the whole programme within reach after that.</p>
+        </div>
+        <ul class="browse-list" id="browseList" aria-label="The whole programme"></ul>
+      </div>
+
+      <div class="board-main" id="boardMain">
+      <div class="board-body cal-wrap" id="calWrap" hidden>
+        <div class="cal-inner" id="calInner">
+          <div class="cal-sticky">
+            <div class="win-rail" id="winRail">
+              <div class="rail-band" id="railBand">
+                <span class="rail-len" id="railLen">5 nights</span>
+              </div>
+              <div class="win-handle win-handle--start" id="hStart" role="slider" tabindex="0" aria-label="Window start date"
+                   aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+                <span class="win-flag"><span class="wf-cap" aria-hidden="true">From</span><span id="flagStart">&mdash;</span></span>
+              </div>
+              <div class="win-handle win-handle--end" id="hEnd" role="slider" tabindex="0" aria-label="Window end date"
+                   aria-valuemin="1" aria-valuemax="5" aria-valuenow="5">
+                <span class="win-flag"><span class="wf-cap" aria-hidden="true">To</span><span id="flagEnd">&mdash;</span></span>
+              </div>
+            </div>
+            <div class="cal-row cal-head">
+              <div class="cal-head-left">
+                <button type="button" class="board-clear" id="clearFavBtn" hidden>&times; Clear</button>
+              </div>
+              <div class="days" id="dayHead"><!-- one column per festival night (JS) --></div>
+              <div class="cal-head-right">
+                <button type="button" class="board-legend-btn" id="legendBtn" hidden
+                        aria-expanded="false" aria-controls="calLegend">Legend</button>
+                <span class="cal-head-right-label">Status</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lanes" id="lanes"><!-- one lane per starred show (JS) --></div>
+
+          <div class="win" id="win" aria-hidden="true">
+            <div class="win-dim" id="dimL"></div>
+            <div class="win-dim" id="dimR"></div>
+            <div class="win-band" id="band"></div>
+            <div class="win-edge win-edge--start" id="edgeStart"></div>
+            <div class="win-edge win-edge--end" id="edgeEnd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The colour key. Short, because this festival publishes no live
+           availability: a night is on sale or it is free, and the plan's own
+           pick is gold. -->
+      <aside class="cal-legend" id="calLegend" hidden role="dialog" aria-label="Colour key">
+        <div class="legend">
+          <span class="lg lg-avail"><i></i>On sale</span>
+          <span class="lg lg-free"><i></i>Free entry</span>
+          <span class="lg lg-locked"><i></i>In your plan</span>
+        </div>
+      </aside>
+      </div>
+
+      <div class="ss-slot">
+        <div class="show-search" id="showSearch">
+          <div class="ss-bar">
+            <span class="ss-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+            </span>
+            <input class="ss-input" id="ssInput" type="text" role="combobox"
+                   aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
+                   autocomplete="off" spellcheck="false"
+                   placeholder="Search shows to add" />
+            <button type="button" class="ss-tools-btn" id="ssToolsBtn" aria-expanded="false" aria-controls="ssTools">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" /></svg>
+              Search tools
+              <span class="ss-badge" id="ssBadge" hidden></span>
+            </button>
+          </div>
+
+          <div class="ss-tools" id="ssTools" hidden>
+            <article class="filter-chip" data-facet="genre">
+              <button type="button" class="chip-trigger" data-panel="ssfGenrePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">🎭</span>
+                <span class="chip-value" id="ssfGenreValue">Any kind</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfGenrePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which kinds?</span>
+                  <button type="button" class="panel-everything" data-clear="genre">everything!</button>
+                </p>
+                <div class="panel-options panel-options--scroll" id="ssfGenreOptions"></div>
+              </div>
+            </article>
+
+            <article class="filter-chip" data-facet="venue">
+              <button type="button" class="chip-trigger" data-panel="ssfVenuePanel"
+                      aria-expanded="false" aria-haspopup="true">
+                <span class="chip-ico" aria-hidden="true">📍</span>
+                <span class="chip-value" id="ssfVenueValue">Any venue</span>
+                <span class="chip-caret" aria-hidden="true">▾</span>
+              </button>
+              <div class="chip-panel" id="ssfVenuePanel" role="menu" hidden>
+                <p class="panel-title panel-title--row">
+                  <span>Which venues?</span>
+                  <button type="button" class="panel-everything" data-clear="venue">everything!</button>
+                </p>
+                <div class="panel-options panel-options--scroll" id="ssfVenueOptions"></div>
+              </div>
+            </article>
+
+            <button type="button" class="ss-reset" id="ssReset" hidden>&times; Clear filters</button>
+          </div>
+
+          <div class="ss-pop" id="ssPop" hidden>
+            <ul class="ss-results" id="ssResults" role="listbox" aria-label="Matching shows"></ul>
+            <p class="ss-empty" id="ssEmpty" hidden>No shows match &mdash; try fewer filters or a different spelling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Allocate / itinerary ===================== -->
+    <section class="panel plan-card" id="planPanel" aria-labelledby="planTitle" hidden>
+      <div class="plan-head">
+        <div class="plan-head-text">
+          <h2 class="plan-title" id="planTitle">Your festival, planned</h2>
+          <p class="plan-sub">Your starred shows, fitted into a clash-free run across
+            <span id="planWindowLabel">your window</span> — one performance each, with the walk between them.
+            Tune anything below and the plan updates instantly.</p>
+        </div>
+      </div>
+
+      <div class="plan-result" id="planResult">
+
+        <div class="plan-controls" role="group" aria-label="Plan preferences">
+          <div class="pc-seg" role="group" aria-label="Day hours">
+            <span class="pc-cap">Day</span>
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     aria-label="Day starts (24-hour HH:MM)" />
+            </div>
+            <span class="pc-dash" aria-hidden="true">&ndash;</span>
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     aria-label="Day ends (HH:MM, up to 27:00 for 03:00)" />
+            </div>
+          </div>
+
+          <div class="pc-seg" role="group" aria-label="Meal breaks">
+            <label class="meal ctl">
+              <input type="checkbox" id="mealLunchOn" />
+              <span class="meal-pill">Lunch</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" aria-label="Lunch start" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" aria-label="Lunch end" />
+              </span>
+            </label>
+            <label class="meal ctl">
+              <input type="checkbox" id="mealDinnerOn" />
+              <span class="meal-pill">Dinner</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" aria-label="Dinner start" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" aria-label="Dinner end" />
+              </span>
+            </label>
+          </div>
+
+          <div class="pc-seg" role="group" aria-label="Shows per day">
+            <div class="ctl">
+              <select class="opt-select" id="ctlMin" aria-label="Fewest shows per day">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <span class="pc-dash" aria-hidden="true">&ndash;</span>
+            <div class="ctl">
+              <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric"
+                     aria-label="Most shows per day" />
+            </div>
+            <span class="pc-cap">shows/day</span>
+          </div>
+
+          <div class="pc-seg" role="group" aria-label="Gap between shows">
+            <div class="ctl">
+              <select class="opt-select" id="ctlGap" aria-label="Minimum gap between shows">
+                <option value="0">0 min</option>
+                <option value="15">15 min</option>
+                <option value="30" selected>30 min</option>
+                <option value="45">45 min</option>
+                <option value="60">1 hour</option>
+              </select>
+            </div>
+            <span class="pc-cap">apart</span>
+          </div>
+
+          <div class="pc-seg">
+            <div class="tmode" id="ctlMode" role="group" aria-label="Travel between venues">
+              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true" aria-label="Walk"
+                      title="Walking time between venues — used when it's longer than the gap">🚶<span class="tmode-word">Walk</span></button>
+              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false" aria-label="Bike"
+                      title="Cycling time between venues — used when it's longer than the gap">🚲<span class="tmode-word">Bike</span></button>
+              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false" aria-label="Car"
+                      title="Driving time between venues — used when it's longer than the gap">🚗<span class="tmode-word">Car</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-summary" id="planSummary" role="status" aria-live="polite"></div>
+
+        <div class="schedule-wrap" id="scheduleWrap">
+          <div class="schedule" id="schedule"><!-- day columns + overlay (JS) --></div>
+          <p class="schedule-empty" id="scheduleEmpty" hidden>
+            Nothing could be scheduled in this window. Try widening your dates, raising the per-day
+            maximum, shortening the gap, or relaxing your day hours.
+          </p>
+        </div>
+
+        <!-- The two questions the plan raises and the festival doesn't answer:
+             where you sleep, and how you get here. Rendered as links rather than
+             a pitch, with their partner named on every one. -->
+        <div class="trip-links" id="tripLinks" hidden>
+          <p class="trip-links-title">While you're here</p>
+          <div class="trip-links-row" id="tripLinksRow"></div>
+        </div>
+
+        <div class="plan-actions">
+          <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12" /><path d="m7 12 5 4 5-4" /><path d="M4 20h16" />
+            </svg>
+            Download itinerary <span class="btn-ext">CSV</span>
+          </button>
+          <button type="button" class="btn btn-ghost" id="importIcsBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" />
+            </svg>
+            Import to calendar <span class="btn-ext">ICS</span>
+          </button>
+          <span class="plan-actions-note">Both files are built here in your browser — nothing is uploaded.
+            Times are pinned to Jerusalem, so they stay right wherever your calendar lives.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="../" class="logo">EdFringe<span class="logo-now">Now</span></a>
+      <span class="footer-copy"><span id="footerVersion" class="footer-version">© 2026 Missing Bulb</span>
+        <br>Programme data from <a href="https://comedy-festival.co.il/" target="_blank" rel="noopener">comedy-festival.co.il</a>.
+        Some travel suggestions are partner links — booking through one may earn us a commission, at no extra cost to you.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="planJerusalem.js"></script>
+</body>
+</html>

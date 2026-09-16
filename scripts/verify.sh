@@ -47,7 +47,7 @@ step "JavaScript syntax — node --check"
 # Only our own tracked source: the js/ app, the plan/ planner, the shared/
 # code both import, and the scripts/ tooling. Never the vendored .claudinite
 # mount (not our code) or the plan/design/ mock (HTML).
-js_files=$(git ls-files 'js' 'plan' 'plan2' 'scripts' 'shared' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
+js_files=$(git ls-files 'js' 'plan' 'plan2' 'planJerusalem' 'scripts' 'shared' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^plan/design/' || true; })
 # `node --check` takes one file per process, and ~170 sequential node startups
 # was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
 # the cores instead; -n 1 because the flag genuinely accepts only one path.
@@ -77,6 +77,17 @@ step "Normalizer self-test — normalize.py --selftest"
 # and the round-trip decoder is covered by plan/lib/__tests__/hydrate.test.mjs.
 if command -v python3 >/dev/null 2>&1; then
   python3 scraper/normalize.py --selftest
+else
+  echo "python3 not installed — skipping (CI always has it)" >&2
+fi
+
+step "Jerusalem parse self-test — jerusalem/parse.py"
+# The Jerusalem scrape is one-shot and its fetch half can only be checked against
+# the live site; its Hebrew parsing half runs offline on markup shaped like the
+# source's, which makes it the only verification that change can get here — so it
+# is wired in rather than left to be remembered.
+if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/jerusalem/parse.py
 else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi

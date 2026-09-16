@@ -922,7 +922,7 @@ third page.
 
 - `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
 
-  ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.1 -->
 
   <details><summary>Notes</summary>
 
@@ -933,7 +933,7 @@ third page.
 
 - `18.2` The empty board: the whole programme offered for browsing, over the five festival nights.
 
-  ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.2 -->
 
   <details><summary>Notes</summary>
 
@@ -944,7 +944,7 @@ third page.
 
 - `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
 
-  ![jerusalem-hebrew.18.3](requirements/screen/cases/jerusalem-hebrew.18.3.png) <!-- req-gallery:18.3 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.3 -->
 
   <details><summary>Notes</summary>
 
@@ -956,7 +956,7 @@ third page.
 
 - `18.4` The day grid: one lane per starred show, its performance nights marked, its verdict named.
 
-  ![jerusalem-grid.18.4](requirements/screen/cases/jerusalem-grid.18.4.png) <!-- req-gallery:18.4 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.4 -->
 
   <details><summary>Notes</summary>
 
@@ -967,7 +967,7 @@ third page.
 
 - `18.5` The schedule: the catchable shows fitted across the window, with the walk between venues.
 
-  ![jerusalem-schedule.18.5](requirements/screen/cases/jerusalem-schedule.18.5.png) <!-- req-gallery:18.5 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.5 -->
 
   <details><summary>Notes</summary>
 
@@ -978,7 +978,7 @@ third page.
 
 - `18.6` "Find a bed" opens Booking.com's Hebrew edition for Jerusalem, on the window's own nights.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.6 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.6 -->
 
   <details><summary>Notes</summary>
 
@@ -989,7 +989,7 @@ third page.
 
 - `18.7` "Getting here" offers the paid airport transfer and the train beside it.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.7 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.7 -->
 
   <details><summary>Notes</summary>
 
@@ -1000,7 +1000,7 @@ third page.
 
 - `18.8` Starred shows survive a reload, and never reach the Edinburgh planner's own stored list.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.8 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.8 -->
 
   <details><summary>Notes</summary>
 
@@ -1011,12 +1011,13 @@ third page.
 
 - `18.9` Exported times are Jerusalem wall clock, and a show with no published running time is exported as an instant.
 
-  🔧 _Logic leaf._ <!-- req-gallery:18.9 -->
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:18.9 -->
 
   <details><summary>Notes</summary>
 
-  The ICS carries floating local times (no `Z`, no VTIMEZONE), right for an
-  on-the-ground plan. Four of the festival's shows publish no running time;
-  those export with end equal to start rather than a guessed length, which is
-  the same three-state discipline the price fields keep.
+  The ICS carries `Asia/Jerusalem` times and that zone's own `VTIMEZONE`, so a
+  calendar anywhere in the world shows the hour the audience will be in the
+  room. Four of the festival's shows publish no running time; those export with
+  end equal to start rather than a guessed length, which is the same
+  unknown-is-a-state discipline the price fields keep.
   </details>
