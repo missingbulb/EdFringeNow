@@ -51,14 +51,14 @@ Reference the item without closing it and let convergence own the close.
 The class is machinery, not a label. `feature` arms `feature-requirements-first`,
 which demands a commit touching `product/requirements.md` **before** any code
 commit — and this repo's spec cannot hold a build-tooling requirement. Its scope
-is "what the site's two front-ends must render and how they must behave", and
+is "what the site's front-ends must render and how they must behave", and
 its coverage gate is a bijection: every backticked leaf needs exactly one case of
 kind `screen`/`behavior`/`logic`. A `verify.sh` wiring assertion is none of
 those, so adding a real leaf for it fails the gate (measured: `# fail 1`). The
 remedy the finding prescribes is simply not available.
 
 So **classify what the owner's message actually is**, and reserve `feature` for a
-change to what the two front-ends render or do. "Merge these two gates and speed
+change to what a front-end renders or does. "Merge these two gates and speed
 one up" is `process-change`; "that reason is bad" is `correction`. The class
 **cannot be retracted** once declared (basics), so the first reply is the only
 place this is cheap.
@@ -81,7 +81,8 @@ gate and the pre-commit hook now cover the conformance findings CI blocks on.
 It still does **not** cover `npm run test:ui` — the separate `ui-requirements`
 workflow, real Chromium against the committed goldens — nor `build-site.sh` or
 the assemble-site dry run. So anything that can move a rendered pixel (`js/`,
-`plan/`, `shared/`, `index.html`, the CSS, the fixtures) is unverified until
+`plan/`, `plan2/`, `planJerusalem/`, `shared/`, `index.html`, the CSS, the
+fixtures) is unverified until
 `npm run test:ui` has been run locally, however green `verify` is.
 
 ### This repo has no PR template
@@ -398,11 +399,15 @@ comment in `scraper/README.md` with "see the declarations under
 `.claudinite` path) and turned CI red on the very next commit. Point at the
 pack's own repo-level docs instead, or say nothing.
 
-### The site is two front-ends — cross-page behaviour goes in `shared/`
+### The site is several front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
-are separate front-ends, and `plan/lib/` is the planner's own engine, not a common
-library. But both are now ES modules, so **anything that must behave the same on
+are separate front-ends, and `plan/lib/` was the planner's own engine until
+`planJerusalem/` — a second festival's planner — started importing its pure,
+DOM-free half. Treat what `planJerusalem/` imports (`engine.js`, `travel.js`,
+`itinerary.js`, `availability.js`) as a shared engine that must not learn one
+festival's specifics; `plan/plan.js` and `plan/lib/favourites.js` are still the
+Fringe planner's alone. But both are now ES modules, so **anything that must behave the same on
 both pages belongs in `shared/`** and is imported by each — never copy-pasted.
 Both pages spell the import the same way (`../shared/geo.js` resolves to
 `/shared/geo.js` from either), so moving a value there is a small change.

@@ -1,9 +1,10 @@
 # EdFringeNow — executable UI/UX requirements
 
-What the site's two front-ends must render and how they must behave — Part I
-the **Now** page, Part II the **Plan** page. Each numbered leaf is proven by
-exactly one executable case; the image under a leaf **is** its expected
-rendering, cropped to just what that leaf asserts.
+What the site's front-ends must render and how they must behave — Part I the
+**Now** page, Part II the **Plan** page, then the rules both follow, the trip
+planner prototype, and the Jerusalem festival planner. Each numbered leaf is
+proven by exactly one executable case; the image under a leaf **is** its
+expected rendering, cropped to just what that leaf asserts.
 
 <details><summary>How this document works</summary>
 
