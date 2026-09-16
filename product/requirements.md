@@ -1025,3 +1025,82 @@ third page.
   end equal to start rather than a guessed length, which is the same
   unknown-is-a-state discipline the price fields keep.
   </details>
+
+## 19. The reader's language, direction and theme
+
+The programme is Hebrew and the reader may not be. The page's own chrome is
+translated — English, Hebrew, Russian and Japanese — and follows the reader's
+choice of direction and theme; the shows' own names, venues and kinds stay in
+the source's Hebrew whichever language the chrome is in. Every string is keyed
+in one translations file that carries, per key, the width its slot can afford.
+
+- `19.1` The whole page in Hebrew: the layout mirrors, right to left.
+
+  ![jerusalem-i18n.19.1](requirements/screen/cases/jerusalem-i18n.19.1.png) <!-- req-gallery:19.1 -->
+
+  <details><summary>Notes</summary>
+
+  One whole-page golden, deliberately: what this leaf asserts is that the
+  *layout* survives the flip — the header, the board's browse list, the date
+  window's rail and flags, the plan's controls and the schedule's day columns
+  all run the other way — not how any one component reads. The pages' own
+  right-to-left components are proven here rather than replicated leaf by leaf
+  across Part V.
+  </details>
+
+- `19.2` The whole page in dark mode.
+
+  ![jerusalem-theme.19.2](requirements/screen/cases/jerusalem-theme.19.2.png) <!-- req-gallery:19.2 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with the device asking for a dark colour scheme and nothing stored,
+  so what the golden proves is the default the system preference gets. The
+  header's toggle overrides it either way.
+  </details>
+
+- `19.3` The same chrome in Russian and in Japanese.
+
+  ![jerusalem-i18n.19.3](requirements/screen/cases/jerusalem-i18n.19.3.png) <!-- req-gallery:19.3 -->
+
+  <details><summary>Notes</summary>
+
+  The header, the board's heading and count, and the plan's controls in both
+  languages, stitched. Two more scripts on the same slots is what catches a
+  layout that only ever fitted English.
+  </details>
+
+- `19.4` The reader's language and theme survive a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.4 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: pick a language and a theme, reload, and the page comes back in both
+  — stored under the festival's own storage prefix, so the Edinburgh planner's
+  keys are untouched.
+  </details>
+
+- `19.5` Every string the page can render carries a translation in every supported language.
+
+  🔧 _Logic leaf._ <!-- req-gallery:19.5 -->
+
+  <details><summary>Notes</summary>
+
+  Proved against the shipped catalogue: no key missing a language, no empty
+  string, no key without a pixel budget, the same placeholders in every
+  language, and every plural form the language's own CLDR categories require.
+  </details>
+
+- `19.6` Every translated string fits the pixel budget its key declares, in every language and layout.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.6 -->
+
+  <details><summary>Notes</summary>
+
+  A budget is a width in CSS pixels, per key — XLIFF 1.2's `maxwidth` with its
+  own default `size-unit="pixel"`. Each string is measured where it actually
+  renders: a clone of its own slot in the real page, under the pinned
+  Chromium's own fonts, across every language and both committed viewports, so
+  the number a translator is given is the number the browser will hold them to.
+  </details>
