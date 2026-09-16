@@ -294,6 +294,7 @@ async function closeBrowser() {
  *   viewport   "mobile" (default) | "desktop"
  *   dataDir    fixture data root (defaults to the committed snapshot)
  *   geolocation  override the fixed fake location, or null for "denied"
+ *   colorScheme  the device's colour-scheme preference ("light" by default)
  *   localStorage {key: value} seeded on the fake origin before any page script
  *   nowUtcMs   override the pinned instant (rarely; the reference time is shared)
  */
@@ -304,6 +305,10 @@ async function newPage(opts = {}) {
     viewport: VIEWPORTS[opts.viewport || "mobile"],
     deviceScaleFactor: 1,
     locale: LOCALE,
+    // What the device asks for, which a page may follow and a reader may
+    // override. Light unless a case says otherwise, so every existing golden
+    // keeps the scheme it was rendered in.
+    colorScheme: opts.colorScheme || "light",
     // The device's zone. Overridable so a case can prove the product reads
     // Edinburgh's clock rather than the device's — a context's zone is fixed at
     // creation, so showing two zones means two pages.

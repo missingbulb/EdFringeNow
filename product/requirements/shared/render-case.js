@@ -14,6 +14,7 @@ async function renderScreenCase(testCase) {
     geolocation: testCase.geolocation,
     failData: testCase.failData,
     timezone: testCase.timezone,
+    colorScheme: testCase.colorScheme,
     advanceableClock: testCase.advanceableClock,
   });
   try {

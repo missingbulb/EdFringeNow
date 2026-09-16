@@ -1083,7 +1083,7 @@ in one translations file that carries, per key, the width its slot can afford.
 
 - `19.5` Every string the page can render carries a translation in every supported language.
 
-  🔧 _Logic leaf._ <!-- req-gallery:19.5 -->
+  <table><thead><tr><th align="left">Language</th><th align="left">Code</th><th align="left">Direction</th><th align="left">Plural categories</th></tr></thead><tbody><tr><td>English</td><td>en</td><td>ltr</td><td>one, other</td></tr><tr><td>עברית</td><td>he</td><td>rtl</td><td>one, two, other</td></tr><tr><td>Русский</td><td>ru</td><td>ltr</td><td>few, many, one, other</td></tr><tr><td>日本語</td><td>ja</td><td>ltr</td><td>other</td></tr></tbody></table> <!-- req-gallery:19.5 -->
 
   <details><summary>Notes</summary>
 
