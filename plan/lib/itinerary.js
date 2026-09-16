@@ -138,26 +138,61 @@ function foldLine(line) {
  * name can still resolve it. The rules are the UK's standing ones (BST from the
  * last Sunday in March to the last Sunday in October), not a 2026 special case.
  */
-const TZID = "Europe/London";
-const VTIMEZONE = [
-  "BEGIN:VTIMEZONE",
-  `TZID:${TZID}`,
-  "BEGIN:DAYLIGHT",
-  "TZOFFSETFROM:+0000",
-  "TZOFFSETTO:+0100",
-  "TZNAME:BST",
-  "DTSTART:19700329T010000",
-  "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU",
-  "END:DAYLIGHT",
-  "BEGIN:STANDARD",
-  "TZOFFSETFROM:+0100",
-  "TZOFFSETTO:+0000",
-  "TZNAME:GMT",
-  "DTSTART:19701025T020000",
-  "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
-  "END:STANDARD",
-  "END:VTIMEZONE",
-];
+/* The calendar zones this exporter can write, and the VTIMEZONE each one needs.
+ *
+ * A festival plan is read on the ground, so the times have to be that city's
+ * wall clock — which means the file must carry the zone's own DST rules rather
+ * than a UTC instant, or an importer in another country shifts every event.
+ * A caller names its zone; Edinburgh is the default because it is what the
+ * Fringe planner has always exported.
+ */
+const CALENDAR_ZONES = {
+  "Europe/London": [
+    "BEGIN:VTIMEZONE",
+    "TZID:Europe/London",
+    "BEGIN:DAYLIGHT",
+    "TZOFFSETFROM:+0000",
+    "TZOFFSETTO:+0100",
+    "TZNAME:BST",
+    "DTSTART:19700329T010000",
+    "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU",
+    "END:DAYLIGHT",
+    "BEGIN:STANDARD",
+    "TZOFFSETFROM:+0100",
+    "TZOFFSETTO:+0000",
+    "TZNAME:GMT",
+    "DTSTART:19701025T020000",
+    "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
+    "END:STANDARD",
+    "END:VTIMEZONE",
+  ],
+  // Israel moves to summer time on the FRIDAY before the last Sunday in March
+  // (not the Sunday itself, which is the European rule) and back on the last
+  // Sunday in October. The BYMONTHDAY range is how that Friday is expressed in
+  // an RRULE: the only Friday that can fall on the 23rd-29th is the one before
+  // the last Sunday.
+  "Asia/Jerusalem": [
+    "BEGIN:VTIMEZONE",
+    "TZID:Asia/Jerusalem",
+    "BEGIN:DAYLIGHT",
+    "TZOFFSETFROM:+0200",
+    "TZOFFSETTO:+0300",
+    "TZNAME:IDT",
+    "DTSTART:19700327T020000",
+    "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=FR;BYMONTHDAY=23,24,25,26,27,28,29",
+    "END:DAYLIGHT",
+    "BEGIN:STANDARD",
+    "TZOFFSETFROM:+0300",
+    "TZOFFSETTO:+0200",
+    "TZNAME:IST",
+    "DTSTART:19701025T020000",
+    "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
+    "END:STANDARD",
+    "END:VTIMEZONE",
+  ],
+};
+
+export const DEFAULT_TIMEZONE = "Europe/London";
 
 /**
  * An ICS (iCalendar) feed of the scheduled performances as VEVENTs.
@@ -181,6 +216,9 @@ export function toIcs(slots, options = {}) {
   const prodId = options.prodId || "-//EdFringeNow//Fringe Planner//EN";
   const calendarName = options.calendarName || "My Fringe Plan";
   const alarmMinutes = options.alarmMinutes === undefined ? 30 : options.alarmMinutes;
+  const tzid = CALENDAR_ZONES[options.timezone] ? options.timezone : DEFAULT_TIMEZONE;
+  const vtimezone = CALENDAR_ZONES[tzid];
+  const uidDomain = options.uidDomain || "edfringenow.com";
 
   const lines = [
     "BEGIN:VCALENDAR",
@@ -189,12 +227,12 @@ export function toIcs(slots, options = {}) {
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     foldLine(`X-WR-CALNAME:${icsText(calendarName)}`),
-    `X-WR-TIMEZONE:${TZID}`,
-    ...VTIMEZONE,
+    `X-WR-TIMEZONE:${tzid}`,
+    ...vtimezone,
   ];
 
   for (const slot of slots || []) {
-    const uid = `${slot.slug}-${icsLocal(slot.start)}@edfringenow.com`;
+    const uid = `${slot.slug}-${icsLocal(slot.start)}@${uidDomain}`;
     const location = [slot.venueName, slot.room].filter(Boolean).join(", ");
     const descParts = [];
     if (slot.genre) descParts.push(slot.genre);
@@ -205,8 +243,8 @@ export function toIcs(slots, options = {}) {
       "BEGIN:VEVENT",
       foldLine(`UID:${uid}`),
       `DTSTAMP:${stamp}`,
-      `DTSTART;TZID=${TZID}:${icsLocal(slot.start)}`,
-      `DTEND;TZID=${TZID}:${icsLocal(slot.end)}`,
+      `DTSTART;TZID=${tzid}:${icsLocal(slot.start)}`,
+      `DTEND;TZID=${tzid}:${icsLocal(slot.end)}`,
       foldLine(`SUMMARY:${icsText(slot.title)}`),
       foldLine(`LOCATION:${icsText(location)}`),
       foldLine(`DESCRIPTION:${icsText(descParts.join("\n"))}`),

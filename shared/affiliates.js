@@ -11,8 +11,10 @@
  *
  * Two things a caller needs:
  *   1. AFFILIATES — the ID block, empty until the programmes are joined.
- *   2. stayLink() / travelLink() — the two links the planner offers, each
- *      returning { text, partner, url } so the caller renders "text · partner".
+ *   2. stayLink() / travelLink() / israelTravelLink() — the links a planner
+ *      offers, each returning { text, partner, url } so the caller renders
+ *      "text · partner". A planner page passes its own destination; nothing
+ *      here assumes one festival.
  */
 
 /* ---------- Monetization: affiliate / referral IDs ----------
@@ -33,6 +35,11 @@
  *     "how do I get to the Fringe?" actually needs). Omio's tracking is issued
  *     by whichever network accepts you, so it arrives as a *click wrapper*
  *     rather than a query parameter — see CLICK TEMPLATES below.
+ *   - Transport within Israel → Kiwitaxi, which sells Ben Gurion → Jerusalem
+ *     transfers and pays a referral (its programme runs through Travelpayouts,
+ *     so its tracking is a click wrapper too). Omio does not cover Israel. The
+ *     unpaid alternative, Israel Railways, is what `israelRailLink` offers
+ *     beside it — no programme exists, so it ships untagged and always will.
  */
 export const AFFILIATES = {
   // Booking.com's `aid`, plus the `label` we send with it (see stayLink) so the
@@ -46,6 +53,7 @@ export const AFFILIATES = {
    * goes, URL-encoded. Empty template → the plain deep link, untagged. */
   bookingClickTemplate: "",
   omioClickTemplate: "",
+  kiwitaxiClickTemplate: "",
 };
 
 /* Route a destination URL through a network's click wrapper. */
@@ -63,27 +71,38 @@ export function nextDayISO(dateISO) {
   return d.toISOString().slice(0, 10);
 }
 
-/* Somewhere to sleep for the nights of a Fringe trip: a Booking.com search for
- * Edinburgh with the trip's own dates pre-filled.
+/* Somewhere to sleep for the nights of a festival trip: a Booking.com search
+ * for the festival's own city with the trip's dates pre-filled.
  *
  * `checkinISO`/`checkoutISO` are the planner's date window. A one-day window
  * would ask Booking.com for a zero-night stay (it returns nothing), so a
  * checkout that isn't after the check-in becomes the next morning — the honest
  * reading of "I'm here on the 12th and need a bed that night".
+ *
+ * `city`, `locale` and `currency` are what make this reusable across festivals.
+ * Booking.com puts the language in the *path* (`searchresults.he.html`), not in
+ * a parameter, so a caller that wants the local edition gets the local edition
+ * rather than an English page with a Hebrew query string.
  */
-export function stayLink({ checkinISO, checkoutISO } = {}, affiliates = AFFILIATES) {
-  const params = new URLSearchParams({ ss: "Edinburgh" });
+export function stayLink(
+  { checkinISO, checkoutISO, city = "Edinburgh", locale = "en-gb", currency, label = "edfringenow-plan-night" } = {},
+  affiliates = AFFILIATES
+) {
+  const params = new URLSearchParams({ ss: city });
   if (checkinISO) {
     const checkout = checkoutISO && checkoutISO > checkinISO ? checkoutISO : nextDayISO(checkinISO);
     params.set("checkin", checkinISO);
     params.set("checkout", checkout);
   }
+  if (currency) params.set("selected_currency", currency);
   if (affiliates.bookingAid) {
     params.set("aid", affiliates.bookingAid);
     // Booking.com's own per-link tag, so this nag's earnings are attributable.
-    params.set("label", "edfringenow-plan-night");
+    params.set("label", label);
   }
-  const url = `https://www.booking.com/searchresults.html?${params}`;
+  // "en-gb" is Booking.com's default edition and has no path suffix of its own.
+  const page = locale && locale !== "en-gb" ? `searchresults.${locale}.html` : "searchresults.html";
+  const url = `https://www.booking.com/${page}?${params}`;
   return {
     text: "Find a bed",
     partner: "Booking.com",
@@ -106,5 +125,36 @@ export function travelLink(affiliates = AFFILIATES) {
     text: "Trains, coaches & flights",
     partner: "Omio",
     url: wrapClick(affiliates.omioClickTemplate, url),
+  };
+}
+
+/* Getting to Jerusalem. Omio does not sell Israel, so the paid partner here is
+ * Kiwitaxi, whose Ben Gurion page is the honest entry point: nearly everyone
+ * arriving for the festival lands at the airport and needs the hour to
+ * Jerusalem, and Kiwitaxi's route pages key off the airport rather than the
+ * city.
+ *
+ * As with Omio, no origin and no date go on the URL — the planner only ever
+ * knows the destination.
+ */
+export function israelTravelLink(affiliates = AFFILIATES) {
+  const url = "https://kiwitaxi.com/en/israel/ben-gurion-airport";
+  return {
+    text: "Airport transfers",
+    partner: "Kiwitaxi",
+    url: wrapClick(affiliates.kiwitaxiClickTemplate, url),
+  };
+}
+
+/* The train, offered beside the paid transfer. Israel Railways runs no referral
+ * programme, so this link is untagged by design rather than by omission — it is
+ * here because it is the cheapest way in from the airport and a planner that
+ * hid it to protect a commission would be worth less than one that didn't.
+ */
+export function israelRailLink() {
+  return {
+    text: "Trains",
+    partner: "Israel Railways",
+    url: "https://www.rail.co.il/en",
   };
 }

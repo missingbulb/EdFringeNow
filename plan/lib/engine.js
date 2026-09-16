@@ -297,7 +297,10 @@ export function eligibleSlots(shows, options = {}) {
         image: show.image ?? show.smallImage ?? null,
         blurb: show.blurb ?? null,
         duration: show.duration ?? null,
-        url: urlFromSlug(show.slug),
+        // A catalogue that knows its own show URLs (a festival whose slugs
+        // are not edfringe.com's) supplies them; otherwise the slug is the
+        // edfringe.com URL, which is what it was built from.
+        url: show.url || urlFromSlug(show.slug),
         freeNonTicketed: isNonTicketed(perf),
       });
     }

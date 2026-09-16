@@ -51,14 +51,14 @@ Reference the item without closing it and let convergence own the close.
 The class is machinery, not a label. `feature` arms `feature-requirements-first`,
 which demands a commit touching `product/requirements.md` **before** any code
 commit — and this repo's spec cannot hold a build-tooling requirement. Its scope
-is "what the site's two front-ends must render and how they must behave", and
+is "what the site's front-ends must render and how they must behave", and
 its coverage gate is a bijection: every backticked leaf needs exactly one case of
 kind `screen`/`behavior`/`logic`. A `verify.sh` wiring assertion is none of
 those, so adding a real leaf for it fails the gate (measured: `# fail 1`). The
 remedy the finding prescribes is simply not available.
 
 So **classify what the owner's message actually is**, and reserve `feature` for a
-change to what the two front-ends render or do. "Merge these two gates and speed
+change to what a front-end renders or does. "Merge these two gates and speed
 one up" is `process-change`; "that reason is bad" is `correction`. The class
 **cannot be retracted** once declared (basics), so the first reply is the only
 place this is cheap.
@@ -81,7 +81,8 @@ gate and the pre-commit hook now cover the conformance findings CI blocks on.
 It still does **not** cover `npm run test:ui` — the separate `ui-requirements`
 workflow, real Chromium against the committed goldens — nor `build-site.sh` or
 the assemble-site dry run. So anything that can move a rendered pixel (`js/`,
-`plan/`, `shared/`, `index.html`, the CSS, the fixtures) is unverified until
+`plan/`, `plan2/`, `planJerusalem/`, `shared/`, `index.html`, the CSS, the
+fixtures) is unverified until
 `npm run test:ui` has been run locally, however green `verify` is.
 
 ### This repo has no PR template
@@ -398,14 +399,18 @@ comment in `scraper/README.md` with "see the declarations under
 `.claudinite` path) and turned CI red on the very next commit. Point at the
 pack's own repo-level docs instead, or say nothing.
 
-### The site is two front-ends — cross-page behaviour goes in `shared/`
+### The site is several front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
-are separate front-ends, and `plan/lib/` is the planner's own engine, not a common
-library. But both are now ES modules, so **anything that must behave the same on
-both pages belongs in `shared/`** and is imported by each — never copy-pasted.
-Both pages spell the import the same way (`../shared/geo.js` resolves to
-`/shared/geo.js` from either), so moving a value there is a small change.
+are separate front-ends. `plan/lib/` is split: the pure, DOM-free half
+(`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared
+planning engine** that `planJerusalem/` also imports, so it must never learn one
+festival's specifics; `plan/plan.js` and `plan/lib/favourites.js` are the Fringe
+planner's alone. Every page is an ES module, so **anything that must behave the
+same on more than one of them belongs in `shared/`** and is imported by each —
+never copy-pasted. Every page spells the import the same way (`../shared/geo.js`
+resolves to `/shared/geo.js` from any of them), so moving a value there is a
+small change.
 
 What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
@@ -664,6 +669,11 @@ overwrites a hand-edit either — which is precisely why editing it by hand is s
 wrong: the edit survives, silently disagreeing with the box office forever. Re-run
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
+
+`data/jerusalem/` is a **second generator's** output — the one-shot Jerusalem
+scrape's. Adding a third festival's, name the file and the script that writes it
+in that same allowlist, never the directory, so the next one stays a moment a
+person confirms rather than a shape anything can ride in on.
 
 ### A long-running workflow that commits generated data will race the hourly refresh
 

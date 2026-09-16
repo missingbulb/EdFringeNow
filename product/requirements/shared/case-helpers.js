@@ -54,6 +54,26 @@ function planPrefs(overrides = {}) {
   return { "edfringe.plan.prefs.v1": JSON.stringify(overrides) };
 }
 
+// Festival planner (/planJerusalem): a starred list, under that page's own
+// storage prefix. The cast spans what Part V asserts — a free late-night that
+// repeats on four evenings, two runs that play twice in one evening, a film,
+// two shows half an hour apart at different venues (so the schedule draws a
+// travel leg), and a clash that cannot be fitted (so the grid shows a verdict
+// other than "Scheduled").
+const JERUSALEM_STARRED = [
+  "opening",
+  "poetry-slam",
+  "salakh",
+  "late",
+  "king",
+  "yona-kapach",
+  "neighbor",
+];
+
+function jerusalemStarred(slugs = JERUSALEM_STARRED) {
+  return { "jerusalemPlan.starred": JSON.stringify(slugs) };
+}
+
 // ------------------------------------------------------------------- waits --
 async function settle(page) {
   await page.evaluate(() => document.fonts.ready);
@@ -103,6 +123,30 @@ async function planReady(page) {
   await settle(page);
 }
 
+// The festival planner is ready once the programme has landed (the board has
+// either its browse list or its lanes) and the async package.json read has put
+// the version in the footer popup.
+async function jerusalemReady(page) {
+  // `attached`, not `visible`: the browse list and the grid are the board's two
+  // states and exactly one of them is on screen, so a visibility wait on both
+  // can only ever resolve against the hidden one.
+  await page.waitForSelector("#browseList .ss-row, #lanes .lane", { state: "attached", timeout: 20000 });
+  await page.waitForFunction(() => {
+    const pop = document.querySelector("#footerVersion .version-pop");
+    return pop && pop.textContent.includes("v0.0.0-spec");
+  }, { timeout: 20000 });
+  // With shows on the board, the date-window overlay is positioned from the
+  // laid-out day header two frames after the first render; capturing before
+  // that catches every piece of it at zero width. An empty board has no
+  // overlay to wait for.
+  await page.waitForFunction(() => {
+    if (!document.querySelector("#lanes .lane")) return true;
+    const band = document.getElementById("railBand");
+    return band && band.style.width !== "";
+  }, { timeout: 20000 });
+  await settle(page);
+}
+
 // ------------------------------------------------------------------ drives --
 async function openPanel(page, triggerSelector) {
   await page.click(triggerSelector);
@@ -123,8 +167,11 @@ module.exports = {
   planFavourites,
   planPrefs,
   PLAN_FAVOURITES,
+  jerusalemStarred,
+  JERUSALEM_STARRED,
   nowReady,
   planReady,
+  jerusalemReady,
   plan2Ready,
   settle,
   openPanel,

@@ -1,0 +1,162 @@
+/* The festival planner's stylesheet: the Fringe planner's, plus a theme.
+ *
+ * The page IS the Fringe planner's board, so it imports that stylesheet whole
+ * rather than copying 1,600 lines that would then drift. Everything below is
+ * either a brand token redefined, a rule the second festival's *shape* needs
+ * (five columns rather than thirty-one), or a component this page has and the
+ * Fringe planner doesn't (the browse stage, the trip links).
+ *
+ * Rebranding is the `:root` block: swap the five colours and the wordmark in
+ * ./festival.js and the page is another festival's. Nothing below hard-codes
+ * anything about Jerusalem except the comment saying where the colours came
+ * from.
+ */
+@import url("../plan/plan.css");
+
+:root {
+  /* Jerusalem stone and the brass of the city's doors — the accent the Fringe
+     planner spends on violet. Kept to the same two-tone shape (a mid tone and
+     a darker one for hover/active) so every rule in plan.css that reaches for
+     --violet lands somewhere sensible without being restated here. */
+  --violet: #b8862b;
+  --violet-dark: #94691d;
+  --ink: #1d1a14;
+  --bg: #faf7f0;
+  --muted: #7a7160;
+  --line: #ece5d8;
+
+  /* The grid's palette, cut down to what this festival publishes: a night is on
+     sale or it is free. The Fringe's sold-out / 2-for-1 / preview colours are
+     left defined by the import and simply never drawn. */
+  --fr-avail: #2a9d8f;
+  --fr-free: #1f9e55;
+
+  /* Hebrew: neither Inter nor Plus Jakarta Sans carries the script, so Heebo
+     goes in front of both. A Latin string still renders in the site's own face
+     — Heebo has no Latin coverage worth preferring, so the fallback order
+     decides, which is what we want. */
+  --sans: "Inter", "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "Plus Jakarta Sans", "Heebo", "Inter", system-ui, sans-serif;
+
+  /* How many nights the grid spans. The Fringe planner's calendar is a fixed
+     month; a festival's is exactly as long as its programme, and both the day
+     header and every lane's track have to agree on the number. */
+  --fest-days: 5;
+}
+
+/* Hebrew needs a little more line height than the Latin faces are set for, or
+   the nikud-less but tall letters clip in the dense grid rows. */
+[lang="he"] {
+  font-family: "Heebo", var(--sans);
+  line-height: 1.35;
+}
+
+/* A warm stone wash behind the page's top, so the festival reads as its own
+   place without touching a single component. One gradient, no images. */
+body.festival-page {
+  background:
+    linear-gradient(180deg, #f6ecd8 0%, rgba(246, 236, 216, 0) 420px),
+    var(--bg);
+}
+
+/* --- the grid's shape ---------------------------------------------------- */
+
+.days,
+.lane-track {
+  grid-template-columns: repeat(var(--fest-days), minmax(0, 1fr));
+}
+
+/* Both belong to the Fringe's month-long calendar: a pre-festival shaded zone
+   and JS-positioned weekend stripes. This grid is only the festival's own
+   nights, and the weekend is already marked on the day header. */
+.wknd-cols,
+.festend {
+  display: none;
+}
+
+/* --- the browse stage ---------------------------------------------------- */
+
+/* The Fringe planner's empty board asks for a favourites file. There is no such
+   export for this festival, so the empty board is the programme itself — which
+   at this size is a better starting point than a search box anyway. */
+.browse-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px 6px;
+  overflow: hidden;
+}
+.browse-head {
+  flex: 0 0 auto;
+}
+.browse-line1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.browse-line2 {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.browse-list {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 4px 8px 0;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* --- the trip links ------------------------------------------------------ */
+
+/* The Fringe planner grows these as pop-up nags on the schedule's dead zones.
+   Five nights leave no dead zone worth the trick, so they are one quiet row
+   under the board — same question, same disclosure, less machinery. */
+.trip-links {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(184, 134, 43, 0.05);
+}
+.trip-links-title {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.trip-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trip-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.trip-link:hover {
+  border-color: var(--violet);
+  color: var(--violet-dark);
+}
+.trip-link-partner {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* --- the version popup --------------------------------------------------- */
+
+/* Each front-end ships its own rules for the shared popup module (a stylesheet
+   cannot be imported the way a module can) — except here, where the import
+   above already brought the planner's in. Nothing to add. */

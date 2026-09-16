@@ -14,7 +14,14 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import { AFFILIATES, nextDayISO, stayLink, travelLink } from "../affiliates.js";
+import {
+  AFFILIATES,
+  israelRailLink,
+  israelTravelLink,
+  nextDayISO,
+  stayLink,
+  travelLink,
+} from "../affiliates.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "..", "..");
@@ -113,4 +120,61 @@ test("the planner imports the links instead of declaring its own", () => {
   );
   assert.doesNotMatch(src, /booking\.com/i, "no hand-built Booking.com URL in plan.js — use stayLink()");
   assert.doesNotMatch(src, /omio\.com/i, "no hand-built Omio URL in plan.js — use travelLink()");
+});
+
+test("a stay takes its city, language and currency from the caller", () => {
+  // The Jerusalem planner's bed link: Booking.com's Hebrew edition, which lives
+  // at a different *path* — a caller that only set a parameter would ship an
+  // English page.
+  const { url } = stayLink({
+    checkinISO: "2026-10-18",
+    checkoutISO: "2026-10-22",
+    city: "Jerusalem",
+    locale: "he",
+    currency: "ILS",
+    label: "edfringenow-jerusalem-night",
+  });
+  assert.ok(url.startsWith("https://www.booking.com/searchresults.he.html?"), url);
+  assert.equal(query(url).get("ss"), "Jerusalem");
+  assert.equal(query(url).get("selected_currency"), "ILS");
+  assert.equal(query(url).get("checkout"), "2026-10-22");
+});
+
+test("the default stay is unchanged — Edinburgh, English edition, no currency", () => {
+  const { url } = stayLink({ checkinISO: "2026-08-07" });
+  assert.ok(url.startsWith("https://www.booking.com/searchresults.html?"), url);
+  assert.equal(query(url).get("ss"), "Edinburgh");
+  assert.equal(query(url).get("selected_currency"), null);
+});
+
+test("the label only ships alongside an affiliate ID", () => {
+  const tagged = stayLink(
+    { checkinISO: "2026-10-18", label: "edfringenow-jerusalem-night" },
+    { ...AFFILIATES, bookingAid: "7654321" }
+  );
+  assert.equal(query(tagged.url).get("label"), "edfringenow-jerusalem-night");
+});
+
+test("Israel's transport links: a paid transfer and the untagged train", () => {
+  assert.equal(israelTravelLink().url, "https://kiwitaxi.com/en/israel/ben-gurion-airport");
+  assert.equal(israelTravelLink().partner, "Kiwitaxi");
+
+  const template = "https://tp.media/click?campaign=99&deep_link={deep}";
+  const { url } = israelTravelLink({ ...AFFILIATES, kiwitaxiClickTemplate: template });
+  assert.equal(
+    url,
+    "https://tp.media/click?campaign=99&deep_link=" +
+      encodeURIComponent("https://kiwitaxi.com/en/israel/ben-gurion-airport")
+  );
+
+  // Israel Railways runs no programme, so this one is untagged by design —
+  // even when every click template in the block is filled in, which is the
+  // state that would tempt a future edit to route it through one.
+  const everyTemplateSet = {
+    ...AFFILIATES,
+    bookingClickTemplate: template,
+    omioClickTemplate: template,
+    kiwitaxiClickTemplate: template,
+  };
+  assert.equal(israelRailLink(everyTemplateSet).url, "https://www.rail.co.il/en");
 });

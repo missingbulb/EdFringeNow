@@ -299,6 +299,24 @@ test("the named scraper input data/prices.json is allowed; a lookalike is not", 
     "the fix must name the inputs that ARE allowed, so the reader can tell the two apart");
 });
 
+test("a second scraper's named output is allowed; a lookalike beside it is not", () => {
+  // data/jerusalem/ is the one-shot Jerusalem scrape's output, written by
+  // scraper/jerusalem/fetch.py. Named, like the price cache, so the exemption
+  // covers that file and not the directory it lives in.
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/shows.json": "" })), []);
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/notes.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "data/jerusalem/notes.json");
+  assert.ok(out[0].fix.includes("data/jerusalem/shows.json"),
+    "the fix must name the outputs that ARE allowed, so the reader can tell the two apart");
+});
+
+test("a force-added Jerusalem page cache gets the un-track fix, not a delete", () => {
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/raw_pages/salakh.html": "" }));
+  assert.equal(out.length, 1);
+  assert.match(out[0].fix, /git rm --cached data\/jerusalem\/raw_pages\/salakh\.html/);
+});
+
 test("a probe's output committed under data/ is reported", () => {
   // The exact regression this guards: a throwaway probe's answer is parked in
   // data/ as if it were data, where nothing regenerates it and the next
@@ -308,7 +326,7 @@ test("a probe's output committed under data/ is reported", () => {
   assert.equal(out[0].rule, "edfringe-data-dir-is-generator-output");
   assert.equal(out[0].severity, "blocking");
   assert.equal(out[0].file, "data/ticket-status-enum.json");
-  assert.match(out[0].what, /is not something scraper\/normalize\.py produces/);
+  assert.match(out[0].what, /is not something a generator in this repo produces/);
   assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the producer to fix instead");
 });
 
