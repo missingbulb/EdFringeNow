@@ -720,8 +720,9 @@
 /* Noto Sans JP — the Japanese face the festival planner loads. Google slices
    this family into 124 unicode-range chunks and a browser fetches only the ones
    the page's own characters fall in; vendored here are exactly those chunks,
-   for the Japanese in planJerusalem/i18n/translations.js, as Google's own bytes
-   (one variable file per chunk, so all three weights point at the same file).
+   for the Japanese in site/planJerusalem/i18n/translations.js, as Google's own
+   bytes (one variable file per chunk, so all three weights point at the same
+   file).
 
    A Japanese string using a character outside these ranges renders from the
    font jail, which carries no CJK — i.e. as tofu. The requirements case for

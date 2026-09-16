@@ -9,7 +9,7 @@ module.exports = {
   page: "/planJerusalem/",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    const { STRINGS } = await import(path.join(REPO, "planJerusalem/i18n/translations.js"));
+    const { STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
     await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
     await jerusalemReady(page);
 

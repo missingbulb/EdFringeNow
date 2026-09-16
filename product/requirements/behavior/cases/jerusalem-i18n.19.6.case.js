@@ -77,8 +77,8 @@ module.exports = {
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    const { LOCALES, STRINGS } = await import(path.join(REPO, "planJerusalem/i18n/translations.js"));
-    const { format, argumentsOf } = await import(path.join(REPO, "planJerusalem/i18n/format.js"));
+    const { LOCALES, STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
+    const { format, argumentsOf } = await import(path.join(REPO, "site/planJerusalem/i18n/format.js"));
 
     // A string the harness cannot draw cannot be measured either: the font jail
     // carries no CJK, so Japanese is only real here while the vendored Noto
