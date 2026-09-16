@@ -21,7 +21,7 @@ const BASE = {
 module.exports = {
   description: "pins plan first: an exact pin overrides day hours and meals; must-sees never overlap each other; pins ignore the cap",
   async verify(assert) {
-    const { buildSchedule } = await import("../../../../plan/lib/engine.js");
+    const { buildSchedule } = await import("../../../../site/plan/lib/engine.js");
 
     // (a) an exact pinned performance is honoured even against a meal break.
     const lunchShow = mkShow("lunchy", ["12:45"]);

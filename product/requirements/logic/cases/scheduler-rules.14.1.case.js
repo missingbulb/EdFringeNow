@@ -3,7 +3,7 @@
 module.exports = {
   description: "sold-out/off-sale/cancelled/blank statuses are unavailable; offer statuses stay bookable",
   async verify(assert) {
-    const { isAvailable, UNAVAILABLE_STATUSES } = await import("../../../../plan/lib/availability.js");
+    const { isAvailable, UNAVAILABLE_STATUSES } = await import("../../../../site/plan/lib/availability.js");
 
     for (const s of [
       "SOLD_OUT",

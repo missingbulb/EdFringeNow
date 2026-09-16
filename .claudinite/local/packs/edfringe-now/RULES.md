@@ -1,7 +1,7 @@
 # edfringe-now — this repo's own rules
 
 The lessons this repo has paid for once, across its three surfaces: working in the repo at
-all, the data pipeline behind `scraper/` and `data/`, and the executable-requirements harness
+all, the data pipeline behind `scraper/`, `data/` and `site/data/`, and the executable-requirements harness
 that runs `product/requirements.md` as tests. A lesson that would hold in another repo does
 not belong here — propose it to the Claudinite canon instead, where every repo gets it.
 
@@ -80,8 +80,8 @@ Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, so the local
 gate and the pre-commit hook now cover the conformance findings CI blocks on.
 It still does **not** cover `npm run test:ui` — the separate `ui-requirements`
 workflow, real Chromium against the committed goldens — nor `build-site.sh` or
-the assemble-site dry run. So anything that can move a rendered pixel (`js/`,
-`plan/`, `plan2/`, `planJerusalem/`, `shared/`, `index.html`, the CSS, the
+the assemble-site dry run. So anything that can move a rendered pixel (`site/js/`,
+`site/plan/`, `site/plan2/`, `site/planJerusalem/`, `site/shared/`, `site/index.html`, the CSS, the
 fixtures) is unverified until
 `npm run test:ui` has been run locally, however green `verify` is.
 
@@ -91,7 +91,7 @@ EdFringeNow has never had one — skip the search on step one, and write the PR
 body from the commit message. If a template is ever added, it will be at
 `.github/pull_request_template.md` and this paragraph goes with it.
 
-### Verifying UI changes visually (the `index.html` page and everything under `plan/`)
+### Verifying UI changes visually (the `site/index.html` page and everything under `site/plan/`)
 
 Visual verification of the pages **is** available in this sandbox. Don't skip it
 or downgrade to "verified by logic review only" claiming no browser exists — a
@@ -99,7 +99,7 @@ browser is here, and a UI change isn't done until it has been looked at.
 
 - Serve the repo and drive it with the preinstalled Chromium (or Playwright):
   `python3 -m http.server 8000`, then screenshot / click through
-  `http://localhost:8000`. The app fetches `data/shows.json`, so it must be
+  `http://localhost:8000` — serve `site/`, not the repo root. The app fetches its data, so it must be
   served over HTTP rather than opened as a file — and `localhost` bypasses the
   agent proxy, so the browser reaches the page even though external hosts need
   the proxy.
@@ -134,13 +134,13 @@ browser is here, and a UI change isn't done until it has been looked at.
   package.json && rm -rf node_modules package-lock.json` before committing —
   paid twice in one session on 2026-08-07 (#267), once to re-verify after a
   refactor. Nothing here ever needs an install, scratchpad or repo root.
-- **`index.html`'s Leaflet map loads from `unpkg.com`, which the sandbox proxy
+- **`site/index.html`'s Leaflet map loads from `unpkg.com`, which the sandbox proxy
   blocks — stub it before driving the page.** A Playwright-driven browser
   fails every `unpkg.com` request with `net::ERR_TUNNEL_CONNECTION_FAILED`
   (the same proxy restriction as any other off-allowlist host — `curl`
   confirms `403` at CONNECT) and the page throws `L is not defined`. Two
   sessions on 2026-08-07 (#256, #267) hit this independently while driving the
-  same constraint-picker fix. Work around it by grepping `js/app.js` for the
+  same constraint-picker fix. Work around it by grepping `site/js/app.js` for the
   `L.*` calls actually used (`L.map`, `L.marker`, `L.circle`, `L.divIcon`,
   `L.markerClusterGroup`, `L.polyline`, `L.tileLayer`) and route-stubbing a
   minimal no-op replacement before navigating. When the case needs the map
@@ -153,7 +153,7 @@ browser is here, and a UI change isn't done until it has been looked at.
   sends an in-page link to `www.edfringe.com` to `chrome-error://chromewebdata/`
   instead of navigating). Curl the real `leaflet.js`/`leaflet.css` into the
   scratchpad once and route-intercept `unpkg.com/leaflet@*` to serve them from
-  disk instead — a real, working map that never needs updating when `js/app.js`
+  disk instead — a real, working map that never needs updating when `site/js/app.js`
   starts calling a new `L.*` method (#318). The same proxy gap hits
   `fonts.googleapis.com` (`ERR_CONNECTION_RESET`) — same fix if a case ever
   needs real fonts loaded.
@@ -211,7 +211,7 @@ that produces the *identical* visible symptom the owner reported. On
 2026-08-09 (#309) the owner reported the live planner showing every favourite
 as unavailable ("no way all of those shows aren't available"). The first
 hypothesis — a Playwright harness's self-signed HTTPS origin making
-`shared/data-cache.js`'s `cache.put()` throw — reproduced the exact same
+`site/shared/data-cache.js`'s `cache.put()` throw — reproduced the exact same
 all-red "📅 No dates" grid and shipped a fix (PR #310) for a bug that wasn't
 the owner's bug. It was overturned only ~12 minutes later when the owner
 supplied a screenshot of the browser's Network tab (zero requests for the four
@@ -221,7 +221,7 @@ stale-vs-fresh cache generation mismatch — see the data-pipeline section
 below).
 
 This site has three caching layers (the browser's own HTTP cache, the
-`caches` API in `shared/data-cache.js`, and `localStorage` TTL stamps), and
+`caches` API in `site/shared/data-cache.js`, and `localStorage` TTL stamps), and
 only the browser's own evidence disambiguates which one is actually in play.
 Ask for a screenshot of DevTools' Network tab and Application → Cache Storage
 panel as the *first* response to a "the live site shows wrong data" report,
@@ -399,31 +399,31 @@ comment in `scraper/README.md` with "see the declarations under
 `.claudinite` path) and turned CI red on the very next commit. Point at the
 pack's own repo-level docs instead, or say nothing.
 
-### The site is several front-ends — cross-page behaviour goes in `shared/`
+### The site is several front-ends — cross-page behaviour goes in `site/shared/`
 
-The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
-are separate front-ends. `plan/lib/` is split: the pure, DOM-free half
+The Now page (`site/index.html` + `site/js/app.js`) and the planner (`site/plan/` + `site/plan/plan.js`)
+are separate front-ends. `site/plan/lib/` is split: the pure, DOM-free half
 (`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared
-planning engine** that `planJerusalem/` also imports, so it must never learn one
-festival's specifics; `plan/plan.js` and `plan/lib/favourites.js` are the Fringe
+planning engine** that `site/planJerusalem/` also imports, so it must never learn one
+festival's specifics; `site/plan/plan.js` and `site/plan/lib/favourites.js` are the Fringe
 planner's alone. Every page is an ES module, so **anything that must behave the
-same on more than one of them belongs in `shared/`** and is imported by each —
+same on more than one of them belongs in `site/shared/`** and is imported by each —
 never copy-pasted. Every page spells the import the same way (`../shared/geo.js`
 resolves to `/shared/geo.js` from any of them), so moving a value there is a
 small change.
 
 What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
-`plan/lib/travel.js` that was ported from `js/app.js`.
+`site/plan/lib/travel.js` that was ported from `site/js/app.js`.
 
 A shared module needs **no** `package.json` to mark it as ESM: the pinned Node 22
 detects module syntax in a `.js` file by itself, with no warning and no flag, so
-`node --check` and the test suite both handle it. `plan/package.json` predates
+`node --check` and the test suite both handle it. `site/plan/package.json` predates
 that detection and its stated reason (silencing a module-detection warning) no
 longer applies; it is harmless, so it stays, but do not copy it as a pattern —
 the `edfringe-no-stray-package-json` check flags any other one.
 `.js` and `.mjs` are both served as `text/javascript` by `python3 -m http.server`,
-so the extension is a style choice — use `.js`, matching `plan/lib/`.
+so the extension is a style choice — use `.js`, matching `site/plan/lib/`.
 
 A new top-level source dir must be added to `scripts/verify.sh`'s `git ls-files`
 list, or nothing in it is ever parse-checked — the `edfringe-verify-sh-covers-source-dirs`
@@ -473,11 +473,11 @@ never clears the bar no matter how much retry evidence backs it. Report a recurr
 owner instead of scripting a workaround into a rule every future unattended session loads
 unquestioned.
 
-## The data pipeline (`scraper/` and `data/`)
+## The data pipeline (`scraper/`, `data/` and `site/data/`)
 
 The domain of this pack: getting show data out of edfringe.com and into the
 committed files the site serves. Read it before touching `scraper/` or anything
-under `data/`. The API's own field reference lives in
+under either data tree. The API's own field reference lives in
 [scraper/SCRAPING.md](../../../../scraper/SCRAPING.md) and the file layout in
 [scraper/README.md](../../../../scraper/README.md) — this is the working
 judgment those two don't carry.
@@ -522,7 +522,7 @@ line does).
 `soldOut` flag: a performance can be `soldOut: false` and still have nothing to
 sell online (`NO_ALLOCATION_CONTACT_VENUE`). The site treats `SOLD_OUT` and
 `NO_ALLOCATION_CONTACT_VENUE` as unavailable and everything else as available
-(`NO_TICKETS_STATUSES` in `js/app.js`), and unknown means available. Any new
+(`NO_TICKETS_STATUSES` in `site/js/app.js`), and unknown means available. Any new
 availability logic — client or scraper — keys off `ticketStatus`; `soldOut` is
 carried through for display only.
 
@@ -548,7 +548,7 @@ Which payload gets which number is the load-bearing distinction:
 | payload | question it answers | price |
 |---|---|---|
 | `shows.min.json` (planner) | what does this *show* cost? | run-wide `priceMin`..`priceMax` |
-| `data/days/*.json` (Now page) | what does it cost *tonight*? | that performance's own `pm` |
+| `site/data/days/*.json` (Now page) | what does it cost *tonight*? | that performance's own `pm` |
 
 A performance the cache has no entry for gets **no `pm` at all** — "Price TBC" —
 rather than the show's minimum. Borrowing a neighbouring night's figure is
@@ -590,7 +590,7 @@ said. Don't "fix" one to match the other.
 Never encode unknown as `0`, and never let a decoder default it to one: a stage
 that collapses three states into two is lying about money, and nothing
 downstream can recover the difference. What the site then *does* with an unknown
-price is a product decision, not a pipeline one — it lives in `shared/price.js`.
+price is a product decision, not a pipeline one — it lives in `site/shared/price.js`.
 
 Two traps in the raw price payload, both already handled and both worth not
 re-introducing: amounts arrive as **strings**, and nearly every show carries a
@@ -611,14 +611,14 @@ listed an hour early, with the tell being shows that name their own time (a 10am
 The pipeline has **one** time-zone crossing, and it is `normalize.local_date_start`.
 `refresh_ticket_status.py` and `fetch_prices.py` share it so a performance is keyed
 by the same local date and start everywhere. Everything written after it — the
-master, `data/days/*.json`, `availability.min.json`, `shows.min.json` — is already
+master, `site/data/days/*.json`, `availability.min.json`, `shows.min.json` — is already
 Edinburgh wall-clock, so **no stage downstream parses, converts, or re-offsets a
 time**. Treating a stored value as UTC a second time is the same bug from the other
 end.
 
 Two consequences to hold on to when touching this:
 
-- **A "now" compared against these times is read in Edinburgh too** — `js/clock.js`
+- **A "now" compared against these times is read in Edinburgh too** — `site/js/clock.js`
   (`festivalNow` / `festivalDate`), never the device clock. A UK visitor cannot see
   the difference, which is why a device clock survives review; a visitor planning
   from another zone reintroduces the whole drift.
@@ -642,10 +642,10 @@ no way to detect that two files it's serving came from incompatible backend
 generations.
 
 The fix is `join_fingerprint(master)` in `scraper/normalize.py`, mirrored
-exactly as `joinFingerprint()` in `plan/lib/hydrate.js` (same algorithm in
+exactly as `joinFingerprint()` in `site/plan/lib/hydrate.js` (same algorithm in
 both languages — `normalize.py`'s self-test asserts they agree, and that a
 moved start time changes the fingerprint while a price change doesn't),
-carried as the sidecar's `k` field. `plan/plan.js` compares its own
+carried as the sidecar's `k` field. `site/plan/plan.js` compares its own
 `joinFingerprint()` of the catalogue it holds against the sidecar's `k` and
 calls `evictCached()` on both URLs on a mismatch, forcing a refetch of the
 matching pair. Any future backend change that moves a performance's join key
@@ -655,9 +655,10 @@ belong to different generations.
 
 ### The committed data is generated output — regenerate it, never hand-edit it
 
-`data/raw_pages/` is a git-ignored regenerable cache. `data/normalized/`,
-`data/venues.json` and `data/days/` **are** committed, because the browser
-fetches them — but they are still generator output. Fix the data by fixing
+`data/raw_pages/` is a git-ignored regenerable cache. The master
+`data/normalized/shows.json` and everything under `site/data/` **are** committed —
+the `site/data/` half because the browser fetches it — but they are still generator
+output. Fix the data by fixing
 `scraper/normalize.py` and re-running it (`--merge` for a top-up, no flag for a
 full rebuild from the raw cache); a hand-edit is silently overwritten by the next
 `refresh-shows` run and leaves the bug in the generator.
@@ -670,14 +671,14 @@ wrong: the edit survives, silently disagreeing with the box office forever. Re-r
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
 
-`data/jerusalem/` is a **second generator's** output — the one-shot Jerusalem
+`site/data/jerusalem/` is a **second generator's** output — the one-shot Jerusalem
 scrape's. Adding a third festival's, name the file and the script that writes it
 in that same allowlist, never the directory, so the next one stays a moment a
 person confirms rather than a shape anything can ride in on.
 
 ### A long-running workflow that commits generated data will race the hourly refresh
 
-Any workflow that writes to `data/normalized/`, `data/venues.json` or `data/days/`
+Any workflow that writes to `data/normalized/` or anything under `site/data/`
 and can run for more than about an hour is racing `refresh-tickets`, which pushes
 to `main` every hour through the festival. A plain `git push` at the end of such a
 run is not occasionally rejected — it is *guaranteed* to be, so the commit step has
@@ -696,16 +697,16 @@ bespoke recovery discovered the same way after the fact.
 
 ### Changing the wire format is a four-file change
 
-The day files and `shows.min.json` reference `data/venues.json`'s global lists
+The day files and `shows.min.json` reference `site/data/venues.json`'s global lists
 **by position** (`genre`, `room`, `subs`, `ts`; `g`, `rm`, `sg`, `ar`). That
 encoding has one producer and two decoders, and they must move together:
 
 - producer — `scraper/normalize.py` (`build_lookups` / `build_day_files` /
   `minify_master` / `build_availability`)
-- decoder 1 — `js/app.js` `adaptShow`, for the day files
-- decoder 2 — `plan/lib/hydrate.js` `rehydrateShows`, the exact inverse of
+- decoder 1 — `site/js/app.js` `adaptShow`, for the day files
+- decoder 2 — `site/plan/lib/hydrate.js` `rehydrateShows`, the exact inverse of
   `minify_master`, round-tripped against the real committed files by
-  `plan/lib/__tests__/hydrate.test.mjs`
+  `site/plan/lib/__tests__/hydrate.test.mjs`
 
 Add or drop an indexed field and all three change in the same commit. That the
 indices still *resolve* is enforced by the `edfringe-lookup-indices` check — it
@@ -895,7 +896,7 @@ is a real finding about the UI, not just a testing limitation.
 - `shared/fixtures/data/` is a snapshot of the **real committed data**, cast by
   the committed builder for state variety (sold-out / free / price-unknown /
   tight / every planner verdict). It is **frozen**: the nightly data refresh
-  never touches it, and no case may reach for `data/` live files.
+  never touches it, and no case may reach for `site/data/` live files.
 - Every deviation from the source bytes is documented as an `ADJUST` in the
   builder — a fixture edit without one is hand-invented data.
 - Re-running the builder re-casts every golden. That is a re-baselining: run it

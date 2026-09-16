@@ -19,8 +19,12 @@ import path from "node:path";
 import { imageUrl, mmddToDate, performanceKeys, performanceAvailability, rehydrateShows, joinFingerprint } from "../hydrate.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// The round trip spans the publish boundary: the master it starts from is the
+// pipeline's, and every wire file it is packed into is published.
 const DATA = path.join(__dirname, "..", "..", "..", "data");
-const master = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.json"), "utf-8"));
+const PIPELINE_DATA = path.join(__dirname, "..", "..", "..", "..", "data");
+const master = JSON.parse(
+  readFileSync(path.join(PIPELINE_DATA, "normalized", "shows.json"), "utf-8"));
 const wire = JSON.parse(readFileSync(path.join(DATA, "normalized", "shows.min.json"), "utf-8"));
 const lookups = JSON.parse(readFileSync(path.join(DATA, "venues.json"), "utf-8"));
 const descriptions = JSON.parse(

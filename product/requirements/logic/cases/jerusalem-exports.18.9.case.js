@@ -38,7 +38,7 @@ const UNTIMED = {
 module.exports = {
   description: "the ICS is Jerusalem wall clock; a show with no running time exports as an instant",
   async verify(assert) {
-    const { toIcs } = await import("../../../../plan/lib/itinerary.js");
+    const { toIcs } = await import("../../../../site/plan/lib/itinerary.js");
     const ics = toIcs([TIMED, UNTIMED], { timezone: "Asia/Jerusalem", now: new Date(Date.UTC(2026, 9, 1)) });
 
     // The zone's own rules ride along, so a calendar in another country still

@@ -2,10 +2,10 @@
 // vendored mount, so this returns plain finding objects rather than importing
 // engine/checks/helpers/findings.mjs.
 
-const DAY_FILE = /^data\/days\/\d{4}-\d{2}-\d{2}\.json$/;
-const MASTER = 'data/normalized/shows.min.json';
-const AVAILABILITY = 'data/normalized/availability.min.json';
-const LOOKUPS = 'data/venues.json';
+const DAY_FILE = /^site\/data\/days\/\d{4}-\d{2}-\d{2}\.json$/;
+const MASTER = 'site/data/normalized/shows.min.json';
+const AVAILABILITY = 'site/data/normalized/availability.min.json';
+const LOOKUPS = 'site/data/venues.json';
 
 // Per file, so one systematically shifted lookup list reports a readable handful
 // instead of thousands of identical lines.

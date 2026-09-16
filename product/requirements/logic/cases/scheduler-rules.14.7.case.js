@@ -14,7 +14,7 @@ const BASE = { dateStart: "2026-08-15", dateEnd: "2026-08-16", minGapDifferentVe
 module.exports = {
   description: "greedy earliest-finish packing, one performance per show, fully deterministic",
   async verify(assert) {
-    const { buildSchedule } = await import("../../../../plan/lib/engine.js");
+    const { buildSchedule } = await import("../../../../site/plan/lib/engine.js");
 
     // Earliest-finish-first fits all three where naive earliest-start would too,
     // but the point is the count: overlapping options resolve to a full evening.

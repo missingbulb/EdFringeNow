@@ -50,7 +50,9 @@ python3 scraper/normalize.py --merge
 
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-git add data/normalized data/venues.json data/days
+# The master in data/normalized and every wire file under site/data — the
+# regeneration writes both sides of the publish boundary.
+git add data/normalized site/data
 if git diff --staged --quiet; then
   echo "No data changes today."
 else

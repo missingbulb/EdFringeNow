@@ -3,7 +3,7 @@
 module.exports = {
   description: "the favourites parser reads real CSV exports and falls back to plain URL/slug lists",
   async verify(assert) {
-    const { parseFavourites, slugFromUrl } = await import("../../../../plan/lib/favourites.js");
+    const { parseFavourites, slugFromUrl } = await import("../../../../site/plan/lib/favourites.js");
 
     assert.equal(slugFromUrl("https://www.edfringe.com/tickets/whats-on/some-show"), "some-show");
     assert.equal(slugFromUrl("http://edfringe.com/tickets/whats-on/other-show"), "other-show");

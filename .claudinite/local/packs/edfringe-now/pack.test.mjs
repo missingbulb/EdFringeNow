@@ -204,13 +204,13 @@ test("this repo's verify.sh covers every real top-level source dir", () => {
 });
 
 // --- no-stray-package-json: only the repo root and the grandfathered
-// plan/package.json may carry one ---
+// site/plan/package.json may carry one ---
 
 test("only the allowed package.json files ⇒ no findings", () => {
   const out = noStrayPackageJsonRule.run(ctxOf({
     "package.json": "{}",
-    "plan/package.json": "{}",
-    "js/app.js": "",
+    "site/plan/package.json": "{}",
+    "site/js/app.js": "",
   }));
   assert.deepEqual(out, []);
 });
@@ -218,13 +218,13 @@ test("only the allowed package.json files ⇒ no findings", () => {
 test("a package.json copied into a new source dir is reported", () => {
   const out = noStrayPackageJsonRule.run(ctxOf({
     "package.json": "{}",
-    "plan/package.json": "{}",
-    "shared/package.json": "{}",
+    "site/plan/package.json": "{}",
+    "site/shared/package.json": "{}",
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-no-stray-package-json");
   assert.equal(out[0].severity, "advisory");
-  assert.equal(out[0].file, "shared/package.json");
+  assert.equal(out[0].file, "site/shared/package.json");
   assert.match(out[0].fix, /remove it/);
 });
 

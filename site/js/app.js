@@ -2558,7 +2558,7 @@ function syncDebugPicker() {
 }
 
 /* Stamp the app version onto the debug pill and the footer copyright's tooltip
- * (single-sourced from package.json, the same file the planner reads). The debug
+ * (read from version.json, the same file the planner reads). The debug
  * pill is hidden for most visitors, so the footer popup is the version anyone
  * can reach. Best-effort — the pill stays "debug" and the footer gets no popup
  * if the fetch fails (e.g. local file:// with no server). */
@@ -2567,7 +2567,7 @@ async function loadAppVersion() {
   const copy = document.getElementById("footerVersion");
   if (!pill && !copy) return;
   try {
-    const res = await fetch("package.json");
+    const res = await fetch("version.json");
     if (!res.ok) return;
     const pkg = await res.json();
     if (!pkg || typeof pkg.version !== "string") return;
@@ -2602,7 +2602,7 @@ function wireDebugControls() {
     });
   }
 
-  // The pill shows the app version (single-sourced from package.json), not the
+  // The pill shows the app version (single-sourced from version.json), not the
   // build time. Best-effort: on failure it just stays "debug".
   loadAppVersion();
 

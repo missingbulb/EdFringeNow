@@ -66,12 +66,12 @@ const cleanDay = [
 
 test("clean day file + master produce no findings", () => {
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/days/2026-08-07.json": cleanDay,
-    "data/normalized/shows.min.json": [
+    "site/data/venues.json": LOOKUPS,
+    "site/data/days/2026-08-07.json": cleanDay,
+    "site/data/normalized/shows.min.json": [
       { i: "X", t: "A show", g: 1, sg: [0], rm: 0, ar: 1, p: [{ d: 807, s: "20:00" }] },
     ],
-    "data/normalized/availability.min.json": {
+    "site/data/normalized/availability.min.json": {
       v: 1, ts: ["TICKETS_AVAILABLE"], a: { X: { "807|20:00": 0 } }, o: {},
     },
   }));
@@ -82,21 +82,21 @@ test("a genre index past the end of venues.json genres is reported", () => {
   // The exact regression this guards: someone shrinks/reorders a lookup list (or
   // hand-edits a day file) and every affected card silently mislabels.
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/days/2026-08-07.json": [{ id: "X", title: "A show", genre: 7, venue: "33", room: 0, ts: 1 }],
+    "site/data/venues.json": LOOKUPS,
+    "site/data/days/2026-08-07.json": [{ id: "X", title: "A show", genre: 7, venue: "33", room: 0, ts: 1 }],
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-lookup-indices");
   assert.equal(out[0].severity, "blocking");
-  assert.equal(out[0].file, "data/days/2026-08-07.json");
+  assert.equal(out[0].file, "site/data/days/2026-08-07.json");
   assert.match(out[0].what, /genre = 7 is outside venues\.json "genres"/);
   assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the regeneration command");
 });
 
 test("out-of-range subgenre, room and ticket-status indices are reported too", () => {
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/days/2026-08-07.json": [
+    "site/data/venues.json": LOOKUPS,
+    "site/data/days/2026-08-07.json": [
       { id: "X", title: "A", genre: 0, subs: [9], venue: "33", room: 0, ts: 1 },
       { id: "Y", title: "B", genre: 0, subs: [], venue: "33", room: 4, ts: 1 },
       { id: "Z", title: "C", genre: 0, subs: [], venue: "33", room: 0, ts: 5 },
@@ -110,14 +110,14 @@ test("out-of-range subgenre, room and ticket-status indices are reported too", (
 
 test("the master's own keys (g / rm / ar / sg) are checked", () => {
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/normalized/shows.min.json": [
+    "site/data/venues.json": LOOKUPS,
+    "site/data/normalized/shows.min.json": [
       { i: "X", t: "A show", g: 0, sg: [3], rm: 0, ar: 0, p: [{ d: 807, s: "20:00" }] },
       { i: "Y", t: "Bad room", g: 0, sg: [], rm: 4, ar: 0, p: [] },
     ],
   }));
   assert.equal(out.length, 2);
-  assert.ok(out.every((f) => f.file === "data/normalized/shows.min.json"));
+  assert.ok(out.every((f) => f.file === "site/data/normalized/shows.min.json"));
   assert.match(out[0].what, /sg\[\] = 3 is outside venues\.json "subgenres"/);
   assert.match(out[1].what, /rm = 4 is outside venues\.json "rooms"/);
 });
@@ -127,8 +127,8 @@ test("the sidecar's status indices are checked against its OWN ts list", () => {
   // refresh-tickets and must not depend on the lookup file having been
   // regenerated alongside it.
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/normalized/availability.min.json": {
+    "site/data/venues.json": LOOKUPS,
+    "site/data/normalized/availability.min.json": {
       v: 1,
       ts: ["TICKETS_AVAILABLE", "SOLD_OUT"],
       a: { X: { "807|20:00": 1 }, Y: { "807|20:00": 4 }, Z: { "807|20:00": "SOLD_OUT" } },
@@ -136,7 +136,7 @@ test("the sidecar's status indices are checked against its OWN ts list", () => {
     },
   }));
   assert.equal(out.length, 2, JSON.stringify(out, null, 2));
-  assert.ok(out.every((f) => f.file === "data/normalized/availability.min.json"));
+  assert.ok(out.every((f) => f.file === "site/data/normalized/availability.min.json"));
   assert.match(out[0].what, /Y 807\|20:00 = 4 is outside this file's own "ts" \(2 entries\)/);
   assert.match(out[1].what, /Z 807\|20:00 is "SOLD_OUT", not an integer index/);
   assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the regeneration command");
@@ -146,8 +146,8 @@ test("a sidecar index that venues.json would reject but its own list allows is f
   // venues.json here has 3 ticketStatuses; the sidecar's own list has 5. Index 4
   // is valid for the sidecar and must not be reported.
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/normalized/availability.min.json": {
+    "site/data/venues.json": LOOKUPS,
+    "site/data/normalized/availability.min.json": {
       v: 1, ts: ["A", "B", "C", "D", "E"], a: { X: { "807|20:00": 4 } }, o: {},
     },
   }));
@@ -156,8 +156,8 @@ test("a sidecar index that venues.json would reject but its own list allows is f
 
 test("a non-integer index is reported rather than silently coerced", () => {
   const out = rule.run(ctxOf({
-    "data/venues.json": LOOKUPS,
-    "data/days/2026-08-07.json": [{ id: "X", title: "A", genre: "Comedy", venue: "33", room: 0, ts: 1 }],
+    "site/data/venues.json": LOOKUPS,
+    "site/data/days/2026-08-07.json": [{ id: "X", title: "A", genre: "Comedy", venue: "33", room: 0, ts: 1 }],
   }));
   assert.equal(out.length, 1);
   assert.match(out[0].what, /genre is "Comedy", not an integer index/);
@@ -170,10 +170,10 @@ test("no data layer in the tree ⇒ no findings (relevance-first)", () => {
 test("this repo's committed data satisfies the invariant", () => {
   // The live gate: every real day file plus the master and the availability
   // sidecar, read off disk.
-  const tree = ["data/venues.json", "data/normalized/shows.min.json",
-                "data/normalized/availability.min.json"];
-  const days = readFileSync(path.join(REPO, "data/days/index.json"), "utf8");
-  for (const d of JSON.parse(days).dates) tree.push(`data/days/${d}.json`);
+  const tree = ["site/data/venues.json", "site/data/normalized/shows.min.json",
+                "site/data/normalized/availability.min.json"];
+  const days = readFileSync(path.join(REPO, "site/data/days/index.json"), "utf8");
+  for (const d of JSON.parse(days).dates) tree.push(`site/data/days/${d}.json`);
   const present = tree.filter((f) => existsSync(path.join(REPO, f)));
   assert.ok(present.length > 3, "expected the committed day files to be present");
 
@@ -272,13 +272,13 @@ test("this repo's verify.sh still runs the normalizer self-test", () => {
 // something scraper/normalize.py produces ---
 
 const cleanDataTree = {
-  "data/venues.json": "",
+  "site/data/venues.json": "",
   "data/shows.json": "",
   "data/normalized/shows.json": "",
-  "data/normalized/shows.min.json": "",
-  "data/normalized/descriptions.min.json": "",
-  "data/days/index.json": "",
-  "data/days/2026-08-07.json": "",
+  "site/data/normalized/shows.min.json": "",
+  "site/data/normalized/descriptions.min.json": "",
+  "site/data/days/index.json": "",
+  "site/data/days/2026-08-07.json": "",
   "js/app.js": "",
 };
 
@@ -303,11 +303,11 @@ test("a second scraper's named output is allowed; a lookalike beside it is not",
   // data/jerusalem/ is the one-shot Jerusalem scrape's output, written by
   // scraper/jerusalem/fetch.py. Named, like the price cache, so the exemption
   // covers that file and not the directory it lives in.
-  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/shows.json": "" })), []);
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/jerusalem/shows.json": "" })), []);
   const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/notes.json": "" }));
   assert.equal(out.length, 1);
   assert.equal(out[0].file, "data/jerusalem/notes.json");
-  assert.ok(out[0].fix.includes("data/jerusalem/shows.json"),
+  assert.ok(out[0].fix.includes("site/data/jerusalem/shows.json"),
     "the fix must name the outputs that ARE allowed, so the reader can tell the two apart");
 });
 

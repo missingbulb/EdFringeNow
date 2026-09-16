@@ -3,7 +3,7 @@
 module.exports = {
   description: "price caps are inclusive, Free means exactly £0, unknown prices match no cap",
   async verify(assert) {
-    const { matchesPrice, showPrice } = await import("../../../../shared/price.js");
+    const { matchesPrice, showPrice } = await import("../../../../site/shared/price.js");
     const priced = (n) => ({ priceMin: n, free: false });
     const unknown = { priceMin: null, free: false };
     const free = { priceMin: 0, free: true };

@@ -26,11 +26,11 @@ Stripped of Edinburgh, the planner is four pure computations over a catalogue of
 
 | Step | Module | Depends on |
 |---|---|---|
-| favourites text → show IDs | `plan/lib/favourites.js` | a stable show ID and a canonical show URL |
-| performances → *available* performances | `plan/lib/availability.js` | a ticket-status vocabulary |
-| venue pair → travel minutes | `plan/lib/travel.js` | coordinates + a speed model |
-| available performances → clash-free itinerary | `plan/lib/engine.js` | a day window, meal bands, per-day caps |
-| itinerary → CSV / ICS | `plan/lib/itinerary.js` | a timezone and a wall-clock convention |
+| favourites text → show IDs | `site/plan/lib/favourites.js` | a stable show ID and a canonical show URL |
+| performances → *available* performances | `site/plan/lib/availability.js` | a ticket-status vocabulary |
+| venue pair → travel minutes | `site/plan/lib/travel.js` | coordinates + a speed model |
+| available performances → clash-free itinerary | `site/plan/lib/engine.js` | a day window, meal bands, per-day caps |
+| itinerary → CSV / ICS | `site/plan/lib/itinerary.js` | a timezone and a wall-clock convention |
 
 **None of that is Edinburgh-specific in principle.** "Given a set of things I
 want to see, each with several showings across a date range, in venues that take
@@ -82,7 +82,7 @@ means for this document:
 
 - **It is availability-blind.** The performance object carries no sold-out,
   on-sale or remaining-tickets field. Availability is the planner's *first*
-  computation (`plan/lib/availability.js`) — a source without it can populate a
+  computation (`site/plan/lib/availability.js`) — a source without it can populate a
   catalogue but cannot drive a schedule. So Tier 1 is not simply "better than
   Tier 2"; the tiers are about *reachability of the data*, not sufficiency of it,
   and a real second city may need both a listings source and a ticketing source.
@@ -118,7 +118,7 @@ portable part of the product. Today it depends on:
 
 That chain has to be re-established, festival by festival, and there is no reason
 to expect it exists. A portable product probably cannot depend on it: the
-in-tool search path (`plan/lib/search.js`, already built) is the one intake that
+in-tool search path (`site/plan/lib/search.js`, already built) is the one intake that
 travels, and for a new festival it may have to be the *only* one.
 
 ---
@@ -161,10 +161,10 @@ Two design calls worth making early, because they are hard to reverse:
 
 `scraper/` becomes per-festival fetchers behind one normalizer contract, rather
 than one script that knows edfringe's schema. The contract is already implicitly
-defined — `data/normalized/shows.json`'s shape, decoded by `js/app.js`'s
-`adaptShow` and `plan/lib/hydrate.js`'s `rehydrateShows` — but it is not written
+defined — `data/normalized/shows.json`'s shape, decoded by `site/js/app.js`'s
+`adaptShow` and `site/plan/lib/hydrate.js`'s `rehydrateShows` — but it is not written
 down anywhere as a spec, and it uses **positional index encoding** against
-`data/venues.json`'s global lookup lists. Any second festival forces that
+`site/data/venues.json`'s global lookup lists. Any second festival forces that
 implicit contract to become explicit, and the positional encoding to become
 per-festival rather than global.
 
@@ -172,7 +172,7 @@ per-festival rather than global.
 
 Today the planner fetches the full `data/normalized/shows.json` (~1.1 MB gzipped,
 4,078 shows) on load. That is already noted as borderline in
-[`plan/README.md`](../plan/README.md). Multi-festival makes it a real constraint,
+[`site/plan/README.md`](../site/plan/README.md). Multi-festival makes it a real constraint,
 and the fix is structural rather than an optimisation: data is partitioned per
 festival (`data/<festival-id>/…`) and only the selected festival's file is
 fetched. Which festival is selected has to come from the URL — `/plan/` becomes
@@ -181,7 +181,7 @@ right catalogue.
 
 ### 3.4 What stays untouched
 
-`plan/lib/engine.js` should not change at all. If a festival adapter requires an
+`site/plan/lib/engine.js` should not change at all. If a festival adapter requires an
 engine change, that is a signal the descriptor is missing a field.
 
 ---
@@ -191,7 +191,7 @@ engine change, that is a signal the descriptor is missing a field.
 Four separable problems, routinely conflated:
 
 **a. UI strings.** There is no i18n layer at all today — every label is a literal
-in `plan/plan.js`, `js/app.js` and the two `index.html` files, both of which are
+in `site/plan/plan.js`, `site/js/app.js` and the two `site/index.html` files, both of which are
 `<html lang="en">`. Introducing one is mechanical but touches everything, and
 should happen before, not after, a second locale exists.
 
@@ -204,7 +204,7 @@ serve. This means:
   translated product;
 - machine-translating descriptions is possible but is a per-show cost against
   1,780 shows and a quality risk on marketing copy;
-- **search must work in the content's language.** `plan/lib/search.js` matching
+- **search must work in the content's language.** `site/plan/lib/search.js` matching
   needs diacritic-insensitive normalization (`théâtre` ≈ `theatre`) and
   locale-aware collation before it is useful in French, and the same again for
   Romanian (Sibiu) or Italian (Milan).

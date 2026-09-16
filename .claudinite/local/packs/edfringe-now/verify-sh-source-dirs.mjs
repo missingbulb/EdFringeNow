@@ -4,7 +4,7 @@
 
 const VERIFY = 'scripts/verify.sh';
 
-// The `git ls-files 'js' 'plan' 'shared'` call in verify.sh's "JavaScript
+// The `git ls-files 'site' 'scripts' …` call in verify.sh's "JavaScript
 // syntax" step — captures its quoted top-level-directory arguments.
 const LS_FILES_DIRS = /git ls-files((?:\s+'[^']*')+)/;
 const JS_FILE = /\.m?js$/;

@@ -25,7 +25,7 @@ module.exports = {
   description: "prices are written the same way everywhere",
   table: TABLE,
   async verify(assert) {
-    const { priceLabel } = await import("../../../../shared/price.js");
+    const { priceLabel } = await import("../../../../site/shared/price.js");
     for (const [known, expected] of TABLE.rows) {
       assert.equal(priceLabel(SHOWS[known]), expected, known);
     }
