@@ -402,15 +402,15 @@ pack's own repo-level docs instead, or say nothing.
 ### The site is several front-ends — cross-page behaviour goes in `shared/`
 
 The Now page (`index.html` + `js/app.js`) and the planner (`plan/` + `plan/plan.js`)
-are separate front-ends, and `plan/lib/` was the planner's own engine until
-`planJerusalem/` — a second festival's planner — started importing its pure,
-DOM-free half. Treat what `planJerusalem/` imports (`engine.js`, `travel.js`,
-`itinerary.js`, `availability.js`) as a shared engine that must not learn one
-festival's specifics; `plan/plan.js` and `plan/lib/favourites.js` are still the
-Fringe planner's alone. But both are now ES modules, so **anything that must behave the same on
-both pages belongs in `shared/`** and is imported by each — never copy-pasted.
-Both pages spell the import the same way (`../shared/geo.js` resolves to
-`/shared/geo.js` from either), so moving a value there is a small change.
+are separate front-ends. `plan/lib/` is split: the pure, DOM-free half
+(`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared
+planning engine** that `planJerusalem/` also imports, so it must never learn one
+festival's specifics; `plan/plan.js` and `plan/lib/favourites.js` are the Fringe
+planner's alone. Every page is an ES module, so **anything that must behave the
+same on more than one of them belongs in `shared/`** and is imported by each —
+never copy-pasted. Every page spells the import the same way (`../shared/geo.js`
+resolves to `/shared/geo.js` from any of them), so moving a value there is a
+small change.
 
 What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
@@ -670,11 +670,10 @@ wrong: the edit survives, silently disagreeing with the box office forever. Re-r
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
 
-`data/jerusalem/` is a **second generator's** output, not this one's — the
-one-shot Jerusalem scrape writes it and nothing else reads or rewrites it. It is
-allowed by name for the same reason, which is also the rule for any third
-festival: name the file and the script that writes it, never the directory, so
-adding a festival stays the moment a person confirms what is in it.
+`data/jerusalem/` is a **second generator's** output — the one-shot Jerusalem
+scrape's. Adding a third festival's, name the file and the script that writes it
+in that same allowlist, never the directory, so the next one stays a moment a
+person confirms rather than a shape anything can ride in on.
 
 ### A long-running workflow that commits generated data will race the hourly refresh
 

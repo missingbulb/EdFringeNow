@@ -167,9 +167,14 @@ test("Israel's transport links: a paid transfer and the untagged train", () => {
       encodeURIComponent("https://kiwitaxi.com/en/israel/ben-gurion-airport")
   );
 
-  // Israel Railways runs no programme, so this one is untagged by design: it
-  // takes no affiliates argument at all, which is what stops a future edit
-  // quietly wrapping it in someone's click template.
-  assert.equal(israelRailLink().url, "https://www.rail.co.il/en");
-  assert.equal(israelRailLink.length, 0);
+  // Israel Railways runs no programme, so this one is untagged by design —
+  // even when every click template in the block is filled in, which is the
+  // state that would tempt a future edit to route it through one.
+  const everyTemplateSet = {
+    ...AFFILIATES,
+    bookingClickTemplate: template,
+    omioClickTemplate: template,
+    kiwitaxiClickTemplate: template,
+  };
+  assert.equal(israelRailLink(everyTemplateSet).url, "https://www.rail.co.il/en");
 });
