@@ -304,11 +304,21 @@ test("a second scraper's named output is allowed; a lookalike beside it is not",
   // scraper/jerusalem/fetch.py. Named, like the price cache, so the exemption
   // covers that file and not the directory it lives in.
   assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/jerusalem/shows.json": "" })), []);
-  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/notes.json": "" }));
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/jerusalem/notes.json": "" }));
   assert.equal(out.length, 1);
-  assert.equal(out[0].file, "data/jerusalem/notes.json");
+  assert.equal(out[0].file, "site/data/jerusalem/notes.json");
   assert.ok(out[0].fix.includes("site/data/jerusalem/shows.json"),
     "the fix must name the outputs that ARE allowed, so the reader can tell the two apart");
+});
+
+test("the published tree is scanned too — a hand-made file under site/data/ is reported", () => {
+  // The rule covers two roots, and this is the one that matters most: a file the
+  // normalizer does not write, sitting under site/data/, is SERVED to visitors.
+  // Without this case every negative fixture here sits under data/, so dropping
+  // site/data/ from the scan leaves the whole suite green.
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/hand/notes.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "site/data/hand/notes.json");
 });
 
 test("a force-added Jerusalem page cache gets the un-track fix, not a delete", () => {
