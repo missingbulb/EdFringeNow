@@ -190,10 +190,13 @@ engine change, that is a signal the descriptor is missing a field.
 
 Four separable problems, routinely conflated:
 
-**a. UI strings.** There is no i18n layer at all today — every label is a literal
-in `site/plan/plan.js`, `site/js/app.js` and the two `site/index.html` files, both of which are
-`<html lang="en">`. Introducing one is mechanical but touches everything, and
-should happen before, not after, a second locale exists.
+**a. UI strings.** The festival planner has one — `site/planJerusalem/i18n/`, a
+keyed catalogue in ICU MessageFormat with a pixel budget per key, four languages
+and a direction that follows the reader's. The Now page and the Fringe planner
+do not: every label there is still a literal in `site/js/app.js`,
+`site/plan/plan.js` and their `index.html`, both `<html lang="en">`. Extending
+the layer to them is mechanical but touches everything, and the festival planner
+is the worked example of what it costs.
 
 **b. Content strings — the hard one.** Show titles, descriptions, company names,
 venue names and content warnings come from the festival, in the festival's
@@ -322,7 +325,8 @@ never taken:
    July previews fall off the axis — and it is the largest single blocker.
 3. **Extract the festival descriptor** and route the constants in §5 through it,
    with Edinburgh as the only entry. No behaviour change; the diff is the point.
-4. **Add an i18n layer and `Intl`-based formatting**, still English-only.
+4. **Add an i18n layer and `Intl`-based formatting**, still English-only. (Done
+   for the festival planner, in four languages — see §4a.)
 5. **Prove it with a second English festival** (Brighton or Perth) end to end,
    including the intake question — that is where the model gets tested, not the
    engine.
