@@ -906,3 +906,117 @@ trips, so the experience can be played with before any of it touches live data.
   through to the end. The page lands on "When?" again, not on an empty
   calendar; once the range is completed the draft has its day columns.
   </details>
+
+---
+
+# Part V — the Jerusalem Comedy Festival planner (`/planJerusalem`)
+
+## 18. A second festival on the same board
+
+The Edinburgh planner's board, grid and schedule, pointed at a five-night
+festival in Jerusalem whose programme is in Hebrew. The page is festival-shaped
+rather than Jerusalem-shaped: everything that differs between the two — the
+city, the dates, the storage keys, the palette, the partner links — comes from
+one descriptor, so a third festival is a descriptor and a theme rather than a
+third page.
+
+- `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
+
+  ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
+
+  <details><summary>Notes</summary>
+
+  The nav links are `Now` (`../`), `Plan` (`../plan/`) and `Jerusalem`
+  (`./`, active). The header hint reads the festival's own run, not
+  Edinburgh's.
+  </details>
+
+- `18.2` The empty board: the whole programme offered for browsing, over the five festival nights.
+
+  ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
+
+  <details><summary>Notes</summary>
+
+  There is no favourites export to upload for this festival — the Edinburgh
+  planner's drop stage is replaced by a browse stage listing every show, and
+  the day header spans only the nights the programme actually uses.
+  </details>
+
+- `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
+
+  ![jerusalem-hebrew.18.3](requirements/screen/cases/jerusalem-hebrew.18.3.png) <!-- req-gallery:18.3 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered as one grid lane and one search result for the same show: the title,
+  its venue and its category are the source's own Hebrew, each carrying
+  `lang="he"` and `dir="rtl"` so punctuation and mixed Latin sit on the correct
+  side. Nothing is transliterated.
+  </details>
+
+- `18.4` The day grid: one lane per starred show, its performance nights marked, its verdict named.
+
+  ![jerusalem-grid.18.4](requirements/screen/cases/jerusalem-grid.18.4.png) <!-- req-gallery:18.4 -->
+
+  <details><summary>Notes</summary>
+
+  The festival publishes no live availability and never cancels, so every
+  performance is drawn as bookable and the Edinburgh grid's sold-out and
+  offer-status colours never appear. A free event is marked as free.
+  </details>
+
+- `18.5` The schedule: the catchable shows fitted across the window, with the walk between venues.
+
+  ![jerusalem-schedule.18.5](requirements/screen/cases/jerusalem-schedule.18.5.png) <!-- req-gallery:18.5 -->
+
+  <details><summary>Notes</summary>
+
+  Six venues inside one square kilometre of central Jerusalem, so the travel
+  legs are short; two of them share a building and the leg between them is
+  zero.
+  </details>
+
+- `18.6` "Find a bed" opens Booking.com's Hebrew edition for Jerusalem, on the window's own nights.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:18.6 -->
+
+  <details><summary>Notes</summary>
+
+  Asserted as the URL the link carries, never followed: the `searchresults.he.html`
+  path, `ss=Jerusalem`, `selected_currency=ILS`, and the check-in/check-out
+  taken from the date window.
+  </details>
+
+- `18.7` "Getting here" offers the paid airport transfer and the train beside it.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:18.7 -->
+
+  <details><summary>Notes</summary>
+
+  Two links, both asserted as URLs. Israel Railways runs no referral
+  programme; it is offered anyway because it is the cheapest way in from the
+  airport, and it ships untagged.
+  </details>
+
+- `18.8` Starred shows survive a reload, and never reach the Edinburgh planner's own stored list.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:18.8 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: star two shows, reload, and the same two lanes are back. The
+  Edinburgh planner's `localStorage` key is untouched throughout — the two
+  planners share code, never state.
+  </details>
+
+- `18.9` Exported times are Jerusalem wall clock, and a show with no published running time is exported as an instant.
+
+  🔧 _Logic leaf._ <!-- req-gallery:18.9 -->
+
+  <details><summary>Notes</summary>
+
+  The ICS carries floating local times (no `Z`, no VTIMEZONE), right for an
+  on-the-ground plan. Four of the festival's shows publish no running time;
+  those export with end equal to start rather than a guessed length, which is
+  the same three-state discipline the price fields keep.
+  </details>
