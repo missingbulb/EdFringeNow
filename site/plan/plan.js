@@ -16,6 +16,7 @@ import { isInUK } from "../shared/geo.js";
 import { cachedFetchJson, evictCached, DAY_MS } from "../shared/data-cache.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
+import { readVersionStamp } from "../shared/version.js";
 import { parseFavourites } from "./lib/favourites.js";
 import { buildIndex, matchFavourites, summarize, buildSchedule, placementDiagnostics, slotKey } from "./lib/engine.js";
 import { isAvailable } from "./lib/availability.js";
@@ -65,7 +66,6 @@ const CATALOGUE_TTL_MS = 4 * DAY_MS;
 const AVAILABILITY_TTL_MS = DAY_MS;
 const LOOKUPS_TTL_MS = DAY_MS;
 const DESCRIPTIONS_TTL_MS = 7 * DAY_MS;
-const APP_VERSION_URL = "../version.json"; // the published version record the perf pill reads
 
 const YEAR = 2026;
 const MONTH = "08"; // August, 2-digit
@@ -4339,17 +4339,10 @@ function wireExports() {
 
 // --- Version + reschedule-timing pill --------------------------------------
 
-/** Fetch the app version (single-sourced from version.json) for the pill. */
-async function loadVersion() {
-  try {
-    const res = await fetch(APP_VERSION_URL);
-    if (res.ok) {
-      const pkg = await res.json();
-      if (pkg && typeof pkg.version === "string") state.version = pkg.version;
-    }
-  } catch (err) {
-    console.warn("Fringe Planner: couldn't read app version", err);
-  }
+/** Show the app version (stamped into the page) on the perf pill. */
+function loadVersion() {
+  const version = readVersionStamp();
+  if (version) state.version = version;
   renderPerfPill();
 }
 

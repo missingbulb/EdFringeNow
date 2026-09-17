@@ -3,11 +3,9 @@ name: UI requirements
 # The executable-requirements UI lane: renders the real pages in the pinned
 # headless Chromium and compares pixel-exact against the committed goldens
 # (product/requirements/). Deliberately NOT part of the static-website pack's
-# vendored `static-site-ci.yml` — that file belongs to the pack and is
-# overwritten on every re-vendor, and this lane is this repo's own. The fast
-# gate (`scripts/verify.sh`, which includes the requirements coverage and
-# gallery checks) runs there as the declared `test_command`; only the browser
-# work lives here, so the fast lane stays browser-free.
+# `ci.yml` — that lane runs the fast gate (`scripts/verify.sh`, which includes
+# the requirements coverage and gallery checks) and nothing browser-driven, so
+# it stays quick. Only the browser work lives here.
 #
 # The Playwright version installed here must match the harness's pin
 # (product/requirements/shared/harness/browser.js) or the run refuses to

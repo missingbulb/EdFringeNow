@@ -251,11 +251,6 @@ for (const s of keepCat) {
 write("normalized/descriptions.min.json", descOut);
 
 // ------------------------------------------------------------ small fixtures --
-fs.writeFileSync(
-  path.join(__dirname, "version.json.fixture"),
-  JSON.stringify({ version: "0.0.0-spec" }) + "\n"
-);
-
 // Favourites CSV in the edfringe.com export shape (one URL per row cell).
 const csvRows = ["Title,URL"];
 for (const s of PLAN_FAVOURITE_SLUGS) {

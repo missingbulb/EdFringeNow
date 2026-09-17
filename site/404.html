@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — EdFringeNow</title>
+  <meta name="robots" content="noindex" />
+  <!-- Every URL here is ROOT-relative, unlike the rest of the site. Cloudflare
+       serves this page's bytes under whatever path the visitor actually asked
+       for, so a page-relative "css/styles.css" would resolve against that
+       unknown path and 404 in turn — leaving an unstyled error page. The site
+       is served at its domain root, so a leading slash is always right. -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/legal.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">EdFringe<span class="logo-now">Now</span></a>
+      <a href="/" class="legal-back">← Back</a>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>That page isn't here</h1>
+    <p class="legal-lede">The link may be old, or the address may have a typo in it.</p>
+
+    <h2>Where you probably wanted to go</h2>
+    <ul>
+      <li><a href="/">What's on now</a> — shows starting soon that you can still reach.</li>
+      <li><a href="/plan/">Plan your Fringe</a> — build a day around your favourites.</li>
+      <li><a href="/planJerusalem/">Jerusalem Comedy Festival</a> — the same planner, for that programme.</li>
+    </ul>
+
+    <p>If you followed a link on this site to get here, tell us at <a href="mailto:support@edfringenow.com">support@edfringenow.com</a> and we'll fix it.</p>
+  </main>
+
+  <footer class="legal-foot">
+    <p class="legal-foot-copy">© 2026 Missing Bulb</p>
+    <nav class="legal-foot-links" aria-label="More from EdFringeNow">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/accessibility.html">Accessibility</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@edfringenow.com">Contact</a>
+    </nav>
+  </footer>
+  <!-- Privacy-first, cookieless visitor analytics (see js/analytics.js) -->
+  <script defer src="/js/analytics.js"></script>
+</body>
+</html>

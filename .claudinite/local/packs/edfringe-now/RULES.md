@@ -1,9 +1,9 @@
 # edfringe-now — this repo's own rules
 
-The lessons this repo has paid for once, across its three surfaces: working in the repo at
-all, the data pipeline behind `scraper/`, `data/` and `site/data/`, and the executable-requirements harness
-that runs `product/requirements.md` as tests. A lesson that would hold in another repo does
-not belong here — propose it to the Claudinite canon instead, where every repo gets it.
+The lessons this repo has paid for once, across its three surfaces: working in the repo at all, the
+data pipeline behind `scraper/`, `data/` and `site/data/`, and the executable-requirements harness
+that runs `product/requirements.md` as tests. A lesson that would hold in another repo does not
+belong here — propose it to the Claudinite canon instead, where every repo gets it.
 
 ## Working in this repo
 
@@ -76,14 +76,13 @@ and that is not an instruction to keep trying.
 
 ### `npm run verify` green is not CI green — the UI lane runs elsewhere
 
-Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, so the local
-gate and the pre-commit hook now cover the conformance findings CI blocks on.
-It still does **not** cover `npm run test:ui` — the separate `ui-requirements`
-workflow, real Chromium against the committed goldens — nor `build-site.sh` or
-the assemble-site dry run. So anything that can move a rendered pixel (`site/js/`,
-`site/plan/`, `site/plan2/`, `site/planJerusalem/`, `site/shared/`, `site/index.html`, the CSS, the
-fixtures) is unverified until
-`npm run test:ui` has been run locally, however green `verify` is.
+Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, and CI's own
+gate now runs nothing but that script — so passing locally and passing on GitHub
+mean the same thing. Neither covers `npm run test:ui`, the separate
+`ui-requirements` workflow that drives real Chromium against the committed
+goldens. So anything that can move a rendered pixel — anything under `site/`, or
+the requirements fixtures — is unverified until `npm run test:ui` has been run
+locally, however green `verify` is.
 
 ### This repo has no PR template
 
@@ -98,11 +97,11 @@ or downgrade to "verified by logic review only" claiming no browser exists — a
 browser is here, and a UI change isn't done until it has been looked at.
 
 - Serve the repo and drive it with the preinstalled Chromium (or Playwright):
-  `python3 -m http.server 8000`, then screenshot / click through
-  `http://localhost:8000` — serve `site/`, not the repo root. The app fetches its data, so it must be
-  served over HTTP rather than opened as a file — and `localhost` bypasses the
-  agent proxy, so the browser reaches the page even though external hosts need
-  the proxy.
+  `python3 -m http.server 8000`, then screenshot / click through `http://localhost:8000` — serve
+  `site/`, not the repo root. The app fetches its data, so it must be served over HTTP rather than
+  opened as a file — and `localhost` bypasses the agent proxy, so the browser reaches the page
+  even
+  though external hosts need the proxy.
 - **Launch Playwright with no `executablePath`, and import from `index.mjs`.**
   `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` is already exported in this
   sandbox, so `chromium.launch()` finds its browser on its own. Import the
@@ -401,15 +400,15 @@ pack's own repo-level docs instead, or say nothing.
 
 ### The site is several front-ends — cross-page behaviour goes in `site/shared/`
 
-The Now page (`site/index.html` + `site/js/app.js`) and the planner (`site/plan/` + `site/plan/plan.js`)
-are separate front-ends. `site/plan/lib/` is split: the pure, DOM-free half
-(`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared
-planning engine** that `site/planJerusalem/` also imports, so it must never learn one
-festival's specifics; `site/plan/plan.js` and `site/plan/lib/favourites.js` are the Fringe
-planner's alone. Every page is an ES module, so **anything that must behave the
-same on more than one of them belongs in `site/shared/`** and is imported by each —
-never copy-pasted. Every page spells the import the same way (`../shared/geo.js`
-resolves to `/shared/geo.js` from any of them), so moving a value there is a
+The Now page (`site/index.html` + `site/js/app.js`) and the planner (`site/plan/` +
+`site/plan/plan.js`) are separate front-ends. `site/plan/lib/` is split: the pure, DOM-free half
+(`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared planning engine** that
+`site/planJerusalem/` also imports, so it must never learn one festival's specifics;
+`site/plan/plan.js` and `site/plan/lib/favourites.js` are the Fringe planner's alone. Every page is
+an ES module, so **anything that must behave the same on more than one of them belongs in
+`site/shared/`** and is imported by each — never copy-pasted. Every page spells the import the
+same
+way (`../shared/geo.js` resolves to `/shared/geo.js` from any of them), so moving a value there is a
 small change.
 
 What is still genuinely twinned (untangled the same way when next touched): the

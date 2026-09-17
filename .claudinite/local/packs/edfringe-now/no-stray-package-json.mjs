@@ -6,10 +6,7 @@
 // package.json needed to mark a directory as ESM. `site/plan/package.json`
 // predates that detection and stays only as a grandfathered no-op; it must not
 // become a pattern copied into every new source directory.
-//
-// site/package.json is deliberately absent: scripts/build-site.sh generates it
-// into the published tree from the repo's own, and it is git-ignored, so it is
-// never a tracked file for this rule to see.
+
 const ALLOWED = new Set(['package.json', 'site/plan/package.json']);
 
 const rule = {

@@ -1,0 +1,20 @@
+# What sits inside the published tree but is not part of the served product.
+# assets.directory uploads everything under site/, so this file — not a list
+# kept somewhere else — is what holds these back. Gitignore syntax: wrangler
+# matches with the `ignore` package, and a pattern with no slash matches at any
+# depth while one containing a slash is anchored to site/.
+#
+# The tests live beside the code they test, which is where they belong; they are
+# simply not pages. The Pages publish set shipped them — it named code
+# directories wholesale and could not exclude a subdirectory — so dropping them
+# here makes the live site smaller than it was rather than larger.
+__tests__/
+
+# The planner's static design mock and its notes: a prototype, never part of the
+# product. The Pages publish set enumerated plan/ file by file to keep this out;
+# this line is what replaces that enumeration.
+plan/design/
+
+# Documentation and tooling that happen to live next to the code they belong to.
+plan/README.md
+plan/package.json

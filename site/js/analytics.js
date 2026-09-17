@@ -7,15 +7,14 @@
 // every visitor — so it lives in a GitHub Actions *variable* (not a secret):
 //   repo Settings -> Secrets and variables -> Actions -> Variables ->
 //   CLOUDFLARE_ANALYTICS_TOKEN
-// .github/site.config declares that variable in build_vars, so the release
-// pipeline exports it into scripts/build-site.sh, which injects it into the
-// placeholder below at build time — the same script and the same moment that
-// stamps js/build-info.js. A declared variable with no value fails the run
-// rather than publishing a page whose beacon is silently dead.
+// The release substitutes it into the copy it uploads, so the committed file
+// below always carries the placeholder and no checkout, fork or local preview
+// ever beacons into the live site's numbers.
 //
 // TO ENABLE: create a free site in the Cloudflare dashboard (Web Analytics ->
-// "Add a site"), then add its token as the CLOUDFLARE_ANALYTICS_TOKEN repo variable.
-// It works on GitHub Pages as-is — no hosting or DNS move to Cloudflare needed.
+// "Add a site"), then add its token as the CLOUDFLARE_ANALYTICS_TOKEN repo
+// variable. With no variable set the placeholder ships and this loader no-ops,
+// which the release says out loud either way.
 //
 // Until a real token is injected (variable unset, or running locally), this
 // loader does nothing: no beacon is requested, so the site keeps its "no

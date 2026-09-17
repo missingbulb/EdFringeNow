@@ -2,9 +2,9 @@
 #
 # The repo's single verification gate: unit tests, JavaScript parse-checks,
 # Python byte-compilation, and the Claudinite conformance sweep. Both the
-# pre-commit hook (.githooks/pre-commit) and the pipeline's PR gate
-# (.github/workflows/static-site-ci.yml, which runs it as the test_command named
-# in .github/site.config) run *this* script.
+# pre-commit hook (.githooks/pre-commit) and the pull-request gate
+# (.github/workflows/ci.yml) run *this* script, and nothing else — so passing
+# locally and passing on GitHub now mean the same thing.
 #
 # The conformance sweep is here because it was the one CI step this script did
 # not cover, and the gap was not theoretical: a commit that passed `npm run
@@ -13,14 +13,9 @@
 # pass and still break CI is not a gate. It is the slowest step by an order of
 # magnitude, so it runs last — a syntax error should still fail in a second.
 #
-# CI runs the sweep again in its own earlier step (that workflow is vendored
-# from the static-website pack and re-vendored on refresh, so it is not ours to
-# trim). The duplicate costs CI ~9s and buys separate attribution there; the
-# point of this copy is the pre-commit and local path, where nothing ran it.
-#
-# Still NOT the whole of CI: `npm run test:ui` (the ui-requirements job),
-# scripts/build-site.sh and the assemble-site dry run are outside this script.
-# Green here means the fast lanes are green, not that GitHub will be.
+# Still NOT the whole of CI: `npm run test:ui` — the ui-requirements job, real
+# Chromium against the committed goldens — is its own workflow and outside this
+# script. Green here means the fast lanes are green.
 #
 # A few seconds and dependency-free — everything uses the node / python already
 # needed to work on the project.
