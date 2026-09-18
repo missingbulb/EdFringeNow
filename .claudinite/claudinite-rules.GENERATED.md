@@ -7,5 +7,6 @@
 @shared/packs/executable-requirements/RULES.md
 @shared/packs/html/RULES.md
 @shared/packs/product-wiki/RULES.md
+@shared/packs/public-website/RULES.md
 @shared/packs/spec-driven-product/RULES.md
 @local/packs/edfringe-now/RULES.md
