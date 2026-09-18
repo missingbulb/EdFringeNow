@@ -1,7 +1,5 @@
 # EdFringeNow
 
-<!-- claudinite:packs -->
-![basics](.claudinite/shared/packs/basics/badge.svg "basics") ![claudinite-lifecycle](.claudinite/shared/packs/claudinite-lifecycle/badge.svg "claudinite-lifecycle") ![git-github](.claudinite/shared/packs/git-github/badge.svg "git-github") ![html](.claudinite/shared/packs/html/badge.svg "html") ![claudinite-growth](.claudinite/shared/packs/claudinite-growth/badge.svg "claudinite-growth") ![executable-requirements](.claudinite/shared/packs/executable-requirements/badge.svg "executable-requirements") ![spec-driven-product](.claudinite/shared/packs/spec-driven-product/badge.svg "spec-driven-product") ![product-wiki](.claudinite/shared/packs/product-wiki/badge.svg "product-wiki") ![claude-code-web-users-support](.claudinite/shared/packs/claude-code-web-users-support/badge.svg "claude-code-web-users-support") ![claudinite-tasks](.claudinite/shared/packs/claudinite-tasks/badge.svg "claudinite-tasks") ![cloudflare-site](.claudinite/shared/packs/cloudflare-site/badge.svg "cloudflare-site") ![public-website](.claudinite/shared/packs/public-website/badge.svg "public-website")<!-- /claudinite:packs -->
 Website to help find a fringe show — **Fringe Discover**.
 
 🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/
