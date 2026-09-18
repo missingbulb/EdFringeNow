@@ -2,8 +2,8 @@ name: UI requirements
 
 # The executable-requirements UI lane: renders the real pages in the pinned
 # headless Chromium and compares pixel-exact against the committed goldens
-# (product/requirements/). Deliberately NOT part of the static-website pack's
-# `ci.yml` — that lane runs the fast gate (`scripts/verify.sh`, which includes
+# (product/requirements/). Deliberately NOT part of `ci.yml` — that lane runs
+# the fast gate (`scripts/verify.sh`, which includes
 # the requirements coverage and gallery checks) and nothing browser-driven, so
 # it stays quick. Only the browser work lives here.
 #
