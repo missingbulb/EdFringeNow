@@ -1,0 +1,7 @@
+# Everything here is public. What must not be listed says so on its own
+# page, with a noindex meta, which keeps it out of results rather than
+# merely out of a crawl — so nothing is disallowed below.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.edfringenow.com/sitemap.xml

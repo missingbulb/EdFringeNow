@@ -52,6 +52,9 @@ export const PAGES = LOCALES.map((locale) => ({
     locale.code === DEFAULT_LOCALE ? SOURCE : join(PAGE_DIR, locale.code, "index.html"),
 }));
 
+/** The page served at the planner's own URL, which `x-default` names. */
+export const DEFAULT_PAGE = PAGES.find((p) => p.code === DEFAULT_LOCALE);
+
 const BEGIN = "<!-- localization:begin";
 const END = "<!-- localization:end -->";
 

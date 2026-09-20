@@ -17,10 +17,9 @@ module.exports = {
   description:
     "every language's page names itself canonical and points at all the others, including a default",
   async verify(assert) {
-    const { PAGES, ORIGIN } = await import("../../../../scripts/localize-pages.mjs");
+    const { PAGES, DEFAULT_PAGE, ORIGIN } = await import("../../../../scripts/localize-pages.mjs");
 
-    const defaultPage = PAGES.find((p) => p.url.endsWith("/planJerusalem/"));
-    assert.ok(defaultPage, "one language is served at the planner's own URL");
+    assert.ok(DEFAULT_PAGE, "one language is served at the planner's own URL");
 
     // What every page must say, once built: it is itself, and here is where
     // each language lives. Identical across the four, which is the whole point
@@ -28,7 +27,7 @@ module.exports = {
     const expected = Object.fromEntries([
       ...PAGES.map((p) => [p.code, `${ORIGIN}${p.url}`]),
       // The language to answer a reader whose own is not among them.
-      ["x-default", `${ORIGIN}${defaultPage.url}`],
+      ["x-default", `${ORIGIN}${DEFAULT_PAGE.url}`],
     ]);
 
     for (const { code, url, file } of PAGES) {
