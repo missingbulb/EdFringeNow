@@ -752,7 +752,9 @@ MICF every autumn since 1987 around the Town Hall, Leicester every February
 since 1994, Winnipeg 25 years in Osborne Village, Lucille Ball in Jamestown
 since 1991 — and the healthy ones publish next year's dates before this
 year's edition is cold (MICF, Winnipeg, Wells, Great Outdoors and JFL's
-Bermuda/Namur satellites all have 2027 dates up already).
+Bermuda/Namur satellites all have 2027 dates up already; found this pass,
+Adelaide Fringe does too — [19 February – 21 March 2027](https://adelaidefringe.com.au/about-us),
+almost the same window as 2026's 20 Feb – 22 Mar).
 
 The exceptions are exactly the ones a planning product must model:
 
@@ -908,10 +910,18 @@ The strongest planner-fits, ranked:
    **SIFF Seattle** (11 days, 203 films, a walkable multi-screen cluster,
    the most-attended US festival), **BFI London** (12 days, ~240 features,
    7 venues), **Locarno** (11 days, public, an 8,000-seat open-air piazza),
-   **Sundance** (11 days, $35 public single tickets, two towns — **moving
-   to Boulder for 2027** on a ten-year deal, per
-   [THR](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/) —
-   the census's rare city *move*), **Sydney FF** (12 days, 13 spread
+   **Sundance** (11 days, $35 public single tickets, two towns in Utah —
+   **its first Boulder edition is now dated**: 21–31 January 2027, confirmed
+   by [Sundance's own announcement](https://www.sundance.org/blogs/2027-sundance-film-festival-to-take-place-january-21-31-in-boulder-colorado/)
+   and eleven named venues spread across the city (the Boulder Theater,
+   Boulder High School and Casey Middle School auditoriums, Chautauqua
+   Auditorium, a Cinemark, eTown Hall, the Dairy Arts Center's two houses,
+   plus three University of Colorado Boulder halls) — the census's rare
+   city *move*, on a ten-year
+   deal per [THR](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/).
+   Sundance's own announcement says passes go on sale in October 2026 and
+   the film lineup is announced in December — so dates and venues are
+   confirmed but ticketing has not opened yet), **Sydney FF** (12 days, 13 spread
    venues, on Eventival), **Busan** (10 days, 329 films on 31 screens in
    one cluster, sell-out-in-minutes scarcity).
 5. Second tier: Fantasia (Montreal, 18 days, clustered, selective repeats),
@@ -1091,7 +1101,7 @@ The film adjacency (light survey, 2026-09-01):
 - [Berlinale — general entry guidelines (up to five screenings per film)](https://www.berlinale.de/en/film-entry/guidelines/general-guidelines.html), [My Festival Planner](https://www.berlinale.de/en/programme/festival-planner.html), [2026 press releases](https://www.berlinale.de/en/2026/news-press-releases/267074.html), and [Berlin.de on the public ticket presale](https://www.berlin.de/en/tourism/insider-tips/2925756-5766508-berlinale-ticket-presale-where-to-buy.en.html).
 - [tiffr — the unofficial TIFF planner, 2026 edition](https://2026.tiffr.com/); [TIFF's official app](https://tiff.net/the-review/welcome-to-the-official-tiff-app); [Now Toronto on TIFF 2026](https://nowtoronto.com/news/tiff-2026-first-movies-announced-tickets-venue/).
 - [MIFF 2026 at ACMI (275+ films, 180k+ attendees)](https://www.acmi.net.au/whats-on/miff-2026/); [SIFF 2026 full lineup (203 films)](https://www.siff.net/media/news/pr-fest26-full-lineup) and [2026 SIFF (Wikipedia — the walkable venue set)](https://en.wikipedia.org/wiki/2026_Seattle_International_Film_Festival); [IFFR (Wikipedia — ~480 films, 300k+ admissions)](https://en.wikipedia.org/wiki/International_Film_Festival_Rotterdam); [BFI London Film Festival (Wikipedia)](https://en.wikipedia.org/wiki/BFI_London_Film_Festival); [79th Locarno (Wikipedia)](https://en.wikipedia.org/wiki/79th_Locarno_Film_Festival); [Sydney Film Festival on Eventival](https://vp.eventival.com/sff/2026); [30th Busan (Wikipedia — 329 films, 31 screens)](https://en.wikipedia.org/wiki/30th_Busan_International_Film_Festival).
-- [Sundance's move to Boulder (The Hollywood Reporter)](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/) and [2026 single tickets (Park Record)](https://www.parkrecord.com/2026/01/09/2026-sundance-film-festival-tickets-on-sale-wednesday/).
+- [Sundance's move to Boulder (The Hollywood Reporter)](https://www.hollywoodreporter.com/movies/movie-news/sundance-boulder-colorado-move-from-park-city-1236135102/) and [2026 single tickets (Park Record)](https://www.parkrecord.com/2026/01/09/2026-sundance-film-festival-tickets-on-sale-wednesday/). The 2027 Boulder edition's confirmed dates and venues: [Sundance's own 21–31 January 2027 announcement](https://www.sundance.org/blogs/2027-sundance-film-festival-to-take-place-january-21-31-in-boulder-colorado/), corroborated by [Variety](https://variety.com/2026/film/news/sundance-film-festival-2027-dates-boulder-colorado-1236671513/), [IndieWire](https://www.indiewire.com/news/festivals/sundance-film-festival-2027-dates-announced-1235181140/) and [CU Boulder Today](https://www.colorado.edu/today/2026/02/24/sundance-film-festival-announces-dates-2027) — announced 24 February 2026; found via search this pass, `WebFetch` on sundance.org itself still returning `EGRESS_BLOCKED`.
 - [Fantasia 2026 (30th edition, 16 Jul–2 Aug)](https://fantasiafestival.com/en/fantasia-2026) and [Cult MTL's programme piece](https://cultmtl.com/2026/07/montreal-fantasia-film-festival-turns-30-with-an-incredible-program-for-2026/) — the JFL overlap.
 - The failed bar: [Cannes public access (Pearl)](https://joinpearl.co/blogs/cannes-film-festival-in-person-how-to-get-in-and-what-youll-see), [Venice accreditation (La Biennale)](https://www.labiennale.org/en/cinema/2026/cinema-accreditation), [SXSW 2026 badges (Austin American-Statesman)](https://www.statesman.com/story/entertainment/2025/03/16/sxsw-2026-schedule-half-price-badges-early-bird-available-now/82470583007/), [Fantastic Fest badges (Drafthouse)](https://drafthouse.com/show/fantastic-fest-badges).
 
@@ -1153,8 +1163,13 @@ The film adjacency (light survey, 2026-09-01):
 - **The film adjacency is a survey, not research.** Per-film repeat-screening
   norms are confirmed only for Berlinale and TIFF; MIFF/SIFF run encores
   rather than stated policies, and IFFR/BFI/Sydney are unverified on
-  repeats. Sundance's 2027 Boulder move needs a re-check once the first
-  Colorado edition is announced. If film expansion ever becomes live,
+  repeats. **Narrowed 2026-09-20**: Sundance's first Boulder edition now has
+  confirmed dates (21–31 January 2027) and named venues, so the "will it
+  actually happen and where" half of the re-check is answered; what remains
+  open is whether Boulder's screening counts and repeat-viewing pattern
+  hold at the Park City norm once the lineup is announced in December 2026
+  and tickets go on sale — that needs the festival to actually run. If film
+  expansion ever becomes live,
   Berlinale/TIFF/MIFF each need the deep pass this page's comedy dossiers
   got — likely as a page of their own.
 
@@ -1238,3 +1253,19 @@ The film adjacency (light survey, 2026-09-01):
   dossier and the open question, everything marked search-attributed since
   no primary source was actually fetched. No other claim on the page
   changed.
+- **2026-09-20** — worked the Sundance-to-Boulder open question with
+  `WebSearch` (`WebFetch` on sundance.org still returns `EGRESS_BLOCKED`,
+  same session-wide block recorded 2026-09-13): its first Boulder edition
+  now has confirmed dates (21–31 January 2027) and eleven named venues
+  across the city, per Sundance's own announcement and corroborated
+  independently by Variety, IndieWire and CU Boulder Today. The film
+  adjacency's Sundance entry and the open question are updated — the
+  "will it happen and where" half is answered; whether Boulder's screening
+  counts and repeat pattern match the Park City norm stays open until the
+  lineup lands in December 2026. Spot-checked the NZICF-2026-wrap open
+  question the same pass and found nothing beyond the Trust's own
+  recurring steady-state figures (no dated 2026 total) — left open,
+  unchanged. Also found, while re-checking Adelaide, that its 2027 dates
+  are up (19 February – 21 March 2027, per adelaidefringe.com.au) — added
+  to *Annual fixtures vs one-offs and rovers* alongside the festivals
+  already known to publish next year's dates early.
