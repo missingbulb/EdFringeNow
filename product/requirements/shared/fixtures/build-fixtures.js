@@ -128,26 +128,18 @@ write("venues.json", venues);
 // Favourites, chosen from the real catalogue for verdict variety:
 const bySlug = new Map(catalogue.map((e) => [e.sl, e]));
 
-// Helper: does a catalogue entry have performances in a day range? p[].d is a
-// day serial; recover the serial for a calendar day from a known day-file
-// match below. Instead we use the availability keys "serial|HH:MM".
 const availOf = (entry) => availability.a[entry.si] || availability.a[entry.i] || null;
 
-// Recover the serial for 7..31 Aug from any entry: entries carry p:[{d, s}],
-// and the day files tell us which slug plays on 2026-08-15. Ray Bradshaw plays
-// nightly; find its 19:45 perf serials via the availability map instead of
-// guessing the epoch.
+// Ray Bradshaw plays nightly; recover its performance serials from its own
+// catalogue entry rather than guessing the epoch.
 const ray = bySlug.get("ray-bradshaw-five-years-in-a-row");
 if (!ray) throw new Error("ray not in catalogue");
 const raySerials = ray.p.map((x) => x.d).sort((a, b) => a - b);
 // data/days spans 1–31 Aug; ray's run is inside it. The 15th's serial:
 const day15Serial = (() => {
-  // ray appears in the 2026-08-15 day file at 19:45 — align serial by run
-  // position: serial for Aug N = serialFor15 - 15 + N.
-  // Find it by matching the count of run days ≤ each serial… simplest honest
-  // anchor: the catalogue's earliest serial with the same count of days as the
-  // distance from the run's first day-file appearance.
-  // Ray's first day-file appearance:
+  // Ray plays nightly, so day serials increase by exactly 1 per day across its
+  // run: find the first day file Ray appears in, then offset from Ray's
+  // earliest serial by the distance from that day to the 15th.
   for (let d = 1; d <= 31; d++) {
     const df = read(`data/days/2026-08-${String(d).padStart(2, "0")}.json`);
     if (Object.values(df).some((e) => e.slug === ray.sl)) {
