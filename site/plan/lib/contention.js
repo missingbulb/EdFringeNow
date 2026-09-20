@@ -173,24 +173,38 @@ export function draftCalendar(shows, options = {}) {
   // Pass 3 — the draft proper: the rest of the programme, scarcest first.
   sweep(candidates.filter((c) => !placedShows.has(c.slug)), "draft", true);
 
-  // Everything that was never placed and shares an hour with something that
-  // was is a contender the draft beat — what the block offers you instead.
+  // What a block offers instead of itself: the shows that wanted the same hour
+  // and could still take it. Three things disqualify a contender, and all three
+  // are settled here rather than discovered after the reader has picked one.
   const placedAt = new Map();
   for (const cand of placed) placedAt.set(`${cand.date}T${cand.startMinuteOfDay}`, cand);
   const offered = new Set();
   for (const cand of candidates) {
-    if (cand.verdict) continue;
     const winner = placedAt.get(`${cand.date}T${cand.startMinuteOfDay}`);
     if (!winner || winner.slug === cand.slug) continue;
+    // 1. The reader has settled this hour, so nothing is on offer for it.
+    if (winner.verdict === "locked") continue;
+    // 2. The show is already in the calendar on another night. Offering it here
+    //    would be offering to MOVE it, which is not what the picker says it does.
+    if (placedShows.has(cand.slug)) continue;
+    // 3. It could not be reached from what the reader has already committed to
+    //    that night — the walk between the venues plus the rest they asked for
+    //    between shows, the same rules the draft itself obeys. Measured against
+    //    the night's LOCKED and FAVOURITED shows only: taking a contender
+    //    re-drafts the evening, and everything the draft merely guessed at is
+    //    free to move out of the way, so guarding those would refuse almost
+    //    every offer to protect a choice nobody made.
+    const committed = (perDay.get(cand.date) || []).filter(
+      (c) => c !== winner && (c.verdict === "locked" || c.verdict === "favourite")
+    );
+    if (!committed.every((c) => compatible(c, cand, gapOpts))) continue;
     winner.contenders.push(cand);
     offered.add(cand.slug);
   }
   for (const cand of placed) cand.contenders.sort(byScarcity);
 
-  // A show that lost every one of its nights to a clash rather than to a
-  // shared hour is on no block at all — neither drafted nor offered as a
-  // contender — so it is counted here rather than left to vanish between the
-  // two.
+  // A show nothing drafted and no block offers is on the calendar nowhere at
+  // all, so it is counted rather than left to vanish between the two.
   const crowdedOut = [];
   for (const [slug, slots] of pool) {
     if (placedShows.has(slug) || offered.has(slug)) continue;

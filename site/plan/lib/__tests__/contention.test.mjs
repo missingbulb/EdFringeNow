@@ -51,14 +51,71 @@ test("the scarcer show takes a contested hour", () => {
   assert.equal(pick.freedom, 1);
 });
 
-test("the show it beat is reported on the block, scarcest first", () => {
-  const rare = show("rare", ["2026-10-18"]);
-  const two = show("two", ["2026-10-18", "2026-10-19"]);
-  const three = show("three", ["2026-10-18", "2026-10-19", "2026-10-20"]);
-  const pick = at(draft([three, two, rare]), "2026-10-18", "20:00");
-  assert.equal(pick.slug, "rare");
+// A show is only a contender for an hour while it is in the calendar nowhere
+// else, so a field of real contenders needs every challenger's OTHER nights
+// taken too: a one-night show on each of them does that.
+const CONTESTED_FIELD = [
+  show("rare", ["2026-10-18"]),
+  show("two", ["2026-10-18", "2026-10-19"]),
+  show("three", ["2026-10-18", "2026-10-19", "2026-10-20"]),
+  show("rare19", ["2026-10-19"]),
+  show("rare20", ["2026-10-20"]),
+];
+
+test("the shows it beat are reported on the block, scarcest first", () => {
+  const result = draft(CONTESTED_FIELD);
+  // The scarcity rule decides all three nights, which is what leaves "two" and
+  // "three" unplaced and therefore still on offer for the first of them.
+  assert.equal(at(result, "2026-10-18", "20:00").slug, "rare");
+  assert.equal(at(result, "2026-10-19", "20:00").slug, "rare19");
+  assert.equal(at(result, "2026-10-20", "20:00").slug, "rare20");
+  const pick = at(result, "2026-10-18", "20:00");
   assert.deepEqual(pick.contenders.map((c) => c.slug), ["two", "three"]);
   assert.deepEqual(pick.contenders.map((c) => c.freedom), [2, 3]);
+});
+
+test("a show already drafted on another night is not offered here", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19"]);
+  const result = draft([rare, often]);
+  assert.equal(at(result, "2026-10-18", "20:00").slug, "rare");
+  assert.equal(result.picked.get("often"), "2026-10-19T20:00", "it took another night of its own");
+  assert.deepEqual(
+    at(result, "2026-10-18", "20:00").contenders.map((c) => c.slug),
+    [],
+    "offering it here would be offering to move it, which the picker does not do"
+  );
+});
+
+test("a show the night's travel and rest shut out is not offered, and is counted instead", () => {
+  // Two venues far enough apart that the walk plus the rest between shows
+  // cannot be made in the gap the evening leaves.
+  const FAR = { H: { lat: 31.7806, lng: 35.2226 }, X: { lat: 31.85, lng: 35.31 } };
+  const early = show("early", ["2026-10-18"], { start: "19:00", duration: 60 });
+  const rare = show("rare", ["2026-10-18"], { start: "20:30", duration: 60 });
+  const stranded = { ...show("stranded", ["2026-10-18"], { start: "20:30", duration: 60 }), venue: "X", venueName: "Far" };
+
+  // Locked, so the evening's 19:00 is a commitment the reader made: nothing
+  // that cannot be reached from it is offered for 20:30.
+  const committed = draft([early, rare, stranded], {
+    venueCoords: FAR,
+    locked: { early: "2026-10-18T19:00" },
+  });
+  assert.equal(at(committed, "2026-10-18", "20:30").slug, "rare");
+  assert.deepEqual(
+    at(committed, "2026-10-18", "20:30").contenders.map((c) => c.slug),
+    [],
+    "it shares the hour, but it cannot be reached from the show that is locked before it"
+  );
+  assert.deepEqual(committed.crowdedOut.map((s) => s.slug), ["stranded"]);
+
+  // The same evening with nothing committed: the 19:00 show is the draft's own
+  // guess and would simply move, so the offer stands.
+  const guessed = draft([early, rare, stranded], { venueCoords: FAR });
+  assert.deepEqual(
+    at(guessed, "2026-10-18", "20:30").contenders.map((c) => c.slug),
+    ["stranded"]
+  );
 });
 
 test("equal scarcity is broken by start, then finish, then slug — the same draft every run", () => {
@@ -109,13 +166,23 @@ test("rejecting the show takes it out of the programme entirely", () => {
   assert.ok(!after.days.some((d) => d.slots.some((s) => s.contenders.some((c) => c.slug === "rare"))));
 });
 
-test("a locked instance holds its hour against a scarcer contender", () => {
+test("a locked instance holds its hour against a scarcer contender, and stops offering it", () => {
   const rare = show("rare", ["2026-10-18"]);
   const often = show("often", ["2026-10-18", "2026-10-19", "2026-10-20"]);
-  const pick = at(draft([rare, often], { locked: { often: "2026-10-18T20:00" } }), "2026-10-18", "20:00");
+  const locked = draft([rare, often], { locked: { often: "2026-10-18T20:00" } });
+  const pick = at(locked, "2026-10-18", "20:00");
   assert.equal(pick.slug, "often");
   assert.equal(pick.verdict, "locked");
-  assert.deepEqual(pick.contenders.map((c) => c.slug), ["rare"]);
+  // The reader settled this hour, so the shows that wanted it are no longer an
+  // offer — they are counted as shut out instead.
+  assert.deepEqual(pick.contenders.map((c) => c.slug), []);
+  assert.deepEqual(locked.crowdedOut.map((s) => s.slug), ["rare"]);
+  // Unlocking brings them back.
+  assert.deepEqual(
+    at(draft([rare, often]), "2026-10-18", "20:00").contenders.map((c) => c.slug),
+    [],
+    "…though here the loser is the one that takes another night"
+  );
 });
 
 test("a locked instance overrides the day-hours window", () => {
@@ -159,17 +226,17 @@ test("a show that lost every night to a clash rather than a shared hour is count
 });
 
 test("a contender offered on a block is not also counted as crowded out", () => {
-  const rare = show("rare", ["2026-10-18"]);
-  const often = show("often", ["2026-10-18", "2026-10-19", "2026-10-20"]);
-  assert.equal(draft([rare, often]).crowdedOut.length, 0);
+  const result = draft(CONTESTED_FIELD);
+  assert.deepEqual(at(result, "2026-10-18", "20:00").contenders.map((c) => c.slug), ["two", "three"]);
+  assert.deepEqual(result.crowdedOut, []);
 });
 
 test("counts report the field, the contested hours and what was drafted", () => {
-  const rare = show("rare", ["2026-10-18"]);
-  const often = show("often", ["2026-10-18", "2026-10-19"]);
-  const counts = draft([rare, often]).counts;
-  assert.equal(counts.shows, 2);
-  assert.equal(counts.candidates, 3);
-  assert.equal(counts.contested, 1);
-  assert.equal(counts.picked, 2);
+  const counts = draft(CONTESTED_FIELD).counts;
+  assert.equal(counts.shows, 5);
+  assert.equal(counts.candidates, 1 + 2 + 3 + 1 + 1);
+  assert.equal(counts.picked, 3, "one hour a night, and three nights");
+  // "two" and "three" lost every night they play and are placed nowhere, so
+  // each of the three nights still has them to offer.
+  assert.equal(counts.contested, 3);
 });

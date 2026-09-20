@@ -80,6 +80,18 @@ function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
   return { "jerusalemPlan.verdicts": JSON.stringify({ locked, noTime, noShow }) };
 }
 
+/* Hand a contested hour on: click the band the stack of beaten cards leaves
+ * showing past the winner's edge, which is where a reader's pointer lands.
+ * Scrolled into view first — the band is addressed by viewport coordinates,
+ * and a slot below the fold would otherwise be clicked at thin air. */
+async function clickStackBand(page, slot) {
+  const beaten = slot.locator(".sch-beaten").last();
+  await beaten.scrollIntoViewIfNeeded();
+  const box = await beaten.boundingBox();
+  await page.mouse.click(box.x + box.width - 4, box.y + box.height / 2);
+  await page.waitForSelector("#calRivals .pop-rival");
+}
+
 // ------------------------------------------------------------------- waits --
 async function settle(page) {
   await page.evaluate(() => document.fonts.ready);
@@ -179,6 +191,7 @@ module.exports = {
   PLAN_FAVOURITES,
   jerusalemStarred,
   jerusalemVerdicts,
+  clickStackBand,
   JERUSALEM_STARRED,
   nowReady,
   planReady,

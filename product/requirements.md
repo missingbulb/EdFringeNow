@@ -1179,10 +1179,12 @@ rather than as a control panel.
 
   <details><summary>Notes</summary>
 
-  A locked card beside a contested one, so the difference is the picture: the
-  lock is the one thing a card's face says beyond the show itself, and the
-  stack behind it is gone, because the reader has settled that hour and the
-  shows that wanted it are no longer an offer. Unlocking brings them back.
+  Two nights side by side: one the draft is still guessing at, where both
+  hours show what they turned down, and one with a lock in it. The lock is the
+  one thing a card's face says beyond the show itself. Nothing on the settled
+  night is on offer any more — not only at the locked hour, because what a
+  lock rules out for the rest of its night is exactly what `20.11` says it
+  does. Unlocking brings the offers back.
   </details>
 
 - `20.6` Locking a night holds it, even against a scarcer contender.

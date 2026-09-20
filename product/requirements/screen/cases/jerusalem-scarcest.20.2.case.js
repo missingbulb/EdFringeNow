@@ -1,14 +1,20 @@
 "use strict";
 const { jerusalemReady } = require("../../shared/case-helpers");
 
-// Tuesday at 20:00 is wanted by three shows, all playing that night only. The
-// block that took it wears why: its own count of nights, and how many it beat.
-const CONTESTED = '.sch-day[data-date="2026-10-20"] .sch-show';
+// Tuesday's two hours: 20:00 wanted by three shows that all play that night
+// only, and 21:00 by two. Each is drawn as the card that took it in front of
+// the ones it beat, so the size of the stack is the size of the contest.
+const NIGHT = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
-  description: "a contested hour goes to the contender with the fewest nights of its own",
+  description: "a contested hour is drawn as a stack: the card that won, in front of the ones it beat",
   page: "/planJerusalem/",
   viewport: "desktop",
   ready: jerusalemReady,
-  capture: CONTESTED,
+  async capture(page, t) {
+    const slots = await page.locator(`${NIGHT} .sch-slot`).all();
+    const boxes = [];
+    for (const slot of slots) boxes.push(await slot.boundingBox());
+    return t.clip(t.pad(t.union(boxes), 10));
+  },
 };

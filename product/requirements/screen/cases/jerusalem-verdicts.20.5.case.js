@@ -1,19 +1,24 @@
 "use strict";
-const { jerusalemReady } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemVerdicts } = require("../../shared/case-helpers");
 
-const BLOCK = '.sch-day[data-date="2026-10-20"] .sch-show';
+// Two nights side by side: Tuesday, where the draft is still guessing and both
+// hours show what they turned down, and Wednesday, where one hour is locked.
+// The lock is the one thing a card's face says beyond the show itself, and
+// nothing on that night is on offer any more.
+const OPEN = '.sch-day[data-date="2026-10-20"]';
+const SETTLED = '.sch-day[data-date="2026-10-21"]';
 
 module.exports = {
-  description: "every drafted block offers the four verdicts: lock, favourite, not this night, not this show",
+  description: "a locked card is marked as locked, and its hour stops offering anyone else",
   page: "/planJerusalem/",
   viewport: "desktop",
+  localStorage: jerusalemVerdicts({ locked: { "noga-dangeli": "2026-10-21T21:00" } }),
   ready: jerusalemReady,
-  // The whole block, hovered: the four buttons sit at 40% until the block is
-  // under the pointer, so hovering is the state they are read in — and they
-  // are read against the show they are a verdict on, not on their own.
   async capture(page, t) {
-    await page.hover(`${BLOCK} .sch-foot`);
-    await page.waitForTimeout(200);
-    return t.element(BLOCK);
+    const boxes = [];
+    for (const night of [OPEN, SETTLED]) {
+      for (const slot of await page.locator(`${night} .sch-slot`).all()) boxes.push(await slot.boundingBox());
+    }
+    return t.clip(t.pad(t.union(boxes), 10));
   },
 };

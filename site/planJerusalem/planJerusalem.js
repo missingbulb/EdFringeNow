@@ -50,15 +50,13 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 // five-night comedy festival runs in the evening, and an axis anchored at 09:00
 // would be two thirds empty morning.
 const AXIS_PAD_MIN = 60;
-const SCH_HOUR_PX = 84;
+const SCH_HOUR_PX = 72;
 const SCH_HEAD_PX = 42;
-// A block has to hold a name, an hour, how rare the show is, and four buttons,
-// so its floor is what those four rows measure rather than a token height.
-const SCH_MIN_BLOCK = 68;
-const SCH_TIGHT_PX = 84;
-// Below this a block keeps only its name and its four verdicts: a block the
-// reader cannot rule on is worse than one that does not say where it is.
-const SCH_SQUEEZED_PX = 62;
+// A card's face carries the show and nothing else — its name, its hour and its
+// venue — so its floor is what those two rows measure. Everything the page has
+// to say about the card is in the popup.
+const SCH_MIN_BLOCK = 44;
+const SCH_TIGHT_PX = 52;
 const SCH_GUTTER_PX = 44;
 
 const MODE_META = {
@@ -866,6 +864,10 @@ function rarityText(freedom) {
   return freedom === 1 ? t("rarity.only") : t("rarity.some", { count: freedom });
 }
 
+/* One hour of one night: the shows that wanted it, drawn behind the one that
+ * took it. The stack is the picture of a contested hour — an edge per show
+ * turned down — and it is also the way to hand the hour to one of them, so it
+ * is a button rather than decoration. An uncontested hour is a single card. */
 function buildScheduleBlock(slot, top, rawBottom, ceiling) {
   const key = slotKey(slot);
   const height = Math.max(
@@ -875,35 +877,26 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
   const locked = state.locked.get(slot.slug) === key;
   const favourite = state.starred.has(slot.slug);
 
+  const wrap = document.createElement("div");
+  wrap.className = "sch-slot" + (slot.contenders.length ? " sch-slot--stacked" : "");
+  wrap.style.top = `${top}px`;
+  wrap.style.height = `${height}px`;
+
   const block = document.createElement("div");
   block.className =
     "sch-show " + (slot.status === "FREE_NON_TICKETED" ? "seg-free" : "seg-avail") +
     (locked ? " sch-show--locked" : "") +
-    (favourite ? " sch-show--fav" : "") +
-    (slot.freedom === 1 ? " sch-show--rare" : "");
-  block.style.top = `${top}px`;
-  block.style.height = `${height}px`;
+    (favourite ? " sch-show--fav" : "");
   block.dataset.slug = slot.slug;
   block.dataset.key = key;
   block.tabIndex = 0;
   if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
-  if (height < SCH_SQUEEZED_PX) block.classList.add("sch-show--squeezed");
 
   // A show with no published running time has end === start, so the clock
   // would read "22:00–22:00". Say the start and stop there rather than draw a
   // length nobody published.
   const end = slotEndTime(slot);
   const timeStr = end === slot.startTime ? slot.startTime : `${slot.startTime}–${end}`;
-
-  const verdict = (kind, key, mark, on) => {
-    const label = escapeHtml(t(key));
-    return (
-      `<button type="button" class="vb vb--${kind}${on ? " is-on" : ""}" data-verdict="${kind}"` +
-      ` aria-pressed="${on}" data-i18n-aria-label="${key}" data-i18n-title="${key}"` +
-      ` aria-label="${label}" title="${label}">` +
-      `<span aria-hidden="true">${mark}</span></button>`
-    );
-  };
 
   block.innerHTML =
     `<a class="sch-open" href="${escapeHtml(slot.url)}" target="_blank" rel="noopener" draggable="false">` +
@@ -912,25 +905,29 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName)}</span>` : "") +
     `</span></a>` +
-    `<div class="sch-why">` +
-    `<span class="sch-rarity" data-i18n-slot="${slot.freedom === 1 ? "rarity.only" : "rarity.some"}">` +
-    `${escapeHtml(rarityText(slot.freedom))}</span>` +
-    `</div>` +
-    // The foot is the row a squeezed block keeps: what else wanted this hour,
-    // and the four answers. Both are reachable however little room there is.
-    `<div class="sch-foot">` +
-    (slot.contenders.length
-      ? `<button type="button" class="sch-rivals-btn" aria-expanded="false"` +
-        ` data-i18n-slot="rivals.more">${escapeHtml(t("rivals.more", { count: slot.contenders.length }))}</button>`
-      : "") +
-    `<div class="sch-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
-    ` data-i18n-aria-label="verdict.groupLabel">` +
-    verdict("lock", "verdict.lock", "🔒", locked) +
-    verdict("favourite", "verdict.favourite", "★", favourite) +
-    verdict("noTime", "verdict.noTime", "✕", false) +
-    verdict("noShow", "verdict.noShow", "⊘", false) +
-    `</div></div>`;
-  return block;
+    // The one thing a card's face says beyond the show itself.
+    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
+  wrap.appendChild(block);
+
+  if (slot.contenders.length) {
+    const stack = document.createElement("button");
+    stack.type = "button";
+    stack.className = "sch-stack";
+    stack.setAttribute("aria-expanded", "false");
+    const label = t("rivals.more", { count: slot.contenders.length });
+    stack.setAttribute("aria-label", label);
+    stack.dataset.i18nAriaLabel = "rivals.more";
+    // Capped at three edges: past that the stack says "several" either way, and
+    // a fourth would reach into the hour below.
+    stack.innerHTML = slot.contenders
+      .slice(0, 3)
+      .map((_, i) => `<span class="sch-beaten" style="--i:${i + 1}"></span>`)
+      .join("");
+    // After the card in the DOM so a keyboard reaches the show first, behind it
+    // on screen so only the edges it leaves showing can be clicked.
+    wrap.appendChild(stack);
+  }
+  return wrap;
 }
 
 function buildTravelLeg(a, b, top, bottom) {
@@ -998,7 +995,7 @@ function closePops() {
     const pop = $(id);
     if (pop) pop.hidden = true;
   }
-  for (const btn of document.querySelectorAll(".sch-rivals-btn[aria-expanded='true']")) {
+  for (const btn of document.querySelectorAll(".sch-stack[aria-expanded='true']")) {
     btn.setAttribute("aria-expanded", "false");
   }
 }
@@ -1025,22 +1022,29 @@ function placePop(pop, block) {
   pop.style.top = `${Math.round(above ? box.top - host.top - popBox.height - 8 : box.bottom - host.top + 8)}px`;
 }
 
-/* Every night the programme prints for this show: the drafted one marked, the
- * ones the reader has rejected struck through. This is what makes "not this
- * night" a decision rather than a guess — you can see whether there is another
- * one before you take it. */
-function openPreview(block) {
+/* Everything the page has to say about one card, in one place: how few nights
+ * its show has — which is the reason it holds the hour — every night it plays,
+ * and the four answers. None of it is on the card's own face, so a calendar at
+ * rest reads as a calendar; all of it is one pointer-move away.
+ *
+ * It is something to act on rather than something to read, so it is reachable
+ * by keyboard, and it does not close the moment the pointer leaves the card. */
+function openCardPop(block) {
   const slug = block.dataset.slug;
   const show = state.catalogue.shows.find((sh) => sh.slug === slug);
   if (!show) return;
   const pop = $("calPreview");
+  const key = block.dataset.key;
+  pop.dataset.slug = slug;
+  pop.dataset.key = key;
+
   const drafted = state.picked.get(slug);
   const nights = [...show.performances]
     .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start))
     .map((perf) => {
-      const key = `${perf.date}T${perf.start}`;
-      const isDrafted = key === drafted;
-      const isRejected = state.noTime.has(instanceKey(slug, key));
+      const perfKey = `${perf.date}T${perf.start}`;
+      const isDrafted = perfKey === drafted;
+      const isRejected = state.noTime.has(instanceKey(slug, perfKey));
       const note = isDrafted ? t("preview.drafted") : isRejected ? t("preview.rejected") : "";
       return (
         `<li class="pop-night${isDrafted ? " is-drafted" : ""}${isRejected ? " is-rejected" : ""}">` +
@@ -1050,19 +1054,42 @@ function openPreview(block) {
       );
     })
     .join("");
+
+  const locked = state.locked.get(slug) === key;
+  const favourite = state.starred.has(slug);
+  const freedom = (state.draft.pool.get(slug) || show.performances).length;
+  const verdict = (kind, vKey, mark, on) => {
+    const label = escapeHtml(t(vKey));
+    return (
+      `<button type="button" class="vb vb--${kind}${on ? " is-on" : ""}" data-verdict="${kind}"` +
+      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-title="${vKey}"` +
+      ` aria-label="${label}" title="${label}">` +
+      `<span class="vb-mark" aria-hidden="true">${mark}</span>` +
+      `<span class="vb-word">${label}</span></button>`
+    );
+  };
+
   pop.innerHTML =
     `<p class="pop-title">${foreign(show.title)}</p>` +
-    `<p class="pop-lead">${escapeHtml(
-      show.performances.length === 1 ? t("preview.onlyNight") : t("preview.nights", { count: show.performances.length })
-    )}</p>` +
-    `<ul class="pop-nights">${nights}</ul>`;
+    `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
+    ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
+    `${escapeHtml(rarityText(freedom))}</span></p>` +
+    `<ul class="pop-nights">${nights}</ul>` +
+    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
+    ` data-i18n-aria-label="verdict.groupLabel">` +
+    verdict("lock", "verdict.lock", "🔒", locked) +
+    verdict("favourite", "verdict.favourite", "★", favourite) +
+    verdict("noTime", "verdict.noTime", "✕", false) +
+    verdict("noShow", "verdict.noShow", "⊘", false) +
+    `</div>`;
   placePop(pop, block);
 }
 
 /* Who else wanted this hour, and what it would cost to take one instead: a
  * contender carries the count that lost it the hour, and choosing it locks it,
  * because wanting a particular show at a particular hour is exactly a lock. */
-function openRivals(block) {
+function openRivals(stack) {
+  const block = stack.closest(".sch-slot").querySelector(".sch-show");
   const slot = draftedSlots().find(
     (s) => s.slug === block.dataset.slug && slotKey(s) === block.dataset.key
   );
@@ -1362,14 +1389,16 @@ function wireCalendar() {
   const wrap = $("scheduleWrap");
   // Clicks are delegated from the card, because the popovers are the card's
   // children rather than the calendar's (see placePop) — a listener on the
-  // calendar alone would never hear a contender being taken.
+  // calendar alone would never hear a verdict or a contender being taken.
   const card = $("planResult");
 
   card.addEventListener("click", (e) => {
+    // The four verdicts live in the popup now, so they carry no card of their
+    // own: which card they are a verdict on is what the popup remembers.
     const verdictBtn = e.target.closest("[data-verdict]");
     if (verdictBtn) {
-      const block = verdictBtn.closest(".sch-show");
-      applyVerdict(verdictBtn.dataset.verdict, block.dataset.slug, block.dataset.key);
+      const pop = $("calPreview");
+      applyVerdict(verdictBtn.dataset.verdict, pop.dataset.slug, pop.dataset.key);
       return;
     }
     // Taking a contender IS locking it: you are naming a show and an hour.
@@ -1378,43 +1407,75 @@ function wireCalendar() {
       applyVerdict("lock", take.dataset.take, take.dataset.key);
       return;
     }
-    const rivalsBtn = e.target.closest(".sch-rivals-btn");
-    if (rivalsBtn) {
-      const open = rivalsBtn.getAttribute("aria-expanded") === "true";
+    const stack = e.target.closest(".sch-stack");
+    if (stack) {
+      const open = stack.getAttribute("aria-expanded") === "true";
       closePops();
       if (!open) {
-        rivalsBtn.setAttribute("aria-expanded", "true");
-        openRivals(rivalsBtn.closest(".sch-show"));
+        stack.setAttribute("aria-expanded", "true");
+        openRivals(stack);
       }
       return;
     }
     if (!e.target.closest(".cal-pop")) closePops();
   });
 
-  // The preview follows the pointer between blocks and closes when it leaves
-  // the calendar. It is deliberately not opened from inside a verdict button:
-  // a reader reaching for ✕ is past wanting to be told what else is on.
+  // The popup holds buttons, so it cannot close the instant the pointer leaves
+  // the card — it has to survive the travel between the two.
+  let closeTimer = null;
+  const holdOpen = () => clearTimeout(closeTimer);
+  const closeSoon = () => {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      $("calPreview").hidden = true;
+    }, 220);
+  };
+
   wrap.addEventListener("pointerover", (e) => {
     if (e.pointerType === "touch") return;
     const block = e.target.closest(".sch-show");
-    if (!block || e.target.closest(".sch-verdicts") || e.target.closest(".cal-pop")) return;
+    if (!block) return;
+    // While the contenders are open they are the thing being read.
     if ($("calRivals").hidden === false) return;
-    openPreview(block);
+    holdOpen();
+    if ($("calPreview").dataset.key !== block.dataset.key || $("calPreview").hidden) openCardPop(block);
   });
-  wrap.addEventListener("pointerleave", () => {
-    $("calPreview").hidden = true;
-  });
-  // A keyboard reaches the same preview by tabbing to the block.
+  wrap.addEventListener("pointerleave", closeSoon);
+  $("calPreview").addEventListener("pointerenter", holdOpen);
+  $("calPreview").addEventListener("pointerleave", closeSoon);
+
+  // A keyboard reaches the same popup by tabbing to the card, and steps into
+  // its buttons from there; Escape closes it and hands focus back.
   wrap.addEventListener("focusin", (e) => {
     const block = e.target.closest(".sch-show");
-    if (block && !e.target.closest(".sch-verdicts")) openPreview(block);
+    if (block) {
+      holdOpen();
+      openCardPop(block);
+    }
+  });
+  wrap.addEventListener("keydown", (e) => {
+    const block = e.target.closest(".sch-show");
+    if (!block || e.target !== block) return;
+    if (e.key !== "Enter" && e.key !== " " && e.key !== "ArrowDown") return;
+    e.preventDefault();
+    holdOpen();
+    openCardPop(block);
+    const first = $("calPreview").querySelector("button");
+    if (first) first.focus();
   });
 
-  // A popover is placed once, against where the block was; scrolling the
+  // A popover is placed once, against where the card was; scrolling the
   // calendar under it would leave it pointing at nothing.
   wrap.addEventListener("scroll", closePops);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closePops();
+    if (e.key !== "Escape") return;
+    const inPop = document.activeElement && document.activeElement.closest(".cal-pop");
+    const slug = $("calPreview").dataset.slug;
+    closePops();
+    if (inPop && slug) {
+      const back = wrap.querySelector(`.sch-show[data-slug="${CSS.escape(slug)}"]`);
+      if (back) back.focus();
+    }
   });
 }
 

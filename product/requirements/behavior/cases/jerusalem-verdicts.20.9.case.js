@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady } = require("../../shared/case-helpers");
+const { clickStackBand, jerusalemReady } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
@@ -30,7 +30,10 @@ module.exports = {
     const refusedNight = "2026-10-20";
     const refused = await draftedAt(page, refusedNight, "20:00");
     assert.ok(refused, "the programme drafts something into the contested hour");
-    await page.click(`.sch-day[data-date="${refusedNight}"] .sch-show [data-verdict="noShow"]`);
+    // The verdicts live in the popup the card opens, not on the card itself.
+    await page.hover(`.sch-day[data-date="${refusedNight}"] .sch-slot >> nth=0 >> .sch-show`);
+    await page.waitForSelector('#calPreview [data-verdict="noShow"]');
+    await page.click('#calPreview [data-verdict="noShow"]');
     await page.waitForFunction(
       ([d, slug]) =>
         ![...document.querySelectorAll(`.sch-day[data-date="${d}"] .sch-show`)].some(
@@ -41,9 +44,10 @@ module.exports = {
     const replacement = await draftedAt(page, refusedNight, "20:00");
     assert.ok(replacement && replacement !== refused, "the hour goes to the next contender");
 
-    const lockedNight = "2026-10-19";
-    const lockedBlock = page.locator(`.sch-day[data-date="${lockedNight}"] .sch-show`).last();
-    await lockedBlock.locator(".sch-rivals-btn").click();
+    // Clicking the band the stack leaves showing is how the hour is handed on.
+    const stacked = page.locator('.sch-slot:has(.sch-stack)').first();
+    const lockedNight = await stacked.evaluate((el) => el.closest(".sch-day").dataset.date);
+    await clickStackBand(page, stacked);
     await page.click("#calRivals .pop-rival");
     await page.waitForSelector(`.sch-day[data-date="${lockedNight}"] .sch-show--locked`);
     const locked = await page
