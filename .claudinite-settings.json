@@ -10,7 +10,7 @@
     },
     {
       "id": "git-github",
-      "version": "60915.2",
+      "version": "60920.1",
       "via": [
         "basics"
       ]
@@ -21,7 +21,7 @@
     },
     {
       "id": "claudinite-growth",
-      "version": "60915.5",
+      "version": "60920.2",
       "config": {
         "retention_days": 10
       }
