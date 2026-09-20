@@ -1,15 +1,24 @@
 /* The festival planner page.
  *
- * The Edinburgh planner's board, grid and schedule, driven by a festival
- * descriptor (./festival.js) rather than by anything Jerusalem-specific: the
- * only strings this module names are its own UI's. It shares the Fringe
- * planner's stylesheet and its pure scheduling engine (../plan/lib/), and
- * shares no state with it at all — every key it stores is under the
- * descriptor's own prefix.
+ * A calendar-led planner, driven by a festival descriptor (./festival.js)
+ * rather than by anything Jerusalem-specific: the only strings this module
+ * names are its own UI's. It shares the Fringe planner's stylesheet and its
+ * pure engine (../plan/lib/), and shares no state with it at all — every key
+ * it stores is under the descriptor's own prefix.
+ *
+ * The model, which is this page's own: the calendar drafts from the WHOLE
+ * programme before the reader has chosen anything, giving each contested hour
+ * to the contender with the fewest nights of its own (../plan/lib/contention.js
+ * decides that, and knows nothing about this page). Because that pick is the
+ * page's guess rather than the reader's choice, every drafted block offers the
+ * four answers back — lock this night, favourite the show, not this night, not
+ * this show — and each re-drafts what is left. The grid the Fringe planner
+ * leads with is a drawer here, holding the record of those verdicts.
  *
  * Where it deliberately differs from plan/plan.js, and why:
- *   - no favourites upload. This festival publishes no export to upload, so the
- *     board's empty state browses the whole programme (34 shows) instead.
+ *   - no favourites upload, and nothing to star before the page is useful.
+ *     This festival publishes no export to upload, and the calendar draws from
+ *     the whole programme (34 shows) rather than from a list built first.
  *   - no availability colours beyond "on sale" and "free". There is no live
  *     ticket feed here and nothing is ever cancelled, so the Fringe grid's
  *     sold-out and offer palette would be drawing a distinction the source
@@ -19,12 +28,8 @@
  *     what makes the page good.
  */
 
-import {
-  buildSchedule,
-  placementDiagnostics,
-  slotKey,
-  summarize,
-} from "../plan/lib/engine.js";
+import { slotKey } from "../plan/lib/engine.js";
+import { draftCalendar, instanceKey } from "../plan/lib/contention.js";
 import { slotEndTime, toCsv, toIcs } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
@@ -38,17 +43,21 @@ const pad2 = (n) => String(n).padStart(2, "0");
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 
-// The schedule axis, in the same units and at the same scale as the Fringe
-// planner's, so the two boards read alike: one hour is SCH_HOUR_PX tall, a day
-// runs 09:00 to 27:00 (03:00 the next morning) and grows if a plan needs more.
-const AXIS_TOP_MIN = 9 * 60;
-const AXIS_BOTTOM_MIN = 27 * 60;
-const SCH_HOUR_PX = 26;
+// The calendar's axis. Taller per hour than the Fringe planner's, because a
+// block here is something the reader acts on rather than reads: it has to hold
+// a name, an hour, how rare the show is and the four verdicts. The axis spans
+// only the hours the draft actually uses, padded by one either side — a
+// five-night comedy festival runs in the evening, and an axis anchored at 09:00
+// would be two thirds empty morning.
+const AXIS_PAD_MIN = 60;
+const SCH_HOUR_PX = 72;
 const SCH_HEAD_PX = 42;
-const SCH_MIN_BLOCK = 26;
-const SCH_TIGHT_PX = 44;
+// A card's face carries the show and nothing else — its name, its hour and its
+// venue — so its floor is what those two rows measure. Everything the page has
+// to say about the card is in the popup.
+const SCH_MIN_BLOCK = 44;
+const SCH_TIGHT_PX = 52;
 const SCH_GUTTER_PX = 44;
-const SCH_EMPTY_COL_PX = 26;
 
 const MODE_META = {
   walk: { emoji: "🚶", verbKey: "travel.mode.walk" },
@@ -58,6 +67,7 @@ const MODE_META = {
 
 const KEY_STARRED = FESTIVAL.storagePrefix + "starred";
 const KEY_PREFS = FESTIVAL.storagePrefix + "prefs";
+const KEY_VERDICTS = FESTIVAL.storagePrefix + "verdicts";
 
 const state = {
   catalogue: null,
@@ -75,14 +85,17 @@ const state = {
     { id: "lunch", enabled: false, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30 },
     { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60 },
   ],
-  minPerDay: 1,
   maxPerDay: 3,
   minGap: 30,
   mode: "walk",
-  forced: new Set(),
-  schedule: null,
-  scheduledSlugs: new Set(),
-  selectedSlot: new Map(),
+  // The four verdicts. `starred` is the favourites set and keeps its own
+  // storage key, because it predates the other three and a reader who starred
+  // shows under the old board should find them still starred.
+  locked: new Map(),   // slug -> slotKey: this night, whatever the draft thinks
+  noTime: new Set(),   // instanceKey(): not this night, another one may be used
+  noShow: new Set(),   // slug: not this show, on any night
+  draft: null,
+  picked: new Map(),
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
   search: { query: "", genres: new Set(), venues: new Set() },
 };
@@ -176,6 +189,24 @@ function saveStarred() {
   writeStore(KEY_STARRED, [...state.starred]);
 }
 
+function saveVerdicts() {
+  writeStore(KEY_VERDICTS, {
+    locked: Object.fromEntries(state.locked),
+    noTime: [...state.noTime],
+    noShow: [...state.noShow],
+  });
+}
+
+function restoreVerdicts(known) {
+  const saved = readStore(KEY_VERDICTS, null);
+  if (!saved) return;
+  for (const [slug, key] of Object.entries(saved.locked || {})) {
+    if (known.has(slug)) state.locked.set(slug, key);
+  }
+  for (const key of saved.noTime || []) state.noTime.add(key);
+  for (const slug of saved.noShow || []) if (known.has(slug)) state.noShow.add(slug);
+}
+
 function savePrefs() {
   writeStore(KEY_PREFS, {
     d0: state.d0,
@@ -183,7 +214,6 @@ function savePrefs() {
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     meals: state.meals,
-    minPerDay: state.minPerDay,
     maxPerDay: state.maxPerDay,
     minGap: state.minGap,
     mode: state.mode,
@@ -204,7 +234,6 @@ function restorePrefs() {
       if (stored) Object.assign(meal, { enabled: !!stored.enabled, startMin: stored.startMin, endMin: stored.endMin });
     }
   }
-  state.minPerDay = Number(saved.minPerDay) || state.minPerDay;
   state.maxPerDay = Number(saved.maxPerDay) || state.maxPerDay;
   state.minGap = Number.isFinite(saved.minGap) ? saved.minGap : state.minGap;
   if (MODE_META[saved.mode]) state.mode = saved.mode;
@@ -256,14 +285,16 @@ function renderHeaderHint() {
 
 // --- the board ------------------------------------------------------------
 
+/* The drawer's own two states. The calendar above it is always shown, so this
+ * is only about whether there is a grid to draw: the browse list stands in for
+ * it until some show has been ruled on. */
 function showBoard() {
-  const populated = state.starred.size > 0;
-  $("browseStage").hidden = populated;
-  $("calWrap").hidden = !populated;
-  $("clearFavBtn").hidden = !populated;
-  $("legendBtn").hidden = !populated;
-  $("planPanel").hidden = !populated;
-  $("tripLinks").hidden = !populated;
+  const ruled = ruledShows().length > 0;
+  $("browseStage").hidden = ruled;
+  $("calWrap").hidden = !ruled;
+  $("clearFavBtn").hidden = !ruled;
+  $("legendBtn").hidden = !ruled;
+  $("tripLinks").hidden = false;
 }
 
 function buildDayHeader() {
@@ -279,16 +310,7 @@ function buildDayHeader() {
   }
 }
 
-/** The shows on the grid, in the order the lanes are drawn: by first start. */
-function starredShows() {
-  return state.catalogue.shows
-    .filter((s) => state.starred.has(s.slug))
-    .sort((a, b) => {
-      const at = a.performances[0]?.start || "";
-      const bt = b.performances[0]?.start || "";
-      return at.localeCompare(bt) || a.slug.localeCompare(b.slug);
-    });
-}
+
 
 function segClass(perf) {
   // Two states, because the source publishes two. See catalogue.js.
@@ -330,7 +352,7 @@ function buildDayCells(performances) {
 function buildLanes() {
   const lanesEl = $("lanes");
   lanesEl.innerHTML = "";
-  for (const show of starredShows()) {
+  for (const show of ruledShows()) {
     const lane = document.createElement("div");
     lane.className = "cal-row lane";
     lane.dataset.slug = show.slug;
@@ -359,46 +381,52 @@ function buildLanes() {
   }
 }
 
-/** The verdict pill each lane wears, mirroring the plan. */
-function applyVerdicts(summary, diagnostics) {
-  const bySlug = new Map(summary.shows.map((s) => [s.slug, s]));
+/* The verdict pill each lane wears. Under the calendar-led model a lane is
+ * drawn because the reader ruled on the show, so the pill names that ruling
+ * first and what the draft did with it second. */
+function applyVerdicts(draft) {
+  const drafted = draft.picked;
+  const crowded = new Set(draft.crowdedOut.map((s) => s.slug));
   for (const lane of $("lanes").querySelectorAll(".lane")) {
     const slug = lane.dataset.slug;
-    const show = bySlug.get(slug);
-    const scheduled = state.scheduledSlugs.has(slug);
-    const inWindow = show ? show.performances.some((p) => p.inWindow) : false;
+    const scheduled = drafted.has(slug);
+    const rejected = state.noShow.has(slug);
     lane.classList.toggle("lane--scheduled", scheduled);
-    lane.classList.toggle("lane--forced", state.forced.has(slug));
-    lane.classList.toggle("lane--out", !inWindow);
-    lane.classList.toggle("lane--blocked", diagnostics.blockedSlugs.has(slug));
+    lane.classList.toggle("lane--forced", state.locked.has(slug));
+    lane.classList.toggle("lane--out", rejected);
+    lane.classList.toggle("lane--blocked", !scheduled && !rejected);
 
     // The pill's emoji is the page's, not the translation's: a marker a
     // translator cannot lose, beside a word that is entirely theirs.
-    const [verdictClass, verdictKey, verdictMark] = scheduled
-      ? ["st-plan st-in", "lane.scheduled", "✓"]
-      : !inWindow
-        ? ["st-dates st-no", "lane.noDates", "📅"]
-        : diagnostics.blockedSlugs.has(slug)
-          ? ["st-conflict st-warn", "lane.outsideHours", "⏰"]
-          : ["st-cant", "lane.cantFit", ""];
+    const [verdictClass, verdictKey, verdictMark] = rejected
+      ? ["st-dates st-no", "lane.rejected", "⊘"]
+      : state.locked.has(slug)
+        ? ["st-plan st-in", "lane.locked", "🔒"]
+        : scheduled
+          ? ["st-plan st-in", "lane.scheduled", "✓"]
+          : crowded.has(slug)
+            ? ["st-conflict st-warn", "lane.crowdedOut", "⏰"]
+            : ["st-cant", "lane.cantFit", ""];
     const statusEl = lane.querySelector(".lane-status");
     statusEl.innerHTML =
       `<span class="${verdictClass}" data-i18n-slot="${verdictKey}">` +
       (verdictMark ? `<span aria-hidden="true">${verdictMark}</span> ` : "") +
       `${escapeHtml(t(verdictKey))}</span>`;
 
-    // Ring the one performance the plan picked, the way the Fringe grid does.
-    const picked = state.selectedSlot.get(slug);
+    // Ring the one performance the draft picked, and strike the nights ruled out.
+    const picked = drafted.get(slug);
     for (const cell of lane.querySelectorAll(".cell")) {
       let pinned = false;
       for (const seg of cell.querySelectorAll(".seg")) {
         // slotKey()'s own spelling — the map is keyed by the engine, so the
         // grid has to ask the question in the engine's words.
-        const isPick = picked === `${seg.dataset.date}T${seg.dataset.start}`;
+        const key = `${seg.dataset.date}T${seg.dataset.start}`;
+        const isPick = picked === key;
         seg.classList.toggle("seg--selected", isPick);
+        seg.classList.toggle("seg--refused", state.noTime.has(instanceKey(slug, key)));
         if (isPick) pinned = true;
       }
-      cell.classList.toggle("cell--pin", pinned && state.forced.has(slug));
+      cell.classList.toggle("cell--pin", pinned && state.locked.has(slug));
     }
   }
 }
@@ -481,7 +509,7 @@ function dragDate(el, apply) {
     const move = (ev) => {
       apply(ev, s0, s1, startX);
       paintWindow();
-      replan();
+      redraftAndSave();
     };
     const up = () => {
       el.classList.remove("dragging");
@@ -503,7 +531,7 @@ function keysDate(el, fn) {
     e.preventDefault();
     fn(step);
     paintWindow();
-    replan();
+    redraftAndSave();
   });
 }
 
@@ -549,39 +577,126 @@ function planOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     mealBreaks: state.meals,
-    minPerDay: state.minPerDay,
     maxPerDay: state.maxPerDay,
     minGapSameVenue: 0,
     minGapDifferentVenue: state.minGap,
     travelMode: state.mode,
     venueCoords: state.coords,
-    forcedSlugs: [...state.forced],
+    locked: state.locked,
+    favourites: state.starred,
+    rejectedShows: state.noShow,
+    rejectedInstances: state.noTime,
   };
 }
 
-function replan() {
-  const shows = starredShows();
-  const options = planOptions();
-  const summary = summarize(shows, {
-    dateStart: options.dateStart,
-    dateEnd: options.dateEnd,
-    startTimeMin: 0,
-    startTimeMax: 1439,
-  });
-  const schedule = buildSchedule(shows, options);
-  const diagnostics = placementDiagnostics(shows, options);
+/* Re-draft from the whole programme and redraw everything that reads it.
+ * Every verdict, every control and the date window all land here: there is one
+ * draft on the page and it is rebuilt rather than patched, which is what keeps
+ * a verdict's knock-on effects (a freed hour, a show that is now scarcer)
+ * honest instead of locally repaired. */
+function redraft() {
+  closePops();
+  const draft = draftCalendar(state.catalogue.shows, planOptions());
+  state.draft = draft;
+  state.picked = draft.picked;
 
-  state.schedule = schedule;
-  state.scheduledSlugs = new Set(schedule.scheduled.map((s) => s.slug));
-  state.selectedSlot = new Map(schedule.scheduled.map((s) => [s.slug, slotKey(s)]));
-
-  applyVerdicts(summary, diagnostics);
-  renderCounts(schedule.counts.scheduledShows, shows.length);
-  renderPlanSummary(schedule);
-  renderSchedule(schedule);
+  renderCalendar(draft);
+  renderCounts(draft);
+  renderPlanSummary(draft);
+  buildLanes();
+  applyVerdicts(draft);
+  renderDrawerCount(draft);
+  showBoard();
+  syncStars();
   renderTripLinks();
   renderPlanSub();
+}
+
+/** The star on every browse and search row, set from the favourites. */
+function syncStars() {
+  for (const row of document.querySelectorAll(".ss-row")) {
+    const on = state.starred.has(row.dataset.slug);
+    row.classList.toggle("is-on", on);
+    const star = row.querySelector(".ss-star");
+    star.setAttribute("aria-pressed", String(on));
+    star.textContent = on ? "★" : "☆";
+  }
+}
+
+/** Re-draft after the reader changed something the page should remember. */
+function redraftAndSave() {
   savePrefs();
+  saveVerdicts();
+  redraft();
+}
+
+/** Every slot the draft placed, in time order — what the exports write. */
+function draftedSlots() {
+  return state.draft ? state.draft.days.flatMap((d) => d.slots) : [];
+}
+
+/* One verdict, applied. Each is a toggle, and each clears whatever it
+ * contradicts: locking a night is not compatible with having rejected that
+ * night or the show, and rejecting the show is not compatible with wanting it.
+ * Keeping that here rather than in the drafter means the drafter never has to
+ * arbitrate between two verdicts that cannot both be true. */
+function applyVerdict(kind, slug, key) {
+  const instance = instanceKey(slug, key);
+  if (kind === "lock") {
+    if (state.locked.get(slug) === key) state.locked.delete(slug);
+    else {
+      state.locked.set(slug, key);
+      state.noTime.delete(instance);
+      state.noShow.delete(slug);
+    }
+  } else if (kind === "favourite") {
+    if (state.starred.has(slug)) state.starred.delete(slug);
+    else {
+      state.starred.add(slug);
+      state.noShow.delete(slug);
+    }
+    saveStarred();
+  } else if (kind === "noTime") {
+    if (state.noTime.has(instance)) state.noTime.delete(instance);
+    else {
+      state.noTime.add(instance);
+      if (state.locked.get(slug) === key) state.locked.delete(slug);
+    }
+  } else if (kind === "noShow") {
+    if (state.noShow.has(slug)) state.noShow.delete(slug);
+    else {
+      state.noShow.add(slug);
+      state.starred.delete(slug);
+      state.locked.delete(slug);
+      saveStarred();
+    }
+  }
+  redraftAndSave();
+}
+
+/** Every verdict lifted from one show — what the drawer's × does. */
+function clearVerdicts(slug) {
+  state.starred.delete(slug);
+  state.locked.delete(slug);
+  state.noShow.delete(slug);
+  for (const key of [...state.noTime]) {
+    if (key.startsWith(`${slug}@`)) state.noTime.delete(key);
+  }
+  saveStarred();
+  redraftAndSave();
+}
+
+/** The shows the drawer draws a lane for: the ones a verdict has touched. */
+function ruledShows() {
+  const slugs = new Set([...state.starred, ...state.locked.keys(), ...state.noShow]);
+  for (const key of state.noTime) slugs.add(key.slice(0, key.indexOf("@")));
+  return state.catalogue.shows
+    .filter((show) => slugs.has(show.slug))
+    .sort((a, b) => {
+      const at = a.performances[0]?.start || "";
+      const bt = b.performances[0]?.start || "";
+      return at.localeCompare(bt) || a.slug.localeCompare(b.slug);
+    });
 }
 
 /* "…across 18–22 Oct…" — the window's dates sit inside the sentence, so the
@@ -600,40 +715,52 @@ function renderPlanSub() {
   );
 }
 
-function renderCounts(scheduled, selected) {
+function renderCounts(draft) {
   const el = $("boardCount");
-  el.dataset.i18nSlot = selected ? "board.count.some" : "board.count.none";
-  el.innerHTML = selected
+  const decided = state.starred.size + state.locked.size + state.noShow.size + state.noTime.size;
+  el.dataset.i18nSlot = decided ? "board.count.some" : "board.count.none";
+  el.innerHTML = decided
     ? tHtml(
         "board.count.some",
-        { planned: scheduled, selected },
+        { planned: draft.counts.picked, selected: decided },
         {
           // The two numbers are wrapped where they land in the sentence, so the
           // emphasis follows the translation's own word order.
-          planned: `<span class="bc-planned">${scheduled}</span>`,
-          selected: `<span class="bc-selected">${selected}</span>`,
+          planned: `<span class="bc-planned">${draft.counts.picked}</span>`,
+          selected: `<span class="bc-selected">${decided}</span>`,
         }
       )
-    : escapeHtml(t("board.count.none"));
+    : escapeHtml(t("board.count.none", { count: draft.counts.picked }));
 }
 
-function renderPlanSummary(schedule) {
-  const nights = schedule.days.filter((d) => d.slots.length).length;
-  $("planSummary").textContent = schedule.scheduled.length
-    ? t("plan.summary", { shows: schedule.scheduled.length, nights }) +
-      (schedule.unscheduled.length
-        ? ` ${t("plan.summary.unfitted", { count: schedule.unscheduled.length })}`
+function renderPlanSummary(draft) {
+  const nights = draft.days.filter((d) => d.slots.length).length;
+  $("planSummary").textContent = draft.counts.picked
+    ? t("plan.summary", { shows: draft.counts.picked, nights }) +
+      (draft.counts.contested
+        ? ` ${t("plan.summary.contested", { count: draft.counts.contested })}`
         : "")
     : "";
 }
 
-// --- the schedule board ---------------------------------------------------
+/** The drawer's own line: what is in it, without opening it. */
+function renderDrawerCount(draft) {
+  const el = $("drawerCount");
+  el.dataset.i18nSlot = "drawer.count";
+  el.textContent = t("drawer.count", {
+    shows: state.catalogue.shows.length,
+    decided: state.starred.size + state.locked.size + state.noShow.size + state.noTime.size,
+    crowded: draft.crowdedOut.length,
+  });
+}
 
-function renderSchedule(schedule) {
+// --- the calendar ---------------------------------------------------------
+
+function renderCalendar(draft) {
   const host = $("schedule");
   const empty = $("scheduleEmpty");
   host.innerHTML = "";
-  if (!schedule.scheduled.length) {
+  if (!draft.counts.picked) {
     host.hidden = true;
     empty.hidden = false;
     return;
@@ -641,19 +768,24 @@ function renderSchedule(schedule) {
   host.hidden = false;
   empty.hidden = true;
 
-  const mins = [AXIS_TOP_MIN, state.dayStartMin];
-  const maxs = [AXIS_BOTTOM_MIN, state.dayEndMin];
-  for (const slot of schedule.scheduled) {
-    mins.push(slot.startMinuteOfDay);
-    maxs.push(slot.endMinuteOfDay);
+  // The axis covers the drafted evening and an hour either side — see
+  // AXIS_PAD_MIN. Meal breaks the reader has switched on count too, since they
+  // are drawn on the same axis.
+  const mins = [];
+  const maxs = [];
+  for (const day of draft.days) {
+    for (const slot of day.slots) {
+      mins.push(slot.startMinuteOfDay);
+      maxs.push(slot.endMinuteOfDay);
+    }
   }
   for (const meal of state.meals) {
     if (!meal.enabled) continue;
     mins.push(meal.startMin);
     maxs.push(meal.endMin);
   }
-  const minHour = Math.floor(Math.max(0, Math.min(...mins)) / 60);
-  const maxHour = Math.max(minHour + 1, Math.ceil(Math.max(...maxs) / 60));
+  const minHour = Math.floor((Math.min(...mins) - AXIS_PAD_MIN) / 60);
+  const maxHour = Math.max(minHour + 1, Math.ceil((Math.max(...maxs) + AXIS_PAD_MIN) / 60));
   const axisTopMin = minHour * 60;
   const axisBottomMin = maxHour * 60;
   const axisH = (maxHour - minHour) * SCH_HOUR_PX;
@@ -673,39 +805,32 @@ function renderSchedule(schedule) {
     const label = document.createElement("div");
     label.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
     label.style.top = `${(h - minHour) * SCH_HOUR_PX}px`;
-    label.textContent = `${pad2(h)}:00`;
+    label.textContent = `${pad2(h % 24)}:00`;
     gBody.appendChild(label);
   }
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
-  const byDate = new Map(schedule.days.map((d) => [d.date, d]));
+  // Every night of the window gets a column whether or not the draft filled it:
+  // an empty night is a fact about the programme and the reader's controls, and
+  // collapsing it would hide it.
+  const byDate = new Map(draft.days.map((d) => [d.date, d]));
   const renderDays = state.dates
     .slice(state.d0 - 1, state.d1)
     .map((iso) => byDate.get(iso) || { date: iso, slots: [] });
 
-  const wrapW = ($("scheduleWrap").clientWidth || 800) - SCH_GUTTER_PX;
-  const emptyCount = renderDays.filter((d) => !d.slots.length).length;
-  const fullCount = Math.max(1, renderDays.length - emptyCount);
-  const colW = Math.max(1, (wrapW - emptyCount * SCH_EMPTY_COL_PX) / fullCount);
-  host.classList.toggle("cols-narrow", colW < 78);
-  host.classList.toggle("cols-tiny", colW < 56);
-
   for (const day of renderDays) {
-    const full = day.slots.length > 0;
     const col = document.createElement("div");
-    col.className = "sch-day" + (isWeekend(day.date) ? " wknd" : "") + (full ? "" : " sch-day--empty");
+    col.className = "sch-day" + (isWeekend(day.date) ? " wknd" : "") + (day.slots.length ? "" : " sch-day--empty");
     col.dataset.date = day.date;
 
     const head = document.createElement("div");
     head.className = "sch-day-head";
-    head.innerHTML = full
-      ? `<div class="sch-dow">${escapeHtml(dates({ weekday: "long" }).format(dateOf(day.date)))} ` +
-        `<span class="sch-date">${escapeHtml(dayLabel(day.date))}</span></div>` +
-        `<div class="sch-day-count" data-i18n-slot="schedule.dayCount">` +
-        `${escapeHtml(t("schedule.dayCount", { count: day.slots.length }))}</div>`
-      : `<div class="sch-dow sch-dow--empty">${dateOf(day.date).getUTCDate()}</div>`;
-    if (!full) col.title = t("schedule.nothingPlanned", { day: dayAndDate(day.date) });
+    head.innerHTML =
+      `<div class="sch-dow">${escapeHtml(dates({ weekday: "short" }).format(dateOf(day.date)))} ` +
+      `<span class="sch-date">${escapeHtml(dayLabel(day.date))}</span></div>` +
+      `<div class="sch-day-count" data-i18n-slot="schedule.dayCount">` +
+      `${escapeHtml(t("schedule.dayCount", { count: day.slots.length }))}</div>`;
 
     const body = document.createElement("div");
     body.className = "sch-body";
@@ -718,29 +843,53 @@ function renderSchedule(schedule) {
       if (gap < 0 || gap >= 60) continue;
       body.appendChild(buildTravelLeg(a, b, y(a.endMinuteOfDay), y(b.startMinuteOfDay)));
     }
-    for (const slot of day.slots) {
-      body.appendChild(buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay)));
-    }
+    day.slots.forEach((slot, i) => {
+      // A short show is drawn at SCH_MIN_BLOCK so its four verdicts fit — but
+      // never past the next block's own start, or the two would overlap and
+      // the calendar would claim a clash the scheduler took care to avoid.
+      const next = day.slots[i + 1];
+      const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+      body.appendChild(
+        buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
+      );
+    });
 
     col.append(head, body);
     host.appendChild(col);
   }
 }
 
-function buildScheduleBlock(slot, top, rawBottom) {
-  const height = Math.max(SCH_MIN_BLOCK, rawBottom - top);
-  const forced = state.forced.has(slot.slug);
-  const block = document.createElement("a");
+/** How rare the drafted show is — the whole reason it won its hour. */
+function rarityText(freedom) {
+  return freedom === 1 ? t("rarity.only") : t("rarity.some", { count: freedom });
+}
+
+/* One hour of one night: the shows that wanted it, drawn behind the one that
+ * took it. The stack is the picture of a contested hour — an edge per show
+ * turned down — and it is also the way to hand the hour to one of them, so it
+ * is a button rather than decoration. An uncontested hour is a single card. */
+function buildScheduleBlock(slot, top, rawBottom, ceiling) {
+  const key = slotKey(slot);
+  const height = Math.max(
+    Math.min(SCH_MIN_BLOCK, Math.max(12, ceiling - top)),
+    rawBottom - top
+  );
+  const locked = state.locked.get(slot.slug) === key;
+  const favourite = state.starred.has(slot.slug);
+
+  const wrap = document.createElement("div");
+  wrap.className = "sch-slot" + (slot.contenders.length ? " sch-slot--stacked" : "");
+  wrap.style.top = `${top}px`;
+  wrap.style.height = `${height}px`;
+
+  const block = document.createElement("div");
   block.className =
     "sch-show " + (slot.status === "FREE_NON_TICKETED" ? "seg-free" : "seg-avail") +
-    (forced ? " sch-show--pinned" : "");
-  block.href = slot.url;
-  block.target = "_blank";
-  block.rel = "noopener";
-  block.draggable = false;
-  block.style.top = `${top}px`;
-  block.style.height = `${height}px`;
+    (locked ? " sch-show--locked" : "") +
+    (favourite ? " sch-show--fav" : "");
   block.dataset.slug = slot.slug;
+  block.dataset.key = key;
+  block.tabIndex = 0;
   if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
 
   // A show with no published running time has end === start, so the clock
@@ -748,15 +897,37 @@ function buildScheduleBlock(slot, top, rawBottom) {
   // length nobody published.
   const end = slotEndTime(slot);
   const timeStr = end === slot.startTime ? slot.startTime : `${slot.startTime}–${end}`;
+
   block.innerHTML =
-    (forced ? `<span class="sch-pin" aria-hidden="true">🔒</span>` : "") +
-    `<span class="sch-body-text">` +
+    `<a class="sch-open" href="${escapeHtml(slot.url)}" target="_blank" rel="noopener" draggable="false">` +
     `<span class="sch-name">${foreign(slot.title)}</span>` +
     `<span class="sch-meta">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
     (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName)}</span>` : "") +
-    `</span></span>`;
-  return block;
+    `</span></a>` +
+    // The one thing a card's face says beyond the show itself.
+    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
+  wrap.appendChild(block);
+
+  if (slot.contenders.length) {
+    const stack = document.createElement("button");
+    stack.type = "button";
+    stack.className = "sch-stack";
+    stack.setAttribute("aria-expanded", "false");
+    const label = t("rivals.more", { count: slot.contenders.length });
+    stack.setAttribute("aria-label", label);
+    stack.dataset.i18nAriaLabel = "rivals.more";
+    // Capped at three edges: past that the stack says "several" either way, and
+    // a fourth would reach into the hour below.
+    stack.innerHTML = slot.contenders
+      .slice(0, 3)
+      .map((_, i) => `<span class="sch-beaten" style="--i:${i + 1}"></span>`)
+      .join("");
+    // After the card in the DOM so a keyboard reaches the show first, behind it
+    // on screen so only the edges it leaves showing can be clicked.
+    wrap.appendChild(stack);
+  }
+  return wrap;
 }
 
 function buildTravelLeg(a, b, top, bottom) {
@@ -810,6 +981,135 @@ function buildTravelLeg(a, b, top, bottom) {
     `<span class="leg-emoji" aria-hidden="true">${meta.emoji}</span>` +
     `<span class="leg-text">${escapeHtml(text)}</span>`;
   return leg;
+}
+
+// --- the calendar's two floating surfaces ---------------------------------
+//
+// What else this show plays (hover, and focus for a keyboard), and who else
+// wanted this hour (click). Both are drawn into a single element apiece and
+// positioned against the block, so nothing is created per block and the
+// calendar can be rebuilt on every verdict without leaking listeners.
+
+function closePops() {
+  for (const id of ["calPreview", "calRivals"]) {
+    const pop = $(id);
+    if (pop) pop.hidden = true;
+  }
+  for (const btn of document.querySelectorAll(".sch-stack[aria-expanded='true']")) {
+    btn.setAttribute("aria-expanded", "false");
+  }
+}
+
+/* Anchored to the block, in the card around the calendar rather than in the
+ * calendar itself: the calendar is a scroller, and a scroller clips whatever
+ * leaves it — which is every popover that wants to sit above a block. The card
+ * is the popovers' offset parent, so the sums below are in its coordinates,
+ * and a scroll of the calendar closes them rather than dragging them along. */
+function placePop(pop, block) {
+  const host = $("planResult").getBoundingClientRect();
+  const box = block.getBoundingClientRect();
+  pop.hidden = false;
+  const popBox = pop.getBoundingClientRect();
+  const left = clamp(
+    box.left - host.left + box.width / 2 - popBox.width / 2,
+    4,
+    Math.max(4, host.width - popBox.width - 4)
+  );
+  // Above the block when there is room for it there, below when there is not.
+  const above = box.top - host.top > popBox.height + 10;
+  pop.classList.toggle("cal-pop--below", !above);
+  pop.style.left = `${Math.round(left)}px`;
+  pop.style.top = `${Math.round(above ? box.top - host.top - popBox.height - 8 : box.bottom - host.top + 8)}px`;
+}
+
+/* Everything the page has to say about one card, in one place: how few nights
+ * its show has — which is the reason it holds the hour — every night it plays,
+ * and the four answers. None of it is on the card's own face, so a calendar at
+ * rest reads as a calendar; all of it is one pointer-move away.
+ *
+ * It is something to act on rather than something to read, so it is reachable
+ * by keyboard, and it does not close the moment the pointer leaves the card. */
+function openCardPop(block) {
+  const slug = block.dataset.slug;
+  const show = state.catalogue.shows.find((sh) => sh.slug === slug);
+  if (!show) return;
+  const pop = $("calPreview");
+  const key = block.dataset.key;
+  pop.dataset.slug = slug;
+  pop.dataset.key = key;
+
+  const drafted = state.picked.get(slug);
+  const nights = [...show.performances]
+    .sort((a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start))
+    .map((perf) => {
+      const perfKey = `${perf.date}T${perf.start}`;
+      const isDrafted = perfKey === drafted;
+      const isRejected = state.noTime.has(instanceKey(slug, perfKey));
+      const note = isDrafted ? t("preview.drafted") : isRejected ? t("preview.rejected") : "";
+      return (
+        `<li class="pop-night${isDrafted ? " is-drafted" : ""}${isRejected ? " is-rejected" : ""}">` +
+        `<span class="pn-when">${escapeHtml(dayAndDate(perf.date))} · ${escapeHtml(perf.start)}</span>` +
+        (note ? `<span class="pn-note">${escapeHtml(note)}</span>` : "") +
+        `</li>`
+      );
+    })
+    .join("");
+
+  const locked = state.locked.get(slug) === key;
+  const favourite = state.starred.has(slug);
+  const freedom = (state.draft.pool.get(slug) || show.performances).length;
+  const verdict = (kind, vKey, mark, on) => {
+    const label = escapeHtml(t(vKey));
+    return (
+      `<button type="button" class="vb vb--${kind}${on ? " is-on" : ""}" data-verdict="${kind}"` +
+      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-title="${vKey}"` +
+      ` aria-label="${label}" title="${label}">` +
+      `<span class="vb-mark" aria-hidden="true">${mark}</span>` +
+      `<span class="vb-word">${label}</span></button>`
+    );
+  };
+
+  pop.innerHTML =
+    `<p class="pop-title">${foreign(show.title)}</p>` +
+    `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
+    ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
+    `${escapeHtml(rarityText(freedom))}</span></p>` +
+    `<ul class="pop-nights">${nights}</ul>` +
+    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
+    ` data-i18n-aria-label="verdict.groupLabel">` +
+    verdict("lock", "verdict.lock", "🔒", locked) +
+    verdict("favourite", "verdict.favourite", "★", favourite) +
+    verdict("noTime", "verdict.noTime", "✕", false) +
+    verdict("noShow", "verdict.noShow", "⊘", false) +
+    `</div>`;
+  placePop(pop, block);
+}
+
+/* Who else wanted this hour, and what it would cost to take one instead: a
+ * contender carries the count that lost it the hour, and choosing it locks it,
+ * because wanting a particular show at a particular hour is exactly a lock. */
+function openRivals(stack) {
+  const block = stack.closest(".sch-slot").querySelector(".sch-show");
+  const slot = draftedSlots().find(
+    (s) => s.slug === block.dataset.slug && slotKey(s) === block.dataset.key
+  );
+  if (!slot || !slot.contenders.length) return;
+  const pop = $("calRivals");
+  pop.innerHTML =
+    `<p class="pop-title" data-i18n-slot="rivals.title">${escapeHtml(t("rivals.title", { time: slot.startTime }))}</p>` +
+    `<ul class="pop-rivals">` +
+    slot.contenders
+      .map(
+        (rival) =>
+          `<li><button type="button" class="pop-rival" data-take="${escapeHtml(rival.slug)}"` +
+          ` data-key="${escapeHtml(slotKey(rival))}">` +
+          `<span class="pr-title">${foreign(rival.title)}</span>` +
+          `<span class="pr-nights">${escapeHtml(rarityText(rival.freedom))}</span></button></li>`
+      )
+      .join("") +
+    `</ul>` +
+    `<p class="pop-foot" data-i18n-slot="rivals.foot">${escapeHtml(t("rivals.foot"))}</p>`;
+  placePop(pop, block);
 }
 
 // --- the two questions the festival doesn't answer ------------------------
@@ -948,30 +1248,14 @@ function syncFacetChrome() {
 }
 
 function toggleStar(slug) {
-  if (state.starred.has(slug)) state.starred.delete(slug);
-  else state.starred.add(slug);
-  saveStarred();
-  rebuild();
+  applyVerdict("favourite", slug, state.picked.get(slug) || "");
 }
 
-/** Everything that changes when the starred set changes. */
+/** Everything the page draws, redrawn. */
 function rebuild() {
-  showBoard();
-  buildLanes();
   renderBrowse();
-  for (const row of document.querySelectorAll(".ss-row")) {
-    const on = state.starred.has(row.dataset.slug);
-    row.classList.toggle("is-on", on);
-    const star = row.querySelector(".ss-star");
-    star.setAttribute("aria-pressed", String(on));
-    star.textContent = on ? "★" : "☆";
-  }
-  if (state.starred.size) {
-    layoutOverlay();
-    replan();
-  } else {
-    renderCounts(0, 0);
-  }
+  redraft();
+  layoutOverlay();
 }
 
 // --- controls -------------------------------------------------------------
@@ -981,42 +1265,38 @@ function wireControls() {
     const min = clockToMin(e.target.value);
     if (min != null) state.dayStartMin = min;
     e.target.value = minToDayClock(state.dayStartMin);
-    replan();
+    redraftAndSave();
   });
   $("ctlDayEnd").addEventListener("change", (e) => {
     const min = clockToMin(e.target.value);
     if (min != null) state.dayEndMin = min;
     e.target.value = minToDayClock(state.dayEndMin);
-    replan();
+    redraftAndSave();
   });
   for (const meal of state.meals) {
     const cap = meal.id[0].toUpperCase() + meal.id.slice(1);
     $(`meal${cap}On`).addEventListener("change", (e) => {
       meal.enabled = e.target.checked;
-      replan();
+      redraftAndSave();
     });
     $(`meal${cap}Start`).addEventListener("change", (e) => {
       const min = clockToMin(e.target.value);
       if (min != null) meal.startMin = min;
-      replan();
+      redraftAndSave();
     });
     $(`meal${cap}End`).addEventListener("change", (e) => {
       const min = clockToMin(e.target.value);
       if (min != null) meal.endMin = min;
-      replan();
+      redraftAndSave();
     });
   }
-  $("ctlMin").addEventListener("change", (e) => {
-    state.minPerDay = Number(e.target.value);
-    replan();
-  });
   $("ctlMax").addEventListener("change", (e) => {
     state.maxPerDay = Math.max(1, Number(e.target.value) || 1);
-    replan();
+    redraftAndSave();
   });
   $("ctlGap").addEventListener("change", (e) => {
     state.minGap = Number(e.target.value);
-    replan();
+    redraftAndSave();
   });
   $("ctlMode").addEventListener("click", (e) => {
     const btn = e.target.closest(".tmode-btn");
@@ -1027,7 +1307,7 @@ function wireControls() {
       other.classList.toggle("is-on", on);
       other.setAttribute("aria-pressed", String(on));
     }
-    replan();
+    redraftAndSave();
   });
 }
 
@@ -1057,7 +1337,6 @@ function syncControls() {
     $(`meal${cap}Start`).value = minToClock(meal.startMin);
     $(`meal${cap}End`).value = minToClock(meal.endMin);
   }
-  $("ctlMin").value = String(state.minPerDay);
   $("ctlMax").value = String(state.maxPerDay);
   $("ctlGap").value = String(state.minGap);
   for (const btn of $("ctlMode").querySelectorAll(".tmode-btn")) {
@@ -1076,18 +1355,11 @@ function wireBoard() {
       toggleStar(star.dataset.slug);
       return;
     }
+    // The lane's × lifts every verdict on that show, which is what takes the
+    // lane off the grid — the grid holds the shows you have ruled on.
     const remove = e.target.closest(".lane-remove");
     if (remove) {
-      toggleStar(remove.closest(".lane").dataset.slug);
-      return;
-    }
-    // Clicking a show's name pins it into the plan; clicking again lifts the pin.
-    const label = e.target.closest(".lane-label");
-    if (label) {
-      const slug = label.closest(".lane").dataset.slug;
-      if (state.forced.has(slug)) state.forced.delete(slug);
-      else state.forced.add(slug);
-      replan();
+      clearVerdicts(remove.closest(".lane").dataset.slug);
       return;
     }
     if (!e.target.closest(".show-search")) closeSearch();
@@ -1095,8 +1367,11 @@ function wireBoard() {
 
   $("clearFavBtn").addEventListener("click", () => {
     state.starred.clear();
-    state.forced.clear();
+    state.locked.clear();
+    state.noTime.clear();
+    state.noShow.clear();
     saveStarred();
+    saveVerdicts();
     rebuild();
   });
 
@@ -1105,6 +1380,102 @@ function wireBoard() {
     legend.hidden = !legend.hidden;
     $("legendBtn").setAttribute("aria-expanded", String(!legend.hidden));
     $("legendBtn").classList.toggle("is-on", !legend.hidden);
+  });
+}
+
+/* One delegated set of listeners for the whole calendar: it is rebuilt on
+ * every verdict, so nothing may hold a reference to a block. */
+function wireCalendar() {
+  const wrap = $("scheduleWrap");
+  // Clicks are delegated from the card, because the popovers are the card's
+  // children rather than the calendar's (see placePop) — a listener on the
+  // calendar alone would never hear a verdict or a contender being taken.
+  const card = $("planResult");
+
+  card.addEventListener("click", (e) => {
+    // The four verdicts live in the popup now, so they carry no card of their
+    // own: which card they are a verdict on is what the popup remembers.
+    const verdictBtn = e.target.closest("[data-verdict]");
+    if (verdictBtn) {
+      const pop = $("calPreview");
+      applyVerdict(verdictBtn.dataset.verdict, pop.dataset.slug, pop.dataset.key);
+      return;
+    }
+    // Taking a contender IS locking it: you are naming a show and an hour.
+    const take = e.target.closest("[data-take]");
+    if (take) {
+      applyVerdict("lock", take.dataset.take, take.dataset.key);
+      return;
+    }
+    const stack = e.target.closest(".sch-stack");
+    if (stack) {
+      const open = stack.getAttribute("aria-expanded") === "true";
+      closePops();
+      if (!open) {
+        stack.setAttribute("aria-expanded", "true");
+        openRivals(stack);
+      }
+      return;
+    }
+    if (!e.target.closest(".cal-pop")) closePops();
+  });
+
+  // The popup holds buttons, so it cannot close the instant the pointer leaves
+  // the card — it has to survive the travel between the two.
+  let closeTimer = null;
+  const holdOpen = () => clearTimeout(closeTimer);
+  const closeSoon = () => {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      $("calPreview").hidden = true;
+    }, 220);
+  };
+
+  wrap.addEventListener("pointerover", (e) => {
+    if (e.pointerType === "touch") return;
+    const block = e.target.closest(".sch-show");
+    if (!block) return;
+    // While the contenders are open they are the thing being read.
+    if ($("calRivals").hidden === false) return;
+    holdOpen();
+    if ($("calPreview").dataset.key !== block.dataset.key || $("calPreview").hidden) openCardPop(block);
+  });
+  wrap.addEventListener("pointerleave", closeSoon);
+  $("calPreview").addEventListener("pointerenter", holdOpen);
+  $("calPreview").addEventListener("pointerleave", closeSoon);
+
+  // A keyboard reaches the same popup by tabbing to the card, and steps into
+  // its buttons from there; Escape closes it and hands focus back.
+  wrap.addEventListener("focusin", (e) => {
+    const block = e.target.closest(".sch-show");
+    if (block) {
+      holdOpen();
+      openCardPop(block);
+    }
+  });
+  wrap.addEventListener("keydown", (e) => {
+    const block = e.target.closest(".sch-show");
+    if (!block || e.target !== block) return;
+    if (e.key !== "Enter" && e.key !== " " && e.key !== "ArrowDown") return;
+    e.preventDefault();
+    holdOpen();
+    openCardPop(block);
+    const first = $("calPreview").querySelector("button");
+    if (first) first.focus();
+  });
+
+  // A popover is placed once, against where the card was; scrolling the
+  // calendar under it would leave it pointing at nothing.
+  wrap.addEventListener("scroll", closePops);
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const inPop = document.activeElement && document.activeElement.closest(".cal-pop");
+    const slug = $("calPreview").dataset.slug;
+    closePops();
+    if (inPop && slug) {
+      const back = wrap.querySelector(`.sch-show[data-slug="${CSS.escape(slug)}"]`);
+      if (back) back.focus();
+    }
   });
 }
 
@@ -1171,14 +1542,14 @@ function download(filename, text, mime) {
 
 function wireExports() {
   $("downloadCsvBtn").addEventListener("click", () => {
-    if (!state.schedule) return;
-    download(`${FESTIVAL.id}-plan.csv`, toCsv(state.schedule.scheduled), "text/csv;charset=utf-8");
+    if (!state.draft) return;
+    download(`${FESTIVAL.id}-plan.csv`, toCsv(draftedSlots()), "text/csv;charset=utf-8");
   });
   $("importIcsBtn").addEventListener("click", () => {
-    if (!state.schedule) return;
+    if (!state.draft) return;
     download(
       `${FESTIVAL.id}-plan.ics`,
-      toIcs(state.schedule.scheduled, {
+      toIcs(draftedSlots(), {
         now: new Date(),
         timezone: state.catalogue.festival.timezone,
         calendarName: t("export.calendarName", { festival: state.catalogue.festival.name }),
@@ -1215,7 +1586,6 @@ async function boot() {
   });
   renderChrome();
   syncControlWords();
-  renderCounts(0, 0);
   renderPlanSub();
   $("loadingState").hidden = false;
   try {
@@ -1236,9 +1606,9 @@ async function boot() {
   state.d0 = 1;
   state.d1 = state.dates.length;
 
-  const stored = readStore(KEY_STARRED, []);
   const known = new Set(state.catalogue.shows.map((s) => s.slug));
-  state.starred = new Set(stored.filter((slug) => known.has(slug)));
+  state.starred = new Set(readStore(KEY_STARRED, []).filter((slug) => known.has(slug)));
+  restoreVerdicts(known);
   restorePrefs();
 
   renderHeaderHint();
@@ -1248,6 +1618,7 @@ async function boot() {
   syncControls();
   wireWindow();
   wireBoard();
+  wireCalendar();
   wireSearch();
   wireControls();
   wireExports();

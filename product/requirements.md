@@ -914,12 +914,13 @@ trips, so the experience can be played with before any of it touches live data.
 
 ## 18. A second festival on the same board
 
-The Edinburgh planner's board, grid and schedule, pointed at a five-night
-festival in Jerusalem whose programme is in Hebrew. The page is festival-shaped
-rather than Jerusalem-shaped: everything that differs between the two — the
-city, the dates, the storage keys, the palette, the partner links — comes from
-one descriptor, so a third festival is a descriptor and a theme rather than a
-third page.
+A five-night festival in Jerusalem whose programme is in Hebrew, planned from
+the calendar rather than from a list: section 20 is the page's own model, and
+the Edinburgh planner's grid survives beneath it as a drawer. The page is
+festival-shaped rather than Jerusalem-shaped: everything that differs between
+the two — the city, the dates, the storage keys, the palette, the partner
+links — comes from one descriptor, so a third festival is a descriptor and a
+theme rather than a third page.
 
 - `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
 
@@ -932,17 +933,16 @@ third page.
   Edinburgh's.
   </details>
 
-- `18.2` The empty board: the whole programme, listed to browse and star.
+- `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
 
   ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
 
   <details><summary>Notes</summary>
 
-  There is no favourites export to upload for this festival, so the Edinburgh
-  planner's drop stage is a browse stage listing every show instead. The search
-  bar sits in the same place in both board states, which is what keeps the
-  whole programme reachable once the first star has swapped the body for the
-  grid.
+  There is no favourites export to upload for this festival, and since the
+  calendar drafts from the whole programme there is nothing a reader must star
+  before the page is useful. The list is therefore a way to reach a particular
+  show, not the way in: it lives in the drawer, opened from under the calendar.
   </details>
 
 - `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
@@ -957,16 +957,20 @@ third page.
   side. Nothing is transliterated.
   </details>
 
-- `18.4` The day grid: one lane per starred show, its performance nights marked, its verdict named.
+- `18.4` The day grid, in the drawer: one lane per show you have ruled on, its nights marked, its verdict named.
 
   ![jerusalem-grid.18.4](requirements/screen/cases/jerusalem-grid.18.4.png) <!-- req-gallery:18.4 -->
 
   <details><summary>Notes</summary>
 
-  Five columns, one per night the programme uses. The festival publishes no
-  live availability and never cancels, so a mark is only ever on sale or free
-  and the Edinburgh grid's sold-out and offer-status colours never appear; the
-  performance the plan picked is gold. The lane that cannot be fitted says so.
+  Five columns, one per night the programme uses. A lane is drawn for every
+  show a verdict has touched — locked, favourited or rejected — so the drawer
+  reads as the record of what you have decided rather than as the pool the
+  calendar draws from, which is now the whole programme. The festival publishes
+  no live availability and never cancels, so a mark is only ever on sale or
+  free and the Edinburgh grid's sold-out and offer-status colours never appear;
+  the performance the calendar drafted is gold. The lane that cannot be fitted
+  says so.
   </details>
 
 - `18.5` The schedule: the catchable shows fitted across the window, with the walk between venues.
@@ -1103,4 +1107,155 @@ in one translations file that carries, per key, the width its slot can afford.
   renders: a clone of its own slot in the real page, under the pinned
   Chromium's own fonts, across every language and both committed viewports, so
   the number a translator is given is the number the browser will hold them to.
+  </details>
+
+## 20. Deciding in the calendar
+
+The page's own model, and the one thing it does that the Edinburgh planner does
+not. The calendar leads: it drafts from the **whole programme**, before anyone
+has starred anything, by asking of each contested hour "who else could you be
+watching, and which of them will you not get another chance at?" The scarcest
+contender takes the hour — a show with one night beats a show with three,
+because the three-night show can be caught tomorrow.
+
+A contested hour is drawn as what it is: the card that won, in front of the
+cards it beat. The face of a card carries only the show — its name, its hour,
+its venue, and a mark when the reader has locked it. Everything the page has to
+say *about* that card, and the four answers back — **lock this night**,
+**favourite the show**, **not this night**, **not this show** — are in the
+popup that opens under the pointer, so a calendar at rest reads as a calendar
+rather than as a control panel.
+
+- `20.1` The calendar leads the page: every night of the window drafted from the whole programme, with nothing starred.
+
+  ![jerusalem-calendar.20.1](requirements/screen/cases/jerusalem-calendar.20.1.png) <!-- req-gallery:20.1 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with empty storage — no favourites, no verdicts — which is the state
+  a first visit lands in. Under the old model that state was an empty schedule
+  and a prompt to go and star something; here it is a full week.
+  </details>
+
+- `20.2` A contested hour is drawn as a stack: the card that won, in front of the ones it beat.
+
+  ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
+
+  <details><summary>Notes</summary>
+
+  The cards behind are the shows the scarcity rule turned down for that hour,
+  one edge each, so how contested an hour was is something the calendar shows
+  rather than something it says. An uncontested hour is a single card.
+  </details>
+
+- `20.3` Clicking the stack offers the hour to one of the shows behind it.
+
+  ![jerusalem-contenders.20.3](requirements/screen/cases/jerusalem-contenders.20.3.png) <!-- req-gallery:20.3 -->
+
+  <details><summary>Notes</summary>
+
+  Each is named with the count of nights that lost it the hour, and taking one
+  is the same act as locking a night: it holds the hour from then on. Only
+  shows that could really take it are offered — see `20.11`.
+  </details>
+
+- `20.4` Hovering a card opens everything about it: how rare the show is, every night it plays, and the four verdicts.
+
+  ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
+
+  <details><summary>Notes</summary>
+
+  One popup, because these are one thought: how few nights the show has is the
+  reason it holds the hour, its other nights are what "not this night" would
+  fall back on, and the four buttons are the answers. Nothing here is on the
+  card's own face. The popup is reached by pointer and by keyboard alike, and
+  stays open while the pointer travels into it, because it is something to act
+  on rather than something to read.
+  </details>
+
+- `20.5` A locked card is marked as locked, and its hour stops offering anyone else.
+
+  ![jerusalem-verdicts.20.5](requirements/screen/cases/jerusalem-verdicts.20.5.png) <!-- req-gallery:20.5 -->
+
+  <details><summary>Notes</summary>
+
+  Two nights side by side: one the draft is still guessing at, where both
+  hours show what they turned down, and one with a lock in it. The lock is the
+  one thing a card's face says beyond the show itself. Nothing on the settled
+  night is on offer any more — not only at the locked hour, because what a
+  lock rules out for the rest of its night is exactly what `20.11` says it
+  does. Unlocking brings the offers back.
+  </details>
+
+- `20.6` Locking a night holds it, even against a scarcer contender.
+
+  ![jerusalem-lock.20.6](requirements/screen/cases/jerusalem-lock.20.6.png) <!-- req-gallery:20.6 -->
+
+  <details><summary>Notes</summary>
+
+  Animated, before and after the lock. A lock is placed before the draft runs,
+  so it is the one verdict that can seat a show the scarcity rule would never
+  have picked, and the contender it displaces moves to the list of shows it
+  beat.
+  </details>
+
+- `20.7` "Not this night" moves the show to another of its own nights.
+
+  ![jerusalem-not-tonight.20.7](requirements/screen/cases/jerusalem-not-tonight.20.7.png) <!-- req-gallery:20.7 -->
+
+  <details><summary>Notes</summary>
+
+  Animated. The rejected night leaves that show's pool and nothing else does,
+  so the show competes for its remaining nights as a scarcer show than it was —
+  which is the honest reading of a reader who has ruled one night out.
+  </details>
+
+- `20.8` "Not this show" hands its hour to the next contender.
+
+  ![jerusalem-not-this.20.8](requirements/screen/cases/jerusalem-not-this.20.8.png) <!-- req-gallery:20.8 -->
+
+  <details><summary>Notes</summary>
+
+  Animated. The show leaves the programme entirely — every night of it, and its
+  name off every contender list — and the hour it held is re-drafted from
+  whoever is left. Where nobody left can fit the hour, the hour goes empty
+  rather than being filled by something that clashes.
+  </details>
+
+- `20.9` Verdicts survive a reload, and never reach the Edinburgh planner's own stored list.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.9 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: lock one night, reject another show, reload, and the calendar comes
+  back drafted the same way. Stored under the festival's own prefix, like every
+  other thing this page remembers.
+  </details>
+
+- `20.11` An hour is only ever offered to a show that could really take it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:20.11 -->
+
+  <details><summary>Notes</summary>
+
+  Two ways a contender is no offer at all, and both are filtered before the
+  stack is drawn rather than discovered after the reader picks. A show already
+  drafted somewhere else in the calendar is one: offering it here would be
+  offering to move it, which is not what the picker says it does. A show that
+  cannot be reached from the night's other shows is the other — the walk
+  between the venues and the rest the reader asked for between shows are the
+  same constraint the draft itself obeys, so an offer that ignored them would
+  be an offer to break the day.
+  </details>
+
+- `20.10` The draft's order of precedence, verdict by verdict.
+
+  <table><thead><tr><th align="left">Verdict</th><th align="left">What it does to the show's nights</th><th align="left">When the show is placed</th></tr></thead><tbody><tr><td>Lock this night</td><td>all stay; that one is taken, your day hours and all</td><td>first, before anything else</td></tr><tr><td>Favourite the show</td><td>all stay</td><td>after the locks, before the undecided rest</td></tr><tr><td>Not this night</td><td>that night leaves</td><td>with the rest, from what is left</td></tr><tr><td>Not this show</td><td>every night leaves</td><td>never — and no block offers it either</td></tr><tr><td>No verdict</td><td>all stay</td><td>with the rest, scarcest first</td></tr></tbody></table> <!-- req-gallery:20.10 -->
+
+  <details><summary>Notes</summary>
+
+  A table generated from the shipped drafter: for each verdict, what it does to
+  the show's pool of nights and when it is placed relative to the undrafted
+  rest. Read top to bottom it is the whole selection rule.
   </details>
