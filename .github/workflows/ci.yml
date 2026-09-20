@@ -1,18 +1,29 @@
 name: CI
 
-# The repo's own pull-request gate. This file is NOT vendored from a pack: the
-# release pipeline that used to carry one moved to Cloudflare, where the release
-# is a queue task rather than a workflow, and no canon pack owns generic CI. So
-# this is ours to keep in step with scripts/verify.sh.
+# The repo's own pull-request gate, as two jobs that run side by side. This file
+# is NOT vendored from a pack: the release pipeline that used to carry one moved
+# to Cloudflare, where the release is a queue task rather than a workflow, and no
+# canon pack owns generic CI. So this is ours to keep in step with
+# scripts/verify.sh.
 #
-# It runs one thing, because scripts/verify.sh is one thing: the unit tests, the
-# JS and Python parse checks, the normalizer self-tests, and the Claudinite
+# `ci` runs one thing, because scripts/verify.sh is one thing: the unit tests,
+# the JS and Python parse checks, the normalizer self-tests, and the Claudinite
 # conformance sweep — the same script the pre-commit hook runs, so passing
-# locally and passing here mean the same.
+# locally and passing here mean the same. `ui-requirements` is the browser-driven
+# golden lane, renders the real pages and compares them pixel-exact.
+#
+# They are two JOBS rather than two workflows (#787): jobs run on their own
+# runners at the same time, and each reports as its own check with its own
+# re-run button, so a second file bought the separation nothing while costing a
+# gate that could not be scoped per lane. The fast inner loop is the
+# package.json split — `npm run verify` in the pre-commit hook against
+# `npm run test:ui` — not the CI layout.
 #
 # Deliberately NO `paths:` filter. A path-filtered conformance flow arms
 # auto-merge and then never runs, leaving the repo's own maintenance PRs waiting
-# forever (the basics `conformance-workflow` rule).
+# forever (the basics `conformance-workflow` rule). The golden lane is scoped
+# from inside its job instead, which is also the only place that can scope it —
+# see the reason on that step.
 #
 # What it deliberately does NOT do is deploy, or dry-run a deploy. The
 # site-release task is the one path to production, and `no-second-publisher`
@@ -21,9 +32,6 @@ name: CI
 # here anyway: `cloudflare-site/publishes-a-site-directory` runs inside the
 # conformance sweep and fails on a config that names no published directory, a
 # directory that holds nothing, or a missing compatibility date.
-#
-# The browser-driven golden lane is ui-requirements.yml, not this one, so this
-# gate stays fast and browser-free.
 #
 # workflow_dispatch so a GITHUB_TOKEN-authored PR — whose opening GitHub never
 # turns into a pull_request event — can still have this started on its branch.
@@ -60,3 +68,106 @@ jobs:
 
       - name: Verify
         run: bash scripts/verify.sh
+
+  # The executable-requirements UI lane: renders the real pages in the pinned
+  # headless Chromium and compares pixel-exact against the committed goldens
+  # (product/requirements/).
+  #
+  # The Playwright version installed here must match the harness's pin
+  # (product/requirements/shared/harness/browser.js) or the run refuses to
+  # compare.
+  ui-requirements:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Same head as the `ci` job, so both lanes judge one tree — and so the
+          # goldens are compared against what `npm run test:ui` renders locally.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          # The scope step below diffs against a base, which needs the history
+          # and the remote branches. The whole repo is ~14 MiB packed.
+          fetch-depth: 0
+
+      # Rendering is 141s of this job's 169s, and it is spent in full on every
+      # maintenance PR that cannot move a pixel. A `paths:` filter on the
+      # triggers above could not have prevented that: the run those PRs actually
+      # spend is the delivery's own workflow_dispatch, and a dispatch ignores
+      # path filters. So the scoping lives here, where every trigger passes.
+      #
+      # The job itself always runs, so this check always reports a conclusion —
+      # a skipped step cannot strand a PR the way an absent check can, and the
+      # 20s that costs on a no-op is the price of that guarantee.
+      - name: Scope — can this diff move a rendered pixel?
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -u
+
+          case "$EVENT" in
+            pull_request) base="$PR_BASE" ;;
+            push)         base="$PUSH_BEFORE" ;;
+            # A dispatch carries no base of its own. The delivery dispatches this
+            # lane on a maintenance branch, so the default branch is the honest
+            # comparison; a dispatch on main itself lands on the equality below.
+            *)            base="$(git rev-parse --verify --quiet origin/main || true)" ;;
+          esac
+
+          run=true
+          why="no usable base to compare against"
+
+          if [ -n "$base" ] && git cat-file -e "$base^{commit}" 2>/dev/null; then
+            if [ "$(git rev-parse "$base")" = "$(git rev-parse HEAD)" ]; then
+              why="nothing to diff against"
+            else
+              # Three dots: what this branch changed, not what the base moved on
+              # underneath it.
+              git diff --name-only "$base...HEAD" > "$RUNNER_TEMP/changed.txt"
+              count=$(wc -l < "$RUNNER_TEMP/changed.txt")
+              # The served tree, the harness and its fixtures and goldens, the
+              # script that names the cases, and this lane's own definition.
+              if grep -qE '^(site/|product/|package\.json$|\.github/workflows/ci\.yml$)' "$RUNNER_TEMP/changed.txt"; then
+                why="$count changed file(s), some under the rendered surface"
+              else
+                run=false
+                why="$count changed file(s), none under site/ or product/"
+              fi
+            fi
+          fi
+
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          if [ "$run" = true ]; then
+            echo "Rendering the goldens — $why." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Goldens not rendered — $why." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Set up Node.js
+        if: steps.scope.outputs.run == 'true'
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install pinned Playwright + Chromium
+        if: steps.scope.outputs.run == 'true'
+        run: |
+          npm i --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: UI requirements (screen + behavior)
+        if: steps.scope.outputs.run == 'true'
+        run: npm run test:ui
+
+      - name: Upload failure artifacts (actual/diff renders)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: requirements-failure-artifacts
+          path: product/requirements/shared/.artifacts/
+          if-no-files-found: ignore
+          # The artifacts dir is dot-prefixed, and this action skips hidden
+          # paths by default — without this the diffs silently never upload,
+          # which is exactly when they are needed.
+          include-hidden-files: true

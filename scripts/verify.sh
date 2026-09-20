@@ -14,8 +14,8 @@
 # magnitude, so it runs last — a syntax error should still fail in a second.
 #
 # Still NOT the whole of CI: `npm run test:ui` — the ui-requirements job, real
-# Chromium against the committed goldens — is its own workflow and outside this
-# script. Green here means the fast lanes are green.
+# Chromium against the committed goldens — runs beside this script rather than
+# inside it. Green here means the fast lane is green.
 #
 # A few seconds and dependency-free — everything uses the node / python already
 # needed to work on the project.
