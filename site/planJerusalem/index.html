@@ -74,11 +74,150 @@
       <button type="button" class="btn" id="retryBtn" data-i18n="state.error.retry">Try again</button>
     </div>
 
-    <!-- ===================== The board ===================== -->
-    <!-- Same one-card, one-state-switch board as the Fringe planner, with one
-         difference that follows from the festival: there is no favourites export
-         to upload, so the empty state browses the whole programme instead of
-         asking for a file. -->
+    <!-- ===================== The calendar ===================== -->
+    <!-- The page leads with the calendar: it drafts from the whole programme
+         before the reader has said anything, so there is no empty state to
+         reveal it from and no upload standing in front of it. -->
+    <section class="panel plan-card" id="planPanel" aria-labelledby="planTitle">
+      <div class="plan-head">
+        <div class="plan-head-text">
+          <h2 class="plan-title" id="planTitle" data-i18n="plan.title">Your festival, planned</h2>
+          <p class="plan-sub" id="planSub" data-i18n-slot="plan.sub"></p>
+        </div>
+      </div>
+
+      <div class="plan-result" id="planResult">
+
+        <div class="plan-controls" role="group" data-i18n-aria-label="plan.prefsLabel">
+          <div class="pc-seg" role="group" data-i18n-aria-label="plan.dayHoursLabel">
+            <span class="pc-cap" data-i18n="plan.day">Day</span>
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     data-i18n-aria-label="plan.dayStartLabel" />
+            </div>
+            <span class="pc-dash" aria-hidden="true">&ndash;</span>
+            <div class="ctl">
+              <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
+                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
+                     data-i18n-aria-label="plan.dayEndLabel" />
+            </div>
+          </div>
+
+          <div class="pc-seg" role="group" data-i18n-aria-label="plan.mealsLabel">
+            <label class="meal ctl">
+              <input type="checkbox" id="mealLunchOn" />
+              <span class="meal-pill" data-i18n="plan.lunch">Lunch</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" />
+              </span>
+            </label>
+            <label class="meal ctl">
+              <input type="checkbox" id="mealDinnerOn" />
+              <span class="meal-pill" data-i18n="plan.dinner">Dinner</span>
+              <span class="meal-times">
+                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" />
+                <span class="meal-dash" aria-hidden="true">&ndash;</span>
+                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" />
+              </span>
+            </label>
+          </div>
+
+          <div class="pc-seg" role="group" data-i18n-aria-label="plan.perDayLabel">
+            <span class="pc-cap" data-i18n="plan.atMost">At most</span>
+            <div class="ctl">
+              <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric"
+                     data-i18n-aria-label="plan.mostLabel" />
+            </div>
+            <span class="pc-cap" data-i18n="plan.perDay">shows/day</span>
+          </div>
+
+          <div class="pc-seg" role="group" data-i18n-aria-label="plan.gapGroupLabel">
+            <div class="ctl">
+              <!-- The gap options carry their own minutes; their words are the
+                   translation's (JS fills them). -->
+              <select class="opt-select" id="ctlGap" data-i18n-aria-label="plan.gapLabel">
+                <option value="0"></option>
+                <option value="15"></option>
+                <option value="30" selected></option>
+                <option value="45"></option>
+                <option value="60"></option>
+              </select>
+            </div>
+            <span class="pc-cap" data-i18n="plan.apart">apart</span>
+          </div>
+
+          <div class="pc-seg">
+            <div class="tmode" id="ctlMode" role="group" data-i18n-aria-label="plan.travelLabel">
+              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true"
+                      data-i18n-aria-label="travel.walk" data-i18n-title="travel.walk.tip">🚶<span class="tmode-word" data-i18n="travel.walk">Walk</span></button>
+              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false"
+                      data-i18n-aria-label="travel.bike" data-i18n-title="travel.bike.tip">🚲<span class="tmode-word" data-i18n="travel.bike">Bike</span></button>
+              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false"
+                      data-i18n-aria-label="travel.car" data-i18n-title="travel.car.tip">🚗<span class="tmode-word" data-i18n="travel.car">Car</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-summary" id="planSummary" role="status" aria-live="polite" data-i18n-slot="plan.summary"></div>
+
+        <!-- Outside the calendar's own scroller, which clips: positioned
+             against a block when it opens, one of each, because only one block
+             is ever under the pointer. -->
+        <div class="cal-pop cal-pop--preview" id="calPreview" hidden role="tooltip"></div>
+        <div class="cal-pop cal-pop--rivals" id="calRivals" hidden role="dialog"
+             data-i18n-aria-label="rivals.label"></div>
+
+        <div class="schedule-wrap" id="scheduleWrap">
+          <div class="schedule" id="schedule"><!-- day columns + overlay (JS) --></div>
+          <p class="schedule-empty" id="scheduleEmpty" hidden data-i18n="schedule.empty">
+            Nothing could be scheduled in this window. Try widening your dates, raising the per-day
+            maximum, shortening the gap, or relaxing your day hours.
+          </p>
+        </div>
+
+        <!-- The two questions the plan raises and the festival doesn't answer:
+             where you sleep, and how you get here. Rendered as links rather than
+             a pitch, with their partner named on every one. -->
+        <div class="trip-links" id="tripLinks" hidden>
+          <p class="trip-links-title" data-i18n="trip.title">While you're here</p>
+          <div class="trip-links-row" id="tripLinksRow"></div>
+        </div>
+
+        <div class="plan-actions">
+          <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12" /><path d="m7 12 5 4 5-4" /><path d="M4 20h16" />
+            </svg>
+            <span data-i18n="export.csv">Download itinerary</span> <span class="btn-ext">CSV</span>
+          </button>
+          <button type="button" class="btn btn-ghost" id="importIcsBtn">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" />
+            </svg>
+            <span data-i18n="export.ics">Import to calendar</span> <span class="btn-ext">ICS</span>
+          </button>
+          <span class="plan-actions-note" data-i18n="export.note">Both files are built here in your browser — nothing is uploaded.
+            Times are pinned to Jerusalem, so they stay right wherever your calendar lives.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== The drawer: grid + programme ===================== -->
+    <!-- The Fringe planner's board, demoted: with the calendar drafting from
+         the whole programme, this is the record of what the reader has ruled on
+         and the way to reach one particular show — not the way in. -->
+    <!-- Open by default, because the date window's rail lives inside it: the
+         calendar leads the page, but folding this away would take a control the
+         calendar depends on with it. -->
+    <details class="drawer" id="boardDrawer" open>
+      <summary class="drawer-summary">
+        <span class="drawer-caret" aria-hidden="true">▸</span>
+        <span class="drawer-title" data-i18n="drawer.title">The programme</span>
+        <span class="drawer-count" id="drawerCount" data-i18n-slot="drawer.count"></span>
+      </summary>
     <section class="panel board" id="board" aria-labelledby="boardCount">
 
       <div class="board-body browse-stage" id="browseStage">
@@ -205,134 +344,7 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== Allocate / itinerary ===================== -->
-    <section class="panel plan-card" id="planPanel" aria-labelledby="planTitle" hidden>
-      <div class="plan-head">
-        <div class="plan-head-text">
-          <h2 class="plan-title" id="planTitle" data-i18n="plan.title">Your festival, planned</h2>
-          <p class="plan-sub" id="planSub" data-i18n-slot="plan.sub"></p>
-        </div>
-      </div>
-
-      <div class="plan-result" id="planResult">
-
-        <div class="plan-controls" role="group" data-i18n-aria-label="plan.prefsLabel">
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.dayHoursLabel">
-            <span class="pc-cap" data-i18n="plan.day">Day</span>
-            <div class="ctl">
-              <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
-                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                     data-i18n-aria-label="plan.dayStartLabel" />
-            </div>
-            <span class="pc-dash" aria-hidden="true">&ndash;</span>
-            <div class="ctl">
-              <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
-                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                     data-i18n-aria-label="plan.dayEndLabel" />
-            </div>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.mealsLabel">
-            <label class="meal ctl">
-              <input type="checkbox" id="mealLunchOn" />
-              <span class="meal-pill" data-i18n="plan.lunch">Lunch</span>
-              <span class="meal-times">
-                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" />
-                <span class="meal-dash" aria-hidden="true">&ndash;</span>
-                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" />
-              </span>
-            </label>
-            <label class="meal ctl">
-              <input type="checkbox" id="mealDinnerOn" />
-              <span class="meal-pill" data-i18n="plan.dinner">Dinner</span>
-              <span class="meal-times">
-                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" />
-                <span class="meal-dash" aria-hidden="true">&ndash;</span>
-                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" />
-              </span>
-            </label>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.perDayLabel">
-            <div class="ctl">
-              <select class="opt-select" id="ctlMin" data-i18n-aria-label="plan.fewestLabel">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
-            <span class="pc-dash" aria-hidden="true">&ndash;</span>
-            <div class="ctl">
-              <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric"
-                     data-i18n-aria-label="plan.mostLabel" />
-            </div>
-            <span class="pc-cap" data-i18n="plan.perDay">shows/day</span>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.gapGroupLabel">
-            <div class="ctl">
-              <!-- The gap options carry their own minutes; their words are the
-                   translation's (JS fills them). -->
-              <select class="opt-select" id="ctlGap" data-i18n-aria-label="plan.gapLabel">
-                <option value="0"></option>
-                <option value="15"></option>
-                <option value="30" selected></option>
-                <option value="45"></option>
-                <option value="60"></option>
-              </select>
-            </div>
-            <span class="pc-cap" data-i18n="plan.apart">apart</span>
-          </div>
-
-          <div class="pc-seg">
-            <div class="tmode" id="ctlMode" role="group" data-i18n-aria-label="plan.travelLabel">
-              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true"
-                      data-i18n-aria-label="travel.walk" data-i18n-title="travel.walk.tip">🚶<span class="tmode-word" data-i18n="travel.walk">Walk</span></button>
-              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false"
-                      data-i18n-aria-label="travel.bike" data-i18n-title="travel.bike.tip">🚲<span class="tmode-word" data-i18n="travel.bike">Bike</span></button>
-              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false"
-                      data-i18n-aria-label="travel.car" data-i18n-title="travel.car.tip">🚗<span class="tmode-word" data-i18n="travel.car">Car</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="plan-summary" id="planSummary" role="status" aria-live="polite" data-i18n-slot="plan.summary"></div>
-
-        <div class="schedule-wrap" id="scheduleWrap">
-          <div class="schedule" id="schedule"><!-- day columns + overlay (JS) --></div>
-          <p class="schedule-empty" id="scheduleEmpty" hidden data-i18n="schedule.empty">
-            Nothing could be scheduled in this window. Try widening your dates, raising the per-day
-            maximum, shortening the gap, or relaxing your day hours.
-          </p>
-        </div>
-
-        <!-- The two questions the plan raises and the festival doesn't answer:
-             where you sleep, and how you get here. Rendered as links rather than
-             a pitch, with their partner named on every one. -->
-        <div class="trip-links" id="tripLinks" hidden>
-          <p class="trip-links-title" data-i18n="trip.title">While you're here</p>
-          <div class="trip-links-row" id="tripLinksRow"></div>
-        </div>
-
-        <div class="plan-actions">
-          <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3v12" /><path d="m7 12 5 4 5-4" /><path d="M4 20h16" />
-            </svg>
-            <span data-i18n="export.csv">Download itinerary</span> <span class="btn-ext">CSV</span>
-          </button>
-          <button type="button" class="btn btn-ghost" id="importIcsBtn">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" />
-            </svg>
-            <span data-i18n="export.ics">Import to calendar</span> <span class="btn-ext">ICS</span>
-          </button>
-          <span class="plan-actions-note" data-i18n="export.note">Both files are built here in your browser — nothing is uploaded.
-            Times are pinned to Jerusalem, so they stay right wherever your calendar lives.</span>
-        </div>
-      </div>
-    </section>
+    </details>
 
   </main>
 

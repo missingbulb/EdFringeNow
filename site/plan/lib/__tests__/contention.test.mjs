@@ -1,0 +1,175 @@
+// Tests for the calendar drafter: who wins a contested hour, who is reported
+// as having lost it, and how each of the four verdicts changes the answer.
+//   node --test site/plan/lib/__tests__/contention.test.mjs
+
+import { test } from "node:test";
+import assert from "node:assert/strict";
+
+import { byScarcity, draftCalendar, instanceKey } from "../contention.js";
+
+// One venue, so nothing here is ever decided by travel time — these tests are
+// about scarcity, and a second venue would let a walk explain a result instead.
+const COORDS = { H: { lat: 31.7806, lng: 35.2226 } };
+
+const show = (slug, nights, { start = "20:00", duration = 60 } = {}) => ({
+  slug,
+  title: slug,
+  duration,
+  venue: "H",
+  venueName: "The Hall",
+  performances: nights.map((date) => ({
+    date,
+    start,
+    status: "TICKETS_AVAILABLE",
+    soldOut: false,
+  })),
+});
+
+const draft = (shows, extra = {}) =>
+  draftCalendar(shows, {
+    dateStart: "2026-10-18",
+    dateEnd: "2026-10-22",
+    dayStartMin: 9 * 60,
+    dayEndMin: 25 * 60,
+    maxPerDay: 3,
+    minGapSameVenue: 0,
+    minGapDifferentVenue: 30,
+    travelMode: "walk",
+    venueCoords: COORDS,
+    ...extra,
+  });
+
+/** The one slot drafted at a given date and time, or undefined. */
+const at = (result, date, time) =>
+  (result.days.find((d) => d.date === date) || { slots: [] }).slots.find((s) => s.startTime === time);
+
+test("the scarcer show takes a contested hour", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19", "2026-10-20"]);
+  const pick = at(draft([often, rare]), "2026-10-18", "20:00");
+  assert.equal(pick.slug, "rare");
+  assert.equal(pick.freedom, 1);
+});
+
+test("the show it beat is reported on the block, scarcest first", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const two = show("two", ["2026-10-18", "2026-10-19"]);
+  const three = show("three", ["2026-10-18", "2026-10-19", "2026-10-20"]);
+  const pick = at(draft([three, two, rare]), "2026-10-18", "20:00");
+  assert.equal(pick.slug, "rare");
+  assert.deepEqual(pick.contenders.map((c) => c.slug), ["two", "three"]);
+  assert.deepEqual(pick.contenders.map((c) => c.freedom), [2, 3]);
+});
+
+test("equal scarcity is broken by start, then finish, then slug — the same draft every run", () => {
+  const a = show("b-show", ["2026-10-18"]);
+  const b = show("a-show", ["2026-10-18"]);
+  const first = draft([a, b]);
+  const second = draft([b, a]);
+  assert.equal(at(first, "2026-10-18", "20:00").slug, "a-show");
+  assert.deepEqual(
+    first.days.map((d) => d.slots.map((s) => s.slug)),
+    second.days.map((d) => d.slots.map((s) => s.slug))
+  );
+});
+
+test("byScarcity ranks on the count before the clock", () => {
+  const scarceButLate = { freedom: 1, start: 200, end: 260, slug: "z" };
+  const commonButEarly = { freedom: 2, start: 100, end: 160, slug: "a" };
+  assert.ok(byScarcity(scarceButLate, commonButEarly) < 0);
+});
+
+test("rejecting this instance frees the hour for the show it had beaten", () => {
+  const twice = show("twice", ["2026-10-18", "2026-10-20"]);
+  const rival = show("rival", ["2026-10-18"]);
+  const base = draft([twice, rival]);
+  assert.equal(at(base, "2026-10-18", "20:00").slug, "rival");
+
+  const after = draft([twice, rival], {
+    rejectedInstances: [instanceKey("rival", "2026-10-18T20:00")],
+  });
+  assert.equal(at(after, "2026-10-18", "20:00").slug, "twice");
+  assert.ok(!after.picked.has("rival"));
+});
+
+test("a rejected instance shrinks the show's own pool, so it competes as scarcer", () => {
+  const three = show("three", ["2026-10-18", "2026-10-19", "2026-10-20"]);
+  assert.equal(draft([three]).pool.get("three").length, 3);
+  const after = draft([three], { rejectedInstances: [instanceKey("three", "2026-10-18T20:00")] });
+  assert.equal(after.pool.get("three").length, 2);
+  assert.equal(at(after, "2026-10-19", "20:00").freedom, 2);
+});
+
+test("rejecting the show takes it out of the programme entirely", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19"]);
+  const after = draft([rare, often], { rejectedShows: ["rare"] });
+  assert.ok(!after.pool.has("rare"));
+  assert.equal(at(after, "2026-10-18", "20:00").slug, "often");
+  assert.ok(!after.days.some((d) => d.slots.some((s) => s.contenders.some((c) => c.slug === "rare"))));
+});
+
+test("a locked instance holds its hour against a scarcer contender", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19", "2026-10-20"]);
+  const pick = at(draft([rare, often], { locked: { often: "2026-10-18T20:00" } }), "2026-10-18", "20:00");
+  assert.equal(pick.slug, "often");
+  assert.equal(pick.verdict, "locked");
+  assert.deepEqual(pick.contenders.map((c) => c.slug), ["rare"]);
+});
+
+test("a locked instance overrides the day-hours window", () => {
+  const late = show("late", ["2026-10-18"], { start: "23:30" });
+  assert.equal(draft([late], { dayEndMin: 22 * 60 }).picked.size, 0);
+  const pinned = draft([late], { dayEndMin: 22 * 60, locked: { late: "2026-10-18T23:30" } });
+  assert.equal(pinned.picked.get("late"), "2026-10-18T23:30");
+});
+
+test("a favourite is placed before the undecided rest, but does not outrank a lock", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19"]);
+  const fav = at(draft([rare, often], { favourites: ["often"] }), "2026-10-18", "20:00");
+  assert.equal(fav.slug, "often");
+  assert.equal(fav.verdict, "favourite");
+
+  const both = draft([rare, often], { favourites: ["often"], locked: { rare: "2026-10-18T20:00" } });
+  assert.equal(at(both, "2026-10-18", "20:00").slug, "rare");
+  // The favourite is not dropped — it takes the night its lost hour left it.
+  assert.equal(both.picked.get("often"), "2026-10-19T20:00");
+});
+
+test("a favourite ignores the per-day cap; the undecided rest does not", () => {
+  const night = ["2026-10-18"];
+  const fillers = ["a", "b", "c"].map((slug, i) => show(slug, night, { start: `1${i}:00`, duration: 30 }));
+  const wanted = show("wanted", night, { start: "21:00", duration: 30 });
+  const capped = draft([...fillers, wanted], { maxPerDay: 3 });
+  assert.equal(capped.days[0].slots.length, 3);
+  assert.ok(!capped.picked.has("wanted"));
+  assert.ok(draft([...fillers, wanted], { maxPerDay: 3, favourites: ["wanted"] }).picked.has("wanted"));
+});
+
+test("a show that lost every night to a clash rather than a shared hour is counted, not lost", () => {
+  // 20:00 for two hours, against a 20:30 show: the second can never be placed,
+  // and shares its hour with nothing, so no block would otherwise name it.
+  const long = show("long", ["2026-10-18"], { start: "20:00", duration: 120 });
+  const shadowed = show("shadowed", ["2026-10-18"], { start: "20:30", duration: 60 });
+  const result = draft([long, shadowed]);
+  assert.equal(at(result, "2026-10-18", "20:00").slug, "long");
+  assert.deepEqual(result.crowdedOut.map((s) => s.slug), ["shadowed"]);
+});
+
+test("a contender offered on a block is not also counted as crowded out", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19", "2026-10-20"]);
+  assert.equal(draft([rare, often]).crowdedOut.length, 0);
+});
+
+test("counts report the field, the contested hours and what was drafted", () => {
+  const rare = show("rare", ["2026-10-18"]);
+  const often = show("often", ["2026-10-18", "2026-10-19"]);
+  const counts = draft([rare, often]).counts;
+  assert.equal(counts.shows, 2);
+  assert.equal(counts.candidates, 3);
+  assert.equal(counts.contested, 1);
+  assert.equal(counts.picked, 2);
+});

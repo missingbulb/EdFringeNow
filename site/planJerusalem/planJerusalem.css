@@ -406,3 +406,166 @@ body.festival-page {
 /* Each front-end ships its own rules for the shared popup module (a stylesheet
    cannot be imported the way a module can) — except here, where the import
    above already brought the planner's in. Nothing to add. */
+
+/* --- the calendar leads ---------------------------------------------------
+ *
+ * plan.css draws a schedule block as one flat link: a stripe, a name, an hour.
+ * Here a block is something the reader acts on, so it is a small card in four
+ * rows — name, hour and venue, why it won its hour, and the four verdicts —
+ * and the rules below re-lay it out rather than restyle it. The taller axis
+ * (SCH_HOUR_PX) is what makes room for them.
+ */
+.sch-show {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  padding: 4px 5px 4px 9px;
+  cursor: default;
+  overflow: hidden;
+}
+/* Only the name and its meta are the link out to the festival's own page; the
+   rest of the block belongs to the page. */
+.sch-open {
+  display: flex; flex-direction: column; gap: 1px; min-width: 0;
+  text-decoration: none; color: var(--ink); cursor: pointer;
+}
+.sch-open:hover .sch-name { text-decoration: underline; }
+.sch-show .sch-name { -webkit-line-clamp: 1; }
+.sch-show:not(.sch-show--tight) .sch-name { -webkit-line-clamp: 2; }
+
+/* Why this show won the hour: how few nights of its own it has. */
+.sch-why { display: flex; align-items: center; gap: 4px; min-width: 0; }
+/* What else wanted the hour, beside the four answers — one row, so a block
+   with no room for anything else still carries both. */
+.sch-foot { display: flex; align-items: center; gap: 4px; margin-top: auto; min-width: 0; }
+.sch-rarity {
+  flex: 0 0 auto;
+  font-size: 0.56rem; font-weight: 700; line-height: 1.5;
+  padding: 0 5px; border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 14%, transparent);
+  color: var(--muted);
+  white-space: nowrap;
+}
+/* A show with one night is the whole point of the rule, so it is the one
+   rarity that wears the accent rather than the quiet grey. */
+.sch-show--rare .sch-rarity {
+  background: color-mix(in srgb, var(--violet) 18%, transparent);
+  color: var(--violet-dark);
+}
+.sch-rivals-btn {
+  flex: 0 1 auto; min-width: 0;
+  font: inherit; font-size: 0.56rem; line-height: 1.5;
+  padding: 0 4px; border: 1px dashed var(--line); border-radius: 999px;
+  background: transparent; color: var(--muted); cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sch-rivals-btn:hover,
+.sch-rivals-btn[aria-expanded="true"] {
+  border-style: solid; border-color: var(--violet); color: var(--violet-dark);
+}
+
+/* The four answers. Faint until the block is under the pointer — present, so
+   nobody has to discover them, but not competing with the show's own name. */
+.sch-verdicts {
+  display: flex; gap: 2px; margin-inline-start: auto;
+  opacity: 0.4; transition: opacity 0.12s ease;
+}
+.sch-show:hover .sch-verdicts,
+.sch-show:focus-within .sch-verdicts { opacity: 1; }
+.vb {
+  width: 18px; height: 18px; padding: 0;
+  display: grid; place-items: center;
+  font-size: 0.6rem; line-height: 1;
+  border: 1px solid var(--line); border-radius: 5px;
+  background: var(--paper); color: var(--muted); cursor: pointer;
+}
+.vb:hover { border-color: var(--violet); color: var(--violet-dark); }
+.vb:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+.vb.is-on { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, var(--paper)); color: var(--ink); }
+.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); color: var(--bad, #c2410c); }
+
+/* A block the reader has fixed in place, and one they have favourited: the
+   first is the stronger claim, so it takes the ring. */
+.sch-show--locked {
+  border-color: var(--ok);
+  box-shadow: inset 0 0 0 1.5px var(--ok), 0 2px 6px rgba(16, 24, 40, 0.1);
+}
+.sch-show--fav:not(.sch-show--locked) {
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--violet) 55%, transparent),
+              0 2px 6px rgba(16, 24, 40, 0.08);
+}
+
+/* --- the calendar's two floating surfaces --------------------------------- */
+/* The card, not the calendar, is what they are positioned in — see placePop. */
+.plan-result { position: relative; }
+.cal-pop {
+  position: absolute; z-index: 40; width: max-content; max-width: 260px;
+  padding: 8px 10px; border-radius: 10px;
+  background: var(--paper); border: 1px solid var(--line);
+  box-shadow: 0 10px 26px rgba(16, 24, 40, 0.18);
+  font-size: 0.7rem; line-height: 1.35; color: var(--ink);
+}
+.cal-pop .pop-title {
+  margin: 0 0 2px; font-family: var(--display); font-weight: 700; font-size: 0.76rem;
+}
+.cal-pop .pop-lead { margin: 0 0 6px; color: var(--muted); font-size: 0.64rem; }
+.cal-pop .pop-foot { margin: 6px 0 0; color: var(--muted); font-size: 0.62rem; }
+.pop-nights, .pop-rivals { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.pop-night {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 2px 6px; border-radius: 6px; font-variant-numeric: tabular-nums;
+}
+.pop-night.is-drafted { background: color-mix(in srgb, var(--ok) 15%, transparent); font-weight: 700; }
+.pop-night.is-rejected { color: var(--muted); }
+.pop-night.is-rejected .pn-when { text-decoration: line-through; }
+.pn-note { flex: 0 0 auto; font-size: 0.6rem; color: var(--muted); font-weight: 400; }
+.pop-rival {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  width: 100%; text-align: start;
+  font: inherit; padding: 4px 6px; border-radius: 6px;
+  border: 1px solid transparent; background: transparent; color: inherit; cursor: pointer;
+}
+.pop-rival:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, transparent); }
+.pr-nights { flex: 0 0 auto; font-size: 0.6rem; color: var(--muted); }
+
+/* --- the drawer ----------------------------------------------------------- */
+/* The grid and the programme, one fold back. Closed it is a single line; open
+   it is the board the Fringe planner leads with, unchanged. */
+.drawer { margin-top: 18px; }
+.drawer > .panel { margin-top: 10px; }
+.drawer-summary {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-radius: 12px; cursor: pointer;
+  background: var(--paper); border: 1px solid var(--line);
+  list-style: none;
+}
+.drawer-summary::-webkit-details-marker { display: none; }
+.drawer-summary:hover { border-color: var(--violet); }
+.drawer-caret { color: var(--muted); transition: transform 0.15s ease; }
+.drawer[open] .drawer-caret { transform: rotate(90deg); }
+.drawer-title { font-family: var(--display); font-weight: 700; font-size: 0.86rem; }
+.drawer-count { margin-inline-start: auto; color: var(--muted); font-size: 0.72rem; }
+
+/* --- right to left -------------------------------------------------------- */
+/* The block's rows are flex tracks and follow the page's direction on their
+   own; what is left is the accent stripe, which plan.css states as a side and
+   this page's own [dir] block already moves — restated here only because the
+   padding changed with the four-row layout. */
+[dir="rtl"] .sch-show { padding: 4px 9px 4px 5px; }
+[dir="rtl"] .drawer-caret { transform: scaleX(-1); }
+[dir="rtl"] .drawer[open] .drawer-caret { transform: scaleX(-1) rotate(90deg); }
+/* Two shows half an hour apart leave the first one less room than its four
+   rows want. It sheds the hour, the venue and the rarity rather than the
+   verdicts: a block you cannot rule on is worse than one that doesn't say
+   where it is, and the preview on hover still carries both. */
+.sch-show--squeezed { gap: 1px; padding-top: 3px; padding-bottom: 3px; }
+.sch-show--squeezed .sch-meta,
+.sch-show--squeezed .sch-why { display: none; }
+
+/* A night's column has to hold a show's name and the four verdicts side by
+   side; below that it stops being something anyone can act on. So the calendar
+   scrolls sideways on a narrow screen rather than squeezing five columns into
+   it — the wrapper is already a scroller, it just had nothing to scroll. At the
+   committed desktop viewport five columns are far wider than this, so nothing
+   there moves. */
+.sch-day { min-width: 168px; }

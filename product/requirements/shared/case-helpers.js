@@ -74,6 +74,12 @@ function jerusalemStarred(slugs = JERUSALEM_STARRED) {
   return { "jerusalemPlan.starred": JSON.stringify(slugs) };
 }
 
+// The three verdicts that are not "favourite" — that one is the starred list
+// above, which predates them and keeps its own key.
+function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
+  return { "jerusalemPlan.verdicts": JSON.stringify({ locked, noTime, noShow }) };
+}
+
 // ------------------------------------------------------------------- waits --
 async function settle(page) {
   await page.evaluate(() => document.fonts.ready);
@@ -132,6 +138,9 @@ async function jerusalemReady(page) {
   // states and exactly one of them is on screen, so a visibility wait on both
   // can only ever resolve against the hidden one.
   await page.waitForSelector("#browseList .ss-row, #lanes .lane", { state: "attached", timeout: 20000 });
+  // The calendar is the page's own surface and is drafted from the programme
+  // rather than from anything stored, so it renders in every state.
+  await page.waitForSelector(".sch-show", { timeout: 20000 });
   await page.waitForFunction(() => {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
@@ -169,6 +178,7 @@ module.exports = {
   planPrefs,
   PLAN_FAVOURITES,
   jerusalemStarred,
+  jerusalemVerdicts,
   JERUSALEM_STARRED,
   nowReady,
   planReady,
