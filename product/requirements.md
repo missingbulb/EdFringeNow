@@ -1228,7 +1228,7 @@ it just learned.
 
 - `20.10` The draft's order of precedence, verdict by verdict.
 
-  🔧 _Logic leaf._ <!-- req-gallery:20.10 -->
+  <table><thead><tr><th align="left">Verdict</th><th align="left">What it does to the show's nights</th><th align="left">When the show is placed</th></tr></thead><tbody><tr><td>Lock this night</td><td>all stay; that one is taken, your day hours and all</td><td>first, before anything else</td></tr><tr><td>Favourite the show</td><td>all stay</td><td>after the locks, before the undecided rest</td></tr><tr><td>Not this night</td><td>that night leaves</td><td>with the rest, from what is left</td></tr><tr><td>Not this show</td><td>every night leaves</td><td>never — and no block offers it either</td></tr><tr><td>No verdict</td><td>all stay</td><td>with the rest, scarcest first</td></tr></tbody></table> <!-- req-gallery:20.10 -->
 
   <details><summary>Notes</summary>
 
