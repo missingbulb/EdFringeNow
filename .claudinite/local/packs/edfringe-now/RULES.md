@@ -76,13 +76,15 @@ and that is not an instruction to keep trying.
 
 ### `npm run verify` green is not CI green — the UI lane runs elsewhere
 
-Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, and CI's own
-gate now runs nothing but that script — so passing locally and passing on GitHub
-mean the same thing. Neither covers `npm run test:ui`, the separate
-`ui-requirements` workflow that drives real Chromium against the committed
-goldens. So anything that can move a rendered pixel — anything under `site/`, or
-the requirements fixtures — is unverified until `npm run test:ui` has been run
-locally, however green `verify` is.
+Since #347 `scripts/verify.sh` runs `check_the_world.mjs` itself, and CI's `ci`
+job now runs nothing but that script — so passing locally and passing on GitHub
+mean the same thing. Neither covers `npm run test:ui`, the `ui-requirements` job
+that drives real Chromium against the committed goldens, and that job renders
+only when the diff reaches `site/` or `product/` — so a green check on a commit
+outside them means the goldens were never compared. Anything that can move a
+rendered pixel — anything under `site/`, or the requirements fixtures — is
+unverified until `npm run test:ui` has been run locally, however green `verify`
+is.
 
 ### This repo has no PR template
 
