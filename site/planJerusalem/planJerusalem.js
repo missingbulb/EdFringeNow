@@ -835,7 +835,7 @@ function renderTripLinks() {
 // --- browse + search ------------------------------------------------------
 
 function showMeta(show) {
-  // Performances, not nights: three of this programme's runs play twice on one
+  // Performances, not nights: some of this programme's shows play twice on one
   // evening, so counting distinct dates would under-report what is on offer.
   const runs = show.performances.length;
   const venue = show.venueNames.join(", ");

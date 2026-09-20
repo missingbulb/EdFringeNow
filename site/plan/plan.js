@@ -184,7 +184,8 @@ const state = {
   facets: null, // catalogueFacets() over the catalogue: which optional facets have data
   venueCoords: null, // { [venueCode]: {lat, lng} }
   // The working favourites, as slugs — the single source of truth for what's on
-  // the grid and what we persist. Mutated by add (DEBUG) / remove-a-row, so the
+  // the grid and what we persist. Mutated by an upload, a one-by-one add/remove
+  // (a search-result star, a lane's × button, or the DEBUG randomizer), so the
   // stored list always mirrors the shows on screen, not the original upload.
   favSlugs: [],
   matched: [], // full show objects for the user's matched favourites
@@ -3089,9 +3090,9 @@ function renderPlanSummary(schedule) {
   }
   const strong = document.createElement("b");
   strong.textContent = `${scheduledShows} of ${matchedShows} shows`;
-  // One sentence, and nothing after it. The old "3 forced in · by walk" tail
-  // restated two things the page already shows — the pinned lanes carry their
-  // own padlocks, and the travel mode is a lit button a few inches above.
+  // One sentence, and nothing after it: the pinned lanes already carry their
+  // own padlocks, and the travel mode is a lit button a few inches above, so
+  // this line doesn't repeat either.
   el.append("Planned ", strong, ` across ${days} day${days === 1 ? "" : "s"} (${planWindowText()}).`);
 }
 
@@ -3455,8 +3456,8 @@ function buildScheduleBlock(slot, top, rawBottom) {
 
   const timeStr = `${slot.startTime}–${slotEndTime(slot)}`;
   const venue = slot.venueName || slot.venueCode || "";
-  // Title first, then one meta line carrying time and venue together — they used
-  // to be a line each, which spent two thirds of a small block on chrome.
+  // Title first, then one meta line carrying time and venue together — a small
+  // block has no room to spare for a line each.
   // No native title — the rich hover card (fillShowCard) carries all of this, and
   // a title here would double up as a second, parallel tooltip on hover.
   block.innerHTML =

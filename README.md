@@ -2,7 +2,7 @@
 
 Website to help find a fringe show — **Fringe Discover**.
 
-🌐 **Live site:** https://missingbulb.github.io/EdFringeNow/
+🌐 **Live site:** https://www.edfringenow.com/
 
 A single-page site for finding the nearest Edinburgh Fringe show happening
 right now ("Fringe Rush"): editable constraint cards (genre, travel mode, next
@@ -32,7 +32,7 @@ cd site && python3 -m http.server 8000
 
 - Plain HTML, CSS and vanilla JavaScript (no framework, no build tools)
 - [Leaflet](https://leafletjs.com/) + OpenStreetMap tiles for the map (no API key)
-- Mock show data in `data/shows.json`
+- Real Edinburgh Fringe show data via the scraper pipeline (see `scraper/README.md`)
 
 ## Structure
 
@@ -51,19 +51,21 @@ data/shows.json        mock Edinburgh Fringe shows, still loaded by design-conce
 
 ## Tests & CI
 
-The planner's computation engine (`site/plan/lib/`) is unit-tested with the
-built-in Node test runner — no dependencies, no install:
+Node's built-in test runner covers the site's own code and the requirements
+harness's logic/coverage lanes — no dependencies, no install:
 
 ```
-npm test          # node --test site/plan/lib/__tests__/*.test.mjs
-npm run verify     # tests + JS parse-checks (node --check) + Python py_compile
+npm test          # node --test across the site's own code and the requirements harness's logic/coverage lanes
+npm run verify    # npm test, plus JS/Python syntax checks and the Claudinite conformance sweep
 ```
 
 `npm run verify` is the single gate: it runs the unit tests, syntax-checks every
-JavaScript source under `site/`, and byte-compiles the `scraper/`
-Python. The pull-request gate (`.github/workflows/ci.yml`) runs exactly this
-script on every push to `main` and every pull request, and a **pre-commit hook**
-runs it locally so nothing red is committed. Enable the hook once per clone:
+JavaScript source under `site/`, `scripts/`, `product/` and `design-concepts/`,
+byte-compiles the `scraper/` Python, runs the normalizer and Jerusalem-parser
+self-tests, and finishes with the Claudinite conformance sweep. The
+pull-request gate (`.github/workflows/ci.yml`) runs exactly this script on
+every push to `main` and every pull request, and a **pre-commit hook** runs it
+locally so nothing red is committed. Enable the hook once per clone:
 
 ```
 npm run setup-hooks   # git config core.hooksPath .githooks

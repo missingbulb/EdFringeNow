@@ -301,8 +301,12 @@ async function closeBrowser() {
  *   dataDir    fixture data root (defaults to the committed snapshot)
  *   geolocation  override the fixed fake location, or null for "denied"
  *   colorScheme  the device's colour-scheme preference ("light" by default)
+ *   timezone   override the device's IANA zone (defaults to TIMEZONE)
  *   localStorage {key: value} seeded on the fake origin before any page script
  *   nowUtcMs   override the pinned instant (rarely; the reference time is shared)
+ *   advanceableClock  install a winding clock instead of a fixed one, for a
+ *     case that proves something the passage of time is supposed to change
+ *   failData   URL substrings whose requests must fail, to drive an error state
  */
 async function newPage(opts = {}) {
   const browser = await launchBrowser();
