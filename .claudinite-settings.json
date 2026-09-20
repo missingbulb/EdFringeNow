@@ -72,6 +72,18 @@
     {
       "id": "public-website",
       "version": "60913.2"
+    },
+    {
+      "id": "node",
+      "version": "60915.1"
+    },
+    {
+      "id": "leaflet",
+      "version": "60913.2"
+    },
+    {
+      "id": "headless-browser",
+      "version": "60913.1"
     }
   ],
   "accept": [
