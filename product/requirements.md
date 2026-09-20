@@ -1449,4 +1449,66 @@ way. Nothing above the calendar explains the calendar.
   dinner, move the day's end and the first night, reload, and all of it comes
   back — stored under the festival's own prefix like everything else this page
   remembers.
+# Part VI — what the site tells a crawler
+
+A public website has to be findable, and findable is a thing the site states
+rather than a thing a search engine guesses: which pages it publishes for a
+reader, which of them are the same page in another language, and which are not
+for listing at all. Google's own guidance asks for both files below — a sitemap
+so nothing depends on a crawler finding its way to every page by link alone,
+and a `robots.txt` naming it. Both are generated from the published tree, so a
+page cannot be added to the site and forgotten here.
+
+## 22. The sitemap and robots.txt
+
+- `22.1` The sitemap lists every page the site publishes for a reader.
+
+  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planJerusalem/</td><td>planJerusalem/index.html</td></tr><tr><td>/planJerusalem/he/</td><td>planJerusalem/he/index.html</td></tr><tr><td>/planJerusalem/ja/</td><td>planJerusalem/ja/index.html</td></tr><tr><td>/planJerusalem/ru/</td><td>planJerusalem/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
+
+  <details><summary>Notes</summary>
+
+  Read off the published tree rather than a list kept by hand, so a page added
+  to the site is in the sitemap without anyone remembering: every HTML page
+  wrangler uploads, at the URL the site's own trailing-slash handling serves it
+  at. No `lastmod`, `changefreq` or `priority` — the first would have to be
+  true to be worth anything and nothing here can keep it true, and a search
+  engine reads neither of the others.
+  </details>
+
+- `22.2` A page that asks not to be indexed is left out of it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.2 -->
+
+  <details><summary>Notes</summary>
+
+  The page's own `<meta name="robots" content="noindex">` is what decides,
+  rather than a second list beside the sitemap that someone would have to keep
+  in step. Two pages say it today: the trip-planner prototype, which is for
+  playing with rather than for finding, and the error page, which is not a
+  page at all.
+  </details>
+
+- `22.3` Each language of the festival planner is listed with the others beside it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.3 -->
+
+  <details><summary>Notes</summary>
+
+  The same reciprocal set the pages carry in their own markup (19.10), repeated
+  in the sitemap as `xhtml:link` alternates, which is the form a search engine
+  is most reliably given it in. Asserted against the pages' own annotations
+  rather than against a copy, so the two cannot disagree.
+  </details>
+
+- `22.4` `robots.txt` admits every crawler and names the sitemap.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.4 -->
+
+  <details><summary>Notes</summary>
+
+  A sitemap nothing points at is one a crawler has to be told about out of
+  band; the `Sitemap:` line is what makes it discoverable, and it is the only
+  reason this file exists here. Nothing is disallowed — what must not be listed
+  says so on the page itself (22.2), which keeps it out of results rather than
+  merely out of a crawl.
   </details>
