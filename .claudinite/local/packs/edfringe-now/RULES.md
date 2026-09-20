@@ -116,7 +116,7 @@ browser is here, and a UI change isn't done until it has been looked at.
   `/opt/pw-browsers/chromium` is a **symlink** onto the version-pinned
   `chromium-<build>/chrome-linux/chrome`, so it is a valid `executablePath` if
   you ever need one — but you don't, and the build it points at moves with the
-  image.
+  image. (launch-playwright-executablepath)
 - **Never `npm i playwright` into the scratchpad to make the import resolve.**
   A bare `import { chromium } from 'playwright'` in a scratchpad script fails
   with `ERR_MODULE_NOT_FOUND` — the global install is not on the resolution
@@ -134,7 +134,7 @@ browser is here, and a UI change isn't done until it has been looked at.
   `package-lock.json` and `node_modules/`, needing a manual `git checkout
   package.json && rm -rf node_modules package-lock.json` before committing —
   paid twice in one session on 2026-08-07 (#267), once to re-verify after a
-  refactor. Nothing here ever needs an install, scratchpad or repo root.
+  refactor. Nothing here ever needs an install, scratchpad or repo root. (npm-playwright-scratchpad)
 - **`site/index.html`'s Leaflet map loads from `unpkg.com`, which the sandbox proxy
   blocks — stub it before driving the page.** A Playwright-driven browser
   fails every `unpkg.com` request with `net::ERR_TUNNEL_CONNECTION_FAILED`
@@ -157,7 +157,7 @@ browser is here, and a UI change isn't done until it has been looked at.
   disk instead — a real, working map that never needs updating when `site/js/app.js`
   starts calling a new `L.*` method (#318). The same proxy gap hits
   `fonts.googleapis.com` (`ERR_CONNECTION_RESET`) — same fix if a case ever
-  needs real fonts loaded.
+  needs real fonts loaded. (site-index-htmls)
 - To build a `/plan` favourites list for the render, a plain slug-per-line text
   file is accepted by the parser — pick shows spanning the statuses (and some
   same-day doubles) you want to eyeball.
@@ -166,7 +166,7 @@ browser is here, and a UI change isn't done until it has been looked at.
   none) and often `net::ERR_CONNECTION_RESET` as the browser tears down. Neither
   is an application error — filter both out of a smoke script's error assertion
   so that a red run means something, rather than sending you chasing a phantom
-  404 through extra browser runs.
+  404 through extra browser runs. (known-noisy-console)
 - To match edfringe.com's live styling (e.g. the ticket-availability colours on
   the `/plan` grid), fetch the official site's CSS with `curl` through the agent
   proxy and read the palette out of it. `WebFetch` returns rendered text without
@@ -191,15 +191,17 @@ within days, so this session's own probe is the only thing that was ever current
 
 - **About to report a capability as unavailable** — probe it in this session first, whatever
   this file says. A note that a door was shut is not evidence it is shut, and only the probe
-  distinguishes a policy that has changed from one that hasn't. (3)
+  distinguishes a policy that has changed from one that hasn't. (report-capability-unavailable)
 
 - **Reading a 403 from the proxy** — `curl -v` tells you whose it is: `CONNECT tunnel failed,
   response 403` is a policy denial, the same code after a negotiated tunnel is the origin
   refusing you. `curl -sS "$HTTPS_PROXY/__agentproxy/status"` lists recent policy rejections.
+  (reading-403-proxy)
 
 - **Checking what the deployed site serves** — `curl https://www.edfringenow.com/…` answers it
   rather than reasoning from the working tree, but the response is CDN-cached: a 200 with stale
   content is not evidence a deploy failed, so re-check after a delay before concluding anything.
+  (checking-deployed-site)
 
 As with the off-box CSS fetch above, `curl` is the working path: headless
 Chromium cannot tunnel the proxy, and `WebFetch` returns rendered text rather
@@ -306,28 +308,28 @@ above; a burst of overlapping ones doesn't wait faster, it just adds noise.
   explicit `perPage` (down to `1`) returned cleanly every time. Always pass
   `perPage`; if a call still overflows, read the spilled tool-result file
   yourself (`python3`/`jq`) rather than the error's "read it in sequential
-  chunks" advice on a single-line JSON blob.
+  chunks" advice on a single-line JSON blob. (actionslist-listworkflowruns-overflows)
 - **`search_issues`, `list_pull_requests`, `pull_request_read` do shrink — with
   `fields`/`minimal_output`.** Pass one from the start; 28+ calls carrying it
   across the corpus have never overflowed, typically 100–250 bytes back
-  instead of six figures.
+  instead of six figures. (searchissues-listpullrequests-pullrequestread)
 - **`list_pull_requests`'s `merged` field always decodes `false`, but `merged_at`
   is populated for a merged PR** (confirmed 2026-09-13 on three closed PRs,
   `fields`-narrowed or not — the earlier "`merged_at` is never populated" finding
   no longer holds). Check `merged_at` for non-null rather than grepping
   `origin/main`'s commit subjects, or call `pull_request_read get` on the one PR
-  you actually care about.
+  you actually care about. (listpullrequestss-merged-field)
 - **`pull_request_read method=get_files` overflows a large PR at `perPage: 100`,
   but a lower `perPage` brings it back under the limit** — confirmed 2026-09-13:
   `perPage: 10` on the same 46-file PR #207 that blew the limit at 100 returned
   without erroring. Retry at a smaller page size before treating the diff as
   unreachable; for a landed-status judgment it usually isn't needed anyway —
-  `get` (title/body) plus `list_commits` is normally enough.
+  `get` (title/body) plus `list_commits` is normally enough. (pullrequestread-method-getfiles)
 - **`list_issues` can overflow even with `perPage` set — unlike `actions_list`, `perPage` alone
   doesn't save it.** Confirmed 2026-09-06: `perPage: 50` against this repo's ~29 open issues still
   overflowed (each issue's full `body` counts), where `actions_list` at the same page size doesn't.
   Pass `fields` too (drop `body`) rather than trusting `perPage` on its own; the spilled-tool-result
-  fallback above still works if a call overflows anyway.
+  fallback above still works if a call overflows anyway. (listissues-can-overflow)
 
 ### `subscribe_pr_activity` gets denied here when used mid-session — poll directly, don't retry
 
@@ -622,13 +624,14 @@ Two consequences to hold on to when touching this:
 - **A "now" compared against these times is read in Edinburgh too** — `site/js/clock.js`
   (`festivalNow` / `festivalDate`), never the device clock. A UK visitor cannot see
   the difference, which is why a device clock survives review; a visitor planning
-  from another zone reintroduces the whole drift.
+  from another zone reintroduces the whole drift. (now-compared-against)
 - **A conversion change is a full-snapshot change.** The committed data is generator
   output, so the fix is not complete until the master is rebuilt through the new
   conversion and every derived artifact regenerated from it. Shifting the boundary
   moves performances between day files (two late 31 Aug performances now fall into
   1 Sep, outside the August day files, and live only in the master and the planner's
   catalogue) — expect that and check it, rather than reading it as data loss.
+  (conversion-change-full)
 
 ### Two client-cached files joined by key need a fingerprint, or a generation split breaks the join
 
@@ -721,14 +724,14 @@ silently:
   `shows.min.json` for four days and `venues.json` for one, so a stale catalogue
   is routinely decoded against a newer lookup file. An entry that changed index
   would relabel shows' genres and rooms with no error anywhere. Entries are never
-  dropped, even once the master stops using them.
+  dropped, even once the master stops using them. (lookup-lists-append)
 - **`shows.min.json` carries nothing that changes through the day.** Ticket
   status lives in `availability.min.json` (its own status list, indexing into
   nothing, so `refresh-tickets` can rewrite it alone). Putting a status back in
   the catalogue would tie that bulky download to the ticket refresh *and*
   freeze availability for anyone holding a cached copy — the bug in #249,
   re-created from the other end.
-  `hydrate.test.mjs` asserts each wire performance carries only `d` and `s`.
+  `hydrate.test.mjs` asserts each wire performance carries only `d` and `s`. (shows-min-json)
 
 The same three-way move applies to plain (non-indexed) wire keys such as the
 price fields `pm` / `px`, with one extra hazard: the round-trip test compares the
@@ -759,7 +762,7 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   prose only competes with the picture. Say what is being asserted; let the
   image say how it looks. Anything genuinely not visible (a threshold, a rule
   behind the state, a condition that produced it) goes in a collapsed
-  **Notes** block, never in the statement.
+  **Notes** block, never in the statement. (visual-leafs-statement)
 - **A golden is the smallest surface that proves its leaf** — an element crop,
   a clipped region, or a stitched composite (e.g. one grid lane narrowed to a
   few days, recomposed with its label and verdict columns, no header) — never
@@ -767,19 +770,19 @@ commands live in [product/requirements/README.md](../../../../product/requiremen
   case (`capture: "<selector>"` or `capture(page, tools)`; see
   `shared/capture-tools.js`); whole-page capture is a deliberate exception,
   not a default. Scoping is judgment: crop to what the leaf asserts, keep just
-  enough surroundings to orient.
+  enough surroundings to orient. (golden-smallest-surface)
 - **A change over time is an animation, not a coded assertion.** When a
   requirement is about what an action *changes* — a dismissal that sticks, a
   pick that swaps one card for another — capture the same region before and
   after (and after a reload, where persistence is the point) and play the
   frames as one animated golden (`tools.animate`). A flow is shown as a flow.
   Reserve `stitchV`/`stitchH` for things that are genuinely side by side rather
-  than sequential.
+  than sequential. (change-time-animation)
 - **An animated golden is an APNG, never a GIF.** It animates in GitHub
   markdown exactly like a GIF. The encoder is `shared/png.js`'s
   `encodeAnimated`; the comparator detects an animated golden and compares
   bytes only, since a pixel differ reads one still frame and would describe
-  the wrong thing.
+  the wrong thing. (animated-golden-apng)
 
 ### A requirement is a feature, not a module
 
@@ -808,12 +811,12 @@ Reserve the coded kinds for what genuinely has no picture:
 
 - **`behavior`** — a gesture's outgoing consequence (a URL built, bytes
   downloaded, storage written), or a fact the OS paints rather than the page
-  (a native `title` tooltip, a cursor — neither can appear in a screenshot).
+  (a native `title` tooltip, a cursor — neither can appear in a screenshot). (behavior-rule)
 - **`logic`** — a pure rule with no rendered surface at all. When the rule is
   about *how values are written*, prefer a **table** over prose: a case may
   declare `table: { columns, rows }`, the gallery renders it into the spec, and
   its `verify()` proves every row against the shipped code — so the table a
-  reader sees is generated evidence, not a hand-typed claim.
+  reader sees is generated evidence, not a hand-typed claim. (logic-rule)
 
 When a leaf lands in a coded kind *because* the product makes it invisible,
 say so in its Notes and name what product change would make it visual — that
@@ -838,18 +841,18 @@ is a real finding about the UI, not just a testing limitation.
 - **Geolocation exists only on secure origins.** The fake origin is `https://`
   — route interception fulfils before any TLS, so no certificate is involved.
   On plain http the app silently keeps its built-in simulated clock and the
-  whole render lands on the wrong day.
+  whole render lands on the wrong day. (geolocation-exists-only)
 - **The app adopts the device clock only on an in-UK geolocation fix** — the
   harness's fixed location is central Edinburgh precisely so the pinned clock
   is what renders; deny geolocation (or move abroad) and you are rendering the
-  app's own pre-set simulated moment instead, a different day file entirely.
+  app's own pre-set simulated moment instead, a different day file entirely. (app-adopts-device)
 - **A CSS freeze does not stop Web-Animations-API animations.** The planner's
   FLIP board diff runs through `element.animate` — the harness stubs it to
-  land on end states; without the stub, captures race the animation.
+  land on end states; without the stub, captures race the animation. (css-freeze-does)
 - **Fonts arrive via the Google Fonts CSS URL**, so the vendored `fonts.css`'s
   `url(/__vendor/…)` references resolve against `fonts.googleapis.com` — the
   vendor route must match on path, host-agnostic, or every glyph silently
-  falls back and all text shifts by a pixel.
+  falls back and all text shifts by a pixel. (fonts-arrive-google)
 - **Vendoring the web fonts is only half the font problem.** Every character
   they don't carry — an emoji, `▾`, `≤`, a Cyrillic show title — is drawn from
   the fonts *installed on the machine*, so the goldens quietly become a record
@@ -859,7 +862,7 @@ is a real finding about the UI, not just a testing limitation.
   generated `FONTCONFIG_FILE` whose only font directory is
   `harness/vendor/systemfonts/` — the host's fonts cannot reach the page. A new
   emoji or script in the product or the fixtures needs that subset rebuilt
-  (see the folder's README), or it renders as tofu.
+  (see the folder's README), or it renders as tofu. (vendoring-web-fonts)
 - **Reproducing a golden-flake locally: use the harness's own pixel comparator
   (`compare.js`), not a raw byte/hash compare.** On 2026-08-11 (#335) a first
   repro script hashed the rendered PNG's bytes across repeated cold renders
@@ -868,6 +871,7 @@ is a real finding about the UI, not just a testing limitation.
   at 0 pixels differing. A byte-hash compare is strictly tighter than what CI
   actually enforces (bit-exact *pixels*, not encoder bytes), so it manufactures
   false positives; the real comparator is what settles whether a flake is real.
+  (reproducing-golden-flake)
 - **A red CI lane's diff image is unreachable from a session — reproduce it
   locally.** `ui-requirements` uploads a `requirements-failure-artifacts`
   artifact, but downloading it (`mcp__github__actions_get`, method
@@ -879,18 +883,18 @@ is a real finding about the UI, not just a testing limitation.
   proxy for the same image; the golden it was chasing ended the session
   undiagnosed. Use `get_job_logs` with a large `tail_lines` to learn *which*
   case failed, then re-run that case locally — `npm run test:ui` writes the
-  `.actual.png` / `.diff.png` into `shared/.artifacts/` itself.
+  `.actual.png` / `.diff.png` into `shared/.artifacts/` itself. (red-ci-lanes)
 - **A floating popup dies under a full-page screenshot** (the capture scrolls,
   and scroll dismisses tips/legends/optimizer pops). A popup-state case sets
-  `viewportOnly: true` and captures the viewport crop.
+  `viewportOnly: true` and captures the viewport crop. (floating-popup-dies)
 - **"Ready" is not `networkidle`.** The pages settle their async work into
   observable state — the footer version popup's text, the search placeholder's
-  show count. Wait on those (`case-helpers.js`), plus `document.fonts.ready`.
+  show count. Wait on those (`case-helpers.js`), plus `document.fonts.ready`. (ready-networkidle)
 - **Hover-driven UI must be opened inside `capture()`, not `drive()`.** The
   runner settles the scroll between the two, and scrolling moves an element out
   from under the pointer — which fires `mouseleave` and closes anything the
   hover opened. That is correct product behaviour; the capture just has to
-  happen on the right side of it.
+  happen on the right side of it. (hover-driven-ui)
 
 ### The fixture freeze
 
