@@ -1118,10 +1118,13 @@ watching, and which of them will you not get another chance at?" The scarcest
 contender takes the hour — a show with one night beats a show with three,
 because the three-night show can be caught tomorrow.
 
-That pick is the page's guess, not the reader's choice, so every drafted block
-carries the four answers back: **lock this night**, **favourite the show**,
-**not this night**, **not this show**. Each re-drafts the calendar around what
-it just learned.
+A contested hour is drawn as what it is: the card that won, in front of the
+cards it beat. The face of a card carries only the show — its name, its hour,
+its venue, and a mark when the reader has locked it. Everything the page has to
+say *about* that card, and the four answers back — **lock this night**,
+**favourite the show**, **not this night**, **not this show** — are in the
+popup that opens under the pointer, so a calendar at rest reads as a calendar
+rather than as a control panel.
 
 - `20.1` The calendar leads the page: every night of the window drafted from the whole programme, with nothing starred.
 
@@ -1134,50 +1137,52 @@ it just learned.
   and a prompt to go and star something; here it is a full week.
   </details>
 
-- `20.2` A contested hour goes to the contender with the fewest nights of its own.
+- `20.2` A contested hour is drawn as a stack: the card that won, in front of the ones it beat.
 
   ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
 
   <details><summary>Notes</summary>
 
-  One block, cropped to itself: the drafted show wears how many nights it has
-  ("only night", or "1 of 3"), so the reason it won its hour is on the face of
-  the block rather than in a rule the reader has to be told.
+  The cards behind are the shows the scarcity rule turned down for that hour,
+  one edge each, so how contested an hour was is something the calendar shows
+  rather than something it says. An uncontested hour is a single card.
   </details>
 
-- `20.3` The block names the contenders it beat, each with its own count of nights.
+- `20.3` Clicking the stack offers the hour to one of the shows behind it.
 
   ![jerusalem-contenders.20.3](requirements/screen/cases/jerusalem-contenders.20.3.png) <!-- req-gallery:20.3 -->
 
   <details><summary>Notes</summary>
 
-  Opened from the block's "+N at this hour". A contender is listed with the
-  count that lost it the hour, and taking one is the same act as locking a
-  night: it wins the hour outright from then on. A show that lost every night
-  to a clash rather than to a shared hour appears on no block, so the drawer
-  counts those separately rather than letting them vanish.
+  Each is named with the count of nights that lost it the hour, and taking one
+  is the same act as locking a night: it holds the hour from then on. Only
+  shows that could really take it are offered — see `20.11`.
   </details>
 
-- `20.4` Hovering a block previews that show's other nights.
+- `20.4` Hovering a card opens everything about it: how rare the show is, every night it plays, and the four verdicts.
 
   ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
 
   <details><summary>Notes</summary>
 
-  Every performance the programme prints for that show, the drafted one marked
-  and any the reader has rejected struck through — so "not this night" can be
-  chosen knowing whether there is another one.
+  One popup, because these are one thought: how few nights the show has is the
+  reason it holds the hour, its other nights are what "not this night" would
+  fall back on, and the four buttons are the answers. Nothing here is on the
+  card's own face. The popup is reached by pointer and by keyboard alike, and
+  stays open while the pointer travels into it, because it is something to act
+  on rather than something to read.
   </details>
 
-- `20.5` Every drafted block offers the four verdicts.
+- `20.5` A locked card is marked as locked, and its hour stops offering anyone else.
 
   ![jerusalem-verdicts.20.5](requirements/screen/cases/jerusalem-verdicts.20.5.png) <!-- req-gallery:20.5 -->
 
   <details><summary>Notes</summary>
 
-  Lock this night, favourite the show, not this night, not this show — in that
-  order, the two that keep a show before the two that drop it. Each is a
-  toggle: pressing the one already in force takes the verdict back.
+  A locked card beside a contested one, so the difference is the picture: the
+  lock is the one thing a card's face says beyond the show itself, and the
+  stack behind it is gone, because the reader has settled that hour and the
+  shows that wanted it are no longer an offer. Unlocking brings them back.
   </details>
 
 - `20.6` Locking a night holds it, even against a scarcer contender.
@@ -1224,6 +1229,22 @@ it just learned.
   Driven: lock one night, reject another show, reload, and the calendar comes
   back drafted the same way. Stored under the festival's own prefix, like every
   other thing this page remembers.
+  </details>
+
+- `20.11` An hour is only ever offered to a show that could really take it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:20.11 -->
+
+  <details><summary>Notes</summary>
+
+  Two ways a contender is no offer at all, and both are filtered before the
+  stack is drawn rather than discovered after the reader picks. A show already
+  drafted somewhere else in the calendar is one: offering it here would be
+  offering to move it, which is not what the picker says it does. A show that
+  cannot be reached from the night's other shows is the other — the walk
+  between the venues and the rest the reader asked for between shows are the
+  same constraint the draft itself obeys, so an offer that ignored them would
+  be an offer to break the day.
   </details>
 
 - `20.10` The draft's order of precedence, verdict by verdict.
