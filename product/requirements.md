@@ -1074,15 +1074,16 @@ in one translations file that carries, per key, the width its slot can afford.
   layout that only ever fitted English.
   </details>
 
-- `19.4` The reader's language and theme survive a reload.
+- `19.4` The theme a reader picks survives a reload.
 
   🚩 _Behavior leaf._ <!-- req-gallery:19.4 -->
 
   <details><summary>Notes</summary>
 
-  Driven: pick a language and a theme, reload, and the page comes back in both
-  — stored under the festival's own storage prefix, so the Edinburgh planner's
-  keys are untouched.
+  Driven: pick a theme, reload, and the page comes back in it — stored under
+  the festival's own storage prefix, so the Edinburgh planner's keys are
+  untouched. The theme is the only preference storage carries; the language is
+  the URL's, under 19.7.
   </details>
 
 - `19.5` Every string the page can render carries a translation in every supported language.
@@ -1108,6 +1109,62 @@ in one translations file that carries, per key, the width its slot can afford.
   Chromium's own fonts, across every language and both committed viewports, so
   the number a translator is given is the number the browser will hold them to.
   </details>
+
+- `19.7` The page's language is the one its URL names, and nothing else changes it.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.7 -->
+
+  <details><summary>Notes</summary>
+
+  One URL per language — English at the planner's own address, each other
+  language a path segment under it. Driven with the device asking for Hebrew:
+  the bare URL still answers in English, because a page that redirects on a
+  device preference is a page whose other versions no reader and no crawler
+  can reach. Nothing about the language is stored, so the same link opens the
+  same language for everyone.
+  </details>
+
+- `19.8` Choosing a language in the picker takes the reader to that language's URL.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.8 -->
+
+  <details><summary>Notes</summary>
+
+  The picker is the only way to change language now that no device preference
+  and no stored choice do, so it navigates rather than re-rendering in place —
+  which is what leaves the reader on an address they can bookmark and share.
+  </details>
+
+- `19.9` Every language's page is served already in that language, before any script runs.
+
+  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planJerusalem/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planJerusalem/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planJerusalem/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planJerusalem/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
+
+  <details><summary>Notes</summary>
+
+  Read off the committed bytes of each page rather than a rendered one: the
+  document's own language and direction, its title and description, and every
+  string the markup binds, all in that language before a line of JavaScript
+  has run. This is the half that fixes what a browser offers to translate —
+  it decides from the document it received, not from what the page later
+  becomes.
+
+  The pages are generator output. `scripts/localize-pages.mjs` derives them
+  from the planner's own `index.html`, and `--check` re-derives and compares,
+  so a hand-edit or a drifted source fails the gate rather than shipping.
+  </details>
+
+- `19.10` Each page names itself as canonical and points at every other language, including a default.
+
+  🔧 _Logic leaf._ <!-- req-gallery:19.10 -->
+
+  <details><summary>Notes</summary>
+
+  A self-referencing `rel="canonical"` on every language, and a reciprocal
+  `hreflang` set — each page listing all four languages plus `x-default` on
+  the bare URL — which is what tells a search engine that these are one page
+  in four languages rather than four pages competing with each other. Asserted
+  over the committed HTML, both directions: every alternate resolves to a page
+  that exists, and every page that exists is listed by all the others.
 
 ## 20. Deciding in the calendar
 
