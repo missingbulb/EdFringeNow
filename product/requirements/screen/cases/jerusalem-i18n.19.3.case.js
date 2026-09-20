@@ -7,13 +7,18 @@ module.exports = {
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,
-  // Driven through the page's own picker rather than loaded twice: the three
-  // strips that carry the most words per pixel, in each language, stitched.
+  // Driven through the page's own picker rather than navigated to directly:
+  // choosing a language is a navigation now, so each strip is captured on the
+  // page that language's own URL served. The three strips that carry the most
+  // words per pixel, in each language, stitched.
   async capture(page, t) {
     const strips = [];
     for (const code of ["ru", "ja"]) {
-      await page.selectOption("#langSelect", code);
-      await page.waitForFunction((c) => document.documentElement.lang === c, code);
+      await Promise.all([
+        page.waitForURL(`**/planJerusalem/${code}/`),
+        page.selectOption("#langSelect", code),
+      ]);
+      await jerusalemReady(page);
       await page.evaluate(() => document.fonts.ready);
       await settle(page);
       strips.push(await t.element(".site-header"));

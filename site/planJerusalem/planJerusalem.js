@@ -2097,6 +2097,7 @@ function retranslate() {
 
 async function boot() {
   initI18n({
+    root: FESTIVAL.pageRoot,
     storagePrefix: FESTIVAL.storagePrefix,
     localeSelect: $("langSelect"),
     themeButton: $("themeToggle"),
