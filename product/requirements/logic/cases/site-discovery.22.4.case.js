@@ -25,7 +25,7 @@ module.exports = {
 
     // Nothing is disallowed on purpose: a Disallow keeps a crawler out without
     // keeping the URL out of results, so what must not be listed says so on
-    // its own page instead (20.2).
+    // its own page instead (22.2).
     assert.ok(!/^\s*Disallow:/im.test(robots), "nothing is disallowed");
 
     // The file it names is the file that is served.
