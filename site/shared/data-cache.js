@@ -1,32 +1,42 @@
-/* A TTL cache for the JSON data files both pages download.
+/* A manifest-driven cache for the JSON data files both pages download.
  *
  * The host serves every asset with `Cache-Control: public, max-age=0,
  * must-revalidate` and an ETag, so a browser re-checks every file on every load
  * and only saves the download itself. That is a round trip per data file, and
- * the catalogue is the bulkiest blocking one. So the freshness policy lives
- * here, on the client, where a file inside its window costs no request at all —
- * which no response header can offer — and each is given the lifetime its
- * *content* actually has:
+ * the catalogue is the bulkiest blocking one, so a freshness policy lives here,
+ * on the client, where a file that hasn't changed costs no request at all —
+ * which no response header can offer.
  *
- *   - the catalogue the planner searches turns over rarely and is the bulkiest
- *     blocking download, so it is held for days;
- *   - ticket availability changes through the festival and is held for a day;
- *   - descriptions are effectively immutable and are held for a week.
+ * The policy is one published manifest (data/manifest.json, written by
+ * scraper/normalize.py's build_manifest — see its module docstring) naming
+ * every data file's current sha256. It is fetched uncached, in full, on every
+ * load — a stale copy of the manifest would carry a valid hash of itself, so
+ * nothing can attest to its own freshness, and caching it would just move the
+ * staleness up one level and hide it. Everything else is then a string
+ * compare: a cached file's URL is stamped with the manifest hash it was
+ * fetched under, and the next load re-fetches only the URLs whose current
+ * manifest hash has moved. No TTL is guessed for any file, and no downloaded
+ * payload is ever re-hashed to check it — the manifest is the one place that
+ * fact is computed, and the client just remembers what it was told.
+ *
+ * When the manifest itself can't be fetched, freshness is unknowable rather
+ * than assumed: every cachedFetchJson call for that load goes straight to the
+ * network instead of trusting whatever is in Cache Storage. The data still
+ * loads correctly either way — this only forgoes the reuse, never the
+ * correctness of what's rendered.
  *
  * Payloads go into the Cache Storage API rather than localStorage, whose ~5 MB
  * ceiling the catalogue alone would breach. Cache Storage has no expiry of its
- * own, so the clock is kept beside it as a small localStorage map of
- * url -> epoch ms of the last fetch.
+ * own, so the manifest hash each entry was fetched under is kept beside it as a
+ * small localStorage map of url -> hash.
  *
  * Pure of any page: both index.html (js/app.js) and the planner (plan/plan.js)
  * resolve their relative data urls against the same origin, so they share one
  * cache and one stamp map, and a file fetched by either is reused by the other.
  */
 
-export const DAY_MS = 24 * 60 * 60 * 1000;
-
 const CACHE_NAME = "edfringe-data-v1";
-const STAMPS_KEY = "edfringe.data.fetched.v1"; // url -> epoch ms of the last fetch
+const STAMPS_KEY = "edfringe.data.fetched.v1"; // url -> manifest hash at the last successful cache write
 
 export async function fetchJson(url) {
   const res = await fetch(url);
@@ -34,8 +44,53 @@ export async function fetchJson(url) {
   return res.json();
 }
 
-/* When each cached URL was last fetched. A plain localStorage map — the
- * payloads live in Cache Storage, this is only the clock beside them. */
+/**
+ * Fetch data/manifest.json, uncached — see the module doc for why it must
+ * never be. A failure here degrades every cachedFetchJson call for this load
+ * to "freshness unknown" (always ask the network); it is never itself the
+ * caller's error, since the data files load normally regardless.
+ *
+ * @param {string} url
+ * @param {(err: unknown, url: string) => void} [onNote] optional log sink
+ * @returns {Promise<{v: number, files: Record<string,string>}|null>}
+ */
+export async function fetchManifest(url, onNote) {
+  try {
+    return await fetchJson(url);
+  } catch (err) {
+    (onNote || (() => {}))(err, url);
+    return null;
+  }
+}
+
+/**
+ * The manifest's key for a fetch url: the path segment from "data/" on.
+ *
+ * The two pages spell the same file differently — js/app.js fetches
+ * "data/venues.json", plan/plan.js fetches "../data/venues.json" — because
+ * each is relative to where the page itself lives, while the manifest (and
+ * scraper/normalize.py's build_manifest) knows nothing about either page and
+ * names files relative to site/data/ alone. This resolves the climbing by
+ * hand rather than via the URL API, so it needs no DOM and is unit-testable
+ * under plain Node.
+ *
+ * @param {string} url
+ * @returns {string|null} null for a url with no "data" segment
+ */
+export function dataRelativeKey(url) {
+  const stack = [];
+  for (const seg of url.split("/")) {
+    if (seg === "" || seg === ".") continue;
+    if (seg === "..") stack.pop();
+    else stack.push(seg);
+  }
+  const i = stack.indexOf("data");
+  return i === -1 ? null : stack.slice(i + 1).join("/");
+}
+
+/* The manifest hash each cached URL was fetched under. A plain localStorage
+ * map — the payloads live in Cache Storage, this is only the bookkeeping
+ * beside them. */
 function fetchStamps() {
   try {
     const raw = JSON.parse(localStorage.getItem(STAMPS_KEY) || "{}");
@@ -45,9 +100,9 @@ function fetchStamps() {
   }
 }
 
-function stampFetch(url) {
+function stampFetch(url, hash) {
   try {
-    localStorage.setItem(STAMPS_KEY, JSON.stringify({ ...fetchStamps(), [url]: Date.now() }));
+    localStorage.setItem(STAMPS_KEY, JSON.stringify({ ...fetchStamps(), [url]: hash }));
   } catch {
     /* private mode / full quota — we just re-fetch next time */
   }
@@ -66,10 +121,10 @@ function unstampFetch(url) {
 /**
  * Throw away a cached copy we've judged unusable, clock and all.
  *
- * The clock matters as much as the payload: a stamp left behind keeps pointing
- * at an entry we've already rejected, so the next load makes the same bad
- * decision, and the next — for a day on availability, four days on the
- * catalogue.
+ * The stamp matters as much as the payload: one left behind keeps claiming a
+ * hash we've already rejected as unreadable, so the next load — and the next,
+ * until the manifest hash for this url happens to change again — makes the
+ * same bad decision.
  */
 async function dropCached(cache, url, note) {
   try {
@@ -149,27 +204,38 @@ async function readCached(cache, url, validate, note) {
 }
 
 /**
- * fetchJson with a local copy kept for `ttlMs`.
+ * fetchJson with a local copy kept for as long as the manifest says it's still
+ * current.
  *
- * Inside the TTL the cached body is returned without touching the network.
- * Outside it — or with nothing cached — the network is asked, and the answer
- * replaces the copy. If that request fails and a stale copy exists, the stale
- * copy wins: a week-old description or yesterday's catalogue is far better than
- * an error page, and the caller has no way to draw anything without one.
+ * `manifest` is what fetchManifest(MANIFEST_URL) returned for this load — null
+ * when it couldn't be fetched, or an object whose `files` map is missing this
+ * url's key for a file the published manifest doesn't (yet) name. Either way
+ * this treats the file's freshness as unknown and always asks the network,
+ * which is the safe default: never claim a cached copy is current without the
+ * manifest's word for it. When the manifest does name a hash for this url, the
+ * cached copy is used exactly when its stamp matches — nothing is re-hashed to
+ * double-check.
+ *
+ * If the network request fails and a stale copy exists, the stale copy wins
+ * regardless of its stamp: a week-old description or yesterday's catalogue is
+ * far better than an error page, and the caller has no way to draw anything
+ * without one.
  *
  * Degrades to a plain fetch wherever Cache Storage isn't available (it needs a
  * secure context, so `file://` and plain http get the uncached path).
  *
  * @param {string} url
- * @param {number} ttlMs how long a downloaded copy may be reused
+ * @param {{files: Record<string,string>}|null} manifest fetchManifest's result
  * @param {(err: unknown, url: string) => void} [onNote] optional log sink
  */
-export async function cachedFetchJson(url, ttlMs, onNote, validate) {
+export async function cachedFetchJson(url, manifest, onNote, validate) {
   const note = onNote || (() => {});
   const check = (data) => {
     if (validate && !validate(data)) throw new Error(`${url} failed validation`);
     return data;
   };
+  const wantHash = manifest && manifest.files ? manifest.files[dataRelativeKey(url)] : undefined;
+
   let cache = null;
   try {
     if (typeof caches !== "undefined") cache = await caches.open(CACHE_NAME);
@@ -178,8 +244,7 @@ export async function cachedFetchJson(url, ttlMs, onNote, validate) {
   }
   if (!cache) return check(await fetchJson(url));
 
-  const fetchedAt = fetchStamps()[url];
-  if (fetchedAt && Date.now() - fetchedAt < ttlMs) {
+  if (typeof wantHash === "string" && fetchStamps()[url] === wantHash) {
     const hit = await readCached(cache, url, validate, note);
     if (hit) return hit.data;
   }
@@ -199,7 +264,12 @@ export async function cachedFetchJson(url, ttlMs, onNote, validate) {
     const data = check(JSON.parse(text));
     try {
       await cache.put(url, new Response(text, { headers: { "Content-Type": "application/json" } }));
-      stampFetch(url);
+      // Stamp with the hash the manifest asserted, never one we computed —
+      // that is the whole "record the hash, don't re-hash" design. With no
+      // known hash for this url, leave it unstamped so the next load treats
+      // it as unknown again rather than trusting a copy of unknown vintage.
+      if (typeof wantHash === "string") stampFetch(url, wantHash);
+      else unstampFetch(url);
     } catch (err) {
       note(err, url);
     }

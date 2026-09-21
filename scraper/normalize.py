@@ -66,6 +66,18 @@ and the pipeline's own working files stay under data/, which nothing serves.
                                loads on open.
   site/data/days/index.json    list of available days + per-day counts.
 
+  site/data/manifest.json      every file above, named relative to site/data/,
+                               mapped to a sha256 of the bytes just written. The
+                               client (site/shared/data-cache.js) fetches this
+                               UNCACHED on every load and compares it to the hash
+                               it remembers fetching last time, per file — that
+                               replaces the fixed per-file TTLs the client used to
+                               guess with, so a file is re-downloaded exactly when
+                               its content actually changed, never earlier and
+                               never later. Written in the same write_derived_outputs()
+                               call as everything it names, so it can never
+                               describe a publish that didn't happen.
+
 Locations are normalized to a venue code plus the specific room (space) of the
 show. Venue coordinates are geocoded from UK postcodes via postcodes.io and
 cached in venues.json so a refresh only geocodes new venues.
@@ -95,9 +107,11 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
+import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -1012,11 +1026,15 @@ def load_events(raw_dir: Path) -> list[dict]:
     return events
 
 
-def write_json(path: Path, obj) -> None:
+def write_json(path: Path, obj) -> str:
+    """Write JSON atomically (tmp + rename) and return a sha256 of the exact
+    bytes written, so build_manifest can record it without a second read."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    data = json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")))
+    tmp.write_bytes(data)
     tmp.replace(path)
+    return hashlib.sha256(data).hexdigest()
 
 
 def load_prices(path: Path) -> dict:
@@ -1039,6 +1057,21 @@ def load_prices(path: Path) -> dict:
         return {}
 
 
+def build_manifest(file_hashes: dict[str, str]) -> dict:
+    """The manifest sidecar: {"v": 1, "files": {relpath: sha256}}.
+
+    Takes hashes already computed by write_json — see its docstring — rather
+    than re-reading and re-hashing the files, which is exactly the cost the
+    client-side design (site/shared/data-cache.js) avoids by the same
+    principle: the freshness question has one authoritative answer per file,
+    computed once where the bytes are already in hand.
+
+    Sorted so an unchanged set of inputs regenerates this file byte-for-byte,
+    like every other derived output.
+    """
+    return {"v": 1, "files": dict(sorted(file_hashes.items()))}
+
+
 def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
                           days_dir: Path, master_min_path: Path,
                           descriptions_path: Path, prices_path: Path,
@@ -1056,7 +1089,17 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     byte-for-byte identically. The ticket refresh leans on exactly that:
     it touches the master's statuses and calls this, and only the files that
     actually carry a status come back changed.
+
+    Also writes manifest.json (build_manifest) naming every file below by its
+    hash, so a client can tell exactly which of them changed since it last
+    asked — see the module docstring's entry for it.
     """
+    data_root = venues_path.parent
+    manifest_files: dict[str, str] = {}
+
+    def tracked(path: Path, obj) -> None:
+        manifest_files[path.relative_to(data_root).as_posix()] = write_json(path, obj)
+
     # Real ticket amounts, folded in before anything is packed so the master and
     # both wire forms agree on what a show costs. The master (and so the
     # planner's catalogue) gets the run-wide range; the day files below get each
@@ -1080,9 +1123,9 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     prior_lookups = json.loads(venues_path.read_text()) if venues_path.exists() else {}
     genres, rooms, subgenres, ticket_statuses, age_restrictions = build_lookups(
         master, prior_lookups)
-    write_json(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
-                             "subgenres": subgenres, "ticketStatuses": ticket_statuses,
-                             "ageRestrictions": age_restrictions})
+    tracked(venues_path, {"venues": venues, "rooms": rooms, "genres": genres,
+                          "subgenres": subgenres, "ticketStatuses": ticket_statuses,
+                          "ageRestrictions": age_restrictions})
 
     genre_ix = {g: i for i, g in enumerate(genres)}
     room_ix = {r: i for i, r in enumerate(rooms)}
@@ -1093,21 +1136,23 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     # Compact planner payload (packed against the lookups just written), and the
     # two things it deliberately leaves behind: the availability that the
     # ticket refresh rewrites, and the descriptions too bulky to block on.
-    write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
-                                              age_ix, venues))
-    write_json(availability_path, build_availability(master))
-    write_json(descriptions_path, build_descriptions(master))
+    tracked(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
+                                           age_ix, venues))
+    tracked(availability_path, build_availability(master))
+    tracked(descriptions_path, build_descriptions(master))
 
     # Per-day August files + index.
     days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix, perf_prices)
     for date, items in days.items():
-        write_json(days_dir / f"{date}.json", items)
-    write_json(days_dir / "index.json", {
+        tracked(days_dir / f"{date}.json", items)
+    tracked(days_dir / "index.json", {
         "dates": sorted(days.keys()),
         "counts": {d: len(days[d]) for d in sorted(days)},
         "shows": len(master),
         "venues": len(venues),
     })
+
+    write_json(data_root / "manifest.json", build_manifest(manifest_files))
     return len(days)
 
 
@@ -1547,6 +1592,22 @@ def selftest() -> int:
     # the entire reason the sidecar exists.
     assert "description" not in packed, packed
     assert "de" not in packed, packed
+
+    # write_json hands back a sha256 of exactly the bytes it wrote, which
+    # build_manifest assembles into the client-facing {relpath: hash} map —
+    # the whole freshness check the manifest replaces the per-file TTLs with.
+    with tempfile.TemporaryDirectory() as tmp:
+        p = Path(tmp) / "x.json"
+        digest = write_json(p, {"a": 1})
+        assert digest == hashlib.sha256(p.read_bytes()).hexdigest(), \
+            "write_json's returned hash must match the bytes actually on disk"
+        # An unchanged object rewrites byte-for-byte, so its hash is stable too —
+        # the manifest must not flap for a re-run over unchanged input.
+        assert write_json(p, {"a": 1}) == digest
+        assert write_json(p, {"a": 2}) != digest, "a changed body must change the hash"
+
+    manifest = build_manifest({"b.json": "h2", "a.json": "h1"})
+    assert manifest == {"v": 1, "files": {"a.json": "h1", "b.json": "h2"}}, manifest
 
     print("selftest OK")
     return 0

@@ -13,7 +13,7 @@
 // whenever the date window or any control changes.
 
 import { isInUK } from "../shared/geo.js";
-import { cachedFetchJson, evictCached, DAY_MS } from "../shared/data-cache.js";
+import { cachedFetchJson, evictCached, fetchManifest } from "../shared/data-cache.js";
 import { stayLink, travelLink } from "../shared/affiliates.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
@@ -44,28 +44,15 @@ const DATA_URL = "../data/normalized/shows.min.json"; // compact catalogue; rehy
 const VENUES_URL = "../data/venues.json"; // shared lookups (enums + venue map) the catalogue indexes into
 const AVAILABILITY_URL = "../data/normalized/availability.min.json"; // per-performance ticket status
 const DESCRIPTIONS_URL = "../data/normalized/descriptions.min.json"; // slug → full text, fetched lazily
+const MANIFEST_URL = "../data/manifest.json"; // every file above, hashed — see shared/data-cache.js
 
-/* How long a downloaded data file may be reused before we ask the network
- * again (shared/data-cache.js). Each file gets the lifetime its content has,
- * which is the whole reason availability was split out of the catalogue:
- *
- *  - the catalogue is the bulkiest blocking download (3.0 MB, 948 KB gzipped)
- *    and now carries nothing that changes through the day, so four days of
- *    reuse costs a returning visitor only the shows added since;
- *  - availability is the one file that changes through the festival, so a day
- *    is the most it can be trusted — and it is far smaller than the catalogue,
- *    so the daily re-download is cheap;
- *  - venues.json is small and its lookup lists are append-only, so refetching
- *    it daily keeps it at least as new as any cached catalogue that indexes
- *    into it;
- *  - (the now page holds its day file for an hour, not a day — it draws SOLD
- *    OUT stamps and wants the freshest copy going; see js/app.js);
- *  - descriptions are effectively immutable, so a week means a returning
- *    visitor pays for them once. */
-const CATALOGUE_TTL_MS = 4 * DAY_MS;
-const AVAILABILITY_TTL_MS = DAY_MS;
-const LOOKUPS_TTL_MS = DAY_MS;
-const DESCRIPTIONS_TTL_MS = 7 * DAY_MS;
+/* Whether a downloaded data file may be reused, rather than how long, is
+ * decided by data/manifest.json (shared/data-cache.js): a file is re-fetched
+ * exactly when its published hash has moved. That is what let availability
+ * split out of the catalogue in the first place — the catalogue carries
+ * nothing that changes through the day, so it is only ever re-downloaded when
+ * a show is actually added or changed, while availability's own hash moves
+ * with the hourly ticket refresh and nothing else. */
 
 const YEAR = 2026;
 const MONTH = "08"; // August, 2-digit
@@ -343,19 +330,24 @@ function joinIsSound(wire, availability, catalogue) {
  * inverts it: every performance turns red and every show reports "No dates", for
  * a festival that is very much on sale (#309).
  *
- * The retry is the substance. A generation disagreement is not a network failure
- * and not a corrupt file — it is two perfectly good files that have drifted
- * apart on their separate TTLs, and the fix is simply to go and get today's, so
- * that is what happens. Only if freshly-downloaded copies *still* disagree is
- * this a real failure, and then it belongs in the error panel: at that point we
- * genuinely don't know what's bookable, and a wrong plan is worse than no plan.
+ * The retry is the substance. A generation disagreement is not a network
+ * failure and not a corrupt file — the manifest narrows when this can even
+ * happen (both files are re-fetched together the moment either one's hash
+ * moves), but doesn't rule it out: a deploy landing between the manifest
+ * fetch and the two data fetches below can still hand back a pair from two
+ * different publishes. The fix is simply to go and get today's, so that is
+ * what happens — a fresh manifest and fresh copies of both. Only if that
+ * still disagrees is this a real failure, and then it belongs in the error
+ * panel: at that point we genuinely don't know what's bookable, and a wrong
+ * plan is worse than no plan.
  */
 async function loadCatalogue() {
   for (const attempt of [1, 2]) {
+    const manifest = await fetchManifest(MANIFEST_URL, noteCache);
     const [wire, lookups, availability] = await Promise.all([
-      cachedFetchJson(DATA_URL, CATALOGUE_TTL_MS, noteCache, isCatalogue),
-      cachedFetchJson(VENUES_URL, LOOKUPS_TTL_MS, noteCache, isLookups),
-      cachedFetchJson(AVAILABILITY_URL, AVAILABILITY_TTL_MS, noteCache, isAvailabilitySidecar),
+      cachedFetchJson(DATA_URL, manifest, noteCache, isCatalogue),
+      cachedFetchJson(VENUES_URL, manifest, noteCache, isLookups),
+      cachedFetchJson(AVAILABILITY_URL, manifest, noteCache, isAvailabilitySidecar),
     ]);
     const catalogue = rehydrateShows(wire, lookups, YEAR, availability);
     const verdict = joinIsSound(wire, availability, catalogue);
@@ -367,9 +359,8 @@ async function loadCatalogue() {
       );
     }
     // Drop both and go again. Which of the two is stale isn't knowable from
-    // here — the catalogue's four-day TTL makes it the usual suspect, but a
-    // sidecar can be the stale one too — and this costs one extra download of
-    // each on a path that only runs when they've already disagreed.
+    // here, and this costs one extra download of each on a path that only
+    // runs when they've already disagreed.
     console.warn("Fringe Planner: catalogue/availability mismatch, refetching both —", verdict.why);
     await Promise.all([evictCached(DATA_URL), evictCached(AVAILABILITY_URL)]);
   }
@@ -425,14 +416,17 @@ function showLoadError(err) {
 
 /**
  * The descriptions sidecar: slug → the show's full text, fetched once per page
- * and cached for a week. Everything it feeds already works without it — the
- * hover card falls back to the catalogue's one-line blurb, and so does search —
- * so a failure here is logged and dropped, never surfaced. When it does land,
- * an open search re-runs so the results deepen under the query already typed.
+ * and reused for as long as the manifest says it's still current — in
+ * practice close to forever, since the text is effectively immutable.
+ * Everything it feeds already works without it — the hover card falls back
+ * to the catalogue's one-line blurb, and so does search — so a failure here
+ * is logged and dropped, never surfaced. When it does land, an open search
+ * re-runs so the results deepen under the query already typed.
  */
 function loadDescriptions() {
   if (state.descriptionsPromise) return state.descriptionsPromise;
-  state.descriptionsPromise = cachedFetchJson(DESCRIPTIONS_URL, DESCRIPTIONS_TTL_MS, noteCache)
+  state.descriptionsPromise = fetchManifest(MANIFEST_URL, noteCache)
+    .then((manifest) => cachedFetchJson(DESCRIPTIONS_URL, manifest, noteCache))
     .then((payload) => {
       state.descriptions = new Map(Object.entries((payload && payload.d) || {}));
       if (!$("ssPop").hidden) runSearch();
