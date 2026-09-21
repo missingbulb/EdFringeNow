@@ -56,6 +56,11 @@ export function byScarcity(a, b) {
  * locked instance is placed before anything can take its hour, and a favourite
  * is placed before the unasked-for rest.
  *
+ * `preferred` is weaker than any of them and is not a verdict: a taste the
+ * reader stated, which orders the last pass and caps how much of a day may
+ * come from outside it. It narrows nothing — an hour no preferred show wants
+ * is still filled, up to that cap.
+ *
  * @param {object[]} shows the whole catalogue
  * @param {{
  *   dateStart?: string, dateEnd?: string, windowStart?: string|Date, windowEnd?: string|Date,
@@ -67,6 +72,8 @@ export function byScarcity(a, b) {
  *   favourites?: Set<string>|string[],
  *   rejectedShows?: Set<string>|string[],
  *   rejectedInstances?: Set<string>|string[],
+ *   preferred?: Set<string>|string[],
+ *   maxUnpreferredPerDay?: number,
  * }} [options]
  * @returns {{
  *   days: Array<{date: string, slots: object[]}>,
@@ -84,6 +91,12 @@ export function draftCalendar(shows, options = {}) {
   const favourites = new Set(options.favourites ?? []);
   const rejectedShows = new Set(options.rejectedShows ?? []);
   const rejectedInstances = new Set(options.rejectedInstances ?? []);
+  const preferred = new Set(options.preferred ?? []);
+  // No stated taste means no cap: every show is as welcome as every other, so
+  // an unpreferred-per-day limit would be a limit on nothing.
+  const maxUnpreferredPerDay = preferred.size
+    ? options.maxUnpreferredPerDay ?? Infinity
+    : Infinity;
 
   const gapOpts = {
     minGapSameVenue: options.minGapSameVenue,
@@ -137,6 +150,10 @@ export function draftCalendar(shows, options = {}) {
   const placed = [];
   const placedShows = new Set();
   const perDay = new Map();
+  // Counted separately from the day's length, because the two caps answer
+  // different questions: how full a day is, and how much of it is outside what
+  // the reader came for.
+  const unpreferredPerDay = new Map();
 
   const place = (cand, verdict) => {
     cand.verdict = verdict;
@@ -145,16 +162,26 @@ export function draftCalendar(shows, options = {}) {
     const day = perDay.get(cand.date) || [];
     day.push(cand);
     perDay.set(cand.date, day);
+    if (!preferred.has(cand.slug)) {
+      unpreferredPerDay.set(cand.date, (unpreferredPerDay.get(cand.date) || 0) + 1);
+    }
   };
 
   // A pass over an ordered set of candidates, taking the first of each show
   // that still fits. `capped` is false for the two verdict-driven passes: you
-  // asked for these by name, so they are not the ones the per-day cap drops.
+  // asked for these by name, so they are not the ones either per-day cap drops.
   const sweep = (list, verdict, capped) => {
     for (const cand of list) {
       if (placedShows.has(cand.slug)) continue;
       const sameDay = perDay.get(cand.date) || [];
       if (capped && sameDay.length >= maxPerDay) continue;
+      if (
+        capped &&
+        !preferred.has(cand.slug) &&
+        (unpreferredPerDay.get(cand.date) || 0) >= maxUnpreferredPerDay
+      ) {
+        continue;
+      }
       if (!sameDay.every((c) => compatible(c, cand, gapOpts))) continue;
       place(cand, verdict);
     }
@@ -170,7 +197,13 @@ export function draftCalendar(shows, options = {}) {
   // Pass 2 — favourited shows: scarcest of their own remaining nights first.
   sweep(candidates.filter((c) => favourites.has(c.slug) && !placedShows.has(c.slug)), "favourite", false);
 
-  // Pass 3 — the draft proper: the rest of the programme, scarcest first.
+  // Pass 3 — the kinds the reader said they came for, scarcest first, so a
+  // contested hour goes to one of them over an equally scarce show they never
+  // asked about.
+  sweep(candidates.filter((c) => preferred.has(c.slug) && !placedShows.has(c.slug)), "draft", true);
+
+  // Pass 4 — the draft proper: the rest of the programme, scarcest first, held
+  // to whatever of the day is left for shows outside the reader's taste.
   sweep(candidates.filter((c) => !placedShows.has(c.slug)), "draft", true);
 
   // What a block offers instead of itself: the shows that wanted the same hour
