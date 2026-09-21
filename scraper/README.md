@@ -42,6 +42,10 @@ python3 scraper/fetch_shows.py
 - Output (default `data/raw_pages/`):
   - `page_NN.json` — the raw `events` payload per page (kept for re-processing).
   - `shows.json` — all show results flattened into a single array.
+  - `fetch_manifest.json` — the completeness signal: whether this run's pages add
+    up to a walk of the *whole* listing (`recentlyAdded=ANY`, no `--max-pages`
+    cap, no failed page). `normalize.py --merge` reads it before treating an id
+    missing from the pass as withdrawn — see *Withdrawn shows* below.
 - A random 4–9 s delay is inserted between requests.
 - **Resumable**: existing `page_NN.json` files are skipped; use `--force` to
   re-fetch. A fixed `--seed` keeps the server ordering stable across pages so
@@ -139,13 +143,13 @@ since the site serves them):
 
 | file | purpose | sent to browser |
 |---|---|---|
-| `data/normalized/shows.json` | master: one record per show with all performances (including each show's full `description`); source for regenerating everything below | no |
-| `site/data/normalized/shows.min.json` | the compact catalogue the planner downloads (3.0 MB, 948 KB gzipped): the master packed losslessly against the `venues.json` lookups. Carries **no ticket status** — see the sidecar below — so an unchanged festival regenerates it byte-for-byte and the browser can hold it for 4 days | yes (planner) |
-| `site/data/normalized/availability.min.json` | `{v, ts, a: {show id → {"MMDD\|HH:MM" → status index}}, o}` — per-performance ticket status, split out of the catalogue because it is the one thing that moves during the festival. Self-contained (its own status list, indexes into nothing), 149 KB gzipped, cached for 1 day | yes (planner) |
-| `site/data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Fetched lazily by the planner and cached for a week; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
+| `data/normalized/shows.json` | master: one record per show with all performances (including each show's full `description`); source for regenerating everything below. A show a complete `--merge` pass no longer finds is kept here, marked `"withdrawn": true`, rather than deleted | no |
+| `site/data/normalized/shows.min.json` | the compact catalogue the planner downloads (3.0 MB, 948 KB gzipped): the master's **active** (non-withdrawn) shows, packed losslessly against the `venues.json` lookups. Carries **no ticket status** — see the sidecar below — so an unchanged festival regenerates it byte-for-byte and the browser can hold it for 4 days | yes (planner) |
+| `site/data/normalized/availability.min.json` | `{v, ts, a: {show id → {"MMDD\|HH:MM" → status index}}, o}` — per-performance ticket status for the same active shows as the catalogue above, split out because it is the one thing that moves during the festival. Self-contained (its own status list, indexes into nothing), 149 KB gzipped, cached for 1 day | yes (planner) |
+| `site/data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Built from the **whole** master, withdrawn shows included — it's a lazy-fetched sidecar with no join to keep in step, so there's no reason to drop one. Fetched lazily by the planner and cached for a week; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
 | `site/data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
-| `site/data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
-| `site/data/days/index.json` | available days + per-day counts | yes |
+| `site/data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index), active shows only | yes (today's) |
+| `site/data/days/index.json` | available days + per-day counts (of active shows) | yes |
 
 `normalize.py` has a **second input** besides the raw scrape: `data/prices.json`
 (above), which it folds into the master and both wire forms. It is an input, not
@@ -203,8 +207,18 @@ Normalization rules:
   `subGenre`/`subgenres` fields as a list of display labels, for display only
   (not a filter). About 2% of shows carry none.
 
+- **Withdrawn shows.** `--merge` also reconciles: a show id the pass didn't see
+  is marked `withdrawn` on the master (never deleted — it comes straight back
+  if the show returns) and excluded from the day files and `shows.min.json`.
+  This only happens when the raw pass is one `fetch_shows.py` itself attests
+  walked the *whole* listing — its `fetch_manifest.json`. Without that signal
+  (missing, or present but marked incomplete — a recently-added top-up, a
+  capped run, a failed page), `--merge` still upserts normally; it just refuses
+  to reconcile, so a partial pass can never be read as "these are the only
+  shows there are".
+
 `python3 scraper/normalize.py --selftest` runs a built-in transform test (no
-network or scraped data needed).
+network or scraped data needed), including both directions of reconciliation.
 
 ## Refreshing data (daily)
 
@@ -222,6 +236,15 @@ the data refreshes run* below); the full rebuild stays a manual workflow,
 **`Scrape edfringe shows (full)`** (`.github/workflows/scrape.yml`). Both commit
 the updated data back to the repo — and both are currently switched off, so
 neither runs until they are turned back on.
+
+The daily top-up's `--recently-added LAST_SEVEN_DAYS` pass never reconciles
+withdrawals (see above) — it isn't a walk of the whole listing, so `--merge`
+correctly refuses every time. Reconciliation only ever engages on a
+`--recently-added ANY` pass run *with* `--merge` — today that's a deliberate
+manual pairing, since the full-rebuild workflow (`scrape.yml`) runs
+`normalize.py` without `--merge` and replaces the master wholesale instead
+(which already drops a withdrawn show, just without the audit trail an
+explicit `withdrawn` mark gives it).
 
 ## How the data refreshes run
 
