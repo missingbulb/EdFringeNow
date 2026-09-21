@@ -162,7 +162,8 @@ file, says which entry an edit owes and how the pack's `README.md` stays about u
 [**backfilling-provenance**](skills/backfilling-provenance/SKILL.md) is the method for filling a
 pack's empty files from its history, one pack per pull request. `provenance.mjs` beside this
 README is the one tool all three name - `mark`, `append`, `check`, `convert-references`,
-`reduce`, `history` - and `provenance-integrity` and `provenance-change-recorded` below are the
+`reduce`, `history`, and the backfill's `brief` and `apply` - and `provenance-integrity` and
+`provenance-change-recorded` below are the
 convention's machine halves. The pack
 also bundles
 [unattended-agents](skills/unattended-agents/SKILL.md) and
@@ -176,6 +177,13 @@ arrives as one job but is two: teaching a repo a technology nobody there has use
 own. It keeps the portable half separable from the project's own parameters — the egress probe that
 settles whether the vendor was actually read, the split between the technology skill and the task
 beside it, and the three checks that keep such a skill liftable.
+[**extract-from-instructions**](skills/extract-from-instructions/SKILL.md) is the one extraction
+method with no window and no task behind it: the rules are already written, as a repo's
+`CLAUDE.md` or a person's machine-local one, and the work is routing each to its owner - the
+repo's local pack, that person's own pack, or neither - and onto a rung above prose. Reach for it
+when a repo adopting Claudinite already carries a `CLAUDE.md`, or when somebody wants their
+machine-local instructions carried properly; `adopt-claudinite` offers it during the adoption
+interview.
 Adoption itself — `adopt-claudinite`, `adopt-pack` and the `adopt-requested-packs` task — is not
 here: its subject is Claudinite's own surface, not lesson capture.
 
