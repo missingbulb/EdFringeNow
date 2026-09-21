@@ -9,7 +9,11 @@ and the pipeline's own working files stay under data/, which nothing serves.
   data/normalized/shows.json   master, normalized, one record per show with all
                                its performances. The source of truth for later
                                processing / regenerating the day files. NOT sent
-                               to the browser.
+                               to the browser. A show absent from a complete
+                               `--merge` listing pass is kept here, marked
+                               `withdrawn: true` (reconcile_withdrawn), rather
+                               than deleted — so a show that comes back doesn't
+                               have to be re-scraped from nothing.
 
   site/data/normalized/shows.min.json
                                the compact wire form of the master, and the file
@@ -24,7 +28,8 @@ and the pipeline's own working files stay under data/, which nothing serves.
                                (see plan/plan.js). Deliberately carries NOTHING
                                that changes through the day, so an unchanged
                                festival regenerates it byte-for-byte and a client
-                               can hold it for days.
+                               can hold it for days. Excludes withdrawn shows
+                               (see the master's own entry above).
 
   site/data/normalized/availability.min.json
                                per-performance ticket status, split OUT of the
@@ -56,7 +61,8 @@ and the pipeline's own working files stay under data/, which nothing serves.
   site/data/days/2026-08-DD.json
                                one file per August FRINGE day, holding only the
                                shows performing that day with the minimum a card
-                               needs. A fringe day runs 06:00 → 06:00 (see
+                               needs, withdrawn shows excluded. A fringe day
+                               runs 06:00 → 06:00 (see
                                FRINGE_DAY_START), so the file also carries the
                                small hours of the next morning, written with an
                                extended start time ("24:30" for 00:30).
@@ -82,6 +88,16 @@ only a free/paid flag — so real money is folded in here (apply_prices) and
 reaches the site as `priceMin`/`priceMax`. A show absent from the cache has an
 *unknown* price, which is not the same as free.
 
+`--merge` also reconciles withdrawals (reconcile_withdrawn): a show the
+listing no longer returns is marked `withdrawn` rather than deleted, and is
+excluded from the day files and shows.min.json. This only ever runs against a
+pass scraper/fetch_shows.py itself attests walked the WHOLE listing — its
+`fetch_manifest.json`, read via load_fetch_manifest — because reconciling
+against anything less (a recently-added top-up, a capped or partly-failed
+crawl) would read "not visited this time" as "gone" and delete the festival.
+Absent or incomplete, `--merge` still upserts normally; it just doesn't
+reconcile.
+
 Usage:
     python3 scraper/normalize.py                     # full rebuild from raw scrape
     python3 scraper/normalize.py --merge             # upsert raw into existing master
@@ -98,6 +114,7 @@ import argparse
 import json
 import re
 import sys
+import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -515,6 +532,78 @@ def apply_prices(master: list[dict], prices: dict) -> int:
         if show["priceMin"] is not None:
             known += 1
     return known
+
+
+# The manifest fetch_shows.py leaves beside its raw pages — see MANIFEST_NAME
+# there for the file this reads. Named here too, rather than only the caller
+# spelling the path, so the pairing survives either file being read on its own.
+FETCH_MANIFEST_NAME = "fetch_manifest.json"
+
+
+def load_fetch_manifest(raw_dir: Path) -> dict | None:
+    """The completeness signal for the raw pages under `raw_dir`, or None.
+
+    None covers two things reconcile_withdrawn must treat identically: no
+    manifest was ever written (a raw cache from before this signal existed, or
+    a hand-run `page_*.json` drop) and one that exists but can't be read. Absence
+    is unknown, not "incomplete" — but reconciliation refuses on either, so the
+    two states collapse here rather than forcing every caller to tell them apart.
+    """
+    path = raw_dir / FETCH_MANIFEST_NAME
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"  WARNING: unreadable fetch manifest at {path} ({exc}); "
+              f"treating this pass as not known complete", file=sys.stderr)
+        return None
+
+
+def reconcile_withdrawn(master: list[dict], seen_ids: set[str], manifest: dict | None) -> int:
+    """Mark every master show absent from `seen_ids` as withdrawn, in place —
+    but only when `manifest` attests this pass walked the WHOLE listing.
+
+    A show reappearing in a later pass needs no un-withdrawal here: `run()`
+    upserts every id in `seen_ids` with a fresh record from that pass BEFORE
+    this is called, and a fresh record carries no `withdrawn` key at all.
+
+    Reconciliation is data-driven, never argument-driven: there is no flag to
+    force it, because the one thing that must never happen is a partial pass
+    (a recently-added top-up, a capped or partly-failed walk) being read as
+    "these are the only shows there are" and deleting the rest of the
+    festival. Refusing costs nothing here — the merge that called this already
+    upserted normally — so there is no reason a caller would ever want to
+    override it.
+
+    Returns how many shows were newly marked withdrawn (0 when reconciliation
+    did not run at all).
+    """
+    if not manifest or not manifest.get("complete"):
+        reason = (manifest or {}).get("reason") if manifest else "no completeness signal"
+        print(f"  not reconciling: {reason or 'last fetch pass was not marked complete'} "
+              f"(run scraper/fetch_shows.py --recently-added ANY for a pass that can "
+              f"reconcile)", file=sys.stderr)
+        return 0
+    newly = 0
+    for show in master:
+        if show["id"] in seen_ids:
+            continue
+        if not show.get("withdrawn"):
+            newly += 1
+        show["withdrawn"] = True
+    if newly:
+        print(f"  reconciled: {newly} show(s) newly marked withdrawn "
+              f"(absent from a complete listing pass)")
+    return newly
+
+
+def active_shows(master: list[dict]) -> list[dict]:
+    """The shows a visitor may actually be sent to: everything except what
+    reconcile_withdrawn has marked withdrawn. write_derived_outputs feeds this,
+    not the full master, to the day files, shows.min.json and the availability
+    sidecar — the master itself keeps every show, marked or not."""
+    return [s for s in master if not s.get("withdrawn")]
 
 
 def build_venues(venues_raw: dict, existing: dict, geocode: bool) -> dict:
@@ -1056,7 +1145,18 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     byte-for-byte identically. The ticket refresh leans on exactly that:
     it touches the master's statuses and calls this, and only the files that
     actually carry a status come back changed.
+
+    A withdrawn show (reconcile_withdrawn) stays in the master but is excluded
+    from `active_shows(master)` below — the set that reaches the day files and
+    shows.min.json, the two surfaces a visitor can be sent to a 404 from. It
+    also feeds the availability sidecar, not just for that reason but because
+    its `k` join fingerprint has to be computed over exactly the shows
+    shows.min.json carries — a fingerprint built from a wider set than the
+    catalogue it is paired with would never match what the client recomputes
+    from its own copy (#309).
     """
+    active = active_shows(master)
+
     # Real ticket amounts, folded in before anything is packed so the master and
     # both wire forms agree on what a show costs. The master (and so the
     # planner's catalogue) gets the run-wide range; the day files below get each
@@ -1093,19 +1193,25 @@ def write_derived_outputs(master: list[dict], venues: dict, venues_path: Path,
     # Compact planner payload (packed against the lookups just written), and the
     # two things it deliberately leaves behind: the availability that the
     # ticket refresh rewrites, and the descriptions too bulky to block on.
-    write_json(master_min_path, minify_master(master, genre_ix, room_ix, sub_ix,
+    # All three are built from `active` — descriptions is the one exception,
+    # see build_descriptions's own call below.
+    write_json(master_min_path, minify_master(active, genre_ix, room_ix, sub_ix,
                                               age_ix, venues))
-    write_json(availability_path, build_availability(master))
+    write_json(availability_path, build_availability(active))
+    # Descriptions stay keyed from the full master: the sidecar is looked up by
+    # slug, indexes into nothing, and carries no join fingerprint to keep in
+    # step — a withdrawn show's description sitting unused there costs nothing
+    # and saves a re-fetch if the show comes back.
     write_json(descriptions_path, build_descriptions(master))
 
     # Per-day August files + index.
-    days = build_day_files(master, genre_ix, room_ix, sub_ix, ts_ix, perf_prices)
+    days = build_day_files(active, genre_ix, room_ix, sub_ix, ts_ix, perf_prices)
     for date, items in days.items():
         write_json(days_dir / f"{date}.json", items)
     write_json(days_dir / "index.json", {
         "dates": sorted(days.keys()),
         "counts": {d: len(days[d]) for d in sorted(days)},
-        "shows": len(master),
+        "shows": len(active),
         "venues": len(venues),
     })
     return len(days)
@@ -1162,6 +1268,11 @@ def run(args) -> int:
             by_id[s["id"]] = s
         master = list(by_id.values())
         print(f"Merged {len(normalized)} into master -> {len(master)} shows")
+        # ids the raw pass upserted above just got a fresh record (no
+        # `withdrawn` key), so this only ever adds marks, never removes them —
+        # a returning show was already un-withdrawn by the upsert itself.
+        reconcile_withdrawn(master, {s["id"] for s in normalized},
+                            load_fetch_manifest(raw_dir))
     else:
         master = normalized
         print(f"Master rebuilt with {len(master)} shows")
@@ -1547,6 +1658,84 @@ def selftest() -> int:
     # the entire reason the sidecar exists.
     assert "description" not in packed, packed
     assert "de" not in packed, packed
+
+    # ---- withdrawal reconciliation ------------------------------------------
+    # active_shows is the one place a withdrawn show is dropped from what the
+    # site actually serves (write_derived_outputs feeds it, not the full
+    # master, to the day files/shows.min.json/availability); the master keeps
+    # every show regardless of this flag.
+    gone = dict(rec, id="GONE")
+    assert active_shows([rec, gone]) == [rec, gone], \
+        "a show with no `withdrawn` key is active"
+    assert active_shows([rec, dict(gone, withdrawn=True)]) == [rec], \
+        "a withdrawn show must be excluded from active_shows"
+
+    COMPLETE = {"complete": True}
+    INCOMPLETE = {"complete": False, "reason": "recentlyAdded=LAST_SEVEN_DAYS narrows the walk"}
+
+    # A complete pass marks every id absent from `seen_ids` as withdrawn, and
+    # leaves ids the pass DID see untouched.
+    master_both = [dict(rec), dict(gone)]
+    assert reconcile_withdrawn(master_both, {rec["id"]}, COMPLETE) == 1
+    assert not master_both[0].get("withdrawn"), "a show present in the pass stays active"
+    assert master_both[1]["withdrawn"] is True, "a show absent from a complete pass is withdrawn"
+
+    # Direction two: without a completeness signal — absent, or present but
+    # not complete — reconciliation refuses and leaves every show as it was.
+    # This is the refusal path #295 requires: a partial or unknown pass must
+    # never be read as "these are the only shows there are".
+    untouched = [dict(rec), dict(gone)]
+    assert reconcile_withdrawn(untouched, {rec["id"]}, None) == 0, \
+        "no completeness signal at all must not reconcile"
+    assert not untouched[1].get("withdrawn"), untouched
+    assert reconcile_withdrawn(untouched, {rec["id"]}, INCOMPLETE) == 0, \
+        "a pass the walker itself marked incomplete must not reconcile"
+    assert not untouched[1].get("withdrawn"), untouched
+
+    # A show already withdrawn, still absent, is left withdrawn — but
+    # contributes nothing to the "newly marked" count.
+    already = [dict(gone, withdrawn=True)]
+    assert reconcile_withdrawn(already, set(), COMPLETE) == 0
+    assert already[0]["withdrawn"] is True
+
+    # load_fetch_manifest: absent file and a corrupt one both read as no
+    # signal (None), not as "incomplete" — the two states collapse for every
+    # caller rather than each one having to tell them apart.
+    with tempfile.TemporaryDirectory() as td:
+        raw_dir = Path(td)
+        assert load_fetch_manifest(raw_dir) is None, "a raw dir with no manifest is unknown"
+        (raw_dir / FETCH_MANIFEST_NAME).write_text(json.dumps(COMPLETE))
+        assert load_fetch_manifest(raw_dir) == COMPLETE
+        (raw_dir / FETCH_MANIFEST_NAME).write_text("not json")
+        assert load_fetch_manifest(raw_dir) is None, "a corrupt manifest is unknown, not incomplete"
+
+    # End to end: write_derived_outputs must keep a withdrawn show out of every
+    # surface a visitor reaches (shows.min.json, the day files) while keeping
+    # the availability sidecar's join fingerprint in step with what it
+    # excluded — the two are written from the same call, and a mismatch here
+    # is exactly the generation-mismatch failure mode #309 was.
+    withdrawn_show = dict(rec, id="GONE", withdrawn=True, slug="gone-show")
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        days_dir = td / "days"
+        write_derived_outputs(
+            [dict(rec), withdrawn_show], venues, td / "venues.json", days_dir,
+            td / "shows.min.json", td / "descriptions.min.json",
+            td / "prices.json", td / "availability.min.json")
+        shipped = json.loads((td / "shows.min.json").read_text())
+        assert [s["i"] for s in shipped] == [rec["id"]], \
+            "shows.min.json must exclude a withdrawn show"
+        avail = json.loads((td / "availability.min.json").read_text())
+        assert avail["k"] == join_fingerprint([rec]), \
+            "availability.min.json's fingerprint must match the SHIPPED catalogue, not the full master"
+        day_ids = {r["id"] for f in days_dir.glob("2026-08-*.json")
+                  for r in json.loads(f.read_text())}
+        assert day_ids == {rec["id"]}, "the day files must exclude a withdrawn show"
+        # The descriptions sidecar is the one exception: keyed from the full
+        # master, so a withdrawn show's description is still there if it returns.
+        desc = json.loads((td / "descriptions.min.json").read_text())
+        assert withdrawn_show["slug"] in desc["d"], \
+            "descriptions.min.json is built from the full master, withdrawn included"
 
     print("selftest OK")
     return 0

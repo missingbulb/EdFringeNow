@@ -506,6 +506,11 @@ under either data tree. The API's own field reference lives in
 [scraper/README.md](../../../../scraper/README.md) — this is the working
 judgment those two don't carry.
 
+- **Keeping the master accurate when a show leaves the listing** — mark it
+  `withdrawn` (`reconcile_withdrawn`), never delete it, and only when
+  `fetch_manifest.json` attests the pass walked the whole listing — a partial
+  pass read as complete would delete real shows. (withdrawal-reconciliation)
+
 ### Verifying a scraper change against the live API
 
 Reaching `edfringe-tikketr-web-api.equhost.com` is a live question — it was denied at the
