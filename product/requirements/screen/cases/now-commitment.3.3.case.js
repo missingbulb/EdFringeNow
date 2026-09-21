@@ -14,7 +14,10 @@ module.exports = {
     // Nudge the minute wheel from 21:30 to 21:35 — nothing starts then.
     await page.focus("#minWheel");
     await page.keyboard.press("ArrowDown");
+    // The picked minute is read back through the wheel's own debounce, so the
+    // empty pick list — the state this leaf is about — is what says the new
+    // time has actually been applied.
+    await page.waitForSelector(".picklist-empty");
     await settle(page);
-    await page.waitForSelector(".timepick-suggest, .picklist-empty");
   },
 };

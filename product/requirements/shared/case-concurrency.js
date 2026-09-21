@@ -6,15 +6,17 @@
 // its own browser context, which is what isolates one from another.
 //
 // Sized from the machine rather than pinned, because the lane runs on both a
-// CI runner and a developer's box. Two per core: a case spends much of its life
-// waiting on the browser rather than burning CPU, so one page per core leaves
-// the machine idle.
+// CI runner and a developer's box, and at ONE page per core. Two per core is
+// faster and measurably less stable: over 495 renders of the whole screen set
+// on a 4-core box, two cases came out different at eight pages and none did at
+// four. An oversubscribed machine starves the renderer at the moment a case
+// captures, which is the one thing the goldens cannot tolerate.
 "use strict";
 
 const os = require("node:os");
 
 const MAX = 8;
 
-const CASE_CONCURRENCY = Number(process.env.REQUIREMENTS_CONCURRENCY) || Math.min(MAX, Math.max(2, os.cpus().length * 2));
+const CASE_CONCURRENCY = Number(process.env.REQUIREMENTS_CONCURRENCY) || Math.min(MAX, Math.max(2, os.cpus().length));
 
 module.exports = { CASE_CONCURRENCY };

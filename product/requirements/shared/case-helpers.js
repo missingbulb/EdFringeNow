@@ -104,8 +104,14 @@ async function clickStackBand(page, slot) {
 // The scroll position is watched because a scroll is NOT a DOM mutation: a
 // gesture that sends the page smoothly somewhere leaves the DOM still while the
 // view is a third of the way there, and an observer alone calls that settled.
+// The page must hold still for longer than the product's longest debounce, or
+// "quiet" catches the gap between a gesture and the reaction it schedules: the
+// time wheel reads its settled value 130ms after scrolling stops, and the
+// planner's search runs 120ms after the last keystroke. Anything slower than
+// this has to be waited for by name, on the case.
+const QUIET_MS = 150;
 const QUIET_FRAMES = 2;
-const MAX_FRAMES = 30;
+const MAX_FRAMES = 60;
 
 async function settle(page) {
   if (hasPausedClock(page)) {
@@ -119,7 +125,7 @@ async function settle(page) {
     return;
   }
   await page.evaluate(
-    async ({ quietFrames, maxFrames }) => {
+    async ({ quietFrames, quietMs, maxFrames }) => {
       await document.fonts.ready;
       let dirty = false;
       const observer = new MutationObserver(() => {
@@ -133,26 +139,34 @@ async function settle(page) {
       });
       try {
         let quiet = 0;
-        for (let i = 0; i < maxFrames && quiet < quietFrames; i++) {
+        let quietSince = performance.now();
+        for (let i = 0; i < maxFrames; i++) {
+          if (quiet >= quietFrames && performance.now() - quietSince >= quietMs) break;
           // An image still loading will change the layout when it lands, so it
           // is decoded first and the quiet count starts over.
           const pending = [...document.images].filter((img) => !img.complete);
           if (pending.length) {
             await Promise.all(pending.map((img) => img.decode().catch(() => {})));
             quiet = 0;
+            quietSince = performance.now();
             continue;
           }
           dirty = false;
           const before = window.scrollX + "," + window.scrollY;
           await new Promise((resolve) => requestAnimationFrame(() => resolve()));
           const moved = before !== window.scrollX + "," + window.scrollY;
-          quiet = dirty || moved ? 0 : quiet + 1;
+          if (dirty || moved) {
+            quiet = 0;
+            quietSince = performance.now();
+          } else {
+            quiet++;
+          }
         }
       } finally {
         observer.disconnect();
       }
     },
-    { quietFrames: QUIET_FRAMES, maxFrames: MAX_FRAMES }
+    { quietFrames: QUIET_FRAMES, quietMs: QUIET_MS, maxFrames: MAX_FRAMES }
   );
 }
 
