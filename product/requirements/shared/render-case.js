@@ -4,7 +4,7 @@
 "use strict";
 
 const { newPage, ORIGIN } = require("./harness/browser");
-const { nowReady, planReady } = require("./case-helpers");
+const { nowReady, planReady, scrollToTop } = require("./case-helpers");
 const { makeTools } = require("./capture-tools");
 
 async function renderScreenCase(testCase) {
@@ -28,8 +28,7 @@ async function renderScreenCase(testCase) {
     // page may have left it part-scrolled (and mid-momentum), which skews
     // viewport→document rect conversion. Already-at-top pages fire no scroll
     // event here, so hover cards and popups survive.
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(120);
+    await scrollToTop(page);
     // The golden is the smallest surface that proves the leaf: a selector
     // (element crop), or a capture(page, tools) composing clips/stitches.
     // Whole-page capture is the deliberate exception, not the default.

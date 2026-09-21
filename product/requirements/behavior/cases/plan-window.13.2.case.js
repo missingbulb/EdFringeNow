@@ -1,5 +1,5 @@
 "use strict";
-const { planReady, planFavourites } = require("../../shared/case-helpers");
+const { planReady, planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "arrow keys move a window handle a day; flags and ARIA values follow",
@@ -13,13 +13,13 @@ module.exports = {
     assert.equal((await page.textContent("#flagStart")).trim(), "7 Aug");
     await page.focus("#hStart");
     await page.keyboard.press("ArrowRight");
-    await page.waitForTimeout(700); // the keyboard nudge glides
+    await settle(page);
     assert.equal((await page.textContent("#flagStart")).trim(), "8 Aug");
     assert.equal(await page.getAttribute("#hStart", "aria-valuenow"), "8");
     assert.equal(await page.getAttribute("#hStart", "aria-valuetext"), "8 August");
     assert.equal((await page.textContent("#railLen")).trim(), "17 days");
     await page.keyboard.press("ArrowLeft");
-    await page.waitForTimeout(700);
+    await settle(page);
     assert.equal((await page.textContent("#flagStart")).trim(), "7 Aug");
   },
 };

@@ -88,7 +88,7 @@ jobs:
           # and the remote branches. The whole repo is ~14 MiB packed.
           fetch-depth: 0
 
-      # Rendering is 141s of this job's 169s, and it is spent in full on every
+      # Rendering is the bulk of this job, and it is spent in full on every
       # maintenance PR that cannot move a pixel. A `paths:` filter on the
       # triggers above could not have prevented that: the run those PRs actually
       # spend is the delivery's own workflow_dispatch, and a dispatch ignores

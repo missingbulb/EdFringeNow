@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowReady } = require("../../shared/case-helpers");
+const { nowStorage, nowReady, settle, wheelsSettled } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "Open in Maps builds a Google directions URL: origin, destination, travelmode, waypoints",
@@ -9,7 +9,7 @@ module.exports = {
     await nowReady(page);
     await page.click(".cta-trigger");
     await page.waitForSelector("#constraintPanel:not([hidden])");
-    await page.waitForTimeout(400); // the wheels sync on the next frame
+    await wheelsSettled(page);
     await page.click('.show-pick:has-text("Masala")');
     await page.waitForSelector("#mapsRouteLink");
     let href = await page.getAttribute("#mapsRouteLink", "href");
@@ -23,7 +23,7 @@ module.exports = {
     assert.equal(url.searchParams.get("waypoints"), null, "no waypoint without a leg show");
 
     await page.click('.show-item:has-text("A Good Time Charlie")');
-    await page.waitForTimeout(300);
+    await settle(page);
     href = await page.getAttribute("#mapsRouteLink", "href");
     url = new URL(href);
     assert.ok(url.searchParams.get("waypoints"), "leg show becomes a waypoint");

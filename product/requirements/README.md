@@ -55,6 +55,20 @@ product/
 | UI | `npm run test:ui` | screen (pixel-exact) + behavior cases | pinned Playwright Chromium; CI's `ui-requirements` job |
 | refresh | `npm run refresh:ui [filter]` | regenerates goldens + the gallery together | after an INTENDED UI change only |
 
+The UI lane runs its cases **concurrently** — `shared/case-concurrency.js`
+sizes the pool from the machine, and `REQUIREMENTS_CONCURRENCY` overrides it.
+A case's render does not depend on wall-clock timing, so the pool cannot move a
+pixel; each case still gets its own browser context. The `--test-concurrency=1`
+on the command is what keeps the two lane files from running at once, so the
+pool is the whole suite's page budget rather than one per file.
+
+A case waits for **states, not durations**: `settle()` returns once the fonts
+are in, every image has decoded and the DOM has held still across consecutive
+frames, and `awaitReaction()` covers a consequence that arrives after its
+gesture, where the page is briefly quiet in between. A `waitForTimeout` in a
+case is a bug — it is either slower than the state it stands for or, on a slow
+machine, shorter.
+
 The harness pins Playwright **1.56.1** (`shared/harness/browser.js`) — the
 version whose Chromium rendered the committed goldens. The Claude sandbox
 ships it globally; CI installs it per run; any other version refuses to

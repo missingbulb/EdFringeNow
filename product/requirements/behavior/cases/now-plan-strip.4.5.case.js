@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowReady } = require("../../shared/case-helpers");
+const { nowStorage, nowReady, wheelsSettled } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the buy-ahead link targets edfringe.com/tickets/whats-on/<slug> in a new tab",
@@ -9,7 +9,7 @@ module.exports = {
     await nowReady(page);
     await page.click(".cta-trigger");
     await page.waitForSelector("#constraintPanel:not([hidden])");
-    await page.waitForTimeout(400); // the wheels sync on the next frame
+    await wheelsSettled(page);
     await page.click('.show-pick:has-text("Masala")');
     await page.waitForSelector("#journeyStrip .plan-node");
     await page.click('.show-item:has-text("A Good Time Charlie")');

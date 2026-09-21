@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the bed link: Booking.com's Hebrew edition, Jerusalem, shekels, the window's own nights",
@@ -24,7 +24,7 @@ module.exports = {
     assert.equal(url.searchParams.get("checkout"), "2026-10-22");
     await page.locator("#hStart").focus();
     await page.keyboard.press("ArrowRight");
-    await page.waitForTimeout(250);
+    await settle(page);
     const moved = new URL(await page.locator(".trip-link").first().getAttribute("href"));
     assert.equal(moved.searchParams.get("checkin"), "2026-10-19");
 

@@ -1,5 +1,5 @@
 "use strict";
-const { planReady } = require("../../shared/case-helpers");
+const { planReady, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "clicking away clears the typed query and closes the popup — facet filters stay",
@@ -12,7 +12,7 @@ module.exports = {
     await page.fill("#ssInput", "improv");
     await page.waitForSelector("#ssPop:not([hidden])");
     await page.click(".page-title");
-    await page.waitForTimeout(300);
+    await settle(page);
     assert.equal(await page.inputValue("#ssInput"), "", "query text cleared");
     assert.ok(await page.locator("#ssPop").isHidden(), "popup closed");
 
@@ -25,7 +25,7 @@ module.exports = {
     await page.fill("#ssInput", "improv");
     await page.waitForSelector("#ssPop:not([hidden])");
     await page.click(".page-title");
-    await page.waitForTimeout(300);
+    await settle(page);
     assert.equal(await page.inputValue("#ssInput"), "", "query text cleared (facet active)");
     assert.equal((await page.textContent("#ssfGenreValue")).trim(), "Comedy", "facet kept");
     assert.equal((await page.textContent("#ssBadge")).trim(), "1", "badge still counts the facet");

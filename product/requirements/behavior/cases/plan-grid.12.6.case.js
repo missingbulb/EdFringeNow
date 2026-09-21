@@ -1,5 +1,5 @@
 "use strict";
-const { planReady, planFavourites } = require("../../shared/case-helpers");
+const { planReady, planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the row's × removes the show; removing the last returns to the intake",
@@ -12,7 +12,7 @@ module.exports = {
     await page.waitForSelector("#calWrap:not([hidden])");
     assert.equal(await page.locator(".lane").count(), 2);
     await page.click(".lane >> nth=0 >> .lane-remove");
-    await page.waitForTimeout(300);
+    await settle(page);
     assert.equal(await page.locator(".lane").count(), 1, "row removed");
     await page.click(".lane >> nth=0 >> .lane-remove");
     await page.waitForSelector("#intakeStage .dropzone");

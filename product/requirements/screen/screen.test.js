@@ -5,12 +5,13 @@
 // never refresh a golden to silence a red case.
 "use strict";
 
-const { test, after } = require("node:test");
+const { test, describe, after } = require("node:test");
 const assert = require("node:assert/strict");
 const { loadCases, goldenPath } = require("../shared/cases");
 const { renderScreenCase } = require("../shared/render-case");
 const { compareToGolden } = require("../shared/compare");
 const { closeBrowser } = require("../shared/harness/browser");
+const { CASE_CONCURRENCY } = require("../shared/case-concurrency");
 
 const CASES = loadCases().filter((c) => c.kind === "screen");
 
@@ -18,13 +19,15 @@ test("there is at least one screen case", () => {
   assert.ok(CASES.length > 0, "no screen cases found");
 });
 
-for (const testCase of CASES) {
-  test(`screen "${testCase.name}" (${testCase.description}) matches its golden`, async () => {
-    const png = await renderScreenCase(testCase);
-    const result = compareToGolden(testCase.name, png, goldenPath(testCase));
-    assert.ok(result.ok, result.reason);
-  });
-}
+describe("screen cases", { concurrency: CASE_CONCURRENCY }, () => {
+  for (const testCase of CASES) {
+    test(`screen "${testCase.name}" (${testCase.description}) matches its golden`, async () => {
+      const png = await renderScreenCase(testCase);
+      const result = compareToGolden(testCase.name, png, goldenPath(testCase));
+      assert.ok(result.ok, result.reason);
+    });
+  }
+});
 
 after(async () => {
   await closeBrowser();

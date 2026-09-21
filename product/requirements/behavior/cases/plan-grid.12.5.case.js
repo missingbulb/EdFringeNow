@@ -1,5 +1,5 @@
 "use strict";
-const { planReady, planFavourites } = require("../../shared/case-helpers");
+const { planReady, planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "clicking the show's name pins the whole show; other marks wear the dashed outline",
@@ -11,11 +11,11 @@ module.exports = {
     await planReady(page);
     await page.waitForSelector("#calWrap:not([hidden])");
     await page.click('.lane-title:has-text("Ray Bradshaw")');
-    await page.waitForTimeout(400);
+    await settle(page);
     assert.ok(await page.locator(".lane--forced").count() > 0, "lane pinned");
     assert.ok(await page.locator(".seg--forced-all").count() > 0, "unchosen marks dashed gold");
     await page.click('.lane-title:has-text("Ray Bradshaw")');
-    await page.waitForTimeout(400);
+    await settle(page);
     assert.equal(await page.locator(".lane--forced").count(), 0, "second click unpins the show");
   },
 };

@@ -254,6 +254,16 @@ ${[
   return file;
 }
 
+// A case that installs a winding clock has the frames themselves under its
+// control: Playwright's clock fakes requestAnimationFrame along with the timers,
+// so a frame-driven wait never resolves on such a page. Waits ask here rather
+// than infer it from the clock's behaviour.
+const pausedClockPages = new WeakSet();
+
+function hasPausedClock(page) {
+  return pausedClockPages.has(page);
+}
+
 let browserPromise = null;
 
 async function launchBrowser() {
@@ -340,6 +350,7 @@ async function newPage(opts = {}) {
     // something the passage of time is supposed to change.
     await page.clock.install({ time: now });
     await page.clock.pauseAt(now);
+    pausedClockPages.add(page);
   } else {
     await page.clock.setFixedTime(now);
   }
@@ -375,4 +386,4 @@ async function newPage(opts = {}) {
   return { page, context, origin: ORIGIN };
 }
 
-module.exports = { newPage, closeBrowser, launchBrowser, ORIGIN, VIEWPORTS, PINNED_PLAYWRIGHT };
+module.exports = { newPage, closeBrowser, launchBrowser, hasPausedClock, ORIGIN, VIEWPORTS, PINNED_PLAYWRIGHT };

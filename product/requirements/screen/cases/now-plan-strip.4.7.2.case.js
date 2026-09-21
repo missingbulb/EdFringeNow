@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, settle } = require("../../shared/case-helpers");
 const { planWithBoth } = require("./now-plan-strip.4.7.1.case.js");
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
   async capture(page, t) {
     const before = await t.element("#journeyStrip");
     await page.click('#journeyStrip .plan-node.stop [data-act="remove"]');
-    await page.waitForTimeout(400);
+    await settle(page);
     return t.animate([before, await t.element("#journeyStrip")]);
   },
 };

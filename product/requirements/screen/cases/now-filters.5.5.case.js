@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "each chip says what it is set to",
@@ -18,6 +18,6 @@ module.exports = {
     await page.click('#travelOptions label:has-text("Bicycle")');
     await page.locator("#travelRange").fill("25");
     await page.keyboard.press("Escape");
-    await page.waitForTimeout(300);
+    await settle(page);
   },
 };

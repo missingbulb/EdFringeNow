@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 // A favourited show that plays three evenings, drafted onto Monday. Refusing
 // that one evening moves it to another of its own — and it competes for the
@@ -18,9 +18,9 @@ module.exports = {
     const before = await pair();
     // The verdicts live in the popup, so the card has to be opened first.
     await page.hover(`${MON} .sch-show--fav`);
-    await page.waitForTimeout(200);
+    await settle(page);
     await page.click('#calPreview [data-verdict="noTime"]');
-    await page.waitForTimeout(350);
+    await settle(page);
     return t.animate([before, await pair()]);
   },
 };

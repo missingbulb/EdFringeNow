@@ -26,13 +26,13 @@ module.exports = {
     await page.waitForSelector("#dropzone");
     await uploadFile(page, "favourites.csv", FIXTURE_CSV());
     await page.waitForSelector("#errorState:not([hidden])", { timeout: 20000 });
-    await page.waitForTimeout(200);
+    await settle(page);
     const failed = await t.element("#errorState");
 
     failing = false;
     await page.click("#retryBtn");
     await page.waitForSelector("#calWrap:not([hidden])", { timeout: 20000 });
-    await page.waitForTimeout(400);
+    await settle(page);
     return t.animate([failed, await t.element("#board")]);
   },
 };

@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "one Hebrew show as a grid lane and as a search row — title, venue and kind in the source's own script",
@@ -15,7 +15,7 @@ module.exports = {
     await page.click("#ssInput");
     await page.fill("#ssInput", "סלאח");
     await page.waitForSelector('#ssResults .ss-row[data-slug="salakh"]');
-    await page.waitForTimeout(200);
+    await settle(page);
     const row = await page.locator('#ssResults .ss-row[data-slug="salakh"]').boundingBox();
     return t.stitchV(
       [

@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites, uploadFile } = require("../../shared/case-helpers");
+const { planFavourites, uploadFile, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "a failed upload leaves an existing board untouched",
@@ -15,7 +15,7 @@ module.exports = {
       "favourites-2025.csv",
       "Title,URL\r\nGone,https://www.edfringe.com/tickets/whats-on/not-this-year\r\n"
     );
-    await page.waitForTimeout(600);
+    await settle(page);
     return t.animate([before, await t.element("#calWrap")]);
   },
 };

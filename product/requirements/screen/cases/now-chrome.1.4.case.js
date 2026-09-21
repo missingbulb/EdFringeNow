@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the footer copyright line opens a popup carrying the version",
@@ -10,7 +10,7 @@ module.exports = {
   async capture(page, t) {
     await page.click("#footerVersion");
     await page.waitForSelector(".version-pop:not([hidden])");
-    await page.waitForTimeout(150);
+    await settle(page);
     // The popup floats above the line, so the region is their union.
     return t.unionClip(["#footerVersion", ".version-pop"]);
   },

@@ -1,5 +1,5 @@
 "use strict";
-const { nowReady } = require("../../shared/case-helpers");
+const { nowReady, settle } = require("../../shared/case-helpers");
 
 // The same page-top region three times — the explainer shown, gone after the
 // dismissal, and still gone after a reload — played as one animation, so the
@@ -13,7 +13,7 @@ module.exports = {
     const shown = await t.clip(REGION);
     await page.click("#introGot");
     await page.waitForSelector("#intro", { state: "hidden" });
-    await page.waitForTimeout(150);
+    await settle(page);
     const dismissed = await t.clip(REGION);
     await page.reload({ waitUntil: "load" });
     await nowReady(page);

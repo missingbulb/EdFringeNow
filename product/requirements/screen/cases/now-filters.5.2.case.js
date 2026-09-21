@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "subgenre panel: only the subgenres the other filters leave, with counts",
@@ -8,6 +8,6 @@ module.exports = {
   async drive(page) {
     await page.click('[data-panel="subgenrePanel"]');
     await page.waitForSelector("#subgenreOptions label, #subgenreOptions .panel-note");
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

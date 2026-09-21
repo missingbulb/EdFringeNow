@@ -1,5 +1,5 @@
 "use strict";
-const { clickStackBand, jerusalemReady } = require("../../shared/case-helpers");
+const { clickStackBand, jerusalemReady, settle } = require("../../shared/case-helpers");
 
 // Monday at 22:00: a one-night show took the hour from a free late-night that
 // plays four evenings. Taking that one from the stack is a lock, and a lock is
@@ -20,7 +20,7 @@ module.exports = {
     await clickStackBand(page, slot);
     await page.click("#calRivals .pop-rival");
     await page.waitForSelector(`${NIGHT} .sch-show--locked`);
-    await page.waitForTimeout(250);
+    await settle(page);
 
     const after = page.locator(`${NIGHT} .sch-slot:has(.sch-show--locked)`).first();
     return t.animate([before, await t.clip(t.pad(await after.boundingBox(), 8))]);

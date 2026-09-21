@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, settle } = require("../../shared/case-helpers");
 
 const CARD = '.show-item:has-text("A Good Time Charlie")';
 
@@ -10,10 +10,10 @@ module.exports = {
     const frames = [await t.element(CARD)];
     await page.click(CARD);
     await page.waitForSelector(".show-item--leg");
-    await page.waitForTimeout(300);
+    await settle(page);
     frames.push(await t.element(CARD));
     await page.click(CARD);
-    await page.waitForTimeout(400);
+    await settle(page);
     frames.push(await t.element(CARD));
     return t.animate(frames);
   },
