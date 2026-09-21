@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowSettings, settle } = require("../../shared/case-helpers");
+const { nowStorage, nowSettings, revealWholeList } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "card prices are exact: Free, £N, and Price TBC for an unknown",
@@ -12,8 +12,6 @@ module.exports = {
   localStorage: { ...nowStorage(), ...nowSettings({ genres: [] }) },
   async drive(page) {
     // Reveal the whole list so the Free and Price TBC cards are both on it.
-    const more = page.locator("#showMore");
-    while (await more.isVisible()) await more.click();
-    await settle(page);
+    await revealWholeList(page);
   },
 };

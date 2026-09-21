@@ -396,6 +396,25 @@ async function openPanel(page, triggerSelector) {
   await settle(page);
 }
 
+// Page the whole list in. A paging click appends asynchronously, so the
+// button's visibility only means anything once the appended page has landed —
+// re-reading it straight after the click can catch it mid-render and leave the
+// list half-paged, with the card a case was scrolling towards never arriving.
+async function revealWholeList(page) {
+  const more = page.locator("#showMore");
+  const cards = page.locator(".show-item");
+  // Stop when the list stops growing, not when the button goes: the button
+  // outlives the last page as "Show 0 more · 0 left", so trusting it alone can
+  // spin. A paging click also appends asynchronously, so each page has to land
+  // before the next count means anything.
+  for (let before = -1; before !== (await cards.count()); ) {
+    before = await cards.count();
+    if (!(await more.isVisible())) return;
+    await more.click();
+    await settle(page);
+  }
+}
+
 // Upload a favourites file into the planner's intake from raw bytes.
 async function uploadFile(page, name, content, mimeType = "text/csv") {
   await awaitReaction(page, () =>
@@ -426,6 +445,7 @@ module.exports = {
   scrollToTop,
   awaitReaction,
   openPanel,
+  revealWholeList,
   uploadFile,
   FIXTURE_CSV,
   FIXTURES_DIR,
