@@ -1045,9 +1045,9 @@ in one translations file that carries, per key, the width its slot can afford.
   <details><summary>Notes</summary>
 
   One whole-page golden, deliberately: what this leaf asserts is that the
-  *layout* survives the flip — the header, the board's browse list, the date
-  window's rail and flags, the plan's controls and the schedule's day columns
-  all run the other way — not how any one component reads. The pages' own
+  *layout* survives the flip — the header, the board's browse list, the
+  preference questions and the calendar's day columns and blockers all run the
+  other way — not how any one component reads. The pages' own
   right-to-left components are proven here rather than replicated leaf by leaf
   across Part V.
   </details>
@@ -1069,8 +1069,8 @@ in one translations file that carries, per key, the width its slot can afford.
 
   <details><summary>Notes</summary>
 
-  The header, the board's heading and count, and the plan's controls in both
-  languages, stitched. Two more scripts on the same slots is what catches a
+  The header, the board's heading and count, and the preference questions in
+  both languages, stitched. Two more scripts on the same slots is what catches a
   layout that only ever fitted English.
   </details>
 
@@ -1258,4 +1258,138 @@ rather than as a control panel.
   A table generated from the shipped drafter: for each verdict, what it does to
   the show's pool of nights and when it is placed relative to the undrafted
   rest. Read top to bottom it is the whole selection rule.
+  </details>
+
+## 21. Saying what you want
+
+The calendar drafts before the reader has said anything, so what they say is
+not a form standing in front of it: it is a row of questions above the
+calendar, each asked in one line and answered by picking a picture, and four
+blockers on the calendar itself. A question that has a finer answer behind it
+opens to show it — the picture is the short way to a setting, never the only
+way. Nothing above the calendar explains the calendar.
+
+- `21.1` Four questions above the calendar: what you are here for, how full a day, how you get around, how you eat.
+
+  ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
+
+  <details><summary>Notes</summary>
+
+  Each question is one line and two to five picture answers, and the row is the
+  whole of the page's chrome above the calendar: the panel's heading, the
+  paragraph that explained contention and the "N shows across N nights" summary
+  are all gone. Rendered with nothing stored, so the golden is the set of
+  answers a first visit opens on.
+  </details>
+
+- `21.2` A question opens on the exact numbers behind its pictures.
+
+  ![jerusalem-prefs-open.21.2](requirements/screen/cases/jerusalem-prefs-open.21.2.png) <!-- req-gallery:21.2 -->
+
+  <details><summary>Notes</summary>
+
+  "How full a day?" opened: the three pictures still selected as before, with
+  the shows-per-day count and the rest between shows they stand for now
+  editable underneath. A picture is a shortcut to a pair of numbers rather than
+  a coarser control than them, so opening the question never discards the
+  answer already given.
+  </details>
+
+- `21.3` A kind you are here for outranks one you are not, and a day takes at most one show from outside them.
+
+  <table><thead><tr><th align="left">What you said</th><th align="left">Which shows are drafted first</th><th align="left">How many a night from outside it</th></tr></thead><tbody><tr><td>Nothing — every kind</td><td>the scarcest, whatever kind it is</td><td>no limit: a night takes what fits</td></tr><tr><td>Some kinds</td><td>the scarcest of those kinds</td><td>one, then the night is full of them</td></tr><tr><td>Some kinds, and a favourite outside them</td><td>locks, then the favourite, then those kinds</td><td>the favourite is placed anyway, and is the one</td></tr></tbody></table> <!-- req-gallery:21.3 -->
+
+  <details><summary>Notes</summary>
+
+  A table generated from the shipped drafter: for each kind of reader — one
+  with no interests stated, one with some — when a show of a chosen kind is
+  placed relative to the rest, and how many shows from outside the chosen kinds
+  one day may take. Saying what you are here for narrows nothing: an hour no
+  chosen kind wants is still filled, and the whole programme is still in the
+  drawer. What the reader would want instead of that one-a-day cap is the
+  variety question, which `21.4` says is not yet wired.
+  </details>
+
+- `21.4` The variety question is offered, and says plainly that it does not work yet.
+
+  ![jerusalem-variety.21.4](requirements/screen/cases/jerusalem-variety.21.4.png) <!-- req-gallery:21.4 -->
+
+  <details><summary>Notes</summary>
+
+  How much of the festival outside your own taste you want is the question that
+  should set the cap in `21.3`, and the rule that answers it has not been
+  decided. It is drawn where it belongs — behind "what are you here for?",
+  which is the question it refines — marked as not yet wired and refusing to be
+  answered, rather than left out and added later, and rather than drawn live
+  over a rule that ignores it, which is the shape that would lie.
+  </details>
+
+- `21.5` A meal you asked for is a band the calendar drafts around; sorting food out yourself leaves the day clear.
+
+  ![jerusalem-food.21.5](requirements/screen/cases/jerusalem-food.21.5.png) <!-- req-gallery:21.5 -->
+
+  <details><summary>Notes</summary>
+
+  The same two nights twice, stitched: once with breakfast, lunch and dinner
+  asked for — each a band nothing is drafted through, carrying the place when
+  the reader has named one — and once with "I'll sort it out myself", which
+  draws no bands at all and is the reader's signal to stop crowding the
+  calendar with food.
+
+  Naming the place is the reader's own for now. Choosing it for them — from
+  what is open, close enough to reach between the shows either side, and in
+  the style and price they said they wanted — is the question this row is
+  shaped for and does not yet answer.
+  </details>
+
+- `21.6` Where your day starts and ends are blockers on the calendar, dragged to where you want them.
+
+  ![jerusalem-dayhours.21.6](requirements/screen/cases/jerusalem-dayhours.21.6.png) <!-- req-gallery:21.6 -->
+
+  <details><summary>Notes</summary>
+
+  Two draggable lines with the shut-out hours shaded behind them, on the
+  calendar rather than in a strip above it: the constraint is drawn against the
+  hours it applies to, so what it rules out is visible beside it. The axis
+  covers the evening the festival actually runs and stretches only an hour
+  beyond it towards a slack boundary, which is then drawn on the axis edge with
+  the hour it really holds on its flag; a day genuinely that long — three meals
+  asked for, say — draws its hours shorter instead, so the calendar stays a
+  calendar rather than a screen of empty morning.
+  </details>
+
+- `21.7` Dragging the day's end earlier drops what no longer fits.
+
+  ![jerusalem-dayend.21.7](requirements/screen/cases/jerusalem-dayend.21.7.png) <!-- req-gallery:21.7 -->
+
+  <details><summary>Notes</summary>
+
+  Animated, before and after the drag. The draft is rebuilt from the whole
+  programme as the line moves, so what the constraint costs is the calendar
+  redrawing rather than a number changing.
+  </details>
+
+- `21.8` The first and last nights are the same kind of blocker, on the same calendar.
+
+  ![jerusalem-window.21.8](requirements/screen/cases/jerusalem-window.21.8.png) <!-- req-gallery:21.8 -->
+
+  <details><summary>Notes</summary>
+
+  Every night of the festival is a column whether or not the reader's window
+  takes it; the nights outside it are shaded like the hours outside the day,
+  with a draggable edge at each end of the window. The date window therefore
+  lives on the calendar with the other three constraints, rather than on a rail
+  over the drawer's grid.
+  </details>
+
+- `21.9` Every preference survives a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.9 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: state an interest, open a question and change a number, ask for
+  dinner, move the day's end and the first night, reload, and all of it comes
+  back — stored under the festival's own prefix like everything else this page
+  remembers.
   </details>

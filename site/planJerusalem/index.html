@@ -78,90 +78,13 @@
     <!-- The page leads with the calendar: it drafts from the whole programme
          before the reader has said anything, so there is no empty state to
          reveal it from and no upload standing in front of it. -->
-    <section class="panel plan-card" id="planPanel" aria-labelledby="planTitle">
-      <div class="plan-head">
-        <div class="plan-head-text">
-          <h2 class="plan-title" id="planTitle" data-i18n="plan.title">Your festival, planned</h2>
-          <p class="plan-sub" id="planSub" data-i18n-slot="plan.sub"></p>
-        </div>
-      </div>
+    <section class="panel plan-card" id="planPanel" data-i18n-aria-label="plan.label">
 
       <div class="plan-result" id="planResult">
 
-        <div class="plan-controls" role="group" data-i18n-aria-label="plan.prefsLabel">
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.dayHoursLabel">
-            <span class="pc-cap" data-i18n="plan.day">Day</span>
-            <div class="ctl">
-              <input class="ctl-time ctl-clock" type="text" id="ctlDayStart" value="09:00"
-                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                     data-i18n-aria-label="plan.dayStartLabel" />
-            </div>
-            <span class="pc-dash" aria-hidden="true">&ndash;</span>
-            <div class="ctl">
-              <input class="ctl-time ctl-clock" type="text" id="ctlDayEnd" value="25:00"
-                     inputmode="numeric" pattern="\d{1,2}:\d{2}" maxlength="5" placeholder="HH:MM"
-                     data-i18n-aria-label="plan.dayEndLabel" />
-            </div>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.mealsLabel">
-            <label class="meal ctl">
-              <input type="checkbox" id="mealLunchOn" />
-              <span class="meal-pill" data-i18n="plan.lunch">Lunch</span>
-              <span class="meal-times">
-                <input class="ctl-time meal-time" type="time" id="mealLunchStart" value="12:30" step="300" />
-                <span class="meal-dash" aria-hidden="true">&ndash;</span>
-                <input class="ctl-time meal-time" type="time" id="mealLunchEnd" value="13:30" step="300" />
-              </span>
-            </label>
-            <label class="meal ctl">
-              <input type="checkbox" id="mealDinnerOn" />
-              <span class="meal-pill" data-i18n="plan.dinner">Dinner</span>
-              <span class="meal-times">
-                <input class="ctl-time meal-time" type="time" id="mealDinnerStart" value="18:00" step="300" />
-                <span class="meal-dash" aria-hidden="true">&ndash;</span>
-                <input class="ctl-time meal-time" type="time" id="mealDinnerEnd" value="19:00" step="300" />
-              </span>
-            </label>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.perDayLabel">
-            <span class="pc-cap" data-i18n="plan.atMost">At most</span>
-            <div class="ctl">
-              <input class="ctl-num" type="number" id="ctlMax" min="1" max="8" step="1" value="3" inputmode="numeric"
-                     data-i18n-aria-label="plan.mostLabel" />
-            </div>
-            <span class="pc-cap" data-i18n="plan.perDay">shows/day</span>
-          </div>
-
-          <div class="pc-seg" role="group" data-i18n-aria-label="plan.gapGroupLabel">
-            <div class="ctl">
-              <!-- The gap options carry their own minutes; their words are the
-                   translation's (JS fills them). -->
-              <select class="opt-select" id="ctlGap" data-i18n-aria-label="plan.gapLabel">
-                <option value="0"></option>
-                <option value="15"></option>
-                <option value="30" selected></option>
-                <option value="45"></option>
-                <option value="60"></option>
-              </select>
-            </div>
-            <span class="pc-cap" data-i18n="plan.apart">apart</span>
-          </div>
-
-          <div class="pc-seg">
-            <div class="tmode" id="ctlMode" role="group" data-i18n-aria-label="plan.travelLabel">
-              <button type="button" class="tmode-btn is-on" data-mode="walk" aria-pressed="true"
-                      data-i18n-aria-label="travel.walk" data-i18n-title="travel.walk.tip">🚶<span class="tmode-word" data-i18n="travel.walk">Walk</span></button>
-              <button type="button" class="tmode-btn" data-mode="bike" aria-pressed="false"
-                      data-i18n-aria-label="travel.bike" data-i18n-title="travel.bike.tip">🚲<span class="tmode-word" data-i18n="travel.bike">Bike</span></button>
-              <button type="button" class="tmode-btn" data-mode="car" aria-pressed="false"
-                      data-i18n-aria-label="travel.car" data-i18n-title="travel.car.tip">🚗<span class="tmode-word" data-i18n="travel.car">Car</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="plan-summary" id="planSummary" role="status" aria-live="polite" data-i18n-slot="plan.summary"></div>
+        <!-- The questions, built from the programme's own kinds — see
+             renderPrefs() in planJerusalem.js. -->
+        <div class="prefs" id="prefs" role="group" data-i18n-aria-label="prefs.label"></div>
 
         <!-- Outside the calendar's own scroller, which clips: positioned
              against a block when it opens, one of each, because only one block
@@ -209,10 +132,7 @@
     <!-- The Fringe planner's board, demoted: with the calendar drafting from
          the whole programme, this is the record of what the reader has ruled on
          and the way to reach one particular show — not the way in. -->
-    <!-- Open by default, because the date window's rail lives inside it: the
-         calendar leads the page, but folding this away would take a control the
-         calendar depends on with it. -->
-    <details class="drawer" id="boardDrawer" open>
+    <details class="drawer" id="boardDrawer">
       <summary class="drawer-summary">
         <span class="drawer-caret" aria-hidden="true">▸</span>
         <span class="drawer-title" data-i18n="drawer.title">The programme</span>
@@ -232,21 +152,6 @@
       <div class="board-body cal-wrap" id="calWrap" hidden>
         <div class="cal-inner" id="calInner">
           <div class="cal-sticky">
-            <div class="win-rail" id="winRail">
-              <div class="rail-band" id="railBand">
-                <span class="rail-len" id="railLen" data-i18n-slot="rail.nights"></span>
-              </div>
-              <div class="win-handle win-handle--start" id="hStart" role="slider" tabindex="0"
-                   data-i18n-aria-label="rail.startLabel"
-                   aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
-                <span class="win-flag"><span class="wf-cap" aria-hidden="true" data-i18n="rail.from">From</span><span id="flagStart">&mdash;</span></span>
-              </div>
-              <div class="win-handle win-handle--end" id="hEnd" role="slider" tabindex="0"
-                   data-i18n-aria-label="rail.endLabel"
-                   aria-valuemin="1" aria-valuemax="5" aria-valuenow="5">
-                <span class="win-flag"><span class="wf-cap" aria-hidden="true" data-i18n="rail.to">To</span><span id="flagEnd">&mdash;</span></span>
-              </div>
-            </div>
             <div class="cal-row cal-head">
               <div class="cal-head-left">
                 <button type="button" class="board-clear" id="clearFavBtn" hidden><span aria-hidden="true">&times;</span> <span data-i18n="board.clear">Clear</span></button>

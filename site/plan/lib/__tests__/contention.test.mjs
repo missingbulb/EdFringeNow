@@ -240,3 +240,61 @@ test("counts report the field, the contested hours and what was drafted", () => 
   // each of the three nights still has them to offer.
   assert.equal(counts.contested, 3);
 });
+
+// --- a stated taste -------------------------------------------------------
+
+test("a preferred show takes a contested hour from an equally scarce one", () => {
+  const wanted = show("wanted", ["2026-10-18"]);
+  const other = show("other", ["2026-10-18"]);
+  // Equal scarcity and the same hour, so without a taste the tie-break is the
+  // slug: "other" sorts first and would win.
+  assert.equal(at(draft([wanted, other]), "2026-10-18", "20:00").slug, "other");
+  assert.equal(
+    at(draft([wanted, other], { preferred: ["wanted"] }), "2026-10-18", "20:00").slug,
+    "wanted"
+  );
+});
+
+test("a day takes only as many unpreferred shows as the cap allows", () => {
+  // Three free hours on one night, one preferred show and two that are not.
+  const shows = [
+    show("wanted", ["2026-10-18"], { start: "18:00" }),
+    show("a", ["2026-10-18"], { start: "20:00" }),
+    show("b", ["2026-10-18"], { start: "22:00" }),
+  ];
+  const open = draft(shows, { preferred: ["wanted"] });
+  assert.equal(open.days[0].slots.length, 3);
+
+  const capped = draft(shows, { preferred: ["wanted"], maxUnpreferredPerDay: 1 });
+  assert.deepEqual(
+    capped.days[0].slots.map((s) => s.slug),
+    ["wanted", "a"]
+  );
+});
+
+test("the cap is a limit on nothing when no taste was stated", () => {
+  const shows = [
+    show("a", ["2026-10-18"], { start: "18:00" }),
+    show("b", ["2026-10-18"], { start: "20:00" }),
+    show("c", ["2026-10-18"], { start: "22:00" }),
+  ];
+  assert.equal(draft(shows, { maxUnpreferredPerDay: 1 }).days[0].slots.length, 3);
+});
+
+// A favourite is placed whatever the cap says, and then counts against it —
+// the same way it counts against the day's length. The cap is a statement
+// about how much of a day comes from outside the reader's taste, and a
+// favourite they asked for by name is still a show from outside it.
+test("a favourite outside the stated taste is placed, and spends the cap", () => {
+  const shows = [
+    show("wanted", ["2026-10-18"], { start: "18:00" }),
+    show("a", ["2026-10-18"], { start: "20:00" }),
+    show("loved", ["2026-10-18"], { start: "22:00" }),
+  ];
+  const result = draft(shows, {
+    preferred: ["wanted"],
+    maxUnpreferredPerDay: 1,
+    favourites: ["loved"],
+  });
+  assert.deepEqual(result.days[0].slots.map((s) => s.slug), ["wanted", "loved"]);
+});

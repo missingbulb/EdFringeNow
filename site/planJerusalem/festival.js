@@ -38,6 +38,18 @@ export const FESTIVAL = {
      never mean sharing its stored list, so every key this page writes starts
      here and the Edinburgh planner's keys are never touched. */
   storagePrefix: "jerusalemPlan.",
+  /* A picture for each of the programme's own kinds, for the question that
+     asks what the reader came for. The kinds are the festival's, so their
+     pictures are too; a kind the scrape adds and this map has not caught up
+     with falls back rather than renders nothing. */
+  kindEmoji: {
+    "stand-up": "\u{1F3A4}",
+    "competition-plays": "\u{1F3AD}",
+    movies: "\u{1F4F8}",
+    shows: "\u{1F3AA}",
+    "free-late-night": "\u{1F319}",
+  },
+  kindEmojiFallback: "\u{1F39F}",
   /* How the site's own home page and Edinburgh planner are reached from here. */
   siteNav: [
     { href: "../", labelKey: "nav.now" },

@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, openDrawer } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "one Hebrew show as a grid lane and as a search row — title, venue and kind in the source's own script",
@@ -11,6 +11,7 @@ module.exports = {
   // names it with its venue and kind. Between them they cover every place the
   // page renders a string that came out of the programme.
   async capture(page, t) {
+    await openDrawer(page);
     const lane = await page.locator('.lane[data-slug="salakh"]').boundingBox();
     await page.click("#ssInput");
     await page.fill("#ssInput", "סלאח");
