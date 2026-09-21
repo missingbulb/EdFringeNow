@@ -34,7 +34,12 @@ const DATA_ROOTS = ['site/data/', 'data/'];
 // still load, documented as such in README.md. It is not normalizer output and
 // never will be; it is exempt by name so the rule can stay strict for everything
 // else. Do not add to this list — new data comes from the normalizer.
-const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json']);
+//
+// site/data/manifest.json is the one genuine addition: write_derived_outputs
+// writes it directly (not through a per-day or per-artefact pattern), naming
+// every other file this same run wrote plus its hash — see build_manifest in
+// scraper/normalize.py.
+const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json', 'site/data/manifest.json']);
 
 // The one committed file under data/ that is an *input* to normalize.py rather
 // than an output of it: the fetch-once ticket-price cache written by

@@ -299,6 +299,17 @@ test("the named scraper input data/prices.json is allowed; a lookalike is not", 
     "the fix must name the inputs that ARE allowed, so the reader can tell the two apart");
 });
 
+test("the manifest write_derived_outputs writes directly is allowed; a lookalike is not", () => {
+  // site/data/manifest.json is named, not shaped, like the other single-file
+  // entries above: it doesn't fit the per-artefact ALLOWED_PATTERNS (those are
+  // dirs of many files), and it is written by the same function as everything
+  // else under site/data/, not read by it.
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/manifest.json": "" })), []);
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/manifest.backup.json": "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, "site/data/manifest.backup.json");
+});
+
 test("a second scraper's named output is allowed; a lookalike beside it is not", () => {
   // data/jerusalem/ is the one-shot Jerusalem scrape's output, written by
   // scraper/jerusalem/fetch.py. Named, like the price cache, so the exemption

@@ -140,12 +140,13 @@ since the site serves them):
 | file | purpose | sent to browser |
 |---|---|---|
 | `data/normalized/shows.json` | master: one record per show with all performances (including each show's full `description`); source for regenerating everything below | no |
-| `site/data/normalized/shows.min.json` | the compact catalogue the planner downloads (3.0 MB, 948 KB gzipped): the master packed losslessly against the `venues.json` lookups. Carries **no ticket status** — see the sidecar below — so an unchanged festival regenerates it byte-for-byte and the browser can hold it for 4 days | yes (planner) |
-| `site/data/normalized/availability.min.json` | `{v, ts, a: {show id → {"MMDD\|HH:MM" → status index}}, o}` — per-performance ticket status, split out of the catalogue because it is the one thing that moves during the festival. Self-contained (its own status list, indexes into nothing), 149 KB gzipped, cached for 1 day | yes (planner) |
-| `site/data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Fetched lazily by the planner and cached for a week; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
+| `site/data/normalized/shows.min.json` | the compact catalogue the planner downloads (3.0 MB, 948 KB gzipped): the master packed losslessly against the `venues.json` lookups. Carries **no ticket status** — see the sidecar below — so an unchanged festival regenerates it byte-for-byte and the browser only re-fetches it when it actually changes | yes (planner) |
+| `site/data/normalized/availability.min.json` | `{v, ts, a: {show id → {"MMDD\|HH:MM" → status index}}, o}` — per-performance ticket status, split out of the catalogue because it is the one thing that moves during the festival. Self-contained (its own status list, indexes into nothing), 149 KB gzipped | yes (planner) |
+| `site/data/normalized/descriptions.min.json` | `{v, d: {slug → full description}}`, kept out of the catalogue above so that file stays small enough to block on. Fetched lazily by the planner; the hover card and search fall back to the catalogue's 160-char `blurb` until it lands | yes (planner, lazily) |
 | `site/data/venues.json` | shared lookup sent once: `{ venues, rooms, genres, subgenres, ticketStatuses }` — venue map (code → name, address, postcode, lat, lng) plus the global lookup lists | yes (once) |
 | `site/data/days/2026-08-DD.json` | per-day shows with the minimum a card needs (venue, genre, room, subgenres and ticket status referenced by index) | yes (today's) |
 | `site/data/days/index.json` | available days + per-day counts | yes |
+| `site/data/manifest.json` | `{v, files: {relpath → sha256}}` — every file above, named relative to `site/data/`, hashed. See "How long the browser keeps each file" below | yes (every load, uncached) |
 
 `normalize.py` has a **second input** besides the raw scrape: `data/prices.json`
 (above), which it folds into the master and both wire forms. It is an input, not
@@ -268,21 +269,30 @@ and never enter the commit.
 The host serves every asset `must-revalidate` with an ETag, so a browser
 re-checks each file on every load and only the download is saved. The freshness
 policy therefore lives on the client, in
-[`site/shared/data-cache.js`](../site/shared/data-cache.js), where a file inside
-its window costs no request at all. Payloads go in the Cache
-Storage API (the catalogue alone would breach localStorage's ~5 MB ceiling) with
-a small localStorage map recording when each url was last fetched.
+[`site/shared/data-cache.js`](../site/shared/data-cache.js), where a file whose
+hash hasn't moved costs no request at all. Payloads go in the Cache Storage API
+(the catalogue alone would breach localStorage's ~5 MB ceiling) with a small
+localStorage map recording the manifest hash each url was last fetched under.
 
-The shape of the data above exists to serve this table — availability is a
-separate file precisely so the catalogue can sit in the top row:
+Freshness is decided by one published manifest, `site/data/manifest.json`
+(`build_manifest` above), naming every file's current sha256. It is fetched
+uncached on every load and compared, file by file, to what the client last
+fetched — never a guessed lifetime per file, because no fixed guess can be both
+long enough to skip a re-download most loads and short enough to catch the one
+load where the content actually changed. The manifest gets both at once: a file
+is re-fetched exactly when it needs to be. The shape of the data above still
+matters for how *much* that saves — availability is a separate file precisely
+so a ticket-status change never has to touch the (much bigger) catalogue's
+hash:
 
-| file | kept for | why |
+| file | typically changes | why it's split out this way |
 |---|---|---|
-| `shows.min.json` | 4 days | 948 KB gzipped, and nothing in it changes through the day |
-| `availability.min.json` | 1 day | the one file that changes through the festival, and small enough that a daily re-fetch is cheap |
-| `venues.json` | 1 day | small, and its lookup lists are indexed into by the cached catalogue |
-| `days/2026-08-DD.json` | 1 hour | the now page's whole premise is fresh availability, and the file is small enough that re-fetching often costs little |
-| `descriptions.min.json` | 7 days | a show's description doesn't change mid-festival |
+| `shows.min.json` | when a show is added, dropped or edited | 948 KB gzipped, and carries nothing that changes through the day |
+| `availability.min.json` | with the hourly ticket refresh | the one file that changes through the festival, and small enough that re-fetching it is cheap |
+| `venues.json` | rarely — new venues or lookup entries | small, and its lookup lists are indexed into by the cached catalogue |
+| `days/2026-08-DD.json` | with the hourly ticket refresh, for that date only | the now page's whole premise is fresh availability |
+| `descriptions.min.json` | almost never | a show's description doesn't change mid-festival |
+| `manifest.json` | every regeneration | never itself cached — see its own doc in `scraper/normalize.py` |
 
 Two invariants hold this up, and breaking either is silent:
 
