@@ -53,6 +53,9 @@ export function adaptCatalogue(raw) {
       // festival's own categories are what it has to say there.
       genre: show.categoryNames[0] || null,
       genreSlug: show.categories[0] || null,
+      // Every kind the show is filed under, not just the first: the question
+      // that asks what the reader came for matches against all of them.
+      genreSlugs: show.categories || [],
       blurb: show.description || null,
       // Four shows publish no running time. Left null, never defaulted: the
       // scheduler reads it to decide whether two shows clash, and a guessed

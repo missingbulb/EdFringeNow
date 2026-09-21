@@ -587,3 +587,350 @@ body.festival-page {
    committed desktop viewport five columns are far wider than this, so nothing
    there moves. */
 .sch-day { min-width: 168px; }
+
+/* --- the preference questions ---------------------------------------------
+ *
+ * The row above the calendar: one card per question, each a line of ask, a
+ * handful of picture answers, and the exact numbers folded behind them. It has
+ * no counterpart in the Fringe planner's stylesheet — that page states its
+ * preferences as a strip of fields — so all of it is here.
+ */
+/* The Fringe planner rules its result off from the heading and paragraph above
+   it. There is no heading here, so the rule would separate the card's own edge
+   from the first question. */
+.plan-result {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+.prefs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.pref {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 12px 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.pref-ask {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.pref-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* An answer is its picture first: the word under it names the picture rather
+   than the other way round, which is what makes the row scannable without
+   being read. */
+.pref-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  min-width: 66px;
+  max-width: 108px;
+  padding: 8px 8px 6px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.pref-pick:hover:not([disabled]) {
+  border-color: var(--violet);
+}
+.pref-pick.is-on {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+}
+.pref-pick[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.pref-pick:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-ico {
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+.pref-word {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.pref-expand {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pref-expand:hover {
+  color: var(--violet-dark);
+}
+.pref-expand:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.pref-expand[aria-expanded="true"] .pref-caret {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.pref-fine {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.pref-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pref-row--soon {
+  justify-content: space-between;
+}
+.pref-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+/* A control the page is honest about not having wired yet — see leaf 21.4. */
+.pref-soon {
+  padding: 1px 7px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pref-note {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.pref-meal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pref-meal-on {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.pref-meal-times,
+.pref-meal-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pref-place {
+  width: 128px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+}
+.pref-place:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.prefs .opt-select {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1080px) {
+  .prefs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .prefs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* --- the four blockers ----------------------------------------------------
+ *
+ * The day's two boundaries and the window's two ends, drawn on the calendar.
+ * The lines, their grips and their flags are plan.css's own components
+ * (.sch-dayline / .sch-zone / .sch-meal), so this is the overlay that holds
+ * them, the date edges the Fringe planner has no equivalent of, and the
+ * nights the window leaves out.
+ */
+.sch-blockers {
+  position: absolute;
+  inset-inline-end: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.sch-dayline:focus-visible,
+.sch-dateedge:focus-visible {
+  outline: none;
+}
+.sch-dayline:focus-visible .dl-flag,
+.sch-dateedge:focus-visible .de-flag {
+  background: var(--violet);
+  color: #fff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 40%, transparent);
+}
+/* A boundary further out than the axis reaches sits on the axis edge; its flag
+   still carries the hour it really holds, so the two never disagree. */
+.sch-dayline.is-beyond {
+  border-top-style: dashed;
+}
+/* A start boundary drawn on the axis top has nothing above it to hang its flag
+   in, so the flag drops below the line rather than over the day headers. */
+.sch-dayline--start.is-beyond .dl-flag {
+  bottom: auto;
+  top: 6px;
+}
+
+/* Where the window starts and ends, across the columns rather than down the
+   hours. Positioned inline-start in both directions (planJerusalem.js measures
+   the columns' own boxes), so only the flag's own centring is mirrored. */
+.sch-dateedge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-inline-start: 2px solid var(--violet);
+  pointer-events: none;
+  z-index: 7;
+}
+.sch-dateedge .de-grip {
+  position: absolute;
+  inset-inline-start: -8px;
+  top: 0;
+  width: 16px;
+  height: 100%;
+  cursor: ew-resize;
+  pointer-events: auto;
+  touch-action: none;
+}
+.sch-dateedge .de-grip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 26px;
+  border-radius: 7px;
+  background-color: var(--violet);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 1.5px 12px;
+  background-position: 4px center, 7.5px center;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
+  pointer-events: none;
+}
+.sch-dateedge .de-flag {
+  position: absolute;
+  top: 6px;
+  inset-inline-start: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 7px;
+  border: 1px solid var(--violet);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--violet-dark);
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+/* Each flag hangs INSIDE the window rather than astride its own edge: the
+   calendar's scroller clips whatever leaves it, and the last night's edge is
+   the scroller's own far side. */
+.sch-dateedge--end .de-flag {
+  inset-inline-start: auto;
+  inset-inline-end: 2px;
+}
+.sch-dateedge .wf-cap {
+  color: var(--muted);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* A night the window leaves out: hatched like the hours outside the day, so
+   both kinds of blocker shut a region out the same way. */
+.sch-day--out {
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(rgba(16, 24, 40, 0.06), rgba(255, 255, 255, 0.05)) 0 6px,
+    light-dark(rgba(16, 24, 40, 0.02), rgba(255, 255, 255, 0.015)) 6px 12px
+  );
+}
+.sch-day--out .sch-day-head {
+  opacity: 0.5;
+}
+.sch-day--out .sch-body {
+  background-image: none;
+}
+
+/* The hatch plan.css draws over its zones and meal bands is tuned for a white
+   board; in the dark it disappears into it. */
+.sch-zone,
+.sch-meal {
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(rgba(16, 24, 40, 0.05), rgba(255, 255, 255, 0.05)) 0 6px,
+    light-dark(rgba(16, 24, 40, 0.02), rgba(255, 255, 255, 0.015)) 6px 12px
+  );
+}
+/* A meal here is a statement, not a handle: it is moved from the question that
+   asked for it, so nothing on the calendar takes the pointer. */
+.sch-meal {
+  cursor: default;
+  pointer-events: none;
+}

@@ -58,11 +58,21 @@ const SCH_HEAD_PX = 42;
 const SCH_MIN_BLOCK = 44;
 const SCH_TIGHT_PX = 52;
 const SCH_GUTTER_PX = 44;
+// How far past the evening the draft uses the axis will stretch to show a
+// slack day boundary — see calendarAxis().
+const ZONE_MAX_MIN = 60;
+// A dragged day boundary lands on five-minute marks, and can be pushed to
+// 06:00 the following morning, which is where "late night" stops being one.
+const SNAP_MIN = 5;
+const DAY_END_CEIL = 30 * 60;
 
+/* Every translation key is spelled out rather than built from an id: the
+ * catalogue's own gate asks that each key be named in the page's source, which
+ * is what keeps a key nothing says any more from being translated forever. */
 const MODE_META = {
-  walk: { emoji: "🚶", verbKey: "travel.mode.walk" },
-  bike: { emoji: "🚲", verbKey: "travel.mode.bike" },
-  car: { emoji: "🚗", verbKey: "travel.mode.car" },
+  walk: { emoji: "🚶", nameKey: "travel.walk", tipKey: "travel.walk.tip", verbKey: "travel.mode.walk" },
+  bike: { emoji: "🚲", nameKey: "travel.bike", tipKey: "travel.bike.tip", verbKey: "travel.mode.bike" },
+  car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", verbKey: "travel.mode.car" },
 };
 
 const KEY_STARRED = FESTIVAL.storagePrefix + "starred";
@@ -82,12 +92,23 @@ const state = {
   dayStartMin: 9 * 60,
   dayEndMin: 25 * 60,
   meals: [
-    { id: "lunch", enabled: false, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30 },
-    { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60 },
+    { id: "breakfast", enabled: false, startMin: 8 * 60, endMin: 9 * 60, place: "" },
+    { id: "lunch", enabled: false, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30, place: "" },
+    { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60, place: "" },
   ],
   maxPerDay: 3,
   minGap: 30,
+  minGapSame: 0,
   mode: "walk",
+  // The axis and column widths held still for the duration of a blocker drag.
+  drag: null,
+  // The kinds the reader said they came for, by the programme's own category
+  // slug. Empty is the honest default and means no taste stated at all, which
+  // is not the same as having chosen every kind — see MAX_OFF_INTEREST_PER_DAY.
+  interests: new Set(),
+  // Which questions are showing their exact numbers. Not stored: it is where
+  // the reader has got to, not something they decided.
+  opened: new Set(),
   // The four verdicts. `starred` is the favourites set and keeps its own
   // storage key, because it predates the other three and a reader who starred
   // shows under the old board should find them still starred.
@@ -161,6 +182,11 @@ function clockToMin(text) {
 }
 
 /** The window's first and last night, as ISO dates. */
+/* The day's end as the calendar draws it. A day that ended at or before it
+ * started would draw an inverted zone and schedule nothing, so the two
+ * boundaries are held a quarter of an hour apart. */
+const dayEndMin = () => Math.max(state.dayStartMin + 15, state.dayEndMin);
+
 const windowStartISO = () => state.dates[state.d0 - 1];
 const windowEndISO = () => state.dates[state.d1 - 1];
 
@@ -216,7 +242,9 @@ function savePrefs() {
     meals: state.meals,
     maxPerDay: state.maxPerDay,
     minGap: state.minGap,
+    minGapSame: state.minGapSame,
     mode: state.mode,
+    interests: [...state.interests],
   });
 }
 
@@ -231,12 +259,21 @@ function restorePrefs() {
   if (Array.isArray(saved.meals)) {
     for (const meal of state.meals) {
       const stored = saved.meals.find((m) => m && m.id === meal.id);
-      if (stored) Object.assign(meal, { enabled: !!stored.enabled, startMin: stored.startMin, endMin: stored.endMin });
+      if (stored) {
+        Object.assign(meal, {
+          enabled: !!stored.enabled,
+          startMin: stored.startMin,
+          endMin: stored.endMin,
+          place: typeof stored.place === "string" ? stored.place : "",
+        });
+      }
     }
   }
   state.maxPerDay = Number(saved.maxPerDay) || state.maxPerDay;
   state.minGap = Number.isFinite(saved.minGap) ? saved.minGap : state.minGap;
+  state.minGapSame = Number.isFinite(saved.minGapSame) ? saved.minGapSame : state.minGapSame;
   if (MODE_META[saved.mode]) state.mode = saved.mode;
+  if (Array.isArray(saved.interests)) state.interests = new Set(saved.interests);
 }
 
 // --- chrome ---------------------------------------------------------------
@@ -474,21 +511,7 @@ function paintWindow() {
   $("band").style.cssText = `left:${near}px;width:${far - near}px`;
   $("edgeStart").style.left = `${x0}px`;
   $("edgeEnd").style.left = `${x1}px`;
-  $("hStart").style.left = `${trackLeft + x0}px`;
-  $("hEnd").style.left = `${trackLeft + x1}px`;
-  $("railBand").style.cssText = `left:${trackLeft + near}px;width:${far - near}px`;
-  $("flagStart").textContent = dayLabel(windowStartISO());
-  $("flagEnd").textContent = dayLabel(windowEndISO());
-  const len = state.d1 - state.d0 + 1;
-  $("railLen").textContent = t("rail.nights", { count: len });
-  for (const [el, value, iso] of [
-    [$("hStart"), state.d0, windowStartISO()],
-    [$("hEnd"), state.d1, windowEndISO()],
-  ]) {
-    el.setAttribute("aria-valuemax", String(state.dates.length));
-    el.setAttribute("aria-valuenow", String(value));
-    el.setAttribute("aria-valuetext", dayAndDate(iso));
-  }
+  void trackLeft;
 }
 
 function dayAt(clientX) {
@@ -521,30 +544,10 @@ function dragDate(el, apply) {
   });
 }
 
-function keysDate(el, fn) {
-  el.addEventListener("keydown", (e) => {
-    // The arrow that moves the window later is the one that points along the
-    // page's reading direction, which is the way the grid itself runs.
-    const later = isRtl() ? "ArrowLeft" : "ArrowRight";
-    const step = e.key === later ? 1 : e.key === (isRtl() ? "ArrowRight" : "ArrowLeft") ? -1 : 0;
-    if (!step) return;
-    e.preventDefault();
-    fn(step);
-    paintWindow();
-    redraftAndSave();
-  });
-}
-
 function wireWindow() {
   const n = () => state.dates.length;
-  dragDate($("hStart"), (ev) => {
-    state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
-  });
   dragDate($("edgeStart"), (ev) => {
     state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
-  });
-  dragDate($("hEnd"), (ev) => {
-    state.d1 = clamp(dayAt(ev.clientX), state.d0, n());
   });
   dragDate($("edgeEnd"), (ev) => {
     state.d1 = clamp(dayAt(ev.clientX), state.d0, n());
@@ -557,14 +560,342 @@ function wireWindow() {
     state.d0 = d0;
     state.d1 = d0 + span;
   });
-  keysDate($("hStart"), (step) => {
-    state.d0 = clamp(state.d0 + step, 1, state.d1);
+  // The drawer's grid is not measurable while it is folded away, so the
+  // window's overlay is laid out when it opens rather than only at boot.
+  $("boardDrawer").addEventListener("toggle", layoutOverlay);
+  addEventListener("resize", () => {
+    layoutOverlay();
+    placeDateEdges();
   });
-  keysDate($("hEnd"), (step) => {
-    state.d1 = clamp(state.d1 + step, state.d0, n());
-  });
-  addEventListener("resize", layoutOverlay);
 }
+
+// --- the preference questions ---------------------------------------------
+//
+// The row above the calendar. Each question is one line, a handful of picture
+// answers, and — where a picture is shorthand for numbers — the numbers
+// themselves behind an expander. A picture is never a coarser control than the
+// numbers it stands for: the fine controls are the state, and the pictures are
+// read back off it, so opening a question can never discard an answer.
+
+// What each picture answer of "how full a day?" is shorthand for. Read in both
+// directions: picking one sets the pair, and a pair that matches one lights it.
+const PACE_STEPS = [
+  { id: "easy", key: "prefs.pace.easy", emoji: "\u{1F634}", maxPerDay: 1, minGap: 60 },
+  { id: "steady", key: "prefs.pace.steady", emoji: "\u{1F39F}", maxPerDay: 3, minGap: 30 },
+  { id: "packed", key: "prefs.pace.packed", emoji: "\u{1F483}", maxPerDay: 5, minGap: 15 },
+];
+
+// Which meals each picture answer of "how do you want to eat?" asks for.
+const FOOD_ANSWERS = [
+  { id: "self", key: "prefs.food.self", emoji: "\u{1F96A}", meals: [] },
+  { id: "dinner", key: "prefs.food.dinner", emoji: "\u{1F37D}", meals: ["dinner"] },
+  { id: "regular", key: "prefs.food.regular", emoji: "\u{1F373}", meals: ["breakfast", "lunch", "dinner"] },
+];
+
+const MEAL_META = {
+  breakfast: { emoji: "\u{1F950}", nameKey: "meal.breakfast" },
+  lunch: { emoji: "\u{1F957}", nameKey: "meal.lunch" },
+  dinner: { emoji: "\u{1F37D}", nameKey: "meal.dinner" },
+};
+
+// The variety question's answers. Drawn, refused, and not read by anything:
+// see `prefs.variety.note` and leaf 21.4 — the rule that would make this live
+// has not been decided, and a live-looking control over no rule would lie.
+const VARIETY_ANSWERS = [
+  { id: "little", key: "prefs.variety.little", emoji: "\u{1F9ED}" },
+  { id: "some", key: "prefs.variety.some", emoji: "\u{1F5FA}" },
+  { id: "lots", key: "prefs.variety.lots", emoji: "\u{1F3AA}" },
+];
+
+// Until the variety question answers it, this is the whole of "how much of a
+// night may come from outside what you came for".
+const MAX_OFF_INTEREST_PER_DAY = 1;
+
+const GAP_CHOICES = [0, 15, 30, 45, 60];
+
+/** Every show filed under a kind the reader named — the drafter's `preferred`. */
+function preferredSlugs() {
+  if (!state.interests.size || !state.catalogue) return [];
+  return state.catalogue.shows
+    .filter((show) => (show.genreSlugs || []).some((kind) => state.interests.has(kind)))
+    .map((show) => show.slug);
+}
+
+/** The pace picture the current pair of numbers is, or none when it is neither. */
+function paceAnswer() {
+  const step = PACE_STEPS.find((p) => p.maxPerDay === state.maxPerDay && p.minGap === state.minGap);
+  return step ? step.id : null;
+}
+
+/** The food picture the enabled meals are, or none when they are some other set. */
+function foodAnswer() {
+  const on = state.meals.filter((m) => m.enabled).map((m) => m.id);
+  const answer = FOOD_ANSWERS.find(
+    (a) => a.meals.length === on.length && a.meals.every((id) => on.includes(id))
+  );
+  return answer ? answer.id : null;
+}
+
+const pickHtml = (question, id, emoji, label, on, { disabled = false, tip = "" } = {}) =>
+  `<button type="button" class="pref-pick${on ? " is-on" : ""}" data-pick="${question}:${id}"` +
+  ` aria-pressed="${on}"${disabled ? " disabled" : ""}` +
+  `${tip ? ` title="${escapeHtml(tip)}"` : ""}>` +
+  `<span class="pref-ico" aria-hidden="true">${emoji}</span>` +
+  `<span class="pref-word">${label}</span></button>`;
+
+const gapSelectHtml = (id, value) =>
+  `<select class="opt-select" data-num="${id}">` +
+  GAP_CHOICES.map(
+    (min) =>
+      `<option value="${min}"${min === value ? " selected" : ""}>` +
+      `${escapeHtml(min === 60 ? t("plan.gap.hour") : t("plan.gap.minutes", { count: min }))}</option>`
+  ).join("") +
+  `</select>`;
+
+const timeInputHtml = (mealId, edge, min, labelKey) =>
+  `<input class="ctl-time meal-time" type="time" step="300" data-time="${mealId}:${edge}"` +
+  ` value="${minToClock(min)}"` +
+  ` aria-label="${escapeHtml(t(labelKey, { meal: t(MEAL_META[mealId].nameKey) }))}" />`;
+
+/** One question: the ask, its pictures, and the numbers behind them. */
+function questionHtml(id, askKey, answers, fine) {
+  const open = state.opened.has(id);
+  return (
+    `<section class="pref" data-q="${id}">` +
+    `<p class="pref-ask">${escapeHtml(t(askKey))}</p>` +
+    `<div class="pref-answers" role="group" aria-label="${escapeHtml(t(askKey))}">${answers}</div>` +
+    (fine
+      ? `<button type="button" class="pref-expand" data-expand="${id}" aria-expanded="${open}"` +
+        ` aria-controls="fine-${id}">` +
+        `<span class="pref-expand-word">${escapeHtml(t(open ? "prefs.less" : "prefs.more"))}</span>` +
+        `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
+        `<div class="pref-fine" id="fine-${id}"${open ? "" : " hidden"}>${fine}</div>`
+      : "") +
+    `</section>`
+  );
+}
+
+function interestsHtml() {
+  const kinds = state.catalogue.categories
+    .map((kind) =>
+      pickHtml(
+        "interest",
+        kind.slug,
+        FESTIVAL.kindEmoji[kind.slug] || FESTIVAL.kindEmojiFallback,
+        foreign(kind.name),
+        state.interests.has(kind.slug)
+      )
+    )
+    .join("");
+  const everything = pickHtml(
+    "interest",
+    "*",
+    "✨",
+    escapeHtml(t("prefs.interests.all")),
+    state.interests.size === 0
+  );
+  return everything + kinds;
+}
+
+function varietyFineHtml() {
+  return (
+    `<div class="pref-row pref-row--soon">` +
+    `<span class="pref-label">${escapeHtml(t("prefs.variety.q"))}</span>` +
+    `<span class="pref-soon">${escapeHtml(t("prefs.variety.soon"))}</span>` +
+    `</div>` +
+    `<div class="pref-answers pref-answers--soon" role="group" aria-label="${escapeHtml(t("prefs.variety.q"))}">` +
+    VARIETY_ANSWERS.map((a) =>
+      pickHtml("variety", a.id, a.emoji, escapeHtml(t(a.key)), false, { disabled: true })
+    ).join("") +
+    `</div>` +
+    `<p class="pref-note">${escapeHtml(t("prefs.variety.note", { count: MAX_OFF_INTEREST_PER_DAY }))}</p>`
+  );
+}
+
+function paceFineHtml() {
+  return (
+    `<div class="pref-row">` +
+    `<span class="pref-label">${escapeHtml(t("prefs.pace.atMost"))}</span>` +
+    `<input class="ctl-num" type="number" min="1" max="8" step="1" inputmode="numeric"` +
+    ` data-num="maxPerDay" value="${state.maxPerDay}"` +
+    ` aria-label="${escapeHtml(t("prefs.pace.atMostLabel"))}" />` +
+    `<span class="pref-label">${escapeHtml(t("prefs.pace.perDay"))}</span>` +
+    `</div>` +
+    `<div class="pref-row">` +
+    `<span class="pref-label">${escapeHtml(t("prefs.pace.gap"))}</span>` +
+    gapSelectHtml("minGap", state.minGap) +
+    `</div>`
+  );
+}
+
+function travelFineHtml() {
+  return (
+    `<div class="pref-row">` +
+    `<span class="pref-label">${escapeHtml(t("prefs.travel.sameVenue"))}</span>` +
+    gapSelectHtml("minGapSame", state.minGapSame) +
+    `</div>`
+  );
+}
+
+function foodFineHtml() {
+  const rows = state.meals
+    .map(
+      (meal) =>
+        `<div class="pref-meal" data-meal="${meal.id}">` +
+        `<label class="pref-meal-on">` +
+        `<input type="checkbox" data-mealon="${meal.id}"${meal.enabled ? " checked" : ""} />` +
+        `<span class="meal-pill"><span aria-hidden="true">${MEAL_META[meal.id].emoji}</span> ` +
+        `${escapeHtml(t(MEAL_META[meal.id].nameKey))}</span></label>` +
+        `<span class="pref-meal-times">` +
+        timeInputHtml(meal.id, "start", meal.startMin, "plan.mealStartLabel") +
+        `<span class="meal-dash" aria-hidden="true">–</span>` +
+        timeInputHtml(meal.id, "end", meal.endMin, "plan.mealEndLabel") +
+        `</span>` +
+        `<span class="pref-meal-place">` +
+        `<input class="pref-place" type="text" data-place="${meal.id}"` +
+        ` value="${escapeHtml(meal.place)}"` +
+        ` placeholder="${escapeHtml(t("prefs.food.wherePlaceholder"))}"` +
+        ` aria-label="${escapeHtml(t("prefs.food.whereLabel"))}" />` +
+        `<span class="pref-soon">${escapeHtml(t("prefs.food.soon"))}</span>` +
+        `</span>` +
+        `</div>`
+    )
+    .join("");
+  return rows + `<p class="pref-note">${escapeHtml(t("prefs.food.note"))}</p>`;
+}
+
+/** Build the whole row. Called once the programme is in, and on retranslation. */
+function renderPrefs() {
+  const pace = paceAnswer();
+  const food = foodAnswer();
+  $("prefs").innerHTML =
+    questionHtml("interests", "prefs.interests.q", interestsHtml(), varietyFineHtml()) +
+    questionHtml(
+      "pace",
+      "prefs.pace.q",
+      PACE_STEPS.map((p) =>
+        pickHtml("pace", p.id, p.emoji, escapeHtml(t(p.key)), p.id === pace)
+      ).join(""),
+      paceFineHtml()
+    ) +
+    questionHtml(
+      "travel",
+      "prefs.travel.q",
+      Object.entries(MODE_META)
+        .map(([mode, meta]) =>
+          pickHtml("travel", mode, meta.emoji, escapeHtml(t(meta.nameKey)), mode === state.mode, {
+            tip: t(meta.tipKey),
+          })
+        )
+        .join(""),
+      travelFineHtml()
+    ) +
+    questionHtml(
+      "food",
+      "prefs.food.q",
+      FOOD_ANSWERS.map((a) =>
+        pickHtml("food", a.id, a.emoji, escapeHtml(t(a.key)), a.id === food)
+      ).join(""),
+      foodFineHtml()
+    );
+}
+
+/** Read the pictures back off the state, without rebuilding the row. */
+function syncPrefs() {
+  const lit = {
+    interest: (id) => (id === "*" ? state.interests.size === 0 : state.interests.has(id)),
+    pace: (id) => id === paceAnswer(),
+    travel: (id) => id === state.mode,
+    food: (id) => id === foodAnswer(),
+    variety: () => false,
+  };
+  for (const btn of $("prefs").querySelectorAll("[data-pick]")) {
+    const [question, id] = btn.dataset.pick.split(":");
+    const on = lit[question](id);
+    btn.classList.toggle("is-on", on);
+    btn.setAttribute("aria-pressed", String(on));
+  }
+}
+
+/* One click, one change, one re-draft. Delegated from the row so nothing here
+ * has to be re-wired when a question is rebuilt in another language. */
+function wirePrefs() {
+  const host = $("prefs");
+
+  host.addEventListener("click", (e) => {
+    const expand = e.target.closest("[data-expand]");
+    if (expand) {
+      const id = expand.dataset.expand;
+      const open = !state.opened.has(id);
+      if (open) state.opened.add(id);
+      else state.opened.delete(id);
+      $(`fine-${id}`).hidden = !open;
+      expand.setAttribute("aria-expanded", String(open));
+      expand.querySelector(".pref-expand-word").textContent = t(open ? "prefs.less" : "prefs.more");
+      return;
+    }
+    const pick = e.target.closest("[data-pick]");
+    if (!pick || pick.disabled) return;
+    const [question, id] = pick.dataset.pick.split(":");
+    if (question === "interest") {
+      // "Everything" is the absence of a taste rather than a taste of its own,
+      // so it clears rather than selects.
+      if (id === "*") state.interests.clear();
+      else if (state.interests.has(id)) state.interests.delete(id);
+      else state.interests.add(id);
+    } else if (question === "pace") {
+      const step = PACE_STEPS.find((p) => p.id === id);
+      state.maxPerDay = step.maxPerDay;
+      state.minGap = step.minGap;
+    } else if (question === "travel") {
+      state.mode = id;
+    } else if (question === "food") {
+      const answer = FOOD_ANSWERS.find((a) => a.id === id);
+      for (const meal of state.meals) meal.enabled = answer.meals.includes(meal.id);
+    } else {
+      return;
+    }
+    renderPrefs();
+    redraftAndSave();
+  });
+
+  // The exact numbers. `change` rather than `input`, so a half-typed time or a
+  // place being spelled out does not re-draft the calendar under the reader.
+  host.addEventListener("change", (e) => {
+    const el = e.target;
+    if (el.dataset.num === "maxPerDay") {
+      state.maxPerDay = clamp(Math.round(Number(el.value)) || 1, 1, 8);
+      el.value = state.maxPerDay;
+    } else if (el.dataset.num === "minGap") {
+      state.minGap = Number(el.value);
+    } else if (el.dataset.num === "minGapSame") {
+      state.minGapSame = Number(el.value);
+    } else if (el.dataset.mealon) {
+      mealOf(el.dataset.mealon).enabled = el.checked;
+    } else if (el.dataset.time) {
+      const [id, edge] = el.dataset.time.split(":");
+      const meal = mealOf(id);
+      const min = clockToMin(el.value);
+      if (min == null) {
+        el.value = minToClock(edge === "start" ? meal.startMin : meal.endMin);
+        return;
+      }
+      // A meal has to last: an end at or before its start is no break at all,
+      // and the engine would silently drop it.
+      if (edge === "start") meal.startMin = Math.min(min, meal.endMin - 15);
+      else meal.endMin = Math.max(min, meal.startMin + 15);
+      el.value = minToClock(edge === "start" ? meal.startMin : meal.endMin);
+    } else if (el.dataset.place) {
+      mealOf(el.dataset.place).place = el.value.trim();
+    } else {
+      return;
+    }
+    syncPrefs();
+    redraftAndSave();
+  });
+}
+
+const mealOf = (id) => state.meals.find((m) => m.id === id);
 
 // --- planning -------------------------------------------------------------
 
@@ -578,8 +909,10 @@ function planOptions() {
     dayEndMin: state.dayEndMin,
     mealBreaks: state.meals,
     maxPerDay: state.maxPerDay,
-    minGapSameVenue: 0,
+    minGapSameVenue: state.minGapSame,
     minGapDifferentVenue: state.minGap,
+    preferred: preferredSlugs(),
+    maxUnpreferredPerDay: MAX_OFF_INTEREST_PER_DAY,
     travelMode: state.mode,
     venueCoords: state.coords,
     locked: state.locked,
@@ -602,14 +935,13 @@ function redraft() {
 
   renderCalendar(draft);
   renderCounts(draft);
-  renderPlanSummary(draft);
   buildLanes();
   applyVerdicts(draft);
   renderDrawerCount(draft);
   showBoard();
   syncStars();
   renderTripLinks();
-  renderPlanSub();
+  placeDateEdges();
 }
 
 /** The star on every browse and search row, set from the favourites. */
@@ -699,22 +1031,6 @@ function ruledShows() {
     });
 }
 
-/* "…across 18–22 Oct…" — the window's dates sit inside the sentence, so the
- * translation decides where they land rather than the markup. */
-function renderPlanSub() {
-  const window = state.dates.length
-    ? dates({ day: "numeric", month: "short" }).formatRange(
-        dateOf(windowStartISO()),
-        dateOf(windowEndISO())
-      )
-    : t("plan.window.placeholder");
-  $("planSub").innerHTML = tHtml(
-    "plan.sub",
-    {},
-    { window: `<span id="planWindowLabel">${escapeHtml(window)}</span>` }
-  );
-}
-
 function renderCounts(draft) {
   const el = $("boardCount");
   const decided = state.starred.size + state.locked.size + state.noShow.size + state.noTime.size;
@@ -731,16 +1047,6 @@ function renderCounts(draft) {
         }
       )
     : escapeHtml(t("board.count.none", { count: draft.counts.picked }));
-}
-
-function renderPlanSummary(draft) {
-  const nights = draft.days.filter((d) => d.slots.length).length;
-  $("planSummary").textContent = draft.counts.picked
-    ? t("plan.summary", { shows: draft.counts.picked, nights }) +
-      (draft.counts.contested
-        ? ` ${t("plan.summary.contested", { count: draft.counts.contested })}`
-        : "")
-    : "";
 }
 
 /** The drawer's own line: what is in it, without opening it. */
@@ -760,36 +1066,17 @@ function renderCalendar(draft) {
   const host = $("schedule");
   const empty = $("scheduleEmpty");
   host.innerHTML = "";
-  if (!draft.counts.picked) {
-    host.hidden = true;
-    empty.hidden = false;
-    return;
-  }
   host.hidden = false;
-  empty.hidden = true;
+  // The note says what the constraints have cost; the calendar under it is
+  // where they are loosened, so an empty draft shows both rather than swapping
+  // one for the other.
+  empty.hidden = Boolean(draft.counts.picked);
 
-  // The axis covers the drafted evening and an hour either side — see
-  // AXIS_PAD_MIN. Meal breaks the reader has switched on count too, since they
-  // are drawn on the same axis.
-  const mins = [];
-  const maxs = [];
-  for (const day of draft.days) {
-    for (const slot of day.slots) {
-      mins.push(slot.startMinuteOfDay);
-      maxs.push(slot.endMinuteOfDay);
-    }
-  }
-  for (const meal of state.meals) {
-    if (!meal.enabled) continue;
-    mins.push(meal.startMin);
-    maxs.push(meal.endMin);
-  }
-  const minHour = Math.floor((Math.min(...mins) - AXIS_PAD_MIN) / 60);
-  const maxHour = Math.max(minHour + 1, Math.ceil((Math.max(...maxs) + AXIS_PAD_MIN) / 60));
-  const axisTopMin = minHour * 60;
-  const axisBottomMin = maxHour * 60;
-  const axisH = (maxHour - minHour) * SCH_HOUR_PX;
-  const y = (min) => ((clamp(min, axisTopMin, axisBottomMin) - axisTopMin) / 60) * SCH_HOUR_PX;
+  const axis = calendarAxis(draft);
+  const { topMin, botMin, axisH } = axis;
+  const minHour = topMin / 60;
+  const maxHour = botMin / 60;
+  const y = (min) => ((clamp(min, topMin, botMin) - topMin) / 60) * SCH_HOUR_PX;
 
   host.style.setProperty("--sch-hour-h", `${SCH_HOUR_PX}px`);
   host.style.setProperty("--sch-head-h", `${SCH_HEAD_PX}px`);
@@ -805,58 +1092,364 @@ function renderCalendar(draft) {
     const label = document.createElement("div");
     label.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
     label.style.top = `${(h - minHour) * SCH_HOUR_PX}px`;
-    label.textContent = `${pad2(h % 24)}:00`;
+    label.textContent = `${pad2(((h % 24) + 24) % 24)}:00`;
     gBody.appendChild(label);
   }
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
-  // Every night of the window gets a column whether or not the draft filled it:
-  // an empty night is a fact about the programme and the reader's controls, and
-  // collapsing it would hide it.
+  // EVERY night of the festival gets a column, not only the ones the reader's
+  // window takes: the nights outside it are what the first-night and
+  // last-night blockers are dragged across, and a window drawn over columns
+  // that vanish as it narrows would have nothing left to drag.
   const byDate = new Map(draft.days.map((d) => [d.date, d]));
-  const renderDays = state.dates
-    .slice(state.d0 - 1, state.d1)
-    .map((iso) => byDate.get(iso) || { date: iso, slots: [] });
-
-  for (const day of renderDays) {
+  state.dates.forEach((iso, i) => {
+    const day = byDate.get(iso) || { date: iso, slots: [] };
+    const inWindow = i + 1 >= state.d0 && i + 1 <= state.d1;
     const col = document.createElement("div");
-    col.className = "sch-day" + (isWeekend(day.date) ? " wknd" : "") + (day.slots.length ? "" : " sch-day--empty");
-    col.dataset.date = day.date;
+    col.className =
+      "sch-day" +
+      (isWeekend(iso) ? " wknd" : "") +
+      (inWindow ? "" : " sch-day--out") +
+      // A blank night collapses to a sliver, but only while the calendar has
+      // something to show: when the whole draft is empty every column is
+      // blank, and five slivers would leave the blockers nothing to sit on.
+      (inWindow && !day.slots.length && draft.counts.picked && !state.drag ? " sch-day--empty" : "");
+    col.dataset.date = iso;
 
     const head = document.createElement("div");
     head.className = "sch-day-head";
     head.innerHTML =
-      `<div class="sch-dow">${escapeHtml(dates({ weekday: "short" }).format(dateOf(day.date)))} ` +
-      `<span class="sch-date">${escapeHtml(dayLabel(day.date))}</span></div>` +
+      `<div class="sch-dow">${escapeHtml(dates({ weekday: "short" }).format(dateOf(iso)))} ` +
+      `<span class="sch-date">${escapeHtml(dayLabel(iso))}</span></div>` +
       `<div class="sch-day-count" data-i18n-slot="schedule.dayCount">` +
-      `${escapeHtml(t("schedule.dayCount", { count: day.slots.length }))}</div>`;
+      `${escapeHtml(t("schedule.dayCount", { count: inWindow ? day.slots.length : 0 }))}</div>`;
 
     const body = document.createElement("div");
     body.className = "sch-body";
     body.style.height = `${axisH}px`;
 
-    for (let i = 0; i < day.slots.length - 1; i++) {
-      const a = day.slots[i];
-      const b = day.slots[i + 1];
-      const gap = b.startMinuteOfDay - a.endMinuteOfDay;
-      if (gap < 0 || gap >= 60) continue;
-      body.appendChild(buildTravelLeg(a, b, y(a.endMinuteOfDay), y(b.startMinuteOfDay)));
+    if (inWindow) {
+      // The hours the reader's day does not cover, and the meals it holds
+      // back: drawn in the column rather than over the calendar, so each one
+      // is clipped by the night it applies to.
+      body.appendChild(zone("top", 0, y(state.dayStartMin)));
+      body.appendChild(zone("bottom", y(dayEndMin()), axisH - y(dayEndMin())));
+      for (const meal of state.meals) {
+        if (meal.enabled) body.appendChild(mealBand(meal, y));
+      }
+
+      for (let i2 = 0; i2 < day.slots.length - 1; i2++) {
+        const a = day.slots[i2];
+        const b = day.slots[i2 + 1];
+        const gap = b.startMinuteOfDay - a.endMinuteOfDay;
+        if (gap < 0 || gap >= 60) continue;
+        body.appendChild(buildTravelLeg(a, b, y(a.endMinuteOfDay), y(b.startMinuteOfDay)));
+      }
+      day.slots.forEach((slot, i2) => {
+        // A short show is drawn at SCH_MIN_BLOCK so its four verdicts fit — but
+        // never past the next block's own start, or the two would overlap and
+        // the calendar would claim a clash the scheduler took care to avoid.
+        const next = day.slots[i2 + 1];
+        const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+        body.appendChild(
+          buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
+        );
+      });
     }
-    day.slots.forEach((slot, i) => {
-      // A short show is drawn at SCH_MIN_BLOCK so its four verdicts fit — but
-      // never past the next block's own start, or the two would overlap and
-      // the calendar would claim a clash the scheduler took care to avoid.
-      const next = day.slots[i + 1];
-      const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
-      body.appendChild(
-        buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
-      );
-    });
 
     col.append(head, body);
     host.appendChild(col);
+  });
+
+  host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
+}
+
+/* The hours the calendar draws.
+ *
+ * The evening the draft actually uses, padded by an hour either side, and then
+ * stretched towards the reader's own day boundaries — but never by more than
+ * ZONE_MAX_MIN, because this festival runs in the evening and an axis anchored
+ * at a 09:00 day start would be two thirds empty morning. A boundary further
+ * out than that is drawn against the axis edge with the hour it really holds
+ * on its flag.
+ */
+function calendarAxis(draft) {
+  if (state.drag) return { ...state.drag, axisH: ((state.drag.botMin - state.drag.topMin) / 60) * SCH_HOUR_PX };
+  const mins = [];
+  const maxs = [];
+  for (const day of draft.days) {
+    for (const slot of day.slots) {
+      mins.push(slot.startMinuteOfDay);
+      maxs.push(slot.endMinuteOfDay);
+    }
   }
+  for (const meal of state.meals) {
+    if (!meal.enabled) continue;
+    mins.push(meal.startMin);
+    maxs.push(meal.endMin);
+  }
+  // Nothing drafted is exactly when the blockers matter most: the axis then
+  // spans the day the reader asked for, so whatever emptied the calendar is on
+  // screen with a grip on it.
+  if (!mins.length) {
+    mins.push(state.dayStartMin);
+    maxs.push(dayEndMin());
+  }
+  const padTop = Math.min(...mins) - AXIS_PAD_MIN;
+  const padBottom = Math.max(...maxs) + AXIS_PAD_MIN;
+  const minHour = Math.floor(clamp(state.dayStartMin, padTop - ZONE_MAX_MIN, padTop) / 60);
+  const maxHour = Math.max(
+    minHour + 1,
+    Math.ceil(clamp(dayEndMin(), padBottom, padBottom + ZONE_MAX_MIN) / 60)
+  );
+  return { topMin: minHour * 60, botMin: maxHour * 60, axisH: (maxHour - minHour) * SCH_HOUR_PX };
+}
+
+function zone(which, top, height) {
+  const el = document.createElement("div");
+  el.className = `sch-zone sch-zone--${which}`;
+  el.style.top = `${top}px`;
+  el.style.height = `${Math.max(0, height)}px`;
+  return el;
+}
+
+/* A meal the reader asked for: an hour of the night nothing is drafted
+ * through, carrying the place when they have named one. */
+function mealBand(meal, y) {
+  const el = document.createElement("div");
+  el.className = `sch-meal sch-meal--${meal.id}`;
+  el.style.top = `${y(meal.startMin)}px`;
+  el.style.height = `${Math.max(2, y(meal.endMin) - y(meal.startMin))}px`;
+  el.innerHTML =
+    `<span class="meal-label"><span aria-hidden="true">${MEAL_META[meal.id].emoji}</span> ` +
+    `${escapeHtml(meal.place || t(MEAL_META[meal.id].nameKey))}</span>`;
+  return el;
+}
+
+// --- the four blockers ----------------------------------------------------
+//
+// Where the day starts and ends, and which nights the window takes, drawn
+// against the hours and the columns they rule out rather than typed into a
+// strip above them. One overlay holds all four; it is rebuilt with the
+// calendar, and the gestures are delegated from the calendar itself
+// (wireBlockers) so nothing has to be re-wired when it is.
+
+function buildBlockers(axis, y, gutterPx) {
+  const ov = document.createElement("div");
+  ov.className = "sch-blockers";
+  ov.style.insetInlineStart = `${gutterPx}px`;
+  ov.style.top = `${SCH_HEAD_PX}px`;
+  ov.style.height = `${axis.axisH}px`;
+  ov.dataset.topMin = String(axis.topMin);
+  ov.dataset.botMin = String(axis.botMin);
+  ov.append(
+    dayLine("start", state.dayStartMin, y, axis),
+    dayLine("end", dayEndMin(), y, axis),
+    dateEdge("start"),
+    dateEdge("end")
+  );
+  return ov;
+}
+
+function dayLine(which, min, y, axis) {
+  const beyond = which === "start" ? min < axis.topMin : min > axis.botMin;
+  const el = document.createElement("div");
+  el.className = `sch-dayline sch-dayline--${which}${beyond ? " is-beyond" : ""}`;
+  el.style.top = `${y(min)}px`;
+  el.dataset.which = which;
+  el.tabIndex = 0;
+  el.setAttribute("role", "slider");
+  el.setAttribute("aria-label", t(which === "start" ? "blocker.dayStartLabel" : "blocker.dayEndLabel"));
+  el.setAttribute("aria-valuemin", "0");
+  el.setAttribute("aria-valuemax", String(DAY_END_CEIL));
+  el.setAttribute("aria-valuenow", String(min));
+  el.setAttribute("aria-valuetext", minToDayClock(min));
+  el.innerHTML =
+    `<span class="dl-grip" aria-hidden="true"></span>` +
+    `<span class="dl-flag">${escapeHtml(
+      t(which === "start" ? "blocker.dayStart" : "blocker.dayEnd", { time: minToDayClock(min) })
+    )}</span>`;
+  return el;
+}
+
+/* The window's two ends. Positioned from the columns' own boxes rather than
+ * from an assumed column width, because a blank night is drawn narrower than a
+ * full one; measured in logical pixels from the track's inline start, so the
+ * sums are the same whichever way the page runs. */
+function dateEdge(which) {
+  const el = document.createElement("div");
+  el.className = `sch-dateedge sch-dateedge--${which}`;
+  el.dataset.which = which;
+  el.tabIndex = 0;
+  el.setAttribute("role", "slider");
+  el.setAttribute("aria-label", t(which === "start" ? "rail.startLabel" : "rail.endLabel"));
+  el.setAttribute("aria-valuemin", "1");
+  el.setAttribute("aria-valuemax", String(state.dates.length));
+  el.setAttribute("aria-valuenow", String(which === "start" ? state.d0 : state.d1));
+  el.setAttribute("aria-valuetext", dayAndDate(which === "start" ? windowStartISO() : windowEndISO()));
+  el.innerHTML =
+    `<span class="de-grip" aria-hidden="true"></span>` +
+    `<span class="de-flag"><span class="wf-cap">${escapeHtml(
+      t(which === "start" ? "rail.from" : "rail.to")
+    )}</span> ${escapeHtml(dayLabel(which === "start" ? windowStartISO() : windowEndISO()))}</span>`;
+  return el;
+}
+
+/** Slide the two date edges onto the boundaries of the window's own columns. */
+function placeDateEdges() {
+  const ov = document.querySelector(".sch-blockers");
+  if (!ov) return;
+  const cols = [...$("schedule").querySelectorAll(".sch-day")];
+  if (cols.length < state.d1) return;
+  const track = ov.getBoundingClientRect();
+  if (!track.width) return;
+  const rtl = isRtl();
+  const inlineStart = (el) => {
+    const box = el.getBoundingClientRect();
+    return rtl ? track.right - box.right : box.left - track.left;
+  };
+  const inlineEnd = (el) => {
+    const box = el.getBoundingClientRect();
+    return rtl ? track.right - box.left : box.right - track.left;
+  };
+  const startEl = ov.querySelector(".sch-dateedge--start");
+  const endEl = ov.querySelector(".sch-dateedge--end");
+  if (startEl) startEl.style.insetInlineStart = `${inlineStart(cols[state.d0 - 1])}px`;
+  if (endEl) endEl.style.insetInlineStart = `${inlineEnd(cols[state.d1 - 1])}px`;
+}
+
+/** The minute of the day at a pointer's height over the calendar's axis. */
+function minuteAt(clientY) {
+  const ov = document.querySelector(".sch-blockers");
+  if (!ov) return null;
+  const box = ov.getBoundingClientRect();
+  if (!box.height) return null;
+  const topMin = Number(ov.dataset.topMin);
+  const botMin = Number(ov.dataset.botMin);
+  const raw = topMin + ((clientY - box.top) / box.height) * (botMin - topMin);
+  return clamp(Math.round(raw / SNAP_MIN) * SNAP_MIN, 0, DAY_END_CEIL);
+}
+
+/** The night whose column a pointer is nearest — direction-blind, by centres. */
+function dayAtX(clientX) {
+  const cols = [...$("schedule").querySelectorAll(".sch-day")];
+  let best = 1;
+  let nearest = Infinity;
+  cols.forEach((col, i) => {
+    const box = col.getBoundingClientRect();
+    const d = Math.abs(clientX - (box.left + box.right) / 2);
+    if (d < nearest) {
+      nearest = d;
+      best = i + 1;
+    }
+  });
+  return best;
+}
+
+function setDayStart(min) {
+  const next = clamp(min, 0, dayEndMin() - 15);
+  if (next === state.dayStartMin) return false;
+  state.dayStartMin = next;
+  return true;
+}
+
+function setDayEnd(min) {
+  const next = clamp(min, state.dayStartMin + 15, DAY_END_CEIL);
+  if (next === state.dayEndMin) return false;
+  state.dayEndMin = next;
+  return true;
+}
+
+/* A drag holds the axis and the column widths still for its duration. Without
+ * that, moving a line re-drafts, the re-draft re-fits the axis, and the same
+ * pointer position then means a different minute — the line would chase the
+ * pointer instead of following it. */
+function startBlockerDrag(onMove) {
+  const ov = document.querySelector(".sch-blockers");
+  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  const move = (ev) => {
+    if (onMove(ev)) redraftAndSave();
+  };
+  const up = () => {
+    removeEventListener("pointermove", move);
+    removeEventListener("pointerup", up);
+    state.drag = null;
+    // One last draft with the axis free again, so it re-fits to what is left.
+    redraft();
+  };
+  addEventListener("pointermove", move);
+  addEventListener("pointerup", up);
+}
+
+function wireBlockers() {
+  const host = $("schedule");
+
+  host.addEventListener("pointerdown", (e) => {
+    const line = e.target.closest(".sch-dayline");
+    if (line) {
+      e.preventDefault();
+      line.focus();
+      const which = line.dataset.which;
+      startBlockerDrag((ev) => {
+        const min = minuteAt(ev.clientY);
+        return min == null ? false : which === "start" ? setDayStart(min) : setDayEnd(min);
+      });
+      return;
+    }
+    const edge = e.target.closest(".sch-dateedge");
+    if (!edge) return;
+    e.preventDefault();
+    edge.focus();
+    const which = edge.dataset.which;
+    startBlockerDrag((ev) => {
+      const day = dayAtX(ev.clientX);
+      if (which === "start") {
+        const next = clamp(day, 1, state.d1);
+        if (next === state.d0) return false;
+        state.d0 = next;
+      } else {
+        const next = clamp(day, state.d0, state.dates.length);
+        if (next === state.d1) return false;
+        state.d1 = next;
+      }
+      return true;
+    });
+  });
+
+  host.addEventListener("keydown", (e) => {
+    const line = e.target.closest(".sch-dayline");
+    if (line) {
+      const step = e.key === "ArrowDown" ? 1 : e.key === "ArrowUp" ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      const moved =
+        line.dataset.which === "start"
+          ? setDayStart(state.dayStartMin + step * 15)
+          : setDayEnd(state.dayEndMin + step * 15);
+      if (moved) redraftAndSave();
+      focusBlocker(`.sch-dayline--${line.dataset.which}`);
+      return;
+    }
+    const edge = e.target.closest(".sch-dateedge");
+    if (!edge) return;
+    // The arrow that moves the window later is the one that points along the
+    // page's reading direction, which is the way the columns themselves run.
+    const later = isRtl() ? "ArrowLeft" : "ArrowRight";
+    const step = e.key === later ? 1 : e.key === (isRtl() ? "ArrowRight" : "ArrowLeft") ? -1 : 0;
+    if (!step) return;
+    e.preventDefault();
+    if (edge.dataset.which === "start") state.d0 = clamp(state.d0 + step, 1, state.d1);
+    else state.d1 = clamp(state.d1 + step, state.d0, state.dates.length);
+    redraftAndSave();
+    focusBlocker(`.sch-dateedge--${edge.dataset.which}`);
+  });
+}
+
+/** Put the keyboard back on the blocker just moved — it is a new element. */
+function focusBlocker(selector) {
+  const el = document.querySelector(`.sch-blockers ${selector}`);
+  if (el) el.focus();
 }
 
 /** How rare the drafted show is — the whole reason it won its hour. */
@@ -1258,94 +1851,6 @@ function rebuild() {
   layoutOverlay();
 }
 
-// --- controls -------------------------------------------------------------
-
-function wireControls() {
-  $("ctlDayStart").addEventListener("change", (e) => {
-    const min = clockToMin(e.target.value);
-    if (min != null) state.dayStartMin = min;
-    e.target.value = minToDayClock(state.dayStartMin);
-    redraftAndSave();
-  });
-  $("ctlDayEnd").addEventListener("change", (e) => {
-    const min = clockToMin(e.target.value);
-    if (min != null) state.dayEndMin = min;
-    e.target.value = minToDayClock(state.dayEndMin);
-    redraftAndSave();
-  });
-  for (const meal of state.meals) {
-    const cap = meal.id[0].toUpperCase() + meal.id.slice(1);
-    $(`meal${cap}On`).addEventListener("change", (e) => {
-      meal.enabled = e.target.checked;
-      redraftAndSave();
-    });
-    $(`meal${cap}Start`).addEventListener("change", (e) => {
-      const min = clockToMin(e.target.value);
-      if (min != null) meal.startMin = min;
-      redraftAndSave();
-    });
-    $(`meal${cap}End`).addEventListener("change", (e) => {
-      const min = clockToMin(e.target.value);
-      if (min != null) meal.endMin = min;
-      redraftAndSave();
-    });
-  }
-  $("ctlMax").addEventListener("change", (e) => {
-    state.maxPerDay = Math.max(1, Number(e.target.value) || 1);
-    redraftAndSave();
-  });
-  $("ctlGap").addEventListener("change", (e) => {
-    state.minGap = Number(e.target.value);
-    redraftAndSave();
-  });
-  $("ctlMode").addEventListener("click", (e) => {
-    const btn = e.target.closest(".tmode-btn");
-    if (!btn) return;
-    state.mode = btn.dataset.mode;
-    for (const other of $("ctlMode").querySelectorAll(".tmode-btn")) {
-      const on = other === btn;
-      other.classList.toggle("is-on", on);
-      other.setAttribute("aria-pressed", String(on));
-    }
-    redraftAndSave();
-  });
-}
-
-/* The two controls whose option text and field labels are words rather than
- * numbers: the gap menu, and the meal time fields (whose label names the meal). */
-function syncControlWords() {
-  for (const option of $("ctlGap").options) {
-    const minutes = Number(option.value);
-    option.textContent =
-      minutes === 60 ? t("plan.gap.hour") : t("plan.gap.minutes", { count: minutes });
-  }
-  for (const meal of state.meals) {
-    const cap = meal.id[0].toUpperCase() + meal.id.slice(1);
-    const name = t(meal.id === "lunch" ? "plan.lunch" : "plan.dinner");
-    $(`meal${cap}Start`).setAttribute("aria-label", t("plan.mealStartLabel", { meal: name }));
-    $(`meal${cap}End`).setAttribute("aria-label", t("plan.mealEndLabel", { meal: name }));
-  }
-}
-
-function syncControls() {
-  syncControlWords();
-  $("ctlDayStart").value = minToDayClock(state.dayStartMin);
-  $("ctlDayEnd").value = minToDayClock(state.dayEndMin);
-  for (const meal of state.meals) {
-    const cap = meal.id[0].toUpperCase() + meal.id.slice(1);
-    $(`meal${cap}On`).checked = meal.enabled;
-    $(`meal${cap}Start`).value = minToClock(meal.startMin);
-    $(`meal${cap}End`).value = minToClock(meal.endMin);
-  }
-  $("ctlMax").value = String(state.maxPerDay);
-  $("ctlGap").value = String(state.minGap);
-  for (const btn of $("ctlMode").querySelectorAll(".tmode-btn")) {
-    const on = btn.dataset.mode === state.mode;
-    btn.classList.toggle("is-on", on);
-    btn.setAttribute("aria-pressed", String(on));
-  }
-}
-
 function wireBoard() {
   // One delegated listener for every star on the page — the browse list and the
   // search results are rebuilt constantly, and per-row listeners would leak.
@@ -1566,13 +2071,12 @@ function wireExports() {
  * static markup is the i18n module's own job; this is the rest. */
 function retranslate() {
   renderChrome();
-  syncControlWords();
   if (!state.catalogue) return;
   renderHeaderHint();
+  renderPrefs();
   buildDayHeader();
   buildFacets();
   syncFacetChrome();
-  renderPlanSub();
   rebuild();
   layoutOverlay();
 }
@@ -1585,8 +2089,6 @@ async function boot() {
     onChange: retranslate,
   });
   renderChrome();
-  syncControlWords();
-  renderPlanSub();
   $("loadingState").hidden = false;
   try {
     state.catalogue = await loadCatalogue(FESTIVAL.dataUrl);
@@ -1612,15 +2114,16 @@ async function boot() {
   restorePrefs();
 
   renderHeaderHint();
+  renderPrefs();
   buildDayHeader();
   buildFacets();
   syncFacetChrome();
-  syncControls();
   wireWindow();
   wireBoard();
   wireCalendar();
+  wireBlockers();
   wireSearch();
-  wireControls();
+  wirePrefs();
   wireExports();
   rebuild();
   // Two frames: the board has to be laid out before the window overlay can be
