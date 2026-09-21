@@ -218,18 +218,16 @@ async function nowReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
-  // The app boots on its built-in simulated day and only adopts the (fixed)
-  // real clock once the in-UK geolocation fix lands — wait for the reference
-  // day to actually be in force, or a slow fix leaves the preset day rendered.
+  // The app boots on a simulated day and moves to the pinned one only once the
+  // in-UK geolocation fix lands. The page says when that is done: the date
+  // label flips BEFORE the new day's shows are fetched and every panel, count
+  // and list rebuilt from them, so waiting on the label caught the page still
+  // showing what it booted with — an empty list reading "nothing reachable".
+  await page.waitForSelector("body[data-settled]", { timeout: 20000 });
   await page.waitForFunction(() => {
     const l = document.getElementById("constraintDateLabel");
     return l && l.textContent.includes("15 Aug");
   }, { timeout: 20000 });
-  // Adopting the clock moves the app onto a different day than the one it
-  // booted on, and that day's shows are fetched after the label flips — so the
-  // label alone can leave the list still rendering the old day's answer, which
-  // is "nothing reachable". Wait for that fetch to be done with.
-  await page.waitForLoadState("networkidle");
   await settle(page);
 }
 

@@ -343,14 +343,23 @@ function setUserLocation(latlng, { recenter = true, real = false } = {}) {
   if (state.shows.length) refreshMap(); // reachable set depends on where we are
 }
 
+/* The page has answered its opening question — where are we, and therefore
+ * which day and which shows — and has finished rendering the answer. Set once,
+ * for anything driving the page that needs to know the first render is the
+ * final one rather than the one the page booted with. */
+function markSettled() {
+  document.body.dataset.settled = "1";
+}
+
 /* Ask the browser for the user's real location and move the pin there. */
 function requestUserLocation() {
   if (!("geolocation" in navigator)) {
     console.warn("Geolocation not supported; keeping default location.");
+    markSettled();
     return;
   }
   navigator.geolocation.getCurrentPosition(
-    (pos) => {
+    async (pos) => {
       const here = [pos.coords.latitude, pos.coords.longitude];
       // Testing guard: outside the UK (e.g. an overseas tester) keep the
       // central-Edinburgh default and show the pre-set values instead.
@@ -360,18 +369,21 @@ function requestUserLocation() {
             "keeping the central Edinburgh default for testing."
         );
         setDebugVisible(true);
+        markSettled();
         return;
       }
       // In the UK we trust the device, so every pre-set goes: the real location
       // replaces the default pin and the real clock replaces the simulated
       // "now". The debug tools that tweak them stay hidden.
       setUserLocation(here, { recenter: true, real: true });
-      adoptRealClock();
+      await adoptRealClock();
+      markSettled();
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.
       // An unknown location is not a debug session, so the tools stay hidden.
       console.info("Using default location:", err && err.message);
+      markSettled();
     },
     { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
   );
