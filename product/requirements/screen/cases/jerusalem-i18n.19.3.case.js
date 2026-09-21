@@ -19,7 +19,6 @@ module.exports = {
         page.selectOption("#langSelect", code),
       ]);
       await jerusalemReady(page);
-      await page.evaluate(() => document.fonts.ready);
       await settle(page);
       strips.push(await t.element(".site-header"));
       strips.push(await t.element(".page-head"));

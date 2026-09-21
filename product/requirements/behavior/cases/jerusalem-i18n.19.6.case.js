@@ -2,7 +2,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 const { VIEWPORTS } = require("../../shared/harness/browser");
 
 const REPO = path.join(__dirname, "..", "..", "..", "..");
@@ -118,7 +118,7 @@ module.exports = {
 
       for (const [name, size] of Object.entries(VIEWPORTS)) {
         await page.setViewportSize(size);
-        await page.evaluate(() => document.fonts.ready);
+        await settle(page);
         const items = forLocale(code);
         const widths = await measureInPage(page, items);
         widths.forEach(({ key, width }, i) => {
