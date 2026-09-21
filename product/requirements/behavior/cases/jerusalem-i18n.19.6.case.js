@@ -77,7 +77,8 @@ module.exports = {
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    const { LOCALES, STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
+    const { STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
+    const { PAGES: LOCALIZED_PAGES } = await import(path.join(REPO, "scripts/localize-pages.mjs"));
     const { format, argumentsOf } = await import(path.join(REPO, "site/planJerusalem/i18n/format.js"));
 
     // A string the harness cannot draw cannot be measured either: the font jail
@@ -104,16 +105,19 @@ module.exports = {
         return { key, probe: entry.probe || null, text: format(entry[code], params, code) };
       });
 
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
-    await jerusalemReady(page);
-
     const missing = [];
     const overflowing = [];
-    for (const [name, size] of Object.entries(VIEWPORTS)) {
-      await page.setViewportSize(size);
-      for (const { code } of LOCALES) {
-        await page.selectOption("#langSelect", code);
-        await page.waitForFunction((c) => document.documentElement.lang === c, code);
+    for (const { code, url } of LOCALIZED_PAGES) {
+      // A language is its own page now, so it is loaded rather than switched
+      // into — at the wide viewport, which is the layout the page settles in
+      // (the date window's overlay is only laid out there), and then measured
+      // at each viewport by resizing it.
+      await page.setViewportSize(VIEWPORTS.desktop);
+      await page.goto(`${origin}${url}`, { waitUntil: "load" });
+      await jerusalemReady(page);
+
+      for (const [name, size] of Object.entries(VIEWPORTS)) {
+        await page.setViewportSize(size);
         await page.evaluate(() => document.fonts.ready);
         const items = forLocale(code);
         const widths = await measureInPage(page, items);
