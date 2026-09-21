@@ -371,6 +371,26 @@ async function newPage(opts = {}) {
       return anim;
     };
   `);
+  // The CSS freeze sets `scroll-behavior: auto`, but a call that names
+  // `behavior: "smooth"` itself outranks the stylesheet — so the product's own
+  // smooth scrolls stayed animated, and a scroll in flight is invisible to a
+  // wait that watches the DOM. Land every scroll instantly instead, the same
+  // way element.animate is landed on its end state above.
+  await page.addInitScript(`
+    (() => {
+      const instant = (options) =>
+        options && typeof options === "object" ? { ...options, behavior: "auto" } : options;
+      for (const target of [window, Element.prototype]) {
+        for (const name of ["scroll", "scrollTo", "scrollIntoView", "scrollBy"]) {
+          const original = target[name];
+          if (typeof original !== "function") continue;
+          target[name] = function (...args) {
+            return original.apply(this, [instant(args[0]), ...args.slice(1)]);
+          };
+        }
+      }
+    })();
+  `);
   await page.addInitScript(
     `document.addEventListener("DOMContentLoaded", () => {
        const s = document.createElement("style");

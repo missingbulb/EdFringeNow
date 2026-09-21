@@ -95,10 +95,15 @@ async function clickStackBand(page, slot) {
 
 // ------------------------------------------------------------------- waits --
 // "Settled" is a state the page reaches, not a duration to sit out: the fonts
-// are in, every image has decoded, and the DOM has stopped changing across
-// consecutive animation frames. A page that never goes quiet — something
-// re-rendering on an interval — is captured at the frame cap rather than held
-// forever, which is the old blind wait's behaviour and its worst case.
+// are in, every image has decoded, the page has stopped scrolling, and the DOM
+// has stopped changing across consecutive animation frames. A page that never
+// goes quiet — something re-rendering on an interval — is captured at the frame
+// cap rather than held forever, which is the old blind wait's behaviour and its
+// worst case.
+//
+// The scroll position is watched because a scroll is NOT a DOM mutation: a
+// gesture that sends the page smoothly somewhere leaves the DOM still while the
+// view is a third of the way there, and an observer alone calls that settled.
 const QUIET_FRAMES = 2;
 const MAX_FRAMES = 30;
 
@@ -138,8 +143,10 @@ async function settle(page) {
             continue;
           }
           dirty = false;
+          const before = window.scrollX + "," + window.scrollY;
           await new Promise((resolve) => requestAnimationFrame(() => resolve()));
-          quiet = dirty ? 0 : quiet + 1;
+          const moved = before !== window.scrollX + "," + window.scrollY;
+          quiet = dirty || moved ? 0 : quiet + 1;
         }
       } finally {
         observer.disconnect();
