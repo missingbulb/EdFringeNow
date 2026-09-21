@@ -112,6 +112,27 @@ async function clickStackBand(page, slot) {
 const QUIET_MS = 150;
 const QUIET_FRAMES = 2;
 const MAX_FRAMES = 60;
+// Nothing here may wait forever. A frame wait is raced against a timer, since
+// requestAnimationFrame is throttled to a standstill on a page the browser
+// considers hidden — several at once, and one of them stalls where a lone page
+// never would. The whole wait is bounded from this side too, so a page that
+// cannot go quiet reports which case it was instead of hanging the lane.
+const FRAME_TIMEOUT_MS = 50;
+const SETTLE_TIMEOUT_MS = 5000;
+
+async function bounded(promise, ms, what) {
+  let timer;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`${what} did not finish within ${ms}ms`)), ms);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 async function settle(page) {
   if (hasPausedClock(page)) {
@@ -124,8 +145,20 @@ async function settle(page) {
     });
     return;
   }
-  await page.evaluate(
-    async ({ quietFrames, quietMs, maxFrames }) => {
+  await bounded(
+    page.evaluate(
+      async ({ quietFrames, quietMs, maxFrames, frameTimeoutMs }) => {
+      const frame = () =>
+        new Promise((resolve) => {
+          let done = false;
+          const finish = () => {
+            if (done) return;
+            done = true;
+            resolve();
+          };
+          requestAnimationFrame(finish);
+          setTimeout(finish, frameTimeoutMs);
+        });
       await document.fonts.ready;
       let dirty = false;
       const observer = new MutationObserver(() => {
@@ -153,7 +186,7 @@ async function settle(page) {
           }
           dirty = false;
           const before = window.scrollX + "," + window.scrollY;
-          await new Promise((resolve) => requestAnimationFrame(() => resolve()));
+          await frame();
           const moved = before !== window.scrollX + "," + window.scrollY;
           if (dirty || moved) {
             quiet = 0;
@@ -166,7 +199,10 @@ async function settle(page) {
         observer.disconnect();
       }
     },
-    { quietFrames: QUIET_FRAMES, quietMs: QUIET_MS, maxFrames: MAX_FRAMES }
+      { quietFrames: QUIET_FRAMES, quietMs: QUIET_MS, maxFrames: MAX_FRAMES, frameTimeoutMs: FRAME_TIMEOUT_MS }
+    ),
+    SETTLE_TIMEOUT_MS,
+    `settle(${page.url()})`
   );
 }
 
@@ -246,19 +282,32 @@ async function jerusalemReady(page) {
 // frame or two after the gesture that caused it, where the element exists from
 // the start and only its state is in flight.
 async function stableValue(page, readFn, { quietFrames = 2, maxFrames = 40 } = {}) {
-  await page.evaluate(
-    async ({ src, quiet, max }) => {
-      const read = new Function("return (" + src + ")")();
-      let last = JSON.stringify(read());
-      let same = 0;
-      for (let i = 0; i < max && same < quiet; i++) {
-        await new Promise((resolve) => requestAnimationFrame(() => resolve()));
-        const now = JSON.stringify(read());
-        same = now === last ? same + 1 : 0;
-        last = now;
-      }
-    },
-    { src: readFn.toString(), quiet: quietFrames, max: maxFrames }
+  await bounded(
+    page.evaluate(
+      async ({ src, quiet, max, frameTimeoutMs }) => {
+        const read = new Function("return (" + src + ")")();
+        let last = JSON.stringify(read());
+        let same = 0;
+        for (let i = 0; i < max && same < quiet; i++) {
+          await new Promise((resolve) => {
+            let done = false;
+            const finish = () => {
+              if (done) return;
+              done = true;
+              resolve();
+            };
+            requestAnimationFrame(finish);
+            setTimeout(finish, frameTimeoutMs);
+          });
+          const now = JSON.stringify(read());
+          same = now === last ? same + 1 : 0;
+          last = now;
+        }
+      },
+      { src: readFn.toString(), quiet: quietFrames, max: maxFrames, frameTimeoutMs: FRAME_TIMEOUT_MS }
+    ),
+    SETTLE_TIMEOUT_MS,
+    "stableValue"
   );
 }
 
@@ -291,7 +340,24 @@ async function tilesSettled(page) {
 async function scrollToTop(page) {
   await page.evaluate(() => window.scrollTo(0, 0));
   if (hasPausedClock(page)) return;
-  await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+  await bounded(
+    page.evaluate(
+      (frameTimeoutMs) =>
+        new Promise((resolve) => {
+          let done = false;
+          const finish = () => {
+            if (done) return;
+            done = true;
+            resolve();
+          };
+          requestAnimationFrame(finish);
+          setTimeout(finish, frameTimeoutMs);
+        }),
+      FRAME_TIMEOUT_MS
+    ),
+    SETTLE_TIMEOUT_MS,
+    "scrollToTop"
+  );
 }
 
 // Perform a gesture whose consequence arrives later than the gesture itself —
