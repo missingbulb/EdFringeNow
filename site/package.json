@@ -1,0 +1,5 @@
+{
+  "//": "Everything under site/ is ES modules, loaded in the browser via <script type=module>. Declaring the type here is what stops Node — the test lane, scripts/, the requirements harness — from having to sniff each .js file's syntax and printing MODULE_TYPELESS_PACKAGE_JSON for every one it imports. It is scoped to site/ rather than set at the repo root because product/requirements/'s test lane is CommonJS. Held back from the published tree by .assetsignore. No dependencies; not an npm package.",
+  "type": "module",
+  "private": true
+}
