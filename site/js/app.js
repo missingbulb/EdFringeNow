@@ -360,24 +360,31 @@ function requestUserLocation() {
   }
   navigator.geolocation.getCurrentPosition(
     async (pos) => {
-      const here = [pos.coords.latitude, pos.coords.longitude];
-      // Testing guard: outside the UK (e.g. an overseas tester) keep the
-      // central-Edinburgh default and show the pre-set values instead.
-      if (!isInUK(here)) {
-        console.info(
-          `Real location (${here[0].toFixed(3)}, ${here[1].toFixed(3)}) is outside the UK — ` +
-            "keeping the central Edinburgh default for testing."
-        );
-        setDebugVisible(true);
+      try {
+        const here = [pos.coords.latitude, pos.coords.longitude];
+        // Testing guard: outside the UK (e.g. an overseas tester) keep the
+        // central-Edinburgh default and show the pre-set values instead.
+        if (!isInUK(here)) {
+          console.info(
+            `Real location (${here[0].toFixed(3)}, ${here[1].toFixed(3)}) is outside the UK — ` +
+              "keeping the central Edinburgh default for testing."
+          );
+          setDebugVisible(true);
+          return;
+        }
+        // In the UK we trust the device, so every pre-set goes: the real
+        // location replaces the default pin and the real clock replaces the
+        // simulated "now". The debug tools that tweak them stay hidden.
+        setUserLocation(here, { recenter: true, real: true });
+        await adoptRealClock();
+      } catch (err) {
+        // This callback is async, so anything thrown here would otherwise be an
+        // unhandled rejection: no error event, nothing in the console, and a
+        // page that never finishes arriving with no sign of why.
+        console.error("Could not apply the real location:", err);
+      } finally {
         markSettled();
-        return;
       }
-      // In the UK we trust the device, so every pre-set goes: the real location
-      // replaces the default pin and the real clock replaces the simulated
-      // "now". The debug tools that tweak them stay hidden.
-      setUserLocation(here, { recenter: true, real: true });
-      await adoptRealClock();
-      markSettled();
     },
     (err) => {
       // Denied / unavailable / timed out — keep the central-Edinburgh default.

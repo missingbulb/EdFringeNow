@@ -354,6 +354,15 @@ async function newPage(opts = {}) {
   } else {
     await page.clock.setFixedTime(now);
   }
+  // A promise that rejects with nobody waiting fires no error event, so a
+  // failure inside an async callback leaves no trace at all — and a case then
+  // reports a page that never arrived, with nothing to say why. Route it to
+  // the console, which the runner reads back on a failure.
+  await page.addInitScript(`
+    window.addEventListener("unhandledrejection", (e) => {
+      console.error("unhandled rejection:", (e.reason && e.reason.stack) || String(e.reason));
+    });
+  `);
   await page.addInitScript(SEEDED_RANDOM);
   // The CSS freeze can't stop Web Animations API animations (the planner's
   // FLIP board diff) — stub element.animate so every WAAPI animation lands on
