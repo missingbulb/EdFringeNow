@@ -17,4 +17,7 @@ plan/design/
 
 # Documentation and tooling that happen to live next to the code they belong to.
 plan/README.md
-plan/package.json
+
+# The ES-module declaration Node reads and a browser never does. Unanchored, so
+# it holds back any package.json at any depth rather than one named path.
+package.json

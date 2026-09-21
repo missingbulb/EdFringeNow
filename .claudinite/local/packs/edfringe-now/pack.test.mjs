@@ -203,13 +203,13 @@ test("this repo's verify.sh covers every real top-level source dir", () => {
   assert.deepEqual(out, [], `scripts/verify.sh is missing a source dir:\n${out.map((f) => f.what).join("\n")}`);
 });
 
-// --- no-stray-package-json: only the repo root and the grandfathered
-// site/plan/package.json may carry one ---
+// --- no-stray-package-json: only the repo root and site/, which declares the
+// ES-module tree, may carry one ---
 
 test("only the allowed package.json files ⇒ no findings", () => {
   const out = noStrayPackageJsonRule.run(ctxOf({
     "package.json": "{}",
-    "site/plan/package.json": "{}",
+    "site/package.json": "{}",
     "site/js/app.js": "",
   }));
   assert.deepEqual(out, []);
@@ -218,7 +218,7 @@ test("only the allowed package.json files ⇒ no findings", () => {
 test("a package.json copied into a new source dir is reported", () => {
   const out = noStrayPackageJsonRule.run(ctxOf({
     "package.json": "{}",
-    "site/plan/package.json": "{}",
+    "site/package.json": "{}",
     "site/shared/package.json": "{}",
   }));
   assert.equal(out.length, 1);

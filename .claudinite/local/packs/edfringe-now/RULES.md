@@ -432,12 +432,14 @@ What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
 `site/plan/lib/travel.js` that was ported from `site/js/app.js`.
 
-A shared module needs **no** `package.json` to mark it as ESM: the pinned Node 22
-detects module syntax in a `.js` file by itself, with no warning and no flag, so
-`node --check` and the test suite both handle it. `site/plan/package.json` predates
-that detection and its stated reason (silencing a module-detection warning) no
-longer applies; it is harmless, so it stays, but do not copy it as a pattern —
-the `edfringe-no-stray-package-json` check flags any other one.
+One `package.json` marks the whole tree as ESM — `site/package.json` — and a new
+directory under it needs none of its own; the `edfringe-no-stray-package-json`
+check flags any second one. The pinned Node 22 does detect module syntax in a
+`.js` file without it, so everything still parses and runs, but it prints
+`MODULE_TYPELESS_PACKAGE_JSON` once per imported file while doing so — the
+declaration is what buys the silence, not the ability to load at all. It sits at
+`site/` rather than the repo root because `product/requirements/`'s default test
+lane is CommonJS.
 `.js` and `.mjs` are both served as `text/javascript` by `python3 -m http.server`,
 so the extension is a style choice — use `.js`, matching `site/plan/lib/`.
 
