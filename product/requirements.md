@@ -1271,7 +1271,7 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.1` Four questions above the calendar: what you are here for, how full a day, how you get around, how you eat.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.1 -->
+  ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1284,7 +1284,7 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.2` A question opens on the exact numbers behind its pictures.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.2 -->
+  ![jerusalem-prefs-open.21.2](requirements/screen/cases/jerusalem-prefs-open.21.2.png) <!-- req-gallery:21.2 -->
 
   <details><summary>Notes</summary>
 
@@ -1297,7 +1297,7 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.3` A kind you are here for outranks one you are not, and a day takes at most one show from outside them.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.3 -->
+  <table><thead><tr><th align="left">What you said</th><th align="left">Which shows are drafted first</th><th align="left">How many a night from outside it</th></tr></thead><tbody><tr><td>Nothing — every kind</td><td>the scarcest, whatever kind it is</td><td>no limit: a night takes what fits</td></tr><tr><td>Some kinds</td><td>the scarcest of those kinds</td><td>one, then the night is full of them</td></tr><tr><td>Some kinds, and a favourite outside them</td><td>locks, then the favourite, then those kinds</td><td>the favourite is placed anyway, and is the one</td></tr></tbody></table> <!-- req-gallery:21.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1312,21 +1312,21 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.4` The variety question is offered, and says plainly that it does not work yet.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.4 -->
+  ![jerusalem-variety.21.4](requirements/screen/cases/jerusalem-variety.21.4.png) <!-- req-gallery:21.4 -->
 
   <details><summary>Notes</summary>
 
   How much of the festival outside your own taste you want is the question that
   should set the cap in `21.3`, and the rule that answers it has not been
-  decided. The question is drawn where it will live, marked as not yet wired
-  and refusing to be answered, rather than left out of the row and added later
-  — and rather than drawn live over a rule that ignores it, which is the shape
-  that would lie.
+  decided. It is drawn where it belongs — behind "what are you here for?",
+  which is the question it refines — marked as not yet wired and refusing to be
+  answered, rather than left out and added later, and rather than drawn live
+  over a rule that ignores it, which is the shape that would lie.
   </details>
 
 - `21.5` A meal you asked for is a band the calendar drafts around; sorting food out yourself leaves the day clear.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.5 -->
+  ![jerusalem-food.21.5](requirements/screen/cases/jerusalem-food.21.5.png) <!-- req-gallery:21.5 -->
 
   <details><summary>Notes</summary>
 
@@ -1344,21 +1344,23 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.6` Where your day starts and ends are blockers on the calendar, dragged to where you want them.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.6 -->
+  ![jerusalem-dayhours.21.6](requirements/screen/cases/jerusalem-dayhours.21.6.png) <!-- req-gallery:21.6 -->
 
   <details><summary>Notes</summary>
 
   Two draggable lines with the shut-out hours shaded behind them, on the
   calendar rather than in a strip above it: the constraint is drawn against the
-  hours it applies to, so what it rules out is visible beside it. A boundary
-  further out than the calendar's own axis is drawn against the axis edge,
-  flagged with the hour it really holds — the axis covers the evening the
-  festival actually runs, and would otherwise be two thirds empty morning.
+  hours it applies to, so what it rules out is visible beside it. The axis
+  covers the evening the festival actually runs and stretches only an hour
+  beyond it towards a slack boundary, which is then drawn on the axis edge with
+  the hour it really holds on its flag; a day genuinely that long — three meals
+  asked for, say — draws its hours shorter instead, so the calendar stays a
+  calendar rather than a screen of empty morning.
   </details>
 
 - `21.7` Dragging the day's end earlier drops what no longer fits.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.7 -->
+  ![jerusalem-dayend.21.7](requirements/screen/cases/jerusalem-dayend.21.7.png) <!-- req-gallery:21.7 -->
 
   <details><summary>Notes</summary>
 
@@ -1369,7 +1371,7 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.8` The first and last nights are the same kind of blocker, on the same calendar.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.8 -->
+  ![jerusalem-window.21.8](requirements/screen/cases/jerusalem-window.21.8.png) <!-- req-gallery:21.8 -->
 
   <details><summary>Notes</summary>
 
@@ -1382,7 +1384,7 @@ way. Nothing above the calendar explains the calendar.
 
 - `21.9` Every preference survives a reload.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.9 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:21.9 -->
 
   <details><summary>Notes</summary>
 

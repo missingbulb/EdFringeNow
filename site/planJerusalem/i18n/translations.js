@@ -282,6 +282,7 @@ export const STRINGS = {
 
   // ----------------------------------------------------------- date window --
   "rail.from": {
+    probe: ".wf-cap",
     maxWidthPx: 70,
     en: "From",
     he: "מ־",
@@ -289,6 +290,7 @@ export const STRINGS = {
     ja: "開始",
   },
   "rail.to": {
+    probe: ".wf-cap",
     maxWidthPx: 70,
     en: "To",
     he: "עד",
@@ -528,7 +530,7 @@ export const STRINGS = {
     ja: "{meal}の終了",
   },
   "plan.gap.minutes": {
-    probe: "#ctlGap",
+    probe: ".prefs .opt-select",
     maxWidthPx: 120,
     sample: { count: 45 },
     en: "{count} min",
@@ -537,7 +539,7 @@ export const STRINGS = {
     ja: "{count}分",
   },
   "plan.gap.hour": {
-    probe: "#ctlGap",
+    probe: ".prefs .opt-select",
     maxWidthPx: 120,
     en: "1 hour",
     he: "שעה",
@@ -779,7 +781,10 @@ export const STRINGS = {
   },
   "prefs.food.note": {
     probe: ".pref-note",
-    maxWidthPx: 640,
+    // Five lines of the question card it wraps inside, which is ~248px wide at
+    // the tighter of the two layouts (four questions across the desktop row;
+    // the mobile column is wider).
+    maxWidthPx: 1240,
     en: "Somewhere open, near enough to reach between the shows either side, in the style and price you want — we don't pick it for you yet.",
     he: "מקום שפתוח, קרוב מספיק כדי להספיק בין ההופעות שמסביב, בסגנון ובמחיר שבא לכם — בינתיים אנחנו עוד לא בוחרים אותו בשבילכם.",
     ru: "Место, которое открыто, до которого успеваешь между соседними шоу, в нужном стиле и по нужной цене — пока мы его за вас не выбираем.",
@@ -844,6 +849,7 @@ export const STRINGS = {
     ja: "一日の終わり",
   },
   "travel.walk": {
+    probe: ".pref-word",
     maxWidthPx: 90,
     en: "Walk",
     he: "הליכה",
@@ -851,6 +857,7 @@ export const STRINGS = {
     ja: "徒歩",
   },
   "travel.bike": {
+    probe: ".pref-word",
     maxWidthPx: 90,
     en: "Bike",
     he: "אופניים",
@@ -858,6 +865,7 @@ export const STRINGS = {
     ja: "自転車",
   },
   "travel.car": {
+    probe: ".pref-word",
     maxWidthPx: 90,
     en: "Car",
     he: "רכב",

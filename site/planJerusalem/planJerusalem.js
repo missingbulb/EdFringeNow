@@ -51,6 +51,13 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 // would be two thirds empty morning.
 const AXIS_PAD_MIN = 60;
 const SCH_HOUR_PX = 72;
+// A day the reader has asked to keep breakfast free of is fifteen hours long
+// with an evening festival in the last three of them. An hour keeps its full
+// height while the calendar is a festival evening, and is compressed towards
+// SCH_HOUR_MIN as the axis grows, so a long day is a calendar rather than a
+// screen of empty morning to scroll past.
+const SCH_HOUR_MIN = 34;
+const SCH_AXIS_TARGET_PX = 780;
 const SCH_HEAD_PX = 42;
 // A card's face carries the show and nothing else — its name, its hour and its
 // venue — so its floor is what those two rows measure. Everything the page has
@@ -581,15 +588,15 @@ function wireWindow() {
 // directions: picking one sets the pair, and a pair that matches one lights it.
 const PACE_STEPS = [
   { id: "easy", key: "prefs.pace.easy", emoji: "\u{1F634}", maxPerDay: 1, minGap: 60 },
-  { id: "steady", key: "prefs.pace.steady", emoji: "\u{1F39F}", maxPerDay: 3, minGap: 30 },
+  { id: "steady", key: "prefs.pace.steady", emoji: "\u{1F604}", maxPerDay: 3, minGap: 30 },
   { id: "packed", key: "prefs.pace.packed", emoji: "\u{1F483}", maxPerDay: 5, minGap: 15 },
 ];
 
 // Which meals each picture answer of "how do you want to eat?" asks for.
 const FOOD_ANSWERS = [
   { id: "self", key: "prefs.food.self", emoji: "\u{1F96A}", meals: [] },
-  { id: "dinner", key: "prefs.food.dinner", emoji: "\u{1F37D}", meals: ["dinner"] },
-  { id: "regular", key: "prefs.food.regular", emoji: "\u{1F373}", meals: ["breakfast", "lunch", "dinner"] },
+  { id: "dinner", key: "prefs.food.dinner", emoji: "\u{1F377}", meals: ["dinner"] },
+  { id: "regular", key: "prefs.food.regular", emoji: "\u{1F37D}", meals: ["breakfast", "lunch", "dinner"] },
 ];
 
 const MEAL_META = {
@@ -1073,12 +1080,12 @@ function renderCalendar(draft) {
   empty.hidden = Boolean(draft.counts.picked);
 
   const axis = calendarAxis(draft);
-  const { topMin, botMin, axisH } = axis;
+  const { topMin, botMin, axisH, hourPx } = axis;
   const minHour = topMin / 60;
   const maxHour = botMin / 60;
-  const y = (min) => ((clamp(min, topMin, botMin) - topMin) / 60) * SCH_HOUR_PX;
+  const y = (min) => ((clamp(min, topMin, botMin) - topMin) / 60) * hourPx;
 
-  host.style.setProperty("--sch-hour-h", `${SCH_HOUR_PX}px`);
+  host.style.setProperty("--sch-hour-h", `${hourPx}px`);
   host.style.setProperty("--sch-head-h", `${SCH_HEAD_PX}px`);
 
   const gutter = document.createElement("div");
@@ -1091,7 +1098,7 @@ function renderCalendar(draft) {
   for (let h = minHour; h <= maxHour; h++) {
     const label = document.createElement("div");
     label.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
-    label.style.top = `${(h - minHour) * SCH_HOUR_PX}px`;
+    label.style.top = `${(h - minHour) * hourPx}px`;
     label.textContent = `${pad2(((h % 24) + 24) % 24)}:00`;
     gBody.appendChild(label);
   }
@@ -1175,7 +1182,7 @@ function renderCalendar(draft) {
  * on its flag.
  */
 function calendarAxis(draft) {
-  if (state.drag) return { ...state.drag, axisH: ((state.drag.botMin - state.drag.topMin) / 60) * SCH_HOUR_PX };
+  if (state.drag) return axisOf(state.drag.topMin, state.drag.botMin);
   const mins = [];
   const maxs = [];
   for (const day of draft.days) {
@@ -1203,7 +1210,14 @@ function calendarAxis(draft) {
     minHour + 1,
     Math.ceil(clamp(dayEndMin(), padBottom, padBottom + ZONE_MAX_MIN) / 60)
   );
-  return { topMin: minHour * 60, botMin: maxHour * 60, axisH: (maxHour - minHour) * SCH_HOUR_PX };
+  return axisOf(minHour * 60, maxHour * 60);
+}
+
+/** An axis's height, and how tall an hour on it is drawn — see SCH_HOUR_MIN. */
+function axisOf(topMin, botMin) {
+  const hours = (botMin - topMin) / 60;
+  const hourPx = clamp(Math.round(SCH_AXIS_TARGET_PX / hours), SCH_HOUR_MIN, SCH_HOUR_PX);
+  return { topMin, botMin, hourPx, axisH: hours * hourPx };
 }
 
 function zone(which, top, height) {
