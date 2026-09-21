@@ -1074,15 +1074,16 @@ in one translations file that carries, per key, the width its slot can afford.
   layout that only ever fitted English.
   </details>
 
-- `19.4` The reader's language and theme survive a reload.
+- `19.4` The theme a reader picks survives a reload.
 
   🚩 _Behavior leaf._ <!-- req-gallery:19.4 -->
 
   <details><summary>Notes</summary>
 
-  Driven: pick a language and a theme, reload, and the page comes back in both
-  — stored under the festival's own storage prefix, so the Edinburgh planner's
-  keys are untouched.
+  Driven: pick a theme, reload, and the page comes back in it — stored under
+  the festival's own storage prefix, so the Edinburgh planner's keys are
+  untouched. The theme is the only preference storage carries; the language is
+  the URL's, under 19.7.
   </details>
 
 - `19.5` Every string the page can render carries a translation in every supported language.
@@ -1108,6 +1109,62 @@ in one translations file that carries, per key, the width its slot can afford.
   Chromium's own fonts, across every language and both committed viewports, so
   the number a translator is given is the number the browser will hold them to.
   </details>
+
+- `19.7` The page's language is the one its URL names, and nothing else changes it.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.7 -->
+
+  <details><summary>Notes</summary>
+
+  One URL per language — English at the planner's own address, each other
+  language a path segment under it. Driven with the device asking for Hebrew:
+  the bare URL still answers in English, because a page that redirects on a
+  device preference is a page whose other versions no reader and no crawler
+  can reach. Nothing about the language is stored, so the same link opens the
+  same language for everyone.
+  </details>
+
+- `19.8` Choosing a language in the picker takes the reader to that language's URL.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.8 -->
+
+  <details><summary>Notes</summary>
+
+  The picker is the only way to change language now that no device preference
+  and no stored choice do, so it navigates rather than re-rendering in place —
+  which is what leaves the reader on an address they can bookmark and share.
+  </details>
+
+- `19.9` Every language's page is served already in that language, before any script runs.
+
+  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planJerusalem/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planJerusalem/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planJerusalem/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planJerusalem/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
+
+  <details><summary>Notes</summary>
+
+  Read off the committed bytes of each page rather than a rendered one: the
+  document's own language and direction, its title and description, and every
+  string the markup binds, all in that language before a line of JavaScript
+  has run. This is the half that fixes what a browser offers to translate —
+  it decides from the document it received, not from what the page later
+  becomes.
+
+  The pages are generator output. `scripts/localize-pages.mjs` derives them
+  from the planner's own `index.html`, and `--check` re-derives and compares,
+  so a hand-edit or a drifted source fails the gate rather than shipping.
+  </details>
+
+- `19.10` Each page names itself as canonical and points at every other language, including a default.
+
+  🔧 _Logic leaf._ <!-- req-gallery:19.10 -->
+
+  <details><summary>Notes</summary>
+
+  A self-referencing `rel="canonical"` on every language, and a reciprocal
+  `hreflang` set — each page listing all four languages plus `x-default` on
+  the bare URL — which is what tells a search engine that these are one page
+  in four languages rather than four pages competing with each other. Asserted
+  over the committed HTML, both directions: every alternate resolves to a page
+  that exists, and every page that exists is listed by all the others.
 
 ## 20. Deciding in the calendar
 
@@ -1392,4 +1449,66 @@ way. Nothing above the calendar explains the calendar.
   dinner, move the day's end and the first night, reload, and all of it comes
   back — stored under the festival's own prefix like everything else this page
   remembers.
+# Part VI — what the site tells a crawler
+
+A public website has to be findable, and findable is a thing the site states
+rather than a thing a search engine guesses: which pages it publishes for a
+reader, which of them are the same page in another language, and which are not
+for listing at all. Google's own guidance asks for both files below — a sitemap
+so nothing depends on a crawler finding its way to every page by link alone,
+and a `robots.txt` naming it. Both are generated from the published tree, so a
+page cannot be added to the site and forgotten here.
+
+## 22. The sitemap and robots.txt
+
+- `22.1` The sitemap lists every page the site publishes for a reader.
+
+  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planJerusalem/</td><td>planJerusalem/index.html</td></tr><tr><td>/planJerusalem/he/</td><td>planJerusalem/he/index.html</td></tr><tr><td>/planJerusalem/ja/</td><td>planJerusalem/ja/index.html</td></tr><tr><td>/planJerusalem/ru/</td><td>planJerusalem/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
+
+  <details><summary>Notes</summary>
+
+  Read off the published tree rather than a list kept by hand, so a page added
+  to the site is in the sitemap without anyone remembering: every HTML page
+  wrangler uploads, at the URL the site's own trailing-slash handling serves it
+  at. No `lastmod`, `changefreq` or `priority` — the first would have to be
+  true to be worth anything and nothing here can keep it true, and a search
+  engine reads neither of the others.
+  </details>
+
+- `22.2` A page that asks not to be indexed is left out of it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.2 -->
+
+  <details><summary>Notes</summary>
+
+  The page's own `<meta name="robots" content="noindex">` is what decides,
+  rather than a second list beside the sitemap that someone would have to keep
+  in step. Two pages say it today: the trip-planner prototype, which is for
+  playing with rather than for finding, and the error page, which is not a
+  page at all.
+  </details>
+
+- `22.3` Each language of the festival planner is listed with the others beside it.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.3 -->
+
+  <details><summary>Notes</summary>
+
+  The same reciprocal set the pages carry in their own markup (19.10), repeated
+  in the sitemap as `xhtml:link` alternates, which is the form a search engine
+  is most reliably given it in. Asserted against the pages' own annotations
+  rather than against a copy, so the two cannot disagree.
+  </details>
+
+- `22.4` `robots.txt` admits every crawler and names the sitemap.
+
+  🔧 _Logic leaf._ <!-- req-gallery:22.4 -->
+
+  <details><summary>Notes</summary>
+
+  A sitemap nothing points at is one a crawler has to be told about out of
+  band; the `Sitemap:` line is what makes it discoverable, and it is the only
+  reason this file exists here. Nothing is disallowed — what must not be listed
+  says so on the page itself (22.2), which keeps it out of results rather than
+  merely out of a crawl.
   </details>

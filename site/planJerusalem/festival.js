@@ -31,9 +31,12 @@ export const FESTIVAL = {
   /* Who published the programme, named in the footer. */
   sourceName: "comedy-festival.co.il",
   sourceUrl: "https://comedy-festival.co.il/",
-  /* The catalogue the scrape writes. Relative to this page, because the site is
-     served from a subpath and a root-relative URL would resolve above it. */
-  dataUrl: "../data/jerusalem/shows.json",
+  /* Where this page is served, and the path every one of its languages hangs
+     off: the default language here, each other language a segment below it. */
+  pageRoot: "/planJerusalem/",
+  /* The catalogue the scrape writes. Root-relative, because the page is served
+     at one depth per language and a page-relative URL would move with it. */
+  dataUrl: "/data/jerusalem/shows.json",
   /* The page's own corner of localStorage. Sharing the planner's code must
      never mean sharing its stored list, so every key this page writes starts
      here and the Edinburgh planner's keys are never touched. */
@@ -52,8 +55,8 @@ export const FESTIVAL = {
   kindEmojiFallback: "\u{1F39F}",
   /* How the site's own home page and Edinburgh planner are reached from here. */
   siteNav: [
-    { href: "../", labelKey: "nav.now" },
-    { href: "../plan/", labelKey: "nav.plan" },
+    { href: "/", labelKey: "nav.now" },
+    { href: "/plan/", labelKey: "nav.plan" },
   ],
 };
 

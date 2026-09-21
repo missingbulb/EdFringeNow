@@ -14,11 +14,18 @@
  *                                    own code writes the text — applied to
  *                                    nothing, read by the pixel-budget check
  *
- * Preference resolution, most explicit first:
- *   ?lang= / ?theme=   the URL, which is also how a case pins one
- *   localStorage       the reader's last choice, under the caller's prefix
- *   the device         navigator.languages / prefers-color-scheme
- *   the default        English, and whatever the device's colour scheme is
+ * The two preferences resolve differently on purpose:
+ *
+ *   language   the URL, and only the URL — one address per language, so a
+ *              link means the same thing to everyone who opens it and a
+ *              crawler has something to index per language. Nothing is
+ *              stored and the device is not consulted: a page that answered
+ *              a device preference would be a page whose other languages
+ *              nobody could reach.
+ *   theme      ?theme= (which is also how a case pins one), then
+ *              localStorage under the caller's prefix, then the device's
+ *              prefers-color-scheme. It changes no content, so it costs a
+ *              reader nothing to carry it from visit to visit.
  */
 
 import { format } from "./format.js";
@@ -28,8 +35,27 @@ const LOCALE_CODES = LOCALES.map((l) => l.code);
 const DIR_OF = new Map(LOCALES.map((l) => [l.code, l.dir]));
 const INTL_OF = new Map(LOCALES.map((l) => [l.code, l.intl]));
 
+/**
+ * The URL a language is served at, under the page's own root. The default
+ * language is the root itself, so the address a reader is given, and the one
+ * every other language's `hreflang` points at, is the planner's own.
+ * @param {string} code the language
+ * @param {string} root the page's root path, with both slashes
+ */
+export function localeHref(code, root) {
+  return code === DEFAULT_LOCALE ? root : `${root}${code}/`;
+}
+
+/** The language a path names, or the default where it names none. */
+export function localeFromPath(pathname, root) {
+  const segment = (pathname.startsWith(root) ? pathname.slice(root.length) : "").split("/")[0];
+  return LOCALE_CODES.includes(segment) ? segment : DEFAULT_LOCALE;
+}
+
 const state = {
   locale: DEFAULT_LOCALE,
+  /* The path every language of this page hangs off, from initI18n. */
+  root: "/",
   /* "light" | "dark" chosen by the reader, or null for "whatever the device says". */
   theme: null,
   storagePrefix: "",
@@ -108,15 +134,6 @@ function write(key, value) {
   }
 }
 
-/** The first of the device's languages this page speaks, if it speaks any. */
-function deviceLocale() {
-  for (const tag of navigator.languages || [navigator.language || ""]) {
-    const base = String(tag).toLowerCase().split("-")[0];
-    if (LOCALE_CODES.includes(base)) return base;
-  }
-  return null;
-}
-
 function applyDocument() {
   const html = document.documentElement;
   html.lang = state.locale;
@@ -136,14 +153,6 @@ function applyDocument() {
   if (description) description.content = t("doc.description");
 }
 
-export function setLocale(code, { remember = true } = {}) {
-  if (!LOCALE_CODES.includes(code) || code === state.locale) return;
-  state.locale = code;
-  if (remember) write("lang", code);
-  applyDocument();
-  state.onChange();
-}
-
 export function setTheme(theme, { remember = true } = {}) {
   state.theme = theme === "light" || theme === "dark" ? theme : null;
   if (remember) write("theme", state.theme);
@@ -158,28 +167,24 @@ export function isDark() {
 }
 
 /**
- * Resolve the reader's language and theme, translate the static markup, and
- * wire the two header controls.
+ * Read the language off the URL, resolve the reader's theme, translate the
+ * static markup, and wire the two header controls.
  * @param {object} opts
+ * @param {string} opts.root the path every language of this page hangs off
  * @param {string} opts.storagePrefix the page's own localStorage namespace
  * @param {Element} opts.localeSelect the language picker
  * @param {Element} opts.themeButton the light/dark toggle
  * @param {() => void} opts.onChange re-render hook for everything JS drew
  */
-export function initI18n({ storagePrefix = "", localeSelect, themeButton, onChange = () => {} } = {}) {
+export function initI18n({ root = "/", storagePrefix = "", localeSelect, themeButton, onChange = () => {} } = {}) {
   state.storagePrefix = storagePrefix;
   state.themeButton = themeButton || null;
   state.onChange = onChange;
 
-  const url = new URLSearchParams(location.search);
-  const asked = url.get("lang");
-  const stored = read("lang");
-  state.locale =
-    (LOCALE_CODES.includes(asked) && asked) ||
-    (LOCALE_CODES.includes(stored) && stored) ||
-    deviceLocale() ||
-    DEFAULT_LOCALE;
+  state.root = root;
+  state.locale = localeFromPath(location.pathname, root);
 
+  const url = new URLSearchParams(location.search);
   const askedTheme = url.get("theme");
   const storedTheme = read("theme");
   state.theme =
@@ -194,7 +199,11 @@ export function initI18n({ storagePrefix = "", localeSelect, themeButton, onChan
       (l) => `<option value="${l.code}" lang="${l.code}">${escapeHtml(l.endonym)}</option>`
     ).join("");
     localeSelect.value = state.locale;
-    localeSelect.addEventListener("change", (e) => setLocale(e.target.value));
+    // A language is an address, so choosing one is a navigation rather than a
+    // re-render: the reader ends up somewhere they can bookmark and share.
+    localeSelect.addEventListener("change", (e) => {
+      location.assign(localeHref(e.target.value, state.root) + location.search + location.hash);
+    });
   }
 
   if (themeButton) {
