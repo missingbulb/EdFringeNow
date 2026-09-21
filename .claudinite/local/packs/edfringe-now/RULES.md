@@ -37,6 +37,13 @@ then force-pushed — history-rewriting machinery for a finding a single amend
 already satisfies, and needless risk (a wrong regex, a bad force-push) for no
 benefit over the one-line fix.
 
+### Answering a structural complaint with `AskUserQuestion`
+
+- **Asking how to fix a structural or architectural complaint via `AskUserQuestion`** — offer
+  restructuring itself as one option, not only mechanism-level tweaks to the existing shape;
+  twice this window the owner's free-text answer named the restructure nobody had offered.
+  (askuserquestion-structural-option)
+
 ### Delivering a PR for a `[claudinite-work]` item — never `Closes #N` on that item's own issue
 
 That's for an issue you filed yourself; a queue item is different. GitHub's native auto-close on
@@ -299,6 +306,12 @@ checks concluded via a plain poll a few seconds later, so most of the 8 were
 never needed, and each still queues its own later `task-notification`. One
 bounded sleep at a time, consumed before the next is fired, is the pattern
 above; a burst of overlapping ones doesn't wait faster, it just adds noise.
+
+### Writing a measured duration into a commit or PR
+
+- **Writing a duration or before/after number into a commit or PR body** — compute it from real
+  timestamps, never a felt sense of elapsed time around unconsumed background sleeps; those read
+  as time passed when none had. (measured-duration-real-timestamps)
 
 ### GitHub MCP call shapes that cost round-trips here
 
