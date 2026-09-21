@@ -225,6 +225,11 @@ async function nowReady(page) {
     const l = document.getElementById("constraintDateLabel");
     return l && l.textContent.includes("15 Aug");
   }, { timeout: 20000 });
+  // Adopting the clock moves the app onto a different day than the one it
+  // booted on, and that day's shows are fetched after the label flips — so the
+  // label alone can leave the list still rendering the old day's answer, which
+  // is "nothing reachable". Wait for that fetch to be done with.
+  await page.waitForLoadState("networkidle");
   await settle(page);
 }
 
