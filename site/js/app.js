@@ -223,6 +223,14 @@ const LOOKUPS_TTL_MS = DAY_MS;
  * 00:30), which is what keeps them sorting and comparing after 23:00 rather
  * than before 06:00. */
 async function loadShows() {
+  // The day this load is for. Boot starts one for the day the page opened on,
+  // and the geolocation fix can adopt the real clock — a different day — and
+  // start a second while the first is still in flight. Both assign state.shows,
+  // so whichever lands last wins, and if that is the superseded one the page
+  // ends up holding one day's shows against another day's clock: every show
+  // reads as unreachable and the page says "nothing reachable in the next
+  // couple of hours", with nothing wrong that anything logs.
+  const wantedDay = NOW.fringeDate;
   try {
     // Both are validated on the way out of the cache: a stored copy from an older
     // generation parses fine and then reads as an empty festival, with nothing
@@ -234,6 +242,7 @@ async function loadShows() {
       cachedFetchJson(`data/days/${NOW.fringeDate}.json`, DAY_TTL_MS, noteCache,
         (d) => Array.isArray(d)),
     ]);
+    if (NOW.fringeDate !== wantedDay) return;
     // The shared lookup file carries the venue map plus the global rooms/genres
     // lists that the day records index into. Fetched once.
     state.venues = lookups.venues;
@@ -247,7 +256,9 @@ async function loadShows() {
       .filter((s) => s.lat != null && s.lng != null);
   } catch (err) {
     console.error("Could not load show data:", err);
-    state.shows = [];
+    // Same guard: a load that failed for a day we have already moved off must
+    // not empty the shows a later one has since put there.
+    if (NOW.fringeDate === wantedDay) state.shows = [];
   }
 }
 
