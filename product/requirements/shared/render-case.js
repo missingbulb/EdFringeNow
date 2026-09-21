@@ -17,6 +17,19 @@ async function renderScreenCase(testCase) {
     colorScheme: testCase.colorScheme,
     advanceableClock: testCase.advanceableClock,
   });
+  // What the page itself said. A case that comes up empty because a fetch or a
+  // cache read threw looks, from the outside, exactly like one that rendered an
+  // empty state on purpose — and the app says which in its console and nowhere
+  // else. Kept to the last few, since the whole point is to read it in a log.
+  const spoken = [];
+  const remember = (line) => {
+    spoken.push(line.slice(0, 200));
+    if (spoken.length > 10) spoken.shift();
+  };
+  page.on("console", (m) => {
+    if (m.type() === "error" || m.type() === "warning") remember(`${m.type()}: ${m.text()}`);
+  });
+  page.on("pageerror", (e) => remember(`pageerror: ${e.message}`));
   try {
     return await driveAndCapture(page, testCase);
   } catch (err) {
@@ -24,6 +37,7 @@ async function renderScreenCase(testCase) {
     // artifacts go to a host a session cannot reach — so the error carries what
     // the page actually showed at the moment it gave up.
     err.message += `\n\nPage state when this failed:\n${await describePage(page)}`;
+    err.message += `\n\nWhat the page said:\n${spoken.length ? spoken.join("\n") : "(nothing)"}`;
     throw err;
   } finally {
     await context.close();
