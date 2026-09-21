@@ -2734,6 +2734,13 @@ async function applyNow(date) {
   buildConstraintPanel();
   refreshMap();
   renderShowList();
+  // The facet counts are read off the same shows, so they move with the day
+  // too. Without this they keep the count for whichever day the page last
+  // counted — the price ladder saying how many shows cost up to £10 on a day
+  // the reader is no longer looking at.
+  updateGenreValue();
+  updateSubgenreValue();
+  refreshFacetCounts();
 }
 
 /* Shift the "you are here" pin 100 m in a compass direction. */
