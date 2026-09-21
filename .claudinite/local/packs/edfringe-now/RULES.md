@@ -432,14 +432,12 @@ What is still genuinely twinned (untangled the same way when next touched): the
 header `debug v<version>` pill, the Now/Plan nav, and the haversine in
 `site/plan/lib/travel.js` that was ported from `site/js/app.js`.
 
-One `package.json` marks the whole tree as ESM — `site/package.json` — and a new
-directory under it needs none of its own; the `edfringe-no-stray-package-json`
-check flags any second one. The pinned Node 22 does detect module syntax in a
-`.js` file without it, so everything still parses and runs, but it prints
-`MODULE_TYPELESS_PACKAGE_JSON` once per imported file while doing so — the
-declaration is what buys the silence, not the ability to load at all. It sits at
-`site/` rather than the repo root because `product/requirements/`'s default test
-lane is CommonJS.
+One `package.json` marks the whole tree as ESM — `site/package.json` — so a new
+directory under it needs none of its own, and the `edfringe-no-stray-package-json`
+check flags a second. Node 22 does detect module syntax without it, but prints
+`MODULE_TYPELESS_PACKAGE_JSON` per imported file while doing so: the declaration
+buys silence, not loadability. It sits at `site/` rather than the repo root
+because `product/requirements/`'s default test lane is CommonJS.
 `.js` and `.mjs` are both served as `text/javascript` by `python3 -m http.server`,
 so the extension is a style choice — use `.js`, matching `site/plan/lib/`.
 
