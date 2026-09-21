@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady } = require("../../shared/case-helpers");
+const { jerusalemReady, openDrawer } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
@@ -10,6 +10,7 @@ module.exports = {
   async verify(page, { origin, assert }) {
     await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
     await jerusalemReady(page);
+    await openDrawer(page);
 
     // Star two shows off the browse list. The first one switches the board to
     // the grid, so the second is starred from the search bar — which is the
@@ -26,6 +27,7 @@ module.exports = {
 
     await page.reload({ waitUntil: "load" });
     await jerusalemReady(page);
+    await openDrawer(page);
     const slugs = await page.locator(".lane").evaluateAll((els) => els.map((e) => e.dataset.slug));
     assert.deepEqual(slugs.slice().sort(), [first, second].sort());
 

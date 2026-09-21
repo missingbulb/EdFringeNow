@@ -81,6 +81,37 @@ function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
   return { "jerusalemPlan.verdicts": JSON.stringify({ locked, noTime, noShow }) };
 }
 
+// The answers to the preference questions, as the page stores them. Only the
+// fields a case actually states are seeded; the page fills the rest with the
+// defaults a first visit gets.
+function jerusalemPrefs(overrides = {}) {
+  return { "jerusalemPlan.prefs": JSON.stringify(overrides) };
+}
+
+// Every meal switched on, at the page's own default hours — what the "three
+// meals" answer sets, spelled out so a case can seed it without driving the
+// question.
+function jerusalemMeals(places = {}) {
+  return [
+    { id: "breakfast", enabled: true, startMin: 8 * 60, endMin: 9 * 60, place: places.breakfast || "" },
+    { id: "lunch", enabled: true, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30, place: places.lunch || "" },
+    { id: "dinner", enabled: true, startMin: 18 * 60, endMin: 19 * 60, place: places.dinner || "" },
+  ];
+}
+
+/* The programme's drawer, opened. With the calendar carrying every constraint
+ * the reader sets, nothing inside the drawer is needed to work it, so it opens
+ * on the reader's own ask — and a case that asserts what is inside it has to
+ * make that ask first. */
+async function openDrawer(page) {
+  await page.evaluate(() => {
+    const drawer = document.getElementById("boardDrawer");
+    if (!drawer.open) drawer.open = true;
+  });
+  await page.waitForTimeout(150);
+  await settle(page);
+}
+
 /* Hand a contested hour on: click the band the stack of beaten cards leaves
  * showing past the winner's edge, which is where a reader's pointer lands.
  * Scrolled into view first — the band is addressed by viewport coordinates,
@@ -268,14 +299,12 @@ async function jerusalemReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
-  // With shows on the board, the date-window overlay is positioned from the
-  // laid-out day header two frames after the first render; capturing before
-  // that catches every piece of it at zero width. An empty board has no
-  // overlay to wait for.
+  // The window's two blockers are slid onto the boundaries of the columns they
+  // hold, which needs the calendar laid out; capturing before that catches
+  // them both stacked at the track's inline start.
   await page.waitForFunction(() => {
-    if (!document.querySelector("#lanes .lane")) return true;
-    const band = document.getElementById("railBand");
-    return band && band.style.width !== "";
+    const edge = document.querySelector(".sch-dateedge--end");
+    return edge && edge.style.insetInlineStart !== "";
   }, { timeout: 20000 });
   await settle(page);
 }
@@ -435,6 +464,9 @@ module.exports = {
   PLAN_FAVOURITES,
   jerusalemStarred,
   jerusalemVerdicts,
+  jerusalemPrefs,
+  jerusalemMeals,
+  openDrawer,
   clickStackBand,
   JERUSALEM_STARRED,
   nowReady,

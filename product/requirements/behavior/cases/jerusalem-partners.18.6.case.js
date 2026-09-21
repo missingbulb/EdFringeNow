@@ -22,7 +22,7 @@ module.exports = {
     // and the link has to follow it.
     assert.equal(url.searchParams.get("checkin"), "2026-10-18");
     assert.equal(url.searchParams.get("checkout"), "2026-10-22");
-    await page.locator("#hStart").focus();
+    await page.locator(".sch-dateedge--start").focus();
     await page.keyboard.press("ArrowRight");
     await settle(page);
     const moved = new URL(await page.locator(".trip-link").first().getAttribute("href"));

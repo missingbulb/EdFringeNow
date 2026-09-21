@@ -2,7 +2,7 @@
 const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 module.exports = {
-  description: "the header, the board's heading and the plan's controls in Russian and in Japanese",
+  description: "the header, the board's heading and the preference questions in Russian and in Japanese",
   page: "/planJerusalem/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
@@ -18,7 +18,7 @@ module.exports = {
       await settle(page);
       strips.push(await t.element(".site-header"));
       strips.push(await t.element(".page-head"));
-      strips.push(await t.element(".plan-controls"));
+      strips.push(await t.element("#prefs"));
     }
     return t.stitchV(strips, 8);
   },
