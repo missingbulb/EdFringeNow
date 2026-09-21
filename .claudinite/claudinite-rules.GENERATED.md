@@ -10,3 +10,4 @@
 @shared/packs/public-website/RULES.md
 @shared/packs/spec-driven-product/RULES.md
 @local/packs/edfringe-now/RULES.md
+@temp/packs/current_user/RULES.md

@@ -39,6 +39,9 @@ export const SKILLS_DIR = 'skills';
 // conventional names because two readers with nothing else in common agree on it:
 // the vendor set drops the folder from every mount, and the checks judge it.
 export const PROVENANCE_DIR = 'provenance';
+// A shelf pack's version log, kept under its provenance folder: derived by the canon's
+// own task, read by maintenance, never an element and never vendored.
+export const VERSIONS_FILE = 'VERSIONS.md';
 
 // A rule's scope is its PLACEMENT — which was always true, and used to mean the
 // manifest list it sat in. It now means the directory it sits in, one rung out:
@@ -113,3 +116,18 @@ export function applyPackConventions(mod, packDir, name) {
   if (mod === null || typeof mod !== 'object' || Array.isArray(mod)) return mod;
   return { ...packConventions(packDir, name), ...mod };
 }
+
+// THE SESSION-PREPARE STEP a pack may ship: the phase that runs before anything reads the
+// session's pack set, for a pack that has to PUT SOMETHING THERE for those readers to find
+// (run-pack-session-start.mjs states the phase). Discovered structurally, like every other
+// convention here - a pack contributes one by shipping the file.
+//
+// The name and the predicate live in this module, not with the runner that spawns it,
+// because the rules index also has to ask the question (a repo whose packs copy nothing
+// imports nothing copied) and the runner is a CLI entry point: importing it to borrow one
+// constant runs it.
+export const PREPARE_FILE = 'session-prepare.mjs';
+
+// A pack the registry loaded always carries `dir`; one a caller built by hand may not, and
+// the answer for a pack with no directory is that it ships nothing.
+export const shipsPrepareStep = (pack) => typeof pack?.dir === 'string' && existsSync(join(pack.dir, PREPARE_FILE));
