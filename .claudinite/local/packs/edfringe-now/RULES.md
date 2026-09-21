@@ -99,6 +99,14 @@ EdFringeNow has never had one — skip the search on step one, and write the PR
 body from the commit message. If a template is ever added, it will be at
 `.github/pull_request_template.md` and this paragraph goes with it.
 
+### Filing a `verify-in-production` — non-user-facing infra only
+
+- **Reaching for `verify-in-production` after merging a change to what the site renders or
+  does** — file nothing: the goldens, `npm run test:ui` and a look at the served page all run
+  before the merge and are the mechanism that comes back. Reserve it for non-user-facing infra
+  whose effect first appears in a deploy, a scheduler slot or a CI lane.
+  (verify-in-production-infra-only)
+
 ### Verifying UI changes visually (the `site/index.html` page and everything under `site/plan/`)
 
 Visual verification of the pages **is** available in this sandbox. Don't skip it
