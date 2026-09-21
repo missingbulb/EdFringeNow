@@ -1,5 +1,5 @@
 "use strict";
-const { planReady, planFavourites, planPrefs } = require("../../shared/case-helpers");
+const { planReady, planFavourites, planPrefs, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "export buttons are disabled while nothing is scheduled; the built-here note stands",
@@ -12,7 +12,7 @@ module.exports = {
     await page.goto(`${origin}/plan/`, { waitUntil: "load" });
     await planReady(page);
     await page.waitForSelector("#calWrap:not([hidden])");
-    await page.waitForTimeout(400);
+    await settle(page);
     assert.ok(await page.locator("#downloadCsvBtn").isDisabled(), "CSV disabled");
     assert.ok(await page.locator("#importIcsBtn").isDisabled(), "ICS disabled");
     assert.equal(

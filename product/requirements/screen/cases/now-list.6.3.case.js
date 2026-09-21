@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowSettings } = require("../../shared/case-helpers");
+const { nowStorage, nowSettings, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "Soonest re-orders the list under HH:MM group headings",
@@ -17,6 +17,6 @@ module.exports = {
   async drive(page) {
     await page.click('.view-btn[data-mode="soonest"]');
     await page.waitForSelector(".shows-group-head");
-    await page.waitForTimeout(300);
+    await settle(page);
   },
 };

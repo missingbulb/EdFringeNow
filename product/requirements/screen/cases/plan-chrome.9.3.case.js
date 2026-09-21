@@ -16,6 +16,6 @@ module.exports = {
   async drive(page) {
     await uploadFile(page, "favourites.csv", FIXTURE_CSV());
     await page.waitForSelector("#errorState:not([hidden])", { timeout: 20000 });
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

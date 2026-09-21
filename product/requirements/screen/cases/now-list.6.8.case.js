@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowSettings } = require("../../shared/case-helpers");
+const { nowStorage, nowSettings, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "empty, with commitment: 'Nothing fits before your next commitment…'",
@@ -19,6 +19,6 @@ module.exports = {
       return lab && lab.textContent.includes("21:30");
     });
     await page.click('.show-pick:has-text("Masala")');
-    await page.waitForTimeout(400);
+    await settle(page);
   },
 };

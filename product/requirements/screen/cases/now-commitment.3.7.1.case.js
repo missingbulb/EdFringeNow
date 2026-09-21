@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage } = require("../../shared/case-helpers");
+const { nowStorage, wheelsSettled } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the wheel's minutes step by five",
@@ -8,6 +8,6 @@ module.exports = {
   async drive(page) {
     await page.click(".cta-trigger");
     await page.waitForSelector("#constraintPanel:not([hidden])");
-    await page.waitForTimeout(400); // the wheels sync on the next frame
+    await wheelsSettled(page);
   },
 };

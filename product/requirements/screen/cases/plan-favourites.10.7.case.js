@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites } = require("../../shared/case-helpers");
+const { planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "Clear asks before it wipes: idle, armed, cleared",
@@ -11,11 +11,11 @@ module.exports = {
     const region = () => t.unionClip(["#clearFavBtn", ".lane >> nth=0"]);
     const idle = await region();
     await page.click("#clearFavBtn");
-    await page.waitForTimeout(250);
+    await settle(page);
     const armed = await region();
     await page.click("#clearFavBtn");
     await page.waitForSelector("#intakeStage .dropzone");
-    await page.waitForTimeout(300);
+    await settle(page);
     return t.animate([idle, armed, await t.element("#board")]);
   },
 };

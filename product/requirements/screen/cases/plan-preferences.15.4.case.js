@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites } = require("../../shared/case-helpers");
+const { planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "conflict tip: 'Every performance of this show runs during your lunch break (12:30–13:30)…'",
@@ -13,6 +13,6 @@ module.exports = {
   async drive(page) {
     await page.hover('.lane-status button:has-text("Lunch conflict")');
     await page.waitForSelector("#calTip:not([hidden])");
-    await page.waitForTimeout(250);
+    await settle(page);
   },
 };

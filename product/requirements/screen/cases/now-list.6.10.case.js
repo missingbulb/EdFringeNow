@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowSettings } = require("../../shared/case-helpers");
+const { nowStorage, nowSettings, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "Show more appends the next page",
@@ -12,7 +12,7 @@ module.exports = {
     const region = { x: 0, y: last.y, width: 390, height: 300 };
     const before = await t.clip(region);
     await page.click("#showMore");
-    await page.waitForTimeout(400);
+    await settle(page);
     return t.animate([before, await t.clip(region)]);
   },
 };

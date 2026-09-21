@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites } = require("../../shared/case-helpers");
+const { planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "Search tools: six facet chips; genre panel open with counts and everything!",
@@ -16,6 +16,6 @@ module.exports = {
     await page.waitForSelector("#ssTools:not([hidden])");
     await page.click('[data-panel="ssfGenrePanel"]');
     await page.waitForSelector("#ssfGenreOptions label");
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

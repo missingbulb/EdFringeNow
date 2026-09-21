@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites } = require("../../shared/case-helpers");
+const { planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the optimizer popup: day count, 'Include the most weekends' checked, Find best dates",
@@ -13,6 +13,6 @@ module.exports = {
   async drive(page) {
     await page.click("#railOptBtn");
     await page.waitForSelector("#railPop:not([hidden])");
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

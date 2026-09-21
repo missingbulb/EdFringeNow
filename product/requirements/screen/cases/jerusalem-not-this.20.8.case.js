@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady } = require("../../shared/case-helpers");
+const { jerusalemReady, settle } = require("../../shared/case-helpers");
 
 // Tuesday at 20:00, which three one-night shows wanted: refusing the show that
 // took it re-drafts the hour from whoever is left, and the stack shrinks by the
@@ -14,9 +14,9 @@ module.exports = {
   async capture(page, t) {
     const before = await t.element(`${TUE} .sch-body`);
     await page.hover(`${TUE} .sch-slot >> nth=0 >> .sch-show`);
-    await page.waitForTimeout(200);
+    await settle(page);
     await page.click('#calPreview [data-verdict="noShow"]');
-    await page.waitForTimeout(350);
+    await settle(page);
     return t.animate([before, await t.element(`${TUE} .sch-body`)]);
   },
 };

@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowSettings, nowReady } = require("../../shared/case-helpers");
+const { nowStorage, nowSettings, nowReady, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "a pin click does not scroll the page",
@@ -13,7 +13,7 @@ module.exports = {
     assert.ok(await page.locator("#shows").isHidden(), "list hidden in map view");
     const before = await page.evaluate(() => window.scrollY);
     await page.click(".genre-pin >> nth=0");
-    await page.waitForTimeout(400);
+    await settle(page);
     assert.ok(await page.locator(".gpin--leg, .gpin--selected").count() > 0, "a pin took the selection");
     assert.equal(await page.evaluate(() => window.scrollY), before, "no scroll on pin click");
   },

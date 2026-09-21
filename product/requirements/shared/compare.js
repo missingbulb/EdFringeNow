@@ -65,6 +65,10 @@ function compareToGolden(name, actualBuffer, expectedPath) {
   const { width, height } = actual;
   const diff = Buffer.alloc(width * height * 4);
   let diffPixels = 0;
+  // Where the difference is, not just how much of it there is. The failure
+  // artifacts are uploaded to a host a session cannot reach, so for anyone
+  // reading this in a CI log the bounding box IS the diff image.
+  const bounds = { x0: Infinity, y0: Infinity, x1: -1, y1: -1 };
   for (let i = 0; i < width * height; i++) {
     const o = i * 4;
     const same =
@@ -80,6 +84,12 @@ function compareToGolden(name, actualBuffer, expectedPath) {
       diff[o + 3] = 255;
     } else {
       diffPixels++;
+      const x = i % width;
+      const y = (i - x) / width;
+      if (x < bounds.x0) bounds.x0 = x;
+      if (y < bounds.y0) bounds.y0 = y;
+      if (x > bounds.x1) bounds.x1 = x;
+      if (y > bounds.y1) bounds.y1 = y;
       diff[o] = 255;
       diff[o + 1] = 0;
       diff[o + 2] = 0;
@@ -94,10 +104,19 @@ function compareToGolden(name, actualBuffer, expectedPath) {
     ok: false,
     reason:
       `${name}: ${diffPixels} of ${width * height} pixels differ ` +
-      `(${((diffPixels / (width * height)) * 100).toFixed(2)}%). ` +
+      `(${((diffPixels / (width * height)) * 100).toFixed(2)}%), ${describeRegion(bounds, width, height)}. ` +
       `See ${actualPath} and ${diffPath}. If the change is intended, the re-baselining ` +
       "procedure applies: surface actual/expected/diff to the owner and refresh only on approval.",
   };
+}
+
+// The differing pixels' bounding box, in words: where in the image it sits and
+// how big a share of it moved, so a red lane reads without its diff image.
+function describeRegion({ x0, y0, x1, y1 }, width, height) {
+  const w = x1 - x0 + 1;
+  const h = y1 - y0 + 1;
+  const band = y0 < height / 3 ? "top" : y0 < (2 * height) / 3 ? "middle" : "bottom";
+  return `all of it inside ${w}x${h} at (${x0},${y0}) — the ${band} of a ${width}x${height} image`;
 }
 
 module.exports = { compareToGolden };

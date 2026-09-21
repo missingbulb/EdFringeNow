@@ -1,4 +1,5 @@
 "use strict";
+const { settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "category rows first: 'Genre Comedy — Filter to N shows'",
@@ -15,6 +16,6 @@ module.exports = {
   async drive(page) {
     await page.fill("#ssInput", "comedy");
     await page.waitForSelector(".ss-row--facet");
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

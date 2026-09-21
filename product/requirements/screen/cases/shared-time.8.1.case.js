@@ -1,5 +1,5 @@
 "use strict";
-const { nowStorage, nowReady, planFavourites, planReady } = require("../../shared/case-helpers");
+const { nowStorage, nowReady, planFavourites, planReady, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "both pages run the festival day to 06:00",
@@ -10,14 +10,14 @@ module.exports = {
   async capture(page, t) {
     await page.click(".cta-trigger");
     await page.waitForSelector("#constraintPanel:not([hidden])");
-    await page.waitForTimeout(400);
+    await settle(page);
     await page.evaluate(() => {
       for (const id of ["hourWheel", "minWheel"]) {
         const el = document.getElementById(id);
         el.scrollTop = el.scrollHeight;
       }
     });
-    await page.waitForTimeout(600);
+    await settle(page);
     const nowWheel = await t.element(".wheel-time");
 
     await page.goto(`${page.url().split("/").slice(0, 3).join("/")}/plan/`, { waitUntil: "load" });

@@ -1,5 +1,5 @@
 "use strict";
-const { uploadFile, FIXTURE_CSV } = require("../../shared/case-helpers");
+const { uploadFile, FIXTURE_CSV, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "uploading the favourites CSV fills the board",
@@ -9,7 +9,7 @@ module.exports = {
     const empty = await t.element("#board");
     await uploadFile(page, "favourites.csv", FIXTURE_CSV());
     await page.waitForSelector("#calWrap:not([hidden])");
-    await page.waitForTimeout(400);
+    await settle(page);
     return t.animate([empty, await t.element("#board")]);
   },
 };

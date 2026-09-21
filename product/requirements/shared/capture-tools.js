@@ -19,11 +19,29 @@ const GAP_RGB = [226, 228, 233];
 // clicking it, so a rect measured before a click means something else after
 // one. Converting here, once, at the moment of measurement, makes every rect
 // in this module document-space and immune to later scrolling.
+// How many times a box may still be moving before we take it as arrived, and
+// the frame budget for it to stop. A popup is placed after it is unhidden, and
+// a panel's height lands a frame after its content — so the element a golden
+// crops to is routinely still moving when the DOM around it has gone quiet.
+// Waiting on the DOM cannot see that; the box itself can.
+const RECT_STABLE_READS = 2;
+const RECT_MAX_READS = 20;
+
 async function rectOf(page, selector) {
-  const box = await page.locator(selector).first().boundingBox();
-  if (!box) throw new Error(`no visible element for ${selector}`);
-  const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
-  return { x: box.x + sx, y: box.y + sy, width: box.width, height: box.height };
+  const read = async () => {
+    const box = await page.locator(selector).first().boundingBox();
+    if (!box) throw new Error(`no visible element for ${selector}`);
+    const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
+    return { x: box.x + sx, y: box.y + sy, width: box.width, height: box.height };
+  };
+  let previous = await read();
+  let same = 0;
+  for (let i = 0; i < RECT_MAX_READS && same < RECT_STABLE_READS; i++) {
+    const next = await read();
+    same = JSON.stringify(next) === JSON.stringify(previous) ? same + 1 : 0;
+    previous = next;
+  }
+  return previous;
 }
 
 function union(rects) {

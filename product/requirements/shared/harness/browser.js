@@ -254,6 +254,16 @@ ${[
   return file;
 }
 
+// A case that installs a winding clock has the frames themselves under its
+// control: Playwright's clock fakes requestAnimationFrame along with the timers,
+// so a frame-driven wait never resolves on such a page. Waits ask here rather
+// than infer it from the clock's behaviour.
+const pausedClockPages = new WeakSet();
+
+function hasPausedClock(page) {
+  return pausedClockPages.has(page);
+}
+
 let browserPromise = null;
 
 async function launchBrowser() {
@@ -340,9 +350,19 @@ async function newPage(opts = {}) {
     // something the passage of time is supposed to change.
     await page.clock.install({ time: now });
     await page.clock.pauseAt(now);
+    pausedClockPages.add(page);
   } else {
     await page.clock.setFixedTime(now);
   }
+  // A promise that rejects with nobody waiting fires no error event, so a
+  // failure inside an async callback leaves no trace at all — and a case then
+  // reports a page that never arrived, with nothing to say why. Route it to
+  // the console, which the runner reads back on a failure.
+  await page.addInitScript(`
+    window.addEventListener("unhandledrejection", (e) => {
+      console.error("unhandled rejection:", (e.reason && e.reason.stack) || String(e.reason));
+    });
+  `);
   await page.addInitScript(SEEDED_RANDOM);
   // The CSS freeze can't stop Web Animations API animations (the planner's
   // FLIP board diff) — stub element.animate so every WAAPI animation lands on
@@ -360,6 +380,26 @@ async function newPage(opts = {}) {
       return anim;
     };
   `);
+  // The CSS freeze sets `scroll-behavior: auto`, but a call that names
+  // `behavior: "smooth"` itself outranks the stylesheet — so the product's own
+  // smooth scrolls stayed animated, and a scroll in flight is invisible to a
+  // wait that watches the DOM. Land every scroll instantly instead, the same
+  // way element.animate is landed on its end state above.
+  await page.addInitScript(`
+    (() => {
+      const instant = (options) =>
+        options && typeof options === "object" ? { ...options, behavior: "auto" } : options;
+      for (const target of [window, Element.prototype]) {
+        for (const name of ["scroll", "scrollTo", "scrollIntoView", "scrollBy"]) {
+          const original = target[name];
+          if (typeof original !== "function") continue;
+          target[name] = function (...args) {
+            return original.apply(this, [instant(args[0]), ...args.slice(1)]);
+          };
+        }
+      }
+    })();
+  `);
   await page.addInitScript(
     `document.addEventListener("DOMContentLoaded", () => {
        const s = document.createElement("style");
@@ -375,4 +415,4 @@ async function newPage(opts = {}) {
   return { page, context, origin: ORIGIN };
 }
 
-module.exports = { newPage, closeBrowser, launchBrowser, ORIGIN, VIEWPORTS, PINNED_PLAYWRIGHT };
+module.exports = { newPage, closeBrowser, launchBrowser, hasPausedClock, ORIGIN, VIEWPORTS, PINNED_PLAYWRIGHT };

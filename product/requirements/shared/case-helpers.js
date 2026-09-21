@@ -6,6 +6,7 @@
 const path = require("node:path");
 const fs = require("node:fs");
 const { REFERENCE_NOW_UTC_MS } = require("./reference-now");
+const { hasPausedClock } = require("./harness/browser");
 
 const FIXTURES_DIR = path.join(__dirname, "fixtures");
 
@@ -124,9 +125,116 @@ async function clickStackBand(page, slot) {
 }
 
 // ------------------------------------------------------------------- waits --
+// "Settled" is a state the page reaches, not a duration to sit out: the fonts
+// are in, every image has decoded, the page has stopped scrolling, and the DOM
+// has stopped changing across consecutive animation frames. A page that never
+// goes quiet — something re-rendering on an interval — is captured at the frame
+// cap rather than held forever, which is the old blind wait's behaviour and its
+// worst case.
+//
+// The scroll position is watched because a scroll is NOT a DOM mutation: a
+// gesture that sends the page smoothly somewhere leaves the DOM still while the
+// view is a third of the way there, and an observer alone calls that settled.
+// The page must hold still for longer than the product's longest debounce, or
+// "quiet" catches the gap between a gesture and the reaction it schedules: the
+// time wheel reads its settled value 130ms after scrolling stops, and the
+// planner's search runs 120ms after the last keystroke. Anything slower than
+// this has to be waited for by name, on the case.
+const QUIET_MS = 150;
+const QUIET_FRAMES = 2;
+const MAX_FRAMES = 60;
+// Nothing here may wait forever. A frame wait is raced against a timer, since
+// requestAnimationFrame is throttled to a standstill on a page the browser
+// considers hidden — several at once, and one of them stalls where a lone page
+// never would. The whole wait is bounded from this side too, so a page that
+// cannot go quiet reports which case it was instead of hanging the lane.
+const FRAME_TIMEOUT_MS = 50;
+const SETTLE_TIMEOUT_MS = 5000;
+
+async function bounded(promise, ms, what) {
+  let timer;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`${what} did not finish within ${ms}ms`)), ms);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function settle(page) {
-  await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(250);
+  if (hasPausedClock(page)) {
+    // The frames belong to the case, which winds them deliberately — there is
+    // nothing here to wait out but the loading the network still owes.
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      const pending = [...document.images].filter((i) => !i.complete);
+      await Promise.all(pending.map((i) => i.decode().catch(() => {})));
+    });
+    return;
+  }
+  await bounded(
+    page.evaluate(
+      async ({ quietFrames, quietMs, maxFrames, frameTimeoutMs }) => {
+      const frame = () =>
+        new Promise((resolve) => {
+          let done = false;
+          const finish = () => {
+            if (done) return;
+            done = true;
+            resolve();
+          };
+          requestAnimationFrame(finish);
+          setTimeout(finish, frameTimeoutMs);
+        });
+      await document.fonts.ready;
+      let dirty = false;
+      const observer = new MutationObserver(() => {
+        dirty = true;
+      });
+      observer.observe(document.documentElement, {
+        subtree: true,
+        childList: true,
+        attributes: true,
+        characterData: true,
+      });
+      try {
+        let quiet = 0;
+        let quietSince = performance.now();
+        for (let i = 0; i < maxFrames; i++) {
+          if (quiet >= quietFrames && performance.now() - quietSince >= quietMs) break;
+          // An image still loading will change the layout when it lands, so it
+          // is decoded first and the quiet count starts over.
+          const pending = [...document.images].filter((img) => !img.complete);
+          if (pending.length) {
+            await Promise.all(pending.map((img) => img.decode().catch(() => {})));
+            quiet = 0;
+            quietSince = performance.now();
+            continue;
+          }
+          dirty = false;
+          const before = window.scrollX + "," + window.scrollY;
+          await frame();
+          const moved = before !== window.scrollX + "," + window.scrollY;
+          if (dirty || moved) {
+            quiet = 0;
+            quietSince = performance.now();
+          } else {
+            quiet++;
+          }
+        }
+      } finally {
+        observer.disconnect();
+      }
+    },
+      { quietFrames: QUIET_FRAMES, quietMs: QUIET_MS, maxFrames: MAX_FRAMES, frameTimeoutMs: FRAME_TIMEOUT_MS }
+    ),
+    SETTLE_TIMEOUT_MS,
+    `settle(${page.url()})`
+  );
 }
 
 // Now page is ready once the list (or its empty-state note) has rendered, the
@@ -141,9 +249,12 @@ async function nowReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
-  // The app boots on its built-in simulated day and only adopts the (fixed)
-  // real clock once the in-UK geolocation fix lands — wait for the reference
-  // day to actually be in force, or a slow fix leaves the preset day rendered.
+  // The app boots on a simulated day and moves to the pinned one only once the
+  // in-UK geolocation fix lands. The page says when that is done: the date
+  // label flips BEFORE the new day's shows are fetched and every panel, count
+  // and list rebuilt from them, so waiting on the label caught the page still
+  // showing what it booted with — an empty list reading "nothing reachable".
+  await page.waitForSelector("body[data-settled]", { timeout: 20000 });
   await page.waitForFunction(() => {
     const l = document.getElementById("constraintDateLabel");
     return l && l.textContent.includes("15 Aug");
@@ -198,16 +309,149 @@ async function jerusalemReady(page) {
   await settle(page);
 }
 
+// Wait until a value the page computes stops changing across consecutive
+// animation frames — the hook for anything the product positions or measures a
+// frame or two after the gesture that caused it, where the element exists from
+// the start and only its state is in flight.
+async function stableValue(page, readFn, { quietFrames = 2, maxFrames = 40 } = {}) {
+  await bounded(
+    page.evaluate(
+      async ({ src, quiet, max, frameTimeoutMs }) => {
+        const read = new Function("return (" + src + ")")();
+        let last = JSON.stringify(read());
+        let same = 0;
+        for (let i = 0; i < max && same < quiet; i++) {
+          await new Promise((resolve) => {
+            let done = false;
+            const finish = () => {
+              if (done) return;
+              done = true;
+              resolve();
+            };
+            requestAnimationFrame(finish);
+            setTimeout(finish, frameTimeoutMs);
+          });
+          const now = JSON.stringify(read());
+          same = now === last ? same + 1 : 0;
+          last = now;
+        }
+      },
+      { src: readFn.toString(), quiet: quietFrames, max: maxFrames, frameTimeoutMs: FRAME_TIMEOUT_MS }
+    ),
+    SETTLE_TIMEOUT_MS,
+    "stableValue"
+  );
+}
+
+// The time wheels are positioned from state on the frame after their panel is
+// shown, and re-applied a frame later when the first attempt found no laid-out
+// height to scroll. Both have landed once each wheel's scroll position holds
+// still and the selected item is marked.
+async function wheelsSettled(page) {
+  await page.waitForSelector("#hourWheel .wheel-item.sel");
+  await stableValue(page, () => ["hourWheel", "minWheel"].map((id) => (document.getElementById(id) || {}).scrollTop));
+  await settle(page);
+}
+
+// The map is drawn once every tile in view has loaded — a tile still in flight
+// paints as blank, and the layers above it (pins, clusters, the reach circle)
+// are placed as the tiles arrive.
+async function tilesSettled(page) {
+  await page.waitForSelector(".leaflet-tile-loaded");
+  await page.waitForFunction(() => {
+    const tiles = [...document.querySelectorAll(".leaflet-tile")];
+    return tiles.length > 0 && tiles.every((t) => t.classList.contains("leaflet-tile-loaded"));
+  });
+  await stableValue(page, () => document.querySelectorAll(".leaflet-marker-icon, .leaflet-tile").length);
+  await settle(page);
+}
+
+// Put the page back at the top and wait for the frame that paints it there,
+// rather than for a duration long enough to cover it. Smooth scrolling is
+// frozen, so the position itself lands synchronously.
+async function scrollToTop(page) {
+  await page.evaluate(() => window.scrollTo(0, 0));
+  if (hasPausedClock(page)) return;
+  await bounded(
+    page.evaluate(
+      (frameTimeoutMs) =>
+        new Promise((resolve) => {
+          let done = false;
+          const finish = () => {
+            if (done) return;
+            done = true;
+            resolve();
+          };
+          requestAnimationFrame(finish);
+          setTimeout(finish, frameTimeoutMs);
+        }),
+      FRAME_TIMEOUT_MS
+    ),
+    SETTLE_TIMEOUT_MS,
+    "scrollToTop"
+  );
+}
+
+// Perform a gesture whose consequence arrives later than the gesture itself —
+// a file read, a fetch, anything behind a debounce — and wait for it. The page
+// is quiet in the gap between the two, so waiting for quiet alone would return
+// before the reaction; this waits for the DOM to change at least once first.
+async function awaitReaction(page, gesture) {
+  await page.evaluate(() => {
+    window.__reacted = false;
+    window.__reactionObserver = new MutationObserver(() => {
+      window.__reacted = true;
+    });
+    window.__reactionObserver.observe(document.documentElement, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      characterData: true,
+    });
+  });
+  await gesture();
+  try {
+    await page.waitForFunction(() => window.__reacted);
+  } finally {
+    await page.evaluate(() => {
+      window.__reactionObserver.disconnect();
+      delete window.__reactionObserver;
+      delete window.__reacted;
+    });
+  }
+  await settle(page);
+}
+
 // ------------------------------------------------------------------ drives --
 async function openPanel(page, triggerSelector) {
   await page.click(triggerSelector);
-  await page.waitForTimeout(150);
+  await settle(page);
+}
+
+// Page the whole list in. A paging click appends asynchronously, so the
+// button's visibility only means anything once the appended page has landed —
+// re-reading it straight after the click can catch it mid-render and leave the
+// list half-paged, with the card a case was scrolling towards never arriving.
+async function revealWholeList(page) {
+  const more = page.locator("#showMore");
+  const cards = page.locator(".show-item");
+  // Stop when the list stops growing, not when the button goes: the button
+  // outlives the last page as "Show 0 more · 0 left", so trusting it alone can
+  // spin. A paging click also appends asynchronously, so each page has to land
+  // before the next count means anything.
+  for (let before = -1; before !== (await cards.count()); ) {
+    before = await cards.count();
+    if (!(await more.isVisible())) return;
+    await more.click();
+    await settle(page);
+  }
 }
 
 // Upload a favourites file into the planner's intake from raw bytes.
 async function uploadFile(page, name, content, mimeType = "text/csv") {
-  await page.setInputFiles("#csvInput", { name, mimeType, buffer: Buffer.from(content) });
-  await page.waitForTimeout(250);
+  await awaitReaction(page, () =>
+    page.setInputFiles("#csvInput", { name, mimeType, buffer: Buffer.from(content) })
+  );
 }
 
 const FIXTURE_CSV = () => fs.readFileSync(path.join(FIXTURES_DIR, "favourites.csv"), "utf8");
@@ -230,7 +474,13 @@ module.exports = {
   jerusalemReady,
   plan2Ready,
   settle,
+  stableValue,
+  wheelsSettled,
+  tilesSettled,
+  scrollToTop,
+  awaitReaction,
   openPanel,
+  revealWholeList,
   uploadFile,
   FIXTURE_CSV,
   FIXTURES_DIR,

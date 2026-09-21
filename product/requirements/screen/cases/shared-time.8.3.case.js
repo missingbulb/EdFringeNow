@@ -13,7 +13,7 @@ module.exports = {
   async capture(page, t) {
     await page.click("#debugToggle");
     await page.waitForSelector("#debugPop:not([hidden])");
-    await page.waitForTimeout(200);
+    await settle(page);
     return t.element("#debugPop");
   },
 };

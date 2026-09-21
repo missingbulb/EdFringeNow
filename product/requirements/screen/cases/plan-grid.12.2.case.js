@@ -1,5 +1,5 @@
 "use strict";
-const { planFavourites } = require("../../shared/case-helpers");
+const { planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the Legend popup: the grid's seven-entry colour vocabulary, verbatim",
@@ -13,6 +13,6 @@ module.exports = {
   async drive(page) {
     await page.click("#legendBtn");
     await page.waitForSelector("#calLegend:not([hidden])");
-    await page.waitForTimeout(200);
+    await settle(page);
   },
 };

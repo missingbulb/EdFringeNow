@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the header, the board's heading and the preference questions in Russian and in Japanese",
@@ -15,7 +15,7 @@ module.exports = {
       await page.selectOption("#langSelect", code);
       await page.waitForFunction((c) => document.documentElement.lang === c, code);
       await page.evaluate(() => document.fonts.ready);
-      await page.waitForTimeout(200);
+      await settle(page);
       strips.push(await t.element(".site-header"));
       strips.push(await t.element(".page-head"));
       strips.push(await t.element("#prefs"));

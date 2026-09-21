@@ -1,5 +1,5 @@
 "use strict";
-const { planReady, planFavourites } = require("../../shared/case-helpers");
+const { planReady, planFavourites, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "clicking a conflict pill jumps to the culpable setting and flashes it",
@@ -23,7 +23,7 @@ module.exports = {
       }).observe(document.body, { subtree: true, attributes: true, attributeFilter: ["class"] });
     });
     await page.click('.lane-status button:has-text("Lunch conflict")');
-    await page.waitForTimeout(600);
+    await settle(page);
     const flashed = await page.evaluate(() => window.__flashed);
     assert.ok(flashed.length > 0, "a control flashed");
     assert.ok(flashed.includes(true), "the lunch control was among the flashed");
