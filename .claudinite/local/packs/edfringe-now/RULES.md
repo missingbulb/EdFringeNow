@@ -44,14 +44,14 @@ benefit over the one-line fix.
   twice this window the owner's free-text answer named the restructure nobody had offered.
   (askuserquestion-structural-option)
 
-### Delivering a PR for a `[claudinite-work]` item — never `Closes #N` on that item's own issue
+### Delivering a PR for any work item's own issue
 
-That's for an issue you filed yourself; a queue item is different. GitHub's native auto-close on
-merge beats `converge-item.mjs` to the terminal transition, leaving the issue closed but still
-wearing its live `task:status:running-agent` label. On 2026-09-06 (#633) a PR body's
-`Closes #633` did exactly that — convergence then refused with "already closed — it was
-converged once already," and recovery cost reopening the issue and re-running convergence.
-Reference the item without closing it and let convergence own the close.
+- **Never `Closes #N` naming the item's own tracking issue** — that's for an issue you filed
+  yourself; a work item's own issue is different, whether a bot-filed `[claudinite-work]` queue
+  item or a person's marked ad-hoc issue. GitHub's native auto-close on merge beats
+  `converge-item.mjs` to the terminal transition, leaving the issue closed but still wearing its
+  live status label, and recovery costs reopening it and re-running convergence. Reference the
+  item without closing it and let convergence own the close. (never-closes-n-own-issue)
 
 ### `Comment class:` arms rules — repo tooling is never a `feature` here
 
@@ -928,6 +928,11 @@ is a real finding about the UI, not just a testing limitation.
 - Re-running the builder re-casts every golden. That is a re-baselining: run it
   only with the owner's approval, and land builder + fixtures + goldens +
   gallery in one reviewed change.
+- **Invoking `build-fixtures.js` at all — even a one-off run against a scratch edit you plan to
+  discard** — writes into the frozen `fixtures/data/` tree as it goes, so a script that errors
+  partway through can leave one committed fixture silently drifted while the rest stay clean;
+  `git diff --stat` the fixtures dir itself, not just the file you meant to touch, before
+  deciding there is nothing to revert. (build-fixtures-partial-drift)
 
 ### Golden approval, concretely
 
