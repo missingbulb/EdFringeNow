@@ -1,0 +1,23 @@
+## 2026-08-10 · born · Executable UI/UX requirements (#316)
+- **Source:** the owner's review passes on the executable spec and its harness, #313.
+- **Reason:** ShoutsAndWhispers' precedent: APNG is lossless, so the golden stays a faithful pixel
+  record, and byte-deterministic where GIF's palette and dithering are not.
+- **Actor:** @missingbulb (owner).
+- **Model:** Claude Fable 5
+- **Mechanism:** a rule in `edfringe-requirements`' RULES.md.
+- **Rejected:** GIF.
+- **Landed:** #316, Closes #313
+
+## 2026-08-16 · reworded · the lossless and byte-identity rationale cut to canon (#384)
+- **Reason:** executable-requirements now states the general lossless and byte-identity rule, so
+  only the repo-specific residue stays.
+- **Actor:** the growth-dedup run, merged by @missingbulb (owner).
+- **Model:** Claude
+- **Landed:** #384, Refs #109
+
+## 2026-09-05 · moved · into edfringe-now (#613)
+- **Reason:** the three local packs merged into one; see `_pack`.
+- **Actor:** @missingbulb (owner).
+- **Model:** Claude
+- **Mechanism:** the same carrier, now in `edfringe-now`.
+- **Landed:** #613, Closes #612

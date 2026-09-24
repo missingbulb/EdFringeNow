@@ -1,32 +1,21 @@
-# edfringe-data
+# edfringe-now - the data-pipeline checks
 
-EdFringeNow's data-pipeline pack: the edfringe.com scrape (`scraper/`) and the
-committed data layer it produces (`data/`). Split out of the general `edfringe`
-local pack because it activates on a different trigger — touching the scraper or
-the data files, not the UI — and carries this repo's external-API and wire-format
-knowledge.
+The data-pipeline section of `RULES.md` carries the judgment for the edfringe.com scrape
+(`scraper/`) and the committed data it produces (`data/`, `site/data/`). What has a signature is
+enforced by a check:
 
-| Section | How enforced |
-|---|---|
-| Live API unreachable from a session | prose |
-| `ticketStatus`, not `soldOut` | prose |
-| Committed data is generated output | prose + check `edfringe-data-dir-is-generator-output` |
-| Wire format is a four-file change | check `edfringe-lookup-indices` + prose |
+- `edfringe-lookup-indices` - every positional reference in the wire files resolves in
+  `site/data/venues.json`.
+- `edfringe-normalizer-selftest-in-verify` - `scripts/verify.sh` runs `normalize.py --selftest`
+  as a command, not only as a step label.
+- `edfringe-data-dir-is-generator-output` - every file under `data/` and `site/data/` has a
+  generator's shape.
 
-## The check
+## `edfringe-lookup-indices`
 
-`edfringe-lookup-indices` (`lookup-indices.mjs`) asserts that every positional
-reference in the committed wire files resolves inside `site/data/venues.json`'s lookup
-lists: the day files' `genre` / `room` / `subs` / `ts` and `shows.min.json`'s
-`g` / `rm` / `sg` / `ar` / `p[].t` (`-1` is the producer's "unknown" and passes).
-It is dependency-free — it returns plain finding objects rather than importing
-the vendored engine's helpers, so it loads without the mount. Its red-first
-fixture is `pack.test.mjs`, run by `npm test` / `scripts/verify.sh`; the last
-fixture runs the rule over this repo's real committed data, so the check is a
-live gate on every scrape commit and not just a unit test of itself.
-
-Distilled from this repo: `scraper/normalize.py` (`build_lookups`,
-`build_day_files`, `minify_master`), `scraper/refresh_ticket_status.py`,
-`scraper/SCRAPING.md`, `scraper/README.md`, `site/js/app.js` (`adaptShow`,
-`NO_TICKETS_STATUSES`), `site/plan/lib/hydrate.js`, `.github/workflows/scrape.yml`,
-`.gitignore`.
+`lookup-indices.mjs` asserts that every positional reference in the committed wire files resolves
+inside `site/data/venues.json`'s lookup lists: the day files' `genre` / `room` / `subs` / `ts` and
+`shows.min.json`'s `g` / `rm` / `sg` / `ar` / `p[].t` (`-1` is the producer's "unknown" and
+passes). Its red-first fixture is `data-checks.test.mjs`, run by `npm test` / `scripts/verify.sh`;
+the last fixture runs the rule over this repo's real committed data, so the check is a live gate on
+every scrape commit and not just a unit test of itself.
