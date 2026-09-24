@@ -239,9 +239,9 @@ body.festival-page {
 
 /* --- the reader's own two controls ---------------------------------------- */
 
-/* Language and theme sit at the end of the header, after the festival's dates:
-   they belong to the reader rather than to the festival, so they read as the
-   last thing in the bar rather than as part of its identity. */
+/* Language and theme sit at the end of the header: they belong to the reader
+   rather than to the site, so they read as the last thing in the bar rather
+   than as part of its identity. */
 .chrome-prefs {
   display: inline-flex;
   align-items: center;
@@ -343,6 +343,22 @@ body.festival-page {
    is a rule that cannot drift between the two. */
 .site-header {
   background: color-mix(in srgb, var(--paper) 95%, transparent);
+}
+
+/* The bar is the site's, not the festival's: it keeps the house palette
+   plan.css defines whichever festival's block is in force on the root, so
+   nothing in it moves when the reader picks another festival. plan.css has no
+   dark side, so the dark half of each pair is set here. */
+.site-header {
+  --violet: light-dark(#6c4cf1, #a591ff);
+  --violet-dark: light-dark(#5a3fd6, #c3b6ff);
+  --ink: light-dark(#101828, #eceaf5);
+  --paper: light-dark(#ffffff, #1a1826);
+  --muted: light-dark(#667085, #a3a0b5);
+  --line: light-dark(#eaecf0, #2e2b3d);
+  /* Opaque, or the festival's wash behind the page's top tints it. */
+  background: var(--paper);
+  color: var(--ink);
 }
 .board-clear,
 .btn-ghost,

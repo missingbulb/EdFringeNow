@@ -929,15 +929,17 @@ festivals — the city, the dates, the palette, the partner links — comes from
 registry and one presentation entry per festival, so another festival is data
 and a theme rather than another page.
 
-- `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
+- `18.1` The page chrome is the site's own and the same for every festival: the **EdFringeNow** wordmark and the three-way site nav with **Festivals** active.
 
   ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
 
   <details><summary>Notes</summary>
 
-  The nav links are `Now` (`/`), `Plan` (`/plan/`) and the focused festival's
-  city (`./`, active). The header hint reads the focused festival's own run,
-  not Edinburgh's.
+  The nav links are `Now` (`/`), `Plan` (`/plan/`) and `Festivals` (`./`,
+  active). The bar names no festival and shows no dates, and keeps the house
+  palette whichever festival is in focus: the picture is the header on
+  Jerusalem above the header on Haifa. Which festival the page plans is the
+  timeline's and the page title's to say.
   </details>
 
 - `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
@@ -1531,7 +1533,7 @@ reached from there.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` The page takes the focused festival's theme: its name, its wordmark and its palette.
+- `23.6` Below the site header, the page takes the focused festival's theme: its name and its palette.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 

@@ -405,14 +405,6 @@ export const STRINGS = {
     ru: "Основная",
     ja: "メイン",
   },
-  "header.run": {
-    maxWidthPx: 375,
-    sample: { city: "Jerusalem", range: "18–22 Oct 2026" },
-    en: "{city} · {range}",
-    he: "{city} · {range}",
-    ru: "{city} · {range}",
-    ja: "{city} · {range}",
-  },
   "chrome.language": {
     maxWidthPx: null,
     unrendered: "the language picker's accessible name — the control itself shows the language's own name",

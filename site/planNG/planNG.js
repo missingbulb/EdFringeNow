@@ -363,7 +363,7 @@ function festivalCity(festival) {
   return p ? t(p.cityKey) : festival.city;
 }
 
-/** Its mark: two words, the second in the accent colour. */
+/** Its two-word mark, which the timeline labels it by. */
 function wordmarkOf(festival) {
   const p = presentationOf(festival.id);
   if (p) return p.wordmark;
@@ -376,11 +376,8 @@ const siteName = (url) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").
 
 function renderChrome() {
   const festival = state.focus && state.focus.festival;
-  // The wordmark is the festival's mark rather than a sentence, so it is the
-  // one piece of chrome that reads the same in every language.
-  const [head, tail] = festival ? wordmarkOf(festival) : ["EdFringe", "Now"];
-  $("wordmark").innerHTML = `${escapeHtml(head)}<span class="logo-now">${escapeHtml(tail)}</span>`;
-
+  // The bar is the site's, not the festival's: the same nav whichever festival
+  // is in focus. The timeline and the page title say which one that is.
   const nav = $("siteNav");
   nav.innerHTML =
     SITE_NAV.map(
@@ -389,7 +386,7 @@ function renderChrome() {
         `${escapeHtml(t(link.labelKey))}</a>`
     ).join("") +
     `<a href="./" class="nav-link is-active" data-i18n-slot="nav.festivals">` +
-    `${escapeHtml(festival ? festivalCity(festival) : t("nav.festivals"))}</a>`;
+    `${escapeHtml(t("nav.festivals"))}</a>`;
 
   const title = $("pageTitle");
   title.textContent = festival ? t("festival.title", { festival: festivalName(festival) }) : t("page.title");
@@ -409,19 +406,6 @@ function renderChrome() {
         }
       )
     : "";
-}
-
-function renderHeaderHint() {
-  const { festival, edition } = state.focus;
-  $("headerHint").textContent = t("header.run", {
-    city: festivalCity(festival),
-    // formatRange, not two formats spliced: only the locale's own data knows
-    // where the year goes and which part of a range is dropped as repeated.
-    range: dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(
-      dateOf(edition.firstDate),
-      dateOf(edition.lastDate)
-    ),
-  });
 }
 
 // --- the board ------------------------------------------------------------
@@ -2275,7 +2259,6 @@ function retranslate() {
   renderChrome();
   if (!state.catalogue) return;
   renderTimelineStrip();
-  renderHeaderHint();
   renderPeriodBar();
   renderPoolNote();
   renderOriginCard();
@@ -2459,7 +2442,6 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   $("boardDrawer").hidden = false;
   renderChrome();
   renderTimelineStrip();
-  renderHeaderHint();
   renderPeriodBar();
   renderPoolNote();
   renderOriginCard();
