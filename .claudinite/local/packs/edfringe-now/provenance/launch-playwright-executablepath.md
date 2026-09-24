@@ -28,3 +28,11 @@
   held.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · reworded · trimmed; import path re-verified
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Source:** /opt/node22/lib/node_modules/playwright/index.mjs present,
+  PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers and /opt/pw-browsers/chromium resolving to
+  chromium-1194, probed 2026-09-24.
+- **Actor:** @missingbulb (owner).

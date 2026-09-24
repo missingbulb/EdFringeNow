@@ -21,3 +21,11 @@
   re-probed.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · moved · into the requirements-harness skill
+- **Reason:** the owner chose to move the data-pipeline and harness sections out of RULES.md into
+  skills ("Move data/harness to skills"), so they load only when their paths are edited; trimmed to
+  trigger and action in the same move.
+- **Actor:** @missingbulb (owner).
+- **Mechanism:** a guideline of the requirements-harness skill, force-loaded on edits to
+  product/requirements.md and product/requirements/.

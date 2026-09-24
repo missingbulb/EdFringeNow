@@ -19,3 +19,11 @@
 - **Actor:** @missingbulb (owner).
 - **Model:** Claude Opus 5
 - **Landed:** #731, Closes #730
+
+## 2026-09-24 · moved · into the data-pipeline skill
+- **Reason:** the owner chose to move the data-pipeline and harness sections out of RULES.md into
+  skills ("Move data/harness to skills"), so they load only when their paths are edited; trimmed to
+  trigger and action in the same move.
+- **Actor:** @missingbulb (owner).
+- **Mechanism:** a guideline of the data-pipeline skill, force-loaded on edits under scraper/,
+  data/, site/data/ and the site files that decode, price or time performances.

@@ -26,3 +26,10 @@
   the rule argues for; the observation was added to the section and the rule left unchanged.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · reworded · dated observations dropped
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Source:** the 2026-09-24 probe again differed from every dated observation (unpkg.com,
+  www.edfringe.com and www.edfringenow.com denied at CONNECT), which is the rule's point.
+- **Actor:** @missingbulb (owner).

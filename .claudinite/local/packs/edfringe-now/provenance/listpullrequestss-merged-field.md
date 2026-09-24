@@ -22,3 +22,7 @@
   `merged_at` is populated every time.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · reaffirmed · merged still decodes false
+- **Source:** 2026-09-24: three closed PRs (#870, #867, #863) read merged false with merged_at set.
+- **Actor:** @missingbulb (owner).
