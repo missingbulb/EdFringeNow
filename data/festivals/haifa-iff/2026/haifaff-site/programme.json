@@ -1,0 +1,5236 @@
+{
+ "site": "https://www.haifaff.co.il",
+ "edition": 42,
+ "venues": [
+  "Auditorium",
+  "Cinematheque",
+  "Kriger (Carmel Zarfati)",
+  "Mirrors Hall",
+  "Rapaport",
+  "Tikotin"
+ ],
+ "films": [
+  {
+   "id": 13407,
+   "url": "https://www.haifaff.co.il/eng/Films/13407",
+   "title": "Butch Cassidy and the Sundance Kid",
+   "titleHe": null,
+   "director": "George Roy Hill",
+   "country": "USA",
+   "year": 1969,
+   "runtimeMin": 113,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13409,
+   "url": "https://www.haifaff.co.il/eng/Films/13409",
+   "title": "It Will Happen Tonight",
+   "titleHe": null,
+   "director": "Nanni Moretti",
+   "country": "Italy, France, Spain",
+   "year": 2026,
+   "runtimeMin": 103,
+   "language": "Italian",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": null,
+     "name": "Closing Film"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13411,
+   "url": "https://www.haifaff.co.il/eng/Films/13411",
+   "title": "A Star Is Born",
+   "titleHe": null,
+   "director": "Frank Pierson",
+   "country": "USA",
+   "year": 1976,
+   "runtimeMin": 139,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13413,
+   "url": "https://www.haifaff.co.il/eng/Films/13413",
+   "title": "Broken English",
+   "titleHe": "אנגלית שבורה",
+   "director": "Iain Forsyth, Jane Pollard",
+   "country": "United Kingdom",
+   "year": 2025,
+   "runtimeMin": 99,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "9152",
+     "name": "HAIFA DOCS"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13416,
+   "url": "https://www.haifaff.co.il/eng/Films/13416",
+   "title": "Easy Girl",
+   "titleHe": "קלה להשגה",
+   "director": "Hille Norden",
+   "country": "Germany",
+   "year": 2025,
+   "runtimeMin": 122,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13418,
+   "url": "https://www.haifaff.co.il/eng/Films/13418",
+   "title": "Funny Girl",
+   "titleHe": "מצחיקונת",
+   "director": "William Wyler",
+   "country": "USA",
+   "year": 1968,
+   "runtimeMin": 155,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13419,
+   "url": "https://www.haifaff.co.il/eng/Films/13419",
+   "title": "Hallow Road",
+   "titleHe": "דרך רפאים",
+   "director": "Babak Anvari",
+   "country": "Ireland, Czech Republic",
+   "year": 2025,
+   "runtimeMin": 80,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13421,
+   "url": "https://www.haifaff.co.il/eng/Films/13421",
+   "title": "Hello, Dolly!",
+   "titleHe": "הלו דולי!",
+   "director": "Gene Kelly",
+   "country": "USA",
+   "year": 1969,
+   "runtimeMin": 148,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13423,
+   "url": "https://www.haifaff.co.il/eng/Films/13423",
+   "title": "Hope",
+   "titleHe": "Hope",
+   "director": "Na Hong-jin",
+   "country": "Korea",
+   "year": 2025,
+   "runtimeMin": 156,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13424,
+   "url": "https://www.haifaff.co.il/eng/Films/13424",
+   "title": "Laguna",
+   "titleHe": "לגונה",
+   "director": "Sharunas Bartas",
+   "country": "Lithuania, France",
+   "year": 2025,
+   "runtimeMin": 102,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "9152",
+     "name": "HAIFA DOCS"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13426,
+   "url": "https://www.haifaff.co.il/eng/Films/13426",
+   "title": "Roma Elastica",
+   "titleHe": "רומא אלסטיקה",
+   "director": "Bertrand Mandico",
+   "country": "France, Italy",
+   "year": 2026,
+   "runtimeMin": 107,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13427,
+   "url": "https://www.haifaff.co.il/eng/Films/13427",
+   "title": "The Last Viking",
+   "titleHe": "הוויקינג האחרון",
+   "director": "Anders Thomas Jensen",
+   "country": "Denmark",
+   "year": 2025,
+   "runtimeMin": 116,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13429,
+   "url": "https://www.haifaff.co.il/eng/Films/13429",
+   "title": "The Match",
+   "titleHe": "המשחק",
+   "director": "Juan Cabral, Santiago Franco",
+   "country": "Argentina",
+   "year": 2026,
+   "runtimeMin": 91,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "9152",
+     "name": "HAIFA DOCS"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13431,
+   "url": "https://www.haifaff.co.il/eng/Films/13431",
+   "title": "To Kill a Nazi",
+   "titleHe": null,
+   "director": "Boaz Dvir",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 101,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "9152",
+     "name": "HAIFA DOCS"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13433,
+   "url": "https://www.haifaff.co.il/eng/Films/13433",
+   "title": "Too Many Beasts",
+   "titleHe": "יותר מדי מפלצות",
+   "director": "Sarah Arnold",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 95,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13435,
+   "url": "https://www.haifaff.co.il/eng/Films/13435",
+   "title": "Truly Naked",
+   "titleHe": "עירום אמיתי",
+   "director": "Muriel d'Ansembourg",
+   "country": "Netherlands, Belgium, France",
+   "year": 2026,
+   "runtimeMin": 102,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13437,
+   "url": "https://www.haifaff.co.il/eng/Films/13437",
+   "title": "Yentl",
+   "titleHe": "ינטל",
+   "director": "Barbra Streisand",
+   "country": "USA",
+   "year": 1983,
+   "runtimeMin": 133,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13438,
+   "url": "https://www.haifaff.co.il/eng/Films/13438",
+   "title": "Burgundy",
+   "titleHe": "בורגונדי",
+   "director": "Michael Dweck, Gregory Kershaw",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 90,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1310",
+     "name": "Culinary Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13440,
+   "url": "https://www.haifaff.co.il/eng/Films/13440",
+   "title": "De Gaulle: Liberté",
+   "titleHe": "דה גול: ליברטה",
+   "director": "Antonin Baudry",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 157,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    },
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13441,
+   "url": "https://www.haifaff.co.il/eng/Films/13441",
+   "title": "De Gaulle: Résistance",
+   "titleHe": "דה גול: רֵזִיסְטַנְס",
+   "director": "Antonin Baudry",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 160,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    },
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13442,
+   "url": "https://www.haifaff.co.il/eng/Films/13442",
+   "title": "Fjord",
+   "titleHe": "פיורד",
+   "director": "Cristian Mungiu",
+   "country": "Romania, France, Norway, Denmark, Finland, Sweden",
+   "year": 2026,
+   "runtimeMin": 146,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13444,
+   "url": "https://www.haifaff.co.il/eng/Films/13444",
+   "title": "Hallo Betty",
+   "titleHe": "הלו בטי",
+   "director": "Pierre Monnard",
+   "country": "Switzerland",
+   "year": 2025,
+   "runtimeMin": 110,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1310",
+     "name": "Culinary Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13446,
+   "url": "https://www.haifaff.co.il/eng/Films/13446",
+   "title": "Hershey",
+   "titleHe": "הרשי",
+   "director": "Mark Waters",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 110,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13448,
+   "url": "https://www.haifaff.co.il/eng/Films/13448",
+   "title": "I Is Another",
+   "titleHe": "אני הוא אחר",
+   "director": "Felix Randau",
+   "country": "Germany",
+   "year": 2026,
+   "runtimeMin": 93,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13451,
+   "url": "https://www.haifaff.co.il/eng/Films/13451",
+   "title": "No Good Men",
+   "titleHe": "אין גברים טובים",
+   "director": "Shahrbanoo Sadat",
+   "country": "Germany, France, Norway, Denmark, Afghanistan",
+   "year": 2026,
+   "runtimeMin": 103,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13454,
+   "url": "https://www.haifaff.co.il/eng/Films/13454",
+   "title": "Parallel Tales",
+   "titleHe": "מעשיות מקבילות",
+   "director": "Asghar Farhadi",
+   "country": "France, Belgium, Italy",
+   "year": 2026,
+   "runtimeMin": 139,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13455,
+   "url": "https://www.haifaff.co.il/eng/Films/13455",
+   "title": "Species",
+   "titleHe": null,
+   "director": "Marion Le Coroller",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 103,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13460,
+   "url": "https://www.haifaff.co.il/eng/Films/13460",
+   "title": "The Furious",
+   "titleHe": "הזעם",
+   "director": "Kenji Tanigaki",
+   "country": "Hong Kong",
+   "year": 2025,
+   "runtimeMin": 113,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13461,
+   "url": "https://www.haifaff.co.il/eng/Films/13461",
+   "title": "The Wizard of the Kremlin",
+   "titleHe": "סודות מהקרמלין",
+   "director": "Olivier Assayas",
+   "country": "France",
+   "year": 2025,
+   "runtimeMin": 143,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13462,
+   "url": "https://www.haifaff.co.il/eng/Films/13462",
+   "title": "Yellow Letters",
+   "titleHe": null,
+   "director": "İlker Çatak",
+   "country": "Germany, France, Turkey",
+   "year": 2026,
+   "runtimeMin": 128,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13464,
+   "url": "https://www.haifaff.co.il/eng/Films/13464",
+   "title": "All the Lovers in the Night",
+   "titleHe": "כל האוהבים בלילה",
+   "director": "Yukiko Sode",
+   "country": "Japan",
+   "year": 2026,
+   "runtimeMin": 139,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13466,
+   "url": "https://www.haifaff.co.il/eng/Films/13466",
+   "title": "Cielo",
+   "titleHe": "שמיים",
+   "director": "Alberto Sciamma",
+   "country": "United Kingdom, Bolivia",
+   "year": 2026,
+   "runtimeMin": 108,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13467,
+   "url": "https://www.haifaff.co.il/eng/Films/13467",
+   "title": "Djinn Wedding",
+   "titleHe": "החתונה",
+   "director": "Ferit Karahan",
+   "country": "Turkey",
+   "year": 2026,
+   "runtimeMin": 132,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13469,
+   "url": "https://www.haifaff.co.il/eng/Films/13469",
+   "title": "Dua",
+   "titleHe": "דואה",
+   "director": "Blerta Basholli",
+   "country": "Kosovo, Switzerland, France",
+   "year": 2022,
+   "runtimeMin": 101,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13471,
+   "url": "https://www.haifaff.co.il/eng/Films/13471",
+   "title": "Empire of Passion",
+   "titleHe": "אימפריית התשוקה",
+   "director": "Nagisa Oshima",
+   "country": "Japan",
+   "year": 1978,
+   "runtimeMin": 105,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13473,
+   "url": "https://www.haifaff.co.il/eng/Films/13473",
+   "title": "Everytime",
+   "titleHe": "פעם אחר פעם",
+   "director": "Sandra Wollner",
+   "country": "Austria, Germany",
+   "year": 2026,
+   "runtimeMin": 121,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13475,
+   "url": "https://www.haifaff.co.il/eng/Films/13475",
+   "title": "Flies",
+   "titleHe": "זבובים",
+   "director": "Fernando Eimbcke",
+   "country": "Mexico, Spain",
+   "year": 2026,
+   "runtimeMin": 99,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13476,
+   "url": "https://www.haifaff.co.il/eng/Films/13476",
+   "title": "Frank & Louis",
+   "titleHe": null,
+   "director": "Petra Volpe",
+   "country": "Switzerland, United Kingdom",
+   "year": 2026,
+   "runtimeMin": 95,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13478,
+   "url": "https://www.haifaff.co.il/eng/Films/13478",
+   "title": "Viva Carmen",
+   "titleHe": "ויוה כרמן",
+   "director": "Sébastian Laudenbach",
+   "country": "France, Luxembourg",
+   "year": 2026,
+   "runtimeMin": 90,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13482,
+   "url": "https://www.haifaff.co.il/eng/Films/13482",
+   "title": "3 Days in September",
+   "titleHe": "שלושה ימים בספטמבר",
+   "director": "Tudor Giurgiu",
+   "country": "Romania",
+   "year": 2026,
+   "runtimeMin": 78,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13484,
+   "url": "https://www.haifaff.co.il/eng/Films/13484",
+   "title": "A Safe Place",
+   "titleHe": "מקום בטוח",
+   "director": "Cecilia Stefanescu",
+   "country": "Romania",
+   "year": 2025,
+   "runtimeMin": 103,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13486,
+   "url": "https://www.haifaff.co.il/eng/Films/13486",
+   "title": "A Woman's Life",
+   "titleHe": "חיים של אישה",
+   "director": "Charline Bourgeois-Tacquet",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 98,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13488,
+   "url": "https://www.haifaff.co.il/eng/Films/13488",
+   "title": "Bedford Park",
+   "titleHe": null,
+   "director": "Stephanie Ahn",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 121,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13490,
+   "url": "https://www.haifaff.co.il/eng/Films/13490",
+   "title": "Berlin Hero",
+   "titleHe": "גיבור ברלינאי",
+   "director": "Wolfgang Becker, Achim von Borries",
+   "country": "Germany",
+   "year": 2026,
+   "runtimeMin": 112,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13491,
+   "url": "https://www.haifaff.co.il/eng/Films/13491",
+   "title": "Coward",
+   "titleHe": null,
+   "director": "Lukas Dhont",
+   "country": "Belgium, France, Netherlands",
+   "year": 2026,
+   "runtimeMin": 120,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13493,
+   "url": "https://www.haifaff.co.il/eng/Films/13493",
+   "title": "Dust",
+   "titleHe": "אבק",
+   "director": "Anke Blondé",
+   "country": "Belgium, Poland, Greece, United Kingdom",
+   "year": 2026,
+   "runtimeMin": 115,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13495,
+   "url": "https://www.haifaff.co.il/eng/Films/13495",
+   "title": "Everybody Digs Bill Evans",
+   "titleHe": "כולם אוהבים את ביל אוונס",
+   "director": "Grant Gee",
+   "country": "Ireland, United Kingdom",
+   "year": 2026,
+   "runtimeMin": 102,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13497,
+   "url": "https://www.haifaff.co.il/eng/Films/13497",
+   "title": "Hold onto Me",
+   "titleHe": "הישאר איתי",
+   "director": "Myrsini Aristidou",
+   "country": "Cyprus, Denmark, Greece",
+   "year": 2026,
+   "runtimeMin": 102,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13499,
+   "url": "https://www.haifaff.co.il/eng/Films/13499",
+   "title": "Hungarian Wedding",
+   "titleHe": "חתונה הונגרית",
+   "director": "Csaba Káel",
+   "country": "Hungary",
+   "year": 2025,
+   "runtimeMin": 93,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13501,
+   "url": "https://www.haifaff.co.il/eng/Films/13501",
+   "title": "No Comment",
+   "titleHe": "אין תגובה",
+   "director": "Petter Næss",
+   "country": "Norway",
+   "year": 2025,
+   "runtimeMin": 88,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13503,
+   "url": "https://www.haifaff.co.il/eng/Films/13503",
+   "title": "Queen at Sea",
+   "titleHe": "מלכה אבודה",
+   "director": "Lance Hammer",
+   "country": "United Kingdom, USA",
+   "year": 2026,
+   "runtimeMin": 121,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13505,
+   "url": "https://www.haifaff.co.il/eng/Films/13505",
+   "title": "Rose",
+   "titleHe": "רוז",
+   "director": "Markus Schleinzer",
+   "country": "Germany, Austria",
+   "year": 2026,
+   "runtimeMin": 94,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13506,
+   "url": "https://www.haifaff.co.il/eng/Films/13506",
+   "title": "Sheep in the Box",
+   "titleHe": "כבשה בקופסה",
+   "director": "Hirokazu Kore-eda",
+   "country": "Japan",
+   "year": 2026,
+   "runtimeMin": 126,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13508,
+   "url": "https://www.haifaff.co.il/eng/Films/13508",
+   "title": "The Land of Sometimes",
+   "titleHe": "אספן המשאלות",
+   "director": "Leon Joosen",
+   "country": "Japan",
+   "year": 2026,
+   "runtimeMin": 126,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "4355",
+     "name": "The Family Show"
+    },
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13509,
+   "url": "https://www.haifaff.co.il/eng/Films/13509",
+   "title": "The Life and Deaths of Wilson Shedd",
+   "titleHe": null,
+   "director": "Tim Blake Nelson",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 121,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13510,
+   "url": "https://www.haifaff.co.il/eng/Films/13510",
+   "title": "The Loneliest Man in Town",
+   "titleHe": "האדם הבודד ביותר בעיר",
+   "director": "Tizza Covi, Rainer Frimmel",
+   "country": "Austria",
+   "year": 2026,
+   "runtimeMin": 86,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13511,
+   "url": "https://www.haifaff.co.il/eng/Films/13511",
+   "title": "The Moon is a Father of Mine",
+   "titleHe": "הירח הוא אבי",
+   "director": "George Ovashvili",
+   "country": "Luxembourg, Turkey, Georgia",
+   "year": 2025,
+   "runtimeMin": 100,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13513,
+   "url": "https://www.haifaff.co.il/eng/Films/13513",
+   "title": "The Only Living Pickpocket in NY",
+   "titleHe": null,
+   "director": "Noah Segan",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 88,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13514,
+   "url": "https://www.haifaff.co.il/eng/Films/13514",
+   "title": "The Stranger",
+   "titleHe": "הזר",
+   "director": "Francois Ozon",
+   "country": "France",
+   "year": 2025,
+   "runtimeMin": 122,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13516,
+   "url": "https://www.haifaff.co.il/eng/Films/13516",
+   "title": "The Weight",
+   "titleHe": "משא כבד",
+   "director": "Padraic McKinley",
+   "country": "USA, Germany",
+   "year": 2026,
+   "runtimeMin": 112,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13517,
+   "url": "https://www.haifaff.co.il/eng/Films/13517",
+   "title": "Wandering Trees",
+   "titleHe": null,
+   "director": "Salvatore Mereu",
+   "country": "Italy",
+   "year": 2026,
+   "runtimeMin": 180,
+   "language": "Italian",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13519,
+   "url": "https://www.haifaff.co.il/eng/Films/13519",
+   "title": "Women on Trial",
+   "titleHe": "נשים במשפט, סיפורה של מארי קלייר",
+   "director": "Lauriane Escaffre, Yvo Muller",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 102,
+   "language": "French",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13524,
+   "url": "https://www.haifaff.co.il/eng/Films/13524",
+   "title": "Conflagration",
+   "titleHe": "להבה",
+   "director": "Kon Ichikawa",
+   "country": "Japan",
+   "year": 1958,
+   "runtimeMin": 99,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13526,
+   "url": "https://www.haifaff.co.il/eng/Films/13526",
+   "title": "Learning to Breathe Under Water",
+   "titleHe": "ללמוד לנשום מתחת למים",
+   "director": "Rebekah Fortune",
+   "country": "Ireland, United Kingdom, Netherlands",
+   "year": 2026,
+   "runtimeMin": 96,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "4355",
+     "name": "The Family Show"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13527,
+   "url": "https://www.haifaff.co.il/eng/Films/13527",
+   "title": "Minotaur",
+   "titleHe": "מינוטאור",
+   "director": "Andrey Zvyagintsev",
+   "country": "France, Latvia, Germany",
+   "year": 2026,
+   "runtimeMin": 135,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13529,
+   "url": "https://www.haifaff.co.il/eng/Films/13529",
+   "title": "Tangles",
+   "titleHe": "קשרים",
+   "director": "Leah Nelson",
+   "country": "USA, Canada",
+   "year": 2026,
+   "runtimeMin": 102,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    },
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13537,
+   "url": "https://www.haifaff.co.il/eng/Films/13537",
+   "title": "Adult Supervision",
+   "titleHe": "השגחה הורית",
+   "director": "Alex Schulman",
+   "country": "Sweden",
+   "year": 2026,
+   "runtimeMin": 108,
+   "language": "Swedish",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13540,
+   "url": "https://www.haifaff.co.il/eng/Films/13540",
+   "title": "All About Corinne",
+   "titleHe": "הכול אודות קורין",
+   "director": "Marc Fitoussi",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 115,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13544,
+   "url": "https://www.haifaff.co.il/eng/Films/13544",
+   "title": "Armony",
+   "titleHe": "סיפור על משפחה",
+   "director": "Dario Albertini",
+   "country": "Italy",
+   "year": 2026,
+   "runtimeMin": 104,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13546,
+   "url": "https://www.haifaff.co.il/eng/Films/13546",
+   "title": "God Forgives Everyone",
+   "titleHe": "קינוח אלוהי",
+   "director": "Pif",
+   "country": "Italy",
+   "year": 2026,
+   "runtimeMin": 113,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1310",
+     "name": "Culinary Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13547,
+   "url": "https://www.haifaff.co.il/eng/Films/13547",
+   "title": "Hugo",
+   "titleHe": "ויקטור כמו כולם",
+   "director": "Pascal Bonitzer",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 89,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13549,
+   "url": "https://www.haifaff.co.il/eng/Films/13549",
+   "title": "Sundays",
+   "titleHe": "ימי ראשון",
+   "director": "Alaúda Ruiz de Azúa",
+   "country": "Spain",
+   "year": 2025,
+   "runtimeMin": 115,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13551,
+   "url": "https://www.haifaff.co.il/eng/Films/13551",
+   "title": "The Guest",
+   "titleHe": "האורחת",
+   "director": "Mads Mengel",
+   "country": "Denmark",
+   "year": 2026,
+   "runtimeMin": 99,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13553,
+   "url": "https://www.haifaff.co.il/eng/Films/13553",
+   "title": "Three Goodbyes",
+   "titleHe": "שלוש פרידות",
+   "director": "Isabel Coixet",
+   "country": "Italy, Spain",
+   "year": 2025,
+   "runtimeMin": 120,
+   "language": "Italian",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13555,
+   "url": "https://www.haifaff.co.il/eng/Films/13555",
+   "title": "Yugly",
+   "titleHe": "יוֹגְלִי",
+   "director": "Yanis Belaid, Jérémie Degruson",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 84,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "4355",
+     "name": "The Family Show"
+    },
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13556,
+   "url": "https://www.haifaff.co.il/eng/Films/13556",
+   "title": "Unraveled",
+   "titleHe": "סדקים",
+   "director": "Pernille Fischer Christensen",
+   "country": "Denmark",
+   "year": 2026,
+   "runtimeMin": 104,
+   "language": "Danish",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13557,
+   "url": "https://www.haifaff.co.il/eng/Films/13557",
+   "title": "All of a Sudden",
+   "titleHe": "פתאום",
+   "director": "Ryusuke Hamaguchi",
+   "country": "France, Japan, Germany, Belgium",
+   "year": 2026,
+   "runtimeMin": 196,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13559,
+   "url": "https://www.haifaff.co.il/eng/Films/13559",
+   "title": "Gentle Monster",
+   "titleHe": "ג'נטל מונסטר",
+   "director": "Marie Kreutzer",
+   "country": "Austria, Germany, France",
+   "year": 2026,
+   "runtimeMin": 115,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13562,
+   "url": "https://www.haifaff.co.il/eng/Films/13562",
+   "title": "שווייץ, בלגיה 2026",
+   "titleHe": "מרי אנינג וסוד המאובן הנסתר",
+   "director": "Marcel Barelli",
+   "country": "Switzerland, Belgium",
+   "year": 2026,
+   "runtimeMin": 72,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "4355",
+     "name": "The Family Show"
+    },
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13564,
+   "url": "https://www.haifaff.co.il/eng/Films/13564",
+   "title": "The Electric Kiss",
+   "titleHe": null,
+   "director": "Pierre Salvadori",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 122,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13566,
+   "url": "https://www.haifaff.co.il/eng/Films/13566",
+   "title": "The Violinist",
+   "titleHe": null,
+   "director": "Ervin Han, Raúl García",
+   "country": "Singapore, Spain, Italy",
+   "year": 2026,
+   "runtimeMin": 114,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "11976",
+     "name": "Animation"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13568,
+   "url": "https://www.haifaff.co.il/eng/Films/13568",
+   "title": "Words of Love",
+   "titleHe": "מילים של אהבה",
+   "director": null,
+   "country": null,
+   "year": null,
+   "runtimeMin": null,
+   "language": null,
+   "subtitles": null,
+   "sections": [],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13571,
+   "url": "https://www.haifaff.co.il/eng/Films/13571",
+   "title": "I Want To Tell My Story",
+   "titleHe": "אני רוצה לספר את הסיפור שלי",
+   "director": "Tomer Heymann",
+   "country": "Israel, Germany",
+   "year": 2026,
+   "runtimeMin": 75,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13572,
+   "url": "https://www.haifaff.co.il/eng/Films/13572",
+   "title": "Hager (Land)",
+   "titleHe": "האגר - ארץ",
+   "director": "Shmuel Beru",
+   "country": "Israel, Ethiopia",
+   "year": 2026,
+   "runtimeMin": 87,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13574,
+   "url": "https://www.haifaff.co.il/eng/Films/13574",
+   "title": "Stay!",
+   "titleHe": "הביתה!",
+   "director": "Reut Akkerman",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 75,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13576,
+   "url": "https://www.haifaff.co.il/eng/Films/13576",
+   "title": "Thou Shalt Love",
+   "titleHe": "ואהבת",
+   "director": "Nitzan Gilady",
+   "country": "Israel, France",
+   "year": 2026,
+   "runtimeMin": 80,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13578,
+   "url": "https://www.haifaff.co.il/eng/Films/13578",
+   "title": "Spikes",
+   "titleHe": "זברות",
+   "director": "Shiran Sharabany",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 88,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13580,
+   "url": "https://www.haifaff.co.il/eng/Films/13580",
+   "title": "Journey Dreams",
+   "titleHe": "חלומות מסע",
+   "director": "Manya Lozovsky",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 60,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13582,
+   "url": "https://www.haifaff.co.il/eng/Films/13582",
+   "title": "Children Of Hebron",
+   "titleHe": "ילדי חברון",
+   "director": "Elad Yaakov Goldberg",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 60,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13585,
+   "url": "https://www.haifaff.co.il/eng/Films/13585",
+   "title": "A Place Called Hope",
+   "titleHe": null,
+   "director": "Eitan Cohen",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 77,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13586,
+   "url": "https://www.haifaff.co.il/eng/Films/13586",
+   "title": "Blue Marks",
+   "titleHe": "סימנים כחולים",
+   "director": "Dina Zvi Riklis",
+   "country": "Israel, France",
+   "year": 2026,
+   "runtimeMin": 110,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13587,
+   "url": "https://www.haifaff.co.il/eng/Films/13587",
+   "title": "Double Panther",
+   "titleHe": null,
+   "director": "Marco Carmel",
+   "country": "Israel",
+   "year": 2025,
+   "runtimeMin": 100,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13589,
+   "url": "https://www.haifaff.co.il/eng/Films/13589",
+   "title": "Peace 20 30",
+   "titleHe": null,
+   "director": "Uri Levi",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 60,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13590,
+   "url": "https://www.haifaff.co.il/eng/Films/13590",
+   "title": "Short Animation Compilation",
+   "titleHe": "מקבץ קצרים - אנימציה",
+   "director": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 88,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "6028",
+     "name": "Israeli Short Films Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13594,
+   "url": "https://www.haifaff.co.il/eng/Films/13594",
+   "title": "The School of Flesh",
+   "titleHe": "בית הספר לבשר",
+   "director": "Benoit Jacquot",
+   "country": "France",
+   "year": 1998,
+   "runtimeMin": 100,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13597,
+   "url": "https://www.haifaff.co.il/eng/Films/13597",
+   "title": "Negative",
+   "titleHe": null,
+   "director": "Michael Mysh Rozanov",
+   "country": "Israel",
+   "year": 2025,
+   "runtimeMin": 80,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13599,
+   "url": "https://www.haifaff.co.il/eng/Films/13599",
+   "title": "Judoka",
+   "titleHe": null,
+   "director": "Raanan Tessler",
+   "country": "Israel",
+   "year": 2025,
+   "runtimeMin": 93,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10581",
+     "name": "First Exposure - New Israeli Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13601,
+   "url": "https://www.haifaff.co.il/eng/Films/13601",
+   "title": "Many Waters",
+   "titleHe": null,
+   "director": "Imri Matalon",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 84,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10581",
+     "name": "First Exposure - New Israeli Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13604,
+   "url": "https://www.haifaff.co.il/eng/Films/13604",
+   "title": "Alice. Last Conversation",
+   "titleHe": null,
+   "director": "Nurit Jacobs-Yinon",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 53,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13602",
+     "name": "Israeli Cinema - Cultural Icons"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13607,
+   "url": "https://www.haifaff.co.il/eng/Films/13607",
+   "title": "Naomi Shemer, Between Green and Stones",
+   "titleHe": "נעמי שמר, בין דשא לאבן",
+   "director": "Ron Omer, Shai Lahav",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 93,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13602",
+     "name": "Israeli Cinema - Cultural Icons"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13608,
+   "url": "https://www.haifaff.co.il/eng/Films/13608",
+   "title": "Topol: On Top of the World",
+   "titleHe": null,
+   "director": "Alon Gur Arye",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 70,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13602",
+     "name": "Israeli Cinema - Cultural Icons"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13609,
+   "url": "https://www.haifaff.co.il/eng/Films/13609",
+   "title": "A Girl Unknown",
+   "titleHe": "נערה אלמונית",
+   "director": "Zou Jing",
+   "country": "China",
+   "year": 2026,
+   "runtimeMin": 125,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1098",
+     "name": "Golden Anchor Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13610,
+   "url": "https://www.haifaff.co.il/eng/Films/13610",
+   "title": "Cruel Story of Youth",
+   "titleHe": "סיפור אכזרי של נעורים",
+   "director": "Nagisa Oshima",
+   "country": "Japan",
+   "year": 1960,
+   "runtimeMin": 96,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13611,
+   "url": "https://www.haifaff.co.il/eng/Films/13611",
+   "title": "Forsaken",
+   "titleHe": "הנטישה",
+   "director": "Vincent Garenq",
+   "country": "France, Belgium",
+   "year": 2026,
+   "runtimeMin": 100,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13612,
+   "url": "https://www.haifaff.co.il/eng/Films/13612",
+   "title": "Mishima: A Life in Four Chapters",
+   "titleHe": "מישימה: חיים בארבעה פרקים",
+   "director": "Paul Schrader",
+   "country": "Japan, USA",
+   "year": 1985,
+   "runtimeMin": 120,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13613,
+   "url": "https://www.haifaff.co.il/eng/Films/13613",
+   "title": "Mouse",
+   "titleHe": "הקיץ של מיני",
+   "director": "Kelly O'Sullivan, Alex Thompson",
+   "country": "USA",
+   "year": 2026,
+   "runtimeMin": 120,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13615,
+   "url": "https://www.haifaff.co.il/eng/Films/13615",
+   "title": "INK",
+   "titleHe": "INK",
+   "director": "Danny Boyle",
+   "country": "United Kingdom, France, USA",
+   "year": 2026,
+   "runtimeMin": 116,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1270",
+     "name": "Carmel International Competition"
+    },
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13616,
+   "url": "https://www.haifaff.co.il/eng/Films/13616",
+   "title": "The road to Jericho",
+   "titleHe": null,
+   "director": "Amos Gitai",
+   "country": "Israel, France",
+   "year": 2026,
+   "runtimeMin": 76,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13839",
+     "name": "Israeli Cinema - Special Events"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13617,
+   "url": "https://www.haifaff.co.il/eng/Films/13617",
+   "title": "Yehoram and Gila",
+   "titleHe": null,
+   "director": "Gabriel Bibliowicz",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 98,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13839",
+     "name": "Israeli Cinema - Special Events"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13618,
+   "url": "https://www.haifaff.co.il/eng/Films/13618",
+   "title": "Shorts Program - Compassion",
+   "titleHe": "מקבץ קצרים - חמלה",
+   "director": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 99,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "6028",
+     "name": "Israeli Short Films Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13620,
+   "url": "https://www.haifaff.co.il/eng/Films/13620",
+   "title": "Shorts Program - Women: Fragments and Dreams",
+   "titleHe": null,
+   "director": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 81,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "6028",
+     "name": "Israeli Short Films Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13621,
+   "url": "https://www.haifaff.co.il/eng/Films/13621",
+   "title": "Short Animation Compilation (2)",
+   "titleHe": null,
+   "director": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 92,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "6028",
+     "name": "Israeli Short Films Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13622,
+   "url": "https://www.haifaff.co.il/eng/Films/13622",
+   "title": "First Exposure - Shorts Program",
+   "titleHe": null,
+   "director": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 68,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10581",
+     "name": "First Exposure - New Israeli Cinema"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13623,
+   "url": "https://www.haifaff.co.il/eng/Films/13623",
+   "title": "Our Loves",
+   "titleHe": "האהבות שלנו",
+   "director": "Avi Nesher",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 117,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "13839",
+     "name": "Israeli Cinema - Special Events"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13624,
+   "url": "https://www.haifaff.co.il/eng/Films/13624",
+   "title": "Colony",
+   "titleHe": "המושבה",
+   "director": "Yeon Sang-ho",
+   "country": "Korea",
+   "year": 2026,
+   "runtimeMin": 123,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "1007",
+     "name": "Haifa's Wildest Nights"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13626,
+   "url": "https://www.haifaff.co.il/eng/Films/13626",
+   "title": "Farewell To Dough",
+   "titleHe": "פרידה מבצק",
+   "director": "Shimon Shai",
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 101,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "10481",
+     "name": "Israeli Film Competition"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13919,
+   "url": "https://www.haifaff.co.il/eng/Films/13919",
+   "title": "Children Untold",
+   "titleHe": "ילדים עלומים",
+   "director": "Miwa Nishikawa",
+   "country": "Japan",
+   "year": 2026,
+   "runtimeMin": 150,
+   "language": null,
+   "subtitles": null,
+   "sections": [],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13925,
+   "url": "https://www.haifaff.co.il/eng/Films/13925",
+   "title": "LAHAV 433",
+   "titleHe": null,
+   "director": null,
+   "country": null,
+   "year": null,
+   "runtimeMin": null,
+   "language": null,
+   "subtitles": null,
+   "sections": [],
+   "synopsis": null,
+   "image": null
+  },
+  {
+   "id": 13967,
+   "url": "https://www.haifaff.co.il/eng/Films/13967",
+   "title": "Death by Hanging",
+   "titleHe": "מוות בתליה",
+   "director": "Nagisa Oshima",
+   "country": "Japan",
+   "year": 1968,
+   "runtimeMin": 118,
+   "language": null,
+   "subtitles": null,
+   "sections": [
+    {
+     "id": "972",
+     "name": "Haifa Classics"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
+    }
+   ],
+   "synopsis": null,
+   "image": null
+  }
+ ],
+ "events": [
+  {
+   "id": 13846,
+   "url": "https://www.haifaff.co.il/eng/Events/13846",
+   "title": "The 42th Haifa International Film Festival Opening Event",
+   "groups": [
+    "11295"
+   ]
+  },
+  {
+   "id": 13896,
+   "url": "https://www.haifaff.co.il/eng/Events/13896",
+   "title": "נכנסים לסצנה – הקראות 2 חיפה – גם עם מצלמה",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13897,
+   "url": "https://www.haifaff.co.il/eng/Events/13897",
+   "title": "כנס חיפה לקולנוע בעידן הבינה המלאכותית",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13898,
+   "url": "https://www.haifaff.co.il/eng/Events/13898",
+   "title": "In Memory of Yvonne Miklós",
+   "groups": null
+  },
+  {
+   "id": 13899,
+   "url": "https://www.haifaff.co.il/eng/Events/13899",
+   "title": "From Script to Set: Film & TV Production with AI",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13900,
+   "url": "https://www.haifaff.co.il/eng/Events/13900",
+   "title": "פיץ' על הכרמל - חשיפת סרטים חיפאיים",
+   "groups": null
+  },
+  {
+   "id": 13905,
+   "url": "https://www.haifaff.co.il/eng/Events/13905",
+   "title": "שולחן עגול בינלאומי",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13942,
+   "url": "https://www.haifaff.co.il/eng/Events/13942",
+   "title": "Haifa 12th Graduate Films Pitching Forum",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13946,
+   "url": "https://www.haifaff.co.il/eng/Events/13946",
+   "title": "מפגש סרטוני AI בתהליך עבודה",
+   "groups": [
+    "713"
+   ]
+  },
+  {
+   "id": 13947,
+   "url": "https://www.haifaff.co.il/eng/Events/13947",
+   "title": "THE 23RD INTERNATIONAL PITCHING FORUM FOR FILM AND TV",
+   "groups": [
+    "713"
+   ]
+  }
+ ],
+ "screenings": [
+  {
+   "date": "2026-09-25",
+   "start": "11:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13555,
+   "screeningId": 28001,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28001",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "11:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13497,
+   "screeningId": 28040,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28040",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "13:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13437,
+   "screeningId": 27987,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27987",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "13:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13514,
+   "screeningId": 28152,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28152",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "15:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13544,
+   "screeningId": 28022,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28022",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "16:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13610,
+   "screeningId": 27969,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27969",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "17:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13537,
+   "screeningId": 27949,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27949",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "18:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13556,
+   "screeningId": 28076,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28076",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "20:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13499,
+   "screeningId": 28044,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28044",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "20:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13609,
+   "screeningId": 28165,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28165",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-25",
+   "start": "22:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13460,
+   "screeningId": 28092,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28092",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "10:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13562,
+   "screeningId": 27997,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27997",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "10:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13429,
+   "screeningId": 28012,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28012",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "10:45",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13446,
+   "screeningId": 28038,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28038",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "10:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13451,
+   "screeningId": 28052,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28052",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "12:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13607,
+   "screeningId": 28124,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28124",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "12:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13612,
+   "screeningId": 27973,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27973",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "13:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13553,
+   "screeningId": 28074,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28074",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "13:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13490,
+   "screeningId": 28026,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28026",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "14:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13529,
+   "screeningId": 27965,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27965",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "15:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13526,
+   "screeningId": 27995,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27995",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "15:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13511,
+   "screeningId": 28066,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28066",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "15:45",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13547,
+   "screeningId": 28042,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28042",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "17:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13613,
+   "screeningId": 28048,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28048",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "17:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13519,
+   "screeningId": 28080,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28080",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "17:45",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13454,
+   "screeningId": 28054,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28054",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "18:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13442,
+   "screeningId": 28034,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28034",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "18:30",
+   "venue": "Auditorium",
+   "kind": "event",
+   "refId": 13846,
+   "screeningId": 27885,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27885",
+   "tags": null,
+   "info": null,
+   "price": 150
+  },
+  {
+   "date": "2026-09-26",
+   "start": "19:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13495,
+   "screeningId": 28032,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28032",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "19:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13413,
+   "screeningId": 28008,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28008",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "20:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13540,
+   "screeningId": 28020,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28020",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "21:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13505,
+   "screeningId": 28056,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28056",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "21:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13433,
+   "screeningId": 28096,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28096",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-26",
+   "start": "21:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13419,
+   "screeningId": 28088,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28088",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "10:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13421,
+   "screeningId": 27985,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27985",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "11:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13486,
+   "screeningId": 28018,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28018",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "11:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13478,
+   "screeningId": 28142,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28142",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "12:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13444,
+   "screeningId": 27993,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27993",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "12:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13499,
+   "screeningId": 28045,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28045",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "13:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13464,
+   "screeningId": 27951,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27951",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "13:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13484,
+   "screeningId": 28016,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28016",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "13:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13471,
+   "screeningId": 27971,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27971",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "14:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13544,
+   "screeningId": 28023,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28023",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "16:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13580,
+   "screeningId": 28113,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28113",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "16:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13493,
+   "screeningId": 28141,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28141",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "16:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13469,
+   "screeningId": 27957,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27957",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "16:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13441,
+   "screeningId": 28030,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28030",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "17:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13549,
+   "screeningId": 27939,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27939",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "18:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13435,
+   "screeningId": 28101,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28101",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "18:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13537,
+   "screeningId": 27950,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27950",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "18:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13576,
+   "screeningId": 28111,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28111",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "20:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13440,
+   "screeningId": 28028,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28028",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "20:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13461,
+   "screeningId": 28072,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28072",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "20:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13574,
+   "screeningId": 28110,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28110",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "21:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13615,
+   "screeningId": 27945,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27945",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-27",
+   "start": "21:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13427,
+   "screeningId": 28090,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28090",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "10:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13942,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "10:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13508,
+   "screeningId": 27999,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27999",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "10:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13594,
+   "screeningId": 27975,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27975",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "10:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13510,
+   "screeningId": 28143,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28143",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "11:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13506,
+   "screeningId": 27937,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27937",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "12:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13418,
+   "screeningId": 27984,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27984",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "12:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13623,
+   "screeningId": 27922,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27922",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "12:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13438,
+   "screeningId": 27989,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27989",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "12:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13475,
+   "screeningId": 27961,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27961",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "13:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13501,
+   "screeningId": 28050,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28050",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "14:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13419,
+   "screeningId": 28089,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28089",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "14:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13557,
+   "screeningId": 27925,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27925",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "15:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13524,
+   "screeningId": 27967,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27967",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "15:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13497,
+   "screeningId": 28041,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28041",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "16:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13568,
+   "screeningId": 28082,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28082",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "16:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13896,
+   "screeningId": 28145,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28145",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "16:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13582,
+   "screeningId": 28114,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28114",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "17:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13473,
+   "screeningId": 27959,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27959",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "17:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13611,
+   "screeningId": 28036,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28036",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "18:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13898,
+   "screeningId": 28146,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28146",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "18:15",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13448,
+   "screeningId": 28046,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28046",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "18:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13426,
+   "screeningId": 28105,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28105",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "18:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13626,
+   "screeningId": 28118,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28118",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "19:45",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13919,
+   "screeningId": 28153,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28153",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "19:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13466,
+   "screeningId": 27953,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27953",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "20:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13527,
+   "screeningId": 27933,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27933",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "21:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13423,
+   "screeningId": 28086,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28086",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "21:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13578,
+   "screeningId": 28112,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28112",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-28",
+   "start": "22:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13624,
+   "screeningId": 28094,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28094",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "10:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13555,
+   "screeningId": 28002,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28002",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "10:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13557,
+   "screeningId": 28231,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28231",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "10:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13897,
+   "screeningId": 28147,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28147",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "10:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13482,
+   "screeningId": 28233,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28233",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "10:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13464,
+   "screeningId": 28139,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28139",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "11:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13546,
+   "screeningId": 27991,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27991",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "11:30",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13946,
+   "screeningId": 28229,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28229",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "11:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13590,
+   "screeningId": 28131,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28131",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "11:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13967,
+   "screeningId": 28138,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28138",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "13:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13503,
+   "screeningId": 27935,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27935",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "13:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13454,
+   "screeningId": 28055,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28055",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "13:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13442,
+   "screeningId": 28218,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28218",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "14:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13484,
+   "screeningId": 28017,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28017",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "14:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13618,
+   "screeningId": 28128,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28128",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "15:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13467,
+   "screeningId": 27955,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27955",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "16:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13571,
+   "screeningId": 28108,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28108",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "16:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13519,
+   "screeningId": 28081,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28081",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "16:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13551,
+   "screeningId": 27941,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27941",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "16:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13621,
+   "screeningId": 28129,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28129",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "18:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13424,
+   "screeningId": 28010,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28010",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "18:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13564,
+   "screeningId": 28060,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28060",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "18:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13572,
+   "screeningId": 28109,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28109",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "18:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13620,
+   "screeningId": 28130,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28130",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "19:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13559,
+   "screeningId": 27931,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27931",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "20:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13488,
+   "screeningId": 28024,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28024",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "20:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13416,
+   "screeningId": 28103,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28103",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "21:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13462,
+   "screeningId": 28084,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28084",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "21:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13586,
+   "screeningId": 28116,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28116",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "21:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13516,
+   "screeningId": 28070,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28070",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "22:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13471,
+   "screeningId": 27972,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27972",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "10:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13947,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "10:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13610,
+   "screeningId": 27970,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27970",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "10:15",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13623,
+   "screeningId": 28217,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28217",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "10:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13411,
+   "screeningId": 27981,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27981",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "11:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13424,
+   "screeningId": 28011,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28011",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "11:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13513,
+   "screeningId": 28068,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28068",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "12:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13609,
+   "screeningId": 27947,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27947",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "12:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13549,
+   "screeningId": 27940,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27940",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "13:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13527,
+   "screeningId": 28151,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28151",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "13:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13613,
+   "screeningId": 28049,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28049",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "13:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13511,
+   "screeningId": 28140,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28140",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "14:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13476,
+   "screeningId": 27963,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27963",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "15:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13905,
+   "screeningId": 28148,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28148",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "15:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13462,
+   "screeningId": 28085,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28085",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "15:45",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13446,
+   "screeningId": 28039,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28039",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "16:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13585,
+   "screeningId": 28115,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28115",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "16:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13899,
+   "screeningId": 28149,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28149",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "16:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13495,
+   "screeningId": 28033,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28033",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "16:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13482,
+   "screeningId": 28014,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28014",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "18:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13547,
+   "screeningId": 28043,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28043",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "18:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13491,
+   "screeningId": 27927,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27927",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "18:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13587,
+   "screeningId": 28117,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28117",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "18:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13529,
+   "screeningId": 27966,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27966",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "18:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13431,
+   "screeningId": 28007,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28007",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "20:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13540,
+   "screeningId": 28021,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28021",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "21:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13589,
+   "screeningId": 28119,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28119",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "21:15",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13427,
+   "screeningId": 28091,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28091",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "21:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13514,
+   "screeningId": 27943,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27943",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "21:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13594,
+   "screeningId": 27976,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27976",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "10:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13407,
+   "screeningId": 27980,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27980",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "10:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13473,
+   "screeningId": 28232,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28232",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "10:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13556,
+   "screeningId": 28077,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28077",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "10:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13466,
+   "screeningId": 28164,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28164",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "12:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13919,
+   "screeningId": 28154,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28154",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "12:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13438,
+   "screeningId": 27990,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27990",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "12:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13505,
+   "screeningId": 28057,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28057",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "12:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13506,
+   "screeningId": 27938,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27938",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "12:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13429,
+   "screeningId": 28013,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28013",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "14:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13478,
+   "screeningId": 28006,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28006",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "14:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13510,
+   "screeningId": 28065,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28065",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "14:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13566,
+   "screeningId": 28003,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28003",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "15:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13441,
+   "screeningId": 28031,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28031",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "15:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13444,
+   "screeningId": 27994,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27994",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "16:00",
+   "venue": "Mirrors Hall",
+   "kind": "event",
+   "refId": 13900,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "16:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13608,
+   "screeningId": 28125,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28125",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "16:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13611,
+   "screeningId": 28037,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28037",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "17:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13925,
+   "screeningId": 28107,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28107",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "18:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13461,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "18:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13604,
+   "screeningId": 28123,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28123",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "18:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13440,
+   "screeningId": 28029,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28029",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "18:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13617,
+   "screeningId": 28126,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28126",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "19:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13509,
+   "screeningId": 28062,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28062",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "20:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13597,
+   "screeningId": 28100,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28100",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "21:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13599,
+   "screeningId": 28120,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28120",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "21:15",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13564,
+   "screeningId": 28061,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28061",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "21:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13553,
+   "screeningId": 28075,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28075",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "22:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13612,
+   "screeningId": 27974,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27974",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "22:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13455,
+   "screeningId": 28099,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28099",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "10:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13562,
+   "screeningId": 27998,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27998",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "10:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13526,
+   "screeningId": 27996,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27996",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "10:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13546,
+   "screeningId": 27992,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27992",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "11:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13467,
+   "screeningId": 27956,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27956",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "12:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13622,
+   "screeningId": 28122,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28122",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "12:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13568,
+   "screeningId": 28083,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28083",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "12:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13493,
+   "screeningId": 27930,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27930",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "13:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13501,
+   "screeningId": 28051,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28051",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "13:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13967,
+   "screeningId": 27978,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27978",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "14:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13475,
+   "screeningId": 27962,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27962",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "14:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13517,
+   "screeningId": 28079,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28079",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "15:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13557,
+   "screeningId": 27926,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27926",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "16:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13616,
+   "screeningId": 28127,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28127",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "16:15",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13486,
+   "screeningId": 28019,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28019",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "18:00",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13413,
+   "screeningId": 28009,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28009",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "18:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13476,
+   "screeningId": 27964,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27964",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "18:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13482,
+   "screeningId": 28015,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28015",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "19:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13551,
+   "screeningId": 27942,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27942",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "19:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13503,
+   "screeningId": 27936,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27936",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "20:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13426,
+   "screeningId": 28106,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28106",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "20:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13416,
+   "screeningId": 28104,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28104",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "20:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13491,
+   "screeningId": 27928,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27928",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "21:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13433,
+   "screeningId": 28097,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28097",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "21:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13516,
+   "screeningId": 28071,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28071",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-02",
+   "start": "22:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13624,
+   "screeningId": 28095,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28095",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "10:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13488,
+   "screeningId": 28025,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28025",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "10:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13409,
+   "screeningId": 27923,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27923",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "10:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13508,
+   "screeningId": 28000,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28000",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "10:30",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13609,
+   "screeningId": 27948,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27948",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "12:30",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13411,
+   "screeningId": 27982,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27982",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "12:45",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13514,
+   "screeningId": 27944,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27944",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "13:00",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13451,
+   "screeningId": 28053,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28053",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "13:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13442,
+   "screeningId": 28035,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28035",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "13:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13524,
+   "screeningId": 27968,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27968",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "15:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13466,
+   "screeningId": 27954,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27954",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "15:15",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13527,
+   "screeningId": 27934,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27934",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "15:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13566,
+   "screeningId": 28004,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28004",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "15:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13448,
+   "screeningId": 28047,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28047",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "16:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13513,
+   "screeningId": 28069,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28069",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "17:45",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13559,
+   "screeningId": 27932,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27932",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "17:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13509,
+   "screeningId": 28063,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28063",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "17:45",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13469,
+   "screeningId": 27958,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27958",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "18:00",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13490,
+   "screeningId": 28027,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28027",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "18:00",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13601,
+   "screeningId": 28121,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28121",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "20:00",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13435,
+   "screeningId": 28102,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28102",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "20:15",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13473,
+   "screeningId": 27960,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27960",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "20:30",
+   "venue": "Auditorium",
+   "kind": "film",
+   "refId": 13409,
+   "screeningId": 27924,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27924",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "20:30",
+   "venue": "Kriger (Carmel Zarfati)",
+   "kind": "film",
+   "refId": 13615,
+   "screeningId": 27946,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27946",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "20:30",
+   "venue": "Rapaport",
+   "kind": "film",
+   "refId": 13423,
+   "screeningId": 28087,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28087",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "22:15",
+   "venue": "Tikotin",
+   "kind": "film",
+   "refId": 13460,
+   "screeningId": 28093,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28093",
+   "tags": null,
+   "info": null,
+   "price": null
+  },
+  {
+   "date": "2026-10-03",
+   "start": "22:45",
+   "venue": "Cinematheque",
+   "kind": "film",
+   "refId": 13455,
+   "screeningId": 28098,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28098",
+   "tags": null,
+   "info": null,
+   "price": null
+  }
+ ],
+ "unlinked": []
+}

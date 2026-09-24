@@ -1,0 +1,60 @@
+{
+ "about": "Hand-curated venue research for the Haifa International Film Festival, keyed by the code the converter derives from the site's venue label. Not tied to an edition, because a hall outlives a programme. Every figure is {value, source}, or null when nobody could cite it. Coordinates are the exception: none could be geocoded from the research session, so each is marked with the basis it rests on, and the served notes say so.",
+ "researchedAt": "2026-09-24",
+ "venues": {
+  "auditorium": {
+   "address": {"value": "HaNassi Ave 138, Haifa", "source": "https://ethos.co.il/eng/Auditorium.html"},
+   "coordinates": {"lat": 32.787, "lng": 34.987, "basis": "approximate"},
+   "capacity": {"value": 1139, "source": "https://ethos.co.il/eng/Auditorium.html"},
+   "layout": {"value": "raked", "source": "https://ethos.co.il/eng/Auditorium.html"},
+   "rooms": [],
+   "accessibility": {"value": "Wheelchair spaces at the sides of rows 2-4.", "source": "https://ethos.co.il/eng/Auditorium.html"},
+   "notes": "Haifa Auditorium, in the Carmel Centre complex. It has 1,139 seats (up to 1,453 in other configurations) on a single rake with no balcony. The festival's own pages give the address as HaNassi 142."
+  },
+  "rapaport": {
+   "address": {"value": "HaNassi Ave 140, Haifa", "source": "https://ethos.co.il/אולם_רפפורט"},
+   "coordinates": {"lat": 32.787, "lng": 34.987, "basis": "approximate: same block as the Auditorium"},
+   "capacity": {"value": 473, "source": "https://ethos.co.il/אולם_רפפורט"},
+   "layout": null,
+   "rooms": [],
+   "accessibility": {"value": "Wheelchair spaces in the first row.", "source": "https://ethos.co.il/אולם_רפפורט"},
+   "notes": "The (new) Rappaport Hall, in the Rappaport Centre in the same HaNassi 138-142 block as the Auditorium, so the walk between them is close to zero."
+  },
+  "cinematheque": {
+   "address": {"value": "HaNassi Ave 142, Haifa", "source": "https://www.haifaff.co.il/eng/Screening_Halls"},
+   "coordinates": {"lat": 32.787, "lng": 34.987, "basis": "approximate: same block as the Auditorium"},
+   "capacity": null,
+   "layout": {"value": "cinema", "source": "https://en.wikipedia.org/wiki/Haifa_Cinematheque"},
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Haifa Cinematheque, in the same HaNassi 138-142 block (another page gives 140). It has two cinemas, but the festival's schedule labels both 'Cinematheque', so no screening is assigned a room and no seat count is known. The research noted wheelchair spaces in row 9 without recording where that came from, so accessibility stays null."
+  },
+  "mirrors-hall": {
+   "address": {"value": "Beit Hecht, HaNassi Ave 142, Haifa", "source": "https://www.haifaff.co.il/eng/Screening_Halls"},
+   "coordinates": {"lat": 32.787, "lng": 34.987, "basis": "approximate: same block as the Auditorium"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Mirrors Hall inside Beit Hecht, in the same block, used for industry events only. Another page gives HaNassi 138. No seat count found."
+  },
+  "tikotin": {
+   "address": {"value": "HaNassi Ave 89, Haifa", "source": "https://www.haifaff.co.il/eng/Screening_Halls"},
+   "coordinates": {"lat": 32.8078, "lng": 34.9888, "basis": "approximate"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Raphael Auditorium of the Tikotin Museum of Japanese Art, a 10-15 minute walk from the Carmel Centre complex. habama.co.il (hall 222) shows a seating map but no seat count."
+  },
+  "kriger-carmel-zarfati": {
+   "address": {"value": "Eliyahu Hakim 6, Haifa", "source": "https://ethos.co.il/eng/Krieger_Center"},
+   "coordinates": {"lat": 32.781, "lng": 34.973, "basis": "approximate"},
+   "capacity": {"value": 500, "source": "https://ethos.co.il/eng/Krieger_Center"},
+   "layout": null,
+   "rooms": [],
+   "accessibility": {"value": "Wheelchair spaces at the ends of row 15.", "source": "https://ethos.co.il/eng/Krieger_Center"},
+   "notes": "Krieger Centre for the Performing Arts, in Carmel Zarfati ('French Carmel'), which is a neighbourhood and not the hall's name. The source gives the capacity as about 500. It is a 15-minute drive from the Carmel Centre, with a festival shuttle."
+  }
+ }
+}

@@ -1,0 +1,85 @@
+# The Haifa International Film Festival: its identity, its editions, and the sources
+# an edition's information block is assembled from. Every key follows the contract
+# in scraper/festivals/README.md.
+
+id = "haifa-iff"
+name = "Haifa International Film Festival"
+name_local = "פסטיבל הסרטים הבינלאומי חיפה"
+city = "Haifa"
+country = "IL"
+# Haifa (latlong.net/place/haifa-israel-6462.html), for the festival timeline and
+# the travel maths between cities.
+# Venues carry their own coordinates.
+lat = 32.794044
+lng = 34.989571
+timezone = "Asia/Jerusalem"
+# The language of the served text. The English mirror is the one complete for every
+# film. Hebrew titles are kept in raw (`titleHe`), because the serving block has no
+# local-title field.
+lang = "en"
+dir = "ltr"
+kind = "film"
+default_genre = "film"
+site = "https://www.haifaff.co.il"
+
+# The festival publishes one flat tariff, never a price per screening. So it is
+# served here, and performance prices stay null unless the programme gives one
+# for that performance.
+[ticketing]
+notes = "Flat tariff from the festival's Pricing & Passes page. Tickets are sold through the festival site's basket, run on ethos.smarticket.co.il; call centre *9300. Cancellation is allowed up to 7 days before the screening."
+currency = "ILS"
+source = "https://www.haifaff.co.il/eng/Pricing_|famp|_Passes"
+
+[ticketing.tariff]
+standard = 49
+discounted = 46
+israeliFilmsSeniors = 24.5
+filmIndustryUnions = 39
+openingEvent = 150
+culinaryCinema = 115
+
+[ticketing.passes]
+tenTickets = 425
+tenTicketsCinemathequeSubscribers = 390
+fourTicketsReduced = 149
+themedFourScreenings = 149
+doubleFeature = 79
+
+[[edition]]
+id = "2026"
+ordinal = 42
+first = "2026-09-25"
+last = "2026-10-03"
+
+[[source]]
+id = "haifaff-site"
+kind = "fetched"
+roles = ["events", "performances", "venues", "prices"]
+required = true
+fetcher = "sources/haifaff-site/fetch.py"
+adapter = "haifa_iff/haifaff_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "haifa_iff/venues_research.py"
+
+# Not built yet (sources/smarticket/fetch.py says what it needs). Until it
+# exists, every performance's status is "unknown".
+[[source]]
+id = "smarticket"
+kind = "fetched"
+roles = ["availability"]
+required = false
+fetcher = "sources/smarticket/fetch.py"
+adapter = "haifa_iff/smarticket.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "haifaff-site"]
+events = ["haifaff-site"]
+performances = ["smarticket", "haifaff-site"]

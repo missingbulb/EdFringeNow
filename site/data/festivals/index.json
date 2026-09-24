@@ -2,6 +2,30 @@
  "v": 1,
  "festivals": [
   {
+   "id": "haifa-iff",
+   "name": "Haifa International Film Festival",
+   "nameLocal": "פסטיבל הסרטים הבינלאומי חיפה",
+   "city": "Haifa",
+   "country": "IL",
+   "lat": 32.794044,
+   "lng": 34.989571,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "defaultGenre": "film",
+   "site": "https://www.haifaff.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 42,
+     "firstDate": "2026-09-25",
+     "lastDate": "2026-10-03",
+     "dataUrl": "/data/festivals/haifa-iff/2026.json"
+    }
+   ]
+  },
+  {
    "id": "jerusalem-comedy",
    "name": "Jerusalem Comedy Festival",
    "nameLocal": "פסטיבל הקומדיה הישראלי",
