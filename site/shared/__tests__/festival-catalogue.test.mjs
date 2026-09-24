@@ -49,6 +49,19 @@ test("availability: only sold-out stops scheduling; unknown is available, free s
   assert.equal(engineOf({ status: "on-sale", free: false }).soldOut, false);
 });
 
+test("a local-language title rides on the show when the block has one, and is absent when it is null", () => {
+  const block = readJson("data/festivals/haifa-iff/2026.json");
+  const shows = new Map(adaptFestival(block).shows.map((s) => [s.slug, s]));
+  const withLocal = block.events.filter((e) => e.titleLocal != null);
+  assert.ok(withLocal.length > 0);
+  for (const event of block.events) {
+    const show = shows.get(event.id);
+    assert.equal(show.title, event.title);
+    if (event.titleLocal != null) assert.equal(show.titleLocal, event.titleLocal);
+    else assert.ok(!("titleLocal" in show), `${event.id} carries no titleLocal`);
+  }
+});
+
 test("a block from another schema version is refused, not half-read", () => {
   const block = readJson("data/festivals/jerusalem-comedy/2026.json");
   assert.throws(() => adaptFestival({ ...block, v: 2 }), /schema v2/);

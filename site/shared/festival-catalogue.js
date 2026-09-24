@@ -99,6 +99,9 @@ export function adaptFestival(block) {
         free: p.free,
         venue: p.venueId,
       })),
+      // The title in the festival's own language, present only when the block
+      // has one: most festivals' `title` already is that language.
+      ...(event.titleLocal != null ? { titleLocal: event.titleLocal } : {}),
     };
   });
 

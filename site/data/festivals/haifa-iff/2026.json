@@ -1,0 +1,4913 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "haifa-iff",
+  "edition": "2026",
+  "ordinal": 42,
+  "name": "Haifa International Film Festival",
+  "nameLocal": "פסטיבל הסרטים הבינלאומי חיפה",
+  "city": "Haifa",
+  "country": "IL",
+  "lat": 32.794044,
+  "lng": 34.989571,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://www.haifaff.co.il",
+  "firstDate": "2026-09-25",
+  "lastDate": "2026-10-03",
+  "ticketing": {
+   "notes": "Flat tariff from the festival's Pricing & Passes page. Tickets are sold through the festival site's basket, run on ethos.smarticket.co.il; call centre *9300. Cancellation is allowed up to 7 days before the screening.",
+   "currency": "ILS",
+   "source": "https://www.haifaff.co.il/eng/Pricing_|famp|_Passes",
+   "tariff": {
+    "standard": 49,
+    "discounted": 46,
+    "israeliFilmsSeniors": 24.5,
+    "filmIndustryUnions": 39,
+    "openingEvent": 150,
+    "culinaryCinema": 115
+   },
+   "passes": {
+    "tenTickets": 425,
+    "tenTicketsCinemathequeSubscribers": 390,
+    "fourTicketsReduced": 149,
+    "themedFourScreenings": 149,
+    "doubleFeature": 79
+   }
+  }
+ },
+ "categories": [
+  {
+   "id": "1007",
+   "name": "Haifa's Wildest Nights"
+  },
+  {
+   "id": "1025",
+   "name": "Double Feature"
+  },
+  {
+   "id": "10481",
+   "name": "Israeli Film Competition"
+  },
+  {
+   "id": "10581",
+   "name": "First Exposure - New Israeli Cinema"
+  },
+  {
+   "id": "1098",
+   "name": "Golden Anchor Competition"
+  },
+  {
+   "id": "1167",
+   "name": "Panorama"
+  },
+  {
+   "id": "11976",
+   "name": "Animation"
+  },
+  {
+   "id": "1270",
+   "name": "Carmel International Competition"
+  },
+  {
+   "id": "1310",
+   "name": "Culinary Cinema"
+  },
+  {
+   "id": "13595",
+   "name": "Between Mishima to Oshima"
+  },
+  {
+   "id": "13602",
+   "name": "Israeli Cinema - Cultural Icons"
+  },
+  {
+   "id": "13839",
+   "name": "Israeli Cinema - Special Events"
+  },
+  {
+   "id": "26",
+   "name": "Gala"
+  },
+  {
+   "id": "4355",
+   "name": "The Family Show"
+  },
+  {
+   "id": "6028",
+   "name": "Israeli Short Films Competition"
+  },
+  {
+   "id": "9152",
+   "name": "HAIFA DOCS"
+  },
+  {
+   "id": "972",
+   "name": "Haifa Classics"
+  }
+ ],
+ "venues": [
+  {
+   "id": "auditorium",
+   "name": "Auditorium",
+   "address": "HaNassi Ave 138, Haifa",
+   "lat": 32.787,
+   "lng": 34.987,
+   "capacity": 1139,
+   "layout": "raked",
+   "rooms": [],
+   "accessibility": "Wheelchair spaces at the sides of rows 2-4.",
+   "notes": "Haifa Auditorium, in the Carmel Centre complex. It has 1,139 seats (up to 1,453 in other configurations) on a single rake with no balcony. The festival's own pages give the address as HaNassi 142. Coordinates are approximate, not geocoded.",
+   "refs": [
+    "https://ethos.co.il/eng/Auditorium.html"
+   ]
+  },
+  {
+   "id": "cinematheque",
+   "name": "Cinematheque",
+   "address": "HaNassi Ave 142, Haifa",
+   "lat": 32.787,
+   "lng": 34.987,
+   "capacity": null,
+   "layout": "cinema",
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Haifa Cinematheque, in the same HaNassi 138-142 block (another page gives 140). It has two cinemas, but the festival's schedule labels both 'Cinematheque', so no screening is assigned a room and no seat count is known. The research noted wheelchair spaces in row 9 without recording where that came from, so accessibility stays null. Coordinates are approximate, not geocoded; same block as the Auditorium.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Haifa_Cinematheque",
+    "https://www.haifaff.co.il/eng/Screening_Halls"
+   ]
+  },
+  {
+   "id": "kriger-carmel-zarfati",
+   "name": "Kriger (Carmel Zarfati)",
+   "address": "Eliyahu Hakim 6, Haifa",
+   "lat": 32.781,
+   "lng": 34.973,
+   "capacity": 500,
+   "layout": null,
+   "rooms": [],
+   "accessibility": "Wheelchair spaces at the ends of row 15.",
+   "notes": "Krieger Centre for the Performing Arts, in Carmel Zarfati ('French Carmel'), which is a neighbourhood and not the hall's name. The source gives the capacity as about 500. It is a 15-minute drive from the Carmel Centre, with a festival shuttle. Coordinates are approximate, not geocoded.",
+   "refs": [
+    "https://ethos.co.il/eng/Krieger_Center"
+   ]
+  },
+  {
+   "id": "mirrors-hall",
+   "name": "Mirrors Hall",
+   "address": "Beit Hecht, HaNassi Ave 142, Haifa",
+   "lat": 32.787,
+   "lng": 34.987,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Mirrors Hall inside Beit Hecht, in the same block, used for industry events only. Another page gives HaNassi 138. No seat count found. Coordinates are approximate, not geocoded; same block as the Auditorium.",
+   "refs": [
+    "https://www.haifaff.co.il/eng/Screening_Halls"
+   ]
+  },
+  {
+   "id": "rapaport",
+   "name": "Rapaport",
+   "address": "HaNassi Ave 140, Haifa",
+   "lat": 32.787,
+   "lng": 34.987,
+   "capacity": 473,
+   "layout": null,
+   "rooms": [],
+   "accessibility": "Wheelchair spaces in the first row.",
+   "notes": "The (new) Rappaport Hall, in the Rappaport Centre in the same HaNassi 138-142 block as the Auditorium, so the walk between them is close to zero. Coordinates are approximate, not geocoded; same block as the Auditorium.",
+   "refs": [
+    "https://ethos.co.il/אולם_רפפורט"
+   ]
+  },
+  {
+   "id": "tikotin",
+   "name": "Tikotin",
+   "address": "HaNassi Ave 89, Haifa",
+   "lat": 32.8078,
+   "lng": 34.9888,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Raphael Auditorium of the Tikotin Museum of Japanese Art, a 10-15 minute walk from the Carmel Centre complex. habama.co.il (hall 222) shows a seating map but no seat count. Coordinates are approximate, not geocoded.",
+   "refs": [
+    "https://www.haifaff.co.il/eng/Screening_Halls"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "film-13407",
+   "title": "Butch Cassidy and the Sundance Kid",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13407",
+   "genre": "film",
+   "categories": [
+    "972"
+   ],
+   "blurb": null,
+   "durationMin": 113,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13409",
+   "title": "It Will Happen Tonight",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13409",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 103,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13411",
+   "title": "A Star Is Born",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13411",
+   "genre": "film",
+   "categories": [
+    "972",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 139,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13413",
+   "title": "Broken English",
+   "titleLocal": "אנגלית שבורה",
+   "url": "https://www.haifaff.co.il/eng/Films/13413",
+   "genre": "film",
+   "categories": [
+    "9152"
+   ],
+   "blurb": null,
+   "durationMin": 99,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13416",
+   "title": "Easy Girl",
+   "titleLocal": "קלה להשגה",
+   "url": "https://www.haifaff.co.il/eng/Films/13416",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 122,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13418",
+   "title": "Funny Girl",
+   "titleLocal": "מצחיקונת",
+   "url": "https://www.haifaff.co.il/eng/Films/13418",
+   "genre": "film",
+   "categories": [
+    "972",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 155,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13419",
+   "title": "Hallow Road",
+   "titleLocal": "דרך רפאים",
+   "url": "https://www.haifaff.co.il/eng/Films/13419",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13421",
+   "title": "Hello, Dolly!",
+   "titleLocal": "הלו דולי!",
+   "url": "https://www.haifaff.co.il/eng/Films/13421",
+   "genre": "film",
+   "categories": [
+    "972",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 148,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13423",
+   "title": "Hope",
+   "titleLocal": "Hope",
+   "url": "https://www.haifaff.co.il/eng/Films/13423",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 156,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13424",
+   "title": "Laguna",
+   "titleLocal": "לגונה",
+   "url": "https://www.haifaff.co.il/eng/Films/13424",
+   "genre": "film",
+   "categories": [
+    "9152"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13426",
+   "title": "Roma Elastica",
+   "titleLocal": "רומא אלסטיקה",
+   "url": "https://www.haifaff.co.il/eng/Films/13426",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 107,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13427",
+   "title": "The Last Viking",
+   "titleLocal": "הוויקינג האחרון",
+   "url": "https://www.haifaff.co.il/eng/Films/13427",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 116,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13429",
+   "title": "The Match",
+   "titleLocal": "המשחק",
+   "url": "https://www.haifaff.co.il/eng/Films/13429",
+   "genre": "film",
+   "categories": [
+    "9152"
+   ],
+   "blurb": null,
+   "durationMin": 91,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13431",
+   "title": "To Kill a Nazi",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13431",
+   "genre": "film",
+   "categories": [
+    "9152"
+   ],
+   "blurb": null,
+   "durationMin": 101,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13433",
+   "title": "Too Many Beasts",
+   "titleLocal": "יותר מדי מפלצות",
+   "url": "https://www.haifaff.co.il/eng/Films/13433",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 95,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13435",
+   "title": "Truly Naked",
+   "titleLocal": "עירום אמיתי",
+   "url": "https://www.haifaff.co.il/eng/Films/13435",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13437",
+   "title": "Yentl",
+   "titleLocal": "ינטל",
+   "url": "https://www.haifaff.co.il/eng/Films/13437",
+   "genre": "film",
+   "categories": [
+    "972",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 133,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13438",
+   "title": "Burgundy",
+   "titleLocal": "בורגונדי",
+   "url": "https://www.haifaff.co.il/eng/Films/13438",
+   "genre": "film",
+   "categories": [
+    "1310"
+   ],
+   "blurb": null,
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13440",
+   "title": "De Gaulle: Liberté",
+   "titleLocal": "דה גול: ליברטה",
+   "url": "https://www.haifaff.co.il/eng/Films/13440",
+   "genre": "film",
+   "categories": [
+    "1025",
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 157,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13441",
+   "title": "De Gaulle: Résistance",
+   "titleLocal": "דה גול: רֵזִיסְטַנְס",
+   "url": "https://www.haifaff.co.il/eng/Films/13441",
+   "genre": "film",
+   "categories": [
+    "1025",
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 160,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13442",
+   "title": "Fjord",
+   "titleLocal": "פיורד",
+   "url": "https://www.haifaff.co.il/eng/Films/13442",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 146,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13444",
+   "title": "Hallo Betty",
+   "titleLocal": "הלו בטי",
+   "url": "https://www.haifaff.co.il/eng/Films/13444",
+   "genre": "film",
+   "categories": [
+    "1310"
+   ],
+   "blurb": null,
+   "durationMin": 110,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13446",
+   "title": "Hershey",
+   "titleLocal": "הרשי",
+   "url": "https://www.haifaff.co.il/eng/Films/13446",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 110,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13448",
+   "title": "I Is Another",
+   "titleLocal": "אני הוא אחר",
+   "url": "https://www.haifaff.co.il/eng/Films/13448",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 93,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13451",
+   "title": "No Good Men",
+   "titleLocal": "אין גברים טובים",
+   "url": "https://www.haifaff.co.il/eng/Films/13451",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 103,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13454",
+   "title": "Parallel Tales",
+   "titleLocal": "מעשיות מקבילות",
+   "url": "https://www.haifaff.co.il/eng/Films/13454",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 139,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13455",
+   "title": "Species",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13455",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 103,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13460",
+   "title": "The Furious",
+   "titleLocal": "הזעם",
+   "url": "https://www.haifaff.co.il/eng/Films/13460",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 113,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13461",
+   "title": "The Wizard of the Kremlin",
+   "titleLocal": "סודות מהקרמלין",
+   "url": "https://www.haifaff.co.il/eng/Films/13461",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 143,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13462",
+   "title": "Yellow Letters",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13462",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 128,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13464",
+   "title": "All the Lovers in the Night",
+   "titleLocal": "כל האוהבים בלילה",
+   "url": "https://www.haifaff.co.il/eng/Films/13464",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 139,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13466",
+   "title": "Cielo",
+   "titleLocal": "שמיים",
+   "url": "https://www.haifaff.co.il/eng/Films/13466",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 108,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13467",
+   "title": "Djinn Wedding",
+   "titleLocal": "החתונה",
+   "url": "https://www.haifaff.co.il/eng/Films/13467",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 132,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13469",
+   "title": "Dua",
+   "titleLocal": "דואה",
+   "url": "https://www.haifaff.co.il/eng/Films/13469",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 101,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13471",
+   "title": "Empire of Passion",
+   "titleLocal": "אימפריית התשוקה",
+   "url": "https://www.haifaff.co.il/eng/Films/13471",
+   "genre": "film",
+   "categories": [
+    "972",
+    "13595",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 105,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13473",
+   "title": "Everytime",
+   "titleLocal": "פעם אחר פעם",
+   "url": "https://www.haifaff.co.il/eng/Films/13473",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 121,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13475",
+   "title": "Flies",
+   "titleLocal": "זבובים",
+   "url": "https://www.haifaff.co.il/eng/Films/13475",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 99,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13476",
+   "title": "Frank & Louis",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13476",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 95,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13478",
+   "title": "Viva Carmen",
+   "titleLocal": "ויוה כרמן",
+   "url": "https://www.haifaff.co.il/eng/Films/13478",
+   "genre": "film",
+   "categories": [
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13482",
+   "title": "3 Days in September",
+   "titleLocal": "שלושה ימים בספטמבר",
+   "url": "https://www.haifaff.co.il/eng/Films/13482",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 78,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13484",
+   "title": "A Safe Place",
+   "titleLocal": "מקום בטוח",
+   "url": "https://www.haifaff.co.il/eng/Films/13484",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 103,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13486",
+   "title": "A Woman's Life",
+   "titleLocal": "חיים של אישה",
+   "url": "https://www.haifaff.co.il/eng/Films/13486",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 98,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13488",
+   "title": "Bedford Park",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13488",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 121,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13490",
+   "title": "Berlin Hero",
+   "titleLocal": "גיבור ברלינאי",
+   "url": "https://www.haifaff.co.il/eng/Films/13490",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 112,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13491",
+   "title": "Coward",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13491",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13493",
+   "title": "Dust",
+   "titleLocal": "אבק",
+   "url": "https://www.haifaff.co.il/eng/Films/13493",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 115,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13495",
+   "title": "Everybody Digs Bill Evans",
+   "titleLocal": "כולם אוהבים את ביל אוונס",
+   "url": "https://www.haifaff.co.il/eng/Films/13495",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13497",
+   "title": "Hold onto Me",
+   "titleLocal": "הישאר איתי",
+   "url": "https://www.haifaff.co.il/eng/Films/13497",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13499",
+   "title": "Hungarian Wedding",
+   "titleLocal": "חתונה הונגרית",
+   "url": "https://www.haifaff.co.il/eng/Films/13499",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 93,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13501",
+   "title": "No Comment",
+   "titleLocal": "אין תגובה",
+   "url": "https://www.haifaff.co.il/eng/Films/13501",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 88,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13503",
+   "title": "Queen at Sea",
+   "titleLocal": "מלכה אבודה",
+   "url": "https://www.haifaff.co.il/eng/Films/13503",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 121,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13505",
+   "title": "Rose",
+   "titleLocal": "רוז",
+   "url": "https://www.haifaff.co.il/eng/Films/13505",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 94,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13506",
+   "title": "Sheep in the Box",
+   "titleLocal": "כבשה בקופסה",
+   "url": "https://www.haifaff.co.il/eng/Films/13506",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 126,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13508",
+   "title": "The Land of Sometimes",
+   "titleLocal": "אספן המשאלות",
+   "url": "https://www.haifaff.co.il/eng/Films/13508",
+   "genre": "film",
+   "categories": [
+    "4355",
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 126,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13509",
+   "title": "The Life and Deaths of Wilson Shedd",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13509",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 121,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13510",
+   "title": "The Loneliest Man in Town",
+   "titleLocal": "האדם הבודד ביותר בעיר",
+   "url": "https://www.haifaff.co.il/eng/Films/13510",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 86,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13511",
+   "title": "The Moon is a Father of Mine",
+   "titleLocal": "הירח הוא אבי",
+   "url": "https://www.haifaff.co.il/eng/Films/13511",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13513",
+   "title": "The Only Living Pickpocket in NY",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13513",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 88,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13514",
+   "title": "The Stranger",
+   "titleLocal": "הזר",
+   "url": "https://www.haifaff.co.il/eng/Films/13514",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 122,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13516",
+   "title": "The Weight",
+   "titleLocal": "משא כבד",
+   "url": "https://www.haifaff.co.il/eng/Films/13516",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 112,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13517",
+   "title": "Wandering Trees",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13517",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13519",
+   "title": "Women on Trial",
+   "titleLocal": "נשים במשפט, סיפורה של מארי קלייר",
+   "url": "https://www.haifaff.co.il/eng/Films/13519",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13524",
+   "title": "Conflagration",
+   "titleLocal": "להבה",
+   "url": "https://www.haifaff.co.il/eng/Films/13524",
+   "genre": "film",
+   "categories": [
+    "972",
+    "13595",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 99,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13526",
+   "title": "Learning to Breathe Under Water",
+   "titleLocal": "ללמוד לנשום מתחת למים",
+   "url": "https://www.haifaff.co.il/eng/Films/13526",
+   "genre": "film",
+   "categories": [
+    "4355"
+   ],
+   "blurb": null,
+   "durationMin": 96,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13527",
+   "title": "Minotaur",
+   "titleLocal": "מינוטאור",
+   "url": "https://www.haifaff.co.il/eng/Films/13527",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 135,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13529",
+   "title": "Tangles",
+   "titleLocal": "קשרים",
+   "url": "https://www.haifaff.co.il/eng/Films/13529",
+   "genre": "film",
+   "categories": [
+    "1098",
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 102,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13537",
+   "title": "Adult Supervision",
+   "titleLocal": "השגחה הורית",
+   "url": "https://www.haifaff.co.il/eng/Films/13537",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 108,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13540",
+   "title": "All About Corinne",
+   "titleLocal": "הכול אודות קורין",
+   "url": "https://www.haifaff.co.il/eng/Films/13540",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 115,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13544",
+   "title": "Armony",
+   "titleLocal": "סיפור על משפחה",
+   "url": "https://www.haifaff.co.il/eng/Films/13544",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 104,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13546",
+   "title": "God Forgives Everyone",
+   "titleLocal": "קינוח אלוהי",
+   "url": "https://www.haifaff.co.il/eng/Films/13546",
+   "genre": "film",
+   "categories": [
+    "1310"
+   ],
+   "blurb": null,
+   "durationMin": 113,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13547",
+   "title": "Hugo",
+   "titleLocal": "ויקטור כמו כולם",
+   "url": "https://www.haifaff.co.il/eng/Films/13547",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 89,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13549",
+   "title": "Sundays",
+   "titleLocal": "ימי ראשון",
+   "url": "https://www.haifaff.co.il/eng/Films/13549",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 115,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13551",
+   "title": "The Guest",
+   "titleLocal": "האורחת",
+   "url": "https://www.haifaff.co.il/eng/Films/13551",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 99,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13553",
+   "title": "Three Goodbyes",
+   "titleLocal": "שלוש פרידות",
+   "url": "https://www.haifaff.co.il/eng/Films/13553",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13555",
+   "title": "Yugly",
+   "titleLocal": "יוֹגְלִי",
+   "url": "https://www.haifaff.co.il/eng/Films/13555",
+   "genre": "film",
+   "categories": [
+    "4355",
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 84,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13556",
+   "title": "Unraveled",
+   "titleLocal": "סדקים",
+   "url": "https://www.haifaff.co.il/eng/Films/13556",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 104,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13557",
+   "title": "All of a Sudden",
+   "titleLocal": "פתאום",
+   "url": "https://www.haifaff.co.il/eng/Films/13557",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 196,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13559",
+   "title": "Gentle Monster",
+   "titleLocal": "ג'נטל מונסטר",
+   "url": "https://www.haifaff.co.il/eng/Films/13559",
+   "genre": "film",
+   "categories": [
+    "1270"
+   ],
+   "blurb": null,
+   "durationMin": 115,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13562",
+   "title": "שווייץ, בלגיה 2026",
+   "titleLocal": "מרי אנינג וסוד המאובן הנסתר",
+   "url": "https://www.haifaff.co.il/eng/Films/13562",
+   "genre": "film",
+   "categories": [
+    "4355",
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 72,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13564",
+   "title": "The Electric Kiss",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13564",
+   "genre": "film",
+   "categories": [
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 122,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13566",
+   "title": "The Violinist",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13566",
+   "genre": "film",
+   "categories": [
+    "11976"
+   ],
+   "blurb": null,
+   "durationMin": 114,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13568",
+   "title": "Words of Love",
+   "titleLocal": "מילים של אהבה",
+   "url": "https://www.haifaff.co.il/eng/Films/13568",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13571",
+   "title": "I Want To Tell My Story",
+   "titleLocal": "אני רוצה לספר את הסיפור שלי",
+   "url": "https://www.haifaff.co.il/eng/Films/13571",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13572",
+   "title": "Hager (Land)",
+   "titleLocal": "האגר - ארץ",
+   "url": "https://www.haifaff.co.il/eng/Films/13572",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 87,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13574",
+   "title": "Stay!",
+   "titleLocal": "הביתה!",
+   "url": "https://www.haifaff.co.il/eng/Films/13574",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13576",
+   "title": "Thou Shalt Love",
+   "titleLocal": "ואהבת",
+   "url": "https://www.haifaff.co.il/eng/Films/13576",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13578",
+   "title": "Spikes",
+   "titleLocal": "זברות",
+   "url": "https://www.haifaff.co.il/eng/Films/13578",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 88,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13580",
+   "title": "Journey Dreams",
+   "titleLocal": "חלומות מסע",
+   "url": "https://www.haifaff.co.il/eng/Films/13580",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13582",
+   "title": "Children Of Hebron",
+   "titleLocal": "ילדי חברון",
+   "url": "https://www.haifaff.co.il/eng/Films/13582",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13585",
+   "title": "A Place Called Hope",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13585",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 77,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13586",
+   "title": "Blue Marks",
+   "titleLocal": "סימנים כחולים",
+   "url": "https://www.haifaff.co.il/eng/Films/13586",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 110,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13587",
+   "title": "Double Panther",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13587",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13589",
+   "title": "Peace 20 30",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13589",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13590",
+   "title": "Short Animation Compilation",
+   "titleLocal": "מקבץ קצרים - אנימציה",
+   "url": "https://www.haifaff.co.il/eng/Films/13590",
+   "genre": "film",
+   "categories": [
+    "6028"
+   ],
+   "blurb": null,
+   "durationMin": 88,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13594",
+   "title": "The School of Flesh",
+   "titleLocal": "בית הספר לבשר",
+   "url": "https://www.haifaff.co.il/eng/Films/13594",
+   "genre": "film",
+   "categories": [
+    "972",
+    "13595",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13597",
+   "title": "Negative",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13597",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13599",
+   "title": "Judoka",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13599",
+   "genre": "film",
+   "categories": [
+    "10581"
+   ],
+   "blurb": null,
+   "durationMin": 93,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13601",
+   "title": "Many Waters",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13601",
+   "genre": "film",
+   "categories": [
+    "10581"
+   ],
+   "blurb": null,
+   "durationMin": 84,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13604",
+   "title": "Alice. Last Conversation",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13604",
+   "genre": "film",
+   "categories": [
+    "13602"
+   ],
+   "blurb": null,
+   "durationMin": 53,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13607",
+   "title": "Naomi Shemer, Between Green and Stones",
+   "titleLocal": "נעמי שמר, בין דשא לאבן",
+   "url": "https://www.haifaff.co.il/eng/Films/13607",
+   "genre": "film",
+   "categories": [
+    "13602"
+   ],
+   "blurb": null,
+   "durationMin": 93,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13608",
+   "title": "Topol: On Top of the World",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13608",
+   "genre": "film",
+   "categories": [
+    "13602"
+   ],
+   "blurb": null,
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13609",
+   "title": "A Girl Unknown",
+   "titleLocal": "נערה אלמונית",
+   "url": "https://www.haifaff.co.il/eng/Films/13609",
+   "genre": "film",
+   "categories": [
+    "1098"
+   ],
+   "blurb": null,
+   "durationMin": 125,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13610",
+   "title": "Cruel Story of Youth",
+   "titleLocal": "סיפור אכזרי של נעורים",
+   "url": "https://www.haifaff.co.il/eng/Films/13610",
+   "genre": "film",
+   "categories": [
+    "972",
+    "13595",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 96,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13611",
+   "title": "Forsaken",
+   "titleLocal": "הנטישה",
+   "url": "https://www.haifaff.co.il/eng/Films/13611",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 100,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13612",
+   "title": "Mishima: A Life in Four Chapters",
+   "titleLocal": "מישימה: חיים בארבעה פרקים",
+   "url": "https://www.haifaff.co.il/eng/Films/13612",
+   "genre": "film",
+   "categories": [
+    "972",
+    "13595",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13613",
+   "title": "Mouse",
+   "titleLocal": "הקיץ של מיני",
+   "url": "https://www.haifaff.co.il/eng/Films/13613",
+   "genre": "film",
+   "categories": [
+    "1167"
+   ],
+   "blurb": null,
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13615",
+   "title": "INK",
+   "titleLocal": "INK",
+   "url": "https://www.haifaff.co.il/eng/Films/13615",
+   "genre": "film",
+   "categories": [
+    "1270",
+    "26"
+   ],
+   "blurb": null,
+   "durationMin": 116,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13616",
+   "title": "The road to Jericho",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13616",
+   "genre": "film",
+   "categories": [
+    "13839"
+   ],
+   "blurb": null,
+   "durationMin": 76,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13617",
+   "title": "Yehoram and Gila",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13617",
+   "genre": "film",
+   "categories": [
+    "13839"
+   ],
+   "blurb": null,
+   "durationMin": 98,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13618",
+   "title": "Shorts Program - Compassion",
+   "titleLocal": "מקבץ קצרים - חמלה",
+   "url": "https://www.haifaff.co.il/eng/Films/13618",
+   "genre": "film",
+   "categories": [
+    "6028"
+   ],
+   "blurb": null,
+   "durationMin": 99,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13620",
+   "title": "Shorts Program - Women: Fragments and Dreams",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13620",
+   "genre": "film",
+   "categories": [
+    "6028"
+   ],
+   "blurb": null,
+   "durationMin": 81,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13621",
+   "title": "Short Animation Compilation (2)",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13621",
+   "genre": "film",
+   "categories": [
+    "6028"
+   ],
+   "blurb": null,
+   "durationMin": 92,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13622",
+   "title": "First Exposure - Shorts Program",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13622",
+   "genre": "film",
+   "categories": [
+    "10581"
+   ],
+   "blurb": null,
+   "durationMin": 68,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13623",
+   "title": "Our Loves",
+   "titleLocal": "האהבות שלנו",
+   "url": "https://www.haifaff.co.il/eng/Films/13623",
+   "genre": "film",
+   "categories": [
+    "13839"
+   ],
+   "blurb": null,
+   "durationMin": 117,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13624",
+   "title": "Colony",
+   "titleLocal": "המושבה",
+   "url": "https://www.haifaff.co.il/eng/Films/13624",
+   "genre": "film",
+   "categories": [
+    "1007"
+   ],
+   "blurb": null,
+   "durationMin": 123,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13626",
+   "title": "Farewell To Dough",
+   "titleLocal": "פרידה מבצק",
+   "url": "https://www.haifaff.co.il/eng/Films/13626",
+   "genre": "film",
+   "categories": [
+    "10481"
+   ],
+   "blurb": null,
+   "durationMin": 101,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13919",
+   "title": "Children Untold",
+   "titleLocal": "ילדים עלומים",
+   "url": "https://www.haifaff.co.il/eng/Films/13919",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 150,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13925",
+   "title": "LAHAV 433",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Films/13925",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "film-13967",
+   "title": "Death by Hanging",
+   "titleLocal": "מוות בתליה",
+   "url": "https://www.haifaff.co.il/eng/Films/13967",
+   "genre": "film",
+   "categories": [
+    "972",
+    "1025"
+   ],
+   "blurb": null,
+   "durationMin": 118,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13846",
+   "title": "The 42th Haifa International Film Festival Opening Event",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13846",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13896",
+   "title": "נכנסים לסצנה – הקראות 2 חיפה – גם עם מצלמה",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13896",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13897",
+   "title": "כנס חיפה לקולנוע בעידן הבינה המלאכותית",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13897",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13898",
+   "title": "In Memory of Yvonne Miklós",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13898",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13899",
+   "title": "From Script to Set: Film & TV Production with AI",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13899",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13900",
+   "title": "פיץ' על הכרמל - חשיפת סרטים חיפאיים",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13900",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13905",
+   "title": "שולחן עגול בינלאומי",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13905",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13942",
+   "title": "Haifa 12th Graduate Films Pitching Forum",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13942",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13946",
+   "title": "מפגש סרטוני AI בתהליך עבודה",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13946",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "event-13947",
+   "title": "THE 23RD INTERNATIONAL PITCHING FORUM FOR FILM AND TV",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13947",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "film-13555/2026-09-25/11:15",
+   "eventId": "film-13555",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "11:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28001",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13497/2026-09-25/11:15",
+   "eventId": "film-13497",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "11:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28040",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13437/2026-09-25/13:15",
+   "eventId": "film-13437",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "13:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27987",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13514/2026-09-25/13:15",
+   "eventId": "film-13514",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "13:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28152",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13544/2026-09-25/15:30",
+   "eventId": "film-13544",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "15:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28022",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13610/2026-09-25/16:00",
+   "eventId": "film-13610",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27969",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13537/2026-09-25/17:45",
+   "eventId": "film-13537",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27949",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13556/2026-09-25/18:00",
+   "eventId": "film-13556",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28076",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13499/2026-09-25/20:00",
+   "eventId": "film-13499",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "20:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28044",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13609/2026-09-25/20:15",
+   "eventId": "film-13609",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28165",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13460/2026-09-25/22:00",
+   "eventId": "film-13460",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-25",
+   "start": "22:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28092",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13562/2026-09-26/10:30",
+   "eventId": "film-13562",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27997",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13429/2026-09-26/10:30",
+   "eventId": "film-13429",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28012",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13446/2026-09-26/10:45",
+   "eventId": "film-13446",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "10:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28038",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13451/2026-09-26/10:45",
+   "eventId": "film-13451",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "10:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28052",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13607/2026-09-26/12:15",
+   "eventId": "film-13607",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "12:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28124",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13612/2026-09-26/12:30",
+   "eventId": "film-13612",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27973",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13553/2026-09-26/13:00",
+   "eventId": "film-13553",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "13:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28074",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13490/2026-09-26/13:15",
+   "eventId": "film-13490",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "13:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28026",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13529/2026-09-26/14:45",
+   "eventId": "film-13529",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "14:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27965",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13526/2026-09-26/15:00",
+   "eventId": "film-13526",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "15:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27995",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13511/2026-09-26/15:30",
+   "eventId": "film-13511",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "15:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28066",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13547/2026-09-26/15:45",
+   "eventId": "film-13547",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "15:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28042",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13613/2026-09-26/17:00",
+   "eventId": "film-13613",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "17:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28048",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13519/2026-09-26/17:00",
+   "eventId": "film-13519",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "17:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28080",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13454/2026-09-26/17:45",
+   "eventId": "film-13454",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28054",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13442/2026-09-26/18:15",
+   "eventId": "film-13442",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28034",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13846/2026-09-26/18:30",
+   "eventId": "event-13846",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27885",
+   "free": null,
+   "status": "unknown",
+   "priceMin": 150,
+   "priceMax": 150
+  },
+  {
+   "id": "film-13495/2026-09-26/19:15",
+   "eventId": "film-13495",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "19:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28032",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13413/2026-09-26/19:30",
+   "eventId": "film-13413",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "19:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28008",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13540/2026-09-26/20:30",
+   "eventId": "film-13540",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28020",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13505/2026-09-26/21:15",
+   "eventId": "film-13505",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28056",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13433/2026-09-26/21:15",
+   "eventId": "film-13433",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28096",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13419/2026-09-26/21:30",
+   "eventId": "film-13419",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-26",
+   "start": "21:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28088",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13421/2026-09-27/10:45",
+   "eventId": "film-13421",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "10:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27985",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13486/2026-09-27/11:00",
+   "eventId": "film-13486",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "11:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28018",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13478/2026-09-27/11:45",
+   "eventId": "film-13478",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "11:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28142",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13444/2026-09-27/12:00",
+   "eventId": "film-13444",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27993",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13499/2026-09-27/12:00",
+   "eventId": "film-13499",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28045",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13464/2026-09-27/13:15",
+   "eventId": "film-13464",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "13:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27951",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13484/2026-09-27/13:45",
+   "eventId": "film-13484",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "13:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28016",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13471/2026-09-27/13:45",
+   "eventId": "film-13471",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "13:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27971",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13544/2026-09-27/14:15",
+   "eventId": "film-13544",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "14:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28023",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13580/2026-09-27/16:00",
+   "eventId": "film-13580",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28113",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13493/2026-09-27/16:00",
+   "eventId": "film-13493",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28141",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13469/2026-09-27/16:00",
+   "eventId": "film-13469",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27957",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13441/2026-09-27/16:30",
+   "eventId": "film-13441",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "16:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28030",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13549/2026-09-27/17:45",
+   "eventId": "film-13549",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27939",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13435/2026-09-27/18:00",
+   "eventId": "film-13435",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28101",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13537/2026-09-27/18:15",
+   "eventId": "film-13537",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27950",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13576/2026-09-27/18:30",
+   "eventId": "film-13576",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28111",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13440/2026-09-27/20:00",
+   "eventId": "film-13440",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "20:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28028",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13461/2026-09-27/20:30",
+   "eventId": "film-13461",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28072",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13574/2026-09-27/20:45",
+   "eventId": "film-13574",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "20:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28110",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13615/2026-09-27/21:00",
+   "eventId": "film-13615",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27945",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13427/2026-09-27/21:00",
+   "eventId": "film-13427",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-27",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28090",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13942/2026-09-28/10:00",
+   "eventId": "event-13942",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13508/2026-09-28/10:00",
+   "eventId": "film-13508",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27999",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13594/2026-09-28/10:15",
+   "eventId": "film-13594",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27975",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13510/2026-09-28/10:30",
+   "eventId": "film-13510",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28143",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13506/2026-09-28/11:00",
+   "eventId": "film-13506",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "11:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27937",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13418/2026-09-28/12:00",
+   "eventId": "film-13418",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27984",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13623/2026-09-28/12:00",
+   "eventId": "film-13623",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27922",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13438/2026-09-28/12:30",
+   "eventId": "film-13438",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27989",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13475/2026-09-28/12:30",
+   "eventId": "film-13475",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27961",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13501/2026-09-28/13:45",
+   "eventId": "film-13501",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "13:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28050",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13419/2026-09-28/14:30",
+   "eventId": "film-13419",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "14:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28089",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13557/2026-09-28/14:45",
+   "eventId": "film-13557",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "14:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27925",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13524/2026-09-28/15:00",
+   "eventId": "film-13524",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "15:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27967",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13497/2026-09-28/15:15",
+   "eventId": "film-13497",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "15:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28041",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13568/2026-09-28/16:00",
+   "eventId": "film-13568",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28082",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13896/2026-09-28/16:00",
+   "eventId": "event-13896",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28145",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13582/2026-09-28/16:30",
+   "eventId": "film-13582",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "16:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28114",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13473/2026-09-28/17:15",
+   "eventId": "film-13473",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "17:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27959",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13611/2026-09-28/17:30",
+   "eventId": "film-13611",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "17:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28036",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13898/2026-09-28/18:00",
+   "eventId": "event-13898",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28146",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13448/2026-09-28/18:15",
+   "eventId": "film-13448",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28046",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13426/2026-09-28/18:30",
+   "eventId": "film-13426",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28105",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13626/2026-09-28/18:30",
+   "eventId": "film-13626",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28118",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13919/2026-09-28/19:45",
+   "eventId": "film-13919",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "19:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28153",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13466/2026-09-28/19:45",
+   "eventId": "film-13466",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "19:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27953",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13527/2026-09-28/20:45",
+   "eventId": "film-13527",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "20:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27933",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13423/2026-09-28/21:00",
+   "eventId": "film-13423",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28086",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13578/2026-09-28/21:00",
+   "eventId": "film-13578",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28112",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13624/2026-09-28/22:30",
+   "eventId": "film-13624",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-28",
+   "start": "22:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28094",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13555/2026-09-29/10:00",
+   "eventId": "film-13555",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28002",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13557/2026-09-29/10:00",
+   "eventId": "film-13557",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28231",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13897/2026-09-29/10:00",
+   "eventId": "event-13897",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28147",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13482/2026-09-29/10:00",
+   "eventId": "film-13482",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28233",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13464/2026-09-29/10:45",
+   "eventId": "film-13464",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "10:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28139",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13546/2026-09-29/11:00",
+   "eventId": "film-13546",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "11:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27991",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13946/2026-09-29/11:30",
+   "eventId": "event-13946",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "11:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28229",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13590/2026-09-29/11:45",
+   "eventId": "film-13590",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "11:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28131",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13967/2026-09-29/11:45",
+   "eventId": "film-13967",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "11:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28138",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13503/2026-09-29/13:15",
+   "eventId": "film-13503",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "13:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27935",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13454/2026-09-29/13:30",
+   "eventId": "film-13454",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "13:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28055",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13442/2026-09-29/13:30",
+   "eventId": "film-13442",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "13:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28218",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13484/2026-09-29/14:00",
+   "eventId": "film-13484",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "14:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28017",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13618/2026-09-29/14:00",
+   "eventId": "film-13618",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "14:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28128",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13467/2026-09-29/15:45",
+   "eventId": "film-13467",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "15:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27955",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13571/2026-09-29/16:15",
+   "eventId": "film-13571",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28108",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13519/2026-09-29/16:15",
+   "eventId": "film-13519",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28081",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13551/2026-09-29/16:30",
+   "eventId": "film-13551",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "16:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27941",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13621/2026-09-29/16:30",
+   "eventId": "film-13621",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "16:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28129",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13424/2026-09-29/18:30",
+   "eventId": "film-13424",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28010",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13564/2026-09-29/18:30",
+   "eventId": "film-13564",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28060",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13572/2026-09-29/18:30",
+   "eventId": "film-13572",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28109",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13620/2026-09-29/18:30",
+   "eventId": "film-13620",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28130",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13559/2026-09-29/19:00",
+   "eventId": "film-13559",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "19:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27931",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13488/2026-09-29/20:15",
+   "eventId": "film-13488",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28024",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13416/2026-09-29/20:45",
+   "eventId": "film-13416",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "20:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28103",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13462/2026-09-29/21:00",
+   "eventId": "film-13462",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28084",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13586/2026-09-29/21:00",
+   "eventId": "film-13586",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28116",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13516/2026-09-29/21:45",
+   "eventId": "film-13516",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "21:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28070",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13471/2026-09-29/22:30",
+   "eventId": "film-13471",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "22:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27972",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13947/2026-09-30/10:00",
+   "eventId": "event-13947",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13610/2026-09-30/10:00",
+   "eventId": "film-13610",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27970",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13623/2026-09-30/10:15",
+   "eventId": "film-13623",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28217",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13411/2026-09-30/10:15",
+   "eventId": "film-13411",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27981",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13424/2026-09-30/11:15",
+   "eventId": "film-13424",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "11:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28011",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13513/2026-09-30/11:45",
+   "eventId": "film-13513",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "11:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28068",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13609/2026-09-30/12:00",
+   "eventId": "film-13609",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27947",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13549/2026-09-30/12:45",
+   "eventId": "film-13549",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "12:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27940",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13527/2026-09-30/13:00",
+   "eventId": "film-13527",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "13:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28151",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13613/2026-09-30/13:30",
+   "eventId": "film-13613",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "13:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28049",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13511/2026-09-30/13:45",
+   "eventId": "film-13511",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "13:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28140",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13476/2026-09-30/14:30",
+   "eventId": "film-13476",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "14:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27963",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13905/2026-09-30/15:00",
+   "eventId": "event-13905",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "15:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28148",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13462/2026-09-30/15:30",
+   "eventId": "film-13462",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "15:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28085",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13446/2026-09-30/15:45",
+   "eventId": "film-13446",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "15:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28039",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13585/2026-09-30/16:00",
+   "eventId": "film-13585",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28115",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13899/2026-09-30/16:00",
+   "eventId": "event-13899",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28149",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13495/2026-09-30/16:15",
+   "eventId": "film-13495",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28033",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13482/2026-09-30/16:30",
+   "eventId": "film-13482",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "16:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28014",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13547/2026-09-30/18:15",
+   "eventId": "film-13547",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28043",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13491/2026-09-30/18:30",
+   "eventId": "film-13491",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27927",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13587/2026-09-30/18:30",
+   "eventId": "film-13587",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28117",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13529/2026-09-30/18:45",
+   "eventId": "film-13529",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "18:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27966",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13431/2026-09-30/18:45",
+   "eventId": "film-13431",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "18:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28007",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13540/2026-09-30/20:15",
+   "eventId": "film-13540",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28021",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13589/2026-09-30/21:00",
+   "eventId": "film-13589",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28119",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13427/2026-09-30/21:15",
+   "eventId": "film-13427",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28091",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13514/2026-09-30/21:15",
+   "eventId": "film-13514",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27943",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13594/2026-09-30/21:30",
+   "eventId": "film-13594",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "21:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27976",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13407/2026-10-01/10:00",
+   "eventId": "film-13407",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27980",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13473/2026-10-01/10:00",
+   "eventId": "film-13473",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28232",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13556/2026-10-01/10:00",
+   "eventId": "film-13556",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "10:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28077",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13466/2026-10-01/10:15",
+   "eventId": "film-13466",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28164",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13919/2026-10-01/12:00",
+   "eventId": "film-13919",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28154",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13438/2026-10-01/12:15",
+   "eventId": "film-13438",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "12:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27990",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13505/2026-10-01/12:15",
+   "eventId": "film-13505",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "12:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28057",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13506/2026-10-01/12:30",
+   "eventId": "film-13506",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27938",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13429/2026-10-01/12:30",
+   "eventId": "film-13429",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28013",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13478/2026-10-01/14:15",
+   "eventId": "film-13478",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "14:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28006",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13510/2026-10-01/14:15",
+   "eventId": "film-13510",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "14:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28065",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13566/2026-10-01/14:30",
+   "eventId": "film-13566",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "14:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28003",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13441/2026-10-01/15:00",
+   "eventId": "film-13441",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "15:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28031",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13444/2026-10-01/15:30",
+   "eventId": "film-13444",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "15:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27994",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13900/2026-10-01/16:00",
+   "eventId": "event-13900",
+   "venueId": "mirrors-hall",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "16:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13608/2026-10-01/16:15",
+   "eventId": "film-13608",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28125",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13611/2026-10-01/16:15",
+   "eventId": "film-13611",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28037",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13925/2026-10-01/17:00",
+   "eventId": "film-13925",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "17:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28107",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13461/2026-10-01/18:00",
+   "eventId": "film-13461",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "18:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13604/2026-10-01/18:15",
+   "eventId": "film-13604",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28123",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13440/2026-10-01/18:15",
+   "eventId": "film-13440",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28029",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13617/2026-10-01/18:30",
+   "eventId": "film-13617",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28126",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13509/2026-10-01/19:30",
+   "eventId": "film-13509",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "19:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28062",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13597/2026-10-01/20:00",
+   "eventId": "film-13597",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "20:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28100",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13599/2026-10-01/21:00",
+   "eventId": "film-13599",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "21:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28120",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13564/2026-10-01/21:15",
+   "eventId": "film-13564",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28061",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13553/2026-10-01/21:15",
+   "eventId": "film-13553",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28075",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13612/2026-10-01/22:00",
+   "eventId": "film-13612",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "22:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27974",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13455/2026-10-01/22:15",
+   "eventId": "film-13455",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "22:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28099",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13562/2026-10-02/10:15",
+   "eventId": "film-13562",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27998",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13526/2026-10-02/10:30",
+   "eventId": "film-13526",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27996",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13546/2026-10-02/10:45",
+   "eventId": "film-13546",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "10:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27992",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13467/2026-10-02/11:00",
+   "eventId": "film-13467",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "11:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27956",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13622/2026-10-02/12:00",
+   "eventId": "film-13622",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "12:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28122",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13568/2026-10-02/12:15",
+   "eventId": "film-13568",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "12:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28083",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13493/2026-10-02/12:45",
+   "eventId": "film-13493",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "12:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27930",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13501/2026-10-02/13:30",
+   "eventId": "film-13501",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "13:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28051",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13967/2026-10-02/13:45",
+   "eventId": "film-13967",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "13:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27978",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13475/2026-10-02/14:00",
+   "eventId": "film-13475",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "14:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27962",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13517/2026-10-02/14:30",
+   "eventId": "film-13517",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "14:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28079",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13557/2026-10-02/15:15",
+   "eventId": "film-13557",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "15:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27926",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13616/2026-10-02/16:00",
+   "eventId": "film-13616",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28127",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13486/2026-10-02/16:15",
+   "eventId": "film-13486",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "16:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28019",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13413/2026-10-02/18:00",
+   "eventId": "film-13413",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28009",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13476/2026-10-02/18:15",
+   "eventId": "film-13476",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "18:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27964",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13482/2026-10-02/18:30",
+   "eventId": "film-13482",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "18:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28015",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13551/2026-10-02/19:00",
+   "eventId": "film-13551",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "19:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27942",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13503/2026-10-02/19:00",
+   "eventId": "film-13503",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "19:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27936",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13426/2026-10-02/20:15",
+   "eventId": "film-13426",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28106",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13416/2026-10-02/20:15",
+   "eventId": "film-13416",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28104",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13491/2026-10-02/20:30",
+   "eventId": "film-13491",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27928",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13433/2026-10-02/21:15",
+   "eventId": "film-13433",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "21:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28097",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13516/2026-10-02/21:30",
+   "eventId": "film-13516",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "21:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28071",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13624/2026-10-02/22:30",
+   "eventId": "film-13624",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "22:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28095",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13488/2026-10-03/10:15",
+   "eventId": "film-13488",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "10:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28025",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13409/2026-10-03/10:30",
+   "eventId": "film-13409",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27923",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13508/2026-10-03/10:30",
+   "eventId": "film-13508",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28000",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13609/2026-10-03/10:30",
+   "eventId": "film-13609",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "10:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27948",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13411/2026-10-03/12:30",
+   "eventId": "film-13411",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "12:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27982",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13514/2026-10-03/12:45",
+   "eventId": "film-13514",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "12:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27944",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13451/2026-10-03/13:00",
+   "eventId": "film-13451",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "13:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28053",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13442/2026-10-03/13:00",
+   "eventId": "film-13442",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "13:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28035",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13524/2026-10-03/13:00",
+   "eventId": "film-13524",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "13:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27968",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13466/2026-10-03/15:15",
+   "eventId": "film-13466",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "15:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27954",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13527/2026-10-03/15:15",
+   "eventId": "film-13527",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "15:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27934",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13566/2026-10-03/15:15",
+   "eventId": "film-13566",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "15:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28004",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13448/2026-10-03/15:30",
+   "eventId": "film-13448",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "15:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28047",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13513/2026-10-03/16:00",
+   "eventId": "film-13513",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "16:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28069",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13559/2026-10-03/17:45",
+   "eventId": "film-13559",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27932",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13509/2026-10-03/17:45",
+   "eventId": "film-13509",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28063",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13469/2026-10-03/17:45",
+   "eventId": "film-13469",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "17:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27958",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13490/2026-10-03/18:00",
+   "eventId": "film-13490",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28027",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13601/2026-10-03/18:00",
+   "eventId": "film-13601",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "18:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28121",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13435/2026-10-03/20:00",
+   "eventId": "film-13435",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:00",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28102",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13473/2026-10-03/20:15",
+   "eventId": "film-13473",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27960",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13409/2026-10-03/20:30",
+   "eventId": "film-13409",
+   "venueId": "auditorium",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27924",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13615/2026-10-03/20:30",
+   "eventId": "film-13615",
+   "venueId": "kriger-carmel-zarfati",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27946",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13423/2026-10-03/20:30",
+   "eventId": "film-13423",
+   "venueId": "rapaport",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:30",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28087",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13460/2026-10-03/22:15",
+   "eventId": "film-13460",
+   "venueId": "tikotin",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "22:15",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28093",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "film-13455/2026-10-03/22:45",
+   "eventId": "film-13455",
+   "venueId": "cinematheque",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "22:45",
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28098",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "haifaff-site",
+   "venues-research"
+  ],
+  "events": [
+   "haifaff-site"
+  ],
+  "performances": [
+   "haifaff-site"
+  ],
+  "availability": [],
+  "prices": [
+   "haifaff-site"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "haifaff-site": {
+    "kind": "fetched",
+    "path": "data/festivals/haifa-iff/2026/haifaff-site",
+    "fetchedAt": null,
+    "fetcher": "research-2026-09-24",
+    "fetcherVersion": null
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/haifa_iff/curated/venues.json"
+   }
+  },
+  "absent": [
+   "smarticket"
+  ],
+  "fields": {
+   "categories.name": [
+    "haifaff-site"
+   ],
+   "events.blurb": [
+    "haifaff-site"
+   ],
+   "events.categories": [
+    "haifaff-site"
+   ],
+   "events.durationMin": [
+    "haifaff-site"
+   ],
+   "events.genre": [
+    "haifaff-site"
+   ],
+   "events.imageUrl": [
+    "haifaff-site"
+   ],
+   "events.title": [
+    "haifaff-site"
+   ],
+   "events.titleLocal": [
+    "haifaff-site"
+   ],
+   "events.url": [
+    "haifaff-site"
+   ],
+   "performances.date": [
+    "haifaff-site"
+   ],
+   "performances.eventId": [
+    "haifaff-site"
+   ],
+   "performances.free": [
+    "haifaff-site"
+   ],
+   "performances.priceMax": [
+    "haifaff-site"
+   ],
+   "performances.priceMin": [
+    "haifaff-site"
+   ],
+   "performances.start": [
+    "haifaff-site"
+   ],
+   "performances.ticketUrl": [
+    "haifaff-site"
+   ],
+   "performances.venueId": [
+    "haifaff-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "haifaff-site"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}
