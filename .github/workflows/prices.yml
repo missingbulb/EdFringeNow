@@ -24,7 +24,10 @@ on:
         required: false
         default: ""
       slug:
-        description: Price a single show by slug instead (e.g. daniel-sloss-bitter)
+        description: >-
+          Price a single show by slug instead (e.g. daniel-sloss-bitter).
+          Also selects the raw-probe job below (which runs only when this is
+          filled in) — the pricing job itself stays inert regardless.
         required: false
         default: ""
       batch_size:
@@ -72,6 +75,50 @@ jobs:
         run: |
           echo "This workflow is inert: update scraping is switched off."
           echo "Nothing was fetched and no data file was touched."
+
+  # Reads one show's raw performancePrices payload — fees[], transactionFeesPrice,
+  # outsideFeesPrice, feeInTicketPrice together, not reduced to booking_fee()'s
+  # single max(). Settles #294's fee-composition question without waking the
+  # full pass: prices nothing else, touches no cache file, commits and pushes
+  # nothing. Runs only when `slug` is filled in; leave it blank to get the
+  # inert report above instead.
+  raw-probe:
+    if: ${{ inputs.slug != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch raw performancePrices for one show
+        run: |
+          python3 scraper/fetch_prices.py --slug "${{ inputs.slug }}" \
+            --print-raw --out /tmp/raw-probe-cache.json \
+            | tee /tmp/raw-probe-output.txt
+
+      - name: Write the raw payload to the step summary
+        if: always()
+        run: |
+          {
+            echo "### Raw price probe: \`${{ inputs.slug }}\`"
+            echo
+            echo '```'
+            cat /tmp/raw-probe-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the raw payload as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-price-probe-${{ inputs.slug }}
+          path: /tmp/raw-probe-output.txt
+          retention-days: 14
 
   prices:
     if: false   # the kill switch above
