@@ -1542,6 +1542,20 @@ reached from there.
   own-language name is tagged with its language and direction.
   </details>
 
+- `23.7` The Edinburgh Fringe is a festival like the others: chosen on the timeline, it plans its own programme in its own theme.
+
+  <!-- req-gallery:23.7 -->
+
+  <details><summary>Notes</summary>
+
+  The Fringe's programme is read from the same files the Fringe planner
+  reads, through the adapter every festival goes through
+  (`site/shared/festival-catalogue.js`), so nothing about it is copied. Its
+  kinds are the ten headline genres, with the Fringe planner's own pictures.
+  Rendered against the frozen 300-show fixture; section 26 holds the page to
+  the whole programme.
+  </details>
+
 ## 24. Where you are coming from
 
 The first time a festival is chosen the page asks, once, where the reader is
@@ -1599,6 +1613,69 @@ constants live in `site/shared/limits.js`.
 - `25.2` The timeline draws one bar per edition, however many performances the edition has.
 
   <table><thead><tr><th align="left">Festival</th><th align="left">Edition</th><th align="left">Runs</th><th align="left">Programme</th><th align="left">Bars on the timeline</th></tr></thead><tbody><tr><td>Jerusalem Comedy Festival</td><td>2026</td><td>18 – 22 Oct 2026</td><td>published</td><td>1</td></tr><tr><td>Haifa International Film Festival</td><td>2026</td><td>25 Sep – 3 Oct 2026</td><td>not yet</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2026</td><td>7 – 31 Aug 2026</td><td>published</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2025</td><td>1 – 25 Aug 2025</td><td>published</td><td>0 (before the year shown)</td></tr></tbody></table> <!-- req-gallery:25.2 -->
+
+- `25.3` A search filter lists at most a panel's worth of options, the busiest making the cut, and never hides one already chosen.
+
+  <!-- req-gallery:25.3 -->
+
+  <details><summary>Notes</summary>
+
+  `FACET_OPTIONS` in `site/shared/limits.js`. The Fringe plays in some three
+  hundred venues; the rest are one search away, since the query matches a
+  venue's name, and the panel says how many it left out. The same file caps
+  the shows a contested hour names as its rivals at `RIVAL_ROWS`, scarcest
+  first, with a line for how many more.
+  </details>
+
+- `25.4` Choosing Haifa, Acco or Jerusalem never downloads the Fringe's programme; choosing the Fringe does.
+
+  <!-- req-gallery:25.4 -->
+
+  <details><summary>Notes</summary>
+
+  A festival's programme is fetched only once a period reaches its dates, so
+  the three Israeli festivals plan off their own small files and the Fringe's
+  catalogue waits until the reader asks for Edinburgh.
+  </details>
+
+## 26. The Fringe's size, on the real programme
+
+The page was built for festivals of a few dozen to a few hundred events; the
+Fringe is some four thousand shows and sixty thousand performances. These
+leaves hold the page to that size by loading the **real committed Fringe
+data** (`site/data/`) rather than the frozen fixture: a sample can only prove
+the page survives the sample. They are coded rather than pictured, because a
+bound is a number and a render of the whole programme would move with every
+data refresh. Their kind (`scale`) is its own lane for that reason: it is the
+one place a case reads live files, and it asserts bounds that stay true
+whatever the day's data holds.
+
+- `26.1` Focused on the whole Fringe, no list draws more than its cap.
+
+  <!-- req-gallery:26.1 -->
+
+  <details><summary>Notes</summary>
+
+  Every list the page can draw, measured on the page itself after the whole
+  programme has been drafted: the drawer's browse list, a one-letter search,
+  both filter panels, the kinds question, and the rivals of the most contested
+  hour. The caps are the constants of `site/shared/limits.js`, read from the
+  shipped module.
+  </details>
+
+- `26.2` Focused on the whole Fringe, the page draws within its time budgets and stays a bounded page.
+
+  <!-- req-gallery:26.2 -->
+
+  <details><summary>Notes</summary>
+
+  The first calendar is timed from navigation, which includes downloading and
+  joining the three catalogue files; a re-draft from one answer, which
+  re-drafts the whole programme; and the elements on the page, which would
+  run into the tens of thousands if any list drew the programme. The budgets
+  leave room for a slow CI machine: locally the first calendar takes under a
+  second and a re-draft about 0.2 s.
+  </details>
 
 ---
 
