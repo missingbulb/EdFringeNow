@@ -76,13 +76,20 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
-step "Jerusalem parse self-test — jerusalem/parse.py"
-# The Jerusalem scrape is one-shot and its fetch half can only be checked against
-# the live site; its Hebrew parsing half runs offline on markup shaped like the
-# source's, which makes it the only verification that change can get here — so it
-# is wired in rather than left to be remembered.
+step "Festival data — fetcher parse self-tests, converter self-test, serving drift check"
+# The small festivals' fetchers run by hand only, so their network half can only
+# be checked against the live sites; each one's parsing half runs offline and is
+# the only verification a fetcher change gets here. The converter's --check
+# re-derives every committed serving file from the committed raw and fails on any
+# difference, so neither side of that pair can be edited alone.
 if command -v python3 >/dev/null 2>&1; then
-  python3 scraper/jerusalem/parse.py
+  python3 scraper/festivals/common.py --selftest
+  for parser in scraper/festivals/*/sources/*/parse.py; do
+    [ -e "$parser" ] || continue
+    python3 "$parser" --selftest
+  done
+  python3 scraper/convert/to_serving.py --selftest
+  python3 scraper/convert/to_serving.py --check
 else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi

@@ -45,19 +45,25 @@ const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json']);
 // this entry got, which is why it is one name and not a pattern.
 const ALLOWED_INPUTS = new Map([
   ['data/prices.json', 'scraper/fetch_prices.py'],
+  // The small festivals' raw: each file a hand-run fetcher writes under its own
+  // data/festivals/<festival>/<edition>/<source>/, and the converter only reads.
+  ['data/festivals/jerusalem-comedy/2026/comedy-festival-site/manifest.json', 'scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py'],
+  ['data/festivals/jerusalem-comedy/2026/comedy-festival-site/programme.json', 'scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py'],
+  ['data/festivals/jerusalem-comedy/2026/nominatim/manifest.json', 'scraper/festivals/jerusalem/sources/nominatim/fetch.py'],
+  ['data/festivals/jerusalem-comedy/2026/nominatim/geocode.json', 'scraper/festivals/jerusalem/sources/nominatim/fetch.py'],
 ]);
 
-// Committed files under data/ written by a generator in this repo that is NOT
-// normalize.py. The site serves a second festival whose programme has its own
-// one-shot scrape, and normalize.py neither writes nor reads that file — so it
-// satisfies what this rule protects (a script in the repo produces it, and
-// nothing silently destroys it) without being an input.
+// Committed files under the data trees written by a generator in this repo that
+// is NOT normalize.py: the festival converter's serving blocks, its registry, and
+// the pre-registry Jerusalem catalogue it still writes for /planJerusalem/.
 //
-// Named, not shaped: a second festival's directory is exactly the moment a
+// Named, not shaped: a new festival's or edition's file is exactly the moment a
 // human should confirm the producer really writes what is in it, so a file that
 // merely sits beside an allowed one still trips the rule.
 const ALLOWED_OUTPUTS = new Map([
-  ['site/data/jerusalem/shows.json', 'scraper/jerusalem/fetch.py'],
+  ['site/data/jerusalem/shows.json', 'scraper/convert/to_serving.py'],
+  ['site/data/festivals/index.json', 'scraper/convert/to_serving.py'],
+  ['site/data/festivals/jerusalem-comedy/2026.json', 'scraper/convert/to_serving.py'],
 ]);
 
 // The bulky raw scrape caches are git-ignored (`.gitignore`) precisely because
@@ -66,7 +72,7 @@ const ALLOWED_OUTPUTS = new Map([
 // un-stage it, not to delete data the site needs.
 const RAW_CACHES = new Map([
   ['data/raw_pages/', 'scraper/fetch_shows.py'],
-  ['data/jerusalem/raw_pages/', 'scraper/jerusalem/fetch.py'],
+  ['data/festivals/.cache/', 'the festival fetchers under scraper/festivals/'],
 ]);
 
 const rule = {

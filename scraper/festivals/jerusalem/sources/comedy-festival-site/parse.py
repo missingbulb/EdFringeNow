@@ -349,4 +349,8 @@ def selftest():
 
 
 if __name__ == "__main__":
+    import sys
+
+    if sys.argv[1:] != ["--selftest"]:
+        sys.exit("usage: parse.py --selftest")
     selftest()

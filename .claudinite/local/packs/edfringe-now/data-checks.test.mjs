@@ -299,16 +299,23 @@ test("the named scraper input data/prices.json is allowed; a lookalike is not", 
     "the fix must name the inputs that ARE allowed, so the reader can tell the two apart");
 });
 
-test("a second scraper's named output is allowed; a lookalike beside it is not", () => {
-  // data/jerusalem/ is the one-shot Jerusalem scrape's output, written by
-  // scraper/jerusalem/fetch.py. Named, like the price cache, so the exemption
-  // covers that file and not the directory it lives in.
-  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/jerusalem/shows.json": "" })), []);
-  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/jerusalem/notes.json": "" }));
+test("a second generator's named output is allowed; a lookalike beside it is not", () => {
+  // The festival converter's serving files are named one by one, so the
+  // exemption covers those files and not the directory they live in.
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/festivals/jerusalem-comedy/2026.json": "" })), []);
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "site/data/festivals/jerusalem-comedy/2027.json": "" }));
   assert.equal(out.length, 1);
-  assert.equal(out[0].file, "site/data/jerusalem/notes.json");
-  assert.ok(out[0].fix.includes("site/data/jerusalem/shows.json"),
+  assert.equal(out[0].file, "site/data/festivals/jerusalem-comedy/2027.json");
+  assert.ok(out[0].fix.includes("site/data/festivals/jerusalem-comedy/2026.json"),
     "the fix must name the outputs that ARE allowed, so the reader can tell the two apart");
+});
+
+test("a festival fetcher's named raw file is allowed; another file in its folder is not", () => {
+  const raw = "data/festivals/jerusalem-comedy/2026/nominatim/";
+  assert.deepEqual(dataDirRule.run(textCtx({ ...cleanDataTree, [raw + "geocode.json"]: "" })), []);
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, [raw + "scratch.json"]: "" }));
+  assert.equal(out.length, 1);
+  assert.equal(out[0].file, raw + "scratch.json");
 });
 
 test("the published tree is scanned too — a hand-made file under site/data/ is reported", () => {
@@ -321,10 +328,11 @@ test("the published tree is scanned too — a hand-made file under site/data/ is
   assert.equal(out[0].file, "site/data/hand/notes.json");
 });
 
-test("a force-added Jerusalem page cache gets the un-track fix, not a delete", () => {
-  const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/jerusalem/raw_pages/salakh.html": "" }));
+test("a force-added festival page cache gets the un-track fix, not a delete", () => {
+  const page = "data/festivals/.cache/jerusalem-comedy/2026/comedy-festival-site/salakh.html";
+  const out = dataDirRule.run(textCtx({ ...cleanDataTree, [page]: "" }));
   assert.equal(out.length, 1);
-  assert.match(out[0].fix, /git rm --cached data\/jerusalem\/raw_pages\/salakh\.html/);
+  assert.ok(out[0].fix.includes(`git rm --cached ${page}`), out[0].fix);
 });
 
 test("a probe's output committed under data/ is reported", () => {
