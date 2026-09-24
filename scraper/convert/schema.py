@@ -37,7 +37,7 @@ FESTIVAL_KEYS = (
 CATEGORY_KEYS = ("id", "name")
 VENUE_KEYS = ("id", "name", "address", "lat", "lng", "capacity", "layout", "rooms", "accessibility", "notes", "refs")
 ROOM_KEYS = ("id", "name", "capacity", "layout")
-EVENT_KEYS = ("id", "title", "url", "genre", "categories", "blurb", "durationMin", "imageUrl")
+EVENT_KEYS = ("id", "title", "titleLocal", "url", "genre", "categories", "blurb", "durationMin", "imageUrl")
 PERFORMANCE_KEYS = (
     "id", "eventId", "venueId", "roomId", "date", "start", "ticketUrl", "free", "status", "priceMin", "priceMax",
 )
@@ -184,6 +184,8 @@ def validate(block):
             continue
         _req_str(event["id"], where + ".id", errors)
         _req_str(event["title"], where + ".title", errors)
+        # The title in the festival's own language, when `title` is not already in it.
+        _opt_str(event["titleLocal"], where + ".titleLocal", errors)
         _opt_str(event["url"], where + ".url", errors)
         _opt_str(event["blurb"], where + ".blurb", errors)
         _opt_str(event["imageUrl"], where + ".imageUrl", errors)
@@ -264,7 +266,7 @@ def sample_block():
             "accessibility": None, "notes": None, "refs": [],
         }],
         "events": [{
-            "id": "show", "title": "Show", "url": None, "genre": "comedy", "categories": ["stand-up"],
+            "id": "show", "title": "Show", "titleLocal": None, "url": None, "genre": "comedy", "categories": ["stand-up"],
             "blurb": None, "durationMin": None, "imageUrl": None,
         }],
         "performances": [{
@@ -301,6 +303,7 @@ def selftest():
     broken(lambda b: b["performances"][0].update(priceMin=10, priceMax=5), "priceMin above priceMax")
     broken(lambda b: b["performances"].append(dict(b["performances"][0])), "duplicate ids")
     broken(lambda b: b["events"][0].update(genre="standup"), ".genre")
+    broken(lambda b: b["events"][0].update(titleLocal=""), ".titleLocal")
     broken(lambda b: b["events"][0].update(categories=["x"]), "not in categories")
     broken(lambda b: b["events"][0].update(durationMin=0), "durationMin")
     broken(lambda b: b["venues"][0].update(lat=55.9), "both known or both null")

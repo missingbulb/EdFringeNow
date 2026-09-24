@@ -1,0 +1,15 @@
+{
+ "festival": "acco",
+ "edition": "2026",
+ "source": "street-programme",
+ "fetchedAt": "2026-09-24T09:28:43Z",
+ "fetcher": "research-2026-09-24",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://akko-festival-shows.vercel.app"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Not fetched by fetch.py. Egress to this host was denied to curl in the session that landed it, and WebFetch returns a model's summary of a page, not its bytes. So this folder is the 2026-09-24 research, transcribed into fetch.py's raw shape (FETCHER_VERSION 1). Nothing here was read byte for byte. Section headings are the page's zone names. Dates, times, running times and the paid show's 59 ₪ and ticket link broadly agreed across several WebFetch passes. Where passes differed on days, the more detailed per-day reading was kept. genreLine is a read's English summary of each card's genre line, not the page's Hebrew. The title of the paid Knights' Halls show is as a read reported it. Performer and creator names were left out on purpose because reads disagreed on them. English titles were left out because reads may have translated them. Items the page lists with no times (roaming or 'details to come') have empty performances. theatrePosters is the count the reads gave, 19, which matches the 19 ticketed titles on acco-tc. Replace this folder with a hand-run fetch.py on a machine that can reach the site."
+}

@@ -1,0 +1,63 @@
+# The Acco (Akko) festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md; what is particular here is ./README.md.
+
+id = "acco"
+name = "Acco Festival of Alternative Israeli Theatre"
+name_local = "פסטיבל עכו הבינלאומי לתיאטרון אחר"
+city = "Akko"
+country = "IL"
+# The Knights' Halls in the Old City, where both programmes play (the pin
+# curated/venues.json cites), for the timeline and travel maths between cities.
+lat = 32.9236
+lng = 35.0705
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "theatre"
+default_genre = "theatre"
+site = "https://accofestival.co.il"
+
+[ticketing]
+notes = "The Acco Theatre Centre programme is sold through eventer.co.il; Akko residents pay 40 ₪, and the full price is not on the programme page. The street programme (מופעי חוצות) is free entry; the Knights' Halls night show is sold through attractinet.co.il."
+
+[[edition]]
+id = "2026"
+# ordinal: the mayor's greeting mentions "46 years", which is not the same claim
+# as a 46th edition, so it stays absent (null).
+# Two programmes on different dates: the theatre centre's 27.9-1.10 and the
+# municipality's street programme 28-30.9. The edition spans both.
+first = "2026-09-27"
+last = "2026-10-01"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "acco/venues_research.py"
+
+[[source]]
+id = "acco-tc"
+kind = "fetched"
+roles = ["events", "performances", "availability", "prices"]
+required = true
+fetcher = "sources/acco-tc/fetch.py"
+adapter = "acco/acco_tc.py"
+
+[[source]]
+id = "street-programme"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/street-programme/fetch.py"
+adapter = "acco/street_programme.py"
+
+# Field precedence per section: for each field, the first source listed here
+# that supplies it wins. The two programmes never share an event or a
+# performance, so their order only decides the categories' names.
+[merge]
+venues = ["venues-research", "street-programme"]
+events = ["acco-tc", "street-programme"]
+performances = ["acco-tc", "street-programme"]
