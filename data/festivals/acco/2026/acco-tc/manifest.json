@@ -1,0 +1,15 @@
+{
+ "festival": "acco",
+ "edition": "2026",
+ "source": "acco-tc",
+ "fetchedAt": "2026-09-24T09:28:43Z",
+ "fetcher": "research-2026-09-24",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.acco-tc.com/shows/accofestival/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Not fetched by fetch.py. Egress to this host was denied to curl in the session that landed it, and WebFetch returns a model's summary of a page, not its bytes. So this folder is the 2026-09-24 research, transcribed into fetch.py's raw shape (FETCHER_VERSION 1). Nothing here was read byte for byte. Dates, start times and titles came from a WebFetch pass that asked for verbatim Hebrew, and they agreed across two passes. The labels are the Hebrew terms the page uses for original production, guest show, premiere, incubator, women only and free entry, mapped from how each read reported them. Their exact inline wording was not captured. soldOut marks the two lines a read reported as sold out. The eventer links are the ones the reads returned, with tracking queries stripped. Performer and creator names were left out on purpose because reads disagreed on them. Replace this folder with a hand-run fetch.py on a machine that can reach the site."
+}
