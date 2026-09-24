@@ -1053,36 +1053,206 @@ body.festival-page {
   color: var(--muted);
 }
 
-/* --- the period and what the pool holds ---------------------------------- */
+/* --- the trip: its band on the year, its dates, the flights either side ---- */
 
-.period-bar {
+/* Each end of the trip's band is a handle: a grip on the band's edge, up in
+   the month row where it hides no festival's name, and wide enough to find
+   with a thumb. */
+.tl-handle {
+  position: absolute;
+  top: -22px;
+  height: 20px;
+  width: 12px;
+  margin-inline-start: -6px;
+  border-radius: 6px 6px 3px 3px;
+  background: var(--violet);
+  border: 2px solid var(--paper);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 30%, transparent);
+  cursor: ew-resize;
+  touch-action: none;
+  z-index: 2;
+}
+.tl-handle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--violet) 45%, transparent);
+  outline-offset: 1px;
+}
+
+/* The dates between the two flight blocks: out on the left of the reader's
+   line, home on the right, whichever way the line runs. */
+.trip-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.trip-row:empty {
+  display: none;
+}
+.trip-dates {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin: 4px 0 8px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
 }
-.period-range {
+.trip-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 0.72rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  text-align: center;
+  color: var(--muted);
 }
-.period-extend {
-  border: 1px dashed var(--line);
-  background: var(--paper);
-  color: var(--violet-dark);
-  border-radius: 999px;
-  padding: 4px 12px;
+.trip-date-input {
   font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.trip-length {
+  padding-bottom: 7px;
   font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
+  font-weight: 700;
+  color: var(--violet-dark);
   white-space: nowrap;
 }
-.period-extend:disabled {
-  opacity: 0.45;
-  cursor: default;
+.flight {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--violet) 5%, var(--paper));
+  font-size: 0.85rem;
+  min-width: 0;
 }
+.flight--empty {
+  visibility: hidden;
+}
+.flight-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+  min-width: 0;
+}
+.flight-plane {
+  flex: 0 0 auto;
+  color: var(--violet);
+}
+/* Taking off on the way out, coming home the other way. The picture points
+   along the reader's line, so a right-to-left page turns it round too. */
+.flight--out .flight-plane {
+  transform: rotate(45deg);
+}
+.flight--back .flight-plane {
+  transform: rotate(135deg);
+}
+[dir="rtl"] .flight--out .flight-plane {
+  transform: rotate(-45deg);
+}
+[dir="rtl"] .flight--back .flight-plane {
+  transform: rotate(-135deg);
+}
+.flight-title {
+  font-weight: 800;
+}
+.flight-day {
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.flight-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.flight-route {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.flight-from {
+  width: 4.2em;
+  font: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2px 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.flight-from[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.flight-arrow {
+  color: var(--muted);
+}
+[dir="rtl"] .flight-arrow {
+  transform: scaleX(-1);
+}
+.flight-fare,
+.flight-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.flight-search {
+  color: var(--violet-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.flight-time,
+.flight-price {
+  font-weight: 800;
+}
+.flight-price {
+  color: var(--violet-dark);
+}
+.flight-dot {
+  color: var(--muted);
+}
+.flight-partner {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.flight-partner::after {
+  content: " ↗";
+}
+.flight-change {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--violet-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.timeline .origin-card {
+  margin: 12px 0 0;
+}
+
+/* --- what the pool holds -------------------------------------------------- */
+
 .pool-note {
   margin: 0 0 10px;
   padding: 8px 12px;
@@ -1182,18 +1352,34 @@ body.festival-page {
   font-weight: 400;
 }
 
-/* A phone: the year's month names every third month, the period's range on a
- * line of its own above its two buttons, and the country list inside its card. */
+/* A phone: the year's month names every third month, the trip's dates on a
+ * row of their own above the two flight blocks, and the country list inside
+ * its card. */
 @media (max-width: 620px) {
   .tl-month:not(:nth-child(3n + 1)) {
     font-size: 0;
   }
-  .period-bar {
-    flex-wrap: wrap;
+  .trip-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  .period-range {
+  .trip-dates {
+    grid-column: 1 / -1;
     order: -1;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .trip-date {
+    flex: 1 1 0;
+  }
+  .trip-date-input {
+    width: 100%;
+    min-width: 0;
+  }
+  .trip-length {
+    order: 3;
     flex-basis: 100%;
+    padding: 0;
+    text-align: center;
   }
   .origin-abroad {
     flex-wrap: wrap;

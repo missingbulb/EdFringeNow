@@ -41,6 +41,9 @@ export const KIND_EMOJI_FALLBACK = "\u{1F39F}";
 
 const ISRAEL = {
   country: "IL",
+  /* Where a flight from abroad lands: Ben Gurion, whichever of the country's
+     festivals the trip is for. */
+  flyTo: "TLV",
   /* Booking.com's Hebrew edition, in shekels — "the local Booking.com". */
   stay: { locale: "he", currency: "ILS" },
   /* Getting here from abroad: the paid airport transfer, and the train beside
@@ -53,6 +56,7 @@ const ISRAEL = {
 
 const UK = {
   country: "GB",
+  flyTo: "EDI",
   /* Booking.com's own default edition, in pounds. */
   stay: { locale: "en-gb", currency: "GBP" },
   /* Omio's Edinburgh page covers train, coach and flight in one search, so it

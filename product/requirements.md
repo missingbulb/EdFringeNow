@@ -1484,7 +1484,8 @@ and last day are the reader's to set — dragged along the year or typed — and
 festival is only a shortcut to its own run and a day either side. Nothing below
 is tied to one festival: the pool the calendar drafts from is every
 performance, from any festival, that falls inside the trip and can be reached
-from the festival it covers most.
+from the festival that leads it: the one the reader chose, while the trip still
+reaches it, and otherwise the one it covers most.
 
 - `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the trip's dates banded across it.
 
@@ -1495,7 +1496,7 @@ from the festival it covers most.
   Twelve months from the start of the month before today. Editions whose runs
   overlap are stacked on separate rows so no bar hides another; an edition
   whose programme is not published yet is drawn hollow, and is still chosen
-  like any other. The festival the trip covers most is lit. Beneath the year
+  like any other. The festival that leads the trip is lit. Beneath the year
   sit the trip's two dates and its length, between the two flight blocks
   (section 27).
   </details>
@@ -1507,12 +1508,13 @@ from the festival it covers most.
   <details><summary>Notes</summary>
 
   The trip is an address: `?from=<date>&to=<date>` is written to the URL
-  whenever the dates change, so a trip can be linked, and the last trip is
-  what the page opens on next time. A link naming a festival
-  (`?festival=<id>`) opens on that festival's run and a day either side.
+  whenever the dates change, with `&festival=<id>` while a chosen festival
+  still leads it, so a trip can be linked, and the last trip is what the page
+  opens on next time. A link naming only a festival opens on that festival's
+  run and a day either side.
   </details>
 
-- `23.4` A festival joins the pool only when its city is within reach of the festival the trip covers most.
+- `23.4` A festival joins the pool only when its city is within reach of the festival that leads the trip.
 
   <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
 
@@ -1528,7 +1530,7 @@ from the festival it covers most.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` Below the site header, the page takes the theme of the festival the trip covers most: its name and its palette.
+- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name and its palette.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
@@ -1555,7 +1557,7 @@ from the festival it covers most.
 
 - `23.8` The trip's first and last day are set on the timeline: drag either end of the band, or type the dates, and the calendar follows.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.8 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.8 -->
 
   <details><summary>Notes</summary>
 
@@ -1567,18 +1569,19 @@ from the festival it covers most.
   days, is written to the address, and is what the page reopens on.
   </details>
 
-- `23.9` A trip that runs past a festival's own run plans every festival its dates reach, and the one it covers most leads.
+- `23.9` A trip that runs past a festival's own run plans every festival its dates reach, led by the festival chosen while the trip reaches it, else by the one it covers most.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.9 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.9 -->
 
   <details><summary>Notes</summary>
 
-  Driven with a festival near Jerusalem added to the registry, starting the
-  day after Jerusalem's ends: choosing Jerusalem plans Jerusalem alone;
-  dragging the trip's end on over the neighbour's run adds its shows to the
-  calendar, and the page keeps Jerusalem's theme while Jerusalem has the most
-  of the trip's days. Dragging the start past Jerusalem's run hands the theme
-  to the neighbour. Ties go to the edition that starts first; a trip over no
+  Driven with a festival near Jerusalem added to the registry, starting three
+  days after Jerusalem's ends and running longer: choosing Jerusalem plans
+  Jerusalem alone; moving the trip's end on over the neighbour's run adds its
+  shows to the calendar, and the page keeps Jerusalem's theme though the
+  neighbour now has more of the trip's days, because Jerusalem was chosen.
+  Moving the start past Jerusalem's run hands the lead to the neighbour. With
+  nothing chosen, ties go to the edition that starts first; a trip over no
   festival at all takes the nearest one's theme and plans an empty calendar.
   </details>
 
@@ -1642,7 +1645,7 @@ so.
 
 - `27.1` Coming from abroad, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.1 -->
+  ![planng-flights.27.1](requirements/screen/cases/planng-flights.27.1.png) <!-- req-gallery:27.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1651,21 +1654,22 @@ so.
   reader's own currency where the origin names one.
   </details>
 
-- `27.2` The fares are asked for when the trip's dates are set, for those days and that route, and a flight links to the partner with our marker.
+- `27.2` The fares are asked for when the trip's dates are set, for those days and that route, and a flight links to that fare on the partner's site.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.2 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:27.2 -->
 
   <details><summary>Notes</summary>
 
   One request per block, to the site's own `/api/fares`: from the reader's
   airport to the destination festival's on the first day, and back on the
   last. Moving a date asks again for that day. The link is asserted as a URL,
-  never followed.
+  never followed; the partner's marker (`site/shared/affiliates.js`) tags it
+  once the programme is joined.
   </details>
 
 - `27.3` With no fare to show, a flight block offers the partner's search for that day and route instead of a price.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.3 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:27.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1676,7 +1680,7 @@ so.
 
 - `27.4` The flight blocks follow where you said you are coming from: abroad they ask for your airport, at home they say no flight is needed, and either way you can change the answer.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.4 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:27.4 -->
 
   <details><summary>Notes</summary>
 
@@ -1688,7 +1692,7 @@ so.
 
 - `27.5` The fare service answers from the partner's cached one-way fares, and the partner's token never reaches the page.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.5 -->
+  🔧 _Logic leaf._ <!-- req-gallery:27.5 -->
 
   <details><summary>Notes</summary>
 

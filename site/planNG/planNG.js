@@ -37,6 +37,7 @@ import { slotKey } from "../plan/lib/engine.js";
 import { draftCalendar, instanceKey } from "../plan/lib/contention.js";
 import { slotEndTime } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
+import { flightFareLink, flightSearchLink } from "../shared/affiliates.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
 import { currentEdition, loadEdition, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
@@ -62,8 +63,10 @@ import {
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { migrateLegacy } from "./lib/migrate.js";
+import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
-import { layoutRows, renderTimeline } from "./timeline-view.js";
+import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
+import { layoutRows, renderTimeline, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
@@ -114,7 +117,7 @@ const KEY_STARRED = STORAGE_PREFIX + "starred";
 const KEY_PREFS = STORAGE_PREFIX + "prefs";
 const KEY_VERDICTS = STORAGE_PREFIX + "verdicts";
 const KEY_ORIGIN = STORAGE_PREFIX + "origin";
-const KEY_FOCUS = STORAGE_PREFIX + "focus";
+const KEY_TRIP = STORAGE_PREFIX + "trip";
 
 /* The countries the origin question offers by name, beyond the festival's own.
  * Named by Intl in the reader's language, so there is no list of country names
@@ -122,12 +125,22 @@ const KEY_FOCUS = STORAGE_PREFIX + "focus";
 const ORIGIN_COUNTRIES = ["GB", "US", "FR", "DE", "RU", "UA", "IT", "ES", "NL", "PL", "JP", "CA", "AU"];
 
 const state = {
-  // The registry, and which of its editions the page is zoomed in on.
+  // The registry, and the edition that leads the trip: the one its dates
+  // cover most (lib/trip.js), whose theme the page wears.
   registry: null,
   focus: null,        // { festival, edition, key }
-  // The planning period: the focused run and a day either side, unless the
-  // reader has stretched it. Every day in it is a column of the calendar.
+  // The trip: the reader's first and last day, set on the timeline. Every day
+  // in it is a column of the calendar.
   period: null,       // { from, to } inclusive ISO dates
+  // The festival the reader chose on the timeline, as an edition key: it
+  // leads the trip for as long as the trip reaches its run.
+  pick: null,
+  // The flights either side of the trip, as the fare service last answered:
+  // `status` is "idle" (no flight to look for), "wait", "found" or "none".
+  fares: { out: { status: "idle", fares: [] }, back: { status: "idle", fares: [] } },
+  // The cheapest flight each way, which is what the calendar's first and last
+  // day can be bounded by: { departAt, durationMin } or null.
+  flights: { out: null, back: null },
   reach: [],          // poolReach() for every edition overlapping the period
   origin: null,       // what the reader said about where they come from
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
@@ -298,20 +311,17 @@ function restoreVerdicts() {
   for (const slug of saved.noShow || []) state.noShow.add(slug);
 }
 
-/* The date window and the period are remembered per edition, so going back to
- * a festival finds it as it was left; everything else is the reader's own and
- * holds on every festival. */
+/* The date window is remembered per edition, so going back to a festival finds
+ * it as it was left; everything else is the reader's own and holds on every
+ * festival. The trip itself is KEY_TRIP's. */
 function savePrefs() {
   const saved = readStore(KEY_PREFS, {}) || {};
   const windows = { ...(saved.windows || {}) };
-  const periods = { ...(saved.periods || {}) };
   if (state.focus && state.dates.length) {
     windows[state.focus.key] = { from: windowStartISO(), to: windowEndISO() };
-    periods[state.focus.key] = { ...state.period };
   }
   writeStore(KEY_PREFS, {
     windows,
-    periods,
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     meals: state.meals,
@@ -2194,7 +2204,7 @@ function retranslate() {
   renderChrome();
   if (!state.catalogue) return;
   renderTimelineStrip();
-  renderPeriodBar();
+  renderTripRow();
   renderPoolNote();
   renderOriginCard();
   renderPrefs();
@@ -2214,7 +2224,7 @@ function todayISO() {
 
 function renderTimelineStrip() {
   const monthFmt = (options) => new Intl.DateTimeFormat(currentIntlLocale(), { timeZone: "UTC", ...options });
-  renderTimeline($("timeline"), {
+  renderTimeline($("timelineYear"), {
     registry: state.registry,
     span: timelineSpan(todayISO()),
     todayISO: todayISO(),
@@ -2230,6 +2240,7 @@ function renderTimelineStrip() {
     // A month is its short name; January also says which year has begun.
     monthLabel: (iso) =>
       monthFmt(iso.slice(5, 7) === "01" ? { month: "short", year: "numeric" } : { month: "short" }).format(dateOf(iso)),
+    dayText: dayAndDate,
   });
 }
 
@@ -2243,26 +2254,31 @@ function editionByKey(key) {
   return null;
 }
 
-/* Which edition to open on: the one the URL names, else the one last chosen,
- * else the next to start (or running) of every festival with a programme. */
-function initialFocus() {
+/* Which trip to open on: the one the URL names (its dates, or a festival's
+ * run), else the one last set, else the run of the next festival to start (or
+ * running) of every festival with a programme. A festival the URL names is the
+ * trip's pick either way. */
+function initialTrip() {
   const url = new URLSearchParams(location.search);
+  const named = tripFromQuery(url);
   const asked = url.get("festival");
-  if (asked) {
-    const festival = state.registry.festivals.find((f) => f.id === asked);
-    if (festival) {
-      const edition =
-        festival.editions.find((e) => e.id === url.get("edition")) ||
-        currentEdition(festival, todayISO()) ||
-        festival.editions[festival.editions.length - 1];
-      if (edition) return editionByKey(editionKey(festival.id, edition.id));
-    }
+  const festival = asked && state.registry.festivals.find((f) => f.id === asked);
+  if (named) {
+    const edition = festival && festival.editions.find((e) => e.firstDate <= named.to && e.lastDate >= named.from);
+    return { ...named, pick: edition ? editionKey(festival.id, edition.id) : null };
   }
-  const stored = editionByKey(readStore(KEY_FOCUS, ""));
-  if (stored) return stored;
+  if (festival) {
+    const edition =
+      festival.editions.find((e) => e.id === url.get("edition")) ||
+      currentEdition(festival, todayISO()) ||
+      festival.editions[festival.editions.length - 1];
+    if (edition) return { ...tripForEdition(edition), pick: editionKey(festival.id, edition.id) };
+  }
+  const stored = readStore(KEY_TRIP, null);
+  if (stored && stored.from && stored.to) return stored;
   const today = todayISO();
   const candidates = state.registry.festivals
-    .map((festival) => ({ festival, edition: currentEdition(festival, today) }))
+    .map((f) => ({ festival: f, edition: currentEdition(f, today) }))
     .filter((c) => c.edition)
     .sort((a, b) => {
       // Running or upcoming before finished; then soonest.
@@ -2270,31 +2286,40 @@ function initialFocus() {
       return past(a) - past(b) || a.edition.firstDate.localeCompare(b.edition.firstDate);
     });
   const first = candidates[0];
-  return first ? editionByKey(editionKey(first.festival.id, first.edition.id)) : null;
+  return first ? { ...tripForEdition(first.edition), pick: editionKey(first.festival.id, first.edition.id) } : null;
 }
 
-/* Zoom in on one edition: the period, the pool, the theme and the trip links
- * all follow. `fresh` is a reader's click, which also writes the address and
- * remembers the choice; the page's own first focus writes nothing. */
-async function focusEdition(focus, { fresh = false } = {}) {
-  state.focus = focus;
-  const saved = readStore(KEY_PREFS, {}) || {};
-  const storedPeriod = (saved.periods || {})[focus.key];
-  state.period =
-    storedPeriod && storedPeriod.from && storedPeriod.to
-      ? storedPeriod
-      : { from: shiftDay(focus.edition.firstDate, -1), to: shiftDay(focus.edition.lastDate, 1) };
-  applyTheme(focus.festival);
+/* Set the trip: its dates, the festival that leads it (whose theme the page
+ * wears and whose city reach is judged from), the pool across it and the
+ * flights either side. `fresh` is a reader's change, which also writes the
+ * address and remembers the trip; the page's own first trip writes nothing.
+ * `moved` is the end the reader set, which holds if the trip must give way. */
+async function setTrip(trip, { fresh = false, moved = null } = {}) {
+  state.period = normalizeTrip(trip, { moved, maxDays: MAX_PERIOD_DAYS, span: timelineSpan(todayISO()) });
+  const lead = leadEdition(state.registry, { ...state.period, pick: trip.pick || null });
+  state.focus = lead ? editionByKey(editionKey(lead.festival.id, lead.edition.id)) : null;
+  // A pick the trip has moved off is dropped rather than kept for later: a
+  // festival the reader left is not one they are still choosing.
+  state.pick = state.focus && state.focus.key === trip.pick ? trip.pick : null;
+  if (state.focus) applyTheme(state.focus.festival);
   if (fresh) {
-    writeStore(KEY_FOCUS, focus.key);
+    writeStore(KEY_TRIP, { ...state.period, pick: state.pick });
     const url = new URL(location.href);
-    url.searchParams.set("festival", focus.festival.id);
-    // The edition only needs naming when the festival has more than one.
-    if (focus.festival.editions.length > 1) url.searchParams.set("edition", focus.edition.id);
-    else url.searchParams.delete("edition");
+    url.searchParams.delete("edition");
+    url.searchParams.set("from", state.period.from);
+    url.searchParams.set("to", state.period.to);
+    if (state.pick) url.searchParams.set("festival", state.focus.festival.id);
+    else url.searchParams.delete("festival");
     history.replaceState(null, "", url);
   }
-  const win = (saved.windows || {})[focus.key];
+  renderTimelineStrip();
+  renderTripRow();
+  refreshFares();
+  if (!state.focus) return;
+  // A trip the reader just moved starts with every one of its days open; the
+  // page's own first trip finds the window as it was left.
+  const saved = readStore(KEY_PREFS, {}) || {};
+  const win = fresh ? null : (saved.windows || {})[state.focus.key];
   await loadPool({ window: win });
 }
 
@@ -2377,7 +2402,7 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   $("boardDrawer").hidden = false;
   renderChrome();
   renderTimelineStrip();
-  renderPeriodBar();
+  renderTripRow();
   renderPoolNote();
   renderOriginCard();
   renderPrefs();
@@ -2386,36 +2411,6 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   syncFacetChrome();
   rebuild();
   requestAnimationFrame(() => requestAnimationFrame(layoutOverlay));
-}
-
-// --- the period ------------------------------------------------------------
-
-function renderPeriodBar() {
-  const { from, to } = state.period;
-  const days = daysOf(from, to).length;
-  const full = days >= MAX_PERIOD_DAYS;
-  $("periodRange").textContent = t("period.range", {
-    range: dates({ day: "numeric", month: "short" }).formatRange(dateOf(from), dateOf(to)),
-    count: days,
-  });
-  $("periodEarlier").disabled = full;
-  $("periodLater").disabled = full;
-}
-
-/* A day more of calendar at one end. The window grows with it — a day the
- * reader asked for and then could not plan would be a button that did nothing. */
-async function extendPeriod(which) {
-  if (daysOf(state.period.from, state.period.to).length >= MAX_PERIOD_DAYS) return;
-  const keep = { from: windowStartISO(), to: windowEndISO() };
-  if (which === "earlier") {
-    state.period = { ...state.period, from: shiftDay(state.period.from, -1) };
-    keep.from = state.period.from;
-  } else {
-    state.period = { ...state.period, to: shiftDay(state.period.to, 1) };
-    keep.to = state.period.to;
-  }
-  await loadPool({ window: keep });
-  savePrefs();
 }
 
 /* What the pool holds besides the focused festival, and what it had to leave
@@ -2454,6 +2449,175 @@ function renderPoolNote() {
   }
   host.innerHTML = lines.join("");
   host.hidden = !lines.length;
+}
+
+// --- the trip's dates, and the flights either side ----------------------------
+
+/* A plane, drawn rather than typed, so it is the same picture in every font
+ * and flips with the block it sits in. */
+const PLANE_SVG =
+  `<svg class="flight-plane" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">` +
+  `<path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>`;
+
+/* The airport a festival is flown to, from its presentation; null for a
+ * festival the page has none for, which then shows no flight blocks. */
+function destinationAirport() {
+  const p = state.focus && presentationOf(state.focus.festival.id);
+  return p ? p.region.flyTo : null;
+}
+
+/* What the flight blocks can say, from where the reader said they come from. */
+function flightNeed() {
+  if (!state.focus || !destinationAirport()) return "none";
+  if (!state.origin) return "unsaid";
+  if (state.origin.kind === "skipped") return "skipped";
+  const reach = originReach(state.origin, state.focus.festival);
+  return reach === "abroad" ? "abroad" : reach ? "home" : "unsaid";
+}
+
+function originPlace() {
+  const o = state.origin;
+  if (!o) return "";
+  if (o.kind === "position") return t("origin.place.position");
+  if (o.kind === "city") return o.cityName || o.city;
+  if (o.country) return regionName(o.country);
+  return t("origin.place.abroad");
+}
+
+function renderTripRow() {
+  const host = $("tripRow");
+  if (!state.period) {
+    host.innerHTML = "";
+    return;
+  }
+  const span = timelineSpan(todayISO());
+  const { from, to } = state.period;
+  const date = (id, key, value) =>
+    `<label class="trip-date"><span class="trip-date-word" data-i18n-slot="${key}">${escapeHtml(t(key))}</span>` +
+    `<input type="date" class="trip-date-input" id="${id}" value="${value}" min="${span.from}" max="${span.to}" required /></label>`;
+  host.innerHTML =
+    flightBlock("out") +
+    `<div class="trip-dates">` +
+    date("tripFrom", "trip.from", from) +
+    `<span class="trip-length" data-i18n-slot="trip.length">${escapeHtml(t("trip.length", { count: daysOf(from, to).length }))}</span>` +
+    date("tripTo", "trip.to", to) +
+    `</div>` +
+    flightBlock("back");
+}
+
+/* One flight block: the way out on the trip's first day, or home on its last. */
+function flightBlock(which) {
+  const need = flightNeed();
+  if (need === "none") return `<div class="flight flight--${which} flight--empty" aria-hidden="true"></div>`;
+  const day = which === "out" ? state.period.from : state.period.to;
+  const titleKey = which === "out" ? "flight.out" : "flight.back";
+  const head =
+    `<div class="flight-head">${PLANE_SVG}` +
+    `<span class="flight-title" data-i18n-slot="${titleKey}">${escapeHtml(t(titleKey))}</span>` +
+    `<span class="flight-day">${escapeHtml(dayAndDate(day))}</span></div>`;
+  const change = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.change">${escapeHtml(t("flight.change"))}</button>`;
+  let body;
+  if (need === "unsaid") {
+    body = `<p class="flight-note" data-i18n-slot="flight.ask">${escapeHtml(t("flight.ask"))}</p>`;
+  } else if (need === "skipped") {
+    body = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button>`;
+  } else if (need === "home") {
+    body =
+      `<p class="flight-note" data-i18n-slot="flight.none">${escapeHtml(t("flight.none", { place: originPlace() }))}</p>` + change;
+  } else {
+    body = flightRoute(which) + flightFare(which, day) + change;
+  }
+  return `<div class="flight flight--${which}" data-flight="${which}" data-fares="${state.fares[which].status}">${head}${body}</div>`;
+}
+
+/* From where to where. The reader's airport is typed on the way out and read
+ * back on the way home. */
+function flightRoute(which) {
+  const home = originAirport(state.origin);
+  const there = destinationAirport();
+  const mine =
+    which === "out"
+      ? `<input type="text" class="flight-from" id="flightFrom" value="${escapeHtml(home || "")}" maxlength="3" size="3"` +
+        ` autocomplete="off" spellcheck="false" placeholder="···" aria-label="${escapeHtml(t("flight.from"))}" />`
+      : `<span class="flight-code">${escapeHtml(home || "···")}</span>`;
+  const theirs = `<span class="flight-code">${escapeHtml(there)}</span>`;
+  const arrow = `<span class="flight-arrow" aria-hidden="true">→</span>`;
+  return `<p class="flight-route">${which === "out" ? mine + arrow + theirs : theirs + arrow + mine}</p>`;
+}
+
+function flightFare(which, day) {
+  const home = originAirport(state.origin);
+  if (!home) return `<p class="flight-note" data-i18n-slot="flight.typeAirport">${escapeHtml(t("flight.typeAirport"))}</p>`;
+  const { status, fares } = state.fares[which];
+  if (status === "wait") return `<p class="flight-note" data-i18n-slot="flight.looking">${escapeHtml(t("flight.looking"))}</p>`;
+  const route = which === "out" ? { from: home, to: destinationAirport() } : { from: destinationAirport(), to: home };
+  if (status === "found" && fares.length) {
+    const fare = fares[0];
+    const link = flightFareLink(fare.link);
+    const hm = (min) => {
+      const unit = (u, n) => new Intl.NumberFormat(currentIntlLocale(), { style: "unit", unit: u, unitDisplay: "narrow" }).format(n);
+      return min >= 60 ? `${unit("hour", Math.floor(min / 60))} ${unit("minute", min % 60)}` : unit("minute", min);
+    };
+    const parts = [
+      `<span class="flight-time">${escapeHtml(fare.departAt.slice(11, 16))}</span>`,
+      fare.durationMin != null ? `<span class="flight-length">${escapeHtml(hm(fare.durationMin))}</span>` : "",
+      fare.stops == null
+        ? ""
+        : fare.stops === 0
+          ? `<span class="flight-stops" data-i18n-slot="flight.direct">${escapeHtml(t("flight.direct"))}</span>`
+          : `<span class="flight-stops" data-i18n-slot="flight.stops">${escapeHtml(t("flight.stops", { count: fare.stops }))}</span>`,
+      `<span class="flight-price">${escapeHtml(
+        new Intl.NumberFormat(currentIntlLocale(), { style: "currency", currency: fare.currency.toUpperCase(), maximumFractionDigits: 0 }).format(fare.price)
+      )}</span>`,
+    ].filter(Boolean);
+    return (
+      `<a class="flight-fare" href="${escapeHtml(link.url)}" target="_blank" rel="noopener sponsored" title="${escapeHtml(t("flight.recent"))}">` +
+      parts.join(`<span class="flight-dot" aria-hidden="true">·</span>`) +
+      `<span class="flight-partner">${escapeHtml(link.partner)}</span></a>`
+    );
+  }
+  const search = flightSearchLink({ ...route, dateISO: day });
+  return (
+    `<a class="flight-search" href="${escapeHtml(search.url)}" target="_blank" rel="noopener sponsored">` +
+    `<span data-i18n-slot="flight.search">${escapeHtml(t("flight.search"))}</span>` +
+    `<span class="flight-partner">${escapeHtml(search.partner)}</span></a>`
+  );
+}
+
+/* Ask the fare service for the day each way, once per route and day: an answer
+ * that arrives after the trip or the airport moved on is dropped rather than
+ * drawn against the wrong day. */
+let faresAsked = { out: "", back: "" };
+function refreshFares() {
+  const need = flightNeed();
+  const home = originAirport(state.origin);
+  for (const which of ["out", "back"]) {
+    if (need !== "abroad" || !home) {
+      faresAsked[which] = "";
+      state.fares[which] = { status: "idle", fares: [] };
+      state.flights[which] = null;
+      continue;
+    }
+    const there = destinationAirport();
+    const params = {
+      from: which === "out" ? home : there,
+      to: which === "out" ? there : home,
+      dateISO: which === "out" ? state.period.from : state.period.to,
+      currency: fareCurrency(state.origin),
+    };
+    const key = JSON.stringify(params);
+    if (faresAsked[which] === key) continue;
+    faresAsked[which] = key;
+    state.fares[which] = { status: "wait", fares: [] };
+    state.flights[which] = null;
+    fetchFares(fetch, params).then((fares) => {
+      if (faresAsked[which] !== key) return;
+      state.fares[which] = { status: fares.length ? "found" : "none", fares };
+      state.flights[which] = fares.length ? { departAt: fares[0].departAt, durationMin: fares[0].durationMin } : null;
+      renderTripRow();
+    });
+  }
+  renderTripRow();
 }
 
 // --- where the reader is coming from ----------------------------------------
@@ -2509,6 +2673,8 @@ function setOrigin(origin) {
   state.origin = origin;
   writeStore(KEY_ORIGIN, origin);
   renderOriginCard();
+  renderTripRow();
+  refreshFares();
 }
 
 function wireOrigin() {
@@ -2518,7 +2684,16 @@ function wireOrigin() {
     const festival = state.focus && state.focus.festival;
     if (!festival) return;
     const kind = btn.dataset.origin;
-    if (kind === "skip") {
+    if (kind === "change") {
+      // Asked again from the flight blocks: the answer given stays stored
+      // until another replaces it, so a reader who changes their mind about
+      // changing it loses nothing on a reload.
+      state.origin = null;
+      renderOriginCard();
+      renderTripRow();
+      refreshFares();
+      $("originCard").scrollIntoView({ block: "nearest" });
+    } else if (kind === "skip") {
       setOrigin({ kind: "skipped" });
     } else if (kind === "city") {
       setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng });
@@ -2548,22 +2723,54 @@ function wireOrigin() {
   });
 }
 
-function wireFocus() {
-  $("timeline").addEventListener("click", (e) => {
+function wireTrip() {
+  const year = $("timelineYear");
+  const span = () => timelineSpan(todayISO());
+  const normalize = (trip, moved) => normalizeTrip(trip, { moved, maxDays: MAX_PERIOD_DAYS, span: span() });
+  // A festival is a shortcut to its run and a day either side.
+  year.addEventListener("click", (e) => {
     const item = e.target.closest(".tl-item");
     if (!item) return;
     const next = editionByKey(item.dataset.edition);
-    if (next && (!state.focus || next.key !== state.focus.key)) focusEdition(next, { fresh: true });
+    if (next) setTrip({ ...tripForEdition(next.edition), pick: next.key }, { fresh: true });
   });
-  $("periodEarlier").addEventListener("click", () => extendPeriod("earlier"));
-  $("periodLater").addEventListener("click", () => extendPeriod("later"));
+  wireTripHandles(year, {
+    span,
+    trip: () => state.period,
+    normalize,
+    commit: async (trip, moved) => {
+      // The strip is redrawn under the handle a key just stepped, so the
+      // reader's focus is put back on its replacement.
+      const keyed = document.activeElement && document.activeElement.closest(".tl-handle");
+      const refocus = () => keyed && year.querySelector(`.tl-handle--${moved}`)?.focus();
+      const done = setTrip({ ...trip, pick: state.pick }, { fresh: true, moved });
+      refocus();
+      await done;
+      refocus();
+    },
+  });
+  $("tripRow").addEventListener("change", (e) => {
+    const input = e.target;
+    if (input.id === "tripFrom" || input.id === "tripTo") {
+      if (!input.value) return;
+      const moved = input.id === "tripFrom" ? "from" : "to";
+      setTrip({ ...state.period, [moved]: input.value, pick: state.pick }, { fresh: true, moved });
+    } else if (input.id === "flightFrom") {
+      const code = airportCode(input.value);
+      if (!code && input.value.trim()) {
+        input.setAttribute("aria-invalid", "true");
+        return;
+      }
+      setOrigin({ ...state.origin, airport: code });
+    }
+  });
   $("browseMore").addEventListener("click", (e) => {
     if (!e.target.closest("#browseMoreBtn")) return;
     state.browsePages += 1;
     renderBrowse();
     syncStars();
   });
-  addEventListener("resize", () => layoutRows($("timeline")));
+  addEventListener("resize", () => layoutRows($("timelineYear")));
 }
 
 async function boot() {
@@ -2622,15 +2829,15 @@ async function boot() {
   wireSearch();
   wirePrefs();
   wireOrigin();
-  wireFocus();
+  wireTrip();
 
-  const focus = initialFocus();
-  if (!focus) {
+  const trip = initialTrip();
+  if (!trip) {
     $("loadingState").hidden = true;
     renderTimelineStrip();
     return;
   }
-  await focusEdition(focus);
+  await setTrip(trip);
 }
 
 /* The site version in the footer's popup, exactly as the other two pages carry

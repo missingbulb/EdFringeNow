@@ -61,10 +61,16 @@
   <main class="container">
 
     <!-- ===================== The year ===================== -->
-    <!-- Every festival edition the registry knows, at its dates. Choosing one
-         zooms the page in on it: its period, its pool, its theme. Drawn by
-         timeline-view.js. -->
-    <section class="timeline" id="timeline" data-i18n-aria-label="timeline.label" aria-label="今年のフェスティバル"></section>
+    <!-- Every festival edition the registry knows, at its dates, with the
+         reader's trip banded across it (timeline-view.js); beneath it the
+         trip's dates between the two flight blocks, and the question of where
+         the reader is coming from — see renderTripRow() and renderOriginCard()
+         in planNG.js. -->
+    <section class="timeline" id="timeline" data-i18n-aria-label="timeline.label" aria-label="今年のフェスティバル">
+      <div class="tl-year" id="timelineYear"></div>
+      <div class="trip-row" id="tripRow"></div>
+      <div class="origin-card" id="originCard" hidden></div>
+    </section>
 
     <div class="page-head">
       <h1 class="page-title" id="pageTitle" data-i18n="page.title">フェスティバル プランナー</h1>
@@ -96,20 +102,6 @@
     <section class="panel plan-card" id="planPanel" data-i18n-aria-label="plan.label" aria-label="あなたのフェスティバル（下書き）">
 
       <div class="plan-result" id="planResult">
-
-        <!-- Where the reader is coming from, asked once — see renderOriginCard(). -->
-        <div class="origin-card" id="originCard" hidden></div>
-
-        <!-- The period the calendar spans, and a day more at either end. -->
-        <div class="period-bar" id="periodBar">
-          <button type="button" class="period-extend" id="periodEarlier">
-            <span aria-hidden="true">+</span> <span data-i18n="period.earlier">1日前へ</span>
-          </button>
-          <span class="period-range" id="periodRange" data-i18n-slot="period.range"></span>
-          <button type="button" class="period-extend" id="periodLater">
-            <span data-i18n="period.later">1日後へ</span> <span aria-hidden="true">+</span>
-          </button>
-        </div>
 
         <!-- What else the period's pool holds, and what it left out as out of
              reach. -->
