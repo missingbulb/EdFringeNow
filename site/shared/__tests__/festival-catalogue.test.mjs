@@ -4,8 +4,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import { adaptFestival, currentEdition, festivalDates, venueCoords } from "../festival-catalogue.js";
-import { adaptCatalogue } from "../../planJerusalem/catalogue.js";
+import { adaptFestival, currentEdition } from "../festival-catalogue.js";
 
 const SITE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const readJson = (rel) => JSON.parse(readFileSync(path.join(SITE, rel), "utf8"));
@@ -32,24 +31,6 @@ test("every edition the registry offers loads through the adapter on the real co
     }
   }
   assert.ok(loaded >= 1, "the sweep covered at least the Jerusalem edition");
-});
-
-test("the Jerusalem block plans exactly like the pre-registry catalogue the page reads today", () => {
-  const next = adaptFestival(readJson("data/festivals/jerusalem-comedy/2026.json"));
-  const legacy = adaptCatalogue(readJson("data/jerusalem/shows.json"));
-
-  assert.ok(legacy.shows.length >= 30);
-  assert.deepEqual(next.shows, legacy.shows);
-  assert.deepEqual(next.categories, legacy.categories);
-  assert.deepEqual([...next.venues.keys()], [...legacy.venues.keys()]);
-  for (const [code, old] of legacy.venues) {
-    const venue = next.venues.get(code);
-    for (const key of Object.keys(old)) assert.deepEqual(venue[key], old[key], `${code}.${key}`);
-  }
-  assert.equal(next.festival.name, legacy.festival.name);
-  assert.equal(next.festival.timezone, legacy.festival.timezone);
-  assert.deepEqual(festivalDates(next.shows), festivalDates(legacy.shows));
-  assert.deepEqual(venueCoords(next.venues), venueCoords(legacy.venues));
 });
 
 test("availability: only sold-out stops scheduling; unknown is available, free stays free", () => {

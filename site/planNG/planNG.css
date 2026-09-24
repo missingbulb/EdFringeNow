@@ -6,20 +6,30 @@
  * (five columns rather than thirty-one), or a component this page has and the
  * Fringe planner doesn't (the browse stage, the trip links).
  *
- * Rebranding is the `:root` block: swap the five colours and the wordmark in
- * ./festival.js and the page is another festival's. Nothing below hard-codes
- * anything about Jerusalem except the comment saying where the colours came
- * from.
+ * Theming is per festival: the page root carries `data-festival="<id>"` for
+ * the festival in focus, and each festival's block below redefines the same
+ * handful of tokens. A festival with no block keeps the house palette plan.css
+ * defines. The wordmark is ./festivals.js's.
  */
 @import url("../plan/plan.css");
 
 :root {
+  /* The wash behind the page's top — each festival's block sets its own. */
+  --wash: light-dark(#f1eefc, #1c1830);
+  --wash-clear: light-dark(rgba(241, 238, 252, 0), rgba(28, 24, 48, 0));
+}
+
+/* ---- the festivals' palettes ------------------------------------------- */
+
+:root[data-festival="jerusalem-comedy"] {
   /* Jerusalem stone and the brass of the city's doors — the accent the Fringe
      planner spends on violet. Kept to the same two-tone shape (a mid tone and
      a second for hover/active) so every rule in plan.css that reaches for
      --violet lands somewhere sensible without being restated here. In the dark
      the pair swaps direction: brass lifts towards the light rather than away
      from it, because the hover state has to stay the brighter of the two. */
+  --wash: light-dark(#f6ecd8, #241d12);
+  --wash-clear: light-dark(rgba(246, 236, 216, 0), rgba(36, 29, 18, 0));
   --violet: light-dark(#b8862b, #d7a340);
   --violet-dark: light-dark(#94691d, #ecc06a);
   --ink: light-dark(#1d1a14, #f2e9da);
@@ -34,7 +44,35 @@
   /* The "in your plan" pill, which plan.css paints as ink-on-wash. */
   --ok-text: light-dark(#047857, #6fe0ab);
   --ok-bg: light-dark(#e6f7ee, #123527);
+}
 
+/* Haifa: the bay and the Carmel at night — a sea blue for a film festival. */
+:root[data-festival="haifa-iff"] {
+  --wash: light-dark(#dfeefa, #0f1c28);
+  --wash-clear: light-dark(rgba(223, 238, 250, 0), rgba(15, 28, 40, 0));
+  --violet: light-dark(#1f6fb2, #5aa9e6);
+  --violet-dark: light-dark(#17568c, #8cc6f2);
+  --ink: light-dark(#0e1a26, #e4eef7);
+  --paper: light-dark(#ffffff, #14202c);
+  --bg: light-dark(#f5f9fc, #0b141c);
+  --muted: light-dark(#5d6f80, #8fa4b6);
+  --line: light-dark(#dde8f1, #243646);
+}
+
+/* Acco: the old city's sea walls and their terracotta roofs. */
+:root[data-festival="acco"] {
+  --wash: light-dark(#fbe6dc, #2a1812);
+  --wash-clear: light-dark(rgba(251, 230, 220, 0), rgba(42, 24, 18, 0));
+  --violet: light-dark(#c4572e, #e8825a);
+  --violet-dark: light-dark(#9c4322, #f2a585);
+  --ink: light-dark(#23150f, #f6e7df);
+  --paper: light-dark(#ffffff, #23160f);
+  --bg: light-dark(#fcf7f4, #150d09);
+  --muted: light-dark(#7d6559, #b09385);
+  --line: light-dark(#f0e0d7, #3c2a21);
+}
+
+:root {
   /* The grid's palette, cut down to what this festival publishes: a night is on
      sale or it is free. The Fringe's sold-out / 2-for-1 / preview colours are
      left defined by the import and simply never drawn. */
@@ -87,13 +125,7 @@
 /* A warm stone wash behind the page's top, so the festival reads as its own
    place without touching a single component. One gradient, no images. */
 body.festival-page {
-  background:
-    linear-gradient(
-      180deg,
-      light-dark(#f6ecd8, #241d12) 0%,
-      light-dark(rgba(246, 236, 216, 0), rgba(36, 29, 18, 0)) 420px
-    ),
-    var(--bg);
+  background: linear-gradient(180deg, var(--wash) 0%, var(--wash-clear) 420px), var(--bg);
 }
 
 /* --- the grid's shape ---------------------------------------------------- */
@@ -362,7 +394,7 @@ body.festival-page {
 
 /* The board's own geometry follows the page's direction on its own: the day
    columns, the lanes and the schedule's days are grid and flex tracks, and the
-   date window's overlay is mirrored in planJerusalem.js. What is left here is
+   date window's overlay is mirrored in planNG.js. What is left here is
    the handful of places plan.css states a physical side. */
 [dir="rtl"] .ss-icon {
   left: auto;
@@ -831,7 +863,7 @@ body.festival-page {
 }
 
 /* Where the window starts and ends, across the columns rather than down the
-   hours. Positioned inline-start in both directions (planJerusalem.js measures
+   hours. Positioned inline-start in both directions (planNG.js measures
    the columns' own boxes), so only the flag's own centring is mirrored. */
 .sch-dateedge {
   position: absolute;
@@ -933,4 +965,270 @@ body.festival-page {
 .sch-meal {
   cursor: default;
   pointer-events: none;
+}
+
+/* --- the year ------------------------------------------------------------ */
+
+/* The strip across the top: twelve months, a bar per festival edition. Every
+   position is logical, so a right-to-left page runs the year from the right. */
+.timeline {
+  margin: 14px 0 4px;
+  padding: 10px 12px 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+.tl-months {
+  position: relative;
+  height: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+.tl-month {
+  position: absolute;
+  top: 0;
+  padding-inline-start: 4px;
+  border-inline-start: 1px solid var(--line);
+  font-size: 0.72rem;
+  line-height: 18px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tl-month--first {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+.tl-track {
+  position: relative;
+  min-height: 36px;
+}
+.tl-period {
+  position: absolute;
+  top: -8px;
+  bottom: 0;
+  background: color-mix(in srgb, var(--violet) 14%, transparent);
+  border-radius: 4px;
+}
+.tl-today {
+  position: absolute;
+  top: -8px;
+  bottom: 0;
+  width: 0;
+  border-inline-start: 2px dashed color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.tl-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tl-item--late {
+  flex-direction: row-reverse;
+}
+.tl-bar {
+  flex: 0 0 auto;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--muted);
+}
+.tl-item.is-empty .tl-bar {
+  background: transparent;
+  border: 2px solid var(--muted);
+}
+.tl-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.tl-item:hover .tl-label,
+.tl-item:focus-visible .tl-label {
+  color: var(--ink);
+}
+.tl-item.is-focus .tl-bar {
+  background: var(--violet);
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 28%, transparent);
+}
+.tl-item.is-focus .tl-label {
+  color: var(--violet-dark);
+  font-weight: 800;
+}
+.tl-none {
+  margin: 4px 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --- the period and what the pool holds ---------------------------------- */
+
+.period-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 4px 0 8px;
+}
+.period-range {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.period-extend {
+  border: 1px dashed var(--line);
+  background: var(--paper);
+  color: var(--violet-dark);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.period-extend:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.pool-note {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--violet) 8%, var(--paper));
+  font-size: 0.84rem;
+}
+.pool-line {
+  margin: 2px 0;
+}
+.pool-line--out {
+  color: var(--muted);
+}
+
+/* --- where the reader is coming from ------------------------------------- */
+
+.origin-card {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--violet);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.origin-ask {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.02rem;
+}
+.origin-why {
+  margin: 2px 0 10px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.origin-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.origin-abroad {
+  gap: 6px;
+}
+.origin-select {
+  max-width: 190px;
+}
+.origin-skip,
+.origin-change {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--violet-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.origin-change {
+  margin-top: 0;
+}
+.origin-status {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.origin-status:empty {
+  display: none;
+}
+.origin-line {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.trip-local {
+  margin: 0;
+  font-size: 0.86rem;
+}
+
+/* --- a list too long to draw --------------------------------------------- */
+
+.browse-more {
+  padding: 8px 0 4px;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* A day of the period with nothing on it keeps the Fringe planner's sliver,
+   which this page's wider columns would otherwise override: the day either
+   side of a festival is for travelling, and is drawn as such. */
+.sch-day.sch-day--empty {
+  min-width: 30px;
+}
+
+/* The origin answers are sentences rather than pictures, so they sit in a row
+   with their emoji beside the words. */
+.origin-pick {
+  flex-direction: row;
+  align-items: center;
+  max-width: none;
+  padding: 8px 12px;
+}
+.origin-pick .pref-word {
+  white-space: nowrap;
+}
+
+/* The show's name in the city's own language, beside the programme's. */
+.ss-row-local {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* A phone: the year's month names every third month, the period's range on a
+ * line of its own above its two buttons, and the country list inside its card. */
+@media (max-width: 620px) {
+  .tl-month:not(:nth-child(3n + 1)) {
+    font-size: 0;
+  }
+  .period-bar {
+    flex-wrap: wrap;
+  }
+  .period-range {
+    order: -1;
+    flex-basis: 100%;
+  }
+  .origin-abroad {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .origin-select {
+    max-width: 100%;
+    min-width: 0;
+  }
 }

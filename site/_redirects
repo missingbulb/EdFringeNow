@@ -1,0 +1,4 @@
+# The festival planner's old address. Every page under it, each language
+# included, has the same path under /planNG/.
+/planJerusalem /planNG/ 301
+/planJerusalem/* /planNG/:splat 301
