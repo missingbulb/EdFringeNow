@@ -20,7 +20,7 @@
 - **Source:** the weekly growth-discover-packs run (slot w2026-07-26), distilled from
   `scraper/normalize.py` (`build_lookups`, `build_day_files`, `minify_master`),
   `scraper/refresh_ticket_status.py`, `scraper/SCRAPING.md`, `scraper/README.md`, `js/app.js`
-  (`adaptShow`, `NO_TICKETS_STATUSES`), `plan/lib/hydrate.js`, `.github/workflows/scrape.yml` and
+  (`adaptShow`, `NO_TICKETS_STATUSES`), `plan/lib/hydrate.js`, the `scrape.yml` workflow and
   `.gitignore`.
 - **Reason:** the scrape and its committed, index-encoded data layer carried reusable working
   knowledge no canon pack or the `edfringe` pack homed, and it was judged a distinct domain with its
@@ -62,3 +62,9 @@
 - **Rejected:** carrying the local `VERSIONS.md` files across - a local pack is neither versioned
   nor distributed, and its commits are its record.
 - **Landed:** #613, Closes #612
+
+## 2026-09-24 · reworded · the data-pipeline rules name the tasks, not the retired workflows (#872)
+- **Reason:** `scrape.yml` and `prices.yml` became tasks; the sanctioned-route list and the worked
+  push-retry fix now point at them and at `worker-lib.sh`.
+- **Actor:** @missingbulb (owner).
+- **Model:** Claude Opus 5.5

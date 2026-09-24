@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
+  "id": "fetch-prices",
+  "description": "Prices every performance of every paid show into the fetch-once cache data/prices.json, folds the prices into the site data and commits both; a pass too long for one run continues on its own item until every show is priced.",
+  "trigger": "request",
+  "preconditions": [
+    "scraping-switched-on"
+  ],
+  "expected_outcome": "no_code_changes",
+  "code_work": "bash worker.sh",
+  "code_work_timeout": 3300,
+  "agent_model": "none",
+  "agent_instructions": "worker.sh"
+}

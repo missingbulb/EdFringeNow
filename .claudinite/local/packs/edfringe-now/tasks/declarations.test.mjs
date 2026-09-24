@@ -15,11 +15,17 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 import { terms as ticketTerms } from "./refresh-tickets/preconditions.mjs";
+import { terms as scrapeTerms } from "./full-scrape/preconditions.mjs";
+import { terms as pricesTerms } from "./fetch-prices/preconditions.mjs";
+import { SCRAPING_ON } from "./scraping-switch.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const readDeclaration = (dir) => JSON.parse(readFileSync(path.join(__dirname, dir, "task.json"), "utf8"));
 const refreshShows = readDeclaration("refresh-shows");
 const refreshTickets = readDeclaration("refresh-tickets");
+const fullScrape = readDeclaration("full-scrape");
+const fetchPrices = readDeclaration("fetch-prices");
+const priceProbe = readDeclaration("price-probe");
 
 const TRIGGERS = ["schedule", "request"];
 const MODELS = ["opus", "sonnet", "haiku", "none"];
@@ -36,6 +42,9 @@ const OUTCOMES = ["no_code_changes", "fresh_pr", "amend_existing_or_create_new_p
 const DECLARED = [
   ["refresh-shows", refreshShows, "request", undefined, {}],
   ["refresh-tickets", refreshTickets, "schedule", ["in-festival"], ticketTerms],
+  ["full-scrape", fullScrape, "request", ["scraping-switched-on"], scrapeTerms],
+  ["fetch-prices", fetchPrices, "request", ["scraping-switched-on"], pricesTerms],
+  ["price-probe", priceProbe, "request", undefined, {}],
 ];
 
 for (const [dir, decl, trigger, preconditions, terms] of DECLARED) {
@@ -61,7 +70,7 @@ for (const [dir, decl, trigger, preconditions, terms] of DECLARED) {
   });
 
   test(`${dir} is agentless and its worker exists`, () => {
-    // Both of these tasks are deterministic ports of retired workflows: no agent,
+    // Every one of these tasks is a deterministic port of a retired workflow: no agent,
     // so the contract requires the work to be a bounded code-work subprocess.
     assert.equal(decl.agent_model, "none");
     assert.equal(decl.code_work, "bash worker.sh");
@@ -93,4 +102,21 @@ test("the in-festival term answers about the instant it is handed", () => {
   assert.equal(at("2026-07-31T22:49:00Z").holds, false); // 23:49 BST on 31 July
   assert.equal(at("2026-07-31T23:49:00Z").holds, true);  // 00:49 BST on 1 August
   assert.ok(at("2026-09-15T11:49:00Z").reason.includes("outside the festival"));
+});
+
+// The fetching passes stay behind the one switch: while it is off, a created item
+// declines with the reason the retired workflows' inert jobs printed.
+test("the scraping switch gates both fetching passes and says why it declines", () => {
+  for (const terms of [scrapeTerms, pricesTerms]) {
+    const verdict = terms["scraping-switched-on"].holds({}, {});
+    assert.equal(verdict.holds, SCRAPING_ON);
+    if (!SCRAPING_ON) assert.match(verdict.reason, /switched off/);
+  }
+});
+
+// Code-work beyond the executor's one-hour claim leash is reclaimed mid-run.
+test("every code-work is bounded under the one-hour leash", () => {
+  for (const [dir, decl] of DECLARED) {
+    assert.ok(decl.code_work_timeout < 3600, `${dir}'s code_work_timeout reaches the leash`);
+  }
 });

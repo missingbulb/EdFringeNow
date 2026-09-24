@@ -117,24 +117,23 @@ Why once, and why it is *not* on the nightly path:
   performance costing *different* money from its neighbour is not the price
   moving — that is the schedule, and it is fetched once like everything else.)
 - **The pass is resumable.** Shows already priced per performance are skipped, so `--limit
-  N` takes the festival in bites and `--force` re-prices deliberately. The cache
-  is rewritten every 25 shows, so a mid-run crash loses at most that many —
-  but note what "resumable" is measured against: **the cache file on disk**. On
-  a runner that file is only durable once the workflow's commit step pushes it,
-  which it does at the end of the job (including when the fetch step failed).
-  Against a *script* failure that is enough; against the runner itself dying,
-  nothing in the job runs and the whole run is lost. If that matters, chunk the
-  festival with `limit` — each run commits what it got.
+  N` or `--time-budget SECONDS` takes the festival in bites and `--force` re-prices
+  deliberately. The cache is rewritten every 25 shows, so a mid-run crash loses at
+  most that many — but note what "resumable" is measured against: **the cache file
+  on disk**. On a runner that file is only durable once it is committed and pushed,
+  so the `fetch-prices` task prices for a time budget, commits what it got (even
+  after a failed fetch), and continues in a fresh run; a runner dying mid-bite
+  loses that bite alone.
 - **Free shows are skipped**, not called: there is nothing to price, and
   `normalize.py` already reads £0 off the listing's `free` flag.
 - **A missing show means the price is unknown, not free.** The festival keeps
   adding shows after the price run, so gaps are normal and permanent. Every
   consumer treats unknown as its own state (`site/shared/price.js`).
 
-Run it on a runner via the **`Fetch ticket prices (one-off)`** workflow
-(`.github/workflows/prices.yml`), which fetches, regenerates and commits — though
-that workflow is currently inert, so a dispatch reports the switch and fetches
-nothing. The script itself still runs by hand.
+Run it on a runner through the **`fetch-prices`** task, which fetches, regenerates
+and commits in time-bounded bites until every show is priced — though scraping is
+currently switched off, so its item declines and fetches nothing. The script itself
+still runs by hand.
 
 ## normalize.py — turn the raw scrape into website data
 
@@ -226,8 +225,8 @@ python3 scraper/normalize.py --merge
 
 `--merge` upserts the new shows into the existing master (by id) and regenerates
 the venue and per-day files. It is the **`refresh-shows`** task's work (see *How
-the data refreshes run* below); the full rebuild stays a manual workflow,
-**`Scrape edfringe shows (full)`** (`.github/workflows/scrape.yml`). Both commit
+the data refreshes run* below); the full rebuild is the **`full-scrape`** task,
+run from a hand-created item. Both commit
 the updated data back to the repo — and both are currently switched off, so
 neither runs until they are turned back on.
 
@@ -308,6 +307,6 @@ Two invariants hold this up, and breaking either is silent:
 
 `equhost.com` must be reachable from wherever you run this. Claude Code web
 sessions sit behind an egress proxy that may block it; in that case run the
-script locally. The **`Scrape edfringe shows (full)`** GitHub Action
-(`.github/workflows/scrape.yml`) would otherwise run it on a GitHub-hosted runner
-with open network access, but it is currently inert.
+script locally. The **`full-scrape`** task would otherwise run it on a
+GitHub-hosted runner with open network access, but scraping is currently switched
+off.
