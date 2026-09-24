@@ -8,7 +8,7 @@ const NIGHTS = ['.sch-day[data-date="2026-10-19"]', '.sch-day[data-date="2026-10
 module.exports = {
   description:
     "a meal asked for is a band the calendar drafts around; sorting food out yourself leaves the day clear",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemPrefs({ meals: jerusalemMeals({ dinner: "Machneyuda" }) }),
   ready: jerusalemReady,

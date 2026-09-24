@@ -3,11 +3,11 @@ const { jerusalemReady, jerusalemStarred } = require("../../shared/case-helpers"
 
 module.exports = {
   description: "getting here: the paid airport transfer, and the train offered beside it",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     const links = page.locator(".trip-link");

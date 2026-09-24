@@ -73,13 +73,13 @@ function vendoredJapaneseRanges() {
 module.exports = {
   description:
     "every translated string fits the pixel budget its key declares, in all four languages and at both viewports",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    const { STRINGS } = await import(path.join(REPO, "site/planJerusalem/i18n/translations.js"));
+    const { STRINGS } = await import(path.join(REPO, "site/planNG/i18n/translations.js"));
     const { PAGES: LOCALIZED_PAGES } = await import(path.join(REPO, "scripts/localize-pages.mjs"));
-    const { format, argumentsOf } = await import(path.join(REPO, "site/planJerusalem/i18n/format.js"));
+    const { format, argumentsOf } = await import(path.join(REPO, "site/planNG/i18n/format.js"));
 
     // A string the harness cannot draw cannot be measured either: the font jail
     // carries no CJK, so Japanese is only real here while the vendored Noto

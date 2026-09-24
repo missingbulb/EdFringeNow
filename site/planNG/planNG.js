@@ -1,10 +1,15 @@
 /* The festival planner page.
  *
- * A calendar-led planner, driven by a festival descriptor (./festival.js)
- * rather than by anything Jerusalem-specific: the only strings this module
- * names are its own UI's. It shares the Fringe planner's stylesheet and its
- * pure engine (../plan/lib/), and shares no state with it at all — every key
- * it stores is under the descriptor's own prefix.
+ * A calendar-led planner for every festival in the registry
+ * (site/data/festivals/index.json), zoomed in on one at a time: the year's
+ * timeline across the top chooses which, and that choice sets the planning
+ * period (the edition's run and a day either side), the pool the calendar
+ * drafts from (every reachable performance of every edition in the period —
+ * lib/pool.js, ../shared/feasibility.js), the theme and the trip links
+ * (./festivals.js). The only strings this module names are its own UI's. It
+ * shares the Fringe planner's stylesheet and its pure engine (../plan/lib/),
+ * and shares no state with it at all — every key it stores is under its own
+ * prefix.
  *
  * The model, which is this page's own: the calendar drafts from the WHOLE
  * programme before the reader has chosen anything, giving each contested hour
@@ -34,9 +39,25 @@ import { slotEndTime, toCsv, toIcs } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
-import { FESTIVAL, festivalStayLink, festivalTravelLinks } from "./festival.js";
-import { festivalDates, loadCatalogue, venueCoords } from "./catalogue.js";
-import { applyTranslations, currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
+import { currentEdition, loadFestival, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
+import { originReach, poolReach } from "../shared/feasibility.js";
+import { MAX_PERIOD_DAYS, PICK_CHIPS, SEARCH_RESULT_ROWS, listPage } from "../shared/limits.js";
+import {
+  LEGACY_EDITION_ID,
+  LEGACY_FESTIVAL_ID,
+  LEGACY_STORAGE_PREFIX,
+  PAGE_ROOT,
+  SITE_NAV,
+  STORAGE_PREFIX,
+  kindEmoji,
+  presentationOf,
+  tripLinks,
+} from "./festivals.js";
+import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
+import { migrateLegacy } from "./lib/migrate.js";
+import { editionKey, timelineSpan } from "./lib/timeline.js";
+import { layoutRows, renderTimeline } from "./timeline-view.js";
+import { currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -82,13 +103,32 @@ const MODE_META = {
   car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", verbKey: "travel.mode.car" },
 };
 
-const KEY_STARRED = FESTIVAL.storagePrefix + "starred";
-const KEY_PREFS = FESTIVAL.storagePrefix + "prefs";
-const KEY_VERDICTS = FESTIVAL.storagePrefix + "verdicts";
+const KEY_STARRED = STORAGE_PREFIX + "starred";
+const KEY_PREFS = STORAGE_PREFIX + "prefs";
+const KEY_VERDICTS = STORAGE_PREFIX + "verdicts";
+const KEY_ORIGIN = STORAGE_PREFIX + "origin";
+const KEY_FOCUS = STORAGE_PREFIX + "focus";
+
+/* The countries the origin question offers by name, beyond the festival's own.
+ * Named by Intl in the reader's language, so there is no list of country names
+ * to translate; any other country is "somewhere else abroad". */
+const ORIGIN_COUNTRIES = ["GB", "US", "FR", "DE", "RU", "UA", "IT", "ES", "NL", "PL", "JP", "CA", "AU"];
 
 const state = {
+  // The registry, and which of its editions the page is zoomed in on.
+  registry: null,
+  focus: null,        // { festival, edition, key }
+  // The planning period: the focused run and a day either side, unless the
+  // reader has stretched it. Every day in it is a column of the calendar.
+  period: null,       // { from, to } inclusive ISO dates
+  reach: [],          // poolReach() for every edition overlapping the period
+  origin: null,       // what the reader said about where they come from
+  editions: new Map(), // dataUrl -> Promise of an adapted catalogue
+  browsePages: 1,
+  poolSlugs: new Set(),
+  // The pool: every reachable show in the period, ids made unique by pool.js.
   catalogue: null,
-  dates: [],          // every festival night, ascending — the grid's columns
+  dates: [],          // every day of the period, ascending — the grid's columns
   venues: new Map(),
   coords: new Map(),
   starred: new Set(),
@@ -113,6 +153,8 @@ const state = {
   // slug. Empty is the honest default and means no taste stated at all, which
   // is not the same as having chosen every kind — see MAX_OFF_INTEREST_PER_DAY.
   interests: new Set(),
+  // Whether the reader asked to see every kind the pool offers.
+  interestsOpen: false,
   // Which questions are showing their exact numbers. Not stored: it is where
   // the reader has got to, not something they decided.
   opened: new Set(),
@@ -134,8 +176,15 @@ const state = {
  * language and direction. Without it a browser lays Hebrew out with the page's
  * `lang="en"`, which puts a trailing "?" or a Latin word on the wrong side of
  * the line — the text is still Hebrew, and still wrong. */
-function foreign(text) {
-  return `<span lang="${FESTIVAL.lang}" dir="${FESTIVAL.dir}">${escapeHtml(text)}</span>`;
+function foreign(text, id) {
+  const festival = festivalById(festivalOf(id)) || (state.focus && state.focus.festival);
+  const lang = festival ? festival.lang : "und";
+  const dir = festival ? festival.dir : "auto";
+  return `<span lang="${lang}" dir="${dir}">${escapeHtml(text)}</span>`;
+}
+
+function festivalById(id) {
+  return (state.registry && state.registry.festivals.find((f) => f.id === id)) || null;
 }
 
 /** "2026-10-18" → its Date in UTC, which is how every date here is compared. */
@@ -169,9 +218,10 @@ function dowOf(iso) {
 
 function isWeekend(iso) {
   // Israel's weekend is Friday and Saturday, not Saturday and Sunday. The grid
-  // stripes what the audience actually has off work.
+  // stripes what the focused festival's audience actually has off work.
   const d = dowOf(iso);
-  return d === 5 || d === 6;
+  const country = state.focus ? state.focus.festival.country : null;
+  return country === "IL" ? d === 5 || d === 6 : d === 6 || d === 0;
 }
 
 function minToClock(min) {
@@ -230,20 +280,31 @@ function saveVerdicts() {
   });
 }
 
-function restoreVerdicts(known) {
+/* Every verdict the reader ever gave, on any festival, is kept whole: a show
+ * outside today's pool is still one they ruled on, and the pool moves with the
+ * period. */
+function restoreVerdicts() {
   const saved = readStore(KEY_VERDICTS, null);
   if (!saved) return;
-  for (const [slug, key] of Object.entries(saved.locked || {})) {
-    if (known.has(slug)) state.locked.set(slug, key);
-  }
+  for (const [slug, key] of Object.entries(saved.locked || {})) state.locked.set(slug, key);
   for (const key of saved.noTime || []) state.noTime.add(key);
-  for (const slug of saved.noShow || []) if (known.has(slug)) state.noShow.add(slug);
+  for (const slug of saved.noShow || []) state.noShow.add(slug);
 }
 
+/* The date window and the period are remembered per edition, so going back to
+ * a festival finds it as it was left; everything else is the reader's own and
+ * holds on every festival. */
 function savePrefs() {
+  const saved = readStore(KEY_PREFS, {}) || {};
+  const windows = { ...(saved.windows || {}) };
+  const periods = { ...(saved.periods || {}) };
+  if (state.focus && state.dates.length) {
+    windows[state.focus.key] = { from: windowStartISO(), to: windowEndISO() };
+    periods[state.focus.key] = { ...state.period };
+  }
   writeStore(KEY_PREFS, {
-    d0: state.d0,
-    d1: state.d1,
+    windows,
+    periods,
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     meals: state.meals,
@@ -258,9 +319,6 @@ function savePrefs() {
 function restorePrefs() {
   const saved = readStore(KEY_PREFS, null);
   if (!saved) return;
-  const n = state.dates.length;
-  state.d0 = clamp(Number(saved.d0) || 1, 1, n);
-  state.d1 = clamp(Number(saved.d1) || n, state.d0, n);
   state.dayStartMin = Number.isFinite(saved.dayStartMin) ? saved.dayStartMin : state.dayStartMin;
   state.dayEndMin = Number.isFinite(saved.dayEndMin) ? saved.dayEndMin : state.dayEndMin;
   if (Array.isArray(saved.meals)) {
@@ -285,45 +343,76 @@ function restorePrefs() {
 
 // --- chrome ---------------------------------------------------------------
 
+/** The focused festival's name, in the reader's language where the page has it. */
+function festivalName(festival) {
+  const p = presentationOf(festival.id);
+  return p ? t(p.nameKey) : festival.name;
+}
+
+/** The festival's city, in the reader's language where the page has it. */
+function festivalCity(festival) {
+  const p = presentationOf(festival.id);
+  return p ? t(p.cityKey) : festival.city;
+}
+
+/** Its mark: two words, the second in the accent colour. */
+function wordmarkOf(festival) {
+  const p = presentationOf(festival.id);
+  if (p) return p.wordmark;
+  const words = festival.name.split(" ");
+  return [words[0], words.slice(1).join(" ")];
+}
+
+/* A domain as a reader would say it — "comedy-festival.co.il". */
+const siteName = (url) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+
 function renderChrome() {
+  const festival = state.focus && state.focus.festival;
   // The wordmark is the festival's mark rather than a sentence, so it is the
   // one piece of chrome that reads the same in every language.
-  const [head, tail] = FESTIVAL.wordmark;
+  const [head, tail] = festival ? wordmarkOf(festival) : ["EdFringe", "Now"];
   $("wordmark").innerHTML = `${escapeHtml(head)}<span class="logo-now">${escapeHtml(tail)}</span>`;
 
   const nav = $("siteNav");
   nav.innerHTML =
-    FESTIVAL.siteNav
-      .map(
-        (link) =>
-          `<a href="${link.href}" class="nav-link" data-i18n-slot="${link.labelKey}">` +
-          `${escapeHtml(t(link.labelKey))}</a>`
-      )
-      .join("") +
-    `<a href="./" class="nav-link is-active" data-i18n-slot="${FESTIVAL.navLabelKey}">` +
-    `${escapeHtml(t(FESTIVAL.navLabelKey))}</a>`;
+    SITE_NAV.map(
+      (link) =>
+        `<a href="${link.href}" class="nav-link" data-i18n-slot="${link.labelKey}">` +
+        `${escapeHtml(t(link.labelKey))}</a>`
+    ).join("") +
+    `<a href="./" class="nav-link is-active" data-i18n-slot="nav.festivals">` +
+    `${escapeHtml(festival ? festivalCity(festival) : t("nav.festivals"))}</a>`;
+
+  const title = $("pageTitle");
+  title.textContent = festival ? t("festival.title", { festival: festivalName(festival) }) : t("page.title");
+  title.dataset.i18nSlot = festival ? "festival.title" : "page.title";
+  document.title = festival ? t("doc.titleFor", { festival: festivalName(festival) }) : t("doc.title");
 
   // The festival's own two links in the footer: its programme's source, and
   // the note that some of the trip links are paid.
-  $("footerData").innerHTML = tHtml(
-    "footer.dataFrom",
-    {},
-    {
-      source:
-        `<a href="${escapeHtml(FESTIVAL.sourceUrl)}" target="_blank" rel="noopener">` +
-        `${escapeHtml(FESTIVAL.sourceName)}</a>`,
-    }
-  );
+  $("footerData").innerHTML = festival
+    ? tHtml(
+        "footer.dataFrom",
+        {},
+        {
+          source:
+            `<a href="${escapeHtml(festival.site)}" target="_blank" rel="noopener">` +
+            `${escapeHtml(siteName(festival.site))}</a>`,
+        }
+      )
+    : "";
 }
 
 function renderHeaderHint() {
-  const first = dateOf(state.dates[0]);
-  const last = dateOf(state.dates[state.dates.length - 1]);
+  const { festival, edition } = state.focus;
   $("headerHint").textContent = t("header.run", {
-    city: t("festival.city"),
+    city: festivalCity(festival),
     // formatRange, not two formats spliced: only the locale's own data knows
     // where the year goes and which part of a range is dropped as repeated.
-    range: dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(first, last),
+    range: dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(
+      dateOf(edition.firstDate),
+      dateOf(edition.lastDate)
+    ),
   });
 }
 
@@ -405,7 +494,7 @@ function buildLanes() {
     label.className = "lane-label";
     label.innerHTML =
       `<span class="lane-pin" aria-hidden="true">🔒</span>` +
-      `<span class="lane-title">${foreign(show.title)}</span>`;
+      `<span class="lane-title">${foreign(show.title, show.slug)}</span>`;
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "lane-remove";
@@ -682,14 +771,32 @@ function questionHtml(id, askKey, answers, fine) {
   );
 }
 
+/* The kinds on offer: the focused festival's in its own order, then the other
+ * festivals' by how much of the pool each holds. A period pooling several festivals can offer dozens, so
+ * past PICK_CHIPS the rest wait behind one "more kinds" chip — except a kind
+ * already chosen, which is always shown. */
 function interestsHtml() {
-  const kinds = state.catalogue.categories
+  const count = new Map();
+  for (const show of state.catalogue.shows) {
+    for (const kind of show.genreSlugs || []) count.set(kind, (count.get(kind) || 0) + 1);
+  }
+  const focusId = state.focus.festival.id;
+  const cats = state.catalogue.categories;
+  const ordered = [
+    ...cats.filter((kind) => kind.festivalId === focusId),
+    ...cats.filter((kind) => kind.festivalId !== focusId).sort((a, b) => (count.get(b.slug) || 0) - (count.get(a.slug) || 0)),
+  ];
+  const shown = state.interestsOpen
+    ? ordered
+    : ordered.filter((kind, i) => i < PICK_CHIPS || state.interests.has(kind.slug));
+  const held = ordered.length - shown.length;
+  const kinds = shown
     .map((kind) =>
       pickHtml(
         "interest",
         kind.slug,
-        FESTIVAL.kindEmoji[kind.slug] || FESTIVAL.kindEmojiFallback,
-        foreign(kind.name),
+        kindEmoji(kind.festivalId, kind.slug.slice(kind.festivalId.length + 1)),
+        foreign(kind.name, kind.slug),
         state.interests.has(kind.slug)
       )
     )
@@ -701,7 +808,11 @@ function interestsHtml() {
     escapeHtml(t("prefs.interests.all")),
     state.interests.size === 0
   );
-  return everything + kinds;
+  const more = held
+    ? `<button type="button" class="pref-pick pref-more-kinds" data-more-kinds="1">` +
+      `<span class="pref-word" data-i18n-slot="prefs.interests.more">${escapeHtml(t("prefs.interests.more", { count: held }))}</span></button>`
+    : "";
+  return everything + kinds + more;
 }
 
 function varietyFineHtml() {
@@ -839,6 +950,11 @@ function wirePrefs() {
       $(`fine-${id}`).hidden = !open;
       expand.setAttribute("aria-expanded", String(open));
       expand.querySelector(".pref-expand-word").textContent = t(open ? "prefs.less" : "prefs.more");
+      return;
+    }
+    if (e.target.closest("[data-more-kinds]")) {
+      state.interestsOpen = true;
+      renderPrefs();
       return;
     }
     const pick = e.target.closest("[data-pick]");
@@ -1038,9 +1154,21 @@ function ruledShows() {
     });
 }
 
+/** How many verdicts the reader has given on shows in today's pool. */
+function decidedInPool() {
+  const inPool = (slug) => state.poolSlugs.has(slug);
+  const instance = (key) => inPool(key.slice(0, key.lastIndexOf("@")));
+  return (
+    [...state.starred].filter(inPool).length +
+    [...state.locked.keys()].filter(inPool).length +
+    [...state.noShow].filter(inPool).length +
+    [...state.noTime].filter(instance).length
+  );
+}
+
 function renderCounts(draft) {
   const el = $("boardCount");
-  const decided = state.starred.size + state.locked.size + state.noShow.size + state.noTime.size;
+  const decided = decidedInPool();
   el.dataset.i18nSlot = decided ? "board.count.some" : "board.count.none";
   el.innerHTML = decided
     ? tHtml(
@@ -1062,7 +1190,7 @@ function renderDrawerCount(draft) {
   el.dataset.i18nSlot = "drawer.count";
   el.textContent = t("drawer.count", {
     shows: state.catalogue.shows.length,
-    decided: state.starred.size + state.locked.size + state.noShow.size + state.noTime.size,
+    decided: decidedInPool(),
     crowded: draft.crowdedOut.length,
   });
 }
@@ -1507,10 +1635,10 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
 
   block.innerHTML =
     `<a class="sch-open" href="${escapeHtml(slot.url)}" target="_blank" rel="noopener" draggable="false">` +
-    `<span class="sch-name">${foreign(slot.title)}</span>` +
+    `<span class="sch-name">${foreign(slot.title, slot.slug)}</span>` +
     `<span class="sch-meta">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
-    (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName)}</span>` : "") +
+    (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName, slot.slug)}</span>` : "") +
     `</span></a>` +
     // The one thing a card's face says beyond the show itself.
     (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
@@ -1677,7 +1805,7 @@ function openCardPop(block) {
   };
 
   pop.innerHTML =
-    `<p class="pop-title">${foreign(show.title)}</p>` +
+    `<p class="pop-title">${foreign(show.title, show.slug)}</p>` +
     `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
     ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
     `${escapeHtml(rarityText(freedom))}</span></p>` +
@@ -1710,7 +1838,7 @@ function openRivals(stack) {
         (rival) =>
           `<li><button type="button" class="pop-rival" data-take="${escapeHtml(rival.slug)}"` +
           ` data-key="${escapeHtml(slotKey(rival))}">` +
-          `<span class="pr-title">${foreign(rival.title)}</span>` +
+          `<span class="pr-title">${foreign(rival.title, rival.slug)}</span>` +
           `<span class="pr-nights">${escapeHtml(rarityText(rival.freedom))}</span></button></li>`
       )
       .join("") +
@@ -1723,7 +1851,16 @@ function openRivals(stack) {
 
 function renderTripLinks() {
   const row = $("tripLinksRow");
-  const links = [festivalStayLink(windowStartISO(), windowEndISO()), ...festivalTravelLinks()];
+  const festival = state.focus.festival;
+  const reach = originReach(state.origin, festival);
+  const links = tripLinks(festival, reach, windowStartISO(), windowEndISO());
+  renderOriginLine(reach);
+  if (!links.length) {
+    row.innerHTML =
+      `<p class="trip-local" data-i18n-slot="trip.local">` +
+      `${escapeHtml(t("trip.local", { city: festivalCity(festival) }))}</p>`;
+    return;
+  }
   row.innerHTML = links
     .map((link) => {
       // The partner writes the URL; the page writes what the link is called,
@@ -1747,12 +1884,19 @@ function showMeta(show) {
   const runs = show.performances.length;
   const venue = show.venueNames.join(", ");
   const parts = [
-    show.genre ? foreign(show.genre) : null,
-    venue ? foreign(venue) : null,
+    show.genre ? foreign(show.genre, show.slug) : null,
+    venue ? foreign(venue, show.slug) : null,
     escapeHtml(t("show.performances", { count: runs })),
     show.duration ? escapeHtml(t("show.minutes", { count: show.duration })) : null,
   ].filter(Boolean);
   return parts.join(" · ");
+}
+
+/* A programme published in two languages names the show in the city's own one
+ * too, when it differs: it is what the posters and the box office say. */
+function localTitle(show) {
+  if (!show.titleLocal || show.titleLocal === show.title) return "";
+  return ` <span class="ss-row-local" dir="auto">${escapeHtml(show.titleLocal)}</span>`;
 }
 
 function rowHtml(show) {
@@ -1761,7 +1905,7 @@ function rowHtml(show) {
     `<button type="button" class="ss-star" data-slug="${escapeHtml(show.slug)}"` +
     ` aria-pressed="${on}" aria-label="${escapeHtml(t(on ? "search.star.remove" : "search.star.add", { title: show.title }))}">` +
     `${on ? "★" : "☆"}</button>` +
-    `<span class="ss-row-title">${foreign(show.title)}</span>` +
+    `<span class="ss-row-title">${foreign(show.title, show.slug)}${localTitle(show)}</span>` +
     `<span class="ss-row-meta">${showMeta(show)}</span>`
   );
 }
@@ -1775,13 +1919,24 @@ function rowElement(show, tag) {
   return row;
 }
 
+/* The whole pool as a list — until it is too long to browse, when the list
+ * asks for a search instead (../shared/limits.js). */
 function renderBrowse() {
   const list = $("browseList");
   list.innerHTML = "";
-  for (const show of state.catalogue.shows) {
+  const { rows, total, more, searchFirst } = listPage(state.catalogue.shows, { pages: state.browsePages });
+  for (const show of rows) {
     list.appendChild(rowElement(show, "li"));
   }
-  $("browseLine1").textContent = t("browse.pick", { count: state.catalogue.shows.length });
+  const tail = $("browseMore");
+  tail.hidden = !(more || searchFirst);
+  tail.innerHTML = searchFirst
+    ? `<span class="browse-search-first" data-i18n-slot="browse.searchFirst">${escapeHtml(t("browse.searchFirst", { count: total }))}</span>`
+    : more
+      ? `<button type="button" class="btn btn-ghost browse-more-btn" id="browseMoreBtn" data-i18n-slot="browse.more">` +
+        `${escapeHtml(t("browse.more", { count: more }))}</button>`
+      : "";
+  $("browseLine1").textContent = t("browse.pick", { count: total });
 }
 
 function matchesFilters(show) {
@@ -1792,6 +1947,7 @@ function matchesFilters(show) {
   const q = query.toLowerCase();
   return (
     show.title.toLowerCase().includes(q) ||
+    (show.titleLocal || "").toLowerCase().includes(q) ||
     (show.genre || "").toLowerCase().includes(q) ||
     show.venueNames.some((v) => v.toLowerCase().includes(q)) ||
     (show.blurb || "").toLowerCase().includes(q)
@@ -1802,7 +1958,7 @@ function runSearch() {
   const hits = state.catalogue.shows.filter(matchesFilters);
   const results = $("ssResults");
   results.innerHTML = "";
-  for (const show of hits.slice(0, 40)) {
+  for (const show of hits.slice(0, SEARCH_RESULT_ROWS)) {
     const row = rowElement(show, "li");
     row.setAttribute("role", "option");
     results.appendChild(row);
@@ -1823,17 +1979,22 @@ function buildFacets() {
     .map(
       (c) =>
         `<label class="panel-option"><input type="checkbox" data-facet="genre" value="${escapeHtml(c.slug)}" />` +
-        `<span>${foreign(c.name)}</span>` +
+        `<span>${foreign(c.name, c.slug)}</span>` +
         `<span class="opt-count">${state.catalogue.shows.filter((s) => s.genreSlug === c.slug).length}</span></label>`
     )
     .join("");
   const venueOptions = $("ssfVenueOptions");
+  // Only the venues the pool actually plays: a festival's venue list covers
+  // every edition, and a venue with nothing on in the period is no filter.
+  const playing = new Map();
+  for (const show of state.catalogue.shows) playing.set(show.venue, (playing.get(show.venue) || 0) + 1);
   venueOptions.innerHTML = [...state.venues.values()]
+    .filter((v) => playing.has(v.code))
     .map(
       (v) =>
         `<label class="panel-option"><input type="checkbox" data-facet="venue" value="${escapeHtml(v.code)}" />` +
-        `<span>${foreign(v.name)}</span>` +
-        `<span class="opt-count">${state.catalogue.shows.filter((s) => s.venue === v.code).length}</span></label>`
+        `<span>${foreign(v.name, v.code)}</span>` +
+        `<span class="opt-count">${playing.get(v.code)}</span></label>`
     )
     .join("");
 }
@@ -2062,16 +2223,16 @@ function download(filename, text, mime) {
 function wireExports() {
   $("downloadCsvBtn").addEventListener("click", () => {
     if (!state.draft) return;
-    download(`${FESTIVAL.id}-plan.csv`, toCsv(draftedSlots()), "text/csv;charset=utf-8");
+    download(`${state.focus.festival.id}-plan.csv`, toCsv(draftedSlots()), "text/csv;charset=utf-8");
   });
   $("importIcsBtn").addEventListener("click", () => {
     if (!state.draft) return;
     download(
-      `${FESTIVAL.id}-plan.ics`,
+      `${state.focus.festival.id}-plan.ics`,
       toIcs(draftedSlots(), {
         now: new Date(),
-        timezone: state.catalogue.festival.timezone,
-        calendarName: t("export.calendarName", { festival: state.catalogue.festival.name }),
+        timezone: state.focus.festival.timezone,
+        calendarName: t("export.calendarName", { festival: festivalName(state.focus.festival) }),
         prodId: "-//EdFringeNow//Festival Planner//EN",
       }),
       "text/calendar;charset=utf-8"
@@ -2086,7 +2247,11 @@ function wireExports() {
 function retranslate() {
   renderChrome();
   if (!state.catalogue) return;
+  renderTimelineStrip();
   renderHeaderHint();
+  renderPeriodBar();
+  renderPoolNote();
+  renderOriginCard();
   renderPrefs();
   buildDayHeader();
   buildFacets();
@@ -2095,18 +2260,137 @@ function retranslate() {
   layoutOverlay();
 }
 
-async function boot() {
-  initI18n({
-    root: FESTIVAL.pageRoot,
-    storagePrefix: FESTIVAL.storagePrefix,
-    localeSelect: $("langSelect"),
-    themeButton: $("themeToggle"),
-    onChange: retranslate,
+// --- the year, and which festival the page is zoomed in on -----------------
+
+/** Today on the festival's own calendar — the pinned clock in a case. */
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function renderTimelineStrip() {
+  const monthFmt = (options) => new Intl.DateTimeFormat(currentIntlLocale(), { timeZone: "UTC", ...options });
+  renderTimeline($("timeline"), {
+    registry: state.registry,
+    span: timelineSpan(todayISO()),
+    todayISO: todayISO(),
+    focusKey: state.focus ? state.focus.key : null,
+    period: state.period,
+    label: (festival, edition) => ({
+      name: wordmarkOf(festival).join(" "),
+      tip: `${festivalName(festival)} · ${dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(
+        dateOf(edition.firstDate),
+        dateOf(edition.lastDate)
+      )}`,
+    }),
+    // A month is its short name; January also says which year has begun.
+    monthLabel: (iso) =>
+      monthFmt(iso.slice(5, 7) === "01" ? { month: "short", year: "numeric" } : { month: "short" }).format(dateOf(iso)),
   });
-  renderChrome();
+}
+
+/** The registry entry and edition a key names, or null. */
+function editionByKey(key) {
+  for (const festival of state.registry.festivals) {
+    for (const edition of festival.editions) {
+      if (editionKey(festival.id, edition.id) === key) return { festival, edition, key };
+    }
+  }
+  return null;
+}
+
+/* Which edition to open on: the one the URL names, else the one last chosen,
+ * else the next to start (or running) of every festival with a programme. */
+function initialFocus() {
+  const url = new URLSearchParams(location.search);
+  const asked = url.get("festival");
+  if (asked) {
+    const festival = state.registry.festivals.find((f) => f.id === asked);
+    if (festival) {
+      const edition =
+        festival.editions.find((e) => e.id === url.get("edition")) ||
+        currentEdition(festival, todayISO()) ||
+        festival.editions[festival.editions.length - 1];
+      if (edition) return editionByKey(editionKey(festival.id, edition.id));
+    }
+  }
+  const stored = editionByKey(readStore(KEY_FOCUS, ""));
+  if (stored) return stored;
+  const today = todayISO();
+  const candidates = state.registry.festivals
+    .map((festival) => ({ festival, edition: currentEdition(festival, today) }))
+    .filter((c) => c.edition)
+    .sort((a, b) => {
+      // Running or upcoming before finished; then soonest.
+      const past = (c) => (c.edition.lastDate < today ? 1 : 0);
+      return past(a) - past(b) || a.edition.firstDate.localeCompare(b.edition.firstDate);
+    });
+  const first = candidates[0];
+  return first ? editionByKey(editionKey(first.festival.id, first.edition.id)) : null;
+}
+
+/* Zoom in on one edition: the period, the pool, the theme and the trip links
+ * all follow. `fresh` is a reader's click, which also writes the address and
+ * remembers the choice; the page's own first focus writes nothing. */
+async function focusEdition(focus, { fresh = false } = {}) {
+  state.focus = focus;
+  const saved = readStore(KEY_PREFS, {}) || {};
+  const storedPeriod = (saved.periods || {})[focus.key];
+  state.period =
+    storedPeriod && storedPeriod.from && storedPeriod.to
+      ? storedPeriod
+      : { from: shiftDay(focus.edition.firstDate, -1), to: shiftDay(focus.edition.lastDate, 1) };
+  applyTheme(focus.festival);
+  if (fresh) {
+    writeStore(KEY_FOCUS, focus.key);
+    const url = new URL(location.href);
+    url.searchParams.set("festival", focus.festival.id);
+    // The edition only needs naming when the festival has more than one.
+    if (focus.festival.editions.length > 1) url.searchParams.set("edition", focus.edition.id);
+    else url.searchParams.delete("edition");
+    history.replaceState(null, "", url);
+  }
+  const win = (saved.windows || {})[focus.key];
+  await loadPool({ window: win });
+}
+
+/* The festival's palette is CSS (planNG.css, keyed by this attribute); its
+ * language and direction are the registry's, for its name wherever the page
+ * prints it. */
+function applyTheme(festival) {
+  document.documentElement.dataset.festival = festival.id;
+}
+
+/** One edition's adapted programme, fetched once however often it is asked for. */
+function editionCatalogue(dataUrl) {
+  if (!state.editions.has(dataUrl)) state.editions.set(dataUrl, loadFestival(dataUrl));
+  return state.editions.get(dataUrl);
+}
+
+/* Every edition overlapping the period, judged for reach from the focused
+ * festival's city, fetched where it can contribute, and joined into the pool
+ * the calendar drafts from. */
+async function loadPool({ window: win = null, keepWindow = false } = {}) {
+  const { festival, edition } = state.focus;
+  const overlapping = [];
+  for (const f of state.registry.festivals) {
+    for (const e of f.editions) {
+      if (e.lastDate < state.period.from || e.firstDate > state.period.to) continue;
+      overlapping.push({ festivalId: f.id, lat: f.lat, lng: f.lng, firstDate: e.firstDate, lastDate: e.lastDate, festival: f, entry: e });
+    }
+  }
+  const focusShape = { festivalId: festival.id, lat: festival.lat, lng: festival.lng, firstDate: edition.firstDate, lastDate: edition.lastDate };
+  state.reach = poolReach(focusShape, overlapping, state.period);
+
+  const previousWindow = keepWindow && state.dates.length ? { from: windowStartISO(), to: windowEndISO() } : null;
   $("loadingState").hidden = false;
+  $("errorState").hidden = true;
+  let parts;
   try {
-    state.catalogue = await loadCatalogue(FESTIVAL.dataUrl);
+    parts = await Promise.all(
+      state.reach
+        .filter((r) => r.verdict !== "out" && r.edition.entry.dataUrl)
+        .map(async (reach) => ({ reach, catalogue: await editionCatalogue(reach.edition.entry.dataUrl) }))
+    );
   } catch (error) {
     $("loadingState").hidden = true;
     $("errorState").hidden = false;
@@ -2117,22 +2401,300 @@ async function boot() {
   }
   $("loadingState").hidden = true;
 
+  state.catalogue = buildPool(parts);
+  state.poolSlugs = new Set(state.catalogue.shows.map((s) => s.slug));
   state.venues = state.catalogue.venues;
   state.coords = venueCoords(state.venues);
-  state.dates = festivalDates(state.catalogue.shows);
-  state.d0 = 1;
-  state.d1 = state.dates.length;
+  state.dates = daysOf(state.period.from, state.period.to);
+  document.documentElement.style.setProperty("--fest-days", String(state.dates.length));
+  const wanted = previousWindow || win;
+  const at = (iso, fallback) => {
+    const i = iso ? state.dates.indexOf(iso) : -1;
+    return i === -1 ? fallback : i + 1;
+  };
+  state.d0 = wanted ? at(wanted.from, 1) : 1;
+  state.d1 = Math.max(state.d0, wanted ? at(wanted.to, state.dates.length) : state.dates.length);
+  state.browsePages = 1;
+  state.search.genres.clear();
+  state.search.venues.clear();
 
-  const known = new Set(state.catalogue.shows.map((s) => s.slug));
-  state.starred = new Set(readStore(KEY_STARRED, []).filter((slug) => known.has(slug)));
-  restoreVerdicts(known);
-  restorePrefs();
-
+  $("planPanel").hidden = false;
+  $("boardDrawer").hidden = false;
+  renderChrome();
+  renderTimelineStrip();
   renderHeaderHint();
+  renderPeriodBar();
+  renderPoolNote();
+  renderOriginCard();
   renderPrefs();
   buildDayHeader();
   buildFacets();
   syncFacetChrome();
+  rebuild();
+  requestAnimationFrame(() => requestAnimationFrame(layoutOverlay));
+}
+
+// --- the period ------------------------------------------------------------
+
+function renderPeriodBar() {
+  const { from, to } = state.period;
+  const days = daysOf(from, to).length;
+  const full = days >= MAX_PERIOD_DAYS;
+  $("periodRange").textContent = t("period.range", {
+    range: dates({ day: "numeric", month: "short" }).formatRange(dateOf(from), dateOf(to)),
+    count: days,
+  });
+  $("periodEarlier").disabled = full;
+  $("periodLater").disabled = full;
+}
+
+/* A day more of calendar at one end. The window grows with it — a day the
+ * reader asked for and then could not plan would be a button that did nothing. */
+async function extendPeriod(which) {
+  if (daysOf(state.period.from, state.period.to).length >= MAX_PERIOD_DAYS) return;
+  const keep = { from: windowStartISO(), to: windowEndISO() };
+  if (which === "earlier") {
+    state.period = { ...state.period, from: shiftDay(state.period.from, -1) };
+    keep.from = state.period.from;
+  } else {
+    state.period = { ...state.period, to: shiftDay(state.period.to, 1) };
+    keep.to = state.period.to;
+  }
+  await loadPool({ window: keep });
+  savePrefs();
+}
+
+/* What the pool holds besides the focused festival, and what it had to leave
+ * out: a festival dropped for distance is named, never silently missing. */
+function renderPoolNote() {
+  const host = $("poolNote");
+  const lines = [];
+  const focus = state.focus;
+  if (!focus.edition.dataUrl) {
+    lines.push(
+      `<p class="pool-line pool-line--wait" data-i18n-slot="pool.noProgramme">` +
+        `${escapeHtml(t("pool.noProgramme", { festival: festivalName(focus.festival) }))}</p>`
+    );
+  }
+  const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
+  for (const r of state.reach) {
+    if (r.verdict === "focus") continue;
+    const other = r.edition.festival;
+    const name = festivalName(other);
+    if (r.verdict === "day-trip" && r.edition.entry.dataUrl) {
+      lines.push(
+        `<p class="pool-line pool-line--also" data-i18n-slot="pool.also">` +
+          `${escapeHtml(t("pool.also", { festival: name, km: km(r.km) }))}</p>`
+      );
+    } else if (r.verdict === "partly") {
+      lines.push(
+        `<p class="pool-line pool-line--partly" data-i18n-slot="pool.partly">` +
+          `${escapeHtml(t("pool.partly", { festival: name, km: km(r.km) }))}</p>`
+      );
+    } else if (r.verdict === "out") {
+      lines.push(
+        `<p class="pool-line pool-line--out" data-i18n-slot="pool.out">` +
+          `${escapeHtml(t("pool.out", { festival: name, city: festivalCity(focus.festival), km: km(r.km ?? 0) }))}</p>`
+      );
+    }
+  }
+  host.innerHTML = lines.join("");
+  host.hidden = !lines.length;
+}
+
+// --- where the reader is coming from ----------------------------------------
+
+function regionName(code) {
+  try {
+    return new Intl.DisplayNames([currentIntlLocale()], { type: "region" }).of(code) || code;
+  } catch {
+    return code;
+  }
+}
+
+/* Asked once per browser, the first time a festival is focused: the card
+ * sits above the questions, the calendar drafts regardless, and the answer
+ * (or "not now") is stored so it never comes back. */
+function renderOriginCard() {
+  const card = $("originCard");
+  const show = !state.origin && Boolean(state.focus);
+  card.hidden = !show;
+  if (!show) return;
+  const festival = state.focus.festival;
+  const country = regionName(festival.country);
+  const abroad = ORIGIN_COUNTRIES.filter((c) => c !== festival.country)
+    .map((c) => ({ code: c, name: regionName(c) }))
+    .sort((a, b) => a.name.localeCompare(b.name, currentIntlLocale()));
+  const answer = (id, emoji, key, params = {}) =>
+    `<button type="button" class="pref-pick origin-pick" data-origin="${id}">` +
+    `<span class="pref-ico" aria-hidden="true">${emoji}</span>` +
+    `<span class="pref-word" data-i18n-slot="${key}">${escapeHtml(t(key, params))}</span></button>`;
+  card.innerHTML =
+    `<div class="origin-head">` +
+    `<p class="origin-ask" data-i18n-slot="origin.q">${escapeHtml(t("origin.q", { festival: festivalName(festival) }))}</p>` +
+    `<p class="origin-why" data-i18n-slot="origin.why">${escapeHtml(t("origin.why"))}</p>` +
+    `</div>` +
+    `<div class="origin-answers" role="group" aria-label="${escapeHtml(t("origin.q", { festival: festivalName(festival) }))}">` +
+    answer("position", "\u{1F4CD}", "origin.position") +
+    answer("city", "\u{1F3E0}", "origin.city", { city: festivalCity(festival) }) +
+    answer("country", "\u{1F686}", "origin.country", { country }) +
+    `<label class="pref-pick origin-pick origin-abroad">` +
+    `<span class="pref-ico" aria-hidden="true">\u{2708}\u{FE0F}</span>` +
+    `<span class="pref-word" data-i18n-slot="origin.abroad">${escapeHtml(t("origin.abroad"))}</span>` +
+    `<select class="opt-select origin-select" id="originCountry" aria-label="${escapeHtml(t("origin.abroad"))}">` +
+    `<option value="">${escapeHtml(t("origin.abroad.pick"))}</option>` +
+    abroad.map((c) => `<option value="${c.code}">${escapeHtml(c.name)}</option>`).join("") +
+    `<option value="*">${escapeHtml(t("origin.abroad.other"))}</option>` +
+    `</select></label>` +
+    `</div>` +
+    `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="origin.skip">${escapeHtml(t("origin.skip"))}</button>` +
+    `<p class="origin-status" id="originStatus" role="status" aria-live="polite"></p>`;
+}
+
+/* The trip links' own line: where the reader said they come from, and the way
+ * to say it again. Shown once there is an answer to show. */
+function renderOriginLine() {
+  const line = $("originLine");
+  const o = state.origin;
+  if (!o || o.kind === "skipped") {
+    line.hidden = !o;
+    line.innerHTML = o
+      ? `<button type="button" class="origin-change" data-origin="change" data-i18n-slot="origin.say">${escapeHtml(t("origin.say"))}</button>`
+      : "";
+    return;
+  }
+  const place =
+    o.kind === "position"
+      ? t("origin.place.position")
+      : o.kind === "city"
+        ? o.cityName || o.city
+        : o.kind === "country"
+          ? regionName(o.country)
+          : o.country
+            ? regionName(o.country)
+            : t("origin.place.abroad");
+  line.hidden = false;
+  line.innerHTML =
+    `<span class="origin-from" data-i18n-slot="origin.from">${escapeHtml(t("origin.from", { place }))}</span> ` +
+    `<button type="button" class="origin-change" data-origin="change" data-i18n-slot="origin.change">${escapeHtml(t("origin.change"))}</button>`;
+}
+
+function setOrigin(origin) {
+  state.origin = origin;
+  writeStore(KEY_ORIGIN, origin);
+  renderOriginCard();
+  renderTripLinks();
+}
+
+function wireOrigin() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-origin]");
+    if (!btn || btn.tagName === "SELECT") return;
+    const festival = state.focus && state.focus.festival;
+    if (!festival) return;
+    const kind = btn.dataset.origin;
+    if (kind === "change") {
+      state.origin = null;
+      renderOriginCard();
+      renderTripLinks();
+      $("originCard").scrollIntoView({ block: "nearest" });
+    } else if (kind === "skip") {
+      setOrigin({ kind: "skipped" });
+    } else if (kind === "city") {
+      setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng });
+    } else if (kind === "country") {
+      setOrigin({ kind: "country", country: festival.country });
+    } else if (kind === "position") {
+      const status = $("originStatus");
+      status.textContent = t("origin.locating");
+      if (!navigator.geolocation) {
+        status.textContent = t("origin.noPosition");
+        return;
+      }
+      // Kept as a point, judged by distance, sent nowhere.
+      navigator.geolocation.getCurrentPosition(
+        (pos) => setOrigin({ kind: "position", lat: pos.coords.latitude, lng: pos.coords.longitude }),
+        () => {
+          status.textContent = t("origin.noPosition");
+        },
+        { maximumAge: 600000, timeout: 15000 }
+      );
+    }
+  });
+  document.addEventListener("change", (e) => {
+    if (e.target.id !== "originCountry" || !e.target.value) return;
+    const code = e.target.value;
+    setOrigin(code === "*" ? { kind: "abroad" } : { kind: "abroad", country: code });
+  });
+}
+
+function wireFocus() {
+  $("timeline").addEventListener("click", (e) => {
+    const item = e.target.closest(".tl-item");
+    if (!item) return;
+    const next = editionByKey(item.dataset.edition);
+    if (next && (!state.focus || next.key !== state.focus.key)) focusEdition(next, { fresh: true });
+  });
+  $("periodEarlier").addEventListener("click", () => extendPeriod("earlier"));
+  $("periodLater").addEventListener("click", () => extendPeriod("later"));
+  $("browseMore").addEventListener("click", (e) => {
+    if (!e.target.closest("#browseMoreBtn")) return;
+    state.browsePages += 1;
+    renderBrowse();
+    syncStars();
+  });
+  addEventListener("resize", () => layoutRows($("timeline")));
+}
+
+async function boot() {
+  $("loadingState").hidden = false;
+  let registryError = null;
+  try {
+    state.registry = await loadFestivalIndex();
+  } catch (error) {
+    registryError = error;
+  }
+  // What /planJerusalem/ saved, carried over before anything reads storage —
+  // its date window counted nights of that festival's edition, which the
+  // registry has the dates of.
+  const legacy = state.registry && editionByKey(editionKey(LEGACY_FESTIVAL_ID, LEGACY_EDITION_ID));
+  if (legacy) {
+    try {
+      migrateLegacy(localStorage, {
+        from: LEGACY_STORAGE_PREFIX,
+        to: STORAGE_PREFIX,
+        festivalId: LEGACY_FESTIVAL_ID,
+        editionKey: legacy.key,
+        nights: daysOf(legacy.edition.firstDate, legacy.edition.lastDate),
+      });
+    } catch {
+      /* no storage, nothing to carry */
+    }
+  }
+  initI18n({
+    root: PAGE_ROOT,
+    storagePrefix: STORAGE_PREFIX,
+    localeSelect: $("langSelect"),
+    themeButton: $("themeToggle"),
+    onChange: retranslate,
+    documentTitle: () =>
+      state.focus ? t("doc.titleFor", { festival: festivalName(state.focus.festival) }) : null,
+  });
+  renderChrome();
+  if (registryError) {
+    $("loadingState").hidden = true;
+    $("errorState").hidden = false;
+    // The translated line stays; what the failure actually said goes beneath it,
+    // untranslated, because it came from the network rather than from us.
+    $("errorTech").textContent = String(registryError.message || registryError);
+    return;
+  }
+
+  state.starred = new Set(readStore(KEY_STARRED, []));
+  restoreVerdicts();
+  restorePrefs();
+  state.origin = readStore(KEY_ORIGIN, null);
+
   wireWindow();
   wireBoard();
   wireCalendar();
@@ -2140,10 +2702,16 @@ async function boot() {
   wireSearch();
   wirePrefs();
   wireExports();
-  rebuild();
-  // Two frames: the board has to be laid out before the window overlay can be
-  // measured off the day header's real geometry.
-  requestAnimationFrame(() => requestAnimationFrame(layoutOverlay));
+  wireOrigin();
+  wireFocus();
+
+  const focus = initialFocus();
+  if (!focus) {
+    $("loadingState").hidden = true;
+    renderTimelineStrip();
+    return;
+  }
+  await focusEdition(focus);
 }
 
 /* The site version in the footer's popup, exactly as the other two pages carry

@@ -8,7 +8,7 @@ const TUE = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
   description: "'not this show' hands its hour to the next contender",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {

@@ -5,10 +5,10 @@ const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"]
 
 module.exports = {
   description: "starred shows survive a reload, and the Edinburgh planner's stored list is never touched",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
     await openDrawer(page);
 
@@ -39,7 +39,7 @@ module.exports = {
     assert.deepEqual(leaked, [], "the Fringe planner's keys must stay untouched");
     const owned = await page.evaluate(() => Object.keys(localStorage));
     assert.deepEqual(
-      owned.filter((k) => !k.startsWith("jerusalemPlan.")),
+      owned.filter((k) => !k.startsWith("planNG.")),
       [],
       "this page writes nothing outside its own prefix"
     );

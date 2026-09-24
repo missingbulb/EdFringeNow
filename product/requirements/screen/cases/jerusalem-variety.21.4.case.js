@@ -5,7 +5,7 @@ const { jerusalemReady, settle } = require("../../shared/case-helpers");
 // refusing to be answered — see leaf 21.4.
 module.exports = {
   description: "the variety question is offered, and says plainly that it does not work yet",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {

@@ -36,7 +36,7 @@ step "Unit tests — node --test"
 # bijection, the gallery gate, and the pure logic cases. The browser-driven
 # screen/behavior lanes are `npm run test:ui` (CI's ui-requirements job), not
 # this fast path.
-node --test site/shared/__tests__/*.test.mjs site/js/__tests__/*.test.mjs site/plan/lib/__tests__/*.test.mjs site/plan2/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
+node --test site/shared/__tests__/*.test.mjs site/js/__tests__/*.test.mjs site/plan/lib/__tests__/*.test.mjs site/plan2/lib/__tests__/*.test.mjs site/planNG/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs
 
 step "JavaScript syntax — node --check"
 # Only our own tracked source: everything the site ships (site/), the scripts/

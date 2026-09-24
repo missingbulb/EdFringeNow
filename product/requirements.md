@@ -910,7 +910,14 @@ trips, so the experience can be played with before any of it touches live data.
 
 ---
 
-# Part V — the Jerusalem Comedy Festival planner (`/planJerusalem`)
+# Part V — the festival planner (`/planNG`)
+
+One page plans every festival in the registry (`site/data/festivals/index.json`)
+on an open calendar: a year's timeline across the top chooses which festival to
+zoom in on (section 23), and the period, the pool of performances, the theme and
+the trip links follow from that choice. Sections 18–21 were written against the
+Jerusalem Comedy Festival and still prove the page with that programme focused;
+nothing in them is Jerusalem's alone.
 
 ## 18. A second festival on the same board
 
@@ -918,9 +925,9 @@ A five-night festival in Jerusalem whose programme is in Hebrew, planned from
 the calendar rather than from a list: section 20 is the page's own model, and
 the Edinburgh planner's grid survives beneath it as a drawer. The page is
 festival-shaped rather than Jerusalem-shaped: everything that differs between
-the two — the city, the dates, the storage keys, the palette, the partner
-links — comes from one descriptor, so a third festival is a descriptor and a
-theme rather than a third page.
+festivals — the city, the dates, the palette, the partner links — comes from the
+registry and one presentation entry per festival, so another festival is data
+and a theme rather than another page.
 
 - `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
 
@@ -928,9 +935,9 @@ theme rather than a third page.
 
   <details><summary>Notes</summary>
 
-  The nav links are `Now` (`../`), `Plan` (`../plan/`) and `Jerusalem`
-  (`./`, active). The header hint reads the festival's own run, not
-  Edinburgh's.
+  The nav links are `Now` (`/`), `Plan` (`/plan/`) and the focused festival's
+  city (`./`, active). The header hint reads the focused festival's own run,
+  not Edinburgh's.
   </details>
 
 - `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
@@ -1137,7 +1144,7 @@ in one translations file that carries, per key, the width its slot can afford.
 
 - `19.9` Every language's page is served already in that language, before any script runs.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planJerusalem/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planJerusalem/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planJerusalem/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planJerusalem/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planNG/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planNG/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planNG/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planNG/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
 
   <details><summary>Notes</summary>
 
@@ -1463,6 +1470,138 @@ way. Nothing above the calendar explains the calendar.
   dinner, move the day's end and the first night, reload, and all of it comes
   back — stored under the festival's own prefix like everything else this page
   remembers.
+  </details>
+
+## 23. The year's festivals, and the period you plan
+
+The top of the page is the year: every festival edition the registry knows,
+drawn at its dates. Choosing one is choosing a stretch of calendar — its run and
+a day either side, for getting there and back — and the pool the calendar drafts
+from is every performance, from any festival, that falls inside it and can be
+reached from there.
+
+- `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the focused one lit.
+
+  ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
+
+  <details><summary>Notes</summary>
+
+  Twelve months from the start of the month before today. Editions whose runs
+  overlap are stacked on separate rows so no bar hides another; an edition
+  whose programme is not published yet is drawn hollow, and is still chosen
+  like any other.
+  </details>
+
+- `23.2` Choosing a festival on the timeline sets the period to its run plus a day either side.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.2 -->
+
+  <details><summary>Notes</summary>
+
+  The choice is an address: `?festival=<id>` is written to the URL, so the
+  page can be linked focused on a festival, and the last choice is what the
+  page opens on next time.
+  </details>
+
+- `23.3` The period extends a day at a time from either end of the calendar.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.3 -->
+
+  <details><summary>Notes</summary>
+
+  The two buttons at the calendar's ends add a day before the first night or
+  after the last, up to a period of `MAX_PERIOD_DAYS`
+  (`site/shared/limits.js`); the first- and last-night blockers (21.8) narrow
+  it again. Performances of any edition the new day reaches join the pool.
+  </details>
+
+- `23.4` A festival joins the pool only when its city is within reach of the focused festival's.
+
+  <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
+
+  <details><summary>Notes</summary>
+
+  `site/shared/feasibility.js`. A city a day-trip away is in whole; a city
+  further off is in only for the nights far enough from the focused run to
+  travel between the two, so an event in Edinburgh during the Jerusalem
+  festival is never suggested, whatever the data holds.
+  </details>
+
+- `23.5` A festival left out for being out of reach is named on the page, never dropped silently.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
+
+- `23.6` The page takes the focused festival's theme: its name, its wordmark and its palette.
+
+  ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
+
+  <details><summary>Notes</summary>
+
+  `data-festival` on the page root selects a palette block in the stylesheet;
+  a festival with no block of its own keeps the house palette. The festival's
+  own-language name is tagged with its language and direction.
+  </details>
+
+## 24. Where you are coming from
+
+The first time a festival is chosen the page asks, once, where the reader is
+coming from. It is the question that decides what the trip needs: a reader who
+lives in the festival's city needs no bed, one from elsewhere in the country
+needs a bed and a train, and one from abroad needs the airport too.
+
+- `24.1` The first time a festival is chosen, the page asks where you are coming from.
+
+  ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
+
+- `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.2 -->
+
+  <details><summary>Notes</summary>
+
+  Asked once per browser: the answer is stored and the card does not come
+  back, on this festival or the next. It can be changed from the trip links'
+  own line.
+  </details>
+
+- `24.3` "Use my location" answers the question from the device's position.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.3 -->
+
+  <details><summary>Notes</summary>
+
+  The position is kept as a point in this browser and judged against each
+  festival's city by distance; it is sent nowhere. Driven with the harness's
+  fixed position in Edinburgh, which is abroad for a festival in Jerusalem.
+  </details>
+
+- `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.4 -->
+
+## 25. Never a list of thousands
+
+A festival programme can hold hundreds of events and a period can pool several
+festivals. The page stays usable by never drawing more than it can show; the
+constants live in `site/shared/limits.js`.
+
+- `25.1` A list draws at most a page of rows, and above a threshold it asks for a search first.
+
+  <table><thead><tr><th align="left">Items</th><th align="left">Query</th><th align="left">Pages asked for</th><th align="left">Rows drawn</th><th align="left">Held back</th><th align="left">Asks for a search</th></tr></thead><tbody><tr><td>34</td><td>none</td><td>1</td><td>34</td><td>0</td><td>no</td></tr><tr><td>100</td><td>none</td><td>1</td><td>100</td><td>0</td><td>no</td></tr><tr><td>101</td><td>none</td><td>1</td><td>0</td><td>101</td><td>yes</td></tr><tr><td>3000</td><td>none</td><td>1</td><td>0</td><td>3000</td><td>yes</td></tr><tr><td>3000</td><td>typed</td><td>1</td><td>200</td><td>2800</td><td>no</td></tr><tr><td>3000</td><td>typed</td><td>2</td><td>400</td><td>2600</td><td>no</td></tr><tr><td>150</td><td>typed</td><td>1</td><td>150</td><td>0</td><td>no</td></tr></tbody></table> <!-- req-gallery:25.1 -->
+
+  <details><summary>Notes</summary>
+
+  The same cap holds for the answers a question offers: past `PICK_CHIPS` the
+  kinds a pooled period offers wait behind one "more kinds" chip, the focused
+  festival's own kinds first, and a kind already chosen is always shown.
+  </details>
+
+- `25.2` The timeline draws one bar per edition, however many performances the edition has.
+
+  <table><thead><tr><th align="left">Festival</th><th align="left">Edition</th><th align="left">Runs</th><th align="left">Programme</th><th align="left">Bars on the timeline</th></tr></thead><tbody><tr><td>Jerusalem Comedy Festival</td><td>2026</td><td>18 – 22 Oct 2026</td><td>published</td><td>1</td></tr><tr><td>Haifa International Film Festival</td><td>2026</td><td>25 Sep – 3 Oct 2026</td><td>not yet</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2026</td><td>7 – 31 Aug 2026</td><td>published</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2025</td><td>1 – 25 Aug 2025</td><td>published</td><td>0 (before the year shown)</td></tr></tbody></table> <!-- req-gallery:25.2 -->
+
+---
+
 # Part VI — what the site tells a crawler
 
 A public website has to be findable, and findable is a thing the site states
@@ -1477,7 +1616,7 @@ page cannot be added to the site and forgotten here.
 
 - `22.1` The sitemap lists every page the site publishes for a reader.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planJerusalem/</td><td>planJerusalem/index.html</td></tr><tr><td>/planJerusalem/he/</td><td>planJerusalem/he/index.html</td></tr><tr><td>/planJerusalem/ja/</td><td>planJerusalem/ja/index.html</td></tr><tr><td>/planJerusalem/ru/</td><td>planJerusalem/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planNG/</td><td>planNG/index.html</td></tr><tr><td>/planNG/he/</td><td>planNG/he/index.html</td></tr><tr><td>/planNG/ja/</td><td>planNG/ja/index.html</td></tr><tr><td>/planNG/ru/</td><td>planNG/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1526,3 +1665,7 @@ page cannot be added to the site and forgotten here.
   says so on the page itself (22.2), which keeps it out of results rather than
   merely out of a crawl.
   </details>
+
+- `22.5` Every `/planJerusalem/` address, in every language, moves permanently to the same place under `/planNG/`.
+
+  <table><thead><tr><th align="left">Old address</th><th align="left">Moves to</th><th align="left">Status</th></tr></thead><tbody><tr><td>/planJerusalem</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/he/</td><td>/planNG/he/</td><td>301</td></tr><tr><td>/planJerusalem/ru/</td><td>/planNG/ru/</td><td>301</td></tr><tr><td>/planJerusalem/ja/</td><td>/planNG/ja/</td><td>301</td></tr></tbody></table> <!-- req-gallery:22.5 -->

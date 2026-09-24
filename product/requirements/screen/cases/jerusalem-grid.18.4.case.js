@@ -3,7 +3,7 @@ const { jerusalemReady, jerusalemStarred, openDrawer } = require("../../shared/c
 
 module.exports = {
   description: "the day grid: five festival nights, a mark per performance, the plan's pick in gold, a verdict per lane",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,

@@ -5,7 +5,7 @@ const { jerusalemPrefs, jerusalemReady, settle } = require("../../shared/case-he
  * time: the late shows leave the calendar as the line passes them. */
 module.exports = {
   description: "dragging the day's end earlier drops what no longer fits",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemPrefs({ dayStartMin: 17 * 60, dayEndMin: 24 * 60 }),
   ready: jerusalemReady,

@@ -3,7 +3,7 @@ const { jerusalemReady, jerusalemStarred, openDrawer, settle } = require("../../
 
 module.exports = {
   description: "one Hebrew show as a grid lane and as a search row — title, venue and kind in the source's own script",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,
@@ -12,12 +12,12 @@ module.exports = {
   // page renders a string that came out of the programme.
   async capture(page, t) {
     await openDrawer(page);
-    const lane = await page.locator('.lane[data-slug="salakh"]').boundingBox();
+    const lane = await page.locator('.lane[data-slug="jerusalem-comedy/salakh"]').boundingBox();
     await page.click("#ssInput");
     await page.fill("#ssInput", "סלאח");
-    await page.waitForSelector('#ssResults .ss-row[data-slug="salakh"]');
+    await page.waitForSelector('#ssResults .ss-row[data-slug="jerusalem-comedy/salakh"]');
     await settle(page);
-    const row = await page.locator('#ssResults .ss-row[data-slug="salakh"]').boundingBox();
+    const row = await page.locator('#ssResults .ss-row[data-slug="jerusalem-comedy/salakh"]').boundingBox();
     return t.stitchV(
       [
         await t.clip({ x: lane.x, y: lane.y - 2, width: lane.width, height: lane.height + 4 }),

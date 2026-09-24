@@ -9,7 +9,7 @@ const NIGHT = '.sch-day[data-date="2026-10-19"]';
 
 module.exports = {
   description: "locking a night holds it, even against a scarcer contender",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {

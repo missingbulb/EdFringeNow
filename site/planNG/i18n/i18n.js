@@ -61,6 +61,8 @@ const state = {
   storagePrefix: "",
   themeButton: null,
   onChange: () => {},
+  /* The document's title, when the page knows better than the static one. */
+  documentTitle: null,
 };
 
 export function escapeHtml(s) {
@@ -148,7 +150,7 @@ function applyDocument() {
     state.themeButton.setAttribute("aria-label", label);
     state.themeButton.title = label;
   }
-  document.title = t("doc.title");
+  document.title = (state.documentTitle && state.documentTitle()) || t("doc.title");
   const description = document.querySelector('meta[name="description"]');
   if (description) description.content = t("doc.description");
 }
@@ -175,9 +177,19 @@ export function isDark() {
  * @param {Element} opts.localeSelect the language picker
  * @param {Element} opts.themeButton the light/dark toggle
  * @param {() => void} opts.onChange re-render hook for everything JS drew
+ * @param {() => string|null} [opts.documentTitle] the title the page wants now,
+ *   or null for the static one
  */
-export function initI18n({ root = "/", storagePrefix = "", localeSelect, themeButton, onChange = () => {} } = {}) {
+export function initI18n({
+  root = "/",
+  storagePrefix = "",
+  localeSelect,
+  themeButton,
+  onChange = () => {},
+  documentTitle = null,
+} = {}) {
   state.storagePrefix = storagePrefix;
+  state.documentTitle = documentTitle;
   state.themeButton = themeButton || null;
   state.onChange = onChange;
 

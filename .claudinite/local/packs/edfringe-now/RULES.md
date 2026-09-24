@@ -428,7 +428,7 @@ pack's own repo-level docs instead, or say nothing.
 The Now page (`site/index.html` + `site/js/app.js`) and the planner (`site/plan/` +
 `site/plan/plan.js`) are separate front-ends. `site/plan/lib/` is split: the pure, DOM-free half
 (`engine.js`, `travel.js`, `itinerary.js`, `availability.js`) is a **shared planning engine** that
-`site/planJerusalem/` also imports, so it must never learn one festival's specifics;
+`site/planNG/` also imports, so it must never learn one festival's specifics;
 `site/plan/plan.js` and `site/plan/lib/favourites.js` are the Fringe planner's alone. Every page is
 an ES module, so **anything that must behave the same on more than one of them belongs in
 `site/shared/`** and is imported by each — never copy-pasted. Every page spells the import the
@@ -696,7 +696,7 @@ wrong: the edit survives, silently disagreeing with the box office forever. Re-r
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
 
-`site/data/festivals/` and the legacy `site/data/jerusalem/shows.json` are a
+`site/data/festivals/` is a
 **second generator's** output — `scraper/convert/to_serving.py`'s — and
 `data/festivals/` is its raw input, written by hand-run fetchers. Adding a
 festival, an edition or a source, name each file and the script that writes it in

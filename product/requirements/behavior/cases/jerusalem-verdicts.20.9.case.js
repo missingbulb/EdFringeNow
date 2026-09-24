@@ -18,10 +18,10 @@ function draftedAt(page, date, time) {
 
 module.exports = {
   description: "the four verdicts survive a reload, under the festival's own storage prefix",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Two verdicts that pull in opposite directions, so a reload that dropped
@@ -76,7 +76,7 @@ module.exports = {
     assert.deepEqual(leaked, [], "the Fringe planner's keys must stay untouched");
     const owned = await page.evaluate(() => Object.keys(localStorage));
     assert.deepEqual(
-      owned.filter((k) => !k.startsWith("jerusalemPlan.")),
+      owned.filter((k) => !k.startsWith("planNG.")),
       [],
       "everything this page stores lives under its own prefix"
     );
