@@ -1,0 +1,29 @@
+{
+ "v": 1,
+ "festivals": [
+  {
+   "id": "jerusalem-comedy",
+   "name": "Jerusalem Comedy Festival",
+   "nameLocal": "פסטיבל הקומדיה הישראלי",
+   "city": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "comedy",
+   "defaultGenre": "comedy",
+   "site": "https://comedy-festival.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-18",
+     "lastDate": "2026-10-22",
+     "dataUrl": "/data/festivals/jerusalem-comedy/2026.json"
+    }
+   ]
+  }
+ ]
+}

@@ -14,6 +14,12 @@ Three scripts, on three different clocks:
 | `fetch_prices.py` | real ticket amounts, per performance | **once** — prices don't move; see below |
 | `normalize.py` | turns both into the committed site data | after either of the above |
 
+The other festivals (Jerusalem so far) use a separate, festival-generic layer:
+hand-run fetchers under [`festivals/`](festivals/README.md) write per-edition raw
+into `data/festivals/`, and [`convert/`](convert/to_serving.py) turns it into
+`site/data/festivals/`. Its contract — fetcher vs raw vs converter, adding an
+edition or a source — is [festivals/README.md](festivals/README.md).
+
 ## How edfringe.com serves listings
 
 The "What's On" listing (`/tickets/whats-on?page=N`) is a **Next.js single-page

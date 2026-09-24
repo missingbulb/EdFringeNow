@@ -2,7 +2,7 @@
 # The normalized, website-ready data under site/data IS committed — the browser
 # fetches it; only the bulky raw cache is ignored.
 data/raw_pages/
-data/jerusalem/raw_pages/
+data/festivals/.cache/
 
 # Claudinite hook logs (the vendored corpus under .claudinite/shared/ is ordinary tracked content)
 /.claudinite-hooks.log

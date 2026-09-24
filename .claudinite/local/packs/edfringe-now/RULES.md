@@ -696,10 +696,12 @@ wrong: the edit survives, silently disagreeing with the box office forever. Re-r
 the fetch. The `edfringe-data-dir-is-generator-output` check allows it **by name**,
 so a second file can't ride in on its shape.
 
-`site/data/jerusalem/` is a **second generator's** output — the one-shot Jerusalem
-scrape's. Adding a third festival's, name the file and the script that writes it
-in that same allowlist, never the directory, so the next one stays a moment a
-person confirms rather than a shape anything can ride in on.
+`site/data/festivals/` and the legacy `site/data/jerusalem/shows.json` are a
+**second generator's** output — `scraper/convert/to_serving.py`'s — and
+`data/festivals/` is its raw input, written by hand-run fetchers. Adding a
+festival, an edition or a source, name each file and the script that writes it in
+that same allowlist, never the directory, so the next one stays a moment a person
+confirms rather than a shape anything can ride in on.
 
 ### A long-running workflow that commits generated data will race the hourly refresh
 

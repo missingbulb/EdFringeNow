@@ -1,7 +1,7 @@
 /* The Jerusalem catalogue, adapted to the shape the planning engine consumes.
  *
- * `data/jerusalem/shows.json` is the scrape's own file (see
- * scraper/jerusalem/); the engine in plan/lib/ speaks the Edinburgh catalogue's
+ * `data/jerusalem/shows.json` is the pre-registry catalogue the converter
+ * still writes (scraper/convert/); the engine in plan/lib/ speaks the Edinburgh catalogue's
  * vocabulary. This module is the one place the two meet, so the page below it
  * never sees a raw scrape record and the engine never learns a second shape.
  *
@@ -84,16 +84,4 @@ export function adaptCatalogue(raw) {
   };
 }
 
-/** Every night the programme uses, ascending — the grid's columns. */
-export function festivalDates(shows) {
-  return [...new Set(shows.flatMap((s) => s.performances.map((p) => p.date)))].sort();
-}
-
-/** `{ [venueCode]: {lat, lng} }`, the lookup the engine's travel maths wants. */
-export function venueCoords(venues) {
-  const coords = new Map();
-  for (const [code, venue] of venues) {
-    if (venue.lat != null && venue.lng != null) coords.set(code, { lat: venue.lat, lng: venue.lng });
-  }
-  return coords;
-}
+export { festivalDates, venueCoords } from "../shared/festival-catalogue.js";

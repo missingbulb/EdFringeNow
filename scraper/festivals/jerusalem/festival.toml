@@ -1,0 +1,63 @@
+# The Jerusalem Comedy Festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md.
+
+id = "jerusalem-comedy"
+name = "Jerusalem Comedy Festival"
+name_local = "פסטיבל הקומדיה הישראלי"
+city = "Jerusalem"
+country = "IL"
+# The city's centre, for the festival timeline and travel maths between cities;
+# venues carry their own coordinates.
+lat = 31.7683
+lng = 35.2137
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "comedy"
+default_genre = "comedy"
+site = "https://comedy-festival.co.il"
+
+[ticketing]
+notes = "Sold through smarticket.co.il and eventer.co.il; the festival site publishes no prices and no availability."
+
+[[edition]]
+id = "2026"
+# ordinal: not published anywhere we could cite, so absent (null), never guessed.
+first = "2026-10-18"
+last = "2026-10-22"
+# Tolerance: planJerusalem still reads the pre-registry catalogue. The converter
+# keeps writing it from the same raw until the page moves to the registry.
+legacy = { path = "site/data/jerusalem/shows.json", writer = "jerusalem_comedy/legacy_shows.py" }
+
+[[source]]
+id = "comedy-festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/comedy-festival-site/fetch.py"
+adapter = "jerusalem_comedy/comedy_festival_site.py"
+
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "jerusalem_comedy/nominatim.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "jerusalem_comedy/venues_research.py"
+
+# Field precedence per section: for each field, the first source listed here
+# that supplies it wins. A contributing source missing from its section's list
+# is an error, never an implicit last place.
+[merge]
+venues = ["venues-research", "nominatim", "comedy-festival-site"]
+events = ["comedy-festival-site"]
+performances = ["comedy-festival-site"]
