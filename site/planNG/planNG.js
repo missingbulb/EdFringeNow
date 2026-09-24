@@ -35,7 +35,7 @@
 
 import { slotKey } from "../plan/lib/engine.js";
 import { draftCalendar, instanceKey } from "../plan/lib/contention.js";
-import { slotEndTime, toCsv, toIcs } from "../plan/lib/itinerary.js";
+import { slotEndTime } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
@@ -59,7 +59,6 @@ import {
   STORAGE_PREFIX,
   kindEmoji,
   presentationOf,
-  tripLinks,
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { migrateLegacy } from "./lib/migrate.js";
@@ -393,8 +392,7 @@ function renderChrome() {
   title.dataset.i18nSlot = festival ? "festival.title" : "page.title";
   document.title = festival ? t("doc.titleFor", { festival: festivalName(festival) }) : t("doc.title");
 
-  // The festival's own two links in the footer: its programme's source, and
-  // the note that some of the trip links are paid.
+  // The festival's own link in the footer: its programme's source.
   $("footerData").innerHTML = festival
     ? tHtml(
         "footer.dataFrom",
@@ -419,7 +417,6 @@ function showBoard() {
   $("calWrap").hidden = !ruled;
   $("clearFavBtn").hidden = !ruled;
   $("legendBtn").hidden = !ruled;
-  $("tripLinks").hidden = false;
 }
 
 function buildDayHeader() {
@@ -1055,7 +1052,6 @@ function redraft() {
   renderDrawerCount(draft);
   showBoard();
   syncStars();
-  renderTripLinks();
   placeDateEdges();
 }
 
@@ -1077,7 +1073,7 @@ function redraftAndSave() {
   redraft();
 }
 
-/** Every slot the draft placed, in time order — what the exports write. */
+/** Every slot the draft placed, in time order. */
 function draftedSlots() {
   return state.draft ? state.draft.days.flatMap((d) => d.slots) : [];
 }
@@ -1845,35 +1841,6 @@ function openRivals(stack) {
   placePop(pop, block);
 }
 
-// --- the two questions the festival doesn't answer ------------------------
-
-function renderTripLinks() {
-  const row = $("tripLinksRow");
-  const festival = state.focus.festival;
-  const reach = originReach(state.origin, festival);
-  const links = tripLinks(festival, reach, windowStartISO(), windowEndISO());
-  renderOriginLine(reach);
-  if (!links.length) {
-    row.innerHTML =
-      `<p class="trip-local" data-i18n-slot="trip.local">` +
-      `${escapeHtml(t("trip.local", { city: festivalCity(festival) }))}</p>`;
-    return;
-  }
-  row.innerHTML = links
-    .map((link) => {
-      // The partner writes the URL; the page writes what the link is called,
-      // so the offer reads in the reader's language rather than the vendor's.
-      const label = t(link.labelKey);
-      return (
-        `<a class="trip-link" href="${escapeHtml(link.url)}" target="_blank" rel="sponsored noopener noreferrer"` +
-        ` title="${escapeHtml(t("trip.partnerTip", { text: label, partner: link.partner }))}">` +
-        `<span class="trip-link-text" data-i18n-slot="${link.labelKey}">${escapeHtml(label)}</span>` +
-        `<span class="trip-link-partner">${escapeHtml(link.partner)}</span></a>`
-      );
-    })
-    .join("");
-}
-
 // --- browse + search ------------------------------------------------------
 
 function showMeta(show) {
@@ -2219,38 +2186,6 @@ function wireSearch() {
 
 // --- exports --------------------------------------------------------------
 
-function download(filename, text, mime) {
-  const blob = new Blob([text], { type: mime });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function wireExports() {
-  $("downloadCsvBtn").addEventListener("click", () => {
-    if (!state.draft) return;
-    download(`${state.focus.festival.id}-plan.csv`, toCsv(draftedSlots()), "text/csv;charset=utf-8");
-  });
-  $("importIcsBtn").addEventListener("click", () => {
-    if (!state.draft) return;
-    download(
-      `${state.focus.festival.id}-plan.ics`,
-      toIcs(draftedSlots(), {
-        now: new Date(),
-        timezone: state.focus.festival.timezone,
-        calendarName: t("export.calendarName", { festival: festivalName(state.focus.festival) }),
-        prodId: "-//EdFringeNow//Festival Planner//EN",
-      }),
-      "text/calendar;charset=utf-8"
-    );
-  });
-}
-
 // --- boot -----------------------------------------------------------------
 
 /* Everything the page drew itself, redrawn in the language just chosen. The
@@ -2570,39 +2505,10 @@ function renderOriginCard() {
     `<p class="origin-status" id="originStatus" role="status" aria-live="polite"></p>`;
 }
 
-/* The trip links' own line: where the reader said they come from, and the way
- * to say it again. Shown once there is an answer to show. */
-function renderOriginLine() {
-  const line = $("originLine");
-  const o = state.origin;
-  if (!o || o.kind === "skipped") {
-    line.hidden = !o;
-    line.innerHTML = o
-      ? `<button type="button" class="origin-change" data-origin="change" data-i18n-slot="origin.say">${escapeHtml(t("origin.say"))}</button>`
-      : "";
-    return;
-  }
-  const place =
-    o.kind === "position"
-      ? t("origin.place.position")
-      : o.kind === "city"
-        ? o.cityName || o.city
-        : o.kind === "country"
-          ? regionName(o.country)
-          : o.country
-            ? regionName(o.country)
-            : t("origin.place.abroad");
-  line.hidden = false;
-  line.innerHTML =
-    `<span class="origin-from" data-i18n-slot="origin.from">${escapeHtml(t("origin.from", { place }))}</span> ` +
-    `<button type="button" class="origin-change" data-origin="change" data-i18n-slot="origin.change">${escapeHtml(t("origin.change"))}</button>`;
-}
-
 function setOrigin(origin) {
   state.origin = origin;
   writeStore(KEY_ORIGIN, origin);
   renderOriginCard();
-  renderTripLinks();
 }
 
 function wireOrigin() {
@@ -2612,12 +2518,7 @@ function wireOrigin() {
     const festival = state.focus && state.focus.festival;
     if (!festival) return;
     const kind = btn.dataset.origin;
-    if (kind === "change") {
-      state.origin = null;
-      renderOriginCard();
-      renderTripLinks();
-      $("originCard").scrollIntoView({ block: "nearest" });
-    } else if (kind === "skip") {
+    if (kind === "skip") {
       setOrigin({ kind: "skipped" });
     } else if (kind === "city") {
       setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng });
@@ -2720,7 +2621,6 @@ async function boot() {
   wireBlockers();
   wireSearch();
   wirePrefs();
-  wireExports();
   wireOrigin();
   wireFocus();
 

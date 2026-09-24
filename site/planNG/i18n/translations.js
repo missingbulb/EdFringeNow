@@ -342,47 +342,7 @@ export const STRINGS = {
     ru: "Браузер не сообщил местоположение — выберите другой ответ.",
     ja: "ブラウザーが位置情報を共有しませんでした。ほかの答えを選んでください。",
   },
-  "origin.from": {
-    probe: ".origin-line",
-    maxWidthPx: 520,
-    sample: { place: "United Kingdom" },
-    en: "Coming from {place}.",
-    he: "מגיעים מ{place}.",
-    ru: "Вы едете из: {place}.",
-    ja: "出発地: {place}。",
-  },
-  "origin.place.position": {
-    probe: ".origin-line",
-    maxWidthPx: 300,
-    en: "where you are now",
-    he: "המקום שבו אתם עכשיו",
-    ru: "текущего места",
-    ja: "現在地",
-  },
-  "origin.place.abroad": {
-    probe: ".origin-line",
-    maxWidthPx: 300,
-    en: "abroad",
-    he: "חו״ל",
-    ru: "другой страны",
-    ja: "海外",
-  },
-  "origin.change": {
-    probe: ".origin-line",
-    maxWidthPx: 200,
-    en: "Change",
-    he: "שינוי",
-    ru: "Изменить",
-    ja: "変更",
-  },
-  "origin.say": {
-    probe: ".origin-line",
-    maxWidthPx: 400,
-    en: "Say where you're coming from",
-    he: "ספרו מאיפה אתם מגיעים",
-    ru: "Укажите, откуда вы едете",
-    ja: "出発地を設定する",
-  },
+
   "nav.now": {
     maxWidthPx: 100,
     en: "Now",
@@ -1451,93 +1411,38 @@ export const STRINGS = {
   },
 
   // ------------------------------------------------------------ trip links --
-  "trip.title": {
-    maxWidthPx: 320,
-    en: "While you're here",
-    he: "כשאתם כבר כאן",
-    ru: "Пока вы здесь",
-    ja: "せっかくなので",
-  },
+
   "trip.stay": {
-    maxWidthPx: 220,
+    maxWidthPx: null,
+    unrendered: "a trip link's label, which the page draws nowhere until the trip links have a place again",
     en: "Find a bed",
     he: "למצוא מיטה",
     ru: "Найти жильё",
     ja: "宿を探す",
   },
   "trip.transfers": {
-    maxWidthPx: 220,
+    maxWidthPx: null,
+    unrendered: "a trip link's label, which the page draws nowhere until the trip links have a place again",
     en: "Airport transfers",
     he: "הסעות משדה התעופה",
     ru: "Трансфер из аэропорта",
     ja: "空港送迎",
   },
   "trip.rail": {
-    maxWidthPx: 220,
+    maxWidthPx: null,
+    unrendered: "a trip link's label, which the page draws nowhere until the trip links have a place again",
     en: "Trains",
     he: "רכבות",
     ru: "Поезда",
     ja: "鉄道",
   },
   "trip.travel": {
-    // Only a UK festival's page draws this label; every trip label shares one
-    // slot style, so it is measured on whichever one the page shows.
-    probe: ".trip-link-text",
-    maxWidthPx: 220,
+    maxWidthPx: null,
+    unrendered: "a trip link's label, which the page draws nowhere until the trip links have a place again",
     en: "Trains, coaches & flights",
     he: "רכבות, אוטובוסים וטיסות",
     ru: "Поезда, автобусы, рейсы",
     ja: "電車・バス・飛行機",
-  },
-  "trip.local": {
-    probe: ".trip-links-row",
-    maxWidthPx: 1400,
-    sample: { city: "Jerusalem" },
-    en: "You live in {city}, so there is no bed or journey to book.",
-    he: "אתם גרים ב{city}, אז אין צורך להזמין לינה או נסיעה.",
-    ru: "Вы живёте в городе {city}, так что ни жильё, ни дорогу бронировать не нужно.",
-    ja: "{city}にお住まいなので、宿や移動の予約は不要です。",
-  },
-  "trip.partnerTip": {
-    maxWidthPx: null,
-    unrendered: "a partner link's tooltip, drawn by the operating system",
-    sample: { text: "Find a bed", partner: "Booking.com" },
-    en: "{text} on {partner} — partner link, we may earn a commission",
-    he: "{text} דרך {partner} — קישור שותפים, אנחנו עשויים לקבל עמלה",
-    ru: "{text} на {partner} — партнёрская ссылка, мы можем получить комиссию",
-    ja: "{partner}で{text} — パートナーリンク、手数料を受け取る場合があります",
-  },
-
-  // --------------------------------------------------------------- exports --
-  "export.csv": {
-    maxWidthPx: 260,
-    en: "Download itinerary",
-    he: "הורדת המסלול",
-    ru: "Скачать маршрут",
-    ja: "予定表をダウンロード",
-  },
-  "export.ics": {
-    maxWidthPx: 260,
-    en: "Import to calendar",
-    he: "ייבוא ליומן",
-    ru: "Добавить в календарь",
-    ja: "カレンダーに取り込む",
-  },
-  "export.note": {
-    maxWidthPx: 1400,
-    en: "Both files are built here in your browser — nothing is uploaded. Times are pinned to the festival's own clock, so they stay right wherever your calendar lives.",
-    he: "שני הקבצים נבנים כאן בדפדפן שלכם — שום דבר לא נשלח לשרת. השעות נעוצות לשעון של הפסטיבל, כך שהן נכונות בכל יומן.",
-    ru: "Оба файла собираются здесь, в вашем браузере — ничего не загружается на сервер. Время привязано к часам фестиваля, поэтому оно верно в любом календаре.",
-    ja: "どちらのファイルもブラウザー内で作成され、アップロードされません。時刻はフェスティバル現地の時間に固定されているので、どのカレンダーでも正しく表示されます。",
-  },
-  "export.calendarName": {
-    maxWidthPx: null,
-    unrendered: "the calendar's name inside the exported .ics file",
-    sample: { festival: "" },
-    en: "My {festival} plan",
-    he: "התוכנית שלי ל{festival}",
-    ru: "Мой план: {festival}",
-    ja: "私の{festival}プラン",
   },
 
   // ---------------------------------------------------------------- footer --
@@ -1556,11 +1461,5 @@ export const STRINGS = {
     ru: "Данные программы — {source}.",
     ja: "プログラムのデータ提供: {source}。",
   },
-  "footer.partnerNote": {
-    maxWidthPx: 1400,
-    en: "Some travel suggestions are partner links — booking through one may earn us a commission, at no extra cost to you.",
-    he: "חלק מהצעות הנסיעה הן קישורי שותפים — הזמנה דרכם עשויה לזכות אותנו בעמלה, בלי עלות נוספת לכם.",
-    ru: "Часть советов о поездке — партнёрские ссылки: бронирование через них может принести нам комиссию, без доплаты для вас.",
-    ja: "旅行の提案の一部はパートナーリンクです — そこから予約されると手数料を受け取ることがありますが、追加費用はかかりません。",
-  },
+
 };

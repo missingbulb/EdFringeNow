@@ -4,7 +4,7 @@
  * rather than copying 1,600 lines that would then drift. Everything below is
  * either a brand token redefined, a rule the second festival's *shape* needs
  * (five columns rather than thirty-one), or a component this page has and the
- * Fringe planner doesn't (the browse stage, the trip links).
+ * Fringe planner doesn't (the browse stage, the origin question).
  *
  * Theming is per festival: the page root carries `data-festival="<id>"` for
  * the festival in focus, and each festival's block below redefines the same
@@ -189,52 +189,6 @@ body.festival-page {
   list-style: none;
   overflow-y: auto;
   overscroll-behavior: contain;
-}
-
-/* --- the trip links ------------------------------------------------------ */
-
-/* The Fringe planner grows these as pop-up nags on the schedule's dead zones.
-   Five nights leave no dead zone worth the trick, so they are one quiet row
-   under the board — same question, same disclosure, less machinery. */
-.trip-links {
-  margin: 14px 0 0;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: rgba(184, 134, 43, 0.05);
-}
-.trip-links-title {
-  margin: 0 0 8px;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-.trip-links-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.trip-link {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 7px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-.trip-link:hover {
-  border-color: var(--violet);
-  color: var(--violet-dark);
-}
-.trip-link-partner {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--muted);
 }
 
 /* --- the reader's own two controls ---------------------------------------- */
@@ -1174,8 +1128,7 @@ body.festival-page {
 .origin-select {
   max-width: 190px;
 }
-.origin-skip,
-.origin-change {
+.origin-skip {
   margin-top: 8px;
   padding: 0;
   border: 0;
@@ -1186,9 +1139,6 @@ body.festival-page {
   text-decoration: underline;
   cursor: pointer;
 }
-.origin-change {
-  margin-top: 0;
-}
 .origin-status {
   margin: 6px 0 0;
   font-size: 0.8rem;
@@ -1196,15 +1146,6 @@ body.festival-page {
 }
 .origin-status:empty {
   display: none;
-}
-.origin-line {
-  margin: 0 0 6px;
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-.trip-local {
-  margin: 0;
-  font-size: 0.86rem;
 }
 
 /* --- a list too long to draw --------------------------------------------- */
