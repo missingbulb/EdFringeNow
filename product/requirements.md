@@ -1317,6 +1317,18 @@ rather than as a control panel.
   rest. Read top to bottom it is the whole selection rule.
   </details>
 
+- `20.12` Only a lock overrides how full a day and your day hours; a favourite is held to both, though not to what you are here for.
+
+  <details><summary>Notes</summary>
+
+  A table generated from the shipped drafter: for each verdict, which of the
+  reader's answers can drop the show from a night. Starring a show says you
+  want it, not that it outranks the day you described — so asking for one show
+  a day leaves one starred show a day, and the rest move to other nights or
+  wait. A lock is an hour asked for by name, and is the one verdict that holds
+  against every answer.
+  </details>
+
 ## 21. Saying what you want
 
 The calendar drafts before the reader has said anything, so what they say is
