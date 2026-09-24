@@ -59,6 +59,19 @@
   --line: light-dark(#dde8f1, #243646);
 }
 
+/* Edinburgh: the Old Town's slate under a festival-poster magenta. */
+:root[data-festival="edfringe"] {
+  --wash: light-dark(#fbe3ee, #2a1220);
+  --wash-clear: light-dark(rgba(251, 227, 238, 0), rgba(42, 18, 32, 0));
+  --violet: light-dark(#c2185b, #f06292);
+  --violet-dark: light-dark(#961245, #f48fb1);
+  --ink: light-dark(#1b1a22, #eeeaf2);
+  --paper: light-dark(#ffffff, #1c1a22);
+  --bg: light-dark(#f7f6f9, #111016);
+  --muted: light-dark(#6b6878, #a19eb0);
+  --line: light-dark(#e6e3ec, #302d3a);
+}
+
 /* Acco: the old city's sea walls and their terracotta roofs. */
 :root[data-festival="acco"] {
   --wash: light-dark(#fbe6dc, #2a1812);
@@ -533,6 +546,8 @@ body.festival-page {
 }
 .cal-pop .pop-lead { margin: 0 0 6px; color: var(--muted); font-size: 0.64rem; }
 .cal-pop .pop-foot { margin: 6px 0 0; color: var(--muted); font-size: 0.62rem; }
+.cal-pop .pop-more { margin: 4px 0 0; color: var(--muted); font-size: 0.66rem; }
+.panel-more { margin: 6px 8px 2px; color: var(--muted); font-size: 0.72rem; line-height: 1.35; }
 .pop-nights, .pop-rivals { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .pop-night {
   display: flex; align-items: baseline; justify-content: space-between; gap: 10px;

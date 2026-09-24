@@ -13,7 +13,9 @@
  * Pure data plus link builders: no DOM, no fetch.
  */
 
-import { israelRailLink, israelTravelLink, stayLink } from "../shared/affiliates.js";
+import { israelRailLink, israelTravelLink, stayLink, travelLink } from "../shared/affiliates.js";
+import { GENRE_EMOJI } from "../shared/edfringe.js";
+import { kindSlug } from "../shared/festival-catalogue.js";
 
 /* The page's own address, and the path every one of its languages hangs off. */
 export const PAGE_ROOT = "/planNG/";
@@ -49,6 +51,16 @@ const ISRAEL = {
   rail: () => withLabel("trip.rail", israelRailLink()),
 };
 
+const UK = {
+  country: "GB",
+  /* Booking.com's own default edition, in pounds. */
+  stay: { locale: "en-gb", currency: "GBP" },
+  /* Omio's Edinburgh page covers train, coach and flight in one search, so it
+     is the one way in whether the reader comes from Glasgow or from abroad. */
+  airport: () => withLabel("trip.travel", travelLink()),
+  rail: () => withLabel("trip.travel", travelLink()),
+};
+
 /* Every string the reader reads is a translation KEY, spelled out so the
  * catalogue's own gate finds it in the page's source. The wordmark is the
  * exception: it is the festival's mark, not a sentence. */
@@ -75,6 +87,16 @@ export const PRESENTATION = {
     stayCity: "Haifa",
     kindEmoji: {},
     kindEmojiDefault: "\u{1F3AC}",
+  },
+  "edfringe": {
+    wordmark: ["Edinburgh", "Fringe"],
+    nameKey: "fest.edfringe.name",
+    cityKey: "fest.edfringe.city",
+    region: UK,
+    stayCity: "Edinburgh",
+    // The Fringe planner's own pictures for the ten headline genres, keyed the
+    // way the festival catalogue names a genre as a kind.
+    kindEmoji: Object.fromEntries(Object.entries(GENRE_EMOJI).map(([genre, emoji]) => [kindSlug(genre), emoji])),
   },
   "acco": {
     wordmark: ["Acco", "Theatre"],
@@ -123,8 +145,9 @@ export function tripLinks(festival, reach, checkinISO, checkoutISO) {
     })
   );
   if (!p) return [stay];
-  if (reach === "domestic") return [stay, p.region.rail()];
-  return [stay, p.region.airport(), p.region.rail()];
+  const links = reach === "domestic" ? [stay, p.region.rail()] : [stay, p.region.airport(), p.region.rail()];
+  // A region whose one partner covers both the flight and the train offers it once.
+  return links.filter((link, i) => links.findIndex((other) => other.url === link.url) === i);
 }
 
 /* An affiliate link ships the partner's own English label; the planner names it

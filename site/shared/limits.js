@@ -22,6 +22,15 @@ export const SEARCH_RESULT_ROWS = 40;
  * chip: a pool of several festivals can hold dozens of kinds. */
 export const PICK_CHIPS = 10;
 
+/* The most options a search filter lists. The Fringe plays in some three
+ * hundred venues; past this many a checkbox list is a scroll nobody finishes,
+ * and the search itself already matches a venue by name. */
+export const FACET_OPTIONS = 30;
+
+/* The most rivals the "who else wanted this hour" popover names. A Fringe
+ * evening can have fifty shows starting at the same minute. */
+export const RIVAL_ROWS = 8;
+
 /* The longest planning period, in days. The calendar draws a column per day,
  * and past a month it is a list of columns rather than a calendar. */
 export const MAX_PERIOD_DAYS = 31;
@@ -42,4 +51,17 @@ export function listPage(items, { query = "", pages = 1 } = {}) {
   }
   const rows = items.slice(0, LIST_PAGE_ROWS * Math.max(1, pages));
   return { rows, total, more: total - rows.length, searchFirst: false };
+}
+
+/**
+ * The first `cap` of a ranked list of options, plus any beyond it that are
+ * already chosen — a choice the reader made never disappears behind the cap.
+ * @param {Array} ranked every option, most useful first
+ * @param {(item) => boolean} isChosen
+ * @param {number} cap
+ * @returns {{rows: Array, more: number}} `more` how many are left unlisted
+ */
+export function capOptions(ranked, isChosen, cap) {
+  const rows = ranked.filter((item, i) => i < cap || isChosen(item));
+  return { rows, more: ranked.length - rows.length };
 }

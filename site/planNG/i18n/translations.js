@@ -164,6 +164,22 @@ export const STRINGS = {
     ru: "Акко",
     ja: "アッコ",
   },
+  "fest.edfringe.name": {
+    probe: "#pageTitle",
+    maxWidthPx: 820,
+    en: "Edinburgh Festival Fringe",
+    he: "פסטיבל הפרינג' של אדינבורו",
+    ru: "Эдинбургский фестиваль Фриндж",
+    ja: "エディンバラ・フェスティバル・フリンジ",
+  },
+  "fest.edfringe.city": {
+    probe: ".main-nav .nav-link.is-active",
+    maxWidthPx: 100,
+    en: "Edinburgh",
+    he: "אדינבורו",
+    ru: "Эдинбург",
+    ja: "エディンバラ",
+  },
 
   // ------------------------------------------------------------ the year --
   "timeline.label": {
@@ -649,6 +665,15 @@ export const STRINGS = {
     he: "כל המקומות",
     ru: "Любая площадка",
     ja: "すべての会場",
+  },
+  "search.moreVenues": {
+    probe: "#ssfVenueOptions",
+    maxWidthPx: 560,
+    sample: { count: 260 },
+    en: "{count, plural, one {# more venue} other {# more venues}} — type a name in the search to find one.",
+    he: "{count, plural, one {עוד מקום אחד} two {עוד # מקומות} other {עוד # מקומות}} — הקלידו שם בחיפוש כדי למצוא.",
+    ru: "{count, plural, one {Ещё # площадка} few {Ещё # площадки} many {Ещё # площадок} other {Ещё # площадки}} — введите название в поиске.",
+    ja: "ほか{count}会場 — 検索に名前を入力してください。",
   },
   "search.kindsChosen": {
     probe: "#ssfGenreValue",
@@ -1246,6 +1271,15 @@ export const STRINGS = {
     ru: "Тоже в {time}",
     ja: "{time}の他の公演",
   },
+  "rivals.others": {
+    probe: "#calRivals",
+    maxWidthPx: 480,
+    sample: { count: 42 },
+    en: "and {count, plural, one {# more} other {# more}}",
+    he: "{count, plural, one {ועוד אחת} two {ועוד #} other {ועוד #}}",
+    ru: "{count, plural, one {и ещё #} few {и ещё #} many {и ещё #} other {и ещё #}}",
+    ja: "ほか{count}件",
+  },
   "rivals.foot": {
     probe: "#calRivals",
     maxWidthPx: 480,
@@ -1452,6 +1486,16 @@ export const STRINGS = {
     he: "רכבות",
     ru: "Поезда",
     ja: "鉄道",
+  },
+  "trip.travel": {
+    // Only a UK festival's page draws this label; every trip label shares one
+    // slot style, so it is measured on whichever one the page shows.
+    probe: ".trip-link-text",
+    maxWidthPx: 220,
+    en: "Trains, coaches & flights",
+    he: "רכבות, אוטובוסים וטיסות",
+    ru: "Поезда, автобусы, рейсы",
+    ja: "電車・バス・飛行機",
   },
   "trip.local": {
     probe: ".trip-links-row",
