@@ -205,14 +205,36 @@ test("a favourite is placed before the undecided rest, but does not outrank a lo
   assert.equal(both.picked.get("often"), "2026-10-19T20:00");
 });
 
-test("a favourite ignores the per-day cap; the undecided rest does not", () => {
+test("a favourite is held to the per-day cap, and takes its place ahead of the undecided rest", () => {
   const night = ["2026-10-18"];
   const fillers = ["a", "b", "c"].map((slug, i) => show(slug, night, { start: `1${i}:00`, duration: 30 }));
   const wanted = show("wanted", night, { start: "21:00", duration: 30 });
   const capped = draft([...fillers, wanted], { maxPerDay: 3 });
   assert.equal(capped.days[0].slots.length, 3);
   assert.ok(!capped.picked.has("wanted"));
-  assert.ok(draft([...fillers, wanted], { maxPerDay: 3, favourites: ["wanted"] }).picked.has("wanted"));
+  // Starred, it takes one of the three places rather than a fourth.
+  const starred = draft([...fillers, wanted], { maxPerDay: 3, favourites: ["wanted"] });
+  assert.equal(starred.days[0].slots.length, 3);
+  assert.ok(starred.picked.has("wanted"));
+});
+
+test("starred shows beyond the per-day cap move to their other nights, or wait", () => {
+  const fav = [
+    show("one", ["2026-10-18"], { start: "16:00" }),
+    show("two", ["2026-10-18"], { start: "18:00" }),
+    show("three", ["2026-10-18", "2026-10-19"], { start: "20:00" }),
+  ];
+  const result = draft(fav, { maxPerDay: 1, favourites: ["one", "two", "three"] });
+  assert.deepEqual(result.days.map((d) => d.slots.length), [1, 1]);
+  assert.equal(result.picked.get("three"), "2026-10-19T20:00");
+  assert.equal(result.picked.size, 2);
+});
+
+test("a lock ignores the per-day cap", () => {
+  const night = ["2026-10-18"];
+  const shows = ["a", "b", "c"].map((slug, i) => show(slug, night, { start: `1${i}:00`, duration: 30 }));
+  const locked = Object.fromEntries(shows.map((s, i) => [s.slug, `2026-10-18T1${i}:00`]));
+  assert.equal(draft(shows, { maxPerDay: 1, locked }).days[0].slots.length, 3);
 });
 
 test("a show that lost every night to a clash rather than a shared hour is counted, not lost", () => {

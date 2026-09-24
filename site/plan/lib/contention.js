@@ -168,15 +168,17 @@ export function draftCalendar(shows, options = {}) {
   };
 
   // A pass over an ordered set of candidates, taking the first of each show
-  // that still fits. `capped` is false for the two verdict-driven passes: you
-  // asked for these by name, so they are not the ones either per-day cap drops.
-  const sweep = (list, verdict, capped) => {
+  // that still fits. `dayCap` is "how full a day", which only a lock — an hour
+  // asked for by name — overrides; a favourite says you want the show, not that
+  // it outranks the day you described. `tasteCap` is the limit on shows from
+  // outside your kinds, which neither verdict is held to.
+  const sweep = (list, verdict, dayCap, tasteCap) => {
     for (const cand of list) {
       if (placedShows.has(cand.slug)) continue;
       const sameDay = perDay.get(cand.date) || [];
-      if (capped && sameDay.length >= maxPerDay) continue;
+      if (dayCap && sameDay.length >= maxPerDay) continue;
       if (
-        capped &&
+        tasteCap &&
         !preferred.has(cand.slug) &&
         (unpreferredPerDay.get(cand.date) || 0) >= maxUnpreferredPerDay
       ) {
@@ -192,19 +194,19 @@ export function draftCalendar(shows, options = {}) {
   const lockedCands = candidates
     .filter((c) => locked.get(c.slug) === slotKey(c))
     .sort((a, b) => a.start - b.start || a.slug.localeCompare(b.slug));
-  sweep(lockedCands, "locked", false);
+  sweep(lockedCands, "locked", false, false);
 
   // Pass 2 — favourited shows: scarcest of their own remaining nights first.
-  sweep(candidates.filter((c) => favourites.has(c.slug) && !placedShows.has(c.slug)), "favourite", false);
+  sweep(candidates.filter((c) => favourites.has(c.slug) && !placedShows.has(c.slug)), "favourite", true, false);
 
   // Pass 3 — the kinds the reader said they came for, scarcest first, so a
   // contested hour goes to one of them over an equally scarce show they never
   // asked about.
-  sweep(candidates.filter((c) => preferred.has(c.slug) && !placedShows.has(c.slug)), "draft", true);
+  sweep(candidates.filter((c) => preferred.has(c.slug) && !placedShows.has(c.slug)), "draft", true, true);
 
   // Pass 4 — the draft proper: the rest of the programme, scarcest first, held
   // to whatever of the day is left for shows outside the reader's taste.
-  sweep(candidates.filter((c) => !placedShows.has(c.slug)), "draft", true);
+  sweep(candidates.filter((c) => !placedShows.has(c.slug)), "draft", true, true);
 
   // What a block offers instead of itself: the shows that wanted the same hour
   // and could still take it. Three things disqualify a contender, and all three
