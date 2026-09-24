@@ -17,3 +17,9 @@
 - **Model:** Claude
 - **Mechanism:** the same carrier, now in `edfringe-now`.
 - **Landed:** #613, Closes #612
+
+## 2026-09-24 · reworded · favicon now ships; the noise is off-box requests
+- **Source:** 2026-09-24 Playwright run over python3 -m http.server: no favicon 404
+  (site/favicon.ico exists); failures were fonts.googleapis.com and OpenStreetMap tiles.
+- **Reason:** the owner asked for web facts to be re-verified and stale ones dropped.
+- **Actor:** @missingbulb (owner).

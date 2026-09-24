@@ -62,3 +62,17 @@
 - **Rejected:** carrying the local `VERSIONS.md` files across - a local pack is neither versioned
   nor distributed, and its commits are its record.
 - **Landed:** #613, Closes #612
+
+## 2026-09-24 · scope-changed · data and harness judgment moved into two skills; unmarked sections pruned
+- **Reason:** the owner reviewed the pack and asked to delete the issue-first rule ("Clean the local
+  rule about opening issues first"), delete the local PR-polling section, trim every rule to zero
+  story, re-verify the environment facts and drop the stale ones, and move data/harness to skills.
+- **Source:** removed without a file of their own: the issue-first section (no check requires an
+  issue reference any more, and basics tracks work by its PR), the Comment-class section
+  (spec-driven-product's repo-tooling-never-feature carries it), the polling and
+  subscribe_pr_activity sections, the comment-names-its-neighbour section (basics'
+  writing-file-depends plus the claudinite-isolation check), the edfringe.com-CSS-via-curl note and
+  the dated network observations.
+- **Actor:** @missingbulb (owner).
+- **Mechanism:** RULES.md keeps rules no file edit predicts; the data-pipeline and
+  requirements-harness skills carry the rest behind force-load paths.
