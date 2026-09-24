@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "data": [
+    {
+      "origin": "LON",
+      "destination": "TLV",
+      "origin_airport": "LTN",
+      "destination_airport": "TLV",
+      "price": 164,
+      "airline": "W6",
+      "flight_number": "7811",
+      "departure_at": "2026-10-17T10:15:00+01:00",
+      "transfers": 1,
+      "return_transfers": 0,
+      "duration": 410,
+      "duration_to": 410,
+      "duration_back": 0,
+      "link": "/search/LON1710TLV1?t=W617606900001776000001LTNOTPTLV_a1b2c3&search_date=24092026&expected_price_uuid=00000000-0000-0000-0000-000000000001&expected_price_source=share&expected_price_currency=gbp"
+    },
+    {
+      "origin": "LON",
+      "destination": "TLV",
+      "origin_airport": "LHR",
+      "destination_airport": "TLV",
+      "price": 128,
+      "airline": "LY",
+      "flight_number": "318",
+      "departure_at": "2026-10-17T07:40:00+01:00",
+      "transfers": 0,
+      "return_transfers": 0,
+      "duration": 290,
+      "duration_to": 290,
+      "duration_back": 0,
+      "link": "/search/LON1710TLV1?t=LY17606769001776066300000290LHRTLV_d4e5f6&search_date=24092026&expected_price_uuid=00000000-0000-0000-0000-000000000002&expected_price_source=share&expected_price_currency=gbp"
+    },
+    {
+      "origin": "LON",
+      "destination": "TLV",
+      "origin_airport": "LGW",
+      "destination_airport": "TLV",
+      "price": 141,
+      "airline": "U2",
+      "flight_number": "8541",
+      "departure_at": "2026-10-17T22:05:00+01:00",
+      "transfers": 0,
+      "return_transfers": 0,
+      "duration_back": 0,
+      "link": "/search/LON1710TLV1?t=U217607351001776753100000285LGWTLV_g7h8i9&search_date=24092026&expected_price_uuid=00000000-0000-0000-0000-000000000003&expected_price_source=share&expected_price_currency=gbp"
+    }
+  ],
+  "currency": "gbp"
+}
