@@ -6,7 +6,7 @@ const { jerusalemReady, JERUSALEM_EDITION } = require("../../shared/case-helpers
  * nights. The first visit carries it over and removes it. */
 module.exports = {
   description: "what a reader saved under /planJerusalem/ is carried over to the festival planner, once",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: {
     "jerusalemPlan.starred": JSON.stringify(["salakh", "opening"]),
@@ -14,7 +14,7 @@ module.exports = {
     "jerusalemPlan.prefs": JSON.stringify({ d0: 2, d1: 4, interests: ["stand-up"], mode: "bike" }),
   },
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     const store = await page.evaluate(() => Object.fromEntries(Object.entries(localStorage)));

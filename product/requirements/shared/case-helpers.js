@@ -342,7 +342,12 @@ async function jerusalemReady(page) {
   // `attached`, not `visible`: the browse list and the grid are the board's two
   // states and exactly one of them is on screen, so a visibility wait on both
   // can only ever resolve against the hidden one.
-  await page.waitForSelector("#browseList .ss-row, #lanes .lane", { state: "attached", timeout: 20000 });
+  // A pool too long to browse (a period reaching a neighbouring festival) asks
+  // for a search instead of listing, which is its own settled state.
+  await page.waitForSelector("#browseList .ss-row, #lanes .lane, #browseMore .browse-search-first", {
+    state: "attached",
+    timeout: 20000,
+  });
   // The calendar is the page's own surface and is drafted from the programme
   // rather than from anything stored, so it renders in every state.
   await page.waitForSelector(".sch-show", { timeout: 20000 });

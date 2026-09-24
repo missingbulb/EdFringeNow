@@ -5,10 +5,10 @@ const { jerusalemReady, plannerReady, calendarDays } = require("../../shared/cas
  * a day either side, the address names it, and the page opens on it again. */
 module.exports = {
   description: "choosing a festival on the timeline sets the period to its run plus a day either side, and the address names it",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     const jerusalem = await calendarDays(page);

@@ -7,7 +7,7 @@ const { jerusalemPrefs, jerusalemReady, settle } = require("../../shared/case-he
 // who has gone past them keeps what they set.
 module.exports = {
   description: "a question opens on the exact numbers behind its pictures",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemPrefs({ maxPerDay: 4, minGap: 45 }),
   ready: jerusalemReady,

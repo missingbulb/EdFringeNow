@@ -3,11 +3,11 @@ const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-
 
 module.exports = {
   description: "the bed link: Booking.com's Hebrew edition, Jerusalem, shekels, the window's own nights",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Asserted as a URL, never followed — the partner is a real booking site.

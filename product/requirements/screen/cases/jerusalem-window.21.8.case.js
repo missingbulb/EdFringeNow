@@ -7,7 +7,7 @@ const { jerusalemPrefs, jerusalemReady } = require("../../shared/case-helpers");
 module.exports = {
   description: "the first and last nights are the same kind of blocker, on the same calendar",
   capture: "#scheduleWrap",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemPrefs({ d0: 2, d1: 4 }),
   ready: jerusalemReady,

@@ -34,7 +34,12 @@ const write = (rel, value) => {
 const registry = read("site/data/festivals/index.json");
 for (const festival of registry.festivals) {
   for (const edition of festival.editions) {
-    if (edition.dataUrl) write(edition.dataUrl.replace(/^\/data\//, ""), read(`site${edition.dataUrl}`));
+    // An edition served from the Edinburgh Fringe's own wire files is not
+    // copied here: those files' frozen snapshot is build-fixtures.js's, and the
+    // registry entry pointing at them is all the festival planner needs.
+    if (edition.dataUrl && edition.format === "block") {
+      write(edition.dataUrl.replace(/^\/data\//, ""), read(`site${edition.dataUrl}`));
+    }
   }
 }
 

@@ -1544,7 +1544,7 @@ reached from there.
 
 - `23.7` The Edinburgh Fringe is a festival like the others: chosen on the timeline, it plans its own programme in its own theme.
 
-  <!-- req-gallery:23.7 -->
+  ![planng-edinburgh.23.7](requirements/screen/cases/planng-edinburgh.23.7.png) <!-- req-gallery:23.7 -->
 
   <details><summary>Notes</summary>
 
@@ -1616,7 +1616,7 @@ constants live in `site/shared/limits.js`.
 
 - `25.3` A search filter lists at most a panel's worth of options, the busiest making the cut, and never hides one already chosen.
 
-  <!-- req-gallery:25.3 -->
+  <table><thead><tr><th align="left">Options</th><th align="left">Chosen</th><th align="left">Listed</th><th align="left">Left for the search</th></tr></thead><tbody><tr><td>6</td><td>none</td><td>6</td><td>0</td></tr><tr><td>30</td><td>none</td><td>30</td><td>0</td></tr><tr><td>300</td><td>none</td><td>the busiest 30</td><td>270</td></tr><tr><td>300</td><td>the 250th</td><td>the busiest 30 and the 250th</td><td>269</td></tr></tbody></table> <!-- req-gallery:25.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1629,7 +1629,7 @@ constants live in `site/shared/limits.js`.
 
 - `25.4` Choosing Haifa, Acco or Jerusalem never downloads the Fringe's programme; choosing the Fringe does.
 
-  <!-- req-gallery:25.4 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:25.4 -->
 
   <details><summary>Notes</summary>
 
@@ -1652,7 +1652,7 @@ whatever the day's data holds.
 
 - `26.1` Focused on the whole Fringe, no list draws more than its cap.
 
-  <!-- req-gallery:26.1 -->
+  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>PICK_CHIPS (10), then "more kinds"</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1665,7 +1665,7 @@ whatever the day's data holds.
 
 - `26.2` Focused on the whole Fringe, the page draws within its time budgets and stays a bounded page.
 
-  <!-- req-gallery:26.2 -->
+  <table><thead><tr><th align="left">Measured</th><th align="left">Budget</th></tr></thead><tbody><tr><td>The first calendar, from navigation</td><td>8 s</td></tr><tr><td>A re-draft of the whole programme after one answer</td><td>2 s</td></tr><tr><td>Elements on the page, the programme drafted</td><td>4,000</td></tr></tbody></table> <!-- req-gallery:26.2 -->
 
   <details><summary>Notes</summary>
 

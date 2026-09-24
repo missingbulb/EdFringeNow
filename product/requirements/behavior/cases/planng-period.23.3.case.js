@@ -5,11 +5,11 @@ const { jerusalemReady, calendarDays, JERUSALEM_EDITION } = require("../../share
  * the festival, and the period stops growing at its cap. */
 module.exports = {
   description: "the period extends a day at a time from either end, is remembered, and stops at its cap",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     const { MAX_PERIOD_DAYS } = await import("../../../../site/shared/limits.js");
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     await page.click("#periodEarlier");

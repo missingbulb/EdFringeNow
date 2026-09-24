@@ -5,7 +5,7 @@ const { jerusalemReady } = require("../../shared/case-helpers");
  * the point is kept, and judged against Jerusalem it is abroad. */
 module.exports = {
   description: "\"use my location\" answers the question from the device's position",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });

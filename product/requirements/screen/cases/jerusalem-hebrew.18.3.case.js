@@ -3,7 +3,7 @@ const { jerusalemReady, jerusalemStarred, openDrawer, settle } = require("../../
 
 module.exports = {
   description: "one Hebrew show as a grid lane and as a search row — title, venue and kind in the source's own script",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,

@@ -5,7 +5,7 @@ const CONTESTED = '.sch-day[data-date="2026-10-20"] .sch-slot';
 
 module.exports = {
   description: "clicking the stack offers the hour to one of the shows behind it",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
   // Opened inside capture(): the runner settles the scroll between drive and

@@ -10,7 +10,7 @@ const SETTLED = '.sch-day[data-date="2026-10-21"]';
 
 module.exports = {
   description: "a locked card is marked as locked, and its hour stops offering anyone else",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemVerdicts({ locked: { "noga-dangeli": "2026-10-21T21:00" } }),
   ready: jerusalemReady,

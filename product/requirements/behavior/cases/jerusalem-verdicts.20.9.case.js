@@ -18,10 +18,10 @@ function draftedAt(page, date, time) {
 
 module.exports = {
   description: "the four verdicts survive a reload, under the festival's own storage prefix",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Two verdicts that pull in opposite directions, so a reload that dropped

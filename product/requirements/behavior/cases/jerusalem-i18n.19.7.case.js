@@ -6,7 +6,7 @@ const REPO = path.join(__dirname, "..", "..", "..", "..");
 
 module.exports = {
   description: "the page speaks the language its URL names, whatever the device asks for and whatever was visited before",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     const { LOCALES, DEFAULT_LOCALE, STRINGS } = await import(
@@ -22,7 +22,7 @@ module.exports = {
     `);
 
     for (const { code, dir } of LOCALES) {
-      const url = code === DEFAULT_LOCALE ? "/planNG/" : `/planNG/${code}/`;
+      const url = (code === DEFAULT_LOCALE ? "/planNG/" : `/planNG/${code}/`) + "?festival=jerusalem-comedy";
       await page.goto(`${origin}${url}`, { waitUntil: "load" });
       await jerusalemReady(page);
 
@@ -48,7 +48,7 @@ module.exports = {
 
     // And back to the bare URL last, with Hebrew both on the device and in the
     // page just visited: still English.
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
     assert.equal(await page.getAttribute("html", "lang"), DEFAULT_LOCALE);
     assert.equal(

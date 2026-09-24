@@ -7,7 +7,7 @@ const FAVOURITE = '.sch-day[data-date="2026-10-19"] .sch-show.sch-show--fav';
 
 module.exports = {
   description: "hovering a card opens how rare the show is, every night it plays, and the four verdicts",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(["yolo"]),
   ready: jerusalemReady,

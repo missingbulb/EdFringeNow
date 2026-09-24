@@ -29,7 +29,7 @@ const FAR = {
 
 module.exports = {
   description: "a festival too far to reach during the focused one is named on the page, and none of its shows is planned",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     const registry = JSON.parse(fs.readFileSync(REGISTRY, "utf8"));
