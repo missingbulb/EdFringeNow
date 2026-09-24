@@ -224,6 +224,7 @@ def assemble(festival, edition_id):
         {
             "id": eid,
             "title": e.get("title"),
+            "titleLocal": e.get("titleLocal"),
             "url": e.get("url"),
             "genre": e.get("genre", festival["default_genre"]),
             "categories": e.get("categories", []),

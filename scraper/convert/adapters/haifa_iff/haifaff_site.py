@@ -29,6 +29,7 @@ def adapt(source):
             partial["categories"].setdefault(s["id"], {"name": s["name"]})
         partial["events"]["film-%d" % film["id"]] = {
             "title": film["title"],
+            "titleLocal": film["titleHe"],
             "url": film["url"],
             "categories": [s["id"] for s in sections],
             "blurb": film["synopsis"],

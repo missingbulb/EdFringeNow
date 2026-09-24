@@ -14,8 +14,7 @@ lat = 32.794044
 lng = 34.989571
 timezone = "Asia/Jerusalem"
 # The language of the served text. The English mirror is the one complete for every
-# film. Hebrew titles are kept in raw (`titleHe`), because the serving block has no
-# local-title field.
+# film. Each event's Hebrew title is served beside it as `titleLocal`.
 lang = "en"
 dir = "ltr"
 kind = "film"

@@ -113,7 +113,8 @@ default.
 - `venues[]`: `{id, name, address, lat, lng, capacity, layout, rooms[{id, name,
   capacity, layout}], accessibility, notes, refs[]}`; `layout` ∈ raked, flat,
   cabaret, cinema, outdoor, standing; `refs` are the URLs behind curated figures
-- `events[]`: `{id, title, url, genre, categories[], blurb, durationMin, imageUrl}`;
+- `events[]`: `{id, title, titleLocal, url, genre, categories[], blurb, durationMin, imageUrl}`;
+  `titleLocal` is the title in the festival's own language when `title` is not (else null);
   `genre` ∈ film, comedy, theatre, dance, music, family, talk, other
 - `performances[]`: `{id, eventId, venueId, roomId, date, start, ticketUrl, free,
   status, priceMin, priceMax}`; `date`/`start` are festival wall clock, within the

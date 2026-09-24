@@ -54,8 +54,8 @@ Supervision* is השגחה הורית).
   one for that performance. Today that is the opening event, at 150 ₪.
 - **Status** is `unknown` everywhere, because no availability source exists.
 - **Titles** are English (`lang = "en"`), since the English mirror is the complete
-  one. Hebrew titles stay in raw as `titleHe`, because the serving block has no
-  local-title field.
+  one. The Hebrew title is served beside it as `titleLocal` wherever the site
+  gave one (91 of 119 films), and is null otherwise.
 
 ## The 2026 raw is a research transcription, not a fetch
 
