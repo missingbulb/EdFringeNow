@@ -26,9 +26,6 @@ id = "2026"
 # ordinal: not published anywhere we could cite, so absent (null), never guessed.
 first = "2026-10-18"
 last = "2026-10-22"
-# Tolerance: planJerusalem still reads the pre-registry catalogue. The converter
-# keeps writing it from the same raw until the page moves to the registry.
-legacy = { path = "site/data/jerusalem/shows.json", writer = "jerusalem_comedy/legacy_shows.py" }
 
 [[source]]
 id = "comedy-festival-site"

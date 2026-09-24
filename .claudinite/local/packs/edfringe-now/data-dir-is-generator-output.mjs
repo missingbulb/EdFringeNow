@@ -54,14 +54,12 @@ const ALLOWED_INPUTS = new Map([
 ]);
 
 // Committed files under the data trees written by a generator in this repo that
-// is NOT normalize.py: the festival converter's serving blocks, its registry, and
-// the pre-registry Jerusalem catalogue it still writes for /planJerusalem/.
+// is NOT normalize.py: the festival converter's serving blocks and its registry.
 //
 // Named, not shaped: a new festival's or edition's file is exactly the moment a
 // human should confirm the producer really writes what is in it, so a file that
 // merely sits beside an allowed one still trips the rule.
 const ALLOWED_OUTPUTS = new Map([
-  ['site/data/jerusalem/shows.json', 'scraper/convert/to_serving.py'],
   ['site/data/festivals/index.json', 'scraper/convert/to_serving.py'],
   ['site/data/festivals/jerusalem-comedy/2026.json', 'scraper/convert/to_serving.py'],
 ]);
