@@ -1319,6 +1319,8 @@ rather than as a control panel.
 
 - `20.12` Only a lock overrides how full a day and your day hours; a favourite is held to both, though not to what you are here for.
 
+  <table><thead><tr><th align="left">Verdict</th><th align="left">How full a day</th><th align="left">Your day hours</th><th align="left">What you are here for</th></tr></thead><tbody><tr><td>Lock this night</td><td>placed anyway</td><td>placed anyway</td><td>placed anyway</td></tr><tr><td>Favourite the show</td><td>held to it</td><td>held to it</td><td>placed anyway</td></tr><tr><td>No verdict</td><td>held to it</td><td>held to it</td><td>held to it</td></tr></tbody></table> <!-- req-gallery:20.12 -->
+
   <details><summary>Notes</summary>
 
   A table generated from the shipped drafter: for each verdict, which of the
