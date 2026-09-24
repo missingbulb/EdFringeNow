@@ -16,11 +16,11 @@ const bash = (script, { cwd, env = {} } = {}) =>
   });
 
 test("context_param reads a Context bullet in either spelling, else the default", () => {
-  const env = { CLAUDINITE_CONTEXT: "- per: 25\n  min_delay=2 \nslug: daniel-sloss-bitter\ncommit: false" };
+  const env = { CLAUDINITE_CONTEXT: "- per: 25\n  min_delay=2 \nslug: acme-show\ncommit: false" };
   const read = (key, def) => bash(`context_param ${key} '${def}'`, { env });
   assert.equal(read("per", "50"), "25");
   assert.equal(read("min_delay", "4"), "2");
-  assert.equal(read("slug", ""), "daniel-sloss-bitter");
+  assert.equal(read("slug", ""), "acme-show");
   assert.equal(read("commit", "true"), "false");
   assert.equal(read("max_delay", "9"), "9");
   assert.equal(bash("context_param per 50", { env: { CLAUDINITE_CONTEXT: "" } }), "50");

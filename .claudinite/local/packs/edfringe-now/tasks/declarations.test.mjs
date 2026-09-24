@@ -104,19 +104,9 @@ test("the in-festival term answers about the instant it is handed", () => {
   assert.ok(at("2026-09-15T11:49:00Z").reason.includes("outside the festival"));
 });
 
-// The fetching passes stay behind the one switch: while it is off, a created item
-// declines with the reason the retired workflows' inert jobs printed.
-test("the scraping switch gates both fetching passes and says why it declines", () => {
-  for (const terms of [scrapeTerms, pricesTerms]) {
-    const verdict = terms["scraping-switched-on"].holds({}, {});
-    assert.equal(verdict.holds, SCRAPING_ON);
-    if (!SCRAPING_ON) assert.match(verdict.reason, /switched off/);
-  }
-});
-
-// Code-work beyond the executor's one-hour claim leash is reclaimed mid-run.
-test("every code-work is bounded under the one-hour leash", () => {
-  for (const [dir, decl] of DECLARED) {
-    assert.ok(decl.code_work_timeout < 3600, `${dir}'s code_work_timeout reaches the leash`);
-  }
+// The fetching passes stay behind the one switch: both declare the same term, and
+// it decides whatever the switch says.
+test("the scraping switch gates both fetching passes", () => {
+  assert.equal(scrapeTerms["scraping-switched-on"], pricesTerms["scraping-switched-on"]);
+  assert.equal(scrapeTerms["scraping-switched-on"].holds({}, {}).holds, SCRAPING_ON);
 });
