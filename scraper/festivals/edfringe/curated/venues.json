@@ -1,0 +1,84 @@
+{
+ "about": "Hand-curated venue research for the Edinburgh Fringe's biggest venue complexes, keyed by the Fringe listing's own venue code (site/data/venues.json). A start, not a census: a few complexes, from the operators' own published specifications. Not edition-specific. Every figure is {value, source} with the URL it was read from; a figure nobody could cite is null, never estimated. `layout` uses the serving vocabulary (raked, flat, cabaret, cinema, outdoor, standing) and stays null where the source describes only the stage; `stage` then records the stage configuration the source names (end on, thrust, semi thrust, corner stage, proscenium arch, arena, horseshoe). Not yet part of the Fringe's wire files.",
+ "researchedAt": "2026-09-24",
+ "venues": {
+  "33": {
+   "name": "Pleasance Courtyard",
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "cellar", "name": "Cellar", "capacity": {"value": 46, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "bunker-three", "name": "Bunker Three", "capacity": {"value": 46, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "corner stage", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "attic", "name": "Attic", "capacity": {"value": 50, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "below", "name": "Below", "capacity": {"value": 55, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "bunker-one", "name": "Bunker One", "capacity": {"value": 56, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "bunker-two", "name": "Bunker Two", "capacity": {"value": 56, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "the-green", "name": "The Green", "capacity": {"value": 60, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "baby-grand", "name": "Baby Grand", "capacity": {"value": 66, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "upstairs", "name": "Upstairs", "capacity": {"value": 91, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "beside", "name": "Beside", "capacity": {"value": 95, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "above", "name": "Above", "capacity": {"value": 146, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "pleasance-two", "name": "Pleasance Two", "capacity": {"value": 158, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "cabaret-bar", "name": "Cabaret Bar", "capacity": {"value": 170, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "corner stage", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "forth", "name": "Forth", "capacity": {"value": 257, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "semi thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "pleasance-one", "name": "Pleasance One", "capacity": {"value": 299, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "proscenium arch", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "beyond", "name": "Beyond", "capacity": {"value": 299, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "semi thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "grand", "name": "Grand", "capacity": {"value": 750, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "arena", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}}
+   ],
+   "accessibility": null,
+   "notes": "Seventeen rooms on the Courtyard site, read from the Pleasance's own list of its Fringe spaces (read through a fetch summary, not the page bytes). The venue's total is not published, so it is not summed here: a sum of rooms is not a claim anyone made."
+  },
+  "23": {
+   "name": "Pleasance Dome",
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "jack-dome", "name": "Jack Dome", "capacity": {"value": 75, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "10-dome", "name": "10 Dome", "capacity": {"value": 83, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "ace-dome", "name": "Ace Dome", "capacity": {"value": 115, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "queen-dome", "name": "Queen Dome", "capacity": {"value": 174, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "semi thrust", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "king-dome", "name": "King Dome", "capacity": {"value": 174, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}}
+   ],
+   "accessibility": null,
+   "notes": "Five rooms, from the same Pleasance list."
+  },
+  "150b": {
+   "name": "Pleasance at EICC",
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "lomond", "name": "Lomond", "capacity": {"value": 375, "source": "https://www.pleasance.co.uk/edinburgh-spaces"}, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "pentland", "name": "Pentland", "capacity": null, "layout": null, "stage": {"value": "proscenium arch", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}},
+    {"id": "lennox", "name": "Lennox", "capacity": null, "layout": null, "stage": {"value": "end on", "source": "https://www.pleasance.co.uk/edinburgh-spaces"}}
+   ],
+   "accessibility": null,
+   "notes": "The Pleasance gives Pentland as 600-1200 and Lennox as 800-1300 seats, a range by configuration rather than one figure, so their capacity stays null and the ranges are recorded here."
+  },
+  "14": {
+   "name": "Gilded Balloon Teviot",
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "debating-hall", "name": "Debating Hall", "capacity": {"value": 307, "source": "https://gildedballoon.co.uk/wp-content/uploads/2022/02/GILDED-BALLOON-TEVIOT-DEBATING-HALL-TECH-SPEC-2026.pdf"}, "layout": null, "stage": null}
+   ],
+   "accessibility": null,
+   "notes": "Only the Debating Hall's 2026 technical specification was read; it adds a balcony of built-in benches but does not say whether the floor is raked. The venue's other rooms are listed by the operator in per-room specifications not yet read."
+  },
+  "15": {
+   "name": "Traverse Theatre",
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "traverse-1", "name": "Traverse 1", "capacity": null, "layout": null, "stage": {"value": "end on", "source": "https://www.traverse.co.uk/technical"}},
+    {"id": "traverse-2", "name": "Traverse 2", "capacity": {"value": 123, "source": "https://www.traverse.co.uk/technical"}, "layout": null, "stage": null}
+   ],
+   "accessibility": null,
+   "notes": "The Traverse gives Traverse 1 as 214-270 depending on configuration (so null here, the range kept in this note), with an end-on festival configuration; Traverse 2 seats up to 123, or 115 in its horseshoe configuration."
+  },
+  "35": {"name": "Assembly Hall", "capacity": null, "layout": null, "rooms": [], "accessibility": null, "notes": "Assembly's own venue page names the Main Hall but publishes no capacity or layout."},
+  "8": {"name": "Assembly George Square", "capacity": null, "layout": null, "rooms": [], "accessibility": null, "notes": "Not yet researched."},
+  "302": {"name": "Underbelly, Bristo Square", "capacity": null, "layout": null, "rooms": [], "accessibility": null, "notes": "Underbelly publishes a venue-specification PDF; the copy read through a fetch summary gave no room figures."},
+  "26": {"name": "Summerhall", "capacity": null, "layout": null, "rooms": [], "accessibility": null, "notes": "Not yet researched."},
+  "515": {"name": "Monkey Barrel Comedy", "capacity": null, "layout": null, "rooms": [], "accessibility": null, "notes": "The operator's venues page names MB1, MB3, The Studio and Barrel Bar, with no capacities."}
+ }
+}

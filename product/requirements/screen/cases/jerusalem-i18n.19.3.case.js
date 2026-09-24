@@ -3,7 +3,7 @@ const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-
 
 module.exports = {
   description: "the header, the board's heading and the preference questions in Russian and in Japanese",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,
@@ -15,7 +15,7 @@ module.exports = {
     const strips = [];
     for (const code of ["ru", "ja"]) {
       await Promise.all([
-        page.waitForURL(`**/planNG/${code}/`),
+        page.waitForURL(`**/planNG/${code}/?festival=jerusalem-comedy`),
         page.selectOption("#langSelect", code),
       ]);
       await jerusalemReady(page);

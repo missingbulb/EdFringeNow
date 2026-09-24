@@ -3,7 +3,7 @@ const { jerusalemReady, openDrawer } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the empty board: the whole programme offered for browsing, with the search bar under it",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {

@@ -5,10 +5,10 @@ const { jerusalemReady } = require("../../shared/case-helpers");
  * is the whole of what was said, under this page's own storage prefix. */
 module.exports = {
   description: "every preference survives a reload, and never reaches the Edinburgh planner's stored list",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     await page.click("[data-pick='interest:jerusalem-comedy/stand-up']");

@@ -6,7 +6,7 @@ module.exports = {
   // Whole page on purpose, and the one leaf in Part V that takes one: what is
   // being asserted is that everything still lands where it should once the
   // inline direction flips, which no crop can show.
-  page: "/planNG/he/",
+  page: "/planNG/he/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   ready: jerusalemReady,

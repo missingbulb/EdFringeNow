@@ -23,6 +23,7 @@ notes = "The Acco Theatre Centre programme is sold through eventer.co.il; Akko r
 
 [[edition]]
 id = "2026"
+format = "block"
 # ordinal: the mayor's greeting mentions "46 years", which is not the same claim
 # as a 46th edition, so it stays absent (null).
 # Two programmes on different dates: the theatre centre's 27.9-1.10 and the

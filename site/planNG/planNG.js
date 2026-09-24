@@ -39,9 +39,17 @@ import { slotEndTime, toCsv, toIcs } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
-import { currentEdition, loadFestival, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
+import { currentEdition, loadEdition, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
 import { originReach, poolReach } from "../shared/feasibility.js";
-import { MAX_PERIOD_DAYS, PICK_CHIPS, SEARCH_RESULT_ROWS, listPage } from "../shared/limits.js";
+import {
+  FACET_OPTIONS,
+  MAX_PERIOD_DAYS,
+  PICK_CHIPS,
+  RIVAL_ROWS,
+  SEARCH_RESULT_ROWS,
+  capOptions,
+  listPage,
+} from "../shared/limits.js";
 import {
   LEGACY_EDITION_ID,
   LEGACY_FESTIVAL_ID,
@@ -1833,7 +1841,9 @@ function openRivals(stack) {
   pop.innerHTML =
     `<p class="pop-title" data-i18n-slot="rivals.title">${escapeHtml(t("rivals.title", { time: slot.startTime }))}</p>` +
     `<ul class="pop-rivals">` +
+    // The scarcest few (contention.js sorts them): a Fringe hour can have fifty.
     slot.contenders
+      .slice(0, RIVAL_ROWS)
       .map(
         (rival) =>
           `<li><button type="button" class="pop-rival" data-take="${escapeHtml(rival.slug)}"` +
@@ -1843,6 +1853,10 @@ function openRivals(stack) {
       )
       .join("") +
     `</ul>` +
+    (slot.contenders.length > RIVAL_ROWS
+      ? `<p class="pop-more" data-i18n-slot="rivals.others">` +
+        `${escapeHtml(t("rivals.others", { count: slot.contenders.length - RIVAL_ROWS }))}</p>`
+      : "") +
     `<p class="pop-foot" data-i18n-slot="rivals.foot">${escapeHtml(t("rivals.foot"))}</p>`;
   placePop(pop, block);
 }
@@ -1988,15 +2002,28 @@ function buildFacets() {
   // every edition, and a venue with nothing on in the period is no filter.
   const playing = new Map();
   for (const show of state.catalogue.shows) playing.set(show.venue, (playing.get(show.venue) || 0) + 1);
-  venueOptions.innerHTML = [...state.venues.values()]
-    .filter((v) => playing.has(v.code))
-    .map(
-      (v) =>
-        `<label class="panel-option"><input type="checkbox" data-facet="venue" value="${escapeHtml(v.code)}" />` +
-        `<span>${foreign(v.name, v.code)}</span>` +
-        `<span class="opt-count">${playing.get(v.code)}</span></label>`
-    )
-    .join("");
+  const venues = [...state.venues.values()].filter((v) => playing.has(v.code));
+  // Only as many as a panel can list (../shared/limits.js), the busiest making
+  // the cut, drawn in the programme's own order; the rest are one search away,
+  // since the query matches venue names.
+  const ranked = [...venues].sort(
+    (a, b) => playing.get(b.code) - playing.get(a.code) || a.name.localeCompare(b.name)
+  );
+  const { rows, more } = capOptions(ranked, (v) => state.search.venues.has(v.code), FACET_OPTIONS);
+  const listed = new Set(rows);
+  venueOptions.innerHTML =
+    venues
+      .filter((v) => listed.has(v))
+      .map(
+        (v) =>
+          `<label class="panel-option"><input type="checkbox" data-facet="venue" value="${escapeHtml(v.code)}" />` +
+          `<span>${foreign(v.name, v.code)}</span>` +
+          `<span class="opt-count">${playing.get(v.code)}</span></label>`
+      )
+      .join("") +
+    (more
+      ? `<p class="panel-more" data-i18n-slot="search.moreVenues">${escapeHtml(t("search.moreVenues", { count: more }))}</p>`
+      : "");
 }
 
 function syncFacetChrome() {
@@ -2360,9 +2387,19 @@ function applyTheme(festival) {
   document.documentElement.dataset.festival = festival.id;
 }
 
-/** One edition's adapted programme, fetched once however often it is asked for. */
-function editionCatalogue(dataUrl) {
-  if (!state.editions.has(dataUrl)) state.editions.set(dataUrl, loadFestival(dataUrl));
+/* Where the shared data cache (shared/data-cache.js) reports a cache write it
+ * couldn't make or a stale copy it fell back on. Never surfaced: the caller
+ * still got its data. */
+function noteCache(err, url) {
+  console.info("planNG: data cache —", url, err);
+}
+
+/* One edition's adapted programme, fetched once however often it is asked for,
+ * and only once a period reaches it: a festival the reader never focuses near
+ * never costs a download. */
+function editionCatalogue(festival, edition) {
+  const { dataUrl } = edition;
+  if (!state.editions.has(dataUrl)) state.editions.set(dataUrl, loadEdition(festival, edition, { onNote: noteCache }));
   return state.editions.get(dataUrl);
 }
 
@@ -2389,7 +2426,7 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
     parts = await Promise.all(
       state.reach
         .filter((r) => r.verdict !== "out" && r.edition.entry.dataUrl)
-        .map(async (reach) => ({ reach, catalogue: await editionCatalogue(reach.edition.entry.dataUrl) }))
+        .map(async (reach) => ({ reach, catalogue: await editionCatalogue(reach.edition.festival, reach.edition.entry) }))
     );
   } catch (error) {
     $("loadingState").hidden = true;

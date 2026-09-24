@@ -3,10 +3,10 @@ const { jerusalemReady } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "the theme a reader picks survives a reload, in the festival's own storage",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Nothing stored and a light device: no theme pinned either way.

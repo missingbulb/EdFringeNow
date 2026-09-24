@@ -54,6 +54,32 @@ def render(obj):
     return json.dumps(obj, ensure_ascii=False, indent=1) + "\n"
 
 
+def site_url(repo_path):
+    """A committed file under site/, as the URL the browser fetches it by."""
+    return "/" + repo_path[len("site/"):]
+
+
+def edition_entry(festival, ed):
+    entry = {
+        "id": ed["id"],
+        "ordinal": ed["ordinal"],
+        "firstDate": ed["first"],
+        "lastDate": ed["last"],
+        "format": ed["format"],
+    }
+    if ed["format"] == "edfringe-wire":
+        # Served straight from the files Edinburgh's own pipeline commits: this
+        # layer writes nothing for it and only says where they are.
+        wire = festival["wire"]
+        present = os.path.isfile(os.path.join(registry.REPO_ROOT, wire["catalogue"]))
+        entry["dataUrl"] = site_url(wire["catalogue"]) if present else None
+        entry["wire"] = {"lookups": site_url(wire["lookups"]), "availability": site_url(wire["availability"])}
+    else:
+        # Declared but not yet fetched: listed, with nothing to load.
+        entry["dataUrl"] = data_url(festival["id"], ed["id"]) if merge.edition_ready(festival, ed["id"]) else None
+    return entry
+
+
 def build_index(festivals):
     entries = []
     for fid in sorted(festivals):
@@ -72,17 +98,7 @@ def build_index(festivals):
             "kind": f["kind"],
             "defaultGenre": f["default_genre"],
             "site": f["site"],
-            "editions": [
-                {
-                    "id": ed["id"],
-                    "ordinal": ed["ordinal"],
-                    "firstDate": ed["first"],
-                    "lastDate": ed["last"],
-                    # Declared but not yet fetched: listed, with nothing to load.
-                    "dataUrl": data_url(fid, ed["id"]) if merge.edition_ready(f, ed["id"]) else None,
-                }
-                for ed in sorted(f["edition"], key=lambda e: e["id"])
-            ],
+            "editions": [edition_entry(f, ed) for ed in sorted(f["edition"], key=lambda e: e["id"])],
         })
     return {"v": schema.VERSION, "festivals": entries}
 
@@ -123,7 +139,11 @@ def write(festival_id, edition_id):
     if festival_id not in festivals:
         raise ConvertError("unknown festival %r (have %s)" % (festival_id, sorted(festivals)))
     festival = festivals[festival_id]
-    registry.edition(festival, edition_id)
+    if registry.edition(festival, edition_id)["format"] != "block":
+        raise ConvertError(
+            "%s %s is served from its own pipeline's files (%s), not converted here"
+            % (festival_id, edition_id, festival["wire"]["converter"])
+        )
     outputs = build_edition(festival, edition_id)
     outputs[INDEX] = render(build_index(festivals))
     # Everything is built and validated before the first byte is written.
@@ -137,7 +157,7 @@ def expected_outputs():
     outputs = {INDEX: render(build_index(festivals))}
     for festival in festivals.values():
         for ed in festival["edition"]:
-            if merge.edition_ready(festival, ed["id"]):
+            if ed["format"] == "block" and merge.edition_ready(festival, ed["id"]):
                 outputs.update(build_edition(festival, ed["id"]))
     return outputs
 

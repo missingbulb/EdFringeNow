@@ -2,7 +2,9 @@
 
 How every festival other than the Edinburgh Fringe gets from its website into the
 site. (Edinburgh keeps its own pipeline, `scraper/normalize.py`, and its wire
-format.) Three roles, three kinds of code, and each knows only its own half:
+format; it is registered here as an `edfringe-wire` edition, below, so the
+festival planner finds it beside the others.) Three roles, three kinds of code,
+and each knows only its own half:
 
 | role | lives in | knows | writes |
 |---|---|---|---|
@@ -38,6 +40,7 @@ notes = "…"
 id = "2026"                       # the year; never read off a page
 ordinal = 42                      # optional; omit when nobody publishes it
 first = "2026-10-18"  last = "2026-10-22"
+format = "block"                  # block | edfringe-wire — required, never defaulted
 legacy = { path = "…", writer = "<festival>/<module>.py" }   # optional tolerance file
 
 [[source]]
@@ -54,6 +57,18 @@ venues = ["venues-research", "nominatim", "comedy-festival-site"]
 events = ["comedy-festival-site"]         # also governs the festival's categories
 performances = ["comedy-festival-site"]
 ```
+
+### An `edfringe-wire` edition
+
+`format = "edfringe-wire"` says the edition is not assembled here: the Edinburgh
+Fringe's own pipeline writes the files named in the festival's `[wire]` table
+(`catalogue`, `lookups`, `availability`, each under `site/`, and the `converter`
+that writes them). `to_serving.py` writes nothing for it and refuses to convert
+it; the registry lists it with `dataUrl` pointing at the catalogue and `wire`
+naming the other two, and `site/shared/festival-catalogue.js` adapts those
+files to the same shape a serving block adapts to. Its `[[source]]` entries map
+the Fringe's scripts onto the same roles (their `fetcher` paths are relative to
+the festival's folder, and they name no adapter).
 
 ## The fetcher's contract
 
@@ -125,8 +140,9 @@ default.
   absent[], fields{"section.field": [source]}, skipped{source: [...]}}`
 
 The registry `site/data/festivals/index.json` is `{v, festivals[]}`, each with the
-festival identity above and `editions[{id, ordinal, firstDate, lastDate, dataUrl}]`
-(`dataUrl` null until the edition's required raw exists). The browser loads both
+festival identity above and `editions[{id, ordinal, firstDate, lastDate, format,
+dataUrl}]` (`dataUrl` null until the edition's required raw exists; an
+`edfringe-wire` edition also carries `wire: {lookups, availability}`). The browser loads both
 through `site/shared/festival-catalogue.js`.
 
 ## Adding an edition

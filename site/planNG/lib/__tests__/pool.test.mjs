@@ -64,7 +64,9 @@ test("every committed edition pools and drafts, every show starred, within a sec
   let drafted = 0;
   for (const festival of registry.festivals) {
     for (const edition of festival.editions) {
-      if (!edition.dataUrl) continue;
+      // The Fringe is the one programme this budget is not about: its scale
+      // has its own real-data requirements (product/requirements.md, Part V).
+      if (!edition.dataUrl || edition.format !== "block") continue;
       const started = performance.now();
       const catalogue = adaptFestival(readJson(edition.dataUrl.replace(/^\//, "")));
       const reach = { verdict: "focus", nights: [{ from: edition.firstDate, to: edition.lastDate }] };

@@ -7,7 +7,7 @@ const { jerusalemPrefs, jerusalemReady } = require("../../shared/case-helpers");
 module.exports = {
   description: "where your day starts and ends, as two blockers on the calendar",
   capture: "#scheduleWrap",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemPrefs({ dayStartMin: 17 * 60 + 30, dayEndMin: 22 * 60 + 30 }),
   ready: jerusalemReady,

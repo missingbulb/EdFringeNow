@@ -73,7 +73,7 @@ function vendoredJapaneseRanges() {
 module.exports = {
   description:
     "every translated string fits the pixel budget its key declares, in all four languages and at both viewports",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
@@ -113,7 +113,7 @@ module.exports = {
       // (the date window's overlay is only laid out there), and then measured
       // at each viewport by resizing it.
       await page.setViewportSize(VIEWPORTS.desktop);
-      await page.goto(`${origin}${url}`, { waitUntil: "load" });
+      await page.goto(`${origin}${url}?festival=jerusalem-comedy`, { waitUntil: "load" });
       await jerusalemReady(page);
 
       for (const [name, size] of Object.entries(VIEWPORTS)) {

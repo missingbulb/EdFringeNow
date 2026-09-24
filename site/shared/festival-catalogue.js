@@ -8,8 +8,16 @@
  * shape. The registry `site/data/festivals/index.json` says which festivals and
  * editions exist and where each block lives.
  *
- * Pure apart from the two fetches.
+ * An edition's `format` in the registry says which of two shapes its data takes:
+ * a serving block ("block"), or the Edinburgh Fringe's own wire files
+ * ("edfringe-wire"), which this module adapts to the same result so the pages
+ * never learn there are two.
+ *
+ * Pure apart from the fetches.
  */
+
+import { showUrl } from "./edfringe.js";
+import { loadEdfringeWire } from "./edfringe-wire.js";
 
 export const SCHEMA_VERSION = 1;
 export const INDEX_URL = "/data/festivals/index.json";
@@ -29,6 +37,24 @@ export async function loadFestivalIndex(url = INDEX_URL) {
 /** Fetch one edition's block and adapt it. */
 export async function loadFestival(url) {
   return adaptFestival(await getJson(url));
+}
+
+/**
+ * Fetch one edition, whatever its format, and adapt it.
+ * @param {object} festivalEntry the registry's festival
+ * @param {object} edition one of its editions, with a `dataUrl`
+ * @param {{onNote?: (err: unknown, url: string) => void}} [opts]
+ */
+export async function loadEdition(festivalEntry, edition, { onNote } = {}) {
+  if (edition.format === "block") return loadFestival(edition.dataUrl);
+  if (edition.format === "edfringe-wire") {
+    const { catalogue, lookups } = await loadEdfringeWire(
+      { catalogue: edition.dataUrl, lookups: edition.wire.lookups, availability: edition.wire.availability },
+      { year: Number(edition.id), onNote }
+    );
+    return adaptEdfringe({ catalogue, lookups }, festivalEntry, edition);
+  }
+  throw new Error(`${festivalEntry.id} ${edition.id}: no loader for format ${edition.format}`);
 }
 
 /**
@@ -112,6 +138,104 @@ export function adaptFestival(block) {
     categories: block.categories.map((c) => ({ slug: c.id, name: c.name })),
   };
 }
+
+/**
+ * The Edinburgh Fringe's rehydrated catalogue (../plan/lib/hydrate.js), in the
+ * same shape adaptFestival returns — the pure half of loadEdition for it.
+ *
+ * Edinburgh's records already speak the engine's vocabulary (its statuses are
+ * the box office's own), so what changes is only what the festival planner
+ * reads that the Fringe planner never needed: a festival identity, a venue map,
+ * and the kinds a show is filed under. A show's kind is its genre; its
+ * sub-genres are too many to ask about.
+ *
+ * @param {{catalogue: object[], lookups: object}} wire rehydrated shows and venues.json
+ * @param {object} festivalEntry the registry's festival
+ * @param {object} edition the registry's edition
+ */
+export function adaptEdfringe({ catalogue, lookups }, festivalEntry, edition) {
+  const venues = new Map();
+  for (const [code, v] of Object.entries(lookups.venues || {})) {
+    venues.set(code, {
+      code,
+      id: code,
+      name: v.name,
+      address: v.address ?? null,
+      lat: v.lat ?? null,
+      lng: v.lng ?? null,
+      capacity: null,
+      layout: null,
+      rooms: [],
+    });
+  }
+  const kinds = new Map();
+  const shows = catalogue.map((show) => {
+    const kind = show.genre ? kindSlug(show.genre) : null;
+    if (kind && !kinds.has(kind)) kinds.set(kind, show.genre);
+    const url = showUrl(show.slug) || null;
+    return {
+      slug: show.slug,
+      title: show.title,
+      url,
+      genre: show.genre,
+      genreSlug: kind,
+      genreSlugs: kind ? [kind] : [],
+      blurb: show.blurb,
+      duration: show.duration,
+      venue: show.venue,
+      venueName: show.venueName,
+      venueNames: show.venueName ? [show.venueName] : [],
+      performances: show.performances.map((p) => ({
+        date: p.date,
+        start: p.start,
+        status: p.status,
+        soldOut: p.soldOut,
+        ticketUrl: url,
+        free: show.free,
+        venue: show.venue,
+      })),
+    };
+  });
+  // A handful of shows name a venue the lookups do not list (they carry their
+  // own venue name instead). Each still gets a venue to be filtered by, with no
+  // position: an unknown place, never a guessed one.
+  for (const show of shows) {
+    if (show.venue != null && !venues.has(show.venue)) {
+      venues.set(show.venue, {
+        code: show.venue, id: show.venue, name: show.venueName, address: null,
+        lat: null, lng: null, capacity: null, layout: null, rooms: [],
+      });
+    }
+  }
+  const festival = {
+    id: festivalEntry.id,
+    edition: edition.id,
+    ordinal: edition.ordinal,
+    name: festivalEntry.name,
+    nameLocal: festivalEntry.nameLocal,
+    city: festivalEntry.city,
+    country: festivalEntry.country,
+    lat: festivalEntry.lat,
+    lng: festivalEntry.lng,
+    timezone: festivalEntry.timezone,
+    lang: festivalEntry.lang,
+    dir: festivalEntry.dir,
+    kind: festivalEntry.kind,
+    defaultGenre: festivalEntry.defaultGenre,
+    site: festivalEntry.site,
+    firstDate: edition.firstDate,
+    lastDate: edition.lastDate,
+    ticketing: null,
+  };
+  const categories = [...kinds]
+    .sort((a, b) => a[1].localeCompare(b[1]))
+    .map(([slug, name]) => ({ slug, name }));
+  return { festival, venues, shows, categories };
+}
+
+/* "Dance, Physical Theatre & Circus" -> "dance-physical-theatre-circus". */
+export const kindSlug = (name) =>
+  name.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function engineStatus(performance) {
   if (performance.status === "sold-out") return ENGINE_STATUS.soldOut;

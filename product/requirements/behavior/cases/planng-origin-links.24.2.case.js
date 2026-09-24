@@ -10,7 +10,7 @@ const offered = (page) =>
  * does not ask again. */
 module.exports = {
   description: "the answer decides the trip links, and is asked once across festivals",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });

@@ -4,10 +4,20 @@ import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-import { adaptFestival, currentEdition } from "../festival-catalogue.js";
+import { adaptEdfringe, adaptFestival, currentEdition, kindSlug } from "../festival-catalogue.js";
+import { rehydrateShows } from "../../plan/lib/hydrate.js";
 
 const SITE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const readJson = (rel) => JSON.parse(readFileSync(path.join(SITE, rel), "utf8"));
+
+/* One committed edition, adapted the way loadEdition() adapts it, from disk. */
+function adaptCommitted(festival, edition) {
+  if (edition.format === "block") return adaptFestival(readJson(edition.dataUrl));
+  assert.equal(edition.format, "edfringe-wire", `${festival.id} ${edition.id}: a format this test knows`);
+  const lookups = readJson(edition.wire.lookups);
+  const catalogue = rehydrateShows(readJson(edition.dataUrl), lookups, Number(edition.id), readJson(edition.wire.availability));
+  return adaptEdfringe({ catalogue, lookups }, festival, edition);
+}
 
 test("every edition the registry offers loads through the adapter on the real committed files", () => {
   const index = readJson("data/festivals/index.json");
@@ -17,12 +27,14 @@ test("every edition the registry offers loads through the adapter on the real co
       if (!edition.dataUrl) continue;
       const file = path.join(SITE, edition.dataUrl);
       assert.ok(existsSync(file), `${edition.dataUrl} exists under site/`);
-      const catalogue = adaptFestival(JSON.parse(readFileSync(file, "utf8")));
+      const catalogue = adaptCommitted(festival, edition);
       assert.equal(catalogue.festival.id, festival.id);
       assert.equal(catalogue.festival.edition, edition.id);
       assert.ok(catalogue.shows.length > 0, `${festival.id} ${edition.id} has shows`);
       for (const show of catalogue.shows) {
-        assert.ok(show.performances.length > 0, `${show.slug} has performances`);
+        // The Fringe's listing keeps a cancelled show with no performances; a
+        // serving block has none (the converter drops an event nothing plays).
+        if (edition.format === "block") assert.ok(show.performances.length > 0, `${show.slug} has performances`);
         for (const p of show.performances) {
           assert.ok(p.venue == null || catalogue.venues.has(p.venue), `${show.slug}: venue ${p.venue} resolves`);
         }
@@ -31,6 +43,29 @@ test("every edition the registry offers loads through the adapter on the real co
     }
   }
   assert.ok(loaded >= 1, "the sweep covered at least the Jerusalem edition");
+});
+
+test("the Fringe reads through the same adapter as every other festival, off its own wire files", () => {
+  const index = readJson("data/festivals/index.json");
+  const festival = index.festivals.find((f) => f.id === "edfringe");
+  const edition = festival.editions.find((e) => e.id === "2026");
+  assert.equal(edition.format, "edfringe-wire");
+  assert.equal(edition.dataUrl, "/data/normalized/shows.min.json", "the Fringe planner's own catalogue, no second copy");
+  const catalogue = adaptCommitted(festival, edition);
+  assert.equal(catalogue.festival.timezone, "Europe/London");
+  assert.equal(catalogue.festival.firstDate, "2026-08-07");
+  assert.ok(catalogue.shows.length > 3000, "the whole programme");
+  // The kinds are the ten headline genres, and every show is filed under its own.
+  assert.equal(catalogue.categories.length, 10);
+  const kinds = new Set(catalogue.categories.map((c) => c.slug));
+  for (const show of catalogue.shows) {
+    if (show.genre) assert.deepEqual(show.genreSlugs, [kindSlug(show.genre)]);
+    for (const slug of show.genreSlugs) assert.ok(kinds.has(slug), `${show.slug}: kind ${slug} is offered`);
+    assert.ok(show.url.startsWith("https://www.edfringe.com/tickets/whats-on/"), `${show.slug} links to its page`);
+  }
+  // Statuses are the box office's own, which the engine already reads.
+  const statuses = new Set(catalogue.shows.flatMap((s) => s.performances.map((p) => p.status)));
+  assert.ok(statuses.has("SOLD_OUT") || statuses.has("TICKETS_AVAILABLE"), [...statuses].join(","));
 });
 
 test("availability: only sold-out stops scheduling; unknown is available, free stays free", () => {

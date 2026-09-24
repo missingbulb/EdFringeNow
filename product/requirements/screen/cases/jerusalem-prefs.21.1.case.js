@@ -6,7 +6,7 @@ const { jerusalemReady } = require("../../shared/case-helpers");
 module.exports = {
   description: "the four questions above the calendar, as a first visit finds them",
   capture: "#prefs",
-  page: "/planNG/",
+  page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
 };
