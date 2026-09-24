@@ -1476,15 +1476,17 @@ way. Nothing above the calendar explains the calendar.
   remembers.
   </details>
 
-## 23. The year's festivals, and the period you plan
+## 23. The year's festivals, and the trip's dates
 
 The top of the page is the year: every festival edition the registry knows,
-drawn at its dates. Choosing one is choosing a stretch of calendar — its run and
-a day either side, for getting there and back — and the pool the calendar drafts
-from is every performance, from any festival, that falls inside it and can be
-reached from there.
+drawn at its dates, and the reader's trip banded across it. The trip's first
+and last day are the reader's to set — dragged along the year or typed — and a
+festival is only a shortcut to its own run and a day either side. Nothing below
+is tied to one festival: the pool the calendar drafts from is every
+performance, from any festival, that falls inside the trip and can be reached
+from the festival it covers most.
 
-- `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the focused one lit.
+- `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the trip's dates banded across it.
 
   ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
@@ -1493,40 +1495,31 @@ reached from there.
   Twelve months from the start of the month before today. Editions whose runs
   overlap are stacked on separate rows so no bar hides another; an edition
   whose programme is not published yet is drawn hollow, and is still chosen
-  like any other.
+  like any other. The festival the trip covers most is lit. Beneath the year
+  sit the trip's two dates and its length, between the two flight blocks
+  (section 27).
   </details>
 
-- `23.2` Choosing a festival on the timeline sets the period to its run plus a day either side.
+- `23.2` Choosing a festival on the timeline sets the trip's dates to its run plus a day either side.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.2 -->
 
   <details><summary>Notes</summary>
 
-  The choice is an address: `?festival=<id>` is written to the URL, so the
-  page can be linked focused on a festival, and the last choice is what the
-  page opens on next time.
+  The trip is an address: `?from=<date>&to=<date>` is written to the URL
+  whenever the dates change, so a trip can be linked, and the last trip is
+  what the page opens on next time. A link naming a festival
+  (`?festival=<id>`) opens on that festival's run and a day either side.
   </details>
 
-- `23.3` The period extends a day at a time from either end of the calendar.
-
-  🚩 _Behavior leaf._ <!-- req-gallery:23.3 -->
-
-  <details><summary>Notes</summary>
-
-  The two buttons at the calendar's ends add a day before the first night or
-  after the last, up to a period of `MAX_PERIOD_DAYS`
-  (`site/shared/limits.js`); the first- and last-night blockers (21.8) narrow
-  it again. Performances of any edition the new day reaches join the pool.
-  </details>
-
-- `23.4` A festival joins the pool only when its city is within reach of the focused festival's.
+- `23.4` A festival joins the pool only when its city is within reach of the festival the trip covers most.
 
   <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
 
   <details><summary>Notes</summary>
 
   `site/shared/feasibility.js`. A city a day-trip away is in whole; a city
-  further off is in only for the nights far enough from the focused run to
+  further off is in only for the nights far enough from that festival's run to
   travel between the two, so an event in Edinburgh during the Jerusalem
   festival is never suggested, whatever the data holds.
   </details>
@@ -1535,7 +1528,7 @@ reached from there.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` Below the site header, the page takes the focused festival's theme: its name and its palette.
+- `23.6` Below the site header, the page takes the theme of the festival the trip covers most: its name and its palette.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
@@ -1560,14 +1553,43 @@ reached from there.
   the whole programme.
   </details>
 
+- `23.8` The trip's first and last day are set on the timeline: drag either end of the band, or type the dates, and the calendar follows.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.8 -->
+
+  <details><summary>Notes</summary>
+
+  Each end of the band is a handle that also moves a day at a time with the
+  arrow keys. The dates beneath the year take any day of the twelve months
+  shown. A trip is at most `MAX_PERIOD_DAYS` long (`site/shared/limits.js`):
+  moving one end past that pulls the other along, and a first day typed after
+  the last swaps the two. Every change re-plans the calendar across the new
+  days, is written to the address, and is what the page reopens on.
+  </details>
+
+- `23.9` A trip that runs past a festival's own run plans every festival its dates reach, and the one it covers most leads.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.9 -->
+
+  <details><summary>Notes</summary>
+
+  Driven with a festival near Jerusalem added to the registry, starting the
+  day after Jerusalem's ends: choosing Jerusalem plans Jerusalem alone;
+  dragging the trip's end on over the neighbour's run adds its shows to the
+  calendar, and the page keeps Jerusalem's theme while Jerusalem has the most
+  of the trip's days. Dragging the start past Jerusalem's run hands the theme
+  to the neighbour. Ties go to the edition that starts first; a trip over no
+  festival at all takes the nearest one's theme and plans an empty calendar.
+  </details>
+
 ## 24. Where you are coming from
 
-The first time a festival is chosen the page asks, once, where the reader is
-coming from. It is the question that decides what the trip needs: a reader who
+The page asks, once, where the reader is coming from, beside the trip's dates
+on the timeline. It is the question that decides what the trip needs: a reader who
 lives in the festival's city needs no bed, one from elsewhere in the country
 needs a bed and a train, and one from abroad needs the airport too.
 
-- `24.1` The first time a festival is chosen, the page asks where you are coming from.
+- `24.1` Until you have said, the page asks where you are coming from, beneath the trip's dates.
 
   ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
 
@@ -1600,6 +1622,80 @@ needs a bed and a train, and one from abroad needs the airport too.
 - `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.4 -->
+
+## 27. Getting there and back
+
+The trip's dates are where the journey is planned too. Either side of them on
+the timeline sits a flight block: the way out on the trip's first day, and the
+way home on its last. A reader coming from abroad sees the cheapest flights for
+those days, fetched when the dates are set, each linking to the partner who
+sells it; a reader already in the country needs no flight, and the blocks say
+so.
+
+> ⚠️ **To be decided — live fares.** The fare service (`worker/fares.js`) reads
+> the partner's cached one-way prices server-side and has only been exercised
+> against the partner's documented response shape: this sandbox cannot reach
+> the partner, and no account exists yet to capture a real answer. Until one
+> does, 27.5's sample is hand-written from the documentation, and with no token
+> configured the blocks show the partner's search for the day instead of a
+> price.
+
+- `27.1` Coming from abroad, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.1 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with the fare service answering from a fixture. The departure time
+  is the airport's own wall clock, as the partner gives it; the price is in the
+  reader's own currency where the origin names one.
+  </details>
+
+- `27.2` The fares are asked for when the trip's dates are set, for those days and that route, and a flight links to the partner with our marker.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.2 -->
+
+  <details><summary>Notes</summary>
+
+  One request per block, to the site's own `/api/fares`: from the reader's
+  airport to the destination festival's on the first day, and back on the
+  last. Moving a date asks again for that day. The link is asserted as a URL,
+  never followed.
+  </details>
+
+- `27.3` With no fare to show, a flight block offers the partner's search for that day and route instead of a price.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.3 -->
+
+  <details><summary>Notes</summary>
+
+  The fare service answering empty, failing, or not reachable at all are the
+  same state to the reader: nothing claims a price, and the search link is
+  still the day's and the route's.
+  </details>
+
+- `27.4` The flight blocks follow where you said you are coming from: abroad they ask for your airport, at home they say no flight is needed, and either way you can change the answer.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.4 -->
+
+  <details><summary>Notes</summary>
+
+  A country named abroad fills in its main airport, which the reader can
+  overwrite with any airport or city code; "use my location" and "somewhere
+  else abroad" leave it for the reader to type. The block's "change" asks the
+  origin question again (section 24).
+  </details>
+
+- `27.5` The fare service answers from the partner's cached one-way fares, and the partner's token never reaches the page.
+
+  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:27.5 -->
+
+  <details><summary>Notes</summary>
+
+  **To be decided** (see the banner above): proved against the documented
+  response shape only. With no token configured the service answers an empty
+  list rather than an error, so the page shows the search link.
+  </details>
 
 ## 25. Never a list of thousands
 
