@@ -8,7 +8,7 @@ const NIGHT = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
   description: "a contested hour is drawn as a stack: the card that won, in front of the ones it beat",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {

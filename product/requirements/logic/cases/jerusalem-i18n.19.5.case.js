@@ -3,7 +3,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const PAGE_DIR = path.join(__dirname, "..", "..", "..", "..", "site", "planJerusalem");
+const PAGE_DIR = path.join(__dirname, "..", "..", "..", "..", "site", "planNG");
 
 // The rows are the requirement: every language the page offers, what it is
 // called, which way it runs, and the plural forms its translations must supply.
@@ -23,9 +23,9 @@ const TABLE = {
 function pageSources() {
   const files = [
     "index.html",
-    "planJerusalem.js",
-    "festival.js",
-    "catalogue.js",
+    "planNG.js",
+    "festivals.js",
+    "timeline-view.js",
     // the runtime names the handful of keys no markup binds: the document's own
     // title and description, and the theme toggle's two labels
     path.join("i18n", "i18n.js"),
@@ -38,8 +38,8 @@ module.exports = {
     "every UI string is translated into every supported language, with the arguments and plural forms each language needs",
   table: TABLE,
   async verify(assert) {
-    const { LOCALES, DEFAULT_LOCALE, STRINGS } = await import("../../../../site/planJerusalem/i18n/translations.js");
-    const { argumentsOf, pluralCategoriesOf, format } = await import("../../../../site/planJerusalem/i18n/format.js");
+    const { LOCALES, DEFAULT_LOCALE, STRINGS } = await import("../../../../site/planNG/i18n/translations.js");
+    const { argumentsOf, pluralCategoriesOf, format } = await import("../../../../site/planNG/i18n/format.js");
 
     const codes = LOCALES.map((l) => l.code);
     assert.deepEqual(

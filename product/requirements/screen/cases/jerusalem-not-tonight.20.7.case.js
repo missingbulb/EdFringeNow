@@ -9,7 +9,7 @@ const TUE = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
   description: "'not this night' moves the show to another of its own nights",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(["yolo"]),
   ready: jerusalemReady,

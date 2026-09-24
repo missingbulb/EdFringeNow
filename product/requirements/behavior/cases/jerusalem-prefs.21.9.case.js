@@ -5,13 +5,13 @@ const { jerusalemReady } = require("../../shared/case-helpers");
  * is the whole of what was said, under this page's own storage prefix. */
 module.exports = {
   description: "every preference survives a reload, and never reaches the Edinburgh planner's stored list",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
 
-    await page.click("[data-pick='interest:stand-up']");
+    await page.click("[data-pick='interest:jerusalem-comedy/stand-up']");
     await page.click("[data-pick='travel:bike']");
     await page.click("[data-pick='food:regular']");
     await page.click("[data-expand='pace']");
@@ -28,12 +28,16 @@ module.exports = {
     await page.keyboard.press("ArrowRight");
     await jerusalemReady(page);
 
-    const before = await page.evaluate(() => JSON.parse(localStorage.getItem("jerusalemPlan.prefs")));
-    assert.deepEqual(before.interests, ["stand-up"], "the kind named is stored");
+    const before = await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.prefs")));
+    assert.deepEqual(before.interests, ["jerusalem-comedy/stand-up"], "the kind named is stored");
     assert.equal(before.mode, "bike", "the way around is stored");
     assert.equal(before.minGap, 45, "the exact number behind the picture is stored");
     assert.equal(before.dayEndMin, 25 * 60 - 15, "the day's end is stored where it was dragged to");
-    assert.equal(before.d0, 2, "the window's first night is stored");
+    assert.deepEqual(
+      before.windows["jerusalem-comedy@2026"],
+      { from: "2026-10-18", to: "2026-10-23" },
+      "the window's first night is stored"
+    );
     assert.deepEqual(
       before.meals.map((m) => [m.id, m.enabled, m.place]),
       [["breakfast", true, ""], ["lunch", true, ""], ["dinner", true, "Machneyuda"]],
@@ -44,12 +48,12 @@ module.exports = {
     await jerusalemReady(page);
 
     assert.deepEqual(
-      await page.evaluate(() => JSON.parse(localStorage.getItem("jerusalemPlan.prefs"))),
+      await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.prefs"))),
       before,
       "the same answers come back"
     );
     assert.equal(
-      await page.getAttribute("[data-pick='interest:stand-up']", "aria-pressed"),
+      await page.getAttribute("[data-pick='interest:jerusalem-comedy/stand-up']", "aria-pressed"),
       "true",
       "the kind named is lit again"
     );

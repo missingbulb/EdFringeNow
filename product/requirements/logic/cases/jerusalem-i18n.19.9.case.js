@@ -8,10 +8,10 @@ const fs = require("node:fs");
 const TABLE = {
   columns: ["URL", "Language", "html lang", "Direction"],
   rows: [
-    ["/planJerusalem/", "English", "en", "ltr"],
-    ["/planJerusalem/he/", "עברית", "he", "rtl"],
-    ["/planJerusalem/ru/", "Русский", "ru", "ltr"],
-    ["/planJerusalem/ja/", "日本語", "ja", "ltr"],
+    ["/planNG/", "English", "en", "ltr"],
+    ["/planNG/he/", "עברית", "he", "rtl"],
+    ["/planNG/ru/", "Русский", "ru", "ltr"],
+    ["/planNG/ja/", "日本語", "ja", "ltr"],
   ],
 };
 
@@ -23,7 +23,7 @@ module.exports = {
     "each language is served as its own document, already in that language before a line of script has run",
   table: TABLE,
   async verify(assert) {
-    const { STRINGS } = await import("../../../../site/planJerusalem/i18n/translations.js");
+    const { STRINGS } = await import("../../../../site/planNG/i18n/translations.js");
     const { PAGES, buildPages } = await import("../../../../scripts/localize-pages.mjs");
 
     assert.deepEqual(

@@ -55,12 +55,16 @@ function planPrefs(overrides = {}) {
   return { "edfringe.plan.prefs.v1": JSON.stringify(overrides) };
 }
 
-// Festival planner (/planJerusalem): a starred list, under that page's own
-// storage prefix. The cast spans what Part V asserts — a free late-night that
-// repeats on four evenings, two runs that play twice in one evening, a film,
-// two shows half an hour apart at different venues (so the schedule draws a
-// travel leg), and a clash that cannot be fitted (so the grid shows a verdict
-// other than "Scheduled").
+// Festival planner (/planNG), focused on the Jerusalem Comedy Festival: a
+// starred list, under that page's own storage prefix. The page pools several
+// festivals, so it names a show `<festival>/<its own id>`; the helpers below
+// take the festival's own ids and write them the way the page does.
+//
+// The cast spans what Part V asserts — a free late-night that repeats on four
+// evenings, two runs that play twice in one evening, a film, two shows half an
+// hour apart at different venues (so the schedule draws a travel leg), and a
+// clash that cannot be fitted (so the grid shows a verdict other than
+// "Scheduled").
 const JERUSALEM_STARRED = [
   "opening",
   "poetry-slam",
@@ -71,21 +75,50 @@ const JERUSALEM_STARRED = [
   "neighbor",
 ];
 
+const JERUSALEM = "jerusalem-comedy";
+const JERUSALEM_EDITION = "jerusalem-comedy@2026";
+// The festival's own nights. The legacy date window counted positions in
+// these, which is how a case still states one (`d0`, `d1`, 1-based).
+const JERUSALEM_NIGHTS = ["2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22"];
+const inJerusalem = (id) => `${JERUSALEM}/${id}`;
+
 function jerusalemStarred(slugs = JERUSALEM_STARRED) {
-  return { "jerusalemPlan.starred": JSON.stringify(slugs) };
+  return { "planNG.starred": JSON.stringify(slugs.map(inJerusalem)) };
 }
 
 // The three verdicts that are not "favourite" — that one is the starred list
 // above, which predates them and keeps its own key.
 function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
-  return { "jerusalemPlan.verdicts": JSON.stringify({ locked, noTime, noShow }) };
+  return {
+    "planNG.verdicts": JSON.stringify({
+      locked: Object.fromEntries(Object.entries(locked).map(([slug, key]) => [inJerusalem(slug), key])),
+      noTime: noTime.map(inJerusalem),
+      noShow: noShow.map(inJerusalem),
+    }),
+  };
 }
 
 // The answers to the preference questions, as the page stores them. Only the
 // fields a case actually states are seeded; the page fills the rest with the
 // defaults a first visit gets.
 function jerusalemPrefs(overrides = {}) {
-  return { "jerusalemPlan.prefs": JSON.stringify(overrides) };
+  const { d0, d1, interests, ...rest } = overrides;
+  const prefs = { ...rest };
+  if (interests) prefs.interests = interests.map(inJerusalem);
+  if (d0 || d1) {
+    prefs.windows = {
+      [JERUSALEM_EDITION]: {
+        from: JERUSALEM_NIGHTS[(d0 || 1) - 1],
+        to: JERUSALEM_NIGHTS[(d1 || JERUSALEM_NIGHTS.length) - 1],
+      },
+    };
+  }
+  return { "planNG.prefs": JSON.stringify(prefs) };
+}
+
+// Where the reader said they are coming from, as the page stores it.
+function plannerOrigin(origin) {
+  return { "planNG.origin": JSON.stringify(origin) };
 }
 
 // Every meal switched on, at the page's own default hours — what the "three
@@ -287,6 +320,24 @@ async function planReady(page) {
 // The festival planner is ready once the programme has landed (the board has
 // either its browse list or its lanes) and the page's scripts have put the
 // version in the footer popup.
+// The festival planner focused on a festival that may have no programme yet:
+// its theme is on the page and its calendar has a column per day. A festival
+// with a programme wants jerusalemReady (or its like) as well.
+async function plannerReady(page, festivalId) {
+  await page.waitForSelector(`html[data-festival="${festivalId}"]`, { state: "attached", timeout: 20000 });
+  await page.waitForSelector("#schedule .sch-day", { state: "attached", timeout: 20000 });
+  await page.waitForFunction(() => {
+    const pop = document.querySelector("#footerVersion .version-pop");
+    return pop && pop.textContent.includes("v0.0.0-spec");
+  }, { timeout: 20000 });
+  await settle(page);
+}
+
+// The calendar's days, first to last, as ISO dates.
+function calendarDays(page) {
+  return page.$$eval("#schedule .sch-day", (cols) => cols.map((c) => c.dataset.date));
+}
+
 async function jerusalemReady(page) {
   // `attached`, not `visible`: the browse list and the grid are the board's two
   // states and exactly one of them is on screen, so a visibility wait on both
@@ -466,6 +517,11 @@ module.exports = {
   jerusalemVerdicts,
   jerusalemPrefs,
   jerusalemMeals,
+  plannerOrigin,
+  plannerReady,
+  calendarDays,
+  JERUSALEM,
+  JERUSALEM_EDITION,
   openDrawer,
   clickStackBand,
   JERUSALEM_STARRED,

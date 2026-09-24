@@ -1144,7 +1144,7 @@ in one translations file that carries, per key, the width its slot can afford.
 
 - `19.9` Every language's page is served already in that language, before any script runs.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planJerusalem/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planJerusalem/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planJerusalem/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planJerusalem/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Language</th><th align="left">html lang</th><th align="left">Direction</th></tr></thead><tbody><tr><td>/planNG/</td><td>English</td><td>en</td><td>ltr</td></tr><tr><td>/planNG/he/</td><td>עברית</td><td>he</td><td>rtl</td></tr><tr><td>/planNG/ru/</td><td>Русский</td><td>ru</td><td>ltr</td></tr><tr><td>/planNG/ja/</td><td>日本語</td><td>ja</td><td>ltr</td></tr></tbody></table> <!-- req-gallery:19.9 -->
 
   <details><summary>Notes</summary>
 
@@ -1482,7 +1482,7 @@ reached from there.
 
 - `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the focused one lit.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.1 -->
+  ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1494,7 +1494,7 @@ reached from there.
 
 - `23.2` Choosing a festival on the timeline sets the period to its run plus a day either side.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.2 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.2 -->
 
   <details><summary>Notes</summary>
 
@@ -1505,7 +1505,7 @@ reached from there.
 
 - `23.3` The period extends a day at a time from either end of the calendar.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.3 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1517,7 +1517,7 @@ reached from there.
 
 - `23.4` A festival joins the pool only when its city is within reach of the focused festival's.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.4 -->
+  <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
 
   <details><summary>Notes</summary>
 
@@ -1529,11 +1529,11 @@ reached from there.
 
 - `23.5` A festival left out for being out of reach is named on the page, never dropped silently.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.5 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
 - `23.6` The page takes the focused festival's theme: its name, its wordmark and its palette.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.6 -->
+  ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
   <details><summary>Notes</summary>
 
@@ -1551,11 +1551,11 @@ needs a bed and a train, and one from abroad needs the airport too.
 
 - `24.1` The first time a festival is chosen, the page asks where you are coming from.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.1 -->
+  ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
 
 - `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.2 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:24.2 -->
 
   <details><summary>Notes</summary>
 
@@ -1566,7 +1566,7 @@ needs a bed and a train, and one from abroad needs the airport too.
 
 - `24.3` "Use my location" answers the question from the device's position.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.3 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:24.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1577,7 +1577,7 @@ needs a bed and a train, and one from abroad needs the airport too.
 
 - `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.4 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:24.4 -->
 
 ## 25. Never a list of thousands
 
@@ -1587,11 +1587,18 @@ constants live in `site/shared/limits.js`.
 
 - `25.1` A list draws at most a page of rows, and above a threshold it asks for a search first.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:25.1 -->
+  <table><thead><tr><th align="left">Items</th><th align="left">Query</th><th align="left">Pages asked for</th><th align="left">Rows drawn</th><th align="left">Held back</th><th align="left">Asks for a search</th></tr></thead><tbody><tr><td>34</td><td>none</td><td>1</td><td>34</td><td>0</td><td>no</td></tr><tr><td>100</td><td>none</td><td>1</td><td>100</td><td>0</td><td>no</td></tr><tr><td>101</td><td>none</td><td>1</td><td>0</td><td>101</td><td>yes</td></tr><tr><td>3000</td><td>none</td><td>1</td><td>0</td><td>3000</td><td>yes</td></tr><tr><td>3000</td><td>typed</td><td>1</td><td>200</td><td>2800</td><td>no</td></tr><tr><td>3000</td><td>typed</td><td>2</td><td>400</td><td>2600</td><td>no</td></tr><tr><td>150</td><td>typed</td><td>1</td><td>150</td><td>0</td><td>no</td></tr></tbody></table> <!-- req-gallery:25.1 -->
+
+  <details><summary>Notes</summary>
+
+  The same cap holds for the answers a question offers: past `PICK_CHIPS` the
+  kinds a pooled period offers wait behind one "more kinds" chip, the focused
+  festival's own kinds first, and a kind already chosen is always shown.
+  </details>
 
 - `25.2` The timeline draws one bar per edition, however many performances the edition has.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:25.2 -->
+  <table><thead><tr><th align="left">Festival</th><th align="left">Edition</th><th align="left">Runs</th><th align="left">Programme</th><th align="left">Bars on the timeline</th></tr></thead><tbody><tr><td>Jerusalem Comedy Festival</td><td>2026</td><td>18 – 22 Oct 2026</td><td>published</td><td>1</td></tr><tr><td>Haifa International Film Festival</td><td>2026</td><td>25 Sep – 3 Oct 2026</td><td>not yet</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2026</td><td>7 – 31 Aug 2026</td><td>published</td><td>1</td></tr><tr><td>A Fringe-sized festival</td><td>2025</td><td>1 – 25 Aug 2025</td><td>published</td><td>0 (before the year shown)</td></tr></tbody></table> <!-- req-gallery:25.2 -->
 
 ---
 
@@ -1609,7 +1616,7 @@ page cannot be added to the site and forgotten here.
 
 - `22.1` The sitemap lists every page the site publishes for a reader.
 
-  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planJerusalem/</td><td>planJerusalem/index.html</td></tr><tr><td>/planJerusalem/he/</td><td>planJerusalem/he/index.html</td></tr><tr><td>/planJerusalem/ja/</td><td>planJerusalem/ja/index.html</td></tr><tr><td>/planJerusalem/ru/</td><td>planJerusalem/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
+  <table><thead><tr><th align="left">URL</th><th align="left">Served from</th></tr></thead><tbody><tr><td>/</td><td>index.html</td></tr><tr><td>/accessibility.html</td><td>accessibility.html</td></tr><tr><td>/plan/</td><td>plan/index.html</td></tr><tr><td>/planNG/</td><td>planNG/index.html</td></tr><tr><td>/planNG/he/</td><td>planNG/he/index.html</td></tr><tr><td>/planNG/ja/</td><td>planNG/ja/index.html</td></tr><tr><td>/planNG/ru/</td><td>planNG/ru/index.html</td></tr><tr><td>/privacy.html</td><td>privacy.html</td></tr><tr><td>/terms.html</td><td>terms.html</td></tr></tbody></table> <!-- req-gallery:22.1 -->
 
   <details><summary>Notes</summary>
 
@@ -1661,4 +1668,4 @@ page cannot be added to the site and forgotten here.
 
 - `22.5` Every `/planJerusalem/` address, in every language, moves permanently to the same place under `/planNG/`.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:22.5 -->
+  <table><thead><tr><th align="left">Old address</th><th align="left">Moves to</th><th align="left">Status</th></tr></thead><tbody><tr><td>/planJerusalem</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/</td><td>/planNG/</td><td>301</td></tr><tr><td>/planJerusalem/he/</td><td>/planNG/he/</td><td>301</td></tr><tr><td>/planJerusalem/ru/</td><td>/planNG/ru/</td><td>301</td></tr><tr><td>/planJerusalem/ja/</td><td>/planNG/ja/</td><td>301</td></tr></tbody></table> <!-- req-gallery:22.5 -->

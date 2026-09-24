@@ -302,13 +302,10 @@ fs.writeFileSync(
   ]) + "\n"
 );
 
-// ------------------------------------------------- jerusalem fixtures --
-// Copied verbatim, no cast and no ADJUST: the whole festival is 34 shows and
-// 47 performances, which is smaller than any selection worth making, and the
-// spec's Part V asserts the real programme rather than a sample of it. The
-// copy is still made HERE rather than read live, because the freeze is what
-// stops a re-scrape moving a golden.
-write("jerusalem/shows.json", read("site/data/jerusalem/shows.json"));
+// ------------------------------------------------- festival fixtures --
+// The festival planner's fixtures (the registry and its edition blocks) have a
+// builder of their own, build-festival-fixtures.js: they are frozen from a
+// different generator's output and re-cast on a different occasion.
 
 console.log("\nCast summary:");
 console.log("  Now:", NOW_SLUGS.join(", "));

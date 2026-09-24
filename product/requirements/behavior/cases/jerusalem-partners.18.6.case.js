@@ -3,11 +3,11 @@ const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-
 
 module.exports = {
   description: "the bed link: Booking.com's Hebrew edition, Jerusalem, shekels, the window's own nights",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   localStorage: jerusalemStarred(),
   async verify(page, { origin, assert }) {
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
 
     // Asserted as a URL, never followed — the partner is a real booking site.
@@ -18,15 +18,16 @@ module.exports = {
     assert.equal(url.searchParams.get("ss"), "Jerusalem");
     assert.equal(url.searchParams.get("selected_currency"), "ILS");
 
-    // The nights are the date window's, not the festival's: narrow the window
-    // and the link has to follow it.
-    assert.equal(url.searchParams.get("checkin"), "2026-10-18");
-    assert.equal(url.searchParams.get("checkout"), "2026-10-22");
+    // The nights are the date window's, not the festival's — which opens on
+    // the run and a day either side (23.2) — so narrow the window and the link
+    // has to follow it.
+    assert.equal(url.searchParams.get("checkin"), "2026-10-17");
+    assert.equal(url.searchParams.get("checkout"), "2026-10-23");
     await page.locator(".sch-dateedge--start").focus();
     await page.keyboard.press("ArrowRight");
     await settle(page);
     const moved = new URL(await page.locator(".trip-link").first().getAttribute("href"));
-    assert.equal(moved.searchParams.get("checkin"), "2026-10-19");
+    assert.equal(moved.searchParams.get("checkin"), "2026-10-18");
 
     // A partner link is disclosed as one.
     assert.equal(await page.locator(".trip-link").first().getAttribute("rel"), "sponsored noopener noreferrer");

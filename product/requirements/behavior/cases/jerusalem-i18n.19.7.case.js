@@ -6,11 +6,11 @@ const REPO = path.join(__dirname, "..", "..", "..", "..");
 
 module.exports = {
   description: "the page speaks the language its URL names, whatever the device asks for and whatever was visited before",
-  page: "/planJerusalem/",
+  page: "/planNG/",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
     const { LOCALES, DEFAULT_LOCALE, STRINGS } = await import(
-      path.join(REPO, "site/planJerusalem/i18n/translations.js")
+      path.join(REPO, "site/planNG/i18n/translations.js")
     );
 
     // A device that asks for Hebrew, for the whole case: the page must not
@@ -22,7 +22,7 @@ module.exports = {
     `);
 
     for (const { code, dir } of LOCALES) {
-      const url = code === DEFAULT_LOCALE ? "/planJerusalem/" : `/planJerusalem/${code}/`;
+      const url = code === DEFAULT_LOCALE ? "/planNG/" : `/planNG/${code}/`;
       await page.goto(`${origin}${url}`, { waitUntil: "load" });
       await jerusalemReady(page);
 
@@ -31,7 +31,7 @@ module.exports = {
       assert.equal(await page.inputValue("#langSelect"), code, `${url}: the picker agrees with the URL`);
       assert.equal(
         (await page.textContent("#pageTitle")).trim(),
-        STRINGS["festival.title"][code],
+        STRINGS["festival.title"][code].replace("{festival}", STRINGS["fest.jerusalem-comedy.name"][code]),
         `${url}: the page reads in that language rather than just declaring it`
       );
 
@@ -48,12 +48,12 @@ module.exports = {
 
     // And back to the bare URL last, with Hebrew both on the device and in the
     // page just visited: still English.
-    await page.goto(`${origin}/planJerusalem/`, { waitUntil: "load" });
+    await page.goto(`${origin}/planNG/`, { waitUntil: "load" });
     await jerusalemReady(page);
     assert.equal(await page.getAttribute("html", "lang"), DEFAULT_LOCALE);
     assert.equal(
       (await page.textContent("#pageTitle")).trim(),
-      STRINGS["festival.title"][DEFAULT_LOCALE]
+      STRINGS["festival.title"][DEFAULT_LOCALE].replace("{festival}", STRINGS["fest.jerusalem-comedy.name"][DEFAULT_LOCALE])
     );
   },
 };
