@@ -51,6 +51,10 @@ const ALLOWED_INPUTS = new Map([
   ['data/festivals/jerusalem-comedy/2026/comedy-festival-site/programme.json', 'scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py'],
   ['data/festivals/jerusalem-comedy/2026/nominatim/manifest.json', 'scraper/festivals/jerusalem/sources/nominatim/fetch.py'],
   ['data/festivals/jerusalem-comedy/2026/nominatim/geocode.json', 'scraper/festivals/jerusalem/sources/nominatim/fetch.py'],
+  ['data/festivals/acco/2026/acco-tc/manifest.json', 'scraper/festivals/acco/sources/acco-tc/fetch.py'],
+  ['data/festivals/acco/2026/acco-tc/programme.json', 'scraper/festivals/acco/sources/acco-tc/fetch.py'],
+  ['data/festivals/acco/2026/street-programme/manifest.json', 'scraper/festivals/acco/sources/street-programme/fetch.py'],
+  ['data/festivals/acco/2026/street-programme/programme.json', 'scraper/festivals/acco/sources/street-programme/fetch.py'],
 ]);
 
 // Committed files under the data trees written by a generator in this repo that
@@ -64,6 +68,7 @@ const ALLOWED_OUTPUTS = new Map([
   ['site/data/jerusalem/shows.json', 'scraper/convert/to_serving.py'],
   ['site/data/festivals/index.json', 'scraper/convert/to_serving.py'],
   ['site/data/festivals/jerusalem-comedy/2026.json', 'scraper/convert/to_serving.py'],
+  ['site/data/festivals/acco/2026.json', 'scraper/convert/to_serving.py'],
 ]);
 
 // The bulky raw scrape caches are git-ignored (`.gitignore`) precisely because
