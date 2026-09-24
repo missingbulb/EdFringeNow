@@ -1,0 +1,83 @@
+# The Edinburgh Festival Fringe: its identity, its editions, and where its data
+# comes from. Every key follows the contract in scraper/festivals/README.md.
+#
+# Unlike the other festivals here, Edinburgh's data is not assembled by this
+# layer's converter. Its own pipeline — scraper/normalize.py, fed by the three
+# fetchers named below and run by the site's scheduled refreshes — writes the
+# wire files the Now page and the Fringe planner read, and the festival
+# planner reads those same files through an adapter
+# (site/shared/festival-catalogue.js). So each edition is `format =
+# "edfringe-wire"`: the registry lists it and points at the files in [wire],
+# and to_serving.py writes nothing for it. The sources below are the same
+# roles every festival's sources play, mapped onto the scripts that play them.
+
+id = "edfringe"
+name = "Edinburgh Festival Fringe"
+city = "Edinburgh"
+country = "GB"
+# Edinburgh's city centre, for the timeline and the travel maths between
+# cities. Venues carry their own coordinates.
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "fringe"
+default_genre = "other"
+site = "https://www.edfringe.com"
+
+[ticketing]
+notes = "Sold through edfringe.com's box office, with a price per performance: previews are cheaper and weekends dearer. Availability moves through the festival and is refreshed from the box office."
+
+[[edition]]
+id = "2026"
+format = "edfringe-wire"
+# ordinal: not given here; nothing we fetch states it.
+# The festival's own run. A handful of shows play before it opens (previews
+# from 3 Aug, a few exhibitions from July); the planner's period reaches them
+# by extending a day at a time.
+first = "2026-08-07"
+last = "2026-08-31"
+
+# The committed files an edfringe-wire edition is served from, and the script
+# that writes them. Paths are from the repo root.
+[wire]
+catalogue = "site/data/normalized/shows.min.json"
+lookups = "site/data/venues.json"
+availability = "site/data/normalized/availability.min.json"
+converter = "scraper/normalize.py"
+
+# The listing: every show, its venue and room, its genre and every performance.
+[[source]]
+id = "edfringe-listing"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "../../fetch_shows.py"
+
+# Ticket prices, fetched once per performance: a show's price bands are set
+# when it goes on sale.
+[[source]]
+id = "edfringe-prices"
+kind = "fetched"
+roles = ["prices"]
+required = false
+fetcher = "../../fetch_prices.py"
+
+# Ticket availability per performance, the one thing that moves through the day.
+[[source]]
+id = "edfringe-tickets"
+kind = "fetched"
+roles = ["availability"]
+required = false
+fetcher = "../../refresh_ticket_status.py"
+
+# Hand research on the biggest venue complexes: rooms, seats, layout, a URL per
+# figure. Not yet part of the wire files; kept here as the same curated shape
+# every other festival's venues take.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = false
+path = "curated/venues.json"

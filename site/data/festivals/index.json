@@ -21,7 +21,37 @@
      "ordinal": null,
      "firstDate": "2026-09-27",
      "lastDate": "2026-10-01",
+     "format": "block",
      "dataUrl": "/data/festivals/acco/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "edfringe",
+   "name": "Edinburgh Festival Fringe",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "fringe",
+   "defaultGenre": "other",
+   "site": "https://www.edfringe.com",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-31",
+     "format": "edfringe-wire",
+     "dataUrl": "/data/normalized/shows.min.json",
+     "wire": {
+      "lookups": "/data/venues.json",
+      "availability": "/data/normalized/availability.min.json"
+     }
     }
    ]
   },
@@ -45,6 +75,7 @@
      "ordinal": 42,
      "firstDate": "2026-09-25",
      "lastDate": "2026-10-03",
+     "format": "block",
      "dataUrl": "/data/festivals/haifa-iff/2026.json"
     }
    ]
@@ -69,6 +100,7 @@
      "ordinal": null,
      "firstDate": "2026-10-18",
      "lastDate": "2026-10-22",
+     "format": "block",
      "dataUrl": "/data/festivals/jerusalem-comedy/2026.json"
     }
    ]

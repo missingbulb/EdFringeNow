@@ -34,6 +34,12 @@ GENRES = ("film", "comedy", "theatre", "dance", "music", "family", "talk", "othe
 
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 EDITION_RE = re.compile(r"^\d{4}$")
+# How an edition reaches the browser. "block": this layer's converter writes its
+# serving block under site/data/festivals/. "edfringe-wire": the Edinburgh
+# Fringe's own pipeline (scraper/normalize.py) writes the files named in the
+# festival's [wire] table, and the browser adapts those (site/shared/festival-catalogue.js).
+FORMATS = ("block", "edfringe-wire")
+WIRE_KEYS = ("catalogue", "lookups", "availability", "converter")
 
 _REQUIRED_FESTIVAL_KEYS = (
     "id", "name", "city", "country", "lat", "lng", "timezone",
@@ -85,6 +91,21 @@ def _check(festival, path):
         if ed["first"] > ed["last"]:
             raise RegistryError("%s: edition %s ends before it starts" % (where, ed["id"]))
         ed.setdefault("ordinal", None)
+        if ed.get("format") not in FORMATS:
+            # Explicit, never defaulted: which pipeline serves an edition is a
+            # decision, not something absence should imply.
+            raise RegistryError("%s: edition %s format must be one of %s" % (where, ed["id"], FORMATS))
+
+    wire = any(ed["format"] == "edfringe-wire" for ed in editions)
+    if wire:
+        table = festival.get("wire") or {}
+        missing = [k for k in WIRE_KEYS if not table.get(k)]
+        if missing:
+            raise RegistryError("%s: an edfringe-wire edition needs [wire] %s" % (where, ", ".join(missing)))
+        for key in ("catalogue", "lookups", "availability"):
+            if not table[key].startswith("site/"):
+                raise RegistryError("%s: [wire] %s must be a file under site/, the web root" % (where, key))
+    block = any(ed["format"] == "block" for ed in editions)
 
     sources = festival.get("source") or []
     if not sources:
@@ -104,7 +125,9 @@ def _check(festival, path):
         roles = src.get("roles") or []
         if not roles or any(r not in SECTIONS for r in roles):
             raise RegistryError("%s: source %s roles %r must be a non-empty subset of %s" % (where, sid, roles, SECTIONS))
-        if not src.get("adapter"):
+        if block and not src.get("adapter"):
+            # A wire-format festival's sources are converted by its [wire]
+            # converter, not by an adapter of this layer.
             raise RegistryError("%s: source %s names no adapter" % (where, sid))
         if src["kind"] == "fetched" and not src.get("fetcher"):
             raise RegistryError("%s: fetched source %s names no fetcher" % (where, sid))
