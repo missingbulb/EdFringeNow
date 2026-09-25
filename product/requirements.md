@@ -1988,6 +1988,35 @@ The draft plans around all of it.
   The hours are the table's; a day that already has that meal gets a snack
   instead, so a second click at lunchtime does not make a second lunch.
 
+- `28.9` A flight's block in the calendar asks how you get between the airport and town: a taxi or transfer, the train, or a hire car, each with where to book it.
+
+  ![jerusalem-ground.28.9](requirements/screen/cases/jerusalem-ground.28.9.png) <!-- req-gallery:28.9 -->
+
+  <details><summary>Notes</summary>
+
+  The taxi and the train link to the same partners the trip's travel block
+  offers (section 27); a hire car opens a map search for car hire at the
+  airport, since no hire partner is signed up.
+  </details>
+
+- `28.10` The answer covers both ends of the trip: both flight blocks name it, and it is still there after a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.10 -->
+
+- `28.11` What a car changes: driving becomes the suggested way between shows, and a festival up to 250 km away counts as a day trip instead of 160 km.
+
+  🔧 _Logic leaf._ <!-- req-gallery:28.11 -->
+
+  <details><summary>Notes</summary>
+
+  A car is one you drove there yourself (section 24) or hire at the airport.
+  The table is the whole rule.
+  </details>
+
+- `28.12` Hiring a car suggests driving between shows, marked as suggested; a way of getting around you chose yourself stays yours.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.12 -->
+
 ## 31. Holidays at home
 
 The trip's dates are the reader's, and the days they can most easily take off
