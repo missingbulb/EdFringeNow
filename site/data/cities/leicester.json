@@ -1,0 +1,987 @@
+{
+ "v": 1,
+ "city": {
+  "id": "leicester",
+  "name": "Leicester",
+  "country": "GB",
+  "lat": 52.6365,
+  "lng": -1.1339,
+  "timezone": "Europe/London"
+ },
+ "places": [
+  {
+   "id": "osm:way/89673799",
+   "name": "Leicester Museum and Art Gallery",
+   "kind": "museum",
+   "lat": 52.628948,
+   "lng": -1.127924,
+   "address": "53 New Walk, LE1 7EA",
+   "website": "https://www.leicestermuseums.org/museum-art-gallery/",
+   "wikidata": "Q7012302",
+   "wikipedia": "en:Leicester Museum & Art Gallery",
+   "description": "Museum in Leicester, England, United Kingdom",
+   "image": "New Walk Museum main entrance.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "Mo-Fr 11:00-16:30; Sa,Su 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/210140560",
+   "name": "National Space Centre",
+   "kind": "museum",
+   "lat": 52.653744,
+   "lng": -1.132284,
+   "address": "Exploration Drive, LE4 5NS",
+   "website": "https://www.spacecentre.co.uk/",
+   "wikidata": "Q3873189",
+   "wikipedia": "en:National Space Centre",
+   "description": "space (and aerospace) museum in Belgrave, Leicester",
+   "image": "National Space Centre, Leicester. - geograph.org.uk - 70250.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/4406183",
+   "name": "Abbey Park",
+   "kind": "park",
+   "lat": 52.646505,
+   "lng": -1.134751,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4664047",
+   "wikipedia": "en:Abbey Park, Leicester",
+   "description": "public park in Leicester, England, UK",
+   "image": "Abbey Park Leicester entrance gate.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/30889327",
+   "name": "Leicester Abbey",
+   "kind": "landmark",
+   "lat": 52.648691,
+   "lng": -1.136995,
+   "address": "Abbey Park Road",
+   "website": null,
+   "wikidata": "Q1980614",
+   "wikipedia": "en:Leicester Abbey",
+   "description": "Grade I listed building in Leicester, Leicestershire, England, UK",
+   "image": "Abbeyruins Leicester.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1095946531",
+   "name": "Arch of Remembrance",
+   "kind": "landmark",
+   "lat": 52.623429,
+   "lng": -1.121505,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17528573",
+   "wikipedia": "en:Arch of Remembrance",
+   "description": "war memorial in Leicester, Leicestershire, England, UK",
+   "image": "War Memorial Leicester, Summer 2009.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2141462574",
+   "name": "Greyfriars Church",
+   "kind": "landmark",
+   "lat": 52.634013,
+   "lng": -1.136357,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5608365",
+   "wikipedia": "en:Greyfriars, Leicester",
+   "description": "Franciscan friary and original burial place of Richard III of England",
+   "image": "Greyfriars, Leicester site.svg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/152597818",
+   "name": "Jewry Wall",
+   "kind": "landmark",
+   "lat": 52.635067,
+   "lng": -1.141082,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6190177",
+   "wikipedia": "en:Jewry Wall",
+   "description": "Grade I listed structure in Leicester, England, UK",
+   "image": "Jewry Wall (closeup).jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13615732514",
+   "name": "Leicester Market",
+   "kind": "market",
+   "lat": 52.634281,
+   "lng": -1.13381,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6519199",
+   "wikipedia": "en:Leicester Market",
+   "description": "building in Leicester, City of Leicester, England, UK",
+   "image": "Leicester Market 2009.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/3073927",
+   "name": "Victoria Park",
+   "kind": "park",
+   "lat": 52.622661,
+   "lng": -1.119196,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7926914",
+   "wikipedia": "en:Victoria Park, Leicester",
+   "description": "public park in Leicester, Leicestershire, England, UK",
+   "image": "Victoria Park Leicester from Queens Road.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/302717390",
+   "name": "Abbey Pumping Station",
+   "kind": "museum",
+   "lat": 52.654764,
+   "lng": -1.130777,
+   "address": "Corporation Road, LE4 5PX",
+   "website": "https://www.leicestermuseums.org/abbey-pumping-station/",
+   "wikidata": "Q4664048",
+   "wikipedia": null,
+   "description": "Local Authority Museum in the East Midlands, United Kingdom",
+   "image": "Abbey Pumping station.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Feb-Oct 11:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "02-01",
+       "10-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/233818601",
+   "name": "Clock Tower",
+   "kind": "landmark",
+   "lat": 52.636231,
+   "lng": -1.133064,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5686993",
+   "wikipedia": "en:Haymarket Memorial Clock Tower",
+   "description": "clock tower in City of Leicester, Leicestershire, England, UK",
+   "image": "Leicester clock tower May2010.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4374290",
+   "name": "Nelson Mandela Park",
+   "kind": "park",
+   "lat": 52.625806,
+   "lng": -1.131066,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6990627",
+   "wikipedia": "en:Nelson Mandela Park",
+   "description": "park in Leicester, England",
+   "image": "Nelson Mandela Park.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/117060069",
+   "name": "Newarke Houses Museum",
+   "kind": "museum",
+   "lat": 52.631662,
+   "lng": -1.139115,
+   "address": "The Newarke, LE2 7BY",
+   "website": "https://www.leicestermuseums.org/newarke-houses/",
+   "wikidata": "Q4328344",
+   "wikipedia": "en:Newarke Houses Museum",
+   "description": "Public museum in Leicester, England, United Kingdom",
+   "image": "Newarke Houses Museum Leicester.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Mo-Sa 10:00-16:00; Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/20834051",
+   "name": "Belgrave Hall Museum",
+   "kind": "museum",
+   "lat": 52.65945,
+   "lng": -1.12508,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4882681",
+   "wikipedia": "en:Belgrave Hall",
+   "description": "Queen Anne-style Grade II* listed building in Belgrave, Leicester, England, UK",
+   "image": "Belgrave Hall Museum - geograph.org.uk - 492015.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/17835861",
+   "name": "Braunstone Park",
+   "kind": "park",
+   "lat": 52.625064,
+   "lng": -1.174851,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56599005",
+   "wikipedia": null,
+   "description": "public park",
+   "image": "Braunstone Park, Leicester - geograph.org.uk - 727083.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/52161324",
+   "name": "Magazine Gateway",
+   "kind": "landmark",
+   "lat": 52.631742,
+   "lng": -1.137909,
+   "address": "Southgates",
+   "website": null,
+   "wikidata": "Q6729752",
+   "wikipedia": "en:Magazine Gateway",
+   "description": "Grade I listed gatehouse in Leicester, United Kingdom",
+   "image": "Leicester Magazine Gateway west.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/18164380",
+   "name": "Watermead Country Park",
+   "kind": "park",
+   "lat": 52.681918,
+   "lng": -1.109167,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7974352",
+   "wikipedia": null,
+   "description": "north of Leicester",
+   "image": null,
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4406194",
+   "name": "Western Park",
+   "kind": "park",
+   "lat": 52.637334,
+   "lng": -1.179616,
+   "address": "LE3 6HX",
+   "website": "https://www.leicester.gov.uk/leisure-and-culture/parks-and-open-spaces/our-parks/western-park",
+   "wikidata": "Q7988147",
+   "wikipedia": "en:Western Park, Leicester",
+   "description": "park and surrounding suburb in Leicester and also a ward of the City of Leicester",
+   "image": null,
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/118693289",
+   "name": "Appleton Park",
+   "kind": "park",
+   "lat": 52.662197,
+   "lng": -1.09992,
+   "address": null,
+   "website": null,
+   "wikidata": "Q20972009",
+   "wikipedia": null,
+   "description": "park in the United Kingdom",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/13871458",
+   "name": "Bede Park",
+   "kind": "park",
+   "lat": 52.628937,
+   "lng": -1.145073,
+   "address": null,
+   "website": null,
+   "wikidata": "Q20972010",
+   "wikipedia": null,
+   "description": "park in the United Kingdom",
+   "image": "Bede Park Leicester.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/389759228",
+   "name": "Fosse Recreation Ground",
+   "kind": "park",
+   "lat": 52.636627,
+   "lng": -1.15496,
+   "address": null,
+   "website": null,
+   "wikidata": "Q20979068",
+   "wikipedia": null,
+   "description": "park in the United Kingdom",
+   "image": "Tablica informacyjna parku.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4406185",
+   "name": "Humberstone Park",
+   "kind": "park",
+   "lat": 52.639963,
+   "lng": -1.084069,
+   "address": null,
+   "website": null,
+   "wikidata": "Q42851190",
+   "wikipedia": "en:Humberstone Park LNR",
+   "description": "park in United Kingdom",
+   "image": "Humberstone Park LNR 6.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/315070039",
+   "name": "Jewry Wall Museum",
+   "kind": "museum",
+   "lat": 52.634937,
+   "lng": -1.141587,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6190175",
+   "wikipedia": "en:Jewry Wall Museum",
+   "description": "museum in Leicester, England, United Kingdom",
+   "image": "Jewry Wall ruins panorama 3.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/152646250",
+   "name": "Knighton Spinney",
+   "kind": "park",
+   "lat": 52.601691,
+   "lng": -1.107125,
+   "address": null,
+   "website": null,
+   "wikidata": "Q48805012",
+   "wikipedia": "en:Knighton Spinney",
+   "description": "park in United Kingdom",
+   "image": "Knighton Spinney 4.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1371843969",
+   "name": "The Humber Stone",
+   "kind": "landmark",
+   "lat": 52.657999,
+   "lng": -1.078668,
+   "address": null,
+   "website": null,
+   "wikidata": "Q133539234",
+   "wikipedia": null,
+   "description": "glacial boulder in Leicester, England",
+   "image": "The Humber Stone - Glacial Erratic - geograph.org.uk - 2239445.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/507417892",
+   "name": "Kirby Firth Nature Park",
+   "kind": "park",
+   "lat": 52.635517,
+   "lng": -1.202294,
+   "address": null,
+   "website": null,
+   "wikidata": "Q48802505",
+   "wikipedia": "en:Kirby Frith Nature Reserve",
+   "description": "local Nature Reserve in Leicester, United Kingdom",
+   "image": "Kirby Frith Nature Reserve 4.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/73813781",
+   "name": "Lucas Marsh",
+   "kind": "park",
+   "lat": 52.592247,
+   "lng": -1.084699,
+   "address": null,
+   "website": null,
+   "wikidata": "Q42314971",
+   "wikipedia": null,
+   "description": "park in United Kingdom",
+   "image": "Lucas Marsh 2.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/490173063",
+   "name": "Raw Dykes",
+   "kind": "landmark",
+   "lat": 52.61807,
+   "lng": -1.139352,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7296861",
+   "wikipedia": "en:Raw Dykes",
+   "description": "archaeological site in City of Leicester, Leicestershire, England, UK",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4426419",
+   "name": "Town Hall Square",
+   "kind": "park",
+   "lat": 52.633692,
+   "lng": -1.132202,
+   "address": null,
+   "website": null,
+   "wikidata": "Q20979621",
+   "wikipedia": null,
+   "description": "square in Leicester, United Kingdom",
+   "image": "Plac Town Hall Square.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4930684933",
+   "name": "Birstall War Memorial",
+   "kind": "landmark",
+   "lat": 52.674225,
+   "lng": -1.1187,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26676139",
+   "wikipedia": null,
+   "description": "memorial in Birstall, Charnwood, Leicestershire, England, UK",
+   "image": "War memorial, Birstall (geograph 7423256).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2699773743",
+   "name": "Evington War Memorial",
+   "kind": "landmark",
+   "lat": 52.621498,
+   "lng": -1.073347,
+   "address": null,
+   "website": "https://www.leicester.gov.uk/your-council-services/lc/growth-and-history/war-memorials/evington-village/",
+   "wikidata": "Q26677907",
+   "wikipedia": null,
+   "description": "war memorial in City of Leicester, Leicestershire, England, UK",
+   "image": "Evington War Memorial 2011.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/21243108",
+   "name": "Harold Martin Botanic Garden",
+   "kind": "garden",
+   "lat": 52.607302,
+   "lng": -1.091787,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3258121169",
+   "name": "King Richard III Visitor Centre",
+   "kind": "museum",
+   "lat": 52.634207,
+   "lng": -1.136103,
+   "address": "4A St Martins, LE1 5DB",
+   "website": "https://www.kriii.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr,Su 10:00-16:00; Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/534254291",
+   "name": "King William's Bridge",
+   "kind": "attraction",
+   "lat": 52.675444,
+   "lng": -1.17851,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17645629",
+   "wikipedia": null,
+   "description": "packhorse bridge in Anstey, Charnwood, Leicestershire, England, UK",
+   "image": "King Williams Bridge - geograph.org.uk - 4656797.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/296525801",
+   "name": "Leicester Market Food Hall",
+   "kind": "market",
+   "lat": 52.634698,
+   "lng": -1.133622,
+   "address": "33 Market Place, LE1 5GG",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 09:00-17:00; Su off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12546426569",
+   "name": "Museum of the Royal Leicestershire Regiment",
+   "kind": "museum",
+   "lat": 52.631766,
+   "lng": -1.138899,
+   "address": null,
+   "website": "https://royalleicestershireregiment.org.uk/the-regimental-museum",
+   "wikidata": "Q113369764",
+   "wikipedia": null,
+   "description": "museum in Leicester, England, United Kingdom",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/231328754",
+   "name": "National Gas Museum",
+   "kind": "museum",
+   "lat": 52.616533,
+   "lng": -1.141883,
+   "address": "195 Aylestone Road, LE2 7QJ",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Mo off; Tu-We 09:30-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/173697306",
+   "name": "Packhorse Bridge",
+   "kind": "attraction",
+   "lat": 52.670976,
+   "lng": -1.185381,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17534232",
+   "wikipedia": null,
+   "description": "bridge in Anstey, Leicestershire, England, UK",
+   "image": "189065 Leicester Pack Horse Bridge 1.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/451113856",
+   "name": "Pets Corner",
+   "kind": "zoo",
+   "lat": 52.64972,
+   "lng": -1.138909,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/705792562",
+   "name": "Retro Computer Museum",
+   "kind": "museum",
+   "lat": 52.663884,
+   "lng": -1.090568,
+   "address": "Unit Q Humberstone Lane, LE4 9HA",
+   "website": "https://retrocomputermuseum.co.uk",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4163124589",
+   "name": "Robert Hall",
+   "kind": "landmark",
+   "lat": 52.628146,
+   "lng": -1.125082,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26478728",
+   "wikipedia": null,
+   "description": "statue in City of Leicester, Leicestershire, England, UK",
+   "image": "Robert Hall statue detail.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1187545727",
+   "name": "Stoughton Grange Farm Park",
+   "kind": "zoo",
+   "lat": 52.614234,
+   "lng": -1.070969,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-09-25T14:22:24Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  },
+  "wikidata": {
+   "fetchedAt": "2026-09-25T14:23:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  }
+ }
+}

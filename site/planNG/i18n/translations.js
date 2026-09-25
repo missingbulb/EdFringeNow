@@ -750,6 +750,15 @@ export const STRINGS = {
     ru: "Любая площадка",
     ja: "すべての会場",
   },
+  "search.moreKinds": {
+    probe: "#ssfGenreOptions",
+    maxWidthPx: 560,
+    sample: { count: 18 },
+    en: "{count, plural, one {# more kind} other {# more kinds}} — type one in the search to find it.",
+    he: "{count, plural, one {עוד סוג אחד} two {עוד # סוגים} other {עוד # סוגים}} — הקלידו אותו בחיפוש כדי למצוא.",
+    ru: "{count, plural, one {Ещё # жанр} few {Ещё # жанра} many {Ещё # жанров} other {Ещё # жанра}} — введите его в поиске.",
+    ja: "ほか{count}ジャンル — 検索に入力してください。",
+  },
   "search.moreVenues": {
     probe: "#ssfVenueOptions",
     maxWidthPx: 560,

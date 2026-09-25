@@ -1,0 +1,14 @@
+{
+ "city": "auckland",
+ "source": "osm",
+ "fetchedAt": "2026-09-25T14:11:43Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://overpass-api.de/api/interpreter"
+ ],
+ "files": [
+  "places.json"
+ ],
+ "notes": "One Overpass query: [out:json][timeout:180];(nwr(around:8000,-36.8485,174.7633)[\"tourism\"~\"^(museum|gallery|zoo|aquarium|theme_park|viewpoint)$\"][\"name\"];nwr(around:8000,-36.8485,174.7633)[\"tourism\"=\"attraction\"][\"name\"][\"wikidata\"];nwr(around:8000,-36.8485,174.7633)[\"leisure\"=\"garden\"][\"name\"][\"wikidata\"];nwr(around:8000,-36.8485,174.7633)[\"leisure\"=\"garden\"][\"name\"][\"opening_hours\"];nwr(around:8000,-36.8485,174.7633)[\"leisure\"~\"^(park|nature_reserve)$\"][\"name\"][\"wikidata\"];nwr(around:8000,-36.8485,174.7633)[\"amenity\"=\"marketplace\"][\"name\"];nwr(around:8000,-36.8485,174.7633)[\"historic\"~\"^(castle|palace|monument|memorial|ruins|church|cathedral|fort|city_gate|archaeological_site)$\"][\"name\"][\"wikidata\"];nwr(around:8000,-36.8485,174.7633)[\"building\"~\"^(cathedral|church)$\"][\"name\"][\"wikidata\"][\"tourism\"];);out center tags;"
+}

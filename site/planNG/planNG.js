@@ -2318,14 +2318,28 @@ function closeSearch() {
 
 function buildFacets() {
   const genreOptions = $("ssfGenreOptions");
-  genreOptions.innerHTML = state.catalogue.categories
-    .map(
-      (c) =>
-        `<label class="panel-option"><input type="checkbox" data-facet="genre" value="${escapeHtml(c.slug)}" />` +
-        `<span>${foreign(c.name, c.slug)}</span>` +
-        `<span class="opt-count">${state.catalogue.shows.filter((s) => s.genreSlug === c.slug).length}</span></label>`
-    )
-    .join("");
+  const perKind = new Map();
+  for (const show of state.catalogue.shows) perKind.set(show.genreSlug, (perKind.get(show.genreSlug) || 0) + 1);
+  // Capped like the venues below: pooling several festivals brings dozens of
+  // kinds, the busiest make the cut and the query matches the rest by name.
+  const rankedKinds = [...state.catalogue.categories].sort(
+    (a, b) => (perKind.get(b.slug) || 0) - (perKind.get(a.slug) || 0) || a.name.localeCompare(b.name)
+  );
+  const kinds = capOptions(rankedKinds, (c) => state.search.genres.has(c.slug), FACET_OPTIONS);
+  const listedKinds = new Set(kinds.rows);
+  genreOptions.innerHTML =
+    state.catalogue.categories
+      .filter((c) => listedKinds.has(c))
+      .map(
+        (c) =>
+          `<label class="panel-option"><input type="checkbox" data-facet="genre" value="${escapeHtml(c.slug)}" />` +
+          `<span>${foreign(c.name, c.slug)}</span>` +
+          `<span class="opt-count">${perKind.get(c.slug) || 0}</span></label>`
+      )
+      .join("") +
+    (kinds.more
+      ? `<p class="panel-more" data-i18n-slot="search.moreKinds">${escapeHtml(t("search.moreKinds", { count: kinds.more }))}</p>`
+      : "");
   const venueOptions = $("ssfVenueOptions");
   // Only the venues the pool actually plays: a festival's venue list covers
   // every edition, and a venue with nothing on in the period is no filter.

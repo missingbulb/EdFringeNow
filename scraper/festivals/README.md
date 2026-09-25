@@ -89,6 +89,31 @@ the festival's folder, and they name no adapter).
   on committed or inline samples; `scripts/verify.sh` runs every
   `sources/*/parse.py --selftest` it finds.
 - Bump `FETCHER_VERSION` when the shape of the raw files changes.
+- Many requests go through `common.fetch_all` (`WORKERS` at a time, results in
+  order, any failure fails the run) and pages through `common.cached_page`, which
+  refetches a cached page older than `CACHE_MAX_AGE_SECONDS`; busy answers (429,
+  502–504) are retried with backoff, honouring `Retry-After`.
+
+### Shared platforms
+
+A ticketing or listings platform several festivals use is fetched by one module
+under `scraper/festivals/platforms/`, and each festival's `fetch.py` is a thin
+call into it; the matching generic adapter is under
+`scraper/convert/adapters/platforms/`, and the festival's own adapter adds only
+its vocabulary (genre names, what counts as public).
+
+| platform | module | festivals | carries |
+|---|---|---|---|
+| Eventotron (WordPress) | `eventotron.py` | Brighton Fringe, Leicester Comedy | events, performances, venues with coordinates, price bands, sold-out marks |
+| Spektrix public API v3 | `spektrix.py` | EIF, Book Festival | events, instances, venues, price lists, seats available of capacity |
+| Nominatim (OSM) | `nominatim.py` | any source with street addresses | coordinates for them, one request a second |
+
+### A placeholder festival
+
+A festival whose programme is not out yet, or whose source is not built, gets its
+`festival.toml` edition and a `fetch.py` that exits non-zero with the reason and
+what was probed (MICF, NZICF). Its edition converts to nothing and its registry
+`dataUrl` stays null until real raw exists.
 
 ## The converter's contract
 
@@ -148,11 +173,12 @@ through `site/shared/festival-catalogue.js`.
 ## Adding an edition
 
 1. Add its `[[edition]]` to `festival.toml` (year id, dates from the festival).
-2. Run each fetched source's `fetch.py --edition <year>` by hand; commit the new
-   `data/festivals/<festival>/<year>/` folders.
-3. `python3 scraper/convert/to_serving.py <festival> <year>`; commit the serving file
-   and `index.json`.
-4. Name every new raw and serving file, with its writer, in the
+2. Run each fetched source's `fetch.py --edition <year>` by hand, then
+   `python3 scraper/convert/to_serving.py <festival> <year>` — or both in one go
+   with `python3 scraper/festivals/collect.py <festival> <year>` (`--all` for every
+   edition). Commit the new `data/festivals/<festival>/<year>/` folders, the
+   serving file and `index.json`.
+3. Name every new raw and serving file, with its writer, in the
    `edfringe-data-dir-is-generator-output` allowlist.
 
 Earlier editions stay as they are and remain convertible from their own raw.

@@ -1,0 +1,3585 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "eiff",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Edinburgh International Film Festival",
+  "nameLocal": null,
+  "city": "Edinburgh",
+  "country": "GB",
+  "lat": 55.9533,
+  "lng": -3.1883,
+  "timezone": "Europe/London",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://www.edfilmfest.org",
+  "firstDate": "2026-08-13",
+  "lastDate": "2026-08-19",
+  "ticketing": {
+   "notes": "Sold on edfilmfest.org's own basket (and through the Fringe box office); prices per showing are published as price bands with a concession, plus a £1.25 booking fee per ticket capped at £5 an order. Seats left are published per showing; a sold-out showing shows no venue or price.",
+   "currency": "GBP"
+  }
+ },
+ "categories": [
+  {
+   "id": "documentary",
+   "name": "Documentary"
+  },
+  {
+   "id": "extra",
+   "name": "Extra"
+  },
+  {
+   "id": "feature",
+   "name": "Feature"
+  },
+  {
+   "id": "shorts",
+   "name": "Shorts"
+  },
+  {
+   "id": "special",
+   "name": "Special"
+  },
+  {
+   "id": "talk",
+   "name": "Talk"
+  }
+ ],
+ "venues": [
+  {
+   "id": "cameo",
+   "name": "Cameo Picturehouse",
+   "address": "38 Home Street, Edinburgh EH3 9LZ",
+   "lat": 55.9427844,
+   "lng": -3.2039269,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Listed by the festival as \"EIFF @ The Cameo\".",
+   "refs": [
+    "https://www.edfilmfest.org/venue/cameo-cinema/",
+    "https://www.openstreetmap.org/node/33178929"
+   ]
+  },
+  {
+   "id": "central-hall",
+   "name": "Central Hall",
+   "address": "2 West Tollcross, Edinburgh EH3 9BP",
+   "lat": 55.9438491,
+   "lng": -3.2042181,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The festival's In Conversation venue; no film screenings there.",
+   "refs": [
+    "https://www.edfilmfest.org/venue/tollcross-central-hall/",
+    "https://www.openstreetmap.org/node/1782966647"
+   ]
+  },
+  {
+   "id": "cineworld",
+   "name": "Cineworld Edinburgh",
+   "address": "130/3 Dundee Street, Fountain Park, Edinburgh",
+   "lat": 55.9412502,
+   "lng": -3.2182349,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The festival's venue page carries no address; the address is OpenStreetMap's.",
+   "refs": [
+    "https://www.openstreetmap.org/node/33184984"
+   ]
+  },
+  {
+   "id": "filmhouse",
+   "name": "Filmhouse",
+   "address": "88 Lothian Road, Edinburgh EH3 9BZ",
+   "lat": 55.9464558,
+   "lng": -3.2061597,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": [
+    "https://www.edfilmfest.org/venue/filmhouse/",
+    "https://www.openstreetmap.org/node/33179122"
+   ]
+  },
+  {
+   "id": "monkey-barrel-3",
+   "name": "Monkey Barrel Comedy 3",
+   "address": "12 Blair Street, Edinburgh EH1 1QR",
+   "lat": 55.9491515,
+   "lng": -3.1875766,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Coordinates are Blair Street's (no OpenStreetMap feature for MB3 itself).",
+   "refs": [
+    "https://www.edfilmfest.org/venue/monkey-barrel-3/",
+    "https://www.openstreetmap.org/way/2956309"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "90-minutes-or-less-podcast",
+   "title": "90 Minutes or Less Film Fest Podcast with Nish Kumar",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/90-minutes-or-less-podcast/",
+   "genre": "film",
+   "categories": [
+    "special"
+   ],
+   "blurb": "We are thrilled to host a conversation with special guest Nish Kumar, hosted by Sam Clements. Nish has picked Richard Linklater’s beloved 80-minute-long Before Sunset, starring Ethan Hawke and Julie Delpy, to discuss on stage and add to Sam’s fictional film festival. Join Sam and Nish at the iconic Edinburgh venue Monkey Barrel Comedy for",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/EIFF-Film-16x9-90-Minutes-Nish-300x169.jpg"
+  },
+  {
+   "id": "abandoned",
+   "title": "Abandoned",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/abandoned/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In an effort to recover their failing channel and friendship, two urban explorers delve deep into the forests of northern England following a tip-off from a new subscriber. After crashing their drone on top of an abandoned facility, they are compelled to venture deeper. Blending cinematic filmmaking with raw found-footage immediacy, Joby Stephens’ feature directorial debut effortlessly unsettles and scares in equal measure, permeating the screen with a quiet horror that lingers well after viewing. – Gavin Rankin",
+   "durationMin": 81,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Abandoned-300x200.webp"
+  },
+  {
+   "id": "ali-plumbs-untitled-film-quiz",
+   "title": "Ali Plumb’s Untitled Film Quiz Project",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/ali-plumbs-untitled-film-quiz/",
+   "genre": "film",
+   "categories": [
+    "extra"
+   ],
+   "blurb": "Join BBC Radio 1’s Ali Plumb for a gloriously chaotic movie quiz packed with out-of-context nonsense, absurd music rounds, fiendish film trivia and plenty of laughs. Whether you’re a casual cinemagoer or a certified movie obsessive, expect spot prizes, pop culture puzzles and the chance to prove your big-screen knowledge. This is the perfect night",
+   "durationMin": 180,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/54743187626_5a12286f13_c-1-300x200.jpg"
+  },
+  {
+   "id": "american-revolution-episode-2",
+   "title": "American Revolution – Episode 2",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/american-revolution-episode-2/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "When Ken Burns presents a history (The Civil War, Jazz, The Roosevelts etc) you know he has done his research. Here, building the narrative from the testimonies of soldiers, townspeople and statesmen, he reveals in impeccable detail how the United States of America was born. Using paintings and maps alongside re-enactments and the input of scholars from many perspectives, he invites us to listen to the participants, imagine the smells, feel the emotions of the enslaved and reflect on the strategies of native peoples. This is a visceral portrait far removed from dry text, giving context to current semiquincentennial celebrations. We are thrilled to welcome Ken Burns to present this episode on the big screen. – Maggi Hurt.",
+   "durationMin": 124,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-American-Revolution-Episode-2-300x203.webp"
+  },
+  {
+   "id": "animation-shorts-3",
+   "title": "Animation Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/animation-shorts-3/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "Imaginative, unsettling, inspiring. This collection of global animation explores human connection in distinct, memorable ways, acting as a powerful reminder of how the medium can surprise and challenge in every genre. – Jake Cunningham The screening at 13:30 at Cineworld Screen 2 on 17 August is a Relaxed Screening. Relaxed Screenings are designed for neurodivergent",
+   "durationMin": 120,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Animation-Shorts-300x169.webp"
+  },
+  {
+   "id": "bad-day-at-the-office",
+   "title": "Bad Day at the Office",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/bad-day-at-the-office/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Waking up in a strange hotel room with a dead body in the bathtub, police knocking at the door and no memory of the night before, Karl (John Hannah) is about to have a very bad day indeed. Enlisting the help of a sparky hotel maid (Radha Mitchell) he is forced to fight for his life whilst trying to piece together answers as they battle foe after foe across London. Shot in the style of first person shooter video games with cine-literate wit, humour, ferocious pacing and a cracking soundtrack, this is an anarchic, ultra-violent and hilarious thrill ride of pure, cinematic carnage. The ultimate Midnight Madness experience. – Emma Boa",
+   "durationMin": 106,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/06/Hero-Image-bad-day_1.1.15-300x169.jpg"
+  },
+  {
+   "id": "bel",
+   "title": "BEL",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/bel/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "A raw tribute celebrating the late Scottish-Kenyan singer and songwriter Beldina Odenyo. Revealing the fierce talent and struggles that shaped Bel’s short yet defiant life. Bel may be gone, but her story and her music survives. And for audiences discovering her now, the experience is unforgettable.",
+   "durationMin": 92,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/06/BEL-EIFF-PRESS-IMAGE-300x200.jpg"
+  },
+  {
+   "id": "bifa-podcast",
+   "title": "BIFA Podcast with John Hannah",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/bifa-podcast/",
+   "genre": "film",
+   "categories": [
+    "special"
+   ],
+   "blurb": "Join hosts Karis Aldridge and Joy Hunter as they sit down with John Hannah (The Mummy, Four Weddings and a Funeral, The Incomer and Bad Day at the Office, both premiering at EIFF 2026) to discuss his journey into the industry, the cinema experiences that shaped him, and why independent film continues to matter.",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/bifa-podcast-300x129.webp"
+  },
+  {
+   "id": "bodyhackers",
+   "title": "Bodyhackers",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/bodyhackers/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Intent on exposing the cosmetics industry for exploiting insecurities through unrealistic beauty standards, an environmental activist falls in love with a ballerina with her own obsession with unattainable beauty, becoming dangerously drawn into the world of underground plastic surgery. Director Carlos Conceicao’s English language debut is deliciously noir-ish body horror in the David Cronenberg mould; a sensual world of beauty and flesh, put under the microscope and the scalpel. – Sam Elder",
+   "durationMin": 83,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Bodyhackers-300x148.webp"
+  },
+  {
+   "id": "borges-and-me",
+   "title": "Borges and Me",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/borges-and-me/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In the early 1970s writer and student Jay Parini (Whitehead) finds himself committed to driving blind poet Jorge Luis Borges (Gnecco) across the Scottish countryside. Over the course of an eventful journey the pair form a complex and rich bond, one imbued with poetry, music and melancholy. Beautifully adapted from Parini’s memoir, this gorgeously shot and superbly acted film from director Marc Turtletaub evokes memory, time and place with a remarkably vivid and clear-eyed candour. Featuring terrific supporting performances from Scottish acting legends Alan Cumming, Peter Mullan and Freya Mavor, this is literate and grown-up filmmaking of the highest order. – Paul Ridd",
+   "durationMin": 109,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Borges-and-Me-300x233.webp"
+  },
+  {
+   "id": "bridging-the-gap-shorts-2",
+   "title": "Bridging The Gap Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/bridging-the-gap-shorts-2/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "EIFF is delighted to present the World Premieres of the most exciting new short form documentaries coming from Scotland, supported by the Scottish Documentary Institute through the Bridging the Gap training programme. – Emma Boa",
+   "durationMin": 104,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Bridging-the-Gap-300x169.webp"
+  },
+  {
+   "id": "capsized",
+   "title": "Capsized",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/capsized/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "An apparently idyllic house boat trip is thrown into disarray when Diane (Rabe) and her children are rocked by revelations of financial strife kept secret by obstinate husband Ray (Ifans). At sea and with a chaotic holiday ahead of them, the family must struggle to keep it together and face an uncertain future, but not before competing in a truly epic fishing competition. With an easygoing charm, affection for its complex characters, and a real sense of place, Lindsey Ryan’s beautifully filmed and hilarious American indie debut tackles a very contemporary story of economic uncertainty with optimism, warmth and humour. – Paul Ridd",
+   "durationMin": 105,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Capsized-300x200.webp"
+  },
+  {
+   "id": "coming-home",
+   "title": "Coming Home",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/coming-home/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "A US Marine Corps captain’s wife (Jane Fonda) finds herself drawn to a paraplegic war vet (Jon Voight) after her husband (Bruce Dern) leaves to fight in Vietnam. By the time her husband returns from the front, each one of them has changed immeasurably. Conceived and produced by Fonda, Coming Home is one of the earliest films to explore the emotional as well as physical consequences of the Vietnam War. Hal Ashby’s compassionate, insightful indictment of the impacts of the conflict is an authentic, richly observed and deeply moving exploration of disillusionment, guilt and complex trauma, featuring extraordinary performances from its Oscar-winning cast. We are delighted to welcome Bruce Dern to introduce this special screening. – Emma Boa",
+   "durationMin": 128,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Coming-Home-300x200.webp"
+  },
+  {
+   "id": "douglas-gordon-by-douglas-gordon",
+   "title": "Douglas Gordon by Douglas Gordon",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/douglas-gordon-by-douglas-gordon/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "Blurring the boundary between documentary and artistic experiment, this hypnotic film immerses audiences in the world of influential Scottish artist Douglas Gordon. Combining archival footage, disorientating imagery and candid exchanges filled with humour and honesty, the film explores artistic identity and the tension between performance and reality. Moments of illness, anger and emotional vulnerability cut through the film’s heightened visual language, revealing a portrait that is both chaotic and deeply human. With striking sound design and hypnotic pacing, this is an experiential and unpredictable reflection on creativity and selfhood. – Ella Novie",
+   "durationMin": 88,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Douglas-Gordan-by-Douglas-Gordan-300x169.webp"
+  },
+  {
+   "id": "empty-heaven",
+   "title": "Empty Heaven",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/empty-heaven/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Abdolreza Kahani (A Shrine, Mortician, winner of The Sean Connery Prize for Feature Filmmaking Excellence, EIFF 2025) returns to EIFF once more with a confidently and cleverly crafted character study. When a lonely Iranian dissident becomes embroiled with a local criminal mob in Canada, their bullish bidding leads to complex turns of events. Clean, inventive cinematography and beautifully calibrated performances set against frosty Canadian snowscapes, this is a crisp, lean and dry-humoured thriller rich in thematic depth that once again demonstrates Kahani’s mastery of cinema. – Emma Boa",
+   "durationMin": 87,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Empty-Heaven-300x169.webp"
+  },
+  {
+   "id": "experimental-shorts-3",
+   "title": "Experimental Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/experimental-shorts-3/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "From haunted objects to living landscapes, these films trace porous boundaries between bodies, matter, memory and space. Traversing archives, protests, ruins and dreams, they invite us into ways of sensing the unstable world we inhabit. – Massimo Iannetti",
+   "durationMin": 124,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Experimental-Shorts-300x169.webp"
+  },
+  {
+   "id": "extra-geography",
+   "title": "Extra Geography",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/extra-geography/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In their final year at boarding school in the early 2000s, two best friends with their own shared language and offbeat ideas about growing up set themselves the task of falling in love with their geography teacher. Two breakout star turns from Galaxie Clear and Marni Duggan and a vivid sense of time and place set the stage in Molly Manners delightful exploration of female friendship and adolescent intimacy. Fresh, charming and original, this is a freewheeling and richly realised coming of age comedy drama with distinct personality and tone. – Emma Boa",
+   "durationMin": 94,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Extra-Geography-300x191.webp"
+  },
+  {
+   "id": "faces-of-death",
+   "title": "Faces of Death",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/faces-of-death/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "The iconic series is given a gloriously meta and intelligent update in this macabre reboot. When a website content moderator discovers a series of disturbing clips that seem eerily similar to scenes from the original Faces of Death franchise, she quickly becomes caught up in a world of violent videos and the psycho killer producing them. With a terrific cast including Euphoria’s Barbia Ferreira, Dacre Montgomery and Charli xcx, this slick, stylish and wildly entertaining thrill ride will have you on the edge of your seat right through to its shocking conclusion. – Paul Ridd",
+   "durationMin": 97,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Faces-of-Death-300x132.webp"
+  },
+  {
+   "id": "first-zone",
+   "title": "First Zone",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/first-zone/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Living out existence in an abandoned wind turbine high above an endless ocean, ultra tough Fenna (Minis) has become used to surviving alone in the aftermath of a climate catastrophe. But when a violent storm separates her from home, she embarks on an odyssey across the vast wetlands of a post-apocalyptic landscape. Along the way Fenna will encounter other survivors and begin remembering connection, community and a life before the end of the world. Resourcefully and beautifully shot in real Holland locations, debut director Thom Lunshof’s film is thoughtful and unsettling. A unique, compelling and urgent film for our times. – Paul Ridd",
+   "durationMin": 84,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/First-Zone-300x126.webp"
+  },
+  {
+   "id": "girls-on-film-podcast",
+   "title": "Girls on Film: Live at EIFF",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/girls-on-film-podcast/",
+   "genre": "film",
+   "categories": [
+    "special"
+   ],
+   "blurb": "Join Girls on Film at Edinburgh International Film Festival for a very special live episode. Host of the world’s leading podcast about women on film, Anna Smith, will discuss some of this year’s most exciting films. Her guests will be Molly Manners, director of Extra Geography, and Sophie Heldman, director of The Education of Jane Cumming. Come",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/AnnaSmith-300x226.jpg"
+  },
+  {
+   "id": "goodbye-cruel-world",
+   "title": "Goodbye Cruel World",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/goodbye-cruel-world/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "When a bullied young schoolboy goes into hiding from his classmates, a lonely girl from his class discovers him and a delicate, respectful relationship begins to form, opening their worlds up in myriad ways. Beautifully shot with painterly compositions, a tactile, textured aesthetic and powered by introspective narration and outstanding performances from its two young leads, Felix de Givry’s debut feature is dreamy, soulful and stirring cinema rooted in adolescent pain and confusion. A subtle, sensitive and beautifully realised story of compassion and acceptance fresh from its World Premiere in Cannes Critics Week. – Emma Boa",
+   "durationMin": 93,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Goodbye-Cruel-World-300x188.webp"
+  },
+  {
+   "id": "hamlet",
+   "title": "Hamlet",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/hamlet/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "The King of Denmark is dead, and the Queen has married his brother. Prince Hamlet, seeing spirits and feigning madness, seeks out revenge. Famously faithful to the unabridged original text, director and actor Kenneth Branagh’s adaptation boasts a star studded cast and opulent, theatrical visuals. Exploring timeless themes of corruption, truth and madness, Hamlet proves itself as timely as ever in our modern era. A magnificent epic at just over four hours, the film has long been lauded as one of the best adaptations of Shakespeare’s greatest play. – Jack Lennon",
+   "durationMin": 242,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Hamlet-300x250.webp"
+  },
+  {
+   "id": "her-private-hell",
+   "title": "Her Private Hell",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/her-private-hell/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Glamorous young actresses are targeted by the killer Leather Man and a vengeful GI searches for his daughter in this hypnotic, ultraviolent film from Nicolas Winding Refn. Set against the backdrop of a surreal, neon soaked city, a bizarre high rise hotel, the violent streets of retrofuturist urban sprawl and extravagant film production sets, this strange, unsettling and deeply beautiful neo-Giallo is an exercise in gleeful filmmaking style. A terrific, pounding new score from regular Brian DePalma collaborator Pino Donaggio is the icing on the cake for fans of psychedelic cinema and baroque excess. Quite simply this is pure cinema. – Paul Ridd",
+   "durationMin": 109,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Her-Private-Hell-300x126.webp"
+  },
+  {
+   "id": "hope",
+   "title": "Hope",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/hope/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "A rural Korean village is under attack from a mysterious creature laying waste to buildings, vehicles and anyone unfortunate to cross its path. Now it is down to a band of hunters, hapless police and terrified locals to identify the beast and bring it down. Making its UK Premiere, this ferociously exciting and entirely unpredictable",
+   "durationMin": 165,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/08/HOPE-STILL-1-1-300x200.webp"
+  },
+  {
+   "id": "hungry",
+   "title": "Hungry",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/hungry/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "When a group of tourists ventures off the beaten track in the vast swamplands of the Louisiana Bayou, they find themselves trapped in a claustrophobic open locale by a very large, very active, very food-centred hippo. As the group fights to survive the impossible, relationships form and shatter and the hostile environment closes in. Taut, tense and tightly constructed with playful nods to genre conventions and highly impactful practical effects, this is a hugely enjoyable, heart-pounding survival thriller that is made to be watched with a raucous midnight audience. – Emma Boa",
+   "durationMin": 92,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Hungry-300x169.webp"
+  },
+  {
+   "id": "i-want-your-sex",
+   "title": "I Want Your Sex",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/i-want-your-sex/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Stuck in a relationship going nowhere with his girlfriend Minerva (Charli xcx) and confused about his sexuality, frustrated and neurotic twentysomething Elliott (Hoffman) finds himself suddenly at the sexual beck and call of his boss, domineering and ultra-confident art gallery boss Erika (Wilde). Is this a toxic relationship or is there something deeper growing between these apparently very different people? Exploring generational differences, sexual politics and queerness with his customary visual panache, fearlessness and affection, iconic director Araki makes a welcome return to feature filmmaking with this hilarious and weirdly moving battle of the sexes. – Paul Ridd",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/I-Want-Your-Sex-300x162.webp"
+  },
+  {
+   "id": "imposters",
+   "title": "Imposters",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/imposters/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "How far would you go to save your child? This is the moral quandary an on-the-rocks husband and wife face in Caleb J. Phillips’ mind-blowing film. When their child goes missing, Marie and Paul’s already fractious marriage faces its toughest challenge yet. At their wits’ end, Marie stumbles onto a means of finding their baby. What she brings back, however, might not be their son. Tearing through the fabric of their marriage and reality itself, the rabbit hole’s journey gives them far more than they’ve bargained for. Starring Jessica Rothe (Happy Death Day) and Charlie Barnett (Russian Doll), Imposters brings a whole new meaning to “Till Death Do Us Part.” – Brandon Streussnig",
+   "durationMin": 102,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Imposters-300x169.webp"
+  },
+  {
+   "id": "in-competition-shorts",
+   "title": "Competition Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/in-competition-shorts/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "Grief and heartbreak juxtaposed with renewal and new beginnings shape this year”s short film competition. With films from across the world including Lithuania, France, Iran and Scotland, and featuring powerhouse performances from some of Britain’s finest acting talents, the programme is a showcase for the power of storytelling within a limited runtime. Competing for the",
+   "durationMin": 178,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Finding-Home-at-the-Pianodrome-300x169.webp"
+  },
+  {
+   "id": "in-conversation-bruce-dern",
+   "title": "In Conversation with Bruce Dern – Live via Zoom",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/in-conversation-bruce-dern/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "One of the most accomplished, versatile and skilled character actors of his generation, as well as a champion long distance runner, Bruce Dern is known and loved for the intensity, depth and integrity he brings to each of his roles. With such a distinctive flair for improvisation that the term ‘Dernsie’ was coined for the",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Bruce-Dern-1-300x279.webp"
+  },
+  {
+   "id": "in-conversation-ewan-mcgregor",
+   "title": "In Conversation: Ewan McGregor",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/in-conversation-ewan-mcgregor/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "Gaining international recognition following his breakout role in seminal Scottish classic Trainspotting (1996), celebrating its 30th anniversary at EIFF this year, Ewan McGregor is one of Scotland’s biggest global stars working across film, TV and theatre. A Golden Globe and Emmy award-winning actor, McGregor has shown extraordinary range and skill across a diverse array of",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Ewan-McGregor-scaled-e1782908803772-245x300.webp"
+  },
+  {
+   "id": "in-conversation-ken-burns",
+   "title": "In Conversation: Ken Burns",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/in-conversation-ken-burns/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "A titan of documentary filmmaking for decades, with credits to his name including Oscar-winning features and epic series on The American West, Vietnam and most recently the American War of Independence in The American Revolution, Ken Burns is amongst the most skilled and versatile investigators of history, memory and our shared pasts. We are delighted",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Ken-Burns-2026-200x300.webp"
+  },
+  {
+   "id": "in-conversation-kenneth-branagh",
+   "title": "In Conversation: Kenneth Branagh",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/in-conversation-kenneth-branagh/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "This year’s recipient of the inaugural EIFF Outstanding Contribution to Cinema Award, we are delighted to welcome actor and director Kenneth Branagh to the Festival to participate in a wide ranging discussion of his illustrious career to date. From acting and directing for the stage over decades, to creating a series of acclaimed Shakespeare adaptations",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Kenneth-Branagh-300x186.webp"
+  },
+  {
+   "id": "industry-talk-beyond-the-debut-with-bifa-springboard",
+   "title": "Industry Talk: Beyond the Debut with BIFA Springboard",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-beyond-the-debut-with-bifa-springboard/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "BIFA Springboard is the British Independent Film Awards’ pioneering programme. Running annually since 2020, BIFA Springboard is designed to support writers, directors and producers to develop their careers after producing a first feature. We are joined by a panel of BIFA Springboard alumni to discuss their journeys from first to second film and beyond, including",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Beyond-The-Debut-300x300.webp"
+  },
+  {
+   "id": "industry-talk-christine-vachon",
+   "title": "Industry Talk: Christine Vachon",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-christine-vachon/",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Christine Vachon is amongst the most prolific and exciting producers working in modern American cinema. Her collaborations with a host of iconic directors including Todd Haynes, John Cameron Mitchell, Rose Troche and Celine Song have garnered awards recognition and acclaim across a career that has championed queer voices, bold subjects and truly independent filmmaking at every",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Christine-Vachon-300x169.webp"
+  },
+  {
+   "id": "industry-talk-lights-camera-capital-with-screen-scotland",
+   "title": "Industry Talk: Lights, Camera, Capital with Screen Scotland",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-lights-camera-capital-with-screen-scotland/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "Screen Scotland, joined by angel investor Lynne Cadenhead, will bring a panel of business angels and producers together to delve into the world of angel investment for screen. The panel marks the launch of Lights, Camera, Capital, a new pilot programme connecting angel investors directly with Scotland’s screen producers and creating new opportunities for investment",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Lights-Camera-Capital-300x300.webp"
+  },
+  {
+   "id": "industry-talk-page-to-screen",
+   "title": "Industry Talk: Page to Screen",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-page-to-screen/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "A rich thread of literary adaptation runs through this year’s EIFF programme, with original works adapted for the big screen often in collaboration with the authors themselves. This fascinating session brings together the authors, screenwriters, producers and directors from EIFF official selection films Extra Geography and Borges and Me, to discuss the creative processes behind",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/From-Page-to-Screen-300x300.webp"
+  },
+  {
+   "id": "industry-talk-the-business-of-film-roadshow",
+   "title": "Industry Talk: The Business of Film Roadshow",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-the-business-of-film-roadshow/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "With the film industry in a constant state of reinvention and evolution, it has never been more crucial to engage with key stages of the process that ensure your productions make it beyond the development phase. Join us for this session where leading industry experts share exclusive insights about the business side of the sector.",
+   "durationMin": 75,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Business-of-Film-Roadshow-300x300.webp"
+  },
+  {
+   "id": "industry-talk-the-tiktok-film-club",
+   "title": "Industry Talk: The TikTok Film Club",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-the-tiktok-film-club/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "Fandom was once immortalised in posters on bedroom walls, but now lives front and centre on the For You Page, with fans shaping what we watch, discuss and champion. Join some of TikTok’s leading film creators as they explore how online communities are redefining film culture, influencing audience discovery, and turning passionate fandom into box office and streaming success. Creator Panelists: Emily Rennie @whatemwatchesChris Mayo @bigfatcult Jess Bacon @jesskbacon Hosted by Beatrice Mustocea",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/08/TikTok-Film-Club-300x300.webp"
+  },
+  {
+   "id": "industry-talk-unmaking-the-colonial-gaze-in-cinema",
+   "title": "Industry Talk: Unmaking the Colonial Gaze in Cinema",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/industry-talk-unmaking-the-colonial-gaze-in-cinema/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "Edinburgh-based, bi-racial British Chinese filmmaker Paul Sng, director of last year’s EIFF closer Reality is not Enough, presents an innovative session that will discuss the generational impacts of colonialism on the moving image and ask what value judgments determine which films from marginalised communities receive mainstream funding, distribution and exhibition? The panel will examine cinema’s",
+   "durationMin": 60,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Unmaking-the-Colonial-300x300.webp"
+  },
+  {
+   "id": "little-miss-sunshine",
+   "title": "Little Miss Sunshine",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/little-miss-sunshine/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In Valerie Faris and Jonathan Dayton’s glorious debut feature, a dysfunctional family embark on a ragtag road trip so that 10 year old Olive can compete in a beauty pageant. A breakout smash at Sundance Film Festival in 2006, this is an era-defining American indie comedy brimming with wit, intelligence, humour and a deep empathy for its richly drawn characters. First class performances from a superb cast including Toni Collette, Steve Carell, Greg Kinnear, Paul Dano and Alan Arkin, a sublime score by Mychael Danna and Devotchka and a special 20th anniversary restoration make this a real treat on the big screen. – Emma Boa",
+   "durationMin": 101,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Little-Miss-Sunshine-1-300x200.webp"
+  },
+  {
+   "id": "mi-amor",
+   "title": "Mi Amor",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/mi-amor/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Following a spirited DJ’s search for her missing friend on an island in Gran Canaria, this tense thriller unfolds through striking imagery, a growing sense of unease and a pulsing techno score. Outstanding performances from Pom Klementieff and Benoît Magimel, combined with director Guillaume Nicloux’s distinctively edgy style, make this a captivating and intense experience primed for the big screen. – David Drummond",
+   "durationMin": 113,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Mi-Amor-300x126.webp"
+  },
+  {
+   "id": "mission",
+   "title": "Mission",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/mission/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Dylan (George MacKay) has reached the end of his tether with his dead-end job and lonely, unfulfilling existence. Over the course of a week he blows his life up, pushing boundaries and seeking meaning in the wake of extreme chaos as he wrestles with trying to feel alive and finding a reason to go on. Paul Wright’s immersive, expressionistic portrait of a young man’s existential angst and directionless fury is vividly composed, frenetically paced and fraught with tension. Filmed in Scotland, crackling with anarchic energy and featuring a compelling performance from MacKay, this is a bold, visionary film that demands to be seen on the big screen. -Emma Boa",
+   "durationMin": 87,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Mission-300x162.webp"
+  },
+  {
+   "id": "my-nda",
+   "title": "My NDA",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/my-nda/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "A gripping observational documentary exposing secrecy as a psychological weapon wielded by corporate America, as three ordinary people choose to break their non-disclosure agreements. This nail-biting film reveals how pervasive public censorship is manipulating justice in every corner of American society. As the legal, public and emotional stakes rise, an intimate lens on each character asks what happens when the most important truths, and those carrying the weight of them, are silenced? -Therese Walsh",
+   "durationMin": 102,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/My-NDA-300x200.webp"
+  },
+  {
+   "id": "nfts-sean-connery-lab-shorts-2",
+   "title": "NFTS Sean Connery Lab Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/nfts-sean-connery-lab-shorts-2/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "EIFF is honoured to partner with NFTS Scotland and The Sean Connery Foundation for a second year to present the World Premiere of six short films created via the NFTS Sean Connery Talent Lab. These enterprising, innovative shorts showcase the work of talented emerging filmmakers in Scotland. – Paul Ridd",
+   "durationMin": 95,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Bubbles-300x200.webp"
+  },
+  {
+   "id": "northbound",
+   "title": "Northbound",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/northbound/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Frustrated with living out his final days in a nursing home, elderly rogue Arthur (Dern) recruits his uptight grandson Kevin (Parrish) to break him out. Together the pair head north to Canada, picking up an enigmatic stranger (Fox) along the way. Acidly funny, unpredictable and ultimately very moving, this sharply directed and superbly acted film from director William Scoular is a showcase for Bruce Dern’s magnetic screen presence and feeling for a character who positively bursts off the screen. Featuring a final performance from legendary actor Graham Greene as well as superb supporting turns from Joanna Cassidy and Dylan Baker. -Paul Ridd",
+   "durationMin": 92,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Northbound-300x125.webp"
+  },
+  {
+   "id": "our-cinema-26-shorts",
+   "title": "Our Cinema 26 Shorts: ‘What is felt but not spoken’ with Scott Graham",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/our-cinema-26-shorts/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "Our Cinema is an innovative new approach to film education in Scotland delivered by Transgressive North and Folk Film Gathering and modelled on Japan’s world-leading Children Meet Cinema project. Join us for a unique celebration of the freshest young filmmaking talent in Scotland, enjoy some World Premieres and see a special behind-the-scenes glimpse of how",
+   "durationMin": 117,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Departures-300x195.webp"
+  },
+  {
+   "id": "out-of-competition-shorts-3",
+   "title": "Out of Competition Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/out-of-competition-shorts-3/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "Abuses of power and intense relationship dynamics are explored through surrealism and striking realism in this year’s programme featuring incisive and radical filmmaking from across the globe. – Lillian Crawford",
+   "durationMin": 163,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/EIFF2026_Weekend_KeyStill-300x239.webp"
+  },
+  {
+   "id": "out-there",
+   "title": "Out There",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/out-there/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Still grieving the disappearance of her scientist father, amateur teenaged astronomer Maz (Stocks) is convinced she has spotted something suspicious hovering above her sleepy Welsh hometown. Recruiting the support of her best mate Little Elis (Moya), UFO-obsessed conspiracy theorist Bryn (Barnard) and local psychic Shifty Gruff (Sheen), Maz and her gang of misfits set out to uncover the truth, one that is far more complex than they might have expected. Breathlessly paced, wittily evoking its 1999 setting via superb music choices, costumes and production design, this charming Welsh debut from director Simon Ryninks is poignant, funny and entirely unpredictable. -Paul Ridd",
+   "durationMin": 80,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Out-There-300x169.webp"
+  },
+  {
+   "id": "personal-journey-with-martin-scorsese-through-american-movies",
+   "title": "A Personal Journey with Martin Scorsese Through American Movies",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/personal-journey-with-martin-scorsese-through-american-movies/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "Beginning as an exhaustive journey through the origins of Hollywood, moving through the invention and evolution of genres and heralding the work of unsung heroes of classical and modern cinema, Scorsese’s mammoth documentary made with the BFI in 1995 is one of the most richly detailed, fascinating of all cinema essays. Part personal history, part rediscovery, and always imbued with a delight and respect for cinema, this is simply one of the best films about films ever made. We are delighted to present the film in its entirety and to be joined by producer Bob Last for a special introduction. – Paul Ridd",
+   "durationMin": 221,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/A-Personal-Journey-with-Martin-Scorsese-Through-American-Movies-300x169.webp"
+  },
+  {
+   "id": "pretty-babies",
+   "title": "Pretty Babies",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/pretty-babies/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Two young girls flee their hometown drawn by the seductive promise of the Hollywood they imagine from the old classics they idolise. Embarking on a road trip for which they are ill-equipped, the American dream soon fractures as they encounter the dark underbelly of the sex industry and the fabric of their friendship starts to unravel. Tyler Marie-Evans’ stylish, melancholic and jaggedly beautiful debut feature is a compelling, female-centred portrait of vulnerability and disillusionment in a world of artifice. Featuring standout performances, a haunting soundtrack and a bold visual style, this film signals an exciting new voice in cinema.- Emma Boa",
+   "durationMin": 92,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Pretty-Babies-300x210.webp"
+  },
+  {
+   "id": "queen-at-sea",
+   "title": "Queen at Sea",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/queen-at-sea/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "When Amanda (Binoche) walks in on her elderly parents in the throes of what appears to be a consensual sexual encounter her instinct is to call the police, believing her mother Leslie (Calder-Marshall) who is suffering from dementia, is incapable of giving consent to husband Martin (Courtenay). As this complex, emotionally devastating and utterly gripping scenario plays out we are asked to question our preconceptions, our ideas and our treatment of the elderly in this devastating and superbly acted film, winner of a Silver Bear at the Berlinale. This is a moral maze filmmaking at its most nuanced and sophisticated. -Paul Ridd",
+   "durationMin": 121,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Queen-at-Sea-300x181.webp"
+  },
+  {
+   "id": "rise-of-the-footsoldier-retribution",
+   "title": "Rise of the Footsoldier: Retribution",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/rise-of-the-footsoldier-retribution/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Determined to avenge the murder of his best friend and partner in crime, Pat Tate (Fairbrass) journeys to Ibiza on a roaring rampage of revenge. Up against arms traffickers, the CIA, some familiar foes and a seemingly endless parade of tough-talking gangsters, Tate battles to remain the last man standing in this stylish action spectacle. Taking the action, pyrotechnics and stunt work to new levels for the series, this ambitious new entry is an adrenalin pumping, profane delight, sure to delight fans with its mix of cheerfully brutish action and witty gutter dialogue, as well as bring new audiences to the franchise. -Paul Ridd",
+   "durationMin": 112,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Rise-of-the-Footsoldier-300x200.webp"
+  },
+  {
+   "id": "rock",
+   "title": "The Rock",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/rock/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Hollywood superstar Sean Connery joins Academy Award(R)-winner Nicolas Cage in this action-packed thriller. All of San Francisco is taken hostage when a vengeful general (Ed Harris) seizes control of Alcatraz Island, threatening to launch missiles loaded with deadly poison gas! With time running out, only a young FBI chemical weapons expert (Cage) and a notorious federal prisoner (Connery) have the skills to penetrate the island fortress and defuse the lethal situation.",
+   "durationMin": 137,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Rock-300x187.webp"
+  },
+  {
+   "id": "sacred-creatures",
+   "title": "Sacred Creatures",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/sacred-creatures/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Three estranged siblings reunite in rural Italy after the middle sister has been released from psychiatric treatment following a breakdown, one she experienced as a deep spiritual awakening. As this troubled young woman behaves more erratically and relationships fracture, the local community takes on an unexpected significance as power dynamics shift and change. Frieda Luk’s artfully composed and highly compelling debut feature is a deftly woven, unpredictable and black-humoured thriller of superstition, idolatry and communal faith with a distinctive magical realist edge. – Emma Boa",
+   "durationMin": 105,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Screenshot-2026-07-24-at-10.28.10-300x200.jpg"
+  },
+  {
+   "id": "screen-academy-scotland-shorts",
+   "title": "Screen Academy Scotland Shorts",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/screen-academy-scotland-shorts/",
+   "genre": "film",
+   "categories": [
+    "shorts"
+   ],
+   "blurb": "EIFF is delighted to celebrate the 20th anniversary of Screen Academy Scotland with a selection of new films emerging from the academy. – Paul Ridd",
+   "durationMin": 109,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Screen-Academy-Scotland-Shorts-300x168.webp"
+  },
+  {
+   "id": "sea-of-glass",
+   "title": "Sea of Glass",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/sea-of-glass/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "After experiencing immense family turmoil in the wake of her husband’s death, a woman seeks solace in a quiet seaside town. There, she forms an unexpected bond with a young woman struggling with her own fractured relationship with her violent father. Together, they confront their turbulent pasts with volatile consequences. Beautifully shot, superbly acted and with a palpable tension that fills every frame, this is a superb thriller and nuanced exploration of female solidarity. – Laura Hague",
+   "durationMin": 130,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Sea-of-Glass-300x168.webp"
+  },
+  {
+   "id": "sexy-beast",
+   "title": "Sexy Beast",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/sexy-beast/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Celebrating 25 years since its UK theatrical release, EIFF presents a brand new restoration of this searing directorial debut from Jonathan Glazer (Birth, Under the Skin, The Zone of Interest). When retired gangster Gal (Winstone) is unwillingly approached by his sociopathic former boss (Kingsley) to undertake one last job, a tense, psychological game of cat and mouse plays out. A compact, gritty British gangster thriller featuring electrifying performances from Winstone and Kingsley, who won an Oscar for his explosive, nerve-shredding turn as Teddy Bass, and set against the incongruously sunny backdrop of the Costa del Sol, this is a cinematic treat on the big screen. – Emma Boa",
+   "durationMin": 89,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Sexy-Beast-300x197.webp"
+  },
+  {
+   "id": "sheep-in-the-box",
+   "title": "Sheep in the Box",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/sheep-in-the-box/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In an attempt to come to terms with their grief, a couple welcome a humanoid robot version of their deceased son into their home. Under the characteristically subtle and nuanced direction of Kore-Eda, what begins as a thoughtful study of parental emotion and loss subtly transforms into a thematically rich and thorny exploration of artificial intelligence, our responsibility with it and towards it and what the future might look like with this technology as a part of daily life. Part human drama, part grounded sci-fi, this beautifully acted and moving film asks many complex questions whilst never losing its core humanity and pathos. -Paul Ridd",
+   "durationMin": 126,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Sheep-in-the-Box-300x200.webp"
+  },
+  {
+   "id": "skintown",
+   "title": "Skintown",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/skintown/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Set in Northern Ireland in 1994 during the IRA ceasefire, best friends Vinny and Jonty party with friends, cut deals and make plans to escape small town life. The uncertainty and instability of the time conspire against them in Kieron J. Walsh’s vivid portrait of disenfranchised youth, 90s rave culture and a turbulent period in recent Irish history. Balancing humour, wit and pathos and bolstered by great performances from a terrific cast including Jack Rowan, Chris Walley, Jamie Lee O’Donnell and Hope Ikpoku Jnr. and a killer 90s soundtrack featuring Prodigy, Elastica, Happy Mondays, Jeff Mills and Carl Cox, this is a propulsive, poignant period piece .- Emma Boa",
+   "durationMin": 99,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/SKCoverImageSKINTOWN_Day6_Final_U7A9072-copy-300x200.webp"
+  },
+  {
+   "id": "snapshot",
+   "title": "Snapshot",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/snapshot/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Newly unearthed footage from late 19th century London reveals the complex fate of an all-ladies ghost-hunting society in this transfixing horror feature debut from director Joseph Archer. Exploring a dangerous city of contradictions with a new technology potentially capable of capturing malevolent supernatural forces, the film throws us into a world of cruelty, violence and press sensationalism, threat always hovering just around the next corner and at the peripheries of the pinhole camera lens. An inventive reimagining of the found footage genre this uniquely strange, scary and distinctive film is guaranteed to provoke, disturb and thrill in equal measure. -Paul Ridd",
+   "durationMin": 86,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Snapshot-300x169.webp"
+  },
+  {
+   "id": "talented-mr-ripley",
+   "title": "The Talented Mr. Ripley",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/talented-mr-ripley/",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Enlisted by a millionaire to secure the safe return to the US of errant son Dickie Greenleaf (Jude Law), the mysterious Tom Ripley (Matt Damon) journeys to Italy, there he falls into a world of hedonism and intrigue where resentments fester and violence looms.",
+   "durationMin": 139,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/TalentedMrRipley.8-300x214.webp"
+  },
+  {
+   "id": "the-arrow-at-rest-at-every-instant-of-its-flight",
+   "title": "The Arrow at Rest at Every Instant of its Flight",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-arrow-at-rest-at-every-instant-of-its-flight/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Three seemingly disconnected stories unfold across New York City. Gus Birney stars as Violet, a jaded arcade worker, Sinopia, an upper-class professor bored with her marriage, and Jade, an endlessly cool young woman who decides to help a stranger out of her debt. Meanwhile, a woman with a suitcase (Constance Shulman) moves through the city in search of the doppelganger trying to take over her life. Surreal, comedic and reflexive, this film plays out like free jazz, with writer-director Schaefer deftly pulling us through this whirlwind black-and-white flight of fancy. -Pranamika Subhalaxmi",
+   "durationMin": 81,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Arrow-at-Rest-at-Every-Instant-of-its-Flight-300x181.webp"
+  },
+  {
+   "id": "the-best-summer",
+   "title": "The Best Summer",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-best-summer/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "A transfixing documentary from Tamra Davis (Crossroads, CB4, Billy Madison) which offers an unfiltered immersion into archival footage of the electric 1995 Summersault festival, featuring iconic performances and candid interviews with alternative rock legends including The Foo Fighters, Beastie Boys, Pavement, Bikini Kill, Sonic Youth, Kim Deal and more. Offering a unique perspective behind the scenes we catch a glimpse of some of the world’s favourite bands at the height of their careers. Both the legendary and the mundane are explored through candid conversations with groups and artists. An opportunity to relive and plunge into an iconic era of alternative rock which spoke to the universal transcendence of music. – Arouny Prasimay",
+   "durationMin": 84,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Best-Summer-300x199.webp"
+  },
+  {
+   "id": "the-education-of-jane-cumming",
+   "title": "The Education of Jane Cumming",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-education-of-jane-cumming/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "In early nineteenth-century Edinburgh, two women run a girls’ boarding school, trying to build an independent life in a world with little room for women outside convention. When a wealthy grandmother enrols her granddaughters, including 15-year-old Jane Cumming, the school’s fragile balance begins to shift. Jane’s isolation, the teachers’ concern and the pressures of respectability soon lead to an accusation that changes all their lives. Based on true events, Sophie Heldman’s beautifully made period drama explores prejudice, reputation and the cost of surviving in a strict and unforgiving society. – Annita Nitsaidou",
+   "durationMin": 114,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Education-of-Jane-Cumming-300x210.webp"
+  },
+  {
+   "id": "the-incomer",
+   "title": "The Incomer",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-incomer/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Raised on a remote Scottish island, oddball siblings Isla (Rankin) and Sandy (O’Rourke) spend their days hunting, squabbling and telling stories. But when nervy council official Daniel (Gleeson) arrives on the island intent on moving them along, the pair must wrestle with the threat and exciting possibilities of the mainland. Crammed with intriguingly strange characters and performed with aplomb by a wonderful cast, this terrific debut from director Louis Paxton fuses surreal humour, warmth and pathos. Winner of the NEXT Innovator Award at the Sundance Film Festival, this is a delightful and moving comedy about loneliness, connection and the unknown. – Paul Ridd",
+   "durationMin": 102,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/05/Hero-Still-300x200.jpg"
+  },
+  {
+   "id": "the-last-resort",
+   "title": "The Last Resort",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-last-resort/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "A sun-drenched Gran Canaria resort becomes the unlikely setting for an urgent moral reckoning. When an unexpected incident leaves a family bound to a refugee in desperate need, nothing that follows is straightforward or comfortable. With lead performances that are raw and utterly compelling, Sødahl directs with precision and humanity, crafting a film as tense as it is timely. One of the most urgent and necessary films of the year. – Sara Cowdell",
+   "durationMin": 98,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Last-Resort-300x200.webp"
+  },
+  {
+   "id": "the-mad-world-of-harvey-kurtzman",
+   "title": "The Mad World of Harvey Kurtzman",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-mad-world-of-harvey-kurtzman/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "A vivid, immersive and visually striking portrait of the founder of the satirical publication Mad magazine and its far-reaching influence on some of the most prominent artists of our time. Kurtzman’s commitment to integrity and challenging the status quo with humour, edge and resilience is a hymn for our times. Rich in historical context, artistic expression, contemporary politics and artfully weaving thoughtful reflections from contributors including Terry Gilliam, the late Stan Lee and Robert Crumb, this is a compelling, insightful exploration of counterculture, commerce and creative compromise and the power of conviction in raw truth and honesty. – Emma Boa",
+   "durationMin": 92,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Mad-World-of-Harvey-Kurtzman-300x169.webp"
+  },
+  {
+   "id": "the-peril-at-pincer-point",
+   "title": "The Peril At Pincer Point",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-peril-at-pincer-point/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "A feckless sound recordist is sent to a strange island by a tyrannical film director, but becomes obsessed with the mysteries and litany of eccentrics he discovers there in this constantly inventive, superbly atmospheric British comedy debut. Beautifully shot, full of wit, pathos and surreal humour, this is low budget indie filmmaking of the highest order. -Tony Paley",
+   "durationMin": 83,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-Peril-at-Pincer-Point-300x225.webp"
+  },
+  {
+   "id": "the-state-of-us",
+   "title": "The State of Us",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/the-state-of-us/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Boisterous tearaway Frankie, struggling to come to terms with the inevitability of losing best friend Taylor, impulsively breaks him out of hospice care for one final night of fun and debauchery. But what promises to be a night of hedonism quickly becomes something more complicated for the pair. Beautifully observed and performed by a talented young cast, this witty and wise debut from co-directors Ollie Gardner and Jake Harvey explores male friendship in extreme circumstances, as well as grief and acceptance in a uniquely fresh and humane film full of vigour, life and optimism despite its heartbreaking and moving premise. – Paul Ridd",
+   "durationMin": 90,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/The-State-of-Us-300x150.webp"
+  },
+  {
+   "id": "these-violent-delights",
+   "title": "These Violent Delights",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/these-violent-delights/",
+   "genre": "film",
+   "categories": [
+    "documentary"
+   ],
+   "blurb": "Scottish Ballet’s intoxicating, beautifully realised retelling of the classic Shakespeare tragedy combines stunning choreography, gorgeous costuming and fluid cinematography and movement to create a ballet film with a difference. -Elena Gaitanarou",
+   "durationMin": 70,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/These-Violent-Delights-300x200.webp"
+  },
+  {
+   "id": "trainspotting",
+   "title": "Trainspotting",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/trainspotting/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Choose life. Choose to celebrate the most iconic Scottish film of all time back on the big screen and lovingly restored for its 30th anniversary. The film has quite simply never looked or sounded better.",
+   "durationMin": 94,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/EIFF2026_Trainspotting_KeyStill-300x197.webp"
+  },
+  {
+   "id": "trainspotting-live-event-club-night",
+   "title": "Trainspotting Live Event + Club Night",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/trainspotting-live-event-club-night/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "Ewan McGregor, Robert Carlyle, Ewen Bremner, Jonny Lee Miller and Kelly Macdonald star in Danny Boyle’s audaciously innovative and darkly comedic Film4 drama about addiction, scams and survival",
+   "durationMin": 240,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/EIFF2026_Trainspotting_KeyStill-300x197.webp"
+  },
+  {
+   "id": "uk-film-conference-industry-keynote",
+   "title": "UK Film Conference: Industry Keynote",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/uk-film-conference-industry-keynote/",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The mission of EIFF is to be the home of independent cinema in the UK and the inaugural UK Film Conference is a key part of that mission. We present a one day conference on Saturday 15 August that will be a state of the nation for independent film in the UK situated at the",
+   "durationMin": null,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Ben-Roberts-and-Clare-Binns-scaled-e1782910077807-300x284.webp"
+  },
+  {
+   "id": "uk-film-conference-low-budget-high-ambition",
+   "title": "UK Film Conference: Low Budget, High Ambition",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/uk-film-conference-low-budget-high-ambition/",
+   "genre": "film",
+   "categories": [
+    "special"
+   ],
+   "blurb": "Innovation in independent filmmaking is not a new concept. With tight finances, short shoot times and a compact crew, many professionals are refocusing on creative methods to get their latest film off the ground. This essential talk will focus on low budget filmmaking and how UK producers are adapting to an ever-changing landscape. Press &",
+   "durationMin": 45,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Low-Budget-High-Ambition-300x300.webp"
+  },
+  {
+   "id": "uk-film-conference-new-nightmares",
+   "title": "UK Film Conference: New Nightmares",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/uk-film-conference-new-nightmares/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "As horror continues to stay firmly in the hearts of UK and international audiences, we catch up with a group of British filmmakers making innovative and exciting genre work for TV and film and discuss the current state of genre embracing its moment. Speakers include filmmakers Max Minghella, Prano Bailey Bond, Chee Keong Cheung (Bad",
+   "durationMin": 45,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/New-Nightmares-300x300.webp"
+  },
+  {
+   "id": "uk-film-conference-would-this-get-made",
+   "title": "UK Film Conference: Would This Get Made?",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/uk-film-conference-would-this-get-made/",
+   "genre": "talk",
+   "categories": [
+    "talk"
+   ],
+   "blurb": "In this lively, irreverent session about the modern film climate, we welcome industry professionals from major parts of the development, production and distribution pipeline to ask what their approach would be if a range of projects from the past from Whisky Galore! and If… to Trainspotting or Four Weddings and a Funeral came across their",
+   "durationMin": 45,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Would-This-Get-Made-300x300.webp"
+  },
+  {
+   "id": "visitor-q",
+   "title": "Visitor Q",
+   "titleLocal": null,
+   "url": "https://www.edfilmfest.org/film/visitor-q/",
+   "genre": "film",
+   "categories": [
+    "feature"
+   ],
+   "blurb": "An enigmatic stranger falls in with a messed-up family, leaving them forever changed in this shocking explosion of social taboos, casual violence and perverse sexuality. Cult filmmaker Takeshi Miike (AUDITION, ICHI THE KILLER and 13 ASSASSINS) directs this darkly subversive masterpiece of extreme cinema, screening for the first time in decades from a new scan from Radiance Films. – Paul Ridd",
+   "durationMin": 84,
+   "imageUrl": "https://www.edfilmfest.org/wp-content/uploads/2026/07/Visitor-Q-300x178.webp"
+  }
+ ],
+ "performances": [
+  {
+   "id": "90-minutes-or-less-podcast/2026-08-16/10:35",
+   "eventId": "90-minutes-or-less-podcast",
+   "venueId": "monkey-barrel-3",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "10:35",
+   "ticketUrl": "https://www.edfilmfest.org/film/90-minutes-or-less-podcast/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "abandoned/2026-08-14/23:55",
+   "eventId": "abandoned",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/abandoned/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "abandoned/2026-08-15/18:45",
+   "eventId": "abandoned",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "18:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/abandoned/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "abandoned/2026-08-16/19:00",
+   "eventId": "abandoned",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "19:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/abandoned/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "abandoned/2026-08-17/20:45",
+   "eventId": "abandoned",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "20:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/abandoned/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "ali-plumbs-untitled-film-quiz/2026-08-17/20:00",
+   "eventId": "ali-plumbs-untitled-film-quiz",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/ali-plumbs-untitled-film-quiz/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "american-revolution-episode-2/2026-08-14/17:00",
+   "eventId": "american-revolution-episode-2",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "17:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/american-revolution-episode-2/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "animation-shorts-3/2026-08-15/19:15",
+   "eventId": "animation-shorts-3",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "19:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/animation-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "animation-shorts-3/2026-08-16/12:45",
+   "eventId": "animation-shorts-3",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/animation-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "animation-shorts-3/2026-08-17/13:30",
+   "eventId": "animation-shorts-3",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "13:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/animation-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bad-day-at-the-office/2026-08-13/23:55",
+   "eventId": "bad-day-at-the-office",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/bad-day-at-the-office/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bad-day-at-the-office/2026-08-14/21:00",
+   "eventId": "bad-day-at-the-office",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bad-day-at-the-office/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bad-day-at-the-office/2026-08-19/20:30",
+   "eventId": "bad-day-at-the-office",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "20:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/bad-day-at-the-office/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bel/2026-08-19/21:00",
+   "eventId": "bel",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bel/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bel/2026-08-19/21:30",
+   "eventId": "bel",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/bel/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "bel/2026-08-19/22:00",
+   "eventId": "bel",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "22:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bel/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "bifa-podcast/2026-08-14/10:35",
+   "eventId": "bifa-podcast",
+   "venueId": "monkey-barrel-3",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "10:35",
+   "ticketUrl": "https://www.edfilmfest.org/film/bifa-podcast/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "bodyhackers/2026-08-14/21:30",
+   "eventId": "bodyhackers",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/bodyhackers/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bodyhackers/2026-08-15/22:15",
+   "eventId": "bodyhackers",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "22:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/bodyhackers/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bodyhackers/2026-08-16/12:00",
+   "eventId": "bodyhackers",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bodyhackers/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "borges-and-me/2026-08-15/18:30",
+   "eventId": "borges-and-me",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/borges-and-me/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "borges-and-me/2026-08-16/18:15",
+   "eventId": "borges-and-me",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "18:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/borges-and-me/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "borges-and-me/2026-08-17/16:30",
+   "eventId": "borges-and-me",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "16:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/borges-and-me/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "borges-and-me/2026-08-18/18:30",
+   "eventId": "borges-and-me",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/borges-and-me/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "bridging-the-gap-shorts-2/2026-08-18/18:00",
+   "eventId": "bridging-the-gap-shorts-2",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bridging-the-gap-shorts-2/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bridging-the-gap-shorts-2/2026-08-19/14:00",
+   "eventId": "bridging-the-gap-shorts-2",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "14:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/bridging-the-gap-shorts-2/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "capsized/2026-08-15/13:00",
+   "eventId": "capsized",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "13:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/capsized/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "capsized/2026-08-16/12:15",
+   "eventId": "capsized",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/capsized/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "capsized/2026-08-17/17:45",
+   "eventId": "capsized",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "17:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/capsized/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "capsized/2026-08-18/11:30",
+   "eventId": "capsized",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "11:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/capsized/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "coming-home/2026-08-17/11:45",
+   "eventId": "coming-home",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "11:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/coming-home/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "douglas-gordon-by-douglas-gordon/2026-08-17/20:30",
+   "eventId": "douglas-gordon-by-douglas-gordon",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "20:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/douglas-gordon-by-douglas-gordon/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "douglas-gordon-by-douglas-gordon/2026-08-18/12:00",
+   "eventId": "douglas-gordon-by-douglas-gordon",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/douglas-gordon-by-douglas-gordon/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "douglas-gordon-by-douglas-gordon/2026-08-19/14:30",
+   "eventId": "douglas-gordon-by-douglas-gordon",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "14:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/douglas-gordon-by-douglas-gordon/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "douglas-gordon-by-douglas-gordon/2026-08-19/15:00",
+   "eventId": "douglas-gordon-by-douglas-gordon",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/douglas-gordon-by-douglas-gordon/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "empty-heaven/2026-08-15/21:00",
+   "eventId": "empty-heaven",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/empty-heaven/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "empty-heaven/2026-08-16/18:00",
+   "eventId": "empty-heaven",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/empty-heaven/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "experimental-shorts-3/2026-08-14/11:00",
+   "eventId": "experimental-shorts-3",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "11:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/experimental-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "experimental-shorts-3/2026-08-15/22:00",
+   "eventId": "experimental-shorts-3",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "22:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/experimental-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "extra-geography/2026-08-15/16:00",
+   "eventId": "extra-geography",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "16:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/extra-geography/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "extra-geography/2026-08-16/20:30",
+   "eventId": "extra-geography",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "20:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/extra-geography/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "extra-geography/2026-08-16/22:30",
+   "eventId": "extra-geography",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "22:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/extra-geography/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "extra-geography/2026-08-17/12:15",
+   "eventId": "extra-geography",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "12:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/extra-geography/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "faces-of-death/2026-08-18/23:55",
+   "eventId": "faces-of-death",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/faces-of-death/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "faces-of-death/2026-08-19/21:15",
+   "eventId": "faces-of-death",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "21:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/faces-of-death/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "first-zone/2026-08-16/20:00",
+   "eventId": "first-zone",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/first-zone/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "first-zone/2026-08-17/20:00",
+   "eventId": "first-zone",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/first-zone/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "first-zone/2026-08-18/13:45",
+   "eventId": "first-zone",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "13:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/first-zone/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "first-zone/2026-08-18/19:30",
+   "eventId": "first-zone",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "19:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/first-zone/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "girls-on-film-podcast/2026-08-15/10:35",
+   "eventId": "girls-on-film-podcast",
+   "venueId": "monkey-barrel-3",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "10:35",
+   "ticketUrl": "https://www.edfilmfest.org/film/girls-on-film-podcast/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "goodbye-cruel-world/2026-08-17/15:00",
+   "eventId": "goodbye-cruel-world",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/goodbye-cruel-world/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "goodbye-cruel-world/2026-08-18/12:00",
+   "eventId": "goodbye-cruel-world",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/goodbye-cruel-world/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "goodbye-cruel-world/2026-08-19/12:00",
+   "eventId": "goodbye-cruel-world",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/goodbye-cruel-world/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "hamlet/2026-08-16/10:00",
+   "eventId": "hamlet",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "10:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/hamlet/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "her-private-hell/2026-08-16/18:00",
+   "eventId": "her-private-hell",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/her-private-hell/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "her-private-hell/2026-08-18/15:00",
+   "eventId": "her-private-hell",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/her-private-hell/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "hope/2026-08-16/12:00",
+   "eventId": "hope",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/hope/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "hungry/2026-08-16/23:55",
+   "eventId": "hungry",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/hungry/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "hungry/2026-08-17/19:30",
+   "eventId": "hungry",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "19:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/hungry/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "hungry/2026-08-18/21:00",
+   "eventId": "hungry",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/hungry/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "hungry/2026-08-19/12:00",
+   "eventId": "hungry",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/hungry/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "i-want-your-sex/2026-08-17/21:00",
+   "eventId": "i-want-your-sex",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/i-want-your-sex/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "i-want-your-sex/2026-08-18/15:30",
+   "eventId": "i-want-your-sex",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "15:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/i-want-your-sex/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "i-want-your-sex/2026-08-18/20:30",
+   "eventId": "i-want-your-sex",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "20:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/i-want-your-sex/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "i-want-your-sex/2026-08-19/18:30",
+   "eventId": "i-want-your-sex",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/i-want-your-sex/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "imposters/2026-08-15/23:55",
+   "eventId": "imposters",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/imposters/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "imposters/2026-08-16/21:30",
+   "eventId": "imposters",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/imposters/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "imposters/2026-08-17/17:00",
+   "eventId": "imposters",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "17:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/imposters/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "imposters/2026-08-18/12:00",
+   "eventId": "imposters",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/imposters/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "in-competition-shorts/2026-08-14/17:30",
+   "eventId": "in-competition-shorts",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-competition-shorts/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "in-competition-shorts/2026-08-15/12:00",
+   "eventId": "in-competition-shorts",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-competition-shorts/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "in-conversation-bruce-dern/2026-08-17/15:00",
+   "eventId": "in-conversation-bruce-dern",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-conversation-bruce-dern/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "in-conversation-ewan-mcgregor/2026-08-14/17:00",
+   "eventId": "in-conversation-ewan-mcgregor",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "17:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-conversation-ewan-mcgregor/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "in-conversation-ken-burns/2026-08-14/14:30",
+   "eventId": "in-conversation-ken-burns",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "14:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-conversation-ken-burns/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "in-conversation-kenneth-branagh/2026-08-16/15:00",
+   "eventId": "in-conversation-kenneth-branagh",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/in-conversation-kenneth-branagh/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-beyond-the-debut-with-bifa-springboard/2026-08-16/17:30",
+   "eventId": "industry-talk-beyond-the-debut-with-bifa-springboard",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-beyond-the-debut-with-bifa-springboard/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-christine-vachon/2026-08-14/12:00",
+   "eventId": "industry-talk-christine-vachon",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-christine-vachon/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-lights-camera-capital-with-screen-scotland/2026-08-18/16:30",
+   "eventId": "industry-talk-lights-camera-capital-with-screen-scotland",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "16:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-lights-camera-capital-with-screen-scotland/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-page-to-screen/2026-08-17/13:00",
+   "eventId": "industry-talk-page-to-screen",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "13:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-page-to-screen/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-the-business-of-film-roadshow/2026-08-14/20:00",
+   "eventId": "industry-talk-the-business-of-film-roadshow",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-the-business-of-film-roadshow/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-the-tiktok-film-club/2026-08-18/14:00",
+   "eventId": "industry-talk-the-tiktok-film-club",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "14:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-the-tiktok-film-club/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "industry-talk-unmaking-the-colonial-gaze-in-cinema/2026-08-18/20:00",
+   "eventId": "industry-talk-unmaking-the-colonial-gaze-in-cinema",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/industry-talk-unmaking-the-colonial-gaze-in-cinema/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "little-miss-sunshine/2026-08-16/15:30",
+   "eventId": "little-miss-sunshine",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/little-miss-sunshine/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "mi-amor/2026-08-18/21:00",
+   "eventId": "mi-amor",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/mi-amor/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "mi-amor/2026-08-19/18:00",
+   "eventId": "mi-amor",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/mi-amor/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "mission/2026-08-15/21:00",
+   "eventId": "mission",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/mission/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "mission/2026-08-16/15:15",
+   "eventId": "mission",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/mission/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "mission/2026-08-17/20:45",
+   "eventId": "mission",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "20:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/mission/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "mission/2026-08-18/19:30",
+   "eventId": "mission",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "19:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/mission/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "my-nda/2026-08-15/16:00",
+   "eventId": "my-nda",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "16:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/my-nda/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "my-nda/2026-08-16/12:30",
+   "eventId": "my-nda",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/my-nda/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "nfts-sean-connery-lab-shorts-2/2026-08-15/16:00",
+   "eventId": "nfts-sean-connery-lab-shorts-2",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "16:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/nfts-sean-connery-lab-shorts-2/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "nfts-sean-connery-lab-shorts-2/2026-08-16/11:45",
+   "eventId": "nfts-sean-connery-lab-shorts-2",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "11:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/nfts-sean-connery-lab-shorts-2/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "northbound/2026-08-17/21:00",
+   "eventId": "northbound",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/northbound/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "northbound/2026-08-18/15:15",
+   "eventId": "northbound",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "15:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/northbound/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "our-cinema-26-shorts/2026-08-17/13:00",
+   "eventId": "our-cinema-26-shorts",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "13:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/our-cinema-26-shorts/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "out-of-competition-shorts-3/2026-08-14/14:00",
+   "eventId": "out-of-competition-shorts-3",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "14:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-of-competition-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "out-of-competition-shorts-3/2026-08-16/14:00",
+   "eventId": "out-of-competition-shorts-3",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "14:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-of-competition-shorts-3/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "out-there/2026-08-14/15:00",
+   "eventId": "out-there",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-there/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "out-there/2026-08-15/15:45",
+   "eventId": "out-there",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "15:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-there/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "out-there/2026-08-16/12:00",
+   "eventId": "out-there",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-there/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "out-there/2026-08-18/14:15",
+   "eventId": "out-there",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "14:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/out-there/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "personal-journey-with-martin-scorsese-through-american-movies/2026-08-15/11:00",
+   "eventId": "personal-journey-with-martin-scorsese-through-american-movies",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "11:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/personal-journey-with-martin-scorsese-through-american-movies/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "pretty-babies/2026-08-14/21:00",
+   "eventId": "pretty-babies",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/pretty-babies/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "pretty-babies/2026-08-15/21:00",
+   "eventId": "pretty-babies",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/pretty-babies/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "pretty-babies/2026-08-16/20:00",
+   "eventId": "pretty-babies",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/pretty-babies/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "pretty-babies/2026-08-18/22:00",
+   "eventId": "pretty-babies",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "22:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/pretty-babies/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "queen-at-sea/2026-08-15/21:30",
+   "eventId": "queen-at-sea",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/queen-at-sea/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "queen-at-sea/2026-08-16/15:30",
+   "eventId": "queen-at-sea",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/queen-at-sea/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "queen-at-sea/2026-08-16/20:30",
+   "eventId": "queen-at-sea",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "20:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/queen-at-sea/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "queen-at-sea/2026-08-17/11:30",
+   "eventId": "queen-at-sea",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "11:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/queen-at-sea/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "rise-of-the-footsoldier-retribution/2026-08-17/23:55",
+   "eventId": "rise-of-the-footsoldier-retribution",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "23:55",
+   "ticketUrl": "https://www.edfilmfest.org/film/rise-of-the-footsoldier-retribution/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "rise-of-the-footsoldier-retribution/2026-08-18/15:00",
+   "eventId": "rise-of-the-footsoldier-retribution",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/rise-of-the-footsoldier-retribution/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "rock/2026-08-18/17:45",
+   "eventId": "rock",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "17:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/rock/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sacred-creatures/2026-08-16/17:30",
+   "eventId": "sacred-creatures",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/sacred-creatures/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sacred-creatures/2026-08-17/14:45",
+   "eventId": "sacred-creatures",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "14:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/sacred-creatures/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sacred-creatures/2026-08-18/16:30",
+   "eventId": "sacred-creatures",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "16:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/sacred-creatures/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sacred-creatures/2026-08-18/19:15",
+   "eventId": "sacred-creatures",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "19:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/sacred-creatures/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "screen-academy-scotland-shorts/2026-08-15/16:00",
+   "eventId": "screen-academy-scotland-shorts",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "16:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/screen-academy-scotland-shorts/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sea-of-glass/2026-08-16/20:15",
+   "eventId": "sea-of-glass",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "20:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/sea-of-glass/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sea-of-glass/2026-08-17/15:30",
+   "eventId": "sea-of-glass",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "15:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/sea-of-glass/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sexy-beast/2026-08-17/16:00",
+   "eventId": "sexy-beast",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "16:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/sexy-beast/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sheep-in-the-box/2026-08-14/21:00",
+   "eventId": "sheep-in-the-box",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/sheep-in-the-box/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sheep-in-the-box/2026-08-15/12:30",
+   "eventId": "sheep-in-the-box",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "12:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/sheep-in-the-box/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "sheep-in-the-box/2026-08-16/14:30",
+   "eventId": "sheep-in-the-box",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "14:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/sheep-in-the-box/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "skintown/2026-08-16/22:20",
+   "eventId": "skintown",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "22:20",
+   "ticketUrl": "https://www.edfilmfest.org/film/skintown/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "skintown/2026-08-17/17:30",
+   "eventId": "skintown",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/skintown/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "skintown/2026-08-18/11:00",
+   "eventId": "skintown",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "11:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/skintown/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "skintown/2026-08-18/22:00",
+   "eventId": "skintown",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "22:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/skintown/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "snapshot/2026-08-15/18:30",
+   "eventId": "snapshot",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/snapshot/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "snapshot/2026-08-16/17:45",
+   "eventId": "snapshot",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "17:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/snapshot/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "snapshot/2026-08-17/23:15",
+   "eventId": "snapshot",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "23:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/snapshot/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "snapshot/2026-08-18/22:15",
+   "eventId": "snapshot",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "22:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/snapshot/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "talented-mr-ripley/2026-08-16/17:15",
+   "eventId": "talented-mr-ripley",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "17:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/talented-mr-ripley/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "the-arrow-at-rest-at-every-instant-of-its-flight/2026-08-14/21:15",
+   "eventId": "the-arrow-at-rest-at-every-instant-of-its-flight",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "21:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-arrow-at-rest-at-every-instant-of-its-flight/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-arrow-at-rest-at-every-instant-of-its-flight/2026-08-15/17:30",
+   "eventId": "the-arrow-at-rest-at-every-instant-of-its-flight",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-arrow-at-rest-at-every-instant-of-its-flight/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-best-summer/2026-08-17/18:30",
+   "eventId": "the-best-summer",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-best-summer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-best-summer/2026-08-18/12:45",
+   "eventId": "the-best-summer",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "12:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-best-summer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-education-of-jane-cumming/2026-08-17/18:00",
+   "eventId": "the-education-of-jane-cumming",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-education-of-jane-cumming/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-education-of-jane-cumming/2026-08-18/18:00",
+   "eventId": "the-education-of-jane-cumming",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-education-of-jane-cumming/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-education-of-jane-cumming/2026-08-18/21:30",
+   "eventId": "the-education-of-jane-cumming",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-education-of-jane-cumming/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-education-of-jane-cumming/2026-08-19/11:30",
+   "eventId": "the-education-of-jane-cumming",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "11:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-education-of-jane-cumming/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-incomer/2026-08-13/21:00",
+   "eventId": "the-incomer",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "the-incomer/2026-08-13/21:30",
+   "eventId": "the-incomer",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "the-incomer/2026-08-13/22:00",
+   "eventId": "the-incomer",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "22:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "the-incomer/2026-08-14/13:00",
+   "eventId": "the-incomer",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "13:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-incomer/2026-08-14/18:00",
+   "eventId": "the-incomer",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-incomer/2026-08-15/21:30",
+   "eventId": "the-incomer",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "21:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-incomer/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-last-resort/2026-08-18/14:45",
+   "eventId": "the-last-resort",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "14:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-last-resort/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-last-resort/2026-08-19/18:00",
+   "eventId": "the-last-resort",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-last-resort/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-last-resort/2026-08-19/20:45",
+   "eventId": "the-last-resort",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "20:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-last-resort/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-mad-world-of-harvey-kurtzman/2026-08-16/15:00",
+   "eventId": "the-mad-world-of-harvey-kurtzman",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-mad-world-of-harvey-kurtzman/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-mad-world-of-harvey-kurtzman/2026-08-17/12:00",
+   "eventId": "the-mad-world-of-harvey-kurtzman",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-mad-world-of-harvey-kurtzman/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-mad-world-of-harvey-kurtzman/2026-08-18/13:30",
+   "eventId": "the-mad-world-of-harvey-kurtzman",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "13:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-mad-world-of-harvey-kurtzman/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-mad-world-of-harvey-kurtzman/2026-08-18/16:15",
+   "eventId": "the-mad-world-of-harvey-kurtzman",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "16:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-mad-world-of-harvey-kurtzman/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-peril-at-pincer-point/2026-08-16/21:00",
+   "eventId": "the-peril-at-pincer-point",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-peril-at-pincer-point/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-peril-at-pincer-point/2026-08-17/14:15",
+   "eventId": "the-peril-at-pincer-point",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-17",
+   "start": "14:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-peril-at-pincer-point/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-peril-at-pincer-point/2026-08-19/17:30",
+   "eventId": "the-peril-at-pincer-point",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "17:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-peril-at-pincer-point/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-peril-at-pincer-point/2026-08-19/20:45",
+   "eventId": "the-peril-at-pincer-point",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-19",
+   "start": "20:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-peril-at-pincer-point/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-state-of-us/2026-08-14/18:00",
+   "eventId": "the-state-of-us",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "18:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-state-of-us/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-state-of-us/2026-08-15/18:30",
+   "eventId": "the-state-of-us",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "18:30",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-state-of-us/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "the-state-of-us/2026-08-16/15:00",
+   "eventId": "the-state-of-us",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-state-of-us/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-state-of-us/2026-08-18/16:45",
+   "eventId": "the-state-of-us",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-18",
+   "start": "16:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/the-state-of-us/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "these-violent-delights/2026-08-14/15:45",
+   "eventId": "these-violent-delights",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "15:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/these-violent-delights/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "these-violent-delights/2026-08-14/20:00",
+   "eventId": "these-violent-delights",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/these-violent-delights/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "these-violent-delights/2026-08-15/12:00",
+   "eventId": "these-violent-delights",
+   "venueId": "cameo",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "12:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/these-violent-delights/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "these-violent-delights/2026-08-15/15:00",
+   "eventId": "these-violent-delights",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/these-violent-delights/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  },
+  {
+   "id": "trainspotting/2026-08-15/15:00",
+   "eventId": "trainspotting",
+   "venueId": "cineworld",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "15:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/trainspotting/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "trainspotting-live-event-club-night/2026-08-14/20:00",
+   "eventId": "trainspotting-live-event-club-night",
+   "venueId": null,
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/trainspotting-live-event-club-night/",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "uk-film-conference-industry-keynote/2026-08-15/11:00",
+   "eventId": "uk-film-conference-industry-keynote",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "11:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/uk-film-conference-industry-keynote/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 13.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "uk-film-conference-low-budget-high-ambition/2026-08-15/13:15",
+   "eventId": "uk-film-conference-low-budget-high-ambition",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "13:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/uk-film-conference-low-budget-high-ambition/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "uk-film-conference-new-nightmares/2026-08-15/16:15",
+   "eventId": "uk-film-conference-new-nightmares",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "16:15",
+   "ticketUrl": "https://www.edfilmfest.org/film/uk-film-conference-new-nightmares/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "uk-film-conference-would-this-get-made/2026-08-15/14:45",
+   "eventId": "uk-film-conference-would-this-get-made",
+   "venueId": "central-hall",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "14:45",
+   "ticketUrl": "https://www.edfilmfest.org/film/uk-film-conference-would-this-get-made/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 8.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "visitor-q/2026-08-15/20:00",
+   "eventId": "visitor-q",
+   "venueId": "filmhouse",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "20:00",
+   "ticketUrl": "https://www.edfilmfest.org/film/visitor-q/",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 3.0,
+   "priceMax": 12.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "festival-site"
+  ],
+  "performances": [
+   "festival-site"
+  ],
+  "availability": [
+   "festival-site"
+  ],
+  "prices": [
+   "festival-site"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "festival-site": {
+    "kind": "fetched",
+    "path": "data/festivals/eiff/2026/festival-site",
+    "fetchedAt": "2026-09-25T14:01:51Z",
+    "fetcher": "scraper/festivals/eiff/sources/festival-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/eiff/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "festival-site"
+   ],
+   "events.blurb": [
+    "festival-site"
+   ],
+   "events.categories": [
+    "festival-site"
+   ],
+   "events.durationMin": [
+    "festival-site"
+   ],
+   "events.genre": [
+    "festival-site"
+   ],
+   "events.imageUrl": [
+    "festival-site"
+   ],
+   "events.title": [
+    "festival-site"
+   ],
+   "events.url": [
+    "festival-site"
+   ],
+   "performances.date": [
+    "festival-site"
+   ],
+   "performances.eventId": [
+    "festival-site"
+   ],
+   "performances.free": [
+    "festival-site"
+   ],
+   "performances.priceMax": [
+    "festival-site"
+   ],
+   "performances.priceMin": [
+    "festival-site"
+   ],
+   "performances.start": [
+    "festival-site"
+   ],
+   "performances.status": [
+    "festival-site"
+   ],
+   "performances.ticketUrl": [
+    "festival-site"
+   ],
+   "performances.venueId": [
+    "festival-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "festival-site": [
+    "1981",
+    "a-woman-of-good-abilities",
+    "abuela",
+    "amaretti",
+    "amongst-men",
+    "as-i-lay-dying",
+    "beneath-the-night",
+    "bergamot",
+    "birthmark",
+    "bruvvas",
+    "bubbles",
+    "charlie-is-not-a-boy",
+    "cherry-picker",
+    "departures",
+    "dingo",
+    "end-of-times",
+    "feral",
+    "finding-home-at-the-pianodrome",
+    "geronto",
+    "grief-room",
+    "hag",
+    "headphones",
+    "hidden-trees",
+    "homing",
+    "horizons",
+    "how-to-listen-to-fountains",
+    "i-am-a-river",
+    "idyll",
+    "kind",
+    "kontrewers",
+    "lesbian-ditch-day",
+    "lift-me-up",
+    "meeting-your-maker",
+    "merrimundi",
+    "my-little-blue-heart",
+    "no-one-believes-in-me",
+    "no-place-like-home",
+    "nuuyii-earth",
+    "objet-denigme",
+    "our-cinema-cmc-workshop-2026-behind-the-scenes",
+    "pang",
+    "paradaiz",
+    "passing-place",
+    "pigeon",
+    "please",
+    "saba",
+    "saint-anthony",
+    "shutterbug",
+    "singing-of-the-evening-stars",
+    "sisters-swim",
+    "skerry-may",
+    "skinned",
+    "small-one",
+    "subharmonics",
+    "surplace",
+    "the-angel-in-the-house",
+    "the-flesh-dress",
+    "the-last-whisper",
+    "the-weavers",
+    "the-winkles-philosophy",
+    "this-room-is-impossible-to-eat",
+    "three",
+    "unidentifizierte-unflugobjekte-uuo",
+    "user",
+    "vimar",
+    "weekend",
+    "when-the-fires-stop",
+    "without-kelly"
+   ]
+  }
+ }
+}

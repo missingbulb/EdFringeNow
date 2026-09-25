@@ -1,0 +1,64 @@
+# The Royal Edinburgh Military Tattoo: who it is, its editions, and the sources
+# an edition's information block is assembled from. The contract every key
+# follows is scraper/festivals/README.md.
+#
+# 2026 is declared but unserved (dataUrl null): the ticketing API, the only
+# source with performance times, dropped the 2026 show when 2027 went on sale
+# (sources/ticketing-api/fetch.py's docstring says what was probed). 2027 is
+# served from that API.
+
+id = "edinburgh-tattoo"
+name = "Royal Edinburgh Military Tattoo"
+city = "Edinburgh"
+country = "GB"
+# The city's centre, for the festival timeline and travel maths between cities;
+# venues carry their own coordinates.
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "music"
+default_genre = "music"
+site = "https://www.edintattoo.co.uk"
+
+[ticketing]
+notes = "Its own box office at book.edintattoo.co.uk (SecuTix behind the Tattoo's own API): one show a night on the Castle Esplanade, seated by price band, with hospitality packages on top. Seats left and the cheapest and dearest price on sale are published per performance."
+currency = "GBP"
+
+# "A Call To Gather which ran from the 7-29 August 2026", edintattoo.co.uk
+# /our-story/2026-highlights, read on 2026-09-25.
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-08-07"
+last = "2026-08-29"
+
+# "The 2027 show takes place from 6-28 August 2027", the 2027 show product's
+# description in the ticketing catalogue, read on 2026-09-25.
+[[edition]]
+id = "2027"
+format = "block"
+first = "2027-08-06"
+last = "2027-08-28"
+
+[[source]]
+id = "ticketing-api"
+kind = "fetched"
+roles = ["events", "performances", "availability", "prices"]
+required = true
+fetcher = "sources/ticketing-api/fetch.py"
+adapter = "edinburgh_tattoo/ticketing_api.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "edinburgh_tattoo/venues_research.py"
+
+[merge]
+venues = ["venues-research"]
+events = ["ticketing-api"]
+performances = ["ticketing-api"]

@@ -1,0 +1,49 @@
+# The New Zealand International Comedy Festival: who it is, its editions, and
+# the sources an edition's information block is assembled from. The contract
+# every key follows is scraper/festivals/README.md.
+#
+# A placeholder: the 2027 edition is declared so the festival is listed, and it
+# stays unserved (dataUrl null) until its required source is fetched. Why the
+# fetcher is not built yet is sources/find-a-show/fetch.py's docstring.
+#
+# One programme runs in Auckland and Wellington at once. The festival's city is
+# Auckland, the larger leg; every venue carries its own coordinates, so the
+# Wellington leg plans correctly once venues are fetched.
+
+id = "nzicf"
+name = "NZ International Comedy Festival"
+city = "Auckland"
+country = "NZ"
+lat = -36.8485
+lng = 174.7633
+timezone = "Pacific/Auckland"
+lang = "en"
+dir = "ltr"
+kind = "comedy"
+default_genre = "comedy"
+site = "https://www.comedyfestival.co.nz"
+
+[ticketing]
+notes = "No central basket: each show links out to its own agent (Ticketmaster, Q Theatre, Eventfinda or iTicket)."
+currency = "NZD"
+
+# Dates from the festival's own site header, "30 Apr – 23 May 2027", read on
+# 2026-09-25.
+[[edition]]
+id = "2027"
+format = "block"
+first = "2027-04-30"
+last = "2027-05-23"
+
+[[source]]
+id = "find-a-show"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/find-a-show/fetch.py"
+adapter = "nzicf/find_a_show.py"
+
+[merge]
+venues = ["find-a-show"]
+events = ["find-a-show"]
+performances = ["find-a-show"]

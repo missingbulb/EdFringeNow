@@ -50,3 +50,6 @@ repo may reference `product-wiki/` except the reviewed distillation under
   else is going on" gets published in each festival city: the source classes
   (licensed suppliers, open data, DMO calendars, discovery APIs, attractions
   layers), how machine-readable each is, and the per-city best reads.
+- **[partner-providers/](partner-providers/README.md)** — who a visitor
+  can book through (tickets, tables, stays, transport, tours), how rich
+  each one's query API is, and which pay us a referral commission.

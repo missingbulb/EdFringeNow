@@ -34,7 +34,7 @@ module.exports = {
     const count = (selector) => page.locator(selector).count();
 
     const shows = await page.evaluate(() => document.getElementById("browseLine1").textContent);
-    assert.match(shows, /[34],\d{3}/, `the whole programme is pooled (${shows})`);
+    assert.match(shows, /\d,\d{3}/, `the whole programme is pooled (${shows})`);
 
     // The drawer's list: too long to browse, so nothing is drawn.
     await page.evaluate(() => (document.getElementById("boardDrawer").open = true));

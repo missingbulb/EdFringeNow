@@ -1,0 +1,47 @@
+# The Edinburgh International Book Festival: who it is, its editions, and the
+# sources an edition's information block is assembled from. The contract every
+# key follows is scraper/festivals/README.md.
+
+id = "edinburgh-book-festival"
+name = "Edinburgh International Book Festival"
+city = "Edinburgh"
+country = "GB"
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "multi"
+default_genre = "talk"
+site = "https://www.edbookfest.co.uk"
+
+[ticketing]
+notes = "Sold on edbookfest.co.uk through Spektrix, whose public API publishes every event's seats available against capacity and its price list. Events have no page of their own on the festival site (they hang off author pages), so no event carries a URL."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-08-15"
+last = "2026-08-30"
+
+[[source]]
+id = "spektrix"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/spektrix/fetch.py"
+adapter = "edinburgh_book_festival/spektrix.py"
+
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "edinburgh_book_festival/nominatim.py"
+
+[merge]
+venues = ["spektrix", "nominatim"]
+events = ["spektrix"]
+performances = ["spektrix"]

@@ -1,0 +1,28 @@
+{
+  "hours": {
+    "Q206171": {
+      "name": "The Scottish Parliament",
+      "openingHours": "Mo,Fr,Sa 10:00-17:00; Tu-Th 09:00-18:30; Su off",
+      "source": "https://www.parliament.scot/visit",
+      "checked": "2026-09-25"
+    },
+    "Q952412": {
+      "name": "Mons Meg (Edinburgh Castle)",
+      "openingHours": "Apr-Sep 09:30-18:00; Oct-Mar 09:30-17:00; Dec 24 09:30-16:00; Dec 25-26 off; Jan 01 11:00-17:00",
+      "source": "https://www.edinburghcastle.scot/plan-your-visit/opening-times/",
+      "checked": "2026-09-25"
+    },
+    "Q432422": {
+      "name": "Craigmillar Castle",
+      "openingHours": "Apr-Sep 09:30-17:00; Oct-Mar 09:30-16:00; Dec 25-26 off; Jan 01-02 off",
+      "source": "https://www.historicenvironment.scot/visit/all/craigmillar-castle/plan-your-visit/",
+      "checked": "2026-09-25"
+    },
+    "Q2324015": {
+      "name": "St Mary's Episcopal Cathedral",
+      "openingHours": "Mo-Fr 08:00-18:00; Sa,Su 08:00-17:00",
+      "source": "https://www.cathedral.net/cathedral-building/visiting",
+      "checked": "2026-09-25"
+    }
+  }
+}

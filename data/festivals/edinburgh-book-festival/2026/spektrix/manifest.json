@@ -1,0 +1,20 @@
+{
+ "festival": "edinburgh-book-festival",
+ "edition": "2026",
+ "source": "spektrix",
+ "fetchedAt": "2026-09-25T14:13:42Z",
+ "fetcher": "scraper/festivals/edinburgh_book_festival/sources/spektrix/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/events",
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/instances",
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/venues",
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/plans/<id>",
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/instances/<id>/status",
+  "https://system.spektrix.com/edinburghinternationalbookfestival/api/v3/instances/<id>/price-list"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Spektrix public API v3, unauthenticated. Availability is seats available against capacity at fetch time (scraper/festivals/platforms/spektrix.py)."
+}

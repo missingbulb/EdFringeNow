@@ -1,0 +1,5395 @@
+{
+ "v": 1,
+ "city": {
+  "id": "melbourne",
+  "name": "Melbourne",
+  "country": "AU",
+  "lat": -37.815,
+  "lng": 144.9668,
+  "timezone": "Australia/Melbourne"
+ },
+ "places": [
+  {
+   "id": "osm:way/4817059",
+   "name": "Royal Exhibition Building",
+   "kind": "landmark",
+   "lat": -37.804668,
+   "lng": 144.971499,
+   "address": "9 Nicholson Street, 3053",
+   "website": "https://museumsvictoria.com.au/reb/",
+   "wikidata": "Q695935",
+   "wikipedia": "en:Royal Exhibition Building",
+   "description": "heritage building in Melbourne, Victoria, Australia",
+   "image": "Royal exhibition building tulips straight.jpg",
+   "notability": 43,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/6614802",
+   "name": "Carlton Gardens",
+   "kind": "park",
+   "lat": -37.804231,
+   "lng": 144.971567,
+   "address": null,
+   "website": null,
+   "wikidata": "Q829338",
+   "wikipedia": "en:Carlton Gardens",
+   "description": "garden in Melbourne, Victoria, Australia",
+   "image": "Carlton gardens panorama.jpg",
+   "notability": 36,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/23764181",
+   "name": "National Gallery of Victoria",
+   "kind": "gallery",
+   "lat": -37.822715,
+   "lng": 144.968671,
+   "address": "130-180 St Kilda Road, 3006",
+   "website": "https://www.ngv.vic.gov.au",
+   "wikidata": "Q1464509",
+   "wikipedia": "en:National Gallery of Victoria",
+   "description": "art museum in Melbourne, Australia",
+   "image": "National Gallery of Victoria from Eurkea Tower.jpg",
+   "notability": 31,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/4817074",
+   "name": "Melbourne Museum",
+   "kind": "museum",
+   "lat": -37.803237,
+   "lng": 144.9717,
+   "address": "11 Nicholson Street, 3053",
+   "website": "https://museumsvictoria.com.au/melbournemuseum/",
+   "wikidata": "Q1353869",
+   "wikipedia": "en:Melbourne Museum",
+   "description": "museum in Victoria, Australia",
+   "image": "Melbourne museum exterior panorama.jpg",
+   "notability": 19,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00,09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ],
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1364444691",
+   "name": "Melbourne Zoological Gardens",
+   "kind": "zoo",
+   "lat": -37.784606,
+   "lng": 144.951953,
+   "address": "1 Elliott Avenue",
+   "website": "https://www.zoo.org.au/MelbourneZoo",
+   "wikidata": "Q578027",
+   "wikipedia": "en:Melbourne Zoo",
+   "description": "zoo in Melbourne, Victoria, Australia",
+   "image": "Melbourne Zoo entrance 1a.jpg",
+   "notability": 19,
+   "highlight": true,
+   "openingHours": "Mo-Su 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1098427843",
+   "name": "Federation Square",
+   "kind": "attraction",
+   "lat": -37.817766,
+   "lng": 144.969305,
+   "address": "Swanston Street",
+   "website": "https://fedsquare.com/",
+   "wikidata": "Q923304",
+   "wikipedia": "en:Federation Square",
+   "description": "public square in Melbourne, Victoria, Australia",
+   "image": "Fed Square August 2007.jpg",
+   "notability": 16,
+   "highlight": true,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/24590190",
+   "name": "Shrine of Remembrance",
+   "kind": "landmark",
+   "lat": -37.830532,
+   "lng": 144.973445,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1369544",
+   "wikipedia": "en:Shrine of Remembrance",
+   "description": "memorial located in Kings Domain on St Kilda Road, Melbourne, Australia",
+   "image": "Shrine of Rememberence.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/13306836",
+   "name": "Crown Melbourne",
+   "kind": "attraction",
+   "lat": -37.823331,
+   "lng": 144.958697,
+   "address": "8 Whiteman Street, 3006",
+   "website": "https://www.crownmelbourne.com.au/",
+   "wikidata": "Q1145115",
+   "wikipedia": "en:Crown Melbourne",
+   "description": "casino and resort in Melbourne, Australia",
+   "image": "Crown Casino complex.jpg",
+   "notability": 11,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/666255789",
+   "name": "Cooks' Cottage",
+   "kind": "landmark",
+   "lat": -37.81449,
+   "lng": 144.97945,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1129647",
+   "wikipedia": "en:Cooks' Cottage",
+   "description": "cottage museum in Melbourne",
+   "image": "Melbourne Capt Cooks Cottage - outer00.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "Mo-Su 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/27086581",
+   "name": "SEA LIFE Melbourne Aquarium",
+   "kind": "zoo",
+   "lat": -37.820723,
+   "lng": 144.958344,
+   "address": "King Street, 3000",
+   "website": "https://www.melbourneaquarium.com.au/",
+   "wikidata": "Q1321392",
+   "wikipedia": "en:Sea Life Melbourne Aquarium",
+   "description": "aquarium in Melbourne, Australia",
+   "image": "Sea Life Melbourne Aquarium-Southbank view.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "Mo-Fr 10:00-17:30; Sa-Su 09:30-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/45461060",
+   "name": "Australian Centre for Contemporary Art",
+   "kind": "gallery",
+   "lat": -37.826682,
+   "lng": 144.967075,
+   "address": "111 Sturt Street, 3006",
+   "website": "https://acca.melbourne/",
+   "wikidata": "Q781373",
+   "wikipedia": null,
+   "description": "art gallery",
+   "image": "Australian Center of Contemporary Art (ACCA)- Entrance 2.JPG",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "Tu-Fr 10:00-17:00; Sa-Su 11:00-17:00; Mo closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/14251243",
+   "name": "Immigration Museum",
+   "kind": "museum",
+   "lat": -37.819117,
+   "lng": 144.960397,
+   "address": "400 Flinders Street, 3000",
+   "website": "https://museumsvictoria.com.au/immigrationmuseum/",
+   "wikidata": "Q2694295",
+   "wikipedia": "en:Immigration Museum, Melbourne",
+   "description": "museum in Melbourne, Victoria, Australia",
+   "image": "Old Customs House Melbourne.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/113434071",
+   "name": "Queen Victoria Market",
+   "kind": "market",
+   "lat": -37.80749,
+   "lng": 144.957712,
+   "address": "Queen Street, 3000",
+   "website": "https://qvm.com.au/",
+   "wikidata": "Q860621",
+   "wikipedia": "en:Queen Victoria Market",
+   "description": "open-air market in Melbourne, Victoria, Australia",
+   "image": "Auss Queen Victoria Market.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "Tu 06:00-14:00; Th 06:00-14:00; Fr 06:00-18:00; Sa 06:00-15:00; Su 09:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/15477129",
+   "name": "Luna Park",
+   "kind": "attraction",
+   "lat": -37.868031,
+   "lng": 144.976749,
+   "address": "18 Lower Esplanade, 3182",
+   "website": "https://www.lunapark.com.au/",
+   "wikidata": "Q2750308",
+   "wikipedia": "en:Luna Park, Melbourne",
+   "description": "amusement park in Melbourne, Victoria, Australia",
+   "image": "Entrance to Melbourne's Luna Park 2014.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "Sa-Su 11:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/26564392",
+   "name": "Old Melbourne Gaol",
+   "kind": "attraction",
+   "lat": -37.807812,
+   "lng": 144.965125,
+   "address": "377 Russell Street, 3000",
+   "website": "https://www.oldmelbournegaol.com.au",
+   "wikidata": "Q2018436",
+   "wikipedia": "en:Old Melbourne Gaol",
+   "description": "former jail in Melbourne, Victoria, Australia and now a tourist attraction",
+   "image": "Old Melbourne Gaol - Melbourne (76468479).jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "09:30-17:00; Dec 25 closed; easter -2 days closed",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/13626510201",
+   "name": "Arts Centre Melbourne (Theatres Building)",
+   "kind": "attraction",
+   "lat": -37.821326,
+   "lng": 144.968458,
+   "address": null,
+   "website": "https://www.artscentremelbourne.com.au/",
+   "wikidata": "Q4801443",
+   "wikipedia": "en:Arts Centre Melbourne",
+   "description": "performing arts centre in Melbourne",
+   "image": "Arts Centre, Melbourne, north view 20230219 1.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22963243",
+   "name": "Ian Potter Centre: NGV Australia",
+   "kind": "museum",
+   "lat": -37.817539,
+   "lng": 144.969971,
+   "address": "Federation Square, 3000",
+   "website": "https://www.ngv.vic.gov.au/",
+   "wikidata": "Q4350417",
+   "wikipedia": null,
+   "description": "part of the National Gallery of Victoria, Australia",
+   "image": "Ian Potter Centre NGV Australia-Flinders Street and Russel Street junction view.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/267164272",
+   "name": "Islamic Museum of Australia",
+   "kind": "museum",
+   "lat": -37.75452,
+   "lng": 144.980727,
+   "address": "15A Anderson Road, 3071",
+   "website": "https://www.islamicmuseum.org.au/",
+   "wikidata": "Q16251084",
+   "wikipedia": null,
+   "description": "museum in Melbourne, Australia",
+   "image": "Islamic Museum of Australia 1.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/481756982",
+   "name": "Polly Woodside",
+   "kind": "landmark",
+   "lat": -37.824702,
+   "lng": 144.953426,
+   "address": "21 South Wharf Promenade, 3006",
+   "website": "http://www.pollywoodside.com.au",
+   "wikidata": "Q2102199",
+   "wikipedia": null,
+   "description": "three-masted, iron-hulled barque preserved as a museum ship in Melbourne, Australia",
+   "image": "Polly woodside-1w.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4469617901",
+   "name": "The Australian Sports Museum",
+   "kind": "museum",
+   "lat": -37.818871,
+   "lng": 144.98435,
+   "address": null,
+   "website": "https://www.australiansportsmuseum.org.au/",
+   "wikidata": "Q4315039",
+   "wikipedia": null,
+   "description": "museum dedicated to Australian sport, located in Melbourne, Australia",
+   "image": "National Sports Museum.JPG",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/22963244",
+   "name": "ACMI",
+   "kind": "museum",
+   "lat": -37.817461,
+   "lng": 144.969117,
+   "address": "Federation Square, 3000",
+   "website": "https://www.acmi.net.au/",
+   "wikidata": "Q4823962",
+   "wikipedia": "en:ACMI (museum)",
+   "description": "national museum of screen culture in Melbourne, Victoria, Australia",
+   "image": "Australian Centre for the Moving Image.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "10:00-17:00; Apr 25 13:00-17:00; Dec 25 off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-25",
+       "04-25"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/15865305",
+   "name": "Albert Park",
+   "kind": "park",
+   "lat": -37.847123,
+   "lng": 144.971893,
+   "address": null,
+   "website": "https://parkweb.vic.gov.au/explore/parks/albert-park",
+   "wikidata": "Q4710971",
+   "wikipedia": "en:Albert Park and Lake",
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": "Albert Park & Australia Grand Prix Circuit.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/18892045",
+   "name": "Grainger Museum",
+   "kind": "museum",
+   "lat": -37.797291,
+   "lng": 144.958434,
+   "address": "48 Royal Parade",
+   "website": null,
+   "wikidata": "Q5593518",
+   "wikipedia": null,
+   "description": "museum about Australian music and the life and work of Percy Grainger",
+   "image": "Grainger museum university of melbourne.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "\"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/46194494",
+   "name": "Princess Theatre",
+   "kind": "attraction",
+   "lat": -37.810711,
+   "lng": 144.97233,
+   "address": "163 Spring Street, 3000",
+   "website": "https://marrinergroup.com.au/princess-theatre",
+   "wikidata": "Q7244850",
+   "wikipedia": "en:Princess Theatre (Melbourne)",
+   "description": "theatre in Melbourne, Victoria, Australia",
+   "image": "Melbourne Princess Theatre.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/23144072",
+   "name": "Scienceworks",
+   "kind": "museum",
+   "lat": -37.83157,
+   "lng": 144.893908,
+   "address": "2 Booker Street, 3015",
+   "website": "https://museumsvictoria.com.au/scienceworks",
+   "wikidata": "Q7433721",
+   "wikipedia": "en:Scienceworks (Melbourne)",
+   "description": "science museum in Melbourne, Australia",
+   "image": "Scienceworks Museum.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/4817020",
+   "name": "Fitzroy Gardens",
+   "kind": "park",
+   "lat": -37.812957,
+   "lng": 144.980466,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3444049",
+   "wikipedia": "en:Fitzroy Gardens",
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": "English Elm avenue.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4817082",
+   "name": "Flagstaff Gardens",
+   "kind": "park",
+   "lat": -37.810488,
+   "lng": 144.954424,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5457014",
+   "wikipedia": "en:Flagstaff Gardens",
+   "description": "urban park in Melbourne, Victoria, Australia",
+   "image": "Flagstaff Gardens-10 2010-11-22.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27462510",
+   "name": "Batman Park",
+   "kind": "park",
+   "lat": -37.821795,
+   "lng": 144.9566,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2191993",
+   "wikipedia": "en:Batman Park",
+   "description": "urban park on the northern bank of the Yarra River in central Melbourne, Victoria, Australia",
+   "image": "Batman Park1.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/46197639",
+   "name": "Chinese Museum",
+   "kind": "museum",
+   "lat": -37.810741,
+   "lng": 144.969211,
+   "address": "22 Cohen Place, 3000",
+   "website": "https://www.chinesemuseum.com.au/",
+   "wikidata": "Q5100547",
+   "wikipedia": null,
+   "description": "museum in Melbourne, Australia",
+   "image": "Chinese Museum, Chinatown, Melb, jjron, 6.07.2016.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/666248750",
+   "name": "Coop's Shot Tower",
+   "kind": "attraction",
+   "lat": -37.810451,
+   "lng": 144.963147,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5167700",
+   "wikipedia": "en:Coop's Shot Tower",
+   "description": "shot tower in Melbourne, Australia",
+   "image": "Melb-Central-shot-tower.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/12273713",
+   "name": "Fawkner Park",
+   "kind": "park",
+   "lat": -37.841329,
+   "lng": 144.981476,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1837660",
+   "wikipedia": "en:Fawkner Park, Melbourne",
+   "description": "park in South Yarra, Victoria, Australia",
+   "image": "Fawkner Park, South Yarra, Victoria, Australia.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13778410273",
+   "name": "Hellenic Museum",
+   "kind": "museum",
+   "lat": -37.812171,
+   "lng": 144.957084,
+   "address": "280 William Street",
+   "website": "https://www.hellenic.org.au/",
+   "wikidata": "Q15961629",
+   "wikipedia": null,
+   "description": "museum in Melbourne, Australia",
+   "image": "Melbourne mint.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/4817097",
+   "name": "Treasury Gardens",
+   "kind": "park",
+   "lat": -37.813988,
+   "lng": 144.97598,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7836802",
+   "wikipedia": "en:Treasury Gardens",
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": "AUS Melbourne, Melbourne, Treasury Gardens 007.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/815758596",
+   "name": "La Trobe’s Cottage",
+   "kind": "landmark",
+   "lat": -37.831585,
+   "lng": 144.976027,
+   "address": "37 Dallas Brooks Drive",
+   "website": "https://www.nationaltrust.org.au/places/la-trobes-cottage/",
+   "wikidata": "Q6465528",
+   "wikipedia": null,
+   "description": "building in Victoria, Australia",
+   "image": "La Trobe's Cottage.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "Oct-Apr Su 13:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "10-01",
+       "04-30"
+      ]
+     ],
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/45480189",
+   "name": "Pioneer Women's Memorial Garden",
+   "kind": "garden",
+   "lat": -37.825105,
+   "lng": 144.976044,
+   "address": null,
+   "website": null,
+   "wikidata": "Q25183819",
+   "wikipedia": null,
+   "description": "garden in Melbourne, Victoria",
+   "image": "Pioneer Women's Memorial.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/45422277",
+   "name": "Royal Botanic Gardens",
+   "kind": "garden",
+   "lat": -37.829489,
+   "lng": 144.979551,
+   "address": null,
+   "website": "https://www.rbg.vic.gov.au/",
+   "wikidata": "Q101433843",
+   "wikipedia": "en:Royal Botanic Gardens Victoria",
+   "description": "botanic gardens at Melbourne and Cranbourne",
+   "image": "Succulent Garden, Royal Botanical Gardens, Melbourne Australia (4507576239).jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "07:30-17:30; Oct 01-Mar 31 07:30-19:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "07:30",
+       "17:30"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:30",
+       "19:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/131707394",
+   "name": "Yarra Park",
+   "kind": "park",
+   "lat": -37.819727,
+   "lng": 144.984138,
+   "address": null,
+   "website": "https://www.mcg.org.au/Yarra%20Park.aspx",
+   "wikidata": "Q8049504",
+   "wikipedia": "en:Yarra Park",
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": "Yarra Park (500966539).jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/13605129",
+   "name": "Bali Memorial",
+   "kind": "landmark",
+   "lat": -37.80245,
+   "lng": 144.963255,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2480133",
+   "wikipedia": null,
+   "description": "memorial in Melbourne, Australia commemorating the 2002 Bali bombings",
+   "image": "Bali Memorial,Carlton, Victoria, Australia.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11168844123",
+   "name": "Batman's Hill",
+   "kind": "attraction",
+   "lat": -37.819386,
+   "lng": 144.953914,
+   "address": "Collins Street",
+   "website": null,
+   "wikidata": "Q4869331",
+   "wikipedia": "en:Batman's Hill",
+   "description": "hill in Melbourne, Australia",
+   "image": "Batmans-hill-melbourne.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/46330961",
+   "name": "Birrarung Marr",
+   "kind": "park",
+   "lat": -37.819082,
+   "lng": 144.973463,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2904546",
+   "wikipedia": "en:Birrarung Marr, Melbourne",
+   "description": "inner-city park in Melbourne, Victoria, Australia",
+   "image": "Birrarung Marr pedestrian bridge.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/128952467",
+   "name": "Como Historic House",
+   "kind": "landmark",
+   "lat": -37.837938,
+   "lng": 145.003685,
+   "address": "Williams Road, 3141",
+   "website": "https://www.nationaltrust.org.au/",
+   "wikidata": "Q4348856",
+   "wikipedia": null,
+   "description": "historic house in Melbourne, Victoria, Australia",
+   "image": "(1)Como in Melbourne Australia.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/31435738",
+   "name": "Dights Falls",
+   "kind": "attraction",
+   "lat": -37.79716,
+   "lng": 145.001088,
+   "address": null,
+   "website": "https://parkweb.vic.gov.au/",
+   "wikidata": "Q5275695",
+   "wikipedia": "en:Dights Falls",
+   "description": "weir and rapids in Melbourne, Victoria, Australia",
+   "image": "HDRDightsFalls.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27703382",
+   "name": "John Cain Memorial Park",
+   "kind": "park",
+   "lat": -37.763983,
+   "lng": 145.02443,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970223",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5724989221",
+   "name": "Koorie Heritage Trust",
+   "kind": "museum",
+   "lat": -37.818157,
+   "lng": 144.969102,
+   "address": null,
+   "website": "https://kht.org.au/",
+   "wikidata": "Q53700558",
+   "wikipedia": null,
+   "description": "indigenous cultural organisation in Melbourne, Australia",
+   "image": "Koorie Heritage Trust - Yarra Building, Fed Square.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00; PH closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/448810461",
+   "name": "Melbourne Tram Museum",
+   "kind": "attraction",
+   "lat": -37.827188,
+   "lng": 145.02443,
+   "address": null,
+   "website": "https://www.hawthorntramdepot.org.au/",
+   "wikidata": "Q5685529",
+   "wikipedia": "en:Hawthorn tram depot",
+   "description": "heritage-listed former tram depot and museum in Hawthorn, Victoria, Australia",
+   "image": "Hawthorn Tram Depot, Wallen Road frontage.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Sa[2],Sa[4] 11:00-17:00; PH Sa[2],Sa[4] 11:00-17:00; Dec Sa[4] off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/4965315",
+   "name": "Princes Park",
+   "kind": "park",
+   "lat": -37.784913,
+   "lng": 144.96149,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4810325",
+   "wikipedia": null,
+   "description": "parkland in Melbourne, Australia",
+   "image": "Princes Park, Carlton North, Victoria, Australia.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27858621",
+   "name": "Rippon Lea Estate",
+   "kind": "garden",
+   "lat": -37.879744,
+   "lng": 144.999055,
+   "address": "192 Hotham Street, 3185",
+   "website": "https://www.ripponleaestate.com.au/",
+   "wikidata": "Q7335741",
+   "wikipedia": "en:Rippon Lea Estate",
+   "description": "historic national heritage site in Elsternwick, Victoria, Australia",
+   "image": "Rippon Lea Estate, Victoria.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/112653660",
+   "name": "Royal Park",
+   "kind": "park",
+   "lat": -37.786132,
+   "lng": 144.949765,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7374687",
+   "wikipedia": null,
+   "description": "urban park in Melbourne, Australia",
+   "image": "Royal Park Melbourne.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27772268",
+   "name": "Westgate Park",
+   "kind": "park",
+   "lat": -37.831328,
+   "lng": 144.907589,
+   "address": null,
+   "website": "https://parkweb.vic.gov.au/explore/parks/westgate-park",
+   "wikidata": "Q21970989",
+   "wikipedia": null,
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/24593719",
+   "name": "Alexandra Gardens",
+   "kind": "park",
+   "lat": -37.821242,
+   "lng": 144.97263,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4720648",
+   "wikipedia": "en:Alexandra Gardens, Melbourne",
+   "description": "public gardens in Melbourne, Victoria, Australia",
+   "image": "Aerial perspective of the Star-shaped garden bed in Alexandra Gardens.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/218039396",
+   "name": "Alfred Square",
+   "kind": "park",
+   "lat": -37.864947,
+   "lng": 144.973903,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17985475",
+   "wikipedia": null,
+   "description": "park in St, Kilda, Victoria",
+   "image": "Albert Square Park, St Kilda July2014.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27527691",
+   "name": "All Nations Park",
+   "kind": "park",
+   "lat": -37.767993,
+   "lng": 145.005424,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970922",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/13145019",
+   "name": "Allard Park",
+   "kind": "park",
+   "lat": -37.759961,
+   "lng": 144.978167,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971047",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/24591396",
+   "name": "Alma Park East",
+   "kind": "park",
+   "lat": -37.860124,
+   "lng": 144.995432,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971033",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/29173083",
+   "name": "Anders Park",
+   "kind": "park",
+   "lat": -37.805482,
+   "lng": 144.877176,
+   "address": "Exhibition Street",
+   "website": "http://internalreserves.blogspot.com.au/2013/02/anders-park-anders-triangle-west.html",
+   "wikidata": "Q21970365",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28460882",
+   "name": "Anderson Park",
+   "kind": "park",
+   "lat": -37.839949,
+   "lng": 145.048816,
+   "address": "3 - 11 Anderson Road",
+   "website": null,
+   "wikidata": "Q21970955",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/11182590",
+   "name": "Balfe Park",
+   "kind": "park",
+   "lat": -37.774523,
+   "lng": 144.97744,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970356",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/317310595",
+   "name": "Bayswater Road Park",
+   "kind": "park",
+   "lat": -37.793752,
+   "lng": 144.923773,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971165",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/160180163",
+   "name": "Burnley Gardens",
+   "kind": "garden",
+   "lat": -37.829319,
+   "lng": 145.022136,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56241286",
+   "wikipedia": null,
+   "description": "heritage-listed botanical gardens in Burnley, Victoria, Australia",
+   "image": "Yarra River and Swan Street Bridge.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22780369",
+   "name": "CERES Environment Park",
+   "kind": "park",
+   "lat": -37.765926,
+   "lng": 144.983965,
+   "address": null,
+   "website": "https://ceres.org.au/",
+   "wikidata": "Q5010349",
+   "wikipedia": "en:CERES Community Environment Park",
+   "description": "community environmental park in Melbourne, Australia",
+   "image": "Vegetable patch, water processing, green house - CERES Market.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27675492",
+   "name": "Caulfield Park",
+   "kind": "park",
+   "lat": -37.871749,
+   "lng": 145.029781,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970936",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/48531586",
+   "name": "Charles Evans Reserve",
+   "kind": "park",
+   "lat": -37.832111,
+   "lng": 144.991448,
+   "address": "196 Cubitt Street",
+   "website": null,
+   "wikidata": "Q5184113",
+   "wikipedia": null,
+   "description": "former pleasure garden in Melbourne",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28755549",
+   "name": "Como Park",
+   "kind": "park",
+   "lat": -37.836053,
+   "lng": 145.003905,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970885",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/33117835",
+   "name": "Dame Nellie Melba Memorial Park",
+   "kind": "park",
+   "lat": -37.821448,
+   "lng": 145.002926,
+   "address": "98-104 Coppin Street",
+   "website": null,
+   "wikidata": "Q21970877",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25739520",
+   "name": "Debneys Park",
+   "kind": "park",
+   "lat": -37.786501,
+   "lng": 144.937258,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970873",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/13815924",
+   "name": "Edinburgh Gardens",
+   "kind": "park",
+   "lat": -37.787676,
+   "lng": 144.982858,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5338199",
+   "wikipedia": null,
+   "description": "park in inner Melbourne, Australia",
+   "image": "Fitzroy Memorial Rotunda.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27784473",
+   "name": "Elwood Park",
+   "kind": "park",
+   "lat": -37.888225,
+   "lng": 144.985265,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970856",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26114605",
+   "name": "Fairbairn Park",
+   "kind": "park",
+   "lat": -37.773182,
+   "lng": 144.899238,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970852",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/379065029",
+   "name": "Fairview Park",
+   "kind": "park",
+   "lat": -37.829638,
+   "lng": 145.027222,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21973007",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/595504813",
+   "name": "Fire Services Museum",
+   "kind": "museum",
+   "lat": -37.808597,
+   "lng": 144.975452,
+   "address": "39 Gisborne Street",
+   "website": "https://www.fsmv.net.au/",
+   "wikidata": "Q5330187",
+   "wikipedia": null,
+   "description": "central fire station of Melbourne, Victoria, Australia",
+   "image": "Former Eastern Hill Fire Station, now Fire Services Museum of Victoria, on Victoria Parade in East Melbourne.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Th-Fr 09:00-15:00; Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/10937073",
+   "name": "Fleming Park",
+   "kind": "park",
+   "lat": -37.769454,
+   "lng": 144.975976,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970845",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/45792871",
+   "name": "Footscray Park",
+   "kind": "park",
+   "lat": -37.793276,
+   "lng": 144.906519,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5466572",
+   "wikipedia": null,
+   "description": "park in Footscray, Melbourne, Victoria, Australia",
+   "image": "Footscray Park.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28375613",
+   "name": "Hayes Park",
+   "kind": "park",
+   "lat": -37.75712,
+   "lng": 145.017959,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970247",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41411230",
+   "name": "J.J. Holland Park",
+   "kind": "park",
+   "lat": -37.797624,
+   "lng": 144.923655,
+   "address": null,
+   "website": "http://www.thatsmelbourne.com.au/Placestogo/ParksandGardens/AllParksandGardens/Pages/4443.aspx",
+   "wikidata": "Q6104138",
+   "wikipedia": "en:J.J. Holland Park",
+   "description": "park in Melbourne, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/23000753",
+   "name": "Johnson Park",
+   "kind": "park",
+   "lat": -37.776182,
+   "lng": 145.009446,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970219",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/24593825",
+   "name": "Kings Domain",
+   "kind": "park",
+   "lat": -37.825893,
+   "lng": 144.97475,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6412904",
+   "wikipedia": "en:Kings Domain",
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": "GovernmentHouseMelbourne1 gobeirne.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4470702093",
+   "name": "Labassa",
+   "kind": "attraction",
+   "lat": -37.869757,
+   "lng": 145.009838,
+   "address": null,
+   "website": "https://www.nationaltrust.org.au/places/labassa/",
+   "wikidata": "Q56746612",
+   "wikipedia": null,
+   "description": "heritage-listed mansion in Caulfield North, Victoria, Australia",
+   "image": "Labassa.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/21420462",
+   "name": "Mayors Park",
+   "kind": "park",
+   "lat": -37.788824,
+   "lng": 144.993806,
+   "address": "Turnbull Street, 3068",
+   "website": null,
+   "wikidata": "Q21971159",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/5067096",
+   "name": "Methven Park",
+   "kind": "park",
+   "lat": -37.771361,
+   "lng": 144.973285,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971145",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25739077",
+   "name": "Ormond Park",
+   "kind": "park",
+   "lat": -37.7719,
+   "lng": 144.93531,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971103",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27925061",
+   "name": "Orrong Park",
+   "kind": "park",
+   "lat": -37.850724,
+   "lng": 145.010864,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971101",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27730869",
+   "name": "Palazzolo Park",
+   "kind": "park",
+   "lat": -37.749788,
+   "lng": 144.956043,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970377",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/97811471",
+   "name": "Paul Huckin Park",
+   "kind": "park",
+   "lat": -37.7519,
+   "lng": 144.936329,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971094",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/642333245",
+   "name": "Pellegrini's",
+   "kind": "attraction",
+   "lat": -37.811719,
+   "lng": 144.971211,
+   "address": "66 Bourke Street, 3000",
+   "website": null,
+   "wikidata": "Q58481453",
+   "wikipedia": null,
+   "description": "coffee bar at 66 Bourke Street, Melbourne",
+   "image": "Pellegrinis at dusk December 2012.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28376037",
+   "name": "Penders Park",
+   "kind": "park",
+   "lat": -37.7546,
+   "lng": 145.007321,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971092",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/45842709",
+   "name": "Pipemaker's Park",
+   "kind": "park",
+   "lat": -37.776407,
+   "lng": 144.894517,
+   "address": null,
+   "website": null,
+   "wikidata": "Q18166356",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": "PipemakersPark.jpeg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/29122348",
+   "name": "Point Gellibrand Coastal Heritage Park",
+   "kind": "park",
+   "lat": -37.867884,
+   "lng": 144.909613,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21924263",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41841390",
+   "name": "Prahran Market",
+   "kind": "market",
+   "lat": -37.846065,
+   "lng": 144.992593,
+   "address": "163 Commercial Road, 3141",
+   "website": "https://www.prahranmarket.com.au/",
+   "wikidata": "Q7237731",
+   "wikipedia": null,
+   "description": "food Market in Australia",
+   "image": "SouthYarra---Prahran-Market.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo,Tu 07:00-17:00; We,Th 00:00-00:00; Fr,Sa 07:00-17:00; Su 08:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "00:00",
+       "00:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/62673026",
+   "name": "Pridmore Park",
+   "kind": "park",
+   "lat": -37.816431,
+   "lng": 145.015425,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971079",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/23909867",
+   "name": "Queen Victoria Gardens",
+   "kind": "park",
+   "lat": -37.821986,
+   "lng": 144.97153,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7270534",
+   "wikipedia": "en:Queen Victoria Gardens",
+   "description": "urban park in Melbourne, Victoria, Australia",
+   "image": "Queen Victoria Gardens.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/5800919",
+   "name": "Queens Park",
+   "kind": "park",
+   "lat": -37.762565,
+   "lng": 144.923858,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7270791",
+   "wikipedia": null,
+   "description": "park in Melbourne, Australia",
+   "image": "Queens Park, Moonee Ponds.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/10848330",
+   "name": "Randazzo Park",
+   "kind": "park",
+   "lat": -37.769389,
+   "lng": 144.964627,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971067",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30968287",
+   "name": "Rockbeare Park",
+   "kind": "park",
+   "lat": -37.774761,
+   "lng": 145.035819,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971056",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/240503854",
+   "name": "Rotary Park",
+   "kind": "park",
+   "lat": -37.86716,
+   "lng": 144.904997,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971052",
+   "wikipedia": null,
+   "description": "park in Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/31009823",
+   "name": "Sir Zelman Cowen Park",
+   "kind": "park",
+   "lat": -37.841016,
+   "lng": 145.035941,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21970257",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26104523",
+   "name": "South Melbourne Market",
+   "kind": "market",
+   "lat": -37.832303,
+   "lng": 144.956536,
+   "address": "322-326 Coventry Street, 3205",
+   "website": "https://www.southmelbournemarket.com.au/",
+   "wikidata": "Q7567936",
+   "wikipedia": "en:South Melbourne market",
+   "description": "market in South Melbourne, Victoria, Australia",
+   "image": "South Melbourne market outside 1a.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "We, Sa-Su 08:00-16:00; Fr 08:00-17:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/4908335081",
+   "name": "Springthorpe Memorial",
+   "kind": "landmark",
+   "lat": -37.80338,
+   "lng": 145.042048,
+   "address": null,
+   "website": "https://vhd.heritagecouncil.vic.gov.au/places/6021/download-report",
+   "wikidata": "Q7581192",
+   "wikipedia": null,
+   "description": "memorial in Kew, Victoria, Australia",
+   "image": "Springthorpe Memorial 1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/15479037",
+   "name": "St Kilda Botanic Gardens",
+   "kind": "park",
+   "lat": -37.870843,
+   "lng": 144.983973,
+   "address": null,
+   "website": "https://www.portphillip.vic.gov.au/st_kilda_botanic.htm",
+   "wikidata": "Q7593903",
+   "wikipedia": null,
+   "description": "botanical garden in St Kilda, Victoria, Australia",
+   "image": "St Kilda Botanic Gardens.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27549948",
+   "name": "St Vincent Gardens",
+   "kind": "park",
+   "lat": -37.838984,
+   "lng": 144.955005,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7595614",
+   "wikipedia": null,
+   "description": "small park in Melbourne, Victoria, Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41098463",
+   "name": "Sumner Park",
+   "kind": "park",
+   "lat": -37.773452,
+   "lng": 144.986029,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971027",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/10629894",
+   "name": "Temple Park",
+   "kind": "park",
+   "lat": -37.774351,
+   "lng": 144.953285,
+   "address": null,
+   "website": null,
+   "wikidata": "Q21971021",
+   "wikipedia": null,
+   "description": "park in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25841606",
+   "name": "Victoria Park",
+   "kind": "park",
+   "lat": -37.798239,
+   "lng": 144.996585,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7926918",
+   "wikipedia": null,
+   "description": "football stadium in Melbourne, Australia",
+   "image": "Victoria park from air.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27246421",
+   "name": "Villa Alba Museum",
+   "kind": "museum",
+   "lat": -37.805161,
+   "lng": 145.011373,
+   "address": null,
+   "website": null,
+   "wikidata": "Q106958839",
+   "wikipedia": "en:Villa Alba Museum",
+   "description": "historic house in Australia",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10692278132",
+   "name": "ACAE Gallery",
+   "kind": "gallery",
+   "lat": -37.806095,
+   "lng": 144.986304,
+   "address": "82A Wellington Street, 3066",
+   "website": "http://acaearts.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/611984584",
+   "name": "ANZ Banking Museum",
+   "kind": "museum",
+   "lat": -37.816627,
+   "lng": 144.961869,
+   "address": "380 Collins Street, 3000",
+   "website": "https://www.anz.com/shareholder/centre/about/history/banking-museum/",
+   "wikidata": "Q53695886",
+   "wikipedia": null,
+   "description": "finance museum in Melbourne, Australia",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3408627870",
+   "name": "Alma Doepel Restoration Project",
+   "kind": "museum",
+   "lat": -37.819336,
+   "lng": 144.935671,
+   "address": null,
+   "website": "https://www.almadoepel.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1136400433",
+   "name": "Angela Sparks Gallery",
+   "kind": "gallery",
+   "lat": -37.829678,
+   "lng": 144.886926,
+   "address": "50 Hudsons Road, 3015",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11466834914",
+   "name": "Arc One",
+   "kind": "gallery",
+   "lat": -37.814893,
+   "lng": 144.973054,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6679657169",
+   "name": "Art Yarramunua",
+   "kind": "gallery",
+   "lat": -37.867629,
+   "lng": 144.979076,
+   "address": "92b Acland Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4795093767",
+   "name": "ArtVo",
+   "kind": "gallery",
+   "lat": -37.812802,
+   "lng": 144.937731,
+   "address": "26 Star Crescent, 3008",
+   "website": "https://artvo.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11804296914",
+   "name": "Arts West Gallery",
+   "kind": "gallery",
+   "lat": -37.79757,
+   "lng": 144.959495,
+   "address": "Professors Walk",
+   "website": "https://arts.unimelb.edu.au/about/arts-west-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/234053530",
+   "name": "Australian Galleries Stock Rooms",
+   "kind": "gallery",
+   "lat": -37.806748,
+   "lng": 144.984672,
+   "address": "28 Derby Street, 3066",
+   "website": "https://www.australiangalleries.com.au/stockrooms",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13739870317",
+   "name": "Australian Museum of Performing Arts",
+   "kind": "museum",
+   "lat": -37.819899,
+   "lng": 144.96791,
+   "address": null,
+   "website": "https://www.artscentremelbourne.com.au/ampa",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3412531090",
+   "name": "Australian Music Vault",
+   "kind": "museum",
+   "lat": -37.821688,
+   "lng": 144.968523,
+   "address": "100 St Kilda Road",
+   "website": "https://www.australianmusicvault.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4881272056",
+   "name": "BSIDE Gallery",
+   "kind": "gallery",
+   "lat": -37.803889,
+   "lng": 144.977342,
+   "address": "Upstairs 121 Brunswick Street, 3065",
+   "website": "https://bsidegallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12608930864",
+   "name": "Blak Dot Gallery",
+   "kind": "gallery",
+   "lat": -37.770995,
+   "lng": 144.960423,
+   "address": null,
+   "website": "https://blakdot.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9135519890",
+   "name": "Brew Tower Museum",
+   "kind": "museum",
+   "lat": -37.810036,
+   "lng": 144.985179,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/32656612",
+   "name": "Burston Reserve",
+   "kind": "park",
+   "lat": -37.811314,
+   "lng": 144.975188,
+   "address": null,
+   "website": null,
+   "wikidata": "Q139384675",
+   "wikipedia": null,
+   "description": "park in Melbourne, Victoria, Australia",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/17140476",
+   "name": "Buxton Contemporary (868)",
+   "kind": "museum",
+   "lat": -37.824065,
+   "lng": 144.968824,
+   "address": "156 Southbank Boulevard, 3006",
+   "website": "https://buxtoncontemporary.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6690121785",
+   "name": "Carlton Farmers Market",
+   "kind": "market",
+   "lat": -37.790783,
+   "lng": 144.972961,
+   "address": null,
+   "website": "https://mfm.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 08:00-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/18043576",
+   "name": "Catani Gardens",
+   "kind": "park",
+   "lat": -37.861575,
+   "lng": 144.970976,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56246961",
+   "wikipedia": null,
+   "description": "heritage-listed park in St Kilda, Victoria, Australia",
+   "image": "Catani Gardens in St Kilda (1).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12346885624",
+   "name": "Centre for Contemporary Photography",
+   "kind": "gallery",
+   "lat": -37.799913,
+   "lng": 144.985832,
+   "address": "Perry Street, 3066",
+   "website": "https://ccp.org.au",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1655792445",
+   "name": "Century Building",
+   "kind": "attraction",
+   "lat": -37.81462,
+   "lng": 144.965932,
+   "address": "125 Swanston Street, 3000",
+   "website": null,
+   "wikidata": "Q66767681",
+   "wikipedia": null,
+   "description": "building in Melbourne, Australia",
+   "image": "MelbourneCenturyBdg.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6110707063",
+   "name": "Ceres Makers and Flea Market",
+   "kind": "market",
+   "lat": -37.765793,
+   "lng": 144.983406,
+   "address": null,
+   "website": "https://ceres.org.au/makers-and-flea-market/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 09:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3850493157",
+   "name": "City Skyline Views",
+   "kind": "viewpoint",
+   "lat": -37.785708,
+   "lng": 144.93202,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28315750",
+   "name": "Collingwood Children's Farm",
+   "kind": "zoo",
+   "lat": -37.803365,
+   "lng": 145.004647,
+   "address": "6-24 St Heliers Street, 3067",
+   "website": "https://www.farm.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 09:15-16:45",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:15",
+       "16:45"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/226713137",
+   "name": "Collingwood Sailors and Soldiers Memorial Hall",
+   "kind": "museum",
+   "lat": -37.802851,
+   "lng": 144.992914,
+   "address": "152A Hoddle Street, 3067",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8195514061",
+   "name": "Como House",
+   "kind": "viewpoint",
+   "lat": -37.837701,
+   "lng": 145.003852,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10650446515",
+   "name": "Correspondences",
+   "kind": "gallery",
+   "lat": -37.776782,
+   "lng": 144.960359,
+   "address": "39 Sydney Road, 3056",
+   "website": "https://www.correspondences.work/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1279107005",
+   "name": "Counihan Gallery",
+   "kind": "gallery",
+   "lat": -37.772125,
+   "lng": 144.961037,
+   "address": "233 Sydney Road",
+   "website": "https://www.merri-bek.vic.gov.au/exploring-merri-bek/arts-merri-bek/counihan-gallery/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 11:00-17:00; Su 13:00-17:00; Mo-Tu,PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6501413459",
+   "name": "Daine Singer",
+   "kind": "gallery",
+   "lat": -37.801801,
+   "lng": 144.977329,
+   "address": "90 Moor Street, 3065",
+   "website": "https://www.dainesinger.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12511025142",
+   "name": "DansDelusion",
+   "kind": "gallery",
+   "lat": -37.813529,
+   "lng": 144.938799,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3362701007",
+   "name": "Dights Falls",
+   "kind": "viewpoint",
+   "lat": -37.796855,
+   "lng": 145.001023,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4690264755",
+   "name": "Dights Falls",
+   "kind": "viewpoint",
+   "lat": -37.797254,
+   "lng": 145.000825,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11610094118",
+   "name": "Dome Promenade",
+   "kind": "viewpoint",
+   "lat": -37.804861,
+   "lng": 144.971471,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11804270582",
+   "name": "Ed Muirhead Physics Museum",
+   "kind": "museum",
+   "lat": -37.797031,
+   "lng": 144.96367,
+   "address": null,
+   "website": "https://physics.unimelb.edu.au/engage/ed-muirhead-physics-museum",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/972303149",
+   "name": "Enterprize Park",
+   "kind": "park",
+   "lat": -37.820205,
+   "lng": 144.959505,
+   "address": null,
+   "website": null,
+   "wikidata": "Q125439164",
+   "wikipedia": null,
+   "description": "urban park in Melbourne, Victoria, Australia",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2421613409",
+   "name": "Evan Walker Bridge Lookout",
+   "kind": "viewpoint",
+   "lat": -37.819463,
+   "lng": 144.965237,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11002942905",
+   "name": "Faux Gallery",
+   "kind": "gallery",
+   "lat": -37.770457,
+   "lng": 144.971742,
+   "address": "267 Lygon Street",
+   "website": "https://www.fauxgallery.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2317952078",
+   "name": "Federal Oak",
+   "kind": "landmark",
+   "lat": -37.811058,
+   "lng": 144.974875,
+   "address": null,
+   "website": null,
+   "wikidata": "Q54859018",
+   "wikipedia": null,
+   "description": "tree commemorating the Federation of Australia",
+   "image": "Federal Oak 1890.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/663479932",
+   "name": "Fiona & Sidney Myer Gallery",
+   "kind": "gallery",
+   "lat": -37.825511,
+   "lng": 144.967941,
+   "address": "40 Dodds Street, 3006",
+   "website": "https://finearts-music.unimelb.edu.au/about-us/fiona-and-sidney-myer-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13608646484",
+   "name": "Fitzroy Market",
+   "kind": "market",
+   "lat": -37.795691,
+   "lng": 144.978121,
+   "address": "75 Rose Street, 3065",
+   "website": "https://www.fitzroymarket.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 10:00-15:00; Su 09:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9706507717",
+   "name": "Fitzroy Public Gallery",
+   "kind": "gallery",
+   "lat": -37.805224,
+   "lng": 144.98303,
+   "address": "125 Smith Street, 3065",
+   "website": "https://fitzroypublicgallery.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2960619133",
+   "name": "Flinders Lane Gallery",
+   "kind": "gallery",
+   "lat": -37.81566,
+   "lng": 144.970061,
+   "address": "137-139 Flinders Lane, 3000",
+   "website": "https://flg.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5575774648",
+   "name": "Food Market (4th Saturday)",
+   "kind": "market",
+   "lat": -37.802557,
+   "lng": 145.003641,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6033552235",
+   "name": "Fort Delta",
+   "kind": "gallery",
+   "lat": -37.803277,
+   "lng": 144.977184,
+   "address": "Rear 143 Brunswick Street, 3065",
+   "website": "https://www.fortdelta.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13783336411",
+   "name": "Fox Classic Car Museum",
+   "kind": "museum",
+   "lat": -37.821252,
+   "lng": 144.948532,
+   "address": "749-755 Collins Street, 3008",
+   "website": "https://www.foxcollection.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Sa 10:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/501544041",
+   "name": "Galatea Point Lookout",
+   "kind": "viewpoint",
+   "lat": -37.79653,
+   "lng": 145.010055,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/549122151",
+   "name": "Gallery Elysium",
+   "kind": "gallery",
+   "lat": -37.823241,
+   "lng": 145.039178,
+   "address": "440-444 Burwood Road, 3122",
+   "website": "https://www.galleryelysium.com.au",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-17:30; Sa 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "17:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13068097579",
+   "name": "Gallery Midlandia",
+   "kind": "gallery",
+   "lat": -37.799424,
+   "lng": 144.989936,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13837748415",
+   "name": "Gasworks Farmers' Market",
+   "kind": "market",
+   "lat": -37.842728,
+   "lng": 144.946378,
+   "address": null,
+   "website": "https://gasworks.org.au/whats-on/gasworks-famers-market/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa[3] 08:00-13:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/5401067976",
+   "name": "Geoffrey Kaye Museum of Anaesthetic History",
+   "kind": "museum",
+   "lat": -37.853896,
+   "lng": 144.981385,
+   "address": "630 St Kilda Road, 3004",
+   "website": "https://www.geoffreykayemuseum.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11804276971",
+   "name": "George Paton Gallery",
+   "kind": "gallery",
+   "lat": -37.798769,
+   "lng": 144.962761,
+   "address": "15 Monash Road",
+   "website": "https://umsu.unimelb.edu.au/express-yourself/gallery/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 11:00-17:00 \"during semesters\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/6017236262",
+   "name": "Gertrude Contemporary",
+   "kind": "gallery",
+   "lat": -37.751432,
+   "lng": 145.00158,
+   "address": "21-31 High Street, 3072",
+   "website": "https://gertrude.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10067707826",
+   "name": "Gleadell Street Market",
+   "kind": "market",
+   "lat": -37.817045,
+   "lng": 145.001648,
+   "address": null,
+   "website": "https://www.yarracity.vic.gov.au/the-area/visiting-yarra/markets/gleadell-street-market",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 07:00-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/46142201",
+   "name": "Gordon Reserve",
+   "kind": "park",
+   "lat": -37.812327,
+   "lng": 144.974063,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56686337",
+   "wikipedia": null,
+   "description": "heritage listed park in Melbourne, Victoria, Australia",
+   "image": "Melbourne Spring Street - Adam Lindsay Gordon Statue (1833-1870).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/566701872",
+   "name": "HMAS Castlemaine",
+   "kind": "museum",
+   "lat": -37.861028,
+   "lng": 144.905685,
+   "address": null,
+   "website": "https://www.hmascastlemaine.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/166222594",
+   "name": "HMAS Castlemaine",
+   "kind": "museum",
+   "lat": -37.861075,
+   "lng": 144.90568,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": "en:HMAS Castlemaine",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13706473901",
+   "name": "Hamer Hall - Rooftop Viewing Platform",
+   "kind": "viewpoint",
+   "lat": -37.820018,
+   "lng": 144.96752,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6919554980",
+   "name": "Harlow Gallery",
+   "kind": "gallery",
+   "lat": -37.769266,
+   "lng": 144.961605,
+   "address": "355 Sydney Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2337234744",
+   "name": "Harry Brookes Allen Museum of Anatomy & Pathology",
+   "kind": "museum",
+   "lat": -37.799567,
+   "lng": 144.959233,
+   "address": "270 Grattan Street",
+   "website": "https://harrybrookesallenmuseum.mdhs.unimelb.edu.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11137678198",
+   "name": "Hidden Temple Gallery",
+   "kind": "gallery",
+   "lat": -37.774826,
+   "lng": 144.95324,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12511018155",
+   "name": "IS Artworks",
+   "kind": "gallery",
+   "lat": -37.813615,
+   "lng": 144.93883,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10593623579",
+   "name": "Industrial Art Sign Co",
+   "kind": "gallery",
+   "lat": -37.830263,
+   "lng": 144.887578,
+   "address": "59 Hudsons Road, 3015",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/8972336355",
+   "name": "Marquis of Linlithgow",
+   "kind": "landmark",
+   "lat": -37.826656,
+   "lng": 144.971918,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56207086",
+   "wikipedia": null,
+   "description": "heritage listed statue commemorating John Hope, 7th Earl of Hopetoun in Melbourne, Victoria, Australia",
+   "image": "St Kilda Rd - The Statue of John Hope.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10066689782",
+   "name": "Mayfield gallery",
+   "kind": "gallery",
+   "lat": -37.810458,
+   "lng": 145.001346,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6145105448",
+   "name": "Melbourne City Gallery",
+   "kind": "gallery",
+   "lat": -37.814693,
+   "lng": 144.966436,
+   "address": null,
+   "website": "https://www.melbourne.vic.gov.au/arts-and-culture/city-gallery/Pages/city-gallery.aspx",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4637139110",
+   "name": "Melbourne Goods Yard Viewing Platform",
+   "kind": "viewpoint",
+   "lat": -37.808793,
+   "lng": 144.943684,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13295864721",
+   "name": "Metropolitain",
+   "kind": "gallery",
+   "lat": -37.768345,
+   "lng": 144.958611,
+   "address": "307 Albert Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/93169474",
+   "name": "Moonee Ponds Court House Museum",
+   "kind": "museum",
+   "lat": -37.764505,
+   "lng": 144.924059,
+   "address": "770 Mount Alexander Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6515021014",
+   "name": "Museo Italiano",
+   "kind": "museum",
+   "lat": -37.798906,
+   "lng": 144.968043,
+   "address": "199 Faraday Street",
+   "website": "https://www.coasit.com.au/museoitaliano",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 09:00-17:00; Sa 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12353573102",
+   "name": "National Communications Museum",
+   "kind": "museum",
+   "lat": -37.822537,
+   "lng": 145.036479,
+   "address": null,
+   "website": "https://ncm.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13721990301",
+   "name": "Ngarara Place",
+   "kind": "garden",
+   "lat": -37.808161,
+   "lng": 144.964889,
+   "address": "Chemistry Lane, 3000",
+   "website": "https://www.rmit.edu.au/about/our-values/respect-for-australian-indigenous-cultures/indigenous-sites-at-rmit",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11804304720",
+   "name": "Noel Shaw Gallery",
+   "kind": "gallery",
+   "lat": -37.798208,
+   "lng": 144.959302,
+   "address": "11 Professors Walk",
+   "website": "https://library.unimelb.edu.au/asc/whats-on/exhibitions/noel-shaw-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3781566398",
+   "name": "Northcote Gorge Lookout",
+   "kind": "viewpoint",
+   "lat": -37.782787,
+   "lng": 145.002981,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6747910686",
+   "name": "Ok Violet",
+   "kind": "gallery",
+   "lat": -37.768074,
+   "lng": 144.980264,
+   "address": "114 Nicholson Street, 3057",
+   "website": "https://www.okviolet.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/594365265",
+   "name": "Old Treasury Building Museum",
+   "kind": "museum",
+   "lat": -37.813199,
+   "lng": 144.974355,
+   "address": "20 Spring Street, 3002",
+   "website": "https://www.oldtreasurybuilding.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su-Fr 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13783844598",
+   "name": "Pinot & Picasso",
+   "kind": "gallery",
+   "lat": -37.81472,
+   "lng": 144.957279,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/571316287",
+   "name": "Point Ormond Lookout",
+   "kind": "viewpoint",
+   "lat": -37.881944,
+   "lng": 144.976209,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/479009831",
+   "name": "Polish Museum and Archives in Australia",
+   "kind": "museum",
+   "lat": -37.809736,
+   "lng": 144.897462,
+   "address": "296 Nicholson Street",
+   "website": "https://polishmuseumarchives.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13100044913",
+   "name": "Print Council of Australia",
+   "kind": "gallery",
+   "lat": -37.825339,
+   "lng": 144.966276,
+   "address": "152 Sturt Street",
+   "website": "https://www.printcouncil.org.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 10:00-16:00; Sa-Mo closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/25467962",
+   "name": "Queen Victoria Market",
+   "kind": "market",
+   "lat": -37.806859,
+   "lng": 144.958953,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu,Th 06:00-14:00; Fr 06:00-17:00; Sa 06:00-15:00; Su 09:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "th"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3101319430",
+   "name": "RMIT Design Archives",
+   "kind": "museum",
+   "lat": -37.806299,
+   "lng": 144.962475,
+   "address": "154 Victoria Street, 3053",
+   "website": "https://www.designcollection.rmit.edu.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"by appointment only\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/2542608228",
+   "name": "RMIT First Site Gallery",
+   "kind": "gallery",
+   "lat": -37.809021,
+   "lng": 144.963914,
+   "address": "344 Swanston Street, 3000",
+   "website": "https://www.rmit.edu.au/about/schools-colleges/college-of-design-and-social-context/engagement/cultural-engagement/galleries/first-site-gallery-eoi",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4957928427",
+   "name": "RMIT Gallery",
+   "kind": "gallery",
+   "lat": -37.809065,
+   "lng": 144.963855,
+   "address": "344 Swanston Street, 3000",
+   "website": "https://www.rmit.edu.au/about/schools-colleges/college-of-design-and-social-context/engagement/cultural-engagement/galleries",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-17:00; Sa 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/543435406",
+   "name": "Red Gallery",
+   "kind": "gallery",
+   "lat": -37.785362,
+   "lng": 144.981736,
+   "address": "157 St Georges Road, 3068",
+   "website": "https://www.redgallery.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Fr 11:00-18:00, Sa-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/10969952671",
+   "name": "Regional Farmers Markets",
+   "kind": "market",
+   "lat": -37.86476,
+   "lng": 144.901025,
+   "address": null,
+   "website": "http://www.rfm.net.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su[2] 09:00-14:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/628257496",
+   "name": "Rose Street Artist Market",
+   "kind": "market",
+   "lat": -37.79593,
+   "lng": 144.977223,
+   "address": "60 Rose Street, 3065",
+   "website": "https://www.rosestmarket.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3716720525",
+   "name": "Ruckers Hill View of City Skyline",
+   "kind": "viewpoint",
+   "lat": -37.777146,
+   "lng": 144.997319,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/54454055",
+   "name": "Rushall Garden",
+   "kind": "garden",
+   "lat": -37.781221,
+   "lng": 144.990283,
+   "address": null,
+   "website": "https://rushallgarden.wordpress.com/",
+   "wikidata": "Q7380767",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3661002076",
+   "name": "Sandridge Lookout",
+   "kind": "viewpoint",
+   "lat": -37.847337,
+   "lng": 144.916941,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11702730224",
+   "name": "Science Gallery",
+   "kind": "gallery",
+   "lat": -37.80031,
+   "lng": 144.964539,
+   "address": "114 Grattan Street, 3053",
+   "website": "https://melbourne.sciencegallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2362721081",
+   "name": "Scott Livesy",
+   "kind": "gallery",
+   "lat": -37.855087,
+   "lng": 145.018435,
+   "address": "High Street, 3143",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4957928425",
+   "name": "Sea Life Melbourne Aquarium",
+   "kind": "zoo",
+   "lat": -37.820735,
+   "lng": 144.958257,
+   "address": "King Street",
+   "website": "https://www.melbourneaquarium.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 09:30-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13704794918",
+   "name": "Shot Tower Museum",
+   "kind": "museum",
+   "lat": -37.810453,
+   "lng": 144.963145,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9488437664",
+   "name": "Shrine of Remembrance Education Centre",
+   "kind": "museum",
+   "lat": -37.830733,
+   "lng": 144.974011,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4469523089",
+   "name": "Sir William John Clarke",
+   "kind": "landmark",
+   "lat": -37.813665,
+   "lng": 144.974352,
+   "address": null,
+   "website": null,
+   "wikidata": "Q38681530",
+   "wikipedia": null,
+   "description": "statue in Melbourne, Australia",
+   "image": "Sir William John Clarke 0560.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1511273068",
+   "name": "Skyline Precinct Melbourne",
+   "kind": "attraction",
+   "lat": -37.824054,
+   "lng": 144.954845,
+   "address": null,
+   "website": "https://www.skylinemelbourne.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5479217021",
+   "name": "Skyline view",
+   "kind": "viewpoint",
+   "lat": -37.819827,
+   "lng": 144.967284,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13963850159",
+   "name": "Smith + Gertrude",
+   "kind": "gallery",
+   "lat": -37.806646,
+   "lng": 144.982804,
+   "address": "73 Smith Street, 3065",
+   "website": "https://www.smithandgertrude.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10763099963",
+   "name": "Spotswood Slow Food Market",
+   "kind": "market",
+   "lat": -37.830644,
+   "lng": 144.883382,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6097151168",
+   "name": "St Heliers Street Gallery",
+   "kind": "gallery",
+   "lat": -37.802581,
+   "lng": 145.00314,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4935347722",
+   "name": "St Kilda Esplanade Market",
+   "kind": "market",
+   "lat": -37.865958,
+   "lng": 144.974259,
+   "address": "Esplanade",
+   "website": "https://www.stkildaesplanademarket.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9232875752",
+   "name": "St Kilda Twilight Market",
+   "kind": "market",
+   "lat": -37.867685,
+   "lng": 144.977647,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13197097301",
+   "name": "Street Art",
+   "kind": "viewpoint",
+   "lat": -37.811862,
+   "lng": 144.972137,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3105262652",
+   "name": "Street Art",
+   "kind": "viewpoint",
+   "lat": -37.812155,
+   "lng": 144.964479,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7265300594",
+   "name": "Sunday Market",
+   "kind": "market",
+   "lat": -37.820616,
+   "lng": 144.968414,
+   "address": null,
+   "website": "https://www.artscentremelbourne.com.au/visit/sunday-market",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su 10:00-16:00; Mo-Sa closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/999753812",
+   "name": "Sutton Gallery Project Space",
+   "kind": "gallery",
+   "lat": -37.800415,
+   "lng": 144.979454,
+   "address": "230 Young Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6566702955",
+   "name": "TCB Art Inc.",
+   "kind": "gallery",
+   "lat": -37.768217,
+   "lng": 144.961294,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7018038979",
+   "name": "Tacit Galleries Collingwood",
+   "kind": "gallery",
+   "lat": -37.799921,
+   "lng": 144.991557,
+   "address": "189 Johnston Street, 3066",
+   "website": "https://www.tacitart.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10048415132",
+   "name": "The Art Of Dr Seuss",
+   "kind": "gallery",
+   "lat": -37.8156,
+   "lng": 144.964283,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10720264707",
+   "name": "The Dax Centre",
+   "kind": "gallery",
+   "lat": -37.798169,
+   "lng": 144.958809,
+   "address": "30 Royal Parade",
+   "website": "https://www.daxcentre.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 11:00-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10593869813",
+   "name": "The Hart Gallery",
+   "kind": "gallery",
+   "lat": -37.842295,
+   "lng": 144.883909,
+   "address": "34 Hall Street, 3015",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2337234746",
+   "name": "The Henry Forman Atkinson Dental Museum",
+   "kind": "museum",
+   "lat": -37.799253,
+   "lng": 144.964415,
+   "address": "714-736 Swanston Street, 3053",
+   "website": "https://henryformanatkinsondentalmuseum.mdhs.unimelb.edu.au/home",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/317151452",
+   "name": "The Ian Potter Foundation Children's Garden",
+   "kind": "garden",
+   "lat": -37.830422,
+   "lng": 144.97624,
+   "address": null,
+   "website": null,
+   "wikidata": "Q62024020",
+   "wikipedia": null,
+   "description": "interactive garden in Royal Botanic Gardens Victoria",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4842838841",
+   "name": "The Pumping Station",
+   "kind": "museum",
+   "lat": -37.831679,
+   "lng": 144.894704,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10704438688",
+   "name": "The Treasury",
+   "kind": "gallery",
+   "lat": -37.797663,
+   "lng": 144.960986,
+   "address": null,
+   "website": "https://www.unimelb.edu.au/old-quad",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11804233625",
+   "name": "Tiegs Museum",
+   "kind": "museum",
+   "lat": -37.797564,
+   "lng": 144.958814,
+   "address": "33 Medical Road",
+   "website": "https://biosciences.unimelb.edu.au/engage/tiegs-museum",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"By appointment only\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:relation/6595830",
+   "name": "University Plaza",
+   "kind": "market",
+   "lat": -37.797171,
+   "lng": 144.961881,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/663479931",
+   "name": "VCA Artspace",
+   "kind": "gallery",
+   "lat": -37.825261,
+   "lng": 144.967831,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Th 12:00-17:00; Fr 12:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9401734425",
+   "name": "Vic Street Gallery",
+   "kind": "gallery",
+   "lat": -37.76508,
+   "lng": 144.947091,
+   "address": "465 Victoria Street, 3055",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1207376442",
+   "name": "Victorian Artists' Society",
+   "kind": "gallery",
+   "lat": -37.809325,
+   "lng": 144.976307,
+   "address": "428-430 Albert Street, 3002",
+   "website": "https://victorianartistssociety.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/32324746",
+   "name": "Whitlam Place",
+   "kind": "park",
+   "lat": -37.801581,
+   "lng": 144.979897,
+   "address": "209-217 Napier Street",
+   "website": null,
+   "wikidata": "Q134269292",
+   "wikipedia": null,
+   "description": "Fitzroy, Victoria",
+   "image": "Gough Whitlam - Its Time - Whitlam Park or Place.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5305688021",
+   "name": "William Barak Bridge",
+   "kind": "viewpoint",
+   "lat": -37.818413,
+   "lng": 144.977815,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2138423704",
+   "name": "Wurundjeri Spur Lookout",
+   "kind": "viewpoint",
+   "lat": -37.788709,
+   "lng": 145.017841,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/218961379",
+   "name": "Yarra Sculpture Gallery",
+   "kind": "gallery",
+   "lat": -37.802862,
+   "lng": 144.993201,
+   "address": "117 Vere Street, 3067",
+   "website": "http://www.yarrasculpturegallery.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4197289860",
+   "name": "beinArt Gallery",
+   "kind": "gallery",
+   "lat": -37.766683,
+   "lng": 144.960404,
+   "address": "307 Victoria Street",
+   "website": "https://beinart.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Th, Su 10:00-16:00; Fr-Sa 10:00-17:00; Mo-Tu closed",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/6097151167",
+   "name": "c3 Contemporary Art Gallery",
+   "kind": "gallery",
+   "lat": -37.802792,
+   "lng": 145.00295,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5045698980",
+   "name": "neospace",
+   "kind": "gallery",
+   "lat": -37.804124,
+   "lng": 144.988782,
+   "address": "7 Campbell Street, 3066",
+   "website": "https://www.neospace.com.au/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-09-25T14:10:06Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  },
+  "wikidata": {
+   "fetchedAt": "2026-09-25T14:10:08Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  }
+ }
+}

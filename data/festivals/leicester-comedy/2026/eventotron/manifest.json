@@ -1,0 +1,19 @@
+{
+ "festival": "leicester-comedy",
+ "edition": "2026",
+ "source": "eventotron",
+ "fetchedAt": "2026-09-25T14:14:13Z",
+ "fetcher": "scraper/festivals/leicester_comedy/sources/eventotron/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://events.comedy-festival.co.uk/wp-json/wp/v2/events",
+  "https://events.comedy-festival.co.uk/wp-json/wp/v2/venues",
+  "https://events.comedy-festival.co.uk/wp-json/wp/v2/genres",
+  "https://events.comedy-festival.co.uk/events/<slug>/",
+  "https://events.comedy-festival.co.uk/venues/<slug>/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "WP REST gives identity, blurb and genres; date, start, venue, price bands and marks are read from each event page's etron-perf-row blocks, coordinates and address from each venue page (scraper/festivals/platforms/eventotron.py)."
+}

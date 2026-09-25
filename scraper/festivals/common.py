@@ -8,8 +8,10 @@ a `manifest.json` saying where the bytes came from.
 """
 
 import argparse
+import concurrent.futures
 import json
 import os
+import re
 import shutil
 import sys
 import time
@@ -20,6 +22,7 @@ from datetime import date, datetime, timedelta, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import registry
 
+RETRY_STATUSES = (429, 502, 503, 504)
 USER_AGENT = "EdFringeNow-festival-fetcher/1.0 (+https://www.edfringenow.com)"
 
 
@@ -30,18 +33,87 @@ class FetchRefused(Exception):
 def get(url, as_json=True, attempts=4, headers=None):
     """One GET, retried on a dropped connection; an HTTP error is raised at once,
     because it will not fix itself and a half-fetched source is never written."""
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
+    return _request(urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})}), as_json, attempts)
+
+
+def post(url, body, as_json=True, attempts=4, headers=None):
+    """`get`'s POST twin, for query APIs (Overpass) that take their query as a body."""
+    request = urllib.request.Request(url, data=body, method="POST",
+                                     headers={"User-Agent": USER_AGENT, **(headers or {})})
+    return _request(request, as_json, attempts)
+
+
+def _request(request, as_json, attempts):
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=60) as response:
+            with urllib.request.urlopen(request, timeout=180) as response:
                 body = response.read().decode("utf-8")
             return json.loads(body) if as_json else body
-        except urllib.error.HTTPError:
-            raise
+        except urllib.error.HTTPError as error:
+            # A busy server (rate limit, gateway timeout) is worth waiting out;
+            # any other HTTP error will not fix itself.
+            if error.code not in RETRY_STATUSES or attempt == attempts - 1:
+                raise
+            wait = 10 * 2 ** attempt
+            retry_after = error.headers.get("Retry-After", "")
+            time.sleep(max(wait, int(retry_after)) if retry_after.isdigit() else wait)
         except (urllib.error.URLError, OSError):
             if attempt == attempts - 1:
                 raise
             time.sleep(2 ** attempt)
+
+
+def get_or_none(url, **kwargs):
+    """`get`, answering None for a 404 — a record the site does not have, not a failed fetch."""
+    try:
+        return get(url, **kwargs)
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            return None
+        raise
+
+
+# How many requests a fetcher keeps in flight against one site. Enough to turn
+# a thousand-page programme from a quarter of an hour into a couple of minutes;
+# few enough that a festival's own small web server does not notice.
+WORKERS = 6
+# How long a cached page stands in for the live one. Long enough that a re-run
+# after a crash or a parser fix costs no network; short enough that a re-fetch
+# the next day sees the day's sold-out marks.
+CACHE_MAX_AGE_SECONDS = 6 * 3600
+
+
+def fetch_all(fetch, items, workers=WORKERS):
+    """[fetch(item) for item in items], `workers` at a time, in the items' order.
+
+    The first failure is raised once every request in flight has settled, so a
+    half-fetched source is never written — the same all-or-nothing as `get`.
+    """
+    items = list(items)
+    if len(items) <= 1 or workers <= 1:
+        return [fetch(item) for item in items]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(fetch, items))
+
+
+def cached_page(cache_dir, url, max_age=CACHE_MAX_AGE_SECONDS):
+    """A page's HTML, kept under the git-ignored cache so a re-run needs no network.
+
+    A cached copy older than `max_age` seconds is fetched again. None for a
+    page the site does not have (404), which is not cached.
+    """
+    os.makedirs(cache_dir, exist_ok=True)
+    name = re.sub(r"[^A-Za-z0-9]+", "-", url.split("://", 1)[-1]).strip("-")[:180] + ".html"
+    path = os.path.join(cache_dir, name)
+    if os.path.exists(path) and os.path.getsize(path) > 0 and time.time() - os.path.getmtime(path) < max_age:
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+    body = get_or_none(url, as_json=False)
+    if body is None:
+        return None
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(body)
+    return body
 
 
 def parse_args(description):
@@ -145,6 +217,23 @@ def selftest():
             raise AssertionError("guard_dates let %r through" % bad)
         except FetchRefused:
             pass
+
+    # fetch_all keeps the items' order whatever order the answers arrive in,
+    # and raises a failure rather than returning a partial list.
+    def slow_echo(n):
+        time.sleep(0.01 * (5 - n))
+        return n * 10
+    assert fetch_all(slow_echo, range(5), workers=4) == [0, 10, 20, 30, 40]
+
+    def boom(n):
+        if n == 3:
+            raise ValueError("no")
+        return n
+    try:
+        fetch_all(boom, range(6), workers=3)
+        raise AssertionError("fetch_all swallowed a failure")
+    except ValueError:
+        pass
 
     real_root = registry.RAW_ROOT
     registry.RAW_ROOT = tempfile.mkdtemp()

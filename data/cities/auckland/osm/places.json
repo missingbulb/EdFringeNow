@@ -1,0 +1,2464 @@
+{
+ "places": [
+  {
+   "id": "node/10219129729",
+   "lat": -36.78781,
+   "lng": 174.768871,
+   "tags": {
+    "name": "Takapuna School Memorial Gate",
+    "historic": "memorial",
+    "wikidata": "Q131446183"
+   }
+  },
+  {
+   "id": "node/10677655822",
+   "lat": -36.853121,
+   "lng": 174.745503,
+   "tags": {
+    "name": "Suite",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/10690527934",
+   "lat": -36.857994,
+   "lng": 174.747437,
+   "tags": {
+    "name": "Objectspace",
+    "tourism": "gallery",
+    "wikidata": "Q18666213",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11062962905",
+   "lat": -36.840549,
+   "lng": 174.756401,
+   "tags": {
+    "name": "Auckland Night Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 16:00-23:00",
+    "website": "https://fb.me/aklnightmarkets"
+   }
+  },
+  {
+   "id": "node/11234947362",
+   "lat": -36.830771,
+   "lng": 174.797989,
+   "tags": {
+    "name": "Flagstaff Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Th-Sa 10:00-16:00; Su-We 11:00-16:00",
+    "addr:housenumber": "6",
+    "addr:street": "Victoria Road"
+   }
+  },
+  {
+   "id": "node/11378811324",
+   "lat": -36.849131,
+   "lng": 174.773328,
+   "tags": {
+    "name": "General Assembly House",
+    "historic": "archaeological_site",
+    "wikidata": "Q23035335",
+    "wikipedia": "en:General Assembly House"
+   }
+  },
+  {
+   "id": "node/11472957264",
+   "lat": -36.857818,
+   "lng": 174.757928,
+   "tags": {
+    "name": "Tautai Pacific Arts Trust",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 10:00-16:00; Sa 11:00-16:00",
+    "website": "https://www.tautai.org/",
+    "wikidata": "Q123857910",
+    "addr:street": "Karangahape Road"
+   }
+  },
+  {
+   "id": "node/11764568084",
+   "lat": -36.894659,
+   "lng": 174.69687,
+   "tags": {
+    "name": "Moana Fresh",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 09:00-17:00; Sa 09:00-15:00",
+    "website": "https://moanafresh.com",
+    "wikidata": "Q131785705"
+   }
+  },
+  {
+   "id": "node/1225171553",
+   "lat": -36.845643,
+   "lng": 174.826065,
+   "tags": {
+    "name": "Michael Joseph Savage Memorial",
+    "historic": "memorial",
+    "wikidata": "Q105673690"
+   }
+  },
+  {
+   "id": "node/12273266531",
+   "lat": -36.831663,
+   "lng": 174.800753,
+   "tags": {
+    "name": "Devonport execution site",
+    "historic": "memorial",
+    "wikidata": "Q130601216"
+   }
+  },
+  {
+   "id": "node/12426967123",
+   "lat": -36.844083,
+   "lng": 174.753225,
+   "tags": {
+    "name": "State of the arts",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12520088674",
+   "lat": -36.881379,
+   "lng": 174.792993,
+   "tags": {
+    "name": "Remuera Primary School War Memorial Gates",
+    "historic": "memorial",
+    "wikidata": "Q131839170"
+   }
+  },
+  {
+   "id": "node/12520206002",
+   "lat": -36.881278,
+   "lng": 174.802238,
+   "tags": {
+    "name": "Remuera War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q131839354"
+   }
+  },
+  {
+   "id": "node/12520261884",
+   "lat": -36.881397,
+   "lng": 174.802364,
+   "tags": {
+    "name": "Memorial Lych Gate",
+    "historic": "memorial",
+    "wikidata": "Q131839628"
+   }
+  },
+  {
+   "id": "node/12576740015",
+   "lat": -36.885259,
+   "lng": 174.775456,
+   "tags": {
+    "name": "Epsom War Memorial Arch",
+    "historic": "memorial",
+    "wikidata": "Q132192170"
+   }
+  },
+  {
+   "id": "node/12584650528",
+   "lat": -36.904798,
+   "lng": 174.750633,
+   "tags": {
+    "name": "Wesley Training College Memorial",
+    "historic": "memorial",
+    "wikidata": "Q132290801"
+   }
+  },
+  {
+   "id": "node/12918866908",
+   "lat": -36.806505,
+   "lng": 174.706771,
+   "tags": {
+    "name": "Monument to John Green Kay",
+    "historic": "memorial",
+    "wikidata": "Q134954175"
+   }
+  },
+  {
+   "id": "node/12979542254",
+   "lat": -36.918689,
+   "lng": 174.780336,
+   "tags": {
+    "name": "Daniel Neilson memorial",
+    "historic": "memorial",
+    "wikidata": "Q135227303"
+   }
+  },
+  {
+   "id": "node/12984421360",
+   "lat": -36.918546,
+   "lng": 174.779729,
+   "tags": {
+    "name": "Gloucester Park plaques",
+    "historic": "memorial",
+    "wikidata": "Q135227028"
+   }
+  },
+  {
+   "id": "node/13008927595",
+   "lat": -36.808434,
+   "lng": 174.721497,
+   "tags": {
+    "name": "Birkenhead War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q135409401"
+   }
+  },
+  {
+   "id": "node/1301715052",
+   "lat": -36.789114,
+   "lng": 174.773204,
+   "tags": {
+    "name": "Takapuna War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q131722554"
+   }
+  },
+  {
+   "id": "node/13021997820",
+   "lat": -36.849065,
+   "lng": 174.786107,
+   "tags": {
+    "name": "Korean War Memorial",
+    "historic": "memorial",
+    "website": "https://nzhistory.govt.nz/memorial/korean-war-memorial-parnell",
+    "wikidata": "Q135457225"
+   }
+  },
+  {
+   "id": "node/13161276014",
+   "lat": -36.845017,
+   "lng": 174.76137,
+   "tags": {
+    "name": "Horse trough",
+    "historic": "memorial",
+    "wikidata": "Q136346967"
+   }
+  },
+  {
+   "id": "node/13316172496",
+   "lat": -36.899404,
+   "lng": 174.789189,
+   "tags": {
+    "name": "Folly",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/13412687472",
+   "lat": -36.841312,
+   "lng": 174.759244,
+   "tags": {
+    "name": "Karanga Plaza Tidal Steps",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/13668188901",
+   "lat": -36.845295,
+   "lng": 174.768372,
+   "tags": {
+    "name": "So / Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13685790203",
+   "lat": -36.882299,
+   "lng": 174.748821,
+   "tags": {
+    "name": "Cabello",
+    "tourism": "gallery",
+    "addr:housenumber": "419",
+    "addr:street": "Dominion Road"
+   }
+  },
+  {
+   "id": "node/13773205007",
+   "lat": -36.859933,
+   "lng": 174.752217,
+   "tags": {
+    "name": "Eyes on Fire",
+    "tourism": "gallery",
+    "addr:housenumber": "15",
+    "addr:street": "Great North Road"
+   }
+  },
+  {
+   "id": "node/13783706602",
+   "lat": -36.857105,
+   "lng": 174.747605,
+   "tags": {
+    "name": "Handcrafted Modern",
+    "tourism": "gallery",
+    "website": "http://HandcraftedModern.co.nz",
+    "addr:housenumber": "120",
+    "addr:street": "Ponsonby Road",
+    "addr:postcode": "1021"
+   }
+  },
+  {
+   "id": "node/13800353401",
+   "lat": -36.857878,
+   "lng": 174.757689,
+   "tags": {
+    "name": "Coastal Signs",
+    "tourism": "gallery",
+    "website": "https://www.coastal-signs.net/",
+    "addr:housenumber": "312",
+    "addr:street": "Karangahape Road",
+    "addr:postcode": "1010"
+   }
+  },
+  {
+   "id": "node/13807205904",
+   "lat": -36.783487,
+   "lng": 174.7735,
+   "tags": {
+    "name": "Art by the Sea",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Sa 10:00-17:00; Su 11:00-16:00",
+    "website": "http://ArtbytheSea.co.nz",
+    "addr:housenumber": "168",
+    "addr:street": "Hurstmere Road"
+   }
+  },
+  {
+   "id": "node/13826183303",
+   "lat": -36.851447,
+   "lng": 174.744959,
+   "tags": {
+    "name": "orexart",
+    "tourism": "gallery",
+    "website": "https://www.orexart.co.nz/",
+    "addr:housenumber": "221",
+    "addr:street": "Ponsonby Road",
+    "addr:postcode": "1011"
+   }
+  },
+  {
+   "id": "node/13897833106",
+   "lat": -36.911771,
+   "lng": 174.74878,
+   "tags": {
+    "name": "Hollywood Fish Farm",
+    "tourism": "aquarium",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "http://HollywoodFishFarm.co.nz",
+    "addr:housenumber": "36",
+    "addr:street": "Frost Road"
+   }
+  },
+  {
+   "id": "node/13937022004",
+   "lat": -36.846794,
+   "lng": 174.769339,
+   "tags": {
+    "name": "Gus Fisher",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 10:00-17:00; Sa 10:00-16:00",
+    "wikidata": "Q15222331",
+    "addr:housenumber": "74",
+    "addr:street": "Shortland Street",
+    "addr:postcode": "1010"
+   }
+  },
+  {
+   "id": "node/13951008608",
+   "lat": -36.869224,
+   "lng": 174.77795,
+   "tags": {
+    "name": "Kkang K Pop Store",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13951073401",
+   "lat": -36.858287,
+   "lng": 174.782205,
+   "tags": {
+    "name": "Gallery 373",
+    "tourism": "gallery",
+    "addr:housenumber": "373",
+    "addr:street": "Parnell Road"
+   }
+  },
+  {
+   "id": "node/13956713804",
+   "lat": -36.858087,
+   "lng": 174.75778,
+   "tags": {
+    "name": "Lett Thomas",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 11:00-17:00; Sa 11:00-15:00",
+    "addr:housenumber": "312B",
+    "addr:street": "Karangahape Road"
+   }
+  },
+  {
+   "id": "node/13956713806",
+   "lat": -36.862784,
+   "lng": 174.758629,
+   "tags": {
+    "name": "masterworks",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 10:00-16:00",
+    "wikidata": "Q107294730",
+    "addr:housenumber": "71",
+    "addr:street": "Upper Queen Street"
+   }
+  },
+  {
+   "id": "node/13971814401",
+   "lat": -36.863339,
+   "lng": 174.780007,
+   "tags": {
+    "name": "Parnell Farmer's Market",
+    "amenity": "marketplace",
+    "website": "https://villagesquare.org.nz/parnell-farmers-market",
+    "addr:housenumber": "545",
+    "addr:street": "Parnell Road",
+    "addr:postcode": "1052"
+   }
+  },
+  {
+   "id": "node/14007364905",
+   "lat": -36.833133,
+   "lng": 174.796249,
+   "tags": {
+    "name": "Land & Seas Art Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "1",
+    "addr:street": "Queens Parade"
+   }
+  },
+  {
+   "id": "node/14007364907",
+   "lat": -36.831878,
+   "lng": 174.796027,
+   "tags": {
+    "name": "Peter Roas Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 12:00-16:00",
+    "website": "http://raos.co.nz",
+    "addr:housenumber": "2",
+    "addr:street": "Queens Parade",
+    "addr:postcode": "0624"
+   }
+  },
+  {
+   "id": "node/14007365205",
+   "lat": -36.83174,
+   "lng": 174.796833,
+   "tags": {
+    "name": "Dxexpxoxt",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/14007637310",
+   "lat": -36.829707,
+   "lng": 174.798017,
+   "tags": {
+    "name": "TimeCapsule Gallery",
+    "tourism": "gallery",
+    "website": "http://TimeCapsuleGallery.net",
+    "addr:housenumber": "30",
+    "addr:street": "Victoria Road"
+   }
+  },
+  {
+   "id": "node/14007637316",
+   "lat": -36.830342,
+   "lng": 174.797675,
+   "tags": {
+    "name": "satellite 2",
+    "tourism": "gallery",
+    "addr:housenumber": "59",
+    "addr:street": "Victoria Road"
+   }
+  },
+  {
+   "id": "node/14174421485",
+   "lat": -36.867449,
+   "lng": 174.759021,
+   "tags": {
+    "name": "Maungawhau Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 9:30-14:00",
+    "website": "https://villagesquare.org.nz/maungawhau-market",
+    "addr:housenumber": "27",
+    "addr:street": "Shaddock Street",
+    "addr:postcode": "1021"
+   }
+  },
+  {
+   "id": "node/2133445498",
+   "lat": -36.855782,
+   "lng": 174.765992,
+   "tags": {
+    "name": "Symonds Street NZ Wars memorial",
+    "historic": "memorial",
+    "website": "https://www.nzhistory.net.nz/media/photo/symonds-street-nz-wars-memorial",
+    "wikidata": "Q79302921",
+    "wikipedia": "en:New Zealand Wars Memorial, Auckland"
+   }
+  },
+  {
+   "id": "node/2135671125",
+   "lat": -36.8499,
+   "lng": 174.767827,
+   "tags": {
+    "name": "Albert Park South African War Memorial",
+    "historic": "memorial",
+    "website": "https://www.nzhistory.net.nz/media/photo/albert-park-memorial",
+    "wikidata": "Q79303979"
+   }
+  },
+  {
+   "id": "node/2135671172",
+   "lat": -36.830963,
+   "lng": 174.797678,
+   "tags": {
+    "name": "Devonport South African War Memorial Fountain",
+    "historic": "memorial",
+    "wikidata": "Q130385181"
+   }
+  },
+  {
+   "id": "node/259134231",
+   "lat": -36.846964,
+   "lng": 174.770442,
+   "tags": {
+    "name": "Churton Memorial",
+    "historic": "memorial",
+    "wikidata": "Q77975895"
+   }
+  },
+  {
+   "id": "node/262078398",
+   "lat": -36.815121,
+   "lng": 174.806014,
+   "tags": {
+    "name": "Fort Takapuna",
+    "tourism": "attraction",
+    "historic": "fort",
+    "wikidata": "Q79301071"
+   }
+  },
+  {
+   "id": "node/2942780456",
+   "lat": -36.857824,
+   "lng": 174.757901,
+   "tags": {
+    "name": "Artspace",
+    "tourism": "gallery",
+    "website": "https://artspace-aotearoa.nz/",
+    "wikidata": "Q65121970",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3367433155",
+   "lat": -36.888456,
+   "lng": 174.775895,
+   "tags": {
+    "name": "John Logan Campbell Monument",
+    "historic": "monument",
+    "wikidata": "Q79302114"
+   }
+  },
+  {
+   "id": "node/4218297096",
+   "lat": -36.850089,
+   "lng": 174.767733,
+   "tags": {
+    "name": "Sir George Grey",
+    "historic": "memorial",
+    "wikidata": "Q79312630",
+    "wikipedia": "en:Statue of George Grey, Auckland"
+   }
+  },
+  {
+   "id": "node/4218297100",
+   "lat": -36.83155,
+   "lng": 174.797347,
+   "tags": {
+    "name": "Devonport First World War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q79301899"
+   }
+  },
+  {
+   "id": "node/4281458060",
+   "lat": -36.875975,
+   "lng": 174.766851,
+   "tags": {
+    "name": "Wilkies Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4295678492",
+   "lat": -36.9,
+   "lng": 174.783148,
+   "tags": {
+    "name": "One Tree Hill Summit",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4295685100",
+   "lat": -36.836513,
+   "lng": 174.758893,
+   "tags": {
+    "name": "Tank Farm Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4295694795",
+   "lat": -36.878076,
+   "lng": 174.764433,
+   "tags": {
+    "name": "Mount Eden Summit",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4295694797",
+   "lat": -36.840066,
+   "lng": 174.755665,
+   "tags": {
+    "name": "Wynyard Quarter Metal Structure Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4884576568",
+   "lat": -36.88218,
+   "lng": 174.703141,
+   "tags": {
+    "name": "Oakley Creek Waterfall",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4964973321",
+   "lat": -36.900293,
+   "lng": 174.731687,
+   "tags": {
+    "name": "Wesley Market",
+    "amenity": "marketplace",
+    "opening_hours": "Tu,Fr 07:30-13:00"
+   }
+  },
+  {
+   "id": "node/5183728181",
+   "lat": -36.847908,
+   "lng": 174.766643,
+   "tags": {
+    "name": "Lord Freyberg",
+    "historic": "memorial",
+    "wikidata": "Q117467547",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5237158395",
+   "lat": -36.876793,
+   "lng": 174.767723,
+   "tags": {
+    "name": "Eden Garden",
+    "leisure": "garden",
+    "opening_hours": "Mo-Su 09:00-16:00",
+    "wikidata": "Q5336848"
+   }
+  },
+  {
+   "id": "node/5539567580",
+   "lat": -36.880727,
+   "lng": 174.72293,
+   "tags": {
+    "name": "Ōwairaka",
+    "historic": "memorial",
+    "wikidata": "Q131377531"
+   }
+  },
+  {
+   "id": "node/6157377478",
+   "lat": -36.867632,
+   "lng": 174.727583,
+   "tags": {
+    "name": "Whare Tinei Ahi / Fire Station",
+    "tourism": "museum",
+    "website": "https://motat.nz/exhibitions/firehouse/"
+   }
+  },
+  {
+   "id": "node/729413110",
+   "lat": -36.850268,
+   "lng": 174.768079,
+   "tags": {
+    "name": "Queen Victoria",
+    "historic": "memorial",
+    "wikidata": "Q79312016"
+   }
+  },
+  {
+   "id": "node/8001552365",
+   "lat": -36.831956,
+   "lng": 174.797214,
+   "tags": {
+    "name": "Nothing Happened plaque",
+    "historic": "memorial",
+    "wikidata": "Q131542115"
+   }
+  },
+  {
+   "id": "node/8163524686",
+   "lat": -36.829159,
+   "lng": 174.805458,
+   "tags": {
+    "name": "Tainui Landing Memorial",
+    "historic": "monument",
+    "wikidata": "Q130572842"
+   }
+  },
+  {
+   "id": "node/8322342315",
+   "lat": -36.868545,
+   "lng": 174.7772,
+   "tags": {
+    "name": "Art Select Gallery",
+    "tourism": "gallery",
+    "website": "https://www.artselect.gallery/",
+    "addr:housenumber": "19A",
+    "addr:street": "Osborne Street"
+   }
+  },
+  {
+   "id": "node/832543535",
+   "lat": -36.836477,
+   "lng": 174.759245,
+   "tags": {
+    "name": "Dredge Driving Wheels",
+    "tourism": "attraction",
+    "wikidata": "Q134800204"
+   }
+  },
+  {
+   "id": "node/8347192637",
+   "lat": -36.865031,
+   "lng": 174.779898,
+   "tags": {
+    "name": "Railway Street Studios",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 10:00-16:00",
+    "website": "https://www.railwaystreetstudios.co.nz/",
+    "addr:housenumber": "8",
+    "addr:street": "Railway Street"
+   }
+  },
+  {
+   "id": "node/8373364793",
+   "lat": -36.868581,
+   "lng": 174.77719,
+   "tags": {
+    "name": "The Poi Room",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 09:30-17:30; Sa 09:30-17:00; Su 10:00-16:00",
+    "website": "https://thepoiroom.co.nz",
+    "addr:street": "Osborne Street"
+   }
+  },
+  {
+   "id": "node/8592325958",
+   "lat": -36.829383,
+   "lng": 174.811593,
+   "tags": {
+    "name": "Minefield Observation Post",
+    "tourism": "viewpoint",
+    "historic": "ruins"
+   }
+  },
+  {
+   "id": "node/8758735744",
+   "lat": -36.851113,
+   "lng": 174.765908,
+   "tags": {
+    "name": "Gow Langsford Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa 10:00-16:00; Su,PH off",
+    "website": "https://www.gowlangsfordgallery.co.nz/",
+    "wikidata": "Q5589975"
+   }
+  },
+  {
+   "id": "node/8813321418",
+   "lat": -36.848533,
+   "lng": 174.786276,
+   "tags": {
+    "name": "Fred Ambler Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9518193208",
+   "lat": -36.849122,
+   "lng": 174.786827,
+   "tags": {
+    "name": "Dutch war memorial",
+    "historic": "memorial",
+    "website": "https://nzhistory.govt.nz/memorial/dutch-war-memorial-parnell",
+    "wikidata": "Q116681867"
+   }
+  },
+  {
+   "id": "relation/10671258",
+   "lat": -36.897791,
+   "lng": 174.711344,
+   "tags": {
+    "name": "Alan Wood Reserve",
+    "leisure": "park",
+    "wikidata": "Q123330200"
+   }
+  },
+  {
+   "id": "relation/11545382",
+   "lat": -36.855602,
+   "lng": 174.761309,
+   "tags": {
+    "name": "Myers Park",
+    "leisure": "park",
+    "wikidata": "Q6947423",
+    "wikipedia": "en:Myers Park, Auckland"
+   }
+  },
+  {
+   "id": "relation/12094278",
+   "lat": -36.906777,
+   "lng": 174.755596,
+   "tags": {
+    "name": "Three Kings Reserve",
+    "leisure": "park",
+    "wikidata": "Q129555395",
+    "addr:housenumber": "1011",
+    "addr:street": "Mount Eden Road"
+   }
+  },
+  {
+   "id": "relation/12361561",
+   "lat": -36.831748,
+   "lng": 174.797851,
+   "tags": {
+    "name": "Windsor Reserve",
+    "leisure": "park",
+    "wikidata": "Q131541837"
+   }
+  },
+  {
+   "id": "relation/13218743",
+   "lat": -36.912934,
+   "lng": 174.763833,
+   "tags": {
+    "name": "Monte Cecilia Park",
+    "leisure": "park",
+    "wikidata": "Q115179808",
+    "wikipedia": "en:Monte Cecilia Park"
+   }
+  },
+  {
+   "id": "relation/13263167",
+   "lat": -36.816995,
+   "lng": 174.722044,
+   "tags": {
+    "name": "Chelsea Estate Heritage Park",
+    "leisure": "park",
+    "wikidata": "Q130754939"
+   }
+  },
+  {
+   "id": "relation/13263168",
+   "lat": -36.822926,
+   "lng": 174.71324,
+   "tags": {
+    "name": "Kauri Point Centennial Park",
+    "leisure": "park",
+    "wikidata": "Q130754137"
+   }
+  },
+  {
+   "id": "relation/13311707",
+   "lat": -36.842998,
+   "lng": 174.755032,
+   "tags": {
+    "name": "Daldy Street Linear Park",
+    "leisure": "park",
+    "wikidata": "Q130334375"
+   }
+  },
+  {
+   "id": "relation/14143211",
+   "lat": -36.850129,
+   "lng": 174.770126,
+   "tags": {
+    "name": "Albert Park Tunnels",
+    "historic": "ruins",
+    "wikidata": "Q4710978",
+    "wikipedia": "en:Albert Park tunnels"
+   }
+  },
+  {
+   "id": "relation/14243696",
+   "lat": -36.826913,
+   "lng": 174.799236,
+   "tags": {
+    "name": "Mount Victoria Reserve",
+    "leisure": "park",
+    "wikidata": "Q123330835"
+   }
+  },
+  {
+   "id": "relation/14867816",
+   "lat": -36.873588,
+   "lng": 174.729046,
+   "tags": {
+    "name": "Fowlds Park",
+    "leisure": "park",
+    "wikidata": "Q5476385"
+   }
+  },
+  {
+   "id": "relation/16706375",
+   "lat": -36.883424,
+   "lng": 174.764636,
+   "tags": {
+    "name": "Nicholson Park",
+    "leisure": "park",
+    "wikidata": "Q134839369",
+    "addr:housenumber": "25",
+    "addr:street": "Poronui Street",
+    "addr:postcode": "1024"
+   }
+  },
+  {
+   "id": "relation/17551789",
+   "lat": -36.825572,
+   "lng": 174.781945,
+   "tags": {
+    "name": "Stanley Bay Park",
+    "leisure": "park",
+    "wikidata": "Q131383161",
+    "addr:housenumber": "166",
+    "addr:street": "Calliope Road",
+    "addr:postcode": "0624"
+   }
+  },
+  {
+   "id": "relation/17928214",
+   "lat": -36.860063,
+   "lng": 174.739856,
+   "tags": {
+    "name": "Grey Lynn Park",
+    "leisure": "park",
+    "wikidata": "Q120997553"
+   }
+  },
+  {
+   "id": "relation/19235984",
+   "lat": -36.877101,
+   "lng": 174.756744,
+   "tags": {
+    "name": "Mount Eden WWI memorial",
+    "historic": "memorial",
+    "wikidata": "Q134838050"
+   }
+  },
+  {
+   "id": "relation/19252404",
+   "lat": -36.883478,
+   "lng": 174.765231,
+   "tags": {
+    "name": "Auckland Normal Intermediate School memorial",
+    "historic": "memorial",
+    "wikidata": "Q134822488"
+   }
+  },
+  {
+   "id": "relation/19733460",
+   "lat": -36.863567,
+   "lng": 174.720193,
+   "tags": {
+    "name": "Museum of Transport and Technology",
+    "tourism": "museum",
+    "wikidata": "Q1954764",
+    "wikipedia": "en:Museum of Transport and Technology"
+   }
+  },
+  {
+   "id": "relation/19745928",
+   "lat": -36.848466,
+   "lng": 174.762184,
+   "tags": {
+    "name": "Sky Tower",
+    "tourism": "attraction",
+    "building": "yes",
+    "opening_hours": "Mo-Th 09:30-20:00; Fr,Sa,Su 09:30-22:00",
+    "website": "https://skycityauckland.co.nz/sky-tower/",
+    "wikidata": "Q722125",
+    "wikipedia": "en:Sky Tower (Auckland)"
+   }
+  },
+  {
+   "id": "relation/20709742",
+   "lat": -36.8216,
+   "lng": 174.734446,
+   "tags": {
+    "name": "Hinemoa Park",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/en/parks-recreation/find-park-beach/park-detail/504.html",
+    "wikidata": "Q131384843"
+   }
+  },
+  {
+   "id": "relation/9636962",
+   "lat": -36.850364,
+   "lng": 174.768045,
+   "tags": {
+    "name": "Albert Park",
+    "leisure": "park",
+    "wikidata": "Q4710966"
+   }
+  },
+  {
+   "id": "relation/9640389",
+   "lat": -36.898231,
+   "lng": 174.784265,
+   "tags": {
+    "name": "Cornwall Park",
+    "leisure": "park",
+    "wikidata": "Q23039223",
+    "wikipedia": "en:Cornwall Park, Auckland"
+   }
+  },
+  {
+   "id": "way/10720723",
+   "lat": -36.886598,
+   "lng": 174.749013,
+   "tags": {
+    "name": "Potters Park",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=111",
+    "wikidata": "Q137804061",
+    "addr:housenumber": "173",
+    "addr:street": "Balmoral Road",
+    "addr:postcode": "1024"
+   }
+  },
+  {
+   "id": "way/11037468",
+   "lat": -36.787164,
+   "lng": 174.771164,
+   "tags": {
+    "name": "Potters Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q130492263",
+    "addr:housenumber": "42",
+    "addr:street": "Anzac Street",
+    "addr:postcode": "0622"
+   }
+  },
+  {
+   "id": "way/1119743020",
+   "lat": -36.852231,
+   "lng": 174.763638,
+   "tags": {
+    "name": "Sir Dove-Myer Robinson",
+    "historic": "memorial",
+    "wikidata": "Q108629035"
+   }
+  },
+  {
+   "id": "way/1200029569",
+   "lat": -36.83049,
+   "lng": 174.790845,
+   "tags": {
+    "name": "Y turret of HMNZS Achilles",
+    "tourism": "attraction",
+    "historic": "cannon",
+    "building": "yes",
+    "wikidata": "Q785096",
+    "wikipedia": "en:HMNZS Achilles (70)"
+   }
+  },
+  {
+   "id": "way/120612031",
+   "lat": -36.867168,
+   "lng": 174.727193,
+   "tags": {
+    "name": "MOTAT Great North Road",
+    "tourism": "museum",
+    "website": "https://motat.nz",
+    "wikidata": "Q136554472",
+    "addr:housenumber": "805",
+    "addr:street": "Great North Road",
+    "addr:postcode": "1022",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/12260642",
+   "lat": -36.88617,
+   "lng": 174.762158,
+   "tags": {
+    "name": "Windmill Green",
+    "leisure": "park",
+    "wikidata": "Q116771877"
+   }
+  },
+  {
+   "id": "way/1278403702",
+   "lat": -36.917777,
+   "lng": 174.779307,
+   "tags": {
+    "name": "Arch of Remembrance",
+    "historic": "memorial",
+    "wikidata": "Q135226531"
+   }
+  },
+  {
+   "id": "way/1286479195",
+   "lat": -36.838859,
+   "lng": 174.741998,
+   "tags": {
+    "name": "Point Erin Park",
+    "leisure": "park",
+    "wikidata": "Q131338633"
+   }
+  },
+  {
+   "id": "way/1307156069",
+   "lat": -36.8595,
+   "lng": 174.732896,
+   "tags": {
+    "name": "Grey Lynn Farmers Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su 08:30-12:00",
+    "website": "https://www.greylynnfarmersmarket.co.nz/"
+   }
+  },
+  {
+   "id": "way/1318375848",
+   "lat": -36.778807,
+   "lng": 174.777444,
+   "tags": {
+    "name": "Thorne Bay Recreation Reserve",
+    "leisure": "park",
+    "wikidata": "Q125722673"
+   }
+  },
+  {
+   "id": "way/1347029538",
+   "lat": -36.810848,
+   "lng": 174.743415,
+   "tags": {
+    "name": "Northcote War Memorial",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q131582140"
+   }
+  },
+  {
+   "id": "way/1360852789",
+   "lat": -36.852943,
+   "lng": 174.764008,
+   "tags": {
+    "name": "Queen Sweet Art & Print",
+    "tourism": "gallery",
+    "addr:housenumber": "9/368",
+    "addr:street": "Queen Street",
+    "addr:postcode": "1010"
+   }
+  },
+  {
+   "id": "way/1362143886",
+   "lat": -36.849836,
+   "lng": 174.76435,
+   "tags": {
+    "name": "GoodNewsForYou Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "17",
+    "addr:street": "The Strand Arcade",
+    "addr:postcode": "1010"
+   }
+  },
+  {
+   "id": "way/1395152621",
+   "lat": -36.883399,
+   "lng": 174.76525,
+   "tags": {
+    "name": "Auckland Normal Intermediate School memorial",
+    "historic": "memorial",
+    "wikidata": "Q134822488"
+   }
+  },
+  {
+   "id": "way/1395152622",
+   "lat": -36.883556,
+   "lng": 174.765212,
+   "tags": {
+    "name": "Auckland Normal Intermediate School memorial",
+    "historic": "memorial",
+    "wikidata": "Q134822488"
+   }
+  },
+  {
+   "id": "way/1485551949",
+   "lat": -36.841311,
+   "lng": 174.756277,
+   "tags": {
+    "name": "Auckland Fish Market",
+    "amenity": "marketplace",
+    "website": "https://afm.co.nz/",
+    "wikidata": "Q122962032"
+   }
+  },
+  {
+   "id": "way/15089894",
+   "lat": -36.85009,
+   "lng": 174.787214,
+   "tags": {
+    "name": "Dove-Myer Robinson Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q136027033",
+    "addr:housenumber": "85-87",
+    "addr:street": "Gladstone Road",
+    "addr:postcode": "1052"
+   }
+  },
+  {
+   "id": "way/15238484",
+   "lat": -36.859441,
+   "lng": 174.718011,
+   "tags": {
+    "name": "Seddon Fields",
+    "leisure": "park",
+    "wikidata": "Q134429269"
+   }
+  },
+  {
+   "id": "way/154260841",
+   "lat": -36.841544,
+   "lng": 174.763321,
+   "tags": {
+    "name": "New Zealand Maritime Museum Hui Te Ananui a Tangaroa",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00; Dec 25: off",
+    "website": "https://maritimemuseum.co.nz",
+    "wikidata": "Q7942457",
+    "wikipedia": "en:New Zealand Maritime Museum",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/154263259",
+   "lat": -36.858935,
+   "lng": 174.751744,
+   "tags": {
+    "name": "Studio One – Toi Tū",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "yes",
+    "website": "https://www.studioone.org.nz/",
+    "wikidata": "Q79303111"
+   }
+  },
+  {
+   "id": "way/154430110",
+   "lat": -36.851276,
+   "lng": 174.766372,
+   "tags": {
+    "name": "Toi o Tāmaki / Auckland Art Gallery",
+    "tourism": "gallery",
+    "building": "civic",
+    "opening_hours": "Sa-Th 10:00-17:00; Fr 10:00-21:00",
+    "website": "https://aucklandartgallery.com",
+    "wikidata": "Q4819492",
+    "wikipedia": "en:Auckland Art Gallery Toi o Tāmaki",
+    "addr:housenumber": "1",
+    "addr:street": "Kitchener Street",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/160486445",
+   "lat": -36.816523,
+   "lng": 174.700863,
+   "tags": {
+    "name": "Kauri Point Domain",
+    "leisure": "park",
+    "wikidata": "Q130754154"
+   }
+  },
+  {
+   "id": "way/162154097",
+   "lat": -36.857236,
+   "lng": 174.757993,
+   "tags": {
+    "name": "Maota Sāmoa / Sāmoa House",
+    "tourism": "museum",
+    "building": "government",
+    "wikidata": "Q122979647",
+    "wikipedia": "en:Samoa House",
+    "addr:housenumber": "283",
+    "addr:street": "Karangahape Road"
+   }
+  },
+  {
+   "id": "way/188726506",
+   "lat": -36.90012,
+   "lng": 174.783186,
+   "tags": {
+    "name": "One Tree Hill Obelisk",
+    "historic": "monument",
+    "wikidata": "Q79312475"
+   }
+  },
+  {
+   "id": "way/200902332",
+   "lat": -36.793561,
+   "lng": 174.732732,
+   "tags": {
+    "name": "Linley Reserve",
+    "leisure": "park",
+    "wikidata": "Q130571406"
+   }
+  },
+  {
+   "id": "way/23191014",
+   "lat": -36.86481,
+   "lng": 174.703145,
+   "tags": {
+    "name": "Walker Park",
+    "leisure": "park",
+    "wikidata": "Q122420721"
+   }
+  },
+  {
+   "id": "way/23261267",
+   "lat": -36.846866,
+   "lng": 174.770467,
+   "tags": {
+    "name": "Emily Place Reserve",
+    "leisure": "park",
+    "wikidata": "Q122961440"
+   }
+  },
+  {
+   "id": "way/23616405",
+   "lat": -36.823616,
+   "lng": 174.80858,
+   "tags": {
+    "name": "Balmain Reserve",
+    "leisure": "park",
+    "wikidata": "Q131384129"
+   }
+  },
+  {
+   "id": "way/23616419",
+   "lat": -36.825152,
+   "lng": 174.804523,
+   "tags": {
+    "name": "Vauxhall Reserve",
+    "leisure": "park",
+    "wikidata": "Q130600001"
+   }
+  },
+  {
+   "id": "way/23616448",
+   "lat": -36.826922,
+   "lng": 174.806982,
+   "tags": {
+    "name": "Devonport Domain",
+    "leisure": "park",
+    "wikidata": "Q130600263"
+   }
+  },
+  {
+   "id": "way/23700398",
+   "lat": -36.812564,
+   "lng": 174.782457,
+   "tags": {
+    "name": "Bayswater Park",
+    "leisure": "park",
+    "wikidata": "Q131384235"
+   }
+  },
+  {
+   "id": "way/23875242",
+   "lat": -36.878568,
+   "lng": 174.724924,
+   "tags": {
+    "name": "Mount Albert War Memorial Reserve",
+    "leisure": "park",
+    "wikidata": "Q117190480"
+   }
+  },
+  {
+   "id": "way/23894136",
+   "lat": -36.850912,
+   "lng": 174.773416,
+   "tags": {
+    "name": "Alten Reserve",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=2050",
+    "wikidata": "Q117841708"
+   }
+  },
+  {
+   "id": "way/23894210",
+   "lat": -36.849314,
+   "lng": 174.77313,
+   "tags": {
+    "name": "Parliament Reserve",
+    "leisure": "park",
+    "wikidata": "Q117841705"
+   }
+  },
+  {
+   "id": "way/23904019",
+   "lat": -36.848279,
+   "lng": 174.775126,
+   "tags": {
+    "name": "Te Taoū Reserve",
+    "leisure": "park",
+    "wikidata": "Q117841692"
+   }
+  },
+  {
+   "id": "way/23906678",
+   "lat": -36.860751,
+   "lng": 174.777811,
+   "tags": {
+    "name": "Tāmaki Paenga Hira / Auckland War Memorial Museum",
+    "tourism": "museum",
+    "building": "public",
+    "opening_hours": "Mo,We-Fr 10:00-17:00; Tu 10:00-20:30; Sa,Su,PH 09:00-17:00; Dec 25: off",
+    "website": "https://www.aucklandmuseum.com/",
+    "wikidata": "Q758657",
+    "wikipedia": "en:Auckland War Memorial Museum",
+    "addr:postcode": "1010",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/24041436",
+   "lat": -36.867204,
+   "lng": 174.778019,
+   "tags": {
+    "name": "Lumsden Green",
+    "leisure": "park",
+    "wikidata": "Q114630164"
+   }
+  },
+  {
+   "id": "way/24041514",
+   "lat": -36.865405,
+   "lng": 174.778591,
+   "tags": {
+    "name": "Olympic Park",
+    "leisure": "park",
+    "wikidata": "Q117303800"
+   }
+  },
+  {
+   "id": "way/24160261",
+   "lat": -36.824849,
+   "lng": 174.802077,
+   "tags": {
+    "name": "Mount Cambria Reserve",
+    "leisure": "park",
+    "wikidata": "Q130484402"
+   }
+  },
+  {
+   "id": "way/24161095",
+   "lat": -36.816729,
+   "lng": 174.76845,
+   "tags": {
+    "name": "Quinton Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q131384307",
+    "addr:housenumber": "1",
+    "addr:street": "Sir",
+    "addr:postcode": "0622"
+   }
+  },
+  {
+   "id": "way/24203701",
+   "lat": -36.807549,
+   "lng": 174.790302,
+   "tags": {
+    "name": "Belmont Rose Gardens",
+    "leisure": "park",
+    "wikidata": "Q131388872",
+    "addr:housenumber": "152",
+    "addr:street": "Lake Road",
+    "addr:postcode": "0622"
+   }
+  },
+  {
+   "id": "way/24203709",
+   "lat": -36.809832,
+   "lng": 174.794234,
+   "tags": {
+    "name": "Montgomery Reserve",
+    "leisure": "park",
+    "wikidata": "Q131388155"
+   }
+  },
+  {
+   "id": "way/24203768",
+   "lat": -36.815455,
+   "lng": 174.805366,
+   "tags": {
+    "name": "Fort Takapuna Historic Reserve",
+    "leisure": "park",
+    "wikidata": "Q126109579"
+   }
+  },
+  {
+   "id": "way/24206223",
+   "lat": -36.885458,
+   "lng": 174.77527,
+   "tags": {
+    "name": "Marivare Reserve",
+    "leisure": "park",
+    "wikidata": "Q132192358",
+    "addr:housenumber": "243-257",
+    "addr:street": "Manukau Road",
+    "addr:postcode": "1023"
+   }
+  },
+  {
+   "id": "way/24216948",
+   "lat": -36.902775,
+   "lng": 174.750258,
+   "tags": {
+    "name": "Arthur S Richards Memorial Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=1299",
+    "wikidata": "Q132337448",
+    "addr:housenumber": "43",
+    "addr:street": "Parau Street"
+   }
+  },
+  {
+   "id": "way/24428965",
+   "lat": -36.892773,
+   "lng": 174.736768,
+   "tags": {
+    "name": "Sandringham Reserve",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q135505401",
+    "addr:housenumber": "598",
+    "addr:street": "Sandringham Road",
+    "addr:postcode": "1025"
+   }
+  },
+  {
+   "id": "way/24428982",
+   "lat": -36.88839,
+   "lng": 174.736601,
+   "tags": {
+    "name": "Edendale Reserve",
+    "leisure": "park",
+    "wikidata": "Q135398019",
+    "addr:housenumber": "423",
+    "addr:street": "Sandringham Road",
+    "addr:postcode": "1025"
+   }
+  },
+  {
+   "id": "way/24454999",
+   "lat": -36.876778,
+   "lng": 174.766879,
+   "tags": {
+    "name": "Eden Garden",
+    "leisure": "garden",
+    "opening_hours": "Mo-Su 09:00-16:00",
+    "website": "https://edengarden.co.nz/",
+    "wikidata": "Q5336848",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/24455353",
+   "lat": -36.864533,
+   "lng": 174.770363,
+   "tags": {
+    "name": "Outhwaite Park",
+    "leisure": "park",
+    "wikidata": "Q116288625"
+   }
+  },
+  {
+   "id": "way/24461712",
+   "lat": -36.902076,
+   "lng": 174.754468,
+   "tags": {
+    "name": "Te Tātua-a-Riukiuta / Big King Reserve",
+    "leisure": "park",
+    "wikidata": "Q123330798"
+   }
+  },
+  {
+   "id": "way/244653971",
+   "lat": -36.846892,
+   "lng": 174.745111,
+   "tags": {
+    "name": "Saint Mary's Reserve",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=1371",
+    "wikidata": "Q136410154",
+    "addr:housenumber": "15",
+    "addr:street": "Saint Marys Road",
+    "addr:postcode": "1011"
+   }
+  },
+  {
+   "id": "way/24471807",
+   "lat": -36.851923,
+   "lng": 174.704816,
+   "tags": {
+    "name": "Coyle Park",
+    "leisure": "park",
+    "wikidata": "Q121734283"
+   }
+  },
+  {
+   "id": "way/245376345",
+   "lat": -36.793793,
+   "lng": 174.753633,
+   "tags": {
+    "name": "Kitewao Street Esplanade Reserve",
+    "leisure": "park",
+    "wikidata": "Q117841524"
+   }
+  },
+  {
+   "id": "way/245534706",
+   "lat": -36.79693,
+   "lng": 174.778867,
+   "tags": {
+    "name": "Hauraki Corner Reserve",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q130632877",
+    "addr:housenumber": "320",
+    "addr:street": "Lake Road",
+    "addr:postcode": "0622"
+   }
+  },
+  {
+   "id": "way/24622874",
+   "lat": -36.918229,
+   "lng": 174.780337,
+   "tags": {
+    "name": "Jellicoe Park",
+    "leisure": "park",
+    "wikidata": "Q131624943",
+    "addr:housenumber": "1",
+    "addr:street": "Park Gardens",
+    "addr:postcode": "1061"
+   }
+  },
+  {
+   "id": "way/24636072",
+   "lat": -36.895948,
+   "lng": 174.722216,
+   "tags": {
+    "name": "Ōwairaka Park",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=148",
+    "wikidata": "Q136377788",
+    "addr:housenumber": "56-60",
+    "addr:street": "Owairaka Avenue",
+    "addr:postcode": "1025"
+   }
+  },
+  {
+   "id": "way/24636078",
+   "lat": -36.896527,
+   "lng": 174.714384,
+   "tags": {
+    "name": "Murray Halberg Park",
+    "leisure": "park",
+    "wikidata": "Q122421336"
+   }
+  },
+  {
+   "id": "way/24636170",
+   "lat": -36.897288,
+   "lng": 174.723098,
+   "tags": {
+    "name": "Underwood Park",
+    "leisure": "park",
+    "wikidata": "Q137164067"
+   }
+  },
+  {
+   "id": "way/24822175",
+   "lat": -36.863193,
+   "lng": 174.754129,
+   "tags": {
+    "name": "Suffolk Reserve",
+    "leisure": "park",
+    "wikidata": "Q136032542"
+   }
+  },
+  {
+   "id": "way/25518552",
+   "lat": -36.787055,
+   "lng": 174.774759,
+   "tags": {
+    "name": "Gould Reserve",
+    "leisure": "park",
+    "wikidata": "Q130492535",
+    "addr:housenumber": "16",
+    "addr:street": "The Strand"
+   }
+  },
+  {
+   "id": "way/25518584",
+   "lat": -36.785892,
+   "lng": 174.76609,
+   "tags": {
+    "name": "Killarney Park",
+    "leisure": "park",
+    "wikidata": "Q130424911"
+   }
+  },
+  {
+   "id": "way/25737163",
+   "lat": -36.864506,
+   "lng": 174.789248,
+   "tags": {
+    "name": "Thomas Bloodworth Park",
+    "leisure": "park",
+    "wikidata": "Q123399378"
+   }
+  },
+  {
+   "id": "way/258618727",
+   "lat": -36.87304,
+   "lng": 174.76383,
+   "tags": {
+    "name": "Tahaki Reserve",
+    "leisure": "park",
+    "wikidata": "Q109690531"
+   }
+  },
+  {
+   "id": "way/26113845",
+   "lat": -36.918324,
+   "lng": 174.743713,
+   "tags": {
+    "name": "Keith Hay Park",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=157",
+    "wikidata": "Q114397354",
+    "wikipedia": "en:Keith Hay Park",
+    "addr:housenumber": "63",
+    "addr:street": "Arundel Street"
+   }
+  },
+  {
+   "id": "way/261494115",
+   "lat": -36.876215,
+   "lng": 174.764333,
+   "tags": {
+    "name": "Maungawhau / Mount Eden",
+    "leisure": "park",
+    "wikidata": "Q19875408"
+   }
+  },
+  {
+   "id": "way/26829058",
+   "lat": -36.897804,
+   "lng": 174.736433,
+   "tags": {
+    "name": "Freyberg Field",
+    "leisure": "park",
+    "wikidata": "Q3816128",
+    "wikipedia": "en:Kiwitea Street"
+   }
+  },
+  {
+   "id": "way/27034065",
+   "lat": -36.85619,
+   "lng": 174.844578,
+   "tags": {
+    "name": "Madills Farm Recreation Reserve",
+    "leisure": "park",
+    "wikidata": "Q105821084",
+    "wikipedia": "en:Madills Farm Reserve"
+   }
+  },
+  {
+   "id": "way/27376217",
+   "lat": -36.805451,
+   "lng": 174.721296,
+   "tags": {
+    "name": "Birkenhead War Memorial Park",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=464",
+    "wikidata": "Q131394874"
+   }
+  },
+  {
+   "id": "way/27574739",
+   "lat": -36.885537,
+   "lng": 174.697297,
+   "tags": {
+    "name": "Heron Park",
+    "leisure": "park",
+    "wikidata": "Q113127192"
+   }
+  },
+  {
+   "id": "way/28529921",
+   "lat": -36.846349,
+   "lng": 174.817169,
+   "tags": {
+    "name": "SEA LIFE Kelly Tarlton's Aquarium",
+    "tourism": "aquarium",
+    "opening_hours": "Mo-Su,PH 09:30-17:00",
+    "website": "https://www.visitsealife.com/auckland/",
+    "wikidata": "Q28897",
+    "wikipedia": "en:Kelly Tarlton's Sea Life Aquarium",
+    "addr:housenumber": "23",
+    "addr:street": "Tamaki Drive"
+   }
+  },
+  {
+   "id": "way/291024485",
+   "lat": -36.889949,
+   "lng": 174.724638,
+   "tags": {
+    "name": "Alberton",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q76853346",
+    "wikipedia": "en:Alberton, Auckland"
+   }
+  },
+  {
+   "id": "way/305475904",
+   "lat": -36.874956,
+   "lng": 174.733921,
+   "tags": {
+    "name": "Wolseley Reserve",
+    "leisure": "park",
+    "wikidata": "Q136713839"
+   }
+  },
+  {
+   "id": "way/319531583",
+   "lat": -36.806912,
+   "lng": 174.707222,
+   "tags": {
+    "name": "John Kay Park",
+    "leisure": "park",
+    "wikidata": "Q134954187",
+    "addr:housenumber": "89",
+    "addr:street": "Waipa Street",
+    "addr:postcode": "0626"
+   }
+  },
+  {
+   "id": "way/324441679",
+   "lat": -36.802554,
+   "lng": 174.755158,
+   "tags": {
+    "name": "Tuff Crater Reserve",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=3475",
+    "wikidata": "Q7683476",
+    "wikipedia": "en:Tank Farm",
+    "addr:housenumber": "38",
+    "addr:street": "Saint Peters Street",
+    "addr:postcode": "0627"
+   }
+  },
+  {
+   "id": "way/32874208",
+   "lat": -36.882545,
+   "lng": 174.824985,
+   "tags": {
+    "name": "Waiatarua Reserve",
+    "leisure": "park",
+    "wikidata": "Q114085766"
+   }
+  },
+  {
+   "id": "way/338268688",
+   "lat": -36.82885,
+   "lng": 174.809341,
+   "tags": {
+    "name": "National Museum of the Royal New Zealand Navy",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "addr:housenumber": "64",
+    "addr:street": "King Edward Parade"
+   }
+  },
+  {
+   "id": "way/339842574",
+   "lat": -36.824838,
+   "lng": 174.8027,
+   "tags": {
+    "name": "Devonport Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/37356481",
+   "lat": -36.880913,
+   "lng": 174.703133,
+   "tags": {
+    "name": "Te Auaunga Oakley Creek Walkway",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=1423",
+    "wikidata": "Q137382138"
+   }
+  },
+  {
+   "id": "way/37789725",
+   "lat": -36.865193,
+   "lng": 174.723188,
+   "tags": {
+    "name": "Western Springs Lakeside Park",
+    "leisure": "park",
+    "wikidata": "Q114282465",
+    "wikipedia": "en:Western Springs Reserve"
+   }
+  },
+  {
+   "id": "way/37789882",
+   "lat": -36.862579,
+   "lng": 174.721218,
+   "tags": {
+    "name": "Auckland Zoo",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Su,PH 09:30-17:30; Dec 25 off",
+    "website": "https://aucklandzoo.co.nz",
+    "wikidata": "Q2665285",
+    "wikipedia": "en:Auckland Zoo",
+    "addr:housenumber": "99",
+    "addr:street": "Motions Road",
+    "addr:postcode": "1022",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/39670025",
+   "lat": -36.869235,
+   "lng": 174.69806,
+   "tags": {
+    "name": "Eric Armishaw Park",
+    "leisure": "park",
+    "wikidata": "Q137163938"
+   }
+  },
+  {
+   "id": "way/43043315",
+   "lat": -36.854324,
+   "lng": 174.781847,
+   "tags": {
+    "name": "Scarborough Reserve",
+    "leisure": "park",
+    "wikidata": "Q136026716"
+   }
+  },
+  {
+   "id": "way/43099612",
+   "lat": -36.855231,
+   "lng": 174.784507,
+   "tags": {
+    "name": "Alberon Reserve",
+    "leisure": "park",
+    "wikidata": "Q136026896"
+   }
+  },
+  {
+   "id": "way/43435523",
+   "lat": -36.850804,
+   "lng": 174.786298,
+   "tags": {
+    "name": "Parnell Rose Garden",
+    "leisure": "garden",
+    "wikidata": "Q7139321"
+   }
+  },
+  {
+   "id": "way/4369988",
+   "lat": -36.864417,
+   "lng": 174.757508,
+   "tags": {
+    "name": "Basque Park",
+    "leisure": "park",
+    "wikidata": "Q4867853",
+    "wikipedia": "en:Basque Park"
+   }
+  },
+  {
+   "id": "way/44771876",
+   "lat": -36.847008,
+   "lng": 174.775237,
+   "tags": {
+    "name": "Māhuhu ki te Rangi Park",
+    "leisure": "park",
+    "wikidata": "Q117841667"
+   }
+  },
+  {
+   "id": "way/45420320",
+   "lat": -36.847457,
+   "lng": 174.788535,
+   "tags": {
+    "name": "Teal Park",
+    "leisure": "park",
+    "wikidata": "Q124706201"
+   }
+  },
+  {
+   "id": "way/464276992",
+   "lat": -36.84235,
+   "lng": 174.763508,
+   "tags": {
+    "name": "KZ1 Yacht",
+    "tourism": "attraction",
+    "historic": "yes",
+    "wikidata": "Q1090877",
+    "wikipedia": "en:KZ1 (yacht)"
+   }
+  },
+  {
+   "id": "way/48081081",
+   "lat": -36.849523,
+   "lng": 174.777134,
+   "tags": {
+    "name": "Ngāoho Reserve",
+    "leisure": "park",
+    "wikidata": "Q117268485"
+   }
+  },
+  {
+   "id": "way/48922561",
+   "lat": -36.881606,
+   "lng": 174.847167,
+   "tags": {
+    "name": "Colin Maiden Park",
+    "leisure": "park",
+    "wikidata": "Q5145320",
+    "wikipedia": "en:Colin Maiden Park"
+   }
+  },
+  {
+   "id": "way/49743412",
+   "lat": -36.850114,
+   "lng": 174.844471,
+   "tags": {
+    "name": "Kohimarama Beach",
+    "leisure": "park",
+    "wikidata": "Q32238500",
+    "wikipedia": "en:Kohimarama Beach"
+   }
+  },
+  {
+   "id": "way/50047080",
+   "lat": -36.862797,
+   "lng": 174.830651,
+   "tags": {
+    "name": "Kepa Bush Reserve",
+    "leisure": "park",
+    "wikidata": "Q65060533"
+   }
+  },
+  {
+   "id": "way/504140825",
+   "lat": -36.899442,
+   "lng": 174.717457,
+   "tags": {
+    "name": "Kūkūwai Park",
+    "leisure": "park",
+    "wikidata": "Q137164134"
+   }
+  },
+  {
+   "id": "way/50884023",
+   "lat": -36.865648,
+   "lng": 174.783939,
+   "tags": {
+    "name": "Newmarket Park",
+    "leisure": "park",
+    "wikidata": "Q7018567",
+    "wikipedia": "en:Newmarket Park"
+   }
+  },
+  {
+   "id": "way/56004899",
+   "lat": -36.874972,
+   "lng": 174.772044,
+   "tags": {
+    "name": "Withiel Thomas Reserve",
+    "leisure": "park",
+    "wikidata": "Q123005809"
+   }
+  },
+  {
+   "id": "way/5755691",
+   "lat": -36.880282,
+   "lng": 174.738079,
+   "tags": {
+    "name": "Gribblehirst Park",
+    "leisure": "park",
+    "wikidata": "Q117247074"
+   }
+  },
+  {
+   "id": "way/588243561",
+   "lat": -36.812836,
+   "lng": 174.726585,
+   "tags": {
+    "name": "Nell Fisher Reserve",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q131405397",
+    "addr:housenumber": "204",
+    "addr:street": "Hinemoa Street",
+    "addr:postcode": "0626"
+   }
+  },
+  {
+   "id": "way/6029919",
+   "lat": -36.859073,
+   "lng": 174.775673,
+   "tags": {
+    "name": "Pukekawa / Auckland Domain",
+    "leisure": "park",
+    "wikidata": "Q4819519",
+    "wikipedia": "en:Auckland Domain"
+   }
+  },
+  {
+   "id": "way/607122344",
+   "lat": -36.808645,
+   "lng": 174.721045,
+   "tags": {
+    "name": "Birkenhead Historical Society Museum",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/621633321",
+   "lat": -36.84353,
+   "lng": 174.755272,
+   "tags": {
+    "name": "Amey Daldy Park",
+    "leisure": "park",
+    "wikidata": "Q122860907"
+   }
+  },
+  {
+   "id": "way/626356537",
+   "lat": -36.809846,
+   "lng": 174.725107,
+   "tags": {
+    "name": "Zion Hill Reserve",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q131409771",
+    "addr:housenumber": "62",
+    "addr:street": "Birkenhead Avenue",
+    "addr:postcode": "0626"
+   }
+  },
+  {
+   "id": "way/667820851",
+   "lat": -36.861152,
+   "lng": 174.713864,
+   "tags": {
+    "name": "MOTAT Aviation Hall",
+    "tourism": "museum",
+    "website": "https://motat.nz",
+    "wikidata": "Q136554502",
+    "addr:housenumber": "98",
+    "addr:street": "Motions Road"
+   }
+  },
+  {
+   "id": "way/67561360",
+   "lat": -36.776513,
+   "lng": 174.768442,
+   "tags": {
+    "name": "Sylvan Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q131190535",
+    "addr:housenumber": "17",
+    "addr:street": "Sylvan Park Avenue",
+    "addr:postcode": "0620"
+   }
+  },
+  {
+   "id": "way/690838704",
+   "lat": -36.872192,
+   "lng": 174.841028,
+   "tags": {
+    "name": "Saint Johns Bush",
+    "leisure": "park",
+    "wikidata": "Q65059651",
+    "wikipedia": "en:St Johns Bush"
+   }
+  },
+  {
+   "id": "way/705658456",
+   "lat": -36.817013,
+   "lng": 174.785437,
+   "tags": {
+    "name": "Aramoana Reserve",
+    "leisure": "park",
+    "wikidata": "Q131388277",
+    "addr:housenumber": "76",
+    "addr:street": "Aramoana Avenue",
+    "addr:postcode": "0624"
+   }
+  },
+  {
+   "id": "way/705660843",
+   "lat": -36.829147,
+   "lng": 174.805403,
+   "tags": {
+    "name": "Torpedo Bay Reserve",
+    "leisure": "park",
+    "wikidata": "Q130573151"
+   }
+  },
+  {
+   "id": "way/71867486",
+   "lat": -36.791866,
+   "lng": 174.750196,
+   "tags": {
+    "name": "Onewa Domain",
+    "leisure": "park",
+    "wikidata": "Q121278373"
+   }
+  },
+  {
+   "id": "way/71869987",
+   "lat": -36.806069,
+   "lng": 174.735451,
+   "tags": {
+    "name": "Kauri Glen Reserve",
+    "leisure": "park",
+    "website": "https://www.aucklandcouncil.govt.nz/parks-recreation/Pages/park-details.aspx?Location=2295",
+    "wikidata": "Q110220718"
+   }
+  },
+  {
+   "id": "way/71870973",
+   "lat": -36.817174,
+   "lng": 174.718561,
+   "tags": {
+    "name": "Chatswood Reserve",
+    "leisure": "park",
+    "wikidata": "Q130835281"
+   }
+  },
+  {
+   "id": "way/7977831",
+   "lat": -36.851219,
+   "lng": 174.777314,
+   "tags": {
+    "name": "Fraser Park",
+    "leisure": "park",
+    "wikidata": "Q117454471"
+   }
+  },
+  {
+   "id": "way/7977838",
+   "lat": -36.856545,
+   "lng": 174.751601,
+   "tags": {
+    "name": "Tuna Mau / Western Park",
+    "leisure": "park",
+    "wikidata": "Q7988146"
+   }
+  },
+  {
+   "id": "way/7977840",
+   "lat": -36.846672,
+   "lng": 174.753877,
+   "tags": {
+    "name": "Waiatarau / Victoria Park",
+    "leisure": "park",
+    "wikidata": "Q7926902",
+    "wikipedia": "en:Victoria Park, Auckland"
+   }
+  },
+  {
+   "id": "way/7977848",
+   "lat": -36.857391,
+   "lng": 174.712068,
+   "tags": {
+    "name": "Meola Reef Reserve",
+    "leisure": "park",
+    "wikidata": "Q123241668"
+   }
+  },
+  {
+   "id": "way/8015527",
+   "lat": -36.881921,
+   "lng": 174.761373,
+   "tags": {
+    "name": "Essex Reserve",
+    "leisure": "park",
+    "wikidata": "Q131006921",
+    "addr:housenumber": "3",
+    "addr:street": "Ngauruhoe Street",
+    "addr:postcode": "1024"
+   }
+  },
+  {
+   "id": "way/8082652",
+   "lat": -36.867106,
+   "lng": 174.740532,
+   "tags": {
+    "name": "Arch Hill Scenic Reserve",
+    "leisure": "park",
+    "wikidata": "Q134802219"
+   }
+  },
+  {
+   "id": "way/8082871",
+   "lat": -36.86556,
+   "lng": 174.72865,
+   "tags": {
+    "name": "Western Springs Lakeside Park Outer Fields",
+    "leisure": "park",
+    "website": "https://aucklandunlimited.com",
+    "wikidata": "Q116821961"
+   }
+  },
+  {
+   "id": "way/84950915",
+   "lat": -36.881372,
+   "lng": 174.843041,
+   "tags": {
+    "name": "Ngahue Reserve",
+    "leisure": "park",
+    "wikidata": "Q113493092"
+   }
+  },
+  {
+   "id": "way/853583732",
+   "lat": -36.864813,
+   "lng": 174.720666,
+   "tags": {
+    "name": "Fukuoka Friendship Garden",
+    "leisure": "garden",
+    "opening_hours": "Mo-Su 10:00-17:30"
+   }
+  },
+  {
+   "id": "way/900519692",
+   "lat": -36.819495,
+   "lng": 174.739526,
+   "tags": {
+    "name": "Needles Eye Reserve",
+    "leisure": "park",
+    "wikidata": "Q131394074",
+    "addr:housenumber": "14",
+    "addr:street": "Awanui Street",
+    "addr:postcode": "0626"
+   }
+  },
+  {
+   "id": "way/958058632",
+   "lat": -36.85984,
+   "lng": 174.777811,
+   "tags": {
+    "name": "Auckland Cenotaph",
+    "historic": "memorial",
+    "wikidata": "Q77336618"
+   }
+  },
+  {
+   "id": "way/97522184",
+   "lat": -36.776748,
+   "lng": 174.77426,
+   "tags": {
+    "name": "Henderson Park",
+    "leisure": "park",
+    "wikidata": "Q131377595"
+   }
+  },
+  {
+   "id": "way/9779132",
+   "lat": -36.877928,
+   "lng": 174.760922,
+   "tags": {
+    "name": "Bridgman Reserve",
+    "leisure": "park",
+    "wikidata": "Q134802234",
+    "addr:housenumber": "333",
+    "addr:street": "Mount Eden Road",
+    "addr:postcode": "1024"
+   }
+  },
+  {
+   "id": "way/978018207",
+   "lat": -36.873915,
+   "lng": 174.767723,
+   "tags": {
+    "name": "Clifton",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q77976466",
+    "addr:housenumber": "11",
+    "addr:street": "Castle Drive",
+    "addr:postcode": "1023"
+   }
+  },
+  {
+   "id": "way/987215732",
+   "lat": -36.818381,
+   "lng": 174.712873,
+   "tags": {
+    "name": "Homewood Reserve",
+    "leisure": "park",
+    "wikidata": "Q130849341"
+   }
+  }
+ ]
+}

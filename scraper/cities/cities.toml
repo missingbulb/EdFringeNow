@@ -1,0 +1,60 @@
+# The cities around our festivals, for the "time off" half of a plan: what is
+# open to see between shows. One [[city]] per festival city; the contract is
+# scraper/cities/README.md.
+#
+# `radius_m` bounds what counts as "in town" around the centre: wide enough for
+# a day's sightseeing, narrow enough that a planner's walk/transit maths holds.
+
+[[city]]
+id = "edinburgh"
+name = "Edinburgh"
+country = "GB"
+lat = 55.9533
+lng = -3.1883
+radius_m = 6000
+timezone = "Europe/London"
+
+[[city]]
+id = "brighton"
+name = "Brighton"
+country = "GB"
+lat = 50.8225
+lng = -0.1372
+radius_m = 6000
+timezone = "Europe/London"
+
+[[city]]
+id = "leicester"
+name = "Leicester"
+country = "GB"
+lat = 52.6365
+lng = -1.1339
+radius_m = 6000
+timezone = "Europe/London"
+
+[[city]]
+id = "melbourne"
+name = "Melbourne"
+country = "AU"
+lat = -37.8150
+lng = 144.9668
+radius_m = 8000
+timezone = "Australia/Melbourne"
+
+[[city]]
+id = "auckland"
+name = "Auckland"
+country = "NZ"
+lat = -36.8485
+lng = 174.7633
+radius_m = 8000
+timezone = "Pacific/Auckland"
+
+[[city]]
+id = "wellington"
+name = "Wellington"
+country = "NZ"
+lat = -41.2865
+lng = 174.7762
+radius_m = 6000
+timezone = "Pacific/Auckland"

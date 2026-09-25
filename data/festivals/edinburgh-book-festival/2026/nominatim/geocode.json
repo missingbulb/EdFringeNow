@@ -1,0 +1,40 @@
+{
+ "results": [
+  {
+   "query": "21 Sciennes Road  Edinburgh EH9 1NX",
+   "matched": "21 Sciennes Road  Edinburgh EH9 1NX",
+   "lat": 55.938009,
+   "lng": -3.185941
+  },
+  {
+   "query": "Bristo Square, Edinburgh, EH8 9AL",
+   "matched": "Bristo Square, Edinburgh, EH8 9AL",
+   "lat": 55.945609,
+   "lng": -3.188878
+  },
+  {
+   "query": "Edinburgh Futures Institute, 1 Lauriston Place, EH3 9EF",
+   "matched": "1 Lauriston Place, EH3 9EF",
+   "lat": 55.944618,
+   "lng": -3.192798
+  },
+  {
+   "query": "Edinburgh Futures Institute, Lauriston Place, EH3  9EF",
+   "matched": "Edinburgh Futures Institute, Lauriston Place, EH3  9EF",
+   "lat": 55.944438,
+   "lng": -3.192756
+  },
+  {
+   "query": "Edinburgh Futures Institute, Lauriston Place, EH3 9EF",
+   "matched": "Edinburgh Futures Institute, Lauriston Place, EH3 9EF",
+   "lat": 55.944565,
+   "lng": -3.192562
+  },
+  {
+   "query": "Greyfriars Place, Edinburgh, EH1 2QQ",
+   "matched": "Greyfriars Place, Edinburgh, EH1 2QQ",
+   "lat": 55.946533,
+   "lng": -3.191012
+  }
+ ]
+}
