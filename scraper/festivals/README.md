@@ -106,6 +106,7 @@ its vocabulary (genre names, what counts as public).
 |---|---|---|---|
 | Eventotron (WordPress) | `eventotron.py` | Brighton Fringe, Leicester Comedy | events, performances, venues with coordinates, price bands, sold-out marks |
 | Spektrix public API v3 | `spektrix.py` | EIF, Book Festival | events, instances, venues, price lists, seats available of capacity |
+| Eventer producer page (`/user/<user>/getData`) | `eventer.py` | Acco | one event per performance: title line (hall, runtime), ticket types and prices, tickets left, description, picture |
 | Nominatim (OSM) | `nominatim.py` | any source with street addresses | coordinates for them, one request a second |
 
 ### A placeholder festival
