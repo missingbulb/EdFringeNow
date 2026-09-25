@@ -1644,6 +1644,20 @@ reaches it, and otherwise the one it covers most.
   festival at all takes the nearest one's theme and plans an empty calendar.
   </details>
 
+- `23.10` When another festival comes to lead the trip, the page's colours fade into its theme rather than jump, unless you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.10 -->
+
+  <details><summary>Notes</summary>
+
+  The theme's colours are registered properties that the page root
+  transitions, so the fade runs while a date handle is still being dragged and
+  never stops the page responding. The header stays in the house colours
+  throughout (23.6). A behavior leaf because a golden is taken with every
+  transition frozen at its end: the case lifts that freeze and samples the
+  page's background part-way through the fade.
+  </details>
+
 ## 24. Where you are coming from
 
 The page asks, once, where the reader is coming from, beside the trip's dates
