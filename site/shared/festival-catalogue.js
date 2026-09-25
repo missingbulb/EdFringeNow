@@ -113,6 +113,8 @@ export function adaptFestival(block) {
       // festival the show comes from.
       genreId: event.genre,
       blurb: event.blurb,
+      // A picture on the festival's own site, or null where it publishes none.
+      image: event.imageUrl ?? null,
       // Null stays null: the scheduler reads it to decide whether two shows
       // clash, and a guessed length would invent a clash or hide one.
       duration: event.durationMin,
@@ -185,6 +187,7 @@ export function adaptEdfringe({ catalogue, lookups }, festivalEntry, edition) {
       genreSlugs: kind ? [kind] : [],
       genreId: show.genre,
       blurb: show.blurb,
+      image: show.smallImage ?? show.image ?? null,
       duration: show.duration,
       venue: show.venue,
       venueName: show.venueName,

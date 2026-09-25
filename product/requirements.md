@@ -1227,7 +1227,7 @@ rather than as a control panel.
   shows that could really take it are offered — see `20.11`.
   </details>
 
-- `20.4` Hovering a card opens everything about it: how rare the show is, every night it plays, and the four verdicts.
+- `20.4` Hovering a card opens everything about it: its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, every night it plays, and the four verdicts.
 
   ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
 
@@ -1340,6 +1340,25 @@ rather than as a control panel.
   a day leaves one starred show a day, and the rest move to other nights or
   wait. A lock is an hour asked for by name, and is the one verdict that holds
   against every answer.
+  </details>
+
+- `20.13` A show with no picture leads its popup with its kind's emoji on its festival's colour.
+
+  ![planng-no-picture.20.13](requirements/screen/cases/planng-no-picture.20.13.png) <!-- req-gallery:20.13 -->
+
+  <details><summary>Notes</summary>
+
+  A Haifa film: Haifa's programme publishes no pictures.
+  </details>
+
+- `20.14` A picture that does not load gives way to the same emoji rather than a broken image.
+
+  ![jerusalem-picture-fails.20.14](requirements/screen/cases/jerusalem-picture-fails.20.14.png) <!-- req-gallery:20.14 -->
+
+  <details><summary>Notes</summary>
+
+  Pictures come from each festival's own site, which may refuse them to
+  another site or be down.
   </details>
 
 ## 21. Saying what you want
