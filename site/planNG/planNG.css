@@ -156,6 +156,13 @@
 
 /* A warm stone wash behind the page's top, so the festival reads as its own
    place without touching a single component. One gradient, no images. */
+/* The Fringe planner caps its content at plan.css's --maxw; this page is a
+   calendar first, and a wide screen is more days and hours in view, so it
+   spans the window, header and footer included, to keep one set of edges. */
+body.festival-page {
+  --maxw: none;
+}
+
 body.festival-page {
   background: linear-gradient(180deg, var(--wash) 0%, var(--wash-clear) 420px), var(--bg);
 }
