@@ -11,10 +11,11 @@
  *
  * Two things a caller needs:
  *   1. AFFILIATES — the ID block, empty until the programmes are joined.
- *   2. stayLink() / travelLink() / israelTravelLink() — the links a planner
- *      offers, each returning { text, partner, url } so the caller renders
- *      "text · partner". A planner page passes its own destination; nothing
- *      here assumes one festival.
+ *   2. stayLink() / travelLink() / israelTravelLink() / flightSearchLink() /
+ *      flightFareLink() — the links a planner offers, each returning
+ *      { text, partner, url } so the caller renders "text · partner". A
+ *      planner page passes its own destination; nothing here assumes one
+ *      festival.
  */
 
 /* ---------- Monetization: affiliate / referral IDs ----------
@@ -54,6 +55,9 @@ export const AFFILIATES = {
   bookingClickTemplate: "",
   omioClickTemplate: "",
   kiwitaxiClickTemplate: "",
+  // Travelpayouts' partner `marker` for Aviasales flights. The fare service
+  // (api/fares.js) finds the flights; the marker is what tags the click.
+  aviasalesMarker: "",
 };
 
 /* Route a destination URL through a network's click wrapper. */
@@ -157,4 +161,23 @@ export function israelRailLink() {
     partner: "Israel Railways",
     url: "https://www.rail.co.il/en",
   };
+}
+
+/* A flight on one day: Aviasales' search for the route and date, one adult,
+ * one way. `from` and `to` are IATA airport or city codes. Aviasales keys a
+ * search off one path segment — origin, day and month, destination,
+ * passengers — so nothing else goes on the URL but the marker. */
+export function flightSearchLink({ from, to, dateISO }, affiliates = AFFILIATES) {
+  const [, month, day] = dateISO.split("-");
+  const url = new URL(`https://www.aviasales.com/search/${from}${day}${month}${to}1`);
+  if (affiliates.aviasalesMarker) url.searchParams.set("marker", affiliates.aviasalesMarker);
+  return { text: "Search flights", partner: "Aviasales", url: url.toString() };
+}
+
+/* One fare the fare service found: its own Aviasales page, as the path the
+ * partner gave it, with the marker added. */
+export function flightFareLink(path, affiliates = AFFILIATES) {
+  const url = new URL(path, "https://www.aviasales.com");
+  if (affiliates.aviasalesMarker) url.searchParams.set("marker", affiliates.aviasalesMarker);
+  return { text: "Book this flight", partner: "Aviasales", url: url.toString() };
 }

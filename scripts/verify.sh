@@ -42,7 +42,7 @@ step "JavaScript syntax — node --check"
 # Only our own tracked source: everything the site ships (site/), the scripts/
 # tooling, the requirements harness and the design concepts. Never the vendored
 # .claudinite mount (not our code) or the plan/design/ mock (HTML).
-js_files=$(git ls-files 'site' 'scripts' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^site/plan/design/' || true; })
+js_files=$(git ls-files 'site' 'api' 'scripts' 'product' 'design-concepts' | { grep -E '\.m?js$' || true; } | { grep -v '^site/plan/design/' || true; })
 # `node --check` takes one file per process, and ~170 sequential node startups
 # was the bulk of this script's runtime (4.5s of 7s). xargs -P fans them across
 # the cores instead; -n 1 because the flag genuinely accepts only one path.

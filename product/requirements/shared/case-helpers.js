@@ -121,6 +121,54 @@ function plannerOrigin(origin) {
   return { "planNG.origin": JSON.stringify(origin) };
 }
 
+/* The site's fare service (api/fares.js), answering the page for real — the
+ * shipped handler, with a token — against the partner's answers committed under
+ * fixtures/fares/, one file per route (`partner-<from>-<to>.json`). A route
+ * with no file is a partner that found nothing. Returns the questions the page
+ * asked, as URLSearchParams, in order. */
+async function routeFares(page) {
+  const { handleFares } = await import("../../../api/fares.js");
+  const asked = [];
+  const partner = async (url) => {
+    const q = new URL(url).searchParams;
+    const file = path.join(FIXTURES_DIR, "fares", `partner-${q.get("origin").toLowerCase()}-${q.get("destination").toLowerCase()}.json`);
+    const body = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : JSON.stringify({ success: true, data: [], currency: q.get("currency") });
+    return new Response(body, { status: 200, headers: { "content-type": "application/json" } });
+  };
+  await page.route("**/api/fares?**", async (route) => {
+    const url = route.request().url();
+    asked.push(new URL(url).searchParams);
+    const res = await handleFares(new Request(url), { TRAVELPAYOUTS_TOKEN: "fixture-token" }, partner);
+    await route.fulfill({ status: res.status, contentType: "application/json", body: await res.text() });
+  });
+  return asked;
+}
+
+/* Both flight blocks settled: each has an answer (found or none) or has nothing
+ * to look for. */
+async function flightsSettled(page) {
+  await page.waitForFunction(
+    () => [...document.querySelectorAll(".flight[data-fares]")].every((f) => f.dataset.fares !== "wait"),
+    null,
+    { timeout: 20000 }
+  );
+  await settle(page);
+}
+
+// The calendar re-planned across a trip: its first and last column are the
+// trip's first and last day.
+async function calendarSpans(page, from, to) {
+  await page.waitForFunction(
+    ([f, t]) => {
+      const cols = [...document.querySelectorAll("#schedule .sch-day")];
+      return cols.length > 0 && cols[0].dataset.date === f && cols[cols.length - 1].dataset.date === t;
+    },
+    [from, to],
+    { timeout: 20000 }
+  );
+  await settle(page);
+}
+
 // Every meal switched on, at the page's own default hours — what the "three
 // meals" answer sets, spelled out so a case can seed it without driving the
 // question.
@@ -524,7 +572,10 @@ module.exports = {
   jerusalemMeals,
   plannerOrigin,
   plannerReady,
+  routeFares,
+  flightsSettled,
   calendarDays,
+  calendarSpans,
   JERUSALEM,
   JERUSALEM_EDITION,
   openDrawer,

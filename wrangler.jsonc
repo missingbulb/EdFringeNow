@@ -8,9 +8,21 @@
   // than whatever the deploy day defaults to. Moving it is a deliberate commit.
   "compatibility_date": "2026-09-16",
 
-  // There is no Worker script: this is a static site, so the whole deployment
-  // is the asset tree and `main` is deliberately absent.
+  // The site is the static asset tree below. The Worker answers only the
+  // paths the page cannot answer itself because they need a secret — the
+  // flight fares, whose partner token must never ship to the browser (see
+  // api/index.js). It lives outside the published directory, so the release
+  // uploads it as code rather than as a page.
+  "main": "api/index.js",
+
   "assets": {
+    // How the Worker hands every other path back to the asset tree.
+    "binding": "ASSETS",
+
+    // Only these paths reach the Worker first; every page and data file is
+    // served straight from the tree, as before there was a Worker.
+    "run_worker_first": ["/api/*"],
+
     // The ONE published directory, and the whole upload. A file outside it is
     // absent from the live site with no error anywhere — which is why the
     // scraper, the pipeline's working data, the vendored mount and the queue

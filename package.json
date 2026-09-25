@@ -2,7 +2,7 @@
   "name": "edfringenow",
   "version": "1.10925.15",
   "private": true,
-  "description": "EdFringeNow — client-side Edinburgh Fringe discovery + planner. No runtime dependencies; a build/serve-free static site.",
+  "description": "EdFringeNow — client-side Edinburgh Fringe discovery + planner. No runtime dependencies and no build step: a static site, plus one small Worker for flight fares.",
   "scripts": {
     "test": "node --test site/shared/__tests__/*.test.mjs site/js/__tests__/*.test.mjs site/plan/lib/__tests__/*.test.mjs site/plan2/lib/__tests__/*.test.mjs site/planNG/lib/__tests__/*.test.mjs product/requirements/*.test.js product/requirements/logic/logic.test.js .claudinite/local/packs/*/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*.test.mjs .claudinite/local/packs/edfringe-now/tasks/*/*.test.mjs",
     "test:ui": "node --test --test-concurrency=1 product/requirements/screen/screen.test.js product/requirements/behavior/behavior.test.js product/requirements/scale/scale.test.js",
