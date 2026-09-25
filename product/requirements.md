@@ -2061,7 +2061,7 @@ The draft plans around all of it.
 
   🚩 _Behavior leaf._ <!-- req-gallery:28.12 -->
 
-- `28.13` A day given to a nearby festival keeps its banner inside its own column, however narrow.
+- `28.13` A kept day's title stays inside its own column, however narrow.
 
   ![planng-festival-banner.28.13](requirements/screen/cases/planng-festival-banner.28.13.png) <!-- req-gallery:28.13 -->
 
@@ -2069,7 +2069,20 @@ The draft plans around all of it.
 
   A festival's name is longer than a narrow day is wide: the banner ends in
   an ellipsis at its column's edge rather than running over the next day's
-  shows. The full name is in the menu the banner opens.
+  shows. The full name is in the menu the banner opens. A rest day or a day
+  out is held to its column the same way.
+  </details>
+
+- `28.14` Days in a row kept for the same thing join into one stretch under one title.
+
+  ![planng-kept-run.28.14](requirements/screen/cases/planng-kept-run.28.14.png) <!-- req-gallery:28.14 -->
+
+  <details><summary>Notes</summary>
+
+  Two days in a row given to Acco on the Haifa trip: their banners meet
+  across the column edge and the festival is named once across both. Each
+  day's part still opens that day's own menu, so either can be changed on
+  its own.
   </details>
 
 ## 31. Holidays at home
