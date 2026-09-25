@@ -1361,9 +1361,9 @@ rather than as a control panel.
   another site or be down.
   </details>
 
-- `20.15` The popup waits for the pointer to rest on a card for half a second, and closes once the pointer has left both the card and the popup.
+- `20.16` The popup waits for the pointer to rest on a card for half a second, and closes once the pointer has left both the card and the popup.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:20.15 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:20.16 -->
 
   <details><summary>Notes</summary>
 
@@ -1373,17 +1373,17 @@ rather than as a control panel.
   only when it leaves the calendar altogether. A keyboard opens it at once.
   </details>
 
-- `20.16` Resting on a verdict names what it does, in the page's own label rather than the browser's tooltip.
+- `20.17` Resting on a verdict names what it does, in the page's own label rather than the browser's tooltip.
 
-  ![planng-verdict-tip.20.16](requirements/screen/cases/planng-verdict-tip.20.16.png) <!-- req-gallery:20.16 -->
+  ![planng-verdict-tip.20.17](requirements/screen/cases/planng-verdict-tip.20.17.png) <!-- req-gallery:20.17 -->
 
-- `20.17` Until a first verdict is given, the popup says what its four buttons are for.
+- `20.18` Until a first verdict is given, the popup says what its four buttons are for.
 
-  ![planng-verdict-hint.20.17](requirements/screen/cases/planng-verdict-hint.20.17.png) <!-- req-gallery:20.17 -->
+  ![planng-verdict-hint.20.18](requirements/screen/cases/planng-verdict-hint.20.18.png) <!-- req-gallery:20.18 -->
 
-- `20.18` Giving any verdict drops that hint for good.
+- `20.19` Giving any verdict drops that hint for good.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:20.18 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:20.19 -->
 
   <details><summary>Notes</summary>
 
@@ -1392,13 +1392,13 @@ rather than as a control panel.
   from before the hint existed never sees it.
   </details>
 
-- `20.19` Resting on the travel between two shows says it in words: how, how long, from which venue to which, and how much time it leaves.
+- `20.20` Resting on the travel between two shows says it in words: how, how long, from which venue to which, and how much time it leaves.
 
-  ![planng-leg-card.20.19](requirements/screen/cases/planng-leg-card.20.19.png) <!-- req-gallery:20.19 -->
+  ![planng-leg-card.20.20](requirements/screen/cases/planng-leg-card.20.20.png) <!-- req-gallery:20.20 -->
 
-- `20.20` Nothing on the planner leans on the browser's own tooltip.
+- `20.21` Nothing on the planner leans on the browser's own tooltip.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:20.20 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:20.21 -->
 
   <details><summary>Notes</summary>
 
