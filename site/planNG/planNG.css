@@ -652,7 +652,7 @@ body.festival-page {
   align-content: center;
   align-items: center;
   column-gap: 10px;
-  min-width: 150px;
+  min-width: 132px;
   /* A whole number of pixels, so the calendar under the row starts on a pixel
      boundary rather than wherever two lines of type happen to end. */
   box-sizing: border-box;
@@ -691,6 +691,47 @@ body.festival-page {
   font-size: 0.92rem;
   color: var(--violet-dark);
   white-space: nowrap;
+}
+/* A chip whose answer who-is-coming filled in says so, beside its question. */
+.pref-suggested {
+  display: none;
+  margin-inline-start: 4px;
+  font-size: 0.66rem;
+}
+.pref.is-suggested .pref-suggested {
+  display: inline;
+}
+.pref.is-suggested .pref-answer {
+  font-style: italic;
+}
+.pref-ages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pref-ages-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.pref-age {
+  min-width: 34px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.pref-age.is-on {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+  font-weight: 700;
 }
 .pref-caret {
   grid-column: 2;
