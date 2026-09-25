@@ -929,15 +929,17 @@ festivals — the city, the dates, the palette, the partner links — comes from
 registry and one presentation entry per festival, so another festival is data
 and a theme rather than another page.
 
-- `18.1` The page chrome: the festival's own wordmark, the three-way site nav with **Jerusalem** active, and the festival's dates.
+- `18.1` The page chrome is the site's own and the same for every festival: the **EdFringeNow** wordmark and the three-way site nav with **Festivals** active.
 
   ![jerusalem-chrome.18.1](requirements/screen/cases/jerusalem-chrome.18.1.png) <!-- req-gallery:18.1 -->
 
   <details><summary>Notes</summary>
 
-  The nav links are `Now` (`/`), `Plan` (`/plan/`) and the focused festival's
-  city (`./`, active). The header hint reads the focused festival's own run,
-  not Edinburgh's.
+  The nav links are `Now` (`/`), `Plan` (`/plan/`) and `Festivals` (`./`,
+  active). The bar names no festival and shows no dates, and keeps the house
+  palette whichever festival is in focus: the picture is the header on
+  Jerusalem above the header on Haifa. Which festival the page plans is the
+  timeline's and the page title's to say.
   </details>
 
 - `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
@@ -991,24 +993,26 @@ and a theme rather than another page.
   zero.
   </details>
 
-- `18.6` "Find a bed" opens Booking.com's Hebrew edition for Jerusalem, on the window's own nights.
+- `18.6` The bed link for Jerusalem is Booking.com's Hebrew edition, in shekels, on the nights it is given.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.6 -->
+  🔧 _Logic leaf._ <!-- req-gallery:18.6 -->
 
   <details><summary>Notes</summary>
 
-  Asserted as the URL the link carries, never followed: the `searchresults.he.html`
-  path, `ss=Jerusalem`, `selected_currency=ILS`, and the check-in/check-out
-  taken from the date window.
+  Proved against the trip-link builder in `site/planNG/festivals.js`, since the
+  page shows no trip links today; where they will sit is still to be decided.
+  Asserted as the URL, never followed: the `searchresults.he.html` path,
+  `ss=Jerusalem`, `selected_currency=ILS`, and the check-in/check-out it was
+  handed.
   </details>
 
-- `18.7` "Getting here" offers the paid airport transfer and the train beside it.
+- `18.7` Getting to Jerusalem from abroad offers the paid airport transfer and the train beside it.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:18.7 -->
+  🔧 _Logic leaf._ <!-- req-gallery:18.7 -->
 
   <details><summary>Notes</summary>
 
-  Two links, both asserted as URLs. Israel Railways runs no referral
+  Two links from the trip-link builder, both asserted as URLs. Israel Railways runs no referral
   programme; it is offered anyway because it is the cheapest way in from the
   airport, and it ships untagged.
   </details>
@@ -1531,7 +1535,7 @@ reached from there.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` The page takes the focused festival's theme: its name, its wordmark and its palette.
+- `23.6` Below the site header, the page takes the focused festival's theme: its name and its palette.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
@@ -1569,14 +1573,18 @@ needs a bed and a train, and one from abroad needs the airport too.
 
 - `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:24.2 -->
+  🔧 _Logic leaf._ <!-- req-gallery:24.2 -->
 
   <details><summary>Notes</summary>
 
-  Asked once per browser: the answer is stored and the card does not come
-  back, on this festival or the next. It can be changed from the trip links'
-  own line.
+  Proved against the origin judgement in `site/shared/feasibility.js` and the
+  trip-link builder in `site/planNG/festivals.js`: the page shows no trip links
+  today, and where they will sit is still to be decided.
   </details>
+
+- `24.5` The question is asked once per browser: the answer is stored, and the next festival chosen does not ask again.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.5 -->
 
 - `24.3` "Use my location" answers the question from the device's position.
 
@@ -1586,7 +1594,7 @@ needs a bed and a train, and one from abroad needs the airport too.
 
   The position is kept as a point in this browser and judged against each
   festival's city by distance; it is sent nowhere. Driven with the harness's
-  fixed position in Edinburgh, which is abroad for a festival in Jerusalem.
+  fixed position in Edinburgh.
   </details>
 
 - `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
