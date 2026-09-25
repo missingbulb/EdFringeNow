@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../../shared/packs/claudinite-tasks/task.schema.json",
+  "id": "price-probe",
+  "description": "Prints one show's raw performancePrices payload, fees and all, for questions about how the API composes a price. Prices nothing else, writes no cache file and commits nothing.",
+  "trigger": "request",
+  "expected_outcome": "no_code_changes",
+  "code_work": "bash worker.sh",
+  "code_work_timeout": 600,
+  "agent_model": "none"
+}
