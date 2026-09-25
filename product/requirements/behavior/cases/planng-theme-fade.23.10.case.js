@@ -14,14 +14,29 @@ async function unfreeze(page) {
   });
 }
 
-async function midFade(page) {
-  // Held still so what is sampled is the fade and nothing else.
-  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => r())));
+/* Every background the page shows, frame by frame, from the moment the theme
+ * changes until the fade must be over: a busy machine may drop frames, but not
+ * the whole fade. */
+async function fadeFrames(page) {
+  const frames = page.evaluate(
+    () =>
+      new Promise((resolve) => {
+        const seen = [];
+        new MutationObserver((_, observer) => {
+          if (document.documentElement.dataset.festival !== "haifa-iff") return;
+          observer.disconnect();
+          const until = performance.now() + 900;
+          const sample = () => {
+            seen.push(getComputedStyle(document.body).backgroundColor);
+            if (performance.now() < until) requestAnimationFrame(sample);
+            else resolve(seen);
+          };
+          sample();
+        }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-festival"] });
+      })
+  );
   await page.click('.tl-item[data-festival="haifa-iff"]');
-  // Sampled a beat after the theme itself changes, well inside the fade.
-  await page.waitForFunction(() => document.documentElement.dataset.festival === "haifa-iff");
-  await page.waitForTimeout(100);
-  return background(page);
+  return frames;
 }
 
 module.exports = {
@@ -34,18 +49,21 @@ module.exports = {
     await unfreeze(page);
     const jerusalem = await background(page);
 
-    const during = await midFade(page);
+    const frames = await fadeFrames(page);
     await plannerReady(page, "haifa-iff");
     await page.waitForTimeout(1200);
     const haifa = await background(page);
     assert.notEqual(jerusalem, haifa, "the two festivals' backgrounds differ");
-    assert.notEqual(during, jerusalem, "part-way through, the page has left Jerusalem's colour");
-    assert.notEqual(during, haifa, "but has not yet reached Haifa's: it fades rather than jumps");
+    assert.ok(
+      frames.some((c) => c !== jerusalem && c !== haifa),
+      `part-way through, the page is between Jerusalem's colour and Haifa's: it fades rather than jumps (${frames.join(", ")})`
+    );
 
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
     await unfreeze(page);
-    assert.equal(await midFade(page), haifa, "with reduced motion asked for, the colours switch at once");
+    const still = await fadeFrames(page);
+    assert.deepEqual([...new Set(still)], [haifa], "with reduced motion asked for, the colours switch at once");
   },
 };

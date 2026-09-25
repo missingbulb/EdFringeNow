@@ -1353,7 +1353,7 @@ the short way to a setting, never the only way — so however much a question
 holds, the calendar never moves. Nothing above the calendar explains the
 calendar.
 
-- `21.1` One row of chips between the year's strip and the calendar: which festivals, what kinds, how full a day, how you get around, how you eat.
+- `21.1` One row of chips between the year's strip and the calendar: who's coming, which festivals, what kinds, how full a day, how you get around, how you eat.
 
   ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
 
@@ -1362,8 +1362,8 @@ calendar.
   Each chip is the question in small type over its current answer, with a
   caret: one line tall whatever the answer is, so the row never grows and the
   calendar always starts at the same height. Rendered with nothing stored, so
-  the golden is the row a first visit opens on — every festival, every kind,
-  the middle pace, on foot, and food left to the reader.
+  the golden is the row a first visit opens on — nobody said yet, every
+  festival, every kind, the middle pace, on foot, and food left to the reader.
   </details>
 
 - `21.2` A chip opens a panel over the calendar holding its pictures and the exact numbers behind them.
@@ -1450,6 +1450,19 @@ calendar.
   Animated, before and after the drag. The draft is rebuilt from the whole
   programme as the line moves, so what the constraint costs is the calendar
   redrawing rather than a number changing.
+  </details>
+
+- `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
+
+  <table><thead><tr><th align="left">A show with no length, starting</th><th align="left">Day ends 20:30</th><th align="left">Dinner 21:00–22:00</th></tr></thead><tbody><tr><td>19:30</td><td>drafted: an hour ends at 20:30</td><td>drafted</td></tr><tr><td>20:00</td><td>not drafted: an hour runs past 20:30</td><td>drafted: it ends as dinner starts</td></tr><tr><td>20:30</td><td>not drafted</td><td>not drafted: it runs into dinner</td></tr></tbody></table> <!-- req-gallery:21.14 -->
+
+  <details><summary>Notes</summary>
+
+  Acco publishes start times only. Taken at its word, a show starting at 20:00
+  would end at 20:00 and fit under a day that ends at 20:30, then be drawn
+  running past the line. An hour is what the calendar draws such a show as,
+  near enough, so what the day's end rules out is what the reader sees cross
+  it.
   </details>
 
 - `21.9` Every preference survives a reload.
@@ -1643,17 +1656,29 @@ reaches it, and otherwise the one it covers most.
   page's background part-way through the fade.
   </details>
 
-- `23.11` Each end of the trip is a line across the strip with a grip at its middle, and the trip's length in days is written above the band.
+- `23.11` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
 
-  ![planng-trip-edges.23.11](requirements/screen/cases/planng-trip-edges.23.11.png) <!-- req-gallery:23.11 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.11 -->
 
-- `23.12` Today is a small figure standing on the months, holding up a sign that says so.
+  <details><summary>Notes</summary>
 
-  ![planng-today.23.12](requirements/screen/cases/planng-today.23.12.png) <!-- req-gallery:23.12 -->
+  Measured at 2560 pixels wide: the timeline and the calendar card each run
+  from the page's side gutter to the other, and the header's wordmark and
+  controls sit on the same edges. The other planner, `/plan/`, keeps its
+  content width.
+  </details>
 
-- `23.13` The figure moves a little while it stands, cheers whenever you make a choice on the page, and holds still if you ask your device for reduced motion.
+- `23.12` Each end of the trip is a line across the strip with a grip at its middle, and the trip's length in days is written above the band.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:23.13 -->
+  ![planng-trip-edges.23.12](requirements/screen/cases/planng-trip-edges.23.12.png) <!-- req-gallery:23.12 -->
+
+- `23.13` Today is a small figure standing on the months, holding up a sign that says so.
+
+  ![planng-today.23.13](requirements/screen/cases/planng-today.23.13.png) <!-- req-gallery:23.13 -->
+
+- `23.14` The figure moves a little while it stands, cheers whenever you make a choice on the page, and holds still if you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.14 -->
 
   <details><summary>Notes</summary>
 
@@ -1663,9 +1688,9 @@ reaches it, and otherwise the one it covers most.
   back to standing.
   </details>
 
-- `23.14` Pointing at a festival on the strip shows its card: its full name, city and genre, its dates and length, and whether its programme is out yet.
+- `23.15` Pointing at a festival on the strip shows its card: its full name, city and genre, its dates and length, and whether its programme is out yet.
 
-  ![planng-festival-card.23.14](requirements/screen/cases/planng-festival-card.23.14.png) <!-- req-gallery:23.14 -->
+  ![planng-festival-card.23.15](requirements/screen/cases/planng-festival-card.23.15.png) <!-- req-gallery:23.15 -->
 
   <details><summary>Notes</summary>
 
@@ -1901,7 +1926,7 @@ The draft plans around all of it.
   The hours are the table's; a day that already has that meal gets a snack
   instead, so a second click at lunchtime does not make a second lunch.
 
-## 29. Holidays at home
+## 31. Holidays at home
 
 The trip's dates are the reader's, and the days they can most easily take off
 are their own country's public holidays, and above all the breaks those make
@@ -1909,36 +1934,36 @@ with a weekend. The year strip marks each break as a green orb on the months.
 Until the reader says how they are getting here (section 24), their country
 is guessed from their connection, and each orb's card says it is a guess.
 
-- `29.1` The year strip marks each break your public holidays make as a green orb on the months, big enough to see and wider the longer the break.
+- `31.1` The year strip marks each break your public holidays make as a green orb on the months, big enough to see and wider the longer the break.
 
-  ![planng-holidays.29.1](requirements/screen/cases/planng-holidays.29.1.png) <!-- req-gallery:29.1 -->
+  ![planng-holidays.31.1](requirements/screen/cases/planng-holidays.31.1.png) <!-- req-gallery:31.1 -->
 
   <details><summary>Notes</summary>
 
   One orb per break, centred on it. Its width grows with the square root of
   the break's days, never with the strip's scale, so a one-day holiday is as
   easy to see on a phone as on a desk; an orb may cover a month's name. The
-  breaks are 29.6's. The names come
+  breaks are 31.6's. The names come
   from the committed per-country files in `site/holidays/`, generated from
   the `holidays` Python package by `scripts/build-holidays.py`, in the page's
   language where the package carries one and in English otherwise.
   </details>
 
-- `29.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
+- `31.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:29.2 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:31.2 -->
 
-- `29.5` Pointing at an orb explains it: the holidays in the break, its dates, how many days off it makes counting the weekend and any work day in the middle, and whose holidays they are.
+- `31.5` Pointing at an orb explains it: the holidays in the break, its dates, how many days off it makes counting the weekend and any work day in the middle, and whose holidays they are.
 
-  ![planng-holiday-card.29.5](requirements/screen/cases/planng-holiday-card.29.5.png) <!-- req-gallery:29.5 -->
+  ![planng-holiday-card.31.5](requirements/screen/cases/planng-holiday-card.31.5.png) <!-- req-gallery:31.5 -->
 
-- `29.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
+- `31.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
 
-  <table><thead><tr><th align="left">Holidays</th><th align="left">Weekend</th><th align="left">The break</th><th align="left">Days off</th><th align="left">Work days in the middle</th></tr></thead><tbody><tr><td>Wed 14 Oct</td><td>Sat and Sun</td><td>Wed 14</td><td>1</td><td>0</td></tr><tr><td>Fri 16 Oct</td><td>Sat and Sun</td><td>Fri 16 to Sun 18</td><td>3</td><td>0</td></tr><tr><td>Wed 7 and Thu 8 Oct</td><td>Sat and Sun</td><td>Wed 7 to Sun 11</td><td>5</td><td>1</td></tr><tr><td>Tue 13 Oct</td><td>Sat and Sun</td><td>Sat 10 to Tue 13</td><td>4</td><td>1</td></tr><tr><td>Thu 15 Oct</td><td>Fri and Sat</td><td>Thu 15 to Sat 17</td><td>3</td><td>0</td></tr><tr><td>Tue 13 and Thu 15 Oct</td><td>Sat and Sun</td><td>Sat 10 to Sun 18</td><td>9</td><td>3</td></tr></tbody></table> <!-- req-gallery:29.6 -->
+  <table><thead><tr><th align="left">Holidays</th><th align="left">Weekend</th><th align="left">The break</th><th align="left">Days off</th><th align="left">Work days in the middle</th></tr></thead><tbody><tr><td>Wed 14 Oct</td><td>Sat and Sun</td><td>Wed 14</td><td>1</td><td>0</td></tr><tr><td>Fri 16 Oct</td><td>Sat and Sun</td><td>Fri 16 to Sun 18</td><td>3</td><td>0</td></tr><tr><td>Wed 7 and Thu 8 Oct</td><td>Sat and Sun</td><td>Wed 7 to Sun 11</td><td>5</td><td>1</td></tr><tr><td>Tue 13 Oct</td><td>Sat and Sun</td><td>Sat 10 to Tue 13</td><td>4</td><td>1</td></tr><tr><td>Thu 15 Oct</td><td>Fri and Sat</td><td>Thu 15 to Sat 17</td><td>3</td><td>0</td></tr><tr><td>Tue 13 and Thu 15 Oct</td><td>Sat and Sun</td><td>Sat 10 to Sun 18</td><td>9</td><td>3</td></tr></tbody></table> <!-- req-gallery:31.6 -->
 
-- `29.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
+- `31.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
 
-  🔧 _Logic leaf._ <!-- req-gallery:29.3 -->
+  🔧 _Logic leaf._ <!-- req-gallery:31.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1947,15 +1972,85 @@ is guessed from their connection, and each orb's card says it is a guess.
   stored, and no other service is asked.
   </details>
 
-- `29.4` The holiday files cover the whole year the strip shows, for at least another year.
+- `31.4` The holiday files cover the whole year the strip shows, for at least another year.
 
-  🔧 _Logic leaf._ <!-- req-gallery:29.4 -->
+  🔧 _Logic leaf._ <!-- req-gallery:31.4 -->
 
   <details><summary>Notes</summary>
 
   Read against the real clock rather than the harness's fixed day, so the
   build goes red a year before the files run out, which is when
   `scripts/build-holidays.py` needs running again for later years.
+  </details>
+
+## 29. Who's coming
+
+Who is coming is asked before anything finer, because it answers most of the
+rest: how full a day should be, what to favour, when the evening ends and how
+to eat. Those answers are filled in from it for every question the reader has
+not answered themselves, and said to be suggestions; an answer the reader
+gives is theirs and is never overwritten.
+
+- `29.1` "Who's coming?" is the first chip: just me, a couple, family with the children's ages, or friends.
+
+  ![jerusalem-who.29.1](requirements/screen/cases/jerusalem-who.29.1.png) <!-- req-gallery:29.1 -->
+
+  <details><summary>Notes</summary>
+
+  Opened on a family with children of 5 and 9. The ages are the ones the
+  Plan2 page asks, and only a family is asked them.
+  </details>
+
+- `29.2` Who is coming suggests how full a day is, the kinds favoured, when the evening ends and how to eat.
+
+  <table><thead><tr><th align="left">Who's coming</th><th align="left">A day</th><th align="left">Favoured</th><th align="left">Evening ends</th><th align="left">Eating</th></tr></thead><tbody><tr><td>Just me</td><td>packed</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>A couple</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>dinner</td></tr><tr><td>Friends</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>Family, youngest under 8</td><td>easy</td><td>family shows</td><td>21:00</td><td>three meals</td></tr><tr><td>Family, youngest 8 to 11</td><td>steady</td><td>family shows</td><td>22:00</td><td>three meals</td></tr><tr><td>Family, all 12 or over</td><td>steady</td><td>family shows</td><td>01:00</td><td>three meals</td></tr></tbody></table> <!-- req-gallery:29.2 -->
+
+  <details><summary>Notes</summary>
+
+  The table is the whole rule. A family with no ages given is treated as one
+  whose children are old enough to stay out.
+  </details>
+
+- `29.3` Choosing who's coming fills in every question not yet answered, marked as suggested; an answer you gave yourself stays yours.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:29.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: a family with a five-year-old sets an easy pace, three meals, the
+  family kind and a 21:00 evening, each chip marked as suggested; the pace is
+  then answered by hand, and a switch to a couple changes the meals and the
+  evening but not the pace. After a reload the same answers come back, with
+  the same marks.
+  </details>
+
+## 30. How a show looks
+
+A block in the calendar says at a glance which festival a show belongs to and
+what kind of show it is, so a trip across several festivals reads without
+opening anything. Blocks that are the reader's own time (meals, rest,
+excursions, flights) carry no festival colour and are hatched instead (28).
+
+- `30.1` A show's block has its festival's colour at its edge and its kind's emoji before its name; a free show carries a small Free tag.
+
+  ![planng-block-look.30.1](requirements/screen/cases/planng-block-look.30.1.png) <!-- req-gallery:30.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco: the day given to Acco, where two shows
+  are free, beside the Haifa day before it. The kinds are the shared ones the
+  kinds chip offers (21), so a Haifa film and an Acco play carry different
+  emoji whatever each festival calls its own sections.
+  </details>
+
+- `30.2` Under the calendar, a legend names each festival with a show in view, in its colour.
+
+  ![planng-festival-legend.30.2](requirements/screen/cases/planng-festival-legend.30.2.png) <!-- req-gallery:30.2 -->
+
+  <details><summary>Notes</summary>
+
+  Only festivals with a drafted show are named, so a one-festival trip shows
+  one entry.
   </details>
 
 ## 25. Never a list of thousands

@@ -188,6 +188,13 @@
 
 /* A warm stone wash behind the page's top, so the festival reads as its own
    place without touching a single component. One gradient, no images. */
+/* The Fringe planner caps its content at plan.css's --maxw; this page is a
+   calendar first, and a wide screen is more days and hours in view, so it
+   spans the window, header and footer included, to keep one set of edges. */
+body.festival-page {
+  --maxw: none;
+}
+
 body.festival-page {
   background: linear-gradient(180deg, var(--wash) 0%, var(--wash-clear) 420px), var(--bg);
 }
@@ -684,7 +691,7 @@ body.festival-page {
   align-content: center;
   align-items: center;
   column-gap: 10px;
-  min-width: 150px;
+  min-width: 132px;
   /* A whole number of pixels, so the calendar under the row starts on a pixel
      boundary rather than wherever two lines of type happen to end. */
   box-sizing: border-box;
@@ -723,6 +730,47 @@ body.festival-page {
   font-size: 0.92rem;
   color: var(--violet-dark);
   white-space: nowrap;
+}
+/* A chip whose answer who-is-coming filled in says so, beside its question. */
+.pref-suggested {
+  display: none;
+  margin-inline-start: 4px;
+  font-size: 0.66rem;
+}
+.pref.is-suggested .pref-suggested {
+  display: inline;
+}
+.pref.is-suggested .pref-answer {
+  font-style: italic;
+}
+.pref-ages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pref-ages-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.pref-age {
+  min-width: 34px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.pref-age.is-on {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+  font-weight: 700;
 }
 .pref-caret {
   grid-column: 2;
@@ -1899,4 +1947,41 @@ body.festival-page {
     max-width: 100%;
     min-width: 0;
   }
+}
+
+/* A show's edge is its festival's colour, and its kind leads its name; a free
+   show says so in a tag rather than in the edge. */
+.sch-show { --seg: var(--festival-colour, var(--violet)); }
+.sch-kind {
+  margin-inline-end: 3px;
+  font-size: 0.7rem;
+}
+/* Pinned to the card's end corner rather than set in the meta line, so a short
+   card keeps its one line for the name. */
+.sch-free {
+  position: absolute;
+  bottom: 2px;
+  inset-inline-end: 3px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ok) 16%, var(--paper));
+  color: var(--ink);
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.fest-legend {
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 8px 4px 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.fest-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }

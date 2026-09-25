@@ -19,6 +19,9 @@ export const NIGHT_END_MIN = 30 * 60;
 export const TRANSFER_MIN = 90;
 export const AIRPORT_MIN = 150;
 
+/** What a show whose length is not published counts as against the day's hours. */
+export const ASSUMED_LENGTH_MIN = 60;
+
 /** What a kept day can be for; a day with none is a shows day. */
 export const DAY_KINDS = ["rest", "excursion", "festival"];
 
