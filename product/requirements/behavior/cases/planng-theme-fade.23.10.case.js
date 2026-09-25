@@ -18,7 +18,9 @@ async function midFade(page) {
   // Held still so what is sampled is the fade and nothing else.
   await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => r())));
   await page.click('.tl-item[data-festival="haifa-iff"]');
-  await page.waitForTimeout(150);
+  // Sampled a beat after the theme itself changes, well inside the fade.
+  await page.waitForFunction(() => document.documentElement.dataset.festival === "haifa-iff");
+  await page.waitForTimeout(100);
   return background(page);
 }
 
