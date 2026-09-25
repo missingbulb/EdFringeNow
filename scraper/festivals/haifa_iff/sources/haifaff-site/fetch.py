@@ -37,11 +37,15 @@ FESTIVAL_DIR = os.path.dirname(os.path.dirname(HERE))
 SOURCE_ID = "haifaff-site"
 # Bumped when the shape of programme.json changes, so a manifest says which
 # shape its folder holds.
-FETCHER_VERSION = 1
+FETCHER_VERSION = 2
 
 SITE = "https://www.haifaff.co.il"
 SCHEDULE_EN = SITE + "/eng/Screening_schedule"
 SCHEDULE_HE = SITE + "/" + urllib.parse.quote("לוח_הקרנות")
+FILMS = SITE + "/eng/Films"
+# The schedule's column for everything outside the cinema halls. Each such
+# event's own page names where it really is.
+EVENTS_COLUMN = "Events"
 
 
 def page(cache_dir, name, url):
@@ -85,6 +89,15 @@ def build(edition, cache_dir):
         if row["kind"] == "film" and row["refId"] not in titles_he:
             titles_he[row["refId"]] = hparse.title_from_slug(row["slug"], row["heading"])
 
+    members = {}
+    for group in hparse.film_groups(page(cache_dir, "films", FILMS)):
+        url, n = "%s/eng/Films/grp%%7Cfwsa%%7C%s" % (SITE, group["id"]), 0
+        while url:
+            listing = hparse.parse_group_page(page(cache_dir, "group-%s-%d" % (group["id"], n), url), SITE)
+            for film_id in listing["filmIds"]:
+                members.setdefault(film_id, []).append(group)
+            url, n = listing["next"], n + 1
+
     films = []
     for film_id in sorted({r["refId"] for r in rows if r["kind"] == "film"}):
         url = "%s/eng/Films/%d" % (SITE, film_id)
@@ -102,7 +115,8 @@ def build(edition, cache_dir):
             "runtimeMin": film["runtimeMin"],
             "language": film["language"],
             "subtitles": film["subtitles"],
-            "sections": film["sections"],
+            # The page's own section first, then every other listing it is on.
+            "sections": film["sections"] + [g for g in members.get(film_id, []) if g["id"] not in [s["id"] for s in film["sections"]]],
             "synopsis": film["synopsis"],
             "image": film["image"],
         })
@@ -112,6 +126,10 @@ def build(edition, cache_dir):
         url = "%s/eng/Events/%d" % (SITE, event_id)
         parsed = hparse.parse_film(page(cache_dir, "event-%d" % event_id, url))
         heading = next(r["heading"] for r in rows if r["kind"] == "event" and r["refId"] == event_id)
+        for r in rows:
+            if r["kind"] == "event" and r["refId"] == event_id and r["venue"] == EVENTS_COLUMN:
+                when = "%s/%s %s" % (r["date"][8:10], r["date"][5:7], r["start"])
+                r["venue"] = parsed["halls"].get(when) or parsed["place"] or r["venue"]
         events.append({
             "id": event_id,
             "url": url,
@@ -120,6 +138,7 @@ def build(edition, cache_dir):
             # the way a film page's section links are read. Empty when the
             # page links none.
             "groups": [s["id"] for s in parsed["sections"]],
+            "image": parsed["image"],
         })
 
     screenings = [
@@ -162,10 +181,12 @@ def main():
         {"programme.json": programme},
         fetcher="scraper/festivals/haifa_iff/sources/haifaff-site/fetch.py",
         fetcher_version=FETCHER_VERSION,
-        urls=[SCHEDULE_EN, SCHEDULE_HE, SITE + "/eng/Films/<id>", SITE + "/eng/Events/<id>"],
+        urls=[SCHEDULE_EN, SCHEDULE_HE, FILMS, SITE + "/eng/Films/grp|fwsa|<groupId>", SITE + "/eng/Films/<id>", SITE + "/eng/Events/<id>"],
         notes="The English schedule gives every screening; the Hebrew schedule gives Hebrew "
-              "titles by film id; film pages give metadata and sections; event pages give "
-              "event groups (parse.py).",
+              "titles by film id; film pages give metadata, pictures and their own section; "
+              "the section listings linked from /eng/Films give every other section a film "
+              "sits in; event pages give event groups, pictures and the hall of an event "
+              "the schedule files under its catch-all Events column (parse.py).",
     )
     print("%d films, %d events, %d screenings, %d unlinked rows" % (
         len(programme["films"]), len(programme["events"]), len(programme["screenings"]), len(programme["unlinked"]),

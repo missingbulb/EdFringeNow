@@ -3,6 +3,7 @@
  "edition": 42,
  "venues": [
   "Auditorium",
+  "Cinema Reshet - Herzl 46",
   "Cinematheque",
   "Kriger (Carmel Zarfati)",
   "Mirrors Hall",
@@ -14,53 +15,48 @@
    "id": 13407,
    "url": "https://www.haifaff.co.il/eng/Films/13407",
    "title": "Butch Cassidy and the Sundance Kid",
-   "titleHe": null,
+   "titleHe": "קיד וקסידי",
    "director": "George Roy Hill",
    "country": "USA",
    "year": 1969,
    "runtimeMin": 113,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "972",
      "name": "Haifa Classics"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Butch Cassidy and the Sundance Kid, one of cinema's most memorable \"buddy\" films, was inspired by the story of two real-life bank robbers, and established Paul Newman and Robert Redford as a screen team for the ages. It won four Oscars, including one for the popular theme song, \"Raindrops Keep Fallin' on My Head,\" by Burt Bacharach and Hal David.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13407_825404_movie_img.jpg"
   },
   {
    "id": 13409,
    "url": "https://www.haifaff.co.il/eng/Films/13409",
    "title": "It Will Happen Tonight",
-   "titleHe": null,
+   "titleHe": "זה יקרה הלילה",
    "director": "Nanni Moretti",
    "country": "Italy, France, Spain",
    "year": 2026,
    "runtimeMin": 103,
    "language": "Italian",
    "subtitles": "Hebrew, English",
-   "sections": [
-    {
-     "id": null,
-     "name": "Closing Film"
-    }
-   ],
-   "synopsis": null,
-   "image": null
+   "sections": [],
+   "synopsis": "It Will Happen Tonight spans a 14-year period, chronicling the fragmented and poorly timed romance between Matteo (Louis Garrel) and Greta (Jasmine Trinca). The narrative unfolds across various European cities through a series of sliding-doors encounters, highlighting their persistent bad timing as they navigate their respective marriages and family commitments.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13409_260901_movie_img.jpg"
   },
   {
    "id": 13411,
    "url": "https://www.haifaff.co.il/eng/Films/13411",
    "title": "A Star Is Born",
-   "titleHe": null,
+   "titleHe": "כוכב נולד",
    "director": "Frank Pierson",
    "country": "USA",
    "year": 1976,
    "runtimeMin": 139,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "972",
@@ -71,8 +67,8 @@
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "A Star Is Born is one of the screen's classic love stories (previously filmed in 1937 and 1954, and most recently remade in 2018). The fire of Barbra Streisand, the magnetism of Kris Kristofferson, and one of the most popular song scores ever, bring a new passion and timeliness to the story.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13411_897854_movie_img.jpg"
   },
   {
    "id": 13413,
@@ -83,16 +79,16 @@
    "country": "United Kingdom",
    "year": 2025,
    "runtimeMin": 99,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "9152",
      "name": "HAIFA DOCS"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Broken English is a bold documentary portrait of the inimitable singer, songwriter, and icon Marianne Faithfull. A survivor, provocateur, and true original, Marianne spent more than six decades defying expectations – releasing over thirty-five albums while constantly reinventing herself. Made with her full involvement, Broken English is an intimate and unflinching exploration of a fractured yet unbreakable life shaped by fame, creativity, and relentless public scrutiny.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13413_141992_movie_img.jpg"
   },
   {
    "id": 13416,
@@ -103,16 +99,16 @@
    "country": "Germany",
    "year": 2025,
    "runtimeMin": 122,
-   "language": null,
-   "subtitles": null,
+   "language": "German",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Nore, a free-spirited femme fatale, moves in with her former classmate Jonna, a serious medical student. As they drift through carefree one-night stands with disposable men, they are forced to confront Nore's deeply troubled past, which becomes an obstacle to happiness.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13416_222479_movie_img.jpg"
   },
   {
    "id": 13418,
@@ -123,8 +119,8 @@
    "country": "USA",
    "year": 1968,
    "runtimeMin": 155,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "972",
@@ -135,8 +131,8 @@
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "One of the most popular movie musicals ever made, Funny Girl follows the early career of stage comedienne Fanny Brice, a role that earned Barbra Streisand the 1968 Academy Award® for Best Actress in her film debut.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13418_109524_movie_img.jpg"
   },
   {
    "id": 13419,
@@ -147,16 +143,16 @@
    "country": "Ireland, Czech Republic",
    "year": 2025,
    "runtimeMin": 80,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Two parents receive a distressing late-night call from their teenage daughter, who has just accidentally hit a pedestrian. They jump in their car, racing to get there before anyone else stumbles across the scene. As they head deeper into the night, disturbing revelations threaten to tear the family apart as they soon realize they might not be the only ones driving down Hallow Road.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13419_173092_movie_img.jpg"
   },
   {
    "id": 13421,
@@ -167,8 +163,8 @@
    "country": "USA",
    "year": 1969,
    "runtimeMin": 148,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "972",
@@ -179,8 +175,8 @@
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Gene Kelly's lavish screen version of the Broadway smash – one of the last of the big studio musicals – is an extravagant cinematic interpretation of the Tony Award-winning Broadway musical. The musical numbers, choreographed by Michael Kidd, have sensational energy and vitality, and Streisand shines in the title role.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13421_482380_movie_img.jpg"
   },
   {
    "id": 13423,
@@ -188,19 +184,19 @@
    "title": "Hope",
    "titleHe": "Hope",
    "director": "Na Hong-jin",
-   "country": "Korea",
+   "country": null,
    "year": 2025,
    "runtimeMin": 156,
-   "language": null,
-   "subtitles": null,
+   "language": "Korean",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In Hope Harbor, a remote village near the Demilitarized Zone, police outpost chief Bum-seok receives alarming reports from locals that a tiger has appeared. As the village erupts into panic, Bum-seok is forced to confront a reality beyond belief.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13423_133774_movie_img.jpg"
   },
   {
    "id": 13424,
@@ -211,16 +207,16 @@
    "country": "Lithuania, France",
    "year": 2025,
    "runtimeMin": 102,
-   "language": null,
-   "subtitles": null,
+   "language": "Spanish, Lithuanian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "9152",
      "name": "HAIFA DOCS"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "On the Pacific coast of Mexico, in the land Ina Marija had chosen as her home before she died too soon, her father, Sarunas, and her younger sister, Una, embark on a journey retracing her steps. There, amidst the extraordinary and resilient nature of the mangroves – in a lagoon battered by hurricanes yet perpetually reborn – they begin to navigate the tender terrain of grief.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13424_164530_movie_img.jpg"
   },
   {
    "id": 13426,
@@ -231,16 +227,16 @@
    "country": "France, Italy",
    "year": 2026,
    "runtimeMin": 107,
-   "language": null,
-   "subtitles": null,
+   "language": "French, English, Italian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "1982. Eddie Mars is an actress who has had her moment of American glory. Accompanied by Valentina, her loyal makeup artist, she accepts the lead role in a science-fiction film being shot in Rome – a film that could very well be her last.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13426_417671_movie_img.jpg"
   },
   {
    "id": 13427,
@@ -251,16 +247,16 @@
    "country": "Denmark",
    "year": 2025,
    "runtimeMin": 116,
-   "language": null,
-   "subtitles": null,
+   "language": "Danish, Swedish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Anker is released from prison following a fifteen-year sentence for robbery. The money from the heist was buried by Anker's brother, Manfred. Only he knows where it is. Unfortunately, Manfred has since developed a mental disorder, causing him to forget everything. Together, the brothers embark on an unexpected journey to locate the money and discover who they really are.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13427_204917_movie_img.jpg"
   },
   {
    "id": 13429,
@@ -271,36 +267,36 @@
    "country": "Argentina",
    "year": 2026,
    "runtimeMin": 91,
-   "language": null,
-   "subtitles": null,
+   "language": "English, Spanish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "9152",
      "name": "HAIFA DOCS"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The Match revisits the iconic 1986 World Cup clash between Argentina and England at the Azteca Stadium, weaving rare archival footage – including Maradona's \"Hand of God\" – into a powerful reconstruction of the event. Beyond the pitch, the film traces more than two centuries of conflict between the two nations, from early encounters to the Falklands/Malvinas War, reframing the game as both a sporting milestone and the echo of a deeper historical rivalry, where the beauty of football meets the absurdity of war.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13429_359379_movie_img.jpg"
   },
   {
    "id": 13431,
    "url": "https://www.haifaff.co.il/eng/Films/13431",
    "title": "To Kill a Nazi",
-   "titleHe": null,
+   "titleHe": "להרוג נאצי",
    "director": "Boaz Dvir",
    "country": "USA",
    "year": 2026,
    "runtimeMin": 101,
-   "language": null,
-   "subtitles": null,
+   "language": "English, French",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "9152",
      "name": "HAIFA DOCS"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The incredible story of Michel Cojot, a French Jew who sets out to uncover the truth about his father's disappearance during World War II, and discovers that his father was murdered in Auschwitz following an order signed by Klaus Barbie, \"the Butcher of Lyon.\" His journey tracking the Nazi war criminal to Bolivia transforms him from a private individual in pursuit of justice into a key figure in one of the most audacious and iconic rescue missions in history—the Entebbe Raid.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13431_206942_movie_img.jpg"
   },
   {
    "id": 13433,
@@ -311,36 +307,36 @@
    "country": "France",
    "year": 2026,
    "runtimeMin": 95,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In the French countryside, wild boars ravaging crops spark an open war between farmers and members of a gentlemen's hunting club, who feed the game between hunts. Brun, a bankrupt farmer, struggles to keep his farm afloat. When the club's president pushes him to his limits, Brun shoots him and disappears. A year later, Fulda, a volatile police officer newly transferred to the region, and Stéphane, a psychologist barely holding it together, start digging. What they uncover is bigger than anything they could have imagined.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13433_135818_movie_img.jpg"
   },
   {
    "id": 13435,
    "url": "https://www.haifaff.co.il/eng/Films/13435",
    "title": "Truly Naked",
    "titleHe": "עירום אמיתי",
-   "director": "Muriel d'Ansembourg",
+   "director": "Muriel d’Ansembourg",
    "country": "Netherlands, Belgium, France",
    "year": 2026,
    "runtimeMin": 102,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Alec, a soft-spoken, introverted teenager, has always viewed life through the lens of his father's small-time pornography business. When they relocate from London to a sleepy seaside town, Alec hopes for a fresh start, trying to make friends without revealing his unconventional life. Everything shifts when he meets the fiercely independent Nina, whose convictions redefine the world in which he has grown up. As their relationship deepens, Alec's understanding of sexuality and desire begins to change.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13435_997532_movie_img.jpg"
   },
   {
    "id": 13437,
@@ -351,8 +347,8 @@
    "country": "USA",
    "year": 1983,
    "runtimeMin": 133,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "972",
@@ -363,8 +359,8 @@
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Rebbe Mendel is a single father who teaches the Talmud, a sacred text of Judaism, to the boys of his small Polish town. Behind closed doors, he also instructs his daughter, Yentl, despite the fact that girls are forbidden to study religious texts. When Yentl's father dies, she still has a strong desire to learn about her faith, so she disguises herself as a young man, enrolls in a yeshiva, and unexpectedly finds love along the way.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13437_594346_movie_img.jpg"
   },
   {
    "id": 13438,
@@ -375,16 +371,16 @@
    "country": "France",
    "year": 2026,
    "runtimeMin": 90,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1310",
      "name": "Culinary Cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In Burgundy, the world's most celebrated wines are only part of the story. Behind every bottle lies a way of life shaped by ritual and inheritance, and by those striving to preserve or transform it.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13438_683505_movie_img.jpg"
   },
   {
    "id": 13440,
@@ -395,20 +391,20 @@
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 157,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, Russian",
    "sections": [
-    {
-     "id": "1025",
-     "name": "Double Feature"
-    },
     {
      "id": "26",
      "name": "Gala"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The second part of Antonin Baudry's two-part series devoted to the figure of the General follows De Gaulle in his quest for freedom and sovereignty for France.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13440_159143_movie_img.jpg"
   },
   {
    "id": 13441,
@@ -419,20 +415,20 @@
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 160,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, Russian",
    "sections": [
-    {
-     "id": "1025",
-     "name": "Double Feature"
-    },
     {
      "id": "26",
      "name": "Gala"
+    },
+    {
+     "id": "1025",
+     "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "June 1940. France collapses and signs the armistice. In the midst of the chaos, one man refuses to give up. Alone against the odds, this unknown general flees to London to save what remains of freedom. Without an army, without backing, without hope – but with one irrational conviction: France, his France, has not laid down its arms. What follows is a triumphant story of faith, audacity, and an unshakable quest for freedom.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13441_952987_movie_img.jpg"
   },
   {
    "id": 13442,
@@ -443,16 +439,16 @@
    "country": "Romania, France, Norway, Denmark, Finland, Sweden",
    "year": 2026,
    "runtimeMin": 146,
-   "language": null,
-   "subtitles": null,
+   "language": "English, Romanian, Norwegian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Winner of the Palme d'Or at the 2026 Cannes Film Festival.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13442_128509_movie_img.jpg"
   },
   {
    "id": 13444,
@@ -463,16 +459,16 @@
    "country": "Switzerland",
    "year": 2025,
    "runtimeMin": 110,
-   "language": null,
-   "subtitles": null,
+   "language": "Schweizerdeutsch",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1310",
      "name": "Culinary Cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Set in 1956, Hallo Betty follows Emmi Creola, a talented copywriter who defies a male-dominated workplace by inventing “Betty Bossi”, a fictional housewife who becomes Switzerland's culinary icon. As Betty's popularity skyrockets, Emmi is thrust into the spotlight and struggles to balance the expectations of her public persona with her role as a wife, mother, and professional.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13444_206775_movie_img.jpg"
   },
   {
    "id": 13446,
@@ -483,16 +479,16 @@
    "country": "USA",
    "year": 2026,
    "runtimeMin": 110,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Hershey is the inspiring true story of Milton S. Hershey, the origin story of one of the world's most beloved brands, and the love story that inspired it all. Spanning nearly five decades, from the 1870s to the 1910s, the film traces Milton Hershey's rise from bankrupt candy maker to global chocolate titan alongside his wife, Kitty, balancing his legendary business determination with the couple's personal love story and philanthropic legacy.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13446_117012_movie_img.jpg"
   },
   {
    "id": 13448,
@@ -503,16 +499,16 @@
    "country": "Germany",
    "year": 2026,
    "runtimeMin": 93,
-   "language": null,
-   "subtitles": null,
+   "language": "German",
+   "subtitles": "Hebrew, Russian",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Autumn 1952: journalist Hedda and her husband, Winfried, ambush Felix Kersten, former massage therapist to SS leader Heinrich Himmler. Kersten claims to have helped secure the release of thousands of concentration camp prisoners during the Nazi era, but Hedda has doubts, and what starts as an interview quickly develops into a psychological cat-and-mouse game.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13448_124197_movie_img.jpg"
   },
   {
    "id": 13451,
@@ -523,16 +519,16 @@
    "country": "Germany, France, Norway, Denmark, Afghanistan",
    "year": 2026,
    "runtimeMin": 103,
-   "language": null,
-   "subtitles": null,
+   "language": "Dari, Pashto",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "2021. Afghanistan, right before the Taliban's return to power. Naru, the only camerawoman at Kabul's main TV station, struggles to retain custody of her three-year-old son after leaving her serial cheater husband. Convinced that no good men exist in her country, Naru is caught off guard when Qodrat, Kabul TV's leading journalist, offers her a career opportunity. As the two crisscross the city reporting on its last days of freedom, sparks fly, and Naru begins to question her beliefs: could there actually be a good man out there?",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13451_155074_movie_img.jpg"
   },
   {
    "id": 13454,
@@ -543,36 +539,36 @@
    "country": "France, Belgium, Italy",
    "year": 2026,
    "runtimeMin": 139,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In search of inspiration for her new novel, Sylvie spies on her neighbors across the street. When she hires young Adam to help her with her daily routine, she has no idea that he will turn her life and her work upside down, until the fiction she had imagined surpasses the reality of them all.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13454_826664_movie_img.jpg"
   },
   {
    "id": 13455,
    "url": "https://www.haifaff.co.il/eng/Films/13455",
    "title": "Species",
-   "titleHe": null,
+   "titleHe": "מינים",
    "director": "Marion Le Coroller",
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 103,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Margot dreams of becoming a life-saving doctor. But as an intern at the most competitive ER in the country, she has trouble keeping up. Soon, young, burnt-out patients come to her with unusual symptoms, just as her own body starts to show disturbing changes…",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13455_195825_movie_img.jpg"
   },
   {
    "id": 13460,
@@ -583,16 +579,16 @@
    "country": "Hong Kong",
    "year": 2025,
    "runtimeMin": 113,
-   "language": null,
-   "subtitles": null,
+   "language": "English, Mandarin",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "After the daughter of Wang Wei (Xie Miao) is kidnapped by a criminal network and he receives no help from the corrupt police, Wei sets out on a rampage to find her himself. His only ally is Navin (Joe Taslim), a relentless journalist whose wife has mysteriously disappeared. Fueled by furious vengeance, the unlikely duo ruthlessly fights the kidnappers in this explosive martial-arts showdown.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13460_212457_movie_img.jpg"
   },
   {
    "id": 13461,
@@ -603,36 +599,36 @@
    "country": "France",
    "year": 2025,
    "runtimeMin": 143,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew, Russian",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Russia, early 1990s. Amid post-Soviet chaos, a brilliant young man, Vadim Baranov, charts his path. First an artist, then a reality-TV producer, he becomes the spin doctor to a rising KGB agent: Vladimir Putin. At the heart of power, Baranov shapes the new Russia, blurring the boundaries between truth and lies, belief and manipulation. Only the magnetic Ksenia remains beyond his control, tempting him away from this dangerous game. Years later, having retreated into silence and become shrouded in mystery, Baranov finally opens up, revealing the dark secrets of the regime he helped build.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13461_429215_movie_img.jpg"
   },
   {
    "id": 13462,
    "url": "https://www.haifaff.co.il/eng/Films/13462",
    "title": "Yellow Letters",
-   "titleHe": null,
+   "titleHe": "מכתבים צהובים",
    "director": "İlker Çatak",
    "country": "Germany, France, Turkey",
    "year": 2026,
    "runtimeMin": 128,
-   "language": null,
-   "subtitles": null,
+   "language": "Turkish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Life is good for Derya and Aziz, a celebrated artist couple from Turkey, until an incident at their play’s premiere. Suddenly targeted by the state and struggling to balance their ideals with life’s necessities, their marriage is pushed to a breaking point.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13462_113185_movie_img.jpg"
   },
   {
    "id": 13464,
@@ -643,16 +639,16 @@
    "country": "Japan",
    "year": 2026,
    "runtimeMin": 139,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Fuyuko lives quietly, working as a freelance proofreader. A subtle shift begins when she meets Mitsutsuka, a reserved high school physics teacher, at a local cultural center. Drawn to his gentle manner, Fuyuko begins meeting him regularly at a café. A fragile sense of connection gradually takes shape, but they both carry things they do not easily reveal.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13464_191383_movie_img.jpg"
   },
   {
    "id": 13466,
@@ -663,16 +659,16 @@
    "country": "United Kingdom, Bolivia",
    "year": 2026,
    "runtimeMin": 108,
-   "language": null,
-   "subtitles": null,
+   "language": "Spanish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Santa, an eight-year-old girl from the desolate Bolivian Altiplano, embarks on a rollercoaster journey to take her mother from a life of misery into paradise. The two of them have made a pact: when her mother passes away, the girl will follow the stars and carry her body across the desert toward heaven, a place they believe is as physically real as any other.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13466_140715_movie_img.jpg"
   },
   {
    "id": 13467,
@@ -683,16 +679,16 @@
    "country": "Turkey",
    "year": 2026,
    "runtimeMin": 132,
-   "language": null,
-   "subtitles": null,
+   "language": "Turkish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "When four estranged siblings reunite in their remote Anatolian village for their sister’s wedding, long-buried memories begin to resurface. As the celebrations unfold, two of them are drawn back into the unbreakable bond they once shared. Family secrets slowly come to light, leading them on a journey through grief and the invisible ties between generations.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13467_207160_movie_img.jpg"
   },
   {
    "id": 13469,
@@ -703,16 +699,16 @@
    "country": "Kosovo, Switzerland, France",
    "year": 2022,
    "runtimeMin": 101,
-   "language": null,
-   "subtitles": null,
+   "language": "Albanian, Serbian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Prishtina, Kosovo, late 1990s. As war looms and ethnic tensions escalate, 13-year-old Dua struggles to find her place among her peers and within her changing body. After an incident shakes her community, she becomes a target herself and bonds with a fearless girl, Maki, who draws her toward an unexpected form of resistance. Between the daily violence and the growing threat of exile, there is little room for quiet awakenings.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13469_546270_movie_img.jpg"
   },
   {
    "id": 13471,
@@ -723,24 +719,24 @@
    "country": "Japan",
    "year": 1978,
    "runtimeMin": 105,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
-    {
-     "id": "972",
-     "name": "Haifa Classics"
-    },
     {
      "id": "13595",
      "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "972",
+     "name": "Haifa Classics"
     },
     {
      "id": "1025",
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Oshima’s follow-up to the scandalous In the Realm of the Senses explores similarly unfettered earthly passions, but now viewed through a supernatural lens. Empire of Passion was Oshima’s only true kaidan (Japanese ghost story), and the film, a savage, unrelenting experience, earned him the Best Director Award at the Cannes Film Festival.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13471_183403_movie_img.jpg"
   },
   {
    "id": 13473,
@@ -751,16 +747,16 @@
    "country": "Austria, Germany",
    "year": 2026,
    "runtimeMin": 121,
-   "language": null,
-   "subtitles": null,
+   "language": "German",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In Berlin, a tragedy brings a mother, her daughter, and a teenage boy together. Struggling with blame and forgiveness, the unlikely trio takes a trip to Tenerife for a second chance at the family holiday that never happened. Under the glow of the sun and the shimmering sea, past and present quietly start to overlap.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13473_139601_movie_img.jpg"
   },
   {
    "id": 13475,
@@ -771,36 +767,36 @@
    "country": "Mexico, Spain",
    "year": 2026,
    "runtimeMin": 99,
-   "language": null,
-   "subtitles": null,
+   "language": "Spanish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Olga lives a strictly regulated life without attachments in a vast apartment block in Mexico City. When financial necessity forces her to rent a room in her apartment to a man who also sneaks in his nine-year-old son, an unlikely bond forms. Her carefully controlled world begins to shift, and their lives become intertwined against her will.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13475_743759_movie_img.jpg"
   },
   {
    "id": 13476,
    "url": "https://www.haifaff.co.il/eng/Films/13476",
    "title": "Frank & Louis",
-   "titleHe": null,
+   "titleHe": "פרנק ולואיס",
    "director": "Petra Volpe",
    "country": "Switzerland, United Kingdom",
    "year": 2026,
    "runtimeMin": 95,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Frank, serving a life sentence, takes a prison job caring for aging incarcerated men with Alzheimer's and dementia. What begins as a self-interested bid for parole becomes a profound, transformative bond with fellow prisoner Louis, offering Frank a glimpse of redemption in an unforgiving place.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13476_944794_movie_img.jpg"
   },
   {
    "id": 13478,
@@ -811,16 +807,16 @@
    "country": "France, Luxembourg",
    "year": 2026,
    "runtimeMin": 90,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "11976",
      "name": "Animation"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "1840, Seville, a pulsating town of sailors and small-time crooks. Young Salvador, assistant to the gifted knife grinder Antonio, encounters the captivating gypsy girl Carmen. Her rapturous beauty and independent spirit set the town abuzz, but Antonio's mystical ability to glimpse the future in sharpened blades foretells a tragic fate for Carmen at the hands of the soldier José. With unwavering resolve, Salvador musters an eclectic band of misfit street kids, led by the spirited Belén, to challenge the unyielding threads of destiny and protect Carmen from inevitable doom.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13478_169557_movie_img.jpg"
   },
   {
    "id": 13482,
@@ -831,16 +827,16 @@
    "country": "Romania",
    "year": 2026,
    "runtimeMin": 78,
-   "language": null,
-   "subtitles": null,
+   "language": "Romanian",
+   "subtitles": "Hebrew, Russian",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Bianca's world shatters when her fiancé's mistress crashes their wedding. Reeling from the shock, she flees on a tourist train, launching a real-time odyssey of chaotic escape and surreal encounters through an off-season seaside resort. Rejecting her old life, she transforms her humiliation into a liberating night of rebellion, ultimately finding a new sense of purpose as the sun rises.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13482_158730_movie_img.jpg"
   },
   {
    "id": 13484,
@@ -851,16 +847,16 @@
    "country": "Romania",
    "year": 2025,
    "runtimeMin": 103,
-   "language": null,
-   "subtitles": null,
+   "language": "Romanian",
+   "subtitles": "Hebrew, English, Russian",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Lucia is spending her vacation with her husband, their son, and a couple of friends at the seaside, in a small Bulgarian village near the Romanian border. Delighted by the villagers' hospitality and the long, sunny day, the group enjoys a peaceful holiday. Everyone does, except Lucia, who seems melancholy and unsettled. The arrival of Vladimir, a Romanian who seems to know the area quite well, brings a spark of excitement. He may also know Lucia.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13484_537719_movie_img.jpg"
   },
   {
    "id": 13486,
@@ -871,36 +867,36 @@
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 98,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Gabrielle, 55, gives herself to her work, body and soul. As a surgeon and head of the hospital department, she is constantly on the move, stretched thin by the weight of responsibility. There is little time left for her private life: a loving husband and a mother who depends on her care. Yet this is the life she wanted, the life she chose. When a novelist comes to observe her at work for a book, her balance begins to shift. How far is she willing to go to shake what she has built?",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13486_361495_movie_img.jpg"
   },
   {
    "id": 13488,
    "url": "https://www.haifaff.co.il/eng/Films/13488",
    "title": "Bedford Park",
-   "titleHe": null,
+   "titleHe": "בדפורד פארק",
    "director": "Stephanie Ahn",
    "country": "USA",
    "year": 2026,
    "runtimeMin": 121,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Bedford Park follows Audrey as she struggles between loyalty to her Korean immigrant family and her own American identity, having grown up in New Jersey. When her mother gets into a car accident, Audrey has a fateful encounter with Eli, a former wrestler battling his own fractured past. As an unexpected relationship develops between them, they form a bond while navigating self-preservation, cultural pressures and chosen love.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13488_682045_movie_img.jpg"
   },
   {
    "id": 13490,
@@ -911,36 +907,36 @@
    "country": "Germany",
    "year": 2026,
    "runtimeMin": 112,
-   "language": null,
-   "subtitles": null,
+   "language": "German",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Berlin, 2019. Micha Hartung is a video rental shop owner in Berlin with a struggling business and troubled personal relationships. When an ambitious journalist arrives at Micha's store requesting an interview about his alleged involvement in the largest mass escape in the history of the German Democratic Republic, Micha senses an opportunity to make some easy money. But when Alexander's story is published, Micha unwittingly becomes an overnight media sensation.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13490_195619_movie_img.jpg"
   },
   {
    "id": 13491,
    "url": "https://www.haifaff.co.il/eng/Films/13491",
    "title": "Coward",
-   "titleHe": null,
+   "titleHe": "פחדן",
    "director": "Lukas Dhont",
    "country": "Belgium, France, Netherlands",
    "year": 2026,
    "runtimeMin": 120,
-   "language": null,
-   "subtitles": null,
+   "language": "French, Dutch",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "As the First World War drags on, Pierre, a soldier newly arrived at the front, is eager to prove himself. Behind the lines, he meets Francis, who decides to lift the spirits of his comrades by putting together a theatre show. While the violence continues, both men try to find ways to escape the brutality of war, even if only for a moment.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13491_179388_movie_img.jpg"
   },
   {
    "id": 13493,
@@ -951,16 +947,16 @@
    "country": "Belgium, Poland, Greece, United Kingdom",
    "year": 2026,
    "runtimeMin": 115,
-   "language": null,
-   "subtitles": null,
+   "language": "Dutch, English, French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Belgium, 1999. Tech visionaries Luc and Geert realize they only have 24 hours of freedom left, as their structure of fake companies, unchecked innovation and political corruptions is about to be exposed in the international press. This exposure forces a reckoning far beyond their personal story and the close-knit community that invested heavily in their promises, shedding light on the systems that enabled their rise and now will let them take the fall.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13493_531545_movie_img.jpg"
   },
   {
    "id": 13495,
@@ -971,16 +967,16 @@
    "country": "Ireland, United Kingdom",
    "year": 2026,
    "runtimeMin": 102,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "June 1961, New York City. Legendary jazz pianist Bill Evans has found his musical voice and created the perfect trio, including bassist Scott LaFaro, said to be his soulmate through music. A residency at New York's Village Vanguard culminates in the live recording of two of the greatest jazz records of all time in a single night. Ten days later, LaFaro dies in a car crash. Numb with grief, Evans stops playing.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13495_347583_movie_img.jpg"
   },
   {
    "id": 13497,
@@ -991,16 +987,16 @@
    "country": "Cyprus, Denmark, Greece",
    "year": 2026,
    "runtimeMin": 102,
-   "language": null,
-   "subtitles": null,
+   "language": "Greek",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "11-year-old Iris learns that her estranged father, Aris, is back in the sleepy coastal town for his own father's funeral. Determined to know him, Iris tracks him down to a dilapidated shipyard, where he has been keeping to himself. What begins as a stubborn attempt to reconnect slowly unfolds into a fragile bond.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13497_136002_movie_img.jpg"
   },
   {
    "id": 13499,
@@ -1011,16 +1007,16 @@
    "country": "Hungary",
    "year": 2025,
    "runtimeMin": 93,
-   "language": null,
-   "subtitles": null,
+   "language": "Hungarian, Romanian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In 1980, two Budapest students, Péter and András, hoping to hit the big time with their rock band, travel to Transylvania for a cousin’s wedding. What begins as a daring plan to smuggle antique icons across the border to fund their musical aspirations, takes an unexpected turn when Péter meets Kati, the bride’s sister.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13499_145217_movie_img.jpg"
   },
   {
    "id": 13501,
@@ -1031,16 +1027,16 @@
    "country": "Norway",
    "year": 2025,
    "runtimeMin": 88,
-   "language": null,
-   "subtitles": null,
+   "language": "Norwegian",
+   "subtitles": "Hebrew, English, Russian",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "It is election season. Prime Minister Alma Solvik, who is both liked and respected, is cruising toward re-election. Then the bubble bursts. When a small online newspaper reveals that her husband, Sondre, has been trading stocks from the official residence, a scandal is looming, threatening her position. With accusations of insider trading and conflicts of interest swirling, Sondre becomes the perfect scapegoat in a high-stakes political circus. Alma and her embattled spin doctor, Karianne Moen, orchestrate a bold strategy to protect her and her party's reputation – whatever it takes.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13501_258511_movie_img.jpg"
   },
   {
    "id": 13503,
@@ -1051,16 +1047,16 @@
    "country": "United Kingdom, USA",
    "year": 2026,
    "runtimeMin": 121,
-   "language": null,
-   "subtitles": null,
+   "language": "English, French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Amanda and her stepfather, Martin, struggle with a moral dilemma that divides them. Has Amanda's mother, Leslie, who is experiencing advanced dementia, lost the ability to make critical decisions in her own best interest? If so, who is responsible – a spouse, a child, an institution – for making such a determination? As Amanda and Martin are forced to make increasingly difficult choices, the repercussions spiral out of their control.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13503_630966_movie_img.jpg"
   },
   {
    "id": 13505,
@@ -1071,16 +1067,16 @@
    "country": "Germany, Austria",
    "year": 2026,
    "runtimeMin": 94,
-   "language": null,
-   "subtitles": null,
+   "language": "German",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In the early 17th century, somewhere in Germany, a mysterious soldier arrives in an isolated Protestant village. Slight and modest in stature, his face disfigured by a scar, the stranger declares himself the heir to a long-abandoned farmstead and produces a document to support his claim before the suspicious villagers. Over time, he overcomes their doubts and becomes part of the community. However, his quest for acceptance is built on a bald-faced lie.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13505_134678_movie_img.jpg"
   },
   {
    "id": 13506,
@@ -1091,16 +1087,16 @@
    "country": "Japan",
    "year": 2026,
    "runtimeMin": 126,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In the not-so-distant future, a grieving couple who has lost their son takes into their lives a humanoid with the same appearance and voice as their late child.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13506_961912_movie_img.jpg"
   },
   {
    "id": 13508,
@@ -1111,8 +1107,8 @@
    "country": "Japan",
    "year": 2026,
    "runtimeMin": 126,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "4355",
@@ -1123,28 +1119,28 @@
      "name": "Animation"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Twins Alfie and Elise get more than they bargained for after summoning the mysterious Wish Collector, an enigmatic character who whisks them away to the Land of Sometimes – an incredible place where all four seasons pass in just one day. Granted a total of six wishes, the pair soon learn that they need to be careful what they wish for as they embark on a magical, musical journey filled with fantastical creatures and discover a truth that shines brighter than any wish: the power of family.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13508_332428_movie_img.jpg"
   },
   {
    "id": 13509,
    "url": "https://www.haifaff.co.il/eng/Films/13509",
    "title": "The Life and Deaths of Wilson Shedd",
-   "titleHe": null,
+   "titleHe": "חייו ומותו של וילסון שד",
    "director": "Tim Blake Nelson",
    "country": "USA",
    "year": 2026,
    "runtimeMin": 121,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Karen, an English teacher trapped in an abusive marriage, takes a job at a maximum-security prison in Oklahoma, where she forms an intense connection with Wilson Shedd, a charismatic inmate and student in her class, who is serving time for violent crimes. An intense connection quickly develops between the two.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13509_188794_movie_img.jpg"
   },
   {
    "id": 13510,
@@ -1155,16 +1151,16 @@
    "country": "Austria",
    "year": 2026,
    "runtimeMin": 86,
-   "language": null,
-   "subtitles": null,
+   "language": "German, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Blues musician Al Cook lives in an apartment filled with memories. Outside, the world carries on. But when his home is slated for demolition, a long-forgotten dream suddenly resurfaces from the ruins of his existence.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13510_148475_movie_img.jpg"
   },
   {
    "id": 13511,
@@ -1175,36 +1171,36 @@
    "country": "Luxembourg, Turkey, Georgia",
    "year": 2025,
    "runtimeMin": 100,
-   "language": null,
-   "subtitles": null,
+   "language": "Georgian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The film follows 12-year-old Toma, expelled from school after being bullied. When he returns home, he finds his father Nemo, absent since Toma was two, waiting to take him to their ancestral village in the Caucasus mountains. Recently released from prison, Nemo is not welcome by the locals. But he is determined to pass down the ancient tradition of deer hunting to the boy. Over the course of this fateful weekend, Toma confronts the wilderness, a pack of wolves, his father’s shadowy past and his own fears.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13511_822934_movie_img.jpg"
   },
   {
    "id": 13513,
    "url": "https://www.haifaff.co.il/eng/Films/13513",
    "title": "The Only Living Pickpocket in NY",
-   "titleHe": null,
+   "titleHe": "הכייס האחרון בניו יורק",
    "director": "Noah Segan",
    "country": "USA",
    "year": 2026,
    "runtimeMin": 88,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Harry is an old-school hustler. A classic native New Yorker, he moves through life greasing palms with cash and relying on his wits and connections. But times are changing for Harry. His daily pickpocket haul is no longer green bills and wristwatches; it is credit cards and cell phones. And, on one unfortunate night, cryptocurrency and a handgun.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13513_168885_movie_img.jpg"
   },
   {
    "id": 13514,
@@ -1215,16 +1211,16 @@
    "country": "France",
    "year": 2025,
    "runtimeMin": 122,
-   "language": null,
-   "subtitles": null,
+   "language": "French, Arabic",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Algiers, 1938. Meursault, a quiet and unassuming employee in his early thirties, attends his mother's funeral without shedding a tear. The next day, he begins a casual affair with Marie, a work colleague, and quickly slips back into his usual routine. However, his daily life is soon disrupted by his neighbor, Raymond Sintès, who draws Meursault into his shady dealings – until, on one blisteringly hot day, a tragic event occurs on a beach.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13514_154991_movie_img.jpg"
   },
   {
    "id": 13516,
@@ -1235,22 +1231,22 @@
    "country": "USA, Germany",
    "year": 2026,
    "runtimeMin": 112,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Set during the Depression era in 1933, The Weight follows Samuel (Ethan Hawke), a man cruelly torn away from his young daughter and thrown into a brutal prison camp. His only lifeline comes from Warden Clancy (Russell Crowe), who presents him with a high-stakes deal: smuggle stolen gold out of a remote mine alongside a dangerous crew of fellow convicts, and he will earn his freedom.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13516_270315_movie_img.jpg"
   },
   {
    "id": 13517,
    "url": "https://www.haifaff.co.il/eng/Films/13517",
    "title": "Wandering Trees",
-   "titleHe": null,
+   "titleHe": "עצים נודדים",
    "director": "Salvatore Mereu",
    "country": "Italy",
    "year": 2026,
@@ -1263,8 +1259,8 @@
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Piero and his son Giuliano live alone on the edge of town, in a farmhouse filled with injured animals they collect and care for. The Nonne, local notables, want to drive them out because they live like vagrants. During a snowfall, Piero disappears and the animals are killed. Giuliano has no choice but to search for his father. Along the way, he meets Maddalena. It is love at first sight.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13517_254746_movie_img.jpg"
   },
   {
    "id": 13519,
@@ -1283,8 +1279,8 @@
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "1972. A landmark trial shakes France as young Marie-Claire is prosecuted for having an illegal abortion with the help of her mother and two other defendants. In a courtroom governed by men, the verdict seems inevitable: prison for the women, while the rapist goes unpunished. Their last hope lies with Gisèle Halimi, a fearless lawyer known for openly challenging patriarchy and confronting a system that condemns victims and lets perpetrators walk free. Alongside the accused, Gisèle will not only change their fate but, against all odds, transform the condition of women forever.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13519_161749_movie_img.jpg"
   },
   {
    "id": 13524,
@@ -1295,24 +1291,24 @@
    "country": "Japan",
    "year": 1958,
    "runtimeMin": 99,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
-    {
-     "id": "972",
-     "name": "Haifa Classics"
-    },
     {
      "id": "13595",
      "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "972",
+     "name": "Haifa Classics"
     },
     {
      "id": "1025",
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Japanese master Kon Ichikawa transformed one of Japan’s most important 20th-century novels into one of its greatest films. Ichikawa’s stark, poignant film is unforgettably rendered in stunning black and white with haunting, incantatory music.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13524_193257_movie_img.jpg"
   },
   {
    "id": 13526,
@@ -1323,36 +1319,36 @@
    "country": "Ireland, United Kingdom, Netherlands",
    "year": 2026,
    "runtimeMin": 96,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "4355",
      "name": "The Family Show"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Leo is eight, curious, wise and full of imagination. His best friend is a giant metal shark that his dad, an artist, built in their roof. Leo can confide his secrets to the shark. He can’t really talk to his dad, and mum has been gone for five years now. Also, there is comfort in fantasy. Then Anya, a spirited au pair, bursts into Leo’s life and challenges him to embrace the wild, wonderful mess of real life.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13526_122191_movie_img.jpg"
   },
   {
    "id": 13527,
    "url": "https://www.haifaff.co.il/eng/Films/13527",
    "title": "Minotaur",
    "titleHe": "מינוטאור",
-   "director": "Andrey Zvyagintsev",
+   "director": "Andrey Zvyagnitsev",
    "country": "France, Latvia, Germany",
    "year": 2026,
    "runtimeMin": 135,
-   "language": null,
-   "subtitles": null,
+   "language": "Russian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Russia, 2022. When Gleb, a successful company director, finds himself under siege from mounting corporate pressures and an increasingly unstable world, the collapse of his carefully ordered life accelerates toward violence.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13527_164561_movie_img.jpg"
   },
   {
    "id": 13529,
@@ -1363,8 +1359,8 @@
    "country": "USA, Canada",
    "year": 2026,
    "runtimeMin": 102,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1098",
@@ -1375,8 +1371,8 @@
      "name": "Animation"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Sarah leaves her exciting life as an activist and artist in 1990s San Francisco to return to the small, conservative hometown she fled when Alzheimer's begins to erode her mother's vibrant personality. Forced to grow up quickly, she juggles a new relationship, long-held career ambitions, and an eccentric family, whom she literally follows to Mexico and back in a last-ditch effort to make them take the situation seriously. Confronting a disorienting reality she can't control, Sarah must find her footing – learning to accept her mother's decline and the imperfect beauty of her family – in order to become the daughter they need.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13529_211613_movie_img.jpg"
   },
   {
    "id": 13537,
@@ -1395,8 +1391,8 @@
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "When three fathers chaperone their teenage daughters on a rowdy school trip to a remote island, tensions quickly escalate and their grip on the situation begins to slip. As buried memories resurface, games turn into power struggles – and power into violence. Soon no one can tell who is in charge and who is in danger.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13537_112616_movie_img.jpg"
   },
   {
    "id": 13540,
@@ -1407,16 +1403,16 @@
    "country": "France",
    "year": 2026,
    "runtimeMin": 115,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Corinne Maclou is a background actor. She dreams of one day becoming more than an extra and remains confident that her breakthrough is just around the corner. When she meets the famous actress Sandrine Kiberlain and the two become friends, Corinne hopes to achieve her goal. But will she be welcomed into the respectable family of French cinema?",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13540_470259_movie_img.jpg"
   },
   {
    "id": 13544,
@@ -1427,16 +1423,16 @@
    "country": "Italy",
    "year": 2026,
    "runtimeMin": 104,
-   "language": null,
-   "subtitles": null,
+   "language": "Italian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Armony, a 55-year-old solitary truck driver, finds himself taking care of his six-year-old niece, Carlotta, after the disappearance of his sister. By his side are Pamela, an elderly transgender woman, and Jenny, a neighbor who is expecting a baby. When social services threaten to take the child away, Armony is forced to fight with all his strength to obtain legal guardianship.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13544_166076_movie_img.jpg"
   },
   {
    "id": 13546,
@@ -1447,16 +1443,16 @@
    "country": "Italy",
    "year": 2026,
    "runtimeMin": 113,
-   "language": null,
-   "subtitles": null,
+   "language": "Italian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1310",
      "name": "Culinary Cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Sicily, present day. Arturo is a real estate agent who is almost infallible at his job, but far less successful in his love life. He lives alone, somewhat disillusioned, and nurtures a single, unwavering passion: desserts. His life lights up when he meets the woman who is undoubtedly his soulmate. Flora is perfect: beautiful, funny, kind, brilliant... and she's also a pastry chef. An immediate and overwhelming love blossoms between them. But standing in their way is an invisible yet powerful presence: God. Flora is a devout Catholic, while Arturo is not.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13546_802118_movie_img.jpg"
   },
   {
    "id": 13547,
@@ -1467,16 +1463,16 @@
    "country": "France",
    "year": 2026,
    "runtimeMin": 89,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Steeped in the words of Victor Hugo, the actor Robert Zucchini searches for his place between the stage and real life. Every evening, he fills theaters by sharing his love of language. Until the day his daughter, whom he never saw grow up, reappears... What if, for once, loving were better than admiring?",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13547_140517_movie_img.jpg"
   },
   {
    "id": 13549,
@@ -1487,16 +1483,16 @@
    "country": "Spain",
    "year": 2025,
    "runtimeMin": 115,
-   "language": null,
-   "subtitles": null,
+   "language": "Spanish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Ainara, an idealistic and brilliant 17-year-old, has to decide what university degree to pursue - or at least that's what her family hopes she will do. However, the young woman says feels increasingly drawn to God and is considering becoming a cloistered nun. The news takes her entire family by surprise, creating a rift and putting everyone to the test.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13549_318093_movie_img.jpg"
   },
   {
    "id": 13551,
@@ -1507,16 +1503,16 @@
    "country": "Denmark",
    "year": 2026,
    "runtimeMin": 99,
-   "language": null,
-   "subtitles": null,
+   "language": "Danish",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "At a luxury seaside hotel, Karl and Emilie are preparing for their son's naming ceremony, when Karl's estranged mother, Vibeke, suddenly turns up uninvited. Karl wants her gone, but his sister, Rikke, insists there won't be any problems. Over one tense weekend, old patterns and buried wounds surface in front of in-laws and guests until the celebration fractures.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13551_142752_movie_img.jpg"
   },
   {
    "id": 13553,
@@ -1535,8 +1531,8 @@
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "After what seems like a trivial argument, Marta and Antonio split up. Marta reacts to the breakup by withdrawing into herself. The only symptom she cannot ignore is her sudden lack of appetite. Antonio, a rising chef, immerses himself in his work. But despite being the one who ended things with Marta, he can't seem to forget her. When Marta discovers that her loss of appetite has more to do with her health than with the pain of separation, everything changes.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13553_703926_movie_img.jpg"
   },
   {
    "id": 13555,
@@ -1547,20 +1543,20 @@
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 84,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
-    {
-     "id": "4355",
-     "name": "The Family Show"
-    },
     {
      "id": "11976",
      "name": "Animation"
+    },
+    {
+     "id": "4355",
+     "name": "The Family Show"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Meet Yugly, the ugliest dog in the world and, weirdly, the cutest, who dreams of doing the impossible: competing in the prestigious \"Best in Dog Show.\" Defying every obstacle, he wants to prove that even the most unlikely deserve a chance, secretly hoping that he’ll find a forever family.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13555_967916_movie_img.jpg"
   },
   {
    "id": 13556,
@@ -1579,8 +1575,8 @@
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Maria has everything. She is a former elite swimmer, a beloved sports commentator, and lives a good life with her husband, Mikael, and their daughter. Mikael has supported her throughout her life, first as her coach and mentor, and later as her husband. But when Maria's friend Janne, who is also an editor, tells her about an upcoming book, everything changes. The book describes a young girl's relationship with her swimming coach, and rumors suggest that it is about Mikael.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13556_104769_movie_img.jpg"
   },
   {
    "id": 13557,
@@ -1591,16 +1587,16 @@
    "country": "France, Japan, Germany, Belgium",
    "year": 2026,
    "runtimeMin": 196,
-   "language": null,
-   "subtitles": null,
+   "language": "French, Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Marie-Lou, the director of a care facility for the elderly, strives to introduce an innovative philosophy of care based on listening and respecting residents' dignity, despite resistance from some members of her staff. Her encounter with Mari, a Japanese theatre director battling cancer, profoundly reshapes her path. By forming a deep, supportive friendship, the two women join forces in a shared struggle to \"make the impossible possible.\"",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13557_161058_movie_img.jpg"
   },
   {
    "id": 13559,
@@ -1611,16 +1607,16 @@
    "country": "Austria, Germany, France",
    "year": 2026,
    "runtimeMin": 115,
-   "language": null,
-   "subtitles": null,
+   "language": "German, French, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Lucy, a concert pianist, has just relocated her family from the city to a country house in the hope of easing her husband Philip's severe burnout. Before they have a chance to settle into their new home, an early morning visit from the police tears their world apart. Isolated and desperate to protect her young son, Lucy must face the situation alone, trapped between the man she loves and the fear of what he may have done.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13559_200090_movie_img.jpg"
   },
   {
    "id": 13562,
@@ -1631,7 +1627,7 @@
    "country": "Switzerland, Belgium",
    "year": 2026,
    "runtimeMin": 72,
-   "language": null,
+   "language": "Hebrew (dubbed)",
    "subtitles": null,
    "sections": [
     {
@@ -1643,63 +1639,68 @@
      "name": "Animation"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In 1811, Mary Anning, an inquisitive and tenacious twelve-year-old girl, spends her days searching for fossils. Her father passed on this passion to her, but her life suddenly changes when he disappears, leaving behind a mysterious drawing and a struggling family. Determined to help her mother and brother, Mary sets out to uncover the secret of the drawing. She discovers so much more than just fossils: friendship, adventures, and the very beginnings of paleontology.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13562_461693_movie_img.jpg"
   },
   {
    "id": 13564,
    "url": "https://www.haifaff.co.il/eng/Films/13564",
    "title": "The Electric Kiss",
-   "titleHe": null,
+   "titleHe": "נשיקה חשמלית",
    "director": "Pierre Salvadori",
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 122,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "26",
      "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Paris, 1928. Antoine Balestro, a young painter in vogue, has been unable to paint since his wife died, much to the despair of his gallery owner, Armand. One drunken evening, Antoine tries to contact his wife through a psychic, but instead finds himself speaking with Suzanne, a humble carnival worker who has sneaked in to steal food. Suzanne proves to be a gifted fraudster and, soon aided by Armand, stages fake séances.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13564_161453_movie_img.jpg"
   },
   {
    "id": 13566,
    "url": "https://www.haifaff.co.il/eng/Films/13566",
    "title": "The Violinist",
-   "titleHe": null,
+   "titleHe": "הכינור",
    "director": "Ervin Han, Raúl García",
    "country": "Singapore, Spain, Italy",
    "year": 2026,
    "runtimeMin": 114,
-   "language": null,
-   "subtitles": null,
+   "language": "English, Japanese",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "11976",
      "name": "Animation"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "As a Spanish reporter uncovers the mystery behind an aging violin legend and her treasured instrument, a forgotten story of love, war and music emerges. In 1930s Singapore, childhood friends Fei and Kai are bound by music until war and the Japanese occupation tear them apart.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13566_153763_movie_img.jpg"
   },
   {
    "id": 13568,
    "url": "https://www.haifaff.co.il/eng/Films/13568",
    "title": "Words of Love",
    "titleHe": "מילים של אהבה",
-   "director": null,
-   "country": null,
-   "year": null,
-   "runtimeMin": null,
-   "language": null,
-   "subtitles": null,
-   "sections": [],
-   "synopsis": null,
-   "image": null
+   "director": "Rudi Rosenberg",
+   "country": "France",
+   "year": 2026,
+   "runtimeMin": 95,
+   "language": "French",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "1167",
+     "name": "Panorama"
+    }
+   ],
+   "synopsis": "For 14 years, Erika has been the anchor of a household that rarely stands still, doing her best to raise her teenage daughter, Abigail, her whirlwind younger son, Yoni, and a dog with an extreme devotion to cheese. When Abi's desire to meet her absent father grows into a full-blown obsession and word spreads that he's been seen nearby, Erika fears the fragile balance will collapse for good. Instead, the unpredictable journey that follows leads mother and daughter to see each other anew, steering their lively, lovable family toward a happy new chapter.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13568_210133_movie_img.jpg"
   },
   {
    "id": 13571,
@@ -1710,16 +1711,16 @@
    "country": "Israel, Germany",
    "year": 2026,
    "runtimeMin": 75,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, German, Yiddish, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Shimon Rothschild knows exactly where everyone should stand on set: the cinematographer, the set design, the actors playing the members of his family who perished in the Holocaust. On the eve of his 100th birthday, Shimon recreates his life story together with director Tomer Heymann: the chain of coincidences that saved him from the gas chambers of Auschwitz, the brutal medical experiments he endured at Sachsenhausen, the death march, and his life after the war. In a specially constructed studio, and with actors portraying figures from his past, Shimon moves through the space, giving instructions with unwavering determination and a unique sense of humor, while exploring the boundaries between memory and reconstruction.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13571_429606_movie_img.jpg"
   },
   {
    "id": 13572,
@@ -1730,16 +1731,16 @@
    "country": "Israel, Ethiopia",
    "year": 2026,
    "runtimeMin": 87,
-   "language": null,
-   "subtitles": null,
+   "language": "Amharic, Hebrew, Arabic",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In 1973, the Jewish community of the village of Gonderchomriam in Ethiopia is preparing for a dangerous journey on foot through Sudan to the Land of Israel. Yitzhak (58), an independent farmer and owner of a successful homestead, refuses to leave his hard-earned land and crops, to disconnect from the soil where he grew up, and to set off on a journey into the unknown. His stance leads to a fierce conflict with his wife Sarah (45), who is determined to hit the road with their three children. However, the family's entanglement in a blood feud forces Yitzhak to send Sarah and the children on the journey to Sudan en route to Israel, and to recalculate his life's path.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13572_106038_movie_img.jpg"
   },
   {
    "id": 13574,
@@ -1750,16 +1751,16 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 75,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Amit learns that her biological mother is dying and rushes to the hospital, only to arrive moments too late. Having never opened her adoption file, she is suddenly confronted with the family she never knew, including her estranged father, prosper- a drug addict she hasn’t seen since she was five. Struggling to process the shock of this encounter, Amit returns to live with her adoptive parents on their kibbutz in northern Israel.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13574_522473_movie_img.jpg"
   },
   {
    "id": 13576,
@@ -1770,16 +1771,16 @@
    "country": "Israel, France",
    "year": 2026,
    "runtimeMin": 80,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Yiddish, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Naomi, 28, an unconventional Haredi, a yoga teacher discovers why her husband is absent from a fateful meeting with their rabbi, her whole world is turned upside down and her immense love for her husband is put to the test.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13576_189141_movie_img.jpg"
   },
   {
    "id": 13578,
@@ -1790,16 +1791,16 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 88,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Three childhood friends from a remote village decide to flee their homes and hitchhike toward a costume rave party in the South. Over a three-day journey set against the diverse landscape, they face a series of encounters that accelerate the hidden tensions between them. As the road unfolds, their lifelong, unquestioned bond begins to fracture, and their friendship is pushed to a point of no return.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13578_894996_movie_img.jpg"
   },
   {
    "id": 13580,
@@ -1810,16 +1811,16 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 60,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Russian",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "A mother and daughter set out on a journey through Ukraine during wartime. Along the way, the daughter’s questions of identity and belonging collide with the mother’s uncompromising belief that Israel is home. The road to bombed Kharkiv becomes a journey through memories, roots, and dreams.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13580_191199_movie_img.jpg"
   },
   {
    "id": 13582,
@@ -1830,36 +1831,36 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 60,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "They grew up in the battlefield of Hebron, at the heart of the bloody conflict between Abraham’s two sons, between holiness and chaos. There, in the narrow streets of the City of the Patriarchs, these children tasted both the sweetness of paradise and the fires of the Second Intifada.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13582_666122_movie_img.jpg"
   },
   {
    "id": 13585,
    "url": "https://www.haifaff.co.il/eng/Films/13585",
    "title": "A Place Called Hope",
-   "titleHe": null,
+   "titleHe": "מקום שקוראים לו תקווה",
    "director": "Eitan Cohen",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 77,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Arabic, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Michael learns about the word hope in kindergarten and believes that “hope is a place where everyone is kind to everyone.” During one of the ceasefires in the war, when despair becomes unbearable, his father Eitan decides to take his son on a journey across Israel in search of that lost hope.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13585_145958_movie_img.jpg"
   },
   {
    "id": 13586,
@@ -1870,56 +1871,56 @@
    "country": "Israel, France",
    "year": 2026,
    "runtimeMin": 110,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Iris Alush, the daughter of Tunisian immigrants, grows up in the Israeli periphery with her mother, a wedding-dress seamstress. Determined to rebel against the fate she was born into, Iris dreams of reinventing herself. She leaves Israel for Paris to study fashion design.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13586_113112_movie_img.jpg"
   },
   {
    "id": 13587,
    "url": "https://www.haifaff.co.il/eng/Films/13587",
    "title": "Double Panther",
-   "titleHe": null,
+   "titleHe": "פנתר כפול",
    "director": "Marco Carmel",
    "country": "Israel",
    "year": 2025,
    "runtimeMin": 100,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The true story of Yaakov Elbaz, a criminal recruited by police superintendent Avraham Turjeman to infiltrate the Black Panthers as a mole. However, Elbaz becomes enamored with the cause, identifies with its values, and is caught in a duplicitous game that threatens to destroy his life. Double Panther is a crime drama about the protest that changed the State of Israel.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13587_178534_movie_img.jpg"
   },
   {
    "id": 13589,
    "url": "https://www.haifaff.co.il/eng/Films/13589",
    "title": "Peace 20 30",
-   "titleHe": null,
+   "titleHe": "שלום 30 20",
    "director": "Uri Levi",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 60,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, English, Arabic, Italian",
+   "subtitles": "Hebrew, English, Arabic",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "On October 7th, Maoz Inon loses both of his parents and chooses to transform his grief into a struggle for peace",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13589_261406_movie_img.jpg"
   },
   {
    "id": 13590,
@@ -1938,8 +1939,8 @@
      "name": "Israeli Short Films Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Dir.: Shalev Ben Elya , Michael Jacob Buchstav",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13590_928804_movie_img.jpg"
   },
   {
    "id": 13594,
@@ -1950,104 +1951,104 @@
    "country": "France",
    "year": 1998,
    "runtimeMin": 100,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
-    {
-     "id": "972",
-     "name": "Haifa Classics"
-    },
     {
      "id": "13595",
      "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "972",
+     "name": "Haifa Classics"
     },
     {
      "id": "1025",
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "An intense physical attraction turns Dominique, a poised, sophisticated career woman, and Quentin, a handsome, streetwise young hustler, into lovers. She gives him shelter and nurturing, and he gives her youth, beauty and excitement. But can their passion support the emotional weight of love?",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13594_809078_movie_img.jpg"
   },
   {
    "id": 13597,
    "url": "https://www.haifaff.co.il/eng/Films/13597",
    "title": "Negative",
-   "titleHe": null,
+   "titleHe": "נגטיב",
    "director": "Michael Mysh Rozanov",
    "country": "Israel",
    "year": 2025,
    "runtimeMin": 80,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Arabic, Russian, English",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "As the city boils with protests, Maayan – a genderqueer volunteer – opens another shift at an HIV testing clinic at the outskirts of Tel Aviv. The tense routine of the shift explodes, when a young soldier, Aurel, gets a positive result. His violent reaction triggers Yonatan, the clinic doctor – a grizzled activist. Their confrontation escalates, and a shot is fired, critically wounding the doctor. Aurel and his “bro” David – another soldier – react in the only way the Army taught them – use their guns to take over the clinic. Other visitors swiftly take sides, and as their identities, secrets and traumas clash with each other, the clinic descends into a bloody mayhem. In this miniature Civil War, some succumb to their violent impulses, while others discover compassion and the ability to see beyond their prejudices. Part horror thriller, part farce, “Negative” is a story of society tearing itself apart through intolerance.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13597_112032_movie_img.jpg"
   },
   {
    "id": 13599,
    "url": "https://www.haifaff.co.il/eng/Films/13599",
    "title": "Judoka",
-   "titleHe": null,
+   "titleHe": "במרחק נשימה",
    "director": "Raanan Tessler",
    "country": "Israel",
    "year": 2025,
    "runtimeMin": 93,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "10581",
-     "name": "First Exposure - New Israeli Cinema"
+     "name": "First exposure - new Israeli cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "When a disturbing secret is revealed and the situation back home takes a dangerous turn, a 17-year-old Judo fighter decides to leave sports boarding school and return home. He is willing to sacrifice his promising career for the sake of his family, only to find that his presence is not welcome.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13599_203653_movie_img.jpg"
   },
   {
    "id": 13601,
    "url": "https://www.haifaff.co.il/eng/Films/13601",
    "title": "Many Waters",
-   "titleHe": null,
+   "titleHe": "מים רבים",
    "director": "Imri Matalon",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 84,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English, Hebrew",
    "sections": [
     {
      "id": "10581",
-     "name": "First Exposure - New Israeli Cinema"
+     "name": "First exposure - new Israeli cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Natalie, a young, beautiful, and assertive woman, is severely injured in a sea accident and becomes paralyzed, dependent on constant support from those around her. At the rehabilitation center she arrives at, she meets Yosef, a young man from Anata who works there caring for the residents. Despite her initial discomfort with his presence, Yosef’s warmth and empathy gradually ease Natalie’s resistance, and he, in turn, is captivated by her strength and directness. An intimate and liberating bond forms between them within the closed space of the center. But every time the outside world breaks in, their connection begins to crack— as reality tries to pull them apart and restore the familiar order.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13601_892563_movie_img.jpg"
   },
   {
    "id": 13604,
    "url": "https://www.haifaff.co.il/eng/Films/13604",
    "title": "Alice. Last Conversation",
-   "titleHe": null,
+   "titleHe": "אליס. שיחות אחרונות",
    "director": "Nurit Jacobs-Yinon",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 53,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "13602",
      "name": "Israeli Cinema - Cultural Icons"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "In the final year of her life, Israel Prize laureate Prof. Alice Shalvi — pioneering feminist, educator, and human rights activist — looks back on nearly a century of groundbreaking struggle. Filmed in intimate conversations just before her passing in October 2023, Alice reflects with honesty, sharp wit, and courage on the battles she fought: from revolutionizing religious girls' education to founding the Israel Women's Network. Weaving rare archival footage with her last testimonies, the film is both a profound portrait of a visionary leader and a timely call to action for the generation carrying her legacy forward.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13604_202565_movie_img.jpg"
   },
   {
    "id": 13607,
@@ -2058,36 +2059,36 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 93,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "13602",
      "name": "Israeli Cinema - Cultural Icons"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The film sheds light on fascinating, little-known chapters in the life of naomi shemer. the woman dubbed \"the national poet\"—who was, in reality, a deeply private person. It explores the conflict with her mother, who disparaged her \"simple\" popular songs; her life as a single mother torn between parental duties and a hunger to live life to the fullest; her attraction to younger men; her insecurities regarding her appearance; her tempestuous temperament and volatile mood swings; the heavy price she paid for her right-wing political views; and the plagiarism accusation regarding \"Jerusalem of Gold\" that cast a shadow over her life almost until her final days. The story is told through the voices of Naomi shemer’s two children and a handful of her closest friends, as well as through excerpts from personal letters and diaries revealed here for the first time.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13607_577800_movie_img.jpg"
   },
   {
    "id": 13608,
    "url": "https://www.haifaff.co.il/eng/Films/13608",
    "title": "Topol: On Top of the World",
-   "titleHe": null,
+   "titleHe": "טופול: על גג העולם",
    "director": "Alon Gur Arye",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 70,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "13602",
      "name": "Israeli Cinema - Cultural Icons"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Chaim Topol was the Israeli actor who went further than any other. Twice, he made it all the way to the Academy Awards. That is precisely why the more intriguing question is not how he succeeded, but why he did not go much further. Throughout his career, he repeatedly made surprising choices, including refusing to take part in the sketch that became Sallah Shabati and turning down the lead role in Fiddler on the Roof.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13608_161852_movie_img.jpg"
   },
   {
    "id": 13609,
@@ -2098,16 +2099,16 @@
    "country": "China",
    "year": 2026,
    "runtimeMin": 125,
-   "language": null,
-   "subtitles": null,
+   "language": "Mandarin",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1098",
      "name": "Golden Anchor Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "A Chinese girl is passed between three families from the age of six to eighteen, receiving a new name and identity each time. As she searches for a sense of belonging and the possibility of love, she must navigate the weight of her past and the uncertainty of her future – until she finds her own way.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13609_114767_movie_img.jpg"
   },
   {
    "id": 13610,
@@ -2118,24 +2119,24 @@
    "country": "Japan",
    "year": 1960,
    "runtimeMin": 96,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
-    {
-     "id": "972",
-     "name": "Haifa Classics"
-    },
     {
      "id": "13595",
      "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "972",
+     "name": "Haifa Classics"
     },
     {
      "id": "1025",
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "A scorching tale of toxic love in a toxic world, Nagisa Oshima’s second feature film marked the artistic breakthrough of one of the most radical voices in the history of Japanese cinema.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13610_798974_movie_img.jpg"
   },
   {
    "id": 13611,
@@ -2146,16 +2147,16 @@
    "country": "France, Belgium",
    "year": 2026,
    "runtimeMin": 100,
-   "language": null,
-   "subtitles": null,
+   "language": "French",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The murder of Samuel Paty shook France. Everyone knows the name, but few truly know his story. On 16 October 2020, Samuel Paty, a history and geography teacher, was murdered outside his middle school. Drawing on the investigation and subsequent legal proceedings, this film retraces his final eleven days and the chain of events that led to his tragic death.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13611_769074_movie_img.jpg"
   },
   {
    "id": 13612,
@@ -2166,24 +2167,24 @@
    "country": "Japan, USA",
    "year": 1985,
    "runtimeMin": 120,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese, English",
+   "subtitles": "Hebrew",
    "sections": [
-    {
-     "id": "972",
-     "name": "Haifa Classics"
-    },
     {
      "id": "13595",
      "name": "Between Mishima to Oshima"
+    },
+    {
+     "id": "972",
+     "name": "Haifa Classics"
     },
     {
      "id": "1025",
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Paul Schrader's visually stunning, collagelike portrait of acclaimed Japanese author and playwright Yukio Mishima - one of the most important postwar stylists of the Japanese language - investigates the inner turmoil and contradictions of a man who attempted an impossible harmony between self, art, and society.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13612_889570_movie_img.jpg"
   },
   {
    "id": 13613,
@@ -2194,16 +2195,16 @@
    "country": "USA",
    "year": 2026,
    "runtimeMin": 120,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1167",
      "name": "Panorama"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Callie and Minnie's relationship is suddenly upended at the start of the summer before their senior year of high school. Left rudderless without her charismatic best friend, Minnie begins to form a complicated friendship with Callie's mother.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13613_208778_movie_img.jpg"
   },
   {
    "id": 13615,
@@ -2214,60 +2215,56 @@
    "country": "United Kingdom, France, USA",
    "year": 2026,
    "runtimeMin": 116,
-   "language": null,
-   "subtitles": null,
+   "language": "English",
+   "subtitles": "Hebrew",
    "sections": [
     {
      "id": "1270",
      "name": "Carmel International Competition"
-    },
-    {
-     "id": "26",
-     "name": "Gala"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "From the Academy Award-Winning Director of Slumdog Millionaire (2008), 127 Hours (2010), 28 Days Later (2002) and Trainspotting (1996), comes an explosive cinematic rollercoaster about a group of visionaries and misfits who had an idea for a new kind of news – one that would give the people what they wanted and would change the face of the world we live in today.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13615_873619_movie_img.jpg"
   },
   {
    "id": 13616,
    "url": "https://www.haifaff.co.il/eng/Films/13616",
    "title": "The road to Jericho",
-   "titleHe": null,
+   "titleHe": "הדרך ליריחו",
    "director": "Amos Gitai",
    "country": "Israel, France",
    "year": 2026,
    "runtimeMin": 76,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Arabic, French, Yiddish, English",
+   "subtitles": "English",
    "sections": [
     {
      "id": "13839",
      "name": "Israeli Cinema - Special Events"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "A musical and visual journey, a poem in images—a hybrid of documentary and fiction that weaves archival footage from previous films alongside the voices of Samuel Fuller, Jeanne Moreau, Arthur Miller, and Yitzhak Rabin, among others, into the contemporary reality of the Bedouins in Khan al-Ahmar, currently threatened with eviction by settlers on this road to Jericho. A touching and sensitive reflection on human destinies in this history-steeped desert land.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13616_579322_movie_img.jpg"
   },
   {
    "id": 13617,
    "url": "https://www.haifaff.co.il/eng/Films/13617",
    "title": "Yehoram and Gila",
-   "titleHe": null,
+   "titleHe": "יהורם וגילה",
    "director": "Gabriel Bibliowicz",
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 98,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "13839",
      "name": "Israeli Cinema - Special Events"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Yehoram and Gila are a legendary acting couple who have shared the spotlight for sixty years. When Yehoram begins forgetting lines and roles, a devastating diagnosis forces them to confront the possibility that the curtain is about to fall on one of them. Gila reluctantly proposes they retire together, as they promised each other when they were twenty, while Yehoram clings to the stage and his seemingly impossible dream of playing King Lear. Amid career struggles, sixty years of grievances, professional rivalry, and a love deeper than the sea, they suddenly begin to lose each other. Can they find their way back? A love story meant to last forever—until the light fades and the curtain falls.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13617_451467_movie_img.jpg"
   },
   {
    "id": 13618,
@@ -2286,14 +2283,14 @@
      "name": "Israeli Short Films Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Five films on the intersection of cruelty and humanity",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13618_130496_movie_img.jpg"
   },
   {
    "id": 13620,
    "url": "https://www.haifaff.co.il/eng/Films/13620",
    "title": "Shorts Program - Women: Fragments and Dreams",
-   "titleHe": null,
+   "titleHe": "מקבץ קצרים - נשים: שברים וחלומות",
    "director": null,
    "country": "Israel",
    "year": 2026,
@@ -2306,14 +2303,14 @@
      "name": "Israeli Short Films Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Five films about women, dreams, and how they shatter",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13620_144973_movie_img.jpg"
   },
   {
    "id": 13621,
    "url": "https://www.haifaff.co.il/eng/Films/13621",
-   "title": "Short Animation Compilation (2)",
-   "titleHe": null,
+   "title": "Short Animation Compilation",
+   "titleHe": "מקבץ קצרים - צל כבד",
    "director": null,
    "country": "Israel",
    "year": 2026,
@@ -2326,14 +2323,14 @@
      "name": "Israeli Short Films Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Four films born out of darkness that refuse to give up hope",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13621_125132_movie_img.jpg"
   },
   {
    "id": 13622,
    "url": "https://www.haifaff.co.il/eng/Films/13622",
    "title": "First Exposure - Shorts Program",
-   "titleHe": null,
+   "titleHe": "חשיפה ראשונה - קולנוע קצר",
    "director": null,
    "country": "Israel",
    "year": 2026,
@@ -2343,11 +2340,11 @@
    "sections": [
     {
      "id": "10581",
-     "name": "First Exposure - New Israeli Cinema"
+     "name": "First exposure - new Israeli cinema"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Five standout short films from the past year – special premiere screening with the filmmakers in attendance",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13622_159657_movie_img.jpg"
   },
   {
    "id": 13623,
@@ -2358,16 +2355,16 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 117,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew, Arabic, Moroccan",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "13839",
      "name": "Israeli Cinema - Special Events"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Five ordinary men and women, each trapped inside the collapse of love, family, or faith, believe they are living the worst day of their lives, unable to imagine that within hours their private despair will be overtaken by a national catastrophe.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13623_105548_movie_img.jpg"
   },
   {
    "id": 13624,
@@ -2375,19 +2372,19 @@
    "title": "Colony",
    "titleHe": "המושבה",
    "director": "Yeon Sang-ho",
-   "country": "Korea",
+   "country": null,
    "year": 2026,
    "runtimeMin": 123,
-   "language": null,
-   "subtitles": null,
+   "language": "Korean",
+   "subtitles": "Hebrew, English",
    "sections": [
     {
      "id": "1007",
-     "name": "Haifa's Wildest Nights"
+     "name": "Haifa's wildest nights"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "As the virus spreads, the order begins to mutate… Se-jeong, a biotechnology professor, attends a biotech conference—only to witness it spiral into catastrophe when a rapidly mutating virus is unleashed. As the outbreak spreads and the infected begin to transform, authorities seal off the entire facility, trapping the survivors with an ever-growing threat…",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13624_454686_movie_img.jpg"
   },
   {
    "id": 13626,
@@ -2398,16 +2395,16 @@
    "country": "Israel",
    "year": 2026,
    "runtimeMin": 101,
-   "language": null,
-   "subtitles": null,
+   "language": "Hebrew",
+   "subtitles": "English",
    "sections": [
     {
      "id": "10481",
      "name": "Israeli Film Competition"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Living above his parents in Jerusalem, bachelor Itzik anchors his existence to a daily pastry. When dizzy spells force him to give up carbs completely, this dietary change turns into a life crisis. In a city where sacred and everyday collide, his absurd, painful journey leads him unexpectedly to love.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13626_131400_movie_img.jpg"
   },
   {
    "id": 13919,
@@ -2418,26 +2415,31 @@
    "country": "Japan",
    "year": 2026,
    "runtimeMin": 150,
-   "language": null,
-   "subtitles": null,
-   "sections": [],
-   "synopsis": null,
-   "image": null
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
+   "sections": [
+    {
+     "id": "26",
+     "name": "Gala"
+    }
+   ],
+   "synopsis": "In the charred ruins of 1945 Tokyo, a young orphan daughter of musicians disguises herself as a boy to survive the underworld, while her former teacher— haunted by guilt and her own needs of surviving—sets to retrace the girl’s vanished footsteps.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13919_159972_movie_img.jpg"
   },
   {
    "id": 13925,
    "url": "https://www.haifaff.co.il/eng/Films/13925",
    "title": "LAHAV 433",
-   "titleHe": null,
+   "titleHe": "להב 433",
    "director": null,
-   "country": null,
-   "year": null,
-   "runtimeMin": null,
-   "language": null,
-   "subtitles": null,
+   "country": "Israel",
+   "year": 2026,
+   "runtimeMin": 90,
+   "language": "Hebrew",
+   "subtitles": "Hebrew, English",
    "sections": [],
-   "synopsis": null,
-   "image": null
+   "synopsis": "The most sensitive unit in the Israeli police force, often referred to as “the Israeli FBI,” opens its doors for the first time. In this documentary series, journalist Adi Meiri follows the work of the unit as it investigates organized crime syndicates and political corruption.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13925_106925_movie_img.jpg"
   },
   {
    "id": 13967,
@@ -2448,9 +2450,13 @@
    "country": "Japan",
    "year": 1968,
    "runtimeMin": 118,
-   "language": null,
-   "subtitles": null,
+   "language": "Japanese",
+   "subtitles": "Hebrew, English",
    "sections": [
+    {
+     "id": "13595",
+     "name": "Between Mishima to Oshima"
+    },
     {
      "id": "972",
      "name": "Haifa Classics"
@@ -2460,8 +2466,8 @@
      "name": "Double Feature"
     }
    ],
-   "synopsis": null,
-   "image": null
+   "synopsis": "Death by Hanging was screened during the Directors’ Fortnight at Cannes, marking the start of Nagisa Oshima’s international acclaim.",
+   "image": "https://www.haifaff.co.il/prdPics/movies/13967_212499_movie_img.jpg"
   }
  ],
  "events": [
@@ -2471,7 +2477,8 @@
    "title": "The 42th Haifa International Film Festival Opening Event",
    "groups": [
     "11295"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13846_182765_event_img.jpg"
   },
   {
    "id": 13896,
@@ -2479,7 +2486,8 @@
    "title": "נכנסים לסצנה – הקראות 2 חיפה – גם עם מצלמה",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13896_124975_event_img.jpg"
   },
   {
    "id": 13897,
@@ -2487,13 +2495,17 @@
    "title": "כנס חיפה לקולנוע בעידן הבינה המלאכותית",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13897_896989_event_img.jpg"
   },
   {
    "id": 13898,
    "url": "https://www.haifaff.co.il/eng/Events/13898",
    "title": "In Memory of Yvonne Miklós",
-   "groups": null
+   "groups": [
+    "713"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13898_109180_event_img.jpg"
   },
   {
    "id": 13899,
@@ -2501,13 +2513,17 @@
    "title": "From Script to Set: Film & TV Production with AI",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13899_164973_event_img.png"
   },
   {
    "id": 13900,
    "url": "https://www.haifaff.co.il/eng/Events/13900",
    "title": "פיץ' על הכרמל - חשיפת סרטים חיפאיים",
-   "groups": null
+   "groups": [
+    "713"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13900_188074_event_img.jpg"
   },
   {
    "id": 13905,
@@ -2515,7 +2531,17 @@
    "title": "שולחן עגול בינלאומי",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13905_671852_event_img.jpg"
+  },
+  {
+   "id": 13927,
+   "url": "https://www.haifaff.co.il/eng/Events/13927",
+   "title": "Closing Film - It Will Happen Tonight",
+   "groups": [
+    "4542"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13927_458415_event_img.jpg"
   },
   {
    "id": 13942,
@@ -2523,7 +2549,8 @@
    "title": "Haifa 12th Graduate Films Pitching Forum",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13942_506962_event_img.png"
   },
   {
    "id": 13946,
@@ -2531,7 +2558,8 @@
    "title": "מפגש סרטוני AI בתהליך עבודה",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13946_189811_event_img.png"
   },
   {
    "id": 13947,
@@ -2539,7 +2567,35 @@
    "title": "THE 23RD INTERNATIONAL PITCHING FORUM FOR FILM AND TV",
    "groups": [
     "713"
-   ]
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13947_180217_event_img.jpg"
+  },
+  {
+   "id": 13974,
+   "url": "https://www.haifaff.co.il/eng/Events/13974",
+   "title": "Short from the Past 1 – A Selection of Israeli Short Films from Recent Years",
+   "groups": [
+    "711"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13974_189342_event_img.png"
+  },
+  {
+   "id": 13975,
+   "url": "https://www.haifaff.co.il/eng/Events/13975",
+   "title": "Shorts from the Past 2 – A Selection of Israeli Short Films from Recent Years",
+   "groups": [
+    "711"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13975_958054_event_img.jpg"
+  },
+  {
+   "id": 13976,
+   "url": "https://www.haifaff.co.il/eng/Events/13976",
+   "title": "Shorts from the Past 3 – A Selection of Israeli Short Films from Recent Years",
+   "groups": [
+    "711"
+   ],
+   "image": "https://www.haifaff.co.il/prdPics/events/13976_151899_event_img.jpg"
   }
  ],
  "screenings": [
@@ -2551,8 +2607,8 @@
    "refId": 13555,
    "screeningId": 28001,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28001",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "84 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2563,8 +2619,8 @@
    "refId": 13497,
    "screeningId": 28040,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28040",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', Greek, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2575,8 +2631,8 @@
    "refId": 13437,
    "screeningId": 27987,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27987",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "133 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2587,8 +2643,8 @@
    "refId": 13514,
    "screeningId": 28152,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28152",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', French, Arabic, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2599,8 +2655,8 @@
    "refId": 13544,
    "screeningId": 28022,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28022",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "104 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2611,8 +2667,8 @@
    "refId": 13610,
    "screeningId": 27969,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27969",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "96 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2623,8 +2679,8 @@
    "refId": 13537,
    "screeningId": 27949,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27949",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "108 Min', Swedish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2635,8 +2691,8 @@
    "refId": 13556,
    "screeningId": 28076,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28076",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "104 Min', Danish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2647,8 +2703,8 @@
    "refId": 13499,
    "screeningId": 28044,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28044",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', Hungarian, Romanian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2659,8 +2715,8 @@
    "refId": 13609,
    "screeningId": 28165,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28165",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "125 Min', Mandarin, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2671,8 +2727,8 @@
    "refId": 13460,
    "screeningId": 28092,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28092",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "113 Min', English, Mandarin, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2683,8 +2739,8 @@
    "refId": 13562,
    "screeningId": 27997,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27997",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "72 Min', Hebrew (dubbed),",
    "price": null
   },
   {
@@ -2695,8 +2751,8 @@
    "refId": 13429,
    "screeningId": 28012,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28012",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "91 Min', English, Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2707,8 +2763,8 @@
    "refId": 13446,
    "screeningId": 28038,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28038",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "110 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2719,8 +2775,8 @@
    "refId": 13451,
    "screeningId": 28052,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28052",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', Dari, Pashto, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2731,8 +2787,8 @@
    "refId": 13607,
    "screeningId": 28124,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28124",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -2743,8 +2799,8 @@
    "refId": 13612,
    "screeningId": 27973,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27973",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', Japanese, English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2755,8 +2811,8 @@
    "refId": 13553,
    "screeningId": 28074,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28074",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2767,8 +2823,8 @@
    "refId": 13490,
    "screeningId": 28026,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28026",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "112 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2779,8 +2835,8 @@
    "refId": 13529,
    "screeningId": 27965,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27965",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2791,8 +2847,8 @@
    "refId": 13526,
    "screeningId": 27995,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27995",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "96 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2803,8 +2859,8 @@
    "refId": 13511,
    "screeningId": 28066,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28066",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', Georgian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2815,8 +2871,8 @@
    "refId": 13547,
    "screeningId": 28042,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28042",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "89 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2827,8 +2883,8 @@
    "refId": 13613,
    "screeningId": 28048,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28048",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2839,8 +2895,8 @@
    "refId": 13519,
    "screeningId": 28080,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28080",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2851,8 +2907,8 @@
    "refId": 13454,
    "screeningId": 28054,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28054",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2863,8 +2919,8 @@
    "refId": 13442,
    "screeningId": 28034,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28034",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "146 Min', English, Romanian, Norwegian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2875,9 +2931,9 @@
    "refId": 13846,
    "screeningId": 27885,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27885",
-   "tags": null,
+   "tags": [],
    "info": null,
-   "price": 150
+   "price": null
   },
   {
    "date": "2026-09-26",
@@ -2887,8 +2943,8 @@
    "refId": 13495,
    "screeningId": 28032,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28032",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2899,8 +2955,8 @@
    "refId": 13413,
    "screeningId": 28008,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28008",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2911,8 +2967,8 @@
    "refId": 13540,
    "screeningId": 28020,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28020",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2923,8 +2979,8 @@
    "refId": 13505,
    "screeningId": 28056,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28056",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "94 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2935,8 +2991,8 @@
    "refId": 13433,
    "screeningId": 28096,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28096",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2947,8 +3003,8 @@
    "refId": 13419,
    "screeningId": 28088,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28088",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "80 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2959,8 +3015,8 @@
    "refId": 13421,
    "screeningId": 27985,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27985",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "148 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -2971,8 +3027,8 @@
    "refId": 13486,
    "screeningId": 28018,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28018",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "98 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2983,8 +3039,8 @@
    "refId": 13478,
    "screeningId": 28142,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28142",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "90 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -2995,8 +3051,8 @@
    "refId": 13444,
    "screeningId": 27993,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27993",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "110 Min', Schweizerdeutsch, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3007,8 +3063,8 @@
    "refId": 13499,
    "screeningId": 28045,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28045",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', Hungarian, Romanian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3019,8 +3075,8 @@
    "refId": 13464,
    "screeningId": 27951,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27951",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3031,8 +3087,8 @@
    "refId": 13484,
    "screeningId": 28016,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28016",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', Romanian, Subtitles in Hebrew, English, Russian",
    "price": null
   },
   {
@@ -3043,8 +3099,8 @@
    "refId": 13471,
    "screeningId": 27971,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27971",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "105 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3055,8 +3111,8 @@
    "refId": 13544,
    "screeningId": 28023,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28023",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "104 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3067,8 +3123,8 @@
    "refId": 13580,
    "screeningId": 28113,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28113",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "60 Min', Hebrew, Russian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3079,8 +3135,8 @@
    "refId": 13493,
    "screeningId": 28141,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28141",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', Dutch, English, French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3091,8 +3147,8 @@
    "refId": 13469,
    "screeningId": 27957,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27957",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "101 Min', Albanian, Serbian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3103,8 +3159,8 @@
    "refId": 13441,
    "screeningId": 28030,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28030",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "160 Min', French, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -3115,8 +3171,8 @@
    "refId": 13549,
    "screeningId": 27939,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27939",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3127,8 +3183,8 @@
    "refId": 13435,
    "screeningId": 28101,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28101",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3139,8 +3195,8 @@
    "refId": 13537,
    "screeningId": 27950,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27950",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "108 Min', Swedish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3151,8 +3207,8 @@
    "refId": 13576,
    "screeningId": 28111,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28111",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "80 Min', Hebrew, Yiddish, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3163,8 +3219,8 @@
    "refId": 13440,
    "screeningId": 28028,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28028",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "157 Min', French, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -3175,8 +3231,8 @@
    "refId": 13461,
    "screeningId": 28072,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28072",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "143 Min', English, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -3187,8 +3243,8 @@
    "refId": 13574,
    "screeningId": 28110,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28110",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "75 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -3199,8 +3255,8 @@
    "refId": 13615,
    "screeningId": 27945,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27945",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "116 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3211,8 +3267,8 @@
    "refId": 13427,
    "screeningId": 28090,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28090",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "116 Min', Danish, Swedish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3223,8 +3279,8 @@
    "refId": 13942,
    "screeningId": null,
    "ticketUrl": null,
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3235,8 +3291,8 @@
    "refId": 13508,
    "screeningId": 27999,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27999",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "126 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3247,8 +3303,8 @@
    "refId": 13594,
    "screeningId": 27975,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27975",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3259,8 +3315,8 @@
    "refId": 13510,
    "screeningId": 28143,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28143",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "86 Min', German, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3271,8 +3327,8 @@
    "refId": 13506,
    "screeningId": 27937,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27937",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "126 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3283,8 +3339,8 @@
    "refId": 13418,
    "screeningId": 27984,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27984",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "155 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3295,8 +3351,8 @@
    "refId": 13623,
    "screeningId": 27922,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27922",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "117 Min', Hebrew, Arabic, Moroccan, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3307,8 +3363,8 @@
    "refId": 13438,
    "screeningId": 27989,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27989",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "90 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3319,8 +3375,8 @@
    "refId": 13475,
    "screeningId": 27961,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27961",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3331,8 +3387,8 @@
    "refId": 13501,
    "screeningId": 28050,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28050",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min', Norwegian, Subtitles in Hebrew, English, Russian",
    "price": null
   },
   {
@@ -3343,8 +3399,8 @@
    "refId": 13419,
    "screeningId": 28089,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28089",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "80 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3355,8 +3411,8 @@
    "refId": 13557,
    "screeningId": 27925,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27925",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "196 Min', French, Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3367,8 +3423,8 @@
    "refId": 13524,
    "screeningId": 27967,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27967",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3379,8 +3435,8 @@
    "refId": 13497,
    "screeningId": 28041,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28041",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', Greek, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3391,8 +3447,8 @@
    "refId": 13568,
    "screeningId": 28082,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28082",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3403,8 +3459,8 @@
    "refId": 13896,
    "screeningId": 28145,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28145",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3415,8 +3471,8 @@
    "refId": 13582,
    "screeningId": 28114,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28114",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "60 Min', Hebrew, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3427,8 +3483,8 @@
    "refId": 13473,
    "screeningId": 27959,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27959",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3439,8 +3495,8 @@
    "refId": 13611,
    "screeningId": 28036,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28036",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3451,8 +3507,8 @@
    "refId": 13898,
    "screeningId": 28146,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28146",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3463,8 +3519,8 @@
    "refId": 13448,
    "screeningId": 28046,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28046",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', German, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -3475,8 +3531,8 @@
    "refId": 13426,
    "screeningId": 28105,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28105",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "107 Min', French, English, Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3487,8 +3543,8 @@
    "refId": 13626,
    "screeningId": 28118,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28118",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "101 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -3499,8 +3555,8 @@
    "refId": 13919,
    "screeningId": 28153,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28153",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "150 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3511,8 +3567,8 @@
    "refId": 13466,
    "screeningId": 27953,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27953",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "108 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3523,8 +3579,8 @@
    "refId": 13527,
    "screeningId": 27933,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27933",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "135 Min', Russian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3535,8 +3591,8 @@
    "refId": 13423,
    "screeningId": 28086,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28086",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "156 Min', Korean, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3547,8 +3603,8 @@
    "refId": 13578,
    "screeningId": 28112,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28112",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min', Hebrew, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3559,8 +3615,8 @@
    "refId": 13624,
    "screeningId": 28094,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28094",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "123 Min', Korean, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3571,8 +3627,8 @@
    "refId": 13555,
    "screeningId": 28002,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28002",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "84 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3583,8 +3639,8 @@
    "refId": 13557,
    "screeningId": 28231,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28231",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "196 Min', French, Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3595,8 +3651,8 @@
    "refId": 13897,
    "screeningId": 28147,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28147",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3607,8 +3663,8 @@
    "refId": 13482,
    "screeningId": 28233,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28233",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "78 Min', Romanian, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -3619,8 +3675,8 @@
    "refId": 13464,
    "screeningId": 28139,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28139",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3631,8 +3687,8 @@
    "refId": 13546,
    "screeningId": 27991,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27991",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "113 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3643,8 +3699,8 @@
    "refId": 13946,
    "screeningId": 28229,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28229",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3655,8 +3711,8 @@
    "refId": 13590,
    "screeningId": 28131,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28131",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min',",
    "price": null
   },
   {
@@ -3667,8 +3723,8 @@
    "refId": 13967,
    "screeningId": 28138,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28138",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "118 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3679,8 +3735,8 @@
    "refId": 13503,
    "screeningId": 27935,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27935",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3691,8 +3747,8 @@
    "refId": 13454,
    "screeningId": 28055,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28055",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3703,8 +3759,8 @@
    "refId": 13442,
    "screeningId": 28218,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28218",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "146 Min', English, Romanian, Norwegian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3715,8 +3771,8 @@
    "refId": 13484,
    "screeningId": 28017,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28017",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', Romanian, Subtitles in Hebrew, English, Russian",
    "price": null
   },
   {
@@ -3727,8 +3783,8 @@
    "refId": 13618,
    "screeningId": 28128,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28128",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min',",
    "price": null
   },
   {
@@ -3739,8 +3795,8 @@
    "refId": 13467,
    "screeningId": 27955,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27955",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "132 Min', Turkish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3751,8 +3807,8 @@
    "refId": 13571,
    "screeningId": 28108,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28108",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "75 Min', Hebrew, German, Yiddish, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3763,8 +3819,8 @@
    "refId": 13519,
    "screeningId": 28081,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28081",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3775,8 +3831,8 @@
    "refId": 13551,
    "screeningId": 27941,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27941",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Danish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3787,8 +3843,8 @@
    "refId": 13621,
    "screeningId": 28129,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28129",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "92 Min',",
    "price": null
   },
   {
@@ -3799,8 +3855,8 @@
    "refId": 13424,
    "screeningId": 28010,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28010",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', Spanish, Lithuanian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3811,8 +3867,8 @@
    "refId": 13564,
    "screeningId": 28060,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28060",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3823,8 +3879,8 @@
    "refId": 13572,
    "screeningId": 28109,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28109",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "87 Min', Amharic, Hebrew, Arabic, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3835,8 +3891,8 @@
    "refId": 13620,
    "screeningId": 28130,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28130",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "81 Min',",
    "price": null
   },
   {
@@ -3847,8 +3903,20 @@
    "refId": 13559,
    "screeningId": 27931,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27931",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', German, French, English, Subtitles in Hebrew, English",
+   "price": null
+  },
+  {
+   "date": "2026-09-29",
+   "start": "19:30",
+   "venue": "Cinema Reshet - Herzl 46",
+   "kind": "event",
+   "refId": 13974,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": [],
+   "info": "Cinema Reshet - Herzl 46",
    "price": null
   },
   {
@@ -3859,8 +3927,8 @@
    "refId": 13488,
    "screeningId": 28024,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28024",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3871,8 +3939,8 @@
    "refId": 13416,
    "screeningId": 28103,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28103",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3883,8 +3951,8 @@
    "refId": 13462,
    "screeningId": 28084,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28084",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "128 Min', Turkish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3895,8 +3963,8 @@
    "refId": 13586,
    "screeningId": 28116,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28116",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "110 Min', Hebrew, French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3907,8 +3975,8 @@
    "refId": 13516,
    "screeningId": 28070,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28070",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "112 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3919,8 +3987,8 @@
    "refId": 13471,
    "screeningId": 27972,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27972",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "105 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3931,8 +3999,8 @@
    "refId": 13947,
    "screeningId": null,
    "ticketUrl": null,
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -3943,8 +4011,8 @@
    "refId": 13610,
    "screeningId": 27970,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27970",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "96 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3955,8 +4023,8 @@
    "refId": 13623,
    "screeningId": 28217,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28217",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "117 Min', Hebrew, Arabic, Moroccan, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3967,8 +4035,8 @@
    "refId": 13411,
    "screeningId": 27981,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27981",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -3979,8 +4047,8 @@
    "refId": 13424,
    "screeningId": 28011,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28011",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', Spanish, Lithuanian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -3991,8 +4059,8 @@
    "refId": 13513,
    "screeningId": 28068,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28068",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4003,8 +4071,8 @@
    "refId": 13609,
    "screeningId": 27947,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27947",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "125 Min', Mandarin, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4015,8 +4083,8 @@
    "refId": 13549,
    "screeningId": 27940,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27940",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4027,8 +4095,8 @@
    "refId": 13527,
    "screeningId": 28151,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28151",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "135 Min', Russian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4039,8 +4107,8 @@
    "refId": 13613,
    "screeningId": 28049,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28049",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4051,8 +4119,8 @@
    "refId": 13511,
    "screeningId": 28140,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28140",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', Georgian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4063,8 +4131,8 @@
    "refId": 13476,
    "screeningId": 27963,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27963",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4075,8 +4143,8 @@
    "refId": 13905,
    "screeningId": 28148,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28148",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -4087,8 +4155,8 @@
    "refId": 13462,
    "screeningId": 28085,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28085",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "128 Min', Turkish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4099,8 +4167,8 @@
    "refId": 13446,
    "screeningId": 28039,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28039",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "110 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4111,8 +4179,8 @@
    "refId": 13585,
    "screeningId": 28115,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28115",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "77 Min', Hebrew, Arabic, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4123,8 +4191,8 @@
    "refId": 13899,
    "screeningId": 28149,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28149",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -4135,8 +4203,8 @@
    "refId": 13495,
    "screeningId": 28033,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28033",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4147,8 +4215,8 @@
    "refId": 13482,
    "screeningId": 28014,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28014",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "78 Min', Romanian, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -4159,8 +4227,8 @@
    "refId": 13547,
    "screeningId": 28043,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28043",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "89 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4171,8 +4239,8 @@
    "refId": 13491,
    "screeningId": 27927,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27927",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', French, Dutch, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4183,8 +4251,8 @@
    "refId": 13587,
    "screeningId": 28117,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28117",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', Hebrew, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4195,8 +4263,8 @@
    "refId": 13529,
    "screeningId": 27966,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27966",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4207,8 +4275,20 @@
    "refId": 13431,
    "screeningId": 28007,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28007",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "101 Min', English, French, Subtitles in Hebrew",
+   "price": null
+  },
+  {
+   "date": "2026-09-30",
+   "start": "19:30",
+   "venue": "Cinema Reshet - Herzl 46",
+   "kind": "event",
+   "refId": 13975,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": [],
+   "info": "Cinema Reshet - Herzl 46",
    "price": null
   },
   {
@@ -4219,8 +4299,8 @@
    "refId": 13540,
    "screeningId": 28021,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28021",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4231,8 +4311,8 @@
    "refId": 13589,
    "screeningId": 28119,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28119",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "60 Min', Hebrew, English, Arabic, Italian, Subtitles in Hebrew, English, Arabic",
    "price": null
   },
   {
@@ -4243,8 +4323,8 @@
    "refId": 13427,
    "screeningId": 28091,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28091",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "116 Min', Danish, Swedish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4255,8 +4335,8 @@
    "refId": 13514,
    "screeningId": 27943,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27943",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', French, Arabic, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4267,8 +4347,8 @@
    "refId": 13594,
    "screeningId": 27976,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27976",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4279,8 +4359,8 @@
    "refId": 13407,
    "screeningId": 27980,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27980",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "113 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4291,8 +4371,8 @@
    "refId": 13473,
    "screeningId": 28232,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28232",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4303,8 +4383,8 @@
    "refId": 13556,
    "screeningId": 28077,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28077",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "104 Min', Danish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4315,8 +4395,8 @@
    "refId": 13466,
    "screeningId": 28164,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28164",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "108 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4327,8 +4407,8 @@
    "refId": 13919,
    "screeningId": 28154,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28154",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "150 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4339,8 +4419,8 @@
    "refId": 13438,
    "screeningId": 27990,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27990",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "90 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4351,8 +4431,8 @@
    "refId": 13505,
    "screeningId": 28057,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28057",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "94 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4363,8 +4443,8 @@
    "refId": 13506,
    "screeningId": 27938,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27938",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "126 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4375,8 +4455,8 @@
    "refId": 13429,
    "screeningId": 28013,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28013",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "91 Min', English, Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4387,8 +4467,8 @@
    "refId": 13478,
    "screeningId": 28006,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28006",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "90 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4399,8 +4479,8 @@
    "refId": 13510,
    "screeningId": 28065,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28065",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "86 Min', German, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4411,8 +4491,8 @@
    "refId": 13566,
    "screeningId": 28003,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28003",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "114 Min', English, Japanese, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4423,8 +4503,8 @@
    "refId": 13441,
    "screeningId": 28031,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28031",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "160 Min', French, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -4435,8 +4515,8 @@
    "refId": 13444,
    "screeningId": 27994,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27994",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "110 Min', Schweizerdeutsch, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4447,8 +4527,8 @@
    "refId": 13900,
    "screeningId": null,
    "ticketUrl": null,
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "Mirrors Hall",
    "price": null
   },
   {
@@ -4459,8 +4539,8 @@
    "refId": 13608,
    "screeningId": 28125,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28125",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "70 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -4471,8 +4551,8 @@
    "refId": 13611,
    "screeningId": 28037,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28037",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "100 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4483,8 +4563,8 @@
    "refId": 13925,
    "screeningId": 28107,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28107",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "90 Min', Hebrew, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4493,10 +4573,10 @@
    "venue": "Auditorium",
    "kind": "film",
    "refId": 13461,
-   "screeningId": null,
-   "ticketUrl": null,
-   "tags": null,
-   "info": null,
+   "screeningId": 28073,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28073",
+   "tags": [],
+   "info": "143 Min', English, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -4507,8 +4587,8 @@
    "refId": 13604,
    "screeningId": 28123,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28123",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "53 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -4519,8 +4599,8 @@
    "refId": 13440,
    "screeningId": 28029,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28029",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "157 Min', French, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -4531,8 +4611,20 @@
    "refId": 13617,
    "screeningId": 28126,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28126",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "98 Min', Hebrew, Subtitles in Hebrew, English",
+   "price": null
+  },
+  {
+   "date": "2026-10-01",
+   "start": "19:30",
+   "venue": "Cinema Reshet - Herzl 46",
+   "kind": "event",
+   "refId": 13976,
+   "screeningId": null,
+   "ticketUrl": null,
+   "tags": [],
+   "info": "Cinema Reshet - Herzl 46",
    "price": null
   },
   {
@@ -4543,8 +4635,8 @@
    "refId": 13509,
    "screeningId": 28062,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28062",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4555,8 +4647,8 @@
    "refId": 13597,
    "screeningId": 28100,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28100",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "80 Min', Hebrew, Arabic, Russian, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4567,8 +4659,8 @@
    "refId": 13599,
    "screeningId": 28120,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28120",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', Hebrew, Subtitles in English",
    "price": null
   },
   {
@@ -4579,8 +4671,8 @@
    "refId": 13564,
    "screeningId": 28061,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28061",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4591,8 +4683,8 @@
    "refId": 13553,
    "screeningId": 28075,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28075",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4603,8 +4695,8 @@
    "refId": 13612,
    "screeningId": 27974,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27974",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', Japanese, English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4615,8 +4707,8 @@
    "refId": 13455,
    "screeningId": 28099,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28099",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4627,8 +4719,8 @@
    "refId": 13562,
    "screeningId": 27998,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27998",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "72 Min', Hebrew (dubbed),",
    "price": null
   },
   {
@@ -4639,8 +4731,8 @@
    "refId": 13526,
    "screeningId": 27996,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27996",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "96 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4651,8 +4743,8 @@
    "refId": 13546,
    "screeningId": 27992,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27992",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "113 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4663,8 +4755,8 @@
    "refId": 13467,
    "screeningId": 27956,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27956",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "132 Min', Turkish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4675,8 +4767,8 @@
    "refId": 13622,
    "screeningId": 28122,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28122",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "68 Min',",
    "price": null
   },
   {
@@ -4687,8 +4779,8 @@
    "refId": 13568,
    "screeningId": 28083,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28083",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4699,8 +4791,8 @@
    "refId": 13493,
    "screeningId": 27930,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27930",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', Dutch, English, French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4711,8 +4803,8 @@
    "refId": 13501,
    "screeningId": 28051,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28051",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min', Norwegian, Subtitles in Hebrew, English, Russian",
    "price": null
   },
   {
@@ -4723,8 +4815,8 @@
    "refId": 13967,
    "screeningId": 27978,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27978",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "118 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4735,8 +4827,8 @@
    "refId": 13475,
    "screeningId": 27962,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27962",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4747,8 +4839,8 @@
    "refId": 13517,
    "screeningId": 28079,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28079",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "180 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4759,8 +4851,8 @@
    "refId": 13557,
    "screeningId": 27926,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27926",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "196 Min', French, Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4771,8 +4863,8 @@
    "refId": 13616,
    "screeningId": 28127,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28127",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "76 Min', Hebrew, Arabic, French, Yiddish, English, Subtitles in English",
    "price": null
   },
   {
@@ -4783,8 +4875,8 @@
    "refId": 13486,
    "screeningId": 28019,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28019",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "98 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4795,8 +4887,8 @@
    "refId": 13413,
    "screeningId": 28009,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28009",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4807,8 +4899,8 @@
    "refId": 13476,
    "screeningId": 27964,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27964",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4819,8 +4911,8 @@
    "refId": 13482,
    "screeningId": 28015,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28015",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "78 Min', Romanian, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -4831,8 +4923,8 @@
    "refId": 13551,
    "screeningId": 27942,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27942",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Danish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4843,8 +4935,8 @@
    "refId": 13503,
    "screeningId": 27936,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27936",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4855,8 +4947,8 @@
    "refId": 13426,
    "screeningId": 28106,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28106",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "107 Min', French, English, Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4867,8 +4959,8 @@
    "refId": 13416,
    "screeningId": 28104,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28104",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4879,8 +4971,8 @@
    "refId": 13491,
    "screeningId": 27928,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27928",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "120 Min', French, Dutch, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4891,8 +4983,8 @@
    "refId": 13433,
    "screeningId": 28097,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28097",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "95 Min', French, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4903,8 +4995,8 @@
    "refId": 13516,
    "screeningId": 28071,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28071",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "112 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4915,8 +5007,8 @@
    "refId": 13624,
    "screeningId": 28095,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28095",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "123 Min', Korean, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4927,8 +5019,8 @@
    "refId": 13488,
    "screeningId": 28025,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28025",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4939,8 +5031,8 @@
    "refId": 13409,
    "screeningId": 27923,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27923",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', Italian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4951,8 +5043,8 @@
    "refId": 13508,
    "screeningId": 28000,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28000",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "126 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4963,8 +5055,8 @@
    "refId": 13609,
    "screeningId": 27948,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27948",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "125 Min', Mandarin, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4975,8 +5067,8 @@
    "refId": 13411,
    "screeningId": 27982,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27982",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "139 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -4987,8 +5079,8 @@
    "refId": 13514,
    "screeningId": 27944,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27944",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "122 Min', French, Arabic, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -4999,8 +5091,8 @@
    "refId": 13451,
    "screeningId": 28053,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28053",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', Dari, Pashto, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5011,8 +5103,8 @@
    "refId": 13442,
    "screeningId": 28035,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28035",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "146 Min', English, Romanian, Norwegian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5023,8 +5115,8 @@
    "refId": 13524,
    "screeningId": 27968,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27968",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "99 Min', Japanese, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5035,8 +5127,8 @@
    "refId": 13466,
    "screeningId": 27954,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27954",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "108 Min', Spanish, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5047,8 +5139,8 @@
    "refId": 13527,
    "screeningId": 27934,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27934",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "135 Min', Russian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5059,8 +5151,8 @@
    "refId": 13566,
    "screeningId": 28004,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28004",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "114 Min', English, Japanese, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5071,8 +5163,8 @@
    "refId": 13448,
    "screeningId": 28047,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28047",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "93 Min', German, Subtitles in Hebrew, Russian",
    "price": null
   },
   {
@@ -5083,8 +5175,8 @@
    "refId": 13513,
    "screeningId": 28069,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28069",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "88 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5095,8 +5187,8 @@
    "refId": 13559,
    "screeningId": 27932,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27932",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "115 Min', German, French, English, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5107,8 +5199,8 @@
    "refId": 13509,
    "screeningId": 28063,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28063",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5119,8 +5211,8 @@
    "refId": 13469,
    "screeningId": 27958,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27958",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "101 Min', Albanian, Serbian, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5131,8 +5223,8 @@
    "refId": 13490,
    "screeningId": 28027,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28027",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "112 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5143,8 +5235,8 @@
    "refId": 13601,
    "screeningId": 28121,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28121",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "84 Min', Hebrew, Subtitles in English, Hebrew",
    "price": null
   },
   {
@@ -5155,8 +5247,8 @@
    "refId": 13435,
    "screeningId": 28102,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28102",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "102 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5167,19 +5259,19 @@
    "refId": 13473,
    "screeningId": 27960,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27960",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "121 Min', German, Subtitles in Hebrew, English",
    "price": null
   },
   {
    "date": "2026-10-03",
    "start": "20:30",
    "venue": "Auditorium",
-   "kind": "film",
-   "refId": 13409,
+   "kind": "event",
+   "refId": 13927,
    "screeningId": 27924,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27924",
-   "tags": null,
+   "tags": [],
    "info": null,
    "price": null
   },
@@ -5191,8 +5283,8 @@
    "refId": 13615,
    "screeningId": 27946,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27946",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "116 Min', English, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5203,8 +5295,8 @@
    "refId": 13423,
    "screeningId": 28087,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28087",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "156 Min', Korean, Subtitles in Hebrew, English",
    "price": null
   },
   {
@@ -5215,8 +5307,8 @@
    "refId": 13460,
    "screeningId": 28093,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28093",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "113 Min', English, Mandarin, Subtitles in Hebrew",
    "price": null
   },
   {
@@ -5227,8 +5319,8 @@
    "refId": 13455,
    "screeningId": 28098,
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28098",
-   "tags": null,
-   "info": null,
+   "tags": [],
+   "info": "103 Min', French, Subtitles in Hebrew, English",
    "price": null
   }
  ],

@@ -2,29 +2,19 @@
  "festival": "haifa-iff",
  "edition": "2026",
  "source": "haifaff-site",
- "fetchedAt": null,
- "fetcher": "research-2026-09-24",
- "fetcherVersion": null,
+ "fetchedAt": "2026-09-25T22:23:49Z",
+ "fetcher": "scraper/festivals/haifa_iff/sources/haifaff-site/fetch.py",
+ "fetcherVersion": 2,
  "urls": [
   "https://www.haifaff.co.il/eng/Screening_schedule",
-  "https://www.haifaff.co.il/לוח_הקרנות",
-  "https://www.haifaff.co.il/eng/Films/grp|fwsa|<groupId>/<name>",
+  "https://www.haifaff.co.il/%D7%9C%D7%95%D7%97_%D7%94%D7%A7%D7%A8%D7%A0%D7%95%D7%AA",
+  "https://www.haifaff.co.il/eng/Films",
+  "https://www.haifaff.co.il/eng/Films/grp|fwsa|<groupId>",
   "https://www.haifaff.co.il/eng/Films/<id>",
-  "https://www.haifaff.co.il/eng/Pricing_|famp|_Passes"
+  "https://www.haifaff.co.il/eng/Events/<id>"
  ],
  "files": [
   "programme.json"
  ],
- "notes": "Transcribed, not fetched. haifaff.co.il was denied at CONNECT from the session that landed this festival, so fetch.py has never run here. Every value comes from WebFetch reads on 2026-09-24 (the day before opening), and WebFetch returns a model's summary of each page, not its bytes. The schedule rows came from the English schedule, read in five date-bounded extractions; the 25-26 Sep rows were read twice and agree with the Hebrew schedule on times and basket ids. The rows were spot-checked against six film pages (Adult Supervision, Women on Trial, Unraveled, Three Goodbyes, Wandering Trees, It Will Happen Tonight), and every one matched. Film metadata came from the section listings and a few film pages; Hebrew titles came from the Hebrew schedule. The research's own JSON was reshaped into fetch.py's programme.json by a one-off script. That script renamed fields, mapped venue codes back to the site's labels and section names to the group ids listed on the site's section URLs, took the screening id from each basket URL, kept the two section-listed films that have no screening out of `films`, and set the event group to 11295 (opening) or 713 (industry) where the research marked a row that way (null otherwise). The opening event's `price` of 150 is the research's reading of the Pricing & Passes page for that event. Every other price is null. The first real run of fetch.py on a machine with egress should overwrite this folder.",
- "knownGaps": [
-  "Tags, info lines, synopses and images were not captured: `tags` and `info` are null on every screening, and `synopsis` and `image` are null on every film.",
-  "Film metadata is missing for 13568 Words of Love and 13925 LAHAV 433. Both are probably on Panorama listing page 2, which could not be read. Their runtime is null.",
-  "Language and subtitles were read for 6 films only.",
-  "28 of the 119 films have no Hebrew title (titleHe null), because the summariser cut off the Hebrew schedule after about 29 Sep.",
-  "2026-10-01 18:00 Auditorium, The Wizard of the Kremlin (13461): the summary repeated basket 28072, which belongs to the 27 Sep screening. The real basket is probably 28073 but was not seen, so this screening's screeningId and ticketUrl are null.",
-  "13409 It Will Happen Tonight is listed under 'Closing Film', a heading with no group id, so `id` is null there.",
-  "13458 The Black Ball (Gala) and 13614 Violence at Noon (Between Mishima to Oshima) have section cards but no screening in the schedule, so they are not in `films`.",
-  "Events 13898 (In Memory of Yvonne Miklós) and 13900 (Pitch on the Carmel) have no known event group (`groups` null).",
-  "The site printed no availability or sold-out state, so none is recorded."
- ]
+ "notes": "The English schedule gives every screening; the Hebrew schedule gives Hebrew titles by film id; film pages give metadata, pictures and their own section; the section listings linked from /eng/Films give every other section a film sits in; event pages give event groups, pictures and the hall of an event the schedule files under its catch-all Events column (parse.py)."
 }
