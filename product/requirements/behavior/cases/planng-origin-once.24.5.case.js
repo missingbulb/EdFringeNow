@@ -18,7 +18,7 @@ module.exports = {
     assert.equal(await page.isVisible("#originCard"), false, "an answer puts the question away");
     assert.deepEqual(
       await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.origin"))),
-      { kind: "abroad", country: "FR" },
+      { kind: "abroad", country: "FR", arrive: "fly" },
       "the answer is stored"
     );
 
