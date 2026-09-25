@@ -79,21 +79,16 @@ const pad2 = (n) => String(n).padStart(2, "0");
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 
-// The calendar's axis. Taller per hour than the Fringe planner's, because a
-// block here is something the reader acts on rather than reads: it has to hold
-// a name, an hour, how rare the show is and the four verdicts. The axis spans
-// only the hours the draft actually uses, padded by one either side — a
-// five-night comedy festival runs in the evening, and an axis anchored at 09:00
-// would be two thirds empty morning.
-const AXIS_PAD_MIN = 60;
-const SCH_HOUR_PX = 72;
-// A day the reader has asked to keep breakfast free of is fifteen hours long
-// with an evening festival in the last three of them. An hour keeps its full
-// height while the calendar is a festival evening, and is compressed towards
-// SCH_HOUR_MIN as the axis grows, so a long day is a calendar rather than a
-// screen of empty morning to scroll past.
-const SCH_HOUR_MIN = 34;
+// The calendar's axis is the same every day, whatever is drafted and wherever
+// the reader's own day starts or ends, so nothing they change resizes it: from
+// 08:00 to 01:00 the next morning, and with the night opened, from 23:00 the
+// evening before. An hour is drawn the height that fits the daytime axis in
+// SCH_AXIS_TARGET_PX.
+const AXIS_DAY_TOP_MIN = 8 * 60;
+const AXIS_NIGHT_TOP_MIN = -60;
+const AXIS_BOTTOM_MIN = 25 * 60;
 const SCH_AXIS_TARGET_PX = 780;
+const SCH_HOUR_PX = Math.round(SCH_AXIS_TARGET_PX / ((AXIS_BOTTOM_MIN - AXIS_DAY_TOP_MIN) / 60));
 const SCH_HEAD_PX = 42;
 // A card's face carries the show and nothing else — its name, its hour and its
 // venue — so its floor is what those two rows measure. Everything the page has
@@ -101,9 +96,6 @@ const SCH_HEAD_PX = 42;
 const SCH_MIN_BLOCK = 44;
 const SCH_TIGHT_PX = 52;
 const SCH_GUTTER_PX = 44;
-// How far past the evening the draft uses the axis will stretch to show a
-// slack day boundary — see calendarAxis().
-const ZONE_MAX_MIN = 60;
 // A dragged day boundary lands on five-minute marks, and can be pushed to
 // 06:00 the following morning, which is where "late night" stops being one.
 const SNAP_MIN = 5;
@@ -195,6 +187,8 @@ const state = {
   answered: new Set(), // "pace" | "interests" | "food" | "dayEnd" | "travel"
   // Between the airport and town, for a reader who flies: a GROUND id or null.
   ground: null,
+  // Whether the calendar shows the night, 23:00 to 08:00: see nightToggle().
+  nightOpen: false,
   // The filters, which unlike a kind drop shows from the draft outright:
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
@@ -360,6 +354,7 @@ function savePrefs() {
     party: state.party,
     answered: [...state.answered],
     ground: state.ground,
+    nightOpen: state.nightOpen,
   });
 }
 
@@ -394,6 +389,7 @@ function restorePrefs() {
   }
   if (Array.isArray(saved.answered)) state.answered = new Set(saved.answered);
   if (GROUND.includes(saved.ground)) state.ground = saved.ground;
+  state.nightOpen = saved.nightOpen === true;
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
@@ -1631,12 +1627,13 @@ function renderCalendar(draft) {
   gutter.className = "sch-gutter";
   const gHead = document.createElement("div");
   gHead.className = "sch-gutter-head";
+  gHead.appendChild(nightToggle(draft));
   const gBody = document.createElement("div");
   gBody.className = "sch-gutter-body";
   gBody.style.height = `${axisH}px`;
   for (let h = minHour; h <= maxHour; h++) {
     const label = document.createElement("div");
-    label.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
+    label.className = "sch-hour" + (h >= 24 || h < 0 ? " sch-hour--late" : "");
     label.style.top = `${(h - minHour) * hourPx}px`;
     label.textContent = `${pad2(((h % 24) + 24) % 24)}:00`;
     gBody.appendChild(label);
@@ -1745,59 +1742,45 @@ function markColumnWidth() {
   host.classList.toggle("cols-tiny", width < COL_TINY_PX);
 }
 
-/* The hours the calendar draws.
- *
- * The evening the draft actually uses, padded by an hour either side, and then
- * stretched towards the reader's own day boundaries — but never by more than
- * ZONE_MAX_MIN, because this festival runs in the evening and an axis anchored
- * at a 09:00 day start would be two thirds empty morning. A boundary further
- * out than that is drawn against the axis edge with the hour it really holds
- * on its flag.
- */
-function calendarAxis(draft) {
-  if (state.drag) return axisOf(state.drag.topMin, state.drag.botMin);
-  const mins = [];
-  const maxs = [];
-  for (const day of draft.days) {
-    for (const slot of day.slots) {
-      mins.push(slot.startMinuteOfDay);
-      maxs.push(slot.endMinuteOfDay);
-    }
-  }
+/* The night, from 23:00 the evening before to 08:00, is folded away until the
+ * reader opens it: most sleep through it. Folded, the button says how many
+ * things it hides, so a breakfast or an early show is never silently gone. */
+function nightToggle(draft) {
   const days = new Set(state.dates);
-  for (const block of state.own) {
-    if (!days.has(block.date)) continue;
-    mins.push(block.startMin);
-    maxs.push(block.endMin);
-  }
-  // A flight's block runs to the axis edge; the hour it hands the day back
-  // (or takes it) is what has to be on screen.
-  for (const f of flightBlocks()) {
-    if (f.which === "out") mins.push(f.endMin);
-    else maxs.push(f.startMin);
-  }
-  // Nothing drafted is exactly when the blockers matter most: the axis then
-  // spans the day the reader asked for, so whatever emptied the calendar is on
-  // screen with a grip on it.
-  if (!mins.length) {
-    mins.push(state.dayStartMin);
-    maxs.push(dayEndMin());
-  }
-  const padTop = Math.min(...mins) - AXIS_PAD_MIN;
-  const padBottom = Math.max(...maxs) + AXIS_PAD_MIN;
-  const minHour = Math.floor(clamp(state.dayStartMin, padTop - ZONE_MAX_MIN, padTop) / 60);
-  const maxHour = Math.max(
-    minHour + 1,
-    Math.ceil(clamp(dayEndMin(), padBottom, padBottom + ZONE_MAX_MIN) / 60)
-  );
-  return axisOf(minHour * 60, maxHour * 60);
+  const hidden = state.nightOpen
+    ? 0
+    : draft.days.reduce((n, day) => n + day.slots.filter((s) => s.startMinuteOfDay < AXIS_DAY_TOP_MIN).length, 0) +
+      state.own.filter((b) => days.has(b.date) && b.startMin < AXIS_DAY_TOP_MIN).length;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "sch-night" + (state.nightOpen ? " is-open" : "");
+  btn.dataset.night = "";
+  btn.setAttribute("aria-expanded", String(state.nightOpen));
+  const label = t(state.nightOpen ? "night.hide" : "night.show");
+  btn.setAttribute("aria-label", label);
+  btn.title = label;
+  btn.innerHTML =
+    `<span class="sch-night-sign" aria-hidden="true">${state.nightOpen ? "\u2212" : "+"}</span>` +
+    (hidden ? `<span class="sch-night-count">${hidden}</span>` : "");
+  return btn;
 }
 
-/** An axis's height, and how tall an hour on it is drawn — see SCH_HOUR_MIN. */
+/* The hours the calendar draws: fixed, see AXIS_DAY_TOP_MIN. Only a show or a
+ * block of the reader's own running past 01:00 stretches the bottom, to the
+ * hour it ends in, so nothing drafted is ever cut off. */
+function calendarAxis(draft) {
+  if (state.drag) return axisOf(state.drag.topMin, state.drag.botMin);
+  let latest = AXIS_BOTTOM_MIN;
+  for (const day of draft.days) for (const slot of day.slots) latest = Math.max(latest, slot.endMinuteOfDay);
+  const days = new Set(state.dates);
+  for (const block of state.own) if (days.has(block.date)) latest = Math.max(latest, block.endMin);
+  return axisOf(state.nightOpen ? AXIS_NIGHT_TOP_MIN : AXIS_DAY_TOP_MIN, Math.ceil(latest / 60) * 60);
+}
+
+/** An axis's height at the fixed height of an hour. */
 function axisOf(topMin, botMin) {
   const hours = (botMin - topMin) / 60;
-  const hourPx = clamp(Math.round(SCH_AXIS_TARGET_PX / hours), SCH_HOUR_MIN, SCH_HOUR_PX);
-  return { topMin, botMin, hourPx, axisH: hours * hourPx };
+  return { topMin, botMin, hourPx: SCH_HOUR_PX, axisH: hours * SCH_HOUR_PX };
 }
 
 function zone(which, top, height) {
@@ -2960,6 +2943,13 @@ function suppressClick() {
 
 function wireDays() {
   const host = $("schedule");
+  host.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-night]")) return;
+    state.nightOpen = !state.nightOpen;
+    savePrefs();
+    redraft();
+    host.querySelector("[data-night]").focus();
+  });
   host.addEventListener("pointerdown", (e) => {
     if (e.button !== 0) return;
     const own = e.target.closest(".sch-own[data-own]");

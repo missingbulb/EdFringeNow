@@ -1584,6 +1584,22 @@ export const STRINGS = {
     ru: "Машина напрокат",
     ja: "レンタカー",
   },
+  "night.show": {
+    maxWidthPx: null,
+    unrendered: "the night button's aria-label and title",
+    en: "Show the night, 23:00 to 08:00",
+    he: "הצגת הלילה, 23:00 עד 08:00",
+    ru: "Показать ночь, с 23:00 до 08:00",
+    ja: "夜（23:00〜08:00）を表示",
+  },
+  "night.hide": {
+    maxWidthPx: null,
+    unrendered: "the night button's aria-label and title",
+    en: "Hide the night",
+    he: "הסתרת הלילה",
+    ru: "Скрыть ночь",
+    ja: "夜を隠す",
+  },
   "blocker.dayStart": {
     probe: ".dl-flag",
     maxWidthPx: 200,

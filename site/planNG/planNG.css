@@ -906,6 +906,47 @@ body.festival-page {
   border-radius: 50%;
   background: var(--festival-colour, var(--muted));
 }
+/* The corner above the hours holds the night's fold: a big plus that opens
+   23:00 to 08:00, with how many things it hides. */
+.sch-gutter-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sch-night {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--violet-dark);
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.sch-night:hover,
+.sch-night:focus-visible {
+  border-color: var(--violet);
+  outline: none;
+}
+.sch-night-count {
+  position: absolute;
+  top: -5px;
+  inset-inline-end: -7px;
+  min-width: 16px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: var(--violet);
+  color: #fff;
+  font-size: 0.6rem;
+}
+
 /* A block the calendar just lost, drawn once more while it shrinks away. */
 .sch-ghost {
   pointer-events: none;
