@@ -1246,7 +1246,7 @@ rather than as a control panel.
   rest.
   </details>
 
-- `20.4` Hovering a card opens everything about it: its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, every night it plays, and the four verdicts.
+- `20.4` Resting on a card opens everything about it: the four verdicts first, as pictures, then its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, and every night it plays.
 
   ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
 
@@ -1380,6 +1380,52 @@ rather than as a control panel.
   another site or be down.
   </details>
 
+- `20.16` The popup waits for the pointer to rest on a card for half a second, and closes once the pointer has left both the card and the popup.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.16 -->
+
+  <details><summary>Notes</summary>
+
+  A pointer crossing the calendar on its way somewhere else opens nothing. The
+  popup survives the short trip from the card into it, because its buttons are
+  the point, and it closes when the pointer moves on to empty calendar, not
+  only when it leaves the calendar altogether. A keyboard opens it at once.
+  </details>
+
+- `20.17` Resting on a verdict names what it does, in the page's own label rather than the browser's tooltip.
+
+  ![planng-verdict-tip.20.17](requirements/screen/cases/planng-verdict-tip.20.17.png) <!-- req-gallery:20.17 -->
+
+- `20.18` Until a first verdict is given, the popup says what its four buttons are for.
+
+  ![planng-verdict-hint.20.18](requirements/screen/cases/planng-verdict-hint.20.18.png) <!-- req-gallery:20.18 -->
+
+- `20.19` Giving any verdict drops that hint for good.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.19 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: the hint is there on a first visit, a verdict is given, and the next
+  popup and a reload both come without it. A reader who already has verdicts
+  from before the hint existed never sees it.
+  </details>
+
+- `20.20` Resting on the travel between two shows says it in words: how, how long, from which venue to which, and how much time it leaves.
+
+  ![planng-leg-card.20.20](requirements/screen/cases/planng-leg-card.20.20.png) <!-- req-gallery:20.20 -->
+
+- `20.21` Nothing on the planner leans on the browser's own tooltip.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.21 -->
+
+  <details><summary>Notes</summary>
+
+  The browser's tooltip opens late, can't be styled or read by touch, and
+  cuts long text. Every explanation the page has is its own label, opened by
+  resting on or focusing the thing it explains.
+  </details>
+
 ## 21. Saying what you want
 
 The calendar drafts before the reader has said anything, so what they say is
@@ -1471,12 +1517,9 @@ calendar.
 
   Two draggable lines with the shut-out hours shaded behind them, on the
   calendar rather than in a strip above it: the constraint is drawn against the
-  hours it applies to, so what it rules out is visible beside it. The axis
-  covers the evening the festival actually runs and stretches only an hour
-  beyond it towards a slack boundary, which is then drawn on the axis edge with
-  the hour it really holds on its flag; a day genuinely that long — three meals
-  asked for, say — draws its hours shorter instead, so the calendar stays a
-  calendar rather than a screen of empty morning.
+  hours it applies to, so what it rules out is visible beside it. The hours
+  themselves are fixed (`21.19`), so a line moved past the calendar's edge is
+  drawn on that edge with the hour it really holds on its flag.
   </details>
 
 - `21.7` Dragging the day's end earlier drops what no longer fits.
@@ -1489,6 +1532,63 @@ calendar.
   programme as the line moves, so what the constraint costs is the calendar
   redrawing rather than a number changing.
   </details>
+
+- `21.15` A show is never drawn past the day's end, however short it is.
+
+  ![planng-dayend-short.21.15](requirements/screen/cases/planng-dayend-short.21.15.png) <!-- req-gallery:21.15 -->
+
+  <details><summary>Notes</summary>
+
+  A short show is drawn taller than it runs, so its name and verdicts fit;
+  the last show of a day stops that at the day's end line, as it already
+  stops at the next show's start. Shown on the Haifa trip's day at Acco with
+  the day ending at 20:55 and a twenty-minute street show at 20:15.
+  </details>
+
+- `21.16` Dragging the day's start or end holds every day at its width, an empty day's sliver included.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.16 -->
+
+  <details><summary>Notes</summary>
+
+  The widths the days had when the drag began are kept until it ends, so a
+  day that empties part-way does not fold under the pointer, and a folded one
+  does not spring open. What changed is settled once the line is let go.
+  </details>
+
+- `21.17` A show the calendar gains or loses fades in or out where it stands, and one that moves slides to its new place; asked for reduced motion, nothing moves.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.17 -->
+
+  <details><summary>Notes</summary>
+
+  Every redraw of the calendar compares what was on it with what is: a show
+  still there animates from where it was, a new one grows in from nothing,
+  and one that left is drawn once more where it stood and shrinks away. A
+  day whose width changes eases to its new width.
+  </details>
+
+- `21.18` How full a day takes any whole number of shows from zero up.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.18 -->
+
+- `21.19` Every day runs from 08:00 to 01:00 whatever is on it, and a big plus above the hours opens the night from 23:00 the evening before.
+
+  ![planng-night.21.19](requirements/screen/cases/planng-night.21.19.png) <!-- req-gallery:21.19 -->
+
+  <details><summary>Notes</summary>
+
+  Animated: the calendar as it opens, with the night folded, and again with
+  the plus pressed. Most readers sleep through the night, so it starts
+  folded; a reader planning it opens it once and it stays open. Folded, the
+  button counts what the night holds, so a breakfast or an early show is
+  never silently hidden. Only something drafted past 01:00 stretches the
+  bottom, to the hour it ends in.
+  </details>
+
+- `21.20` Moving the day's start or end never changes the calendar's height, and the night stays opened or folded after a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.20 -->
 
 - `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
 
@@ -1560,15 +1660,20 @@ calendar.
   a filter hides can still be found and ruled on there.
   </details>
 
-- `21.13` The festivals chip lists every festival the trip reaches, each in its own colour, and can leave any of them out.
+- `21.13` The festivals chip lists every festival the trip reaches, each with the stripe its shows carry and how far away it is, and can leave any of them out.
 
   ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->
 
   <details><summary>Notes</summary>
 
   The Haifa trip, with Acco left out: its row unticked, and the chip's answer
-  naming the one festival still in. The colour is the one each festival's own
-  theme uses.
+  naming the one festival still in. The stripe is the one each show's block
+  carries on the calendar, in the colour its festival's own theme uses. A
+  festival other than the one leading the trip says how far it is and whether
+  all its nights or only some are in reach; a festival too far to reach is
+  listed too, greyed out with nothing to tick (`23.5`). None of this is drawn
+  above the calendar, where a trip reaching several festivals would push the
+  calendar down a line for each.
   </details>
 
 ## 23. The year's festivals, and the trip's dates
@@ -1622,7 +1727,7 @@ reaches it, and otherwise the one it covers most.
   festival is never suggested, whatever the data holds.
   </details>
 
-- `23.5` A festival left out for being out of reach is named on the page, never dropped silently.
+- `23.5` A festival left out for being out of reach is named in the festivals chip, with how far it is, never dropped silently.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
@@ -2078,6 +2183,30 @@ The draft plans around all of it.
 - `28.12` Hiring a car suggests driving between shows, marked as suggested; a way of getting around you chose yourself stays yours.
 
   🚩 _Behavior leaf._ <!-- req-gallery:28.12 -->
+
+- `28.13` A kept day's title stays inside its own column, however narrow.
+
+  ![planng-festival-banner.28.13](requirements/screen/cases/planng-festival-banner.28.13.png) <!-- req-gallery:28.13 -->
+
+  <details><summary>Notes</summary>
+
+  A festival's name is longer than a narrow day is wide: the banner ends in
+  an ellipsis at its column's edge rather than running over the next day's
+  shows. The full name is in the menu the banner opens. A rest day or a day
+  out is held to its column the same way.
+  </details>
+
+- `28.14` Days in a row kept for the same thing join into one stretch under one title.
+
+  ![planng-kept-run.28.14](requirements/screen/cases/planng-kept-run.28.14.png) <!-- req-gallery:28.14 -->
+
+  <details><summary>Notes</summary>
+
+  Two days in a row given to Acco on the Haifa trip: their banners meet
+  across the column edge and the festival is named once across both. Each
+  day's part still opens that day's own menu, so either can be changed on
+  its own.
+  </details>
 
 ## 31. Holidays at home
 

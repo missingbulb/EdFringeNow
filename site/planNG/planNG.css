@@ -620,6 +620,7 @@ body.festival-page {
   border-radius: 10px 10px 0 0;
   background: color-mix(in srgb, var(--muted) 12%, var(--paper));
 }
+.pop-art:not(:first-child) { margin-top: 0; border-radius: 0; }
 .pop-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .pop-art--emoji {
   aspect-ratio: 3 / 1;
@@ -696,25 +697,50 @@ body.festival-page {
   color: var(--violet-dark);
 }
 
-/* The four answers, named rather than left as marks: the popup has the room
-   the card did not, and a row of bare glyphs is a guess. */
+/* The four answers lead the popup, as pictures: the page's own label names
+   each one on a rest of the pointer, and the hint below them names all four
+   until the reader has used one. */
 .pop-verdicts {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
-  margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
 }
 .vb {
-  display: flex; align-items: center; gap: 5px;
-  padding: 4px 6px; min-width: 0;
-  font: inherit; font-size: 0.62rem; text-align: start;
-  border: 1px solid var(--line); border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  height: 34px; padding: 0;
+  font: inherit; font-size: 1.05rem; line-height: 1;
+  border: 1px solid var(--line); border-radius: 9px;
   background: var(--paper); color: var(--ink); cursor: pointer;
 }
-.vb-mark { flex: 0 0 auto; font-size: 0.68rem; line-height: 1; }
-.vb-word { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.vb:hover { border-color: var(--violet); }
+/* An emoji face first, so a heart is drawn red rather than as a text glyph. */
+.vb-mark { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", emoji, sans-serif; }
+.vb:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--paper)); }
 .vb:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
 .vb.is-on { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, var(--paper)); }
-.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); color: var(--bad, #c2410c); }
+.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); background: color-mix(in srgb, var(--bad, #c2410c) 8%, var(--paper)); }
+.pop-hint {
+  margin: 0 0 8px; padding: 6px 8px; border-radius: 7px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: color-mix(in srgb, var(--violet) 10%, var(--paper)); color: var(--ink);
+}
+
+/* The travel between two shows, in a sentence. */
+.cal-pop--preview.cal-pop--leg { width: 240px; }
+.leg-card { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: 0.72rem; line-height: 1.4; }
+.leg-card-emoji { font-size: 1.1rem; line-height: 1; }
+.leg-card-words { display: flex; flex-direction: column; gap: 1px; }
+.leg-card-trip { font-weight: 700; margin-bottom: 2px; }
+.leg-card-margin { margin-top: 3px; }
+.leg-card-margin { color: var(--muted); }
+
+/* The page's one tooltip (tip.js), in place of the browser's. */
+.tip {
+  position: fixed; z-index: 60; max-width: 240px; pointer-events: none;
+  padding: 4px 8px; border-radius: 6px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: var(--ink); color: var(--paper);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+}
+.tip[hidden] { display: none; }
 
 /* --- the drawer ----------------------------------------------------------- */
 /* The grid and the programme, one fold back. Closed it is a single line; open
@@ -936,6 +962,85 @@ body.festival-page {
   height: 10px;
   border-radius: 50%;
   background: var(--festival-colour, var(--muted));
+}
+/* The corner above the hours holds the night's fold: a big plus that opens
+   23:00 to 08:00, with how many things it hides. */
+.sch-gutter-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sch-night {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--violet-dark);
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.sch-night:hover,
+.sch-night:focus-visible {
+  border-color: var(--violet);
+  outline: none;
+}
+.sch-night-count {
+  position: absolute;
+  top: -5px;
+  inset-inline-end: -7px;
+  min-width: 16px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: var(--violet);
+  color: #fff;
+  font-size: 0.6rem;
+}
+
+/* A block the calendar just lost, drawn once more while it shrinks away. */
+.sch-ghost {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* A festival in the festivals chip carries the stripe its shows carry on the
+   calendar, at the same width, beside its name and how far it is. */
+.fest-stripe {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 4px;
+  min-height: 1.4em;
+  border-radius: 2px;
+  background: var(--festival-colour, var(--muted));
+}
+.fest-row {
+  align-items: flex-start;
+}
+.fest-row input {
+  margin-top: 3px;
+}
+.fest-words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.fest-km {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.fest-row--out {
+  cursor: default;
+  opacity: 0.6;
+  /* No checkbox: the stripe sits where the others' names start. */
+  padding-inline-start: 21px;
 }
 .pref-tags,
 .pref-variety {
@@ -1248,6 +1353,61 @@ body.festival-page {
   white-space: nowrap;
 }
 .sch-keep--festival .keep-label {
+  min-width: 0;
+  padding: 0;
+  background: none;
+}
+/* A kept day's title is often wider than its day: it ends in an ellipsis at
+   the column's edge rather than running over the next day's shows. */
+.sch-keep {
+  overflow: hidden;
+}
+.keep-label {
+  max-width: 100%;
+}
+.keep-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Days in a row kept for the same thing are one stretch: their blocks meet
+   across the column edges and one title spans them (titleKeptRuns()). */
+.sch-keep--run .keep-label {
+  visibility: hidden;
+}
+.sch-keep--run-first {
+  inset-inline-end: 0;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+.sch-keep--run-mid {
+  inset-inline: 0;
+  border-radius: 0;
+}
+.sch-keep--run-last {
+  inset-inline-start: 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+.sch-keep--festival.sch-keep--run-mid,
+.sch-keep--festival.sch-keep--run-last {
+  border-inline-start-width: 0;
+}
+.sch-keep-title {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  padding-inline: 6px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sch-keep-title--festival {
+  justify-content: flex-start;
+  padding-inline: 10px 6px;
+}
+.sch-keep-title--festival .keep-label {
   padding: 0;
   background: none;
 }

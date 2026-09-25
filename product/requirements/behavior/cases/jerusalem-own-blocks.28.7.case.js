@@ -35,13 +35,16 @@ module.exports = {
     const before = await drafted();
     const show = page.locator(`.sch-day[data-date="${dropOn}"] .sch-show`).first();
     const showKey = (await show.getAttribute("data-key")) + " " + (await show.getAttribute("data-slug"));
-    // In the middle of the screen, clear of the site's sticky header.
-    await meal.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    // Near the top of the screen, clear of the site's sticky header, so the
+    // evening show it is dragged to is on screen below it.
+    await meal.evaluate((el) => el.scrollIntoView({ block: "start" }));
+    await page.evaluate(() => scrollBy(0, -280));
     const target = await show.boundingBox();
     const from = await meal.boundingBox();
-    await page.mouse.move(from.x + from.width / 2, from.y + 8);
+    // Held low on the block: its top can sit under the day-start line's grip.
+    await page.mouse.move(from.x + from.width / 2, from.y + from.height - 12);
     await page.mouse.down();
-    await page.mouse.move(target.x + target.width / 2, target.y + 8, { steps: 10 });
+    await page.mouse.move(target.x + target.width / 2, target.y + from.height - 12, { steps: 10 });
     await page.mouse.up();
     await settle(page);
     const moved = page.locator(`.sch-day[data-date="${dropOn}"] .sch-own--meal`);

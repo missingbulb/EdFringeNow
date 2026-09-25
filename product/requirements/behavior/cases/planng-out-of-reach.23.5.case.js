@@ -28,7 +28,7 @@ const FAR = {
 };
 
 module.exports = {
-  description: "a festival too far to reach during the focused one is named on the page, and none of its shows is planned",
+  description: "a festival too far to reach during the focused one is named in the festivals chip, and none of its shows is planned",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
@@ -41,10 +41,16 @@ module.exports = {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
-    const out = await page.locator(".pool-line--out").allTextContents();
+    const out = await page.$$eval("#panel-festivals .fest-row--out", (rows) => rows.map((r) => r.textContent));
     assert.equal(out.length, 1, "one festival is left out");
     assert.match(out[0], /Far Away Festival/, "by name");
     assert.match(out[0], /4,000 km/, "with how far it is");
+    assert.equal(
+      await page.locator("#panel-festivals .fest-row--out input").count(),
+      0,
+      "with nothing to tick"
+    );
+    assert.equal(await page.locator("#poolNote .pool-line").count(), 0, "and nothing about it above the calendar");
 
     const planned = await page.$$eval("#schedule .sch-show", (els) => els.map((e) => e.dataset.slug));
     assert.ok(planned.length > 0, "the focused festival is still planned");

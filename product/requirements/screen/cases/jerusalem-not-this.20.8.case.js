@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, settle } = require("../../shared/case-helpers");
+const { jerusalemReady, settle, openCard } = require("../../shared/case-helpers");
 
 // Tuesday at 20:00, which three one-night shows wanted: refusing the show that
 // took it re-drafts the hour from whoever is left, and the lane loses the
@@ -13,8 +13,7 @@ module.exports = {
   ready: jerusalemReady,
   async capture(page, t) {
     const before = await t.element(`${TUE} .sch-body`);
-    await page.hover(`${TUE} .sch-slot >> nth=0 >> .sch-show`);
-    await settle(page);
+    await openCard(page, `${TUE} .sch-slot >> nth=0 >> .sch-show`);
     await page.click('#calPreview [data-verdict="noShow"]');
     // The next contender slides under the pointer and would reopen a popup
     // over the hour; step the pointer off so the capture shows the day alone.

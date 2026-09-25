@@ -66,9 +66,11 @@ import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
 import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { GROUND, arrivalOf, hasCar } from "./lib/arrival.js";
+import { animateCalendar, snapshotCalendar } from "./motion.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
+import { wireTips } from "./tip.js";
 import { showCityPhoto } from "./city-backdrop.js";
 import { flagSvg } from "./flags.js";
 import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
@@ -79,21 +81,16 @@ const pad2 = (n) => String(n).padStart(2, "0");
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 
-// The calendar's axis. Taller per hour than the Fringe planner's, because a
-// block here is something the reader acts on rather than reads: it has to hold
-// a name, an hour, how rare the show is and the four verdicts. The axis spans
-// only the hours the draft actually uses, padded by one either side — a
-// five-night comedy festival runs in the evening, and an axis anchored at 09:00
-// would be two thirds empty morning.
-const AXIS_PAD_MIN = 60;
-const SCH_HOUR_PX = 72;
-// A day the reader has asked to keep breakfast free of is fifteen hours long
-// with an evening festival in the last three of them. An hour keeps its full
-// height while the calendar is a festival evening, and is compressed towards
-// SCH_HOUR_MIN as the axis grows, so a long day is a calendar rather than a
-// screen of empty morning to scroll past.
-const SCH_HOUR_MIN = 34;
+// The calendar's axis is the same every day, whatever is drafted and wherever
+// the reader's own day starts or ends, so nothing they change resizes it: from
+// 08:00 to 01:00 the next morning, and with the night opened, from 23:00 the
+// evening before. An hour is drawn the height that fits the daytime axis in
+// SCH_AXIS_TARGET_PX.
+const AXIS_DAY_TOP_MIN = 8 * 60;
+const AXIS_NIGHT_TOP_MIN = -60;
+const AXIS_BOTTOM_MIN = 25 * 60;
 const SCH_AXIS_TARGET_PX = 780;
+const SCH_HOUR_PX = Math.round(SCH_AXIS_TARGET_PX / ((AXIS_BOTTOM_MIN - AXIS_DAY_TOP_MIN) / 60));
 const SCH_HEAD_PX = 42;
 // A card's face carries the show and nothing else — its name, its hour and its
 // venue — so its floor is what those two rows measure. Everything the page has
@@ -101,9 +98,6 @@ const SCH_HEAD_PX = 42;
 const SCH_MIN_BLOCK = 44;
 const SCH_TIGHT_PX = 52;
 const SCH_GUTTER_PX = 44;
-// How far past the evening the draft uses the axis will stretch to show a
-// slack day boundary — see calendarAxis().
-const ZONE_MAX_MIN = 60;
 // A dragged day boundary lands on five-minute marks, and can be pushed to
 // 06:00 the following morning, which is where "late night" stops being one.
 const SNAP_MIN = 5;
@@ -113,9 +107,9 @@ const DAY_END_CEIL = 30 * 60;
  * catalogue's own gate asks that each key be named in the page's source, which
  * is what keeps a key nothing says any more from being translated forever. */
 const MODE_META = {
-  walk: { emoji: "🚶", nameKey: "travel.walk", tipKey: "travel.walk.tip", verbKey: "travel.mode.walk" },
-  bike: { emoji: "🚲", nameKey: "travel.bike", tipKey: "travel.bike.tip", verbKey: "travel.mode.bike" },
-  car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", verbKey: "travel.mode.car" },
+  walk: { emoji: "🚶", nameKey: "travel.walk", tipKey: "travel.walk.tip", cardKey: "leg.card.walk" },
+  bike: { emoji: "🚲", nameKey: "travel.bike", tipKey: "travel.bike.tip", cardKey: "leg.card.bike" },
+  car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", cardKey: "leg.card.car" },
 };
 
 const KEY_STARRED = STORAGE_PREFIX + "starred";
@@ -196,6 +190,10 @@ const state = {
   answered: new Set(), // "pace" | "interests" | "food" | "dayEnd" | "travel"
   // Between the airport and town, for a reader who flies: a GROUND id or null.
   ground: null,
+  // Whether the calendar shows the night, 23:00 to 08:00: see nightToggle().
+  nightOpen: false,
+  // Whether the reader has given a verdict yet, which drops the popup's hint.
+  verdictsLearned: false,
   // The filters, which unlike a kind drop shows from the draft outright:
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
@@ -361,6 +359,8 @@ function savePrefs() {
     party: state.party,
     answered: [...state.answered],
     ground: state.ground,
+    nightOpen: state.nightOpen,
+    verdictsLearned: state.verdictsLearned,
   });
 }
 
@@ -382,7 +382,7 @@ function restorePrefs() {
       }
     }
   }
-  state.maxPerDay = Number(saved.maxPerDay) || state.maxPerDay;
+  state.maxPerDay = Number.isFinite(saved.maxPerDay) ? Math.max(0, saved.maxPerDay) : state.maxPerDay;
   state.minGap = Number.isFinite(saved.minGap) ? saved.minGap : state.minGap;
   state.minGapSame = Number.isFinite(saved.minGapSame) ? saved.minGapSame : state.minGapSame;
   if (MODE_META[saved.mode]) state.mode = saved.mode;
@@ -395,6 +395,8 @@ function restorePrefs() {
   }
   if (Array.isArray(saved.answered)) state.answered = new Set(saved.answered);
   if (GROUND.includes(saved.ground)) state.ground = saved.ground;
+  state.nightOpen = saved.nightOpen === true;
+  state.verdictsLearned = saved.verdictsLearned === true;
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
@@ -555,7 +557,7 @@ function buildDayCells(performances) {
         seg.className = segClass(p);
         seg.dataset.date = p.date;
         seg.dataset.start = p.start;
-        seg.title = t(p.free ? "perf.tip.free" : "perf.tip", {
+        seg.dataset.tip = t(p.free ? "perf.tip.free" : "perf.tip", {
           day: dayAndDate(iso),
           time: p.start,
         });
@@ -578,7 +580,7 @@ function buildLanes() {
     const label = document.createElement("div");
     label.className = "lane-label";
     label.innerHTML =
-      `<span class="lane-pin" aria-hidden="true">🔒</span>` +
+      `<span class="lane-pin" aria-hidden="true">📌</span>` +
       `<span class="lane-title">${foreign(show.title, show.slug)}</span>`;
     const remove = document.createElement("button");
     remove.type = "button";
@@ -619,7 +621,7 @@ function applyVerdicts(draft) {
     const [verdictClass, verdictKey, verdictMark] = rejected
       ? ["st-dates st-no", "lane.rejected", "⊘"]
       : state.locked.has(slug)
-        ? ["st-plan st-in", "lane.locked", "🔒"]
+        ? ["st-plan st-in", "lane.locked", "📌"]
         : scheduled
           ? ["st-plan st-in", "lane.scheduled", "✓"]
           : crowded.has(slug)
@@ -731,7 +733,7 @@ function foodAnswer() {
 const pickHtml = (question, id, emoji, label, on, { disabled = false, tip = "" } = {}) =>
   `<button type="button" class="pref-pick${on ? " is-on" : ""}" data-pick="${question}:${id}"` +
   ` aria-pressed="${on}"${disabled ? " disabled" : ""}` +
-  `${tip ? ` title="${escapeHtml(tip)}"` : ""}>` +
+  `${tip ? ` data-tip="${escapeHtml(tip)}"` : ""}>` +
   `<span class="pref-ico" aria-hidden="true">${emoji}</span>` +
   `<span class="pref-word">${label}</span></button>`;
 
@@ -770,7 +772,7 @@ function questionHtml(id, askKey, answer, body) {
     ` aria-controls="panel-${id}" aria-haspopup="true">` +
     `<span class="pref-ask">${escapeHtml(t(askKey))}` +
     `<span class="pref-suggested" role="img" aria-label="${escapeHtml(t("prefs.suggested"))}"` +
-    ` title="${escapeHtml(t("prefs.suggested"))}">✨</span></span>` +
+    ` data-tip="${escapeHtml(t("prefs.suggested"))}">✨</span></span>` +
     `<span class="pref-answer">${answer}</span>` +
     `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
     `<div class="pref-panel" id="panel-${id}" role="group" aria-label="${escapeHtml(t(askKey))}"` +
@@ -802,17 +804,45 @@ function festivalsAnswer() {
   return answerHtml("🎪", t("prefs.festivals.some", { count: kept.length }));
 }
 
+/* Each festival marked as its shows are on the calendar, with how far it is
+ * from the one leading the trip: a trip reaching several festivals says so
+ * here rather than in a line above the calendar for each. A festival too far
+ * to reach is named too, with nothing to tick, so it is never silently
+ * missing. */
 function festivalsHtml() {
+  const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
+  const reachOf = new Map((state.reach || []).map((r) => [r.edition.festival.id, r]));
+  const distance = (id) => {
+    const r = reachOf.get(id);
+    if (!r || r.verdict === "focus") return "";
+    const key = r.verdict === "partly" ? "prefs.festivals.partly" : "prefs.festivals.dayTrip";
+    return `<span class="fest-km">${escapeHtml(t(key, { km: km(r.km) }))}</span>`;
+  };
+  const inPool = poolFestivals();
+  const inIds = new Set(inPool.map((f) => f.id));
+  const out = (state.reach || []).filter((r) => r.verdict === "out" && !inIds.has(r.edition.festival.id));
   return (
     `<div class="pref-checks">` +
-    poolFestivals()
+    inPool
       .map((festival) => {
         const on = !state.festivalsOut.has(festival.id);
         return (
-          `<label class="pref-check">` +
+          `<label class="pref-check fest-row">` +
           `<input type="checkbox" data-festival-on="${escapeHtml(festival.id)}"${on ? " checked" : ""} />` +
-          `<span class="fest-dot" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
-          `<span class="pref-check-word">${escapeHtml(festivalName(festival))}</span></label>`
+          `<span class="fest-stripe" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
+          `<span class="fest-words"><span class="pref-check-word">${escapeHtml(festivalName(festival))}</span>` +
+          `${distance(festival.id)}</span></label>`
+        );
+      })
+      .join("") +
+    out
+      .map((r) => {
+        const festival = r.edition.festival;
+        return (
+          `<div class="pref-check fest-row fest-row--out">` +
+          `<span class="fest-stripe" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
+          `<span class="fest-words"><span class="pref-check-word">${escapeHtml(festivalName(festival))}</span>` +
+          `<span class="fest-km">${escapeHtml(t("prefs.festivals.out", { km: km(r.km ?? 0) }))}</span></span></div>`
         );
       })
       .join("") +
@@ -910,7 +940,7 @@ function paceFineHtml() {
   return (
     `<div class="pref-row">` +
     `<span class="pref-label">${escapeHtml(t("prefs.pace.atMost"))}</span>` +
-    `<input class="ctl-num" type="number" min="1" max="8" step="1" inputmode="numeric"` +
+    `<input class="ctl-num" type="number" min="0" step="1" inputmode="numeric"` +
     ` data-num="maxPerDay" value="${state.maxPerDay}"` +
     ` aria-label="${escapeHtml(t("prefs.pace.atMostLabel"))}" />` +
     `<span class="pref-label">${escapeHtml(t("prefs.pace.perDay"))}</span>` +
@@ -1229,7 +1259,8 @@ function wirePrefs() {
     if (el.dataset.num) state.answered.add("pace");
     if (el.dataset.mealon || el.dataset.time) state.answered.add("food");
     if (el.dataset.num === "maxPerDay") {
-      state.maxPerDay = clamp(Math.round(Number(el.value)) || 1, 1, 8);
+      const count = Math.round(Number(el.value));
+      state.maxPerDay = Number.isFinite(count) ? Math.max(0, count) : state.maxPerDay;
     } else if (el.dataset.num === "minGap") {
       state.minGap = Number(el.value);
     } else if (el.dataset.num === "minGapSame") {
@@ -1582,6 +1613,7 @@ function renderCalendar(draft) {
   contested.clear();
   const host = $("schedule");
   const empty = $("scheduleEmpty");
+  const before = snapshotCalendar(host);
   host.innerHTML = "";
   host.hidden = false;
   // The note says what the constraints have cost; the calendar under it is
@@ -1603,12 +1635,13 @@ function renderCalendar(draft) {
   gutter.className = "sch-gutter";
   const gHead = document.createElement("div");
   gHead.className = "sch-gutter-head";
+  gHead.appendChild(nightToggle(draft));
   const gBody = document.createElement("div");
   gBody.className = "sch-gutter-body";
   gBody.style.height = `${axisH}px`;
   for (let h = minHour; h <= maxHour; h++) {
     const label = document.createElement("div");
-    label.className = "sch-hour" + (h >= 24 ? " sch-hour--late" : "");
+    label.className = "sch-hour" + (h >= 24 || h < 0 ? " sch-hour--late" : "");
     label.style.top = `${(h - minHour) * hourPx}px`;
     label.textContent = `${pad2(((h % 24) + 24) % 24)}:00`;
     gBody.appendChild(label);
@@ -1634,8 +1667,13 @@ function renderCalendar(draft) {
       // A blank night collapses to a sliver, but only while the calendar has
       // something to show: when the whole draft is empty every column is
       // blank, and slivers would leave the blockers nothing to sit on. A day
-      // holding something of the reader's own is never blank.
-      (!day.slots.length && !keep && !own.length && draft.counts.picked && !state.drag ? " sch-day--empty" : "");
+      // holding something of the reader's own is never blank. A drag keeps
+      // the slivers it began with, whatever the day holds meanwhile.
+      ((state.drag
+        ? state.drag.slivers.has(iso)
+        : !day.slots.length && !keep && !own.length && draft.counts.picked)
+        ? " sch-day--empty"
+        : "");
     col.dataset.date = iso;
     if (keep && keep.kind === "festival") col.dataset.festivalColour = keep.festival;
 
@@ -1676,10 +1714,12 @@ function renderCalendar(draft) {
       day.slots.forEach((slot, i2) => {
         // A short show is drawn at SCH_MIN_BLOCK so its four verdicts fit — but
         // never past the next block's own start, or the two would overlap and
-        // the calendar would claim a clash the scheduler took care to avoid.
+        // the calendar would claim a clash the scheduler took care to avoid,
+        // and never past the day's end, or it would claim hours the reader
+        // gave up.
         const next = day.slots[i2 + 1];
         const prev = day.slots[i2 - 1];
-        const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+        const ceiling = Math.min(next ? y(next.startMinuteOfDay) - 2 : axisH, y(dayEndMin()));
         // How far this hour's rivals may be drawn: between the neighbours'
         // cards, so no bar is ever read as belonging to the show beside it.
         const reach = [prev ? y(prev.endMinuteOfDay) + 2 : 0, ceiling];
@@ -1695,6 +1735,8 @@ function renderCalendar(draft) {
 
   host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
   markColumnWidth();
+  titleKeptRuns(host);
+  animateCalendar(host, before);
 }
 
 /* A column squeezed to share the width sheds what a show's block can't
@@ -1712,59 +1754,45 @@ function markColumnWidth() {
   host.classList.toggle("cols-tiny", width < COL_TINY_PX);
 }
 
-/* The hours the calendar draws.
- *
- * The evening the draft actually uses, padded by an hour either side, and then
- * stretched towards the reader's own day boundaries — but never by more than
- * ZONE_MAX_MIN, because this festival runs in the evening and an axis anchored
- * at a 09:00 day start would be two thirds empty morning. A boundary further
- * out than that is drawn against the axis edge with the hour it really holds
- * on its flag.
- */
-function calendarAxis(draft) {
-  if (state.drag) return axisOf(state.drag.topMin, state.drag.botMin);
-  const mins = [];
-  const maxs = [];
-  for (const day of draft.days) {
-    for (const slot of day.slots) {
-      mins.push(slot.startMinuteOfDay);
-      maxs.push(slot.endMinuteOfDay);
-    }
-  }
+/* The night, from 23:00 the evening before to 08:00, is folded away until the
+ * reader opens it: most sleep through it. Folded, the button says how many
+ * things it hides, so a breakfast or an early show is never silently gone. */
+function nightToggle(draft) {
   const days = new Set(state.dates);
-  for (const block of state.own) {
-    if (!days.has(block.date)) continue;
-    mins.push(block.startMin);
-    maxs.push(block.endMin);
-  }
-  // A flight's block runs to the axis edge; the hour it hands the day back
-  // (or takes it) is what has to be on screen.
-  for (const f of flightBlocks()) {
-    if (f.which === "out") mins.push(f.endMin);
-    else maxs.push(f.startMin);
-  }
-  // Nothing drafted is exactly when the blockers matter most: the axis then
-  // spans the day the reader asked for, so whatever emptied the calendar is on
-  // screen with a grip on it.
-  if (!mins.length) {
-    mins.push(state.dayStartMin);
-    maxs.push(dayEndMin());
-  }
-  const padTop = Math.min(...mins) - AXIS_PAD_MIN;
-  const padBottom = Math.max(...maxs) + AXIS_PAD_MIN;
-  const minHour = Math.floor(clamp(state.dayStartMin, padTop - ZONE_MAX_MIN, padTop) / 60);
-  const maxHour = Math.max(
-    minHour + 1,
-    Math.ceil(clamp(dayEndMin(), padBottom, padBottom + ZONE_MAX_MIN) / 60)
-  );
-  return axisOf(minHour * 60, maxHour * 60);
+  const hidden = state.nightOpen
+    ? 0
+    : draft.days.reduce((n, day) => n + day.slots.filter((s) => s.startMinuteOfDay < AXIS_DAY_TOP_MIN).length, 0) +
+      state.own.filter((b) => days.has(b.date) && b.startMin < AXIS_DAY_TOP_MIN).length;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "sch-night" + (state.nightOpen ? " is-open" : "");
+  btn.dataset.night = "";
+  btn.setAttribute("aria-expanded", String(state.nightOpen));
+  const label = t(state.nightOpen ? "night.hide" : "night.show");
+  btn.setAttribute("aria-label", label);
+  btn.dataset.tip = label;
+  btn.innerHTML =
+    `<span class="sch-night-sign" aria-hidden="true">${state.nightOpen ? "\u2212" : "+"}</span>` +
+    (hidden ? `<span class="sch-night-count">${hidden}</span>` : "");
+  return btn;
 }
 
-/** An axis's height, and how tall an hour on it is drawn — see SCH_HOUR_MIN. */
+/* The hours the calendar draws: fixed, see AXIS_DAY_TOP_MIN. Only a show or a
+ * block of the reader's own running past 01:00 stretches the bottom, to the
+ * hour it ends in, so nothing drafted is ever cut off. */
+function calendarAxis(draft) {
+  if (state.drag) return axisOf(state.drag.topMin, state.drag.botMin);
+  let latest = AXIS_BOTTOM_MIN;
+  for (const day of draft.days) for (const slot of day.slots) latest = Math.max(latest, slot.endMinuteOfDay);
+  const days = new Set(state.dates);
+  for (const block of state.own) if (days.has(block.date)) latest = Math.max(latest, block.endMin);
+  return axisOf(state.nightOpen ? AXIS_NIGHT_TOP_MIN : AXIS_DAY_TOP_MIN, Math.ceil(latest / 60) * 60);
+}
+
+/** An axis's height at the fixed height of an hour. */
 function axisOf(topMin, botMin) {
   const hours = (botMin - topMin) / 60;
-  const hourPx = clamp(Math.round(SCH_AXIS_TARGET_PX / hours), SCH_HOUR_MIN, SCH_HOUR_PX);
-  return { topMin, botMin, hourPx, axisH: hours * hourPx };
+  return { topMin, botMin, hourPx: SCH_HOUR_PX, axisH: hours * SCH_HOUR_PX };
 }
 
 function zone(which, top, height) {
@@ -1792,8 +1820,48 @@ function keepBlock(iso, keep, axisH, dayTop) {
   el.setAttribute("aria-haspopup", "menu");
   el.innerHTML =
     `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META[keep.kind].emoji}</span> ` +
-    `${escapeHtml(keptName(keep))}</span>`;
+    `<span class="keep-name">${escapeHtml(keptName(keep))}</span></span>`;
   return el;
+}
+
+/* Days in a row kept for the same thing read as one stretch: one title across
+ * them, drawn over the calendar where it can span the days, while each day's
+ * own block stays the target that opens that day's menu. */
+function titleKeptRuns(host) {
+  const kept = keptInTrip();
+  const same = (a, b) => a && b && a.kind === b.kind && a.festival === b.festival;
+  const runs = [];
+  for (const col of host.querySelectorAll(".sch-day")) {
+    const keep = kept.get(col.dataset.date) || null;
+    const last = runs[runs.length - 1];
+    if (keep && last && same(last.keep, keep) && last.cols[last.cols.length - 1].nextElementSibling === col) {
+      last.cols.push(col);
+    } else if (keep) {
+      runs.push({ keep, cols: [col] });
+    }
+  }
+  const at = host.getBoundingClientRect();
+  for (const { cols } of runs) {
+    if (cols.length < 2) continue;
+    const blocks = cols.map((col) => col.querySelector(".sch-keep"));
+    if (blocks.some((b) => !b)) continue;
+    blocks.forEach((b, i) => {
+      b.classList.add("sch-keep--run", i === 0 ? "sch-keep--run-first" : i === blocks.length - 1 ? "sch-keep--run-last" : "sch-keep--run-mid");
+    });
+    const label = blocks[0].querySelector(".keep-label").getBoundingClientRect();
+    const first = blocks[0].getBoundingClientRect();
+    const end = blocks[blocks.length - 1].getBoundingClientRect();
+    const left = Math.min(first.left, end.left);
+    const right = Math.max(first.right, end.right);
+    const title = document.createElement("div");
+    title.className = `sch-keep-title sch-keep-title--${blocks[0].dataset.kind}`;
+    title.setAttribute("aria-hidden", "true");
+    title.style.top = `${label.top - at.top}px`;
+    title.style.left = `${left - at.left}px`;
+    title.style.width = `${right - left}px`;
+    title.appendChild(blocks[0].querySelector(".keep-label").cloneNode(true));
+    host.appendChild(title);
+  }
 }
 
 /* A day given to a nearby festival still holds shows — that festival's — so it
@@ -1809,7 +1877,7 @@ function keepBanner(iso, keep, dayTop) {
   el.setAttribute("aria-haspopup", "menu");
   el.innerHTML =
     `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META.festival.emoji}</span> ` +
-    `${escapeHtml(keptName(keep))}</span>`;
+    `<span class="keep-name">${escapeHtml(keptName(keep))}</span></span>`;
   return el;
 }
 
@@ -1940,13 +2008,19 @@ function setDayEnd(min) {
   return true;
 }
 
+/** What a drag holds still: the axis, and which days are drawn as slivers. */
+function holdLayout(ov) {
+  const slivers = new Set([...document.querySelectorAll("#schedule .sch-day--empty")].map((c) => c.dataset.date));
+  return { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin), slivers };
+}
+
 /* A drag holds the axis and the column widths still for its duration. Without
  * that, moving a line re-drafts, the re-draft re-fits the axis, and the same
  * pointer position then means a different minute — the line would chase the
  * pointer instead of following it. */
 function startBlockerDrag(onMove) {
   const ov = document.querySelector(".sch-blockers");
-  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  state.drag = holdLayout(ov);
   const move = (ev) => {
     if (onMove(ev)) redraftAndSave();
   };
@@ -2079,7 +2153,7 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
     (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName, slot.slug)}</span>` : "") +
     `</span></a>` +
     // The one thing a card's face says beyond the show itself.
-    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
+    (locked ? `<span class="sch-lock" aria-hidden="true">📌</span>` : "");
   wrap.appendChild(block);
 
   if (slot.contenders.length) {
@@ -2159,6 +2233,7 @@ function crowdWash(rivals, top, height, y) {
 function buildTravelLeg(a, b, top, bottom) {
   const leg = document.createElement("div");
   leg.className = "sch-leg";
+  leg.dataset.after = `${a.slug}@${slotKey(a)}`;
   leg.style.top = `${top}px`;
   leg.style.height = `${Math.max(0, bottom - top)}px`;
 
@@ -2166,13 +2241,18 @@ function buildTravelLeg(a, b, top, bottom) {
   const meta = MODE_META[state.mode];
   const km1 = (km) =>
     new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(km);
+  // The leg's face is a glance (minutes, distance, time to spare); the card it
+  // opens on a rest of the pointer says the same in a sentence.
+  const venue = (slot) => foreign(slot.venueName || "", slot.slug);
   let text;
-  let title;
   let key;
+  let card;
+  let spoken;
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     key = "leg.sameVenue";
     text = t(key, { gap: gapMin });
-    title = t("leg.sameVenue.tip", { venue: a.venueName || "", gap: gapMin });
+    card = tHtml("leg.card.same", { gap: gapMin }, { venue: venue(a) });
+    spoken = t("leg.card.same", { gap: gapMin, venue: a.venueName || "" });
   } else {
     const km = distanceKm({ lat: a.venueLat, lng: a.venueLng }, { lat: b.venueLat, lng: b.venueLng });
     const mins = travelMinutes(
@@ -2183,7 +2263,8 @@ function buildTravelLeg(a, b, top, bottom) {
     if (km == null || mins == null) {
       key = "leg.nearby";
       text = t(key, { gap: gapMin });
-      title = t("leg.unknown.tip");
+      card = escapeHtml(t("leg.card.unknown"));
+      spoken = t("leg.card.unknown");
     } else {
       const spare = Math.round(gapMin - mins);
       key = "leg.travel";
@@ -2192,16 +2273,23 @@ function buildTravelLeg(a, b, top, bottom) {
         km: km1(km),
         spare: `${spare >= 0 ? "+" : ""}${spare}`,
       });
-      title = t("leg.travel.tip", {
-        minutes: Math.round(mins),
-        mode: t(meta.verbKey),
-        km: km1(km),
-        gap: gapMin,
-        spare,
-      });
+      const trip = { minutes: Math.round(mins) };
+      const margin = spare >= 0 ? t("leg.card.spare", { km: km1(km), spare }) : t("leg.card.late", { km: km1(km), late: -spare });
+      card =
+        `<strong class="leg-card-trip">${escapeHtml(t(meta.cardKey, trip))}</strong>` +
+        `<span>${tHtml("leg.card.from", {}, { venue: venue(a) })}</span>` +
+        `<span>${tHtml("leg.card.to", {}, { venue: venue(b) })}</span>` +
+        `<span class="leg-card-margin">${escapeHtml(margin)}</span>`;
+      spoken = [
+        t(meta.cardKey, trip),
+        t("leg.card.from", { venue: a.venueName || "" }),
+        t("leg.card.to", { venue: b.venueName || "" }),
+        margin,
+      ].join(" ");
     }
   }
-  leg.title = title;
+  leg.dataset.card = `<span class="leg-card-emoji" aria-hidden="true">${meta.emoji}</span><span class="leg-card-words">${card}</span>`;
+  leg.setAttribute("aria-label", spoken);
   leg.dataset.i18nSlot = key;
   leg.innerHTML =
     `<span class="leg-emoji" aria-hidden="true">${meta.emoji}</span>` +
@@ -2270,6 +2358,29 @@ function placeBeside(pop, block) {
   pop.style.top = `${Math.round(top - host.top)}px`;
 }
 
+/* The popup's hint stays until the reader has used a verdict once. A reader
+ * with verdicts from before the hint existed has found the buttons already. */
+function verdictsLearned() {
+  return (
+    state.verdictsLearned ||
+    state.locked.size > 0 ||
+    state.noTime.size > 0 ||
+    state.noShow.size > 0 ||
+    state.starred.size > 0
+  );
+}
+
+/* The travel between two shows, said in a sentence: the same popup a show
+ * opens, holding only that. */
+function openLegPop(leg) {
+  const pop = $("calPreview");
+  delete pop.dataset.slug;
+  pop.dataset.key = `leg:${leg.dataset.after}`;
+  pop.classList.add("cal-pop--leg");
+  pop.innerHTML = `<p class="leg-card">${leg.dataset.card}</p>`;
+  placeBeside(pop, leg);
+}
+
 /* Everything the page has to say about one card, in one place: its picture,
  * where and when, a few lines about it, how few nights its show has — which is the reason it holds the hour — every night it plays,
  * and the four answers. None of it is on the card's own face, so a calendar at
@@ -2306,17 +2417,16 @@ function openCardPop(block) {
   const locked = state.locked.get(slug) === key;
   const favourite = state.starred.has(slug);
   const freedom = (state.draft.pool.get(slug) || show.performances).length;
+  // Pictures only: the page's own label names each one on a rest of the pointer.
   const verdict = (kind, vKey, mark, on) => {
     const label = escapeHtml(t(vKey));
     return (
       `<button type="button" class="vb vb--${kind}${on ? " is-on" : ""}" data-verdict="${kind}"` +
-      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-title="${vKey}"` +
-      ` aria-label="${label}" title="${label}">` +
-      `<span class="vb-mark" aria-hidden="true">${mark}</span>` +
-      `<span class="vb-word">${label}</span></button>`
+      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-data-tip="${vKey}"` +
+      ` aria-label="${label}" data-tip="${label}">` +
+      `<span class="vb-mark" aria-hidden="true">${mark}</span></button>`
     );
   };
-
   const [date, start] = key.split("T");
   const perf = show.performances.find((p) => p.date === date && p.start === start);
   const venue = (perf && state.venues.get(perf.venue)) || null;
@@ -2324,7 +2434,19 @@ function openCardPop(block) {
   const where = [venueName && foreign(venueName, show.slug), escapeHtml(`${dayAndDate(date)} · ${start}`)]
     .filter(Boolean)
     .join(" · ");
+  pop.classList.remove("cal-pop--leg");
   pop.innerHTML =
+    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
+    ` data-i18n-aria-label="verdict.groupLabel">` +
+    verdict("lock", "verdict.lock", "📌", locked) +
+    verdict("favourite", "verdict.favourite", "❤️", favourite) +
+    verdict("noTime", "verdict.noTime", "🔄", false) +
+    verdict("noShow", "verdict.noShow", "👎", false) +
+    `</div>` +
+    (verdictsLearned()
+      ? ""
+      : `<p class="pop-hint"><span aria-hidden="true">💡</span> ` +
+        `<span data-i18n="verdict.hint">${escapeHtml(t("verdict.hint"))}</span></p>`) +
     popArtHtml(show) +
     `<p class="pop-title">${foreign(show.title, show.slug)}</p>` +
     `<p class="pop-where">${where}</p>` +
@@ -2336,14 +2458,7 @@ function openCardPop(block) {
     `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
     ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
     `${escapeHtml(rarityText(freedom))}</span></p>` +
-    `<ul class="pop-nights">${nights}</ul>` +
-    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
-    ` data-i18n-aria-label="verdict.groupLabel">` +
-    verdict("lock", "verdict.lock", "🔒", locked) +
-    verdict("favourite", "verdict.favourite", "★", favourite) +
-    verdict("noTime", "verdict.noTime", "✕", false) +
-    verdict("noShow", "verdict.noShow", "⊘", false) +
-    `</div>`;
+    `<ul class="pop-nights">${nights}</ul>`;
   const img = pop.querySelector(".pop-art img");
   if (img) {
     img.addEventListener(
@@ -2400,7 +2515,7 @@ function openRivals(lane) {
       ? `<li class="pop-pick"><span class="pr-badge">${escapeHtml(t("rivals.ours"))}</span>${body}</li>`
       : `<li><button type="button" class="pop-rival" data-take="${escapeHtml(show.slug)}"` +
           ` data-key="${escapeHtml(slotKey(show))}">${body}` +
-          `<span class="pr-take" aria-hidden="true">🔒</span></button></li>`;
+          `<span class="pr-take" aria-hidden="true">📌</span></button></li>`;
   };
   pop.innerHTML =
     `<p class="pop-title" data-i18n-slot="rivals.title">${escapeHtml(t("rivals.title", { time: slot.startTime }))}</p>` +
@@ -2646,6 +2761,10 @@ function wireCalendar() {
     const verdictBtn = e.target.closest("[data-verdict]");
     if (verdictBtn) {
       const pop = $("calPreview");
+      if (!state.verdictsLearned) {
+        state.verdictsLearned = true;
+        savePrefs();
+      }
       applyVerdict(verdictBtn.dataset.verdict, pop.dataset.slug, pop.dataset.key);
       return;
     }
@@ -2665,17 +2784,26 @@ function wireCalendar() {
     if (!e.target.closest(".cal-pop")) closePops();
   });
 
-  // The popup holds buttons, so it cannot close the instant the pointer leaves
-  // the card — it has to survive the travel between the two.
+  // A pointer has to rest on a card before its popup opens, so crossing the
+  // calendar on the way somewhere else opens nothing. Once open, the popup
+  // holds buttons, so it survives the short trip from the card into it, and
+  // closes once the pointer is on neither.
+  const OPEN_AFTER_MS = 500;
+  const CLOSE_AFTER_MS = 220;
+  let openTimer = null;
   let closeTimer = null;
+  const pop = $("calPreview");
   const holdOpen = () => clearTimeout(closeTimer);
   const closeSoon = () => {
     clearTimeout(closeTimer);
     closeTimer = setTimeout(() => {
-      $("calPreview").hidden = true;
+      pop.hidden = true;
       if (!$("calRivals").hidden) closePops();
-    }, 220);
+    }, CLOSE_AFTER_MS);
   };
+  const keyOf = (target) =>
+    target.classList.contains("sch-leg") ? `leg:${target.dataset.after}` : target.dataset.key;
+  const hoverable = (el) => el.closest(".sch-show, .sch-leg[data-card]");
 
   wrap.addEventListener("pointerover", (e) => {
     if (e.pointerType === "touch") return;
@@ -2683,6 +2811,7 @@ function wireCalendar() {
     // show's own popup: it is a question about the hour, not the show.
     const lane = e.target.closest(".sch-rivals");
     if (lane) {
+      clearTimeout(openTimer);
       holdOpen();
       if (lane.getAttribute("aria-expanded") !== "true") {
         closePops();
@@ -2690,16 +2819,34 @@ function wireCalendar() {
       }
       return;
     }
-    const block = e.target.closest(".sch-show");
-    if (!block) return;
+    const target = hoverable(e.target);
+    if (!target) return;
     // While the contenders are open they are the thing being read.
     if ($("calRivals").hidden === false) return;
-    holdOpen();
-    if ($("calPreview").dataset.key !== block.dataset.key || $("calPreview").hidden) openCardPop(block);
+    const showing = !pop.hidden && pop.dataset.key === keyOf(target);
+    if (showing) {
+      holdOpen();
+      return;
+    }
+    clearTimeout(openTimer);
+    openTimer = setTimeout(() => {
+      holdOpen();
+      if (target.isConnected) (target.classList.contains("sch-leg") ? openLegPop : openCardPop)(target);
+    }, OPEN_AFTER_MS);
   });
-  wrap.addEventListener("pointerleave", closeSoon);
-  $("calPreview").addEventListener("pointerenter", holdOpen);
-  $("calPreview").addEventListener("pointerleave", closeSoon);
+  wrap.addEventListener("pointerout", (e) => {
+    const lane = e.target.closest(".sch-rivals");
+    if (lane && !(e.relatedTarget && lane.contains(e.relatedTarget))) {
+      closeSoon();
+      return;
+    }
+    const target = hoverable(e.target);
+    if (!target || (e.relatedTarget && target.contains(e.relatedTarget))) return;
+    clearTimeout(openTimer);
+    if (!pop.hidden) closeSoon();
+  });
+  pop.addEventListener("pointerenter", holdOpen);
+  pop.addEventListener("pointerleave", closeSoon);
   $("calRivals").addEventListener("pointerenter", holdOpen);
   $("calRivals").addEventListener("pointerleave", closeSoon);
 
@@ -2725,7 +2872,10 @@ function wireCalendar() {
 
   // A popover is placed once, against where the card was; scrolling the
   // calendar under it would leave it pointing at nothing.
-  wrap.addEventListener("scroll", closePops);
+  wrap.addEventListener("scroll", () => {
+    clearTimeout(openTimer);
+    closePops();
+  });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
     const inPop = document.activeElement && document.activeElement.closest(".cal-pop");
@@ -2888,7 +3038,7 @@ function dragOwn(e, el) {
   const x0 = e.clientX;
   const y0 = e.clientY;
   let moved = false;
-  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  state.drag = holdLayout(ov);
   const move = (ev) => {
     if (!moved && Math.hypot(ev.clientX - x0, ev.clientY - y0) < 4) return;
     moved = true;
@@ -2963,6 +3113,13 @@ function suppressClick() {
 
 function wireDays() {
   const host = $("schedule");
+  host.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-night]")) return;
+    state.nightOpen = !state.nightOpen;
+    savePrefs();
+    redraft();
+    host.querySelector("[data-night]").focus();
+  });
   host.addEventListener("pointerdown", (e) => {
     if (e.button !== 0) return;
     const own = e.target.closest(".sch-own[data-own]");
@@ -3416,8 +3573,8 @@ async function loadPool() {
   rebuild();
 }
 
-/* What the pool holds besides the focused festival, and what it had to leave
- * out: a festival dropped for distance is named, never silently missing. */
+/* A festival leading the trip whose programme is not out yet. What else the
+ * pool holds, and what it left out, is the festivals chip's to say. */
 function renderPoolNote() {
   const host = $("poolNote");
   const lines = [];
@@ -3427,28 +3584,6 @@ function renderPoolNote() {
       `<p class="pool-line pool-line--wait" data-i18n-slot="pool.noProgramme">` +
         `${escapeHtml(t("pool.noProgramme", { festival: festivalName(focus.festival) }))}</p>`
     );
-  }
-  const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
-  for (const r of state.reach) {
-    if (r.verdict === "focus") continue;
-    const other = r.edition.festival;
-    const name = festivalName(other);
-    if (r.verdict === "day-trip" && r.edition.entry.dataUrl) {
-      lines.push(
-        `<p class="pool-line pool-line--also" data-i18n-slot="pool.also">` +
-          `${escapeHtml(t("pool.also", { festival: name, km: km(r.km) }))}</p>`
-      );
-    } else if (r.verdict === "partly") {
-      lines.push(
-        `<p class="pool-line pool-line--partly" data-i18n-slot="pool.partly">` +
-          `${escapeHtml(t("pool.partly", { festival: name, km: km(r.km) }))}</p>`
-      );
-    } else if (r.verdict === "out") {
-      lines.push(
-        `<p class="pool-line pool-line--out" data-i18n-slot="pool.out">` +
-          `${escapeHtml(t("pool.out", { festival: name, city: festivalCity(focus.festival), km: km(r.km ?? 0) }))}</p>`
-      );
-    }
   }
   host.innerHTML = lines.join("");
   host.hidden = !lines.length;
@@ -3564,7 +3699,7 @@ function flightFare(which, day) {
       )}</span>`,
     ].filter(Boolean);
     return (
-      `<a class="flight-fare" href="${escapeHtml(link.url)}" target="_blank" rel="noopener sponsored" title="${escapeHtml(t("flight.recent"))}">` +
+      `<a class="flight-fare" href="${escapeHtml(link.url)}" target="_blank" rel="noopener sponsored" data-tip="${escapeHtml(t("flight.recent"))}">` +
       parts.join(`<span class="flight-dot" aria-hidden="true">·</span>`) +
       `<span class="flight-partner">${escapeHtml(link.partner)}</span></a>`
     );
@@ -3854,6 +3989,7 @@ async function boot() {
 
   wireBoard();
   wireCalendar();
+  wireTips();
   wireBlockers();
   wireDays();
   wireSearch();

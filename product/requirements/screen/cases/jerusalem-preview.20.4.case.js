@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemAllDays, jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
+const { jerusalemAllDays, jerusalemReady, jerusalemStarred, openCard } = require("../../shared/case-helpers");
 
 // A show with more than one night, so the nights list has something to say and
 // the rarity pill reads "1 of 3" rather than "only night".
@@ -12,8 +12,7 @@ module.exports = {
   localStorage: { ...jerusalemStarred(["yolo"]), ...jerusalemAllDays() },
   ready: jerusalemReady,
   async capture(page, t) {
-    await page.hover(FAVOURITE);
-    await settle(page);
+    await openCard(page, FAVOURITE);
     return t.unionClip([FAVOURITE, "#calPreview"], 8);
   },
 };

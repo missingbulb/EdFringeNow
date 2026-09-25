@@ -24,6 +24,8 @@ module.exports = {
     await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     await close();
+    // Off the fare, whose own label would otherwise open over the picture.
+    await page.mouse.move(0, 0);
     frames.push(await strip());
     return t.stitchV(frames);
   },

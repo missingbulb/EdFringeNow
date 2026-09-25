@@ -178,7 +178,7 @@ function way(end, flight, frac, travel) {
   return (
     `<button type="button" class="tl-way tl-way--${end}${travel.settled ? "" : " is-unsettled"}"` +
     ` data-origin="${travel.settled ? "card" : "ask"}" data-flight="${flight}"` +
-    ` aria-label="${escapeHtml(travel.tip)}" title="${escapeHtml(travel.tip)}"` +
+    ` aria-label="${escapeHtml(travel.tip)}" data-tip="${escapeHtml(travel.tip)}"` +
     ` style="inset-inline-start:${pct(frac)}">${travel.html}</button>`
   );
 }

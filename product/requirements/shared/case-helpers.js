@@ -274,6 +274,33 @@ async function openDrawer(page) {
   await settle(page);
 }
 
+/* Rest the pointer on a calendar card until its popup opens: the popup waits
+ * for the pointer to rest, so a bare hover captures the calendar without it. */
+async function openCard(page, block) {
+  await (typeof block === "string" ? page.locator(block) : block).hover();
+  await page.waitForSelector("#calPreview:not([hidden])");
+  await settle(page);
+}
+
+/* The first travel leg the pointer can actually rest on (a stacked card may
+ * cover a short one), marked so a case can name it. */
+async function reachableLeg(page, slot = "leg.travel") {
+  const found = await page.evaluate((slot) => {
+    for (const leg of document.querySelectorAll(`#schedule .sch-leg[data-i18n-slot="${slot}"]`)) {
+      leg.scrollIntoView({ block: "center" });
+      const box = leg.getBoundingClientRect();
+      const hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+      if (hit && leg.contains(hit)) {
+        leg.dataset.probe = "leg";
+        return true;
+      }
+    }
+    return false;
+  }, slot);
+  if (!found) throw new Error(`no reachable ${slot} leg on the calendar`);
+  return '[data-probe="leg"]';
+}
+
 /* Open a contested hour's list the way a pointer does: by resting on the lane
  * of rivals beside its card. Scrolled into view first — the pointer is moved in
  * viewport coordinates, and a card below the fold would otherwise be hovered at
@@ -657,6 +684,8 @@ module.exports = {
   JERUSALEM,
   JERUSALEM_EDITION,
   openDrawer,
+  openCard,
+  reachableLeg,
   openOthers,
   JERUSALEM_STARRED,
   nowReady,
