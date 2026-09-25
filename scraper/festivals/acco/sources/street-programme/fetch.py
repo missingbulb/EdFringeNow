@@ -29,7 +29,7 @@ FESTIVAL_DIR = os.path.dirname(os.path.dirname(HERE))
 SOURCE_ID = "street-programme"
 # Bumped when the shape of programme.json changes, so a manifest says which
 # shape its folder holds.
-FETCHER_VERSION = 1
+FETCHER_VERSION = 2
 PAGE = "https://akko-festival-shows.vercel.app"
 
 
@@ -37,13 +37,13 @@ def main():
     args = common.parse_args(__doc__)
     festival = registry.load(FESTIVAL_DIR)
     edition = registry.edition(festival, args.edition)
-    tokens = page_blocks.blocks(common.get(PAGE, as_json=False))
-    year, days = streetparse.page_dates(tokens)
+    markup = common.get(PAGE, as_json=False)
+    year, days = streetparse.page_dates(page_blocks.blocks(markup))
     if year != int(edition["id"]):
         raise common.FetchRefused(
             "the page programmes %s, not edition %s — nothing written" % (year, edition["id"])
         )
-    raw = streetparse.programme(tokens, year, days)
+    raw = streetparse.programme(markup, PAGE, year, days)
     common.guard_dates(
         edition,
         days + [p["date"] for s in raw["sections"] for item in s["items"] for p in item["performances"]],
@@ -56,7 +56,7 @@ def main():
         fetcher="scraper/festivals/acco/sources/street-programme/fetch.py",
         fetcher_version=FETCHER_VERSION,
         urls=[PAGE],
-        notes="Cards grouped under the page's own zone headings; genre lines untranslated.",
+        notes="Cards grouped under the page's own zone headings; chips, blurbs and credits untranslated.",
     )
     items = [item for s in raw["sections"] for item in s["items"]]
     print("%d items, %d performances, %d theatre posters" % (

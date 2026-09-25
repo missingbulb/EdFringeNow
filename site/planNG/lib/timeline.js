@@ -68,6 +68,40 @@ export function timelineBars(registry, span) {
   return bars.sort((a, b) => a.start - b.start || a.festival.id.localeCompare(b.festival.id));
 }
 
+/**
+ * The bars bunched by city: every edition in one city whose runs meet (or come
+ * within `joinDays` of each other) is one pill, so a city holding seven
+ * festivals at once costs the strip one row, not seven.
+ *
+ * A bunch is led by the edition with a published programme and the longest
+ * run, then the one that starts first: the one a reader most likely came for.
+ * @returns {{key, lead, bars, start, end, hasData}[]} `key` is the lead's
+ *   edition key; `bars` are the bunch's, in start order; `start`/`end` span them
+ */
+export function timelineBunches(registry, span, joinDays = 7) {
+  const join = joinDays / span.days;
+  const open = new Map();
+  const bunches = [];
+  for (const bar of timelineBars(registry, span)) {
+    const city = `${bar.festival.country}|${bar.festival.city}`;
+    const last = open.get(city);
+    if (last && bar.start <= last.end + join) {
+      last.bars.push(bar);
+      last.end = Math.max(last.end, bar.end);
+      continue;
+    }
+    const bunch = { bars: [bar], start: bar.start, end: bar.end };
+    open.set(city, bunch);
+    bunches.push(bunch);
+  }
+  return bunches.map((b) => {
+    const lead = [...b.bars].sort(
+      (x, y) => Number(y.hasData) - Number(x.hasData) || y.end - y.start - (x.end - x.start) || x.start - y.start
+    )[0];
+    return { key: lead.key, lead, bars: b.bars, start: b.start, end: b.end, hasData: b.bars.some((x) => x.hasData) };
+  });
+}
+
 /** The one spelling of "this edition of this festival" the page keys on. */
 export function editionKey(festivalId, editionId) {
   return `${festivalId}@${editionId}`;

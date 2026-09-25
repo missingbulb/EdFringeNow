@@ -175,6 +175,67 @@ async function flightsSettled(page) {
   await settle(page);
 }
 
+/* Three more of Edinburgh's August festivals beside the Fringe the fixture
+ * registry already has, none with a programme published: the registry the
+ * page is served becomes the fixture's plus these, so the Fringe's city holds
+ * four festivals. */
+const EDINBURGH_MORE = [
+  ["edinburgh-international-festival", "Edinburgh International Festival", "multi", "2026-08-07", "2026-08-30"],
+  ["edinburgh-book-festival", "Edinburgh International Book Festival", "multi", "2026-08-15", "2026-08-30"],
+  ["edinburgh-film-festival", "Edinburgh International Film Festival", "film", "2026-08-13", "2026-08-19"],
+].map(([id, name, kind, firstDate, lastDate]) => ({
+  id,
+  name,
+  nameLocal: null,
+  city: "Edinburgh",
+  country: "GB",
+  lat: 55.9533,
+  lng: -3.1883,
+  timezone: "Europe/London",
+  lang: "en",
+  dir: "ltr",
+  kind,
+  site: "https://example.org",
+  editions: [{ id: "2026", ordinal: null, firstDate, lastDate, format: "block", dataUrl: null }],
+}));
+
+async function routeEdinburghFestivals(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  registry.festivals.push(...EDINBURGH_MORE);
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
+}
+
+/* Say how you are getting here, as a reader does: a picture beside the trip
+ * opens the question (or, once answered, the travel card and its "change"),
+ * then where you live, then, living elsewhere, how you travel. `home` is
+ * "local" for the festival's own city, else a country code or "*". */
+async function answerTravel(page, { home, way = null }) {
+  await page.click(".tl-way--from:not([hidden]), .tl-way--to:not([hidden]) >> nth=0");
+  if (await page.isVisible('#originCard [data-origin="change"]')) await page.click('#originCard [data-origin="change"]');
+  if (home === "local") {
+    await page.click('#originCard [data-origin="local"]');
+    return;
+  }
+  await page.selectOption("#originCountry", home);
+  await page.click('#originCard [data-origin="next"]');
+  await page.click(`#originCard [data-origin="${way}"]`);
+}
+
+/* Move one end of the trip to a day, as a reader does from the keyboard: the
+ * handle, stepped a day at a time. */
+async function moveTripEnd(page, end, iso) {
+  const handle = page.locator(`.tl-handle--${end}`);
+  const now = await handle.getAttribute("data-date");
+  const days = Math.round((Date.parse(iso) - Date.parse(now)) / 86400000);
+  await handle.focus();
+  const rtl = await page.evaluate(() => getComputedStyle(document.documentElement).direction === "rtl");
+  const key = (days > 0) !== rtl ? "ArrowRight" : "ArrowLeft";
+  for (let i = 0; i < Math.abs(days); i++) await page.keyboard.press(key);
+  await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
+}
+
 // The calendar re-planned across a trip: its first and last column are the
 // trip's first and last day.
 async function calendarSpans(page, from, to) {
@@ -616,6 +677,9 @@ module.exports = {
   routeFares,
   routeWhere,
   flightsSettled,
+  answerTravel,
+  moveTripEnd,
+  routeEdinburghFestivals,
   calendarDays,
   calendarSpans,
   JERUSALEM,

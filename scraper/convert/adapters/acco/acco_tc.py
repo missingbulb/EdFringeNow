@@ -13,9 +13,10 @@ The page's own labels become our fields here:
     mark is `on-sale`, which is what the page says of it. A line with neither
     is `unknown`.
 
-The page prints no price for a ticketed show (the residents' 40 ₪ is not the
-price), so a ticketed performance's price stays unknown. A hall is named only
-on the free concerts.
+The page prints no price, running time, blurb or picture for a ticketed show,
+and names a hall only on the free concerts, so those fields are left out rather
+than set to null: the eventer source supplies them, and a null here would win
+the merge over it.
 """
 
 PROGRAMME = ("theatre-programme", "פסטיבל תיאטרון עכו")
@@ -55,9 +56,6 @@ def adapt(source):
             "title": line["title"],
             "url": raw["site"],
             "categories": [PROGRAMME[0]],
-            "blurb": None,
-            "durationMin": None,
-            "imageUrl": None,
         })
         for label in line["labels"]:
             # A label outside this list (a performer's name, a note) stays in

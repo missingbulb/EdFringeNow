@@ -1,0 +1,15 @@
+{
+ "festival": "acco",
+ "edition": "2026",
+ "source": "eventer",
+ "fetchedAt": "2026-09-25T20:56:29Z",
+ "fetcher": "scraper/festivals/acco/sources/eventer/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.eventer.co.il/user/accofestival/getData?hideExcludedEvents=true&lang=he_IL"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Eventer producer page's JSON, unauthenticated. One event per performance; totalRemaining is tickets left at fetch time, and a sold-out performance is absent (scraper/festivals/platforms/eventer.py)."
+}
