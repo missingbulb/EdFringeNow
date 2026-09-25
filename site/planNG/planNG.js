@@ -62,7 +62,8 @@ import {
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
-import { NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
+import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
+import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -179,6 +180,10 @@ const state = {
   // Empty is the honest default and means no taste stated at all, which is not
   // the same as having chosen every kind — see MAX_OFF_INTEREST_PER_DAY.
   interests: new Set(),
+  // Who is coming, and which questions the reader has answered themselves:
+  // every other one takes the answer who is coming suggests (lib/party.js).
+  party: null,        // { type, ages } or null: nobody said yet
+  answered: new Set(), // "pace" | "interests" | "food" | "dayEnd"
   // The filters, which unlike a kind drop shows from the draft outright:
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
@@ -336,6 +341,8 @@ function savePrefs() {
     interests: [...state.interests],
     festivalsOut: [...state.festivalsOut],
     tags: Object.fromEntries(state.tags),
+    party: state.party,
+    answered: [...state.answered],
   });
 }
 
@@ -365,6 +372,10 @@ function restorePrefs() {
   // category slug; it names no shared kind and is dropped.
   if (Array.isArray(saved.interests)) state.interests = new Set(saved.interests.filter((g) => GENRES.includes(g)));
   if (Array.isArray(saved.festivalsOut)) state.festivalsOut = new Set(saved.festivalsOut);
+  if (saved.party && PARTIES.includes(saved.party.type)) {
+    state.party = { type: saved.party.type, ages: (saved.party.ages || []).filter((n) => AGES.includes(n)) };
+  }
+  if (Array.isArray(saved.answered)) state.answered = new Set(saved.answered);
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
@@ -715,10 +726,12 @@ const GENRE_KEY = {
 function questionHtml(id, askKey, answer, body) {
   const open = state.openChip === id;
   return (
-    `<section class="pref${open ? " is-open" : ""}" data-q="${id}">` +
+    `<section class="pref${open ? " is-open" : ""}${isSuggested(id) ? " is-suggested" : ""}" data-q="${id}">` +
     `<button type="button" class="pref-chip" data-open="${id}" aria-expanded="${open}"` +
     ` aria-controls="panel-${id}" aria-haspopup="true">` +
-    `<span class="pref-ask">${escapeHtml(t(askKey))}</span>` +
+    `<span class="pref-ask">${escapeHtml(t(askKey))}` +
+    `<span class="pref-suggested" role="img" aria-label="${escapeHtml(t("prefs.suggested"))}"` +
+    ` title="${escapeHtml(t("prefs.suggested"))}">✨</span></span>` +
     `<span class="pref-answer">${answer}</span>` +
     `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
     `<div class="pref-panel" id="panel-${id}" role="group" aria-label="${escapeHtml(t(askKey))}"` +
@@ -919,11 +932,70 @@ function foodChipAnswer() {
 }
 
 /** Build the whole row. Called once the programme is in, on every answer, and on retranslation. */
+const PARTY_META = {
+  solo: { emoji: "\u{1F392}", key: "prefs.who.solo" },
+  couple: { emoji: "\u{1F377}", key: "prefs.who.couple" },
+  family: { emoji: "\u{1F9D2}", key: "prefs.who.family" },
+  group: { emoji: "\u{1F37A}", key: "prefs.who.group" },
+};
+
+// The questions who is coming answers for the reader until they answer
+// themselves; the evening's end is one too, though it is a line on the
+// calendar rather than a chip.
+const SUGGESTED = ["pace", "interests", "food"];
+const isSuggested = (q) => Boolean(state.party) && SUGGESTED.includes(q) && !state.answered.has(q);
+
+function whoAnswer() {
+  if (!state.party) return answerHtml("\u{1F4DD}", t("prefs.who.unset"));
+  const meta = PARTY_META[state.party.type];
+  return answerHtml(meta.emoji, t(meta.key));
+}
+
+function whoHtml() {
+  const party = state.party || {};
+  const ages =
+    party.type === "family"
+      ? `<div class="pref-ages"><span class="pref-ages-label">${escapeHtml(t("prefs.who.ages"))}</span>` +
+        AGES.map(
+          (n) =>
+            `<button type="button" class="pref-age${(party.ages || []).includes(n) ? " is-on" : ""}"` +
+            ` data-age="${n}" aria-pressed="${(party.ages || []).includes(n)}">${n}</button>`
+        ).join("") +
+        `</div>`
+      : "";
+  return (
+    `<div class="pref-answers">` +
+    PARTIES.map((id) => pickHtml("who", id, PARTY_META[id].emoji, escapeHtml(t(PARTY_META[id].key)), party.type === id)).join("") +
+    `</div>` +
+    ages
+  );
+}
+
+/* Every question the reader has not answered takes who-is-coming's suggestion. */
+function applySuggestions() {
+  const suggested = suggestedAnswers(state.party);
+  if (!suggested) return;
+  if (!state.answered.has("pace")) {
+    const step = PACE_STEPS.find((p) => p.id === suggested.pace);
+    state.maxPerDay = step.maxPerDay;
+    state.minGap = step.minGap;
+  }
+  if (!state.answered.has("interests")) state.interests = new Set(suggested.interests);
+  if (!state.answered.has("dayEnd")) state.dayEndMin = suggested.dayEndMin;
+  if (!state.answered.has("food")) {
+    const answer = FOOD_ANSWERS.find((a) => a.id === suggested.food);
+    const changed = state.meals.some((m) => m.enabled !== answer.meals.includes(m.id));
+    for (const meal of state.meals) meal.enabled = answer.meals.includes(meal.id);
+    if (changed) relayMeals();
+  }
+}
+
 function renderPrefs() {
   const pace = paceAnswer();
   const food = foodAnswer();
   const travel = MODE_META[state.mode];
   $("prefs").innerHTML =
+    questionHtml("who", "prefs.who.q", whoAnswer(), whoHtml()) +
     questionHtml("festivals", "prefs.festivals.q", festivalsAnswer(), festivalsHtml()) +
     questionHtml("interests", "prefs.interests.q", interestsAnswer(), interestsHtml()) +
     questionHtml(
@@ -965,6 +1037,7 @@ function renderPrefs() {
  * control the reader just used keeps its focus. */
 function syncPrefs() {
   const answers = {
+    who: whoAnswer(),
     festivals: festivalsAnswer(),
     interests: interestsAnswer(),
     pace: paceChipAnswer(),
@@ -973,12 +1046,14 @@ function syncPrefs() {
   };
   for (const pref of $("prefs").querySelectorAll(".pref")) {
     pref.querySelector(".pref-answer").innerHTML = answers[pref.dataset.q];
+    pref.classList.toggle("is-suggested", isSuggested(pref.dataset.q));
   }
   const lit = {
     interest: (id) => (id === "*" ? state.interests.size === 0 : state.interests.has(id)),
     pace: (id) => id === paceAnswer(),
     travel: (id) => id === state.mode,
     food: (id) => id === foodAnswer(),
+    who: (id) => Boolean(state.party) && id === state.party.type,
     variety: () => false,
   };
   for (const btn of $("prefs").querySelectorAll("[data-pick]")) {
@@ -1009,6 +1084,16 @@ function openChip(id) {
 
 /* One click, one change, one re-draft. Delegated from the row so nothing here
  * has to be re-wired when a chip is rebuilt with its new answer. */
+/* A new answer to who is coming: its suggestions land, the panel redraws its
+ * ages, and the draft follows. */
+function whoChanged() {
+  applySuggestions();
+  const panel = $("panel-who");
+  if (panel) panel.innerHTML = whoHtml();
+  syncPrefs();
+  redraftAndSave();
+}
+
 function wirePrefs() {
   const host = $("prefs");
 
@@ -1031,9 +1116,26 @@ function wirePrefs() {
       redraftAndSave();
       return;
     }
+    const age = e.target.closest("[data-age]");
+    if (age && state.party) {
+      const n = Number(age.dataset.age);
+      const ages = new Set(state.party.ages);
+      if (ages.has(n)) ages.delete(n);
+      else ages.add(n);
+      state.party.ages = AGES.filter((a) => ages.has(a));
+      whoChanged();
+      return;
+    }
     const pick = e.target.closest("[data-pick]");
     if (!pick || pick.disabled) return;
     const [question, id] = pick.dataset.pick.split(":");
+    if (question === "who") {
+      state.party = { type: id, ages: id === "family" && state.party ? state.party.ages : [] };
+      whoChanged();
+      return;
+    }
+    if (question === "interest") state.answered.add("interests");
+    if (question === "pace" || question === "food") state.answered.add(question);
     if (question === "interest") {
       // "Everything" is the absence of a taste rather than a taste of its own,
       // so it clears rather than selects.
@@ -1069,6 +1171,8 @@ function wirePrefs() {
   // place being spelled out does not re-draft the calendar under the reader.
   host.addEventListener("change", (e) => {
     const el = e.target;
+    if (el.dataset.num) state.answered.add("pace");
+    if (el.dataset.mealon || el.dataset.time) state.answered.add("food");
     if (el.dataset.num === "maxPerDay") {
       state.maxPerDay = clamp(Math.round(Number(el.value)) || 1, 1, 8);
     } else if (el.dataset.num === "minGap") {
@@ -1140,7 +1244,7 @@ const KEEP_META = {
 
 const OWN_META = {
   meal: { emoji: null },
-  personal: { emoji: "\u{1F9D8}", nameKey: "own.personal" },
+  personal: { emoji: "\u2615", nameKey: "own.personal" },
 };
 
 // A block added by a click is an hour long, and snaps to the quarter hour.
@@ -1252,6 +1356,7 @@ function planOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     allowSlot: slotRule(keptInTrip(), busyHours()),
+    assumedLengthMin: ASSUMED_LENGTH_MIN,
     maxPerDay: state.maxPerDay,
     minGapSameVenue: state.minGapSame,
     minGapDifferentVenue: state.minGap,
@@ -1745,6 +1850,7 @@ function setDayEnd(min) {
   const next = clamp(min, state.dayStartMin + 15, DAY_END_CEIL);
   if (next === state.dayEndMin) return false;
   state.dayEndMin = next;
+  state.answered.add("dayEnd");
   return true;
 }
 
@@ -3277,6 +3383,7 @@ async function boot() {
   state.starred = new Set(readStore(KEY_STARRED, []));
   restoreVerdicts();
   restorePrefs();
+  applySuggestions();
   restoreDays();
   state.origin = readStore(KEY_ORIGIN, null);
 
