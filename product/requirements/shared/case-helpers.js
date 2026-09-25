@@ -220,7 +220,7 @@ async function openDrawer(page) {
 /* Rest the pointer on a calendar card until its popup opens: the popup waits
  * for the pointer to rest, so a bare hover captures the calendar without it. */
 async function openCard(page, block) {
-  await page.hover(block);
+  await (typeof block === "string" ? page.locator(block) : block).hover();
   await page.waitForSelector("#calPreview:not([hidden])");
   await settle(page);
 }

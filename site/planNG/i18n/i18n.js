@@ -9,7 +9,7 @@
  * Markup contract, so a static string needs no JavaScript of its own:
  *   data-i18n="key"                  the element's text
  *   data-i18n-<attr>="key"           that attribute, e.g. data-i18n-placeholder,
- *                                    data-i18n-title, data-i18n-aria-label
+ *                                    data-i18n-data-tip, data-i18n-aria-label
  *   data-i18n-slot="key"             the key an element renders when the page's
  *                                    own code writes the text — applied to
  *                                    nothing, read by the pixel-budget check
@@ -148,7 +148,7 @@ function applyDocument() {
     // with the theme and cannot be a fixed data-i18n binding.
     const label = t(themeToggleKey());
     state.themeButton.setAttribute("aria-label", label);
-    state.themeButton.title = label;
+    state.themeButton.dataset.tip = label;
   }
   document.title = (state.documentTitle && state.documentTitle()) || t("doc.title");
   const description = document.querySelector('meta[name="description"]');

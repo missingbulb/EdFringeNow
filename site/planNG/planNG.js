@@ -70,6 +70,7 @@ import { animateCalendar, snapshotCalendar } from "./motion.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
+import { wireTips } from "./tip.js";
 import { showCityPhoto } from "./city-backdrop.js";
 import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
@@ -105,9 +106,9 @@ const DAY_END_CEIL = 30 * 60;
  * catalogue's own gate asks that each key be named in the page's source, which
  * is what keeps a key nothing says any more from being translated forever. */
 const MODE_META = {
-  walk: { emoji: "🚶", nameKey: "travel.walk", tipKey: "travel.walk.tip", verbKey: "travel.mode.walk" },
-  bike: { emoji: "🚲", nameKey: "travel.bike", tipKey: "travel.bike.tip", verbKey: "travel.mode.bike" },
-  car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", verbKey: "travel.mode.car" },
+  walk: { emoji: "🚶", nameKey: "travel.walk", tipKey: "travel.walk.tip", cardKey: "leg.card.walk" },
+  bike: { emoji: "🚲", nameKey: "travel.bike", tipKey: "travel.bike.tip", cardKey: "leg.card.bike" },
+  car: { emoji: "🚗", nameKey: "travel.car", tipKey: "travel.car.tip", cardKey: "leg.card.car" },
 };
 
 const KEY_STARRED = STORAGE_PREFIX + "starred";
@@ -189,6 +190,8 @@ const state = {
   ground: null,
   // Whether the calendar shows the night, 23:00 to 08:00: see nightToggle().
   nightOpen: false,
+  // Whether the reader has given a verdict yet, which drops the popup's hint.
+  verdictsLearned: false,
   // The filters, which unlike a kind drop shows from the draft outright:
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
@@ -355,6 +358,7 @@ function savePrefs() {
     answered: [...state.answered],
     ground: state.ground,
     nightOpen: state.nightOpen,
+    verdictsLearned: state.verdictsLearned,
   });
 }
 
@@ -390,6 +394,7 @@ function restorePrefs() {
   if (Array.isArray(saved.answered)) state.answered = new Set(saved.answered);
   if (GROUND.includes(saved.ground)) state.ground = saved.ground;
   state.nightOpen = saved.nightOpen === true;
+  state.verdictsLearned = saved.verdictsLearned === true;
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
@@ -550,7 +555,7 @@ function buildDayCells(performances) {
         seg.className = segClass(p);
         seg.dataset.date = p.date;
         seg.dataset.start = p.start;
-        seg.title = t(p.free ? "perf.tip.free" : "perf.tip", {
+        seg.dataset.tip = t(p.free ? "perf.tip.free" : "perf.tip", {
           day: dayAndDate(iso),
           time: p.start,
         });
@@ -573,7 +578,7 @@ function buildLanes() {
     const label = document.createElement("div");
     label.className = "lane-label";
     label.innerHTML =
-      `<span class="lane-pin" aria-hidden="true">🔒</span>` +
+      `<span class="lane-pin" aria-hidden="true">📌</span>` +
       `<span class="lane-title">${foreign(show.title, show.slug)}</span>`;
     const remove = document.createElement("button");
     remove.type = "button";
@@ -614,7 +619,7 @@ function applyVerdicts(draft) {
     const [verdictClass, verdictKey, verdictMark] = rejected
       ? ["st-dates st-no", "lane.rejected", "⊘"]
       : state.locked.has(slug)
-        ? ["st-plan st-in", "lane.locked", "🔒"]
+        ? ["st-plan st-in", "lane.locked", "📌"]
         : scheduled
           ? ["st-plan st-in", "lane.scheduled", "✓"]
           : crowded.has(slug)
@@ -726,7 +731,7 @@ function foodAnswer() {
 const pickHtml = (question, id, emoji, label, on, { disabled = false, tip = "" } = {}) =>
   `<button type="button" class="pref-pick${on ? " is-on" : ""}" data-pick="${question}:${id}"` +
   ` aria-pressed="${on}"${disabled ? " disabled" : ""}` +
-  `${tip ? ` title="${escapeHtml(tip)}"` : ""}>` +
+  `${tip ? ` data-tip="${escapeHtml(tip)}"` : ""}>` +
   `<span class="pref-ico" aria-hidden="true">${emoji}</span>` +
   `<span class="pref-word">${label}</span></button>`;
 
@@ -765,7 +770,7 @@ function questionHtml(id, askKey, answer, body) {
     ` aria-controls="panel-${id}" aria-haspopup="true">` +
     `<span class="pref-ask">${escapeHtml(t(askKey))}` +
     `<span class="pref-suggested" role="img" aria-label="${escapeHtml(t("prefs.suggested"))}"` +
-    ` title="${escapeHtml(t("prefs.suggested"))}">✨</span></span>` +
+    ` data-tip="${escapeHtml(t("prefs.suggested"))}">✨</span></span>` +
     `<span class="pref-answer">${answer}</span>` +
     `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
     `<div class="pref-panel" id="panel-${id}" role="group" aria-label="${escapeHtml(t(askKey))}"` +
@@ -1758,7 +1763,7 @@ function nightToggle(draft) {
   btn.setAttribute("aria-expanded", String(state.nightOpen));
   const label = t(state.nightOpen ? "night.hide" : "night.show");
   btn.setAttribute("aria-label", label);
-  btn.title = label;
+  btn.dataset.tip = label;
   btn.innerHTML =
     `<span class="sch-night-sign" aria-hidden="true">${state.nightOpen ? "\u2212" : "+"}</span>` +
     (hidden ? `<span class="sch-night-count">${hidden}</span>` : "");
@@ -2131,7 +2136,7 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
     (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName, slot.slug)}</span>` : "") +
     `</span></a>` +
     // The one thing a card's face says beyond the show itself.
-    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
+    (locked ? `<span class="sch-lock" aria-hidden="true">📌</span>` : "");
   wrap.appendChild(block);
 
   if (slot.contenders.length) {
@@ -2166,13 +2171,18 @@ function buildTravelLeg(a, b, top, bottom) {
   const meta = MODE_META[state.mode];
   const km1 = (km) =>
     new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(km);
+  // The leg's face is a glance (minutes, distance, time to spare); the card it
+  // opens on a rest of the pointer says the same in a sentence.
+  const venue = (slot) => foreign(slot.venueName || "", slot.slug);
   let text;
-  let title;
   let key;
+  let card;
+  let spoken;
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     key = "leg.sameVenue";
     text = t(key, { gap: gapMin });
-    title = t("leg.sameVenue.tip", { venue: a.venueName || "", gap: gapMin });
+    card = tHtml("leg.card.same", { gap: gapMin }, { venue: venue(a) });
+    spoken = t("leg.card.same", { gap: gapMin, venue: a.venueName || "" });
   } else {
     const km = distanceKm({ lat: a.venueLat, lng: a.venueLng }, { lat: b.venueLat, lng: b.venueLng });
     const mins = travelMinutes(
@@ -2183,7 +2193,8 @@ function buildTravelLeg(a, b, top, bottom) {
     if (km == null || mins == null) {
       key = "leg.nearby";
       text = t(key, { gap: gapMin });
-      title = t("leg.unknown.tip");
+      card = escapeHtml(t("leg.card.unknown"));
+      spoken = t("leg.card.unknown");
     } else {
       const spare = Math.round(gapMin - mins);
       key = "leg.travel";
@@ -2192,16 +2203,23 @@ function buildTravelLeg(a, b, top, bottom) {
         km: km1(km),
         spare: `${spare >= 0 ? "+" : ""}${spare}`,
       });
-      title = t("leg.travel.tip", {
-        minutes: Math.round(mins),
-        mode: t(meta.verbKey),
-        km: km1(km),
-        gap: gapMin,
-        spare,
-      });
+      const trip = { minutes: Math.round(mins) };
+      const margin = spare >= 0 ? t("leg.card.spare", { km: km1(km), spare }) : t("leg.card.late", { km: km1(km), late: -spare });
+      card =
+        `<strong class="leg-card-trip">${escapeHtml(t(meta.cardKey, trip))}</strong>` +
+        `<span>${tHtml("leg.card.from", {}, { venue: venue(a) })}</span>` +
+        `<span>${tHtml("leg.card.to", {}, { venue: venue(b) })}</span>` +
+        `<span class="leg-card-margin">${escapeHtml(margin)}</span>`;
+      spoken = [
+        t(meta.cardKey, trip),
+        t("leg.card.from", { venue: a.venueName || "" }),
+        t("leg.card.to", { venue: b.venueName || "" }),
+        margin,
+      ].join(" ");
     }
   }
-  leg.title = title;
+  leg.dataset.card = `<span class="leg-card-emoji" aria-hidden="true">${meta.emoji}</span><span class="leg-card-words">${card}</span>`;
+  leg.setAttribute("aria-label", spoken);
   leg.dataset.i18nSlot = key;
   leg.innerHTML =
     `<span class="leg-emoji" aria-hidden="true">${meta.emoji}</span>` +
@@ -2270,6 +2288,29 @@ function placeBeside(pop, block) {
   pop.style.top = `${Math.round(top - host.top)}px`;
 }
 
+/* The popup's hint stays until the reader has used a verdict once. A reader
+ * with verdicts from before the hint existed has found the buttons already. */
+function verdictsLearned() {
+  return (
+    state.verdictsLearned ||
+    state.locked.size > 0 ||
+    state.noTime.size > 0 ||
+    state.noShow.size > 0 ||
+    state.starred.size > 0
+  );
+}
+
+/* The travel between two shows, said in a sentence: the same popup a show
+ * opens, holding only that. */
+function openLegPop(leg) {
+  const pop = $("calPreview");
+  delete pop.dataset.slug;
+  pop.dataset.key = `leg:${leg.dataset.after}`;
+  pop.classList.add("cal-pop--leg");
+  pop.innerHTML = `<p class="leg-card">${leg.dataset.card}</p>`;
+  placeBeside(pop, leg);
+}
+
 /* Everything the page has to say about one card, in one place: its picture,
  * where and when, a few lines about it, how few nights its show has — which is the reason it holds the hour — every night it plays,
  * and the four answers. None of it is on the card's own face, so a calendar at
@@ -2306,17 +2347,16 @@ function openCardPop(block) {
   const locked = state.locked.get(slug) === key;
   const favourite = state.starred.has(slug);
   const freedom = (state.draft.pool.get(slug) || show.performances).length;
+  // Pictures only: the page's own label names each one on a rest of the pointer.
   const verdict = (kind, vKey, mark, on) => {
     const label = escapeHtml(t(vKey));
     return (
       `<button type="button" class="vb vb--${kind}${on ? " is-on" : ""}" data-verdict="${kind}"` +
-      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-title="${vKey}"` +
-      ` aria-label="${label}" title="${label}">` +
-      `<span class="vb-mark" aria-hidden="true">${mark}</span>` +
-      `<span class="vb-word">${label}</span></button>`
+      ` aria-pressed="${on}" data-i18n-aria-label="${vKey}" data-i18n-data-tip="${vKey}"` +
+      ` aria-label="${label}" data-tip="${label}">` +
+      `<span class="vb-mark" aria-hidden="true">${mark}</span></button>`
     );
   };
-
   const [date, start] = key.split("T");
   const perf = show.performances.find((p) => p.date === date && p.start === start);
   const venue = (perf && state.venues.get(perf.venue)) || null;
@@ -2324,7 +2364,19 @@ function openCardPop(block) {
   const where = [venueName && foreign(venueName, show.slug), escapeHtml(`${dayAndDate(date)} · ${start}`)]
     .filter(Boolean)
     .join(" · ");
+  pop.classList.remove("cal-pop--leg");
   pop.innerHTML =
+    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
+    ` data-i18n-aria-label="verdict.groupLabel">` +
+    verdict("lock", "verdict.lock", "📌", locked) +
+    verdict("favourite", "verdict.favourite", "❤️", favourite) +
+    verdict("noTime", "verdict.noTime", "🔄", false) +
+    verdict("noShow", "verdict.noShow", "👎", false) +
+    `</div>` +
+    (verdictsLearned()
+      ? ""
+      : `<p class="pop-hint"><span aria-hidden="true">💡</span> ` +
+        `<span data-i18n="verdict.hint">${escapeHtml(t("verdict.hint"))}</span></p>`) +
     popArtHtml(show) +
     `<p class="pop-title">${foreign(show.title, show.slug)}</p>` +
     `<p class="pop-where">${where}</p>` +
@@ -2336,14 +2388,7 @@ function openCardPop(block) {
     `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
     ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
     `${escapeHtml(rarityText(freedom))}</span></p>` +
-    `<ul class="pop-nights">${nights}</ul>` +
-    `<div class="pop-verdicts" role="group" aria-label="${escapeHtml(t("verdict.groupLabel"))}"` +
-    ` data-i18n-aria-label="verdict.groupLabel">` +
-    verdict("lock", "verdict.lock", "🔒", locked) +
-    verdict("favourite", "verdict.favourite", "★", favourite) +
-    verdict("noTime", "verdict.noTime", "✕", false) +
-    verdict("noShow", "verdict.noShow", "⊘", false) +
-    `</div>`;
+    `<ul class="pop-nights">${nights}</ul>`;
   const img = pop.querySelector(".pop-art img");
   if (img) {
     img.addEventListener(
@@ -2637,6 +2682,10 @@ function wireCalendar() {
     const verdictBtn = e.target.closest("[data-verdict]");
     if (verdictBtn) {
       const pop = $("calPreview");
+      if (!state.verdictsLearned) {
+        state.verdictsLearned = true;
+        savePrefs();
+      }
       applyVerdict(verdictBtn.dataset.verdict, pop.dataset.slug, pop.dataset.key);
       return;
     }
@@ -2659,29 +2708,51 @@ function wireCalendar() {
     if (!e.target.closest(".cal-pop")) closePops();
   });
 
-  // The popup holds buttons, so it cannot close the instant the pointer leaves
-  // the card — it has to survive the travel between the two.
+  // A pointer has to rest on a card before its popup opens, so crossing the
+  // calendar on the way somewhere else opens nothing. Once open, the popup
+  // holds buttons, so it survives the short trip from the card into it, and
+  // closes once the pointer is on neither.
+  const OPEN_AFTER_MS = 500;
+  const CLOSE_AFTER_MS = 220;
+  let openTimer = null;
   let closeTimer = null;
+  const pop = $("calPreview");
   const holdOpen = () => clearTimeout(closeTimer);
   const closeSoon = () => {
     clearTimeout(closeTimer);
     closeTimer = setTimeout(() => {
-      $("calPreview").hidden = true;
-    }, 220);
+      pop.hidden = true;
+    }, CLOSE_AFTER_MS);
   };
+  const keyOf = (target) =>
+    target.classList.contains("sch-leg") ? `leg:${target.dataset.after}` : target.dataset.key;
+  const hoverable = (el) => el.closest(".sch-show, .sch-leg[data-card]");
 
   wrap.addEventListener("pointerover", (e) => {
     if (e.pointerType === "touch") return;
-    const block = e.target.closest(".sch-show");
-    if (!block) return;
+    const target = hoverable(e.target);
+    if (!target) return;
     // While the contenders are open they are the thing being read.
     if ($("calRivals").hidden === false) return;
-    holdOpen();
-    if ($("calPreview").dataset.key !== block.dataset.key || $("calPreview").hidden) openCardPop(block);
+    const showing = !pop.hidden && pop.dataset.key === keyOf(target);
+    if (showing) {
+      holdOpen();
+      return;
+    }
+    clearTimeout(openTimer);
+    openTimer = setTimeout(() => {
+      holdOpen();
+      if (target.isConnected) (target.classList.contains("sch-leg") ? openLegPop : openCardPop)(target);
+    }, OPEN_AFTER_MS);
   });
-  wrap.addEventListener("pointerleave", closeSoon);
-  $("calPreview").addEventListener("pointerenter", holdOpen);
-  $("calPreview").addEventListener("pointerleave", closeSoon);
+  wrap.addEventListener("pointerout", (e) => {
+    const target = hoverable(e.target);
+    if (!target || (e.relatedTarget && target.contains(e.relatedTarget))) return;
+    clearTimeout(openTimer);
+    if (!pop.hidden) closeSoon();
+  });
+  pop.addEventListener("pointerenter", holdOpen);
+  pop.addEventListener("pointerleave", closeSoon);
 
   // A keyboard reaches the same popup by tabbing to the card, and steps into
   // its buttons from there; Escape closes it and hands focus back.
@@ -2705,7 +2776,10 @@ function wireCalendar() {
 
   // A popover is placed once, against where the card was; scrolling the
   // calendar under it would leave it pointing at nothing.
-  wrap.addEventListener("scroll", closePops);
+  wrap.addEventListener("scroll", () => {
+    clearTimeout(openTimer);
+    closePops();
+  });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
     const inPop = document.activeElement && document.activeElement.closest(".cal-pop");
@@ -3519,7 +3593,7 @@ function flightFare(which, day) {
       )}</span>`,
     ].filter(Boolean);
     return (
-      `<a class="flight-fare" href="${escapeHtml(link.url)}" target="_blank" rel="noopener sponsored" title="${escapeHtml(t("flight.recent"))}">` +
+      `<a class="flight-fare" href="${escapeHtml(link.url)}" target="_blank" rel="noopener sponsored" data-tip="${escapeHtml(t("flight.recent"))}">` +
       parts.join(`<span class="flight-dot" aria-hidden="true">·</span>`) +
       `<span class="flight-partner">${escapeHtml(link.partner)}</span></a>`
     );
@@ -3773,6 +3847,7 @@ async function boot() {
 
   wireBoard();
   wireCalendar();
+  wireTips();
   wireBlockers();
   wireDays();
   wireSearch();

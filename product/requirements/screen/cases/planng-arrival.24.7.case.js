@@ -22,6 +22,8 @@ module.exports = {
     await page.click('.flight--out [data-origin="change"]');
     await page.selectOption("#originCountry", "GB");
     await flightsSettled(page);
+    // Off the fare, whose own label would otherwise open over the block.
+    await page.mouse.move(0, 0);
     frames.push(await block());
     return t.stitchV(frames);
   },

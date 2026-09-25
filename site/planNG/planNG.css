@@ -606,6 +606,7 @@ body.festival-page {
   border-radius: 10px 10px 0 0;
   background: color-mix(in srgb, var(--muted) 12%, var(--paper));
 }
+.pop-art:not(:first-child) { margin-top: 0; border-radius: 0; }
 .pop-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .pop-art--emoji {
   aspect-ratio: 3 / 1;
@@ -665,25 +666,50 @@ body.festival-page {
   color: var(--violet-dark);
 }
 
-/* The four answers, named rather than left as marks: the popup has the room
-   the card did not, and a row of bare glyphs is a guess. */
+/* The four answers lead the popup, as pictures: the page's own label names
+   each one on a rest of the pointer, and the hint below them names all four
+   until the reader has used one. */
 .pop-verdicts {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
-  margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
 }
 .vb {
-  display: flex; align-items: center; gap: 5px;
-  padding: 4px 6px; min-width: 0;
-  font: inherit; font-size: 0.62rem; text-align: start;
-  border: 1px solid var(--line); border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  height: 34px; padding: 0;
+  font: inherit; font-size: 1.05rem; line-height: 1;
+  border: 1px solid var(--line); border-radius: 9px;
   background: var(--paper); color: var(--ink); cursor: pointer;
 }
-.vb-mark { flex: 0 0 auto; font-size: 0.68rem; line-height: 1; }
-.vb-word { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.vb:hover { border-color: var(--violet); }
+/* An emoji face first, so a heart is drawn red rather than as a text glyph. */
+.vb-mark { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", emoji, sans-serif; }
+.vb:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, var(--paper)); }
 .vb:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
 .vb.is-on { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, var(--paper)); }
-.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); color: var(--bad, #c2410c); }
+.vb--noTime:hover, .vb--noShow:hover { border-color: var(--bad, #c2410c); background: color-mix(in srgb, var(--bad, #c2410c) 8%, var(--paper)); }
+.pop-hint {
+  margin: 0 0 8px; padding: 6px 8px; border-radius: 7px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: color-mix(in srgb, var(--violet) 10%, var(--paper)); color: var(--ink);
+}
+
+/* The travel between two shows, in a sentence. */
+.cal-pop--preview.cal-pop--leg { width: 240px; }
+.leg-card { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: 0.72rem; line-height: 1.4; }
+.leg-card-emoji { font-size: 1.1rem; line-height: 1; }
+.leg-card-words { display: flex; flex-direction: column; gap: 1px; }
+.leg-card-trip { font-weight: 700; margin-bottom: 2px; }
+.leg-card-margin { margin-top: 3px; }
+.leg-card-margin { color: var(--muted); }
+
+/* The page's one tooltip (tip.js), in place of the browser's. */
+.tip {
+  position: fixed; z-index: 60; max-width: 240px; pointer-events: none;
+  padding: 4px 8px; border-radius: 6px;
+  font-size: 0.66rem; line-height: 1.35;
+  background: var(--ink); color: var(--paper);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+}
+.tip[hidden] { display: none; }
 
 /* --- the drawer ----------------------------------------------------------- */
 /* The grid and the programme, one fold back. Closed it is a single line; open

@@ -16,6 +16,8 @@ module.exports = {
     };
     const folded = await frame();
     await page.click("[data-night]");
+    // Off the button, whose own label would otherwise open over the days.
+    await page.mouse.move(0, 0);
     await settle(page);
     return t.animate([folded, await frame()]);
   },
