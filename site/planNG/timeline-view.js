@@ -15,6 +15,13 @@ const ROW_PX = 30;
 const LABEL_GAP_PX = 10;
 const LATE_FRAC = 0.72;
 const BAR_MIN_PX = 10;
+// A holiday orb is sized for the eye, not the strip's scale: a one-day
+// holiday is a dot, and a longer break grows more slowly than its days.
+const ORB_PX = 10;
+const ORB_GROWTH_PX = 6;
+const orbPx = (days) => Math.round(ORB_PX + ORB_GROWTH_PX * Math.sqrt(days - 1));
+const CHEER_MS = 1100;
+let cheerUntil = 0;
 
 /**
  * @param {HTMLElement} host
@@ -27,8 +34,19 @@ const BAR_MIN_PX = 10;
  * @param {(festival: object, edition: object) => string} o.label a bar's words
  * @param {(iso: string) => string} o.monthLabel
  * @param {(iso: string) => string} o.dayText a day as a handle announces it
+ * @param {(days: number) => string} o.lengthText the trip's length, in words
+ * @param {string} o.todayText the word on today's sign
+ * @param {(festival: object, edition: object, hasData: boolean) => string} o.festivalCard
+ *   the card a festival shows when pointed at, as HTML
+ * @param {{from: string, to: string, days: number}[]} [o.breaks] the breaks the
+ *   reader's public holidays make inside the span, an orb each on the months
+ * @param {(brk: object) => string} [o.breakCard] the card an orb shows, as HTML
  */
-export function renderTimeline(host, { registry, span, todayISO, focusKey, period, label, monthLabel, dayText }) {
+export function renderTimeline(host, o) {
+  const { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, lengthText, todayText, festivalCard } = o;
+  const { breaks = [], breakCard } = o;
+  const cards = [];
+  const card = (html) => cards.push(html) - 1;
   const bars = timelineBars(registry, span);
   const months = monthTicks(span)
     .map(
@@ -41,9 +59,22 @@ export function renderTimeline(host, { registry, span, todayISO, focusKey, perio
   const band = shown
     ? `<span class="tl-period" aria-hidden="true" style="${bandStyle(span, period)}"></span>` +
       handle("from", "trip.from", period.from, tripEdges(span, period).start, dayText) +
-      handle("to", "trip.to", period.to, tripEdges(span, period).end, dayText)
+      handle("to", "trip.to", period.to, tripEdges(span, period).end, dayText) +
+      `<span class="tl-length" style="${lengthStyle(span, period)}">${escapeHtml(lengthText(daysBetween(period)))}</span>`
     : "";
-  const today = `<span class="tl-today" aria-hidden="true" style="inset-inline-start:${pct(dayFrac(span, todayISO))}"></span>`;
+  // Today: a small figure standing on the months, holding up a sign.
+  const today =
+    `<span class="tl-today${Date.now() < cheerUntil ? " is-cheering" : ""}" style="inset-inline-start:${pct(dayFrac(span, todayISO) + 0.5 / span.days)}">` +
+    `<span class="tl-sign" data-i18n-slot="timeline.today">${escapeHtml(todayText)}</span>` +
+    `<svg class="tl-dude" viewBox="0 0 24 34" width="24" height="34" aria-hidden="true">` +
+    `<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">` +
+    `<circle cx="10" cy="6" r="3.2" fill="var(--paper)"/>` +
+    `<line x1="10" y1="9.2" x2="10" y2="21"/>` +
+    `<line class="dude-arm" x1="10" y1="12" x2="5.5" y2="18"/>` +
+    `<line x1="10" y1="12" x2="16" y2="11"/>` +
+    `<line class="dude-leg" x1="10" y1="21" x2="6.5" y2="33"/>` +
+    `<line x1="10" y1="21" x2="13.5" y2="33"/>` +
+    `</g></svg></span>`;
   const items = bars
     .map((bar) => {
       const focused = bar.key === focusKey;
@@ -56,15 +87,28 @@ export function renderTimeline(host, { registry, span, todayISO, focusKey, perio
         `<button type="button" class="tl-item${focused ? " is-focus" : ""}${bar.hasData ? "" : " is-empty"}${late ? " tl-item--late" : ""}"` +
         ` data-edition="${escapeHtml(bar.key)}" data-festival="${escapeHtml(bar.festival.id)}"` +
         ` aria-pressed="${focused}" data-span="${bar.end - bar.start}" style="${place}"` +
-        ` title="${escapeHtml(words.tip)}">` +
+        ` aria-label="${escapeHtml(words.tip)}" data-card="${card(festivalCard(bar.festival, bar.edition, bar.hasData))}">` +
         `<span class="tl-bar" aria-hidden="true"></span>` +
         `<span class="tl-label">${escapeHtml(words.name)}</span></button>`
       );
     })
     .join("");
+  const orbs = breaks
+    .map((brk) => {
+      const px = orbPx(brk.days);
+      const mid = (dayFrac(span, brk.from) + dayFrac(span, brk.to) + 1 / span.days) / 2;
+      return (
+        `<button type="button" class="tl-orb" data-from="${brk.from}" data-to="${brk.to}" data-days="${brk.days}"` +
+        ` aria-label="${escapeHtml(brk.names.join(" · "))}" data-card="${card(breakCard(brk))}"` +
+        ` style="inset-inline-start:${pct(mid)};width:${px}px;margin-inline-start:${-px / 2}px"></button>`
+      );
+    })
+    .join("");
   host.innerHTML =
-    `<div class="tl-months">${months}</div>` +
-    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${today}${items}</div>`;
+    `<div class="tl-months">${months}${orbs}${today}</div>` +
+    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${items}</div>` +
+    `<div class="tl-card" role="tooltip" hidden></div>`;
+  host._cards = cards;
   if (!bars.length) {
     host.querySelector(".tl-track").insertAdjacentHTML(
       "beforeend",
@@ -85,6 +129,13 @@ function tripEdges(span, trip) {
   };
 }
 
+const daysBetween = (trip) => Math.round((Date.parse(trip.to) - Date.parse(trip.from)) / 86400000) + 1;
+
+function lengthStyle(span, trip) {
+  const { start, end } = tripEdges(span, trip);
+  return `inset-inline-start:${pct((start + end) / 2)}`;
+}
+
 function bandStyle(span, trip) {
   const { start, end } = tripEdges(span, trip);
   return `inset-inline-start:${pct(start)};width:${pct(end - start)}`;
@@ -95,7 +146,7 @@ function handle(end, labelKey, iso, frac, dayText) {
   return (
     `<span class="tl-handle tl-handle--${end}" role="slider" tabindex="0" data-end="${end}"` +
     ` aria-label="${escapeHtml(t(labelKey))}" aria-valuetext="${escapeHtml(dayText(iso))}"` +
-    ` style="inset-inline-start:${pct(frac)}"></span>`
+    ` style="inset-inline-start:${pct(frac)}"><span class="tl-grip" aria-hidden="true"></span></span>`
   );
 }
 
@@ -107,6 +158,61 @@ export function previewTrip(host, span, trip) {
   const { start, end } = tripEdges(span, trip);
   host.querySelector(".tl-handle--from").style.insetInlineStart = pct(start);
   host.querySelector(".tl-handle--to").style.insetInlineStart = pct(end);
+  const length = host.querySelector(".tl-length");
+  if (length) length.style.insetInlineStart = pct((start + end) / 2);
+}
+
+/** Today's figure cheers: a choice was just made somewhere on the page. */
+export function cheer(host) {
+  cheerUntil = Date.now() + CHEER_MS;
+  const figure = host.querySelector(".tl-today");
+  if (!figure) return;
+  // Restarted rather than left running, so every choice gets its own cheer.
+  figure.classList.remove("is-cheering");
+  void figure.offsetWidth;
+  figure.classList.add("is-cheering");
+  setTimeout(() => {
+    if (Date.now() >= cheerUntil) host.querySelector(".tl-today")?.classList.remove("is-cheering");
+  }, CHEER_MS);
+}
+
+/**
+ * The cards the strip's festivals and holiday orbs show: one card, filled and
+ * placed beneath whatever the pointer or the keyboard is on.
+ * @param {HTMLElement} host
+ */
+export function wireTimelineCards(host) {
+  const show = (el) => {
+    const box = host.querySelector(".tl-card");
+    const html = host._cards && host._cards[Number(el.dataset.card)];
+    if (!box || html == null) return;
+    box.innerHTML = html;
+    box.hidden = false;
+    const outer = host.getBoundingClientRect();
+    const at = el.getBoundingClientRect();
+    const target = el.classList.contains("tl-item") ? el.querySelector(".tl-bar").getBoundingClientRect() : at;
+    const width = box.offsetWidth;
+    const left = Math.min(Math.max(0, target.left + target.width / 2 - outer.left - width / 2), outer.width - width);
+    box.style.left = `${left}px`;
+    box.style.top = `${at.bottom - outer.top + 6}px`;
+  };
+  const hide = () => {
+    const box = host.querySelector(".tl-card");
+    if (box) box.hidden = true;
+  };
+  host.addEventListener("pointerover", (e) => {
+    const el = e.target.closest("[data-card]");
+    if (el) show(el);
+  });
+  host.addEventListener("pointerout", (e) => {
+    const el = e.target.closest("[data-card]");
+    if (el && !el.contains(e.relatedTarget)) hide();
+  });
+  host.addEventListener("focusin", (e) => {
+    const el = e.target.closest("[data-card]");
+    if (el) show(el);
+  });
+  host.addEventListener("focusout", hide);
 }
 
 /**

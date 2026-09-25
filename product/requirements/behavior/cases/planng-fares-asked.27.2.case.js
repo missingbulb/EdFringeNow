@@ -14,6 +14,7 @@ module.exports = {
     await jerusalemReady(page);
     assert.equal(asked.length, 0, "nothing is asked before the reader says they are flying");
 
+    await page.click('.flight--out [data-origin="ask"]');
     await page.selectOption("#originCountry", "GB");
     await flightsSettled(page);
     const q = (p) => [p.get("from"), p.get("to"), p.get("date"), p.get("currency")];

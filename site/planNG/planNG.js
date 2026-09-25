@@ -65,10 +65,12 @@ import { migrateLegacy } from "./lib/migrate.js";
 import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
 import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
+import { arrivalOf } from "./lib/arrival.js";
+import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
-import { layoutRows, renderTimeline, wireTripHandles } from "./timeline-view.js";
-import { currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
+import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
+import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -145,6 +147,10 @@ const state = {
   flights: { out: null, back: null },
   reach: [],          // poolReach() for every edition overlapping the period
   origin: null,       // what the reader said about where they come from
+  asking: false,      // the origin question is open, asked from the flight blocks
+  guess: null,        // the country the reader connects from, until they say
+  // The reader's own public holidays: whose, and the file's contents once read.
+  holidays: { country: null, guessed: false, doc: null },
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
   browsePages: 1,
   poolSlugs: new Set(),
@@ -1635,6 +1641,22 @@ function renderCalendar(draft) {
   });
 
   host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
+  markColumnWidth();
+}
+
+/* A column squeezed to share the width sheds what a show's block can't
+ * afford, through plan.css's own classes and at the Fringe planner's widths
+ * (site/plan/plan.js sets the same two). */
+const COL_NARROW_PX = 78;
+const COL_TINY_PX = 56;
+function markColumnWidth() {
+  const host = $("schedule");
+  // The widest column is a full day's: an empty day is drawn as a sliver.
+  const width = Math.max(0, ...[...host.querySelectorAll(".sch-day")].map((c) => c.getBoundingClientRect().width));
+  // Drawn before it is laid out (a hidden panel): the observer below asks again.
+  if (!width) return;
+  host.classList.toggle("cols-narrow", width < COL_NARROW_PX);
+  host.classList.toggle("cols-tiny", width < COL_TINY_PX);
 }
 
 /* The hours the calendar draws.
@@ -2839,7 +2861,90 @@ function renderTimelineStrip() {
     monthLabel: (iso) =>
       monthFmt(iso.slice(5, 7) === "01" ? { month: "short", year: "numeric" } : { month: "short" }).format(dateOf(iso)),
     dayText: dayAndDate,
+    lengthText: (count) => t("trip.length", { count }),
+    todayText: t("timeline.today"),
+    festivalCard,
+    breaks: state.holidays.doc ? holidayBreaks(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
+    breakCard,
   });
+}
+
+const cardLine = (key, text, cls = "") => `<span class="tl-card-line${cls}" data-i18n-slot="${key}">${escapeHtml(text)}</span>`;
+const dateRange = (from, to) =>
+  dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(dateOf(from), dateOf(to));
+
+/* A festival's genre, as the registry's `kind` names it. */
+const GENRE_KEYS = { comedy: "genre.comedy", film: "genre.film", theatre: "genre.theatre", fringe: "genre.fringe" };
+
+/* What a festival on the strip says about itself when pointed at. */
+function festivalCard(festival, edition, hasData) {
+  const days = Math.round((dateOf(edition.lastDate) - dateOf(edition.firstDate)) / 86400000) + 1;
+  const genreKey = GENRE_KEYS[festival.kind];
+  const place = [festivalCity(festival), regionName(festival.country)].join(", ");
+  return (
+    `<strong class="tl-card-title">${escapeHtml(festivalName(festival))}</strong>` +
+    `<span class="tl-card-line">${escapeHtml(place)}${
+      genreKey ? ` · <span data-i18n-slot="${genreKey}">${escapeHtml(t(genreKey))}</span>` : ""
+    }</span>` +
+    `<span class="tl-card-line">${escapeHtml(dateRange(edition.firstDate, edition.lastDate))} · ${escapeHtml(t("trip.length", { count: days }))}</span>` +
+    cardLine(hasData ? "card.programme" : "card.noProgramme", t(hasData ? "card.programme" : "card.noProgramme"), hasData ? " is-good" : " is-muted")
+  );
+}
+
+/* What an orb says: the holidays in the break, how long a break it makes and
+ * how, and whose holidays they are. */
+function breakCard(brk) {
+  const { country, guessed } = state.holidays;
+  const names = brk.names.join(" · ");
+  const title = brk.weekend && brk.days > 1 ? t("holiday.weekend", { name: names }) : names;
+  const span = brk.from === brk.to ? dayAndDate(brk.from) : dateRange(brk.from, brk.to);
+  const length =
+    t("holiday.days", { count: brk.days }) + (brk.workdays ? ` (${t("holiday.bridge", { count: brk.workdays })})` : "");
+  const whose = guessed ? "holidays.guess" : "holidays.note";
+  return (
+    `<strong class="tl-card-title">${escapeHtml(title)}</strong>` +
+    `<span class="tl-card-line">${escapeHtml(span)} · ${escapeHtml(length)}</span>` +
+    cardLine(whose, t(whose, { country: regionName(country) }), " is-muted")
+  );
+}
+
+/* Read the holidays of whoever the reader is, as far as the page knows: a
+ * country with no file, or no country at all, marks nothing. */
+async function refreshHolidays() {
+  const home = homeCountry(state.origin, state.guess);
+  const country = home ? home.country : null;
+  if (country === state.holidays.country) {
+    if (home && home.guessed !== state.holidays.guessed) {
+      state.holidays.guessed = home.guessed;
+      if (state.registry) renderTimelineStrip();
+    }
+    return;
+  }
+  state.holidays = { country, guessed: home ? home.guessed : false, doc: null };
+  if (country) {
+    try {
+      const res = await fetch(holidaysUrl(country));
+      const doc = res.ok ? await res.json() : null;
+      if (state.holidays.country !== country) return;
+      state.holidays.doc = doc && Array.isArray(doc.holidays) ? doc : null;
+    } catch {
+      /* no file for this country: nothing marked */
+    }
+  }
+  if (state.registry) renderTimelineStrip();
+}
+
+/* The country the reader connects from, as the site's own service reads it
+ * off the connection (api/where.js): a guess the reader's answer replaces. */
+async function guessCountry() {
+  try {
+    const res = await fetch("/api/where");
+    const body = res.ok ? await res.json() : null;
+    state.guess = body && typeof body.country === "string" ? body.country : null;
+  } catch {
+    state.guess = null;
+  }
+  refreshHolidays();
 }
 
 /** The registry entry and edition a key names, or null. */
@@ -2917,11 +3022,12 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
   await loadPool();
 }
 
-/* The festival's palette is CSS (planNG.css, keyed by this attribute); its
- * language and direction are the registry's, for its name wherever the page
- * prints it. */
+/* The palette is its genre's, in CSS (planNG.css, keyed by `data-genre`);
+ * `data-festival` names the festival itself. */
 function applyTheme(festival) {
   document.documentElement.dataset.festival = festival.id;
+  if (festival.kind) document.documentElement.dataset.genre = festival.kind;
+  else delete document.documentElement.dataset.genre;
 }
 
 /* Where the shared data cache (shared/data-cache.js) reports a cache write it
@@ -3039,11 +3145,22 @@ function renderPoolNote() {
 
 // --- the trip's dates, and the flights either side ----------------------------
 
-/* A plane, drawn rather than typed, so it is the same picture in every font
- * and flips with the block it sits in. */
-const PLANE_SVG =
-  `<svg class="flight-plane" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">` +
-  `<path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>`;
+/* The ways of getting here, drawn rather than typed, so each is the same
+ * picture in every font and turns with the block it sits in. */
+const WAY_PATHS = {
+  fly: "M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z",
+  train:
+    "M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z",
+  drive:
+    "M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z",
+  local: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z",
+};
+const wayIcon = (way) =>
+  `<svg class="flight-plane way-${way}" data-way="${way}" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">` +
+  `<path fill="currentColor" d="${WAY_PATHS[way]}"/></svg>`;
+
+/* Not yet said: the three ways take turns on one spot. */
+const UNSETTLED_ICON = `<span class="arrive-icons" aria-hidden="true">${wayIcon("fly") + wayIcon("train") + wayIcon("drive")}</span>`;
 
 /* The airport a festival is flown to, from its presentation; null for a
  * festival the page has none for, which then shows no flight blocks. */
@@ -3052,22 +3169,12 @@ function destinationAirport() {
   return p ? p.region.flyTo : null;
 }
 
-/* What the flight blocks can say, from where the reader said they come from. */
+/* What the travel blocks can say: "none" for a festival with no airport to
+ * fly to, "unsettled" until the reader has said how they are getting here,
+ * else that answer. */
 function flightNeed() {
   if (!state.focus || !destinationAirport()) return "none";
-  if (!state.origin) return "unsaid";
-  if (state.origin.kind === "skipped") return "skipped";
-  const reach = originReach(state.origin, state.focus.festival);
-  return reach === "abroad" ? "abroad" : reach ? "home" : "unsaid";
-}
-
-function originPlace() {
-  const o = state.origin;
-  if (!o) return "";
-  if (o.kind === "position") return t("origin.place.position");
-  if (o.kind === "city") return o.cityName || o.city;
-  if (o.country) return regionName(o.country);
-  return t("origin.place.abroad");
+  return arrivalOf(state.origin) || "unsettled";
 }
 
 function renderTripRow() {
@@ -3091,29 +3198,30 @@ function renderTripRow() {
     flightBlock("back");
 }
 
-/* One flight block: the way out on the trip's first day, or home on its last. */
+/* One travel block: the way out on the trip's first day, or home on its last.
+ * Unsettled, the whole block asks how the reader is getting here. */
+const ARRIVE_NOTE = { local: "flight.none", drive: "arrive.drive", train: "arrive.train" };
 function flightBlock(which) {
   const need = flightNeed();
   if (need === "none") return `<div class="flight flight--${which} flight--empty" aria-hidden="true"></div>`;
   const day = which === "out" ? state.period.from : state.period.to;
   const titleKey = which === "out" ? "flight.out" : "flight.back";
   const head =
-    `<div class="flight-head">${PLANE_SVG}` +
+    `<div class="flight-head">${need === "unsettled" ? UNSETTLED_ICON : wayIcon(need)}` +
     `<span class="flight-title" data-i18n-slot="${titleKey}">${escapeHtml(t(titleKey))}</span>` +
     `<span class="flight-day">${escapeHtml(dayAndDate(day))}</span></div>`;
   const change = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.change">${escapeHtml(t("flight.change"))}</button>`;
-  let body;
-  if (need === "unsaid") {
-    body = `<p class="flight-note" data-i18n-slot="flight.ask">${escapeHtml(t("flight.ask"))}</p>`;
-  } else if (need === "skipped") {
-    body = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button>`;
-  } else if (need === "home") {
-    body =
-      `<p class="flight-note" data-i18n-slot="flight.none">${escapeHtml(t("flight.none", { place: originPlace() }))}</p>` + change;
-  } else {
-    body = flightRoute(which) + flightFare(which, day) + change;
+  if (need === "unsettled") {
+    return (
+      `<div class="flight flight--${which} flight--unsettled" data-flight="${which}" data-origin="ask" data-fares="idle">${head}` +
+      `<p class="flight-note"><button type="button" class="flight-change" data-origin="ask" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button></p></div>`
+    );
   }
-  return `<div class="flight flight--${which}" data-flight="${which}" data-fares="${state.fares[which].status}">${head}${body}</div>`;
+  const body =
+    need === "fly"
+      ? flightRoute(which) + flightFare(which, day) + change
+      : `<p class="flight-note" data-i18n-slot="${ARRIVE_NOTE[need]}">${escapeHtml(t(ARRIVE_NOTE[need]))}</p>` + change;
+  return `<div class="flight flight--${which} flight--${need}" data-flight="${which}" data-fares="${state.fares[which].status}">${head}${body}</div>`;
 }
 
 /* From where to where. The reader's airport is typed on the way out and read
@@ -3179,7 +3287,7 @@ function refreshFares() {
   const need = flightNeed();
   const home = originAirport(state.origin);
   for (const which of ["out", "back"]) {
-    if (need !== "abroad" || !home) {
+    if (need !== "fly" || !home) {
       faresAsked[which] = "";
       state.fares[which] = { status: "idle", fares: [] };
       state.flights[which] = null;
@@ -3219,22 +3327,21 @@ function regionName(code) {
   }
 }
 
-/* Asked once per browser, the first time a festival is focused: the card
- * sits above the questions, the calendar drafts regardless, and the answer
- * (or "not now") is stored so it never comes back. */
+/* Asked once per browser, and only when the reader asks from a travel block:
+ * the card opens beneath the trip's dates, the calendar drafts regardless, and
+ * the answer is stored so it never comes back. */
 function renderOriginCard() {
   const card = $("originCard");
-  const show = !state.origin && Boolean(state.focus);
+  const show = state.asking && Boolean(state.focus);
   card.hidden = !show;
   if (!show) return;
   const festival = state.focus.festival;
-  const country = regionName(festival.country);
   const abroad = ORIGIN_COUNTRIES.filter((c) => c !== festival.country)
     .map((c) => ({ code: c, name: regionName(c) }))
     .sort((a, b) => a.name.localeCompare(b.name, currentIntlLocale()));
-  const answer = (id, emoji, key, params = {}) =>
-    `<button type="button" class="pref-pick origin-pick" data-origin="${id}">` +
-    `<span class="pref-ico" aria-hidden="true">${emoji}</span>` +
+  const answer = (way, key, params = {}) =>
+    `<button type="button" class="pref-pick origin-pick" data-origin="${way}">` +
+    `<span class="pref-ico">${wayIcon(way)}</span>` +
     `<span class="pref-word" data-i18n-slot="${key}">${escapeHtml(t(key, params))}</span></button>`;
   card.innerHTML =
     `<div class="origin-head">` +
@@ -3242,11 +3349,11 @@ function renderOriginCard() {
     `<p class="origin-why" data-i18n-slot="origin.why">${escapeHtml(t("origin.why"))}</p>` +
     `</div>` +
     `<div class="origin-answers" role="group" aria-label="${escapeHtml(t("origin.q", { festival: festivalName(festival) }))}">` +
-    answer("position", "\u{1F4CD}", "origin.position") +
-    answer("city", "\u{1F3E0}", "origin.city", { city: festivalCity(festival) }) +
-    answer("country", "\u{1F686}", "origin.country", { country }) +
+    answer("local", "origin.city", { city: festivalCity(festival) }) +
+    answer("drive", "origin.drive") +
+    answer("train", "origin.train") +
     `<label class="pref-pick origin-pick origin-abroad">` +
-    `<span class="pref-ico" aria-hidden="true">\u{2708}\u{FE0F}</span>` +
+    `<span class="pref-ico">${wayIcon("fly")}</span>` +
     `<span class="pref-word" data-i18n-slot="origin.abroad">${escapeHtml(t("origin.abroad"))}</span>` +
     `<select class="opt-select origin-select" id="originCountry" aria-label="${escapeHtml(t("origin.abroad"))}">` +
     `<option value="">${escapeHtml(t("origin.abroad.pick"))}</option>` +
@@ -3254,16 +3361,17 @@ function renderOriginCard() {
     `<option value="*">${escapeHtml(t("origin.abroad.other"))}</option>` +
     `</select></label>` +
     `</div>` +
-    `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="origin.skip">${escapeHtml(t("origin.skip"))}</button>` +
-    `<p class="origin-status" id="originStatus" role="status" aria-live="polite"></p>`;
+    `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="origin.skip">${escapeHtml(t("origin.skip"))}</button>`;
 }
 
 function setOrigin(origin) {
   state.origin = origin;
+  state.asking = false;
   writeStore(KEY_ORIGIN, origin);
   renderOriginCard();
   renderTripRow();
   refreshFares();
+  refreshHolidays();
 }
 
 function wireOrigin() {
@@ -3273,42 +3381,25 @@ function wireOrigin() {
     const festival = state.focus && state.focus.festival;
     if (!festival) return;
     const kind = btn.dataset.origin;
-    if (kind === "change") {
-      // Asked again from the flight blocks: the answer given stays stored
-      // until another replaces it, so a reader who changes their mind about
-      // changing it loses nothing on a reload.
-      state.origin = null;
+    if (kind === "ask" || kind === "change") {
+      // The answer given stays stored until another replaces it, so a reader
+      // who changes their mind about changing it loses nothing.
+      state.asking = true;
       renderOriginCard();
-      renderTripRow();
-      refreshFares();
       $("originCard").scrollIntoView({ block: "nearest" });
     } else if (kind === "skip") {
-      setOrigin({ kind: "skipped" });
-    } else if (kind === "city") {
-      setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng });
-    } else if (kind === "country") {
-      setOrigin({ kind: "country", country: festival.country });
-    } else if (kind === "position") {
-      const status = $("originStatus");
-      status.textContent = t("origin.locating");
-      if (!navigator.geolocation) {
-        status.textContent = t("origin.noPosition");
-        return;
-      }
-      // Kept as a point, judged by distance, sent nowhere.
-      navigator.geolocation.getCurrentPosition(
-        (pos) => setOrigin({ kind: "position", lat: pos.coords.latitude, lng: pos.coords.longitude }),
-        () => {
-          status.textContent = t("origin.noPosition");
-        },
-        { maximumAge: 600000, timeout: 15000 }
-      );
+      state.asking = false;
+      renderOriginCard();
+    } else if (kind === "local") {
+      setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng, arrive: "local" });
+    } else if (kind === "drive" || kind === "train") {
+      setOrigin({ kind: "country", country: festival.country, arrive: kind });
     }
   });
   document.addEventListener("change", (e) => {
     if (e.target.id !== "originCountry" || !e.target.value) return;
     const code = e.target.value;
-    setOrigin(code === "*" ? { kind: "abroad" } : { kind: "abroad", country: code });
+    setOrigin(code === "*" ? { kind: "abroad", arrive: "fly" } : { kind: "abroad", country: code, arrive: "fly" });
   });
 }
 
@@ -3323,6 +3414,12 @@ function wireTrip() {
     const next = editionByKey(item.dataset.edition);
     if (next) setTrip({ ...tripForEdition(next.edition), pick: next.key }, { fresh: true });
   });
+  wireTimelineCards(year);
+  // Today's figure cheers every choice the reader makes on the page.
+  document.addEventListener("change", () => cheer(year));
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("button, [aria-pressed], [role='option']") && !e.target.closest(".tl-orb")) cheer(year);
+  });
   wireTripHandles(year, {
     span,
     trip: () => state.period,
@@ -3333,6 +3430,7 @@ function wireTrip() {
       const keyed = document.activeElement && document.activeElement.closest(".tl-handle");
       const refocus = () => keyed && year.querySelector(`.tl-handle--${moved}`)?.focus();
       const done = setTrip({ ...trip, pick: state.pick }, { fresh: true, moved });
+      cheer(year);
       refocus();
       await done;
       refocus();
@@ -3360,6 +3458,7 @@ function wireTrip() {
     syncStars();
   });
   addEventListener("resize", () => layoutRows($("timelineYear")));
+  new ResizeObserver(markColumnWidth).observe($("schedule"));
 }
 
 async function boot() {
@@ -3412,6 +3511,8 @@ async function boot() {
   applySuggestions();
   restoreDays();
   state.origin = readStore(KEY_ORIGIN, null);
+  refreshHolidays();
+  guessCountry();
 
   wireBoard();
   wireCalendar();

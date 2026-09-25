@@ -153,6 +153,17 @@ async function routeFares(page) {
   return asked;
 }
 
+/* The site's where-from service, answering as Cloudflare's edge would for a
+ * visitor connecting from `country` (null: an edge that could not tell). */
+async function routeWhere(page, country) {
+  const { handleWhere } = await import("../../../api/where.js");
+  await page.route("**/api/where", async (route) => {
+    const request = Object.assign(new Request(route.request().url()), { cf: country ? { country } : {} });
+    const res = handleWhere(request);
+    await route.fulfill({ status: res.status, contentType: "application/json", body: await res.text() });
+  });
+}
+
 /* Both flight blocks settled: each has an answer (found or none) or has nothing
  * to look for. */
 async function flightsSettled(page) {
@@ -576,6 +587,7 @@ module.exports = {
   plannerOrigin,
   plannerReady,
   routeFares,
+  routeWhere,
   flightsSettled,
   calendarDays,
   calendarSpans,

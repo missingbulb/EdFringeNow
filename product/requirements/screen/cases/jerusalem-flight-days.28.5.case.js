@@ -10,6 +10,7 @@ module.exports = {
   ready: jerusalemReady,
   async drive(page) {
     await routeFares(page);
+    await page.click('.flight--out [data-origin="ask"]');
     await page.selectOption("#originCountry", "GB");
     await flightsSettled(page);
     await page.waitForFunction(() => document.querySelectorAll(".sch-own--flight").length === 2, null, { timeout: 20000 });

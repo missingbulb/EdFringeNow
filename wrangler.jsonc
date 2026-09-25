@@ -9,10 +9,11 @@
   "compatibility_date": "2026-09-16",
 
   // The site is the static asset tree below. The Worker answers only the
-  // paths the page cannot answer itself because they need a secret — the
-  // flight fares, whose partner token must never ship to the browser (see
-  // api/index.js). It lives outside the published directory, so the release
-  // uploads it as code rather than as a page.
+  // paths the page cannot answer itself (see api/index.js): the flight fares,
+  // whose partner token must never ship to the browser, and the country a
+  // visitor connects from, which only the edge knows. It lives outside the
+  // published directory, so the release uploads it as code rather than as a
+  // page.
   "main": "api/index.js",
 
   "assets": {
