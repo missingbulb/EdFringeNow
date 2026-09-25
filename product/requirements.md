@@ -1712,6 +1712,35 @@ reaches it, and otherwise the one it covers most.
   its picture and venue, so the show's name keeps the space.
   </details>
 
+- `23.17` Behind the top of the page is a faded photograph of the city hosting the festival that leads the trip.
+
+  ![planng-city-photo.23.17](requirements/screen/cases/planng-city-photo.23.17.png) <!-- req-gallery:23.17 -->
+
+  <details><summary>Notes</summary>
+
+  One photograph per host city, stored with the site: Jerusalem, Haifa, Akko
+  and Edinburgh. Faint enough that the timeline and the page's own palette
+  read first, it fades out down the page before the calendar starts, so no
+  day or show is ever drawn over a picture. A festival whose city has no
+  photograph keeps the plain wash. The picture is decoration and carries no
+  text for a screen reader.
+  </details>
+
+- `23.18` When another festival comes to lead the trip, its city's photograph fades in over the last one rather than jumping, unless you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.18 -->
+
+  <details><summary>Notes</summary>
+
+  The same fade as the colours (23.10), over the same time. A behavior leaf
+  for the same reason: a golden freezes every transition at its end, so the
+  case lifts the freeze and samples both photographs' opacity part-way.
+  </details>
+
+- `23.19` The footer credits the photograph on show: its title, linked to its source, its photographer and its licence, linked to the licence.
+
+  ![planng-photo-credit.23.19](requirements/screen/cases/planng-photo-credit.23.19.png) <!-- req-gallery:23.19 -->
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when

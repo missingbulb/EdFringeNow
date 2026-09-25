@@ -69,6 +69,7 @@ import { arrivalOf } from "./lib/arrival.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
+import { showCityPhoto } from "./city-backdrop.js";
 import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
@@ -468,6 +469,26 @@ function renderChrome() {
         }
       )
     : "";
+
+  // The credit for the city photograph behind the page, which its licence asks for.
+  const photo = festival && photoOf(festival);
+  $("footerPhoto").innerHTML = photo
+    ? tHtml(
+        "footer.photo",
+        {},
+        {
+          photo: `<a href="${escapeHtml(photo.source)}" target="_blank" rel="noopener">${escapeHtml(photo.title)}</a>`,
+          author: escapeHtml(photo.author),
+          licence: `<a href="${escapeHtml(photo.licenceUrl)}" target="_blank" rel="noopener">${escapeHtml(photo.licence)}</a>`,
+        }
+      )
+    : "";
+}
+
+/** The photograph of the festival's city, or null when there is none. */
+function photoOf(festival) {
+  const p = presentationOf(festival.id);
+  return (p && p.photo) || null;
 }
 
 // --- the board ------------------------------------------------------------
@@ -3042,6 +3063,7 @@ function applyTheme(festival) {
   document.documentElement.dataset.festival = festival.id;
   if (festival.kind) document.documentElement.dataset.genre = festival.kind;
   else delete document.documentElement.dataset.genre;
+  showCityPhoto($("cityBackdrop"), photoOf(festival));
 }
 
 /* Where the shared data cache (shared/data-cache.js) reports a cache write it
