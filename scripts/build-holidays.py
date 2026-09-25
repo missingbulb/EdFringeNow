@@ -22,6 +22,9 @@ import holidays
 OUT = Path(__file__).resolve().parent.parent / "site" / "holidays"
 # The languages the page speaks (site/planNG/i18n/). English is every file's
 # fallback; the others are kept only where the package translates them.
+# The weekend's days, by name, so the page can tell a holiday that makes a
+# long weekend from one that stands alone (spec 29.6).
+DAY_NAMES = ("mon", "tue", "wed", "thu", "fri", "sat", "sun")
 PAGE_LANGUAGES = {"en": ("en_US", "en_GB", "en"), "he": ("he",), "ru": ("ru",), "ja": ("ja",)}
 
 
@@ -48,8 +51,10 @@ def main(first, last):
         cls = holidays.country_holidays(code).__class__
         supported = getattr(cls, "supported_languages", ()) or ()
         by_day = names(code, years, supported)
+        weekend = sorted(holidays.country_holidays(code).weekend)
         doc = {
             "country": code,
+            "weekend": [DAY_NAMES[d] for d in weekend],
             "covers": {"from": date(first, 1, 1).isoformat(), "to": date(last, 12, 31).isoformat()},
             "source": f"holidays {holidays.__version__}",
             "holidays": [{"date": d.isoformat(), "name": by_day[d]} for d in sorted(by_day)],
