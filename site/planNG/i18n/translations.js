@@ -1797,12 +1797,20 @@ export const STRINGS = {
   },
   "rivals.more": {
     maxWidthPx: null,
-    unrendered: "the stack's accessible name — on screen it is the edges of the cards it names",
+    unrendered: "the lane's accessible name — on screen it is a bar per show it names",
     sample: { count: 4 },
     en: "{count, plural, one {# more show wanted this hour} other {# more shows wanted this hour}}",
     he: "{count, plural, one {עוד הופעה אחת רצתה את השעה הזו} two {עוד # הופעות רצו את השעה הזו} other {עוד # הופעות רצו את השעה הזו}}",
     ru: "{count, plural, one {на этот час претендовало ещё # шоу} few {на этот час претендовало ещё # шоу} many {на этот час претендовало ещё # шоу} other {на этот час претендовало ещё # шоу}}",
     ja: "この時間を希望した公演があと{count}件",
+  },
+  "rivals.ours": {
+    probe: "#calRivals",
+    maxWidthPx: 80,
+    en: "Our pick",
+    he: "הבחירה שלנו",
+    ru: "Наш выбор",
+    ja: "おすすめ",
   },
   "rivals.title": {
     probe: "#calRivals",
@@ -1825,10 +1833,10 @@ export const STRINGS = {
   "rivals.foot": {
     probe: "#calRivals",
     maxWidthPx: 480,
-    en: "Taking one locks it into this hour.",
-    he: "בחירה באחת נועלת אותה לשעה הזו.",
-    ru: "Выбор закрепляет шоу на этот час.",
-    ja: "選ぶとその公演がこの時間に確定します。",
+    en: "Taking one locks it into this hour instead.",
+    he: "בחירה באחת נועלת אותה לשעה הזו במקום.",
+    ru: "Выбранное шоу закрепится на этот час вместо нашего.",
+    ja: "選ぶと代わりにその公演がこの時間に確定します。",
   },
   "rivals.label": {
     maxWidthPx: null,
