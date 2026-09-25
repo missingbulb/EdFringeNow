@@ -1906,5 +1906,13 @@ export const STRINGS = {
     ru: "Данные программы — {source}.",
     ja: "プログラムのデータ提供: {source}。",
   },
+  "footer.photo": {
+    maxWidthPx: 530,
+    sample: { photo: "", author: "", licence: "" },
+    en: "Photo: {photo} by {author}, {licence}.",
+    he: "תמונה: {photo}, צילום: {author}, {licence}.",
+    ru: "Фото: {photo}, автор {author}, {licence}.",
+    ja: "写真: {photo}（撮影: {author}、{licence}）。",
+  },
 
 };

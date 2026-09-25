@@ -59,6 +59,50 @@ const UK = {
   rail: () => withLabel("trip.travel", travelLink()),
 };
 
+/* Each host city's photograph, drawn faded behind the top of the page while a
+ * festival there leads the trip. All from Wikimedia Commons, under the licence
+ * each names; the footer credits the one on show, as those licences ask. The
+ * files are the originals scaled to 1600 pixels wide and re-encoded, which is
+ * an adaptation: Haifa's is shared under its CC BY-SA 4.0 like the original.
+ * `position` is where the photograph's subject sits, for `object-position`. */
+const CC_BY_2 = { licence: "CC BY 2.0", licenceUrl: "https://creativecommons.org/licenses/by/2.0/" };
+export const CITY_PHOTOS = {
+  jerusalem: {
+    src: "/planNG/cities/jerusalem.webp",
+    title: "Jerusalem from the Mount of Olives",
+    author: "Mustang Joe",
+    licence: "CC0",
+    licenceUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Jerusalem_from_the_Mount_of_Olives_(53714451089).jpg",
+    position: "center 35%",
+  },
+  haifa: {
+    src: "/planNG/cities/haifa.webp",
+    title: "IPhO-2019 07-11 Haifa Bahai garden panorama",
+    author: "Ipho19",
+    licence: "CC BY-SA 4.0",
+    licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:IPhO-2019_07-11_Haifa_Bahai_garden_panorama.jpg",
+    position: "center 55%",
+  },
+  akko: {
+    src: "/planNG/cities/akko.webp",
+    title: "The Old City of Acre, Israel",
+    author: "Ray in Manila",
+    ...CC_BY_2,
+    source: "https://commons.wikimedia.org/wiki/File:The_Old_City_of_Acre,_Israel_(51890502128).jpg",
+    position: "center 55%",
+  },
+  edinburgh: {
+    src: "/planNG/cities/edinburgh.webp",
+    title: "The City of Edinburgh",
+    author: "Mike McBey",
+    ...CC_BY_2,
+    source: "https://commons.wikimedia.org/wiki/File:The_City_of_Edinburgh_(45072272641).jpg",
+    position: "center 30%",
+  },
+};
+
 /* Every string the reader reads is a translation KEY, spelled out so the
  * catalogue's own gate finds it in the page's source. The wordmark is the
  * exception: it is the festival's mark, not a sentence. */
@@ -69,6 +113,7 @@ export const PRESENTATION = {
     cityKey: "fest.jerusalem-comedy.city",
     region: ISRAEL,
     stayCity: "Jerusalem",
+    photo: CITY_PHOTOS.jerusalem,
   },
   "haifa-iff": {
     wordmark: ["Haifa", "Film"],
@@ -76,6 +121,7 @@ export const PRESENTATION = {
     cityKey: "fest.haifa-iff.city",
     region: ISRAEL,
     stayCity: "Haifa",
+    photo: CITY_PHOTOS.haifa,
   },
   "edfringe": {
     wordmark: ["Edinburgh", "Fringe"],
@@ -83,6 +129,7 @@ export const PRESENTATION = {
     cityKey: "fest.edfringe.city",
     region: UK,
     stayCity: "Edinburgh",
+    photo: CITY_PHOTOS.edinburgh,
   },
   "acco": {
     wordmark: ["Acco", "Theatre"],
@@ -90,6 +137,7 @@ export const PRESENTATION = {
     cityKey: "fest.acco.city",
     region: ISRAEL,
     stayCity: "Akko",
+    photo: CITY_PHOTOS.akko,
   },
 };
 
