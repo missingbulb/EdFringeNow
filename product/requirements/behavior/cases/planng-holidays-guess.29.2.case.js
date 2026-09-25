@@ -2,9 +2,17 @@
 const { jerusalemReady, routeWhere } = require("../../shared/case-helpers");
 
 /* No answer yet: the holidays are the connection's country's, said to be a
- * guess; the reader's answer from the flight blocks replaces it. */
-const marks = (page) =>
-  page.$$eval("#timelineYear .tl-holiday", (els) => els.map((e) => ({ day: e.dataset.day, name: e.getAttribute("title") })));
+ * guess; the reader's answer from the travel blocks replaces it. */
+const orbs = (page) =>
+  page.$$eval("#timelineYear .tl-orb", (els) => els.map((e) => ({ from: e.dataset.from, to: e.dataset.to, name: e.getAttribute("aria-label") })));
+const covering = (list, day) => list.find((o) => o.from <= day && day <= o.to);
+const cardOf = async (page, day) => {
+  const all = await orbs(page);
+  const orb = covering(all, day);
+  await page.hover(`.tl-orb[data-from="${orb.from}"]`);
+  await page.waitForSelector(".tl-card:not([hidden])");
+  return page.textContent(".tl-card");
+};
 
 module.exports = {
   description: "until you say where you come from, the holidays are those of the country you connect from, marked as a guess, and your answer replaces them",
@@ -14,20 +22,19 @@ module.exports = {
     await routeWhere(page, "IL");
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
-    await page.waitForSelector("#timelineYear .tl-holiday");
+    await page.waitForSelector("#timelineYear .tl-orb");
 
-    const guessed = await marks(page);
-    const yomKippur = guessed.find((m) => m.day === "2026-09-21");
+    const yomKippur = covering(await orbs(page), "2026-09-21");
     assert.ok(yomKippur, "Israel's holidays are marked, Yom Kippur among them");
-    assert.match(yomKippur.name, /Yom Kippur/, "each mark is named");
-    assert.match(await page.textContent("#holidayNote"), /Israel.*guess/, "and the strip says they are a guess");
+    assert.match(yomKippur.name, /Yom Kippur/, "each orb is named");
+    assert.match(await cardOf(page, "2026-09-21"), /Israel.*guess/, "and its card says they are a guess");
 
     await page.click('.flight--out [data-origin="ask"]');
     await page.selectOption("#originCountry", "GB");
-    await page.waitForFunction(() => document.querySelector('#timelineYear .tl-holiday[data-day="2026-12-25"]'));
-    const said = await marks(page);
-    assert.equal(said.find((m) => m.day === "2026-09-21"), undefined, "the answer replaces the guess");
-    assert.match(await page.textContent("#holidayNote"), /United Kingdom/);
-    assert.doesNotMatch(await page.textContent("#holidayNote"), /guess/, "and it is no longer called one");
+    await page.waitForFunction(() => document.querySelector('#timelineYear .tl-orb[data-from="2026-12-25"]'));
+    assert.equal(covering(await orbs(page), "2026-09-21"), undefined, "the answer replaces the guess");
+    const card = await cardOf(page, "2026-12-25");
+    assert.match(card, /United Kingdom/);
+    assert.doesNotMatch(card, /guess/, "and it is no longer called one");
   },
 };

@@ -65,10 +65,10 @@ import { migrateLegacy } from "./lib/migrate.js";
 import { NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { arrivalOf } from "./lib/arrival.js";
-import { holidaysIn, holidaysUrl, homeCountry } from "./lib/holidays.js";
+import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
-import { layoutRows, renderTimeline, wireTripHandles } from "./timeline-view.js";
+import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
@@ -2714,20 +2714,51 @@ function renderTimelineStrip() {
     monthLabel: (iso) =>
       monthFmt(iso.slice(5, 7) === "01" ? { month: "short", year: "numeric" } : { month: "short" }).format(dateOf(iso)),
     dayText: dayAndDate,
-    holidays: state.holidays.doc ? holidaysIn(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
+    lengthText: (count) => t("trip.length", { count }),
+    todayText: t("timeline.today"),
+    festivalCard,
+    breaks: state.holidays.doc ? holidayBreaks(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
+    breakCard,
   });
-  renderHolidayNote();
 }
 
-/* Whose holidays the strip marks, and whether that is only a guess. */
-function renderHolidayNote() {
-  const note = $("holidayNote");
-  const { country, guessed, doc } = state.holidays;
-  note.hidden = !doc;
-  if (!doc) return;
-  const key = guessed ? "holidays.guess" : "holidays.note";
-  note.dataset.i18nSlot = key;
-  note.textContent = t(key, { country: regionName(country) });
+const cardLine = (key, text, cls = "") => `<span class="tl-card-line${cls}" data-i18n-slot="${key}">${escapeHtml(text)}</span>`;
+const dateRange = (from, to) =>
+  dates({ day: "numeric", month: "short", year: "numeric" }).formatRange(dateOf(from), dateOf(to));
+
+/* A festival's genre, as the registry's `kind` names it. */
+const GENRE_KEYS = { comedy: "genre.comedy", film: "genre.film", theatre: "genre.theatre", fringe: "genre.fringe" };
+
+/* What a festival on the strip says about itself when pointed at. */
+function festivalCard(festival, edition, hasData) {
+  const days = Math.round((dateOf(edition.lastDate) - dateOf(edition.firstDate)) / 86400000) + 1;
+  const genreKey = GENRE_KEYS[festival.kind];
+  const place = [festivalCity(festival), regionName(festival.country)].join(", ");
+  return (
+    `<strong class="tl-card-title">${escapeHtml(festivalName(festival))}</strong>` +
+    `<span class="tl-card-line">${escapeHtml(place)}${
+      genreKey ? ` · <span data-i18n-slot="${genreKey}">${escapeHtml(t(genreKey))}</span>` : ""
+    }</span>` +
+    `<span class="tl-card-line">${escapeHtml(dateRange(edition.firstDate, edition.lastDate))} · ${escapeHtml(t("trip.length", { count: days }))}</span>` +
+    cardLine(hasData ? "card.programme" : "card.noProgramme", t(hasData ? "card.programme" : "card.noProgramme"), hasData ? " is-good" : " is-muted")
+  );
+}
+
+/* What an orb says: the holidays in the break, how long a break it makes and
+ * how, and whose holidays they are. */
+function breakCard(brk) {
+  const { country, guessed } = state.holidays;
+  const names = brk.names.join(" · ");
+  const title = brk.weekend && brk.days > 1 ? t("holiday.weekend", { name: names }) : names;
+  const span = brk.from === brk.to ? dayAndDate(brk.from) : dateRange(brk.from, brk.to);
+  const length =
+    t("holiday.days", { count: brk.days }) + (brk.workdays ? ` (${t("holiday.bridge", { count: brk.workdays })})` : "");
+  const whose = guessed ? "holidays.guess" : "holidays.note";
+  return (
+    `<strong class="tl-card-title">${escapeHtml(title)}</strong>` +
+    `<span class="tl-card-line">${escapeHtml(span)} · ${escapeHtml(length)}</span>` +
+    cardLine(whose, t(whose, { country: regionName(country) }), " is-muted")
+  );
 }
 
 /* Read the holidays of whoever the reader is, as far as the page knows: a
@@ -2738,7 +2769,7 @@ async function refreshHolidays() {
   if (country === state.holidays.country) {
     if (home && home.guessed !== state.holidays.guessed) {
       state.holidays.guessed = home.guessed;
-      renderHolidayNote();
+      if (state.registry) renderTimelineStrip();
     }
     return;
   }
@@ -3235,6 +3266,12 @@ function wireTrip() {
     const next = editionByKey(item.dataset.edition);
     if (next) setTrip({ ...tripForEdition(next.edition), pick: next.key }, { fresh: true });
   });
+  wireTimelineCards(year);
+  // Today's figure cheers every choice the reader makes on the page.
+  document.addEventListener("change", () => cheer(year));
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("button, [aria-pressed], [role='option']") && !e.target.closest(".tl-orb")) cheer(year);
+  });
   wireTripHandles(year, {
     span,
     trip: () => state.period,
@@ -3245,6 +3282,7 @@ function wireTrip() {
       const keyed = document.activeElement && document.activeElement.closest(".tl-handle");
       const refocus = () => keyed && year.querySelector(`.tl-handle--${moved}`)?.focus();
       const done = setTrip({ ...trip, pick: state.pick }, { fresh: true, moved });
+      cheer(year);
       refocus();
       await done;
       refocus();
