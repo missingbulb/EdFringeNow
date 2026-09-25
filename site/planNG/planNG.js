@@ -1726,6 +1726,7 @@ function renderCalendar(draft) {
 
   host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
   markColumnWidth();
+  titleKeptRuns(host);
   animateCalendar(host, before);
 }
 
@@ -1824,8 +1825,48 @@ function keepBlock(iso, keep, axisH, dayTop) {
   el.setAttribute("aria-haspopup", "menu");
   el.innerHTML =
     `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META[keep.kind].emoji}</span> ` +
-    `${escapeHtml(keptName(keep))}</span>`;
+    `<span class="keep-name">${escapeHtml(keptName(keep))}</span></span>`;
   return el;
+}
+
+/* Days in a row kept for the same thing read as one stretch: one title across
+ * them, drawn over the calendar where it can span the days, while each day's
+ * own block stays the target that opens that day's menu. */
+function titleKeptRuns(host) {
+  const kept = keptInTrip();
+  const same = (a, b) => a && b && a.kind === b.kind && a.festival === b.festival;
+  const runs = [];
+  for (const col of host.querySelectorAll(".sch-day")) {
+    const keep = kept.get(col.dataset.date) || null;
+    const last = runs[runs.length - 1];
+    if (keep && last && same(last.keep, keep) && last.cols[last.cols.length - 1].nextElementSibling === col) {
+      last.cols.push(col);
+    } else if (keep) {
+      runs.push({ keep, cols: [col] });
+    }
+  }
+  const at = host.getBoundingClientRect();
+  for (const { cols } of runs) {
+    if (cols.length < 2) continue;
+    const blocks = cols.map((col) => col.querySelector(".sch-keep"));
+    if (blocks.some((b) => !b)) continue;
+    blocks.forEach((b, i) => {
+      b.classList.add("sch-keep--run", i === 0 ? "sch-keep--run-first" : i === blocks.length - 1 ? "sch-keep--run-last" : "sch-keep--run-mid");
+    });
+    const label = blocks[0].querySelector(".keep-label").getBoundingClientRect();
+    const first = blocks[0].getBoundingClientRect();
+    const end = blocks[blocks.length - 1].getBoundingClientRect();
+    const left = Math.min(first.left, end.left);
+    const right = Math.max(first.right, end.right);
+    const title = document.createElement("div");
+    title.className = `sch-keep-title sch-keep-title--${blocks[0].dataset.kind}`;
+    title.setAttribute("aria-hidden", "true");
+    title.style.top = `${label.top - at.top}px`;
+    title.style.left = `${left - at.left}px`;
+    title.style.width = `${right - left}px`;
+    title.appendChild(blocks[0].querySelector(".keep-label").cloneNode(true));
+    host.appendChild(title);
+  }
 }
 
 /* A day given to a nearby festival still holds shows — that festival's — so it

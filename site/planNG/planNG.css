@@ -1259,14 +1259,59 @@ body.festival-page {
   padding: 0;
   background: none;
 }
-/* A festival's name is often wider than its day: it ends in an ellipsis at
+/* A kept day's title is often wider than its day: it ends in an ellipsis at
    the column's edge rather than running over the next day's shows. */
-.sch-keep--festival {
+.sch-keep {
   overflow: hidden;
 }
-.sch-keep--festival .keep-name {
+.keep-label {
+  max-width: 100%;
+}
+.keep-name {
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Days in a row kept for the same thing are one stretch: their blocks meet
+   across the column edges and one title spans them (titleKeptRuns()). */
+.sch-keep--run .keep-label {
+  visibility: hidden;
+}
+.sch-keep--run-first {
+  inset-inline-end: 0;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+.sch-keep--run-mid {
+  inset-inline: 0;
+  border-radius: 0;
+}
+.sch-keep--run-last {
+  inset-inline-start: 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+.sch-keep--festival.sch-keep--run-mid,
+.sch-keep--festival.sch-keep--run-last {
+  border-inline-start-width: 0;
+}
+.sch-keep-title {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  padding-inline: 6px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sch-keep-title--festival {
+  justify-content: flex-start;
+  padding-inline: 10px 6px;
+}
+.sch-keep-title--festival .keep-label {
+  padding: 0;
+  background: none;
 }
 .keep-emoji {
   font-size: 0.9rem;
