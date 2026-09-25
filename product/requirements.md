@@ -1530,7 +1530,7 @@ performance, from any festival, that falls inside the trip and can be reached
 from the festival that leads it: the one the reader chose, while the trip still
 reaches it, and otherwise the one it covers most.
 
-- `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the trip's dates banded across it.
+- `23.1` A full-width timeline of the coming year, one bar per festival edition, and the trip's dates banded across it.
 
   ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
@@ -1641,6 +1641,36 @@ reaches it, and otherwise the one it covers most.
   throughout (23.6). A behavior leaf because a golden is taken with every
   transition frozen at its end: the case lifts that freeze and samples the
   page's background part-way through the fade.
+  </details>
+
+- `23.11` Each end of the trip is a line across the strip with a grip at its middle, and the trip's length in days is written above the band.
+
+  ![planng-trip-edges.23.11](requirements/screen/cases/planng-trip-edges.23.11.png) <!-- req-gallery:23.11 -->
+
+- `23.12` Today is a small figure standing on the months, holding up a sign that says so.
+
+  ![planng-today.23.12](requirements/screen/cases/planng-today.23.12.png) <!-- req-gallery:23.12 -->
+
+- `23.13` The figure moves a little while it stands, cheers whenever you make a choice on the page, and holds still if you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.13 -->
+
+  <details><summary>Notes</summary>
+
+  A behavior leaf because goldens are taken with every animation frozen: the
+  case reads the animations the page asks for. A choice is any button,
+  option, date or festival picked; the cheer plays once and the figure goes
+  back to standing.
+  </details>
+
+- `23.14` Pointing at a festival on the strip shows its card: its full name, city and genre, its dates and length, and whether its programme is out yet.
+
+  ![planng-festival-card.23.14](requirements/screen/cases/planng-festival-card.23.14.png) <!-- req-gallery:23.14 -->
+
+  <details><summary>Notes</summary>
+
+  The card also opens when the festival is reached with the keyboard, and
+  closes when the pointer or focus leaves it.
   </details>
 
 ## 24. How you are getting here
@@ -1874,26 +1904,37 @@ The draft plans around all of it.
 ## 29. Holidays at home
 
 The trip's dates are the reader's, and the days they can most easily take off
-are their own country's public holidays. The year strip marks them. Until the
-reader says where they come from (section 24), their country is guessed from
-their connection, and the strip says it is a guess.
+are their own country's public holidays, and above all the breaks those make
+with a weekend. The year strip marks each break as a green orb on the months.
+Until the reader says how they are getting here (section 24), their country
+is guessed from their connection, and each orb's card says it is a guess.
 
-- `29.1` The year strip marks the public holidays where you live, and says whose they are.
+- `29.1` The year strip marks each break your public holidays make as a green orb on the months, big enough to see and wider the longer the break.
 
   ![planng-holidays.29.1](requirements/screen/cases/planng-holidays.29.1.png) <!-- req-gallery:29.1 -->
 
   <details><summary>Notes</summary>
 
-  One mark per holiday on the day it falls, under the months, named in its
-  tooltip (asserted by 29.2, since the tooltip is the browser's). The names come
+  One orb per break, centred on it. Its width grows with the square root of
+  the break's days, never with the strip's scale, so a one-day holiday is as
+  easy to see on a phone as on a desk; an orb may cover a month's name. The
+  breaks are 29.6's. The names come
   from the committed per-country files in `site/holidays/`, generated from
   the `holidays` Python package by `scripts/build-holidays.py`, in the page's
   language where the package carries one and in English otherwise.
   </details>
 
-- `29.2` Until you have said where you come from, the holidays are those of the country you connect from, and the strip says so; your answer replaces the guess.
+- `29.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
 
   🚩 _Behavior leaf._ <!-- req-gallery:29.2 -->
+
+- `29.5` Pointing at an orb explains it: the holidays in the break, its dates, how many days off it makes counting the weekend and any work day in the middle, and whose holidays they are.
+
+  ![planng-holiday-card.29.5](requirements/screen/cases/planng-holiday-card.29.5.png) <!-- req-gallery:29.5 -->
+
+- `29.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
+
+  🔧 _Logic leaf._ <!-- req-gallery:29.6 -->
 
 - `29.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
 
