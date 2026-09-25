@@ -104,6 +104,33 @@
   --line: light-dark(#f0e0d7, #3c2a21);
 }
 
+/* ---- moving between festivals ------------------------------------------ */
+
+/* The theme's colours fade into the next festival's rather than jump. Only a
+   registered custom property interpolates — an unregistered one is a string
+   and flips at the end — so each token a palette above sets is registered as
+   a colour, and the root transitions them. Every rule reading a token follows
+   it frame by frame, and the page keeps responding throughout (a date handle
+   being dragged included), which a snapshot cross-fade would not. The header
+   declares its own values, so it holds still. */
+@property --wash { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --wash-clear { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --violet { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --violet-dark { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --ink { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --paper { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --bg { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --muted { syntax: "<color>"; inherits: true; initial-value: transparent; }
+@property --line { syntax: "<color>"; inherits: true; initial-value: transparent; }
+
+:root {
+  transition: --wash 0.6s ease, --wash-clear 0.6s ease, --violet 0.6s ease, --violet-dark 0.6s ease, --ink 0.6s ease, --paper 0.6s ease, --bg 0.6s ease, --muted 0.6s ease, --line 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { transition: none; }
+}
+
 :root {
   /* The grid's palette, cut down to what this festival publishes: a night is on
      sale or it is free. The Fringe's sold-out / 2-for-1 / preview colours are
