@@ -1471,6 +1471,45 @@ calendar.
   redrawing rather than a number changing.
   </details>
 
+- `21.15` A show is never drawn past the day's end, however short it is.
+
+  ![planng-dayend-short.21.15](requirements/screen/cases/planng-dayend-short.21.15.png) <!-- req-gallery:21.15 -->
+
+  <details><summary>Notes</summary>
+
+  A short show is drawn taller than it runs, so its name and verdicts fit;
+  the last show of a day stops that at the day's end line, as it already
+  stops at the next show's start. Shown on the Haifa trip's day at Acco with
+  the day ending at 20:55 and a twenty-minute street show at 20:15.
+  </details>
+
+- `21.16` Dragging the day's start or end holds every day at its width, an empty day's sliver included.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.16 -->
+
+  <details><summary>Notes</summary>
+
+  The widths the days had when the drag began are kept until it ends, so a
+  day that empties part-way does not fold under the pointer, and a folded one
+  does not spring open. What changed is settled once the line is let go.
+  </details>
+
+- `21.17` A show the calendar gains or loses fades in or out where it stands, and one that moves slides to its new place; asked for reduced motion, nothing moves.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.17 -->
+
+  <details><summary>Notes</summary>
+
+  Every redraw of the calendar compares what was on it with what is: a show
+  still there animates from where it was, a new one grows in from nothing,
+  and one that left is drawn once more where it stood and shrinks away. A
+  day whose width changes eases to its new width.
+  </details>
+
+- `21.18` How full a day takes any whole number of shows from zero up.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.18 -->
+
 - `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
 
   <table><thead><tr><th align="left">A show with no length, starting</th><th align="left">Day ends 20:30</th><th align="left">Dinner 21:00–22:00</th></tr></thead><tbody><tr><td>19:30</td><td>drafted: an hour ends at 20:30</td><td>drafted</td></tr><tr><td>20:00</td><td>not drafted: an hour runs past 20:30</td><td>drafted: it ends as dinner starts</td></tr><tr><td>20:30</td><td>not drafted</td><td>not drafted: it runs into dinner</td></tr></tbody></table> <!-- req-gallery:21.14 -->
@@ -1540,15 +1579,20 @@ calendar.
   a filter hides can still be found and ruled on there.
   </details>
 
-- `21.13` The festivals chip lists every festival the trip reaches, each in its own colour, and can leave any of them out.
+- `21.13` The festivals chip lists every festival the trip reaches, each with the stripe its shows carry and how far away it is, and can leave any of them out.
 
   ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->
 
   <details><summary>Notes</summary>
 
   The Haifa trip, with Acco left out: its row unticked, and the chip's answer
-  naming the one festival still in. The colour is the one each festival's own
-  theme uses.
+  naming the one festival still in. The stripe is the one each show's block
+  carries on the calendar, in the colour its festival's own theme uses. A
+  festival other than the one leading the trip says how far it is and whether
+  all its nights or only some are in reach; a festival too far to reach is
+  listed too, greyed out with nothing to tick (`23.5`). None of this is drawn
+  above the calendar, where a trip reaching several festivals would push the
+  calendar down a line for each.
   </details>
 
 ## 23. The year's festivals, and the trip's dates
@@ -1601,7 +1645,7 @@ reaches it, and otherwise the one it covers most.
   festival is never suggested, whatever the data holds.
   </details>
 
-- `23.5` A festival left out for being out of reach is named on the page, never dropped silently.
+- `23.5` A festival left out for being out of reach is named in the festivals chip, with how far it is, never dropped silently.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
@@ -2016,6 +2060,17 @@ The draft plans around all of it.
 - `28.12` Hiring a car suggests driving between shows, marked as suggested; a way of getting around you chose yourself stays yours.
 
   🚩 _Behavior leaf._ <!-- req-gallery:28.12 -->
+
+- `28.13` A day given to a nearby festival keeps its banner inside its own column, however narrow.
+
+  ![planng-festival-banner.28.13](requirements/screen/cases/planng-festival-banner.28.13.png) <!-- req-gallery:28.13 -->
+
+  <details><summary>Notes</summary>
+
+  A festival's name is longer than a narrow day is wide: the banner ends in
+  an ellipsis at its column's edge rather than running over the next day's
+  shows. The full name is in the menu the banner opens.
+  </details>
 
 ## 31. Holidays at home
 
