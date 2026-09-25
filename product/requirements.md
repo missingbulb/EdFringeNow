@@ -1477,7 +1477,8 @@ calendar.
 
   <details><summary>Notes</summary>
 
-  Acco publishes start times only. Taken at its word, a show starting at 20:00
+  Some Acco shows publish a start time only (the foyer concerts, several street
+  acts). Taken at its word, a show starting at 20:00
   would end at 20:00 and fit under a day that ends at 20:30, then be drawn
   running past the line. An hour is what the calendar draws such a show as,
   near enough, so what the day's end rules out is what the reader sees cross

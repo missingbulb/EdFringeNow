@@ -53,6 +53,8 @@ const ALLOWED_INPUTS = new Map([
   ['data/festivals/jerusalem-comedy/2026/nominatim/geocode.json', 'scraper/festivals/jerusalem/sources/nominatim/fetch.py'],
   ['data/festivals/acco/2026/acco-tc/manifest.json', 'scraper/festivals/acco/sources/acco-tc/fetch.py'],
   ['data/festivals/acco/2026/acco-tc/programme.json', 'scraper/festivals/acco/sources/acco-tc/fetch.py'],
+  ['data/festivals/acco/2026/eventer/manifest.json', 'scraper/festivals/acco/sources/eventer/fetch.py'],
+  ['data/festivals/acco/2026/eventer/programme.json', 'scraper/festivals/acco/sources/eventer/fetch.py'],
   ['data/festivals/acco/2026/street-programme/manifest.json', 'scraper/festivals/acco/sources/street-programme/fetch.py'],
   ['data/festivals/acco/2026/street-programme/programme.json', 'scraper/festivals/acco/sources/street-programme/fetch.py'],
   ['data/festivals/haifa-iff/2026/haifaff-site/manifest.json', 'scraper/festivals/haifa_iff/sources/haifaff-site/fetch.py'],
