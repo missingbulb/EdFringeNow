@@ -2844,11 +2844,12 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
   await loadPool();
 }
 
-/* The festival's palette is CSS (planNG.css, keyed by this attribute); its
- * language and direction are the registry's, for its name wherever the page
- * prints it. */
+/* The palette is its genre's, in CSS (planNG.css, keyed by `data-genre`);
+ * `data-festival` names the festival itself. */
 function applyTheme(festival) {
   document.documentElement.dataset.festival = festival.id;
+  if (festival.kind) document.documentElement.dataset.genre = festival.kind;
+  else delete document.documentElement.dataset.genre;
 }
 
 /* Where the shared data cache (shared/data-cache.js) reports a cache write it

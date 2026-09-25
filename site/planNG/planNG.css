@@ -6,10 +6,11 @@
  * (five columns rather than thirty-one), or a component this page has and the
  * Fringe planner doesn't (the browse stage, the origin question).
  *
- * Theming is per festival: the page root carries `data-festival="<id>"` for
- * the festival in focus, and each festival's block below redefines the same
- * handful of tokens. A festival with no block keeps the house palette plan.css
- * defines. The wordmark is ./festivals.js's.
+ * Theming is per genre: the page root carries `data-genre="<kind>"`, the
+ * focused festival's `kind` from the registry, and each genre's block below
+ * redefines the same handful of tokens, so two comedy festivals share one
+ * palette. A genre with no block keeps the house palette plan.css defines.
+ * The wordmark is ./festivals.js's.
  */
 @import url("../plan/plan.css");
 
@@ -17,12 +18,16 @@
   /* The wash behind the page's top — each festival's block sets its own. */
   --wash: light-dark(#f1eefc, #1c1830);
   --wash-clear: light-dark(rgba(241, 238, 252, 0), rgba(28, 24, 48, 0));
-  /* Each festival's accent, named once: its theme below takes it as --violet,
-     and a dot or stripe that names the festival anywhere else reads it here. */
-  --colour-jerusalem-comedy: light-dark(#b8862b, #d7a340);
-  --colour-haifa-iff: light-dark(#1f6fb2, #5aa9e6);
-  --colour-edfringe: light-dark(#c2185b, #f06292);
-  --colour-acco: light-dark(#c4572e, #e8825a);
+  /* Each genre's accent, named once: its palette below takes it as --violet. */
+  --genre-comedy: light-dark(#b8862b, #d7a340);
+  --genre-film: light-dark(#1f6fb2, #5aa9e6);
+  --genre-fringe: light-dark(#c2185b, #f06292);
+  --genre-theatre: light-dark(#c4572e, #e8825a);
+  /* A dot or stripe that names a festival anywhere else reads its genre's. */
+  --colour-jerusalem-comedy: var(--genre-comedy);
+  --colour-haifa-iff: var(--genre-film);
+  --colour-edfringe: var(--genre-fringe);
+  --colour-acco: var(--genre-theatre);
 }
 
 [data-festival-colour="jerusalem-comedy"] {
@@ -38,18 +43,18 @@
   --festival-colour: var(--colour-acco);
 }
 
-/* ---- the festivals' palettes ------------------------------------------- */
+/* ---- the genres' palettes ---------------------------------------------- */
 
-:root[data-festival="jerusalem-comedy"] {
-  /* Jerusalem stone and the brass of the city's doors — the accent the Fringe
-     planner spends on violet. Kept to the same two-tone shape (a mid tone and
+:root[data-genre="comedy"] {
+  /* Comedy: warm brass on sandstone, the house lights up — the accent the
+     Fringe planner spends on violet. Kept to the same two-tone shape (a mid tone and
      a second for hover/active) so every rule in plan.css that reaches for
      --violet lands somewhere sensible without being restated here. In the dark
      the pair swaps direction: brass lifts towards the light rather than away
      from it, because the hover state has to stay the brighter of the two. */
   --wash: light-dark(#f6ecd8, #241d12);
   --wash-clear: light-dark(rgba(246, 236, 216, 0), rgba(36, 29, 18, 0));
-  --violet: var(--colour-jerusalem-comedy);
+  --violet: var(--genre-comedy);
   --violet-dark: light-dark(#94691d, #ecc06a);
   --ink: light-dark(#1d1a14, #f2e9da);
   --paper: light-dark(#ffffff, #221d16);
@@ -65,11 +70,11 @@
   --ok-bg: light-dark(#e6f7ee, #123527);
 }
 
-/* Haifa: the bay and the Carmel at night — a sea blue for a film festival. */
-:root[data-festival="haifa-iff"] {
+/* Film: the blue of a darkened auditorium lit by the screen. */
+:root[data-genre="film"] {
   --wash: light-dark(#dfeefa, #0f1c28);
   --wash-clear: light-dark(rgba(223, 238, 250, 0), rgba(15, 28, 40, 0));
-  --violet: var(--colour-haifa-iff);
+  --violet: var(--genre-film);
   --violet-dark: light-dark(#17568c, #8cc6f2);
   --ink: light-dark(#0e1a26, #e4eef7);
   --paper: light-dark(#ffffff, #14202c);
@@ -78,11 +83,11 @@
   --line: light-dark(#dde8f1, #243646);
 }
 
-/* Edinburgh: the Old Town's slate under a festival-poster magenta. */
-:root[data-festival="edfringe"] {
+/* The fringe: a flyposter magenta on slate, every genre at once. */
+:root[data-genre="fringe"] {
   --wash: light-dark(#fbe3ee, #2a1220);
   --wash-clear: light-dark(rgba(251, 227, 238, 0), rgba(42, 18, 32, 0));
-  --violet: var(--colour-edfringe);
+  --violet: var(--genre-fringe);
   --violet-dark: light-dark(#961245, #f48fb1);
   --ink: light-dark(#1b1a22, #eeeaf2);
   --paper: light-dark(#ffffff, #1c1a22);
@@ -91,11 +96,11 @@
   --line: light-dark(#e6e3ec, #302d3a);
 }
 
-/* Acco: the old city's sea walls and their terracotta roofs. */
-:root[data-festival="acco"] {
+/* Theatre: the red of the curtain and the stage's warm boards. */
+:root[data-genre="theatre"] {
   --wash: light-dark(#fbe6dc, #2a1812);
   --wash-clear: light-dark(rgba(251, 230, 220, 0), rgba(42, 24, 18, 0));
-  --violet: var(--colour-acco);
+  --violet: var(--genre-theatre);
   --violet-dark: light-dark(#9c4322, #f2a585);
   --ink: light-dark(#23150f, #f6e7df);
   --paper: light-dark(#ffffff, #23160f);
