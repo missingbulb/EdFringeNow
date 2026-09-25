@@ -1934,7 +1934,7 @@ is guessed from their connection, and each orb's card says it is a guess.
 
 - `29.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
 
-  🔧 _Logic leaf._ <!-- req-gallery:29.6 -->
+  <table><thead><tr><th align="left">Holidays</th><th align="left">Weekend</th><th align="left">The break</th><th align="left">Days off</th><th align="left">Work days in the middle</th></tr></thead><tbody><tr><td>Wed 14 Oct</td><td>Sat and Sun</td><td>Wed 14</td><td>1</td><td>0</td></tr><tr><td>Fri 16 Oct</td><td>Sat and Sun</td><td>Fri 16 to Sun 18</td><td>3</td><td>0</td></tr><tr><td>Wed 7 and Thu 8 Oct</td><td>Sat and Sun</td><td>Wed 7 to Sun 11</td><td>5</td><td>1</td></tr><tr><td>Tue 13 Oct</td><td>Sat and Sun</td><td>Sat 10 to Tue 13</td><td>4</td><td>1</td></tr><tr><td>Thu 15 Oct</td><td>Fri and Sat</td><td>Thu 15 to Sat 17</td><td>3</td><td>0</td></tr><tr><td>Tue 13 and Thu 15 Oct</td><td>Sat and Sun</td><td>Sat 10 to Sun 18</td><td>9</td><td>3</td></tr></tbody></table> <!-- req-gallery:29.6 -->
 
 - `29.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
 
