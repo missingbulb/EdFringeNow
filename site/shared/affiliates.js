@@ -163,6 +163,17 @@ export function israelRailLink() {
   };
 }
 
+/* A hire car at the airport. No hire partner is signed up, so this is a map
+ * search for car hire at the airport the reader lands at, untagged. The Maps
+ * URL form is Google's documented one (developers.google.com/maps/documentation/urls). */
+export function carHireLink(airport) {
+  return {
+    text: "Car hire",
+    partner: "Google Maps",
+    url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`car hire ${airport} airport`)}`,
+  };
+}
+
 /* A flight on one day: Aviasales' search for the route and date, one adult,
  * one way. `from` and `to` are IATA airport or city codes. Aviasales keys a
  * search off one path segment — origin, day and month, destination,

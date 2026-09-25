@@ -19,3 +19,13 @@ export function arrivalOf(origin) {
   if (origin.kind === "abroad") return "fly";
   return null;
 }
+
+/** Between the airport and town, for a reader who flies: a taxi or transfer,
+ * the train, or a hire car. */
+export const GROUND = ["taxi", "train", "car"];
+
+/** Whether the reader has a car with them: they drove their own, or hire one
+ * at the airport. */
+export function hasCar(arrive, ground) {
+  return arrive === "drive" || (arrive === "fly" && ground === "car");
+}

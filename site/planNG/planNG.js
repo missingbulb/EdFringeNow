@@ -37,11 +37,11 @@ import { eligibleSlots, slotKey } from "../plan/lib/engine.js";
 import { draftCalendar, instanceKey } from "../plan/lib/contention.js";
 import { slotEndTime } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
-import { flightFareLink, flightSearchLink } from "../shared/affiliates.js";
+import { carHireLink, flightFareLink, flightSearchLink } from "../shared/affiliates.js";
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
 import { currentEdition, loadEdition, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
-import { originReach, poolReach } from "../shared/feasibility.js";
+import { dayTripKm, originReach, poolReach } from "../shared/feasibility.js";
 import {
   FACET_OPTIONS,
   MAX_PERIOD_DAYS,
@@ -65,7 +65,7 @@ import { migrateLegacy } from "./lib/migrate.js";
 import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
 import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
-import { arrivalOf } from "./lib/arrival.js";
+import { GROUND, arrivalOf, hasCar } from "./lib/arrival.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -191,7 +191,9 @@ const state = {
   // Who is coming, and which questions the reader has answered themselves:
   // every other one takes the answer who is coming suggests (lib/party.js).
   party: null,        // { type, ages } or null: nobody said yet
-  answered: new Set(), // "pace" | "interests" | "food" | "dayEnd"
+  answered: new Set(), // "pace" | "interests" | "food" | "dayEnd" | "travel"
+  // Between the airport and town, for a reader who flies: a GROUND id or null.
+  ground: null,
   // The filters, which unlike a kind drop shows from the draft outright:
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
@@ -356,6 +358,7 @@ function savePrefs() {
     tags: Object.fromEntries(state.tags),
     party: state.party,
     answered: [...state.answered],
+    ground: state.ground,
   });
 }
 
@@ -389,6 +392,7 @@ function restorePrefs() {
     state.party = { type: saved.party.type, ages: (saved.party.ages || []).filter((n) => AGES.includes(n)) };
   }
   if (Array.isArray(saved.answered)) state.answered = new Set(saved.answered);
+  if (GROUND.includes(saved.ground)) state.ground = saved.ground;
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
@@ -976,7 +980,21 @@ const PARTY_META = {
 // themselves; the evening's end is one too, though it is a line on the
 // calendar rather than a chip.
 const SUGGESTED = ["pace", "interests", "food"];
-const isSuggested = (q) => Boolean(state.party) && SUGGESTED.includes(q) && !state.answered.has(q);
+const isSuggested = (q) =>
+  q === "travel"
+    ? carWithUs() && !state.answered.has("travel")
+    : Boolean(state.party) && SUGGESTED.includes(q) && !state.answered.has(q);
+
+/** Whether the reader has a car with them, from how they said they arrive. */
+const carWithUs = () => hasCar(arrivalOf(state.origin), state.ground);
+
+/* A car suggests driving between shows, for a reader who has not chosen how
+ * they get around; losing the car takes the suggestion back. */
+function applyCar() {
+  if (state.answered.has("travel")) return;
+  if (carWithUs()) state.mode = "car";
+  else if (state.mode === "car") state.mode = "walk";
+}
 
 function whoAnswer() {
   if (!state.party) return answerHtml("\u{1F4DD}", t("prefs.who.unset"));
@@ -1121,6 +1139,7 @@ function openChip(id) {
  * ages, and the draft follows. */
 function whoChanged() {
   applySuggestions();
+  applyCar();
   const panel = $("panel-who");
   if (panel) panel.innerHTML = whoHtml();
   syncPrefs();
@@ -1180,6 +1199,7 @@ function wirePrefs() {
       state.maxPerDay = step.maxPerDay;
       state.minGap = step.minGap;
     } else if (question === "travel") {
+      state.answered.add("travel");
       state.mode = id;
     } else if (question === "food") {
       const answer = FOOD_ANSWERS.find((a) => a.id === id);
@@ -1797,10 +1817,19 @@ function ownBlock(block, y) {
   el.style.height = `${Math.max(14, y(block.endMin) - y(block.startMin))}px`;
   if (flight) {
     el.dataset.which = block.which;
+    if (state.ground) el.dataset.ground = state.ground;
+    el.tabIndex = 0;
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-haspopup", "menu");
     const clock = block.which === "out" ? minToDayClock(block.endMin) : minToDayClock(block.startMin);
+    const ground = state.ground
+      ? `<span class="own-ground"><span aria-hidden="true">${GROUND_META[state.ground].emoji}</span> ` +
+        `${escapeHtml(t(GROUND_META[state.ground].labelKey))}</span>`
+      : `<span class="own-ground own-ground--ask">${escapeHtml(t("ground.ask"))}</span>`;
     el.innerHTML =
       `<span class="own-label"><span aria-hidden="true">\u2708\uFE0F</span> ` +
-      `${escapeHtml(t(block.which === "out" ? "flight.arrive" : "flight.depart", { time: clock }))}</span>`;
+      `${escapeHtml(t(block.which === "out" ? "flight.arrive" : "flight.depart", { time: clock }))}</span>` +
+      ground;
     return el;
   }
   el.dataset.own = block.id;
@@ -2696,6 +2725,55 @@ function openOwnMenu(block, anchor) {
   openMenu(anchor, html, { own: block.id });
 }
 
+/* Between the airport and town: the three ways, each beside where to book it. */
+const GROUND_META = {
+  taxi: { emoji: "\u{1F695}", labelKey: "ground.taxi" },
+  train: { emoji: "\u{1F686}", labelKey: "ground.train" },
+  car: { emoji: "\u{1F697}", labelKey: "ground.car" },
+};
+
+function groundLink(ground) {
+  const p = state.focus && presentationOf(state.focus.festival.id);
+  if (!p) return null;
+  if (ground === "taxi") return p.region.airport();
+  if (ground === "train") return p.region.rail();
+  return carHireLink(p.region.flyTo);
+}
+
+function openGroundMenu(anchor) {
+  const html =
+    `<div class="menu-title">${escapeHtml(t("ground.title"))}</div>` +
+    GROUND.map((g) => {
+      const link = groundLink(g);
+      return (
+        `<div class="menu-row">` +
+        menuItem(`data-ground="${g}"`, GROUND_META[g].emoji, t(GROUND_META[g].labelKey), state.ground === g) +
+        (link
+          ? `<a class="menu-book" data-ground-book="${g}" href="${escapeHtml(link.url)}" target="_blank" rel="noopener">` +
+            `${escapeHtml(link.partner)}</a>`
+          : "") +
+        `</div>`
+      );
+    }).join("");
+  openMenu(anchor, html, { ground: "1" });
+}
+
+function setGround(ground) {
+  state.ground = ground;
+  carChanged();
+  savePrefs();
+  closePops();
+  syncPrefs();
+  redraft();
+}
+
+/* Having a car or not moves the suggested way between shows and how far a day
+ * trip reaches; the pool is judged again only when the reach moved. */
+function carChanged() {
+  applyCar();
+  if (state.focus && state.period && state.reachByCar !== undefined && state.reachByCar !== carWithUs()) loadPool();
+}
+
 function setKept(iso, choice) {
   if (choice === "shows") state.kept.delete(iso);
   else if (choice.startsWith("festival:")) state.kept.set(iso, { kind: "festival", festival: choice.slice(9) });
@@ -2817,6 +2895,12 @@ function wireDays() {
       openDayMenu(head.dataset.dayHead, head);
       return;
     }
+    const flight = e.target.closest(".sch-own--flight");
+    if (flight) {
+      e.stopPropagation();
+      openGroundMenu(flight);
+      return;
+    }
     // An empty hour: the column's body itself, or the shading of hours
     // outside the day, and nothing drawn on top of it.
     const body = e.target.classList.contains("sch-body") || e.target.classList.contains("sch-zone")
@@ -2839,15 +2923,23 @@ function wireDays() {
     const head = e.target.closest("[data-day-head]");
     const keep = e.target.closest(".sch-keep");
     const own = e.target.closest(".sch-own[data-own]");
-    if (!head && !keep && !own) return;
+    const flight = e.target.closest(".sch-own--flight");
+    if (!head && !keep && !own && !flight) return;
     e.preventDefault();
-    if (head) openDayMenu(head.dataset.dayHead, head);
+    if (flight) openGroundMenu(flight);
+    else if (head) openDayMenu(head.dataset.dayHead, head);
     else if (keep) openDayMenu(keep.dataset.keep, keep);
     else openOwnMenu(state.own.find((b) => b.id === own.dataset.own), own);
   });
 
   calMenu().addEventListener("click", (e) => {
     const menu = calMenu();
+    const ground = e.target.closest("[data-ground]");
+    if (ground) {
+      e.stopPropagation();
+      setGround(ground.dataset.ground);
+      return;
+    }
     const keep = e.target.closest("[data-keep]");
     const add = e.target.closest("[data-add]");
     const remove = e.target.closest("[data-own-remove]");
@@ -3165,7 +3257,8 @@ async function loadPool() {
     }
   }
   const focusShape = { festivalId: festival.id, lat: festival.lat, lng: festival.lng, firstDate: edition.firstDate, lastDate: edition.lastDate };
-  state.reach = poolReach(focusShape, overlapping, state.period);
+  state.reach = poolReach(focusShape, overlapping, state.period, { dayTripKm: dayTripKm(carWithUs()) });
+  state.reachByCar = carWithUs();
 
   $("loadingState").hidden = false;
   $("errorState").hidden = true;
@@ -3474,6 +3567,8 @@ function setOrigin(origin) {
   state.origin = origin;
   state.asking = false;
   writeStore(KEY_ORIGIN, origin);
+  carChanged();
+  savePrefs();
   renderOriginCard();
   renderTripRow();
   refreshFares();
@@ -3615,6 +3710,7 @@ async function boot() {
   restoreVerdicts();
   restorePrefs();
   applySuggestions();
+  applyCar();
   restoreDays();
   state.origin = readStore(KEY_ORIGIN, null);
   refreshHolidays();

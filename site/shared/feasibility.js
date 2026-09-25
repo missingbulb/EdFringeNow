@@ -27,6 +27,14 @@ import { distanceKm } from "../plan/lib/travel.js";
  * and Jerusalem–Tel Aviv are all inside it. */
 export const DAY_TRIP_KM = 160;
 
+/* With a car of their own, a reader drives further there and back in a day. */
+export const CAR_DAY_TRIP_KM = 250;
+
+/** How far a day trip reaches, with a car or without. */
+export function dayTripKm(car) {
+  return car ? CAR_DAY_TRIP_KM : DAY_TRIP_KM;
+}
+
 /* Further than this is a day's travel each way that no day-trip covers. */
 export const LONG_HAUL_KM = 4500;
 
@@ -38,9 +46,9 @@ export const LOCAL_KM = 25;
 export const DOMESTIC_KM = 400;
 
 /** Whole days of travel between two cities, each way. */
-export function travelDays(km) {
+export function travelDays(km, dayTrip = DAY_TRIP_KM) {
   if (km == null) return null;
-  if (km <= DAY_TRIP_KM) return 0;
+  if (km <= dayTrip) return 0;
   return km <= LONG_HAUL_KM ? 1 : 2;
 }
 
@@ -56,12 +64,13 @@ const addDays = (iso, n) => {
  * @param {object[]} editions every edition overlapping the period, the focused
  *   one included, in the same shape
  * @param {{from: string, to: string}} period the planning period, inclusive
+ * @param {{dayTripKm?: number}} [options] how far a day trip reaches (dayTripKm())
  * @returns {object[]} one entry per edition: `{edition, km, travelDays, verdict,
  *   nights}` — `verdict` is "focus", "day-trip", "partly" (some nights) or
  *   "out"; `nights` is the inclusive ISO date ranges whose performances join
  *   the pool (empty when "out")
  */
-export function poolReach(focus, editions, period) {
+export function poolReach(focus, editions, period, { dayTripKm: dayTrip = DAY_TRIP_KM } = {}) {
   return editions.map((edition) => {
     const from = maxIso(period.from, edition.firstDate);
     const to = minIso(period.to, edition.lastDate);
@@ -69,7 +78,7 @@ export function poolReach(focus, editions, period) {
       return { edition, km: 0, travelDays: 0, verdict: "focus", nights: [{ from, to }] };
     }
     const km = distanceKm(focus, edition);
-    const days = travelDays(km);
+    const days = travelDays(km, dayTrip);
     if (days === 0) return { edition, km, travelDays: 0, verdict: "day-trip", nights: [{ from, to }] };
     // Unknown distance is not "near": with no coordinates there is no way to
     // say the reader can get there, so the edition waits outside the pool.
