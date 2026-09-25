@@ -1573,15 +1573,16 @@ reaches it, and otherwise the one it covers most.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name and its palette.
+- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name, and the palette of its genre: comedy, film, theatre or the fringe.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
   <details><summary>Notes</summary>
 
-  `data-festival` on the page root selects a palette block in the stylesheet;
-  a festival with no block of its own keeps the house palette. The festival's
-  own-language name is tagged with its language and direction.
+  `data-genre` on the page root, the festival's `kind` from its registry
+  entry, selects a palette block in the stylesheet; a genre with no block of
+  its own keeps the house palette, and two festivals of one genre share one.
+  The festival's own-language name is tagged with its language and direction.
   </details>
 
 - `23.7` The Edinburgh Fringe is a festival like the others: chosen on the timeline, it plans its own programme in its own theme.
