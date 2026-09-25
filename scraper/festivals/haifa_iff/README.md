@@ -26,15 +26,16 @@ numeric ids:
 
 | what | where on the site |
 |---|---|
-| every screening: day, venue, start, film or event id, screening (basket) id, section tags | `/eng/Screening_schedule`, one page |
-| a film's title, sections (`grp\|fwsa\|<groupId>`), director, country/year, runtime, language, subtitles | `/eng/Films/<id>` |
+| every screening: day, venue, start, film or event id, screening (basket) id | `/eng/Screening_schedule`, one page |
+| a film's title, picture (og:image), own section (`grp\|fwsa\|<groupId>`), director, country/year, runtime, language, subtitles, synopsis | `/eng/Films/<id>` |
+| every other section a film sits in | the section listings `/eng/Films` links, paged by `?from=` |
 | the Hebrew title | the film link's slug on the Hebrew schedule `/לוח_הקרנות` |
-| an event's group (opening, industry, …) | `/eng/Events/<id>` |
+| an event's group (opening, industry, …), picture, and hall | `/eng/Events/<id>` |
 | the tariff | `/eng/Pricing_\|famp\|_Passes`, served from `[ticketing]` in festival.toml |
 
 The edition marker is the site's own number: "Haifa 42nd International Film
-Festival" on the English schedule, "ה-42" on the Hebrew one, and `Festival: 42`
-on every film page. The fetch refuses to write when any of them disagrees with
+Festival" in the English schedule's og:site_name, "ה-42" in the Hebrew one's,
+and `Festival 42` on every film page. The fetch refuses to write when any of them disagrees with
 the edition's `ordinal`, or when a screening falls outside the edition's dates.
 
 Key everything on the numeric id and never on a title: the Hebrew title is often
@@ -54,40 +55,26 @@ Supervision* is השגחה הורית).
   one for that performance. Today that is the opening event, at 150 ₪.
 - **Status** is `unknown` everywhere, because no availability source exists.
 - **Titles** are English (`lang = "en"`), since the English mirror is the complete
-  one. The Hebrew title is served beside it as `titleLocal` wherever the site
-  gave one (91 of 119 films), and is null otherwise.
+  one. The Hebrew title is served beside it as `titleLocal` for every film.
+- **Pictures** are each film's and event's og:image, served as `imageUrl`.
 
-## The 2026 raw is a research transcription, not a fetch
+## The samples are captured pages
 
-`haifaff.co.il` was denied at CONNECT from the session that added this festival,
-so `fetch.py` has never run. The committed
-`data/festivals/haifa-iff/2026/haifaff-site/` was transcribed from WebFetch
-summaries of the site on 2026-09-24 and reshaped into `fetch.py`'s output shape.
-Its `manifest.json` records exactly how (`fetcher: "research-2026-09-24"`) and
-lists the known gaps. The main ones are that no synopses, images or section tags
-were captured, 28 films lack a Hebrew title, and one screening's ticket link is
-unknown. **The first real run of `fetch.py`, on a machine with egress, should
-overwrite that folder.** Diff the result against the transcription: any
-difference is either a gap closing or a transcription error.
-
-## The samples are reconstructed
-
-`sources/haifaff-site/samples/` holds HTML excerpts that `parse.py --selftest`
-reads. They are **not captured bytes**. They were rebuilt from markdown renderings
-of the real pages: the text, links, headings and list structure are what those
-renderings showed, and the class names and wrappers of the real markup are
-unknown. So `parse.py` reads element kinds (headings, list items, links, text
-lines) and never class names. Each sample's header comment says what it was
-rebuilt from. Replace them with real excerpts from the same hand-run fetch
-(its page cache is under `data/festivals/.cache/`), and fix `parse.py` wherever
-the real markup disagrees.
+`sources/haifaff-site/samples/` holds whole pages fetch.py read on 2026-09-25,
+which `parse.py --selftest` parses. After a site change, re-run the fetch
+(its page cache is under `data/festivals/.cache/`), copy the changed pages in,
+and fix `parse.py` wherever the markup moved.
 
 ## Things the data reports rather than hides
 
+- **Events outside the cinema halls** sit under the schedule's catch-all
+  "Events" column. The fetch takes each one's hall from its own page: Mirrors
+  Hall for the industry events, and Cinema Reshet in Hadar for the three
+  outdoor shorts evenings (which the schedule lists at 19:30, doors; the
+  screening starts at 20:30).
 - **Four venues share a block** (HaNassi 138-142: Auditorium, Rapaport,
   Cinematheque, Mirrors Hall), so the planner costs the walk between them at
   about zero. Tikotin is a 10-15 minute walk away, and Kriger is a drive.
 - **Every venue coordinate is approximate.** None could be geocoded from the
-  research session, and each venue's served `notes` says so.
-- **Two section-listed films have no screening** (13458 *The Black Ball*,
-  13614 *Violence at Noon*), so they are not served.
+  research session, and each venue's served `notes` says so. Cinema Reshet has
+  no coordinates at all.

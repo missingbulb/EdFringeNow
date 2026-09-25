@@ -43,7 +43,7 @@ def adapt(source):
             "categories": [],
             "blurb": None,
             "durationMin": None,
-            "imageUrl": None,
+            "imageUrl": event.get("image"),
         }
         genre = next((GENRE_BY_EVENT_GROUP[g] for g in event["groups"] or [] if g in GENRE_BY_EVENT_GROUP), None)
         if genre:

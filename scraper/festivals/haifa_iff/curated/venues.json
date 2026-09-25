@@ -47,6 +47,15 @@
    "accessibility": null,
    "notes": "The Raphael Auditorium of the Tikotin Museum of Japanese Art, a 10-15 minute walk from the Carmel Centre complex. habama.co.il (hall 222) shows a seating map but no seat count."
   },
+  "cinema-reshet-herzl-46": {
+   "address": {"value": "Herzl St 46, Haifa", "source": "https://www.haifaff.co.il/eng/Events/13974"},
+   "coordinates": null,
+   "capacity": null,
+   "layout": {"value": "outdoor", "source": "https://www.haifaff.co.il/eng/Events/13974"},
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Cinema Reshet, an outdoor screening space in the Hadar neighbourhood, away from the Carmel Centre halls. The festival uses it for three evenings of past festival short films, tickets on site only. The schedule files it under its catch-all Events column; the event pages name it."
+  },
   "kriger-carmel-zarfati": {
    "address": {"value": "Eliyahu Hakim 6, Haifa", "source": "https://ethos.co.il/eng/Krieger_Center"},
    "coordinates": {"lat": 32.781, "lng": 34.973, "basis": "approximate"},
