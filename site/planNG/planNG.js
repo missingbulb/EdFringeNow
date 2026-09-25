@@ -66,6 +66,7 @@ import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
 import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { GROUND, arrivalOf, hasCar } from "./lib/arrival.js";
+import { animateCalendar, snapshotCalendar } from "./motion.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -380,7 +381,7 @@ function restorePrefs() {
       }
     }
   }
-  state.maxPerDay = Number(saved.maxPerDay) || state.maxPerDay;
+  state.maxPerDay = Number.isFinite(saved.maxPerDay) ? Math.max(0, saved.maxPerDay) : state.maxPerDay;
   state.minGap = Number.isFinite(saved.minGap) ? saved.minGap : state.minGap;
   state.minGapSame = Number.isFinite(saved.minGapSame) ? saved.minGapSame : state.minGapSame;
   if (MODE_META[saved.mode]) state.mode = saved.mode;
@@ -800,17 +801,45 @@ function festivalsAnswer() {
   return answerHtml("🎪", t("prefs.festivals.some", { count: kept.length }));
 }
 
+/* Each festival marked as its shows are on the calendar, with how far it is
+ * from the one leading the trip: a trip reaching several festivals says so
+ * here rather than in a line above the calendar for each. A festival too far
+ * to reach is named too, with nothing to tick, so it is never silently
+ * missing. */
 function festivalsHtml() {
+  const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
+  const reachOf = new Map((state.reach || []).map((r) => [r.edition.festival.id, r]));
+  const distance = (id) => {
+    const r = reachOf.get(id);
+    if (!r || r.verdict === "focus") return "";
+    const key = r.verdict === "partly" ? "prefs.festivals.partly" : "prefs.festivals.dayTrip";
+    return `<span class="fest-km">${escapeHtml(t(key, { km: km(r.km) }))}</span>`;
+  };
+  const inPool = poolFestivals();
+  const inIds = new Set(inPool.map((f) => f.id));
+  const out = (state.reach || []).filter((r) => r.verdict === "out" && !inIds.has(r.edition.festival.id));
   return (
     `<div class="pref-checks">` +
-    poolFestivals()
+    inPool
       .map((festival) => {
         const on = !state.festivalsOut.has(festival.id);
         return (
-          `<label class="pref-check">` +
+          `<label class="pref-check fest-row">` +
           `<input type="checkbox" data-festival-on="${escapeHtml(festival.id)}"${on ? " checked" : ""} />` +
-          `<span class="fest-dot" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
-          `<span class="pref-check-word">${escapeHtml(festivalName(festival))}</span></label>`
+          `<span class="fest-stripe" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
+          `<span class="fest-words"><span class="pref-check-word">${escapeHtml(festivalName(festival))}</span>` +
+          `${distance(festival.id)}</span></label>`
+        );
+      })
+      .join("") +
+    out
+      .map((r) => {
+        const festival = r.edition.festival;
+        return (
+          `<div class="pref-check fest-row fest-row--out">` +
+          `<span class="fest-stripe" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
+          `<span class="fest-words"><span class="pref-check-word">${escapeHtml(festivalName(festival))}</span>` +
+          `<span class="fest-km">${escapeHtml(t("prefs.festivals.out", { km: km(r.km ?? 0) }))}</span></span></div>`
         );
       })
       .join("") +
@@ -908,7 +937,7 @@ function paceFineHtml() {
   return (
     `<div class="pref-row">` +
     `<span class="pref-label">${escapeHtml(t("prefs.pace.atMost"))}</span>` +
-    `<input class="ctl-num" type="number" min="1" max="8" step="1" inputmode="numeric"` +
+    `<input class="ctl-num" type="number" min="0" step="1" inputmode="numeric"` +
     ` data-num="maxPerDay" value="${state.maxPerDay}"` +
     ` aria-label="${escapeHtml(t("prefs.pace.atMostLabel"))}" />` +
     `<span class="pref-label">${escapeHtml(t("prefs.pace.perDay"))}</span>` +
@@ -1227,7 +1256,8 @@ function wirePrefs() {
     if (el.dataset.num) state.answered.add("pace");
     if (el.dataset.mealon || el.dataset.time) state.answered.add("food");
     if (el.dataset.num === "maxPerDay") {
-      state.maxPerDay = clamp(Math.round(Number(el.value)) || 1, 1, 8);
+      const count = Math.round(Number(el.value));
+      state.maxPerDay = Number.isFinite(count) ? Math.max(0, count) : state.maxPerDay;
     } else if (el.dataset.num === "minGap") {
       state.minGap = Number(el.value);
     } else if (el.dataset.num === "minGapSame") {
@@ -1579,6 +1609,7 @@ function renderDrawerCount(draft) {
 function renderCalendar(draft) {
   const host = $("schedule");
   const empty = $("scheduleEmpty");
+  const before = snapshotCalendar(host);
   host.innerHTML = "";
   host.hidden = false;
   // The note says what the constraints have cost; the calendar under it is
@@ -1631,8 +1662,13 @@ function renderCalendar(draft) {
       // A blank night collapses to a sliver, but only while the calendar has
       // something to show: when the whole draft is empty every column is
       // blank, and slivers would leave the blockers nothing to sit on. A day
-      // holding something of the reader's own is never blank.
-      (!day.slots.length && !keep && !own.length && draft.counts.picked && !state.drag ? " sch-day--empty" : "");
+      // holding something of the reader's own is never blank. A drag keeps
+      // the slivers it began with, whatever the day holds meanwhile.
+      ((state.drag
+        ? state.drag.slivers.has(iso)
+        : !day.slots.length && !keep && !own.length && draft.counts.picked)
+        ? " sch-day--empty"
+        : "");
     col.dataset.date = iso;
     if (keep && keep.kind === "festival") col.dataset.festivalColour = keep.festival;
 
@@ -1673,9 +1709,11 @@ function renderCalendar(draft) {
       day.slots.forEach((slot, i2) => {
         // A short show is drawn at SCH_MIN_BLOCK so its four verdicts fit — but
         // never past the next block's own start, or the two would overlap and
-        // the calendar would claim a clash the scheduler took care to avoid.
+        // the calendar would claim a clash the scheduler took care to avoid,
+        // and never past the day's end, or it would claim hours the reader
+        // gave up.
         const next = day.slots[i2 + 1];
-        const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+        const ceiling = Math.min(next ? y(next.startMinuteOfDay) - 2 : axisH, y(dayEndMin()));
         body.appendChild(
           buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
         );
@@ -1688,6 +1726,7 @@ function renderCalendar(draft) {
 
   host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
   markColumnWidth();
+  animateCalendar(host, before);
 }
 
 /* A column squeezed to share the width sheds what a show's block can't
@@ -1802,7 +1841,7 @@ function keepBanner(iso, keep, dayTop) {
   el.setAttribute("aria-haspopup", "menu");
   el.innerHTML =
     `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META.festival.emoji}</span> ` +
-    `${escapeHtml(keptName(keep))}</span>`;
+    `<span class="keep-name">${escapeHtml(keptName(keep))}</span></span>`;
   return el;
 }
 
@@ -1933,13 +1972,19 @@ function setDayEnd(min) {
   return true;
 }
 
+/** What a drag holds still: the axis, and which days are drawn as slivers. */
+function holdLayout(ov) {
+  const slivers = new Set([...document.querySelectorAll("#schedule .sch-day--empty")].map((c) => c.dataset.date));
+  return { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin), slivers };
+}
+
 /* A drag holds the axis and the column widths still for its duration. Without
  * that, moving a line re-drafts, the re-draft re-fits the axis, and the same
  * pointer position then means a different minute — the line would chase the
  * pointer instead of following it. */
 function startBlockerDrag(onMove) {
   const ov = document.querySelector(".sch-blockers");
-  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  state.drag = holdLayout(ov);
   const move = (ev) => {
     if (onMove(ev)) redraftAndSave();
   };
@@ -2089,6 +2134,7 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
 function buildTravelLeg(a, b, top, bottom) {
   const leg = document.createElement("div");
   leg.className = "sch-leg";
+  leg.dataset.after = `${a.slug}@${slotKey(a)}`;
   leg.style.top = `${top}px`;
   leg.style.height = `${Math.max(0, bottom - top)}px`;
 
@@ -2798,7 +2844,7 @@ function dragOwn(e, el) {
   const x0 = e.clientX;
   const y0 = e.clientY;
   let moved = false;
-  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  state.drag = holdLayout(ov);
   const move = (ev) => {
     if (!moved && Math.hypot(ev.clientX - x0, ev.clientY - y0) < 4) return;
     moved = true;
@@ -3304,8 +3350,8 @@ async function loadPool() {
   rebuild();
 }
 
-/* What the pool holds besides the focused festival, and what it had to leave
- * out: a festival dropped for distance is named, never silently missing. */
+/* A festival leading the trip whose programme is not out yet. What else the
+ * pool holds, and what it left out, is the festivals chip's to say. */
 function renderPoolNote() {
   const host = $("poolNote");
   const lines = [];
@@ -3315,28 +3361,6 @@ function renderPoolNote() {
       `<p class="pool-line pool-line--wait" data-i18n-slot="pool.noProgramme">` +
         `${escapeHtml(t("pool.noProgramme", { festival: festivalName(focus.festival) }))}</p>`
     );
-  }
-  const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
-  for (const r of state.reach) {
-    if (r.verdict === "focus") continue;
-    const other = r.edition.festival;
-    const name = festivalName(other);
-    if (r.verdict === "day-trip" && r.edition.entry.dataUrl) {
-      lines.push(
-        `<p class="pool-line pool-line--also" data-i18n-slot="pool.also">` +
-          `${escapeHtml(t("pool.also", { festival: name, km: km(r.km) }))}</p>`
-      );
-    } else if (r.verdict === "partly") {
-      lines.push(
-        `<p class="pool-line pool-line--partly" data-i18n-slot="pool.partly">` +
-          `${escapeHtml(t("pool.partly", { festival: name, km: km(r.km) }))}</p>`
-      );
-    } else if (r.verdict === "out") {
-      lines.push(
-        `<p class="pool-line pool-line--out" data-i18n-slot="pool.out">` +
-          `${escapeHtml(t("pool.out", { festival: name, city: festivalCity(focus.festival), km: km(r.km ?? 0) }))}</p>`
-      );
-    }
   }
   host.innerHTML = lines.join("");
   host.hidden = !lines.length;

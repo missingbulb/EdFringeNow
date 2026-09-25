@@ -21,6 +21,9 @@ module.exports = {
     );
 
     for (const which of ["end", "start"]) {
+      const flag = page.locator(`.sch-dayline--${which} .dl-flag`);
+      await page.locator(`.sch-dayline--${which} .dl-grip`).scrollIntoViewIfNeeded();
+      const said = await flag.textContent();
       const line = await page.locator(`.sch-dayline--${which} .dl-grip`).boundingBox();
       const x = line.x + line.width / 2;
       const y = line.y + line.height / 2;
@@ -31,6 +34,7 @@ module.exports = {
         await page.mouse.move(x, y + step * i);
         assert.deepEqual(await widths(page), before, `every day keeps its width while the day's ${which} is dragged`);
       }
+      assert.notEqual(await flag.textContent(), said, `the day's ${which} moved with the pointer`);
       await page.mouse.up();
     }
   },

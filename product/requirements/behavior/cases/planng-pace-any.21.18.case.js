@@ -27,7 +27,7 @@ module.exports = {
 
     await setPerDay(page, 0);
     assert.equal(await stored(page), 0, "none a day is kept as none");
-    assert.equal(await page.locator("#schedule .sch-show").count(), 0, "and drafts no shows");
+    assert.equal(await page.locator("#schedule .sch-slot:not(.sch-ghost)").count(), 0, "and drafts no shows");
 
     await page.reload({ waitUntil: "load" });
     await plannerReady(page, "haifa-iff");

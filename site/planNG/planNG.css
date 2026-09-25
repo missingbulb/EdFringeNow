@@ -906,6 +906,44 @@ body.festival-page {
   border-radius: 50%;
   background: var(--festival-colour, var(--muted));
 }
+/* A block the calendar just lost, drawn once more while it shrinks away. */
+.sch-ghost {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* A festival in the festivals chip carries the stripe its shows carry on the
+   calendar, at the same width, beside its name and how far it is. */
+.fest-stripe {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 4px;
+  min-height: 1.4em;
+  border-radius: 2px;
+  background: var(--festival-colour, var(--muted));
+}
+.fest-row {
+  align-items: flex-start;
+}
+.fest-row input {
+  margin-top: 3px;
+}
+.fest-words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.fest-km {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.fest-row--out {
+  cursor: default;
+  opacity: 0.6;
+  /* No checkbox: the stripe sits where the others' names start. */
+  padding-inline-start: 21px;
+}
 .pref-tags,
 .pref-variety {
   display: flex;
@@ -1217,8 +1255,18 @@ body.festival-page {
   white-space: nowrap;
 }
 .sch-keep--festival .keep-label {
+  min-width: 0;
   padding: 0;
   background: none;
+}
+/* A festival's name is often wider than its day: it ends in an ellipsis at
+   the column's edge rather than running over the next day's shows. */
+.sch-keep--festival {
+  overflow: hidden;
+}
+.sch-keep--festival .keep-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .keep-emoji {
   font-size: 0.9rem;
