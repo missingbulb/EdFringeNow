@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, routeFares, flightsSettled } = require("../../shared/case-helpers");
+const { jerusalemReady, routeFares, flightsSettled, answerTravel } = require("../../shared/case-helpers");
 
 /* No fare to show — the service not there at all, or the partner finding
  * nothing — leaves each block with the partner's search for its own day and
@@ -12,8 +12,7 @@ module.exports = {
     // The harness serves no /api/fares at all: the service is not there.
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
-    await page.click('.flight--out [data-origin="ask"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     assert.equal(await page.locator(".flight-price").count(), 0, "nothing claims a price");
     assert.equal(await page.getAttribute(".flight--out .flight-search", "href"), "https://www.aviasales.com/search/LON1710TLV1");

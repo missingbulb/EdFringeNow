@@ -1641,7 +1641,7 @@ reaches it, and otherwise the one it covers most.
   Each end of the band is a handle that also moves a day at a time with the
   arrow keys, over any day of the twelve months shown. A trip is at most
   `MAX_PERIOD_DAYS` long (`site/shared/limits.js`): moving one end past that
-  pulls the other along, and a first day moved past the last swaps the two. Every change re-plans the calendar across the new
+  pulls the other along. Every change re-plans the calendar across the new
   days, is written to the address, and is what the page reopens on.
   </details>
 
@@ -1762,7 +1762,7 @@ reaches it, and otherwise the one it covers most.
 
 - `23.20` A city's festivals share one pill: it spans all their runs with each run drawn inside it, carries its country's flag at its middle, and is labelled with how many festivals it holds and the one that leads them.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.20 -->
+  ![planng-city-pill.23.20](requirements/screen/cases/planng-city-pill.23.20.png) <!-- req-gallery:23.20 -->
 
   <details><summary>Notes</summary>
 
@@ -1777,15 +1777,15 @@ reaches it, and otherwise the one it covers most.
 
 - `23.21` Pointing at a city's pill shows its card: how many festivals, and each one's name and dates.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.21 -->
+  ![planng-city-card.23.21](requirements/screen/cases/planng-city-card.23.21.png) <!-- req-gallery:23.21 -->
 
 - `23.22` Choosing a city's pill sets the trip to its leading festival's run plus a day either side, and that festival leads the trip.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.22 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.22 -->
 
 - `23.23` Dragging the band moves the whole trip, keeping its length and the festival chosen; a press that doesn't move still chooses the festival under it.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.23 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.23 -->
 
   <details><summary>Notes</summary>
 
@@ -1818,11 +1818,11 @@ is looked up before the reader has said they fly.
 
 - `24.9` Living elsewhere, the next question is how you travel: fly, take the train or drive.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.9 -->
+  ![planng-way.24.9](requirements/screen/cases/planng-way.24.9.png) <!-- req-gallery:24.9 -->
 
 - `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:24.10 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:24.10 -->
 
 - `24.8` An answer saved before the page asked how you travel is read as one: a home in the festival's city as living there, abroad as flying, anything else as not yet said.
 

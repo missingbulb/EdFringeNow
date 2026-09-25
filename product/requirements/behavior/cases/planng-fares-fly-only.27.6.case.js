@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, routeFares, flightsSettled, settle } = require("../../shared/case-helpers");
+const { jerusalemReady, routeFares, flightsSettled, settle, answerTravel } = require("../../shared/case-helpers");
 
 /* The fare service counted through every answer: nothing until flying. */
 module.exports = {
@@ -14,14 +14,12 @@ module.exports = {
     assert.equal(asked.length, 0, "unsettled: no fare asked for");
 
     for (const way of ["local", "drive", "train"]) {
-      await page.click('.flight--out [data-origin="ask"], .flight--out [data-origin="change"]');
-      await page.click(`#originCard [data-origin="${way}"]`);
+      await answerTravel(page, way === "local" ? { home: "local" } : { home: "IL", way });
       await settle(page);
       assert.equal(asked.length, 0, `${way}: no fare asked for`);
     }
 
-    await page.click('.flight--out [data-origin="change"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     assert.equal(asked.length, 2, "flying: the way out and the way home");
   },
