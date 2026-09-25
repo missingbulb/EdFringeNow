@@ -1346,8 +1346,8 @@ rather than as a control panel.
 
 The calendar drafts before the reader has said anything, so what they say is
 not a form standing in front of it: it is one slim row of chips between the
-year's strip and the calendar, each naming its current answer, and four
-blockers on the calendar itself. A chip opens a panel that floats over the
+year's strip and the calendar, each naming its current answer, and the
+day's two hour lines on the calendar itself. A chip opens a panel that floats over the
 calendar with the pictures and the exact numbers behind them — the picture is
 the short way to a setting, never the only way — so however much a question
 holds, the calendar never moves. Nothing above the calendar explains the
@@ -1410,22 +1410,19 @@ calendar.
   over a rule that ignores it, which is the shape that would lie.
   </details>
 
-- `21.5` A meal you asked for is a band the calendar drafts around; sorting food out yourself leaves the day clear.
+- `21.5` How you eat puts a meal on every day, which the calendar drafts around; sorting food out yourself leaves the days clear.
 
   ![jerusalem-food.21.5](requirements/screen/cases/jerusalem-food.21.5.png) <!-- req-gallery:21.5 -->
 
   <details><summary>Notes</summary>
 
   The same two nights twice, stitched: once with breakfast, lunch and dinner
-  asked for — each a band nothing is drafted through, carrying the place when
-  the reader has named one — and once with "I'll sort it out myself", which
-  draws no bands at all and is the reader's signal to stop crowding the
-  calendar with food.
-
-  Naming the place is the reader's own for now. Choosing it for them — from
-  what is open, close enough to reach between the shows either side, and in
-  the style and price they said they wanted — is the question this row is
-  shaped for and does not yet answer.
+  asked for — each a block on each day, nothing drafted through it, carrying
+  the place when the reader has named one — and once with "I'll sort it out
+  myself", which puts none on the calendar. The answer seeds the blocks: each
+  is the reader's to move, resize or remove on its own day (`28.7`), and
+  answering the question again lays them out afresh. There are no longer
+  bands at the same hour every day.
   </details>
 
 - `21.6` Where your day starts and ends are blockers on the calendar, dragged to where you want them.
@@ -1455,19 +1452,6 @@ calendar.
   redrawing rather than a number changing.
   </details>
 
-- `21.8` The first and last nights are the same kind of blocker, on the same calendar.
-
-  ![jerusalem-window.21.8](requirements/screen/cases/jerusalem-window.21.8.png) <!-- req-gallery:21.8 -->
-
-  <details><summary>Notes</summary>
-
-  Every night of the festival is a column whether or not the reader's window
-  takes it; the nights outside it are shaded like the hours outside the day,
-  with a draggable edge at each end of the window. The date window therefore
-  lives on the calendar with the other three constraints, rather than on a rail
-  over the drawer's grid.
-  </details>
-
 - `21.9` Every preference survives a reload.
 
   🚩 _Behavior leaf._ <!-- req-gallery:21.9 -->
@@ -1475,7 +1459,7 @@ calendar.
   <details><summary>Notes</summary>
 
   Driven: state an interest, require a tag, change a number, ask for dinner,
-  move the day's end and the first night, reload, and all of it comes back —
+  move the day's end, reload, and all of it comes back —
   stored under the festival's own prefix like everything else this page
   remembers.
   </details>
@@ -1774,33 +1758,138 @@ so.
   list rather than an error, so the page shows the search link.
   </details>
 
-## 28. Holidays at home
+## 28. Your days
+
+The trip's days are the reader's to shape before any show is drafted into
+them. A day can be kept for something other than the festival — a rest, an
+excursion, or a festival nearby — and it is drawn as one block across its
+column. Flights take the hours at either end of the trip, and meals and
+personal time are blocks the reader puts where they want them, day by day.
+The draft plans around all of it.
+
+- `28.1` A day kept for rest is one block across its column, with nothing drafted in it; a first draft keeps one day like this.
+
+  ![jerusalem-rest-day.28.1](requirements/screen/cases/jerusalem-rest-day.28.1.png) <!-- req-gallery:28.1 -->
+
+  <details><summary>Notes</summary>
+
+  Rendered with nothing stored: the Jerusalem trip reaches no other festival,
+  so the page's own guess is a rest day on the night that costs least (`28.3`).
+  The seeded day is there even when the reader asks for a packed day, so that
+  a day of the trip being the reader's own is discovered rather than
+  explained.
+  </details>
+
+- `28.2` A day given to a nearby festival drafts only that festival's shows, under its colour.
+
+  ![planng-festival-day.28.2](requirements/screen/cases/planng-festival-day.28.2.png) <!-- req-gallery:28.2 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco: a first draft gives one of its days to
+  Acco, and that column holds Acco's shows only, while the days around it
+  keep drafting from both.
+  </details>
+
+- `28.3` A first draft keeps one day for a festival nearby if the trip reaches one, and otherwise for rest, on the day that costs least.
+
+  <table><thead><tr><th align="left">The trip</th><th align="left">The day kept</th></tr></thead><tbody><tr><td>Reaches a festival nearby</td><td>that festival's, on the day it plays most</td></tr><tr><td>Reaches none</td><td>rest, on the day with fewest shows playing only that night</td></tr><tr><td>Two days tie</td><td>the earlier</td></tr><tr><td>The first or last day</td><td>never</td></tr><tr><td>Fewer than three days</td><td>none</td></tr></tbody></table> <!-- req-gallery:28.3 -->
+
+  <details><summary>Notes</summary>
+
+  A festival nearby is one the trip reaches other than the one that leads it;
+  its day is the trip's day with most of its performances. With none, the rest
+  day is the day holding fewest shows that play only that night, among the
+  days anything plays; ties go to the earlier day. The trip's first and last
+  days are never chosen, since the flights take them, and a trip of fewer than
+  three days keeps no day at all. Once the reader has chosen or cleared any
+  day, nothing is seeded for that trip again.
+  </details>
+
+- `28.4` Clicking a day's head offers what the day is for; clicking a kept day's block changes or clears it, and dragging it moves it to another day.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.4 -->
+
+  <details><summary>Notes</summary>
+
+  Driven on the Jerusalem trip: a day's head is clicked and made an excursion
+  day, the seeded rest day's block is dragged onto another day, and the
+  excursion is cleared from its block's menu. Each step re-drafts, and what
+  the reader chose comes back after a reload.
+  </details>
+
+- `28.5` Flying in and out takes the first day's hours until you have landed and got there, and the last day's from when you must leave for the airport.
+
+  ![jerusalem-flight-days.28.5](requirements/screen/cases/jerusalem-flight-days.28.5.png) <!-- req-gallery:28.5 -->
+
+  <details><summary>Notes</summary>
+
+  Coming from London, with the fare service answering from its fixture: the
+  cheapest flight out and home (section 27) bound the calendar's first and
+  last day, and nothing is drafted under either block. A reader who needs no
+  flight has whole days at both ends.
+  </details>
+
+- `28.6` A flight's block runs to its landing plus the trip from the airport, or from its departure less the time the airport asks for.
+
+  <table><thead><tr><th align="left">Flight</th><th align="left">Hours taken on the day</th></tr></thead><tbody><tr><td>Out, landing 14:30 local</td><td>until 16:00: landing plus 90 minutes from the airport</td></tr><tr><td>Out, landing after the day</td><td>the whole day</td></tr><tr><td>Out, landing the day before</td><td>none</td></tr><tr><td>Home, leaving 18:00 local</td><td>from 15:30: 150 minutes for the airport</td></tr><tr><td>Home, leaving the next morning</td><td>none</td></tr><tr><td>No flight</td><td>none</td></tr></tbody></table> <!-- req-gallery:28.6 -->
+
+  <details><summary>Notes</summary>
+
+  Times are the festival's own wall clock, whatever zone the flight's time
+  was given in. A flight landing after the first day is over takes the whole
+  day; one landing before it takes none.
+  </details>
+
+- `28.7` Clicking an empty hour offers a meal or personal time there; what is added is drafted around, and can be dragged, resized or removed.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.7 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: an empty hour is clicked and lunch added there, the block is dragged
+  to another day and hour and stretched, and then removed; a show that the
+  block's hour held is dropped and comes back. Suggesting where to eat — open
+  places near the shows either side, with a table to book — needs a source of
+  restaurants and is not done yet.
+  </details>
+
+- `28.8` A meal added is named for the time of day, and for what that day already has.
+
+  <table><thead><tr><th align="left">Added at</th><th align="left">Called</th></tr></thead><tbody><tr><td>04:00 to 11:00</td><td>breakfast</td></tr><tr><td>11:00 to 16:00</td><td>lunch</td></tr><tr><td>16:00 to 22:00</td><td>dinner</td></tr><tr><td>22:00 to 04:00</td><td>a late bite</td></tr><tr><td>An hour whose meal the day already has</td><td>a snack</td></tr></tbody></table> <!-- req-gallery:28.8 -->
+
+  <details><summary>Notes</summary>
+
+  The hours are the table's; a day that already has that meal gets a snack
+  instead, so a second click at lunchtime does not make a second lunch.
+
+## 29. Holidays at home
 
 The trip's dates are the reader's, and the days they can most easily take off
 are their own country's public holidays. The year strip marks them. Until the
 reader says where they come from (section 24), their country is guessed from
 their connection, and the strip says it is a guess.
 
-- `28.1` The year strip marks the public holidays where you live, and says whose they are.
+- `29.1` The year strip marks the public holidays where you live, and says whose they are.
 
-  ![planng-holidays.28.1](requirements/screen/cases/planng-holidays.28.1.png) <!-- req-gallery:28.1 -->
+  ![planng-holidays.29.1](requirements/screen/cases/planng-holidays.29.1.png) <!-- req-gallery:29.1 -->
 
   <details><summary>Notes</summary>
 
   One mark per holiday on the day it falls, under the months, named in its
-  tooltip (asserted by 28.2, since the tooltip is the browser's). The names come
+  tooltip (asserted by 29.2, since the tooltip is the browser's). The names come
   from the committed per-country files in `site/holidays/`, generated from
   the `holidays` Python package by `scripts/build-holidays.py`, in the page's
   language where the package carries one and in English otherwise.
   </details>
 
-- `28.2` Until you have said where you come from, the holidays are those of the country you connect from, and the strip says so; your answer replaces the guess.
+- `29.2` Until you have said where you come from, the holidays are those of the country you connect from, and the strip says so; your answer replaces the guess.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:28.2 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:29.2 -->
 
-- `28.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
+- `29.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
 
-  🔧 _Logic leaf._ <!-- req-gallery:28.3 -->
+  🔧 _Logic leaf._ <!-- req-gallery:29.3 -->
 
   <details><summary>Notes</summary>
 
@@ -1809,9 +1898,9 @@ their connection, and the strip says it is a guess.
   stored, and no other service is asked.
   </details>
 
-- `28.4` The holiday files cover the whole year the strip shows, for at least another year.
+- `29.4` The holiday files cover the whole year the strip shows, for at least another year.
 
-  🔧 _Logic leaf._ <!-- req-gallery:28.4 -->
+  🔧 _Logic leaf._ <!-- req-gallery:29.4 -->
 
   <details><summary>Notes</summary>
 

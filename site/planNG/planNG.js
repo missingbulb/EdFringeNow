@@ -33,7 +33,7 @@
  *     what makes the page good.
  */
 
-import { slotKey } from "../plan/lib/engine.js";
+import { eligibleSlots, slotKey } from "../plan/lib/engine.js";
 import { draftCalendar, instanceKey } from "../plan/lib/contention.js";
 import { slotEndTime } from "../plan/lib/itinerary.js";
 import { distanceKm, travelMinutes } from "../plan/lib/travel.js";
@@ -62,6 +62,7 @@ import {
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
+import { NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { holidaysIn, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
@@ -118,6 +119,7 @@ const KEY_PREFS = STORAGE_PREFIX + "prefs";
 const KEY_VERDICTS = STORAGE_PREFIX + "verdicts";
 const KEY_ORIGIN = STORAGE_PREFIX + "origin";
 const KEY_TRIP = STORAGE_PREFIX + "trip";
+const KEY_DAYS = STORAGE_PREFIX + "days";
 
 /* The countries the origin question offers by name, beyond the festival's own.
  * Named by Intl in the reader's language, so there is no list of country names
@@ -156,10 +158,6 @@ const state = {
   venues: new Map(),
   coords: new Map(),
   starred: new Set(),
-  // The date window, as 1-based indices into `state.dates` (the Fringe planner
-  // uses days-of-August the same way, which keeps the overlay maths identical).
-  d0: 1,
-  d1: 1,
   dayStartMin: 9 * 60,
   dayEndMin: 25 * 60,
   meals: [
@@ -167,6 +165,15 @@ const state = {
     { id: "lunch", enabled: false, startMin: 12 * 60 + 30, endMin: 13 * 60 + 30, place: "" },
     { id: "dinner", enabled: false, startMin: 18 * 60, endMin: 19 * 60, place: "" },
   ],
+  // The reader's own days: what a kept day is for (date -> {kind, festival}),
+  // and the blocks they put on the calendar — meals and personal time, each
+  // on its own day. `seededFor` is the trip a first draft last kept a day
+  // for, so a day the reader cleared is not kept again; `mealDates` are the
+  // days the food answer has already laid its meals on.
+  kept: new Map(),
+  own: [],
+  seededFor: null,
+  mealDates: new Set(),
   maxPerDay: 3,
   minGap: 30,
   minGapSame: 0,
@@ -272,8 +279,8 @@ function clockToMin(text) {
  * boundaries are held a quarter of an hour apart. */
 const dayEndMin = () => Math.max(state.dayStartMin + 15, state.dayEndMin);
 
-const windowStartISO = () => state.dates[state.d0 - 1];
-const windowEndISO = () => state.dates[state.d1 - 1];
+const tripStartISO = () => state.dates[0];
+const tripEndISO = () => state.dates[state.dates.length - 1];
 
 // --- persistence ----------------------------------------------------------
 
@@ -323,13 +330,7 @@ function restoreVerdicts() {
  * it as it was left; everything else is the reader's own and holds on every
  * festival. The trip itself is KEY_TRIP's. */
 function savePrefs() {
-  const saved = readStore(KEY_PREFS, {}) || {};
-  const windows = { ...(saved.windows || {}) };
-  if (state.focus && state.dates.length) {
-    windows[state.focus.key] = { from: windowStartISO(), to: windowEndISO() };
-  }
   writeStore(KEY_PREFS, {
-    windows,
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     meals: state.meals,
@@ -372,6 +373,30 @@ function restorePrefs() {
   if (saved.tags && typeof saved.tags === "object") {
     state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
   }
+}
+
+function saveDays() {
+  writeStore(KEY_DAYS, {
+    kept: Object.fromEntries(state.kept),
+    own: state.own,
+    seededFor: state.seededFor,
+    mealDates: [...state.mealDates],
+  });
+}
+
+function restoreDays() {
+  const saved = readStore(KEY_DAYS, null);
+  if (!saved) return;
+  if (saved.kept && typeof saved.kept === "object") {
+    state.kept = new Map(Object.entries(saved.kept).filter(([, d]) => d && KEEP_META[d.kind]));
+  }
+  if (Array.isArray(saved.own)) {
+    state.own = saved.own.filter(
+      (b) => b && OWN_META[b.kind] && typeof b.date === "string" && Number.isFinite(b.startMin) && b.endMin > b.startMin
+    );
+  }
+  state.seededFor = typeof saved.seededFor === "string" ? saved.seededFor : null;
+  if (Array.isArray(saved.mealDates)) state.mealDates = new Set(saved.mealDates);
 }
 
 // --- chrome ---------------------------------------------------------------
@@ -581,105 +606,6 @@ function applyVerdicts(draft) {
 
 // --- the date window ------------------------------------------------------
 
-function layoutOverlay() {
-  const daysEl = $("dayHead");
-  const dr = daysEl.getBoundingClientRect();
-  if (dr.width === 0) return;
-  const wr = $("calInner").getBoundingClientRect();
-  state.layout = {
-    trackLeft: dr.left - wr.left,
-    trackWidth: dr.width,
-    dayW: dr.width / state.dates.length,
-  };
-  const win = $("win");
-  win.style.left = state.layout.trackLeft + "px";
-  win.style.width = state.layout.trackWidth + "px";
-  paintWindow();
-}
-
-/* The overlay is positioned in physical pixels over a grid whose columns follow
- * the page's direction, so on a right-to-left page day 1 is the rightmost
- * column and every x below is measured from the other end. `boundaryX` is the
- * one place that knows it; the rest of the window's maths is direction-blind. */
-const isRtl = () => currentDir() === "rtl";
-
-/** The physical offset of the boundary `days` days after the first night. */
-function boundaryX(days) {
-  const { trackWidth, dayW } = state.layout;
-  return isRtl() ? trackWidth - days * dayW : days * dayW;
-}
-
-function paintWindow() {
-  const { trackLeft, trackWidth } = state.layout;
-  const x0 = boundaryX(state.d0 - 1);
-  const x1 = boundaryX(state.d1);
-  // The window's own edges keep their logical identity; the dimmed regions and
-  // the band are whatever lies outside and inside them on screen.
-  const near = Math.min(x0, x1);
-  const far = Math.max(x0, x1);
-  $("dimL").style.cssText = `left:0;width:${near}px`;
-  $("dimR").style.cssText = `left:${far}px;width:${Math.max(0, trackWidth - far)}px`;
-  $("band").style.cssText = `left:${near}px;width:${far - near}px`;
-  $("edgeStart").style.left = `${x0}px`;
-  $("edgeEnd").style.left = `${x1}px`;
-  void trackLeft;
-}
-
-function dayAt(clientX) {
-  const wr = $("calInner").getBoundingClientRect();
-  const { trackLeft, trackWidth, dayW } = state.layout;
-  const x = clientX - wr.left - trackLeft;
-  return clamp(Math.round((isRtl() ? trackWidth - x : x) / dayW), 0, state.dates.length);
-}
-
-function dragDate(el, apply) {
-  el.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    el.setPointerCapture(e.pointerId);
-    el.classList.add("dragging");
-    const startX = e.clientX;
-    const s0 = state.d0;
-    const s1 = state.d1;
-    const move = (ev) => {
-      apply(ev, s0, s1, startX);
-      paintWindow();
-      redraftAndSave();
-    };
-    const up = () => {
-      el.classList.remove("dragging");
-      el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerup", up);
-    };
-    el.addEventListener("pointermove", move);
-    el.addEventListener("pointerup", up);
-  });
-}
-
-function wireWindow() {
-  const n = () => state.dates.length;
-  dragDate($("edgeStart"), (ev) => {
-    state.d0 = clamp(dayAt(ev.clientX) + 1, 1, state.d1);
-  });
-  dragDate($("edgeEnd"), (ev) => {
-    state.d1 = clamp(dayAt(ev.clientX), state.d0, n());
-  });
-  dragDate($("band"), (ev, s0, s1, startX) => {
-    const travelled = (ev.clientX - startX) * (isRtl() ? -1 : 1);
-    const shift = Math.round(travelled / state.layout.dayW);
-    const span = s1 - s0;
-    const d0 = clamp(s0 + shift, 1, n() - span);
-    state.d0 = d0;
-    state.d1 = d0 + span;
-  });
-  // The drawer's grid is not measurable while it is folded away, so the
-  // window's overlay is laid out when it opens rather than only at boot.
-  $("boardDrawer").addEventListener("toggle", layoutOverlay);
-  addEventListener("resize", () => {
-    layoutOverlay();
-    placeDateEdges();
-  });
-}
-
 // --- the preference questions ---------------------------------------------
 //
 // The row between the year's strip and the calendar: one chip per question,
@@ -709,6 +635,8 @@ const MEAL_META = {
   breakfast: { emoji: "\u{1F950}", nameKey: "meal.breakfast" },
   lunch: { emoji: "\u{1F957}", nameKey: "meal.lunch" },
   dinner: { emoji: "\u{1F37D}", nameKey: "meal.dinner" },
+  late: { emoji: "\u{1F35C}", nameKey: "meal.late" },
+  snack: { emoji: "\u{1F36A}", nameKey: "meal.snack" },
 };
 
 // The variety question's answers. Drawn, refused, and not read by anything:
@@ -1126,6 +1054,7 @@ function wirePrefs() {
     } else if (question === "food") {
       const answer = FOOD_ANSWERS.find((a) => a.id === id);
       for (const meal of state.meals) meal.enabled = answer.meals.includes(meal.id);
+      relayMeals();
     } else {
       return;
     }
@@ -1156,6 +1085,7 @@ function wirePrefs() {
       else state.festivalsOut.add(el.dataset.festivalOn);
     } else if (el.dataset.mealon) {
       mealOf(el.dataset.mealon).enabled = el.checked;
+      relayMeals();
     } else if (el.dataset.time) {
       const [id, edge] = el.dataset.time.split(":");
       const meal = mealOf(id);
@@ -1169,8 +1099,13 @@ function wirePrefs() {
       if (edge === "start") meal.startMin = Math.min(min, meal.endMin - 15);
       else meal.endMin = Math.max(min, meal.startMin + 15);
       el.value = minToClock(edge === "start" ? meal.startMin : meal.endMin);
+      relayMeals();
     } else if (el.dataset.place) {
-      mealOf(el.dataset.place).place = el.value.trim();
+      // A place named in the question names that meal on every day it is on.
+      const meal = mealOf(el.dataset.place);
+      meal.place = el.value.trim();
+      for (const b of state.own) if (b.kind === "meal" && b.meal === meal.id) b.place = meal.place;
+      saveDays();
     } else {
       return;
     }
@@ -1195,17 +1130,133 @@ function wirePrefs() {
 
 const mealOf = (id) => state.meals.find((m) => m.id === id);
 
+// --- the reader's own days -------------------------------------------------
+//
+// A day kept for something other than the festival, the flights' hours at
+// either end of the trip, and the meals and personal time the reader puts on
+// the calendar. All of it is the reader's, day by day; the draft is told what
+// it may not use (lib/days.js) and plans around it.
+
+const KEEP_META = {
+  rest: { emoji: "\u{1F634}", nameKey: "day.rest" },
+  excursion: { emoji: "\u{1F68C}", nameKey: "day.excursion" },
+  festival: { emoji: "\u{1F3AA}", nameKey: "day.festival" },
+};
+
+const OWN_META = {
+  meal: { emoji: null },
+  personal: { emoji: "\u{1F9D8}", nameKey: "own.personal" },
+};
+
+// A block added by a click is an hour long, and snaps to the quarter hour.
+const OWN_DEFAULT_MIN = 60;
+const OWN_SNAP_MIN = 15;
+
+const tripKey = () => (state.period ? `${state.period.from}/${state.period.to}` : null);
+
+function keptInTrip() {
+  const days = new Set(state.dates);
+  return new Map([...state.kept].filter(([date]) => days.has(date)));
+}
+
+/** The flights' hours at either end of the trip, on the festival's clock. */
+function flightBlocks() {
+  if (!state.dates.length || !state.focus) return [];
+  const tz = state.focus.festival.timezone || "UTC";
+  return [
+    ["out", flightHours("out", state.flights.out, tripStartISO(), tz)],
+    ["back", flightHours("back", state.flights.back, tripEndISO(), tz)],
+  ]
+    .filter(([, hours]) => hours)
+    .map(([which, hours]) => ({ ...hours, which }));
+}
+
+/** Every hour the draft may not use, by night: the flights' and the reader's own blocks. */
+function busyHours() {
+  const busy = new Map();
+  for (const b of [...flightBlocks(), ...state.own]) {
+    const list = busy.get(b.date) || [];
+    list.push({ startMin: b.startMin, endMin: b.endMin });
+    busy.set(b.date, list);
+  }
+  return busy;
+}
+
+const mealsOf = (date) => state.own.filter((b) => b.kind === "meal" && b.date === date).map((b) => b.meal);
+let ownSeq = 0;
+const newOwnId = () => `o${Date.now().toString(36)}${(ownSeq++).toString(36)}`;
+
+/* The food answer lays its meals on every day of the trip that has not had
+ * them yet; answering again lays them afresh. Personal time is never touched. */
+function layMeals() {
+  for (const date of state.dates) {
+    if (state.mealDates.has(date)) continue;
+    state.mealDates.add(date);
+    for (const meal of state.meals) {
+      if (!meal.enabled) continue;
+      state.own.push({
+        id: newOwnId(),
+        kind: "meal",
+        meal: meal.id,
+        date,
+        startMin: meal.startMin,
+        endMin: meal.endMin,
+        place: meal.place,
+      });
+    }
+  }
+}
+
+function relayMeals() {
+  state.own = state.own.filter((b) => b.kind !== "meal");
+  state.mealDates = new Set();
+  layMeals();
+  saveDays();
+}
+
+/* A first draft of a trip keeps one of its days (lib/days.js's seedDay), once:
+ * a day the reader has since cleared is not kept again. */
+function seedDays() {
+  const key = tripKey();
+  if (!key || state.seededFor === key || !state.catalogue) return;
+  state.seededFor = key;
+  if (keptInTrip().size) return;
+  const slots = eligibleSlots(filteredShows(), {
+    dateStart: tripStartISO(),
+    dateEnd: tripEndISO(),
+    windowStart: `${tripStartISO()}T00:00`,
+    windowEnd: `${tripEndISO()}T23:59`,
+  });
+  const seed = seedDay({ dates: state.dates, lead: state.focus.festival.id, slots });
+  if (seed) state.kept.set(seed.date, seed.kind === "festival" ? { kind: "festival", festival: seed.festival } : { kind: seed.kind });
+}
+
+function keptName(day) {
+  if (day.kind === "festival") {
+    const festival = festivalById(day.festival);
+    return t("day.festival", { festival: festival ? festivalName(festival) : day.festival });
+  }
+  return t(KEEP_META[day.kind].nameKey);
+}
+
+function ownName(block) {
+  if (block.kind === "meal") return block.place || t(MEAL_META[block.meal].nameKey);
+  return t(OWN_META[block.kind].nameKey);
+}
+
+const ownEmoji = (block) => (block.kind === "meal" ? MEAL_META[block.meal].emoji : OWN_META[block.kind].emoji);
+
 // --- planning -------------------------------------------------------------
 
 function planOptions() {
   return {
-    dateStart: windowStartISO(),
-    dateEnd: windowEndISO(),
-    windowStart: `${windowStartISO()}T00:00`,
-    windowEnd: `${windowEndISO()}T23:59`,
+    dateStart: tripStartISO(),
+    dateEnd: tripEndISO(),
+    windowStart: `${tripStartISO()}T00:00`,
+    windowEnd: `${tripEndISO()}T23:59`,
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
-    mealBreaks: state.meals,
+    allowSlot: slotRule(keptInTrip(), busyHours()),
     maxPerDay: state.maxPerDay,
     minGapSameVenue: state.minGapSame,
     minGapDifferentVenue: state.minGap,
@@ -1227,6 +1278,8 @@ function planOptions() {
  * honest instead of locally repaired. */
 function redraft() {
   closePops();
+  seedDays();
+  layMeals();
   const draft = draftCalendar(filteredShows(), planOptions());
   state.draft = draft;
   state.picked = draft.picked;
@@ -1238,7 +1291,6 @@ function redraft() {
   renderDrawerCount(draft);
   showBoard();
   syncStars();
-  placeDateEdges();
 }
 
 /** The star on every browse and search row, set from the favourites. */
@@ -1407,47 +1459,56 @@ function renderCalendar(draft) {
   gutter.append(gHead, gBody);
   host.appendChild(gutter);
 
-  // EVERY night of the festival gets a column, not only the ones the reader's
-  // window takes: the nights outside it are what the first-night and
-  // last-night blockers are dragged across, and a window drawn over columns
-  // that vanish as it narrows would have nothing left to drag.
   const byDate = new Map(draft.days.map((d) => [d.date, d]));
-  state.dates.forEach((iso, i) => {
+  const kept = keptInTrip();
+  const flights = flightBlocks();
+  state.dates.forEach((iso) => {
     const day = byDate.get(iso) || { date: iso, slots: [] };
-    const inWindow = i + 1 >= state.d0 && i + 1 <= state.d1;
+    const keep = kept.get(iso) || null;
+    const own = [
+      ...flights.filter((f) => f.date === iso).map((f) => ({ ...f, kind: "flight" })),
+      ...state.own.filter((b) => b.date === iso),
+    ];
     const col = document.createElement("div");
     col.className =
       "sch-day" +
       (isWeekend(iso) ? " wknd" : "") +
-      (inWindow ? "" : " sch-day--out") +
+      (keep ? ` sch-day--kept sch-day--${keep.kind}` : "") +
       // A blank night collapses to a sliver, but only while the calendar has
       // something to show: when the whole draft is empty every column is
-      // blank, and five slivers would leave the blockers nothing to sit on.
-      (inWindow && !day.slots.length && draft.counts.picked && !state.drag ? " sch-day--empty" : "");
+      // blank, and slivers would leave the blockers nothing to sit on. A day
+      // holding something of the reader's own is never blank.
+      (!day.slots.length && !keep && !own.length && draft.counts.picked && !state.drag ? " sch-day--empty" : "");
     col.dataset.date = iso;
+    if (keep && keep.kind === "festival") col.dataset.festivalColour = keep.festival;
 
     const head = document.createElement("div");
     head.className = "sch-day-head";
+    head.dataset.dayHead = iso;
+    head.tabIndex = 0;
+    head.setAttribute("role", "button");
+    head.setAttribute("aria-haspopup", "menu");
+    head.setAttribute("aria-label", t("day.menuLabel", { day: dayAndDate(iso) }));
     head.innerHTML =
       `<div class="sch-dow">${escapeHtml(dates({ weekday: "short" }).format(dateOf(iso)))} ` +
       `<span class="sch-date">${escapeHtml(dayLabel(iso))}</span></div>` +
       `<div class="sch-day-count" data-i18n-slot="schedule.dayCount">` +
-      `${escapeHtml(t("schedule.dayCount", { count: inWindow ? day.slots.length : 0 }))}</div>`;
+      `${escapeHtml(t("schedule.dayCount", { count: day.slots.length }))}</div>`;
 
     const body = document.createElement("div");
     body.className = "sch-body";
     body.style.height = `${axisH}px`;
 
-    if (inWindow) {
-      // The hours the reader's day does not cover, and the meals it holds
-      // back: drawn in the column rather than over the calendar, so each one
-      // is clipped by the night it applies to.
-      body.appendChild(zone("top", 0, y(state.dayStartMin)));
-      body.appendChild(zone("bottom", y(dayEndMin()), axisH - y(dayEndMin())));
-      for (const meal of state.meals) {
-        if (meal.enabled) body.appendChild(mealBand(meal, y));
-      }
+    // The hours the reader's day does not cover: drawn in the column rather
+    // than over the calendar, so each one is clipped by the night it applies to.
+    body.appendChild(zone("top", 0, y(state.dayStartMin)));
+    body.appendChild(zone("bottom", y(dayEndMin()), axisH - y(dayEndMin())));
 
+    if (keep && keep.kind !== "festival") {
+      body.appendChild(keepBlock(iso, keep, axisH, y(state.dayStartMin)));
+    } else {
+      if (keep) body.appendChild(keepBanner(iso, keep, y(state.dayStartMin)));
+      for (const block of own) body.appendChild(ownBlock(block, y));
       for (let i2 = 0; i2 < day.slots.length - 1; i2++) {
         const a = day.slots[i2];
         const b = day.slots[i2 + 1];
@@ -1493,10 +1554,17 @@ function calendarAxis(draft) {
       maxs.push(slot.endMinuteOfDay);
     }
   }
-  for (const meal of state.meals) {
-    if (!meal.enabled) continue;
-    mins.push(meal.startMin);
-    maxs.push(meal.endMin);
+  const days = new Set(state.dates);
+  for (const block of state.own) {
+    if (!days.has(block.date)) continue;
+    mins.push(block.startMin);
+    maxs.push(block.endMin);
+  }
+  // A flight's block runs to the axis edge; the hour it hands the day back
+  // (or takes it) is what has to be on screen.
+  for (const f of flightBlocks()) {
+    if (f.which === "out") mins.push(f.endMin);
+    else maxs.push(f.startMin);
   }
   // Nothing drafted is exactly when the blockers matter most: the axis then
   // spans the day the reader asked for, so whatever emptied the calendar is on
@@ -1530,25 +1598,81 @@ function zone(which, top, height) {
   return el;
 }
 
-/* A meal the reader asked for: an hour of the night nothing is drafted
- * through, carrying the place when they have named one. */
-function mealBand(meal, y) {
+/* A day kept for rest or an excursion: one block over the whole column. */
+/* Its label, and a nearby festival's strip, hang just under the day's start
+ * line, whose flag would otherwise sit over them. */
+const KEEP_LABEL_GAP_PX = 16;
+
+function keepBlock(iso, keep, axisH, dayTop) {
   const el = document.createElement("div");
-  el.className = `sch-meal sch-meal--${meal.id}`;
-  el.style.top = `${y(meal.startMin)}px`;
-  el.style.height = `${Math.max(2, y(meal.endMin) - y(meal.startMin))}px`;
+  el.className = `sch-keep sch-keep--${keep.kind}`;
+  el.dataset.keep = iso;
+  el.dataset.kind = keep.kind;
+  el.style.height = `${axisH}px`;
+  el.style.paddingTop = `${dayTop + KEEP_LABEL_GAP_PX}px`;
+  el.tabIndex = 0;
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-haspopup", "menu");
   el.innerHTML =
-    `<span class="meal-label"><span aria-hidden="true">${MEAL_META[meal.id].emoji}</span> ` +
-    `${escapeHtml(meal.place || t(MEAL_META[meal.id].nameKey))}</span>`;
+    `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META[keep.kind].emoji}</span> ` +
+    `${escapeHtml(keptName(keep))}</span>`;
   return el;
 }
 
-// --- the four blockers ----------------------------------------------------
+/* A day given to a nearby festival still holds shows — that festival's — so it
+ * says so in a strip at its top rather than covering the column. */
+function keepBanner(iso, keep, dayTop) {
+  const el = document.createElement("div");
+  el.className = "sch-keep sch-keep--festival";
+  el.style.top = `${dayTop + KEEP_LABEL_GAP_PX}px`;
+  el.dataset.keep = iso;
+  el.dataset.kind = keep.kind;
+  el.tabIndex = 0;
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-haspopup", "menu");
+  el.innerHTML =
+    `<span class="keep-label"><span class="keep-emoji" aria-hidden="true">${KEEP_META.festival.emoji}</span> ` +
+    `${escapeHtml(keptName(keep))}</span>`;
+  return el;
+}
+
+/* A block of the reader's own — a meal, personal time — or a flight's hours.
+ * The reader's own are moved by dragging and stretched by their lower edge;
+ * a flight's are the fare's, and move with the trip's dates. */
+function ownBlock(block, y) {
+  const el = document.createElement("div");
+  const flight = block.kind === "flight";
+  el.className = `sch-own sch-own--${block.kind}` + (flight ? ` sch-own--${block.which}` : "");
+  el.style.top = `${y(block.startMin)}px`;
+  el.style.height = `${Math.max(14, y(block.endMin) - y(block.startMin))}px`;
+  if (flight) {
+    el.dataset.which = block.which;
+    const clock = block.which === "out" ? minToDayClock(block.endMin) : minToDayClock(block.startMin);
+    el.innerHTML =
+      `<span class="own-label"><span aria-hidden="true">\u2708\uFE0F</span> ` +
+      `${escapeHtml(t(block.which === "out" ? "flight.arrive" : "flight.depart", { time: clock }))}</span>`;
+    return el;
+  }
+  el.dataset.own = block.id;
+  el.dataset.kind = block.kind;
+  el.dataset.start = String(block.startMin);
+  el.dataset.end = String(block.endMin);
+  if (block.meal) el.dataset.meal = block.meal;
+  el.tabIndex = 0;
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-haspopup", "menu");
+  el.innerHTML =
+    `<span class="own-label"><span aria-hidden="true">${ownEmoji(block)}</span> ${escapeHtml(ownName(block))}</span>` +
+    `<span class="own-time">${escapeHtml(`${minToDayClock(block.startMin)}–${minToDayClock(block.endMin)}`)}</span>` +
+    `<span class="own-resize" aria-hidden="true"></span>`;
+  return el;
+}
+
+// --- the day's two lines ---------------------------------------------------
 //
-// Where the day starts and ends, and which nights the window takes, drawn
-// against the hours and the columns they rule out rather than typed into a
-// strip above them. One overlay holds all four; it is rebuilt with the
-// calendar, and the gestures are delegated from the calendar itself
+// Where the day starts and ends, drawn against the hours they rule out rather
+// than typed into a strip above them. One overlay holds both; it is rebuilt
+// with the calendar, and the gestures are delegated from the calendar itself
 // (wireBlockers) so nothing has to be re-wired when it is.
 
 function buildBlockers(axis, y, gutterPx) {
@@ -1561,9 +1685,7 @@ function buildBlockers(axis, y, gutterPx) {
   ov.dataset.botMin = String(axis.botMin);
   ov.append(
     dayLine("start", state.dayStartMin, y, axis),
-    dayLine("end", dayEndMin(), y, axis),
-    dateEdge("start"),
-    dateEdge("end")
+    dayLine("end", dayEndMin(), y, axis)
   );
   return ov;
 }
@@ -1587,52 +1709,6 @@ function dayLine(which, min, y, axis) {
       t(which === "start" ? "blocker.dayStart" : "blocker.dayEnd", { time: minToDayClock(min) })
     )}</span>`;
   return el;
-}
-
-/* The window's two ends. Positioned from the columns' own boxes rather than
- * from an assumed column width, because a blank night is drawn narrower than a
- * full one; measured in logical pixels from the track's inline start, so the
- * sums are the same whichever way the page runs. */
-function dateEdge(which) {
-  const el = document.createElement("div");
-  el.className = `sch-dateedge sch-dateedge--${which}`;
-  el.dataset.which = which;
-  el.tabIndex = 0;
-  el.setAttribute("role", "slider");
-  el.setAttribute("aria-label", t(which === "start" ? "rail.startLabel" : "rail.endLabel"));
-  el.setAttribute("aria-valuemin", "1");
-  el.setAttribute("aria-valuemax", String(state.dates.length));
-  el.setAttribute("aria-valuenow", String(which === "start" ? state.d0 : state.d1));
-  el.setAttribute("aria-valuetext", dayAndDate(which === "start" ? windowStartISO() : windowEndISO()));
-  el.innerHTML =
-    `<span class="de-grip" aria-hidden="true"></span>` +
-    `<span class="de-flag"><span class="wf-cap">${escapeHtml(
-      t(which === "start" ? "rail.from" : "rail.to")
-    )}</span> ${escapeHtml(dayLabel(which === "start" ? windowStartISO() : windowEndISO()))}</span>`;
-  return el;
-}
-
-/** Slide the two date edges onto the boundaries of the window's own columns. */
-function placeDateEdges() {
-  const ov = document.querySelector(".sch-blockers");
-  if (!ov) return;
-  const cols = [...$("schedule").querySelectorAll(".sch-day")];
-  if (cols.length < state.d1) return;
-  const track = ov.getBoundingClientRect();
-  if (!track.width) return;
-  const rtl = isRtl();
-  const inlineStart = (el) => {
-    const box = el.getBoundingClientRect();
-    return rtl ? track.right - box.right : box.left - track.left;
-  };
-  const inlineEnd = (el) => {
-    const box = el.getBoundingClientRect();
-    return rtl ? track.right - box.left : box.right - track.left;
-  };
-  const startEl = ov.querySelector(".sch-dateedge--start");
-  const endEl = ov.querySelector(".sch-dateedge--end");
-  if (startEl) startEl.style.insetInlineStart = `${inlineStart(cols[state.d0 - 1])}px`;
-  if (endEl) endEl.style.insetInlineStart = `${inlineEnd(cols[state.d1 - 1])}px`;
 }
 
 /** The minute of the day at a pointer's height over the calendar's axis. */
@@ -1711,26 +1787,7 @@ function wireBlockers() {
         const min = minuteAt(ev.clientY);
         return min == null ? false : which === "start" ? setDayStart(min) : setDayEnd(min);
       });
-      return;
     }
-    const edge = e.target.closest(".sch-dateedge");
-    if (!edge) return;
-    e.preventDefault();
-    edge.focus();
-    const which = edge.dataset.which;
-    startBlockerDrag((ev) => {
-      const day = dayAtX(ev.clientX);
-      if (which === "start") {
-        const next = clamp(day, 1, state.d1);
-        if (next === state.d0) return false;
-        state.d0 = next;
-      } else {
-        const next = clamp(day, state.d0, state.dates.length);
-        if (next === state.d1) return false;
-        state.d1 = next;
-      }
-      return true;
-    });
   });
 
   host.addEventListener("keydown", (e) => {
@@ -1745,20 +1802,7 @@ function wireBlockers() {
           : setDayEnd(state.dayEndMin + step * 15);
       if (moved) redraftAndSave();
       focusBlocker(`.sch-dayline--${line.dataset.which}`);
-      return;
     }
-    const edge = e.target.closest(".sch-dateedge");
-    if (!edge) return;
-    // The arrow that moves the window later is the one that points along the
-    // page's reading direction, which is the way the columns themselves run.
-    const later = isRtl() ? "ArrowLeft" : "ArrowRight";
-    const step = e.key === later ? 1 : e.key === (isRtl() ? "ArrowRight" : "ArrowLeft") ? -1 : 0;
-    if (!step) return;
-    e.preventDefault();
-    if (edge.dataset.which === "start") state.d0 = clamp(state.d0 + step, 1, state.d1);
-    else state.d1 = clamp(state.d1 + step, state.d0, state.dates.length);
-    redraftAndSave();
-    focusBlocker(`.sch-dateedge--${edge.dataset.which}`);
   });
 }
 
@@ -1900,7 +1944,7 @@ function buildTravelLeg(a, b, top, bottom) {
 // calendar can be rebuilt on every verdict without leaking listeners.
 
 function closePops() {
-  for (const id of ["calPreview", "calRivals"]) {
+  for (const id of ["calPreview", "calRivals", "calMenu"]) {
     const pop = $(id);
     if (pop) pop.hidden = true;
   }
@@ -2187,7 +2231,6 @@ function toggleStar(slug) {
 function rebuild() {
   renderBrowse();
   redraft();
-  layoutOverlay();
 }
 
 function wireBoard() {
@@ -2323,6 +2366,260 @@ function wireCalendar() {
   });
 }
 
+// --- the reader's own days, on the calendar ---------------------------------
+//
+// A day's head asks what the day is for; a kept day's block asks again, and is
+// dragged to move it. An empty hour offers a meal or personal time there, and
+// what is added is dragged to move it, stretched by its lower edge, and
+// clicked to remove it. One small menu serves all three.
+
+function calMenu() {
+  let menu = $("calMenu");
+  if (!menu) {
+    menu = document.createElement("div");
+    menu.id = "calMenu";
+    menu.className = "cal-pop cal-menu";
+    menu.setAttribute("role", "menu");
+    menu.hidden = true;
+    $("planResult").appendChild(menu);
+  }
+  return menu;
+}
+
+function openMenu(anchor, html, data) {
+  closePops();
+  const menu = calMenu();
+  menu.innerHTML = html;
+  for (const key of Object.keys(menu.dataset)) delete menu.dataset[key];
+  Object.assign(menu.dataset, data);
+  placePop(menu, anchor);
+  const first = menu.querySelector("button");
+  if (first) first.focus({ preventScroll: true });
+}
+
+const menuItem = (attrs, emoji, label, on = false) =>
+  `<button type="button" class="menu-item${on ? " is-on" : ""}" role="menuitemradio" aria-checked="${on}" ${attrs}>` +
+  `<span class="menu-emoji" aria-hidden="true">${emoji}</span>${escapeHtml(label)}</button>`;
+
+function openDayMenu(iso, anchor) {
+  const keep = state.kept.get(iso) || null;
+  const lead = state.focus.festival.id;
+  const nearby = poolFestivals().filter((f) => f.id !== lead);
+  const html =
+    `<div class="menu-title">${escapeHtml(dayAndDate(iso))}</div>` +
+    menuItem(`data-keep="shows"`, "\u{1F3AD}", t("day.shows"), !keep) +
+    menuItem(`data-keep="rest"`, KEEP_META.rest.emoji, t("day.rest"), keep?.kind === "rest") +
+    menuItem(`data-keep="excursion"`, KEEP_META.excursion.emoji, t("day.excursion"), keep?.kind === "excursion") +
+    nearby
+      .map((f) =>
+        menuItem(
+          `data-keep="festival:${escapeHtml(f.id)}" data-festival-colour="${escapeHtml(f.id)}"`,
+          KEEP_META.festival.emoji,
+          t("day.festival", { festival: festivalName(f) }),
+          keep?.kind === "festival" && keep.festival === f.id
+        )
+      )
+      .join("");
+  openMenu(anchor, html, { date: iso });
+}
+
+function openAddMenu(iso, min, anchor) {
+  const start = clamp(Math.round(min / OWN_SNAP_MIN) * OWN_SNAP_MIN, 0, NIGHT_END_MIN - OWN_SNAP_MIN);
+  const meal = mealAt(start, mealsOf(iso));
+  const clock = minToDayClock(start);
+  const html =
+    `<div class="menu-title">${escapeHtml(`${dayAndDate(iso)} · ${clock}`)}</div>` +
+    menuItem(`data-add="meal" data-meal="${meal}"`, MEAL_META[meal].emoji, t(MEAL_META[meal].nameKey)) +
+    menuItem(`data-add="personal"`, OWN_META.personal.emoji, t("own.personal"));
+  openMenu(anchor, html, { date: iso, min: String(start) });
+}
+
+function openOwnMenu(block, anchor) {
+  const html =
+    `<div class="menu-title"><span aria-hidden="true">${ownEmoji(block)}</span> ${escapeHtml(ownName(block))} · ` +
+    `${escapeHtml(`${minToDayClock(block.startMin)}–${minToDayClock(block.endMin)}`)}</div>` +
+    `<button type="button" class="menu-item" role="menuitem" data-own-remove="${escapeHtml(block.id)}">` +
+    `<span class="menu-emoji" aria-hidden="true">\u2715</span>${escapeHtml(t("own.remove"))}</button>`;
+  openMenu(anchor, html, { own: block.id });
+}
+
+function setKept(iso, choice) {
+  if (choice === "shows") state.kept.delete(iso);
+  else if (choice.startsWith("festival:")) state.kept.set(iso, { kind: "festival", festival: choice.slice(9) });
+  else state.kept.set(iso, { kind: choice });
+  // Whatever the reader says about a day, the page's own guess is done with.
+  state.seededFor = tripKey();
+  saveDays();
+  redraft();
+}
+
+/* Drag a block of the reader's own — or stretch it by its lower edge — holding
+ * the axis still the way a day line's drag does; a press that never moves is a
+ * click, and opens the block's menu instead. */
+function dragOwn(e, el) {
+  const block = state.own.find((b) => b.id === el.dataset.own);
+  const ov = document.querySelector(".sch-blockers");
+  if (!block || !ov) return;
+  e.preventDefault();
+  const stretch = Boolean(e.target.closest(".own-resize"));
+  const from = { ...block };
+  const m0 = minuteAt(e.clientY);
+  const x0 = e.clientX;
+  const y0 = e.clientY;
+  let moved = false;
+  state.drag = { topMin: Number(ov.dataset.topMin), botMin: Number(ov.dataset.botMin) };
+  const move = (ev) => {
+    if (!moved && Math.hypot(ev.clientX - x0, ev.clientY - y0) < 4) return;
+    moved = true;
+    const delta = Math.round(((minuteAt(ev.clientY) ?? m0) - m0) / OWN_SNAP_MIN) * OWN_SNAP_MIN;
+    if (stretch) {
+      block.endMin = clamp(from.endMin + delta, from.startMin + OWN_SNAP_MIN, NIGHT_END_MIN);
+    } else {
+      const length = from.endMin - from.startMin;
+      block.startMin = clamp(from.startMin + delta, 0, NIGHT_END_MIN - length);
+      block.endMin = block.startMin + length;
+      block.date = state.dates[dayAtX(ev.clientX) - 1] || from.date;
+    }
+    redraft();
+  };
+  const up = () => {
+    removeEventListener("pointermove", move);
+    removeEventListener("pointerup", up);
+    state.drag = null;
+    suppressClick();
+    if (moved) saveDays();
+    redraft();
+    if (!moved) {
+      const again = $("schedule").querySelector(`.sch-own[data-own="${CSS.escape(block.id)}"]`);
+      if (again) openOwnMenu(block, again);
+    }
+  };
+  addEventListener("pointermove", move);
+  addEventListener("pointerup", up);
+}
+
+/* Drag a kept day onto another; a press that never moves opens its menu. */
+function dragKeep(e, el) {
+  e.preventDefault();
+  const from = el.dataset.keep;
+  const x0 = e.clientX;
+  let at = from;
+  let moved = false;
+  const move = (ev) => {
+    if (!moved && Math.abs(ev.clientX - x0) < 4) return;
+    moved = true;
+    const to = state.dates[dayAtX(ev.clientX) - 1];
+    if (!to || to === at || state.kept.has(to)) return;
+    state.kept.set(to, state.kept.get(at));
+    state.kept.delete(at);
+    at = to;
+    state.seededFor = tripKey();
+    saveDays();
+    redraft();
+  };
+  const up = () => {
+    removeEventListener("pointermove", move);
+    removeEventListener("pointerup", up);
+    suppressClick();
+    if (!moved) {
+      const again = $("schedule").querySelector(`.sch-keep[data-keep="${at}"]`);
+      if (again) openDayMenu(at, again);
+    }
+  };
+  addEventListener("pointermove", move);
+  addEventListener("pointerup", up);
+}
+
+// The click that ends a drag lands on whatever the redraw left under the
+// pointer, which must not read as a click on an empty hour.
+let clickSuppressed = false;
+function suppressClick() {
+  clickSuppressed = true;
+  setTimeout(() => {
+    clickSuppressed = false;
+  }, 0);
+}
+
+function wireDays() {
+  const host = $("schedule");
+  host.addEventListener("pointerdown", (e) => {
+    if (e.button !== 0) return;
+    const own = e.target.closest(".sch-own[data-own]");
+    if (own) {
+      dragOwn(e, own);
+      return;
+    }
+    const keep = e.target.closest(".sch-keep");
+    if (keep) dragKeep(e, keep);
+  });
+
+  host.addEventListener("click", (e) => {
+    if (clickSuppressed) {
+      e.stopPropagation();
+      return;
+    }
+    const head = e.target.closest("[data-day-head]");
+    if (head) {
+      e.stopPropagation();
+      openDayMenu(head.dataset.dayHead, head);
+      return;
+    }
+    // An empty hour: the column's body itself, or the shading of hours
+    // outside the day, and nothing drawn on top of it.
+    const body = e.target.classList.contains("sch-body") || e.target.classList.contains("sch-zone")
+      ? e.target.closest(".sch-body")
+      : null;
+    if (!body) return;
+    const iso = body.closest(".sch-day").dataset.date;
+    const min = minuteAt(e.clientY);
+    if (min == null) return;
+    e.stopPropagation();
+    const anchor = document.createElement("div");
+    anchor.className = "sch-add-anchor";
+    anchor.style.top = `${e.clientY - body.getBoundingClientRect().top}px`;
+    body.appendChild(anchor);
+    openAddMenu(iso, min, anchor);
+  });
+
+  host.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const head = e.target.closest("[data-day-head]");
+    const keep = e.target.closest(".sch-keep");
+    const own = e.target.closest(".sch-own[data-own]");
+    if (!head && !keep && !own) return;
+    e.preventDefault();
+    if (head) openDayMenu(head.dataset.dayHead, head);
+    else if (keep) openDayMenu(keep.dataset.keep, keep);
+    else openOwnMenu(state.own.find((b) => b.id === own.dataset.own), own);
+  });
+
+  calMenu().addEventListener("click", (e) => {
+    const menu = calMenu();
+    const keep = e.target.closest("[data-keep]");
+    const add = e.target.closest("[data-add]");
+    const remove = e.target.closest("[data-own-remove]");
+    if (!keep && !add && !remove) return;
+    e.stopPropagation();
+    if (keep) {
+      setKept(menu.dataset.date, keep.dataset.keep);
+    } else if (add) {
+      const startMin = Number(menu.dataset.min);
+      state.own.push({
+        id: newOwnId(),
+        kind: add.dataset.add,
+        ...(add.dataset.add === "meal" ? { meal: add.dataset.meal, place: "" } : {}),
+        date: menu.dataset.date,
+        startMin,
+        endMin: Math.min(NIGHT_END_MIN, startMin + OWN_DEFAULT_MIN),
+      });
+    } else {
+      state.own = state.own.filter((b) => b.id !== remove.dataset.ownRemove);
+    }
+    saveDays();
+    redraft();
+  });
+}
+
 function wireSearch() {
   $("ssInput").addEventListener("input", (e) => {
     state.search.query = e.target.value.trim();
@@ -2388,7 +2685,6 @@ function retranslate() {
   buildFacets();
   syncFacetChrome();
   rebuild();
-  layoutOverlay();
 }
 
 // --- the year, and which festival the page is zoomed in on -----------------
@@ -2544,11 +2840,7 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
   renderTripRow();
   refreshFares();
   if (!state.focus) return;
-  // A trip the reader just moved starts with every one of its days open; the
-  // page's own first trip finds the window as it was left.
-  const saved = readStore(KEY_PREFS, {}) || {};
-  const win = fresh ? null : (saved.windows || {})[state.focus.key];
-  await loadPool({ window: win });
+  await loadPool();
 }
 
 /* The festival's palette is CSS (planNG.css, keyed by this attribute); its
@@ -2577,7 +2869,7 @@ function editionCatalogue(festival, edition) {
 /* Every edition overlapping the period, judged for reach from the focused
  * festival's city, fetched where it can contribute, and joined into the pool
  * the calendar drafts from. */
-async function loadPool({ window: win = null, keepWindow = false } = {}) {
+async function loadPool() {
   const { festival, edition } = state.focus;
   const overlapping = [];
   for (const f of state.registry.festivals) {
@@ -2589,7 +2881,6 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   const focusShape = { festivalId: festival.id, lat: festival.lat, lng: festival.lng, firstDate: edition.firstDate, lastDate: edition.lastDate };
   state.reach = poolReach(focusShape, overlapping, state.period);
 
-  const previousWindow = keepWindow && state.dates.length ? { from: windowStartISO(), to: windowEndISO() } : null;
   $("loadingState").hidden = false;
   $("errorState").hidden = true;
   let parts;
@@ -2615,13 +2906,6 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   state.coords = venueCoords(state.venues);
   state.dates = daysOf(state.period.from, state.period.to);
   document.documentElement.style.setProperty("--fest-days", String(state.dates.length));
-  const wanted = previousWindow || win;
-  const at = (iso, fallback) => {
-    const i = iso ? state.dates.indexOf(iso) : -1;
-    return i === -1 ? fallback : i + 1;
-  };
-  state.d0 = wanted ? at(wanted.from, 1) : 1;
-  state.d1 = Math.max(state.d0, wanted ? at(wanted.to, state.dates.length) : state.dates.length);
   state.browsePages = 1;
   state.search.genres.clear();
   state.search.venues.clear();
@@ -2638,7 +2922,6 @@ async function loadPool({ window: win = null, keepWindow = false } = {}) {
   buildFacets();
   syncFacetChrome();
   rebuild();
-  requestAnimationFrame(() => requestAnimationFrame(layoutOverlay));
 }
 
 /* What the pool holds besides the focused festival, and what it had to leave
@@ -2817,6 +3100,7 @@ function flightFare(which, day) {
  * drawn against the wrong day. */
 let faresAsked = { out: "", back: "" };
 function refreshFares() {
+  const flightsBefore = JSON.stringify(state.flights);
   const need = flightNeed();
   const home = originAirport(state.origin);
   for (const which of ["out", "back"]) {
@@ -2843,9 +3127,11 @@ function refreshFares() {
       state.fares[which] = { status: fares.length ? "found" : "none", fares };
       state.flights[which] = fares.length ? { departAt: fares[0].departAt, durationMin: fares[0].durationMin } : null;
       renderTripRow();
+      if (state.draft) redraft();
     });
   }
   renderTripRow();
+  if (state.draft && JSON.stringify(state.flights) !== flightsBefore) redraft();
 }
 
 // --- where the reader is coming from ----------------------------------------
@@ -3051,14 +3337,15 @@ async function boot() {
   state.starred = new Set(readStore(KEY_STARRED, []));
   restoreVerdicts();
   restorePrefs();
+  restoreDays();
   state.origin = readStore(KEY_ORIGIN, null);
   refreshHolidays();
   guessCountry();
 
-  wireWindow();
   wireBoard();
   wireCalendar();
   wireBlockers();
+  wireDays();
   wireSearch();
   wirePrefs();
   wireOrigin();

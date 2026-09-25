@@ -2,13 +2,13 @@
 """Write each country's public holidays into site/holidays/<CC>.json.
 
 The PlanNG year strip marks the holidays where the reader lives (spec
-section 28). The dates and names come from the `holidays` package, run here
+section 29). The dates and names come from the `holidays` package, run here
 once rather than shipped: the page reads a small file per country instead.
 
     python3 -m pip install holidays
     python3 scripts/build-holidays.py 2026 2030
 
-Run it again with later years when product/requirements' 28.4 goes red, a
+Run it again with later years when product/requirements' 29.4 goes red, a
 year before the files would run out.
 """
 

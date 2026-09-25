@@ -116,6 +116,15 @@ function jerusalemPrefs(overrides = {}) {
   return { "planNG.prefs": JSON.stringify(prefs) };
 }
 
+// The Jerusalem trip with the day a first draft keeps already cleared by the
+// reader: every day drafts shows, for a case whose story is on the day the
+// page would otherwise keep for rest.
+function jerusalemAllDays() {
+  return {
+    "planNG.days": JSON.stringify({ kept: {}, own: [], seededFor: "2026-10-17/2026-10-23", mealDates: [] }),
+  };
+}
+
 // Where the reader said they are coming from, as the page stores it.
 function plannerOrigin(origin) {
   return { "planNG.origin": JSON.stringify(origin) };
@@ -414,13 +423,6 @@ async function jerusalemReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
-  // The window's two blockers are slid onto the boundaries of the columns they
-  // hold, which needs the calendar laid out; capturing before that catches
-  // them both stacked at the track's inline start.
-  await page.waitForFunction(() => {
-    const edge = document.querySelector(".sch-dateedge--end");
-    return edge && edge.style.insetInlineStart !== "";
-  }, { timeout: 20000 });
   await settle(page);
 }
 
@@ -581,6 +583,7 @@ module.exports = {
   jerusalemVerdicts,
   jerusalemPrefs,
   jerusalemMeals,
+  jerusalemAllDays,
   plannerOrigin,
   plannerReady,
   routeFares,
