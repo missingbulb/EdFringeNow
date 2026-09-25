@@ -20,3 +20,8 @@
 - **Model:** Claude
 - **Mechanism:** the same carrier, now in `edfringe-now`.
 - **Landed:** #613, Closes #612
+
+## 2026-09-24 · reworded · trimmed
+- **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
+  understand severity"); the incident history lives on this file.
+- **Actor:** @missingbulb (owner).

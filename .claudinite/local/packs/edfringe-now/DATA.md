@@ -1,6 +1,6 @@
 # edfringe-now - the data-pipeline checks
 
-The data-pipeline section of `RULES.md` carries the judgment for the edfringe.com scrape
+The `data-pipeline` skill carries the judgment for the edfringe.com scrape
 (`scraper/`) and the committed data it produces (`data/`, `site/data/`). What has a signature is
 enforced by a check:
 

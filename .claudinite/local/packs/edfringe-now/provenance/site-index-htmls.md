@@ -29,3 +29,11 @@
 - **Actor:** @missingbulb (owner).
 - **Model:** Claude Opus 5
 - **Landed:** #731, Closes #730
+
+## 2026-09-24 · reworded · route unpkg to the harness's vendored Leaflet
+- **Source:** 2026-09-24 probe: unpkg.com denied at CONNECT to curl too, so the curl-into-scratchpad
+  path no longer held; a Playwright run routing unpkg to
+  product/requirements/shared/harness/vendor/leaflet/ rendered the Now page.
+- **Reason:** the vendored copy is always present and needs no network; the owner asked for web
+  facts to be re-verified and stale ones dropped.
+- **Actor:** @missingbulb (owner).

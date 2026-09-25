@@ -22,3 +22,8 @@
   `perPage: 1` it returned cleanly, so the rule's "lowering it does not help" no longer held.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · reaffirmed · still overflows without perPage
+- **Source:** 2026-09-24: list_workflow_runs with no perPage returned 90,202 characters and
+  overflowed.
+- **Actor:** @missingbulb (owner).

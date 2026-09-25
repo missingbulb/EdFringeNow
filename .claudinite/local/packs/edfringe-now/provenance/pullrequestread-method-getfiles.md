@@ -19,3 +19,8 @@
 - **Reason:** PR #207 still overflows at `perPage: 100`, but `perPage: 10` returned.
 - **Actor:** the rule-revalidation run, merged by @missingbulb (owner).
 - **Landed:** #694, Refs #687
+
+## 2026-09-24 · reaffirmed · still overflows at perPage 100
+- **Source:** 2026-09-24: get_files on #207 at perPage 100 returned 174,207 characters and
+  overflowed.
+- **Actor:** @missingbulb (owner).

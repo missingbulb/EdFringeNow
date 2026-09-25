@@ -36,10 +36,9 @@
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" id="wordmark"></a>
+      <a href="/" class="logo">EdFringe<span class="logo-now">Now</span></a>
       <nav class="main-nav" data-i18n-aria-label="nav.primaryLabel" aria-label="Primary" id="siteNav"></nav>
       <div class="header-side">
-        <span class="header-hint" id="headerHint" data-i18n-slot="header.run"></span>
         <!-- The two controls that belong to the reader rather than to the
              festival: which language the chrome speaks, and whether the page
              is light or dark. -->
@@ -131,30 +130,6 @@
           <p class="schedule-empty" id="scheduleEmpty" hidden data-i18n="schedule.empty">Nothing could be scheduled in this window. Try widening your dates, raising the per-day maximum, shortening the gap, or relaxing your day hours.</p>
         </div>
 
-        <!-- The two questions the plan raises and the festival doesn't answer:
-             where you sleep, and how you get here. Rendered as links rather than
-             a pitch, with their partner named on every one. -->
-        <div class="trip-links" id="tripLinks" hidden>
-          <p class="trip-links-title" data-i18n="trip.title">While you&#39;re here</p>
-          <p class="origin-line" id="originLine" hidden></p>
-          <div class="trip-links-row" id="tripLinksRow"></div>
-        </div>
-
-        <div class="plan-actions">
-          <button type="button" class="btn btn-ghost" id="downloadCsvBtn">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3v12" /><path d="m7 12 5 4 5-4" /><path d="M4 20h16" />
-            </svg>
-            <span data-i18n="export.csv">Download itinerary</span> <span class="btn-ext">CSV</span>
-          </button>
-          <button type="button" class="btn btn-ghost" id="importIcsBtn">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8 2v4M16 2v4M3 10h18" /><rect x="3" y="4" width="18" height="18" rx="2" />
-            </svg>
-            <span data-i18n="export.ics">Import to calendar</span> <span class="btn-ext">ICS</span>
-          </button>
-          <span class="plan-actions-note" data-i18n="export.note">Both files are built here in your browser — nothing is uploaded. Times are pinned to the festival&#39;s own clock, so they stay right wherever your calendar lives.</span>
-        </div>
       </div>
     </section>
 
@@ -287,9 +262,8 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a href="/" class="logo">EdFringe<span class="logo-now">Now</span></a>
-      <span class="footer-copy"><span id="footerVersion" class="footer-version" title="version 1.10924.14"><span data-i18n="footer.rights">© 2026 Missing Bulb</span></span>
-        <br><span id="footerData" data-i18n-slot="footer.dataFrom"></span>
-        <span data-i18n="footer.partnerNote">Some travel suggestions are partner links — booking through one may earn us a commission, at no extra cost to you.</span></span>
+      <span class="footer-copy"><span id="footerVersion" class="footer-version" title="version 1.10925.15"><span data-i18n="footer.rights">© 2026 Missing Bulb</span></span>
+        <br><span id="footerData" data-i18n-slot="footer.dataFrom"></span></span>
     </div>
   </footer>
 

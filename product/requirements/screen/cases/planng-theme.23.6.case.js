@@ -8,8 +8,8 @@ module.exports = {
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
-  // The same region twice, one festival each: the name, the wordmark, the
-  // palette and the wash behind them all move with the festival chosen.
+  // The same region twice, one festival each: the name, the palette and the
+  // wash behind them move with the festival chosen; the header above does not.
   async capture(page, t) {
     const jerusalem = await t.unionClip(HEAD, 0);
     await page.click('.tl-item[data-festival="haifa-iff"]');

@@ -17,3 +17,11 @@
 - **Retire when:** `build-fixtures.js` is changed to write atomically (e.g. to a temp location,
   swapped in only on a clean exit) so a crash mid-run can no longer leave partial drift.
 - **Landed:** #826
+
+## 2026-09-24 · moved · into the requirements-harness skill
+- **Reason:** the owner chose to move the data-pipeline and harness sections out of RULES.md into
+  skills ("Move data/harness to skills"), so they load only when their paths are edited; trimmed to
+  trigger and action in the same move.
+- **Actor:** @missingbulb (owner).
+- **Mechanism:** a guideline of the requirements-harness skill, force-loaded on edits to
+  product/requirements.md and product/requirements/.
