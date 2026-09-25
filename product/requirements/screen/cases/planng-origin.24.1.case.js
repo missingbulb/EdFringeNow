@@ -2,7 +2,7 @@
 const { jerusalemReady } = require("../../shared/case-helpers");
 
 module.exports = {
-  description: "asked for from a flight block, the question where you are coming from opens beneath the trip's dates: this city, elsewhere in the country, abroad, or the device's own position",
+  description: "until you have said how you are getting here the blocks look unsettled, and clicking one asks beneath the trip's dates: living there, driving, the train, or flying from a country",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,

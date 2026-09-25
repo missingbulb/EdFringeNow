@@ -1642,16 +1642,31 @@ reaches it, and otherwise the one it covers most.
   page's background part-way through the fade.
   </details>
 
-## 24. Where you are coming from
+## 24. How you are getting here
 
-The page asks, once, where the reader is coming from, and only when the
-answer is needed: from the flight blocks beside the trip's dates. It is the question that decides what the trip needs: a reader who
-lives in the festival's city needs no bed, one from elsewhere in the country
-needs a bed and a train, and one from abroad needs the airport too.
+The page asks, once, how the reader is getting to the festival, and only when
+the answer is needed: from the travel blocks either side of the trip's dates.
+Until then those blocks are unsettled, and look it, inviting the click that
+settles them. The answer decides what the trip needs: a reader who lives in
+the festival's city needs no journey and no bed, one who drives or takes the
+train needs a bed, and one who flies needs the airport and a fare too. No fare
+is looked up before the reader has said they fly.
 
-- `24.1` The page asks where you are coming from only from the flight blocks: until you have said, they offer the question, and it opens beneath the trip's dates.
+- `24.1` Until you have said how you are getting here, the blocks either side of the trip look unsettled, and clicking one asks beneath the trip's dates: you live there, you drive, you take the train, or you fly from a country you pick.
 
   ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
+
+- `24.6` While unsettled, the blocks' picture moves between a plane, a train and a car; asked for reduced motion, it holds still.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.6 -->
+
+- `24.7` Each answer settles both blocks in its own picture: a house and no journey at home, a car driving in, a train by rail, and the plane with the route flying in.
+
+  ![planng-arrival.24.7](requirements/screen/cases/planng-arrival.24.7.png) <!-- req-gallery:24.7 -->
+
+- `24.8` An answer saved before the page asked how you travel is read as one: a home in the festival's city as living there, abroad as flying, anything else as not yet said.
+
+  <table><thead><tr><th align="left">Saved answer</th><th align="left">Read as</th></tr></thead><tbody><tr><td>I live in the festival's city</td><td>living there</td></tr><tr><td>Coming from a country abroad</td><td>flying</td></tr><tr><td>Somewhere else abroad</td><td>flying</td></tr><tr><td>Elsewhere in the country</td><td>not yet said</td></tr><tr><td>The device's position</td><td>not yet said</td></tr><tr><td>Not now</td><td>not yet said</td></tr></tbody></table> <!-- req-gallery:24.8 -->
 
 - `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
 
@@ -1661,23 +1676,13 @@ needs a bed and a train, and one from abroad needs the airport too.
 
   Proved against the origin judgement in `site/shared/feasibility.js` and the
   trip-link builder in `site/planNG/festivals.js`: the page shows no trip links
-  today, and where they will sit is still to be decided.
+  today, and where they will sit is still to be decided. Driving and the train
+  are stored as the festival's own country.
   </details>
 
 - `24.5` The question is asked once per browser: the answer is stored, and the next festival chosen does not ask again.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.5 -->
-
-- `24.3` "Use my location" answers the question from the device's position.
-
-  🚩 _Behavior leaf._ <!-- req-gallery:24.3 -->
-
-  <details><summary>Notes</summary>
-
-  The position is kept as a point in this browser and judged against each
-  festival's city by distance; it is sent nowhere. Driven with the harness's
-  fixed position in Edinburgh.
-  </details>
 
 - `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
 
@@ -1686,11 +1691,10 @@ needs a bed and a train, and one from abroad needs the airport too.
 ## 27. Getting there and back
 
 The trip's dates are where the journey is planned too. Either side of them on
-the timeline sits a flight block: the way out on the trip's first day, and the
-way home on its last. A reader coming from abroad sees the cheapest flights for
-those days, fetched when the dates are set, each linking to the partner who
-sells it; a reader already in the country needs no flight, and the blocks say
-so.
+the timeline sits a travel block: the way out on the trip's first day, and the
+way home on its last. A reader who flies sees the cheapest flights for those
+days, fetched when the dates are set, each linking to the partner who sells
+it; how the other answers show is section 24.
 
 > ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
@@ -1700,7 +1704,7 @@ so.
 > configured the blocks show the partner's search for the day instead of a
 > price.
 
-- `27.1` Coming from abroad, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
+- `27.1` Flying in, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
 
   ![planng-flights.27.1](requirements/screen/cases/planng-flights.27.1.png) <!-- req-gallery:27.1 -->
 
@@ -1735,17 +1739,20 @@ so.
   still the day's and the route's.
   </details>
 
-- `27.4` The flight blocks follow where you said you are coming from: abroad they ask for your airport, at home they say no flight is needed, and either way you can change the answer.
+- `27.4` Flying in, the flight blocks ask for your airport, a country named filling in its main one, and either block can change how you are getting here.
 
   🚩 _Behavior leaf._ <!-- req-gallery:27.4 -->
 
   <details><summary>Notes</summary>
 
-  A country named abroad fills in its main airport, which the reader can
-  overwrite with any airport or city code; "use my location" and "somewhere
-  else abroad" leave it for the reader to type. The block's "change" asks the
-  origin question again (section 24).
+  A country named fills in its main airport, which the reader can overwrite
+  with any airport or city code; "somewhere else abroad" leaves it for the
+  reader to type. The block's "change" asks the question again (section 24).
   </details>
+
+- `27.6` No fare is asked for until you have said you are flying: unsettled, at home, driving or by train, the fare service is never called.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.6 -->
 
 - `27.5` The fare service answers from the partner's cached one-way fares, and the partner's token never reaches the page.
 
