@@ -10,13 +10,15 @@ module.exports = {
   async verify(page, { origin, assert }) {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
-    assert.equal(await page.isVisible("#originCard"), true, "a first visit is asked");
+    assert.equal(await page.isVisible("#originCard"), false, "a first visit is not asked until it looks at flights");
+    await page.click('.flight--out [data-origin="ask"]');
+    assert.equal(await page.isVisible("#originCard"), true, "and is asked then");
 
     await page.selectOption("#originCountry", "FR");
     assert.equal(await page.isVisible("#originCard"), false, "an answer puts the question away");
     assert.deepEqual(
       await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.origin"))),
-      { kind: "abroad", country: "FR" },
+      { kind: "abroad", country: "FR", arrive: "fly" },
       "the answer is stored"
     );
 

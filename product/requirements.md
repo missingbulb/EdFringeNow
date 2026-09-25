@@ -1562,7 +1562,7 @@ performance, from any festival, that falls inside the trip and can be reached
 from the festival that leads it: the one the reader chose, while the trip still
 reaches it, and otherwise the one it covers most.
 
-- `23.1` A full-width timeline of the coming year, one bar per festival edition, today marked and the trip's dates banded across it.
+- `23.1` A full-width timeline of the coming year, one bar per festival edition, and the trip's dates banded across it.
 
   ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
@@ -1605,15 +1605,16 @@ reaches it, and otherwise the one it covers most.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
-- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name and its palette.
+- `23.6` Below the site header, the page takes the theme of the festival that leads the trip: its name, and the palette of its genre: comedy, film, theatre or the fringe.
 
   ![planng-theme.23.6](requirements/screen/cases/planng-theme.23.6.png) <!-- req-gallery:23.6 -->
 
   <details><summary>Notes</summary>
 
-  `data-festival` on the page root selects a palette block in the stylesheet;
-  a festival with no block of its own keeps the house palette. The festival's
-  own-language name is tagged with its language and direction.
+  `data-genre` on the page root, the festival's `kind` from its registry
+  entry, selects a palette block in the stylesheet; a genre with no block of
+  its own keeps the house palette, and two festivals of one genre share one.
+  The festival's own-language name is tagged with its language and direction.
   </details>
 
 - `23.7` The Edinburgh Fringe is a festival like the others: chosen on the timeline, it plans its own programme in its own theme.
@@ -1660,6 +1661,20 @@ reaches it, and otherwise the one it covers most.
   festival at all takes the nearest one's theme and plans an empty calendar.
   </details>
 
+- `23.10` When another festival comes to lead the trip, the page's colours fade into its theme rather than jump, unless you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.10 -->
+
+  <details><summary>Notes</summary>
+
+  The theme's colours are registered properties that the page root
+  transitions, so the fade runs while a date handle is still being dragged and
+  never stops the page responding. The header stays in the house colours
+  throughout (23.6). A behavior leaf because a golden is taken with every
+  transition frozen at its end: the case lifts that freeze and samples the
+  page's background part-way through the fade.
+  </details>
+
 - `23.11` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.11 -->
@@ -1672,16 +1687,75 @@ reaches it, and otherwise the one it covers most.
   content width.
   </details>
 
-## 24. Where you are coming from
+- `23.12` Each end of the trip is a line across the strip with a grip at its middle, and the trip's length in days is written above the band.
 
-The page asks, once, where the reader is coming from, beside the trip's dates
-on the timeline. It is the question that decides what the trip needs: a reader who
-lives in the festival's city needs no bed, one from elsewhere in the country
-needs a bed and a train, and one from abroad needs the airport too.
+  ![planng-trip-edges.23.12](requirements/screen/cases/planng-trip-edges.23.12.png) <!-- req-gallery:23.12 -->
 
-- `24.1` Until you have said, the page asks where you are coming from, beneath the trip's dates.
+- `23.13` Today is a small figure standing on the months, holding up a sign that says so.
+
+  ![planng-today.23.13](requirements/screen/cases/planng-today.23.13.png) <!-- req-gallery:23.13 -->
+
+- `23.14` The figure moves a little while it stands, cheers whenever you make a choice on the page, and holds still if you ask your device for reduced motion.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.14 -->
+
+  <details><summary>Notes</summary>
+
+  A behavior leaf because goldens are taken with every animation frozen: the
+  case reads the animations the page asks for. A choice is any button,
+  option, date or festival picked; the cheer plays once and the figure goes
+  back to standing.
+  </details>
+
+- `23.15` Pointing at a festival on the strip shows its card: its full name, city and genre, its dates and length, and whether its programme is out yet.
+
+  ![planng-festival-card.23.15](requirements/screen/cases/planng-festival-card.23.15.png) <!-- req-gallery:23.15 -->
+
+  <details><summary>Notes</summary>
+
+  The card also opens when the festival is reached with the keyboard, and
+  closes when the pointer or focus leaves it.
+  </details>
+
+- `23.16` The calendar never scrolls sideways: every day of the trip fits the visible width, and no day's column grows wider than 260 pixels.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.16 -->
+
+  <details><summary>Notes</summary>
+
+  Measured on a phone with a week's trip and on a desk with the longest trip
+  allowed (31 days), where the columns squeeze, and at 2560 pixels with a
+  week, where each column stops at the cap and the calendar's card keeps its
+  full width (23.11). A squeezed column sheds what a show's block can't
+  afford, as the Fringe planner's does: under 78 pixels its times, under 56
+  its picture and venue, so the show's name keeps the space.
+  </details>
+
+## 24. How you are getting here
+
+The page asks, once, how the reader is getting to the festival, and only when
+the answer is needed: from the travel blocks either side of the trip's dates.
+Until then those blocks are unsettled, and look it, inviting the click that
+settles them. The answer decides what the trip needs: a reader who lives in
+the festival's city needs no journey and no bed, one who drives or takes the
+train needs a bed, and one who flies needs the airport and a fare too. No fare
+is looked up before the reader has said they fly.
+
+- `24.1` Until you have said how you are getting here, the blocks either side of the trip look unsettled, and clicking one asks beneath the trip's dates: you live there, you drive, you take the train, or you fly from a country you pick.
 
   ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
+
+- `24.6` While unsettled, the blocks' picture moves between a plane, a train and a car; asked for reduced motion, it holds still.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.6 -->
+
+- `24.7` Each answer settles both blocks in its own picture: a house and no journey at home, a car driving in, a train by rail, and the plane with the route flying in.
+
+  ![planng-arrival.24.7](requirements/screen/cases/planng-arrival.24.7.png) <!-- req-gallery:24.7 -->
+
+- `24.8` An answer saved before the page asked how you travel is read as one: a home in the festival's city as living there, abroad as flying, anything else as not yet said.
+
+  <table><thead><tr><th align="left">Saved answer</th><th align="left">Read as</th></tr></thead><tbody><tr><td>I live in the festival's city</td><td>living there</td></tr><tr><td>Coming from a country abroad</td><td>flying</td></tr><tr><td>Somewhere else abroad</td><td>flying</td></tr><tr><td>Elsewhere in the country</td><td>not yet said</td></tr><tr><td>The device's position</td><td>not yet said</td></tr><tr><td>Not now</td><td>not yet said</td></tr></tbody></table> <!-- req-gallery:24.8 -->
 
 - `24.2` The answer decides the trip links: the festival's own city needs no bed, the rest of the country a bed and a train, abroad the airport too.
 
@@ -1691,23 +1765,13 @@ needs a bed and a train, and one from abroad needs the airport too.
 
   Proved against the origin judgement in `site/shared/feasibility.js` and the
   trip-link builder in `site/planNG/festivals.js`: the page shows no trip links
-  today, and where they will sit is still to be decided.
+  today, and where they will sit is still to be decided. Driving and the train
+  are stored as the festival's own country.
   </details>
 
 - `24.5` The question is asked once per browser: the answer is stored, and the next festival chosen does not ask again.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.5 -->
-
-- `24.3` "Use my location" answers the question from the device's position.
-
-  🚩 _Behavior leaf._ <!-- req-gallery:24.3 -->
-
-  <details><summary>Notes</summary>
-
-  The position is kept as a point in this browser and judged against each
-  festival's city by distance; it is sent nowhere. Driven with the harness's
-  fixed position in Edinburgh.
-  </details>
 
 - `24.4` What a reader saved under `/planJerusalem/` is carried over to the festival planner, once.
 
@@ -1716,11 +1780,10 @@ needs a bed and a train, and one from abroad needs the airport too.
 ## 27. Getting there and back
 
 The trip's dates are where the journey is planned too. Either side of them on
-the timeline sits a flight block: the way out on the trip's first day, and the
-way home on its last. A reader coming from abroad sees the cheapest flights for
-those days, fetched when the dates are set, each linking to the partner who
-sells it; a reader already in the country needs no flight, and the blocks say
-so.
+the timeline sits a travel block: the way out on the trip's first day, and the
+way home on its last. A reader who flies sees the cheapest flights for those
+days, fetched when the dates are set, each linking to the partner who sells
+it; how the other answers show is section 24.
 
 > ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
@@ -1730,7 +1793,7 @@ so.
 > configured the blocks show the partner's search for the day instead of a
 > price.
 
-- `27.1` Coming from abroad, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
+- `27.1` Flying in, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
 
   ![planng-flights.27.1](requirements/screen/cases/planng-flights.27.1.png) <!-- req-gallery:27.1 -->
 
@@ -1765,17 +1828,20 @@ so.
   still the day's and the route's.
   </details>
 
-- `27.4` The flight blocks follow where you said you are coming from: abroad they ask for your airport, at home they say no flight is needed, and either way you can change the answer.
+- `27.4` Flying in, the flight blocks ask for your airport, a country named filling in its main one, and either block can change how you are getting here.
 
   🚩 _Behavior leaf._ <!-- req-gallery:27.4 -->
 
   <details><summary>Notes</summary>
 
-  A country named abroad fills in its main airport, which the reader can
-  overwrite with any airport or city code; "use my location" and "somewhere
-  else abroad" leave it for the reader to type. The block's "change" asks the
-  origin question again (section 24).
+  A country named fills in its main airport, which the reader can overwrite
+  with any airport or city code; "somewhere else abroad" leaves it for the
+  reader to type. The block's "change" asks the question again (section 24).
   </details>
+
+- `27.6` No fare is asked for until you have said you are flying: unsettled, at home, driving or by train, the fare service is never called.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:27.6 -->
 
 - `27.5` The fare service answers from the partner's cached one-way fares, and the partner's token never reaches the page.
 
@@ -1892,6 +1958,62 @@ The draft plans around all of it.
 
   The hours are the table's; a day that already has that meal gets a snack
   instead, so a second click at lunchtime does not make a second lunch.
+
+## 31. Holidays at home
+
+The trip's dates are the reader's, and the days they can most easily take off
+are their own country's public holidays, and above all the breaks those make
+with a weekend. The year strip marks each break as a green orb on the months.
+Until the reader says how they are getting here (section 24), their country
+is guessed from their connection, and each orb's card says it is a guess.
+
+- `31.1` The year strip marks each break your public holidays make as a green orb on the months, big enough to see and wider the longer the break.
+
+  ![planng-holidays.31.1](requirements/screen/cases/planng-holidays.31.1.png) <!-- req-gallery:31.1 -->
+
+  <details><summary>Notes</summary>
+
+  One orb per break, centred on it. Its width grows with the square root of
+  the break's days, never with the strip's scale, so a one-day holiday is as
+  easy to see on a phone as on a desk; an orb may cover a month's name. The
+  breaks are 31.6's. The names come
+  from the committed per-country files in `site/holidays/`, generated from
+  the `holidays` Python package by `scripts/build-holidays.py`, in the page's
+  language where the package carries one and in English otherwise.
+  </details>
+
+- `31.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:31.2 -->
+
+- `31.5` Pointing at an orb explains it: the holidays in the break, its dates, how many days off it makes counting the weekend and any work day in the middle, and whose holidays they are.
+
+  ![planng-holiday-card.31.5](requirements/screen/cases/planng-holiday-card.31.5.png) <!-- req-gallery:31.5 -->
+
+- `31.6` A break is the run of days off around a holiday, its country's own weekend included, bridged over one work day between two runs of days off.
+
+  <table><thead><tr><th align="left">Holidays</th><th align="left">Weekend</th><th align="left">The break</th><th align="left">Days off</th><th align="left">Work days in the middle</th></tr></thead><tbody><tr><td>Wed 14 Oct</td><td>Sat and Sun</td><td>Wed 14</td><td>1</td><td>0</td></tr><tr><td>Fri 16 Oct</td><td>Sat and Sun</td><td>Fri 16 to Sun 18</td><td>3</td><td>0</td></tr><tr><td>Wed 7 and Thu 8 Oct</td><td>Sat and Sun</td><td>Wed 7 to Sun 11</td><td>5</td><td>1</td></tr><tr><td>Tue 13 Oct</td><td>Sat and Sun</td><td>Sat 10 to Tue 13</td><td>4</td><td>1</td></tr><tr><td>Thu 15 Oct</td><td>Fri and Sat</td><td>Thu 15 to Sat 17</td><td>3</td><td>0</td></tr><tr><td>Tue 13 and Thu 15 Oct</td><td>Sat and Sun</td><td>Sat 10 to Sun 18</td><td>9</td><td>3</td></tr></tbody></table> <!-- req-gallery:31.6 -->
+
+- `31.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
+
+  🔧 _Logic leaf._ <!-- req-gallery:31.3 -->
+
+  <details><summary>Notes</summary>
+
+  `/api/where` answers the two-letter country Cloudflare's edge already
+  attaches to the request, or null when it has none. Nothing is logged or
+  stored, and no other service is asked.
+  </details>
+
+- `31.4` The holiday files cover the whole year the strip shows, for at least another year.
+
+  🔧 _Logic leaf._ <!-- req-gallery:31.4 -->
+
+  <details><summary>Notes</summary>
+
+  Read against the real clock rather than the harness's fixed day, so the
+  build goes red a year before the files run out, which is when
+  `scripts/build-holidays.py` needs running again for later years.
   </details>
 
 ## 29. Who's coming

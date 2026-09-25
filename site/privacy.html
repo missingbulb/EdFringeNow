@@ -34,13 +34,16 @@
     <h2>What we don't do</h2>
     <p><strong>We don't sell your data, and we don't track you across the web.</strong> No ads. No advertising trackers. No cookies set by us. No accounts and no sign-up.</p>
 
-    <p><strong>EdFringeNow runs in your browser.</strong> Almost everything is static pages and data files, with no server of ours behind them. The one exception is flight prices, below — and beyond that and the anonymous, aggregate analytics described above, there is nothing <em>about you</em> for us to log or keep.</p>
+    <p><strong>EdFringeNow runs in your browser.</strong> Almost everything is static pages and data files, with no server of ours behind them. The two exceptions are flight prices and the country guessed for public holidays, both below — and beyond those and the anonymous, aggregate analytics described above, there is nothing <em>about you</em> for us to log or keep.</p>
 
     <h2 id="flights">Flight prices</h2>
     <p>If you tell the festival planner you are flying in, it asks our own small server for the cheapest flights on your trip's first and last day. What it sends is only the airport or city code you fly from, the festival's airport, the day and a currency — never your location, your plan or anything that identifies you. Our server passes that question to <a href="https://www.travelpayouts.com/" target="_blank" rel="noopener">Travelpayouts</a> (the partner behind Aviasales) and keeps nothing. Following a flight link takes you to Aviasales, which may pay us a referral if you book.</p>
 
     <h2>Your location</h2>
     <p>If you allow location access, your position is used <strong>only in your browser</strong> to work out which shows are near you. It is never sent to us or to anyone else. Deny it and the app simply falls back to central Edinburgh — everything still works.</p>
+
+    <h2 id="holidays">Your country, for public holidays</h2>
+    <p>The festival planner marks the public holidays of the country you live in on its year strip. Until you tell it where you come from, it asks our own small server which country your connection comes from. Our server reads that from the country Cloudflare's network already attaches to your request (worked out from your IP address), answers with the two-letter country and nothing else, and keeps nothing. The holiday dates themselves are plain files served from this site.</p>
 
     <h2>What your browser loads</h2>
     <p>Like any web page, opening EdFringeNow fetches a few files from other services. Those services see your IP address and browser as part of a normal web request, the same as visiting any website:</p>

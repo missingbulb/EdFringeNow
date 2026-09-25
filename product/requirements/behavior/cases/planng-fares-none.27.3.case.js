@@ -12,6 +12,7 @@ module.exports = {
     // The harness serves no /api/fares at all: the service is not there.
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
+    await page.click('.flight--out [data-origin="ask"]');
     await page.selectOption("#originCountry", "GB");
     await flightsSettled(page);
     assert.equal(await page.locator(".flight-price").count(), 0, "nothing claims a price");
