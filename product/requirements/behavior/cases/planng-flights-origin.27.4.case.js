@@ -1,7 +1,7 @@
 "use strict";
 const { jerusalemReady, flightsSettled } = require("../../shared/case-helpers");
 
-/* What the blocks offer follows the origin answer: unsaid they point at the
+/* What the blocks offer follows the origin answer: unsaid they offer the
  * question, at home they need no flight, abroad they ask for an airport — the
  * country's filled in, anywhere else left to type — and each can be changed. */
 module.exports = {
@@ -12,8 +12,9 @@ module.exports = {
     const out = (sel) => page.locator(`.flight--out ${sel}`);
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
-    assert.match(await out(".flight-note").textContent(), /where you're coming from/, "unsaid: the blocks point at the question");
-    assert.equal(await page.isVisible("#originCard"), true);
+    assert.match(await out('[data-origin="ask"]').textContent(), /where you're coming from/, "unsaid: the blocks offer the question");
+    await out('[data-origin="ask"]').click();
+    assert.equal(await page.isVisible("#originCard"), true, "which opens when asked for");
 
     await page.click('[data-origin="city"]');
     assert.match(await out(".flight-note").textContent(), /No flight needed from Jerusalem/, "at home: no flight");

@@ -1660,12 +1660,12 @@ reaches it, and otherwise the one it covers most.
 
 ## 24. Where you are coming from
 
-The page asks, once, where the reader is coming from, beside the trip's dates
-on the timeline. It is the question that decides what the trip needs: a reader who
+The page asks, once, where the reader is coming from, and only when the
+answer is needed: from the flight blocks beside the trip's dates. It is the question that decides what the trip needs: a reader who
 lives in the festival's city needs no bed, one from elsewhere in the country
 needs a bed and a train, and one from abroad needs the airport too.
 
-- `24.1` Until you have said, the page asks where you are coming from, beneath the trip's dates.
+- `24.1` The page asks where you are coming from only from the flight blocks: until you have said, they offer the question, and it opens beneath the trip's dates.
 
   ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
 
@@ -1708,7 +1708,7 @@ those days, fetched when the dates are set, each linking to the partner who
 sells it; a reader already in the country needs no flight, and the blocks say
 so.
 
-> ⚠️ **To be decided — live fares.** The fare service (`worker/fares.js`) reads
+> ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
 > against the partner's documented response shape: this sandbox cannot reach
 > the partner, and no account exists yet to capture a real answer. Until one
@@ -1772,6 +1772,52 @@ so.
   **To be decided** (see the banner above): proved against the documented
   response shape only. With no token configured the service answers an empty
   list rather than an error, so the page shows the search link.
+  </details>
+
+## 28. Holidays at home
+
+The trip's dates are the reader's, and the days they can most easily take off
+are their own country's public holidays. The year strip marks them. Until the
+reader says where they come from (section 24), their country is guessed from
+their connection, and the strip says it is a guess.
+
+- `28.1` The year strip marks the public holidays where you live, and says whose they are.
+
+  ![planng-holidays.28.1](requirements/screen/cases/planng-holidays.28.1.png) <!-- req-gallery:28.1 -->
+
+  <details><summary>Notes</summary>
+
+  One mark per holiday on the day it falls, under the months, named in its
+  tooltip (asserted by 28.2, since the tooltip is the browser's). The names come
+  from the committed per-country files in `site/holidays/`, generated from
+  the `holidays` Python package by `scripts/build-holidays.py`, in the page's
+  language where the package carries one and in English otherwise.
+  </details>
+
+- `28.2` Until you have said where you come from, the holidays are those of the country you connect from, and the strip says so; your answer replaces the guess.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:28.2 -->
+
+- `28.3` The site's own service tells the page the country a visitor connects from, and keeps nothing.
+
+  🔧 _Logic leaf._ <!-- req-gallery:28.3 -->
+
+  <details><summary>Notes</summary>
+
+  `/api/where` answers the two-letter country Cloudflare's edge already
+  attaches to the request, or null when it has none. Nothing is logged or
+  stored, and no other service is asked.
+  </details>
+
+- `28.4` The holiday files cover the whole year the strip shows, for at least another year.
+
+  🔧 _Logic leaf._ <!-- req-gallery:28.4 -->
+
+  <details><summary>Notes</summary>
+
+  Read against the real clock rather than the harness's fixed day, so the
+  build goes red a year before the files run out, which is when
+  `scripts/build-holidays.py` needs running again for later years.
   </details>
 
 ## 25. Never a list of thousands

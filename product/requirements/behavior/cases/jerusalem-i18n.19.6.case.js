@@ -115,6 +115,8 @@ module.exports = {
       await page.setViewportSize(VIEWPORTS.desktop);
       await page.goto(`${origin}${url}?festival=jerusalem-comedy`, { waitUntil: "load" });
       await jerusalemReady(page);
+      // The origin question opens only when asked for, from a flight block.
+      await page.click('.flight--out [data-origin="ask"]');
 
       for (const [name, size] of Object.entries(VIEWPORTS)) {
         await page.setViewportSize(size);

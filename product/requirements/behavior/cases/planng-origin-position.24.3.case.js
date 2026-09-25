@@ -11,6 +11,7 @@ module.exports = {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
+    await page.click('.flight--out [data-origin="ask"]');
     await page.click('#originCard [data-origin="position"]');
     await page.waitForSelector("#originCard", { state: "hidden", timeout: 10000 });
 
