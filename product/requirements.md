@@ -1227,7 +1227,7 @@ rather than as a control panel.
   shows that could really take it are offered — see `20.11`.
   </details>
 
-- `20.4` Hovering a card opens everything about it: its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, every night it plays, and the four verdicts.
+- `20.4` Resting on a card opens everything about it: the four verdicts first, as pictures, then its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, and every night it plays.
 
   ![jerusalem-preview.20.4](requirements/screen/cases/jerusalem-preview.20.4.png) <!-- req-gallery:20.4 -->
 
@@ -1359,6 +1359,52 @@ rather than as a control panel.
 
   Pictures come from each festival's own site, which may refuse them to
   another site or be down.
+  </details>
+
+- `20.15` The popup waits for the pointer to rest on a card for half a second, and closes once the pointer has left both the card and the popup.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.15 -->
+
+  <details><summary>Notes</summary>
+
+  A pointer crossing the calendar on its way somewhere else opens nothing. The
+  popup survives the short trip from the card into it, because its buttons are
+  the point, and it closes when the pointer moves on to empty calendar, not
+  only when it leaves the calendar altogether. A keyboard opens it at once.
+  </details>
+
+- `20.16` Resting on a verdict names what it does, in the page's own label rather than the browser's tooltip.
+
+  ![planng-verdict-tip.20.16](requirements/screen/cases/planng-verdict-tip.20.16.png) <!-- req-gallery:20.16 -->
+
+- `20.17` Until a first verdict is given, the popup says what its four buttons are for.
+
+  ![planng-verdict-hint.20.17](requirements/screen/cases/planng-verdict-hint.20.17.png) <!-- req-gallery:20.17 -->
+
+- `20.18` Giving any verdict drops that hint for good.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.18 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: the hint is there on a first visit, a verdict is given, and the next
+  popup and a reload both come without it. A reader who already has verdicts
+  from before the hint existed never sees it.
+  </details>
+
+- `20.19` Resting on the travel between two shows says it in words: how, how long, from which venue to which, and how much time it leaves.
+
+  ![planng-leg-card.20.19](requirements/screen/cases/planng-leg-card.20.19.png) <!-- req-gallery:20.19 -->
+
+- `20.20` Nothing on the planner leans on the browser's own tooltip.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:20.20 -->
+
+  <details><summary>Notes</summary>
+
+  The browser's tooltip opens late, can't be styled or read by touch, and
+  cuts long text. Every explanation the page has is its own label, opened by
+  resting on or focusing the thing it explains.
   </details>
 
 ## 21. Saying what you want

@@ -217,6 +217,33 @@ async function openDrawer(page) {
  * showing past the winner's edge, which is where a reader's pointer lands.
  * Scrolled into view first — the band is addressed by viewport coordinates,
  * and a slot below the fold would otherwise be clicked at thin air. */
+/* Rest the pointer on a calendar card until its popup opens: the popup waits
+ * for the pointer to rest, so a bare hover captures the calendar without it. */
+async function openCard(page, block) {
+  await page.hover(block);
+  await page.waitForSelector("#calPreview:not([hidden])");
+  await settle(page);
+}
+
+/* The first travel leg the pointer can actually rest on (a stacked card may
+ * cover a short one), marked so a case can name it. */
+async function reachableLeg(page, slot = "leg.travel") {
+  const found = await page.evaluate((slot) => {
+    for (const leg of document.querySelectorAll(`#schedule .sch-leg[data-i18n-slot="${slot}"]`)) {
+      leg.scrollIntoView({ block: "center" });
+      const box = leg.getBoundingClientRect();
+      const hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+      if (hit && leg.contains(hit)) {
+        leg.dataset.probe = "leg";
+        return true;
+      }
+    }
+    return false;
+  }, slot);
+  if (!found) throw new Error(`no reachable ${slot} leg on the calendar`);
+  return '[data-probe="leg"]';
+}
+
 async function clickStackBand(page, slot) {
   const beaten = slot.locator(".sch-beaten").last();
   await beaten.scrollIntoViewIfNeeded();
@@ -595,6 +622,8 @@ module.exports = {
   JERUSALEM_EDITION,
   openDrawer,
   clickStackBand,
+  openCard,
+  reachableLeg,
   JERUSALEM_STARRED,
   nowReady,
   planReady,
