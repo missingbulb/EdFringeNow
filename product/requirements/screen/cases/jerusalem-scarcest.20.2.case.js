@@ -2,12 +2,12 @@
 const { jerusalemReady } = require("../../shared/case-helpers");
 
 // Tuesday's two hours: 20:00 wanted by three shows that all play that night
-// only, and 21:00 by two. Each is drawn as the card that took it in front of
-// the ones it beat, so the size of the stack is the size of the contest.
+// only, and 21:00 by two. Each card says it is our pick and how many shows it
+// was picked from.
 const NIGHT = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
-  description: "a contested hour is drawn as a stack: the card that won, in front of the ones it beat",
+  description: "a contested hour's card says it is our pick and how many shows it was picked from",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,

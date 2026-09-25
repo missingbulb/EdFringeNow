@@ -2,7 +2,7 @@
 const { jerusalemReady, settle } = require("../../shared/case-helpers");
 
 // Tuesday at 20:00, which three one-night shows wanted: refusing the show that
-// took it re-drafts the hour from whoever is left, and the stack shrinks by the
+// took it re-drafts the hour from whoever is left, and the count shrinks by the
 // one that has just been taken off the calendar.
 const TUE = '.sch-day[data-date="2026-10-20"]';
 

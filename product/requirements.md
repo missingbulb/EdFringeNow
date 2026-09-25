@@ -1186,8 +1186,8 @@ watching, and which of them will you not get another chance at?" The scarcest
 contender takes the hour — a show with one night beats a show with three,
 because the three-night show can be caught tomorrow.
 
-A contested hour is drawn as what it is: the card that won, in front of the
-cards it beat. The face of a card carries only the show — its name, its hour,
+A contested hour's card says that the draft chose it and how many shows there
+were to choose from, and steps through the others in place. The face of a card carries only the show — its name, its hour,
 its venue, and a mark when the reader has locked it. Everything the page has to
 say *about* that card, and the four answers back — **lock this night**,
 **favourite the show**, **not this night**, **not this show** — are in the
@@ -1205,26 +1205,43 @@ rather than as a control panel.
   and a prompt to go and star something; here it is a full week.
   </details>
 
-- `20.2` A contested hour is drawn as a stack: the card that won, in front of the ones it beat.
+- `20.2` A contested hour's card says it is our pick and how many shows it was picked from.
 
   ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
 
   <details><summary>Notes</summary>
 
-  The cards behind are the shows the scarcity rule turned down for that hour,
-  one edge each, so how contested an hour was is something the calendar shows
-  rather than something it says. An uncontested hour is a single card.
+  The shows the scarcity rule turned down for that hour are counted on the
+  winning card's own bottom row, with a step either way through them, so how
+  contested an hour was is something the calendar shows rather than something
+  it hides. A card too short for the row keeps only the count, as a chip in its
+  corner. An uncontested hour is a card with no row.
   </details>
 
-- `20.3` Clicking the stack offers the hour to one of the shows behind it.
+- `20.3` Resting on the count lists the hour's shows, our pick first, and offers to lock any of the others in its place.
 
   ![jerusalem-contenders.20.3](requirements/screen/cases/jerusalem-contenders.20.3.png) <!-- req-gallery:20.3 -->
 
   <details><summary>Notes</summary>
 
-  Each is named with the count of nights that lost it the hour, and taking one
-  is the same act as locking a night: it holds the hour from then on. Only
-  shows that could really take it are offered — see `20.11`.
+  Each is named with its hour, its venue and the count of nights that lost it
+  the hour, and taking one is the same act as locking a night: it holds the
+  hour from then on. The pick it displaces gets no verdict of its own, so it
+  goes back into the running for its other nights. Only shows that could
+  really take the hour are offered — see `20.11`. A click opens the same list,
+  for a touch screen.
+  </details>
+
+- `20.15` Stepping through a contested card shows each other show in the pick's place, drawn as an offer, until it is taken.
+
+  ![jerusalem-flip.20.15](requirements/screen/cases/jerusalem-flip.20.15.png) <!-- req-gallery:20.15 -->
+
+  <details><summary>Notes</summary>
+
+  Animated: the pick, the next show stepped to, and the calendar after taking
+  it. Stepping is looking, not deciding — nothing is stored, and the next
+  re-draft puts every card back on its pick. The offer's own popup is the
+  show's, so its verdicts are about the show on the card.
   </details>
 
 - `20.4` Hovering a card opens everything about it: its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, every night it plays, and the four verdicts.

@@ -58,15 +58,15 @@ module.exports = {
     const tags = await count("#prefs .pref-tag");
     assert.ok(tags > 0 && tags <= FACET_OPTIONS, `the kinds question lists ${tags} tags`);
 
-    // The most contested hour on the calendar, by the count its stack names.
-    const stacks = await page.$$eval(".sch-stack", (els) =>
+    // The most contested hour on the calendar, by the count its card names.
+    const stacks = await page.$$eval(".sch-others", (els) =>
       els.map((el, i) => ({ i, n: Number((el.getAttribute("aria-label").match(/\d+/) || ["0"])[0]) }))
     );
     assert.ok(stacks.length > 0, "some hour is contested");
     const busiest = stacks.reduce((a, b) => (b.n > a.n ? b : a));
-    await page.locator(".sch-stack").nth(busiest.i).evaluate((el) => el.click());
+    await page.locator(".sch-others").nth(busiest.i).evaluate((el) => el.click());
     await settle(page);
-    const rivals = await count("#calRivals li");
+    const rivals = await count("#calRivals .pop-rival");
     assert.equal(rivals, Math.min(busiest.n, RIVAL_ROWS), `the busiest hour (${busiest.n} rivals) names ${rivals}`);
     assert.equal(await count("#calRivals .pop-more"), busiest.n > RIVAL_ROWS ? 1 : 0, "and a line for the rest");
   },

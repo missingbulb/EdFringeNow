@@ -507,23 +507,18 @@ body.festival-page {
 /* --- the calendar leads ---------------------------------------------------
  *
  * plan.css draws a schedule block as one flat link: a stripe, a name, an hour.
- * Here an hour is a stack — the shows that wanted it, behind the one that took
- * it — and the card in front carries only the show, plus a mark when the
- * reader has locked it. Everything the page has to say about that card is in
- * the popup, so a calendar at rest reads as a calendar.
+ * Here a card is the draft's pick for its hour, and when other shows wanted
+ * the hour too it carries one row more: whose pick this is, how many there
+ * were to choose from, and a step through them. Everything else the page has
+ * to say about a card is in the popup, so a calendar at rest reads as a
+ * calendar.
  */
-.sch-slot { position: absolute; left: 3px; right: 3px; overflow: hidden; }
-/* The winner leaves a band clear at its end edge: that band is where the cards
-   it beat show through, and keeping the stack INSIDE the slot is what stops it
-   reaching into the next night's column. */
-.sch-slot--stacked .sch-show { inset-inline-end: 18px; }
+.sch-slot { position: absolute; left: 3px; right: 3px; }
 .sch-show {
   position: absolute; inset: 0;
   flex-direction: column; justify-content: center; gap: 1px;
   padding: 3px 5px 3px 9px;
   cursor: default; overflow: hidden; z-index: 2;
-  /* Lifted off the cards behind it — the shadow is what makes the stack read
-     as a pile rather than as a misprint. */
   box-shadow: 0 2px 5px rgba(16, 24, 40, 0.1);
 }
 .sch-slot:hover .sch-show { box-shadow: 0 5px 14px rgba(16, 24, 40, 0.18); }
@@ -536,36 +531,61 @@ body.festival-page {
 .sch-show .sch-name { -webkit-line-clamp: 1; }
 .sch-show:not(.sch-show--tight) .sch-name { -webkit-line-clamp: 2; }
 
-/* The shows this hour turned down, fanned out behind the one that took it, so
-   how contested an hour was is something the calendar shows rather than
-   something it says. The stack covers the whole slot but sits behind the card,
-   so its hit area is exactly the band and the edges it leaves showing —
-   clicking there asks for the hour to go to somebody else. */
-.sch-stack {
-  position: absolute; inset: 0; z-index: 1;
-  padding: 0; border: 0; background: transparent; cursor: pointer;
+/* The row sits on the card's bottom edge, so the show's own lines keep the
+   top of the card whatever its height. */
+.sch-slot--contested .sch-show:not(.sch-show--tight) { justify-content: flex-start; padding-bottom: 20px; }
+.sch-flip {
+  position: absolute; inset-inline: 6px 3px; bottom: 2px;
+  display: flex; align-items: center; gap: 2px; height: 16px;
 }
-/* Named for what they are — the cards this hour turned down. NOT .sch-ghost:
-   plan.css already owns that name for a block on its way out of the Fringe
-   planner's re-plan animation, which fades and shrinks whatever wears it. */
-.sch-beaten {
-  position: absolute; inset: 0;
-  inset-inline-end: calc(18px - var(--i) * 6px);
-  transform: translateY(calc(var(--i) * 3px));
-  border-radius: 7px;
-  /* Paper, but a shade back from the winner's: the card in front has to read
-     as the one on top of the pile rather than as one of four alike. */
-  background: color-mix(in srgb, var(--ink) 9%, var(--paper));
-  border: 1px solid var(--line);
-  border-inline-start: 4px solid color-mix(in srgb, var(--muted) 40%, transparent);
-  opacity: calc(1 - var(--i) * 0.14);
+.sch-flip button {
+  font: inherit; border: 0; cursor: pointer; line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
-.sch-stack:hover .sch-beaten,
-.sch-stack:focus-visible .sch-beaten {
-  border-color: var(--violet);
+.sch-flip button:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+.sch-flip-step {
+  flex: 0 0 auto; width: 16px; height: 16px; border-radius: 50%; padding: 0;
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--violet); background: color-mix(in srgb, var(--violet) 12%, var(--paper));
+}
+/* A step back points toward the start of the line, whichever side that is. */
+[dir="rtl"] .sch-flip-step { transform: scaleX(-1); }
+.sch-flip-step:hover { background: color-mix(in srgb, var(--violet) 24%, var(--paper)); }
+.sch-others {
+  min-width: 0; padding: 1px 4px; border-radius: 4px; background: transparent;
+  font-size: 0.6rem; font-weight: 700; color: var(--violet);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sch-others:hover, .sch-others[aria-expanded="true"] { background: color-mix(in srgb, var(--violet) 12%, var(--paper)); }
+.sch-others-short { display: none; }
+.sch-flip-take {
+  flex: 0 0 auto; margin-inline-start: auto; padding: 1px 5px; border-radius: 999px;
+  font-size: 0.58rem; font-weight: 700;
+  color: var(--paper); background: var(--violet);
+}
+/* No room for a row: the count alone, as a chip in the card's top corner.
+   Stepping waits for the list it opens. */
+.sch-show--tight .sch-flip,
+.schedule.cols-tiny .sch-flip { inset: 2px 2px auto auto; width: auto; }
+[dir="rtl"] .sch-show--tight .sch-flip,
+[dir="rtl"] .schedule.cols-tiny .sch-flip { inset: 2px auto auto 2px; }
+.sch-show--tight .sch-flip-step, .sch-show--tight .sch-flip-take, .sch-show--tight .sch-others-full,
+.schedule.cols-tiny .sch-flip-step, .schedule.cols-tiny .sch-flip-take, .schedule.cols-tiny .sch-others-full { display: none; }
+.sch-show--tight .sch-others-short, .schedule.cols-tiny .sch-others-short { display: inline; }
+.sch-show--tight .sch-others, .schedule.cols-tiny .sch-others {
   background: color-mix(in srgb, var(--violet) 12%, var(--paper));
+  border-radius: 999px; padding: 1px 5px;
 }
-.sch-stack:focus-visible { outline: 2px solid var(--violet); outline-offset: -2px; }
+.sch-slot--contested .sch-show--tight .sch-name { padding-inline-end: 24px; }
+
+/* A show the reader has flipped to rather than the one the draft picked:
+   drawn as an offer, dashed and in the page's own colour, until it is taken. */
+.sch-show--other {
+  border-style: dashed;
+  border-color: var(--violet);
+  border-inline-start: 4px solid var(--violet);
+  background: color-mix(in srgb, var(--violet) 7%, var(--paper));
+}
 
 /* A card the reader has fixed in place, and one they have favourited: the
    first is the stronger claim, so it takes the ring and the only badge a
@@ -642,14 +662,31 @@ body.festival-page {
 .pop-night.is-rejected { color: var(--muted); }
 .pop-night.is-rejected .pn-when { text-decoration: line-through; }
 .pn-note { flex: 0 0 auto; font-size: 0.6rem; color: var(--muted); font-weight: 400; }
-.pop-rival {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+.pop-rival, .pop-pick {
+  display: flex; align-items: center; gap: 8px;
   width: 100%; text-align: start;
   font: inherit; padding: 4px 6px; border-radius: 6px;
   border: 1px solid transparent; background: transparent; color: inherit; cursor: pointer;
 }
 .pop-rival:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, transparent); }
-.pr-nights { flex: 0 0 auto; font-size: 0.6rem; color: var(--muted); }
+.pr-nights { flex: 0 0 auto; margin-inline-start: auto; font-size: 0.6rem; color: var(--muted); }
+/* The draft's own pick heads the list, as the thing the rest are offered
+   against: not a button, because it already has the hour. */
+.pop-pick {
+  flex-wrap: wrap; row-gap: 1px; padding: 4px 6px; border-radius: 6px;
+  background: color-mix(in srgb, var(--ok) 13%, transparent);
+}
+.pr-badge {
+  flex: 0 0 100%; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--ok);
+}
+.pr-kind { flex: 0 0 auto; font-size: 0.8rem; }
+.pr-text { display: flex; flex-direction: column; min-width: 0; }
+.pr-title { font-weight: 700; }
+.pr-where { font-size: 0.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pr-take { flex: 0 0 auto; font-size: 0.7rem; opacity: 0.35; }
+.pop-rival:hover .pr-take, .pop-rival:focus-visible .pr-take { opacity: 1; }
+.cal-pop--rivals { min-width: 240px; }
 
 /* How few nights the show has — the reason it holds the hour, said where
    there is room to say it in words. */

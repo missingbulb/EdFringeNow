@@ -213,15 +213,13 @@ async function openDrawer(page) {
   await settle(page);
 }
 
-/* Hand a contested hour on: click the band the stack of beaten cards leaves
- * showing past the winner's edge, which is where a reader's pointer lands.
- * Scrolled into view first — the band is addressed by viewport coordinates,
- * and a slot below the fold would otherwise be clicked at thin air. */
-async function clickStackBand(page, slot) {
-  const beaten = slot.locator(".sch-beaten").last();
-  await beaten.scrollIntoViewIfNeeded();
-  const box = await beaten.boundingBox();
-  await page.mouse.click(box.x + box.width - 4, box.y + box.height / 2);
+/* Open a contested hour's list the way a pointer does: by resting on the count
+ * its card carries. Scrolled into view first — the pointer is moved in viewport
+ * coordinates, and a card below the fold would otherwise be hovered at thin air. */
+async function openOthers(page, slot) {
+  const others = slot.locator(".sch-others");
+  await others.scrollIntoViewIfNeeded();
+  await others.hover();
   await page.waitForSelector("#calRivals .pop-rival");
 }
 
@@ -594,7 +592,7 @@ module.exports = {
   JERUSALEM,
   JERUSALEM_EDITION,
   openDrawer,
-  clickStackBand,
+  openOthers,
   JERUSALEM_STARRED,
   nowReady,
   planReady,

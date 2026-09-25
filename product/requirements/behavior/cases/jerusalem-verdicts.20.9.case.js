@@ -1,5 +1,5 @@
 "use strict";
-const { clickStackBand, jerusalemReady } = require("../../shared/case-helpers");
+const { openOthers, jerusalemReady } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
@@ -44,10 +44,10 @@ module.exports = {
     const replacement = await draftedAt(page, refusedNight, "20:00");
     assert.ok(replacement && replacement !== refused, "the hour goes to the next contender");
 
-    // Clicking the band the stack leaves showing is how the hour is handed on.
-    const stacked = page.locator('.sch-slot:has(.sch-stack)').first();
+    // Resting on a contested card's count lists the hour's other shows, and taking one hands it on.
+    const stacked = page.locator('.sch-slot--contested').first();
     const lockedNight = await stacked.evaluate((el) => el.closest(".sch-day").dataset.date);
-    await clickStackBand(page, stacked);
+    await openOthers(page, stacked);
     await page.click("#calRivals .pop-rival");
     await page.waitForSelector(`.sch-day[data-date="${lockedNight}"] .sch-show--locked`);
     const locked = await page
