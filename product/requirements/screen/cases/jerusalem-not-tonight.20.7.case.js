@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
+const { jerusalemAllDays, jerusalemReady, jerusalemStarred, settle } = require("../../shared/case-helpers");
 
 // A favourited show that plays three evenings, drafted onto Monday. Refusing
 // that one evening moves it to another of its own — and it competes for the
@@ -11,7 +11,7 @@ module.exports = {
   description: "'not this night' moves the show to another of its own nights",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
-  localStorage: jerusalemStarred(["yolo"]),
+  localStorage: { ...jerusalemStarred(["yolo"]), ...jerusalemAllDays() },
   ready: jerusalemReady,
   async capture(page, t) {
     const pair = () => t.unionClip([MON, TUE], 4);

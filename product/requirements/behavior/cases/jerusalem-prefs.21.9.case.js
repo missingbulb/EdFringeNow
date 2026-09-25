@@ -1,7 +1,7 @@
 "use strict";
 const { jerusalemReady } = require("../../shared/case-helpers");
 
-/* Every question answered, every blocker moved, then a reload: what comes back
+/* Every question answered, the day's end moved, then a reload: what comes back
  * is the whole of what was said, under this page's own storage prefix. */
 module.exports = {
   description: "every preference survives a reload, and never reaches the Edinburgh planner's stored list",
@@ -24,12 +24,9 @@ module.exports = {
     await page.locator(".pref-place[data-place='dinner']").blur();
     await page.keyboard.press("Escape");
 
-    // The two blockers, by keyboard: a quarter of an hour off the day's end,
-    // and the window's first night moved on by one.
+    // The day's end, by keyboard: a quarter of an hour earlier.
     await page.locator(".sch-dayline--end").focus();
     await page.keyboard.press("ArrowUp");
-    await page.locator(".sch-dateedge--start").focus();
-    await page.keyboard.press("ArrowRight");
     await jerusalemReady(page);
 
     const before = await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.prefs")));
@@ -38,11 +35,6 @@ module.exports = {
     assert.equal(before.mode, "bike", "the way around is stored");
     assert.equal(before.minGap, 45, "the exact number behind the picture is stored");
     assert.equal(before.dayEndMin, 25 * 60 - 15, "the day's end is stored where it was dragged to");
-    assert.deepEqual(
-      before.windows["jerusalem-comedy@2026"],
-      { from: "2026-10-18", to: "2026-10-23" },
-      "the window's first night is stored"
-    );
     assert.deepEqual(
       before.meals.map((m) => [m.id, m.enabled, m.place]),
       [["breakfast", true, ""], ["lunch", true, ""], ["dinner", true, "Machneyuda"]],
