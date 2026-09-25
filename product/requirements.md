@@ -1177,6 +1177,19 @@ in one translations file that carries, per key, the width its slot can afford.
   over the committed HTML, both directions: every alternate resolves to a page
   that exists, and every page that exists is listed by all the others.
 
+- `19.11` The planner never changes the mouse cursor: every part of the page shows the browser's own.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:19.11 -->
+
+  <details><summary>Notes</summary>
+
+  Asserted as every element's computed `cursor` matching the one the browser
+  gives it with the page's stylesheets off, at rest and while the pointer
+  rests on a timeline handle, an empty hour and a calendar block, which are
+  places that used to swap it for a resize arrow, a copy mark or a hand. The
+  Edinburgh planner, `/plan/`, keeps its own cursors.
+  </details>
+
 ## 20. Deciding in the calendar
 
 The page's own model, and the one thing it does that the Edinburgh planner does
