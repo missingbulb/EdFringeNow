@@ -19,7 +19,7 @@ default_genre = "theatre"
 site = "https://accofestival.co.il"
 
 [ticketing]
-notes = "The Acco Theatre Centre programme is sold through eventer.co.il; Akko residents pay 40 ₪, and the full price is not on the programme page. The street programme (מופעי חוצות) is free entry; the Knights' Halls night show is sold through attractinet.co.il."
+notes = "The Acco Theatre Centre programme is sold through eventer.co.il, where Akko residents pay a reduced price (40 ₪ in 2026) on showing ID; the prices shown leave that rate out. The street programme (מופעי חוצות) is free entry; the Knights' Halls night show is sold through attractinet.co.il."
 
 [[edition]]
 id = "2026"
@@ -47,6 +47,17 @@ required = true
 fetcher = "sources/acco-tc/fetch.py"
 adapter = "acco/acco_tc.py"
 
+# The theatre centre's Eventer producer page: the hall, running time, prices,
+# blurb and picture the programme page leaves out, and tickets left. Declared
+# after acco-tc because its adapter matches each Eventer event to acco-tc's line.
+[[source]]
+id = "eventer"
+kind = "fetched"
+roles = ["events", "performances", "availability", "prices"]
+required = true
+fetcher = "sources/eventer/fetch.py"
+adapter = "acco/eventer.py"
+
 [[source]]
 id = "street-programme"
 kind = "fetched"
@@ -57,8 +68,11 @@ adapter = "acco/street_programme.py"
 
 # Field precedence per section: for each field, the first source listed here
 # that supplies it wins. The two programmes never share an event or a
-# performance, so their order only decides the categories' names.
+# performance, so acco-tc and street-programme's order only decides the
+# categories' names. Eventer speaks only for theatre performances acco-tc lists:
+# the programme page wins the titles, labels and schedule, Eventer the hall,
+# ticket link, availability and prices, where it is the ticket seller.
 [merge]
 venues = ["venues-research", "street-programme"]
-events = ["acco-tc", "street-programme"]
-performances = ["acco-tc", "street-programme"]
+events = ["acco-tc", "eventer", "street-programme"]
+performances = ["eventer", "acco-tc", "street-programme"]

@@ -70,6 +70,7 @@ import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
 import { showCityPhoto } from "./city-backdrop.js";
+import { flagSvg } from "./flags.js";
 import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
@@ -148,7 +149,8 @@ const state = {
   flights: { out: null, back: null },
   reach: [],          // poolReach() for every edition overlapping the period
   origin: null,       // what the reader said about where they come from
-  asking: false,      // the origin question is open, asked from the flight blocks
+  asking: false,      // the travel card open beside the strip: "home", "way" or "card"
+  homePick: null,     // the country answered to "where do you live", until the way is
   guess: null,        // the country the reader connects from, until they say
   // The reader's own public holidays: whose, and the file's contents once read.
   holidays: { country: null, guessed: false, doc: null },
@@ -3110,7 +3112,6 @@ function retranslate() {
   renderChrome();
   if (!state.catalogue) return;
   renderTimelineStrip();
-  renderTripRow();
   renderPoolNote();
   renderOriginCard();
   renderPrefs();
@@ -3149,6 +3150,13 @@ function renderTimelineStrip() {
     lengthText: (count) => t("trip.length", { count }),
     todayText: t("timeline.today"),
     festivalCard,
+    travel: travelIcons(),
+    bunchLabel: (bunch) => ({
+      name: t("bunch.label", { count: bunch.bars.length, name: wordmarkOf(bunch.lead.festival).join(" ") }),
+      tip: t("bunch.title", { count: bunch.bars.length, city: festivalCity(bunch.lead.festival) }),
+    }),
+    bunchCard,
+    flag: (country) => flagSvg(country, "tl-flag"),
     breaks: state.holidays.doc ? holidayBreaks(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
     breakCard,
   });
@@ -3173,6 +3181,24 @@ function festivalCard(festival, edition, hasData) {
     }</span>` +
     `<span class="tl-card-line">${escapeHtml(dateRange(edition.firstDate, edition.lastDate))} · ${escapeHtml(t("trip.length", { count: days }))}</span>` +
     cardLine(hasData ? "card.programme" : "card.noProgramme", t(hasData ? "card.programme" : "card.noProgramme"), hasData ? " is-good" : " is-muted")
+  );
+}
+
+/* What a city's pill of several festivals says: how many, where, and each
+ * one's name and dates. */
+function bunchCard(bunch) {
+  const { festival } = bunch.lead;
+  const title = t("bunch.title", { count: bunch.bars.length, city: festivalCity(festival) });
+  return (
+    `<strong class="tl-card-title" data-i18n-slot="bunch.title">${escapeHtml(title)}</strong>` +
+    bunch.bars
+      .map(
+        (bar) =>
+          `<span class="tl-card-line${bar.hasData ? "" : " is-muted"}">` +
+          `<span class="tl-card-name">${escapeHtml(festivalName(bar.festival))}</span> · ` +
+          `${escapeHtml(dateRange(bar.edition.firstDate, bar.edition.lastDate))}</span>`
+      )
+      .join("")
   );
 }
 
@@ -3301,7 +3327,6 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
     history.replaceState(null, "", url);
   }
   renderTimelineStrip();
-  renderTripRow();
   refreshFares();
   if (!state.focus) return;
   await loadPool();
@@ -3382,7 +3407,6 @@ async function loadPool() {
   $("boardDrawer").hidden = false;
   renderChrome();
   renderTimelineStrip();
-  renderTripRow();
   renderPoolNote();
   renderOriginCard();
   renderPrefs();
@@ -3430,7 +3454,7 @@ function renderPoolNote() {
   host.hidden = !lines.length;
 }
 
-// --- the trip's dates, and the flights either side ----------------------------
+// --- the way there and back, beside the trip on the strip ---------------------
 
 /* The ways of getting here, drawn rather than typed, so each is the same
  * picture in every font and turns with the block it sits in. */
@@ -3446,8 +3470,10 @@ const wayIcon = (way) =>
   `<svg class="flight-plane way-${way}" data-way="${way}" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">` +
   `<path fill="currentColor" d="${WAY_PATHS[way]}"/></svg>`;
 
-/* Not yet said: the three ways take turns on one spot. */
-const UNSETTLED_ICON = `<span class="arrive-icons" aria-hidden="true">${wayIcon("fly") + wayIcon("train") + wayIcon("drive")}</span>`;
+/* Not yet said: the four ways take turns on one spot. */
+const UNSETTLED_ICON = `<span class="arrive-icons" aria-hidden="true">${
+  wayIcon("fly") + wayIcon("train") + wayIcon("drive") + wayIcon("local")
+}</span>`;
 
 /* The airport a festival is flown to, from its presentation; null for a
  * festival the page has none for, which then shows no flight blocks. */
@@ -3464,51 +3490,37 @@ function flightNeed() {
   return arrivalOf(state.origin) || "unsettled";
 }
 
-function renderTripRow() {
-  const host = $("tripRow");
-  if (!state.period) {
-    host.innerHTML = "";
-    return;
-  }
-  const span = timelineSpan(todayISO());
-  const { from, to } = state.period;
-  const date = (id, key, value) =>
-    `<label class="trip-date"><span class="trip-date-word" data-i18n-slot="${key}">${escapeHtml(t(key))}</span>` +
-    `<input type="date" class="trip-date-input" id="${id}" value="${value}" min="${span.from}" max="${span.to}" required /></label>`;
-  host.innerHTML =
-    flightBlock("out") +
-    `<div class="trip-dates">` +
-    date("tripFrom", "trip.from", from) +
-    `<span class="trip-length" data-i18n-slot="trip.length">${escapeHtml(t("trip.length", { count: daysOf(from, to).length }))}</span>` +
-    date("tripTo", "trip.to", to) +
-    `</div>` +
-    flightBlock("back");
+/* What the pictures beside the trip say: nothing for a festival with no
+ * airport to fly to, the four ways taking turns until the reader has said,
+ * then the one they said, still. */
+const ARRIVE_NOTE = { local: "flight.none", drive: "arrive.drive", train: "arrive.train", fly: "arrive.fly" };
+function travelIcons() {
+  const need = flightNeed();
+  if (need === "none") return null;
+  if (need === "unsettled") return { html: UNSETTLED_ICON, settled: false, tip: t("flight.say") };
+  return { html: wayIcon(need), settled: true, tip: arriveNote(need).text };
 }
 
-/* One travel block: the way out on the trip's first day, or home on its last.
- * Unsettled, the whole block asks how the reader is getting here. */
-const ARRIVE_NOTE = { local: "flight.none", drive: "arrive.drive", train: "arrive.train" };
+/* The answer, said back: its key and its words. */
+function arriveNote(way) {
+  const country = state.origin && state.origin.country;
+  const key = way === "fly" && !country ? "arrive.flyAny" : ARRIVE_NOTE[way];
+  return { key, text: t(key, { country: country ? regionName(country) : "" }) };
+}
+
+/* One flight in the travel card: the way out on the trip's first day, or home
+ * on its last, with its route and its fare. */
 function flightBlock(which) {
-  const need = flightNeed();
-  if (need === "none") return `<div class="flight flight--${which} flight--empty" aria-hidden="true"></div>`;
   const day = which === "out" ? state.period.from : state.period.to;
   const titleKey = which === "out" ? "flight.out" : "flight.back";
   const head =
-    `<div class="flight-head">${need === "unsettled" ? UNSETTLED_ICON : wayIcon(need)}` +
+    `<div class="flight-head">${wayIcon("fly")}` +
     `<span class="flight-title" data-i18n-slot="${titleKey}">${escapeHtml(t(titleKey))}</span>` +
     `<span class="flight-day">${escapeHtml(dayAndDate(day))}</span></div>`;
-  const change = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.change">${escapeHtml(t("flight.change"))}</button>`;
-  if (need === "unsettled") {
-    return (
-      `<div class="flight flight--${which} flight--unsettled" data-flight="${which}" data-origin="ask" data-fares="idle">${head}` +
-      `<p class="flight-note"><button type="button" class="flight-change" data-origin="ask" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button></p></div>`
-    );
-  }
-  const body =
-    need === "fly"
-      ? flightRoute(which) + flightFare(which, day) + change
-      : `<p class="flight-note" data-i18n-slot="${ARRIVE_NOTE[need]}">${escapeHtml(t(ARRIVE_NOTE[need]))}</p>` + change;
-  return `<div class="flight flight--${which} flight--${need}" data-flight="${which}" data-fares="${state.fares[which].status}">${head}${body}</div>`;
+  return (
+    `<div class="flight flight--${which} flight--fly" data-flight="${which}" data-fares="${state.fares[which].status}">` +
+    `${head}${flightRoute(which)}${flightFare(which, day)}</div>`
+  );
 }
 
 /* From where to where. The reader's airport is typed on the way out and read
@@ -3596,11 +3608,11 @@ function refreshFares() {
       if (faresAsked[which] !== key) return;
       state.fares[which] = { status: fares.length ? "found" : "none", fares };
       state.flights[which] = fares.length ? { departAt: fares[0].departAt, durationMin: fares[0].durationMin } : null;
-      renderTripRow();
+      renderOriginCard();
       if (state.draft) redraft();
     });
   }
-  renderTripRow();
+  renderOriginCard();
   if (state.draft && JSON.stringify(state.flights) !== flightsBefore) redraft();
 }
 
@@ -3614,53 +3626,89 @@ function regionName(code) {
   }
 }
 
-/* Asked once per browser, and only when the reader asks from a travel block:
- * the card opens beneath the trip's dates, the calendar drafts regardless, and
- * the answer is stored so it never comes back. */
+/* Asked once per browser, and only when the reader clicks a picture beside
+ * the trip: first where they live (the country they connect from filled in),
+ * then, living elsewhere, how they travel. Once said, the same pictures open
+ * the travel card: the answer, and the flights for a reader who flies. The
+ * calendar drafts regardless, and the answer is stored so it never comes back. */
 function renderOriginCard() {
   const card = $("originCard");
-  const show = state.asking && Boolean(state.focus);
+  const show = Boolean(state.asking) && Boolean(state.focus) && Boolean(state.period);
   card.hidden = !show;
   if (!show) return;
   const festival = state.focus.festival;
-  const abroad = ORIGIN_COUNTRIES.filter((c) => c !== festival.country)
-    .map((c) => ({ code: c, name: regionName(c) }))
-    .sort((a, b) => a.name.localeCompare(b.name, currentIntlLocale()));
+  const step = state.asking === "card" && !arrivalOf(state.origin) ? "home" : state.asking;
   const answer = (way, key, params = {}) =>
     `<button type="button" class="pref-pick origin-pick" data-origin="${way}">` +
     `<span class="pref-ico">${wayIcon(way)}</span>` +
     `<span class="pref-word" data-i18n-slot="${key}">${escapeHtml(t(key, params))}</span></button>`;
-  card.innerHTML =
+  const head = (key, params) =>
     `<div class="origin-head">` +
-    `<p class="origin-ask" data-i18n-slot="origin.q">${escapeHtml(t("origin.q", { festival: festivalName(festival) }))}</p>` +
+    `<p class="origin-ask" data-i18n-slot="${key}">${escapeHtml(t(key, params))}</p>` +
     `<p class="origin-why" data-i18n-slot="origin.why">${escapeHtml(t("origin.why"))}</p>` +
-    `</div>` +
-    `<div class="origin-answers" role="group" aria-label="${escapeHtml(t("origin.q", { festival: festivalName(festival) }))}">` +
-    answer("local", "origin.city", { city: festivalCity(festival) }) +
-    answer("drive", "origin.drive") +
-    answer("train", "origin.train") +
-    `<label class="pref-pick origin-pick origin-abroad">` +
-    `<span class="pref-ico">${wayIcon("fly")}</span>` +
-    `<span class="pref-word" data-i18n-slot="origin.abroad">${escapeHtml(t("origin.abroad"))}</span>` +
-    `<select class="opt-select origin-select" id="originCountry" aria-label="${escapeHtml(t("origin.abroad"))}">` +
-    `<option value="">${escapeHtml(t("origin.abroad.pick"))}</option>` +
-    abroad.map((c) => `<option value="${c.code}">${escapeHtml(c.name)}</option>`).join("") +
-    `<option value="*">${escapeHtml(t("origin.abroad.other"))}</option>` +
-    `</select></label>` +
-    `</div>` +
-    `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="origin.skip">${escapeHtml(t("origin.skip"))}</button>`;
+    `</div>`;
+  const skip = `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="origin.skip">${escapeHtml(t("origin.skip"))}</button>`;
+  card.dataset.step = step;
+  if (step === "home") {
+    const known = state.homePick || (state.origin && state.origin.country) || state.guess || "";
+    const codes = [...new Set([festival.country, ...ORIGIN_COUNTRIES, ...(known && known !== "*" ? [known] : [])])]
+      .map((c) => ({ code: c, name: regionName(c) }))
+      .sort((a, b) => a.name.localeCompare(b.name, currentIntlLocale()));
+    const guessed = !state.homePick && !(state.origin && state.origin.country) && state.guess && known === state.guess;
+    card.innerHTML =
+      head("origin.home") +
+      `<div class="origin-answers" role="group" aria-label="${escapeHtml(t("origin.home"))}">` +
+      answer("local", "origin.city", { city: festivalCity(festival) }) +
+      `<label class="pref-pick origin-pick origin-abroad">` +
+      `<span class="pref-word" data-i18n-slot="origin.elsewhere">${escapeHtml(t("origin.elsewhere"))}</span>` +
+      `<select class="opt-select origin-select" id="originCountry" aria-label="${escapeHtml(t("origin.elsewhere"))}">` +
+      `<option value="">${escapeHtml(t("origin.abroad.pick"))}</option>` +
+      codes.map((c) => `<option value="${c.code}"${c.code === known ? " selected" : ""}>${escapeHtml(c.name)}</option>`).join("") +
+      `<option value="*"${known === "*" ? " selected" : ""}>${escapeHtml(t("origin.abroad.other"))}</option>` +
+      `</select></label>` +
+      `<button type="button" class="btn origin-next" data-origin="next" data-i18n-slot="origin.next">${escapeHtml(t("origin.next"))}</button>` +
+      `</div>` +
+      (guessed ? `<p class="origin-guess" data-i18n-slot="origin.guessed">${escapeHtml(t("origin.guessed"))}</p>` : "") +
+      skip;
+  } else if (step === "way") {
+    card.innerHTML =
+      head("origin.way", { city: festivalCity(festival) }) +
+      `<div class="origin-answers" role="group" aria-label="${escapeHtml(t("origin.way", { city: festivalCity(festival) }))}">` +
+      answer("fly", "origin.fly") +
+      answer("train", "origin.train") +
+      answer("drive", "origin.drive") +
+      `</div>` +
+      skip;
+  } else {
+    const way = arrivalOf(state.origin);
+    const said = arriveNote(way);
+    const change = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.change">${escapeHtml(t("flight.change"))}</button>`;
+    card.innerHTML =
+      `<div class="travel-head">${wayIcon(way)}` +
+      `<p class="travel-said" data-i18n-slot="${said.key}">${escapeHtml(said.text)}</p>${change}</div>` +
+      (way === "fly" ? `<div class="travel-flights">${flightBlock("out")}${flightBlock("back")}</div>` : "") +
+      `<button type="button" class="origin-skip" data-origin="skip" data-i18n-slot="travel.close">${escapeHtml(t("travel.close"))}</button>`;
+  }
 }
 
 function setOrigin(origin) {
   state.origin = origin;
-  state.asking = false;
+  state.homePick = null;
+  // A flyer is shown the flights just asked for; any other answer is done.
+  state.asking = origin.arrive === "fly" ? "card" : false;
   writeStore(KEY_ORIGIN, origin);
   carChanged();
   savePrefs();
-  renderOriginCard();
-  renderTripRow();
+  renderTimelineStrip();
   refreshFares();
+  renderOriginCard();
   refreshHolidays();
+}
+
+function openTravel(step) {
+  state.asking = step;
+  renderOriginCard();
+  $("originCard").scrollIntoView({ block: "nearest" });
 }
 
 function wireOrigin() {
@@ -3673,22 +3721,26 @@ function wireOrigin() {
     if (kind === "ask" || kind === "change") {
       // The answer given stays stored until another replaces it, so a reader
       // who changes their mind about changing it loses nothing.
-      state.asking = true;
-      renderOriginCard();
-      $("originCard").scrollIntoView({ block: "nearest" });
+      openTravel("home");
+    } else if (kind === "card") {
+      openTravel("card");
     } else if (kind === "skip") {
       state.asking = false;
+      state.homePick = null;
       renderOriginCard();
     } else if (kind === "local") {
       setOrigin({ kind: "city", city: festival.city, cityName: festivalCity(festival), country: festival.country, lat: festival.lat, lng: festival.lng, arrive: "local" });
-    } else if (kind === "drive" || kind === "train") {
-      setOrigin({ kind: "country", country: festival.country, arrive: kind });
+    } else if (kind === "next") {
+      const code = $("originCountry").value;
+      if (!code) return;
+      state.homePick = code;
+      openTravel("way");
+    } else if (kind === "fly" || kind === "drive" || kind === "train") {
+      const home = state.homePick;
+      const origin = home === festival.country ? { kind: "country" } : { kind: "abroad" };
+      if (home && home !== "*") origin.country = home;
+      setOrigin({ ...origin, arrive: kind });
     }
-  });
-  document.addEventListener("change", (e) => {
-    if (e.target.id !== "originCountry" || !e.target.value) return;
-    const code = e.target.value;
-    setOrigin(code === "*" ? { kind: "abroad", arrive: "fly" } : { kind: "abroad", country: code, arrive: "fly" });
   });
 }
 
@@ -3725,13 +3777,9 @@ function wireTrip() {
       refocus();
     },
   });
-  $("tripRow").addEventListener("change", (e) => {
+  $("originCard").addEventListener("change", (e) => {
     const input = e.target;
-    if (input.id === "tripFrom" || input.id === "tripTo") {
-      if (!input.value) return;
-      const moved = input.id === "tripFrom" ? "from" : "to";
-      setTrip({ ...state.period, [moved]: input.value, pick: state.pick }, { fresh: true, moved });
-    } else if (input.id === "flightFrom") {
+    if (input.id === "flightFrom") {
       const code = airportCode(input.value);
       if (!code && input.value.trim()) {
         input.setAttribute("aria-invalid", "true");

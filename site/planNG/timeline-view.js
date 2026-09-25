@@ -7,14 +7,14 @@
  * handle has to read the pointer the other way round.
  */
 
-import { dayFrac, monthTicks, stackRows, timelineBars } from "./lib/timeline.js";
+import { dayFrac, monthTicks, stackRows, timelineBunches } from "./lib/timeline.js";
 import { shiftDay } from "./lib/pool.js";
 import { escapeHtml, t } from "./i18n/i18n.js";
 
 const ROW_PX = 30;
 const LABEL_GAP_PX = 10;
 const LATE_FRAC = 0.72;
-const BAR_MIN_PX = 10;
+const BAR_MIN_PX = 32;
 // A holiday orb is sized for the eye, not the strip's scale: a one-day
 // holiday is a dot, and a longer break grows more slowly than its days.
 const ORB_PX = 10;
@@ -31,23 +31,31 @@ let cheerUntil = 0;
  * @param {string} o.todayISO
  * @param {string|null} o.focusKey the focused edition's key
  * @param {{from: string, to: string}|null} o.period the trip
- * @param {(festival: object, edition: object) => string} o.label a bar's words
+ * @param {(festival: object, edition: object) => string} o.label a lone festival's words
+ * @param {(bunch: object) => {name: string, tip: string}} o.bunchLabel a city's
+ *   pill's words, when it holds more than one festival
+ * @param {(country: string) => string} o.flag a country's flag, as HTML
  * @param {(iso: string) => string} o.monthLabel
  * @param {(iso: string) => string} o.dayText a day as a handle announces it
  * @param {(days: number) => string} o.lengthText the trip's length, in words
  * @param {string} o.todayText the word on today's sign
  * @param {(festival: object, edition: object, hasData: boolean) => string} o.festivalCard
  *   the card a festival shows when pointed at, as HTML
+ * @param {{html: string, settled: boolean, tip: string}|null} [o.travel] the
+ *   picture beside each end of the trip saying how the reader gets there and
+ *   back, or null where there is no journey to plan
+ * @param {(bunch: object) => string} o.bunchCard the card a city's pill of
+ *   several festivals shows, as HTML
  * @param {{from: string, to: string, days: number}[]} [o.breaks] the breaks the
  *   reader's public holidays make inside the span, an orb each on the months
  * @param {(brk: object) => string} [o.breakCard] the card an orb shows, as HTML
  */
 export function renderTimeline(host, o) {
   const { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, lengthText, todayText, festivalCard } = o;
-  const { breaks = [], breakCard } = o;
+  const { breaks = [], breakCard, bunchLabel, bunchCard, flag, travel = null } = o;
   const cards = [];
   const card = (html) => cards.push(html) - 1;
-  const bars = timelineBars(registry, span);
+  const bunches = timelineBunches(registry, span);
   const months = monthTicks(span)
     .map(
       (m, i) =>
@@ -60,7 +68,10 @@ export function renderTimeline(host, o) {
     ? `<span class="tl-period" aria-hidden="true" style="${bandStyle(span, period)}"></span>` +
       handle("from", "trip.from", period.from, tripEdges(span, period).start, dayText) +
       handle("to", "trip.to", period.to, tripEdges(span, period).end, dayText) +
-      `<span class="tl-length" style="${lengthStyle(span, period)}">${escapeHtml(lengthText(daysBetween(period)))}</span>`
+      `<span class="tl-day tl-day--from" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).start)}">${dayOfMonth(period.from)}</span>` +
+      `<span class="tl-day tl-day--to" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).end)}">${dayOfMonth(period.to)}</span>` +
+      `<span class="tl-length" style="${lengthStyle(span, period)}">${escapeHtml(lengthText(daysBetween(period)))}</span>` +
+      (travel ? way("from", "out", tripEdges(span, period).start, travel) + way("to", "back", tripEdges(span, period).end, travel) : "")
     : "";
   // Today: a small figure standing on the months, holding up a sign.
   const today =
@@ -75,20 +86,37 @@ export function renderTimeline(host, o) {
     `<line class="dude-leg" x1="10" y1="21" x2="6.5" y2="33"/>` +
     `<line x1="10" y1="21" x2="13.5" y2="33"/>` +
     `</g></svg></span>`;
-  const items = bars
-    .map((bar) => {
-      const focused = bar.key === focusKey;
-      const words = label(bar.festival, bar.edition);
+  const items = bunches
+    .map((bunch) => {
+      const { lead } = bunch;
+      const many = bunch.bars.length > 1;
+      const focused = bunch.bars.some((bar) => bar.key === focusKey);
+      const words = many ? bunchLabel(bunch) : label(lead.festival, lead.edition);
+      const html = many ? bunchCard(bunch) : festivalCard(lead.festival, lead.edition, lead.hasData);
       // Late in the year the label would run off the strip, so it is hung
-      // from the bar's far end and reads back towards the start instead.
-      const late = bar.start > LATE_FRAC;
-      const place = late ? `inset-inline-end:${pct(1 - bar.end)}` : `inset-inline-start:${pct(bar.start)}`;
+      // from the pill's far end and reads back towards the start instead.
+      const late = bunch.start > LATE_FRAC;
+      const place = late ? `inset-inline-end:${pct(1 - bunch.end)}` : `inset-inline-start:${pct(bunch.start)}`;
+      // Inside a city's pill each festival's run is a shade of its own, so
+      // the days most festivals share read darkest.
+      const width = bunch.end - bunch.start;
+      const runs = many
+        ? bunch.bars
+            .map(
+              (bar) =>
+                `<span class="tl-run" style="inset-inline-start:${pct((bar.start - bunch.start) / width)};` +
+                `width:${pct((bar.end - bar.start) / width)}"></span>`
+            )
+            .join("")
+        : "";
       return (
-        `<button type="button" class="tl-item${focused ? " is-focus" : ""}${bar.hasData ? "" : " is-empty"}${late ? " tl-item--late" : ""}"` +
-        ` data-edition="${escapeHtml(bar.key)}" data-festival="${escapeHtml(bar.festival.id)}"` +
-        ` aria-pressed="${focused}" data-span="${bar.end - bar.start}" style="${place}"` +
-        ` aria-label="${escapeHtml(words.tip)}" data-card="${card(festivalCard(bar.festival, bar.edition, bar.hasData))}">` +
-        `<span class="tl-bar" aria-hidden="true"></span>` +
+        `<button type="button" class="tl-item${focused ? " is-focus" : ""}${bunch.hasData ? "" : " is-empty"}` +
+        `${many ? " tl-item--bunch" : ""}${late ? " tl-item--late" : ""}"` +
+        ` data-edition="${escapeHtml(bunch.key)}" data-festival="${escapeHtml(lead.festival.id)}"` +
+        `${many ? ` data-bunch="${bunch.bars.length}"` : ""}` +
+        ` aria-pressed="${focused}" data-span="${width}" style="${place}"` +
+        ` aria-label="${escapeHtml(words.tip)}" data-card="${card(html)}">` +
+        `<span class="tl-bar" aria-hidden="true">${runs}${flag(lead.festival.country)}</span>` +
         `<span class="tl-label">${escapeHtml(words.name)}</span></button>`
       );
     })
@@ -109,7 +137,7 @@ export function renderTimeline(host, o) {
     `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${items}</div>` +
     `<div class="tl-card" role="tooltip" hidden></div>`;
   host._cards = cards;
-  if (!bars.length) {
+  if (!bunches.length) {
     host.querySelector(".tl-track").insertAdjacentHTML(
       "beforeend",
       `<p class="tl-none" data-i18n-slot="timeline.none">${escapeHtml(t("timeline.none"))}</p>`
@@ -129,6 +157,9 @@ function tripEdges(span, trip) {
   };
 }
 
+/* A trip's end names only its day: the months are already written above it. */
+const dayOfMonth = (iso) => String(Number(iso.slice(8, 10)));
+
 const daysBetween = (trip) => Math.round((Date.parse(trip.to) - Date.parse(trip.from)) / 86400000) + 1;
 
 function lengthStyle(span, trip) {
@@ -141,10 +172,21 @@ function bandStyle(span, trip) {
   return `inset-inline-start:${pct(start)};width:${pct(end - start)}`;
 }
 
+/* The way there beside the trip's first day, and home beside its last: one
+ * button each, both asking the same two-way question. */
+function way(end, flight, frac, travel) {
+  return (
+    `<button type="button" class="tl-way tl-way--${end}${travel.settled ? "" : " is-unsettled"}"` +
+    ` data-origin="${travel.settled ? "card" : "ask"}" data-flight="${flight}"` +
+    ` aria-label="${escapeHtml(travel.tip)}" title="${escapeHtml(travel.tip)}"` +
+    ` style="inset-inline-start:${pct(frac)}">${travel.html}</button>`
+  );
+}
+
 /* One end of the band: a slider a pointer drags and the arrow keys step. */
 function handle(end, labelKey, iso, frac, dayText) {
   return (
-    `<span class="tl-handle tl-handle--${end}" role="slider" tabindex="0" data-end="${end}"` +
+    `<span class="tl-handle tl-handle--${end}" role="slider" tabindex="0" data-end="${end}" data-date="${iso}"` +
     ` aria-label="${escapeHtml(t(labelKey))}" aria-valuetext="${escapeHtml(dayText(iso))}"` +
     ` style="inset-inline-start:${pct(frac)}"><span class="tl-grip" aria-hidden="true"></span></span>`
   );
@@ -160,6 +202,29 @@ export function previewTrip(host, span, trip) {
   host.querySelector(".tl-handle--to").style.insetInlineStart = pct(end);
   const length = host.querySelector(".tl-length");
   if (length) length.style.insetInlineStart = pct((start + end) / 2);
+  for (const [which, frac] of [["from", start], ["to", end]]) {
+    const day = host.querySelector(`.tl-day--${which}`);
+    if (day) {
+      day.style.insetInlineStart = pct(frac);
+      day.textContent = dayOfMonth(trip[which]);
+    }
+    const icon = host.querySelector(`.tl-way--${which}`);
+    if (icon) icon.style.insetInlineStart = pct(frac);
+  }
+  fitWays(host);
+}
+
+/* A picture with no room between its end of the trip and the strip's edge is
+ * left out rather than squeezed or pushed off: the other end still asks. */
+function fitWays(host) {
+  const track = host.querySelector(".tl-track");
+  if (!track) return;
+  const box = track.getBoundingClientRect();
+  for (const icon of track.querySelectorAll(".tl-way")) {
+    icon.hidden = false;
+    const r = icon.getBoundingClientRect();
+    icon.hidden = r.left < box.left || r.right > box.right;
+  }
 }
 
 /** Today's figure cheers: a choice was just made somewhere on the page. */
@@ -215,17 +280,23 @@ export function wireTimelineCards(host) {
   host.addEventListener("focusout", hide);
 }
 
+/* How far a press must travel along the band before it is a drag, not a click. */
+const DRAG_PX = 4;
+
 /**
  * Let the reader move either end of the trip: drag a handle along the year,
- * or step it a day with the arrow keys. A drag previews in place and commits
- * once, on release; a key commits at once.
+ * or step it a day with the arrow keys; or drag the band itself to move the
+ * whole trip, its length kept. A drag previews in place and commits once, on
+ * release; a key commits at once. A press on the band that never travels is
+ * left to be the click it was, on whatever festival it landed.
  * @param {HTMLElement} host
  * @param {object} o
  * @param {() => object} o.span
  * @param {() => {from: string, to: string}} o.trip the trip as it stands
  * @param {(trip: object) => {from: string, to: string}} o.normalize what the
  *   page would make of a trip, so the preview shows what the release commits
- * @param {(trip: object, moved: "from"|"to") => void} o.commit
+ * @param {(trip: object, moved: "from"|"to"|null) => void} o.commit `moved`
+ *   is null when the whole band moved
  */
 export function wireTripHandles(host, { span, trip, normalize, commit }) {
   let drag = null;
@@ -239,22 +310,73 @@ export function wireTripHandles(host, { span, trip, normalize, commit }) {
     const edge = Math.round(frac * s.days);
     return end === "from" ? shiftDay(s.from, Math.min(edge, s.days - 1)) : shiftDay(s.from, Math.max(edge, 1) - 1);
   };
+  // Along the track from its start, in days, whichever way the page runs.
+  const daysAlong = (clientX) => {
+    const track = host.querySelector(".tl-track").getBoundingClientRect();
+    const rtl = getComputedStyle(host).direction === "rtl";
+    return ((rtl ? track.right - clientX : clientX - track.left) / track.width) * span().days;
+  };
+  const onBand = (e) => {
+    const band = host.querySelector(".tl-period");
+    if (!band || !e.target.closest(".tl-track") || e.target.closest(".tl-handle")) return false;
+    const box = band.getBoundingClientRect();
+    return e.clientX >= box.left && e.clientX <= box.right;
+  };
+  // The band moved by a whole number of days, held inside the year shown.
+  const shifted = (from, days) => {
+    const s = span();
+    const last = Math.round((Date.parse(s.to) - Date.parse(from.to)) / 86400000);
+    const first = Math.round((Date.parse(s.from) - Date.parse(from.from)) / 86400000);
+    const by = Math.min(last, Math.max(first, days));
+    return { from: shiftDay(from.from, by), to: shiftDay(from.to, by) };
+  };
   host.addEventListener("pointerdown", (e) => {
     const h = e.target.closest(".tl-handle");
-    if (!h) return;
-    e.preventDefault();
-    h.setPointerCapture(e.pointerId);
-    drag = { end: h.dataset.end, pointerId: e.pointerId, trip: { ...trip() } };
+    if (h) {
+      e.preventDefault();
+      h.setPointerCapture(e.pointerId);
+      drag = { end: h.dataset.end, pointerId: e.pointerId, trip: { ...trip() } };
+      return;
+    }
+    if (e.button !== 0 || !onBand(e)) return;
+    drag = { end: null, pointerId: e.pointerId, x: e.clientX, at: daysAlong(e.clientX), start: { ...trip() }, trip: { ...trip() }, moving: false };
   });
   host.addEventListener("pointermove", (e) => {
-    if (!drag || e.pointerId !== drag.pointerId) return;
-    drag.trip = normalize({ ...trip(), [drag.end]: dayAt(e.clientX, drag.end) }, drag.end);
+    const track = host.querySelector(".tl-track");
+    if (!drag) {
+      if (track) track.classList.toggle("is-grab", e.pointerType === "mouse" && onBand(e));
+      return;
+    }
+    if (e.pointerId !== drag.pointerId) return;
+    if (drag.end) {
+      drag.trip = normalize({ ...trip(), [drag.end]: dayAt(e.clientX, drag.end) }, drag.end);
+    } else {
+      if (!drag.moving) {
+        if (Math.abs(e.clientX - drag.x) < DRAG_PX) return;
+        drag.moving = true;
+        track.setPointerCapture(e.pointerId);
+        track.classList.add("is-dragging");
+      }
+      drag.trip = shifted(drag.start, Math.round(daysAlong(e.clientX) - drag.at));
+    }
     previewTrip(host, span(), drag.trip);
   });
+  // A band that was dragged is not also a click on the festival it started on.
+  const swallowClick = () => {
+    const stop = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    };
+    host.addEventListener("click", stop, { capture: true, once: true });
+    setTimeout(() => host.removeEventListener("click", stop, { capture: true }), 0);
+  };
   const release = (e) => {
     if (!drag || e.pointerId !== drag.pointerId) return;
-    const { end, trip: next } = drag;
+    const { end, trip: next, moving } = drag;
     drag = null;
+    host.querySelector(".tl-track")?.classList.remove("is-dragging");
+    if (!end && !moving) return;
+    if (!end) swallowClick();
     const now = trip();
     if (next.from !== now.from || next.to !== now.to) commit(next, end);
   };
@@ -296,5 +418,6 @@ export function layoutRows(host) {
     el.style.top = `${rows[i] * ROW_PX}px`;
   });
   const count = rows.length ? Math.max(...rows) + 1 : 1;
-  track.style.height = `${count * ROW_PX + 6}px`;
+  track.style.height = `calc(${count * ROW_PX + 6}px + var(--lane))`;
+  fitWays(host);
 }

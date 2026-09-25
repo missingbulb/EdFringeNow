@@ -1496,7 +1496,8 @@ calendar.
 
   <details><summary>Notes</summary>
 
-  Acco publishes start times only. Taken at its word, a show starting at 20:00
+  Some Acco shows publish a start time only (the foyer concerts, several street
+  acts). Taken at its word, a show starting at 20:00
   would end at 20:00 and fit under a day that ends at 20:30, then be drawn
   running past the line. An hour is what the calendar draws such a show as,
   near enough, so what the day's end rules out is what the reader sees cross
@@ -1573,26 +1574,27 @@ calendar.
 ## 23. The year's festivals, and the trip's dates
 
 The top of the page is the year: every festival edition the registry knows,
-drawn at its dates, and the reader's trip banded across it. The trip's first
-and last day are the reader's to set — dragged along the year or typed — and a
+drawn at its dates with a city's festivals sharing one pill, and the reader's
+trip banded across it. The trip's first and last day are the reader's to set,
+by dragging either end of the band or the whole band along the year, and a
 festival is only a shortcut to its own run and a day either side. Nothing below
 is tied to one festival: the pool the calendar drafts from is every
 performance, from any festival, that falls inside the trip and can be reached
 from the festival that leads it: the one the reader chose, while the trip still
 reaches it, and otherwise the one it covers most.
 
-- `23.1` A full-width timeline of the coming year, one bar per festival edition, and the trip's dates banded across it.
+- `23.1` A full-width timeline of the coming year, one pill per city's festivals, and the trip's dates banded across it.
 
   ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
   <details><summary>Notes</summary>
 
-  Twelve months from the start of the month before today. Editions whose runs
-  overlap are stacked on separate rows so no bar hides another; an edition
+  Twelve months from the start of the month before today. Pills whose runs
+  overlap are stacked on separate rows so no pill hides another; an edition
   whose programme is not published yet is drawn hollow, and is still chosen
-  like any other. The festival that leads the trip is lit. Beneath the year
-  sit the trip's two dates and its length, between the two flight blocks
-  (section 27).
+  like any other. The pill of the festival that leads the trip is lit. Nothing
+  sits beneath the year: the trip's days are written on the band (23.12) and
+  the way there and back sits beside it (section 24).
   </details>
 
 - `23.2` Choosing a festival on the timeline sets the trip's dates to its run plus a day either side.
@@ -1650,17 +1652,16 @@ reaches it, and otherwise the one it covers most.
   the whole programme.
   </details>
 
-- `23.8` The trip's first and last day are set on the timeline: drag either end of the band, or type the dates, and the calendar follows.
+- `23.8` The trip's first and last day are set on the timeline: drag either end of the band, and the calendar follows.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.8 -->
 
   <details><summary>Notes</summary>
 
   Each end of the band is a handle that also moves a day at a time with the
-  arrow keys. The dates beneath the year take any day of the twelve months
-  shown. A trip is at most `MAX_PERIOD_DAYS` long (`site/shared/limits.js`):
-  moving one end past that pulls the other along, and a first day typed after
-  the last swaps the two. Every change re-plans the calendar across the new
+  arrow keys, over any day of the twelve months shown. A trip is at most
+  `MAX_PERIOD_DAYS` long (`site/shared/limits.js`): moving one end past that
+  pulls the other along. Every change re-plans the calendar across the new
   days, is written to the address, and is what the page reopens on.
   </details>
 
@@ -1706,7 +1707,7 @@ reaches it, and otherwise the one it covers most.
   content width.
   </details>
 
-- `23.12` Each end of the trip is a line across the strip with a grip at its middle, and the trip's length in days is written above the band.
+- `23.12` Each end of the trip is a line across the strip with a grip at its middle and its day of the month beside it, and the trip's length in days is written above the band.
 
   ![planng-trip-edges.23.12](requirements/screen/cases/planng-trip-edges.23.12.png) <!-- req-gallery:23.12 -->
 
@@ -1779,27 +1780,69 @@ reaches it, and otherwise the one it covers most.
 
   ![planng-photo-credit.23.19](requirements/screen/cases/planng-photo-credit.23.19.png) <!-- req-gallery:23.19 -->
 
+- `23.20` A city's festivals share one pill: it spans all their runs with each run drawn inside it, carries its country's flag at its middle, and is labelled with how many festivals it holds and the one that leads them.
+
+  ![planng-city-pill.23.20](requirements/screen/cases/planng-city-pill.23.20.png) <!-- req-gallery:23.20 -->
+
+  <details><summary>Notes</summary>
+
+  Festivals are bunched by their registry city, so however many festivals a
+  city holds at once the strip grows by at most one row for it. The leading
+  festival is the one with a published programme and the longest run, which
+  is the Edinburgh Festival Fringe in Edinburgh; a city with a single festival
+  keeps that festival's own pill and name. The flag is the registry country's,
+  drawn rather than typed so it looks the same on every device, and a country
+  the page has no flag for shows none.
+  </details>
+
+- `23.21` Pointing at a city's pill shows its card: how many festivals, and each one's name and dates.
+
+  ![planng-city-card.23.21](requirements/screen/cases/planng-city-card.23.21.png) <!-- req-gallery:23.21 -->
+
+- `23.22` Choosing a city's pill sets the trip to its leading festival's run plus a day either side, and that festival leads the trip.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.22 -->
+
+- `23.23` Dragging the band moves the whole trip, keeping its length and the festival chosen; a press that doesn't move still chooses the festival under it.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.23 -->
+
+  <details><summary>Notes</summary>
+
+  A press becomes a drag once the pointer has moved a few pixels, and a drag
+  never also counts as a click on the festival it started over. The trip keeps
+  the festival chosen while the moved dates still reach it (23.9).
+  </details>
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when
-the answer is needed: from the travel blocks either side of the trip's dates.
-Until then those blocks are unsettled, and look it, inviting the click that
-settles them. The answer decides what the trip needs: a reader who lives in
+the answer is needed: from the travel pictures beside either end of the trip on
+the strip. Until then the pictures keep changing between the ways there,
+inviting the click that settles them. The answer decides what the trip needs: a reader who lives in
 the festival's city needs no journey and no bed, one who drives or takes the
 train needs a bed, and one who flies needs the airport and a fare too. No fare
 is looked up before the reader has said they fly.
 
-- `24.1` Until you have said how you are getting here, the blocks either side of the trip look unsettled, and clicking one asks beneath the trip's dates: you live there, you drive, you take the train, or you fly from a country you pick.
+- `24.1` Until you have said how you are getting here, a large travel picture sits beside each end of the trip, and clicking either asks beneath the strip where you live, starting from the country you connect from, or that you live in the festival's city.
 
   ![planng-origin.24.1](requirements/screen/cases/planng-origin.24.1.png) <!-- req-gallery:24.1 -->
 
-- `24.6` While unsettled, the blocks' picture moves between a plane, a train and a car; asked for reduced motion, it holds still.
+- `24.6` While unsettled, the travel pictures take turns as a plane, a train, a car and a house; asked for reduced motion, they hold still.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.6 -->
 
-- `24.7` Each answer settles both blocks in its own picture: a house and no journey at home, a car driving in, a train by rail, and the plane with the route flying in.
+- `24.7` Each answer settles both travel pictures, and they stop changing: a house living there, a car driving in, a train by rail, and a plane flying in.
 
   ![planng-arrival.24.7](requirements/screen/cases/planng-arrival.24.7.png) <!-- req-gallery:24.7 -->
+
+- `24.9` Living elsewhere, the next question is how you travel: fly, take the train or drive.
+
+  ![planng-way.24.9](requirements/screen/cases/planng-way.24.9.png) <!-- req-gallery:24.9 -->
+
+- `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.10 -->
 
 - `24.8` An answer saved before the page asked how you travel is read as one: a home in the festival's city as living there, abroad as flying, anything else as not yet said.
 
@@ -1827,21 +1870,21 @@ is looked up before the reader has said they fly.
 
 ## 27. Getting there and back
 
-The trip's dates are where the journey is planned too. Either side of them on
-the timeline sits a travel block: the way out on the trip's first day, and the
-way home on its last. A reader who flies sees the cheapest flights for those
-days, fetched when the dates are set, each linking to the partner who sells
-it; how the other answers show is section 24.
+The trip's dates are where the journey is planned too. Clicking the travel
+picture at either end of the trip opens the travel card: the way out on the
+trip's first day, and the way home on its last. A reader who flies sees the
+cheapest flights for those days, fetched when the dates are set, each linking
+to the partner who sells it; how the other answers show is section 24.
 
 > ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
 > against the partner's documented response shape: this sandbox cannot reach
 > the partner, and no account exists yet to capture a real answer. Until one
 > does, 27.5's sample is hand-written from the documentation, and with no token
-> configured the blocks show the partner's search for the day instead of a
+> configured the card shows the partner's search for the day instead of a
 > price.
 
-- `27.1` Flying in, a flight block sits either side of the trip's dates: out on its first day, home on its last, each with the cheapest flight's time, length, stops and price.
+- `27.1` Flying in, the travel card shows a flight each way: out on the trip's first day, home on its last, each with the cheapest flight's time, length, stops and price.
 
   ![planng-flights.27.1](requirements/screen/cases/planng-flights.27.1.png) <!-- req-gallery:27.1 -->
 
@@ -1865,7 +1908,7 @@ it; how the other answers show is section 24.
   once the programme is joined.
   </details>
 
-- `27.3` With no fare to show, a flight block offers the partner's search for that day and route instead of a price.
+- `27.3` With no fare to show, a flight offers the partner's search for that day and route instead of a price.
 
   🚩 _Behavior leaf._ <!-- req-gallery:27.3 -->
 
@@ -1876,15 +1919,15 @@ it; how the other answers show is section 24.
   still the day's and the route's.
   </details>
 
-- `27.4` Flying in, the flight blocks ask for your airport, a country named filling in its main one, and either block can change how you are getting here.
+- `27.4` Flying in, the travel card asks for your airport, the country you live in filling in its main one, and can change how you are getting here.
 
   🚩 _Behavior leaf._ <!-- req-gallery:27.4 -->
 
   <details><summary>Notes</summary>
 
-  A country named fills in its main airport, which the reader can overwrite
-  with any airport or city code; "somewhere else abroad" leaves it for the
-  reader to type. The block's "change" asks the question again (section 24).
+  The country the reader lives in fills in its main airport, which the reader
+  can overwrite with any airport or city code; "somewhere else" leaves it for
+  the reader to type. The card's "change" asks the question again (section 24).
   </details>
 
 - `27.6` No fare is asked for until you have said you are flying: unsettled, at home, driving or by train, the fare service is never called.

@@ -1,7 +1,7 @@
 "use strict";
 const fs = require("node:fs");
 const path = require("node:path");
-const { jerusalemReady, calendarSpans } = require("../../shared/case-helpers");
+const { jerusalemReady, calendarSpans, moveTripEnd } = require("../../shared/case-helpers");
 
 const FIXTURES = path.join(__dirname, "..", "..", "shared", "fixtures", "data", "festivals");
 
@@ -52,7 +52,7 @@ module.exports = {
 
     // Stretched over the neighbour's run: both are planned, and Jerusalem,
     // chosen, leads on its five days against the neighbour's six.
-    await page.fill("#tripTo", "2026-10-31");
+    await moveTripEnd(page, "to", "2026-10-31");
     await calendarSpans(page, "2026-10-17", "2026-10-31");
     const both = await planned();
     assert.ok(both.some((s) => s.startsWith("near-by/")), "the neighbour's shows join the calendar");
@@ -61,7 +61,7 @@ module.exports = {
     assert.equal(new URL(page.url()).searchParams.get("festival"), "jerusalem-comedy", "and the address says so");
 
     // Moved off Jerusalem's run, the neighbour leads.
-    await page.fill("#tripFrom", "2026-10-24");
+    await moveTripEnd(page, "from", "2026-10-24");
     await calendarSpans(page, "2026-10-24", "2026-10-31");
     assert.equal(await theme(), "near-by", "off the chosen festival's run, the one the trip covers most leads");
     assert.equal(new URL(page.url()).searchParams.get("festival"), null, "and the address names no festival");

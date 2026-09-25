@@ -1,5 +1,5 @@
 "use strict";
-const { calendarDays, jerusalemReady, routeFares, flightsSettled } = require("../../shared/case-helpers");
+const { calendarDays, jerusalemReady, routeFares, flightsSettled, answerTravel } = require("../../shared/case-helpers");
 
 /* Coming from London: the trip's first day beside its last, each with the
  * hours its flight takes. */
@@ -10,8 +10,7 @@ module.exports = {
   ready: jerusalemReady,
   async drive(page) {
     await routeFares(page);
-    await page.click('.flight--out [data-origin="ask"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     await page.waitForFunction(() => document.querySelectorAll(".sch-own--flight").length === 2, null, { timeout: 20000 });
     await jerusalemReady(page);

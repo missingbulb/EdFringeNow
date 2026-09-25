@@ -90,6 +90,7 @@ if command -v python3 >/dev/null 2>&1; then
   done
   python3 scraper/festivals/platforms/eventotron.py --selftest
   python3 scraper/festivals/platforms/spektrix.py --selftest
+  python3 scraper/festivals/platforms/eventer.py --selftest
   python3 scraper/convert/to_serving.py --selftest
   python3 scraper/convert/to_serving.py --check
 else

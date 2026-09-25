@@ -8,11 +8,9 @@ Entry is free (the page says "הכניסה חופשית!"). An item with no pric
 `free` with `status: free` and a price of 0. The one priced item, the Knights' Halls
 night show, carries its own price, and its availability is unknown.
 
-The genre is read off each card's genre line by keyword. The first rule that
-matches wins, and an item that matches none is `other`. Living statues, circus,
-fire, stilts and characters all fall to `other`. The rules take both English and
-Hebrew words: the research transcription carries English summaries of the genre
-lines, and a real fetch carries the page's own Hebrew.
+The genre is read off each card's chips ("פסל חי", "מופע מוזיקלי") by keyword.
+The first rule that matches wins, and an item that matches none is `other`.
+Living statues, circus, fire, stilts and characters all fall to `other`.
 """
 
 PROGRAMME = ("street-programme", "מופעי חוצות")
@@ -30,17 +28,16 @@ ZONES = {
 }
 
 GENRE_RULES = (
-    ("family", ("family", "משפח", "ילדים")),
-    ("dance", ("dance", "מחול")),
-    ("theatre", ("theatre", "mime", "puppet", "תיאטרון", "פנטומימ", "בובות")),
-    ("other", ("living statue", "פסל חי", "פסלים חיים")),
-    ("music", ("music", "jazz", "band", "dj", "piano", "musician", "tribute",
-               "מוזיק", "ג'אז", "ג׳אז", "להקה", "להקת", "די ג'יי", "פסנתר", "נגנים")),
+    ("family", ("משפח", "ילדים")),
+    ("dance", ("מחול",)),
+    ("theatre", ("תיאטרון", "תאטרון", "פנטומימ", "בובות")),
+    ("other", ("פסל חי", "פסלים חיים")),
+    ("music", ("מוזיק", "מוסיק", "ג'אז", "ג׳אז", "להקה", "להקת", "הופעה חיה")),
 )
 
 
-def genre(line):
-    text = (line or "").lower()
+def genre(chips):
+    text = " ".join(chips).lower()
     for name, words in GENRE_RULES:
         if any(word in text for word in words):
             return name
@@ -87,11 +84,11 @@ def adapt(source):
             partial["events"][eid] = {
                 "title": item["title"],
                 "url": raw["site"],
-                "genre": genre(item["genreLine"]),
+                "genre": genre(item["chips"]),
                 "categories": [PROGRAMME[0]],
-                "blurb": None,
+                "blurb": item["blurb"],
                 "durationMin": duration(item),
-                "imageUrl": None,
+                "imageUrl": item["imageUrl"],
             }
             free = item["price"] is None
             for p in item["performances"]:

@@ -199,20 +199,23 @@ export const STRINGS = {
     ja: "この一年にはまだフェスティバルがありません。",
   },
   "trip.from": {
-    maxWidthPx: 130,
+    maxWidthPx: null,
+    unrendered: "the first day's handle's accessible name",
     en: "First day",
     he: "יום ראשון",
     ru: "Первый день",
     ja: "初日",
   },
   "trip.to": {
-    maxWidthPx: 130,
+    maxWidthPx: null,
+    unrendered: "the last day's handle's accessible name",
     en: "Last day",
     he: "יום אחרון",
     ru: "Последний день",
     ja: "最終日",
   },
   "trip.length": {
+    probe: ".tl-length",
     maxWidthPx: 80,
     sample: { count: 31 },
     en: "{count, plural, one {# day} other {# days}}",
@@ -221,6 +224,7 @@ export const STRINGS = {
     ja: "{count}日間",
   },
   "flight.out": {
+    probe: ".origin-ask",
     maxWidthPx: 120,
     en: "Getting there",
     he: "הדרך לשם",
@@ -228,6 +232,7 @@ export const STRINGS = {
     ja: "行き",
   },
   "flight.back": {
+    probe: ".origin-ask",
     maxWidthPx: 120,
     en: "Getting home",
     he: "הדרך הביתה",
@@ -245,6 +250,24 @@ export const STRINGS = {
   "genre.film": { probe: ".tl-card", maxWidthPx: 120, en: "Film", he: "קולנוע", ru: "Кино", ja: "映画" },
   "genre.theatre": { probe: ".tl-card", maxWidthPx: 120, en: "Theatre", he: "תיאטרון", ru: "Театр", ja: "演劇" },
   "genre.fringe": { probe: ".tl-card", maxWidthPx: 120, en: "Fringe", he: "פרינג'", ru: "Фриндж", ja: "フリンジ" },
+  "bunch.label": {
+    probe: ".tl-label",
+    maxWidthPx: 340,
+    sample: { count: 7, name: "" },
+    en: "{count, plural, one {# festival} other {# festivals}} including {name}",
+    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}}, ביניהם {name}",
+    ru: "{count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}, среди них {name}",
+    ja: "{name}など{count}のフェスティバル",
+  },
+  "bunch.title": {
+    probe: ".tl-card",
+    maxWidthPx: 320,
+    sample: { count: 7, city: "Edinburgh" },
+    en: "{count, plural, one {# festival} other {# festivals}} in {city}",
+    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}} ב{city}",
+    ru: "{city}: {count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}",
+    ja: "{city}の{count}のフェスティバル",
+  },
   "card.programme": {
     probe: ".tl-card",
     maxWidthPx: 280,
@@ -307,15 +330,15 @@ export const STRINGS = {
     ja: "{country}の祝日（接続元からの推測）",
   },
   "flight.say": {
-    probe: ".flight-note",
-    maxWidthPx: 220,
+    maxWidthPx: null,
+    unrendered: "the travel pictures' accessible name and tooltip, which the OS draws",
     en: "How are you getting here?",
     he: "איך אתם מגיעים?",
     ru: "Как вы доберётесь?",
     ja: "交通手段を選ぶ"
   },
   "flight.none": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 440,
     en: "You live here: no journey needed.",
     he: "אתם גרים כאן: אין צורך בנסיעה.",
@@ -323,7 +346,7 @@ export const STRINGS = {
     ja: "地元にお住まいなので移動は不要です。"
   },
   "arrive.drive": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 440,
     en: "Driving your own car.",
     he: "נוסעים ברכב שלכם.",
@@ -331,12 +354,37 @@ export const STRINGS = {
     ja: "自家用車で移動します。",
   },
   "arrive.train": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 440,
     en: "Coming by train.",
     he: "מגיעים ברכבת.",
     ru: "На поезде.",
     ja: "電車で移動します。",
+  },
+  "arrive.fly": {
+    probe: ".origin-why",
+    maxWidthPx: 440,
+    sample: { country: "United Kingdom" },
+    en: "Flying in from {country}.",
+    he: "טסים מ{country}.",
+    ru: "Прилетаете из страны {country}.",
+    ja: "{country}から飛行機で来ます。",
+  },
+  "arrive.flyAny": {
+    probe: ".origin-why",
+    maxWidthPx: 440,
+    en: "Flying in.",
+    he: "מגיעים בטיסה.",
+    ru: "Прилетаете самолётом.",
+    ja: "飛行機で来ます。",
+  },
+  "travel.close": {
+    probe: ".origin-skip",
+    maxWidthPx: 220,
+    en: "Close",
+    he: "סגירה",
+    ru: "Закрыть",
+    ja: "閉じる",
   },
   "flight.from": {
     maxWidthPx: null,
@@ -347,7 +395,7 @@ export const STRINGS = {
     ja: "出発空港または都市のコード",
   },
   "flight.typeAirport": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 440,
     en: "Type your airport's code to see fares.",
     he: "הקלידו את קוד שדה התעופה שלכם כדי לראות מחירים.",
@@ -355,7 +403,7 @@ export const STRINGS = {
     ja: "空港コードを入力すると料金が表示されます。",
   },
   "flight.looking": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 220,
     en: "Looking for fares…",
     he: "מחפשים מחירים…",
@@ -363,7 +411,7 @@ export const STRINGS = {
     ja: "料金を検索中…",
   },
   "flight.direct": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 90,
     en: "Direct",
     he: "ישירה",
@@ -371,7 +419,7 @@ export const STRINGS = {
     ja: "直行便",
   },
   "flight.stops": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 90,
     sample: { count: 2 },
     en: "{count, plural, one {# stop} other {# stops}}",
@@ -388,7 +436,7 @@ export const STRINGS = {
     ja: "最近ほかの旅行者が見つけた料金です。料金は予約時にパートナーが確定します。",
   },
   "flight.search": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 220,
     en: "Search flights for this day",
     he: "חיפוש טיסות ליום הזה",
@@ -396,7 +444,7 @@ export const STRINGS = {
     ja: "この日のフライトを検索",
   },
   "flight.change": {
-    probe: ".flight-note",
+    probe: ".origin-why",
     maxWidthPx: 120,
     en: "Change",
     he: "שינוי",
@@ -441,13 +489,21 @@ export const STRINGS = {
   },
 
   // -------------------------------------------- where you are coming from --
-  "origin.q": {
+  "origin.home": {
     maxWidthPx: 1020,
-    sample: { festival: "International Festival of Alternative Israeli Theatre" },
-    en: "How are you getting to the {festival}?",
-    he: "איך אתם מגיעים ל{festival}?",
-    ru: "Как вы доберётесь на {festival}?",
-    ja: "{festival}へはどうやって行きますか？"
+    en: "Where do you live?",
+    he: "איפה אתם גרים?",
+    ru: "Где вы живёте?",
+    ja: "どちらにお住まいですか？",
+  },
+  "origin.way": {
+    probe: ".origin-ask",
+    maxWidthPx: 1020,
+    sample: { city: "Jerusalem" },
+    en: "How are you getting to {city}?",
+    he: "איך אתם מגיעים ל{city}?",
+    ru: "Как вы доберётесь до города {city}?",
+    ja: "{city}へはどうやって行きますか？",
   },
   "origin.why": {
     maxWidthPx: 1400,
@@ -464,7 +520,38 @@ export const STRINGS = {
     ru: "Я живу в городе {city}",
     ja: "{city}に住んでいます",
   },
+  "origin.elsewhere": {
+    maxWidthPx: 220,
+    en: "I live in",
+    he: "אני גר/ה ב־",
+    ru: "Я живу в стране",
+    ja: "住んでいる国",
+  },
+  "origin.next": {
+    maxWidthPx: 120,
+    en: "Next",
+    he: "הלאה",
+    ru: "Далее",
+    ja: "次へ",
+  },
+  "origin.guessed": {
+    probe: ".origin-why",
+    maxWidthPx: 600,
+    en: "Our guess from your connection. Change it if it's wrong.",
+    he: "ניחשנו לפי החיבור שלכם. שנו אם טעינו.",
+    ru: "Мы угадали по вашему подключению. Исправьте, если ошиблись.",
+    ja: "接続元からの推測です。違っていたら変更してください。",
+  },
+  "origin.fly": {
+    probe: ".origin-pick .pref-word",
+    maxWidthPx: 220,
+    en: "I'll fly",
+    he: "אגיע בטיסה",
+    ru: "Прилечу",
+    ja: "飛行機で行く",
+  },
   "origin.drive": {
+    probe: ".origin-pick .pref-word",
     maxWidthPx: 220,
     en: "I'll drive",
     he: "אגיע ברכב",
@@ -472,18 +559,12 @@ export const STRINGS = {
     ja: "車で行く",
   },
   "origin.train": {
+    probe: ".origin-pick .pref-word",
     maxWidthPx: 220,
     en: "By train",
     he: "ברכבת",
     ru: "На поезде",
     ja: "電車で行く",
-  },
-  "origin.abroad": {
-    maxWidthPx: 220,
-    en: "I'm flying from",
-    he: "אני טס/ה מ־",
-    ru: "Прилечу из",
-    ja: "飛行機で出発",
   },
   "origin.abroad.pick": {
     maxWidthPx: null,
@@ -496,10 +577,10 @@ export const STRINGS = {
   "origin.abroad.other": {
     maxWidthPx: null,
     unrendered: "an option of a native select, drawn by the operating system",
-    en: "Somewhere else abroad",
-    he: "ממקום אחר בחו״ל",
-    ru: "Из другой страны",
-    ja: "その他の海外",
+    en: "Somewhere else",
+    he: "במקום אחר",
+    ru: "В другой стране",
+    ja: "その他の国",
   },
   "origin.skip": {
     maxWidthPx: 220,
