@@ -1,5 +1,5 @@
 "use strict";
-const { clickStackBand, jerusalemReady, settle } = require("../../shared/case-helpers");
+const { clickStackBand, jerusalemAllDays, jerusalemReady, settle } = require("../../shared/case-helpers");
 
 // Monday at 22:00: a one-night show took the hour from a free late-night that
 // plays four evenings. Taking that one from the stack is a lock, and a lock is
@@ -11,6 +11,7 @@ module.exports = {
   description: "locking a night holds it, even against a scarcer contender",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
+  localStorage: jerusalemAllDays(),
   ready: jerusalemReady,
   async capture(page, t) {
     const slot = page.locator(`${NIGHT} .sch-slot:has(.sch-stack)`).first();

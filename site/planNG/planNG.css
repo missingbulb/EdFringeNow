@@ -345,7 +345,6 @@ body.festival-page {
 .tmode,
 .tmode-btn,
 .meal-pill,
-.win-flag,
 .sch-show,
 .sch-pin,
 .sch-emoji {
@@ -395,8 +394,8 @@ body.festival-page {
 /* --- right to left -------------------------------------------------------- */
 
 /* The board's own geometry follows the page's direction on its own: the day
-   columns, the lanes and the schedule's days are grid and flex tracks, and the
-   date window's overlay is mirrored in planNG.js. What is left here is
+   columns, the lanes and the schedule's days are grid and flex tracks. What is
+   left here is
    the handful of places plan.css states a physical side. */
 [dir="rtl"] .ss-icon {
   left: auto;
@@ -427,12 +426,6 @@ body.festival-page {
 [dir="rtl"] .lane-remove {
   right: auto;
   left: 4px;
-}
-[dir="rtl"] .win-handle--start .win-flag {
-  transform: translateX(50%);
-}
-[dir="rtl"] .win-handle--end .win-flag {
-  transform: translateX(-50%);
 }
 
 /* --- the version popup --------------------------------------------------- */
@@ -962,13 +955,11 @@ body.festival-page {
   font-size: 0.8rem;
 }
 
-/* --- the four blockers ----------------------------------------------------
+/* --- the day's two lines ------------------------------------------------
  *
- * The day's two boundaries and the window's two ends, drawn on the calendar.
- * The lines, their grips and their flags are plan.css's own components
- * (.sch-dayline / .sch-zone / .sch-meal), so this is the overlay that holds
- * them, the date edges the Fringe planner has no equivalent of, and the
- * nights the window leaves out.
+ * The day's two boundaries, drawn on the calendar. The lines, their grips and
+ * their flags are plan.css's own components (.sch-dayline / .sch-zone), so
+ * this is the overlay that holds them.
  */
 .sch-blockers {
   position: absolute;
@@ -976,12 +967,10 @@ body.festival-page {
   z-index: 6;
   pointer-events: none;
 }
-.sch-dayline:focus-visible,
-.sch-dateedge:focus-visible {
+.sch-dayline:focus-visible {
   outline: none;
 }
-.sch-dayline:focus-visible .dl-flag,
-.sch-dateedge:focus-visible .de-flag {
+.sch-dayline:focus-visible .dl-flag {
   background: var(--violet);
   color: #fff;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 40%, transparent);
@@ -998,109 +987,209 @@ body.festival-page {
   top: 6px;
 }
 
-/* Where the window starts and ends, across the columns rather than down the
-   hours. Positioned inline-start in both directions (planNG.js measures
-   the columns' own boxes), so only the flag's own centring is mirrored. */
-.sch-dateedge {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  border-inline-start: 2px solid var(--violet);
-  pointer-events: none;
-  z-index: 7;
-}
-.sch-dateedge .de-grip {
-  position: absolute;
-  inset-inline-start: -8px;
-  top: 0;
-  width: 16px;
-  height: 100%;
-  cursor: ew-resize;
-  pointer-events: auto;
-  touch-action: none;
-}
-.sch-dateedge .de-grip::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 12px;
-  height: 26px;
-  border-radius: 7px;
-  background-color: var(--violet);
-  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
-  background-repeat: no-repeat;
-  background-size: 1.5px 12px;
-  background-position: 4px center, 7.5px center;
-  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
-  pointer-events: none;
-}
-.sch-dateedge .de-flag {
-  position: absolute;
-  top: 6px;
-  inset-inline-start: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 0 7px;
-  border: 1px solid var(--violet);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--violet-dark);
-  font-size: 0.6rem;
-  font-weight: 700;
-  line-height: 1.6;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-  pointer-events: none;
-}
-/* Each flag hangs INSIDE the window rather than astride its own edge: the
-   calendar's scroller clips whatever leaves it, and the last night's edge is
-   the scroller's own far side. */
-.sch-dateedge--end .de-flag {
-  inset-inline-start: auto;
-  inset-inline-end: 2px;
-}
-.sch-dateedge .wf-cap {
-  color: var(--muted);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-/* A night the window leaves out: hatched like the hours outside the day, so
-   both kinds of blocker shut a region out the same way. */
-.sch-day--out {
-  background: repeating-linear-gradient(
-    -45deg,
-    light-dark(rgba(16, 24, 40, 0.06), rgba(255, 255, 255, 0.05)) 0 6px,
-    light-dark(rgba(16, 24, 40, 0.02), rgba(255, 255, 255, 0.015)) 6px 12px
-  );
-}
-.sch-day--out .sch-day-head {
-  opacity: 0.5;
-}
-.sch-day--out .sch-body {
-  background-image: none;
-}
-
-/* The hatch plan.css draws over its zones and meal bands is tuned for a white
-   board; in the dark it disappears into it. */
-.sch-zone,
-.sch-meal {
+/* The hatch plan.css draws over its zones is tuned for a white board; in the
+   dark it disappears into it. */
+.sch-zone {
   background: repeating-linear-gradient(
     -45deg,
     light-dark(rgba(16, 24, 40, 0.05), rgba(255, 255, 255, 0.05)) 0 6px,
     light-dark(rgba(16, 24, 40, 0.02), rgba(255, 255, 255, 0.015)) 6px 12px
   );
 }
-/* A meal here is a statement, not a handle: it is moved from the question that
-   asked for it, so nothing on the calendar takes the pointer. */
-.sch-meal {
+
+/* --- the reader's own days ------------------------------------------------- */
+
+/* A day's head is where the reader says what the day is for. */
+.sch-day-head[data-day-head] {
+  cursor: pointer;
+}
+.sch-day-head[data-day-head]:hover .sch-dow,
+.sch-day-head[data-day-head]:focus-visible .sch-dow {
+  color: var(--violet-dark);
+  text-decoration: underline;
+}
+.sch-day-head[data-day-head]:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: -2px;
+}
+/* An empty hour takes a click: it offers a meal or personal time there. */
+.sch-body {
+  cursor: copy;
+}
+
+/* A kept day — rest or an excursion — is one block over its column; a day
+   given to a festival nearby keeps its shows and says so in a strip at its
+   top, in that festival's colour. Personal blocks carry no festival stripe:
+   they are hatched, with their emoji. */
+.sch-keep {
+  position: absolute;
+  inset-inline: 3px;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 18px;
+  border: 1px dashed light-dark(#c9c4dc, #4a4560);
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#f6f4fd, #1f1b2b) 0 8px,
+    light-dark(#fbfaff, #191622) 8px 16px
+  );
+  color: var(--ink);
+  cursor: grab;
+  touch-action: none;
+}
+.sch-keep--festival {
+  height: auto;
+  padding: 3px 6px;
+  border: 0;
+  border-inline-start: 4px solid var(--festival-colour, var(--violet));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--festival-colour, var(--violet)) 14%, var(--paper));
+  justify-content: flex-start;
+}
+.sch-day--festival .sch-body {
+  background-color: color-mix(in srgb, var(--festival-colour, var(--violet)) 5%, transparent);
+}
+.keep-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.sch-keep--festival .keep-label {
+  padding: 0;
+  background: none;
+}
+.keep-emoji {
+  font-size: 0.9rem;
+}
+.sch-keep:focus-visible,
+.sch-own:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 1px;
+}
+
+.sch-own {
+  position: absolute;
+  inset-inline: 3px;
+  z-index: 2;
+  overflow: hidden;
+  padding: 2px 6px;
+  border: 1px solid light-dark(#d9d3ea, #3c3750);
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#f7f5fc, #1e1a29) 0 6px,
+    light-dark(#fdfcff, #181521) 6px 12px
+  );
+  color: var(--ink);
+  font-size: 0.62rem;
+  line-height: 1.3;
+  cursor: grab;
+  touch-action: none;
+}
+.sch-own--meal {
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#fff6e8, #2a2114) 0 6px,
+    light-dark(#fffbf4, #221b11) 6px 12px
+  );
+  border-color: light-dark(#f1d9b3, #4d3b20);
+}
+.sch-own--flight {
   cursor: default;
+  border-style: dashed;
+  background: repeating-linear-gradient(
+    -45deg,
+    light-dark(#eef4fb, #172030) 0 6px,
+    light-dark(#f7fafd, #121a27) 6px 12px
+  );
+  border-color: light-dark(#c4d6ea, #2c3d55);
+}
+.sch-own--out {
+  display: flex;
+  align-items: flex-end;
+}
+.sch-own--flight .own-label {
+  white-space: normal;
+}
+.own-label {
+  display: block;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.own-time {
+  display: block;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.own-resize {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 6px;
+  cursor: ns-resize;
+}
+.sch-add-anchor {
+  position: absolute;
+  inset-inline: 0;
+  height: 0;
   pointer-events: none;
+}
+
+/* The menu a day's head, a kept day or a block of the reader's own opens. */
+.cal-menu {
+  display: grid;
+  gap: 2px;
+  min-width: 170px;
+  padding: 6px;
+}
+.cal-menu .menu-title {
+  padding: 2px 6px 4px;
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+.cal-menu .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.72rem;
+  text-align: start;
+  cursor: pointer;
+}
+.cal-menu .menu-item[data-festival-colour] {
+  box-shadow: inset 3px 0 0 var(--festival-colour);
+}
+.cal-menu .menu-item:hover,
+.cal-menu .menu-item:focus-visible {
+  background: color-mix(in srgb, var(--violet) 10%, transparent);
+  outline: none;
+}
+.cal-menu .menu-item.is-on {
+  font-weight: 700;
+  color: var(--violet-dark);
+}
+.menu-emoji {
+  width: 1.2em;
+  text-align: center;
 }
 
 /* --- the year ------------------------------------------------------------ */
