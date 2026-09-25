@@ -1455,19 +1455,66 @@ body.festival-page {
   flex: 0 0 auto;
   color: var(--violet);
 }
-/* Taking off on the way out, coming home the other way. The picture points
+/* Taking off on the way out, coming home the other way. The plane points
    along the reader's line, so a right-to-left page turns it round too. */
-.flight--out .flight-plane {
+.flight--out .way-fly {
   transform: rotate(45deg);
 }
-.flight--back .flight-plane {
+.flight--back .way-fly {
   transform: rotate(135deg);
 }
-[dir="rtl"] .flight--out .flight-plane {
+[dir="rtl"] .flight--out .way-fly {
   transform: rotate(-45deg);
 }
-[dir="rtl"] .flight--back .flight-plane {
+[dir="rtl"] .flight--back .way-fly {
   transform: rotate(-135deg);
+}
+[dir="rtl"] .flight .way-drive {
+  transform: scaleX(-1);
+}
+/* Not yet said: dashed and quiet, the whole block a button, its picture
+   turning between the ways of getting here. */
+.flight--unsettled {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--violet) 45%, var(--line));
+  background: var(--paper);
+  cursor: pointer;
+}
+.flight--unsettled:hover {
+  background: color-mix(in srgb, var(--violet) 7%, var(--paper));
+}
+.arrive-icons {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: var(--violet);
+  opacity: 0.7;
+}
+.arrive-icons > svg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: arrive-turn 6s ease-in-out infinite;
+}
+.arrive-icons > svg:first-child {
+  opacity: 1;
+}
+.arrive-icons > .way-train {
+  animation-delay: -4s;
+}
+.arrive-icons > .way-drive {
+  animation-delay: -2s;
+}
+@keyframes arrive-turn {
+  0%, 28% { opacity: 1; }
+  33%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrive-icons > svg {
+    animation: none;
+  }
 }
 .flight-title {
   font-weight: 800;
