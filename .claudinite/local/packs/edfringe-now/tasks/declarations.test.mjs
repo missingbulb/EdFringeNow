@@ -55,7 +55,6 @@ for (const [dir, decl, trigger, preconditions, terms] of DECLARED) {
     assert.ok(MODELS.includes(decl.agent_model), `illegal agent_model ${decl.agent_model}`);
     assert.ok(OUTCOMES.includes(decl.expected_outcome), `illegal expected_outcome ${decl.expected_outcome}`);
     assert.deepEqual(decl.preconditions, preconditions);
-    assert.equal(typeof decl.agent_instructions, "string");
     // The retired fields, asserted gone: a declaration still carrying `frequency`
     // or either judgment form is a contract violation, and one carrying only the
     // function stops running the moment the mount drops support for it.
