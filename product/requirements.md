@@ -1707,7 +1707,9 @@ reaches it, and otherwise the one it covers most.
   Measured on a phone with a week's trip and on a desk with the longest trip
   allowed (31 days), where the columns squeeze, and at 2560 pixels with a
   week, where each column stops at the cap and the calendar's card keeps its
-  full width (23.11).
+  full width (23.11). A squeezed column sheds what a show's block can't
+  afford, as the Fringe planner's does: under 78 pixels its times, under 56
+  its picture and venue, so the show's name keeps the space.
   </details>
 
 ## 24. How you are getting here
