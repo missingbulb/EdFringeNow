@@ -75,9 +75,12 @@ export function byScarcity(a, b) {
  *   preferred?: Set<string>|string[],
  *   maxUnpreferredPerDay?: number,
  *   allowSlot?: (slot: object) => boolean,
+ *   assumedLengthMin?: number,
  * }} [options]
  *   allowSlot: what the reader has kept for themselves — a performance it
  *   refuses leaves the pool the way one outside the day's hours does.
+ *   assumedLengthMin: how long a performance with no published length counts
+ *   as for the day's hours and allowSlot; without it, it counts as none.
  * @returns {{
  *   days: Array<{date: string, slots: object[]}>,
  *   picked: Map<string,string>,
@@ -131,8 +134,14 @@ export function draftCalendar(shows, options = {}) {
     const kept = slots.filter((s) => {
       if (rejectedInstances.has(instanceKey(slug, slotKey(s)))) return false;
       if (pinnedKey && slotKey(s) === pinnedKey) return true;
-      if (options.allowSlot && !options.allowSlot(s)) return false;
-      return withinDayWindow(s, dayWindow);
+      // A show with no published length still takes time: the hours tests
+      // see it running for the length the caller assumes.
+      const timed =
+        options.assumedLengthMin && s.endMinuteOfDay === s.startMinuteOfDay
+          ? { ...s, endMinuteOfDay: s.startMinuteOfDay + options.assumedLengthMin }
+          : s;
+      if (options.allowSlot && !options.allowSlot(timed)) return false;
+      return withinDayWindow(timed, dayWindow);
     });
     if (kept.length) pool.set(slug, kept);
   }

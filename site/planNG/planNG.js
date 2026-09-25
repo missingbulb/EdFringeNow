@@ -63,7 +63,7 @@ import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
 import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
-import { NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
+import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -1356,6 +1356,7 @@ function planOptions() {
     dayStartMin: state.dayStartMin,
     dayEndMin: state.dayEndMin,
     allowSlot: slotRule(keptInTrip(), busyHours()),
+    assumedLengthMin: ASSUMED_LENGTH_MIN,
     maxPerDay: state.maxPerDay,
     minGapSameVenue: state.minGapSame,
     minGapDifferentVenue: state.minGap,

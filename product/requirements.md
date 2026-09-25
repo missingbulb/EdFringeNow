@@ -1452,6 +1452,19 @@ calendar.
   redrawing rather than a number changing.
   </details>
 
+- `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
+
+  <table><thead><tr><th align="left">A show with no length, starting</th><th align="left">Day ends 20:30</th><th align="left">Dinner 21:00–22:00</th></tr></thead><tbody><tr><td>19:30</td><td>drafted: an hour ends at 20:30</td><td>drafted</td></tr><tr><td>20:00</td><td>not drafted: an hour runs past 20:30</td><td>drafted: it ends as dinner starts</td></tr><tr><td>20:30</td><td>not drafted</td><td>not drafted: it runs into dinner</td></tr></tbody></table> <!-- req-gallery:21.14 -->
+
+  <details><summary>Notes</summary>
+
+  Acco publishes start times only. Taken at its word, a show starting at 20:00
+  would end at 20:00 and fit under a day that ends at 20:30, then be drawn
+  running past the line. An hour is what the calendar draws such a show as,
+  near enough, so what the day's end rules out is what the reader sees cross
+  it.
+  </details>
+
 - `21.9` Every preference survives a reload.
 
   🚩 _Behavior leaf._ <!-- req-gallery:21.9 -->
