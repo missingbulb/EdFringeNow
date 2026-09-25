@@ -45,7 +45,6 @@ import { originReach, poolReach } from "../shared/feasibility.js";
 import {
   FACET_OPTIONS,
   MAX_PERIOD_DAYS,
-  PICK_CHIPS,
   RIVAL_ROWS,
   SEARCH_RESULT_ROWS,
   capOptions,
@@ -58,10 +57,10 @@ import {
   PAGE_ROOT,
   SITE_NAV,
   STORAGE_PREFIX,
-  kindEmoji,
   presentationOf,
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
+import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
@@ -169,15 +168,19 @@ const state = {
   mode: "walk",
   // The axis and column widths held still for the duration of a blocker drag.
   drag: null,
-  // The kinds the reader said they came for, by the programme's own category
-  // slug. Empty is the honest default and means no taste stated at all, which
-  // is not the same as having chosen every kind — see MAX_OFF_INTEREST_PER_DAY.
+  // The kinds the reader said they came for, from lib/filters.js's GENRES.
+  // Empty is the honest default and means no taste stated at all, which is not
+  // the same as having chosen every kind — see MAX_OFF_INTEREST_PER_DAY.
   interests: new Set(),
-  // Whether the reader asked to see every kind the pool offers.
-  interestsOpen: false,
-  // Which questions are showing their exact numbers. Not stored: it is where
-  // the reader has got to, not something they decided.
-  opened: new Set(),
+  // The filters, which unlike a kind drop shows from the draft outright:
+  // festivals left out, and tags (a festival's own categories, by pool id)
+  // required ("only") or ruled out ("out").
+  festivalsOut: new Set(),
+  tags: new Map(),
+  // Which chip's panel is open, and what the tag box holds. Not stored: it is
+  // where the reader has got to, not something they decided.
+  openChip: null,
+  tagQuery: "",
   // The four verdicts. `starred` is the favourites set and keeps its own
   // storage key, because it predates the other three and a reader who starred
   // shows under the old board should find them still starred.
@@ -330,6 +333,8 @@ function savePrefs() {
     minGapSame: state.minGapSame,
     mode: state.mode,
     interests: [...state.interests],
+    festivalsOut: [...state.festivalsOut],
+    tags: Object.fromEntries(state.tags),
   });
 }
 
@@ -355,7 +360,13 @@ function restorePrefs() {
   state.minGap = Number.isFinite(saved.minGap) ? saved.minGap : state.minGap;
   state.minGapSame = Number.isFinite(saved.minGapSame) ? saved.minGapSame : state.minGapSame;
   if (MODE_META[saved.mode]) state.mode = saved.mode;
-  if (Array.isArray(saved.interests)) state.interests = new Set(saved.interests);
+  // A kind stored before the kinds were shared across festivals was a
+  // category slug; it names no shared kind and is dropped.
+  if (Array.isArray(saved.interests)) state.interests = new Set(saved.interests.filter((g) => GENRES.includes(g)));
+  if (Array.isArray(saved.festivalsOut)) state.festivalsOut = new Set(saved.festivalsOut);
+  if (saved.tags && typeof saved.tags === "object") {
+    state.tags = new Map(Object.entries(saved.tags).filter(([, mode]) => mode === "only" || mode === "out"));
+  }
 }
 
 // --- chrome ---------------------------------------------------------------
@@ -666,9 +677,11 @@ function wireWindow() {
 
 // --- the preference questions ---------------------------------------------
 //
-// The row above the calendar. Each question is one line, a handful of picture
-// answers, and — where a picture is shorthand for numbers — the numbers
-// themselves behind an expander. A picture is never a coarser control than the
+// The row between the year's strip and the calendar: one chip per question,
+// each naming its current answer, and behind each a panel that floats over the
+// calendar with the picture answers and — where a picture is shorthand for
+// numbers — the numbers themselves. The chip is one line whatever the answer,
+// so the calendar never moves. A picture is never a coarser control than the
 // numbers it stands for: the fine controls are the state, and the pictures are
 // read back off it, so opening a question can never discard an answer.
 
@@ -708,12 +721,18 @@ const MAX_OFF_INTEREST_PER_DAY = 1;
 
 const GAP_CHOICES = [0, 15, 30, 45, 60];
 
-/** Every show filed under a kind the reader named — the drafter's `preferred`. */
+/** Every show of a kind the reader named — the drafter's `preferred`. */
 function preferredSlugs() {
   if (!state.interests.size || !state.catalogue) return [];
   return state.catalogue.shows
-    .filter((show) => (show.genreSlugs || []).some((kind) => state.interests.has(kind)))
+    .filter((show) => state.interests.has(sharedGenre(show.genreId)))
     .map((show) => show.slug);
+}
+
+/** The pool the draft is drawn from: every show the filters keep. */
+function filteredShows() {
+  const filters = { festivalsOut: state.festivalsOut, tags: state.tags };
+  return state.catalogue.shows.filter((show) => passesFilters(show, filters));
 }
 
 /** The pace picture the current pair of numbers is, or none when it is neither. */
@@ -752,70 +771,147 @@ const timeInputHtml = (mealId, edge, min, labelKey) =>
   ` value="${minToClock(min)}"` +
   ` aria-label="${escapeHtml(t(labelKey, { meal: t(MEAL_META[mealId].nameKey) }))}" />`;
 
-/** One question: the ask, its pictures, and the numbers behind them. */
-function questionHtml(id, askKey, answers, fine) {
-  const open = state.opened.has(id);
+/** A kind's name, in the reader's language. */
+const GENRE_KEY = {
+  film: "genre.film",
+  comedy: "genre.comedy",
+  theatre: "genre.theatre",
+  dance: "genre.dance",
+  music: "genre.music",
+  family: "genre.family",
+  talk: "genre.talk",
+  other: "genre.other",
+};
+
+/** One question: a chip naming its answer, and the panel behind it. */
+function questionHtml(id, askKey, answer, body) {
+  const open = state.openChip === id;
   return (
-    `<section class="pref" data-q="${id}">` +
-    `<p class="pref-ask">${escapeHtml(t(askKey))}</p>` +
-    `<div class="pref-answers" role="group" aria-label="${escapeHtml(t(askKey))}">${answers}</div>` +
-    (fine
-      ? `<button type="button" class="pref-expand" data-expand="${id}" aria-expanded="${open}"` +
-        ` aria-controls="fine-${id}">` +
-        `<span class="pref-expand-word">${escapeHtml(t(open ? "prefs.less" : "prefs.more"))}</span>` +
-        `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
-        `<div class="pref-fine" id="fine-${id}"${open ? "" : " hidden"}>${fine}</div>`
-      : "") +
+    `<section class="pref${open ? " is-open" : ""}" data-q="${id}">` +
+    `<button type="button" class="pref-chip" data-open="${id}" aria-expanded="${open}"` +
+    ` aria-controls="panel-${id}" aria-haspopup="true">` +
+    `<span class="pref-ask">${escapeHtml(t(askKey))}</span>` +
+    `<span class="pref-answer">${answer}</span>` +
+    `<span class="pref-caret" aria-hidden="true">▾</span></button>` +
+    `<div class="pref-panel" id="panel-${id}" role="group" aria-label="${escapeHtml(t(askKey))}"` +
+    `${open ? "" : " hidden"}>${body}</div>` +
     `</section>`
   );
 }
 
-/* The kinds on offer: the focused festival's in its own order, then the other
- * festivals' by how much of the pool each holds. A period pooling several festivals can offer dozens, so
- * past PICK_CHIPS the rest wait behind one "more kinds" chip — except a kind
- * already chosen, which is always shown. */
-function interestsHtml() {
-  const count = new Map();
-  for (const show of state.catalogue.shows) {
-    for (const kind of show.genreSlugs || []) count.set(kind, (count.get(kind) || 0) + 1);
-  }
-  const focusId = state.focus.festival.id;
-  const cats = state.catalogue.categories;
-  const ordered = [
-    ...cats.filter((kind) => kind.festivalId === focusId),
-    ...cats.filter((kind) => kind.festivalId !== focusId).sort((a, b) => (count.get(b.slug) || 0) - (count.get(a.slug) || 0)),
-  ];
-  const shown = state.interestsOpen
-    ? ordered
-    : ordered.filter((kind, i) => i < PICK_CHIPS || state.interests.has(kind.slug));
-  const held = ordered.length - shown.length;
-  const kinds = shown
-    .map((kind) =>
-      pickHtml(
-        "interest",
-        kind.slug,
-        kindEmoji(kind.festivalId, kind.slug.slice(kind.festivalId.length + 1)),
-        foreign(kind.name, kind.slug),
-        state.interests.has(kind.slug)
-      )
-    )
-    .join("");
-  const everything = pickHtml(
-    "interest",
-    "*",
-    "✨",
-    escapeHtml(t("prefs.interests.all")),
-    state.interests.size === 0
+/** A chip's answer: the lit picture, or the words for an answer no picture is. */
+const answerHtml = (emoji, words) =>
+  `<span class="pref-answer-ico" aria-hidden="true">${emoji}</span>` +
+  `<span class="pref-answer-word">${escapeHtml(words)}</span>`;
+
+/** The festivals the pool holds, the one the trip is about first. */
+function poolFestivals() {
+  const ids = [...new Set(state.catalogue.shows.map((show) => festivalOf(show.slug)))];
+  const focusId = state.focus && state.focus.festival.id;
+  return ids
+    .sort((a, b) => (b === focusId) - (a === focusId))
+    .map(festivalById)
+    .filter(Boolean);
+}
+
+function festivalsAnswer() {
+  const festivals = poolFestivals();
+  const kept = festivals.filter((f) => !state.festivalsOut.has(f.id));
+  if (kept.length === festivals.length) return answerHtml("🎪", t("prefs.festivals.all"));
+  if (kept.length === 1) return answerHtml("🎪", festivalName(kept[0]));
+  return answerHtml("🎪", t("prefs.festivals.some", { count: kept.length }));
+}
+
+function festivalsHtml() {
+  return (
+    `<div class="pref-checks">` +
+    poolFestivals()
+      .map((festival) => {
+        const on = !state.festivalsOut.has(festival.id);
+        return (
+          `<label class="pref-check">` +
+          `<input type="checkbox" data-festival-on="${escapeHtml(festival.id)}"${on ? " checked" : ""} />` +
+          `<span class="fest-dot" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
+          `<span class="pref-check-word">${escapeHtml(festivalName(festival))}</span></label>`
+        );
+      })
+      .join("") +
+    `</div>`
   );
-  const more = held
-    ? `<button type="button" class="pref-pick pref-more-kinds" data-more-kinds="1">` +
-      `<span class="pref-word" data-i18n-slot="prefs.interests.more">${escapeHtml(t("prefs.interests.more", { count: held }))}</span></button>`
+}
+
+function interestsAnswer() {
+  const tags = state.tags.size
+    ? ` · ${t("prefs.tags.count", { count: state.tags.size })}`
     : "";
-  return everything + kinds + more;
+  if (!state.interests.size) return answerHtml("✨", t("prefs.interests.all") + tags);
+  const chosen = GENRES.filter((g) => state.interests.has(g));
+  const words = chosen.length === 1 ? t(GENRE_KEY[chosen[0]]) : t("prefs.interests.some", { count: chosen.length });
+  return answerHtml(GENRE_EMOJI[chosen[0]], words + tags);
+}
+
+/* The shared kinds, then each festival's own tags. The tags are capped at
+ * FACET_OPTIONS — a trip that pools the Fringe with three more festivals has
+ * dozens — except a tag already ruled on, which is always shown; the box above
+ * them finds the rest by name. */
+function interestsHtml() {
+  const kinds = GENRES.map((g) => pickHtml("interest", g, GENRE_EMOJI[g], escapeHtml(t(GENRE_KEY[g])), state.interests.has(g))).join("");
+  const everything = pickHtml("interest", "*", "✨", escapeHtml(t("prefs.interests.all")), state.interests.size === 0);
+  return (
+    `<div class="pref-answers pref-answers--kinds">${everything}${kinds}</div>` +
+    `<div class="pref-tags">` +
+    `<p class="pref-label pref-tags-title">${escapeHtml(t("prefs.tags.title"))}</p>` +
+    `<input class="pref-tag-find" type="search" data-tag-find="1" value="${escapeHtml(state.tagQuery)}"` +
+    ` placeholder="${escapeHtml(t("prefs.tags.find"))}" aria-label="${escapeHtml(t("prefs.tags.find"))}" />` +
+    `<div class="pref-tag-list">${tagListHtml()}</div>` +
+    `<p class="pref-note">${escapeHtml(t("prefs.tags.hint"))}</p>` +
+    `</div>` +
+    varietyFineHtml()
+  );
+}
+
+function tagListHtml() {
+  const query = state.tagQuery.trim().toLocaleLowerCase();
+  const byFestival = new Map();
+  for (const tag of state.catalogue.categories) {
+    if (query && !tag.name.toLocaleLowerCase().includes(query)) continue;
+    if (!byFestival.has(tag.festivalId)) byFestival.set(tag.festivalId, []);
+    byFestival.get(tag.festivalId).push(tag);
+  }
+  const ordered = poolFestivals()
+    .filter((f) => byFestival.has(f.id))
+    .flatMap((f) => byFestival.get(f.id));
+  const { rows, more } = capOptions(ordered, (tag) => state.tags.has(tag.slug), FACET_OPTIONS);
+  if (!rows.length) return `<p class="pref-note">${escapeHtml(t("prefs.tags.none"))}</p>`;
+  let html = "";
+  let festivalId = null;
+  for (const tag of rows) {
+    if (tag.festivalId !== festivalId) {
+      if (festivalId) html += `</div></div>`;
+      festivalId = tag.festivalId;
+      html +=
+        `<div class="pref-tag-group"><p class="pref-tag-festival">` +
+        `<span class="fest-dot" data-festival-colour="${escapeHtml(festivalId)}" aria-hidden="true"></span>` +
+        `${escapeHtml(festivalName(festivalById(festivalId)))}</p><div class="pref-tag-row">`;
+    }
+    const mode = state.tags.get(tag.slug) || "";
+    const mark = mode === "only" ? "✓" : mode === "out" ? "⊘" : "";
+    html +=
+      `<button type="button" class="pref-tag${mode ? ` is-${mode}` : ""}" data-tag="${escapeHtml(tag.slug)}"` +
+      ` aria-pressed="${mode ? "true" : "false"}">` +
+      (mark ? `<span class="pref-tag-mark" aria-hidden="true">${mark}</span>` : "") +
+      `${foreign(tag.name, tag.slug)}</button>`;
+  }
+  html += `</div></div>`;
+  if (more) {
+    html += `<p class="pref-note" data-i18n-slot="prefs.tags.more">${escapeHtml(t("prefs.tags.more", { count: more }))}</p>`;
+  }
+  return html;
 }
 
 function varietyFineHtml() {
   return (
+    `<div class="pref-variety">` +
     `<div class="pref-row pref-row--soon">` +
     `<span class="pref-label">${escapeHtml(t("prefs.variety.q"))}</span>` +
     `<span class="pref-soon">${escapeHtml(t("prefs.variety.soon"))}</span>` +
@@ -825,7 +921,8 @@ function varietyFineHtml() {
       pickHtml("variety", a.id, a.emoji, escapeHtml(t(a.key)), false, { disabled: true })
     ).join("") +
     `</div>` +
-    `<p class="pref-note">${escapeHtml(t("prefs.variety.note", { count: MAX_OFF_INTEREST_PER_DAY }))}</p>`
+    `<p class="pref-note">${escapeHtml(t("prefs.variety.note", { count: MAX_OFF_INTEREST_PER_DAY }))}</p>` +
+    `</div>`
   );
 }
 
@@ -881,44 +978,74 @@ function foodFineHtml() {
   return rows + `<p class="pref-note">${escapeHtml(t("prefs.food.note"))}</p>`;
 }
 
-/** Build the whole row. Called once the programme is in, and on retranslation. */
+function paceChipAnswer() {
+  const step = PACE_STEPS.find((p) => p.id === paceAnswer());
+  return step
+    ? answerHtml(step.emoji, t(step.key))
+    : answerHtml("⏱", t("prefs.pace.custom", { count: state.maxPerDay }));
+}
+
+function foodChipAnswer() {
+  const answer = FOOD_ANSWERS.find((a) => a.id === foodAnswer());
+  return answer ? answerHtml(answer.emoji, t(answer.key)) : answerHtml("🍴", t("prefs.food.custom"));
+}
+
+/** Build the whole row. Called once the programme is in, on every answer, and on retranslation. */
 function renderPrefs() {
   const pace = paceAnswer();
   const food = foodAnswer();
+  const travel = MODE_META[state.mode];
   $("prefs").innerHTML =
-    questionHtml("interests", "prefs.interests.q", interestsHtml(), varietyFineHtml()) +
+    questionHtml("festivals", "prefs.festivals.q", festivalsAnswer(), festivalsHtml()) +
+    questionHtml("interests", "prefs.interests.q", interestsAnswer(), interestsHtml()) +
     questionHtml(
       "pace",
       "prefs.pace.q",
-      PACE_STEPS.map((p) =>
-        pickHtml("pace", p.id, p.emoji, escapeHtml(t(p.key)), p.id === pace)
-      ).join(""),
-      paceFineHtml()
+      paceChipAnswer(),
+      `<div class="pref-answers">` +
+        PACE_STEPS.map((p) => pickHtml("pace", p.id, p.emoji, escapeHtml(t(p.key)), p.id === pace)).join("") +
+        `</div>` +
+        paceFineHtml()
     ) +
     questionHtml(
       "travel",
       "prefs.travel.q",
-      Object.entries(MODE_META)
-        .map(([mode, meta]) =>
-          pickHtml("travel", mode, meta.emoji, escapeHtml(t(meta.nameKey)), mode === state.mode, {
-            tip: t(meta.tipKey),
-          })
-        )
-        .join(""),
-      travelFineHtml()
+      answerHtml(travel.emoji, t(travel.nameKey)),
+      `<div class="pref-answers">` +
+        Object.entries(MODE_META)
+          .map(([mode, meta]) =>
+            pickHtml("travel", mode, meta.emoji, escapeHtml(t(meta.nameKey)), mode === state.mode, {
+              tip: t(meta.tipKey),
+            })
+          )
+          .join("") +
+        `</div>` +
+        travelFineHtml()
     ) +
     questionHtml(
       "food",
       "prefs.food.q",
-      FOOD_ANSWERS.map((a) =>
-        pickHtml("food", a.id, a.emoji, escapeHtml(t(a.key)), a.id === food)
-      ).join(""),
-      foodFineHtml()
+      foodChipAnswer(),
+      `<div class="pref-answers">` +
+        FOOD_ANSWERS.map((a) => pickHtml("food", a.id, a.emoji, escapeHtml(t(a.key)), a.id === food)).join("") +
+        `</div>` +
+        foodFineHtml()
     );
 }
 
-/** Read the pictures back off the state, without rebuilding the row. */
+/* Read every answer back off the state without rebuilding the row, so the
+ * control the reader just used keeps its focus. */
 function syncPrefs() {
+  const answers = {
+    festivals: festivalsAnswer(),
+    interests: interestsAnswer(),
+    pace: paceChipAnswer(),
+    travel: answerHtml(MODE_META[state.mode].emoji, t(MODE_META[state.mode].nameKey)),
+    food: foodChipAnswer(),
+  };
+  for (const pref of $("prefs").querySelectorAll(".pref")) {
+    pref.querySelector(".pref-answer").innerHTML = answers[pref.dataset.q];
+  }
   const lit = {
     interest: (id) => (id === "*" ? state.interests.size === 0 : state.interests.has(id)),
     pace: (id) => id === paceAnswer(),
@@ -932,28 +1059,48 @@ function syncPrefs() {
     btn.classList.toggle("is-on", on);
     btn.setAttribute("aria-pressed", String(on));
   }
+  for (const box of $("prefs").querySelectorAll("[data-mealon]")) {
+    box.checked = mealOf(box.dataset.mealon).enabled;
+  }
+  for (const [num, value] of [["maxPerDay", state.maxPerDay], ["minGap", state.minGap], ["minGapSame", state.minGapSame]]) {
+    const el = $("prefs").querySelector(`[data-num="${num}"]`);
+    if (el) el.value = value;
+  }
+}
+
+/** Open one chip's panel, or none; at most one is open at a time. */
+function openChip(id) {
+  state.openChip = id;
+  for (const pref of $("prefs").querySelectorAll(".pref")) {
+    const open = pref.dataset.q === id;
+    pref.classList.toggle("is-open", open);
+    pref.querySelector(".pref-chip").setAttribute("aria-expanded", String(open));
+    pref.querySelector(".pref-panel").hidden = !open;
+  }
 }
 
 /* One click, one change, one re-draft. Delegated from the row so nothing here
- * has to be re-wired when a question is rebuilt in another language. */
+ * has to be re-wired when a chip is rebuilt with its new answer. */
 function wirePrefs() {
   const host = $("prefs");
 
   host.addEventListener("click", (e) => {
-    const expand = e.target.closest("[data-expand]");
-    if (expand) {
-      const id = expand.dataset.expand;
-      const open = !state.opened.has(id);
-      if (open) state.opened.add(id);
-      else state.opened.delete(id);
-      $(`fine-${id}`).hidden = !open;
-      expand.setAttribute("aria-expanded", String(open));
-      expand.querySelector(".pref-expand-word").textContent = t(open ? "prefs.less" : "prefs.more");
+    const chip = e.target.closest("[data-open]");
+    if (chip) {
+      openChip(state.openChip === chip.dataset.open ? null : chip.dataset.open);
       return;
     }
-    if (e.target.closest("[data-more-kinds]")) {
-      state.interestsOpen = true;
-      renderPrefs();
+    const tag = e.target.closest("[data-tag]");
+    if (tag) {
+      const mode = nextTagMode(state.tags.get(tag.dataset.tag));
+      const slug = tag.dataset.tag;
+      if (mode) state.tags.set(slug, mode);
+      else state.tags.delete(slug);
+      host.querySelector(".pref-tag-list").innerHTML = tagListHtml();
+      const again = host.querySelector(`[data-tag="${CSS.escape(slug)}"]`);
+      if (again) again.focus();
+      syncPrefs();
+      redraftAndSave();
       return;
     }
     const pick = e.target.closest("[data-pick]");
@@ -977,8 +1124,16 @@ function wirePrefs() {
     } else {
       return;
     }
-    renderPrefs();
+    syncPrefs();
     redraftAndSave();
+  });
+
+  // Typing in the tag box narrows the list in place: rebuilding the row would
+  // take the caret out of the box mid-word.
+  host.addEventListener("input", (e) => {
+    if (!e.target.dataset.tagFind) return;
+    state.tagQuery = e.target.value;
+    host.querySelector(".pref-tag-list").innerHTML = tagListHtml();
   });
 
   // The exact numbers. `change` rather than `input`, so a half-typed time or a
@@ -987,11 +1142,13 @@ function wirePrefs() {
     const el = e.target;
     if (el.dataset.num === "maxPerDay") {
       state.maxPerDay = clamp(Math.round(Number(el.value)) || 1, 1, 8);
-      el.value = state.maxPerDay;
     } else if (el.dataset.num === "minGap") {
       state.minGap = Number(el.value);
     } else if (el.dataset.num === "minGapSame") {
       state.minGapSame = Number(el.value);
+    } else if (el.dataset.festivalOn) {
+      if (el.checked) state.festivalsOut.delete(el.dataset.festivalOn);
+      else state.festivalsOut.add(el.dataset.festivalOn);
     } else if (el.dataset.mealon) {
       mealOf(el.dataset.mealon).enabled = el.checked;
     } else if (el.dataset.time) {
@@ -1014,6 +1171,20 @@ function wirePrefs() {
     }
     syncPrefs();
     redraftAndSave();
+  });
+
+  // A click anywhere else, or Escape, puts the open panel away. The path is
+  // read rather than the target's ancestors: a tag clicked is replaced by its
+  // redrawn self before the click reaches the document, and a detached button
+  // has no ancestors left.
+  document.addEventListener("click", (e) => {
+    if (state.openChip && !e.composedPath().includes(host)) openChip(null);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || !state.openChip) return;
+    const chip = host.querySelector(`[data-open="${state.openChip}"]`);
+    openChip(null);
+    if (chip) chip.focus();
   });
 }
 
@@ -1051,7 +1222,7 @@ function planOptions() {
  * honest instead of locally repaired. */
 function redraft() {
   closePops();
-  const draft = draftCalendar(state.catalogue.shows, planOptions());
+  const draft = draftCalendar(filteredShows(), planOptions());
   state.draft = draft;
   state.picked = draft.picked;
 

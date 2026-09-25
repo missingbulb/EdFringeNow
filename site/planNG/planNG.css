@@ -17,6 +17,25 @@
   /* The wash behind the page's top — each festival's block sets its own. */
   --wash: light-dark(#f1eefc, #1c1830);
   --wash-clear: light-dark(rgba(241, 238, 252, 0), rgba(28, 24, 48, 0));
+  /* Each festival's accent, named once: its theme below takes it as --violet,
+     and a dot or stripe that names the festival anywhere else reads it here. */
+  --colour-jerusalem-comedy: light-dark(#b8862b, #d7a340);
+  --colour-haifa-iff: light-dark(#1f6fb2, #5aa9e6);
+  --colour-edfringe: light-dark(#c2185b, #f06292);
+  --colour-acco: light-dark(#c4572e, #e8825a);
+}
+
+[data-festival-colour="jerusalem-comedy"] {
+  --festival-colour: var(--colour-jerusalem-comedy);
+}
+[data-festival-colour="haifa-iff"] {
+  --festival-colour: var(--colour-haifa-iff);
+}
+[data-festival-colour="edfringe"] {
+  --festival-colour: var(--colour-edfringe);
+}
+[data-festival-colour="acco"] {
+  --festival-colour: var(--colour-acco);
 }
 
 /* ---- the festivals' palettes ------------------------------------------- */
@@ -30,7 +49,7 @@
      from it, because the hover state has to stay the brighter of the two. */
   --wash: light-dark(#f6ecd8, #241d12);
   --wash-clear: light-dark(rgba(246, 236, 216, 0), rgba(36, 29, 18, 0));
-  --violet: light-dark(#b8862b, #d7a340);
+  --violet: var(--colour-jerusalem-comedy);
   --violet-dark: light-dark(#94691d, #ecc06a);
   --ink: light-dark(#1d1a14, #f2e9da);
   --paper: light-dark(#ffffff, #221d16);
@@ -50,7 +69,7 @@
 :root[data-festival="haifa-iff"] {
   --wash: light-dark(#dfeefa, #0f1c28);
   --wash-clear: light-dark(rgba(223, 238, 250, 0), rgba(15, 28, 40, 0));
-  --violet: light-dark(#1f6fb2, #5aa9e6);
+  --violet: var(--colour-haifa-iff);
   --violet-dark: light-dark(#17568c, #8cc6f2);
   --ink: light-dark(#0e1a26, #e4eef7);
   --paper: light-dark(#ffffff, #14202c);
@@ -63,7 +82,7 @@
 :root[data-festival="edfringe"] {
   --wash: light-dark(#fbe3ee, #2a1220);
   --wash-clear: light-dark(rgba(251, 227, 238, 0), rgba(42, 18, 32, 0));
-  --violet: light-dark(#c2185b, #f06292);
+  --violet: var(--colour-edfringe);
   --violet-dark: light-dark(#961245, #f48fb1);
   --ink: light-dark(#1b1a22, #eeeaf2);
   --paper: light-dark(#ffffff, #1c1a22);
@@ -76,7 +95,7 @@
 :root[data-festival="acco"] {
   --wash: light-dark(#fbe6dc, #2a1812);
   --wash-clear: light-dark(rgba(251, 230, 220, 0), rgba(42, 24, 18, 0));
-  --violet: light-dark(#c4572e, #e8825a);
+  --violet: var(--colour-acco);
   --violet-dark: light-dark(#9c4322, #f2a585);
   --ink: light-dark(#23150f, #f6e7df);
   --paper: light-dark(#ffffff, #23160f);
@@ -607,8 +626,9 @@ body.festival-page {
 
 /* --- the preference questions ---------------------------------------------
  *
- * The row above the calendar: one card per question, each a line of ask, a
- * handful of picture answers, and the exact numbers folded behind them. It has
+ * The row above the calendar: one chip per question, naming its answer, and a
+ * panel behind each that floats over the calendar with the picture answers and
+ * the exact numbers. It has
  * no counterpart in the Fringe planner's stylesheet — that page states its
  * preferences as a strip of fields — so all of it is here.
  */
@@ -621,28 +641,203 @@ body.festival-page {
   padding-top: 0;
 }
 .prefs {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: start;
-  gap: 12px;
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 18px;
 }
 .pref {
+  position: relative;
+}
+/* The chip: the question in small type over its answer, one line of each
+   whatever the answer is, so the row never grows. */
+.pref-chip {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  align-items: center;
+  column-gap: 10px;
+  min-width: 150px;
+  /* A whole number of pixels, so the calendar under the row starts on a pixel
+     boundary rather than wherever two lines of type happen to end. */
+  box-sizing: border-box;
+  height: 54px;
+  padding: 6px 12px 7px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+.pref-chip:hover,
+.pref.is-open .pref-chip {
+  border-color: var(--violet);
+}
+.pref-chip:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-chip .pref-ask {
+  grid-column: 1;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pref-answer {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--violet-dark);
+  white-space: nowrap;
+}
+.pref-caret {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-self: end;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.pref.is-open .pref-caret {
+  transform: rotate(180deg);
+}
+/* The panel floats: it is out of the flow, so however much it holds the
+   calendar under it stays where it was. */
+.pref-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-start: 0;
+  width: min(460px, calc(100vw - 32px));
+  max-height: min(520px, 70vh);
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 12px 12px 10px;
+  gap: 12px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--paper);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
 }
-.pref-ask {
-  margin: 0;
-  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.25;
+.pref-panel[hidden] {
+  display: none;
+}
+/* The last two chips sit near the row's far end; their panels open towards
+   the start so they stay on screen. */
+.pref:nth-last-child(-n + 2) .pref-panel {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+.pref-answers--kinds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+}
+.pref-answers--kinds .pref-pick {
+  max-width: none;
+}
+.pref-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pref-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fest-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--festival-colour, var(--muted));
+}
+.pref-tags,
+.pref-variety {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.pref-tag-find {
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
   color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+}
+.pref-tag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pref-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pref-tag-festival {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.pref-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pref-tag:hover {
+  border-color: var(--violet);
+}
+.pref-tag:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+.pref-tag.is-only {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 14%, var(--paper));
+  color: var(--violet-dark);
+}
+.pref-tag.is-out {
+  border-style: dashed;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+.pref-tag-mark {
+  font-weight: 800;
+  text-decoration: none;
 }
 .pref-answers {
   display: flex;
@@ -694,39 +889,6 @@ body.festival-page {
   line-height: 1.2;
   text-align: center;
   overflow-wrap: anywhere;
-}
-.pref-expand {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: auto;
-  padding: 2px 4px;
-  border: none;
-  background: none;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-.pref-expand:hover {
-  color: var(--violet-dark);
-}
-.pref-expand:focus-visible {
-  outline: 3px solid var(--violet);
-  outline-offset: 2px;
-  border-radius: 6px;
-}
-.pref-expand[aria-expanded="true"] .pref-caret {
-  display: inline-block;
-  transform: rotate(180deg);
-}
-.pref-fine {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--line);
 }
 .pref-row {
   display: flex;
@@ -798,17 +960,6 @@ body.festival-page {
   padding: 0 8px;
   border-radius: 8px;
   font-size: 0.8rem;
-}
-
-@media (max-width: 1080px) {
-  .prefs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (max-width: 620px) {
-  .prefs {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 /* --- the four blockers ----------------------------------------------------

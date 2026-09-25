@@ -1474,15 +1474,15 @@ calendar.
 
   <details><summary>Notes</summary>
 
-  Driven: state an interest, require a tag, leave a festival out, change a
-  number, ask for dinner, move the day's end and the first night, reload, and
-  all of it comes back — stored under the festival's own prefix like everything else this page
+  Driven: state an interest, require a tag, change a number, ask for dinner,
+  move the day's end and the first night, reload, and all of it comes back —
+  stored under the festival's own prefix like everything else this page
   remembers.
   </details>
 
 - `21.10` Opening a chip, or answering in it, leaves the calendar where it was.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.10 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:21.10 -->
 
   <details><summary>Notes</summary>
 
@@ -1495,7 +1495,7 @@ calendar.
 
 - `21.11` The kinds are the same eight for every festival, with each festival's own tags beneath them to require or rule out.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.11 -->
+  ![planng-kinds.21.11](requirements/screen/cases/planng-kinds.21.11.png) <!-- req-gallery:21.11 -->
 
   <details><summary>Notes</summary>
 
@@ -1506,14 +1506,14 @@ calendar.
   categories it files its own shows under, as tags behind that festival's
   colour. A tag is clicked through three states: neutral, "only these" (✓) and
   "not these" (⊘). Shown on the Haifa trip, which pools Haifa and Acco, with
-  one tag required and one ruled out. The list scrolls and a box above it
+  Double Feature required and The Family Show ruled out. The list scrolls and a box above it
   filters it by name; merging two festivals' tags that mean the same thing is
   not done yet.
   </details>
 
 - `21.12` A required tag keeps only the shows filed under it, a ruled-out tag drops the shows filed under it, and a festival left out drops all of its shows.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.12 -->
+  <table><thead><tr><th align="left">Filter</th><th align="left">Kept</th></tr></thead><tbody><tr><td>None</td><td>every show</td></tr><tr><td>A tag required</td><td>only the shows filed under it</td></tr><tr><td>Two tags required</td><td>the shows filed under either</td></tr><tr><td>A tag ruled out</td><td>every show not filed under it</td></tr><tr><td>A tag both required and ruled out on one show</td><td>not that show: ruled out wins</td></tr><tr><td>A festival left out</td><td>none of that festival's shows</td></tr></tbody></table> <!-- req-gallery:21.12 -->
 
   <details><summary>Notes</summary>
 
@@ -1526,7 +1526,7 @@ calendar.
 
 - `21.13` The festivals chip lists every festival the trip reaches, each in its own colour, and can leave any of them out.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:21.13 -->
+  ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->
 
   <details><summary>Notes</summary>
 
@@ -1772,9 +1772,9 @@ constants live in `site/shared/limits.js`.
 
   <details><summary>Notes</summary>
 
-  The same cap holds for the answers a question offers: past `PICK_CHIPS` the
-  kinds a pooled period offers wait behind one "more kinds" chip, the focused
-  festival's own kinds first, and a kind already chosen is always shown.
+  A question's own answers need no cap: the kinds are the same eight whatever
+  the pool, and the festivals' own tags beneath them are capped like a search
+  filter's options (`25.3`), with a box to find the rest by name.
   </details>
 
 - `25.2` The timeline draws one bar per edition, however many performances the edition has.
@@ -1819,7 +1819,7 @@ whatever the day's data holds.
 
 - `26.1` Focused on the whole Fringe, no list draws more than its cap.
 
-  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>PICK_CHIPS (10), then "more kinds"</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
+  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>the eight shared kinds</td></tr><tr><td>The kinds question's tags</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
 
   <details><summary>Notes</summary>
 

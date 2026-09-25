@@ -11,14 +11,18 @@ module.exports = {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
 
-    await page.click("[data-pick='interest:jerusalem-comedy/stand-up']");
+    await page.click("[data-open='interests']");
+    await page.click("[data-pick='interest:comedy']");
+    await page.click("[data-tag='jerusalem-comedy/stand-up']");
+    await page.click("[data-open='travel']");
     await page.click("[data-pick='travel:bike']");
-    await page.click("[data-pick='food:regular']");
-    await page.click("[data-expand='pace']");
+    await page.click("[data-open='pace']");
     await page.selectOption(".pref[data-q='pace'] [data-num='minGap']", "45");
-    await page.click("[data-expand='food']");
+    await page.click("[data-open='food']");
+    await page.click("[data-pick='food:regular']");
     await page.fill(".pref-place[data-place='dinner']", "Machneyuda");
     await page.locator(".pref-place[data-place='dinner']").blur();
+    await page.keyboard.press("Escape");
 
     // The two blockers, by keyboard: a quarter of an hour off the day's end,
     // and the window's first night moved on by one.
@@ -29,7 +33,8 @@ module.exports = {
     await jerusalemReady(page);
 
     const before = await page.evaluate(() => JSON.parse(localStorage.getItem("planNG.prefs")));
-    assert.deepEqual(before.interests, ["jerusalem-comedy/stand-up"], "the kind named is stored");
+    assert.deepEqual(before.interests, ["comedy"], "the kind named is stored");
+    assert.deepEqual(before.tags, { "jerusalem-comedy/stand-up": "only" }, "the tag required is stored");
     assert.equal(before.mode, "bike", "the way around is stored");
     assert.equal(before.minGap, 45, "the exact number behind the picture is stored");
     assert.equal(before.dayEndMin, 25 * 60 - 15, "the day's end is stored where it was dragged to");
@@ -53,7 +58,7 @@ module.exports = {
       "the same answers come back"
     );
     assert.equal(
-      await page.getAttribute("[data-pick='interest:jerusalem-comedy/stand-up']", "aria-pressed"),
+      await page.getAttribute("[data-pick='interest:comedy']", "aria-pressed"),
       "true",
       "the kind named is lit again"
     );

@@ -15,7 +15,9 @@ module.exports = {
   async capture(page, t) {
     const frame = async () => t.clip(t.pad(t.union(await Promise.all(NIGHTS.map((n) => t.rectOf(n)))), 6));
     const withMeals = await frame();
+    await page.click("[data-open='food']");
     await page.click("[data-pick='food:self']");
+    await page.keyboard.press("Escape");
     await jerusalemReady(page);
     await settle(page);
     return t.stitchV([withMeals, await frame()]);

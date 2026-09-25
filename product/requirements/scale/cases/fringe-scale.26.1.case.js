@@ -3,6 +3,7 @@ const path = require("node:path");
 const { plannerReady, settle } = require("../../shared/case-helpers");
 
 const LIMITS = path.join(__dirname, "..", "..", "..", "..", "site", "shared", "limits.js");
+const FILTERS = path.join(__dirname, "..", "..", "..", "..", "site", "planNG", "lib", "filters.js");
 
 // The rows are the requirement: every list the page can draw, and the most it
 // may draw with the whole Fringe pooled. verify() measures each on the page.
@@ -13,7 +14,8 @@ const TABLE = {
     ["A one-letter search's results", "SEARCH_RESULT_ROWS (40)"],
     ["The kinds filter's options", "FACET_OPTIONS (30)"],
     ["The venues filter's options", "FACET_OPTIONS (30), and a line for the rest"],
-    ["The kinds question's answers", "PICK_CHIPS (10), then \"more kinds\""],
+    ["The kinds question's answers", "the eight shared kinds"],
+    ["The kinds question's tags", "FACET_OPTIONS (30)"],
     ["The rivals of the most contested hour", "RIVAL_ROWS (8), and a line for the rest"],
     ["The drawer's grid", "a lane per show ruled on: none yet"],
   ],
@@ -25,7 +27,8 @@ module.exports = {
   page: "/planNG/?festival=edfringe",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
-    const { SEARCH_RESULT_ROWS, FACET_OPTIONS, PICK_CHIPS, RIVAL_ROWS } = await import(LIMITS);
+    const { SEARCH_RESULT_ROWS, FACET_OPTIONS, RIVAL_ROWS } = await import(LIMITS);
+    const { GENRES } = await import(FILTERS);
     await page.goto(`${origin}/planNG/?festival=edfringe`, { waitUntil: "load" });
     await plannerReady(page, "edfringe");
     const count = (selector) => page.locator(selector).count();
@@ -51,7 +54,9 @@ module.exports = {
     assert.equal(await count("#ssfVenueOptions .panel-more"), 1, "and says how many it left out");
 
     const answers = await count('#prefs [data-pick^="interest:"]:not([data-pick="interest:*"])');
-    assert.ok(answers > 0 && answers <= PICK_CHIPS, `the kinds question offers ${answers}`);
+    assert.equal(answers, GENRES.length, "the kinds question offers the shared kinds");
+    const tags = await count("#prefs .pref-tag");
+    assert.ok(tags > 0 && tags <= FACET_OPTIONS, `the kinds question lists ${tags} tags`);
 
     // The most contested hour on the calendar, by the count its stack names.
     const stacks = await page.$$eval(".sch-stack", (els) =>
