@@ -1916,6 +1916,35 @@ gives is theirs and is never overwritten.
   the same marks.
   </details>
 
+## 30. How a show looks
+
+A block in the calendar says at a glance which festival a show belongs to and
+what kind of show it is, so a trip across several festivals reads without
+opening anything. Blocks that are the reader's own time (meals, rest,
+excursions, flights) carry no festival colour and are hatched instead (28).
+
+- `30.1` A show's block has its festival's colour at its edge and its kind's emoji before its name; a free show carries a small Free tag.
+
+  ![planng-block-look.30.1](requirements/screen/cases/planng-block-look.30.1.png) <!-- req-gallery:30.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco: the day given to Acco, where two shows
+  are free, beside the Haifa day before it. The kinds are the shared ones the
+  kinds chip offers (21), so a Haifa film and an Acco play carry different
+  emoji whatever each festival calls its own sections.
+  </details>
+
+- `30.2` Under the calendar, a legend names each festival with a show in view, in its colour.
+
+  ![planng-festival-legend.30.2](requirements/screen/cases/planng-festival-legend.30.2.png) <!-- req-gallery:30.2 -->
+
+  <details><summary>Notes</summary>
+
+  Only festivals with a drafted show are named, so a one-festival trip shows
+  one entry.
+  </details>
+
 ## 25. Never a list of thousands
 
 A festival programme can hold hundreds of events and a period can pool several

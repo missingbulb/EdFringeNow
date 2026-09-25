@@ -1678,3 +1678,40 @@ body.festival-page {
     min-width: 0;
   }
 }
+
+/* A show's edge is its festival's colour, and its kind leads its name; a free
+   show says so in a tag rather than in the edge. */
+.sch-show { --seg: var(--festival-colour, var(--violet)); }
+.sch-kind {
+  margin-inline-end: 3px;
+  font-size: 0.7rem;
+}
+/* Pinned to the card's end corner rather than set in the meta line, so a short
+   card keeps its one line for the name. */
+.sch-free {
+  position: absolute;
+  bottom: 2px;
+  inset-inline-end: 3px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ok) 16%, var(--paper));
+  color: var(--ink);
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.fest-legend {
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 8px 4px 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.fest-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

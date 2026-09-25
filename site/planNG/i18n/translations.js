@@ -1440,6 +1440,22 @@ export const STRINGS = {
     ru: "День: {festival}",
     ja: "{festival}の日",
   },
+  "block.free": {
+    probe: ".sch-free",
+    maxWidthPx: 70,
+    en: "Free",
+    he: "חינם",
+    ru: "Бесплатно",
+    ja: "無料",
+  },
+  "legend.label": {
+    maxWidthPx: null,
+    unrendered: "the legend under the calendar, named for a screen reader",
+    en: "Festivals in view",
+    he: "הפסטיבלים שבלוח",
+    ru: "Фестивали в календаре",
+    ja: "表示中のフェスティバル",
+  },
   "own.personal": {
     probe: ".keep-label",
     maxWidthPx: 180,

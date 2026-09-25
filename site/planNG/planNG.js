@@ -148,6 +148,7 @@ const state = {
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
   browsePages: 1,
   poolSlugs: new Set(),
+  kinds: new Map(), // slug -> the shared kind it is filed under
   // The pool: every reachable show in the period, ids made unique by pool.js.
   catalogue: null,
   dates: [],          // every day of the period, ascending — the grid's columns
@@ -1532,6 +1533,7 @@ function renderCalendar(draft) {
   // where they are loosened, so an empty draft shows both rather than swapping
   // one for the other.
   empty.hidden = Boolean(draft.counts.picked);
+  renderFestivalLegend(draft);
 
   const axis = calendarAxis(draft);
   const { topMin, botMin, axisH, hourPx } = axis;
@@ -1922,6 +1924,26 @@ function rarityText(freedom) {
  * took it. The stack is the picture of a contested hour — an edge per show
  * turned down — and it is also the way to hand the hour to one of them, so it
  * is a button rather than decoration. An uncontested hour is a single card. */
+/** The shared kind a show is filed under, the one the kinds chip offers. */
+function kindOf(slug) {
+  return state.kinds.get(slug) || "other";
+}
+
+/** Each festival with a show in the draft, in its colour, under the calendar. */
+function renderFestivalLegend(draft) {
+  const ids = new Set(draft.days.flatMap((day) => day.slots.map((slot) => festivalOf(slot.slug))));
+  const festivals = poolFestivals().filter((f) => ids.has(f.id));
+  const host = $("festLegend");
+  host.hidden = !festivals.length;
+  host.innerHTML = festivals
+    .map(
+      (f) =>
+        `<span class="fest-legend-item"><span class="fest-dot" data-festival-colour="${escapeHtml(f.id)}" aria-hidden="true"></span>` +
+        `${escapeHtml(festivalName(f))}</span>`
+    )
+    .join("");
+}
+
 function buildScheduleBlock(slot, top, rawBottom, ceiling) {
   const key = slotKey(slot);
   const height = Math.max(
@@ -1938,10 +1960,9 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
 
   const block = document.createElement("div");
   block.className =
-    "sch-show " + (slot.status === "FREE_NON_TICKETED" ? "seg-free" : "seg-avail") +
-    (locked ? " sch-show--locked" : "") +
-    (favourite ? " sch-show--fav" : "");
+    "sch-show" + (locked ? " sch-show--locked" : "") + (favourite ? " sch-show--fav" : "");
   block.dataset.slug = slot.slug;
+  block.dataset.festivalColour = festivalOf(slot.slug);
   block.dataset.key = key;
   block.tabIndex = 0;
   if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
@@ -1954,9 +1975,13 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
 
   block.innerHTML =
     `<a class="sch-open" href="${escapeHtml(slot.url)}" target="_blank" rel="noopener" draggable="false">` +
-    `<span class="sch-name">${foreign(slot.title, slot.slug)}</span>` +
+    `<span class="sch-name"><span class="sch-kind" aria-hidden="true">${GENRE_EMOJI[kindOf(slot.slug)]}</span>` +
+    `${foreign(slot.title, slot.slug)}</span>` +
     `<span class="sch-meta">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
+    (slot.status === "FREE_NON_TICKETED"
+      ? `<span class="sch-free" data-i18n="block.free">${escapeHtml(t("block.free"))}</span>`
+      : "") +
     (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName, slot.slug)}</span>` : "") +
     `</span></a>` +
     // The one thing a card's face says beyond the show itself.
@@ -2950,6 +2975,7 @@ async function loadPool() {
   $("loadingState").hidden = true;
 
   state.catalogue = buildPool(parts);
+  state.kinds = new Map(state.catalogue.shows.map((s) => [s.slug, sharedGenre(s.genreId)]));
   state.poolSlugs = new Set(state.catalogue.shows.map((s) => s.slug));
   state.venues = state.catalogue.venues;
   state.coords = venueCoords(state.venues);
