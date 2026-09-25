@@ -74,7 +74,10 @@ export function byScarcity(a, b) {
  *   rejectedInstances?: Set<string>|string[],
  *   preferred?: Set<string>|string[],
  *   maxUnpreferredPerDay?: number,
+ *   allowSlot?: (slot: object) => boolean,
  * }} [options]
+ *   allowSlot: what the reader has kept for themselves — a performance it
+ *   refuses leaves the pool the way one outside the day's hours does.
  * @returns {{
  *   days: Array<{date: string, slots: object[]}>,
  *   picked: Map<string,string>,
@@ -128,6 +131,7 @@ export function draftCalendar(shows, options = {}) {
     const kept = slots.filter((s) => {
       if (rejectedInstances.has(instanceKey(slug, slotKey(s)))) return false;
       if (pinnedKey && slotKey(s) === pinnedKey) return true;
+      if (options.allowSlot && !options.allowSlot(s)) return false;
       return withinDayWindow(s, dayWindow);
     });
     if (kept.length) pool.set(slug, kept);
