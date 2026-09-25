@@ -1345,36 +1345,40 @@ rather than as a control panel.
 ## 21. Saying what you want
 
 The calendar drafts before the reader has said anything, so what they say is
-not a form standing in front of it: it is a row of questions above the
-calendar, each asked in one line and answered by picking a picture, and four
-blockers on the calendar itself. A question that has a finer answer behind it
-opens to show it — the picture is the short way to a setting, never the only
-way. Nothing above the calendar explains the calendar.
+not a form standing in front of it: it is one slim row of chips between the
+year's strip and the calendar, each naming its current answer, and four
+blockers on the calendar itself. A chip opens a panel that floats over the
+calendar with the pictures and the exact numbers behind them — the picture is
+the short way to a setting, never the only way — so however much a question
+holds, the calendar never moves. Nothing above the calendar explains the
+calendar.
 
-- `21.1` Four questions above the calendar: what you are here for, how full a day, how you get around, how you eat.
+- `21.1` One row of chips between the year's strip and the calendar: which festivals, what kinds, how full a day, how you get around, how you eat.
 
   ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
 
   <details><summary>Notes</summary>
 
-  Each question is one line and two to five picture answers, and the row is the
-  whole of the page's chrome above the calendar: the panel's heading, the
-  paragraph that explained contention and the "N shows across N nights" summary
-  are all gone. Rendered with nothing stored, so the golden is the set of
-  answers a first visit opens on.
+  Each chip is the question in small type over its current answer, with a
+  caret: one line tall whatever the answer is, so the row never grows and the
+  calendar always starts at the same height. Rendered with nothing stored, so
+  the golden is the row a first visit opens on — every festival, every kind,
+  the middle pace, on foot, and food left to the reader.
   </details>
 
-- `21.2` A question opens on the exact numbers behind its pictures.
+- `21.2` A chip opens a panel over the calendar holding its pictures and the exact numbers behind them.
 
   ![jerusalem-prefs-open.21.2](requirements/screen/cases/jerusalem-prefs-open.21.2.png) <!-- req-gallery:21.2 -->
 
   <details><summary>Notes</summary>
 
-  "How full a day?" opened: the three pictures still selected as before, with
-  the shows-per-day count and the rest between shows they stand for now
-  editable underneath. A picture is a shortcut to a pair of numbers rather than
-  a coarser control than them, so opening the question never discards the
-  answer already given.
+  "How full a day?" opened on a pair of numbers that is none of the three
+  pictures: no picture is lit, and the shows-per-day count and the rest
+  between shows are editable right under them. A picture is a shortcut to a
+  pair of numbers rather than a coarser control than them, so the panel never
+  discards the answer already given. The panel floats over the calendar rather
+  than pushing it down; one panel is open at a time, and a click outside or
+  Escape closes it.
   </details>
 
 - `21.3` A kind you are here for outranks one you are not, and a day takes at most one show from outside them.
@@ -1400,8 +1404,8 @@ way. Nothing above the calendar explains the calendar.
 
   How much of the festival outside your own taste you want is the question that
   should set the cap in `21.3`, and the rule that answers it has not been
-  decided. It is drawn where it belongs — behind "what are you here for?",
-  which is the question it refines — marked as not yet wired and refusing to be
+  decided. It is drawn where it belongs — in the kinds chip's panel, under
+  the question it refines — marked as not yet wired and refusing to be
   answered, rather than left out and added later, and rather than drawn live
   over a rule that ignores it, which is the shape that would lie.
   </details>
@@ -1470,10 +1474,65 @@ way. Nothing above the calendar explains the calendar.
 
   <details><summary>Notes</summary>
 
-  Driven: state an interest, open a question and change a number, ask for
-  dinner, move the day's end and the first night, reload, and all of it comes
-  back — stored under the festival's own prefix like everything else this page
+  Driven: state an interest, require a tag, change a number, ask for dinner,
+  move the day's end and the first night, reload, and all of it comes back —
+  stored under the festival's own prefix like everything else this page
   remembers.
+  </details>
+
+- `21.10` Opening a chip, or answering in it, leaves the calendar where it was.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.10 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: the calendar's top edge is measured, every chip is opened in turn and
+  an answer is given in the kinds panel (whose list is the longest), and the
+  calendar's top edge is measured again after each — it has not moved a pixel.
+  This is the complaint the chip row answers: a question card that grew with
+  its answers pushed the calendar off the screen.
+  </details>
+
+- `21.11` The kinds are the same eight for every festival, with each festival's own tags beneath them to require or rule out.
+
+  ![planng-kinds.21.11](requirements/screen/cases/planng-kinds.21.11.png) <!-- req-gallery:21.11 -->
+
+  <details><summary>Notes</summary>
+
+  Film, comedy, theatre, dance, music, family, talk and other — the data
+  pipeline's own genre vocabulary, which every festival's events carry and
+  Edinburgh's genres map onto — so a theatre show is a theatre show whichever
+  festival it comes from. Under them, each festival the trip reaches lists the
+  categories it files its own shows under, as tags behind that festival's
+  colour. A tag is clicked through three states: neutral, "only these" (✓) and
+  "not these" (⊘). Shown on the Haifa trip, which pools Haifa and Acco, with
+  Double Feature required and The Family Show ruled out. The list scrolls and a box above it
+  filters it by name; merging two festivals' tags that mean the same thing is
+  not done yet.
+  </details>
+
+- `21.12` A required tag keeps only the shows filed under it, a ruled-out tag drops the shows filed under it, and a festival left out drops all of its shows.
+
+  <table><thead><tr><th align="left">Filter</th><th align="left">Kept</th></tr></thead><tbody><tr><td>None</td><td>every show</td></tr><tr><td>A tag required</td><td>only the shows filed under it</td></tr><tr><td>Two tags required</td><td>the shows filed under either</td></tr><tr><td>A tag ruled out</td><td>every show not filed under it</td></tr><tr><td>A tag both required and ruled out on one show</td><td>not that show: ruled out wins</td></tr><tr><td>A festival left out</td><td>none of that festival's shows</td></tr></tbody></table> <!-- req-gallery:21.12 -->
+
+  <details><summary>Notes</summary>
+
+  These are filters, not preferences: unlike a kind you are here for (`21.3`),
+  a show a filter drops is never drafted, whatever the hour. Several required
+  tags keep a show filed under any of them; a ruled-out tag wins over a
+  required one on the same show. The drawer's programme stays whole, so a show
+  a filter hides can still be found and ruled on there.
+  </details>
+
+- `21.13` The festivals chip lists every festival the trip reaches, each in its own colour, and can leave any of them out.
+
+  ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, with Acco left out: its row unticked, and the chip's answer
+  naming the one festival still in. The colour is the one each festival's own
+  theme uses.
   </details>
 
 ## 23. The year's festivals, and the trip's dates
@@ -1635,7 +1694,7 @@ those days, fetched when the dates are set, each linking to the partner who
 sells it; a reader already in the country needs no flight, and the blocks say
 so.
 
-> ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
+> ⚠️ **To be decided — live fares.** The fare service (`worker/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
 > against the partner's documented response shape: this sandbox cannot reach
 > the partner, and no account exists yet to capture a real answer. Until one
@@ -1713,9 +1772,9 @@ constants live in `site/shared/limits.js`.
 
   <details><summary>Notes</summary>
 
-  The same cap holds for the answers a question offers: past `PICK_CHIPS` the
-  kinds a pooled period offers wait behind one "more kinds" chip, the focused
-  festival's own kinds first, and a kind already chosen is always shown.
+  A question's own answers need no cap: the kinds are the same eight whatever
+  the pool, and the festivals' own tags beneath them are capped like a search
+  filter's options (`25.3`), with a box to find the rest by name.
   </details>
 
 - `25.2` The timeline draws one bar per edition, however many performances the edition has.
@@ -1760,7 +1819,7 @@ whatever the day's data holds.
 
 - `26.1` Focused on the whole Fringe, no list draws more than its cap.
 
-  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>PICK_CHIPS (10), then "more kinds"</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
+  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>the eight shared kinds</td></tr><tr><td>The kinds question's tags</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
 
   <details><summary>Notes</summary>
 

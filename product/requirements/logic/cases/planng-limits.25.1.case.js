@@ -20,8 +20,7 @@ module.exports = {
   description: "a list draws at most a page of rows, and above a threshold asks for a search first",
   table: TABLE,
   async verify(assert) {
-    const { listPage, LIST_PAGE_ROWS, SEARCH_FIRST_ABOVE, PICK_CHIPS } = await import("../../../../site/shared/limits.js");
-    assert.equal(PICK_CHIPS, 10, "a question offers ten answers before \"more kinds\"");
+    const { listPage, LIST_PAGE_ROWS, SEARCH_FIRST_ABOVE } = await import("../../../../site/shared/limits.js");
     assert.equal(LIST_PAGE_ROWS, 200, "a page is 200 rows");
     assert.equal(SEARCH_FIRST_ABOVE, 100, "more than 100 items asks for a search");
     for (const [items, query, pages, rows, more, searchFirst] of TABLE.rows) {

@@ -7,10 +7,12 @@ module.exports = {
   description: "the variety question is offered, and says plainly that it does not work yet",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
+  viewportOnly: true,
   ready: jerusalemReady,
   async capture(page, t) {
-    await page.click("[data-expand='interests']");
+    await page.click("[data-open='interests']");
+    await page.locator("#panel-interests .pref-variety").scrollIntoViewIfNeeded();
     await settle(page);
-    return t.element(".pref[data-q='interests'] .pref-fine");
+    return t.element("#panel-interests .pref-variety");
   },
 };

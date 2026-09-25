@@ -18,10 +18,6 @@ export const SEARCH_FIRST_ABOVE = 100;
 /* The most matches a search popover draws. */
 export const SEARCH_RESULT_ROWS = 40;
 
-/* The most answers one question offers before the rest wait behind a "more"
- * chip: a pool of several festivals can hold dozens of kinds. */
-export const PICK_CHIPS = 10;
-
 /* The most options a search filter lists. The Fringe plays in some three
  * hundred venues; past this many a checkbox list is a scroll nobody finishes,
  * and the search itself already matches a venue by name. */

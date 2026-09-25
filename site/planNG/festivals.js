@@ -1,10 +1,9 @@
 /* How each festival looks and what it offers beyond its programme.
  *
  * The registry (site/data/festivals/index.json) says which festivals exist,
- * where and when; this map says how the page presents one: its wordmark, a
- * picture for each of its own kinds, the translation keys for its name and
- * city, and the partner links a trip to it needs. Keyed by the registry's
- * festival id. A festival the registry has and this map does not still plans
+ * where and when; this map says how the page presents one: its wordmark, the
+ * translation keys for its name and city, and the partner links a trip to it
+ * needs. Keyed by the registry's festival id. A festival the registry has and this map does not still plans
  * — it is drawn under the house palette with its registry name — so adding a
  * festival's data never waits on this file.
  *
@@ -14,8 +13,6 @@
  */
 
 import { israelRailLink, israelTravelLink, stayLink, travelLink } from "../shared/affiliates.js";
-import { GENRE_EMOJI } from "../shared/edfringe.js";
-import { kindSlug } from "../shared/festival-catalogue.js";
 
 /* The page's own address, and the path every one of its languages hangs off. */
 export const PAGE_ROOT = "/planNG/";
@@ -35,9 +32,6 @@ export const SITE_NAV = [
   { href: "/", labelKey: "nav.now" },
   { href: "/plan/", labelKey: "nav.plan" },
 ];
-
-/* A kind no presentation names falls back to this rather than to nothing. */
-export const KIND_EMOJI_FALLBACK = "\u{1F39F}";
 
 const ISRAEL = {
   country: "IL",
@@ -75,13 +69,6 @@ export const PRESENTATION = {
     cityKey: "fest.jerusalem-comedy.city",
     region: ISRAEL,
     stayCity: "Jerusalem",
-    kindEmoji: {
-      "stand-up": "\u{1F3A4}",
-      "competition-plays": "\u{1F3AD}",
-      movies: "\u{1F4F8}",
-      shows: "\u{1F3AA}",
-      "free-late-night": "\u{1F319}",
-    },
   },
   "haifa-iff": {
     wordmark: ["Haifa", "Film"],
@@ -89,8 +76,6 @@ export const PRESENTATION = {
     cityKey: "fest.haifa-iff.city",
     region: ISRAEL,
     stayCity: "Haifa",
-    kindEmoji: {},
-    kindEmojiDefault: "\u{1F3AC}",
   },
   "edfringe": {
     wordmark: ["Edinburgh", "Fringe"],
@@ -98,9 +83,6 @@ export const PRESENTATION = {
     cityKey: "fest.edfringe.city",
     region: UK,
     stayCity: "Edinburgh",
-    // The Fringe planner's own pictures for the ten headline genres, keyed the
-    // way the festival catalogue names a genre as a kind.
-    kindEmoji: Object.fromEntries(Object.entries(GENRE_EMOJI).map(([genre, emoji]) => [kindSlug(genre), emoji])),
   },
   "acco": {
     wordmark: ["Acco", "Theatre"],
@@ -108,21 +90,12 @@ export const PRESENTATION = {
     cityKey: "fest.acco.city",
     region: ISRAEL,
     stayCity: "Akko",
-    kindEmoji: {},
-    kindEmojiDefault: "\u{1F3AD}",
   },
 };
 
 /** The presentation for a festival, or null when the page has none of its own. */
 export function presentationOf(festivalId) {
   return PRESENTATION[festivalId] || null;
-}
-
-/** A picture for one of a festival's own kinds. */
-export function kindEmoji(festivalId, kindId) {
-  const p = presentationOf(festivalId);
-  if (!p) return KIND_EMOJI_FALLBACK;
-  return p.kindEmoji[kindId] || p.kindEmojiDefault || KIND_EMOJI_FALLBACK;
 }
 
 /**
