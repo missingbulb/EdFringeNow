@@ -1579,6 +1579,7 @@ function renderDrawerCount(draft) {
 // --- the calendar ---------------------------------------------------------
 
 function renderCalendar(draft) {
+  contested.clear();
   const host = $("schedule");
   const empty = $("scheduleEmpty");
   host.innerHTML = "";
@@ -1677,9 +1678,13 @@ function renderCalendar(draft) {
         // never past the next block's own start, or the two would overlap and
         // the calendar would claim a clash the scheduler took care to avoid.
         const next = day.slots[i2 + 1];
+        const prev = day.slots[i2 - 1];
         const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+        // How far this hour's rivals may be drawn: between the neighbours'
+        // cards, so no bar is ever read as belonging to the show beside it.
+        const reach = [prev ? y(prev.endMinuteOfDay) + 2 : 0, ceiling];
         body.appendChild(
-          buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
+          buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling, reach, y)
         );
       });
     }
@@ -2023,7 +2028,16 @@ function renderFestivalLegend(draft) {
     .join("");
 }
 
-function buildScheduleBlock(slot, top, rawBottom, ceiling) {
+/* The draft's pick for each contested hour, by its key: what the hour's list
+ * is drawn from when the lane beside the card is hovered. */
+const contested = new Map();
+
+/* Past this many side-by-side rows, the rivals are no longer told apart: each
+ * is a faint bar in one lane, so where they pile up the lane darkens. A Fringe
+ * hour can have fifty. */
+const RIVAL_LANES = 3;
+
+function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
   const key = slotKey(slot);
   const height = Math.max(
     Math.min(SCH_MIN_BLOCK, Math.max(12, ceiling - top)),
@@ -2033,7 +2047,8 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
   const favourite = state.starred.has(slot.slug);
 
   const wrap = document.createElement("div");
-  wrap.className = "sch-slot" + (slot.contenders.length ? " sch-slot--stacked" : "");
+  wrap.className = "sch-slot" + (slot.contenders.length ? " sch-slot--contested" : "");
+  wrap.dataset.pick = key;
   wrap.style.top = `${top}px`;
   wrap.style.height = `${height}px`;
 
@@ -2068,24 +2083,77 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling) {
   wrap.appendChild(block);
 
   if (slot.contenders.length) {
-    const stack = document.createElement("button");
-    stack.type = "button";
-    stack.className = "sch-stack";
-    stack.setAttribute("aria-expanded", "false");
-    const label = t("rivals.more", { count: slot.contenders.length });
-    stack.setAttribute("aria-label", label);
-    stack.dataset.i18nAriaLabel = "rivals.more";
-    // Capped at three edges: past that the stack says "several" either way, and
-    // a fourth would reach into the hour below.
-    stack.innerHTML = slot.contenders
-      .slice(0, 3)
-      .map((_, i) => `<span class="sch-beaten" style="--i:${i + 1}"></span>`)
-      .join("");
-    // After the card in the DOM so a keyboard reaches the show first, behind it
-    // on screen so only the edges it leaves showing can be clicked.
-    wrap.appendChild(stack);
+    contested.set(key, slot);
+    // After the card in the DOM so a keyboard reaches the show first.
+    wrap.appendChild(rivalLane(slot, top, height, reach, y));
   }
   return wrap;
+}
+
+/* The shows this hour turned down, each drawn beside the card from its own
+ * start to its own end, so how the others overlap the pick is something the
+ * calendar shows rather than says. A few are packed into rows side by side;
+ * past RIVAL_LANES rows they become one wash and a count (crowdWash). The
+ * lane is one target, not a bar each: it opens the hour's list. */
+function rivalLane(slot, top, height, reach, y) {
+  const rivals = slot.contenders;
+  // Packed earliest first; contention.js hands them over scarcest first.
+  const lanes = [];
+  const laneOf = new Map();
+  for (const r of [...rivals].sort((a, b) => a.startMinuteOfDay - b.startMinuteOfDay)) {
+    let i = lanes.findIndex((endMin) => endMin <= r.startMinuteOfDay);
+    if (i < 0) i = lanes.push(0) - 1;
+    lanes[i] = r.endMinuteOfDay;
+    laneOf.set(r, i);
+  }
+  const crowd = lanes.length > RIVAL_LANES;
+  const lane = document.createElement("button");
+  lane.innerHTML = crowd
+    ? crowdWash(rivals, top, height, y) + `<span class="sch-rivals-count">${rivals.length}</span>`
+    : rivals
+        .map((r) => {
+          const from = clamp(y(r.startMinuteOfDay), ...reach);
+          const to = clamp(y(r.endMinuteOfDay), ...reach);
+          return (
+            `<span class="sch-rival" style="--from:${(from - top).toFixed(1)}px;` +
+            `--len:${Math.max(4, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
+          );
+        })
+        .join("");
+  lane.type = "button";
+  lane.className = "sch-rivals" + (crowd ? " sch-rivals--crowd" : "");
+  lane.style.setProperty("--lanes", crowd ? 1 : lanes.length);
+  lane.setAttribute("aria-haspopup", "dialog");
+  lane.setAttribute("aria-expanded", "false");
+  lane.setAttribute("aria-label", t("rivals.more", { count: rivals.length }));
+  lane.dataset.i18nAriaLabel = "rivals.more";
+  return lane;
+}
+
+/* A crowd drawn as one element, not one per show: a Fringe calendar has
+ * hundreds of contested hours and the page has an element budget (26.2). The
+ * wash runs down the pick's own slot, darker wherever more rivals overlap. */
+function crowdWash(rivals, top, height, y) {
+  const edges = new Set([0, height]);
+  const spans = rivals.map((r) => [
+    clamp(y(r.startMinuteOfDay) - top, 0, height),
+    clamp(y(r.endMinuteOfDay) - top, 0, height),
+  ]);
+  for (const [from, to] of spans) edges.add(from).add(to);
+  const cuts = [...edges].sort((a, b) => a - b);
+  const depth = cuts.slice(0, -1).map((at, i) => {
+    const mid = (at + cuts[i + 1]) / 2;
+    return spans.filter(([from, to]) => from <= mid && mid < to).length;
+  });
+  const most = Math.max(1, ...depth);
+  const stops = depth
+    .map((n, i) => {
+      const mix = Math.round(10 + (n / most) * 55);
+      const colour = `color-mix(in srgb, var(--violet) ${n ? mix : 0}%, transparent)`;
+      return `${colour} ${cuts[i].toFixed(1)}px ${cuts[i + 1].toFixed(1)}px`;
+    })
+    .join(", ");
+  return `<span class="sch-crowd" style="background: linear-gradient(to bottom, ${stops})"></span>`;
 }
 
 function buildTravelLeg(a, b, top, bottom) {
@@ -2153,7 +2221,7 @@ function closePops() {
     const pop = $(id);
     if (pop) pop.hidden = true;
   }
-  for (const btn of document.querySelectorAll(".sch-stack[aria-expanded='true']")) {
+  for (const btn of document.querySelectorAll(".sch-rivals[aria-expanded='true']")) {
     btn.setAttribute("aria-expanded", "false");
   }
 }
@@ -2308,37 +2376,46 @@ function artFallback(show) {
   return art;
 }
 
-/* Who else wanted this hour, and what it would cost to take one instead: a
- * contender carries the count that lost it the hour, and choosing it locks it,
- * because wanting a particular show at a particular hour is exactly a lock. */
-function openRivals(stack) {
-  const block = stack.closest(".sch-slot").querySelector(".sch-show");
-  const slot = draftedSlots().find(
-    (s) => s.slug === block.dataset.slug && slotKey(s) === block.dataset.key
-  );
-  if (!slot || !slot.contenders.length) return;
+/* Every show this hour could hold, the draft's pick first and marked as ours,
+ * then the rest scarcest first (contention.js sorts them). Each of the rest
+ * can be locked into the hour in its place; the pick itself is given no
+ * verdict, so it goes back into the running like any other show. */
+function openRivals(lane) {
+  const wrap = lane.closest(".sch-slot");
+  const slot = contested.get(wrap.dataset.pick);
+  if (!slot) return;
   const pop = $("calRivals");
+  const row = (show, isPick) => {
+    const end = slotEndTime(show);
+    const when = end === show.startTime ? show.startTime : `${show.startTime}–${end}`;
+    const where = [escapeHtml(when), show.venueName ? foreign(show.venueName, show.slug) : null]
+      .filter(Boolean)
+      .join(" · ");
+    const body =
+      `<span class="pr-kind" aria-hidden="true">${GENRE_EMOJI[kindOf(show.slug)]}</span>` +
+      `<span class="pr-text"><span class="pr-title">${foreign(show.title, show.slug)}</span>` +
+      `<span class="pr-where">${where}</span></span>` +
+      `<span class="pr-nights">${escapeHtml(rarityText(show.freedom))}</span>`;
+    return isPick
+      ? `<li class="pop-pick"><span class="pr-badge">${escapeHtml(t("rivals.ours"))}</span>${body}</li>`
+      : `<li><button type="button" class="pop-rival" data-take="${escapeHtml(show.slug)}"` +
+          ` data-key="${escapeHtml(slotKey(show))}">${body}` +
+          `<span class="pr-take" aria-hidden="true">🔒</span></button></li>`;
+  };
   pop.innerHTML =
     `<p class="pop-title" data-i18n-slot="rivals.title">${escapeHtml(t("rivals.title", { time: slot.startTime }))}</p>` +
     `<ul class="pop-rivals">` +
-    // The scarcest few (contention.js sorts them): a Fringe hour can have fifty.
-    slot.contenders
-      .slice(0, RIVAL_ROWS)
-      .map(
-        (rival) =>
-          `<li><button type="button" class="pop-rival" data-take="${escapeHtml(rival.slug)}"` +
-          ` data-key="${escapeHtml(slotKey(rival))}">` +
-          `<span class="pr-title">${foreign(rival.title, rival.slug)}</span>` +
-          `<span class="pr-nights">${escapeHtml(rarityText(rival.freedom))}</span></button></li>`
-      )
-      .join("") +
+    row(slot, true) +
+    // The scarcest few: a Fringe hour can have fifty.
+    slot.contenders.slice(0, RIVAL_ROWS).map((rival) => row(rival, false)).join("") +
     `</ul>` +
     (slot.contenders.length > RIVAL_ROWS
       ? `<p class="pop-more" data-i18n-slot="rivals.others">` +
         `${escapeHtml(t("rivals.others", { count: slot.contenders.length - RIVAL_ROWS }))}</p>`
       : "") +
     `<p class="pop-foot" data-i18n-slot="rivals.foot">${escapeHtml(t("rivals.foot"))}</p>`;
-  placePop(pop, block);
+  lane.setAttribute("aria-expanded", "true");
+  placePop(pop, wrap.querySelector(".sch-show"));
 }
 
 // --- browse + search ------------------------------------------------------
@@ -2578,14 +2655,11 @@ function wireCalendar() {
       applyVerdict("lock", take.dataset.take, take.dataset.key);
       return;
     }
-    const stack = e.target.closest(".sch-stack");
-    if (stack) {
-      const open = stack.getAttribute("aria-expanded") === "true";
+    const lane = e.target.closest(".sch-rivals");
+    if (lane) {
+      const open = lane.getAttribute("aria-expanded") === "true";
       closePops();
-      if (!open) {
-        stack.setAttribute("aria-expanded", "true");
-        openRivals(stack);
-      }
+      if (!open) openRivals(lane);
       return;
     }
     if (!e.target.closest(".cal-pop")) closePops();
@@ -2599,11 +2673,23 @@ function wireCalendar() {
     clearTimeout(closeTimer);
     closeTimer = setTimeout(() => {
       $("calPreview").hidden = true;
+      if (!$("calRivals").hidden) closePops();
     }, 220);
   };
 
   wrap.addEventListener("pointerover", (e) => {
     if (e.pointerType === "touch") return;
+    // The lane beside a contested card opens the hour's list rather than the
+    // show's own popup: it is a question about the hour, not the show.
+    const lane = e.target.closest(".sch-rivals");
+    if (lane) {
+      holdOpen();
+      if (lane.getAttribute("aria-expanded") !== "true") {
+        closePops();
+        openRivals(lane);
+      }
+      return;
+    }
     const block = e.target.closest(".sch-show");
     if (!block) return;
     // While the contenders are open they are the thing being read.
@@ -2614,6 +2700,8 @@ function wireCalendar() {
   wrap.addEventListener("pointerleave", closeSoon);
   $("calPreview").addEventListener("pointerenter", holdOpen);
   $("calPreview").addEventListener("pointerleave", closeSoon);
+  $("calRivals").addEventListener("pointerenter", holdOpen);
+  $("calRivals").addEventListener("pointerleave", closeSoon);
 
   // A keyboard reaches the same popup by tabbing to the card, and steps into
   // its buttons from there; Escape closes it and hands focus back.

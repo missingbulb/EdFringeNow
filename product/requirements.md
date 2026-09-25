@@ -1186,8 +1186,8 @@ watching, and which of them will you not get another chance at?" The scarcest
 contender takes the hour — a show with one night beats a show with three,
 because the three-night show can be caught tomorrow.
 
-A contested hour is drawn as what it is: the card that won, in front of the
-cards it beat. The face of a card carries only the show — its name, its hour,
+A contested hour is drawn as what it is: the card that won, with a lane beside
+it drawing each show it beat at that show's own times. The face of a card carries only the show — its name, its hour,
 its venue, and a mark when the reader has locked it. Everything the page has to
 say *about* that card, and the four answers back — **lock this night**,
 **favourite the show**, **not this night**, **not this show** — are in the
@@ -1205,26 +1205,45 @@ rather than as a control panel.
   and a prompt to go and star something; here it is a full week.
   </details>
 
-- `20.2` A contested hour is drawn as a stack: the card that won, in front of the ones it beat.
+- `20.2` A contested card has a lane beside it drawing each show it beat, from that show's own start to its own end.
 
   ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
 
   <details><summary>Notes</summary>
 
-  The cards behind are the shows the scarcity rule turned down for that hour,
-  one edge each, so how contested an hour was is something the calendar shows
-  rather than something it says. An uncontested hour is a single card.
+  A few rivals are packed side by side, so how each overlaps the pick shows at
+  a glance; past three rows they are too many to tell apart, which is `20.15`.
+  Bars stop at the neighbouring cards, so none is read as belonging to another
+  hour. An uncontested hour is a card with no lane.
   </details>
 
-- `20.3` Clicking the stack offers the hour to one of the shows behind it.
+- `20.3` Resting on the lane lists the hour's shows, our pick first, and offers to lock any of the others in its place.
 
   ![jerusalem-contenders.20.3](requirements/screen/cases/jerusalem-contenders.20.3.png) <!-- req-gallery:20.3 -->
 
   <details><summary>Notes</summary>
 
-  Each is named with the count of nights that lost it the hour, and taking one
-  is the same act as locking a night: it holds the hour from then on. Only
-  shows that could really take it are offered — see `20.11`.
+  The lane is one target rather than a bar each, so it is as easy to reach on a
+  busy hour as a quiet one. Each show is named with its hour, its venue and
+  the count of nights that lost it the hour, and taking one is the same act as
+  locking a night: it holds the hour from then on. The pick it displaces gets
+  no verdict of its own, so it goes back into the running for its other
+  nights. Only shows that could really take the hour are offered — see
+  `20.11`. A click opens the same list, for a touch screen.
+  </details>
+
+- `20.15` An hour with more rivals than fit side by side draws them as one wash under a count.
+
+  ![planng-crowd.20.15](requirements/screen/cases/planng-crowd.20.15.png) <!-- req-gallery:20.15 -->
+
+  <details><summary>Notes</summary>
+
+  Past three rows the shows are no longer told apart: the lane becomes one
+  wash down the pick's slot, darkest where the most of them overlap, and the
+  number at its top says how many there are. One element however many shows,
+  so a whole Fringe stays inside the page's budget (`26.2`). Resting on it
+  opens the same list as `20.3`, which names the scarcest few and counts the
+  rest.
   </details>
 
 - `20.4` Hovering a card opens everything about it: its picture, its name, where and when, a few lines about it with a link to the festival's page, how rare it is, every night it plays, and the four verdicts.
