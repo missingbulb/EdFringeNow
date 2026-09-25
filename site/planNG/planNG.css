@@ -1492,23 +1492,27 @@ body.festival-page {
   margin-left: -1px;
   background: var(--violet);
 }
+/* The planner's own grip (plan.css's .win-edge pill, upright here): two white
+   bars on a violet capsule, running along the line it grabs. */
 .tl-grip {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 12px;
-  height: 22px;
+  height: 26px;
   transform: translate(-50%, -50%);
-  border-radius: 6px;
-  background:
-    radial-gradient(circle, var(--paper) 1.1px, transparent 1.4px) 1.5px 3px / 4.5px 5px,
-    var(--violet);
-  border: 1.5px solid var(--paper);
-  box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 30%, transparent);
+  border-radius: 7px;
+  background-color: var(--violet);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 1.5px 12px;
+  background-position: 4px center, 7.5px center;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.3);
+  transition: transform 0.12s ease;
 }
 .tl-handle:hover .tl-grip,
 .tl-handle:focus-visible .tl-grip {
-  background-color: var(--violet-dark);
+  transform: translate(-50%, -50%) scale(1.12);
 }
 .tl-handle:focus-visible {
   outline: none;
