@@ -27,8 +27,10 @@ const BAR_MIN_PX = 10;
  * @param {(festival: object, edition: object) => string} o.label a bar's words
  * @param {(iso: string) => string} o.monthLabel
  * @param {(iso: string) => string} o.dayText a day as a handle announces it
+ * @param {{date: string, name: string}[]} [o.holidays] the reader's own
+ *   public holidays inside the span, a mark each under the months
  */
-export function renderTimeline(host, { registry, span, todayISO, focusKey, period, label, monthLabel, dayText }) {
+export function renderTimeline(host, { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, holidays = [] }) {
   const bars = timelineBars(registry, span);
   const months = monthTicks(span)
     .map(
@@ -62,8 +64,16 @@ export function renderTimeline(host, { registry, span, todayISO, focusKey, perio
       );
     })
     .join("");
+  const marks = holidays
+    .map(
+      (h) =>
+        `<span class="tl-holiday" data-day="${h.date}" title="${escapeHtml(`${h.name} · ${dayText(h.date)}`)}"` +
+        ` style="inset-inline-start:${pct(dayFrac(span, h.date))};width:${pct(1 / span.days)}"></span>`
+    )
+    .join("");
   host.innerHTML =
     `<div class="tl-months">${months}</div>` +
+    (marks ? `<div class="tl-holidays">${marks}</div>` : "") +
     `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${today}${items}</div>`;
   if (!bars.length) {
     host.querySelector(".tl-track").insertAdjacentHTML(

@@ -63,10 +63,11 @@ import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
 import { airportCode, fareCurrency, fetchFares, originAirport } from "./lib/flights.js";
+import { holidaysIn, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
 import { layoutRows, renderTimeline, wireTripHandles } from "./timeline-view.js";
-import { currentDir, currentIntlLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
+import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
 const $ = (id) => document.getElementById(id);
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -142,6 +143,10 @@ const state = {
   flights: { out: null, back: null },
   reach: [],          // poolReach() for every edition overlapping the period
   origin: null,       // what the reader said about where they come from
+  asking: false,      // the origin question is open, asked from the flight blocks
+  guess: null,        // the country the reader connects from, until they say
+  // The reader's own public holidays: whose, and the file's contents once read.
+  holidays: { country: null, guessed: false, doc: null },
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
   browsePages: 1,
   poolSlugs: new Set(),
@@ -2412,7 +2417,59 @@ function renderTimelineStrip() {
     monthLabel: (iso) =>
       monthFmt(iso.slice(5, 7) === "01" ? { month: "short", year: "numeric" } : { month: "short" }).format(dateOf(iso)),
     dayText: dayAndDate,
+    holidays: state.holidays.doc ? holidaysIn(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
   });
+  renderHolidayNote();
+}
+
+/* Whose holidays the strip marks, and whether that is only a guess. */
+function renderHolidayNote() {
+  const note = $("holidayNote");
+  const { country, guessed, doc } = state.holidays;
+  note.hidden = !doc;
+  if (!doc) return;
+  const key = guessed ? "holidays.guess" : "holidays.note";
+  note.dataset.i18nSlot = key;
+  note.textContent = t(key, { country: regionName(country) });
+}
+
+/* Read the holidays of whoever the reader is, as far as the page knows: a
+ * country with no file, or no country at all, marks nothing. */
+async function refreshHolidays() {
+  const home = homeCountry(state.origin, state.guess);
+  const country = home ? home.country : null;
+  if (country === state.holidays.country) {
+    if (home && home.guessed !== state.holidays.guessed) {
+      state.holidays.guessed = home.guessed;
+      renderHolidayNote();
+    }
+    return;
+  }
+  state.holidays = { country, guessed: home ? home.guessed : false, doc: null };
+  if (country) {
+    try {
+      const res = await fetch(holidaysUrl(country));
+      const doc = res.ok ? await res.json() : null;
+      if (state.holidays.country !== country) return;
+      state.holidays.doc = doc && Array.isArray(doc.holidays) ? doc : null;
+    } catch {
+      /* no file for this country: nothing marked */
+    }
+  }
+  if (state.registry) renderTimelineStrip();
+}
+
+/* The country the reader connects from, as the site's own service reads it
+ * off the connection (api/where.js): a guess the reader's answer replaces. */
+async function guessCountry() {
+  try {
+    const res = await fetch("/api/where");
+    const body = res.ok ? await res.json() : null;
+    state.guess = body && typeof body.country === "string" ? body.country : null;
+  } catch {
+    state.guess = null;
+  }
+  refreshHolidays();
 }
 
 /** The registry entry and edition a key names, or null. */
@@ -2689,7 +2746,7 @@ function flightBlock(which) {
   const change = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.change">${escapeHtml(t("flight.change"))}</button>`;
   let body;
   if (need === "unsaid") {
-    body = `<p class="flight-note" data-i18n-slot="flight.ask">${escapeHtml(t("flight.ask"))}</p>`;
+    body = `<p class="flight-note"><button type="button" class="flight-change" data-origin="ask" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button></p>`;
   } else if (need === "skipped") {
     body = `<button type="button" class="flight-change" data-origin="change" data-i18n-slot="flight.say">${escapeHtml(t("flight.say"))}</button>`;
   } else if (need === "home") {
@@ -2801,12 +2858,12 @@ function regionName(code) {
   }
 }
 
-/* Asked once per browser, the first time a festival is focused: the card
- * sits above the questions, the calendar drafts regardless, and the answer
- * (or "not now") is stored so it never comes back. */
+/* Asked once per browser, and only when the reader asks for flights: the
+ * card opens beneath the trip's dates, the calendar drafts regardless, and the
+ * answer (or "not now") is stored so it never comes back. */
 function renderOriginCard() {
   const card = $("originCard");
-  const show = !state.origin && Boolean(state.focus);
+  const show = state.asking && !state.origin && Boolean(state.focus);
   card.hidden = !show;
   if (!show) return;
   const festival = state.focus.festival;
@@ -2842,10 +2899,12 @@ function renderOriginCard() {
 
 function setOrigin(origin) {
   state.origin = origin;
+  state.asking = false;
   writeStore(KEY_ORIGIN, origin);
   renderOriginCard();
   renderTripRow();
   refreshFares();
+  refreshHolidays();
 }
 
 function wireOrigin() {
@@ -2855,11 +2914,12 @@ function wireOrigin() {
     const festival = state.focus && state.focus.festival;
     if (!festival) return;
     const kind = btn.dataset.origin;
-    if (kind === "change") {
-      // Asked again from the flight blocks: the answer given stays stored
-      // until another replaces it, so a reader who changes their mind about
-      // changing it loses nothing on a reload.
+    if (kind === "ask" || kind === "change") {
+      // Asked from the flight blocks. Asked again, the answer given stays
+      // stored until another replaces it, so a reader who changes their mind
+      // about changing it loses nothing on a reload.
       state.origin = null;
+      state.asking = true;
       renderOriginCard();
       renderTripRow();
       refreshFares();
@@ -2992,6 +3052,8 @@ async function boot() {
   restoreVerdicts();
   restorePrefs();
   state.origin = readStore(KEY_ORIGIN, null);
+  refreshHolidays();
+  guessCountry();
 
   wireWindow();
   wireBoard();

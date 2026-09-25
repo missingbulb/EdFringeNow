@@ -1148,6 +1148,45 @@ body.festival-page {
   border-bottom: 1px solid var(--line);
   margin-bottom: 8px;
 }
+/* The reader's own public holidays: a small mark on each, tucked into the
+   gap under the months so the strip is the same height with or without them. */
+.tl-holidays {
+  position: relative;
+  height: 5px;
+  margin: -7px 0 2px;
+}
+.tl-holiday {
+  position: absolute;
+  top: 0;
+  height: 5px;
+  min-width: 3px;
+  border-radius: 2px;
+  background: var(--muted);
+  opacity: 0.75;
+}
+.tl-holiday:hover {
+  opacity: 1;
+}
+.holiday-note {
+  margin: 2px 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.holiday-note::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 5px;
+  margin-inline-end: 6px;
+  border-radius: 2px;
+  background: var(--muted);
+  opacity: 0.75;
+  vertical-align: middle;
+}
+.holiday-note[hidden] {
+  display: none;
+}
+
 .tl-month {
   position: absolute;
   top: 0;
