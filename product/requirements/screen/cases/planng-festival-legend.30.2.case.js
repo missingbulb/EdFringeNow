@@ -6,5 +6,5 @@ module.exports = {
   page: "/planNG/?festival=haifa-iff",
   viewport: "desktop",
   ready: (page) => plannerReady(page, "haifa-iff"),
-  capture: "#calLegend",
+  capture: "#festLegend",
 };

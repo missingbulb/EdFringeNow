@@ -1913,16 +1913,19 @@ excursions, flights) carry no festival colour and are hatched instead (28).
 
 - `30.1` A show's block has its festival's colour at its edge and its kind's emoji before its name; a free show carries a small Free tag.
 
+  ![planng-block-look.30.1](requirements/screen/cases/planng-block-look.30.1.png) <!-- req-gallery:30.1 -->
+
   <details><summary>Notes</summary>
 
-  The Haifa trip, which reaches Acco: a day holding both festivals' shows,
-  one of them free. The kinds are the shared ones the kinds chip offers (21),
-  so a Haifa film and an Acco play carry different emoji whatever each
-  festival calls its own sections. The edge used to be the ticket status's
-  colour; a free show now says so in words instead.
+  The Haifa trip, which reaches Acco: the day given to Acco, where two shows
+  are free, beside the Haifa day before it. The kinds are the shared ones the
+  kinds chip offers (21), so a Haifa film and an Acco play carry different
+  emoji whatever each festival calls its own sections.
   </details>
 
 - `30.2` Under the calendar, a legend names each festival with a show in view, in its colour.
+
+  ![planng-festival-legend.30.2](requirements/screen/cases/planng-festival-legend.30.2.png) <!-- req-gallery:30.2 -->
 
   <details><summary>Notes</summary>
 
