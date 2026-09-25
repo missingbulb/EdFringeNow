@@ -508,12 +508,13 @@ body.festival-page {
  *
  * plan.css draws a schedule block as one flat link: a stripe, a name, an hour.
  * Here a card is the draft's pick for its hour, and when other shows wanted
- * the hour too it carries one row more: whose pick this is, how many there
- * were to choose from, and a step through them. Everything else the page has
- * to say about a card is in the popup, so a calendar at rest reads as a
- * calendar.
+ * the hour too, a lane beside it draws each of them at its own times.
+ * Everything else the page has to say about a card is in the popup, so a
+ * calendar at rest reads as a calendar.
  */
 .sch-slot { position: absolute; left: 3px; right: 3px; }
+/* The pick leaves a band clear at its end edge for the lane. */
+.sch-slot--contested .sch-show { inset-inline-end: 17px; }
 .sch-show {
   position: absolute; inset: 0;
   flex-direction: column; justify-content: center; gap: 1px;
@@ -531,60 +532,53 @@ body.festival-page {
 .sch-show .sch-name { -webkit-line-clamp: 1; }
 .sch-show:not(.sch-show--tight) .sch-name { -webkit-line-clamp: 2; }
 
-/* The row sits on the card's bottom edge, so the show's own lines keep the
-   top of the card whatever its height. */
-.sch-slot--contested .sch-show:not(.sch-show--tight) { justify-content: flex-start; padding-bottom: 20px; }
-.sch-flip {
-  position: absolute; inset-inline: 6px 3px; bottom: 2px;
-  display: flex; align-items: center; gap: 2px; height: 16px;
+/* The lane is as tall as the slot, so it is one steady target; the bars it
+   holds reach above and below it to the rivals' own starts and ends, and are
+   painted through (pointer-events off) so the lane is the only thing hit. */
+.sch-rivals {
+  position: absolute; top: 0; bottom: 0; inset-inline-end: 0; width: 15px;
+  padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer;
+  z-index: 1;
 }
-.sch-flip button {
-  font: inherit; border: 0; cursor: pointer; line-height: 1;
-  font-variant-numeric: tabular-nums;
+.sch-rivals:hover, .sch-rivals[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--violet) 10%, transparent);
 }
-.sch-flip button:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
-.sch-flip-step {
-  flex: 0 0 auto; width: 16px; height: 16px; border-radius: 50%; padding: 0;
-  font-size: 0.72rem; font-weight: 700;
-  color: var(--violet); background: color-mix(in srgb, var(--violet) 12%, var(--paper));
+.sch-rivals:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+.sch-rival {
+  --w: calc((13px - (var(--lanes) - 1) * 1px) / var(--lanes));
+  position: absolute; pointer-events: none;
+  top: var(--from); height: var(--len);
+  inset-inline-start: calc(1px + var(--lane) * (var(--w) + 1px)); width: var(--w);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--violet) 30%, var(--paper));
+  border: 1px dashed var(--violet);
+  box-sizing: border-box;
 }
-/* A step back points toward the start of the line, whichever side that is. */
-[dir="rtl"] .sch-flip-step { transform: scaleX(-1); }
-.sch-flip-step:hover { background: color-mix(in srgb, var(--violet) 24%, var(--paper)); }
-.sch-others {
-  min-width: 0; padding: 1px 4px; border-radius: 4px; background: transparent;
-  font-size: 0.6rem; font-weight: 700; color: var(--violet);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+.sch-rivals:hover .sch-rival, .sch-rivals[aria-expanded="true"] .sch-rival {
+  background: color-mix(in srgb, var(--violet) 50%, var(--paper));
 }
-.sch-others:hover, .sch-others[aria-expanded="true"] { background: color-mix(in srgb, var(--violet) 12%, var(--paper)); }
-.sch-others-short { display: none; }
-.sch-flip-take {
-  flex: 0 0 auto; margin-inline-start: auto; padding: 1px 5px; border-radius: 999px;
-  font-size: 0.58rem; font-weight: 700;
-  color: var(--paper); background: var(--violet);
+/* Too many to tell apart: one wash down the pick's slot, darkest where the
+   most shows overlap (its stops are drawn in crowdWash), and a count. */
+.sch-crowd { position: absolute; inset: 0; border-radius: 3px; pointer-events: none; }
+.sch-rivals--crowd:hover .sch-crowd, .sch-rivals--crowd[aria-expanded="true"] .sch-crowd {
+  box-shadow: inset 0 0 0 1px var(--violet);
 }
-/* No room for a row: the count alone, as a chip in the card's top corner.
-   Stepping waits for the list it opens. */
-.sch-show--tight .sch-flip,
-.schedule.cols-tiny .sch-flip { inset: 2px 2px auto auto; width: auto; }
-[dir="rtl"] .sch-show--tight .sch-flip,
-[dir="rtl"] .schedule.cols-tiny .sch-flip { inset: 2px auto auto 2px; }
-.sch-show--tight .sch-flip-step, .sch-show--tight .sch-flip-take, .sch-show--tight .sch-others-full,
-.schedule.cols-tiny .sch-flip-step, .schedule.cols-tiny .sch-flip-take, .schedule.cols-tiny .sch-others-full { display: none; }
-.sch-show--tight .sch-others-short, .schedule.cols-tiny .sch-others-short { display: inline; }
-.sch-show--tight .sch-others, .schedule.cols-tiny .sch-others {
-  background: color-mix(in srgb, var(--violet) 12%, var(--paper));
-  border-radius: 999px; padding: 1px 5px;
-}
-.sch-slot--contested .sch-show--tight .sch-name { padding-inline-end: 24px; }
-
-/* A show the reader has flipped to rather than the one the draft picked:
-   drawn as an offer, dashed and in the page's own colour, until it is taken. */
-.sch-show--other {
-  border-style: dashed;
-  border-color: var(--violet);
-  border-inline-start: 4px solid var(--violet);
-  background: color-mix(in srgb, var(--violet) 7%, var(--paper));
+/* Narrow columns give the lane less of the card; the tiniest merge its rows,
+   since a bar a pixel or two wide says nothing. */
+.schedule.cols-narrow .sch-slot--contested .sch-show { inset-inline-end: 10px; }
+.schedule.cols-narrow .sch-rivals { width: 9px; }
+.schedule.cols-narrow .sch-rival { --w: calc((7px - (var(--lanes) - 1) * 1px) / var(--lanes)); }
+.schedule.cols-tiny .sch-slot--contested .sch-show { inset-inline-end: 6px; }
+.schedule.cols-tiny .sch-rivals { width: 5px; }
+.schedule.cols-tiny .sch-rival { --w: 5px; inset-inline-start: 0; border-width: 0; }
+.schedule.cols-narrow .sch-rivals-count { display: none; }
+/* On paper of its own, since under it the washes may be solid. */
+.sch-rivals-count {
+  position: absolute; top: 1px; inset-inline: 0; pointer-events: none;
+  padding: 1px 0; border-radius: 3px;
+  background: var(--paper); box-shadow: 0 0 0 1px var(--violet);
+  font-size: 0.5rem; font-weight: 700; line-height: 1.2; text-align: center;
+  color: var(--violet); font-variant-numeric: tabular-nums;
 }
 
 /* A card the reader has fixed in place, and one they have favourited: the
@@ -681,7 +675,7 @@ body.festival-page {
   text-transform: uppercase; color: var(--ok);
 }
 .pr-kind { flex: 0 0 auto; font-size: 0.8rem; }
-.pr-text { display: flex; flex-direction: column; min-width: 0; }
+.pr-text { flex: 1 1 0; display: flex; flex-direction: column; min-width: 0; }
 .pr-title { font-weight: 700; }
 .pr-where { font-size: 0.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .pr-take { flex: 0 0 auto; font-size: 0.7rem; opacity: 0.35; }

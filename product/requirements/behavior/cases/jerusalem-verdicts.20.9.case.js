@@ -44,7 +44,7 @@ module.exports = {
     const replacement = await draftedAt(page, refusedNight, "20:00");
     assert.ok(replacement && replacement !== refused, "the hour goes to the next contender");
 
-    // Resting on a contested card's count lists the hour's other shows, and taking one hands it on.
+    // Resting on a contested card's lane lists the hour's other shows, and taking one hands it on.
     const stacked = page.locator('.sch-slot--contested').first();
     const lockedNight = await stacked.evaluate((el) => el.closest(".sch-day").dataset.date);
     await openOthers(page, stacked);

@@ -1431,7 +1431,6 @@ function planOptions() {
  * honest instead of locally repaired. */
 function redraft() {
   closePops();
-  flipAt.clear();
   seedDays();
   layMeals();
   const draft = draftCalendar(filteredShows(), planOptions());
@@ -1578,7 +1577,7 @@ function renderDrawerCount(draft) {
 // --- the calendar ---------------------------------------------------------
 
 function renderCalendar(draft) {
-  slotGeometry.clear();
+  contested.clear();
   const host = $("schedule");
   const empty = $("scheduleEmpty");
   host.innerHTML = "";
@@ -1677,9 +1676,13 @@ function renderCalendar(draft) {
         // never past the next block's own start, or the two would overlap and
         // the calendar would claim a clash the scheduler took care to avoid.
         const next = day.slots[i2 + 1];
+        const prev = day.slots[i2 - 1];
         const ceiling = next ? y(next.startMinuteOfDay) - 2 : axisH;
+        // How far this hour's rivals may be drawn: between the neighbours'
+        // cards, so no bar is ever read as belonging to the show beside it.
+        const reach = [prev ? y(prev.endMinuteOfDay) + 2 : 0, ceiling];
         body.appendChild(
-          buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling)
+          buildScheduleBlock(slot, y(slot.startMinuteOfDay), y(slot.endMinuteOfDay), ceiling, reach, y)
         );
       });
     }
@@ -2023,112 +2026,132 @@ function renderFestivalLegend(draft) {
     .join("");
 }
 
-/* Which of a contested hour's shows its card is showing, by the pick's own
- * key: 0 is the draft's pick, 1… its contenders in the order contention.js
- * ranks them. Flipping is looking, not deciding — nothing is stored, and a
- * rebuild (every verdict is one) puts every card back on its pick. */
-const flipAt = new Map();
-/* What each contested card was built from, so a flip can redraw that one card
- * without rebuilding the calendar. */
-const slotGeometry = new Map();
+/* The draft's pick for each contested hour, by its key: what the hour's list
+ * is drawn from when the lane beside the card is hovered. */
+const contested = new Map();
 
-function buildScheduleBlock(slot, top, rawBottom, ceiling) {
+/* Past this many side-by-side rows, the rivals are no longer told apart: each
+ * is a faint bar in one lane, so where they pile up the lane darkens. A Fringe
+ * hour can have fifty. */
+const RIVAL_LANES = 3;
+
+function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
   const key = slotKey(slot);
   const height = Math.max(
     Math.min(SCH_MIN_BLOCK, Math.max(12, ceiling - top)),
     rawBottom - top
   );
-  const options = [slot, ...slot.contenders];
-  const at = Math.min(flipAt.get(key) || 0, options.length - 1);
-  // The card shows the option flipped to, but keeps the pick's place on the
-  // calendar: the hour is the pick's until the reader locks something else.
-  const shown = options[at];
-  const shownKey = slotKey(shown);
-  const locked = state.locked.get(shown.slug) === shownKey;
-  const favourite = state.starred.has(shown.slug);
+  const locked = state.locked.get(slot.slug) === key;
+  const favourite = state.starred.has(slot.slug);
 
   const wrap = document.createElement("div");
   wrap.className = "sch-slot" + (slot.contenders.length ? " sch-slot--contested" : "");
   wrap.dataset.pick = key;
   wrap.style.top = `${top}px`;
   wrap.style.height = `${height}px`;
-  if (slot.contenders.length) slotGeometry.set(key, [slot, top, rawBottom, ceiling]);
 
   const block = document.createElement("div");
   block.className =
-    "sch-show" +
-    (locked ? " sch-show--locked" : "") +
-    (favourite ? " sch-show--fav" : "") +
-    (at ? " sch-show--other" : "");
-  block.dataset.slug = shown.slug;
-  block.dataset.festivalColour = festivalOf(shown.slug);
-  block.dataset.key = shownKey;
+    "sch-show" + (locked ? " sch-show--locked" : "") + (favourite ? " sch-show--fav" : "");
+  block.dataset.slug = slot.slug;
+  block.dataset.festivalColour = festivalOf(slot.slug);
+  block.dataset.key = key;
   block.tabIndex = 0;
   if (height < SCH_TIGHT_PX) block.classList.add("sch-show--tight");
 
   // A show with no published running time has end === start, so the clock
   // would read "22:00–22:00". Say the start and stop there rather than draw a
   // length nobody published.
-  const end = slotEndTime(shown);
-  const timeStr = end === shown.startTime ? shown.startTime : `${shown.startTime}–${end}`;
+  const end = slotEndTime(slot);
+  const timeStr = end === slot.startTime ? slot.startTime : `${slot.startTime}–${end}`;
 
   block.innerHTML =
-    `<a class="sch-open" href="${escapeHtml(shown.url)}" target="_blank" rel="noopener" draggable="false">` +
-    `<span class="sch-name"><span class="sch-kind" aria-hidden="true">${GENRE_EMOJI[kindOf(shown.slug)]}</span>` +
-    `${foreign(shown.title, shown.slug)}</span>` +
+    `<a class="sch-open" href="${escapeHtml(slot.url)}" target="_blank" rel="noopener" draggable="false">` +
+    `<span class="sch-name"><span class="sch-kind" aria-hidden="true">${GENRE_EMOJI[kindOf(slot.slug)]}</span>` +
+    `${foreign(slot.title, slot.slug)}</span>` +
     `<span class="sch-meta">` +
     `<span class="sch-time">${escapeHtml(timeStr)}</span>` +
-    (shown.status === "FREE_NON_TICKETED"
+    (slot.status === "FREE_NON_TICKETED"
       ? `<span class="sch-free" data-i18n="block.free">${escapeHtml(t("block.free"))}</span>`
       : "") +
-    (shown.venueName ? `<span class="sch-venue">${foreign(shown.venueName, shown.slug)}</span>` : "") +
+    (slot.venueName ? `<span class="sch-venue">${foreign(slot.venueName, slot.slug)}</span>` : "") +
     `</span></a>` +
     // The one thing a card's face says beyond the show itself.
-    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "") +
-    (slot.contenders.length ? flipBar(options.length, at, shown) : "");
+    (locked ? `<span class="sch-lock" aria-hidden="true">🔒</span>` : "");
   wrap.appendChild(block);
+
+  if (slot.contenders.length) {
+    contested.set(key, slot);
+    // After the card in the DOM so a keyboard reaches the show first.
+    wrap.appendChild(rivalLane(slot, top, height, reach, y));
+  }
   return wrap;
 }
 
-/* The contested card's own row: which of the hour's shows this is, and a step
- * either way through the rest. On the pick it says the pick is ours — the
- * draft did that work — and on any other it offers the lock that would make
- * it the reader's. The count is also the door to the whole list (hover or
- * click). A tight card keeps only the count, in its corner. */
-function flipBar(total, at, shown) {
-  const label = at
-    ? t("flip.position", { at: at + 1, count: total })
-    : t("flip.pick", { count: total });
-  const step = (dir, mark, aria) =>
-    `<button type="button" class="sch-flip-step" data-flip="${dir}" aria-label="${escapeHtml(t(aria))}">${mark}</button>`;
-  return (
-    `<span class="sch-flip">` +
-    step(-1, "‹", "flip.prev") +
-    `<button type="button" class="sch-others" aria-haspopup="dialog" aria-expanded="false"` +
-    ` aria-label="${escapeHtml(t("rivals.more", { count: total - 1 }))}">` +
-    `<span class="sch-others-full">${escapeHtml(label)}</span>` +
-    `<span class="sch-others-short" aria-hidden="true">+${total - 1}</span></button>` +
-    step(1, "›", "flip.next") +
-    (at
-      ? `<button type="button" class="sch-flip-take" data-take="${escapeHtml(shown.slug)}"` +
-        ` data-key="${escapeHtml(slotKey(shown))}">🔒 ${escapeHtml(t("flip.take"))}</button>`
-      : "") +
-    `</span>`
-  );
+/* The shows this hour turned down, each drawn beside the card from its own
+ * start to its own end, so how the others overlap the pick is something the
+ * calendar shows rather than says. A few are packed into rows side by side;
+ * past RIVAL_LANES rows they become one wash and a count (crowdWash). The
+ * lane is one target, not a bar each: it opens the hour's list. */
+function rivalLane(slot, top, height, reach, y) {
+  const rivals = slot.contenders;
+  // Packed earliest first; contention.js hands them over scarcest first.
+  const lanes = [];
+  const laneOf = new Map();
+  for (const r of [...rivals].sort((a, b) => a.startMinuteOfDay - b.startMinuteOfDay)) {
+    let i = lanes.findIndex((endMin) => endMin <= r.startMinuteOfDay);
+    if (i < 0) i = lanes.push(0) - 1;
+    lanes[i] = r.endMinuteOfDay;
+    laneOf.set(r, i);
+  }
+  const crowd = lanes.length > RIVAL_LANES;
+  const lane = document.createElement("button");
+  lane.innerHTML = crowd
+    ? crowdWash(rivals, top, height, y) + `<span class="sch-rivals-count">${rivals.length}</span>`
+    : rivals
+        .map((r) => {
+          const from = clamp(y(r.startMinuteOfDay), ...reach);
+          const to = clamp(y(r.endMinuteOfDay), ...reach);
+          return (
+            `<span class="sch-rival" style="--from:${(from - top).toFixed(1)}px;` +
+            `--len:${Math.max(4, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
+          );
+        })
+        .join("");
+  lane.type = "button";
+  lane.className = "sch-rivals" + (crowd ? " sch-rivals--crowd" : "");
+  lane.style.setProperty("--lanes", crowd ? 1 : lanes.length);
+  lane.setAttribute("aria-haspopup", "dialog");
+  lane.setAttribute("aria-expanded", "false");
+  lane.setAttribute("aria-label", t("rivals.more", { count: rivals.length }));
+  lane.dataset.i18nAriaLabel = "rivals.more";
+  return lane;
 }
 
-/** Step a contested card through its hour's shows, redrawing only that card. */
-function flipCard(wrap, dir) {
-  const pick = wrap.dataset.pick;
-  const geometry = slotGeometry.get(pick);
-  if (!geometry) return;
-  const total = geometry[0].contenders.length + 1;
-  flipAt.set(pick, ((flipAt.get(pick) || 0) + dir + total) % total);
-  closePops();
-  const next = buildScheduleBlock(...geometry);
-  wrap.replaceWith(next);
-  const again = next.querySelector(`[data-flip="${dir}"]`);
-  if (again) again.focus({ preventScroll: true });
+/* A crowd drawn as one element, not one per show: a Fringe calendar has
+ * hundreds of contested hours and the page has an element budget (26.2). The
+ * wash runs down the pick's own slot, darker wherever more rivals overlap. */
+function crowdWash(rivals, top, height, y) {
+  const edges = new Set([0, height]);
+  const spans = rivals.map((r) => [
+    clamp(y(r.startMinuteOfDay) - top, 0, height),
+    clamp(y(r.endMinuteOfDay) - top, 0, height),
+  ]);
+  for (const [from, to] of spans) edges.add(from).add(to);
+  const cuts = [...edges].sort((a, b) => a - b);
+  const depth = cuts.slice(0, -1).map((at, i) => {
+    const mid = (at + cuts[i + 1]) / 2;
+    return spans.filter(([from, to]) => from <= mid && mid < to).length;
+  });
+  const most = Math.max(1, ...depth);
+  const stops = depth
+    .map((n, i) => {
+      const mix = Math.round(10 + (n / most) * 55);
+      const colour = `color-mix(in srgb, var(--violet) ${n ? mix : 0}%, transparent)`;
+      return `${colour} ${cuts[i].toFixed(1)}px ${cuts[i + 1].toFixed(1)}px`;
+    })
+    .join(", ");
+  return `<span class="sch-crowd" style="background: linear-gradient(to bottom, ${stops})"></span>`;
 }
 
 function buildTravelLeg(a, b, top, bottom) {
@@ -2196,7 +2219,7 @@ function closePops() {
     const pop = $(id);
     if (pop) pop.hidden = true;
   }
-  for (const btn of document.querySelectorAll(".sch-others[aria-expanded='true']")) {
+  for (const btn of document.querySelectorAll(".sch-rivals[aria-expanded='true']")) {
     btn.setAttribute("aria-expanded", "false");
   }
 }
@@ -2355,11 +2378,10 @@ function artFallback(show) {
  * then the rest scarcest first (contention.js sorts them). Each of the rest
  * can be locked into the hour in its place; the pick itself is given no
  * verdict, so it goes back into the running like any other show. */
-function openRivals(others) {
-  const wrap = others.closest(".sch-slot");
-  const geometry = slotGeometry.get(wrap.dataset.pick);
-  if (!geometry) return;
-  const slot = geometry[0];
+function openRivals(lane) {
+  const wrap = lane.closest(".sch-slot");
+  const slot = contested.get(wrap.dataset.pick);
+  if (!slot) return;
   const pop = $("calRivals");
   const row = (show, isPick) => {
     const end = slotEndTime(show);
@@ -2373,7 +2395,7 @@ function openRivals(others) {
       `<span class="pr-where">${where}</span></span>` +
       `<span class="pr-nights">${escapeHtml(rarityText(show.freedom))}</span>`;
     return isPick
-      ? `<li class="pop-pick"><span class="pr-badge">${escapeHtml(t("flip.ours"))}</span>${body}</li>`
+      ? `<li class="pop-pick"><span class="pr-badge">${escapeHtml(t("rivals.ours"))}</span>${body}</li>`
       : `<li><button type="button" class="pop-rival" data-take="${escapeHtml(show.slug)}"` +
           ` data-key="${escapeHtml(slotKey(show))}">${body}` +
           `<span class="pr-take" aria-hidden="true">🔒</span></button></li>`;
@@ -2390,8 +2412,8 @@ function openRivals(others) {
         `${escapeHtml(t("rivals.others", { count: slot.contenders.length - RIVAL_ROWS }))}</p>`
       : "") +
     `<p class="pop-foot" data-i18n-slot="rivals.foot">${escapeHtml(t("rivals.foot"))}</p>`;
-  others.setAttribute("aria-expanded", "true");
-  placePop(pop, wrap);
+  lane.setAttribute("aria-expanded", "true");
+  placePop(pop, wrap.querySelector(".sch-show"));
 }
 
 // --- browse + search ------------------------------------------------------
@@ -2631,16 +2653,11 @@ function wireCalendar() {
       applyVerdict("lock", take.dataset.take, take.dataset.key);
       return;
     }
-    const flip = e.target.closest("[data-flip]");
-    if (flip) {
-      flipCard(flip.closest(".sch-slot"), Number(flip.dataset.flip));
-      return;
-    }
-    const others = e.target.closest(".sch-others");
-    if (others) {
-      const open = others.getAttribute("aria-expanded") === "true";
+    const lane = e.target.closest(".sch-rivals");
+    if (lane) {
+      const open = lane.getAttribute("aria-expanded") === "true";
       closePops();
-      if (!open) openRivals(others);
+      if (!open) openRivals(lane);
       return;
     }
     if (!e.target.closest(".cal-pop")) closePops();
@@ -2660,18 +2677,17 @@ function wireCalendar() {
 
   wrap.addEventListener("pointerover", (e) => {
     if (e.pointerType === "touch") return;
-    // The count on a contested card opens the hour's list rather than the
+    // The lane beside a contested card opens the hour's list rather than the
     // show's own popup: it is a question about the hour, not the show.
-    const others = e.target.closest(".sch-others");
-    if (others) {
+    const lane = e.target.closest(".sch-rivals");
+    if (lane) {
       holdOpen();
-      if (others.getAttribute("aria-expanded") !== "true") {
+      if (lane.getAttribute("aria-expanded") !== "true") {
         closePops();
-        openRivals(others);
+        openRivals(lane);
       }
       return;
     }
-    if (e.target.closest(".sch-flip")) return;
     const block = e.target.closest(".sch-show");
     if (!block) return;
     // While the contenders are open they are the thing being read.
@@ -2688,7 +2704,6 @@ function wireCalendar() {
   // A keyboard reaches the same popup by tabbing to the card, and steps into
   // its buttons from there; Escape closes it and hands focus back.
   wrap.addEventListener("focusin", (e) => {
-    if (e.target.closest(".sch-flip")) return;
     const block = e.target.closest(".sch-show");
     if (block) {
       holdOpen();

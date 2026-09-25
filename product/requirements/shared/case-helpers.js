@@ -213,11 +213,12 @@ async function openDrawer(page) {
   await settle(page);
 }
 
-/* Open a contested hour's list the way a pointer does: by resting on the count
- * its card carries. Scrolled into view first — the pointer is moved in viewport
- * coordinates, and a card below the fold would otherwise be hovered at thin air. */
+/* Open a contested hour's list the way a pointer does: by resting on the lane
+ * of rivals beside its card. Scrolled into view first — the pointer is moved in
+ * viewport coordinates, and a card below the fold would otherwise be hovered at
+ * thin air. */
 async function openOthers(page, slot) {
-  const others = slot.locator(".sch-others");
+  const others = slot.locator(".sch-rivals");
   await others.scrollIntoViewIfNeeded();
   await others.hover();
   await page.waitForSelector("#calRivals .pop-rival");
