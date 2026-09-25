@@ -1641,6 +1641,22 @@ function renderCalendar(draft) {
   });
 
   host.appendChild(buildBlockers(axis, y, gutter.getBoundingClientRect().width));
+  markColumnWidth();
+}
+
+/* A column squeezed to share the width sheds what a show's block can't
+ * afford, through plan.css's own classes and at the Fringe planner's widths
+ * (site/plan/plan.js sets the same two). */
+const COL_NARROW_PX = 78;
+const COL_TINY_PX = 56;
+function markColumnWidth() {
+  const host = $("schedule");
+  // The widest column is a full day's: an empty day is drawn as a sliver.
+  const width = Math.max(0, ...[...host.querySelectorAll(".sch-day")].map((c) => c.getBoundingClientRect().width));
+  // Drawn before it is laid out (a hidden panel): the observer below asks again.
+  if (!width) return;
+  host.classList.toggle("cols-narrow", width < COL_NARROW_PX);
+  host.classList.toggle("cols-tiny", width < COL_TINY_PX);
 }
 
 /* The hours the calendar draws.
@@ -3442,6 +3458,7 @@ function wireTrip() {
     syncStars();
   });
   addEventListener("resize", () => layoutRows($("timelineYear")));
+  new ResizeObserver(markColumnWidth).observe($("schedule"));
 }
 
 async function boot() {

@@ -14,6 +14,7 @@ const layout = (page) =>
       page: document.documentElement.scrollWidth - document.documentElement.clientWidth,
       days: cols.length,
       widest: Math.max(...cols),
+      sheds: ["cols-narrow", "cols-tiny"].filter((c) => document.querySelector("#schedule").classList.contains(c)),
     };
   });
 
@@ -33,6 +34,7 @@ module.exports = {
     assert.equal(phone.days, 7, "a week on a phone");
     assert.ok(phone.overflow <= 0, `nothing to scroll sideways on a phone (${phone.overflow}px over)`);
     assert.ok(phone.page <= 0, "nor does the page itself");
+    assert.deepEqual(phone.sheds, ["cols-narrow", "cols-tiny"], "a phone's squeezed columns shed times, pictures and venues");
 
     const month = await open("&from=2026-10-10&to=2026-11-09", { width: 1280, height: 900 });
     assert.equal(month.days, 31, "the longest trip allowed");
@@ -42,5 +44,6 @@ module.exports = {
     assert.equal(wide.days, 7);
     assert.ok(wide.widest <= CAP_PX + 1, `a column stops at ${CAP_PX}px (widest ${wide.widest}px)`);
     assert.ok(wide.widest >= CAP_PX - 1, "and reaches it when there is room");
+    assert.deepEqual(wide.sheds, [], "a column with room keeps everything");
   },
 };
