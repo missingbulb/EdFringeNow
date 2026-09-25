@@ -1628,6 +1628,18 @@ reaches it, and otherwise the one it covers most.
   festival at all takes the nearest one's theme and plans an empty calendar.
   </details>
 
+- `23.10` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.10 -->
+
+  <details><summary>Notes</summary>
+
+  Measured at 2560 pixels wide: the timeline and the calendar card each run
+  from the page's side gutter to the other, and the header's wordmark and
+  controls sit on the same edges. The other planner, `/plan/`, keeps its
+  content width.
+  </details>
+
 ## 24. Where you are coming from
 
 The page asks, once, where the reader is coming from, beside the trip's dates
