@@ -1452,12 +1452,9 @@ calendar.
 
   Two draggable lines with the shut-out hours shaded behind them, on the
   calendar rather than in a strip above it: the constraint is drawn against the
-  hours it applies to, so what it rules out is visible beside it. The axis
-  covers the evening the festival actually runs and stretches only an hour
-  beyond it towards a slack boundary, which is then drawn on the axis edge with
-  the hour it really holds on its flag; a day genuinely that long — three meals
-  asked for, say — draws its hours shorter instead, so the calendar stays a
-  calendar rather than a screen of empty morning.
+  hours it applies to, so what it rules out is visible beside it. The hours
+  themselves are fixed (`21.19`), so a line moved past the calendar's edge is
+  drawn on that edge with the hour it really holds on its flag.
   </details>
 
 - `21.7` Dragging the day's end earlier drops what no longer fits.
@@ -1509,6 +1506,24 @@ calendar.
 - `21.18` How full a day takes any whole number of shows from zero up.
 
   🚩 _Behavior leaf._ <!-- req-gallery:21.18 -->
+
+- `21.19` Every day runs from 08:00 to 01:00 whatever is on it, and a big plus above the hours opens the night from 23:00 the evening before.
+
+  ![planng-night.21.19](requirements/screen/cases/planng-night.21.19.png) <!-- req-gallery:21.19 -->
+
+  <details><summary>Notes</summary>
+
+  Animated: the calendar as it opens, with the night folded, and again with
+  the plus pressed. Most readers sleep through the night, so it starts
+  folded; a reader planning it opens it once and it stays open. Folded, the
+  button counts what the night holds, so a breakfast or an early show is
+  never silently hidden. Only something drafted past 01:00 stretches the
+  bottom, to the hour it ends in.
+  </details>
+
+- `21.20` Moving the day's start or end never changes the calendar's height, and the night stays opened or folded after a reload.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:21.20 -->
 
 - `21.14` A show whose length the festival does not publish counts as an hour against the day's end and against every block of the reader's own.
 
