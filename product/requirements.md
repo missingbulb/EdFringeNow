@@ -1635,7 +1635,7 @@ those days, fetched when the dates are set, each linking to the partner who
 sells it; a reader already in the country needs no flight, and the blocks say
 so.
 
-> ⚠️ **To be decided — live fares.** The fare service (`worker/fares.js`) reads
+> ⚠️ **To be decided — live fares.** The fare service (`api/fares.js`) reads
 > the partner's cached one-way prices server-side and has only been exercised
 > against the partner's documented response shape: this sandbox cannot reach
 > the partner, and no account exists yet to capture a real answer. Until one
@@ -1699,6 +1699,16 @@ so.
   **To be decided** (see the banner above): proved against the documented
   response shape only. With no token configured the service answers an empty
   list rather than an error, so the page shows the search link.
+  </details>
+
+- `27.6` The footer says that the flight links may earn us a commission.
+
+  ![planng-partner-note.27.6](requirements/screen/cases/planng-partner-note.27.6.png) <!-- req-gallery:27.6 -->
+
+  <details><summary>Notes</summary>
+
+  The flights are partner links, so the disclosure the trip links once carried
+  comes back with them, in every language the page speaks.
   </details>
 
 ## 25. Never a list of thousands
