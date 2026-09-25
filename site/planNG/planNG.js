@@ -2515,7 +2515,7 @@ function openRivals(lane) {
       ? `<li class="pop-pick"><span class="pr-badge">${escapeHtml(t("rivals.ours"))}</span>${body}</li>`
       : `<li><button type="button" class="pop-rival" data-take="${escapeHtml(show.slug)}"` +
           ` data-key="${escapeHtml(slotKey(show))}">${body}` +
-          `<span class="pr-take" aria-hidden="true">🔒</span></button></li>`;
+          `<span class="pr-take" aria-hidden="true">📌</span></button></li>`;
   };
   pop.innerHTML =
     `<p class="pop-title" data-i18n-slot="rivals.title">${escapeHtml(t("rivals.title", { time: slot.startTime }))}</p>` +
