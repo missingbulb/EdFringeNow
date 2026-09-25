@@ -33,6 +33,11 @@ requirements harness's are the `requirements-harness` skill; each loads when its
   standing bypass every unattended session loads. Report a recurring denial to the owner instead.
   (no-denial-bypass-rules)
 
+- **Running Bash as a worktree-isolated dispatched subagent** — keep any command naming `git`
+  standalone, never chained with `&&`, piped, or wrapped in a heredoc: the isolation guard refuses
+  to verify a compound one and already states the fix, so split before running rather than after
+  the refusal. (worktree-git-standalone)
+
 ## Verifying a change
 
 - **Calling a change under `site/` or the requirements fixtures done** — run `npm run test:ui`
