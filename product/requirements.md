@@ -1628,9 +1628,9 @@ reaches it, and otherwise the one it covers most.
   festival at all takes the nearest one's theme and plans an empty calendar.
   </details>
 
-- `23.10` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
+- `23.11` On a wide screen the page spans the whole window: the timeline and the calendar stretch edge to edge rather than stopping at a content width.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:23.10 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.11 -->
 
   <details><summary>Notes</summary>
 
