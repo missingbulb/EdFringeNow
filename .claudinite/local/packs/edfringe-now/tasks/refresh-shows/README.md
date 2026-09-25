@@ -26,6 +26,5 @@ Self-contained (imports nothing): the whole contract is this default export.
 OFF — no occurrence; a hand-created work item is the only way it runs
 pure code; the work is the preprocessing subprocess below
 it commits regenerated data straight to the default branch, as the workflow did — it never opens a PR
-vestigial for an agentless task; the real work is the command below
 the retired workflow's `timeout-minutes: 30`, in seconds
 Upstream show edits leave no trace in this repo, so there is nothing to gate on.

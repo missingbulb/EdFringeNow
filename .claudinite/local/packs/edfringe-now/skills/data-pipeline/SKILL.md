@@ -1,14 +1,15 @@
 ---
 name: data-pipeline
-description: EdFringeNow's data pipeline - getting show data out of edfringe.com into the committed files the site serves, and the wire format the pages decode. Use before touching scraper/, data/, site/data/, the scrape or price workflows, or the site code that decodes, prices or times performances.
+description: EdFringeNow's data pipeline - getting show data out of edfringe.com into the committed files the site serves, and the wire format the pages decode. Use before touching scraper/, data/, site/data/, the scrape and price tasks, or the site code that decodes, prices or times performances.
 metadata:
   body: guidelines
   force-load-on-file-edits-paths:
     - "scraper/**"
     - "data/**"
     - "site/data/**"
-    - ".github/workflows/scrape.yml"
-    - ".github/workflows/prices.yml"
+    - ".claudinite/local/packs/edfringe-now/tasks/full-scrape/**"
+    - ".claudinite/local/packs/edfringe-now/tasks/fetch-prices/**"
+    - ".claudinite/local/packs/edfringe-now/tasks/worker-lib.sh"
     - "site/js/app.js"
     - "site/js/clock.js"
     - "site/plan/plan.js"
@@ -25,10 +26,10 @@ is the judgment those two don't carry.
 
 ## Verifying a change
 
-- **Verifying a scraper change against the live API** — only a sanctioned workflow drives the
-  API: `Scrape edfringe shows (full)` (`scrape.yml`), `Fetch ticket prices (one-off)`
-  (`prices.yml`), or the `refresh-shows` / `refresh-tickets` tasks. Never "verify" by reasoning
-  about what the API probably returns; have a workflow run it, or say plainly it is unverified.
+- **Verifying a scraper change against the live API** — only a sanctioned task drives the
+  API: `full-scrape`, `fetch-prices`, `price-probe`, `refresh-shows` or `refresh-tickets`. Never
+  "verify" by reasoning about what the API probably returns; have a task run it, or say plainly
+  it is unverified.
 
 - **Answering a one-off API question** (a field's shape, an enum's values, whether an operation
   exists) — `scraper/SCRAPING.md` first; past it, `www.edfringe.com`'s Next.js bundles carry
@@ -111,11 +112,11 @@ is the judgment those two don't carry.
   new file and its writer in `edfringe-data-dir-is-generator-output`'s allowlist, never the
   directory.
 
-- **Writing a workflow that commits generated data and can run over an hour** — its push is
+- **Writing a job that commits generated data and can run over an hour** — its push is
   guaranteed to be rejected by the hourly ticket refresh, so on rejection re-derive rather than
   merge: fetch `origin/main`, take its generated files, regenerate from that master plus the
-  workflow's own input, retry. `prices.yml`'s "Commit prices and regenerated data" step is the
-  worked shape.
+  job's own input, retry. Call `commit_regenerated` in the task workers' `worker-lib.sh`, which
+  does exactly that.
 
 - **Changing anything that moves a performance's join key** (venue + date + time) — the
   browser caches `shows.min.json` and `availability.min.json` separately and joins them by that
