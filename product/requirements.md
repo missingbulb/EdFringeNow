@@ -1353,7 +1353,7 @@ the short way to a setting, never the only way — so however much a question
 holds, the calendar never moves. Nothing above the calendar explains the
 calendar.
 
-- `21.1` One row of chips between the year's strip and the calendar: which festivals, what kinds, how full a day, how you get around, how you eat.
+- `21.1` One row of chips between the year's strip and the calendar: who's coming, which festivals, what kinds, how full a day, how you get around, how you eat.
 
   ![jerusalem-prefs.21.1](requirements/screen/cases/jerusalem-prefs.21.1.png) <!-- req-gallery:21.1 -->
 
@@ -1362,8 +1362,8 @@ calendar.
   Each chip is the question in small type over its current answer, with a
   caret: one line tall whatever the answer is, so the row never grows and the
   calendar always starts at the same height. Rendered with nothing stored, so
-  the golden is the row a first visit opens on — every festival, every kind,
-  the middle pace, on foot, and food left to the reader.
+  the golden is the row a first visit opens on — nobody said yet, every
+  festival, every kind, the middle pace, on foot, and food left to the reader.
   </details>
 
 - `21.2` A chip opens a panel over the calendar holding its pictures and the exact numbers behind them.
@@ -1848,6 +1848,47 @@ The draft plans around all of it.
 
   The hours are the table's; a day that already has that meal gets a snack
   instead, so a second click at lunchtime does not make a second lunch.
+  </details>
+
+## 29. Who's coming
+
+Who is coming is asked before anything finer, because it answers most of the
+rest: how full a day should be, what to favour, when the evening ends and how
+to eat. Those answers are filled in from it for every question the reader has
+not answered themselves, and said to be suggestions; an answer the reader
+gives is theirs and is never overwritten.
+
+- `29.1` "Who's coming?" is the first chip: just me, a couple, family with the children's ages, or friends.
+
+  ![jerusalem-who.29.1](requirements/screen/cases/jerusalem-who.29.1.png) <!-- req-gallery:29.1 -->
+
+  <details><summary>Notes</summary>
+
+  Opened on a family with children of 5 and 9. The ages are the ones the
+  Plan2 page asks, and only a family is asked them.
+  </details>
+
+- `29.2` Who is coming suggests how full a day is, the kinds favoured, when the evening ends and how to eat.
+
+  <table><thead><tr><th align="left">Who's coming</th><th align="left">A day</th><th align="left">Favoured</th><th align="left">Evening ends</th><th align="left">Eating</th></tr></thead><tbody><tr><td>Just me</td><td>packed</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>A couple</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>dinner</td></tr><tr><td>Friends</td><td>steady</td><td>nothing in particular</td><td>01:00</td><td>sorted out yourself</td></tr><tr><td>Family, youngest under 8</td><td>easy</td><td>family shows</td><td>21:00</td><td>three meals</td></tr><tr><td>Family, youngest 8 to 11</td><td>steady</td><td>family shows</td><td>22:00</td><td>three meals</td></tr><tr><td>Family, all 12 or over</td><td>steady</td><td>family shows</td><td>01:00</td><td>three meals</td></tr></tbody></table> <!-- req-gallery:29.2 -->
+
+  <details><summary>Notes</summary>
+
+  The table is the whole rule. A family with no ages given is treated as one
+  whose children are old enough to stay out.
+  </details>
+
+- `29.3` Choosing who's coming fills in every question not yet answered, marked as suggested; an answer you gave yourself stays yours.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:29.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven: a family with a five-year-old sets an easy pace, three meals, the
+  family kind and a 21:00 evening, each chip marked as suggested; the pace is
+  then answered by hand, and a switch to a couple changes the meals and the
+  evening but not the pace. After a reload the same answers come back, with
+  the same marks.
   </details>
 
 ## 25. Never a list of thousands
