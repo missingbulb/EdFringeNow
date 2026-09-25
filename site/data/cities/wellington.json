@@ -1,0 +1,1605 @@
+{
+ "v": 1,
+ "city": {
+  "id": "wellington",
+  "name": "Wellington",
+  "country": "NZ",
+  "lat": -41.2865,
+  "lng": 174.7762,
+  "timezone": "Pacific/Auckland"
+ },
+ "places": [
+  {
+   "id": "osm:way/190557095",
+   "name": "Museum of New Zealand Te Papa Tongarewa",
+   "kind": "museum",
+   "lat": -41.29033,
+   "lng": 174.781989,
+   "address": "55 Cable Street, 6011",
+   "website": "https://tepapa.govt.nz",
+   "wikidata": "Q915603",
+   "wikipedia": "en:Te Papa",
+   "description": "national museum of New Zealand",
+   "image": "Te Papa (National Museum), Wellington.jpg",
+   "notability": 32,
+   "highlight": true,
+   "openingHours": "10:00-18:00; Dec 24 off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-24",
+       "12-24"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/12750214",
+   "name": "Wellington Zoo",
+   "kind": "zoo",
+   "lat": -41.32191,
+   "lng": 174.784324,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7981545",
+   "wikipedia": "en:Wellington Zoo",
+   "description": "zoo in Wellington, New Zealand",
+   "image": "Giraffes, Pengo.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/20266439",
+   "name": "Wellington Botanic Garden",
+   "kind": "garden",
+   "lat": -41.282533,
+   "lng": 174.766134,
+   "address": null,
+   "website": "https://wellingtongardens.nz/our-gahttps://wellingtongardens.nz/our-gardens/wellington-botanic-garden-ki-paekaka/rdens/wellington-botanic-garden-ki-paekaka/",
+   "wikidata": "Q2447822",
+   "wikipedia": "en:Wellington Botanic Garden",
+   "description": "public botanical garden",
+   "image": "WellBotGardenpath.JPG",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/250856271",
+   "name": "Wellington Museum",
+   "kind": "museum",
+   "lat": -41.285311,
+   "lng": 174.778131,
+   "address": null,
+   "website": "http://wellingtoncityheritage.org.nz/buildings/151-300/160-wellington-harbour-board-head-office-and-bond-store;https://www.museumswellington.org.nz/wellington-museum/",
+   "wikidata": "Q9292226",
+   "wikipedia": null,
+   "description": "museum in Wellington, New Zealand",
+   "image": "Museum of Wellington City & Sea.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1690510529",
+   "name": "Zealandia",
+   "kind": "attraction",
+   "lat": -41.291708,
+   "lng": 174.75219,
+   "address": null,
+   "website": null,
+   "wikidata": "Q913886",
+   "wikipedia": null,
+   "description": "wildlife sanctuary in Wellington, New Zealand",
+   "image": "Karori Wildlife Sanctuary location.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26640029",
+   "name": "Newtown Park",
+   "kind": "park",
+   "lat": -41.320671,
+   "lng": 174.782366,
+   "address": null,
+   "website": null,
+   "wikidata": "Q11938648",
+   "wikipedia": null,
+   "description": "stadium in Wellington, New Zealand",
+   "image": "Newtownpark.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/251420391",
+   "name": "Adam Art Gallery",
+   "kind": "gallery",
+   "lat": -41.28859,
+   "lng": 174.769133,
+   "address": null,
+   "website": "http://www.adamartgallery.org.nz/",
+   "wikidata": "Q4678651",
+   "wikipedia": null,
+   "description": "art gallery and museum on the Victoria University of Wellington campus, New Zealand",
+   "image": "Adam Art Gallery October 2018.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/263452531",
+   "name": "Wellington City Gallery / Te Whare Toi",
+   "kind": "gallery",
+   "lat": -41.288435,
+   "lng": 174.777311,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5123171",
+   "wikipedia": null,
+   "description": "contemporary art gallery in Wellington, New Zealand",
+   "image": "City Gallery, Wellington (cropped).tif",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00; Dec 25 off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/264854202",
+   "name": "Nairn Street Colonial Cottage",
+   "kind": "museum",
+   "lat": -41.299296,
+   "lng": 174.769961,
+   "address": "68 Nairn Street",
+   "website": "http://nairnstcottage.nz/",
+   "wikidata": "Q9292492",
+   "wikipedia": "en:Nairn Street Cottage",
+   "description": "historic building and museum",
+   "image": "Colonial Cottage Museum.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Mo-Su 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/175059306",
+   "name": "The Bucket Fountain",
+   "kind": "attraction",
+   "lat": -41.292228,
+   "lng": 174.776324,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7720471",
+   "wikipedia": null,
+   "description": "kinetic sculpture in Wellington, New Zealand",
+   "image": "The Bucket Fountain.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/895400049",
+   "name": "Fort Ballance",
+   "kind": "landmark",
+   "lat": -41.294703,
+   "lng": 174.834506,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5470767",
+   "wikipedia": "en:Fort Ballance",
+   "description": "coastal artillery battery on Point Gordon, Wellington",
+   "image": "Fort Ballance 11.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3846016569",
+   "name": "Kaiwharawhara",
+   "kind": "landmark",
+   "lat": -41.259992,
+   "lng": 174.791413,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6348699",
+   "wikipedia": "en:Kaiwharawhara railway station",
+   "description": "former railway station in Wellington, New Zealand",
+   "image": "Kaiwharawhara railway station 02.JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/103733974",
+   "name": "Massey Memorial",
+   "kind": "landmark",
+   "lat": -41.285041,
+   "lng": 174.825992,
+   "address": null,
+   "website": "https://www.nzhistory.net.nz/media/photo/massey-memorial",
+   "wikidata": "Q6784616",
+   "wikipedia": "en:Massey Memorial",
+   "description": "mausoleum of New Zealand Prime Minister William Massey",
+   "image": "Massey memorial.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5911562019",
+   "name": "New Zealand Academy of Fine Arts",
+   "kind": "gallery",
+   "lat": -41.284744,
+   "lng": 174.77801,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7015191",
+   "wikipedia": null,
+   "description": "incorporated society dedicated to the visual arts",
+   "image": "Nzafa.png",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/264055222",
+   "name": "SS Hikitia",
+   "kind": "landmark",
+   "lat": -41.289317,
+   "lng": 174.78046,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5760586",
+   "wikipedia": "en:Hikitia",
+   "description": "crane ship in Wellington, New Zealand",
+   "image": "Hikitia crane ship.JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1051954498",
+   "name": "Tomb of the Unknown Warrior",
+   "kind": "landmark",
+   "lat": -41.298875,
+   "lng": 174.777214,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13534610",
+   "wikipedia": null,
+   "description": "war memorial in Wellington, New Zealand",
+   "image": "Tomb of the Unknown Warrior June 2012.JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/293323936",
+   "name": "Wright's Hill Fortress",
+   "kind": "landmark",
+   "lat": -41.295868,
+   "lng": 174.738776,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2594483",
+   "wikipedia": null,
+   "description": "artillery battery in Karori, Wellington, New Zealand",
+   "image": "Wright's Hill Karori Gun Emplacement Fisheye August 2013.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1259560429",
+   "name": "Ōtari-Wilton’s Bush",
+   "kind": "park",
+   "lat": -41.267218,
+   "lng": 174.754766,
+   "address": null,
+   "website": "https://wellingtongardens.nz/our-gardens/otari-wiltons-bush/",
+   "wikidata": "Q7108457",
+   "wikipedia": "en:Ōtari-Wilton's Bush",
+   "description": "botanic garden in Wellington, New Zealand",
+   "image": "Leonard Cockayne Center.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3326510389",
+   "name": "Evans Bay Patent Slip",
+   "kind": "landmark",
+   "lat": -41.303852,
+   "lng": 174.801919,
+   "address": null,
+   "website": null,
+   "wikidata": "Q79301218",
+   "wikipedia": null,
+   "description": "patent slip in New Zealand",
+   "image": "Vessel on the patent slip at Evans Bay, Wellington - 2.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/171565205",
+   "name": "Frank Kitts Park",
+   "kind": "park",
+   "lat": -41.287028,
+   "lng": 174.77876,
+   "address": null,
+   "website": null,
+   "wikidata": "Q108672022",
+   "wikipedia": null,
+   "description": "a park on the Wellington city waterfront",
+   "image": "Frank Kitts Park and Jervois Quay.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6717968767",
+   "name": "Kau Point Battery",
+   "kind": "landmark",
+   "lat": -41.289806,
+   "lng": 174.831645,
+   "address": null,
+   "website": null,
+   "wikidata": "Q27628427",
+   "wikipedia": "en:Kau Point Battery",
+   "description": "19th-century coast defence battery in Wellington, New Zealand",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1270466258",
+   "name": "Mākara Peak Mountain Bike Park",
+   "kind": "park",
+   "lat": -41.291673,
+   "lng": 174.71064,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15243986",
+   "wikipedia": null,
+   "description": "biking and walking park in New Zealand",
+   "image": "Makara Peak Mountain Bike Park.JPG",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/153924615",
+   "name": "New Zealand Portrait Gallery",
+   "kind": "museum",
+   "lat": -41.283582,
+   "lng": 174.778202,
+   "address": null,
+   "website": "https://nzportraitgallery.org.nz/",
+   "wikidata": "Q28180748",
+   "wikipedia": null,
+   "description": "art museum in Wellington, New Zealand",
+   "image": "Shed 11 Wellington Waterfront.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/153924707",
+   "name": "Waitangi Park",
+   "kind": "park",
+   "lat": -41.2914,
+   "lng": 174.784942,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7960464",
+   "wikipedia": "en:Waitangi Park",
+   "description": "Waitangi Park, a re-modelled recreation-space in Te Aro, Wellington, New Zealand, dates from 2006.",
+   "image": "Waitangi Park, Wellington, New Zealand, March 2007.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/298326576",
+   "name": "William Wakefield Memorial",
+   "kind": "landmark",
+   "lat": -41.300633,
+   "lng": 174.781306,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17067807",
+   "wikipedia": null,
+   "description": "memorial in Wellington, New Zealand",
+   "image": "At the Basin.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26716306",
+   "name": "Martin Luckie Park",
+   "kind": "park",
+   "lat": -41.324534,
+   "lng": 174.778317,
+   "address": null,
+   "website": null,
+   "wikidata": "Q124803314",
+   "wikipedia": null,
+   "description": "park in Berhampore, Wellington, New Zealand",
+   "image": "Martin Luckie Park.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/202880717",
+   "name": "Pukeahu National War Memorial Park",
+   "kind": "park",
+   "lat": -41.298592,
+   "lng": 174.778075,
+   "address": null,
+   "website": null,
+   "wikidata": "Q117350783",
+   "wikipedia": null,
+   "description": "New Zealand memorial park to commemorate World War I",
+   "image": "View from Wellington Carillon 1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10760537167",
+   "name": "2011 Rugby World Cup Monument",
+   "kind": "landmark",
+   "lat": -41.288508,
+   "lng": 174.77816,
+   "address": null,
+   "website": null,
+   "wikidata": "Q139598434",
+   "wikipedia": null,
+   "description": null,
+   "image": "Monument to the All Blacks (27110473072).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5906608090",
+   "name": "AVID gallery",
+   "kind": "gallery",
+   "lat": -41.287454,
+   "lng": 174.776476,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10728579606",
+   "name": "Amritsar Street Lookout",
+   "kind": "viewpoint",
+   "lat": -41.252821,
+   "lng": 174.798733,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/624607128",
+   "name": "Bolton St Cemetery Chapel",
+   "kind": "museum",
+   "lat": -41.279463,
+   "lng": 174.774314,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/252061659",
+   "name": "Cable Car Museum",
+   "kind": "museum",
+   "lat": -41.285245,
+   "lng": 174.767448,
+   "address": "1A Upland Road, 6012",
+   "website": "https://www.museumswellington.org.nz/cable-car-museum/",
+   "wikidata": "Q61066504",
+   "wikipedia": null,
+   "description": "museum in Wellington, New Zealand",
+   "image": "Cable Car Museum, Wellington, New Zealand.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/296293162",
+   "name": "Centennial Lookout",
+   "kind": "viewpoint",
+   "lat": -41.294972,
+   "lng": 174.79817,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/24617372",
+   "name": "Central Park",
+   "kind": "park",
+   "lat": -41.30046,
+   "lng": 174.767021,
+   "address": null,
+   "website": null,
+   "wikidata": "Q113992945",
+   "wikipedia": null,
+   "description": "park in Brooklyn, Wellington, New Zealand",
+   "image": "Curved bridges in Wellington Central Park.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10560847473",
+   "name": "Covenant",
+   "kind": "gallery",
+   "lat": -41.3012,
+   "lng": 174.77962,
+   "address": null,
+   "website": "https://www.facebook.com/@covenantstorenz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/298326385",
+   "name": "Cricket Museum",
+   "kind": "museum",
+   "lat": -41.300047,
+   "lng": 174.779385,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/556390300",
+   "name": "Dorrie Leslie Park",
+   "kind": "park",
+   "lat": -41.338697,
+   "lng": 174.793243,
+   "address": null,
+   "website": null,
+   "wikidata": "Q117768979",
+   "wikipedia": null,
+   "description": "Park in Lyall Bay, Wellington",
+   "image": "DorrieLeslieParkPICT9680.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13605029501",
+   "name": "Enjoy Contemporary Art Space",
+   "kind": "gallery",
+   "lat": -41.292602,
+   "lng": 174.77554,
+   "address": "211 Left Bank, 6011",
+   "website": "https://enjoy.org.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 11:00-18:00; Sa 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1753424821",
+   "name": "Fish Ladder",
+   "kind": "viewpoint",
+   "lat": -41.259789,
+   "lng": 174.769289,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6408866830",
+   "name": "Greta Point Lookout",
+   "kind": "viewpoint",
+   "lat": -41.300468,
+   "lng": 174.805521,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6091848775",
+   "name": "Harbourside Market",
+   "kind": "market",
+   "lat": -41.291251,
+   "lng": 174.783271,
+   "address": "75 Cable Street, 6011",
+   "website": "www.harboursidemarket.co.nz",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su 07:30-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10218649993",
+   "name": "Highland Park Trig Lookout",
+   "kind": "viewpoint",
+   "lat": -41.261879,
+   "lng": 174.781153,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/768675621",
+   "name": "Hoggard Street Reserve",
+   "kind": "park",
+   "lat": -41.315389,
+   "lng": 174.76759,
+   "address": "25 Hoggard Street",
+   "website": null,
+   "wikidata": "Q84091732",
+   "wikipedia": null,
+   "description": "reserve owned by the Wellington City Council",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2628264189",
+   "name": "Holocaust Centre of New Zealand",
+   "kind": "museum",
+   "lat": -41.297189,
+   "lng": 174.772349,
+   "address": "80 Webb Street, 6011",
+   "website": "https://www.holocaustcentre.org.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su-Fr 10:00-13:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "13:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/256795384",
+   "name": "Hungarian Garden",
+   "kind": "park",
+   "lat": -41.275167,
+   "lng": 174.7775,
+   "address": null,
+   "website": null,
+   "wikidata": "Q106615447",
+   "wikipedia": null,
+   "description": "memorial garden in Wellington, New Zealand",
+   "image": "Hungarian park in Wellington 2016-01-25.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5906316003",
+   "name": "James Blackie",
+   "kind": "gallery",
+   "lat": -41.290435,
+   "lng": 174.78597,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/307351536",
+   "name": "James Hector Memorial Lookout",
+   "kind": "viewpoint",
+   "lat": -41.28417,
+   "lng": 174.76323,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/343355722",
+   "name": "Katherine Mansfield House and Garden",
+   "kind": "museum",
+   "lat": -41.270158,
+   "lng": 174.779851,
+   "address": "25 Tinakori Road, 6011",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3659565908",
+   "name": "Kaukau Lookout",
+   "kind": "viewpoint",
+   "lat": -41.234164,
+   "lng": 174.779886,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2685676737",
+   "name": "Khandallah Park Lower Lookout",
+   "kind": "viewpoint",
+   "lat": -41.241474,
+   "lng": 174.789416,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2065718761",
+   "name": "Makara Peak Summit Viewing Deck",
+   "kind": "viewpoint",
+   "lat": -41.288564,
+   "lng": 174.70732,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/783462498",
+   "name": "Moko",
+   "kind": "attraction",
+   "lat": -41.266099,
+   "lng": 174.75248,
+   "address": null,
+   "website": null,
+   "wikidata": "Q107437042",
+   "wikipedia": null,
+   "description": "rimu tree (Dacrydium cupressinum) in Ōtari-Wilton's Bush, Wellington City, New Zealand; Wellington's oldest and tallest tree",
+   "image": "Trunk of 800 year old rimu.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/170485240",
+   "name": "Mount Victoria Lookout",
+   "kind": "viewpoint",
+   "lat": -41.296037,
+   "lng": 174.794325,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1066010977",
+   "name": "Museum of New Zealand Te Papa Tongarewa Archives",
+   "kind": "museum",
+   "lat": -41.298323,
+   "lng": 174.779164,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1933157621",
+   "name": "Newtown Fruit & Vegetables Market",
+   "kind": "market",
+   "lat": -41.311006,
+   "lng": 174.780043,
+   "address": "Mein Street, 6021",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 07:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/8356441101",
+   "name": "O'Neill Marriage Memorial",
+   "kind": "viewpoint",
+   "lat": -41.259336,
+   "lng": 174.780698,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6081979525",
+   "name": "Page",
+   "kind": "gallery",
+   "lat": -41.287328,
+   "lng": 174.776513,
+   "address": null,
+   "website": "https://www.pagegalleries.co.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Th 10:00-17:00; Fr 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/25563334",
+   "name": "Prince of Wales Park",
+   "kind": "park",
+   "lat": -41.307068,
+   "lng": 174.770093,
+   "address": null,
+   "website": null,
+   "wikidata": "Q101409610",
+   "wikipedia": null,
+   "description": "park in Wellington, New Zealand",
+   "image": "Price of Wales Park Wellington 1.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13713510822",
+   "name": "Real Aotearoa",
+   "kind": "gallery",
+   "lat": -41.327703,
+   "lng": 174.800057,
+   "address": "70 Kingsford Smith Street",
+   "website": "https://www.realaotearoa.co.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1166098689",
+   "name": "Reserve Bank Museum",
+   "kind": "museum",
+   "lat": -41.278954,
+   "lng": 174.77533,
+   "address": null,
+   "website": "http://rbnzmuseum.govt.nz",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5919900528",
+   "name": "Robert Heald Gallery",
+   "kind": "gallery",
+   "lat": -41.292402,
+   "lng": 174.775151,
+   "address": "230 Left Bank",
+   "website": "https://roberthealdgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 11:00-17:00; Sa 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11840425128",
+   "name": "Space Place",
+   "kind": "museum",
+   "lat": -41.284324,
+   "lng": 174.767156,
+   "address": null,
+   "website": "https://www.museumswellington.org.nz/space-place/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-We 17:00-22:30; Th 10:00-22:30; Fr-Sa 10:00-23:00; Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1315223913",
+   "name": "Stellin Memorial Park",
+   "kind": "park",
+   "lat": -41.277599,
+   "lng": 174.765071,
+   "address": null,
+   "website": null,
+   "wikidata": "Q113992335",
+   "wikipedia": null,
+   "description": "park and Wellington town belt reserve",
+   "image": "Stellin Memorial Park, Northland, Wellington (New Zealand) in 2025.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7469489833",
+   "name": "Te Ahumairangi Hill Lookout",
+   "kind": "viewpoint",
+   "lat": -41.275012,
+   "lng": 174.765347,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4630968664",
+   "name": "TheFLOW Gallery",
+   "kind": "gallery",
+   "lat": -41.28806,
+   "lng": 174.775519,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8433352757",
+   "name": "Thorndon Lookout",
+   "kind": "viewpoint",
+   "lat": -41.278837,
+   "lng": 174.772156,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12207742100",
+   "name": "Twentysix Art Gallery",
+   "kind": "gallery",
+   "lat": -41.313618,
+   "lng": 174.781292,
+   "address": "26 Constable Street, 6021",
+   "website": "https://twentysix.co.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8682259908",
+   "name": "Victoria University Classics Museum",
+   "kind": "museum",
+   "lat": -41.28868,
+   "lng": 174.768688,
+   "address": "Old Kirk Building Tim Beaglehole Courtyard, Victoria University of Wellington, 6012",
+   "website": "https://www.wgtn.ac.nz/slc/about/our-programmes/classics/classics-museum",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5928017579",
+   "name": "Vincents Art Workshop",
+   "kind": "gallery",
+   "lat": -41.289811,
+   "lng": 174.773819,
+   "address": "148 Willis Street, 6011",
+   "website": "https://vincents.co.nz/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/447755989",
+   "name": "Wind Turbine",
+   "kind": "viewpoint",
+   "lat": -41.310899,
+   "lng": 174.745278,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-09-25T14:15:44Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  },
+  "wikidata": {
+   "fetchedAt": "2026-09-25T14:16:16Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  }
+ }
+}

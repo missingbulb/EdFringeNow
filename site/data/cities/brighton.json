@@ -1,0 +1,1500 @@
+{
+ "v": 1,
+ "city": {
+  "id": "brighton",
+  "name": "Brighton",
+  "country": "GB",
+  "lat": 50.8225,
+  "lng": -0.1372,
+  "timezone": "Europe/London"
+ },
+ "places": [
+  {
+   "id": "osm:way/338139685",
+   "name": "Royal Pavilion",
+   "kind": "attraction",
+   "lat": 50.822393,
+   "lng": -0.137625,
+   "address": "4-5 Pavilion Buildings, BN1 1EE",
+   "website": null,
+   "wikidata": "Q62364",
+   "wikipedia": "en:Royal Pavilion",
+   "description": "former royal residence located in Brighton, England, United Kingdom",
+   "image": "Brighton royal pavilion Qmin.jpg",
+   "notability": 35,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/3451897",
+   "name": "Brighton Pier",
+   "kind": "landmark",
+   "lat": 50.816812,
+   "lng": -0.137042,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2745160",
+   "wikipedia": "en:Brighton Palace Pier",
+   "description": "Pleasure pier in Brighton, UK",
+   "image": "Brighton 2023 3.jpg",
+   "notability": 16,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/96651243",
+   "name": "West Pier",
+   "kind": "landmark",
+   "lat": 50.819001,
+   "lng": -0.152003,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3081510",
+   "wikipedia": "en:West Pier",
+   "description": "derelict pleasure pier in Brighton, UK",
+   "image": "Brighton West Pier, England - Oct 2007.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/232461283",
+   "name": "Brighton Toy and Model Museum",
+   "kind": "museum",
+   "lat": 50.828706,
+   "lng": -0.140946,
+   "address": "52-55 Trafalgar Street, BN1 4EB",
+   "website": "https://www.brightontoymuseum.co.uk/",
+   "wikidata": "Q4967734",
+   "wikipedia": "en:Brighton Toy and Model Museum",
+   "description": "toy museum in Brighton, United Kingdom",
+   "image": "Brighton Toy and Model Museum, wheelchair entrance.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/607374756",
+   "name": "Woodingdean Water Well",
+   "kind": "attraction",
+   "lat": 50.834654,
+   "lng": -0.081822,
+   "address": null,
+   "website": null,
+   "wikidata": "Q42851541",
+   "wikipedia": null,
+   "description": "well in East Sussex",
+   "image": "Woodingdean water well.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/6168019",
+   "name": "Volks Electric Railway",
+   "kind": "attraction",
+   "lat": 50.816707,
+   "lng": -0.121882,
+   "address": null,
+   "website": "https://volksrailway.org.uk/",
+   "wikidata": "Q378512",
+   "wikipedia": "en:Volk's Electric Railway",
+   "description": "narrow gauge heritage railway in Brighton, England",
+   "image": "Volk's Electric Railway - geograph.org.uk - 812005.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/104520966",
+   "name": "Brighton Museum & Art Gallery",
+   "kind": "museum",
+   "lat": 50.823443,
+   "lng": -0.137839,
+   "address": null,
+   "website": "https://www.brighton-hove-rpml.org.uk/Museums/brightonmuseum/",
+   "wikidata": "Q2790574",
+   "wikipedia": "en:Brighton Museum & Art Gallery",
+   "description": "art and history museum in Brighton, East Sussex, England, UK",
+   "image": "Brighton Museum and Art Gallery (IoE Code 480508).jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Tu-Su 10:00-17:00; Mo off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/559471342",
+   "name": "Booth Museum of Natural History",
+   "kind": "museum",
+   "lat": 50.837089,
+   "lng": -0.153052,
+   "address": "194 Dyke Road, BN1 5AA",
+   "website": "https://brightonmuseums.org.uk/booth-museum-of-natural-history/",
+   "wikidata": "Q11854506",
+   "wikipedia": "en:Booth Museum of Natural History",
+   "description": "natural history museum in East Sussex, England",
+   "image": "Booth Museum of Natural History, Dyke Road, Brighton (IoE Code 480614).JPG",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1365280107",
+   "name": "Hove War Memorial",
+   "kind": "landmark",
+   "lat": 50.826831,
+   "lng": -0.168684,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26482745",
+   "wikipedia": null,
+   "description": "war memorial in Hove, East Sussex, England",
+   "image": "Hove War Memorial (04).JPG",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2282612239",
+   "name": "Jubilee Clock Tower",
+   "kind": "landmark",
+   "lat": 50.8237,
+   "lng": -0.143604,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5134787",
+   "wikipedia": "en:Clock Tower, Brighton",
+   "description": "clock tower in Brighton, England",
+   "image": "Clock Tower Brighton 2016-06-05.jpeg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/90634730",
+   "name": "Sea Life Centre",
+   "kind": "zoo",
+   "lat": 50.819597,
+   "lng": -0.135973,
+   "address": "Marine Parade, BN2 1TB",
+   "website": "https://www.sealife.co.uk/Brighton",
+   "wikidata": "Q72769631",
+   "wikipedia": null,
+   "description": "architectural structure in Brighton and Hove, England, UK",
+   "image": "The Brighton Aquarium And Attached Walls And Piers And Railings And Lamps.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/562347564",
+   "name": "Brighton War Memorial",
+   "kind": "landmark",
+   "lat": 50.82138,
+   "lng": -0.136961,
+   "address": "BN1 1EJ",
+   "website": null,
+   "wikidata": "Q26660856",
+   "wikipedia": null,
+   "description": "memorial in Brighton, England",
+   "image": "Brightonwarmemorial.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/111607316",
+   "name": "British Engineerium",
+   "kind": "museum",
+   "lat": 50.844355,
+   "lng": -0.175553,
+   "address": "The Droveway, BN3 7QA",
+   "website": "https://www.thebritishengineerium.com/",
+   "wikidata": "Q4969933",
+   "wikipedia": "en:British Engineerium",
+   "description": "museum in Hove, East Sussex, UK",
+   "image": "British Engineerium (former Boiler House and Engine Room Building), The Droveway, Hove (IoE Code 365677).jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/237087421",
+   "name": "Hove Museum",
+   "kind": "museum",
+   "lat": 50.829706,
+   "lng": -0.181178,
+   "address": "BN3 4AB",
+   "website": null,
+   "wikidata": "Q5917016",
+   "wikipedia": "en:Hove Museum of Creativity",
+   "description": "Museum in Hove, United Kingdom",
+   "image": "Hove Museum and Art Gallery (Brooker Hall), New Church Road, Hove.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Mo,Th-Sa 10:00-17:00; Su 13:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/4164779",
+   "name": "Palmeira Square",
+   "kind": "park",
+   "lat": 50.825806,
+   "lng": -0.163602,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7128179",
+   "wikipedia": "en:Palmeira Square",
+   "description": "19th-century residential development in Hove, East Sussex, UK",
+   "image": "Palmeira Square.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/3809718",
+   "name": "Regency Square",
+   "kind": "park",
+   "lat": 50.822459,
+   "lng": -0.150426,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7308019",
+   "wikipedia": "en:Regency Square, Brighton",
+   "description": "square in Brighton, UK",
+   "image": "Regency Square, Brighton (General View from South).JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/5021742",
+   "name": "Stanmer Park",
+   "kind": "park",
+   "lat": 50.866498,
+   "lng": -0.097288,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7600097",
+   "wikipedia": "en:Stanmer Park",
+   "description": "park northeast of Brighton and Hove, UK",
+   "image": "Great Wood, Stanmer Park - geograph.org.uk - 596434.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/90615739",
+   "name": "Brighton Fishing Museum",
+   "kind": "museum",
+   "lat": 50.819949,
+   "lng": -0.142045,
+   "address": "BN1 1NB",
+   "website": "https://www.fishingquarter.co.uk/fishing-museum",
+   "wikidata": "Q4967641",
+   "wikipedia": "en:Brighton Fishing Museum",
+   "description": "Maritime museum in Brighton, England, United Kingdom",
+   "image": "Brighton Fishing Museum.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-18:15",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:15"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/162572146",
+   "name": "Hollingbury Hill Fort",
+   "kind": "landmark",
+   "lat": 50.855346,
+   "lng": -0.123146,
+   "address": null,
+   "website": null,
+   "wikidata": "Q31117838",
+   "wikipedia": null,
+   "description": "hillfort in East Sussex, England, UK",
+   "image": "Hollingbury Castle.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/150255646",
+   "name": "Ladies Mile Local Nature Reserve",
+   "kind": "park",
+   "lat": 50.867783,
+   "lng": -0.131067,
+   "address": null,
+   "website": null,
+   "wikidata": "Q65121401",
+   "wikipedia": "en:Ladies Mile, Brighton",
+   "description": "park",
+   "image": "Communications mast, Patcham - geograph.org.uk - 62978.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/21429524",
+   "name": "Pepper Pot",
+   "kind": "landmark",
+   "lat": 50.827287,
+   "lng": -0.124812,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7166370",
+   "wikipedia": "en:Pepper Pot, Brighton",
+   "description": "tower in Brighton, East Sussex, England, UK",
+   "image": "The Pepper Pot, Tower Road, Queen's Park, Brighton (NHLE Code 1381031) (April 2013) (3).jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6614845889",
+   "name": "Queen Victoria",
+   "kind": "landmark",
+   "lat": 50.823772,
+   "lng": -0.1366,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26660859",
+   "wikipedia": null,
+   "description": "statue in Brighton, England",
+   "image": "Queenvictoriabrighton.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/24343327",
+   "name": "Queen Victoria Statue",
+   "kind": "landmark",
+   "lat": 50.82463,
+   "lng": -0.169259,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26482744",
+   "wikipedia": null,
+   "description": "statue in Hove, East Sussex, England",
+   "image": "Queen Victoria Statue, Grand Avenue - geograph.org.uk - 302412.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1510317776",
+   "name": "South African War Memorial",
+   "kind": "landmark",
+   "lat": 50.821819,
+   "lng": -0.150706,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26660978",
+   "wikipedia": null,
+   "description": "war memorial in Brighton, England",
+   "image": "South African War Memorial, Regency Square, Brighton (IoE Code 481139).jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/2049042",
+   "name": "Withdean Woods",
+   "kind": "park",
+   "lat": 50.85669,
+   "lng": -0.159738,
+   "address": null,
+   "website": "https://www.brighton-hove.gov.uk/content/leisure-and-libraries/parks-and-green-spaces/nature-reserves",
+   "wikidata": "Q65077619",
+   "wikipedia": null,
+   "description": "park",
+   "image": "Withdean Stadium Woods (geograph 3818901).jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4164782",
+   "name": "Adelaide Crescent",
+   "kind": "park",
+   "lat": 50.824469,
+   "lng": -0.164145,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15056398",
+   "wikipedia": "en:Adelaide Crescent",
+   "description": "mid-19th-century residential development in Hove, England",
+   "image": "Adelaide Crescent (East Side) from Hove Seafront (NHLE Code 1298665) (August 2013).JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/338140802",
+   "name": "George IV",
+   "kind": "landmark",
+   "lat": 50.823392,
+   "lng": -0.136844,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26660598",
+   "wikipedia": null,
+   "description": "statue in Brighton, England",
+   "image": "Statue de Georges IV, Brighton.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4400078",
+   "name": "Hove Park",
+   "kind": "park",
+   "lat": 50.842693,
+   "lng": -0.173149,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5917025",
+   "wikipedia": "en:Hove Park",
+   "description": "park in Brighton and Hove, England",
+   "image": "View across Hove Park, Hove (October 2010).JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/5021004",
+   "name": "Moulsecoomb Wild Park",
+   "kind": "park",
+   "lat": 50.85357,
+   "lng": -0.112764,
+   "address": null,
+   "website": null,
+   "wikidata": "Q8000751",
+   "wikipedia": "en:Wild Park",
+   "description": "park in United Kingdom",
+   "image": "Wild Park - geograph.org.uk - 1326793.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/3991960",
+   "name": "Old Steine Gardens",
+   "kind": "park",
+   "lat": 50.820684,
+   "lng": -0.137411,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7085095",
+   "wikipedia": "en:Old Steine Gardens",
+   "description": "park in Brighton, United Kingdom",
+   "image": "Old Steine, Brighton - geograph.org.uk - 633362.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/96656343",
+   "name": "Peace Statue",
+   "kind": "landmark",
+   "lat": 50.822509,
+   "lng": -0.156927,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26661748",
+   "wikipedia": null,
+   "description": "monument in Brighton/Hove, England",
+   "image": "BrightonSeafront-Statue-01.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/3996497",
+   "name": "Preston Park",
+   "kind": "park",
+   "lat": 50.840243,
+   "lng": -0.146876,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7241959",
+   "wikipedia": null,
+   "description": "municipal park in Brighton and Hove, UK",
+   "image": "Preston Park Bollard.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4321540",
+   "name": "Queen's Park",
+   "kind": "park",
+   "lat": 50.824772,
+   "lng": -0.125618,
+   "address": "BN2 0QU",
+   "website": "https://www.brighton-hove.gov.uk/libraries-leisure-and-arts/parks-and-green-spaces/queens-park",
+   "wikidata": "Q7270059",
+   "wikipedia": null,
+   "description": "park in Brighton, UK",
+   "image": "Entrance gates to Queen's Park, Brighton - geograph.org.uk - 52090.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4000213",
+   "name": "St Ann's Well Gardens",
+   "kind": "park",
+   "lat": 50.829698,
+   "lng": -0.155669,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7586979",
+   "wikipedia": "en:St. Ann's Well Gardens, Hove",
+   "description": "public park in Brighton and Hove, the site of a chalybeate spring",
+   "image": "St. Anns Well Gardens, Hove, East Sussex, England-23June2011.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4040699",
+   "name": "The Level",
+   "kind": "park",
+   "lat": 50.830487,
+   "lng": -0.132761,
+   "address": null,
+   "website": null,
+   "wikidata": "Q88484826",
+   "wikipedia": null,
+   "description": "park in Brighton, UK",
+   "image": "The Level, Brighton.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/516865069",
+   "name": "West Blatchington Windmill",
+   "kind": "museum",
+   "lat": 50.846584,
+   "lng": -0.185151,
+   "address": "Holmes Avenue, BN3 7LE",
+   "website": "https://www.westblatchingtonwindmill.org/",
+   "wikidata": "Q17549494",
+   "wikipedia": null,
+   "description": "windmill in Brighton and Hove, East Sussex, England, UK",
+   "image": "West Blatchington Mill.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "May-Sep Su 14:30-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "05-01",
+       "09-30"
+      ]
+     ],
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "14:30",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/878885045",
+   "name": "Whitehawk Hill Local Nature Reserve",
+   "kind": "park",
+   "lat": 50.829767,
+   "lng": -0.109192,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16897643",
+   "wikipedia": null,
+   "description": "UK nature reserve",
+   "image": "Whitehawk, Brighton - geograph.org.uk - 52042.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/559477925",
+   "name": "19a",
+   "kind": "gallery",
+   "lat": 50.840686,
+   "lng": -0.131681,
+   "address": "19a Hollingdean Terrace, BN1 7HB",
+   "website": "https://19a.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/13676286793",
+   "name": "Department Flea Market",
+   "kind": "market",
+   "lat": 50.831484,
+   "lng": -0.176193,
+   "address": "24-26 Blatchington Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1185788909",
+   "name": "Egremont Gate",
+   "kind": "landmark",
+   "lat": 50.823615,
+   "lng": -0.128278,
+   "address": "West Drive, BN2 0GD",
+   "website": "https://historicengland.org.uk/listing/the-list/list-entry/1380496",
+   "wikidata": "Q26660692",
+   "wikipedia": null,
+   "description": "architectural structure in Brighton and Hove, England, UK",
+   "image": "Egremont Gate And Attached Wall And Railings.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/137526152",
+   "name": "Fabrica",
+   "kind": "gallery",
+   "lat": 50.822752,
+   "lng": -0.142009,
+   "address": "40 Duke Street, BN1 1AG",
+   "website": "https://www.fabrica.org.uk/",
+   "wikidata": "Q133253954",
+   "wikipedia": "en:Holy Trinity Church, Brighton",
+   "description": "art space in Brighton",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11447332744",
+   "name": "Florence Road Market",
+   "kind": "market",
+   "lat": 50.838084,
+   "lng": -0.135795,
+   "address": "Florence Road",
+   "website": "https://www.florenceroadmarket.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 09:30-13:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "13:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4319037890",
+   "name": "Gallery40",
+   "kind": "gallery",
+   "lat": 50.827042,
+   "lng": -0.139849,
+   "address": "40 Gloucester Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/735081861",
+   "name": "Helm",
+   "kind": "gallery",
+   "lat": 50.825467,
+   "lng": -0.138271,
+   "address": "15 North Road, BN1 1YA",
+   "website": "https://helm-gallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-We,Su 10:00-18:00; Th-Sa 10:00-23:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "23:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10926461949",
+   "name": "Hollingdean Wholefoods",
+   "kind": "market",
+   "lat": 50.840748,
+   "lng": -0.131679,
+   "address": "19a Hollingdean Terrace, BN1 7HB",
+   "website": "https://linktr.ee/hollingdeanwholefoods",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1286164915",
+   "name": "Kiplings Gardens",
+   "kind": "garden",
+   "lat": 50.807121,
+   "lng": -0.058862,
+   "address": null,
+   "website": null,
+   "wikidata": "Q62022538",
+   "wikipedia": null,
+   "description": "Kipling Gardens were once part of The Elms in the United Kingdom, where Rudyard Kipling lived from 1897 to 1902.",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6567793522",
+   "name": "Labyrinth",
+   "kind": "gallery",
+   "lat": 50.82178,
+   "lng": -0.139222,
+   "address": "56 Market Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14134762874",
+   "name": "Liberatuon Art Gallery",
+   "kind": "gallery",
+   "lat": 50.821717,
+   "lng": -0.14041,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12546579959",
+   "name": "Old Police Cells Museum",
+   "kind": "museum",
+   "lat": 50.820783,
+   "lng": -0.140199,
+   "address": null,
+   "website": "Q113370209",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13831971636",
+   "name": "Paraquatics",
+   "kind": "zoo",
+   "lat": 50.833855,
+   "lng": -0.190739,
+   "address": "254 Portland Road, BN3 5QU",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/26241484",
+   "name": "Park Street Gate",
+   "kind": "landmark",
+   "lat": 50.823204,
+   "lng": -0.12678,
+   "address": null,
+   "website": null,
+   "wikidata": "Q26660878",
+   "wikipedia": null,
+   "description": "architectural structure in Brighton and Hove, England, UK",
+   "image": "Park Street Gate And Attached Walls And Piers And Railings.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/181524079",
+   "name": "Phileas Foggs World of Adventures",
+   "kind": "attraction",
+   "lat": 50.867988,
+   "lng": -0.122313,
+   "address": "Crowhurst Road, BN1 8AF",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/948986833",
+   "name": "Phoenix Art Space",
+   "kind": "gallery",
+   "lat": 50.828812,
+   "lng": -0.133788,
+   "address": "10–14 Waterloo Place, BN2 9NB",
+   "website": "https://www.phoenixbrighton.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6610830092",
+   "name": "Pier Viewpoint",
+   "kind": "viewpoint",
+   "lat": 50.814713,
+   "lng": -0.137653,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/178538465",
+   "name": "Preston Manor",
+   "kind": "museum",
+   "lat": 50.842577,
+   "lng": -0.150243,
+   "address": "Preston Drove, BN1 6SD",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13120919625",
+   "name": "Rottingdean Museum",
+   "kind": "museum",
+   "lat": 50.805822,
+   "lng": -0.057359,
+   "address": "The Green",
+   "website": "https://www.rottingdeanheritage.org.uk/the-grange-museum/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 10:00-16:00; Su 13:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5310273056",
+   "name": "Rottingdean War Memorial",
+   "kind": "landmark",
+   "lat": 50.806521,
+   "lng": -0.058243,
+   "address": null,
+   "website": null,
+   "wikidata": "Q83191273",
+   "wikipedia": null,
+   "description": "war memorial in the UK",
+   "image": "Rottingdean war memorial.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8596837920",
+   "name": "Safe",
+   "kind": "gallery",
+   "lat": 50.817384,
+   "lng": -0.117241,
+   "address": "65 St Georges Road, BN2 1EF",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/965366311",
+   "name": "Secret Garden",
+   "kind": "garden",
+   "lat": 50.817545,
+   "lng": -0.108203,
+   "address": null,
+   "website": "https://www.secretgardenkemptown.co.uk/",
+   "wikidata": "Q26676469",
+   "wikipedia": null,
+   "description": "building in Brighton and Hove, England, UK",
+   "image": "The Secret Garden, Brighton 2023-05-20.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1747683834",
+   "name": "Snoopers Paradise",
+   "kind": "market",
+   "lat": 50.826288,
+   "lng": -0.138701,
+   "address": "7-8 Kensington Gardens, BN1 4AL",
+   "website": "https://snoopersparadise.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-18:00; PH,Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1172868955",
+   "name": "Stanmer Craft Museum",
+   "kind": "museum",
+   "lat": 50.869307,
+   "lng": -0.103497,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7822137422",
+   "name": "Starling Studio",
+   "kind": "gallery",
+   "lat": 50.8417,
+   "lng": -0.141456,
+   "address": "107 Havelock Road, BN1 6GL",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6717873385",
+   "name": "The Lookout",
+   "kind": "viewpoint",
+   "lat": 50.82361,
+   "lng": -0.115181,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/42130315",
+   "name": "The Open Market",
+   "kind": "market",
+   "lat": 50.831463,
+   "lng": -0.135149,
+   "address": "Marshalls Row, BN1 4JU",
+   "website": "https://brightonopenmarket.co.uk/",
+   "wikidata": "Q115663105",
+   "wikipedia": null,
+   "description": "wholesale and retail market in Brighton, UK",
+   "image": "The Open Market, Brighton.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mo-Fr 07:00-19:00; Sa 07:00-17:00; Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5581301821",
+   "name": "Tom's Place",
+   "kind": "viewpoint",
+   "lat": 50.824364,
+   "lng": -0.116165,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1102280728",
+   "name": "Upper Gardner Street Saturday Market",
+   "kind": "market",
+   "lat": 50.826358,
+   "lng": -0.139197,
+   "address": "Upper Gardner Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 07:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1156572631",
+   "name": "Upside Down House",
+   "kind": "attraction",
+   "lat": 50.82153,
+   "lng": -0.152116,
+   "address": "42-43 Kings Road Arches, BN1 2LN",
+   "website": null,
+   "wikidata": "Q121030569",
+   "wikipedia": null,
+   "description": "building in Brighton, Brighton and Hove, East Sussex, England",
+   "image": "Upside Down House, Brighton Seafront.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-09-25T14:05:56Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  },
+  "wikidata": {
+   "fetchedAt": "2026-09-25T14:06:07Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  }
+ }
+}

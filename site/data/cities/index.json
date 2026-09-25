@@ -1,0 +1,65 @@
+{
+ "v": 1,
+ "cities": [
+  {
+   "id": "auckland",
+   "name": "Auckland",
+   "country": "NZ",
+   "lat": -36.8485,
+   "lng": 174.7633,
+   "timezone": "Pacific/Auckland",
+   "dataUrl": "/data/cities/auckland.json",
+   "places": 218
+  },
+  {
+   "id": "brighton",
+   "name": "Brighton",
+   "country": "GB",
+   "lat": 50.8225,
+   "lng": -0.1372,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/brighton.json",
+   "places": 67
+  },
+  {
+   "id": "edinburgh",
+   "name": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/edinburgh.json",
+   "places": 195
+  },
+  {
+   "id": "leicester",
+   "name": "Leicester",
+   "country": "GB",
+   "lat": 52.6365,
+   "lng": -1.1339,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/leicester.json",
+   "places": 42
+  },
+  {
+   "id": "melbourne",
+   "name": "Melbourne",
+   "country": "AU",
+   "lat": -37.815,
+   "lng": 144.9668,
+   "timezone": "Australia/Melbourne",
+   "dataUrl": "/data/cities/melbourne.json",
+   "places": 229
+  },
+  {
+   "id": "wellington",
+   "name": "Wellington",
+   "country": "NZ",
+   "lat": -41.2865,
+   "lng": 174.7762,
+   "timezone": "Pacific/Auckland",
+   "dataUrl": "/data/cities/wellington.json",
+   "places": 70
+  }
+ ]
+}

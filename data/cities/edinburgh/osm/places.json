@@ -1,0 +1,2495 @@
+{
+ "places": [
+  {
+   "id": "node/10000355057",
+   "lat": 55.938236,
+   "lng": -3.232626,
+   "tags": {
+    "name": "Heart of Midlothian Museum",
+    "tourism": "museum",
+    "website": "https://www.heartsfc.co.uk/tickets-and-hospitality/tours/hearts-museum",
+    "addr:street": "Tynecastle Terrace"
+   }
+  },
+  {
+   "id": "node/10106526101",
+   "lat": 55.981261,
+   "lng": -3.177046,
+   "tags": {
+    "name": "Image Collective",
+    "tourism": "gallery",
+    "website": "https://www.theimagecollective.co.uk",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10106526105",
+   "lat": 55.980515,
+   "lng": -3.178417,
+   "tags": {
+    "name": "A-Team",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10199734008",
+   "lat": 55.980728,
+   "lng": -3.223812,
+   "tags": {
+    "name": "HMS Claverhouse",
+    "historic": "memorial",
+    "website": "https://www.nationaltransporttrust.org.uk/heritage-sites/heritage-detail/granton---burntisland-train-ferry?lr=1",
+    "wikidata": "Q5631892",
+    "wikipedia": "en:HMS Claverhouse"
+   }
+  },
+  {
+   "id": "node/10199790844",
+   "lat": 55.980421,
+   "lng": -3.232618,
+   "tags": {
+    "name": "Madelvic Car Factory",
+    "historic": "memorial",
+    "website": "https://www.nationaltransporttrust.org.uk/heritage-sites/heritage-detail/madelvic-motor-factory?lr=1",
+    "wikidata": "Q15243451",
+    "wikipedia": "en:Madelvic Motor Carriage Company"
+   }
+  },
+  {
+   "id": "node/10537342908",
+   "lat": 55.964656,
+   "lng": -3.174342,
+   "tags": {
+    "name": "Trevor Jones Art",
+    "tourism": "gallery",
+    "website": "https://www.trevorjonesart.com/",
+    "addr:housenumber": "32 - 36",
+    "addr:street": "Dalmeny Street",
+    "addr:postcode": "EH6 8RG",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10765920705",
+   "lat": 55.944633,
+   "lng": -3.159285,
+   "tags": {
+    "name": "Hike to Arthurs Seat",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11251068260",
+   "lat": 55.956488,
+   "lng": -3.199197,
+   "tags": {
+    "name": "The Scottish Gallery",
+    "tourism": "gallery",
+    "website": "https://scottish-gallery.co.uk/",
+    "addr:housenumber": "16",
+    "addr:street": "Dundas Street",
+    "addr:postcode": "EH3 6HZ"
+   }
+  },
+  {
+   "id": "node/1145319664",
+   "lat": 55.954186,
+   "lng": -3.10872,
+   "tags": {
+    "name": "Prince Of Wales Fountain",
+    "tourism": "attraction",
+    "amenity": "fountain",
+    "historic": "memorial",
+    "wikidata": "Q17811473",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11503362946",
+   "lat": 55.955663,
+   "lng": -3.202238,
+   "tags": {
+    "name": "Close",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 10:00-18:00",
+    "website": "https://www.gallery-close.com/",
+    "addr:housenumber": "4B",
+    "addr:street": "Howe Street",
+    "addr:postcode": "EH3 6TD"
+   }
+  },
+  {
+   "id": "node/11665348379",
+   "lat": 55.949535,
+   "lng": -3.21167,
+   "tags": {
+    "name": "A Home for Photography",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 12:00-18:00",
+    "addr:housenumber": "6",
+    "addr:street": "William Street"
+   }
+  },
+  {
+   "id": "node/12085784974",
+   "lat": 55.943955,
+   "lng": -3.181929,
+   "tags": {
+    "name": "White Space",
+    "tourism": "gallery",
+    "addr:housenumber": "76",
+    "addr:street": "East Crosscauseway",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12207082837",
+   "lat": 55.960224,
+   "lng": -3.17981,
+   "tags": {
+    "name": "Unlimited Corporation",
+    "tourism": "gallery",
+    "website": "https://unlimitedcorporation.org/",
+    "addr:housenumber": "77",
+    "addr:street": "Brunswick Street"
+   }
+  },
+  {
+   "id": "node/12214701901",
+   "lat": 55.98309,
+   "lng": -3.242743,
+   "tags": {
+    "name": "The Pitt",
+    "amenity": "marketplace",
+    "building": "warehouse",
+    "website": "https://www.thepitt.co.uk/",
+    "addr:housenumber": "20",
+    "addr:street": "West Shore Road",
+    "addr:postcode": "EH5 1QD",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12223010635",
+   "lat": 55.954217,
+   "lng": -3.193153,
+   "tags": {
+    "name": "Melville's Monument",
+    "historic": "monument",
+    "wikidata": "Q17570686",
+    "wikipedia": "en:Melville Monument"
+   }
+  },
+  {
+   "id": "node/1241883633",
+   "lat": 55.981377,
+   "lng": -3.177345,
+   "tags": {
+    "name": "Agnes-Moon Art",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/1241884003",
+   "lat": 55.980888,
+   "lng": -3.178245,
+   "tags": {
+    "name": "The Spirit of Leithers",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12552254532",
+   "lat": 55.923959,
+   "lng": -3.174618,
+   "tags": {
+    "name": "Cockburn Geological Museum",
+    "tourism": "museum",
+    "website": "https://www.ed.ac.uk/visit/museums-galleries/geology",
+    "wikidata": "Q59278940"
+   }
+  },
+  {
+   "id": "node/12670410517",
+   "lat": 55.946127,
+   "lng": -3.206505,
+   "tags": {
+    "name": "Scott Lawrie Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Tu,Su off; We-Sa 11:00-18:00",
+    "website": "https://www.scottlawrie.com/",
+    "addr:housenumber": "2",
+    "addr:street": "Chuckie Pend"
+   }
+  },
+  {
+   "id": "node/1356336502",
+   "lat": 55.948116,
+   "lng": -3.20015,
+   "tags": {
+    "name": "Prisoners of War Museum",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/13564998178",
+   "lat": 55.951947,
+   "lng": -3.18882,
+   "tags": {
+    "name": "The Jellicoe Express -- 1917 - 2017",
+    "historic": "memorial",
+    "wikidata": "Q693105",
+    "wikipedia": "en:Highland Railway"
+   }
+  },
+  {
+   "id": "node/1484679632",
+   "lat": 55.956036,
+   "lng": -3.182486,
+   "tags": {
+    "name": "North Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1784442037",
+   "lat": 55.950218,
+   "lng": -3.201984,
+   "tags": {
+    "name": "Scottish Norwegian Training Areas Memorial",
+    "historic": "memorial",
+    "wikidata": "Q114167541"
+   }
+  },
+  {
+   "id": "node/1784442040",
+   "lat": 55.95004,
+   "lng": -3.202456,
+   "tags": {
+    "name": "Robert Louis Stevenson Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17569970"
+   }
+  },
+  {
+   "id": "node/1982074287",
+   "lat": 55.945911,
+   "lng": -3.193054,
+   "tags": {
+    "name": "War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17794974"
+   }
+  },
+  {
+   "id": "node/2112878976",
+   "lat": 55.949552,
+   "lng": -3.192443,
+   "tags": {
+    "name": "David Hume Memorial",
+    "historic": "memorial",
+    "wikidata": "Q55842333"
+   }
+  },
+  {
+   "id": "node/2131101051",
+   "lat": 55.9629,
+   "lng": -3.2004,
+   "tags": {
+    "name": "The Atelier Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Fr 10:00-18:00; Sa-Su 11:00-15:00",
+    "website": "https://www.theateliergallery.co.uk/",
+    "addr:housenumber": "5",
+    "addr:street": "Howard Street",
+    "addr:postcode": "EH3 5JP"
+   }
+  },
+  {
+   "id": "node/2265831081",
+   "lat": 55.942015,
+   "lng": -3.200308,
+   "tags": {
+    "name": "Masons' Pillars",
+    "historic": "monument",
+    "wikidata": "Q17791411"
+   }
+  },
+  {
+   "id": "node/2274485025",
+   "lat": 55.950126,
+   "lng": -3.194538,
+   "tags": {
+    "name": "Black Watch Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17569383"
+   }
+  },
+  {
+   "id": "node/2298043778",
+   "lat": 55.958059,
+   "lng": -3.20934,
+   "tags": {
+    "name": "Saorsa Art Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Th-Su 12:00-16:00",
+    "website": "https://www.saorsa-art.com/",
+    "addr:housenumber": "8",
+    "addr:street": "Deanhaugh Street",
+    "addr:postcode": "EH4 1LY",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2333922708",
+   "lat": 55.956968,
+   "lng": -3.187547,
+   "tags": {
+    "name": "Yaniv Edery Gallery",
+    "tourism": "gallery",
+    "addr:housenumber": "4",
+    "addr:street": "Picardy Place",
+    "addr:postcode": "EH1 3JT"
+   }
+  },
+  {
+   "id": "node/2338447599",
+   "lat": 55.957629,
+   "lng": -3.208443,
+   "tags": {
+    "name": "Stockbridge Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Su 10:00-17:00",
+    "website": "https://www.stockbridgemarket.com/",
+    "addr:street": "Saunders Street",
+    "addr:postcode": "EH3 6TQ"
+   }
+  },
+  {
+   "id": "node/2466426304",
+   "lat": 55.952462,
+   "lng": -3.192736,
+   "tags": {
+    "name": "David Livingstone Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17570753"
+   }
+  },
+  {
+   "id": "node/258016781",
+   "lat": 55.946922,
+   "lng": -3.191304,
+   "tags": {
+    "name": "Greyfriars Bobby",
+    "tourism": "attraction;artwork",
+    "amenity": "fountain",
+    "historic": "memorial",
+    "website": "https://greyfriarsbobby.org/",
+    "wikidata": "Q17570789",
+    "wikipedia": "en:Greyfriars Bobby",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/259860021",
+   "lat": 55.954119,
+   "lng": -3.180849,
+   "tags": {
+    "name": "South Viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/268408103",
+   "lat": 55.949029,
+   "lng": -3.195604,
+   "tags": {
+    "name": "Camera Obscura & World of Illusions",
+    "tourism": "attraction",
+    "amenity": "camera_obscura",
+    "opening_hours": "08:00-22:00",
+    "website": "https://www.camera-obscura.co.uk/",
+    "wikidata": "Q4211494",
+    "wikipedia": "en:Camera Obscura, Edinburgh",
+    "addr:housenumber": "549",
+    "addr:street": "Castlehill",
+    "addr:postcode": "EH1 2ND",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/283456724",
+   "lat": 55.947711,
+   "lng": -3.263952,
+   "tags": {
+    "name": "Rest and Be Thankful",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2836251939",
+   "lat": 55.948882,
+   "lng": -3.196423,
+   "tags": {
+    "name": "Witches' Well",
+    "amenity": "fountain",
+    "historic": "memorial",
+    "wikidata": "Q95568172"
+   }
+  },
+  {
+   "id": "node/2853530751",
+   "lat": 55.952488,
+   "lng": -3.208214,
+   "tags": {
+    "name": "Georgian House",
+    "tourism": "attraction",
+    "historic": "house",
+    "website": "https://www.nts.org.uk/Property/Georgian-House/",
+    "wikidata": "Q7736202",
+    "wikipedia": "en:The Georgian House, Edinburgh",
+    "addr:housenumber": "7",
+    "addr:street": "Charlotte Square"
+   }
+  },
+  {
+   "id": "node/291214494",
+   "lat": 55.947067,
+   "lng": -3.187772,
+   "tags": {
+    "name": "Talbot Rice Gallery",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 10:00-17:00",
+    "website": "https://www.trg.ed.ac.uk/",
+    "wikidata": "Q7679039",
+    "wikipedia": "en:Talbot Rice Gallery",
+    "addr:street": "South Bridge",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2914760336",
+   "lat": 55.948743,
+   "lng": -3.195875,
+   "tags": {
+    "name": "The Scotch Whisky Experience",
+    "tourism": "attraction",
+    "website": "https://www.scotchwhiskyexperience.co.uk/",
+    "wikidata": "Q4526278",
+    "wikipedia": "en:Scotch Whisky Experience",
+    "addr:housenumber": "354",
+    "addr:street": "Castlehill",
+    "addr:postcode": "EH1 2NE",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2934518744",
+   "lat": 55.9503,
+   "lng": -3.205651,
+   "tags": {
+    "name": "Dean Ramsay Memorial",
+    "historic": "memorial",
+    "wikidata": "Q114153227"
+   }
+  },
+  {
+   "id": "node/2934518745",
+   "lat": 55.949493,
+   "lng": -3.191713,
+   "tags": {
+    "name": "Fifth Duke of Buccleuch Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17570712"
+   }
+  },
+  {
+   "id": "node/2934518746",
+   "lat": 55.949636,
+   "lng": -3.195078,
+   "tags": {
+    "name": "John Knox Memorial",
+    "historic": "memorial",
+    "wikidata": "Q77776488"
+   }
+  },
+  {
+   "id": "node/2934543737",
+   "lat": 55.950677,
+   "lng": -3.190214,
+   "tags": {
+    "name": "Stills",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 11:00-17:00",
+    "website": "https://www.stills.org/",
+    "addr:housenumber": "23",
+    "addr:street": "Cockburn Street",
+    "addr:postcode": "EH1 1BP",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2940854453",
+   "lat": 55.94923,
+   "lng": -3.190517,
+   "tags": {
+    "name": "Charles II of England",
+    "historic": "memorial",
+    "wikidata": "Q17570718"
+   }
+  },
+  {
+   "id": "node/2955931322",
+   "lat": 55.95033,
+   "lng": -3.185507,
+   "tags": {
+    "name": "Museum of Childhood",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.edinburghmuseums.org.uk/venue/museum-childhood",
+    "wikidata": "Q15122172",
+    "wikipedia": "en:Museum of Childhood (Edinburgh)",
+    "addr:housenumber": "42",
+    "addr:street": "High Street",
+    "addr:postcode": "EH1 1TG",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2973367148",
+   "lat": 55.951078,
+   "lng": -3.190878,
+   "tags": {
+    "name": "The Edinburgh Dungeon",
+    "tourism": "attraction",
+    "website": "https://www.thedungeons.com/edinburgh/en/",
+    "wikidata": "Q55076772",
+    "addr:housenumber": "31",
+    "addr:street": "Market Street",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2977624480",
+   "lat": 55.950674,
+   "lng": -3.185828,
+   "tags": {
+    "name": "Museum of Magic, Fortune-Telling and Witchcraft",
+    "tourism": "museum",
+    "website": "https://www.museummfw.com/"
+   }
+  },
+  {
+   "id": "node/3046175814",
+   "lat": 55.947391,
+   "lng": -3.189792,
+   "tags": {
+    "name": "William Chambers Statue",
+    "historic": "memorial",
+    "wikidata": "Q17813191",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3072411821",
+   "lat": 55.946767,
+   "lng": -3.18468,
+   "tags": {
+    "name": "Surgeons' Hall Museums",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://museum.rcsed.ac.uk/",
+    "addr:street": "Nicolson Street",
+    "addr:postcode": "EH8 9DW",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3103808183",
+   "lat": 55.95422,
+   "lng": -3.201469,
+   "tags": {
+    "name": "Watson Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Sa 11:00-18:00;Su 12:00-17:00",
+    "website": "https://www.watsongallery.co.uk/",
+    "addr:housenumber": "39",
+    "addr:street": "Queen Street",
+    "addr:postcode": "EH2 3NH",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3152958383",
+   "lat": 55.970171,
+   "lng": -3.170069,
+   "tags": {
+    "name": "The Conservation Studio",
+    "tourism": "gallery",
+    "website": "https://www.conservation-studio.co.uk/",
+    "addr:housenumber": "27",
+    "addr:street": "Duke Street",
+    "addr:postcode": "EH6 8HH",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3237281852",
+   "lat": 55.939398,
+   "lng": -3.194842,
+   "tags": {
+    "name": "KB Smile Studio",
+    "tourism": "gallery",
+    "addr:housenumber": "3",
+    "addr:street": "Marchmont Road"
+   }
+  },
+  {
+   "id": "node/3246039646",
+   "lat": 55.94854,
+   "lng": -3.212283,
+   "tags": {
+    "name": "William Gladstone Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17570728"
+   }
+  },
+  {
+   "id": "node/3249160727",
+   "lat": 55.976054,
+   "lng": -3.174313,
+   "tags": {
+    "name": "Coburg House Studios",
+    "tourism": "gallery",
+    "opening_hours": "Sa-Su 11:00-16:00",
+    "addr:housenumber": "15",
+    "addr:street": "Coburg Street",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3342159195",
+   "lat": 55.952983,
+   "lng": -3.20039,
+   "tags": {
+    "name": "William Pitt Statue",
+    "historic": "memorial",
+    "wikidata": "Q17570760"
+   }
+  },
+  {
+   "id": "node/351117096",
+   "lat": 55.902324,
+   "lng": -3.213189,
+   "tags": {
+    "name": "Caiy Stane",
+    "historic": "archaeological_site",
+    "wikidata": "Q56661562"
+   }
+  },
+  {
+   "id": "node/364446028",
+   "lat": 55.955493,
+   "lng": -3.112744,
+   "tags": {
+    "name": "The Tower",
+    "historic": "monument",
+    "wikidata": "Q17809584"
+   }
+  },
+  {
+   "id": "node/36581493",
+   "lat": 55.949658,
+   "lng": -3.21394,
+   "tags": {
+    "name": "Robert Viscount Melville",
+    "historic": "monument",
+    "wikidata": "Q17570757"
+   }
+  },
+  {
+   "id": "node/3798302141",
+   "lat": 55.952766,
+   "lng": -3.191766,
+   "tags": {
+    "name": "Photo trail",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3974215891",
+   "lat": 55.9752,
+   "lng": -3.179327,
+   "tags": {
+    "name": "Embassy",
+    "tourism": "gallery",
+    "opening_hours": "\"Open for scheduled events\"",
+    "addr:housenumber": "7",
+    "addr:street": "Ferry Road",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/3975619625",
+   "lat": 55.931216,
+   "lng": -3.209819,
+   "tags": {
+    "name": "Bore Stone",
+    "historic": "memorial",
+    "wikidata": "Q56631513"
+   }
+  },
+  {
+   "id": "node/4327957218",
+   "lat": 55.947584,
+   "lng": -3.188931,
+   "tags": {
+    "name": "W.H. Playfair Statue",
+    "historic": "memorial",
+    "wikidata": "Q66602371"
+   }
+  },
+  {
+   "id": "node/442615638",
+   "lat": 55.946024,
+   "lng": -3.185398,
+   "tags": {
+    "name": "Brassfounders Column",
+    "historic": "monument",
+    "wikidata": "Q17812523"
+   }
+  },
+  {
+   "id": "node/4437637818",
+   "lat": 55.948897,
+   "lng": -3.201715,
+   "tags": {
+    "name": "Earl Haig",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q17813234"
+   }
+  },
+  {
+   "id": "node/4462104374",
+   "lat": 55.952111,
+   "lng": -3.170649,
+   "tags": {
+    "name": "Wentworth Elm",
+    "tourism": "attraction",
+    "wikidata": "Q7879358",
+    "wikipedia": "en:Ulmus × hollandica 'Wentworthii Pendula'"
+   }
+  },
+  {
+   "id": "node/4462105418",
+   "lat": 55.953572,
+   "lng": -3.171402,
+   "tags": {
+    "name": "Wentworth Elm",
+    "tourism": "attraction",
+    "wikidata": "Q7879358",
+    "wikipedia": "en:Ulmus × hollandica 'Wentworthii Pendula'"
+   }
+  },
+  {
+   "id": "node/4595156763",
+   "lat": 55.93416,
+   "lng": -3.118937,
+   "tags": {
+    "name": "Wauchope Memorial",
+    "historic": "memorial",
+    "wikidata": "Q114167953"
+   }
+  },
+  {
+   "id": "node/4618730690",
+   "lat": 55.949691,
+   "lng": -3.193742,
+   "tags": {
+    "name": "Writers' Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.edinburghmuseums.org.uk/venue/writers-museum",
+    "wikidata": "Q8038444",
+    "wikipedia": "en:Writers' Museum",
+    "addr:street": "Lady Stair's Close",
+    "addr:postcode": "EH1 2PA",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4618730691",
+   "lat": 55.949429,
+   "lng": -3.193685,
+   "tags": {
+    "name": "Gladstone's Land",
+    "tourism": "attraction",
+    "historic": "house",
+    "website": "https://www.nts.org.uk/visit/places/gladstones-land",
+    "wikidata": "Q5566312",
+    "addr:housenumber": "477B",
+    "addr:street": "Lawnmarket",
+    "addr:postcode": "EH1 2NT",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4618730716",
+   "lat": 55.950188,
+   "lng": -3.193248,
+   "tags": {
+    "name": "Museum on the Mound",
+    "tourism": "museum",
+    "opening_hours": "Mo,Su off; Tu-Fr 10:00-17:00; Sa,PH 13:00-17:00",
+    "website": "https://www.museumonthemound.com/",
+    "wikidata": "Q6941127",
+    "wikipedia": "en:Museum on the Mound",
+    "addr:street": "The Mound",
+    "addr:postcode": "EH1 1YZ",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4625806993",
+   "lat": 55.957698,
+   "lng": -3.192734,
+   "tags": {
+    "name": "Museum Collections Centre",
+    "tourism": "museum",
+    "opening_hours": "Tu[1] 14:00+ || \"by appointment\"",
+    "website": "https://www.edinburghmuseums.org.uk/Venues/Museum-Collections-Centre",
+    "addr:housenumber": "10",
+    "addr:street": "Broughton Market",
+    "addr:postcode": "EH3 6NU",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4680041494",
+   "lat": 55.949984,
+   "lng": -3.187737,
+   "tags": {
+    "name": "Tron Kirk Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "10:00-18:00",
+    "website": "https://www.scottishdesignexchange.com/pages/tron-kirk-market-royal-mile",
+    "addr:housenumber": "122",
+    "addr:street": "High Street",
+    "addr:postcode": "EH1 1QS"
+   }
+  },
+  {
+   "id": "node/499991519",
+   "lat": 55.948206,
+   "lng": -3.184841,
+   "tags": {
+    "name": "Dovecot Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Sa 10:00-17:00; Su off",
+    "website": "https://dovecotstudios.com/",
+    "addr:housenumber": "10",
+    "addr:street": "Infirmary Street",
+    "addr:postcode": "EH1 1LT",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/5002102709",
+   "lat": 55.949141,
+   "lng": -3.200915,
+   "tags": {
+    "name": "One O'Clock Gun Exhibition",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5025640452",
+   "lat": 55.944852,
+   "lng": -3.190104,
+   "tags": {
+    "name": "Anatomical Museum",
+    "tourism": "museum",
+    "opening_hours": "Sa[-1] 10:00-16:00; Jun-Jul off",
+    "website": "https://www.ed.ac.uk/biomedical-sciences/anatomy/anatomical-museum",
+    "wikidata": "Q26986300"
+   }
+  },
+  {
+   "id": "node/505014478",
+   "lat": 55.948788,
+   "lng": -3.200157,
+   "tags": {
+    "name": "Mons Meg",
+    "tourism": "attraction",
+    "historic": "cannon",
+    "website": "https://www.edinburghcastle.scot/see-and-do/highlights/mons-meg",
+    "wikidata": "Q952412",
+    "wikipedia": "en:Mons Meg"
+   }
+  },
+  {
+   "id": "node/5110780767",
+   "lat": 55.945338,
+   "lng": -3.188262,
+   "tags": {
+    "name": "McEwan Lantern Pillar",
+    "historic": "memorial",
+    "website": "https://canmore.org.uk/site/125296/edinburgh-teviot-place-bristo-square-mcewan-lantern-pillar",
+    "wikidata": "Q17791706"
+   }
+  },
+  {
+   "id": "node/5337269693",
+   "lat": 55.94882,
+   "lng": -3.19813,
+   "tags": {
+    "name": "72nd Highlanders Memorial",
+    "historic": "memorial",
+    "wikidata": "Q77776441"
+   }
+  },
+  {
+   "id": "node/5337269695",
+   "lat": 55.948885,
+   "lng": -3.19785,
+   "tags": {
+    "name": "Frederick, Duke of York Statue",
+    "historic": "memorial",
+    "wikidata": "Q17791177"
+   }
+  },
+  {
+   "id": "node/5337269696",
+   "lat": 55.948927,
+   "lng": -3.197592,
+   "tags": {
+    "name": "Scottish Horse Memorial",
+    "historic": "memorial",
+    "wikidata": "Q77776444"
+   }
+  },
+  {
+   "id": "node/5337269697",
+   "lat": 55.948921,
+   "lng": -3.197396,
+   "tags": {
+    "name": "Colonel Mackenzie Statue",
+    "historic": "memorial",
+    "wikidata": "Q17795478"
+   }
+  },
+  {
+   "id": "node/5337269698",
+   "lat": 55.948961,
+   "lng": -3.196917,
+   "tags": {
+    "name": "78th Highlanders Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17795306"
+   }
+  },
+  {
+   "id": "node/538531426",
+   "lat": 55.947988,
+   "lng": -3.194474,
+   "tags": {
+    "name": "West Bow Well",
+    "tourism": "attraction",
+    "amenity": "fountain",
+    "wikidata": "Q17570786"
+   }
+  },
+  {
+   "id": "node/5388332449",
+   "lat": 55.976868,
+   "lng": -3.171536,
+   "tags": {
+    "name": "Leith Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 10:00-16:00",
+    "addr:street": "Dock Place",
+    "addr:postcode": "EH6 6LU"
+   }
+  },
+  {
+   "id": "node/5629281877",
+   "lat": 55.947498,
+   "lng": -3.196027,
+   "tags": {
+    "name": "Grassmarket Market",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 10:00-17:00",
+    "website": "https://www.stockbridgemarket.com/grassmarket.html",
+    "addr:street": "Grassmarket",
+    "addr:postcode": "EH1 2JR"
+   }
+  },
+  {
+   "id": "node/574304142",
+   "lat": 55.947763,
+   "lng": -3.203553,
+   "tags": {
+    "name": "Edinburgh Farmers' Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:00-14:00",
+    "website": "https://www.edinburghfarmersmarket.co.uk/"
+   }
+  },
+  {
+   "id": "node/5856860528",
+   "lat": 55.957844,
+   "lng": -3.191354,
+   "tags": {
+    "name": "Ingleby Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-17:00; Aug Mo-Sa 11:00-17:00",
+    "website": "https://www.inglebygallery.com/",
+    "addr:housenumber": "33",
+    "addr:street": "Barony Street",
+    "addr:postcode": "EH3 6NX",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6150533301",
+   "lat": 55.941928,
+   "lng": -3.200558,
+   "tags": {
+    "name": "Masons' Pillars",
+    "historic": "monument",
+    "wikidata": "Q17791411"
+   }
+  },
+  {
+   "id": "node/6587070940",
+   "lat": 55.924806,
+   "lng": -3.18177,
+   "tags": {
+    "name": "Harrison Memorial Arch",
+    "historic": "memorial",
+    "wikidata": "Q17805255"
+   }
+  },
+  {
+   "id": "node/6715804556",
+   "lat": 55.948085,
+   "lng": -3.20088,
+   "tags": {
+    "name": "The Royal Scots Dragoon Guards Museum",
+    "tourism": "museum",
+    "website": "https://www.scotsdgmuseum.com/",
+    "wikidata": "Q47486844",
+    "wikipedia": "en:Royal Scots Dragoon Guards Museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/708975728",
+   "lat": 55.95246,
+   "lng": -3.203511,
+   "tags": {
+    "name": "Dr Thomas Chalmers Statue",
+    "historic": "memorial",
+    "wikidata": "Q17570715"
+   }
+  },
+  {
+   "id": "node/708975731",
+   "lat": 55.953518,
+   "lng": -3.197258,
+   "tags": {
+    "name": "George IV statue",
+    "historic": "memorial",
+    "wikidata": "Q17570721"
+   }
+  },
+  {
+   "id": "node/7160189298",
+   "lat": 55.971975,
+   "lng": -3.163259,
+   "tags": {
+    "name": "John Rattray Statue",
+    "historic": "memorial",
+    "wikidata": "Q95388920"
+   }
+  },
+  {
+   "id": "node/727348494",
+   "lat": 55.959027,
+   "lng": -3.210572,
+   "tags": {
+    "name": "Studio Bizio",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Sa 10:00-17:30",
+    "website": "https://www.studiobizio.com/",
+    "addr:housenumber": "20A",
+    "addr:street": "Raeburn Place",
+    "addr:postcode": "EH4 1HN",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/799920963",
+   "lat": 55.947287,
+   "lng": -3.270383,
+   "tags": {
+    "name": "Hilltop",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/8437613729",
+   "lat": 55.971689,
+   "lng": -3.190494,
+   "tags": {
+    "name": "Water of Leith Walkway Stedfastgate",
+    "historic": "memorial",
+    "wikidata": "Q105581473"
+   }
+  },
+  {
+   "id": "node/9342385837",
+   "lat": 55.951465,
+   "lng": -3.108744,
+   "tags": {
+    "name": "The Porty Light Box",
+    "tourism": "gallery",
+    "website": "https://portylightbox.wordpress.com/"
+   }
+  },
+  {
+   "id": "node/9422760984",
+   "lat": 55.963784,
+   "lng": -3.183836,
+   "tags": {
+    "name": "Museum of Scottish Fire Heritage",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 10:00-16:00",
+    "website": "https://museumofscottishfireheritage.org/",
+    "addr:housenumber": "1A",
+    "addr:street": "Dryden Terrace",
+    "addr:postcode": "EH7 4NB",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/9760074407",
+   "lat": 55.946285,
+   "lng": -3.216497,
+   "tags": {
+    "name": "Heart Of Midlothian War Memorial",
+    "amenity": "clock",
+    "historic": "memorial",
+    "wikidata": "Q56631065"
+   }
+  },
+  {
+   "id": "node/9775076217",
+   "lat": 55.953223,
+   "lng": -3.214557,
+   "tags": {
+    "name": "View over Dean Village",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "relation/15334519",
+   "lat": 55.95525,
+   "lng": -3.177116,
+   "tags": {
+    "name": "Regent Gardens",
+    "leisure": "garden",
+    "wikidata": "Q39086712"
+   }
+  },
+  {
+   "id": "relation/1669488",
+   "lat": 55.971202,
+   "lng": -3.278438,
+   "tags": {
+    "name": "Lauriston Castle",
+    "tourism": "attraction",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q2969689",
+    "wikipedia": "en:Lauriston Castle"
+   }
+  },
+  {
+   "id": "relation/16769442",
+   "lat": 55.952703,
+   "lng": -3.172066,
+   "tags": {
+    "name": "Palace of Holyroodhouse",
+    "tourism": "attraction",
+    "historic": "castle",
+    "building": "yes",
+    "opening_hours": "Nov 01-Mar 29 09:30-16:30; Mar 31-Oct 31 09:30-18:00",
+    "website": "https://www.royalcollection.org.uk/visit/palace-of-holyroodhouse",
+    "wikidata": "Q505950",
+    "wikipedia": "en:Holyrood Palace",
+    "addr:street": "Canongate",
+    "addr:postcode": "EH8 8DX"
+   }
+  },
+  {
+   "id": "relation/18609422",
+   "lat": 55.951199,
+   "lng": -3.226089,
+   "tags": {
+    "name": "Scottish National Gallery of Modern Art",
+    "tourism": "gallery",
+    "website": "https://www.nationalgalleries.org/",
+    "wikidata": "Q1889944",
+    "wikipedia": "en:Scottish National Gallery of Modern Art",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "relation/33710",
+   "lat": 55.947425,
+   "lng": -3.187256,
+   "tags": {
+    "name": "Old College",
+    "tourism": "attraction",
+    "building": "university",
+    "opening_hours": "Mo-Su 08:00-21:30",
+    "website": "https://www.ed.ac.uk/",
+    "wikidata": "Q4283940",
+    "wikipedia": "en:Old College, University of Edinburgh",
+    "addr:street": "South Bridge",
+    "addr:postcode": "EH8 9YL",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/4599",
+   "lat": 55.951885,
+   "lng": -3.175231,
+   "tags": {
+    "name": "The Scottish Parliament",
+    "tourism": "attraction",
+    "website": "https://www.parliament.scot/",
+    "wikidata": "Q206171",
+    "wikipedia": "en:Scottish Parliament",
+    "addr:postcode": "EH99 1SP"
+   }
+  },
+  {
+   "id": "relation/8423665",
+   "lat": 55.971117,
+   "lng": -3.160749,
+   "tags": {
+    "name": "Leith Links",
+    "leisure": "park",
+    "wikidata": "Q6520393",
+    "wikipedia": "en:Leith Links"
+   }
+  },
+  {
+   "id": "relation/952934",
+   "lat": 55.945455,
+   "lng": -3.268959,
+   "tags": {
+    "name": "Edinburgh Zoo",
+    "tourism": "zoo",
+    "website": "https://www.edinburghzoo.org.uk/",
+    "addr:housenumber": "134",
+    "addr:street": "Corstorphine Road",
+    "addr:postcode": "EH12 6TS",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "relation/963806",
+   "lat": 55.94966,
+   "lng": -3.200653,
+   "tags": {
+    "name": "West Princes Street Gardens",
+    "leisure": "park",
+    "opening_hours": "Jan 01-Mar 24: 07:00-18:00; Mar 25-Apr 21: 07:00-19:00; Apr 22-May 26: 07:00-20:00; May 27-Aug 25: 07:00-22:00; Aug 26-Sep 22: 07:00-20:00; Sep 23-Oct 27: 07:00-19:00; Oct 28-Dec 31: 07:00-18:00",
+    "wikidata": "Q980646",
+    "wikipedia": "en:Princes Street Gardens"
+   }
+  },
+  {
+   "id": "way/103163117",
+   "lat": 55.950927,
+   "lng": -3.220523,
+   "tags": {
+    "name": "Belford Hostel",
+    "tourism": "hostel",
+    "building": "church",
+    "website": "https://www.edinburghhostels.com/belford-hostel-edinburgh.html",
+    "wikidata": "Q17795202",
+    "addr:housenumber": "6-8",
+    "addr:street": "Douglas Gardens"
+   }
+  },
+  {
+   "id": "way/135170177",
+   "lat": 55.954799,
+   "lng": -3.183024,
+   "tags": {
+    "name": "Playfair Monument",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q17570689"
+   }
+  },
+  {
+   "id": "way/1434158740",
+   "lat": 55.970714,
+   "lng": -3.17161,
+   "tags": {
+    "name": "Queen Victoria",
+    "historic": "monument",
+    "wikidata": "Q17811847"
+   }
+  },
+  {
+   "id": "way/1519743672",
+   "lat": 55.955265,
+   "lng": -3.182498,
+   "tags": {
+    "name": "Calton Hill",
+    "leisure": "park",
+    "wikidata": "Q1199959",
+    "wikipedia": "en:Calton Hill"
+   }
+  },
+  {
+   "id": "way/164545444",
+   "lat": 55.949646,
+   "lng": -3.190184,
+   "tags": {
+    "name": "Mercat Cross",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q6818041",
+    "wikipedia": "en:Mercat Cross, Edinburgh"
+   }
+  },
+  {
+   "id": "way/169111780",
+   "lat": 55.944948,
+   "lng": -3.186732,
+   "tags": {
+    "name": "Inspace",
+    "tourism": "gallery",
+    "addr:housenumber": "1",
+    "addr:street": "Crichton Street",
+    "addr:postcode": "EH8 9AB",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/22412844",
+   "lat": 55.954749,
+   "lng": -3.18177,
+   "tags": {
+    "name": "National Monument of Scotland",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q6974379",
+    "wikipedia": "en:National Monument of Scotland",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/22415647",
+   "lat": 55.957117,
+   "lng": -3.177967,
+   "tags": {
+    "name": "London Road Gardens",
+    "leisure": "park",
+    "wikidata": "Q54869777",
+    "wikipedia": "en:London Road Gardens, Edinburgh"
+   }
+  },
+  {
+   "id": "way/225470834",
+   "lat": 55.948612,
+   "lng": -3.216285,
+   "tags": {
+    "name": "St Mary's Episcopal Cathedral",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "cathedral",
+    "website": "https://www.cathedral.net/",
+    "wikidata": "Q2324015",
+    "wikipedia": "en:St Mary's Cathedral, Edinburgh (Episcopal)",
+    "addr:housenumber": "23",
+    "addr:street": "Palmerston Place",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/22938944",
+   "lat": 55.951848,
+   "lng": -3.224208,
+   "tags": {
+    "name": "Modern Two",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "wikidata": "Q2679817",
+    "wikipedia": "en:Modern Two",
+    "addr:housenumber": "73",
+    "addr:street": "Belford Road",
+    "addr:postcode": "EH4 3DR",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/22938984",
+   "lat": 55.950823,
+   "lng": -3.227761,
+   "tags": {
+    "name": "Modern One",
+    "tourism": "gallery",
+    "building": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "addr:housenumber": "75",
+    "addr:street": "Belford Road",
+    "addr:postcode": "EH4 3DR",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/233760765",
+   "lat": 55.942351,
+   "lng": -3.191727,
+   "tags": {
+    "name": "The Meadows",
+    "leisure": "park",
+    "wikidata": "Q7750795",
+    "wikipedia": "en:The Meadows, Edinburgh",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/239888879",
+   "lat": 55.953369,
+   "lng": -3.185792,
+   "tags": {
+    "name": "Political Martyrs' Monument",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q7210212",
+    "wikipedia": "en:Political Martyrs' Monument",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/259067386",
+   "lat": 55.951207,
+   "lng": -3.179433,
+   "tags": {
+    "name": "Museum of Edinburgh",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-17:00; Aug: Su 12:00-17:00",
+    "website": "https://www.edinburghmuseums.org.uk/venue/museum-edinburgh",
+    "wikidata": "Q11838982",
+    "addr:housenumber": "142-146",
+    "addr:street": "Canongate"
+   }
+  },
+  {
+   "id": "way/25946269",
+   "lat": 55.95053,
+   "lng": -3.174412,
+   "tags": {
+    "name": "Dynamic Earth",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.dynamicearth.org.uk/",
+    "wikidata": "Q3358350",
+    "wikipedia": "en:Dynamic Earth (Edinburgh)",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/26626296",
+   "lat": 55.960666,
+   "lng": -3.15993,
+   "tags": {
+    "name": "Lochend Park",
+    "leisure": "park",
+    "wikidata": "Q19585967",
+    "wikipedia": "en:Lochend Park"
+   }
+  },
+  {
+   "id": "way/270192920",
+   "lat": 55.954302,
+   "lng": -3.213646,
+   "tags": {
+    "name": "Dean Gardens",
+    "leisure": "garden",
+    "website": "http://www.deangardens.org/",
+    "wikidata": "Q38251370",
+    "wikipedia": "en:Dean Gardens, Edinburgh"
+   }
+  },
+  {
+   "id": "way/28553603",
+   "lat": 55.931318,
+   "lng": -3.130358,
+   "tags": {
+    "name": "The Robin Chapel",
+    "amenity": "place_of_worship",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q7352312",
+    "wikipedia": "en:Robin Chapel",
+    "addr:street": "Queen's Walk",
+    "addr:postcode": "EH16 4EA",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/287130390",
+   "lat": 55.946636,
+   "lng": -3.19228,
+   "tags": {
+    "name": "Greyfriars Kirk",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "website": "https://greyfriarskirk.com/",
+    "wikidata": "Q2113456",
+    "wikipedia": "en:Greyfriars Kirk",
+    "addr:street": "Greyfriars Place",
+    "addr:postcode": "EH1 2QQ",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/287551981",
+   "lat": 55.953471,
+   "lng": -3.189151,
+   "tags": {
+    "name": "Duke of Wellington Statue",
+    "historic": "memorial",
+    "wikidata": "Q17570765"
+   }
+  },
+  {
+   "id": "way/293890858",
+   "lat": 55.950636,
+   "lng": -3.185081,
+   "tags": {
+    "name": "John Knox House",
+    "tourism": "attraction",
+    "historic": "house",
+    "building": "yes",
+    "website": "https://www.scottishstorytellingcentre.com/john-knox-house/",
+    "wikidata": "Q6243358",
+    "wikipedia": "en:John Knox House",
+    "addr:housenumber": "45",
+    "addr:street": "High Street",
+    "addr:postcode": "EH1 1SR",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/30475890",
+   "lat": 55.914571,
+   "lng": -3.177382,
+   "tags": {
+    "name": "Liberton Tower",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q6541506",
+    "wikipedia": "en:Liberton Tower"
+   }
+  },
+  {
+   "id": "way/30886822",
+   "lat": 55.950991,
+   "lng": -3.272356,
+   "tags": {
+    "name": "Corstorphine Hill Tower",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17812576"
+   }
+  },
+  {
+   "id": "way/308919343",
+   "lat": 55.953174,
+   "lng": -3.207594,
+   "tags": {
+    "name": "Catherine Sinclair Monument",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17570693"
+   }
+  },
+  {
+   "id": "way/309203675",
+   "lat": 55.951751,
+   "lng": -3.207639,
+   "tags": {
+    "name": "Albert Memorial",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17570702"
+   }
+  },
+  {
+   "id": "way/30994705",
+   "lat": 55.920394,
+   "lng": -3.250585,
+   "tags": {
+    "name": "Redhall Walled Garden",
+    "leisure": "garden",
+    "opening_hours": "Mo-Fr 09:30-15:30"
+   }
+  },
+  {
+   "id": "way/313680590",
+   "lat": 55.952168,
+   "lng": -3.194415,
+   "tags": {
+    "name": "Adam Black Memorial",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q17570709",
+    "wikipedia": "en:Adam Black"
+   }
+  },
+  {
+   "id": "way/313680591",
+   "lat": 55.951991,
+   "lng": -3.19545,
+   "tags": {
+    "name": "John Wilson Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17570768"
+   }
+  },
+  {
+   "id": "way/314597264",
+   "lat": 55.951688,
+   "lng": -3.197305,
+   "tags": {
+    "name": "Allan Ramsay Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17570763"
+   }
+  },
+  {
+   "id": "way/314597265",
+   "lat": 55.954218,
+   "lng": -3.193155,
+   "tags": {
+    "name": "Melville's Monument",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17570686"
+   }
+  },
+  {
+   "id": "way/314600289",
+   "lat": 55.951048,
+   "lng": -3.201038,
+   "tags": {
+    "name": "Scottish American War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q7435775",
+    "wikipedia": "en:Scottish American Memorial"
+   }
+  },
+  {
+   "id": "way/314600291",
+   "lat": 55.950387,
+   "lng": -3.205049,
+   "tags": {
+    "name": "Sir James Young Simpson Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17813295"
+   }
+  },
+  {
+   "id": "way/314600292",
+   "lat": 55.950811,
+   "lng": -3.202635,
+   "tags": {
+    "name": "Thomas Guthrie Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17813224"
+   }
+  },
+  {
+   "id": "way/314699624",
+   "lat": 55.954456,
+   "lng": -3.191655,
+   "tags": {
+    "name": "Memorial to John, Fourth Earl of Hopetoun",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q17570750"
+   }
+  },
+  {
+   "id": "way/320974678",
+   "lat": 55.954517,
+   "lng": -3.184433,
+   "tags": {
+    "name": "Dugald Stewart Monument",
+    "tourism": "attraction",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q5312471",
+    "wikipedia": "en:Dugald Stewart Monument"
+   }
+  },
+  {
+   "id": "way/321129859",
+   "lat": 55.953435,
+   "lng": -3.178319,
+   "tags": {
+    "name": "Burns Monument",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17570683"
+   }
+  },
+  {
+   "id": "way/322220495",
+   "lat": 55.953474,
+   "lng": -3.186132,
+   "tags": {
+    "name": "Scottish-American Soldiers Monument",
+    "historic": "memorial",
+    "wikidata": "Q17570821"
+   }
+  },
+  {
+   "id": "way/324049962",
+   "lat": 55.93333,
+   "lng": -3.213896,
+   "tags": {
+    "name": "Merchiston Tower",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q1921452",
+    "wikipedia": "en:Merchiston Tower"
+   }
+  },
+  {
+   "id": "way/326060905",
+   "lat": 55.955179,
+   "lng": -3.1831,
+   "tags": {
+    "name": "City Dome",
+    "tourism": "gallery",
+    "building": "yes",
+    "wikidata": "Q17570590",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/333902323",
+   "lat": 55.919306,
+   "lng": -3.238325,
+   "tags": {
+    "name": "Craiglockhart Castle",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q5181716",
+    "wikipedia": "en:Craiglockhart Castle"
+   }
+  },
+  {
+   "id": "way/39044819",
+   "lat": 55.952361,
+   "lng": -3.193257,
+   "tags": {
+    "name": "Scott Monument",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "tower",
+    "opening_hours": "Mo-Su 10:00-21:00",
+    "website": "https://www.edinburghmuseums.org.uk/venue/scott-monument",
+    "wikidata": "Q2502213",
+    "wikipedia": "en:Scott Monument",
+    "addr:street": "East Princes Street Gardens",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/397175911",
+   "lat": 55.951374,
+   "lng": -3.199412,
+   "tags": {
+    "name": "Royal Scots Greys Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17813285"
+   }
+  },
+  {
+   "id": "way/4075023",
+   "lat": 55.943641,
+   "lng": -3.188814,
+   "tags": {
+    "name": "George Square Gardens",
+    "leisure": "garden",
+    "opening_hours": "Oct-Apr Mo-Fr 07:00-16:00; Apr-Oct Mo-Fr 07:00-19:00",
+    "wikidata": "Q5544755",
+    "wikipedia": "en:George Square, Edinburgh",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/41299975",
+   "lat": 55.948786,
+   "lng": -3.201664,
+   "tags": {
+    "name": "National War Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Apr-Sep: Mo-Su 09:45-17:45; Oct-Mar: Mo-Su 09:45-16:45",
+    "website": "https://www.nms.ac.uk/national-war-museum/",
+    "wikidata": "Q6979345",
+    "wikipedia": "en:National War Museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/41299992",
+   "lat": 55.948518,
+   "lng": -3.198655,
+   "tags": {
+    "name": "Gatehouse",
+    "tourism": "attraction",
+    "historic": "city_gate",
+    "building": "gatehouse",
+    "wikidata": "Q17569927"
+   }
+  },
+  {
+   "id": "way/41558984",
+   "lat": 55.943017,
+   "lng": -3.177508,
+   "tags": {
+    "name": "Holyrood Distillery",
+    "tourism": "attraction",
+    "opening_hours": "Mo-Su 11:30+",
+    "website": "https://www.holyrooddistillery.co.uk/",
+    "wikidata": "Q120108000",
+    "addr:housenumber": "19",
+    "addr:street": "St Leonard's Lane",
+    "addr:postcode": "EH8 9SH"
+   }
+  },
+  {
+   "id": "way/41663265",
+   "lat": 55.945642,
+   "lng": -3.161243,
+   "tags": {
+    "name": "Holyrood Park",
+    "leisure": "park",
+    "website": "https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341",
+    "wikidata": "Q2640532",
+    "wikipedia": "en:Holyrood Park",
+    "addr:street": "Queens Drive",
+    "addr:postcode": "EH8 8HG"
+   }
+  },
+  {
+   "id": "way/41893740",
+   "lat": 55.952586,
+   "lng": -3.173884,
+   "tags": {
+    "name": "The King's Gallery",
+    "tourism": "museum",
+    "building": "public",
+    "wikidata": "Q7269994",
+    "wikipedia": "en:King's Gallery, Edinburgh",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/41893742",
+   "lat": 55.953144,
+   "lng": -3.171626,
+   "tags": {
+    "name": "Holyrood Abbey",
+    "tourism": "attraction",
+    "historic": "ruins",
+    "building": "church",
+    "wikidata": "Q966862",
+    "wikipedia": "en:Holyrood Abbey"
+   }
+  },
+  {
+   "id": "way/42261848",
+   "lat": 55.948989,
+   "lng": -3.186397,
+   "tags": {
+    "name": "St Cecilia's Hall",
+    "tourism": "museum",
+    "amenity": "theatre",
+    "building": "yes",
+    "website": "https://www.stcecilias.ed.ac.uk/",
+    "wikidata": "Q7592777",
+    "wikipedia": "en:St Cecilia's Hall"
+   }
+  },
+  {
+   "id": "way/42407060",
+   "lat": 55.949468,
+   "lng": -3.19086,
+   "tags": {
+    "name": "St Giles' Cathedral",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "cathedral",
+    "opening_hours": "Apr-Oct Mo-Fr 10:00-18:00; Apr-Oct Sa 09:00-17:00; Apr-Oct,Nov-Mar Su 13:00-17:00; Nov-Mar Mo-Sa 09:00-17:00",
+    "website": "https://www.stgilescathedral.org.uk/",
+    "wikidata": "Q1547466",
+    "wikipedia": "en:St Giles' Cathedral",
+    "addr:street": "Royal Mile",
+    "addr:postcode": "EH1 1RE",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/4301292",
+   "lat": 55.948675,
+   "lng": -3.200405,
+   "tags": {
+    "name": "Edinburgh Castle",
+    "tourism": "attraction",
+    "historic": "castle",
+    "opening_hours": "Apr 01-Sep 30 09:30-18:00; Oct 01-Dec 23,Dec 27-31,Jan 02-Mar 31 09:30-17:00; Dec 24 09:30-16:00; Jan 01 11:00-17:00; Dec 25-26 off",
+    "website": "https://www.edinburghcastle.scot/",
+    "wikidata": "Q212065",
+    "wikipedia": "en:Edinburgh Castle",
+    "addr:street": "Castlehill",
+    "addr:postcode": "EH1 2NG",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/4348244",
+   "lat": 55.939191,
+   "lng": -3.201047,
+   "tags": {
+    "name": "Bruntsfield Links",
+    "leisure": "park",
+    "wikidata": "Q4979595",
+    "wikipedia": "en:Bruntsfield Links"
+   }
+  },
+  {
+   "id": "way/446654897",
+   "lat": 55.94824,
+   "lng": -3.20038,
+   "tags": {
+    "name": "The Royal Scots Regimental Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.theroyalscots.co.uk/museum/",
+    "wikidata": "Q50810299",
+    "wikipedia": "en:The Museum of the Royal Scots (The Royal Regiment) and the Royal Regiment of Scotland",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/465223757",
+   "lat": 55.958564,
+   "lng": -3.203491,
+   "tags": {
+    "name": "St Stephen's Church",
+    "tourism": "attraction",
+    "building": "church",
+    "website": "http://saintstephensstockbridge.com/",
+    "wikidata": "Q7595476",
+    "wikipedia": "en:St Stephen's Church, Edinburgh",
+    "addr:housenumber": "105",
+    "addr:street": "St Stephen Street",
+    "addr:postcode": "EH3 5AB"
+   }
+  },
+  {
+   "id": "way/465938528",
+   "lat": 55.954357,
+   "lng": -3.182579,
+   "tags": {
+    "name": "Nelson Monument",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "opening_hours": "10:00-15:30",
+    "website": "https://cultureedinburgh.com/our-venues/nelson-monument",
+    "wikidata": "Q11838983",
+    "wikipedia": "en:Nelson Monument, Edinburgh",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/467226683",
+   "lat": 55.947058,
+   "lng": -3.189534,
+   "tags": {
+    "name": "National Museum of Scotland",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; Jan 01 12:00-17:00; Dec 25 off; Dec 26 12:00-17:00",
+    "website": "https://www.nms.ac.uk/national-museum-of-scotland",
+    "wikidata": "Q1633842",
+    "wikipedia": "en:National Museum of Scotland",
+    "addr:street": "Chambers Street",
+    "addr:postcode": "EH1 1JF",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/4933268",
+   "lat": 55.951747,
+   "lng": -3.207656,
+   "tags": {
+    "name": "Charlotte Square Gardens",
+    "leisure": "garden",
+    "wikidata": "Q5086152",
+    "wikipedia": "en:Charlotte Square"
+   }
+  },
+  {
+   "id": "way/505364483",
+   "lat": 55.950769,
+   "lng": -3.202131,
+   "tags": {
+    "name": "Wojtek Memorial",
+    "historic": "memorial",
+    "wikidata": "Q66604758"
+   }
+  },
+  {
+   "id": "way/511343921",
+   "lat": 55.948394,
+   "lng": -3.199717,
+   "tags": {
+    "name": "Scottish National War Memorial",
+    "historic": "memorial",
+    "building": "chapel",
+    "wikidata": "Q7437874",
+    "wikipedia": "en:Scottish National War Memorial"
+   }
+  },
+  {
+   "id": "way/5182745",
+   "lat": 55.951671,
+   "lng": -3.196267,
+   "tags": {
+    "name": "Royal Scottish Academy",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://www.royalscottishacademy.org/",
+    "wikidata": "Q7374813",
+    "wikipedia": "en:Royal Scottish Academy",
+    "addr:street": "The Mound",
+    "addr:postcode": "EH2 2EL",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/5182746",
+   "lat": 55.950881,
+   "lng": -3.195617,
+   "tags": {
+    "name": "National Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00; Th 10:00-19:00",
+    "website": "https://www.nationalgalleries.org/",
+    "wikidata": "Q942713",
+    "wikipedia": "en:Scottish National Gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/5209575",
+   "lat": 55.965317,
+   "lng": -3.208451,
+   "tags": {
+    "name": "Royal Botanic Garden Edinburgh",
+    "leisure": "garden",
+    "opening_hours": "Feb-Oct 10:00-17:00; Nov,Jan 10:00-16:00; Dec 10:00-15:30",
+    "wikidata": "Q1807521",
+    "wikipedia": "en:Royal Botanic Garden Edinburgh",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/55751608",
+   "lat": 55.922898,
+   "lng": -3.188072,
+   "tags": {
+    "name": "Royal Observatory, Edinburgh",
+    "tourism": "attraction",
+    "website": "https://www.roe.ac.uk/",
+    "wikidata": "Q3106882",
+    "wikipedia": "en:Royal Observatory, Edinburgh",
+    "addr:street": "Blackford Hill",
+    "addr:postcode": "EH9 3HJ",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/57709519",
+   "lat": 55.965004,
+   "lng": -3.210154,
+   "tags": {
+    "name": "RBGE Inverleith House",
+    "tourism": "gallery",
+    "building": "house",
+    "website": "http://www.rbge.org.uk/the-gardens/edinburgh/inverleith-house",
+    "wikidata": "Q16931444",
+    "wikipedia": "en:Inverleith House",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/61161239",
+   "lat": 55.925707,
+   "lng": -3.14062,
+   "tags": {
+    "name": "Craigmillar Castle",
+    "tourism": "attraction",
+    "historic": "castle",
+    "website": "https://www.historicenvironment.scot/visit-a-place/places/craigmillar-castle/",
+    "wikidata": "Q432422",
+    "wikipedia": "en:Craigmillar Castle"
+   }
+  },
+  {
+   "id": "way/62061248",
+   "lat": 55.950044,
+   "lng": -3.206481,
+   "tags": {
+    "name": "Church of St John the Evangelist",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "website": "https://www.stjohns-edinburgh.org.uk/",
+    "wikidata": "Q5117460",
+    "wikipedia": "en:St John's, Edinburgh",
+    "addr:street": "Princes Street",
+    "addr:postcode": "EH2 4BJ"
+   }
+  },
+  {
+   "id": "way/62061368",
+   "lat": 55.949626,
+   "lng": -3.205121,
+   "tags": {
+    "name": "The Parish Church of St Cuthbert",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "website": "https://www.st-cuthberts.net/",
+    "wikidata": "Q7756122",
+    "wikipedia": "en:St Cuthbert's Church, Edinburgh",
+    "addr:housenumber": "5",
+    "addr:street": "Lothian Road",
+    "addr:postcode": "EH1 2EP"
+   }
+  },
+  {
+   "id": "way/62066717",
+   "lat": 55.95006,
+   "lng": -3.203037,
+   "tags": {
+    "name": "Ross Fountain",
+    "tourism": "attraction",
+    "amenity": "fountain",
+    "wikidata": "Q7369346"
+   }
+  },
+  {
+   "id": "way/648755293",
+   "lat": 55.955132,
+   "lng": -3.183478,
+   "tags": {
+    "name": "The Hillside",
+    "tourism": "gallery",
+    "building": "yes",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/659876969",
+   "lat": 55.94198,
+   "lng": -3.212814,
+   "tags": {
+    "name": "Edinburgh Printmakers",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "website": "https://edinburghprintmakers.co.uk/",
+    "addr:housenumber": "2",
+    "addr:street": "Gilmore Park",
+    "addr:postcode": "EH3 9FN"
+   }
+  },
+  {
+   "id": "way/671841776",
+   "lat": 55.982028,
+   "lng": -3.241544,
+   "tags": {
+    "name": "Granton Castle Walled Garden",
+    "leisure": "garden",
+    "opening_hours": "Sa,Su,PH 14:00-16:00; Nov-Mar Sa-Su,PH 13:00-15:00",
+    "website": "https://www.grantoncastlewalledgarden.org.uk/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/70826506",
+   "lat": 55.951257,
+   "lng": -3.189699,
+   "tags": {
+    "name": "Fruitmarket",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "11:00-18:00",
+    "website": "https://www.fruitmarket.co.uk/",
+    "wikidata": "Q4402028",
+    "wikipedia": "en:Fruitmarket Gallery",
+    "addr:housenumber": "45",
+    "addr:street": "Market Street",
+    "addr:postcode": "EH1 1DF",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/70836441",
+   "lat": 55.951019,
+   "lng": -3.189191,
+   "tags": {
+    "name": "City Art Centre",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://www.edinburghmuseums.org.uk/venue/city-art-centre",
+    "wikidata": "Q17569430",
+    "wikipedia": "en:City Art Centre",
+    "addr:housenumber": "2",
+    "addr:street": "Market Street",
+    "addr:postcode": "EH1 1DE",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/70954995",
+   "lat": 55.951481,
+   "lng": -3.179935,
+   "tags": {
+    "name": "The People's Story Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-17:00",
+    "website": "https://www.edinburghmuseums.org.uk/Venues/The-People-s-Story",
+    "wikidata": "Q4306389",
+    "wikipedia": "en:The People's Story Museum",
+    "addr:housenumber": "163",
+    "addr:street": "Canongate",
+    "addr:postcode": "EH8 8BN",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/70955023",
+   "lat": 55.95096,
+   "lng": -3.185677,
+   "tags": {
+    "name": "Trinity Apse",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "\"on appointment\"",
+    "wikidata": "Q7842704",
+    "wikipedia": "en:Trinity College Kirk"
+   }
+  },
+  {
+   "id": "way/73090302",
+   "lat": 55.955467,
+   "lng": -3.193592,
+   "tags": {
+    "name": "Scottish National Portrait Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00; Th 10:00-19:00",
+    "website": "https://www.nationalgalleries.org/visit/scottish-national-portrait-gallery",
+    "wikidata": "Q2441562",
+    "wikipedia": "en:Scottish National Portrait Gallery",
+    "addr:housenumber": "1",
+    "addr:street": "Queen Street",
+    "addr:postcode": "EH2 1JD",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/78693281",
+   "lat": 55.954211,
+   "lng": -3.193154,
+   "tags": {
+    "name": "St Andrew Square Garden",
+    "leisure": "garden",
+    "opening_hours": "07:00-20:00",
+    "wikidata": "Q7592419",
+    "wikipedia": "en:St Andrew Square, Edinburgh",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/8043028",
+   "lat": 55.952155,
+   "lng": -3.178943,
+   "tags": {
+    "name": "Dunbar's Close Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "wikidata": "Q13889055"
+   }
+  },
+  {
+   "id": "way/81243762",
+   "lat": 55.95407,
+   "lng": -3.195864,
+   "tags": {
+    "name": "New Town Church",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "wikidata": "Q7592411",
+    "wikipedia": "en:Edinburgh: New Town Church",
+    "addr:housenumber": "15-17",
+    "addr:street": "George Street"
+   }
+  },
+  {
+   "id": "way/819769888",
+   "lat": 55.952997,
+   "lng": -3.174188,
+   "tags": {
+    "name": "Physic Garden",
+    "leisure": "garden",
+    "opening_hours": "Apr-Oct: 09:30-18:00; Nov-Mar: 09:30-16:30",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/867700212",
+   "lat": 55.930872,
+   "lng": -3.216816,
+   "tags": {
+    "name": "College War Memorial",
+    "historic": "memorial",
+    "wikidata": "Q17808949"
+   }
+  },
+  {
+   "id": "way/87686766",
+   "lat": 55.95109,
+   "lng": -3.197116,
+   "tags": {
+    "name": "Royal Scots Monument",
+    "historic": "memorial",
+    "wikidata": "Q17795453"
+   }
+  },
+  {
+   "id": "way/90710096",
+   "lat": 55.972191,
+   "lng": -3.171342,
+   "tags": {
+    "name": "Trinity House",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.historicenvironment.scot/visit-a-place/places/trinity-house/",
+    "wikidata": "Q7842854",
+    "wikipedia": "en:Trinity House of Leith",
+    "addr:housenumber": "99",
+    "addr:street": "Kirkgate",
+    "addr:postcode": "EH6 6BJ"
+   }
+  },
+  {
+   "id": "way/93234798",
+   "lat": 55.955277,
+   "lng": -3.21148,
+   "tags": {
+    "name": "St Bernard's Well",
+    "tourism": "attraction",
+    "historic": "monument",
+    "building": "yes",
+    "wikidata": "Q17570795",
+    "wikipedia": "en:Stockbridge,_Edinburgh#St_Bernard's_Well",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/98616658",
+   "lat": 55.957953,
+   "lng": -3.207182,
+   "tags": {
+    "name": "Old Stockbridge Market Entrance",
+    "tourism": "attraction",
+    "historic": "monument",
+    "wikidata": "Q17812263"
+   }
+  },
+  {
+   "id": "way/99889822",
+   "lat": 55.982154,
+   "lng": -3.177309,
+   "tags": {
+    "name": "HMY Britannia",
+    "tourism": "museum",
+    "historic": "ship",
+    "building": "boat",
+    "opening_hours": "Nov-Dec,Jan-Mar 10:00-17:00; Apr-Aug 09:30-18:00; Sep 10:00-18:00; Oct 10:00-17:30",
+    "website": "https://www.royalyachtbritannia.co.uk/",
+    "wikidata": "Q1529544",
+    "wikipedia": "en:HMY Britannia",
+    "addr:housenumber": "100",
+    "addr:street": "Ocean Drive",
+    "addr:postcode": "EH6 6JJ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

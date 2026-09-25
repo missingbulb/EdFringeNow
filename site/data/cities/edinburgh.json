@@ -1,0 +1,5036 @@
+{
+ "v": 1,
+ "city": {
+  "id": "edinburgh",
+  "name": "Edinburgh",
+  "country": "GB",
+  "lat": 55.9533,
+  "lng": -3.1883,
+  "timezone": "Europe/London"
+ },
+ "places": [
+  {
+   "id": "osm:way/4301292",
+   "name": "Edinburgh Castle",
+   "kind": "landmark",
+   "lat": 55.948675,
+   "lng": -3.200405,
+   "address": "Castlehill, EH1 2NG",
+   "website": "https://www.edinburghcastle.scot/",
+   "wikidata": "Q212065",
+   "wikipedia": "en:Edinburgh Castle",
+   "description": "castle in Edinburgh, Scotland, UK",
+   "image": "Edinburgh Castle from the Grassmarket.jpg",
+   "notability": 57,
+   "highlight": true,
+   "openingHours": "Apr 01-Sep 30 09:30-18:00; Oct 01-Dec 23,Dec 27-31,Jan 02-Mar 31 09:30-17:00; Dec 24 09:30-16:00; Jan 01 11:00-17:00; Dec 25-26 off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "09-30"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "12-23"
+      ],
+      [
+       "12-27",
+       "12-31"
+      ],
+      [
+       "01-02",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-24",
+       "12-24"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/4599",
+   "name": "The Scottish Parliament",
+   "kind": "attraction",
+   "lat": 55.951885,
+   "lng": -3.175231,
+   "address": "EH99 1SP",
+   "website": "https://www.parliament.scot/",
+   "wikidata": "Q206171",
+   "wikipedia": "en:Scottish Parliament",
+   "description": "devolved parliament of Scotland",
+   "image": "ScottishParliamentFront.JPG",
+   "notability": 54,
+   "highlight": true,
+   "openingHours": "Mo,Fr,Sa 10:00-17:00; Tu-Th 09:00-18:30; Su off",
+   "hoursSource": "https://www.parliament.scot/visit",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "18:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/16769442",
+   "name": "Palace of Holyroodhouse",
+   "kind": "landmark",
+   "lat": 55.952703,
+   "lng": -3.172066,
+   "address": "Canongate, EH8 8DX",
+   "website": "https://www.royalcollection.org.uk/visit/palace-of-holyroodhouse",
+   "wikidata": "Q505950",
+   "wikipedia": "en:Holyrood Palace",
+   "description": "official residence of the British monarch in Scotland",
+   "image": "Holyrood Palace - aerial - 2025-04-19 04.jpg",
+   "notability": 43,
+   "highlight": true,
+   "openingHours": "Nov 01-Mar 29 09:30-16:30; Mar 31-Oct 31 09:30-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-29"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "03-31",
+       "10-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/5182746",
+   "name": "National Gallery",
+   "kind": "gallery",
+   "lat": 55.950881,
+   "lng": -3.195617,
+   "address": null,
+   "website": "https://www.nationalgalleries.org/",
+   "wikidata": "Q942713",
+   "wikipedia": "en:Scottish National Gallery",
+   "description": "part of National Galleries Scotland in Edinburgh",
+   "image": "Scottish National Gallery - aerial - 2025-04-19 01.jpg",
+   "notability": 39,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00; Th 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/467226683",
+   "name": "National Museum of Scotland",
+   "kind": "museum",
+   "lat": 55.947058,
+   "lng": -3.189534,
+   "address": "Chambers Street, EH1 1JF",
+   "website": "https://www.nms.ac.uk/national-museum-of-scotland",
+   "wikidata": "Q1633842",
+   "wikipedia": "en:National Museum of Scotland",
+   "description": "combined museum in Edinburgh",
+   "image": "Museum of Scotland.jpg",
+   "notability": 32,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00; Jan 01 12:00-17:00; Dec 25 off; Dec 26 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "12-26",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/42407060",
+   "name": "St Giles' Cathedral",
+   "kind": "landmark",
+   "lat": 55.949468,
+   "lng": -3.19086,
+   "address": "Royal Mile, EH1 1RE",
+   "website": "https://www.stgilescathedral.org.uk/",
+   "wikidata": "Q1547466",
+   "wikipedia": "en:St Giles' Cathedral",
+   "description": "Church of Scotland cathedral in Edinburgh, Scotland, UK",
+   "image": "St Giles' Cathedral - aerial - 2025-04-19 04.jpg",
+   "notability": 29,
+   "highlight": true,
+   "openingHours": "Apr-Oct Mo-Fr 10:00-18:00; Apr-Oct Sa 09:00-17:00; Apr-Oct,Nov-Mar Su 13:00-17:00; Nov-Mar Mo-Sa 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ],
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/41893742",
+   "name": "Holyrood Abbey",
+   "kind": "landmark",
+   "lat": 55.953144,
+   "lng": -3.171626,
+   "address": null,
+   "website": null,
+   "wikidata": "Q966862",
+   "wikipedia": "en:Holyrood Abbey",
+   "description": "monastery ruins in Holyrood, City of Edinburgh, Scotland, UK",
+   "image": "Holyrood Abbey - Edinburgh.jpg",
+   "notability": 24,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1519743672",
+   "name": "Calton Hill",
+   "kind": "park",
+   "lat": 55.955265,
+   "lng": -3.182498,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1199959",
+   "wikipedia": "en:Calton Hill",
+   "description": "mountain in Edinburgh, Scotland, UK",
+   "image": "Calton Hill - aerial - 2025-04-18 02.jpg",
+   "notability": 23,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/99889822",
+   "name": "HMY Britannia",
+   "kind": "museum",
+   "lat": 55.982154,
+   "lng": -3.177309,
+   "address": "100 Ocean Drive, EH6 6JJ",
+   "website": "https://www.royalyachtbritannia.co.uk/",
+   "wikidata": "Q1529544",
+   "wikipedia": "en:HMY Britannia",
+   "description": "1953 royal yacht",
+   "image": "HMY Britannia.jpg",
+   "notability": 22,
+   "highlight": true,
+   "openingHours": "Nov-Dec,Jan-Mar 10:00-17:00; Apr-Aug 09:30-18:00; Sep 10:00-18:00; Oct 10:00-17:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "11-01",
+       "12-31"
+      ],
+      [
+       "01-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-01",
+       "08-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "09-01",
+       "09-30"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "10-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "17:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/5209575",
+   "name": "Royal Botanic Garden Edinburgh",
+   "kind": "garden",
+   "lat": 55.965317,
+   "lng": -3.208451,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1807521",
+   "wikipedia": "en:Royal Botanic Garden Edinburgh",
+   "description": "Botanical garden in Edinburgh, Scotland, UK",
+   "image": "Palmhouse.jpg",
+   "notability": 19,
+   "highlight": true,
+   "openingHours": "Feb-Oct 10:00-17:00; Nov,Jan 10:00-16:00; Dec 10:00-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "02-01",
+       "10-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "11-01",
+       "11-30"
+      ],
+      [
+       "01-01",
+       "01-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-01",
+       "12-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/505014478",
+   "name": "Mons Meg",
+   "kind": "landmark",
+   "lat": 55.948788,
+   "lng": -3.200157,
+   "address": null,
+   "website": "https://www.edinburghcastle.scot/see-and-do/highlights/mons-meg",
+   "wikidata": "Q952412",
+   "wikipedia": "en:Mons Meg",
+   "description": "large 15th century cannon in Scotland",
+   "image": "MonsMeg.JPG",
+   "notability": 18,
+   "highlight": true,
+   "openingHours": "Apr-Sep 09:30-18:00; Oct-Mar 09:30-17:00; Dec 24 09:30-16:00; Dec 25-26 off; Jan 01 11:00-17:00",
+   "hoursSource": "https://www.edinburghcastle.scot/plan-your-visit/opening-times/",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "09-30"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-24",
+       "12-24"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/73090302",
+   "name": "Scottish National Portrait Gallery",
+   "kind": "gallery",
+   "lat": 55.955467,
+   "lng": -3.193592,
+   "address": "1 Queen Street, EH2 1JD",
+   "website": "https://www.nationalgalleries.org/visit/scottish-national-portrait-gallery",
+   "wikidata": "Q2441562",
+   "wikipedia": "en:Scottish National Portrait Gallery",
+   "description": "art museum in Edinburgh, Scotland",
+   "image": "Scottish National Portrait Gallery.jpg",
+   "notability": 18,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00; Th 10:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/39044819",
+   "name": "Scott Monument",
+   "kind": "landmark",
+   "lat": 55.952361,
+   "lng": -3.193257,
+   "address": "East Princes Street Gardens",
+   "website": "https://www.edinburghmuseums.org.uk/venue/scott-monument",
+   "wikidata": "Q2502213",
+   "wikipedia": "en:Scott Monument",
+   "description": "Victorian Gothic monument to Scottish author Sir Walter Scott",
+   "image": "Schottland-Edinburgh-Sir Walter Scott Monument.JPG",
+   "notability": 17,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/61161239",
+   "name": "Craigmillar Castle",
+   "kind": "landmark",
+   "lat": 55.925707,
+   "lng": -3.14062,
+   "address": null,
+   "website": "https://www.historicenvironment.scot/visit-a-place/places/craigmillar-castle/",
+   "wikidata": "Q432422",
+   "wikipedia": "en:Craigmillar Castle",
+   "description": "castle in Edinburgh, Scotland, UK",
+   "image": "Craigmillar Castle.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": "Apr-Sep 09:30-17:00; Oct-Mar 09:30-16:00; Dec 25-26 off; Jan 01-02 off",
+   "hoursSource": "https://www.historicenvironment.scot/visit/all/craigmillar-castle/plan-your-visit/",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "09-30"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-02"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/55751608",
+   "name": "Royal Observatory, Edinburgh",
+   "kind": "attraction",
+   "lat": 55.922898,
+   "lng": -3.188072,
+   "address": "Blackford Hill, EH9 3HJ",
+   "website": "https://www.roe.ac.uk/",
+   "wikidata": "Q3106882",
+   "wikipedia": "en:Royal Observatory, Edinburgh",
+   "description": "observatory in Edinburgh, Scotland, UK",
+   "image": "Royal Observatory, Edinburgh.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/18609422",
+   "name": "Scottish National Gallery of Modern Art",
+   "kind": "gallery",
+   "lat": 55.951199,
+   "lng": -3.226089,
+   "address": null,
+   "website": "https://www.nationalgalleries.org/",
+   "wikidata": "Q1889944",
+   "wikipedia": "en:Scottish National Gallery of Modern Art",
+   "description": "part of National Galleries of Scotland in Edinburgh",
+   "image": "SNGMA The Building.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/225470834",
+   "name": "St Mary's Episcopal Cathedral",
+   "kind": "landmark",
+   "lat": 55.948612,
+   "lng": -3.216285,
+   "address": "23 Palmerston Place",
+   "website": "https://www.cathedral.net/",
+   "wikidata": "Q2324015",
+   "wikipedia": "en:St Mary's Cathedral, Edinburgh (Episcopal)",
+   "description": "church building in Edinburgh, Scotland, UK",
+   "image": "St Mary's Cathedral, Edinburgh.jpg",
+   "notability": 14,
+   "highlight": true,
+   "openingHours": "Mo-Fr 08:00-18:00; Sa,Su 08:00-17:00",
+   "hoursSource": "https://www.cathedral.net/cathedral-building/visiting",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/963806",
+   "name": "West Princes Street Gardens",
+   "kind": "park",
+   "lat": 55.94966,
+   "lng": -3.200653,
+   "address": null,
+   "website": null,
+   "wikidata": "Q980646",
+   "wikipedia": "en:Princes Street Gardens",
+   "description": "park in Edinburgh, Scotland, UK",
+   "image": "Edinburgh, Scotland (39616917631).jpg",
+   "notability": 14,
+   "highlight": true,
+   "openingHours": "Jan 01-Mar 24: 07:00-18:00; Mar 25-Apr 21: 07:00-19:00; Apr 22-May 26: 07:00-20:00; May 27-Aug 25: 07:00-22:00; Aug 26-Sep 22: 07:00-20:00; Sep 23-Oct 27: 07:00-19:00; Oct 28-Dec 31: 07:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "01-01",
+       "03-24"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "03-25",
+       "04-21"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-22",
+       "05-26"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "05-27",
+       "08-25"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "08-26",
+       "09-22"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "09-23",
+       "10-27"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-28",
+       "12-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/22412844",
+   "name": "National Monument of Scotland",
+   "kind": "landmark",
+   "lat": 55.954749,
+   "lng": -3.18177,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6974379",
+   "wikipedia": "en:National Monument of Scotland",
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Tourists posing at the National Monument of Scotland.jpg",
+   "notability": 12,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41663265",
+   "name": "Holyrood Park",
+   "kind": "park",
+   "lat": 55.945642,
+   "lng": -3.161243,
+   "address": "Queens Drive, EH8 8HG",
+   "website": "https://www.visitscotland.com/info/see-do/holyrood-park-and-arthurs-seat-p914341",
+   "wikidata": "Q2640532",
+   "wikipedia": "en:Holyrood Park",
+   "description": "park in Edinburgh, Scotland, UK",
+   "image": "Edinburgh Arthur Seat dsc06165.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/287130390",
+   "name": "Greyfriars Kirk",
+   "kind": "landmark",
+   "lat": 55.946636,
+   "lng": -3.19228,
+   "address": "Greyfriars Place, EH1 2QQ",
+   "website": "https://greyfriarskirk.com/",
+   "wikidata": "Q2113456",
+   "wikipedia": "en:Greyfriars Kirk",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "Greyfriars Kirk - 01.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4348244",
+   "name": "Bruntsfield Links",
+   "kind": "park",
+   "lat": 55.939191,
+   "lng": -3.201047,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4979595",
+   "wikipedia": "en:Bruntsfield Links",
+   "description": "parkland in Edinburgh, Scotland, UK",
+   "image": "Bruntsfield Links, Edinburgh.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/1669488",
+   "name": "Lauriston Castle",
+   "kind": "landmark",
+   "lat": 55.971202,
+   "lng": -3.278438,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2969689",
+   "wikipedia": "en:Lauriston Castle",
+   "description": "16th-century tower house in Edinburgh, Scotland, United Kingdom",
+   "image": "LauristonNW.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22938944",
+   "name": "Modern Two",
+   "kind": "gallery",
+   "lat": 55.951848,
+   "lng": -3.224208,
+   "address": "73 Belford Road, EH4 3DR",
+   "website": null,
+   "wikidata": "Q2679817",
+   "wikipedia": "en:Modern Two",
+   "description": "Scottish National Gallery of Modern Art Two",
+   "image": "Modern Two (Dean Gallery), 73 Belford Road, Edinburgh (side view).jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/62066717",
+   "name": "Ross Fountain",
+   "kind": "attraction",
+   "lat": 55.95006,
+   "lng": -3.203037,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7369346",
+   "wikipedia": null,
+   "description": "fountain in Edinburgh, Scotland",
+   "image": "Ross Fountain in Edinburgh.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/33710",
+   "name": "Old College",
+   "kind": "attraction",
+   "lat": 55.947425,
+   "lng": -3.187256,
+   "address": "South Bridge, EH8 9YL",
+   "website": "https://www.ed.ac.uk/",
+   "wikidata": "Q4283940",
+   "wikipedia": "en:Old College, University of Edinburgh",
+   "description": "university building in Edinburgh, Scotland, UK",
+   "image": "Old College, Edinburgh - aerial - 2025-04-19 02.jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:00-21:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "21:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/233760765",
+   "name": "The Meadows",
+   "kind": "park",
+   "lat": 55.942351,
+   "lng": -3.191727,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7750795",
+   "wikipedia": "en:The Meadows, Edinburgh",
+   "description": "park in Edinburgh, Scotland, UK",
+   "image": "Summer Crowd in the Meadows.JPG",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/268408103",
+   "name": "Camera Obscura & World of Illusions",
+   "kind": "attraction",
+   "lat": 55.949029,
+   "lng": -3.195604,
+   "address": "549 Castlehill, EH1 2ND",
+   "website": "https://www.camera-obscura.co.uk/",
+   "wikidata": "Q4211494",
+   "wikipedia": "en:Camera Obscura, Edinburgh",
+   "description": "Museum in Edinburgh, Scotland, UK",
+   "image": "Outlook Tower, Castlehill, Edinburgh.JPG",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "08:00-22:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "08:00",
+       "22:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/465938528",
+   "name": "Nelson Monument",
+   "kind": "landmark",
+   "lat": 55.954357,
+   "lng": -3.182579,
+   "address": null,
+   "website": "https://cultureedinburgh.com/our-venues/nelson-monument",
+   "wikidata": "Q11838983",
+   "wikipedia": "en:Nelson Monument, Edinburgh",
+   "description": "monument in Edinburgh, Scotland, UK",
+   "image": "Nelson Monument, Calton Hill, Edinburgh.JPG",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "10:00-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/78693281",
+   "name": "St Andrew Square Garden",
+   "kind": "garden",
+   "lat": 55.954211,
+   "lng": -3.193154,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7592419",
+   "wikipedia": "en:St Andrew Square, Edinburgh",
+   "description": "city square in Edinburgh, Scotland, UK",
+   "image": "George Street from St Andrew's Square - geograph.org.uk - 1116148.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "07:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "07:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2914760336",
+   "name": "The Scotch Whisky Experience",
+   "kind": "attraction",
+   "lat": 55.948743,
+   "lng": -3.195875,
+   "address": "354 Castlehill, EH1 2NE",
+   "website": "https://www.scotchwhiskyexperience.co.uk/",
+   "wikidata": "Q4526278",
+   "wikipedia": "en:Scotch Whisky Experience",
+   "description": "visitor attraction in Edinburgh, United Kingdom",
+   "image": "Scotch Whisky Heritage Centre, Edinburgh - geograph.org.uk - 932290.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4618730690",
+   "name": "Writers' Museum",
+   "kind": "museum",
+   "lat": 55.949691,
+   "lng": -3.193742,
+   "address": "Lady Stair's Close, EH1 2PA",
+   "website": "https://www.edinburghmuseums.org.uk/venue/writers-museum",
+   "wikidata": "Q8038444",
+   "wikipedia": "en:Writers' Museum",
+   "description": "Museum in Edinburgh, Scotland, United Kingdom",
+   "image": "Scottish Writers' Museum.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/320974678",
+   "name": "Dugald Stewart Monument",
+   "kind": "landmark",
+   "lat": 55.954517,
+   "lng": -3.184433,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5312471",
+   "wikipedia": "en:Dugald Stewart Monument",
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Dugald Stewart Monument - 05.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25946269",
+   "name": "Dynamic Earth",
+   "kind": "museum",
+   "lat": 55.95053,
+   "lng": -3.174412,
+   "address": null,
+   "website": "https://www.dynamicearth.org.uk/",
+   "wikidata": "Q3358350",
+   "wikipedia": "en:Dynamic Earth (Edinburgh)",
+   "description": "science center in Edinburgh, Scotland",
+   "image": "DynamicEarth1.JPG",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/293890858",
+   "name": "John Knox House",
+   "kind": "landmark",
+   "lat": 55.950636,
+   "lng": -3.185081,
+   "address": "45 High Street, EH1 1SR",
+   "website": "https://www.scottishstorytellingcentre.com/john-knox-house/",
+   "wikidata": "Q6243358",
+   "wikipedia": "en:John Knox House",
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "John Knox's House - geograph.org.uk - 3060967.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/259067386",
+   "name": "Museum of Edinburgh",
+   "kind": "museum",
+   "lat": 55.951207,
+   "lng": -3.179433,
+   "address": "142-146 Canongate",
+   "website": "https://www.edinburghmuseums.org.uk/venue/museum-edinburgh",
+   "wikidata": "Q11838982",
+   "wikipedia": null,
+   "description": "museum in Edinburgh, Scotland, United Kingdom",
+   "image": "Huntly House Museum - geograph.org.uk - 1341300.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00; Aug: Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "08-01",
+       "08-31"
+      ]
+     ],
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/239888879",
+   "name": "Political Martyrs' Monument",
+   "kind": "landmark",
+   "lat": 55.953369,
+   "lng": -3.185792,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7210212",
+   "wikipedia": "en:Political Martyrs' Monument",
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Martyrs Monument, Calton Hill.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13564998178",
+   "name": "The Jellicoe Express -- 1917 - 2017",
+   "kind": "landmark",
+   "lat": 55.951947,
+   "lng": -3.18882,
+   "address": null,
+   "website": null,
+   "wikidata": "Q693105",
+   "wikipedia": "en:Highland Railway",
+   "description": "former British railway company",
+   "image": "Hugh llewelyn 103 (6325586872).jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4933268",
+   "name": "Charlotte Square Gardens",
+   "kind": "garden",
+   "lat": 55.951747,
+   "lng": -3.207656,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5086152",
+   "wikipedia": "en:Charlotte Square",
+   "description": "city square in Edinburgh, Scotland, UK",
+   "image": "Charlotte Square - geograph.org.uk - 105918.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/4075023",
+   "name": "George Square Gardens",
+   "kind": "garden",
+   "lat": 55.943641,
+   "lng": -3.188814,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5544755",
+   "wikipedia": "en:George Square, Edinburgh",
+   "description": "city square in Edinburgh, Scotland, UK",
+   "image": "George Square house - geograph.org.uk - 1350567.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Oct-Apr Mo-Fr 07:00-16:00; Apr-Oct Mo-Fr 07:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "10-01",
+       "04-30"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4618730691",
+   "name": "Gladstone's Land",
+   "kind": "landmark",
+   "lat": 55.949429,
+   "lng": -3.193685,
+   "address": "477B Lawnmarket, EH1 2NT",
+   "website": "https://www.nts.org.uk/visit/places/gladstones-land",
+   "wikidata": "Q5566312",
+   "wikipedia": null,
+   "description": "residential building in Edinburgh, Scotland, UK",
+   "image": "Gladstones Land (4530213293).jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/258016781",
+   "name": "Greyfriars Bobby",
+   "kind": "landmark",
+   "lat": 55.946922,
+   "lng": -3.191304,
+   "address": null,
+   "website": "https://greyfriarsbobby.org/",
+   "wikidata": "Q17570789",
+   "wikipedia": "en:Greyfriars Bobby",
+   "description": "fountain in City of Edinburgh, Scotland, UK",
+   "image": "Greyfriars Bobby Fountain, 2014-07-06.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2955931322",
+   "name": "Museum of Childhood",
+   "kind": "museum",
+   "lat": 55.95033,
+   "lng": -3.185507,
+   "address": "42 High Street, EH1 1TG",
+   "website": "https://www.edinburghmuseums.org.uk/venue/museum-childhood",
+   "wikidata": "Q15122172",
+   "wikipedia": "en:Museum of Childhood (Edinburgh)",
+   "description": "Museum in City of Edinburgh, Scotland, United Kingdom",
+   "image": "Museum of Childhood, Edinburg.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4618730716",
+   "name": "Museum on the Mound",
+   "kind": "museum",
+   "lat": 55.950188,
+   "lng": -3.193248,
+   "address": "The Mound, EH1 1YZ",
+   "website": "https://www.museumonthemound.com/",
+   "wikidata": "Q6941127",
+   "wikipedia": "en:Museum on the Mound",
+   "description": "money museum in the headquarters of HBOS",
+   "image": "EdinburghMuseumOnTheMound-pjt.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Mo,Su off; Tu-Fr 10:00-17:00; Sa,PH 13:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "su"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/5182745",
+   "name": "Royal Scottish Academy",
+   "kind": "gallery",
+   "lat": 55.951671,
+   "lng": -3.196267,
+   "address": "The Mound, EH2 2EL",
+   "website": "https://www.royalscottishacademy.org/",
+   "wikidata": "Q7374813",
+   "wikipedia": "en:Royal Scottish Academy",
+   "description": "art museum in City of Edinburgh, Scotland, UK",
+   "image": "RSA Edinburgh by George Meikle Kemp.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/511343921",
+   "name": "Scottish National War Memorial",
+   "kind": "landmark",
+   "lat": 55.948394,
+   "lng": -3.199717,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7437874",
+   "wikipedia": "en:Scottish National War Memorial",
+   "description": "World War I memorial in City of Edinburgh, Scotland, UK",
+   "image": "EdinburghSNWM.JPG",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/90710096",
+   "name": "Trinity House",
+   "kind": "museum",
+   "lat": 55.972191,
+   "lng": -3.171342,
+   "address": "99 Kirkgate, EH6 6BJ",
+   "website": "https://www.historicenvironment.scot/visit-a-place/places/trinity-house/",
+   "wikidata": "Q7842854",
+   "wikipedia": "en:Trinity House of Leith",
+   "description": "listed building in Leith, Edinburgh, Scotland, UK",
+   "image": "Trinity House Maritime Museum - geograph.org.uk - 626296.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/62061248",
+   "name": "Church of St John the Evangelist",
+   "kind": "landmark",
+   "lat": 55.950044,
+   "lng": -3.206481,
+   "address": "Princes Street, EH2 4BJ",
+   "website": "https://www.stjohns-edinburgh.org.uk/",
+   "wikidata": "Q5117460",
+   "wikipedia": "en:St John's, Edinburgh",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "Edinburgh - June 2014 (1) (14405005306) (2).jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/333902323",
+   "name": "Craiglockhart Castle",
+   "kind": "landmark",
+   "lat": 55.919306,
+   "lng": -3.238325,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5181716",
+   "wikipedia": "en:Craiglockhart Castle",
+   "description": "castle in City of Edinburgh, Scotland, UK",
+   "image": "Craiglockhart castle.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/70826506",
+   "name": "Fruitmarket",
+   "kind": "gallery",
+   "lat": 55.951257,
+   "lng": -3.189699,
+   "address": "45 Market Street, EH1 1DF",
+   "website": "https://www.fruitmarket.co.uk/",
+   "wikidata": "Q4402028",
+   "wikipedia": "en:Fruitmarket Gallery",
+   "description": "art gallery in Edinburgh",
+   "image": "Fruitmarket Gallery Edinburgh.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "11:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/30475890",
+   "name": "Liberton Tower",
+   "kind": "landmark",
+   "lat": 55.914571,
+   "lng": -3.177382,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6541506",
+   "wikipedia": "en:Liberton Tower",
+   "description": "four-storey, square-plan tower house in Edinburgh, Scotland, UK",
+   "image": "LibertonTower.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12223010635",
+   "name": "Melville's Monument",
+   "kind": "landmark",
+   "lat": 55.954217,
+   "lng": -3.193153,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570686",
+   "wikipedia": "en:Melville Monument",
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Henry Dundas Melville Monument.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41299975",
+   "name": "National War Museum",
+   "kind": "museum",
+   "lat": 55.948786,
+   "lng": -3.201664,
+   "address": null,
+   "website": "https://www.nms.ac.uk/national-war-museum/",
+   "wikidata": "Q6979345",
+   "wikipedia": "en:National War Museum",
+   "description": "museum in Scotland",
+   "image": "National War Museum of Scotland.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "Apr-Sep: Mo-Su 09:45-17:45; Oct-Mar: Mo-Su 09:45-16:45",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "09-30"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:45",
+       "17:45"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "10-01",
+       "03-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:45",
+       "16:45"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/465223757",
+   "name": "St Stephen's Church",
+   "kind": "landmark",
+   "lat": 55.958564,
+   "lng": -3.203491,
+   "address": "105 St Stephen Street, EH3 5AB",
+   "website": "http://saintstephensstockbridge.com/",
+   "wikidata": "Q7595476",
+   "wikipedia": "en:St Stephen's Church, Edinburgh",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "St-Stephens-Edinburgh.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/291214494",
+   "name": "Talbot Rice Gallery",
+   "kind": "museum",
+   "lat": 55.947067,
+   "lng": -3.187772,
+   "address": "South Bridge",
+   "website": "https://www.trg.ed.ac.uk/",
+   "wikidata": "Q7679039",
+   "wikipedia": "en:Talbot Rice Gallery",
+   "description": "Art gallery in Edinburgh, Scotland, United Kingdom",
+   "image": "Lucy Skaer, 'Sticks and Stones (Part 1)', 2013-15. Mahogany with inserts of porcelain, limestone, tin, coins, American walnut, Tasmanian black wood. Installation view, Green Man, 2018. Image courtesy Talbot Rice Gallery.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "Tu-Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/41893740",
+   "name": "The King's Gallery",
+   "kind": "museum",
+   "lat": 55.952586,
+   "lng": -3.173884,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7269994",
+   "wikipedia": "en:King's Gallery, Edinburgh",
+   "description": "art gallery in Holyrood Palace, Edinburgh",
+   "image": "Queen's Gallery - Edinburgh.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/62061368",
+   "name": "The Parish Church of St Cuthbert",
+   "kind": "landmark",
+   "lat": 55.949626,
+   "lng": -3.205121,
+   "address": "5 Lothian Road, EH1 2EP",
+   "website": "https://www.st-cuthberts.net/",
+   "wikidata": "Q7756122",
+   "wikipedia": "en:St Cuthbert's Church, Edinburgh",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "St Cuthbert, Edinburgh, exterior.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/70954995",
+   "name": "The People's Story Museum",
+   "kind": "museum",
+   "lat": 55.951481,
+   "lng": -3.179935,
+   "address": "163 Canongate, EH8 8BN",
+   "website": "https://www.edinburghmuseums.org.uk/Venues/The-People-s-Story",
+   "wikidata": "Q4306389",
+   "wikipedia": "en:The People's Story Museum",
+   "description": "Museum in City of Edinburgh, Scotland, United Kingdom",
+   "image": "Canongate Tolbooth - geograph.org.uk - 1336771.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/70955023",
+   "name": "Trinity Apse",
+   "kind": "museum",
+   "lat": 55.95096,
+   "lng": -3.185677,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7842704",
+   "wikipedia": "en:Trinity College Kirk",
+   "description": "royal collegiate church in Edinburgh, Scotland, UK, almost entirely demolished in 1848",
+   "image": "Trinity College Kirk 03.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "\"on appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/2836251939",
+   "name": "Witches' Well",
+   "kind": "landmark",
+   "lat": 55.948882,
+   "lng": -3.196423,
+   "address": null,
+   "website": null,
+   "wikidata": "Q95568172",
+   "wikipedia": null,
+   "description": "wall-mounted fountain in Edinburgh, Scotland, UK",
+   "image": "Witches Well.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2853530751",
+   "name": "Georgian House",
+   "kind": "landmark",
+   "lat": 55.952488,
+   "lng": -3.208214,
+   "address": "7 Charlotte Square",
+   "website": "https://www.nts.org.uk/Property/Georgian-House/",
+   "wikidata": "Q7736202",
+   "wikipedia": "en:The Georgian House, Edinburgh",
+   "description": "townhouse in Edinburgh, Scotland, UK, 7 Charlotte Square",
+   "image": "Charlottesq2.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41558984",
+   "name": "Holyrood Distillery",
+   "kind": "attraction",
+   "lat": 55.943017,
+   "lng": -3.177508,
+   "address": "19 St Leonard's Lane, EH8 9SH",
+   "website": "https://www.holyrooddistillery.co.uk/",
+   "wikidata": "Q120108000",
+   "wikipedia": null,
+   "description": "distillery in Edinburgh, Scotland",
+   "image": "Holyrood Distillery (geograph 6418456).jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Mo-Su 11:30+",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:relation/8423665",
+   "name": "Leith Links",
+   "kind": "park",
+   "lat": 55.971117,
+   "lng": -3.160749,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6520393",
+   "wikipedia": "en:Leith Links",
+   "description": "sports venue in City of Edinburgh, Scotland, UK",
+   "image": "Leith Links - geograph.org.uk - 428145.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10199790844",
+   "name": "Madelvic Car Factory",
+   "kind": "landmark",
+   "lat": 55.980421,
+   "lng": -3.232618,
+   "address": null,
+   "website": "https://www.nationaltransporttrust.org.uk/heritage-sites/heritage-detail/madelvic-motor-factory?lr=1",
+   "wikidata": "Q15243451",
+   "wikipedia": "en:Madelvic Motor Carriage Company",
+   "description": "former automobile manufacturer",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/164545444",
+   "name": "Mercat Cross",
+   "kind": "landmark",
+   "lat": 55.949646,
+   "lng": -3.190184,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6818041",
+   "wikipedia": "en:Mercat Cross, Edinburgh",
+   "description": "Market Cross in Edinburgh, Scotland, UK",
+   "image": "Mercat Cross, Edinburgh.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/324049962",
+   "name": "Merchiston Tower",
+   "kind": "landmark",
+   "lat": 55.93333,
+   "lng": -3.213896,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1921452",
+   "wikipedia": "en:Merchiston Tower",
+   "description": "castle in City of Edinburgh, Scotland, UK",
+   "image": "Merchiston Tower, Edinburgh.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/81243762",
+   "name": "New Town Church",
+   "kind": "landmark",
+   "lat": 55.95407,
+   "lng": -3.195864,
+   "address": "15-17 George Street",
+   "website": null,
+   "wikidata": "Q7592411",
+   "wikipedia": "en:Edinburgh: New Town Church",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "St George's and St Andrew's Church, Edinburgh.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/42261848",
+   "name": "St Cecilia's Hall",
+   "kind": "museum",
+   "lat": 55.948989,
+   "lng": -3.186397,
+   "address": null,
+   "website": "https://www.stcecilias.ed.ac.uk/",
+   "wikidata": "Q7592777",
+   "wikipedia": "en:St Cecilia's Hall",
+   "description": "Music museum, concert hall in Scotland, United Kingdom",
+   "image": "St Cecilia's Hall, Edinburgh, by Jim Barton, Geograph 4253114.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2973367148",
+   "name": "The Edinburgh Dungeon",
+   "kind": "attraction",
+   "lat": 55.951078,
+   "lng": -3.190878,
+   "address": "31 Market Street",
+   "website": "https://www.thedungeons.com/edinburgh/en/",
+   "wikidata": "Q55076772",
+   "wikipedia": null,
+   "description": "haunted attraction in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh Dungeon 01 (223052043).jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28553603",
+   "name": "The Robin Chapel",
+   "kind": "landmark",
+   "lat": 55.931318,
+   "lng": -3.130358,
+   "address": "Queen's Walk, EH16 4EA",
+   "website": null,
+   "wikidata": "Q7352312",
+   "wikipedia": "en:Robin Chapel",
+   "description": "church in Edinburgh, Scotland, UK",
+   "image": "Robin Chapel interior, looking east.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/442615638",
+   "name": "Brassfounders Column",
+   "kind": "landmark",
+   "lat": 55.946024,
+   "lng": -3.185398,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17812523",
+   "wikipedia": null,
+   "description": "monument in Edinburgh, Scotland, UK",
+   "image": "Colonne Brassfounders Édimbourg 2.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2466426304",
+   "name": "David Livingstone Memorial",
+   "kind": "landmark",
+   "lat": 55.952462,
+   "lng": -3.192736,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570753",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland, UK",
+   "image": "David Livingston Edinburgh.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/270192920",
+   "name": "Dean Gardens",
+   "kind": "garden",
+   "lat": 55.954302,
+   "lng": -3.213646,
+   "address": null,
+   "website": "http://www.deangardens.org/",
+   "wikidata": "Q38251370",
+   "wikipedia": "en:Dean Gardens, Edinburgh",
+   "description": "private communal gardens near Stockbridge, New Town area, Edinburgh, Scotland, UK",
+   "image": "Dean Gardens - geograph.org.uk - 1147779.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/8043028",
+   "name": "Dunbar's Close Garden",
+   "kind": "garden",
+   "lat": 55.952155,
+   "lng": -3.178943,
+   "address": null,
+   "website": null,
+   "wikidata": "Q13889055",
+   "wikipedia": null,
+   "description": "garden in Edinburgh, Scotland, UK",
+   "image": "Dunbar's Close Garden 01.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10199734008",
+   "name": "HMS Claverhouse",
+   "kind": "landmark",
+   "lat": 55.980728,
+   "lng": -3.223812,
+   "address": null,
+   "website": "https://www.nationaltransporttrust.org.uk/heritage-sites/heritage-detail/granton---burntisland-train-ferry?lr=1",
+   "wikidata": "Q5631892",
+   "wikipedia": "en:HMS Claverhouse",
+   "description": "naval shore establishment in Edinburgh, Scotland, UK",
+   "image": "Former HMS Claverhouse, Granton Square.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26626296",
+   "name": "Lochend Park",
+   "kind": "park",
+   "lat": 55.960666,
+   "lng": -3.15993,
+   "address": null,
+   "website": null,
+   "wikidata": "Q19585967",
+   "wikipedia": "en:Lochend Park",
+   "description": "park in City of Edinburgh, Scotland, UK",
+   "image": "Modern flats overlooking Lochend Park.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22415647",
+   "name": "London Road Gardens",
+   "kind": "park",
+   "lat": 55.957117,
+   "lng": -3.177967,
+   "address": null,
+   "website": null,
+   "wikidata": "Q54869777",
+   "wikipedia": "en:London Road Gardens, Edinburgh",
+   "description": "public garden in Edinburgh, Scotland, UK",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/57709519",
+   "name": "RBGE Inverleith House",
+   "kind": "gallery",
+   "lat": 55.965004,
+   "lng": -3.210154,
+   "address": null,
+   "website": "http://www.rbge.org.uk/the-gardens/edinburgh/inverleith-house",
+   "wikidata": "Q16931444",
+   "wikipedia": "en:Inverleith House",
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "Inverleith House - geograph.org.uk - 554914.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/15334519",
+   "name": "Regent Gardens",
+   "kind": "garden",
+   "lat": 55.95525,
+   "lng": -3.177116,
+   "address": null,
+   "website": null,
+   "wikidata": "Q39086712",
+   "wikipedia": null,
+   "description": "communal garden in Edinburgh, Scotland, UK",
+   "image": "Regentgardens1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314600289",
+   "name": "Scottish American War Memorial",
+   "kind": "landmark",
+   "lat": 55.951048,
+   "lng": -3.201038,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7435775",
+   "wikipedia": "en:Scottish American Memorial",
+   "description": "World War I memorial in City of Edinburgh, Scotland, UK",
+   "image": "ScotsAmerican War Memorial.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6715804556",
+   "name": "The Royal Scots Dragoon Guards Museum",
+   "kind": "museum",
+   "lat": 55.948085,
+   "lng": -3.20088,
+   "address": null,
+   "website": "https://www.scotsdgmuseum.com/",
+   "wikidata": "Q47486844",
+   "wikipedia": "en:Royal Scots Dragoon Guards Museum",
+   "description": "regimental museum in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh Castle - Royal Scots Dragoon Guards Museum - geograph.org.uk - 2320611.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/446654897",
+   "name": "The Royal Scots Regimental Museum",
+   "kind": "museum",
+   "lat": 55.94824,
+   "lng": -3.20038,
+   "address": null,
+   "website": "https://www.theroyalscots.co.uk/museum/",
+   "wikidata": "Q50810299",
+   "wikipedia": "en:The Museum of the Royal Scots (The Royal Regiment) and the Royal Regiment of Scotland",
+   "description": "regimental museum in Edinburgh, Scotland, United Kingdom",
+   "image": "Edinburgh Castle - Royal Scots Museum - geograph.org.uk - 2320614.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4462104374",
+   "name": "Wentworth Elm",
+   "kind": "attraction",
+   "lat": 55.952111,
+   "lng": -3.170649,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7879358",
+   "wikipedia": "en:Ulmus × hollandica 'Wentworthii Pendula'",
+   "description": "elm cultivar",
+   "image": "Ulmus 'Wentworthii', Holyrood.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5337269693",
+   "name": "72nd Highlanders Memorial",
+   "kind": "landmark",
+   "lat": 55.94882,
+   "lng": -3.19813,
+   "address": null,
+   "website": null,
+   "wikidata": "Q77776441",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5337269698",
+   "name": "78th Highlanders Memorial",
+   "kind": "landmark",
+   "lat": 55.948961,
+   "lng": -3.196917,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17795306",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland",
+   "image": "Edinburgh Castle Esplanade, 78th Highlanders Memorial (1).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11665348379",
+   "name": "A Home for Photography",
+   "kind": "gallery",
+   "lat": 55.949535,
+   "lng": -3.21167,
+   "address": "6 William Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 12:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10106526105",
+   "name": "A-Team",
+   "kind": "gallery",
+   "lat": 55.980515,
+   "lng": -3.178417,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/313680590",
+   "name": "Adam Black Memorial",
+   "kind": "landmark",
+   "lat": 55.952168,
+   "lng": -3.194415,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570709",
+   "wikipedia": "en:Adam Black",
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Edinburgh - Edinburgh, East Princes Street Gardens, Adam Black Monument - 20140421191711.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1241883633",
+   "name": "Agnes-Moon Art",
+   "kind": "gallery",
+   "lat": 55.981377,
+   "lng": -3.177345,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/309203675",
+   "name": "Albert Memorial",
+   "kind": "landmark",
+   "lat": 55.951751,
+   "lng": -3.207639,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570702",
+   "wikipedia": null,
+   "description": "memorial in City of Edinburgh, Scotland, UK",
+   "image": "Statue of Prince Albert, Charlotte Square Edinburgh.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314597264",
+   "name": "Allan Ramsay Memorial",
+   "kind": "landmark",
+   "lat": 55.951688,
+   "lng": -3.197305,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570763",
+   "wikipedia": null,
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh, West Princes Street Gardens, Allan Ramsay Monument.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5025640452",
+   "name": "Anatomical Museum",
+   "kind": "museum",
+   "lat": 55.944852,
+   "lng": -3.190104,
+   "address": null,
+   "website": "https://www.ed.ac.uk/biomedical-sciences/anatomy/anatomical-museum",
+   "wikidata": "Q26986300",
+   "wikipedia": null,
+   "description": "Anatomical museum at the University of Edinburgh, United Kingdom",
+   "image": "Elephant skeleton, Anatomical Museum, University of Edinburgh (48638172423).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Sa[-1] 10:00-16:00; Jun-Jul off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/103163117",
+   "name": "Belford Hostel",
+   "kind": "landmark",
+   "lat": 55.950927,
+   "lng": -3.220523,
+   "address": "6-8 Douglas Gardens",
+   "website": "https://www.edinburghhostels.com/belford-hostel-edinburgh.html",
+   "wikidata": "Q17795202",
+   "wikipedia": null,
+   "description": "Places of Worship in Scotland site",
+   "image": "Former Belford Church, Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2274485025",
+   "name": "Black Watch Memorial",
+   "kind": "landmark",
+   "lat": 55.950126,
+   "lng": -3.194538,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17569383",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland",
+   "image": "Black Watch Memorial, the Mound - geograph.org.uk - 1343654.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3975619625",
+   "name": "Bore Stone",
+   "kind": "landmark",
+   "lat": 55.931216,
+   "lng": -3.209819,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56631513",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/321129859",
+   "name": "Burns Monument",
+   "kind": "landmark",
+   "lat": 55.953435,
+   "lng": -3.178319,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570683",
+   "wikipedia": null,
+   "description": "monument in Edinburgh, Scotland, UK",
+   "image": "Edinburgh Burns Monument with heather.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/351117096",
+   "name": "Caiy Stane",
+   "kind": "landmark",
+   "lat": 55.902324,
+   "lng": -3.213189,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56661562",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/308919343",
+   "name": "Catherine Sinclair Monument",
+   "kind": "landmark",
+   "lat": 55.953174,
+   "lng": -3.207594,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570693",
+   "wikipedia": null,
+   "description": "monument in Edinburgh, Scotland",
+   "image": "Catherine Sinclair Monument, North Charlotte Street Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2940854453",
+   "name": "Charles II of England",
+   "kind": "landmark",
+   "lat": 55.94923,
+   "lng": -3.190517,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570718",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland, UK",
+   "image": "Statue of Charles II of England as Caesar, Edinburgh (cropped).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/70836441",
+   "name": "City Art Centre",
+   "kind": "gallery",
+   "lat": 55.951019,
+   "lng": -3.189191,
+   "address": "2 Market Street, EH1 1DE",
+   "website": "https://www.edinburghmuseums.org.uk/venue/city-art-centre",
+   "wikidata": "Q17569430",
+   "wikipedia": "en:City Art Centre",
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh, 1-6 Market Street, City Art Centre.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/326060905",
+   "name": "City Dome",
+   "kind": "gallery",
+   "lat": 55.955179,
+   "lng": -3.1831,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570590",
+   "wikipedia": null,
+   "description": "observatory in Edinburgh, Scotland, UK",
+   "image": "City Dome - City Observatory of Edinburgh - 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11503362946",
+   "name": "Close",
+   "kind": "gallery",
+   "lat": 55.955663,
+   "lng": -3.202238,
+   "address": "4B Howe Street, EH3 6TD",
+   "website": "https://www.gallery-close.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3249160727",
+   "name": "Coburg House Studios",
+   "kind": "gallery",
+   "lat": 55.976054,
+   "lng": -3.174313,
+   "address": "15 Coburg Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12552254532",
+   "name": "Cockburn Geological Museum",
+   "kind": "museum",
+   "lat": 55.923959,
+   "lng": -3.174618,
+   "address": null,
+   "website": "https://www.ed.ac.uk/visit/museums-galleries/geology",
+   "wikidata": "Q59278940",
+   "wikipedia": null,
+   "description": "Museum in Edinburgh, Scotland, United Kingdom",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/867700212",
+   "name": "College War Memorial",
+   "kind": "landmark",
+   "lat": 55.930872,
+   "lng": -3.216816,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17808949",
+   "wikipedia": null,
+   "description": "war memorial in City of Edinburgh, Scotland, UK",
+   "image": "School War Memorial - geograph.org.uk - 2261212.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5337269697",
+   "name": "Colonel Mackenzie Statue",
+   "kind": "landmark",
+   "lat": 55.948921,
+   "lng": -3.197396,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17795478",
+   "wikipedia": null,
+   "description": "monument in Edinburgh, Scotland",
+   "image": "Edinburgh Castle Esplanade, Monument To Colonel Mackenzie.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30886822",
+   "name": "Corstorphine Hill Tower",
+   "kind": "landmark",
+   "lat": 55.950991,
+   "lng": -3.272356,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17812576",
+   "wikipedia": null,
+   "description": "monument in Edinburgh, Scotland, UK",
+   "image": "Clermiston Tower (Corstorphine Hill Tower).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2112878976",
+   "name": "David Hume Memorial",
+   "kind": "landmark",
+   "lat": 55.949552,
+   "lng": -3.192443,
+   "address": null,
+   "website": null,
+   "wikidata": "Q55842333",
+   "wikipedia": null,
+   "description": "Memorial in honour of David Hume in Edinburgh",
+   "image": "David Hume Memorial in Edinburgh 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2934518744",
+   "name": "Dean Ramsay Memorial",
+   "kind": "landmark",
+   "lat": 55.9503,
+   "lng": -3.205651,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114153227",
+   "wikipedia": null,
+   "description": "memorial cross in Edinburgh, Scotland",
+   "image": "Dean Ramsay Memorial - geograph.org.uk - 1325548.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/499991519",
+   "name": "Dovecot Gallery",
+   "kind": "gallery",
+   "lat": 55.948206,
+   "lng": -3.184841,
+   "address": "10 Infirmary Street, EH1 1LT",
+   "website": "https://dovecotstudios.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00; Su off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/708975728",
+   "name": "Dr Thomas Chalmers Statue",
+   "kind": "landmark",
+   "lat": 55.95246,
+   "lng": -3.203511,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570715",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Statue of Thomas Chalmers, George Street, Edinburgh - 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/287551981",
+   "name": "Duke of Wellington Statue",
+   "kind": "landmark",
+   "lat": 55.953471,
+   "lng": -3.189151,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570765",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Edinburgh - Edinburgh, Princes Street, General Register House, Duke Of Wellington Statue - 20140421001329.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4437637818",
+   "name": "Earl Haig",
+   "kind": "landmark",
+   "lat": 55.948897,
+   "lng": -3.201715,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17813234",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland, UK",
+   "image": "Earl Haig statue, Edinburgh Castle.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/574304142",
+   "name": "Edinburgh Farmers' Market",
+   "kind": "market",
+   "lat": 55.947763,
+   "lng": -3.203553,
+   "address": null,
+   "website": "https://www.edinburghfarmersmarket.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 09:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/659876969",
+   "name": "Edinburgh Printmakers",
+   "kind": "gallery",
+   "lat": 55.94198,
+   "lng": -3.212814,
+   "address": "2 Gilmore Park, EH3 9FN",
+   "website": "https://edinburghprintmakers.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/952934",
+   "name": "Edinburgh Zoo",
+   "kind": "zoo",
+   "lat": 55.945455,
+   "lng": -3.268959,
+   "address": "134 Corstorphine Road, EH12 6TS",
+   "website": "https://www.edinburghzoo.org.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3974215891",
+   "name": "Embassy",
+   "kind": "gallery",
+   "lat": 55.9752,
+   "lng": -3.179327,
+   "address": "7 Ferry Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"Open for scheduled events\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/2934518745",
+   "name": "Fifth Duke of Buccleuch Memorial",
+   "kind": "landmark",
+   "lat": 55.949493,
+   "lng": -3.191713,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570712",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland, UK",
+   "image": "Buccleuch Statue.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5337269695",
+   "name": "Frederick, Duke of York Statue",
+   "kind": "landmark",
+   "lat": 55.948885,
+   "lng": -3.19785,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17791177",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Edinburgh Castle Esplanade, Statue Of Duke Of York.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/41299992",
+   "name": "Gatehouse",
+   "kind": "landmark",
+   "lat": 55.948518,
+   "lng": -3.198655,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17569927",
+   "wikipedia": null,
+   "description": "gatehouse in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh Castle Gatehouse 1.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/708975731",
+   "name": "George IV statue",
+   "kind": "landmark",
+   "lat": 55.953518,
+   "lng": -3.197258,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570721",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "George IV Statue (Edinburgh) - 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/671841776",
+   "name": "Granton Castle Walled Garden",
+   "kind": "garden",
+   "lat": 55.982028,
+   "lng": -3.241544,
+   "address": null,
+   "website": "https://www.grantoncastlewalledgarden.org.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa,Su,PH 14:00-16:00; Nov-Mar Sa-Su,PH 13:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5629281877",
+   "name": "Grassmarket Market",
+   "kind": "market",
+   "lat": 55.947498,
+   "lng": -3.196027,
+   "address": "Grassmarket, EH1 2JR",
+   "website": "https://www.stockbridgemarket.com/grassmarket.html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6587070940",
+   "name": "Harrison Memorial Arch",
+   "kind": "landmark",
+   "lat": 55.924806,
+   "lng": -3.18177,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17805255",
+   "wikipedia": null,
+   "description": "arch in Edinburgh, Scotland, UK",
+   "image": "Harrison Memorial Arch Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9760074407",
+   "name": "Heart Of Midlothian War Memorial",
+   "kind": "landmark",
+   "lat": 55.946285,
+   "lng": -3.216497,
+   "address": null,
+   "website": null,
+   "wikidata": "Q56631065",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland, UK",
+   "image": "City of Edinburgh - Heart Of Midlothian War Memorial, Haymarket, Edinburgh - 20220906150435.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10000355057",
+   "name": "Heart of Midlothian Museum",
+   "kind": "museum",
+   "lat": 55.938236,
+   "lng": -3.232626,
+   "address": "Tynecastle Terrace",
+   "website": "https://www.heartsfc.co.uk/tickets-and-hospitality/tours/hearts-museum",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10765920705",
+   "name": "Hike to Arthurs Seat",
+   "kind": "viewpoint",
+   "lat": 55.944633,
+   "lng": -3.159285,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/799920963",
+   "name": "Hilltop",
+   "kind": "viewpoint",
+   "lat": 55.947287,
+   "lng": -3.270383,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10106526101",
+   "name": "Image Collective",
+   "kind": "gallery",
+   "lat": 55.981261,
+   "lng": -3.177046,
+   "address": null,
+   "website": "https://www.theimagecollective.co.uk",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5856860528",
+   "name": "Ingleby Gallery",
+   "kind": "gallery",
+   "lat": 55.957844,
+   "lng": -3.191354,
+   "address": "33 Barony Street, EH3 6NX",
+   "website": "https://www.inglebygallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 11:00-17:00; Aug Mo-Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "08-01",
+       "08-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/169111780",
+   "name": "Inspace",
+   "kind": "gallery",
+   "lat": 55.944948,
+   "lng": -3.186732,
+   "address": "1 Crichton Street, EH8 9AB",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2934518746",
+   "name": "John Knox Memorial",
+   "kind": "landmark",
+   "lat": 55.949636,
+   "lng": -3.195078,
+   "address": null,
+   "website": null,
+   "wikidata": "Q77776488",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "John Knox statue, New College Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7160189298",
+   "name": "John Rattray Statue",
+   "kind": "landmark",
+   "lat": 55.971975,
+   "lng": -3.163259,
+   "address": null,
+   "website": null,
+   "wikidata": "Q95388920",
+   "wikipedia": null,
+   "description": "Bronze statue commemorating Rattray as the signatury of the first rules of golf.",
+   "image": "Bronze of John Rattray.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/313680591",
+   "name": "John Wilson Memorial",
+   "kind": "landmark",
+   "lat": 55.951991,
+   "lng": -3.19545,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570768",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Edinburgh - Edinburgh, East Princes Street Gardens, Professor John Wilson Statue - 20140421192008.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3237281852",
+   "name": "KB Smile Studio",
+   "kind": "gallery",
+   "lat": 55.939398,
+   "lng": -3.194842,
+   "address": "3 Marchmont Road",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5388332449",
+   "name": "Leith Market",
+   "kind": "market",
+   "lat": 55.976868,
+   "lng": -3.171536,
+   "address": "Dock Place, EH6 6LU",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2265831081",
+   "name": "Masons' Pillars",
+   "kind": "landmark",
+   "lat": 55.942015,
+   "lng": -3.200308,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17791411",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "Mason's Pillars - east-most pillar.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5110780767",
+   "name": "McEwan Lantern Pillar",
+   "kind": "landmark",
+   "lat": 55.945338,
+   "lng": -3.188262,
+   "address": null,
+   "website": "https://canmore.org.uk/site/125296/edinburgh-teviot-place-bristo-square-mcewan-lantern-pillar",
+   "wikidata": "Q17791706",
+   "wikipedia": null,
+   "description": "streetlight in Edinburgh, Scotland, UK",
+   "image": "William McEwen Memorial, Bristo Square, Edinburgh (7241459812).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314699624",
+   "name": "Memorial to John, Fourth Earl of Hopetoun",
+   "kind": "landmark",
+   "lat": 55.954456,
+   "lng": -3.191655,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570750",
+   "wikipedia": null,
+   "description": "public sculpture in Edinburgh, Scotland",
+   "image": "Edinburgh - Edinburgh, 36 St Andrew Square, Dundas House, Hopetoun Monument - 20140421202234.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/22938984",
+   "name": "Modern One",
+   "kind": "gallery",
+   "lat": 55.950823,
+   "lng": -3.227761,
+   "address": "75 Belford Road, EH4 3DR",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4625806993",
+   "name": "Museum Collections Centre",
+   "kind": "museum",
+   "lat": 55.957698,
+   "lng": -3.192734,
+   "address": "10 Broughton Market, EH3 6NU",
+   "website": "https://www.edinburghmuseums.org.uk/Venues/Museum-Collections-Centre",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu[1] 14:00+ || \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/2977624480",
+   "name": "Museum of Magic, Fortune-Telling and Witchcraft",
+   "kind": "museum",
+   "lat": 55.950674,
+   "lng": -3.185828,
+   "address": null,
+   "website": "https://www.museummfw.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9422760984",
+   "name": "Museum of Scottish Fire Heritage",
+   "kind": "museum",
+   "lat": 55.963784,
+   "lng": -3.183836,
+   "address": "1A Dryden Terrace, EH7 4NB",
+   "website": "https://museumofscottishfireheritage.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1484679632",
+   "name": "North Viewpoint",
+   "kind": "viewpoint",
+   "lat": 55.956036,
+   "lng": -3.182486,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/98616658",
+   "name": "Old Stockbridge Market Entrance",
+   "kind": "landmark",
+   "lat": 55.957953,
+   "lng": -3.207182,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17812263",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "City of Edinburgh - Stockbridge Market, St Stephen Place, Edinburgh - 20210929102240.jpeg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5002102709",
+   "name": "One O'Clock Gun Exhibition",
+   "kind": "museum",
+   "lat": 55.949141,
+   "lng": -3.200915,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3798302141",
+   "name": "Photo trail",
+   "kind": "viewpoint",
+   "lat": 55.952766,
+   "lng": -3.191766,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/819769888",
+   "name": "Physic Garden",
+   "kind": "garden",
+   "lat": 55.952997,
+   "lng": -3.174188,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Apr-Oct: 09:30-18:00; Nov-Mar: 09:30-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/135170177",
+   "name": "Playfair Monument",
+   "kind": "landmark",
+   "lat": 55.954799,
+   "lng": -3.183024,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570689",
+   "wikipedia": null,
+   "description": "monument in City of Edinburgh, Scotland, UK",
+   "image": "Professor John Playfair Monument, Calton Hill, Edinburgh (7109076009).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1145319664",
+   "name": "Prince Of Wales Fountain",
+   "kind": "landmark",
+   "lat": 55.954186,
+   "lng": -3.10872,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17811473",
+   "wikipedia": null,
+   "description": "fountain in Edinburgh, Scotland, UK",
+   "image": "Prince of Wales Fountain, Portobello.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1356336502",
+   "name": "Prisoners of War Museum",
+   "kind": "museum",
+   "lat": 55.948116,
+   "lng": -3.20015,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1434158740",
+   "name": "Queen Victoria",
+   "kind": "landmark",
+   "lat": 55.970714,
+   "lng": -3.17161,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17811847",
+   "wikipedia": null,
+   "description": "statue on Leith Walk, Edinburgh, Scotland, UK",
+   "image": "Queen Victoria statue, Leith.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/30994705",
+   "name": "Redhall Walled Garden",
+   "kind": "garden",
+   "lat": 55.920394,
+   "lng": -3.250585,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/283456724",
+   "name": "Rest and Be Thankful",
+   "kind": "viewpoint",
+   "lat": 55.947711,
+   "lng": -3.263952,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1784442040",
+   "name": "Robert Louis Stevenson Memorial",
+   "kind": "landmark",
+   "lat": 55.95004,
+   "lng": -3.202456,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17569970",
+   "wikipedia": null,
+   "description": "memorial in Edinburgh, Scotland, UK",
+   "image": "RLS Memorial by Ian Hamilton Finlay, Edinburgh.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/36581493",
+   "name": "Robert Viscount Melville",
+   "kind": "landmark",
+   "lat": 55.949658,
+   "lng": -3.21394,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570757",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Melvile Street, Robert Dundas Statue.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/397175911",
+   "name": "Royal Scots Greys Memorial",
+   "kind": "landmark",
+   "lat": 55.951374,
+   "lng": -3.199412,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17813285",
+   "wikipedia": null,
+   "description": "memorial in Edinburgh, Scotland",
+   "image": "Royal Scots Greys Memorial, Princes Street Gardens, Edinburgh.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/87686766",
+   "name": "Royal Scots Monument",
+   "kind": "landmark",
+   "lat": 55.95109,
+   "lng": -3.197116,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17795453",
+   "wikipedia": null,
+   "description": "memorial in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh, Princes Street Gardens, Royal Scots Monument.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2298043778",
+   "name": "Saorsa Art Gallery",
+   "kind": "gallery",
+   "lat": 55.958059,
+   "lng": -3.20934,
+   "address": "8 Deanhaugh Street, EH4 1LY",
+   "website": "https://www.saorsa-art.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Su 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12670410517",
+   "name": "Scott Lawrie Gallery",
+   "kind": "gallery",
+   "lat": 55.946127,
+   "lng": -3.206505,
+   "address": "2 Chuckie Pend",
+   "website": "https://www.scottlawrie.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Tu,Su off; We-Sa 11:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "su"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5337269696",
+   "name": "Scottish Horse Memorial",
+   "kind": "landmark",
+   "lat": 55.948927,
+   "lng": -3.197592,
+   "address": null,
+   "website": null,
+   "wikidata": "Q77776444",
+   "wikipedia": null,
+   "description": "architectural structure in Edinburgh, Scotland, UK",
+   "image": "Scottish Horse Memorial - 2025-04-18.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1784442037",
+   "name": "Scottish Norwegian Training Areas Memorial",
+   "kind": "landmark",
+   "lat": 55.950218,
+   "lng": -3.201984,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114167541",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland",
+   "image": "Norwegian War memorial in Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/322220495",
+   "name": "Scottish-American Soldiers Monument",
+   "kind": "landmark",
+   "lat": 55.953474,
+   "lng": -3.186132,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570821",
+   "wikipedia": null,
+   "description": "American Civil War memorial in Edinburgh, Scotland",
+   "image": "The Emancipation Monument, Edinburgh - geograph.org.uk - 138919.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314600291",
+   "name": "Sir James Young Simpson Memorial",
+   "kind": "landmark",
+   "lat": 55.950387,
+   "lng": -3.205049,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17813295",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "1. Statue of Sir James Young Simpson, by William Brodie, 1877 CE. Princes Street, Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/259860021",
+   "name": "South Viewpoint",
+   "kind": "viewpoint",
+   "lat": 55.954119,
+   "lng": -3.180849,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/93234798",
+   "name": "St Bernard's Well",
+   "kind": "landmark",
+   "lat": 55.955277,
+   "lng": -3.21148,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570795",
+   "wikipedia": "en:Stockbridge,_Edinburgh#St_Bernard's_Well",
+   "description": "well in Edinburgh, Scotland, UK",
+   "image": "DSCN4168 St Bernard's Well from Dean Gardens.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2934543737",
+   "name": "Stills",
+   "kind": "gallery",
+   "lat": 55.950677,
+   "lng": -3.190214,
+   "address": "23 Cockburn Street, EH1 1BP",
+   "website": "https://www.stills.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2338447599",
+   "name": "Stockbridge Market",
+   "kind": "market",
+   "lat": 55.957629,
+   "lng": -3.208443,
+   "address": "Saunders Street, EH3 6TQ",
+   "website": "https://www.stockbridgemarket.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/727348494",
+   "name": "Studio Bizio",
+   "kind": "gallery",
+   "lat": 55.959027,
+   "lng": -3.210572,
+   "address": "20A Raeburn Place, EH4 1HN",
+   "website": "https://www.studiobizio.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3072411821",
+   "name": "Surgeons' Hall Museums",
+   "kind": "museum",
+   "lat": 55.946767,
+   "lng": -3.18468,
+   "address": "Nicolson Street, EH8 9DW",
+   "website": "https://museum.rcsed.ac.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2131101051",
+   "name": "The Atelier Gallery",
+   "kind": "gallery",
+   "lat": 55.9629,
+   "lng": -3.2004,
+   "address": "5 Howard Street, EH3 5JP",
+   "website": "https://www.theateliergallery.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-18:00; Sa-Su 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3152958383",
+   "name": "The Conservation Studio",
+   "kind": "gallery",
+   "lat": 55.970171,
+   "lng": -3.170069,
+   "address": "27 Duke Street, EH6 8HH",
+   "website": "https://www.conservation-studio.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/648755293",
+   "name": "The Hillside",
+   "kind": "gallery",
+   "lat": 55.955132,
+   "lng": -3.183478,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12214701901",
+   "name": "The Pitt",
+   "kind": "market",
+   "lat": 55.98309,
+   "lng": -3.242743,
+   "address": "20 West Shore Road, EH5 1QD",
+   "website": "https://www.thepitt.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9342385837",
+   "name": "The Porty Light Box",
+   "kind": "gallery",
+   "lat": 55.951465,
+   "lng": -3.108744,
+   "address": null,
+   "website": "https://portylightbox.wordpress.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11251068260",
+   "name": "The Scottish Gallery",
+   "kind": "gallery",
+   "lat": 55.956488,
+   "lng": -3.199197,
+   "address": "16 Dundas Street, EH3 6HZ",
+   "website": "https://scottish-gallery.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1241884003",
+   "name": "The Spirit of Leithers",
+   "kind": "museum",
+   "lat": 55.980888,
+   "lng": -3.178245,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/364446028",
+   "name": "The Tower",
+   "kind": "landmark",
+   "lat": 55.955493,
+   "lng": -3.112744,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17809584",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "Tower in Portobello.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314600292",
+   "name": "Thomas Guthrie Memorial",
+   "kind": "landmark",
+   "lat": 55.950811,
+   "lng": -3.202635,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17813224",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Statue of Thomas Guthrie, Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10537342908",
+   "name": "Trevor Jones Art",
+   "kind": "gallery",
+   "lat": 55.964656,
+   "lng": -3.174342,
+   "address": "32 - 36 Dalmeny Street, EH6 8RG",
+   "website": "https://www.trevorjonesart.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4680041494",
+   "name": "Tron Kirk Market",
+   "kind": "market",
+   "lat": 55.949984,
+   "lng": -3.187737,
+   "address": "122 High Street, EH1 1QS",
+   "website": "https://www.scottishdesignexchange.com/pages/tron-kirk-market-royal-mile",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12207082837",
+   "name": "Unlimited Corporation",
+   "kind": "gallery",
+   "lat": 55.960224,
+   "lng": -3.17981,
+   "address": "77 Brunswick Street",
+   "website": "https://unlimitedcorporation.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9775076217",
+   "name": "View over Dean Village",
+   "kind": "viewpoint",
+   "lat": 55.953223,
+   "lng": -3.214557,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4327957218",
+   "name": "W.H. Playfair Statue",
+   "kind": "landmark",
+   "lat": 55.947584,
+   "lng": -3.188931,
+   "address": null,
+   "website": null,
+   "wikidata": "Q66602371",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Statue Playfair rue Chambers Édimbourg 5.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1982074287",
+   "name": "War Memorial",
+   "kind": "landmark",
+   "lat": 55.945911,
+   "lng": -3.193054,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17794974",
+   "wikipedia": null,
+   "description": "war memorial in City of Edinburgh, Scotland, UK",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8437613729",
+   "name": "Water of Leith Walkway Stedfastgate",
+   "kind": "landmark",
+   "lat": 55.971689,
+   "lng": -3.190494,
+   "address": null,
+   "website": null,
+   "wikidata": "Q105581473",
+   "wikipedia": null,
+   "description": "Boys' Brigade plaque in Edinburgh Scotland",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3103808183",
+   "name": "Watson Gallery",
+   "kind": "gallery",
+   "lat": 55.95422,
+   "lng": -3.201469,
+   "address": "39 Queen Street, EH2 3NH",
+   "website": "https://www.watsongallery.co.uk/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 11:00-18:00;Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4595156763",
+   "name": "Wauchope Memorial",
+   "kind": "landmark",
+   "lat": 55.93416,
+   "lng": -3.118937,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114167953",
+   "wikipedia": null,
+   "description": "war memorial in Edinburgh, Scotland, UK",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/538531426",
+   "name": "West Bow Well",
+   "kind": "attraction",
+   "lat": 55.947988,
+   "lng": -3.194474,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570786",
+   "wikipedia": null,
+   "description": "architectural structure in City of Edinburgh, Scotland, UK",
+   "image": "Edinburgh - Edinburgh, Grassmarket, West Bow, West Bow Well - 20140421171347.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12085784974",
+   "name": "White Space",
+   "kind": "gallery",
+   "lat": 55.943955,
+   "lng": -3.181929,
+   "address": "76 East Crosscauseway",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3046175814",
+   "name": "William Chambers Statue",
+   "kind": "landmark",
+   "lat": 55.947391,
+   "lng": -3.189792,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17813191",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "William Chambers 04.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3246039646",
+   "name": "William Gladstone Memorial",
+   "kind": "landmark",
+   "lat": 55.94854,
+   "lng": -3.212283,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570728",
+   "wikipedia": null,
+   "description": "memorial in Edinburgh, Scotland",
+   "image": "Pittendrigh Macgillivray, Gladstone Memorial Edinburgh.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3342159195",
+   "name": "William Pitt Statue",
+   "kind": "landmark",
+   "lat": 55.952983,
+   "lng": -3.20039,
+   "address": null,
+   "website": null,
+   "wikidata": "Q17570760",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland",
+   "image": "Nationwide and Pitt.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/505364483",
+   "name": "Wojtek Memorial",
+   "kind": "landmark",
+   "lat": 55.950769,
+   "lng": -3.202131,
+   "address": null,
+   "website": null,
+   "wikidata": "Q66604758",
+   "wikipedia": null,
+   "description": "statue in Edinburgh, Scotland, UK",
+   "image": "Wojtek the Soldier Bear Memorial.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2333922708",
+   "name": "Yaniv Edery Gallery",
+   "kind": "gallery",
+   "lat": 55.956968,
+   "lng": -3.187547,
+   "address": "4 Picardy Place, EH1 3JT",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-09-25T14:04:10Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  },
+  "wikidata": {
+   "fetchedAt": "2026-09-25T14:04:12Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 1
+  }
+ }
+}

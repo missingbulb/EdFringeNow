@@ -96,6 +96,17 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
+step "City data — opening-hours self-test, converter self-test, serving drift check"
+# The same contract as the festivals': the sightseeing fetch is by hand, and
+# --check re-derives site/data/cities/ from the committed raw.
+if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/cities/opening_hours.py --selftest
+  python3 scraper/cities/to_serving.py --selftest
+  python3 scraper/cities/to_serving.py --check
+else
+  echo "python3 not installed — skipping (CI always has it)" >&2
+fi
+
 step "Claudinite conformance — check_the_world.mjs"
 # The same command CI's "Conformance sweep" step runs. World scope: the rules
 # that audit repo state as it is now (the work-scope half runs from the Stop

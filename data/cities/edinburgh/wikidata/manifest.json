@@ -1,0 +1,14 @@
+{
+ "city": "edinburgh",
+ "source": "wikidata",
+ "fetchedAt": "2026-09-25T14:04:12Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.wikidata.org/w/api.php"
+ ],
+ "files": [
+  "entities.json"
+ ],
+ "notes": "wbgetentities for every Wikidata id the osm source links; sitelinks counts Wikipedia editions."
+}
