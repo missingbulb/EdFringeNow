@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, routeWhere } = require("../../shared/case-helpers");
+const { jerusalemReady, routeWhere, answerTravel } = require("../../shared/case-helpers");
 
 /* No answer yet: the holidays are the connection's country's, said to be a
  * guess; the reader's answer from the travel blocks replaces it. */
@@ -29,8 +29,7 @@ module.exports = {
     assert.match(yomKippur.name, /Yom Kippur/, "each orb is named");
     assert.match(await cardOf(page, "2026-09-21"), /Israel.*guess/, "and its card says they are a guess");
 
-    await page.click('.flight--out [data-origin="ask"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await page.waitForFunction(() => document.querySelector('#timelineYear .tl-orb[data-from="2026-12-25"]'));
     assert.equal(covering(await orbs(page), "2026-09-21"), undefined, "the answer replaces the guess");
     const card = await cardOf(page, "2026-12-25");

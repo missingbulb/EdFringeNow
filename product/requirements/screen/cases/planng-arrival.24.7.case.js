@@ -1,10 +1,10 @@
 "use strict";
-const { jerusalemReady, routeFares, flightsSettled } = require("../../shared/case-helpers");
+const { jerusalemReady, routeFares, flightsSettled, answerTravel } = require("../../shared/case-helpers");
 
-/* The way out, settled by each answer in turn: at home, driving, by train,
- * then flying from London. */
+/* The pictures either side of the trip, settled by each answer in turn: living
+ * there, driving from elsewhere in Israel, by train, then flying from London. */
 module.exports = {
-  description: "each answer settles the blocks in its own picture: at home, driving, by train, flying",
+  description: "each answer settles both travel pictures in its own picture: living there, driving, by train, flying",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
@@ -13,16 +13,18 @@ module.exports = {
   },
   async capture(page, t) {
     const frames = [];
-    const block = async () => t.clip(t.pad(await t.rectOf(".flight--out"), 2));
-    for (const way of ["local", "drive", "train"]) {
-      await page.click('.flight--out [data-origin="ask"], .flight--out [data-origin="change"]');
-      await page.click(`#originCard [data-origin="${way}"]`);
-      frames.push(await block());
-    }
-    await page.click('.flight--out [data-origin="change"]');
-    await page.selectOption("#originCountry", "GB");
+    const strip = async () => t.clip(t.pad(t.union([await t.rectOf(".tl-way--from"), await t.rectOf(".tl-way--to")]), 4));
+    const close = () => page.click('#originCard [data-origin="skip"]').catch(() => {});
+    await answerTravel(page, { home: "local" });
+    frames.push(await strip());
+    await answerTravel(page, { home: "IL", way: "drive" });
+    frames.push(await strip());
+    await answerTravel(page, { home: "IL", way: "train" });
+    frames.push(await strip());
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
-    frames.push(await block());
+    await close();
+    frames.push(await strip());
     return t.stitchV(frames);
   },
 };

@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, routeFares, flightsSettled } = require("../../shared/case-helpers");
+const { jerusalemReady, routeFares, flightsSettled, answerTravel, moveTripEnd } = require("../../shared/case-helpers");
 
 /* The fares are asked for the trip's own days and route, once each way, and
  * again for the one day that moved; a fare links to its own page on the
@@ -14,8 +14,7 @@ module.exports = {
     await jerusalemReady(page);
     assert.equal(asked.length, 0, "nothing is asked before the reader says they are flying");
 
-    await page.click('.flight--out [data-origin="ask"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     const q = (p) => [p.get("from"), p.get("to"), p.get("date"), p.get("currency")];
     assert.deepEqual(
@@ -32,7 +31,7 @@ module.exports = {
       "the cheapest fare out links to its own page"
     );
 
-    await page.fill("#tripTo", "2026-10-24");
+    await moveTripEnd(page, "to", "2026-10-24");
     await page.waitForFunction(() => document.querySelector(".flight--back .flight-day")?.textContent.includes("24"));
     await flightsSettled(page);
     assert.deepEqual(asked.slice(2).map(q), [["TLV", "LON", "2026-10-24", "gbp"]], "a moved last day asks again for that day only");

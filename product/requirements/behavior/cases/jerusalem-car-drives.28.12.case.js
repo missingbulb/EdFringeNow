@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, routeFares, flightsSettled } = require("../../shared/case-helpers");
+const { jerusalemReady, routeFares, flightsSettled, answerTravel } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "hiring a car suggests driving between shows; a way you chose yourself stays yours",
@@ -9,8 +9,7 @@ module.exports = {
     await routeFares(page);
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
-    await page.click('.flight--out [data-origin="ask"]');
-    await page.selectOption("#originCountry", "GB");
+    await answerTravel(page, { home: "GB", way: "fly" });
     await flightsSettled(page);
     await page.waitForFunction(() => document.querySelectorAll(".sch-own--flight").length === 2, null, { timeout: 20000 });
 
