@@ -16,6 +16,9 @@ module.exports = {
     await page.hover(`${TUE} .sch-slot >> nth=0 >> .sch-show`);
     await settle(page);
     await page.click('#calPreview [data-verdict="noShow"]');
+    // The next contender slides under the pointer and would reopen a popup
+    // over the hour; step the pointer off so the capture shows the day alone.
+    await page.mouse.move(0, 0);
     await settle(page);
     return t.animate([before, await t.element(`${TUE} .sch-body`)]);
   },
