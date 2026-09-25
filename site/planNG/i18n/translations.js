@@ -1580,11 +1580,5 @@ export const STRINGS = {
     ru: "Данные программы — {source}.",
     ja: "プログラムのデータ提供: {source}。",
   },
-  "footer.partnerNote": {
-    maxWidthPx: 1400,
-    en: "Some travel suggestions are partner links — booking through one may earn us a commission, at no extra cost to you.",
-    he: "חלק מהצעות הנסיעה הן קישורי שותפים — הזמנה דרכם עשויה לזכות אותנו בעמלה, בלי עלות נוספת לכם.",
-    ru: "Часть советов о поездке — партнёрские ссылки: бронирование через них может принести нам комиссию, без доплаты для вас.",
-    ja: "旅行の提案の一部はパートナーリンクです — そこから予約されると手数料を受け取ることがありますが、追加費用はかかりません。",
-  },
+
 };

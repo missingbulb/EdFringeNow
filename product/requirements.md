@@ -1701,16 +1701,6 @@ so.
   list rather than an error, so the page shows the search link.
   </details>
 
-- `27.6` The footer says that the flight links may earn us a commission.
-
-  ![planng-partner-note.27.6](requirements/screen/cases/planng-partner-note.27.6.png) <!-- req-gallery:27.6 -->
-
-  <details><summary>Notes</summary>
-
-  The flights are partner links, so the disclosure the trip links once carried
-  comes back with them, in every language the page speaks.
-  </details>
-
 ## 25. Never a list of thousands
 
 A festival programme can hold hundreds of events and a period can pool several
