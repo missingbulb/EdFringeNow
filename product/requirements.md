@@ -1698,6 +1698,18 @@ reaches it, and otherwise the one it covers most.
   closes when the pointer or focus leaves it.
   </details>
 
+- `23.16` The calendar never scrolls sideways: every day of the trip fits the visible width, and no day's column grows wider than 260 pixels.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.16 -->
+
+  <details><summary>Notes</summary>
+
+  Measured on a phone with a week's trip and on a desk with the longest trip
+  allowed (31 days), where the columns squeeze, and at 2560 pixels with a
+  week, where each column stops at the cap and the calendar's card keeps its
+  full width (23.11).
+  </details>
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when
