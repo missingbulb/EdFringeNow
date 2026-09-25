@@ -648,13 +648,20 @@ body.festival-page {
 
 [dir="rtl"] .drawer-caret { transform: scaleX(-1); }
 [dir="rtl"] .drawer[open] .drawer-caret { transform: scaleX(-1) rotate(90deg); }
-/* A night's column has to hold a show's name and the four verdicts side by
-   side; below that it stops being something anyone can act on. So the calendar
-   scrolls sideways on a narrow screen rather than squeezing five columns into
-   it — the wrapper is already a scroller, it just had nothing to scroll. At the
-   committed desktop viewport five columns are far wider than this, so nothing
-   there moves. */
-.sch-day { min-width: 168px; }
+/* The calendar never scrolls sideways: every day of the trip shares the
+   width there is, however narrow that makes a column, and a column stops at
+   --sch-day-max so a wide screen with a short trip doesn't stretch a day into
+   a banner. */
+:root {
+  --sch-day-max: 260px;
+}
+.schedule {
+  min-width: 0;
+}
+.sch-day {
+  min-width: 0;
+  max-width: var(--sch-day-max);
+}
 
 /* --- the preference questions ---------------------------------------------
  *
