@@ -1,0 +1,50 @@
+# Edinburgh Deaf Festival: who it is, its editions, and the sources an edition's
+# information block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+
+id = "edinburgh-deaf-festival"
+name = "Edinburgh Deaf Festival"
+city = "Edinburgh"
+country = "GB"
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "multi"
+default_genre = "other"
+site = "https://edinburghdeaffestival.com"
+
+[ticketing]
+notes = "Most events sell through Humanitix, many pay-what-you-can; Fringe-registered shows through edfringe.com, and partner tours through Eventbrite or the host venue. Prices in GBP are free text on each event; no availability is published."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: not published anywhere we could cite, so absent (null), never guessed.
+# Dates: the 2026 programme's own span, opening party Fri 7 Aug to the last
+# events on Sun 16 Aug (the site's "about" blurb still says an earlier year's dates).
+first = "2026-08-07"
+last = "2026-08-16"
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "edinburgh_deaf_festival/festival_site.py"
+
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "edinburgh_deaf_festival/nominatim.py"
+
+[merge]
+venues = ["nominatim", "festival-site"]
+events = ["festival-site"]
+performances = ["festival-site"]

@@ -1,0 +1,2277 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "edinburgh-deaf-festival",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Edinburgh Deaf Festival",
+  "nameLocal": null,
+  "city": "Edinburgh",
+  "country": "GB",
+  "lat": 55.9533,
+  "lng": -3.1883,
+  "timezone": "Europe/London",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "multi",
+  "defaultGenre": "other",
+  "site": "https://edinburghdeaffestival.com",
+  "firstDate": "2026-08-07",
+  "lastDate": "2026-08-16",
+  "ticketing": {
+   "notes": "Most events sell through Humanitix, many pay-what-you-can; Fringe-registered shows through edfringe.com, and partner tours through Eventbrite or the host venue. Prices in GBP are free text on each event; no availability is published.",
+   "currency": "GBP"
+  }
+ },
+ "categories": [
+  {
+   "id": "cabaret",
+   "name": "Cabaret"
+  },
+  {
+   "id": "comedy",
+   "name": "Comedy"
+  },
+  {
+   "id": "exhibition",
+   "name": "Exhibition"
+  },
+  {
+   "id": "family",
+   "name": "Youth & Family"
+  },
+  {
+   "id": "film-screening",
+   "name": "Film Screening"
+  },
+  {
+   "id": "presentation",
+   "name": "Presentation"
+  },
+  {
+   "id": "social",
+   "name": "Social"
+  },
+  {
+   "id": "storytelling",
+   "name": "Storytelling"
+  },
+  {
+   "id": "theatre",
+   "name": "Theatre"
+  },
+  {
+   "id": "tour",
+   "name": "Tour"
+  },
+  {
+   "id": "workshop",
+   "name": "Workshop"
+  },
+  {
+   "id": "youth",
+   "name": "Youth"
+  }
+ ],
+ "venues": [
+  {
+   "id": "bass-rock-scottish-seabird-centre",
+   "name": "Bass Rock, Scottish Seabird Centre",
+   "address": "Scottish Seabird Centre North Berwick EH39 4SS",
+   "lat": 56.061313,
+   "lng": -2.717338,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "bobbys-sandwich-shop",
+   "name": "Bobby’s Sandwich Shop",
+   "address": "Bobby’s Sandwich Shop, 4 Greyfrairs Place, EH1 2QQ",
+   "lat": 55.946655,
+   "lng": -3.191374,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "collective",
+   "name": "Collective",
+   "address": "City Observatory, 38 Calton Hill, Edinburgh EH7 5AA",
+   "lat": 55.955,
+   "lng": -3.183526,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "deaf-action",
+   "name": "Deaf Action",
+   "address": "49 Albany St, Edinburgh EH1 3QY",
+   "lat": 55.957333,
+   "lng": -3.189649,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "blackwood-bar",
+     "name": "Blackwood Bar",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "brennans-library",
+     "name": "Brennan’s Library",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "geikie-suite",
+     "name": "Geikie Suite",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "princess-joanna-room",
+     "name": "Princess Joanna Room",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "scottish-deaf-archives-room",
+     "name": "Scottish Deaf Archives Room",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "the-church",
+     "name": "The Church",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "the-garden",
+     "name": "The Garden",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "edinburgh-castle-meet-on-edinburgh-castle-esplanade",
+   "name": "Edinburgh Castle, Meet on Edinburgh Castle esplanade",
+   "address": "Castlehill, Edinburgh EH1 2NG",
+   "lat": 55.948897,
+   "lng": -3.195431,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "edinburgh-zoo",
+   "name": "Edinburgh Zoo",
+   "address": "Mansion House, Edinburgh Zoo, 134 Corstorphine Rd Edinburgh EH12 6TS",
+   "lat": 55.945119,
+   "lng": -3.269594,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "holyrood-park",
+   "name": "Holyrood Park",
+   "address": "Queen’s Drive, Edinburgh, EH8 8HG",
+   "lat": 55.951717,
+   "lng": -3.16535,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "museum-of-scottish-fire-heritage",
+   "name": "Museum of Scottish Fire Heritage",
+   "address": "1A Dryden Terrace, Edinburgh, EH7 4NB",
+   "lat": 55.963784,
+   "lng": -3.183836,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "national-museum-of-scotland",
+   "name": "National Museum of Scotland",
+   "address": "Chambers St, Edinburgh EH1 1JF",
+   "lat": 55.947417,
+   "lng": -3.189924,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "port-o-leith-boxing-club",
+   "name": "Port O’ Leith Boxing Club",
+   "address": "Unit 3, 83 Craighall Rd, Edinburgh EH6 4RR, UK",
+   "lat": 55.976453,
+   "lng": -3.196679,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "royal-botanic-garden-edinburgh",
+   "name": "Royal Botanic Garden Edinburgh",
+   "address": "Inverleith House, Royal Botanic Garden Edinburgh Arboretum Place Edinburgh EH3 5NZ",
+   "lat": 55.964358,
+   "lng": -3.212464,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "scottish-storytelling-centre",
+   "name": "Scottish Storytelling Centre",
+   "address": "43-45 High St, Edinburgh EH1 1SR",
+   "lat": 55.95042,
+   "lng": -3.1857,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "talbot-rice-gallery",
+   "name": "Talbot Rice Gallery",
+   "address": "University of Edinburgh, South Bridge, Edinburgh EH8 9YL",
+   "lat": 55.947415,
+   "lng": -3.187256,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "the-king-s-gallery",
+   "name": "The King's Gallery",
+   "address": "Holyroodhouse, Canongate The Royal Mile, Edinburgh, EH8 8DX",
+   "lat": 55.952695,
+   "lng": -3.171613,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "the-national",
+   "name": "The National",
+   "address": "The Mound, Edinburgh, EH2 2EL",
+   "lat": 55.951643,
+   "lng": -3.195676,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "birds-and-bugs-workshop-2026",
+   "title": "Birds and Bugs Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/birds-and-bugs-workshop-2026/",
+   "genre": "family",
+   "categories": [
+    "workshop",
+    "youth"
+   ],
+   "blurb": "Location: Holyrood Park, meet in front of Education Centre (what three words: ///mental.poem.hope)\nJoin us for an interactive workshop and discover the birds and bugs that live in the parks of Edinburgh, and how they find food.\nPlus: an opportunity to meet some creatures from all over the world!\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/birds-and-bugs.jpg"
+  },
+  {
+   "id": "deaf-families-day-nms",
+   "title": "Deaf Families Takeover Day at The National Museum of Scotland",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/deaf-families-day-nms/",
+   "genre": "family",
+   "categories": [
+    "youth",
+    "family"
+   ],
+   "blurb": "In partnership with National Museums Scotland, the National Museum of Scotland will host a special Deaf Families Takeover Day as part of Edinburgh Deaf Festival.\nDesigned for families with children aged 0–11, the day will feature a range of free activities for different age groups, including sensory play, crafts, object handling, creative activities and family-friendly experiences inspired by the museum’s collections.\nThe event will also include accessible family activities, BSL-supported sessions and opportunities for families to explore the museum in a welcoming and inclusive environment.\nRefreshments will be available throughout the day.\nVisit the National Museum of Scotland website here for more information or click below to book your space.\nPlease note this event is free but booking is required.\nBSL\nIS",
+   "durationMin": 240,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/NMS-takeover.jpg"
+  },
+  {
+   "id": "finding-comedy-in-lifes-stories",
+   "title": "Finding Comedy in Life’s Stories",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/finding-comedy-in-lifes-stories/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Hosted in: BSL\nJoin comedian, actor and BSL teacher John Smith for an interactive workshop exploring storytelling, improvisation and comedy through personal experiences and everyday life.\nThrough playful exercises, character work and audience interaction, participants will build confidence, creativity and communication skills in a supportive and welcoming environment. A fun and engaging session celebrating humour, connection and self-expression.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/John-Smith-Planes-Trains-and-Misunderstandings-2.jpg"
+  },
+  {
+   "id": "pencil-case-workshop",
+   "title": "Pencil Case Making Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/pencil-case-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Make and design your own pencil case using hand sewing techniques taught by Laura Tailor.",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/Upcycling-workshop-logo.png"
+  },
+  {
+   "id": "anne-hardy-talbot-rice-bsl-tour",
+   "title": "Anne Hardy at Talbot Rice Gallery – BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/anne-hardy-talbot-rice-bsl-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Image credit: Anne Hardy, detail of ‘Being (Immaterial)’, 2023-2024 © Anne Hardy. Courtesy Maureen Paley, London.\nLocation: Talbot Rice Gallery, The University of Edinburgh Old College, South Bridge, Edinburgh, EH8 9YL\nJoin us for a British Sign Language (BSL) tour led by Trudi Collier of Anne Hardy’s immersive exhibition at Talbot Rice Gallery. In this unique event, Trudi will guide you through the transformed gallery space, exploring the artist’s large-scale, dynamic environment.\nUnfortunately, Talbot Rice Gallery’s lift is out of service and will be getting replaced during the summer 2026. We sincerely apologise for any inconvenience this may cause. If there is any way our team can help you to use the stairs or support you in any way, please call us on 0131 650 2210 or email info. talbot rice@ed.ac.uk\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Anne-Hardy-tour-scaled.jpg"
+  },
+  {
+   "id": "signing-to-know-climate-change",
+   "title": "Signing to Know – Climate Change (Adult session)",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/signing-to-know-climate-change/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join Dr Audrey Cameron and the Deaf scientist team behind the SSC BSL Science Glossary at the University of Edinburgh for an interactive workshop exploring climate change through BSL . Through hands-on activities and experiments, participants will discover how climate change works, and how we can work together to reduce its impact of global warming – all in BSL.",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/collective-climate-control.jpg"
+  },
+  {
+   "id": "youth-boxing-session",
+   "title": "Youth Boxing Session",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/youth-boxing-session/",
+   "genre": "family",
+   "categories": [
+    "workshop",
+    "youth"
+   ],
+   "blurb": "We’re running a beginner boxing session for juniors. This is a fun, friendly introductions to boxing — perfect if you’ve never tried it before. Expect a relaxed, welcoming vibe where you’ll learn the basics, get moving, hit some pads, and enjoy a good challenge!\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Port-o-leith-boxing.jpg"
+  },
+  {
+   "id": "edinburgh-deaf-festival-opening-party",
+   "title": "Edinburgh Deaf Festival Opening Party",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/edinburgh-deaf-festival-opening-party/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Help us get the party started as Edinburgh Deaf Festival 2026 officially kicks off in style.\nJoin us as we celebrate the festival’s 5th anniversary before the performances begin, marking five years of deaf-led creativity, culture, language and community in the heart of Edinburgh’s festival season. Expect a fun and welcoming atmosphere, a chance to meet artists and audiences, and of course, birthday cake as we celebrate this milestone together.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Opening-Party.jpg"
+  },
+  {
+   "id": "sonic-patterns-workshop",
+   "title": "Sonic Patterns Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/sonic-patterns-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Explore sound, rhythm and creativity with Ruth Montgomery, in the Sonic Patterns Music Workshop.\nThrough interactive activities and creative experimentation, participants will discover new ways of experiencing and creating music together in an accessible and welcoming environment.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/sonic-workshop.jpg"
+  },
+  {
+   "id": "bsl-craft-club-2026",
+   "title": "BSL Craft Club",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bsl-craft-club-2026/",
+   "genre": "other",
+   "categories": [
+    "social",
+    "workshop"
+   ],
+   "blurb": "Join us for festival BSL Craft Club!\nBring along any projects you’re currently working on or wish to start. These can be anything from embroidery and crochet, to sketching and painting. Our volunteers will assist you where they can. Welcome to all levels of BSL, including beginners. Come along for some coffee, chats and crafts!\n*Some materials can be provided, but please note these are limited and available on a first come, first served basis*\nNo booking required",
+   "durationMin": 240,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/craft-club.png"
+  },
+  {
+   "id": "directing-workshop",
+   "title": "Directing Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/directing-workshop/",
+   "genre": "family",
+   "categories": [
+    "workshop",
+    "youth"
+   ],
+   "blurb": "Location: Geikie Suite, Deaf Action\nFacilitated by Benedetta Zanetti, Associate BSL Director, of The Singer.\nThis is a practical directing workshop introducing participants to the fundamentals of directing theatre. This will include visual storytelling and staging, working with deaf and hearing performers, developing scenes, directing actors and creative decision making through rehearsals.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/theatre-workshop.jpg"
+  },
+  {
+   "id": "edinburgh-deaf-church-1818",
+   "title": "Edinburgh Deaf Church: 1818 to the Present",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/edinburgh-deaf-church-1818/",
+   "genre": "talk",
+   "categories": [
+    "presentation"
+   ],
+   "blurb": "John A Hay examines the history of religious services for Deaf worshippers being held in Edinburgh over 200 years.\nFind out more about pioneering Deaf Christians of the 19th century and locations of the services being held right to the present venue being The New Town Church in George Street. The lecture is held in the Church, consecrated in December 1890.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Edinburgh-Deaf-Church-1818-to-the-Present.jpg"
+  },
+  {
+   "id": "sonic-patterns-workshop-for-youth-families",
+   "title": "Sonic Patterns Workshop for Youth & Families",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/sonic-patterns-workshop-for-youth-families/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Explore sound, rhythm and creativity in the Sonic Patterns Music Workshop.\nThrough interactive activities and creative experimentation, participants will discover new ways of experiencing and creating music together in an accessible and welcoming environment.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/sonic-workshop.jpg"
+  },
+  {
+   "id": "ecumenical-church-service",
+   "title": "Ecumenical Church Service",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/ecumenical-church-service/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "Join us for a welcoming ecumenical church service bringing together deaf and hearing communities in reflection, celebration and connection during Edinburgh Deaf Festival.\nOpen to people of all faiths and backgrounds, the service will be held in BSL and offers a space for community, inclusion and shared experience.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/ecumenical.jpg"
+  },
+  {
+   "id": "yoga-for-families",
+   "title": "Yoga for Families",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/yoga-for-families/",
+   "genre": "family",
+   "categories": [
+    "youth",
+    "family"
+   ],
+   "blurb": "Join Sasha Malinsky for a playful yoga session designed for ages 4–10. Through movement, storytelling and animal-inspired poses, children can explore creativity, balance and mindfulness in a fun and engaging environment.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Yoga-Sasha-1.jpg"
+  },
+  {
+   "id": "art-workshop",
+   "title": "Art Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/art-workshop/",
+   "genre": "talk",
+   "categories": [
+    "exhibition",
+    "presentation"
+   ],
+   "blurb": "Join renowned Deaf artist Rubbena Aurangzeb-Tariq for a special art presentation exploring creativity, culture and visual storytelling through a Deaf perspective.\nDiscover more about her artistic practice, inspirations and creative process in this engaging and accessible session celebrating Deaf art and expression.",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Art-presentation.jpg"
+  },
+  {
+   "id": "dose-of-dandy-live-podcast",
+   "title": "Dose of Dandy – Live Podcast",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/dose-of-dandy-live-podcast/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "A Dose of Dandy is the debut podcast from Nathan Rollinson and Nicolas Fairford. A celebration of friendship and the elegance of life, it invites you into a world of beauty and refinement, all with a dose of humour and fun.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/A-Dose-of-Dandy.jpg"
+  },
+  {
+   "id": "signing-to-know-climate-change-358",
+   "title": "Signing to Know – Climate Change (Youth and family session)",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/signing-to-know-climate-change-358/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join Dr Audrey Cameron and the Deaf scientist team behind the SSC BSL Science Glossary at the University of Edinburgh for an interactive workshop exploring climate change through BSL . Through hands-on activities and experiments, participants will discover how climate change works, and how we can work together to reduce its impact of global warming – all in BSL.",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/collective-climate-control.jpg"
+  },
+  {
+   "id": "a-wolf-shall-devour-the-sun",
+   "title": "A Wolf Shall Devour the Sun",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/a-wolf-shall-devour-the-sun/",
+   "genre": "theatre",
+   "categories": [
+    "storytelling",
+    "theatre"
+   ],
+   "blurb": "Respected by ancient cultures but the archetypal villain in European fairy tales, wolves were hunted to extinction in Scotland by the 18th century. Ancient myth, mesmeric imagery and dreamlike soundscapes open a liminal space where Norse gods, Irish shapeshifters and Siberian wolf-children traverse Scottish moors and Transylvanian mountains. Live music stirs the soul. Shadow puppetry and animation portray terror and playfulness. Stories about our oldest ally ask: in the absence of the wolf, what is lost?\nOriginally commissioned by the Scottish International Storytelling Festival 2024.\n‘I was so mesmerised I had abandoned taking notes’ ★★★★★ (Snack)\n‘Powerful and magical’ ★★★★ (List)\n‘Richly textured’ ★★★★ (CorrBlimey.uk)\nBSL interpreted Sun 9 Aug. Interpretation by Sarah Forrester",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/wolf.jpg"
+  },
+  {
+   "id": "michael-woods-mount-everest-speaker",
+   "title": "Michael Woods: Mount Everest Speaker",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/michael-woods-mount-everest-speaker/",
+   "genre": "talk",
+   "categories": [
+    "presentation"
+   ],
+   "blurb": "Michael Woods is the first British Deaf person to summit Mount Everest, the highest mountain in the world. Over an eight-week expedition, he faced extreme weather, dangerous conditions, and physical exhaustion, all without the support of a BSL interpreter.\nCommunicating visually and through written notes with his expedition team, Michael overcame barriers that many thought impossible. In this inspiring and honest talk, he will share his remarkable journey of determination, resilience, and courage. Hear about the challenges he faced, the moments he nearly lost his life, and what it took to reach the summit.\nPresentation will be delivered in BSL with English PowerPoint. BSL/English interpreters will be provided to ensure the event is accessible to both deaf and hearing audience members.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Michael-woods.jpg"
+  },
+  {
+   "id": "royal-botanic-garden-edinburgh-summer-tour",
+   "title": "Royal Botanic Garden Edinburgh Summer Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/royal-botanic-garden-edinburgh-summer-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Discover the Royal Botanic Garden Edinburgh in British Sign Language (BSL). Explore some seasonal autumn highlights, diverse Living Collection and inspiring stories and history of the Garden in these BSL tours. This tour is led by Barbara Brown.\nTours start from the John Hope Gateway.\nPlease note, this tour is entirely in British Sign Language, without interpretation.\nThis tour is wheelchair accessible. Wheelchairs and mobility scooters are available to hire. Please contact community@rbge.org.uk to discuss access needs.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2025/06/RBGE-Summer-Garden-BSL-Tour-1-scaled.jpg"
+  },
+  {
+   "id": "singing-willows",
+   "title": "Singing Willows and the Magical Bed",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/singing-willows/",
+   "genre": "family",
+   "categories": [
+    "youth",
+    "family"
+   ],
+   "blurb": "When a young girl moves to a new home, her extraordinary bed comes alive and carries her through dreamy worlds of music, play, and imagination. Together, they discover friendship, courage, and the joys of growing up. With playful audience participation, original songs, enchanting visuals, and multilingual storytelling with integrated BSL, the audience is invited to dream, laugh, and explore in this wonderful musical adventure. Ideal for ages 5+ and their grown-ups, but open to all.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/Singing-Willows-and-the-Magical-Bed-6-scaled.jpg"
+  },
+  {
+   "id": "john-smith-planes-trains-misunderstandings",
+   "title": "John Smith: Planes, Trains & Misunderstandings",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/john-smith-planes-trains-misunderstandings/",
+   "genre": "comedy",
+   "categories": [
+    "comedy",
+    "social"
+   ],
+   "blurb": "Live captioning will be available for the performance on Sunday 9 August.\nAward-winning comedian John Smith is back at Deaf Action with a hilarious new show about travelling the world as a deaf comedian.\nFrom missed announcements and airport chaos to awkward tour moments and cultural misunderstandings, John shares the funny, frustrating, and unbelievable experiences from life on the road. Planes, trains, world tours, nothing ever goes smoothly.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/John-Smith-Planes-Trains-and-Misunderstandings.jpg"
+  },
+  {
+   "id": "sign-slam",
+   "title": "Sign Slam",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/sign-slam/",
+   "genre": "comedy",
+   "categories": [
+    "comedy",
+    "social"
+   ],
+   "blurb": "Live captioning will be available for the performance on Sunday 9 August.\nSign Slam is a lively variety and improvisation show that brings audiences directly into the performance through projected photos and images.\nParticipants compete against one another to create the funniest, wittiest and most imaginative jokes or stories inspired by the visual prompts, while the audience votes live for their favourite performances based on humour, creativity and storytelling.\nFast-paced, interactive and full of visual humour, Sign Slam celebrates improvisation, audience participation and the creativity of live performance.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Sign-Slam-2.jpg"
+  },
+  {
+   "id": "watercolour",
+   "title": "Watercolour Workshop with Vika Rudenko",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/watercolour/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join award-winning Deaf visual artist Viktoryia (Vika) Rudenko for a playful 2-hour exploration of\nfacial expression through watercolour and Deaf View/Image Art (De’VIA).\nIn Deaf culture, the eyes and mouth are essential tools of communication, conveying emotion,\ntone, and meaning beyond words. Participants will paint expressive facial features using\npre-illustrated face templates while learning about De’VIA as a powerful form of Deaf artistic\nand cultural expression.\nAll supplies are included, including watercolour paints, brushes, paper, and pre-illustrated facial\ntemplates. No previous watercolour experience is required. All skill levels are welcome.\nCheck out some of Vika’s incredible work on Instagram: @aquabrushandglass",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/Watercolour-workshop.png"
+  },
+  {
+   "id": "art-presentation",
+   "title": "Art Presentation with Rubbena Aurangzeb-Tariq, Trudi Collier and Vika Rudenko",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/art-presentation/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "Join Deaf artists Rubbena Aurangzeb-Tariq , Trudi Collier and Vika Rudenko as they discuss the inspiration behind their work featured in the Fight or Flight exhibition.\nThrough painting, mixed media, sculpture and glass, the artists explore themes of identity, psychology, communication and Deaf lived experience. Discover how their personal journeys, professional backgrounds and creative practices have shaped the artworks on display, and gain a deeper understanding of the ideas behind the exhibition.\nThis is a unique opportunity to meet the artists, hear about their creative process and engage with contemporary Deaf art from three internationally recognised perspectives.",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Art-presentation.jpg"
+  },
+  {
+   "id": "deaf",
+   "title": "JR Soul: Deaf People",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/deaf/",
+   "genre": "comedy",
+   "categories": [
+    "comedy"
+   ],
+   "blurb": "The first full stand-up show from JR Soul will highlight the good, bad and the plain ugly aspects of life within – and without – the Deaf community.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/JR-soul-4.jpg"
+  },
+  {
+   "id": "pub-quiz-2026",
+   "title": "Pub Quiz",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/pub-quiz-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Age restriction: 15+\nCome along to Deaf Action for a pub quiz! Mingle with Edinburgh’s deaf community and test your knowledge. Accessible for both deaf and hearing people.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Pub-Quiz-1.jpg"
+  },
+  {
+   "id": "culture-workshops-lunch",
+   "title": "Culture Workshops & Lunch",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/culture-workshops-lunch/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Explore different cultures through a series of engaging one-hour workshops celebrating traditions, food and communities from around the world.\nEach session offers a chance to learn, share experiences and connect with others in a welcoming environment. Between workshops, enjoy a freshly prepared lunch made by our deaf chef.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/culture-workshop.jpg"
+  },
+  {
+   "id": "dinner-party-debate-ai",
+   "title": "Dinner Party Debate: AI",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/dinner-party-debate-ai/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "Join us for our Dinner Party Debate where we’ll be serving up some food for thought.\nArtificial intelligence is rapidly changing the way we communicate, work and connect with the world. But what does this mean for deaf people and deaf communities?\nFrom sign language recognition and accessibility tools to questions around representation, ethics and inclusion, this discussion will explore the opportunities and challenges AI presents for deaf lives, language and culture.\nCome along for an evening of conversation, debate and shared perspectives in a relaxed and welcoming environment. Everyone is welcome.\nLed in BSL with BSL interpreters providing an English voiceover.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Dinner-Party-Debate-AI.jpg"
+  },
+  {
+   "id": "sign-between-the-lines-bsl-book-club-2026",
+   "title": "Sign Between the Lines: BSL Book Club",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/sign-between-the-lines-bsl-book-club-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Join Scotland’s first BSL Book Club, Sign between the Lines, as we welcome Michael Fellowes, a deaf British Indian author who just published his exciting fantasy sci fi novel, Scarlet and the White.\nA relaxed evening with the opportunity to engage through a Q&A session and explore a local bookshop’s selection of literature available to purchase.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/BSL-Book-Club-Sign-Between-the-Lines-.jpg"
+  },
+  {
+   "id": "performance-interpreting-workshop",
+   "title": "Performance Interpreting Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/performance-interpreting-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Led by experienced performance interpreter Pascale Maroney, this workshop is designed for BSL/English interpreters and deaf interpreters interested in performance and theatre interpreting.\nExplore creative interpreting techniques, performance skills and approaches to working within live arts environments in a practical and collaborative setting.\nPascale Maroney\nPascale is a registered BSL/English interpreter with a background in attending festivals, interpreting at festivals & coordinating teams to provide access at festivals.\nShe loves the arts and endeavours to provide access for Deaf and hearing audiences to experience and share cultural, art & live events.\nBSL\nIS",
+   "durationMin": 180,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/interpreting-workshop.jpg"
+  },
+  {
+   "id": "arthurs-secrets-bsl-tour-of-holyrood-park",
+   "title": "Arthur’s Secrets – BSL Tour of Holyrood Park",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/arthurs-secrets-bsl-tour-of-holyrood-park/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Location: Broad Pavement Car Park, Queen’s Drive. Postcode: EH8 8AZ. Meeting point is next to the entrance of the car park on the grass verge opposite the car park kiosk.\nCome along on a guided walk with a BSL guide, interpreter and ranger to learn more about Arthur’s Seat’s turbulent past, created by fire and ice!\nFind out about the people who lived and worked in the Park from 7 thousand years ago up until the present day and learn more about the rare wildlife that makes the Park so special.\nBSL with BSL interpreter.\nPlease note the walk is graded ‘moderate’: route contains rough tracks, uneven and boggy terrain, steep inclines and declines.",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/secret-of-arthur-seat-tour.jpg"
+  },
+  {
+   "id": "bsl-film-club-x-edinburgh-deaf-festival",
+   "title": "BSL Film Club x Edinburgh Deaf Festival",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bsl-film-club-x-edinburgh-deaf-festival/",
+   "genre": "film",
+   "categories": [
+    "film-screening",
+    "social"
+   ],
+   "blurb": "As part of Edinburgh Deaf Festival, BSL Film Club will be hosting a special screening of Ted Evans’ Deaf-led thriller, Retreat .\nThe event will be introduced by BSL Film Club co-programmers, Tomas Gerrard and Charlie Little. There will also be a Q&A after the screening, with guests to be confirmed.\nRetreat\nDir. Ted Evans\nUnited Kingdom | 2025 | 107m | British Sign Language, English\nIn search of belonging and connection, a young woman arrives at a remote wellness retreat for Deaf people, but nothing is what it seems. A gripping debut thriller from filmmaker Ted Evans that will unsettle audiences and leave them guessing until the final frame.\nBilled as the world’s first Deaf thriller and made in British Sign Language with an all-Deaf principal cast and a Deaf director, Retreat stars Anne Zander, Sophie Stone, and James Boyle.\nFollowing the screening will be an accessible Q&A with local filmmaker and Solar Bear’s Film & Screen Lead Officer, Klarissa Webster.\nAccessibility\nBSL Film Club is an inclusive and accessible film club offering films with descriptive subtitles and open discussions in BSL after each screening.\nAll audiences with varying sign language fluency, both deaf and hearing, are welcome.\nThis film will be shown with descriptive subtitles (also known as captions).\nThis event will have BSL/English interpretation during the introduction and Q&A.\nThere will be English-language live captioning during the introduction and Q&A.\nThere is an external access lift for step-free access to the building. Once inside the building, there is a lift from the ground floor to the Blackwood Bar area, accessible on the left upon entry to the venue. Accessible toilets can also be found on the first floor. There is also lift access to the basement level. This screening will take place in the Blackwood Bar area.\nThis film is rated TBC\nIf you have any questions about the event, please contact Charlie Little at charlielittlefilm@gmail.com\nSupported by Film Hub Scotland, part of the BFI’s Film Audience Network, awarding funding on behalf of Screen Scotland and the BFI National Lottery.",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/retreat-1.jpg"
+  },
+  {
+   "id": "afterlife-tour",
+   "title": "Exhibition Tour with Trudi Collier: Katie Paterson’s Afterlife",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/afterlife-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Learn more about Collective Gallery’s summer programme at this BSL tour, designed for Deaf visitors.\nJoin us for a BSL Tour of Katie Paterson’s solo exhibition Afterlife. This Deaf-led tour will be hosted by Trudi Collier and will offer BSL visitors the opportunity to learn more about the exhibition. We will have refreshments to wrap up the session, with time to discuss the exhibition with Trudi, the Programme Team, and other attendees. Trudi will be joined by an interpreter for this event.\nAbout Afterlife:\nOriginally commissioned for the Folkstone Triennial 2025, Afterlife will be shared with audiences in Scotland for the first time.\nAfterlife is a sculptural installation comprised of nearly 200 amulets, each created with materials sourced from endangered landscapes and fragile ecosystems, exploring themes of deep time, geology, and the environment. Drawing on centuries of cultural and spiritual traditions to reflect the fragility of the natural world today, Afterlife prompts us to consider the legacies we leave for future generations.\nContains content related to the climate crisis.\nThis tour will be led in BSL and interpreted into English.\nThis event will take place in our Dome Gallery and outdoor Play Shelter, which has step-free access via our East Gate entrance. Please note that the outdoor paths leading to the gallery can become uneven and wet in harsh weather. Accessible toilet facilities, including baby change, are available at Collective Gallery.\nYou can find more access information about visiting Collective Gallery on our website. If you have any questions, please get in touch at +44 (0)131 556 1264 or email mail@collective-edinburgh.art.",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/09-FT-2025-Katie-Paterson-Thierry-Bal-9-scaled.jpg"
+  },
+  {
+   "id": "bingo-2026",
+   "title": "Bingo",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bingo-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Hosted in: BSL\nJoin us for a game of bingo! Mingle with Edinburgh’s deaf community, win cash prizes, and enjoy friendly competition. Over 18s only.\nBSL\nIS\nNo booking required.",
+   "durationMin": 300,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Bingo.jpg"
+  },
+  {
+   "id": "edwardians-tour",
+   "title": "The Edwardians BSL Interpreted Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/edwardians-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "As part of the Edinburgh Deaf Festival 2026, join our British Sign Language Interpreted tour of The Edwardians: Age of Elegance at The King’s Gallery, Edinburgh. Booking essential.\nThis event is for D/deaf and hard of hearing people and will be delivered in English with British Sign Language Interpretation in collaboration with Deaf Action\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Edwardians-BSL-1920.jpg.webp"
+  },
+  {
+   "id": "sign-language-poetry-workshop",
+   "title": "Sign Language Poetry Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/sign-language-poetry-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Interested in signed language poetry?\nFor the past 20 years, projects like the Deaf Poet’s Society and the ASL Slam in New York City have been an incubator of sign language poetry with the DEAF Community. Dana Callan-Farley, ASL performer and professor at Marquette University in the USA, offers to bring out the inner poet in you.\nTo become a “person of the eye” is to challenge how you “see” art. Using historical and contemporary examples, we will explore the relationship between signed language and visual vernacular, the art of performance and understanding. The goal? To help you find the inner visual poet that you are and create your own poem.\nBy employing ASL/BSL signs alongside a visual vernacular, the poet transforms into the message itself. Other poets play a crucial role as receivers and interpreters of the poetry being created. Each individual will perceive things uniquely and uncover various meanings, both concealed and clear, leading to distinct artistic interpretations.\nThis event is open to hearing and Deaf alike, young and old, new signer or expert signer – bring your open heart filled with poetry.\nThis event will be offered in English, American Sign Language and British Sign Language.",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/sign-poetry.jpg"
+  },
+  {
+   "id": "ceilidh-dancing-workshop",
+   "title": "Ceilidh Dancing Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/ceilidh-dancing-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join us for a fun and energetic ceilidh dancing workshop where you can learn traditional Scottish dances in a welcoming and accessible environment.\nWhether you’re completely new to ceilidh dancing or already know the steps, everyone is welcome to come along, get involved and enjoy the experience together.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/ceilidh-workshop.jpg"
+  },
+  {
+   "id": "giants-bsl-tour",
+   "title": "Giants BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/giants-bsl-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Meet the colossal creatures that lived after the dinosaurs on a Deaf-led tour of ‘ Giants ‘.\nThrough life-sized 3D sculptures, skeletons, fossils and hands-on experiences, discover ten enormous prehistoric giants with tour guide, Babs Brown.\nThe tour will last around one hour with the chance to explore the exhibition independently afterwards.\nThe tour will be delivered in British Sign Language only. For any enquiries please contact communities@nms.ac.uk\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/NMS-BSL-Tour-scaled.jpg"
+  },
+  {
+   "id": "scratch-night-hosted-by-leah-francisco",
+   "title": "Scratch Night Hosted by Leah Francisco",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/scratch-night-hosted-by-leah-francisco/",
+   "genre": "comedy",
+   "categories": [
+    "comedy",
+    "social"
+   ],
+   "blurb": "Experience a night of bold new ideas at our Scratch Night, hosted by comedian Leah Francisco and featuring a headline comedy set to close the evening.\nFrom comedy to experimental performances, enjoy fresh new work in a relaxed setting where artists can take creative risks, test ideas and connect with audiences. Discover raw creativity and maybe even the next big thing.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Scratch-Night-Hosted-by-Leah-Francisco-1.jpg"
+  },
+  {
+   "id": "a-deaf-journey-on-the-camino",
+   "title": "A Deaf Journey on the Camino",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/a-deaf-journey-on-the-camino/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "Join Billy-Jack Gerrard as he shares his experiences of completing the Camino de Santiago. Through stories, photographs and personal reflections, Billy-Jack will explore the history of the Camino, different pilgrimage routes, how he prepared for the journey, and what daily life on the trail is really like.\nAn inspiring session for anyone interested in travel, challenge and adventure.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/A-Deaf-Journey-on-the-Camino.jpg"
+  },
+  {
+   "id": "thrive-live-2026",
+   "title": "Thrive Live",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/thrive-live-2026/",
+   "genre": "talk",
+   "categories": [
+    "presentation",
+    "social"
+   ],
+   "blurb": "Thrive Live returns to the Edinburgh Deaf Festival for a special one-off event, marking Episode 5 of Series 2. Hosted at Blackwood Bar and streamed live online, four deaf women come together to share fresh conversations, with a new topic for 2026, celebrating deaf perspectives in BSL.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Thrive-Live.jpg"
+  },
+  {
+   "id": "deaf-karaoke-workshop-2",
+   "title": "Deaf Karaoke Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/deaf-karaoke-workshop-2/",
+   "genre": "other",
+   "categories": [
+    "social",
+    "workshop"
+   ],
+   "blurb": "Thinking about taking part in our popular Deaf Karaoke night but feeling a little nervous?\nThis fun and supportive workshop will help build your confidence and give you the chance to practise performing in a relaxed environment.\nThe first weekend workshop will be led by Deaf Spice, with the second weekend hosted by Mae Al- Kalamchi .\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/karaoke-workshop-1.jpg"
+  },
+  {
+   "id": "bsl-storytelling-workshop-2026",
+   "title": "BSL Storytelling Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bsl-storytelling-workshop-2026/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "An introduction to BSL story t ell ing , exploring what makes visual story t ell ing unique compared to spoken narratives.\nThe workshop will introduce key elements such as Visual Vernacular, motifs, archetypes, and visual techniques, and give you a hands-on taster of telling a story in BSL.\nLed by Tania Allan.\nBSL\nIS",
+   "durationMin": 120,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/BSL-Storytelling-Workshop.jpg"
+  },
+  {
+   "id": "boxing-workshop-2026",
+   "title": "Boxing Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/boxing-workshop-2026/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Expect a relaxed and welcoming atmosphere as you learn the basics of boxing, get moving, hit the pads and challenge yourself in a fun and supportive environment.\nLed by coaches from Port O’ Leith Boxing Club, this energetic and accessible workshop is suitable for all experience levels. Everyone is welcome to come along and give it a try.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Port-o-leith-boxing.jpg"
+  },
+  {
+   "id": "scottish-fire-tour",
+   "title": "Museum of Scottish Fire Heritage BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/scottish-fire-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Join BSL guide Babs Brown for a guided tour of our collections, exploring the story of fire fighting in Scotland. The tour will last around one hour, with a chance to independently explore the museum space afterwards.\nThe tour will be delivered in BSL only and is aimed at the adult Deaf community.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2025/06/fire-museum-1.jpg"
+  },
+  {
+   "id": "edinburgh-zoo-bsl-tour-2026",
+   "title": "Edinburgh Zoo BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/edinburgh-zoo-bsl-tour-2026/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Join Edinburgh Zoo as we run two British Sign Language tours. Discover the heart and purpose of zoos with stories about our amazing animals\nJoin us this August as we run two British Sign Language tours delivered by RZSS Trustee John Denerley, written and supported by our Discovery and Learning Team, as part of the Edinburgh Deaf Festival.\nDiscover the heart and purpose of zoos with stories about some of our most popular animals. From breeding programs to exciting conservation and research projects, you will learn how zoos are saving species from the brink of extinction and how we can all make a difference.\nThe tours will be running across the following dates:\n12 August\n14 August\nTours will last approximately 60-90 minutes, with the meeting point at the zoo members gate at the top of the car park at 4:30pm.\nThis tour is delivered exclusively in BSL and is free to join, but spaces must be reserved due to limited capacity.\nPlease note, this tour is an add-on to your zoo visit. If you do not have valid RZSS membership, you must purchase admission tickets to enter Edinburgh Zoo in advance online.\nIf you have any questions regarding the event please feel free to contact us on community@rzss.org.uk\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Edinburgh-Zoo.webp"
+  },
+  {
+   "id": "deaf-karaoke-2026",
+   "title": "Deaf Karaoke",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/deaf-karaoke-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Deaf Karaoke returns for not one, but two nights at this year’s festival! Join us for a fun filled evening of signing, singing and fun like no other. Everyone is welcome!\nWeekend one is hosted by the incredible Deaf Spice, with weekend two hosted by the talented Mae Al-Kalamchi.\nIS",
+   "durationMin": null,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Deaf-Karaoke-1.jpg"
+  },
+  {
+   "id": "bsl-parkrun-2026",
+   "title": "BSL Parkrun",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bsl-parkrun-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Meeting point: Holyrood Park\nCome and join the Edinburgh BSL Running Group for your 5k fix. Walk, jog, or run at your own pace and take in some of Edinburgh’s hidden beauty spots. Afterwards, the group will head to a local café for the obligatory coffee and highly anticipated post-run nosh. So, what are you waiting for? Lace up your trainers, and we’ll see you on the start line!\nIS\nNo booking required",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/BSL-Parkrun.jpg"
+  },
+  {
+   "id": "dungeons-deaf-dragons",
+   "title": "Dungeons & Deaf Dragons",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/dungeons-deaf-dragons/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Our event is an inclusive, fully accessible tabletop roleplaying experience designed specifically for Deaf participants and BSL users. Using British Sign Language (BSL) as the primary mode of communication, the session invites players to step into a rich fantasy world through the use of pre-created characters, allowing both beginners and experienced players to join without barriers.\nParticipants will embark on immersive quests filled with exploration, problem-solving, and collaborative storytelling. Along the way, they may face intense battles against monsters or dragons, uncover hidden mysteries, and make meaningful choices that shape the outcome of the story. The experience blends creativity, strategy, and roleplay, encouraging communication, teamwork, and imagination within a Deaf-friendly environment.\nOur goal is to create a welcoming space where Deaf individuals can engage fully in fantasy storytelling, express themselves through BSL, and enjoy a shared adventure that is both accessible and unforgettable.\nBSL\nIS",
+   "durationMin": 420,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/dungeons.jpg"
+  },
+  {
+   "id": "lights-lanterns",
+   "title": "Lights & Lanterns",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/lights-lanterns/",
+   "genre": "family",
+   "categories": [
+    "exhibition",
+    "workshop",
+    "family"
+   ],
+   "blurb": "Presented by Spectroscope, step inside our emporium of light and shadow, where history flickers to life and you become part of the spectacle. Try your hand at a 130 year old magic lantern, create your own hand painted glass slide, don a top hat, and transform into a Victorian projectionist guided by two enigmatic hosts from another era.\nInspired by the lives and work of deaf Victorian artists Harry Ash and Harry Bow, this immersive workshop draws on rich deaf archives and the lost art of shadowgraphy, storytelling through light, silhouette and movement.\nLed by deaf performers David Ellington and Ciaran O’Breen, you will explore expressive techniques using your hands and body. Learn to shape shadows, invent your own signs, and create visual stories, whether solo or in collaboration with others.\nExpect a playful, physical experience where past and present collide, and where light becomes language.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Lights-Lanterns-1-scaled.jpg"
+  },
+  {
+   "id": "panel-discussion-making-the-singer",
+   "title": "Panel Discussion: Making the Singer (Live Theatre)",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/panel-discussion-making-the-singer/",
+   "genre": "talk",
+   "categories": [
+    "presentation"
+   ],
+   "blurb": "The panel of Deaf and hearing creatives involved in the stage production will discuss the collaborative process bringing the work from page to stage. How do you develop a bilingual show with music? How do we work collaboratively in a deaf and hearing creative space?\nIn this conversation we will share the lessons learned – challenges and how to creatively overcome them. This will be a fascinating insight into the making of a contemporary piece of theatre made in both BSL and Spoken English.\nPanel: Cora Bissett (Director) and Benedetta Zanetti (Associate BSL Director)\nUpdate: Understandably, due to the incredible success of The Singer and it’s accompanying commitments, actor Jamie Rea is no longer able to attend this event. We wish Jamie all the best!\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Panel-Discussion-Making-the-Singer.jpg"
+  },
+  {
+   "id": "potter-trail-bsl-2026",
+   "title": "The Potter Trail BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/potter-trail-bsl-2026/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Meeting point: Bobby’s Sandwich Shop, 4 Greyfrairs Place, EH1 2QQ.\nIf you’re into real life magic, or you still need to find out which of the Hogwarts houses you truly belong to, this is the tour for you! Grab your wand and join us in the old town for this magical BSL tour!\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2024/06/the-potter-trail.png"
+  },
+  {
+   "id": "deaf-makers-market",
+   "title": "Deaf Makers Market",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/deaf-makers-market/",
+   "genre": "other",
+   "categories": [
+    "exhibition",
+    "social"
+   ],
+   "blurb": "Discover and support deaf -owned businesses , artists and creators at our Deaf Makers Market . Browse a range of handmade products, artwork, crafts and unique creations while meeting the talented makers behind them. A welcoming community space celebrating deaf creativity, small businesses and independent talent.\nBSL\nIS\nNo booking required",
+   "durationMin": null,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Deaf-Makers-Market.jpg"
+  },
+  {
+   "id": "scottish-deaf-archives",
+   "title": "Treasures of the Scottish Deaf Archive",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/scottish-deaf-archives/",
+   "genre": "other",
+   "categories": [
+    "social",
+    "tour"
+   ],
+   "blurb": "Come and explore the treasures of the Scottish Deaf Archive! Cared for by Deaf History Scotland, the archive holds over 200 years of Scottish Deaf history, with fascinating stories and remarkable objects waiting to be discovered.\nFrom ear trumpets to sports trophies, photographs, documents, and much more, the collection offers a unique glimpse into Scotland’s rich deaf heritage and culture.\nYou’ll also have the chance to meet our archivist and volunteers, who will be in the archive to share stories, answer questions, and help bring history to life.\nBSL\nIS\nNo booking required",
+   "durationMin": 240,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Archive-highlights-with-Deaf-History-Scotland-1.jpg"
+  },
+  {
+   "id": "castle-bsl-tour",
+   "title": "Edinburgh Castle BSL tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/castle-bsl-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Set in the heart of Scotland’s dynamic capital city, Edinburgh Castle is sure to capture your imagination.\nThis tour is led in BSL only.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2024/06/Edinburgh-castle-bsl-tour-1.png"
+  },
+  {
+   "id": "signing-to-know-climate-change-358-315",
+   "title": "Signing to Know – Climate Change (All ages session)",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/signing-to-know-climate-change-358-315/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join Dr Audrey Cameron and the Deaf scientist team behind the SSC BSL Science Glossary at the University of Edinburgh for an interactive workshop exploring climate change through BSL . Through hands-on activities and experiments, participants will discover how climate change works, and how we can work together to reduce its impact of global warming – all in BSL.",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/collective-climate-control.jpg"
+  },
+  {
+   "id": "catherine-opie-tour",
+   "title": "Catherine Opie: To be Seen BSL Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/catherine-opie-tour/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Catherine Opie , Daniela , 2009 © Catherine Opie . Courtesy the artist, Regen Projects, Los Angeles and Thomas Dane Gallery\nLocation: National (Royal Scottish Academy), the Mound, Edinburgh, EH2 2EL\nJoin us for a free deaf-led tour in British Sign Language at the National (Royal Scottish Academy). Experience the power of the portrait in this first solo exhibition of Opie’s work in Scotland and consider what it is to be seen. Led by Trudi Collier, you will have the chance to socialise, explore art together and share your ideas.\nThe tour will be conducted in BSL, without interpretation.\nThe venue is wheelchair accessible. There is a step-free accessible entrance to the rear of the Royal Scottish Academy building with lift access to the exhibition.\nBSL\nIS\n***The event that was scheduled for Saturday 8 August has been cancelled. The event on Saturday 15 will go ahead as planned.***",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/National-Gallery-BSL-Tour-Catherine-Opie-Daniela-2009-©-Catherine-Opie.-Courtesy-the-artist-Regen-Projects-Los-Angeles-and-Thomas-Dane-Gallery-1-scaled.jpg"
+  },
+  {
+   "id": "seabird-boat-tour-2026",
+   "title": "Seabird Boat Tour",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/seabird-boat-tour-2026/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "Location: Bass Rock, Scottish Seabird Centre\nA one-hour catamaran boat trip around Craigleith and the Bass Rock. The boat can get very close to the Bass Rock Gannets so you will get amazing views of these stunning seabirds.\nPlease note, you must organise your own travel to/from the harbour.\nRecommended train times from Edinburgh Waverley to North Berwick:\n13.11: arrives at 13:44, and gives you time for a cup of tea before your trip!\n13.40: arrives at 14.13, and gives you time to walk to the harbour.\nRecommended train times from North Berwick to Edinburgh Waverley:\n16:50: Arrives at 17:22\n17:22: Arrives at 17:57\nBSL\nIS",
+   "durationMin": null,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/sea-bird.jpg"
+  },
+  {
+   "id": "lumotv-screening-2026",
+   "title": "My Mother’s Spices and Ode to Seventeen: LumoTV Screening",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/lumotv-screening-2026/",
+   "genre": "film",
+   "categories": [
+    "film-screening"
+   ],
+   "blurb": "Warning: Ode to Seventeen contains frequent strong language and features intense themes related to mental health. Viewer discretion is advised.\nA double-bill screening of two recent short films from Lumo TV.\nMy Mother’s Spices : After her mother is hospitalised, a deaf British-Sri Lankan woman returns to her quiet childhood home, where re-creating a sacred family recipe forces her to confront the cultural fractures and deep-rooted love that bind them together. Can the space between generations truly close, or will it always hold a silence only love can fill? Starring Ruchika Jain and Sankeetha Gathani and written and directed by Nadia Nadarajah, a Slick Films production for Lumo TV.\nOde to Seventeen : A vulnerable 17-year-old Hana waits at a London bus stop at midnight, grappling with her identity and a fading sense of safety. When an oddly familiar older woman joins her, a raw, emotional dialogue unfolds. Hana soon realises the stranger holding her together is her 27-year-old self. Together, across a decade of time, they begin to piece their broken selves back together like Kintsugi.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/LumoTV.png"
+  },
+  {
+   "id": "edinburgh-deaf-festival-closing-party-2026",
+   "title": "Edinburgh Deaf Festival Closing Party",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/edinburgh-deaf-festival-closing-party-2026/",
+   "genre": "other",
+   "categories": [
+    "social"
+   ],
+   "blurb": "Join us for Edinburgh Deaf Festival’s closing party! Get into the groove with renowned deaf DJ, DJ DefBeatz, as he guides you through a set of specially mixed house tracks to get the party started.\nBSL\nIS\nFree but booking essential",
+   "durationMin": null,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Closing-Party.jpg"
+  },
+  {
+   "id": "yoga-2026",
+   "title": "Yoga",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/yoga-2026/",
+   "genre": "other",
+   "categories": [
+    "social",
+    "workshop"
+   ],
+   "blurb": "Take time to relax, unwind and reconnect in this welcoming yoga session. Suitable for all experience levels, the class offers a calm and supportive environment focused on movement, balance and wellbeing. Everyone is welcome to come along and take part at their own pace. Led by Sasha Malinsky and Clare Duff y .\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Yoga-both.jpg"
+  },
+  {
+   "id": "lumotv-meet-commissioners",
+   "title": "LumoTV Panel: Meet the Commissioners",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/lumotv-meet-commissioners/",
+   "genre": "talk",
+   "categories": [
+    "presentation"
+   ],
+   "blurb": "Lumo TV is the UK’s home of deaf entertainment and the world’s only sign language-led commissioning body, creating bold, accessible content that celebrates deaf and sign language communities. Formerly the British Sign Language Broadcasting Trust, Lumo TV commission across scripted, factual, entertainment and children’s programming, with a focus on authentic storytelling and developing deaf talent both on and off screen.\nJoining this session will be factual commissioner Cathy Heffernan, and drama commissioner, Phillip Dodds. This is a chance to hear directly from Lumo TV’s commissioning team about what they’re looking for, how they work with creatives and how to approach them with ideas that feel both culturally authentic and creatively exciting.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/LumoTV.png"
+  },
+  {
+   "id": "zine-making-workshop",
+   "title": "Zine Making Workshop",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/zine-making-workshop/",
+   "genre": "other",
+   "categories": [
+    "workshop"
+   ],
+   "blurb": "Join us for an interactive zine workshop, facilitated Karissa and Clara Newman.\nParticipants will be shown how to make a small zine, based on deaf experiences or deaf awareness, but not limited to this. The zine could also be illustrating anything you want including a day in the life of, or even how to make a cup of tea!",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/zine-workshop-1.jpg"
+  },
+  {
+   "id": "bsl-tour-earth-matters",
+   "title": "BSL Tour – Earth Matters",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/bsl-tour-earth-matters/",
+   "genre": "other",
+   "categories": [
+    "tour"
+   ],
+   "blurb": "See soil through art. Earth Matters marks 300 years since the birth of James Hutton, the Edinburgh-born geologist, farmer and thinker who revolutionised our understanding of the ground beneath us.\nInspired by Hutton and subsequent trailblazers, 30 artists delve into this living ecosystem to reveal its brilliance, beauty and fragility.\nThis exhibition tour is in British Sign Language (BSL), led by Trudi Collier. Please book your ticket in advance and meet at the entrance to the exhibition in Inverleith House.\nIf you have any questions, please email creativeprogrammes@rbge.org.uk\nImage Credits: Sekai Machache, Light Divine Sky II, 2021. Photography: Antanas Budvytis. Courtesy the artist, Patricia Fleming Gallery and the Fleming Collection\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/Earth-Matters-tour.jpg"
+  },
+  {
+   "id": "lumotv-film-scotland",
+   "title": "LumoTV Panel: Film in Scotland",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/lumotv-film-scotland/",
+   "genre": "talk",
+   "categories": [
+    "presentation"
+   ],
+   "blurb": "Join Lumo TV for a conversation with filmmakers from across Scotland.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/07/LumoTV.png"
+  },
+  {
+   "id": "the-librarians",
+   "title": "The Librarians",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/the-librarians/",
+   "genre": "theatre",
+   "categories": [
+    "theatre",
+    "workshop",
+    "family"
+   ],
+   "blurb": "Live captioning will be available for the performance on Saturday 15 August.\nStep into a world where books burst into life! Meet the wonderfully quirky Miss Book and Mr Page as they discover the adventures hidden in their library of old books. Everyone enjoys their hilarious antics together in this magical show performed in BSL and English.\nBut it doesn’t stop there!\nAfter the show, your child becomes the star of the show, creating and sharing their own story on stage through speaking, signing, writing, or drawing.\nA celebration of everyone’s stories!\nThe show is bilingual in BSL/English. We also run a bilingual workshop with a BSL/English interpreter.\nBSL\nIS",
+   "durationMin": 90,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/The-Librarians.jpg"
+  },
+  {
+   "id": "a-night-in-sign",
+   "title": "A Night in Sign",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/a-night-in-sign/",
+   "genre": "theatre",
+   "categories": [
+    "cabaret",
+    "comedy",
+    "social",
+    "theatre"
+   ],
+   "blurb": "Live captioning will be available for the performance on Saturday 15 August.\n‘A Night in Sign’ is a vibrant BSL-led cabaret event platforming Deaf and Hard-of-Hearing talent through comedy, music, poetry and performance.\nGet ready for an electric night of BSL-led cabaret celebrating the UK’s most exciting Deaf and hard of hearing talent. From powerful poetry to laugh-out-loud comedy, soulful music to bold performance art!\n‘A Night in Sign’ is where it all comes alive!\nThis is not your average night out. It’s vibrant, unapologetic, and bursting with Deaf creativity. Come for the vibes, stay for the brilliance.\nHosted by Nadeem Islam and featuring performances from acclaimed Deaf artist Chris Fonseca alongside some of the UK’s most exciting Deaf creatives, this is not your average night out.\nExpect established icons. Discover rising stars. Feel the buzz.\nBSL\nIS",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/A-Night-in-Sign.jpg"
+  },
+  {
+   "id": "pray-for-me",
+   "title": "Pray for Me",
+   "titleLocal": null,
+   "url": "https://edinburghdeaffestival.com/mec-events/pray-for-me/",
+   "genre": "theatre",
+   "categories": [
+    "theatre"
+   ],
+   "blurb": "Age Suitability :14+. This performance contains themes of religious trauma, ableism towards Deaf people, and cultural pressure within faith communities. References to emotional distress and prayer as “cure” are explored.\nLive captioning will be available for the performance on Saturday 15 August.\nPray For Me, written and performed by Sarah Adedeji is a powerful new work-in-progress exploring faith, deafness and identity, as a Black Deaf woman confronts ideas of cure, belief and belonging through poetry, movement and live music by ISRA3L.",
+   "durationMin": 60,
+   "imageUrl": "https://edinburghdeaffestival.com/wp-content/uploads/2026/06/pray-for-me-1.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "birds-and-bugs-workshop-2026/2026-08-07/11:00",
+   "eventId": "birds-and-bugs-workshop-2026",
+   "venueId": "holyrood-park",
+   "roomId": null,
+   "date": "2026-08-07",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/birds-and-bugs-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "deaf-families-day-nms/2026-08-07/11:00",
+   "eventId": "deaf-families-day-nms",
+   "venueId": "national-museum-of-scotland",
+   "roomId": null,
+   "date": "2026-08-07",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/deaf-families-takeover-day-at-national-museum-of-scotland",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "finding-comedy-in-lifes-stories/2026-08-07/11:00",
+   "eventId": "finding-comedy-in-lifes-stories",
+   "venueId": "deaf-action",
+   "roomId": "brennans-library",
+   "date": "2026-08-07",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/finding-comedy-in-life-s-stories",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "pencil-case-workshop/2026-08-07/11:00",
+   "eventId": "pencil-case-workshop",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-07",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/pencil-case-making",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "anne-hardy-talbot-rice-bsl-tour/2026-08-07/13:00",
+   "eventId": "anne-hardy-talbot-rice-bsl-tour",
+   "venueId": "talbot-rice-gallery",
+   "roomId": null,
+   "date": "2026-08-07",
+   "start": "13:00",
+   "ticketUrl": "https://www.trg.ed.ac.uk/event/british-sign-language-bsl-tour-anne-hardy",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "signing-to-know-climate-change/2026-08-07/14:00",
+   "eventId": "signing-to-know-climate-change",
+   "venueId": "deaf-action",
+   "roomId": "the-garden",
+   "date": "2026-08-07",
+   "start": "14:00",
+   "ticketUrl": "https://events.humanitix.com/signing-to-know-climate-change-adult-session",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "youth-boxing-session/2026-08-07/14:00",
+   "eventId": "youth-boxing-session",
+   "venueId": "port-o-leith-boxing-club",
+   "roomId": null,
+   "date": "2026-08-07",
+   "start": "14:00",
+   "ticketUrl": "https://events.humanitix.com/youth-boxing-session",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "edinburgh-deaf-festival-opening-party/2026-08-07/15:30",
+   "eventId": "edinburgh-deaf-festival-opening-party",
+   "venueId": "deaf-action",
+   "roomId": null,
+   "date": "2026-08-07",
+   "start": "15:30",
+   "ticketUrl": "https://events.humanitix.com/edinburgh-deaf-festival-opening-party",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sonic-patterns-workshop/2026-08-08/11:00",
+   "eventId": "sonic-patterns-workshop",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-08",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/sonic-patterns-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bsl-craft-club-2026/2026-08-08/12:00",
+   "eventId": "bsl-craft-club-2026",
+   "venueId": "deaf-action",
+   "roomId": "brennans-library",
+   "date": "2026-08-08",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "directing-workshop/2026-08-08/12:00",
+   "eventId": "directing-workshop",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-08",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/directing-workshop-dsum97v2",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "edinburgh-deaf-church-1818/2026-08-08/12:30",
+   "eventId": "edinburgh-deaf-church-1818",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-08",
+   "start": "12:30",
+   "ticketUrl": "https://events.humanitix.com/edinburgh-deaf-church-1818-to-the-present",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sonic-patterns-workshop-for-youth-families/2026-08-08/14:00",
+   "eventId": "sonic-patterns-workshop-for-youth-families",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-08",
+   "start": "14:00",
+   "ticketUrl": "https://events.humanitix.com/sonic-patterns-workshop-for-youth-and-families",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ecumenical-church-service/2026-08-09/10:00",
+   "eventId": "ecumenical-church-service",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-09",
+   "start": "10:00",
+   "ticketUrl": "https://events.humanitix.com/ecumenical-church-service",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "yoga-for-families/2026-08-09/10:00",
+   "eventId": "yoga-for-families",
+   "venueId": "deaf-action",
+   "roomId": "geikie-suite",
+   "date": "2026-08-09",
+   "start": "10:00",
+   "ticketUrl": "https://events.humanitix.com/yoga-for-families",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "art-workshop/2026-08-09/11:00",
+   "eventId": "art-workshop",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-09",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/art-workshop-bhvjqk7p",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "dose-of-dandy-live-podcast/2026-08-09/12:00",
+   "eventId": "dose-of-dandy-live-podcast",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-09",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/dose-of-dandy-live-podcast",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "signing-to-know-climate-change-358/2026-08-09/12:00",
+   "eventId": "signing-to-know-climate-change-358",
+   "venueId": "deaf-action",
+   "roomId": "the-garden",
+   "date": "2026-08-09",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/youth-of-signing-to-know-climate-change-adult-session",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "a-wolf-shall-devour-the-sun/2026-08-09/13:00",
+   "eventId": "a-wolf-shall-devour-the-sun",
+   "venueId": "scottish-storytelling-centre",
+   "roomId": null,
+   "date": "2026-08-09",
+   "start": "13:00",
+   "ticketUrl": "https://events.humanitix.com/a-wolf-shall-devour-the-sun",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "michael-woods-mount-everest-speaker/2026-08-09/14:00",
+   "eventId": "michael-woods-mount-everest-speaker",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-09",
+   "start": "14:00",
+   "ticketUrl": "https://events.humanitix.com/michael-woods-mount-everest-speaker",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "royal-botanic-garden-edinburgh-summer-tour/2026-08-09/14:00",
+   "eventId": "royal-botanic-garden-edinburgh-summer-tour",
+   "venueId": "royal-botanic-garden-edinburgh",
+   "roomId": null,
+   "date": "2026-08-09",
+   "start": "14:00",
+   "ticketUrl": "https://www.eventbrite.co.uk/e/summer-british-sign-language-garden-tour-royal-botanic-garden-edinburgh-tickets-1985058099211?aff=oddtdtcreator",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "singing-willows/2026-08-09/17:00",
+   "eventId": "singing-willows",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-09",
+   "start": "17:00",
+   "ticketUrl": "https://events.humanitix.com/singing-willows-and-the-magical-bed",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "john-smith-planes-trains-misunderstandings/2026-08-09/19:00",
+   "eventId": "john-smith-planes-trains-misunderstandings",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-09",
+   "start": "19:00",
+   "ticketUrl": "https://www.edfringe.com/tickets/whats-on/john-smith-planes-trains-and-misunderstandings",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sign-slam/2026-08-09/21:00",
+   "eventId": "sign-slam",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-09",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfringe.com/tickets/whats-on/sign-slam",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "watercolour/2026-08-10/12:00",
+   "eventId": "watercolour",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-10",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/watercolour-workshop-k5vvrtb2",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "art-presentation/2026-08-10/16:30",
+   "eventId": "art-presentation",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-10",
+   "start": "16:30",
+   "ticketUrl": "https://events.humanitix.com/art-presentation",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "deaf/2026-08-10/18:00",
+   "eventId": "deaf",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-10",
+   "start": "18:00",
+   "ticketUrl": "https://events.humanitix.com/deaf-people",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "pub-quiz-2026/2026-08-10/19:00",
+   "eventId": "pub-quiz-2026",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-10",
+   "start": "19:00",
+   "ticketUrl": "https://events.humanitix.com/pub-quiz-6d7eekf4",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "culture-workshops-lunch/2026-08-11/12:00",
+   "eventId": "culture-workshops-lunch",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-11",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/culture-workshops-and-lunch",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "dinner-party-debate-ai/2026-08-11/17:30",
+   "eventId": "dinner-party-debate-ai",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-11",
+   "start": "17:30",
+   "ticketUrl": "https://events.humanitix.com/dinner-party-debate-ai",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sign-between-the-lines-bsl-book-club-2026/2026-08-11/19:30",
+   "eventId": "sign-between-the-lines-bsl-book-club-2026",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-11",
+   "start": "19:30",
+   "ticketUrl": "https://events.humanitix.com/sign-between-the-lines-bsl-book-club",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "performance-interpreting-workshop/2026-08-12/11:00",
+   "eventId": "performance-interpreting-workshop",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-12",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/performance-interpreting-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "arthurs-secrets-bsl-tour-of-holyrood-park/2026-08-12/13:00",
+   "eventId": "arthurs-secrets-bsl-tour-of-holyrood-park",
+   "venueId": "holyrood-park",
+   "roomId": null,
+   "date": "2026-08-12",
+   "start": "13:00",
+   "ticketUrl": "https://www.eventbrite.com/e/holyrood-park-guided-walk-signed-in-british-sign-language-tickets-1991976342864",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bsl-film-club-x-edinburgh-deaf-festival/2026-08-12/19:00",
+   "eventId": "bsl-film-club-x-edinburgh-deaf-festival",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-12",
+   "start": "19:00",
+   "ticketUrl": "https://events.humanitix.com/bsl-film-club-x-edinburgh-deaf-festival",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "afterlife-tour/2026-08-13/11:00",
+   "eventId": "afterlife-tour",
+   "venueId": "collective",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "11:00",
+   "ticketUrl": "https://www.collective-edinburgh.art/event/bsl-tour-afterlife/",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bingo-2026/2026-08-13/11:00",
+   "eventId": "bingo-2026",
+   "venueId": "deaf-action",
+   "roomId": "brennans-library",
+   "date": "2026-08-13",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "edwardians-tour/2026-08-13/11:30",
+   "eventId": "edwardians-tour",
+   "venueId": "the-king-s-gallery",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "11:30",
+   "ticketUrl": "https://www.rct.uk/event/bsl-interpreted-tour-the-edwardians-08-2026",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "sign-language-poetry-workshop/2026-08-13/12:00",
+   "eventId": "sign-language-poetry-workshop",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-13",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/sign-language-poetry-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "ceilidh-dancing-workshop/2026-08-13/12:30",
+   "eventId": "ceilidh-dancing-workshop",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-13",
+   "start": "12:30",
+   "ticketUrl": "https://events.humanitix.com/ceilidh-dancing-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "giants-bsl-tour/2026-08-13/14:00",
+   "eventId": "giants-bsl-tour",
+   "venueId": "national-museum-of-scotland",
+   "roomId": null,
+   "date": "2026-08-13",
+   "start": "14:00",
+   "ticketUrl": "https://www.nms.ac.uk/events/bsl-tour-giants",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "scratch-night-hosted-by-leah-francisco/2026-08-13/20:00",
+   "eventId": "scratch-night-hosted-by-leah-francisco",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-13",
+   "start": "20:00",
+   "ticketUrl": "https://events.humanitix.com/scratch-night-hosted-by-leah-francisco",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "a-deaf-journey-on-the-camino/2026-08-14/11:00",
+   "eventId": "a-deaf-journey-on-the-camino",
+   "venueId": "deaf-action",
+   "roomId": "brennans-library",
+   "date": "2026-08-14",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/a-deaf-journey-on-the-camino",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "thrive-live-2026/2026-08-14/12:00",
+   "eventId": "thrive-live-2026",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-14",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/thrive-live",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "deaf-karaoke-workshop-2/2026-08-14/12:30",
+   "eventId": "deaf-karaoke-workshop-2",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-14",
+   "start": "12:30",
+   "ticketUrl": "https://events.humanitix.com/deaf-karaoke-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bsl-storytelling-workshop-2026/2026-08-14/13:00",
+   "eventId": "bsl-storytelling-workshop-2026",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-14",
+   "start": "13:00",
+   "ticketUrl": "https://events.humanitix.com/bsl-storytelling-workshop",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "boxing-workshop-2026/2026-08-14/14:00",
+   "eventId": "boxing-workshop-2026",
+   "venueId": "port-o-leith-boxing-club",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "14:00",
+   "ticketUrl": "https://events.humanitix.com/boxing-workshop-btn5f387",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "scottish-fire-tour/2026-08-14/14:00",
+   "eventId": "scottish-fire-tour",
+   "venueId": "museum-of-scottish-fire-heritage",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "14:00",
+   "ticketUrl": "https://museumofscottishfireheritage.org/event/bsl-tour/",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "edinburgh-zoo-bsl-tour-2026/2026-08-14/16:30",
+   "eventId": "edinburgh-zoo-bsl-tour-2026",
+   "venueId": "edinburgh-zoo",
+   "roomId": null,
+   "date": "2026-08-14",
+   "start": "16:30",
+   "ticketUrl": "https://www.eventbrite.co.uk/e/edinburgh-zoo-tour-in-british-sign-language-tickets-1988160664066?aff=oddtdtcreator",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "deaf-karaoke-2026/2026-08-14/22:00",
+   "eventId": "deaf-karaoke-2026",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-14",
+   "start": "22:00",
+   "ticketUrl": "https://events.humanitix.com/deaf-karaoke",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bsl-parkrun-2026/2026-08-15/09:00",
+   "eventId": "bsl-parkrun-2026",
+   "venueId": "holyrood-park",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "dungeons-deaf-dragons/2026-08-15/10:00",
+   "eventId": "dungeons-deaf-dragons",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-15",
+   "start": "10:00",
+   "ticketUrl": "https://events.humanitix.com/dungeons-and-deaf-dragons",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "lights-lanterns/2026-08-15/11:00",
+   "eventId": "lights-lanterns",
+   "venueId": "deaf-action",
+   "roomId": "geikie-suite",
+   "date": "2026-08-15",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/lights-and-lanterns",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "panel-discussion-making-the-singer/2026-08-15/11:00",
+   "eventId": "panel-discussion-making-the-singer",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-15",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/panel-discussion-making-the-singer-live-theatre",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "potter-trail-bsl-2026/2026-08-15/11:00",
+   "eventId": "potter-trail-bsl-2026",
+   "venueId": "bobbys-sandwich-shop",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "11:00",
+   "ticketUrl": "https://forms.office.com/r/bsJhFBDTBM?origin=lprLink",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "deaf-makers-market/2026-08-15/12:00",
+   "eventId": "deaf-makers-market",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-15",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "scottish-deaf-archives/2026-08-15/12:00",
+   "eventId": "scottish-deaf-archives",
+   "venueId": "deaf-action",
+   "roomId": "scottish-deaf-archives-room",
+   "date": "2026-08-15",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "castle-bsl-tour/2026-08-15/12:30",
+   "eventId": "castle-bsl-tour",
+   "venueId": "edinburgh-castle-meet-on-edinburgh-castle-esplanade",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "12:30",
+   "ticketUrl": "https://www.historicenvironment.scot/visit-a-place/whats-on/event/?eventid=dafe8745-6c24-4093-8a89-a8f8008f6857",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "signing-to-know-climate-change-358-315/2026-08-15/13:00",
+   "eventId": "signing-to-know-climate-change-358-315",
+   "venueId": "deaf-action",
+   "roomId": "the-garden",
+   "date": "2026-08-15",
+   "start": "13:00",
+   "ticketUrl": "https://events.humanitix.com/signing-to-know-climate-change-all-ages-session",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "catherine-opie-tour/2026-08-15/14:00",
+   "eventId": "catherine-opie-tour",
+   "venueId": "the-national",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "14:00",
+   "ticketUrl": "https://www.nationalgalleries.org/event/british-sign-language-bsl-tour-catherine-opie-be-seen",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "seabird-boat-tour-2026/2026-08-15/14:30",
+   "eventId": "seabird-boat-tour-2026",
+   "venueId": "bass-rock-scottish-seabird-centre",
+   "roomId": null,
+   "date": "2026-08-15",
+   "start": "14:30",
+   "ticketUrl": "https://events.humanitix.com/seabird-boat-tour",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "lumotv-screening-2026/2026-08-15/15:00",
+   "eventId": "lumotv-screening-2026",
+   "venueId": "deaf-action",
+   "roomId": "brennans-library",
+   "date": "2026-08-15",
+   "start": "15:00",
+   "ticketUrl": "https://events.humanitix.com/lumotv-screening-my-mother-s-spices-and-ode-to-seventeen",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "edinburgh-deaf-festival-closing-party-2026/2026-08-15/22:00",
+   "eventId": "edinburgh-deaf-festival-closing-party-2026",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-15",
+   "start": "22:00",
+   "ticketUrl": "https://events.humanitix.com/edinburgh-deaf-festival-closing-party",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "yoga-2026/2026-08-16/10:00",
+   "eventId": "yoga-2026",
+   "venueId": "deaf-action",
+   "roomId": "the-church",
+   "date": "2026-08-16",
+   "start": "10:00",
+   "ticketUrl": "https://events.humanitix.com/yoga-82gk8rcd",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "lumotv-meet-commissioners/2026-08-16/11:00",
+   "eventId": "lumotv-meet-commissioners",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-16",
+   "start": "11:00",
+   "ticketUrl": "https://events.humanitix.com/lumotv-panel-meet-the-commissioners",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "zine-making-workshop/2026-08-16/12:00",
+   "eventId": "zine-making-workshop",
+   "venueId": "deaf-action",
+   "roomId": "princess-joanna-room",
+   "date": "2026-08-16",
+   "start": "12:00",
+   "ticketUrl": "https://events.humanitix.com/zine-making-workshop-syuqdhap",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "bsl-tour-earth-matters/2026-08-16/14:00",
+   "eventId": "bsl-tour-earth-matters",
+   "venueId": "royal-botanic-garden-edinburgh",
+   "roomId": null,
+   "date": "2026-08-16",
+   "start": "14:00",
+   "ticketUrl": "https://www.eventbrite.co.uk/e/bsl-tour-earth-matters-tickets-1982874592283?aff=oddtdtcreator",
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "lumotv-film-scotland/2026-08-16/15:00",
+   "eventId": "lumotv-film-scotland",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-16",
+   "start": "15:00",
+   "ticketUrl": "https://events.humanitix.com/lumotv-panel-film-in-scotland",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "the-librarians/2026-08-16/17:00",
+   "eventId": "the-librarians",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-16",
+   "start": "17:00",
+   "ticketUrl": "https://www.edfringe.com/tickets/whats-on/the-librarians",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "a-night-in-sign/2026-08-16/19:00",
+   "eventId": "a-night-in-sign",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-16",
+   "start": "19:00",
+   "ticketUrl": "https://www.edfringe.com/tickets/whats-on/a-night-in-sign",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "pray-for-me/2026-08-16/21:00",
+   "eventId": "pray-for-me",
+   "venueId": "deaf-action",
+   "roomId": "blackwood-bar",
+   "date": "2026-08-16",
+   "start": "21:00",
+   "ticketUrl": "https://www.edfringe.com/tickets/whats-on/pray-for-me",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "festival-site",
+   "nominatim"
+  ],
+  "events": [
+   "festival-site"
+  ],
+  "performances": [
+   "festival-site"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "festival-site": {
+    "kind": "fetched",
+    "path": "data/festivals/edinburgh-deaf-festival/2026/festival-site",
+    "fetchedAt": "2026-09-25T13:59:33Z",
+    "fetcher": "scraper/festivals/edinburgh_deaf_festival/sources/festival-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/edinburgh-deaf-festival/2026/nominatim",
+    "fetchedAt": "2026-09-25T14:00:34Z",
+    "fetcher": "scraper/festivals/edinburgh_deaf_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 1
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "festival-site"
+   ],
+   "events.blurb": [
+    "festival-site"
+   ],
+   "events.categories": [
+    "festival-site"
+   ],
+   "events.durationMin": [
+    "festival-site"
+   ],
+   "events.genre": [
+    "festival-site"
+   ],
+   "events.imageUrl": [
+    "festival-site"
+   ],
+   "events.title": [
+    "festival-site"
+   ],
+   "events.url": [
+    "festival-site"
+   ],
+   "performances.date": [
+    "festival-site"
+   ],
+   "performances.eventId": [
+    "festival-site"
+   ],
+   "performances.free": [
+    "festival-site"
+   ],
+   "performances.roomId": [
+    "festival-site"
+   ],
+   "performances.start": [
+    "festival-site"
+   ],
+   "performances.ticketUrl": [
+    "festival-site"
+   ],
+   "performances.venueId": [
+    "festival-site"
+   ],
+   "venues.address": [
+    "festival-site"
+   ],
+   "venues.lat": [
+    "nominatim"
+   ],
+   "venues.lng": [
+    "nominatim"
+   ],
+   "venues.name": [
+    "festival-site"
+   ],
+   "venues.rooms": [
+    "festival-site"
+   ]
+  },
+  "skipped": {
+   "festival-site": [
+    "the-scotch-whisky-experience-2026 (runs 2026-08-07..2026-08-16)",
+    "trudi-collier-art-exhibition (runs 2026-08-07..2026-08-16)",
+    "the-light-of-the-deep (cancelled)",
+    "bsl-interpreted-tour-queen-elizabeth-ii-apartments-tour (cancelled)",
+    "royal-edinburgh-military-tattoo (dated 2026-08-28, outside the edition)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,51 @@
+# The Edinburgh International Film Festival: who it is, its editions, and the
+# sources an edition's information block is assembled from. The contract every
+# key follows is scraper/festivals/README.md.
+
+id = "eiff"
+name = "Edinburgh International Film Festival"
+city = "Edinburgh"
+country = "GB"
+# The city's centre, for the festival timeline and travel maths between cities;
+# venues carry their own coordinates.
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "film"
+default_genre = "film"
+site = "https://www.edfilmfest.org"
+
+[ticketing]
+notes = "Sold on edfilmfest.org's own basket (and through the Fringe box office); prices per showing are published as price bands with a concession, plus a £1.25 booking fee per ticket capped at £5 an order. Seats left are published per showing; a sold-out showing shows no venue or price."
+currency = "GBP"
+
+# Dates from the site's own What's On day sections (13 to 19 Aug 2026), read on
+# edfilmfest.org on 2026-09-25.
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-08-13"
+last = "2026-08-19"
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "availability", "prices"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "eiff/festival_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "eiff/venues_research.py"
+
+[merge]
+venues = ["venues-research"]
+events = ["festival-site"]
+performances = ["festival-site"]

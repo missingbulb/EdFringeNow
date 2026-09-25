@@ -1,0 +1,49 @@
+# Fringe by the Sea (North Berwick): who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md.
+
+id = "fringe-by-the-sea"
+name = "Fringe by the Sea"
+city = "North Berwick"
+country = "GB"
+lat = 56.0586
+lng = -2.7196
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "multi"
+default_genre = "other"
+site = "https://www.fringebythesea.com"
+
+[ticketing]
+notes = "Sold through CitizenTicket, with a box office in the Lodge Grounds and a kiosk at North Berwick Library. Prices in GBP are free text on each show; no availability is published."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: not published anywhere we could cite, so absent (null), never guessed.
+# Dates: the site's own title, "Fringe by the Sea – 31 July – 9 August 2026".
+first = "2026-07-31"
+last = "2026-08-09"
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "fringe_by_the_sea/festival_site.py"
+
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "fringe_by_the_sea/nominatim.py"
+
+[merge]
+venues = ["nominatim", "festival-site"]
+events = ["festival-site"]
+performances = ["festival-site"]

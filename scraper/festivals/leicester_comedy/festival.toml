@@ -1,0 +1,45 @@
+# The Leicester Comedy Festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md.
+#
+# Its operator, the Big Difference Company, ceased trading in August 2026, so
+# only the 2026 edition is declared: February 2027 is contested by more than one
+# successor, and which of them (if any) keeps this box office is unknown.
+
+id = "leicester-comedy"
+name = "Leicester Comedy Festival"
+city = "Leicester"
+country = "GB"
+# The city's centre (the Clock Tower), for the festival timeline and travel
+# maths between cities; venues carry their own coordinates.
+lat = 52.6365
+lng = -1.1339
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "comedy"
+default_genre = "comedy"
+site = "https://www.comedy-festival.co.uk"
+
+[ticketing]
+notes = "Central box office on events.comedy-festival.co.uk (the Eventotron plugin with Stripe), the same platform as Brighton Fringe. Price bands per performance are read from the event pages; no seat-level availability is published."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-02-04"
+last = "2026-02-22"
+
+[[source]]
+id = "eventotron"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventotron/fetch.py"
+adapter = "leicester_comedy/eventotron.py"
+
+[merge]
+venues = ["eventotron"]
+events = ["eventotron"]
+performances = ["eventotron"]

@@ -27,6 +27,31 @@
    ]
   },
   {
+   "id": "brighton-fringe",
+   "name": "Brighton Fringe",
+   "nameLocal": null,
+   "city": "Brighton",
+   "country": "GB",
+   "lat": 50.8225,
+   "lng": -0.1372,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "fringe",
+   "defaultGenre": "other",
+   "site": "https://www.brightonfringe.org",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-05-01",
+     "lastDate": "2026-05-31",
+     "format": "block",
+     "dataUrl": "/data/festivals/brighton-fringe/2026.json"
+    }
+   ]
+  },
+  {
    "id": "edfringe",
    "name": "Edinburgh Festival Fringe",
    "nameLocal": null,
@@ -52,6 +77,189 @@
       "lookups": "/data/venues.json",
       "availability": "/data/normalized/availability.min.json"
      }
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-art-festival",
+   "name": "Edinburgh Art Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "other",
+   "site": "https://edinburghartfestival.com",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-14",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-art-festival/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-book-festival",
+   "name": "Edinburgh International Book Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "talk",
+   "site": "https://www.edbookfest.co.uk",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-15",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-book-festival/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-deaf-festival",
+   "name": "Edinburgh Deaf Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "other",
+   "site": "https://edinburghdeaffestival.com",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-16",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-deaf-festival/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "edinburgh-tattoo",
+   "name": "Royal Edinburgh Military Tattoo",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://www.edintattoo.co.uk",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-29",
+     "format": "block",
+     "dataUrl": null
+    },
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-08-06",
+     "lastDate": "2027-08-28",
+     "format": "block",
+     "dataUrl": "/data/festivals/edinburgh-tattoo/2027.json"
+    }
+   ]
+  },
+  {
+   "id": "eif",
+   "name": "Edinburgh International Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "other",
+   "site": "https://www.eif.co.uk",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-07",
+     "lastDate": "2026-08-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/eif/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "eiff",
+   "name": "Edinburgh International Film Festival",
+   "nameLocal": null,
+   "city": "Edinburgh",
+   "country": "GB",
+   "lat": 55.9533,
+   "lng": -3.1883,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "defaultGenre": "film",
+   "site": "https://www.edfilmfest.org",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-08-13",
+     "lastDate": "2026-08-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/eiff/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "fringe-by-the-sea",
+   "name": "Fringe by the Sea",
+   "nameLocal": null,
+   "city": "North Berwick",
+   "country": "GB",
+   "lat": 56.0586,
+   "lng": -2.7196,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "other",
+   "site": "https://www.fringebythesea.com",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-07-31",
+     "lastDate": "2026-08-09",
+     "format": "block",
+     "dataUrl": "/data/festivals/fringe-by-the-sea/2026.json"
     }
    ]
   },
@@ -102,6 +310,81 @@
      "lastDate": "2026-10-22",
      "format": "block",
      "dataUrl": "/data/festivals/jerusalem-comedy/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "leicester-comedy",
+   "name": "Leicester Comedy Festival",
+   "nameLocal": null,
+   "city": "Leicester",
+   "country": "GB",
+   "lat": 52.6365,
+   "lng": -1.1339,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "defaultGenre": "comedy",
+   "site": "https://www.comedy-festival.co.uk",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-02-04",
+     "lastDate": "2026-02-22",
+     "format": "block",
+     "dataUrl": "/data/festivals/leicester-comedy/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "micf",
+   "name": "Melbourne International Comedy Festival",
+   "nameLocal": null,
+   "city": "Melbourne",
+   "country": "AU",
+   "lat": -37.815,
+   "lng": 144.9668,
+   "timezone": "Australia/Melbourne",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "defaultGenre": "comedy",
+   "site": "https://www.comedyfestival.com.au",
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-03-24",
+     "lastDate": "2027-04-18",
+     "format": "block",
+     "dataUrl": null
+    }
+   ]
+  },
+  {
+   "id": "nzicf",
+   "name": "NZ International Comedy Festival",
+   "nameLocal": null,
+   "city": "Auckland",
+   "country": "NZ",
+   "lat": -36.8485,
+   "lng": 174.7633,
+   "timezone": "Pacific/Auckland",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "comedy",
+   "defaultGenre": "comedy",
+   "site": "https://www.comedyfestival.co.nz",
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-04-30",
+     "lastDate": "2027-05-23",
+     "format": "block",
+     "dataUrl": null
     }
    ]
   }

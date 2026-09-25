@@ -1,0 +1,46 @@
+# The Melbourne International Comedy Festival: who it is, its editions, and the
+# sources an edition's information block is assembled from. The contract every
+# key follows is scraper/festivals/README.md.
+#
+# A placeholder: the 2027 edition is declared so the festival is listed, and it
+# stays unserved (dataUrl null) until its required source is fetched. Why the
+# fetcher is not built yet is sources/umbraco-api/fetch.py's docstring.
+
+id = "micf"
+name = "Melbourne International Comedy Festival"
+city = "Melbourne"
+country = "AU"
+# Melbourne Town Hall, the festival hub; venues carry their own coordinates.
+lat = -37.8150
+lng = 144.9668
+timezone = "Australia/Melbourne"
+lang = "en"
+dir = "ltr"
+kind = "comedy"
+default_genre = "comedy"
+site = "https://www.comedyfestival.com.au"
+
+[ticketing]
+notes = "Its own central box office on comedyfestival.com.au (Umbraco): one basket across shows, with an open basket API (addTickets) behind the site. A minority of shows at external venues link out to Ticketmaster, Ticketek or Arts Centre Melbourne."
+currency = "AUD"
+
+# Dates from the festival's own "Save the date! 24 Mar - 18 Apr 2027", read on
+# comedyfestival.com.au on 2026-09-25.
+[[edition]]
+id = "2027"
+format = "block"
+first = "2027-03-24"
+last = "2027-04-18"
+
+[[source]]
+id = "umbraco-api"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/umbraco-api/fetch.py"
+adapter = "micf/umbraco_api.py"
+
+[merge]
+venues = ["umbraco-api"]
+events = ["umbraco-api"]
+performances = ["umbraco-api"]

@@ -1,0 +1,47 @@
+# The Edinburgh International Festival: who it is, its editions, and the sources
+# an edition's information block is assembled from. The contract every key
+# follows is scraper/festivals/README.md.
+
+id = "eif"
+name = "Edinburgh International Festival"
+city = "Edinburgh"
+country = "GB"
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "multi"
+default_genre = "other"
+site = "https://www.eif.co.uk"
+
+[ticketing]
+notes = "Sold on eif.co.uk through Spektrix, whose public API publishes every performance's seats available against capacity and its price list."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-08-07"
+last = "2026-08-30"
+
+[[source]]
+id = "spektrix"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/spektrix/fetch.py"
+adapter = "eif/spektrix.py"
+
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "eif/nominatim.py"
+
+[merge]
+venues = ["spektrix", "nominatim"]
+events = ["spektrix"]
+performances = ["spektrix"]

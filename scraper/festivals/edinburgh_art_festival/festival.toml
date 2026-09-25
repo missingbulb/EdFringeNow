@@ -1,0 +1,41 @@
+# Edinburgh Art Festival: who it is, its editions, and the sources an edition's
+# information block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+
+id = "edinburgh-art-festival"
+name = "Edinburgh Art Festival"
+city = "Edinburgh"
+country = "GB"
+lat = 55.9533
+lng = -3.1883
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "multi"
+default_genre = "other"
+site = "https://edinburghartfestival.com"
+
+[ticketing]
+notes = "Most of the programme is free and drop-in; ticketed events sell through Eventbrite, Ticket Tailor or the partner venue's own site. Prices in GBP; the festival site publishes no availability."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: not published anywhere we could cite, so absent (null), never guessed.
+# Dates: the site's own tagline, "Returns 14—30 August 2026".
+first = "2026-08-14"
+last = "2026-08-30"
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "edinburgh_art_festival/festival_site.py"
+
+[merge]
+venues = ["festival-site"]
+events = ["festival-site"]
+performances = ["festival-site"]

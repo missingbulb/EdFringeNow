@@ -1,0 +1,41 @@
+# Brighton Fringe: who it is, its editions, and the sources an edition's
+# information block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+
+id = "brighton-fringe"
+name = "Brighton Fringe"
+city = "Brighton"
+country = "GB"
+# The city's centre (the Clock Tower), for the festival timeline and travel
+# maths between cities; venues carry their own coordinates.
+lat = 50.8225
+lng = -0.1372
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "fringe"
+default_genre = "other"
+site = "https://www.brightonfringe.org"
+
+[ticketing]
+notes = "Central box office on brightonfringe.org (the Eventotron plugin with Stripe): one basket across shows. Price bands per performance are read from the event pages; no seat-level availability is published, only a cancelled or sold-out mark."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-05-01"
+last = "2026-05-31"
+
+[[source]]
+id = "eventotron"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventotron/fetch.py"
+adapter = "brighton_fringe/eventotron.py"
+
+[merge]
+venues = ["eventotron"]
+events = ["eventotron"]
+performances = ["eventotron"]

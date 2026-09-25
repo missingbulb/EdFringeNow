@@ -1,0 +1,499 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "edinburgh-tattoo",
+  "edition": "2027",
+  "ordinal": null,
+  "name": "Royal Edinburgh Military Tattoo",
+  "nameLocal": null,
+  "city": "Edinburgh",
+  "country": "GB",
+  "lat": 55.9533,
+  "lng": -3.1883,
+  "timezone": "Europe/London",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "music",
+  "defaultGenre": "music",
+  "site": "https://www.edintattoo.co.uk",
+  "firstDate": "2027-08-06",
+  "lastDate": "2027-08-28",
+  "ticketing": {
+   "notes": "Its own box office at book.edintattoo.co.uk (SecuTix behind the Tattoo's own API): one show a night on the Castle Esplanade, seated by price band, with hospitality packages on top. Seats left and the cheapest and dearest price on sale are published per performance.",
+   "currency": "GBP"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "castle-esplanade",
+   "name": "Edinburgh Castle Esplanade",
+   "address": "Castlehill, Edinburgh EH1 2NG",
+   "lat": 55.948772,
+   "lng": -3.1964881,
+   "capacity": null,
+   "layout": "outdoor",
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Open-air arena of temporary grandstands in front of the castle; seated by price band (A+ to D, Premier, Royal Gallery).",
+   "refs": [
+    "https://www.edintattoo.co.uk/the-show/the-venue",
+    "https://www.openstreetmap.org/way/1358374738"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "27tat",
+   "title": "2027 Tattoo - The Same Heart Beat",
+   "titleLocal": null,
+   "url": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "genre": "music",
+   "categories": [],
+   "blurb": "The 2027 show takes place from 6-28 August 2027.\nJoin us next summer for a new Tattoo, driven by the musical talents of the Royal Marines and the creative powerhouse that is the Tattoo Performers.\nThe Same Heart Beat is a collaboration between the finest military acts from around the world and the best of Scottish and British talent.\nEverything you would hope for from the Tattoo and plenty new to move the mind and the heart, so I look forward to seeing you back here in August 2027.\nPyrotechnic special effects, lasers, smoke/haze effects and strobe lighting will be used during the performances.\nShould you have any accessible seating requirements, such as wheelchair or low-level accessible seating, please call our Box Office on +44 131 225 1188 (Monday to Friday 12 pm-4 pm BST). Alternatively, email us at tickets@edintattoo.co.uk\nPlease also note that Audio Description (AD) is available at select performances (equipment is subject to availability). Please contact the Tattoo Box Office for further details.",
+   "durationMin": null,
+   "imageUrl": "https://s3.eu-west-2.amazonaws.com/content-remt-prod-secutix-g42ptt9h/images/catalog/product/xlarge/56a505aa-ee0b-4e7a-bfdb-34926ac43ed9.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "27tat/2027-08-06/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-06",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 535.0
+  },
+  {
+   "id": "27tat/2027-08-07/18:15",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-07",
+   "start": "18:15",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 47.0,
+   "priceMax": 830.0
+  },
+  {
+   "id": "27tat/2027-08-07/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-07",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-09/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-09",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 435.0
+  },
+  {
+   "id": "27tat/2027-08-10/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-10",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-11/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-11",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-12/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-12",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 525.0
+  },
+  {
+   "id": "27tat/2027-08-13/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-13",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-14/18:15",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-14",
+   "start": "18:15",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 47.0,
+   "priceMax": 830.0
+  },
+  {
+   "id": "27tat/2027-08-14/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-14",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-16/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-16",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-17/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-17",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 755.0
+  },
+  {
+   "id": "27tat/2027-08-18/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-18",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-19/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-19",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 755.0
+  },
+  {
+   "id": "27tat/2027-08-20/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-20",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-21/18:15",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-21",
+   "start": "18:15",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 47.0,
+   "priceMax": 830.0
+  },
+  {
+   "id": "27tat/2027-08-21/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-21",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-23/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-23",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-24/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-24",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-25/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-25",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 840.0
+  },
+  {
+   "id": "27tat/2027-08-26/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-26",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 53.0,
+   "priceMax": 755.0
+  },
+  {
+   "id": "27tat/2027-08-27/18:15",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-27",
+   "start": "18:15",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 47.0,
+   "priceMax": 830.0
+  },
+  {
+   "id": "27tat/2027-08-27/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-27",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  },
+  {
+   "id": "27tat/2027-08-28/18:15",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-28",
+   "start": "18:15",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 47.0,
+   "priceMax": 830.0
+  },
+  {
+   "id": "27tat/2027-08-28/21:30",
+   "eventId": "27tat",
+   "venueId": "castle-esplanade",
+   "roomId": null,
+   "date": "2027-08-28",
+   "start": "21:30",
+   "ticketUrl": "https://book.edintattoo.co.uk/Product/10229369303405",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 58.0,
+   "priceMax": 975.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "ticketing-api"
+  ],
+  "performances": [
+   "ticketing-api"
+  ],
+  "availability": [
+   "ticketing-api"
+  ],
+  "prices": [
+   "ticketing-api"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "ticketing-api": {
+    "kind": "fetched",
+    "path": "data/festivals/edinburgh-tattoo/2027/ticketing-api",
+    "fetchedAt": "2026-09-25T14:04:41Z",
+    "fetcher": "scraper/festivals/edinburgh_tattoo/sources/ticketing-api/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/edinburgh_tattoo/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "ticketing-api"
+   ],
+   "events.categories": [
+    "ticketing-api"
+   ],
+   "events.durationMin": [
+    "ticketing-api"
+   ],
+   "events.imageUrl": [
+    "ticketing-api"
+   ],
+   "events.title": [
+    "ticketing-api"
+   ],
+   "events.url": [
+    "ticketing-api"
+   ],
+   "performances.date": [
+    "ticketing-api"
+   ],
+   "performances.eventId": [
+    "ticketing-api"
+   ],
+   "performances.free": [
+    "ticketing-api"
+   ],
+   "performances.priceMax": [
+    "ticketing-api"
+   ],
+   "performances.priceMin": [
+    "ticketing-api"
+   ],
+   "performances.start": [
+    "ticketing-api"
+   ],
+   "performances.status": [
+    "ticketing-api"
+   ],
+   "performances.ticketUrl": [
+    "ticketing-api"
+   ],
+   "performances.venueId": [
+    "ticketing-api"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}
