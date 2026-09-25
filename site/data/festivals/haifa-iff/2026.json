@@ -42,7 +42,7 @@
  "categories": [
   {
    "id": "1007",
-   "name": "Haifa's Wildest Nights"
+   "name": "Haifa's wildest nights"
   },
   {
    "id": "1025",
@@ -54,7 +54,7 @@
   },
   {
    "id": "10581",
-   "name": "First Exposure - New Israeli Cinema"
+   "name": "First exposure - new Israeli cinema"
   },
   {
    "id": "1098",
@@ -123,6 +123,21 @@
    "notes": "Haifa Auditorium, in the Carmel Centre complex. It has 1,139 seats (up to 1,453 in other configurations) on a single rake with no balcony. The festival's own pages give the address as HaNassi 142. Coordinates are approximate, not geocoded.",
    "refs": [
     "https://ethos.co.il/eng/Auditorium.html"
+   ]
+  },
+  {
+   "id": "cinema-reshet-herzl-46",
+   "name": "Cinema Reshet - Herzl 46",
+   "address": "Herzl St 46, Haifa",
+   "lat": null,
+   "lng": null,
+   "capacity": null,
+   "layout": "outdoor",
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Cinema Reshet, an outdoor screening space in the Hadar neighbourhood, away from the Carmel Centre halls. The festival uses it for three evenings of past festival short films, tickets on site only. The schedule files it under its catch-all Events column; the event pages name it.",
+   "refs": [
+    "https://www.haifaff.co.il/eng/Events/13974"
    ]
   },
   {
@@ -206,40 +221,40 @@
   {
    "id": "film-13407",
    "title": "Butch Cassidy and the Sundance Kid",
-   "titleLocal": null,
+   "titleLocal": "קיד וקסידי",
    "url": "https://www.haifaff.co.il/eng/Films/13407",
    "genre": "film",
    "categories": [
     "972"
    ],
-   "blurb": null,
+   "blurb": "Butch Cassidy and the Sundance Kid, one of cinema's most memorable \"buddy\" films, was inspired by the story of two real-life bank robbers, and established Paul Newman and Robert Redford as a screen team for the ages. It won four Oscars, including one for the popular theme song, \"Raindrops Keep Fallin' on My Head,\" by Burt Bacharach and Hal David.",
    "durationMin": 113,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13407_825404_movie_img.jpg"
   },
   {
    "id": "film-13409",
    "title": "It Will Happen Tonight",
-   "titleLocal": null,
+   "titleLocal": "זה יקרה הלילה",
    "url": "https://www.haifaff.co.il/eng/Films/13409",
    "genre": "film",
    "categories": [],
-   "blurb": null,
+   "blurb": "It Will Happen Tonight spans a 14-year period, chronicling the fragmented and poorly timed romance between Matteo (Louis Garrel) and Greta (Jasmine Trinca). The narrative unfolds across various European cities through a series of sliding-doors encounters, highlighting their persistent bad timing as they navigate their respective marriages and family commitments.",
    "durationMin": 103,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13409_260901_movie_img.jpg"
   },
   {
    "id": "film-13411",
    "title": "A Star Is Born",
-   "titleLocal": null,
+   "titleLocal": "כוכב נולד",
    "url": "https://www.haifaff.co.il/eng/Films/13411",
    "genre": "film",
    "categories": [
     "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "A Star Is Born is one of the screen's classic love stories (previously filmed in 1937 and 1954, and most recently remade in 2018). The fire of Barbra Streisand, the magnetism of Kris Kristofferson, and one of the most popular song scores ever, bring a new passion and timeliness to the story.",
    "durationMin": 139,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13411_897854_movie_img.jpg"
   },
   {
    "id": "film-13413",
@@ -250,9 +265,9 @@
    "categories": [
     "9152"
    ],
-   "blurb": null,
+   "blurb": "Broken English is a bold documentary portrait of the inimitable singer, songwriter, and icon Marianne Faithfull. A survivor, provocateur, and true original, Marianne spent more than six decades defying expectations – releasing over thirty-five albums while constantly reinventing herself. Made with her full involvement, Broken English is an intimate and unflinching exploration of a fractured yet unbreakable life shaped by fame, creativity, and relentless public scrutiny.",
    "durationMin": 99,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13413_141992_movie_img.jpg"
   },
   {
    "id": "film-13416",
@@ -263,9 +278,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "Nore, a free-spirited femme fatale, moves in with her former classmate Jonna, a serious medical student. As they drift through carefree one-night stands with disposable men, they are forced to confront Nore's deeply troubled past, which becomes an obstacle to happiness.",
    "durationMin": 122,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13416_222479_movie_img.jpg"
   },
   {
    "id": "film-13418",
@@ -277,9 +292,9 @@
     "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "One of the most popular movie musicals ever made, Funny Girl follows the early career of stage comedienne Fanny Brice, a role that earned Barbra Streisand the 1968 Academy Award® for Best Actress in her film debut.",
    "durationMin": 155,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13418_109524_movie_img.jpg"
   },
   {
    "id": "film-13419",
@@ -290,9 +305,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "Two parents receive a distressing late-night call from their teenage daughter, who has just accidentally hit a pedestrian. They jump in their car, racing to get there before anyone else stumbles across the scene. As they head deeper into the night, disturbing revelations threaten to tear the family apart as they soon realize they might not be the only ones driving down Hallow Road.",
    "durationMin": 80,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13419_173092_movie_img.jpg"
   },
   {
    "id": "film-13421",
@@ -304,9 +319,9 @@
     "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Gene Kelly's lavish screen version of the Broadway smash – one of the last of the big studio musicals – is an extravagant cinematic interpretation of the Tony Award-winning Broadway musical. The musical numbers, choreographed by Michael Kidd, have sensational energy and vitality, and Streisand shines in the title role.",
    "durationMin": 148,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13421_482380_movie_img.jpg"
   },
   {
    "id": "film-13423",
@@ -317,9 +332,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "In Hope Harbor, a remote village near the Demilitarized Zone, police outpost chief Bum-seok receives alarming reports from locals that a tiger has appeared. As the village erupts into panic, Bum-seok is forced to confront a reality beyond belief.",
    "durationMin": 156,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13423_133774_movie_img.jpg"
   },
   {
    "id": "film-13424",
@@ -330,9 +345,9 @@
    "categories": [
     "9152"
    ],
-   "blurb": null,
+   "blurb": "On the Pacific coast of Mexico, in the land Ina Marija had chosen as her home before she died too soon, her father, Sarunas, and her younger sister, Una, embark on a journey retracing her steps. There, amidst the extraordinary and resilient nature of the mangroves – in a lagoon battered by hurricanes yet perpetually reborn – they begin to navigate the tender terrain of grief.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13424_164530_movie_img.jpg"
   },
   {
    "id": "film-13426",
@@ -343,9 +358,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "1982. Eddie Mars is an actress who has had her moment of American glory. Accompanied by Valentina, her loyal makeup artist, she accepts the lead role in a science-fiction film being shot in Rome – a film that could very well be her last.",
    "durationMin": 107,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13426_417671_movie_img.jpg"
   },
   {
    "id": "film-13427",
@@ -356,9 +371,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "Anker is released from prison following a fifteen-year sentence for robbery. The money from the heist was buried by Anker's brother, Manfred. Only he knows where it is. Unfortunately, Manfred has since developed a mental disorder, causing him to forget everything. Together, the brothers embark on an unexpected journey to locate the money and discover who they really are.",
    "durationMin": 116,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13427_204917_movie_img.jpg"
   },
   {
    "id": "film-13429",
@@ -369,22 +384,22 @@
    "categories": [
     "9152"
    ],
-   "blurb": null,
+   "blurb": "The Match revisits the iconic 1986 World Cup clash between Argentina and England at the Azteca Stadium, weaving rare archival footage – including Maradona's \"Hand of God\" – into a powerful reconstruction of the event. Beyond the pitch, the film traces more than two centuries of conflict between the two nations, from early encounters to the Falklands/Malvinas War, reframing the game as both a sporting milestone and the echo of a deeper historical rivalry, where the beauty of football meets the absurdity of war.",
    "durationMin": 91,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13429_359379_movie_img.jpg"
   },
   {
    "id": "film-13431",
    "title": "To Kill a Nazi",
-   "titleLocal": null,
+   "titleLocal": "להרוג נאצי",
    "url": "https://www.haifaff.co.il/eng/Films/13431",
    "genre": "film",
    "categories": [
     "9152"
    ],
-   "blurb": null,
+   "blurb": "The incredible story of Michel Cojot, a French Jew who sets out to uncover the truth about his father's disappearance during World War II, and discovers that his father was murdered in Auschwitz following an order signed by Klaus Barbie, \"the Butcher of Lyon.\" His journey tracking the Nazi war criminal to Bolivia transforms him from a private individual in pursuit of justice into a key figure in one of the most audacious and iconic rescue missions in history—the Entebbe Raid.",
    "durationMin": 101,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13431_206942_movie_img.jpg"
   },
   {
    "id": "film-13433",
@@ -395,9 +410,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "In the French countryside, wild boars ravaging crops spark an open war between farmers and members of a gentlemen's hunting club, who feed the game between hunts. Brun, a bankrupt farmer, struggles to keep his farm afloat. When the club's president pushes him to his limits, Brun shoots him and disappears. A year later, Fulda, a volatile police officer newly transferred to the region, and Stéphane, a psychologist barely holding it together, start digging. What they uncover is bigger than anything they could have imagined.",
    "durationMin": 95,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13433_135818_movie_img.jpg"
   },
   {
    "id": "film-13435",
@@ -408,9 +423,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "Alec, a soft-spoken, introverted teenager, has always viewed life through the lens of his father's small-time pornography business. When they relocate from London to a sleepy seaside town, Alec hopes for a fresh start, trying to make friends without revealing his unconventional life. Everything shifts when he meets the fiercely independent Nina, whose convictions redefine the world in which he has grown up. As their relationship deepens, Alec's understanding of sexuality and desire begins to change.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13435_997532_movie_img.jpg"
   },
   {
    "id": "film-13437",
@@ -422,9 +437,9 @@
     "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Rebbe Mendel is a single father who teaches the Talmud, a sacred text of Judaism, to the boys of his small Polish town. Behind closed doors, he also instructs his daughter, Yentl, despite the fact that girls are forbidden to study religious texts. When Yentl's father dies, she still has a strong desire to learn about her faith, so she disguises herself as a young man, enrolls in a yeshiva, and unexpectedly finds love along the way.",
    "durationMin": 133,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13437_594346_movie_img.jpg"
   },
   {
    "id": "film-13438",
@@ -435,9 +450,9 @@
    "categories": [
     "1310"
    ],
-   "blurb": null,
+   "blurb": "In Burgundy, the world's most celebrated wines are only part of the story. Behind every bottle lies a way of life shaped by ritual and inheritance, and by those striving to preserve or transform it.",
    "durationMin": 90,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13438_683505_movie_img.jpg"
   },
   {
    "id": "film-13440",
@@ -446,12 +461,12 @@
    "url": "https://www.haifaff.co.il/eng/Films/13440",
    "genre": "film",
    "categories": [
-    "1025",
-    "26"
+    "26",
+    "1025"
    ],
-   "blurb": null,
+   "blurb": "The second part of Antonin Baudry's two-part series devoted to the figure of the General follows De Gaulle in his quest for freedom and sovereignty for France.",
    "durationMin": 157,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13440_159143_movie_img.jpg"
   },
   {
    "id": "film-13441",
@@ -460,12 +475,12 @@
    "url": "https://www.haifaff.co.il/eng/Films/13441",
    "genre": "film",
    "categories": [
-    "1025",
-    "26"
+    "26",
+    "1025"
    ],
-   "blurb": null,
+   "blurb": "June 1940. France collapses and signs the armistice. In the midst of the chaos, one man refuses to give up. Alone against the odds, this unknown general flees to London to save what remains of freedom. Without an army, without backing, without hope – but with one irrational conviction: France, his France, has not laid down its arms. What follows is a triumphant story of faith, audacity, and an unshakable quest for freedom.",
    "durationMin": 160,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13441_952987_movie_img.jpg"
   },
   {
    "id": "film-13442",
@@ -476,9 +491,9 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Winner of the Palme d'Or at the 2026 Cannes Film Festival.",
    "durationMin": 146,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13442_128509_movie_img.jpg"
   },
   {
    "id": "film-13444",
@@ -489,9 +504,9 @@
    "categories": [
     "1310"
    ],
-   "blurb": null,
+   "blurb": "Set in 1956, Hallo Betty follows Emmi Creola, a talented copywriter who defies a male-dominated workplace by inventing “Betty Bossi”, a fictional housewife who becomes Switzerland's culinary icon. As Betty's popularity skyrockets, Emmi is thrust into the spotlight and struggles to balance the expectations of her public persona with her role as a wife, mother, and professional.",
    "durationMin": 110,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13444_206775_movie_img.jpg"
   },
   {
    "id": "film-13446",
@@ -502,9 +517,9 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Hershey is the inspiring true story of Milton S. Hershey, the origin story of one of the world's most beloved brands, and the love story that inspired it all. Spanning nearly five decades, from the 1870s to the 1910s, the film traces Milton Hershey's rise from bankrupt candy maker to global chocolate titan alongside his wife, Kitty, balancing his legendary business determination with the couple's personal love story and philanthropic legacy.",
    "durationMin": 110,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13446_117012_movie_img.jpg"
   },
   {
    "id": "film-13448",
@@ -515,9 +530,9 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Autumn 1952: journalist Hedda and her husband, Winfried, ambush Felix Kersten, former massage therapist to SS leader Heinrich Himmler. Kersten claims to have helped secure the release of thousands of concentration camp prisoners during the Nazi era, but Hedda has doubts, and what starts as an interview quickly develops into a psychological cat-and-mouse game.",
    "durationMin": 93,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13448_124197_movie_img.jpg"
   },
   {
    "id": "film-13451",
@@ -528,9 +543,9 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "2021. Afghanistan, right before the Taliban's return to power. Naru, the only camerawoman at Kabul's main TV station, struggles to retain custody of her three-year-old son after leaving her serial cheater husband. Convinced that no good men exist in her country, Naru is caught off guard when Qodrat, Kabul TV's leading journalist, offers her a career opportunity. As the two crisscross the city reporting on its last days of freedom, sparks fly, and Naru begins to question her beliefs: could there actually be a good man out there?",
    "durationMin": 103,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13451_155074_movie_img.jpg"
   },
   {
    "id": "film-13454",
@@ -541,22 +556,22 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "In search of inspiration for her new novel, Sylvie spies on her neighbors across the street. When she hires young Adam to help her with her daily routine, she has no idea that he will turn her life and her work upside down, until the fiction she had imagined surpasses the reality of them all.",
    "durationMin": 139,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13454_826664_movie_img.jpg"
   },
   {
    "id": "film-13455",
    "title": "Species",
-   "titleLocal": null,
+   "titleLocal": "מינים",
    "url": "https://www.haifaff.co.il/eng/Films/13455",
    "genre": "film",
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "Margot dreams of becoming a life-saving doctor. But as an intern at the most competitive ER in the country, she has trouble keeping up. Soon, young, burnt-out patients come to her with unusual symptoms, just as her own body starts to show disturbing changes…",
    "durationMin": 103,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13455_195825_movie_img.jpg"
   },
   {
    "id": "film-13460",
@@ -567,9 +582,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "After the daughter of Wang Wei (Xie Miao) is kidnapped by a criminal network and he receives no help from the corrupt police, Wei sets out on a rampage to find her himself. His only ally is Navin (Joe Taslim), a relentless journalist whose wife has mysteriously disappeared. Fueled by furious vengeance, the unlikely duo ruthlessly fights the kidnappers in this explosive martial-arts showdown.",
    "durationMin": 113,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13460_212457_movie_img.jpg"
   },
   {
    "id": "film-13461",
@@ -580,22 +595,22 @@
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Russia, early 1990s. Amid post-Soviet chaos, a brilliant young man, Vadim Baranov, charts his path. First an artist, then a reality-TV producer, he becomes the spin doctor to a rising KGB agent: Vladimir Putin. At the heart of power, Baranov shapes the new Russia, blurring the boundaries between truth and lies, belief and manipulation. Only the magnetic Ksenia remains beyond his control, tempting him away from this dangerous game. Years later, having retreated into silence and become shrouded in mystery, Baranov finally opens up, revealing the dark secrets of the regime he helped build.",
    "durationMin": 143,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13461_429215_movie_img.jpg"
   },
   {
    "id": "film-13462",
    "title": "Yellow Letters",
-   "titleLocal": null,
+   "titleLocal": "מכתבים צהובים",
    "url": "https://www.haifaff.co.il/eng/Films/13462",
    "genre": "film",
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Life is good for Derya and Aziz, a celebrated artist couple from Turkey, until an incident at their play’s premiere. Suddenly targeted by the state and struggling to balance their ideals with life’s necessities, their marriage is pushed to a breaking point.",
    "durationMin": 128,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13462_113185_movie_img.jpg"
   },
   {
    "id": "film-13464",
@@ -606,9 +621,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "Fuyuko lives quietly, working as a freelance proofreader. A subtle shift begins when she meets Mitsutsuka, a reserved high school physics teacher, at a local cultural center. Drawn to his gentle manner, Fuyuko begins meeting him regularly at a café. A fragile sense of connection gradually takes shape, but they both carry things they do not easily reveal.",
    "durationMin": 139,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13464_191383_movie_img.jpg"
   },
   {
    "id": "film-13466",
@@ -619,9 +634,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "Santa, an eight-year-old girl from the desolate Bolivian Altiplano, embarks on a rollercoaster journey to take her mother from a life of misery into paradise. The two of them have made a pact: when her mother passes away, the girl will follow the stars and carry her body across the desert toward heaven, a place they believe is as physically real as any other.",
    "durationMin": 108,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13466_140715_movie_img.jpg"
   },
   {
    "id": "film-13467",
@@ -632,9 +647,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "When four estranged siblings reunite in their remote Anatolian village for their sister’s wedding, long-buried memories begin to resurface. As the celebrations unfold, two of them are drawn back into the unbreakable bond they once shared. Family secrets slowly come to light, leading them on a journey through grief and the invisible ties between generations.",
    "durationMin": 132,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13467_207160_movie_img.jpg"
   },
   {
    "id": "film-13469",
@@ -645,9 +660,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "Prishtina, Kosovo, late 1990s. As war looms and ethnic tensions escalate, 13-year-old Dua struggles to find her place among her peers and within her changing body. After an incident shakes her community, she becomes a target herself and bonds with a fearless girl, Maki, who draws her toward an unexpected form of resistance. Between the daily violence and the growing threat of exile, there is little room for quiet awakenings.",
    "durationMin": 101,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13469_546270_movie_img.jpg"
   },
   {
    "id": "film-13471",
@@ -656,13 +671,13 @@
    "url": "https://www.haifaff.co.il/eng/Films/13471",
    "genre": "film",
    "categories": [
-    "972",
     "13595",
+    "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Oshima’s follow-up to the scandalous In the Realm of the Senses explores similarly unfettered earthly passions, but now viewed through a supernatural lens. Empire of Passion was Oshima’s only true kaidan (Japanese ghost story), and the film, a savage, unrelenting experience, earned him the Best Director Award at the Cannes Film Festival.",
    "durationMin": 105,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13471_183403_movie_img.jpg"
   },
   {
    "id": "film-13473",
@@ -673,9 +688,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "In Berlin, a tragedy brings a mother, her daughter, and a teenage boy together. Struggling with blame and forgiveness, the unlikely trio takes a trip to Tenerife for a second chance at the family holiday that never happened. Under the glow of the sun and the shimmering sea, past and present quietly start to overlap.",
    "durationMin": 121,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13473_139601_movie_img.jpg"
   },
   {
    "id": "film-13475",
@@ -686,22 +701,22 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "Olga lives a strictly regulated life without attachments in a vast apartment block in Mexico City. When financial necessity forces her to rent a room in her apartment to a man who also sneaks in his nine-year-old son, an unlikely bond forms. Her carefully controlled world begins to shift, and their lives become intertwined against her will.",
    "durationMin": 99,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13475_743759_movie_img.jpg"
   },
   {
    "id": "film-13476",
    "title": "Frank & Louis",
-   "titleLocal": null,
+   "titleLocal": "פרנק ולואיס",
    "url": "https://www.haifaff.co.il/eng/Films/13476",
    "genre": "film",
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "Frank, serving a life sentence, takes a prison job caring for aging incarcerated men with Alzheimer's and dementia. What begins as a self-interested bid for parole becomes a profound, transformative bond with fellow prisoner Louis, offering Frank a glimpse of redemption in an unforgiving place.",
    "durationMin": 95,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13476_944794_movie_img.jpg"
   },
   {
    "id": "film-13478",
@@ -712,9 +727,9 @@
    "categories": [
     "11976"
    ],
-   "blurb": null,
+   "blurb": "1840, Seville, a pulsating town of sailors and small-time crooks. Young Salvador, assistant to the gifted knife grinder Antonio, encounters the captivating gypsy girl Carmen. Her rapturous beauty and independent spirit set the town abuzz, but Antonio's mystical ability to glimpse the future in sharpened blades foretells a tragic fate for Carmen at the hands of the soldier José. With unwavering resolve, Salvador musters an eclectic band of misfit street kids, led by the spirited Belén, to challenge the unyielding threads of destiny and protect Carmen from inevitable doom.",
    "durationMin": 90,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13478_169557_movie_img.jpg"
   },
   {
    "id": "film-13482",
@@ -725,9 +740,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Bianca's world shatters when her fiancé's mistress crashes their wedding. Reeling from the shock, she flees on a tourist train, launching a real-time odyssey of chaotic escape and surreal encounters through an off-season seaside resort. Rejecting her old life, she transforms her humiliation into a liberating night of rebellion, ultimately finding a new sense of purpose as the sun rises.",
    "durationMin": 78,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13482_158730_movie_img.jpg"
   },
   {
    "id": "film-13484",
@@ -738,9 +753,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Lucia is spending her vacation with her husband, their son, and a couple of friends at the seaside, in a small Bulgarian village near the Romanian border. Delighted by the villagers' hospitality and the long, sunny day, the group enjoys a peaceful holiday. Everyone does, except Lucia, who seems melancholy and unsettled. The arrival of Vladimir, a Romanian who seems to know the area quite well, brings a spark of excitement. He may also know Lucia.",
    "durationMin": 103,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13484_537719_movie_img.jpg"
   },
   {
    "id": "film-13486",
@@ -751,22 +766,22 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Gabrielle, 55, gives herself to her work, body and soul. As a surgeon and head of the hospital department, she is constantly on the move, stretched thin by the weight of responsibility. There is little time left for her private life: a loving husband and a mother who depends on her care. Yet this is the life she wanted, the life she chose. When a novelist comes to observe her at work for a book, her balance begins to shift. How far is she willing to go to shake what she has built?",
    "durationMin": 98,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13486_361495_movie_img.jpg"
   },
   {
    "id": "film-13488",
    "title": "Bedford Park",
-   "titleLocal": null,
+   "titleLocal": "בדפורד פארק",
    "url": "https://www.haifaff.co.il/eng/Films/13488",
    "genre": "film",
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Bedford Park follows Audrey as she struggles between loyalty to her Korean immigrant family and her own American identity, having grown up in New Jersey. When her mother gets into a car accident, Audrey has a fateful encounter with Eli, a former wrestler battling his own fractured past. As an unexpected relationship develops between them, they form a bond while navigating self-preservation, cultural pressures and chosen love.",
    "durationMin": 121,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13488_682045_movie_img.jpg"
   },
   {
    "id": "film-13490",
@@ -777,22 +792,22 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Berlin, 2019. Micha Hartung is a video rental shop owner in Berlin with a struggling business and troubled personal relationships. When an ambitious journalist arrives at Micha's store requesting an interview about his alleged involvement in the largest mass escape in the history of the German Democratic Republic, Micha senses an opportunity to make some easy money. But when Alexander's story is published, Micha unwittingly becomes an overnight media sensation.",
    "durationMin": 112,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13490_195619_movie_img.jpg"
   },
   {
    "id": "film-13491",
    "title": "Coward",
-   "titleLocal": null,
+   "titleLocal": "פחדן",
    "url": "https://www.haifaff.co.il/eng/Films/13491",
    "genre": "film",
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "As the First World War drags on, Pierre, a soldier newly arrived at the front, is eager to prove himself. Behind the lines, he meets Francis, who decides to lift the spirits of his comrades by putting together a theatre show. While the violence continues, both men try to find ways to escape the brutality of war, even if only for a moment.",
    "durationMin": 120,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13491_179388_movie_img.jpg"
   },
   {
    "id": "film-13493",
@@ -803,9 +818,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Belgium, 1999. Tech visionaries Luc and Geert realize they only have 24 hours of freedom left, as their structure of fake companies, unchecked innovation and political corruptions is about to be exposed in the international press. This exposure forces a reckoning far beyond their personal story and the close-knit community that invested heavily in their promises, shedding light on the systems that enabled their rise and now will let them take the fall.",
    "durationMin": 115,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13493_531545_movie_img.jpg"
   },
   {
    "id": "film-13495",
@@ -816,9 +831,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "June 1961, New York City. Legendary jazz pianist Bill Evans has found his musical voice and created the perfect trio, including bassist Scott LaFaro, said to be his soulmate through music. A residency at New York's Village Vanguard culminates in the live recording of two of the greatest jazz records of all time in a single night. Ten days later, LaFaro dies in a car crash. Numb with grief, Evans stops playing.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13495_347583_movie_img.jpg"
   },
   {
    "id": "film-13497",
@@ -829,9 +844,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "11-year-old Iris learns that her estranged father, Aris, is back in the sleepy coastal town for his own father's funeral. Determined to know him, Iris tracks him down to a dilapidated shipyard, where he has been keeping to himself. What begins as a stubborn attempt to reconnect slowly unfolds into a fragile bond.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13497_136002_movie_img.jpg"
   },
   {
    "id": "film-13499",
@@ -842,9 +857,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "In 1980, two Budapest students, Péter and András, hoping to hit the big time with their rock band, travel to Transylvania for a cousin’s wedding. What begins as a daring plan to smuggle antique icons across the border to fund their musical aspirations, takes an unexpected turn when Péter meets Kati, the bride’s sister.",
    "durationMin": 93,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13499_145217_movie_img.jpg"
   },
   {
    "id": "film-13501",
@@ -855,9 +870,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "It is election season. Prime Minister Alma Solvik, who is both liked and respected, is cruising toward re-election. Then the bubble bursts. When a small online newspaper reveals that her husband, Sondre, has been trading stocks from the official residence, a scandal is looming, threatening her position. With accusations of insider trading and conflicts of interest swirling, Sondre becomes the perfect scapegoat in a high-stakes political circus. Alma and her embattled spin doctor, Karianne Moen, orchestrate a bold strategy to protect her and her party's reputation – whatever it takes.",
    "durationMin": 88,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13501_258511_movie_img.jpg"
   },
   {
    "id": "film-13503",
@@ -868,9 +883,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Amanda and her stepfather, Martin, struggle with a moral dilemma that divides them. Has Amanda's mother, Leslie, who is experiencing advanced dementia, lost the ability to make critical decisions in her own best interest? If so, who is responsible – a spouse, a child, an institution – for making such a determination? As Amanda and Martin are forced to make increasingly difficult choices, the repercussions spiral out of their control.",
    "durationMin": 121,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13503_630966_movie_img.jpg"
   },
   {
    "id": "film-13505",
@@ -881,9 +896,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "In the early 17th century, somewhere in Germany, a mysterious soldier arrives in an isolated Protestant village. Slight and modest in stature, his face disfigured by a scar, the stranger declares himself the heir to a long-abandoned farmstead and produces a document to support his claim before the suspicious villagers. Over time, he overcomes their doubts and becomes part of the community. However, his quest for acceptance is built on a bald-faced lie.",
    "durationMin": 94,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13505_134678_movie_img.jpg"
   },
   {
    "id": "film-13506",
@@ -894,9 +909,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "In the not-so-distant future, a grieving couple who has lost their son takes into their lives a humanoid with the same appearance and voice as their late child.",
    "durationMin": 126,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13506_961912_movie_img.jpg"
   },
   {
    "id": "film-13508",
@@ -908,22 +923,22 @@
     "4355",
     "11976"
    ],
-   "blurb": null,
+   "blurb": "Twins Alfie and Elise get more than they bargained for after summoning the mysterious Wish Collector, an enigmatic character who whisks them away to the Land of Sometimes – an incredible place where all four seasons pass in just one day. Granted a total of six wishes, the pair soon learn that they need to be careful what they wish for as they embark on a magical, musical journey filled with fantastical creatures and discover a truth that shines brighter than any wish: the power of family.",
    "durationMin": 126,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13508_332428_movie_img.jpg"
   },
   {
    "id": "film-13509",
    "title": "The Life and Deaths of Wilson Shedd",
-   "titleLocal": null,
+   "titleLocal": "חייו ומותו של וילסון שד",
    "url": "https://www.haifaff.co.il/eng/Films/13509",
    "genre": "film",
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Karen, an English teacher trapped in an abusive marriage, takes a job at a maximum-security prison in Oklahoma, where she forms an intense connection with Wilson Shedd, a charismatic inmate and student in her class, who is serving time for violent crimes. An intense connection quickly develops between the two.",
    "durationMin": 121,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13509_188794_movie_img.jpg"
   },
   {
    "id": "film-13510",
@@ -934,9 +949,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Blues musician Al Cook lives in an apartment filled with memories. Outside, the world carries on. But when his home is slated for demolition, a long-forgotten dream suddenly resurfaces from the ruins of his existence.",
    "durationMin": 86,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13510_148475_movie_img.jpg"
   },
   {
    "id": "film-13511",
@@ -947,22 +962,22 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "The film follows 12-year-old Toma, expelled from school after being bullied. When he returns home, he finds his father Nemo, absent since Toma was two, waiting to take him to their ancestral village in the Caucasus mountains. Recently released from prison, Nemo is not welcome by the locals. But he is determined to pass down the ancient tradition of deer hunting to the boy. Over the course of this fateful weekend, Toma confronts the wilderness, a pack of wolves, his father’s shadowy past and his own fears.",
    "durationMin": 100,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13511_822934_movie_img.jpg"
   },
   {
    "id": "film-13513",
    "title": "The Only Living Pickpocket in NY",
-   "titleLocal": null,
+   "titleLocal": "הכייס האחרון בניו יורק",
    "url": "https://www.haifaff.co.il/eng/Films/13513",
    "genre": "film",
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Harry is an old-school hustler. A classic native New Yorker, he moves through life greasing palms with cash and relying on his wits and connections. But times are changing for Harry. His daily pickpocket haul is no longer green bills and wristwatches; it is credit cards and cell phones. And, on one unfortunate night, cryptocurrency and a handgun.",
    "durationMin": 88,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13513_168885_movie_img.jpg"
   },
   {
    "id": "film-13514",
@@ -973,9 +988,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Algiers, 1938. Meursault, a quiet and unassuming employee in his early thirties, attends his mother's funeral without shedding a tear. The next day, he begins a casual affair with Marie, a work colleague, and quickly slips back into his usual routine. However, his daily life is soon disrupted by his neighbor, Raymond Sintès, who draws Meursault into his shady dealings – until, on one blisteringly hot day, a tragic event occurs on a beach.",
    "durationMin": 122,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13514_154991_movie_img.jpg"
   },
   {
    "id": "film-13516",
@@ -986,22 +1001,22 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Set during the Depression era in 1933, The Weight follows Samuel (Ethan Hawke), a man cruelly torn away from his young daughter and thrown into a brutal prison camp. His only lifeline comes from Warden Clancy (Russell Crowe), who presents him with a high-stakes deal: smuggle stolen gold out of a remote mine alongside a dangerous crew of fellow convicts, and he will earn his freedom.",
    "durationMin": 112,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13516_270315_movie_img.jpg"
   },
   {
    "id": "film-13517",
    "title": "Wandering Trees",
-   "titleLocal": null,
+   "titleLocal": "עצים נודדים",
    "url": "https://www.haifaff.co.il/eng/Films/13517",
    "genre": "film",
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Piero and his son Giuliano live alone on the edge of town, in a farmhouse filled with injured animals they collect and care for. The Nonne, local notables, want to drive them out because they live like vagrants. During a snowfall, Piero disappears and the animals are killed. Giuliano has no choice but to search for his father. Along the way, he meets Maddalena. It is love at first sight.",
    "durationMin": 180,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13517_254746_movie_img.jpg"
   },
   {
    "id": "film-13519",
@@ -1012,9 +1027,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "1972. A landmark trial shakes France as young Marie-Claire is prosecuted for having an illegal abortion with the help of her mother and two other defendants. In a courtroom governed by men, the verdict seems inevitable: prison for the women, while the rapist goes unpunished. Their last hope lies with Gisèle Halimi, a fearless lawyer known for openly challenging patriarchy and confronting a system that condemns victims and lets perpetrators walk free. Alongside the accused, Gisèle will not only change their fate but, against all odds, transform the condition of women forever.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13519_161749_movie_img.jpg"
   },
   {
    "id": "film-13524",
@@ -1023,13 +1038,13 @@
    "url": "https://www.haifaff.co.il/eng/Films/13524",
    "genre": "film",
    "categories": [
-    "972",
     "13595",
+    "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Japanese master Kon Ichikawa transformed one of Japan’s most important 20th-century novels into one of its greatest films. Ichikawa’s stark, poignant film is unforgettably rendered in stunning black and white with haunting, incantatory music.",
    "durationMin": 99,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13524_193257_movie_img.jpg"
   },
   {
    "id": "film-13526",
@@ -1040,9 +1055,9 @@
    "categories": [
     "4355"
    ],
-   "blurb": null,
+   "blurb": "Leo is eight, curious, wise and full of imagination. His best friend is a giant metal shark that his dad, an artist, built in their roof. Leo can confide his secrets to the shark. He can’t really talk to his dad, and mum has been gone for five years now. Also, there is comfort in fantasy. Then Anya, a spirited au pair, bursts into Leo’s life and challenges him to embrace the wild, wonderful mess of real life.",
    "durationMin": 96,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13526_122191_movie_img.jpg"
   },
   {
    "id": "film-13527",
@@ -1053,9 +1068,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Russia, 2022. When Gleb, a successful company director, finds himself under siege from mounting corporate pressures and an increasingly unstable world, the collapse of his carefully ordered life accelerates toward violence.",
    "durationMin": 135,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13527_164561_movie_img.jpg"
   },
   {
    "id": "film-13529",
@@ -1067,9 +1082,9 @@
     "1098",
     "11976"
    ],
-   "blurb": null,
+   "blurb": "Sarah leaves her exciting life as an activist and artist in 1990s San Francisco to return to the small, conservative hometown she fled when Alzheimer's begins to erode her mother's vibrant personality. Forced to grow up quickly, she juggles a new relationship, long-held career ambitions, and an eccentric family, whom she literally follows to Mexico and back in a last-ditch effort to make them take the situation seriously. Confronting a disorienting reality she can't control, Sarah must find her footing – learning to accept her mother's decline and the imperfect beauty of her family – in order to become the daughter they need.",
    "durationMin": 102,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13529_211613_movie_img.jpg"
   },
   {
    "id": "film-13537",
@@ -1080,9 +1095,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "When three fathers chaperone their teenage daughters on a rowdy school trip to a remote island, tensions quickly escalate and their grip on the situation begins to slip. As buried memories resurface, games turn into power struggles – and power into violence. Soon no one can tell who is in charge and who is in danger.",
    "durationMin": 108,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13537_112616_movie_img.jpg"
   },
   {
    "id": "film-13540",
@@ -1093,9 +1108,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Corinne Maclou is a background actor. She dreams of one day becoming more than an extra and remains confident that her breakthrough is just around the corner. When she meets the famous actress Sandrine Kiberlain and the two become friends, Corinne hopes to achieve her goal. But will she be welcomed into the respectable family of French cinema?",
    "durationMin": 115,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13540_470259_movie_img.jpg"
   },
   {
    "id": "film-13544",
@@ -1106,9 +1121,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Armony, a 55-year-old solitary truck driver, finds himself taking care of his six-year-old niece, Carlotta, after the disappearance of his sister. By his side are Pamela, an elderly transgender woman, and Jenny, a neighbor who is expecting a baby. When social services threaten to take the child away, Armony is forced to fight with all his strength to obtain legal guardianship.",
    "durationMin": 104,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13544_166076_movie_img.jpg"
   },
   {
    "id": "film-13546",
@@ -1119,9 +1134,9 @@
    "categories": [
     "1310"
    ],
-   "blurb": null,
+   "blurb": "Sicily, present day. Arturo is a real estate agent who is almost infallible at his job, but far less successful in his love life. He lives alone, somewhat disillusioned, and nurtures a single, unwavering passion: desserts. His life lights up when he meets the woman who is undoubtedly his soulmate. Flora is perfect: beautiful, funny, kind, brilliant... and she's also a pastry chef. An immediate and overwhelming love blossoms between them. But standing in their way is an invisible yet powerful presence: God. Flora is a devout Catholic, while Arturo is not.",
    "durationMin": 113,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13546_802118_movie_img.jpg"
   },
   {
    "id": "film-13547",
@@ -1132,9 +1147,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Steeped in the words of Victor Hugo, the actor Robert Zucchini searches for his place between the stage and real life. Every evening, he fills theaters by sharing his love of language. Until the day his daughter, whom he never saw grow up, reappears... What if, for once, loving were better than admiring?",
    "durationMin": 89,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13547_140517_movie_img.jpg"
   },
   {
    "id": "film-13549",
@@ -1145,9 +1160,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Ainara, an idealistic and brilliant 17-year-old, has to decide what university degree to pursue - or at least that's what her family hopes she will do. However, the young woman says feels increasingly drawn to God and is considering becoming a cloistered nun. The news takes her entire family by surprise, creating a rift and putting everyone to the test.",
    "durationMin": 115,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13549_318093_movie_img.jpg"
   },
   {
    "id": "film-13551",
@@ -1158,9 +1173,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "At a luxury seaside hotel, Karl and Emilie are preparing for their son's naming ceremony, when Karl's estranged mother, Vibeke, suddenly turns up uninvited. Karl wants her gone, but his sister, Rikke, insists there won't be any problems. Over one tense weekend, old patterns and buried wounds surface in front of in-laws and guests until the celebration fractures.",
    "durationMin": 99,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13551_142752_movie_img.jpg"
   },
   {
    "id": "film-13553",
@@ -1171,9 +1186,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "After what seems like a trivial argument, Marta and Antonio split up. Marta reacts to the breakup by withdrawing into herself. The only symptom she cannot ignore is her sudden lack of appetite. Antonio, a rising chef, immerses himself in his work. But despite being the one who ended things with Marta, he can't seem to forget her. When Marta discovers that her loss of appetite has more to do with her health than with the pain of separation, everything changes.",
    "durationMin": 120,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13553_703926_movie_img.jpg"
   },
   {
    "id": "film-13555",
@@ -1182,12 +1197,12 @@
    "url": "https://www.haifaff.co.il/eng/Films/13555",
    "genre": "film",
    "categories": [
-    "4355",
-    "11976"
+    "11976",
+    "4355"
    ],
-   "blurb": null,
+   "blurb": "Meet Yugly, the ugliest dog in the world and, weirdly, the cutest, who dreams of doing the impossible: competing in the prestigious \"Best in Dog Show.\" Defying every obstacle, he wants to prove that even the most unlikely deserve a chance, secretly hoping that he’ll find a forever family.",
    "durationMin": 84,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13555_967916_movie_img.jpg"
   },
   {
    "id": "film-13556",
@@ -1198,9 +1213,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Maria has everything. She is a former elite swimmer, a beloved sports commentator, and lives a good life with her husband, Mikael, and their daughter. Mikael has supported her throughout her life, first as her coach and mentor, and later as her husband. But when Maria's friend Janne, who is also an editor, tells her about an upcoming book, everything changes. The book describes a young girl's relationship with her swimming coach, and rumors suggest that it is about Mikael.",
    "durationMin": 104,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13556_104769_movie_img.jpg"
   },
   {
    "id": "film-13557",
@@ -1211,9 +1226,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Marie-Lou, the director of a care facility for the elderly, strives to introduce an innovative philosophy of care based on listening and respecting residents' dignity, despite resistance from some members of her staff. Her encounter with Mari, a Japanese theatre director battling cancer, profoundly reshapes her path. By forming a deep, supportive friendship, the two women join forces in a shared struggle to \"make the impossible possible.\"",
    "durationMin": 196,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13557_161058_movie_img.jpg"
   },
   {
    "id": "film-13559",
@@ -1224,9 +1239,9 @@
    "categories": [
     "1270"
    ],
-   "blurb": null,
+   "blurb": "Lucy, a concert pianist, has just relocated her family from the city to a country house in the hope of easing her husband Philip's severe burnout. Before they have a chance to settle into their new home, an early morning visit from the police tears their world apart. Isolated and desperate to protect her young son, Lucy must face the situation alone, trapped between the man she loves and the fear of what he may have done.",
    "durationMin": 115,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13559_200090_movie_img.jpg"
   },
   {
    "id": "film-13562",
@@ -1238,35 +1253,35 @@
     "4355",
     "11976"
    ],
-   "blurb": null,
+   "blurb": "In 1811, Mary Anning, an inquisitive and tenacious twelve-year-old girl, spends her days searching for fossils. Her father passed on this passion to her, but her life suddenly changes when he disappears, leaving behind a mysterious drawing and a struggling family. Determined to help her mother and brother, Mary sets out to uncover the secret of the drawing. She discovers so much more than just fossils: friendship, adventures, and the very beginnings of paleontology.",
    "durationMin": 72,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13562_461693_movie_img.jpg"
   },
   {
    "id": "film-13564",
    "title": "The Electric Kiss",
-   "titleLocal": null,
+   "titleLocal": "נשיקה חשמלית",
    "url": "https://www.haifaff.co.il/eng/Films/13564",
    "genre": "film",
    "categories": [
     "26"
    ],
-   "blurb": null,
+   "blurb": "Paris, 1928. Antoine Balestro, a young painter in vogue, has been unable to paint since his wife died, much to the despair of his gallery owner, Armand. One drunken evening, Antoine tries to contact his wife through a psychic, but instead finds himself speaking with Suzanne, a humble carnival worker who has sneaked in to steal food. Suzanne proves to be a gifted fraudster and, soon aided by Armand, stages fake séances.",
    "durationMin": 122,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13564_161453_movie_img.jpg"
   },
   {
    "id": "film-13566",
    "title": "The Violinist",
-   "titleLocal": null,
+   "titleLocal": "הכינור",
    "url": "https://www.haifaff.co.il/eng/Films/13566",
    "genre": "film",
    "categories": [
     "11976"
    ],
-   "blurb": null,
+   "blurb": "As a Spanish reporter uncovers the mystery behind an aging violin legend and her treasured instrument, a forgotten story of love, war and music emerges. In 1930s Singapore, childhood friends Fei and Kai are bound by music until war and the Japanese occupation tear them apart.",
    "durationMin": 114,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13566_153763_movie_img.jpg"
   },
   {
    "id": "film-13568",
@@ -1274,10 +1289,12 @@
    "titleLocal": "מילים של אהבה",
    "url": "https://www.haifaff.co.il/eng/Films/13568",
    "genre": "film",
-   "categories": [],
-   "blurb": null,
-   "durationMin": null,
-   "imageUrl": null
+   "categories": [
+    "1167"
+   ],
+   "blurb": "For 14 years, Erika has been the anchor of a household that rarely stands still, doing her best to raise her teenage daughter, Abigail, her whirlwind younger son, Yoni, and a dog with an extreme devotion to cheese. When Abi's desire to meet her absent father grows into a full-blown obsession and word spreads that he's been seen nearby, Erika fears the fragile balance will collapse for good. Instead, the unpredictable journey that follows leads mother and daughter to see each other anew, steering their lively, lovable family toward a happy new chapter.",
+   "durationMin": 95,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13568_210133_movie_img.jpg"
   },
   {
    "id": "film-13571",
@@ -1288,9 +1305,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Shimon Rothschild knows exactly where everyone should stand on set: the cinematographer, the set design, the actors playing the members of his family who perished in the Holocaust. On the eve of his 100th birthday, Shimon recreates his life story together with director Tomer Heymann: the chain of coincidences that saved him from the gas chambers of Auschwitz, the brutal medical experiments he endured at Sachsenhausen, the death march, and his life after the war. In a specially constructed studio, and with actors portraying figures from his past, Shimon moves through the space, giving instructions with unwavering determination and a unique sense of humor, while exploring the boundaries between memory and reconstruction.",
    "durationMin": 75,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13571_429606_movie_img.jpg"
   },
   {
    "id": "film-13572",
@@ -1301,9 +1318,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "In 1973, the Jewish community of the village of Gonderchomriam in Ethiopia is preparing for a dangerous journey on foot through Sudan to the Land of Israel. Yitzhak (58), an independent farmer and owner of a successful homestead, refuses to leave his hard-earned land and crops, to disconnect from the soil where he grew up, and to set off on a journey into the unknown. His stance leads to a fierce conflict with his wife Sarah (45), who is determined to hit the road with their three children. However, the family's entanglement in a blood feud forces Yitzhak to send Sarah and the children on the journey to Sudan en route to Israel, and to recalculate his life's path.",
    "durationMin": 87,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13572_106038_movie_img.jpg"
   },
   {
    "id": "film-13574",
@@ -1314,9 +1331,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Amit learns that her biological mother is dying and rushes to the hospital, only to arrive moments too late. Having never opened her adoption file, she is suddenly confronted with the family she never knew, including her estranged father, prosper- a drug addict she hasn’t seen since she was five. Struggling to process the shock of this encounter, Amit returns to live with her adoptive parents on their kibbutz in northern Israel.",
    "durationMin": 75,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13574_522473_movie_img.jpg"
   },
   {
    "id": "film-13576",
@@ -1327,9 +1344,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Naomi, 28, an unconventional Haredi, a yoga teacher discovers why her husband is absent from a fateful meeting with their rabbi, her whole world is turned upside down and her immense love for her husband is put to the test.",
    "durationMin": 80,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13576_189141_movie_img.jpg"
   },
   {
    "id": "film-13578",
@@ -1340,9 +1357,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Three childhood friends from a remote village decide to flee their homes and hitchhike toward a costume rave party in the South. Over a three-day journey set against the diverse landscape, they face a series of encounters that accelerate the hidden tensions between them. As the road unfolds, their lifelong, unquestioned bond begins to fracture, and their friendship is pushed to a point of no return.",
    "durationMin": 88,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13578_894996_movie_img.jpg"
   },
   {
    "id": "film-13580",
@@ -1353,9 +1370,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "A mother and daughter set out on a journey through Ukraine during wartime. Along the way, the daughter’s questions of identity and belonging collide with the mother’s uncompromising belief that Israel is home. The road to bombed Kharkiv becomes a journey through memories, roots, and dreams.",
    "durationMin": 60,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13580_191199_movie_img.jpg"
   },
   {
    "id": "film-13582",
@@ -1366,22 +1383,22 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "They grew up in the battlefield of Hebron, at the heart of the bloody conflict between Abraham’s two sons, between holiness and chaos. There, in the narrow streets of the City of the Patriarchs, these children tasted both the sweetness of paradise and the fires of the Second Intifada.",
    "durationMin": 60,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13582_666122_movie_img.jpg"
   },
   {
    "id": "film-13585",
    "title": "A Place Called Hope",
-   "titleLocal": null,
+   "titleLocal": "מקום שקוראים לו תקווה",
    "url": "https://www.haifaff.co.il/eng/Films/13585",
    "genre": "film",
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Michael learns about the word hope in kindergarten and believes that “hope is a place where everyone is kind to everyone.” During one of the ceasefires in the war, when despair becomes unbearable, his father Eitan decides to take his son on a journey across Israel in search of that lost hope.",
    "durationMin": 77,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13585_145958_movie_img.jpg"
   },
   {
    "id": "film-13586",
@@ -1392,35 +1409,35 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Iris Alush, the daughter of Tunisian immigrants, grows up in the Israeli periphery with her mother, a wedding-dress seamstress. Determined to rebel against the fate she was born into, Iris dreams of reinventing herself. She leaves Israel for Paris to study fashion design.",
    "durationMin": 110,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13586_113112_movie_img.jpg"
   },
   {
    "id": "film-13587",
    "title": "Double Panther",
-   "titleLocal": null,
+   "titleLocal": "פנתר כפול",
    "url": "https://www.haifaff.co.il/eng/Films/13587",
    "genre": "film",
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "The true story of Yaakov Elbaz, a criminal recruited by police superintendent Avraham Turjeman to infiltrate the Black Panthers as a mole. However, Elbaz becomes enamored with the cause, identifies with its values, and is caught in a duplicitous game that threatens to destroy his life. Double Panther is a crime drama about the protest that changed the State of Israel.",
    "durationMin": 100,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13587_178534_movie_img.jpg"
   },
   {
    "id": "film-13589",
    "title": "Peace 20 30",
-   "titleLocal": null,
+   "titleLocal": "שלום 30 20",
    "url": "https://www.haifaff.co.il/eng/Films/13589",
    "genre": "film",
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "On October 7th, Maoz Inon loses both of his parents and chooses to transform his grief into a struggle for peace",
    "durationMin": 60,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13589_261406_movie_img.jpg"
   },
   {
    "id": "film-13590",
@@ -1431,9 +1448,9 @@
    "categories": [
     "6028"
    ],
-   "blurb": null,
+   "blurb": "Dir.: Shalev Ben Elya , Michael Jacob Buchstav",
    "durationMin": 88,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13590_928804_movie_img.jpg"
   },
   {
    "id": "film-13594",
@@ -1442,65 +1459,65 @@
    "url": "https://www.haifaff.co.il/eng/Films/13594",
    "genre": "film",
    "categories": [
-    "972",
     "13595",
+    "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "An intense physical attraction turns Dominique, a poised, sophisticated career woman, and Quentin, a handsome, streetwise young hustler, into lovers. She gives him shelter and nurturing, and he gives her youth, beauty and excitement. But can their passion support the emotional weight of love?",
    "durationMin": 100,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13594_809078_movie_img.jpg"
   },
   {
    "id": "film-13597",
    "title": "Negative",
-   "titleLocal": null,
+   "titleLocal": "נגטיב",
    "url": "https://www.haifaff.co.il/eng/Films/13597",
    "genre": "film",
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "As the city boils with protests, Maayan – a genderqueer volunteer – opens another shift at an HIV testing clinic at the outskirts of Tel Aviv. The tense routine of the shift explodes, when a young soldier, Aurel, gets a positive result. His violent reaction triggers Yonatan, the clinic doctor – a grizzled activist. Their confrontation escalates, and a shot is fired, critically wounding the doctor. Aurel and his “bro” David – another soldier – react in the only way the Army taught them – use their guns to take over the clinic. Other visitors swiftly take sides, and as their identities, secrets and traumas clash with each other, the clinic descends into a bloody mayhem. In this miniature Civil War, some succumb to their violent impulses, while others discover compassion and the ability to see beyond their prejudices. Part horror thriller, part farce, “Negative” is a story of society tearing itself apart through intolerance.",
    "durationMin": 80,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13597_112032_movie_img.jpg"
   },
   {
    "id": "film-13599",
    "title": "Judoka",
-   "titleLocal": null,
+   "titleLocal": "במרחק נשימה",
    "url": "https://www.haifaff.co.il/eng/Films/13599",
    "genre": "film",
    "categories": [
     "10581"
    ],
-   "blurb": null,
+   "blurb": "When a disturbing secret is revealed and the situation back home takes a dangerous turn, a 17-year-old Judo fighter decides to leave sports boarding school and return home. He is willing to sacrifice his promising career for the sake of his family, only to find that his presence is not welcome.",
    "durationMin": 93,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13599_203653_movie_img.jpg"
   },
   {
    "id": "film-13601",
    "title": "Many Waters",
-   "titleLocal": null,
+   "titleLocal": "מים רבים",
    "url": "https://www.haifaff.co.il/eng/Films/13601",
    "genre": "film",
    "categories": [
     "10581"
    ],
-   "blurb": null,
+   "blurb": "Natalie, a young, beautiful, and assertive woman, is severely injured in a sea accident and becomes paralyzed, dependent on constant support from those around her. At the rehabilitation center she arrives at, she meets Yosef, a young man from Anata who works there caring for the residents. Despite her initial discomfort with his presence, Yosef’s warmth and empathy gradually ease Natalie’s resistance, and he, in turn, is captivated by her strength and directness. An intimate and liberating bond forms between them within the closed space of the center. But every time the outside world breaks in, their connection begins to crack— as reality tries to pull them apart and restore the familiar order.",
    "durationMin": 84,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13601_892563_movie_img.jpg"
   },
   {
    "id": "film-13604",
    "title": "Alice. Last Conversation",
-   "titleLocal": null,
+   "titleLocal": "אליס. שיחות אחרונות",
    "url": "https://www.haifaff.co.il/eng/Films/13604",
    "genre": "film",
    "categories": [
     "13602"
    ],
-   "blurb": null,
+   "blurb": "In the final year of her life, Israel Prize laureate Prof. Alice Shalvi — pioneering feminist, educator, and human rights activist — looks back on nearly a century of groundbreaking struggle. Filmed in intimate conversations just before her passing in October 2023, Alice reflects with honesty, sharp wit, and courage on the battles she fought: from revolutionizing religious girls' education to founding the Israel Women's Network. Weaving rare archival footage with her last testimonies, the film is both a profound portrait of a visionary leader and a timely call to action for the generation carrying her legacy forward.",
    "durationMin": 53,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13604_202565_movie_img.jpg"
   },
   {
    "id": "film-13607",
@@ -1511,22 +1528,22 @@
    "categories": [
     "13602"
    ],
-   "blurb": null,
+   "blurb": "The film sheds light on fascinating, little-known chapters in the life of naomi shemer. the woman dubbed \"the national poet\"—who was, in reality, a deeply private person. It explores the conflict with her mother, who disparaged her \"simple\" popular songs; her life as a single mother torn between parental duties and a hunger to live life to the fullest; her attraction to younger men; her insecurities regarding her appearance; her tempestuous temperament and volatile mood swings; the heavy price she paid for her right-wing political views; and the plagiarism accusation regarding \"Jerusalem of Gold\" that cast a shadow over her life almost until her final days. The story is told through the voices of Naomi shemer’s two children and a handful of her closest friends, as well as through excerpts from personal letters and diaries revealed here for the first time.",
    "durationMin": 93,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13607_577800_movie_img.jpg"
   },
   {
    "id": "film-13608",
    "title": "Topol: On Top of the World",
-   "titleLocal": null,
+   "titleLocal": "טופול: על גג העולם",
    "url": "https://www.haifaff.co.il/eng/Films/13608",
    "genre": "film",
    "categories": [
     "13602"
    ],
-   "blurb": null,
+   "blurb": "Chaim Topol was the Israeli actor who went further than any other. Twice, he made it all the way to the Academy Awards. That is precisely why the more intriguing question is not how he succeeded, but why he did not go much further. Throughout his career, he repeatedly made surprising choices, including refusing to take part in the sketch that became Sallah Shabati and turning down the lead role in Fiddler on the Roof.",
    "durationMin": 70,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13608_161852_movie_img.jpg"
   },
   {
    "id": "film-13609",
@@ -1537,9 +1554,9 @@
    "categories": [
     "1098"
    ],
-   "blurb": null,
+   "blurb": "A Chinese girl is passed between three families from the age of six to eighteen, receiving a new name and identity each time. As she searches for a sense of belonging and the possibility of love, she must navigate the weight of her past and the uncertainty of her future – until she finds her own way.",
    "durationMin": 125,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13609_114767_movie_img.jpg"
   },
   {
    "id": "film-13610",
@@ -1548,13 +1565,13 @@
    "url": "https://www.haifaff.co.il/eng/Films/13610",
    "genre": "film",
    "categories": [
-    "972",
     "13595",
+    "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "A scorching tale of toxic love in a toxic world, Nagisa Oshima’s second feature film marked the artistic breakthrough of one of the most radical voices in the history of Japanese cinema.",
    "durationMin": 96,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13610_798974_movie_img.jpg"
   },
   {
    "id": "film-13611",
@@ -1565,9 +1582,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "The murder of Samuel Paty shook France. Everyone knows the name, but few truly know his story. On 16 October 2020, Samuel Paty, a history and geography teacher, was murdered outside his middle school. Drawing on the investigation and subsequent legal proceedings, this film retraces his final eleven days and the chain of events that led to his tragic death.",
    "durationMin": 100,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13611_769074_movie_img.jpg"
   },
   {
    "id": "film-13612",
@@ -1576,13 +1593,13 @@
    "url": "https://www.haifaff.co.il/eng/Films/13612",
    "genre": "film",
    "categories": [
-    "972",
     "13595",
+    "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Paul Schrader's visually stunning, collagelike portrait of acclaimed Japanese author and playwright Yukio Mishima - one of the most important postwar stylists of the Japanese language - investigates the inner turmoil and contradictions of a man who attempted an impossible harmony between self, art, and society.",
    "durationMin": 120,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13612_889570_movie_img.jpg"
   },
   {
    "id": "film-13613",
@@ -1593,9 +1610,9 @@
    "categories": [
     "1167"
    ],
-   "blurb": null,
+   "blurb": "Callie and Minnie's relationship is suddenly upended at the start of the summer before their senior year of high school. Left rudderless without her charismatic best friend, Minnie begins to form a complicated friendship with Callie's mother.",
    "durationMin": 120,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13613_208778_movie_img.jpg"
   },
   {
    "id": "film-13615",
@@ -1604,38 +1621,37 @@
    "url": "https://www.haifaff.co.il/eng/Films/13615",
    "genre": "film",
    "categories": [
-    "1270",
-    "26"
+    "1270"
    ],
-   "blurb": null,
+   "blurb": "From the Academy Award-Winning Director of Slumdog Millionaire (2008), 127 Hours (2010), 28 Days Later (2002) and Trainspotting (1996), comes an explosive cinematic rollercoaster about a group of visionaries and misfits who had an idea for a new kind of news – one that would give the people what they wanted and would change the face of the world we live in today.",
    "durationMin": 116,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13615_873619_movie_img.jpg"
   },
   {
    "id": "film-13616",
    "title": "The road to Jericho",
-   "titleLocal": null,
+   "titleLocal": "הדרך ליריחו",
    "url": "https://www.haifaff.co.il/eng/Films/13616",
    "genre": "film",
    "categories": [
     "13839"
    ],
-   "blurb": null,
+   "blurb": "A musical and visual journey, a poem in images—a hybrid of documentary and fiction that weaves archival footage from previous films alongside the voices of Samuel Fuller, Jeanne Moreau, Arthur Miller, and Yitzhak Rabin, among others, into the contemporary reality of the Bedouins in Khan al-Ahmar, currently threatened with eviction by settlers on this road to Jericho. A touching and sensitive reflection on human destinies in this history-steeped desert land.",
    "durationMin": 76,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13616_579322_movie_img.jpg"
   },
   {
    "id": "film-13617",
    "title": "Yehoram and Gila",
-   "titleLocal": null,
+   "titleLocal": "יהורם וגילה",
    "url": "https://www.haifaff.co.il/eng/Films/13617",
    "genre": "film",
    "categories": [
     "13839"
    ],
-   "blurb": null,
+   "blurb": "Yehoram and Gila are a legendary acting couple who have shared the spotlight for sixty years. When Yehoram begins forgetting lines and roles, a devastating diagnosis forces them to confront the possibility that the curtain is about to fall on one of them. Gila reluctantly proposes they retire together, as they promised each other when they were twenty, while Yehoram clings to the stage and his seemingly impossible dream of playing King Lear. Amid career struggles, sixty years of grievances, professional rivalry, and a love deeper than the sea, they suddenly begin to lose each other. Can they find their way back? A love story meant to last forever—until the light fades and the curtain falls.",
    "durationMin": 98,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13617_451467_movie_img.jpg"
   },
   {
    "id": "film-13618",
@@ -1646,48 +1662,48 @@
    "categories": [
     "6028"
    ],
-   "blurb": null,
+   "blurb": "Five films on the intersection of cruelty and humanity",
    "durationMin": 99,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13618_130496_movie_img.jpg"
   },
   {
    "id": "film-13620",
    "title": "Shorts Program - Women: Fragments and Dreams",
-   "titleLocal": null,
+   "titleLocal": "מקבץ קצרים - נשים: שברים וחלומות",
    "url": "https://www.haifaff.co.il/eng/Films/13620",
    "genre": "film",
    "categories": [
     "6028"
    ],
-   "blurb": null,
+   "blurb": "Five films about women, dreams, and how they shatter",
    "durationMin": 81,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13620_144973_movie_img.jpg"
   },
   {
    "id": "film-13621",
-   "title": "Short Animation Compilation (2)",
-   "titleLocal": null,
+   "title": "Short Animation Compilation",
+   "titleLocal": "מקבץ קצרים - צל כבד",
    "url": "https://www.haifaff.co.il/eng/Films/13621",
    "genre": "film",
    "categories": [
     "6028"
    ],
-   "blurb": null,
+   "blurb": "Four films born out of darkness that refuse to give up hope",
    "durationMin": 92,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13621_125132_movie_img.jpg"
   },
   {
    "id": "film-13622",
    "title": "First Exposure - Shorts Program",
-   "titleLocal": null,
+   "titleLocal": "חשיפה ראשונה - קולנוע קצר",
    "url": "https://www.haifaff.co.il/eng/Films/13622",
    "genre": "film",
    "categories": [
     "10581"
    ],
-   "blurb": null,
+   "blurb": "Five standout short films from the past year – special premiere screening with the filmmakers in attendance",
    "durationMin": 68,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13622_159657_movie_img.jpg"
   },
   {
    "id": "film-13623",
@@ -1698,9 +1714,9 @@
    "categories": [
     "13839"
    ],
-   "blurb": null,
+   "blurb": "Five ordinary men and women, each trapped inside the collapse of love, family, or faith, believe they are living the worst day of their lives, unable to imagine that within hours their private despair will be overtaken by a national catastrophe.",
    "durationMin": 117,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13623_105548_movie_img.jpg"
   },
   {
    "id": "film-13624",
@@ -1711,9 +1727,9 @@
    "categories": [
     "1007"
    ],
-   "blurb": null,
+   "blurb": "As the virus spreads, the order begins to mutate… Se-jeong, a biotechnology professor, attends a biotech conference—only to witness it spiral into catastrophe when a rapidly mutating virus is unleashed. As the outbreak spreads and the infected begin to transform, authorities seal off the entire facility, trapping the survivors with an ever-growing threat…",
    "durationMin": 123,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13624_454686_movie_img.jpg"
   },
   {
    "id": "film-13626",
@@ -1724,9 +1740,9 @@
    "categories": [
     "10481"
    ],
-   "blurb": null,
+   "blurb": "Living above his parents in Jerusalem, bachelor Itzik anchors his existence to a daily pastry. When dizzy spells force him to give up carbs completely, this dietary change turns into a life crisis. In a city where sacred and everyday collide, his absurd, painful journey leads him unexpectedly to love.",
    "durationMin": 101,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13626_131400_movie_img.jpg"
   },
   {
    "id": "film-13919",
@@ -1734,21 +1750,23 @@
    "titleLocal": "ילדים עלומים",
    "url": "https://www.haifaff.co.il/eng/Films/13919",
    "genre": "film",
-   "categories": [],
-   "blurb": null,
+   "categories": [
+    "26"
+   ],
+   "blurb": "In the charred ruins of 1945 Tokyo, a young orphan daughter of musicians disguises herself as a boy to survive the underworld, while her former teacher— haunted by guilt and her own needs of surviving—sets to retrace the girl’s vanished footsteps.",
    "durationMin": 150,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13919_159972_movie_img.jpg"
   },
   {
    "id": "film-13925",
    "title": "LAHAV 433",
-   "titleLocal": null,
+   "titleLocal": "להב 433",
    "url": "https://www.haifaff.co.il/eng/Films/13925",
    "genre": "film",
    "categories": [],
-   "blurb": null,
-   "durationMin": null,
-   "imageUrl": null
+   "blurb": "The most sensitive unit in the Israeli police force, often referred to as “the Israeli FBI,” opens its doors for the first time. In this documentary series, journalist Adi Meiri follows the work of the unit as it investigates organized crime syndicates and political corruption.",
+   "durationMin": 90,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13925_106925_movie_img.jpg"
   },
   {
    "id": "film-13967",
@@ -1757,12 +1775,13 @@
    "url": "https://www.haifaff.co.il/eng/Films/13967",
    "genre": "film",
    "categories": [
+    "13595",
     "972",
     "1025"
    ],
-   "blurb": null,
+   "blurb": "Death by Hanging was screened during the Directors’ Fortnight at Cannes, marking the start of Nagisa Oshima’s international acclaim.",
    "durationMin": 118,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/movies/13967_212499_movie_img.jpg"
   },
   {
    "id": "event-13846",
@@ -1773,7 +1792,7 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13846_182765_event_img.jpg"
   },
   {
    "id": "event-13896",
@@ -1784,7 +1803,7 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13896_124975_event_img.jpg"
   },
   {
    "id": "event-13897",
@@ -1795,18 +1814,18 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13897_896989_event_img.jpg"
   },
   {
    "id": "event-13898",
    "title": "In Memory of Yvonne Miklós",
    "titleLocal": null,
    "url": "https://www.haifaff.co.il/eng/Events/13898",
-   "genre": "film",
+   "genre": "talk",
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13898_109180_event_img.jpg"
   },
   {
    "id": "event-13899",
@@ -1817,18 +1836,18 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13899_164973_event_img.png"
   },
   {
    "id": "event-13900",
    "title": "פיץ' על הכרמל - חשיפת סרטים חיפאיים",
    "titleLocal": null,
    "url": "https://www.haifaff.co.il/eng/Events/13900",
-   "genre": "film",
+   "genre": "talk",
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13900_188074_event_img.jpg"
   },
   {
    "id": "event-13905",
@@ -1839,7 +1858,18 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13905_671852_event_img.jpg"
+  },
+  {
+   "id": "event-13927",
+   "title": "Closing Film - It Will Happen Tonight",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13927",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13927_458415_event_img.jpg"
   },
   {
    "id": "event-13942",
@@ -1850,7 +1880,7 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13942_506962_event_img.png"
   },
   {
    "id": "event-13946",
@@ -1861,7 +1891,7 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13946_189811_event_img.png"
   },
   {
    "id": "event-13947",
@@ -1872,7 +1902,40 @@
    "categories": [],
    "blurb": null,
    "durationMin": null,
-   "imageUrl": null
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13947_180217_event_img.jpg"
+  },
+  {
+   "id": "event-13974",
+   "title": "Short from the Past 1 – A Selection of Israeli Short Films from Recent Years",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13974",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13974_189342_event_img.png"
+  },
+  {
+   "id": "event-13975",
+   "title": "Shorts from the Past 2 – A Selection of Israeli Short Films from Recent Years",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13975",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13975_958054_event_img.jpg"
+  },
+  {
+   "id": "event-13976",
+   "title": "Shorts from the Past 3 – A Selection of Israeli Short Films from Recent Years",
+   "titleLocal": null,
+   "url": "https://www.haifaff.co.il/eng/Events/13976",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": "https://www.haifaff.co.il/prdPics/events/13976_151899_event_img.jpg"
   }
  ],
  "performances": [
@@ -2237,8 +2300,8 @@
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/27885",
    "free": null,
    "status": "unknown",
-   "priceMin": 150,
-   "priceMax": 150
+   "priceMin": null,
+   "priceMax": null
   },
   {
    "id": "film-13495/2026-09-26/19:15",
@@ -3294,6 +3357,19 @@
    "priceMax": null
   },
   {
+   "id": "event-13974/2026-09-29/19:30",
+   "eventId": "event-13974",
+   "venueId": "cinema-reshet-herzl-46",
+   "roomId": null,
+   "date": "2026-09-29",
+   "start": "19:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
    "id": "film-13488/2026-09-29/20:15",
    "eventId": "film-13488",
    "venueId": "tikotin",
@@ -3684,6 +3760,19 @@
    "priceMax": null
   },
   {
+   "id": "event-13975/2026-09-30/19:30",
+   "eventId": "event-13975",
+   "venueId": "cinema-reshet-herzl-46",
+   "roomId": null,
+   "date": "2026-09-30",
+   "start": "19:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
    "id": "film-13540/2026-09-30/20:15",
    "eventId": "film-13540",
    "venueId": "kriger-carmel-zarfati",
@@ -3989,7 +4078,7 @@
    "roomId": null,
    "date": "2026-10-01",
    "start": "18:00",
-   "ticketUrl": null,
+   "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28073",
    "free": null,
    "status": "unknown",
    "priceMin": null,
@@ -4029,6 +4118,19 @@
    "date": "2026-10-01",
    "start": "18:30",
    "ticketUrl": "https://www.haifaff.co.il/eng/Basket/28126",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "event-13976/2026-10-01/19:30",
+   "eventId": "event-13976",
+   "venueId": "cinema-reshet-herzl-46",
+   "roomId": null,
+   "date": "2026-10-01",
+   "start": "19:30",
+   "ticketUrl": null,
    "free": null,
    "status": "unknown",
    "priceMin": null,
@@ -4724,8 +4826,8 @@
    "priceMax": null
   },
   {
-   "id": "film-13409/2026-10-03/20:30",
-   "eventId": "film-13409",
+   "id": "event-13927/2026-10-03/20:30",
+   "eventId": "event-13927",
    "venueId": "auditorium",
    "roomId": null,
    "date": "2026-10-03",
@@ -4804,18 +4906,16 @@
    "haifaff-site"
   ],
   "availability": [],
-  "prices": [
-   "haifaff-site"
-  ]
+  "prices": []
  },
  "provenance": {
   "sources": {
    "haifaff-site": {
     "kind": "fetched",
     "path": "data/festivals/haifa-iff/2026/haifaff-site",
-    "fetchedAt": null,
-    "fetcher": "research-2026-09-24",
-    "fetcherVersion": null
+    "fetchedAt": "2026-09-25T22:23:49Z",
+    "fetcher": "scraper/festivals/haifa_iff/sources/haifaff-site/fetch.py",
+    "fetcherVersion": 2
    },
    "venues-research": {
     "kind": "curated",
@@ -4860,12 +4960,6 @@
     "haifaff-site"
    ],
    "performances.free": [
-    "haifaff-site"
-   ],
-   "performances.priceMax": [
-    "haifaff-site"
-   ],
-   "performances.priceMin": [
     "haifaff-site"
    ],
    "performances.start": [
