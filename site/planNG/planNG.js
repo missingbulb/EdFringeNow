@@ -213,10 +213,15 @@ const state = {
  * `lang="en"`, which puts a trailing "?" or a Latin word on the wrong side of
  * the line — the text is still Hebrew, and still wrong. */
 function foreign(text, id) {
+  return `<span ${foreignAttrs(id)}>${escapeHtml(text)}</span>`;
+}
+
+/** The language and direction of a festival's own words, as attributes. */
+function foreignAttrs(id) {
   const festival = festivalById(festivalOf(id)) || (state.focus && state.focus.festival);
   const lang = festival ? festival.lang : "und";
   const dir = festival ? festival.dir : "auto";
-  return `<span lang="${lang}" dir="${dir}">${escapeHtml(text)}</span>`;
+  return `lang="${lang}" dir="${dir}"`;
 }
 
 function festivalById(id) {
@@ -2101,8 +2106,30 @@ function placePop(pop, block) {
   pop.style.top = `${Math.round(above ? box.top - host.top - popBox.height - 8 : box.bottom - host.top + 8)}px`;
 }
 
-/* Everything the page has to say about one card, in one place: how few nights
- * its show has — which is the reason it holds the hour — every night it plays,
+/* The show's popup beside its card rather than over or under it: it is tall,
+ * and beside the card it covers neither the card nor the hours around it. It
+ * keeps clear of the page's sticky header. */
+function placeBeside(pop, block) {
+  const host = $("planResult").getBoundingClientRect();
+  const box = block.getBoundingClientRect();
+  pop.hidden = false;
+  pop.classList.remove("cal-pop--below");
+  const popBox = pop.getBoundingClientRect();
+  const header = document.querySelector(".site-header");
+  const clear = header ? header.getBoundingClientRect().bottom + 8 : 8;
+  const after = box.right - host.left + 8;
+  const before = box.left - host.left - popBox.width - 8;
+  const fitsAfter = after + popBox.width <= host.width - 4;
+  const rtl = document.documentElement.dir === "rtl";
+  const left = rtl ? (before >= 4 ? before : after) : fitsAfter || before < 4 ? after : before;
+  const ideal = box.top + box.height / 2 - popBox.height / 2;
+  const top = Math.max(Math.min(ideal, window.innerHeight - popBox.height - 8), clear);
+  pop.style.left = `${Math.round(clamp(left, 4, Math.max(4, host.width - popBox.width - 4)))}px`;
+  pop.style.top = `${Math.round(top - host.top)}px`;
+}
+
+/* Everything the page has to say about one card, in one place: its picture,
+ * where and when, a few lines about it, how few nights its show has — which is the reason it holds the hour — every night it plays,
  * and the four answers. None of it is on the card's own face, so a calendar at
  * rest reads as a calendar; all of it is one pointer-move away.
  *
@@ -2148,8 +2175,22 @@ function openCardPop(block) {
     );
   };
 
+  const [date, start] = key.split("T");
+  const perf = show.performances.find((p) => p.date === date && p.start === start);
+  const venue = (perf && state.venues.get(perf.venue)) || null;
+  const venueName = venue ? venue.name : show.venueName;
+  const where = [venueName && foreign(venueName, show.slug), escapeHtml(`${dayAndDate(date)} · ${start}`)]
+    .filter(Boolean)
+    .join(" · ");
   pop.innerHTML =
+    popArtHtml(show) +
     `<p class="pop-title">${foreign(show.title, show.slug)}</p>` +
+    `<p class="pop-where">${where}</p>` +
+    (show.blurb ? `<p class="pop-about" ${foreignAttrs(show.slug)}>${escapeHtml(show.blurb)}</p>` : "") +
+    (show.url
+      ? `<a class="pop-link" href="${escapeHtml(show.url)}" target="_blank" rel="noopener" data-i18n="preview.more">` +
+        `${escapeHtml(t("preview.more"))}</a>`
+      : "") +
     `<p class="pop-lead"><span class="pop-rarity${freedom === 1 ? " pop-rarity--rare" : ""}"` +
     ` data-i18n-slot="${freedom === 1 ? "rarity.only" : "rarity.some"}">` +
     `${escapeHtml(rarityText(freedom))}</span></p>` +
@@ -2161,7 +2202,36 @@ function openCardPop(block) {
     verdict("noTime", "verdict.noTime", "✕", false) +
     verdict("noShow", "verdict.noShow", "⊘", false) +
     `</div>`;
-  placePop(pop, block);
+  const img = pop.querySelector(".pop-art img");
+  if (img) {
+    img.addEventListener(
+      "error",
+      () => {
+        img.parentNode.replaceWith(artFallback(show));
+        placeBeside(pop, block);
+      },
+      { once: true }
+    );
+  }
+  placeBeside(pop, block);
+}
+
+/* The show's picture, from the festival's own site; where there is none, or it
+ * does not load, its kind's emoji on its festival's colour. */
+function popArtHtml(show) {
+  if (!show.image) return artFallback(show).outerHTML;
+  return (
+    `<div class="pop-art"><img src="${escapeHtml(show.image)}" alt="" referrerpolicy="no-referrer" /></div>`
+  );
+}
+
+function artFallback(show) {
+  const art = document.createElement("div");
+  art.className = "pop-art pop-art--emoji";
+  art.dataset.festivalColour = festivalOf(show.slug);
+  art.setAttribute("aria-hidden", "true");
+  art.textContent = GENRE_EMOJI[kindOf(show.slug)];
+  return art;
 }
 
 /* Who else wanted this hour, and what it would cost to take one instead: a

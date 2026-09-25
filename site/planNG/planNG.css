@@ -534,6 +534,39 @@ body.festival-page {
   margin: 0 0 2px; font-family: var(--display); font-weight: 700; font-size: 0.76rem;
 }
 .cal-pop .pop-lead { margin: 0 0 6px; color: var(--muted); font-size: 0.64rem; }
+/* A show's popup leads with its picture, edge to edge across the top. */
+.cal-pop--preview { width: 280px; }
+.pop-art {
+  margin: -8px -10px 8px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--muted) 12%, var(--paper));
+}
+.pop-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pop-art--emoji {
+  aspect-ratio: 3 / 1;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--festival-colour, var(--violet)) 22%, var(--paper));
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.cal-pop .pop-where { margin: 0 0 4px; color: var(--muted); font-size: 0.64rem; }
+.cal-pop .pop-about {
+  margin: 0 0 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cal-pop .pop-link {
+  display: inline-block;
+  margin: 0 0 6px;
+  color: var(--violet-dark, var(--violet));
+  font-size: 0.64rem;
+  font-weight: 600;
+}
 .cal-pop .pop-foot { margin: 6px 0 0; color: var(--muted); font-size: 0.62rem; }
 .cal-pop .pop-more { margin: 4px 0 0; color: var(--muted); font-size: 0.66rem; }
 .panel-more { margin: 6px 8px 2px; color: var(--muted); font-size: 0.72rem; line-height: 1.35; }

@@ -1646,6 +1646,14 @@ export const STRINGS = {
     ru: "Кто ещё претендовал на этот час",
     ja: "この時間に重なった他の公演",
   },
+  "preview.more": {
+    probe: "#calPreview",
+    maxWidthPx: 260,
+    en: "More on the festival's site",
+    he: "עוד באתר הפסטיבל",
+    ru: "Подробнее на сайте фестиваля",
+    ja: "フェスティバルのサイトで詳しく",
+  },
   "preview.drafted": {
     probe: "#calPreview",
     maxWidthPx: 160,
