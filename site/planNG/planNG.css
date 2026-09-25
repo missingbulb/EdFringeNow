@@ -1257,7 +1257,7 @@ body.festival-page {
   border-color: light-dark(#f1d9b3, #4d3b20);
 }
 .sch-own--flight {
-  cursor: default;
+  cursor: pointer;
   border-style: dashed;
   background: repeating-linear-gradient(
     -45deg,
@@ -1268,7 +1268,20 @@ body.festival-page {
 }
 .sch-own--out {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/* How the reader gets between the airport and town, under the flight. */
+.own-ground {
+  display: block;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.own-ground--ask {
+  color: var(--violet-dark);
+  text-decoration: underline dotted;
 }
 .sch-own--flight .own-label {
   white-space: normal;
@@ -1337,6 +1350,20 @@ body.festival-page {
 .cal-menu .menu-item.is-on {
   font-weight: 700;
   color: var(--violet-dark);
+}
+/* A choice beside where to book it. */
+.cal-menu .menu-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cal-menu .menu-row .menu-item {
+  flex: 1;
+}
+.cal-menu .menu-book {
+  color: var(--violet-dark);
+  font-size: 0.64rem;
+  white-space: nowrap;
 }
 .menu-emoji {
   width: 1.2em;

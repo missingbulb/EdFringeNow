@@ -2005,7 +2005,7 @@ The draft plans around all of it.
 
 - `28.11` What a car changes: driving becomes the suggested way between shows, and a festival up to 250 km away counts as a day trip instead of 160 km.
 
-  🔧 _Logic leaf._ <!-- req-gallery:28.11 -->
+  <table><thead><tr><th align="left">Getting here</th><th align="left">Between airport and town</th><th align="left">A car?</th><th align="left">Suggested between shows</th><th align="left">A day trip reaches</th></tr></thead><tbody><tr><td>Driving your own car</td><td>—</td><td>yes</td><td>driving</td><td>250 km</td></tr><tr><td>Flying</td><td>hire car</td><td>yes</td><td>driving</td><td>250 km</td></tr><tr><td>Flying</td><td>taxi or transfer</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Flying</td><td>train</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Flying</td><td>not said</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>By train</td><td>—</td><td>no</td><td>no change</td><td>160 km</td></tr><tr><td>Living there</td><td>—</td><td>no</td><td>no change</td><td>160 km</td></tr></tbody></table> <!-- req-gallery:28.11 -->
 
   <details><summary>Notes</summary>
 
