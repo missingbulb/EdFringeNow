@@ -315,7 +315,7 @@ test("a read-only worker is not this check's business (relevance-first)", () => 
 test("non-worker scripts are never flagged", () => {
   const out = workerRestoresMainRule.run(ctxOf({
     "scripts/verify.sh": writes,
-    ".github/workflows/prices.yml": writes,
+    ".github/workflows/ci.yml": writes,
     ".claudinite/local/packs/edfringe-now/tasks/refresh-widgets/task.mjs": writes,
   }));
   assert.deepEqual(out, []);

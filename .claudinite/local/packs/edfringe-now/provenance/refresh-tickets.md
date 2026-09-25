@@ -93,3 +93,10 @@
 - **Model:** Claude Opus 5
 - **Mechanism:** `worker.sh` stages `data/normalized` and `site/data`.
 - **Landed:** #731, Closes #730
+
+## 2026-09-25 · policy-changed · the vestigial agent_instructions dropped (#872)
+- **Reason:** an agentless task declares no agent_instructions; this one named its shell worker
+  there, which the contract omits for `agent_model: none`.
+- **Actor:** @missingbulb (owner).
+- **Model:** Claude Opus 5.5
+- **Mechanism:** the field removed from `task.json`; `code_work` still names the worker.

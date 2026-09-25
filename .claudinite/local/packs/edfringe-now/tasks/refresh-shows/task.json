@@ -6,6 +6,5 @@
   "expected_outcome": "no_code_changes",
   "code_work": "bash worker.sh",
   "code_work_timeout": 1800,
-  "agent_model": "none",
-  "agent_instructions": "worker.sh"
+  "agent_model": "none"
 }
