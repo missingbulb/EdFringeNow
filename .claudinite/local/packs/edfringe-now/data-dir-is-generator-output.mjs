@@ -152,7 +152,7 @@ const RAW_CACHES = new Map([
 
 const rule = {
   id: 'edfringe-data-dir-is-generator-output',
-  severity: 'blocking',
+  on_fail: 'block',
   description: "Every committed file under site/data/ or data/ is one of scraper/normalize.py's outputs — no hand-made files, no probe dumps, no raw cache",
   why:
     'both data trees are generator output — site/data/ is fetched by the browser and the next refresh-shows run rewrites them wholesale, so a file that the normalizer does not produce is either silently served to users or silently destroyed — and either way the thing that produced it is not in the repo',

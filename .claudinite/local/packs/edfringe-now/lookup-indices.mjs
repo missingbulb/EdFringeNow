@@ -13,7 +13,7 @@ const MAX_PER_FILE = 5;
 
 const rule = {
   id: 'edfringe-lookup-indices',
-  severity: 'blocking',
+  on_fail: 'block',
   description:
     'Every genre / room / subgenre / ticket-status / age-restriction index in the committed day files and shows.min.json resolves inside the matching data/venues.json lookup list, and every status index in availability.min.json resolves inside that file\'s own list',
   why:
