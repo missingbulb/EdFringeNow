@@ -43,7 +43,7 @@ const rule = {
 
     return [{
       rule: rule.id,
-      severity: rule.severity,
+      on_fail: rule.on_fail,
       file: VERIFY,
       line: null,
       what: `${NORMALIZER} supports ${SELFTEST} but ${VERIFY} never invokes it (a step label naming it does not count — only a command line does)`,

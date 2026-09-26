@@ -87,7 +87,7 @@ test("a genre index past the end of venues.json genres is reported", () => {
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-lookup-indices");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, "site/data/days/2026-08-07.json");
   assert.match(out[0].what, /genre = 7 is outside venues\.json "genres"/);
   assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the regeneration command");
@@ -225,7 +225,7 @@ test("a verify.sh left with only the step label is reported", () => {
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-normalizer-selftest-in-verify");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, "scripts/verify.sh");
   assert.match(out[0].what, /never invokes it/);
   assert.ok(out[0].fix.includes("--selftest"), "the fix must name the command to restore");
@@ -342,7 +342,7 @@ test("a probe's output committed under data/ is reported", () => {
   const out = dataDirRule.run(textCtx({ ...cleanDataTree, "data/ticket-status-enum.json": "" }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-data-dir-is-generator-output");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, "data/ticket-status-enum.json");
   assert.match(out[0].what, /is not something a generator in this repo produces/);
   assert.ok(out[0].fix.includes("normalize.py"), "the fix must name the producer to fix instead");

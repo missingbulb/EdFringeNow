@@ -76,7 +76,7 @@ test("a glob added to package.json but not to verify.sh is reported", () => {
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-test-globs-in-step");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, "scripts/verify.sh");
   assert.match(out[0].what, /drifted apart/);
   assert.match(out[0].what, /only in package\.json: \.claudinite\/local\/packs\/edfringe-now\/tasks\/\*\/\*\.test\.mjs/);
@@ -164,7 +164,7 @@ test("a top-level dir with .mjs source left off the git ls-files list is reporte
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-verify-sh-covers-source-dirs");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, "scripts/verify.sh");
   assert.match(out[0].what, /^scripts has committed \.js\/\.mjs files/);
   assert.match(out[0].fix, /add 'scripts' to the `git ls-files` call/);
@@ -223,7 +223,7 @@ test("a package.json copied into a new source dir is reported", () => {
   }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-no-stray-package-json");
-  assert.equal(out[0].severity, "advisory");
+  assert.equal(out[0].on_fail, "advise");
   assert.equal(out[0].file, "site/shared/package.json");
   assert.match(out[0].fix, /remove it/);
 });
@@ -280,7 +280,7 @@ test("a worker that pushes with no restore at all is reported", () => {
   const out = workerRestoresMainRule.run(ctxOf({ [WORKER_PATH]: `set -euo pipefail\n${writes}` }));
   assert.equal(out.length, 1);
   assert.equal(out[0].rule, "edfringe-worker-restores-main");
-  assert.equal(out[0].severity, "blocking");
+  assert.equal(out[0].on_fail, "block");
   assert.equal(out[0].file, WORKER_PATH);
   assert.match(out[0].what, /without ever returning the checkout to `main`/);
   assert.match(out[0].fix, /git rev-parse --abbrev-ref HEAD/);
