@@ -31,6 +31,11 @@ is the judgment those two don't carry.
   "verify" by reasoning about what the API probably returns; have a task run it, or say plainly
   it is unverified.
 
+- **Onboarding a scraper for a new source while its site is unreachable** — treat any parser and
+  fixtures written against WebFetch-reconstructed markup as provisional; re-parse from a real
+  fetch as soon as the host is reachable, not as already done.
+  (scraper-reconstructed-markup-provisional)
+
 - **Answering a one-off API question** (a field's shape, an enum's values, whether an operation
   exists) — `scraper/SCRAPING.md` first; past it, `www.edfringe.com`'s Next.js bundles carry
   the client's full GraphQL operation set (recipe in SCRAPING.md), where the probe shows the host

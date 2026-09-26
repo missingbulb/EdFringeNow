@@ -40,3 +40,16 @@
   action-scope check would duplicate enforcement that already exists upstream, adding nothing; the
   rule stays prose as a composition habit, not a new constraint.
 - **Actor:** the growth-extract run, item #877.
+
+## 2026-09-26 · declined · foreground-polling a job already launched with `run_in_background` (#906)
+- **Source:** conversation-logs capture `pr-896` (growth-extract window, item #906): a scraper
+  background run (`cities/fetch.py`) completed at 14:23:01Z with its own notification, but a
+  separate foreground `until pgrep …; do sleep 10; done` poll launched at 14:20:10Z never
+  recognized that and ran to the Bash tool's 600s cap, blocking ~7 minutes past the point the
+  real result was already in hand.
+- **Reason:** already covered — both by this pack's own `no-denial-bypass`-adjacent "Polling with
+  an `until` loop" basics rule (write a condition naming the state actually awaited) and, more
+  directly, by the harness's own tool-contract guidance that a `run_in_background` job's
+  notification is the thing to wait for, never a second foreground poll. Landing it again here
+  would restate a rule this repo already carries at the tool-contract level.
+- **Actor:** the growth-extract run, item #906.

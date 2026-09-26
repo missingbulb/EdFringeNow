@@ -6,6 +6,10 @@ requirements harness's are the `requirements-harness` skill; each loads when its
 
 ## Delivering work
 
+- **Receiving a "festival X isn't scraped/priced properly, use source Y instead" report** —
+  classify it `correction`, never `feature`: it is a data-quality fix to the existing scrape, and
+  the classification can't be taken back once declared. (scraped-data-quality-is-correction)
+
 - **Asking how to fix a structural or architectural complaint via `AskUserQuestion`** — offer
   restructuring itself as one option, not only mechanism-level tweaks to the existing shape; the
   owner's free-text answers have named the restructure nobody offered.
