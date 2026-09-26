@@ -195,6 +195,17 @@ body.festival-page {
   --maxw: none;
 }
 
+/* The page leaves the mouse cursor to the browser. plan.css, which this page
+   imports whole, sets its own for the Fringe planner, so they are reverted to
+   the browser's here rather than stripped from a stylesheet another page
+   uses; !important because those rules are more specific than any reset. */
+body.festival-page,
+body.festival-page *,
+body.festival-page *::before,
+body.festival-page *::after {
+  cursor: revert !important;
+}
+
 body.festival-page {
   background: linear-gradient(180deg, var(--wash) 0%, var(--wash) 160px, var(--wash-clear) 560px), var(--bg);
 }
@@ -301,7 +312,6 @@ body.festival-page {
   font: inherit;
   font-size: 0.82rem;
   font-weight: 600;
-  cursor: pointer;
 }
 .lang-select:hover,
 .theme-toggle:hover {
@@ -319,7 +329,6 @@ body.festival-page {
   border-radius: 999px;
   background: var(--paper);
   color: var(--ink);
-  cursor: pointer;
 }
 /* The toggle shows the state a press would move to, which is the opposite of
    the one in force — so the icons swap with the theme, on the reader's choice
@@ -519,14 +528,14 @@ body.festival-page {
   position: absolute; inset: 0;
   flex-direction: column; justify-content: center; gap: 1px;
   padding: 3px 5px 3px 9px;
-  cursor: default; overflow: hidden; z-index: 2;
+  overflow: hidden; z-index: 2;
   box-shadow: 0 2px 5px rgba(16, 24, 40, 0.1);
 }
 .sch-slot:hover .sch-show { box-shadow: 0 5px 14px rgba(16, 24, 40, 0.18); }
 /* Only the name and its meta are the link out to the festival's own page. */
 .sch-open {
   display: flex; flex-direction: column; gap: 1px; min-width: 0;
-  text-decoration: none; color: var(--ink); cursor: pointer;
+  text-decoration: none; color: var(--ink);
 }
 .sch-open:hover .sch-name { text-decoration: underline; }
 .sch-show .sch-name { -webkit-line-clamp: 1; }
@@ -537,7 +546,7 @@ body.festival-page {
    painted through (pointer-events off) so the lane is the only thing hit. */
 .sch-rivals {
   position: absolute; top: 0; bottom: 0; inset-inline-end: 0; width: 15px;
-  padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer;
+  padding: 0; border: 0; border-radius: 4px; background: transparent;
   z-index: 1;
 }
 .sch-rivals:hover, .sch-rivals[aria-expanded="true"] {
@@ -661,7 +670,7 @@ body.festival-page {
   display: flex; align-items: center; gap: 8px;
   width: 100%; text-align: start;
   font: inherit; padding: 4px 6px; border-radius: 6px;
-  border: 1px solid transparent; background: transparent; color: inherit; cursor: pointer;
+  border: 1px solid transparent; background: transparent; color: inherit;
 }
 .pop-rival:hover { border-color: var(--violet); background: color-mix(in srgb, var(--violet) 8%, transparent); }
 .pr-nights { flex: 0 0 auto; margin-inline-start: auto; font-size: 0.6rem; color: var(--muted); }
@@ -709,7 +718,7 @@ body.festival-page {
   height: 34px; padding: 0;
   font: inherit; font-size: 1.05rem; line-height: 1;
   border: 1px solid var(--line); border-radius: 9px;
-  background: var(--paper); color: var(--ink); cursor: pointer;
+  background: var(--paper); color: var(--ink);
 }
 /* An emoji face first, so a heart is drawn red rather than as a text glyph. */
 .vb-mark { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", emoji, sans-serif; }
@@ -749,7 +758,7 @@ body.festival-page {
 .drawer > .panel { margin-top: 10px; }
 .drawer-summary {
   display: flex; align-items: center; gap: 8px;
-  padding: 10px 14px; border-radius: 12px; cursor: pointer;
+  padding: 10px 14px; border-radius: 12px;
   background: var(--paper); border: 1px solid var(--line);
   list-style: none;
 }
@@ -831,7 +840,6 @@ body.festival-page {
   color: var(--ink);
   font: inherit;
   text-align: start;
-  cursor: pointer;
 }
 .pref-chip:hover,
 .pref.is-open .pref-chip {
@@ -892,7 +900,6 @@ body.festival-page {
   color: var(--ink);
   font: inherit;
   font-size: 0.78rem;
-  cursor: pointer;
 }
 .pref-age.is-on {
   border-color: var(--violet);
@@ -954,7 +961,6 @@ body.festival-page {
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  cursor: pointer;
 }
 .fest-dot {
   flex: 0 0 auto;
@@ -985,7 +991,6 @@ body.festival-page {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1;
-  cursor: pointer;
 }
 .sch-night:hover,
 .sch-night:focus-visible {
@@ -1037,7 +1042,6 @@ body.festival-page {
   font-weight: 500;
 }
 .fest-row--out {
-  cursor: default;
   opacity: 0.6;
   /* No checkbox: the stripe sits where the others' names start. */
   padding-inline-start: 21px;
@@ -1096,7 +1100,6 @@ body.festival-page {
   font: inherit;
   font-size: 0.76rem;
   font-weight: 600;
-  cursor: pointer;
 }
 .pref-tag:hover {
   border-color: var(--violet);
@@ -1141,7 +1144,6 @@ body.festival-page {
   background: var(--paper);
   color: var(--ink);
   font: inherit;
-  cursor: pointer;
 }
 .pref-pick:hover:not([disabled]) {
   border-color: var(--violet);
@@ -1153,7 +1155,6 @@ body.festival-page {
 }
 .pref-pick[disabled] {
   opacity: 0.45;
-  cursor: not-allowed;
 }
 .pref-pick:focus-visible {
   outline: 3px solid var(--violet);
@@ -1212,7 +1213,6 @@ body.festival-page {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
 }
 .pref-meal-times,
 .pref-meal-place {
@@ -1287,9 +1287,6 @@ body.festival-page {
 /* --- the reader's own days ------------------------------------------------- */
 
 /* A day's head is where the reader says what the day is for. */
-.sch-day-head[data-day-head] {
-  cursor: pointer;
-}
 .sch-day-head[data-day-head]:hover .sch-dow,
 .sch-day-head[data-day-head]:focus-visible .sch-dow {
   color: var(--violet-dark);
@@ -1298,10 +1295,6 @@ body.festival-page {
 .sch-day-head[data-day-head]:focus-visible {
   outline: 2px solid var(--violet);
   outline-offset: -2px;
-}
-/* An empty hour takes a click: it offers a meal or personal time there. */
-.sch-body {
-  cursor: copy;
 }
 
 /* A kept day — rest or an excursion — is one block over its column; a day
@@ -1325,7 +1318,6 @@ body.festival-page {
     light-dark(#fbfaff, #191622) 8px 16px
   );
   color: var(--ink);
-  cursor: grab;
   touch-action: none;
 }
 .sch-keep--festival {
@@ -1436,7 +1428,6 @@ body.festival-page {
   color: var(--ink);
   font-size: 0.62rem;
   line-height: 1.3;
-  cursor: grab;
   touch-action: none;
 }
 .sch-own--meal {
@@ -1448,7 +1439,6 @@ body.festival-page {
   border-color: light-dark(#f1d9b3, #4d3b20);
 }
 .sch-own--flight {
-  cursor: pointer;
   border-style: dashed;
   background: repeating-linear-gradient(
     -45deg,
@@ -1494,7 +1484,6 @@ body.festival-page {
   inset-inline: 0;
   bottom: 0;
   height: 6px;
-  cursor: ns-resize;
 }
 .sch-add-anchor {
   position: absolute;
@@ -1528,7 +1517,6 @@ body.festival-page {
   font: inherit;
   font-size: 0.72rem;
   text-align: start;
-  cursor: pointer;
 }
 .cal-menu .menu-item[data-festival-colour] {
   box-shadow: inset 3px 0 0 var(--festival-colour);
@@ -1596,7 +1584,6 @@ body.festival-page {
   border-radius: 999px;
   background: radial-gradient(circle at 35% 35%, var(--orb-shine), var(--orb) 70%);
   box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 25%, transparent);
-  cursor: help;
   z-index: 2;
 }
 .tl-orb:hover,
@@ -1771,7 +1758,6 @@ body.festival-page {
   background: none;
   font: inherit;
   color: var(--ink);
-  cursor: pointer;
   white-space: nowrap;
 }
 .tl-item--late {
@@ -1860,7 +1846,6 @@ body.festival-page {
      between its two ends; the grip is wider than the line it sits on. */
   width: 10px;
   margin-inline-start: -5px;
-  cursor: ew-resize;
   touch-action: none;
   z-index: 2;
 }
@@ -1949,16 +1934,6 @@ body.festival-page {
 [dir="rtl"] .tl-day--to {
   transform: translateX(-3px);
 }
-/* The band itself is taken hold of to move the whole trip. */
-.tl-track.is-grab,
-.tl-track.is-grab .tl-item {
-  cursor: grab;
-}
-.tl-track.is-dragging,
-.tl-track.is-dragging .tl-item {
-  cursor: grabbing;
-}
-
 /* The way there and back: a large picture beside each end of the trip, just
    outside its line, the way out before the first day and home after the last.
    Until the reader says how they travel it keeps changing between the ways,
@@ -1974,7 +1949,6 @@ body.festival-page {
   background: var(--paper);
   color: var(--violet);
   box-shadow: var(--shadow-soft);
-  cursor: pointer;
   z-index: 2;
 }
 .tl-way[hidden] {
@@ -2207,7 +2181,6 @@ body.festival-page {
   font-size: 0.78rem;
   color: var(--violet-dark);
   text-decoration: underline;
-  cursor: pointer;
 }
 .timeline .origin-card {
   margin: 12px 0 0;
@@ -2269,7 +2242,6 @@ body.festival-page {
   font-size: 0.8rem;
   color: var(--violet-dark);
   text-decoration: underline;
-  cursor: pointer;
 }
 .origin-status {
   margin: 6px 0 0;
