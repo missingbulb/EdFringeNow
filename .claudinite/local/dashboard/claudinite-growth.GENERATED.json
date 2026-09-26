@@ -1,70 +1,70 @@
 {
   "usage-findings": {
-    "value": 17,
-    "previous": 15,
-    "note": "2026-08-28 to 2026-09-24"
+    "value": 81,
+    "previous": 17,
+    "note": "2026-08-29 to 2026-09-25"
   },
   "usage-newest": {
     "rows": [
       {
-        "subject": "fetching-from-the-web",
-        "rule": "trigger-fires-unfollowed",
-        "cause": "probable",
-        "since": "2026-09-25"
+        "subject": "adoption-answers-pending",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       },
       {
-        "subject": "issue-labels-overwrite",
-        "rule": "guard-overruled",
-        "cause": "probable",
-        "since": "2026-09-25"
+        "subject": "catalog-completeness",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       },
       {
-        "subject": "pipe-tail-hides-exit",
-        "rule": "guard-overruled",
-        "cause": "probable",
-        "since": "2026-09-25"
+        "subject": "check-ships-with-test",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       },
       {
-        "subject": "changing-pack-elements",
-        "rule": "skill-triggered-missing-moments",
-        "cause": "known",
-        "since": "2026-09-22"
+        "subject": "claudinite-lifecycle-declared",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/beacon-token-is-not-committed",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/no-second-publisher",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "cloudflare-site/publishes-a-site-directory",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       },
       {
         "subject": "committing",
-        "rule": "skill-forced-only-small",
+        "rule": "skill-always-loaded",
         "cause": "known",
-        "since": "2026-09-22"
+        "since": "2026-09-26"
       },
       {
-        "subject": "committing",
-        "rule": "skill-triggered-missing-moments",
-        "cause": "known",
-        "since": "2026-09-22"
+        "subject": "conformance-work-scope",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       },
       {
-        "subject": "fetching-from-the-web",
-        "rule": "skill-forced-only-small",
-        "cause": "known",
-        "since": "2026-09-22"
-      },
-      {
-        "subject": "fetching-from-the-web",
-        "rule": "skill-triggered-missing-moments",
-        "cause": "known",
-        "since": "2026-09-22"
-      },
-      {
-        "subject": "merge-to-main",
-        "rule": "skill-triggered-missing-moments",
-        "cause": "known",
-        "since": "2026-09-22"
-      },
-      {
-        "subject": "releasing-a-cloudflare-site",
-        "rule": "skill-triggered-missing-moments",
-        "cause": "known",
-        "since": "2026-09-22"
+        "subject": "conformance-workflow",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
       }
     ]
   }
