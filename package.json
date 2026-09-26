@@ -1,6 +1,6 @@
 {
   "name": "edfringenow",
-  "version": "1.10925.16",
+  "version": "1.10926.17",
   "private": true,
   "description": "EdFringeNow — client-side Edinburgh Fringe discovery + planner. No runtime dependencies and no build step: a static site, plus one small Worker for flight fares.",
   "scripts": {
