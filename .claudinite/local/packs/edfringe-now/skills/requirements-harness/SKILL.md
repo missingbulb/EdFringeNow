@@ -103,6 +103,16 @@ and the local approval and fixture policy.
 - **Capturing hover-driven UI** — open it inside `capture()`, not `drive()`: the runner settles
   the scroll between them, and the scroll fires `mouseleave`. (hover-driven-ui)
 
+- **Capturing right after a click or drag that reflows the layout** — park the pointer
+  off-element (`page.mouse.move(0, 0)`) before capturing; left resting, it can land on the next
+  element and open its own hover-tip over the shot, non-deterministically between machines.
+  (leftover-pointer-hover-tip)
+
+- **Asserting a CSS-transition-driven value** — sample every frame across a bounded window from
+  the trigger to the transition's end (a `MutationObserver`/`requestAnimationFrame` loop), never
+  one delayed sample gated on the state change; a loaded machine can still miss a single sample.
+  (sample-transition-every-frame)
+
 ## The fixture freeze
 
 - **Needing data for a case** — use `shared/fixtures/data/`, a frozen snapshot of the real

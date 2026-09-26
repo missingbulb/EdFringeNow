@@ -19,6 +19,7 @@ import rule from "./test-globs-in-step.mjs";
 import verifyShSourceDirsRule from "./verify-sh-source-dirs.mjs";
 import noStrayPackageJsonRule from "./no-stray-package-json.mjs";
 import workerRestoresMainRule from "./worker-restores-main.mjs";
+import { loadDeclaredChecks, guardFindings } from "../../../shared/engine/checks/helpers/pattern-rules.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -332,6 +333,50 @@ test("this repo's real task workers all restore main before writing", () => {
     read: (p) => (files.includes(p) ? readFileSync(path.join(REPO, p), "utf8") : null),
   });
   assert.deepEqual(out, [], `a task worker can push from the wrong branch:\n${out.map((f) => f.what).join("\n")}`);
+});
+
+// --- edfringe-no-review-request-from-pr-author: every PR here is opened under
+// the one account that owns the repo, so requesting that account as a reviewer
+// always fails on GitHub's own side (#874, #875, #896, #897, #902, #904 all hit
+// this identical, avoidable call) ---
+
+const [reviewRequestRule] = loadDeclaredChecks(__dirname);
+
+test("requesting the repo owner as a PR reviewer is flagged, on create and on update", () => {
+  for (const tool of ["mcp__github__create_pull_request", "mcp__github__update_pull_request"]) {
+    const out = guardFindings(reviewRequestRule, { name: tool, input: { reviewers: ["missingbulb"] } });
+    assert.equal(out.length, 1, `expected a finding for ${tool}`);
+    assert.match(out[0].what, /missingbulb/);
+  }
+});
+
+test("requesting a different reviewer alongside the owner still flags it", () => {
+  const out = guardFindings(reviewRequestRule, {
+    name: "mcp__github__create_pull_request",
+    input: { reviewers: ["someone-else", "missingbulb"] },
+  });
+  assert.equal(out.length, 1);
+});
+
+test("requesting only a different reviewer is not this check's business", () => {
+  const out = guardFindings(reviewRequestRule, {
+    name: "mcp__github__create_pull_request",
+    input: { reviewers: ["someone-else"] },
+  });
+  assert.deepEqual(out, []);
+});
+
+test("a PR call with no reviewers field at all is not this check's business (relevance-first)", () => {
+  const out = guardFindings(reviewRequestRule, { name: "mcp__github__create_pull_request", input: { title: "x" } });
+  assert.deepEqual(out, []);
+});
+
+test("assigning missingbulb (a different field) is not what this check guards", () => {
+  const out = guardFindings(reviewRequestRule, {
+    name: "mcp__github__create_pull_request",
+    input: { reviewers: ["someone-else"], assignees: ["missingbulb"] },
+  });
+  assert.deepEqual(out, []);
 });
 
 test("the pack manifest declares the checks and stays hand-declared", () => {

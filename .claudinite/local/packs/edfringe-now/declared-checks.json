@@ -1,0 +1,18 @@
+[
+  {
+    "id": "edfringe-no-review-request-from-pr-author",
+    "severity": "blocking",
+    "since": "2026-09-26",
+    "scope": "action",
+    "failureMessage": "every PR here is opened under missingbulb, the same account a review request would name, and GitHub always rejects requesting review from a PR's own author",
+    "guardToolCalls": [
+      {
+        "tool": "/^mcp__github__(create|update)_pull_request$/",
+        "inputField": "reviewers",
+        "match": "/missingbulb/i",
+        "what": "a {tool} call requesting review from \"missingbulb\", the PR's own author",
+        "fix": "drop missingbulb from reviewers — assigning them, or leaving reviewers empty, is what a review request was reaching for"
+      }
+    ]
+  }
+]
