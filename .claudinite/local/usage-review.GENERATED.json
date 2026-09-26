@@ -1,15 +1,15 @@
 {
-  "generated": "2026-09-25T00:00:00Z",
+  "generated": "2026-09-26T00:00:00Z",
   "window": {
-    "from": "2026-08-28",
-    "to": "2026-09-24",
+    "from": "2026-08-29",
+    "to": "2026-09-25",
     "daysCovered": 28,
     "previous": {
-      "from": "2026-07-31",
-      "to": "2026-08-27",
+      "from": "2026-08-01",
+      "to": "2026-08-28",
       "daysCovered": 1
     },
-    "foldedThrough": "2026-09-24",
+    "foldedThrough": "2026-09-25",
     "subjects": {
       "skills": 43,
       "checks": 88,
@@ -18,6 +18,1325 @@
     "twinless": 87
   },
   "findings": [
+    {
+      "rule": "check-fires-most-sessions",
+      "subject": "product-wiki-freshness",
+      "pack": "product-wiki",
+      "cause": "probable",
+      "causes": [
+        "the lesson is not carried before the work - every firing is fixed the same way and the fix is the rule",
+        "the check is wrong or too broad - the sample shows findings the session argued with or accepted",
+        "a pre-edit guard is missing - the violation is a call shape a PreToolUse guard could hold",
+        "one session's habit - the firings cluster in one session id"
+      ],
+      "open": true,
+      "finding": "fires blocking in half the sessions or more",
+      "recommendation": "usually the lesson belongs before the work (a RULES.md line, a pre-edit trigger) with the check kept as the net; if the findings were argued with, the check is wrong - a sample of the findings is attached",
+      "figures": {
+        "checkSessions": 45,
+        "sessions": 65,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "adoption-answers-pending",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "catalog-completeness",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "check-ships-with-test",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "claudinite-lifecycle-declared",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "cloudflare-site/beacon-token-is-not-committed",
+      "pack": "cloudflare-site",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "cloudflare-site/no-second-publisher",
+      "pack": "cloudflare-site",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "cloudflare-site/publishes-a-site-directory",
+      "pack": "cloudflare-site",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "conformance-work-scope",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "conformance-workflow",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "declared-check-since",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "declared-check-spec-keys",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "doc-pointers-resolve",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "edfringe-lookup-indices",
+      "pack": "edfringe-now",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "edfringe-no-stray-package-json",
+      "pack": "edfringe-now",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "edfringe-normalizer-selftest-in-verify",
+      "pack": "edfringe-now",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "edfringe-test-globs-in-step",
+      "pack": "edfringe-now",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "edfringe-worker-restores-main",
+      "pack": "edfringe-now",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/checkout-submodules",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/cron-minute-off-the-hour",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/label-create-before-add",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/no-scheduled-fleet-executor",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/pages-artifact-symlinks",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/run-pipefail",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/scheduled-failure-escalation",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/secrets-in-job-if",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "gha/unique-automation-branch",
+      "pack": "git-github",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "growth-write-scope",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "in-session-github-access",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "interview-answer-stale",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "legacy-check-spellings",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "legacy-shape-in-use",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "no-conflict-markers",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "preferences-provenance",
+      "pack": "claude-code-web-users-support",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "preferences-store-configured",
+      "pack": "claude-code-web-users-support",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "preferences-store-file-names",
+      "pack": "claude-code-web-users-support",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "product-wiki-growth-log",
+      "pack": "product-wiki",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "product-wiki-layout",
+      "pack": "product-wiki",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "product-wiki-page-sections",
+      "pack": "product-wiki",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "product-wiki-sources",
+      "pack": "product-wiki",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "public-website/version-stamp-matches-package",
+      "pack": "public-website",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "queue-mark-named-literally",
+      "pack": "claudinite-tasks",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "repo-variables-through-the-bag",
+      "pack": "claudinite-tasks",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "routine-structure",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "runnable-doc-commands",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "scheduler-workflow-shape",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "seeded-file-stale",
+      "pack": "claudinite-lifecycle",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "shared-constants",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "skill-description-length",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "task-code-work-env",
+      "pack": "claudinite-tasks",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "task-declaration-matches-folder",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "task-md-only-when-agentic",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "task-phase-discipline",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "task-worker-restores-main",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "tasks-pack-read-through-its-surface",
+      "pack": "claudinite-tasks",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "technology-skill-cites-dated-sources",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "technology-skill-code-imports-inside-its-folder",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "technology-skill-links-inside-its-folder",
+      "pack": "claudinite-growth",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "untracked-test-file",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires",
+      "subject": "work-request-not-started",
+      "pack": "basics",
+      "cause": "unknown",
+      "causes": [
+        "nobody does the thing at all here - the guarded files or calls are absent from the window",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "a sibling check catches the violation first - a check with overlapping scope fires instead",
+        "the check's fixture is the only violator it has ever seen - a test that passes and nothing else"
+      ],
+      "open": true,
+      "finding": "never fires, and no RULES.md line states the same rule",
+      "recommendation": "none - a net that has caught nothing is not evidence of a hole; carried forward, with the fixture test that proves it can fire named",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-never-fires-with-prose-twin",
+      "subject": "product-wiki-isolation",
+      "pack": "product-wiki",
+      "cause": "probable",
+      "causes": [
+        "the prose pre-empts every violation - sessions loading the pack do the thing the check guards",
+        "the check is unreachable - its scan pattern or scope selects nothing in this tree",
+        "nobody does the thing at all here - the guarded files or calls are absent from the window"
+      ],
+      "open": false,
+      "finding": "never fires, and a RULES.md line states the same rule",
+      "recommendation": "a candidate for the prose-removal experiment: delete the prose, keep the check, read this counter one window later - at most one firing means the check alone suffices; more means the prose was doing the work",
+      "figures": {
+        "checkFindings": 0,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-unsatisfiable",
+      "subject": "feature-requirements-first",
+      "pack": "executable-requirements",
+      "cause": "probable",
+      "causes": [
+        "the condition cannot be satisfied by following the fix text - the relent's block shows the same finding after a fix attempt on the named file",
+        "the finding is on a file the session cannot edit - generated or mounted",
+        "two different fixes each cleared one finding and raised another - the two blocks differ"
+      ],
+      "open": false,
+      "finding": "a session could not clear it in two attempts and the Stop hook let it through",
+      "recommendation": "usually a condition the fix text cannot satisfy; the relent's findings block is attached",
+      "figures": {
+        "relent": 9
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
+    {
+      "rule": "check-unsatisfiable",
+      "subject": "squash-merge-history",
+      "pack": "basics",
+      "cause": "probable",
+      "causes": [
+        "the condition cannot be satisfied by following the fix text - the relent's block shows the same finding after a fix attempt on the named file",
+        "the finding is on a file the session cannot edit - generated or mounted",
+        "two different fixes each cleared one finding and raised another - the two blocks differ"
+      ],
+      "open": false,
+      "finding": "a session could not clear it in two attempts and the Stop hook let it through",
+      "recommendation": "usually a condition the fix text cannot satisfy; the relent's findings block is attached",
+      "figures": {
+        "relent": 8
+      },
+      "since": "2026-09-26",
+      "lasting": false
+    },
     {
       "rule": "guard-overruled",
       "subject": "issue-labels-overwrite",
@@ -32,9 +1351,9 @@
       "finding": "an advisory guard fires in most sessions and the call runs anyway",
       "recommendation": "usually a guard matching calls it was not written for - narrow it; a sample of the calls is attached",
       "figures": {
-        "guardAdvisory": 37,
-        "sessions": 53,
-        "activity": 97.368356
+        "guardAdvisory": 41,
+        "sessions": 65,
+        "activity": 125.659574
       },
       "since": "2026-09-25",
       "lasting": false
@@ -53,11 +1372,31 @@
       "finding": "an advisory guard fires in most sessions and the call runs anyway",
       "recommendation": "usually a guard matching calls it was not written for - narrow it; a sample of the calls is attached",
       "figures": {
-        "guardAdvisory": 64,
-        "sessions": 53,
-        "activity": 97.368356
+        "guardAdvisory": 78,
+        "sessions": 65,
+        "activity": 125.659574
       },
       "since": "2026-09-25",
+      "lasting": false
+    },
+    {
+      "rule": "skill-always-loaded",
+      "subject": "committing",
+      "pack": "basics",
+      "cause": "known",
+      "causes": [
+        "its body is guidance every session needs - discriminator: most loads are voluntary (`skillLoadsBy`)",
+        "a force-load pattern matches most edits or calls - discriminator: most loads are blocked"
+      ],
+      "open": false,
+      "finding": "loads in three of every four sessions - it is context wearing a skill's clothes",
+      "recommendation": "move its body to the owning pack's RULES.md; the cost either way is stated: tokens × sessions loaded against tokens × all sessions",
+      "figures": {
+        "skillSessions": 50,
+        "sessions": 65,
+        "activity": 125.659574
+      },
+      "since": "2026-09-26",
       "lasting": false
     },
     {
@@ -73,9 +1412,9 @@
       "finding": "loads in three of every four sessions - it is context wearing a skill's clothes",
       "recommendation": "move its body to the owning pack's RULES.md; the cost either way is stated: tokens × sessions loaded against tokens × all sessions",
       "figures": {
-        "skillSessions": 52,
-        "sessions": 53,
-        "activity": 97.368356
+        "skillSessions": 64,
+        "sessions": 65,
+        "activity": 125.659574
       },
       "since": "2026-09-22",
       "lasting": false
@@ -92,8 +1431,8 @@
       "finding": "it is only ever loaded because a guard held a call for it, and each block is a tool call spent to read a few lines",
       "recommendation": "carry the lines in context or in the guard's own block text",
       "figures": {
-        "skillBlocks": 43,
-        "skillLoads": 42,
+        "skillBlocks": 54,
+        "skillLoads": 53,
         "tokens": 128
       },
       "since": "2026-09-22",
@@ -111,8 +1450,8 @@
       "finding": "it is only ever loaded because a guard held a call for it, and each block is a tool call spent to read a few lines",
       "recommendation": "carry the lines in context or in the guard's own block text",
       "figures": {
-        "skillBlocks": 26,
-        "skillLoads": 16,
+        "skillBlocks": 35,
+        "skillLoads": 27,
         "tokens": 240
       },
       "since": "2026-09-22",
@@ -130,8 +1469,8 @@
       "finding": "it is only ever loaded because a guard held a call for it, and each block is a tool call spent to read a few lines",
       "recommendation": "carry the lines in context or in the guard's own block text",
       "figures": {
-        "skillBlocks": 69,
-        "skillLoads": 54,
+        "skillBlocks": 88,
+        "skillLoads": 68,
         "tokens": 193
       },
       "since": "2026-09-22",
@@ -151,8 +1490,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 9,
-        "moments": 97
+        "skillLoads": 13,
+        "moments": 100
       },
       "since": "2026-09-22",
       "lasting": false
@@ -171,8 +1510,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 42,
-        "moments": 173
+        "skillLoads": 53,
+        "moments": 260
       },
       "since": "2026-09-22",
       "lasting": false
@@ -191,8 +1530,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 16,
-        "moments": 200
+        "skillLoads": 27,
+        "moments": 295
       },
       "since": "2026-09-22",
       "lasting": false
@@ -211,8 +1550,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 35,
-        "moments": 79
+        "skillLoads": 49,
+        "moments": 104
       },
       "since": "2026-09-22",
       "lasting": false
@@ -231,7 +1570,7 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 1,
+        "skillLoads": 3,
         "moments": 19
       },
       "since": "2026-09-22",
@@ -251,8 +1590,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 54,
-        "moments": 308
+        "skillLoads": 68,
+        "moments": 396
       },
       "since": "2026-09-22",
       "lasting": false
@@ -271,8 +1610,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 17,
-        "moments": 57
+        "skillLoads": 20,
+        "moments": 59
       },
       "since": "2026-09-22",
       "lasting": false
@@ -311,7 +1650,7 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 4,
+        "skillLoads": 5,
         "moments": 23
       },
       "since": "2026-09-22",
@@ -331,8 +1670,8 @@
       "finding": "its declared moments occurred and the skill was not loaded for most of them",
       "recommendation": "the trigger is mechanical, so this is a fault in the declaration or the hook: reproduce one moment against the guard",
       "figures": {
-        "skillLoads": 14,
-        "moments": 76
+        "skillLoads": 17,
+        "moments": 80
       },
       "since": "2026-09-22",
       "lasting": false
@@ -352,7 +1691,7 @@
       "recommendation": "usually a pattern matching text that merely mentions the symptom - tighten it to the tool's own result shape; the fires' contexts are in the finding",
       "figures": {
         "triggerFollowed": 0,
-        "triggerFired": 6
+        "triggerFired": 7
       },
       "since": "2026-09-25",
       "lasting": false
@@ -401,14 +1740,6 @@
     },
     {
       "rule": "advisory-ignored",
-      "subject": "claude-md-length",
-      "pack": "basics",
-      "name": "advisory",
-      "need": 10,
-      "have": 8
-    },
-    {
-      "rule": "advisory-ignored",
       "subject": "claudinite-isolation",
       "pack": "claudinite-lifecycle",
       "name": "advisory",
@@ -501,7 +1832,7 @@
       "pack": "claudinite-growth",
       "name": "advisory",
       "need": 10,
-      "have": null
+      "have": 0
     },
     {
       "rule": "advisory-ignored",
@@ -557,7 +1888,7 @@
       "pack": "edfringe-now",
       "name": "advisory",
       "need": 10,
-      "have": null
+      "have": 0
     },
     {
       "rule": "advisory-ignored",
@@ -581,7 +1912,7 @@
       "pack": "executable-requirements",
       "name": "advisory",
       "need": 10,
-      "have": null
+      "have": 0
     },
     {
       "rule": "advisory-ignored",
@@ -773,7 +2104,7 @@
       "pack": "product-wiki",
       "name": "advisory",
       "need": 10,
-      "have": null
+      "have": 0
     },
     {
       "rule": "advisory-ignored",
@@ -805,7 +2136,7 @@
       "pack": "claudinite-growth",
       "name": "advisory",
       "need": 10,
-      "have": 3
+      "have": 8
     },
     {
       "rule": "advisory-ignored",
@@ -1043,2113 +2374,481 @@
       "rule": "check-fires-most-sessions",
       "subject": "adoption-answers-pending",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "automerge-policy-scope",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "barrier",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "catalog-completeness",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "check-ships-with-test",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "claude-md-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "claudinite-isolation",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "claudinite-lifecycle-declared",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "cloudflare-site/beacon-token-is-not-committed",
       "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "cloudflare-site/no-second-publisher",
       "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "cloudflare-site/publishes-a-site-directory",
       "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "comment-classification-form",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "conformance-work-scope",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "conformance-workflow",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "declared-check-messages",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "declared-check-since",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "declared-check-spec-keys",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "dedup-prune-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "doc-pointers-resolve",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "edfringe-data-dir-is-generator-output",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "edfringe-lookup-indices",
       "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "edfringe-no-stray-package-json",
       "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "edfringe-normalizer-selftest-in-verify",
       "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "edfringe-test-globs-in-step",
       "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "edfringe-verify-sh-covers-source-dirs",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "edfringe-worker-restores-main",
       "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "executor-workflow-secrets",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "feature-requirements-first",
-      "pack": "executable-requirements",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "generated-merge-driver",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/checkout-submodules",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/cron-minute-off-the-hour",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/label-create-before-add",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/no-scheduled-fleet-executor",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/pages-artifact-symlinks",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/run-pipefail",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/scheduled-failure-escalation",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/secrets-in-job-if",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "gha/unique-automation-branch",
       "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "growth-write-scope",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "improve-comments-scope",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "in-session-github-access",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "interview-answer-stale",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "legacy-check-spellings",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "legacy-shape-in-use",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "markdown-link-labels",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "no-conflict-markers",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "preferences-provenance",
       "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "preferences-store-configured",
       "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "preferences-store-file-names",
       "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "product-wiki-freshness",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "product-wiki-growth-log",
       "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "product-wiki-isolation",
       "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "product-wiki-key-insights",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "product-wiki-layout",
       "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "product-wiki-page-sections",
       "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "product-wiki-sources",
       "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "provenance-change-recorded",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "provenance-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "public-website/version-stamp-matches-package",
       "pack": "public-website",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "queue-mark-named-literally",
       "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "reference-integrity",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "repo-variables-through-the-bag",
       "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "routine-structure",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "rules-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "rules-line-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "runnable-doc-commands",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "scheduler-workflow-shape",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "schema-conformance",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "seeded-file-stale",
       "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "shared-constants",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "shared-tree-immutable",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "skill-description-length",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "skill-loaded-before-editing",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "skills-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "squash-merge-history",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "task-code-work-env",
       "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "task-declaration-matches-folder",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "task-declaration-shape",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "task-md-only-when-agentic",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "task-phase-discipline",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "task-worker-restores-main",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "tasks-pack-read-through-its-surface",
       "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "technology-skill-cites-dated-sources",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "technology-skill-code-imports-inside-its-folder",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "technology-skill-links-inside-its-folder",
       "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "untracked-test-file",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-fires-most-sessions",
-      "subject": "warning-suppression",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-fires-most-sessions",
       "subject": "work-request-not-started",
       "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "adoption-answers-pending",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "automerge-policy-scope",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "barrier",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "catalog-completeness",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "check-ships-with-test",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "claude-md-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "claudinite-isolation",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "claudinite-lifecycle-declared",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "cloudflare-site/beacon-token-is-not-committed",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "cloudflare-site/no-second-publisher",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "cloudflare-site/publishes-a-site-directory",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "comment-classification-form",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "conformance-work-scope",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "conformance-workflow",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "declared-check-messages",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "declared-check-since",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "declared-check-spec-keys",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "dedup-prune-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "doc-pointers-resolve",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-data-dir-is-generator-output",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-lookup-indices",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-no-stray-package-json",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-normalizer-selftest-in-verify",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-test-globs-in-step",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-verify-sh-covers-source-dirs",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "edfringe-worker-restores-main",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "executor-workflow-secrets",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "feature-requirements-first",
-      "pack": "executable-requirements",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "generated-merge-driver",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/checkout-submodules",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/cron-minute-off-the-hour",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/label-create-before-add",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/no-scheduled-fleet-executor",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/pages-artifact-symlinks",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/run-pipefail",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/scheduled-failure-escalation",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/secrets-in-job-if",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "gha/unique-automation-branch",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "growth-write-scope",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "improve-comments-scope",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "in-session-github-access",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "interview-answer-stale",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "legacy-check-spellings",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "legacy-shape-in-use",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "markdown-link-labels",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "no-conflict-markers",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "preferences-provenance",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "preferences-store-configured",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "preferences-store-file-names",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-freshness",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-growth-log",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-isolation",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-key-insights",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-layout",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-page-sections",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "product-wiki-sources",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "provenance-change-recorded",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "provenance-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "public-website/version-stamp-matches-package",
-      "pack": "public-website",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "queue-mark-named-literally",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "reference-integrity",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "repo-variables-through-the-bag",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "routine-structure",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "rules-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "rules-line-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "runnable-doc-commands",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "scheduler-workflow-shape",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "schema-conformance",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "seeded-file-stale",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "shared-constants",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "shared-tree-immutable",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "skill-description-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "skill-loaded-before-editing",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "skills-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "squash-merge-history",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-code-work-env",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-declaration-matches-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-declaration-shape",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-md-only-when-agentic",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-phase-discipline",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "task-worker-restores-main",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "tasks-pack-read-through-its-surface",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "technology-skill-cites-dated-sources",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "technology-skill-code-imports-inside-its-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "technology-skill-links-inside-its-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "untracked-test-file",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "warning-suppression",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires",
-      "subject": "work-request-not-started",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "adoption-answers-pending",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "automerge-policy-scope",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "barrier",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "catalog-completeness",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "check-ships-with-test",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "claude-md-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "claudinite-isolation",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "claudinite-lifecycle-declared",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "cloudflare-site/beacon-token-is-not-committed",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "cloudflare-site/no-second-publisher",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "cloudflare-site/publishes-a-site-directory",
-      "pack": "cloudflare-site",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "comment-classification-form",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "conformance-work-scope",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "conformance-workflow",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "declared-check-messages",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "declared-check-since",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "declared-check-spec-keys",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "dedup-prune-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "doc-pointers-resolve",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-data-dir-is-generator-output",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-lookup-indices",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-no-stray-package-json",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-normalizer-selftest-in-verify",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-test-globs-in-step",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-verify-sh-covers-source-dirs",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "edfringe-worker-restores-main",
-      "pack": "edfringe-now",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "executor-workflow-secrets",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "feature-requirements-first",
-      "pack": "executable-requirements",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "generated-merge-driver",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/checkout-submodules",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/cron-minute-off-the-hour",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/label-create-before-add",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/no-scheduled-fleet-executor",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/pages-artifact-symlinks",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/run-pipefail",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/scheduled-failure-escalation",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/secrets-in-job-if",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "gha/unique-automation-branch",
-      "pack": "git-github",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "growth-write-scope",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "improve-comments-scope",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "in-session-github-access",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "interview-answer-stale",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "legacy-check-spellings",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "legacy-shape-in-use",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "markdown-link-labels",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "no-conflict-markers",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "preferences-provenance",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "preferences-store-configured",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "preferences-store-file-names",
-      "pack": "claude-code-web-users-support",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-freshness",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-growth-log",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-isolation",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-key-insights",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-layout",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-page-sections",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "product-wiki-sources",
-      "pack": "product-wiki",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "provenance-change-recorded",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "provenance-integrity",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "public-website/version-stamp-matches-package",
-      "pack": "public-website",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "queue-mark-named-literally",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "reference-integrity",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "repo-variables-through-the-bag",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "routine-structure",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "rules-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "rules-line-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "runnable-doc-commands",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "scheduler-workflow-shape",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "schema-conformance",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "seeded-file-stale",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "shared-constants",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "shared-tree-immutable",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "skill-description-length",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "skill-loaded-before-editing",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "skills-index-current",
-      "pack": "claudinite-lifecycle",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "squash-merge-history",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-code-work-env",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-declaration-matches-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-declaration-shape",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-md-only-when-agentic",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-phase-discipline",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "task-worker-restores-main",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "tasks-pack-read-through-its-surface",
-      "pack": "claudinite-tasks",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "technology-skill-cites-dated-sources",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "technology-skill-code-imports-inside-its-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "technology-skill-links-inside-its-folder",
-      "pack": "claudinite-growth",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "untracked-test-file",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "warning-suppression",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "check-never-fires-with-prose-twin",
-      "subject": "work-request-not-started",
-      "pack": "basics",
-      "name": "activity",
-      "need": 120,
-      "have": 97.368356
+      "name": "checkSessions / sessions >= 0.5",
+      "need": null,
+      "have": null
     },
     {
       "rule": "check-unsatisfiable",
@@ -3241,14 +2940,6 @@
     },
     {
       "rule": "check-unsatisfiable",
-      "subject": "dedup-prune-integrity",
-      "pack": "claudinite-growth",
-      "name": "relent >= 1",
-      "need": null,
-      "have": null
-    },
-    {
-      "rule": "check-unsatisfiable",
       "subject": "doc-pointers-resolve",
       "pack": "claudinite-growth",
       "name": "relent >= 1",
@@ -3289,24 +2980,8 @@
     },
     {
       "rule": "check-unsatisfiable",
-      "subject": "edfringe-verify-sh-covers-source-dirs",
-      "pack": "edfringe-now",
-      "name": "relent >= 1",
-      "need": null,
-      "have": null
-    },
-    {
-      "rule": "check-unsatisfiable",
       "subject": "edfringe-worker-restores-main",
       "pack": "edfringe-now",
-      "name": "relent >= 1",
-      "need": null,
-      "have": null
-    },
-    {
-      "rule": "check-unsatisfiable",
-      "subject": "feature-requirements-first",
-      "pack": "executable-requirements",
       "name": "relent >= 1",
       "need": null,
       "have": null
@@ -3466,14 +3141,6 @@
     {
       "rule": "check-unsatisfiable",
       "subject": "product-wiki-isolation",
-      "pack": "product-wiki",
-      "name": "relent >= 1",
-      "need": null,
-      "have": null
-    },
-    {
-      "rule": "check-unsatisfiable",
-      "subject": "product-wiki-key-insights",
       "pack": "product-wiki",
       "name": "relent >= 1",
       "need": null,
@@ -3667,17 +3334,9 @@
       "rule": "checks-slower",
       "subject": "checks",
       "pack": null,
-      "name": "activity",
+      "name": "previous.activity",
       "need": 120,
-      "have": 97.368356
-    },
-    {
-      "rule": "guard-overruled",
-      "subject": "bare-wait-in-fresh-shell",
-      "pack": "basics",
-      "name": "guardAdvisory / sessions >= 0.5",
-      "need": null,
-      "have": null
+      "have": 1
     },
     {
       "rule": "guard-overruled",
@@ -4113,14 +3772,6 @@
     },
     {
       "rule": "skill-forced-only-small",
-      "subject": "data-pipeline",
-      "pack": "edfringe-now",
-      "name": "skillLoads",
-      "need": 5,
-      "have": 0
-    },
-    {
-      "rule": "skill-forced-only-small",
       "subject": "deterministic-expecteds",
       "pack": "executable-requirements",
       "name": "skillLoads",
@@ -4142,14 +3793,6 @@
       "name": "skillLoads",
       "need": 5,
       "have": 0
-    },
-    {
-      "rule": "skill-forced-only-small",
-      "subject": "extract-from-activity",
-      "pack": "claudinite-growth",
-      "name": "skillLoads",
-      "need": 5,
-      "have": 4
     },
     {
       "rule": "skill-forced-only-small",
@@ -4229,7 +3872,7 @@
       "pack": "cloudflare-site",
       "name": "skillLoads",
       "need": 5,
-      "have": 1
+      "have": 3
     },
     {
       "rule": "skill-forced-only-small",
@@ -4238,14 +3881,6 @@
       "name": "skillLoads",
       "need": 5,
       "have": 1
-    },
-    {
-      "rule": "skill-forced-only-small",
-      "subject": "requirements-harness",
-      "pack": "edfringe-now",
-      "name": "skillLoads",
-      "need": 5,
-      "have": 0
     },
     {
       "rule": "skill-forced-only-small",
@@ -4277,7 +3912,7 @@
       "pack": "executable-requirements",
       "name": "skillLoads",
       "need": 5,
-      "have": 1
+      "have": 2
     },
     {
       "rule": "skill-forced-only-small",
@@ -4293,7 +3928,7 @@
       "pack": "basics",
       "name": "skillLoads",
       "need": 5,
-      "have": 3
+      "have": 4
     },
     {
       "rule": "skill-forced-only-small",
@@ -4310,22 +3945,6 @@
       "name": "skillLoads",
       "need": 5,
       "have": 2
-    },
-    {
-      "rule": "skill-forced-only-small",
-      "subject": "writing-tasks",
-      "pack": "claudinite-growth",
-      "name": "skillLoads",
-      "need": 5,
-      "have": 4
-    },
-    {
-      "rule": "skill-forced-only-small",
-      "subject": "writing-wiki-pages",
-      "pack": "product-wiki",
-      "name": "skillLoads",
-      "need": 5,
-      "have": 4
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4377,14 +3996,6 @@
     },
     {
       "rule": "skill-loaded-still-caught",
-      "subject": "data-pipeline",
-      "pack": "edfringe-now",
-      "name": "skillSessions",
-      "need": 5,
-      "have": 0
-    },
-    {
-      "rule": "skill-loaded-still-caught",
       "subject": "deterministic-expecteds",
       "pack": "executable-requirements",
       "name": "skillSessions",
@@ -4429,7 +4040,7 @@
       "pack": "git-github",
       "name": "skillSessions",
       "need": 5,
-      "have": 1
+      "have": 2
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4445,7 +4056,7 @@
       "pack": "claudinite-growth",
       "name": "skillSessions",
       "need": 5,
-      "have": 2
+      "have": 3
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4477,7 +4088,7 @@
       "pack": "cloudflare-site",
       "name": "skillSessions",
       "need": 5,
-      "have": 1
+      "have": 3
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4486,14 +4097,6 @@
       "name": "skillSessions",
       "need": 5,
       "have": 1
-    },
-    {
-      "rule": "skill-loaded-still-caught",
-      "subject": "requirements-harness",
-      "pack": "edfringe-now",
-      "name": "skillSessions",
-      "need": 5,
-      "have": 0
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4525,7 +4128,7 @@
       "pack": "executable-requirements",
       "name": "skillSessions",
       "need": 5,
-      "have": 1
+      "have": 2
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4541,7 +4144,7 @@
       "pack": "basics",
       "name": "skillSessions",
       "need": 5,
-      "have": 3
+      "have": 4
     },
     {
       "rule": "skill-loaded-still-caught",
@@ -4558,14 +4161,6 @@
       "name": "skillSessions",
       "need": 5,
       "have": 2
-    },
-    {
-      "rule": "skill-loaded-still-caught",
-      "subject": "writing-tasks",
-      "pack": "claudinite-growth",
-      "name": "skillSessions",
-      "need": 5,
-      "have": 4
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -4622,14 +4217,6 @@
       "name": "moments",
       "need": 5,
       "have": 0
-    },
-    {
-      "rule": "skill-triggered-missing-moments",
-      "subject": "writing-handover-issues",
-      "pack": "basics",
-      "name": "moments",
-      "need": 5,
-      "have": 4
     },
     {
       "rule": "skill-triggered-missing-moments",
