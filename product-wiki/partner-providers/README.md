@@ -122,8 +122,13 @@ The **discovery** layer is open, but paid and earns nothing:
   no commission.
 - **Yelp Places API** — paid plans after a free trial (the plan page
   404'd here); it also documents a Reservations API, partner-only.
-- **Foursquare Places API** — pricing page reached, but the Places API
-  price was not on it (NOT FOUND this pass).
+- **Foursquare Places API** — priced since new Places API/V2 Pro-endpoint
+  rates took effect 1 June 2026 (the old V3 endpoints deprecated 15 May
+  2026): pay-as-you-go, roughly 500 free Pro calls a month then **$15 per
+  1,000 calls** (Place Search, Place Details, Autocomplete); Tips & Photos
+  and premium-field requests sit in a costlier Premium tier **(2026-09-27,
+  search-attributed — foursquare.com did not load from here)**. No
+  booking, no commission.
 - **Tripadvisor Content API** — the developer page returned 403.
 
 **What this means.** For restaurants, the most we can do is: use Places
@@ -160,7 +165,14 @@ restaurant is on that platform. A true "these three tables are free at
   book, so booking **in our UI** is possible. We would be the seller (their
   margin model, not an affiliate cookie) — a bigger commitment with
   customer-service duties. Pricing not published.
-- **Airbnb** — no affiliate programme found this pass (unverified).
+- **Airbnb** — confirmed 2026-09-27: no public, cash-paying affiliate
+  programme for a site like ours. What exists is application-only —
+  **Airbnb Creators** (social-media influencers) and **Airbnb Demand**
+  (bloggers/publishers) — plus a "refer a host" scheme that pays the
+  *referrer* $15 per host once they get one guest stay (capped at $375),
+  not a per-booking rate on guest traffic we'd send **(search-attributed —
+  airbnb.com did not load from here)**. Closed for our purpose, not merely
+  unfound.
 - **Amadeus hotel APIs** — gone for new developers (see transport).
 
 ## 4. Getting there and getting around
@@ -190,7 +202,11 @@ restaurant is on that platform. A true "these three tables are free at
   APIs such as TfL's are free but London-only.
 - **Taxis** — Uber has an affiliate programme on Impact that pays for
   *new* riders (about $5 each), not per ride **(search-attributed; its
-  developer page 404'd)**. Bolt: NOT FOUND.
+  developer page 404'd)**. Bolt's only public referral scheme is
+  **B2B** — "Bolt for Business", paying €150 per company it signs up, not
+  a per-ride consumer rate — so, like Uber's, it rewards new-account
+  acquisition rather than the trips a plan would actually generate
+  **(2026-09-27, search-attributed — bolt.eu did not load from here)**.
 - **Car hire** — **DiscoverCars** pays 70% of its rental profit plus 30% of
   its cover revenue (~$20 per booking), with a **365-day cookie**; Booking's
   CJ programme quotes ~6% on cars **(search-attributed)**. Relevant for
@@ -314,6 +330,12 @@ All fetched 2026-09-25.
 - [Tiqets Distributor API](https://api.tiqets.com/v2/docs/) — catalogue, availability, booking flow, affiliates@tiqets.com.
 - [Civitatis affiliates](https://www.civitatis.com/en/affiliates/) and [Go City affiliate](https://gocity.com/en/affiliate-program) (403) — rates search-attributed.
 
+Fetched 2026-09-27 (search-attributed; foursquare.com, airbnb.com and bolt.eu all failed to load from here):
+
+- [Foursquare — pay-as-you-go Places API pricing announcement](https://foursquare.com/resources/blog/news/heads-up-developers-with-fsq-places-api-you-can-now-pay-as-you-go/) and [upcoming Places API changes](https://docs.foursquare.com/developer/reference/upcoming-changes) — the 1 June 2026 Pro-endpoint rate change and 15 May 2026 V3 deprecation; per-1,000-call rate and free-call tier via [openplacesapi.com's Foursquare pricing comparison](https://openplacesapi.com/compare/foursquare-places-api).
+- [Airbnb's affiliate program (Airbnb Help Center)](https://www.airbnb.com/help/article/4236) — Creators and Demand programmes are application-only; [track360's Airbnb affiliate teardown](https://track360.io/blog/airbnb-vacation-rental-affiliate-referral-programs-operator-teardown-2026) and [PriceLabs on why the old affiliate programme ended](https://hello.pricelabs.co/blog/airbnb-affiliate-program/) — no cash commission on guest bookings; the host-referral cash payout ($15/host, $375 cap) is separate from either.
+- [Bolt for Business affiliate listing (OpenAffiliate)](https://openaffiliate.dev/programs/bolt-for-business) — €150 per referred company; no consumer per-ride affiliate programme found alongside it.
+
 ## Open questions
 
 - **OpenTable's actual affiliate rate and API route** — opentable.com
@@ -327,8 +349,15 @@ All fetched 2026-09-25.
   Needs real numbers from both dashboards.
 - **LiteAPI's pricing and duties** as a seller of record (refunds, customer
   service) — would it be worth booking hotels inside the plan?
-- **Airbnb, Bolt, Musement/TUI, Foursquare's Places price** — not found
-  this pass.
+- **Musement/TUI** — still not researched.
+  **Answered 2026-09-27, the other three**: Airbnb has no cash affiliate
+  route open to us (Creators/Demand are application-gated, and the host
+  referral scheme pays for referred hosts, not guest bookings); Bolt's only
+  public referral scheme is B2B company sign-ups, not consumer rides; and
+  Foursquare's Places API is priced (pay-as-you-go, ~500 free Pro calls a
+  month then $15/1,000) as of its 1 June 2026 rate change — all three
+  search-attributed, since foursquare.com, airbnb.com and bolt.eu did not
+  load from here this pass either.
 - **OSM `opening_hours` coverage** for attractions in each of our cities —
   unmeasured; it decides how much hand-curation the fallback needs.
 - **Do any festival box offices take agents in-season** (group or hotel
@@ -348,3 +377,23 @@ All fetched 2026-09-25.
   one open route to on-page checkout; Amadeus Self-Service and Kiwi Tequila
   are closed. Short-list per category added; integration decisions left to
   humans.
+- **2026-09-27** — worked three of the page's "not found this pass" gaps
+  (`WebFetch` still returns `EGRESS_BLOCKED` on every host probed this
+  pass — foursquare.com, airbnb.com, bolt.eu, news.leicester.gov.uk and,
+  as a control, example.com all failed identically, confirming the block
+  is session-wide rather than domain-specific, as recorded on other pages;
+  `WebSearch` still returns live snippets). Foursquare's Places API
+  turned out to be priced (pay-as-you-go, ~500 free Pro calls/month then
+  $15/1,000) since a 1 June 2026 rate change — closing a real gap in
+  section 2's discovery-layer table.
+  Airbnb and Bolt both resolve from "not found" to a firm "closed for our
+  purpose": Airbnb has no cash affiliate route for guest bookings (only
+  gated Creator/Demand programmes and a host-referral payout), and Bolt's
+  only public referral scheme pays for B2B company sign-ups, not consumer
+  rides — both narrow, not merely fill, their sections' NOT FOUND lines and
+  the corresponding open-question bullet. All three search-attributed, so
+  flagged for re-verification once a fetch-capable pass is possible.
+  Spot-checked the Leicester 2027 succession question and the Pittock
+  Fringe impact study (both on sibling pages) for anything new this pass
+  might supersede — neither has moved since its last update, so nothing
+  else changed.
