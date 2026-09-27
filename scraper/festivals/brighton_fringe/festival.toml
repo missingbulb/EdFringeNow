@@ -18,6 +18,8 @@ default_genre = "other"
 site = "https://www.brightonfringe.org"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.brightonfringe.org"
 notes = "Central box office on brightonfringe.org (the Eventotron plugin with Stripe): one basket across shows. Price bands per performance are read from the event pages; no seat-level availability is published, only a cancelled or sold-out mark."
 currency = "GBP"
 

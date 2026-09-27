@@ -80,6 +80,13 @@ def edition_entry(festival, ed):
     return entry
 
 
+def ticketing_entry(festival):
+    """How the festival sells tickets, for the planner's checkout: an unstated
+    model stays null, which the page reads as not known."""
+    table = festival.get("ticketing") or {}
+    return {"model": table.get("model"), "url": table.get("url")}
+
+
 def build_index(festivals):
     entries = []
     for fid in sorted(festivals):
@@ -98,6 +105,7 @@ def build_index(festivals):
             "kind": f["kind"],
             "defaultGenre": f["default_genre"],
             "site": f["site"],
+            "ticketing": ticketing_entry(f),
             "editions": [edition_entry(f, ed) for ed in sorted(f["edition"], key=lambda e: e["id"])],
         })
     return {"v": schema.VERSION, "festivals": entries}

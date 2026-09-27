@@ -19,6 +19,7 @@
   "firstDate": "2026-08-14",
   "lastDate": "2026-08-30",
   "ticketing": {
+   "model": "per-event-seller",
    "notes": "Most of the programme is free and drop-in; ticketed events sell through Eventbrite, Ticket Tailor or the partner venue's own site. Prices in GBP; the festival site publishes no availability.",
    "currency": "GBP"
   }

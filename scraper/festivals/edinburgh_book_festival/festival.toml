@@ -16,6 +16,8 @@ default_genre = "talk"
 site = "https://www.edbookfest.co.uk"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.edbookfest.co.uk"
 notes = "Sold on edbookfest.co.uk through Spektrix, whose public API publishes every event's seats available against capacity and its price list. Events have no page of their own on the festival site (they hang off author pages), so no event carries a URL."
 currency = "GBP"
 

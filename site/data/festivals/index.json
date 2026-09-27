@@ -15,6 +15,10 @@
    "kind": "theatre",
    "defaultGenre": "theatre",
    "site": "https://accofestival.co.il",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
    "editions": [
     {
      "id": "2026",
@@ -40,6 +44,10 @@
    "kind": "fringe",
    "defaultGenre": "other",
    "site": "https://www.brightonfringe.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.brightonfringe.org"
+   },
    "editions": [
     {
      "id": "2026",
@@ -65,6 +73,10 @@
    "kind": "fringe",
    "defaultGenre": "other",
    "site": "https://www.edfringe.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edfringe.com"
+   },
    "editions": [
     {
      "id": "2026",
@@ -94,6 +106,10 @@
    "kind": "multi",
    "defaultGenre": "other",
    "site": "https://edinburghartfestival.com",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
    "editions": [
     {
      "id": "2026",
@@ -119,6 +135,10 @@
    "kind": "multi",
    "defaultGenre": "talk",
    "site": "https://www.edbookfest.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edbookfest.co.uk"
+   },
    "editions": [
     {
      "id": "2026",
@@ -144,6 +164,10 @@
    "kind": "multi",
    "defaultGenre": "other",
    "site": "https://edinburghdeaffestival.com",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
    "editions": [
     {
      "id": "2026",
@@ -169,6 +193,10 @@
    "kind": "music",
    "defaultGenre": "music",
    "site": "https://www.edintattoo.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://book.edintattoo.co.uk"
+   },
    "editions": [
     {
      "id": "2026",
@@ -202,6 +230,10 @@
    "kind": "multi",
    "defaultGenre": "other",
    "site": "https://www.eif.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.eif.co.uk"
+   },
    "editions": [
     {
      "id": "2026",
@@ -227,6 +259,10 @@
    "kind": "film",
    "defaultGenre": "film",
    "site": "https://www.edfilmfest.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.edfilmfest.org"
+   },
    "editions": [
     {
      "id": "2026",
@@ -252,6 +288,10 @@
    "kind": "multi",
    "defaultGenre": "other",
    "site": "https://www.fringebythesea.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": null
+   },
    "editions": [
     {
      "id": "2026",
@@ -277,6 +317,10 @@
    "kind": "film",
    "defaultGenre": "film",
    "site": "https://www.haifaff.co.il",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.haifaff.co.il"
+   },
    "editions": [
     {
      "id": "2026",
@@ -302,6 +346,10 @@
    "kind": "comedy",
    "defaultGenre": "comedy",
    "site": "https://comedy-festival.co.il",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
    "editions": [
     {
      "id": "2026",
@@ -327,6 +375,10 @@
    "kind": "comedy",
    "defaultGenre": "comedy",
    "site": "https://www.comedy-festival.co.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://events.comedy-festival.co.uk"
+   },
    "editions": [
     {
      "id": "2026",
@@ -352,6 +404,10 @@
    "kind": "comedy",
    "defaultGenre": "comedy",
    "site": "https://www.comedyfestival.com.au",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.comedyfestival.com.au"
+   },
    "editions": [
     {
      "id": "2027",
@@ -377,6 +433,10 @@
    "kind": "comedy",
    "defaultGenre": "comedy",
    "site": "https://www.comedyfestival.co.nz",
+   "ticketing": {
+    "model": "per-event-seller",
+    "url": null
+   },
    "editions": [
     {
      "id": "2027",

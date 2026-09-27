@@ -27,6 +27,8 @@ default_genre = "other"
 site = "https://www.edfringe.com"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.edfringe.com"
 notes = "Sold through edfringe.com's box office, with a price per performance: previews are cheaper and weekends dearer. Availability moves through the festival and is refreshed from the box office."
 
 [[edition]]

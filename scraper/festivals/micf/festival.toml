@@ -21,6 +21,8 @@ default_genre = "comedy"
 site = "https://www.comedyfestival.com.au"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.comedyfestival.com.au"
 notes = "Its own central box office on comedyfestival.com.au (Umbraco): one basket across shows, with an open basket API (addTickets) behind the site. A minority of shows at external venues link out to Ticketmaster, Ticketek or Arts Centre Melbourne."
 currency = "AUD"
 

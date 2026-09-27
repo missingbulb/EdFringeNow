@@ -19,6 +19,8 @@
   "firstDate": "2026-08-15",
   "lastDate": "2026-08-30",
   "ticketing": {
+   "model": "central-box-office",
+   "url": "https://www.edbookfest.co.uk",
    "notes": "Sold on edbookfest.co.uk through Spektrix, whose public API publishes every event's seats available against capacity and its price list. Events have no page of their own on the festival site (they hang off author pages), so no event carries a URL.",
    "currency": "GBP"
   }

@@ -19,6 +19,7 @@
   "firstDate": "2026-07-31",
   "lastDate": "2026-08-09",
   "ticketing": {
+   "model": "central-box-office",
    "notes": "Sold through CitizenTicket, with a box office in the Lodge Grounds and a kiosk at North Berwick Library. Prices in GBP are free text on each show; no availability is published.",
    "currency": "GBP"
   }

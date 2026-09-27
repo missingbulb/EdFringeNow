@@ -16,6 +16,8 @@ default_genre = "other"
 site = "https://www.eif.co.uk"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.eif.co.uk"
 notes = "Sold on eif.co.uk through Spektrix, whose public API publishes every performance's seats available against capacity and its price list."
 currency = "GBP"
 
