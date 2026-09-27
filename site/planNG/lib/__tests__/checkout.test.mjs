@@ -22,6 +22,7 @@ test("the checkout knows every ticketing model the registry accepts, and no othe
 
 test("every festival in the registry says how its tickets are sold", () => {
   const index = JSON.parse(readFileSync(path.join(ROOT, "site", "data", "festivals", "index.json"), "utf8"));
+  assert.ok(index.festivals.length >= 12, "the sweep reads the whole registry");
   for (const festival of index.festivals) {
     assert.ok(TICKETING_MODELS[festival.ticketing?.model], `${festival.id} names a known ticketing model`);
   }
