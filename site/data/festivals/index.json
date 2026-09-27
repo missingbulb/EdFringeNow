@@ -2,6 +2,31 @@
  "v": 1,
  "festivals": [
   {
+   "id": "abu-gosh",
+   "name": "Abu Gosh Music Festival",
+   "nameLocal": "פסטיבל המוזיקה אבו גוש",
+   "city": "Abu Ghosh",
+   "country": "IL",
+   "lat": 31.804722,
+   "lng": 35.110833,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://abugoshfestival.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-09-29",
+     "lastDate": "2026-10-03",
+     "format": "block",
+     "dataUrl": "/data/festivals/abu-gosh/2026.json"
+    }
+   ]
+  },
+  {
    "id": "acco",
    "name": "Acco Festival of Alternative Israeli Theatre",
    "nameLocal": "פסטיבל עכו הבינלאומי לתיאטרון אחר",
