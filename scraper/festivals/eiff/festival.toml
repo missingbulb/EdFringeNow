@@ -19,6 +19,8 @@ default_genre = "film"
 site = "https://www.edfilmfest.org"
 
 [ticketing]
+model = "central-box-office"
+url = "https://www.edfilmfest.org"
 notes = "Sold on edfilmfest.org's own basket (and through the Fringe box office); prices per showing are published as price bands with a concession, plus a £1.25 booking fee per ticket capped at £5 an order. Seats left are published per showing; a sold-out showing shows no venue or price."
 currency = "GBP"
 

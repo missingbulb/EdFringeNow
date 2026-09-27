@@ -19,6 +19,8 @@
   "firstDate": "2026-02-04",
   "lastDate": "2026-02-22",
   "ticketing": {
+   "model": "central-box-office",
+   "url": "https://events.comedy-festival.co.uk",
    "notes": "Central box office on events.comedy-festival.co.uk (the Eventotron plugin with Stripe), the same platform as Brighton Fringe. Price bands per performance are read from the event pages; no seat-level availability is published.",
    "currency": "GBP"
   }

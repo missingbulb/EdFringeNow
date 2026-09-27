@@ -17,6 +17,7 @@ default_genre = "other"
 site = "https://edinburghdeaffestival.com"
 
 [ticketing]
+model = "per-event-seller"
 notes = "Most events sell through Humanitix, many pay-what-you-can; Fringe-registered shows through edfringe.com, and partner tours through Eventbrite or the host venue. Prices in GBP are free text on each event; no availability is published."
 currency = "GBP"
 

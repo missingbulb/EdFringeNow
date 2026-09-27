@@ -20,6 +20,7 @@ default_genre = "comedy"
 site = "https://comedy-festival.co.il"
 
 [ticketing]
+model = "per-event-seller"
 notes = "Sold through smarticket.co.il and eventer.co.il; the festival site publishes no prices and no availability."
 
 [[edition]]

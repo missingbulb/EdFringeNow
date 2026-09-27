@@ -19,6 +19,7 @@
   "firstDate": "2026-10-18",
   "lastDate": "2026-10-22",
   "ticketing": {
+   "model": "per-event-seller",
    "notes": "Sold through smarticket.co.il and eventer.co.il; the festival site publishes no prices and no availability."
   }
  },

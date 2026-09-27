@@ -16,6 +16,7 @@ default_genre = "other"
 site = "https://www.fringebythesea.com"
 
 [ticketing]
+model = "central-box-office"
 notes = "Sold through CitizenTicket, with a box office in the Lodge Grounds and a kiosk at North Berwick Library. Prices in GBP are free text on each show; no availability is published."
 currency = "GBP"
 

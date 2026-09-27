@@ -19,6 +19,8 @@
   "firstDate": "2026-08-07",
   "lastDate": "2026-08-30",
   "ticketing": {
+   "model": "central-box-office",
+   "url": "https://www.eif.co.uk",
    "notes": "Sold on eif.co.uk through Spektrix, whose public API publishes every performance's seats available against capacity and its price list.",
    "currency": "GBP"
   }

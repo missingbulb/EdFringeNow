@@ -26,6 +26,8 @@ site = "https://www.haifaff.co.il"
 # served here, and performance prices stay null unless the programme gives one
 # for that performance.
 [ticketing]
+model = "central-box-office"
+url = "https://www.haifaff.co.il"
 notes = "Flat tariff from the festival's Pricing & Passes page. Tickets are sold through the festival site's basket, run on ethos.smarticket.co.il; call centre *9300. Cancellation is allowed up to 7 days before the screening."
 currency = "ILS"
 source = "https://www.haifaff.co.il/eng/Pricing_|famp|_Passes"

@@ -35,6 +35,8 @@ default_genre = "comedy"          # an event's genre when its adapter assigns no
 site = "https://…"
 
 [ticketing]                       # optional, served as festival.ticketing
+model = "central-box-office"      # how tickets are sold: registry.TICKETING_MODELS
+url = "https://…"                 # where; required for festival-pass
 notes = "…"
 
 [[edition]]
@@ -167,7 +169,8 @@ default.
   absent[], fields{"section.field": [source]}, skipped{source: [...]}}`
 
 The registry `site/data/festivals/index.json` is `{v, festivals[]}`, each with the
-festival identity above and `editions[{id, ordinal, firstDate, lastDate, format,
+festival identity above, `ticketing: {model, url}` (each null where the
+festival's `[ticketing]` does not say) and `editions[{id, ordinal, firstDate, lastDate, format,
 dataUrl}]` (`dataUrl` null until the edition's required raw exists; an
 `edfringe-wire` edition also carries `wire: {lookups, availability}`). The browser loads both
 through `site/shared/festival-catalogue.js`.

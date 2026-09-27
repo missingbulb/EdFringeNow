@@ -33,6 +33,15 @@ SOURCE_KINDS = ("fetched", "curated")
 # festival of several arts with no one of them leading.
 KINDS = ("film", "fringe", "comedy", "theatre", "music", "dance", "art", "literature", "sports", "academic", "multi")
 GENRES = ("film", "comedy", "theatre", "dance", "music", "family", "talk", "other")
+# How a festival sells its tickets, `[ticketing] model`. The festival planner's
+# checkout decides what to open from it (site/planNG/lib/checkout.js), and reads
+# a model it does not know as "other", so one is added here first.
+#   central-box-office  one box office sells every show, each on its own page
+#   per-event-seller    each show sold by its own seller, off the festival's site
+#   festival-pass       one pass covers the programme; `url` is where it is sold
+#   all-free            nothing to buy
+#   other               anything else; `notes` says what
+TICKETING_MODELS = ("central-box-office", "per-event-seller", "festival-pass", "all-free", "other")
 
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 EDITION_RE = re.compile(r"^\d{4}$")
@@ -80,6 +89,11 @@ def _check(festival, path):
         raise RegistryError("%s: default_genre %r not in %s" % (where, festival["default_genre"], GENRES))
     if festival["dir"] not in ("ltr", "rtl"):
         raise RegistryError("%s: dir must be ltr or rtl" % where)
+    ticketing = festival.get("ticketing") or {}
+    if "model" in ticketing and ticketing["model"] not in TICKETING_MODELS:
+        raise RegistryError("%s: [ticketing] model %r not in %s" % (where, ticketing["model"], TICKETING_MODELS))
+    if ticketing.get("model") == "festival-pass" and not ticketing.get("url"):
+        raise RegistryError("%s: a festival-pass [ticketing] names the url the pass is sold at" % where)
 
     editions = festival.get("edition") or []
     if not editions:

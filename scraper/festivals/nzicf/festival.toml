@@ -25,6 +25,7 @@ default_genre = "comedy"
 site = "https://www.comedyfestival.co.nz"
 
 [ticketing]
+model = "per-event-seller"
 notes = "No central basket: each show links out to its own agent (Ticketmaster, Q Theatre, Eventfinda or iTicket)."
 currency = "NZD"
 
