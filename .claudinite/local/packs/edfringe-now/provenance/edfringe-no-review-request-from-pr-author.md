@@ -11,3 +11,11 @@
   "missingbulb") — blocks the call at PreToolUse and names the fix (assign instead, or leave
   reviewers empty).
 - **Actor:** the growth-extract run, item #906.
+
+## 2026-09-27 · severity-changed · on_fail replaces severity on this declared check (#927)
+- **Reason:** the engine's severity→on_fail rename (canon migration) landed on this declaration
+  during a routine Claudinite update; carried through with no behavior change (`block` is
+  `blocking`'s new spelling).
+- **Mechanism:** `declared-checks.json`'s `"severity": "blocking"` field became `"on_fail":
+  "block"`, same enforcement.
+- **Actor:** the claudinite-lifecycle/update task, item #927.
