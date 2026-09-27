@@ -23,6 +23,8 @@ site = "https://indnegev.co.il"
 # One ticket is the whole festival (or a day of it); no set is sold on its own,
 # so every performance's price stays null.
 [ticketing]
+model = "festival-pass"
+url = "https://www.eventer.co.il/ind2026"
 notes = "Festival and day tickets, with camping, are sold through eventer.co.il/ind2026; no set is ticketed on its own."
 source = "https://indnegev.co.il/#tickets"
 

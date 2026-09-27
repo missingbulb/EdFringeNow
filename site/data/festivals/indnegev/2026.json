@@ -19,6 +19,8 @@
   "firstDate": "2026-10-15",
   "lastDate": "2026-10-17",
   "ticketing": {
+   "model": "festival-pass",
+   "url": "https://www.eventer.co.il/ind2026",
    "notes": "Festival and day tickets, with camping, are sold through eventer.co.il/ind2026; no set is ticketed on its own.",
    "source": "https://indnegev.co.il/#tickets"
   }
