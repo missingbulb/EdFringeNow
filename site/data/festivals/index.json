@@ -462,6 +462,31 @@
      "dataUrl": null
     }
    ]
+  },
+  {
+   "id": "tel-aviv-festival",
+   "name": "Tel Aviv Festival",
+   "nameLocal": "פסטיבל תל־אביב",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "multi",
+   "defaultGenre": "music",
+   "site": "https://telavivfestival.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 2,
+     "firstDate": "2026-11-01",
+     "lastDate": "2026-11-08",
+     "format": "block",
+     "dataUrl": "/data/festivals/tel-aviv-festival/2026.json"
+    }
+   ]
   }
  ]
 }

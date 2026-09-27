@@ -1,0 +1,68 @@
+# The Tel Aviv Festival: who it is, its editions, and the sources an edition's
+# information block is assembled from. Every key follows the contract in
+# scraper/festivals/README.md.
+
+id = "tel-aviv-festival"
+name = "Tel Aviv Festival"
+name_local = "פסטיבל תל־אביב"
+city = "Tel Aviv"
+country = "IL"
+# The Tel Aviv Museum of Art, where the two museum nights play (the pin
+# curated/venues.json cites), for the timeline and travel maths between cities.
+lat = 32.0775
+lng = 34.78667
+timezone = "Asia/Jerusalem"
+# The site is Hebrew only.
+lang = "he"
+dir = "rtl"
+kind = "multi"
+subtypes = ["music-israeli", "art-museum"]
+default_genre = "music"
+site = "https://telavivfestival.co.il"
+
+# The programme's own pricing, read from its settings and shows. Every
+# performance's price is derived from these figures in
+# scraper/convert/adapters/tel_aviv_festival/festival_site.py, whose docstring
+# says how.
+[ticketing]
+notes = "The museum nights (4 and 5 November) are sold as a Night Pass (פס ערב במוזיאון תל־אביב לאמנות) at 159 ₪ for that evening: all the galleries, the sculpture garden and the shows in them, entry to the galleries on a space-available basis. One hall show a night is bought on top of the pass as an add-on (30-60 ₪), sold on Ticketmaster only as a combined pass + show ticket, so its price here is the pass plus the add-on. The opening, the Friday noon shows, the after party and the closing are sold separately; the Friday noon shows are also sold as an add-on to a Wednesday or Thursday pass. Digitel holders get benefits. Tickets are sold through Ticketmaster Israel."
+currency = "ILS"
+source = "https://telavivfestival.co.il/program"
+# The museum nights' Night Pass with its add-ons is the festival's ticket; the
+# site's tickets section links each pass and separate show to Ticketmaster.
+model = "festival-pass"
+url = "https://telavivfestival.co.il/#tickets"
+
+[ticketing.passes]
+nightPass = 159
+
+[[edition]]
+id = "2026"
+format = "block"
+# The site's about text: "פסטיבל תל־אביב חוזר בפעם השנייה" (returns for the second time).
+ordinal = 2
+first = "2026-11-01"
+last = "2026-11-08"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "tel_aviv_festival/venues_research.py"
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "availability", "prices"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "tel_aviv_festival/festival_site.py"
+
+# Field precedence per section: for each field, the first source listed here
+# that supplies it wins.
+[merge]
+venues = ["venues-research"]
+events = ["festival-site"]
+performances = ["festival-site"]
