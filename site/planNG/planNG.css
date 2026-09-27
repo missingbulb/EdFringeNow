@@ -1028,6 +1028,18 @@ body.festival-page {
 .fest-row {
   align-items: flex-start;
 }
+/* Online shows sit in the festivals list like a festival of their own, a
+   picture where a festival's stripe would be. */
+.fest-row--online {
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.fest-online {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
 .fest-row input {
   margin-top: 3px;
 }
@@ -1272,6 +1284,19 @@ body.festival-page {
 .sch-dayline--start.is-beyond .dl-flag {
   bottom: auto;
   top: 6px;
+}
+/* Likewise an end boundary on the axis bottom lifts its flag above the line:
+   hung below, it would stick out of the calendar and give it a scrollbar. */
+.sch-dayline--end.is-floor .dl-flag {
+  top: auto;
+  bottom: 6px;
+}
+/* The calendar scrolls sideways when its days outgrow the page, which makes
+   it a scroll box on both axes: room below the axis keeps what straddles the
+   bottom line (the last hour's label, the end line's grip) inside it, so it
+   never scrolls up and down. */
+.schedule {
+  padding-bottom: 10px;
 }
 
 /* The hatch plan.css draws over its zones is tuned for a white board; in the

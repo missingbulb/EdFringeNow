@@ -13,8 +13,16 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "music",
+   "subtypes": [
+    "music-classical",
+    "music-vocal"
+   ],
    "defaultGenre": "music",
    "site": "https://abugoshfestival.co.il",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://agfestival.smarticket.co.il/"
+   },
    "editions": [
     {
      "id": "2026",
@@ -394,8 +402,16 @@
    "lang": "he",
    "dir": "rtl",
    "kind": "music",
+   "subtypes": [
+    "music-indie",
+    "music-israeli"
+   ],
    "defaultGenre": "music",
    "site": "https://indnegev.co.il",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://www.eventer.co.il/ind2026"
+   },
    "editions": [
     {
      "id": "2026",
@@ -419,8 +435,16 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "multi",
+   "subtypes": [
+    "academic-radiology",
+    "academic-medicine"
+   ],
    "defaultGenre": "talk",
    "site": "https://events.ortra.com/isra2026",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://events.ortra.com/isra2026/Registration"
+   },
    "editions": [
     {
      "id": "2026",
@@ -476,8 +500,16 @@
    "lang": "he",
    "dir": "rtl",
    "kind": "music",
+   "subtypes": [
+    "music-oud",
+    "music-world"
+   ],
    "defaultGenre": "music",
    "site": "https://www.confederationhouse.org/page_18014",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.confederationhouse.org/page_18014"
+   },
    "editions": [
     {
      "id": "2026",
@@ -597,8 +629,16 @@
    "lang": "he",
    "dir": "rtl",
    "kind": "multi",
+   "subtypes": [
+    "music-israeli",
+    "art-museum"
+   ],
    "defaultGenre": "music",
    "site": "https://telavivfestival.co.il",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://telavivfestival.co.il/#tickets"
+   },
    "editions": [
     {
      "id": "2026",

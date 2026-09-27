@@ -51,6 +51,7 @@
    "address": null,
    "lat": 31.80742778,
    "lng": 35.10738611,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],
@@ -66,6 +67,7 @@
    "address": "Kiryat Ye'arim Church, Abu Ghosh",
    "lat": 31.808572,
    "lng": 35.103834,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [
@@ -95,6 +97,7 @@
    "address": "27 Shaul HaMelech Blvd, Tel Aviv",
    "lat": 32.0775,
    "lng": 34.786667,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],

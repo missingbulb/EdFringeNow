@@ -95,8 +95,8 @@ export function adaptFestival(block) {
     const performances = performancesByEvent.get(event.id) || [];
     const venueCodes = [...new Set(performances.map((p) => p.venueId).filter(Boolean))];
     // The engine plans one venue per show; a show playing several is given its
-    // first and the lane names all of them.
-    const venueCode = venueCodes[0] || null;
+    // first place (a stream of it is no place) and the lane names all of them.
+    const venueCode = venueCodes.find((code) => !venues.get(code)?.online) || venueCodes[0] || null;
     const venue = venueCode ? venues.get(venueCode) : null;
     return {
       slug: event.id,
@@ -120,6 +120,12 @@ export function adaptFestival(block) {
       duration: event.durationMin,
       venue: venueCode,
       venueName: venue ? venue.name : null,
+      // Only streamed: watched from wherever the reader is, no journey to or
+      // from it. A performance says so of itself too.
+      online: performances.length > 0 && performances.every((p) => venues.get(p.venueId)?.online),
+      // Where the show is when its venue says nowhere: the festival's own place,
+      // so travel to a show at another festival is still counted.
+      defaultLocation: { lat: block.festival.lat, lng: block.festival.lng },
       venueNames: venueCodes.map((code) => (venues.get(code) || {}).name).filter(Boolean),
       performances: performances.map((p) => ({
         date: p.date,
@@ -129,6 +135,8 @@ export function adaptFestival(block) {
         ticketUrl: p.ticketUrl,
         free: p.free,
         venue: p.venueId,
+        venueName: venues.get(p.venueId)?.name ?? null,
+        online: Boolean(venues.get(p.venueId)?.online),
       })),
       // The title in the festival's own language, present only when the block
       // has one: most festivals' `title` already is that language.
@@ -168,6 +176,8 @@ export function adaptEdfringe({ catalogue, lookups }, festivalEntry, edition) {
       address: v.address ?? null,
       lat: v.lat ?? null,
       lng: v.lng ?? null,
+      // The box office's own word for a streamed venue.
+      online: v.postcode === "Online venue",
       capacity: null,
       layout: null,
       rooms: [],
@@ -192,6 +202,8 @@ export function adaptEdfringe({ catalogue, lookups }, festivalEntry, edition) {
       venue: show.venue,
       venueName: show.venueName,
       venueNames: show.venueName ? [show.venueName] : [],
+      online: Boolean(venues.get(show.venue)?.online),
+      defaultLocation: { lat: festivalEntry.lat, lng: festivalEntry.lng },
       performances: show.performances.map((p) => ({
         date: p.date,
         start: p.start,

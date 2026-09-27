@@ -28,15 +28,20 @@ def status_of(instance, free):
     return "unknown"
 
 
-def adapt(source, *, public, genre, url, free=lambda event: None, listed_price=lambda event: (None, None)):
+def adapt(source, *, public, genre, url, free=lambda event: None, listed_price=lambda event: (None, None),
+          online=lambda venue: False):
     """`listed_price(event)` -> (min, max) from the client's own price text, used
     only where the price list has no seat price (a past edition's lists keep
-    only their add-ons once sales close)."""
+    only their add-ons once sales close). `online(venue)` says whether a raw
+    venue is a stream rather than a place."""
     raw = source.read("programme.json")
     events = {e["id"]: e for e in raw["events"]}
     kept = {eid for eid, e in events.items() if public(e)}
     partial = {
-        "venues": {v["id"]: {"name": v["name"].strip(), "address": v.get("address") or None} for v in raw["venues"]},
+        "venues": {
+            v["id"]: {"name": v["name"].strip(), "address": v.get("address") or None, "online": online(v)}
+            for v in raw["venues"]
+        },
         "events": {},
         "performances": {},
         "skipped": sorted(events[eid]["name"] for eid in events if eid not in kept),

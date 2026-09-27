@@ -202,13 +202,16 @@ def assemble(festival, edition_id):
 
     used_venues = {p["venueId"] for p in perf_list if p["venueId"] is not None}
     # A curated venue outlives editions; only the ones this edition plays are served.
+    # An online venue is nowhere: whatever a source geocoded for it (the box
+    # office's own address, say) is not where the audience is.
     venue_list = [
         {
             "id": vid,
             "name": v.get("name"),
             "address": v.get("address"),
-            "lat": v.get("lat"),
-            "lng": v.get("lng"),
+            "lat": None if v.get("online") else v.get("lat"),
+            "lng": None if v.get("online") else v.get("lng"),
+            "online": bool(v.get("online")),
             "capacity": v.get("capacity"),
             "layout": v.get("layout"),
             "rooms": v.get("rooms", []),

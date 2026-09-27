@@ -212,6 +212,9 @@ function toMinutes(value) {
  * @property {string|null} venueName
  * @property {number|null} venueLat
  * @property {number|null} venueLng
+ * @property {boolean} online a stream: no journey to or from it
+ * @property {boolean} placeAssumed venueLat/venueLng are the catalogue's default
+ *   location, not the venue's own
  * @property {string|null} room
  * @property {string|null} image
  * @property {string|null} blurb
@@ -228,6 +231,11 @@ function lookupVenueCoord(venueCoords, code) {
   const v = venueCoords instanceof Map ? venueCoords.get(key) : venueCoords[key];
   if (!v || v.lat == null || v.lng == null) return null;
   return { lat: v.lat, lng: v.lng };
+}
+
+/** A {lat,lng} with both parts known, or null. */
+function coordOf(c) {
+  return c && c.lat != null && c.lng != null ? { lat: c.lat, lng: c.lng } : null;
 }
 
 /**
@@ -255,11 +263,18 @@ export function eligibleSlots(shows, options = {}) {
 
   const out = new Map();
   for (const show of shows || []) {
-    const coord = lookupVenueCoord(venueCoords, show.venue);
+    // A show whose venue has no known place is at its catalogue's default
+    // location, when the catalogue gives one.
+    const own = lookupVenueCoord(venueCoords, show.venue);
+    const placed = own ?? coordOf(show.defaultLocation);
     const dur = show.duration || 0;
     const slots = [];
     for (const perf of show.performances || []) {
       if (!isAvailable(perf)) continue;
+      // An online performance is nowhere, and is named by its own venue (a
+      // show can play a hall and stream the same evening).
+      const online = perf.online ?? Boolean(show.online);
+      const coord = online ? null : placed;
       const start = dateTimeToMinutes(perf.date, perf.start);
       const end = show.duration ? start + show.duration : start;
       const realStartMinute = timeToMinutesOfDay(perf.start);
@@ -289,10 +304,12 @@ export function eligibleSlots(shows, options = {}) {
         startMinuteOfDay,
         endMinuteOfDay,
         status: perf.status ?? null,
-        venueCode: show.venue ?? null,
-        venueName: show.venueName ?? null,
+        venueCode: (online ? perf.venue : null) ?? show.venue ?? null,
+        venueName: (online ? perf.venueName : null) ?? show.venueName ?? null,
         venueLat: coord ? coord.lat : null,
         venueLng: coord ? coord.lng : null,
+        online,
+        placeAssumed: Boolean(coord && !own),
         room: show.room ?? null,
         image: show.image ?? show.smallImage ?? null,
         blurb: show.blurb ?? null,
@@ -366,7 +383,8 @@ export function withinDayWindow(slot, win = {}) {
 }
 
 /**
- * Minutes required between two slots. Same known venue → the same-venue buffer
+ * Minutes required between two slots. Either one online → none: there is
+ * nowhere to travel to or from. Same known venue → the same-venue buffer
  * (a double bill needs no travel). Different venues → the greater of the
  * different-venue buffer (a floor, also the value used when coordinates are
  * unknown) and the estimated door-to-door travel time by the chosen mode, so
@@ -380,6 +398,7 @@ export function withinDayWindow(slot, win = {}) {
 export function requiredGapMinutes(a, b, options = {}) {
   const minGapSameVenue = options.minGapSameVenue ?? DEFAULT_MIN_GAP_SAME_VENUE;
   const minGapDifferentVenue = options.minGapDifferentVenue ?? DEFAULT_MIN_GAP_DIFFERENT_VENUE;
+  if (a.online || b.online) return 0; // watched from wherever the reader already is
   if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     return minGapSameVenue;
   }
