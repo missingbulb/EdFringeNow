@@ -340,7 +340,10 @@ test("this repo's real task workers all restore main before writing", () => {
 // always fails on GitHub's own side (#874, #875, #896, #897, #902, #904 all hit
 // this identical, avoidable call) ---
 
-const [reviewRequestRule] = loadDeclaredChecks(__dirname);
+const declaredRules = loadDeclaredChecks(__dirname);
+const reviewRequestRule = declaredRules.find((r) => r.id === "edfringe-no-review-request-from-pr-author");
+const actionsListPerPageRule = declaredRules.find((r) => r.id === "edfringe-actions-list-workflow-runs-needs-perpage");
+const noGhCliRule = declaredRules.find((r) => r.id === "edfringe-no-gh-cli");
 
 test("requesting the repo owner as a PR reviewer is flagged, on create and on update", () => {
   for (const tool of ["mcp__github__create_pull_request", "mcp__github__update_pull_request"]) {
@@ -376,6 +379,78 @@ test("assigning missingbulb (a different field) is not what this check guards", 
     name: "mcp__github__create_pull_request",
     input: { reviewers: ["someone-else"], assignees: ["missingbulb"] },
   });
+  assert.deepEqual(out, []);
+});
+
+// --- edfringe-actions-list-workflow-runs-needs-perpage: a list_workflow_runs
+// call with no perPage has overflowed the tool-result limit every time it's
+// been tried, at perPage values down to 1 (#391, re-measured #694, #906ish) ---
+
+test("list_workflow_runs with no perPage is flagged", () => {
+  const out = guardFindings(actionsListPerPageRule, {
+    name: "mcp__github__actions_list",
+    input: { method: "list_workflow_runs", owner: "missingbulb", repo: "EdFringeNow" },
+  });
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /list_workflow_runs with no `perPage`/);
+  assert.match(out[0].fix, /perPage/);
+});
+
+test("list_workflow_runs with perPage set is not this check's business", () => {
+  const out = guardFindings(actionsListPerPageRule, {
+    name: "mcp__github__actions_list",
+    input: { method: "list_workflow_runs", owner: "missingbulb", repo: "EdFringeNow", perPage: 30 },
+  });
+  assert.deepEqual(out, []);
+});
+
+test("a different actions_list method with no perPage is not this check's business (relevance-first)", () => {
+  const out = guardFindings(actionsListPerPageRule, {
+    name: "mcp__github__actions_list",
+    input: { method: "list_workflows", owner: "missingbulb", repo: "EdFringeNow" },
+  });
+  assert.deepEqual(out, []);
+});
+
+test("a different tool with no perPage is never flagged by this rule", () => {
+  const out = guardFindings(actionsListPerPageRule, {
+    name: "mcp__github__list_pull_requests",
+    input: { owner: "missingbulb", repo: "EdFringeNow" },
+  });
+  assert.deepEqual(out, []);
+});
+
+// --- edfringe-no-gh-cli: the gh CLI is not installed in this environment, so
+// a command invoking it always fails ---
+
+test("a Bash command invoking the gh CLI is flagged", () => {
+  const out = guardFindings(noGhCliRule, { name: "Bash", input: { command: "gh pr view 123" } });
+  assert.equal(out.length, 1);
+  assert.match(out[0].what, /invoking `gh pr`/);
+  assert.match(out[0].fix, /mcp__github__/);
+});
+
+test("gh invoked after a shell operator is still flagged", () => {
+  for (const command of ["cd /tmp && gh issue list", "true; gh api /repos/x/y", "echo hi | gh pr diff"]) {
+    const out = guardFindings(noGhCliRule, { name: "Bash", input: { command } });
+    assert.equal(out.length, 1, `expected a finding for ${JSON.stringify(command)}`);
+  }
+});
+
+test("a non-Bash tool is never flagged by this rule", () => {
+  const out = guardFindings(noGhCliRule, { name: "mcp__github__issue_read", input: { command: "gh issue view" } });
+  assert.deepEqual(out, []);
+});
+
+test("a word merely starting with gh is not flagged", () => {
+  for (const command of ["ghost-town.sh", "npm run gh-pages", "./scripts/gh-helper.sh"]) {
+    const out = guardFindings(noGhCliRule, { name: "Bash", input: { command } });
+    assert.deepEqual(out, [], `expected no finding for ${JSON.stringify(command)}`);
+  }
+});
+
+test("a Bash command with no gh invocation at all is not this check's business (relevance-first)", () => {
+  const out = guardFindings(noGhCliRule, { name: "Bash", input: { command: "git status" } });
   assert.deepEqual(out, []);
 });
 

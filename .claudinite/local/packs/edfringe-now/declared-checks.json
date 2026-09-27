@@ -14,5 +14,38 @@
         "fix": "drop missingbulb from reviewers — assigning them, or leaving reviewers empty, is what a review request was reaching for"
       }
     ]
+  },
+  {
+    "id": "edfringe-actions-list-workflow-runs-needs-perpage",
+    "severity": "blocking",
+    "since": "2026-09-27",
+    "scope": "action",
+    "failureMessage": "list_workflow_runs with no perPage has overflowed the tool-result limit against this repo's actions history (90,202 characters, re-measured 2026-09-24) every time it's been tried, at perPage values down to 1",
+    "guardToolCalls": [
+      {
+        "tool": "mcp__github__actions_list",
+        "inputField": "method",
+        "match": "/^list_workflow_runs$/",
+        "inputFieldAbsent": ["perPage"],
+        "what": "a {tool} call for list_workflow_runs with no `perPage`",
+        "fix": "pass `perPage` (e.g. 30) alongside `method: \"list_workflow_runs\"` — an explicit value keeps the response inside the tool-result limit"
+      }
+    ]
+  },
+  {
+    "id": "edfringe-no-gh-cli",
+    "severity": "blocking",
+    "since": "2026-09-27",
+    "scope": "action",
+    "failureMessage": "the gh CLI is not installed in this environment, so a command invoking it always fails; the GitHub MCP tools are how a session reaches GitHub here",
+    "guardToolCalls": [
+      {
+        "tool": "Bash",
+        "inputField": "command",
+        "match": "/(^|[;&|]\\s*|\\n\\s*)(?<cmd>gh\\s+\\S+)/",
+        "what": "a Bash call invoking `{cmd}` — the gh CLI is not installed here",
+        "fix": "use the matching mcp__github__* tool instead of the gh CLI"
+      }
+    ]
   }
 ]

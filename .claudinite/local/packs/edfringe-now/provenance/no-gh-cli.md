@@ -6,3 +6,11 @@
 - **Actor:** @missingbulb (owner).
 - **Mechanism:** a rule in the local pack's RULES.md; nothing a file edit predicts brings a session
   to it, so it stays prose.
+
+## 2026-09-27 · converted · the gh-invocation half, into a check (item #925)
+- **Reason:** invoking `gh` is a Bash tool call's input, judged before it runs — guardToolCalls
+  covers it. Deletion test: the bullet also carries "never suppress a poll condition's stderr", a
+  second rule the check cannot see — kept whole rather than trimmed.
+- **Actor:** the prose-to-checks-sweep run, item #925.
+- **Model:** Claude Sonnet 5
+- **Mechanism:** edfringe-no-gh-cli, a declared action-scope check on the Bash tool.

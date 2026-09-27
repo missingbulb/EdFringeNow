@@ -27,3 +27,17 @@
 - **Source:** 2026-09-24: list_workflow_runs with no perPage returned 90,202 characters and
   overflowed.
 - **Actor:** @missingbulb (owner).
+
+## 2026-09-27 · converted · guardToolCalls now exists in this pack (item #925)
+- **Reason:** the 2026-08-17 rejection ("no static signature in the tree") predates this pack's own
+  action-scope declarations (edfringe-no-review-request-from-pr-author, since 2026-09-26) — a tool
+  call's input, judged before it runs, is exactly what guardToolCalls targets. Deletion test: the
+  check's failure message and fix state the rule and the remedy in full — prose deleted whole.
+- **Actor:** the prose-to-checks-sweep run, item #925.
+- **Model:** Claude Sonnet 5
+- **Mechanism:** edfringe-actions-list-workflow-runs-needs-perpage, a declared action-scope check.
+
+## 2026-09-27 · retired · fully replaced by its converted check (item #925)
+- **Reason:** the prose is deleted (see the converted entry above); no carrier names this file any
+  longer.
+- **Actor:** the prose-to-checks-sweep run, item #925.
