@@ -1,5 +1,6 @@
 /* What the reader filters the pool by, as rules: the kinds every festival
- * shares, a festival's own tags required or ruled out, and festivals left out.
+ * shares, a festival's own tags required or ruled out, festivals left out, and
+ * online shows left out.
  *
  * The kinds are the data pipeline's genre vocabulary
  * (scraper/festivals/registry.py's GENRES), which every festival block's
@@ -48,15 +49,31 @@ export function sharedGenre(genre) {
 
 /**
  * Whether a show survives the reader's filters.
- * @param {{slug: string, genreSlugs?: string[]}} show a pool show
- * @param {{festivalsOut?: Set<string>, tags?: Map<string, "only"|"out">}} filters
+ * @param {{slug: string, genreSlugs?: string[], online?: boolean}} show a pool show
+ * @param {{festivalsOut?: Set<string>, tags?: Map<string, "only"|"out">, onlineOut?: boolean}} filters
  */
-export function passesFilters(show, { festivalsOut = new Set(), tags = new Map() } = {}) {
+export function passesFilters(show, { festivalsOut = new Set(), tags = new Map(), onlineOut = false } = {}) {
   if (festivalsOut.has(festivalOf(show.slug))) return false;
+  if (onlineOut && show.online) return false;
   const filed = show.genreSlugs || [];
   if (filed.some((tag) => tags.get(tag) === "out")) return false;
   const required = [...tags].filter(([, mode]) => mode === "only").map(([tag]) => tag);
   return !required.length || filed.some((tag) => required.includes(tag));
+}
+
+/**
+ * The shows that survive the reader's filters, each with only the performances
+ * that do: leaving out online shows also takes the streamed evenings off a
+ * show that plays a hall too.
+ * @param {object[]} shows pool shows
+ * @param {object} filters as passesFilters takes
+ */
+export function applyFilters(shows, filters = {}) {
+  const kept = shows.filter((show) => passesFilters(show, filters));
+  if (!filters.onlineOut) return kept;
+  return kept.map((show) =>
+    show.performances.some((p) => p.online) ? { ...show, performances: show.performances.filter((p) => !p.online) } : show
+  );
 }
 
 /** A tag's next state when clicked: neutral → only → out → neutral. */

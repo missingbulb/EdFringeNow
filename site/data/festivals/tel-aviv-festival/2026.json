@@ -58,6 +58,7 @@
    "address": "שדרות שאול המלך 25, תל אביב",
    "lat": 32.0767,
    "lng": 34.7864,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [
@@ -86,6 +87,7 @@
    "address": "מרחב 3426, התחייה פינת הרצל, תל אביב-יפו",
    "lat": 32.0487236,
    "lng": 34.7688827,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],
@@ -101,6 +103,7 @@
    "address": "רחוב הוברמן 2, תל אביב",
    "lat": 32.073643,
    "lng": 34.779974,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [
@@ -123,6 +126,7 @@
    "address": "שדרות שאול המלך 27, תל אביב",
    "lat": 32.0775,
    "lng": 34.78667,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [
@@ -212,6 +216,7 @@
    "address": "שדרות שאול המלך 19, תל אביב",
    "lat": 32.0764,
    "lng": 34.7855,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],

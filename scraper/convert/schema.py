@@ -35,7 +35,7 @@ FESTIVAL_KEYS = (
     "timezone", "lang", "dir", "kind", "defaultGenre", "site", "firstDate", "lastDate", "ticketing",
 )
 CATEGORY_KEYS = ("id", "name")
-VENUE_KEYS = ("id", "name", "address", "lat", "lng", "capacity", "layout", "rooms", "accessibility", "notes", "refs")
+VENUE_KEYS = ("id", "name", "address", "lat", "lng", "online", "capacity", "layout", "rooms", "accessibility", "notes", "refs")
 ROOM_KEYS = ("id", "name", "capacity", "layout")
 EVENT_KEYS = ("id", "title", "titleLocal", "url", "genre", "categories", "blurb", "durationMin", "imageUrl")
 PERFORMANCE_KEYS = (
@@ -156,6 +156,10 @@ def validate(block):
             errors.append("%s: lat and lng must be both known or both null" % where)
         elif lat is not None and not (_is_num(lat) and -90 <= lat <= 90 and _is_num(lng) and -180 <= lng <= 180):
             errors.append("%s: lat/lng out of range" % where)
+        if not isinstance(venue["online"], bool):
+            errors.append("%s.online: must be true or false" % where)
+        elif venue["online"] and lat is not None:
+            errors.append("%s: an online venue has no coordinates" % where)
         _opt_count(venue["capacity"], where + ".capacity", errors)
         if venue["layout"] is not None and venue["layout"] not in LAYOUTS:
             errors.append("%s.layout: %r not in %s" % (where, venue["layout"], LAYOUTS))
@@ -261,7 +265,7 @@ def sample_block():
         },
         "categories": [{"id": "stand-up", "name": "Stand-up"}],
         "venues": [{
-            "id": "hall", "name": "Hall", "address": None, "lat": None, "lng": None, "capacity": None,
+            "id": "hall", "name": "Hall", "address": None, "lat": None, "lng": None, "online": False, "capacity": None,
             "layout": None, "rooms": [{"id": "main", "name": "Main", "capacity": 200, "layout": "raked"}],
             "accessibility": None, "notes": None, "refs": [],
         }],

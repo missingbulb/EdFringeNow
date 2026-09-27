@@ -34,6 +34,7 @@
    "address": "אמיל בוטה 12, ימין משה, ירושלים",
    "lat": 31.774194,
    "lng": 35.224972,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],
@@ -51,6 +52,7 @@
    "address": "דוד מרכוס 20, ירושלים",
    "lat": 31.768911,
    "lng": 35.215644,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [
@@ -81,6 +83,7 @@
    "address": "דוד רמז, ירושלים",
    "lat": 31.768528,
    "lng": 35.224614,
+   "online": false,
    "capacity": null,
    "layout": null,
    "rooms": [],
