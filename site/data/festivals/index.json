@@ -339,6 +339,31 @@
    ]
   },
   {
+   "id": "jerusalem-oud",
+   "name": "Jerusalem International Oud Festival",
+   "nameLocal": "פסטיבל העוד הבינלאומי ירושלים",
+   "city": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://www.confederationhouse.org/page_18014",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-05",
+     "lastDate": "2026-11-12",
+     "format": "block",
+     "dataUrl": "/data/festivals/jerusalem-oud/2026.json"
+    }
+   ]
+  },
+  {
    "id": "leicester-comedy",
    "name": "Leicester Comedy Festival",
    "nameLocal": null,
