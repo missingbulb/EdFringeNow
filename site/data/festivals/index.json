@@ -289,6 +289,31 @@
    ]
   },
   {
+   "id": "indnegev",
+   "name": "InDNegev",
+   "nameLocal": "אינדינגב",
+   "city": "Mitzpe Gvulot",
+   "country": "IL",
+   "lat": 31.2111,
+   "lng": 34.4652,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://indnegev.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-17",
+     "format": "block",
+     "dataUrl": "/data/festivals/indnegev/2026.json"
+    }
+   ]
+  },
+  {
    "id": "jerusalem-comedy",
    "name": "Jerusalem Comedy Festival",
    "nameLocal": "פסטיבל הקומדיה הישראלי",
