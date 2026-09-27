@@ -1,0 +1,16 @@
+{
+ "festival": "jerusalem-oud",
+ "edition": "2026",
+ "source": "confederation-house",
+ "fetchedAt": "2026-09-27T09:21:43Z",
+ "fetcher": "scraper/festivals/jerusalem_oud/sources/confederation-house/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.confederationhouse.org/page_18014",
+  "https://www.confederationhouse.org/page_<pageId>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One record per listing card, with its concert page parsed beside it (heading, picture, blurb, date, time, location, printed ticket price, ticket link); untranslated."
+}

@@ -1,0 +1,59 @@
+# InDNegev, the independent music festival at Mitzpe Gvulot in the western
+# Negev: its identity, its editions, and the sources an edition's information
+# block is assembled from. Every key follows the contract in
+# scraper/festivals/README.md.
+
+id = "indnegev"
+name = "InDNegev"
+name_local = "אינדינגב"
+city = "Mitzpe Gvulot"
+country = "IL"
+# Kibbutz Gvulot (OSM way 82487534), beside the festival grounds at Mitzpe
+# Gvulot, for the timeline and the travel maths between cities.
+lat = 31.2111
+lng = 34.4652
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "music"
+subtypes = ["music-indie", "music-israeli"]
+default_genre = "music"
+site = "https://indnegev.co.il"
+
+# One ticket is the whole festival (or a day of it); no set is sold on its own,
+# so every performance's price stays null.
+[ticketing]
+model = "festival-pass"
+url = "https://www.eventer.co.il/ind2026"
+notes = "Festival and day tickets, with camping, are sold through eventer.co.il/ind2026; no set is ticketed on its own."
+source = "https://indnegev.co.il/#tickets"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site prints none.
+first = "2026-10-15"
+last = "2026-10-17"
+
+[[source]]
+id = "indnegev-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/indnegev-site/fetch.py"
+adapter = "indnegev/indnegev_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "indnegev/venues_research.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "indnegev-site"]
+events = ["indnegev-site"]
+performances = ["indnegev-site"]

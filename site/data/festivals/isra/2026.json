@@ -1,0 +1,858 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "isra",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "ISRA Annual Conference (Israel Radiological Association)",
+  "nameLocal": null,
+  "city": "Capernaum",
+  "country": "IL",
+  "lat": 32.8804,
+  "lng": 35.5736,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "multi",
+  "defaultGenre": "talk",
+  "site": "https://events.ortra.com/isra2026",
+  "firstDate": "2026-10-18",
+  "lastDate": "2026-10-20",
+  "ticketing": {
+   "notes": "Registration fees from the conference's Registration page, in ILS. Early rates ran until 25 Sept 2026; the regular rates from 26 Sept are the ones listed. Full conference or a single day (18, 19 or 20 Oct); ISRA members are those who paid 2025 and 2026 fees. The fee includes the welcome reception, all sessions, the exhibition, lunch and coffee breaks. Registration and payment through the conference secretariat, Ortra (radiology@ortra.com). The conference is for physicians, residents, medical students and health professions only.",
+   "currency": "ILS",
+   "source": "https://events.ortra.com/isra2026/Registration",
+   "model": "festival-pass",
+   "url": "https://events.ortra.com/isra2026/Registration",
+   "fullConference": {
+    "seniorMember": 1110,
+    "seniorNonMember": 2155,
+    "retiredMember": 945,
+    "retiredNonMember": 1835,
+    "residentMember": 545,
+    "residentNonMember": 965,
+    "paramedical": 890,
+    "student": 600
+   },
+   "dailySeniorMember": {
+    "oct18": 925,
+    "oct19": 925,
+    "oct20": 795
+   },
+   "dailySeniorNonMember": {
+    "oct18": 1400,
+    "oct19": 1630,
+    "oct20": 1400
+   },
+   "dailyResidentMember": {
+    "oct18": 350,
+    "oct19": 410,
+    "oct20": 350
+   },
+   "dailyResidentNonMember": {
+    "oct18": 760,
+    "oct19": 885,
+    "oct20": 760
+   },
+   "dailyParamedical": {
+    "oct18": 565,
+    "oct19": 620,
+    "oct20": 565
+   },
+   "dailyStudent": {
+    "oct18": 200,
+    "oct19": 200,
+    "oct20": 200
+   }
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "davids-harp-galilee",
+   "name": "David's Harp Galilee Resort",
+   "address": "Kfar Nahum (Capernaum), Sea of Galilee",
+   "lat": 32.88043,
+   "lng": 35.57356,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall-a",
+     "name": "Hall A",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-b",
+     "name": "Hall B",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-c",
+     "name": "Hall C",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The conference hotel, above the northwest shore of the Sea of Galilee (the conference site's Home and Accommodation pages name it). The programme runs in three halls, A, B and C, which it does not map onto the hotel's own halls: the hotel lists the Agam hall (475 theatre-style, divisible into Agam A and Agam B, 200 each), four meeting rooms of 15 to 110 and a 700-seat amphitheatre (davidsharphotels.com/galilee/events/), so no seat count is served for a programme hall. Registration, breaks, lunch and the evening social events are listed across all three halls.",
+   "refs": [
+    "https://davidsharphotels.com/galilee/contact/"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "session-70912",
+   "title": "Plenary: Opening Session 1 - Hot Topics",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "11:30 Opening\n11:40 Top 20 Papers in Radiology 2026 — Dr. Anat Ilvitzky (Rambam Healthcare Campus)\n11:55 The Earliest Stroke: Insights from Fetal MRI — Prof. Orit Glenn (UCSF Benioff Children's Hospitals)\n12:20 Histotripsy Update: Indications and Results — Prof. Jonathan Susman (Columbia University)\n12:45 Teranoscis in Reality — Dr. Michal Eifer\n13:00 IBMRS Guidelines for Safe Remote MR Scanning: 2026 (International Board of MR Safety) — Prof. Emanuel Kanal (University of Pittsburgh) (Sponsored by: Mor Institute)",
+   "durationMin": 110,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+  },
+  {
+   "id": "session-71043",
+   "title": "Plenary: Session 2 - Hot Topics 2",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "14:20 CT in Pulmonary Hypertension & Chronic ThromboEmbolism — Prof. Galit Aviram (Tel Aviv Sourasky Medical Center (Ichilov)) (Sponsored by: Bayer)\n14:50 PCCT and Other Beasts. Beyond Conventional CT: A Clinical Journey from Dual-Energy to Photon-Counting Imaging — Dr. Ofer Benjaminov (Shaare Zedek Medical Center); Naama Bogot (Shaare Zedek Medical Center); Dr. Eliel Ben-David (Shaare Zedek Medical Center); Dr. Yigal Frank; Dr. Ruth Cytter Kuint (Shaare Zedek Medical Center); Viacheslav Alexandrov (Shaare Zedek Medical Center) (Sponsored by: Siemens Healthineers AG)",
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70917",
+   "title": "Prima Volta - Session 3",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 Venous Connection Between IMV and Left Gonadal Veins — Tamara Topchiashvili (Radiology, Tel Aviv Sourasky Medical Center, Israel)\n15:40 Connecting the Dots - A Pulmonary Mystery — Gal Malka Harari (Thoracic Imaging Unit, Department of Diagnostic Imaging, Sheba Medical Center, Israel)\n15:45 A New Hepatic Lesion During Immunotherapy: an Unexpected Diagnosis — Yana Gaskin (Diagnostic Imaging, Meir Medical Center, Israel)\n15:50 Hepatic Ectopic Pregnancy: Multimodality Imaging of a Rare Cause of Hemoperitoneum — khaled Saeed (Department of Radiology, Wolfson Medical Center, Israel)\n15:55 A 17 cm Hepatic Mass: Multimodality Work-Up of an Indeterminate Liver Lesion — Avital Mushailov (Department of Radiology, Tel Aviv Sourasky Medical Center, Israel)\n16:00 Right-Sided Abdominal Pain in a Child With Situs Inversus and Left-Sided Acute Appendicitis: A Diagnostic Imaging Pitfall — Michael Yarovoy (radiology department, Soroka Medical Center, Israel)\n16:05 Ultra-High-Resolution Photon-Counting CT Excludes a Bilateral Carotid Web Mimic — Muhammad Idris (Radiology, Shaare tzedek medical center, Israel)",
+   "durationMin": 35,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70918",
+   "title": "Prima Volta - Session 4",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 The Chemotherapy Trap: Catastrophic Imaging and Benign Reality of Pneumatosis Intestinalis Following Neoadjuvant Treatment — Reut Biton (diagnostic radiology, Belinson, Israel)\n15:40 Extensive Pneumomediastinum Associated with Extreme Anorexia Nervosa — Daniel Barchana (Diagnostic Radiology, Rabin Medical Center, Israel)\n15:45 Testicular Rupture Missed on Whole-Body Trauma CT: Scrotal Ultrasound Is Mandatory in Blunt Scrotal Trauma — Amir Rimon (Radiology department, Tel-Aviv Sourasky Medical Center, Israel)\n15:50 Brucellar Ovarian Abscess Presenting as a Complex Ovarian Cystic Lesion — Mohammad Assadi (radiology, Soroka Medical University, israel)\n15:55 Renal Fungal Ball Mimicking Recurrent Urothelial Carcinoma in a Patient Following Radical Cystectomy: an Imaging Challenge — Mor Berejick (Radiology department, Tel-Aviv Sourasky Medical Center,, Israel)\n16:00 Diagnosis and management of pancreatic trauma, from the radiologist`s screen to multidisciplinary management — Pierre Jarrous (Radiology, ziv medical center, israel)\n16:05 Endovascular Treatment of Complex Superior Vena Cava Syndrome — Abed Dabbah (Radiology, Soroka University Medical Center, Israel)",
+   "durationMin": 35,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70919",
+   "title": "Prima Volta - Session 5",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 Delayed Diagnisis of a Duodenal Web and Concurrent Heterotaxy Syndrome — Anna Parail (Diagnostic Radiology, Tel Aviv Sourasky Medical Center - Ichilov, Israel)\n15:40 Seeing Beyond Stenosis: Vessel Wall MRI in VZV Associated Vasculopathy — Areen Othman (Diagnostic radiology, Rambam health care campus, Israel)\n15:45 Brain and Spine, and Nowhere Else: An Unusual Presentation of Scedosporium Infection — Fatima Edrees (Diagnostic Radiology, Rambam Medical Health Care Campus, Israel)\n15:50 A Complex Pediatric Renal Abscess Mimicking a Neoplastic Process: A Diagnostic and Imaging Challenge — Yousra Abou Amara (Radiology, Tel Aviv Sourasky Medical Center, Israel)\n15:55 Two Years of Vomiting: Multimodality Imaging of a Delayed-Diagnosis Duodenal Web — Polina Rozov (Imaging, Hillel Yaffe Medical Center, Israel)\n16:00 Systemic-to-Pulmonary Arterial Shunts Simulating Chronic Pulmonary embolism — Emil Minz (Radiology department, Shaare Tzedek medical center, Israel)\n16:05 Internal Jugular Vein Compression: An Underrecognized Contributor to Cerebral Venous Outflow Obstruction in Idiopathic Intracranial Hypertension — Ahmad Abbas (Neuroradiology, Soroka Medical Center, Israel)",
+   "durationMin": 35,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70914",
+   "title": "Parallel Session: Pediatric Imaging - Session 6",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "16:25 Fetal Brain Imaging — Dr. Dan Halevi\n16:40 Fetal Abdominal MRI — Ben Taragin (Assuta Ashdod University Hospital)\n16:55 PCD-CT vs. Dual-Energy CT in Pediatric Body Imaging: A Single-Center Experience — Anna Volkova (Radiology, Shaare Zedek Medical Center, Israel)\n17:04 When an Endobronchial Mass Is Not a Tumor: An Occult Foreign Body Causing Lobar Collapse in an Adolescent — Rafail Danilov (Radiology Department, Soroka Medical Center, Israel)\n17:13 Diagnostic Yield of Whole-Body Fetal MRI in Fetuses Referred for Suspected Brain Abnormalities — George Naser (Radiology, Rambam Health Care Campus, Israel)\n17:22 Preoperative Computed Tomography Predictors of Airway Narrowing in Infants with Truncus Arteriosus — Noa Grinberg (Diagnostic Imaging, Wolfson Medical Center, Israel)\n17:31 Torsion of an Inguinal Hernia Sac in a Child: An Exceptionally Rare Cause of Acute Scrotum — Olga Prud (Diagnostic Radiology, Wolfson Medical Center, Israel)\n17:40 MRI-Based Fetal Weight Estimation for Predicting Neonatal Morbidity and Severe Smallness in Small for Gestational Age Pregnancies — Jonathan Gross (Radiology, Tel Aviv Sourasky University Medical Center (Ichilov), Israel)",
+   "durationMin": 95,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/c81304e759d204393ff9688c76ed8f160942bec1f2550bbe330258ebe6f97e84401025_.png?v=1A31385"
+  },
+  {
+   "id": "session-70915",
+   "title": "Parallel Session: Cardiothoracic Imaging - Session 7",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "16:25 HRCT Technique - What , Why and How — Naama Bogot (Shaare Zedek Medical Center)\n16:40 ILD in Focus: The Radiologist’s Role in Early Recognition — Dr. Opher Globus (Sponsored by: AstraZeneca)\n16:55 Incidental Pulmonary Nodules: An Additional Opportunity for Early Lung Cancer Detection — Dr. Yochai Adir (Sponsored by: AstraZeneca)\n17:10 Left Atrioventricular Coupling Index (LACI) in Breast Cancer Patients Receiving trastuzumab — Dana Stav (Medical Imaging, St. Michael's Hospital, Canada)\n17:19 Quantitative Measurement of Pulmonary Iodine Deposition on DECT as a Novel Marker of Amiodarone-Induced Pulmonary Toxicity — Talia Rosner (Medical School, Hebrew University, Israel)\n17:28 Who Needs MRI in Suspected Endometriosis? A Retrospective Observational Diagnostic Study of Added Value Beyond TVUS — Shaden Ghrayeb (Radiology, Hadassah Medical Center, Israel)\n17:37 When Cryoablation Goes Beyond the Target: A Rare Vascular Complication — Shlomit Maymon Shtamfater (Radiology, Tel Aviv Medical Center, Israel)",
+   "durationMin": 95,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70916",
+   "title": "Parallel Session: Muskoloskeletal Imaging - Session 8",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "16:25 Chromosomal Shattering – Chromothripsis: Understanding the Genetic Diversity of Osteosarcoma — Prof. Nogah Haramati (Department of Radiology, USA)\n16:45 Non-Diagnostic Display Size: Effects on Head Rotation and Electronic Medical Record Access — Raz Rotman (Department of Radiology, Chaim Sheba Medical Center, Israel)\n16:54 Advanced 3D Segmentation-Assisted Planning for CT-Guided Cryoablation of Osteoid Osteoma — Olena Kotova (Wolfson Medical Center, Wolfson Medical Center, Israel)\n17:04 Anterior Bony Bridges of the Sacroiliac Joints Are Associated with Male Sex but Not with the Development of DISH — Rachel Komisarchik (Gray Faculty of Medical and Health Sciences, Tel Aviv University, Israel)\n17:13 Added value of photon-counting CT for the detection of calcium pyrophosphate deposition disease in the wrist — Gali Eshed (Diagnostic Radiology, Sheba medical center, Tel Hashomer, Israel)\n17:22 CT Characterization of Sacroiliac Joint Calcium Pyrophosphate Deposition Disease: Association with Structural Imaging Features and Multifocal Pelvic Joint Chondrocalcinosis — Reut Protis (Sackler Faculty of Medicine, Tel Aviv University, ISRAEL)",
+   "durationMin": 95,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+  },
+  {
+   "id": "session-70920",
+   "title": "Plenary: Refresher Ultrasound Crash Course - Session 9",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "18:00 US Boot Camp — Dr. Muriel Webb",
+   "durationMin": 40,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70921",
+   "title": "Mingling - Music, Wine and Friends",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "other",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 110,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70923",
+   "title": "Plenary Session: AI beyond detection - Session 10",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "08:00 Opening — Prof. Orly Goitein (Diagnostic Imaging, Sheba Medical Center, Tel-Hashomer; Gray Faculty of Medical and Health Sciences,); Prof. Ilan Shelef (Chairman of Israel Radiological Association)\n08:10 Creating the Cutting Edge in Medical Innovation: The Samueli Institute Blueprint — Prof. Gal Merkel (Director, Davidoff Comprehensive Cancer Center; Chairman & Founder, Samueli Integrative Cancer Pione)\n08:30 Choosing Responsibly: A Strategic Framework for AI Adoption in Medicine — Dr. Lilach Zoller (MD, MBA Director of Technology and Digital Health, Hospital Division, Clalit)\n08:50 Does It Work for Our Patients? Local Validation of Medical AI — Dr. Alina Vodonos Zilberg (PhD - RWE (Real World Evidence) Research Team Lead, Clalit Innovation by Clalit Health Services)\n09:00 Beyond Implementation: Monitoring AI Performance in Clinical Practice — Dr. Lihi Eisen\n09:10 AI in Radiology – Law, Regulation and Ethics — Adv. Efrat Shapira-Orren (Assuta Medical Center)\n09:25 The AI Revolution in the Screening and Diadnosis of Breast Disease — Prof. Miri Sklair-Levy",
+   "durationMin": 100,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/0db58b83d949beed706ffb3dd65146b30200867f1b971f4277dbaa0b6199bc2b400040_.png?v=D9FA76"
+  },
+  {
+   "id": "session-71044",
+   "title": "Plenary Session: Hot Topics 3 - Session 11",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "10:00 Hidden in Plain Sight: Incidental Interstitial Lung Disease and Its Progression on Routine Chest CT — Prof. Edith Marom (Sponsored by: Boehringer Ingelheim Israel Ltd.)\n10:30 Ahead in Photon-counting CT: From Concept to Clinical Impact — Angelos Giapitzakis, PhD, MBA (Siemens Healthineers AG) (Sponsored by: Siemens Healthineers AG)",
+   "durationMin": 60,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/9393b9bf1dd6c15e7a18cc97fe0913636970d14ad41092c5c8644110f38d65bf400913_.png?v=1888968"
+  },
+  {
+   "id": "session-70928",
+   "title": "Plenary Session: The Great Debates - Session 12",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The session will be held in Hebrew.\n11:15 Radiology from Home: Why It Works (Pro) — Dr. Ofer Benjaminov (Shaare Zedek Medical Center)\n11:22 Radiology from Home: Why It cannot Works (Con) — Prof. Ilan Shelef (Chairman of Israel Radiological Association)\n11:29 Discussion — Dr. Natalia Goldberg\n11:44 AI Trasnparency to Patients (Pro) — Dr. Ahuva Grubstein (Vice Chair of the Conference)\n11:51 AI Trasnparency to Patients (Con) — Dr. Gal Ben Arie\n11:58 Discussion — Dr. Shlomit Tamir (Rabin Medical Center)",
+   "durationMin": 60,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/a199952e86729bd35624748a093f96f2b210afab04f2ee70316fde95473bc78a396634_.png?v=17904D0"
+  },
+  {
+   "id": "session-70930",
+   "title": "Plenary Session: ISRA Annual Meeting - Session 13",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The Session will be held in Hebrew.\nThis session is intended for new committee members and chairmen.",
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "session-71028",
+   "title": "Awards & Annual ISRA Members Meeting - Session 14",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The session will be held in Hebrew.\n14:00 Outstanding Clinician Award: Assaf Harofe Medical Center — Prof. Sigal Tal (Recipient: Dr. Margarita Vasserman)\n14:15 Outstanding Clinician Award: Belinson Medical Center — Prof. Eli Atar (Rabin Medical Center (Beilinson campus)) (Recipient: Dr. Edan Inbar)\n14:30 Outstanding Clinician Award: Rambam Medical Center — Dr. Anat Ilvitzky (Rambam Healthcare Campus) (Recipient: Dr. Daniela Militainu)\n14:45 Outstanding Clinician Award: Hadassah Medical Center — Prof. Nurith Hiller (Recipient: Dr. Yehonatan Bar-Moshe)\n15:00 Honorary Member Award (Recipient: Dr. Tamar Gaspar)\n15:10 Outstanding Teacher ISRA Award (Recipient: Dr. Ofer Benjaminov)",
+   "durationMin": 80,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/36c4388d8cbefa32a0585c4fb4ae321f6e79fe842dc4267843bd8d9b56652735400917_.png?v=189FB4A"
+  },
+  {
+   "id": "session-70932",
+   "title": "Parallel Session: Body Imaging and Innovation - Session 15",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 CT New era- SIRIUX versus uCT 960+ — Stefan Ulzheimer (Sponsored by: Tzamal)\n15:55 Contrast-Enhanced Ultrasound for Renal Applications — Dr. Sophie Barnes\n16:10 Peer Review in Diagnostic Imaging: Modality-Adjusted Analysis of Disagreement and Reviewer Variability — Arnon Makori (Department of Medical Imaging, Assuta Medical Centers, Israel)\n16:19 The Double Edged Impact of AI-Assisted PE Detection on Junior and Senior Radiology Residents — Izhak Berebi (Radiology, Hadassah Medical Center, ISRAEL)\n16:28 Attitudes and Readiness of Imaging Professionals Towards Artificial Intelligence: A Baseline Pre-Implementation Survey — Royi Barnea (Assuta Health Services Research Institute, Assuta Medical Cener, Israel)\n16:37 Socioeconomic Status Is Associated with Muscle Quality but Not Muscle Quantity: A CT-Based Body Composition Study — Dr. Shlomit Tamir (Department of Imaging, Rabin Medical Center, Israel)\n16:46 Unified CT–MR Foundation Model for Automated Crohn Disease Phenotyping and Prediction of Surgery: Results from the Nationwide EPI-IIRN Study — Moti Freiman (Faculty of Biomedical Engineering, Technion Israel Institute of Technology)\n16:55 Automated Opportunistic Detection of Abdominal Aortic Aneurysm on Noncontrast Lumbar Spine CT — Gal Ben Arie (Imaging Department, Soroka University Medical Center, Israel)\n17:04 Accuracy of Large Language Model Chatbots in Retrieving MRI Safety Conditions for Medical Implants — Shir Tal (Department of Radiology, Chaim Sheba Medical Center, Tel Hashomer,, Israel)\n17:13 Evaluation of a Reduced-Radiation and Reduced-Contrast Photon-Counting CT Angiography Protocol for Preoperative Abdominal Wall Artery Mapping — Amit Arbel (Gray School of Medicine, Tel Aviv University)",
+   "durationMin": 115,
+   "imageUrl": null
+  },
+  {
+   "id": "session-71029",
+   "title": "Parallel Session: Interventional Radiology - Session 16",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 Liver Transplant and IR: Saving the Graft — Prof. Jonathan Susman (Columbia University)\n15:50 Near-Infrared Tissue Oxygenation Provides Incremental Prognostic Value Beyond the Ankle-Brachial Index Following Lower-Extremity Endovascular Revascularization in Patients with Peripheral Artery Disease and Chronic Limb-Threatening Ischemia — Roie Feinsod (Grey Faculty of Medicine, Tel Aviv University, Israel)\n15:59 Chemical Cholecystectomy: A Novel Percutaneous Ablation Strategy for Acute Calculous Cholecystitis in Poor Surgical Candidates — Nabeih Mazarieb (Radiology Department, RABIN MEDICAL CENTRE - HaSharon Hospital, Israel)\n16:08 Transosseous Arterial Embolization during Percutaneous Sclerotherapy of a Sacral Aneurysmal Bone Cyst in a Pediatric Patient — Artyom Khaes (Department of Interventional Radiology, Shaare Zedek Medical Center, Israel)\n16:17 Percutaneous Liver Biopsy in Children: Comparing Complication Rates and Diagnostic Adequacy of 18G and 20G Needles — Lior Fusman (Department of Diagnostic Radiology, Units of Vascular and Interventional Radiology, Rabin Medical Center, Hasharon and Beilinson Hospitals, Israel)\n16:26 Use of Coronary Covered Stent Grafts in the Management of Atherosclerotic Renal Artery Stenosis — Tom Sonin (Interventional Radiology Unit, Sheba Medical Center)\n16:35 Indocyanine Green-Soaked Microcoil Localization of Pulmonary Nodules Prior to Video-Assisted Thoracoscopic Surgery: A Feasibility Study — Uriel Wachsman (Joint Department of Medical Imaging, Toronto General Hospital, University Health Network, Canada)\n16:44 NOT ALL ANEURYSMS ARE CREATED EQUAL — Adam Farkas (Radiology - Interventional Radiology, Shaare Zedek Medical Center, Israel) (Not all Aneurysms are Created Equal)\n16:53 Live Birth Rates after Varicocele Embolization in Patients after Failed in Vitro Fertilization with Intracytoplasmic Sperm Injection — Ahmad Farhoud (Diagnostic Imaging, Shaare Zedek Medical Center, Israel)",
+   "durationMin": 115,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/b6ccd313eb97f99aff6d81fa4dcde151f6e96c67b4e30a422171c2cea1d243d9399921_.png?v=C324BE"
+  },
+  {
+   "id": "session-71030",
+   "title": "Parallel Session: Breast Imaging - Session 17",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "15:35 The Utility of Contrast Enhanced Mammography as Supplementary screening modality for Breast Cancer — Prof. Anat Kornecki (Department of Medical Imaging, Western University, Canada)\n15:50 Breast MRI During Pregnancy and Lactation Clinical Challenges and Technical Advances — Dr. Noam Nissan\n16:05 Will ABUS Become the Best Option for Women At Risk for Breast Ca and are Not Eligible for MRI in the Israeli Basket — Dr. Nicky Liberman (Sponsored by: Mor Institute)\n16:20 Background Parenchymal Enhancement during Active Lactation: A Longitudinal Intra-Individual Breast MRI Study — Raz Rotman (Department of Radiology, Chaim Sheba Medical Center, Israel)\n16:29 Performance of Artificial Intelligence in Breast Ultrasound for Non-Mass Lesions — Dana Brin (Diagnostic Radiology, Sheba Medical Center, Israel)\n16:38 The Impact of Preoperative MRI on Surgical Management and Disease-Free Survival in Ductal Carcinoma in Situ: A Propensity Score-Matched Study — Shirley Shechter (Radiology, Tel Aviv Sourasky Medical Center (Ichilov), Israel)\n16:47 Dynamic Contrast-Enhanced Mammography for Differentiating Benign and Malignant Breast Lesions — Gazal Mahameed (Division of Diagnostic Imaging, Sheba Medical Center, Israel)\n16:56 Impact of Hormone-Secreting Intrauterine Device on Background\nParenchymal Enhancement in Contrast-Enhanced Mammography — Gal Malka Harari (Diagnostic imagine, Sheba medical center)\n17:05 AI for Evaluating Residual Calcifications in Post-Lumpectomy Pre-Radiation Mammography — Olga Gordon Rapana (Radiology, sheba, Israel)\n17:14 Ultrafast versus Standard DCE-MRI in Breast Lesion and Background Parenchymal Enhancement Differentiation — Shahar Zachariah-Levert (Division of Diagnostic Imaging, Sheba Medical Center, Israel)\n17:23 Revisiting the Milk Rejection Sign: Infant`s Refusal to Feed from One Breast as the Presenting Symptom of Pregnancy-Associated Breast Cancer — Efi Moss (Radiology Institute, Rabin Medical Center, Israel)",
+   "durationMin": 115,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/9213bf5afdc75dca9cc9785947783921def9ce2d056263deae8a33adf6fdbfac399932_.png?v=C373EA"
+  },
+  {
+   "id": "session-71031",
+   "title": "Plenary: The Last Imager Standing - Session 18",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "The Last Imager Standing: A Fun Competition: Radiology Departments Face Off (The sesion will be held in Hebrew)",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70937",
+   "title": "Stand-up Comedy",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "comedy",
+   "categories": [],
+   "blurb": "נגה דיאנג'לי (בעברית)",
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70938",
+   "title": "Plenary: Multiple Myeloma Imaging: Current Standards and Emerging Frontiers - Session 19",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "08:00 Multiple Myeloma: State-of-the-Art Clinical Updates — Dr. Noa Lavi\n08:15 Photon-counting CT in Multiple Myeloma — Dr. Natalia Goldberg\n08:30 Multiple Myeloma: Why Imaging Matters (Hematology-Oncology) — Dr. Noa Lavi\n08:45 State-of-the-Art Multiple Myeloma Imaging Beyond CT — Dr. Konstantin Kenigsberg (Carmel Medical Center)\n09:15 Discussion, Q&A",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "session-71032",
+   "title": "Plenary: Hot Topics 4 - Session 20",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "09:45 Organizing Pneumonia - A Challenge for Interpreters — Osnat Moreh-Rahav (Rabin Medical Center (Beilinson campus))\n10:00 MSK Quiz — Prof. Nogah Haramati (Department of Radiology)\n10:20 Portable Ultra Low Field MRI at the Point of Care: Early Clinicl Experience with Hyperfine System — Dr. Eliel Ben-David (Shaare Zedek Medical Center) (Sponsored by: Tzamal)\n10:35 Advanced Diffusion MRI for Women's Cancer Imaging — Prof. Rebecca Rakow-Penner (University of California San Diego)\n10:55 Beyond Adenoma: Re-evaluating the Imaging Approach to Adrenal Lesions — Dr. Rivka Kessner",
+   "durationMin": 85,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/c0a9c89ddbeb1595edd26617cbe5544975db626e9c80cbce16dfb763fe796c15399928_.png?v=C36171"
+  },
+  {
+   "id": "session-70946",
+   "title": "Parallel Session: Innovation Imaging - Session 21",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "11:25 Beyond the Algorithm - From Organizational Readiness to Measurable Impact in AI-Enabled Medical Imaging — Royi Barnea (Assuta Medical Center); Dr. Arnon Makori\n11:40 Impact of Large Language Model–Assisted Reporting Tools on Radiology Reporting Efficiency and User Experience — Jonathan Tihanyi (Radiology, Sheba Medical Center, Israel)\n11:49 CT-Derived Body Composition and Perioperative Outcomes in Living Kidney Donors — Dr. Shlomit Tamir (Diagnostic Imaging Department, Rabin Medical Center, Israel)\n11:58 Improving Cross-Plane Consistency in Accelerated MRI Using Sequential 2D Expert Networks — Alexander Nazarov (School of Electrical and Computer Engineering, Tel-Aviv University, Israel)\n12:07 First in Human Use of Novel 4-Threshold-Mode PCD-CT: Non-Inferiority of Image Quality and Radiation Exposure — Yael Eshet (Nuclear Medicine, Sheba Medical Center)\n12:16 Preserving Diagnostic Integrity in Ultra-Low-Dose Lung CT via Domain-Specific Perceptual Guidance — Hod Fluger (Electrical Engineering, Tel Aviv University, Israel)\n12:25 Comparison of LLMs Interpretation of Medical Imaging versus Radiology Residents with Regards to Accuracy of Diagnostic Skills. — Aikaterini Megapanou (Department of Radiology, Meir Medical Center)\n12:34 From AI-Based Segmentation to Clinical Biomarkers: An Interactive Framework for MRI Quantification of Residual Breast Tissue after Mastectomy and Silicone Implant Reconstruction — Gilad Yerushalmi (Division of Diagnostic Imaging, Sheba Medical Center, Tel-Hashomer, Israel)\n12:43 Deep Learning for Tumor Localization in Residual Breast Tissue after Mastectomy and Reconstruction — Kfir Cohen (Division of Diagnostic Imaging, Sheba Medical Center, Tel-HaShomer, Israel)",
+   "durationMin": 165,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70947",
+   "title": "Parallel Session: Abdominal Imaging - Session 22",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "11:25 Can a Structured ATLS-Based Physical Examination Reduce CT Utilization After FallsFrom Height? — Alisa Barbarash (Department of Imaging, Shaare Zedek Medical Center)\n11:34 Renal Fat Accumulation Assessed by MRI or CT and Its Association with Clinical and Metabolic Disorders: A Systematic Imaging Review — Hadar Raphael (Department of Imaging, The Chaim Sheba Medical Center, Israel)\n11:43 Estimated C-Reactive Protein Velocity and CT-Defined Complicated Appendicitis — Nadav Schellekes (Department of Radiology, Tel Aviv Sourasky Medical Center, Israel)\n11:52 Imaging Utilization, Findings, and Report Quality Post Gender-Affirming Genital Surgery: An 18-Year Single-Center Retrospective Study — Olga Gordon Rapana (Diagnostic Radiology, Sheba medical center, Isreal)\n12:01 Who Needs MRI in Suspected Endometriosis? A Retrospective Observational Diagnostic Study of Added Value Beyond TVUS — Shaden Ghrayeb (Radiology, Hadassah Medical Center, Israel)\n12:10 Biliary Malignancy Mimicking Cholecystitis: A Multimodality Imaging Case Series — Miri Priss (Diagnostic imaging, Soroka Medical Center, Israel)\n12:19 Inter-reader Agreement and Diagnostic Accuracy of Imaging in Hepatic Cystic Lesions — Revital Nassimov (Radiology Department, Rabin Medical Center)",
+   "durationMin": 165,
+   "imageUrl": null
+  },
+  {
+   "id": "session-70948",
+   "title": "Parallel Session: Neuro-Imaging - Session 23",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "11:25 Common Epileptogenic Brain Malformations — Prof. Orit Glenn (UCSF Benioff Children's Hospitals)\n11:40 Neuro Radiology \"Red Flags\" in Supposedly Normal MRI — Dr. Goni Merhav\n11:55 Why do I Like Being a Neuroradiologist — Dr. Ayelet Eran (Rambam Health Care Center)\n12:10 When Treatment Takes it's Toll: Neuroimaging in the Oncologic Patient — Anat Yahav (Rambam Health Care Center)\n12:25 Read between the Veins: Keep DAVF in Mind — Ruth Eliahou (Radiology, Rabin Medical Center)\n12:34 Task-Adapted Brain MRI Foundation Models for Focal Cortical Dysplasia Detection and Localization — Roy Kadosh (Diagnostic Radiology, Sheba Medical Center)\n12:43 TRAUMATIC CEREBRAL VENOUS SINUS THROMBOSIS IN SKULL FRACTURES CROSSING THE DURAL VENOUS SINUSES: PREVALENCE, RISK FACTORS, AND TIMING OF DETECTION — Lutof Zreik (Radiology, Rambam Health Care Campus, Israel)\n12:52 Intrathecal Administration of Iodinated Contrast Above the Labeled 300 mg/mL Ceiling: A 14-Year Retrospective Series of CT Myelograms — Mahdi Bwirat (Diagnostic Radiology, Sheba Medical Center Tel Hashomer, Israel)\n13:01 Prospective Evaluation of Theoretical Time Savings in Brain MRI Using AI-Guided Identification of Examinations Potentially Not Requiring Contrast — Anatoly Budylev (Medical Imaging, Assuta Health Services, Israel)\n13:10 Can Functional Language Areas Be Mapped without Functional MRI? — Omri Leshem (Diagnostic Imaging, Sheba Medical Center, Israel)\n13:19 Tectal Plate Morphometric Measurements as Biomarker for Differentiating Progressive Supranuclear Palsy, Multiple System Atrophy and Parkinson`s Disease — Avner Merdler (Department of medical imaging, Rambam)\n13:28 Evaluating the Effect of Expanding Clinical Services and Departments at a Tertiary Medical Center on the Neuroradiology Section — Viacheslav Alexandrov (Diagnostic Radiology, SZMC, Israel)\n13:37 When Pathology, Imaging, and Clinical Findings Disagree: A Diagnostic Challenge — Lutof Zreik (Radiology, Rambam Health Care Campus, Israel)",
+   "durationMin": 165,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/28e5ed250bb2404e1a7445d51bfd0543528ce10a41c8ec4eba7f563e68576f96399927_.png?v=C35F9B"
+  },
+  {
+   "id": "session-70949",
+   "title": "Plenary: Closing Session - Session 24",
+   "titleLocal": null,
+   "url": "https://events.ortra.com/isra2026/ScientificVProgram",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "14:10 Michal Meidan Award — Dr. Rama Katz (Shamir Medical center)\n14:20 Prima Volta Award — Prof. Ahuva Grubstein (Vice Chair of the Conference)\n14:30 Closing Remarks — Prof. Ilan Shelef (Chairman of Israel Radiological Association); Prof. Orly Goitein (Sheba Medical Center (Tel HaShomer))",
+   "durationMin": 30,
+   "imageUrl": "https://files-cdn.eventact.com/FileView/848c6f5605be8cbbaefa2daff66e99cbfef38622b082c6fc935bca1609842e09400772_.png?v=140E623"
+  }
+ ],
+ "performances": [
+  {
+   "id": "session-70912/2026-10-18/11:30",
+   "eventId": "session-70912",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-18",
+   "start": "11:30",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71043/2026-10-18/14:20",
+   "eventId": "session-71043",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-18",
+   "start": "14:20",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70917/2026-10-18/15:35",
+   "eventId": "session-70917",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-18",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70918/2026-10-18/15:35",
+   "eventId": "session-70918",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-b",
+   "date": "2026-10-18",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70919/2026-10-18/15:35",
+   "eventId": "session-70919",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-c",
+   "date": "2026-10-18",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70914/2026-10-18/16:25",
+   "eventId": "session-70914",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-18",
+   "start": "16:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70915/2026-10-18/16:25",
+   "eventId": "session-70915",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-b",
+   "date": "2026-10-18",
+   "start": "16:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70916/2026-10-18/16:25",
+   "eventId": "session-70916",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-c",
+   "date": "2026-10-18",
+   "start": "16:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70920/2026-10-18/18:00",
+   "eventId": "session-70920",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-18",
+   "start": "18:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70921/2026-10-18/20:40",
+   "eventId": "session-70921",
+   "venueId": "davids-harp-galilee",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "20:40",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70923/2026-10-19/08:00",
+   "eventId": "session-70923",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "08:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71044/2026-10-19/10:00",
+   "eventId": "session-71044",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "10:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70928/2026-10-19/11:15",
+   "eventId": "session-70928",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "11:15",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70930/2026-10-19/12:15",
+   "eventId": "session-70930",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "12:15",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71028/2026-10-19/14:00",
+   "eventId": "session-71028",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "14:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70932/2026-10-19/15:35",
+   "eventId": "session-70932",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71029/2026-10-19/15:35",
+   "eventId": "session-71029",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-b",
+   "date": "2026-10-19",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71030/2026-10-19/15:35",
+   "eventId": "session-71030",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-c",
+   "date": "2026-10-19",
+   "start": "15:35",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71031/2026-10-19/17:30",
+   "eventId": "session-71031",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-19",
+   "start": "17:30",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70937/2026-10-19/21:00",
+   "eventId": "session-70937",
+   "venueId": "davids-harp-galilee",
+   "roomId": null,
+   "date": "2026-10-19",
+   "start": "21:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70938/2026-10-20/08:00",
+   "eventId": "session-70938",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-20",
+   "start": "08:00",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-71032/2026-10-20/09:45",
+   "eventId": "session-71032",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-20",
+   "start": "09:45",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70946/2026-10-20/11:25",
+   "eventId": "session-70946",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-20",
+   "start": "11:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70947/2026-10-20/11:25",
+   "eventId": "session-70947",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-b",
+   "date": "2026-10-20",
+   "start": "11:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70948/2026-10-20/11:25",
+   "eventId": "session-70948",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-c",
+   "date": "2026-10-20",
+   "start": "11:25",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "session-70949/2026-10-20/14:10",
+   "eventId": "session-70949",
+   "venueId": "davids-harp-galilee",
+   "roomId": "hall-a",
+   "date": "2026-10-20",
+   "start": "14:10",
+   "ticketUrl": "https://events.ortra.com/isra2026/Registration",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "eventact-agenda"
+  ],
+  "performances": [
+   "eventact-agenda"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "eventact-agenda": {
+    "kind": "fetched",
+    "path": "data/festivals/isra/2026/eventact-agenda",
+    "fetchedAt": "2026-09-27T09:19:40Z",
+    "fetcher": "scraper/festivals/isra/sources/eventact-agenda/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/isra/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "eventact-agenda"
+   ],
+   "events.categories": [
+    "eventact-agenda"
+   ],
+   "events.durationMin": [
+    "eventact-agenda"
+   ],
+   "events.genre": [
+    "eventact-agenda"
+   ],
+   "events.imageUrl": [
+    "eventact-agenda"
+   ],
+   "events.title": [
+    "eventact-agenda"
+   ],
+   "events.titleLocal": [
+    "eventact-agenda"
+   ],
+   "events.url": [
+    "eventact-agenda"
+   ],
+   "performances.date": [
+    "eventact-agenda"
+   ],
+   "performances.eventId": [
+    "eventact-agenda"
+   ],
+   "performances.free": [
+    "eventact-agenda"
+   ],
+   "performances.roomId": [
+    "eventact-agenda"
+   ],
+   "performances.start": [
+    "eventact-agenda"
+   ],
+   "performances.ticketUrl": [
+    "eventact-agenda"
+   ],
+   "performances.venueId": [
+    "eventact-agenda"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "eventact-agenda": [
+    "2026-10-18 10:30 Gathering and Registration (logistics)",
+    "2026-10-18 13:20 Lunch, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-18 16:10 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-19 07:30 Registration (logistics)",
+    "2026-10-19 09:40 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-19 11:00 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-19 13:15 Lunch, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-19 15:20 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-20 09:30 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-20 11:55 Coffee Break, E-Poster Viewing & Professional Exhibition (logistics)",
+    "2026-10-20 14:40 Light Lunch (logistics)"
+   ]
+  }
+ }
+}

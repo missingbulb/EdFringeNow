@@ -1,0 +1,62 @@
+# The Jerusalem International Oud Festival, run by Confederation House: who it
+# is, its editions, and the sources an edition's information block is assembled
+# from. The contract every key follows is scraper/festivals/README.md.
+
+id = "jerusalem-oud"
+name = "Jerusalem International Oud Festival"
+name_local = "פסטיבל העוד הבינלאומי ירושלים"
+city = "Jerusalem"
+country = "IL"
+# The city's centre, for the festival timeline and travel maths between cities;
+# venues carry their own coordinates.
+lat = 31.7683
+lng = 35.2137
+timezone = "Asia/Jerusalem"
+# The English mirror (/en/) lists past editions only, with no 2026 programme,
+# so the Hebrew pages are the served text.
+lang = "he"
+dir = "rtl"
+kind = "music"
+subtypes = ["music-oud", "music-world"]
+default_genre = "music"
+site = "https://www.confederationhouse.org/page_18014"
+
+# Each concert page prints its own ticket price, so prices are per performance.
+[ticketing]
+notes = "Each concert's page prints one ticket price. Tickets are sold on bimot.co.il (the pages link to it) and by phone at *6226."
+currency = "ILS"
+source = "https://www.confederationhouse.org/page_18014"
+# One seller (Bimot) and one phone line for every concert, each ticketed on its own.
+model = "central-box-office"
+url = "https://www.confederationhouse.org/page_18014"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site says the festival was founded in 2000 but numbers no
+# edition, so it stays absent (null).
+first = "2026-11-05"
+last = "2026-11-12"
+
+[[source]]
+id = "confederation-house"
+kind = "fetched"
+roles = ["events", "performances", "prices"]
+required = true
+fetcher = "sources/confederation-house/fetch.py"
+adapter = "jerusalem_oud/confederation_house.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "jerusalem_oud/venues_research.py"
+
+# Field precedence per section: for each field, the first source listed here
+# that supplies it wins.
+[merge]
+venues = ["venues-research"]
+events = ["confederation-house"]
+performances = ["confederation-house"]

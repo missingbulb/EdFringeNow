@@ -2,6 +2,31 @@
  "v": 1,
  "festivals": [
   {
+   "id": "abu-gosh",
+   "name": "Abu Gosh Music Festival",
+   "nameLocal": "פסטיבל המוזיקה אבו גוש",
+   "city": "Abu Ghosh",
+   "country": "IL",
+   "lat": 31.804722,
+   "lng": 35.110833,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://abugoshfestival.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-09-29",
+     "lastDate": "2026-10-03",
+     "format": "block",
+     "dataUrl": "/data/festivals/abu-gosh/2026.json"
+    }
+   ]
+  },
+  {
    "id": "acco",
    "name": "Acco Festival of Alternative Israeli Theatre",
    "nameLocal": "פסטיבל עכו הבינלאומי לתיאטרון אחר",
@@ -289,6 +314,56 @@
    ]
   },
   {
+   "id": "indnegev",
+   "name": "InDNegev",
+   "nameLocal": "אינדינגב",
+   "city": "Mitzpe Gvulot",
+   "country": "IL",
+   "lat": 31.2111,
+   "lng": 34.4652,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://indnegev.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-17",
+     "format": "block",
+     "dataUrl": "/data/festivals/indnegev/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "isra",
+   "name": "ISRA Annual Conference (Israel Radiological Association)",
+   "nameLocal": null,
+   "city": "Capernaum",
+   "country": "IL",
+   "lat": 32.8804,
+   "lng": 35.5736,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "talk",
+   "site": "https://events.ortra.com/isra2026",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-18",
+     "lastDate": "2026-10-20",
+     "format": "block",
+     "dataUrl": "/data/festivals/isra/2026.json"
+    }
+   ]
+  },
+  {
    "id": "jerusalem-comedy",
    "name": "Jerusalem Comedy Festival",
    "nameLocal": "פסטיבל הקומדיה הישראלי",
@@ -310,6 +385,31 @@
      "lastDate": "2026-10-22",
      "format": "block",
      "dataUrl": "/data/festivals/jerusalem-comedy/2026.json"
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-oud",
+   "name": "Jerusalem International Oud Festival",
+   "nameLocal": "פסטיבל העוד הבינלאומי ירושלים",
+   "city": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "defaultGenre": "music",
+   "site": "https://www.confederationhouse.org/page_18014",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-05",
+     "lastDate": "2026-11-12",
+     "format": "block",
+     "dataUrl": "/data/festivals/jerusalem-oud/2026.json"
     }
    ]
   },
@@ -385,6 +485,31 @@
      "lastDate": "2027-05-23",
      "format": "block",
      "dataUrl": null
+    }
+   ]
+  },
+  {
+   "id": "tel-aviv-festival",
+   "name": "Tel Aviv Festival",
+   "nameLocal": "פסטיבל תל־אביב",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "multi",
+   "defaultGenre": "music",
+   "site": "https://telavivfestival.co.il",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 2,
+     "firstDate": "2026-11-01",
+     "lastDate": "2026-11-08",
+     "format": "block",
+     "dataUrl": "/data/festivals/tel-aviv-festival/2026.json"
     }
    ]
   }
