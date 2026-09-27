@@ -10,7 +10,7 @@ const ALLOWED = new Set(['package.json', 'site/package.json']);
 
 const rule = {
   id: 'edfringe-no-stray-package-json',
-  severity: 'advisory',
+  on_fail: 'advise',
   description: 'No package.json exists outside the repo root and site/, which declares the ES-module tree',
   why:
     'site/package.json already declares every source under it an ES module, so a package.json in one of its subdirectories re-states what it inherits — and one outside site/ marks a tree that has no module type to declare',

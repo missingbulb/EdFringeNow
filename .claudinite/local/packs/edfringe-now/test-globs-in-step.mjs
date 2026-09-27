@@ -16,7 +16,7 @@ const DELEGATES = /\bnpm (?:run )?test\b/;
 
 const rule = {
   id: 'edfringe-test-globs-in-step',
-  severity: 'blocking',
+  on_fail: 'block',
   description:
     'The `node --test` file globs in package.json\'s "test" script and in scripts/verify.sh name the same set of test files',
   why:
