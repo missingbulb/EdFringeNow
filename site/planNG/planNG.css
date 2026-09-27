@@ -1551,6 +1551,29 @@ body.festival-page {
 
 /* --- the year ------------------------------------------------------------ */
 
+/* The menus that narrow which festivals the year draws (23.24), sitting on
+   the year's top edge at its end. */
+.tl-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 14px 0 0;
+}
+.tl-filters:empty {
+  display: none;
+}
+.tl-filter {
+  height: 30px;
+  border-radius: 8px;
+  padding: 0 8px;
+  font-size: 0.8rem;
+  max-width: 100%;
+}
+.tl-filters + .timeline {
+  margin-top: 8px;
+}
+
 /* The strip across the top: twelve months, a bar per festival edition. Every
    position is logical, so a right-to-left page runs the year from the right. */
 .timeline {
