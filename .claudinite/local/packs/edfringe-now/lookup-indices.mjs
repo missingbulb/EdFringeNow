@@ -56,7 +56,7 @@ const rule = {
     function finding(file, what, fix) {
       return {
         rule: rule.id,
-        severity: rule.severity,
+        severity: { block: 'blocking', advise: 'advisory' }[rule.on_fail],
         file,
         line: null,
         what,
