@@ -29,3 +29,11 @@
 - **Actor:** @missingbulb (owner).
 - **Mechanism:** a guideline of the requirements-harness skill, force-loaded on edits to
   product/requirements.md and product/requirements/.
+
+## 2026-09-27 · reaffirmed · artifact-storage hosts still denied
+- **Source:** 2026-09-27 probe: `productionresultssa0.blob.core.windows.net`,
+  `results-receiver.actions.githubusercontent.com` and
+  `pipelinesghubeus1.actions.githubusercontent.com` all refused the CONNECT with a policy 403,
+  confirming the artifact-storage hosts a red `ui-requirements` download depends on are still denied
+  — the substance the 2026-09-13 pass left un-reprobed.
+- **Actor:** the rule-revalidation run, work item #926.
