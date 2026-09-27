@@ -98,6 +98,19 @@ function jerusalemVerdicts({ locked = {}, noTime = [], noShow = [] } = {}) {
   };
 }
 
+// The Haifa trip, which reaches Acco, with shows locked in both festivals: two
+// Haifa films on its one box office, a play Acco sells through its own seller
+// and a free concert. The checkout's cases (32) read the same four.
+const CHECKOUT_LOCKS = {
+  "haifa-iff/film-13484": "2026-09-27T13:45",
+  "haifa-iff/film-13421": "2026-09-27T10:45",
+  "acco/theatre/האמת השלישית": "2026-09-27T17:00",
+  "acco/theatre/טריו ג'אז": "2026-09-27T21:00",
+};
+function checkoutLocks() {
+  return { "planNG.verdicts": JSON.stringify({ locked: CHECKOUT_LOCKS, noTime: [], noShow: [] }) };
+}
+
 // The answers to the preference questions, as the page stores them. Only the
 // fields a case actually states are seeded; the page fills the rest with the
 // defaults a first visit gets.
@@ -671,6 +684,7 @@ module.exports = {
   jerusalemPrefs,
   jerusalemMeals,
   jerusalemAllDays,
+  checkoutLocks,
   plannerOrigin,
   plannerReady,
   routeFares,

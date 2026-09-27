@@ -2348,6 +2348,43 @@ excursions, flights) carry no festival colour and are hatched instead (28).
   one entry.
   </details>
 
+## 32. Buying the tickets
+
+Every festival says how its tickets are sold, and the shows the reader locks
+are gathered under the calendar, ready to buy. The planner sells nothing
+itself: checking out opens the places that do.
+
+- `32.1` Every festival says how its tickets are sold, and each way decides what the checkout opens.
+
+  <table><thead><tr><th align="left">How the festival sells tickets</th><th align="left">Checkout opens</th></tr></thead><tbody><tr><td>One box office for every show</td><td>each show's own page on it</td></tr><tr><td>Each show through its own seller</td><td>each show's own seller</td></tr><tr><td>One pass for the whole festival</td><td>the pass, once</td></tr><tr><td>Everything is free</td><td>nothing</td></tr><tr><td>Some other way</td><td>the festival's ticketing page, once</td></tr><tr><td>Not said, or a way the page does not know</td><td>the festival's own site, once</td></tr><tr><td>Any way, for a show that is free</td><td>nothing for that show</td></tr></tbody></table> <!-- req-gallery:32.1 -->
+
+  <details><summary>Notes</summary>
+
+  The ways are a list a festival picks from in its `festival.toml`'s
+  `[ticketing] model`, and a way the page does not know yet is read as the
+  festival's own site, so adding one never breaks the page.
+  </details>
+
+- `32.2` Under the calendar, a checkout gathers every locked show by festival, each festival saying how its tickets are sold and each show linking where to buy it.
+
+  ![planng-checkout.32.2](requirements/screen/cases/planng-checkout.32.2.png) <!-- req-gallery:32.2 -->
+
+  <details><summary>Notes</summary>
+
+  The Haifa trip, which reaches Acco, with a show locked in each. Nothing
+  locked, no checkout. A free show needs no ticket and says so.
+  </details>
+
+- `32.3` Checkout opens the next place to buy in a new tab on each press, counting down what is left, since the planner cannot buy for you.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:32.3 -->
+
+  <details><summary>Notes</summary>
+
+  One tab per press, because a browser lets a page open one window for each
+  click and blocks the rest. Shows sold on the same page share one tab.
+  </details>
+
 ## 25. Never a list of thousands
 
 A festival programme can hold hundreds of events and a period can pool several

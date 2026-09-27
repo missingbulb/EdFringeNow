@@ -125,6 +125,19 @@
         <!-- The festivals the calendar shows, in their colours: see renderFestivalLegend(). -->
         <div class="fest-legend" id="festLegend" hidden role="group" data-i18n-aria-label="legend.label" aria-label="表示中のフェスティバル"></div>
 
+        <!-- The locked shows, gathered to buy: see renderCheckout(). -->
+        <section class="checkout" id="checkout" hidden aria-labelledby="checkoutTitle">
+          <div class="checkout-head">
+            <h2 class="checkout-title" id="checkoutTitle" data-i18n="checkout.title">チケット購入</h2>
+            <p class="checkout-count" id="checkoutCount"></p>
+          </div>
+          <div class="checkout-groups" id="checkoutGroups"></div>
+          <div class="checkout-foot">
+            <button type="button" class="checkout-go" id="checkoutGo"></button>
+            <p class="checkout-note" data-i18n="checkout.note">チケットはここでは購入できません。押すたびに、次の販売先を新しいタブで開きます。</p>
+          </div>
+        </section>
+
       </div>
     </section>
 

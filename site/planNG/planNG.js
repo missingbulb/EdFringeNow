@@ -60,6 +60,7 @@ import {
   presentationOf,
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
+import { checkoutPlan, ticketingOf } from "./lib/checkout.js";
 import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
 import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
@@ -213,6 +214,9 @@ const state = {
   picked: new Map(),
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
   search: { query: "", genres: new Set(), venues: new Set() },
+  // The checkout's places to buy that the reader has already had opened, by
+  // url. Not stored: a tab opened yesterday is not a ticket bought.
+  checkoutOpened: new Set(),
 };
 
 // --- small helpers --------------------------------------------------------
@@ -1475,6 +1479,7 @@ function redraft() {
   buildLanes();
   applyVerdicts(draft);
   renderDrawerCount(draft);
+  renderCheckout();
   showBoard();
   syncStars();
 }
@@ -2100,6 +2105,120 @@ function renderFestivalLegend(draft) {
         `${escapeHtml(festivalName(f))}</span>`
     )
     .join("");
+}
+
+// --- the checkout ---------------------------------------------------------
+
+/* The line under each festival in the checkout, by how it sells tickets
+ * (lib/checkout.js). A model with no line of its own yet reads as unknown. */
+const TICKETING_SUMMARY = {
+  "central-box-office": "checkout.model.central",
+  "per-event-seller": "checkout.model.perEvent",
+  "festival-pass": "checkout.model.pass",
+  "all-free": "checkout.model.free",
+  "other": "checkout.model.other",
+};
+
+/** Every locked show in the pool, at the night it is locked to. */
+function lockedItems() {
+  const items = [];
+  for (const show of state.catalogue.shows) {
+    const key = state.locked.get(show.slug);
+    if (!key) continue;
+    const perf = show.performances.find((p) => slotKey(p) === key);
+    if (!perf) continue;
+    items.push({
+      slug: show.slug,
+      festivalId: show.festivalId,
+      title: show.title,
+      date: perf.date,
+      start: perf.start,
+      ticketUrl: perf.ticketUrl ?? null,
+      url: show.url ?? null,
+      free: perf.free,
+    });
+  }
+  return items;
+}
+
+/* The locked shows under the calendar, by festival, each festival saying how
+ * it sells tickets (lib/checkout.js), and the one button that opens the next
+ * place to buy them. */
+function renderCheckout() {
+  const host = $("checkout");
+  const plan = checkoutPlan(lockedItems(), festivalById);
+  host.hidden = !plan.groups.length;
+  if (!plan.groups.length) return;
+  const count = plan.groups.reduce((n, g) => n + g.items.length, 0);
+  $("checkoutCount").textContent = t("checkout.count", { count });
+
+  const link = (url, text) =>
+    `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
+  $("checkoutGroups").innerHTML = plan.groups
+    .map((group) => {
+      const festival = festivalById(group.festivalId);
+      const how = ticketingOf(festival);
+      const home = (festival.ticketing && festival.ticketing.url) || festival.site;
+      const rows = group.items
+        .map((item) => {
+          let buy;
+          if (item.free === true) buy = `<span class="checkout-buy checkout-buy--free">${escapeHtml(t("checkout.freeShow"))}</span>`;
+          else if (!how.sellsTickets) buy = "";
+          else if (item.destination)
+            buy = `<a class="checkout-buy" href="${escapeHtml(item.destination)}" target="_blank" rel="noopener">${escapeHtml(t("checkout.buy"))}</a>`;
+          else buy = `<span class="checkout-buy checkout-buy--covered">${escapeHtml(t("checkout.covered"))}</span>`;
+          return (
+            `<li class="checkout-row" data-slug="${escapeHtml(item.slug)}">` +
+            `<span class="checkout-when">${escapeHtml(dayLabel(item.date))} · ${escapeHtml(item.start)}</span>` +
+            `<span class="checkout-show">${foreign(item.title, item.slug)}</span>` +
+            buy +
+            `</li>`
+          );
+        })
+        .join("");
+      return (
+        `<div class="checkout-group" data-festival="${escapeHtml(group.festivalId)}" data-model="${escapeHtml(group.model || "")}">` +
+        `<h3 class="checkout-festival"><span class="fest-dot" data-festival-colour="${escapeHtml(group.festivalId)}" aria-hidden="true"></span>` +
+        `${escapeHtml(festivalName(festival))}</h3>` +
+        `<p class="checkout-how">${tHtml(TICKETING_SUMMARY[group.model] || "checkout.model.unknown", { site: siteName(home) }, { site: link(home, siteName(home)) })}</p>` +
+        `<ul class="checkout-list">${rows}</ul>` +
+        `</div>`
+      );
+    })
+    .join("");
+
+  // What was opened for a show no longer locked is forgotten, so the count
+  // is always of what this checkout holds.
+  const urls = new Set(plan.destinations.map((d) => d.url));
+  for (const url of state.checkoutOpened) if (!urls.has(url)) state.checkoutOpened.delete(url);
+  const left = plan.destinations.filter((d) => !state.checkoutOpened.has(d.url));
+  const go = $("checkoutGo");
+  go.disabled = !plan.destinations.length;
+  go.dataset.next = left.length ? left[0].url : "";
+  go.textContent = !plan.destinations.length
+    ? t("checkout.nothing")
+    : !state.checkoutOpened.size
+      ? t("checkout.go", { count: plan.destinations.length })
+      : left.length
+        ? t("checkout.next", { left: left.length, total: plan.destinations.length })
+        : t("checkout.done");
+}
+
+/* One tab per press: a browser lets a page open one window for each click and
+ * blocks the rest, so the checkout walks its places to buy rather than
+ * opening them all at once. */
+function wireCheckout() {
+  $("checkoutGo").addEventListener("click", () => {
+    const next = $("checkoutGo").dataset.next;
+    if (!next) {
+      state.checkoutOpened.clear();
+      renderCheckout();
+      return;
+    }
+    state.checkoutOpened.add(next);
+    window.open(next, "_blank", "noopener");
+    renderCheckout();
+  });
 }
 
 /* The draft's pick for each contested hour, by its key: what the hour's list
@@ -3989,6 +4108,7 @@ async function boot() {
 
   wireBoard();
   wireCalendar();
+  wireCheckout();
   wireTips();
   wireBlockers();
   wireDays();

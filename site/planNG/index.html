@@ -124,6 +124,19 @@
         <!-- The festivals the calendar shows, in their colours: see renderFestivalLegend(). -->
         <div class="fest-legend" id="festLegend" hidden role="group" data-i18n-aria-label="legend.label" aria-label="Festivals in view"></div>
 
+        <!-- The locked shows, gathered to buy: see renderCheckout(). -->
+        <section class="checkout" id="checkout" hidden aria-labelledby="checkoutTitle">
+          <div class="checkout-head">
+            <h2 class="checkout-title" id="checkoutTitle" data-i18n="checkout.title">Checkout</h2>
+            <p class="checkout-count" id="checkoutCount"></p>
+          </div>
+          <div class="checkout-groups" id="checkoutGroups"></div>
+          <div class="checkout-foot">
+            <button type="button" class="checkout-go" id="checkoutGo"></button>
+            <p class="checkout-note" data-i18n="checkout.note">We can&#39;t buy tickets for you: each press opens the next place that sells them, in a new tab.</p>
+          </div>
+        </section>
+
       </div>
     </section>
 
