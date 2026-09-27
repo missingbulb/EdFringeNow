@@ -154,8 +154,9 @@ default.
 - `festival`: `id, edition, ordinal, name, nameLocal, city, country, lat, lng,
   timezone, lang, dir, kind, defaultGenre, site, firstDate, lastDate, ticketing`
 - `categories[]`: `{id, name}` — the festival's own sections, untranslated
-- `venues[]`: `{id, name, address, lat, lng, capacity, layout, rooms[{id, name,
-  capacity, layout}], accessibility, notes, refs[]}`; `layout` ∈ raked, flat,
+- `venues[]`: `{id, name, address, lat, lng, online, capacity, layout, rooms[{id, name,
+  capacity, layout}], accessibility, notes, refs[]}`; `online` is true for a
+  stream rather than a place, and an online venue has no `lat`/`lng`; `layout` ∈ raked, flat,
   cabaret, cinema, outdoor, standing; `refs` are the URLs behind curated figures
 - `events[]`: `{id, title, titleLocal, url, genre, categories[], blurb, durationMin, imageUrl}`;
   `titleLocal` is the title in the festival's own language when `title` is not (else null);

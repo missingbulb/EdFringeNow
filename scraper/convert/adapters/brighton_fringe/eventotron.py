@@ -23,5 +23,9 @@ GENRE_BY_SLUG = {
 }
 
 
+# The box office files its livestreamed shows under a venue of their own.
+ONLINE_VENUES = {"brighton-fringe-streaming"}
+
+
 def adapt(source):
-    return platform.adapt(source, GENRE_BY_SLUG)
+    return platform.adapt(source, GENRE_BY_SLUG, online=lambda venue: venue["slug"] in ONLINE_VENUES)

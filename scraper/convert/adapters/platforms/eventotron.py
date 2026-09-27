@@ -30,7 +30,8 @@ def performance_id(slug, p):
     return "%s/%s/%s/%s" % (slug, p["date"], p["start"], p["venue"])
 
 
-def adapt(source, genre_by_slug):
+def adapt(source, genre_by_slug, online=lambda venue: False):
+    """`online(venue)` says whether a raw venue is a stream rather than a place."""
     raw = source.read("programme.json")
     names = {g["slug"]: g["name"] for g in raw["genres"]}
     used = sorted({g for show in raw["shows"] for g in show["genres"]})
@@ -38,7 +39,7 @@ def adapt(source, genre_by_slug):
         "categories": {slug: {"name": names[slug]} for slug in used},
         "venues": {
             v["slug"]: {"name": v["name"], "address": v["address"], "lat": v["lat"], "lng": v["lng"],
-                        "refs": [v["url"]]}
+                        "refs": [v["url"]], "online": online(v)}
             for v in raw["venues"]
         },
         "events": {},

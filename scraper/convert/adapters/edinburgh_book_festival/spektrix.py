@@ -27,4 +27,6 @@ def adapt(source):
         url=lambda event: None,
         genre=lambda event: "family" if event.get("attribute_ProgramType") == "Children's" else "talk",
         free=lambda event: True if event.get("attribute_Free") else None,
+        # Streamed events are filed under a venue of their own.
+        online=lambda venue: venue["name"].strip() == "Livestream",
     )

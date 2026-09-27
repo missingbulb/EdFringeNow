@@ -1673,6 +1673,18 @@ calendar.
   a filter hides can still be found and ruled on there.
   </details>
 
+- `21.21` A show whose festival publishes no place for it is placed at the festival's own location, so a show elsewhere before or after it is kept a journey away.
+
+  <table><thead><tr><th align="left">First show</th><th align="left">Then, by car</th><th align="left">Drafted</th></tr></thead><tbody><tr><td>Haifa, a venue in the city, 18:00–19:00</td><td>Acco, no venue, 19:40</td><td>not both: Acco is a 45′ drive away</td></tr><tr><td>Haifa, a venue in the city, 18:00–19:00</td><td>Acco, no venue, 19:50</td><td>both</td></tr><tr><td>Acco, no venue, 18:00–19:00</td><td>Acco, no venue, 19:40</td><td>both: the same town</td></tr></tbody></table> <!-- req-gallery:21.21 -->
+
+- `21.22` An online show needs no travel time before or after it.
+
+  <table><thead><tr><th align="left">First show, ends 19:00</th><th align="left">Next show, starts 19:00</th><th align="left">Drafted</th></tr></thead><tbody><tr><td>at a venue</td><td>online</td><td>both</td></tr><tr><td>online</td><td>at a venue</td><td>both</td></tr><tr><td>at a venue</td><td>at a venue across town</td><td>not both: the journey needs time</td></tr></tbody></table> <!-- req-gallery:21.22 -->
+
+- `21.23` Leaving out online shows takes every streamed performance off the calendar, and nothing else.
+
+  <table><thead><tr><th align="left">Online shows</th><th align="left">Kept</th></tr></thead><tbody><tr><td>kept</td><td>every show, every performance</td></tr><tr><td>left out</td><td>every show but the online ones</td></tr><tr><td>left out, a show that plays a hall and streams</td><td>the show, at the hall only</td></tr></tbody></table> <!-- req-gallery:21.23 -->
+
 - `21.13` The festivals chip lists every festival the trip reaches, each with the stripe its shows carry and how far away it is, and can leave any of them out.
 
   ![planng-festivals.21.13](requirements/screen/cases/planng-festivals.21.13.png) <!-- req-gallery:21.13 -->

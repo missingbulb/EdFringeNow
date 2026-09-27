@@ -19,6 +19,14 @@ const RECORD = `
   };
 `;
 
+/* Opening the night moves the axis's top from 08:00 to 23:00 the evening
+ * before, so every show on the calendar moves down without changing. */
+async function openNight(page) {
+  await page.evaluate(() => (window.__motion = []));
+  await page.click(".sch-night");
+  return page.evaluate(() => window.__motion);
+}
+
 async function moveDayEnd(page) {
   const line = page.locator(".sch-dayline--end");
   await line.focus();
@@ -48,8 +56,9 @@ module.exports = {
       back.some((m) => m.what === "block" && /"opacity":0/.test(m.from)),
       "a show the later day's end brings back grows in from nothing"
     );
+    const moved = await openNight(page);
     assert.ok(
-      [...out, ...back].some((m) => m.what === "block" && /translate/.test(m.from)),
+      moved.some((m) => m.what === "block" && /translate/.test(m.from)),
       "a show that moves slides from where it was"
     );
 

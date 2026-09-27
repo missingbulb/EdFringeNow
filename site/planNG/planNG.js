@@ -61,7 +61,7 @@ import {
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
 import { checkoutPlan, ticketingOf } from "./lib/checkout.js";
-import { GENRES, GENRE_EMOJI, nextTagMode, passesFilters, sharedGenre } from "./lib/filters.js";
+import { GENRES, GENRE_EMOJI, applyFilters, nextTagMode, sharedGenre } from "./lib/filters.js";
 import { migrateLegacy } from "./lib/migrate.js";
 import { AGES, PARTIES, suggestedAnswers } from "./lib/party.js";
 import { ASSUMED_LENGTH_MIN, NIGHT_END_MIN, flightHours, mealAt, seedDay, slotRule } from "./lib/days.js";
@@ -202,6 +202,7 @@ const state = {
   // festivals left out, and tags (a festival's own categories, by pool id)
   // required ("only") or ruled out ("out").
   festivalsOut: new Set(),
+  onlineOut: false,    // online shows left out of the calendar
   tags: new Map(),
   // Which chip's panel is open, and what the tag box holds. Not stored: it is
   // where the reader has got to, not something they decided.
@@ -362,6 +363,7 @@ function savePrefs() {
     mode: state.mode,
     interests: [...state.interests],
     festivalsOut: [...state.festivalsOut],
+    onlineOut: state.onlineOut,
     tags: Object.fromEntries(state.tags),
     party: state.party,
     answered: [...state.answered],
@@ -397,6 +399,7 @@ function restorePrefs() {
   // category slug; it names no shared kind and is dropped.
   if (Array.isArray(saved.interests)) state.interests = new Set(saved.interests.filter((g) => GENRES.includes(g)));
   if (Array.isArray(saved.festivalsOut)) state.festivalsOut = new Set(saved.festivalsOut);
+  state.onlineOut = saved.onlineOut === true;
   if (saved.party && PARTIES.includes(saved.party.type)) {
     state.party = { type: saved.party.type, ages: (saved.party.ages || []).filter((n) => AGES.includes(n)) };
   }
@@ -718,8 +721,8 @@ function preferredSlugs() {
 
 /** The pool the draft is drawn from: every show the filters keep. */
 function filteredShows() {
-  const filters = { festivalsOut: state.festivalsOut, tags: state.tags };
-  return state.catalogue.shows.filter((show) => passesFilters(show, filters));
+  const filters = { festivalsOut: state.festivalsOut, tags: state.tags, onlineOut: state.onlineOut };
+  return applyFilters(state.catalogue.shows, filters);
 }
 
 /** The pace picture the current pair of numbers is, or none when it is neither. */
@@ -853,7 +856,23 @@ function festivalsHtml() {
         );
       })
       .join("") +
+    onlineRowHtml() +
     `</div>`
+  );
+}
+
+/* Online shows, kept or left out like a festival — offered only when the trip
+ * has any, since there is nothing to leave out otherwise. */
+function onlineRowHtml() {
+  if (!state.catalogue.shows.some((show) => show.online)) return "";
+  return (
+    `<label class="pref-check fest-row fest-row--online">` +
+    `<input type="checkbox" data-online-on="1"${state.onlineOut ? "" : " checked"} />` +
+    `<span class="fest-online" aria-hidden="true">💻</span>` +
+    `<span class="fest-words"><span class="pref-check-word" data-i18n-slot="prefs.festivals.online">` +
+    `${escapeHtml(t("prefs.festivals.online"))}</span>` +
+    `<span class="fest-km" data-i18n-slot="prefs.festivals.onlineNote">${escapeHtml(t("prefs.festivals.onlineNote"))}</span>` +
+    `</span></label>`
   );
 }
 
@@ -1272,6 +1291,8 @@ function wirePrefs() {
       state.minGap = Number(el.value);
     } else if (el.dataset.num === "minGapSame") {
       state.minGapSame = Number(el.value);
+    } else if (el.dataset.onlineOn) {
+      state.onlineOut = !el.checked;
     } else if (el.dataset.festivalOn) {
       if (el.checked) state.festivalsOut.delete(el.dataset.festivalOn);
       else state.festivalsOut.add(el.dataset.festivalOn);
@@ -1954,8 +1975,10 @@ function buildBlockers(axis, y, gutterPx) {
 
 function dayLine(which, min, y, axis) {
   const beyond = which === "start" ? min < axis.topMin : min > axis.botMin;
+  // An end on the axis's bottom edge has nothing below it to hang its flag in.
+  const floor = which === "end" && min >= axis.botMin;
   const el = document.createElement("div");
-  el.className = `sch-dayline sch-dayline--${which}${beyond ? " is-beyond" : ""}`;
+  el.className = `sch-dayline sch-dayline--${which}${beyond ? " is-beyond" : ""}${floor ? " is-floor" : ""}`;
   el.style.top = `${y(min)}px`;
   el.dataset.which = which;
   el.tabIndex = 0;
@@ -2365,12 +2388,19 @@ function buildTravelLeg(a, b, top, bottom) {
     new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(km);
   // The leg's face is a glance (minutes, distance, time to spare); the card it
   // opens on a rest of the pointer says the same in a sentence.
-  const venue = (slot) => foreign(slot.venueName || "", slot.slug);
+  const venue = (slot) => foreign(placeName(slot), slot.slug);
   let text;
   let key;
   let card;
   let spoken;
-  if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
+  let emoji = meta.emoji;
+  if (a.online || b.online) {
+    key = "leg.online";
+    emoji = "💻";
+    text = t(key, { gap: gapMin });
+    card = escapeHtml(t("leg.card.online"));
+    spoken = t("leg.card.online");
+  } else if (a.venueCode && b.venueCode && a.venueCode === b.venueCode) {
     key = "leg.sameVenue";
     text = t(key, { gap: gapMin });
     card = tHtml("leg.card.same", { gap: gapMin }, { venue: venue(a) });
@@ -2382,7 +2412,9 @@ function buildTravelLeg(a, b, top, bottom) {
       { lat: b.venueLat, lng: b.venueLng },
       state.mode
     );
-    if (km == null || mins == null) {
+    // Two shows both placed at their festival's location are somewhere in the
+    // same town, not zero metres apart.
+    if (km == null || mins == null || (a.placeAssumed && b.placeAssumed)) {
       key = "leg.nearby";
       text = t(key, { gap: gapMin });
       card = escapeHtml(t("leg.card.unknown"));
@@ -2404,19 +2436,27 @@ function buildTravelLeg(a, b, top, bottom) {
         `<span class="leg-card-margin">${escapeHtml(margin)}</span>`;
       spoken = [
         t(meta.cardKey, trip),
-        t("leg.card.from", { venue: a.venueName || "" }),
-        t("leg.card.to", { venue: b.venueName || "" }),
+        t("leg.card.from", { venue: placeName(a) }),
+        t("leg.card.to", { venue: placeName(b) }),
         margin,
       ].join(" ");
     }
   }
-  leg.dataset.card = `<span class="leg-card-emoji" aria-hidden="true">${meta.emoji}</span><span class="leg-card-words">${card}</span>`;
+  leg.dataset.card = `<span class="leg-card-emoji" aria-hidden="true">${emoji}</span><span class="leg-card-words">${card}</span>`;
   leg.setAttribute("aria-label", spoken);
   leg.dataset.i18nSlot = key;
   leg.innerHTML =
-    `<span class="leg-emoji" aria-hidden="true">${meta.emoji}</span>` +
+    `<span class="leg-emoji" aria-hidden="true">${emoji}</span>` +
     `<span class="leg-text">${escapeHtml(text)}</span>`;
   return leg;
+}
+
+/* Where a slot is, named: its venue, or for a show its festival gives no
+ * venue, the festival's city — the place its travel was reckoned from. */
+function placeName(slot) {
+  if (slot.venueName) return slot.venueName;
+  const festival = festivalById(festivalOf(slot.slug));
+  return festival ? festival.city : "";
 }
 
 // --- the calendar's two floating surfaces ---------------------------------
