@@ -16,9 +16,7 @@ timezone = "Asia/Jerusalem"
 # answers in English too); a few sessions say they are held in Hebrew.
 lang = "en"
 dir = "ltr"
-# kind becomes "academic" once PR #917 lands; until then the registry knows no
-# such kind, and the subtypes carry what it is.
-kind = "multi"
+kind = "academic"
 subtypes = ["academic-radiology", "academic-medicine"]
 default_genre = "talk"
 site = "https://events.ortra.com/isra2026"
