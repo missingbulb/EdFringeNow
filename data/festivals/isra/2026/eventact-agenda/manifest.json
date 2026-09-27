@@ -1,0 +1,17 @@
+{
+ "festival": "isra",
+ "edition": "2026",
+ "source": "eventact-agenda",
+ "fetchedAt": "2026-09-27T09:19:40Z",
+ "fetcher": "scraper/festivals/isra/sources/eventact-agenda/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://events.ortra.com/isra2026/ScientificVProgram",
+  "https://api.eventact.com/o/v2/agenda/<eventId>/<agendaId>/en/timetable",
+  "https://api.eventact.com/o/v2/agenda/<eventId>/<sessionId>/session"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The programme page embeds EventAct's agenda widget (event, agenda, public API token); the timetable gives every activity with its day, times, halls and EventAct type (12 session, 2 registration and breaks, 29 social, 39 lunch); each session answer gives its lectures, presenting speakers and their portraits (parse.py)."
+}

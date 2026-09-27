@@ -1,0 +1,105 @@
+# ISRA, the Israel Radiological Association's annual conference: its identity,
+# its editions, and the sources an edition's information block is assembled
+# from. Every key follows the contract in scraper/festivals/README.md.
+
+id = "isra"
+name = "ISRA Annual Conference (Israel Radiological Association)"
+city = "Capernaum"
+country = "IL"
+# The conference hotel, David's Harp Galilee Resort (the map pin on
+# davidsharphotels.com/galilee/contact/, which gives its address as Kfar Nahum),
+# for the festival timeline and the travel maths between cities.
+lat = 32.8804
+lng = 35.5736
+timezone = "Asia/Jerusalem"
+# The programme is published in English only (the agenda's Hebrew timetable
+# answers in English too); a few sessions say they are held in Hebrew.
+lang = "en"
+dir = "ltr"
+# kind becomes "academic" once PR #917 lands; until then the registry knows no
+# such kind, and the subtypes carry what it is.
+kind = "multi"
+subtypes = ["academic-radiology", "academic-medicine"]
+default_genre = "talk"
+site = "https://events.ortra.com/isra2026"
+
+# Admission is a conference registration, for the whole conference or one day,
+# priced by professional category and membership; no session is sold on its
+# own. So the fee table is served here, and performance prices stay null.
+[ticketing]
+notes = "Registration fees from the conference's Registration page, in ILS. Early rates ran until 25 Sept 2026; the regular rates from 26 Sept are the ones listed. Full conference or a single day (18, 19 or 20 Oct); ISRA members are those who paid 2025 and 2026 fees. The fee includes the welcome reception, all sessions, the exhibition, lunch and coffee breaks. Registration and payment through the conference secretariat, Ortra (radiology@ortra.com). The conference is for physicians, residents, medical students and health professions only."
+currency = "ILS"
+source = "https://events.ortra.com/isra2026/Registration"
+# One registration admits to every session, so it is modelled as a pass.
+model = "festival-pass"
+url = "https://events.ortra.com/isra2026/Registration"
+
+[ticketing.fullConference]
+seniorMember = 1110
+seniorNonMember = 2155
+retiredMember = 945
+retiredNonMember = 1835
+residentMember = 545
+residentNonMember = 965
+paramedical = 890
+student = 600
+
+[ticketing.dailySeniorMember]
+oct18 = 925
+oct19 = 925
+oct20 = 795
+
+[ticketing.dailySeniorNonMember]
+oct18 = 1400
+oct19 = 1630
+oct20 = 1400
+
+[ticketing.dailyResidentMember]
+oct18 = 350
+oct19 = 410
+oct20 = 350
+
+[ticketing.dailyResidentNonMember]
+oct18 = 760
+oct19 = 885
+oct20 = 760
+
+[ticketing.dailyParamedical]
+oct18 = 565
+oct19 = 620
+oct20 = 565
+
+[ticketing.dailyStudent]
+oct18 = 200
+oct19 = 200
+oct20 = 200
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site never numbers the conference, so it stays absent (null).
+first = "2026-10-18"
+last = "2026-10-20"
+
+[[source]]
+id = "eventact-agenda"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/eventact-agenda/fetch.py"
+adapter = "isra/eventact_agenda.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "isra/venues_research.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "eventact-agenda"]
+events = ["eventact-agenda"]
+performances = ["eventact-agenda"]

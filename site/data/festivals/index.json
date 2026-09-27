@@ -339,6 +339,31 @@
    ]
   },
   {
+   "id": "isra",
+   "name": "ISRA Annual Conference (Israel Radiological Association)",
+   "nameLocal": null,
+   "city": "Capernaum",
+   "country": "IL",
+   "lat": 32.8804,
+   "lng": 35.5736,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "multi",
+   "defaultGenre": "talk",
+   "site": "https://events.ortra.com/isra2026",
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-18",
+     "lastDate": "2026-10-20",
+     "format": "block",
+     "dataUrl": "/data/festivals/isra/2026.json"
+    }
+   ]
+  },
+  {
    "id": "jerusalem-comedy",
    "name": "Jerusalem Comedy Festival",
    "nameLocal": "פסטיבל הקומדיה הישראלי",
