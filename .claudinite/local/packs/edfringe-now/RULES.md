@@ -107,9 +107,6 @@ requirements harness's are the `requirements-harness` skill; each loads when its
 
 ## GitHub and CI
 
-- **Calling `actions_list` for workflow runs** — always pass `perPage`; without it the call
-  overflows the tool-result limit on this repo's history. (actionslist-listworkflowruns-overflows)
-
 - **Checking whether a PR merged via `list_pull_requests`** — read `merged_at` for non-null; the
   `merged` field decodes `false` even for a merged PR. (listpullrequestss-merged-field)
 
