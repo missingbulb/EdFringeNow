@@ -13,6 +13,9 @@
    "lang": "he",
    "dir": "rtl",
    "kind": "theatre",
+   "subtypes": [
+    "theatre-alternative"
+   ],
    "defaultGenre": "theatre",
    "site": "https://accofestival.co.il",
    "editions": [
@@ -38,6 +41,7 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "fringe",
+   "subtypes": [],
    "defaultGenre": "other",
    "site": "https://www.brightonfringe.org",
    "editions": [
@@ -63,6 +67,7 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "fringe",
+   "subtypes": [],
    "defaultGenre": "other",
    "site": "https://www.edfringe.com",
    "editions": [
@@ -91,7 +96,10 @@
    "timezone": "Europe/London",
    "lang": "en",
    "dir": "ltr",
-   "kind": "multi",
+   "kind": "art",
+   "subtypes": [
+    "art-contemporary"
+   ],
    "defaultGenre": "other",
    "site": "https://edinburghartfestival.com",
    "editions": [
@@ -116,7 +124,10 @@
    "timezone": "Europe/London",
    "lang": "en",
    "dir": "ltr",
-   "kind": "multi",
+   "kind": "literature",
+   "subtypes": [
+    "literature-books"
+   ],
    "defaultGenre": "talk",
    "site": "https://www.edbookfest.co.uk",
    "editions": [
@@ -142,6 +153,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "multi",
+   "subtypes": [
+    "multi-deaf-arts"
+   ],
    "defaultGenre": "other",
    "site": "https://edinburghdeaffestival.com",
    "editions": [
@@ -167,6 +181,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "music",
+   "subtypes": [
+    "music-military"
+   ],
    "defaultGenre": "music",
    "site": "https://www.edintattoo.co.uk",
    "editions": [
@@ -200,6 +217,7 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "multi",
+   "subtypes": [],
    "defaultGenre": "other",
    "site": "https://www.eif.co.uk",
    "editions": [
@@ -225,6 +243,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
    "defaultGenre": "film",
    "site": "https://www.edfilmfest.org",
    "editions": [
@@ -250,6 +271,7 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "multi",
+   "subtypes": [],
    "defaultGenre": "other",
    "site": "https://www.fringebythesea.com",
    "editions": [
@@ -275,6 +297,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
    "defaultGenre": "film",
    "site": "https://www.haifaff.co.il",
    "editions": [
@@ -300,6 +325,9 @@
    "lang": "he",
    "dir": "rtl",
    "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
    "defaultGenre": "comedy",
    "site": "https://comedy-festival.co.il",
    "editions": [
@@ -325,6 +353,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
    "defaultGenre": "comedy",
    "site": "https://www.comedy-festival.co.uk",
    "editions": [
@@ -350,6 +381,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
    "defaultGenre": "comedy",
    "site": "https://www.comedyfestival.com.au",
    "editions": [
@@ -375,6 +409,9 @@
    "lang": "en",
    "dir": "ltr",
    "kind": "comedy",
+   "subtypes": [
+    "comedy-standup"
+   ],
    "defaultGenre": "comedy",
    "site": "https://www.comedyfestival.co.nz",
    "editions": [

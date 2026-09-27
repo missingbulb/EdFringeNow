@@ -11,7 +11,8 @@ lng = -3.1883
 timezone = "Europe/London"
 lang = "en"
 dir = "ltr"
-kind = "multi"
+kind = "literature"
+subtypes = ["literature-books"]
 default_genre = "talk"
 site = "https://www.edbookfest.co.uk"
 

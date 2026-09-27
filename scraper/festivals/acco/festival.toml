@@ -15,6 +15,7 @@ timezone = "Asia/Jerusalem"
 lang = "he"
 dir = "rtl"
 kind = "theatre"
+subtypes = ["theatre-alternative"]
 default_genre = "theatre"
 site = "https://accofestival.co.il"
 

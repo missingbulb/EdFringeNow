@@ -19,6 +19,7 @@ timezone = "Europe/London"
 lang = "en"
 dir = "ltr"
 kind = "music"
+subtypes = ["music-military"]
 default_genre = "music"
 site = "https://www.edintattoo.co.uk"
 

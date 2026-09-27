@@ -15,6 +15,7 @@ timezone = "Asia/Jerusalem"
 lang = "he"
 dir = "rtl"
 kind = "comedy"
+subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://comedy-festival.co.il"
 

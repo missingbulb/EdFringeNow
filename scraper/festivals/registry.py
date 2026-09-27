@@ -29,7 +29,9 @@ CACHE_ROOT = os.path.join(RAW_ROOT, ".cache")
 # The sections of the festival information block a source can contribute to.
 SECTIONS = ("festival", "venues", "events", "performances", "availability", "prices")
 SOURCE_KINDS = ("fetched", "curated")
-KINDS = ("film", "fringe", "comedy", "theatre", "music", "multi")
+# What a festival is, as the year strip's type filter offers it. "multi" is a
+# festival of several arts with no one of them leading.
+KINDS = ("film", "fringe", "comedy", "theatre", "music", "dance", "art", "literature", "sports", "academic", "multi")
 GENRES = ("film", "comedy", "theatre", "dance", "music", "family", "talk", "other")
 
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -71,6 +73,9 @@ def _check(festival, path):
         raise RegistryError("%s: id %r is not a lowercase-hyphen slug" % (where, festival["id"]))
     if festival["kind"] not in KINDS:
         raise RegistryError("%s: kind %r not in %s" % (where, festival["kind"], KINDS))
+    subtypes = festival.get("subtypes", [])
+    if not isinstance(subtypes, list) or not all(isinstance(s, str) and ID_RE.match(s) for s in subtypes):
+        raise RegistryError("%s: subtypes must be a list of lowercase-hyphen slugs" % where)
     if festival["default_genre"] not in GENRES:
         raise RegistryError("%s: default_genre %r not in %s" % (where, festival["default_genre"], GENRES))
     if festival["dir"] not in ("ltr", "rtl"):

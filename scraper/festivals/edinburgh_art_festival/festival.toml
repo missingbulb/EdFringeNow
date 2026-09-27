@@ -11,7 +11,8 @@ lng = -3.1883
 timezone = "Europe/London"
 lang = "en"
 dir = "ltr"
-kind = "multi"
+kind = "art"
+subtypes = ["art-contemporary"]
 default_genre = "other"
 site = "https://edinburghartfestival.com"
 

@@ -18,6 +18,7 @@ timezone = "Europe/London"
 lang = "en"
 dir = "ltr"
 kind = "comedy"
+subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedy-festival.co.uk"
 

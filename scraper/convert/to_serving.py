@@ -96,6 +96,7 @@ def build_index(festivals):
             "lang": f["lang"],
             "dir": f["dir"],
             "kind": f["kind"],
+            "subtypes": f.get("subtypes", []),
             "defaultGenre": f["default_genre"],
             "site": f["site"],
             "editions": [edition_entry(f, ed) for ed in sorted(f["edition"], key=lambda e: e["id"])],

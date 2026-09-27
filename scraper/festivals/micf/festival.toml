@@ -17,6 +17,7 @@ timezone = "Australia/Melbourne"
 lang = "en"
 dir = "ltr"
 kind = "comedy"
+subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedyfestival.com.au"
 
