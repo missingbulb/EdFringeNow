@@ -49,10 +49,11 @@ let cheerUntil = 0;
  * @param {{from: string, to: string, days: number}[]} [o.breaks] the breaks the
  *   reader's public holidays make inside the span, an orb each on the months
  * @param {(brk: object) => string} [o.breakCard] the card an orb shows, as HTML
+ * @param {string} [o.noneKey] what an empty strip says, as a translation key
  */
 export function renderTimeline(host, o) {
   const { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, lengthText, todayText, festivalCard } = o;
-  const { breaks = [], breakCard, bunchLabel, bunchCard, flag, travel = null } = o;
+  const { breaks = [], breakCard, bunchLabel, bunchCard, flag, travel = null, noneKey = "timeline.none" } = o;
   const cards = [];
   const card = (html) => cards.push(html) - 1;
   const bunches = timelineBunches(registry, span);
@@ -140,7 +141,7 @@ export function renderTimeline(host, o) {
   if (!bunches.length) {
     host.querySelector(".tl-track").insertAdjacentHTML(
       "beforeend",
-      `<p class="tl-none" data-i18n-slot="timeline.none">${escapeHtml(t("timeline.none"))}</p>`
+      `<p class="tl-none" data-i18n-slot="${noneKey}">${escapeHtml(t(noneKey))}</p>`
     );
   }
   layoutRows(host);

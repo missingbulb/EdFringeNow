@@ -29,7 +29,8 @@ city = "…"  country = "IL"        # ISO 3166 alpha-2
 lat = 31.7683  lng = 35.2137      # the city, for the timeline and travel maths
 timezone = "Asia/Jerusalem"       # performance times are this wall clock
 lang = "he"  dir = "rtl"
-kind = "comedy"                   # film | fringe | comedy | theatre | music | multi
+kind = "comedy"                   # film | fringe | comedy | theatre | music | dance | art | literature | sports | academic | multi
+subtypes = ["comedy-standup"]     # optional; what sets this festival apart within its kind, `<kind>-<what>`
 default_genre = "comedy"          # an event's genre when its adapter assigns none
 site = "https://…"
 

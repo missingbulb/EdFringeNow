@@ -12,6 +12,7 @@ timezone = "Europe/London"
 lang = "en"
 dir = "ltr"
 kind = "multi"
+subtypes = ["multi-deaf-arts"]
 default_genre = "other"
 site = "https://edinburghdeaffestival.com"
 

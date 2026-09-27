@@ -18,6 +18,7 @@ timezone = "Asia/Jerusalem"
 lang = "en"
 dir = "ltr"
 kind = "film"
+subtypes = ["film-international"]
 default_genre = "film"
 site = "https://www.haifaff.co.il"
 

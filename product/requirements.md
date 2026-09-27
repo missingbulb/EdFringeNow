@@ -1932,6 +1932,26 @@ reaches it, and otherwise the one it covers most.
   the festival chosen while the moved dates still reach it (23.9).
   </details>
 
+- `23.24` Above the year, three menus narrow the festivals it draws: to a place, a type and a subtype.
+
+  ![planng-strip-filter.23.24](requirements/screen/cases/planng-strip-filter.23.24.png) <!-- req-gallery:23.24 -->
+
+  <details><summary>Notes</summary>
+
+  A place is a country or one of its cities; a type is what the festival is
+  (music, film, theatre, dance, art, sports, academic, and the rest the
+  registry's `kind` names); a subtype is what sets one festival apart within
+  its type (`film-documentary`, `academic-biology`), a label on the festival
+  and never on its events. Each menu offers only what the registry holds, the
+  subtype menu only the subtypes the chosen place and type leave, and it is
+  hidden while none do. Only the strip is narrowed: the pool the calendar
+  drafts from is the trip's, whatever the menus say.
+  </details>
+
+- `23.25` The menus keep a festival only when it matches all three, and the festival leading the trip is always kept.
+
+  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all five</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr></tbody></table> <!-- req-gallery:23.25 -->
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when

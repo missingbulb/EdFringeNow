@@ -20,6 +20,7 @@ timezone = "Pacific/Auckland"
 lang = "en"
 dir = "ltr"
 kind = "comedy"
+subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedyfestival.co.nz"
 
