@@ -53,3 +53,36 @@
   notification is the thing to wait for, never a second foreground poll. Landing it again here
   would restate a rule this repo already carries at the tool-contract level.
 - **Actor:** the growth-extract run, item #906.
+
+## 2026-09-27 · declined · designing #917/#918/#919's schema additions to tolerate each other landing in any order (#940)
+- **Source:** PRs #917, #918, #919 (growth-extract window, item #940) — three concurrent
+  project-thread sessions each added a `festival.toml`/registry field (`subtypes`, `[ticketing]`) or
+  referenced ones not yet merged, explicitly designed additive and order-independent ("main ignores
+  both until those land"), and all three merged cleanly within the same 15-minute span.
+- **Reason:** an already-correct decision each session reasoned out on its own, not a mistake to
+  steer away from next time — a rule can't sharpen a choice already reached correctly, and nothing
+  here is checkable; additive-schema practice is already the `basics` pack's general
+  migration/legacy-tolerance guidance.
+- **Actor:** the growth-extract run, item #940.
+
+## 2026-09-27 · declined · parallel worktree subagents conflicting on data-dir-is-generator-output.mjs's shared allowlist (#940)
+- **Source:** PR #918 (growth-extract window, item #940) — three dispatched worktree subagents
+  (Abu Gosh, Oud, ISRA) each appended their festival's raw-to-generator mapping to the same array;
+  cherry-picking their commits into the parent branch produced a git conflict in that one file,
+  resolved in under a minute by merging the entries by hand.
+- **Reason:** a gotcha tied to one call site (`data-dir-is-generator-output.mjs`'s allowlist)
+  belongs as a comment there, not a pack rule — and this pass's write surface never reaches source
+  comments.
+- **Actor:** the growth-extract run, item #940.
+
+## 2026-09-27 · declined · rebasing PR #920 onto three sibling merges before landing (#940)
+- **Source:** PR #920 (growth-extract window, item #940) — the last of four same-morning PRs to
+  merge hit a real conflict in `site/planNG/planNG.js` against the three that landed first; the
+  session merged main, resolved the code conflict, regenerated the touched festivals'
+  `to_serving.py` output plus `index.json`, refreshed one golden, and re-ran the full `npm run
+  test:ui` twice (~5 minutes total) before committing.
+- **Reason:** already covered — regenerating rather than hand-patching derived output is the
+  `data-pipeline` skill's and `working-with-generated-files`'s existing rule, and re-running
+  `test:ui` before a merge is `test-ui-before-pixel-change`'s. Nothing here needed guidance the repo
+  doesn't already carry.
+- **Actor:** the growth-extract run, item #940.
