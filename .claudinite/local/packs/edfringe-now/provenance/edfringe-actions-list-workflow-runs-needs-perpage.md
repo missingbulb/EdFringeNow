@@ -8,3 +8,10 @@
   `perPage` whenever `method` is `list_workflow_runs`.
 - **Retire when:** actions_list stops overflowing without perPage, or the tool enforces a page size
   itself.
+
+## 2026-09-28 · severity-changed · canon on-fail-rename migration
+- **Reason:** the canon's on-fail-rename migration respelled every check's `severity:
+  "blocking"|"advisory"` as `on_fail: "block"|"advise"`; this declared check's field moved with it.
+- **Mechanism:** `.claudinite/shared/engine/migrations/2026-09-25-on-fail-rename/migration.mjs`'s
+  codemod, applied by the scheduled `claudinite-lifecycle/update` task.
+- **Actor:** claudinite-lifecycle/update (work item #943).

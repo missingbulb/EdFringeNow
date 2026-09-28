@@ -15,7 +15,7 @@ const RESTORES = /^[^#\n]*\bgit\s+(?:checkout|switch)\s+main\b/m;
 
 const rule = {
   id: 'edfringe-worker-restores-main',
-  severity: 'blocking',
+  on_fail: 'block',
   description:
     'a local task worker that commits or pushes returns the checkout to `main` first',
   why:
@@ -59,7 +59,7 @@ const rule = {
 function finding(file, what) {
   return {
     rule: rule.id,
-    severity: rule.severity,
+    severity: rule.on_fail === 'block' ? 'blocking' : 'advisory',
     file,
     line: null,
     what: `${file} ${what}`,

@@ -11,7 +11,7 @@ const JS_FILE = /\.m?js$/;
 
 const rule = {
   id: 'edfringe-verify-sh-covers-source-dirs',
-  severity: 'blocking',
+  on_fail: 'block',
   description:
     'scripts/verify.sh\'s JavaScript syntax-check step names every top-level directory that has committed .js/.mjs source',
   why:
@@ -49,7 +49,7 @@ const rule = {
 function finding(what, fix) {
   return {
     rule: rule.id,
-    severity: rule.severity,
+    severity: rule.on_fail === 'block' ? 'blocking' : 'advisory',
     file: VERIFY,
     line: null,
     what,
