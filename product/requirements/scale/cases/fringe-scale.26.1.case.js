@@ -1,6 +1,6 @@
 "use strict";
 const path = require("node:path");
-const { plannerReady, settle } = require("../../shared/case-helpers");
+const { openShowSearch, plannerReady, settle } = require("../../shared/case-helpers");
 
 const LIMITS = path.join(__dirname, "..", "..", "..", "..", "site", "shared", "limits.js");
 const FILTERS = path.join(__dirname, "..", "..", "..", "..", "site", "planNG", "lib", "filters.js");
@@ -12,7 +12,8 @@ const TABLE = {
   rows: [
     ["The drawer's programme list", "nothing: it asks for a search"],
     ["A one-letter search's results", "SEARCH_RESULT_ROWS (40)"],
-    ["The kinds filter's options", "FACET_OPTIONS (30)"],
+    ["The genres filter's options", "the eight shared kinds"],
+    ["The sub-genres filter's options", "FACET_OPTIONS (30)"],
     ["The venues filter's options", "FACET_OPTIONS (30), and a line for the rest"],
     ["The kinds question's answers", "the eight shared kinds"],
     ["The kinds question's tags", "FACET_OPTIONS (30)"],
@@ -42,13 +43,16 @@ module.exports = {
     assert.equal(await count("#browseMore .browse-search-first"), 1, "and asks for a search");
     assert.equal(await count("#lanes .lane"), 0, "no lanes before anything is ruled on");
 
+    await openShowSearch(page);
     await page.fill("#ssInput", "a");
     await page.waitForSelector("#ssResults li");
     const results = await count("#ssResults li");
     assert.ok(results > 0 && results <= SEARCH_RESULT_ROWS, `a search draws ${results}, at most ${SEARCH_RESULT_ROWS}`);
 
-    const kinds = await count("#ssfGenreOptions label");
-    assert.ok(kinds > 0 && kinds <= FACET_OPTIONS, `the kinds filter lists ${kinds}`);
+    const genres = await count("#ssfKindOptions label");
+    assert.ok(genres > 0 && genres <= GENRES.length, `the genres filter lists ${genres}`);
+    const kinds = await count("#ssfSubgenreOptions label");
+    assert.ok(kinds > 0 && kinds <= FACET_OPTIONS, `the sub-genres filter lists ${kinds}`);
     const venues = await count("#ssfVenueOptions label");
     assert.equal(venues, FACET_OPTIONS, "the venues filter lists exactly a panel's worth");
     assert.equal(await count("#ssfVenueOptions .panel-more"), 1, "and says how many it left out");

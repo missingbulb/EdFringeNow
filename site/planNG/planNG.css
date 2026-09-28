@@ -2498,3 +2498,85 @@ body.festival-page {
   color: var(--muted);
   font-size: 0.75rem;
 }
+
+/* --- the event filters ------------------------------------------------------ */
+
+/* The kinds panel's second line: a collapsed "Find a show" that opens onto the
+   search box and the genre, sub-genre and venue filters. Everything in it stays
+   in the panel's flow, which scrolls: an overlay there would be clipped. */
+.event-filters {
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.event-filters[hidden] {
+  display: none;
+}
+.ef-summary {
+  display: flex;
+  align-items: center;
+  /* A whole number of pixels, so what follows in the panel starts on one. */
+  height: 20px;
+  gap: 6px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ef-summary::-webkit-details-marker {
+  display: none;
+}
+.ef-summary:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.ef-caret {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.event-filters[open] .ef-caret {
+  transform: rotate(90deg);
+}
+[dir="rtl"] .event-filters:not([open]) .ef-caret {
+  transform: scaleX(-1);
+}
+.event-filters .show-search {
+  margin-top: 10px;
+  text-align: start;
+}
+/* The search box leads the line on a row of its own, the filters wrap under
+   it; a filter's options drop under the whole line, at its full width. */
+.ss-line {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.ss-line .ss-bar {
+  flex: 1 1 100%;
+  padding: 5px 9px 5px 12px;
+  border-width: 1.5px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.ss-line .ss-input {
+  font-size: 0.9rem;
+}
+.ss-line .filter-chip {
+  position: static;
+}
+.ss-line .chip-panel {
+  inset-inline: 0;
+  min-width: 0;
+}
+.event-filters .ss-pop {
+  position: static;
+  margin-top: 8px;
+  box-shadow: none;
+  max-height: 300px;
+}
+.ss-line .chip-trigger {
+  padding: 5px 9px;
+}
