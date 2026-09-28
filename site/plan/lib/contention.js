@@ -48,6 +48,38 @@ export function byScarcity(a, b) {
 }
 
 /**
+ * The drafted block a performance lost its time to: of the night's blocks it
+ * cannot sit beside, the one it overlaps longest, then the one starting
+ * nearest it. A rival need not start on the same minute as the pick — a
+ * festival staggers its halls a quarter-hour apart — so matching on the start
+ * alone hides nearly every alternative a real programme has.
+ * @param {object} cand
+ * @param {Array<[object, object]>} day the night's drafted blocks, each as
+ *   [as timed for clashes, as drafted]
+ * @param {object} gapOpts
+ * @returns {object|undefined} the block as drafted
+ */
+function rivalledBy(cand, day, gapOpts) {
+  let best;
+  let bestOverlap = -1;
+  let bestDistance = Infinity;
+  for (const [block, drafted] of day) {
+    if (block.startMinuteOfDay !== cand.startMinuteOfDay && compatible(block, cand, gapOpts)) continue;
+    const overlap = Math.max(
+      0,
+      Math.min(block.endMinuteOfDay, cand.endMinuteOfDay) - Math.max(block.startMinuteOfDay, cand.startMinuteOfDay)
+    );
+    const distance = Math.abs(block.startMinuteOfDay - cand.startMinuteOfDay);
+    if (overlap > bestOverlap || (overlap === bestOverlap && distance < bestDistance)) {
+      best = drafted;
+      bestOverlap = overlap;
+      bestDistance = distance;
+    }
+  }
+  return best;
+}
+
+/**
  * Draft one performance per contested hour across the window, from every show
  * in the programme.
  *
@@ -80,7 +112,8 @@ export function byScarcity(a, b) {
  *   allowSlot: what the reader has kept for themselves — a performance it
  *   refuses leaves the pool the way one outside the day's hours does.
  *   assumedLengthMin: how long a performance with no published length counts
- *   as for the day's hours and allowSlot; without it, it counts as none.
+ *   as for the day's hours, allowSlot and its clashes with the rest of the
+ *   night; without it, it counts as none.
  * @returns {{
  *   days: Array<{date: string, slots: object[]}>,
  *   picked: Map<string,string>,
@@ -128,18 +161,27 @@ export function draftCalendar(shows, options = {}) {
   // A show's pool is its performances in the window that no verdict has struck
   // out. A locked instance overrides the day-hours window the way an explicit
   // pin does everywhere else: you asked for that hour by name.
+  // A show with no published length still takes time: the hours tests, and
+  // every clash the draft weighs, see it running for the length the caller
+  // assumes. The slot itself keeps its published end, so its card still says
+  // only when it starts.
+  const busy = (s) =>
+    options.assumedLengthMin && s.endMinuteOfDay === s.startMinuteOfDay
+      ? {
+          ...s,
+          end: s.start + options.assumedLengthMin,
+          endMinuteOfDay: s.startMinuteOfDay + options.assumedLengthMin,
+        }
+      : s;
+  const fits = (a, b) => compatible(busy(a), busy(b), gapOpts);
+
   const pool = new Map();
   for (const [slug, slots] of all) {
     const pinnedKey = locked.get(slug);
     const kept = slots.filter((s) => {
       if (rejectedInstances.has(instanceKey(slug, slotKey(s)))) return false;
       if (pinnedKey && slotKey(s) === pinnedKey) return true;
-      // A show with no published length still takes time: the hours tests
-      // see it running for the length the caller assumes.
-      const timed =
-        options.assumedLengthMin && s.endMinuteOfDay === s.startMinuteOfDay
-          ? { ...s, endMinuteOfDay: s.startMinuteOfDay + options.assumedLengthMin }
-          : s;
+      const timed = busy(s);
       if (options.allowSlot && !options.allowSlot(timed)) return false;
       return withinDayWindow(timed, dayWindow);
     });
@@ -197,7 +239,7 @@ export function draftCalendar(shows, options = {}) {
       ) {
         continue;
       }
-      if (!sameDay.every((c) => compatible(c, cand, gapOpts))) continue;
+      if (!sameDay.every((c) => fits(c, cand))) continue;
       place(cand, verdict);
     }
   };
@@ -224,11 +266,9 @@ export function draftCalendar(shows, options = {}) {
   // What a block offers instead of itself: the shows that wanted the same hour
   // and could still take it. Three things disqualify a contender, and all three
   // are settled here rather than discovered after the reader has picked one.
-  const placedAt = new Map();
-  for (const cand of placed) placedAt.set(`${cand.date}T${cand.startMinuteOfDay}`, cand);
   const offered = new Set();
   for (const cand of candidates) {
-    const winner = placedAt.get(`${cand.date}T${cand.startMinuteOfDay}`);
+    const winner = rivalledBy(busy(cand), (perDay.get(cand.date) || []).map((c) => [busy(c), c]), gapOpts);
     if (!winner || winner.slug === cand.slug) continue;
     // 1. The reader has settled this hour, so nothing is on offer for it.
     if (winner.verdict === "locked") continue;
@@ -245,7 +285,7 @@ export function draftCalendar(shows, options = {}) {
     const committed = (perDay.get(cand.date) || []).filter(
       (c) => c !== winner && (c.verdict === "locked" || c.verdict === "favourite")
     );
-    if (!committed.every((c) => compatible(c, cand, gapOpts))) continue;
+    if (!committed.every((c) => fits(c, cand))) continue;
     winner.contenders.push(cand);
     offered.add(cand.slug);
   }
