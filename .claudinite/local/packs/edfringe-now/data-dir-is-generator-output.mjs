@@ -196,7 +196,7 @@ const rule = {
 function finding(file, fix) {
   return {
     rule: rule.id,
-    severity: rule.severity,
+    severity: rule.on_fail === 'block' ? 'blocking' : 'advisory',
     file,
     line: null,
     what: `${file} is under a data tree but is not something a generator in this repo produces`,

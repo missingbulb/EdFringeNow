@@ -29,7 +29,7 @@ const rule = {
 function finding(file, fix) {
   return {
     rule: rule.id,
-    severity: rule.severity,
+    severity: rule.on_fail === 'block' ? 'blocking' : 'advisory',
     file,
     line: null,
     what: `${file} is a package.json outside the repo root and site/`,
