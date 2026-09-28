@@ -1,11 +1,23 @@
 {
   "usage-findings": {
     "value": 81,
-    "previous": 17,
-    "note": "2026-08-29 to 2026-09-25"
+    "previous": 81,
+    "note": "2026-08-31 to 2026-09-27"
   },
   "usage-newest": {
     "rows": [
+      {
+        "subject": "flat-declarations-current",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-28"
+      },
+      {
+        "subject": "preferences-store-codeowners",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-28"
+      },
       {
         "subject": "adoption-answers-pending",
         "rule": "check-never-fires",
@@ -52,18 +64,6 @@
         "subject": "committing",
         "rule": "skill-always-loaded",
         "cause": "known",
-        "since": "2026-09-26"
-      },
-      {
-        "subject": "conformance-work-scope",
-        "rule": "check-never-fires",
-        "cause": "unknown",
-        "since": "2026-09-26"
-      },
-      {
-        "subject": "conformance-workflow",
-        "rule": "check-never-fires",
-        "cause": "unknown",
         "since": "2026-09-26"
       }
     ]
