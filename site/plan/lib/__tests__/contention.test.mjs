@@ -261,6 +261,18 @@ test("a rival overlapping two blocks is offered on the one it overlaps longest",
   assert.deepEqual(at(result, "2026-10-18", "15:00").contenders.map((c) => c.slug), ["between"]);
 });
 
+test("a show with no published length holds the assumed length against the next one", () => {
+  const night = ["2026-10-18"];
+  const untimed = show("untimed", night, { start: "19:30", duration: 0 });
+  const next = show("next", night, { start: "20:00", duration: 80 });
+  const bare = draft([untimed, next]);
+  assert.deepEqual(bare.days[0].slots.map((s) => s.slug), ["untimed", "next"], "counted as no time at all");
+  const assumed = draft([untimed, next], { assumedLengthMin: 60 });
+  assert.deepEqual(assumed.days[0].slots.map((s) => s.slug), ["untimed"]);
+  assert.deepEqual(at(assumed, "2026-10-18", "19:30").contenders.map((c) => c.slug), ["next"]);
+  assert.equal(at(assumed, "2026-10-18", "19:30").endMinuteOfDay, 19 * 60 + 30, "its card still names only its start");
+});
+
 test("a contender offered on a block is not also counted as crowded out", () => {
   const result = draft(CONTESTED_FIELD);
   assert.deepEqual(at(result, "2026-10-18", "20:00").contenders.map((c) => c.slug), ["two", "three"]);
