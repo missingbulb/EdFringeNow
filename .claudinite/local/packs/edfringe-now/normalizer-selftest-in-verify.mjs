@@ -22,7 +22,7 @@ function commandLines(sh) {
 
 const rule = {
   id: 'edfringe-normalizer-selftest-in-verify',
-  severity: 'blocking',
+  on_fail: 'block',
   description: "scripts/verify.sh runs the normalizer's offline self-test (python3 scraper/normalize.py --selftest)",
   why:
     "the live edfringe API is unreachable from a session, so the normalizer self-test is the ONE transform check that runs offline — drop it from the gate and every scraper change ships with no verification at all, in a repo where nothing else can stand in for it",
