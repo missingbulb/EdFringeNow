@@ -113,6 +113,87 @@
              renderPrefs() in planNG.js. -->
         <div class="prefs" id="prefs" role="group" data-i18n-aria-label="prefs.label" aria-label="What you want"></div>
 
+        <!-- The event filters: the second line of "What are you here for?",
+             moved into that panel by renderPrefs() in planNG.js. Closed until
+             the reader opens it; the search box leads the line so its results
+             run the line's full width. -->
+        <details class="event-filters" id="eventFilters" hidden>
+          <summary class="ef-summary">
+            <span class="ef-caret" aria-hidden="true">▸</span>
+            <span class="ef-title" data-i18n="search.title">Find a show</span>
+            <span class="ss-badge" id="ssBadge" hidden></span>
+          </summary>
+          <div class="show-search" id="showSearch">
+            <div class="ss-line" id="ssTools">
+              <div class="ss-bar">
+                <span class="ss-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+                </span>
+                <input class="ss-input" id="ssInput" type="text" role="combobox"
+                       aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
+                       autocomplete="off" spellcheck="false"
+                       data-i18n-placeholder="search.placeholder" placeholder="Search shows to add" />
+              </div>
+
+              <article class="filter-chip" data-facet="kind">
+                <button type="button" class="chip-trigger" data-panel="ssfKindPanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-ico" aria-hidden="true">🎭</span>
+                  <span class="chip-value" id="ssfKindValue"></span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfKindPanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span data-i18n="search.whichGenres">Which genres?</span>
+                    <button type="button" class="panel-everything" data-clear="kind" data-i18n="search.everything">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfKindOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="subgenre">
+                <button type="button" class="chip-trigger" data-panel="ssfSubgenrePanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-ico" aria-hidden="true">🏷️</span>
+                  <span class="chip-value" id="ssfSubgenreValue"></span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfSubgenrePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span data-i18n="search.whichSubgenres">Which sub-genres?</span>
+                    <button type="button" class="panel-everything" data-clear="subgenre" data-i18n="search.everything">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfSubgenreOptions"></div>
+                </div>
+              </article>
+
+              <article class="filter-chip" data-facet="venue">
+                <button type="button" class="chip-trigger" data-panel="ssfVenuePanel"
+                        aria-expanded="false" aria-haspopup="true">
+                  <span class="chip-ico" aria-hidden="true">📍</span>
+                  <span class="chip-value" id="ssfVenueValue"></span>
+                  <span class="chip-caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="chip-panel" id="ssfVenuePanel" role="menu" hidden>
+                  <p class="panel-title panel-title--row">
+                    <span data-i18n="search.whichVenues">Which venues?</span>
+                    <button type="button" class="panel-everything" data-clear="venue" data-i18n="search.everything">everything!</button>
+                  </p>
+                  <div class="panel-options panel-options--scroll" id="ssfVenueOptions"></div>
+                </div>
+              </article>
+
+              <button type="button" class="ss-reset" id="ssReset" hidden><span aria-hidden="true">&times;</span> <span data-i18n="search.clearFilters">Clear filters</span></button>
+            </div>
+
+            <div class="ss-pop" id="ssPop" hidden>
+              <ul class="ss-results" id="ssResults" role="listbox" data-i18n-aria-label="search.resultsLabel" aria-label="Matching shows"></ul>
+              <p class="ss-empty" id="ssEmpty" hidden data-i18n="search.empty">No shows match — try fewer filters or a different spelling.</p>
+            </div>
+          </div>
+        </details>
+
+
         <!-- Outside the calendar's own scroller, which clips: positioned
              against a block when it opens, one of each, because only one block
              is ever under the pointer. -->
@@ -158,7 +239,7 @@
       <div class="board-body browse-stage" id="browseStage">
         <div class="browse-head">
           <p class="browse-line1" id="browseLine1" data-i18n-slot="browse.pick"></p>
-          <p class="browse-line2" data-i18n="browse.hint">Star one and it becomes a lane on the grid; the search bar below keeps the whole programme within reach after that.</p>
+          <p class="browse-line2" data-i18n="browse.hint">Star one and it becomes a lane on the grid; after that, Find a show under What are you here for? keeps the whole programme within reach.</p>
         </div>
         <ul class="browse-list" id="browseList" data-i18n-aria-label="browse.listLabel" aria-label="The whole programme"></ul>
         <div class="browse-more" id="browseMore" hidden></div>
@@ -198,65 +279,6 @@
       </aside>
       </div>
 
-      <div class="ss-slot">
-        <div class="show-search" id="showSearch">
-          <div class="ss-bar">
-            <span class="ss-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
-            </span>
-            <input class="ss-input" id="ssInput" type="text" role="combobox"
-                   aria-expanded="false" aria-controls="ssPop" aria-autocomplete="list"
-                   autocomplete="off" spellcheck="false"
-                   data-i18n-placeholder="search.placeholder" placeholder="Search shows to add" />
-            <button type="button" class="ss-tools-btn" id="ssToolsBtn" aria-expanded="false" aria-controls="ssTools">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4" /></svg>
-              <span data-i18n="search.tools">Search tools</span>
-              <span class="ss-badge" id="ssBadge" hidden></span>
-            </button>
-          </div>
-
-          <div class="ss-tools" id="ssTools" hidden>
-            <article class="filter-chip" data-facet="genre">
-              <button type="button" class="chip-trigger" data-panel="ssfGenrePanel"
-                      aria-expanded="false" aria-haspopup="true">
-                <span class="chip-ico" aria-hidden="true">🎭</span>
-                <span class="chip-value" id="ssfGenreValue"></span>
-                <span class="chip-caret" aria-hidden="true">▾</span>
-              </button>
-              <div class="chip-panel" id="ssfGenrePanel" role="menu" hidden>
-                <p class="panel-title panel-title--row">
-                  <span data-i18n="search.whichKinds">Which kinds?</span>
-                  <button type="button" class="panel-everything" data-clear="genre" data-i18n="search.everything">everything!</button>
-                </p>
-                <div class="panel-options panel-options--scroll" id="ssfGenreOptions"></div>
-              </div>
-            </article>
-
-            <article class="filter-chip" data-facet="venue">
-              <button type="button" class="chip-trigger" data-panel="ssfVenuePanel"
-                      aria-expanded="false" aria-haspopup="true">
-                <span class="chip-ico" aria-hidden="true">📍</span>
-                <span class="chip-value" id="ssfVenueValue"></span>
-                <span class="chip-caret" aria-hidden="true">▾</span>
-              </button>
-              <div class="chip-panel" id="ssfVenuePanel" role="menu" hidden>
-                <p class="panel-title panel-title--row">
-                  <span data-i18n="search.whichVenues">Which venues?</span>
-                  <button type="button" class="panel-everything" data-clear="venue" data-i18n="search.everything">everything!</button>
-                </p>
-                <div class="panel-options panel-options--scroll" id="ssfVenueOptions"></div>
-              </div>
-            </article>
-
-            <button type="button" class="ss-reset" id="ssReset" hidden><span aria-hidden="true">&times;</span> <span data-i18n="search.clearFilters">Clear filters</span></button>
-          </div>
-
-          <div class="ss-pop" id="ssPop" hidden>
-            <ul class="ss-results" id="ssResults" role="listbox" data-i18n-aria-label="search.resultsLabel" aria-label="Matching shows"></ul>
-            <p class="ss-empty" id="ssEmpty" hidden data-i18n="search.empty">No shows match — try fewer filters or a different spelling.</p>
-          </div>
-        </div>
-      </div>
     </section>
     </details>
 

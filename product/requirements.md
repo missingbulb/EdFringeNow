@@ -942,7 +942,7 @@ and a theme rather than another page.
   timeline's and the page title's to say.
   </details>
 
-- `18.2` The programme, listed to browse and search, inside the drawer beneath the calendar.
+- `18.2` The programme, listed to browse, inside the drawer beneath the calendar.
 
   ![jerusalem-board.18.2](requirements/screen/cases/jerusalem-board.18.2.png) <!-- req-gallery:18.2 -->
 
@@ -952,6 +952,7 @@ and a theme rather than another page.
   calendar drafts from the whole programme there is nothing a reader must star
   before the page is useful. The list is therefore a way to reach a particular
   show, not the way in: it lives in the drawer, opened from under the calendar.
+  Searching it is What you are here for's Find a show line (`21.24`).
   </details>
 
 - `18.3` A Hebrew show name renders in Hebrew, right-to-left, wherever the page names a show.
@@ -1671,6 +1672,22 @@ calendar.
   tags keep a show filed under any of them; a ruled-out tag wins over a
   required one on the same show. The drawer's programme stays whole, so a show
   a filter hides can still be found and ruled on there.
+  </details>
+
+- `21.24` What you are here for has a second line, Find a show, closed until opened: the search box first, then the genre, sub-genre and venue filters, which narrow what it finds.
+
+  ![planng-find-a-show.21.24](requirements/screen/cases/planng-find-a-show.21.24.png) <!-- req-gallery:21.24 -->
+
+  <details><summary>Notes</summary>
+
+  Shown on Jerusalem: the kinds panel as it opens, with Find a show folded
+  away under the eight kinds, then opened with Theatre ticked under genre, the
+  results listing only theatre. The genres are the eight shared kinds; the
+  sub-genres are the categories each festival files its own shows under; the
+  venues are the ones the period's shows play. The search box leads the line on
+  a row of its own, so its results and each filter's options run the line's
+  full width. These narrow the search only, never the draft: starring a result
+  is what puts it on the calendar.
   </details>
 
 - `21.21` A show whose festival publishes no place for it is placed at the festival's own location, so a show elsewhere before or after it is kept a journey away.
@@ -2476,7 +2493,7 @@ whatever the day's data holds.
 
 - `26.1` Focused on the whole Fringe, no list draws more than its cap.
 
-  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The kinds filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>the eight shared kinds</td></tr><tr><td>The kinds question's tags</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
+  <table><thead><tr><th align="left">List</th><th align="left">Draws at most</th></tr></thead><tbody><tr><td>The drawer's programme list</td><td>nothing: it asks for a search</td></tr><tr><td>A one-letter search's results</td><td>SEARCH_RESULT_ROWS (40)</td></tr><tr><td>The genres filter's options</td><td>the eight shared kinds</td></tr><tr><td>The sub-genres filter's options</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The venues filter's options</td><td>FACET_OPTIONS (30), and a line for the rest</td></tr><tr><td>The kinds question's answers</td><td>the eight shared kinds</td></tr><tr><td>The kinds question's tags</td><td>FACET_OPTIONS (30)</td></tr><tr><td>The rivals of the most contested hour</td><td>RIVAL_ROWS (8), and a line for the rest</td></tr><tr><td>The drawer's grid</td><td>a lane per show ruled on: none yet</td></tr></tbody></table> <!-- req-gallery:26.1 -->
 
   <details><summary>Notes</summary>
 

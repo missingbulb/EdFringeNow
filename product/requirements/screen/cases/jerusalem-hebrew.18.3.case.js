@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, jerusalemStarred, openDrawer, settle } = require("../../shared/case-helpers");
+const { jerusalemReady, jerusalemStarred, openDrawer, openShowSearch, settle } = require("../../shared/case-helpers");
 
 module.exports = {
   description: "one Hebrew show as a grid lane and as a search row — title, venue and kind in the source's own script",
@@ -13,6 +13,7 @@ module.exports = {
   async capture(page, t) {
     await openDrawer(page);
     const lane = await page.locator('.lane[data-slug="jerusalem-comedy/salakh"]').boundingBox();
+    await openShowSearch(page);
     await page.click("#ssInput");
     await page.fill("#ssInput", "סלאח");
     await page.waitForSelector('#ssResults .ss-row[data-slug="jerusalem-comedy/salakh"]');

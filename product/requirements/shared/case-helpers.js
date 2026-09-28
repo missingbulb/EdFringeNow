@@ -287,6 +287,18 @@ async function openDrawer(page) {
   await settle(page);
 }
 
+/* The show search, opened: it is the second line of the kinds question's
+ * panel, folded away until asked for. */
+async function openShowSearch(page) {
+  await page.evaluate(() => {
+    if (document.getElementById("panel-interests").hidden) {
+      document.querySelector("[data-open='interests']").click();
+    }
+    document.getElementById("eventFilters").open = true;
+  });
+  await settle(page);
+}
+
 /* Rest the pointer on a calendar card until its popup opens: the popup waits
  * for the pointer to rest, so a bare hover captures the calendar without it. */
 async function openCard(page, block) {
@@ -698,6 +710,7 @@ module.exports = {
   JERUSALEM,
   JERUSALEM_EDITION,
   openDrawer,
+  openShowSearch,
   openCard,
   reachableLeg,
   openOthers,

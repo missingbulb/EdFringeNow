@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, openDrawer } = require("../../shared/case-helpers");
+const { jerusalemReady, openDrawer, openShowSearch } = require("../../shared/case-helpers");
 
 const EDINBURGH_KEYS = ["edfringe.plan.favourites.v1", "edfringe.plan.prefs.v1"];
 
@@ -13,11 +13,12 @@ module.exports = {
     await openDrawer(page);
 
     // Star two shows off the browse list. The first one switches the board to
-    // the grid, so the second is starred from the search bar — which is the
+    // the grid, so the second is starred from the show search — which is the
     // page's own answer to "how do I keep adding".
     const first = await page.locator("#browseList .ss-row").first().getAttribute("data-slug");
     await page.locator("#browseList .ss-star").first().click();
     await page.waitForSelector(".lane");
+    await openShowSearch(page);
     await page.click("#ssInput");
     await page.waitForSelector("#ssResults .ss-row");
     const rows = page.locator("#ssResults .ss-row:not(.is-on)");

@@ -217,7 +217,7 @@ const state = {
   draft: null,
   picked: new Map(),
   layout: { trackLeft: 0, trackWidth: 0, dayW: 0 },
-  search: { query: "", genres: new Set(), venues: new Set() },
+  search: { query: "", kinds: new Set(), subgenres: new Set(), venues: new Set() },
   // The checkout's places to buy that the reader has already had opened, by
   // url. Not stored: a tab opened yesterday is not a ticket bought.
   checkoutOpened: new Set(),
@@ -1103,6 +1103,9 @@ function renderPrefs() {
   const pace = paceAnswer();
   const food = foodAnswer();
   const travel = MODE_META[state.mode];
+  // The event filters are static markup with their listeners on them: held
+  // across the rebuild and put back as the second line of the kinds panel.
+  const eventFilters = $("eventFilters");
   $("prefs").innerHTML =
     questionHtml("who", "prefs.who.q", whoAnswer(), whoHtml()) +
     questionHtml("festivals", "prefs.festivals.q", festivalsAnswer(), festivalsHtml()) +
@@ -1140,6 +1143,9 @@ function renderPrefs() {
         `</div>` +
         foodFineHtml()
     );
+  const kinds = $("panel-interests").querySelector(".pref-answers--kinds");
+  kinds.after(eventFilters);
+  eventFilters.hidden = false;
 }
 
 /* Read every answer back off the state without rebuilding the row, so the
@@ -2759,8 +2765,9 @@ function renderBrowse() {
 }
 
 function matchesFilters(show) {
-  const { query, genres, venues } = state.search;
-  if (genres.size && !genres.has(show.genreSlug)) return false;
+  const { query, kinds, subgenres, venues } = state.search;
+  if (kinds.size && !kinds.has(sharedGenre(show.genreId))) return false;
+  if (subgenres.size && !subgenres.has(show.genreSlug)) return false;
   if (venues.size && !show.performances.some((p) => venues.has(p.venue))) return false;
   if (!query) return true;
   const q = query.toLowerCase();
@@ -2792,8 +2799,24 @@ function closeSearch() {
   $("ssInput").setAttribute("aria-expanded", "false");
 }
 
+/* The event filters' facets: the eight shared genres, each festival's own
+ * categories as the sub-genres under them, and the venues. */
 function buildFacets() {
-  const genreOptions = $("ssfGenreOptions");
+  const perGenre = new Map();
+  for (const show of state.catalogue.shows) {
+    const genre = sharedGenre(show.genreId);
+    perGenre.set(genre, (perGenre.get(genre) || 0) + 1);
+  }
+  $("ssfKindOptions").innerHTML = GENRES.filter((g) => perGenre.has(g))
+    .map(
+      (g) =>
+        `<label class="panel-option"><input type="checkbox" data-facet="kind" value="${g}"` +
+        `${state.search.kinds.has(g) ? " checked" : ""} />` +
+        `<span>${GENRE_EMOJI[g]} ${escapeHtml(t(GENRE_KEY[g]))}</span>` +
+        `<span class="opt-count">${perGenre.get(g)}</span></label>`
+    )
+    .join("");
+  const genreOptions = $("ssfSubgenreOptions");
   const perKind = new Map();
   for (const show of state.catalogue.shows) perKind.set(show.genreSlug, (perKind.get(show.genreSlug) || 0) + 1);
   // Capped like the venues below: pooling several festivals brings dozens of
@@ -2801,20 +2824,21 @@ function buildFacets() {
   const rankedKinds = [...state.catalogue.categories].sort(
     (a, b) => (perKind.get(b.slug) || 0) - (perKind.get(a.slug) || 0) || a.name.localeCompare(b.name)
   );
-  const kinds = capOptions(rankedKinds, (c) => state.search.genres.has(c.slug), FACET_OPTIONS);
+  const kinds = capOptions(rankedKinds, (c) => state.search.subgenres.has(c.slug), FACET_OPTIONS);
   const listedKinds = new Set(kinds.rows);
   genreOptions.innerHTML =
     state.catalogue.categories
       .filter((c) => listedKinds.has(c))
       .map(
         (c) =>
-          `<label class="panel-option"><input type="checkbox" data-facet="genre" value="${escapeHtml(c.slug)}" />` +
+          `<label class="panel-option"><input type="checkbox" data-facet="subgenre" value="${escapeHtml(c.slug)}"` +
+          `${state.search.subgenres.has(c.slug) ? " checked" : ""} />` +
           `<span>${foreign(c.name, c.slug)}</span>` +
           `<span class="opt-count">${perKind.get(c.slug) || 0}</span></label>`
       )
       .join("") +
     (kinds.more
-      ? `<p class="panel-more" data-i18n-slot="search.moreKinds">${escapeHtml(t("search.moreKinds", { count: kinds.more }))}</p>`
+      ? `<p class="panel-more" data-i18n-slot="search.moreSubgenres">${escapeHtml(t("search.moreSubgenres", { count: kinds.more }))}</p>`
       : "");
   const venueOptions = $("ssfVenueOptions");
   // Only the venues the pool actually plays: a festival's venue list covers
@@ -2835,7 +2859,8 @@ function buildFacets() {
       .filter((v) => listed.has(v))
       .map(
         (v) =>
-          `<label class="panel-option"><input type="checkbox" data-facet="venue" value="${escapeHtml(v.code)}" />` +
+          `<label class="panel-option"><input type="checkbox" data-facet="venue" value="${escapeHtml(v.code)}"` +
+          `${state.search.venues.has(v.code) ? " checked" : ""} />` +
           `<span>${foreign(v.name, v.code)}</span>` +
           `<span class="opt-count">${playing.get(v.code)}</span></label>`
       )
@@ -2845,17 +2870,27 @@ function buildFacets() {
       : "");
 }
 
+/** Which of state.search's sets each facet's checkboxes fill. */
+const FACET_SETS = { kind: "kinds", subgenre: "subgenres", venue: "venues" };
+
 function syncFacetChrome() {
-  const { genres, venues } = state.search;
-  $("ssfGenreValue").textContent = genres.size
-    ? t("search.kindsChosen", { count: genres.size })
-    : t("search.anyKind");
-  $("ssfGenreValue").dataset.i18nSlot = genres.size ? "search.kindsChosen" : "search.anyKind";
+  const { kinds, subgenres, venues } = state.search;
+  $("ssfKindValue").textContent = kinds.size
+    ? t("search.genresChosen", { count: kinds.size })
+    : t("search.anyGenre");
+  $("ssfKindValue").dataset.i18nSlot = kinds.size ? "search.genresChosen" : "search.anyGenre";
+  $("ssfSubgenreValue").textContent = subgenres.size
+    ? t("search.subgenresChosen", { count: subgenres.size })
+    : t("search.anySubgenre");
+  $("ssfSubgenreValue").dataset.i18nSlot = subgenres.size ? "search.subgenresChosen" : "search.anySubgenre";
   $("ssfVenueValue").textContent = venues.size
     ? t("search.venuesChosen", { count: venues.size })
     : t("search.anyVenue");
   $("ssfVenueValue").dataset.i18nSlot = venues.size ? "search.venuesChosen" : "search.anyVenue";
-  const active = genres.size + venues.size;
+  for (const chip of $("ssTools").querySelectorAll(".filter-chip")) {
+    chip.classList.toggle("is-set", state.search[FACET_SETS[chip.dataset.facet]].size > 0);
+  }
+  const active = kinds.size + subgenres.size + venues.size;
   $("ssBadge").hidden = active === 0;
   $("ssBadge").textContent = String(active);
   $("ssReset").hidden = active === 0;
@@ -3380,15 +3415,10 @@ function wireSearch() {
     runSearch();
   });
   $("ssInput").addEventListener("focus", runSearch);
-  $("ssToolsBtn").addEventListener("click", () => {
-    const tools = $("ssTools");
-    tools.hidden = !tools.hidden;
-    $("ssToolsBtn").setAttribute("aria-expanded", String(!tools.hidden));
-  });
   $("ssTools").addEventListener("change", (e) => {
     const input = e.target.closest("input[type=checkbox]");
     if (!input) return;
-    const set = input.dataset.facet === "genre" ? state.search.genres : state.search.venues;
+    const set = state.search[FACET_SETS[input.dataset.facet]];
     if (input.checked) set.add(input.value);
     else set.delete(input.value);
     syncFacetChrome();
@@ -3406,15 +3436,14 @@ function wireSearch() {
     }
     const clear = e.target.closest(".panel-everything");
     if (clear) {
-      (clear.dataset.clear === "genre" ? state.search.genres : state.search.venues).clear();
+      state.search[FACET_SETS[clear.dataset.clear]].clear();
       for (const box of $("ssTools").querySelectorAll(`input[data-facet=${clear.dataset.clear}]`)) box.checked = false;
       syncFacetChrome();
       runSearch();
     }
   });
   $("ssReset").addEventListener("click", () => {
-    state.search.genres.clear();
-    state.search.venues.clear();
+    for (const set of Object.values(FACET_SETS)) state.search[set].clear();
     for (const box of $("ssTools").querySelectorAll("input[type=checkbox]")) box.checked = false;
     syncFacetChrome();
     runSearch();
@@ -3809,8 +3838,7 @@ async function loadPool() {
   state.dates = daysOf(state.period.from, state.period.to);
   document.documentElement.style.setProperty("--fest-days", String(state.dates.length));
   state.browsePages = 1;
-  state.search.genres.clear();
-  state.search.venues.clear();
+  for (const set of Object.values(FACET_SETS)) state.search[set].clear();
 
   $("planPanel").hidden = false;
   $("boardDrawer").hidden = false;
