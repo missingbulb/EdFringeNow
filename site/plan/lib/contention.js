@@ -48,6 +48,37 @@ export function byScarcity(a, b) {
 }
 
 /**
+ * The drafted block a performance lost its time to: of the night's blocks it
+ * cannot sit beside, the one it overlaps longest, then the one starting
+ * nearest it. A rival need not start on the same minute as the pick — a
+ * festival staggers its halls a quarter-hour apart — so matching on the start
+ * alone hides nearly every alternative a real programme has.
+ * @param {object} cand
+ * @param {object[]} day the night's drafted blocks
+ * @param {object} gapOpts
+ * @returns {object|undefined}
+ */
+function rivalledBy(cand, day, gapOpts) {
+  let best;
+  let bestOverlap = -1;
+  let bestDistance = Infinity;
+  for (const block of day) {
+    if (block.startMinuteOfDay !== cand.startMinuteOfDay && compatible(block, cand, gapOpts)) continue;
+    const overlap = Math.max(
+      0,
+      Math.min(block.endMinuteOfDay, cand.endMinuteOfDay) - Math.max(block.startMinuteOfDay, cand.startMinuteOfDay)
+    );
+    const distance = Math.abs(block.startMinuteOfDay - cand.startMinuteOfDay);
+    if (overlap > bestOverlap || (overlap === bestOverlap && distance < bestDistance)) {
+      best = block;
+      bestOverlap = overlap;
+      bestDistance = distance;
+    }
+  }
+  return best;
+}
+
+/**
  * Draft one performance per contested hour across the window, from every show
  * in the programme.
  *
@@ -224,11 +255,9 @@ export function draftCalendar(shows, options = {}) {
   // What a block offers instead of itself: the shows that wanted the same hour
   // and could still take it. Three things disqualify a contender, and all three
   // are settled here rather than discovered after the reader has picked one.
-  const placedAt = new Map();
-  for (const cand of placed) placedAt.set(`${cand.date}T${cand.startMinuteOfDay}`, cand);
   const offered = new Set();
   for (const cand of candidates) {
-    const winner = placedAt.get(`${cand.date}T${cand.startMinuteOfDay}`);
+    const winner = rivalledBy(cand, perDay.get(cand.date) || [], gapOpts);
     if (!winner || winner.slug === cand.slug) continue;
     // 1. The reader has settled this hour, so nothing is on offer for it.
     if (winner.verdict === "locked") continue;

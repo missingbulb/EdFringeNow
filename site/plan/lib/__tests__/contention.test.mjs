@@ -237,14 +237,28 @@ test("a lock ignores the per-day cap", () => {
   assert.equal(draft(shows, { maxPerDay: 1, locked }).days[0].slots.length, 3);
 });
 
-test("a show that lost every night to a clash rather than a shared hour is counted, not lost", () => {
+test("a show that overlaps the pick without sharing its start is still offered", () => {
   // 20:00 for two hours, against a 20:30 show: the second can never be placed,
-  // and shares its hour with nothing, so no block would otherwise name it.
+  // and a festival staggering its halls a quarter-hour apart is the common case,
+  // so the block it lost to offers it back.
   const long = show("long", ["2026-10-18"], { start: "20:00", duration: 120 });
   const shadowed = show("shadowed", ["2026-10-18"], { start: "20:30", duration: 60 });
   const result = draft([long, shadowed]);
   assert.equal(at(result, "2026-10-18", "20:00").slug, "long");
-  assert.deepEqual(result.crowdedOut.map((s) => s.slug), ["shadowed"]);
+  assert.deepEqual(at(result, "2026-10-18", "20:00").contenders.map((c) => c.slug), ["shadowed"]);
+  assert.deepEqual(result.crowdedOut, []);
+});
+
+test("a rival overlapping two blocks is offered on the one it overlaps longest", () => {
+  const night = ["2026-10-18"];
+  const first = show("first", night, { start: "12:00", duration: 150 });
+  const second = show("second", night, { start: "15:00", duration: 120 });
+  const between = show("between", night, { start: "14:00", duration: 120 });
+  const result = draft([first, second, between], { maxPerDay: 5 });
+  assert.equal(at(result, "2026-10-18", "12:00").slug, "first");
+  assert.equal(at(result, "2026-10-18", "15:00").slug, "second");
+  assert.deepEqual(at(result, "2026-10-18", "12:00").contenders.map((c) => c.slug), []);
+  assert.deepEqual(at(result, "2026-10-18", "15:00").contenders.map((c) => c.slug), ["between"]);
 });
 
 test("a contender offered on a block is not also counted as crowded out", () => {
