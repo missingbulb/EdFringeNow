@@ -26,6 +26,11 @@ OUT = Path(__file__).resolve().parent.parent / "site" / "holidays"
 # long weekend from one that stands alone (spec 31.6).
 DAY_NAMES = ("mon", "tue", "wed", "thu", "fri", "sat", "sun")
 PAGE_LANGUAGES = {"en": ("en_US", "en_GB", "en"), "he": ("he",), "ru": ("ru",), "ja": ("ja",)}
+# Days most people take off that the package files outside its public
+# category: {country: (category, English names kept)}. Israel's holiday weeks
+# between Pesach and its seventh day, and Sukkot and Simchat Torah, are when
+# schools close and most workplaces slow or shut.
+DAYS_OFF_TOO = {"IL": ("optional", ("Pesach holiday", "Sukkot holiday"))}
 
 
 def names(code, years, supported):
@@ -38,6 +43,17 @@ def names(code, years, supported):
         cal = holidays.country_holidays(code, years=years, language=pick) if pick else holidays.country_holidays(code, years=years)
         for day, name in cal.items():
             out.setdefault(day, {})[lang] = name
+    if code in DAYS_OFF_TOO:
+        category, kept = DAYS_OFF_TOO[code]
+        english = next((c for c in PAGE_LANGUAGES["en"] if c in supported), None)
+        days = {d for d, n in holidays.country_holidays(code, years=years, language=english, categories=(category,)).items() if n in kept}
+        for lang, candidates in PAGE_LANGUAGES.items():
+            pick = next((c for c in candidates if c in supported), None)
+            if pick is None and lang != "en":
+                continue
+            for day, name in holidays.country_holidays(code, years=years, language=pick, categories=(category,)).items():
+                if day in days:
+                    out.setdefault(day, {})[lang] = name
     return out
 
 

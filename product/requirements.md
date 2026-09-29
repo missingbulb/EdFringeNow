@@ -2354,7 +2354,9 @@ is guessed from their connection, and each orb's card says it is a guess.
   breaks are 31.6's. The names come
   from the committed per-country files in `site/holidays/`, generated from
   the `holidays` Python package by `scripts/build-holidays.py`, in the page's
-  language where the package carries one and in English otherwise.
+  language where the package carries one and in English otherwise. A few
+  countries' files add the days most people take off beyond the statutory
+  ones, such as Israel's holiday weeks of Pesach and Sukkot.
   </details>
 
 - `31.2` Until you have said how you are getting here, the holidays are those of the country you connect from, and their cards say so; your answer replaces the guess.
