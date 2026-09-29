@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, plannerReady, calendarDays, calendarSpans } = require("../../shared/case-helpers");
+const { jerusalemReady, plannerReady, calendarDays, calendarSpans, choosePill } = require("../../shared/case-helpers");
 
 /* Choosing a festival on the timeline: the trip becomes its run and a day
  * either side, the address carries the trip's dates, and the page opens on
@@ -16,7 +16,7 @@ module.exports = {
     assert.equal(jerusalem[0], "2026-10-17", "a link naming Jerusalem opens the day before its 18th");
     assert.equal(jerusalem[jerusalem.length - 1], "2026-10-23", "and closes the day after the 22nd");
 
-    await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
+    await choosePill(page, "haifa-iff");
     await plannerReady(page, "haifa-iff");
     await calendarSpans(page, "2026-09-24", "2026-10-04");
     assert.equal((await calendarDays(page)).length, 11, "Haifa's 25 Sep – 3 Oct and a day either side, one column each");

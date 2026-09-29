@@ -236,6 +236,24 @@ async function answerTravel(page, { home, way = null }) {
   await page.click(`#originCard [data-origin="${way}"]`);
 }
 
+/* Press a festival's pill on the year, where a reader would: on the pill,
+ * clear of the trip's end handles, whose lines run across every row. */
+async function choosePill(page, festivalId) {
+  const bar = page.locator(`.tl-item[data-festival="${festivalId}"] .tl-bar`);
+  const box = await bar.boundingBox();
+  const handles = await page.$$eval(".tl-handle", (els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect();
+      return { left: r.left, right: r.right };
+    })
+  );
+  const clear = (x) => handles.every((h) => x < h.left - 1 || x > h.right + 1);
+  const spots = [0.5, 0.2, 0.8, 0.08, 0.92].map((f) => box.x + box.width * f);
+  const x = spots.find(clear);
+  if (x === undefined) throw new Error(`${festivalId}'s pill lies wholly under the trip's handles`);
+  await bar.click({ position: { x: x - box.x, y: box.height / 2 } });
+}
+
 /* Move one end of the trip to a day, as a reader does from the keyboard: the
  * handle, stepped a day at a time. */
 async function moveTripEnd(page, end, iso) {
@@ -704,6 +722,7 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
+  choosePill,
   routeEdinburghFestivals,
   calendarDays,
   calendarSpans,

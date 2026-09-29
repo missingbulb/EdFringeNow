@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, plannerReady } = require("../../shared/case-helpers");
+const { jerusalemReady, plannerReady, choosePill } = require("../../shared/case-helpers");
 
 /* The theme fading between festivals. The harness freezes every transition
  * for its goldens, so this case lifts that freeze first and reads the page's
@@ -35,7 +35,7 @@ async function fadeFrames(page) {
         }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-festival"] });
       })
   );
-  await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
+  await choosePill(page, "haifa-iff");
   return frames;
 }
 
