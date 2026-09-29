@@ -1,6 +1,6 @@
 ---
 name: festival-finder
-description: A run of EdFringeNow's festival finder - working the recorded sources for new festivals with a per-session programme, and growing both the candidate list and the method. Use when asked to find more festivals or conferences, or before editing scraper/finder/.
+description: A festival finder run - searching for festivals with a per-session programme and growing the lists of candidates and search sources. Use when asked to find more festivals or conferences.
 metadata:
   body: workflow
   force-load-on-file-edits-paths:
@@ -15,8 +15,13 @@ show, screening, talk or race with its date, start time and venue.
 
 ## Before searching
 
-1. `python3 scraper/finder/finder.py --report` - the yield of every source, the watched
-   candidates whose recheck date has passed, and the candidates ready to adopt.
+1. Read the yield of every source, the watched candidates whose recheck date has passed,
+   and the candidates ready to adopt:
+
+   ```
+   python3 scraper/finder/finder.py --report
+   ```
+
 2. Read `candidates.toml` end to end before searching, so a hit is recognised as known
    rather than found twice. Read the last few `runs/` logs for what was tried and came up
    empty.
@@ -53,8 +58,13 @@ show, screening, talk or race with its date, start time and venue.
 
 ## Finishing
 
-10. `python3 scraper/finder/finder.py --check --growth origin/main`, then open a pull
-    request whose body lists the new candidates with a published programme first.
+10. Check the lists, then open a pull request whose body lists the new candidates with a
+    published programme first:
+
+    ```
+    python3 scraper/finder/finder.py --check --growth origin/main
+    ```
+
     Adopting a candidate is separate work (stage 2 in `docs/data-lifecycle.md`); when a
     festival is registered under `scraper/festivals/`, its candidate turns `adopted` with
     its `festival_id` in the same change.
