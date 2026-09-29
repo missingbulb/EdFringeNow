@@ -1,0 +1,1101 @@
+# Every festival the finder has considered, qualifying or not. Append-only: a festival that
+# does not qualify stays, rejected with its reason. Fields: scraper/finder/README.md.
+
+# ── Adopted: registered under scraper/festivals/ ──
+
+[[candidate]]
+id = "abu-gosh"
+name = "Abu Gosh Music Festival"
+kind = "music"
+subtypes = ["music-classical", "music-vocal"]
+country = "IL"
+city = "Abu Ghosh"
+site = "https://abugoshfestival.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "abu-gosh"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "acco"
+name = "Acco Festival of Alternative Israeli Theatre"
+kind = "theatre"
+subtypes = ["theatre-alternative"]
+country = "IL"
+city = "Akko"
+site = "https://accofestival.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "acco"
+found_via = ["eventer"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "brighton-fringe"
+name = "Brighton Fringe"
+kind = "fringe"
+country = "GB"
+city = "Brighton"
+site = "https://www.brightonfringe.org"
+schedule = "published"
+status = "adopted"
+festival_id = "brighton-fringe"
+found_via = ["eventotron"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "edfringe"
+name = "Edinburgh Festival Fringe"
+kind = "fringe"
+country = "GB"
+city = "Edinburgh"
+site = "https://www.edfringe.com"
+schedule = "published"
+status = "adopted"
+festival_id = "edfringe"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "edinburgh-art-festival"
+name = "Edinburgh Art Festival"
+kind = "art"
+subtypes = ["art-contemporary"]
+country = "GB"
+city = "Edinburgh"
+site = "https://edinburghartfestival.com"
+schedule = "published"
+status = "adopted"
+festival_id = "edinburgh-art-festival"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "edinburgh-book-festival"
+name = "Edinburgh International Book Festival"
+kind = "literature"
+subtypes = ["literature-books"]
+country = "GB"
+city = "Edinburgh"
+site = "https://www.edbookfest.co.uk"
+schedule = "published"
+status = "adopted"
+festival_id = "edinburgh-book-festival"
+found_via = ["spektrix"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "edinburgh-deaf-festival"
+name = "Edinburgh Deaf Festival"
+kind = "multi"
+subtypes = ["multi-deaf-arts"]
+country = "GB"
+city = "Edinburgh"
+site = "https://edinburghdeaffestival.com"
+schedule = "published"
+status = "adopted"
+festival_id = "edinburgh-deaf-festival"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "edinburgh-tattoo"
+name = "Royal Edinburgh Military Tattoo"
+kind = "music"
+subtypes = ["music-military"]
+country = "GB"
+city = "Edinburgh"
+site = "https://www.edintattoo.co.uk"
+schedule = "published"
+status = "adopted"
+festival_id = "edinburgh-tattoo"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eif"
+name = "Edinburgh International Festival"
+kind = "multi"
+country = "GB"
+city = "Edinburgh"
+site = "https://www.eif.co.uk"
+schedule = "published"
+status = "adopted"
+festival_id = "eif"
+found_via = ["spektrix"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eiff"
+name = "Edinburgh International Film Festival"
+kind = "film"
+subtypes = ["film-international"]
+country = "GB"
+city = "Edinburgh"
+site = "https://www.edfilmfest.org"
+schedule = "published"
+status = "adopted"
+festival_id = "eiff"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "fringe-by-the-sea"
+name = "Fringe by the Sea"
+kind = "multi"
+country = "GB"
+city = "North Berwick"
+site = "https://www.fringebythesea.com"
+schedule = "published"
+status = "adopted"
+festival_id = "fringe-by-the-sea"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "haifa-iff"
+name = "Haifa International Film Festival"
+kind = "film"
+subtypes = ["film-international"]
+country = "IL"
+city = "Haifa"
+site = "https://www.haifaff.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "haifa-iff"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "indnegev"
+name = "InDNegev"
+kind = "music"
+subtypes = ["music-indie", "music-israeli"]
+country = "IL"
+city = "Mitzpe Gvulot"
+site = "https://indnegev.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "indnegev"
+found_via = ["eventer"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "isra"
+name = "ISRA Annual Conference (Israel Radiological Association)"
+kind = "academic"
+subtypes = ["academic-radiology", "academic-medicine"]
+country = "IL"
+city = "Capernaum"
+site = "https://events.ortra.com/isra2026"
+schedule = "published"
+status = "adopted"
+festival_id = "isra"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-comedy"
+name = "Jerusalem Comedy Festival"
+kind = "comedy"
+subtypes = ["comedy-standup"]
+country = "IL"
+city = "Jerusalem"
+site = "https://comedy-festival.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "jerusalem-comedy"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-oud"
+name = "Jerusalem International Oud Festival"
+kind = "music"
+subtypes = ["music-oud", "music-world"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.confederationhouse.org/page_18014"
+schedule = "published"
+status = "adopted"
+festival_id = "jerusalem-oud"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "leicester-comedy"
+name = "Leicester Comedy Festival"
+kind = "comedy"
+subtypes = ["comedy-standup"]
+country = "GB"
+city = "Leicester"
+site = "https://www.comedy-festival.co.uk"
+schedule = "published"
+status = "adopted"
+festival_id = "leicester-comedy"
+found_via = ["eventotron", "comics-comic-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "micf"
+name = "Melbourne International Comedy Festival"
+kind = "comedy"
+subtypes = ["comedy-standup"]
+country = "AU"
+city = "Melbourne"
+site = "https://www.comedyfestival.com.au"
+schedule = "expected"
+status = "adopted"
+festival_id = "micf"
+found_via = ["comics-comic-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "nzicf"
+name = "NZ International Comedy Festival"
+kind = "comedy"
+subtypes = ["comedy-standup"]
+country = "NZ"
+city = "Auckland"
+site = "https://www.comedyfestival.co.nz"
+schedule = "expected"
+status = "adopted"
+festival_id = "nzicf"
+found_via = ["comics-comic-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tel-aviv-festival"
+name = "Tel Aviv Festival"
+kind = "multi"
+subtypes = ["music-israeli", "art-museum"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://telavivfestival.co.il"
+schedule = "published"
+status = "adopted"
+festival_id = "tel-aviv-festival"
+found_via = ["project-history"]
+checked = "2026-09-29"
+
+# ── Academic conferences ──
+
+[[candidate]]
+id = "ais-conference"
+name = "Association for Israel Studies Annual Conference (42nd: Security, Rehabilitation and Healing)"
+kind = "academic"
+subtypes = ["academic-israel-studies", "academic-social-sciences"]
+country = "IL"
+city = "Ramat Gan"
+site = "https://aisisraelstudies.org/conference/conference/"
+programme = "https://program.eventact.com/Program/iOZQAAA/iozk/en"
+next_first = "2026-10-19"
+next_last = "2026-10-21"
+schedule = "published"
+schedule_evidence = "106 sessions over three days in Hall 1 to 11 at Ramat Gan Academic College; (MA-01) Peace, Conflict and Media Narratives in Israeli Society, 19 Oct 09:00-10:30, Hall 1. api.eventact.com/o/v2/agenda/37945/14755/en/timetable, API-Token 50a7ed9768604ff2bef20dc2914469df"
+platform = "eventact"
+status = "candidate"
+found_via = ["search-english-annual-meeting", "eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-fish-model-meeting"
+name = "Israeli Fish Model Meeting (IFM26)"
+kind = "academic"
+subtypes = ["academic-biology"]
+country = "IL"
+city = "Eilat"
+site = "https://events.ortra.com/IFM26"
+programme = "https://events.ortra.com/IFM26/PreliminaryVProgram"
+next_first = "2026-12-01"
+next_last = "2026-12-03"
+schedule = "partial"
+schedule_evidence = "Preliminary grid only, one track at the Queen of Sheba Hotel: Tue 1 Dec 14:15-16:00 Session 1; 18:00-20:00 Poster Session. No talk titles or rooms yet."
+platform = "eventact"
+status = "watch"
+reason = "Talks and rooms not published; a single track gives little to plan."
+recheck = "2026-11-10"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "isfn-annual-meeting"
+name = "Israel Society for Neuroscience Annual Meeting"
+kind = "academic"
+subtypes = ["academic-neuroscience", "academic-biology"]
+country = "IL"
+city = "Eilat"
+site = "https://www.isfn.org.il/isfn2027home"
+next_first = "2027-01-10"
+next_last = "2027-01-12"
+schedule = "expected"
+platform = "wix-pdf"
+status = "watch"
+reason = "Programme not out; past programmes were PDFs with halls, so a parser may need the PDF."
+recheck = "2026-12-01"
+found_via = ["israeli-scientific-societies"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-physical-society-annual-meeting"
+name = "Israel Physical Society Annual Meeting"
+kind = "academic"
+subtypes = ["academic-physics"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.israelphysicalsociety.org/conferences"
+schedule = "expected"
+schedule_evidence = "The 71st (1 Jul 2026, Hebrew University Givat Ram) had a per-talk HTML schedule with rooms: AMO Ia: Quantum Devices, 14:00, Sprinzak 115. The host city rotates."
+platform = "custom"
+status = "watch"
+reason = "The 72nd is expected around June or July 2027 and not announced yet."
+recheck = "2027-04-01"
+found_via = ["israeli-scientific-societies", "search-english-annual-meeting"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "nano-il-ics"
+name = "NANO.IL.2027 with the 90th Israel Chemical Society meeting"
+kind = "academic"
+subtypes = ["academic-chemistry", "academic-nanotechnology"]
+country = "IL"
+city = "Jerusalem"
+site = "http://nanoilconf.com/"
+next_first = "2027-02-14"
+next_last = "2027-02-15"
+schedule = "expected"
+platform = "eventact"
+status = "watch"
+reason = "Site under maintenance (503) on 2026-09-29; dates from Paragon's EventAct listing. A multi-hall programme is likely."
+recheck = "2026-12-01"
+found_via = ["eventact", "israeli-scientific-societies"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jemac"
+name = "JEMAC (Jerusalem emergency medicine conference)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Jerusalem"
+site = "https://ws.eventact.com/JEMAC2026"
+next_first = "2026-11-12"
+next_last = "2026-11-13"
+schedule = "expected"
+schedule_evidence = "The EventAct widget is wired (agenda 38601/14914, key 74d45827f3f14e69a914d4b3af98b169) and its timetable is empty."
+platform = "eventact"
+status = "watch"
+reason = "Programme not out; the discipline needs confirming."
+recheck = "2026-10-20"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ispho"
+name = "Israeli Society of Paediatric Haematology Oncology conference (ISPHO)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Ma'alot-Tarshiha"
+site = "https://ws.eventact.com/ispho"
+next_first = "2026-10-29"
+next_last = "2026-10-31"
+schedule = "unknown"
+platform = "eventact"
+status = "watch"
+reason = "The site's navigation is script-rendered and no widget was found on its home page; check the programme subpage."
+recheck = "2026-10-10"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "psychedelic-medicine-israel"
+name = "Psychedelic Medicine Israel"
+kind = "academic"
+subtypes = ["academic-medicine", "academic-psychiatry"]
+country = "IL"
+city = "Israel"
+site = "https://www.psychmedisrael.com/"
+next_first = "2026-10-19"
+next_last = "2026-10-21"
+schedule = "unknown"
+status = "watch"
+reason = "No programme link found and no venue listed."
+recheck = "2026-10-05"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-ultrasound-obgyn-biennial"
+name = "Israeli Society for Ultrasound in Obstetrics and Gynecology biennial conference"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://ws.eventact.com/thebiennilcferenceisraeli"
+next_first = "2026-11-19"
+next_last = "2026-11-21"
+schedule = "unknown"
+platform = "eventact"
+status = "watch"
+reason = "Three days, so a multi-session programme is likely; none found yet."
+recheck = "2026-10-20"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "plastic-surgery-red-sea"
+name = "Plastic Surgery at the Red Sea"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Eilat"
+site = "https://events.ortra.com/plsticsurgeryredsea"
+next_first = "2027-05-05"
+next_last = "2027-05-08"
+schedule = "expected"
+platform = "eventact"
+status = "watch"
+reason = "The site returns an error page; programme expected in spring."
+recheck = "2027-03-01"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "mpn-conference"
+name = "MPN conference (myeloproliferative neoplasms)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://ws.eventact.com/mpn2027/Program"
+next_first = "2027-02-18"
+next_last = "2027-02-18"
+schedule = "expected"
+platform = "eventact"
+status = "rejected"
+reason = "One day in one hall: nothing to plan."
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "poultry-science-israel"
+name = "Israeli Poultry Science conference"
+kind = "academic"
+subtypes = ["academic-agriculture"]
+country = "IL"
+city = "Nazareth"
+site = "https://events.ortra.com"
+next_first = "2026-11-01"
+next_last = "2026-11-03"
+schedule = "none"
+platform = "eventact"
+status = "rejected"
+reason = "The programme is a PDF only, per its page."
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ilanit"
+name = "ILANIT / FISEB (Federation of Israel Societies for Experimental Biology)"
+kind = "academic"
+subtypes = ["academic-biology"]
+country = "IL"
+city = "Eilat"
+site = "https://www.ilanit.org"
+schedule = "unknown"
+status = "rejected"
+reason = "Triennial; the last was February 2026 and the next is about 2029. Worth a look then."
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hack-lu"
+name = "Hack.lu"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "LU"
+city = "Luxembourg"
+site = "https://hack.lu"
+programme = "https://pretalx.com/hack-lu-2026/schedule/"
+next_first = "2026-10-20"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "92 talks in 6 rooms; The Panopticon Paradox: Cybersecurity in the Digital Age, 20 Oct 09:00, room Europe (pretalx schedule.json)"
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycon-es"
+name = "PyConES"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "ES"
+city = "Spain"
+site = "https://pretalx.com/pycones-2026/"
+programme = "https://pretalx.com/pycones-2026/schedule/"
+next_first = "2026-11-06"
+next_last = "2026-11-08"
+schedule = "published"
+schedule_evidence = "56 talks in 10 rooms; Taller Django Girls I, 6 Nov 16:00, Talleres aula 01 (pretalx schedule.json). The host city is not in the export."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "marxismnl-conference"
+name = "MarxismNL Conference"
+kind = "academic"
+subtypes = ["academic-politics"]
+country = "NL"
+city = "Amsterdam"
+site = "https://pretalx.com/mxnl26/"
+programme = "https://pretalx.com/mxnl26/schedule/"
+next_first = "2026-10-07"
+next_last = "2026-10-09"
+schedule = "published"
+schedule_evidence = "78 talks in 5 rooms; Keynote Panel I: Imperialism Today, 7 Oct 20:00, IIRE (pretalx schedule.json)"
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "world-history-association-conference"
+name = "World History Association annual conference"
+kind = "academic"
+subtypes = ["academic-history"]
+country = "US"
+city = "Pittsburgh"
+site = "https://pretalx.com/worldhistassn-pittsburgh-2027/"
+next_first = "2027-06-27"
+next_last = "2027-06-29"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-04-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "dvrw-conference"
+name = "DVRW conference (German Association for the Study of Religion): Accessing Religion"
+kind = "academic"
+subtypes = ["academic-religion"]
+country = "DE"
+city = "Bonn"
+site = "https://pretalx.com/dvrw-2027/"
+next_first = "2027-09-06"
+next_last = "2027-09-09"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-06-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "africa-bioethics-conference"
+name = "Africa Bioethics Conference"
+kind = "academic"
+subtypes = ["academic-bioethics"]
+country = "KE"
+city = "Nairobi"
+site = "https://pretalx.com/abc2026/"
+next_first = "2026-11-23"
+next_last = "2026-11-25"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-11-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "anzsoc-conference"
+name = "ANZSOC Annual Conference (Australian and New Zealand Society of Criminology)"
+kind = "academic"
+subtypes = ["academic-criminology"]
+country = "AU"
+city = "Adelaide"
+site = "https://pretalx.com/anzsoc2026/"
+next_first = "2026-12-01"
+next_last = "2026-12-03"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released; the city is inferred from its Australia/South time zone."
+recheck = "2026-11-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+# ── Israel: music, film, theatre, dance, art, sports ──
+
+[[candidate]]
+id = "red-sea-jazz"
+name = "Red Sea Jazz Festival (winter)"
+name_local = "פסטיבל הג'אז ים סוף"
+kind = "music"
+subtypes = ["music-jazz"]
+country = "IL"
+city = "Eilat"
+site = "https://redseajazz.co.il/"
+programme = "https://redseajazz.co.il/"
+next_first = "2026-11-11"
+next_last = "2026-11-14"
+schedule = "published"
+schedule_evidence = "Over 40 shows on 4 stages in the server-rendered לוח זמנים block; The 3 Cohens, Port arena, 12.11 20:00"
+platform = "ticketmaster-il"
+status = "candidate"
+found_via = ["ticketing-fingerprint", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tlvfest"
+name = "TLVFest, Tel Aviv International LGBTQ+ Film Festival"
+kind = "film"
+subtypes = ["film-lgbtq"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.cinema.co.il/פסטיבל-גאה/"
+programme = "https://www.cinema.co.il/תכנית-הפסטיבל/"
+next_first = "2026-10-22"
+next_last = "2026-10-31"
+schedule = "published"
+schedule_evidence = "56 screenings, server-rendered at the Tel Aviv Cinematheque; עורבים, 22/10/2026 18:00, אולם 2. tlvfest.com has no 2026 programme."
+platform = "tel-aviv-cinematheque"
+status = "candidate"
+found_via = ["tel-aviv-cinematheque", "wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israman"
+name = "Challenge ISRAMAN"
+kind = "sports"
+subtypes = ["sports-triathlon"]
+country = "IL"
+city = "Eilat"
+site = "https://israman.co.il/"
+programme = "https://israman.co.il/?page_id=313"
+next_first = "2027-01-27"
+next_last = "2027-01-30"
+schedule = "published"
+schedule_evidence = "Full weekend schedule and start-wave table, server-rendered: race day Fri 29.1.2027, 06:10 CHALLENGE ISRAMAN 226 Elite start, Royal Beach; briefings Thu 28.1 in the Alon ve-Ela hall, Royal Beach hotel"
+platform = "custom"
+status = "candidate"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "soundtrack-festival"
+name = "Soundtrack Festival (films with live music)"
+kind = "film"
+subtypes = ["film-music"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.cinema.co.il/פסטיבל-סאונדטראק/"
+next_first = "2026-11-24"
+next_last = "2026-11-28"
+schedule = "expected"
+platform = "tel-aviv-cinematheque"
+status = "watch"
+reason = "Hub page has its dates and no sessions yet; the Cinematheque's template is the same as TLVFest's."
+recheck = "2026-10-25"
+found_via = ["tel-aviv-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-chamber-music-festival"
+name = "Eilat Chamber Music Festival"
+kind = "music"
+subtypes = ["music-classical", "music-chamber"]
+country = "IL"
+city = "Eilat"
+site = "https://www.eilat-festival.co.il/"
+schedule = "expected"
+schedule_evidence = "The 2025 edition's rows are in the raw HTML: קונצרט מס׳ 3 הרקוויאם של מוצרט, 19.11 20:45, אולם כנען, מלון מלכת שבא"
+platform = "goshow"
+status = "watch"
+reason = "Mid-November 2026 per Tourist Israel; the site still shows 2025."
+recheck = "2026-10-15"
+found_via = ["tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-piano-festival"
+name = "Piano Festival (now in Eilat)"
+name_local = "פסטיבל הפסנתר"
+kind = "music"
+subtypes = ["music-pop", "music-israeli"]
+country = "IL"
+city = "Eilat"
+site = "https://pianofestival.co.il/"
+schedule = "expected"
+schedule_evidence = "The January 2026 edition's rows are server-rendered: אריאל זילבר, יום חמישי 1.1 19:30, תיאטרון ישרוטל רויאל גארדן"
+platform = "ticketmaster-il"
+status = "watch"
+reason = "Expected around New Year 2027; the site still shows the January 2026 edition."
+recheck = "2026-11-01"
+found_via = ["search-hebrew-programme", "ticketing-fingerprint"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-jewish-film-festival"
+name = "Jerusalem Jewish Film Festival"
+kind = "film"
+subtypes = ["film-jewish"]
+country = "IL"
+city = "Jerusalem"
+site = "https://jer-cin.org.il"
+next_first = "2026-12-13"
+next_last = "2026-12-18"
+schedule = "expected"
+status = "watch"
+reason = "The 2026 page is not up. The Jerusalem Cinematheque answers curl with 403, though WebFetch reads it."
+recheck = "2026-11-20"
+found_via = ["itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jacobs-ladder"
+name = "Jacob's Ladder Festival"
+kind = "music"
+subtypes = ["music-folk"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://www.jlfestival.com/"
+next_first = "2026-12-31"
+next_last = "2027-01-02"
+schedule = "expected"
+platform = "pdf"
+status = "watch"
+reason = "Programme expected in November or December as a PDF, not per-session HTML; moved from Ginosar in May to Kfar Blum at New Year."
+recheck = "2026-11-15"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-marathon"
+name = "Jerusalem Winner Marathon"
+kind = "sports"
+subtypes = ["sports-marathon"]
+country = "IL"
+city = "Jerusalem"
+site = "https://jerusalem-marathon.com/en/about-en/"
+next_first = "2027-03-19"
+next_last = "2027-03-19"
+schedule = "partial"
+schedule_evidence = "Races named (42.2, 21.1, 10, 5 km, family and community) with the event window 06:00-14:00; per-race start times not out."
+platform = "custom"
+status = "watch"
+reason = "Start times expected around January or February 2027."
+recheck = "2027-01-15"
+found_via = ["tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tel-aviv-marathon"
+name = "Tel Aviv Samsung Marathon"
+kind = "sports"
+subtypes = ["sports-marathon"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.tlvmarathon.co.il/regTLVMarathon_en.aspx"
+next_first = "2027-02-24"
+next_last = "2027-02-26"
+schedule = "partial"
+schedule_evidence = "Only the children's race is timed so far: 24.02.2027 16:00, HaYarkon Park."
+platform = "custom"
+status = "watch"
+reason = "The other start times are expected around January 2027."
+recheck = "2027-01-10"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tamar-festival"
+name = "Tamar Festival"
+kind = "music"
+subtypes = ["music-israeli", "music-pop"]
+country = "IL"
+city = "Masada"
+site = "https://tamarfestival.com/"
+next_first = "2026-09-28"
+next_last = "2026-10-02"
+schedule = "partial"
+schedule_evidence = "Nightly line-ups by date; times and venues only on its Ticketmaster pages (codes MHM28-31, MPM22)."
+platform = "ticketmaster-il"
+status = "watch"
+reason = "This edition is under way; build from the Ticketmaster pages for the 2027 edition."
+recheck = "2027-07-01"
+found_via = ["ticketing-fingerprint", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "icon-festival"
+name = "ICon, Tel Aviv festival of science fiction and fantasy"
+kind = "multi"
+subtypes = ["multi-science-fiction"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://tickets.sf-f.org.il/icon2026/"
+programme = "https://tickets.sf-f.org.il/icon2026/"
+next_first = "2026-09-29"
+next_last = "2026-10-01"
+schedule = "published"
+schedule_evidence = "About 22 rooms by hour, 150 to 200 sessions, all days on one page (an earlier research pass; exact bytes unverified)."
+platform = "custom"
+status = "watch"
+reason = "This edition is under way as of 2026-09-29; adopt for the Sukkot 2027 edition."
+recheck = "2027-08-15"
+found_via = ["wikipedia-israel-categories", "project-history"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-chamber-music-festival"
+name = "Jerusalem International Chamber Music Festival"
+kind = "music"
+subtypes = ["music-classical", "music-chamber"]
+country = "IL"
+city = "Jerusalem"
+site = "https://jcmf.org.il/programme/"
+schedule = "expected"
+schedule_evidence = "The 2026 edition's rows are server-rendered: Friday, September 4, 2026 12:00 pm, Rimsky-Korsakov Quintet, YMCA"
+platform = "custom"
+status = "watch"
+reason = "Early September 2027; programme expected in June or July."
+recheck = "2027-06-15"
+found_via = ["itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-festival"
+name = "Israel Festival"
+kind = "multi"
+country = "IL"
+city = "Jerusalem"
+site = "https://israel-festival.org/"
+schedule = "expected"
+schedule_evidence = "The 2026 schedule board is server-rendered (israel-festival.org/2026/schedule-board): על חבל דק, 28.07 16:30"
+platform = "custom"
+status = "watch"
+reason = "Summer 2027 edition; programme expected around June."
+recheck = "2027-05-15"
+found_via = ["wikipedia-israel-categories", "il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-jazz-festival"
+name = "Jerusalem International Jazz Festival"
+kind = "music"
+subtypes = ["music-jazz"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.jerusalemjazzfestival.org.il/"
+schedule = "expected"
+platform = "eventer"
+status = "watch"
+reason = "Summer 2027 edition, alongside the Israel Festival; tickets through Eventer."
+recheck = "2027-05-15"
+found_via = ["eventer"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "karmiel-dance-festival"
+name = "Karmiel Dance Festival"
+kind = "dance"
+subtypes = ["dance-folk"]
+country = "IL"
+city = "Karmiel"
+site = "https://www.karmielfestival.co.il/כל-האירועים/"
+schedule = "expected"
+schedule_evidence = "The 2026 edition's events are server-rendered: חנן בן ארי בהופעה, 06/08/2026 21:30, אמפיתיאטרון"
+platform = "custom"
+status = "watch"
+reason = "Early August 2027; programme expected around June."
+recheck = "2027-06-01"
+found_via = ["ticketing-fingerprint"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "docaviv"
+name = "Docaviv, Tel Aviv International Documentary Film Festival"
+kind = "film"
+subtypes = ["film-documentary"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.docaviv.co.il/"
+schedule = "expected"
+platform = "tel-aviv-cinematheque"
+status = "watch"
+reason = "Late May 2027; its screenings appear on the Cinematheque's series pages."
+recheck = "2027-04-15"
+found_via = ["wikipedia-israel-categories", "tel-aviv-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tisff"
+name = "Tel Aviv International Student Film Festival"
+kind = "film"
+subtypes = ["film-student"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://tisff.com/"
+schedule = "expected"
+schedule_evidence = "The 2026 schedule is server-rendered at tisff.com/2026/schedule: טקס פתיחה, 23.6 20:00, סינמטק 3"
+platform = "tel-aviv-cinematheque"
+status = "watch"
+reason = "Late June 2027; the year is in the schedule path."
+recheck = "2027-05-15"
+found_via = ["tel-aviv-cinematheque", "wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "animix"
+name = "Animix, Tel Aviv International Animation, Comics and Caricature Festival"
+kind = "film"
+subtypes = ["film-animation"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.cinema.co.il/פסטיבל-אנימיקס/"
+schedule = "expected"
+platform = "tel-aviv-cinematheque"
+status = "watch"
+reason = "August 2027; the hub page is undated."
+recheck = "2027-06-15"
+found_via = ["tel-aviv-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tel-aviv-children-film-festival"
+name = "Tel Aviv Children and Youth Film Festival"
+kind = "film"
+subtypes = ["film-children"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.cinema.co.il/פסטיבל-ילדים/"
+schedule = "unknown"
+platform = "tel-aviv-cinematheque"
+status = "watch"
+reason = "Undated hub page, probably a school-holiday week."
+recheck = "2026-12-01"
+found_via = ["tel-aviv-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hutzot-hayotzer"
+name = "Hutzot Hayotzer International Arts and Crafts Fair"
+kind = "art"
+subtypes = ["art-crafts"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.itraveljerusalem.com/event/hutzot-hayotzer-intl-arts-and-crafts-fair"
+schedule = "expected"
+status = "watch"
+reason = "Mid-August 2027; one headline concert a night at 21:00 beside the fair, and its own site is not found yet."
+recheck = "2027-06-15"
+found_via = ["itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "felicja-blumental-festival"
+name = "Felicja Blumental International Music Festival"
+kind = "music"
+subtypes = ["music-classical"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://fbmc.co.il/en/"
+schedule = "unknown"
+platform = "custom"
+status = "watch"
+reason = "Spring 2027, dates not confirmed; the site lists single concerts with dates."
+recheck = "2027-02-01"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "curtain-up"
+name = "Curtain Up (Suzanne Dellal)"
+kind = "dance"
+subtypes = ["dance-contemporary"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.suzannedellal.org.il"
+schedule = "unknown"
+platform = "smarticket"
+status = "rejected"
+reason = "No 2026 edition found on Suzanne Dellal's site."
+found_via = ["ticketing-fingerprint"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "intimadance"
+name = "Intimadance (Tmuna Theatre)"
+kind = "dance"
+subtypes = ["dance-contemporary"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.tmu-na.org.il"
+schedule = "unknown"
+status = "rejected"
+reason = "No 2026 or 2027 dates found; its timing varies by year."
+found_via = ["domain-guess"]
+checked = "2026-09-29"
+
+# ── Worldwide, from the platform sweeps ──
+
+[[candidate]]
+id = "other-israel-film-festival"
+name = "Other Israel Film Festival"
+kind = "film"
+subtypes = ["film-israeli"]
+country = "US"
+city = "New York"
+site = "https://otherisrael.org"
+schedule = "unknown"
+platform = "eventive"
+status = "watch"
+reason = "November; sells through Eventive, whose API gives per-screening data once the edition is loaded."
+recheck = "2026-10-15"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "sf-sketchfest"
+name = "SF Sketchfest"
+kind = "comedy"
+subtypes = ["comedy-sketch"]
+country = "US"
+city = "San Francisco"
+site = "https://sfsketchfest.com"
+schedule = "expected"
+platform = "sched"
+status = "watch"
+reason = "January 2027; last edition's schedule was on Sched (sfsketchfest2026.sched.com/all.ics), so expect sfsketchfest2027."
+recheck = "2026-12-01"
+found_via = ["sched", "comics-comic-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "walt-disney-world-marathon-weekend"
+name = "Walt Disney World Marathon Weekend"
+kind = "sports"
+subtypes = ["sports-marathon"]
+country = "US"
+city = "Orlando"
+site = "https://runsignup.com"
+next_first = "2027-01-07"
+next_last = "2027-01-10"
+schedule = "published"
+schedule_evidence = "RunSignup lists one race per day with start times: 5K 7 Jan 05:00, 10K 8 Jan 05:00, half marathon 9 Jan 05:00, marathon 10 Jan."
+platform = "runsignup"
+status = "candidate"
+found_via = ["runsignup"]
+checked = "2026-09-29"

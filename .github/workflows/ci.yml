@@ -61,6 +61,8 @@ jobs:
           # The PR's real head, not the synthetic merge commit, so CI evaluates
           # what the session's own Stop hook evaluated.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          # The festival finder's growth check reads origin/main's history.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v5
         with:
