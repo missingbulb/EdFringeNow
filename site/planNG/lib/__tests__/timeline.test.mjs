@@ -49,11 +49,12 @@ test("bars that would overlap stack onto new rows", () => {
   );
 });
 
-test("a city's festivals that meet are one bunch, led by the longest run with a programme", () => {
-  const fest = (id, city, firstDate, lastDate, dataUrl = "/x") => ({
+test("a country's festivals that meet are one bunch, led by the longest run with a programme", () => {
+  const fest = (id, city, firstDate, lastDate, dataUrl = "/x", country = "GB", region = null) => ({
     id,
     city,
-    country: "GB",
+    country,
+    region,
     editions: [{ id: "2026", firstDate, lastDate, dataUrl }],
   });
   const registry = {
@@ -63,18 +64,31 @@ test("a city's festivals that meet are one bunch, led by the longest run with a 
       fest("film", "Edinburgh", "2026-08-13", "2026-08-19"),
       fest("hogmanay", "Edinburgh", "2026-12-29", "2027-01-01"),
       fest("seaside", "North Berwick", "2026-07-31", "2026-08-09"),
+      fest("haifa", "Haifa", "2026-08-10", "2026-08-20", "/x", "IL"),
+      fest("austin", "Austin", "2026-08-10", "2026-08-20", "/x", "US", "Texas"),
+      fest("boston", "Boston", "2026-08-10", "2026-08-20", "/x", "US", "Massachusetts"),
+      fest("dallas", "Dallas", "2026-08-15", "2026-08-25", "/x", "US", "Texas"),
     ],
   };
   const bunches = timelineBunches(registry, timelineSpan("2026-08-15"));
   assert.deepEqual(
     bunches.map((b) => [b.key, b.bars.map((x) => x.festival.id)]),
     [
-      ["seaside@2026", ["seaside"]],
-      ["fringe@2026", ["fringe", "tattoo", "film"]],
+      ["fringe@2026", ["seaside", "fringe", "tattoo", "film"]],
+      ["austin@2026", ["austin", "dallas"]],
+      ["boston@2026", ["boston"]],
+      ["haifa@2026", ["haifa"]],
       ["hogmanay@2026", ["hogmanay"]],
     ]
   );
-  const edinburgh = bunches[1];
-  assert.equal(edinburgh.start, Math.min(...edinburgh.bars.map((b) => b.start)));
-  assert.equal(edinburgh.end, Math.max(...edinburgh.bars.map((b) => b.end)));
+  assert.deepEqual(
+    timelineBunches(registry, timelineSpan("2026-08-15"), (f) => f.city)
+      .filter((b) => b.bars.length > 1)
+      .map((b) => b.bars.map((x) => x.festival.id)),
+    [["fringe", "tattoo", "film"]],
+    "grouped by city, North Berwick and Edinburgh part"
+  );
+  const uk = bunches[0];
+  assert.equal(uk.start, Math.min(...uk.bars.map((b) => b.start)));
+  assert.equal(uk.end, Math.max(...uk.bars.map((b) => b.end)));
 });

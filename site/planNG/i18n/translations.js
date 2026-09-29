@@ -480,11 +480,11 @@ export const STRINGS = {
   "bunch.title": {
     probe: ".tl-card",
     maxWidthPx: 320,
-    sample: { count: 7, city: "Edinburgh" },
-    en: "{count, plural, one {# festival} other {# festivals}} in {city}",
-    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}} ב{city}",
-    ru: "{city}: {count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}",
-    ja: "{city}の{count}のフェスティバル",
+    sample: { count: 7, place: "United Kingdom" },
+    en: "{place}: {count, plural, one {# festival} other {# festivals}}",
+    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}} ב{place}",
+    ru: "{place}: {count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}",
+    ja: "{place}の{count}のフェスティバル",
   },
   "card.programme": {
     probe: ".tl-card",

@@ -69,29 +69,32 @@ export function timelineBars(registry, span) {
 }
 
 /**
- * The bars bunched by city: every edition in one city whose runs meet (or come
- * within `joinDays` of each other) is one pill, so a city holding seven
- * festivals at once costs the strip one row, not seven.
+ * The bars bunched by country: every edition in one country whose runs meet
+ * (or come within `joinDays` of each other) is one pill, so a country holding
+ * seven festivals at once costs the strip one row, not seven. A festival that
+ * names a `region` (a state of a country as large as the US) bunches with
+ * that region's alone. `placeOf` swaps in another grouping, such as
+ * cityPlace() once the strip shows a single country.
  *
  * A bunch is led by the edition with a published programme and the longest
  * run, then the one that starts first: the one a reader most likely came for.
  * @returns {{key, lead, bars, start, end, hasData}[]} `key` is the lead's
  *   edition key; `bars` are the bunch's, in start order; `start`/`end` span them
  */
-export function timelineBunches(registry, span, joinDays = 7) {
+export function timelineBunches(registry, span, placeOf = bunchPlace, joinDays = 7) {
   const join = joinDays / span.days;
   const open = new Map();
   const bunches = [];
   for (const bar of timelineBars(registry, span)) {
-    const city = `${bar.festival.country}|${bar.festival.city}`;
-    const last = open.get(city);
+    const place = placeOf(bar.festival);
+    const last = open.get(place);
     if (last && bar.start <= last.end + join) {
       last.bars.push(bar);
       last.end = Math.max(last.end, bar.end);
       continue;
     }
     const bunch = { bars: [bar], start: bar.start, end: bar.end };
-    open.set(city, bunch);
+    open.set(place, bunch);
     bunches.push(bunch);
   }
   return bunches.map((b) => {
@@ -100,6 +103,11 @@ export function timelineBunches(registry, span, joinDays = 7) {
     )[0];
     return { key: lead.key, lead, bars: b.bars, start: b.start, end: b.end, hasData: b.bars.some((x) => x.hasData) };
   });
+}
+
+/** Where a festival bunches: its region where it names one, else its country. */
+export function bunchPlace(festival) {
+  return festival.region ? `${festival.country}|${festival.region}` : festival.country;
 }
 
 /** The one spelling of "this edition of this festival" the page keys on. */

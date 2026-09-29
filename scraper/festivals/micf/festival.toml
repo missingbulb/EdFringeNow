@@ -10,6 +10,7 @@ id = "micf"
 name = "Melbourne International Comedy Festival"
 city = "Melbourne"
 country = "AU"
+region = "Victoria"
 # Melbourne Town Hall, the festival hub; venues carry their own coordinates.
 lat = -37.8150
 lng = 144.9668
