@@ -1,11 +1,17 @@
 {
   "usage-findings": {
-    "value": 81,
+    "value": 82,
     "previous": 81,
-    "note": "2026-08-31 to 2026-09-27"
+    "note": "2026-09-01 to 2026-09-28"
   },
   "usage-newest": {
     "rows": [
+      {
+        "subject": "committing",
+        "rule": "skill-forced-only-small",
+        "cause": "known",
+        "since": "2026-09-29"
+      },
       {
         "subject": "flat-declarations-current",
         "rule": "check-never-fires",
@@ -58,12 +64,6 @@
         "subject": "cloudflare-site/publishes-a-site-directory",
         "rule": "check-never-fires",
         "cause": "unknown",
-        "since": "2026-09-26"
-      },
-      {
-        "subject": "committing",
-        "rule": "skill-always-loaded",
-        "cause": "known",
         "since": "2026-09-26"
       }
     ]
