@@ -1,10 +1,10 @@
 "use strict";
 const { jerusalemReady, plannerReady, routeEdinburghFestivals, calendarSpans } = require("../../shared/case-helpers");
 
-/* Choosing Edinburgh's pill of four festivals: the Fringe, the one with a
+/* Choosing the United Kingdom's pill of four festivals: the Fringe, the one with a
  * programme and the longest run, is chosen. */
 module.exports = {
-  description: "choosing a city's pill sets the trip to its leading festival's run plus a day either side, and that festival leads",
+  description: "choosing a country's pill sets the trip to its leading festival's run plus a day either side, and that festival leads",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {

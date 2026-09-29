@@ -1,5 +1,5 @@
 "use strict";
-const { plannerReady, chooseOnYear } = require("../../shared/case-helpers");
+const { chooseOnStrip, plannerReady } = require("../../shared/case-helpers");
 
 // The Fringe's catalogue files, by the part of their path that names them.
 const FRINGE_FILES = ["/data/normalized/", "/data/venues.json"];
@@ -21,12 +21,12 @@ module.exports = {
     await page.goto(`${origin}/planNG/?festival=haifa-iff`, { waitUntil: "load" });
     await plannerReady(page, "haifa-iff");
     for (const festival of ["acco", "jerusalem-comedy"]) {
-      await chooseOnYear(page, festival);
+      await chooseOnStrip(page, festival);
       await plannerReady(page, festival);
     }
     assert.deepEqual(fetched, [], "Haifa, Acco and Jerusalem planned without a byte of the Fringe");
 
-    await chooseOnYear(page, "edfringe");
+    await chooseOnStrip(page, "edfringe");
     await plannerReady(page, "edfringe");
     assert.deepEqual(
       [...new Set(fetched)].sort(),

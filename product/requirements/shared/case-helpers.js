@@ -220,6 +220,29 @@ async function routeEdinburghFestivals(page) {
   );
 }
 
+/* Choose a festival on the strip, as a reader does from the keyboard: a
+ * travel picture may sit over its pill, covering it from the pointer. One
+ * sharing its country's pill with a festival that leads it is reached by
+ * narrowing the place menu to that country, then widened back. */
+async function chooseOnStrip(page, festivalId) {
+  const item = `.tl-item[data-festival="${festivalId}"]`;
+  const choose = async () => {
+    await page.focus(item);
+    await page.keyboard.press("Enter");
+  };
+  if (await page.locator(item).count()) {
+    await choose();
+    return;
+  }
+  const country = await page.evaluate(
+    async (id) => (await (await fetch("/data/festivals/index.json")).json()).festivals.find((f) => f.id === id).country,
+    festivalId
+  );
+  await page.selectOption('[data-filter="place"]', country);
+  await choose();
+  await page.selectOption('[data-filter="place"]', "");
+}
+
 /* Say how you are getting here, as a reader does: a picture beside the trip
  * opens the question (or, once answered, the travel card and its "change"),
  * then where you live, then, living elsewhere, how you travel. `home` is
@@ -249,24 +272,34 @@ async function moveTripEnd(page, end, iso) {
   await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
 }
 
-/* The fixtures' year plus eight more festivals, each in a town of its own and
- * all running at once, so the year draws more rows than the strip shows. None
- * has a programme, so nothing else on the page changes. */
-const CROWD_TOWNS = ["Eilat", "Nazareth", "Safed", "Tiberias", "Ashdod", "Netanya", "Rehovot", "Hadera"];
+/* The fixtures' year plus eight more festivals, each in a country of its own
+ * (a country's festivals share one pill) and all running at once, so the year
+ * draws more rows than the strip shows. None has a programme, so nothing else
+ * on the page changes. */
+const CROWD_TOWNS = [
+  ["Paris", "FR"],
+  ["Berlin", "DE"],
+  ["Madrid", "ES"],
+  ["Rome", "IT"],
+  ["Amsterdam", "NL"],
+  ["Lisbon", "PT"],
+  ["Dublin", "IE"],
+  ["Vienna", "AT"],
+];
 async function routeCrowdedYear(page) {
   const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
-  CROWD_TOWNS.forEach((city, i) =>
+  CROWD_TOWNS.forEach(([city, country], i) =>
     registry.festivals.push({
       id: `crowd-${i}`,
       name: `${city} Festival`,
       nameLocal: null,
       city,
-      country: "IL",
-      lat: 32 + i / 10,
-      lng: 35,
-      timezone: "Asia/Jerusalem",
-      lang: "he",
-      dir: "rtl",
+      country,
+      lat: 48 + i / 10,
+      lng: 5,
+      timezone: "Europe/Paris",
+      lang: "en",
+      dir: "ltr",
       kind: "music",
       defaultGenre: "music",
       site: "https://example.org",
@@ -277,13 +310,6 @@ async function routeCrowdedYear(page) {
   await page.route("**/data/festivals/index.json", (route) =>
     route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
   );
-}
-
-/* Choose a festival on the year from the keyboard: a travel picture may sit
- * over its pill, covering it from the pointer. */
-async function chooseOnYear(page, festivalId) {
-  await page.focus(`.tl-item[data-festival="${festivalId}"]`);
-  await page.keyboard.press("Enter");
 }
 
 // The calendar re-planned across a trip: its first and last column are the
@@ -741,9 +767,9 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
-  chooseOnYear,
   routeCrowdedYear,
   routeEdinburghFestivals,
+  chooseOnStrip,
   calendarDays,
   calendarSpans,
   JERUSALEM,

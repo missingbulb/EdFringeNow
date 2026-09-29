@@ -26,6 +26,7 @@ id = "jerusalem-comedy"          # lowercase-hyphen slug; the id everywhere else
 name = "…"                        # English
 name_local = "…"                  # optional; the festival's own-language name
 city = "…"  country = "IL"        # ISO 3166 alpha-2
+region = "Victoria"               # optional; the state, only in a country as large as the US or Australia
 lat = 31.7683  lng = 35.2137      # the city, for the timeline and travel maths
 timezone = "Asia/Jerusalem"       # performance times are this wall clock
 lang = "he"  dir = "rtl"

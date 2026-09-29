@@ -32,7 +32,9 @@ let cheerUntil = 0;
  * @param {string|null} o.focusKey the focused edition's key
  * @param {{from: string, to: string}|null} o.period the trip
  * @param {(festival: object, edition: object) => string} o.label a lone festival's words
- * @param {(bunch: object) => {name: string, tip: string}} o.bunchLabel a city's
+ * @param {(festival: object) => string} [o.bunchBy] which festivals share a
+ *   pill: those this gives the same answer for; by country when left out
+ * @param {(bunch: object) => {name: string, tip: string}} o.bunchLabel a country's
  *   pill's words, when it holds more than one festival
  * @param {(country: string) => string} o.flag a country's flag, as HTML
  * @param {(iso: string) => string} o.monthLabel
@@ -44,7 +46,7 @@ let cheerUntil = 0;
  * @param {{html: string, settled: boolean, tip: string}|null} [o.travel] the
  *   picture beside each end of the trip saying how the reader gets there and
  *   back, or null where there is no journey to plan
- * @param {(bunch: object) => string} o.bunchCard the card a city's pill of
+ * @param {(bunch: object) => string} o.bunchCard the card a country's pill of
  *   several festivals shows, as HTML
  * @param {{from: string, to: string, days: number}[]} [o.breaks] the breaks the
  *   reader's public holidays make inside the span, an orb each on the months
@@ -53,10 +55,10 @@ let cheerUntil = 0;
  */
 export function renderTimeline(host, o) {
   const { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, lengthText, todayText, festivalCard } = o;
-  const { breaks = [], breakCard, bunchLabel, bunchCard, flag, travel = null, noneKey = "timeline.none" } = o;
+  const { breaks = [], breakCard, bunchBy, bunchLabel, bunchCard, flag, travel = null, noneKey = "timeline.none" } = o;
   const cards = [];
   const card = (html) => cards.push(html) - 1;
-  const bunches = timelineBunches(registry, span);
+  const bunches = timelineBunches(registry, span, bunchBy);
   const months = monthTicks(span)
     .map(
       (m, i) =>
@@ -98,7 +100,7 @@ export function renderTimeline(host, o) {
       // from the pill's far end and reads back towards the start instead.
       const late = bunch.start > LATE_FRAC;
       const place = late ? `inset-inline-end:${pct(1 - bunch.end)}` : `inset-inline-start:${pct(bunch.start)}`;
-      // Inside a city's pill each festival's run is a shade of its own, so
+      // Inside a country's pill each festival's run is a shade of its own, so
       // the days most festivals share read darkest.
       const width = bunch.end - bunch.start;
       const runs = many

@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, plannerReady, chooseOnYear } = require("../../shared/case-helpers");
+const { chooseOnStrip, jerusalemReady, plannerReady } = require("../../shared/case-helpers");
 
 /* The top of the page as each festival comes to lead the trip, one frame per
  * host city: the photograph behind the year and the page's name changes with
@@ -15,7 +15,7 @@ module.exports = {
   async capture(page, t) {
     const frames = [await t.unionClip(TOP, 12)];
     for (const id of NEXT) {
-      await chooseOnYear(page, id);
+      await chooseOnStrip(page, id);
       await plannerReady(page, id);
       await page.evaluate(() => window.scrollTo(0, 0));
       frames.push(await t.unionClip(TOP, 12));

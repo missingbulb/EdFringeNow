@@ -7,9 +7,8 @@ module.exports = {
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {
-    // Focused rather than hovered: a travel picture sits over Haifa's pill.
-    await page.focus('.tl-item[data-festival="haifa-iff"]');
+    await page.hover('.tl-item[data-festival="edfringe"] .tl-bar');
     await page.waitForSelector(".tl-card:not([hidden])");
-    return t.unionClip(['.tl-item[data-festival="haifa-iff"]', ".tl-card"]);
+    return t.unionClip(['.tl-item[data-festival="edfringe"]', ".tl-card"]);
   },
 };
