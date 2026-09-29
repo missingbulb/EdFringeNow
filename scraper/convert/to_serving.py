@@ -97,6 +97,7 @@ def build_index(festivals):
             "nameLocal": f.get("name_local"),
             "city": f["city"],
             "country": f["country"],
+            **({"region": f["region"]} if "region" in f else {}),
             "lat": f["lat"],
             "lng": f["lng"],
             "timezone": f["timezone"],

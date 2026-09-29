@@ -1,9 +1,9 @@
 "use strict";
 const { jerusalemReady, routeEdinburghFestivals, settle } = require("../../shared/case-helpers");
 
-/* Pointing at Edinburgh's pill of four festivals. */
+/* Pointing at the United Kingdom's pill of four festivals. */
 module.exports = {
-  description: "pointing at a city's pill shows its card: how many festivals, and each one's name and dates",
+  description: "pointing at a country's pill shows its card: where, how many festivals, and each one's name and dates",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,

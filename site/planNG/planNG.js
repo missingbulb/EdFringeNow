@@ -3510,9 +3510,10 @@ function renderTimelineStrip() {
     todayText: t("timeline.today"),
     festivalCard,
     travel: travelIcons(),
+    bunchBy: state.stripFilter.place ? cityPlace : undefined,
     bunchLabel: (bunch) => ({
       name: t("bunch.label", { count: bunch.bars.length, name: wordmarkOf(bunch.lead.festival).join(" ") }),
-      tip: t("bunch.title", { count: bunch.bars.length, city: festivalCity(bunch.lead.festival) }),
+      tip: t("bunch.title", { count: bunch.bars.length, place: bunchPlaceName(bunch.lead.festival) }),
     }),
     bunchCard,
     flag: (country) => flagSvg(country, "tl-flag"),
@@ -3630,11 +3631,17 @@ function festivalCard(festival, edition, hasData) {
   );
 }
 
-/* What a city's pill of several festivals says: how many, where, and each
+/* Where a pill of several festivals is: its city once the place menu has
+ * narrowed the strip to a country, else its region where the festivals name
+ * one, else its country. */
+const bunchPlaceName = (festival) =>
+  state.stripFilter.place ? festivalCity(festival) : festival.region || regionName(festival.country);
+
+/* What a pill of several festivals says: how many, where, and each
  * one's name and dates. */
 function bunchCard(bunch) {
   const { festival } = bunch.lead;
-  const title = t("bunch.title", { count: bunch.bars.length, city: festivalCity(festival) });
+  const title = t("bunch.title", { count: bunch.bars.length, place: bunchPlaceName(festival) });
   return (
     `<strong class="tl-card-title" data-i18n-slot="bunch.title">${escapeHtml(title)}</strong>` +
     bunch.bars
