@@ -252,6 +252,8 @@ async function answerTravel(page, { home, way = null }) {
   await page.selectOption("#originCountry", home);
   await page.click('#originCard [data-origin="next"]');
   await page.click(`#originCard [data-origin="${way}"]`);
+  // Off the card, whose fares arrive under where the pointer pressed.
+  await page.mouse.move(0, 0);
 }
 
 /* Press a festival's pill on the year, where a reader would: on the pill,
