@@ -2493,3 +2493,472 @@ found_via = ["eventact", "think-eventact", "ima-events-calendar"]
 checked = "2026-09-29"
 
 # ── Sources ──
+
+[[candidate]]
+id = "jerusalem-design-week"
+name = "Jerusalem Design Week"
+name_local = "שבוע העיצוב ירושלים"
+kind = "art"
+subtypes = ["art-design"]
+country = "IL"
+city = "Jerusalem"
+site = "https://jdw.co.il/en"
+programme = "https://jdw.co.il/en/events"
+schedule = "expected"
+schedule_evidence = "The 2026 events page is server-rendered by day: Thursday 9/7, Opening Concert - Nunu, 21:00, Main Stage - Courtyard (Hansen House)."
+platform = "custom"
+status = "watch"
+reason = "Held 9 to 16 July 2026; the July 2027 edition's events page is expected around June. The exhibitions run all week; the events strand (talks, concerts, workshops, tours) is the per-session part."
+recheck = "2027-06-01"
+found_via = ["itraveljerusalem", "tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kol-hamusica-upper-galilee"
+name = "Voice of Music in the Upper Galilee (Kol HaMusica) chamber music festival"
+name_local = "פסטיבל קול המוסיקה בגליל העליון"
+kind = "music"
+subtypes = ["music-classical", "music-chamber"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://www.kol-hamusica.org.il/"
+programme = "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+next_first = "2026-10-28"
+next_last = "2026-11-01"
+schedule = "published"
+schedule_evidence = "14 events on the Upper Galilee culture Smarticket tenant, server-rendered: [2] Shlomi Shaban and the piano, Beit HaAm Kfar Blum, Wednesday 28 October 2026 at 20:30; [3] Kav HaTzel, Klor Centre hall (Kfar Blum), 29 October 2026 at 10:30."
+platform = "smarticket"
+status = "candidate"
+found_via = ["search-hebrew-programme", "smarticket"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tel-aviv-jazz-festival"
+name = "Tel Aviv-Yafo Jazz Festival"
+name_local = "פסטיבל הג'אז של תל אביב-יפו"
+kind = "music"
+subtypes = ["music-jazz"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.teder.fm/events"
+schedule = "expected"
+schedule_evidence = "The 2024 edition's page (teder.fm/events/13114) lists every set by day, time and stage: 13.12, 21:00, Tamir Muskat & Tom Meira Armony, Teder main yard, Beit Romano; plus Kissa, Matmon, Juanita garden, Park HaMesila and Tel Aviv Museum of Art."
+platform = "custom"
+status = "watch"
+reason = "Run by Teder with the municipality at Beit Romano, free entry, late November or mid-December; the 2026 edition's Teder event page was not yet up on 2026-09-29 (dates reported as 27 to 29 November or mid-December, unconfirmed). No standalone festival site: the programme is a Teder event page."
+recheck = "2026-11-01"
+found_via = ["search-hebrew-programme", "tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "theatronetto"
+name = "Theatronetto, festival of one-person plays"
+name_local = "פסטיבל תיאטרונטו"
+kind = "theatre"
+subtypes = ["theatre-solo"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.jaffatheatre.org.il/theatronetto-2026/"
+schedule = "expected"
+schedule_evidence = "The 2026 (35th) edition's programme, as Habama printed it (habama.co.il ArticleId=36283), gives every performance: Friday 22 May at 13:45 and Saturday 23 May at 19:15 and 21:15, Nissan Nativ hall; about ten shows in four rooms in Old Jaffa and at Tavo Herzliya."
+platform = "custom"
+status = "watch"
+reason = "Held in Passover week, Jaffa Theatre with the municipality; 2026 was postponed to Shavuot (22 to 25 May) by the war. The Jaffa Theatre site answers a SiteGround captcha (sgcaptcha, HTTP 202) to curl, WP REST API included, so the programme has to come from another route."
+recheck = "2027-02-15"
+found_via = ["il-listing-sites", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-group-therapy-conference"
+name = "Israeli Association for Group Guidance and Therapy biennial conference"
+name_local = "כנס העמותה הישראלית להנחיה ולטיפול קבוצתי"
+kind = "academic"
+subtypes = ["academic-psychology"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://isragrouptherapy.org.il/"
+programme = "https://isragrouptherapy.org.il/madai-seats-2027/"
+next_first = "2027-02-15"
+next_last = "2027-02-17"
+schedule = "unknown"
+platform = "custom"
+status = "watch"
+reason = "At the Rabin Center; the site has a sessions page (madai-seats-2027) and a presenters page, and search snippets describe three tracks of parallel sessions a day, but every URL, WP REST API included, answers a SiteGround captcha (sgcaptcha, HTTP 202) to curl, so session times are unverified."
+recheck = "2026-12-01"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-east-and-west"
+name = "Jerusalem East and West Festival"
+name_local = "פסטיבל ירושלים מזרח ומערב"
+kind = "music"
+country = "IL"
+city = "Jerusalem"
+site = "https://www.jerusalem.muni.il/he/experience/allevents/eastwest/"
+next_first = "2026-06-24"
+next_last = "2026-06-25"
+schedule = "none"
+status = "rejected"
+reason = "Two evening concerts on one stage at the Sultan's Pool with the Jerusalem East and West Orchestra (2026: 24 and 25 June): nothing to plan."
+found_via = ["il-listing-sites", "itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bein-hakramim"
+name = "Bein HaKramim (Between the Vineyards) festival, Merom HaGalil"
+name_local = "פסטיבל בין הכרמים"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Merom HaGalil"
+site = "https://www.2beav.co.il/"
+programme = "https://www.2beav.co.il/blank-1"
+schedule = "expected"
+schedule_evidence = "The 2026 (20th) edition's Wix pages list each event by day, time and place: Wednesday 5.8, show 21:00, Ein Hozim (near Kadita); Tuesday 4.8, 21:00, Mitzpe Kinneret, Amirim; smaller events on /copy-of-10 (Monday 3.8, 17:00, Beit HaAm Amirim)."
+platform = "custom"
+status = "watch"
+reason = "Tu B'Av week (2026: 30 July to 6 August), run by Merom HaGalil regional council across a dozen venues; the 2027 pages are expected in June."
+recheck = "2027-06-01"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "vineyard-cinema-galilee"
+name = "Cinema Between the Vineyards (Kolnoa Bein HaKramim), Alon HaGalil"
+name_local = "קולנוע בין הכרמים"
+kind = "film"
+country = "IL"
+city = "Alon HaGalil"
+site = "https://vineyardcinema.org/"
+programme = "https://vineyardcinema.org/"
+schedule = "expected"
+schedule_evidence = "The first edition (16 to 18 July 2026, Ofir farm) has a day-tabbed programme on the homepage: Thursday, Ofir Awards 2025 shorts strand, 17:00, Winery hall; open-air screen for the evening films."
+platform = "custom"
+status = "watch"
+reason = "First edition July 2026 with two screens; a second edition in July 2027 is not yet announced."
+recheck = "2027-05-15"
+found_via = ["il-listing-sites", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "lumagica-tel-aviv"
+name = "LUMAGICA international light festival, Tel Aviv"
+name_local = "פסטיבל האור הבינלאומי לומג'יקה"
+kind = "art"
+country = "IL"
+city = "Tel Aviv"
+site = "https://park.co.il/events/lumagica/"
+schedule = "none"
+status = "rejected"
+reason = "A walk-through light park in Yarkon Park open nightly for two months (13 Nov 2025 to 15 Jan 2026); no sessions."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hashaa-children-theatre-festival"
+name = "HaSha'a festival of plays for children and youth"
+name_local = "פסטיבל השעה להצגות ילדים ונוער"
+kind = "theatre"
+subtypes = ["theatre-children"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://zoatlv.co.il/type/%D7%99%D7%9C%D7%93%D7%99%D7%9D/"
+programme = "https://zoatlv.co.il/type/%D7%99%D7%9C%D7%93%D7%99%D7%9D/"
+next_first = "2026-09-30"
+next_last = "2026-10-02"
+schedule = "published"
+schedule_evidence = "Beit Tziyonei America's children's listing is server-rendered with the hall per session: 30 September 2026, Jinji, Meirhoff hall, 11:30; 12 festival sessions over 30 Sep to 2 Oct in the Marlen and Meirhoff halls."
+platform = "custom"
+status = "candidate"
+reason = "The Sukkot 2026 edition ends inside the window's first days; the festival recurs in school holidays (check Hanukkah and Passover on the venue's listing)."
+found_via = ["il-listing-sites", "beit-tziyonei-america"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ashdodance"
+name = "Ashdodance international dance festival"
+name_local = "פסטיבל אשדודאנס"
+kind = "dance"
+country = "IL"
+city = "Ashdod"
+site = "https://ashdodance.co.il/"
+programme = "https://ashdodance.co.il/program/"
+schedule = "partial"
+schedule_evidence = "The 2026 (9th) edition's ticketed programme page gives five shows with date, time and venue: 30/07/2026, 21:00, Amphi Ashdod, closing concert; 17:00, Monart, Tokho Ratzuf Ahava. The free open-air strands (2,000 dancers over 27 to 30 July) are not on it."
+platform = "custom"
+status = "watch"
+reason = "Tu B'Av week each summer; only the ticketed shows carry times, so recheck whether the 2027 site publishes the full per-stage programme."
+recheck = "2027-06-01"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kinneret-vibes"
+name = "Kinneret VIBES festival, Beit Gabriel"
+name_local = "פסטיבל כנרת VIBES"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Tzemah"
+site = "https://www.facebook.com/tomixbettertogether/"
+schedule = "none"
+status = "rejected"
+reason = "A series of evening concerts on the Beit Gabriel lawn amphitheatre, one stage, around Passover or Sukkot; no own site (the producer's Facebook page) and Mevalim shows no upcoming edition."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "breeza-ashkelon"
+name = "Breeza festival, Ashkelon"
+name_local = "פסטיבל בריזה"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Ashkelon"
+site = "https://www.eventim.co.il/artist/brizafest/"
+schedule = "none"
+status = "rejected"
+reason = "Three evening concerts in the Ashkelon National Park amphitheatre in August (2023 revival), one stage; no official site beyond the Eventim artist page. Mevalim's Breeza page lists unrelated Caesarea concerts."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "rokenrola"
+name = "Rokenrola rock festival (Zappa, curated by Mashina)"
+name_local = "פסטיבל רוקנרולה"
+kind = "music"
+subtypes = ["music-rock"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.zappa-club.co.il/"
+schedule = "none"
+status = "rejected"
+reason = "A single-day rock festival in Sukkot; no 2026 edition listed on muzi or Mevalim, and Zappa refuses the sandbox (403). Reconsider only if it returns with several stages. City recorded as Zappa's base; the venue varied."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "genesis-festival"
+name = "Genesis Festival, Ma'ayan Harod"
+name_local = "פסטיבל ג'נסיס"
+kind = "music"
+subtypes = ["music-electronic"]
+country = "IL"
+city = "Gilboa"
+site = "https://www.facebook.com/GenesisFestivalOfficial/"
+next_first = "2027-06-16"
+next_last = "2027-06-19"
+schedule = "unknown"
+status = "watch"
+reason = "Multi-area camping festival at Ma'ayan Harod National Park; 2027 is a save-the-date (16 to 19 June, per muzi). No official site found: genesisfestival.co.il and genesis-festival.com do not resolve, beresheet-festival.co.il (a different, Sukkot family festival) 502s. Look for a per-stage timetable on the ticketing page once sales open."
+recheck = "2027-04-15"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "meteor-festival"
+name = "Meteor Festival, Lehavot HaBashan"
+kind = "music"
+country = "IL"
+city = "Lehavot HaBashan"
+site = "https://www.meteorfestival.com"
+schedule = "unknown"
+status = "watch"
+reason = "Multi-stage festival last documented in 2018 (unpaid-artist reports in 2019); meteorfestival.com answers Cloudflare 522 (origin down) and no 2026 or 2027 edition turned up in search. Likely defunct: reject at the recheck if nothing has appeared."
+recheck = "2027-06-01"
+found_via = ["tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-film-festival"
+name = "Jerusalem Film Festival"
+name_local = "פסטיבל הקולנוע ירושלים"
+kind = "film"
+country = "IL"
+city = "Jerusalem"
+site = "https://jff.org.il/he"
+programme = "https://jff.org.il/he/festival-calendar"
+next_first = "2027-07-21"
+next_last = "2027-07-31"
+schedule = "expected"
+schedule_evidence = "The festival calendar page is live and already headed 21-31.07.2027 but holds no screenings yet; the Cinematheque's own daily calendar (jer-cin.org.il/he/article/4285) is server-rendered by hour (29.09.26, 20:00, Three Photographers in a Swamp), so the festival grid should read the same way. Screen per session not yet verified."
+platform = "custom"
+status = "watch"
+reason = "Programme usually published about three weeks before the July opening. jff.org.il answers 200 to curl with a browser User-Agent (the earlier 403 was the default UA)."
+recheck = "2027-06-15"
+found_via = ["jerusalem-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ein-gev-festival"
+name = "Ein Gev Festival (Ein Gev - Sovev Kinneret)"
+name_local = "פסטיבל עין גב"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Ein Gev"
+site = "https://www.betgabriel.co.il/he/category/27"
+schedule = "none"
+status = "rejected"
+reason = "Four headline Hebrew-song concerts over three Passover evenings (2025: 14 to 16 April, Ein Gev harbour and the Beit Gabriel amphitheatre), about one a night: nothing to plan. Tickets on Beit Gabriel's Angular box office. A Sukkot spin-off ran 30 Sep to 1 Oct 2026."
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "boombamela"
+name = "Boombamela"
+name_local = "בומבמלה"
+kind = "music"
+country = "IL"
+city = "Nitzanim"
+site = "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%9E%D7%91%D7%9E%D7%9C%D7%94"
+schedule = "none"
+status = "rejected"
+reason = "Defunct: the Passover beach festival at Nitzanim last ran in 2011 (in Eilat); only nostalgia pieces since. boombamela.co.il is an unrelated recommendations blog."
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hebrew-book-week"
+name = "Hebrew Book Week"
+name_local = "שבוע הספר העברי"
+kind = "literature"
+country = "IL"
+city = "Tel Aviv"
+site = "https://sfarim.org.il/"
+schedule = "unknown"
+status = "watch"
+reason = "Book fairs in many cities each June with stage events; whether a per-event programme (time and stage) is published is unverified because sfarim.org.il answers a SiteGround captcha (sgcaptcha, HTTP 202). The National Library's Jerusalem strand (nli.org.il/he/visit/events/summer-events/book-week) is a separate route to try."
+recheck = "2027-05-01"
+found_via = ["itraveljerusalem", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-international-book-forum"
+name = "Jerusalem International Book Forum"
+kind = "literature"
+country = "IL"
+city = "Jerusalem"
+site = "https://www.jbookforum.com/"
+schedule = "unknown"
+status = "watch"
+reason = "Biennial publishing-trade forum with public talks and the Jerusalem Prize; eventseye lists a 2027 edition without dates. jbookforum.com now serves an Indonesian gambling spam page (domain hijacked or lapsed) and /events/ is a 404, so the organiser (the Ariel/Jerusalem municipality contact) must be found another way."
+recheck = "2026-12-01"
+found_via = ["search-english-annual-meeting"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "haifa-children-theatre-festival"
+name = "Haifa International Children's Theatre Festival"
+name_local = "פסטיבל חיפה הבינלאומי להצגות ילדים"
+kind = "theatre"
+subtypes = ["theatre-children"]
+country = "IL"
+city = "Haifa"
+site = "https://www.haifakids.co.il/"
+schedule = "expected"
+schedule_evidence = "The 36th edition page (ht1.co.il/ContentPage?Id=115, 25 to 27 August 2026, Haifa theatre quarter) gives shows with dates, times and hall: D'ash mi-Kishkashta, 25.8 and 26.8, 10:30 and 13:00, Haifa Theatre; five competition premieres and nine guest shows in the theatre's halls, plus free street shows."
+platform = "custom"
+status = "watch"
+reason = "Traditionally Passover week (12 halls and spaces); 2026 ran in late August. The 2027 open call is up; check whether 2027 returns to Passover (late April)."
+recheck = "2027-02-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cinema-south-festival"
+name = "Cinema South International Film Festival, Sderot"
+name_local = "פסטיבל קולנוע דרום"
+kind = "film"
+country = "IL"
+city = "Sderot"
+site = "https://www.sapir.ac.il/en/cinema/csf/events"
+programme = "https://www.sderot-cin.org.il/movies"
+schedule = "expected"
+schedule_evidence = "The Sderot Cinematheque's daily listing is server-rendered by day and time (Tuesday 29/09/2026, 20:00, Diamonds), and it carries a festival page (sderot-cin.org.il/movie/1255, '6-13.11') with no screenings yet."
+platform = "custom"
+status = "watch"
+reason = "Run by Sapir College's School of Sound and Screen Arts at the Sderot Cinematheque and around town; the 2026 edition is reported for early November (1 to 5 or 6 to 13 November, sources disagree). The Sapir events page answers 403 to curl."
+recheck = "2026-10-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "safed-klezmer-festival"
+name = "International Klezmer Festival, Safed"
+name_local = "פסטיבל הכליזמרים הבינלאומי בצפת"
+kind = "music"
+subtypes = ["music-klezmer"]
+country = "IL"
+city = "Safed"
+site = "https://safed.co.il/klezmer-festival-safed.html"
+programme = "https://www.safednofesh.com/en/klezmer-festival-2026"
+schedule = "expected"
+schedule_evidence = "The 2026 (39th) edition's full per-stage timetable, as republished by Safed Nofesh: Tuesday 18 August 2026, Roots of Melody main stage, HaMaayan HaRadum Square, 21:30, Gabriel Shoraki and Friends host David D'Or; five stages each night 19:00 to 23:00."
+platform = "custom"
+status = "watch"
+reason = "Three nights in mid-August, free, run by Safed municipality; no standalone official site found (the full programme appears in local news and tourism sites). Find the municipality's own page for 2027."
+recheck = "2027-07-01"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-writers-festival"
+name = "Jerusalem International Writers Festival, Mishkenot Sha'ananim"
+name_local = "פסטיבל הסופרים.ות ירושלים"
+kind = "literature"
+country = "IL"
+city = "Jerusalem"
+site = "https://fest.mishkenot.org.il/he/home/a/main/"
+programme = "https://fest.mishkenot.org.il/he/home/a/main/"
+schedule = "expected"
+schedule_evidence = "The 2026 festival site lists each talk with date and time: 25/5, 19:30-21:00, Dara Horn in conversation with Suzanne Nossel. The room within Mishkenot is not on the list rows."
+platform = "custom"
+status = "watch"
+reason = "Held in late May 2026; editions have been roughly biennial (12th in 2024, 2026 edition), so a May 2027 edition is uncertain."
+recheck = "2027-03-01"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "train-theater-puppet-festival"
+name = "Jerusalem International Puppet Theatre Festival (Train Theater)"
+name_local = "פסטיבל הבובות הבינלאומי של תיאטרון הקרון"
+kind = "theatre"
+subtypes = ["theatre-puppetry", "theatre-children"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.traintheater.co.il/he/festival/2026"
+programme = "https://www.traintheater.co.il/he/festival/2026/program"
+schedule = "expected"
+schedule_evidence = "The 2026 (35th) programme table has day tabs (16.8 to 20.8) and columns age, name, time, hall, tickets: Circus of Nothing, 21:00, Karon large hall; Perla and the Perlinim (Late Night), 22:00, Karon plaza."
+platform = "custom"
+status = "watch"
+reason = "Mid-August each year around Liberty Bell Park; the 2027 programme should appear at /he/festival/2027/program in July."
+recheck = "2027-07-01"
+found_via = ["wikipedia-israel-categories", "itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "givatayim-storytellers-festival"
+name = "Storytellers Festival, Givatayim Theatre"
+name_local = "פסטיבל מספרי סיפורים"
+kind = "multi"
+subtypes = ["literature-storytelling"]
+country = "IL"
+city = "Givatayim"
+site = "https://t-g.co.il/main-event/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%A1%D7%99%D7%A4%D7%95%D7%A8%D7%99%D7%9D/"
+programme = "https://t-g.co.il/%d7%a4%d7%a1%d7%98%d7%99%d7%91%d7%9c-%d7%9e%d7%a1%d7%a4%d7%a8%d7%99-%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%94-33/"
+next_first = "2026-09-23"
+next_last = "2026-10-01"
+schedule = "published"
+schedule_evidence = "Givatayim Theatre lists each numbered event with its day, and each event page gives time and hall: Event 116, Air Force stories - 50 years since Entebbe, Tuesday 29 September, 18:00, Arie Elias hall."
+platform = "custom"
+status = "watch"
+reason = "Sukkot each year; the 2026 (33rd) edition ends on 1 October, and Sukkot 2027 (mid-October) falls after the current window. Adopt for the 2027 edition."
+recheck = "2027-08-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+# ── Sources ──

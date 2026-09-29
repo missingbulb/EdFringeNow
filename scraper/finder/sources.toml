@@ -30,7 +30,8 @@ regions = ["world"]
 per_session = "yes"
 machine_readable = "GET https://pretalx.com/api/events/ lists every hosted event (no key); https://pretalx.com/<slug>/schedule/export/schedule.json is one event's schedule (days, rooms, talks)"
 how = """One call lists all 700+ hosted events; filter date_from inside the window, then fetch each schedule.json. A 404 on schedule.json means the schedule is not published yet: watch it. \
-Mostly tech and security conferences, with some academic societies (history, religion, bioethics, criminology) among them."""
+Mostly tech and security conferences, with some academic societies (history, religion, bioethics, criminology) among them. \
+Traps: a 302 on schedule.json is a custom domain, follow it (curl -L); a 200 can hold 0 talks, so count them. Self-hosted instances are the pretalx-instances source."""
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"
@@ -44,7 +45,8 @@ kinds = ["film"]
 regions = ["world"]
 per_session = "yes"
 machine_readable = "https://<slug>.eventive.org/schedule loads /<slug>.<hash>.js, whose TENANT object carries a public api_key and event_bucket; GET https://api.eventive.org/event_buckets/<bucket>/events?api_key=<key> returns screenings with start_time and venue"
-how = "Find tenants with the search site:eventive.org schedule <year>. Slugs change every edition (pdxff26). Mostly US, Canadian and UK festivals, including Israeli-themed ones abroad."
+how = """Find tenants with the search site:eventive.org schedule <year>, and through the eventive-discovery page. Slugs change every edition (pdxff26). Mostly US, Canadian and UK festivals, including Israeli-themed ones abroad. \
+Traps: start_time is UTC and the tenant time zone is often a legacy name (US/Eastern); count only screenings with a venue, since many are online-only; buckets carry stray old events and test placeholders."""
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"
@@ -58,7 +60,8 @@ kinds = ["any"]
 regions = ["world"]
 per_session = "yes"
 machine_readable = "https://<slug>.sched.com/all.ics (DTSTART, LOCATION per session)"
-how = "Find events with site:sched.com <year> festival. The HTML pages answer 403 here but all.ics answers 200. Israeli events on Sched stop in 2018."
+how = """Find events with site:sched.com <year> festival. The HTML pages answer 403 here but all.ics answers 200. Israeli events on Sched stop in 2018. \
+Traps: DTSTART is UTC; the year in a slug can be wrong (cpsiatlanta2027 runs in Nov 2026); an all.ics with no VEVENT is not published yet; sched.com/directory answers 403, so search is the only enumeration."""
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"
@@ -167,7 +170,8 @@ url = "https://www.smarticket.co.il"
 kinds = ["dance", "theatre"]
 regions = ["IL"]
 per_session = "yes"
-how = "Suzanne Dellal (Tel Aviv dance) sells through it; a festival site linking it sells per performance. Not probed further on 2026-09-29."
+how = """Suzanne Dellal (Tel Aviv dance) sells through it; a festival site linking it sells per performance. \
+Regional council sites, <council>.smarticket.co.il, carry whole festival programmes with venue, day and time (Kol HaMusica on galil-elion, 2026-09-29): sweep them with site:smarticket.co.il פסטיבל <year>."""
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"
@@ -682,5 +686,59 @@ per_session = "partial"
 machine_readable = "EventAct EventListInfo with CompanyId 2422 returned [] on 2026-09-29 although the portal lists past events"
 how = "conferences.bgu.ac.il/<code> is an EventAct site; the Israeli Geographical Association's December 2025 meeting had a skeleton programme with building and room per slot. Check the portal each autumn for the Hanukkah meetings."
 status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "jerusalem-cinematheque"
+name = "Jerusalem Cinematheque festival hubs (jer-cin.org.il, jff.org.il)"
+category = "organiser"
+url = "https://jer-cin.org.il/he"
+kinds = ["film"]
+regions = ["IL"]
+per_session = "yes"
+how = """One Drupal site behind two domains: the Jerusalem Film Festival at jff.org.il/he/festival-calendar (already headed with next July's dates months ahead) and the Jewish Film Festival at /he/JJFF<year>_HEB; the daily calendar /he/article/4285 is server-rendered by hour. \
+Use a browser User-Agent: the default curl UA gets 403 on jff.org.il. There is no /he/festivals index (404); festivals are linked from the header menu."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "beit-tziyonei-america"
+name = "Beit Tziyonei America (ZOA House, Tel Aviv) event listing"
+category = "organiser"
+url = "https://zoatlv.co.il/type/%D7%99%D7%9C%D7%93%D7%99%D7%9D/"
+kinds = ["theatre"]
+regions = ["IL"]
+per_session = "yes"
+how = "Server-rendered WordPress listing by type; each row has day, month, title, hall (Marlen, Meirhoff, Marta) and time. Hosts the HaSha'a children's theatre festival in school holidays; filter titles on 'פסטיבל'."
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "hebrew-wikipedia-festival-categories"
+name = "Hebrew Wikipedia festival categories (ישראל: פסטיבלים and subcategories)"
+category = "seed-list"
+url = "https://he.wikipedia.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%99%D7%A9%D7%A8%D7%90%D7%9C:_%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C%D7%99%D7%9D"
+kinds = ["any"]
+regions = ["IL"]
+per_session = "no"
+how = """Hebrew Wikipedia names categories '<place>: <topic>', so the root is קטגוריה:ישראל:_פסטיבלים (קטגוריה:פסטיבלים_בישראל does not exist). Subcategories: ישראל: פסטיבלי מוזיקה, ישראל: פסטיבלי מוזיקה קלאסית, ישראל: פסטיבלים רוחניים, ישראל: פסטיבלים לפי עיר, פסטיבלי קולנוע ישראליים, and ירושלים / חיפה / אילת / רחובות / תל אביב-יפו: פסטיבלים. \
+The MediaWiki API answered 429 all run; the plain /wiki/ category HTML answered 200 with a browser UA and 3 s between requests. 11 categories gave 122 titles, about 20 of them historical Festival HaZemer editions. Not yet worked: פסטיבל SoLow, פסטיבל מחול יזרעאלי, פסטיבל אופקים לתיאטרון רחוב, פסטיבל תיאטרון קצר, פסטיבל ערבסק, פסטיבל הפיוט, פסטיבל רנסאנס במבצר יחיעם, הפסטיבל הבינלאומי לסרטי נשים רחובות, פסטיבל הקולנוע הבינלאומי באשדוד, פסטיבל הקומדיה ע"ש קישון, פסטיבל אבן בגליל."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "sgcaptcha-hosted-sites"
+name = "Israeli festival sites behind SiteGround's captcha"
+category = "technique"
+kinds = ["any"]
+regions = ["IL"]
+per_session = "no"
+how = "Jaffa Theatre (Theatronetto), sfarim.org.il (Hebrew Book Week) and isragrouptherapy.org.il answer HTTP 202 with a meta refresh to /.well-known/sgcaptcha/ on every path, WP REST API included. Don't retry with other UAs; take the programme from press (Habama prints full Theatronetto timetables) or a ticketing page."
+status = "blocked"
+note = "All three refused on 2026-09-29."
 added = "2026-09-29"
 checked = "2026-09-29"
