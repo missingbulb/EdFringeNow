@@ -5,7 +5,8 @@ about, and the method for finding more. A festival qualifies for the site only w
 publishes a detailed per-session schedule (every show, screening, talk or race with its
 date, start time and venue), so the finder records that for every festival it considers.
 
-How a run works is the `festival-finder` skill; the `festival-finder` task runs it monthly.
+How a run works is the `festival-finder` skill. Runs happen on request, in a session with
+open web access: the unattended task runner's network cannot reach the festival sites.
 
 ## The two lists, and why they only grow
 
