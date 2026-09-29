@@ -7,7 +7,7 @@ plainly where it is not built yet.
 
 | # | Stage | Question it answers | Cadence | Where it lives | State |
 |---|---|---|---|---|---|
-| 1 | **Festival finder** | Which festivals exist that we could serve? | periodic runs; the method itself grows | [`scraper/finder/`](../scraper/finder/README.md) | built |
+| 1 | **Festival finder** | Which festivals exist that we could serve? | on request; the method itself grows | [`scraper/finder/`](../scraper/finder/README.md) | built |
 | 2 | **Festival tools** | For one festival's edition, which sites and APIs give us its data, and how? | once per edition, mostly reused year to year | `scraper/festivals/<dir>/festival.toml` and its `sources/` ([contract](../scraper/festivals/README.md)) | built per festival; per-edition tool sets not yet |
 | 3 | **Festival update** | What is the programme now? | periodic until the programme settles; repaired when a tool breaks | `scraper/festivals/collect.py`, `scraper/convert/to_serving.py` | built, run by hand |
 | 4 | **Events rapid refresh** | What is still on sale, and what changed? | frequent, during the festival and the weeks before it | Edinburgh Fringe only: the `refresh-tickets`, `refresh-shows` and `fetch-prices` tasks | Edinburgh only |
@@ -20,8 +20,8 @@ where to look (`sources.toml`: aggregators, platforms, organisers, search querie
 was found (`candidates.toml`: every festival considered, with whether it publishes a
 per-session programme and why it was adopted, watched or rejected). A run reads both, works
 the sources, and writes back new candidates *and* new sources, so each run starts from
-everything earlier runs learned. The `festival-finder` task runs it on a schedule; the
-`festival-finder` skill is its procedure.
+everything earlier runs learned. A run happens on request, in a session with open web access;
+the `festival-finder` skill is its procedure.
 
 Output: a candidate with `schedule = "published"` is ready for stage 2. A festival only
 qualifies when a detailed per-session schedule exists.
