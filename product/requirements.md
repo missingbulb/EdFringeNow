@@ -1904,11 +1904,11 @@ reaches it, and otherwise the one it covers most.
 
   <details><summary>Notes</summary>
 
-  One photograph per host city, stored with the site: Jerusalem, Haifa, Akko
-  and Edinburgh. Faint enough that the timeline and the page's own palette
+  One photograph per host city, stored with the site and chosen by the city
+  the festival registry names (23.26 guards that every festival has one); a
+  festival out of town shows the country around it. Faint enough that the timeline and the page's own palette
   read first, it fades out down the page before the calendar starts, so no
-  day or show is ever drawn over a picture. A festival whose city has no
-  photograph keeps the plain wash. The picture is decoration and carries no
+  day or show is ever drawn over a picture. The picture is decoration and carries no
   text for a screen reader.
   </details>
 
@@ -1980,6 +1980,17 @@ reaches it, and otherwise the one it covers most.
 - `23.25` The menus keep a festival only when it matches all three, and the festival leading the trip is always kept.
 
   <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all five</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr></tbody></table> <!-- req-gallery:23.25 -->
+
+- `23.26` Every festival the site lists has a photograph of its city, stored with the site and carrying the title, photographer, licence and source its credit needs.
+
+  🔧 _Logic leaf._ <!-- req-gallery:23.26 -->
+
+  <details><summary>Notes</summary>
+
+  Read against the live registry rather than the harness's frozen one, so a
+  festival added without a photograph turns the build red instead of
+  leaving a plain band where its city should be.
+  </details>
 
 ## 24. How you are getting here
 
