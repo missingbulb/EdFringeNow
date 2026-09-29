@@ -26,7 +26,7 @@ const rule = {
   description: "scripts/verify.sh runs the normalizer's offline self-test (python3 scraper/normalize.py --selftest)",
   why:
     "the live edfringe API is unreachable from a session, so the normalizer self-test is the ONE transform check that runs offline — drop it from the gate and every scraper change ships with no verification at all, in a repo where nothing else can stand in for it",
-  doc: 'RULES.md',
+  doc: '.claudinite/local/packs/edfringe-now/RULES.md',
 
   run(ctx) {
     // Relevance-first: no normalizer, or one with no self-test to run, is not
