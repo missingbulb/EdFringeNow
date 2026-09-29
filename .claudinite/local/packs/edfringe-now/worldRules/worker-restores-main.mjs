@@ -20,7 +20,7 @@ const rule = {
     'a local task worker that commits or pushes returns the checkout to `main` first',
   why:
     'the Claudinite scheduler runs every due task in ONE checkout, and a task ordered after a delivering `basics/baselining` inherits the maintenance branch its deliver() left behind (`git checkout -B`, never switched back) — an upstream-less branch whose bare push aborts with exit 128, which is how #141 and #231 each silently stopped a data refresh for days',
-  doc: 'RULES.md',
+  doc: '.claudinite/local/packs/edfringe-now/RULES.md',
 
   run(ctx) {
     const findings = [];

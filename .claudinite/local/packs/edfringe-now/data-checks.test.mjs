@@ -11,12 +11,12 @@ import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { discoverPacks } from "../../../shared/engine/pack_loader/pack-registry.mjs";
 import path from "node:path";
 
-import pack from "./pack.mjs";
-import rule from "./lookup-indices.mjs";
-import selftestRule from "./normalizer-selftest-in-verify.mjs";
-import dataDirRule from "./data-dir-is-generator-output.mjs";
+import rule from "./worldRules/lookup-indices.mjs";
+import selftestRule from "./worldRules/normalizer-selftest-in-verify.mjs";
+import dataDirRule from "./worldRules/data-dir-is-generator-output.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, "../../../..");
@@ -383,13 +383,15 @@ test("this repo's committed data/ holds only generator output", () => {
     out.map((f) => `${f.file}: ${f.what}`).join("\n")}`);
 });
 
-test("the pack manifest declares the checks and stays hand-declared", () => {
-  assert.equal(pack.id, "edfringe-now");
-  assert.equal(pack.detect, null, "a local pack is never fingerprinted");
-  assert.equal(pack.marker, null);
+test("the pack loads the checks and stays hand-declared", async () => {
+  const { packs } = await discoverPacks({ localRoot: REPO });
+  const pack = packs.find((p) => p.id === "edfringe-now");
+  assert.ok(pack, "the local pack must load");
+  assert.equal(pack.relevanceDetector, null, "a local pack is never fingerprinted");
   assert.equal(pack.prose, "RULES.md");
-  assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(selftestRule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(dataDirRule), "the check must be listed on the manifest or it never runs");
+  const loaded = pack.worldRules.map((r) => r.id);
+  assert.ok(loaded.includes(rule.id), `${rule.id} must sit in worldRules/ or it never runs`);
+  assert.ok(loaded.includes(selftestRule.id), `${selftestRule.id} must sit in worldRules/ or it never runs`);
+  assert.ok(loaded.includes(dataDirRule.id), `${dataDirRule.id} must sit in worldRules/ or it never runs`);
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });

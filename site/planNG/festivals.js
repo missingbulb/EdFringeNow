@@ -5,7 +5,7 @@
  * translation keys for its name and city, and the partner links a trip to it
  * needs. Keyed by the registry's festival id. A festival the registry has and this map does not still plans
  * — it is drawn under the house palette with its registry name — so adding a
- * festival's data never waits on this file.
+ * festival's data waits on this file only for its city's photograph.
  *
  * The palette itself is CSS, selected by `data-festival` (planNG.css).
  *
@@ -60,32 +60,37 @@ const UK = {
 };
 
 /* Each host city's photograph, drawn faded behind the top of the page while a
- * festival there leads the trip. All from Wikimedia Commons, under the licence
- * each names; the footer credits the one on show, as those licences ask. The
- * files are the originals scaled to 1600 pixels wide and re-encoded, which is
- * an adaptation: Haifa's is shared under its CC BY-SA 4.0 like the original.
+ * festival there leads the trip. Keyed by the registry's city name, so every
+ * festival in a city shares its photograph and a festival never waits on this
+ * file's presentation entry to get one. A festival out of town shows the
+ * country around it. All from Wikimedia Commons, under the licence each names;
+ * the footer credits the one on show, as those licences ask. The files are the
+ * originals scaled to 1600 pixels wide and re-encoded, which is an adaptation:
+ * the CC BY-SA ones are shared under their originals' licence.
  * `position` is where the photograph's subject sits, for `object-position`. */
+const CC0 = { licence: "CC0", licenceUrl: "https://creativecommons.org/publicdomain/zero/1.0/" };
 const CC_BY_2 = { licence: "CC BY 2.0", licenceUrl: "https://creativecommons.org/licenses/by/2.0/" };
+const CC_BY_SA_2 = { licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" };
+const CC_BY_SA_3 = { licence: "CC BY-SA 3.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/3.0/" };
+const CC_BY_SA_4 = { licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" };
 export const CITY_PHOTOS = {
-  jerusalem: {
+  "Jerusalem": {
     src: "/planNG/cities/jerusalem.webp",
     title: "Jerusalem from the Mount of Olives",
     author: "Mustang Joe",
-    licence: "CC0",
-    licenceUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    ...CC0,
     source: "https://commons.wikimedia.org/wiki/File:Jerusalem_from_the_Mount_of_Olives_(53714451089).jpg",
     position: "center 35%",
   },
-  haifa: {
+  "Haifa": {
     src: "/planNG/cities/haifa.webp",
     title: "IPhO-2019 07-11 Haifa Bahai garden panorama",
     author: "Ipho19",
-    licence: "CC BY-SA 4.0",
-    licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    ...CC_BY_SA_4,
     source: "https://commons.wikimedia.org/wiki/File:IPhO-2019_07-11_Haifa_Bahai_garden_panorama.jpg",
     position: "center 55%",
   },
-  akko: {
+  "Akko": {
     src: "/planNG/cities/akko.webp",
     title: "The Old City of Acre, Israel",
     author: "Ray in Manila",
@@ -93,7 +98,41 @@ export const CITY_PHOTOS = {
     source: "https://commons.wikimedia.org/wiki/File:The_Old_City_of_Acre,_Israel_(51890502128).jpg",
     position: "center 55%",
   },
-  edinburgh: {
+  "Tel Aviv": {
+    src: "/planNG/cities/tel-aviv.webp",
+    title: "Israel Tel Aviv Skyline",
+    author: "FLASHPACKER TRAVELGUIDE",
+    ...CC_BY_SA_2,
+    source: "https://commons.wikimedia.org/wiki/File:Israel_Tel_Aviv_Skyline_(34714425090).jpg",
+    position: "center 45%",
+  },
+  "Abu Ghosh": {
+    src: "/planNG/cities/abu-ghosh.webp",
+    title: "View from Église Notre Dame de l'Arche d'Alliance, 2019",
+    author: "Bahnfrend",
+    ...CC_BY_SA_4,
+    source: "https://commons.wikimedia.org/wiki/File:View_from_%C3%89glise_Notre_Dame_de_l%27Arche_d%27Alliance,_2019_(01).jpg",
+    position: "center 40%",
+  },
+  "Capernaum": {
+    src: "/planNG/cities/capernaum.webp",
+    title: "Sea of Galilee from Capernaum",
+    author: "Eduard Marmet",
+    ...CC_BY_SA_2,
+    source: "https://commons.wikimedia.org/wiki/File:Sea_of_Galilee_from_Capernaum_(34552508191).jpg",
+    position: "center 40%",
+  },
+  /* InDNegev's kibbutz has no photograph of its own on Commons; the western
+     Negev around it stands in. */
+  "Mitzpe Gvulot": {
+    src: "/planNG/cities/negev.webp",
+    title: "Negev Wüste bei Be'er Sheva",
+    author: "Zairon",
+    ...CC_BY_SA_4,
+    source: "https://commons.wikimedia.org/wiki/File:Negev_W%C3%BCste_bei_Be%27er_Sheva_7.JPG",
+    position: "center 45%",
+  },
+  "Edinburgh": {
     src: "/planNG/cities/edinburgh.webp",
     title: "The City of Edinburgh",
     author: "Mike McBey",
@@ -101,7 +140,52 @@ export const CITY_PHOTOS = {
     source: "https://commons.wikimedia.org/wiki/File:The_City_of_Edinburgh_(45072272641).jpg",
     position: "center 30%",
   },
+  "North Berwick": {
+    src: "/planNG/cities/north-berwick.webp",
+    title: "North Berwick Harbour from the North Beach, East Lothian",
+    author: "Rosser1954",
+    ...CC_BY_SA_4,
+    source: "https://commons.wikimedia.org/wiki/File:North_Berwick_Harbour_from_the_North_Beach,_East_Lothian.jpg",
+    position: "center 50%",
+  },
+  "Brighton": {
+    src: "/planNG/cities/brighton.webp",
+    title: "Brighton seafront from pier",
+    author: "Harrz",
+    ...CC_BY_SA_4,
+    source: "https://commons.wikimedia.org/wiki/File:Brighton_seafront_from_pier.jpg",
+    position: "center 45%",
+  },
+  "Leicester": {
+    src: "/planNG/cities/leicester.webp",
+    title: "Leicester Clock Tower wide view",
+    author: "NotFromUtrecht",
+    ...CC_BY_SA_3,
+    source: "https://commons.wikimedia.org/wiki/File:Leicester_Clock_Tower_wide_view.jpg",
+    position: "center 40%",
+  },
+  "Melbourne": {
+    src: "/planNG/cities/melbourne.webp",
+    title: "Melbourne Yarra River",
+    author: "Donaldytong",
+    ...CC_BY_SA_3,
+    source: "https://commons.wikimedia.org/wiki/File:Melbourne_Yarra_River.jpg",
+    position: "center 45%",
+  },
+  "Auckland": {
+    src: "/planNG/cities/auckland.webp",
+    title: "Skyline - Auckland, NZ",
+    author: "Daderot",
+    ...CC0,
+    source: "https://commons.wikimedia.org/wiki/File:Skyline_-_Auckland,_NZ_-_DSC07092.jpg",
+    position: "center 40%",
+  },
 };
+
+/** The photograph of the festival's city, or null when there is none. */
+export function cityPhotoOf(festival) {
+  return CITY_PHOTOS[festival.city] || null;
+}
 
 /* Every string the reader reads is a translation KEY, spelled out so the
  * catalogue's own gate finds it in the page's source. The wordmark is the
@@ -113,7 +197,6 @@ export const PRESENTATION = {
     cityKey: "fest.jerusalem-comedy.city",
     region: ISRAEL,
     stayCity: "Jerusalem",
-    photo: CITY_PHOTOS.jerusalem,
   },
   "haifa-iff": {
     wordmark: ["Haifa", "Film"],
@@ -121,7 +204,6 @@ export const PRESENTATION = {
     cityKey: "fest.haifa-iff.city",
     region: ISRAEL,
     stayCity: "Haifa",
-    photo: CITY_PHOTOS.haifa,
   },
   "edfringe": {
     wordmark: ["Edinburgh", "Fringe"],
@@ -129,7 +211,6 @@ export const PRESENTATION = {
     cityKey: "fest.edfringe.city",
     region: UK,
     stayCity: "Edinburgh",
-    photo: CITY_PHOTOS.edinburgh,
   },
   "acco": {
     wordmark: ["Acco", "Theatre"],
@@ -137,7 +218,6 @@ export const PRESENTATION = {
     cityKey: "fest.acco.city",
     region: ISRAEL,
     stayCity: "Akko",
-    photo: CITY_PHOTOS.akko,
   },
 };
 

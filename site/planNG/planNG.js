@@ -57,6 +57,7 @@ import {
   PAGE_ROOT,
   SITE_NAV,
   STORAGE_PREFIX,
+  cityPhotoOf,
   presentationOf,
 } from "./festivals.js";
 import { buildPool, daysOf, festivalOf, shiftDay } from "./lib/pool.js";
@@ -494,7 +495,7 @@ function renderChrome() {
     : "";
 
   // The credit for the city photograph behind the page, which its licence asks for.
-  const photo = festival && photoOf(festival);
+  const photo = festival && cityPhotoOf(festival);
   $("footerPhoto").innerHTML = photo
     ? tHtml(
         "footer.photo",
@@ -506,12 +507,6 @@ function renderChrome() {
         }
       )
     : "";
-}
-
-/** The photograph of the festival's city, or null when there is none. */
-function photoOf(festival) {
-  const p = presentationOf(festival.id);
-  return (p && p.photo) || null;
 }
 
 // --- the board ------------------------------------------------------------
@@ -3789,7 +3784,7 @@ function applyTheme(festival) {
   document.documentElement.dataset.festival = festival.id;
   if (festival.kind) document.documentElement.dataset.genre = festival.kind;
   else delete document.documentElement.dataset.genre;
-  showCityPhoto($("cityBackdrop"), photoOf(festival));
+  showCityPhoto($("cityBackdrop"), cityPhotoOf(festival));
 }
 
 /* Where the shared data cache (shared/data-cache.js) reports a cache write it

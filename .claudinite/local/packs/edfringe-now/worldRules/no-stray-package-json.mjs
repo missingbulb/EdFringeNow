@@ -14,7 +14,7 @@ const rule = {
   description: 'No package.json exists outside the repo root and site/, which declares the ES-module tree',
   why:
     'site/package.json already declares every source under it an ES module, so a package.json in one of its subdirectories re-states what it inherits — and one outside site/ marks a tree that has no module type to declare',
-  doc: 'RULES.md',
+  doc: '.claudinite/local/packs/edfringe-now/RULES.md',
 
   run(ctx) {
     const stray = ctx.files.filter((f) => f.endsWith('/package.json') && !ALLOWED.has(f)).sort();
