@@ -12,13 +12,13 @@ import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { discoverPacks } from "../../../shared/engine/pack_loader/pack-registry.mjs";
 import path from "node:path";
 
-import pack from "./pack.mjs";
-import rule from "./test-globs-in-step.mjs";
-import verifyShSourceDirsRule from "./verify-sh-source-dirs.mjs";
-import noStrayPackageJsonRule from "./no-stray-package-json.mjs";
-import workerRestoresMainRule from "./worker-restores-main.mjs";
+import rule from "./worldRules/test-globs-in-step.mjs";
+import verifyShSourceDirsRule from "./worldRules/verify-sh-source-dirs.mjs";
+import noStrayPackageJsonRule from "./worldRules/no-stray-package-json.mjs";
+import workerRestoresMainRule from "./worldRules/worker-restores-main.mjs";
 import { loadDeclaredChecks, guardFindings } from "../../../shared/engine/checks/helpers/pattern-rules.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -454,14 +454,16 @@ test("a Bash command with no gh invocation at all is not this check's business (
   assert.deepEqual(out, []);
 });
 
-test("the pack manifest declares the checks and stays hand-declared", () => {
-  assert.equal(pack.id, "edfringe-now");
-  assert.equal(pack.detect, null, "a local pack is never fingerprinted");
-  assert.equal(pack.marker, null);
+test("the pack loads the checks and stays hand-declared", async () => {
+  const { packs } = await discoverPacks({ localRoot: REPO });
+  const pack = packs.find((p) => p.id === "edfringe-now");
+  assert.ok(pack, "the local pack must load");
+  assert.equal(pack.relevanceDetector, null, "a local pack is never fingerprinted");
   assert.equal(pack.prose, "RULES.md");
-  assert.ok(pack.worldRules.includes(rule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(verifyShSourceDirsRule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(noStrayPackageJsonRule), "the check must be listed on the manifest or it never runs");
-  assert.ok(pack.worldRules.includes(workerRestoresMainRule), "the check must be listed on the manifest or it never runs");
+  const loaded = pack.worldRules.map((r) => r.id);
+  assert.ok(loaded.includes(rule.id), `${rule.id} must sit in worldRules/ or it never runs`);
+  assert.ok(loaded.includes(verifyShSourceDirsRule.id), `${verifyShSourceDirsRule.id} must sit in worldRules/ or it never runs`);
+  assert.ok(loaded.includes(noStrayPackageJsonRule.id), `${noStrayPackageJsonRule.id} must sit in worldRules/ or it never runs`);
+  assert.ok(loaded.includes(workerRestoresMainRule.id), `${workerRestoresMainRule.id} must sit in worldRules/ or it never runs`);
   assert.ok(existsSync(path.join(__dirname, "RULES.md")));
 });
