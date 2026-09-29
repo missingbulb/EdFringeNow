@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { holidaysIn, homeCountry } from "../holidays.js";
+import { holidayBreaks, holidaysIn, homeCountry } from "../holidays.js";
 
 test("the country the reader said wins over the connection's", () => {
   assert.deepEqual(homeCountry({ kind: "abroad", country: "GB" }, "IL"), { country: "GB", guessed: false });
@@ -58,4 +58,12 @@ test("a holiday moved off the weekend is named once in its break", async () => {
     ],
   };
   assert.deepEqual(holidayBreaks(doc, { from: "2026-01-01", to: "2026-12-31" }, "en")[0].names, ["Christmas Day", "Boxing Day"]);
+});
+
+test("Israel's holiday weeks are days off, so Sukkot and Pesach each make one break", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const doc = JSON.parse(await readFile(new URL("../../../holidays/IL.json", import.meta.url), "utf8"));
+  const spans = holidayBreaks(doc, { from: "2026-09-01", to: "2027-05-31" }, "en").map((b) => `${b.from}..${b.to}`);
+  assert.ok(spans.includes("2026-09-25..2026-10-03"), `the weekend before Sukkot to Simchat Torah, in ${spans}`);
+  assert.ok(spans.includes("2027-04-22..2027-05-01"), `Pesach to its seventh day, bridged to the weekend, in ${spans}`);
 });
