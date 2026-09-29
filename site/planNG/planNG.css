@@ -1585,27 +1585,145 @@ body.festival-page {
 
 /* --- the year ------------------------------------------------------------ */
 
-/* The menus that narrow which festivals the year draws (23.24), sitting on
-   the year's top edge at its end. */
-.tl-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 6px;
-  margin: 14px 0 0;
+/* Beside the year, what narrows the festivals it draws (23.24): a globe with
+   the place menu under it at the start, a grid of types with the subtype
+   menu under it at the end. On a narrow screen the two sit side by side
+   above the year. */
+.timeline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "place main types";
+  column-gap: 14px;
+  align-items: start;
 }
-.tl-filters:empty {
+.tl-filters {
+  display: contents;
+}
+.tl-main {
+  grid-area: main;
+  min-width: 0;
+}
+.tl-place {
+  grid-area: place;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 136px;
+  margin-top: -22px;
+  /* The globe's colours, read by the canvas through a probe placed here. */
+  --globe-sea: light-dark(#d6e8f7, #1b3348);
+  --globe-sea-deep: light-dark(#8fb8dc, #0c1a27);
+  --globe-land: light-dark(#f3efe6, #43403a);
+  --globe-lit: var(--violet);
+  --globe-picked: var(--violet-dark);
+  --globe-line: light-dark(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.12));
+  --globe-edge: light-dark(#ffffff, #0c1a27);
+}
+.tl-globe {
+  display: block;
+  width: 136px;
+  height: 136px;
+  cursor: grab;
+  touch-action: none;
+}
+.tl-globe[hidden] {
   display: none;
 }
+.tl-types {
+  grid-area: types;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: -22px;
+}
+.tl-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 68px);
+  gap: 4px;
+}
+.tl-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 0 2px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.tl-type img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.18);
+}
+.tl-type-name {
+  max-width: 66px;
+  overflow: hidden;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tl-type:hover img {
+  transform: translateY(-1px);
+}
+.tl-type[aria-pressed="true"] {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 12%, transparent);
+}
+/* A type with no festival in the chosen place, and every type but the one
+   chosen, recede. */
+.tl-type.is-empty,
+.tl-types.has-pick .tl-type[aria-pressed="false"] {
+  opacity: 0.45;
+}
+.tl-type.is-empty img {
+  filter: grayscale(1);
+}
 .tl-filter {
+  width: 100%;
   height: 30px;
   border-radius: 8px;
   padding: 0 8px;
   font-size: 0.8rem;
   max-width: 100%;
 }
-.tl-filters + .timeline {
-  margin-top: 8px;
+.tl-types .tl-filter {
+  width: 212px;
+}
+@media (max-width: 620px) {
+  .timeline {
+    grid-template-columns: auto auto;
+    grid-template-areas: "place types" "main main";
+    justify-content: space-between;
+    column-gap: 6px;
+    row-gap: 12px;
+  }
+  .tl-place {
+    width: 96px;
+  }
+  .tl-globe {
+    width: 96px;
+    height: 96px;
+  }
+  .tl-type-grid {
+    gap: 3px;
+  }
+  .tl-types .tl-filter {
+    width: 210px;
+  }
+  .tl-type img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* The strip across the top: twelve months, a bar per festival edition. Every

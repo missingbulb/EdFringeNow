@@ -71,7 +71,8 @@ import { GROUND, arrivalOf, hasCar } from "./lib/arrival.js";
 import { animateCalendar, snapshotCalendar } from "./motion.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
-import { NO_FILTER, cityPlace, filterOptions, filterRegistry } from "./lib/festival-filter.js";
+import { NO_FILTER, cityPlace, filterOptions, filterRegistry, withFilter } from "./lib/festival-filter.js";
+import { createGlobe } from "./globe-view.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
 import { wireTips } from "./tip.js";
 import { showCityPhoto } from "./city-backdrop.js";
@@ -132,7 +133,7 @@ const state = {
   // cover most (lib/trip.js), whose theme the page wears.
   registry: null,
   focus: null,        // { festival, edition, key }
-  // The year strip's three menus: see lib/festival-filter.js.
+  // The year strip's place, type and subtype: see lib/festival-filter.js.
   stripFilter: { ...NO_FILTER },
   // The trip: the reader's first and last day, set on the timeline. Every day
   // in it is a column of the calendar.
@@ -3487,7 +3488,7 @@ function todayISO() {
 function renderTimelineStrip() {
   const monthFmt = (options) => new Intl.DateTimeFormat(currentIntlLocale(), { timeZone: "UTC", ...options });
   renderStripFilters();
-  const filtered = state.stripFilter.place || state.stripFilter.kind || state.stripFilter.subtype;
+  const filtered = state.stripFilter.place || state.stripFilter.type || state.stripFilter.subtype;
   renderTimeline($("timelineYear"), {
     registry: filterRegistry(state.registry, state.stripFilter, state.focus ? state.focus.festival.id : null),
     noneKey: filtered ? "filter.none" : "timeline.none",
@@ -3521,24 +3522,21 @@ function renderTimelineStrip() {
   });
 }
 
-/* A festival's type, as the year's type menu names it: one key per kind the
- * registry allows (scraper/festivals/registry.py's KINDS). */
-const KIND_KEYS = {
-  film: "kind.film",
-  fringe: "kind.fringe",
-  comedy: "kind.comedy",
-  theatre: "kind.theatre",
-  music: "kind.music",
-  dance: "kind.dance",
-  art: "kind.art",
-  literature: "kind.literature",
-  sports: "kind.sports",
-  academic: "kind.academic",
-  multi: "kind.multi",
+/* Each of the grid's types, as its tile names it. */
+const TYPE_KEYS = {
+  music: "type.music",
+  film: "type.film",
+  theatre: "type.theatre",
+  dance: "type.dance",
+  comedy: "type.comedy",
+  art: "type.art",
+  mixed: "type.mixed",
+  sports: "type.sports",
+  academic: "type.academic",
 };
 
 /* The subtypes the page has words for. Any other is named from its own slug,
- * less its type: "film-animation" reads "Animation". */
+ * less its kind: "film-animation" reads "Animation". */
 const SUBTYPE_KEYS = {
   "art-contemporary": "subtype.art-contemporary",
   "comedy-standup": "subtype.comedy-standup",
@@ -3548,23 +3546,22 @@ const SUBTYPE_KEYS = {
   "music-military": "subtype.music-military",
   "theatre-alternative": "subtype.theatre-alternative",
 };
-
-function kindName(kind) {
-  return KIND_KEYS[kind] ? t(KIND_KEYS[kind]) : kind;
-}
+const KIND_PREFIXES = new Set(["film", "fringe", "comedy", "theatre", "music", "dance", "art", "literature", "sports", "academic", "multi"]);
 
 function subtypeName(subtype) {
   if (SUBTYPE_KEYS[subtype]) return t(SUBTYPE_KEYS[subtype]);
-  const words = subtype.split("-").slice(KIND_KEYS[subtype.split("-")[0]] ? 1 : 0).join(" ");
+  const words = subtype.split("-").slice(KIND_PREFIXES.has(subtype.split("-")[0]) ? 1 : 0).join(" ");
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
-/* The three menus above the year: a place, a type and a subtype, each offering
- * only what the registry holds (23.24). */
+let globe = null;
+
+/* Beside the year: the globe and the place menu under it, and the nine types'
+ * pictures with the subtype menu under them, each offering only what the
+ * registry holds (23.24). */
 function renderStripFilters() {
-  const host = $("timelineFilters");
   const f = state.stripFilter;
-  const { places, kinds, subtypes } = filterOptions(state.registry, f);
+  const { places, types, subtypes } = filterOptions(state.registry, f);
   const opt = (value, text, selected) =>
     `<option value="${escapeHtml(value)}"${value === selected ? " selected" : ""}>${escapeHtml(text)}</option>`;
   const cityName = (country, city) => {
@@ -3587,11 +3584,6 @@ function renderStripFilters() {
         `</optgroup>`
     )
     .join("");
-  const kindOptions = kinds
-    .map((k) => ({ k, name: kindName(k) }))
-    .sort(byName)
-    .map((k) => opt(k.k, k.name, f.kind))
-    .join("");
   const subtypeOptions = subtypes
     .map((s) => ({ s, name: subtypeName(s) }))
     .sort(byName)
@@ -3602,10 +3594,46 @@ function renderStripFilters() {
     opt("", t(anyKey), f[name]) +
     options +
     `</select>`;
-  host.innerHTML =
-    menu("place", "filter.place", "filter.anyPlace", placeOptions) +
-    menu("kind", "filter.kind", "filter.anyKind", kindOptions) +
-    (subtypes.length ? menu("subtype", "filter.subtype", "filter.anySubtype", subtypeOptions) : "");
+  $("timelinePlace").innerHTML = menu("place", "filter.place", "filter.anyPlace", placeOptions);
+  const tiles = types
+    .map((type) => {
+      const key = TYPE_KEYS[type.id];
+      const name = t(key);
+      const picked = f.type === type.id;
+      return (
+        `<button type="button" class="tl-type${type.count ? "" : " is-empty"}" data-type="${type.id}" aria-pressed="${picked}">` +
+        `<img src="/planNG/types/${type.id}.svg" alt="" width="46" height="46">` +
+        `<span class="tl-type-name" data-i18n-slot="${key}">${escapeHtml(name)}</span>` +
+        `</button>`
+      );
+    })
+    .join("");
+  const types$ = $("timelineTypes");
+  types$.classList.toggle("has-pick", Boolean(f.type));
+  types$.innerHTML =
+    `<div class="tl-type-grid" role="group" aria-label="${escapeHtml(t("filter.kind"))}">${tiles}</div>` +
+    (f.type && subtypes.length ? menu("subtype", "filter.subtype", "filter.anySubtype", subtypeOptions) : "");
+
+  globe ||= createGlobe($("timelineGlobe"), { onPick: pickCountry });
+  const lead = state.focus ? state.focus.festival : null;
+  globe.set({
+    lit: places.map((p) => p.country),
+    marks: state.registry.festivals
+      .filter((x) => Number.isFinite(x.lat) && Number.isFinite(x.lng))
+      .map((x) => ({ lng: x.lng, lat: x.lat, country: x.country })),
+    picked: f.place.split("/")[0],
+    home: lead && Number.isFinite(lead.lat) ? { lng: lead.lng, lat: lead.lat } : null,
+  });
+}
+
+function setStripFilter(name, value) {
+  state.stripFilter = withFilter(state.registry, state.stripFilter, name, value);
+  renderTimelineStrip();
+}
+
+/* A country chosen on the globe; choosing the one already chosen lets go of it. */
+function pickCountry(country) {
+  setStripFilter("place", state.stripFilter.place.split("/")[0] === country ? "" : country);
 }
 
 const cardLine = (key, text, cls = "") => `<span class="tl-card-line${cls}" data-i18n-slot="${key}">${escapeHtml(text)}</span>`;
@@ -4181,14 +4209,12 @@ function wireTrip() {
   wireTimelineCards(year);
   $("timelineFilters").addEventListener("change", (e) => {
     const menu = e.target.closest("[data-filter]");
-    if (!menu) return;
-    const next = { ...state.stripFilter, [menu.dataset.filter]: menu.value };
-    // A subtype the new place and type no longer leave is dropped with them.
-    if (menu.dataset.filter !== "subtype" && next.subtype && !filterOptions(state.registry, next).subtypes.includes(next.subtype)) {
-      next.subtype = "";
-    }
-    state.stripFilter = next;
-    renderTimelineStrip();
+    if (menu) setStripFilter(menu.dataset.filter, menu.value);
+  });
+  // One type at a time: choosing the one already chosen lets go of it.
+  $("timelineTypes").addEventListener("click", (e) => {
+    const tile = e.target.closest(".tl-type");
+    if (tile) setStripFilter("type", state.stripFilter.type === tile.dataset.type ? "" : tile.dataset.type);
   });
   // Today's figure cheers every choice the reader makes on the page.
   document.addEventListener("change", () => cheer(year));

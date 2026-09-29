@@ -95,7 +95,8 @@ export function renderTimeline(host, o) {
       const words = many ? bunchLabel(bunch) : label(lead.festival, lead.edition);
       const html = many ? bunchCard(bunch) : festivalCard(lead.festival, lead.edition, lead.hasData);
       // Late in the year the label would run off the strip, so it is hung
-      // from the pill's far end and reads back towards the start instead.
+      // from the pill's far end and reads back towards the start instead;
+      // layoutRows() hangs any other whose label still overruns the same way.
       const late = bunch.start > LATE_FRAC;
       const place = late ? `inset-inline-end:${pct(1 - bunch.end)}` : `inset-inline-start:${pct(bunch.start)}`;
       // Inside a city's pill each festival's run is a shade of its own, so
@@ -115,7 +116,8 @@ export function renderTimeline(host, o) {
         `${many ? " tl-item--bunch" : ""}${late ? " tl-item--late" : ""}"` +
         ` data-edition="${escapeHtml(bunch.key)}" data-festival="${escapeHtml(lead.festival.id)}"` +
         `${many ? ` data-bunch="${bunch.bars.length}"` : ""}` +
-        ` aria-pressed="${focused}" data-span="${width}" style="${place}"` +
+        ` aria-pressed="${focused}" data-span="${width}" data-start="${bunch.start}" data-end="${bunch.end}"` +
+        `${late ? ` data-late="1"` : ""} style="${place}"` +
         ` aria-label="${escapeHtml(words.tip)}" data-card="${card(html)}">` +
         `<span class="tl-bar" aria-hidden="true">${runs}${flag(lead.festival.country)}</span>` +
         `<span class="tl-label">${escapeHtml(words.name)}</span></button>`
@@ -397,6 +399,13 @@ export function wireTripHandles(host, { span, trip, normalize, commit }) {
   });
 }
 
+/* Place an item from the pill's start, or hang it from the pill's far end. */
+function hang(el, fromEnd) {
+  el.classList.toggle("tl-item--late", fromEnd);
+  el.style.insetInlineStart = fromEnd ? "" : pct(Number(el.dataset.start));
+  el.style.insetInlineEnd = fromEnd ? pct(1 - Number(el.dataset.end)) : "";
+}
+
 /** Stack the bars into rows once their labels can be measured. */
 export function layoutRows(host) {
   const track = host.querySelector(".tl-track");
@@ -409,11 +418,21 @@ export function layoutRows(host) {
   // can find: a five-day festival is a few pixels of a year on a phone.
   for (const el of items) {
     el.querySelector(".tl-bar").style.width = `${Math.max(BAR_MIN_PX, Number(el.dataset.span) * box.width)}px`;
+    if (!el.dataset.late) hang(el, false);
   }
-  const extents = items.map((el) => {
+  const extentOf = (el) => {
     const r = el.getBoundingClientRect();
     return rtl ? { from: box.right - r.right, to: box.right - r.left } : { from: r.left - box.left, to: r.right - box.left };
-  });
+  };
+  // Hung from its end only where that leaves less of the label off the strip.
+  for (const el of items) {
+    if (el.dataset.late) continue;
+    const over = extentOf(el).to - box.width;
+    if (over <= 0) continue;
+    hang(el, true);
+    if (-extentOf(el).from > over) hang(el, false);
+  }
+  const extents = items.map(extentOf);
   const rows = stackRows(extents, LABEL_GAP_PX);
   items.forEach((el, i) => {
     el.style.top = `${rows[i] * ROW_PX}px`;

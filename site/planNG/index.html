@@ -66,12 +66,21 @@
          trip's dates between the two flight blocks, and the question of where
          the reader is coming from — see renderTripRow() and renderOriginCard()
          in planNG.js. -->
-    <!-- The menus that narrow which festivals the year draws: see
-         renderStripFilters() in planNG.js. -->
-    <div class="tl-filters" id="timelineFilters" role="group" data-i18n-aria-label="filter.label" aria-label="Show festivals"></div>
+    <!-- Beside the year, what narrows which festivals it draws: a globe and
+         a place menu, and a grid of types and a subtype menu. See
+         renderStripFilters() in planNG.js and globe-view.js. -->
     <section class="timeline" id="timeline" data-i18n-aria-label="timeline.label" aria-label="The year&#39;s festivals">
-      <div class="tl-year" id="timelineYear"></div>
-      <div class="origin-card" id="originCard" hidden></div>
+      <div class="tl-filters" id="timelineFilters" role="group" data-i18n-aria-label="filter.label" aria-label="Show festivals">
+        <div class="tl-place">
+          <canvas class="tl-globe" id="timelineGlobe" width="136" height="136" aria-hidden="true"></canvas>
+          <div id="timelinePlace"></div>
+        </div>
+        <div class="tl-types" id="timelineTypes"></div>
+      </div>
+      <div class="tl-main">
+        <div class="tl-year" id="timelineYear"></div>
+        <div class="origin-card" id="originCard" hidden></div>
+      </div>
     </section>
 
     <div class="page-head">
