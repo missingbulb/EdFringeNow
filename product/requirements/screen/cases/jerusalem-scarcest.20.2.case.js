@@ -7,7 +7,7 @@ const { jerusalemReady } = require("../../shared/case-helpers");
 const NIGHT = '.sch-day[data-date="2026-10-20"]';
 
 module.exports = {
-  description: "a contested card has a lane beside it drawing each show it beat, from that show's own start to its own end",
+  description: "a contested card has a lane beside it drawing each show it beat as a bar capped at that show's own start and its own end",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,

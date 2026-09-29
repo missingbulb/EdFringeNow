@@ -78,12 +78,35 @@ async function padToPage(page, rect, px = 6) {
   };
 }
 
+// A full-page shot paints the site header where the scrolled viewport has it,
+// so a frame taken after a step scrolled the page would show it laid over the
+// content below. For the shot it sits where the page's own flow puts it: the
+// same box, since a sticky element keeps its place in the flow.
+const PIN_HEADER_CSS = ".site-header { position: relative !important; }";
+
+async function shootInFlow(page, opts) {
+  const style = await page.addStyleTag({ content: PIN_HEADER_CSS });
+  try {
+    return await page.screenshot(opts);
+  } finally {
+    await style.evaluate((el) => el.remove());
+  }
+}
+
 function makeTools(page) {
   // fullPage so a clip below the fold is still inside the rendered image;
   // padToPage converts the boundingBox rect into document space.
-  const clip = async (rect) => page.screenshot({ clip: await padToPage(page, rect, 0), fullPage: true, ...SHOT_OPTS });
+  const clip = async (rect) => shootInFlow(page, { clip: await padToPage(page, rect, 0), fullPage: true, ...SHOT_OPTS });
+  // A fixed-position tip belongs to the viewport, and a full-page shot resizes
+  // it out from under the pointer that holds the tip open: shoot the viewport.
+  const clipInView = async (rect) => {
+    const r = await padToPage(page, rect, 0);
+    const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
+    return shootInFlow(page, { clip: { ...r, x: r.x - sx, y: r.y - sy }, ...SHOT_OPTS });
+  };
   return {
     rectOf: (sel) => rectOf(page, sel),
+    clipInView,
     union,
     pad,
     clip,
