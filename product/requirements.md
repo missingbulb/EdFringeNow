@@ -1979,25 +1979,29 @@ reaches it, and otherwise the one it covers most.
   the festival chosen while the moved dates still reach it (23.9).
   </details>
 
-- `23.24` Above the year, three menus narrow the festivals it draws: to a place, a type and a subtype.
+- `23.24` Beside the year, a globe of the festivals' countries with a place menu under it, and a grid of nine pictured festival types with a subtype menu under it, narrow the festivals it draws.
 
   ![planng-strip-filter.23.24](requirements/screen/cases/planng-strip-filter.23.24.png) <!-- req-gallery:23.24 -->
 
   <details><summary>Notes</summary>
 
-  A place is a country or one of its cities; a type is what the festival is
-  (music, film, theatre, dance, art, sports, academic, and the rest the
-  registry's `kind` names); a subtype is what sets one festival apart within
-  its type (`film-documentary`, `academic-biology`), a label on the festival
-  and never on its events. Each menu offers only what the registry holds, the
-  subtype menu only the subtypes the chosen place and type leave, and it is
-  hidden while none do. Only the strip is narrowed: the pool the calendar
-  drafts from is the trip's, whatever the menus say.
+  A place is a country or one of its cities; a type is one of nine: film,
+  music, theatre, dance, comedy, art & books (the registry's `art` and
+  `literature`), mixed arts (`fringe` and `multi`), sports and academic; a
+  subtype is what sets one festival apart within its type (`film-documentary`,
+  `academic-biology`), a label on the festival and never on its events. The
+  globe lights every country with a festival and marks each festival's city;
+  the place menu offers only what the registry holds. A type with no festival
+  in the chosen place is drawn faded. The subtype menu appears once a type is
+  chosen, offering only the subtypes the chosen place and type leave, and
+  stays hidden while none do. On a narrow screen the globe and the grid sit
+  side by side above the year. Only the strip is narrowed: the pool the
+  calendar drafts from is the trip's, whatever the filters say.
   </details>
 
-- `23.25` The menus keep a festival only when it matches all three, and the festival leading the trip is always kept.
+- `23.25` The filters keep a festival only when it matches place, type and subtype, and the festival leading the trip is always kept.
 
-  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all five</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr></tbody></table> <!-- req-gallery:23.25 -->
+  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all six</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe, edbookfest</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr><tr><td>anywhere</td><td>mixed arts</td><td>any</td><td>none</td><td>edfringe</td></tr><tr><td>anywhere</td><td>art &amp; books</td><td>any</td><td>none</td><td>edbookfest</td></tr><tr><td>Edinburgh</td><td>art &amp; books</td><td>literature-books</td><td>none</td><td>edbookfest</td></tr></tbody></table> <!-- req-gallery:23.25 -->
 
 - `23.26` Every festival the site lists has a photograph of its city, stored with the site and carrying the title, photographer, licence and source its credit needs.
 
@@ -2008,6 +2012,37 @@ reaches it, and otherwise the one it covers most.
   Read against the live registry rather than the harness's frozen one, so a
   festival added without a photograph turns the build red instead of
   leaving a plain band where its city should be.
+  </details>
+
+- `23.27` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.27 -->
+
+  <details><summary>Notes</summary>
+
+  A press that barely moves is a click, not a drag. With reduced motion
+  asked for, the globe stops where it is let go.
+  </details>
+
+- `23.28` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
+
+  ![planng-globe-pick.23.28](requirements/screen/cases/planng-globe-pick.23.28.png) <!-- req-gallery:23.28 -->
+
+  <details><summary>Notes</summary>
+
+  A city's mark chooses its country too. The place menu under the globe
+  follows, and choosing a country from the menu turns the globe to it the
+  same way. A country with no festival is not a choice.
+  </details>
+
+- `23.29` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
+
+  ![planng-type-pick.23.29](requirements/screen/cases/planng-type-pick.23.29.png) <!-- req-gallery:23.29 -->
+
+  <details><summary>Notes</summary>
+
+  One type at a time: choosing another replaces it. A subtype the new type
+  or place no longer leaves is dropped.
   </details>
 
 ## 24. How you are getting here
