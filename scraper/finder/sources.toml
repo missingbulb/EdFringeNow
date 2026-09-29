@@ -242,9 +242,9 @@ url = "https://www.weizmann.ac.il/conference-unit/conferences/upcoming-conferenc
 kinds = ["academic"]
 regions = ["IL"]
 per_session = "partial"
-how = "The best university source to try once reachable: the institute hosts several international meetings a year."
-status = "blocked"
-note = "curl gets an empty reply and WebFetch a 503 from the sandbox (2026-09-29)."
+how = "Reachable again with curl on 2026-09-29 (200, server-rendered list with dates, room and contact). About 30 meetings to mid-2027, nearly all one- or two-day single-hall workshops in the Lopatie conference centre or Sela Auditorium: low yield for multi-hall programmes. Longest: Cavity-QED for Quantum Computation 1-5 Nov 2026."
+status = "active"
+note = "Blocked earlier the same day (curl an empty reply, WebFetch a 503); reachable by the second run."
 added = "2026-09-29"
 checked = "2026-09-29"
 
@@ -598,6 +598,89 @@ per_session = "partial"
 machine_readable = "The page's <script id=\"__NEXT_DATA__\"> JSON holds props.pageProps.initialData.items: every listed channel with tenant_slug and name (197 on 2026-09-29); each tenant_slug is an Eventive tenant to verify by the eventive source's TENANT api_key route"
 how = """Lists virtual-cinema channels, so about half are dead editions (2020 to 2024) and tests; keep only slugs naming 2026/2027 or no year, then verify each through its event bucket. \
 Only venued screenings count: many buckets mix virtual-only titles (venue null) and pre-festival test events. It surfaced Sundance 2027, Cork, London Latino, Wildscreen and OUTshine, which a site: search did not."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "ima-events-calendar"
+name = "Israel Medical Association events calendar (every scientific union's and society's meetings)"
+category = "aggregator"
+url = "https://www.ima.org.il/Main/SearchEvents.aspx"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "no"
+how = """One server-rendered page lists every IMA union's and society's upcoming and past meetings: links ViewContent.aspx?EventId=<n> with the start date in the link text (dd/mm/yyyy). \
+Each ViewContent page carries the society's notice: full dates, venue, and the conference site or registration link (often forms-wizard.biz, eventact, or a society WordPress). \
+Filter to multi-day meetings and ignore webinars, elections and abroad congresses it relays (IUSTI Prague, SCARS Athens). 75 upcoming events on 2026-09-29, about a dozen multi-day."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "forms-wizard"
+name = "Forms-Wizard (Israeli registration platform; conference sites at <slug>.forms-wizard.biz)"
+category = "platform"
+url = "https://forms-wizard.biz"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "partial"
+how = "A conference's registration site is <slug>.forms-wizard.biz; its programme is either an HTML 'Conference Agenda' section with halls (IAEM 2026) or a PDF under storage.googleapis.com/forms-wizard-biz-uploads/ (Transplantation 2026, times without halls). Found through the IMA calendar; no directory of its tenants was found."
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "kenes-israel"
+name = "Kenes Israel (Israeli PCO; secretariat of the Neurological Association, ISM, SEEEI)"
+category = "organiser"
+url = "https://www.kenes-israel.com/"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "partial"
+how = """No public calendar: its home page is a brochure. Recognise its conferences by the footer 'Kenes Israel ©' or a …@kenes-events.com contact, then read each site's own programme page (WordPress HTML grid for the Neurological Association, PDFs for SEEEI and ISM). \
+Distinct from Kenes Group (kenes-group.com/events/), whose calendar held no Israeli meeting in the window on 2026-09-29."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "kld-events"
+name = "Kaleidoscope (KLD Ltd, Israeli PCO)"
+category = "organiser"
+url = "https://www.kldltd.com/"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "partial"
+how = "Runs ICISA (Israel Society of Anesthesiologists' international meeting, programme PDF with Hall A to D). Its site is a portfolio with no event calendar; find its conferences by a …@kldltd.com secretariat address on a conference site."
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "think-eventact"
+name = "Think (Israeli PCO on EventAct, company id 312)"
+category = "organiser"
+url = "https://ws.eventact.com/c/Think"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "partial"
+machine_readable = "POST https://ws.eventact.com/api/EventsApi/EventListInfo {CompanyId: 312, Lang: 9, SearchType: 1, PageIndex: 1, PageSize: 100}"
+how = "Organises the Israel Pediatric Association's annual meeting; one upcoming event on 2026-09-29. Past programmes are PDFs under events.eventact.com/Think/<event>/uploads/."
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "bgu-conferences"
+name = "Ben-Gurion University conference sites (EventAct white label, company id 2422)"
+category = "organiser"
+url = "https://conferences.bgu.ac.il/"
+kinds = ["academic"]
+regions = ["IL"]
+per_session = "partial"
+machine_readable = "EventAct EventListInfo with CompanyId 2422 returned [] on 2026-09-29 although the portal lists past events"
+how = "conferences.bgu.ac.il/<code> is an EventAct site; the Israeli Geographical Association's December 2025 meeting had a skeleton programme with building and room per slot. Check the portal each autumn for the Hanukkah meetings."
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"

@@ -2059,3 +2059,437 @@ reason = "Its Sched event exists but all.ics answers 200 with no sessions yet."
 recheck = "2027-02-11"
 found_via = ["sched"]
 checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-neurological-association-annual"
+name = "Israel Neurological Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הנוירולוגי בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://israelneurocongress.com/"
+programme = "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/"
+next_first = "2026-12-21"
+next_last = "2026-12-22"
+schedule = "published"
+schedule_evidence = "Session-level HTML grid by hall (Expo Tel Aviv pavilion 10, Halls A3 to A5): Oral Session 2, Stroke & Vascular Diseases, 21 Dec 2026 08:30-09:40, Hall A4. Session titles only, no per-talk rows yet."
+status = "candidate"
+found_via = ["ima-events-calendar", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "icisa"
+name = "ICISA, International Conference of the Israel Society of Anesthesiologists"
+name_local = "הכנס הבינלאומי של איגוד הרופאים המרדימים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.icisa2026.com/"
+programme = "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf"
+next_first = "2026-11-17"
+next_last = "2026-11-19"
+schedule = "published"
+schedule_evidence = "Six-page preliminary programme PDF, a grid of Hall A to Hall D per time slot: Tuesday 17 Nov 2026 08:30-09:30, Monitoring - All those Waves (first column, Hall A). The column-to-hall mapping is read from the PDF's header row; confirm on the final programme."
+status = "candidate"
+found_via = ["ima-events-calendar", "kld-events"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "iaem-annual"
+name = "Israeli Association for Emergency Medicine Annual Scientific Assembly"
+name_local = "הכנס השנתי של האיגוד הישראלי לרפואה דחופה"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Airport City"
+site = "https://emergencymedicine-2026.forms-wizard.biz/"
+programme = "https://emergencymedicine-2026.forms-wizard.biz/"
+next_first = "2026-10-21"
+next_last = "2026-10-21"
+schedule = "published"
+schedule_evidence = "Conference Agenda section of the site, per session with hall: Plenary Session 21 Oct 2026 09:00-10:45, Hall A (Avenue, Airport City), then parallel sessions 11:15-13:00. One conference day plus pre-conference workshops on 20 Oct."
+status = "candidate"
+reason = "One day, but several parallel halls."
+found_via = ["ima-events-calendar", "forms-wizard"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-transplantation-society-annual"
+name = "Israel Transplantation Society Annual Conference (33rd)"
+name_local = "הכנס השנתי ה־33 של החברה הישראלית להשתלות"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://transplantation26.forms-wizard.biz/"
+programme = "https://storage.googleapis.com/forms-wizard-biz-uploads/forms-wizard/19/ckeditor_assets/attachments/16957/2ebc934ee0efc9a61a90768b5acc0321652b3a77.pdf"
+next_first = "2026-10-28"
+next_last = "2026-10-29"
+schedule = "partial"
+schedule_evidence = "Preliminary programme PDF with times but no halls: Session 1, Conference opening, 28 Oct 2026 15:30-15:35; four parallel post-conference symposia (heart, kidney, liver, lung) 29 Oct 13:15-15:15 with no rooms named. Venue: David InterContinental, Tel Aviv (hotel package on the registration page)."
+status = "watch"
+reason = "Times published, halls not; four parallel symposia need rooms."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar", "forms-wizard"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "seeei-electricity-energy"
+name = "Electricity & Energy, annual convention of SEEEI (Society of Electrical and Electronics Engineers in Israel)"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "IL"
+city = "Eilat"
+site = "https://www.electricity2026.com/en"
+programme = "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf"
+next_first = "2026-11-10"
+next_last = "2026-11-12"
+schedule = "published"
+schedule_evidence = "Four-page programme PDF with rooms: Workshop A, Energy Storage Technologies, Management and Maintenance, Tuesday 10 Nov 2026 15:30, Herods Boutique Hotel, Kings AB. The site's home page still shows 2025 text and third-party listings say 11-14 Nov at the Dan Eilat; trust the PDF."
+status = "candidate"
+found_via = ["search-english-annual-meeting", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ism-annual-meeting"
+name = "Israel Society for Microbiology (ISM) Annual Meeting"
+kind = "academic"
+subtypes = ["academic-biology"]
+country = "IL"
+site = "https://ismicrobiology.com/en/"
+schedule = "expected"
+schedule_evidence = "The 2026 meeting (September 2026, already past) published a per-talk PDF with halls: Session II, Eukaryotic Microbiology & Parasitology, 14:00-15:30, Building 35 Hall 003 (ismicrobiology.com/wp-content/uploads/2026/09/ISM-2026-Program-06.09.2026.pdf)."
+status = "watch"
+reason = "Held each September; the 2027 date is not announced. Secretariat Kenes Israel (the older ism.org.il names Diesenhaus)."
+recheck = "2027-06-01"
+found_via = ["israeli-scientific-societies", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-eilot-renewable-energy-conference"
+name = "Eilat-Eilot International Renewable Energy Conference"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "IL"
+city = "Eilat"
+site = "https://eilatenergy.org/"
+programme = "https://eilatenergy.org/conference-program/"
+schedule = "expected"
+schedule_evidence = "The January 2026 edition's HTML programme names a hall per session: Opening Plenary, Wednesday 21 Jan 2026 09:45-11:30, Big Blue Hall. The page still shows 2026."
+status = "watch"
+reason = "Biennial: eilateilot.org/our-events/ says the 12th is in January 2028, outside this window. Programme format qualifies (halls per session)."
+recheck = "2027-11-01"
+found_via = ["search-english-annual-meeting"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-heart-society-annual"
+name = "Israel Heart Society Annual Conference (with the Israel Society of Cardiothoracic Surgery)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://conf.israel-heart.org.il/"
+schedule = "expected"
+schedule_evidence = "Past editions' agendas are on EventAct (68th: program.eventact.com/Program/ie4AAAA/iYTQ/en); the 73rd ran 28-29 Jul 2026 at the David InterContinental after a postponement from the spring."
+platform = "eventact"
+status = "watch"
+reason = "The 74th (normally April to June, Tel Aviv) is not announced."
+recheck = "2027-02-01"
+found_via = ["search-english-annual-meeting", "eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-psychiatric-association-annual"
+name = "Israel Psychiatric Association Annual Conference"
+name_local = "הכנס השנתי של איגוד הפסיכיאטריה בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Dead Sea"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16216"
+next_first = "2026-11-18"
+next_last = "2026-11-20"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at the VERT Dead Sea hotel; the IMA notice says the programme will be published soon."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-25"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-surgical-association-annual"
+name = "Israel Surgical Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הישראלי לכירורגיה"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16671"
+next_first = "2026-11-11"
+next_last = "2026-11-12"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Two days at a Nevel David Galil hotel; only a save-the-date so far."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-medical-genetics-annual"
+name = "Israeli Society of Medical Genetics Conference"
+name_local = "הכנס של האיגוד הישראלי לגנטיקה רפואית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16499"
+next_first = "2026-10-28"
+next_last = "2026-10-29"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Rescheduled to two days at the Nevel David Galil Resort; registration form and programme 'will be published soon'."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-15"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-geriatric-medicine-annual"
+name = "Israel Geriatric Medicine Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הישראלי לרפואה גריאטרית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16662"
+next_first = "2026-11-09"
+next_last = "2026-11-10"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Two days at the Galilion hotel after a postponement; programme 'will be published soon'."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-child-neurology-annual"
+name = "Israel Child Neurology and Development Association (INA) Annual Conference"
+name_local = "הכנס השנתי של האיגוד לנוירולוגיה של הילד והתפתחותו"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Herzliya"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16653"
+next_first = "2026-11-12"
+next_last = "2026-11-14"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at the Dan Accadia, Herzliya; abstracts through EventAct (Event=iDZYAAA), so the agenda will likely be an EventAct widget."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-25"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-hematology-annual"
+name = "Israeli Society of Hematology and Transfusion Medicine Conference"
+name_local = "כנס האיגוד הישראלי להמטולוגיה ורפואת עירויים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=17062"
+next_first = "2026-10-15"
+next_last = "2026-10-17"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at Kfar Blum; abstracts closed 19 Sep 2026, no programme link yet."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-08"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-plastic-surgery-annual"
+name = "Israel Society of Plastic and Aesthetic Surgery Annual Conference"
+name_local = "כנס השנתי של האיגוד הישראלי לכירורגיה פלסטית ואסתטית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16673"
+next_first = "2026-11-10"
+next_last = "2026-11-11"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date only; venue not named."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-ent-annual"
+name = "Israeli Society of Otolaryngology Head and Neck Surgery Annual Conference"
+name_local = "הכנס השנתי של איגוד רופאי אף אוזן גרון ומנתחי ראש צוואר בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16638"
+next_first = "2027-03-31"
+next_last = "2027-04-01"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date: David InterContinental, Tel Aviv."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2027-03-01"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-fertility-association-annual"
+name = "Israel Fertility Association (IFA) Annual Conference"
+name_local = "הכנס השנתי של האגודה הישראלית לחקר הפריון (איל״ה)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=17049"
+next_first = "2027-03-15"
+next_last = "2027-03-16"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date only; venue and programme to follow."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2027-02-15"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "isees-annual-conference"
+name = "ISEES Annual Conference for Science and Environment (Israel Society of Ecology and Environmental Sciences)"
+name_local = "הוועידה השנתית למדע וסביבה"
+kind = "academic"
+subtypes = ["academic-environment"]
+country = "IL"
+city = "Jerusalem"
+site = "https://conference.isees.org.il/"
+schedule = "expected"
+schedule_evidence = "The 2026 edition (Wed 8 to Thu 9 Jul 2026, Hebrew University) published a 49-page full programme and a two-page grid of parallel sessions by track, each track in a numbered hall (ISEES26_Prog_Short_draft5.pdf: Wednesday 8, track Marine conservation, 'Eilat Bay, a climate refuge', hall 2 or 3). Text extraction loses the times; read the grid visually before adopting."
+status = "watch"
+reason = "Annual about July, about 2,000 participants and a dozen parallel halls; the 2027 edition is not announced."
+recheck = "2027-05-01"
+found_via = ["israeli-scientific-societies"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ispsa-annual-conference"
+name = "Israel Political Science Association Annual Conference"
+name_local = "הכנס השנתי של האגודה הישראלית למדע המדינה"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+city = "Ra'anana"
+site = "https://www.ispsa.org/annual-conference-2026"
+schedule = "expected"
+status = "watch"
+reason = "The 5787 conference is at the Open University in February 2027 (exact days not given); call for papers open. Whether past programmes named rooms per panel is unchecked."
+recheck = "2027-01-10"
+found_via = ["israeli-scientific-societies", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-geographical-association-conference"
+name = "Israeli Geographical Association Annual Conference"
+name_local = "כנס האגודה הגאוגרפית הישראלית"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+site = "https://conferences.bgu.ac.il/geogrphicalsocietycference"
+schedule = "expected"
+schedule_evidence = "The December 2025 edition at Ben-Gurion University published a skeleton programme with rooms (21 Dec 2025 11:40-12:50, opening plenary, Building 72, Zonnenfeld Hall; parallel sessions in rooms 210-218) and a full programme on the same EventAct-style site."
+status = "watch"
+reason = "Held each Hanukkah, rotating host; the December 2026 host and date were not found."
+recheck = "2026-11-01"
+found_via = ["search-hebrew-programme", "bgu-conferences"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-sociological-society-conference"
+name = "Israeli Sociological Society Annual Conference"
+name_local = "הכנס השנתי של האגודה הסוציולוגית הישראלית"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+site = "https://israel-sociology.org.il/"
+schedule = "unknown"
+status = "watch"
+reason = "Annual, usually February, rotating host; nothing about a 2027 edition on the society's site on 2026-09-29."
+recheck = "2026-12-01"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-gynecology-conference"
+name = "Israeli Conference of Gynecology (8th)"
+name_local = "הכינוס ה-VIII לרפואת נשים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://ws.eventact.com/gynecologyviiicference"
+next_first = "2026-11-05"
+next_last = "2026-11-07"
+schedule = "unknown"
+platform = "eventact"
+status = "watch"
+reason = "Three days on Comtec's EventAct list; its home page embeds no programme widget yet ; EventAct lists the venue as the Pastoral Kfar Blum Hotel."
+recheck = "2026-10-20"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-educational-course-epilepsy"
+name = "Eilat Educational Course: Pharmacological Treatment of Epilepsy (12th)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Eilat"
+site = "http://eilatedu.com"
+programme = "https://events.eventact.com/comtec/38405/WebSitePage/uploads/Eilat_Edu_2027__Program.pdf"
+next_first = "2027-09-12"
+next_last = "2027-09-17"
+schedule = "published"
+schedule_evidence = "Ten-page programme PDF with times but one room: Opening Session, Day 1 (13 Sep 2027) 08:00-08:30. A single-track residential course for enrolled students."
+platform = "eventact"
+status = "rejected"
+reason = "Single-track course for a closed student cohort: nothing to plan between halls."
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-pediatric-association-annual"
+name = "Israel Pediatric Association Annual Conference"
+name_local = "כנס האיגוד הישראלי לרפואת ילדים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://ws.eventact.com/isrelimedicalassociiconfere"
+next_first = "2026-11-18"
+next_last = "2026-11-18"
+schedule = "expected"
+schedule_evidence = "Listed by the PCO Think (EventAct company 312) for 18 Nov 2026 at Expo Tel Aviv pavilion 10, but its EventAct site answers 'Website not found'. Earlier editions' PDFs (events.eventact.com/Think/36194/uploads/Program03.pdf, 14 Feb 2024) run parallel morning sessions, 10:40-11:55 Session 1 Allergy and Asthma, without hall names in the extracted text."
+platform = "eventact"
+status = "watch"
+reason = "One day with parallel sessions; programme not out and halls unconfirmed."
+recheck = "2026-11-01"
+found_via = ["eventact", "think-eventact", "ima-events-calendar"]
+checked = "2026-09-29"
+
+# ── Sources ──

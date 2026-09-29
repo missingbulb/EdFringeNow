@@ -87,7 +87,8 @@ def check_candidates(candidates, source_ids, festival_ids):
     seen = set()
     for index, cand in enumerate(candidates):
         where = "candidate %s" % cand.get("id", "#%d" % index)
-        problems += ["%s: missing %s" % (where, key) for key in _CANDIDATE_REQUIRED if key not in cand]
+        problems += ["%s: missing %s" % (where, key) for key in _CANDIDATE_REQUIRED if key not in cand
+                     and not (key == "city" and cand.get("status") == "watch")]
         cid = cand.get("id", "")
         if not registry.ID_RE.match(cid):
             problems.append("%s: id is not a lowercase-hyphen slug" % where)
@@ -219,6 +220,10 @@ def selftest():
     fails(check_sources([dict(good_source, kinds=["opera"])]), "kinds")
     fails(check_candidates([dict(good_candidate, found_via=["nowhere"])], {"wiki-list"}, set()), "unknown sources")
     fails(check_candidates([dict(good_candidate, recheck=None)], {"wiki-list"}, set()), "recheck")
+    # A watched festival may not have announced its venue yet; one ready to adopt has.
+    unplaced = {k: v for k, v in good_candidate.items() if k != "city"}
+    assert check_candidates([unplaced], {"wiki-list"}, set()) == []
+    fails(check_candidates([dict(unplaced, status="candidate")], {"wiki-list"}, set()), "missing city")
     fails(check_candidates([dict(good_candidate, status="rejected", reason="")], {"wiki-list"}, set()), "says why")
     fails(check_candidates([dict(adopted, festival_id="ghost")], {"wiki-list"}, {"real-fest"}), "no registered")
     fails(check_candidates([good_candidate], {"wiki-list"}, {"real-fest"}), "registered but no candidate")
