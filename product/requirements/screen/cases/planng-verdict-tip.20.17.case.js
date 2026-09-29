@@ -2,6 +2,7 @@
 const { jerusalemAllDays, jerusalemReady, jerusalemStarred, openCard, settle } = require("../../shared/case-helpers");
 
 const FAVOURITE = '.sch-day[data-date="2026-10-19"] .sch-show.sch-show--fav';
+const VERDICT = '#calPreview [data-verdict="noTime"]';
 
 module.exports = {
   description: "resting on a verdict names what it does in the page's own label",
@@ -11,9 +12,11 @@ module.exports = {
   ready: jerusalemReady,
   async capture(page, t) {
     await openCard(page, FAVOURITE);
-    await page.hover('#calPreview [data-verdict="noTime"]');
+    await page.hover(VERDICT);
     await page.waitForSelector("#tip:not([hidden])");
     await settle(page);
-    return t.unionClip(["#calPreview .pop-verdicts", "#tip"], 8);
+    // The verdict rested on and the label it shows, and nothing around them.
+    const rects = [await t.rectOf(VERDICT), await t.rectOf("#tip")];
+    return t.clipInView(t.pad(t.union(rects), 6));
   },
 };
