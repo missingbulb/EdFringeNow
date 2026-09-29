@@ -167,15 +167,8 @@ export function createGlobe(canvas, { onPick }) {
       const p = project(view, m.lng, m.lat);
       if (!p.facing) continue;
       const big = m.country === picked;
-      if (big) {
-        ctx.beginPath();
-        ctx.arc(cx + p.x * r, cy + p.y * r, 9, 0, Math.PI * 2);
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = colour.picked;
-        ctx.stroke();
-      }
       ctx.beginPath();
-      ctx.arc(cx + p.x * r, cy + p.y * r, big ? 3.6 : 2.8, 0, Math.PI * 2);
+      ctx.arc(cx + p.x * r, cy + p.y * r, big ? 4 : 2.8, 0, Math.PI * 2);
       ctx.fillStyle = big ? colour.picked : colour.lit;
       ctx.fill();
       ctx.lineWidth = 1.4;
