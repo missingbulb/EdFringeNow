@@ -2010,6 +2010,17 @@ reaches it, and otherwise the one it covers most.
   leaving a plain band where its city should be.
   </details>
 
+- `23.27` However many festivals the year draws, the strip keeps its height: the rows past it scroll inside, faded at the edge to say more are there.
+
+  ![planng-year-height.23.27](requirements/screen/cases/planng-year-height.23.27.png) <!-- req-gallery:23.27 -->
+
+  <details><summary>Notes</summary>
+
+  Seven and a half rows show, so a half-hidden row also hints at the scroll.
+  The months, the trip's band and its ends stay put while the rows scroll
+  under them; a long unfiltered year is meant to invite the menus (23.24).
+  </details>
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when
@@ -2037,6 +2048,10 @@ is looked up before the reader has said they fly.
   ![planng-way.24.9](requirements/screen/cases/planng-way.24.9.png) <!-- req-gallery:24.9 -->
 
 - `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
+
+- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's visible height, over the festivals beside the trip, and stay there while the festivals scroll.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.11 -->
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.10 -->
 

@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, plannerReady } = require("../../shared/case-helpers");
+const { jerusalemReady, plannerReady, chooseOnYear } = require("../../shared/case-helpers");
 
 const HEAD = [".site-header", ".page-head"];
 
@@ -12,7 +12,7 @@ module.exports = {
   // the wash behind them move with the festival chosen; the header above does not.
   async capture(page, t) {
     const jerusalem = await t.unionClip(HEAD, 0);
-    await page.click('.tl-item[data-festival="haifa-iff"]');
+    await chooseOnYear(page, "haifa-iff");
     await plannerReady(page, "haifa-iff");
     await page.evaluate(() => window.scrollTo(0, 0));
     const haifa = await t.unionClip(HEAD, 0);

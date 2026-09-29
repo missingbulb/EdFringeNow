@@ -249,6 +249,43 @@ async function moveTripEnd(page, end, iso) {
   await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
 }
 
+/* The fixtures' year plus eight more festivals, each in a town of its own and
+ * all running at once, so the year draws more rows than the strip shows. None
+ * has a programme, so nothing else on the page changes. */
+const CROWD_TOWNS = ["Eilat", "Nazareth", "Safed", "Tiberias", "Ashdod", "Netanya", "Rehovot", "Hadera"];
+async function routeCrowdedYear(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  CROWD_TOWNS.forEach((city, i) =>
+    registry.festivals.push({
+      id: `crowd-${i}`,
+      name: `${city} Festival`,
+      nameLocal: null,
+      city,
+      country: "IL",
+      lat: 32 + i / 10,
+      lng: 35,
+      timezone: "Asia/Jerusalem",
+      lang: "he",
+      dir: "rtl",
+      kind: "music",
+      defaultGenre: "music",
+      site: "https://example.org",
+      ticketing: { model: "per-event-seller", url: null },
+      editions: [{ id: "2027", ordinal: null, firstDate: "2027-01-10", lastDate: `2027-02-${String(10 + i).padStart(2, "0")}`, format: "block", dataUrl: null }],
+    })
+  );
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
+}
+
+/* Choose a festival on the year from the keyboard: a travel picture may sit
+ * over its pill, covering it from the pointer. */
+async function chooseOnYear(page, festivalId) {
+  await page.focus(`.tl-item[data-festival="${festivalId}"]`);
+  await page.keyboard.press("Enter");
+}
+
 // The calendar re-planned across a trip: its first and last column are the
 // trip's first and last day.
 async function calendarSpans(page, from, to) {
@@ -704,6 +741,8 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
+  chooseOnYear,
+  routeCrowdedYear,
   routeEdinburghFestivals,
   calendarDays,
   calendarSpans,

@@ -133,18 +133,55 @@ export function renderTimeline(host, o) {
       );
     })
     .join("");
+  const scrolled = host.querySelector(".tl-rows")?.scrollTop || 0;
   host.innerHTML =
     `<div class="tl-months">${months}${orbs}${today}</div>` +
-    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${items}</div>` +
+    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">` +
+    `${band}<div class="tl-rows">${items}</div></div>` +
     `<div class="tl-card" role="tooltip" hidden></div>`;
   host._cards = cards;
+  wireRowScroll(host);
   if (!bunches.length) {
-    host.querySelector(".tl-track").insertAdjacentHTML(
+    host.querySelector(".tl-rows").insertAdjacentHTML(
       "beforeend",
       `<p class="tl-none" data-i18n-slot="${noneKey}">${escapeHtml(t(noneKey))}</p>`
     );
   }
   layoutRows(host);
+  host.querySelector(".tl-rows").scrollTop = scrolled;
+  fadeEdges(host.querySelector(".tl-rows"));
+}
+
+/* The rows scroll under a strip that keeps its height; a fade at an edge says
+ * more rows lie past it. A wheel turned over the trip's ends or its travel
+ * pictures, which sit above the rows, still scrolls them. */
+function wireRowScroll(host) {
+  if (host._rowScroll) return;
+  host._rowScroll = true;
+  host.addEventListener(
+    "scroll",
+    (e) => {
+      if (e.target.classList?.contains("tl-rows")) fadeEdges(e.target);
+    },
+    true
+  );
+  host.addEventListener(
+    "wheel",
+    (e) => {
+      const rows = host.querySelector(".tl-rows");
+      if (!rows || !e.target.closest(".tl-track") || rows.contains(e.target)) return;
+      const room = e.deltaY > 0 ? rows.scrollHeight - rows.clientHeight - rows.scrollTop : rows.scrollTop;
+      if (room <= 0) return;
+      e.preventDefault();
+      rows.scrollTop += e.deltaY;
+    },
+    { passive: false }
+  );
+}
+
+function fadeEdges(rows) {
+  rows.classList.toggle("is-more-above", rows.scrollTop > 0);
+  rows.classList.toggle("is-more-below", rows.scrollTop + rows.clientHeight < rows.scrollHeight - 1);
 }
 
 const pct = (f) => `${(f * 100).toFixed(3)}%`;
@@ -419,6 +456,8 @@ export function layoutRows(host) {
     el.style.top = `${rows[i] * ROW_PX}px`;
   });
   const count = rows.length ? Math.max(...rows) + 1 : 1;
-  track.style.height = `calc(${count * ROW_PX + 6}px + var(--lane))`;
+  const scroller = track.querySelector(".tl-rows");
+  scroller.style.height = `${count * ROW_PX + 6}px`;
+  fadeEdges(scroller);
   fitWays(host);
 }

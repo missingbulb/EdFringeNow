@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, plannerReady } = require("../../shared/case-helpers");
+const { jerusalemReady, plannerReady, chooseOnYear } = require("../../shared/case-helpers");
 
 /* The city photographs cross-fading. As with the colours (23.10), the harness
  * freezes every transition for its goldens, so this case lifts the freeze and
@@ -41,7 +41,7 @@ async function fadeFrames(page) {
         }).observe(host, { attributes: true, subtree: true, childList: true, attributeFilter: ["class"] });
       })
   );
-  await page.click('.tl-item[data-festival="haifa-iff"]');
+  await chooseOnYear(page, "haifa-iff");
   return frames;
 }
 
