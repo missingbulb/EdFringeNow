@@ -97,6 +97,15 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
+step "Festival finder — self-test, the lists' shape, nothing dropped since main"
+# The finder's lists only grow; --growth compares against where this branch left
+# origin/main, and skips on a checkout that has no origin/main.
+if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/finder/finder.py --selftest --check --growth origin/main
+else
+  echo "python3 not installed — skipping (CI always has it)" >&2
+fi
+
 step "City data — opening-hours self-test, converter self-test, serving drift check"
 # The same contract as the festivals': the sightseeing fetch is by hand, and
 # --check re-derives site/data/cities/ from the committed raw.
