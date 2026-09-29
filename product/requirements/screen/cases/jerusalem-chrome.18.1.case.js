@@ -9,7 +9,7 @@ module.exports = {
   // The same bar on two festivals, one above the other: nothing in it moves.
   async capture(page, t) {
     const jerusalem = await t.unionClip([".site-header"], 0);
-    await page.click('.tl-item[data-festival="haifa-iff"]');
+    await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
     await plannerReady(page, "haifa-iff");
     await page.evaluate(() => window.scrollTo(0, 0));
     const haifa = await t.unionClip([".site-header"], 0);

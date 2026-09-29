@@ -28,7 +28,7 @@ module.exports = {
     assert.equal(idle.leg, "tl-leg-tap", "a foot taps");
     assert.equal(idle.body, "none", "and the figure stays where it stands");
 
-    await page.click('.tl-item[data-festival="haifa-iff"]');
+    await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
     await plannerReady(page, "haifa-iff");
     const picked = await moves(page);
     assert.equal(picked.cheering, true, "a festival chosen: it cheers");

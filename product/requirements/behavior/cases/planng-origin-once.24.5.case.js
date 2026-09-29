@@ -23,7 +23,7 @@ module.exports = {
       "the answer is stored"
     );
 
-    await page.click('.tl-item[data-festival="haifa-iff"]');
+    await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
     await plannerReady(page, "haifa-iff");
     assert.equal(await page.locator("#originCountry").count(), 0, "the next festival does not ask again");
     assert.equal(await page.locator(".tl-way .arrive-icons").count(), 0, "its pictures are settled too");

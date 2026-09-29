@@ -35,7 +35,7 @@ async function fadeFrames(page) {
         }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-festival"] });
       })
   );
-  await page.click('.tl-item[data-festival="haifa-iff"]');
+  await page.click('.tl-item[data-festival="haifa-iff"] .tl-bar');
   return frames;
 }
 

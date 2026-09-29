@@ -33,7 +33,10 @@ module.exports = {
     assert.equal(url.searchParams.get("festival"), "jerusalem-comedy", "Jerusalem still chosen");
 
     // A press that stays put is a click: Jerusalem's run, a day either side.
-    await page.click('.tl-item[data-festival="jerusalem-comedy"] .tl-bar');
+    // At its far end, clear of the trip's end handles, which cross a pill this short.
+    const bar = page.locator('.tl-item[data-festival="jerusalem-comedy"] .tl-bar');
+    const { width, height } = await bar.boundingBox();
+    await bar.click({ position: { x: width - 2, y: height / 2 } });
     await calendarSpans(page, "2026-10-17", "2026-10-23");
   },
 };
