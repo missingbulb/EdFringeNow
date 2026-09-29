@@ -570,3 +570,34 @@ how = "How these were found is in the product wiki and the earlier research thre
 status = "active"
 added = "2026-09-29"
 checked = "2026-09-29"
+
+[[source]]
+id = "pretalx-instances"
+name = "Self-hosted pretalx instances (found through certificate transparency)"
+category = "technique"
+kinds = ["academic"]
+regions = ["world"]
+per_session = "yes"
+machine_readable = "GET https://crt.sh/?q=pretalx.%25&output=json lists every hostname named pretalx.*; each instance answers GET https://<host>/api/events/ (no key) and https://<host>/<slug>/schedule/export/schedule.json, exactly as pretalx.com does"
+how = """crt.sh gave 235 pretalx.* hostnames on 2026-09-29; 57 answered /api/events/ with 200, and 26 of them held events in the window that pretalx.com does not list. \
+Trap: some hosts (pretalx.denog.de, pretalx.iacapconf.org, pretalx.ow2.org) are custom domains of pretalx.com and return its whole listing, so drop slugs already in pretalx.com's listing. \
+Hostnames not named pretalx.* (cfp.cccv.de, talks.mrmcd.net, talks.datenspuren.de, cfp.<conference>) are missed by the crt.sh query; pretalx.com itself reveals the custom ones as a 302 on /<slug>/schedule/export/schedule.json. \
+The Chaos Computer Club's congress lives on cfp.cccv.de. Most instances are German hacker spaces and small open-source meetups."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"
+
+[[source]]
+id = "eventive-discovery"
+name = "Eventive Watch discovery page (film festivals and screening series)"
+category = "aggregator"
+url = "https://watch.eventive.org/find/film_festival"
+kinds = ["film"]
+regions = ["world"]
+per_session = "partial"
+machine_readable = "The page's <script id=\"__NEXT_DATA__\"> JSON holds props.pageProps.initialData.items: every listed channel with tenant_slug and name (197 on 2026-09-29); each tenant_slug is an Eventive tenant to verify by the eventive source's TENANT api_key route"
+how = """Lists virtual-cinema channels, so about half are dead editions (2020 to 2024) and tests; keep only slugs naming 2026/2027 or no year, then verify each through its event bucket. \
+Only venued screenings count: many buckets mix virtual-only titles (venue null) and pre-festival test events. It surfaced Sundance 2027, Cork, London Latino, Wildscreen and OUTshine, which a site: search did not."""
+status = "active"
+added = "2026-09-29"
+checked = "2026-09-29"

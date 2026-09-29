@@ -1099,3 +1099,963 @@ platform = "runsignup"
 status = "candidate"
 found_via = ["runsignup"]
 checked = "2026-09-29"
+
+[[candidate]]
+id = "gnu-tools-cauldron"
+name = "GNU Tools Cauldron"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://conf.gnu-tools-cauldron.org/prg26/"
+programme = "https://conf.gnu-tools-cauldron.org/prg26/schedule/"
+next_first = "2026-10-02"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "49 talks in 4 rooms; x86 BoF, 3 Oct 10:30, room Room S (Floor 3) (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-atlanta"
+name = "BSides Atlanta"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "US"
+city = "Atlanta"
+site = "https://pretalx.com/bsidesatl-2026/"
+programme = "https://pretalx.com/bsidesatl-2026/schedule/"
+next_first = "2026-10-03"
+next_last = "2026-10-03"
+schedule = "published"
+schedule_evidence = "57 talks in 14 rooms; MCP Security: The Audit You Didn't Know You Were Running, 3 Oct 10:30, room Grand Ballroom (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycon-greece"
+name = "PyCon Greece"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "GR"
+city = "Athens"
+site = "https://pretalx.com/pycongr26/"
+programme = "https://pretalx.com/pycongr26/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-13"
+schedule = "published"
+schedule_evidence = "51 talks in 8 rooms; Making Music from Math with Python, 12 Oct 14:00, room Purifier Stage (pretalx schedule.json). The city is inferred from its Europe/Athens time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "scala-days"
+name = "Scala Days"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "DE"
+city = "Berlin"
+site = "https://cfp.scaladays.org/scala26/"
+programme = "https://cfp.scaladays.org/scala26/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-13"
+schedule = "published"
+schedule_evidence = "50 talks in 6 rooms; Shopping for a Scala Framework, 12 Oct 15:00, room Kesselhaus (pretalx schedule.json). The city is inferred from its Europe/Berlin time zone and the Kesselhaus room."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "matrix-conference"
+name = "The Matrix Conference"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "SE"
+city = "Malmö"
+site = "https://cfp.2026.matrix.org/matrix-conference-2026/"
+programme = "https://cfp.2026.matrix.org/matrix-conference-2026/schedule/"
+next_first = "2026-10-20"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "71 talks in 4 rooms; Project Hydra (phase 2+3): further improving the security of the federation protocol, 21 Oct 15:15, room Sofya (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "swiss-python-summit"
+name = "Swiss Python Summit"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CH"
+city = "Rapperswil"
+site = "https://talks.python-summit.ch/swiss-python-summit-2026/"
+programme = "https://talks.python-summit.ch/swiss-python-summit-2026/schedule/"
+next_first = "2026-10-22"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "22 talks in 1 rooms; Profiling Python: From cProfile to Sampling, 22 Oct 14:30, room Aula 4.101 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "correctiv-lokal-konferenz"
+name = "CORRECTIV.Lokal Konferenz"
+kind = "academic"
+subtypes = ["academic-journalism"]
+country = "DE"
+city = "Magdeburg"
+site = "https://pretalx.com/correctiv-lokal-konferenz-2026/"
+programme = "https://pretalx.com/correctiv-lokal-konferenz-2026/schedule/"
+next_first = "2026-10-16"
+next_last = "2026-10-18"
+schedule = "published"
+schedule_evidence = "50 talks in 8 rooms; Wenn alles kaputt geht, wie machen wir es wieder heile?, 17 Oct 14:30, room Raum 2: Bildung (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "american-modelica-conference"
+name = "American Modelica and FMI Conference"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "US"
+city = "Atlanta"
+site = "https://pretalx.com/amfc-2026/"
+programme = "https://pretalx.com/amfc-2026/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-14"
+schedule = "published"
+schedule_evidence = "49 talks in 3 rooms; A Templated Modelica Model for Decoupling Physical System and Control in Resilient Community Energy Systems, 13 Oct 14:15, room ASDL Code (pretalx schedule.json). The city is inferred from its ASDL (Georgia Tech) rooms."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-augusta"
+name = "BSidesAugusta"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "US"
+city = "Augusta"
+site = "https://pretalx.com/bsidesaugusta-2026/"
+programme = "https://pretalx.com/bsidesaugusta-2026/schedule/"
+next_first = "2026-10-24"
+next_last = "2026-10-24"
+schedule = "published"
+schedule_evidence = "47 talks in 5 rooms; Finding Evil Fast: Windows Memory Triage with Volatility 3, 24 Oct 10:00, room Track 1 - Plug N Play (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "texas-linux-fest"
+name = "Texas Linux Fest"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Austin"
+site = "https://pretalx.com/txlf2026/"
+programme = "https://pretalx.com/txlf2026/schedule/"
+next_first = "2026-11-06"
+next_last = "2026-11-07"
+schedule = "published"
+schedule_evidence = "45 talks in 6 rooms; Growing Open Source in Closed Ecosystems, 7 Nov 10:00, room Big Tex (pretalx schedule.json). The city is not in the export; Austin is its usual host."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-munich"
+name = "BSides Munich"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "DE"
+city = "Munich"
+site = "https://pretalx.com/bsides-munich-2026/"
+programme = "https://pretalx.com/bsides-munich-2026/schedule/"
+next_first = "2026-11-07"
+next_last = "2026-11-09"
+schedule = "published"
+schedule_evidence = "31 talks in 9 rooms; Using Deception to Halt Agentic AI Attacks, 7 Nov 14:00, room Hochschule München - R1.005 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kvm-forum"
+name = "KVM Forum"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CA"
+city = "Vancouver"
+site = "https://pretalx.com/kvm-forum-2026/"
+programme = "https://pretalx.com/kvm-forum-2026/schedule/"
+next_first = "2026-11-12"
+next_last = "2026-11-13"
+schedule = "published"
+schedule_evidence = "43 talks in 2 rooms; GPU paravirtualization: A perspective from QEMU, 12 Nov 13:45, room 2 (pretalx schedule.json). The city is inferred from its Canada/Pacific time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "dinacon"
+name = "DINAcon"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CH"
+city = "Bern"
+site = "https://pretalx.com/dinacon-2026/"
+programme = "https://pretalx.com/dinacon-2026/schedule/"
+next_first = "2026-11-18"
+next_last = "2026-11-18"
+schedule = "published"
+schedule_evidence = "40 talks in 5 rooms; A Practical Guide to Fast and Sustainable LLMs, 18 Nov 12:05, room Anker/Bubenberg/Erlach (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "open-source-experience"
+name = "Open Source Experience"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "FR"
+city = "Paris"
+site = "https://pretalx.com/open-source-experience-2026/"
+programme = "https://pretalx.com/open-source-experience-2026/schedule/"
+next_first = "2026-12-09"
+next_last = "2026-12-10"
+schedule = "published"
+schedule_evidence = "100 talks in 6 rooms; Building the Open Source AI Euro Stack: A Vendor-Neutral Anchor for Europe, 9 Dec 16:20, room Pierre Ficheux (plénière) (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "linuxdays-prague"
+name = "LinuxDays"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://pretalx.linuxdays.cz/linuxdays-2026/"
+programme = "https://pretalx.linuxdays.cz/linuxdays-2026/schedule/"
+next_first = "2026-10-03"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "74 talks in 5 rooms; Ochrana před framing útoky včera a dnes, 3 Oct 14:00, room 107 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "surf-onderwijsdagen"
+name = "SURF Onderwijsdagen"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "NL"
+city = "Utrecht"
+site = "https://pretalx.surf.nl/surf-onderwijsdagen-2026/"
+programme = "https://pretalx.surf.nl/surf-onderwijsdagen-2026/schedule/"
+next_first = "2026-11-10"
+next_last = "2026-11-11"
+schedule = "published"
+schedule_evidence = "95 talks in 11 rooms; KRITIKOS: teach your students to think for themselves about AI (ENG), 10 Nov 14:05, room Tango 1 (pretalx schedule.json). The city is not in the export."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pidfest"
+name = "PIDfest"
+kind = "academic"
+subtypes = ["academic-information-science"]
+country = "NL"
+city = "Leiden"
+site = "https://pretalx.surf.nl/pidfest-26-2026/"
+programme = "https://pretalx.surf.nl/pidfest-26-2026/schedule/"
+next_first = "2026-10-27"
+next_last = "2026-10-29"
+schedule = "published"
+schedule_evidence = "113 talks in 9 rooms; Your Data Starts at the Instrument: Why DAQs Need PIDs Too, 27 Oct 15:00, room T-00-006 (LUMC) (pretalx schedule.json). The city is inferred from its LUMC rooms."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "open-earth-monitor-global-workshop"
+name = "Open-Earth-Monitor Global Workshop"
+kind = "academic"
+subtypes = ["academic-earth-science"]
+country = "ES"
+city = "Madrid"
+site = "https://pretalx.earthmonitor.org/global-workshop-2026/"
+programme = "https://pretalx.earthmonitor.org/global-workshop-2026/schedule/"
+next_first = "2026-10-07"
+next_last = "2026-10-09"
+schedule = "published"
+schedule_evidence = "67 talks in 3 rooms; Satellite-Based Anomaly Detection using GeoAI Embeddings: A Scalable Workflow, 7 Oct 16:45, room Aula Magna (pretalx schedule.json). The city is inferred from its Europe/Madrid time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chaos-communication-congress"
+name = "Chaos Communication Congress (40C3)"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "DE"
+city = "Hamburg"
+site = "https://cfp.cccv.de/40c3/"
+next_first = "2026-12-27"
+next_last = "2026-12-30"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-12-06"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "seagl"
+name = "SeaGL (Seattle GNU/Linux Conference)"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Seattle"
+site = "https://pretalx.seagl.org/2026/"
+next_first = "2026-10-23"
+next_last = "2026-10-24"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. Its landing page already links a schedule preview."
+recheck = "2026-10-05"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "fosscomm"
+name = "FOSSCOMM"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "GR"
+city = "Athens"
+site = "https://pretalx.fosscomm.gr/fosscomm-2026/"
+next_first = "2026-10-31"
+next_last = "2026-11-01"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Athens time zone; the host city moves every year."
+recheck = "2026-10-12"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hexacon"
+name = "Hexacon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "FR"
+city = "Paris"
+site = "https://cfp.hexacon.fr/hexacon-2026/"
+next_first = "2026-10-16"
+next_last = "2026-10-17"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-10-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chcon"
+name = "CHCon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "NZ"
+city = "Christchurch"
+site = "https://pretalx.com/chcon-2026/"
+next_first = "2026-11-18"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. Talk selection emails go out on 30 September 2026."
+recheck = "2026-10-28"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycon-sweden"
+name = "PyCon Sweden"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "SE"
+city = "Stockholm"
+site = "https://pretalx.com/pycon-sweden-2026/"
+next_first = "2026-11-19"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Stockholm time zone."
+recheck = "2026-10-29"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "suricon"
+name = "SuriCon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "PT"
+city = "Lisbon"
+site = "https://pretalx.com/suricon2026/"
+next_first = "2026-11-16"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Lisbon time zone."
+recheck = "2026-10-26"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-london"
+name = "BSides London"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "GB"
+city = "London"
+site = "https://pretalx.com/bsides-london-2026/"
+next_first = "2026-12-12"
+next_last = "2026-12-12"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-11-21"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "csnog"
+name = "CSNOG"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://pretalx.csnog.eu/csnog-2027/"
+next_first = "2027-01-20"
+next_last = "2027-01-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Prague time zone."
+recheck = "2026-12-30"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "insomnihack"
+name = "Insomni'hack"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "CH"
+city = "Geneva"
+site = "https://cfp.insomnihack.ch/insomnihack-2027/"
+next_first = "2027-02-04"
+next_last = "2027-02-05"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-01-14"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "djangocon-europe"
+name = "DjangoCon Europe"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "AT"
+city = "Vienna"
+site = "https://pretalx.evolutio.pt/djangocon-europe-2027/"
+next_first = "2027-02-17"
+next_last = "2027-02-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Vienna time zone; the host moves every year."
+recheck = "2027-01-27"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hackerhotel"
+name = "HackerHotel"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "NL"
+city = "Garderen"
+site = "https://pretalx.hackerhotel.nl/2027/"
+next_first = "2027-02-19"
+next_last = "2027-02-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-01-29"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycascades"
+name = "PyCascades"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Seattle"
+site = "https://pretalx.com/pycascades-2027/"
+next_first = "2027-03-20"
+next_last = "2027-03-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-02-27"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "rural-history-conference"
+name = "Rural History (EURHO conference)"
+kind = "academic"
+subtypes = ["academic-history"]
+country = "SI"
+city = "Koper"
+site = "https://sessions.ruralhistory2027.fhs.upr.si/upfhs/"
+next_first = "2027-09-07"
+next_last = "2027-09-10"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its host, the University of Primorska's humanities faculty."
+recheck = "2027-08-17"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "canadian-health-libraries-conference"
+name = "Canadian Health Libraries Association conference (CHLA/ABSC)"
+kind = "academic"
+subtypes = ["academic-information-science"]
+country = "CA"
+city = "Montreal"
+site = "https://pretalx.com/chla-absc-2027/"
+next_first = "2027-06-01"
+next_last = "2027-06-04"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its America/Montreal time zone."
+recheck = "2027-05-11"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "new-orleans-film-festival"
+name = "New Orleans Film Festival"
+kind = "film"
+country = "US"
+city = "New Orleans"
+site = "https://nofs.eventive.org"
+programme = "https://nofs.eventive.org/schedule"
+next_first = "2026-10-22"
+next_last = "2026-10-27"
+schedule = "published"
+schedule_evidence = "101 in-person screenings at 11 venues; Narrative Shorts: Love Letters, 24 Oct 16:15, The Broad Theater 4 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "monadnock-international-film-festival"
+name = "Monadnock International Film Festival (MONIFF)"
+kind = "film"
+country = "US"
+city = "Keene"
+site = "https://moniff2026.eventive.org"
+programme = "https://moniff2026.eventive.org/schedule"
+next_first = "2026-10-02"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "52 in-person screenings at 9 venues; Not a Photograph: The Mission of Burma Story, 2 Oct 18:00, SHOWROOM (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "singapore-international-film-festival"
+name = "Singapore International Film Festival"
+kind = "film"
+country = "SG"
+city = "Singapore"
+site = "https://sgiff.eventive.org"
+programme = "https://sgiff.eventive.org/schedule"
+next_first = "2026-10-21"
+next_last = "2026-11-07"
+schedule = "published"
+schedule_evidence = "139 in-person screenings at 20 venues; Fujiko, 25 Oct 14:00, Golden Village Bugis+, Hall 3 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tallgrass-film-festival"
+name = "Tallgrass Film Festival"
+kind = "film"
+country = "US"
+city = "Wichita"
+site = "https://tallgrassfilmfestival2026.eventive.org"
+programme = "https://tallgrassfilmfestival2026.eventive.org/schedule"
+next_first = "2026-10-15"
+next_last = "2026-10-18"
+schedule = "published"
+schedule_evidence = "70 in-person screenings at 13 venues; VORTEX Experimental Shorts, 16 Oct 17:15, BOULEVARD THEATRE 6 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tryon-international-film-festival"
+name = "Tryon International Film Festival"
+kind = "film"
+country = "US"
+city = "Tryon"
+site = "https://triff2026.eventive.org"
+programme = "https://triff2026.eventive.org/schedule"
+next_first = "2026-10-08"
+next_last = "2026-10-11"
+schedule = "published"
+schedule_evidence = "63 in-person screenings at 11 venues; Student Short Block H - (1:28:55) + Q&A, 10 Oct 12:00, Tryon Depot Room (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "viet-film-fest"
+name = "Viet Film Fest"
+kind = "film"
+country = "US"
+city = "Santa Ana"
+site = "https://vietfilmfest2026.eventive.org"
+programme = "https://vietfilmfest2026.eventive.org/schedule"
+next_first = "2026-10-08"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "35 in-person screenings at 3 venues; Hair, Paper, Water..., 9 Oct 13:00, Frida Cinema - Theater 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "santa-fe-international-film-festival"
+name = "Santa Fe International Film Festival"
+kind = "film"
+country = "US"
+city = "Santa Fe"
+site = "https://sfiff.eventive.org"
+programme = "https://sfiff.eventive.org/schedule"
+next_first = "2026-10-14"
+next_last = "2026-10-19"
+schedule = "published"
+schedule_evidence = "147 in-person screenings at 23 venues; Faust, 16 Oct 11:45, Sky Cinemas Midtown 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "london-latino-film-festival"
+name = "London Latino Film Festival"
+kind = "film"
+country = "GB"
+city = "London"
+site = "https://lolaff2026.eventive.org"
+programme = "https://lolaff2026.eventive.org/schedule"
+next_first = "2026-10-02"
+next_last = "2026-10-06"
+schedule = "published"
+schedule_evidence = "40 in-person screenings at 15 venues; Short Films: Stories of Resilience + Filmmakers Intro, 4 Oct 12:15, ICA | Institute of Contemporary Arts - Cinema 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "outshine-lgbtq-film-festival"
+name = "OUTshine LGBTQ+ Film Festival (fall)"
+kind = "film"
+country = "US"
+city = "Fort Lauderdale"
+site = "https://outshinefall2026.eventive.org"
+programme = "https://outshinefall2026.eventive.org/schedule"
+next_first = "2026-10-15"
+next_last = "2026-10-25"
+schedule = "published"
+schedule_evidence = "36 in-person screenings at 6 venues; Ballroom, 18 Oct 13:00, Gateway Theatre Fort Lauderdale (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "wildscreen-festival"
+name = "Wildscreen Festival"
+kind = "film"
+subtypes = ["film-wildlife"]
+country = "GB"
+city = "Bristol"
+site = "https://wsf26.eventive.org"
+programme = "https://wsf26.eventive.org/schedule"
+next_first = "2026-10-17"
+next_last = "2026-10-22"
+schedule = "published"
+schedule_evidence = "34 in-person screenings at 11 venues; SCREENING: LOST FOR WORDS (U), 19 Oct 17:00, Odeon - Bath (Eventive API). Screenings run in several UK cities besides its Bristol base."
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "silicon-valley-jewish-film-festival"
+name = "Silicon Valley Jewish Film Festival"
+kind = "film"
+subtypes = ["film-jewish"]
+country = "US"
+city = "San Jose"
+site = "https://svjff.eventive.org"
+programme = "https://svjff.eventive.org/schedule"
+next_first = "2026-10-10"
+next_last = "2026-10-25"
+schedule = "published"
+schedule_evidence = "9 in-person screenings at 2 venues; David, 18 Oct 14:00, AMC 14 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "sundance-film-festival"
+name = "Sundance Film Festival"
+kind = "film"
+country = "US"
+city = "Boulder"
+site = "https://sundance-film-festival-2027.eventive.org"
+programme = "https://sundance-film-festival-2027.eventive.org/schedule"
+next_first = "2027-01-21"
+next_last = "2027-01-31"
+schedule = "expected"
+platform = "eventive"
+status = "watch"
+reason = "Its 2027 Eventive bucket holds only placeholder and test screenings (titles such as 'A Test New Frontier Sep 28', winners' slots, Park City venues copied from 2026); the real programme is announced in December. The festival moves to Boulder from 2027; the dates are approximate."
+recheck = "2026-12-20"
+found_via = ["eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cork-international-film-festival"
+name = "Cork International Film Festival"
+kind = "film"
+country = "IE"
+city = "Cork"
+site = "https://corkfilmfest.eventive.org"
+programme = "https://corkfilmfest.eventive.org/schedule"
+schedule = "expected"
+platform = "eventive"
+status = "watch"
+reason = "Its Eventive bucket holds only a 'TEST FILM' at the Arc Cinema on 13 Nov 2026; the 71st edition's programme is not loaded yet."
+recheck = "2026-10-20"
+found_via = ["eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "litquake"
+name = "Litquake (San Francisco literary festival)"
+kind = "literature"
+country = "US"
+city = "San Francisco"
+site = "https://litquake2026.sched.com"
+programme = "https://litquake2026.sched.com"
+next_first = "2026-10-01"
+next_last = "2026-10-24"
+schedule = "published"
+schedule_evidence = "105 sessions at 60 locations; Tilar J. Mazzeo: The Sea Captain's Wife, 13 Oct 18:30, Mechanics' Institute, 57 Post St (Sched all.ics, times given in UTC). A few pre-festival events start in September and the Lit Crawl closes it on 24 Oct; the exact first day is approximate."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "fiat-ifta-world-conference"
+name = "FIAT/IFTA World Conference (International Federation of Television Archives)"
+kind = "academic"
+subtypes = ["academic-archives"]
+country = "BR"
+city = "São Paulo"
+site = "https://fiatiftaworldconference2026.sched.com"
+programme = "https://fiatiftaworldconference2026.sched.com"
+next_first = "2026-10-06"
+next_last = "2026-10-09"
+schedule = "published"
+schedule_evidence = "80 sessions in 10 rooms; Counter-archive of Women: Mapping, Preservation, and Diffusion of Short Films from Brazil's Military Dictatorship, 7 Oct 16:00, Grande Otelo Theater, Cinemateca Brasileira (Sched all.ics). The host city moves every year."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ase-annual-conference"
+name = "ASE Annual Conference (Association for Science Education)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "GB"
+city = "Northampton"
+site = "https://ase2027annconfnorthants.sched.com"
+programme = "https://ase2027annconfnorthants.sched.com"
+next_first = "2027-01-07"
+next_last = "2027-01-09"
+schedule = "published"
+schedule_evidence = "234 sessions in 24 rooms; (AQA): A-level science: Insights, support and future reform, 8 Jan 08:45, LH321 (Learning Hub Level 3), University of Northampton (Sched all.ics). The host moves every year."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "wspa-annual-conference"
+name = "WSPA Annual Conference"
+kind = "academic"
+subtypes = ["academic-psychology"]
+country = "US"
+city = "Kennewick"
+site = "https://2027wspaannualconference.sched.com"
+programme = "https://2027wspaannualconference.sched.com"
+next_first = "2027-02-28"
+next_last = "2027-03-03"
+schedule = "published"
+schedule_evidence = "51 sessions in 7 rooms; 09-Freedom of Speech, 1 Mar 15:15, Meeting Room A/B, 7016 W Grandridge Blvd (Sched all.ics). Which WSPA (the Washington state association) it is was not confirmed on the HTML page, which answers 403."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cpsi-creative-problem-solving-institute"
+name = "CPSI (Creative Problem Solving Institute)"
+kind = "academic"
+subtypes = ["academic-creativity"]
+country = "US"
+city = "Atlanta"
+site = "https://cpsiatlanta2027.sched.com"
+programme = "https://cpsiatlanta2027.sched.com"
+next_first = "2026-11-16"
+next_last = "2026-11-18"
+schedule = "published"
+schedule_evidence = "45 sessions in 8 rooms; Curiosity Reserves: Illuminating the Assumption Underneath CPS, 17 Nov 16:00, Room 208 (Sched all.ics). The slug says 2027 but every session falls on 16 to 18 November 2026."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "actem-conference"
+name = "ACTEM Conference (Maine educational technology)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Augusta"
+site = "https://actem2026.sched.com"
+programme = "https://actem2026.sched.com"
+next_first = "2026-10-15"
+next_last = "2026-10-16"
+schedule = "published"
+schedule_evidence = "114 sessions in 16 rooms; Apple Education Session, 15 Oct 13:10, Kennebec, Augusta Civic Center (Sched all.ics)."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chemed-conference"
+name = "ChemEd (biennial chemistry education conference)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Ypsilanti"
+site = "https://chemed2027.sched.com"
+next_first = "2027-07-11"
+next_last = "2027-07-15"
+schedule = "expected"
+platform = "sched"
+status = "watch"
+reason = "Its Sched event exists but all.ics answers 200 with no sessions yet."
+recheck = "2027-06-20"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "nccss-conference"
+name = "North Carolina Council for the Social Studies Conference"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Winston-Salem"
+site = "https://nccss2027.sched.com"
+next_first = "2027-03-04"
+next_last = "2027-03-05"
+schedule = "expected"
+platform = "sched"
+status = "watch"
+reason = "Its Sched event exists but all.ics answers 200 with no sessions yet."
+recheck = "2027-02-11"
+found_via = ["sched"]
+checked = "2026-09-29"
