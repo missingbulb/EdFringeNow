@@ -1,7 +1,7 @@
 /* The globe beside the year: the earth on a canvas, the countries that hold a
  * festival lit and each festival's city marked, turned by dragging and left
- * spinning by a flick (23.27). Choosing a lit country or a mark hands its code
- * to `onPick` (23.28); the page decides what that means and tells the globe
+ * spinning by a flick (23.28). Choosing a lit country or a mark hands its code
+ * to `onPick` (23.29); the page decides what that means and tells the globe
  * which country is chosen.
  *
  * The canvas is drawn for the eye only: the place menu under it is the

@@ -1945,26 +1945,29 @@ reaches it, and otherwise the one it covers most.
 
   ![planng-photo-credit.23.19](requirements/screen/cases/planng-photo-credit.23.19.png) <!-- req-gallery:23.19 -->
 
-- `23.20` A city's festivals share one pill: it spans all their runs with each run drawn inside it, carries its country's flag at its middle, and is labelled with how many festivals it holds and the one that leads them.
+- `23.20` A country's festivals whose runs meet share one pill (a state's, in a country as large as the United States or Australia): it spans all their runs with each run drawn inside it, carries the country's flag at its middle, and is labelled with how many festivals it holds and the one that leads them.
 
   ![planng-city-pill.23.20](requirements/screen/cases/planng-city-pill.23.20.png) <!-- req-gallery:23.20 -->
 
   <details><summary>Notes</summary>
 
-  Festivals are bunched by their registry city, so however many festivals a
-  city holds at once the strip grows by at most one row for it. The leading
-  festival is the one with a published programme and the longest run, which
-  is the Edinburgh Festival Fringe in Edinburgh; a city with a single festival
-  keeps that festival's own pill and name. The flag is the registry country's,
+  Festivals are bunched by their registry country, or by the registry
+  `region` where a festival names one (a state of a large country), so
+  however many festivals a country holds at once the strip grows by at most
+  one row for it. Runs a week or less apart meet; a country's festivals
+  months apart stay separate pills. The leading festival is the one with a
+  published programme and the longest run, which is the Edinburgh Festival
+  Fringe among the United Kingdom's; a lone festival keeps its own pill and
+  name. The flag is the registry country's,
   drawn rather than typed so it looks the same on every device, and a country
   the page has no flag for shows none.
   </details>
 
-- `23.21` Pointing at a city's pill shows its card: how many festivals, and each one's name and dates.
+- `23.21` Pointing at a country's pill shows its card: where, how many festivals, and each one's name and dates.
 
   ![planng-city-card.23.21](requirements/screen/cases/planng-city-card.23.21.png) <!-- req-gallery:23.21 -->
 
-- `23.22` Choosing a city's pill sets the trip to its leading festival's run plus a day either side, and that festival leads the trip.
+- `23.22` Choosing a country's pill sets the trip to its leading festival's run plus a day either side, and that festival leads the trip.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.22 -->
 
@@ -2014,9 +2017,13 @@ reaches it, and otherwise the one it covers most.
   leaving a plain band where its city should be.
   </details>
 
-- `23.27` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+- `23.27` With the place menu on a country, the strip bunches that country's festivals by city instead, so each city's festival can be chosen on its own.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:23.27 -->
+  ![planng-country-drill.23.27](requirements/screen/cases/planng-country-drill.23.27.png) <!-- req-gallery:23.27 -->
+
+- `23.28` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.28 -->
 
   <details><summary>Notes</summary>
 
@@ -2024,9 +2031,9 @@ reaches it, and otherwise the one it covers most.
   asked for, the globe stops where it is let go.
   </details>
 
-- `23.28` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
+- `23.29` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
 
-  ![planng-globe-pick.23.28](requirements/screen/cases/planng-globe-pick.23.28.png) <!-- req-gallery:23.28 -->
+  ![planng-globe-pick.23.29](requirements/screen/cases/planng-globe-pick.23.29.png) <!-- req-gallery:23.29 -->
 
   <details><summary>Notes</summary>
 
@@ -2035,9 +2042,9 @@ reaches it, and otherwise the one it covers most.
   same way. A country with no festival is not a choice.
   </details>
 
-- `23.29` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
+- `23.30` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
 
-  ![planng-type-pick.23.29](requirements/screen/cases/planng-type-pick.23.29.png) <!-- req-gallery:23.29 -->
+  ![planng-type-pick.23.30](requirements/screen/cases/planng-type-pick.23.30.png) <!-- req-gallery:23.30 -->
 
   <details><summary>Notes</summary>
 

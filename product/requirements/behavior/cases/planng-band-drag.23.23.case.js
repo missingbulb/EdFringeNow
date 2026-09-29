@@ -1,5 +1,5 @@
 "use strict";
-const { jerusalemReady, calendarSpans, choosePill } = require("../../shared/case-helpers");
+const { jerusalemReady, calendarSpans, chooseOnStrip } = require("../../shared/case-helpers");
 
 /* The band taken hold of on Jerusalem's own pill, inside it, and dragged on
  * two days: the trip moves whole and Jerusalem stays chosen; the drag is no
@@ -33,7 +33,7 @@ module.exports = {
     assert.equal(url.searchParams.get("festival"), "jerusalem-comedy", "Jerusalem still chosen");
 
     // A press that stays put is a click: Jerusalem's run, a day either side.
-    await choosePill(page, "jerusalem-comedy");
+    await chooseOnStrip(page, "jerusalem-comedy");
     await calendarSpans(page, "2026-10-17", "2026-10-23");
   },
 };

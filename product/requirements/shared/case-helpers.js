@@ -220,6 +220,24 @@ async function routeEdinburghFestivals(page) {
   );
 }
 
+/* Choose a festival on the strip, as a reader does: one sharing its
+ * country's pill with a festival that leads it is reached by narrowing the
+ * place menu to that country, then widened back. */
+async function chooseOnStrip(page, festivalId) {
+  const item = `.tl-item[data-festival="${festivalId}"]`;
+  if (await page.locator(item).count()) {
+    await pressPill(page, festivalId);
+    return;
+  }
+  const country = await page.evaluate(
+    async (id) => (await (await fetch("/data/festivals/index.json")).json()).festivals.find((f) => f.id === id).country,
+    festivalId
+  );
+  await page.selectOption('[data-filter="place"]', country);
+  await pressPill(page, festivalId);
+  await page.selectOption('[data-filter="place"]', "");
+}
+
 /* Say how you are getting here, as a reader does: a picture beside the trip
  * opens the question (or, once answered, the travel card and its "change"),
  * then where you live, then, living elsewhere, how you travel. `home` is
@@ -238,7 +256,7 @@ async function answerTravel(page, { home, way = null }) {
 
 /* Press a festival's pill on the year, where a reader would: on the pill,
  * clear of the trip's end handles, whose lines run across every row. */
-async function choosePill(page, festivalId) {
+async function pressPill(page, festivalId) {
   const bar = page.locator(`.tl-item[data-festival="${festivalId}"] .tl-bar`);
   const box = await bar.boundingBox();
   const handles = await page.$$eval(".tl-handle", (els) =>
@@ -722,8 +740,8 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
-  choosePill,
   routeEdinburghFestivals,
+  chooseOnStrip,
   calendarDays,
   calendarSpans,
   JERUSALEM,

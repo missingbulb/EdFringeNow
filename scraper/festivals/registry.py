@@ -85,6 +85,8 @@ def _check(festival, path):
     subtypes = festival.get("subtypes", [])
     if not isinstance(subtypes, list) or not all(isinstance(s, str) and ID_RE.match(s) for s in subtypes):
         raise RegistryError("%s: subtypes must be a list of lowercase-hyphen slugs" % where)
+    if "region" in festival and not (isinstance(festival["region"], str) and festival["region"]):
+        raise RegistryError("%s: region must be a state or region's name" % where)
     if festival["default_genre"] not in GENRES:
         raise RegistryError("%s: default_genre %r not in %s" % (where, festival["default_genre"], GENRES))
     if festival["dir"] not in ("ltr", "rtl"):
