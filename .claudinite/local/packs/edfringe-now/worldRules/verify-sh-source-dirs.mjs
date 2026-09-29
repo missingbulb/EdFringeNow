@@ -16,7 +16,7 @@ const rule = {
     'scripts/verify.sh\'s JavaScript syntax-check step names every top-level directory that has committed .js/.mjs source',
   why:
     'the step only walks the top-level directories named in its `git ls-files` call; a source directory left off that list is silently never parse-checked, in the pre-commit hook or in CI',
-  doc: 'RULES.md',
+  doc: '.claudinite/local/packs/edfringe-now/RULES.md',
 
   run(ctx) {
     const verifyRaw = ctx.read(VERIFY);
