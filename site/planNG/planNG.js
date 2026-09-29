@@ -2328,7 +2328,7 @@ function rivalLane(slot, top, height, reach, y) {
   for (const r of [...rivals].sort((a, b) => a.startMinuteOfDay - b.startMinuteOfDay)) {
     let i = lanes.findIndex((endMin) => endMin <= r.startMinuteOfDay);
     if (i < 0) i = lanes.push(0) - 1;
-    lanes[i] = r.endMinuteOfDay;
+    lanes[i] = rivalEnd(r);
     laneOf.set(r, i);
   }
   const crowd = lanes.length > RIVAL_LANES;
@@ -2337,11 +2337,18 @@ function rivalLane(slot, top, height, reach, y) {
     ? crowdWash(rivals, top, height, y) + `<span class="sch-rivals-count">${rivals.length}</span>`
     : rivals
         .map((r) => {
-          const from = clamp(y(r.startMinuteOfDay), ...reach);
-          const to = clamp(y(r.endMinuteOfDay), ...reach);
+          // An end nobody published, or one past the neighbouring cards, is
+          // drawn fading rather than capped.
+          const untimed = r.endMinuteOfDay === r.startMinuteOfDay;
+          const start = y(r.startMinuteOfDay);
+          const end = y(rivalEnd(r));
+          const from = clamp(start, ...reach);
+          const to = clamp(end, ...reach);
+          const open =
+            (start < from ? " sch-rival--open-start" : "") + (untimed || end > to ? " sch-rival--open-end" : "");
           return (
-            `<span class="sch-rival" style="--from:${(from - top).toFixed(1)}px;` +
-            `--len:${Math.max(4, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
+            `<span class="sch-rival${open}" style="--from:${(from - top).toFixed(1)}px;` +
+            `--len:${Math.max(6, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
           );
         })
         .join("");
@@ -2355,6 +2362,12 @@ function rivalLane(slot, top, height, reach, y) {
   return lane;
 }
 
+/* Where a rival stops on the calendar: a show with no published length runs
+ * the hour the draft assumed for it when weighing clashes. */
+function rivalEnd(r) {
+  return r.endMinuteOfDay === r.startMinuteOfDay ? r.startMinuteOfDay + ASSUMED_LENGTH_MIN : r.endMinuteOfDay;
+}
+
 /* A crowd drawn as one element, not one per show: a Fringe calendar has
  * hundreds of contested hours and the page has an element budget (26.2). The
  * wash runs down the pick's own slot, darker wherever more rivals overlap. */
@@ -2362,7 +2375,7 @@ function crowdWash(rivals, top, height, y) {
   const edges = new Set([0, height]);
   const spans = rivals.map((r) => [
     clamp(y(r.startMinuteOfDay) - top, 0, height),
-    clamp(y(r.endMinuteOfDay) - top, 0, height),
+    clamp(y(rivalEnd(r)) - top, 0, height),
   ]);
   for (const [from, to] of spans) edges.add(from).add(to);
   const cuts = [...edges].sort((a, b) => a - b);

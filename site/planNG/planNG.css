@@ -523,7 +523,7 @@ body.festival-page {
  */
 .sch-slot { position: absolute; left: 3px; right: 3px; }
 /* The pick leaves a band clear at its end edge for the lane. */
-.sch-slot--contested .sch-show { inset-inline-end: 17px; }
+.sch-slot--contested .sch-show { inset-inline-end: 24px; }
 .sch-show {
   position: absolute; inset: 0;
   flex-direction: column; justify-content: center; gap: 1px;
@@ -545,7 +545,7 @@ body.festival-page {
    holds reach above and below it to the rivals' own starts and ends, and are
    painted through (pointer-events off) so the lane is the only thing hit. */
 .sch-rivals {
-  position: absolute; top: 0; bottom: 0; inset-inline-end: 0; width: 15px;
+  position: absolute; top: 0; bottom: 0; inset-inline-end: 0; width: 22px;
   padding: 0; border: 0; border-radius: 4px; background: transparent;
   z-index: 1;
 }
@@ -553,18 +553,27 @@ body.festival-page {
   background: color-mix(in srgb, var(--violet) 10%, transparent);
 }
 .sch-rivals:focus-visible { outline: 2px solid var(--violet); outline-offset: 1px; }
+/* Each rival is a solid bar capped at its start and its end, so where it
+   begins and stops reads off the calendar's own hour lines. */
 .sch-rival {
-  --w: calc((13px - (var(--lanes) - 1) * 1px) / var(--lanes));
+  --w: min(8px, calc((20px - (var(--lanes) - 1) * 2px) / var(--lanes)));
   position: absolute; pointer-events: none;
   top: var(--from); height: var(--len);
-  inset-inline-start: calc(1px + var(--lane) * (var(--w) + 1px)); width: var(--w);
-  border-radius: 3px;
-  background: color-mix(in srgb, var(--violet) 30%, var(--paper));
-  border: 1px dashed var(--violet);
+  inset-inline-start: calc(1px + var(--lane) * (var(--w) + 2px)); width: var(--w);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--violet) 45%, var(--paper));
+  border-block: 2px solid var(--violet-dark);
   box-sizing: border-box;
 }
+/* An end it does not have on the calendar (unpublished, or past the cards
+   beside it) fades out uncapped. */
+.sch-rival--open-start { border-top-width: 0; mask-image: linear-gradient(to bottom, transparent, #000 10px); }
+.sch-rival--open-end { border-bottom-width: 0; mask-image: linear-gradient(to top, transparent, #000 10px); }
+.sch-rival--open-start.sch-rival--open-end {
+  mask-image: linear-gradient(to bottom, transparent, #000 10px, #000 calc(100% - 10px), transparent);
+}
 .sch-rivals:hover .sch-rival, .sch-rivals[aria-expanded="true"] .sch-rival {
-  background: color-mix(in srgb, var(--violet) 50%, var(--paper));
+  background: color-mix(in srgb, var(--violet) 70%, var(--paper));
 }
 /* Too many to tell apart: one wash down the pick's slot, darkest where the
    most shows overlap (its stops are drawn in crowdWash), and a count. */
@@ -574,9 +583,9 @@ body.festival-page {
 }
 /* Narrow columns give the lane less of the card; the tiniest merge its rows,
    since a bar a pixel or two wide says nothing. */
-.schedule.cols-narrow .sch-slot--contested .sch-show { inset-inline-end: 10px; }
-.schedule.cols-narrow .sch-rivals { width: 9px; }
-.schedule.cols-narrow .sch-rival { --w: calc((7px - (var(--lanes) - 1) * 1px) / var(--lanes)); }
+.schedule.cols-narrow .sch-slot--contested .sch-show { inset-inline-end: 13px; }
+.schedule.cols-narrow .sch-rivals { width: 12px; }
+.schedule.cols-narrow .sch-rival { --w: calc((10px - (var(--lanes) - 1) * 1px) / var(--lanes)); inset-inline-start: calc(1px + var(--lane) * (var(--w) + 1px)); }
 .schedule.cols-tiny .sch-slot--contested .sch-show { inset-inline-end: 6px; }
 .schedule.cols-tiny .sch-rivals { width: 5px; }
 .schedule.cols-tiny .sch-rival { --w: 5px; inset-inline-start: 0; border-width: 0; }

@@ -1219,7 +1219,7 @@ rather than as a control panel.
   and a prompt to go and star something; here it is a full week.
   </details>
 
-- `20.2` A contested card has a lane beside it drawing each show it beat, from that show's own start to its own end.
+- `20.2` A contested card has a lane beside it drawing each show it beat as a bar capped at that show's own start and its own end.
 
   ![jerusalem-scarcest.20.2](requirements/screen/cases/jerusalem-scarcest.20.2.png) <!-- req-gallery:20.2 -->
 
@@ -1228,7 +1228,9 @@ rather than as a control panel.
   A few rivals are packed side by side, so how each overlaps the pick shows at
   a glance; past three rows they are too many to tell apart, which is `20.15`.
   Bars stop at the neighbouring cards, so none is read as belonging to another
-  hour. An uncontested hour is a card with no lane.
+  hour; an end cut off there, or one nobody published (such a show is drawn
+  for the hour the draft assumes it runs), fades out instead of taking a cap.
+  An uncontested hour is a card with no lane.
   </details>
 
 - `20.3` Resting on the lane lists the hour's shows, our pick first, and offers to lock any of the others in its place.
