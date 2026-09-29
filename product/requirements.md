@@ -1375,6 +1375,22 @@ rather than as a control panel.
   against every answer.
   </details>
 
+- `20.22` A day held to fewer shows than it could fit spreads them across its hours, rather than packing the earliest.
+
+  🔧 _Logic leaf._ <!-- req-gallery:20.22 -->
+
+  <details><summary>Notes</summary>
+
+  How many shows a day takes is a question of pace, not of when the day ends:
+  a reader who asks for two shows a day has not asked to be done by lunch. So
+  among shows equally scarce, the hours the day's programme spans are shared
+  out between its places, and each part of the day takes a show before any
+  takes a second. Scarcity still comes first — a show with fewer nights
+  takes its hour whatever part of the day it is in — and a reader who wants the
+  day to end early says so with the day's end, which the spread then works
+  within.
+  </details>
+
 - `20.13` A show with no picture leads its popup with its kind's emoji on its festival's colour.
 
   ![planng-no-picture.20.13](requirements/screen/cases/planng-no-picture.20.13.png) <!-- req-gallery:20.13 -->

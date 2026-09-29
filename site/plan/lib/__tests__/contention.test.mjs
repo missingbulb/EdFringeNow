@@ -207,8 +207,8 @@ test("a favourite is placed before the undecided rest, but does not outrank a lo
 
 test("a favourite is held to the per-day cap, and takes its place ahead of the undecided rest", () => {
   const night = ["2026-10-18"];
-  const fillers = ["a", "b", "c"].map((slug, i) => show(slug, night, { start: `1${i}:00`, duration: 30 }));
-  const wanted = show("wanted", night, { start: "21:00", duration: 30 });
+  const fillers = ["10:00", "15:30", "21:00"].map((start, i) => show(`f${i}`, night, { start, duration: 30 }));
+  const wanted = show("wanted", night, { start: "12:00", duration: 30 });
   const capped = draft([...fillers, wanted], { maxPerDay: 3 });
   assert.equal(capped.days[0].slots.length, 3);
   assert.ok(!capped.picked.has("wanted"));
