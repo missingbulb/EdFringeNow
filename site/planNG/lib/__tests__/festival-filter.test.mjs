@@ -21,6 +21,7 @@ test("every kind the registry allows belongs to exactly one of the nine types", 
 test("every country the registry lists belongs to an area", async () => {
   const { areaOf } = await import("../areas.js");
   const index = JSON.parse(readFileSync(new URL("../../../data/festivals/index.json", import.meta.url), "utf8"));
+  assert.ok(index.festivals.length >= 15, "the registry was read whole");
   for (const f of index.festivals) assert.ok(areaOf(f.country), `${f.id} (${f.country})`);
 });
 
