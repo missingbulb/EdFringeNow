@@ -1872,7 +1872,7 @@ reaches it, and otherwise the one it covers most.
   content width.
   </details>
 
-- `23.12` Each end of the trip is a line across the strip with a grip at its middle and its day of the month beside it, and the trip's length in days is written above the band.
+- `23.12` Each end of the trip is a line across the strip with a grip at its middle; under the rows the trip is measured like a drawing, its first and last day of the month at the ends of a line the band's width and its length in days between them, clear of the months and today's figure.
 
   ![planng-trip-edges.23.12](requirements/screen/cases/planng-trip-edges.23.12.png) <!-- req-gallery:23.12 -->
 
@@ -1982,29 +1982,30 @@ reaches it, and otherwise the one it covers most.
   the festival chosen while the moved dates still reach it (23.9).
   </details>
 
-- `23.24` Beside the year, a globe of the festivals' countries with a place menu under it, and a grid of nine pictured festival types with a subtype menu under it, narrow the festivals it draws.
+- `23.24` Beside the year, a globe with a place menu under it and nine pictured festival types narrow the festivals it draws, drawn as one piece with the year: the same ring round the globe and the chosen type, and the same capsules for the globe's places, the subtypes and the trip's measure.
 
   ![planng-strip-filter.23.24](requirements/screen/cases/planng-strip-filter.23.24.png) <!-- req-gallery:23.24 -->
 
   <details><summary>Notes</summary>
 
-  A place is a country or one of its cities; a type is one of nine: film,
+  A place is an area (the British Isles, Europe, the Middle East and so
+  on, `site/planNG/lib/areas.js`), a country or one of its cities; a type is one of nine: film,
   music, theatre, dance, comedy, art & books (the registry's `art` and
   `literature`), mixed arts (`fringe` and `multi`), sports and academic; a
   subtype is what sets one festival apart within its type (`film-documentary`,
   `academic-biology`), a label on the festival and never on its events. The
-  globe lights every country with a festival and marks each festival's city;
-  the place menu offers only what the registry holds. A type with no festival
-  in the chosen place is drawn faded. The subtype menu appears once a type is
-  chosen, offering only the subtypes the chosen place and type leave, and
-  stays hidden while none do. On a narrow screen the globe and the grid sit
-  side by side above the year. Only the strip is narrowed: the pool the
-  calendar drafts from is the trip's, whatever the filters say.
+  globe is drawn to be used rather than to be right: flat cut-paper land on a
+  halftone sea, the countries with a festival in the page's colour. The place
+  menu offers only what the registry holds, grouped by area. Each type says
+  how many festivals the chosen place holds of it, and a type with none is
+  drawn faded. On a narrow screen the globe and the types sit side by side
+  above the year. Only the strip is narrowed: the pool the calendar drafts
+  from is the trip's, whatever the filters say.
   </details>
 
 - `23.25` The filters keep a festival only when it matches place, type and subtype, and the festival leading the trip is always kept.
 
-  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all six</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe, edbookfest</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr><tr><td>anywhere</td><td>mixed arts</td><td>any</td><td>none</td><td>edfringe</td></tr><tr><td>anywhere</td><td>art &amp; books</td><td>any</td><td>none</td><td>edbookfest</td></tr><tr><td>Edinburgh</td><td>art &amp; books</td><td>literature-books</td><td>none</td><td>edbookfest</td></tr></tbody></table> <!-- req-gallery:23.25 -->
+  <table><thead><tr><th align="left">Place</th><th align="left">Type</th><th align="left">Subtype</th><th align="left">Leading the trip</th><th align="left">Drawn</th></tr></thead><tbody><tr><td>anywhere</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>all six</td></tr><tr><td>Middle East</td><td>any</td><td>any</td><td>none</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>British Isles</td><td>film</td><td>any</td><td>none</td><td>eiff</td></tr><tr><td>Israel</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>haifa-iff, docaviv, jerusalem-comedy</td></tr><tr><td>Edinburgh</td><td>any</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy, eiff, edfringe, edbookfest</td></tr><tr><td>anywhere</td><td>film</td><td>any</td><td>none</td><td>haifa-iff, docaviv, eiff</td></tr><tr><td>anywhere</td><td>film</td><td>film-international</td><td>none</td><td>haifa-iff, eiff</td></tr><tr><td>Israel</td><td>film</td><td>film-documentary</td><td>none</td><td>docaviv</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>none</td><td>nothing</td></tr><tr><td>Tel Aviv</td><td>comedy</td><td>any</td><td>Jerusalem Comedy</td><td>jerusalem-comedy</td></tr><tr><td>anywhere</td><td>mixed arts</td><td>any</td><td>none</td><td>edfringe</td></tr><tr><td>anywhere</td><td>art &amp; books</td><td>any</td><td>none</td><td>edbookfest</td></tr><tr><td>Edinburgh</td><td>art &amp; books</td><td>literature-books</td><td>none</td><td>edbookfest</td></tr></tbody></table> <!-- req-gallery:23.25 -->
 
 - `23.26` Every festival the site lists has a photograph of its city, stored with the site and carrying the title, photographer, licence and source its credit needs.
 
@@ -2042,26 +2043,44 @@ reaches it, and otherwise the one it covers most.
   asked for, the globe stops where it is let go.
   </details>
 
-- `23.30` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
+- `23.30` The globe offers areas first, each a badge with its count of festivals; choosing one narrows the year to it and turns and zooms the globe onto it, offering its countries, and a country its cities, while a capsule over the globe steps back out.
 
   ![planng-globe-pick.23.30](requirements/screen/cases/planng-globe-pick.23.30.png) <!-- req-gallery:23.30 -->
 
   <details><summary>Notes</summary>
 
-  A city's mark chooses its country too. The place menu under the globe
-  follows, and choosing a country from the menu turns the globe to it the
-  same way. A country with no festival is not a choice.
+  An area holding a single festival country goes straight to that country,
+  and stepping out of it goes past the area too. A badge crowded off its
+  place stands beside it on a string to a pin, or shrinks to its count.
+  Choosing lit land chooses the badge it belongs to, and choosing the chosen
+  badge again steps out. The place menu under the globe follows, and choosing
+  from the menu moves the globe the same way.
   </details>
 
-- `23.31` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
+- `23.31` Choosing a type's picture narrows the year to that type: the picture grows into a header, the other eight shrink into a row under it and the type's subtypes are offered as capsules under them; choosing the header again shows every type.
 
   ![planng-type-pick.23.31](requirements/screen/cases/planng-type-pick.23.31.png) <!-- req-gallery:23.31 -->
 
   <details><summary>Notes</summary>
 
   One type at a time: choosing another replaces it. A subtype the new type
-  or place no longer leaves is dropped.
+  or place no longer leaves is dropped. The subtypes are offered only while
+  the chosen place and type leave any.
   </details>
+
+- `23.32` When the page knows which country the reader lives in, a little house stands on it on the globe.
+
+  ![planng-globe-home.23.32](requirements/screen/cases/planng-globe-home.23.32.png) <!-- req-gallery:23.32 -->
+
+  <details><summary>Notes</summary>
+
+  The country the reader named on the travel card, else the one their
+  connection comes from, as the holidays on the months read it (31.2).
+  </details>
+
+- `23.33` Choosing a type moves the pictures rather than swapping them: each glides from where it was to where it goes, the subtypes unfold one after another, and with reduced motion asked for they simply land.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.33 -->
 
 ## 24. How you are getting here
 

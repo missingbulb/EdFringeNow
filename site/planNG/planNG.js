@@ -71,7 +71,18 @@ import { GROUND, arrivalOf, hasCar } from "./lib/arrival.js";
 import { animateCalendar, snapshotCalendar } from "./motion.js";
 import { holidayBreaks, holidaysUrl, homeCountry } from "./lib/holidays.js";
 import { editionKey, timelineSpan } from "./lib/timeline.js";
-import { NO_FILTER, cityPlace, filterOptions, filterRegistry, withFilter } from "./lib/festival-filter.js";
+import {
+  NO_FILTER,
+  areaPlace,
+  cityPlace,
+  filterOptions,
+  filterRegistry,
+  parentPlace,
+  placeParts,
+  withFilter,
+} from "./lib/festival-filter.js";
+import { areaOf } from "./lib/areas.js";
+import { centreOf, project } from "./lib/globe.js";
 import { createGlobe } from "./globe-view.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
 import { wireTips } from "./tip.js";
@@ -3555,86 +3566,255 @@ function subtypeName(subtype) {
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
+/* Each area the globe offers first, as its badge names it. */
+const AREA_KEYS = {
+  "british-isles": "area.british-isles",
+  europe: "area.europe",
+  "middle-east": "area.middle-east",
+  "russia-central-asia": "area.russia-central-asia",
+  "south-asia": "area.south-asia",
+  "east-asia": "area.east-asia",
+  oceania: "area.oceania",
+  "north-america": "area.north-america",
+  "latin-america": "area.latin-america",
+  africa: "area.africa",
+};
+
 let globe = null;
 
-/* Beside the year: the globe and the place menu under it, and the nine types'
- * pictures with the subtype menu under them, each offering only what the
- * registry holds (23.24). */
+const placed = (festival) => Number.isFinite(festival.lat) && Number.isFinite(festival.lng);
+
+/* How close the globe comes to a set of places: near enough that the one
+ * farthest from their middle still sits well inside the lens, and never
+ * nearer than `widest` degrees across, so one city is not a blur of paper. */
+function lookAt(points, widest) {
+  const centre = centreOf(points);
+  const offCentre = (point) => {
+    const p = project(centre, point.lng, point.lat);
+    return p.facing ? Math.hypot(p.x, p.y) : 1;
+  };
+  const reach = Math.max(Math.sin((widest * Math.PI) / 180), ...points.map(offCentre));
+  return { ...centre, zoom: Math.min(30, Math.max(1, 0.62 / reach)) };
+}
+
+/* What the globe offers at the chosen place's level: the areas, else the
+ * chosen area's countries, else the chosen country's cities, each with how
+ * many festivals the type and subtype leave there (23.30). */
+function globeLevel(f) {
+  const { area, country, city } = placeParts(f.place);
+  const all = state.registry.festivals.filter(placed);
+  const counted = filterRegistry(state.registry, { ...f, place: "" }).festivals;
+  const countOf = (keep) => counted.filter(keep).length;
+  const group = (festivals, keyOf) => {
+    const groups = new Map();
+    for (const x of festivals) {
+      const key = keyOf(x);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(x);
+    }
+    return [...groups];
+  };
+  const badge = (place, text, slot, members, keep) => ({
+    place,
+    text,
+    slot,
+    count: countOf(keep),
+    ...centreOf(members),
+    countries: [...new Set(members.map((x) => x.country))],
+    picked: place === f.place,
+  });
+  const lead = state.focus ? state.focus.festival : null;
+  if (!area && !country) {
+    const badges = group(all, (x) => areaOf(x.country)).map(([id, members]) => {
+      const countries = new Set(members.map((x) => x.country));
+      // An area of one country goes straight to that country.
+      const place = countries.size > 1 ? areaPlace(id) : [...countries][0];
+      return badge(place, t(AREA_KEYS[id]), AREA_KEYS[id], members, (x) => areaOf(x.country) === id);
+    });
+    const start = lead && placed(lead) ? lead : centreOf(all);
+    return { badges, picked: [], focus: null, start: { lng: start.lng, lat: start.lat } };
+  }
+  if (!country) {
+    const members = all.filter((x) => areaOf(x.country) === area);
+    const badges = group(members, (x) => x.country).map(([code, of]) =>
+      badge(code, regionName(code), null, of, (x) => x.country === code)
+    );
+    return { badges, picked: [...new Set(members.map((x) => x.country))], focus: lookAt(members, 12) };
+  }
+  const members = all.filter((x) => x.country === country);
+  const badges = group(members, cityPlace).map(([place, of]) =>
+    badge(place, festivalCity(of[0]), null, of, (x) => cityPlace(x) === place)
+  );
+  for (const b of badges) b.picked = Boolean(city) && b.place === f.place;
+  return { badges, picked: [country], focus: lookAt(members, 1) };
+}
+
+/* Where a place is, in words: an area, a country or a city. */
+function stripPlaceName(place) {
+  const { area, country, city } = placeParts(place);
+  if (city) {
+    const festival = state.registry.festivals.find((x) => cityPlace(x) === place);
+    return festival ? festivalCity(festival) : city;
+  }
+  if (country) return regionName(country);
+  return area ? t(AREA_KEYS[area]) : t("globe.world");
+}
+
+/* Beside the year: the globe with the way back out over it and the place
+ * menu under it, and the nine types' pictures with the chosen one's subtypes
+ * under them, each offering only what the registry holds (23.24). */
 function renderStripFilters() {
   const f = state.stripFilter;
   const { places, types, subtypes } = filterOptions(state.registry, f);
   const opt = (value, text, selected) =>
     `<option value="${escapeHtml(value)}"${value === selected ? " selected" : ""}>${escapeHtml(text)}</option>`;
-  const cityName = (country, city) => {
-    const festival = state.registry.festivals.find((x) => x.country === country && x.city === city);
-    return festival ? festivalCity(festival) : city;
-  };
   const byName = (a, b) => a.name.localeCompare(b.name, currentIntlLocale());
-  const placeOptions = places
-    .map((p) => ({ ...p, name: regionName(p.country) }))
+  const indent = " ";
+  const areaGroups = [...new Set(places.map((p) => p.area))]
+    .map((area) => ({ area, name: area ? t(AREA_KEYS[area]) : "", countries: places.filter((p) => p.area === area) }))
     .sort(byName)
     .map(
-      (p) =>
-        `<optgroup label="${escapeHtml(p.name)}">` +
-        opt(p.country, t("filter.allOf", { country: p.name }), f.place) +
-        p.cities
-          .map((city) => ({ city, name: cityName(p.country, city) }))
+      (g) =>
+        `<optgroup label="${escapeHtml(g.name)}">` +
+        (g.area && g.countries.length > 1 ? opt(areaPlace(g.area), t("filter.allOf", { country: g.name }), f.place) : "") +
+        g.countries
+          .map((p) => ({ ...p, name: regionName(p.country) }))
           .sort(byName)
-          .map((c) => opt(cityPlace({ country: p.country, city: c.city }), c.name, f.place))
+          .map(
+            (p) =>
+              opt(p.country, p.name, f.place) +
+              p.cities
+                .map((city) => cityPlace({ country: p.country, city }))
+                .map((place) => ({ place, name: stripPlaceName(place) }))
+                .sort(byName)
+                .map((c) => opt(c.place, indent + c.name, f.place))
+                .join("")
+          )
           .join("") +
         `</optgroup>`
     )
     .join("");
-  const subtypeOptions = subtypes
-    .map((s) => ({ s, name: subtypeName(s) }))
-    .sort(byName)
-    .map((s) => opt(s.s, s.name, f.subtype))
-    .join("");
-  const menu = (name, labelKey, anyKey, options) =>
-    `<select class="opt-select tl-filter" data-filter="${name}" aria-label="${escapeHtml(t(labelKey))}">` +
-    opt("", t(anyKey), f[name]) +
-    options +
+  $("timelinePlace").innerHTML =
+    `<select class="opt-select tl-filter" data-filter="place" aria-label="${escapeHtml(t("filter.place"))}">` +
+    opt("", t("filter.anyPlace"), f.place) +
+    areaGroups +
     `</select>`;
-  $("timelinePlace").innerHTML = menu("place", "filter.place", "filter.anyPlace", placeOptions);
-  const tiles = types
-    .map((type) => {
-      const key = TYPE_KEYS[type.id];
-      const name = t(key);
-      const picked = f.type === type.id;
-      return (
-        `<button type="button" class="tl-type${type.count ? "" : " is-empty"}" data-type="${type.id}" aria-pressed="${picked}">` +
-        `<img src="/planNG/types/${type.id}.svg" alt="" width="46" height="46">` +
-        `<span class="tl-type-name" data-i18n-slot="${key}">${escapeHtml(name)}</span>` +
-        `</button>`
-      );
-    })
-    .join("");
-  const types$ = $("timelineTypes");
-  types$.classList.toggle("has-pick", Boolean(f.type));
-  types$.innerHTML =
-    `<div class="tl-type-grid" role="group" aria-label="${escapeHtml(t("filter.kind"))}">${tiles}</div>` +
-    (f.type && subtypes.length ? menu("subtype", "filter.subtype", "filter.anySubtype", subtypeOptions) : "");
+  const up = f.place ? parentPlace(state.registry, f.place) : null;
+  $("timelineUp").innerHTML =
+    up === null
+      ? ""
+      : `<button type="button" class="tl-chip tl-up" data-place="${escapeHtml(up)}">` +
+        `<span class="tl-up-arrow" aria-hidden="true"></span>` +
+        `<span${up ? "" : ` data-i18n-slot="globe.world"`}>${escapeHtml(stripPlaceName(up))}</span></button>`;
 
-  globe ||= createGlobe($("timelineGlobe"), { onPick: pickCountry });
-  const lead = state.focus ? state.focus.festival : null;
-  globe.set({
-    lit: places.map((p) => p.country),
-    marks: state.registry.festivals
-      .filter((x) => Number.isFinite(x.lat) && Number.isFinite(x.lng))
-      .map((x) => ({ lng: x.lng, lat: x.lat, country: x.country })),
-    picked: f.place.split("/")[0],
-    home: lead && Number.isFinite(lead.lat) ? { lng: lead.lng, lat: lead.lat } : null,
-  });
+  renderTypes(types, subtypes);
+
+  globe ||= createGlobe($("timelineLens"), { onPick: pickPlace });
+  const level = globeLevel(state.stripFilter);
+  const home = homeCountry(state.origin, state.guess);
+  globe.set({ ...level, lit: places.map((p) => p.country), home: home ? home.country : null });
+}
+
+/* The nine pictures, drawn once and then only changed, so each can glide
+ * from where it was to where it goes: with no type chosen, a grid of equals;
+ * with one, it grows into the header and the other eight shrink into a row
+ * beneath, and the chosen type's subtypes unfold under them as chips. */
+function renderTypes(types, subtypes) {
+  const f = state.stripFilter;
+  const host = $("timelineTypes");
+  if (!host.firstElementChild) {
+    host.innerHTML =
+      `<div class="tl-type-grid" role="group" aria-label="${escapeHtml(t("filter.kind"))}">` +
+      types
+        .map(
+          (type) =>
+            `<button type="button" class="tl-type" data-type="${type.id}">` +
+            `<img src="/planNG/types/${type.id}.svg" alt="" width="46" height="46">` +
+            `<span class="tl-type-name" data-i18n-slot="${TYPE_KEYS[type.id]}"></span>` +
+            `<span class="tl-type-count"></span>` +
+            `</button>`
+        )
+        .join("") +
+      `</div><div class="tl-subtypes" role="radiogroup" aria-label="${escapeHtml(t("filter.subtype"))}"></div>`;
+  }
+  const tiles = [...host.querySelectorAll(".tl-type")];
+  // Where each picture was is read only when the choice moves them.
+  const moving = (host.dataset.type || "") !== f.type && !reducedMotion();
+  const before = moving ? new Map(tiles.map((el) => [el, el.getBoundingClientRect()])) : null;
+  host.dataset.type = f.type;
+  host.classList.toggle("has-pick", Boolean(f.type));
+  for (const el of tiles) {
+    const type = types.find((x) => x.id === el.dataset.type);
+    el.setAttribute("aria-pressed", String(f.type === type.id));
+    el.classList.toggle("is-empty", !type.count);
+    el.querySelector(".tl-type-name").textContent = t(TYPE_KEYS[type.id]);
+    el.querySelector(".tl-type-count").textContent = type.count;
+  }
+  const chips = $("timelineTypes").querySelector(".tl-subtypes");
+  const chip = (value, text, slot) =>
+    `<button type="button" class="tl-chip tl-subtype" role="radio" data-subtype="${escapeHtml(value)}"` +
+    ` aria-checked="${f.subtype === value}"${slot ? ` data-i18n-slot="${slot}"` : ""}>${escapeHtml(text)}</button>`;
+  const offered = f.type && subtypes.length > 0;
+  const was = chips.dataset.for || "";
+  chips.innerHTML = offered
+    ? chip("", t("filter.anySubtype"), "filter.anySubtype") +
+      subtypes
+        .map((s) => ({ s, name: subtypeName(s) }))
+        .sort((a, b) => a.name.localeCompare(b.name, currentIntlLocale()))
+        .map((s) => chip(s.s, s.name, SUBTYPE_KEYS[s.s]))
+        .join("")
+    : "";
+  chips.dataset.for = offered ? f.type : "";
+  if (!moving) return;
+  glideTiles(before);
+  if (offered && was !== f.type) unfold(chips);
+}
+
+const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const EASE_OUT = "cubic-bezier(.22,1,.36,1)";
+
+/* Each picture starts from where it just was and glides to its new place. */
+function glideTiles(before) {
+  for (const [el, from] of before) {
+    const to = el.getBoundingClientRect();
+    if (!from.width || !to.width) continue;
+    const dx = from.left - to.left;
+    const dy = from.top - to.top;
+    if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5 && Math.abs(from.width - to.width) < 0.5) continue;
+    el.animate(
+      [
+        { transformOrigin: "0 0", transform: `translate(${dx}px, ${dy}px) scale(${from.width / to.width}, ${from.height / to.height})` },
+        { transformOrigin: "0 0", transform: "none" },
+      ],
+      { duration: 460, easing: EASE_OUT }
+    );
+  }
+}
+
+/* The chips open downwards, one after another, rather than appearing. */
+function unfold(chips) {
+  chips.animate([{ clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0 0)" }], { duration: 360, easing: EASE_OUT });
+  [...chips.children].forEach((el, i) =>
+    el.animate(
+      [
+        { opacity: 0, transform: "translateY(-6px) scale(0.9)" },
+        { opacity: 1, transform: "none" },
+      ],
+      { duration: 280, delay: 120 + i * 35, easing: EASE_OUT, fill: "backwards" }
+    )
+  );
+}
+
+/* A place chosen on the globe; choosing the one already chosen steps back
+ * out of it. */
+function pickPlace(place) {
+  const now = state.stripFilter.place;
+  setStripFilter("place", place === now ? parentPlace(state.registry, now) : place);
 }
 
 function setStripFilter(name, value) {
   state.stripFilter = withFilter(state.registry, state.stripFilter, name, value);
   renderTimelineStrip();
-}
-
-/* A country chosen on the globe; choosing the one already chosen lets go of it. */
-function pickCountry(country) {
-  setStripFilter("place", state.stripFilter.place.split("/")[0] === country ? "" : country);
 }
 
 const cardLine = (key, text, cls = "") => `<span class="tl-card-line${cls}" data-i18n-slot="${key}">${escapeHtml(text)}</span>`;
@@ -4222,6 +4402,12 @@ function wireTrip() {
   $("timelineTypes").addEventListener("click", (e) => {
     const tile = e.target.closest(".tl-type");
     if (tile) setStripFilter("type", state.stripFilter.type === tile.dataset.type ? "" : tile.dataset.type);
+    const chip = e.target.closest(".tl-subtype");
+    if (chip) setStripFilter("subtype", chip.dataset.subtype);
+  });
+  $("timelineUp").addEventListener("click", (e) => {
+    const up = e.target.closest(".tl-up");
+    if (up) setStripFilter("place", up.dataset.place);
   });
   // Today's figure cheers every choice the reader makes on the page.
   document.addEventListener("change", () => cheer(year));

@@ -71,9 +71,10 @@ export function renderTimeline(host, o) {
     ? `<span class="tl-period" aria-hidden="true" style="${bandStyle(span, period)}"></span>` +
       handle("from", "trip.from", period.from, tripEdges(span, period).start, dayText) +
       handle("to", "trip.to", period.to, tripEdges(span, period).end, dayText) +
-      `<span class="tl-day tl-day--from" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).start)}">${dayOfMonth(period.from)}</span>` +
-      `<span class="tl-day tl-day--to" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).end)}">${dayOfMonth(period.to)}</span>` +
-      `<span class="tl-length" style="${lengthStyle(span, period)}">${escapeHtml(lengthText(daysBetween(period)))}</span>` +
+      `<span class="tl-span" aria-hidden="true" style="${spanStyle(span, period)}">` +
+      `<span class="tl-chip tl-day tl-day--from">${dayOfMonth(period.from)}</span>` +
+      `<span class="tl-chip tl-length">${escapeHtml(lengthText(daysBetween(period)))}</span>` +
+      `<span class="tl-chip tl-day tl-day--to">${dayOfMonth(period.to)}</span></span>` +
       (travel ? way("from", "out", tripEdges(span, period).start, travel) + way("to", "back", tripEdges(span, period).end, travel) : "")
     : "";
   // Today: a small figure standing on the months, holding up a sign.
@@ -140,7 +141,7 @@ export function renderTimeline(host, o) {
   const scrolled = host.querySelector(".tl-rows")?.scrollTop || 0;
   host.innerHTML =
     `<div class="tl-months">${months}${orbs}${today}</div>` +
-    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">` +
+    `<div class="tl-track${shown ? " has-trip" : ""}" role="group" aria-label="${escapeHtml(t("timeline.label"))}">` +
     `${band}<div class="tl-rows">${items}</div></div>` +
     `<div class="tl-card" role="tooltip" hidden></div>`;
   host._cards = cards;
@@ -204,9 +205,11 @@ const dayOfMonth = (iso) => String(Number(iso.slice(8, 10)));
 
 const daysBetween = (trip) => Math.round((Date.parse(trip.to) - Date.parse(trip.from)) / 86400000) + 1;
 
-function lengthStyle(span, trip) {
+/* The trip measured under the rows: centred on the band and at least as wide,
+ * its first day at one end, its last at the other and its length between. */
+function spanStyle(span, trip) {
   const { start, end } = tripEdges(span, trip);
-  return `inset-inline-start:${pct((start + end) / 2)}`;
+  return `inset-inline-start:${pct((start + end) / 2)};min-width:${pct(end - start)}`;
 }
 
 function bandStyle(span, trip) {
@@ -242,14 +245,11 @@ export function previewTrip(host, span, trip) {
   const { start, end } = tripEdges(span, trip);
   host.querySelector(".tl-handle--from").style.insetInlineStart = pct(start);
   host.querySelector(".tl-handle--to").style.insetInlineStart = pct(end);
-  const length = host.querySelector(".tl-length");
-  if (length) length.style.insetInlineStart = pct((start + end) / 2);
+  const measure = host.querySelector(".tl-span");
+  if (measure) measure.setAttribute("style", spanStyle(span, trip));
   for (const [which, frac] of [["from", start], ["to", end]]) {
     const day = host.querySelector(`.tl-day--${which}`);
-    if (day) {
-      day.style.insetInlineStart = pct(frac);
-      day.textContent = dayOfMonth(trip[which]);
-    }
+    if (day) day.textContent = dayOfMonth(trip[which]);
     const icon = host.querySelector(`.tl-way--${which}`);
     if (icon) icon.style.insetInlineStart = pct(frac);
   }
@@ -266,6 +266,14 @@ function fitWays(host) {
     icon.hidden = false;
     const r = icon.getBoundingClientRect();
     icon.hidden = r.left < box.left || r.right > box.right;
+  }
+  // The trip's measure slides back inside the strip rather than run off it.
+  const measure = track.querySelector(".tl-span");
+  if (measure) {
+    measure.style.translate = "";
+    const r = measure.getBoundingClientRect();
+    const shift = r.left < box.left ? box.left - r.left : r.right > box.right ? box.right - r.right : 0;
+    if (shift) measure.style.translate = `${shift}px 0`;
   }
 }
 

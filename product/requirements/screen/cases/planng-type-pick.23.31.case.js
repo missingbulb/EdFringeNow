@@ -1,10 +1,11 @@
 "use strict";
 const { jerusalemReady, settle } = require("../../shared/case-helpers");
 
-/* The nine types and the year: Film chosen, only the film festivals stay;
+/* The nine types and the year: Film chosen, it becomes the header over the
+ * other eight, only the film festivals stay and Haifa's subtype is offered;
  * chosen again, every type is back. */
 module.exports = {
-  description: "choosing a type's picture narrows the year to that type and offers its subtypes; choosing it again shows every type",
+  description: "choosing a type's picture makes it the header over the other eight, narrows the year to it and offers its subtypes; choosing it again shows every type",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,

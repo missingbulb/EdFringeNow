@@ -1,34 +1,30 @@
 "use strict";
 const { jerusalemReady, settle } = require("../../shared/case-helpers");
 
-/* The globe and the year it sits beside: Edinburgh's mark chosen, the globe
- * turns to Scotland and only the British festivals stay; chosen again, every
- * place is back. */
-async function clickEdinburgh(page) {
-  const at = await page.evaluate(async () => {
-    const { project } = await import("/planNG/lib/globe.js");
-    const canvas = document.getElementById("timelineGlobe");
-    const [lng, lat] = canvas.dataset.view.split(",").map(Number);
-    const p = project({ lng, lat }, -3.19, 55.95);
-    const box = canvas.getBoundingClientRect();
-    const r = box.width / 2 - 2;
-    return { x: box.left + box.width / 2 + p.x * r, y: box.top + box.height / 2 + p.y * r };
-  });
-  await page.mouse.click(at.x, at.y);
+/* The globe and the year beside it: the Middle East's badge chosen (its only
+ * festival country, Israel, straight away), the globe zooms onto Israel and
+ * offers its cities; Haifa chosen narrows the year to Haifa; the capsule over
+ * the globe steps back out to Israel, then to the world. */
+async function press(page, selector) {
+  await page.click(selector);
   await page.mouse.move(0, 0);
   await settle(page);
 }
 
 module.exports = {
-  description: "choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place",
+  description: "the globe offers areas, then countries, then cities, each a badge with its count; choosing one zooms onto it and the capsule over the globe steps back out",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   ready: jerusalemReady,
   async capture(page, t) {
-    const before = await t.element("#timeline");
-    await clickEdinburgh(page);
-    const picked = await t.element("#timeline");
-    await clickEdinburgh(page);
-    return t.animate([before, picked, await t.element("#timeline")]);
+    const frames = [await t.element("#timeline")];
+    await press(page, '.tl-badge[data-place="IL"]');
+    frames.push(await t.element("#timeline"));
+    await press(page, '.tl-badge[data-place="IL/Haifa"]');
+    frames.push(await t.element("#timeline"));
+    await press(page, ".tl-up");
+    await press(page, ".tl-up");
+    frames.push(await t.element("#timeline"));
+    return t.animate(frames);
   },
 };

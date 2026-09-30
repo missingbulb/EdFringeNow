@@ -15,6 +15,8 @@ const TABLE = {
   columns: ["Place", "Type", "Subtype", "Leading the trip", "Drawn"],
   rows: [
     ["anywhere", "any", "any", "Jerusalem Comedy", "all six"],
+    ["Middle East", "any", "any", "none", "haifa-iff, docaviv, jerusalem-comedy"],
+    ["British Isles", "film", "any", "none", "eiff"],
     ["Israel", "any", "any", "Jerusalem Comedy", "haifa-iff, docaviv, jerusalem-comedy"],
     ["Edinburgh", "any", "any", "Jerusalem Comedy", "jerusalem-comedy, eiff, edfringe, edbookfest"],
     ["anywhere", "film", "any", "none", "haifa-iff, docaviv, eiff"],
@@ -28,7 +30,7 @@ const TABLE = {
   ],
 };
 
-const PLACE = { anywhere: "", Israel: "IL", Edinburgh: "GB/Edinburgh", "Tel Aviv": "IL/Tel Aviv" };
+const PLACE = { anywhere: "", "Middle East": "@middle-east", "British Isles": "@british-isles", Israel: "IL", Edinburgh: "GB/Edinburgh", "Tel Aviv": "IL/Tel Aviv" };
 const LEAD = { "Jerusalem Comedy": "jerusalem-comedy", none: null };
 const TYPE = { any: "", film: "film", comedy: "comedy", "mixed arts": "mixed", "art & books": "art" };
 const DRAWN = { "all six": FESTIVALS.map((f) => f.id).join(", "), nothing: "" };

@@ -18,12 +18,12 @@ module.exports = {
     const start = await viewOf(page);
     const box = await page.$eval("#timelineGlobe", (c) => {
       const r = c.getBoundingClientRect();
-      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2, r: r.width / 2 };
     });
     const lngOf = (v) => Number(v.view.split(",")[0]);
 
-    // A press that stays put is no drag.
-    await page.mouse.move(box.x + 30, box.y);
+    // A press that stays put, on sea far from any festival, is no drag.
+    await page.mouse.move(box.x, box.y - box.r * 0.7);
     await page.mouse.down();
     await page.mouse.up();
     assert.equal((await viewOf(page)).view, start.view, "a click turns nothing");
