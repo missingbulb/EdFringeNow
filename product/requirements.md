@@ -2021,9 +2021,20 @@ reaches it, and otherwise the one it covers most.
 
   ![planng-country-drill.23.27](requirements/screen/cases/planng-country-drill.23.27.png) <!-- req-gallery:23.27 -->
 
-- `23.28` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+- `23.28` However many festivals the year draws, the strip keeps its height: the rows past it scroll inside, faded at the edge to say more are there.
 
-  🚩 _Behavior leaf._ <!-- req-gallery:23.28 -->
+  ![planng-year-height.23.28](requirements/screen/cases/planng-year-height.23.28.png) <!-- req-gallery:23.28 -->
+
+  <details><summary>Notes</summary>
+
+  Seven and a half rows show, so a half-hidden row also hints at the scroll.
+  The months, the trip's band and its ends stay put while the rows scroll
+  under them; a long unfiltered year is meant to invite the menus (23.24).
+  </details>
+
+- `23.29` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.29 -->
 
   <details><summary>Notes</summary>
 
@@ -2031,9 +2042,9 @@ reaches it, and otherwise the one it covers most.
   asked for, the globe stops where it is let go.
   </details>
 
-- `23.29` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
+- `23.30` Choosing a lit country on the globe narrows the year to it and turns the globe to face it; choosing it again shows every place.
 
-  ![planng-globe-pick.23.29](requirements/screen/cases/planng-globe-pick.23.29.png) <!-- req-gallery:23.29 -->
+  ![planng-globe-pick.23.30](requirements/screen/cases/planng-globe-pick.23.30.png) <!-- req-gallery:23.30 -->
 
   <details><summary>Notes</summary>
 
@@ -2042,9 +2053,9 @@ reaches it, and otherwise the one it covers most.
   same way. A country with no festival is not a choice.
   </details>
 
-- `23.30` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
+- `23.31` Choosing a type's picture narrows the year to that type and offers its subtypes in a menu under the grid; choosing it again shows every type.
 
-  ![planng-type-pick.23.30](requirements/screen/cases/planng-type-pick.23.30.png) <!-- req-gallery:23.30 -->
+  ![planng-type-pick.23.31](requirements/screen/cases/planng-type-pick.23.31.png) <!-- req-gallery:23.31 -->
 
   <details><summary>Notes</summary>
 
@@ -2079,6 +2090,10 @@ is looked up before the reader has said they fly.
   ![planng-way.24.9](requirements/screen/cases/planng-way.24.9.png) <!-- req-gallery:24.9 -->
 
 - `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
+
+- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's visible height, over the festivals beside the trip, and stay there while the festivals scroll.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:24.11 -->
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.10 -->
 

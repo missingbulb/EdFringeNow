@@ -1817,13 +1817,31 @@ body.festival-page {
   border-inline-start: 0;
   padding-inline-start: 0;
 }
-/* Under the festivals' rows the track keeps a lane of its own for the trip's
-   grips and the travel pictures beside them, so neither ever covers a
-   festival. */
+/* The festivals' rows scroll inside a strip that keeps its height, however
+   many the year draws; the trip's band, its ends and the travel pictures stay
+   put over them. The scrollbar is left out so the rows keep the months' exact
+   width, and a fade at an edge says more rows lie past it. */
 .tl-track {
-  --lane: 60px;
   position: relative;
-  min-height: calc(36px + var(--lane));
+}
+.tl-rows {
+  position: relative;
+  min-height: 64px;
+  max-height: calc(7.5 * 30px + 6px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.tl-rows::-webkit-scrollbar {
+  display: none;
+}
+.tl-rows.is-more-below {
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
+}
+.tl-rows.is-more-above {
+  mask-image: linear-gradient(to top, #000 calc(100% - 30px), transparent);
+}
+.tl-rows.is-more-above.is-more-below {
+  mask-image: linear-gradient(transparent, #000 30px, #000 calc(100% - 30px), transparent);
 }
 .tl-period {
   position: absolute;
@@ -2035,14 +2053,15 @@ body.festival-page {
   background: var(--violet);
 }
 /* The planner's own grip (plan.css's .win-edge pill, upright here): two white
-   bars on a violet capsule, running along the line it grabs. */
+   bars on a violet capsule, running along the line it grabs, at the middle of
+   the rows in view (the handle reaches 26px above them, over the months). */
 .tl-grip {
   position: absolute;
-  bottom: calc(var(--lane) / 2);
+  top: calc(50% + 13px);
   left: 50%;
   width: 12px;
   height: 26px;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, -50%);
   border-radius: 7px;
   background-color: var(--violet);
   background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
@@ -2054,7 +2073,7 @@ body.festival-page {
 }
 .tl-handle:hover .tl-grip,
 .tl-handle:focus-visible .tl-grip {
-  transform: translate(-50%, 50%) scale(1.12);
+  transform: translate(-50%, -50%) scale(1.12);
 }
 .tl-handle:focus-visible {
   outline: none;
@@ -2110,12 +2129,14 @@ body.festival-page {
   transform: translateX(-3px);
 }
 /* The way there and back: a large picture beside each end of the trip, just
-   outside its line, the way out before the first day and home after the last.
+   outside its line at the middle of the rows in view, the way out before the
+   first day and home after the last. It covers the festivals it sits over,
+   which lie outside the trip.
    Until the reader says how they travel it keeps changing between the ways,
    which is what asks for the click; once said it holds still. */
 .tl-way {
   position: absolute;
-  bottom: calc(var(--lane) / 2);
+  top: 50%;
   width: 52px;
   height: 52px;
   padding: 5px;
@@ -2130,16 +2151,16 @@ body.festival-page {
   display: none;
 }
 .tl-way--from {
-  transform: translate(calc(-100% - 12px), 50%);
+  transform: translate(calc(-100% - 12px), -50%);
 }
 .tl-way--to {
-  transform: translate(12px, 50%);
+  transform: translate(12px, -50%);
 }
 [dir="rtl"] .tl-way--from {
-  transform: translate(calc(100% + 12px), 50%);
+  transform: translate(calc(100% + 12px), -50%);
 }
 [dir="rtl"] .tl-way--to {
-  transform: translate(-12px, 50%);
+  transform: translate(-12px, -50%);
 }
 .tl-way.is-unsettled {
   border-style: dashed;
