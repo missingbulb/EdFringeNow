@@ -1,23 +1,11 @@
 {
   "usage-findings": {
-    "value": 82,
-    "previous": 81,
-    "note": "2026-09-01 to 2026-09-28"
+    "value": 76,
+    "previous": 82,
+    "note": "2026-09-02 to 2026-09-29"
   },
   "usage-newest": {
     "rows": [
-      {
-        "subject": "committing",
-        "rule": "skill-forced-only-small",
-        "cause": "known",
-        "since": "2026-09-29"
-      },
-      {
-        "subject": "flat-declarations-current",
-        "rule": "check-never-fires",
-        "cause": "unknown",
-        "since": "2026-09-28"
-      },
       {
         "subject": "preferences-store-codeowners",
         "rule": "check-never-fires",
@@ -62,6 +50,18 @@
       },
       {
         "subject": "cloudflare-site/publishes-a-site-directory",
+        "rule": "check-never-fires",
+        "cause": "unknown",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "committing",
+        "rule": "skill-always-loaded",
+        "cause": "known",
+        "since": "2026-09-26"
+      },
+      {
+        "subject": "conformance-work-scope",
         "rule": "check-never-fires",
         "cause": "unknown",
         "since": "2026-09-26"
