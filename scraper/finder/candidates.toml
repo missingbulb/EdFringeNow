@@ -1099,3 +1099,1866 @@ platform = "runsignup"
 status = "candidate"
 found_via = ["runsignup"]
 checked = "2026-09-29"
+
+[[candidate]]
+id = "gnu-tools-cauldron"
+name = "GNU Tools Cauldron"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://conf.gnu-tools-cauldron.org/prg26/"
+programme = "https://conf.gnu-tools-cauldron.org/prg26/schedule/"
+next_first = "2026-10-02"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "49 talks in 4 rooms; x86 BoF, 3 Oct 10:30, room Room S (Floor 3) (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-atlanta"
+name = "BSides Atlanta"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "US"
+city = "Atlanta"
+site = "https://pretalx.com/bsidesatl-2026/"
+programme = "https://pretalx.com/bsidesatl-2026/schedule/"
+next_first = "2026-10-03"
+next_last = "2026-10-03"
+schedule = "published"
+schedule_evidence = "57 talks in 14 rooms; MCP Security: The Audit You Didn't Know You Were Running, 3 Oct 10:30, room Grand Ballroom (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycon-greece"
+name = "PyCon Greece"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "GR"
+city = "Athens"
+site = "https://pretalx.com/pycongr26/"
+programme = "https://pretalx.com/pycongr26/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-13"
+schedule = "published"
+schedule_evidence = "51 talks in 8 rooms; Making Music from Math with Python, 12 Oct 14:00, room Purifier Stage (pretalx schedule.json). The city is inferred from its Europe/Athens time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "scala-days"
+name = "Scala Days"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "DE"
+city = "Berlin"
+site = "https://cfp.scaladays.org/scala26/"
+programme = "https://cfp.scaladays.org/scala26/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-13"
+schedule = "published"
+schedule_evidence = "50 talks in 6 rooms; Shopping for a Scala Framework, 12 Oct 15:00, room Kesselhaus (pretalx schedule.json). The city is inferred from its Europe/Berlin time zone and the Kesselhaus room."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "matrix-conference"
+name = "The Matrix Conference"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "SE"
+city = "Malmö"
+site = "https://cfp.2026.matrix.org/matrix-conference-2026/"
+programme = "https://cfp.2026.matrix.org/matrix-conference-2026/schedule/"
+next_first = "2026-10-20"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "71 talks in 4 rooms; Project Hydra (phase 2+3): further improving the security of the federation protocol, 21 Oct 15:15, room Sofya (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "swiss-python-summit"
+name = "Swiss Python Summit"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CH"
+city = "Rapperswil"
+site = "https://talks.python-summit.ch/swiss-python-summit-2026/"
+programme = "https://talks.python-summit.ch/swiss-python-summit-2026/schedule/"
+next_first = "2026-10-22"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "22 talks in 1 rooms; Profiling Python: From cProfile to Sampling, 22 Oct 14:30, room Aula 4.101 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "correctiv-lokal-konferenz"
+name = "CORRECTIV.Lokal Konferenz"
+kind = "academic"
+subtypes = ["academic-journalism"]
+country = "DE"
+city = "Magdeburg"
+site = "https://pretalx.com/correctiv-lokal-konferenz-2026/"
+programme = "https://pretalx.com/correctiv-lokal-konferenz-2026/schedule/"
+next_first = "2026-10-16"
+next_last = "2026-10-18"
+schedule = "published"
+schedule_evidence = "50 talks in 8 rooms; Wenn alles kaputt geht, wie machen wir es wieder heile?, 17 Oct 14:30, room Raum 2: Bildung (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "american-modelica-conference"
+name = "American Modelica and FMI Conference"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "US"
+city = "Atlanta"
+site = "https://pretalx.com/amfc-2026/"
+programme = "https://pretalx.com/amfc-2026/schedule/"
+next_first = "2026-10-12"
+next_last = "2026-10-14"
+schedule = "published"
+schedule_evidence = "49 talks in 3 rooms; A Templated Modelica Model for Decoupling Physical System and Control in Resilient Community Energy Systems, 13 Oct 14:15, room ASDL Code (pretalx schedule.json). The city is inferred from its ASDL (Georgia Tech) rooms."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-augusta"
+name = "BSidesAugusta"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "US"
+city = "Augusta"
+site = "https://pretalx.com/bsidesaugusta-2026/"
+programme = "https://pretalx.com/bsidesaugusta-2026/schedule/"
+next_first = "2026-10-24"
+next_last = "2026-10-24"
+schedule = "published"
+schedule_evidence = "47 talks in 5 rooms; Finding Evil Fast: Windows Memory Triage with Volatility 3, 24 Oct 10:00, room Track 1 - Plug N Play (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "texas-linux-fest"
+name = "Texas Linux Fest"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Austin"
+site = "https://pretalx.com/txlf2026/"
+programme = "https://pretalx.com/txlf2026/schedule/"
+next_first = "2026-11-06"
+next_last = "2026-11-07"
+schedule = "published"
+schedule_evidence = "45 talks in 6 rooms; Growing Open Source in Closed Ecosystems, 7 Nov 10:00, room Big Tex (pretalx schedule.json). The city is not in the export; Austin is its usual host."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-munich"
+name = "BSides Munich"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "DE"
+city = "Munich"
+site = "https://pretalx.com/bsides-munich-2026/"
+programme = "https://pretalx.com/bsides-munich-2026/schedule/"
+next_first = "2026-11-07"
+next_last = "2026-11-09"
+schedule = "published"
+schedule_evidence = "31 talks in 9 rooms; Using Deception to Halt Agentic AI Attacks, 7 Nov 14:00, room Hochschule München - R1.005 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kvm-forum"
+name = "KVM Forum"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CA"
+city = "Vancouver"
+site = "https://pretalx.com/kvm-forum-2026/"
+programme = "https://pretalx.com/kvm-forum-2026/schedule/"
+next_first = "2026-11-12"
+next_last = "2026-11-13"
+schedule = "published"
+schedule_evidence = "43 talks in 2 rooms; GPU paravirtualization: A perspective from QEMU, 12 Nov 13:45, room 2 (pretalx schedule.json). The city is inferred from its Canada/Pacific time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "dinacon"
+name = "DINAcon"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CH"
+city = "Bern"
+site = "https://pretalx.com/dinacon-2026/"
+programme = "https://pretalx.com/dinacon-2026/schedule/"
+next_first = "2026-11-18"
+next_last = "2026-11-18"
+schedule = "published"
+schedule_evidence = "40 talks in 5 rooms; A Practical Guide to Fast and Sustainable LLMs, 18 Nov 12:05, room Anker/Bubenberg/Erlach (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "open-source-experience"
+name = "Open Source Experience"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "FR"
+city = "Paris"
+site = "https://pretalx.com/open-source-experience-2026/"
+programme = "https://pretalx.com/open-source-experience-2026/schedule/"
+next_first = "2026-12-09"
+next_last = "2026-12-10"
+schedule = "published"
+schedule_evidence = "100 talks in 6 rooms; Building the Open Source AI Euro Stack: A Vendor-Neutral Anchor for Europe, 9 Dec 16:20, room Pierre Ficheux (plénière) (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "linuxdays-prague"
+name = "LinuxDays"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://pretalx.linuxdays.cz/linuxdays-2026/"
+programme = "https://pretalx.linuxdays.cz/linuxdays-2026/schedule/"
+next_first = "2026-10-03"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "74 talks in 5 rooms; Ochrana před framing útoky včera a dnes, 3 Oct 14:00, room 107 (pretalx schedule.json)."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "surf-onderwijsdagen"
+name = "SURF Onderwijsdagen"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "NL"
+city = "Utrecht"
+site = "https://pretalx.surf.nl/surf-onderwijsdagen-2026/"
+programme = "https://pretalx.surf.nl/surf-onderwijsdagen-2026/schedule/"
+next_first = "2026-11-10"
+next_last = "2026-11-11"
+schedule = "published"
+schedule_evidence = "95 talks in 11 rooms; KRITIKOS: teach your students to think for themselves about AI (ENG), 10 Nov 14:05, room Tango 1 (pretalx schedule.json). The city is not in the export."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pidfest"
+name = "PIDfest"
+kind = "academic"
+subtypes = ["academic-information-science"]
+country = "NL"
+city = "Leiden"
+site = "https://pretalx.surf.nl/pidfest-26-2026/"
+programme = "https://pretalx.surf.nl/pidfest-26-2026/schedule/"
+next_first = "2026-10-27"
+next_last = "2026-10-29"
+schedule = "published"
+schedule_evidence = "113 talks in 9 rooms; Your Data Starts at the Instrument: Why DAQs Need PIDs Too, 27 Oct 15:00, room T-00-006 (LUMC) (pretalx schedule.json). The city is inferred from its LUMC rooms."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "open-earth-monitor-global-workshop"
+name = "Open-Earth-Monitor Global Workshop"
+kind = "academic"
+subtypes = ["academic-earth-science"]
+country = "ES"
+city = "Madrid"
+site = "https://pretalx.earthmonitor.org/global-workshop-2026/"
+programme = "https://pretalx.earthmonitor.org/global-workshop-2026/schedule/"
+next_first = "2026-10-07"
+next_last = "2026-10-09"
+schedule = "published"
+schedule_evidence = "67 talks in 3 rooms; Satellite-Based Anomaly Detection using GeoAI Embeddings: A Scalable Workflow, 7 Oct 16:45, room Aula Magna (pretalx schedule.json). The city is inferred from its Europe/Madrid time zone."
+platform = "pretalx"
+status = "candidate"
+found_via = ["pretalx", "pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chaos-communication-congress"
+name = "Chaos Communication Congress (40C3)"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "DE"
+city = "Hamburg"
+site = "https://cfp.cccv.de/40c3/"
+next_first = "2026-12-27"
+next_last = "2026-12-30"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-12-06"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "seagl"
+name = "SeaGL (Seattle GNU/Linux Conference)"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Seattle"
+site = "https://pretalx.seagl.org/2026/"
+next_first = "2026-10-23"
+next_last = "2026-10-24"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. Its landing page already links a schedule preview."
+recheck = "2026-10-05"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "fosscomm"
+name = "FOSSCOMM"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "GR"
+city = "Athens"
+site = "https://pretalx.fosscomm.gr/fosscomm-2026/"
+next_first = "2026-10-31"
+next_last = "2026-11-01"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Athens time zone; the host city moves every year."
+recheck = "2026-10-12"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hexacon"
+name = "Hexacon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "FR"
+city = "Paris"
+site = "https://cfp.hexacon.fr/hexacon-2026/"
+next_first = "2026-10-16"
+next_last = "2026-10-17"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-10-01"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chcon"
+name = "CHCon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "NZ"
+city = "Christchurch"
+site = "https://pretalx.com/chcon-2026/"
+next_first = "2026-11-18"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. Talk selection emails go out on 30 September 2026."
+recheck = "2026-10-28"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycon-sweden"
+name = "PyCon Sweden"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "SE"
+city = "Stockholm"
+site = "https://pretalx.com/pycon-sweden-2026/"
+next_first = "2026-11-19"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Stockholm time zone."
+recheck = "2026-10-29"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "suricon"
+name = "SuriCon"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "PT"
+city = "Lisbon"
+site = "https://pretalx.com/suricon2026/"
+next_first = "2026-11-16"
+next_last = "2026-11-20"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Lisbon time zone."
+recheck = "2026-10-26"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bsides-london"
+name = "BSides London"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "GB"
+city = "London"
+site = "https://pretalx.com/bsides-london-2026/"
+next_first = "2026-12-12"
+next_last = "2026-12-12"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2026-11-21"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "csnog"
+name = "CSNOG"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "CZ"
+city = "Prague"
+site = "https://pretalx.csnog.eu/csnog-2027/"
+next_first = "2027-01-20"
+next_last = "2027-01-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Prague time zone."
+recheck = "2026-12-30"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "insomnihack"
+name = "Insomni'hack"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "CH"
+city = "Geneva"
+site = "https://cfp.insomnihack.ch/insomnihack-2027/"
+next_first = "2027-02-04"
+next_last = "2027-02-05"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-01-14"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "djangocon-europe"
+name = "DjangoCon Europe"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "AT"
+city = "Vienna"
+site = "https://pretalx.evolutio.pt/djangocon-europe-2027/"
+next_first = "2027-02-17"
+next_last = "2027-02-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its Europe/Vienna time zone; the host moves every year."
+recheck = "2027-01-27"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hackerhotel"
+name = "HackerHotel"
+kind = "academic"
+subtypes = ["academic-computer-security"]
+country = "NL"
+city = "Garderen"
+site = "https://pretalx.hackerhotel.nl/2027/"
+next_first = "2027-02-19"
+next_last = "2027-02-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-01-29"
+found_via = ["pretalx-instances"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "pycascades"
+name = "PyCascades"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+country = "US"
+city = "Seattle"
+site = "https://pretalx.com/pycascades-2027/"
+next_first = "2027-03-20"
+next_last = "2027-03-21"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released."
+recheck = "2027-02-27"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "rural-history-conference"
+name = "Rural History (EURHO conference)"
+kind = "academic"
+subtypes = ["academic-history"]
+country = "SI"
+city = "Koper"
+site = "https://sessions.ruralhistory2027.fhs.upr.si/upfhs/"
+next_first = "2027-09-07"
+next_last = "2027-09-10"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its host, the University of Primorska's humanities faculty."
+recheck = "2027-08-17"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "canadian-health-libraries-conference"
+name = "Canadian Health Libraries Association conference (CHLA/ABSC)"
+kind = "academic"
+subtypes = ["academic-information-science"]
+country = "CA"
+city = "Montreal"
+site = "https://pretalx.com/chla-absc-2027/"
+next_first = "2027-06-01"
+next_last = "2027-06-04"
+schedule = "expected"
+platform = "pretalx"
+status = "watch"
+reason = "Its pretalx schedule.json answers 404 until the schedule is released. The city is inferred from its America/Montreal time zone."
+recheck = "2027-05-11"
+found_via = ["pretalx"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "new-orleans-film-festival"
+name = "New Orleans Film Festival"
+kind = "film"
+country = "US"
+city = "New Orleans"
+site = "https://nofs.eventive.org"
+programme = "https://nofs.eventive.org/schedule"
+next_first = "2026-10-22"
+next_last = "2026-10-27"
+schedule = "published"
+schedule_evidence = "101 in-person screenings at 11 venues; Narrative Shorts: Love Letters, 24 Oct 16:15, The Broad Theater 4 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "monadnock-international-film-festival"
+name = "Monadnock International Film Festival (MONIFF)"
+kind = "film"
+country = "US"
+city = "Keene"
+site = "https://moniff2026.eventive.org"
+programme = "https://moniff2026.eventive.org/schedule"
+next_first = "2026-10-02"
+next_last = "2026-10-04"
+schedule = "published"
+schedule_evidence = "52 in-person screenings at 9 venues; Not a Photograph: The Mission of Burma Story, 2 Oct 18:00, SHOWROOM (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "singapore-international-film-festival"
+name = "Singapore International Film Festival"
+kind = "film"
+country = "SG"
+city = "Singapore"
+site = "https://sgiff.eventive.org"
+programme = "https://sgiff.eventive.org/schedule"
+next_first = "2026-10-21"
+next_last = "2026-11-07"
+schedule = "published"
+schedule_evidence = "139 in-person screenings at 20 venues; Fujiko, 25 Oct 14:00, Golden Village Bugis+, Hall 3 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tallgrass-film-festival"
+name = "Tallgrass Film Festival"
+kind = "film"
+country = "US"
+city = "Wichita"
+site = "https://tallgrassfilmfestival2026.eventive.org"
+programme = "https://tallgrassfilmfestival2026.eventive.org/schedule"
+next_first = "2026-10-15"
+next_last = "2026-10-18"
+schedule = "published"
+schedule_evidence = "70 in-person screenings at 13 venues; VORTEX Experimental Shorts, 16 Oct 17:15, BOULEVARD THEATRE 6 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tryon-international-film-festival"
+name = "Tryon International Film Festival"
+kind = "film"
+country = "US"
+city = "Tryon"
+site = "https://triff2026.eventive.org"
+programme = "https://triff2026.eventive.org/schedule"
+next_first = "2026-10-08"
+next_last = "2026-10-11"
+schedule = "published"
+schedule_evidence = "63 in-person screenings at 11 venues; Student Short Block H - (1:28:55) + Q&A, 10 Oct 12:00, Tryon Depot Room (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "viet-film-fest"
+name = "Viet Film Fest"
+kind = "film"
+country = "US"
+city = "Santa Ana"
+site = "https://vietfilmfest2026.eventive.org"
+programme = "https://vietfilmfest2026.eventive.org/schedule"
+next_first = "2026-10-08"
+next_last = "2026-10-23"
+schedule = "published"
+schedule_evidence = "35 in-person screenings at 3 venues; Hair, Paper, Water..., 9 Oct 13:00, Frida Cinema - Theater 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "santa-fe-international-film-festival"
+name = "Santa Fe International Film Festival"
+kind = "film"
+country = "US"
+city = "Santa Fe"
+site = "https://sfiff.eventive.org"
+programme = "https://sfiff.eventive.org/schedule"
+next_first = "2026-10-14"
+next_last = "2026-10-19"
+schedule = "published"
+schedule_evidence = "147 in-person screenings at 23 venues; Faust, 16 Oct 11:45, Sky Cinemas Midtown 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "london-latino-film-festival"
+name = "London Latino Film Festival"
+kind = "film"
+country = "GB"
+city = "London"
+site = "https://lolaff2026.eventive.org"
+programme = "https://lolaff2026.eventive.org/schedule"
+next_first = "2026-10-02"
+next_last = "2026-10-06"
+schedule = "published"
+schedule_evidence = "40 in-person screenings at 15 venues; Short Films: Stories of Resilience + Filmmakers Intro, 4 Oct 12:15, ICA | Institute of Contemporary Arts - Cinema 2 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "outshine-lgbtq-film-festival"
+name = "OUTshine LGBTQ+ Film Festival (fall)"
+kind = "film"
+country = "US"
+city = "Fort Lauderdale"
+site = "https://outshinefall2026.eventive.org"
+programme = "https://outshinefall2026.eventive.org/schedule"
+next_first = "2026-10-15"
+next_last = "2026-10-25"
+schedule = "published"
+schedule_evidence = "36 in-person screenings at 6 venues; Ballroom, 18 Oct 13:00, Gateway Theatre Fort Lauderdale (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "wildscreen-festival"
+name = "Wildscreen Festival"
+kind = "film"
+subtypes = ["film-wildlife"]
+country = "GB"
+city = "Bristol"
+site = "https://wsf26.eventive.org"
+programme = "https://wsf26.eventive.org/schedule"
+next_first = "2026-10-17"
+next_last = "2026-10-22"
+schedule = "published"
+schedule_evidence = "34 in-person screenings at 11 venues; SCREENING: LOST FOR WORDS (U), 19 Oct 17:00, Odeon - Bath (Eventive API). Screenings run in several UK cities besides its Bristol base."
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "silicon-valley-jewish-film-festival"
+name = "Silicon Valley Jewish Film Festival"
+kind = "film"
+subtypes = ["film-jewish"]
+country = "US"
+city = "San Jose"
+site = "https://svjff.eventive.org"
+programme = "https://svjff.eventive.org/schedule"
+next_first = "2026-10-10"
+next_last = "2026-10-25"
+schedule = "published"
+schedule_evidence = "9 in-person screenings at 2 venues; David, 18 Oct 14:00, AMC 14 (Eventive API)"
+platform = "eventive"
+status = "candidate"
+found_via = ["eventive", "eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "sundance-film-festival"
+name = "Sundance Film Festival"
+kind = "film"
+country = "US"
+city = "Boulder"
+site = "https://sundance-film-festival-2027.eventive.org"
+programme = "https://sundance-film-festival-2027.eventive.org/schedule"
+next_first = "2027-01-21"
+next_last = "2027-01-31"
+schedule = "expected"
+platform = "eventive"
+status = "watch"
+reason = "Its 2027 Eventive bucket holds only placeholder and test screenings (titles such as 'A Test New Frontier Sep 28', winners' slots, Park City venues copied from 2026); the real programme is announced in December. The festival moves to Boulder from 2027; the dates are approximate."
+recheck = "2026-12-20"
+found_via = ["eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cork-international-film-festival"
+name = "Cork International Film Festival"
+kind = "film"
+country = "IE"
+city = "Cork"
+site = "https://corkfilmfest.eventive.org"
+programme = "https://corkfilmfest.eventive.org/schedule"
+schedule = "expected"
+platform = "eventive"
+status = "watch"
+reason = "Its Eventive bucket holds only a 'TEST FILM' at the Arc Cinema on 13 Nov 2026; the 71st edition's programme is not loaded yet."
+recheck = "2026-10-20"
+found_via = ["eventive-discovery"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "litquake"
+name = "Litquake (San Francisco literary festival)"
+kind = "literature"
+country = "US"
+city = "San Francisco"
+site = "https://litquake2026.sched.com"
+programme = "https://litquake2026.sched.com"
+next_first = "2026-10-01"
+next_last = "2026-10-24"
+schedule = "published"
+schedule_evidence = "105 sessions at 60 locations; Tilar J. Mazzeo: The Sea Captain's Wife, 13 Oct 18:30, Mechanics' Institute, 57 Post St (Sched all.ics, times given in UTC). A few pre-festival events start in September and the Lit Crawl closes it on 24 Oct; the exact first day is approximate."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "fiat-ifta-world-conference"
+name = "FIAT/IFTA World Conference (International Federation of Television Archives)"
+kind = "academic"
+subtypes = ["academic-archives"]
+country = "BR"
+city = "São Paulo"
+site = "https://fiatiftaworldconference2026.sched.com"
+programme = "https://fiatiftaworldconference2026.sched.com"
+next_first = "2026-10-06"
+next_last = "2026-10-09"
+schedule = "published"
+schedule_evidence = "80 sessions in 10 rooms; Counter-archive of Women: Mapping, Preservation, and Diffusion of Short Films from Brazil's Military Dictatorship, 7 Oct 16:00, Grande Otelo Theater, Cinemateca Brasileira (Sched all.ics). The host city moves every year."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ase-annual-conference"
+name = "ASE Annual Conference (Association for Science Education)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "GB"
+city = "Northampton"
+site = "https://ase2027annconfnorthants.sched.com"
+programme = "https://ase2027annconfnorthants.sched.com"
+next_first = "2027-01-07"
+next_last = "2027-01-09"
+schedule = "published"
+schedule_evidence = "234 sessions in 24 rooms; (AQA): A-level science: Insights, support and future reform, 8 Jan 08:45, LH321 (Learning Hub Level 3), University of Northampton (Sched all.ics). The host moves every year."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "wspa-annual-conference"
+name = "WSPA Annual Conference"
+kind = "academic"
+subtypes = ["academic-psychology"]
+country = "US"
+city = "Kennewick"
+site = "https://2027wspaannualconference.sched.com"
+programme = "https://2027wspaannualconference.sched.com"
+next_first = "2027-02-28"
+next_last = "2027-03-03"
+schedule = "published"
+schedule_evidence = "51 sessions in 7 rooms; 09-Freedom of Speech, 1 Mar 15:15, Meeting Room A/B, 7016 W Grandridge Blvd (Sched all.ics). Which WSPA (the Washington state association) it is was not confirmed on the HTML page, which answers 403."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cpsi-creative-problem-solving-institute"
+name = "CPSI (Creative Problem Solving Institute)"
+kind = "academic"
+subtypes = ["academic-creativity"]
+country = "US"
+city = "Atlanta"
+site = "https://cpsiatlanta2027.sched.com"
+programme = "https://cpsiatlanta2027.sched.com"
+next_first = "2026-11-16"
+next_last = "2026-11-18"
+schedule = "published"
+schedule_evidence = "45 sessions in 8 rooms; Curiosity Reserves: Illuminating the Assumption Underneath CPS, 17 Nov 16:00, Room 208 (Sched all.ics). The slug says 2027 but every session falls on 16 to 18 November 2026."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "actem-conference"
+name = "ACTEM Conference (Maine educational technology)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Augusta"
+site = "https://actem2026.sched.com"
+programme = "https://actem2026.sched.com"
+next_first = "2026-10-15"
+next_last = "2026-10-16"
+schedule = "published"
+schedule_evidence = "114 sessions in 16 rooms; Apple Education Session, 15 Oct 13:10, Kennebec, Augusta Civic Center (Sched all.ics)."
+platform = "sched"
+status = "candidate"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "chemed-conference"
+name = "ChemEd (biennial chemistry education conference)"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Ypsilanti"
+site = "https://chemed2027.sched.com"
+next_first = "2027-07-11"
+next_last = "2027-07-15"
+schedule = "expected"
+platform = "sched"
+status = "watch"
+reason = "Its Sched event exists but all.ics answers 200 with no sessions yet."
+recheck = "2027-06-20"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "nccss-conference"
+name = "North Carolina Council for the Social Studies Conference"
+kind = "academic"
+subtypes = ["academic-education"]
+country = "US"
+city = "Winston-Salem"
+site = "https://nccss2027.sched.com"
+next_first = "2027-03-04"
+next_last = "2027-03-05"
+schedule = "expected"
+platform = "sched"
+status = "watch"
+reason = "Its Sched event exists but all.ics answers 200 with no sessions yet."
+recheck = "2027-02-11"
+found_via = ["sched"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-neurological-association-annual"
+name = "Israel Neurological Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הנוירולוגי בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://israelneurocongress.com/"
+programme = "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/"
+next_first = "2026-12-21"
+next_last = "2026-12-22"
+schedule = "published"
+schedule_evidence = "Session-level HTML grid by hall (Expo Tel Aviv pavilion 10, Halls A3 to A5): Oral Session 2, Stroke & Vascular Diseases, 21 Dec 2026 08:30-09:40, Hall A4. Session titles only, no per-talk rows yet."
+status = "candidate"
+found_via = ["ima-events-calendar", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "icisa"
+name = "ICISA, International Conference of the Israel Society of Anesthesiologists"
+name_local = "הכנס הבינלאומי של איגוד הרופאים המרדימים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.icisa2026.com/"
+programme = "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf"
+next_first = "2026-11-17"
+next_last = "2026-11-19"
+schedule = "published"
+schedule_evidence = "Six-page preliminary programme PDF, a grid of Hall A to Hall D per time slot: Tuesday 17 Nov 2026 08:30-09:30, Monitoring - All those Waves (first column, Hall A). The column-to-hall mapping is read from the PDF's header row; confirm on the final programme."
+status = "candidate"
+found_via = ["ima-events-calendar", "kld-events"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "iaem-annual"
+name = "Israeli Association for Emergency Medicine Annual Scientific Assembly"
+name_local = "הכנס השנתי של האיגוד הישראלי לרפואה דחופה"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Airport City"
+site = "https://emergencymedicine-2026.forms-wizard.biz/"
+programme = "https://emergencymedicine-2026.forms-wizard.biz/"
+next_first = "2026-10-21"
+next_last = "2026-10-21"
+schedule = "published"
+schedule_evidence = "Conference Agenda section of the site, per session with hall: Plenary Session 21 Oct 2026 09:00-10:45, Hall A (Avenue, Airport City), then parallel sessions 11:15-13:00. One conference day plus pre-conference workshops on 20 Oct."
+status = "candidate"
+reason = "One day, but several parallel halls."
+found_via = ["ima-events-calendar", "forms-wizard"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-transplantation-society-annual"
+name = "Israel Transplantation Society Annual Conference (33rd)"
+name_local = "הכנס השנתי ה־33 של החברה הישראלית להשתלות"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://transplantation26.forms-wizard.biz/"
+programme = "https://storage.googleapis.com/forms-wizard-biz-uploads/forms-wizard/19/ckeditor_assets/attachments/16957/2ebc934ee0efc9a61a90768b5acc0321652b3a77.pdf"
+next_first = "2026-10-28"
+next_last = "2026-10-29"
+schedule = "partial"
+schedule_evidence = "Preliminary programme PDF with times but no halls: Session 1, Conference opening, 28 Oct 2026 15:30-15:35; four parallel post-conference symposia (heart, kidney, liver, lung) 29 Oct 13:15-15:15 with no rooms named. Venue: David InterContinental, Tel Aviv (hotel package on the registration page)."
+status = "watch"
+reason = "Times published, halls not; four parallel symposia need rooms."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar", "forms-wizard"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "seeei-electricity-energy"
+name = "Electricity & Energy, annual convention of SEEEI (Society of Electrical and Electronics Engineers in Israel)"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "IL"
+city = "Eilat"
+site = "https://www.electricity2026.com/en"
+programme = "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf"
+next_first = "2026-11-10"
+next_last = "2026-11-12"
+schedule = "published"
+schedule_evidence = "Four-page programme PDF with rooms: Workshop A, Energy Storage Technologies, Management and Maintenance, Tuesday 10 Nov 2026 15:30, Herods Boutique Hotel, Kings AB. The site's home page still shows 2025 text and third-party listings say 11-14 Nov at the Dan Eilat; trust the PDF."
+status = "candidate"
+found_via = ["search-english-annual-meeting", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ism-annual-meeting"
+name = "Israel Society for Microbiology (ISM) Annual Meeting"
+kind = "academic"
+subtypes = ["academic-biology"]
+country = "IL"
+site = "https://ismicrobiology.com/en/"
+schedule = "expected"
+schedule_evidence = "The 2026 meeting (September 2026, already past) published a per-talk PDF with halls: Session II, Eukaryotic Microbiology & Parasitology, 14:00-15:30, Building 35 Hall 003 (ismicrobiology.com/wp-content/uploads/2026/09/ISM-2026-Program-06.09.2026.pdf)."
+status = "watch"
+reason = "Held each September; the 2027 date is not announced. Secretariat Kenes Israel (the older ism.org.il names Diesenhaus)."
+recheck = "2027-06-01"
+found_via = ["israeli-scientific-societies", "kenes-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-eilot-renewable-energy-conference"
+name = "Eilat-Eilot International Renewable Energy Conference"
+kind = "academic"
+subtypes = ["academic-engineering"]
+country = "IL"
+city = "Eilat"
+site = "https://eilatenergy.org/"
+programme = "https://eilatenergy.org/conference-program/"
+schedule = "expected"
+schedule_evidence = "The January 2026 edition's HTML programme names a hall per session: Opening Plenary, Wednesday 21 Jan 2026 09:45-11:30, Big Blue Hall. The page still shows 2026."
+status = "watch"
+reason = "Biennial: eilateilot.org/our-events/ says the 12th is in January 2028, outside this window. Programme format qualifies (halls per session)."
+recheck = "2027-11-01"
+found_via = ["search-english-annual-meeting"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-heart-society-annual"
+name = "Israel Heart Society Annual Conference (with the Israel Society of Cardiothoracic Surgery)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://conf.israel-heart.org.il/"
+schedule = "expected"
+schedule_evidence = "Past editions' agendas are on EventAct (68th: program.eventact.com/Program/ie4AAAA/iYTQ/en); the 73rd ran 28-29 Jul 2026 at the David InterContinental after a postponement from the spring."
+platform = "eventact"
+status = "watch"
+reason = "The 74th (normally April to June, Tel Aviv) is not announced."
+recheck = "2027-02-01"
+found_via = ["search-english-annual-meeting", "eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-psychiatric-association-annual"
+name = "Israel Psychiatric Association Annual Conference"
+name_local = "הכנס השנתי של איגוד הפסיכיאטריה בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Dead Sea"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16216"
+next_first = "2026-11-18"
+next_last = "2026-11-20"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at the VERT Dead Sea hotel; the IMA notice says the programme will be published soon."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-25"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-surgical-association-annual"
+name = "Israel Surgical Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הישראלי לכירורגיה"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16671"
+next_first = "2026-11-11"
+next_last = "2026-11-12"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Two days at a Nevel David Galil hotel; only a save-the-date so far."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-medical-genetics-annual"
+name = "Israeli Society of Medical Genetics Conference"
+name_local = "הכנס של האיגוד הישראלי לגנטיקה רפואית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16499"
+next_first = "2026-10-28"
+next_last = "2026-10-29"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Rescheduled to two days at the Nevel David Galil Resort; registration form and programme 'will be published soon'."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-15"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-geriatric-medicine-annual"
+name = "Israel Geriatric Medicine Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הישראלי לרפואה גריאטרית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Galilee"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16662"
+next_first = "2026-11-09"
+next_last = "2026-11-10"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Two days at the Galilion hotel after a postponement; programme 'will be published soon'."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-child-neurology-annual"
+name = "Israel Child Neurology and Development Association (INA) Annual Conference"
+name_local = "הכנס השנתי של האיגוד לנוירולוגיה של הילד והתפתחותו"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Herzliya"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16653"
+next_first = "2026-11-12"
+next_last = "2026-11-14"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at the Dan Accadia, Herzliya; abstracts through EventAct (Event=iDZYAAA), so the agenda will likely be an EventAct widget."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-25"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-hematology-annual"
+name = "Israeli Society of Hematology and Transfusion Medicine Conference"
+name_local = "כנס האיגוד הישראלי להמטולוגיה ורפואת עירויים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=17062"
+next_first = "2026-10-15"
+next_last = "2026-10-17"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Three days at Kfar Blum; abstracts closed 19 Sep 2026, no programme link yet."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-08"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-plastic-surgery-annual"
+name = "Israel Society of Plastic and Aesthetic Surgery Annual Conference"
+name_local = "כנס השנתי של האיגוד הישראלי לכירורגיה פלסטית ואסתטית"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16673"
+next_first = "2026-11-10"
+next_last = "2026-11-11"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date only; venue not named."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2026-10-20"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-ent-annual"
+name = "Israeli Society of Otolaryngology Head and Neck Surgery Annual Conference"
+name_local = "הכנס השנתי של איגוד רופאי אף אוזן גרון ומנתחי ראש צוואר בישראל"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=16638"
+next_first = "2027-03-31"
+next_last = "2027-04-01"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date: David InterContinental, Tel Aviv."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2027-03-01"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-fertility-association-annual"
+name = "Israel Fertility Association (IFA) Annual Conference"
+name_local = "הכנס השנתי של האגודה הישראלית לחקר הפריון (איל״ה)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+site = "https://www.ima.org.il/Main/ViewContent.aspx?EventId=17049"
+next_first = "2027-03-15"
+next_last = "2027-03-16"
+schedule = "expected"
+schedule_evidence = "IMA calendar notice: Save the date only; venue and programme to follow."
+status = "watch"
+reason = "Multi-day specialty meeting; programme not out."
+recheck = "2027-02-15"
+found_via = ["ima-events-calendar"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "isees-annual-conference"
+name = "ISEES Annual Conference for Science and Environment (Israel Society of Ecology and Environmental Sciences)"
+name_local = "הוועידה השנתית למדע וסביבה"
+kind = "academic"
+subtypes = ["academic-environment"]
+country = "IL"
+city = "Jerusalem"
+site = "https://conference.isees.org.il/"
+schedule = "expected"
+schedule_evidence = "The 2026 edition (Wed 8 to Thu 9 Jul 2026, Hebrew University) published a 49-page full programme and a two-page grid of parallel sessions by track, each track in a numbered hall (ISEES26_Prog_Short_draft5.pdf: Wednesday 8, track Marine conservation, 'Eilat Bay, a climate refuge', hall 2 or 3). Text extraction loses the times; read the grid visually before adopting."
+status = "watch"
+reason = "Annual about July, about 2,000 participants and a dozen parallel halls; the 2027 edition is not announced."
+recheck = "2027-05-01"
+found_via = ["israeli-scientific-societies"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ispsa-annual-conference"
+name = "Israel Political Science Association Annual Conference"
+name_local = "הכנס השנתי של האגודה הישראלית למדע המדינה"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+city = "Ra'anana"
+site = "https://www.ispsa.org/annual-conference-2026"
+schedule = "expected"
+status = "watch"
+reason = "The 5787 conference is at the Open University in February 2027 (exact days not given); call for papers open. Whether past programmes named rooms per panel is unchecked."
+recheck = "2027-01-10"
+found_via = ["israeli-scientific-societies", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-geographical-association-conference"
+name = "Israeli Geographical Association Annual Conference"
+name_local = "כנס האגודה הגאוגרפית הישראלית"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+site = "https://conferences.bgu.ac.il/geogrphicalsocietycference"
+schedule = "expected"
+schedule_evidence = "The December 2025 edition at Ben-Gurion University published a skeleton programme with rooms (21 Dec 2025 11:40-12:50, opening plenary, Building 72, Zonnenfeld Hall; parallel sessions in rooms 210-218) and a full programme on the same EventAct-style site."
+status = "watch"
+reason = "Held each Hanukkah, rotating host; the December 2026 host and date were not found."
+recheck = "2026-11-01"
+found_via = ["search-hebrew-programme", "bgu-conferences"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-sociological-society-conference"
+name = "Israeli Sociological Society Annual Conference"
+name_local = "הכנס השנתי של האגודה הסוציולוגית הישראלית"
+kind = "academic"
+subtypes = ["academic-social-sciences"]
+country = "IL"
+site = "https://israel-sociology.org.il/"
+schedule = "unknown"
+status = "watch"
+reason = "Annual, usually February, rotating host; nothing about a 2027 edition on the society's site on 2026-09-29."
+recheck = "2026-12-01"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-gynecology-conference"
+name = "Israeli Conference of Gynecology (8th)"
+name_local = "הכינוס ה-VIII לרפואת נשים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://ws.eventact.com/gynecologyviiicference"
+next_first = "2026-11-05"
+next_last = "2026-11-07"
+schedule = "unknown"
+platform = "eventact"
+status = "watch"
+reason = "Three days on Comtec's EventAct list; its home page embeds no programme widget yet ; EventAct lists the venue as the Pastoral Kfar Blum Hotel."
+recheck = "2026-10-20"
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "eilat-educational-course-epilepsy"
+name = "Eilat Educational Course: Pharmacological Treatment of Epilepsy (12th)"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Eilat"
+site = "http://eilatedu.com"
+programme = "https://events.eventact.com/comtec/38405/WebSitePage/uploads/Eilat_Edu_2027__Program.pdf"
+next_first = "2027-09-12"
+next_last = "2027-09-17"
+schedule = "published"
+schedule_evidence = "Ten-page programme PDF with times but one room: Opening Session, Day 1 (13 Sep 2027) 08:00-08:30. A single-track residential course for enrolled students."
+platform = "eventact"
+status = "rejected"
+reason = "Single-track course for a closed student cohort: nothing to plan between halls."
+found_via = ["eventact"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israel-pediatric-association-annual"
+name = "Israel Pediatric Association Annual Conference"
+name_local = "כנס האיגוד הישראלי לרפואת ילדים"
+kind = "academic"
+subtypes = ["academic-medicine"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://ws.eventact.com/isrelimedicalassociiconfere"
+next_first = "2026-11-18"
+next_last = "2026-11-18"
+schedule = "expected"
+schedule_evidence = "Listed by the PCO Think (EventAct company 312) for 18 Nov 2026 at Expo Tel Aviv pavilion 10, but its EventAct site answers 'Website not found'. Earlier editions' PDFs (events.eventact.com/Think/36194/uploads/Program03.pdf, 14 Feb 2024) run parallel morning sessions, 10:40-11:55 Session 1 Allergy and Asthma, without hall names in the extracted text."
+platform = "eventact"
+status = "watch"
+reason = "One day with parallel sessions; programme not out and halls unconfirmed."
+recheck = "2026-11-01"
+found_via = ["eventact", "think-eventact", "ima-events-calendar"]
+checked = "2026-09-29"
+
+# ── Sources ──
+
+[[candidate]]
+id = "jerusalem-design-week"
+name = "Jerusalem Design Week"
+name_local = "שבוע העיצוב ירושלים"
+kind = "art"
+subtypes = ["art-design"]
+country = "IL"
+city = "Jerusalem"
+site = "https://jdw.co.il/en"
+programme = "https://jdw.co.il/en/events"
+schedule = "expected"
+schedule_evidence = "The 2026 events page is server-rendered by day: Thursday 9/7, Opening Concert - Nunu, 21:00, Main Stage - Courtyard (Hansen House)."
+platform = "custom"
+status = "watch"
+reason = "Held 9 to 16 July 2026; the July 2027 edition's events page is expected around June. The exhibitions run all week; the events strand (talks, concerts, workshops, tours) is the per-session part."
+recheck = "2027-06-01"
+found_via = ["itraveljerusalem", "tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kol-hamusica-upper-galilee"
+name = "Voice of Music in the Upper Galilee (Kol HaMusica) chamber music festival"
+name_local = "פסטיבל קול המוסיקה בגליל העליון"
+kind = "music"
+subtypes = ["music-classical", "music-chamber"]
+country = "IL"
+city = "Kfar Blum"
+site = "https://www.kol-hamusica.org.il/"
+programme = "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+next_first = "2026-10-28"
+next_last = "2026-11-01"
+schedule = "published"
+schedule_evidence = "14 events on the Upper Galilee culture Smarticket tenant, server-rendered: [2] Shlomi Shaban and the piano, Beit HaAm Kfar Blum, Wednesday 28 October 2026 at 20:30; [3] Kav HaTzel, Klor Centre hall (Kfar Blum), 29 October 2026 at 10:30."
+platform = "smarticket"
+status = "candidate"
+found_via = ["search-hebrew-programme", "smarticket"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "tel-aviv-jazz-festival"
+name = "Tel Aviv-Yafo Jazz Festival"
+name_local = "פסטיבל הג'אז של תל אביב-יפו"
+kind = "music"
+subtypes = ["music-jazz"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.teder.fm/events"
+schedule = "expected"
+schedule_evidence = "The 2024 edition's page (teder.fm/events/13114) lists every set by day, time and stage: 13.12, 21:00, Tamir Muskat & Tom Meira Armony, Teder main yard, Beit Romano; plus Kissa, Matmon, Juanita garden, Park HaMesila and Tel Aviv Museum of Art."
+platform = "custom"
+status = "watch"
+reason = "Run by Teder with the municipality at Beit Romano, free entry, late November or mid-December; the 2026 edition's Teder event page was not yet up on 2026-09-29 (dates reported as 27 to 29 November or mid-December, unconfirmed). No standalone festival site: the programme is a Teder event page."
+recheck = "2026-11-01"
+found_via = ["search-hebrew-programme", "tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "theatronetto"
+name = "Theatronetto, festival of one-person plays"
+name_local = "פסטיבל תיאטרונטו"
+kind = "theatre"
+subtypes = ["theatre-solo"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.jaffatheatre.org.il/theatronetto-2026/"
+schedule = "expected"
+schedule_evidence = "The 2026 (35th) edition's programme, as Habama printed it (habama.co.il ArticleId=36283), gives every performance: Friday 22 May at 13:45 and Saturday 23 May at 19:15 and 21:15, Nissan Nativ hall; about ten shows in four rooms in Old Jaffa and at Tavo Herzliya."
+platform = "custom"
+status = "watch"
+reason = "Held in Passover week, Jaffa Theatre with the municipality; 2026 was postponed to Shavuot (22 to 25 May) by the war. The Jaffa Theatre site answers a SiteGround captcha (sgcaptcha, HTTP 202) to curl, WP REST API included, so the programme has to come from another route."
+recheck = "2027-02-15"
+found_via = ["il-listing-sites", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "israeli-group-therapy-conference"
+name = "Israeli Association for Group Guidance and Therapy biennial conference"
+name_local = "כנס העמותה הישראלית להנחיה ולטיפול קבוצתי"
+kind = "academic"
+subtypes = ["academic-psychology"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://isragrouptherapy.org.il/"
+programme = "https://isragrouptherapy.org.il/madai-seats-2027/"
+next_first = "2027-02-15"
+next_last = "2027-02-17"
+schedule = "unknown"
+platform = "custom"
+status = "watch"
+reason = "At the Rabin Center; the site has a sessions page (madai-seats-2027) and a presenters page, and search snippets describe three tracks of parallel sessions a day, but every URL, WP REST API included, answers a SiteGround captcha (sgcaptcha, HTTP 202) to curl, so session times are unverified."
+recheck = "2026-12-01"
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-east-and-west"
+name = "Jerusalem East and West Festival"
+name_local = "פסטיבל ירושלים מזרח ומערב"
+kind = "music"
+country = "IL"
+city = "Jerusalem"
+site = "https://www.jerusalem.muni.il/he/experience/allevents/eastwest/"
+next_first = "2026-06-24"
+next_last = "2026-06-25"
+schedule = "none"
+status = "rejected"
+reason = "Two evening concerts on one stage at the Sultan's Pool with the Jerusalem East and West Orchestra (2026: 24 and 25 June): nothing to plan."
+found_via = ["il-listing-sites", "itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "bein-hakramim"
+name = "Bein HaKramim (Between the Vineyards) festival, Merom HaGalil"
+name_local = "פסטיבל בין הכרמים"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Merom HaGalil"
+site = "https://www.2beav.co.il/"
+programme = "https://www.2beav.co.il/blank-1"
+schedule = "expected"
+schedule_evidence = "The 2026 (20th) edition's Wix pages list each event by day, time and place: Wednesday 5.8, show 21:00, Ein Hozim (near Kadita); Tuesday 4.8, 21:00, Mitzpe Kinneret, Amirim; smaller events on /copy-of-10 (Monday 3.8, 17:00, Beit HaAm Amirim)."
+platform = "custom"
+status = "watch"
+reason = "Tu B'Av week (2026: 30 July to 6 August), run by Merom HaGalil regional council across a dozen venues; the 2027 pages are expected in June."
+recheck = "2027-06-01"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "vineyard-cinema-galilee"
+name = "Cinema Between the Vineyards (Kolnoa Bein HaKramim), Alon HaGalil"
+name_local = "קולנוע בין הכרמים"
+kind = "film"
+country = "IL"
+city = "Alon HaGalil"
+site = "https://vineyardcinema.org/"
+programme = "https://vineyardcinema.org/"
+schedule = "expected"
+schedule_evidence = "The first edition (16 to 18 July 2026, Ofir farm) has a day-tabbed programme on the homepage: Thursday, Ofir Awards 2025 shorts strand, 17:00, Winery hall; open-air screen for the evening films."
+platform = "custom"
+status = "watch"
+reason = "First edition July 2026 with two screens; a second edition in July 2027 is not yet announced."
+recheck = "2027-05-15"
+found_via = ["il-listing-sites", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "lumagica-tel-aviv"
+name = "LUMAGICA international light festival, Tel Aviv"
+name_local = "פסטיבל האור הבינלאומי לומג'יקה"
+kind = "art"
+country = "IL"
+city = "Tel Aviv"
+site = "https://park.co.il/events/lumagica/"
+schedule = "none"
+status = "rejected"
+reason = "A walk-through light park in Yarkon Park open nightly for two months (13 Nov 2025 to 15 Jan 2026); no sessions."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hashaa-children-theatre-festival"
+name = "HaSha'a festival of plays for children and youth"
+name_local = "פסטיבל השעה להצגות ילדים ונוער"
+kind = "theatre"
+subtypes = ["theatre-children"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://zoatlv.co.il/type/%D7%99%D7%9C%D7%93%D7%99%D7%9D/"
+programme = "https://zoatlv.co.il/type/%D7%99%D7%9C%D7%93%D7%99%D7%9D/"
+next_first = "2026-09-30"
+next_last = "2026-10-02"
+schedule = "published"
+schedule_evidence = "Beit Tziyonei America's children's listing is server-rendered with the hall per session: 30 September 2026, Jinji, Meirhoff hall, 11:30; 12 festival sessions over 30 Sep to 2 Oct in the Marlen and Meirhoff halls."
+platform = "custom"
+status = "candidate"
+reason = "The Sukkot 2026 edition ends inside the window's first days; the festival recurs in school holidays (check Hanukkah and Passover on the venue's listing)."
+found_via = ["il-listing-sites", "beit-tziyonei-america"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ashdodance"
+name = "Ashdodance international dance festival"
+name_local = "פסטיבל אשדודאנס"
+kind = "dance"
+country = "IL"
+city = "Ashdod"
+site = "https://ashdodance.co.il/"
+programme = "https://ashdodance.co.il/program/"
+schedule = "partial"
+schedule_evidence = "The 2026 (9th) edition's ticketed programme page gives five shows with date, time and venue: 30/07/2026, 21:00, Amphi Ashdod, closing concert; 17:00, Monart, Tokho Ratzuf Ahava. The free open-air strands (2,000 dancers over 27 to 30 July) are not on it."
+platform = "custom"
+status = "watch"
+reason = "Tu B'Av week each summer; only the ticketed shows carry times, so recheck whether the 2027 site publishes the full per-stage programme."
+recheck = "2027-06-01"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "kinneret-vibes"
+name = "Kinneret VIBES festival, Beit Gabriel"
+name_local = "פסטיבל כנרת VIBES"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Tzemah"
+site = "https://www.facebook.com/tomixbettertogether/"
+schedule = "none"
+status = "rejected"
+reason = "A series of evening concerts on the Beit Gabriel lawn amphitheatre, one stage, around Passover or Sukkot; no own site (the producer's Facebook page) and Mevalim shows no upcoming edition."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "breeza-ashkelon"
+name = "Breeza festival, Ashkelon"
+name_local = "פסטיבל בריזה"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Ashkelon"
+site = "https://www.eventim.co.il/artist/brizafest/"
+schedule = "none"
+status = "rejected"
+reason = "Three evening concerts in the Ashkelon National Park amphitheatre in August (2023 revival), one stage; no official site beyond the Eventim artist page. Mevalim's Breeza page lists unrelated Caesarea concerts."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "rokenrola"
+name = "Rokenrola rock festival (Zappa, curated by Mashina)"
+name_local = "פסטיבל רוקנרולה"
+kind = "music"
+subtypes = ["music-rock"]
+country = "IL"
+city = "Tel Aviv"
+site = "https://www.zappa-club.co.il/"
+schedule = "none"
+status = "rejected"
+reason = "A single-day rock festival in Sukkot; no 2026 edition listed on muzi or Mevalim, and Zappa refuses the sandbox (403). Reconsider only if it returns with several stages. City recorded as Zappa's base; the venue varied."
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "genesis-festival"
+name = "Genesis Festival, Ma'ayan Harod"
+name_local = "פסטיבל ג'נסיס"
+kind = "music"
+subtypes = ["music-electronic"]
+country = "IL"
+city = "Gilboa"
+site = "https://www.facebook.com/GenesisFestivalOfficial/"
+next_first = "2027-06-16"
+next_last = "2027-06-19"
+schedule = "unknown"
+status = "watch"
+reason = "Multi-area camping festival at Ma'ayan Harod National Park; 2027 is a save-the-date (16 to 19 June, per muzi). No official site found: genesisfestival.co.il and genesis-festival.com do not resolve, beresheet-festival.co.il (a different, Sukkot family festival) 502s. Look for a per-stage timetable on the ticketing page once sales open."
+recheck = "2027-04-15"
+found_via = ["il-listing-sites"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "meteor-festival"
+name = "Meteor Festival, Lehavot HaBashan"
+kind = "music"
+country = "IL"
+city = "Lehavot HaBashan"
+site = "https://www.meteorfestival.com"
+schedule = "unknown"
+status = "watch"
+reason = "Multi-stage festival last documented in 2018 (unpaid-artist reports in 2019); meteorfestival.com answers Cloudflare 522 (origin down) and no 2026 or 2027 edition turned up in search. Likely defunct: reject at the recheck if nothing has appeared."
+recheck = "2027-06-01"
+found_via = ["tourist-israel"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-film-festival"
+name = "Jerusalem Film Festival"
+name_local = "פסטיבל הקולנוע ירושלים"
+kind = "film"
+country = "IL"
+city = "Jerusalem"
+site = "https://jff.org.il/he"
+programme = "https://jff.org.il/he/festival-calendar"
+next_first = "2027-07-21"
+next_last = "2027-07-31"
+schedule = "expected"
+schedule_evidence = "The festival calendar page is live and already headed 21-31.07.2027 but holds no screenings yet; the Cinematheque's own daily calendar (jer-cin.org.il/he/article/4285) is server-rendered by hour (29.09.26, 20:00, Three Photographers in a Swamp), so the festival grid should read the same way. Screen per session not yet verified."
+platform = "custom"
+status = "watch"
+reason = "Programme usually published about three weeks before the July opening. jff.org.il answers 200 to curl with a browser User-Agent (the earlier 403 was the default UA)."
+recheck = "2027-06-15"
+found_via = ["jerusalem-cinematheque"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "ein-gev-festival"
+name = "Ein Gev Festival (Ein Gev - Sovev Kinneret)"
+name_local = "פסטיבל עין גב"
+kind = "music"
+subtypes = ["music-israeli"]
+country = "IL"
+city = "Ein Gev"
+site = "https://www.betgabriel.co.il/he/category/27"
+schedule = "none"
+status = "rejected"
+reason = "Four headline Hebrew-song concerts over three Passover evenings (2025: 14 to 16 April, Ein Gev harbour and the Beit Gabriel amphitheatre), about one a night: nothing to plan. Tickets on Beit Gabriel's Angular box office. A Sukkot spin-off ran 30 Sep to 1 Oct 2026."
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "boombamela"
+name = "Boombamela"
+name_local = "בומבמלה"
+kind = "music"
+country = "IL"
+city = "Nitzanim"
+site = "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%9E%D7%91%D7%9E%D7%9C%D7%94"
+schedule = "none"
+status = "rejected"
+reason = "Defunct: the Passover beach festival at Nitzanim last ran in 2011 (in Eilat); only nostalgia pieces since. boombamela.co.il is an unrelated recommendations blog."
+found_via = ["search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "hebrew-book-week"
+name = "Hebrew Book Week"
+name_local = "שבוע הספר העברי"
+kind = "literature"
+country = "IL"
+city = "Tel Aviv"
+site = "https://sfarim.org.il/"
+schedule = "unknown"
+status = "watch"
+reason = "Book fairs in many cities each June with stage events; whether a per-event programme (time and stage) is published is unverified because sfarim.org.il answers a SiteGround captcha (sgcaptcha, HTTP 202). The National Library's Jerusalem strand (nli.org.il/he/visit/events/summer-events/book-week) is a separate route to try."
+recheck = "2027-05-01"
+found_via = ["itraveljerusalem", "search-hebrew-programme"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-international-book-forum"
+name = "Jerusalem International Book Forum"
+kind = "literature"
+country = "IL"
+city = "Jerusalem"
+site = "https://www.jbookforum.com/"
+schedule = "unknown"
+status = "watch"
+reason = "Biennial publishing-trade forum with public talks and the Jerusalem Prize; eventseye lists a 2027 edition without dates. jbookforum.com now serves an Indonesian gambling spam page (domain hijacked or lapsed) and /events/ is a 404, so the organiser (the Ariel/Jerusalem municipality contact) must be found another way."
+recheck = "2026-12-01"
+found_via = ["search-english-annual-meeting"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "haifa-children-theatre-festival"
+name = "Haifa International Children's Theatre Festival"
+name_local = "פסטיבל חיפה הבינלאומי להצגות ילדים"
+kind = "theatre"
+subtypes = ["theatre-children"]
+country = "IL"
+city = "Haifa"
+site = "https://www.haifakids.co.il/"
+schedule = "expected"
+schedule_evidence = "The 36th edition page (ht1.co.il/ContentPage?Id=115, 25 to 27 August 2026, Haifa theatre quarter) gives shows with dates, times and hall: D'ash mi-Kishkashta, 25.8 and 26.8, 10:30 and 13:00, Haifa Theatre; five competition premieres and nine guest shows in the theatre's halls, plus free street shows."
+platform = "custom"
+status = "watch"
+reason = "Traditionally Passover week (12 halls and spaces); 2026 ran in late August. The 2027 open call is up; check whether 2027 returns to Passover (late April)."
+recheck = "2027-02-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "cinema-south-festival"
+name = "Cinema South International Film Festival, Sderot"
+name_local = "פסטיבל קולנוע דרום"
+kind = "film"
+country = "IL"
+city = "Sderot"
+site = "https://www.sapir.ac.il/en/cinema/csf/events"
+programme = "https://www.sderot-cin.org.il/movies"
+schedule = "expected"
+schedule_evidence = "The Sderot Cinematheque's daily listing is server-rendered by day and time (Tuesday 29/09/2026, 20:00, Diamonds), and it carries a festival page (sderot-cin.org.il/movie/1255, '6-13.11') with no screenings yet."
+platform = "custom"
+status = "watch"
+reason = "Run by Sapir College's School of Sound and Screen Arts at the Sderot Cinematheque and around town; the 2026 edition is reported for early November (1 to 5 or 6 to 13 November, sources disagree). The Sapir events page answers 403 to curl."
+recheck = "2026-10-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "safed-klezmer-festival"
+name = "International Klezmer Festival, Safed"
+name_local = "פסטיבל הכליזמרים הבינלאומי בצפת"
+kind = "music"
+subtypes = ["music-klezmer"]
+country = "IL"
+city = "Safed"
+site = "https://safed.co.il/klezmer-festival-safed.html"
+programme = "https://www.safednofesh.com/en/klezmer-festival-2026"
+schedule = "expected"
+schedule_evidence = "The 2026 (39th) edition's full per-stage timetable, as republished by Safed Nofesh: Tuesday 18 August 2026, Roots of Melody main stage, HaMaayan HaRadum Square, 21:30, Gabriel Shoraki and Friends host David D'Or; five stages each night 19:00 to 23:00."
+platform = "custom"
+status = "watch"
+reason = "Three nights in mid-August, free, run by Safed municipality; no standalone official site found (the full programme appears in local news and tourism sites). Find the municipality's own page for 2027."
+recheck = "2027-07-01"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "jerusalem-writers-festival"
+name = "Jerusalem International Writers Festival, Mishkenot Sha'ananim"
+name_local = "פסטיבל הסופרים.ות ירושלים"
+kind = "literature"
+country = "IL"
+city = "Jerusalem"
+site = "https://fest.mishkenot.org.il/he/home/a/main/"
+programme = "https://fest.mishkenot.org.il/he/home/a/main/"
+schedule = "expected"
+schedule_evidence = "The 2026 festival site lists each talk with date and time: 25/5, 19:30-21:00, Dara Horn in conversation with Suzanne Nossel. The room within Mishkenot is not on the list rows."
+platform = "custom"
+status = "watch"
+reason = "Held in late May 2026; editions have been roughly biennial (12th in 2024, 2026 edition), so a May 2027 edition is uncertain."
+recheck = "2027-03-01"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "train-theater-puppet-festival"
+name = "Jerusalem International Puppet Theatre Festival (Train Theater)"
+name_local = "פסטיבל הבובות הבינלאומי של תיאטרון הקרון"
+kind = "theatre"
+subtypes = ["theatre-puppetry", "theatre-children"]
+country = "IL"
+city = "Jerusalem"
+site = "https://www.traintheater.co.il/he/festival/2026"
+programme = "https://www.traintheater.co.il/he/festival/2026/program"
+schedule = "expected"
+schedule_evidence = "The 2026 (35th) programme table has day tabs (16.8 to 20.8) and columns age, name, time, hall, tickets: Circus of Nothing, 21:00, Karon large hall; Perla and the Perlinim (Late Night), 22:00, Karon plaza."
+platform = "custom"
+status = "watch"
+reason = "Mid-August each year around Liberty Bell Park; the 2027 programme should appear at /he/festival/2027/program in July."
+recheck = "2027-07-01"
+found_via = ["wikipedia-israel-categories", "itraveljerusalem"]
+checked = "2026-09-29"
+
+[[candidate]]
+id = "givatayim-storytellers-festival"
+name = "Storytellers Festival, Givatayim Theatre"
+name_local = "פסטיבל מספרי סיפורים"
+kind = "multi"
+subtypes = ["literature-storytelling"]
+country = "IL"
+city = "Givatayim"
+site = "https://t-g.co.il/main-event/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%A1%D7%99%D7%A4%D7%95%D7%A8%D7%99%D7%9D/"
+programme = "https://t-g.co.il/%d7%a4%d7%a1%d7%98%d7%99%d7%91%d7%9c-%d7%9e%d7%a1%d7%a4%d7%a8%d7%99-%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%94-33/"
+next_first = "2026-09-23"
+next_last = "2026-10-01"
+schedule = "published"
+schedule_evidence = "Givatayim Theatre lists each numbered event with its day, and each event page gives time and hall: Event 116, Air Force stories - 50 years since Entebbe, Tuesday 29 September, 18:00, Arie Elias hall."
+platform = "custom"
+status = "watch"
+reason = "Sukkot each year; the 2026 (33rd) edition ends on 1 October, and Sukkot 2027 (mid-October) falls after the current window. Adopt for the 2027 edition."
+recheck = "2027-08-15"
+found_via = ["wikipedia-israel-categories"]
+checked = "2026-09-29"
+
+# ── Sources ──
