@@ -41,7 +41,7 @@ import { carHireLink, flightFareLink, flightSearchLink } from "../shared/affilia
 import { attachVersionPopup } from "../shared/version-popup.js";
 import { readVersionStamp } from "../shared/version.js";
 import { currentEdition, loadEdition, loadFestivalIndex, venueCoords } from "../shared/festival-catalogue.js";
-import { dayTripKm, originReach, poolReach } from "../shared/feasibility.js";
+import { dayTripKm, joinsPool, originReach, poolReach } from "../shared/feasibility.js";
 import {
   FACET_OPTIONS,
   MAX_PERIOD_DAYS,
@@ -826,6 +826,7 @@ function festivalsAnswer() {
  * here rather than in a line above the calendar for each. A festival too far
  * to reach is named too, with nothing to tick, so it is never silently
  * missing. */
+const OUT_KEY = { out: "prefs.festivals.out", abroad: "prefs.festivals.abroad" };
 function festivalsHtml() {
   const km = (n) => new Intl.NumberFormat(currentIntlLocale(), { maximumFractionDigits: 0 }).format(n);
   const reachOf = new Map((state.reach || []).map((r) => [r.edition.festival.id, r]));
@@ -837,7 +838,7 @@ function festivalsHtml() {
   };
   const inPool = poolFestivals();
   const inIds = new Set(inPool.map((f) => f.id));
-  const out = (state.reach || []).filter((r) => r.verdict === "out" && !inIds.has(r.edition.festival.id));
+  const out = (state.reach || []).filter((r) => !joinsPool(r) && !inIds.has(r.edition.festival.id));
   return (
     `<div class="pref-checks">` +
     inPool
@@ -859,7 +860,7 @@ function festivalsHtml() {
           `<div class="pref-check fest-row fest-row--out">` +
           `<span class="fest-stripe" data-festival-colour="${escapeHtml(festival.id)}" aria-hidden="true"></span>` +
           `<span class="fest-words"><span class="pref-check-word">${escapeHtml(festivalName(festival))}</span>` +
-          `<span class="fest-km">${escapeHtml(t("prefs.festivals.out", { km: km(r.km ?? 0) }))}</span></span></div>`
+          `<span class="fest-km">${escapeHtml(t(OUT_KEY[r.verdict], { km: km(r.km ?? 0) }))}</span></span></div>`
         );
       })
       .join("") +
@@ -3835,8 +3836,16 @@ function festivalCard(festival, edition, hasData) {
       genreKey ? ` · <span data-i18n-slot="${genreKey}">${escapeHtml(t(genreKey))}</span>` : ""
     }</span>` +
     `<span class="tl-card-line">${escapeHtml(dateRange(edition.firstDate, edition.lastDate))} · ${escapeHtml(t("trip.length", { count: days }))}</span>` +
-    cardLine(hasData ? "card.programme" : "card.noProgramme", t(hasData ? "card.programme" : "card.noProgramme"), hasData ? " is-good" : " is-muted")
+    programmeLine(edition, hasData)
   );
+}
+
+/* Whether the programme is out, and how many events it holds where the
+ * overview counts them. */
+function programmeLine(edition, hasData) {
+  if (!hasData) return cardLine("card.noProgramme", t("card.noProgramme"), " is-muted");
+  if (edition.events == null) return cardLine("card.programme", t("card.programme"), " is-good");
+  return cardLine("card.events", t("card.events", { count: edition.events }), " is-good");
 }
 
 /* Where a pill of several festivals is: its city once the place menu has
@@ -3951,17 +3960,9 @@ function initialTrip() {
   }
   const stored = readStore(KEY_TRIP, null);
   if (stored && stored.from && stored.to) return stored;
-  const today = todayISO();
-  const candidates = state.registry.festivals
-    .map((f) => ({ festival: f, edition: currentEdition(f, today) }))
-    .filter((c) => c.edition)
-    .sort((a, b) => {
-      // Running or upcoming before finished; then soonest.
-      const past = (c) => (c.edition.lastDate < today ? 1 : 0);
-      return past(a) - past(b) || a.edition.firstDate.localeCompare(b.edition.firstDate);
-    });
-  const first = candidates[0];
-  return first ? { ...tripForEdition(first.edition), pick: editionKey(first.festival.id, first.edition.id) } : null;
+  // Nothing chosen yet: no festival is picked for the reader, so no programme
+  // is downloaded until they pick one.
+  return null;
 }
 
 /* Set the trip: its dates, the festival that leads it (whose theme the page
@@ -3970,6 +3971,7 @@ function initialTrip() {
  * address and remembers the trip; the page's own first trip writes nothing.
  * `moved` is the end the reader set, which holds if the trip must give way. */
 async function setTrip(trip, { fresh = false, moved = null } = {}) {
+  $("pickState").hidden = true;
   state.period = normalizeTrip(trip, { moved, maxDays: MAX_PERIOD_DAYS, span: timelineSpan(todayISO()) });
   const lead = leadEdition(state.registry, { ...state.period, pick: trip.pick || null });
   state.focus = lead ? editionByKey(editionKey(lead.festival.id, lead.edition.id)) : null;
@@ -4027,10 +4029,16 @@ async function loadPool() {
   for (const f of state.registry.festivals) {
     for (const e of f.editions) {
       if (e.lastDate < state.period.from || e.firstDate > state.period.to) continue;
-      overlapping.push({ festivalId: f.id, lat: f.lat, lng: f.lng, firstDate: e.firstDate, lastDate: e.lastDate, festival: f, entry: e });
+      overlapping.push({
+        festivalId: f.id, country: f.country, region: f.region, lat: f.lat, lng: f.lng,
+        firstDate: e.firstDate, lastDate: e.lastDate, festival: f, entry: e,
+      });
     }
   }
-  const focusShape = { festivalId: festival.id, lat: festival.lat, lng: festival.lng, firstDate: edition.firstDate, lastDate: edition.lastDate };
+  const focusShape = {
+    festivalId: festival.id, country: festival.country, region: festival.region, lat: festival.lat, lng: festival.lng,
+    firstDate: edition.firstDate, lastDate: edition.lastDate,
+  };
   state.reach = poolReach(focusShape, overlapping, state.period, { dayTripKm: dayTripKm(carWithUs()) });
   state.reachByCar = carWithUs();
 
@@ -4040,7 +4048,7 @@ async function loadPool() {
   try {
     parts = await Promise.all(
       state.reach
-        .filter((r) => r.verdict !== "out" && r.edition.entry.dataUrl)
+        .filter((r) => joinsPool(r) && r.edition.entry.dataUrl)
         .map(async (reach) => ({ reach, catalogue: await editionCatalogue(reach.edition.festival, reach.edition.entry) }))
     );
   } catch (error) {
@@ -4519,6 +4527,9 @@ async function boot() {
   const trip = initialTrip();
   if (!trip) {
     $("loadingState").hidden = true;
+    $("pickState").hidden = false;
+    $("planPanel").hidden = true;
+    $("boardDrawer").hidden = true;
     renderTimelineStrip();
     return;
   }

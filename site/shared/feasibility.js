@@ -106,6 +106,12 @@ export function poolReach(focus, editions, period, { dayTripKm: dayTrip = DAY_TR
   });
 }
 
+/** Whether an entry from poolReach() brings any nights to the pool — and so
+ * whether its programme is worth downloading at all. */
+export function joinsPool(entry) {
+  return entry.verdict !== "out" && entry.verdict !== "abroad";
+}
+
 /** Whether a performance on `dateISO` is inside one of an entry's night ranges. */
 export function inReach(entry, dateISO) {
   return entry.nights.some((r) => r.from <= dateISO && dateISO <= r.to);

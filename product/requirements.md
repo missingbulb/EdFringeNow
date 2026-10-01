@@ -1215,8 +1215,9 @@ rather than as a control panel.
   <details><summary>Notes</summary>
 
   Rendered with empty storage — no favourites, no verdicts — which is the state
-  a first visit lands in. Under the old model that state was an empty schedule
-  and a prompt to go and star something; here it is a full week.
+  a first visit lands in once a festival is chosen (23.34). Under the old model
+  that state was an empty schedule and a prompt to go and star something; here
+  it is a full week.
   </details>
 
 - `20.2` A contested card has a lane beside it drawing each show it beat as a bar capped at that show's own start and its own end.
@@ -1778,7 +1779,7 @@ otherwise the one it covers most.
 
 - `23.4` A festival joins the pool only when it is in the same country (and state) as the festival that leads the trip and its city is within reach of it.
 
-  <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
+  <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Brighton, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>605 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Brighton, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>605 km</td><td>none</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>none: another country</td></tr></tbody></table> <!-- req-gallery:23.4 -->
 
   <details><summary>Notes</summary>
 
