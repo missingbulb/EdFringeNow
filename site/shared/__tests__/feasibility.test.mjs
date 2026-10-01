@@ -3,14 +3,14 @@ import assert from "node:assert/strict";
 
 import { poolReach, originReach, travelDays, inReach } from "../feasibility.js";
 
-const JERUSALEM = { festivalId: "jerusalem-comedy", lat: 31.7683, lng: 35.2137, firstDate: "2026-10-18", lastDate: "2026-10-22" };
-const HAIFA = { festivalId: "haifa-iff", lat: 32.794, lng: 34.9896, firstDate: "2026-09-25", lastDate: "2026-10-03" };
-const ACCO = { festivalId: "acco", lat: 32.9206, lng: 35.0694, firstDate: "2026-09-27", lastDate: "2026-10-01" };
-const EDINBURGH = { festivalId: "edfringe", lat: 55.9533, lng: -3.1883, firstDate: "2026-10-10", lastDate: "2026-10-30" };
+const JERUSALEM = { festivalId: "jerusalem-comedy", country: "IL", lat: 31.7683, lng: 35.2137, firstDate: "2026-10-18", lastDate: "2026-10-22" };
+const HAIFA = { festivalId: "haifa-iff", country: "IL", lat: 32.794, lng: 34.9896, firstDate: "2026-09-25", lastDate: "2026-10-03" };
+const ACCO = { festivalId: "acco", country: "IL", lat: 32.9206, lng: 35.0694, firstDate: "2026-09-27", lastDate: "2026-10-01" };
+const EDINBURGH = { festivalId: "edfringe", country: "GB", lat: 55.9533, lng: -3.1883, firstDate: "2026-10-10", lastDate: "2026-10-30" };
 
 test("a city a day-trip away joins whole; a far one only outside the focus run and its travel days", () => {
   const period = { from: "2026-10-01", to: "2026-10-31" };
-  const [focus, edinburgh] = poolReach(JERUSALEM, [JERUSALEM, EDINBURGH], period);
+  const [focus, edinburgh] = poolReach({ ...JERUSALEM, country: "GB" }, [{ ...JERUSALEM, country: "GB" }, EDINBURGH], period);
   assert.equal(focus.verdict, "focus");
   assert.equal(edinburgh.verdict, "partly");
   assert.equal(edinburgh.travelDays, 1);
@@ -28,9 +28,28 @@ test("a city a day-trip away joins whole; a far one only outside the focus run a
 
 test("a far edition wholly inside the focus run is out", () => {
   const inside = { ...EDINBURGH, firstDate: "2026-10-19", lastDate: "2026-10-21" };
-  const [, far] = poolReach(JERUSALEM, [JERUSALEM, inside], { from: "2026-10-17", to: "2026-10-23" });
+  const [, far] = poolReach({ ...JERUSALEM, country: "GB" }, [{ ...JERUSALEM, country: "GB" }, inside], { from: "2026-10-17", to: "2026-10-23" });
   assert.equal(far.verdict, "out");
   assert.deepEqual(far.nights, []);
+});
+
+test("another country, or another state where both name one, never joins, however near", () => {
+  const period = { from: "2026-10-01", to: "2026-10-31" };
+  const [, edinburgh] = poolReach(JERUSALEM, [JERUSALEM, EDINBURGH], period);
+  assert.equal(edinburgh.verdict, "abroad");
+  assert.deepEqual(edinburgh.nights, []);
+
+  const [over] = poolReach(HAIFA, [{ ...ACCO, country: "LB" }], period);
+  assert.equal(over.verdict, "abroad");
+
+  const [sameState] = poolReach({ ...HAIFA, region: "North" }, [{ ...ACCO, region: "North" }], period);
+  assert.equal(sameState.verdict, "day-trip");
+  const [otherState] = poolReach({ ...HAIFA, region: "North" }, [{ ...ACCO, region: "South" }], period);
+  assert.equal(otherState.verdict, "abroad");
+  const [unnamed] = poolReach({ ...HAIFA, region: "North" }, [ACCO], period);
+  assert.equal(unnamed.verdict, "day-trip", "a state only one names leaves the country to decide");
+  const [nowhere] = poolReach(HAIFA, [{ ...ACCO, country: undefined }], period);
+  assert.equal(nowhere.verdict, "abroad", "no country is no saying it is near");
 });
 
 test("travel days by distance", () => {

@@ -1744,9 +1744,10 @@ trip banded across it. The trip's first and last day are the reader's to set,
 by dragging either end of the band or the whole band along the year, and a
 festival is only a shortcut to its own run and a day either side. Nothing below
 is tied to one festival: the pool the calendar drafts from is every
-performance, from any festival, that falls inside the trip and can be reached
-from the festival that leads it: the one the reader chose, while the trip still
-reaches it, and otherwise the one it covers most.
+performance, from any festival in the same country (and state, where both name
+one), that falls inside the trip and can be reached from the festival that
+leads it: the one the reader chose, while the trip still reaches it, and
+otherwise the one it covers most.
 
 - `23.1` A full-width timeline of the coming year, one pill per city's festivals, and the trip's dates banded across it.
 
@@ -1775,19 +1776,21 @@ reaches it, and otherwise the one it covers most.
   run and a day either side.
   </details>
 
-- `23.4` A festival joins the pool only when its city is within reach of the festival that leads the trip.
+- `23.4` A festival joins the pool only when it is in the same country (and state) as the festival that leads the trip and its city is within reach of it.
 
   <table><thead><tr><th align="left">Focused on</th><th align="left">Other festival</th><th align="left">Distance</th><th align="left">Nights that join the pool</th></tr></thead><tbody><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Acco, 27 Sep – 1 Oct</td><td>16 km</td><td>all: 27 Sep – 1 Oct</td></tr><tr><td>Haifa, 25 Sep – 3 Oct</td><td>Jerusalem, 18 – 22 Oct</td><td>116 km</td><td>all: 18 – 22 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 10 – 30 Oct</td><td>4000 km</td><td>10 – 16 Oct and 24 – 30 Oct</td></tr><tr><td>Jerusalem, 18 – 22 Oct</td><td>Edinburgh, 19 – 21 Oct</td><td>4000 km</td><td>none</td></tr></tbody></table> <!-- req-gallery:23.4 -->
 
   <details><summary>Notes</summary>
 
-  `site/shared/feasibility.js`. A city a day-trip away is in whole; a city
-  further off is in only for the nights far enough from that festival's run to
-  travel between the two, so an event in Edinburgh during the Jerusalem
-  festival is never suggested, whatever the data holds.
+  `site/shared/feasibility.js`. A festival in another country, or in another
+  state where both name one, is never in, however near: its programme is not
+  even downloaded (23.35). A city a day-trip away is in whole; a city further
+  off is in only for the nights far enough from that festival's run to travel
+  between the two, so an event in Edinburgh during the Brighton festival is
+  never suggested, whatever the data holds.
   </details>
 
-- `23.5` A festival left out for being out of reach is named in the festivals chip, with how far it is, never dropped silently.
+- `23.5` A festival left out for being out of reach, or in another country, is named in the festivals chip, with how far it is, never dropped silently.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.5 -->
 
@@ -2081,6 +2084,35 @@ reaches it, and otherwise the one it covers most.
 - `23.33` Choosing a type moves the pictures rather than swapping them: each glides from where it was to where it goes, the subtypes unfold one after another, and with reduced motion asked for they simply land.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.33 -->
+
+- `23.34` Opened with no festival chosen, the page downloads the year's overview and no programme, and asks the reader to choose a festival.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.34 -->
+
+  <details><summary>Notes</summary>
+
+  The overview is the registry, `site/data/festivals/index.json`: every
+  festival's names, place, type and subtypes, and each edition's dates and
+  number of events, enough to draw the year and its filters. A festival is
+  chosen by picking it on the year, by a link naming it or its dates, or by
+  the trip the page saved last time; any of those plans at once.
+  </details>
+
+- `23.35` Choosing a festival downloads the programmes of that festival and of the festivals in its country (and state) whose runs the trip overlaps, and no other.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.35 -->
+
+  <details><summary>Notes</summary>
+
+  Each edition's programme is its own file, so a pick never pays for another
+  country's festivals, nor for one in the same country running at another
+  time. A festival in another country running during the trip is still named
+  in the festivals chip (23.5).
+  </details>
+
+- `23.36` A festival's card on the strip says how many events its programme holds, once the overview counts them.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.36 -->
 
 ## 24. How you are getting here
 
