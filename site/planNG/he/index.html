@@ -67,12 +67,25 @@
          trip's dates between the two flight blocks, and the question of where
          the reader is coming from — see renderTripRow() and renderOriginCard()
          in planNG.js. -->
-    <!-- The menus that narrow which festivals the year draws: see
-         renderStripFilters() in planNG.js. -->
-    <div class="tl-filters" id="timelineFilters" role="group" data-i18n-aria-label="filter.label" aria-label="הצגת פסטיבלים"></div>
+    <!-- Beside the year, what narrows which festivals it draws: a globe of
+         badges and a place menu, and nine types with subtype chips. See
+         renderStripFilters() in planNG.js and globe-view.js. -->
     <section class="timeline" id="timeline" data-i18n-aria-label="timeline.label" aria-label="הפסטיבלים של השנה">
-      <div class="tl-year" id="timelineYear"></div>
-      <div class="origin-card" id="originCard" hidden></div>
+      <div class="tl-filters" id="timelineFilters" role="group" data-i18n-aria-label="filter.label" aria-label="הצגת פסטיבלים">
+        <div class="tl-place">
+          <div class="tl-lens" id="timelineLens">
+            <canvas class="tl-globe" id="timelineGlobe" width="164" height="164" aria-hidden="true"></canvas>
+            <div class="tl-badges"></div>
+            <div class="tl-up-slot" id="timelineUp"></div>
+          </div>
+          <div id="timelinePlace"></div>
+        </div>
+        <div class="tl-types" id="timelineTypes"></div>
+      </div>
+      <div class="tl-main">
+        <div class="tl-year" id="timelineYear"></div>
+        <div class="origin-card" id="originCard" hidden></div>
+      </div>
     </section>
 
     <div class="page-head">

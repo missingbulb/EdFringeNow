@@ -71,9 +71,10 @@ export function renderTimeline(host, o) {
     ? `<span class="tl-period" aria-hidden="true" style="${bandStyle(span, period)}"></span>` +
       handle("from", "trip.from", period.from, tripEdges(span, period).start, dayText) +
       handle("to", "trip.to", period.to, tripEdges(span, period).end, dayText) +
-      `<span class="tl-day tl-day--from" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).start)}">${dayOfMonth(period.from)}</span>` +
-      `<span class="tl-day tl-day--to" aria-hidden="true" style="inset-inline-start:${pct(tripEdges(span, period).end)}">${dayOfMonth(period.to)}</span>` +
-      `<span class="tl-length" style="${lengthStyle(span, period)}">${escapeHtml(lengthText(daysBetween(period)))}</span>` +
+      `<span class="tl-span" aria-hidden="true" style="${spanStyle(span, period)}">` +
+      `<span class="tl-chip tl-day tl-day--from">${dayOfMonth(period.from)}</span>` +
+      `<span class="tl-chip tl-length">${escapeHtml(lengthText(daysBetween(period)))}</span>` +
+      `<span class="tl-chip tl-day tl-day--to">${dayOfMonth(period.to)}</span></span>` +
       (travel ? way("from", "out", tripEdges(span, period).start, travel) + way("to", "back", tripEdges(span, period).end, travel) : "")
     : "";
   // Today: a small figure standing on the months, holding up a sign.
@@ -97,7 +98,8 @@ export function renderTimeline(host, o) {
       const words = many ? bunchLabel(bunch) : label(lead.festival, lead.edition);
       const html = many ? bunchCard(bunch) : festivalCard(lead.festival, lead.edition, lead.hasData);
       // Late in the year the label would run off the strip, so it is hung
-      // from the pill's far end and reads back towards the start instead.
+      // from the pill's far end and reads back towards the start instead;
+      // layoutRows() hangs any other whose label still overruns the same way.
       const late = bunch.start > LATE_FRAC;
       const place = late ? `inset-inline-end:${pct(1 - bunch.end)}` : `inset-inline-start:${pct(bunch.start)}`;
       // Inside a country's pill each festival's run is a shade of its own, so
@@ -117,7 +119,8 @@ export function renderTimeline(host, o) {
         `${many ? " tl-item--bunch" : ""}${late ? " tl-item--late" : ""}"` +
         ` data-edition="${escapeHtml(bunch.key)}" data-festival="${escapeHtml(lead.festival.id)}"` +
         `${many ? ` data-bunch="${bunch.bars.length}"` : ""}` +
-        ` aria-pressed="${focused}" data-span="${width}" style="${place}"` +
+        ` aria-pressed="${focused}" data-span="${width}" data-start="${bunch.start}" data-end="${bunch.end}"` +
+        `${late ? ` data-late="1"` : ""} style="${place}"` +
         ` aria-label="${escapeHtml(words.tip)}" data-card="${card(html)}">` +
         `<span class="tl-bar" aria-hidden="true">${runs}${flag(lead.festival.country)}</span>` +
         `<span class="tl-label">${escapeHtml(words.name)}</span></button>`
@@ -135,18 +138,55 @@ export function renderTimeline(host, o) {
       );
     })
     .join("");
+  const scrolled = host.querySelector(".tl-rows")?.scrollTop || 0;
   host.innerHTML =
     `<div class="tl-months">${months}${orbs}${today}</div>` +
-    `<div class="tl-track" role="group" aria-label="${escapeHtml(t("timeline.label"))}">${band}${items}</div>` +
+    `<div class="tl-track${shown ? " has-trip" : ""}" role="group" aria-label="${escapeHtml(t("timeline.label"))}">` +
+    `${band}<div class="tl-rows">${items}</div></div>` +
     `<div class="tl-card" role="tooltip" hidden></div>`;
   host._cards = cards;
+  wireRowScroll(host);
   if (!bunches.length) {
-    host.querySelector(".tl-track").insertAdjacentHTML(
+    host.querySelector(".tl-rows").insertAdjacentHTML(
       "beforeend",
       `<p class="tl-none" data-i18n-slot="${noneKey}">${escapeHtml(t(noneKey))}</p>`
     );
   }
   layoutRows(host);
+  host.querySelector(".tl-rows").scrollTop = scrolled;
+  fadeEdges(host.querySelector(".tl-rows"));
+}
+
+/* The rows scroll under a strip that keeps its height; a fade at an edge says
+ * more rows lie past it. A wheel turned over the trip's ends or its travel
+ * pictures, which sit above the rows, still scrolls them. */
+function wireRowScroll(host) {
+  if (host._rowScroll) return;
+  host._rowScroll = true;
+  host.addEventListener(
+    "scroll",
+    (e) => {
+      if (e.target.classList?.contains("tl-rows")) fadeEdges(e.target);
+    },
+    true
+  );
+  host.addEventListener(
+    "wheel",
+    (e) => {
+      const rows = host.querySelector(".tl-rows");
+      if (!rows || !e.target.closest(".tl-track") || rows.contains(e.target)) return;
+      const room = e.deltaY > 0 ? rows.scrollHeight - rows.clientHeight - rows.scrollTop : rows.scrollTop;
+      if (room <= 0) return;
+      e.preventDefault();
+      rows.scrollTop += e.deltaY;
+    },
+    { passive: false }
+  );
+}
+
+function fadeEdges(rows) {
+  rows.classList.toggle("is-more-above", rows.scrollTop > 0);
+  rows.classList.toggle("is-more-below", rows.scrollTop + rows.clientHeight < rows.scrollHeight - 1);
 }
 
 const pct = (f) => `${(f * 100).toFixed(3)}%`;
@@ -165,9 +205,11 @@ const dayOfMonth = (iso) => String(Number(iso.slice(8, 10)));
 
 const daysBetween = (trip) => Math.round((Date.parse(trip.to) - Date.parse(trip.from)) / 86400000) + 1;
 
-function lengthStyle(span, trip) {
+/* The trip measured under the rows: centred on the band and at least as wide,
+ * its first day at one end, its last at the other and its length between. */
+function spanStyle(span, trip) {
   const { start, end } = tripEdges(span, trip);
-  return `inset-inline-start:${pct((start + end) / 2)}`;
+  return `inset-inline-start:${pct((start + end) / 2)};min-width:${pct(end - start)}`;
 }
 
 function bandStyle(span, trip) {
@@ -203,14 +245,11 @@ export function previewTrip(host, span, trip) {
   const { start, end } = tripEdges(span, trip);
   host.querySelector(".tl-handle--from").style.insetInlineStart = pct(start);
   host.querySelector(".tl-handle--to").style.insetInlineStart = pct(end);
-  const length = host.querySelector(".tl-length");
-  if (length) length.style.insetInlineStart = pct((start + end) / 2);
+  const measure = host.querySelector(".tl-span");
+  if (measure) measure.setAttribute("style", spanStyle(span, trip));
   for (const [which, frac] of [["from", start], ["to", end]]) {
     const day = host.querySelector(`.tl-day--${which}`);
-    if (day) {
-      day.style.insetInlineStart = pct(frac);
-      day.textContent = dayOfMonth(trip[which]);
-    }
+    if (day) day.textContent = dayOfMonth(trip[which]);
     const icon = host.querySelector(`.tl-way--${which}`);
     if (icon) icon.style.insetInlineStart = pct(frac);
   }
@@ -227,6 +266,14 @@ function fitWays(host) {
     icon.hidden = false;
     const r = icon.getBoundingClientRect();
     icon.hidden = r.left < box.left || r.right > box.right;
+  }
+  // The trip's measure slides back inside the strip rather than run off it.
+  const measure = track.querySelector(".tl-span");
+  if (measure) {
+    measure.style.translate = "";
+    const r = measure.getBoundingClientRect();
+    const shift = r.left < box.left ? box.left - r.left : r.right > box.right ? box.right - r.right : 0;
+    if (shift) measure.style.translate = `${shift}px 0`;
   }
 }
 
@@ -399,6 +446,13 @@ export function wireTripHandles(host, { span, trip, normalize, commit }) {
   });
 }
 
+/* Place an item from the pill's start, or hang it from the pill's far end. */
+function hang(el, fromEnd) {
+  el.classList.toggle("tl-item--late", fromEnd);
+  el.style.insetInlineStart = fromEnd ? "" : pct(Number(el.dataset.start));
+  el.style.insetInlineEnd = fromEnd ? pct(1 - Number(el.dataset.end)) : "";
+}
+
 /** Stack the bars into rows once their labels can be measured. */
 export function layoutRows(host) {
   const track = host.querySelector(".tl-track");
@@ -411,16 +465,28 @@ export function layoutRows(host) {
   // can find: a five-day festival is a few pixels of a year on a phone.
   for (const el of items) {
     el.querySelector(".tl-bar").style.width = `${Math.max(BAR_MIN_PX, Number(el.dataset.span) * box.width)}px`;
+    if (!el.dataset.late) hang(el, false);
   }
-  const extents = items.map((el) => {
+  const extentOf = (el) => {
     const r = el.getBoundingClientRect();
     return rtl ? { from: box.right - r.right, to: box.right - r.left } : { from: r.left - box.left, to: r.right - box.left };
-  });
+  };
+  // Hung from its end only where that leaves less of the label off the strip.
+  for (const el of items) {
+    if (el.dataset.late) continue;
+    const over = extentOf(el).to - box.width;
+    if (over <= 0) continue;
+    hang(el, true);
+    if (-extentOf(el).from > over) hang(el, false);
+  }
+  const extents = items.map(extentOf);
   const rows = stackRows(extents, LABEL_GAP_PX);
   items.forEach((el, i) => {
     el.style.top = `${rows[i] * ROW_PX}px`;
   });
   const count = rows.length ? Math.max(...rows) + 1 : 1;
-  track.style.height = `calc(${count * ROW_PX + 6}px + var(--lane))`;
+  const scroller = track.querySelector(".tl-rows");
+  scroller.style.height = `${count * ROW_PX + 6}px`;
+  fadeEdges(scroller);
   fitWays(host);
 }

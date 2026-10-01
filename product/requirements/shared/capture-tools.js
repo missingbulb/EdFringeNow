@@ -28,19 +28,22 @@ const RECT_STABLE_READS = 2;
 const RECT_MAX_READS = 20;
 
 async function rectOf(page, selector) {
+  // A region redrawn whole has, for a moment, no box at all: that read is
+  // one more that is not yet stable, never the answer.
   const read = async () => {
     const box = await page.locator(selector).first().boundingBox();
-    if (!box) throw new Error(`no visible element for ${selector}`);
+    if (!box) return null;
     const { sx, sy } = await page.evaluate(() => ({ sx: window.scrollX, sy: window.scrollY }));
     return { x: box.x + sx, y: box.y + sy, width: box.width, height: box.height };
   };
   let previous = await read();
   let same = 0;
-  for (let i = 0; i < RECT_MAX_READS && same < RECT_STABLE_READS; i++) {
+  for (let i = 0; i < RECT_MAX_READS && (same < RECT_STABLE_READS || !previous); i++) {
     const next = await read();
-    same = JSON.stringify(next) === JSON.stringify(previous) ? same + 1 : 0;
+    same = next && JSON.stringify(next) === JSON.stringify(previous) ? same + 1 : 0;
     previous = next;
   }
+  if (!previous) throw new Error(`no visible element for ${selector}`);
   return previous;
 }
 

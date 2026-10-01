@@ -220,13 +220,18 @@ async function routeEdinburghFestivals(page) {
   );
 }
 
-/* Choose a festival on the strip, as a reader does: one sharing its
- * country's pill with a festival that leads it is reached by narrowing the
- * place menu to that country, then widened back. */
+/* Choose a festival on the strip, as a reader does from the keyboard: a
+ * travel picture may sit over its pill, covering it from the pointer. One
+ * sharing its country's pill with a festival that leads it is reached by
+ * narrowing the place menu to that country, then widened back. */
 async function chooseOnStrip(page, festivalId) {
   const item = `.tl-item[data-festival="${festivalId}"]`;
+  const choose = async () => {
+    await page.focus(item);
+    await page.keyboard.press("Enter");
+  };
   if (await page.locator(item).count()) {
-    await page.click(item);
+    await choose();
     return;
   }
   const country = await page.evaluate(
@@ -234,7 +239,7 @@ async function chooseOnStrip(page, festivalId) {
     festivalId
   );
   await page.selectOption('[data-filter="place"]', country);
-  await page.click(item);
+  await choose();
   await page.selectOption('[data-filter="place"]', "");
 }
 
@@ -252,6 +257,26 @@ async function answerTravel(page, { home, way = null }) {
   await page.selectOption("#originCountry", home);
   await page.click('#originCard [data-origin="next"]');
   await page.click(`#originCard [data-origin="${way}"]`);
+  // Off the card, whose fares arrive under where the pointer pressed.
+  await page.mouse.move(0, 0);
+}
+
+/* Press a festival's pill on the year, where a reader would: on the pill,
+ * clear of the trip's end handles, whose lines run across every row. */
+async function pressPill(page, festivalId) {
+  const bar = page.locator(`.tl-item[data-festival="${festivalId}"] .tl-bar`);
+  const box = await bar.boundingBox();
+  const handles = await page.$$eval(".tl-handle", (els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect();
+      return { left: r.left, right: r.right };
+    })
+  );
+  const clear = (x) => handles.every((h) => x < h.left - 1 || x > h.right + 1);
+  const spots = [0.5, 0.2, 0.8, 0.08, 0.92].map((f) => box.x + box.width * f);
+  const x = spots.find(clear);
+  if (x === undefined) throw new Error(`${festivalId}'s pill lies wholly under the trip's handles`);
+  await bar.click({ position: { x: x - box.x, y: box.height / 2 } });
 }
 
 /* Move one end of the trip to a day, as a reader does from the keyboard: the
@@ -265,6 +290,46 @@ async function moveTripEnd(page, end, iso) {
   const key = (days > 0) !== rtl ? "ArrowRight" : "ArrowLeft";
   for (let i = 0; i < Math.abs(days); i++) await page.keyboard.press(key);
   await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
+}
+
+/* The fixtures' year plus eight more festivals, each in a country of its own
+ * (a country's festivals share one pill) and all running at once, so the year
+ * draws more rows than the strip shows. None has a programme, so nothing else
+ * on the page changes. */
+const CROWD_TOWNS = [
+  ["Paris", "FR"],
+  ["Berlin", "DE"],
+  ["Madrid", "ES"],
+  ["Rome", "IT"],
+  ["Amsterdam", "NL"],
+  ["Lisbon", "PT"],
+  ["Dublin", "IE"],
+  ["Vienna", "AT"],
+];
+async function routeCrowdedYear(page) {
+  const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
+  CROWD_TOWNS.forEach(([city, country], i) =>
+    registry.festivals.push({
+      id: `crowd-${i}`,
+      name: `${city} Festival`,
+      nameLocal: null,
+      city,
+      country,
+      lat: 48 + i / 10,
+      lng: 5,
+      timezone: "Europe/Paris",
+      lang: "en",
+      dir: "ltr",
+      kind: "music",
+      defaultGenre: "music",
+      site: "https://example.org",
+      ticketing: { model: "per-event-seller", url: null },
+      editions: [{ id: "2027", ordinal: null, firstDate: "2027-01-10", lastDate: `2027-02-${String(10 + i).padStart(2, "0")}`, format: "block", dataUrl: null }],
+    })
+  );
+  await page.route("**/data/festivals/index.json", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
+  );
 }
 
 // The calendar re-planned across a trip: its first and last column are the
@@ -722,8 +787,10 @@ module.exports = {
   flightsSettled,
   answerTravel,
   moveTripEnd,
+  routeCrowdedYear,
   routeEdinburghFestivals,
   chooseOnStrip,
+  pressPill,
   calendarDays,
   calendarSpans,
   JERUSALEM,
