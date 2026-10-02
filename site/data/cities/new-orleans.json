@@ -1,0 +1,3378 @@
+{
+ "v": 1,
+ "city": {
+  "id": "new-orleans",
+  "name": "New Orleans",
+  "country": "US",
+  "lat": 29.9511,
+  "lng": -90.0715,
+  "timezone": "America/Chicago"
+ },
+ "places": [
+  {
+   "id": "osm:node/151385190",
+   "name": "French Quarter",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.959493,
+   "lng": -90.06554,
+   "address": null,
+   "website": null,
+   "wikidata": "Q602939",
+   "wikipedia": "en:French Quarter",
+   "description": "neighborhood of and historic district in New Orleans, Louisiana, United States",
+   "image": "French Quarter, looking north with Mississippi River to the right 2011.jpg",
+   "notability": 25,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/329364492",
+   "name": "Cathedral-Basilica of Saint Louis King of France",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.957998,
+   "lng": -90.063752,
+   "address": "615 Pere Antoine Alley, 70116-3291",
+   "website": "https://www.stlouiscathedral.org/",
+   "wikidata": "Q167538",
+   "wikipedia": "en:St. Louis Cathedral (New Orleans)",
+   "description": "cathedral in New Orleans, USA",
+   "image": "Cathedral new orleans.jpg",
+   "notability": 14,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1050884108",
+   "name": "Bourbon Street",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 29.954687,
+   "lng": -90.069177,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1105882",
+   "wikipedia": "en:Bourbon Street",
+   "description": "historic street in the French Quarter of New Orleans",
+   "image": "Бурбон-стрит.jpg",
+   "notability": 13,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/325825515",
+   "name": "New Orleans Museum of Art",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.986453,
+   "lng": -90.093369,
+   "address": "1 Collins Diboll Circle",
+   "website": "https://noma.org/",
+   "wikidata": "Q2063082",
+   "wikipedia": "en:New Orleans Museum of Art",
+   "description": "art museum in New Orleans, Louisiana",
+   "image": "New Orleans Museum of Art, 2 December 2025.jpg",
+   "notability": 10,
+   "highlight": true,
+   "openingHours": "Tu,Th-Su 10:00-17:00; We 12:00-19:00; Mo off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/358384399",
+   "name": "Congo Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.961254,
+   "lng": -90.068615,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1105886",
+   "wikipedia": "en:Congo Square",
+   "description": "square in New Orleans, Louisiana USA",
+   "image": "Congo Square New Orleans.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27844554",
+   "name": "Jackson Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.957475,
+   "lng": -90.06295,
+   "address": "700 Decatur Street, 70116",
+   "website": null,
+   "wikidata": "Q3157436",
+   "wikipedia": "en:Jackson Square (New Orleans)",
+   "description": "historic park in New Orleans, Louisiana, United States",
+   "image": "Andrew Jackson monument, New Orleans, USA.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/345253057",
+   "name": "New Orleans Mint",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.96139,
+   "lng": -90.057814,
+   "address": "400 Esplanade Avenue, 70116",
+   "website": "https://louisianastatemuseum.org/museum/new-orleans-jazz-museum-old-us-mint",
+   "wikidata": "Q195919",
+   "wikipedia": "en:New Orleans Mint",
+   "description": "mint",
+   "image": "1907 NOMintpostcard.jpg",
+   "notability": 9,
+   "highlight": true,
+   "openingHours": "Tu-Su 09:00-16:00; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/329364483",
+   "name": "The Cabildo",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.957662,
+   "lng": -90.063889,
+   "address": "701 Chartres Street, 70116",
+   "website": "https://louisianastatemuseum.org/museum/cabildo",
+   "wikidata": "Q7720883",
+   "wikipedia": "en:The Cabildo",
+   "description": "historic building in New Orleans, Louisiana",
+   "image": "Cabildo9Jul07SousaphoneFront.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": "Tu-Su 09:00-16:00; Mo closed; PH closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4469421335",
+   "name": "Joan of Arc",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.958976,
+   "lng": -90.0607,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3497617",
+   "wikipedia": "en:Jeanne d'Arc (Frémiet)",
+   "description": "statue by Emmanuel Frémiet in Paris, France",
+   "image": "Joan of Arc Emmanuel Fremiet.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1531942317",
+   "name": "Louis Armstrong Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.962736,
+   "lng": -90.06884,
+   "address": null,
+   "website": null,
+   "wikidata": "Q931042",
+   "wikipedia": "en:Louis Armstrong Park",
+   "description": "park in New Orleans, Louisiana, U.S.",
+   "image": "Louis Armstrong Park New Orleans Lagoon Eagle.jpg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4738015422",
+   "name": "New Orleans Jazz Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.96143,
+   "lng": -90.057775,
+   "address": "400 Esplanade Avenue, 70116",
+   "website": "https://nolajazzmuseum.org/",
+   "wikidata": "Q16982606",
+   "wikipedia": "en:New Orleans Jazz Museum",
+   "description": "music museum in New Orleans, Louisiana",
+   "image": "New Orleans Jazz Museum logo black noborder.svg",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": "Tu-Su 09:00-16:00; Mo,PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/331257382",
+   "name": "Andrew Jackson",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.957464,
+   "lng": -90.06295,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4343568",
+   "wikipedia": "en:Andrew Jackson (Mills)",
+   "description": "monumento in bronzo su un piedistallo di marmo a Washington",
+   "image": "Andrew Jackson statue closeup.JPG",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4469406407",
+   "name": "French Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 29.959343,
+   "lng": -90.060257,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3087476",
+   "wikipedia": "en:French Market",
+   "description": "Market in the French Quarter of New Orleans, Louisiana",
+   "image": "FrenchMktKitch25Oct07.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/12598945",
+   "name": "The National World War II Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.942417,
+   "lng": -90.070629,
+   "address": "945 Magazine Street, 70130",
+   "website": "https://www.nationalww2museum.org/",
+   "wikidata": "Q1477833",
+   "wikipedia": "en:The National WWII Museum",
+   "description": "military history museum and non-profit organization in New Orleans, Louisiana, United States",
+   "image": "Main entrance to the National World War II Museum.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Mo-Su 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9588493777",
+   "name": "Audubon Insectarium",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 29.951359,
+   "lng": -90.063318,
+   "address": "403 Canal Street, 70130",
+   "website": "http://www.auduboninstitute.org/visit/insectarium",
+   "wikidata": "Q4820238",
+   "wikipedia": "en:Audubon Insectarium",
+   "description": "insectarium in Louisiana, United States",
+   "image": "MP - Insectarium 1.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Tu-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/4610716",
+   "name": "The Presbytère",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.958223,
+   "lng": -90.063444,
+   "address": "751 Chartres Street",
+   "website": "https://louisianastatemuseum.org/museums/the-presbytere",
+   "wikidata": "Q12066398",
+   "wikipedia": "en:The Presbytere",
+   "description": "historic building in the French Quarter of New Orleans, Louisiana, United States",
+   "image": "Presbytere9JulyA.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Tu-Su 10:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/367725678",
+   "name": "Audubon Aquarium of the Americas",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 29.950895,
+   "lng": -90.063223,
+   "address": "1 Canal Street",
+   "website": null,
+   "wikidata": "Q623162",
+   "wikipedia": "en:Audubon Aquarium",
+   "description": "zoo aquarium in New Orleans, USA",
+   "image": "Aquarium of the Americas, New Orleans, after Katrina.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28533910",
+   "name": "City Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 30.000991,
+   "lng": -90.094196,
+   "address": null,
+   "website": "http://neworleanscitypark.com",
+   "wikidata": "Q166880",
+   "wikipedia": "en:City Park (New Orleans)",
+   "description": "public park in New Orleans, USA",
+   "image": "GenBeauregardVoodooMusicExperience.jpg",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/396336267",
+   "name": "Harmony Circle",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.94333,
+   "lng": -90.072471,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6513292",
+   "wikipedia": "en:Tivoli Circle",
+   "description": "traffic circle in New Orleans, Louisiana named after Confederate General, Robert E. Lee",
+   "image": "Lee Circle.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "06:00-22:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "06:00",
+       "22:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7431140968",
+   "name": "Madame John's Legacy",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 29.9594,
+   "lng": -90.063078,
+   "address": "632 Dumaine Street",
+   "website": "https://npgallery.nps.gov/AssetDetail/NRIS/70000256",
+   "wikidata": "Q1573286",
+   "wikipedia": null,
+   "description": "historic house museum in New Orleans, Louisiana, USA",
+   "image": "MadamJohnsLegacyLakeward1.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/329382374",
+   "name": "New Orleans Historic Voodoo Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.959807,
+   "lng": -90.063786,
+   "address": "724 Dumaine Street, 70116",
+   "website": "https://voodoomuseum.com/",
+   "wikidata": "Q6033435",
+   "wikipedia": null,
+   "description": "religious museum, art museum, history museum in Louisiana, US",
+   "image": "New Orleans Historic Voodoo Museum in the French Quarter March 2018 - 2.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/358399481",
+   "name": "New Orleans Jazz National Historical Park",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.961469,
+   "lng": -90.057711,
+   "address": null,
+   "website": "https://www.nps.gov/jazz/",
+   "wikidata": "Q3338993",
+   "wikipedia": "en:New Orleans Jazz National Historical Park",
+   "description": "U.S. National Historical Park",
+   "image": "Perseverance-Hall-No-4.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4146220592",
+   "name": "Ogden Museum of Southern Art",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.943572,
+   "lng": -90.071343,
+   "address": "925 Camp Street, 70130",
+   "website": "https://ogdenmuseum.org/",
+   "wikidata": "Q2390897",
+   "wikipedia": "en:Ogden Museum of Southern Art",
+   "description": "museum in New Orleans, Louisiana",
+   "image": "Howard Library Camp Higgins Museums NOLA Nov 2011.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/367133371",
+   "name": "Confederate Memorial Hall;Confederate Memorial Hall Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.94343,
+   "lng": -90.071304,
+   "address": "929 Camp Street",
+   "website": "https://confederatemuseum.com/",
+   "wikidata": "Q5159685",
+   "wikipedia": "en:Confederate Memorial Hall Museum",
+   "description": "war museum in New Orleans, Louisiana",
+   "image": "Civil War Museum in New Orleans.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Tu-Sa 10:00-16:00; Su-Mo closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2486487251",
+   "name": "Steamboat Natchez",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 29.954927,
+   "lng": -90.062393,
+   "address": null,
+   "website": "https://www.steamboatnatchez.com/",
+   "wikidata": "Q12062367",
+   "wikipedia": "en:Natchez (boat)",
+   "description": "The seventh steamboat of that name, built in 1869",
+   "image": "NatchezFlagCCCNov06.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/14012002",
+   "name": "Audubon Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.930136,
+   "lng": -90.126756,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4820247",
+   "wikipedia": "en:Audubon Park (New Orleans)",
+   "description": "city park in the Uptown neighborhood of New Orleans, Louisiana, United States",
+   "image": "AudubonPark1.JPG",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/462184167",
+   "name": "Carousel Gardens Amusement Park",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 29.987543,
+   "lng": -90.098405,
+   "address": "7 Victory Avenue, 70124",
+   "website": null,
+   "wikidata": "Q5045561",
+   "wikipedia": "en:Carousel Gardens Amusement Park",
+   "description": "amusement park",
+   "image": "NOCityParkCarouselGGate.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/367725797",
+   "name": "Hermann-Grima House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.957218,
+   "lng": -90.06762,
+   "address": "820 Saint Louis Street, 70112",
+   "website": "https://hgghh.org/hermann-grima-house",
+   "wikidata": "Q5740472",
+   "wikipedia": "en:Hermann–Grima House",
+   "description": "historic house in Louisiana, United States",
+   "image": "HermannGrimaJune08A.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "We-Mo 10:00-16:00 \"by appointment, tour needs to be booked, tours every day except Wednesday\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/27844731",
+   "name": "Lafayette Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.948245,
+   "lng": -90.070319,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6471528",
+   "wikipedia": "en:Lafayette Square (New Orleans)",
+   "description": "park in New Orleans, Louisiana",
+   "image": "LafayetteSquareHenryClayToGallierHall.JPG",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1316495261",
+   "name": "Longue Vue House and Gardens",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.97694,
+   "lng": -90.123626,
+   "address": "7 Bamboo Road",
+   "website": "https://longuevue.com",
+   "wikidata": "Q6674383",
+   "wikipedia": null,
+   "description": "historic house in Louisiana, United States",
+   "image": "LongueVue5Jan07BackC.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:00; Su 13:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4732796339",
+   "name": "1850 House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.957951,
+   "lng": -90.062491,
+   "address": "523 Saint Ann Street, 70116",
+   "website": "https://louisianastatemuseum.org/museum/1850-house",
+   "wikidata": "Q4554796",
+   "wikipedia": null,
+   "description": "museum in Louisiana, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Tu-Su 09:00-16:00; Mo off; PH closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/42499186",
+   "name": "Annunciation Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.93326,
+   "lng": -90.069648,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34814493",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/345273213",
+   "name": "Backstreet Cultural Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.964592,
+   "lng": -90.06617,
+   "address": "1531 Saint Philip Street, 70116",
+   "website": "https://www.backstreetmuseum.org/",
+   "wikidata": "Q4839767",
+   "wikipedia": null,
+   "description": "museum in New Orleans, Louisiana, that emphasizes the African American history of New Orleans, second lines, Jazz funerals, and the Mardi Gras Indians",
+   "image": "TremeBackstreet.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/470393872",
+   "name": "Bodenger Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.922866,
+   "lng": -90.027199,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34854873",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384401",
+   "name": "Bolivar Place",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.965481,
+   "lng": -90.087294,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34902595",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384402",
+   "name": "Bonart Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.963814,
+   "lng": -90.020348,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34902741",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384404",
+   "name": "Bunny Friend Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.974925,
+   "lng": -90.037571,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34864958",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/319420488",
+   "name": "Cabrini Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.964148,
+   "lng": -90.062917,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34911087",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358393937",
+   "name": "Carrollton Historic District",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.950204,
+   "lng": -90.12674,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34871638",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384420",
+   "name": "Clay Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.948269,
+   "lng": -90.070334,
+   "address": null,
+   "website": null,
+   "wikidata": "Q34927900",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": "Clay Monument.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/327855493",
+   "name": "Clay Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.924379,
+   "lng": -90.07823,
+   "address": "2524 Annunciation Street",
+   "website": null,
+   "wikidata": "Q34927926",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Su 06:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/33784926",
+   "name": "Coliseum Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.936183,
+   "lng": -90.073817,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49479017",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358385269",
+   "name": "Cuccia-Byrnes Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.964093,
+   "lng": -90.114795,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49481273",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28351797",
+   "name": "Danneel Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.929911,
+   "lng": -90.113949,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49481887",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": "St Charles Avenue Streetcar Ride, New Orleans, 25 August 2008 - 05.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358385276",
+   "name": "Delgado Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.988814,
+   "lng": -90.106462,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49482648",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384429",
+   "name": "Dreux Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.970629,
+   "lng": -90.093579,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49484244",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": "Dreux bust, New Orleans Feb 2005.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/35208739",
+   "name": "Easton Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.973308,
+   "lng": -90.088571,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49485435",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/645147787",
+   "name": "Edith Sampson Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.989325,
+   "lng": -90.035287,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49485867",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358385296",
+   "name": "Fox Plaground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.941315,
+   "lng": -90.040627,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49491145",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384438",
+   "name": "Franklin Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.948178,
+   "lng": -90.069895,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49491450",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": "Franklin Monument.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/326366993",
+   "name": "Frederick Square",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.970408,
+   "lng": -90.121271,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49491731",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384452",
+   "name": "Gayarre Place",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.973623,
+   "lng": -90.0745,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49493111",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/329956066",
+   "name": "Hardin Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.982779,
+   "lng": -90.065628,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49497913",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": "Hardin Park Playground, 7th Ward, New Orleans September 2021.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358385326",
+   "name": "Harris Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.996036,
+   "lng": -90.083405,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49498333",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384513",
+   "name": "Lincoln Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.964587,
+   "lng": -90.115665,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6550920",
+   "wikipedia": null,
+   "description": "noted amusement park in New Orleans, Louisiana",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358385357",
+   "name": "Little Flower Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.970613,
+   "lng": -90.114849,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49518038",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/910944247",
+   "name": "Mardi Gras World",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 29.93464,
+   "lng": -90.061562,
+   "address": "1380 Port of New Orleans Place, 70130",
+   "website": "https://www.mardigrasworld.com/",
+   "wikidata": "Q6758658",
+   "wikipedia": "en:Mardi Gras World",
+   "description": "tourist attraction in New Orleans, Louisiana",
+   "image": "Mardi Gras World (8542980567).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358384526",
+   "name": "McDonogh Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.94837,
+   "lng": -90.070778,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49523515",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": "McDonogh Monument.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/33871094",
+   "name": "Mickey Markey Playground",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.963173,
+   "lng": -90.042413,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49525965",
+   "wikipedia": null,
+   "description": "park in Orleans Parish, Louisiana, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/345285907",
+   "name": "New Orleans African American Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.966511,
+   "lng": -90.067948,
+   "address": "1418 Governor Nicholls Street, 70116",
+   "website": "https://www.noaam.org/",
+   "wikidata": "Q7010684",
+   "wikipedia": "en:New Orleans African American Museum",
+   "description": "history and culture museum in New Orleans, Louisiana",
+   "image": "MeilleurGoldthwaiteHouseFrontB.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Th-Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/591049489",
+   "name": "New Orleans Botanical Gardens",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 29.987588,
+   "lng": -90.096086,
+   "address": "5 Victory Ave",
+   "website": "neworleanscitypark.com",
+   "wikidata": "Q7010698",
+   "wikipedia": "en:New Orleans Botanical Garden",
+   "description": "botanical garden in City Park, New Orleans, Louisiana",
+   "image": "New Orleans Botanical Garden Walkway.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Tu-Su 10:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/481126434",
+   "name": "New Orleans Pharmacy Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.956045,
+   "lng": -90.064898,
+   "address": "514 Chartres Street, 70130",
+   "website": "https://www.pharmacymuseum.org/",
+   "wikidata": "Q123429402",
+   "wikipedia": "en:New Orleans Pharmacy Museum",
+   "description": "pharmacy museum in New Orleans, Louisiana",
+   "image": "New Orleans Pharmacy Museum 2.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Tu-Sa 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/328796087",
+   "name": "Southern Food & Beverage Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.94077,
+   "lng": -90.079046,
+   "address": "1504 Oretha Castle Haley Blvd, 70113",
+   "website": "https://southernfood.org/",
+   "wikidata": "Q7569917",
+   "wikipedia": null,
+   "description": "Museum in New Orleans, Louisiana, U.S.",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Th-Mo 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/358384568",
+   "name": "Wedell Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 29.982489,
+   "lng": -90.110598,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49578054",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1548508457",
+   "name": "Woldenberg Riverfront Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 29.954288,
+   "lng": -90.059976,
+   "address": null,
+   "website": null,
+   "wikidata": "Q8029740",
+   "wikipedia": "en:Woldenberg Park (New Orleans)",
+   "description": "park in New Orleans, Louisiana, US",
+   "image": "Woldenberg Riverfront.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Su-Th 06:00-22:00; Fr-Sa 06:00-00:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "06:00",
+       "00:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/14178674500",
+   "name": "American Italian Cultural Center and Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.94762,
+   "lng": -90.066052,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10315494462",
+   "name": "Antenna",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.965945,
+   "lng": -90.037607,
+   "address": "3718 Saint Claude Avenue, 70131",
+   "website": "https://www.antenna.works/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3354874751",
+   "name": "Ariodante",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.94568,
+   "lng": -90.070172,
+   "address": "535 Julia Street, 70130",
+   "website": "https://www.ariodantegallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Tu,Th-Sa 09:30-16:00; Su 09:30-13:30; We \"By appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/10634747247",
+   "name": "ArtSpace3116",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.96733,
+   "lng": -90.043803,
+   "address": "3116 Saint Claude Avenue, 70117",
+   "website": "https://www.thestclaudeartrag.com/3116",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13157736303",
+   "name": "BK Historic House and Gardens",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.960975,
+   "lng": -90.060891,
+   "address": "1113 Chartres Street",
+   "website": "https://www.bkhouse.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11612547069",
+   "name": "Backstreet Cultural Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.965832,
+   "lng": -90.070114,
+   "address": "70116",
+   "website": "http://backstreetmusuem.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9900939600",
+   "name": "Deurty Boys Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.959148,
+   "lng": -90.062405,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11711299874",
+   "name": "Disco on Decatur",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.961164,
+   "lng": -90.059372,
+   "address": "1211 Decatur Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/327862535",
+   "name": "ESOM ART",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.921434,
+   "lng": -90.096091,
+   "address": "3935 Magazine Street, 70115",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/345253096",
+   "name": "Farmers Market Pavilion",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 29.960014,
+   "lng": -90.059163,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/480088580",
+   "name": "Flea Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 29.96059,
+   "lng": -90.058275,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4146220594",
+   "name": "Forbes Theater",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.943213,
+   "lng": -90.070261,
+   "address": null,
+   "website": "http://enroll.nationalww2museum.org/rentals/malcolm-s-forbes-theater.html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4752018127",
+   "name": "Galería de arte",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.941839,
+   "lng": -90.065371,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6559071386",
+   "name": "Haunted Museum & Voodoo Pharmacy",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.961754,
+   "lng": -90.067069,
+   "address": "828 North Rampart Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 12:00-17:00; Sa-Su 12:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/4610715",
+   "name": "Historic New Orleans Collection",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.956694,
+   "lng": -90.06562,
+   "address": "520 Royal Street",
+   "website": "https://www.hnoc.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 09:30-16:30; Su 10:30-16:30; Mo closed; PH closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/367725868",
+   "name": "Irish Cultural Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.957397,
+   "lng": -90.069258,
+   "address": "933 Conti Street, 70112",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13158804501",
+   "name": "JAMNOLA",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.967105,
+   "lng": -90.058211,
+   "address": "940 Frenchmen Street, 70116",
+   "website": "https://jamnola.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/479160340",
+   "name": "Jean Lafitte National Historical Park and Preserve French Quarter Visitor Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.954855,
+   "lng": -90.0648,
+   "address": "419 Decatur Street, 70130",
+   "website": "https://www.nps.gov/jela/french-quarter-site.htm",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 09:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5822739953",
+   "name": "Katrina National Memorial Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.965243,
+   "lng": -90.091531,
+   "address": "2800 Cleveland Avenue, 70119",
+   "website": "https://knmfno.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:30-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/317880792",
+   "name": "Le Musée de f.p.c.",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.97386,
+   "lng": -90.075732,
+   "address": "2336 Esplanade Avenue, 70119",
+   "website": "https://www.lemuseedefpc.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"by appointment, tours bookable for Fridays 1pm and Saturdays 11am\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/13719801702",
+   "name": "LeMieux Galleries",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.944751,
+   "lng": -90.06711,
+   "address": "332 Julia Street",
+   "website": "https://www.lemieuxgalleries.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-17:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4146220596",
+   "name": "Louisiana Children's Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.98995,
+   "lng": -90.094019,
+   "address": "15 Henry Thomas Drive",
+   "website": "https://www.lcm.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Sa 09:30-16:30; Su 11:30-16:30; Mo-Tu closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/367133290",
+   "name": "Louisiana State Museum Library",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.957713,
+   "lng": -90.064037,
+   "address": null,
+   "website": "https://louisianastatemuseum.org/louisiana-historical-center-library",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 10:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3774268195",
+   "name": "Lower Ninth Ward Living Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.964869,
+   "lng": -90.023368,
+   "address": "1235 Deslonde Street",
+   "website": "https://www.leonatatefoundation.org/lower-9th-ward-living-museum",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 12:00-17:00; Mo closed; PH closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/14181561301",
+   "name": "M.S. Rau",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.957579,
+   "lng": -90.065004,
+   "address": "622 Royal Street, 70130",
+   "website": "https://rauantiques.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-17:15",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:15"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4726886294",
+   "name": "Marie Laveau's Tomb?",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.959785,
+   "lng": -90.070845,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/483254560",
+   "name": "Mask Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 29.958558,
+   "lng": -90.060713,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3716152084",
+   "name": "Museum of Death",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.955871,
+   "lng": -90.069724,
+   "address": "227 Dauphine Street, 70112",
+   "website": "http://www.museumofdeath.net/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Mo 10:00-18:00; Tu closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3356271245",
+   "name": "Museum of the Southern Jewish Experience",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.94419,
+   "lng": -90.074199,
+   "address": "818 Howard Avenue, 70113",
+   "website": "https://msje.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Mo 10:00-17:00; Mo closed, PH closed",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/345253248",
+   "name": "Old Ursuline Convent Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.960848,
+   "lng": -90.060657,
+   "address": "1100 Chartres Street, 70116",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13198761701",
+   "name": "Pitot House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.981941,
+   "lng": -90.089115,
+   "address": "1440 Moss Street, 70119",
+   "website": "https://www.pitothouse.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11608930227",
+   "name": "Sasik Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.945692,
+   "lng": -90.070218,
+   "address": "541 Julia Street, 70130",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10634747245",
+   "name": "Second Story Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.968215,
+   "lng": -90.052292,
+   "address": "2372 Saint Claude Avenue, 70117",
+   "website": "https://www.secondstorygallerynola.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 09:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10634747246",
+   "name": "Staple Goods",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.971764,
+   "lng": -90.05258,
+   "address": "1340 St Roch Avenue, 70117",
+   "website": "https://www.staplegoods.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 12:00-17:00; Mo-Fr closed",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/486913725",
+   "name": "Sydney & Walda Besthoff Sculpture Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 29.987276,
+   "lng": -90.094017,
+   "address": "1 Collins Diboll Circle, 70124",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10634747243",
+   "name": "The Aquarium",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.966609,
+   "lng": -90.046526,
+   "address": "934 Montegut Street, 70117",
+   "website": "https://aquariumartgallery.wixsite.com/html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10634747244",
+   "name": "The Front",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.965241,
+   "lng": -90.034377,
+   "address": "4100 Saint Claude Avenue, 70117",
+   "website": "https://nolafront.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9146272091",
+   "name": "The Guardians Institute",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 29.975245,
+   "lng": -90.035598,
+   "address": "1930 Independence Street",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4146218980",
+   "name": "The Historic New Orleans Collection - Williams Research Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.955143,
+   "lng": -90.06559,
+   "address": "410 Chartres Street",
+   "website": "https://www.hnoc.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 09:30-16:30; Su-Mo off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/910939860",
+   "name": "The Sazerac House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.95168,
+   "lng": -90.067573,
+   "address": "101 Magazine Street, 70130",
+   "website": "https://www.sazerachouse.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 11:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11165860901",
+   "name": "Vue Orleans",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 29.948961,
+   "lng": -90.063571,
+   "address": "2 Canal Street, 70130",
+   "website": "https://vueorleans.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su-Sa 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/328669306",
+   "name": "The Barnett",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.948321,
+   "lng": -90.071948,
+   "address": "600 Carondelet Street, 70130",
+   "website": "https://www.hyatt.com/en-US/hotel/louisiana/the-barnett/msyjd",
+   "wikidata": "Q111394420",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 63,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/3354874750",
+   "name": "Hotel Theo New Orleans by Hilton",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.951039,
+   "lng": -90.068714,
+   "address": "535 Gravier Street, 70130",
+   "website": "https://www.hoteltheoneworleans.com",
+   "wikidata": "Q112026695",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 375,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:way/302490090",
+   "name": "Sheraton New Orleans Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.951792,
+   "lng": -90.068001,
+   "address": "500 Canal Street, 70130",
+   "website": "http://www.sheratonneworleans.com/",
+   "wikidata": "Q7494691",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 439,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:way/328669394",
+   "name": "JW Marriott Hotel New Orleans",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.952308,
+   "lng": -90.068987,
+   "address": "614 Canal Street, 70130",
+   "website": "https://www.marriott.com/hotels/travel/msyjw-jw-marriott-new-orleans/",
+   "wikidata": "Q3156981",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 454,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:way/328669284",
+   "name": "Windsor Court Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.949479,
+   "lng": -90.066366,
+   "address": "300 Gravier Street",
+   "website": "https://www.windsorcourthotel.com",
+   "wikidata": "Q8024588",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 492,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:way/328669395",
+   "name": "Loews New Orleans Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.947969,
+   "lng": -90.066202,
+   "address": "300 Poydras Street, 70130",
+   "website": "https://www.loewshotels.com/m/new-orleans",
+   "wikidata": "Q6666626",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 501,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:way/328669287",
+   "name": "Doubletree by Hilton Hotel New Orleans",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.95029,
+   "lng": -90.066258,
+   "address": "311 Gravier Street, 70130",
+   "website": "https://www.hilton.com/en/hotels/msytcdt-doubletree-new-orleans/",
+   "wikidata": "Q111394424",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 527,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/13974132976",
+   "name": "Nobu Hotel New Orleans - A Caesars Rewards Destination",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 29.949775,
+   "lng": -90.06545,
+   "address": "8 Canal Street, 70130",
+   "website": "https://www.caesars.com/nobu-new-orleans",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 585,
+   "venuesNear": 3
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/12105840702",
+   "name": "Brutto Americano",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian",
+    "american"
+   ],
+   "lat": 29.948419,
+   "lng": -90.072022,
+   "address": "600 Carondelet Street, 70130",
+   "website": "https://bruttoamericano.com",
+   "wikidata": null,
+   "openingHours": "Mo-Th 07:00-21:00, Fr 07:00-22:00, Sa 08:00-22:00, Su 08:00-21:00",
+   "hours": null,
+   "toVenueM": 66,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/3354870979",
+   "name": "Bon Ton Cafe",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "cajun"
+   ],
+   "lat": 29.949594,
+   "lng": -90.068081,
+   "address": "401 Magazine Street",
+   "website": "https://www.thebontoncafe.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 11:00-14:00,17:00-21:00;Sa-Su off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:00"
+      ],
+      [
+       "17:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": []
+    }
+   ],
+   "toVenueM": 336,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/4415773990",
+   "name": "Meril",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "soup",
+    "regional",
+    "american",
+    "salad",
+    "cajun"
+   ],
+   "lat": 29.946545,
+   "lng": -90.068238,
+   "address": "424 Girod Street, 70130",
+   "website": "https://bemeril.com/",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:00-21:00;Fr-Sa 11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 376,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/12182091678",
+   "name": "Public Service",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "contemporary"
+   ],
+   "lat": 29.951913,
+   "lng": -90.072842,
+   "address": "311 Baronne Street, 70112",
+   "website": "https://www.publicservicenola.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 06:30-10:30, 11:00-14:00, 17:00-22:00; Sa-Su 06:30-08:30, 09:00-14:00, 17:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "06:30",
+       "10:30"
+      ],
+      [
+       "11:00",
+       "14:00"
+      ],
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "06:30",
+       "08:30"
+      ],
+      [
+       "09:00",
+       "14:00"
+      ],
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 398,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/13505644954",
+   "name": "Good Catch Urban Bistro",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "thai"
+   ],
+   "lat": 29.952119,
+   "lng": -90.072045,
+   "address": "826 Gravier Street",
+   "website": "https://goodcatchnola.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-15:00,16:30-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "16:30",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 400,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/3354874752",
+   "name": "Compère Lapin",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "creole",
+    "regional"
+   ],
+   "lat": 29.947876,
+   "lng": -90.067278,
+   "address": "535 Tchoupitoulas Street, 70130",
+   "website": "http://comperelapin.com/",
+   "wikidata": null,
+   "openingHours": "Su 10:30-14:00, 17:30-21:00, Mo-Th 17:30-21:00, Fr-Sa 17:30-22:00",
+   "hours": null,
+   "toVenueM": 401,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/3354870980",
+   "name": "Mother's Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 29.949029,
+   "lng": -90.067178,
+   "address": "401 Poydras Street",
+   "website": "https://mothersrestaurant.net/",
+   "wikidata": null,
+   "openingHours": "07:00-22:00; easter off; May Mo[2] off; Nov Th[4] off; Dec 25 off",
+   "hours": null,
+   "toVenueM": 406,
+   "venuesNear": 3
+  },
+  {
+   "id": "osm:node/12167893066",
+   "name": "Above the Grid",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "american"
+   ],
+   "lat": 29.952074,
+   "lng": -90.072821,
+   "address": "317 Baronne Street, 70112",
+   "website": "https://www.abovethegridnola.com/",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:00-22:00, Fr-Sa 11:00-00:00",
+   "hours": null,
+   "toVenueM": 414,
+   "venuesNear": 3
+  }
+ ],
+ "trips": [],
+ "guide": {
+  "page": "New Orleans",
+  "url": "https://en.wikivoyage.org/wiki/New_Orleans"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:20:47Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:21:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:22:17Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:22:19Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

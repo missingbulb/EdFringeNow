@@ -32,6 +32,26 @@
    "places": 19
   },
   {
+   "id": "amsterdam",
+   "name": "Amsterdam",
+   "country": "NL",
+   "lat": 52.3676,
+   "lng": 4.9041,
+   "timezone": "Europe/Amsterdam",
+   "dataUrl": "/data/cities/amsterdam.json",
+   "places": 363
+  },
+  {
+   "id": "athens",
+   "name": "Athens",
+   "country": "GR",
+   "lat": 37.9838,
+   "lng": 23.7275,
+   "timezone": "Europe/Athens",
+   "dataUrl": "/data/cities/athens.json",
+   "places": 318
+  },
+  {
    "id": "auckland",
    "name": "Auckland",
    "country": "NZ",
@@ -40,6 +60,16 @@
    "timezone": "Pacific/Auckland",
    "dataUrl": "/data/cities/auckland.json",
    "places": 218
+  },
+  {
+   "id": "berlin",
+   "name": "Berlin",
+   "country": "DE",
+   "lat": 52.52,
+   "lng": 13.405,
+   "timezone": "Europe/Berlin",
+   "dataUrl": "/data/cities/berlin.json",
+   "places": 2081
   },
   {
    "id": "brighton",
@@ -82,6 +112,16 @@
    "places": 23
   },
   {
+   "id": "fort-lauderdale",
+   "name": "Fort Lauderdale",
+   "country": "US",
+   "lat": 26.1224,
+   "lng": -80.1373,
+   "timezone": "America/New_York",
+   "dataUrl": "/data/cities/fort-lauderdale.json",
+   "places": 16
+  },
+  {
    "id": "haifa",
    "name": "Haifa",
    "country": "IL",
@@ -122,6 +162,36 @@
    "places": 42
   },
   {
+   "id": "london",
+   "name": "London",
+   "country": "GB",
+   "lat": 51.5074,
+   "lng": -0.1278,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/london.json",
+   "places": 1015
+  },
+  {
+   "id": "luxembourg",
+   "name": "Luxembourg",
+   "country": "LU",
+   "lat": 49.6116,
+   "lng": 6.1319,
+   "timezone": "Europe/Luxembourg",
+   "dataUrl": "/data/cities/luxembourg.json",
+   "places": 78
+  },
+  {
+   "id": "malmo",
+   "name": "Malmö",
+   "country": "SE",
+   "lat": 55.605,
+   "lng": 13.0038,
+   "timezone": "Europe/Stockholm",
+   "dataUrl": "/data/cities/malmo.json",
+   "places": 67
+  },
+  {
    "id": "melbourne",
    "name": "Melbourne",
    "country": "AU",
@@ -140,6 +210,16 @@
    "timezone": "Asia/Jerusalem",
    "dataUrl": "/data/cities/mitzpe-gvulot.json",
    "places": 4
+  },
+  {
+   "id": "new-orleans",
+   "name": "New Orleans",
+   "country": "US",
+   "lat": 29.9511,
+   "lng": -90.0715,
+   "timezone": "America/Chicago",
+   "dataUrl": "/data/cities/new-orleans.json",
+   "places": 106
   },
   {
    "id": "north-berwick",
@@ -162,6 +242,66 @@
    "places": 65
   },
   {
+   "id": "rapperswil",
+   "name": "Rapperswil",
+   "country": "CH",
+   "lat": 47.2267,
+   "lng": 8.8184,
+   "timezone": "Europe/Zurich",
+   "dataUrl": "/data/cities/rapperswil.json",
+   "places": 26
+  },
+  {
+   "id": "san-francisco",
+   "name": "San Francisco",
+   "country": "US",
+   "lat": 37.7749,
+   "lng": -122.4194,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/san-francisco.json",
+   "places": 335
+  },
+  {
+   "id": "san-jose",
+   "name": "San Jose",
+   "country": "US",
+   "lat": 37.3382,
+   "lng": -121.8863,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/san-jose.json",
+   "places": 87
+  },
+  {
+   "id": "santa-ana",
+   "name": "Santa Ana",
+   "country": "US",
+   "lat": 33.7455,
+   "lng": -117.8677,
+   "timezone": "America/Los_Angeles",
+   "dataUrl": "/data/cities/santa-ana.json",
+   "places": 40
+  },
+  {
+   "id": "santa-fe",
+   "name": "Santa Fe",
+   "country": "US",
+   "lat": 35.687,
+   "lng": -105.9378,
+   "timezone": "America/Denver",
+   "dataUrl": "/data/cities/santa-fe.json",
+   "places": 184
+  },
+  {
+   "id": "singapore",
+   "name": "Singapore",
+   "country": "SG",
+   "lat": 1.2903,
+   "lng": 103.852,
+   "timezone": "Asia/Singapore",
+   "dataUrl": "/data/cities/singapore.json",
+   "places": 179
+  },
+  {
    "id": "tel-aviv",
    "name": "Tel Aviv",
    "country": "IL",
@@ -172,6 +312,16 @@
    "places": 139
   },
   {
+   "id": "tryon",
+   "name": "Tryon",
+   "country": "US",
+   "lat": 35.2087,
+   "lng": -82.2387,
+   "timezone": "America/New_York",
+   "dataUrl": "/data/cities/tryon.json",
+   "places": 2
+  },
+  {
    "id": "wellington",
    "name": "Wellington",
    "country": "NZ",
@@ -180,6 +330,16 @@
    "timezone": "Pacific/Auckland",
    "dataUrl": "/data/cities/wellington.json",
    "places": 70
+  },
+  {
+   "id": "wichita",
+   "name": "Wichita",
+   "country": "US",
+   "lat": 37.6872,
+   "lng": -97.3301,
+   "timezone": "America/Chicago",
+   "dataUrl": "/data/cities/wichita.json",
+   "places": 29
   }
  ]
 }

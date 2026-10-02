@@ -1,0 +1,373 @@
+{
+ "places": [
+  {
+   "id": "node/11484350089",
+   "lat": 37.687558,
+   "lng": -97.327894,
+   "tags": {
+    "name": "Old Town Farm & Art Market",
+    "amenity": "marketplace",
+    "opening_hours": "Apr-Oct Sa 08:00-13:00; Nov-Dec Sa 10:00-13:00",
+    "website": "https://oldtownfarmandartmarket.com/",
+    "addr:housenumber": "835",
+    "addr:street": "East 1st Street North",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/13158358204",
+   "lat": 37.685166,
+   "lng": -97.323433,
+   "tags": {
+    "name": "Wichita Toy Train Museum",
+    "tourism": "museum",
+    "website": "http://www.wichitatoytrainmuseum.org",
+    "addr:housenumber": "130",
+    "addr:street": "Laura Street"
+   }
+  },
+  {
+   "id": "node/13306240230",
+   "lat": 37.690788,
+   "lng": -97.328688,
+   "tags": {
+    "name": "CityArts",
+    "tourism": "gallery",
+    "website": "https://www.wichita.gov/cityarts",
+    "addr:housenumber": "334",
+    "addr:street": "North Mead Street"
+   }
+  },
+  {
+   "id": "node/13812248656",
+   "lat": 37.699209,
+   "lng": -97.390071,
+   "tags": {
+    "name": "Mopig's Collectibles and Custom Paint",
+    "tourism": "gallery",
+    "addr:housenumber": "833",
+    "addr:street": "North West Street, Wichita, Kansas, 67203"
+   }
+  },
+  {
+   "id": "node/358627732",
+   "lat": 37.650848,
+   "lng": -97.340045,
+   "tags": {
+    "name": "Beulah Park",
+    "leisure": "park",
+    "wikidata": "Q34843320"
+   }
+  },
+  {
+   "id": "node/366765811",
+   "lat": 37.68075,
+   "lng": -97.341433,
+   "tags": {
+    "name": "Kansas Sports Hall of Fame",
+    "tourism": "museum",
+    "website": "https://www.kshof.org/",
+    "wikidata": "Q6365057"
+   }
+  },
+  {
+   "id": "node/366765966",
+   "lat": 37.6697,
+   "lng": -97.335251,
+   "tags": {
+    "name": "Kansas Firefighters Museum",
+    "tourism": "museum",
+    "opening_hours": "Sa 11:00-15:00",
+    "website": "https://kansasfirefightersmuseum.com",
+    "wikidata": "Q123616088",
+    "addr:housenumber": "1300",
+    "addr:street": "South Broadway Avenue",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/366765969",
+   "lat": 37.694939,
+   "lng": -97.339785,
+   "tags": {
+    "name": "Kansas African American Museum",
+    "tourism": "museum",
+    "website": "https://www.tkaamuseum.org/"
+   }
+  },
+  {
+   "id": "node/366765994",
+   "lat": 37.687053,
+   "lng": -97.327886,
+   "tags": {
+    "name": "Museum of World Treasures",
+    "tourism": "museum",
+    "website": "https://www.worldtreasures.org/worldtreasures",
+    "wikidata": "Q15260386",
+    "wikipedia": "en:Museum of World Treasures",
+    "addr:housenumber": "835",
+    "addr:street": "East 1st Street North",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/366765998",
+   "lat": 37.686327,
+   "lng": -97.329563,
+   "tags": {
+    "name": "Great Plains Transportation Museum",
+    "tourism": "museum",
+    "website": "https://www.gptm.us/",
+    "wikidata": "Q5599787",
+    "addr:housenumber": "700",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/366765999",
+   "lat": 37.69494,
+   "lng": -97.356372,
+   "tags": {
+    "name": "Wichita Art Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 10:00-17:00; Su 12:00-17:00",
+    "website": "https://wichitaartmuseum.org/",
+    "addr:housenumber": "1400",
+    "addr:street": "West Museum Boulevard",
+    "addr:postcode": "67203-3200",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/366766028",
+   "lat": 37.693791,
+   "lng": -97.362251,
+   "tags": {
+    "name": "Old Cowtown Museum",
+    "tourism": "museum",
+    "website": "https://www.oldcowtown.org/Pages/default.aspx",
+    "wikidata": "Q7083791",
+    "wikipedia": "en:Old Cowtown Museum",
+    "addr:housenumber": "1865",
+    "addr:street": "West Museum Boulevard",
+    "addr:postcode": "67203"
+   }
+  },
+  {
+   "id": "node/366766031",
+   "lat": 37.718011,
+   "lng": -97.292891,
+   "tags": {
+    "name": "Wichita State University - Lowell D Holmes Museum of Anthropology",
+    "tourism": "museum",
+    "website": "https://www.wichita.edu/museums/holmes/index.php"
+   }
+  },
+  {
+   "id": "node/984831116",
+   "lat": 37.691384,
+   "lng": -97.349683,
+   "tags": {
+    "name": "Keeper of the Plains",
+    "historic": "monument",
+    "website": "https://www.visitwichita.com/listing/keeper-of-the-plains/28029/",
+    "wikidata": "Q7744058"
+   }
+  },
+  {
+   "id": "way/121739093",
+   "lat": 37.711729,
+   "lng": -97.323072,
+   "tags": {
+    "name": "McAdams Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 06:00-24:00",
+    "website": "https://www.wichita.gov/Facilities/Facility/Details/McAdams-Park-46",
+    "wikidata": "Q6799861",
+    "wikipedia": "en:McAdams Park",
+    "addr:housenumber": "1329",
+    "addr:street": "East 16th Street North"
+   }
+  },
+  {
+   "id": "way/133195442",
+   "lat": 37.689385,
+   "lng": -97.347404,
+   "tags": {
+    "name": "Exploration Place - Science and Discovery Center",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://exploration.org/",
+    "wikidata": "Q5421320",
+    "wikipedia": "en:Exploration Place",
+    "addr:housenumber": "300",
+    "addr:street": "McLean Boulevard",
+    "addr:postcode": "67203"
+   }
+  },
+  {
+   "id": "way/1430533321",
+   "lat": 37.721032,
+   "lng": -97.28654,
+   "tags": {
+    "name": "The Original Pizza Hut Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 08:00-17:00",
+    "website": "https://www.wichita.edu/museums/pizzahutmuseum/index.php"
+   }
+  },
+  {
+   "id": "way/146321248",
+   "lat": 37.660953,
+   "lng": -97.285053,
+   "tags": {
+    "name": "Clapp Memorial Park",
+    "leisure": "park",
+    "website": "https://www.wichita.gov/Facilities/Facility/Details/LW-Clapp-Memorial-Park-162",
+    "wikidata": "Q34927379"
+   }
+  },
+  {
+   "id": "way/1502720217",
+   "lat": 37.689771,
+   "lng": -97.292446,
+   "tags": {
+    "name": "Frank Lloyd Wright's Allen House",
+    "tourism": "museum",
+    "wikidata": "Q4731481",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/205002857",
+   "lat": 37.692158,
+   "lng": -97.351804,
+   "tags": {
+    "name": "Indian Center Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "650",
+    "addr:street": "North Seneca Street"
+   }
+  },
+  {
+   "id": "way/398996852",
+   "lat": 37.712859,
+   "lng": -97.292878,
+   "tags": {
+    "name": "Fairmount Park",
+    "leisure": "park",
+    "website": "https://www.wichita.gov/Facilities/Facility/Details/Fairmount-Park-37",
+    "wikidata": "Q49488062",
+    "addr:housenumber": "1647",
+    "addr:street": "North Yale",
+    "addr:postcode": "67218"
+   }
+  },
+  {
+   "id": "way/403436047",
+   "lat": 37.684282,
+   "lng": -97.359888,
+   "tags": {
+    "name": "Delano Antiques",
+    "amenity": "marketplace",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/41888583",
+   "lat": 37.697481,
+   "lng": -97.348534,
+   "tags": {
+    "name": "Central Riverside Park",
+    "leisure": "park",
+    "website": "https://www.wichita.gov/Facilities/Facility/Details/Central-Riverside-Park-43",
+    "wikidata": "Q34919618",
+    "addr:housenumber": "720",
+    "addr:street": "Nims Street",
+    "addr:postcode": "67203"
+   }
+  },
+  {
+   "id": "way/462137681",
+   "lat": 37.694958,
+   "lng": -97.339821,
+   "tags": {
+    "name": "Kansas African American Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Fr 09:00-17:00; Sa 12:00-16:00",
+    "wikidata": "Q5024144",
+    "addr:housenumber": "601",
+    "addr:street": "North Water Street",
+    "addr:postcode": "67203"
+   }
+  },
+  {
+   "id": "way/468764219",
+   "lat": 37.695961,
+   "lng": -97.364674,
+   "tags": {
+    "name": "The Wichita Botanica Gardens",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "wikidata": "Q8251228",
+    "wikipedia": "en:Botanica, The Wichita Gardens",
+    "addr:housenumber": "701",
+    "addr:street": "Amidon Street",
+    "addr:postcode": "67203",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/541095411",
+   "lat": 37.717038,
+   "lng": -97.29661,
+   "tags": {
+    "name": "Ulrich Museum of Art",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/677202882",
+   "lat": 37.722861,
+   "lng": -97.336389,
+   "tags": {
+    "name": "Nomar International Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/678315643",
+   "lat": 37.66149,
+   "lng": -97.355089,
+   "tags": {
+    "name": "Aley Park",
+    "leisure": "park",
+    "website": "https://www.wichita.gov/Facilities/Facility/Details/Aley-Park-50",
+    "wikidata": "Q34809266",
+    "addr:housenumber": "1803",
+    "addr:street": "South Seneca Street",
+    "addr:postcode": "67213"
+   }
+  },
+  {
+   "id": "way/853985411",
+   "lat": 37.684725,
+   "lng": -97.337857,
+   "tags": {
+    "name": "Wichita - Sedgwick County Historical Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Fr 11:00-16:00; Sa,Su 13:00-17:00",
+    "website": "https://www.wichitahistory.org/",
+    "wikidata": "Q115202562;Q7998110",
+    "addr:housenumber": "204",
+    "addr:street": "South Main Street"
+   }
+  }
+ ]
+}

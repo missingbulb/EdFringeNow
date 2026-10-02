@@ -1,0 +1,4173 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "scala-days",
+   "venue": "kulturbrauerei",
+   "lat": 52.53924,
+   "lng": 13.41357
+  }
+ ],
+ "places": [
+  {
+   "id": "node/1003097084",
+   "lat": 52.540059,
+   "lng": 13.416998,
+   "tags": {
+    "name": "Fischfabrik",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://fischfabrik.eatbu.com/",
+    "opening_hours": "Mo-Sa 10:00-22:00; Su 14:00-22:00",
+    "addr:housenumber": "24",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10035818735",
+   "lat": 52.543441,
+   "lng": 13.41272,
+   "tags": {
+    "name": "Ishi Noya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Su 17:00-22:00",
+    "addr:housenumber": "54",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/10128974317",
+   "lat": 52.534496,
+   "lng": 13.416375,
+   "tags": {
+    "name": "Grindhouse Burgers",
+    "amenity": "restaurant",
+    "cuisine": "american;burger",
+    "website": "https://www.grindhouseburgers.de/",
+    "opening_hours": "Tu-Th 12:00-15:00, 17:30-22:00; Fr 12:00-23:00; Sa 13:00-23:00; Su 13:00-22:00",
+    "addr:housenumber": "50",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10611889099",
+   "lat": 52.538676,
+   "lng": 13.408891,
+   "tags": {
+    "name": "Poco Loco",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://restaurant-pocoloco.de/",
+    "opening_hours": "Mo-Su 12:00-01:00",
+    "addr:housenumber": "51",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1095434948",
+   "lat": 52.540406,
+   "lng": 13.414791,
+   "tags": {
+    "name": "K-BOK Korean Fried Chicken",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Su-Fr 16:00-01:00, Fr,Sa 16:00-03:00",
+    "addr:housenumber": "12",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11068897812",
+   "lat": 52.537737,
+   "lng": 13.422961,
+   "tags": {
+    "name": "Tadka Twist",
+    "amenity": "restaurant",
+    "addr:housenumber": "204",
+    "addr:street": "Prenzlauer Allee"
+   }
+  },
+  {
+   "id": "node/11435912569",
+   "lat": 52.537406,
+   "lng": 13.408213,
+   "tags": {
+    "name": "26 Shibuya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://26shibuya.berlin",
+    "addr:housenumber": "26",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/11657986569",
+   "lat": 52.536794,
+   "lng": 13.421071,
+   "tags": {
+    "name": "Sathutu",
+    "amenity": "restaurant",
+    "addr:housenumber": "15",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/11771141269",
+   "lat": 52.53712,
+   "lng": 13.421333,
+   "tags": {
+    "name": "The Pho Bar",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11892812616",
+   "lat": 52.53198,
+   "lng": 13.414103,
+   "tags": {
+    "name": "Piccolo e Semplice",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Sa 12:00-23:00",
+    "addr:housenumber": "2",
+    "addr:street": "Metzer Straße",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11892812620",
+   "lat": 52.536016,
+   "lng": 13.416184,
+   "tags": {
+    "name": "Domu Nostra",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/12156182095",
+   "lat": 52.546827,
+   "lng": 13.412439,
+   "tags": {
+    "name": "Pala",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.palaberlin.com",
+    "opening_hours": "Mo-Su 10:00-18:30",
+    "addr:housenumber": "1",
+    "addr:street": "Gaudystraße",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1216682491",
+   "lat": 52.542377,
+   "lng": 13.413532,
+   "tags": {
+    "name": "Core",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Su 12:00-15:00,17:30-21:00",
+    "addr:housenumber": "84",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/12186251635",
+   "lat": 52.543548,
+   "lng": 13.418885,
+   "tags": {
+    "name": "Gemello",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.gemello.berlin/",
+    "opening_hours": "Tu-Fr 17:00-22:00; Sa-Su 14:00-22:00",
+    "addr:housenumber": "6a",
+    "addr:street": "Lettestraße"
+   }
+  },
+  {
+   "id": "node/1229132250",
+   "lat": 52.532866,
+   "lng": 13.413078,
+   "tags": {
+    "name": "Meininger",
+    "tourism": "hotel",
+    "contact:website": "https://www.meininger-hotels.com",
+    "wikidata": "Q111084309",
+    "addr:housenumber": "19",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12307642201",
+   "lat": 52.544352,
+   "lng": 13.416201,
+   "tags": {
+    "name": "Tapalier",
+    "amenity": "restaurant",
+    "addr:housenumber": "22",
+    "addr:street": "Pappelallee"
+   }
+  },
+  {
+   "id": "node/12376123815",
+   "lat": 52.536448,
+   "lng": 13.410515,
+   "tags": {
+    "name": "Calvin Com Pho",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "35",
+    "addr:street": "Choriner Straße",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1244674865",
+   "lat": 52.543387,
+   "lng": 13.41462,
+   "tags": {
+    "name": "Lorbeer",
+    "amenity": "restaurant",
+    "website": "https://restaurant-lorbeer.de/",
+    "opening_hours": "Mo-Fr 17:00-23:00; Sa 13:00-23:00; Su 12:30-23:00",
+    "addr:housenumber": "77",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/12512350457",
+   "lat": 52.53835,
+   "lng": 13.419942,
+   "tags": {
+    "name": "Matthias",
+    "amenity": "restaurant",
+    "website": "https://www.matthiasrestaurant.com",
+    "opening_hours": "We-Sa 19:00+; Sa 12:30-16:00",
+    "addr:housenumber": "78",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/12712856101",
+   "lat": 52.547305,
+   "lng": 13.410586,
+   "tags": {
+    "name": "Escendo Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "italian_pizza",
+    "website": "http://escendo.eu",
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "addr:housenumber": "21",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/12820972301",
+   "lat": 52.538145,
+   "lng": 13.414003,
+   "tags": {
+    "name": "La Muse Gueule",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "opening_hours": "Mo-Su,PH 18:00-01:00+",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/12826788881",
+   "lat": 52.539166,
+   "lng": 13.420874,
+   "tags": {
+    "name": "machiko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.machikokitchen.de/"
+   }
+  },
+  {
+   "id": "node/12863042701",
+   "lat": 52.54543,
+   "lng": 13.41682,
+   "tags": {
+    "name": "Han Factory",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.hanfactory.de/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "65",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/12987058809",
+   "lat": 52.547571,
+   "lng": 13.410424,
+   "tags": {
+    "name": "The Grain",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://thegrainberlin.de/",
+    "opening_hours": "We-Su 17:00-22:00",
+    "addr:housenumber": "38",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/13026729269",
+   "lat": 52.533125,
+   "lng": 13.414858,
+   "tags": {
+    "name": "File Asto",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://file-asto.com",
+    "opening_hours": "Mo,Fr 17:00-22:00; Sa-Su 12:00-22:00",
+    "addr:housenumber": "26",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13121938020",
+   "lat": 52.540313,
+   "lng": 13.418527,
+   "tags": {
+    "name": "Aleppo Supper Club",
+    "amenity": "restaurant",
+    "cuisine": "syrian",
+    "website": "https://alepposupper.club/danziger-strasse/",
+    "opening_hours": "Mo-Sa 11:30-23:30; Su 11:30-23:00",
+    "addr:housenumber": "35",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/13142226002",
+   "lat": 52.535697,
+   "lng": 13.421096,
+   "tags": {
+    "name": "Fukagawa Ramen",
+    "amenity": "restaurant",
+    "cuisine": "ramen;japanese",
+    "website": "https://fukagawa.de",
+    "opening_hours": "Mo-Su 12:00-17:00,18:00-23:00",
+    "addr:housenumber": "22",
+    "addr:street": "Wörther Straße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/13201129101",
+   "lat": 52.543791,
+   "lng": 13.41197,
+   "tags": {
+    "name": "Nah & Fern",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.restaurant-nahundfern.de",
+    "opening_hours": "Tu-Sa 17:00-23:00",
+    "addr:housenumber": "135A",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10347"
+   }
+  },
+  {
+   "id": "node/13287289363",
+   "lat": 52.537152,
+   "lng": 13.411902,
+   "tags": {
+    "name": "Mrs. Viet",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "157",
+    "addr:street": "Schönhauser Allee"
+   }
+  },
+  {
+   "id": "node/13312054339",
+   "lat": 52.531047,
+   "lng": 13.41013,
+   "tags": {
+    "name": "Hi! Chili",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Fr 12:00-21:00; Su 14:00-21:00",
+    "addr:housenumber": "5",
+    "addr:street": "Fehrbelliner Straße",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/1334011480",
+   "lat": 52.546862,
+   "lng": 13.418361,
+   "tags": {
+    "name": "Blackbeards",
+    "amenity": "restaurant",
+    "cuisine": "burger;barbecue",
+    "contact:website": "https://www.blackbeards.berlin/",
+    "opening_hours": "Tu-Fr 17:00-22:00; Sa,Su 15:00-22:00",
+    "addr:housenumber": "55",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1336704612",
+   "lat": 52.532555,
+   "lng": 13.417219,
+   "tags": {
+    "name": "Aromi e sapori",
+    "amenity": "restaurant",
+    "addr:housenumber": "29",
+    "addr:street": "Straßburger Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1348445592",
+   "lat": 52.5452,
+   "lng": 13.411582,
+   "tags": {
+    "name": "1a pension apartment berlin",
+    "tourism": "hotel",
+    "website": "http://www.1a-apartment.de",
+    "addr:housenumber": "6",
+    "addr:street": "Milastraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13529669101",
+   "lat": 52.531892,
+   "lng": 13.411922,
+   "tags": {
+    "name": "Taquería El Oso",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.elosoberlin.de/",
+    "opening_hours": "Fr-Sa 12:00-23:00; Su, Tu-Th 12:00-22:00",
+    "addr:housenumber": "176c",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/13572611902",
+   "lat": 52.541444,
+   "lng": 13.40917,
+   "tags": {
+    "name": "Chay35",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "35",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/13605807916",
+   "lat": 52.539167,
+   "lng": 13.40865,
+   "tags": {
+    "name": "Varga Hennecke",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "14",
+    "addr:street": "Oderberger Straße"
+   }
+  },
+  {
+   "id": "node/1374215640",
+   "lat": 52.543752,
+   "lng": 13.415501,
+   "tags": {
+    "name": "Onkel Le",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://onkel-le-restaurant.com",
+    "opening_hours": "Mo-Fr 11:30-23:30; Sa-Su 12:00-23:30",
+    "addr:housenumber": "19",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1377649516",
+   "lat": 52.53152,
+   "lng": 13.417017,
+   "tags": {
+    "name": "Leibhaftig",
+    "amenity": "restaurant",
+    "contact:website": "http://www.leibhaftig.com/",
+    "addr:housenumber": "30",
+    "addr:street": "Metzer Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1382270880",
+   "lat": 52.543623,
+   "lng": 13.418722,
+   "tags": {
+    "name": "Lette 'm Sleep",
+    "tourism": "hostel",
+    "website": "http://www.backpackers.de",
+    "wikidata": "Q111118509",
+    "addr:housenumber": "7",
+    "addr:street": "Lettestraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1389956196",
+   "lat": 52.534911,
+   "lng": 13.408556,
+   "tags": {
+    "name": "Lola's Tapas",
+    "amenity": "restaurant",
+    "cuisine": "spanish;tapas",
+    "opening_hours": "Tu-Sa 18:00+",
+    "addr:housenumber": "62",
+    "addr:street": "Choriner Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1396537109",
+   "lat": 52.534621,
+   "lng": 13.424463,
+   "tags": {
+    "name": "Casa de Empanadas",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "contact:website": "http://www.la-criolla.de/",
+    "opening_hours": "Mo,Tu 11:00-16:00; We-Fr 11:00-21:00; Sa 17:00-21:00; Su off",
+    "addr:housenumber": "9",
+    "addr:street": "Marienburger Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1544188649",
+   "lat": 52.54744,
+   "lng": 13.411998,
+   "tags": {
+    "name": "Asuka sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "Mo-Sa 12:00-22:00; Su 15:00-22:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1544188651",
+   "lat": 52.547423,
+   "lng": 13.411769,
+   "tags": {
+    "name": "Hello Việt Nam",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://hello-vietnam-restaurant.de",
+    "opening_hours": "Mo-Fr 11:30-23:00; Sa,PH 12:00-23:00",
+    "addr:housenumber": "26",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1544188678",
+   "lat": 52.547337,
+   "lng": 13.411197,
+   "tags": {
+    "name": "City Guesthouse Pension Berlin",
+    "tourism": "hotel",
+    "website": "https://www.booking.com/hotel/de/city-guesthouse-pension-berlin-berlin.en.html?aid=8134623&no_rooms=1&group_adults=2",
+    "addr:housenumber": "24",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1544188682",
+   "lat": 52.547371,
+   "lng": 13.411508,
+   "tags": {
+    "name": "Hala Hala",
+    "amenity": "restaurant",
+    "cuisine": "arab;syrian;lebanese",
+    "opening_hours": "Mo-Su 11:00-23:30",
+    "addr:housenumber": "25",
+    "addr:street": "Gleimstraße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1584563343",
+   "lat": 52.539027,
+   "lng": 13.423735,
+   "tags": {
+    "name": "Taverna Apollon",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.taverna-apollon.de/",
+    "opening_hours": "Mo-Fr 16:00-24:00, Sa,Su 13:00-24:00",
+    "addr:housenumber": "72",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1584744913",
+   "lat": 52.539002,
+   "lng": 13.421337,
+   "tags": {
+    "name": "Delizie D. ´Italia",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://www.delizieditalia.de/",
+    "opening_hours": "Mo-Sa 12:00-24:00; Su,PH off",
+    "addr:housenumber": "100",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1584765820",
+   "lat": 52.538315,
+   "lng": 13.421758,
+   "tags": {
+    "name": "gin sake",
+    "amenity": "restaurant",
+    "opening_hours": "off",
+    "addr:housenumber": "36",
+    "addr:street": "Rykestraße"
+   }
+  },
+  {
+   "id": "node/1587335687",
+   "lat": 52.54437,
+   "lng": 13.422731,
+   "tags": {
+    "name": "Thüringer Stuben",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "website": "https://thueringer-stuben.de/",
+    "opening_hours": "Mo-Sa 16:00-18:00+, Su 12:00-18:00+",
+    "addr:housenumber": "28",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1667676444",
+   "lat": 52.535098,
+   "lng": 13.417055,
+   "tags": {
+    "name": "Koi 56",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Fr 12:00-22:00; Sa,Su,PH 12:00-23:00",
+    "addr:housenumber": "56",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/171073634",
+   "lat": 52.536584,
+   "lng": 13.40069,
+   "tags": {
+    "name": "Jasper's",
+    "amenity": "restaurant",
+    "cuisine": "austrian;german",
+    "contact:website": "https://jaspers-berlin.de/",
+    "opening_hours": "Tu-Sa 17:00-23:00, Su 12:00-20:00",
+    "addr:housenumber": "27",
+    "addr:street": "Anklamer Straße",
+    "addr:postcode": "10115",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1733584202",
+   "lat": 52.531319,
+   "lng": 13.417914,
+   "tags": {
+    "name": "Myer's Hotel",
+    "tourism": "hotel",
+    "stars": "4",
+    "contact:website": "https://www.myershotel.de/de/",
+    "wikidata": "Q111388331",
+    "addr:housenumber": "26",
+    "addr:street": "Metzer Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1733865023",
+   "lat": 52.533456,
+   "lng": 13.420439,
+   "tags": {
+    "name": "Miss Phuong",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://missphuong.de/",
+    "opening_hours": "Mo-Fr 11:30-22:00; Sa 16:00-22:00",
+    "addr:housenumber": "226",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1755917361",
+   "lat": 52.538515,
+   "lng": 13.420115,
+   "tags": {
+    "name": "Itarei",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "89",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1768071900",
+   "lat": 52.543704,
+   "lng": 13.41991,
+   "tags": {
+    "name": "Tossakan",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "contact:website": "https://tossakan-berlin.de/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "16",
+    "addr:street": "Schliemannstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1769937458",
+   "lat": 52.535191,
+   "lng": 13.40724,
+   "tags": {
+    "name": "Iro Izakaya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Fr 12:00-23:00; Sa,Su 13:00-23:00",
+    "addr:housenumber": "25",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/1776298723",
+   "lat": 52.538849,
+   "lng": 13.423643,
+   "tags": {
+    "name": "Saigon new",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Sa 12:00-23:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1887418172",
+   "lat": 52.539006,
+   "lng": 13.409053,
+   "tags": {
+    "name": "Roji",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "contact:website": "https://prenzlauerberg.roji-berlin.de/",
+    "opening_hours": "12:00-22:30",
+    "addr:housenumber": "11",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1894767764",
+   "lat": 52.535413,
+   "lng": 13.423024,
+   "tags": {
+    "name": "Yama",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "contact:website": "http://www.restaurant-yama.de/",
+    "opening_hours": "Mo-Sa 12:00-22:00; Su 13:00-22:00; Tu off",
+    "addr:housenumber": "48",
+    "addr:street": "Marienburger Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1928636123",
+   "lat": 52.532856,
+   "lng": 13.407014,
+   "tags": {
+    "name": "Spätkauf",
+    "tourism": "guest_house",
+    "website": "https://www.leute-am-teute.de/2013/01/25/spatkauf-in-der-choriner-strase/",
+    "opening_hours": "Mo,Sa 18:00+; Tu-Fr 08:00+; Su 10:00+",
+    "addr:housenumber": "11",
+    "addr:street": "Choriner Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1938110318",
+   "lat": 52.53236,
+   "lng": 13.406537,
+   "tags": {
+    "name": "Smartloft Apartments & Art",
+    "tourism": "guest_house",
+    "website": "http://www.smartloft.de/",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1964235524",
+   "lat": 52.533033,
+   "lng": 13.42305,
+   "tags": {
+    "name": "Chandni",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "32",
+    "addr:street": "Immanuelkirchstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1964235575",
+   "lat": 52.533002,
+   "lng": 13.423168,
+   "tags": {
+    "name": "Froindlichst",
+    "amenity": "restaurant",
+    "contact:website": "https://www.froindlichst.com/berlin/",
+    "opening_hours": "Mo-Su 09:30-22:00",
+    "addr:housenumber": "31",
+    "addr:street": "Immanuelkirchstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1976439629",
+   "lat": 52.532792,
+   "lng": 13.423732,
+   "tags": {
+    "name": "Trattoria Foccacia Mia",
+    "amenity": "restaurant",
+    "cuisine": "italian;italian_pizza",
+    "website": "https://focacciamiaberlin.de/",
+    "addr:housenumber": "29",
+    "addr:street": "Immanuelkirchstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2089029498",
+   "lat": 52.539593,
+   "lng": 13.406445,
+   "tags": {
+    "name": "Guten Dag",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "40",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/2123271378",
+   "lat": 52.541785,
+   "lng": 13.415159,
+   "tags": {
+    "name": "Juki",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "contact:website": "http://www.juki.me/",
+    "opening_hours": "Mo-Su 18:00-23:00",
+    "addr:housenumber": "13",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2140694376",
+   "lat": 52.538496,
+   "lng": 13.409347,
+   "tags": {
+    "name": "Hako Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen",
+    "website": "https://www.hakoramenberlin.de",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "16",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2484964710",
+   "lat": 52.534668,
+   "lng": 13.425197,
+   "tags": {
+    "name": "Enzo",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.enzo-sushibar.de/",
+    "contact:website": "https://www.enzo-sushibar.de/",
+    "opening_hours": "Tu-Su 17:00-22:00; Mo off",
+    "addr:housenumber": "38",
+    "addr:street": "Marienburger Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/248651464",
+   "lat": 52.530831,
+   "lng": 13.412464,
+   "tags": {
+    "name": "I Due Forni",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "12",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/249094437",
+   "lat": 52.540618,
+   "lng": 13.414039,
+   "tags": {
+    "name": "Mad Meals",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "99",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/2491985738",
+   "lat": 52.536619,
+   "lng": 13.402188,
+   "tags": {
+    "name": "Der neue Platzhirsch",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "opening_hours": "Mo-Sa 16:00-22:00; Su 10:00-22:00",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/250067344",
+   "lat": 52.537653,
+   "lng": 13.421214,
+   "tags": {
+    "name": "Factory Girl",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;coffee_shop;pancake",
+    "addr:housenumber": "39",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/2503235322",
+   "lat": 52.533216,
+   "lng": 13.406867,
+   "tags": {
+    "name": "Capitolo Rosso",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://capitolo-rosso.de",
+    "opening_hours": "Su-Th 17:00-23:00; Fr-Sa 17:00-00:00",
+    "addr:housenumber": "72",
+    "addr:street": "Choriner Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/250588809",
+   "lat": 52.536142,
+   "lng": 13.420534,
+   "tags": {
+    "name": "Anjoy",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.anjoy-restaurant.de/",
+    "opening_hours": "Mo-Sa, PH 12:00-23:30; Su 11:00-23:30",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2767017223",
+   "lat": 52.534815,
+   "lng": 13.416742,
+   "tags": {
+    "name": "Lucky Leek",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "contact:website": "https://lucky-leek.com/",
+    "opening_hours": "We-Su 18:00+",
+    "addr:housenumber": "46",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2810119171",
+   "lat": 52.536566,
+   "lng": 13.420338,
+   "tags": {
+    "name": "Gingi's Izakaya",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.gingis-izakaya.de/",
+    "opening_hours": "Tu-Su 18:00-23:00",
+    "addr:housenumber": "45",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2844932644",
+   "lat": 52.538357,
+   "lng": 13.4195,
+   "tags": {
+    "name": "Trattoria Toscana",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Su 16:00+",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2866036001",
+   "lat": 52.539772,
+   "lng": 13.40703,
+   "tags": {
+    "name": "Il Giradischi",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Th 17:00-00:00; Fr-Su 12:00-00:00",
+    "addr:housenumber": "22",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2930469301",
+   "lat": 52.544543,
+   "lng": 13.412173,
+   "tags": {
+    "name": "Flow",
+    "tourism": "hostel",
+    "addr:housenumber": "133a",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2930469302",
+   "lat": 52.541613,
+   "lng": 13.411793,
+   "tags": {
+    "name": "Asteria",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "Mo-Fr 16:00-18:00+; Sa,Su,PH 13:00-18:00+",
+    "addr:housenumber": "143",
+    "addr:street": "Schönhauser Allee",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2930469401",
+   "lat": 52.542122,
+   "lng": 13.411779,
+   "tags": {
+    "name": "Mr. Le",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Fr 12:00-23:30, Sa,Su,PH 12:00-24:00",
+    "addr:housenumber": "140",
+    "addr:street": "Schönhauser Allee",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2930469902",
+   "lat": 52.541768,
+   "lng": 13.411785,
+   "tags": {
+    "name": "Vedi's",
+    "amenity": "restaurant",
+    "stars": "5",
+    "cuisine": "indian",
+    "contact:website": "https://vedis.berlin/",
+    "opening_hours": "Mo-Th 12:00-00:00, Fr,Sa 12:00-02:00, Su 12:00-00:00; PH 12:00-00:00",
+    "addr:housenumber": "142",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2930470002",
+   "lat": 52.541288,
+   "lng": 13.410855,
+   "tags": {
+    "name": "Les Valseuses",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "opening_hours": "We-Sa 18:00-23:00; Su 17:00-22:00; Mo,Tu off",
+    "addr:housenumber": "28",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2930470651",
+   "lat": 52.541261,
+   "lng": 13.411145,
+   "tags": {
+    "name": "Dong Do",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "opening_hours": "11:00-23:00",
+    "addr:housenumber": "27",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2930470652",
+   "lat": 52.542212,
+   "lng": 13.411784,
+   "tags": {
+    "name": "Zarenhof",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.hotel-zarenhof.de",
+    "addr:housenumber": "140",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2930781601",
+   "lat": 52.547265,
+   "lng": 13.415487,
+   "tags": {
+    "name": "März",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "website": "https://www.maerzberlin.de/",
+    "opening_hours": "Mo-Su,PH 14:00+",
+    "addr:housenumber": "17",
+    "addr:street": "Greifenhagener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2935294901",
+   "lat": 52.543187,
+   "lng": 13.414932,
+   "tags": {
+    "name": "Suzette Crêperie",
+    "amenity": "restaurant",
+    "cuisine": "crepe;french",
+    "website": "https://www.suzetteberlin.de",
+    "opening_hours": "We-Sa 12:00-16:00, 18:00-23:00; Su 12:00-22:00",
+    "addr:housenumber": "15",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2935340705",
+   "lat": 52.547455,
+   "lng": 13.414203,
+   "tags": {
+    "name": "Chay Umi",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.chayumi-vegan.de/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "2",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2935350901",
+   "lat": 52.54027,
+   "lng": 13.411219,
+   "tags": {
+    "name": "Italian Food Berlin",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza;pasta",
+    "website": "https://www.italianfoodberlin.de/",
+    "opening_hours": "Mo-Su 11:00-04:00",
+    "addr:housenumber": "4",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2935358101",
+   "lat": 52.547755,
+   "lng": 13.413925,
+   "tags": {
+    "name": "Spreegold",
+    "amenity": "restaurant",
+    "website": "https://www.spreegold.com/",
+    "opening_hours": "Mo-Fr 07:00-00:00; Sa-Su 08:00-00:00",
+    "addr:housenumber": "82",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2935386608",
+   "lat": 52.5391,
+   "lng": 13.408802,
+   "tags": {
+    "name": "Mami's Food & Wine",
+    "amenity": "restaurant",
+    "website": "https://www.mamis-berlin.de",
+    "opening_hours": "Th-Mo 17:30-00:00",
+    "addr:housenumber": "13",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2935505707",
+   "lat": 52.545867,
+   "lng": 13.412502,
+   "tags": {
+    "name": "Links vom Fischladen",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "contact:website": "https://www.derfischladen.com/",
+    "opening_hours": "Mo-Su 12:00-21:00; Sa 09:00-19:00; Su 13:00-17:00",
+    "addr:housenumber": "129",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2940856560",
+   "lat": 52.531382,
+   "lng": 13.411771,
+   "tags": {
+    "name": "Zhang Lala Beef Noodles",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://zhanglala-beefnoodles.de/",
+    "addr:housenumber": "177",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/2976779293",
+   "lat": 52.548113,
+   "lng": 13.413098,
+   "tags": {
+    "name": "Yummy Dumpling",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "122",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2987592787",
+   "lat": 52.535037,
+   "lng": 13.418004,
+   "tags": {
+    "name": "Poulette",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "contact:website": "https://www.poulette.de/",
+    "opening_hours": "Mo-Su 09:00-23:00",
+    "addr:housenumber": "30-32",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/3089521114",
+   "lat": 52.535833,
+   "lng": 13.422653,
+   "tags": {
+    "name": "Osteria Tressanti",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.tressanti.de/",
+    "opening_hours": "Mo-Th 16:00-23:00; Fr,Sa 12:00-23:00; Su 12:00-22:00",
+    "addr:housenumber": "41",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3095210431",
+   "lat": 52.537724,
+   "lng": 13.411348,
+   "tags": {
+    "name": "60 seconds to napoli",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "contact:website": "https://60secondstonapoli.de/berlin/",
+    "opening_hours": "11:30-24:00",
+    "addr:housenumber": "61",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3161684998",
+   "lat": 52.538849,
+   "lng": 13.408434,
+   "tags": {
+    "name": "Naan",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://restaurant-naan.de/",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "49",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/320216715",
+   "lat": 52.534207,
+   "lng": 13.405011,
+   "tags": {
+    "name": "Nauta",
+    "amenity": "restaurant",
+    "cuisine": "peruvian;japanese;nikkei",
+    "website": "https://nautaberlin.com/",
+    "contact:website": "http://nautaberlin.com",
+    "opening_hours": "We-Sa 19:30-00:00 off",
+    "addr:housenumber": "49",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/320217469",
+   "lat": 52.533991,
+   "lng": 13.404834,
+   "tags": {
+    "name": "Aapka",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "http://www.aapka.de/",
+    "opening_hours": "Mo-Fr 16:00-23:00; Sa,Su 12:00-23:00",
+    "addr:housenumber": "50",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/321527319",
+   "lat": 52.534286,
+   "lng": 13.405092,
+   "tags": {
+    "name": "W Der Imbiss",
+    "amenity": "restaurant",
+    "cuisine": "indian;mexican;italian",
+    "website": "https://w-derimbiss.de/",
+    "opening_hours": "Su-Th 12:00-22:00; Fr,Sa 12:00-23:00",
+    "addr:housenumber": "49",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3261906268",
+   "lat": 52.533871,
+   "lng": 13.404725,
+   "tags": {
+    "name": "Sababa",
+    "amenity": "restaurant",
+    "opening_hours": "12:00-21:00",
+    "addr:housenumber": "50,51",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3270908361",
+   "lat": 52.537185,
+   "lng": 13.423486,
+   "tags": {
+    "name": "India Spice House",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "48",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/329564458",
+   "lat": 52.534363,
+   "lng": 13.403029,
+   "tags": {
+    "name": "La Bigoudène",
+    "amenity": "restaurant",
+    "cuisine": "crepe;french",
+    "contact:website": "http://www.labigoudene.de",
+    "opening_hours": "Mo-Sa 18:00-23:00; Su 12:00-23:00",
+    "addr:housenumber": "28",
+    "addr:street": "Zionskirchstraße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/330257182",
+   "lat": 52.534749,
+   "lng": 13.406141,
+   "tags": {
+    "name": "Kastanienhof",
+    "tourism": "hotel",
+    "stars": "3S",
+    "contact:website": "https://www.kastanienhof.berlin/",
+    "wikidata": "Q111390195",
+    "addr:housenumber": "65",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/330259379",
+   "lat": 52.534069,
+   "lng": 13.404568,
+   "tags": {
+    "name": "Hangi Sushi",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Tu-Fr 12:00-15:00,17:00-22:00; Sa,Su,PH 17:00-22:00; Mo off",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/330262371",
+   "lat": 52.53365,
+   "lng": 13.403467,
+   "tags": {
+    "name": "La Focacceria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Su 11:00-19:00",
+    "addr:housenumber": "24",
+    "addr:street": "Fehrbelliner Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/330262523",
+   "lat": 52.533767,
+   "lng": 13.405399,
+   "tags": {
+    "name": "Thai Sushi & More",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Mo-Fr 12:00-22:00; Su,PH 13:00-22:00; Sa off",
+    "addr:housenumber": "44",
+    "addr:street": "Zionskirchstraße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3514719977",
+   "lat": 52.53284,
+   "lng": 13.420897,
+   "tags": {
+    "name": "Cháomin",
+    "amenity": "restaurant",
+    "contact:website": "https://chaomin.berlin/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "27A",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3518023168",
+   "lat": 52.539742,
+   "lng": 13.419035,
+   "tags": {
+    "name": "Anh Dao",
+    "amenity": "restaurant",
+    "cuisine": "asian;indonesian",
+    "contact:website": "https://www.anhdao-indochinesischespezialitaetenberlin.de/",
+    "opening_hours": "Mo-Fr,Su 12:00-22:00; Sa 17:00-22:00",
+    "addr:housenumber": "42",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3523469022",
+   "lat": 52.543042,
+   "lng": 13.420998,
+   "tags": {
+    "name": "Mamida",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "contact:website": "https://mamidaberlin.com/",
+    "opening_hours": "Mo-Fr 17:00-22:00; Sa-Su 12:00-22:00",
+    "addr:housenumber": "80A",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/356007033",
+   "lat": 52.532844,
+   "lng": 13.408615,
+   "tags": {
+    "name": "Standard Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "contact:website": "https://www.standard-berlin.de",
+    "opening_hours": "Mo-Fr 17:00-24:00; PH,Sa,Su 13:00-24:00",
+    "addr:housenumber": "7",
+    "addr:street": "Templiner Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3578225334",
+   "lat": 52.547356,
+   "lng": 13.411305,
+   "tags": {
+    "name": "Shan Shan",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.berlinrestaurant-shanshan.de/",
+    "opening_hours": "We-Su 16:00-22:00; Mo,Tu off",
+    "addr:housenumber": "24",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3578241574",
+   "lat": 52.547125,
+   "lng": 13.408725,
+   "tags": {
+    "name": "Batu Pattaya",
+    "amenity": "restaurant",
+    "addr:housenumber": "17",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/3698408425",
+   "lat": 52.539479,
+   "lng": 13.406707,
+   "tags": {
+    "name": "Seoulgarden",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "41",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/370300841",
+   "lat": 52.536941,
+   "lng": 13.40846,
+   "tags": {
+    "name": "GLS Cafeteria",
+    "amenity": "restaurant",
+    "website": "https://www.gls-berlin.de/2510-gls-cafeteria.html",
+    "opening_hours": "Mo-Fr 08:00-16:00",
+    "addr:housenumber": "82",
+    "addr:street": "Kastanienallee",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/370852067",
+   "lat": 52.547444,
+   "lng": 13.414303,
+   "tags": {
+    "name": "Knödelwirtschaft Nord",
+    "amenity": "restaurant",
+    "cuisine": "regional;austrian",
+    "contact:website": "https://www.knoedelwirtschaft.de/nord",
+    "opening_hours": "Mo-Fr 17:00-23:00; Sa-Su 12:00-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/371157963",
+   "lat": 52.547677,
+   "lng": 13.41473,
+   "tags": {
+    "name": "Van Hoa",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "https://vanhoa-berlin.de/",
+    "opening_hours": "Mo-Su 12:00-23:30",
+    "addr:housenumber": "79",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/372621918",
+   "lat": 52.546247,
+   "lng": 13.412629,
+   "tags": {
+    "name": "Oriental",
+    "amenity": "restaurant",
+    "cuisine": "grill;kebab;pizza",
+    "opening_hours": "Mo-Su 08:00-00:00, Fr-Sa 08:00-01:00",
+    "addr:housenumber": "127a",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/373855813",
+   "lat": 52.545283,
+   "lng": 13.421448,
+   "tags": {
+    "name": "Sadhu",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "https://www.sadhu3.de/",
+    "opening_hours": "12:00-23:00",
+    "addr:housenumber": "60",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3768694109",
+   "lat": 52.536064,
+   "lng": 13.422788,
+   "tags": {
+    "name": "Viet Nam & Sushi Bar Berlin",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Su-Fr 12:00-22:00; Sa off",
+    "addr:housenumber": "43",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3780382762",
+   "lat": 52.53228,
+   "lng": 13.419159,
+   "tags": {
+    "name": "ackselhaus & bluehome",
+    "tourism": "hotel",
+    "addr:housenumber": "21",
+    "addr:street": "Belforter Straße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/385406320",
+   "lat": 52.533923,
+   "lng": 13.402009,
+   "tags": {
+    "name": "Alimentari",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-We 12:00-22:00; Th 12:00-18:00; Fr 12:00-22:00; Sa,Su,PH off",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3900932276",
+   "lat": 52.538216,
+   "lng": 13.417391,
+   "tags": {
+    "name": "NOVEMBER Brasserie",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "contact:website": "https://november.berlin/",
+    "opening_hours": "Tu-Su 18:00-23:00; Mo off",
+    "addr:housenumber": "15",
+    "addr:street": "Husemannstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3900932277",
+   "lat": 52.538542,
+   "lng": 13.416173,
+   "tags": {
+    "name": "Mjalt",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://mjalt.de/",
+    "opening_hours": "Mo-Th 17:00-23:00; Fr 16:00-24:00; Sa-Su 12:00-24:00",
+    "addr:housenumber": "23",
+    "addr:street": "Sredzkistraße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3900932282",
+   "lat": 52.537934,
+   "lng": 13.417749,
+   "tags": {
+    "name": "Little Salonika",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/3900932369",
+   "lat": 52.538382,
+   "lng": 13.418822,
+   "tags": {
+    "name": "Chutnify",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.chutnify.com/location/sredzkistrase-43/",
+    "opening_hours": "Tu-Fr 12:00-15:00,18:00-22:00; Sa,Su 12:00-22:00",
+    "addr:housenumber": "43",
+    "addr:street": "Sredzkistraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3900932446",
+   "lat": 52.53747,
+   "lng": 13.417669,
+   "tags": {
+    "name": "Osteria Fiorello",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "10",
+    "addr:street": "Husemannstraße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3900934655",
+   "lat": 52.540196,
+   "lng": 13.416123,
+   "tags": {
+    "name": "Kokio",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "contact:website": "https://www.kokioberlin.com/",
+    "opening_hours": "Mo-Su 16:00-23:30",
+    "addr:housenumber": "20",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3900935685",
+   "lat": 52.537565,
+   "lng": 13.417673,
+   "tags": {
+    "name": "Zula",
+    "amenity": "restaurant",
+    "cuisine": "hummus",
+    "contact:website": "http://www.zulaberlin.com/",
+    "opening_hours": "11:00+",
+    "addr:housenumber": "10",
+    "addr:street": "Husemannstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3901335157",
+   "lat": 52.53951,
+   "lng": 13.410955,
+   "tags": {
+    "name": "Home of Dumplings",
+    "amenity": "restaurant",
+    "cuisine": "dumplings;asian",
+    "website": "https://homeofdumplings.de",
+    "addr:housenumber": "100",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3901335182",
+   "lat": 52.540118,
+   "lng": 13.406103,
+   "tags": {
+    "name": "Wei Dao Jia",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://weidaojia.de/",
+    "opening_hours": "Mo-Th,Su 12:00-22:30; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "27",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/394000635",
+   "lat": 52.542057,
+   "lng": 13.423265,
+   "tags": {
+    "name": "Trattoria Zoe",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.zoeberlin.de/",
+    "opening_hours": "12:00-24:00",
+    "addr:housenumber": "10",
+    "addr:street": "Senefelderstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3941020742",
+   "lat": 52.539834,
+   "lng": 13.418392,
+   "tags": {
+    "name": "MODU",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo,We-Sa 12:00-15:00,17:00-22:00; Su 12:00-21:00; Tu off",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3951512329",
+   "lat": 52.54143,
+   "lng": 13.423664,
+   "tags": {
+    "name": "Miyaki Sushi Lounge",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "contact:website": "https://www.miyaki-sushi.de/berlin-prenzlauerberg/",
+    "opening_hours": "11:00-23:00",
+    "addr:housenumber": "28/29",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4095897082",
+   "lat": 52.537982,
+   "lng": 13.410583,
+   "tags": {
+    "name": "Hotel Oderberger",
+    "tourism": "hotel",
+    "contact:website": "https://www.hotel-oderberger.berlin/",
+    "wikidata": "Q111390197",
+    "addr:housenumber": "57-59",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4109539490",
+   "lat": 52.546321,
+   "lng": 13.417785,
+   "tags": {
+    "name": "Crêpestation",
+    "amenity": "restaurant",
+    "cuisine": "crepe",
+    "website": "https://www.crepestation.de",
+    "opening_hours": "We-Su 12:00-18:00",
+    "addr:housenumber": "58",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/411555034",
+   "lat": 52.540896,
+   "lng": 13.414157,
+   "tags": {
+    "name": "Schusterjunge",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "http://www.zumschusterjungen.com/",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/415307587",
+   "lat": 52.541897,
+   "lng": 13.420464,
+   "tags": {
+    "name": "L'Osteria Del Parlamento",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.losteria-parlamento.de/",
+    "opening_hours": "Mo-Su 11:30-23:30",
+    "addr:housenumber": "15",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/415310758",
+   "lat": 52.541629,
+   "lng": 13.421497,
+   "tags": {
+    "name": "Benedict",
+    "amenity": "restaurant",
+    "contact:website": "https://pberg.benedict.world/",
+    "opening_hours": "Mo-Th 09:00-16:00; Sa 08:00-23:00; Fr 09:00-23:00; Su 08:00-20:00",
+    "addr:housenumber": "5",
+    "addr:street": "Göhrener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/415311956",
+   "lat": 52.544443,
+   "lng": 13.41631,
+   "tags": {
+    "name": "Mido Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "22",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/415312260",
+   "lat": 52.544271,
+   "lng": 13.418406,
+   "tags": {
+    "name": "Sasaya",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "contact:website": "https://sasaya-berlin.de/",
+    "opening_hours": "Mo, Th-Su 12:00-15:00; Mo, Th-Su 18:00-23:00",
+    "addr:housenumber": "50",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/415312876",
+   "lat": 52.541508,
+   "lng": 13.414858,
+   "tags": {
+    "name": "Meena Kumari",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "https://www.meenakumari.de/",
+    "opening_hours": "Mo-Su 17:00+",
+    "addr:housenumber": "9",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/415549142",
+   "lat": 52.54647,
+   "lng": 13.417935,
+   "tags": {
+    "name": "Gate 57",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;asian",
+    "website": "https://gate57-restaurant.eatbu.com/",
+    "opening_hours": "12:00-23:00",
+    "addr:housenumber": "57",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/415549143",
+   "lat": 52.5467,
+   "lng": 13.418142,
+   "tags": {
+    "name": "Vedis",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://vedis-mexican.de/",
+    "opening_hours": "Mo-Th,Su 12:00-24:00; Fr-Sa 12:00-02:00",
+    "addr:housenumber": "56",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/415549144",
+   "lat": 52.54655,
+   "lng": 13.418534,
+   "tags": {
+    "name": "IL FALCO",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://il-falco.de/",
+    "opening_hours": "Mo-Su 16:00-23:00",
+    "addr:housenumber": "36",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/415551265",
+   "lat": 52.543855,
+   "lng": 13.417489,
+   "tags": {
+    "name": "The Tiger",
+    "amenity": "restaurant",
+    "opening_hours": "Tu,We 11:00-18:00; Th,Fr 11:00-19:00; Sa,Su 10:00-19:00",
+    "addr:housenumber": "41",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4168327922",
+   "lat": 52.532606,
+   "lng": 13.41205,
+   "tags": {
+    "name": "LUA",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://lua-berlin.de",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "addr:housenumber": "269",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/418653178",
+   "lat": 52.541571,
+   "lng": 13.42302,
+   "tags": {
+    "name": "Girasol",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.restaurant-girasol.de/",
+    "opening_hours": "Mo-Sa 12:00-24:00, Su 10:00-24:00",
+    "addr:housenumber": "30",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4278854420",
+   "lat": 52.536192,
+   "lng": 13.411989,
+   "tags": {
+    "name": "Stadtkloster Segen",
+    "tourism": "guest_house",
+    "website": "https://www.stadtklostersegen.de/v2/index.php/der-ort/zu-gast",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4304292492",
+   "lat": 52.543937,
+   "lng": 13.41806,
+   "tags": {
+    "name": "Likya",
+    "amenity": "restaurant",
+    "addr:housenumber": "46",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/4426987586",
+   "lat": 52.533679,
+   "lng": 13.40508,
+   "tags": {
+    "name": "Pizzarama",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "58",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/4438822689",
+   "lat": 52.543793,
+   "lng": 13.415805,
+   "tags": {
+    "name": "Takumi Nine 1",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen",
+    "contact:website": "https://www.takuminineberlin.de/takumi-nine-prenzlauer-berg",
+    "opening_hours": "Mo-Fr 12:00-14:30,17:30-21:00; Sa,Su 12:00-21:00",
+    "addr:housenumber": "19",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/4457967051",
+   "lat": 52.54079,
+   "lng": 13.406169,
+   "tags": {
+    "name": "Bentokado",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.bentokado.com/",
+    "opening_hours": "Mo-Su 11:30-22:00",
+    "addr:housenumber": "5",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4485277090",
+   "lat": 52.543332,
+   "lng": 13.416879,
+   "tags": {
+    "name": "Houdini",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "http://www.houdini-berlin.de/",
+    "opening_hours": "Mo-Th 12:00-24:00, Fr 12:00-02:00, Sa 10:00-02:00, Su 10:00-24:00",
+    "addr:housenumber": "35",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4504497356",
+   "lat": 52.547435,
+   "lng": 13.411889,
+   "tags": {
+    "name": "Dot Tea Bar",
+    "amenity": "restaurant",
+    "addr:housenumber": "27",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/4595444464",
+   "lat": 52.535928,
+   "lng": 13.416274,
+   "tags": {
+    "name": "Der Blaue Fuchs",
+    "amenity": "restaurant",
+    "cuisine": "georgian",
+    "website": "https://m.facebook.com/RestaurantDerblaueFuchs/",
+    "opening_hours": "Tu-Fr 17:00-23:00; Sa-Su 12:00-23:00",
+    "addr:housenumber": "43",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4791429236",
+   "lat": 52.538442,
+   "lng": 13.420043,
+   "tags": {
+    "name": "Hirsch & Eber",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.hirschundeber.com/",
+    "opening_hours": "We-Su 17:00-22:00",
+    "addr:housenumber": "87",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/487563994",
+   "lat": 52.5381,
+   "lng": 13.409471,
+   "tags": {
+    "name": "Aftab",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "website": "https://aftab-persianstreetfood.de/",
+    "opening_hours": "PH,Mo-Su 11:00-22:00",
+    "addr:housenumber": "90",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4879058421",
+   "lat": 52.534855,
+   "lng": 13.418461,
+   "tags": {
+    "name": "Miss Hue",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://www.misshue.de",
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "addr:housenumber": "24",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4885406721",
+   "lat": 52.543735,
+   "lng": 13.416588,
+   "tags": {
+    "name": "Hum",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.hum-vegan.de/",
+    "opening_hours": "Mo-Fr 12:00-23:00; Sa,Su 13:00-23:00",
+    "addr:housenumber": "38",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4908793321",
+   "lat": 52.538797,
+   "lng": 13.410196,
+   "tags": {
+    "name": "Pasta & Passione",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Su-Th 12:00-24:00, Fr,Sa 12:00-01:00",
+    "addr:housenumber": "94",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4917130421",
+   "lat": 52.535083,
+   "lng": 13.421376,
+   "tags": {
+    "name": "Korean Food Stories",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://koreanfoodstories.com/",
+    "opening_hours": "Mo-Fr 11:30-16:00, Fr 18:30-22:00",
+    "addr:housenumber": "217",
+    "addr:street": "Prenzlauer Allee"
+   }
+  },
+  {
+   "id": "node/5018473472",
+   "lat": 52.540993,
+   "lng": 13.41082,
+   "tags": {
+    "name": "Pizzare",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "contact:website": "https://pizzare.com",
+    "opening_hours": "Mo-We off; Th-Su 17:00-22:30",
+    "addr:housenumber": "21",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5018674947",
+   "lat": 52.547332,
+   "lng": 13.411093,
+   "tags": {
+    "name": "Tapitas",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "opening_hours": "16:00-00:00",
+    "addr:housenumber": "23",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5037629472",
+   "lat": 52.5378,
+   "lng": 13.420032,
+   "tags": {
+    "name": "Chotto",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "contact:website": "http://hallochotto.weebly.com",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "84",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5079913306",
+   "lat": 52.539437,
+   "lng": 13.399454,
+   "tags": {
+    "name": "Supersonico",
+    "amenity": "restaurant",
+    "website": "https://www.supersonico.berlin",
+    "opening_hours": "Mo-Su 09:00-02:00",
+    "addr:housenumber": "71-72",
+    "addr:street": "Bernauer Straße",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/508818882",
+   "lat": 52.541004,
+   "lng": 13.422396,
+   "tags": {
+    "name": "Bricole",
+    "amenity": "restaurant",
+    "cuisine": "french;fine_dining",
+    "contact:website": "http://www.bricole.de/",
+    "opening_hours": "Tu-Sa 18:00+",
+    "addr:housenumber": "30",
+    "addr:street": "Senefelderstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/516574161",
+   "lat": 52.539298,
+   "lng": 13.408303,
+   "tags": {
+    "name": "La Esperanza",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "addr:housenumber": "16",
+    "addr:street": "Oderberger Straße"
+   }
+  },
+  {
+   "id": "node/516574175",
+   "lat": 52.538791,
+   "lng": 13.408554,
+   "tags": {
+    "name": "Kiezkantine",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.pinel-online.de/index.php?id=1048",
+    "opening_hours": "Mo-Fr 10:00 - 15:45",
+    "addr:housenumber": "50",
+    "addr:street": "Oderberger Straße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/516574189",
+   "lat": 52.540563,
+   "lng": 13.405069,
+   "tags": {
+    "name": "Eastmoon",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://www.eastmoon.de/",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/520005867",
+   "lat": 52.537494,
+   "lng": 13.422731,
+   "tags": {
+    "name": "Maison Saveur",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "http://maisonsaveur.de",
+    "addr:housenumber": "67",
+    "addr:street": "Sredzkistraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/520011128",
+   "lat": 52.543508,
+   "lng": 13.421911,
+   "tags": {
+    "name": "Thai Aroma",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;thai",
+    "contact:website": "http://www.thaiaroma.de/",
+    "opening_hours": "Tu-Su 12:00-22:30",
+    "addr:housenumber": "18",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/521734337",
+   "lat": 52.54176,
+   "lng": 13.421106,
+   "tags": {
+    "name": "Al Hamra",
+    "amenity": "restaurant",
+    "cuisine": "arab",
+    "contact:website": "https://www.alhamra.de/",
+    "opening_hours": "Mo-Th 10:00-02:00, Fr-Su 10:00-03:00",
+    "addr:housenumber": "16",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5223291532",
+   "lat": 52.541508,
+   "lng": 13.40901,
+   "tags": {
+    "name": "Linnen",
+    "tourism": "hotel",
+    "website": "http://www.linnenberlin.com/",
+    "wikidata": "Q111390198",
+    "addr:housenumber": "35",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/523295059",
+   "lat": 52.547134,
+   "lng": 13.408801,
+   "tags": {
+    "name": "Goa II",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.goa2-berlin.de/",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "17-18",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/526073710",
+   "lat": 52.542039,
+   "lng": 13.419923,
+   "tags": {
+    "name": "Vinpearl",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;japanese",
+    "contact:website": "http://www.vinpearl.de/",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "14a",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/534291706",
+   "lat": 52.538291,
+   "lng": 13.409142,
+   "tags": {
+    "name": "Yedo",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://yedo-berlin.de/",
+    "opening_hours": "PH,Mo-Su 12:00-23:00",
+    "addr:housenumber": "18",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5440584280",
+   "lat": 52.541363,
+   "lng": 13.415133,
+   "tags": {
+    "name": "Koempul",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "contact:website": "https://koempul.com/",
+    "opening_hours": "Mo-Fr 12:00-14:30,17:30-21:30; Sa,Su 12:00-21:30",
+    "addr:housenumber": "6",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5578930046",
+   "lat": 52.536794,
+   "lng": 13.423222,
+   "tags": {
+    "name": "Bangkok Treffpunkt",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://bangkok-treffpunkt.de/",
+    "opening_hours": "12:00-23:00",
+    "addr:housenumber": "46",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5596415954",
+   "lat": 52.545002,
+   "lng": 13.421278,
+   "tags": {
+    "name": "Mijo",
+    "amenity": "restaurant",
+    "cuisine": "japanese;vietnamese",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "24",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/560145213",
+   "lat": 52.546819,
+   "lng": 13.417798,
+   "tags": {
+    "name": "Pasta & Vino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://pasta-vino-berlin.de/",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "72",
+    "addr:street": "Stargarder Straße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/560145221",
+   "lat": 52.545963,
+   "lng": 13.419865,
+   "tags": {
+    "name": "Vegan Haus",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.veganhaus-berlin.de/",
+    "opening_hours": "12:00-23:00",
+    "addr:housenumber": "65",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/560524660",
+   "lat": 52.546613,
+   "lng": 13.417526,
+   "tags": {
+    "name": "Lumite",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "13",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/560524661",
+   "lat": 52.546855,
+   "lng": 13.416849,
+   "tags": {
+    "name": "Rymi-Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "11",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/560527191",
+   "lat": 52.547888,
+   "lng": 13.415401,
+   "tags": {
+    "name": "'A Magica",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.amagica.de/",
+    "opening_hours": "Mo-We 17:00-23:00; Sa-Su 16:00-23:00; Th-Fr 12:00-23:00",
+    "addr:housenumber": "54",
+    "addr:street": "Greifenhagener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5614737535",
+   "lat": 52.539428,
+   "lng": 13.414302,
+   "tags": {
+    "name": "Soda Restaurant",
+    "amenity": "restaurant",
+    "contact:website": "http://www.soda-berlin.de/restaurant",
+    "opening_hours": "Mo-Th 10:00-20:00; Fr 10:00-22:00; Sa 17:00-22:00",
+    "addr:housenumber": "97",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/566730446",
+   "lat": 52.545198,
+   "lng": 13.414907,
+   "tags": {
+    "name": "Galbi-House",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "contact:website": "https://vina-haus-restaurant-berlin.eatbu.com/",
+    "addr:housenumber": "5",
+    "addr:street": "Buchholzer Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/567169600",
+   "lat": 52.543197,
+   "lng": 13.4172,
+   "tags": {
+    "name": "Tres Tapas",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "contact:website": "https://www.tres-tapas.de/",
+    "opening_hours": "Mo-Su 17:00-01:00",
+    "addr:housenumber": "30",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/573418204",
+   "lat": 52.54411,
+   "lng": 13.420332,
+   "tags": {
+    "name": "Lecker Song",
+    "amenity": "restaurant",
+    "cuisine": "chinese;dumplings",
+    "contact:website": "https://www.leckersong.de/",
+    "opening_hours": "Mo-Su 17:00-22:00",
+    "addr:housenumber": "19",
+    "addr:street": "Schliemannstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/574773731",
+   "lat": 52.54405,
+   "lng": 13.41987,
+   "tags": {
+    "name": "Kongfu Chili",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "contact:website": "https://www.kongfuchili.de/",
+    "opening_hours": "Mo-Fr 17:00-22:00; Sa 12:00-15:30,17:00-22:00; Su 17:00-22:00",
+    "addr:housenumber": "31",
+    "addr:street": "Schliemannstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/577380835",
+   "lat": 52.54534,
+   "lng": 13.417219,
+   "tags": {
+    "name": "Teller",
+    "amenity": "restaurant",
+    "website": "https://www.tellerberlin.com",
+    "opening_hours": "Th-Sa 18:00-22:30",
+    "addr:housenumber": "29",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/577380844",
+   "lat": 52.545876,
+   "lng": 13.417799,
+   "tags": {
+    "name": "Zia Maria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.zia-maria.de/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "32a",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5777485254",
+   "lat": 52.540979,
+   "lng": 13.414834,
+   "tags": {
+    "name": "Pizza Nostra",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "contact:website": "https://www.pizzanostra.de/",
+    "opening_hours": "Mo-Sa 12:00-00:00; Su 13:00-00:00",
+    "addr:housenumber": "2",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5777568654",
+   "lat": 52.535828,
+   "lng": 13.421699,
+   "tags": {
+    "name": "A-Petit",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "contact:website": "http://www.a-petit.de",
+    "opening_hours": "Mo-Su 11:30-23:30",
+    "addr:housenumber": "25",
+    "addr:street": "Wörther Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5798432754",
+   "lat": 52.540967,
+   "lng": 13.411093,
+   "tags": {
+    "name": "VEG'D",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://vegd.eu/",
+    "opening_hours": "Mo 17:00-21:00; Tu-Su 12:00-21:00",
+    "addr:housenumber": "22",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5884458286",
+   "lat": 52.531586,
+   "lng": 13.411592,
+   "tags": {
+    "name": "Schankhalle Pfefferberg",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "contact:website": "https://schankhalle-pfefferberg.de/braugasthaus/",
+    "opening_hours": "Tu-Sa 16:00-23:00",
+    "addr:housenumber": "176",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5896182585",
+   "lat": 52.536861,
+   "lng": 13.417075,
+   "tags": {
+    "name": "Simsim",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "contact:website": "https://simsim-restaurant.de/",
+    "opening_hours": "Mo-Th 17:00-23:00; Fr,Sa 17:00-23:30",
+    "addr:housenumber": "1",
+    "addr:street": "Husemannstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/592636069",
+   "lat": 52.541837,
+   "lng": 13.415211,
+   "tags": {
+    "name": "Charme Thai Bistro Cafe",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Tu-Fr 12:00-22:00; Sa-Su 16:00-22:00",
+    "addr:housenumber": "13",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/598583129",
+   "lat": 52.534027,
+   "lng": 13.404308,
+   "tags": {
+    "name": "Paerchen",
+    "amenity": "restaurant",
+    "opening_hours": "Th-Su 16:00+",
+    "addr:housenumber": "40",
+    "addr:street": "Zionskirchstraße",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/6013180962",
+   "lat": 52.542342,
+   "lng": 13.413999,
+   "tags": {
+    "name": "Wraps Wraps",
+    "amenity": "restaurant",
+    "addr:housenumber": "9",
+    "addr:street": "Pappelallee",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/609901041",
+   "lat": 52.537076,
+   "lng": 13.403865,
+   "tags": {
+    "name": "Altberliner Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "website": "http://www.altberliner-restaurant.de",
+    "opening_hours": "We-Sa 17:00-22:00; Su 12:00-21:00",
+    "addr:housenumber": "1",
+    "addr:street": "Fürstenberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/610398520",
+   "lat": 52.540654,
+   "lng": 13.405411,
+   "tags": {
+    "name": "Alin",
+    "amenity": "restaurant",
+    "cuisine": "palestinian",
+    "opening_hours": "Tu-Su 12:00-20:00",
+    "addr:housenumber": "1",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6126771448",
+   "lat": 52.538368,
+   "lng": 13.412896,
+   "tags": {
+    "name": "Frannz Ausschank-Salon-Club",
+    "amenity": "restaurant",
+    "contact:website": "https://frannz.eu/essen-im-ausschank/",
+    "opening_hours": "Mo-Th 17:00-23:00,17:00-24:00+, Sa 17:00-24:00+, Su,PH 17:00-23:00",
+    "addr:housenumber": "36",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/615027093",
+   "lat": 52.534421,
+   "lng": 13.405766,
+   "tags": {
+    "name": "Mono",
+    "amenity": "restaurant",
+    "website": "https://monorestaurants.com/",
+    "opening_hours": "Tu-Th 12:00-15:00,17:00-22:00; Fr 12:00-15:00,17:00-22:30; Sa 12:00-22:30; Su 12:00-22:00",
+    "addr:housenumber": "62",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6265137075",
+   "lat": 52.536717,
+   "lng": 13.410758,
+   "tags": {
+    "name": "Cheers Kiez Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.cheerskiezpizza.com",
+    "opening_hours": "Mo-Fr 17:00-22:00; Sa,Su 13:00-22:00",
+    "addr:housenumber": "37",
+    "addr:street": "Choriner Straße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/6313039427",
+   "lat": 52.531936,
+   "lng": 13.41579,
+   "tags": {
+    "name": "Mezze Bar MontRaw",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Sa 16:00-22:00",
+    "addr:housenumber": "33",
+    "addr:street": "Straßburger Straße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/638213738",
+   "lat": 52.534494,
+   "lng": 13.419432,
+   "tags": {
+    "name": "Umami",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "contact:website": "http://umami-restaurant.de/",
+    "opening_hours": "PH,Mo-Su 12:00-22:00",
+    "addr:housenumber": "16-18",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6493313863",
+   "lat": 52.536543,
+   "lng": 13.42087,
+   "tags": {
+    "name": "Allan's Breakfast Club",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "addr:housenumber": "13",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/650956059",
+   "lat": 52.534802,
+   "lng": 13.418656,
+   "tags": {
+    "name": "Pasternak",
+    "amenity": "restaurant",
+    "cuisine": "russian;jewish",
+    "contact:website": "https://restaurant-pasternak.de/",
+    "opening_hours": "Mo-Su 09:00-01:00",
+    "addr:housenumber": "22/24",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6562885996",
+   "lat": 52.537936,
+   "lng": 13.423095,
+   "tags": {
+    "name": "Grand Tang",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Tu-Su,PH 12:00-22:00",
+    "addr:housenumber": "204",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6596071258",
+   "lat": 52.543002,
+   "lng": 13.425877,
+   "tags": {
+    "name": "Trancina",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Tu-Sa 12:00-21:00",
+    "addr:housenumber": "39",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6772800796",
+   "lat": 52.532844,
+   "lng": 13.423592,
+   "tags": {
+    "name": "Lovely",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "20a",
+    "addr:street": "Immanuelkirchstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/679212938",
+   "lat": 52.535443,
+   "lng": 13.41671,
+   "tags": {
+    "name": "Gugelhof",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://gugelhofberlin.de/",
+    "opening_hours": "Mo,We-Fr 17:00-23:00; Sa,Su 10:00-23:00",
+    "addr:housenumber": "37",
+    "addr:street": "Knaackstraße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/685796974",
+   "lat": 52.542268,
+   "lng": 13.416159,
+   "tags": {
+    "name": "Ushido",
+    "amenity": "restaurant",
+    "cuisine": "japanese;barbecue",
+    "contact:website": "http://www.ushido-bbq.com/",
+    "opening_hours": "Mo,We-Th 18:00-22:00; Tu off; Fr-Sa 17:00-23:00; Su 17:00-22:00",
+    "addr:housenumber": "18",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6872592804",
+   "lat": 52.534728,
+   "lng": 13.406053,
+   "tags": {
+    "name": "Ausspanne",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "contact:website": "http://www.deutsches-restaurant.berlin/",
+    "opening_hours": "Tu-Sa 17:00+",
+    "addr:housenumber": "65",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6872603389",
+   "lat": 52.53776,
+   "lng": 13.408594,
+   "tags": {
+    "name": "Kyo",
+    "amenity": "restaurant",
+    "cuisine": "japanese;yakitori",
+    "contact:website": "http://www.kyo-grill.de/",
+    "opening_hours": "Tu-Sa 12:00-23:00; Su 14:00-23:00",
+    "addr:housenumber": "23",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/697714208",
+   "lat": 52.533814,
+   "lng": 13.409717,
+   "tags": {
+    "name": "Lemon Grass Scent",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "contact:website": "https://www.lemongrass-scent.de",
+    "opening_hours": "Mo-Fr 11:30-24:00; Sa-Su 12:00-24:00",
+    "addr:housenumber": "12",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/697714223",
+   "lat": 52.534065,
+   "lng": 13.409096,
+   "tags": {
+    "name": "Hotel Birgit",
+    "tourism": "hotel",
+    "contact:website": "http://www.hotelbirgit.com",
+    "addr:housenumber": "15",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/697751131",
+   "lat": 52.530682,
+   "lng": 13.411722,
+   "tags": {
+    "name": "Wen Cheng II",
+    "amenity": "restaurant",
+    "cuisine": "noodle;chinese",
+    "website": "https://wenchengnoodles.de/",
+    "contact:website": "https://wenchengnoodles.de/",
+    "opening_hours": "Tu-Fr 17:00-22:00; Sa-Su 12:00-15:00,17:00-22:00",
+    "addr:housenumber": "10",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/697756138",
+   "lat": 52.533992,
+   "lng": 13.415127,
+   "tags": {
+    "name": "Khushi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "http://www.khushi-berlin.de",
+    "opening_hours": "Su-Th 12:00-24:00; Fr-Sa 12:00-01:00",
+    "addr:housenumber": "37",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/697921440",
+   "lat": 52.545589,
+   "lng": 13.413223,
+   "tags": {
+    "name": "Restaurant Mãmây",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "http://www.mamay-berlin.de",
+    "opening_hours": "Mo-Su 11:30-22:00",
+    "addr:housenumber": "61",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7020226646",
+   "lat": 52.540292,
+   "lng": 13.415461,
+   "tags": {
+    "name": "Malafemmena",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://malafemmena.restaurant",
+    "opening_hours": "Mo-Fr 16:30-23:30; Sa,Su 12:30-23:30",
+    "addr:housenumber": "16",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7275039878",
+   "lat": 52.543113,
+   "lng": 13.421056,
+   "tags": {
+    "name": "Bu Kon",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "contact:website": "https://bukonberlin.de/",
+    "opening_hours": "Mo,Tu,Th-Sa 00:00-22:30; Su 00:00-22:00",
+    "addr:housenumber": "80",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7275414789",
+   "lat": 52.540753,
+   "lng": 13.41944,
+   "tags": {
+    "name": "Försters",
+    "amenity": "restaurant",
+    "cuisine": "regional;german",
+    "contact:website": "https://das-foersters.de/",
+    "opening_hours": "16:00-23:00",
+    "addr:housenumber": "2a",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/727814448",
+   "lat": 52.546882,
+   "lng": 13.406107,
+   "tags": {
+    "name": "Miso Lab",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "10A",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/7279141314",
+   "lat": 52.54518,
+   "lng": 13.422919,
+   "tags": {
+    "name": "Schneiderei",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "opening_hours": "We,Th 18:00-23:00; Fr,Sa 18:00-24:00",
+    "addr:housenumber": "69",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7280998000",
+   "lat": 52.542614,
+   "lng": 13.416546,
+   "tags": {
+    "name": "Hai Do",
+    "amenity": "restaurant",
+    "addr:housenumber": "24",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/7288966746",
+   "lat": 52.54119,
+   "lng": 13.422848,
+   "tags": {
+    "name": "chanchanchan",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "contact:website": "https://chanchanchan.eatbu.com/",
+    "opening_hours": "Tu-Sa 12:00-18:30",
+    "addr:housenumber": "8a",
+    "addr:street": "Senefelderstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7291442087",
+   "lat": 52.545329,
+   "lng": 13.420581,
+   "tags": {
+    "name": "Huha 1986",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese;sushi",
+    "opening_hours": "Tu-Th 12:00-22:30; Fr-Su 12:30-23:00",
+    "addr:housenumber": "22",
+    "addr:street": "Stargarder Straße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/7292309213",
+   "lat": 52.543826,
+   "lng": 13.418249,
+   "tags": {
+    "name": "Ita",
+    "amenity": "restaurant",
+    "contact:website": "https://www.ita-berlin.de/",
+    "opening_hours": "Th-Mo 18:00-23:00",
+    "addr:housenumber": "9",
+    "addr:street": "Lettestraße",
+    "addr:postcode": "10437"
+   }
+  },
+  {
+   "id": "node/7308575919",
+   "lat": 52.541602,
+   "lng": 13.421791,
+   "tags": {
+    "name": "Chay Long",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Fr 12:00-23:00; Sa, Su 13:00-23:00",
+    "addr:housenumber": "17",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7310131992",
+   "lat": 52.540601,
+   "lng": 13.424642,
+   "tags": {
+    "name": "Cubandres",
+    "amenity": "restaurant",
+    "cuisine": "cuban",
+    "addr:housenumber": "190",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7310390052",
+   "lat": 52.54081,
+   "lng": 13.415321,
+   "tags": {
+    "name": "Daruma",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "PH,Mo-Su 12:00-23:00",
+    "addr:housenumber": "13",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7310470998",
+   "lat": 52.540728,
+   "lng": 13.415839,
+   "tags": {
+    "name": "La Buvette Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;french",
+    "website": "https://labuvette.berlin",
+    "opening_hours": "Tu-Sa 18:00-23:00",
+    "addr:housenumber": "17",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/736917935",
+   "lat": 52.546867,
+   "lng": 13.405952,
+   "tags": {
+    "name": "Best Friends",
+    "amenity": "restaurant",
+    "cuisine": "asian;sushi",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "10",
+    "addr:street": "Gleimstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/759516518",
+   "lat": 52.545457,
+   "lng": 13.411406,
+   "tags": {
+    "name": "Villa Rodizio",
+    "amenity": "restaurant",
+    "website": "https://www.villa-rodizio.de",
+    "opening_hours": "Tu-Th 18:00+, Fr,Sa 17:00+, Su 16:00+",
+    "addr:housenumber": "2",
+    "addr:street": "Milastraße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7681321949",
+   "lat": 52.541405,
+   "lng": 13.409436,
+   "tags": {
+    "name": "Schust",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "contact:website": "https://www.restaurant-schust.de/",
+    "opening_hours": "We-Sa 17:00+",
+    "addr:housenumber": "34",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/773346639",
+   "lat": 52.540366,
+   "lng": 13.418148,
+   "tags": {
+    "name": "Maria Bonita",
+    "amenity": "restaurant",
+    "cuisine": "mexican;tacos",
+    "website": "https://mariabonita.de",
+    "opening_hours": "Su-Th 12:00-21:00; Fr,Sa 12:00-21:30",
+    "addr:housenumber": "33",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/778710943",
+   "lat": 52.538774,
+   "lng": 13.40966,
+   "tags": {
+    "name": "The Flying Monkey",
+    "amenity": "restaurant",
+    "cuisine": "asian;dumplings",
+    "website": "https://www.flyingmonkeyberlin.com/",
+    "opening_hours": "Su-Th 12:00-23:00; Fr,Sa 12:00-24:00",
+    "addr:housenumber": "15",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/778710955",
+   "lat": 52.540499,
+   "lng": 13.411491,
+   "tags": {
+    "name": "Pane e Vino",
+    "name:en": "Pane e Vino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "12:00-24:00",
+    "addr:housenumber": "2",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/778710962",
+   "lat": 52.537254,
+   "lng": 13.408061,
+   "tags": {
+    "name": "Pizza Pane",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "opening_hours": "12:00-24:00",
+    "addr:housenumber": "28",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/778710969",
+   "lat": 52.536702,
+   "lng": 13.407453,
+   "tags": {
+    "name": "Babel",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "contact:website": "http://babel-restaurant.com/",
+    "opening_hours": "Mo-Su 11:00-24:00",
+    "addr:housenumber": "33",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/778710972",
+   "lat": 52.53799,
+   "lng": 13.409357,
+   "tags": {
+    "name": "Esra",
+    "amenity": "restaurant",
+    "cuisine": "falafel",
+    "addr:housenumber": "88",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/778710974",
+   "lat": 52.538038,
+   "lng": 13.409405,
+   "tags": {
+    "name": "Pho Bistro",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "89",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/7824348986",
+   "lat": 52.536847,
+   "lng": 13.41752,
+   "tags": {
+    "name": "Feel Seoul Good",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "contact:website": "https://feelseoulgood.de",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "2",
+    "addr:street": "Husemannstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/783442838",
+   "lat": 52.540503,
+   "lng": 13.414092,
+   "tags": {
+    "name": "Takumi Nine 3",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen",
+    "website": "https://www.takuminineberlin.de/takumi-nine-3",
+    "opening_hours": "Mo-Fr 17:30-22:00; Sa-Su 12:00-21:00",
+    "addr:housenumber": "99",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/7837003454",
+   "lat": 52.532006,
+   "lng": 13.411628,
+   "tags": {
+    "name": "Kink",
+    "amenity": "restaurant",
+    "contact:website": "https://kink-berlin.de",
+    "opening_hours": "Fr-Sa 18:00-02:30; Su-Th 18:00-01:00",
+    "addr:housenumber": "176",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7867631184",
+   "lat": 52.538025,
+   "lng": 13.426666,
+   "tags": {
+    "name": "Pension Prenzlberg",
+    "tourism": "guest_house",
+    "website": "https://pension-prenzlberg.de/",
+    "addr:housenumber": "86",
+    "addr:street": "Danziger Straße",
+    "addr:postcode": "10405"
+   }
+  },
+  {
+   "id": "node/7878479476",
+   "lat": 52.536831,
+   "lng": 13.417735,
+   "tags": {
+    "name": "Jolie",
+    "amenity": "restaurant",
+    "cuisine": "bistro;french;seafood",
+    "website": "https://jolie-berlin.com",
+    "opening_hours": "Sa-Su 12:00-24:00, We-Mo 18:00-24:00",
+    "addr:housenumber": "35",
+    "addr:street": "Wörther Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/790502626",
+   "lat": 52.537361,
+   "lng": 13.420998,
+   "tags": {
+    "name": "Mitho Cha!",
+    "amenity": "restaurant",
+    "cuisine": "nepalese;tibetan",
+    "contact:website": "https://www.mitho-cha.com/",
+    "opening_hours": "Su-Th 12:00-23:00; Fr-Sa 12:00-00:00",
+    "addr:housenumber": "40",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/790502628",
+   "lat": 52.536648,
+   "lng": 13.420959,
+   "tags": {
+    "name": "Jomo",
+    "amenity": "restaurant",
+    "website": "https://jomo.choiceqr.com",
+    "addr:housenumber": "14",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/790502639",
+   "lat": 52.533879,
+   "lng": 13.420673,
+   "tags": {
+    "name": "Suriya Kanthi",
+    "amenity": "restaurant",
+    "contact:website": "http://www.suriya-kanthi.de/",
+    "opening_hours": "PH,Tu-Su 17:00-24:00+",
+    "addr:housenumber": "4",
+    "addr:street": "Knaackstraße",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/790502640",
+   "lat": 52.532946,
+   "lng": 13.420964,
+   "tags": {
+    "name": "Kong II Bao-House",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 12:00-15:00,17:30-22:00; Sa,Su,PH 13:00-22:00",
+    "addr:housenumber": "27A",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/790502656",
+   "lat": 52.532722,
+   "lng": 13.420825,
+   "tags": {
+    "name": "DDR Speisegaststätte Pionierlager",
+    "amenity": "restaurant",
+    "website": "https://restaurant-pila.de/",
+    "opening_hours": "Tu-Sa 15:00-22:00",
+    "addr:housenumber": "26",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/823779645",
+   "lat": 52.542895,
+   "lng": 13.416835,
+   "tags": {
+    "name": "Moc",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "http://www.asiandeli.de/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "28",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/847014186",
+   "lat": 52.534855,
+   "lng": 13.41949,
+   "tags": {
+    "name": "Masel Topf",
+    "amenity": "restaurant",
+    "cuisine": "israeli",
+    "contact:website": "https://restaurant-maseltopf.de",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "addr:housenumber": "2",
+    "addr:street": "Rykestraße",
+    "addr:postcode": "10405",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/8477053410",
+   "lat": 52.531306,
+   "lng": 13.411671,
+   "tags": {
+    "name": "CÀI Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese;asian;szechuan;sichuan",
+    "contact:website": "https://caikitchen.berlin/",
+    "opening_hours": "Mo 12:00-15:00; Tu-Fr 12:00-15:00,18:00-21:00; Sa 16:00-21:00",
+    "addr:housenumber": "177A",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8880887144",
+   "lat": 52.546214,
+   "lng": 13.413426,
+   "tags": {
+    "name": "Wen Cheng I",
+    "amenity": "restaurant",
+    "cuisine": "chinese;noodle",
+    "contact:website": "https://wenchengnoodles.de/",
+    "opening_hours": "Mo,We-Fr 17:00-21:30; Sa-Su 12:00-15:00,17:00-21:30",
+    "addr:housenumber": "65",
+    "addr:street": "Schönhauser Allee",
+    "addr:postcode": "10437",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/894770295",
+   "lat": 52.533892,
+   "lng": 13.409529,
+   "tags": {
+    "name": "Bertie",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "13",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9074623901",
+   "lat": 52.543524,
+   "lng": 13.4171,
+   "tags": {
+    "name": "Frieda",
+    "amenity": "restaurant",
+    "contact:website": "https://www.cafefrieda.de/",
+    "opening_hours": "Tu-Fr 10:00-24:00; Sa 12:00-24:00",
+    "addr:housenumber": "37",
+    "addr:street": "Lychener Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9074746520",
+   "lat": 52.54244,
+   "lng": 13.420947,
+   "tags": {
+    "name": "Muschelbar",
+    "amenity": "restaurant",
+    "cuisine": "belgian",
+    "contact:website": "https://muschelbar.com/",
+    "opening_hours": "We-Mo 17:00-23:00",
+    "addr:housenumber": "10",
+    "addr:street": "Dunckerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9098911129",
+   "lat": 52.543545,
+   "lng": 13.416382,
+   "tags": {
+    "name": "Firuze",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Su 17:00-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "Raumerstraße",
+    "addr:postcode": "10437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/913113496",
+   "lat": 52.534338,
+   "lng": 13.408426,
+   "tags": {
+    "name": "Almi Bistro",
+    "amenity": "restaurant",
+    "website": "https://almiberlin.de",
+    "opening_hours": "Tu-Sa 17:30-23:00",
+    "addr:housenumber": "18",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119"
+   }
+  },
+  {
+   "id": "node/9560836496",
+   "lat": 52.53599,
+   "lng": 13.422751,
+   "tags": {
+    "name": "Trafooo",
+    "amenity": "restaurant",
+    "addr:housenumber": "42",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9705662317",
+   "lat": 52.541312,
+   "lng": 13.410643,
+   "tags": {
+    "name": "Sùsù Vegan Food",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo 12:00-15:00; Tu-Sa 12:00-15:00,17:00-20:00",
+    "addr:housenumber": "29",
+    "addr:street": "Eberswalder Straße",
+    "addr:postcode": "10437",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9775669344",
+   "lat": 52.539688,
+   "lng": 13.413942,
+   "tags": {
+    "name": "Grillstand",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9793600817",
+   "lat": 52.536116,
+   "lng": 13.418135,
+   "tags": {
+    "name": "Tsomi",
+    "amenity": "restaurant",
+    "cuisine": "georgian",
+    "website": "https://restaurant-tsomi.de/",
+    "opening_hours": "Mo-Fr 17:00-23:00; Sa,Su 13:00-23:00",
+    "addr:housenumber": "66",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/987852792",
+   "lat": 52.53874,
+   "lng": 13.408722,
+   "tags": {
+    "name": "Vegang",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "http://vegangberlin.de/vegang-prenzlauer-berg/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "52",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9907411517",
+   "lat": 52.534853,
+   "lng": 13.418744,
+   "tags": {
+    "name": "Bangkok Bites",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "22",
+    "addr:street": "Knaackstraße",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/993765217",
+   "lat": 52.538547,
+   "lng": 13.410278,
+   "tags": {
+    "name": "Vietnam Village",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "PH,Mo-Su 12:00-21:00",
+    "addr:housenumber": "7",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/993834517",
+   "lat": 52.53817,
+   "lng": 13.41023,
+   "tags": {
+    "name": "otto",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://otto-berlin.net",
+    "opening_hours": "Mo-Fr 08:00-16:00; Sa 09:00-17:00",
+    "addr:housenumber": "56",
+    "addr:street": "Oderberger Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/9961510250",
+   "lat": 52.538387,
+   "lng": 13.420647,
+   "tags": {
+    "name": "D.O.",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "addr:housenumber": "88",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/9975017917",
+   "lat": 52.534092,
+   "lng": 13.421629,
+   "tags": {
+    "name": "Selecta Modern Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Tu-Su 17:00-22:30",
+    "addr:housenumber": "32",
+    "addr:street": "Prenzlauer Allee",
+    "addr:postcode": "10405",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9992127717",
+   "lat": 52.538613,
+   "lng": 13.420232,
+   "tags": {
+    "name": "Ay Harmony",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "addr:housenumber": "89",
+    "addr:street": "Kollwitzstraße",
+    "addr:postcode": "10435",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/184571231",
+   "lat": 52.532011,
+   "lng": 13.411088,
+   "tags": {
+    "name": "Das Pfeffer",
+    "amenity": "restaurant",
+    "contact:website": "https://restaurant.pfefferwerk.de/",
+    "opening_hours": "Mo-Fr 11:30-14:00; Sa,Su off",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/23631271",
+   "lat": 52.544177,
+   "lng": 13.416144,
+   "tags": {
+    "name": "Old Town Hostel",
+    "tourism": "hostel",
+    "wikidata": "Q111118528"
+   }
+  },
+  {
+   "id": "way/23695971",
+   "lat": 52.531513,
+   "lng": 13.410776,
+   "tags": {
+    "name": "Hostel Pfefferbett",
+    "tourism": "hostel",
+    "contact:website": "https://pfefferbett.de/",
+    "wikidata": "Q111118488",
+    "addr:housenumber": "18-19",
+    "addr:street": "Christinenstraße",
+    "addr:postcode": "10119",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/296083226",
+   "lat": 52.539882,
+   "lng": 13.409546,
+   "tags": {
+    "name": "Prater Gaststätte",
+    "amenity": "restaurant",
+    "cuisine": "german",
+    "website": "https://www.pratergarten.de/",
+    "opening_hours": "Mo-Sa 17:00+; Su 12:00+",
+    "addr:housenumber": "7-9",
+    "addr:street": "Kastanienallee",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/49733547",
+   "lat": 52.533469,
+   "lng": 13.410724,
+   "tags": {
+    "name": "EastSeven Berlin Hostel",
+    "tourism": "hostel",
+    "contact:website": "http://www.eastseven.de",
+    "wikidata": "Q111118503",
+    "addr:housenumber": "7",
+    "addr:street": "Schwedter Straße",
+    "addr:postcode": "10119",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/53576716",
+   "lat": 52.539653,
+   "lng": 13.402033,
+   "tags": {
+    "name": "Hotel 4 Youth",
+    "tourism": "hotel",
+    "website": "https://www.hotel4youth.de/",
+    "addr:housenumber": "45",
+    "addr:street": "Bernauer Straße",
+    "addr:postcode": "10435",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

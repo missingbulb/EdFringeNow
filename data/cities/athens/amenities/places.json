@@ -1,0 +1,2513 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "pycon-greece",
+   "venue": "technopolis",
+   "lat": 37.97794,
+   "lng": 23.71364
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10004036819",
+   "lat": 37.983144,
+   "lng": 23.716063,
+   "tags": {
+    "name": "Proveleggios",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "11",
+    "addr:street": "Παραμυθίας"
+   }
+  },
+  {
+   "id": "node/10106870717",
+   "lat": 37.981279,
+   "lng": 23.713931,
+   "tags": {
+    "name": "Πυρολίκι",
+    "name:en": "Pyroliki",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "117",
+    "addr:street": "Μεγάλου Αλεξάνδρου"
+   }
+  },
+  {
+   "id": "node/10156792274",
+   "lat": 37.978804,
+   "lng": 23.722102,
+   "tags": {
+    "name": "Dao",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/10168588351",
+   "lat": 37.977768,
+   "lng": 23.722911,
+   "tags": {
+    "name": "Lebayamas",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "website": "https://www.lebayamas.gr/",
+    "addr:housenumber": "13",
+    "addr:street": "Ναυάρχου Αποστόλη"
+   }
+  },
+  {
+   "id": "node/10171322762",
+   "lat": 37.980128,
+   "lng": 23.708227,
+   "tags": {
+    "name": "Pizza Fan",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "83"
+   }
+  },
+  {
+   "id": "node/10693852105",
+   "lat": 37.981932,
+   "lng": 23.710985,
+   "tags": {
+    "name": "Συντριμμι",
+    "name:en": "Sintrimmi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10880771417",
+   "lat": 37.982173,
+   "lng": 23.713544,
+   "tags": {
+    "name": "Τρίπορτο",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "40",
+    "addr:street": "Αρτεμισίου",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/10996164853",
+   "lat": 37.97873,
+   "lng": 23.72383,
+   "tags": {
+    "name": "Sazerac",
+    "amenity": "restaurant",
+    "addr:housenumber": "21",
+    "addr:street": "Αγίων Αναργύρων"
+   }
+  },
+  {
+   "id": "node/11019670577",
+   "lat": 37.986499,
+   "lng": 23.714826,
+   "tags": {
+    "name": "Καφενείο οι Μουριές",
+    "amenity": "restaurant",
+    "addr:housenumber": "15",
+    "addr:street": "Κερατσινίου"
+   }
+  },
+  {
+   "id": "node/11050359605",
+   "lat": 37.979809,
+   "lng": 23.724317,
+   "tags": {
+    "name": "athensdot",
+    "tourism": "hotel",
+    "website": "https://athensdot.com/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "19",
+    "addr:street": "Αριστοφάνους",
+    "addr:postcode": "10554"
+   }
+  },
+  {
+   "id": "node/11126514257",
+   "lat": 37.977386,
+   "lng": 23.721866,
+   "tags": {
+    "name": "Mirame Athens",
+    "amenity": "restaurant",
+    "website": "https://mirameathens.com/",
+    "addr:housenumber": "118",
+    "addr:street": "Ερμού"
+   }
+  },
+  {
+   "id": "node/11148262226",
+   "lat": 37.977228,
+   "lng": 23.724607,
+   "tags": {
+    "name": "Acropolis City Life Boutique Hotel",
+    "tourism": "hotel",
+    "website": "https://www.acropoliscitylifehotel.eu/"
+   }
+  },
+  {
+   "id": "node/11194038880",
+   "lat": 37.97814,
+   "lng": 23.724751,
+   "tags": {
+    "name": "Urban Nest",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/11506037902",
+   "lat": 37.978456,
+   "lng": 23.722834,
+   "tags": {
+    "name": "Dao Vietnamese Cuisine",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11559369045",
+   "lat": 37.975584,
+   "lng": 23.717132,
+   "tags": {
+    "name": "Retro Gastro",
+    "amenity": "restaurant",
+    "addr:housenumber": "19",
+    "addr:street": "Ηρακλειδών"
+   }
+  },
+  {
+   "id": "node/11672996038",
+   "lat": 37.976643,
+   "lng": 23.724106,
+   "tags": {
+    "name": "Το Κυκλάμινο",
+    "name:en": "The Kyklamino",
+    "amenity": "restaurant",
+    "cuisine": "greek;μικρά πιάτα",
+    "addr:street": "Avissinias square"
+   }
+  },
+  {
+   "id": "node/11816861186",
+   "lat": 37.97514,
+   "lng": 23.718694,
+   "tags": {
+    "name": "i avli tis idylis",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "12:00-24:00",
+    "addr:housenumber": "14",
+    "addr:street": "Ηρακλειδών",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11883643236",
+   "lat": 37.975858,
+   "lng": 23.714078,
+   "tags": {
+    "name": "Αφαία",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12074719769",
+   "lat": 37.979353,
+   "lng": 23.722428,
+   "tags": {
+    "name": "Apollo Palm",
+    "tourism": "hotel",
+    "addr:housenumber": "3",
+    "addr:street": "Κραναού"
+   }
+  },
+  {
+   "id": "node/12074719869",
+   "lat": 37.978599,
+   "lng": 23.721838,
+   "tags": {
+    "name": "The Foundry Suites",
+    "tourism": "hotel",
+    "addr:housenumber": "40",
+    "addr:street": "Σαρρή"
+   }
+  },
+  {
+   "id": "node/12074719969",
+   "lat": 37.982074,
+   "lng": 23.714685,
+   "tags": {
+    "name": "Loom",
+    "tourism": "hotel",
+    "addr:housenumber": "54",
+    "addr:street": "Μυκάλης"
+   }
+  },
+  {
+   "id": "node/12101235613",
+   "lat": 37.976834,
+   "lng": 23.721561,
+   "tags": {
+    "name": "La Divina",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/12138800714",
+   "lat": 37.979857,
+   "lng": 23.712011,
+   "tags": {
+    "name": "Iconic Athens Hostel",
+    "tourism": "hostel",
+    "website": "https://iconicathenshostel.com/",
+    "wikidata": "Q111123225",
+    "addr:housenumber": "24",
+    "addr:street": "Ευμολπιδών",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/12163313501",
+   "lat": 37.979987,
+   "lng": 23.7132,
+   "tags": {
+    "name": "Plexi Space",
+    "tourism": "hotel",
+    "website": "https://plexispace.com",
+    "addr:housenumber": "39",
+    "addr:street": "Ιερά Οδός",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/12206910201",
+   "lat": 37.976834,
+   "lng": 23.721386,
+   "tags": {
+    "name": "Paleos",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:street": "Αδριανού"
+   }
+  },
+  {
+   "id": "node/12234823222",
+   "lat": 37.978788,
+   "lng": 23.724922,
+   "tags": {
+    "name": "The Frogs Guesthouse",
+    "tourism": "hotel",
+    "website": "https://thefrogsguesthouse.com/",
+    "addr:housenumber": "4",
+    "addr:street": "Αριστοφάνους"
+   }
+  },
+  {
+   "id": "node/12246172764",
+   "lat": 37.980575,
+   "lng": 23.723722,
+   "tags": {
+    "name": "Anise Aluma Athens, Tapestry Collection by Hilton",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.hilton.com/en/hotels/athaaup-anise-aluma-athens",
+    "addr:housenumber": "82",
+    "addr:street": "Ευριπίδου"
+   }
+  },
+  {
+   "id": "node/12409508900",
+   "lat": 37.976725,
+   "lng": 23.722955,
+   "tags": {
+    "name": "A little taste of home",
+    "amenity": "restaurant",
+    "website": "https://alittletasteofhome.gr/",
+    "addr:housenumber": "8",
+    "addr:street": "Άστιγγος",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/12684169201",
+   "lat": 37.980562,
+   "lng": 23.716437,
+   "tags": {
+    "name": "Veganistan",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12798521001",
+   "lat": 37.974994,
+   "lng": 23.716658,
+   "tags": {
+    "name": "BE MY GUEST ATHENS",
+    "tourism": "hotel",
+    "website": "http://bemyguestathens.gr",
+    "addr:housenumber": "33",
+    "addr:street": "Νηλέως",
+    "addr:postcode": "118 51"
+   }
+  },
+  {
+   "id": "node/12829859002",
+   "lat": 37.979954,
+   "lng": 23.720653,
+   "tags": {
+    "name": "NLH Kerameikos",
+    "tourism": "hotel",
+    "website": "https://www.nlh.gr/hotels/athens-kerameikos/",
+    "addr:housenumber": "6",
+    "addr:street": "Samouil Kalogirou"
+   }
+  },
+  {
+   "id": "node/12840827272",
+   "lat": 37.97769,
+   "lng": 23.723672,
+   "tags": {
+    "name": "Nissos",
+    "amenity": "restaurant",
+    "cuisine": "fish"
+   }
+  },
+  {
+   "id": "node/13062411901",
+   "lat": 37.982105,
+   "lng": 23.715317,
+   "tags": {
+    "name": "Manu Athens",
+    "amenity": "restaurant",
+    "addr:housenumber": "102",
+    "addr:street": "Μεγάλου Αλεξάνδρου",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/13062422101",
+   "lat": 37.976537,
+   "lng": 23.713119,
+   "tags": {
+    "name": "Cerdo Negro 1985",
+    "amenity": "restaurant",
+    "addr:housenumber": "5",
+    "addr:street": "Βίτωνος",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/13062425601",
+   "lat": 37.975642,
+   "lng": 23.716994,
+   "tags": {
+    "name": "Merceri",
+    "amenity": "restaurant",
+    "addr:housenumber": "21",
+    "addr:street": "Ηρακλειδών",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/13078262987",
+   "lat": 37.969695,
+   "lng": 23.713679,
+   "tags": {
+    "name": "Τρελή Ροδιά",
+    "name:en": "Treli Rodia",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "39",
+    "addr:street": "Κυδαντίδων",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/13247844599",
+   "lat": 37.975063,
+   "lng": 23.718991,
+   "tags": {
+    "name": "Cinapos",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "10",
+    "addr:street": "Ηρακλειδών",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/13247844600",
+   "lat": 37.975571,
+   "lng": 23.717352,
+   "tags": {
+    "name": "Κοτσάκια και Μαντινάδες",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/13247871401",
+   "lat": 37.97592,
+   "lng": 23.716508,
+   "tags": {
+    "name": "Φακίδες",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/13263930155",
+   "lat": 37.977548,
+   "lng": 23.723161,
+   "tags": {
+    "name": "L'Avventura Athens",
+    "tourism": "hotel",
+    "contact:website": "https://lavventurasuites.gr/"
+   }
+  },
+  {
+   "id": "node/13265262412",
+   "lat": 37.977904,
+   "lng": 23.723299,
+   "tags": {
+    "name": "The Residence",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13265273523",
+   "lat": 37.977381,
+   "lng": 23.723173,
+   "tags": {
+    "name": "L'Avventura Suites",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/13337754329",
+   "lat": 37.978454,
+   "lng": 23.72296,
+   "tags": {
+    "name": "Osaka sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "12",
+    "addr:street": "Λεπενιώτου"
+   }
+  },
+  {
+   "id": "node/13397139253",
+   "lat": 37.979367,
+   "lng": 23.72076,
+   "tags": {
+    "name": "Elaia Athens Boutique Hotel",
+    "tourism": "hotel",
+    "website": "https://elaia-athens.com/"
+   }
+  },
+  {
+   "id": "node/13457445846",
+   "lat": 37.976967,
+   "lng": 23.723657,
+   "tags": {
+    "name": "Tommy's Gyros Souvlaki House",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13510323901",
+   "lat": 37.976365,
+   "lng": 23.710607,
+   "tags": {
+    "name": "Mirlo Kebabs",
+    "amenity": "restaurant",
+    "cuisine": "arab;greek;grill;kebab",
+    "opening_hours": "We-Sa 16:00-22:00; Su 13:30-20:30",
+    "addr:housenumber": "5A",
+    "addr:street": "Ελασίδων"
+   }
+  },
+  {
+   "id": "node/13511043780",
+   "lat": 37.976586,
+   "lng": 23.723187,
+   "tags": {
+    "name": "Golden Haveli (Indian Restaurant & Bar)",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://goldenhaveli.gr/",
+    "addr:housenumber": "10",
+    "addr:street": "Αγίου Φιλίππου"
+   }
+  },
+  {
+   "id": "node/13513482119",
+   "lat": 37.976009,
+   "lng": 23.724041,
+   "tags": {
+    "name": "Ancient Agora Plaka",
+    "tourism": "hotel",
+    "website": "https://www.ancientagoraplaka.gr/",
+    "addr:housenumber": "27",
+    "addr:street": "Αδριανού"
+   }
+  },
+  {
+   "id": "node/13712367015",
+   "lat": 37.982554,
+   "lng": 23.719345,
+   "tags": {
+    "name": "Το Αυγό Του Κόκκορα",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13712384270",
+   "lat": 37.982202,
+   "lng": 23.720172,
+   "tags": {
+    "name": "Miravilia",
+    "amenity": "restaurant",
+    "addr:housenumber": "51",
+    "addr:street": "Κεραμεικού"
+   }
+  },
+  {
+   "id": "node/13948548559",
+   "lat": 37.978733,
+   "lng": 23.724378,
+   "tags": {
+    "name": "Trattoria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "5",
+    "addr:street": "Τάκη"
+   }
+  },
+  {
+   "id": "node/14070249116",
+   "lat": 37.977324,
+   "lng": 23.724997,
+   "tags": {
+    "name": "Safestay Athens Monastiraki",
+    "tourism": "hostel",
+    "website": "https://www.safestay.com/venue/safestay-athens-monastiraki/"
+   }
+  },
+  {
+   "id": "node/14132960047",
+   "lat": 37.978636,
+   "lng": 23.72209,
+   "tags": {
+    "name": "Robolo",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://irestaurant.gr/robolo"
+   }
+  },
+  {
+   "id": "node/14134860601",
+   "lat": 37.981292,
+   "lng": 23.72116,
+   "tags": {
+    "name": "Chinese noodle soup",
+    "name:en": "Chinese noodle soup",
+    "amenity": "restaurant",
+    "addr:street": "Ακάδημου"
+   }
+  },
+  {
+   "id": "node/14204602901",
+   "lat": 37.976812,
+   "lng": 23.722549,
+   "tags": {
+    "name": "Altar Suites",
+    "tourism": "hotel",
+    "addr:housenumber": "11",
+    "addr:street": "Άστιγγος",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/1814574432",
+   "lat": 37.977568,
+   "lng": 23.721931,
+   "tags": {
+    "name": "O&B Athens Boutique Hotel",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://oandbhotel.com",
+    "wikidata": "Q111400841",
+    "addr:housenumber": "7",
+    "addr:street": "Λεωκορίου",
+    "addr:postcode": "10554"
+   }
+  },
+  {
+   "id": "node/1814574494",
+   "lat": 37.978201,
+   "lng": 23.720078,
+   "tags": {
+    "name": "O&B Athens All Day Bar Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "www.oandbrestaurant.com",
+    "addr:housenumber": "5",
+    "addr:street": "Λεωκορίου",
+    "addr:postcode": "10554"
+   }
+  },
+  {
+   "id": "node/1902257858",
+   "lat": 37.977249,
+   "lng": 23.712142,
+   "tags": {
+    "name": "Quick Pleasure",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://www.quickpleasure.gr",
+    "addr:housenumber": "38",
+    "addr:street": "Ιακχου",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2055906817",
+   "lat": 37.974793,
+   "lng": 23.719662,
+   "tags": {
+    "name": "Lontos",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "addr:housenumber": "35",
+    "addr:street": "Αποστόλου Παύλου",
+    "addr:postcode": "11851",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2055920331",
+   "lat": 37.975091,
+   "lng": 23.719504,
+   "tags": {
+    "name": "Phidias Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "39",
+    "addr:street": "Αποστόλου Παύλου",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2056022729",
+   "lat": 37.976692,
+   "lng": 23.723657,
+   "tags": {
+    "name": "Καφέ Αβησυνία",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "7",
+    "addr:street": "Κυνέτου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2191490604",
+   "lat": 37.980345,
+   "lng": 23.723566,
+   "tags": {
+    "name": "Evripides Hotel",
+    "tourism": "hotel",
+    "website": "https://www.evripideshotel.gr/",
+    "wikidata": "Q111123256",
+    "addr:housenumber": "79",
+    "addr:street": "Ευριπίδου",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "node/2386604993",
+   "lat": 37.977906,
+   "lng": 23.723973,
+   "tags": {
+    "name": "Gostijo",
+    "amenity": "restaurant",
+    "website": "https://www.gostijo.gr/",
+    "addr:housenumber": "10",
+    "addr:street": "Αισώπου",
+    "addr:postcode": "10554",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2400502567",
+   "lat": 37.979132,
+   "lng": 23.724325,
+   "tags": {
+    "name": "Πάμε Ψυρρή",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "5",
+    "addr:street": "Κατσικογιάννη"
+   }
+  },
+  {
+   "id": "node/2433638377",
+   "lat": 37.985386,
+   "lng": 23.719867,
+   "tags": {
+    "name": "Hotel Rio Athens",
+    "tourism": "hotel",
+    "stars": "3",
+    "website": "https://hotel-rio.gr/",
+    "wikidata": "Q111133466",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2489912687",
+   "lat": 37.974068,
+   "lng": 23.71996,
+   "tags": {
+    "name": "Thissio View",
+    "amenity": "restaurant",
+    "website": "https://www.thissioview.gr/",
+    "addr:housenumber": "25",
+    "addr:street": "Αποστόλου Παύλου",
+    "addr:postcode": "11851",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2539591110",
+   "lat": 37.980618,
+   "lng": 23.716576,
+   "tags": {
+    "name": "Το Σαν Φρανσίσκο",
+    "amenity": "restaurant",
+    "cuisine": "sandwich",
+    "website": "http://www.sanfrancisco.gr/"
+   }
+  },
+  {
+   "id": "node/2731034965",
+   "lat": 37.985164,
+   "lng": 23.719979,
+   "tags": {
+    "name": "Apollo",
+    "tourism": "hotel",
+    "addr:housenumber": "10",
+    "addr:street": "Αχιλλέως"
+   }
+  },
+  {
+   "id": "node/2786580319",
+   "lat": 37.9782,
+   "lng": 23.724501,
+   "tags": {
+    "name": "Έναστρον",
+    "amenity": "restaurant",
+    "website": "https://www.enastronpsirri.gr/",
+    "addr:housenumber": "4",
+    "addr:street": "Μίκωνος"
+   }
+  },
+  {
+   "id": "node/2836966900",
+   "lat": 37.976437,
+   "lng": 23.722062,
+   "tags": {
+    "name": "Kuzina",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "9",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2836994809",
+   "lat": 37.97589,
+   "lng": 23.724633,
+   "tags": {
+    "name": "Διόσκουροι",
+    "name:en": "Dioskouroi",
+    "amenity": "restaurant",
+    "addr:housenumber": "39",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2836994811",
+   "lat": 37.975948,
+   "lng": 23.724293,
+   "tags": {
+    "name": "33",
+    "amenity": "restaurant",
+    "website": "https://33adrianou.gr/",
+    "addr:housenumber": "33",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/2836994817",
+   "lat": 37.976889,
+   "lng": 23.721265,
+   "tags": {
+    "name": "Δίαυλος",
+    "name:en": "Diavlos",
+    "amenity": "restaurant",
+    "addr:housenumber": "1",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2839285774",
+   "lat": 37.978586,
+   "lng": 23.725011,
+   "tags": {
+    "name": "Η ωραία Πεντέλη",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "1",
+    "addr:street": "Αισχύλου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3205790672",
+   "lat": 37.978072,
+   "lng": 23.711806,
+   "tags": {
+    "name": "La Piñata",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://lapinatagr.com/",
+    "opening_hours": "Tu-Su 12:00-26:00"
+   }
+  },
+  {
+   "id": "node/3372861187",
+   "lat": 37.976358,
+   "lng": 23.722284,
+   "tags": {
+    "name": "Ηλιαία",
+    "name:en": "Muses",
+    "amenity": "restaurant",
+    "addr:housenumber": "20",
+    "addr:street": "Αδριανού",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3372868250",
+   "lat": 37.976019,
+   "lng": 23.723638,
+   "tags": {
+    "name": "Sisinely All day Bar Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "23",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3372906214",
+   "lat": 37.976002,
+   "lng": 23.723893,
+   "tags": {
+    "name": "Antica",
+    "amenity": "restaurant",
+    "addr:housenumber": "25",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3452733727",
+   "lat": 37.975653,
+   "lng": 23.719263,
+   "tags": {
+    "name": "Acropolis Vision",
+    "tourism": "guest_house",
+    "addr:housenumber": "2",
+    "addr:street": "Βασίλης",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/3452776174",
+   "lat": 37.973994,
+   "lng": 23.719458,
+   "tags": {
+    "name": "Ερεχθείον",
+    "name:en": "Erechtheion",
+    "tourism": "hotel",
+    "addr:housenumber": "8",
+    "addr:street": "Φλαμαριων",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/3463598857",
+   "lat": 37.976522,
+   "lng": 23.721896,
+   "tags": {
+    "name": "Mystilli",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "Mo-Su 08:00-00:00",
+    "addr:housenumber": "7",
+    "addr:street": "Αδριανού",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3463617412",
+   "lat": 37.976393,
+   "lng": 23.722151,
+   "tags": {
+    "name": "Άτταλος",
+    "name:en": "Attalos",
+    "amenity": "restaurant",
+    "addr:housenumber": "9",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3464826373",
+   "lat": 37.975977,
+   "lng": 23.724108,
+   "tags": {
+    "name": "Moma",
+    "amenity": "restaurant",
+    "website": "https://momarestaurant.gr",
+    "addr:housenumber": "29",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3464832018",
+   "lat": 37.975908,
+   "lng": 23.724519,
+   "tags": {
+    "name": "Δια Ταύτα",
+    "name:en": "Dia Tauta",
+    "amenity": "restaurant",
+    "website": "https://diatauta.com/en/",
+    "addr:housenumber": "37",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3541423684",
+   "lat": 37.976932,
+   "lng": 23.715911,
+   "tags": {
+    "name": "Το Στέκι του Ηλία 2",
+    "name:en": "To Steki tou Ilia",
+    "amenity": "restaurant",
+    "addr:housenumber": "7",
+    "addr:street": "Θεσσαλονίκης",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3541423685",
+   "lat": 37.976855,
+   "lng": 23.718436,
+   "tags": {
+    "name": "Το Στέκι του Ηλία",
+    "name:en": "To Steki tou Ilia",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.facebook.com/to.steki.tou.hlia/",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3716237305",
+   "lat": 37.969104,
+   "lng": 23.712875,
+   "tags": {
+    "name": "Αντετι",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "http://www.anteti.gr/",
+    "addr:housenumber": "53",
+    "addr:street": "Τρώων",
+    "addr:postcode": "11852",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3716237306",
+   "lat": 37.969932,
+   "lng": 23.713171,
+   "tags": {
+    "name": "Le Petit Bistrot",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "addr:housenumber": "32",
+    "addr:street": "Τρώων",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/3716237346",
+   "lat": 37.96962,
+   "lng": 23.71317,
+   "tags": {
+    "name": "Το τσιπουράδικο του Αποστόλη",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/3716237352",
+   "lat": 37.969702,
+   "lng": 23.71322,
+   "tags": {
+    "name": "Οικονόμου",
+    "name:en": "Ikonomou",
+    "amenity": "restaurant",
+    "cuisine": "greek;mediterranean",
+    "opening_hours": "Mo-Su 17:00-00:00"
+   }
+  },
+  {
+   "id": "node/3718635818",
+   "lat": 37.969031,
+   "lng": 23.712654,
+   "tags": {
+    "name": "Άστερ",
+    "amenity": "restaurant",
+    "addr:housenumber": "48",
+    "addr:street": "Τρώων",
+    "addr:postcode": "11852",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3775667527",
+   "lat": 37.980076,
+   "lng": 23.711193,
+   "tags": {
+    "name": "Κανέλλα",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "http://www.kanellagazi.gr",
+    "opening_hours": "Mo-Th 13:30-03:00; Fr-Sa 13:30-03:30; Su 13:30-03:00",
+    "addr:housenumber": "70",
+    "addr:street": "Κωνσταντινουπόλεως",
+    "addr:postcode": "11854",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3786453782",
+   "lat": 37.985672,
+   "lng": 23.714014,
+   "tags": {
+    "name": "Μαγείρικο",
+    "name:en": "Mageiriko",
+    "amenity": "restaurant",
+    "addr:housenumber": "32",
+    "addr:street": "Πυθοδώρου",
+    "addr:postcode": "10441"
+   }
+  },
+  {
+   "id": "node/3793368885",
+   "lat": 37.981142,
+   "lng": 23.717314,
+   "tags": {
+    "name": "Οι φίλοι",
+    "name:en": "Oi filoi",
+    "amenity": "restaurant",
+    "addr:housenumber": "84",
+    "addr:street": "Κεραμεικού"
+   }
+  },
+  {
+   "id": "node/3793368891",
+   "lat": 37.978842,
+   "lng": 23.722153,
+   "tags": {
+    "name": "Sarri's Souvlaki",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "1",
+    "addr:street": "Κριεζή"
+   }
+  },
+  {
+   "id": "node/3793382403",
+   "lat": 37.978379,
+   "lng": 23.724678,
+   "tags": {
+    "name": "Εν Ιορδάνη",
+    "name:en": "En Iordanis",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/3793382857",
+   "lat": 37.982101,
+   "lng": 23.715279,
+   "tags": {
+    "name": "Sixtie's Dinner",
+    "amenity": "restaurant",
+    "addr:housenumber": "102",
+    "addr:street": "Μεγάλου Αλεξάνδρου"
+   }
+  },
+  {
+   "id": "node/3793382863",
+   "lat": 37.979119,
+   "lng": 23.723381,
+   "tags": {
+    "name": "Στου Κορρέ",
+    "amenity": "restaurant",
+    "addr:housenumber": "20",
+    "addr:street": "Αγίων Αναργύρων",
+    "addr:postcode": "10554",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3793382865",
+   "lat": 37.978679,
+   "lng": 23.724017,
+   "tags": {
+    "name": "Νικήτας",
+    "amenity": "restaurant",
+    "addr:housenumber": "19",
+    "addr:street": "Αγίων Αναργύρων",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3822870963",
+   "lat": 37.978377,
+   "lng": 23.711061,
+   "tags": {
+    "name": "Κάνδαυλος",
+    "name:en": "Kandavlos",
+    "amenity": "restaurant",
+    "cuisine": "greek;σουβλατζίδικο",
+    "website": "https://kandavlos.gr/",
+    "opening_hours": "Mo-Fr 12:00-06:00",
+    "addr:housenumber": "47",
+    "addr:street": "Περσεφόνης",
+    "addr:postcode": "11854",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4004507718",
+   "lat": 37.976505,
+   "lng": 23.713729,
+   "tags": {
+    "name": "Πιάτσα Καλαμάκι Ο Πέτρος",
+    "name:en": "Piatsa Kalamaki O Petros",
+    "amenity": "restaurant",
+    "addr:housenumber": "3",
+    "addr:street": "Περσεφόνης",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/4108931289",
+   "lat": 37.97701,
+   "lng": 23.723252,
+   "tags": {
+    "name": "Mirch",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://mirch.com.gr/",
+    "opening_hours": "11:00-02:00",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4167645692",
+   "lat": 37.978014,
+   "lng": 23.72368,
+   "tags": {
+    "name": "Oineas",
+    "amenity": "restaurant",
+    "addr:housenumber": "9",
+    "addr:street": "Αισώπου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4222226791",
+   "lat": 37.977555,
+   "lng": 23.723676,
+   "tags": {
+    "name": "Akordeon Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "7",
+    "addr:street": "Χριστοκοπίδου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4231773495",
+   "lat": 37.980101,
+   "lng": 23.723267,
+   "tags": {
+    "name": "Boutique Apartments",
+    "tourism": "guest_house",
+    "opening_hours": "24/7",
+    "addr:housenumber": "6",
+    "addr:street": "Ευμορφοπούλου"
+   }
+  },
+  {
+   "id": "node/4231996092",
+   "lat": 37.977147,
+   "lng": 23.723683,
+   "tags": {
+    "name": "Pella Inn",
+    "tourism": "hostel",
+    "opening_hours": "24/7",
+    "wikidata": "Q111123228",
+    "addr:housenumber": "104",
+    "addr:street": "Ερμού"
+   }
+  },
+  {
+   "id": "node/4275506011",
+   "lat": 37.974766,
+   "lng": 23.71955,
+   "tags": {
+    "name": "Sinathina",
+    "name:en": "Sin Athina",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;burger;cake;coffee_shop;crepe;diner;fish;greek;grill;ice_cream;international;kebab;local;mediterranean;pasta;sandwich;seafood;tea",
+    "website": "https://www.sinathina.gr/",
+    "opening_hours": "Mo-Su 09:00-02:00",
+    "addr:housenumber": "2",
+    "addr:street": "Ηρακλειδών",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/4278096552",
+   "lat": 37.969616,
+   "lng": 23.71351,
+   "tags": {
+    "name": "Θείο Tραγί",
+    "name:en": "Thio Tragi",
+    "amenity": "restaurant",
+    "addr:housenumber": "36",
+    "addr:street": "Κυδαντιδων",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/4278096553",
+   "lat": 37.969677,
+   "lng": 23.713872,
+   "tags": {
+    "name": "Το Θεραπευτήριο",
+    "name:en": "Therapeftirio",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "41",
+    "addr:street": "Κυδαντιδων",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/4280248392",
+   "lat": 37.971156,
+   "lng": 23.712999,
+   "tags": {
+    "name": "Βαλίτσα",
+    "amenity": "restaurant",
+    "cuisine": "greek;mediterranean"
+   }
+  },
+  {
+   "id": "node/4284018103",
+   "lat": 37.970129,
+   "lng": 23.712422,
+   "tags": {
+    "name": "To Kreas",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "96",
+    "addr:street": "Δημοφώντος",
+    "addr:postcode": "11851"
+   }
+  },
+  {
+   "id": "node/4284018118",
+   "lat": 37.974152,
+   "lng": 23.717112,
+   "tags": {
+    "name": "Basmati",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "28",
+    "addr:street": "Ακάμαντος"
+   }
+  },
+  {
+   "id": "node/4285025709",
+   "lat": 37.977113,
+   "lng": 23.722484,
+   "tags": {
+    "name": "Δαίδαλος & Ίκαρος",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "121",
+    "addr:street": "Ερμού",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4367945390",
+   "lat": 37.975061,
+   "lng": 23.718579,
+   "tags": {
+    "name": "Αμπιμπάγιο",
+    "name:en": "Abibayio",
+    "amenity": "restaurant",
+    "cuisine": "diner;fish;greek;grill;kebab;mediterranean;pasta;seafood",
+    "website": "https://www.abibayio.gr/",
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "addr:housenumber": "3",
+    "addr:street": "Ηρακλειδών",
+    "addr:postcode": "11851",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4390274789",
+   "lat": 37.97838,
+   "lng": 23.723412,
+   "tags": {
+    "name": "Cinque Wine & Deli Bar",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "15",
+    "addr:street": "Αγαθάρχου",
+    "addr:postcode": "10554",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4400863148",
+   "lat": 37.974821,
+   "lng": 23.718375,
+   "tags": {
+    "name": "Chimicurri",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4664964011",
+   "lat": 37.979772,
+   "lng": 23.713555,
+   "tags": {
+    "name": "The House",
+    "tourism": "hotel",
+    "website": "https://thehouseathens.com/",
+    "addr:housenumber": "7",
+    "addr:street": "Ιάκχου",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/4685912289",
+   "lat": 37.978189,
+   "lng": 23.72355,
+   "tags": {
+    "name": "Λίθος",
+    "amenity": "restaurant",
+    "addr:housenumber": "17",
+    "addr:street": "Αισώπου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4698422193",
+   "lat": 37.977299,
+   "lng": 23.710106,
+   "tags": {
+    "name": "Lime Bistro",
+    "amenity": "restaurant",
+    "cuisine": "juice;coffee;tea;beer;wine;burger;dessert;salad",
+    "website": "https://limebistro23.wixsite.com/limebistro",
+    "opening_hours": "We,Th,Su 14:00-22:30; Fr-Sa 14:00-23:00",
+    "addr:housenumber": "23",
+    "addr:street": "Δεκελέων",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/4887720153",
+   "lat": 37.982963,
+   "lng": 23.711537,
+   "tags": {
+    "name": "Laika Bar-Resto",
+    "amenity": "restaurant",
+    "addr:housenumber": "30",
+    "addr:street": "Πέλλης",
+    "addr:postcode": "10447"
+   }
+  },
+  {
+   "id": "node/4892907966",
+   "lat": 37.983386,
+   "lng": 23.711423,
+   "tags": {
+    "name": "Εις το παυσίλυπον",
+    "amenity": "restaurant",
+    "addr:housenumber": "19",
+    "addr:street": "Κορυτσάς"
+   }
+  },
+  {
+   "id": "node/4932630923",
+   "lat": 37.982258,
+   "lng": 23.720289,
+   "tags": {
+    "name": "Σεϋχέλλες",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "49",
+    "addr:street": "Κεραμεικού",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4971258221",
+   "lat": 37.97907,
+   "lng": 23.721237,
+   "tags": {
+    "name": "hoteli",
+    "tourism": "hotel",
+    "addr:housenumber": "12",
+    "addr:street": "Τομπάζη"
+   }
+  },
+  {
+   "id": "node/5123686224",
+   "lat": 37.983218,
+   "lng": 23.715861,
+   "tags": {
+    "name": "Funky Gourmet",
+    "amenity": "restaurant",
+    "website": "https://funkygourmet.com",
+    "addr:housenumber": "13",
+    "addr:street": "Παραμυθιάς"
+   }
+  },
+  {
+   "id": "node/5123686227",
+   "lat": 37.978356,
+   "lng": 23.712554,
+   "tags": {
+    "name": "Dinner in the Sky",
+    "amenity": "restaurant",
+    "website": "https://dinnerinthesky.gr/",
+    "addr:housenumber": "2",
+    "addr:street": "Ιάκχου",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "node/5126291591",
+   "lat": 37.978237,
+   "lng": 23.723386,
+   "tags": {
+    "name": "Βολιώτικο τσιπουράδικο στου Ψυρρή",
+    "amenity": "restaurant",
+    "website": "https://voliotiko-tsipouradiko.gr",
+    "addr:housenumber": "1",
+    "addr:street": "Λεπενιώτου",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5130269728",
+   "lat": 37.97807,
+   "lng": 23.723818,
+   "tags": {
+    "name": "18 Micon str",
+    "name:en": "18 Micon Street",
+    "tourism": "hotel",
+    "website": "https://www.18miconstr.com/",
+    "wikidata": "Q111858282"
+   }
+  },
+  {
+   "id": "node/5173881521",
+   "lat": 37.977825,
+   "lng": 23.722966,
+   "tags": {
+    "name": "Alysso",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5416304221",
+   "lat": 37.980506,
+   "lng": 23.723397,
+   "tags": {
+    "name": "Telis Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;greek",
+    "addr:housenumber": "86",
+    "addr:street": "Ευριπίδου",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "node/5457852316",
+   "lat": 37.977102,
+   "lng": 23.723941,
+   "tags": {
+    "name": "Sticky rice n' friends",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "104",
+    "addr:street": "Ερμού"
+   }
+  },
+  {
+   "id": "node/5497601669",
+   "lat": 37.982915,
+   "lng": 23.716028,
+   "tags": {
+    "name": "The Big Kahuna",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "42",
+    "addr:street": "Σαλαμίνος"
+   }
+  },
+  {
+   "id": "node/5548784621",
+   "lat": 37.976754,
+   "lng": 23.722885,
+   "tags": {
+    "name": "7 επτά",
+    "amenity": "restaurant",
+    "contact:website": "https://eptarestaurantbar.gr/",
+    "addr:housenumber": "10",
+    "addr:street": "Άστιγγος",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/5642430880",
+   "lat": 37.977826,
+   "lng": 23.724455,
+   "tags": {
+    "name": "Motivo Lounge",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642430882",
+   "lat": 37.977704,
+   "lng": 23.724268,
+   "tags": {
+    "name": "Buddha",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642430886",
+   "lat": 37.977476,
+   "lng": 23.723737,
+   "tags": {
+    "name": "Elladikon",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5642430888",
+   "lat": 37.977763,
+   "lng": 23.723797,
+   "tags": {
+    "name": "Αριστοτέλης",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642430890",
+   "lat": 37.977741,
+   "lng": 23.724174,
+   "tags": {
+    "name": "Krasopoulio tou Kokkora",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "4",
+    "addr:street": "Αισώπου",
+    "addr:postcode": "10554",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642451767",
+   "lat": 37.978318,
+   "lng": 23.723516,
+   "tags": {
+    "name": "Ψυρρήκοκο",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642451771",
+   "lat": 37.978396,
+   "lng": 23.72325,
+   "tags": {
+    "name": "Po`Boys BBQ",
+    "amenity": "restaurant",
+    "website": "https://poboysbbq.gr",
+    "opening_hours": "13:00-00:15",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642451777",
+   "lat": 37.978321,
+   "lng": 23.722357,
+   "tags": {
+    "name": "Ya Zhou",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5642483153",
+   "lat": 37.977949,
+   "lng": 23.723178,
+   "tags": {
+    "name": "Πάμε Νάξο",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642483155",
+   "lat": 37.97762,
+   "lng": 23.722738,
+   "tags": {
+    "name": "Dos gardenias",
+    "amenity": "restaurant",
+    "opening_hours": "Mo off; Tu-Th,Su 10:00-02:00; Fr-Sa 10:00-02:30",
+    "addr:housenumber": "21",
+    "addr:street": "Ήβης",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642483156",
+   "lat": 37.977794,
+   "lng": 23.72252,
+   "tags": {
+    "name": "To Κουδουνάκι",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642483158",
+   "lat": 37.977157,
+   "lng": 23.721884,
+   "tags": {
+    "name": "Indian Masala",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642483159",
+   "lat": 37.97831,
+   "lng": 23.723824,
+   "tags": {
+    "name": "Bandiera",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642537840",
+   "lat": 37.978723,
+   "lng": 23.7101,
+   "tags": {
+    "name": "Crema",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642537841",
+   "lat": 37.978708,
+   "lng": 23.71021,
+   "tags": {
+    "name": "Γκαζοχώρι",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642537843",
+   "lat": 37.9786,
+   "lng": 23.710187,
+   "tags": {
+    "name": "Waffle Factory",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5642537844",
+   "lat": 37.978512,
+   "lng": 23.710178,
+   "tags": {
+    "name": "Γκαζοχόρι",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642537845",
+   "lat": 37.978472,
+   "lng": 23.710321,
+   "tags": {
+    "name": "Al Little Taste of Home",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5642537847",
+   "lat": 37.97826,
+   "lng": 23.710488,
+   "tags": {
+    "name": "Da Zio",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5642537849",
+   "lat": 37.978232,
+   "lng": 23.711445,
+   "tags": {
+    "name": "My Plate",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5642537850",
+   "lat": 37.979203,
+   "lng": 23.711585,
+   "tags": {
+    "name": "Σκορδόπιστη",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642537855",
+   "lat": 37.979852,
+   "lng": 23.711981,
+   "tags": {
+    "name": "Bed Station",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5642537868",
+   "lat": 37.979863,
+   "lng": 23.71474,
+   "tags": {
+    "name": "Asian Taste",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5695600092",
+   "lat": 37.982681,
+   "lng": 23.719213,
+   "tags": {
+    "name": "Το αυγό του κόκκορα",
+    "name:en": "To avgo tou kokkora",
+    "amenity": "restaurant",
+    "addr:housenumber": "46",
+    "addr:street": "Λεωνίδου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5815241054",
+   "lat": 37.980486,
+   "lng": 23.716856,
+   "tags": {
+    "name": "CTC Urban Gastronomy",
+    "amenity": "restaurant",
+    "website": "https://ctc-restaurant.com/",
+    "opening_hours": "Tu-Sa 19:30-00:00"
+   }
+  },
+  {
+   "id": "node/5908007144",
+   "lat": 37.982254,
+   "lng": 23.713463,
+   "tags": {
+    "name": "Το Λαΐνι",
+    "name:en": "Laini",
+    "amenity": "restaurant",
+    "cuisine": "cretan;greek",
+    "addr:housenumber": "40",
+    "addr:street": "Αρτεμισίου",
+    "addr:postcode": "10435"
+   }
+  },
+  {
+   "id": "node/5974602746",
+   "lat": 37.981641,
+   "lng": 23.714203,
+   "tags": {
+    "name": "Μπαχανέζος",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "120",
+    "addr:street": "Μεγάλου Αλεξάνδρου"
+   }
+  },
+  {
+   "id": "node/5986763754",
+   "lat": 37.982186,
+   "lng": 23.720535,
+   "tags": {
+    "name": "Μπέμπα",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5986771182",
+   "lat": 37.98191,
+   "lng": 23.71486,
+   "tags": {
+    "name": "Γκεζί",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6006081417",
+   "lat": 37.978539,
+   "lng": 23.724557,
+   "tags": {
+    "name": "Συμπόσιο στο Ψυρρή",
+    "amenity": "restaurant",
+    "addr:housenumber": "4",
+    "addr:street": "Αγίων Αναργύρων",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6117039953",
+   "lat": 37.977027,
+   "lng": 23.723138,
+   "tags": {
+    "name": "Shuk",
+    "amenity": "restaurant",
+    "website": "https://www.instagram.com/shuk_restaurant/?hl=en",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6172463995",
+   "lat": 37.976785,
+   "lng": 23.724776,
+   "tags": {
+    "name": "Lotus Center",
+    "tourism": "hotel",
+    "addr:housenumber": "95",
+    "addr:street": "Ερμού"
+   }
+  },
+  {
+   "id": "node/6434630449",
+   "lat": 37.977294,
+   "lng": 23.723103,
+   "tags": {
+    "name": "Το μικράκι",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6434664146",
+   "lat": 37.977053,
+   "lng": 23.724894,
+   "tags": {
+    "name": "Lotus Inn",
+    "tourism": "hotel",
+    "wikidata": "Q111999606"
+   }
+  },
+  {
+   "id": "node/6436289343",
+   "lat": 37.969528,
+   "lng": 23.713801,
+   "tags": {
+    "name": "Θεραπευτηριο",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6472138954",
+   "lat": 37.975962,
+   "lng": 23.724211,
+   "tags": {
+    "name": "Stone",
+    "amenity": "restaurant",
+    "website": "https://stoneathens.com/",
+    "addr:housenumber": "31",
+    "addr:street": "Αδριανού",
+    "addr:postcode": "10555"
+   }
+  },
+  {
+   "id": "node/6502771333",
+   "lat": 37.984183,
+   "lng": 23.712253,
+   "tags": {
+    "name": "Ας πιούμε σ' αυτό",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6502771790",
+   "lat": 37.984609,
+   "lng": 23.711666,
+   "tags": {
+    "name": "Ο Πειναλέας",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6502771990",
+   "lat": 37.981882,
+   "lng": 23.711068,
+   "tags": {
+    "name": "Λυχνάρι",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6575703493",
+   "lat": 37.975123,
+   "lng": 23.718467,
+   "tags": {
+    "name": "Το Κουσουλό",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6668256873",
+   "lat": 37.969915,
+   "lng": 23.712514,
+   "tags": {
+    "name": "Blue Bamboo",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/6724813021",
+   "lat": 37.977292,
+   "lng": 23.722533,
+   "tags": {
+    "name": "Dosa King",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6734965113",
+   "lat": 37.977623,
+   "lng": 23.712572,
+   "tags": {
+    "name": "Zafran",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6743216332",
+   "lat": 37.981299,
+   "lng": 23.71619,
+   "tags": {
+    "name": "Η Αυλή του Πέτρου",
+    "amenity": "restaurant",
+    "cuisine": "lahmajoun;falafel;barbecue;kebab;burritos;hummus;tabbouleh",
+    "opening_hours": "Mo 19:00-03:00; Tu-We 14:00-03:00; Th-Fr 14:00-05:00; Sa-Su 14:00-03:00",
+    "addr:housenumber": "86",
+    "addr:street": "Λεωνίδου",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6744941435",
+   "lat": 37.980165,
+   "lng": 23.712073,
+   "tags": {
+    "name": "Galata Gazi",
+    "amenity": "restaurant",
+    "addr:housenumber": "8",
+    "addr:street": "Τριπτόλεμου"
+   }
+  },
+  {
+   "id": "node/6944474545",
+   "lat": 37.970227,
+   "lng": 23.712492,
+   "tags": {
+    "name": "Πλειάδες",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7058180389",
+   "lat": 37.977074,
+   "lng": 23.72279,
+   "tags": {
+    "name": "Καλαμνανδιλικα",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7279769186",
+   "lat": 37.982031,
+   "lng": 23.71518,
+   "tags": {
+    "name": "Steki Pinoklis",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7803881085",
+   "lat": 37.979471,
+   "lng": 23.724521,
+   "tags": {
+    "name": "Art Εδέμ",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7843997485",
+   "lat": 37.978344,
+   "lng": 23.722621,
+   "tags": {
+    "name": "Downtown lofts",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/7976906885",
+   "lat": 37.977534,
+   "lng": 23.722976,
+   "tags": {
+    "name": "Ατλαντικός",
+    "name:en": "Atlantikos",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "addr:housenumber": "7",
+    "addr:street": "Αυλητών"
+   }
+  },
+  {
+   "id": "node/8191947995",
+   "lat": 37.981372,
+   "lng": 23.723969,
+   "tags": {
+    "name": "Sofi Rice & Curry",
+    "amenity": "restaurant",
+    "addr:housenumber": "53Δ",
+    "addr:street": "Σοφοκλέους"
+   }
+  },
+  {
+   "id": "node/8569895952",
+   "lat": 37.978011,
+   "lng": 23.723066,
+   "tags": {
+    "name": "Central stay",
+    "tourism": "hostel",
+    "addr:housenumber": "8"
+   }
+  },
+  {
+   "id": "node/8569908175",
+   "lat": 37.978426,
+   "lng": 23.724581,
+   "tags": {
+    "name": "Live in Athens",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/8569910023",
+   "lat": 37.97777,
+   "lng": 23.723455,
+   "tags": {
+    "name": "Flats & roof garden",
+    "tourism": "guest_house",
+    "addr:housenumber": "17"
+   }
+  },
+  {
+   "id": "node/8968920817",
+   "lat": 37.977918,
+   "lng": 23.723142,
+   "tags": {
+    "name": "Μαύρος Γατος",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8968960317",
+   "lat": 37.977904,
+   "lng": 23.723118,
+   "tags": {
+    "name": "Mávros Gatos",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "5",
+    "addr:street": "Navarchou Apostoli 5",
+    "addr:postcode": "10552"
+   }
+  },
+  {
+   "id": "node/9184222692",
+   "lat": 37.969851,
+   "lng": 23.713984,
+   "tags": {
+    "name": "Πάμε Παράγκα",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/9212097217",
+   "lat": 37.977456,
+   "lng": 23.709974,
+   "tags": {
+    "name": "inomagirio ‘tis Alexandra’s",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9247963773",
+   "lat": 37.978419,
+   "lng": 23.723816,
+   "tags": {
+    "name": "thes",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/9352174949",
+   "lat": 37.981722,
+   "lng": 23.71709,
+   "tags": {
+    "name": "Κάρλα",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Su 10:00-01:00",
+    "addr:housenumber": "80",
+    "addr:street": "Λεωνίδου"
+   }
+  },
+  {
+   "id": "node/9365781038",
+   "lat": 37.978846,
+   "lng": 23.721667,
+   "tags": {
+    "name": "Το Λοκάλι",
+    "amenity": "restaurant",
+    "website": "https://www.tolokali.gr/"
+   }
+  },
+  {
+   "id": "node/9524543424",
+   "lat": 37.969736,
+   "lng": 23.713066,
+   "tags": {
+    "name": "Λεμονανθός",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9658038802",
+   "lat": 37.977406,
+   "lng": 23.724159,
+   "tags": {
+    "name": "LUV N ROLL® HOUSE",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-We, Su 10:00-02:00; Th 10:00-02:30; Fr, Sa 10:00-04:00",
+    "addr:housenumber": "14",
+    "addr:street": "Καραϊσκάκη"
+   }
+  },
+  {
+   "id": "node/9674877858",
+   "lat": 37.978654,
+   "lng": 23.724304,
+   "tags": {
+    "name": "Μάντρα",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9922209120",
+   "lat": 37.982681,
+   "lng": 23.720428,
+   "tags": {
+    "name": "Γαλιάντρα",
+    "name:en": "Saorsa",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9981469658",
+   "lat": 37.979571,
+   "lng": 23.723297,
+   "tags": {
+    "name": "City Circus Athens",
+    "tourism": "hostel",
+    "wikidata": "Q111123230"
+   }
+  },
+  {
+   "id": "way/227212910",
+   "lat": 37.980058,
+   "lng": 23.7241,
+   "tags": {
+    "name": "Nin & Bau",
+    "tourism": "hotel",
+    "website": "https://ninbau-sarri-2.atticahotels.net"
+   }
+  },
+  {
+   "id": "way/234440701",
+   "lat": 37.979713,
+   "lng": 23.713806,
+   "tags": {
+    "name": "Στα Καλά Καθούμενα",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://stakalakathoumena.com.gr",
+    "opening_hours": "Tu-Sa 18:00-02:00, Su 13:00-02:00",
+    "addr:housenumber": "25 - 27 - 29",
+    "addr:street": "Ιερά Οδός",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "way/279474841",
+   "lat": 37.978681,
+   "lng": 23.720707,
+   "tags": {
+    "name": "Jason Inn",
+    "tourism": "hotel",
+    "stars": "3",
+    "addr:housenumber": "12",
+    "addr:street": "Αγίων Ασωμάτων",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/449520585",
+   "lat": 37.97933,
+   "lng": 23.722681,
+   "tags": {
+    "name": "Royalty Suites",
+    "tourism": "hotel",
+    "website": "https://www.royaltysuitesathens.gr",
+    "addr:housenumber": "2",
+    "addr:street": "Κραναού",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "way/449647299",
+   "lat": 37.979645,
+   "lng": 23.720575,
+   "tags": {
+    "name": "Okupa",
+    "tourism": "hostel",
+    "website": "https://www.okupa.com/"
+   }
+  },
+  {
+   "id": "way/449648807",
+   "lat": 37.978902,
+   "lng": 23.721804,
+   "tags": {
+    "name": "The Foundry",
+    "tourism": "hotel",
+    "website": "https://thefoundrysuitesathens.com",
+    "addr:housenumber": "40",
+    "addr:street": "Σαρρή",
+    "addr:postcode": "10560"
+   }
+  },
+  {
+   "id": "way/449650379",
+   "lat": 37.977576,
+   "lng": 23.721834,
+   "tags": {
+    "name": "Ochres Brown",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/449650384",
+   "lat": 37.978401,
+   "lng": 23.720805,
+   "tags": {
+    "name": "Asomaton",
+    "tourism": "hotel",
+    "addr:housenumber": "10",
+    "addr:street": "Αγίων Ασωμάτων",
+    "addr:postcode": "10553"
+   }
+  },
+  {
+   "id": "way/449664369",
+   "lat": 37.978978,
+   "lng": 23.723314,
+   "tags": {
+    "name": "Play",
+    "tourism": "hotel",
+    "addr:housenumber": "31",
+    "addr:street": "Αγίων Αναργύρων"
+   }
+  },
+  {
+   "id": "way/455695244",
+   "lat": 37.98216,
+   "lng": 23.723247,
+   "tags": {
+    "name": "Odeon",
+    "tourism": "hotel",
+    "addr:street": "Παναγή Τσαλδάρη (Πειραιώς)"
+   }
+  },
+  {
+   "id": "way/456173028",
+   "lat": 37.98006,
+   "lng": 23.718463,
+   "tags": {
+    "name": "Eridanus",
+    "tourism": "hotel",
+    "addr:housenumber": "78",
+    "addr:street": "Παναγή Τσαλδάρη",
+    "addr:postcode": "10553",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/457637593",
+   "lat": 37.974086,
+   "lng": 23.719839,
+   "tags": {
+    "name": "Θησείο",
+    "name:en": "Thissio",
+    "tourism": "hotel",
+    "website": "https://www.hotelthissio.com",
+    "wikidata": "Q111999611",
+    "addr:housenumber": "25",
+    "addr:street": "Αποστόλου Παύλου"
+   }
+  },
+  {
+   "id": "way/458522291",
+   "lat": 37.976719,
+   "lng": 23.713569,
+   "tags": {
+    "name": "Knack & Snack",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "7",
+    "addr:street": "Περσεφόνης",
+    "addr:postcode": "11854"
+   }
+  },
+  {
+   "id": "way/494771199",
+   "lat": 37.985828,
+   "lng": 23.715277,
+   "tags": {
+    "name": "Μεταξού",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "Mo-Tu off",
+    "addr:housenumber": "10",
+    "addr:street": "Πυθοδώρου",
+    "addr:postcode": "10444"
+   }
+  },
+  {
+   "id": "way/854166496",
+   "lat": 37.976738,
+   "lng": 23.724894,
+   "tags": {
+    "name": "Misafir",
+    "amenity": "restaurant",
+    "cuisine": "oriental",
+    "website": "https://misafir-restaurant.gr/",
+    "opening_hours": "11:00-04:00",
+    "addr:housenumber": "93",
+    "addr:street": "Ερμού",
+    "addr:postcode": "10555",
+    "wheelchair": "no"
+   }
+  }
+ ]
+}

@@ -1,0 +1,562 @@
+{
+ "nearM": 15000,
+ "anchors": [
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "lat": 35.20757,
+   "lng": -82.23968
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "lat": 35.20825,
+   "lng": -82.2394
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd4950b",
+   "lat": 35.20856,
+   "lng": -82.23984
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd4950e",
+   "lat": 35.20856,
+   "lng": -82.23989
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd4950f",
+   "lat": 35.22617,
+   "lng": -82.23579
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd49512",
+   "lat": 35.20885,
+   "lng": -82.23917
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "691b8a9a94bdbc299cd49514",
+   "lat": 35.20871,
+   "lng": -82.23811
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "lat": 35.20415,
+   "lng": -82.23836
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "lat": 35.2083,
+   "lng": -82.23747
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "venue": "6abda92605f1d5982e6e5d44",
+   "lat": 35.20891,
+   "lng": -82.23837
+  }
+ ],
+ "places": [
+  {
+   "id": "node/12175843064",
+   "lat": 35.20879,
+   "lng": -82.237942,
+   "tags": {
+    "name": "Brooks Tavern",
+    "amenity": "restaurant",
+    "cuisine": "bar_and_grill",
+    "website": "https://brookstavern.com",
+    "opening_hours": "Su-Th 11:00-20:00; Fr,Sa 11:00-21:00",
+    "addr:housenumber": "10",
+    "addr:street": "Oak Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "node/12590146557",
+   "lat": 35.246857,
+   "lng": -82.204106,
+   "tags": {
+    "name": "Fuji Express",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "393",
+    "addr:street": "West Mills Street",
+    "addr:postcode": "28722"
+   }
+  },
+  {
+   "id": "node/1416565274",
+   "lat": 35.235677,
+   "lng": -82.350471,
+   "tags": {
+    "name": "Green River BBQ",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "website": "https://greenriverbbq.com/",
+    "addr:housenumber": "131",
+    "addr:street": "Highway 176 East",
+    "addr:postcode": "28773"
+   }
+  },
+  {
+   "id": "node/2491266531",
+   "lat": 35.175463,
+   "lng": -82.187653,
+   "tags": {
+    "name": "El Chile Rojo",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.facebook.com/elchilerojo"
+   }
+  },
+  {
+   "id": "node/7115149230",
+   "lat": 35.249623,
+   "lng": -82.201149,
+   "tags": {
+    "name": "Joy Wok",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/7119863157",
+   "lat": 35.203733,
+   "lng": -82.238227,
+   "tags": {
+    "name": "Nana's Kitchen",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 08:00-14:00",
+    "addr:housenumber": "354",
+    "addr:street": "South Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "node/7119890232",
+   "lat": 35.209305,
+   "lng": -82.238912,
+   "tags": {
+    "name": "Huckleberry's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9775443433",
+   "lat": 35.246653,
+   "lng": -82.328187,
+   "tags": {
+    "name": "Saluda Whistle Stop Pizza & Wings",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "1487",
+    "addr:street": "Ozone Drive",
+    "addr:postcode": "28773"
+   }
+  },
+  {
+   "id": "node/9796623125",
+   "lat": 35.233551,
+   "lng": -82.351303,
+   "tags": {
+    "name": "The Saluda Inn",
+    "tourism": "motel",
+    "addr:housenumber": "229",
+    "addr:street": "Greenville Street",
+    "addr:postcode": "28773"
+   }
+  },
+  {
+   "id": "way/1373448592",
+   "lat": 35.17562,
+   "lng": -82.187214,
+   "tags": {
+    "name": "1878 Butcher's Block",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Th 10:00-21:00; Fr-Sa 10:00-23:00",
+    "addr:housenumber": "227",
+    "addr:street": "East Rutherford Street",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/1551071756",
+   "lat": 35.201158,
+   "lng": -82.236882,
+   "tags": {
+    "name": "Don Bigotes",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.donbigotesrestaurant.com/tryon-nc.html",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "526",
+    "addr:street": "South Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/241508068",
+   "lat": 35.175125,
+   "lng": -82.187451,
+   "tags": {
+    "name": "Soulisa's Fine Thai Dining",
+    "amenity": "restaurant",
+    "website": "https://www.soulisas.com",
+    "opening_hours": "Tu-Sa 11:00-21:00",
+    "addr:housenumber": "208",
+    "addr:street": "East Rutherford Street",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/241508071",
+   "lat": 35.175246,
+   "lng": -82.187019,
+   "tags": {
+    "name": "Dutch Country Whole Foods",
+    "amenity": "restaurant",
+    "addr:housenumber": "214",
+    "addr:street": "East Rutherford Street"
+   }
+  },
+  {
+   "id": "way/326846838",
+   "lat": 35.251999,
+   "lng": -82.326113,
+   "tags": {
+    "name": "Saluda Mountain Lodge",
+    "tourism": "motel",
+    "addr:housenumber": "1793",
+    "addr:street": "Holbert Cove Road",
+    "addr:postcode": "28773"
+   }
+  },
+  {
+   "id": "way/326850202",
+   "lat": 35.164013,
+   "lng": -82.182591,
+   "tags": {
+    "name": "Southside Smokehouse",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.southsidesmokehouse.com/",
+    "addr:housenumber": "726",
+    "addr:street": "South Howard Avenue",
+    "addr:postcode": "29536"
+   }
+  },
+  {
+   "id": "way/336111057",
+   "lat": 35.125589,
+   "lng": -82.164957,
+   "tags": {
+    "name": "Don Bigotes 3",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "18155",
+    "addr:street": "Asheville Highway",
+    "addr:postcode": "29322"
+   }
+  },
+  {
+   "id": "way/354704460",
+   "lat": 35.176839,
+   "lng": -82.182918,
+   "tags": {
+    "name": "The Yellow House Landrum",
+    "tourism": "guest_house",
+    "website": "https://yellowhouselandrum.com/",
+    "addr:housenumber": "508",
+    "addr:street": "East Rutherford Street",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/603533273",
+   "lat": 35.192969,
+   "lng": -82.139959,
+   "tags": {
+    "name": "Cunningham's",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "2915",
+    "addr:street": "Highway 14 East",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/620205141",
+   "lat": 35.115212,
+   "lng": -82.224849,
+   "tags": {
+    "name": "Dimitri's",
+    "amenity": "restaurant",
+    "cuisine": "greek;italian",
+    "addr:housenumber": "5600",
+    "addr:street": "Highway 14 North",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/620205142",
+   "lat": 35.114379,
+   "lng": -82.225455,
+   "tags": {
+    "name": "The Junction",
+    "amenity": "restaurant",
+    "addr:housenumber": "5599",
+    "addr:street": "Highway 14 North",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/679125833",
+   "lat": 35.179455,
+   "lng": -82.198177,
+   "tags": {
+    "name": "Stubborn Mule Restaurant & Brewery",
+    "amenity": "restaurant",
+    "website": "https://stubbornmulebrewing.com",
+    "opening_hours": "Su-Th 11:00-21:00; Fr-Sa 11:00-22:00",
+    "addr:housenumber": "501",
+    "addr:street": "North Howard Avenue",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/679157082",
+   "lat": 35.178127,
+   "lng": -82.177291,
+   "tags": {
+    "name": "Twin Palmetto",
+    "amenity": "restaurant",
+    "website": "https://foodeist.com/place/twinpalmetto",
+    "addr:housenumber": "1005",
+    "addr:street": "East Rutherford Street",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/679157092",
+   "lat": 35.178095,
+   "lng": -82.177911,
+   "tags": {
+    "name": "Caro-Mi Dining Room",
+    "amenity": "restaurant",
+    "opening_hours": "We-Fr 17:00-20:00; Sa 16:00-20:00",
+    "addr:housenumber": "909",
+    "addr:street": "East Rutherford Street",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/691235718",
+   "lat": 35.117302,
+   "lng": -82.157601,
+   "tags": {
+    "name": "The Dog House",
+    "amenity": "restaurant",
+    "cuisine": "burger;hot_dog;fries",
+    "addr:housenumber": "603",
+    "addr:street": "North Main Street",
+    "addr:postcode": "29322"
+   }
+  },
+  {
+   "id": "way/732065107",
+   "lat": 35.098102,
+   "lng": -82.257784,
+   "tags": {
+    "name": "The Red Horse Inn",
+    "tourism": "guest_house",
+    "website": "https://www.theredhorseinn.com",
+    "addr:housenumber": "45",
+    "addr:street": "Winstons Chase Court",
+    "addr:postcode": "29356"
+   }
+  },
+  {
+   "id": "way/759643691",
+   "lat": 35.2541,
+   "lng": -82.195353,
+   "tags": {
+    "name": "Rural Seed",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/760233057",
+   "lat": 35.253014,
+   "lng": -82.196977,
+   "tags": {
+    "name": "The Brick Pizzeria",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/760233059",
+   "lat": 35.252271,
+   "lng": -82.197907,
+   "tags": {
+    "name": "El Campesino",
+    "amenity": "restaurant",
+    "cuisine": "mexican"
+   }
+  },
+  {
+   "id": "way/760241003",
+   "lat": 35.242652,
+   "lng": -82.209833,
+   "tags": {
+    "name": "Mountain View BBQ & Deli",
+    "amenity": "restaurant",
+    "cuisine": "barbecue;deli",
+    "opening_hours": "Tu-Sa 11:00-20:00",
+    "addr:housenumber": "829",
+    "addr:street": "West Mills Street",
+    "addr:postcode": "28722"
+   }
+  },
+  {
+   "id": "way/761342389",
+   "lat": 35.2452,
+   "lng": -82.207825,
+   "tags": {
+    "name": "Days Inn",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/761506232",
+   "lat": 35.25325,
+   "lng": -82.197524,
+   "tags": {
+    "name": "Calvert's Kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/761508395",
+   "lat": 35.247998,
+   "lng": -82.204588,
+   "tags": {
+    "name": "Cocula Mexican Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "338",
+    "addr:street": "West Mills Street",
+    "addr:postcode": "28722"
+   }
+  },
+  {
+   "id": "way/761508396",
+   "lat": 35.24745,
+   "lng": -82.204003,
+   "tags": {
+    "name": "Waffle House",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://locations.wafflehouse.com/columbus-nc-736/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "363",
+    "addr:street": "West Mills Street",
+    "addr:postcode": "28722"
+   }
+  },
+  {
+   "id": "way/761527139",
+   "lat": 35.224903,
+   "lng": -82.241055,
+   "tags": {
+    "name": "Mill Farm Inn",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "way/762018542",
+   "lat": 35.208948,
+   "lng": -82.238159,
+   "tags": {
+    "name": "Blue Moon",
+    "amenity": "restaurant",
+    "cuisine": "diner;ice_cream;brunch;coffee_shop",
+    "website": "https://tradestreetdiner.square.site",
+    "opening_hours": "Th-Tu 09:00-16:00",
+    "addr:housenumber": "10",
+    "addr:street": "North Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/762018545",
+   "lat": 35.209072,
+   "lng": -82.238512,
+   "tags": {
+    "name": "Buck's Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "28",
+    "addr:street": "North Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/762036625",
+   "lat": 35.20946,
+   "lng": -82.23924,
+   "tags": {
+    "name": "Lavender Bistro",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/762039765",
+   "lat": 35.206616,
+   "lng": -82.237031,
+   "tags": {
+    "name": "Side Street Pizza & Pasta",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://sidestpizza.com",
+    "opening_hours": "Mo, Th-Sa 11:00-21:00; Tu-We off; Su 15:00-20:30",
+    "addr:housenumber": "135",
+    "addr:street": "South Trade Street",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/936595077",
+   "lat": 35.208503,
+   "lng": -82.233406,
+   "tags": {
+    "name": "1906 Pine Crest Inn",
+    "tourism": "hotel",
+    "website": "https://pinecrestinn.com/",
+    "addr:housenumber": "85",
+    "addr:street": "Pine Crest Lane",
+    "addr:postcode": "28782"
+   }
+  },
+  {
+   "id": "way/957703089",
+   "lat": 35.23623,
+   "lng": -82.348073,
+   "tags": {
+    "name": "Purple Onion",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://purpleonionsaluda.com/",
+    "addr:housenumber": "16",
+    "addr:street": "East Main Street",
+    "addr:postcode": "28773"
+   }
+  }
+ ]
+}
