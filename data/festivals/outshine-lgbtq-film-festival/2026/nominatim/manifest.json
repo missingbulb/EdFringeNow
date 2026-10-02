@@ -1,0 +1,15 @@
+{
+ "festival": "outshine-lgbtq-film-festival",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": "2026-10-02T18:34:40Z",
+ "fetcher": "scraper/festivals/outshine_lgbtq_film_festival/sources/nominatim/fetch.py",
+ "fetcherVersion": 3,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "One free-text query per distinct venue address from eventive; first hit, rounded to 6 dp."
+}

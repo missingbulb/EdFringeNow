@@ -1,0 +1,19 @@
+{
+ "about": "Hand-curated venue research for hack.lu, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "parc-hotel": {
+   "name": "Alvisse Parc Hotel",
+   "address": {
+    "value": "120 Route d'Echternach, 1453 Luxembourg",
+    "source": "https://2026.hack.lu/info/"
+   },
+   "coordinates": {
+    "lat": 49.6395242,
+    "lng": 6.1538168,
+    "basis": "OpenStreetMap's Parc Hotel Alvisse (way 32394372)"
+   },
+   "notes": "The conference hotel in Luxembourg-Dommeldange, where hack.lu has been held every year (2026.hack.lu/info). The rooms and their seat counts are the schedule's own."
+  }
+ }
+}

@@ -181,6 +181,18 @@
    "refreshTools": []
   },
   {
+   "festival": "hack-lu",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-20",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "haifa-iff",
    "edition": "2026",
    "format": "block",
@@ -320,6 +332,59 @@
    ]
   },
   {
+   "festival": "litquake",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-04",
+   "last": "2026-10-24",
+   "tools": [
+    "sched",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "sched"
+   ]
+  },
+  {
+   "festival": "london-latino-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-02",
+   "last": "2026-10-06",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "marxismnl-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-07",
+   "last": "2026-10-09",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "matrix-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-20",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "micf",
    "edition": "2027",
    "format": "block",
@@ -333,6 +398,20 @@
    ]
   },
   {
+   "festival": "new-orleans-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-27",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
    "festival": "nzicf",
    "edition": "2027",
    "format": "block",
@@ -340,6 +419,33 @@
    "last": "2027-05-23",
    "tools": [
     "find-a-show"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "outshine-lgbtq-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-15",
+   "last": "2026-10-25",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "pycon-greece",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-12",
+   "last": "2026-10-13",
+   "tools": [
+    "venues-research",
+    "pretalx"
    ],
    "refreshTools": []
   },
@@ -356,6 +462,33 @@
    "refreshTools": []
   },
   {
+   "festival": "santa-fe-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-14",
+   "last": "2026-10-19",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "scala-days",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-12",
+   "last": "2026-10-13",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "seeei-electricity-energy",
    "edition": "2026",
    "format": "block",
@@ -366,6 +499,61 @@
     "venues-research"
    ],
    "refreshTools": []
+  },
+  {
+   "festival": "silicon-valley-jewish-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-10",
+   "last": "2026-10-25",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "singapore-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-21",
+   "last": "2026-11-07",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "swiss-python-summit",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-15",
+   "last": "2026-10-18",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
   },
   {
    "festival": "tel-aviv-festival",
@@ -392,6 +580,35 @@
     "venues-research"
    ],
    "refreshTools": []
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-08",
+   "last": "2026-10-11",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "viet-film-fest",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-08",
+   "last": "2026-10-23",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
   }
  ]
 }

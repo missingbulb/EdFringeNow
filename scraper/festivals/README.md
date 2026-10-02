@@ -150,7 +150,14 @@ vocabulary, its `adapter` names the generic one directly, as a curated
 | Smarticket box office (listing + performance pages) | `smarticket.py` | Kol HaMusica | one record per performance from its JSON-LD Event: start, place, running time, price, availability, picture, description |
 | A programme PDF ruled into a grid | `pdf_grid.py` | ICISA, SEEEI Electricity & Energy | the grid's cells by their ruling lines, each cell's lines with bold and wrap marks, right-to-left text in reading order; installs pdfminer.six into the git-ignored cache when missing |
 | Forms Wizard conference site (`<event>.forms-wizard.biz`) | `forms_wizard.py` | IAEM assembly | every agenda item by day: icon, title, time, people, place, description tables as rows of cells |
+| Eventive public events API (`TENANT` script's key and bucket) | `eventive.py` | New Orleans, Singapore, Tallgrass, Tryon, Viet Film Fest, Santa Fe, London Latino, OUTshine, Silicon Valley Jewish film festivals | in-person screenings (UTC instants), films with runtime, stills and blurbs, venues with street addresses, ticket types and prices, whether tickets are on sale |
+| pretalx schedule export (`schedule.json`) | `pretalx.py` | hack.lu, Scala Days, Swiss Python Summit, Matrix Conference, MarxismNL, PyCon Greece | talks in rooms on the local clock, tracks, abstracts, speakers, a picture where given; no building, so each conference curates its venue |
+| Sched calendar (`all.ics`) | `sched.py` | Litquake | sessions (UTC instants), session types, locations with street addresses, the organiser's notes |
 | Nominatim (OSM) | `nominatim.py` | any source with street addresses | coordinates for them, one request a second |
+
+A festival whose programme source leaves venues unplaced (a pretalx room, an
+Eventive venue with no address) adds a curated `venues-research` source read by
+the shared `scraper/convert/adapters/platforms/curated_venues.py`.
 
 ### A placeholder festival
 
@@ -251,7 +258,8 @@ candidates for festivals with no QID; a person picks one into `festival.toml`.
 2. Run each fetched source's `fetch.py --edition <year>` by hand, then
    `python3 scraper/convert/to_serving.py <festival> <year>` — or both in one go
    with `python3 scraper/festivals/collect.py <festival> <year>` (`--all` for every
-   edition). Commit the new `data/festivals/<festival>/<year>/` folders, the
+   edition). Having fetched several festivals before converting any, convert
+   them together with `python3 scraper/convert/to_serving.py --all`. Commit the new `data/festivals/<festival>/<year>/` folders, the
    serving file and `index.json`.
 3. Name every new raw and serving file, with its writer, in the
    `edfringe-data-dir-is-generator-output` allowlist.

@@ -1,0 +1,19 @@
+{
+ "about": "Hand-curated venue research for The Matrix Conference, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "scandic-triangeln": {
+   "name": "Scandic Triangeln",
+   "address": {
+    "value": "Triangeln 2, Malmö",
+    "source": "https://2026.matrix.org/attend/"
+   },
+   "coordinates": {
+    "lat": 55.5964229,
+    "lng": 13.001567,
+    "basis": "OpenStreetMap's Scandic Triangeln (node 6339859447)"
+   },
+   "notes": "A hotel in central Malmö, three minutes' walk from Triangeln station (2026.matrix.org/attend). The talks' rooms are the schedule's own."
+  }
+ }
+}

@@ -1,0 +1,3762 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "singapore-international-film-festival",
+  "edition": "2026",
+  "ordinal": 37,
+  "name": "Singapore International Film Festival",
+  "nameLocal": null,
+  "city": "Singapore",
+  "country": "SG",
+  "lat": 1.2903,
+  "lng": 103.852,
+  "timezone": "Asia/Singapore",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://sgiff.com",
+  "firstDate": "2026-10-21",
+  "lastDate": "2026-11-07",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://sgiff.eventive.org",
+   "notes": "Sold on sgiff.eventive.org, one ticket page per screening; the box office marks screenings SOLD OUT or NOT AVAILABLE FOR SALE YET with tags, which are read as availability.",
+   "currency": "SGD"
+  }
+ },
+ "categories": [
+  {
+   "id": "6aad0040b82604c6f75ad55a",
+   "name": "Festival Opening"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad55c",
+   "name": "Asian Feature Film Competition"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad55d",
+   "name": "Southeast Asian Short Film Competition"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad55e",
+   "name": "Singapore Panorama"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad55f",
+   "name": "Foreground"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad560",
+   "name": "Horizon"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad561",
+   "name": "Standpoint"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad562",
+   "name": "Undercurrent"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad563",
+   "name": "Landmark"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad564",
+   "name": "Audience Choice Award"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad566",
+   "name": "Industry Days"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad567",
+   "name": "Junior Explorers"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad568",
+   "name": "Forum"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad569",
+   "name": "Special Presentation"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad56a",
+   "name": "Relaxed Screening + Activity"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad56c",
+   "name": "SGIFF Pro"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad56d",
+   "name": "Parallax"
+  },
+  {
+   "id": "6aad0040b82604c6f75ad56e",
+   "name": "Q&A"
+  },
+  {
+   "id": "6ab0d16d5e2359166344dcbe",
+   "name": "Pitching Forum"
+  },
+  {
+   "id": "6ab36b4992ca34a98ddf3722",
+   "name": "Suitable for audiences aged 5 and above"
+  },
+  {
+   "id": "6ab36d0e55752cdbc7c1ef6c",
+   "name": "Suitable for audiences aged 10 and above"
+  }
+ ],
+ "venues": [
+  {
+   "id": "6aad0040b82604c6f75ad615",
+   "name": "National Museum Singapore, Gallery Theatre",
+   "address": "93 Stamford Rd, National Museum of Singapore, Singapore 178897",
+   "lat": 1.2965476,
+   "lng": 103.8483167,
+   "online": false,
+   "capacity": 247,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad618",
+   "name": "Marina Bay Sands, Sands Theatre",
+   "address": "10 Bayfront Ave, B1-69/70 The Shoppes, Marina bay sands, Singapore 018971",
+   "lat": 1.2849222,
+   "lng": 103.8606279,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad619",
+   "name": "Marina Bay Sands Expo & Convention, Grand Ballroom",
+   "address": "10 Bayfront Ave, Singapore 018956",
+   "lat": 1.282641,
+   "lng": 103.860028,
+   "online": false,
+   "capacity": 1000,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad61b",
+   "name": "LASALLE College of the Arts, Flexi Space",
+   "address": "Block F Level 1, McNally St, F102, Singapore 187940",
+   "lat": 1.302562,
+   "lng": 103.851063,
+   "online": false,
+   "capacity": 150,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad61d",
+   "name": "Esplanade – Theatres on the Bay, Theatre Studio",
+   "address": "1 Esplanade Dr, Singapore 038981",
+   "lat": 1.290984,
+   "lng": 103.854709,
+   "online": false,
+   "capacity": 220,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad61e",
+   "name": "Esplanade – Theatres on the Bay, White Room",
+   "address": "1 Esplanade Dr, Singapore 038981",
+   "lat": 1.290984,
+   "lng": 103.854709,
+   "online": false,
+   "capacity": 150,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad61f",
+   "name": "Esplanade – Theatres on the Bay, Annexe Studio",
+   "address": "1 Esplanade Dr, Singapore 038981",
+   "lat": 1.290984,
+   "lng": 103.854709,
+   "online": false,
+   "capacity": 100,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad620",
+   "name": "Filmhouse, Redrum",
+   "address": "6001 Beach Rd, #05-00, Singapore 199589",
+   "lat": 1.301885,
+   "lng": 103.864019,
+   "online": false,
+   "capacity": 194,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad621",
+   "name": "Filmhouse, Green Room",
+   "address": "6001 Beach Rd, #05-00, Singapore 199589",
+   "lat": 1.301885,
+   "lng": 103.864019,
+   "online": false,
+   "capacity": 255,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad622",
+   "name": "Oldham Theatre",
+   "address": "1 Canning Rise, Singapore 179868",
+   "lat": 1.293047,
+   "lng": 103.848491,
+   "online": false,
+   "capacity": 135,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad623",
+   "name": "Golden Village VivoCity",
+   "address": "1 HarbourFront Walk, #02-30 VivoCity, Singapore 098585",
+   "lat": 1.2643707,
+   "lng": 103.8229537,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad624",
+   "name": "Golden Village Cineleisure, Hall 1",
+   "address": "8 Grange Road, Cineleisure Level 5 & 6, 239695",
+   "lat": 1.3015044,
+   "lng": 103.8364803,
+   "online": false,
+   "capacity": 213,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad625",
+   "name": "Golden Village Cineleisure, Hall 2",
+   "address": "8 Grange Road, Cineleisure Level 5, Level 6 &, 239695",
+   "lat": 1.3015044,
+   "lng": 103.8364803,
+   "online": false,
+   "capacity": 213,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad626",
+   "name": "Golden Village Cineleisure, Hall 4",
+   "address": "8 Grange Road, Cineleisure Level 5, Level 6 &, 239695",
+   "lat": 1.3015044,
+   "lng": 103.8364803,
+   "online": false,
+   "capacity": 279,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad627",
+   "name": "Golden Village Bugis+, Hall 3",
+   "address": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777,
+   "online": false,
+   "capacity": 250,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad628",
+   "name": "Golden Village Bugis+, Hall 4",
+   "address": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777,
+   "online": false,
+   "capacity": 143,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad629",
+   "name": "Golden Village Bugis+, Hall 5",
+   "address": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777,
+   "online": false,
+   "capacity": 152,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad62b",
+   "name": "Golden Village Bugis+, Hall 6",
+   "address": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777,
+   "online": false,
+   "capacity": 152,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aad0040b82604c6f75ad62c",
+   "name": "Golden Village Bugis+, Hall 7",
+   "address": "201 Victoria St, #05-01 Bugis+, Singapore 188067",
+   "lat": 1.299281,
+   "lng": 103.854777,
+   "online": false,
+   "capacity": 152,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6ab0d17d1fbd58746bf15f48",
+   "name": "LASALLE College of the Arts, SIA Theatre",
+   "address": "1 McNally St, Singapore 187940",
+   "lat": 1.30292,
+   "lng": 103.851956,
+   "online": false,
+   "capacity": 480,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6ab3f06f9651fe03e0a6fb6a",
+   "name": "Golden Village VivoCity",
+   "address": "1 HarbourFront Walk, #02-30 VivoCity, Singapore 098585",
+   "lat": 1.2643707,
+   "lng": 103.8229537,
+   "online": false,
+   "capacity": 602,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6aad2907362223e49bc13fb4",
+   "title": "The Assassin(s)",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fb4",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55a"
+   ],
+   "blurb": "Undeterred by the intimidation of state agents, an intrepid detective, reporter and news editor join forces to uncover the truth about a shooting in this gripping procedural thriller.",
+   "durationMin": 131,
+   "imageUrl": "https://static-a.eventive.org/1789734140160temp-1789734138923-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd443",
+   "title": "In Conversation With Shim Eun-kyung",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd443",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "Join the conversation with Shim Eun-kyung, an acclaimed South Korean actress who has built a distinctive, boundary-crossing career in both South Korea and Japan.\n\nBeginning her career at age nine as one of Korean television's most prominent child actors, Shim earned the Best Actress award at the Baeksang Arts Awards for her starring role in Miss Granny (2014). After expanding her work to Japan, she made history as the first Korean actor to win Best Actress at the Japan Academy Film Prize for The Journalist (2019). Her acclaimed performance in Two Seasons, Two Strangers (2025)—which won the Golden Leopard at the Locarno Film Festival—further earned her Best Actress at Japan's Kinema Junpo Best Ten Awards.\n\nIn this exclusive dialogue session, Shim will share insights into her evolution as a performer working across borders and languages, and how she continues to forge a singular path as a generation-defining actress.\n\nModerated by: TBC\n\nConducted in Korean with English interpretation",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790178482203temp-1790178481961-cover.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f98",
+   "title": "Cageman",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f98",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad563",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 150,
+   "imageUrl": "https://static-a.eventive.org/1789733139835temp-1789733139813-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad59c",
+   "title": "Baby Jackfruit Baby Guava",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad59c",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad561",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1788239494516temp-1788239494457-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd43a",
+   "title": "In Conversation With Aamir Khan",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd43a",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "The Festival is proud to present an exclusive conversation with this year’s SGIFF Screen Icon Award recipient, Aamir Khan – one of Indian cinema’s most influential and acclaimed actors, directors, and producers.\n\nRenowned for his dedication to craft and socially conscious storytelling, Khan will reflect on his stellar career in cinema spanning four decades. Possessing one of the most commercially impactful and critically acclaimed filmographies in Indian cinema history, he has reshaped global perceptions of Indian cinema—from founding Aamir Khan Productions to steering Oscar-nominated epics and record-breaking blockbusters.\n\nKhan has received four National Film Awards and nine Filmfare Awards in his career and made his directorial debut with the critically acclaimed Taare Zameen Par (2007). He has also produced and starred in the epic Lagaan (2001), which earned an Academy Award nomination.\n\nDon’t miss this rare opportunity to gain insights from a global screen icon whose performances, work ethic and dedication to cinema continue to enthrall fans all over the world.\n\nModerated by: Rishi Budhrani, Host and Actor\n\nConducted in English",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790178592604temp-1790178592275-cover.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f9e",
+   "title": "Mayilaa",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f9e",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1789733142743temp-1789733142719-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd440",
+   "title": "In Conversation With Peter Chan",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd440",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "Join the conversation with Peter Ho-sun Chan, a leading figure in contemporary Chinese-language cinema and the first director to have won three major directing awards at the Hong Kong Film Awards, Golden Horse Awards, and Golden Rooster Awards.\n\nEmerging during Hong Kong's golden age of cinema, Chan co-founded United Filmmakers Organization (UFO) in 1991, shaping iconic urban melodramas like Comrades, Almost a Love Story (1996). His vision later expanded internationally with DreamWorks' The Love Letter (1999) and pan-Asian production company Applause Pictures. By directing acclaimed blockbusters like Perhaps Love (2005), The Warlords (2007) and Wu Xia (2011), Chan seamlessly blends commercial appeal, genre storytelling, and artistic vision.\n\nIn this exclusive dialogue session, Chan will share insights into his four-decade cinematic legacy, and how he continues to be an advocate for the Chinese-language film industry and broader pan-Asian collaborations.\n\nModerated by: TBC\n\nConducted in English",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790825389431temp-1790825389399-cover.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f71",
+   "title": "The Uncharted Potential of Location-Based VR",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f71",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "A renowned group of French location-based virtual reality companies come together to discuss their productions and explore the multidimensional business and public engagement applications of this medium.\n\nLocation-Based Virtual Reality (LBVR) refers to an immersive form of VR in which virtual environments are experienced within specially designed physical settings. While conventional VR generally involves one user at a time, LBVR is designed for several participants to experience the same interactive virtual environment simultaneously. Participants can therefore move together in a physical space while interacting within a shared virtual world.\n\nThis programme is supported by the Ministry of Europe and Foreign Affairs (France) and the Institut français.\n\nSpeakers\n\nMathieu Barbier, Studio Director, Atlas V\n\nEric Barbedor, Author and Creative-Technologist, Backlight\n\nRichard Turco, Executive Director, Innerspace\n\nChloe Jarry, CEO, Lucid Realities\n\nEmanuela Righi, Producer, Novaya\n\nVoyelle Acker, Co-founder and Head of Content and Distribution, Small Creative\n\nModerator\n\nTBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f6b",
+   "title": "Voooooo---Peeeeee---",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f6b",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Voooooo---Peeeeee--- is a multisensory XR experience where a woman discovers her body has become hollow after being reconstructed as data. Wind leaks from within, and a strange creature settles in the void, breathing in rhythms of expansion and collapse. Her monologue drifts between memories of loss, data clouds beneath the sea, and endlessly replicated virtual worlds. Through VR cinema and a pneumatic wearable interface, audiences physically experience this expanding virtual volume as pressure and breath, entering a space where bodily presence and technological space overwrite one another.\n\nNOTE: Please pre-register for a 40-minute timeslot to experience this work. In the event of a no-show, the slot will be released to a walk-in participant 10 minutes after the slot begins.\n\nRating: PG\n\nArtist\n\nUbac Studio is a Seoul-based media artist duo composed of Hyeunjoo Woo and Jiyun Park. Working primarily with XR-based interactive installations, they explore moments when technology’s construction of the world collides with individual sensory experience. Their works have been presented at Cannes Immersive and Venice Immersive, and received the Festivals Connexion Award at Annecy 2026.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f6e",
+   "title": "French Location-Based VR",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f6e",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Experience award-winning immersive productions by a renowned group of French location-based virtual reality companies.\n\nLocation-Based Virtual Reality (LBVR) refers to an immersive form of VR in which virtual environments are experienced within specially designed physical settings. While conventional VR generally involves one user at a time, LBVR is designed for several participants to experience the same interactive virtual environment simultaneously. Participants can therefore move together in a physical space while interacting within a shared virtual world.\n\nThis programme is supported by the Ministry of Europe and Foreign Affairs (France) and the Institut français.\n\nArtists\n\nAtlas V\n\nAtlas V is a global leader in immersive entertainment, driven by storytelling & innovation.\n\nSince 2016, Atlas V has been pushing the boundaries of virtual reality, creating award-winning immersive experiences, video games, and exhibitions with proven critical and commercial success worldwide.\n\nBuilding on its strong narrative DNA, Atlas V is now expanding into multiplayer location-based entertainment and accessible casual gaming, bringing immersive experiences to broader audiences and new social contexts.\n\nFrom premium narrative worlds to shared, competitive, and playful experiences, the company bridges high-end creative ambition with scalable, audience-driven formats. We craft emotionally powerful, visually striking worlds that connect cutting-edge technology with a strong creative vision—designed to be experienced together, across platforms and territories.\n\nBacklight\n\nBackLight is an XR production studio based in Paris and founded in 2008. A pioneer in XR in the fields of entertainment and cultural experiences, the studio is renowned for its tailor-made productions and its alliance of creative innovation and technical ambition.\n\nBackLight’s productions have been presented in prestigious venues across France, including the Théâtre National de Chaillot, Palais Garnier, La Seine Musicale, Le Palace Paris, Maison Hennessy, and the Musée d’Orsay, and internationally at renowned institutions such as Teatros del Canal (Madrid), the Barbican Centre (London), the LAFAYETTE Cultural Arts Center (Shanghai), and the Xinjiang Museum (China).\n\nThe studio’s creations have been officially selected by leading international festivals and showcases worldwide and have received numerous distinctions, including the Venice Immersive Grand Prize (Lion Award) at the Venice International Film Festival for Le Bal de Paris.\n\nInnerspace\n\nFounded in 2014 by artists Balthazar Auxietre and Hayoun Kwon, Innerspace has emerged as one of the leading creative studios in the virtual reality industry, both in France and internationally. Driven by a passion for exploring the artistic potential of immersive technologies, the studio combines innovation and creativity with a delicate balance between storytelling and interactivity. From location-based immersive installations to online video games, Innerspace’s projects have captivated audiences and earned acclaim at major festivals and from critics worldwide. The studio’s ambition is to continue pushing the boundaries of XR, blending entertainment with artistic excellence to engage ever-larger audiences and deliver experiences that leave a lasting impact.\n\nLucid Realities\n\nLucid Realities is an immersive and interactive production based in Paris, co-founded by Chloé Jarry and François Bertrand. It has also a distribution branch through its affiliate company Unframed Collection that powers the first distribution platform for VR contents dedicated to cultural venues (www.unframed-collection.com).\n\nThe projects powered by Lucid Realities are designed to foreshadow the future of the XR industry and innovate ways to\n\nproduce and distribute XR experiences. For us, XR is more than technology: it’s an opportunity to create unprecedented emotional ways to connect people with edutainment contents.\n\nNovaya\n\nNovaya is a Paris-based production company dedicated to immersive works, founded in 2021. It creates new forms of immersive storytelling and develops the technologies that bring them to life. Novaya produced NOIRE — winner of Best Immersive Work at the 2024 Cannes Film Festival, now touring more than twenty venues across fifteen countries — and leads FABRIC, a France 2030 laureate: a unique hybrid capture stage being built at the Studios de Bry-sur-Marne with IRCAM and INRIA, designed to capture live performance in volume, movement and sound, and make it possible to experience it anywhere, across time and space.\n\nSmall Creative\n\nSmall Creative is a French immersive studio founded in Paris, specializing in the design, production and distribution of premium collective and free roaming VR experiences, in which groups of up to 15 people explore shared virtual worlds together, untethered and in complete freedom of movement. From the wreck of the Titanic to the arenas of ancient Rome, from the gardens of Versailles to the summit of Everest, Small Creative transforms iconic stories and places into powerful, shared emotional journeys. The company produces up to six new experiences per year and has already deployed its work in more than 50 cities across Europe, Americas, Asia and the Middle East, working with cultural institutions, location-based entertainment operators and private venue partners.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad593",
+   "title": "All of a Sudden",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad593",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560"
+   ],
+   "blurb": "Enveloped in care and tenderness, the conversations between a Paris nursing home director and a dying Japanese playwright become a space for gradual transformation.",
+   "durationMin": 196,
+   "imageUrl": "https://static-a.eventive.org/1788239495684temp-1788239495548-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c546",
+   "title": "Rehearsals for a Revolution",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c546",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad561"
+   ],
+   "blurb": "Through five generations of personal stories, this documentary reveals how memories of resistance survive beyond political upheavals. A poetic portrait of Iran’s ongoing struggle, it explores storytelling and everyday acts of defiance as quiet forms of revolution.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1790176962129temp-1790176962015-still.jpg"
+  },
+  {
+   "id": "6ab88d3b08472e09613a1c28",
+   "title": "Artist Spotlight: Shaheer Tarar + Hsu Che-Yu and Chen Wan-Yin",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88d3b08472e09613a1c28",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "In this two-part session, hear from artist Shaheer Tarar, followed by Hsu Che-Yu and Chen Wan-Yin on their creative practices which reinvent filmmaking pproaches through innovative uses of tools, mixed media, and software. The Compression Zone by Shaheer Tarar and Corporeal Forms: Four Stories by Hsu Che-Yu and Chen Wan-Yin are presented under the Undercurrent section.\n\nSpeakers\n\nShaheer Tarar is a media artist and geographer based in London. He pursues socio-political stories buried in time, space, sediment, and code, examining artifacts that shape how the world is seen and governed. His recent work comprises a series of net-art projects and experimental video games that trace how digital images are haunted by the infrastructures that produce them, and how those images generate competing worldviews. He has exhibited this work at transmediale (Berlin), The Photographers’ Gallery (London), Akademie Schloss Solitude (Stuttgart), Peckham Digital (London), and InterAccess (Toronto). He is currently a Lecturer in the Graphic Communication Design programme at Central Saint Martins.\n\nHsu Che-Yu and Chen Wan-Yin have been collaborating since 2014. Their collaborative works have been presented primarily as solo exhibitions at Kunstverein in Hamburg (2026), Center of Contemporary Art – Tbilisi (2025), Hong Foundation (Taipei, 2025), Vanguard Gallery (Shanghai, 2025, 2020, 2016), ARGOS Centre for Audiovisual Arts (Brussels, 2024), ILHAM Gallery (Kuala Lumpur, 2024), Fundació Joan Miró (Barcelona, 2023), Centre d’Art Contemporain Genève (2023), MOCA Taipei (2023), Vernacular Institute (Mexico City, 2023), Kuandu Museum of Fine Arts (Taipei, 2023), Liang Gallery (Taipei, 2022), and the Taipei Fine Arts Museum (2015). Their work has also been included in group exhibitions at Kunstenfestivaldesarts (Brussels, 2024), Theater der Welt (Frankfurt, 2023), Bienal de São Paulo (2021), Seoul Mediacity Biennale (2021), VIDEONALE.18 (Bonn, 2021), the Shanghai Biennale (2018), and the Asian Art Biennial (Taichung, 2017), as well as in film festivals including the International Film Festival Rotterdam (IFFR) (2023, 2022, 2020, 2018) and the New York Film Festival (NYFF) (2020).",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88dad02a266a70a5a186a",
+   "title": "Trust by Design: AI, Ethics & Creative Work",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88dad02a266a70a5a186a",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "New tools come with terms and conditions—and creative workers would quite like a hand in writing them. Bringing together law, industry and research, this panel explores how AI is reshaping authorship, consent, ownership and working lives—the questions no software update will settle. With Singapore and Asia in focus, discover what meaningful protection, fair opportunity and real accountability could look like in practice, and how creators can have a stronger voice in the decisions that shape their work.\n\nSpeakers\n\nJessie Tan, Managing Partner; Shin Associates\n\nJessie Tan is Managing Partner of Shin Associates and one of Malaysia’s leading TMT and entertainment lawyers. Working at the intersection of creativity, technology and commerce, she advises studios, producers, platforms and rights holders on bringing stories to screen, protecting creative rights and navigating a rapidly evolving digital landscape.\n\nDixon Soh, Director, Head of Intellectual Property and Intangible Assets Practice, CHP Law LLC\n\nDixon Soh sees IP not as a legal instrument but as the architecture of future value. His work spans the creative economy, technology, and beyond. He has advised fast-growing companies across gaming, e-commerce, media tech, and artificial intelligence, and has structured IP strategies for businesses at every stage, from startups to established enterprises reinventing themselves through their intangible assets.\n\nPei-Sze Chow, Assistant Professor of Digital Culture and New Media; Wee Kim Wee School of Communication and Information, NTU\n\nPei-Sze Chow is a critical media scholar researching how AI is transforming creative work in the cultural and creative industries. She speaks regularly at international academic and industry events on creative labour and AI governance in the cultural sector. She co-founded the Asian Media Industries Research Network and is advisor to the Women* in AI, Humanities, and Social Sciences initiative.\n\nModerator\n\nWonsun Shin, Curator of Parallax\n\nWonsun Shin is a freelance consultant with extensive experience in co-production projects, festival strategies, and remake rights acquisitions. She began her career at CJ Entertainment, collaborating with Paramount Pictures and DreamWorks for film marketing. As Director of Film Festival Strategies, she built strong relationships with major festivals, a practice she continues today. Wonsun has been a jury and selection committee member for prestigious project markets and industry programs such as NAFF BIFAN, NFDC Film Bazaar Goa, and Fantastic 7 at Cannes. In 2024, she participated in the Cannes Investors Circle selection committee at Marché du Film and the first round of project selections for the Hubert Bals Fund. Her talent for identifying emerging voices and cultivating global connections has been a defining feature of her professional journey.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fac",
+   "title": "Lagaan: Once Upon a Time in India",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fac",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad563",
+    "6aad0040b82604c6f75ad569",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 224,
+   "imageUrl": "https://static-a.eventive.org/1789733150415temp-1789733150209-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad589-6aad0040b82604c6f75ad596-6aad0040b82604c6f75ad597-6aad0040b82604c6f75ad5a1-6aad0040b82604c6f75ad5a3-6aad0040b82604c6f75ad5a5-6aad0040b82604c6f75ad5c2",
+   "title": "Programme 1: There's Gotta Be More",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e1",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55e",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is NC16 (Mature Content).",
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/1788947111553temp-1788947111392-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fb0",
+   "title": "The Compression Zone",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fb0",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad562",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This event includes a Q&A session with the performers.",
+   "durationMin": 45,
+   "imageUrl": "https://static-a.eventive.org/1789734240305temp-1789734240209-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fb9",
+   "title": "The Diary of a Chambermaid",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fb9",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Gianina leaves behind her daughter in Romania to cook, clean and care for a family in France. At night, she rehearses a scandalous play about domestic servants—a vulgar, exaggerated version of the exploitation she quietly endures.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1789734268407temp-1789734267403-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fb2-6ab351deec49711fb0a8c534",
+   "title": "You Dreamt You Saw Yourself But Couldn’t See Your Face + September Afternoon",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd484",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The overall classification for this screening is PG13 (Some Mature References).",
+   "durationMin": 77,
+   "imageUrl": "https://static-a.eventive.org/1790074000251temp-1790073999969-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c1",
+   "title": "Tangles",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c1",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A young graphic artist returns home to care for her mother who has been diagnosed with Alzheimer’s. In the process, she finds grief, comedy and first love tangled together in a household relearning how to love a person they thought they knew.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1789119769526temp-1789119769386-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f7a",
+   "title": "Voooooo---Peeeeee---",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f7a",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Voooooo---Peeeeee--- is a multisensory XR experience where a woman discovers her body has become hollow after being reconstructed as data. Wind leaks from within, and a strange creature settles in the void, breathing in rhythms of expansion and collapse. Her monologue drifts between memories of loss, data clouds beneath the sea, and endlessly replicated virtual worlds. Through VR cinema and a pneumatic wearable interface, audiences physically experience this expanding virtual volume as pressure and breath, entering a space where bodily presence and technological space overwrite one another.\n\nNOTE: Please pre-register for a 40-minute timeslot to experience this work. In the event of a no-show, the slot will be released to a walk-in participant 10 minutes after the slot begins.\n\nRating: PG\n\nArtist\n\nUbac Studio is a Seoul-based media artist duo composed of Hyeunjoo Woo and Jiyun Park. Working primarily with XR-based interactive installations, they explore moments when technology’s construction of the world collides with individual sensory experience. Their works have been presented at Cannes Immersive and Venice Immersive, and received the Festivals Connexion Award at Annecy 2026.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f7d",
+   "title": "French Location-Based VR",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f7d",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Experience award-winning immersive productions by a renowned group of French location-based virtual reality companies.\n\nLocation-Based Virtual Reality (LBVR) refers to an immersive form of VR in which virtual environments are experienced within specially designed physical settings. While conventional VR generally involves one user at a time, LBVR is designed for several participants to experience the same interactive virtual environment simultaneously. Participants can therefore move together in a physical space while interacting within a shared virtual world.\n\nThis programme is supported by the Ministry of Europe and Foreign Affairs (France) and the Institut français.\n\nArtists\n\nAtlas V\n\nAtlas V is a global leader in immersive entertainment, driven by storytelling & innovation.\n\nSince 2016, Atlas V has been pushing the boundaries of virtual reality, creating award-winning immersive experiences, video games, and exhibitions with proven critical and commercial success worldwide.\n\nBuilding on its strong narrative DNA, Atlas V is now expanding into multiplayer location-based entertainment and accessible casual gaming, bringing immersive experiences to broader audiences and new social contexts.\n\nFrom premium narrative worlds to shared, competitive, and playful experiences, the company bridges high-end creative ambition with scalable, audience-driven formats. We craft emotionally powerful, visually striking worlds that connect cutting-edge technology with a strong creative vision—designed to be experienced together, across platforms and territories.\n\nBacklight\n\nBackLight is an XR production studio based in Paris and founded in 2008. A pioneer in XR in the fields of entertainment and cultural experiences, the studio is renowned for its tailor-made productions and its alliance of creative innovation and technical ambition.\n\nBackLight’s productions have been presented in prestigious venues across France, including the Théâtre National de Chaillot, Palais Garnier, La Seine Musicale, Le Palace Paris, Maison Hennessy, and the Musée d’Orsay, and internationally at renowned institutions such as Teatros del Canal (Madrid), the Barbican Centre (London), the LAFAYETTE Cultural Arts Center (Shanghai), and the Xinjiang Museum (China).\n\nThe studio’s creations have been officially selected by leading international festivals and showcases worldwide and have received numerous distinctions, including the Venice Immersive Grand Prize (Lion Award) at the Venice International Film Festival for Le Bal de Paris.\n\nInnerspace\n\nFounded in 2014 by artists Balthazar Auxietre and Hayoun Kwon, Innerspace has emerged as one of the leading creative studios in the virtual reality industry, both in France and internationally. Driven by a passion for exploring the artistic potential of immersive technologies, the studio combines innovation and creativity with a delicate balance between storytelling and interactivity. From location-based immersive installations to online video games, Innerspace’s projects have captivated audiences and earned acclaim at major festivals and from critics worldwide. The studio’s ambition is to continue pushing the boundaries of XR, blending entertainment with artistic excellence to engage ever-larger audiences and deliver experiences that leave a lasting impact.\n\nLucid Realities\n\nLucid Realities is an immersive and interactive production based in Paris, co-founded by Chloé Jarry and François Bertrand. It has also a distribution branch through its affiliate company Unframed Collection that powers the first distribution platform for VR contents dedicated to cultural venues (www.unframed-collection.com).\n\nThe projects powered by Lucid Realities are designed to foreshadow the future of the XR industry and innovate ways to\n\nproduce and distribute XR experiences. For us, XR is more than technology: it’s an opportunity to create unprecedented emotional ways to connect people with edutainment contents.\n\nNovaya\n\nNovaya is a Paris-based production company dedicated to immersive works, founded in 2021. It creates new forms of immersive storytelling and develops the technologies that bring them to life. Novaya produced NOIRE — winner of Best Immersive Work at the 2024 Cannes Film Festival, now touring more than twenty venues across fifteen countries — and leads FABRIC, a France 2030 laureate: a unique hybrid capture stage being built at the Studios de Bry-sur-Marne with IRCAM and INRIA, designed to capture live performance in volume, movement and sound, and make it possible to experience it anywhere, across time and space.\n\nSmall Creative\n\nSmall Creative is a French immersive studio founded in Paris, specializing in the design, production and distribution of premium collective and free roaming VR experiences, in which groups of up to 15 people explore shared virtual worlds together, untethered and in complete freedom of movement. From the wreck of the Titanic to the arenas of ancient Rome, from the gardens of Versailles to the summit of Everest, Small Creative transforms iconic stories and places into powerful, shared emotional journeys. The company produces up to six new experiences per year and has already deployed its work in more than 50 cities across Europe, Americas, Asia and the Middle East, working with cultural institutions, location-based entertainment operators and private venue partners.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5be",
+   "title": "Minotaur",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5be",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560"
+   ],
+   "blurb": "As Russia descends into war, an influential businessowner in a small town decides whose lives are disposable. His betrayals pile up, exposing the moral and political corruption that insulates the powerful while the world burns.",
+   "durationMin": 141,
+   "imageUrl": "https://static-a.eventive.org/1789119765452temp-1789119764959-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f82",
+   "title": "Amores Perros",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f82",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A fatal car crash links three strangers’ lives: a young man entering the world of dogfighting, a supermodel whose life is derailed after the accident, and an ex-guerrilla trying to reconcile with his past.",
+   "durationMin": 154,
+   "imageUrl": "https://static-a.eventive.org/1789734304401temp-1789734303765-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5bf",
+   "title": "Six Months in a Pink and Blue Building",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5bf",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In this coming-of-age docufiction, an eleven-year-old reckons with his queer identity while coping with his father’s HIV diagnosis amid the moral panic of the 1990s AIDS epidemic.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/1789120638144temp-1789120637993-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd437",
+   "title": "In Conversation With Hirokazu Koreeda",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd437",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "The Festival is proud to present an exclusive conversation with this year’s SGIFF Cinema Honorary Award recipient, Hirokazu Koreeda – a leading figure in Japanese cinema renowned for his deeply humanist works and naturalistic, observational storytelling.\n\nKoreeda will reflect on an acclaimed filmmaking journey spanning over three decades. He will speak about his latest film Look Back (2026), presented as a Special Presentation in the Horizon section, alongside his feature film breakthroughs like Maborosi (1995) and After Life (1998); internationally acclaimed works like Nobody Knows (2004), Still Walking (2008) and Shoplifters (2018), and his overseas productions like The Truth (2019) and Broker (2022).\n\nExamining core themes of memory, grief, and unconventional family dynamics on the fringes of society, Koreeda masterfully blends documentary-like realism with gentle human drama that subverts traditional melodrama. Don’t miss this rare opportunity to gain insights from a master filmmaker whose delicate lens continues to inspire generations of cinephiles.\n\nModerated by: Boo Junfeng, Filmmaker and Chairperson of SGIFF\n\nConducted in Japanese with English interpretation",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f80",
+   "title": "Artist Spotlight: Ubac Studio",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f80",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Hear from media artist duo Ubac Studio as they walk through how they create XR universes and expand the possibilities of cinematic experiences. Their work, Voooooo---Peeeeee---, a multisensory XR experience, is presented as part of Parallax.\n\nSpeaker\n\nUbac Studio is a Seoul-based media artist duo composed of Hyeunjoo Woo and Jiyun Park. Working primarily with XR-based interactive installations, they explore moments when technology’s construction of the world collides with individual sensory experience. Their works have been presented at Cannes Immersive and Venice Immersive, and received the Festivals Connexion Award at Annecy 2026.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13faa",
+   "title": "Amazomania",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13faa",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad561",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes an online Q&A session with the filmmakers.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1789733149123temp-1789733148704-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f83",
+   "title": "Beyond the Screen: The Future, Revisited",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f83",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "A virtual artist can take the stage. Getting audiences to stay is another production. Spend years putting the future of entertainment on a festival programme and changing jobs comes with an unusual perk—grading your own predictions. Sten Saluveer and Jay Kim revisit the possibilities they championed at Cannes Next and BIFAN XR, now from senior seats at Telia Estonia and Studio Realive, exploring the partnerships, audiences and business decisions that make new entertainment work—and which of their forecasts deserve a second look.\n\nSpeaker\n\nSten Saluveer, Chief Growth & Innovation Officer, Telia Estonia\n\nSten Saluveer is Chief Growth Officer and Head of Digital Solutions & New Businesses at Telia Estonia, the country's leading ICT and telecommunications company. A futurist, strategist, and educator at the intersection of content, technology, and innovation, Sten's expertise of over two decades spans AI, film & content, and digital sectors across business, governance, and strategy. Sten founded and serves as Head of Studies of the executive-level Mastering AI for European Film Professionals programme at Denmark's National Film School, and is an Advisory Board member of Future Media Hubs, an innovation alliance of 50+ European media companies. He previously served as Head, and now contributes annually to Cannes Next, the innovation track of the Marché du Film — Festival de Cannes, and Director of the Tallinn Digital Summit, hosted by the Prime Minister of Estonia. Sten advises content and technology organisations on AI and digital, and frequently collaborates with governments and the European Commission on innovation, AI, and policy. He has produced half a dozen films and occasionally performs as an electronic musician.\n\nJay Kim CEO, Studio Realive, SM Entertainment Group\n\nJay Kim studied literature and film and emerged as a pioneer in immersive media as a founding member of the storytelling studio GiiÖii. He planned and produced global XR projects like Missing Pictures (2022) and expanded the industry's horizons as the curator of the \"Beyond Reality\" XR section at the Bucheon International Fantastic Film Festival. In 2024, Kim joined Studio Realive, a subsidiary of SM Entertainment, as CCO, successfully managing operations across immersive tech, XR, virtual entertainment, and AI technologies. Appointed as the new CEO on March 31, 2026, he is now guiding Studio Realive into its next chapter, driving the company forward at the intersection of technology and art.\n\nModerator\n\nWonsun Shin, Curator of Parallax\n\nWonsun Shin is a freelance consultant with extensive experience in co-production projects, festival strategies, and remake rights acquisitions. She began her career at CJ Entertainment, collaborating with Paramount Pictures and DreamWorks for film marketing. As Director of Film Festival Strategies, she built strong relationships with major festivals, a practice she continues today. Wonsun has been a jury and selection committee member for prestigious project markets and industry programs such as NAFF BIFAN, NFDC Film Bazaar Goa, and Fantastic 7 at Cannes. In 2024, she participated in the Cannes Investors Circle selection committee at Marché du Film and the first round of project selections for the Hubert Bals Fund. Her talent for identifying emerging voices and cultivating global connections has been a defining feature of her professional journey.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f92",
+   "title": "The House on the Moon",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f92",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55f",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/1789733137002temp-1789733136892-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f86",
+   "title": "Reading the Room: The Data Behind the Deal",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f86",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Every film is a gamble dressed up as a decision. Largo.ai founder and CEO Sami Arpa explores how script, casting and market data can inform development, financing and distribution—holding forecasts up against real outcomes, including the ones the model got wrong. Discover what audience predictions reveal, where they fall short, and how filmmakers can use them while keeping creative judgement firmly in human hands. Because knowing the odds has never been the same as knowing which film to make.\n\nThis programme is supported by the Embassy of Switzerland in Singapore.\n\nSpeaker\n\nSami Arpa, CEO, Largo\n\nSami Arpa is the CEO and Co-founder of Largo, bridging the gap between artificial intelligence and cinema. A film director and producer with a PhD in Computational Aesthetics from EPFL, Sami is a repeat founder whose previous venture, Sofy.tv, was acquired in 2023.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad59a",
+   "title": "Everytime",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad59a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In this intimate study of grief, a mother, daughter and teenage boy are drawn into the orbit of an absent loved one. They take a trip to a seaside resort, where reality shimmers under the glistening sun and time folds into itself.",
+   "durationMin": 124,
+   "imageUrl": "https://static-a.eventive.org/1788507171130temp-1788507170797-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c53a",
+   "title": "Corporeal Forms: Four Stories",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c53a",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad562",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 45,
+   "imageUrl": "https://static-a.eventive.org/1790136804046temp-1790136803935-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f89",
+   "title": "Lights, Camera, AI: From Production to Post",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f89",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Filmmaking runs on creative judgment, collaboration and a great many deadlines. Join voices from studio workflows, creative technology and filmmaking to explore where AI earns its keep—from editing to delivery—and what changes on Monday morning, with the people making the films at its centre.\n\nSpeakers\n\nRebeca Cervantes, Sr. Post-production Executive Int. Originals EUX, Amazon MGM Studios\n\nRebeca Cervantes is a Sr. Post-Production Executive at Amazon MGM Studios, overseeing film and series productions across several territories in Europe including the Nordics. With over 20 years in the industry spanning VFX, production, and gaming, she brings a cross-industry perspective to post-production leveraging emerging technology to streamline creative pipelines at scale.\n\nChetan Shah, Head – Video Strategic Development, APAC & Japan, Adobe Inc.\n\nChetan Shah leads Video Strategic Development across APAC and Japan at Adobe, driving growth initiatives with broadcasters, media companies, brands and creative organisations. Chetan helps customers adopt AI-powered workflows through Adobe Firefly, Frame.io and Creative Cloud, leading executive engagements, workshops and innovation programmes that connect emerging technology with real business outcomes.\n\nModerator\n\nWonsun Shin, Curator of Parallax\n\nWonsun Shin is a freelance consultant with extensive experience in co-production projects, festival strategies, and remake rights acquisitions. She began her career at CJ Entertainment, collaborating with Paramount Pictures and DreamWorks for film marketing. As Director of Film Festival Strategies, she built strong relationships with major festivals, a practice she continues today. Wonsun has been a jury and selection committee member for prestigious project markets and industry programs such as NAFF BIFAN, NFDC Film Bazaar Goa, and Fantastic 7 at Cannes. In 2024, she participated in the Cannes Investors Circle selection committee at Marché du Film and the first round of project selections for the Hubert Bals Fund. Her talent for identifying emerging voices and cultivating global connections has been a defining feature of her professional journey.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f8c",
+   "title": "From Idea to Production: Inside the Creative Process",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f8c",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad56d"
+   ],
+   "blurb": "Every creative project begins with a possibility. Then come the experiments, the revisions and the file optimistically labelled \"final.\" Jessie Hughes and Meg White pair entertainment innovation with hands-on engineering to explore how ideas become working tools and screen experiences. From visual development to prototyping and production, discover how creators test approaches, solve practical problems and hold on to creative intention—because \"one more version\" is both an opportunity and a scheduling problem.\n\nSpeakers\n\nJessie Hughes, Senior Vice President, Innovation; Endemol Shine Australia\n\nJessie Hughes is the Senior Vice President, Innovation & Founding Director of the Innovation Lab at Endemol Shine Australia, part of Banijay Entertainment— the world's largest independent content production company with a catalogue exceeding 265,000 hours of programming, including MasterChef, Survivor, Big Brother and Black Mirror. Jessie brings a decade of collaborating with tech giants like Canva, Google, Meta and Leonardo.Ai, designing emergent, imaginative technologies. She’s trained the US Television Academy and Hollywood Professionals Association in AI screen production, and is an awarded new media artist.\n\nMeg White, Chief Technical Officer; Slobberdog\n\nMeg White (PhD) is an engineer, researcher and creative technologist working across intelligent systems and electrical engineering. She is the founder of Slobberdog: a creative and technical R&D Lab bridging hardware, software, and the fuzzy places in between. Exploring how autonomous systems affect human agency, decision-making and the distribution of power, Meg’s research pushes novel workflows and systems that need to be invented before they can be implemented.\n\nModerator\n\nWonsun Shin, Curator of Parallax\n\nWonsun Shin is a freelance consultant with extensive experience in co-production projects, festival strategies, and remake rights acquisitions. She began her career at CJ Entertainment, collaborating with Paramount Pictures and DreamWorks for film marketing. As Director of Film Festival Strategies, she built strong relationships with major festivals, a practice she continues today. Wonsun has been a jury and selection committee member for prestigious project markets and industry programs such as NAFF BIFAN, NFDC Film Bazaar Goa, and Fantastic 7 at Cannes. In 2024, she participated in the Cannes Investors Circle selection committee at Marché du Film and the first round of project selections for the Hubert Bals Fund. Her talent for identifying emerging voices and cultivating global connections has been a defining feature of her professional journey.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fa0",
+   "title": "Look Back",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fa0",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560",
+    "6aad0040b82604c6f75ad569",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 100,
+   "imageUrl": "https://static-a.eventive.org/1789734906710temp-1789734905321-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad59b-6aad0040b82604c6f75ad5a2-6aad0040b82604c6f75ad5a4-6aad0040b82604c6f75ad5a7-6ab351deec49711fb0a8c53e",
+   "title": "Programme 2: Second Life, Second Skin",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd450",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55e",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 58,
+   "imageUrl": "https://static-a.eventive.org/1790136806107temp-1790136805932-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f90",
+   "title": "Imagination + The Rest Is My Ghost",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f90",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Film grain, spectral beams and low-frequency murmurs: two artists converse in light and sound, channelling the sublime.",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c536",
+   "title": "Paper Tiger",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c536",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A modest father in 1980s New York and his unremarkable family find their lives upturned by a get-rich scheme gone wrong. This textured crime thriller is anchored in performances that underscore the grandness, despair and humanity of wanting more.",
+   "durationMin": 114,
+   "imageUrl": "https://static-a.eventive.org/1790136801745temp-1790136801634-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fa2",
+   "title": "Nowhere to Lay My Eyes",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fa2",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An experimental filmmaker’s reunion with her mother after a decade’s absence hides a quietly transformative quality in this ruminative work in Hong’s prolific oeuvre.",
+   "durationMin": 72,
+   "imageUrl": "https://static-a.eventive.org/1789733144829temp-1789733144790-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad594",
+   "title": "La Bola Negra",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad594",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55f"
+   ],
+   "blurb": "Across epochs—Republican Spain in 1932, the Civil War in 1937 and contemporary Madrid in 2017—three men navigate historical turmoil and repression, connected by love, loss and literature, in this sweeping work of queer cinema.",
+   "durationMin": 157,
+   "imageUrl": "https://static-a.eventive.org/1788239501117temp-1788239500921-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c6",
+   "title": "Brave Cat",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c6",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad567",
+    "6aad0040b82604c6f75ad56a",
+    "6ab36b4992ca34a98ddf3722"
+   ],
+   "blurb": "This is a relaxed screening which includes an activity for attending children.\n\nEach purchase admits 1 adult and 1 child below 16 years of age. Each child must be accompanied by an adult.\n\nYou must have at least one child in your party to be admitted.",
+   "durationMin": 92,
+   "imageUrl": "https://static-a.eventive.org/1789119859174temp-1789119858947-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f94",
+   "title": "In Which Annie Gives It Those Ones",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f94",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In this campus satire set in 1970s Delhi, a ragtag group of architecture students express their restless idealism against a system that rewards conformity and punishes dissent.",
+   "durationMin": 112,
+   "imageUrl": "https://static-a.eventive.org/1789733138151temp-1789733137968-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5a6-6aad0040b82604c6f75ad5b7-6aad0040b82604c6f75ad5b8-6ab351deec49711fb0a8c540",
+   "title": "Programme 3: Borders / Barriers",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd454",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55e",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A with the filmmakers.\n\nThe overall classification for this screening is R21.",
+   "durationMin": 82,
+   "imageUrl": "https://static-a.eventive.org/1789119901718temp-1789119901386-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f8a",
+   "title": "Fujiko",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f8a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "1970s, Japan. Former disco dancer Fujiko finds her groove as a single mother after reclaiming her baby from her in-laws. Fusing an irreverent rock ’n’ roll spirit with comedy, the drama celebrates independence in a patriarchal society.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1789733133768temp-1789733133654-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fb7",
+   "title": "Julián",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fb7",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad567",
+    "6aad0040b82604c6f75ad56a",
+    "6ab36b4992ca34a98ddf3722"
+   ],
+   "blurb": "This is a relaxed screening which includes an activity for attending children.\n\nEach purchase admits 1 adult and 1 child below 16 years of age. Each child must be accompanied by an adult.\n\nYou must have at least one child in your party to be admitted.",
+   "durationMin": 85,
+   "imageUrl": "https://static-a.eventive.org/1790231454070temp-1790231453905-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c544",
+   "title": "Mariinka",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c544",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad561",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 94,
+   "imageUrl": "https://static-a.eventive.org/1790176970540temp-1790176968227-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fa4",
+   "title": "Possible Love",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fa4",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560"
+   ],
+   "blurb": "A working-class family and a wealthy couple become entangled as they make a documentary together. Tensions simmer and loyalties shift in Lee Chang-dong’s exquisite, slow-burn drama, which asks if the distance between people can ever be closed.",
+   "durationMin": 164,
+   "imageUrl": "https://static-a.eventive.org/1789733145953temp-1789733145837-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c538",
+   "title": "Rose",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c538",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A battle-scarred soldier arrives at a village, with an inheritance and a deep secret about their identity. Sandra Hüller spellbindingly leads this compact period saga about the violence of gender norms as well as the utopias of desire that cannot be contained.",
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1790136803026temp-1790136802688-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad598",
+   "title": "Teenage Sex and Death at Camp Miasma",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad598",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The road to a queer woman’s sexual awakening is paved with geysers of blood and radical vulnerability, powered by fantasy and imagination. Guilty pleasures have never felt more seen in this healing, tonally surprising take on the slasher genre.",
+   "durationMin": 112,
+   "imageUrl": "https://static-a.eventive.org/1788239499685temp-1788239499236-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5a8",
+   "title": "On Memories of Countless Days Away",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5a8",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad562",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1788765020594temp-1788765020412-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c4",
+   "title": "Four Seasons in Java",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c4",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 137,
+   "imageUrl": "https://static-a.eventive.org/1789119775133temp-1789119775014-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c0",
+   "title": "Shame and Money",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c0",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A family in rural Kosovo leave their farm to find work in the capital. Mired in familial obligation, caregiving and financial precarity, their survival becomes dependent on the whims of strangers.",
+   "durationMin": 129,
+   "imageUrl": "https://static-a.eventive.org/1789119767359temp-1789119767203-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c542",
+   "title": "Gaza’s Twins, Come Back to Me",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c542",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad561",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes an online Q&A session with the filmmakers.",
+   "durationMin": 87,
+   "imageUrl": "https://static-a.eventive.org/1790136808356temp-1790136808332-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5bb",
+   "title": "Vertiginous",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5bb",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Jacques wakes Bruno up at daybreak to deliver a life-changing revelation: nothing is real—they are living in a simulation and he has the evidence to prove it. Struck by existential vertigo, Bruno soon reaps the benefits of this discovery.",
+   "durationMin": 67,
+   "imageUrl": "https://static-a.eventive.org/1789119757569temp-1789119757469-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f3e",
+   "title": "[Visionary Encounters] Yim Soon-Rye — Craft, Curiousity, Care.",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f3e",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "In-depth discussion with Yim Soon-rye, the leading Korean woman film director who this year also heads the SGIFF main competition jury. With a directing career that stretches more than 25 years, Yim has become known for social issues-driven films, an unhurried and unflustered style and a gentle, personal approach. Operating on the indie wing of Korean cinema, Yim has often told female-driven stories and become a pioneer woman filmmaker in a male-dominated and hierarchical Korean industry. The discussion will also illuminate the overseas influences, such as her European education and admiration of Japan’s Mizoguchi Kenzo, that shaped her work.\n\nSpeaker\n\nYim Soon-Rye, Director & Screenwriter, South Korea\n\nModetator\n\nThong Kay Wee, SGIFF Programme Director",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f41",
+   "title": "[Roundtables] Screenwriters Roundtable",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f41",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Three writer-directors, whose latest features have enjoyed wide international impact this year, discuss their different journeys and varying levels of experience. They include first timer Ang with Ah Girl, through self-taught Juyal, who made shorts and documentaries before this year delivering his debut feature The Ink Stained Hand and the Missing Thumb, through to the more established Andini with her Four Seasons in Java. Andini’s work straddles social issues and accessible genres and in 2023 included the Netflix series Cigarette Girl.\n\nThe discussion will examine the screenwriting and development processes in Asia, how to give and take notes, and the various requirements that come with trying to make a co-produceable script. It will also look at making the leap from short films and documentaries to fiction features (and narrative series). And tackle the value of participating in labs and workshops and how to get the best out of mentorship.\n\nPanelists\n\nAng Geck Geck (Priscilla), Director & Screenwriter, Singapore\n\nKamila Andinii, Director, Screenwriter, Producer, Indonesia\n\nYashasvi Juyal, Director and cinematographer, India\n\nModerator\n\nKris Ong, Screenwriter & Secretary of Screenwriters Association (Singapore)",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f44",
+   "title": "Session 3: TBC",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f44",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "TBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad58e",
+   "title": "9 Temples To Heaven",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad58e",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 140,
+   "imageUrl": "https://static-a.eventive.org/1788239476842temp-1788239476528-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f47",
+   "title": "[Roundtables] The Architecture of Opportunity: Grants, Coproduction, and the Making of a Global Cinema",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f47",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "National film funds built for a twentieth century industry now operate inside a production and distribution environment reshaped by platforms and emerging technologies. Careers across Asia and Europe are increasingly transnational by design. This roundtable discusses how grants (including those for project or talent development) are infrastructure for coproduction, shaping who travels, who collaborates, and whose work circulates internationally. Commissioners from across Asia and Europe discuss how their funds are built to construct sustainable, global careers rather than isolated opportunities, and how coproduction functions as a form of industry capability building. They will address the risks they anticipate for their industries, how their criteria protect diversity and innovation, and how they are responding to new production technologies while keeping human creativity at the center.\n\nPanelists\n\nManajemen Talenta Nasional (MTN), Indonesia\n\nCentre National de la Cinematographie, France\n\nCinecittà, Italy\n\nFilm Development Council of the Philippines\n\nIMDA, Singapore\n\nModerator\n\nJeremy Chua, SGIFF Executive Director",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5b5",
+   "title": "The Ink-Stained Hand and the Missing Thumb",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5b5",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 127,
+   "imageUrl": "https://static-a.eventive.org/1789119750856temp-1789119750753-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd446",
+   "title": "Acting in Singapore, Acting from Singapore",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd446",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568"
+   ],
+   "blurb": "We see them on our screens, but do we know what they really feel? Join some of our most beloved local film actors as they go off-script and spill the tea on what it truly takes to build an acting career in Singapore.\n\nIn this candid roundtable moderated by veteran actress Janice Koh, performers behind iconic Singaporean films share what they look for in directorial collaborations, the dream roles they are still waiting to play, and the conscious choices they make as a Singaporean actor performing for local and international audiences.\n\nIf the film industry has ever felt like a mysterious black box, this session offers an intimate, honest look behind the curtain at what it means to act—and belong—here today.\n\n—\n\nModerated by: Janice Koh, Actor and Vocal Coach\n\nJanice Koh is a celebrated Singaporean actress with over 30 years of stage and screen acting experience. She has participated in international co-productions that have toured to festivals and performing venues worldwide, including Paris, Tokyo, Berlin, and Edinburgh.\n\nA former Nominated Member of Parliament, Janice currently co-chairs theatre company, Wild Rice, and is a co-founder of social enterprise, Pasar Glamour. Janice is a certified Fitzmaurice Voicework teacher, and coaches voice and communications in the corporate sector. In 2022, the French government honoured her with the title of Chevalier des Arts et des Lettres (Knight of the Arts and Letters) for her contributions to the arts.",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f96",
+   "title": "My Name Ain't Suzie",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f96",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad563",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1789734332140temp-1789734331603-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad599",
+   "title": "Sleep No More",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad599",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55f",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 96,
+   "imageUrl": "https://static-a.eventive.org/1788239498241temp-1788239498171-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f86",
+   "title": "The Burning Giants",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f86",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 118,
+   "imageUrl": "https://static-a.eventive.org/1789734460640temp-1789734460495-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f4a",
+   "title": "[Visionary Encounters] Koji Fukada: Japan’s Master of Understated Chaos",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f4a",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Still considered as a rising star in his native Japan, director Koji Fukada has achieved plenty already. He made a splash with his first films Human Comedy in Tokyo and Hospitalite, in 2008 and 2010, and won the jury prize in Cannes with his 2016 title Harmonium. Just 42 at the time, in 2022, he was awarded the Tokyo IFF’s Akira Kurosawa award, having hailed him as a meticulous and realistic reflector of modern society. Nagi Notes, his latest effort, which was his first in main competition at Cannes and plays in the SGIFF’s Horizon strand, continues that approach and depicts a consequential week in the life of two women and two children as they figure out what they need to be happy. Expect the conversation to dive into Fukada’s self-described obsession with the French New Wave films of Eric Rohmer, to probe other early career influences, including the director’s time working in animation and live theatre, and to ask how festivals affect the filmmakers they showcase.\n\nSpeaker\n\nKoji Fukada, Film director, Japan\n\nModerator\n\nTBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f4d",
+   "title": "[Visionary Encounters] Capsicums, Colour and Craft: Understanding Cinematography With Akiko Ashizawa",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f4d",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Akiko Ashizawa originally wanted to be a director, but for a woman breaking into the sector was no easy task. And, working on commercials as a cinematographer, she soon found that she was able to use light and lenses to tell stories. The prestigious Pierre Angenieux organisation that this year made Ashizawa only its second ever female prize-winner hailed her “mastery of natural light and atmosphere, [and excellence] at capturing complex emotional tones on screen.” Her breakthrough into the movie mainstream and to international acclaim came in 2005 with the beginning of an eight-film partnership with director Kurosawa Kiyoshi. That has made her especially known for shooting atmospheric genre films, but the reality is that she has worked across just about every genre. She also mastered the film-to-digital transition by coming up with many of her own technology solutions. Make sure to also catch the SGIFF screening of Sleep No More, which she shot for Indonesia’s Edwin.\n\nSpeaker\n\nAkiko Ashizawa, Cinematographer, Japan\n\nModerator\n\nTBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f50",
+   "title": "[Visionary Encounters] Getting Real About Virtual Reality",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f50",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Sunny Sarnkingthong, producer, director of photography and co-founder of Final Pixel, was part of the recent mega-production Alien: Earth, which was shot in Thailand. Drawing on case studies from his recent projects, he will explore the applications, possibilities, and future potential of virtual production, including insights from his experience working with Sony's OCELLUS camera tracking system. He will explain how the technology is evolving; where it intersects with AI; how VP changes the dynamics and crewing of a film shoot; and how it can be budget-friendly in an Asian context.\n\nSpeaker\n\nSunny Sarnkingthong, Co-founder of Final Pixel Virtual Production studio.\n\nModerator\n\nPatrick Frater",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fa8",
+   "title": "Zoom In, Zoom Out",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fa8",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 116,
+   "imageUrl": "https://static-a.eventive.org/1789734502093temp-1789734500613-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f53",
+   "title": "[Visionary Encounters] Scenes from a Menage: Tom Harari on Making Genre Films With His Brother",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f53",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Best-known as a cinematographer, Tom Harari is a creative powerhouse with additional credits as composer, music performer, screenwriter, director and actor. In Singapore with Cannes competition title L’Inconnue (The Unknown), directed by his younger brother Arthur, Tom Harari will analyse how he transposed a scene from a graphic novel into a live-action film. He will also give a technical breakdown of the pair’s work on the Philippines-set, Japanese-themed WWII film Onoda, 10,000 Nights in the Jungle, in which a solo Japanese soldier refuses to end his own WWII battles.\n\nSpeaker\n\nTom Harari, Cinematographer, Composer & Screenwriter, France\n\nIntroduction by\n\nPatrick Frater, SGIFF Industry Specialist",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5ba",
+   "title": "Nagi Notes",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5ba",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 110,
+   "imageUrl": "https://static-a.eventive.org/1789120511198temp-1789120510885-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5b9",
+   "title": "Burn",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5b9",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1789119752617temp-1789119752528-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad58a",
+   "title": "Elephants in the Fog",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad58a",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1790156670996temp-1790156670673-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd449",
+   "title": "Transforming the Local",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd449",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568"
+   ],
+   "blurb": "What makes a Singaporean film feel culturally authentic when it's made with international money and stars?\n\nSingapore has always been a crossroads of cultures and global influences. As local cinema grows alongside the expansion of the media industry and an evolving national identity, filmmakers must navigate the tension between international commercial success, creative freedom, and staying true to home.\n\nIn this session, Professor Lim Song Hwee breaks down the rising phenomenon of Singapore-Taiwan co-productions to reveal how overseas funding, talent, and distribution are quietly reshaping local cinema. Following the presentation, he will be joined by a panel of film industry insiders to dive into the state of Singapore cinema, the reality of making movies today, and what truly gives a film its local soul.\n\n—\n\nModerated by: Sim Jiaying, SGIFF Film Programmer and Lecturer\n\nSim Jiaying is a Lecturer at the University of Hong Kong and founder of the Singapore Film Database, a comprehensive digital resource on Singapore’s film ecosystem. She holds a PhD in Film and Television Studies from the University of Glasgow, with research focusing on Asian cinema, transnational screen cultures, and creative-critical practice. Her writing has appeared in Jom, Film-Philosophy, Journal of Chinese Cinemas, and anthologies by Edinburgh University Press and Routledge. She was a 2025 Hyundai Artlab Editorial Fellow. She has been working as a film programmer with SGIFF since 2024.\n\n—\n\nPanellists: TBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f9c",
+   "title": "The Unknown",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f9c",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55f",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 139,
+   "imageUrl": "https://static-a.eventive.org/1789733141705temp-1789733141619-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5aa",
+   "title": "We Are Aliens",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5aa",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 117,
+   "imageUrl": "https://static-a.eventive.org/1788765022863temp-1788765022742-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad59e-6aad0040b82604c6f75ad59f-6aad0040b82604c6f75ad5a0-6aad0040b82604c6f75ad5ab-6ab351deec49711fb0a8c532",
+   "title": "Programme 1: Rage Against",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd44c",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55d",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is M18 (Some Homosexual Content).",
+   "durationMin": 79,
+   "imageUrl": "https://static-a.eventive.org/1790136799366temp-1790136799285-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f56",
+   "title": "[Roundtables] Decision-Makers Roundtable",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f56",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "Choosing what films to make, how to finance and distribute them while retaining equity and getting the producer paid are all becoming harder as today’s filmmaking landscape becomes more complicated than ever. This session will attempt to help independent producers and filmmakers in Asia navigate through the challenges and opportunities presented by streaming, micro dramas, artificial intelligence, soft money and budget inflation.\n\nPanelists\n\nLachman G Samtani (Lavesh), COO, Mandela Pictures (Indonesia)\n\nKaram Al-Masri, Executive, MEFIC Capital, Riviera Content (Saudi Arabia)\n\nXinYu Zhou, Member of Investment Committee, Impact Film (France)\n\nModerators\n\nPatrick Frater & Fran Borgia, SGIFF Industry Specialist",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f59",
+   "title": "[Big Ideas] Structuring Asian-American Co-Production",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f59",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "With past roles at Warner Bros, HBO, Disney+, MTV, Village Roadshow Pictures, Perfect World Pictures and Banijay Entertainment, as well as distinguished indie and mainland China careers, two of the most experienced film and TV executives in Asia discuss industry relations between Asia and the US. The session will cover the pair’s own track records, in parallel with the evolution of US studios’ holistic and fluid approach to film and TV in the region. It will weigh up the US-China axis and opportunities for trans-Pacific film and TV production.\n\nPanelists\n\nJessica Kam-Engle, Founder and Executive Producer, Kanvas Creations (Hong Kong)\n\nEllen R. Eliasoph, President and Lead Producer, Starry Dome Productions, Inc. (US, China)\n\nModerator\n\nPatrick Frater, SGIFF Industry Specialist",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f5c",
+   "title": "[Roundtables] Sales and Distribution Roundtable",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f5c",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "The marketplace for independent films is continually evolving as theatrical distribution is challenged by streaming, as audiences redefine what they need to see in cinemas and festivals seek expanded roles. This session will examine the role of sales agents as film financiers and co-producers distributors and festival strategists. It will ask why the demise of sales agents has frequently been predicted but they continue to be numerous and influential. And it will ask the sales specialists what are the elements that currently give a film travelability.\n\nPanelists\n\nShao-Yi Chen, General Manager, Screenworks Asia Ltd (Taiwan)\n\nGabor Greiner, COO and Head of acquisitions, Films Boutique (Germany, France)\n\nBoris Pugnet, CEO, Marketing and Distribution Expert, Space Odyssey (France)\n\nModerator\n\nPatrick Frater & Fran Borgia, SGIFF Industry Specialist",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5bd",
+   "title": "Josephine",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5bd",
+   "genre": "film",
+   "categories": [],
+   "blurb": "After eight-year-old Josephine witnesses a violent crime, the trauma lingers in profound ways as her parents try to shield her from adult realities.",
+   "durationMin": 121,
+   "imageUrl": "https://static-a.eventive.org/1789119763085temp-1789119763012-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad58c-6aad0040b82604c6f75ad58d-6aad0040b82604c6f75ad592-6aad2907362223e49bc13f88-6aad2907362223e49bc13f8e",
+   "title": "Programme 2: The Forest Remembers",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbd1",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55d",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is NC16 (Brief Nudity).",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/1788239480546temp-1788239480489-still.jpg"
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd43d",
+   "title": "In Conversation With Anthony Wong",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd43d",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad568",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "Join the conversation with Hong Kong veteran Anthony Wong Chau-sang, who has over 150 acting credits since beginning his acting career with My Name Ain't Suzie in 1985. A familiar face in Hong Kong cinema, his acting credits include The Untold Story (1993), Beast Cops (1998), the Infernal Affairs trilogy (2002–2003) and Still Human (2018).\n\nRenowned for his accomplished and versatile performances, he is the first Hong Kong actor to have won Best Actor awards in film, television and theatre. His honours include multiple Best Actor and Best Supporting Actor awards at the Hong Kong Film Awards, the Hong Kong Film Critics Society Awards, the Golden Bauhinia Awards, and the Golden Horse Awards.\n\nIn this exclusive dialogue session, Wong will share more about his illustrious four-decade long acting career, his creative pursuits across different mediums, and how he continues to thrive in an evolving global entertainment industry.\n\nModerated by: TBC\n\nConducted in Mandarin with English interpretation",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1790825588803temp-1790825588744-cover.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5a9",
+   "title": "No Good Men",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5a9",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 103,
+   "imageUrl": "https://static-a.eventive.org/1788765021750temp-1788765021600-still.jpg"
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f5f",
+   "title": "[Visionary Encounters] In-Depth Understanding: Asian Audience Behaviour",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f5f",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6aad0040b82604c6f75ad566"
+   ],
+   "blurb": "It has never been more complicated for filmmakers and distributors to bring Southeast Asia audiences into cinemas. Hollywood tropes and stars are seen as tired. While local production has scaled up, other Asian content (Japanese anime, Korean blockbusters) can do well, competition for eyeballs\n\nand consumer time is fierce, meaning that the theatrical experience is only one of many options open to consumers. With one of the most experienced film distribution and exhibition executives in our region, this session will examine the fast-evolving behaviour of consumers in SE Asia, why a giant studio like Warner Bros Discovery is getting into local production, and provide some tips on ‘audience design’.\n\nSpeaker\n\nKurt Rieder, Senior Vice President of Theatrical at Warner Bros Discovery APAC\n\nModerator\n\nPatrick Frater, SGIFF Industry Specialist",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f62",
+   "title": "Session C: Asian Producers Network",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f62",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6ab0d16d5e2359166344dcbe"
+   ],
+   "blurb": "TBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f65",
+   "title": "Session B: Singapore & Indonesia",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f65",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6ab0d16d5e2359166344dcbe"
+   ],
+   "blurb": "TBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f68",
+   "title": "Session A: International",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f68",
+   "genre": "talk",
+   "categories": [
+    "6aad0040b82604c6f75ad56c",
+    "6ab0d16d5e2359166344dcbe"
+   ],
+   "blurb": "TBC",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c5",
+   "title": "32 Meters",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c5",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In central Anatolia, a woman shares her love of competitive shooting with her friends. While training begins in earnest for an upcoming competition, they face continued dismissal by the men in their community and are subject to demeaning limitations.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1789119807075temp-1789119806744-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad58f",
+   "title": "Ah Girl",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad58f",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55c",
+    "6aad0040b82604c6f75ad564",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/1788501553942temp-1788501553802-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f9a",
+   "title": "The Spiral",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f9a",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55f",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.",
+   "durationMin": 115,
+   "imageUrl": "https://static-a.eventive.org/1789735049584temp-1789735048918-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad58b-6aad0040b82604c6f75ad591-6aad0040b82604c6f75ad5ac-6aad0040b82604c6f75ad5ae",
+   "title": "Programme 3: Pervasive Powers",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad508",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55d",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification of this screening is R21 (Sexual Scenes).",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/1788502631942temp-1788502631811-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fae",
+   "title": "PanelStory, or How a Housing Development is Born",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fae",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad563",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes an online Q&A session with the filmmakers.",
+   "durationMin": 101,
+   "imageUrl": "https://static-a.eventive.org/1789733151502temp-1789733151412-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad588-6aad0040b82604c6f75ad595-6aad0040b82604c6f75ad59d-6aad0040b82604c6f75ad5ad-6aad0040b82604c6f75ad5b2",
+   "title": "Programme 4: Surfaces and Slippages",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50a",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55d",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is R21 (Homosexual Content).",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1788504778388temp-1788504778167-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f80",
+   "title": "The Invisibles",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f80",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad567",
+    "6ab36d0e55752cdbc7c1ef6c"
+   ],
+   "blurb": "Misadventures ensue as a protective single father and his three daughters—the youngest of whom is invisible—venture from their secluded life on a quiet island to Tokyo to meet the girls’ estranged grandmother, a famous actress who has taken ill.",
+   "durationMin": 110,
+   "imageUrl": "https://static-a.eventive.org/1789733128398temp-1789733128366-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad590-6aad0040b82604c6f75ad5af-6aad0040b82604c6f75ad5b0-6aad0040b82604c6f75ad5b3-6aad0040b82604c6f75ad5b4",
+   "title": "Programme 5: There and Back Again",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50d",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad55d",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is NC16 (Some Mature Content).",
+   "durationMin": 111,
+   "imageUrl": "https://static-a.eventive.org/1788765033088temp-1788765032918-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13fa6",
+   "title": "The Days Off",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13fa6",
+   "genre": "film",
+   "categories": [],
+   "blurb": "As the moon threatens to ‘eclipse’ animals and people around her, 12-year-old Bego meets REN__, an online friend who teaches her how to ‘shift’ into her desired reality.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1789733146896temp-1789733146876-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f84",
+   "title": "Macho Dancer",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f84",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Pol moves from the countryside to Manila in hopes of earning more money in the flesh industry. Amid the city’s chaos, he learns about the harsh yet alluring male prostitution business.",
+   "durationMin": 133,
+   "imageUrl": "https://static-a.eventive.org/1789733130459temp-1789733130439-still.jpg"
+  },
+  {
+   "id": "films-6ab351deec49711fb0a8c53c",
+   "title": "Hanabi",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6ab351deec49711fb0a8c53c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Hanabi depicts the people, flora and fauna, and natural and urban landscapes affected by the invisible dangers of radioactivity. Intricate imagery, sound design, narration and text form a polyphonic narrative about the relationship between civilisation, change and catastrophe.",
+   "durationMin": 107,
+   "imageUrl": "https://static-a.eventive.org/1790136804852temp-1790136804833-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5b1-6ab351deec49711fb0a8c548-6ab351deec49711fb0a8c54a",
+   "title": "In Sum + Fruits of Despair + Compact Disc",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd480",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad562",
+    "6aad0040b82604c6f75ad56e"
+   ],
+   "blurb": "This screening includes a Q&A session with the filmmakers.\n\nThe overall classification for this screening is R21 (Mature Content).",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1790136812376temp-1790136812144-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5b6",
+   "title": "Filipiñana",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5b6",
+   "genre": "film",
+   "categories": [
+    "6aad0040b82604c6f75ad560"
+   ],
+   "blurb": "In this stylish and darkly funny feature debut, a tee girl’s mission to return a golf club to the country club president leads her to uncover sinister secrets about her workplace, exposing elite society’s dark underbelly.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/1789120006075temp-1789120005843-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5bc",
+   "title": "House of the Wind",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5bc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An elderly woman builds a house to entice her children working in Europe to return to Cameroon, but a surprising companionship with a young woman in her neighbourhood upends all she believed about familial ties.",
+   "durationMin": 105,
+   "imageUrl": "https://static-a.eventive.org/1789119761632temp-1789119761593-still.jpg"
+  },
+  {
+   "id": "films-6aad0040b82604c6f75ad5c3",
+   "title": "Prosecution",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad0040b82604c6f75ad5c3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Amid a rise in far-right extremism and racially motivated attacks, Seyo Kim, a young German-Korean state prosecutor, impartially executes the law. But when a masked individual attempts to set her on fire, her engagement with the law becomes personal.",
+   "durationMin": 113,
+   "imageUrl": "https://static-a.eventive.org/1789120572747temp-1789120572602-still.jpg"
+  },
+  {
+   "id": "films-6aad2907362223e49bc13f8c",
+   "title": "The End of It",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/films/6aad2907362223e49bc13f8c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Claire announces at her 250th birthday party her decision to die, which is challenged by family and friends. As her final day approaches, she turns her death into an artist’s statement.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1789733134964temp-1789733134895-still.jpg"
+  },
+  {
+   "id": "6aad482a1140640ad801dbaa",
+   "title": "Best Singaporean Short Film & Audience Choice Award",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbaa",
+   "genre": "other",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6aad482a1140640ad801dbad",
+   "title": "Best Southeast Asian Short Film & Best Asian Feature Film",
+   "titleLocal": null,
+   "url": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbad",
+   "genre": "other",
+   "categories": [],
+   "blurb": null,
+   "durationMin": null,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "6aad482a1140640ad801dbb8",
+   "eventId": "films-6aad2907362223e49bc13fb4",
+   "venueId": "6aad0040b82604c6f75ad618",
+   "roomId": null,
+   "date": "2026-10-21",
+   "start": "20:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbb8",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aad482a1140640ad801dbbd",
+   "eventId": "films-6aad2907362223e49bc13fb4",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbbd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd443",
+   "eventId": "6ab35de018e4f416e7fbd443",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "17:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd443",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc23",
+   "eventId": "films-6aad2907362223e49bc13f98",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "17:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc23",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4dd",
+   "eventId": "films-6aad0040b82604c6f75ad59c",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4dd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd43a",
+   "eventId": "6ab35de018e4f416e7fbd43a",
+   "venueId": "6aad0040b82604c6f75ad619",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd43a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbee",
+   "eventId": "films-6aad2907362223e49bc13f9e",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbee",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd440",
+   "eventId": "6ab35de018e4f416e7fbd440",
+   "venueId": "6aad0040b82604c6f75ad619",
+   "roomId": null,
+   "date": "2026-10-22",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd440",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f71",
+   "eventId": "6ab88ab6179bb5a9822e9f71",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f71",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f6b",
+   "eventId": "6ab88ab6179bb5a9822e9f6b",
+   "venueId": "6aad0040b82604c6f75ad61e",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "12:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f6b",
+   "free": true,
+   "status": "sold-out",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f6e",
+   "eventId": "6ab88ab6179bb5a9822e9f6e",
+   "venueId": "6aad0040b82604c6f75ad61e",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "12:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f6e",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e0",
+   "eventId": "films-6aad0040b82604c6f75ad593",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e0",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd468",
+   "eventId": "films-6ab351deec49711fb0a8c546",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd468",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6ab88d3b08472e09613a1c28",
+   "eventId": "6ab88d3b08472e09613a1c28",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88d3b08472e09613a1c28",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88dad02a266a70a5a186a",
+   "eventId": "6ab88dad02a266a70a5a186a",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "17:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88dad02a266a70a5a186a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc27",
+   "eventId": "films-6aad2907362223e49bc13fac",
+   "venueId": "6aad0040b82604c6f75ad623",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc27",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e1",
+   "eventId": "films-6aad0040b82604c6f75ad589-6aad0040b82604c6f75ad596-6aad0040b82604c6f75ad597-6aad0040b82604c6f75ad5a1-6aad0040b82604c6f75ad5a3-6aad0040b82604c6f75ad5a5-6aad0040b82604c6f75ad5c2",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc13",
+   "eventId": "films-6aad2907362223e49bc13fb0",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "19:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc13",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aad482b1140640ad801dbff",
+   "eventId": "films-6aad2907362223e49bc13fb9",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "20:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dbff",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd484",
+   "eventId": "films-6aad2907362223e49bc13fb2-6ab351deec49711fb0a8c534",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd484",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dba2",
+   "eventId": "films-6aad0040b82604c6f75ad5c1",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-23",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dba2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f7a",
+   "eventId": "6ab88ab6179bb5a9822e9f7a",
+   "venueId": "6aad0040b82604c6f75ad61e",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f7a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f7d",
+   "eventId": "6ab88ab6179bb5a9822e9f7d",
+   "venueId": "6aad0040b82604c6f75ad61e",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f7d",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e3",
+   "eventId": "films-6aad0040b82604c6f75ad5be",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "10:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e3",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc3c",
+   "eventId": "films-6aad2907362223e49bc13f82",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc3c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e4",
+   "eventId": "films-6aad0040b82604c6f75ad5bf",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e4",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd437",
+   "eventId": "6ab35de018e4f416e7fbd437",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd437",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f80",
+   "eventId": "6ab88ab6179bb5a9822e9f80",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f80",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc0f",
+   "eventId": "films-6aad2907362223e49bc13faa",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc0f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f83",
+   "eventId": "6ab88ab6179bb5a9822e9f83",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "14:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f83",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbd5",
+   "eventId": "films-6aad2907362223e49bc13f92",
+   "venueId": "6ab3f06f9651fe03e0a6fb6a",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "15:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbd5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f86",
+   "eventId": "6ab88ab6179bb5a9822e9f86",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "15:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f86",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e5",
+   "eventId": "films-6aad0040b82604c6f75ad59a",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd478",
+   "eventId": "films-6ab351deec49711fb0a8c53a",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd478",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f89",
+   "eventId": "6ab88ab6179bb5a9822e9f89",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "16:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f89",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f8c",
+   "eventId": "6ab88ab6179bb5a9822e9f8c",
+   "venueId": "6aad0040b82604c6f75ad61d",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f8c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc17",
+   "eventId": "films-6aad2907362223e49bc13fb0",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc17",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbf2",
+   "eventId": "films-6aad2907362223e49bc13fa0",
+   "venueId": "6aad0040b82604c6f75ad623",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbf2",
+   "free": null,
+   "status": "sold-out",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd450",
+   "eventId": "films-6aad0040b82604c6f75ad59b-6aad0040b82604c6f75ad5a2-6aad0040b82604c6f75ad5a4-6aad0040b82604c6f75ad5a7-6ab351deec49711fb0a8c53e",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd450",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aad482b1140640ad801dc1b",
+   "eventId": "films-6aad2907362223e49bc13f90",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc1b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd458",
+   "eventId": "films-6ab351deec49711fb0a8c536",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd458",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dbf7",
+   "eventId": "films-6aad2907362223e49bc13fa2",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "21:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dbf7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e8",
+   "eventId": "films-6aad0040b82604c6f75ad594",
+   "venueId": "6aad0040b82604c6f75ad629",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e8",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4e9",
+   "eventId": "films-6aad0040b82604c6f75ad5c6",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4e9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc2c",
+   "eventId": "films-6aad2907362223e49bc13f94",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc2c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd454",
+   "eventId": "films-6aad0040b82604c6f75ad5a6-6aad0040b82604c6f75ad5b7-6aad0040b82604c6f75ad5b8-6ab351deec49711fb0a8c540",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd454",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbe2",
+   "eventId": "films-6aad2907362223e49bc13f8a",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbe2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dba6",
+   "eventId": "films-6aad0040b82604c6f75ad59c",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "16:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dba6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc4c",
+   "eventId": "films-6aad2907362223e49bc13fb7",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc4c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd47c",
+   "eventId": "films-6ab351deec49711fb0a8c53a",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd47c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd474",
+   "eventId": "films-6ab351deec49711fb0a8c544",
+   "venueId": "6aad0040b82604c6f75ad628",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "18:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd474",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc1f",
+   "eventId": "films-6aad2907362223e49bc13f90",
+   "venueId": "6aad0040b82604c6f75ad61f",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc1f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6aad482a1140640ad801db9e",
+   "eventId": "films-6aad0040b82604c6f75ad593",
+   "venueId": "6aad0040b82604c6f75ad62b",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "19:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801db9e",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc03",
+   "eventId": "films-6aad2907362223e49bc13fa4",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc03",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd460",
+   "eventId": "films-6ab351deec49711fb0a8c538",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd460",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd46c",
+   "eventId": "films-6ab351deec49711fb0a8c546",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd46c",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aad482a1140640ad801dbb0",
+   "eventId": "films-6aad0040b82604c6f75ad598",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbb0",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dbfb",
+   "eventId": "films-6aad2907362223e49bc13fa2",
+   "venueId": "6aad0040b82604c6f75ad629",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dbfb",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4ea",
+   "eventId": "films-6aad0040b82604c6f75ad5a8",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4ea",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4eb",
+   "eventId": "films-6aad0040b82604c6f75ad5c4",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4eb",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4ec",
+   "eventId": "films-6aad0040b82604c6f75ad5c0",
+   "venueId": "6aad0040b82604c6f75ad628",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4ec",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd470",
+   "eventId": "films-6ab351deec49711fb0a8c542",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd470",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbb4",
+   "eventId": "films-6aad0040b82604c6f75ad5bb",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-26",
+   "start": "21:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbb4",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f3e",
+   "eventId": "6ab88ab6179bb5a9822e9f3e",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f3e",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f41",
+   "eventId": "6ab88ab6179bb5a9822e9f41",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "11:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f41",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f44",
+   "eventId": "6ab88ab6179bb5a9822e9f44",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f44",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4ef",
+   "eventId": "films-6aad0040b82604c6f75ad58e",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "15:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4ef",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f47",
+   "eventId": "6ab88ab6179bb5a9822e9f47",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "15:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f47",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f1",
+   "eventId": "films-6aad0040b82604c6f75ad5b5",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f2",
+   "eventId": "films-6aad0040b82604c6f75ad5c4",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd446",
+   "eventId": "6ab35de018e4f416e7fbd446",
+   "venueId": "6ab0d17d1fbd58746bf15f48",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd446",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc34",
+   "eventId": "films-6aad2907362223e49bc13f96",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "20:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc34",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f4",
+   "eventId": "films-6aad0040b82604c6f75ad599",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "20:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f4",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbc1",
+   "eventId": "films-6aad2907362223e49bc13f86",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-27",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbc1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 0.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f4a",
+   "eventId": "6ab88ab6179bb5a9822e9f4a",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f4a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f4d",
+   "eventId": "6ab88ab6179bb5a9822e9f4d",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "11:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f4d",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd464",
+   "eventId": "films-6ab351deec49711fb0a8c538",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd464",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f50",
+   "eventId": "6ab88ab6179bb5a9822e9f50",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f50",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbc9",
+   "eventId": "films-6aad2907362223e49bc13fa8",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "14:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbc9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f53",
+   "eventId": "6ab88ab6179bb5a9822e9f53",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "15:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f53",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f6",
+   "eventId": "films-6aad0040b82604c6f75ad5ba",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "16:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f7",
+   "eventId": "films-6aad0040b82604c6f75ad5b9",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "17:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f7",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f8",
+   "eventId": "films-6aad0040b82604c6f75ad58a",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f8",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd449",
+   "eventId": "6ab35de018e4f416e7fbd449",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd449",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbe6",
+   "eventId": "films-6aad2907362223e49bc13f9c",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "20:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbe6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4f9",
+   "eventId": "films-6aad0040b82604c6f75ad5aa",
+   "venueId": "6aad0040b82604c6f75ad626",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4f9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd44c",
+   "eventId": "films-6aad0040b82604c6f75ad59e-6aad0040b82604c6f75ad59f-6aad0040b82604c6f75ad5a0-6aad0040b82604c6f75ad5ab-6ab351deec49711fb0a8c532",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd44c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f56",
+   "eventId": "6ab88ab6179bb5a9822e9f56",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f56",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f59",
+   "eventId": "6ab88ab6179bb5a9822e9f59",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "11:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f59",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f5c",
+   "eventId": "6ab88ab6179bb5a9822e9f5c",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f5c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4fd",
+   "eventId": "films-6aad0040b82604c6f75ad5b9",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4fd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4fe",
+   "eventId": "films-6aad0040b82604c6f75ad5bd",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4fe",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad4ff",
+   "eventId": "films-6aad0040b82604c6f75ad5b5",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad4ff",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbd1",
+   "eventId": "films-6aad0040b82604c6f75ad58c-6aad0040b82604c6f75ad58d-6aad0040b82604c6f75ad592-6aad2907362223e49bc13f88-6aad2907362223e49bc13f8e",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "18:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbd1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd43d",
+   "eventId": "6ab35de018e4f416e7fbd43d",
+   "venueId": "6ab0d17d1fbd58746bf15f48",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd43d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad501",
+   "eventId": "films-6aad0040b82604c6f75ad5ba",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "20:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad501",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbc5",
+   "eventId": "films-6aad2907362223e49bc13f86",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbc5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad502",
+   "eventId": "films-6aad0040b82604c6f75ad5a9",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad502",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f5f",
+   "eventId": "6ab88ab6179bb5a9822e9f5f",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "10:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f5f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f62",
+   "eventId": "6ab88ab6179bb5a9822e9f62",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "11:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f62",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd45c",
+   "eventId": "films-6ab351deec49711fb0a8c536",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd45c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f65",
+   "eventId": "6ab88ab6179bb5a9822e9f65",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f65",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6ab88ab6179bb5a9822e9f68",
+   "eventId": "6ab88ab6179bb5a9822e9f68",
+   "venueId": "6aad0040b82604c6f75ad61b",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "15:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab88ab6179bb5a9822e9f68",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad504",
+   "eventId": "films-6aad0040b82604c6f75ad5aa",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad504",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc38",
+   "eventId": "films-6aad2907362223e49bc13f96",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "16:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc38",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad505",
+   "eventId": "films-6aad0040b82604c6f75ad58a",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "17:45",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad505",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 0.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad506",
+   "eventId": "films-6aad0040b82604c6f75ad5c5",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "18:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad506",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad507",
+   "eventId": "films-6aad0040b82604c6f75ad58f",
+   "venueId": "6ab3f06f9651fe03e0a6fb6a",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "18:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad507",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbcd",
+   "eventId": "films-6aad2907362223e49bc13fa8",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbcd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbde",
+   "eventId": "films-6aad2907362223e49bc13f9a",
+   "venueId": "6aad0040b82604c6f75ad627",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbde",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad508",
+   "eventId": "films-6aad0040b82604c6f75ad58b-6aad0040b82604c6f75ad591-6aad0040b82604c6f75ad5ac-6aad0040b82604c6f75ad5ae",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad508",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad509",
+   "eventId": "films-6aad0040b82604c6f75ad58e",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad509",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc44",
+   "eventId": "films-6aad2907362223e49bc13fae",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "11:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc44",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc07",
+   "eventId": "films-6aad2907362223e49bc13fa4",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "13:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc07",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50a",
+   "eventId": "films-6aad0040b82604c6f75ad588-6aad0040b82604c6f75ad595-6aad0040b82604c6f75ad59d-6aad0040b82604c6f75ad5ad-6aad0040b82604c6f75ad5b2",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50b",
+   "eventId": "films-6aad0040b82604c6f75ad5a9",
+   "venueId": "6aad0040b82604c6f75ad624",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "14:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50c",
+   "eventId": "films-6aad0040b82604c6f75ad5bd",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc48",
+   "eventId": "films-6aad2907362223e49bc13f80",
+   "venueId": "6aad0040b82604c6f75ad629",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc48",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50d",
+   "eventId": "films-6aad0040b82604c6f75ad590-6aad0040b82604c6f75ad5af-6aad0040b82604c6f75ad5b0-6aad0040b82604c6f75ad5b3-6aad0040b82604c6f75ad5b4",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "17:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50d",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc0b",
+   "eventId": "films-6aad2907362223e49bc13fa6",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc0b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc30",
+   "eventId": "films-6aad2907362223e49bc13f84",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc30",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50e",
+   "eventId": "films-6aad0040b82604c6f75ad5be",
+   "venueId": "6aad0040b82604c6f75ad62b",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "19:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50e",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad50f",
+   "eventId": "films-6aad0040b82604c6f75ad598",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "21:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad50f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad510",
+   "eventId": "films-6aad0040b82604c6f75ad599",
+   "venueId": "6aad0040b82604c6f75ad625",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "21:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad510",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad512",
+   "eventId": "films-6aad0040b82604c6f75ad594",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad512",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc50",
+   "eventId": "films-6aad2907362223e49bc13fb7",
+   "venueId": "6aad0040b82604c6f75ad629",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "10:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc50",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd488",
+   "eventId": "films-6ab351deec49711fb0a8c53c",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "11:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd488",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6ab35de018e4f416e7fbd480",
+   "eventId": "films-6aad0040b82604c6f75ad5b1-6ab351deec49711fb0a8c548-6ab351deec49711fb0a8c54a",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "13:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6ab35de018e4f416e7fbd480",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad513",
+   "eventId": "films-6aad0040b82604c6f75ad5b6",
+   "venueId": "6aad0040b82604c6f75ad615",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad513",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad514",
+   "eventId": "films-6aad0040b82604c6f75ad5bc",
+   "venueId": "6aad0040b82604c6f75ad628",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad514",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad515",
+   "eventId": "films-6aad0040b82604c6f75ad5c6",
+   "venueId": "6aad0040b82604c6f75ad62c",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad515",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbea",
+   "eventId": "films-6aad2907362223e49bc13f9c",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "16:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbea",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad517",
+   "eventId": "films-6aad0040b82604c6f75ad5c1",
+   "venueId": "6aad0040b82604c6f75ad62b",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad517",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad518",
+   "eventId": "films-6aad0040b82604c6f75ad5c3",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad518",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482b1140640ad801dc40",
+   "eventId": "films-6aad2907362223e49bc13f82",
+   "venueId": "6aad0040b82604c6f75ad622",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "19:30",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482b1140640ad801dc40",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad0040b82604c6f75ad519",
+   "eventId": "films-6aad0040b82604c6f75ad59a",
+   "venueId": "6aad0040b82604c6f75ad628",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad0040b82604c6f75ad519",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbda",
+   "eventId": "films-6aad2907362223e49bc13f8c",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "21:15",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbda",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbaa",
+   "eventId": "6aad482a1140640ad801dbaa",
+   "venueId": "6aad0040b82604c6f75ad621",
+   "roomId": null,
+   "date": "2026-11-07",
+   "start": "14:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbaa",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  },
+  {
+   "id": "6aad482a1140640ad801dbad",
+   "eventId": "6aad482a1140640ad801dbad",
+   "venueId": "6aad0040b82604c6f75ad620",
+   "roomId": null,
+   "date": "2026-11-07",
+   "start": "19:00",
+   "ticketUrl": "https://sgiff.eventive.org/schedule/6aad482a1140640ad801dbad",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 15.0,
+   "priceMax": 15.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim",
+   "venues-research"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/singapore-international-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:07:58Z",
+    "fetcher": "scraper/festivals/singapore_international_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/singapore-international-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:33:19Z",
+    "fetcher": "scraper/festivals/singapore_international_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/singapore_international_film_festival/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.lng": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.name": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.online": [
+    "eventive"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

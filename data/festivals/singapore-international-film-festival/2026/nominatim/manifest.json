@@ -1,0 +1,15 @@
+{
+ "festival": "singapore-international-film-festival",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": "2026-10-02T18:33:19Z",
+ "fetcher": "scraper/festivals/singapore_international_film_festival/sources/nominatim/fetch.py",
+ "fetcherVersion": 3,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "One free-text query per distinct venue address from eventive; first hit, rounded to 6 dp."
+}

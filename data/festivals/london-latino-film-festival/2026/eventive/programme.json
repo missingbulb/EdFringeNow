@@ -1,0 +1,1729 @@
+{
+ "tenant": "lolaff2026",
+ "site": "https://lolaff2026.eventive.org",
+ "displayName": "London Latino Film Festival 2026",
+ "displayTimezone": "Europe/London",
+ "currency": "gbp",
+ "eventBucket": "6a760f48549e480c5bda2c12",
+ "edition": "2026",
+ "events": [
+  {
+   "id": "6a9b5beb11f6b0c311dc5456",
+   "name": "Latin Dance Workshops",
+   "description": "<p>Salsa dance workshops with Luanda Pau, founder and director of ALAFIA – Afro-Cuban Dance Festival London and the Afro-Cuban Dance Festival in Havana, and Afro-Cuban Artistic Lead at Acosta Dance Centre.</p><p><br></p><p>No experience or partner needed, just the will to dance and connect with people and culture.</p><p><br></p><p>Wear comfortable clothes, flat shoes, and let's dance!</p><p><br></p><p><strong>Sessions at 10:30am and 11:30pm</strong></p><p>When booking your free ticket, make sure you choose the session that works for you.</p>",
+   "short_description": null,
+   "start_time": "2026-10-02T09:30:00.000Z",
+   "end_time": "2026-10-02T11:30:00.000Z",
+   "venue": "6a85be5eb78e310721d704c3",
+   "tags": [
+    {
+     "id": "6a91ace2503ec038a82cd2fa",
+     "name": "Workshops"
+    },
+    {
+     "id": "6abafe3a448d2dcd579b1ee3",
+     "name": "Portsoken"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1788586788325temp-1788586788302-cover.jpg",
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "Salsa Workshop @ 10:30am",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Salsa Workshop @ 11:30pm",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7b52933ebde8c3d4e63096",
+   "name": "Opening Night: Gala & Screening of Oca",
+   "description": "<p><strong>Opening Gala of the London Latino Film Festival</strong></p><p><br></p><p><strong>Schedule for the evening:</strong></p><p><br></p><p>18:30 — Doors open &amp; Red Carpet</p><p>19:30 — Opening Ceremony and Festival Welcoming</p><p>20:00 — Screening of <em>Oca</em></p><p><br></p><p><strong>Note: </strong></p><p>The opening programme begins promptly at 19:30. For the comfort of all guests, no entry will be permitted after this time.</p><p>Evening wear is encouraged, but there's no strict formal dress code.</p><p><br></p><p>Venue accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities</p>",
+   "short_description": null,
+   "start_time": "2026-10-02T17:30:00.000Z",
+   "end_time": "2026-10-02T21:00:00.000Z",
+   "venue": "6a7b525cecc8cceba8137b6d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Wheelchair ticket ",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a7b4d47f835cf0f3c12b0b6",
+     "name": "Oca",
+     "short_description": null,
+     "description": "<p>Rafaela, a young nun from a dwindling congregation, is sent to find the new archbishop in an effort to save her congregation. Guided by visions and an unsettling recurring dream, her journey becomes an unexpected search for faith, freedom and her own path.</p>",
+     "still_image": "https://static-a.eventive.org/f09b00299da1d652b288ed7fc801ed2a.jpg",
+     "cover_image": "https://static-a.eventive.org/ffa31216c8371fe2cf5e75ff7e8184eb.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/822c1a64a10da5983b3f5569d1c607cc.jpg?w=300",
+     "runtime": "109"
+    }
+   ]
+  },
+  {
+   "id": "6a85d14dd8be1165b61f465d",
+   "name": "Short Films: Memory, Family & Return + Filmmakers Intro",
+   "description": "<p><br></p><p>This slot brings together five short films exploring themes of memory, family, return and identity. Across different generations and relationships between parents and children, the films reflect on what is passed down to us and what we inherit — memories, stories, identities and experiences. They move between being away from home and returning to it, often confronting memories that are complex, fragmented or difficult, and asking how these shape our sense of who we are and where we belong.</p><p><br></p><p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences</p><p><br></p><p>Further access details: <a href=\"https://www.ica.art/access\" target=\"_blank\">ICA Accessibility</a></p><p><br></p><p><strong>NOTES:</strong></p><p><br></p><p>Pre screening Filmmakers Meet &amp; Greet (10 minutes)</p><p>Pre screening Festival trailer (1 minute)</p><p><br></p><p>Content warnings: Themes of family conflict, loss and grief, displacement, childhood experiences and emotional distress.&nbsp;</p><p>This programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk</p>",
+   "short_description": null,
+   "start_time": "2026-10-03T11:15:00.000Z",
+   "end_time": "2026-10-03T12:45:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787258429460temp-1787258429347-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a832f517e785d64cd4d197a",
+     "name": "Start Coming Back - Empezar a volver",
+     "short_description": null,
+     "description": "Rita lives alone in southern Chile, marked by the loss of her husband and newborn son during the dictatorship. After four decades, her son John returns to meet her and uncover his origins. During his brief stay, mother and son attempt to rebuild a bond shaped by uprooting and grief.",
+     "still_image": "https://static-a.eventive.org/c9651b70c288c20d3f481bab8e7fca31.jpg",
+     "cover_image": "https://static-a.eventive.org/bf66a2005ed973752efe436f91a40376.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/4ae2daf428de8980770b95697d8e0a93.jpg?w=300",
+     "runtime": "21"
+    },
+    {
+     "id": "6a8330ef6f2553cabbe1a980",
+     "name": "Astronaut - Astronauta",
+     "short_description": null,
+     "description": "<p>Astronauta follows Audely, a 39-year-old lumberjack working in the Guatemalan jungle, and his 11-year-old daughter Carol, who dreams of entering the same forest where her father works. When Audely discovers her dream, his love for his daughter inspires him to imagine a different future for her.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1786983581462temp-1786983581301-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786983617152temp-1786983616999-poster.jpg",
+     "runtime": "16"
+    },
+    {
+     "id": "6a850629d71e8ceef20af4f1",
+     "name": "I don’t know if i'll have to say everything again - Eu não sei se vou ter que falar tudo de novo",
+     "short_description": null,
+     "description": "<p>Fernando meets his mother weekly at a café. Today, he's gonna tell her he's getting married. Ana, who suffers from Alzheimer's, has trouble remembering that her son is gay. Does she really forget, or would she rather not remember?</p>",
+     "still_image": "https://static-a.eventive.org/fbbf1712a8b3b8cc52bb365422e7bd37.jpg",
+     "cover_image": "https://static-a.eventive.org/5391a5809fcbcdb6c85a537920147489.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/fabf27f388a06b8929f76d953a794026.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a84fd27e81ee26268a13fda",
+     "name": "Finding Pá",
+     "short_description": null,
+     "description": "<p><br></p><p>Inspired by true events, Finding Pá follows Miguel as he reconnects with his estranged father after decades apart. Torn between childhood anger and the hope for closure, Miguel must confront the memories of the past and the complicated path towards forgiveness.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787100670806temp-1787100670461-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787100656768temp-1787100656554-poster.jpg",
+     "runtime": "20"
+    },
+    {
+     "id": "6a84cfd493e9428e10d3c5e1",
+     "name": "Pasta Negra",
+     "short_description": null,
+     "description": "<p>Pasta Negra follows three Venezuelan women as they cross the border into Colombia in search of something as simple as a packet of pasta, turning an everyday journey into a poignant story of migration, resilience and survival.</p>",
+     "still_image": "https://static-a.eventive.org/a1bf9b08723370c1b43f23c2319df3b6.jpg",
+     "cover_image": "https://static-a.eventive.org/a9abbcdf104a9a1ffa50cc85905f37b2.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/0700beab041272cdbe6742db832466ae.jpg?w=300",
+     "runtime": "15"
+    }
+   ]
+  },
+  {
+   "id": "6a8642b2693050c2090e92d4",
+   "name": "Espina + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-03T13:00:00.000Z",
+   "end_time": "2026-10-03T14:45:00.000Z",
+   "venue": "6a832e0722178a45d7bbede6",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82ce25275e917d4b401510",
+     "name": "Espina",
+     "short_description": null,
+     "description": "<p>Tired of being treated like a child because of his disability, 29-year-old Jonathan sets off from Mexico City to Panama with two unlikely companions. What begins as a trip before his spinal surgery soon reveals a deeper purpose: settling an old score.</p>",
+     "still_image": "https://static-a.eventive.org/56d028eb84f3f22d3d8ddf44bb2987c6.jpg",
+     "cover_image": "https://static-a.eventive.org/99f25583ae16de44e3790589e59480da.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/002c27f5231afec6959d92a2d5add5e8.jpg?w=300",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6a9b5d64b4445566678ab0c4",
+   "name": "The World of Colours - Children's play",
+   "description": "<p>The Stars Theatre Company proudly presents a captivating, thought-provoking tale that weaves in subtle messages of inclusion and cultural diversity. Blending storytelling, theatre, puppetry, vibrant costumes, and music, the play invites children to accompany Flicts, a one-of-a-kind colour, who dreams of finding their place in the world.  What unfolds is a joyful and touching story, reminding us all that being unique is something to celebrate, and that everyone has a place where they shine.</p><p><br></p><p>The play is for children aged 2 to 8 years old. The performance integrates text in English, Spanish and Portuguese.</p><p><br></p><p>There will be a colouring station open from 2:00pm to 3:45pm.</p>",
+   "short_description": null,
+   "start_time": "2026-10-03T13:00:00.000Z",
+   "end_time": "2026-10-03T14:00:00.000Z",
+   "venue": "6a85be5eb78e310721d704c3",
+   "tags": [
+    {
+     "id": "6a7b4fd61c4880b549e616f4",
+     "name": "Children's Programme"
+    },
+    {
+     "id": "6abafe3a448d2dcd579b1ee3",
+     "name": "Portsoken"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1788599405201temp-1788599405189-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "The World of Colours",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a85f1a19b1c36d06359020f",
+   "name": "Concepción + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-03T13:15:00.000Z",
+   "end_time": "2026-10-03T15:15:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82cf7677f151297067bde5",
+     "name": "Concepción",
+     "short_description": null,
+     "description": "<p>This captivating documentary explores the life and legacy of César Concepción (1909-1974), a maestro of La Plena, and trailblazer in Latin music. Featuring rare performances, personal interviews with Gilberto Santa Rosa, Danny Rivera, Rafael Ithier, Frank Grillo “Machito” and other iconic figures of his era, it brings his contributions to life while showcasing the timeless power of his music.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787233729797temp-1787233729764-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786958728316temp-1786958728235-poster.jpg",
+     "runtime": "84"
+    }
+   ]
+  },
+  {
+   "id": "6a9fd91f2996618404fc2ba6",
+   "name": "Truco!: Cards, Camera and Community",
+   "description": "<p>Learn to play, then watch it come to life on screen. Join Truqueros del Oeste for a hands-on introduction to Truco, the fast, loud, cheeky card game that is part of the cultural identity of the Río de la Plata region. Once you've got the basics (and probably lost a round or two), settle in for a screening of Truco, Fraser McGruer's short documentary about the community behind the game. Fraser will join the players themselves afterwards for an open conversation, not about filmmaking technique, but the game, the encounter of making it together, and what it means to hold onto a piece of home somewhere new.</p><p><br></p><p><em>About Fraser Mc Guer</em></p><p>Fraser McGruer is a documentary photographer, filmmaker and audio producer based in Lincolnshire, working across the UK and internationally. His work explores how people understand themselves, the places they belong to and the experiences that shape their lives.</p><p>Much of his practice is rooted in communities and developed through participatory, collaborative ways of working. He believes documentary work is strongest when it is created with people rather than simply about them, reducing the traditional division between filmmaker and participant. Listening, conversation and trust are central to his process, whether he is working with photography, film, audio or a combination of forms. His projects frequently explore migration, ritual, mental health and heritage.</p><p><br></p><p><br></p><p>Children are welcome to join parents and carers, there will be a colouring station and children books for them to enjoy.</p>",
+   "short_description": null,
+   "start_time": "2026-10-03T14:00:00.000Z",
+   "end_time": "2026-10-03T17:00:00.000Z",
+   "venue": "6a85be5eb78e310721d704c3",
+   "tags": [
+    {
+     "id": "6a7b4fd61c4880b549e616f4",
+     "name": "Children's Programme"
+    },
+    {
+     "id": "6abafe3a448d2dcd579b1ee3",
+     "name": "Portsoken"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1788861019501temp-1788861019191-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a85f2e87872a6f966e2a0d0",
+   "name": "Strawberry and Chocolate - Fresa y Chocolate + Q&A with Jorge Perugorria",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-03T15:00:00.000Z",
+   "end_time": "2026-10-03T17:25:00.000Z",
+   "venue": "6a8327a4e51ce446865c8c4c",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d97d7fc155cc8bbb6cf0",
+     "name": "Strawberry and Chocolate - Fresa y Chocolate",
+     "short_description": null,
+     "description": "<p>Set in Cuba in 1979, flamboyant artist Diego befriends David, a young university student and committed revolutionary. What begins as an unlikely encounter gradually develops into a genuine friendship as the two challenge each other’s views on identity, individuality and personal freedom.</p>",
+     "still_image": "https://static-a.eventive.org/97a966300e31b86ab72542a99c1ceab7.jpg",
+     "cover_image": "https://static-a.eventive.org/c8a7563c392f4e903e043ecb6d3e8a22.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/1787430607421temp-1787430607226-poster.jpg",
+     "runtime": "108"
+    }
+   ]
+  },
+  {
+   "id": "6a85db1e67a5b60f09adfc12",
+   "name": "¡Quba! + Filmmaker Intro",
+   "description": "<p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences</p><p><br></p><p>Further access details: <a href=\"https://www.ica.art/access\" target=\"_blank\">ICA Accessibility</a></p>",
+   "short_description": null,
+   "start_time": "2026-10-03T17:30:00.000Z",
+   "end_time": "2026-10-03T18:55:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82c97a66a542ebf3a237be",
+     "name": "¡Quba!",
+     "short_description": null,
+     "description": "<p><br></p><p>Against the backdrop of Havana’s sun-drenched streets and shimmering coastline, <em>¡Quba!</em> delves into the history and transformation of Cuba’s LGBTQ+ community.</p>",
+     "still_image": "https://static-a.eventive.org/178e20be7df40e72d5cf5d8ddd3d8204.jpg",
+     "cover_image": "https://static-a.eventive.org/df31d7aa75439cb10e99393383501278.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/5aab77da8fcdaa9d13c2906f0effe817.jpg?w=300",
+     "runtime": "70"
+    }
+   ]
+  },
+  {
+   "id": "6a86472da3289812a905dd62",
+   "name": "The Distinguished Citizen - El ciudadano ilustre + Q&A with Oscar Martínez",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-03T18:00:00.000Z",
+   "end_time": "2026-10-03T20:30:00.000Z",
+   "venue": "6a857ab2365982c54a5edbb7",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82dc10c50de5b91ec1ea82",
+     "name": "The Distinguished Citizen - El Ciudadano Ilustre",
+     "short_description": null,
+     "description": "<p><strong>Winner of the Goya for Best Iberoamerican Movie</strong></p><p><strong>Volpi Cup for Best Actor at the 73rd Venice Film Festival</strong></p><p><br></p><p>After refusing big and prestigious awards all over the world, Mr. Mantovani, Literature Nobel Prize winner, accepts an invitation to visit his hometown in Argentina, which has been the inspiration for all of his books. It turns out that accepting this invitation is the worst idea of his life. Expect the unexpected when you have used real people as characters in your novels!</p><p><br></p><p><br></p>",
+     "still_image": "https://static-a.eventive.org/6dab60ee6b8aa78044a40672ecf73d92.jpg",
+     "cover_image": "https://static-a.eventive.org/b00751ab72599ce8fec19f79c10e4a25.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/5702299c83d1a36b43df83270e09c464.jpg?w=300",
+     "runtime": "118"
+    }
+   ]
+  },
+  {
+   "id": "6a8641de2b5304e9879e9404",
+   "name": "Nunkui ",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-03T19:00:00.000Z",
+   "end_time": "2026-10-03T20:45:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a84d8e20518f8a6e746a258",
+     "name": "Nunkui",
+     "short_description": null,
+     "description": "Nunkui, the female spirit of the garden. Nunkui, the name of a Shuar girl in a lush world of plants, animals, spirits and an extended family. Between premonitory dreams and mining conflicts in the Amazonian Cóndor mountain range, Nunkui searches for her place in the world, influenced by her grandfather Yaunchu, an old Shuar leader.",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787091513129temp-1787091513101-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/c2be1b47a274a99cb3e1462891a6a105.jpg?w=300",
+     "runtime": "91"
+    }
+   ]
+  },
+  {
+   "id": "6a864cdaf2153e36f7085bdc",
+   "name": "Anina - Relaxed Screening ",
+   "description": "<p><br></p><p><strong>Relaxed Screening:</strong> adjusted lighting and sound levels, no trailers, and movement or noise from the audience is welcome throughout. The film starts after a two-minute festival intro.</p><p>English subtitles included.</p><p>SDH subtitles (Subtitles for Deaf and Hard of Hearing)</p><p><br></p><p>Find more information about Relax Screenings at Ciné Lumière <a href=\"https://www.institut-francais.org.uk/festivals-and-series/relaxed-screenings/#/\" target=\"_blank\"><strong>here</strong></a></p><p><br></p><p>If you have any questions, please contact us at operations@londonlatinofilmfestival.org.uk; a team members will also be on hand during the screening if assistance is required.</p>",
+   "short_description": null,
+   "start_time": "2026-10-04T10:00:00.000Z",
+   "end_time": "2026-10-04T11:25:00.000Z",
+   "venue": "6a85bc12c55980873e7d911a",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82e13b3af184d65746861b",
+     "name": "Anina",
+     "short_description": null,
+     "description": "Anina Yatay Salas is a ten-year-old whose name spells trouble: those three palindromes in a row are an ongoing source of teasing at school. When a playground fight results in mysterious punishment, Anina will learn to put her problems in perspective and empathize with others in this sweet little daydream of a tale.",
+     "still_image": "https://static-a.eventive.org/bb89e264aabc551e91827ec3282296f9.jpg",
+     "cover_image": "https://static-a.eventive.org/70eb156c50c8ca591b7484868987dafa.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/d434d05ef20ee54bd457f93ce91f7685.jpg?w=300",
+     "runtime": "80"
+    }
+   ]
+  },
+  {
+   "id": "6a91a5ff712b742c7d4eb444",
+   "name": "'How To Make A Blockbuster’ - James Grant in conversation with Alec Marsh",
+   "description": "<p><strong>Journalist and author, Alec Marsh, will interview acclaimed co-producer and Unit Production Manager James Grant, whose credits include Dune, Dune: Part Two, Skyfall and Spectre. The conversation will explore Grant’s career in film production, from managing complex international shoots to bringing some of cinema’s biggest productions to the screen, offering an insight into the realities, challenges and craft behind major filmmaking.</strong></p><p><br></p><p>About James Grant and Alec Marsh:</p><p><br></p><p>James Grant is a seasoned British Co-Producer and Unit Production Manager whose career spans some of the most ambitious productions in contemporary cinema. He began in location management, working on major productions including The Bourne Ultimatum, Quantum of Solace, Skyfall, and World War Z, before moving into international production management and overseeing complex overseas units for films including Dune, The Martian and Spectre.&nbsp;Grant went on to become Unit Production Manager on Denis Villeneuve’s Dune, helping deliver the complex, multi-location production that brought Frank Herbert’s epic to the screen, before returning as Co-Producer and UPM on Dune: Part Two, Enola Holmes 2, and Masters of the Universe, where he has continued to combine hands-on production expertise with senior producing responsibilities.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p><br></p><p>Alec Marsh is a British author and journalist who has written for most of the UK’s leading national newspapers, including The Times, The Telegraph, The Guardian, Daily Mail and Daily Express, as well as publications including the New Statesman, The Spectator, and the National Geographic. As an author, Marsh has written the Drabble &amp; Harris historical thriller series, comprising four novels with a fifth in development, as well as his separate Frank Champion detective series.</p>",
+   "short_description": null,
+   "start_time": "2026-10-04T10:00:00.000Z",
+   "end_time": "2026-10-04T11:30:00.000Z",
+   "venue": "6a91a72070e72267010cb632",
+   "tags": [
+    {
+     "id": "6a91ace2503ec038a82cd2fa",
+     "name": "Workshops"
+    },
+    {
+     "id": "6a91ac66c975af73c380c864",
+     "name": "Guildhall"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787940557031temp-1787940557008-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a85d5023574f88645ea39c1",
+   "name": "Short Films: Stories of Resilience + Filmmakers Intro",
+   "description": "<p><br></p><p>This slot brings together four short films exploring the theme of resilience. Across different contexts and forms, the films consider resilience as the capacity to move through what does not work, and to adapt to life’s challenges rather than remaining in a static state. Through acts of rebellion, resistance and fighting for what we value in the face of repression, as well as through creativity and joy, these films explore the different ways we find strength, agency and ways forward.</p><p><br></p><p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences are included on 3 of the 4 films in this programme.</p><p>⚠️ The final film, <em>Cold Water / Agua Fría</em>, does not currently have descriptive captions available. However, it will be screened with standard English subtitles</p><p><br></p><p>Further access details: <a href=\"https://www.ica.art/access\" target=\"_blank\">ICA Accessibility</a></p><p><br></p><p><strong>NOTES:</strong></p><p>Pre screening Filmmakers Meet &amp; Greet (10 minutes)</p><p>Pre screening Festival trailer (1 minute)</p><p>This programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at <a href=\"mailto:operations@londonlatinofilmfestival.org.uk\" target=\"_blank\" style=\"color: rgb(0, 0, 242);\">operations@londonlatinofilmfestival.org.uk</a></p>",
+   "short_description": null,
+   "start_time": "2026-10-04T11:15:00.000Z",
+   "end_time": "2026-10-04T12:40:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787258665675temp-1787258665572-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a84e748d97b968696e6173c",
+     "name": "Pharmacies - Farmacias",
+     "short_description": null,
+     "description": "<p>On Christmas Eve, Dr. Tere hopes to make it home for dinner with her daughter, but a stream of demanding patients and an unexpected medical emergency keep her trapped at the medical clinic. As the pressure builds, Tere is pushed to the limits of her patience and her calling.</p>",
+     "still_image": "https://static-a.eventive.org/bf7b93e5fb1b8d4606a36377f5040739.jpg",
+     "cover_image": "https://static-a.eventive.org/c94665855e0162d0fe17b0a847b9f09a.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/4fa4bc0c133a749d2af12ceb79eabe43.jpg?w=300",
+     "runtime": "25"
+    },
+    {
+     "id": "6a849636f1a5476cb0ac7152",
+     "name": "Collective Memory - Memoria colectiva",
+     "short_description": null,
+     "description": "<p>In 1983, Adelina’s husband disappeared after soldiers entered their home in Peru. Years later, she joins other women who have experienced similar losses, coming together to remember their loved ones and seek answers about what happened to them.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787097660019temp-1787097659974-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787099386443temp-1787099385714-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a84cf045b14e5e835be1d3e",
+     "name": "Quebrante",
+     "short_description": null,
+     "description": "A spell breaking, Quebrante traverses the caves, ruins and phantasmagorias of the Transamazon BR230 Highway, portraying its stones and its ghosts. Set in tiny Rurópolis, the very first town ever built on the road, Quebrante follows Ms. Erismar, a retired elementary school teacher known in the region as The Cave Woman.",
+     "still_image": "https://static-a.eventive.org/fd47c291c645b17965513a19e7f9c3aa.jpg",
+     "cover_image": "https://static-a.eventive.org/2ddba929f1853813abe6129f0220359d.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/61ce461e324e87ccfaf02366a0c7c5dc.jpg?w=300",
+     "runtime": "23"
+    },
+    {
+     "id": "6a8334c82db7720bdd5c4caa",
+     "name": "Cold Water - Agua Fría",
+     "short_description": null,
+     "description": "<p>At a settlement camp in Talagante, Chile, Ángel and Kimberly turn a parked van into an imaginary spaceship to find their friend Sofía, who has returned to Colombia. Along the way, they revisit memories, meet other children and explore friendship, identity and belonging in a world shaped by displacement.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1786985585307temp-1786985585251-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786985587159temp-1786985585506-poster.jpg",
+     "runtime": "19"
+    }
+   ]
+  },
+  {
+   "id": "6a91bd46c7f6744d6201633f",
+   "name": "'Stay In The Game' - Rejection & Resilience for Creatives with Natali Juste Simmonds",
+   "description": "<p><strong>Author and story consultant Natali Juste Simmonds leads <em>Stay In The Game: Rejection &amp; Resilience for Creatives</em>, a practical session exploring how creatives can navigate rejection, setbacks and uncertainty without losing momentum. A published author of 12 novels, including the psychological thriller <em>Good Girls Die Last</em>, currently in development for TV with Natali attached as Executive Producer, she also shares her storytelling experience through lectures and workshops, including at Raindance Film School.</strong></p><p><br></p><p>Natali Simmonds is an author and story consultant working across film, entertainment and culture. She has written 12 published novels, including the psychological thriller Good Girls Die Last, which is currently in development for TV, with Natali attached as Executive Producer.</p><p><br></p><p>She is Head of Partnership Development at LoLaFF (the London Latino Film Festival), where she builds and manages relationships across the UK and Latin American film industries, connecting filmmakers, the BFI, brands, cultural organisations and industry leaders to create partnerships, opportunities and new audiences. Natali regularly shares her storytelling experience through guest lectures and workshops, including universities, writing institutions such as Professional Writing Academy and Jericho Writers, and Raindance Film School.</p>",
+   "short_description": null,
+   "start_time": "2026-10-04T12:00:00.000Z",
+   "end_time": "2026-10-04T13:30:00.000Z",
+   "venue": "6a91a72070e72267010cb632",
+   "tags": [
+    {
+     "id": "6a91ace2503ec038a82cd2fa",
+     "name": "Workshops"
+    },
+    {
+     "id": "6a91ac66c975af73c380c864",
+     "name": "Guildhall"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1788253760333temp-1788253760225-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a85f4146ed50c446691bb66",
+   "name": "Dogs - Perros",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T13:00:00.000Z",
+   "end_time": "2026-10-04T14:45:00.000Z",
+   "venue": "6a8327a4e51ce446865c8c4c",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82cde26eaac08241ac65d4",
+     "name": "Dogs - Perros",
+     "short_description": null,
+     "description": "Summer in Uruguay. The Saldaña family are looking after the house of their well-off neighbors, the Pernas. Having the key to temptation, they decide to abuse their duties and spend the holidays there. What begins as an innocent game quickly escalates to a full-out confrontation between the families after the unexpected disappearance of the Pernas' dog.",
+     "still_image": "https://static-a.eventive.org/1ba9c10dbb64b5107e1d677f70e4e7b2.jpg",
+     "cover_image": "https://static-a.eventive.org/e0e8807cc0fe17cbf49f89a785f1f9e7.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/81abf2e95c9c7634d4163bed8243dca1.jpg?w=300",
+     "runtime": "102"
+    }
+   ]
+  },
+  {
+   "id": "6a91c33e831a2b5ec4fce2c2",
+   "name": "'How to write an award-winning screenplay' with Oscar-winner screenwriter, Gonzalo Maza",
+   "description": "<p><strong>Oscar-winning screenwriter Gonzalo Maza leads How to Write an Award-Winning Screenplay, offering an insight into the craft, creative decisions and storytelling techniques behind internationally acclaimed cinema. Best known for co-writing A Fantastic Woman, which won the Academy Award for Best International Feature Film, Maza brings extensive experience as a screenwriter, director, producer and writing consultant, including work with the Sundance Screenwriting Lab and Oxbelly Screenwriters Program. The session offers writers a rare opportunity to learn directly from an internationally recognised screenwriter and award-winning filmmaker.</strong></p><p><br></p><p>Gonzalo Maza is an award-winning Chilean screenwriter, director and producer. He collaborated with director Sebastián Lelio on the screenplays for four of his films, including “Gloria” (2013) and “A Fantastic Woman” (“Una Mujer Fantástica,” 2017), both of which were selected for the official competition at the Berlin Film Festival.</p><p><br></p><p>“A Fantastic Woman” won the Oscar for Best International Film in 2018 and, as its screenwriter, he was awarded the Silver Bear for Best Screenplay at the Berlin Film Festival and two Platino Awards (Ibero-American Academy Awards) for writing this film and “Gloria”. “Ella es Cristina” (“This is Cristina”, 2020), his first feature as director, was awarded the Jordan Ressler First Feature Award at the 2020 Miami Film Festival.</p><p><br></p><p>As a consultant, he’s been an advisor for the Sundance Screenwriting Lab and the Oxbelly Screenwriters Program, as well as many other similars in Morelia, Sao Paulo and Valdivia.</p><p>Since 2016, Gonzalo and his family are based in London.</p>",
+   "short_description": null,
+   "start_time": "2026-10-04T14:00:00.000Z",
+   "end_time": "2026-10-04T15:30:00.000Z",
+   "venue": "6a91a72070e72267010cb632",
+   "tags": [
+    {
+     "id": "6a91ace2503ec038a82cd2fa",
+     "name": "Workshops"
+    },
+    {
+     "id": "6a91ac66c975af73c380c864",
+     "name": "Guildhall"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1788309787280temp-1788309787247-cover.jpg",
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a8635c8b78e310721e2a485",
+   "name": "Street Wanderers - Los Caminantes de la Calle",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T15:00:00.000Z",
+   "end_time": "2026-10-04T16:30:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82db22a3c2df1b45c765cc",
+     "name": "Street Wanderers - Los Caminantes de la Calle",
+     "short_description": null,
+     "description": "<p>Inspired by true events, Street Wanderers follows a prosecutor and a Chinese police officer investigating a powerful criminal network operating within Mendoza’s Chinese community. Using Cantonese wiretaps, they uncover a world of silence, fear and hidden loyalties.</p>",
+     "still_image": "https://static-a.eventive.org/e69e21eb8b0f1255a796ae9177364ab2.jpg",
+     "cover_image": "https://static-a.eventive.org/e2abd8a6c7b76d39e50ad27211dbd359.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/6c2e1b1d70be1b42d50edb231d612ff3.jpg?w=300",
+     "runtime": "90"
+    }
+   ]
+  },
+  {
+   "id": "6a86436eee2a046a28779fb1",
+   "name": "Beloved Tropic - Querido Trópico + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T15:00:00.000Z",
+   "end_time": "2026-10-04T16:50:00.000Z",
+   "venue": "6a832e0722178a45d7bbede6",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82caa37f7bedbd19d252c3",
+     "name": "Beloved Tropic - Querido Trópico",
+     "short_description": null,
+     "description": "In Panama City, a Colombian immigrant employed as a home health aide, who harbors a secret, develops a touching and unexpected bond with a strong-willed, wealthy businesswoman struggling with encroaching dementia.",
+     "still_image": "https://static-a.eventive.org/85e11a5c547abe10d5651f27b82068a6.jpg",
+     "cover_image": "https://static-a.eventive.org/2f55cf64c7bfe2721d7d8dc1640bb975.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/3beeeed40534cc1f193d193385d36640.jpg?w=300",
+     "runtime": "108"
+    }
+   ]
+  },
+  {
+   "id": "6a863667d71e8ceef21d9fc3",
+   "name": "Life is Dance + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T17:00:00.000Z",
+   "end_time": "2026-10-04T18:30:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d61900a3a5d86c9ea249",
+     "name": "Life is Dance",
+     "short_description": null,
+     "description": "<p>Life is Dance follows six Cubans across three generations, united by their passion for dance. From nostalgic dance halls to small-town competitions and dreams of becoming professional dancers, their stories reflect a changing Cuba filled with music, colour, joy and hope.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787100173989temp-1787100173923-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/9055320ace9301327782e2a56e54829e.jpg?w=300",
+     "runtime": "80"
+    }
+   ]
+  },
+  {
+   "id": "6aa4504003bb2ed0adcc1e0f",
+   "name": "LoLaFF Queer Social",
+   "description": "<p><em>LoLaFF Fiesta y Pachanga series present</em></p><p><br></p><p>A Sunday evening of fierce drag performances, Latin dance workshops, and DJ sets in collaboration with Lady Olé, and Casa de la Torres, two of London's most iconic queer parties for the Spanish-language communities and their allies.</p><p><br></p><p>Join Dramala Tina, Paquita de la Torres, Nicolás Macena, and Alejandro Asencio for one unforgettable afternoon dressed in pure gold and sequins as the October daylight fades fast. Expect drama, pop latino, and the best community in town, complemented by a curated selection of signature cocktails by Mezcal Reina</p><p><br></p><p><em>This is a free entry event. Book your ticket to secure your place.</em></p><p><br></p>",
+   "short_description": null,
+   "start_time": "2026-10-04T17:00:00.000Z",
+   "end_time": "2026-10-04T22:00:00.000Z",
+   "venue": "6aa9b1f74c7b1be4a2cf48b0",
+   "tags": [
+    {
+     "id": "6aa45198bb393a6f9c36f17b",
+     "name": "Socials"
+    },
+    {
+     "id": "6a7b4f3b14e9ab3854c17453",
+     "name": "LGBTQIA+"
+    },
+    {
+     "id": "6abafe6376e0a74f7dd554cc",
+     "name": "Canopy"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1789510512836temp-1789510512804-cover.jpg",
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "Queer Social",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a86447340b67c26e31dd27f",
+   "name": "A Fantastic Woman - Una Mujer Fantástica + Intro with screenwriter Gonzalo Maza",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T18:00:00.000Z",
+   "end_time": "2026-10-04T20:00:00.000Z",
+   "venue": "6a857ab2365982c54a5edbb7",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82ddc12c38b547673b7bdc",
+     "name": "A Fantastic Woman - Una Mujer Fantástica",
+     "short_description": null,
+     "description": "Marina's life is thrown into turmoil following the death of her partner. Mourning the loss of the man she loved, she finds herself under intense scrutiny from those with no regard for her privacy.",
+     "still_image": "https://static-a.eventive.org/54f1531e29fed24ff9cc88fbd684fc26.jpg",
+     "cover_image": "https://static-a.eventive.org/eaa603cb98d7e71b588a2a6764091fad.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/0da6d1620c60f7ad1a1a342c8ca6535c.jpg?w=300",
+     "runtime": "104"
+    }
+   ]
+  },
+  {
+   "id": "6a86376819cd03d85c0b9bd7",
+   "name": "Naira + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-04T19:00:00.000Z",
+   "end_time": "2026-10-04T20:50:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d86c899f453062ab1cbd",
+     "name": "Naira",
+     "short_description": null,
+     "description": "<p>Naira follows nine-year-old Naira, who lives with her mother in a remote Andean village in Peru. As they struggle with poverty and violence, Naira finds refuge in her imagination, poetry and the natural world around her. Inspired by an ancient Andean legend, she begins to dream of a way to change their lives and escape towards a better future.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787094833537temp-1787094833488-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/e0c5c630ca4f66356d969dab0c0f43f4.jpg?w=300",
+     "runtime": "97"
+    }
+   ]
+  },
+  {
+   "id": "6aa457abc2745b566b3956d5",
+   "name": "Short Films: Latin Stories, British Shores",
+   "description": "<p><br></p><p>This slot brings together films by filmmakers based in the UK, foregrounding Latin voices and experiences within the British cultural landscape. Moving between documentary and fiction, the selection offers a space to celebrate, amplify and give visibility to Latin American and Latinx communities in the UK, as well as to the people and initiatives working to create space for these voices.</p>",
+   "short_description": null,
+   "start_time": "2026-10-05T14:00:00.000Z",
+   "end_time": "2026-10-05T15:30:00.000Z",
+   "venue": "6a832e3155686a0c4f30549a",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787431545795temp-1787431545676-cover.jpg",
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission ",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8508b0d71e8ceef20b4c07",
+     "name": "Margarita",
+     "short_description": "An Indigenous Maya mother turns to education to break the cycle of generational trauma.",
+     "description": "<p><br></p><p>Margarita follows a Maya woman in Guatemala as she confronts a painful past marked by early motherhood, loss and separation from her children. As she prepares to reunite with the daughter she gave up years earlier, Margarita reflects on her journey and her determination to build a different future for herself and her family.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787107608005temp-1787107607900-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787103532862temp-1787103532499-poster.jpg",
+     "runtime": "18"
+    },
+    {
+     "id": "6a84d760f1a5476cb0b447e0",
+     "name": "Ñuuyii (Earth)",
+     "short_description": null,
+     "description": "<p>A young man, born and raised in the vastness of the galaxy, lands on an unknown planet. As he surveys the landscape, he recognises fragments from ancient stories. Driven by a quiet urgency, he contacts his ship’s command to retrieve archival recordings of the last humans to abandon earth. Slowly, it dawns on him that he has returned to his ancestral home.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787091162729temp-1787091162681-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787091167047temp-1787091166904-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a8452ad33ff1196b857ff6d",
+     "name": "Beto & Nena",
+     "short_description": null,
+     "description": "<p>Beto &amp; Nena follows a young man caring for his spirited sister Nena after the loss of their mother. When Nena discovers Salay, a traditional Bolivian dance, it becomes a source of hope, resilience and healing for their family as they navigate life in London with their friend Marti.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787097980427temp-1787097980339-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787057070126temp-1787057070017-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a84d6234764fb0e8baaa333",
+     "name": "Origami",
+     "short_description": null,
+     "description": "<p><br></p><p>Sarah, an immigrant fleeing violence and poverty, finds hope in a new relationship after arriving in the UK. But as Serge’s jealousy and gambling addiction take control, her life becomes increasingly isolated. Through the memory of her son Lukas and her origami figures, Sarah finds the strength to reclaim her freedom.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787090777636temp-1787090777582-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787090778874temp-1787090777851-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a84d142b0b0f08ff3f84397",
+     "name": "Out of Hours",
+     "short_description": null,
+     "description": "<p>A British Latino bartender is starting his shift when he receives an unsettling visitor.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787089595769temp-1787089595661-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787089596380temp-1787089595955-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a84cc425b14e5e835bdf9cd",
+     "name": "Farewell - Lejanías",
+     "short_description": null,
+     "description": "<p>In Farewell, a popular Colombian meeting point, Tomás and Sara met. Sights are stronger than words. Together they face a last time.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787096593227temp-1787096593197-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787096593800temp-1787096593409-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a84da611057823356adec4c",
+     "name": "Our Seeds - Nuestras semillas",
+     "short_description": null,
+     "description": "<p>In a region hit hard by climate change, a Maya Quiché farmer resists environmental collapse by preserving native seeds and resurrecting ancestral Mayan farming techniques.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787091833835temp-1787091833759-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787234130865temp-1787234129204-poster.jpg",
+     "runtime": "9"
+    }
+   ]
+  },
+  {
+   "id": "6a85c0dd5c0bdc80e6cdd8cf",
+   "name": "Short Films: Culture in Motion + Filmmaker Intro",
+   "description": "<p><br></p><p>This programme brings together five short films exploring different facets of culture, music and identity. Through diverse stories and forms, the films consider how cultural expression, heritage and personal experience shape our sense of self and belonging. From music and artistic expression to questions of self-acceptance, courage and asserting one’s identity, the selection explores the different ways we navigate and define who we are.</p><p><br></p><p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences</p><p>Further accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities</p><p><br></p><p><strong>NOTES:</strong></p><p>Doors open at 4:30pm</p><p>Programme starts at 4:45pm</p><p>Filmmakers Meet &amp; Greet (10 minutes)</p><p>Festival trailer (1 minute)</p><p><br></p><p>This programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at <a href=\"mailto:operations@londonlatinofilmfestival.org.uk\" target=\"_blank\" style=\"color: rgb(0, 0, 242);\">operations@londonlatinofilmfestival.org.uk</a></p>",
+   "short_description": null,
+   "start_time": "2026-10-05T15:30:00.000Z",
+   "end_time": "2026-10-05T17:10:00.000Z",
+   "venue": "6a83277446486f054c90bf85",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787258847767temp-1787258847665-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Wheelchair Space",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Ticket 2x1",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a85075dc4342f923648961c",
+     "name": "La Cadeja",
+     "short_description": null,
+     "description": "<p>A little girl is chased out of her town by a gang of wolves - it is up to La Cadeja, a cowgirl vigilante to save her. This story is inspired from the Salvadoran folklore of El Cadejo, with a (feminine) twist.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787103395565temp-1787103395513-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787103396569temp-1787103395785-poster.jpg",
+     "runtime": "4"
+    },
+    {
+     "id": "6a84e7e7b870fe528e5c45bf",
+     "name": "Not Knowing Hurts More - Duele más no saber",
+     "short_description": null,
+     "description": "<p>Not Knowing Hurts More explores a teenage girl’s first sexual experience through an intimate and surreal lens, as she navigates the emotions that follow and begins to reclaim her sense of intimacy with love rather than shame.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787095271115temp-1787095271051-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787095271537temp-1787095271330-poster.jpg",
+     "runtime": "18"
+    },
+    {
+     "id": "6a84cb2b66e08b6e6c16715a",
+     "name": "The Music of a Life",
+     "short_description": null,
+     "description": "<p>This short documentary tells the story of María Esperanza, a 93-year-old former Bolero singer who found fame in 1950s Colombia before leaving her career and family for a new life in the United States. Decades later, she returns to the studio for one final recording.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787088182475temp-1787088182365-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787088226422temp-1787088226139-poster.jpg",
+     "runtime": "28:30"
+    },
+    {
+     "id": "6a7ed4cc42f7b7dff3bad801",
+     "name": "Huapango On Fire - Huapango en Llamas",
+     "short_description": null,
+     "description": "<p>A singing dragon with a love for Mexican folk music has a big problem: her high notes cause uncontrollable fiery destruction. With the help of her best friend, she must learn to control her unique talent before she burns down her dreams - and everything else.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787098956111temp-1787098956059-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787098956431temp-1787098956297-poster.jpg",
+     "runtime": "12"
+    }
+   ]
+  },
+  {
+   "id": "6a8654ab4a5bb85a811f51bf",
+   "name": "The Adventures of Cipitio - Las aventuras de Cipitío",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T16:00:00.000Z",
+   "end_time": "2026-10-05T18:00:00.000Z",
+   "venue": "6a85bfe35028a5bbeb374a8e",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "Order Tickets",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a82e3fa6ebda126e35a0246",
+     "name": "The Adventures of Cipitio - Las aventuras de Cipitío",
+     "short_description": null,
+     "description": "<p>Organised by LoLaFF and the Embassy of El Salvador in the United Kingdom, Las Aventuras del Cipitío brings one of El Salvador’s most iconic mythological characters to new generations, highlighting values such as friendship, courage, and respect for nature. Based on traditional Nahuat stories, the series also promotes Náhuat, the country’s last surviving Indigenous language, blending ancestral traditions and mythology with the modern world and technology.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787234814938temp-1787234814902-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787234815196temp-1787234815171-poster.jpg",
+     "runtime": "60"
+    }
+   ]
+  },
+  {
+   "id": "6a8640cab35b8d54bf5e12d1",
+   "name": "Cielo ",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T16:15:00.000Z",
+   "end_time": "2026-10-05T18:15:00.000Z",
+   "venue": "6a85bbd1b551126b01309ac8",
+   "tags": [],
+   "cover": null,
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a82cafda57913db2feb22f3",
+     "name": "Cielo + Filmmaker Intro",
+     "short_description": null,
+     "description": "<p>Santa, an eight-year-old girl from the Bolivian Altiplano, sets out across the desert to fulfil a promise to her mother and take her to heaven. Along the way, she encounters a group of female wrestlers and a policeman who joins her unexpected journey toward salvation.</p>",
+     "still_image": "https://static-a.eventive.org/d25b412447fbfede106f71fa1dcbb74f.jpg",
+     "cover_image": "https://static-a.eventive.org/d7812e377fb81e7b77abbe38d69403cc.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/4035913ae4e08e11ac9fbcef992b92fe.jpg?w=300",
+     "runtime": "108"
+    }
+   ]
+  },
+  {
+   "id": "6a863a8bcca00a9f2b677782",
+   "name": "Short Films: Latin Stories, British Shores + Filmmakers Intro",
+   "description": "<p><br></p><p>This slot brings together films by filmmakers based in the UK, foregrounding Latin voices and experiences within the British cultural landscape. Moving between documentary and fiction, the selection offers a space to celebrate, amplify and give visibility to Latin American and Latinx communities in the UK, as well as to the people and initiatives working to create space for these voices.</p>",
+   "short_description": null,
+   "start_time": "2026-10-05T16:30:00.000Z",
+   "end_time": "2026-10-05T18:00:00.000Z",
+   "venue": "6a832e3155686a0c4f30549a",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787431545795temp-1787431545676-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission ",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a8508b0d71e8ceef20b4c07",
+     "name": "Margarita",
+     "short_description": "An Indigenous Maya mother turns to education to break the cycle of generational trauma.",
+     "description": "<p><br></p><p>Margarita follows a Maya woman in Guatemala as she confronts a painful past marked by early motherhood, loss and separation from her children. As she prepares to reunite with the daughter she gave up years earlier, Margarita reflects on her journey and her determination to build a different future for herself and her family.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787107608005temp-1787107607900-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787103532862temp-1787103532499-poster.jpg",
+     "runtime": "18"
+    },
+    {
+     "id": "6a84d760f1a5476cb0b447e0",
+     "name": "Ñuuyii (Earth)",
+     "short_description": null,
+     "description": "<p>A young man, born and raised in the vastness of the galaxy, lands on an unknown planet. As he surveys the landscape, he recognises fragments from ancient stories. Driven by a quiet urgency, he contacts his ship’s command to retrieve archival recordings of the last humans to abandon earth. Slowly, it dawns on him that he has returned to his ancestral home.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787091162729temp-1787091162681-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787091167047temp-1787091166904-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a8452ad33ff1196b857ff6d",
+     "name": "Beto & Nena",
+     "short_description": null,
+     "description": "<p>Beto &amp; Nena follows a young man caring for his spirited sister Nena after the loss of their mother. When Nena discovers Salay, a traditional Bolivian dance, it becomes a source of hope, resilience and healing for their family as they navigate life in London with their friend Marti.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787097980427temp-1787097980339-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787057070126temp-1787057070017-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a84d6234764fb0e8baaa333",
+     "name": "Origami",
+     "short_description": null,
+     "description": "<p><br></p><p>Sarah, an immigrant fleeing violence and poverty, finds hope in a new relationship after arriving in the UK. But as Serge’s jealousy and gambling addiction take control, her life becomes increasingly isolated. Through the memory of her son Lukas and her origami figures, Sarah finds the strength to reclaim her freedom.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787090777636temp-1787090777582-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787090778874temp-1787090777851-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a84d142b0b0f08ff3f84397",
+     "name": "Out of Hours",
+     "short_description": null,
+     "description": "<p>A British Latino bartender is starting his shift when he receives an unsettling visitor.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787089595769temp-1787089595661-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787089596380temp-1787089595955-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a84cc425b14e5e835bdf9cd",
+     "name": "Farewell - Lejanías",
+     "short_description": null,
+     "description": "<p>In Farewell, a popular Colombian meeting point, Tomás and Sara met. Sights are stronger than words. Together they face a last time.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787096593227temp-1787096593197-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787096593800temp-1787096593409-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a84da611057823356adec4c",
+     "name": "Our Seeds - Nuestras semillas",
+     "short_description": null,
+     "description": "<p>In a region hit hard by climate change, a Maya Quiché farmer resists environmental collapse by preserving native seeds and resurrecting ancestral Mayan farming techniques.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787091833835temp-1787091833759-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787234130865temp-1787234129204-poster.jpg",
+     "runtime": "9"
+    }
+   ]
+  },
+  {
+   "id": "6aa7ce9f9079b0fe30721781",
+   "name": "After Office Social with LoLaFF ",
+   "description": "<p><em>Fiesta y Pachanga series</em> </p><p><strong><em>Connect where the city meets cinema!</em></strong></p><p><br></p><p>Join us after office hours to network with filmmakers, creatives, and fellow professionals in a vibrant atmosphere. Unwind to curated beats by our guest DJ while enjoying exclusive, signature Mezcal Reina cocktails available at exclusive happy hour prices for the duration of the event. Start the week in a creative way, step out of the office and into the festival spotlight!</p><p><br></p><p><strong>Free event</strong> organised in collaboration with Latinos in the City.</p>",
+   "short_description": null,
+   "start_time": "2026-10-05T17:00:00.000Z",
+   "end_time": "2026-10-05T21:00:00.000Z",
+   "venue": "6aa9b290a68e38e8a80a1add",
+   "tags": [
+    {
+     "id": "6aa45198bb393a6f9c36f17b",
+     "name": "Socials"
+    },
+    {
+     "id": "6abafe6376e0a74f7dd554cc",
+     "name": "Canopy"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1789506760341temp-1789506760327-cover.jpg",
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "Festival After Office",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a860cc8179829d2233d8c27",
+   "name": "Short Films: Journeys of Belonging + Filmmaker Intro",
+   "description": "<p><br></p><p>This programme brings together six short films exploring different journeys towards belonging. Through stories of migration, displacement, love, family and the search for home, the films consider what it means to feel connected to a place, a person or a community. Moving between different experiences and perspectives, the selection explores the ways we find, lose and redefine our sense of belonging.</p><p><br></p><p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences are included on 5 of the 6 films in this programme.</p><p>⚠️ The final film, Depeyizé, does not currently have descriptive captions available. However, it will be screened with standard English subtitles.</p><p><br></p><p>Further accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities</p><p><br></p><p><br></p><p><strong>NOTES:</strong></p><p>Pre screening Filmmakers Meet &amp; Greet (10 minutes)</p><p>Pre screening Festival trailer (1 minute)</p><p><br></p><p>This programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk</p>",
+   "short_description": null,
+   "start_time": "2026-10-05T17:30:00.000Z",
+   "end_time": "2026-10-05T19:10:00.000Z",
+   "venue": "6a83277446486f054c90bf85",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787431344073temp-1787431343964-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Wheelchair Space",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Ticket 2X1",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a7ed5a27d32d48a9abe29d4",
+     "name": "Ana and the Distance - Ana y la Distancia",
+     "short_description": null,
+     "description": "<p>Ana y la Distancia follows a Cuban mother living in exile in Miami as she anxiously awaits her son, who has left Cuba in the hope of crossing borders and reuniting with her in the United States.</p>",
+     "still_image": "https://static-a.eventive.org/ae3063515a5aa6067b360d1180e83857.jpg",
+     "cover_image": "https://static-a.eventive.org/46ac15ef5cb22599f48a4d48ceb81b37.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/43bf9a692195d33aed359f519ecd7562.jpg?w=300",
+     "runtime": "10"
+    },
+    {
+     "id": "6a7ed5d78e4c26abba70441c",
+     "name": "Bea",
+     "short_description": null,
+     "description": "As an immigrant from Venezuela, a young woman named Bea learns to deal with the lingering effects of the world she left behind while discovering hopes for a new life in Paris.",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787099014113temp-1787099014063-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/e371e597acec0b99e0c33363dafff6ef.jpg?w=300",
+     "runtime": "13"
+    },
+    {
+     "id": "6a8501c9c672d78ed39f2110",
+     "name": "Here and There, in the Wind - Aqui y Allá, en el Viento",
+     "short_description": null,
+     "description": "Fabi, a housekeeper in Wisconsin, moves through her days balancing chores and a search for normalcy during a lonely, wintry holiday far from her home in Puerto Rico.",
+     "still_image": "https://static-a.eventive.org/f33c28272fa65e8b14c77d64970c4402.jpg",
+     "cover_image": "https://static-a.eventive.org/b241cf66c792e9b04fb5f7214becfb24.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/e2246c15bd7528f3facf456039e686e9.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a7ed600ed33b7e1bd0ad3e3",
+     "name": "Fried Fish and Plantain",
+     "short_description": null,
+     "description": "Two years from their first night together, Willie and Marisol have their “first date.” As they navigate a “post-pandemic” Toronto, they sift through who and what they’ve become amidst the circumstances, grief, and secrets that have kept them apart. Together, they discover if there can be love after loss.",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787096791217temp-1787096791172-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/e7d90d9b62472f298ea19408f80d7e7b.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a7ed63c8e4c26abba705332",
+     "name": "Maybe the Wind Knows your Name - Talvez o Vento Saiba seu Nome",
+     "short_description": null,
+     "description": "<p>Manuela, 36, is in her first months of pregnancy when she discovers that her biological mother was a missing person from the Chilean dictatorship. Like so many children, she was taken from her parents and adopted in a foreign country. Thinking about the future and her soon-to-be-born daughter, she goes on a journey to (re)encounter this past, searching for answers which she may not find.</p>",
+     "still_image": "https://static-a.eventive.org/ddf3fa64bb398a12ad811788714c6634.jpg",
+     "cover_image": "https://static-a.eventive.org/15b93c2e8a17ffb52872b226bb811f8b.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/fda3edf888cfd1ddfba18859f7caccbe.jpg?w=300",
+     "runtime": "14"
+    },
+    {
+     "id": "6a7ed65b73d0e8c76bae955e",
+     "name": "Depeyizé",
+     "short_description": null,
+     "description": "<p><br></p><p>Mikael, a Haitian immigrant living with his mother in Boca Chica, spends his days playing basketball with Yeison and other young people from the neighbourhood. But one day, he returns from practice to discover that his mother has disappeared. Yeison takes Mikael into his home, but his arrival creates tensions within the family.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787086086365temp-1787086086250-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787097825962temp-1787097824118-poster.jpg",
+     "runtime": "24"
+    }
+   ]
+  },
+  {
+   "id": "6a865261d32036e49714186d",
+   "name": "I'd Do It All Over Again - Una y mil veces ",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T17:30:00.000Z",
+   "end_time": "2026-10-05T18:45:00.000Z",
+   "venue": "6a85bc12c55980873e7d911a",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d3adabfc1d1ad1f1894e",
+     "name": "I'd Do It All Over Again - Una y mil veces",
+     "short_description": null,
+     "description": "After more than four decades in which fifty Uruguayans voluntarily fought alongside the Nicaraguan people in the 1979 revolution, several of the protagonists must overcome their fear of stirring up memories that left an indelible mark.",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787099287143temp-1787099286943-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/f27cf4dff98044b65ccbffe04bd8c696.jpg?w=300",
+     "runtime": "70"
+    }
+   ]
+  },
+  {
+   "id": "6a8648461436fd4cc073af54",
+   "name": "Martina's Search - A procura de Martina + Filmmaker Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T17:45:00.000Z",
+   "end_time": "2026-10-05T19:45:00.000Z",
+   "venue": "6a832f964c580e6ddc773db0",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d69ea4a1e83d5b4680c4",
+     "name": "Martina's Search - A procura de Martina",
+     "short_description": null,
+     "description": "<p>Martina’s Search follows an Argentine widow who has spent more than three decades searching for her grandson, one of the children who disappeared during Argentina’s military dictatorship. After being diagnosed with Alzheimer’s, she discovers he may be in Brazil and sets out to find him, holding onto her fading memories as time begins to slip away.</p>",
+     "still_image": "https://static-a.eventive.org/aee729eddcead2b4f7fad0e106173ce8.jpg",
+     "cover_image": "https://static-a.eventive.org/b371bebb30ebc2c7b6a300386c15ffbb.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/3484b42959646661c8390c4535acf9ec.jpg?w=300",
+     "runtime": "90"
+    }
+   ]
+  },
+  {
+   "id": "6a8647b56d297b789702d6bb",
+   "name": "Yuli: The Carlos Acosta Story + Q&A with Carlos Acosta",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T18:00:00.000Z",
+   "end_time": "2026-10-05T20:15:00.000Z",
+   "venue": "6a857ab2365982c54a5edbb7",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82dd34089b66d6388ff37f",
+     "name": "Yuli: The Carlos Acosta Story",
+     "short_description": null,
+     "description": "<p>Yuli tells the story of Carlos Acosta’s journey from the streets of Havana to the world’s most prestigious ballet stages. Pushed into dance by his strict and demanding father, Carlos initially resists, but gradually discovers his talent and begins a remarkable career that would make him one of the world’s leading ballet dancers.</p>",
+     "still_image": "https://static-a.eventive.org/bca69c35056f635e8f3a03ab6babc97e.jpg",
+     "cover_image": "https://static-a.eventive.org/5aa2ba07cadc69bbaf304bfa34eb4fb4.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/f2989c1caca920ca1f86ab72314c3816.jpg?w=300",
+     "runtime": "115"
+    }
+   ]
+  },
+  {
+   "id": "6a865266365982c54a6ef26a",
+   "name": "Short Films: Portraits of Identity + Filmmaker Intro",
+   "description": "<p><br></p><p>This programme brings together seven short films exploring identity in its many forms. Through stories of gender, sexuality, relationships, transformation and personal experience, the films examine how we understand ourselves and how we are seen by others. Moving between fiction, animation and documentary, the selection offers intimate and sometimes playful portraits of the different ways identity can be expressed, questioned and shaped.</p><p><br></p><p><strong>ACCESSIBILITY INFORMATION:</strong></p><p><br></p><p>English Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences</p><p><br></p><p>Further accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities</p><p><br></p><p><strong>NOTES:</strong></p><p>Pre screening Filmmakers Meet &amp; Greet (10 minutes)</p><p>Pre screening Festival trailer (1 minute)</p><p><br></p><p>This programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at <a href=\"mailto:operations@londonlatinofilmfestival.org.uk\" target=\"_blank\" style=\"color: rgb(0, 0, 242);\">operations@londonlatinofilmfestival.org.uk</a></p>",
+   "short_description": null,
+   "start_time": "2026-10-05T19:30:00.000Z",
+   "end_time": "2026-10-05T21:10:00.000Z",
+   "venue": "6a83277446486f054c90bf85",
+   "tags": [],
+   "cover": "https://static-a.eventive.org/1787428608596temp-1787428608495-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Wheelchair Space",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Student Ticket 2x1",
+     "price": 500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a850de0dfb9ec8df305e33b",
+     "name": "Devpleoment - Creciiemnto",
+     "short_description": null,
+     "description": "<p>Through experimental stop motion and portraits from the author’s childhood, adolescence, and adulthood, “devpleoment” explores how discovering one's individuality isn’t a comfortable linear process, but one of fractures, confusion, and the acceptance of the immature and vulnerable parts of the self.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787104835249temp-1787104835138-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787104835812temp-1787104835487-poster.jpg",
+     "runtime": "2"
+    },
+    {
+     "id": "6a84fe085028a5bbeb30085e",
+     "name": "For What We Have Left - Asilo San Gabriel",
+     "short_description": null,
+     "description": "<p>Lidia spends her days in the nursing home stealing from the other residents. Everything changes when she meets a new american resident.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787101196930temp-1787101196889-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787101094678temp-1787101094110-poster.jpg",
+     "runtime": "20"
+    },
+    {
+     "id": "6a84d2450518f8a6e745ba3a",
+     "name": "Final Act - Ato Final",
+     "short_description": null,
+     "description": "<p>After witnessing the death of a famous actress, Mateus Santos, a journalism intern, has the unique chance to investigate the case alongside his idol, the renowned journalist Miriam Matos. Together, they interrogate three suspects in pursuit of the truth behind the killer’s motive.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787089982481temp-1787089982301-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787098954086temp-1787098953587-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a7ed67a0e89c826b7c6942b",
+     "name": "I Constantly Thank God for Esteban",
+     "short_description": null,
+     "description": "Home alone on the eve of her First Communion, 12-year-old Carmen receives an unexpected visit from a trio of neighborhood roller girls and scooter boys. While at her home, the kids make Carmen painfully aware of her religious upbringing, ultimately stealing her First Communion dress, culminating in a final showdown at their local roller rink.",
+     "still_image": "https://static-a.eventive.org/389fa322809b97c87d577da22128aa2e.jpg",
+     "cover_image": "https://static-a.eventive.org/ddeb8b8a446674c91dcb281fe91033f9.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/594ea3dabf6fcbe6e8566dd28d18ea6d.jpg?w=300",
+     "runtime": "12"
+    },
+    {
+     "id": "6a7ed713abfbc36e0a9f171e",
+     "name": "Merlyn's Beard!",
+     "short_description": null,
+     "description": "<p>Merlyn, a transgender wizard, dreams of growing a beard to fit in with his idols. With the help of his Maine Coon companion, Merp, he tries increasingly creative ways to make one, until Merp helps him realise that he is perfect just as he is.</p>",
+     "still_image": "https://static-a.eventive.org/e9981e32505db5897798eb23432b8d7f.jpg",
+     "cover_image": "https://static-a.eventive.org/7d9c63e93d06f981980656da1954392a.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/c4d8c799e5ecb6ed9979056a39d505b5.jpg?w=300",
+     "runtime": "3"
+    },
+    {
+     "id": "6a84c9568ceece3fc80e6f0e",
+     "name": "Tratto",
+     "short_description": null,
+     "description": "<p>When a young man begins working for the Tratto family, an unexpected attraction emerges, opening the door to questions of identity, desire and belonging.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787087655192temp-1787087655030-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1787087595266temp-1787087595253-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a833c6abf795e5581a2162d",
+     "name": "Blue Heart - Coeur Bleu",
+     "short_description": null,
+     "description": "<p>Marianne and Pétion live in Haiti and wait impatiently for a call from their son in the USA. As silence sets in, their fears and worries grow, revealing the fractures in their own lives. The promise of the American dream now seems to elude them, as the line between hope and reality becomes increasingly blurred.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1786986333163temp-1786986333062-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786986336594temp-1786986334137-poster.jpg",
+     "runtime": "15"
+    }
+   ]
+  },
+  {
+   "id": "6a8654a6ac913a9df71c2991",
+   "name": "The Dance of the Kokorrdit - El viaje del Kokorrdit + Filmmakers Intro",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-05T19:30:00.000Z",
+   "end_time": "2026-10-05T21:15:00.000Z",
+   "venue": "6a85bc12c55980873e7d911a",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82df0ae5fa60e42494dc44",
+     "name": "The Dance of the Kokorrdit - El viaje del Kokorrdit",
+     "short_description": null,
+     "description": "<p>The Dance of the Kokorrdit follows Ayned, a young Wounaan woman disconnected from her roots, who travels with her uncle Areo into the Darién in search of the sacred Kokorrdit bird. Their journey through the jungle becomes a path back to her culture, traditions and identity.</p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1787101207295temp-1787101207237-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786962142642temp-1786962142563-poster.jpg",
+     "runtime": "72"
+    }
+   ]
+  },
+  {
+   "id": "6a863984d575bf859135866c",
+   "name": "A Bright Future - Un futuro brillante",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-06T11:00:00.000Z",
+   "end_time": "2026-10-06T12:40:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82c8793af184d657457c44",
+     "name": "A Bright Future - Un Futuro Brillante",
+     "short_description": null,
+     "description": "<p>Eighteen-year-old Elisa is chosen to go North, a promised land where the most promising young people are sent. But as her departure approaches and strange things begin to surface, Elisa starts to question whether this is the bright future everyone has imagined for her.</p>",
+     "still_image": "https://static-a.eventive.org/6f4e289a9b746c3b1193f62956a51786.jpg",
+     "cover_image": "https://static-a.eventive.org/6f6e70bcd2b7d6a04c0544d01b6e64de.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/720f818a10009c6ab2d8200030787d76.jpg?w=300",
+     "runtime": "98"
+    }
+   ]
+  },
+  {
+   "id": "6a863a10e0b25a9101269015",
+   "name": "Letters to My Dead Parents - Cartas a mis padres muertos",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-06T13:00:00.000Z",
+   "end_time": "2026-10-06T14:50:00.000Z",
+   "venue": "6a85bdb494a2e07e9fae2552",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d51ea0582eb5e1e5ca56",
+     "name": "Letters to My Dead Parents - Cartas a mis padres muertos",
+     "short_description": null,
+     "description": "What do you tell your dead parents? Combining family archives and glimpses of today, the filmmaker weaves together fifty years of his life and the socio-political history of Chile. The montage wanders through the ages, between light and shadow, without ever leaving the joy.",
+     "still_image": "https://static-a.eventive.org/64160c59ed8233bf0e060ba408d78289.jpg",
+     "cover_image": "https://static-a.eventive.org/39bf8c7af5b5fd2aadce5124ea44918b.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/d8babc03749776477c132666287d1bf6.jpg?w=300",
+     "runtime": "106"
+    }
+   ]
+  },
+  {
+   "id": "6a8655c70b749cf288567749",
+   "name": "Baracoa",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-06T14:00:00.000Z",
+   "end_time": "2026-10-06T17:30:00.000Z",
+   "venue": "6a85bc12c55980873e7d911a",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82ca0f7f7bedbd19d2363f",
+     "name": "Baracoa",
+     "short_description": null,
+     "description": "<p>After the death of his father Felipe, Pepe discovers that his father has left part of the family estate to Jimmi, his doctor and a secret drag performer. Forced to travel together across Cuba, Pepe and Jimmi embark on an unexpected journey of reckoning, understanding and redemption.</p>",
+     "still_image": "https://static-a.eventive.org/c86d2cba409f288c46b6bb34b0290ce8.jpg",
+     "cover_image": "https://static-a.eventive.org/ed62770ebc99a5fb31c5d330015cbb0b.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/d69ca2c575bd1c6d1737a25f34f7a9c8.jpg?w=300",
+     "runtime": "107"
+    }
+   ]
+  },
+  {
+   "id": "6a863896c56cd84033f3c544",
+   "name": "Memories of Underdevelopment - Memorias del subdesarrollo",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-06T15:00:00.000Z",
+   "end_time": "2026-10-06T16:40:00.000Z",
+   "venue": "6a8327a4e51ce446865c8c4c",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [],
+   "films": [
+    {
+     "id": "6a82d7b48933f752fa3d73c2",
+     "name": "Memories of Underdevelopment - Memorias del subdesarrollo",
+     "short_description": null,
+     "description": "<p>Sergio chooses to remain in Cuba while his wife and family leave for Miami. Alone in Havana, he observes the changes taking place around him while pursuing relationships with young women. When he meets Elena, he begins to see in her an image of the wife he has lost, forcing him to confront his own loneliness and contradictions.</p>",
+     "still_image": "https://static-a.eventive.org/10c5901021e136ae368fca32594a8d61.jpg",
+     "cover_image": "https://static-a.eventive.org/226c8db9cf95f74b8ff728fbb0870377.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/f8aa5318844b10872d47f0df4a9b3af6.jpg?w=300",
+     "runtime": "99"
+    }
+   ]
+  },
+  {
+   "id": "6a86494526fb7d3acae52017",
+   "name": "Closing Night: Awards Ceremony & Celebration + Screening of Sugar Island",
+   "description": "<p><strong>Closing Night of the London Latino Film Festival</strong></p><p><br></p><p><strong>Schedule for the evening:</strong></p><p><br></p><p>17:45 — Doors open</p><p>18:00 — Award ceremony &amp; speeches</p><p>18:30 — Screening of <em>Sugar Island</em></p><p>20:00 — Closing Celebration with with food, drink, and music</p><p><br></p><p><strong>About Sugar Island</strong></p><p>Makenya leaves behind fun and dancing with her friends in search for work; an unwanted pregnancy confronts her with sudden adulthood. The teenager lives alongside her grandfather and Mother in the Batey, a Dominican-Haitian community of sugarcane workers.</p><p><br></p><p><strong>Celebration</strong></p><p>After the film and Award Ceremony, stay with us for the Closing Celebration from 20:00 to 22:30, featuring a free bar kindly sponsored by Mezcal Reina and Cazcabel Tequila, with delicious wines from Uruguay and Elemental wines. Thank you also to Tajín, Amazon Grocery - Latinos at Amazon UK, Mexclub and Tacos MX for their catering support.</p><p><br></p><p><strong>Note:</strong></p><p>The screening starts promptly at 18:00. For the comfort of all guests, there will be no access to the cinema room once it begins.</p>",
+   "short_description": null,
+   "start_time": "2026-10-06T17:00:00.000Z",
+   "end_time": "2026-10-06T23:00:00.000Z",
+   "venue": "6a832f964c580e6ddc773db0",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2500,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Concession",
+     "price": 2300,
+     "public": true,
+     "is_active": true
+    },
+    {
+     "name": "Wheelchair ticket ",
+     "price": 2500,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a82db99baeefde4d020d72c",
+     "name": "Sugar Island",
+     "short_description": null,
+     "description": "An unwanted pregnancy triggers the journey into adulthood for Makenya, a Dominican-Haitian teenager  who lives in the Batey, a community surrounded by sugarcane fields.",
+     "still_image": "https://static-a.eventive.org/be09584f28cc77191b289ccc1164263e.jpg",
+     "cover_image": "https://static-a.eventive.org/80ad8383533b46c1c81704823e13dc38.jpg?fit=crop&w=960&h=380",
+     "poster_image": "https://static-a.eventive.org/7aaa63dd8d4416504e9e07a4e859a29e.jpg?w=300",
+     "runtime": "91"
+    }
+   ]
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a7b525cecc8cceba8137b6d",
+   "name": "Barbican Centre - Cinema 1",
+   "short_name": "Barbican 1",
+   "address": "Level -2 Silk St, London EC2Y 8DS",
+   "addressLine": "Level -2 Silk St, London EC2Y 8DS",
+   "default_capacity": 280
+  },
+  {
+   "id": "6a83277446486f054c90bf85",
+   "name": "Barbican Centre - Cinema 3",
+   "short_name": "Barbican 3",
+   "address": "Beech St, Barbican, London EC1Y 8AA",
+   "addressLine": "Beech St, Barbican, London EC1Y 8AA",
+   "default_capacity": 153
+  },
+  {
+   "id": "6a8327a4e51ce446865c8c4c",
+   "name": "ICA | Institute of Contemporary Arts - Cinema 1",
+   "short_name": "ICA 1",
+   "address": "The Mall, London SW1Y 5AH",
+   "addressLine": "The Mall, London SW1Y 5AH",
+   "default_capacity": 186
+  },
+  {
+   "id": "6a832e0722178a45d7bbede6",
+   "name": "The Garden Cinema - Cinema 1",
+   "short_name": "Garden 1",
+   "address": "39-41 Parker St, London WC2B 5PQ",
+   "addressLine": "39-41 Parker St, London WC2B 5PQ",
+   "default_capacity": 70
+  },
+  {
+   "id": "6a832e3155686a0c4f30549a",
+   "name": "BFI Stephen Street - Screen 1",
+   "short_name": "BFI Stephen St 1",
+   "address": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "addressLine": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "default_capacity": 30
+  },
+  {
+   "id": "6a832f964c580e6ddc773db0",
+   "name": "Ciné Lumière - Screen 1",
+   "short_name": "Lumière 1",
+   "address": "17 Queensberry Place London SW7 2DT",
+   "addressLine": "17 Queensberry Place London SW7 2DT",
+   "default_capacity": 227
+  },
+  {
+   "id": "6a857ab2365982c54a5edbb7",
+   "name": "Regent Street Cinema",
+   "short_name": "Regent Street",
+   "address": "307 Regent St., London W1B 2HW",
+   "addressLine": "307 Regent St., London W1B 2HW",
+   "default_capacity": 185
+  },
+  {
+   "id": "6a85bbd1b551126b01309ac8",
+   "name": "BFI Stephen Street - Screen 2",
+   "short_name": "BFI Stephen St 2",
+   "address": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "addressLine": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "default_capacity": 30
+  },
+  {
+   "id": "6a85bc12c55980873e7d911a",
+   "name": "Ciné Lumière - Screen 2",
+   "short_name": "Lumière 2",
+   "address": "17 Queensberry Place London SW7 2DT",
+   "addressLine": "17 Queensberry Place London SW7 2DT",
+   "default_capacity": 34
+  },
+  {
+   "id": "6a85bdb494a2e07e9fae2552",
+   "name": "ICA | Institute of Contemporary Arts - Cinema 2",
+   "short_name": "ICA 2",
+   "address": "The Mall, London SW1Y 5AH",
+   "addressLine": "The Mall, London SW1Y 5AH",
+   "default_capacity": 45
+  },
+  {
+   "id": "6a85be5eb78e310721d704c3",
+   "name": "Portsoken Community Centre",
+   "short_name": "Portsoken",
+   "address": "20 Little Somerset St, London E1 8AH",
+   "addressLine": "20 Little Somerset St, London E1 8AH",
+   "default_capacity": 40
+  },
+  {
+   "id": "6a85bfe35028a5bbeb374a8e",
+   "name": "Instituto Cervantes - Sala Luis Cernuda",
+   "short_name": "Cervantes ",
+   "address": "15-19 Devereux Ct, Temple, London WC2R 3JJ",
+   "addressLine": "15-19 Devereux Ct, Temple, London WC2R 3JJ",
+   "default_capacity": 70
+  },
+  {
+   "id": "6a91a72070e72267010cb632",
+   "name": "Guildhall - Rehearsal Room 3",
+   "short_name": "Guildhall 3",
+   "address": "Milton Court Building, 1 Milton Street, London, EC2Y 9BH",
+   "addressLine": "Milton Court Building, 1 Milton Street, London, EC2Y 9BH",
+   "default_capacity": 60
+  },
+  {
+   "id": "6aa9b1f74c7b1be4a2cf48b0",
+   "name": "Penny Squares at Canopy by Hilton London City",
+   "short_name": "Penny Squares",
+   "address": "11-15 Minories, London EC3N 1AX",
+   "addressLine": "11-15 Minories, London EC3N 1AX",
+   "default_capacity": null
+  },
+  {
+   "id": "6aa9b290a68e38e8a80a1add",
+   "name": "St Clare Coffee and Bar at Canopy by Hilton London City",
+   "short_name": "St Clare",
+   "address": "11-15 Minories, London EC3N 1AX",
+   "addressLine": "11-15 Minories, London EC3N 1AX",
+   "default_capacity": null
+  }
+ ],
+ "outOfEdition": []
+}

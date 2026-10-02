@@ -1,0 +1,19 @@
+{
+ "about": "Hand-curated venue research for Scala Days, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "kulturbrauerei": {
+   "name": "Kulturbrauerei",
+   "address": {
+    "value": "Schönhauser Allee 36, 10435 Berlin",
+    "source": "https://www.openstreetmap.org/way/32294784"
+   },
+   "coordinates": {
+    "lat": 52.5392374,
+    "lng": 13.4135728,
+    "basis": "OpenStreetMap's Kesselhaus Kulturbrauerei (way 609984881)"
+   },
+   "notes": "A former brewery, now an event complex in Prenzlauer Berg. Scala Days takes place mainly in its connected Palais, Maschinenhaus and Kesselhaus (scaladays.org); the labs are in its Frannz Salon."
+  }
+ }
+}
