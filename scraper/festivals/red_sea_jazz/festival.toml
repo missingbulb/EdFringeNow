@@ -18,6 +18,7 @@ kind = "music"
 subtypes = ["music-jazz"]
 default_genre = "music"
 site = "https://redseajazz.co.il/"
+wikidata = "Q2754036"
 
 # Each ticketed show links its own Ticketmaster page; festival passes are sold
 # there too. A few late sets and the nightly jam are free.
