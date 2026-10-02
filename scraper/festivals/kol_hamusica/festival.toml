@@ -1,0 +1,60 @@
+# Kol HaMusica, the Voice of Music in the Upper Galilee chamber music festival:
+# its identity, its editions, and the sources an edition's information block is
+# assembled from. Every key follows the contract in scraper/festivals/README.md.
+
+id = "kol-hamusica"
+name = "Voice of Music in the Upper Galilee (Kol HaMusica)"
+name_local = "פסטיבל קול המוסיקה בגליל העליון"
+city = "Kfar Blum"
+country = "IL"
+# Kfar Blum (en.wikipedia.org/wiki/Kfar_Blum), the kibbutz whose Pastoral hotel,
+# Klor Centre and Beit HaAm hold most of the programme, for the festival
+# timeline and the travel maths between cities.
+lat = 33.1725
+lng = 35.6097
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "music"
+subtypes = ["music-classical", "music-chamber"]
+default_genre = "music"
+site = "https://www.kol-hamusica.org.il/"
+
+# Every performance is sold on its own through the regional council's Smarticket
+# box office, at the price its own page prints.
+[ticketing]
+model = "central-box-office"
+url = "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+notes = "Tickets for each performance through the Upper Galilee Regional Council culture department's Smarticket box office (phone 04-6816640), one price per performance; festival information from the Pastoral hotel (04-6836611)."
+currency = "ILS"
+source = "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the box office's festival page numbers no edition.
+first = "2026-10-28"
+last = "2026-11-01"
+
+[[source]]
+id = "smarticket"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/smarticket/fetch.py"
+adapter = "kol_hamusica/smarticket.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "smarticket"]
+events = ["smarticket"]
+performances = ["smarticket"]

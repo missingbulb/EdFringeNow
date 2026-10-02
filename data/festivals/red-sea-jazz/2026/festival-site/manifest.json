@@ -1,0 +1,15 @@
+{
+ "festival": "red-sea-jazz",
+ "edition": "2026",
+ "source": "festival-site",
+ "fetchedAt": "2026-10-02T18:15:15Z",
+ "fetcher": "scraper/festivals/red_sea_jazz/sources/festival-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://redseajazz.co.il/lineup/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One record per show card of the lineup's day blocks, in the page's own words; stages untranslated."
+}

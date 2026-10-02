@@ -1,0 +1,59 @@
+# TLVFest, the Tel Aviv International LGBTQ+ Film Festival: its identity, its
+# editions, and the sources an edition's information block is assembled from.
+# Every key follows the contract in scraper/festivals/README.md.
+
+id = "tlvfest"
+name = "TLVFest, Tel Aviv International LGBTQ+ Film Festival"
+name_local = "פסטיבל קולנוע גאה"
+city = "Tel Aviv"
+country = "IL"
+# The Tel Aviv Cinematheque, where every screening plays (en.wikipedia.org's
+# coordinates for it), for the festival timeline and the travel maths.
+lat = 32.0708
+lng = 34.7833
+timezone = "Asia/Jerusalem"
+# The programme is the Cinematheque's Hebrew programme page; tlvfest.com
+# carries no 2026 programme.
+lang = "he"
+dir = "rtl"
+kind = "film"
+subtypes = ["film-lgbtq"]
+default_genre = "film"
+site = "https://www.cinema.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C-%D7%92%D7%90%D7%94/"
+
+# Every screening is sold on its own through the Cinematheque's box office,
+# each card linking its own order page; no price is printed on the programme.
+[ticketing]
+model = "central-box-office"
+url = "https://www.cinema.co.il/"
+notes = "Tickets for each screening through the Tel Aviv Cinematheque's box office (each screening's own order page; phone *6876). The programme prints no prices."
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: neither the programme nor the festival's page numbers the edition.
+first = "2026-10-22"
+last = "2026-10-31"
+
+[[source]]
+id = "cinematheque"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/cinematheque/fetch.py"
+adapter = "platforms/cinematheque.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "cinematheque"]
+events = ["cinematheque"]
+performances = ["cinematheque"]

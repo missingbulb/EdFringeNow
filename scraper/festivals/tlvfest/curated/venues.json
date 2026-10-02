@@ -1,0 +1,22 @@
+{
+ "about": "Hand-curated venue research for TLVFest, keyed by the code the shared Cinematheque adapter gives the Tel Aviv Cinematheque. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "tel-aviv-cinematheque": {
+   "name": "סינמטק תל אביב",
+   "address": {"value": "רחוב הארבעה 5, תל אביב", "source": "https://www.cinema.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/"},
+   "coordinates": {"lat": 32.070833, "lng": 34.783333, "basis": "approximate: the article's coordinates, given to the nearest second of arc", "source": "https://en.wikipedia.org/wiki/Tel_Aviv_Cinematheque"},
+   "capacity": null,
+   "layout": {"value": "cinema", "source": "https://en.wikipedia.org/wiki/Tel_Aviv_Cinematheque"},
+   "rooms": [
+    {"id": "hall-1", "name": "אולם 1", "capacity": null, "layout": null},
+    {"id": "hall-2", "name": "אולם 2", "capacity": null, "layout": null},
+    {"id": "hall-3", "name": "אולם 3", "capacity": null, "layout": null},
+    {"id": "hall-4", "name": "אולם 4", "capacity": null, "layout": null},
+    {"id": "hall-5", "name": "אולם 5", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "Every screening's card names its hall, numbered 1 to 5; no seat count per hall is published on the programme."
+  }
+ }
+}
