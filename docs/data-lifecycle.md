@@ -11,7 +11,7 @@ plainly where it is not built yet.
 | 2 | **Festival tools** | For one festival's edition, which sites and APIs give us its data, and how? | once per edition, mostly reused year to year | `scraper/festivals/<dir>/festival.toml` and its `sources/` ([contract](../scraper/festivals/README.md)) | built per festival; per-edition tool sets not yet |
 | 3 | **Festival update** | What is the programme now? | periodic until the programme settles; repaired when a tool breaks | `scraper/festivals/collect.py`, `scraper/convert/to_serving.py` | built, run by hand |
 | 4 | **Events rapid refresh** | What is still on sale, and what changed? | frequent, during the festival and the weeks before it | Edinburgh Fringe only: the `refresh-tickets`, `refresh-shows` and `fetch-prices` tasks | Edinburgh only |
-| C | **City cycle** | What else can a visitor do there: stay, eat, see, go on a trip? | slow; a city changes by the season | `scraper/cities/` | sights only |
+| C | **City cycle** | What else can a visitor do there: stay, eat, see, go on a trip? | slow; a city changes by the season | `scraper/cities/` | built (stay, eat, see, day trips), run by hand |
 
 ## 1. Festival finder
 
@@ -54,6 +54,17 @@ prices). For every other festival, availability is what the last stage 3 run saw
 ## C. The city cycle
 
 For each city that hosts a festival: where to stay, where to eat, what to see, which
-excursions to take. Sights are built (`scraper/cities/`: OpenStreetMap and Wikidata, curated
-opening hours). Hotels, restaurants and excursions are researched but not built: the product
-wiki holds which listings and booking partners could supply them.
+excursions to take. All four are built (`scraper/cities/`, whose README is the contract) for
+every city the festival registry places a festival in, and run by hand:
+
+- **stay** and **eat**: hotels, guest houses, hostels, motels and restaurants from
+  OpenStreetMap (ODbL), a short list of each ranked by how many of the city's festival venues
+  are a walk away;
+- **see**: museums, galleries, gardens, markets, viewpoints and landmarks from OpenStreetMap,
+  ranked by Wikidata (CC0), with curated opening hours where OpenStreetMap has none;
+- **day trips**: the destinations of the city's Wikivoyage guide (CC BY-SA), nearest first.
+
+The festival planner shows them under its calendar for the trip's city, and credits the sources
+in its footer. Not built: booking or availability for any of them (the product wiki holds which
+booking partners could supply it), day trips from a guide whose "Go next" is prose rather than a
+list, and a refresh cadence: a city's lists are as fresh as their last hand run.

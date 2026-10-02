@@ -1,0 +1,52 @@
+{
+ "places": [
+  {
+   "id": "node/2951382063",
+   "lat": 56.058115,
+   "lng": -2.721251,
+   "tags": {
+    "name": "Why Not?",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/3018836406",
+   "lat": 56.057424,
+   "lng": -2.707058,
+   "tags": {
+    "name": "Castle Hill",
+    "tourism": "viewpoint",
+    "wikidata": "Q65117501",
+    "wikipedia": "en:North Berwick Castle"
+   }
+  },
+  {
+   "id": "node/4308887315",
+   "lat": 56.058474,
+   "lng": -2.714575,
+   "tags": {
+    "name": "Coastal Communities Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 11:00-22:00",
+    "website": "https://www.coastalmuseum.org/",
+    "wikidata": "Q113370279",
+    "addr:street": "School Road",
+    "addr:postcode": "EH39 4JU"
+   }
+  },
+  {
+   "id": "way/73550202",
+   "lat": 56.061317,
+   "lng": -2.717357,
+   "tags": {
+    "name": "Scottish Seabird Centre",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "wikidata": "Q3476360",
+    "wikipedia": "en:Scottish Seabird Centre",
+    "fee": "no"
+   }
+  }
+ ]
+}

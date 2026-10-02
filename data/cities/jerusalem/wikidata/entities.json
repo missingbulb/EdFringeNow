@@ -1,0 +1,961 @@
+{
+ "entities": {
+  "Q109803747": {
+   "sitelinks": 5,
+   "description": "natural history museum in Bethlehem",
+   "image": null,
+   "instanceOf": [
+    "Q1970365"
+   ]
+  },
+  "Q1177765": {
+   "sitelinks": 33,
+   "description": "ancient citadel in Walls of Jerusalem, and the Jerusalem Museum",
+   "image": "מגדל -דוד.jpg",
+   "instanceOf": [
+    "Q33506",
+    "Q88291"
+   ]
+  },
+  "Q1188026": {
+   "sitelinks": 3,
+   "description": "architectural structure",
+   "image": "Children's Memorial, Yad Vashem, Jerusalem.jpg",
+   "instanceOf": [
+    "Q321053"
+   ]
+  },
+  "Q12034819": {
+   "sitelinks": 3,
+   "description": "reservoir in Israel",
+   "image": "PikiWiki Israel 8048 Geography of Israel.JPG",
+   "instanceOf": [
+    "Q131681"
+   ]
+  },
+  "Q12036868": {
+   "sitelinks": 2,
+   "description": "mountain in Israel",
+   "image": null,
+   "instanceOf": [
+    "Q8502"
+   ]
+  },
+  "Q12073091": {
+   "sitelinks": 5,
+   "description": "Jerusalem, Israel",
+   "image": "Roses in ganhavradim.JPG",
+   "instanceOf": [
+    "Q22698",
+    "Q291177"
+   ]
+  },
+  "Q12404507": {
+   "sitelinks": 5,
+   "description": "historic building in Jerusalem, Israel",
+   "image": "Hansen Disease asylum 5194.JPG",
+   "instanceOf": [
+    "Q1329623",
+    "Q64578911"
+   ]
+  },
+  "Q12406905": {
+   "sitelinks": 6,
+   "description": "archaeological site and museum in Jerusalem",
+   "image": "The Herodian Quarter P8050085.JPG",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q12407534": {
+   "sitelinks": 2,
+   "description": "burial section in Mt. Herzl cemetery for the graves of great leaders of the State of Israel",
+   "image": null,
+   "instanceOf": [
+    "Q12131650"
+   ]
+  },
+  "Q12411569": {
+   "sitelinks": 1,
+   "description": null,
+   "image": "OldCityJerusalem01 ST 06.JPG",
+   "instanceOf": [
+    "Q132510"
+   ]
+  },
+  "Q1256221": {
+   "sitelinks": 22,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "Jerusalem, Old City, New Gate 01.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q126130": {
+   "sitelinks": 63,
+   "description": "аchaeological museum in Jerusalem",
+   "image": "Bible Lands Museum Jerusalem.JPG",
+   "instanceOf": [
+    "Q163740",
+    "Q3329412"
+   ]
+  },
+  "Q1280187": {
+   "sitelinks": 10,
+   "description": "Roman Catholic church on Via Dolorosa in Jerusalem",
+   "image": "Ecce Homo Church 20091021.jpg",
+   "instanceOf": [
+    "Q16970"
+   ]
+  },
+  "Q129278": {
+   "sitelinks": 25,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "ISR-2015-Jerusalem-Lions' Gate.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q1367167": {
+   "sitelinks": 30,
+   "description": "architectural structure; Gate of ancient city wall of Jerusalem",
+   "image": "Golden Gate Jerusalem 2009.JPG",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q137528397": {
+   "sitelinks": 1,
+   "description": "Observation tower and art installation in Jerusalem",
+   "image": "EsterRozhledna.jpg",
+   "instanceOf": [
+    "Q1440300",
+    "Q41176",
+    "Q838948"
+   ]
+  },
+  "Q1383277": {
+   "sitelinks": 7,
+   "description": "Abandoned Muslim cemetery outside Mamila pool Jerusalem.",
+   "image": "MamilaPool.jpg",
+   "instanceOf": [
+    "Q2404995",
+    "Q4989906",
+    "Q839954"
+   ]
+  },
+  "Q1430185": {
+   "sitelinks": 23,
+   "description": "archaeological museum located in East Jerusalem",
+   "image": "Rokefeler museum 2019 1.jpg",
+   "instanceOf": [
+    "Q3329412",
+    "Q33506"
+   ]
+  },
+  "Q1483483": {
+   "sitelinks": 26,
+   "description": "reservoir in East Jerusalem",
+   "image": "Brockhaus and Efron Jewish Encyclopedia e14 213-0.jpg",
+   "instanceOf": [
+    "Q12404340",
+    "Q131681",
+    "Q187971"
+   ]
+  },
+  "Q1484405": {
+   "sitelinks": 23,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "Puerta de Herodes, Jerusalén.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q1494672": {
+   "sitelinks": 18,
+   "description": "antique tomb in Jerusalem, considered by some to be the tomb of Jesus",
+   "image": "Jerusalem Garden Tomb (43300924231).jpg",
+   "instanceOf": [
+    "Q1541002",
+    "Q7818625"
+   ]
+  },
+  "Q15199784": {
+   "sitelinks": 5,
+   "description": "children's science museum",
+   "image": "BloomfieldScienceMuseumJerusalemJan052023 01.jpg",
+   "instanceOf": [
+    "Q163740",
+    "Q33506",
+    "Q588140"
+   ]
+  },
+  "Q15551224": {
+   "sitelinks": 3,
+   "description": "museum in Jerusalem",
+   "image": "Museum on the Seam- Facade.JPG",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q156591": {
+   "sitelinks": 59,
+   "description": "Israel's official memorial to the Jewish victims of the Holocaust",
+   "image": "YadVashemMar042023 01.jpg",
+   "instanceOf": [
+    "Q166118",
+    "Q16735822",
+    "Q2085381",
+    "Q2945282",
+    "Q31855",
+    "Q33506",
+    "Q5003624",
+    "Q699386",
+    "Q7247847"
+   ]
+  },
+  "Q16129536": {
+   "sitelinks": 4,
+   "description": "public park situated opposite Jerusalem's Old City and David's Citadel, and integrated with the Hutzot HaYotzer Artists complex in the Mitchell Parks & Gardens",
+   "image": "Teddy Park - Jerusalem 6.jpg",
+   "instanceOf": [
+    "Q22746"
+   ]
+  },
+  "Q16629714": {
+   "sitelinks": 2,
+   "description": null,
+   "image": "43 Street of Prophets 01.jpg",
+   "instanceOf": [
+    "Q41176"
+   ]
+  },
+  "Q16765255": {
+   "sitelinks": 3,
+   "description": "one of the Gates in Jerusalem's Old City Walls",
+   "image": "باب الناظر.JPG",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q174527": {
+   "sitelinks": 26,
+   "description": "building in the Israel Museum in Jerusalem",
+   "image": "Musée de Jérusalem - Israël (7556059626).jpg",
+   "instanceOf": [
+    "Q1865249",
+    "Q41176"
+   ]
+  },
+  "Q1787112": {
+   "sitelinks": 24,
+   "description": "Monastery in Jerusalem, Israel",
+   "image": "MonasteryOfTheCrossNov15 2022 03.jpg",
+   "instanceOf": [
+    "Q16970"
+   ]
+  },
+  "Q184272": {
+   "sitelinks": 11,
+   "description": "cave in Jerusalem",
+   "image": "Jerusalem Zedekia-Höhle 22.JPG",
+   "instanceOf": [
+    "Q2232001"
+   ]
+  },
+  "Q1936208": {
+   "sitelinks": 17,
+   "description": "former hospital in Palestine",
+   "image": "Muristan Fountain and Lutheran Church of the Redeemer (10805477796).jpg",
+   "instanceOf": [
+    "Q123705",
+    "Q16917",
+    "Q180370",
+    "Q64578911"
+   ]
+  },
+  "Q19569019": {
+   "sitelinks": 6,
+   "description": "museum in Jerusalem",
+   "image": "Friends of Zion Museum 2.jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q204719": {
+   "sitelinks": 25,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "Jerusalem Dungtor BW 1.JPG",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q20501925": {
+   "sitelinks": 2,
+   "description": null,
+   "image": "Jerusalem German Hospice (Italian Synagogue) palm tree.jpg",
+   "instanceOf": [
+    "Q163740",
+    "Q33506"
+   ]
+  },
+  "Q205333": {
+   "sitelinks": 59,
+   "description": "garden at the foot of the Mount of Olives in Jerusalem",
+   "image": "Getsemane2.JPG",
+   "instanceOf": [
+    "Q1107656"
+   ]
+  },
+  "Q205416": {
+   "sitelinks": 25,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "Jerusalem Ziongate BW 4.JPG",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q206161": {
+   "sitelinks": 48,
+   "description": "site of Israel's national cemetery in Jerusalem",
+   "image": "ViewOfMountHerzlMar042023 04.jpg",
+   "instanceOf": [
+    "Q39614",
+    "Q8502"
+   ]
+  },
+  "Q2336243": {
+   "sitelinks": 9,
+   "description": "1967 battle of the Six-Day War",
+   "image": "Ammunition Hill P1000932.JPG",
+   "instanceOf": [
+    "Q178561",
+    "Q486972"
+   ]
+  },
+  "Q2356342": {
+   "sitelinks": 15,
+   "description": "museum in Jerusalem",
+   "image": "Islam art museum1.JPG",
+   "instanceOf": [
+    "Q163740",
+    "Q207694",
+    "Q33506"
+   ]
+  },
+  "Q2424300": {
+   "sitelinks": 20,
+   "description": "Rachel's Tomb in Bethlehem",
+   "image": "Bethlehem rachel tomb 1880.jpg",
+   "instanceOf": [
+    "Q10943038",
+    "Q381885"
+   ]
+  },
+  "Q25450229": {
+   "sitelinks": 6,
+   "description": null,
+   "image": "Jerusalem 1987 (298948796).jpg",
+   "instanceOf": [
+    "Q48356"
+   ]
+  },
+  "Q2599091": {
+   "sitelinks": 17,
+   "description": "depopulated Palestinian village village on the outskirts of Jerusalem",
+   "image": "لفتا ٤٣٢٢.jpg",
+   "instanceOf": [
+    "Q12232785",
+    "Q22674925",
+    "Q486972",
+    "Q532"
+   ]
+  },
+  "Q2620198": {
+   "sitelinks": 9,
+   "description": "Historical home in Jerusalem",
+   "image": "Ticho House056.JPG",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q2657964": {
+   "sitelinks": 14,
+   "description": "underground vaulted space within the Temple Mount of Jerusalem, currently as a Muslim prayer hall",
+   "image": "Salamounovy staje.jpg",
+   "instanceOf": [
+    "Q32815"
+   ]
+  },
+  "Q2662246": {
+   "sitelinks": 11,
+   "description": "archaeological site southwest of the Old City of Jerusalem",
+   "image": "Ketef hinom scrolls.JPG",
+   "instanceOf": [
+    "Q839954"
+   ]
+  },
+  "Q2665632": {
+   "sitelinks": 3,
+   "description": "road in ancient Jerusalem",
+   "image": "Cardo jerusalem2.jpg",
+   "instanceOf": [
+    "Q79007"
+   ]
+  },
+  "Q2676363": {
+   "sitelinks": 9,
+   "description": "landmark windmill in the Mishkenot Sha'ananim neighborhood, Jerusalem",
+   "image": "16-03-30-Jerusalem-Innenstadt-RalfR-DSCF7584.jpg",
+   "instanceOf": [
+    "Q33506",
+    "Q38720"
+   ]
+  },
+  "Q2777841": {
+   "sitelinks": 5,
+   "description": "garden in Jerusalem, Israel",
+   "image": "P8170093.JPG",
+   "instanceOf": [
+    "Q1107656"
+   ]
+  },
+  "Q2895560": {
+   "sitelinks": 5,
+   "description": "Urban bird observatory in Israel",
+   "image": "Jerusaelm Birdswatch Center1.jpg",
+   "instanceOf": [
+    "Q1365207"
+   ]
+  },
+  "Q2902741": {
+   "sitelinks": 6,
+   "description": "Israeli state memorial",
+   "image": "Jerusalem (32056840575).jpg",
+   "instanceOf": [
+    "Q10624527",
+    "Q33506",
+    "Q699386"
+   ]
+  },
+  "Q2903480": {
+   "sitelinks": 7,
+   "description": "valley in Israel",
+   "image": "MonasteryOfTheCrossNov15 2022 03.jpg",
+   "instanceOf": [
+    "Q39816"
+   ]
+  },
+  "Q2905161": {
+   "sitelinks": 3,
+   "description": "museum in Jerusalem, commemorating the activity of the Jewish underground - Haganah, Irgun and Lehi - during the period leading up the establishment of the State of Israel",
+   "image": "MOTUP IMG 6422.JPG",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q2905533": {
+   "sitelinks": 11,
+   "description": "Mamilla Pool is one of several ancient reservoirs that supplied water to the inhabitants of the Old City of Jerusalem",
+   "image": "Mamilla Pond, Israel.jpg",
+   "instanceOf": [
+    "Q3253281"
+   ]
+  },
+  "Q2906579": {
+   "sitelinks": 7,
+   "description": "tomb in Jerusalem, Israel",
+   "image": "Jason's Tomb2.JPG",
+   "instanceOf": [
+    "Q381885"
+   ]
+  },
+  "Q2906823": {
+   "sitelinks": 8,
+   "description": "monumental staircase in Jerusalem",
+   "image": "The remains of Robinson's Arch on the western side of the Temple Mount.jpg",
+   "instanceOf": [
+    "Q811979",
+    "Q839954"
+   ]
+  },
+  "Q2908614": {
+   "sitelinks": 9,
+   "description": "bronze monument in Jerusalem",
+   "image": "Menora vor der Knesset.jpg",
+   "instanceOf": [
+    "Q4989906"
+   ]
+  },
+  "Q2915736": {
+   "sitelinks": 16,
+   "description": "zoo in Jerusalem",
+   "image": "Jerusalem Zoo spider monkey.jpg",
+   "instanceOf": [
+    "Q43501"
+   ]
+  },
+  "Q2918531": {
+   "sitelinks": 18,
+   "description": "marketplace in Jerusalem",
+   "image": "Shuk (26).JPG",
+   "instanceOf": [
+    "Q2080521"
+   ]
+  },
+  "Q2920336": {
+   "sitelinks": 14,
+   "description": "Gate of the Old City of Jerusalem",
+   "image": "Hulda gates.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q2920806": {
+   "sitelinks": 17,
+   "description": "National Memorial Hall For Israel's Fallen",
+   "image": "היכל הזיכרון הלאומי בירושלים המנציח את כל חללי כוחות הביטחון. תמונות מחוץ להר האבן 09.jpg",
+   "instanceOf": [
+    "Q4989906"
+   ]
+  },
+  "Q302": {
+   "sitelinks": 284,
+   "description": "central figure of Christianity (c. 6 or 4 BC – AD 30 or 33)",
+   "image": "Spas vsederzhitel sinay (cropped1).jpg",
+   "instanceOf": [
+    "Q13002315",
+    "Q178885",
+    "Q18563360",
+    "Q20643955",
+    "Q21070568",
+    "Q3375731",
+    "Q4271324",
+    "Q5",
+    "Q51625",
+    "Q825"
+   ]
+  },
+  "Q30321431": {
+   "sitelinks": 6,
+   "description": "a public aquarium in Israel inaugurated on 19.6.2017",
+   "image": "האקווריום המרכזי באקווריום ישראל.jpg",
+   "instanceOf": [
+    "Q2281788"
+   ]
+  },
+  "Q312812": {
+   "sitelinks": 34,
+   "description": "one of seven open gates in Jerusalem's Old City walls",
+   "image": "Jaffa Gate Jerusalem.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q3407496": {
+   "sitelinks": 18,
+   "description": "museum in Jerusalem",
+   "image": "Jerusalem-2013-Islamic Museum (sign).jpg",
+   "instanceOf": [
+    "Q120753951"
+   ]
+  },
+  "Q3500659": {
+   "sitelinks": 5,
+   "description": "archaeological site in Jerusalem",
+   "image": "10th century Stepped-Stone Structure and 7th century Houses (3783275736).jpg",
+   "instanceOf": [
+    "Q839954"
+   ]
+  },
+  "Q3531182": {
+   "sitelinks": 10,
+   "description": "underground complex of 63 rock-cut tombs in Jerusalem",
+   "image": "V12p186001 Tombs.jpg",
+   "instanceOf": [
+    "Q39614",
+    "Q846659"
+   ]
+  },
+  "Q3655064": {
+   "sitelinks": 6,
+   "description": "archaeological site in Israel",
+   "image": "City of David - Warren's Shaft Ir-david02.jpg",
+   "instanceOf": [
+    "Q556186",
+    "Q839954"
+   ]
+  },
+  "Q4198108": {
+   "sitelinks": 5,
+   "description": null,
+   "image": "Nature History Museum in Jerusalem, south facade.jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q46815": {
+   "sitelinks": 88,
+   "description": "national museum of the state of Israel in Jerusalem",
+   "image": "Israel museum.JPG",
+   "instanceOf": [
+    "Q163740",
+    "Q17431399",
+    "Q207694"
+   ]
+  },
+  "Q4854786": {
+   "sitelinks": 6,
+   "description": "ancient house",
+   "image": "P1110121 (5883809195).jpg",
+   "instanceOf": [
+    "Q33506",
+    "Q839954"
+   ]
+  },
+  "Q491928": {
+   "sitelinks": 13,
+   "description": "موقع أثري في إسرائيل",
+   "image": "רחבת ניקנור.jpg",
+   "instanceOf": [
+    "Q16859021"
+   ]
+  },
+  "Q503498": {
+   "sitelinks": 9,
+   "description": "Botanical garden in the Giv'at Ram Campus of the Hebrew University of Jerusalem",
+   "image": "Jerusalem Botanical Garden Givat Ram.JPG",
+   "instanceOf": [
+    "Q167346"
+   ]
+  },
+  "Q5059675": {
+   "sitelinks": 5,
+   "description": "museum of Simon Weisenthal center in Jerusalem",
+   "image": "Museum of Tolerance, Jerusalem, 2018.jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q5450236": {
+   "sitelinks": 3,
+   "description": "huge stone pillar in Jerusalem, Israel",
+   "image": "Ogfinger.jpg",
+   "instanceOf": [
+    "Q839954"
+   ]
+  },
+  "Q5506497": {
+   "sitelinks": 4,
+   "description": "Temporary Israeli parliament building (1950–1966)",
+   "image": "Frumin House.JPG",
+   "instanceOf": [
+    "Q7138926"
+   ]
+  },
+  "Q5522412": {
+   "sitelinks": 5,
+   "description": "garden in Jerusalem, Israel",
+   "image": "Yed Vashem - Der Garten der \"Gerechten unter den Völkern\".jpg",
+   "instanceOf": [
+    "Q1107656"
+   ]
+  },
+  "Q5565595": {
+   "sitelinks": 5,
+   "description": "East Jerusalem archaeological excavation",
+   "image": "JRSLM 210416 City of David Acra 03.jpg",
+   "instanceOf": [
+    "Q839954"
+   ]
+  },
+  "Q55955575": {
+   "sitelinks": 2,
+   "description": "Jerusalem branch of the Pontifical Biblical Institute with museum",
+   "image": "Saint Ignatius of Loyola Day 2018 in Jerusalem 03.jpg",
+   "instanceOf": [
+    "Q33506",
+    "Q38723"
+   ]
+  },
+  "Q56696132": {
+   "sitelinks": 0,
+   "description": "sculpture by Buky Schwartz",
+   "image": "Yad Vashem Pillar of Heroism.jpg",
+   "instanceOf": [
+    "Q860861"
+   ]
+  },
+  "Q57272667": {
+   "sitelinks": 10,
+   "description": "museum network in Jerusalem",
+   "image": "2018-10-13 Terra Sancta Museum by Benoit Soubeyran (45516546672).jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q5749987": {
+   "sitelinks": 8,
+   "description": "archaeological site in Israel",
+   "image": "Hizkiyahoo Pool winter 2010.jpg",
+   "instanceOf": [
+    "Q131681"
+   ]
+  },
+  "Q589512": {
+   "sitelinks": 7,
+   "description": "park in Jerusalem, Israel",
+   "image": "Independence garden Jerusalem.JPG",
+   "instanceOf": [
+    "Q22698"
+   ]
+  },
+  "Q591994": {
+   "sitelinks": 13,
+   "description": "place in Jerusalem and place of the trial of Jesus",
+   "image": "Holy Land 2018 (2) P065 Jerusalem Lithostrotos Roman Games.jpg",
+   "instanceOf": [
+    "Q12404340"
+   ]
+  },
+  "Q60029": {
+   "sitelinks": 74,
+   "description": "German industrialist and Holocaust rescuer (1908–1974)",
+   "image": "Schindler, Oskar.jpg",
+   "instanceOf": [
+    "Q5"
+   ]
+  },
+  "Q6185101": {
+   "sitelinks": 6,
+   "description": "Art Gallery in Jerusalem",
+   "image": "Bezalel 2011.jpg",
+   "instanceOf": [
+    "Q207694"
+   ]
+  },
+  "Q63341767": {
+   "sitelinks": 0,
+   "description": null,
+   "image": "British Military Cemetery, Jerusalem (5492644146).jpg",
+   "instanceOf": [
+    "Q65096167"
+   ]
+  },
+  "Q6549513": {
+   "sitelinks": 1,
+   "description": "Urban park in Jerusalem, Israel",
+   "image": null,
+   "instanceOf": [
+    "Q22746"
+   ]
+  },
+  "Q6588394": {
+   "sitelinks": 4,
+   "description": "museum in Jerusalem",
+   "image": "Jerusalem ArmenianMuseum 1-3000-404 9307.jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q6595874": {
+   "sitelinks": 1,
+   "description": "cenotaph by Moshe Safdie at Yad Vashem, commemorating all the deportees (a freight car on a bridge in the forest)",
+   "image": "ISR-2015-Jerusalem-Yad Vashem-Wagon monument 01.jpg",
+   "instanceOf": [
+    "Q321053"
+   ]
+  },
+  "Q6605079": {
+   "sitelinks": 7,
+   "description": "archaeological site in Jerusalem",
+   "image": "Jerusalem - Parque Arqueológico P1080507 (5149800616).jpg",
+   "instanceOf": [
+    "Q3363945"
+   ]
+  },
+  "Q6695560": {
+   "sitelinks": 1,
+   "description": "garden in Jerusalem, Israel",
+   "image": "PikiWiki Israel 12891 Rose Garden in Talbieh.jpg",
+   "instanceOf": [
+    "Q1107656"
+   ]
+  },
+  "Q6697833": {
+   "sitelinks": 3,
+   "description": "public art / play structure on Mount Herzl in Jerusalem",
+   "image": "Jerusalem HaMifletzet garden.jpg",
+   "instanceOf": [
+    "Q1144661",
+    "Q11875349",
+    "Q860861"
+   ]
+  },
+  "Q6705958": {
+   "sitelinks": 1,
+   "description": null,
+   "image": "Harel Brigade Memorial in Jerusalem-18.JPG",
+   "instanceOf": [
+    "Q321053"
+   ]
+  },
+  "Q6811889": {
+   "sitelinks": 1,
+   "description": "grave in Mount Herzl cemetery, Israel",
+   "image": "Grave of Ze'ev Jabotinsky IMG 1163 (cropped).JPG",
+   "instanceOf": [
+    "Q1541002"
+   ]
+  },
+  "Q6826871": {
+   "sitelinks": 2,
+   "description": "sculpture by Arieh El hanani",
+   "image": "Ohelyzkor12.jpg",
+   "instanceOf": [
+    "Q5003624",
+    "Q860861"
+   ]
+  },
+  "Q6866410": {
+   "sitelinks": 6,
+   "description": "one of the gates of the al-Aqsa Mosque in Jerusalem",
+   "image": "Gates of old city of jerusalem Palestine (28).jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q6867602": {
+   "sitelinks": 2,
+   "description": "sculpture by Micha Ullman",
+   "image": "Jadvasjem12022013 002.jpg",
+   "instanceOf": [
+    "Q860861"
+   ]
+  },
+  "Q6901697": {
+   "sitelinks": 8,
+   "description": "Rock-cut tomb located in Silwan, Jerusalem",
+   "image": "Tomb of Pharao's Daughter.JPG",
+   "instanceOf": [
+    "Q1404229"
+   ]
+  },
+  "Q7001877": {
+   "sitelinks": 1,
+   "description": "garden in Jerusalem",
+   "image": "Jerusalem DSC 0810 (8936070871).jpg",
+   "instanceOf": [
+    "Q1107656"
+   ]
+  },
+  "Q7029507": {
+   "sitelinks": 2,
+   "description": "Cultural centre and museum in Israel",
+   "image": "CMdCJAdN21 (9).jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q7035571": {
+   "sitelinks": 7,
+   "description": "museum in Jerusalem, Israel",
+   "image": "מוזיאון גוש קטיף.jpg",
+   "instanceOf": [
+    "Q33506"
+   ]
+  },
+  "Q7060446": {
+   "sitelinks": 2,
+   "description": "synagogue in West Jerusalem",
+   "image": "PikiWiki Israel 7413 the old synagogue in motza.jpg",
+   "instanceOf": [
+    "Q34627"
+   ]
+  },
+  "Q7063298": {
+   "sitelinks": 1,
+   "description": null,
+   "image": null,
+   "instanceOf": [
+    "Q2087181",
+    "Q33506"
+   ]
+  },
+  "Q731063": {
+   "sitelinks": 8,
+   "description": "former checkpoint between the Israeli and Jordanian sectors of Jerusalem",
+   "image": "Mandelbaum gateway.jpg",
+   "instanceOf": [
+    "Q757292"
+   ]
+  },
+  "Q7396693": {
+   "sitelinks": 6,
+   "description": "public park in Jerusalem",
+   "image": "Nachlaot and Kiryat Wolfson under the snow -2015.jpg",
+   "instanceOf": [
+    "Q22698"
+   ]
+  },
+  "Q74804927": {
+   "sitelinks": 2,
+   "description": "Monument for the victims and the heroes of the Leningrad Siege",
+   "image": "Vladimir Putin in Israel (2020-01-23) 09.jpg",
+   "instanceOf": [
+    "Q321053"
+   ]
+  },
+  "Q831297": {
+   "sitelinks": 32,
+   "description": "reservoir in Jerusalem",
+   "image": "Jerusalem Bethesda BW 1.JPG",
+   "instanceOf": [
+    "Q12404340",
+    "Q131681",
+    "Q839954"
+   ]
+  },
+  "Q85992313": {
+   "sitelinks": 1,
+   "description": null,
+   "image": "מערת האשכולות - רמות אשכול - החצר החיצונית.JPG",
+   "instanceOf": [
+    "Q35509"
+   ]
+  },
+  "Q907482": {
+   "sitelinks": 12,
+   "description": "Byzantine church in Jerusalem, consecrated in 543, dedicated to the Mother of God",
+   "image": "The Nea Church IMG 0047.JPG",
+   "instanceOf": [
+    "Q17485079",
+    "Q180370"
+   ]
+  },
+  "Q947597": {
+   "sitelinks": 37,
+   "description": "one of seven open Gates in Jerusalem's Old City Walls",
+   "image": "Jerusalem Damaskustor BW 1.jpg",
+   "instanceOf": [
+    "Q82117"
+   ]
+  },
+  "Q966792": {
+   "sitelinks": 15,
+   "description": "synagogue",
+   "image": "Tiferet Yisrael Synagogue.jpg",
+   "instanceOf": [
+    "Q34627"
+   ]
+  },
+  "Q97208564": {
+   "sitelinks": 1,
+   "description": "sculpture by Alexander Liberman",
+   "image": "Jerusalem Belief by Alexander Lieberman P1060085.JPG",
+   "instanceOf": [
+    "Q860861"
+   ]
+  }
+ }
+}

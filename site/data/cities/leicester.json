@@ -12,6 +12,7 @@
   {
    "id": "osm:way/89673799",
    "name": "Leicester Museum and Art Gallery",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.628948,
    "lng": -1.127924,
@@ -60,6 +61,7 @@
   {
    "id": "osm:way/210140560",
    "name": "National Space Centre",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.653744,
    "lng": -1.132284,
@@ -97,6 +99,7 @@
   {
    "id": "osm:way/4406183",
    "name": "Abbey Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.646505,
    "lng": -1.134751,
@@ -115,6 +118,7 @@
   {
    "id": "osm:node/30889327",
    "name": "Leicester Abbey",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.648691,
    "lng": -1.136995,
@@ -133,6 +137,7 @@
   {
    "id": "osm:way/1095946531",
    "name": "Arch of Remembrance",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.623429,
    "lng": -1.121505,
@@ -151,6 +156,7 @@
   {
    "id": "osm:node/2141462574",
    "name": "Greyfriars Church",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.634013,
    "lng": -1.136357,
@@ -169,6 +175,7 @@
   {
    "id": "osm:way/152597818",
    "name": "Jewry Wall",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.635067,
    "lng": -1.141082,
@@ -187,6 +194,7 @@
   {
    "id": "osm:node/13615732514",
    "name": "Leicester Market",
+   "nameEn": null,
    "kind": "market",
    "lat": 52.634281,
    "lng": -1.13381,
@@ -205,6 +213,7 @@
   {
    "id": "osm:way/3073927",
    "name": "Victoria Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.622661,
    "lng": -1.119196,
@@ -223,6 +232,7 @@
   {
    "id": "osm:way/302717390",
    "name": "Abbey Pumping Station",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.654764,
    "lng": -1.130777,
@@ -257,6 +267,7 @@
   {
    "id": "osm:way/233818601",
    "name": "Clock Tower",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.636231,
    "lng": -1.133064,
@@ -275,6 +286,7 @@
   {
    "id": "osm:way/4374290",
    "name": "Nelson Mandela Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.625806,
    "lng": -1.131066,
@@ -293,6 +305,7 @@
   {
    "id": "osm:way/117060069",
    "name": "Newarke Houses Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.631662,
    "lng": -1.139115,
@@ -341,6 +354,7 @@
   {
    "id": "osm:node/20834051",
    "name": "Belgrave Hall Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.65945,
    "lng": -1.12508,
@@ -359,6 +373,7 @@
   {
    "id": "osm:relation/17835861",
    "name": "Braunstone Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.625064,
    "lng": -1.174851,
@@ -377,6 +392,7 @@
   {
    "id": "osm:way/52161324",
    "name": "Magazine Gateway",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.631742,
    "lng": -1.137909,
@@ -395,6 +411,7 @@
   {
    "id": "osm:way/18164380",
    "name": "Watermead Country Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.681918,
    "lng": -1.109167,
@@ -413,6 +430,7 @@
   {
    "id": "osm:way/4406194",
    "name": "Western Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.637334,
    "lng": -1.179616,
@@ -431,6 +449,7 @@
   {
    "id": "osm:way/118693289",
    "name": "Appleton Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.662197,
    "lng": -1.09992,
@@ -449,6 +468,7 @@
   {
    "id": "osm:way/13871458",
    "name": "Bede Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.628937,
    "lng": -1.145073,
@@ -467,6 +487,7 @@
   {
    "id": "osm:way/389759228",
    "name": "Fosse Recreation Ground",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.636627,
    "lng": -1.15496,
@@ -485,6 +506,7 @@
   {
    "id": "osm:way/4406185",
    "name": "Humberstone Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.639963,
    "lng": -1.084069,
@@ -503,6 +525,7 @@
   {
    "id": "osm:way/315070039",
    "name": "Jewry Wall Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.634937,
    "lng": -1.141587,
@@ -521,6 +544,7 @@
   {
    "id": "osm:way/152646250",
    "name": "Knighton Spinney",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.601691,
    "lng": -1.107125,
@@ -539,6 +563,7 @@
   {
    "id": "osm:way/1371843969",
    "name": "The Humber Stone",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.657999,
    "lng": -1.078668,
@@ -557,6 +582,7 @@
   {
    "id": "osm:way/507417892",
    "name": "Kirby Firth Nature Park",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.635517,
    "lng": -1.202294,
@@ -575,6 +601,7 @@
   {
    "id": "osm:way/73813781",
    "name": "Lucas Marsh",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.592247,
    "lng": -1.084699,
@@ -593,6 +620,7 @@
   {
    "id": "osm:way/490173063",
    "name": "Raw Dykes",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.61807,
    "lng": -1.139352,
@@ -611,6 +639,7 @@
   {
    "id": "osm:way/4426419",
    "name": "Town Hall Square",
+   "nameEn": null,
    "kind": "park",
    "lat": 52.633692,
    "lng": -1.132202,
@@ -629,6 +658,7 @@
   {
    "id": "osm:node/4930684933",
    "name": "Birstall War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.674225,
    "lng": -1.1187,
@@ -647,6 +677,7 @@
   {
    "id": "osm:node/2699773743",
    "name": "Evington War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.621498,
    "lng": -1.073347,
@@ -665,6 +696,7 @@
   {
    "id": "osm:relation/21243108",
    "name": "Harold Martin Botanic Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": 52.607302,
    "lng": -1.091787,
@@ -700,6 +732,7 @@
   {
    "id": "osm:node/3258121169",
    "name": "King Richard III Visitor Centre",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.634207,
    "lng": -1.136103,
@@ -748,6 +781,7 @@
   {
    "id": "osm:way/534254291",
    "name": "King William's Bridge",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 52.675444,
    "lng": -1.17851,
@@ -766,6 +800,7 @@
   {
    "id": "osm:way/296525801",
    "name": "Leicester Market Food Hall",
+   "nameEn": null,
    "kind": "market",
    "lat": 52.634698,
    "lng": -1.133622,
@@ -809,6 +844,7 @@
   {
    "id": "osm:node/12546426569",
    "name": "Museum of the Royal Leicestershire Regiment",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.631766,
    "lng": -1.138899,
@@ -827,6 +863,7 @@
   {
    "id": "osm:way/231328754",
    "name": "National Gas Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.616533,
    "lng": -1.141883,
@@ -870,6 +907,7 @@
   {
    "id": "osm:way/173697306",
    "name": "Packhorse Bridge",
+   "nameEn": null,
    "kind": "attraction",
    "lat": 52.670976,
    "lng": -1.185381,
@@ -888,6 +926,7 @@
   {
    "id": "osm:way/451113856",
    "name": "Pets Corner",
+   "nameEn": null,
    "kind": "zoo",
    "lat": 52.64972,
    "lng": -1.138909,
@@ -906,6 +945,7 @@
   {
    "id": "osm:way/705792562",
    "name": "Retro Computer Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": 52.663884,
    "lng": -1.090568,
@@ -938,6 +978,7 @@
   {
    "id": "osm:node/4163124589",
    "name": "Robert Hall",
+   "nameEn": null,
    "kind": "landmark",
    "lat": 52.628146,
    "lng": -1.125082,
@@ -956,6 +997,7 @@
   {
    "id": "osm:way/1187545727",
    "name": "Stoughton Grange Farm Park",
+   "nameEn": null,
    "kind": "zoo",
    "lat": 52.614234,
    "lng": -1.070969,
@@ -972,6 +1014,398 @@
    "hours": null
   }
  ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/921792293",
+   "name": "Premier Inn",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.632439,
+   "lng": -1.12592,
+   "address": null,
+   "website": "https://www.premierinn.com/gb/en/hotels/england/leicestershire/leicester/leicester-city-centre.html",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 88,
+   "venuesNear": 38
+  },
+  {
+   "id": "osm:node/5919405585",
+   "name": "St Martins Lodge",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.634119,
+   "lng": -1.13695,
+   "address": null,
+   "website": "https://www.stmartinslodge.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 26,
+   "venuesNear": 36
+  },
+  {
+   "id": "osm:way/474721388",
+   "name": "Ramada Encore Leicester",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.634622,
+   "lng": -1.129146,
+   "address": "84-90 Charles Street, LE1 1GE",
+   "website": "http://www.leicestercitycentrehotel.com",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 46,
+   "venuesNear": 36
+  },
+  {
+   "id": "osm:way/89627269",
+   "name": "Travelodge",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.635985,
+   "lng": -1.139652,
+   "address": "80 Highcross Street, LE1 4NN",
+   "website": "https://www.travelodge.co.uk/hotels/261/Leicester-Central-hotel",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 46,
+   "venuesNear": 33
+  },
+  {
+   "id": "osm:node/3276789407",
+   "name": "The Grand Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.633102,
+   "lng": -1.129795,
+   "address": "73 Granby Street, LE1 6ES",
+   "website": null,
+   "wikidata": "Q5594622",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 69,
+   "venuesNear": 37
+  },
+  {
+   "id": "osm:way/152178612",
+   "name": "Travelodge Leicester Central North",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.640668,
+   "lng": -1.127536,
+   "address": "Bedford Street North, LE1 3JE",
+   "website": "https://www.travelodge.co.uk/hotels/721/Leicester-Central-North-hotel",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 318,
+   "venuesNear": 30
+  },
+  {
+   "id": "osm:node/4245484490",
+   "name": "Castle Park Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.633184,
+   "lng": -1.135018,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 29,
+   "venuesNear": 36
+  },
+  {
+   "id": "osm:node/4321605828",
+   "name": "The Villare Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.635306,
+   "lng": -1.13889,
+   "address": "19 St Nicholas Place, LE1 4LD",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 51,
+   "venuesNear": 36
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/1194668382",
+   "name": "Kayal",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian"
+   ],
+   "lat": 52.632193,
+   "lng": -1.127243,
+   "address": "153 Granby Street, LE1 6FE",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Su 10:00-10:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "10:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 23,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/1194668379",
+   "name": "Santhi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "indian"
+   ],
+   "lat": 52.632371,
+   "lng": -1.127076,
+   "address": "124 Granby Street, LE1 1DL",
+   "website": "www.santhirestaurant.co.uk",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 38,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3393183808",
+   "name": "Tatra Eastern Corner",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "eastern_european"
+   ],
+   "lat": 52.632782,
+   "lng": -1.127608,
+   "address": "1 Newport Place, LE1 1DN",
+   "website": "http://www.tatraeasterncorner.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 92,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3277416397",
+   "name": "Merchant of Venice",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 52.631906,
+   "lng": -1.126727,
+   "address": "173-175 Granby Street, LE1 6FE",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 17,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3925419725",
+   "name": "La Vida",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 52.63285,
+   "lng": -1.127554,
+   "address": "1-3 Northampton Street, LE1 1DL",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 98,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3277340119",
+   "name": "Bella Napoli",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 52.632778,
+   "lng": -1.128749,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 108,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3277416390",
+   "name": "Biryani Centre",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 52.631827,
+   "lng": -1.126625,
+   "address": "179 Granby Street, LE1 6FE",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 25,
+   "venuesNear": 39
+  },
+  {
+   "id": "osm:node/3995551758",
+   "name": "Peter Pizzeria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sandwich",
+    "pizza"
+   ],
+   "lat": 52.631963,
+   "lng": -1.133942,
+   "address": "9 Welford Place, LE1 6ZH",
+   "website": "https://www.peterpizzeria.co.uk/leicester/",
+   "wikidata": "Q26667827",
+   "openingHours": "Th-Su 12:00-22:30; Mo-We 12:00-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 5,
+   "venuesNear": 37
+  }
+ ],
+ "trips": [
+  {
+   "name": "Loughborough",
+   "page": "Loughborough",
+   "url": "https://en.wikivoyage.org/wiki/Loughborough",
+   "description": "Loughborough 9 miles north is the other terminus of the heritage railway.",
+   "lat": 52.7745,
+   "lng": -1.212,
+   "km": 16
+  },
+  {
+   "name": "Melton Mowbray",
+   "page": "Melton Mowbray",
+   "url": "https://en.wikivoyage.org/wiki/Melton_Mowbray",
+   "description": "Melton Mowbray is where the miniature pork pies come from.",
+   "lat": 52.7661,
+   "lng": -0.886,
+   "km": 22
+  },
+  {
+   "name": "Rutland Water",
+   "page": "Rutland Water",
+   "url": "https://en.wikivoyage.org/wiki/Rutland_Water",
+   "description": "Rutland Water is a reservoir 20 miles east of Leicester, a popular area for bird-watching, fishing, picnics and water sports such as sailing and jet-skiing.",
+   "lat": 52.653,
+   "lng": -0.635,
+   "km": 34
+  }
+ ],
+ "guide": {
+  "page": "Leicester",
+  "url": "https://en.wikivoyage.org/wiki/Leicester"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
  "provenance": {
   "osm": {
    "fetchedAt": "2026-09-25T14:22:24Z",
@@ -979,9 +1413,19 @@
    "fetcherVersion": 1
   },
   "wikidata": {
-   "fetchedAt": "2026-09-25T14:23:01Z",
+   "fetchedAt": "2026-10-02T18:21:07Z",
    "fetcher": "scraper/cities/fetch.py",
-   "fetcherVersion": 1
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:42:05Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:13:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
   }
  }
 }
