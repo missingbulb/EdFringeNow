@@ -82,6 +82,7 @@ import {
   withFilter,
 } from "./lib/festival-filter.js";
 import { areaOf } from "./lib/areas.js";
+import { CITIES_URL, cityEntryFor, cuisineWords, guideLists, readsLocalNames, roundedDistance } from "./lib/city-guide.js";
 import { centreOf, project } from "./lib/globe.js";
 import { createGlobe } from "./globe-view.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -166,6 +167,11 @@ const state = {
   // The reader's own public holidays: whose, and the file's contents once read.
   holidays: { country: null, guessed: false, doc: null },
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
+  // The cities' registry, each city's lists as fetched (dataUrl -> Promise),
+  // and the lists of the city the leading festival is held in, or null.
+  cities: null,
+  cityFiles: new Map(),
+  guide: null,
   browsePages: 1,
   poolSlugs: new Set(),
   kinds: new Map(), // slug -> the shared kind it is filed under
@@ -519,6 +525,143 @@ function renderChrome() {
         }
       )
     : "";
+
+  // The credits the city's lists carry under their licences, while they are shown.
+  const link = (href, text) => `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
+  const guide = state.guide && $("cityGuide").dataset.state === "shown" ? state.guide : null;
+  const licences = (guide && guide.licences) || {};
+  $("footerGuide").innerHTML = guide
+    ? `<br><span data-i18n-slot="footer.places">${tHtml("footer.places", {}, {
+        osm: link(licences.osm.credit, "OpenStreetMap"),
+        licence: link(licences.osm.url, licences.osm.name),
+      })}</span>` +
+      (guide.trips.length && licences.wikivoyage
+        ? `<br><span data-i18n-slot="footer.trips">${tHtml("footer.trips", {}, {
+            guide: link(guide.guide.url, `Wikivoyage: ${guide.guide.page}`),
+            licence: link(licences.wikivoyage.url, licences.wikivoyage.name),
+          })}</span>`
+        : "")
+    : "";
+}
+
+// --- the trip's city --------------------------------------------------------
+//
+// Where to stay and eat near the venues, what to see and where to go for a
+// day, from the lists scraper/cities/ builds for every festival city. A city
+// without lists, or whose lists fail to load, draws no drawer at all.
+
+const GUIDE_LISTS = [
+  { list: "stay", emoji: "\u{1F6CF}", key: "guide.stay" },
+  { list: "eat", emoji: "\u{1F37D}", key: "guide.eat" },
+  { list: "see", emoji: "\u{1F3DB}", key: "guide.see" },
+  { list: "trips", emoji: "\u{1F68C}", key: "guide.trips" },
+];
+
+const STAY_KIND_KEYS = {
+  hotel: "guide.kind.hotel",
+  guest_house: "guide.kind.guest_house",
+  hostel: "guide.kind.hostel",
+  motel: "guide.kind.motel",
+};
+
+let guideAsked = 0;
+
+async function loadCityGuide() {
+  const festival = state.focus && state.focus.festival;
+  const asked = ++guideAsked;
+  let guide = null;
+  try {
+    if (festival) {
+      if (!state.cities) state.cities = await fetchJsonOk(CITIES_URL);
+      const entry = cityEntryFor(state.cities, festival);
+      if (entry) {
+        if (!state.cityFiles.has(entry.dataUrl)) state.cityFiles.set(entry.dataUrl, fetchJsonOk(entry.dataUrl));
+        guide = await state.cityFiles.get(entry.dataUrl);
+      }
+    }
+  } catch (err) {
+    // Lists that will not load are lists the page does without; the drawer's
+    // state says which way it went.
+    console.warn("city lists unavailable", err);
+    state.cities = null;
+    state.cityFiles.clear();
+  }
+  if (asked !== guideAsked) return;
+  state.guide = guide;
+  renderCityGuide();
+  renderChrome();
+}
+
+async function fetchJsonOk(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  return res.json();
+}
+
+function distanceText(metres) {
+  const { value, unit } = roundedDistance(metres);
+  return new Intl.NumberFormat(currentIntlLocale(), { style: "unit", unit, unitDisplay: "short" }).format(value);
+}
+
+/* What the drawer says under a place's name: a line of what it is and how far,
+ * and the source's own note about it (a cuisine, a description), which is
+ * English and kept in its own block so it reads the same in a right-to-left page. */
+function guideLines(list, item, near) {
+  const from = (m) => t(near === "centre" ? "guide.toCentre" : "guide.toVenue", { distance: distanceText(m) });
+  const capital = (text) => text && text.charAt(0).toUpperCase() + text.slice(1);
+  let meta;
+  let note = null;
+  if (list === "stay") {
+    const stars = item.stars ? "\u2605".repeat(Math.min(5, Math.round(item.stars))) : null;
+    meta = [t(STAY_KIND_KEYS[item.kind]), stars, from(item.toVenueM)];
+  } else if (list === "eat") {
+    meta = [from(item.toVenueM)];
+    note = cuisineWords(item.cuisine);
+  } else if (list === "see") {
+    meta = [];
+    note = capital(item.description);
+  } else {
+    meta = [t("guide.away", { distance: distanceText(item.km * 1000) })];
+    note = item.description;
+  }
+  const line = meta.filter(Boolean).join(" · ");
+  return (
+    (line ? `<span class="guide-meta">${escapeHtml(line)}</span>` : "") +
+    (note ? `<span class="guide-note" lang="en" dir="ltr">${escapeHtml(note)}</span>` : "")
+  );
+}
+
+function renderCityGuide() {
+  const el = $("cityGuide");
+  const guide = state.guide;
+  const festival = state.focus && state.focus.festival;
+  const lists = guide && festival ? guideLists(guide, { localReader: readsLocalNames(guide.city.country, currentLocale()) }) : null;
+  const shown = lists && GUIDE_LISTS.some(({ list }) => lists[list].length);
+  el.hidden = !shown;
+  el.dataset.state = shown ? "shown" : "absent";
+  if (!shown) {
+    el.open = false;
+    $("cityGuideBody").innerHTML = "";
+    return;
+  }
+  const title = $("cityGuideTitle");
+  title.textContent = t("guide.title", { city: festivalCity(festival) });
+  $("cityGuideBody").innerHTML = GUIDE_LISTS.filter(({ list }) => lists[list].length)
+    .map(
+      ({ list, emoji, key }) =>
+        `<section class="guide-list" data-guide-list="${list}">` +
+        `<h3 class="guide-head"><span class="guide-emoji" aria-hidden="true">${emoji}</span>` +
+        `<span data-i18n-slot="${key}">${escapeHtml(t(key))}</span></h3><ul>` +
+        lists[list]
+          .map(
+            (item) =>
+              `<li class="guide-item"><a class="guide-name" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">` +
+              `${escapeHtml(item.title)}</a>${guideLines(list, item, guide.near)}</li>`
+          )
+          .join("") +
+        `</ul></section>`
+    )
+    .join("");
 }
 
 // --- the board ------------------------------------------------------------
@@ -3487,6 +3630,7 @@ function wireSearch() {
 /* Everything the page drew itself, redrawn in the language just chosen. The
  * static markup is the i18n module's own job; this is the rest. */
 function retranslate() {
+  renderCityGuide();
   renderChrome();
   if (!state.catalogue) return;
   renderTimelineStrip();
@@ -4000,6 +4144,7 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
   }
   renderTimelineStrip();
   refreshFares();
+  loadCityGuide();
   if (!state.focus) return;
   await loadPool();
 }

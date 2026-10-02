@@ -2,6 +2,26 @@
  "v": 1,
  "cities": [
   {
+   "id": "abu-ghosh",
+   "name": "Abu Ghosh",
+   "country": "IL",
+   "lat": 31.804722,
+   "lng": 35.110833,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/abu-ghosh.json",
+   "places": 5
+  },
+  {
+   "id": "akko",
+   "name": "Akko",
+   "country": "IL",
+   "lat": 32.9236,
+   "lng": 35.0705,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/akko.json",
+   "places": 19
+  },
+  {
    "id": "auckland",
    "name": "Auckland",
    "country": "NZ",
@@ -22,6 +42,16 @@
    "places": 67
   },
   {
+   "id": "capernaum",
+   "name": "Capernaum",
+   "country": "IL",
+   "lat": 32.8804,
+   "lng": 35.5736,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/capernaum.json",
+   "places": 12
+  },
+  {
    "id": "edinburgh",
    "name": "Edinburgh",
    "country": "GB",
@@ -30,6 +60,26 @@
    "timezone": "Europe/London",
    "dataUrl": "/data/cities/edinburgh.json",
    "places": 195
+  },
+  {
+   "id": "haifa",
+   "name": "Haifa",
+   "country": "IL",
+   "lat": 32.794044,
+   "lng": 34.989571,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/haifa.json",
+   "places": 48
+  },
+  {
+   "id": "jerusalem",
+   "name": "Jerusalem",
+   "country": "IL",
+   "lat": 31.7683,
+   "lng": 35.2137,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/jerusalem.json",
+   "places": 181
   },
   {
    "id": "leicester",
@@ -50,6 +100,36 @@
    "timezone": "Australia/Melbourne",
    "dataUrl": "/data/cities/melbourne.json",
    "places": 229
+  },
+  {
+   "id": "mitzpe-gvulot",
+   "name": "Mitzpe Gvulot",
+   "country": "IL",
+   "lat": 31.2111,
+   "lng": 34.4652,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/mitzpe-gvulot.json",
+   "places": 4
+  },
+  {
+   "id": "north-berwick",
+   "name": "North Berwick",
+   "country": "GB",
+   "lat": 56.0586,
+   "lng": -2.7196,
+   "timezone": "Europe/London",
+   "dataUrl": "/data/cities/north-berwick.json",
+   "places": 4
+  },
+  {
+   "id": "tel-aviv",
+   "name": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0775,
+   "lng": 34.78667,
+   "timezone": "Asia/Jerusalem",
+   "dataUrl": "/data/cities/tel-aviv.json",
+   "places": 139
   },
   {
    "id": "wellington",

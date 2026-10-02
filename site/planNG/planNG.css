@@ -794,6 +794,40 @@ body.festival-page {
 .drawer-title { font-family: var(--display); font-weight: 700; font-size: 0.86rem; }
 .drawer-count { margin-inline-start: auto; color: var(--muted); font-size: 0.72rem; }
 
+/* --- the trip's city ------------------------------------------------------ */
+/* Four short lists side by side, two by two on a narrow screen: a name that
+   links out, and one line under it saying what and how far. */
+.guide-body {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 22px; padding: 16px 18px;
+}
+.guide-head {
+  display: flex; align-items: center; gap: 6px; margin: 0 0 8px;
+  font-family: var(--display); font-size: 0.82rem; font-weight: 700;
+}
+.guide-emoji { font-size: 1.05rem; }
+.guide-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.guide-item { display: grid; gap: 1px; min-width: 0; }
+.guide-name {
+  color: var(--ink); font-size: 0.78rem; font-weight: 600; text-decoration: none;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.guide-name:hover { color: var(--violet-dark); text-decoration: underline; }
+.guide-meta {
+  color: var(--muted); font-size: 0.68rem; line-height: 1.35;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+/* The source's own English, its own block so a right-to-left page keeps it
+   whole: aligned with the page, clamped to two lines. */
+.guide-note {
+  color: var(--muted); font-size: 0.68rem; line-height: 1.35;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+[dir="rtl"] .guide-note { text-align: right; }
+@media (max-width: 560px) {
+  .guide-body { grid-template-columns: 1fr 1fr; gap: 14px; padding: 12px; }
+}
+
 /* --- right to left -------------------------------------------------------- */
 /* The block's rows are flex tracks and follow the page's direction on their
    own; what is left is the accent stripe, which plan.css states as a side and

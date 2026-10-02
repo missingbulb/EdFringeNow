@@ -1,0 +1,525 @@
+{
+ "v": 1,
+ "city": {
+  "id": "abu-ghosh",
+  "name": "Abu Ghosh",
+  "country": "IL",
+  "lat": 31.804722,
+  "lng": 35.110833,
+  "timezone": "Asia/Jerusalem"
+ },
+ "places": [
+  {
+   "id": "osm:node/1268935804",
+   "name": "עמדת הסנטוריום - אנדרטת הצבי ישראל",
+   "nameEn": "HaTsvi Israel Memorial",
+   "kind": "landmark",
+   "lat": 31.815915,
+   "lng": 35.122905,
+   "address": null,
+   "website": null,
+   "wikidata": "Q18192072",
+   "wikipedia": "he:עמדת הסנטוריום",
+   "description": null,
+   "image": "Sanatorium Outpost-1.JPG",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4105397382",
+   "name": "Saxum Visitor Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 31.814199,
+   "lng": 35.105142,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1078713848",
+   "name": "הגן התנכי",
+   "nameEn": "Biblical Garden",
+   "kind": "museum",
+   "lat": 31.810891,
+   "lng": 35.088829,
+   "address": "90895",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Su-Th 08:00-17:00; Fr 08:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/490344118",
+   "name": "קיפצובה",
+   "nameEn": "Kiftzuba",
+   "kind": "attraction",
+   "lat": 31.785419,
+   "lng": 35.11498,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/604139879",
+   "name": "שומרה",
+   "nameEn": "Watchtower",
+   "kind": "viewpoint",
+   "lat": 31.810908,
+   "lng": 35.088674,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/539039997",
+   "name": "מלון לוגוס",
+   "nameEn": "Logos Hotel",
+   "kind": "hotel",
+   "stars": 3.0,
+   "cuisine": null,
+   "lat": 31.810131,
+   "lng": 35.089352,
+   "address": "90895",
+   "website": "https://logoshotel.co.il",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1379,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/897711817",
+   "name": "מלון כרמים",
+   "nameEn": "Cramim hotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.811995,
+   "lng": 35.118195,
+   "address": "908330",
+   "website": "https://www.isrotelexclusivecollection.co.il/kiryat_anavim/",
+   "wikidata": "Q57556515",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1140,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/110306665",
+   "name": "מלון צובה",
+   "nameEn": "Tzuba Hotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.784558,
+   "lng": 35.119348,
+   "address": null,
+   "website": "https://www.tzubahotel.co.il/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 2783,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5808381153",
+   "name": "Nero Huoshya",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.837344,
+   "lng": 35.126856,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3801,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/4449974674",
+   "name": "أبو شكري",
+   "nameEn": "Abu Shukri",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.80737,
+   "lng": 35.112776,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 509,
+   "venuesNear": 2
+  },
+  {
+   "id": "osm:node/4449974675",
+   "name": "مطعم أبو غوش‎",
+   "nameEn": "Abu Ghosh Restaurant",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.807314,
+   "lng": 35.113032,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 533,
+   "venuesNear": 2
+  },
+  {
+   "id": "osm:way/911552477",
+   "name": "מסעדה",
+   "nameEn": "Masade",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "middle_eastern"
+   ],
+   "lat": 31.81023,
+   "lng": 35.089322,
+   "address": null,
+   "website": "https://logoshotel.co.il/קולינריה-במסעדת-המלון/",
+   "wikidata": null,
+   "openingHours": "Su-Sa 07:30-10:00; Fr 08:00-12:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "10:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "12:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1383,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6247814285",
+   "name": "הלבנונית",
+   "nameEn": "Lebanese Food",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "lebanese"
+   ],
+   "lat": 31.800762,
+   "lng": 35.121268,
+   "address": "88 شارع السلام",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Su 08:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1507,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/7198406034",
+   "name": "שווארמה אל בלד",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.802046,
+   "lng": 35.119023,
+   "address": "84 شارع السلام",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Su-Sa 09:00-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 1252,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5731988222",
+   "name": "נאיה",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian"
+   ],
+   "lat": 31.80157,
+   "lng": 35.126239,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1897,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/539463399",
+   "name": "שנקליש",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.790453,
+   "lng": 35.112717,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Th 09:00-15:00; Fr-Sa 09:00-17:00; Su off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ],
+   "toVenueM": 1954,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5163384412",
+   "name": "מוזה בהר",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "french"
+   ],
+   "lat": 31.795278,
+   "lng": 35.068707,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3633,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [
+  {
+   "name": "Jerusalem",
+   "page": "Jerusalem",
+   "url": "https://en.wikivoyage.org/wiki/Jerusalem",
+   "description": null,
+   "lat": 31.7833,
+   "lng": 35.2167,
+   "km": 10
+  }
+ ],
+ "guide": {
+  "page": "Abu Ghosh",
+  "url": "https://en.wikivoyage.org/wiki/Abu_Ghosh"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T18:26:46Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T18:27:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:47:15Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:13:41Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

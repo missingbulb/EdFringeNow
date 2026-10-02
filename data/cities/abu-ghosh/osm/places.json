@@ -1,0 +1,61 @@
+{
+ "places": [
+  {
+   "id": "node/1268935804",
+   "lat": 31.815915,
+   "lng": 35.122905,
+   "tags": {
+    "name": "עמדת הסנטוריום - אנדרטת הצבי ישראל",
+    "name:en": "HaTsvi Israel Memorial",
+    "historic": "memorial",
+    "wikidata": "Q18192072",
+    "wikipedia": "he:עמדת הסנטוריום"
+   }
+  },
+  {
+   "id": "node/4105397382",
+   "lat": 31.814199,
+   "lng": 35.105142,
+   "tags": {
+    "name": "Saxum Visitor Center",
+    "name:en": "Saxum Visitor Center",
+    "tourism": "museum",
+    "amenity": "social_centre"
+   }
+  },
+  {
+   "id": "way/1078713848",
+   "lat": 31.810891,
+   "lng": 35.088829,
+   "tags": {
+    "name": "הגן התנכי",
+    "name:en": "Biblical Garden",
+    "tourism": "museum",
+    "opening_hours": "Su-Th 08:00-17:00; Fr 08:00-15:00",
+    "addr:postcode": "90895"
+   }
+  },
+  {
+   "id": "way/490344118",
+   "lat": 31.785419,
+   "lng": 35.11498,
+   "tags": {
+    "name": "קיפצובה",
+    "name:en": "Kiftzuba",
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "way/604139879",
+   "lat": 31.810908,
+   "lng": 35.088674,
+   "tags": {
+    "name": "שומרה",
+    "name:en": "Watchtower",
+    "tourism": "viewpoint",
+    "amenity": "shelter",
+    "building": "yes"
+   }
+  }
+ ]
+}

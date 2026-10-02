@@ -1,0 +1,6889 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "brighton-fringe",
+   "venue": "35-north",
+   "lat": 50.82578,
+   "lng": -0.1402
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "a-l-p-h-a-b-e-t",
+   "lat": 50.82419,
+   "lng": -0.14509
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "all-saints-church",
+   "lat": 50.83025,
+   "lng": -0.16644
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "bhos-community-arts-hub",
+   "lat": 50.8621,
+   "lng": -0.12837
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "bishop-hannington-memorial-church",
+   "lat": 50.84298,
+   "lng": -0.18728
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "blossoms-brighton",
+   "lat": 50.822,
+   "lng": -0.1403
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "bn1-arts-centre-cic",
+   "lat": 50.8331,
+   "lng": -0.13546
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "bom-banes-music-cafe",
+   "lat": 50.82176,
+   "lng": -0.13464
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "bottoms-rest",
+   "lat": 50.82446,
+   "lng": -0.15745
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-buddhist-centre",
+   "lat": 50.82505,
+   "lng": -0.14002
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-ki-centre",
+   "lat": 50.8245,
+   "lng": -0.1438
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-little-theatre-co",
+   "lat": 50.82357,
+   "lng": -0.14832
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-museum-art-gallery",
+   "lat": 50.82319,
+   "lng": -0.13789
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-open-air-theatre-boat",
+   "lat": 50.83652,
+   "lng": -0.15378
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-toy-and-model-museum",
+   "lat": 50.82864,
+   "lng": -0.141
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "brighton-unitarian-church",
+   "lat": 50.82364,
+   "lng": -0.13972
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "cellar-bar-the-brunswick",
+   "lat": 50.82418,
+   "lng": -0.16257
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "circus-street",
+   "lat": 50.82475,
+   "lng": -0.13458
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "comedy-at-the-caxton",
+   "lat": 50.82679,
+   "lng": -0.14254
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "daltons-brighton",
+   "lat": 50.81891,
+   "lng": -0.13443
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "downs-junior-school",
+   "lat": 50.83957,
+   "lng": -0.13378
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "embassy-court",
+   "lat": 50.82297,
+   "lng": -0.15641
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "fishing-museum-loft-the-old-net-loft",
+   "lat": 50.81998,
+   "lng": -0.14213
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "flow-state-hove",
+   "lat": 50.82498,
+   "lng": -0.1601
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "friends-meeting-house",
+   "lat": 50.82184,
+   "lng": -0.1412
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "gallery-19a",
+   "lat": 50.84067,
+   "lng": -0.13168
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "grania-dean-studio-lantern-theatre-act",
+   "lat": 50.82023,
+   "lng": -0.13063
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "hanover-community-centre",
+   "lat": 50.82853,
+   "lng": -0.12911
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "i360-event-space-east",
+   "lat": 50.82107,
+   "lng": -0.14934
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "ironworks-studios-studio-a",
+   "lat": 50.82934,
+   "lng": -0.1385
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "ironworks-studios-studio-b",
+   "lat": 50.82923,
+   "lng": -0.13812
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "ironworks-studios-studio-c",
+   "lat": 50.82934,
+   "lng": -0.13847
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "jubilee-square",
+   "lat": 50.82511,
+   "lng": -0.13843
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "junk-poets-at-caravanserai",
+   "lat": 50.82895,
+   "lng": -0.13488
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "klub-kaput-at-caravanserai",
+   "lat": 50.8289,
+   "lng": -0.13504
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "komedia-basement",
+   "lat": 50.82503,
+   "lng": -0.13938
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "laughing-dog-ltd",
+   "lat": 50.81346,
+   "lng": -0.10196
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "laughing-horse-ao-hostel-bar-front-room",
+   "lat": 50.82028,
+   "lng": -0.13794
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "laughing-horse-caroline-of-brunswick",
+   "lat": 50.83064,
+   "lng": -0.1346
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "laughing-horse-the-temple-bar",
+   "lat": 50.8251,
+   "lng": -0.15366
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "laughing-horse-the-walrus-hideaway",
+   "lat": 50.82169,
+   "lng": -0.14217
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "liberation-art-gallery",
+   "lat": 50.82287,
+   "lng": -0.14006
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "lionhouse",
+   "lat": 50.82817,
+   "lng": -0.12246
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "lost-in-the-lanes",
+   "lat": 50.82133,
+   "lng": -0.14055
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-banjo-groyne",
+   "lat": 50.81595,
+   "lng": -0.12018
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-new-road-opposite-theatre-royal",
+   "lat": 50.82284,
+   "lng": -0.13977
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-outside-i360-gift-shop-exit",
+   "lat": 50.82122,
+   "lng": -0.15098
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-outside-of-st-batholomews-church",
+   "lat": 50.83038,
+   "lng": -0.13728
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-outside-the-garden-cafe",
+   "lat": 50.82991,
+   "lng": -0.15634
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-st-nicholas-church-main-door",
+   "lat": 50.8254,
+   "lng": -0.14471
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-st-peters-church-hall-entrance-york-place",
+   "lat": 50.82886,
+   "lng": -0.13375
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-the-druids-head",
+   "lat": 50.82169,
+   "lng": -0.13984
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-the-english-language-centre-corner-of-church-rd-salisbury-rd-bn3-2gb",
+   "lat": 50.8274,
+   "lng": -0.16389
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "meet-the-last-bookshop",
+   "lat": 50.82516,
+   "lng": -0.13931
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "mercure-brighton-seafront-hotel",
+   "lat": 50.82287,
+   "lng": -0.15538
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "mid-street-lab",
+   "lat": 50.81779,
+   "lng": -0.11854
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "north-laine-brewhouse",
+   "lat": 50.82638,
+   "lng": -0.13587
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "pavilion-gardens-cafe",
+   "lat": 50.82294,
+   "lng": -0.13962
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "peter-joannou-male-grooming",
+   "lat": 50.82256,
+   "lng": -0.14273
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "phoenix-art-space",
+   "lat": 50.82885,
+   "lng": -0.13377
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "pink-moon",
+   "lat": 50.82249,
+   "lng": -0.14145
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "plus-x-innovation-hub",
+   "lat": 50.84236,
+   "lng": -0.1206
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "presuming-ed",
+   "lat": 50.83101,
+   "lng": -0.13612
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "prince-regent-swimming-pool",
+   "lat": 50.8244,
+   "lng": -0.13792
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "projects",
+   "lat": 50.82137,
+   "lng": -0.14062
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "rotunda-theatre-brighton-bubble",
+   "lat": 50.82241,
+   "lng": -0.15046
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "rotunda-theatre-brighton-pip",
+   "lat": 50.82256,
+   "lng": -0.15042
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "rotunda-theatre-brighton-squeak",
+   "lat": 50.82242,
+   "lng": -0.15051
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "sabai-pavilion",
+   "lat": 50.83988,
+   "lng": -0.14608
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "sammystitches-open-house",
+   "lat": 50.82459,
+   "lng": -0.14346
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "spiegelgardens",
+   "lat": 50.82389,
+   "lng": -0.13649
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "spiegeltent-at-the-spiegelgardens",
+   "lat": 50.8238,
+   "lng": -0.13659
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "spritzhaus-spiegelgardens",
+   "lat": 50.82374,
+   "lng": -0.1369
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-andrews-church-hove",
+   "lat": 50.8286,
+   "lng": -0.17511
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-augustines-arts-and-events-centre",
+   "lat": 50.83826,
+   "lng": -0.14
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-augustines-arts-events-centre-alter-room",
+   "lat": 50.83826,
+   "lng": -0.14001
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-bartholomews-church",
+   "lat": 50.83035,
+   "lng": -0.13742
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-georges-church",
+   "lat": 50.8182,
+   "lng": -0.1193
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-marys-church",
+   "lat": 50.82033,
+   "lng": -0.1299
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-marys-church-hall",
+   "lat": 50.82032,
+   "lng": -0.1294
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-nicholas-church-brighton",
+   "lat": 50.82531,
+   "lng": -0.1447
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "st-pauls-church",
+   "lat": 50.82182,
+   "lng": -0.14449
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-actors-light-room",
+   "lat": 50.8223,
+   "lng": -0.13597
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-actors-theatre",
+   "lat": 50.82227,
+   "lng": -0.13596
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-annunciation-brighton",
+   "lat": 50.82972,
+   "lng": -0.12974
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-archives",
+   "lat": 50.82533,
+   "lng": -0.13685
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-barn-at-westdene",
+   "lat": 50.85834,
+   "lng": -0.15941
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-brunswick",
+   "lat": 50.82418,
+   "lng": -0.16254
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-dance-space-the-jamie-watton-creation-space",
+   "lat": 50.8248,
+   "lng": -0.13468
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-grounds-platf9rm",
+   "lat": 50.82777,
+   "lng": -0.17023
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-house-of-jing",
+   "lat": 50.82376,
+   "lng": -0.14003
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-lantern-act",
+   "lat": 50.82005,
+   "lng": -0.13078
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-maris-otter",
+   "lat": 50.8251,
+   "lng": -0.15529
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-nightingale-the-grand-central-pub",
+   "lat": 50.82863,
+   "lng": -0.14203
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-old-market",
+   "lat": 50.82478,
+   "lng": -0.15724
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-pod-brighton-i360",
+   "lat": 50.82138,
+   "lng": -0.15091
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-regency-town-house-basement-annexe",
+   "lat": 50.82408,
+   "lng": -0.15848
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-rose-hill",
+   "lat": 50.83263,
+   "lng": -0.13617
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-rossi-bar",
+   "lat": 50.82456,
+   "lng": -0.1432
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-round-georges-pub",
+   "lat": 50.82365,
+   "lng": -0.12046
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-skep",
+   "lat": 50.84658,
+   "lng": -0.11707
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-southern-belle",
+   "lat": 50.8235,
+   "lng": -0.15725
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "the-wick-inn-speakeasy",
+   "lat": 50.82613,
+   "lng": -0.16184
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "under-the-archway-at-caravanserai-outdoor-stage",
+   "lat": 50.82906,
+   "lng": -0.13526
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "upstairs-the-colly",
+   "lat": 50.82319,
+   "lng": -0.13968
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "wagner-hall-brighton",
+   "lat": 50.82252,
+   "lng": -0.14463
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "west-pier-centre",
+   "lat": 50.82131,
+   "lng": -0.14892
+  },
+  {
+   "festival": "brighton-fringe",
+   "venue": "whistleblower-gallery",
+   "lat": 50.82486,
+   "lng": -0.16541
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10063301748",
+   "lat": 50.827688,
+   "lng": -0.169321,
+   "tags": {
+    "name": "Ashoka Tandoori Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://ashoka-restaurant.co.uk/",
+    "opening_hours": "Mo-Su 17:00-23:00",
+    "addr:housenumber": "95",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BA"
+   }
+  },
+  {
+   "id": "node/10082358228",
+   "lat": 50.827534,
+   "lng": -0.168186,
+   "tags": {
+    "name": "Aji Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.ajisushi.co.uk/",
+    "opening_hours": "Mo-Su 12:00-15:00,17:30-22:00",
+    "addr:housenumber": "1",
+    "addr:street": "The Drive",
+    "addr:postcode": "BN3 3JE"
+   }
+  },
+  {
+   "id": "node/10082383671",
+   "lat": 50.822717,
+   "lng": -0.151536,
+   "tags": {
+    "name": "Goemon Hand Roll Bar",
+    "amenity": "restaurant",
+    "cuisine": "sushi;ramen",
+    "website": "https://goemonramen.com/",
+    "opening_hours": "Th-Sa 17:30-20:00",
+    "addr:housenumber": "12",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HN"
+   }
+  },
+  {
+   "id": "node/10101855729",
+   "lat": 50.821038,
+   "lng": -0.135055,
+   "tags": {
+    "name": "Purezza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "12",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1RE"
+   }
+  },
+  {
+   "id": "node/10311458928",
+   "lat": 50.823309,
+   "lng": -0.151252,
+   "tags": {
+    "name": "Ventisei",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "addr:housenumber": "26",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HN"
+   }
+  },
+  {
+   "id": "node/10574586301",
+   "lat": 50.827629,
+   "lng": -0.141853,
+   "tags": {
+    "name": "Shu Xiang Yuan",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "58",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3XD"
+   }
+  },
+  {
+   "id": "node/10574586302",
+   "lat": 50.827515,
+   "lng": -0.141908,
+   "tags": {
+    "name": "Ji The Chicken Shop",
+    "amenity": "restaurant",
+    "cuisine": "fried_chicken;taiwanese",
+    "addr:housenumber": "56",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3XD"
+   }
+  },
+  {
+   "id": "node/10688734405",
+   "lat": 50.824795,
+   "lng": -0.138083,
+   "tags": {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.pizzaexpress.com/brighton-jubilee-street",
+    "addr:housenumber": "16",
+    "addr:postcode": "BN1 1GE"
+   }
+  },
+  {
+   "id": "node/10690951506",
+   "lat": 50.819983,
+   "lng": -0.142957,
+   "tags": {
+    "name": "Lazy Fin",
+    "name:en": "Lazy Fin",
+    "amenity": "restaurant",
+    "cuisine": "brunch"
+   }
+  },
+  {
+   "id": "node/10743732631",
+   "lat": 50.831198,
+   "lng": -0.174592,
+   "tags": {
+    "name": "Ramsbottom's Fish & Chips",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "addr:housenumber": "58",
+    "addr:street": "Blatchington Road"
+   }
+  },
+  {
+   "id": "node/10779460371",
+   "lat": 50.834203,
+   "lng": -0.127281,
+   "tags": {
+    "name": "Orienthai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.orienthai.online/",
+    "opening_hours": "Mo,Su 17:00-22:15; Tu off; We-Sa 12:00-14:00,17:00-22:15",
+    "addr:housenumber": "51",
+    "addr:street": "Lewes Road",
+    "addr:postcode": "BN2 3HW"
+   }
+  },
+  {
+   "id": "node/10779496436",
+   "lat": 50.824949,
+   "lng": -0.136865,
+   "tags": {
+    "name": "Tutto",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://tutto-restaurant.co.uk/",
+    "addr:housenumber": "20 - 22",
+    "addr:street": "Marlborough Place",
+    "addr:postcode": "BN1 1UB"
+   }
+  },
+  {
+   "id": "node/10793646911",
+   "lat": 50.83133,
+   "lng": -0.1359,
+   "tags": {
+    "name": "Taquitos Casazul",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://casazul.co.uk/",
+    "addr:street": "Marshalls Row",
+    "addr:postcode": "BN1 4JU"
+   }
+  },
+  {
+   "id": "node/10873219483",
+   "lat": 50.819202,
+   "lng": -0.135513,
+   "tags": {
+    "name": "Captains",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "https://www.captainsbrighton.co.uk/",
+    "addr:housenumber": "9-11",
+    "addr:postcode": "BN2 1ET"
+   }
+  },
+  {
+   "id": "node/10905728872",
+   "lat": 50.83423,
+   "lng": -0.139634,
+   "tags": {
+    "name": "Spice Bros",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "16",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QF"
+   }
+  },
+  {
+   "id": "node/10919545661",
+   "lat": 50.824093,
+   "lng": -0.138797,
+   "tags": {
+    "name": "Pompoko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://pompoko.co.uk/",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "110",
+    "addr:street": "Church Street",
+    "addr:postcode": "BN1 1UD"
+   }
+  },
+  {
+   "id": "node/10946843489",
+   "lat": 50.830472,
+   "lng": -0.135791,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.co.uk/restaurants/brighton-london-road",
+    "addr:housenumber": "118-132",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JH",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10951677495",
+   "lat": 50.825555,
+   "lng": -0.135118,
+   "tags": {
+    "name": "Oui Crêperie",
+    "amenity": "restaurant",
+    "cuisine": "crepe",
+    "website": "https://ouicreperie.co.uk/",
+    "addr:housenumber": "30",
+    "addr:street": "Grand Parade",
+    "addr:postcode": "BN2 9QA"
+   }
+  },
+  {
+   "id": "node/10967527334",
+   "lat": 50.828072,
+   "lng": -0.172624,
+   "tags": {
+    "name": "Giggling Squid",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.gigglingsquid.com/restaurant/hove",
+    "addr:housenumber": "129",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2AE"
+   }
+  },
+  {
+   "id": "node/10969767378",
+   "lat": 50.82471,
+   "lng": -0.156551,
+   "tags": {
+    "name": "Pronto in Tavola",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.prontointavola.co.uk/",
+    "opening_hours": "Su-Th 17:00-23:00; Fr-Sa 17:00-00:00",
+    "addr:housenumber": "43A",
+    "addr:street": "Waterloo Street",
+    "addr:postcode": "BN3 1AY"
+   }
+  },
+  {
+   "id": "node/11105994494",
+   "lat": 50.823257,
+   "lng": -0.143881,
+   "tags": {
+    "name": "Island Poké",
+    "amenity": "restaurant",
+    "cuisine": "hawaiian;poke",
+    "website": "https://www.islandpoke.com/location/brighton/",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "38",
+    "addr:street": "West Street",
+    "addr:postcode": "BN1 2RE"
+   }
+  },
+  {
+   "id": "node/11148973563",
+   "lat": 50.820316,
+   "lng": -0.14497,
+   "tags": {
+    "name": "Riddle & Finns The Beach",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.riddleandfinns.co.uk/restaurant-brighton-beach/",
+    "addr:housenumber": "65",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 1NA"
+   }
+  },
+  {
+   "id": "node/1115941691",
+   "lat": 50.82045,
+   "lng": -0.13103,
+   "tags": {
+    "name": "Anatolia",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "opening_hours": "Mo-Sa 12:00-23:00; Su 12:00-22:00",
+    "addr:housenumber": "51",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1QG"
+   }
+  },
+  {
+   "id": "node/1115993922",
+   "lat": 50.819955,
+   "lng": -0.138986,
+   "tags": {
+    "name": "Days",
+    "amenity": "restaurant",
+    "addr:housenumber": "75-79",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1NF"
+   }
+  },
+  {
+   "id": "node/1115993935",
+   "lat": 50.822033,
+   "lng": -0.141501,
+   "tags": {
+    "name": "ASK Italian",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.askitalian.co.uk/italian/restaurants/brighton",
+    "addr:housenumber": "58",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AE"
+   }
+  },
+  {
+   "id": "node/1115993939",
+   "lat": 50.821117,
+   "lng": -0.140532,
+   "tags": {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.pizzaexpress.com/brighton-prince-albert-street",
+    "addr:housenumber": "22",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HF"
+   }
+  },
+  {
+   "id": "node/1115993944",
+   "lat": 50.821093,
+   "lng": -0.140349,
+   "tags": {
+    "name": "YORI",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://yoriuk.com/",
+    "addr:housenumber": "24",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HF"
+   }
+  },
+  {
+   "id": "node/1115993983",
+   "lat": 50.822716,
+   "lng": -0.13964,
+   "tags": {
+    "name": "Moonlight",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "31-32",
+    "addr:street": "New Road",
+    "addr:postcode": "BN1 1UG"
+   }
+  },
+  {
+   "id": "node/1115993985",
+   "lat": 50.821039,
+   "lng": -0.140158,
+   "tags": {
+    "name": "Bella Italia",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.bellaitalia.co.uk/restaurants/brighton/market-street",
+    "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 11:00-22:00",
+    "wikidata": "Q26661860",
+    "addr:housenumber": "24",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/1116012477",
+   "lat": 50.82045,
+   "lng": -0.143149,
+   "tags": {
+    "name": "Buddies",
+    "amenity": "restaurant",
+    "addr:housenumber": "46-48",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 1NA"
+   }
+  },
+  {
+   "id": "node/1116588224",
+   "lat": 50.821462,
+   "lng": -0.148331,
+   "tags": {
+    "name": "The Salt Room",
+    "amenity": "restaurant",
+    "cuisine": "fish;seafood",
+    "website": "https://saltroom-restaurant.co.uk/",
+    "opening_hours": "Mo-Sa 12:00-22:00; Su 12:00-21:00",
+    "addr:housenumber": "106",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 2FU",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1116882323",
+   "lat": 50.821984,
+   "lng": -0.151366,
+   "tags": {
+    "name": "Pinello",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "addr:housenumber": "132",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2HH"
+   }
+  },
+  {
+   "id": "node/1116882326",
+   "lat": 50.822313,
+   "lng": -0.152326,
+   "tags": {
+    "name": "Holiday Inn",
+    "tourism": "hotel",
+    "wikidata": "Q4879164",
+    "addr:housenumber": "137",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2FU"
+   }
+  },
+  {
+   "id": "node/11182061460",
+   "lat": 50.824945,
+   "lng": -0.154034,
+   "tags": {
+    "name": "Archipelagos Gyros",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://archipelagosgyros.co.uk/",
+    "addr:housenumber": "109",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AA"
+   }
+  },
+  {
+   "id": "node/11182061461",
+   "lat": 50.824933,
+   "lng": -0.153869,
+   "tags": {
+    "name": "Kambi's",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "website": "https://kambis.co.uk/",
+    "addr:housenumber": "107",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AA"
+   }
+  },
+  {
+   "id": "node/1123948343",
+   "lat": 50.824328,
+   "lng": -0.150457,
+   "tags": {
+    "name": "The Big Bowl",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "54",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/1123948348",
+   "lat": 50.823006,
+   "lng": -0.151109,
+   "tags": {
+    "name": "Siam Siam",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.siamsiambrighton.com/",
+    "addr:housenumber": "73-74",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HG"
+   }
+  },
+  {
+   "id": "node/1123948368",
+   "lat": 50.82724,
+   "lng": -0.168164,
+   "tags": {
+    "name": "Canham & Sons",
+    "amenity": "restaurant",
+    "addr:housenumber": "48",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2FN"
+   }
+  },
+  {
+   "id": "node/1123948384",
+   "lat": 50.826914,
+   "lng": -0.16715,
+   "tags": {
+    "name": "Libation",
+    "amenity": "restaurant",
+    "addr:housenumber": "10",
+    "addr:street": "Victoria Grove",
+    "addr:postcode": "BN3 2LJ"
+   }
+  },
+  {
+   "id": "node/1123948390",
+   "lat": 50.827383,
+   "lng": -0.169264,
+   "tags": {
+    "name": "Maré by Rafael Cagali",
+    "amenity": "restaurant",
+    "website": "https://www.marehove.com/",
+    "addr:housenumber": "60",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BD"
+   }
+  },
+  {
+   "id": "node/1123948404",
+   "lat": 50.825278,
+   "lng": -0.154981,
+   "tags": {
+    "name": "Bankers",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "https://bankersfishandchips.co.uk/bankers-brighton-3/",
+    "addr:housenumber": "116",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AB"
+   }
+  },
+  {
+   "id": "node/1123948408",
+   "lat": 50.826213,
+   "lng": -0.162159,
+   "tags": {
+    "name": "Mekan",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "http://www.mekan.co.uk/",
+    "addr:housenumber": "64",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 2JQ"
+   }
+  },
+  {
+   "id": "node/1123948410",
+   "lat": 50.827327,
+   "lng": -0.166378,
+   "tags": {
+    "name": "Fatto a Mano",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.fattoamanopizza.com/",
+    "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-22:30; Su 12:00-21:30",
+    "addr:housenumber": "65-67",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BB"
+   }
+  },
+  {
+   "id": "node/1123948466",
+   "lat": 50.82545,
+   "lng": -0.158058,
+   "tags": {
+    "name": "Jade Chinese",
+    "amenity": "restaurant",
+    "addr:housenumber": "29",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AF"
+   }
+  },
+  {
+   "id": "node/1123948468",
+   "lat": 50.823688,
+   "lng": -0.151065,
+   "tags": {
+    "name": "Only Me",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "33-35",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/1123948486",
+   "lat": 50.825511,
+   "lng": -0.156895,
+   "tags": {
+    "name": "Archipelegos Greek",
+    "amenity": "restaurant",
+    "addr:housenumber": "121",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1DB"
+   }
+  },
+  {
+   "id": "node/1123948489",
+   "lat": 50.826274,
+   "lng": -0.162408,
+   "tags": {
+    "name": "History Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://historypizzeria.co.uk/",
+    "addr:housenumber": "65-67",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 2JQ"
+   }
+  },
+  {
+   "id": "node/1123948497",
+   "lat": 50.825137,
+   "lng": -0.15551,
+   "tags": {
+    "name": "Piccolo",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.piccolohove.com/",
+    "addr:housenumber": "1",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/1123948519",
+   "lat": 50.823586,
+   "lng": -0.151116,
+   "tags": {
+    "name": "Sushi Garden",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "32A-33A",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/1123948521",
+   "lat": 50.827697,
+   "lng": -0.169412,
+   "tags": {
+    "name": "Topolino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "97",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BA"
+   }
+  },
+  {
+   "id": "node/1123948543",
+   "lat": 50.824063,
+   "lng": -0.150886,
+   "tags": {
+    "name": "Al Rouche",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "addr:housenumber": "44",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/1123948546",
+   "lat": 50.822454,
+   "lng": -0.1514,
+   "tags": {
+    "name": "Istanbul Turkish Cuisine",
+    "amenity": "restaurant",
+    "addr:housenumber": "86-87",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HG"
+   }
+  },
+  {
+   "id": "node/1123948590",
+   "lat": 50.82521,
+   "lng": -0.156108,
+   "tags": {
+    "name": "Deniz Burger (Bad Boys)",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "opening_hours": "Su-Th 12:00-00:00; Fr-Sa 12:00-02:30",
+    "addr:housenumber": "9",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/1123948594",
+   "lat": 50.827442,
+   "lng": -0.169762,
+   "tags": {
+    "name": "Third Avenue / Catch & Grill",
+    "amenity": "restaurant",
+    "addr:housenumber": "70-72",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2FP"
+   }
+  },
+  {
+   "id": "node/1123948693",
+   "lat": 50.826066,
+   "lng": -0.161485,
+   "tags": {
+    "name": "Cin Cin Italian Bar And Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "60",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1JD"
+   }
+  },
+  {
+   "id": "node/1123981132",
+   "lat": 50.828584,
+   "lng": -0.178202,
+   "tags": {
+    "name": "Moonstone",
+    "amenity": "restaurant",
+    "cuisine": "sri_lankan",
+    "addr:housenumber": "208",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2DJ"
+   }
+  },
+  {
+   "id": "node/1123981149",
+   "lat": 50.827885,
+   "lng": -0.173015,
+   "tags": {
+    "name": "Otello",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.otellorestaurant.co.uk/",
+    "addr:housenumber": "122",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EA"
+   }
+  },
+  {
+   "id": "node/1123981199",
+   "lat": 50.827851,
+   "lng": -0.172738,
+   "tags": {
+    "name": "Issa Sushi",
+    "amenity": "restaurant",
+    "addr:housenumber": "116",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EA"
+   }
+  },
+  {
+   "id": "node/1123981257",
+   "lat": 50.82795,
+   "lng": -0.171411,
+   "tags": {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.pizzaexpress.com/hove-church-road",
+    "addr:housenumber": "107",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EB"
+   }
+  },
+  {
+   "id": "node/11240109037",
+   "lat": 50.823374,
+   "lng": -0.151219,
+   "tags": {
+    "name": "Wolfox Roastery",
+    "amenity": "restaurant",
+    "addr:housenumber": "27-28",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/11240109038",
+   "lat": 50.823512,
+   "lng": -0.15115,
+   "tags": {
+    "name": "No No Please",
+    "amenity": "restaurant",
+    "addr:housenumber": "30-31",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/11297486229",
+   "lat": 50.819625,
+   "lng": -0.130511,
+   "tags": {
+    "name": "Amherst House",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/11343656100",
+   "lat": 50.833907,
+   "lng": -0.139107,
+   "tags": {
+    "name": "Lost Boys Chicken",
+    "amenity": "restaurant",
+    "cuisine": "chicken",
+    "website": "https://www.lostboyschicken.com/",
+    "opening_hours": "Fr,Sa 12:00-22:00; Su 12:00-21:00",
+    "addr:housenumber": "2",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QF"
+   }
+  },
+  {
+   "id": "node/11467549795",
+   "lat": 50.825213,
+   "lng": -0.154529,
+   "tags": {
+    "name": "Constantinople",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean;middle_eastern",
+    "website": "https://theconstantinople.co.uk/",
+    "addr:housenumber": "51",
+    "addr:street": "Norfolk Square",
+    "addr:postcode": "BN1 2PA"
+   }
+  },
+  {
+   "id": "node/11528278673",
+   "lat": 50.834775,
+   "lng": -0.140462,
+   "tags": {
+    "name": "The Set At Cafe Rust",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su,PH 09:00-16:00",
+    "addr:housenumber": "50",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QF"
+   }
+  },
+  {
+   "id": "node/1155346441",
+   "lat": 50.822022,
+   "lng": -0.138222,
+   "tags": {
+    "name": "Al Duomo",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.alduomo.co.uk/",
+    "addr:housenumber": "7",
+    "addr:street": "Pavilion Buildings",
+    "addr:postcode": "BN1 1EE"
+   }
+  },
+  {
+   "id": "node/1155374819",
+   "lat": 50.821272,
+   "lng": -0.140851,
+   "tags": {
+    "name": "Food For Friends",
+    "amenity": "restaurant",
+    "website": "https://www.foodforfriends.com/",
+    "opening_hours": "Mo-Su",
+    "addr:housenumber": "17 - 18",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HF"
+   }
+  },
+  {
+   "id": "node/1155374822",
+   "lat": 50.820634,
+   "lng": -0.140744,
+   "tags": {
+    "name": "Moshimo",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:street": "Bartholomew Square",
+    "addr:postcode": "BN1 1JS",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1155462025",
+   "lat": 50.822163,
+   "lng": -0.141091,
+   "tags": {
+    "name": "Casa Don Carlos",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "addr:housenumber": "5",
+    "addr:street": "Union Street",
+    "addr:postcode": "BN1 1HA"
+   }
+  },
+  {
+   "id": "node/1155467586",
+   "lat": 50.822553,
+   "lng": -0.140446,
+   "tags": {
+    "name": "Riddle & Finns The Lanes",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.riddleandfinns.co.uk/restaurant-brighton-lanes/",
+    "addr:housenumber": "12B",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/1155472958",
+   "lat": 50.822858,
+   "lng": -0.142794,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.co.uk/restaurants/brighton-duke-street",
+    "addr:housenumber": "34",
+    "addr:street": "Duke Street",
+    "addr:postcode": "BN1 1AG"
+   }
+  },
+  {
+   "id": "node/11611600462",
+   "lat": 50.833888,
+   "lng": -0.13954,
+   "tags": {
+    "name": "Kitgum",
+    "amenity": "restaurant",
+    "cuisine": "african;indian",
+    "website": "https://kitgumkitchen.com/",
+    "opening_hours": "Th-Sa 12:00-23:00",
+    "addr:housenumber": "9",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QE"
+   }
+  },
+  {
+   "id": "node/11652456614",
+   "lat": 50.83578,
+   "lng": -0.125852,
+   "tags": {
+    "name": "Archipelagos Gyros",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://archipelagosgyros.co.uk/",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "addr:housenumber": "75",
+    "addr:street": "Lewes Road",
+    "addr:postcode": "BN2 3HZ"
+   }
+  },
+  {
+   "id": "node/11668567655",
+   "lat": 50.820239,
+   "lng": -0.139106,
+   "tags": {
+    "name": "Indian Summer",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.indiansummerbrighton.co.uk/",
+    "addr:housenumber": "70",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HQ"
+   }
+  },
+  {
+   "id": "node/11840846821",
+   "lat": 50.83295,
+   "lng": -0.137865,
+   "tags": {
+    "name": "Yemen Mandi",
+    "amenity": "restaurant",
+    "website": "https://yemenmandi.co.uk/",
+    "addr:housenumber": "79",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JF"
+   }
+  },
+  {
+   "id": "node/11844725480",
+   "lat": 50.827943,
+   "lng": -0.173573,
+   "tags": {
+    "name": "Persia",
+    "amenity": "restaurant",
+    "addr:housenumber": "126",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EA"
+   }
+  },
+  {
+   "id": "node/11886081744",
+   "lat": 50.820804,
+   "lng": -0.134527,
+   "tags": {
+    "name": "Detroit Club",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.detroitclub.co.uk/",
+    "addr:housenumber": "111",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "node/11886081751",
+   "lat": 50.820615,
+   "lng": -0.134251,
+   "tags": {
+    "name": "The Griffin",
+    "tourism": "guest_house",
+    "website": "http://www.griffinbrighton.co.uk/",
+    "addr:housenumber": "14",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089190",
+   "lat": 50.820539,
+   "lng": -0.134563,
+   "tags": {
+    "name": "The Beach Pad",
+    "tourism": "guest_house",
+    "website": "https://www.beachpad.co.uk/",
+    "addr:housenumber": "18",
+    "addr:street": "Broad Street",
+    "addr:postcode": "BN2 1TJ"
+   }
+  },
+  {
+   "id": "node/11886089191",
+   "lat": 50.820286,
+   "lng": -0.134611,
+   "tags": {
+    "name": "Millards",
+    "tourism": "guest_house",
+    "website": "http://www.millards-hotel-brighton.com/",
+    "addr:housenumber": "23",
+    "addr:street": "Broad Street",
+    "addr:postcode": "BN2 1TJ"
+   }
+  },
+  {
+   "id": "node/11886089192",
+   "lat": 50.820521,
+   "lng": -0.134283,
+   "tags": {
+    "name": "Pink Pavillion",
+    "tourism": "guest_house",
+    "website": "http://www.brightonpavilion.co.uk/",
+    "addr:housenumber": "12",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089193",
+   "lat": 50.820476,
+   "lng": -0.134293,
+   "tags": {
+    "name": "Grand Pier",
+    "tourism": "guest_house",
+    "website": "https://grandpierguesthouse.co.uk/",
+    "addr:housenumber": "11",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089194",
+   "lat": 50.820431,
+   "lng": -0.134304,
+   "tags": {
+    "name": "Brighton Wave",
+    "tourism": "guest_house",
+    "website": "https://www.brightonwave.com/",
+    "addr:housenumber": "10",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089195",
+   "lat": 50.820387,
+   "lng": -0.134315,
+   "tags": {
+    "name": "The Kelvin",
+    "tourism": "guest_house",
+    "website": "http://thekelvin.co.uk/",
+    "addr:housenumber": "9",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089196",
+   "lat": 50.820339,
+   "lng": -0.134325,
+   "tags": {
+    "name": "Istanbul Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "8",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "node/11886089197",
+   "lat": 50.820295,
+   "lng": -0.134332,
+   "tags": {
+    "name": "The Old Palace",
+    "tourism": "guest_house",
+    "website": "https://oldpalaceguesthouse.co.uk/",
+    "wikidata": "Q111121986",
+    "addr:housenumber": "7",
+    "addr:street": "Madeira Place"
+   }
+  },
+  {
+   "id": "node/11929999051",
+   "lat": 50.821187,
+   "lng": -0.13936,
+   "tags": {
+    "name": "BRUHA",
+    "amenity": "restaurant",
+    "cuisine": "filipino",
+    "addr:housenumber": "28",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HL"
+   }
+  },
+  {
+   "id": "node/1205836919",
+   "lat": 50.82464,
+   "lng": -0.138594,
+   "tags": {
+    "name": "Rudy's Pizza Napoletana",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.rudyspizza.co.uk/location/brighton/",
+    "addr:housenumber": "17",
+    "addr:street": "Jubilee Street",
+    "addr:postcode": "BN1 1GE"
+   }
+  },
+  {
+   "id": "node/12074952052",
+   "lat": 50.822331,
+   "lng": -0.142665,
+   "tags": {
+    "name": "Mowgli Street Food",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.mowglistreetfood.com/restaurants/brighton/",
+    "opening_hours": "Su-Th 11:30-20:00; Fr-Sa 11:30-22:30",
+    "addr:housenumber": "12-14",
+    "addr:street": "Dukes Lane",
+    "addr:postcode": "BN1 1BG"
+   }
+  },
+  {
+   "id": "node/12145044007",
+   "lat": 50.825721,
+   "lng": -0.159915,
+   "tags": {
+    "name": "Morelli Zorelli",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "website": "https://www.morellizorelli.co.uk/",
+    "addr:housenumber": "40",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1JD"
+   }
+  },
+  {
+   "id": "node/12228316559",
+   "lat": 50.820539,
+   "lng": -0.132537,
+   "tags": {
+    "name": "Sawadee",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.sawadeebrighton.co.uk/",
+    "addr:housenumber": "87",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TP"
+   }
+  },
+  {
+   "id": "node/12348783059",
+   "lat": 50.822145,
+   "lng": -0.148116,
+   "tags": {
+    "name": "Maldron Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1236329255",
+   "lat": 50.824936,
+   "lng": -0.138835,
+   "tags": {
+    "name": "Las Iguanas",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.iguanas.co.uk/restaurants/brighton",
+    "opening_hours": "Mo-Th 11:00-22:00; Fr 11:00-22:30; Sa 11:00-23:30; Su 11:00-22:00",
+    "addr:housenumber": "7",
+    "addr:street": "Jubilee Street",
+    "addr:postcode": "BN1 1GE",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12364623215",
+   "lat": 50.824336,
+   "lng": -0.149905,
+   "tags": {
+    "name": "Ranch",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "76",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2HA"
+   }
+  },
+  {
+   "id": "node/12364623217",
+   "lat": 50.824272,
+   "lng": -0.14961,
+   "tags": {
+    "name": "Desi Dhaba",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "72",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2HA"
+   }
+  },
+  {
+   "id": "node/12364623222",
+   "lat": 50.824185,
+   "lng": -0.149187,
+   "tags": {
+    "name": "Treatz",
+    "amenity": "restaurant",
+    "addr:housenumber": "66",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2HA"
+   }
+  },
+  {
+   "id": "node/12364623223",
+   "lat": 50.824169,
+   "lng": -0.149113,
+   "tags": {
+    "name": "The Sushi Co.",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "65",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2HA"
+   }
+  },
+  {
+   "id": "node/12595659201",
+   "lat": 50.827132,
+   "lng": -0.167283,
+   "tags": {
+    "name": "Shiraz Persian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "website": "https://www.shirazpersianrestaurant.co.uk/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "28",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2FN"
+   }
+  },
+  {
+   "id": "node/12783536564",
+   "lat": 50.824279,
+   "lng": -0.137166,
+   "tags": {
+    "name": "Marlborough Place",
+    "tourism": "guest_house",
+    "contact:website": "http://www.marlboroughplace.com",
+    "addr:postcode": "BN1 1UB"
+   }
+  },
+  {
+   "id": "node/12870015769",
+   "lat": 50.824902,
+   "lng": -0.13943,
+   "tags": {
+    "name": "Caccia and Tails",
+    "amenity": "restaurant",
+    "website": "https://cacciaandtails.com/",
+    "addr:housenumber": "44-46",
+    "addr:street": "Gardner Street",
+    "addr:postcode": "BN1 1UN"
+   }
+  },
+  {
+   "id": "node/12926383428",
+   "lat": 50.822201,
+   "lng": -0.138922,
+   "tags": {
+    "name": "Youme Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/12953695302",
+   "lat": 50.825064,
+   "lng": -0.153286,
+   "tags": {
+    "name": "Baqueano",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "website": "https://www.baqueano.co.uk/",
+    "opening_hours": "We-Th 17:30-22:00; Fr-Sa 12:00-22:30; Su 16:30-22:00",
+    "addr:housenumber": "125",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AD"
+   }
+  },
+  {
+   "id": "node/1297007052",
+   "lat": 50.818946,
+   "lng": -0.127011,
+   "tags": {
+    "name": "The White House",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/12982957629",
+   "lat": 50.822926,
+   "lng": -0.151436,
+   "tags": {
+    "name": "Sea Spice",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "17",
+    "addr:street": "Preston Street"
+   }
+  },
+  {
+   "id": "node/12989077575",
+   "lat": 50.821354,
+   "lng": -0.140578,
+   "tags": {
+    "name": "Lost in the Lanes",
+    "amenity": "restaurant",
+    "website": "https://www.lostinthelanes.com/",
+    "addr:housenumber": "10",
+    "addr:street": "Nile Street",
+    "addr:postcode": "BN1 1HW"
+   }
+  },
+  {
+   "id": "node/13113121646",
+   "lat": 50.821255,
+   "lng": -0.149522,
+   "tags": {
+    "name": "Salt Shed",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;burger",
+    "website": "https://www.salt-shed.co.uk/west-pier-beach-bar",
+    "addr:housenumber": "91-96",
+    "addr:street": "Kings Road Arches",
+    "addr:postcode": "BN1 2FN"
+   }
+  },
+  {
+   "id": "node/13157129457",
+   "lat": 50.822132,
+   "lng": -0.141504,
+   "tags": {
+    "name": "Roti King",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://rotiking.com/location/brighton/",
+    "addr:housenumber": "57",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AF"
+   }
+  },
+  {
+   "id": "node/13164327995",
+   "lat": 50.824203,
+   "lng": -0.150813,
+   "tags": {
+    "name": "Etci Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "http://etcikitchen.com/",
+    "addr:housenumber": "47",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/13171251058",
+   "lat": 50.825728,
+   "lng": -0.160063,
+   "tags": {
+    "name": "Market",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "https://market-restaurantbar.co.uk/",
+    "addr:housenumber": "42",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1JD"
+   }
+  },
+  {
+   "id": "node/13196757464",
+   "lat": 50.824893,
+   "lng": -0.153382,
+   "tags": {
+    "name": "The Coconut Island",
+    "amenity": "restaurant",
+    "cuisine": "sri_lankan",
+    "website": "https://thecoconutisland.com/",
+    "addr:housenumber": "103",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AA"
+   }
+  },
+  {
+   "id": "node/13300965501",
+   "lat": 50.82473,
+   "lng": -0.139518,
+   "tags": {
+    "name": "Happy Maki",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi;poke",
+    "website": "https://www.happymaki.co.uk/",
+    "opening_hours": "Mo-Su 12:00-20:00",
+    "addr:housenumber": "49",
+    "addr:street": "Gardner Street",
+    "addr:postcode": "BN1 1UN",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1341008042",
+   "lat": 50.824026,
+   "lng": -0.155318,
+   "tags": {
+    "name": "The Gingerman",
+    "amenity": "restaurant",
+    "addr:housenumber": "21",
+    "addr:street": "Norfolk Square",
+    "addr:postcode": "BN1 2PD"
+   }
+  },
+  {
+   "id": "node/1341080655",
+   "lat": 50.82054,
+   "lng": -0.131704,
+   "tags": {
+    "name": "Bayleaf",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "49",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1RG",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1343324653",
+   "lat": 50.821764,
+   "lng": -0.139757,
+   "tags": {
+    "name": "Donatello",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://donatello.co.uk/",
+    "addr:housenumber": "1-3",
+    "addr:street": "Brighton Place",
+    "addr:postcode": "BN1 1HJ"
+   }
+  },
+  {
+   "id": "node/13446304884",
+   "lat": 50.820099,
+   "lng": -0.140766,
+   "tags": {
+    "name": "Leonardo Royal Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13541192162",
+   "lat": 50.827678,
+   "lng": -0.169234,
+   "tags": {
+    "name": "Ganges Brasserie",
+    "amenity": "restaurant",
+    "addr:housenumber": "93",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BA"
+   }
+  },
+  {
+   "id": "node/13541192163",
+   "lat": 50.82767,
+   "lng": -0.169143,
+   "tags": {
+    "name": "Istanbul Grill House",
+    "amenity": "restaurant",
+    "cuisine": "kebab;burger;pizza;chicken",
+    "addr:housenumber": "91",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2BA"
+   }
+  },
+  {
+   "id": "node/13541192165",
+   "lat": 50.827564,
+   "lng": -0.170653,
+   "tags": {
+    "name": "Fourth And Church",
+    "amenity": "restaurant",
+    "addr:housenumber": "84",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EB"
+   }
+  },
+  {
+   "id": "node/13592144796",
+   "lat": 50.822319,
+   "lng": -0.140762,
+   "tags": {
+    "name": "The Chilli Pickle",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://thechillipickle.com",
+    "addr:housenumber": "6 - 8",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/13684565739",
+   "lat": 50.821072,
+   "lng": -0.140884,
+   "tags": {
+    "name": "Chilli",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "6",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HE"
+   }
+  },
+  {
+   "id": "node/13720179167",
+   "lat": 50.824251,
+   "lng": -0.150788,
+   "tags": {
+    "name": "Shaanxi",
+    "amenity": "restaurant",
+    "cuisine": "chinese;noodle",
+    "opening_hours": "Mo,Tu,Th,Fr 12:00-14:30, Mo,Tu,Th,Fr 17:00-22:00, Sa,Su 12:00-22:00; We off",
+    "addr:housenumber": "48",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13720179178",
+   "lat": 50.822775,
+   "lng": -0.151516,
+   "tags": {
+    "name": "Adelfia",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "13-14",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HN"
+   }
+  },
+  {
+   "id": "node/13720179179",
+   "lat": 50.822651,
+   "lng": -0.151568,
+   "tags": {
+    "name": "Rotana",
+    "amenity": "restaurant",
+    "cuisine": "moroccan;lebanese",
+    "addr:housenumber": "10-11",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HN"
+   }
+  },
+  {
+   "id": "node/13737942061",
+   "lat": 50.812212,
+   "lng": -0.103084,
+   "tags": {
+    "name": "Café Havana",
+    "amenity": "restaurant",
+    "addr:housenumber": "2a",
+    "addr:street": "Waterfront"
+   }
+  },
+  {
+   "id": "node/13777034733",
+   "lat": 50.818298,
+   "lng": -0.106364,
+   "tags": {
+    "name": "Saffrons",
+    "amenity": "restaurant",
+    "website": "https://saffronsbrightononline.com/",
+    "addr:housenumber": "20",
+    "addr:street": "Whitehawk Road",
+    "addr:postcode": "BN2 5FA"
+   }
+  },
+  {
+   "id": "node/13806485624",
+   "lat": 50.816764,
+   "lng": -0.112139,
+   "tags": {
+    "name": "Busby and Wilds",
+    "amenity": "restaurant",
+    "cuisine": "gastropub",
+    "website": "https://www.busbyandwilds.co.uk/",
+    "opening_hours": "Th,Fr 17:00-22:00; Sa 12:00-15:00,17:00-22:00; Su 12:00-18:00",
+    "addr:housenumber": "8/9",
+    "addr:street": "Rock Street",
+    "addr:postcode": "BN2 1NF",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/13860992663",
+   "lat": 50.825297,
+   "lng": -0.156697,
+   "tags": {
+    "name": "Shayan Persian Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "addr:housenumber": "15",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/13860992664",
+   "lat": 50.825239,
+   "lng": -0.156304,
+   "tags": {
+    "name": "Mixto",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "12",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/13894727746",
+   "lat": 50.828652,
+   "lng": -0.177061,
+   "tags": {
+    "name": "Hove Tandoori",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "175",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2AB"
+   }
+  },
+  {
+   "id": "node/13904371079",
+   "lat": 50.819443,
+   "lng": -0.13133,
+   "tags": {
+    "name": "Drakes",
+    "tourism": "hotel",
+    "wikidata": "Q111369152",
+    "addr:housenumber": "43-44",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1PE"
+   }
+  },
+  {
+   "id": "node/13906650423",
+   "lat": 50.8327,
+   "lng": -0.137536,
+   "tags": {
+    "name": "Alcampo Lounge",
+    "amenity": "restaurant",
+    "cuisine": "british",
+    "website": "https://thelounges.co.uk/alcampo/",
+    "addr:housenumber": "84-86",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JF"
+   }
+  },
+  {
+   "id": "node/13919352397",
+   "lat": 50.830111,
+   "lng": -0.139417,
+   "tags": {
+    "name": "Staybridge Suites Brighton",
+    "tourism": "hotel",
+    "addr:housenumber": "1",
+    "addr:street": "Fleet Street",
+    "addr:postcode": "BN1 4BF"
+   }
+  },
+  {
+   "id": "node/13935367401",
+   "lat": 50.819523,
+   "lng": -0.133697,
+   "tags": {
+    "name": "Cecconi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13963073503",
+   "lat": 50.822315,
+   "lng": -0.140442,
+   "tags": {
+    "name": "Tofu Vegan",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://tofuvegan.com/reservation/brighton",
+    "opening_hours": "Mo-Sa 12:00-22:00; Su 12:00-21:30",
+    "addr:housenumber": "15",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/13976293947",
+   "lat": 50.822943,
+   "lng": -0.141677,
+   "tags": {
+    "name": "Pizzolo Bar",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "37",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AB"
+   }
+  },
+  {
+   "id": "node/13976293952",
+   "lat": 50.823219,
+   "lng": -0.151277,
+   "tags": {
+    "name": "Indigo",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "24",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HN"
+   }
+  },
+  {
+   "id": "node/13976293975",
+   "lat": 50.825023,
+   "lng": -0.15291,
+   "tags": {
+    "name": "Kateh",
+    "amenity": "restaurant",
+    "cuisine": "persian",
+    "addr:housenumber": "35",
+    "addr:street": "Montpelier Road"
+   }
+  },
+  {
+   "id": "node/13998029166",
+   "lat": 50.8195,
+   "lng": -0.131595,
+   "tags": {
+    "name": "Central Wave",
+    "tourism": "hotel",
+    "website": "https://www.centralwavebrighton.com",
+    "addr:housenumber": "29–31",
+    "addr:street": "New Steine Kemptown",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/14136892762",
+   "lat": 50.825325,
+   "lng": -0.183738,
+   "tags": {
+    "name": "Babble",
+    "amenity": "restaurant",
+    "website": "https://babblehove.com/"
+   }
+  },
+  {
+   "id": "node/14220013928",
+   "lat": 50.822834,
+   "lng": -0.145582,
+   "tags": {
+    "name": "Italian Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:postcode": "BN1 2TE"
+   }
+  },
+  {
+   "id": "node/14220013929",
+   "lat": 50.823119,
+   "lng": -0.145711,
+   "tags": {
+    "name": "Noodle Stop",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "addr:postcode": "BN1 2TE"
+   }
+  },
+  {
+   "id": "node/1446995208",
+   "lat": 50.835255,
+   "lng": -0.141769,
+   "tags": {
+    "name": "Pizza 500",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "website": "https://goodeats.io/Pizza500Brighton",
+    "addr:housenumber": "83",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QG"
+   }
+  },
+  {
+   "id": "node/1508670786",
+   "lat": 50.82526,
+   "lng": -0.175004,
+   "tags": {
+    "name": "Smart Sea View Brighton hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "9-12",
+    "addr:street": "St Catherines Terrace",
+    "addr:postcode": "BN3 2RH"
+   }
+  },
+  {
+   "id": "node/1508756250",
+   "lat": 50.82757,
+   "lng": -0.176143,
+   "tags": {
+    "name": "Cinderella Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1508789467",
+   "lat": 50.827953,
+   "lng": -0.17366,
+   "tags": {
+    "name": "Franco Manca",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "128",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EA"
+   }
+  },
+  {
+   "id": "node/1508789470",
+   "lat": 50.828177,
+   "lng": -0.173572,
+   "tags": {
+    "name": "Modelo Lounge",
+    "amenity": "restaurant",
+    "cuisine": "british",
+    "website": "https://thelounges.co.uk/modelo/",
+    "opening_hours": "Su-Th 09:00-22:00; Fr-Sa 09:00-23:00",
+    "addr:housenumber": "143-145",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2AE"
+   }
+  },
+  {
+   "id": "node/1508789477",
+   "lat": 50.827861,
+   "lng": -0.17283,
+   "tags": {
+    "name": "Shandiz",
+    "amenity": "restaurant",
+    "addr:housenumber": "118",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EA"
+   }
+  },
+  {
+   "id": "node/1510003297",
+   "lat": 50.825366,
+   "lng": -0.160954,
+   "tags": {
+    "name": "Regency Lansdowne Guesthouse",
+    "tourism": "guest_house",
+    "website": "http://www.regencylansdowne.co.uk/",
+    "addr:housenumber": "45",
+    "addr:street": "Lansdowne Place",
+    "addr:postcode": "BN3 1HF"
+   }
+  },
+  {
+   "id": "node/1510018095",
+   "lat": 50.824143,
+   "lng": -0.158433,
+   "tags": {
+    "name": "Brunswick Square Hotel",
+    "tourism": "hotel",
+    "website": "https://brunswicksquarehotel.co.uk/",
+    "addr:housenumber": "11",
+    "addr:street": "Brunswick Square",
+    "addr:postcode": "BN3 1EH"
+   }
+  },
+  {
+   "id": "node/1510317720",
+   "lat": 50.822274,
+   "lng": -0.151465,
+   "tags": {
+    "name": "China Garden",
+    "name:en": "China Garden",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "88-91",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HG"
+   }
+  },
+  {
+   "id": "node/1515288220",
+   "lat": 50.820304,
+   "lng": -0.14413,
+   "tags": {
+    "name": "Lazy Fin",
+    "amenity": "restaurant",
+    "website": "https://lazyfin.co.uk/",
+    "addr:housenumber": "163",
+    "addr:street": "King's Road Arches",
+    "addr:postcode": "BN1 1NB"
+   }
+  },
+  {
+   "id": "node/1526906940",
+   "lat": 50.819994,
+   "lng": -0.142344,
+   "tags": {
+    "name": "Brighton Smokehouse",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "addr:housenumber": "197",
+    "addr:street": "King's Road Arches",
+    "addr:postcode": "BN1 1NB"
+   }
+  },
+  {
+   "id": "node/1527601364",
+   "lat": 50.816557,
+   "lng": -0.136868,
+   "tags": {
+    "name": "Palm Court Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1629563924",
+   "lat": 50.864538,
+   "lng": -0.151841,
+   "tags": {
+    "name": "The Elizabethan Cottage",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "130-136",
+    "addr:street": "Old London Road",
+    "addr:postcode": "BN1 8YA"
+   }
+  },
+  {
+   "id": "node/1629564045",
+   "lat": 50.859962,
+   "lng": -0.141259,
+   "tags": {
+    "name": "Chowringhee",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.chowringhee.co.uk/",
+    "addr:housenumber": "2",
+    "addr:street": "Wilmington Parade",
+    "addr:postcode": "BN1 8JJ"
+   }
+  },
+  {
+   "id": "node/1746828858",
+   "lat": 50.827122,
+   "lng": -0.133657,
+   "tags": {
+    "name": "Planet India",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.planetindia.co.uk/",
+    "addr:housenumber": "4-5",
+    "addr:street": "Richmond Parade",
+    "addr:postcode": "BN2 9PH"
+   }
+  },
+  {
+   "id": "node/1747683837",
+   "lat": 50.826629,
+   "lng": -0.138591,
+   "tags": {
+    "name": "HongKong SiuMei",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "11A",
+    "addr:street": "Kensington Gardens",
+    "addr:postcode": "BN1 4AL"
+   }
+  },
+  {
+   "id": "node/1763083149",
+   "lat": 50.819567,
+   "lng": -0.138348,
+   "tags": {
+    "name": "HostelPoint",
+    "tourism": "hostel",
+    "website": "http://www.hostelpointuk.com/",
+    "addr:housenumber": "10;12",
+    "addr:street": "Grand Junction Road",
+    "addr:postcode": "BN1 1PN",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2019009885",
+   "lat": 50.820913,
+   "lng": -0.141334,
+   "tags": {
+    "name": "Pho",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.phocafe.co.uk/locations/brighton",
+    "addr:housenumber": "12",
+    "addr:street": "Black Lion Street",
+    "addr:postcode": "BN1 1ND"
+   }
+  },
+  {
+   "id": "node/2424533699",
+   "lat": 50.821666,
+   "lng": -0.12904,
+   "tags": {
+    "name": "Happy Family",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "We-Mo,PH 16:30-23:00",
+    "addr:housenumber": "106",
+    "addr:street": "Edward Street",
+    "addr:postcode": "BN2 0BB",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2424545895",
+   "lat": 50.821569,
+   "lng": -0.129715,
+   "tags": {
+    "name": "Maon Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "26",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2424545900",
+   "lat": 50.821257,
+   "lng": -0.130024,
+   "tags": {
+    "name": "Abbey Lodge",
+    "tourism": "guest_house",
+    "addr:housenumber": "19",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/2424545904",
+   "lat": 50.820437,
+   "lng": -0.130258,
+   "tags": {
+    "name": "4 Seasons Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "3",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/2424545907",
+   "lat": 50.820651,
+   "lng": -0.130153,
+   "tags": {
+    "name": "Avalon Guest Accomodation",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/2424545908",
+   "lat": 50.820652,
+   "lng": -0.130155,
+   "tags": {
+    "name": "Ei8ht Brighton Serviced Apartments",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/2424545909",
+   "lat": 50.82083,
+   "lng": -0.130083,
+   "tags": {
+    "name": "Ocean Breeze",
+    "tourism": "guest_house",
+    "addr:housenumber": "13",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/2424545910",
+   "lat": 50.821142,
+   "lng": -0.130015,
+   "tags": {
+    "name": "Colson House",
+    "tourism": "guest_house",
+    "addr:housenumber": "17",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/2424554703",
+   "lat": 50.82025,
+   "lng": -0.130895,
+   "tags": {
+    "name": "Al Forno",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza",
+    "addr:housenumber": "78",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1PA"
+   }
+  },
+  {
+   "id": "node/2424554708",
+   "lat": 50.819422,
+   "lng": -0.131401,
+   "tags": {
+    "name": "Restaurant at Drakes",
+    "amenity": "restaurant",
+    "addr:housenumber": "43-44",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1PE"
+   }
+  },
+  {
+   "id": "node/2425775415",
+   "lat": 50.817665,
+   "lng": -0.1183,
+   "tags": {
+    "name": "Suriya's Thai Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://suriyasthaikitchen.co.uk/",
+    "opening_hours": "Tu-Su 17:00-22:00",
+    "addr:housenumber": "77",
+    "addr:street": "St. Georges Road",
+    "addr:postcode": "BN2 1EF"
+   }
+  },
+  {
+   "id": "node/2425783746",
+   "lat": 50.817663,
+   "lng": -0.117658,
+   "tags": {
+    "name": "Vel South Indian Kitchen + Bar",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://velbrighton.co.uk/",
+    "addr:housenumber": "51",
+    "addr:street": "St. Georges Road",
+    "addr:postcode": "BN2 1EF"
+   }
+  },
+  {
+   "id": "node/2425794913",
+   "lat": 50.817783,
+   "lng": -0.118891,
+   "tags": {
+    "name": "Proud Cabaret Brighton",
+    "amenity": "restaurant",
+    "website": "https://proudcabaret.com/pages/brighton",
+    "addr:housenumber": "83",
+    "addr:street": "St Georges Road",
+    "addr:postcode": "BN2 1EF"
+   }
+  },
+  {
+   "id": "node/2428501979",
+   "lat": 50.821419,
+   "lng": -0.134485,
+   "tags": {
+    "name": "Shanghai Garden Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "50",
+    "addr:street": "George Street",
+    "addr:postcode": "BN2 1RJ"
+   }
+  },
+  {
+   "id": "node/2428578304",
+   "lat": 50.820881,
+   "lng": -0.135441,
+   "tags": {
+    "name": "Bella Bar",
+    "amenity": "restaurant",
+    "addr:housenumber": "120",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "node/2428578307",
+   "lat": 50.820875,
+   "lng": -0.13535,
+   "tags": {
+    "name": "Cardamom",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "119",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "node/2469884932",
+   "lat": 50.824531,
+   "lng": -0.166892,
+   "tags": {
+    "name": "The Bali Brasserie",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:street": "Queen's Gardens",
+    "addr:postcode": "BN3 2LR"
+   }
+  },
+  {
+   "id": "node/2632824880",
+   "lat": 50.828788,
+   "lng": -0.135673,
+   "tags": {
+    "name": "Full House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-We,Fr-Su 12:00-22:00; Th off",
+    "addr:housenumber": "18-19",
+    "addr:street": "York Place",
+    "addr:postcode": "BN1 4GU"
+   }
+  },
+  {
+   "id": "node/2632888763",
+   "lat": 50.822094,
+   "lng": -0.140845,
+   "tags": {
+    "name": "Yum Yum Ninja",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "http://www.yumyumninja.com",
+    "addr:housenumber": "15-18",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/2632911378",
+   "lat": 50.823727,
+   "lng": -0.150764,
+   "tags": {
+    "name": "Kanok Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "65",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/2652023979",
+   "lat": 50.818614,
+   "lng": -0.121387,
+   "tags": {
+    "name": "Nanima Asian Kitchen & Café",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Tu,We 10:00-18:00; Th-Sa 10:00-21:00; Su,Mo off",
+    "addr:housenumber": "36",
+    "addr:street": "St. Georges Road",
+    "addr:postcode": "BN2 1ED"
+   }
+  },
+  {
+   "id": "node/282413494",
+   "lat": 50.821438,
+   "lng": -0.143011,
+   "tags": {
+    "name": "Chamuyo",
+    "amenity": "restaurant",
+    "addr:housenumber": "62",
+    "addr:street": "Middle Street",
+    "addr:postcode": "BN1 1AL"
+   }
+  },
+  {
+   "id": "node/2949559933",
+   "lat": 50.822241,
+   "lng": -0.14037,
+   "tags": {
+    "name": "Olive Grove",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://www.olivegrove-brighton.co.uk/",
+    "addr:housenumber": "13-18",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/3056992041",
+   "lat": 50.830402,
+   "lng": -0.136203,
+   "tags": {
+    "name": "Noodles Street",
+    "name:en": "Noodles Street",
+    "amenity": "restaurant",
+    "cuisine": "noodle;asian",
+    "addr:housenumber": "14",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JA"
+   }
+  },
+  {
+   "id": "node/3222933630",
+   "lat": 50.820899,
+   "lng": -0.144361,
+   "tags": {
+    "name": "Smart Brighton Beach",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/3222933631",
+   "lat": 50.820704,
+   "lng": -0.143206,
+   "tags": {
+    "name": "The Grapevine",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/3659045725",
+   "lat": 50.81998,
+   "lng": -0.139343,
+   "tags": {
+    "name": "The Bok Shop",
+    "amenity": "restaurant",
+    "cuisine": "chicken",
+    "website": "http://www.cafeallangolo.co.uk",
+    "addr:housenumber": "3-4",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HP"
+   }
+  },
+  {
+   "id": "node/3781324833",
+   "lat": 50.83631,
+   "lng": -0.125456,
+   "tags": {
+    "name": "Love Noodle",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "addr:housenumber": "87",
+    "addr:street": "Lewes Road",
+    "addr:postcode": "BN2 3HZ"
+   }
+  },
+  {
+   "id": "node/3932216834",
+   "lat": 50.821702,
+   "lng": -0.140943,
+   "tags": {
+    "name": "sixty four degrees",
+    "amenity": "restaurant",
+    "website": "https://64degrees.co.uk/",
+    "opening_hours": "12:00 - 15:00, 18:00 - 21:45",
+    "addr:housenumber": "53",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/3932216836",
+   "lat": 50.821202,
+   "lng": -0.140798,
+   "tags": {
+    "name": "Gars",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "19",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HF"
+   }
+  },
+  {
+   "id": "node/4161692758",
+   "lat": 50.83532,
+   "lng": -0.139321,
+   "tags": {
+    "name": "Shahi Tandoori",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "40-42",
+    "addr:street": "Beaconsfield Road",
+    "addr:postcode": "BN1 4QH"
+   }
+  },
+  {
+   "id": "node/4350174487",
+   "lat": 50.865416,
+   "lng": -0.151997,
+   "tags": {
+    "name": "Innkeeper's Lodge",
+    "tourism": "hotel",
+    "contact:website": "https://www.innkeeperslodge.com/brighton-patcham/",
+    "addr:postcode": "BN1 8YQ"
+   }
+  },
+  {
+   "id": "node/4350330575",
+   "lat": 50.822852,
+   "lng": -0.140567,
+   "tags": {
+    "name": "Casa della Pizza",
+    "amenity": "restaurant",
+    "addr:housenumber": "28",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1EB"
+   }
+  },
+  {
+   "id": "node/4437530395",
+   "lat": 50.843444,
+   "lng": -0.135947,
+   "tags": {
+    "name": "Tilt",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop;brunch",
+    "website": "https://www.tiltkitchen.co.uk/",
+    "addr:housenumber": "134",
+    "addr:street": "Preston Drove",
+    "addr:postcode": "BN1 6FJ"
+   }
+  },
+  {
+   "id": "node/4437530404",
+   "lat": 50.844596,
+   "lng": -0.135118,
+   "tags": {
+    "name": "Tasty",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Tu-Su 08:00-18:00",
+    "addr:housenumber": "15",
+    "addr:street": "Kings Parade",
+    "addr:postcode": "BN1 6JT"
+   }
+  },
+  {
+   "id": "node/444358086",
+   "lat": 50.843783,
+   "lng": -0.134415,
+   "tags": {
+    "name": "Rustico",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://hellorustico.co.uk/brighton.shtml",
+    "addr:housenumber": "300",
+    "addr:street": "Ditchling Road",
+    "addr:postcode": "BN1 6JG"
+   }
+  },
+  {
+   "id": "node/4469765489",
+   "lat": 50.820863,
+   "lng": -0.135198,
+   "tags": {
+    "name": "Real Greek Gyros",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "116-117",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "node/4473441771",
+   "lat": 50.821542,
+   "lng": -0.141343,
+   "tags": {
+    "name": "Shogun Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "13",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HE"
+   }
+  },
+  {
+   "id": "node/4473441772",
+   "lat": 50.820986,
+   "lng": -0.139851,
+   "tags": {
+    "name": "Plateau",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "addr:housenumber": "1",
+    "addr:street": "Bartholomews",
+    "addr:postcode": "BN1 1HG"
+   }
+  },
+  {
+   "id": "node/4473726789",
+   "lat": 50.820261,
+   "lng": -0.139111,
+   "tags": {
+    "name": "Chicks N Chips",
+    "amenity": "restaurant",
+    "cuisine": "chicken",
+    "addr:housenumber": "15",
+    "addr:street": "East Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4496535296",
+   "lat": 50.820091,
+   "lng": -0.1389,
+   "tags": {
+    "name": "Balinese House",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://balinesehouse.com/",
+    "addr:housenumber": "3-4",
+    "addr:street": "Pool Valley",
+    "addr:postcode": "BN1 1NJ"
+   }
+  },
+  {
+   "id": "node/4573023875",
+   "lat": 50.821904,
+   "lng": -0.144044,
+   "tags": {
+    "name": "Fogo de Chão",
+    "amenity": "restaurant",
+    "cuisine": "brazilian;steak_house",
+    "addr:housenumber": "65",
+    "addr:street": "West Street",
+    "addr:postcode": "BN1 2RA"
+   }
+  },
+  {
+   "id": "node/4573065450",
+   "lat": 50.821506,
+   "lng": -0.144614,
+   "tags": {
+    "name": "Jamun",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "12-14",
+    "addr:street": "West Street",
+    "addr:postcode": "BN1 2RE"
+   }
+  },
+  {
+   "id": "node/4574887836",
+   "lat": 50.820149,
+   "lng": -0.139369,
+   "tags": {
+    "name": "Martin's Burger House",
+    "amenity": "restaurant",
+    "website": "https://martinsburgerhouse.com/",
+    "addr:housenumber": "8",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HP"
+   }
+  },
+  {
+   "id": "node/4574887838",
+   "lat": 50.820195,
+   "lng": -0.139097,
+   "tags": {
+    "name": "Terre A Terre",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "https://terreaterre.co.uk/",
+    "opening_hours": "Mo,Tu 17:00-20:30; We,Th 12:00-15:00,17:00-20:30; Sa 12:00-21:30; Fr 12:00-15:00,17:00-21:30; Su,PH 12:00-20:30",
+    "addr:housenumber": "71",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HQ"
+   }
+  },
+  {
+   "id": "node/4574887841",
+   "lat": 50.82031,
+   "lng": -0.139125,
+   "tags": {
+    "name": "Kindling",
+    "amenity": "restaurant",
+    "addr:housenumber": "69",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HQ"
+   }
+  },
+  {
+   "id": "node/4574887844",
+   "lat": 50.821169,
+   "lng": -0.139476,
+   "tags": {
+    "name": "English's of Brighton",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://www.englishs.co.uk/",
+    "addr:housenumber": "29-31",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HL"
+   }
+  },
+  {
+   "id": "node/4574887846",
+   "lat": 50.821176,
+   "lng": -0.139304,
+   "tags": {
+    "name": "Coast",
+    "amenity": "restaurant",
+    "cuisine": "grill",
+    "addr:housenumber": "28",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HL"
+   }
+  },
+  {
+   "id": "node/4574887853",
+   "lat": 50.821224,
+   "lng": -0.139563,
+   "tags": {
+    "name": "Dishoom Permit Room",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "31a-32",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HL"
+   }
+  },
+  {
+   "id": "node/4577032979",
+   "lat": 50.82208,
+   "lng": -0.141716,
+   "tags": {
+    "name": "Namo",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.namoeat.co.uk/general-1",
+    "addr:housenumber": "24",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AD"
+   }
+  },
+  {
+   "id": "node/4577032985",
+   "lat": 50.822521,
+   "lng": -0.141921,
+   "tags": {
+    "name": "Flat Iron",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://flatironsteak.co.uk/restaurant/brighton/",
+    "addr:housenumber": "34",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AD"
+   }
+  },
+  {
+   "id": "node/4577369223",
+   "lat": 50.821612,
+   "lng": -0.14172,
+   "tags": {
+    "name": "Taro",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://tarorestaurants.uk/locations/brighton/",
+    "addr:housenumber": "60",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AE"
+   }
+  },
+  {
+   "id": "node/4577369224",
+   "lat": 50.820547,
+   "lng": -0.142189,
+   "tags": {
+    "name": "Noori's",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "70-71",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AE"
+   }
+  },
+  {
+   "id": "node/4577369227",
+   "lat": 50.823012,
+   "lng": -0.14163,
+   "tags": {
+    "name": "Betterday",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "39",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AB"
+   }
+  },
+  {
+   "id": "node/4577369229",
+   "lat": 50.822837,
+   "lng": -0.141831,
+   "tags": {
+    "name": "Pizza Pilgrims",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "35",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AB"
+   }
+  },
+  {
+   "id": "node/4577405062",
+   "lat": 50.821658,
+   "lng": -0.14043,
+   "tags": {
+    "name": "Embers",
+    "amenity": "restaurant",
+    "website": "https://embersbrighton.co.uk/",
+    "addr:housenumber": "42",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/4577405063",
+   "lat": 50.821631,
+   "lng": -0.140355,
+   "tags": {
+    "name": "Rybka",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "https://www.rybka.fish/",
+    "opening_hours": "Th,Fr 12:00-21:00; Sa 12:00-22:00; Su 12:00-17:00",
+    "addr:housenumber": "41",
+    "addr:street": "Meeting House Lane",
+    "addr:postcode": "BN1 1HB"
+   }
+  },
+  {
+   "id": "node/4577439456",
+   "lat": 50.824074,
+   "lng": -0.138726,
+   "tags": {
+    "name": "Salt Shed",
+    "amenity": "restaurant",
+    "cuisine": "meat",
+    "website": "https://www.salt-shed.co.uk/brighton",
+    "addr:housenumber": "111",
+    "addr:street": "Church Street",
+    "addr:postcode": "BN1 1UD"
+   }
+  },
+  {
+   "id": "node/4730393496",
+   "lat": 50.823817,
+   "lng": -0.150722,
+   "tags": {
+    "name": "Bincho",
+    "amenity": "restaurant",
+    "cuisine": "japanese;grill",
+    "addr:housenumber": "63",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/4730393497",
+   "lat": 50.82381,
+   "lng": -0.151004,
+   "tags": {
+    "name": "HK-Place",
+    "name:en": "HK-Place",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "37",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/4730609321",
+   "lat": 50.830027,
+   "lng": -0.126404,
+   "tags": {
+    "name": "TAI LI Asian Takeaway",
+    "name:en": "TAI LI Asian Takeaway",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://properdelivery.co.uk/store/tai_li",
+    "opening_hours": "Mo,We-Su 17:00-22:00; Tu off",
+    "addr:housenumber": "109",
+    "addr:street": "Islingword Road",
+    "addr:postcode": "BN2 9SG"
+   }
+  },
+  {
+   "id": "node/4815200259",
+   "lat": 50.822515,
+   "lng": -0.138994,
+   "tags": {
+    "name": "Sabai",
+    "amenity": "restaurant",
+    "website": "https://www.sabaibrighton.co.uk/",
+    "addr:housenumber": "165-169",
+    "addr:street": "Prince's Place",
+    "addr:postcode": "BN1 1EA"
+   }
+  },
+  {
+   "id": "node/4865903697",
+   "lat": 50.828462,
+   "lng": -0.135657,
+   "tags": {
+    "name": "Carlito Burrito",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 14:00-22:00",
+    "addr:housenumber": "12",
+    "addr:street": "York Place",
+    "addr:postcode": "BN1 4GU"
+   }
+  },
+  {
+   "id": "node/4865903700",
+   "lat": 50.827946,
+   "lng": -0.135603,
+   "tags": {
+    "name": "Bali",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.balipanasiancuisine.com/",
+    "addr:housenumber": "1",
+    "addr:street": "York Place",
+    "addr:postcode": "BN1 4GU"
+   }
+  },
+  {
+   "id": "node/4865903720",
+   "lat": 50.83285,
+   "lng": -0.137758,
+   "tags": {
+    "name": "MOGUMOGU",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "12:00-17:30; Tu off",
+    "addr:housenumber": "81",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JF"
+   }
+  },
+  {
+   "id": "node/4865903848",
+   "lat": 50.826245,
+   "lng": -0.137484,
+   "tags": {
+    "name": "Cin Cin",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "14-16",
+    "addr:street": "Vine Street",
+    "addr:postcode": "BN1 4AG"
+   }
+  },
+  {
+   "id": "node/4866289392",
+   "lat": 50.82836,
+   "lng": -0.138642,
+   "tags": {
+    "name": "Caffe Aldo",
+    "amenity": "restaurant",
+    "addr:housenumber": "77",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4EB"
+   }
+  },
+  {
+   "id": "node/4866289395",
+   "lat": 50.828297,
+   "lng": -0.138146,
+   "tags": {
+    "name": "Mange Tout",
+    "amenity": "restaurant",
+    "website": "https://www.mangetoutbrighton.co.uk",
+    "addr:housenumber": "81",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4EB"
+   }
+  },
+  {
+   "id": "node/4866289413",
+   "lat": 50.824426,
+   "lng": -0.139636,
+   "tags": {
+    "name": "Kooks",
+    "amenity": "restaurant",
+    "cuisine": "brunch;cake",
+    "website": "https://www.kooksrestaurant.com/",
+    "addr:housenumber": "56",
+    "addr:street": "Gardner Street",
+    "addr:postcode": "BN1 1UN"
+   }
+  },
+  {
+   "id": "node/4886571919",
+   "lat": 50.821374,
+   "lng": -0.139334,
+   "tags": {
+    "name": "Crêpeaffaire",
+    "amenity": "restaurant",
+    "cuisine": "crepe",
+    "website": "https://crepeaffaire.com/locations/2017/brighton",
+    "opening_hours": "Mo-Th 09:00-18:00; Fr 09:00-19:00; Sa 09:00-20:00; Su 10:00-18:00",
+    "addr:housenumber": "35",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HL"
+   }
+  },
+  {
+   "id": "node/4887677028",
+   "lat": 50.822077,
+   "lng": -0.151553,
+   "tags": {
+    "name": "Aberdeen Seafood",
+    "name:en": "Aberdeen Seafood",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://aberdeenseafood.com/",
+    "opening_hours": "Mo-Su 08:30-23:00",
+    "addr:housenumber": "133-134",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 2HH"
+   }
+  },
+  {
+   "id": "node/503251372",
+   "lat": 50.819444,
+   "lng": -0.133376,
+   "tags": {
+    "name": "Terraces",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://the-terraces.co.uk/",
+    "addr:housenumber": "Unit 8",
+    "addr:street": "Madeira drive"
+   }
+  },
+  {
+   "id": "node/5072908905",
+   "lat": 50.824615,
+   "lng": -0.150011,
+   "tags": {
+    "name": "Britannia Study Hotel",
+    "tourism": "hotel",
+    "opening_hours": "Mo-Su 07:00-22:00",
+    "addr:housenumber": "150",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2DA"
+   }
+  },
+  {
+   "id": "node/5186873744",
+   "lat": 50.829315,
+   "lng": -0.135769,
+   "tags": {
+    "name": "Kogi",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.kogiuk.com/",
+    "opening_hours": "Mo-We 17:30-22:00; Fr 12:00-14:30,17:30-22:00; Sa 12:00-15:00,17:30-22:00; Th,Su off",
+    "addr:housenumber": "30",
+    "addr:street": "York Place",
+    "addr:postcode": "BN1 4GU"
+   }
+  },
+  {
+   "id": "node/528781300",
+   "lat": 50.822345,
+   "lng": -0.139132,
+   "tags": {
+    "name": "Nine Dragons",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "165-169",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1EA"
+   }
+  },
+  {
+   "id": "node/529735549",
+   "lat": 50.821966,
+   "lng": -0.151252,
+   "tags": {
+    "name": "Regency",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "wikidata": "Q17549786",
+    "addr:housenumber": "131",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2HH"
+   }
+  },
+  {
+   "id": "node/5459308926",
+   "lat": 50.820103,
+   "lng": -0.13139,
+   "tags": {
+    "name": "The Charm Brighton Boutique Hotel",
+    "tourism": "hotel",
+    "website": "https://www.thecharmbrighton.co.uk/home.html",
+    "opening_hours": "Mo-Fr 07:30-21:00; Sa-Su 07:30-22:00",
+    "wikidata": "Q111369150",
+    "addr:housenumber": "20-21",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/5464548182",
+   "lat": 50.819869,
+   "lng": -0.131444,
+   "tags": {
+    "name": "Sea Spray Brighton Luxury Hotel",
+    "tourism": "hotel",
+    "website": "https://www.seaspraybrighton.co.uk/",
+    "opening_hours": "Mo-Fr 07:30-21:00; Sa-Su 07:30-22:00",
+    "addr:housenumber": "25,26",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/5639759316",
+   "lat": 50.826805,
+   "lng": -0.1384,
+   "tags": {
+    "name": "Fatto a Mano",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.fattoamanopizza.com/",
+    "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-22:30; Su 12:00-21:30",
+    "addr:housenumber": "25",
+    "addr:street": "Gloucester Road",
+    "addr:postcode": "BN1 4AQ"
+   }
+  },
+  {
+   "id": "node/5640062143",
+   "lat": 50.823442,
+   "lng": -0.151184,
+   "tags": {
+    "name": "Zaati",
+    "amenity": "restaurant",
+    "cuisine": "indian;arab",
+    "addr:housenumber": "29",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HP"
+   }
+  },
+  {
+   "id": "node/5640104160",
+   "lat": 50.821448,
+   "lng": -0.143322,
+   "tags": {
+    "name": "Sushimania",
+    "amenity": "restaurant",
+    "cuisine": "sushi;japanese",
+    "website": "https://sushimania.co.uk/location/brighton/",
+    "addr:housenumber": "15-17",
+    "addr:street": "Middle Street",
+    "addr:postcode": "BN1 1AL"
+   }
+  },
+  {
+   "id": "node/5640217601",
+   "lat": 50.824328,
+   "lng": -0.139406,
+   "tags": {
+    "name": "Franco Manca",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.francomanca.co.uk/restaurants/brighton/",
+    "addr:housenumber": "1-2",
+    "addr:street": "Regent Street",
+    "addr:postcode": "BN1 1UL"
+   }
+  },
+  {
+   "id": "node/5641380279",
+   "lat": 50.826959,
+   "lng": -0.139423,
+   "tags": {
+    "name": "La Choza",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "36",
+    "addr:street": "Gloucester Road",
+    "addr:postcode": "BN1 4AQ",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/566636132",
+   "lat": 50.822906,
+   "lng": -0.140781,
+   "tags": {
+    "name": "The Coal Shed",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://www.coalshed-restaurant.co.uk/",
+    "addr:housenumber": "30-31",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1EB"
+   }
+  },
+  {
+   "id": "node/5774993872",
+   "lat": 50.835313,
+   "lng": -0.14138,
+   "tags": {
+    "name": "Natty's Jerk Kitchen & Rum Stop",
+    "amenity": "restaurant",
+    "cuisine": "chicken",
+    "addr:housenumber": "70",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 4QG"
+   }
+  },
+  {
+   "id": "node/5793303947",
+   "lat": 50.820328,
+   "lng": -0.141518,
+   "tags": {
+    "name": "JB's American Diner",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "31",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 1NR"
+   }
+  },
+  {
+   "id": "node/5848728526",
+   "lat": 50.820584,
+   "lng": -0.14608,
+   "tags": {
+    "name": "The Winkle",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://thewinkle.co.uk/i",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "139",
+    "addr:street": "King's Road Arches",
+    "addr:postcode": "BN1 2FN"
+   }
+  },
+  {
+   "id": "node/5964979203",
+   "lat": 50.82557,
+   "lng": -0.187304,
+   "tags": {
+    "name": "Rockwater",
+    "amenity": "restaurant",
+    "website": "https://rockwater.uk/",
+    "addr:street": "Kingsway",
+    "addr:postcode": "BN3 4FA"
+   }
+  },
+  {
+   "id": "node/599150171",
+   "lat": 50.822136,
+   "lng": -0.143763,
+   "tags": {
+    "name": "Thai Spice",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "13",
+    "addr:street": "Boyces Street",
+    "addr:postcode": "BN1 1AN"
+   }
+  },
+  {
+   "id": "node/6127062486",
+   "lat": 50.822751,
+   "lng": -0.141553,
+   "tags": {
+    "name": "The Ivy",
+    "amenity": "restaurant",
+    "cuisine": "british",
+    "addr:housenumber": "51A",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AF"
+   }
+  },
+  {
+   "id": "node/6127092242",
+   "lat": 50.83041,
+   "lng": -0.147387,
+   "tags": {
+    "name": "Murasaki",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://murasakirestaurant.co.uk/",
+    "opening_hours": "Tu 17:00-22:00; We-Sa 12:30-15:00,17:00-22:00; Su,Mo off",
+    "addr:housenumber": "113-115",
+    "addr:street": "Dyke Road",
+    "addr:postcode": "BN1 3JE"
+   }
+  },
+  {
+   "id": "node/6127092244",
+   "lat": 50.830384,
+   "lng": -0.147106,
+   "tags": {
+    "name": "Red Snapper",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.redsnapperbrighton.co.uk/",
+    "opening_hours": "Tu-Sa 12:00-15:00,16:30-21:00",
+    "addr:housenumber": "90",
+    "addr:street": "Dyke Road",
+    "addr:postcode": "BN1 3JD"
+   }
+  },
+  {
+   "id": "node/6137730093",
+   "lat": 50.832579,
+   "lng": -0.137877,
+   "tags": {
+    "name": "Salt & Charcoal",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.saltandcharcoal.uk/",
+    "addr:housenumber": "57",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JE"
+   }
+  },
+  {
+   "id": "node/6194779219",
+   "lat": 50.822588,
+   "lng": -0.141613,
+   "tags": {
+    "name": "The Ivy Asia",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://theivyasiabrighton.com/",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AF"
+   }
+  },
+  {
+   "id": "node/6194893476",
+   "lat": 50.821203,
+   "lng": -0.140324,
+   "tags": {
+    "name": "Napoli Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "41",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/6200458148",
+   "lat": 50.820863,
+   "lng": -0.140535,
+   "tags": {
+    "name": "Brisa",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "addr:housenumber": "10",
+    "addr:street": "Bartholomew Square",
+    "addr:postcode": "BN1 1JS"
+   }
+  },
+  {
+   "id": "node/6203841997",
+   "lat": 50.823725,
+   "lng": -0.139515,
+   "tags": {
+    "name": "Tonkotsu",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://tonkotsu.co.uk/locations/brighton/",
+    "opening_hours": "12:00-22:00",
+    "addr:housenumber": "20",
+    "addr:street": "New Road",
+    "addr:postcode": "BN1 1UF"
+   }
+  },
+  {
+   "id": "node/6203841998",
+   "lat": 50.823828,
+   "lng": -0.139466,
+   "tags": {
+    "name": "Pinocchio",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://www.pinocchio.co.uk/",
+    "opening_hours": "Mo-Su 11:30-22:30",
+    "addr:housenumber": "22",
+    "addr:street": "New Road",
+    "addr:postcode": "BN1 1UF"
+   }
+  },
+  {
+   "id": "node/6203842000",
+   "lat": 50.823066,
+   "lng": -0.139757,
+   "tags": {
+    "name": "Furna",
+    "amenity": "restaurant",
+    "website": "https://www.furnarestaurant.co.uk/",
+    "addr:housenumber": "6",
+    "addr:street": "New Road",
+    "addr:postcode": "BN1 1UF"
+   }
+  },
+  {
+   "id": "node/6203842001",
+   "lat": 50.822864,
+   "lng": -0.139963,
+   "tags": {
+    "name": "Wahaca",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "161",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1EA"
+   }
+  },
+  {
+   "id": "node/6203842004",
+   "lat": 50.823115,
+   "lng": -0.139729,
+   "tags": {
+    "name": "Tinto Taperia",
+    "amenity": "restaurant",
+    "cuisine": "tapas;spanish",
+    "website": "https://tintotaperia.co.uk/",
+    "addr:housenumber": "7",
+    "addr:street": "New Road",
+    "addr:postcode": "BN1 1UF"
+   }
+  },
+  {
+   "id": "node/6208594124",
+   "lat": 50.821311,
+   "lng": -0.139897,
+   "tags": {
+    "name": "The Breakfast Club",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "16-17",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/622204053",
+   "lat": 50.823048,
+   "lng": -0.143985,
+   "tags": {
+    "name": "Noodles Soup",
+    "name:en": "Noodles Soup",
+    "amenity": "restaurant",
+    "cuisine": "noodle;asian",
+    "addr:housenumber": "37",
+    "addr:street": "West Street",
+    "addr:postcode": "BN1 2RE"
+   }
+  },
+  {
+   "id": "node/622204697",
+   "lat": 50.824387,
+   "lng": -0.138797,
+   "tags": {
+    "name": "MyHotel Brighton",
+    "tourism": "hotel",
+    "addr:housenumber": "17",
+    "addr:street": "Jubilee Street",
+    "addr:postcode": "BN1 1GE"
+   }
+  },
+  {
+   "id": "node/622622154",
+   "lat": 50.820581,
+   "lng": -0.142398,
+   "tags": {
+    "name": "Hotel Du Vin Bistro",
+    "amenity": "restaurant",
+    "addr:housenumber": "3-6",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AD"
+   }
+  },
+  {
+   "id": "node/6236486862",
+   "lat": 50.820835,
+   "lng": -0.136405,
+   "tags": {
+    "name": "VIP Very Italian Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pizzavip.co.uk/",
+    "addr:housenumber": "19",
+    "addr:street": "Old Steine",
+    "addr:postcode": "BN1 1EL"
+   }
+  },
+  {
+   "id": "node/6238105435",
+   "lat": 50.824289,
+   "lng": -0.150476,
+   "tags": {
+    "name": "Toota",
+    "amenity": "restaurant",
+    "cuisine": "kebab;spanish;english",
+    "addr:housenumber": "55",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/6238105437",
+   "lat": 50.824104,
+   "lng": -0.15059,
+   "tags": {
+    "name": "Garden Of Babylon",
+    "amenity": "restaurant",
+    "addr:housenumber": "58-58a",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/6238105443",
+   "lat": 50.823779,
+   "lng": -0.150745,
+   "tags": {
+    "name": "Halisco",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.halisco-brighton.co.uk/",
+    "opening_hours": "Mo,Fr-Sa 12:00-22:00; Tu-Th,Su 12:00-21:00",
+    "addr:housenumber": "64",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HE"
+   }
+  },
+  {
+   "id": "node/6238105446",
+   "lat": 50.822684,
+   "lng": -0.15128,
+   "tags": {
+    "name": "Ephesus",
+    "amenity": "restaurant",
+    "addr:housenumber": "80-82",
+    "addr:street": "Preston Street",
+    "addr:postcode": "BN1 2HG"
+   }
+  },
+  {
+   "id": "node/6240186138",
+   "lat": 50.824913,
+   "lng": -0.153546,
+   "tags": {
+    "name": "Cibo",
+    "amenity": "restaurant",
+    "addr:housenumber": "105",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2AA"
+   }
+  },
+  {
+   "id": "node/6241385921",
+   "lat": 50.828641,
+   "lng": -0.140551,
+   "tags": {
+    "name": "Alushi",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "addr:street": "Trafalgar Arches",
+    "addr:postcode": "BN1 4FQ"
+   }
+  },
+  {
+   "id": "node/6241385937",
+   "lat": 50.828238,
+   "lng": -0.137644,
+   "tags": {
+    "name": "O'Shio",
+    "amenity": "restaurant",
+    "cuisine": "japanese;korean",
+    "website": "https://www.oshio.co.uk/",
+    "opening_hours": "Tu-Su 12:00-15:00,17:00-22:00; Mo off",
+    "addr:housenumber": "87-88",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4ER"
+   }
+  },
+  {
+   "id": "node/6316610385",
+   "lat": 50.812485,
+   "lng": -0.102116,
+   "tags": {
+    "name": "Malmaison",
+    "tourism": "hotel",
+    "website": "https://www.malmaison.com/locations/brighton/",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/6316627261",
+   "lat": 50.812099,
+   "lng": -0.102237,
+   "tags": {
+    "name": "PizzaExpress",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.pizzaexpress.com/brighton-marina",
+    "addr:housenumber": "4B",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/6329547561",
+   "lat": 50.831349,
+   "lng": -0.135557,
+   "tags": {
+    "name": "Kouzina",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "Mo-Sa 09:00-17:00",
+    "addr:street": "Marshalls Row",
+    "addr:postcode": "BN1 4JU",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6397015711",
+   "lat": 50.844017,
+   "lng": -0.143776,
+   "tags": {
+    "name": "Red Chillies",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "92",
+    "addr:street": "Preston Drove",
+    "addr:postcode": "BN1 6LB"
+   }
+  },
+  {
+   "id": "node/6404312605",
+   "lat": 50.823398,
+   "lng": -0.142921,
+   "tags": {
+    "name": "Lavash",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://www.lavash-website.co.uk/",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "60",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1RH"
+   }
+  },
+  {
+   "id": "node/6412435098",
+   "lat": 50.827731,
+   "lng": -0.143443,
+   "tags": {
+    "name": "The Eddy - Kitchen Franchise",
+    "amenity": "restaurant",
+    "addr:housenumber": "67A",
+    "addr:street": "Upper Gloucester Road",
+    "addr:postcode": "BN1 3LQ"
+   }
+  },
+  {
+   "id": "node/6412450418",
+   "lat": 50.821299,
+   "lng": -0.143325,
+   "tags": {
+    "name": "Pickled Oysters @ The Hop Poles",
+    "amenity": "restaurant",
+    "addr:housenumber": "13",
+    "addr:street": "Middle Street",
+    "addr:postcode": "BN1 1AL"
+   }
+  },
+  {
+   "id": "node/6412500482",
+   "lat": 50.821356,
+   "lng": -0.140062,
+   "tags": {
+    "name": "Sogno",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "18",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/6412500484",
+   "lat": 50.821433,
+   "lng": -0.139751,
+   "tags": {
+    "name": "Giggling Squid",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.gigglingsquid.com/restaurant/brighton",
+    "addr:housenumber": "11",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/6412500885",
+   "lat": 50.821593,
+   "lng": -0.139555,
+   "tags": {
+    "name": "IL Bistro",
+    "amenity": "restaurant",
+    "addr:housenumber": "6-7A",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/6412500886",
+   "lat": 50.821396,
+   "lng": -0.139654,
+   "tags": {
+    "name": "The Little Havana",
+    "amenity": "restaurant",
+    "addr:housenumber": "11A-12",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/6413742628",
+   "lat": 50.827752,
+   "lng": -0.172132,
+   "tags": {
+    "name": "Key Bab at The Old Albion",
+    "amenity": "restaurant",
+    "addr:housenumber": "100",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2EB"
+   }
+  },
+  {
+   "id": "node/6415603873",
+   "lat": 50.822128,
+   "lng": -0.139746,
+   "tags": {
+    "name": "The Flint House",
+    "amenity": "restaurant",
+    "website": "https://www.flinthousebrighton.com/",
+    "addr:housenumber": "13",
+    "addr:street": "Hanningtons Lane",
+    "addr:postcode": "BN1 1GS"
+   }
+  },
+  {
+   "id": "node/6415802651",
+   "lat": 50.820771,
+   "lng": -0.135475,
+   "tags": {
+    "name": "Pompoko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "10",
+    "addr:street": "Manchester Street",
+    "addr:postcode": "BN2 1TF"
+   }
+  },
+  {
+   "id": "node/6423732485",
+   "lat": 50.811969,
+   "lng": -0.101607,
+   "tags": {
+    "name": "Prezzo",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/6423732486",
+   "lat": 50.812048,
+   "lng": -0.10204,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.co.uk/restaurants/brighton-marina",
+    "addr:housenumber": "5",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/6423732487",
+   "lat": 50.812119,
+   "lng": -0.102521,
+   "tags": {
+    "name": "Tavus Lounge & Grill",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "website": "https://www.tavusrestaurant.co.uk/",
+    "addr:housenumber": "3",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/6427721432",
+   "lat": 50.825632,
+   "lng": -0.149974,
+   "tags": {
+    "name": "Easy Tiger At The Hampton",
+    "amenity": "restaurant",
+    "addr:housenumber": "57",
+    "addr:street": "Upper North Street",
+    "addr:postcode": "BN1 3FH"
+   }
+  },
+  {
+   "id": "node/6427721433",
+   "lat": 50.824702,
+   "lng": -0.149027,
+   "tags": {
+    "name": "Dizzy Gull",
+    "amenity": "restaurant",
+    "addr:housenumber": "38",
+    "addr:street": "Dean Street",
+    "addr:postcode": "BN1 3EG"
+   }
+  },
+  {
+   "id": "node/6427799933",
+   "lat": 50.822243,
+   "lng": -0.141466,
+   "tags": {
+    "name": "Burger and Beyond",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.burgerandbeyond.co.uk/brighton",
+    "opening_hours": "Mo-We 12:00-22:00; Th-Sa 12:00-22:30; Su 12:00-21:30",
+    "addr:housenumber": "56",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AF"
+   }
+  },
+  {
+   "id": "node/6427799934",
+   "lat": 50.822723,
+   "lng": -0.142727,
+   "tags": {
+    "name": "Honest Burgers",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "opening_hours": "Mo-Sa 11:00-23:00; Su 11:00-22:30",
+    "addr:housenumber": "8",
+    "addr:street": "Duke Street",
+    "addr:postcode": "BN1 1AH",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6427799938",
+   "lat": 50.822754,
+   "lng": -0.14291,
+   "tags": {
+    "name": "Malo Argentinian Empanadas",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "website": "https://malobrighton.co.uk/",
+    "addr:housenumber": "11",
+    "addr:street": "Duke Street",
+    "addr:postcode": "BN1 1AH"
+   }
+  },
+  {
+   "id": "node/6432683135",
+   "lat": 50.820631,
+   "lng": -0.14216,
+   "tags": {
+    "name": "Petit Pois",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://petitpoisbrighton.co.uk/",
+    "addr:housenumber": "70",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AE"
+   }
+  },
+  {
+   "id": "node/6436674938",
+   "lat": 50.824207,
+   "lng": -0.139795,
+   "tags": {
+    "name": "Blindshrimp Ltd At The William The Fourth",
+    "amenity": "restaurant",
+    "addr:housenumber": "4",
+    "addr:street": "Church Street",
+    "addr:postcode": "BN1 1UJ"
+   }
+  },
+  {
+   "id": "node/6487709476",
+   "lat": 50.829912,
+   "lng": -0.146899,
+   "tags": {
+    "name": "Thai Pad Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.thaipadthai.uk/",
+    "opening_hours": "Mo,We-Su 17:00-22:00; Tu off",
+    "addr:housenumber": "72",
+    "addr:street": "Dyke Road",
+    "addr:postcode": "BN1 3JD"
+   }
+  },
+  {
+   "id": "node/6509200415",
+   "lat": 50.824897,
+   "lng": -0.143017,
+   "tags": {
+    "name": "my wok",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "addr:housenumber": "12A",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3WA"
+   }
+  },
+  {
+   "id": "node/6509200426",
+   "lat": 50.824511,
+   "lng": -0.143203,
+   "tags": {
+    "name": "New Era",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Tu-Su 12:00-15:00,17:00-22:00; Mo off",
+    "addr:housenumber": "6B",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3WA"
+   }
+  },
+  {
+   "id": "node/6510522450",
+   "lat": 50.821307,
+   "lng": -0.141202,
+   "tags": {
+    "name": "Kitchen Franchise",
+    "amenity": "restaurant",
+    "addr:housenumber": "15",
+    "addr:street": "Black Lion Street",
+    "addr:postcode": "BN1 1ND"
+   }
+  },
+  {
+   "id": "node/6510523909",
+   "lat": 50.824449,
+   "lng": -0.142986,
+   "tags": {
+    "name": "Noodle Queen",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "addr:housenumber": "128",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3WB"
+   }
+  },
+  {
+   "id": "node/6510523920",
+   "lat": 50.824557,
+   "lng": -0.141012,
+   "tags": {
+    "name": "Time For Kimchi",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://timeforkimchi.com/",
+    "addr:housenumber": "19",
+    "addr:street": "Church Street",
+    "addr:postcode": "BN1 1RB"
+   }
+  },
+  {
+   "id": "node/6510602109",
+   "lat": 50.822102,
+   "lng": -0.143607,
+   "tags": {
+    "name": "Spice Bag Brighton At Fiddlers Elbow",
+    "amenity": "restaurant",
+    "addr:housenumber": "11-12",
+    "addr:street": "Boyces Street",
+    "addr:postcode": "BN1 1AN"
+   }
+  },
+  {
+   "id": "node/6511570899",
+   "lat": 50.8246,
+   "lng": -0.139567,
+   "tags": {
+    "name": "Lavash",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://www.lavash-website.co.uk/",
+    "addr:housenumber": "52",
+    "addr:street": "Gardner Street",
+    "addr:postcode": "BN1 1UN"
+   }
+  },
+  {
+   "id": "node/6511570903",
+   "lat": 50.824684,
+   "lng": -0.139534,
+   "tags": {
+    "name": "Goemon Ramen Bar",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://goemonramen.com/",
+    "addr:housenumber": "50",
+    "addr:street": "Gardner Street",
+    "addr:postcode": "BN1 1UN"
+   }
+  },
+  {
+   "id": "node/6514796984",
+   "lat": 50.827482,
+   "lng": -0.141925,
+   "tags": {
+    "name": "Vudu Food",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 12:00-21:00; Fr 12:00-22:00; Su 12:00-20:00",
+    "addr:housenumber": "55",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3XD"
+   }
+  },
+  {
+   "id": "node/6514939781",
+   "lat": 50.828028,
+   "lng": -0.136169,
+   "tags": {
+    "name": "Lucky Star",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "101",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4ER"
+   }
+  },
+  {
+   "id": "node/6514939783",
+   "lat": 50.827914,
+   "lng": -0.136265,
+   "tags": {
+    "name": "Manju's",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://manjus.co.uk/",
+    "opening_hours": "Th-Fr 18:00-22:00; Sa 12:00-14:00,18:00-22:00",
+    "addr:housenumber": "6",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4EQ"
+   }
+  },
+  {
+   "id": "node/6514962146",
+   "lat": 50.829289,
+   "lng": -0.137513,
+   "tags": {
+    "name": "The Gallery",
+    "amenity": "restaurant",
+    "addr:street": "Pelham Street",
+    "addr:postcode": "BN1 4FA"
+   }
+  },
+  {
+   "id": "node/6515018205",
+   "lat": 50.826936,
+   "lng": -0.136158,
+   "tags": {
+    "name": "Tiger Bites Pig",
+    "amenity": "restaurant",
+    "cuisine": "taiwanese",
+    "website": "https://www.tigerbitespig.co.uk/",
+    "addr:housenumber": "2-3",
+    "addr:street": "Gloucester Street",
+    "addr:postcode": "BN1 4EW"
+   }
+  },
+  {
+   "id": "node/6515042193",
+   "lat": 50.828046,
+   "lng": -0.137249,
+   "tags": {
+    "name": "Grind & Slice",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "15",
+    "addr:street": "Trafalgar Street",
+    "addr:postcode": "BN1 4EQ"
+   }
+  },
+  {
+   "id": "node/6515367160",
+   "lat": 50.828507,
+   "lng": -0.173897,
+   "tags": {
+    "name": "CK Bistro",
+    "name:en": "CK Bistro",
+    "amenity": "restaurant",
+    "cuisine": "cantonese",
+    "opening_hours": "Mo,Tu,Th,Fr 12:00-15:00; Sa,Su 12:00-16:00; We off",
+    "addr:housenumber": "3",
+    "addr:street": "George Street",
+    "addr:postcode": "BN3 3YA"
+   }
+  },
+  {
+   "id": "node/6515376797",
+   "lat": 50.830756,
+   "lng": -0.17283,
+   "tags": {
+    "name": "SAERO",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://saero.uk/",
+    "addr:housenumber": "56",
+    "addr:street": "George Street",
+    "addr:postcode": "BN3 3YB"
+   }
+  },
+  {
+   "id": "node/6515384474",
+   "lat": 50.828665,
+   "lng": -0.178487,
+   "tags": {
+    "name": "Etch. By Steven Edwards",
+    "amenity": "restaurant",
+    "addr:housenumber": "214-216",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2DJ"
+   }
+  },
+  {
+   "id": "node/6518471668",
+   "lat": 50.826561,
+   "lng": -0.166072,
+   "tags": {
+    "name": "Kitchen Franchise",
+    "amenity": "restaurant",
+    "addr:housenumber": "37",
+    "addr:street": "First Avenue",
+    "addr:postcode": "BN3 2FH"
+   }
+  },
+  {
+   "id": "node/6518471669",
+   "lat": 50.827012,
+   "lng": -0.16611,
+   "tags": {
+    "name": "Unithai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "opening_hours": "Mo-We 11:30-15:30; Th-Sa 11:30-20:30; Su off",
+    "addr:housenumber": "10",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2FL",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6518471671",
+   "lat": 50.826554,
+   "lng": -0.164561,
+   "tags": {
+    "name": "Buon Apetito",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "81",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 2JQ"
+   }
+  },
+  {
+   "id": "node/6518506586",
+   "lat": 50.823217,
+   "lng": -0.149971,
+   "tags": {
+    "name": "The Set",
+    "amenity": "restaurant",
+    "addr:housenumber": "33",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2GG"
+   }
+  },
+  {
+   "id": "node/6603689920",
+   "lat": 50.819625,
+   "lng": -0.128492,
+   "tags": {
+    "name": "Kooshk",
+    "amenity": "restaurant",
+    "addr:housenumber": "43",
+    "addr:street": "Upper St. James's Street",
+    "addr:postcode": "BN2 1JN"
+   }
+  },
+  {
+   "id": "node/6603689922",
+   "lat": 50.819575,
+   "lng": -0.128205,
+   "tags": {
+    "name": "Brighton Curry",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo-Su 13:00-22:00",
+    "addr:housenumber": "40-42",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1JN",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6605769370",
+   "lat": 50.833531,
+   "lng": -0.14121,
+   "tags": {
+    "name": "Super Chinese",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "34",
+    "addr:street": "New England Road",
+    "addr:postcode": "BN1 4GG"
+   }
+  },
+  {
+   "id": "node/6645888668",
+   "lat": 50.825098,
+   "lng": -0.15641,
+   "tags": {
+    "name": "Seadragons Backpackers",
+    "tourism": "hostel",
+    "wikidata": "Q111121980",
+    "addr:street": "Waterloo Street"
+   }
+  },
+  {
+   "id": "node/6700540758",
+   "lat": 50.825497,
+   "lng": -0.137384,
+   "tags": {
+    "name": "Boyterous Burgers",
+    "amenity": "restaurant",
+    "addr:housenumber": "102",
+    "addr:street": "North Road",
+    "addr:postcode": "BN1 1YE"
+   }
+  },
+  {
+   "id": "node/6700568488",
+   "lat": 50.826756,
+   "lng": -0.138545,
+   "tags": {
+    "name": "The Scruffy Hare At The White Rabbit",
+    "amenity": "restaurant",
+    "addr:housenumber": "13-14",
+    "addr:street": "Kensington Gardens",
+    "addr:postcode": "BN1 4AL"
+   }
+  },
+  {
+   "id": "node/6703488697",
+   "lat": 50.831372,
+   "lng": -0.136279,
+   "tags": {
+    "name": "Sunbirds",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean;middle_eastern",
+    "addr:housenumber": "109",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JG"
+   }
+  },
+  {
+   "id": "node/6709362768",
+   "lat": 50.828503,
+   "lng": -0.177601,
+   "tags": {
+    "name": "Madrasi's Taste Of South India",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "We-Mo 12:00-15:00,17:00-22:00",
+    "addr:housenumber": "194",
+    "addr:street": "Church Road",
+    "addr:postcode": "BN3 2DJ"
+   }
+  },
+  {
+   "id": "node/6731735937",
+   "lat": 50.825653,
+   "lng": -0.139662,
+   "tags": {
+    "name": "Cappadocia Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "29-30",
+    "addr:street": "North Road",
+    "addr:postcode": "BN1 1YB"
+   }
+  },
+  {
+   "id": "node/6758815838",
+   "lat": 50.824666,
+   "lng": -0.151879,
+   "tags": {
+    "name": "Nazende",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "website": "https://www.nazende.co.uk/",
+    "opening_hours": "12:00-22:00",
+    "addr:housenumber": "94",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN1 2LB"
+   }
+  },
+  {
+   "id": "node/6766784996",
+   "lat": 50.827131,
+   "lng": -0.137856,
+   "tags": {
+    "name": "Solera De Tapa",
+    "amenity": "restaurant",
+    "cuisine": "spanish;tapas",
+    "addr:housenumber": "42",
+    "addr:street": "Sydney Street",
+    "addr:postcode": "BN1 4EP"
+   }
+  },
+  {
+   "id": "node/7014811900",
+   "lat": 50.842229,
+   "lng": -0.138581,
+   "tags": {
+    "name": "Cleveland Arms Kitchen",
+    "amenity": "restaurant",
+    "addr:housenumber": "27A",
+    "addr:street": "Cleveland Road",
+    "addr:postcode": "BN1 6FF"
+   }
+  },
+  {
+   "id": "node/7014811901",
+   "lat": 50.841722,
+   "lng": -0.140979,
+   "tags": {
+    "name": "Pulse Catering",
+    "amenity": "restaurant",
+    "addr:housenumber": "88",
+    "addr:street": "Havelock Road",
+    "addr:postcode": "BN1 6GF"
+   }
+  },
+  {
+   "id": "node/7015044062",
+   "lat": 50.822703,
+   "lng": -0.149736,
+   "tags": {
+    "name": "Hotel Una",
+    "tourism": "hotel",
+    "wikidata": "Q111369146",
+    "addr:housenumber": "55-56",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FF"
+   }
+  },
+  {
+   "id": "node/7019564638",
+   "lat": 50.82128,
+   "lng": -0.139744,
+   "tags": {
+    "name": "Burger & Lobster",
+    "amenity": "restaurant",
+    "cuisine": "burger;seafood",
+    "addr:housenumber": "15",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/7020341196",
+   "lat": 50.821577,
+   "lng": -0.139753,
+   "tags": {
+    "name": "Coco's Bistro",
+    "amenity": "restaurant",
+    "addr:housenumber": "49a",
+    "addr:street": "Market Street",
+    "addr:postcode": "BN1 1HH"
+   }
+  },
+  {
+   "id": "node/7020342033",
+   "lat": 50.820793,
+   "lng": -0.143429,
+   "tags": {
+    "name": "Churchill Palace Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "5",
+    "addr:street": "Middle Street",
+    "addr:postcode": "BN1 1AL"
+   }
+  },
+  {
+   "id": "node/7023540466",
+   "lat": 50.824883,
+   "lng": -0.157396,
+   "tags": {
+    "name": "The Little Fish Market",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "addr:housenumber": "10",
+    "addr:street": "Upper Market Street",
+    "addr:postcode": "BN3 1AS"
+   }
+  },
+  {
+   "id": "node/7035867579",
+   "lat": 50.820465,
+   "lng": -0.139383,
+   "tags": {
+    "name": "POCHA.ZIP",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "14",
+    "addr:street": "East Street",
+    "addr:postcode": "BN1 1HP"
+   }
+  },
+  {
+   "id": "node/7035868723",
+   "lat": 50.820302,
+   "lng": -0.141727,
+   "tags": {
+    "name": "The Wardroom",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7038290023",
+   "lat": 50.822755,
+   "lng": -0.13761,
+   "tags": {
+    "name": "Royal Pavilion Function Rooms",
+    "amenity": "restaurant",
+    "addr:housenumber": "4-5",
+    "addr:street": "Pavilion Buildings",
+    "addr:postcode": "BN1 1EE"
+   }
+  },
+  {
+   "id": "node/7043485600",
+   "lat": 50.83179,
+   "lng": -0.145516,
+   "tags": {
+    "name": "Shakey's",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "1",
+    "addr:street": "Chatham Place",
+    "addr:postcode": "BN1 3TP"
+   }
+  },
+  {
+   "id": "node/7043485601",
+   "lat": 50.82984,
+   "lng": -0.147302,
+   "tags": {
+    "name": "Nok Nok Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://thecow.pub/#Food",
+    "addr:housenumber": "95-97",
+    "addr:street": "Dyke Road",
+    "addr:postcode": "BN1 3JE"
+   }
+  },
+  {
+   "id": "node/7195338841",
+   "lat": 50.831555,
+   "lng": -0.119272,
+   "tags": {
+    "name": "Lotus House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.lotushousebrighton.co.uk?",
+    "opening_hours": "Mo off; Tu-Su 17:00-23:00",
+    "addr:housenumber": "191",
+    "addr:street": "Elm Grove",
+    "addr:postcode": "BN2 3EL"
+   }
+  },
+  {
+   "id": "node/7228728546",
+   "lat": 50.825403,
+   "lng": -0.142807,
+   "tags": {
+    "name": "CK Bistro",
+    "name:en": "CK Bistro",
+    "amenity": "restaurant",
+    "cuisine": "cantonese;chinese",
+    "website": "https://www.ckbistro.co.uk/",
+    "opening_hours": "Mo-Su 12:00-21:30",
+    "addr:housenumber": "23",
+    "addr:street": "Queens Road",
+    "addr:postcode": "BN1 3XA"
+   }
+  },
+  {
+   "id": "node/764904316",
+   "lat": 50.812779,
+   "lng": -0.101893,
+   "tags": {
+    "name": "Bella Napoli",
+    "amenity": "restaurant",
+    "addr:housenumber": "19",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "node/7891435830",
+   "lat": 50.827146,
+   "lng": -0.133788,
+   "tags": {
+    "name": "Bua Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.buathai.co.uk/",
+    "opening_hours": "Mo-Tu off; We-Su 15:30-22:00",
+    "addr:housenumber": "1A",
+    "addr:street": "Richmond Parade",
+    "addr:postcode": "BN2 9PH"
+   }
+  },
+  {
+   "id": "node/8687992096",
+   "lat": 50.818622,
+   "lng": -0.121463,
+   "tags": {
+    "name": "Pizzaface",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Mo 16:00-22:00; Tu-Th 12:00-14:00,16:00-22:00; Fr,Sa 12:00-22:00; Su 16:00-21:00",
+    "addr:housenumber": "35",
+    "addr:street": "St Georges Road",
+    "addr:postcode": "BN2 1ED"
+   }
+  },
+  {
+   "id": "node/8730893818",
+   "lat": 50.825603,
+   "lng": -0.159098,
+   "tags": {
+    "name": "La Tapa Loca",
+    "amenity": "restaurant",
+    "addr:housenumber": "31A",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AF"
+   }
+  },
+  {
+   "id": "node/8730938569",
+   "lat": 50.819158,
+   "lng": -0.123573,
+   "tags": {
+    "name": "Kemptown Tandoori",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.kemptowntandoori.co.uk",
+    "opening_hours": "We-Mo 17:30-22:00; Tu off",
+    "addr:housenumber": "111",
+    "addr:street": "St Georges Road",
+    "addr:postcode": "BN2 1EA"
+   }
+  },
+  {
+   "id": "node/8946686024",
+   "lat": 50.819367,
+   "lng": -0.121979,
+   "tags": {
+    "name": "Peach Blossom",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "We-Mo 17:00-23:00; Tu off",
+    "addr:housenumber": "37",
+    "addr:street": "College Place",
+    "addr:postcode": "BN2 1HN"
+   }
+  },
+  {
+   "id": "node/9028346480",
+   "lat": 50.83142,
+   "lng": -0.134454,
+   "tags": {
+    "name": "No. 1",
+    "amenity": "restaurant",
+    "addr:housenumber": "67",
+    "addr:street": "Ditchling Road",
+    "addr:postcode": "BN1 4SD"
+   }
+  },
+  {
+   "id": "node/9061796475",
+   "lat": 50.825227,
+   "lng": -0.156237,
+   "tags": {
+    "name": "Casba",
+    "amenity": "restaurant",
+    "cuisine": "kebab",
+    "addr:housenumber": "11",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/9061796476",
+   "lat": 50.825197,
+   "lng": -0.156045,
+   "tags": {
+    "name": "Almoosh",
+    "amenity": "restaurant",
+    "addr:housenumber": "8",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/9061796477",
+   "lat": 50.825181,
+   "lng": -0.155829,
+   "tags": {
+    "name": "Nawab",
+    "amenity": "restaurant",
+    "cuisine": "afghan;persian",
+    "addr:housenumber": "5-6",
+    "addr:street": "Western Road",
+    "addr:postcode": "BN3 1AE"
+   }
+  },
+  {
+   "id": "node/9093919452",
+   "lat": 50.823181,
+   "lng": -0.153082,
+   "tags": {
+    "name": "Andorra",
+    "tourism": "guest_house",
+    "addr:housenumber": "15,16",
+    "addr:street": "Oriental Place",
+    "addr:postcode": "BN1 2LJ"
+   }
+  },
+  {
+   "id": "node/9093919454",
+   "lat": 50.819239,
+   "lng": -0.128073,
+   "tags": {
+    "name": "Paskins Town House",
+    "tourism": "guest_house",
+    "website": "https://www.paskins.co.uk/",
+    "addr:housenumber": "18-19",
+    "addr:street": "Charlotte Street",
+    "addr:postcode": "BN2 1AG"
+   }
+  },
+  {
+   "id": "node/9093919455",
+   "lat": 50.819352,
+   "lng": -0.128027,
+   "tags": {
+    "name": "Brighton Surf Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "16",
+    "addr:street": "Charlotte Street",
+    "addr:postcode": "BN2 1AG"
+   }
+  },
+  {
+   "id": "node/9093919456",
+   "lat": 50.819377,
+   "lng": -0.127785,
+   "tags": {
+    "name": "Grey's Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "11",
+    "addr:street": "Charlotte Street",
+    "addr:postcode": "BN2 1AG"
+   }
+  },
+  {
+   "id": "node/9093919457",
+   "lat": 50.819207,
+   "lng": -0.127823,
+   "tags": {
+    "name": "Red Brighton Blue",
+    "tourism": "guest_house",
+    "wikidata": "Q111369154",
+    "addr:housenumber": "7",
+    "addr:street": "Charlotte Street",
+    "addr:postcode": "BN2 1AG"
+   }
+  },
+  {
+   "id": "node/9093919458",
+   "lat": 50.819129,
+   "lng": -0.128126,
+   "tags": {
+    "name": "The Twenty One",
+    "tourism": "guest_house",
+    "wikidata": "Q111369153",
+    "addr:housenumber": "21",
+    "addr:street": "Charlotte Street",
+    "addr:postcode": "BN2 1AG"
+   }
+  },
+  {
+   "id": "node/9093919459",
+   "lat": 50.820823,
+   "lng": -0.130086,
+   "tags": {
+    "name": "Coward's Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "12",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/9093919460",
+   "lat": 50.823783,
+   "lng": -0.153641,
+   "tags": {
+    "name": "Whitburn Lodge",
+    "tourism": "guest_house",
+    "addr:housenumber": "12",
+    "addr:street": "Montpelier Road",
+    "addr:postcode": "BN1 2LQ"
+   }
+  },
+  {
+   "id": "node/9093919461",
+   "lat": 50.824748,
+   "lng": -0.153103,
+   "tags": {
+    "name": "The Moreland",
+    "tourism": "guest_house",
+    "website": "https://the-moreland-bed-breakfast.eastsussex-uk.com/en/",
+    "addr:housenumber": "33",
+    "addr:street": "Montpelier Road",
+    "addr:postcode": "BN1 2LQ"
+   }
+  },
+  {
+   "id": "node/9093919462",
+   "lat": 50.819006,
+   "lng": -0.126972,
+   "tags": {
+    "name": "White House Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "6",
+    "addr:street": "Bedford Street",
+    "addr:postcode": "BN2 1AN"
+   }
+  },
+  {
+   "id": "node/9093919463",
+   "lat": 50.819776,
+   "lng": -0.132098,
+   "tags": {
+    "name": "The Square Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "4",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "node/9093919464",
+   "lat": 50.818792,
+   "lng": -0.127927,
+   "tags": {
+    "name": "The Lanes Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "70",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1AE"
+   }
+  },
+  {
+   "id": "node/9093919466",
+   "lat": 50.826353,
+   "lng": -0.166689,
+   "tags": {
+    "name": "The Claremont",
+    "tourism": "guest_house",
+    "stars": "5",
+    "website": "https://www.theclaremont.eu/",
+    "wikidata": "Q111409680",
+    "addr:housenumber": "13",
+    "addr:street": "Second Avenue",
+    "addr:postcode": "BN3 2LL"
+   }
+  },
+  {
+   "id": "node/9093919467",
+   "lat": 50.83049,
+   "lng": -0.166123,
+   "tags": {
+    "name": "The Art House Hove",
+    "tourism": "guest_house",
+    "addr:housenumber": "27",
+    "addr:street": "Wilbury Road",
+    "addr:postcode": "BN3 3PB"
+   }
+  },
+  {
+   "id": "node/9093919468",
+   "lat": 50.821369,
+   "lng": -0.129385,
+   "tags": {
+    "name": "Upper Rock Rooms",
+    "tourism": "hotel",
+    "addr:housenumber": "36",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QF",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9093919469",
+   "lat": 50.826349,
+   "lng": -0.175816,
+   "tags": {
+    "name": "SoBo Brighton",
+    "tourism": "guest_house",
+    "addr:housenumber": "10,11",
+    "addr:street": "Seafield Road",
+    "addr:postcode": "BN3 2TN"
+   }
+  },
+  {
+   "id": "node/9093919470",
+   "lat": 50.822127,
+   "lng": -0.151866,
+   "tags": {
+    "name": "West Beach Hotel",
+    "tourism": "hotel",
+    "website": "https://www.westbeachhotel.co.uk/",
+    "addr:housenumber": "135,136",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2HX"
+   }
+  },
+  {
+   "id": "node/9093919471",
+   "lat": 50.827326,
+   "lng": -0.175018,
+   "tags": {
+    "name": "Seafield House",
+    "tourism": "guest_house",
+    "addr:housenumber": "23",
+    "addr:street": "Seafield Road",
+    "addr:postcode": "BN3 2TP"
+   }
+  },
+  {
+   "id": "node/9093919472",
+   "lat": 50.822844,
+   "lng": -0.153655,
+   "tags": {
+    "name": "Phase One Hostel",
+    "tourism": "hostel",
+    "addr:housenumber": "29,30,31,32",
+    "addr:street": "Oriental Place",
+    "addr:postcode": "BN1 2LL"
+   }
+  },
+  {
+   "id": "node/9093919473",
+   "lat": 50.82091,
+   "lng": -0.130045,
+   "tags": {
+    "name": "Number 14",
+    "tourism": "guest_house",
+    "website": "https://www.number14brighton.com/",
+    "addr:housenumber": "14",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QE"
+   }
+  },
+  {
+   "id": "node/9093919474",
+   "lat": 50.826001,
+   "lng": -0.170851,
+   "tags": {
+    "name": "Langfords Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "8-16",
+    "addr:street": "Third Avenue",
+    "addr:postcode": "BN3 2PD"
+   }
+  },
+  {
+   "id": "node/9093919475",
+   "lat": 50.82483,
+   "lng": -0.165897,
+   "tags": {
+    "name": "Imperial Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "2,4,6,8,10",
+    "addr:street": "First Avenue",
+    "addr:postcode": "BN3 2FE"
+   }
+  },
+  {
+   "id": "node/9093919476",
+   "lat": 50.820487,
+   "lng": -0.134576,
+   "tags": {
+    "name": "Nineteen",
+    "tourism": "guest_house",
+    "addr:housenumber": "19",
+    "addr:street": "Broad Street",
+    "addr:postcode": "BN2 1TJ"
+   }
+  },
+  {
+   "id": "node/9093919477",
+   "lat": 50.824683,
+   "lng": -0.156476,
+   "tags": {
+    "name": "Cross Street Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "13",
+    "addr:street": "Cross Street",
+    "addr:postcode": "BN3 1AJ"
+   }
+  },
+  {
+   "id": "node/9093919478",
+   "lat": 50.827668,
+   "lng": -0.16424,
+   "tags": {
+    "name": "Chatsworth Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "9",
+    "addr:street": "Salisbury Road",
+    "addr:postcode": "BN3 3AB"
+   }
+  },
+  {
+   "id": "node/9093919479",
+   "lat": 50.821467,
+   "lng": -0.129347,
+   "tags": {
+    "name": "Cavalaire Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111369147",
+    "addr:housenumber": "34",
+    "addr:street": "Upper Rock Gardens",
+    "addr:postcode": "BN2 1QF",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9093919480",
+   "lat": 50.819525,
+   "lng": -0.125293,
+   "tags": {
+    "name": "Snooze",
+    "tourism": "guest_house",
+    "wikidata": "Q111369156",
+    "addr:housenumber": "25",
+    "addr:street": "St George's Terrace",
+    "addr:postcode": "BN2 1JJ"
+   }
+  },
+  {
+   "id": "node/9093919481",
+   "lat": 50.81961,
+   "lng": -0.124665,
+   "tags": {
+    "name": "Brighton Inn Boutique Guest Accommodation",
+    "tourism": "guest_house",
+    "addr:housenumber": "20",
+    "addr:street": "St George's Terrace",
+    "addr:postcode": "BN2 1JH"
+   }
+  },
+  {
+   "id": "node/9093919482",
+   "lat": 50.821408,
+   "lng": -0.130398,
+   "tags": {
+    "name": "Boydens Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "27",
+    "addr:street": "St James's Avenue",
+    "addr:postcode": "BN2 1QD"
+   }
+  },
+  {
+   "id": "node/9093919483",
+   "lat": 50.819387,
+   "lng": -0.13015,
+   "tags": {
+    "name": "Brighton Boutique Guesthouse",
+    "tourism": "guest_house",
+    "addr:housenumber": "27",
+    "addr:street": "Lower Rock Gardens",
+    "addr:postcode": "BN2 1PG"
+   }
+  },
+  {
+   "id": "node/9093919484",
+   "lat": 50.819581,
+   "lng": -0.129343,
+   "tags": {
+    "name": "Blanch House",
+    "tourism": "guest_house",
+    "addr:housenumber": "17",
+    "addr:street": "Atlingworth Street",
+    "addr:postcode": "BN2 1PL"
+   }
+  },
+  {
+   "id": "node/9093919485",
+   "lat": 50.819611,
+   "lng": -0.131511,
+   "tags": {
+    "name": "Horizon",
+    "tourism": "guest_house",
+    "addr:housenumber": "29,30,31",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/9093919486",
+   "lat": 50.819923,
+   "lng": -0.131417,
+   "tags": {
+    "name": "Marine View",
+    "tourism": "guest_house",
+    "addr:housenumber": "24",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/9093919487",
+   "lat": 50.820008,
+   "lng": -0.131399,
+   "tags": {
+    "name": "Ambassador Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "22,23",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PD"
+   }
+  },
+  {
+   "id": "node/9655655193",
+   "lat": 50.825532,
+   "lng": -0.137592,
+   "tags": {
+    "name": "Zafron Bukhari Kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9687661016",
+   "lat": 50.827764,
+   "lng": -0.141787,
+   "tags": {
+    "name": "Mr Wang Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "60",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3XD"
+   }
+  },
+  {
+   "id": "node/9795349395",
+   "lat": 50.819264,
+   "lng": -0.127834,
+   "tags": {
+    "name": "Marina House Hotel",
+    "tourism": "hotel",
+    "contact:website": "https://marinahousehotel.com/",
+    "addr:housenumber": "8",
+    "addr:street": "Charlotte Street"
+   }
+  },
+  {
+   "id": "node/9795349396",
+   "lat": 50.819302,
+   "lng": -0.127812,
+   "tags": {
+    "name": "FAB Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "9",
+    "addr:street": "Charlotte Street"
+   }
+  },
+  {
+   "id": "node/9831149813",
+   "lat": 50.822463,
+   "lng": -0.134337,
+   "tags": {
+    "name": "Island Takeaway",
+    "amenity": "restaurant",
+    "opening_hours": "18:00-23:30",
+    "addr:housenumber": "162",
+    "addr:street": "Edward Street",
+    "addr:postcode": "BN2 0JB"
+   }
+  },
+  {
+   "id": "node/9863263400",
+   "lat": 50.820178,
+   "lng": -0.138522,
+   "tags": {
+    "name": "The Villa",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "addr:housenumber": "9-10",
+    "addr:street": "Pool Valley"
+   }
+  },
+  {
+   "id": "node/9891976366",
+   "lat": 50.820781,
+   "lng": -0.134365,
+   "tags": {
+    "name": "Yelken",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean",
+    "opening_hours": "Tu-Fr 17:00-22:00; Sa 12:00-22:00",
+    "addr:housenumber": "109",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "node/9892047383",
+   "lat": 50.820868,
+   "lng": -0.129606,
+   "tags": {
+    "name": "Westbourne Guest House",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/9907513702",
+   "lat": 50.820668,
+   "lng": -0.132526,
+   "tags": {
+    "name": "MEO Brighton",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;lunch;pastry;sandwich;pancake;brunch;fries;coffee_shop;tea;juice;salad;mediterranean;tapas",
+    "website": "https://www.meobrighton.co.uk/",
+    "opening_hours": "Su-Th 08:00-17:00, Fr-Sa 08:00-22:00",
+    "addr:housenumber": "39",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1RG"
+   }
+  },
+  {
+   "id": "node/9907671530",
+   "lat": 50.831414,
+   "lng": -0.135158,
+   "tags": {
+    "name": "Kor-Pan",
+    "amenity": "restaurant",
+    "cuisine": "korean;japanese",
+    "addr:street": "Marshalls Row",
+    "addr:postcode": "BN1 4JU"
+   }
+  },
+  {
+   "id": "node/9907671542",
+   "lat": 50.831626,
+   "lng": -0.134656,
+   "tags": {
+    "name": "Mohammed Spice Of Life",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://mohammedspiceoflife.co.uk/",
+    "opening_hours": "Mo-Sa 10:00-18:00; Su 10:00-16:00",
+    "addr:street": "Marshalls Row",
+    "addr:postcode": "BN1 4JU"
+   }
+  },
+  {
+   "id": "node/9950988907",
+   "lat": 50.82091,
+   "lng": -0.130942,
+   "tags": {
+    "name": "New Steine Mews Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/9950996457",
+   "lat": 50.821758,
+   "lng": -0.131063,
+   "tags": {
+    "name": "Hudsons",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "relation/1851640",
+   "lat": 50.823394,
+   "lng": -0.141132,
+   "tags": {
+    "name": "Premier Inn Brighton City Centre",
+    "tourism": "hotel",
+    "website": "https://www.premierinn.com/gb/en/hotels/england/east-sussex/brighton/brighton-city-centre-north-street.html",
+    "opening_hours": "24/7",
+    "addr:housenumber": "144",
+    "addr:street": "North Street",
+    "addr:postcode": "BN1 1RE"
+   }
+  },
+  {
+   "id": "way/1050562403",
+   "lat": 50.833226,
+   "lng": -0.13809,
+   "tags": {
+    "name": "Fatto a Mano",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.fattoamanopizza.com/",
+    "opening_hours": "Mo-Th 16:00-22:00; Fr 16:00-22:30; Sa 12:00-22:30; Su 12:00-21:30",
+    "addr:housenumber": "77",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 4JF",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1061886128",
+   "lat": 50.831612,
+   "lng": -0.135934,
+   "tags": {
+    "name": "Bonsai Plant Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "asian;japanese",
+    "website": "https://www.bonsaiplantkitchen.co.uk/",
+    "opening_hours": "Su-Th 17:00-22:30; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "44-45",
+    "addr:street": "Baker Street",
+    "addr:postcode": "BN1 4JN"
+   }
+  },
+  {
+   "id": "way/1061888192",
+   "lat": 50.831985,
+   "lng": -0.134645,
+   "tags": {
+    "name": "Bardsley's of Baker Street",
+    "amenity": "restaurant",
+    "cuisine": "fish_and_chips",
+    "website": "http://bardsleys-fishandchips.co.uk/",
+    "addr:housenumber": "23A",
+    "addr:street": "Baker Street",
+    "addr:postcode": "BN1 4JN"
+   }
+  },
+  {
+   "id": "way/111835527",
+   "lat": 50.826126,
+   "lng": -0.180126,
+   "tags": {
+    "name": "The Ginger Pig",
+    "amenity": "restaurant",
+    "website": "http://thegingerpigpub.com/",
+    "addr:housenumber": "3",
+    "addr:street": "Hove Street",
+    "addr:postcode": "BN3 2TR"
+   }
+  },
+  {
+   "id": "way/1166242921",
+   "lat": 50.828834,
+   "lng": -0.167628,
+   "tags": {
+    "name": "The Courtlands",
+    "tourism": "hotel",
+    "stars": "3",
+    "addr:housenumber": "19 - 27",
+    "addr:street": "The Drive",
+    "addr:postcode": "BN3 3JE"
+   }
+  },
+  {
+   "id": "way/1184809804",
+   "lat": 50.821096,
+   "lng": -0.140987,
+   "tags": {
+    "name": "Zizzi",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.zizzi.co.uk/italian/restaurants/brighton",
+    "addr:housenumber": "7-8",
+    "addr:street": "Prince Albert Street",
+    "addr:postcode": "BN1 1HE"
+   }
+  },
+  {
+   "id": "way/1184809819",
+   "lat": 50.820323,
+   "lng": -0.139537,
+   "tags": {
+    "name": "Momma Cherri's Big House",
+    "amenity": "restaurant",
+    "cuisine": "soul",
+    "addr:housenumber": "2-3",
+    "addr:street": "Little East Street",
+    "addr:postcode": "BN1 1HT"
+   }
+  },
+  {
+   "id": "way/1280888426",
+   "lat": 50.820159,
+   "lng": -0.132037,
+   "tags": {
+    "name": "New Steine",
+    "tourism": "hotel",
+    "website": "https://www.newsteinehotel.com/",
+    "wikidata": "Q111369149",
+    "addr:housenumber": "10-11",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/1301381434",
+   "lat": 50.831775,
+   "lng": -0.134829,
+   "tags": {
+    "name": "Chopstick Express",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "28",
+    "addr:street": "Baker Street",
+    "addr:postcode": "BN1 4JN"
+   }
+  },
+  {
+   "id": "way/1301381435",
+   "lat": 50.831776,
+   "lng": -0.134897,
+   "tags": {
+    "name": "Abyssinia",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "addr:housenumber": "29",
+    "addr:street": "Baker Street",
+    "addr:postcode": "BN1 4JN"
+   }
+  },
+  {
+   "id": "way/1301573928",
+   "lat": 50.831922,
+   "lng": -0.135126,
+   "tags": {
+    "name": "Pastan",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "website": "https://pastan.co/restaurants/brighton/",
+    "opening_hours": "Mo,Tu off; We-Sa 12:00-14:30,17:00-21:30; Su 2:00-17:00",
+    "addr:housenumber": "15",
+    "addr:street": "Baker Street",
+    "addr:postcode": "BN1 4JN"
+   }
+  },
+  {
+   "id": "way/137389443",
+   "lat": 50.820004,
+   "lng": -0.134509,
+   "tags": {
+    "name": "The Atlantic Seafront",
+    "tourism": "hotel",
+    "addr:housenumber": "16",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1TL"
+   }
+  },
+  {
+   "id": "way/137389770",
+   "lat": 50.825764,
+   "lng": -0.13835,
+   "tags": {
+    "name": "Wagamama",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.wagamama.com/restaurants/brighton/brighton",
+    "opening_hours": "Su-Th 11:00-22:00; Fr,Sa 11:00-23:00",
+    "addr:housenumber": "30",
+    "addr:street": "Kensington Street",
+    "addr:postcode": "BN1 4AJ",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/137396825",
+   "lat": 50.82147,
+   "lng": -0.14487,
+   "tags": {
+    "name": "Travelodge",
+    "tourism": "hotel",
+    "website": "https://www.travelodge.co.uk/hotels/356/Brighton-Seafront-hotel",
+    "addr:housenumber": "12-14",
+    "addr:street": "West Street",
+    "addr:postcode": "BN1 2RE"
+   }
+  },
+  {
+   "id": "way/137419417",
+   "lat": 50.819929,
+   "lng": -0.133788,
+   "tags": {
+    "name": "New Madeira Hotel",
+    "tourism": "hotel",
+    "website": "https://www.newmadeirahotel.com/",
+    "addr:housenumber": "19-23",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1TL"
+   }
+  },
+  {
+   "id": "way/137419446",
+   "lat": 50.820526,
+   "lng": -0.13386,
+   "tags": {
+    "name": "Kempfield House",
+    "tourism": "guest_house",
+    "website": "http://www.kempfieldhouse.co.uk/",
+    "addr:housenumber": "18",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "way/137429079",
+   "lat": 50.821805,
+   "lng": -0.149821,
+   "tags": {
+    "name": "Cecil House Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/137667584",
+   "lat": 50.822541,
+   "lng": -0.149759,
+   "tags": {
+    "name": "The Queensbury",
+    "tourism": "hotel",
+    "addr:housenumber": "58",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FF"
+   }
+  },
+  {
+   "id": "way/137667595",
+   "lat": 50.822831,
+   "lng": -0.14847,
+   "tags": {
+    "name": "Motel Schmotel",
+    "tourism": "guest_house",
+    "website": "https://motelschmotel.co.uk/",
+    "addr:housenumber": "37",
+    "addr:street": "Russell Square",
+    "addr:postcode": "BN1 2EF"
+   }
+  },
+  {
+   "id": "way/137667596",
+   "lat": 50.822905,
+   "lng": -0.149628,
+   "tags": {
+    "name": "Brighton House",
+    "tourism": "hotel",
+    "wikidata": "Q111369145",
+    "addr:housenumber": "52",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FF"
+   }
+  },
+  {
+   "id": "way/137667610",
+   "lat": 50.822775,
+   "lng": -0.147975,
+   "tags": {
+    "name": "Churchill Brighton",
+    "tourism": "guest_house",
+    "addr:housenumber": "44",
+    "addr:street": "Russell Square",
+    "addr:postcode": "BN1 2EF"
+   }
+  },
+  {
+   "id": "way/137667627",
+   "lat": 50.822961,
+   "lng": -0.14954,
+   "tags": {
+    "name": "Adelaide House",
+    "tourism": "hotel",
+    "addr:housenumber": "51",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FF"
+   }
+  },
+  {
+   "id": "way/137681694",
+   "lat": 50.823088,
+   "lng": -0.147316,
+   "tags": {
+    "name": "Sandpiper Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "11",
+    "addr:street": "Russell Square",
+    "addr:postcode": "BN1 2EE"
+   }
+  },
+  {
+   "id": "way/137681699",
+   "lat": 50.823196,
+   "lng": -0.147871,
+   "tags": {
+    "name": "Russell Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "19",
+    "addr:street": "Russell Square"
+   }
+  },
+  {
+   "id": "way/137682023",
+   "lat": 50.820268,
+   "lng": -0.132005,
+   "tags": {
+    "name": "Gulliver's Hotel",
+    "tourism": "hotel",
+    "website": "https://www.gullivershotel.com/",
+    "wikidata": "Q111058460",
+    "addr:housenumber": "13",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682024",
+   "lat": 50.819737,
+   "lng": -0.13216,
+   "tags": {
+    "name": "Hamptons Brighton",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.hamptonsbrighton.com/",
+    "addr:housenumber": "3",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682025",
+   "lat": 50.820368,
+   "lng": -0.131975,
+   "tags": {
+    "name": "Holland House",
+    "tourism": "guest_house",
+    "addr:housenumber": "15",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682036",
+   "lat": 50.820105,
+   "lng": -0.132052,
+   "tags": {
+    "name": "New Steine",
+    "tourism": "hotel",
+    "website": "https://www.newsteinehotel.com/",
+    "wikidata": "Q111369149",
+    "addr:housenumber": "10-11",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682037",
+   "lat": 50.819918,
+   "lng": -0.132107,
+   "tags": {
+    "name": "Strawberry Fields",
+    "tourism": "hotel",
+    "website": "https://www.strawberry-fields-hotel.com/",
+    "addr:housenumber": "6-7",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682041",
+   "lat": 50.820051,
+   "lng": -0.132067,
+   "tags": {
+    "name": "Vincent Lodge",
+    "tourism": "guest_house",
+    "addr:housenumber": "9",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137682042",
+   "lat": 50.819814,
+   "lng": -0.132137,
+   "tags": {
+    "name": "five",
+    "tourism": "hotel",
+    "website": "https://www.fivehotel.com/",
+    "addr:housenumber": "5",
+    "addr:street": "New Steine",
+    "addr:postcode": "BN2 1PB"
+   }
+  },
+  {
+   "id": "way/137685575",
+   "lat": 50.820699,
+   "lng": -0.132427,
+   "tags": {
+    "name": "Pavel",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo-Su 15:00-24:00",
+    "addr:housenumber": "40",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1RG"
+   }
+  },
+  {
+   "id": "way/137689033",
+   "lat": 50.823521,
+   "lng": -0.157366,
+   "tags": {
+    "name": "The Southern Belle",
+    "tourism": "hotel",
+    "amenity": "pub",
+    "addr:housenumber": "3",
+    "addr:street": "Waterloo Street",
+    "addr:postcode": "BN3 1AQ"
+   }
+  },
+  {
+   "id": "way/137699725",
+   "lat": 50.819689,
+   "lng": -0.132874,
+   "tags": {
+    "name": "Legends Hotel",
+    "tourism": "hotel",
+    "website": "http://www.legendsbrighton.com",
+    "addr:housenumber": "31-34",
+    "addr:street": "Marine Parade",
+    "addr:postcode": "BN2 1TS"
+   }
+  },
+  {
+   "id": "way/137723598",
+   "lat": 50.823293,
+   "lng": -0.150319,
+   "tags": {
+    "name": "Prince Regent Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "29",
+    "addr:street": "Regency Square"
+   }
+  },
+  {
+   "id": "way/137723611",
+   "lat": 50.823263,
+   "lng": -0.149959,
+   "tags": {
+    "name": "Artist Residence",
+    "tourism": "hotel",
+    "website": "http://arthotelbrighton.co.uk/",
+    "addr:housenumber": "33",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2GG"
+   }
+  },
+  {
+   "id": "way/137723612",
+   "lat": 50.823347,
+   "lng": -0.150407,
+   "tags": {
+    "name": "The Regency Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "28",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FH"
+   }
+  },
+  {
+   "id": "way/137725592",
+   "lat": 50.822632,
+   "lng": -0.151037,
+   "tags": {
+    "name": "Hotel Pelirocco",
+    "tourism": "hotel",
+    "website": "https://www.hotelpelirocco.co.uk/",
+    "addr:housenumber": "10",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FG"
+   }
+  },
+  {
+   "id": "way/137725593",
+   "lat": 50.822745,
+   "lng": -0.151013,
+   "tags": {
+    "name": "Royal Pavillion Townhouse",
+    "tourism": "hotel",
+    "website": "http://www.rpthotel.co.uk/",
+    "addr:housenumber": "12",
+    "addr:street": "Regency Square"
+   }
+  },
+  {
+   "id": "way/137725600",
+   "lat": 50.823027,
+   "lng": -0.15087,
+   "tags": {
+    "name": "Topps Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "17",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FG"
+   }
+  },
+  {
+   "id": "way/137725614",
+   "lat": 50.822174,
+   "lng": -0.151156,
+   "tags": {
+    "name": "Beach Hotel",
+    "tourism": "hotel",
+    "website": "https://www.beachotel.co.uk/",
+    "addr:housenumber": "1-4",
+    "addr:street": "Regency Square",
+    "addr:postcode": "BN1 2FG"
+   }
+  },
+  {
+   "id": "way/137733283",
+   "lat": 50.822414,
+   "lng": -0.153488,
+   "tags": {
+    "name": "Four Points Flex",
+    "tourism": "hotel",
+    "addr:housenumber": "139-141",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2NA",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/137733613",
+   "lat": 50.820656,
+   "lng": -0.133607,
+   "tags": {
+    "name": "Block",
+    "amenity": "restaurant",
+    "wikidata": "Q26661026",
+    "addr:housenumber": "101",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TP"
+   }
+  },
+  {
+   "id": "way/137741316",
+   "lat": 50.820566,
+   "lng": -0.134278,
+   "tags": {
+    "name": "Aquarium Guest House",
+    "tourism": "guest_house",
+    "website": "https://www.aquarium-guesthouse.co.uk/",
+    "addr:housenumber": "13",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "way/137741322",
+   "lat": 50.820585,
+   "lng": -0.133934,
+   "tags": {
+    "name": "Funchal Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "17",
+    "addr:street": "Madeira Place",
+    "addr:postcode": "BN2 1TN"
+   }
+  },
+  {
+   "id": "way/137741359",
+   "lat": 50.82078,
+   "lng": -0.134449,
+   "tags": {
+    "name": "Clydee's Brunch and Burger Bar",
+    "amenity": "restaurant",
+    "addr:housenumber": "110",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TH"
+   }
+  },
+  {
+   "id": "way/137827098",
+   "lat": 50.820479,
+   "lng": -0.135061,
+   "tags": {
+    "name": "Dolphin Guest House",
+    "tourism": "guest_house",
+    "addr:housenumber": "10",
+    "addr:street": "Charles Street",
+    "addr:postcode": "BN2 1TG"
+   }
+  },
+  {
+   "id": "way/137827119",
+   "lat": 50.8202,
+   "lng": -0.134908,
+   "tags": {
+    "name": "One Broad Street",
+    "tourism": "guest_house",
+    "website": "http://www.onebroadstreet.com/",
+    "addr:housenumber": "1",
+    "addr:street": "Broad Street",
+    "addr:postcode": "BN2 1TJ"
+   }
+  },
+  {
+   "id": "way/137830241",
+   "lat": 50.820241,
+   "lng": -0.134875,
+   "tags": {
+    "name": "Guest and the City",
+    "tourism": "guest_house",
+    "website": "https://www.guestandthecity.co.uk/",
+    "wikidata": "Q111409681",
+    "addr:housenumber": "2",
+    "addr:street": "Broad Street",
+    "addr:postcode": "BN2 1TJ"
+   }
+  },
+  {
+   "id": "way/137854904",
+   "lat": 50.820672,
+   "lng": -0.133756,
+   "tags": {
+    "name": "Greens and Grains",
+    "amenity": "restaurant",
+    "addr:housenumber": "103",
+    "addr:street": "St. James's Street",
+    "addr:postcode": "BN2 1TP"
+   }
+  },
+  {
+   "id": "way/1379258825",
+   "lat": 50.825848,
+   "lng": -0.170923,
+   "tags": {
+    "name": "Oeuf",
+    "amenity": "restaurant",
+    "cuisine": "burger;coffee_shop;sandwich;breakfast;tea;juice",
+    "website": "https://oeuf.cafe",
+    "opening_hours": "Mo-Su 09:00-16:00",
+    "addr:housenumber": "8",
+    "addr:street": "Third Avenue",
+    "addr:postcode": "BN3 2PX"
+   }
+  },
+  {
+   "id": "way/138002199",
+   "lat": 50.820723,
+   "lng": -0.144467,
+   "tags": {
+    "name": "Harbour Hotel",
+    "tourism": "hotel",
+    "website": "https://www.harbourhotels.co.uk/brighton",
+    "addr:housenumber": "64",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 1NA"
+   }
+  },
+  {
+   "id": "way/138134999",
+   "lat": 50.821748,
+   "lng": -0.149596,
+   "tags": {
+    "name": "Granville",
+    "tourism": "hotel",
+    "website": "http://www.granvillehotel.co.uk/",
+    "addr:housenumber": "123-125",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2FY"
+   }
+  },
+  {
+   "id": "way/138136161",
+   "lat": 50.822922,
+   "lng": -0.155331,
+   "tags": {
+    "name": "Mercure Brighton Seafront",
+    "tourism": "hotel",
+    "website": "https://all.accor.com/hotel/8335/index.en.shtml",
+    "addr:housenumber": "149",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2PP"
+   }
+  },
+  {
+   "id": "way/138136169",
+   "lat": 50.822622,
+   "lng": -0.154345,
+   "tags": {
+    "name": "Brighton Hotel",
+    "tourism": "hotel",
+    "website": "https://www.thebrightonhotel.co.uk/",
+    "addr:housenumber": "143-145",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2PQ"
+   }
+  },
+  {
+   "id": "way/138262074",
+   "lat": 50.82064,
+   "lng": -0.142379,
+   "tags": {
+    "name": "Hotel du Vin",
+    "tourism": "hotel",
+    "addr:housenumber": "3-6",
+    "addr:street": "Ship Street",
+    "addr:postcode": "BN1 1AD"
+   }
+  },
+  {
+   "id": "way/139443711",
+   "lat": 50.825609,
+   "lng": -0.137449,
+   "tags": {
+    "name": "Bill's",
+    "amenity": "restaurant",
+    "cuisine": "british",
+    "website": "https://bills-website.co.uk/restaurants/brighton/",
+    "addr:housenumber": "100",
+    "addr:street": "North Road",
+    "addr:postcode": "BN1 1YE"
+   }
+  },
+  {
+   "id": "way/142032984",
+   "lat": 50.82407,
+   "lng": -0.138337,
+   "tags": {
+    "name": "Côte Brasserie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://www.cote.co.uk/restaurant/brighton",
+    "addr:housenumber": "115-116",
+    "addr:street": "Church Street",
+    "addr:postcode": "BN1 1UD"
+   }
+  },
+  {
+   "id": "way/151403601",
+   "lat": 50.846078,
+   "lng": -0.151163,
+   "tags": {
+    "name": "Preston Park Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "216",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 6UU"
+   }
+  },
+  {
+   "id": "way/168555150",
+   "lat": 50.819723,
+   "lng": -0.137418,
+   "tags": {
+    "name": "Royal Albion Hotel",
+    "tourism": "hotel",
+    "website": "https://www.britanniahotels.com/hotels/the-royal-albion-hotel-brighton",
+    "wikidata": "Q7373649",
+    "addr:housenumber": "35",
+    "addr:street": "Old Steine",
+    "addr:postcode": "BN1 1NT"
+   }
+  },
+  {
+   "id": "way/171790939",
+   "lat": 50.824681,
+   "lng": -0.144032,
+   "tags": {
+    "name": "Q Square",
+    "tourism": "hotel",
+    "website": "https://supercityuk.com/locations/brighton/",
+    "addr:housenumber": "11",
+    "addr:street": "Queen Square",
+    "addr:postcode": "BN1 3FD"
+   }
+  },
+  {
+   "id": "way/177946126",
+   "lat": 50.837815,
+   "lng": -0.146888,
+   "tags": {
+    "name": "Travelodge Brighton",
+    "tourism": "hotel",
+    "website": "https://www.travelodge.co.uk/hotels/18/Brighton-hotel",
+    "addr:housenumber": "165-167",
+    "addr:street": "Preston Road",
+    "addr:postcode": "BN1 6AU"
+   }
+  },
+  {
+   "id": "way/228842967",
+   "lat": 50.820177,
+   "lng": -0.138053,
+   "tags": {
+    "name": "A&O Hostel Brighton",
+    "tourism": "hostel",
+    "website": "https://www.aohostels.com/en/brighton/brighton-palace-pier/",
+    "addr:housenumber": "41-42",
+    "addr:street": "Old Steine",
+    "addr:postcode": "BN1 1NH"
+   }
+  },
+  {
+   "id": "way/235128342",
+   "lat": 50.819715,
+   "lng": -0.139573,
+   "tags": {
+    "name": "Queens Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "1-5",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 1NS",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/236176029",
+   "lat": 50.812895,
+   "lng": -0.102494,
+   "tags": {
+    "name": "The Katarina",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.harvester.co.uk/restaurants/southeast/thekatarinabrighton",
+    "addr:housenumber": "41",
+    "addr:street": "Waterfront",
+    "addr:postcode": "BN2 5WA"
+   }
+  },
+  {
+   "id": "way/236761964",
+   "lat": 50.826039,
+   "lng": -0.181904,
+   "tags": {
+    "name": "Princes Marine Hotel",
+    "tourism": "hotel",
+    "website": "https://www.bestwestern.co.uk/hotels/best-western-princes-marine-hotel-83740",
+    "addr:housenumber": "153",
+    "addr:street": "Kingsway",
+    "addr:postcode": "BN3 4GR"
+   }
+  },
+  {
+   "id": "way/242185753",
+   "lat": 50.820397,
+   "lng": -0.142018,
+   "tags": {
+    "name": "The Old Ship Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q25171964",
+    "addr:housenumber": "31-38",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 1NR"
+   }
+  },
+  {
+   "id": "way/275192436",
+   "lat": 50.823296,
+   "lng": -0.136007,
+   "tags": {
+    "name": "Kipp's Hostel",
+    "tourism": "hostel",
+    "website": "http://www.kipps-brighton.com/",
+    "addr:housenumber": "75-76",
+    "addr:street": "Grand Parade",
+    "addr:postcode": "BN2 9JA"
+   }
+  },
+  {
+   "id": "way/363304177",
+   "lat": 50.821707,
+   "lng": -0.147372,
+   "tags": {
+    "name": "The Grand Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q5594619",
+    "addr:housenumber": "97-99",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 2FW"
+   }
+  },
+  {
+   "id": "way/629223328",
+   "lat": 50.827717,
+   "lng": -0.14136,
+   "tags": {
+    "name": "Ibis Brighton City Centre",
+    "tourism": "hotel",
+    "addr:housenumber": "88-92",
+    "addr:street": "Queen's Road",
+    "addr:postcode": "BN1 3XE"
+   }
+  },
+  {
+   "id": "way/672979936",
+   "lat": 50.865349,
+   "lng": -0.15212,
+   "tags": {
+    "name": "Miller & Carter",
+    "amenity": "restaurant",
+    "cuisine": "steak",
+    "contact:website": "https://www.millerandcarter.co.uk/restaurants/south-east/millerandcarterbrighton",
+    "addr:street": "London Road",
+    "addr:postcode": "BN1 8YQ"
+   }
+  },
+  {
+   "id": "way/872356408",
+   "lat": 50.852772,
+   "lng": -0.159007,
+   "tags": {
+    "name": "The Sportsman",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.stonehouserestaurants.co.uk/nationalsearch/southeast/thesportsmanbrighton",
+    "addr:street": "Tongdean Lane",
+    "addr:postcode": "BN1 5JD"
+   }
+  },
+  {
+   "id": "way/934674693",
+   "lat": 50.824435,
+   "lng": -0.17603,
+   "tags": {
+    "name": "Marrocco's",
+    "amenity": "restaurant",
+    "cuisine": "italian;ice_cream;seafood",
+    "website": "https://www.marroccos.co.uk/",
+    "opening_hours": "08:00-22:00",
+    "addr:housenumber": "8",
+    "addr:street": "King's Esplanade",
+    "addr:postcode": "BN3 2WA",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/936946162",
+   "lat": 50.825635,
+   "lng": -0.17799,
+   "tags": {
+    "name": "Kingsway Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "2",
+    "addr:street": "St Aubyns",
+    "addr:postcode": "BN3 2TB"
+   }
+  },
+  {
+   "id": "way/96343939",
+   "lat": 50.821838,
+   "lng": -0.148737,
+   "tags": {
+    "name": "DoubleTree by Hilton Brighton Metropole",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.hilton.com/en/hotels/bshmedi-doubletree-brighton-metropole/?SEO_id=OTHR-EMEA-DI-BSHMEDI",
+    "wikidata": "Q120750783",
+    "addr:street": "Kings Road",
+    "addr:postcode": "BN1 2FU",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/96653264",
+   "lat": 50.821616,
+   "lng": -0.152541,
+   "tags": {
+    "name": "The Seahorse",
+    "amenity": "restaurant",
+    "website": "https://seahorsebrighton.co.uk/",
+    "addr:housenumber": "26 - 28",
+    "addr:street": "King's Road",
+    "addr:postcode": "BN1 2LN"
+   }
+  }
+ ]
+}

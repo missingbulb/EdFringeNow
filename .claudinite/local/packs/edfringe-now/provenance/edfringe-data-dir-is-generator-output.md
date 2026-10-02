@@ -8,3 +8,12 @@
 - **Mechanism:** a coded check discovered from the pack's rule folder.
 - **Actor:** @missingbulb (owner).
 - **Model:** claude-opus-5-5
+
+## 2026-10-02 · policy-changed · names the city cycle's new raw and serving files
+- **Reason:** the city cycle grew to where to stay and eat (`amenities`) and day trips
+  (`wikivoyage`), and to every city the registry places a served festival in; each new file is named
+  with its writer rather than the directory, as the check asks.
+- **Mechanism:** the coded check's allowlist.
+- **Actor:** Claude, on the owner's request for hotels, restaurants and excursions per festival
+  city.
+- **Model:** claude-opus-5-5

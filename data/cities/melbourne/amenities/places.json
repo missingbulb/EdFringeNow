@@ -1,0 +1,7425 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": null,
+   "venue": null,
+   "lat": -37.815,
+   "lng": 144.9668
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10048415120",
+   "lat": -37.817518,
+   "lng": 144.964452,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "addr:housenumber": "27-29",
+    "addr:street": "Elizabeth Street",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1005020984",
+   "lat": -37.81589,
+   "lng": 144.966433,
+   "tags": {
+    "name": "Om Vegetarian",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "contact:website": "https://www.omvegetarian.com",
+    "opening_hours": "11:00-21:00",
+    "addr:housenumber": "227",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/10057327717",
+   "lat": -37.815644,
+   "lng": 144.962497,
+   "tags": {
+    "name": "Little Ramen Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen",
+    "website": "https://littleramenbar.com.au/",
+    "addr:housenumber": "369",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/1013094884",
+   "lat": -37.811926,
+   "lng": 144.971771,
+   "tags": {
+    "name": "Ma Naaw",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "51",
+    "addr:street": "Bourke Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1015598755",
+   "lat": -37.807036,
+   "lng": 144.962401,
+   "tags": {
+    "name": "Nisa's Thai Street Food",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "493",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1015598784",
+   "lat": -37.807292,
+   "lng": 144.962527,
+   "tags": {
+    "name": "Xiangli Cuisine",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:30-15:00,17:00-22:00; PH closed",
+    "addr:housenumber": "479",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1015598821",
+   "lat": -37.807149,
+   "lng": 144.962456,
+   "tags": {
+    "name": "Mini Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-22:00; PH closed",
+    "addr:housenumber": "487",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/10164890176",
+   "lat": -37.823502,
+   "lng": 144.963248,
+   "tags": {
+    "name": "Ten BBQ & Hotpot",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Fr 17:30-22:30; Sa,Su 12:30-22:30",
+    "addr:housenumber": "143",
+    "addr:street": "City Road"
+   }
+  },
+  {
+   "id": "node/10187961370",
+   "lat": -37.809193,
+   "lng": 144.968748,
+   "tags": {
+    "name": "Hong Dae",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Fr 11:30-15:00,17:30-01:30; Sa-Su 17:30-01:30",
+    "addr:housenumber": "100",
+    "addr:street": "Little Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/10252899509",
+   "lat": -37.815792,
+   "lng": 144.971304,
+   "tags": {
+    "name": "A Hereford Beefstouw",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://beefstouw.com/restaurants/melbourne-australien",
+    "opening_hours": "Su-Mo,Sa 17:30-22:30; Tu-Fr 11:30-22:30",
+    "addr:housenumber": "22",
+    "addr:street": "Duckboard Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/1027208348",
+   "lat": -37.818238,
+   "lng": 144.967433,
+   "tags": {
+    "name": "Tower Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10542233826",
+   "lat": -37.816506,
+   "lng": 144.959497,
+   "tags": {
+    "name": "Korean BBQ Box",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Fr 10:30-20:00; Sa,PH 11:30-19:00; Su off",
+    "addr:housenumber": "459",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10579922841",
+   "lat": -37.812137,
+   "lng": 144.965644,
+   "tags": {
+    "name": "bykorea",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Fr 11:30-22:00; Sa,Su 11:30-22:30",
+    "addr:housenumber": "7",
+    "addr:street": "Tattersalls Lane",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10598217444",
+   "lat": -37.817066,
+   "lng": 144.960502,
+   "tags": {
+    "name": "Taco Bill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.tacobill.com.au/collinsstreet",
+    "opening_hours": "We-Sa 00:00-23:00+",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10598217445",
+   "lat": -37.81684,
+   "lng": 144.961284,
+   "tags": {
+    "name": "The Bank Bar And Restaurant",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 11:00-18:00+",
+    "addr:housenumber": "394",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10598235890",
+   "lat": -37.814738,
+   "lng": 144.963104,
+   "tags": {
+    "name": "Belle's Hot Chickeb",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "opening_hours": "Su-Th 11:30-21:00; Fr,Sa 11:30-21:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10598258021",
+   "lat": -37.813789,
+   "lng": 144.965499,
+   "tags": {
+    "name": "Vapiano",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/10598258023",
+   "lat": -37.812238,
+   "lng": 144.964838,
+   "tags": {
+    "name": "Bowltiful",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.bowltiful.com.au/bowltiful-swanston",
+    "opening_hours": "Mo-Su 10:00-02:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10598258026",
+   "lat": -37.812091,
+   "lng": 144.964704,
+   "tags": {
+    "name": "Dooboo",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "opening_hours": "Mo-Th 11:30-22:00; Fr-Sa 11:30-23:30; Su 11:30-21:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10598258028",
+   "lat": -37.812082,
+   "lng": 144.964769,
+   "tags": {
+    "name": "China Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "24/7",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10598284190",
+   "lat": -37.81146,
+   "lng": 144.964398,
+   "tags": {
+    "name": "Bornga Korean Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "korean;barbecue"
+   }
+  },
+  {
+   "id": "node/10598284193",
+   "lat": -37.81162,
+   "lng": 144.963997,
+   "tags": {
+    "name": "Hu Food Fried Skewers",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/10598310130",
+   "lat": -37.812459,
+   "lng": 144.960855,
+   "tags": {
+    "name": "Brady Hotels",
+    "tourism": "hotel",
+    "addr:housenumber": "388",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/10598310131",
+   "lat": -37.812299,
+   "lng": 144.961618,
+   "tags": {
+    "name": "Hakoya Izakaya",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/10598310132",
+   "lat": -37.812459,
+   "lng": 144.961017,
+   "tags": {
+    "name": "Dolan Uygher Cuisine",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Tu-Su 11:30-15:00, 17:00-21:30",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10604032436",
+   "lat": -37.811623,
+   "lng": 144.967346,
+   "tags": {
+    "name": "Dragon Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese;hot_pot",
+    "website": "https://www.dragonhotpot.com.au",
+    "opening_hours": "Mo-Th 12:00-01:30; Fr-Su 12:00-02:30",
+    "addr:housenumber": "213",
+    "addr:street": "Russell Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10604032437",
+   "lat": -37.811454,
+   "lng": 144.967256,
+   "tags": {
+    "name": "David's Master Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese;hotpot",
+    "website": "https://www.davidsmasterpot.com.au",
+    "opening_hours": "Mo-Th,Su 12:00-24:00; Fr-Sa 12:00-02:30",
+    "addr:housenumber": "219",
+    "addr:street": "Russell Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1060539770",
+   "lat": -37.809357,
+   "lng": 144.968954,
+   "tags": {
+    "name": "Pepe's Italian & Liquor",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.pepesitalian.com.au",
+    "addr:housenumber": "275-285",
+    "addr:street": "Exhibition Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/10711265205",
+   "lat": -37.814078,
+   "lng": 144.961382,
+   "tags": {
+    "name": "Lulu’s Char Akita Teow",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10711326405",
+   "lat": -37.811939,
+   "lng": 144.96705,
+   "tags": {
+    "name": "Le Charme",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10718249405",
+   "lat": -37.815351,
+   "lng": 144.971093,
+   "tags": {
+    "name": "Tippy-Tay",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://tippytay.com.au/",
+    "addr:housenumber": "101",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/10718249505",
+   "lat": -37.815297,
+   "lng": 144.971337,
+   "tags": {
+    "name": "Trinket",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10744783505",
+   "lat": -37.812373,
+   "lng": 144.964885,
+   "tags": {
+    "name": "Tina's Noodle Kitcken",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1080066116",
+   "lat": -37.811511,
+   "lng": 144.964408,
+   "tags": {
+    "name": "Tokui Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/1080070979",
+   "lat": -37.811609,
+   "lng": 144.964047,
+   "tags": {
+    "name": "BBQ A Buffet",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "276-278",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/1080074215",
+   "lat": -37.811639,
+   "lng": 144.96389,
+   "tags": {
+    "name": "Kaiten Sakura Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "opening_hours": "Mo 17:00-21:30; Tu-We 11:30-21:30; Th-Fr 11:30-22:00; Sa 12:00-22:00; Su 12:00-21:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1080125030",
+   "lat": -37.81051,
+   "lng": 144.968961,
+   "tags": {
+    "name": "Seamstress",
+    "amenity": "restaurant",
+    "addr:housenumber": "113",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/10801438908",
+   "lat": -37.807601,
+   "lng": 144.961731,
+   "tags": {
+    "name": "Captn. Melville",
+    "amenity": "restaurant",
+    "addr:housenumber": "34",
+    "addr:street": "Franklin Street"
+   }
+  },
+  {
+   "id": "node/10846059886",
+   "lat": -37.810078,
+   "lng": 144.963484,
+   "tags": {
+    "name": "Sushi Jiro",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/11104106112",
+   "lat": -37.80901,
+   "lng": 144.963285,
+   "tags": {
+    "name": "Dear BBQ Cafe",
+    "amenity": "restaurant",
+    "cuisine": "korean;barbecue"
+   }
+  },
+  {
+   "id": "node/11104106113",
+   "lat": -37.808898,
+   "lng": 144.963294,
+   "tags": {
+    "name": "Boss D Hot Pot Rice Noodle",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-21:30; PH closed"
+   }
+  },
+  {
+   "id": "node/11104116606",
+   "lat": -37.81011,
+   "lng": 144.963855,
+   "tags": {
+    "name": "Omi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11104138610",
+   "lat": -37.810759,
+   "lng": 144.964049,
+   "tags": {
+    "name": "Bowtiful",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1112517123",
+   "lat": -37.812411,
+   "lng": 144.964908,
+   "tags": {
+    "name": "Tina's Noodle Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese;noodle",
+    "opening_hours": "Mo-Th,Su 10:00-22:00; Fr-Sa 10:00-23:00; PH closed",
+    "addr:housenumber": "337",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11135210945",
+   "lat": -37.810393,
+   "lng": 144.962416,
+   "tags": {
+    "name": "Sushi Jiro",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11135210947",
+   "lat": -37.811026,
+   "lng": 144.962225,
+   "tags": {
+    "name": "Chilli India Melbourne Central",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Su-We 11:30-21:30; Th-Sa 11:30-22:00"
+   }
+  },
+  {
+   "id": "node/11135582563",
+   "lat": -37.812748,
+   "lng": 144.972356,
+   "tags": {
+    "name": "Lupino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11135582564",
+   "lat": -37.812539,
+   "lng": 144.973189,
+   "tags": {
+    "name": "Onigiri Kitchen And Sake Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/11135649035",
+   "lat": -37.813454,
+   "lng": 144.970312,
+   "tags": {
+    "name": "Next",
+    "tourism": "hotel",
+    "website": "https://nexthotelmelbourne.com/",
+    "addr:housenumber": "103",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/11135649052",
+   "lat": -37.813559,
+   "lng": 144.969735,
+   "tags": {
+    "name": "Harry's Restaurant And Bar",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11135663740",
+   "lat": -37.813867,
+   "lng": 144.967943,
+   "tags": {
+    "name": "Il Bacaro",
+    "amenity": "restaurant",
+    "addr:housenumber": "170",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11135663742",
+   "lat": -37.813925,
+   "lng": 144.967516,
+   "tags": {
+    "name": "Marameo",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11176223429",
+   "lat": -37.815609,
+   "lng": 144.963032,
+   "tags": {
+    "name": "Ilza",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11182318147",
+   "lat": -37.817765,
+   "lng": 144.958008,
+   "tags": {
+    "name": "Oaks Hotels, Resorts & Suites",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/11182318155",
+   "lat": -37.817659,
+   "lng": 144.958453,
+   "tags": {
+    "name": "Royal Stacks",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "wheelchair": "designated"
+   }
+  },
+  {
+   "id": "node/1123093089",
+   "lat": -37.812656,
+   "lng": 144.969264,
+   "tags": {
+    "name": "Heirloom",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/11233007972",
+   "lat": -37.81354,
+   "lng": 144.971012,
+   "tags": {
+    "name": "Farmer's Daughters",
+    "amenity": "restaurant",
+    "website": "https://www.farmersdaughters.com.au/",
+    "opening_hours": "Mo-Su 11:30-00:00",
+    "addr:housenumber": "95",
+    "addr:street": "Exhibition Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/113541227",
+   "lat": -37.818194,
+   "lng": 144.96362,
+   "tags": {
+    "name": "Rendezvous Grand Hotel Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.tfehotels.com/brands/rendezvous-hotels/rendezvous-hotel-melbourne"
+   }
+  },
+  {
+   "id": "node/11404814215",
+   "lat": -37.808882,
+   "lng": 144.959253,
+   "tags": {
+    "name": "The Village Melbourne",
+    "tourism": "hostel",
+    "addr:housenumber": "167",
+    "addr:street": "Franklin Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11411797866",
+   "lat": -37.810344,
+   "lng": 144.963797,
+   "tags": {
+    "name": "Unilodge Swanston",
+    "tourism": "hotel",
+    "website": "https://www.unilodge.com.au/student-accommodation-melbourne/339-swanston"
+   }
+  },
+  {
+   "id": "node/11411830351",
+   "lat": -37.810113,
+   "lng": 144.962838,
+   "tags": {
+    "name": "Gyoza Gyoza",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11411856311",
+   "lat": -37.809992,
+   "lng": 144.961897,
+   "tags": {
+    "name": "Kata Kita",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11411865192",
+   "lat": -37.810283,
+   "lng": 144.960823,
+   "tags": {
+    "name": "Homm",
+    "amenity": "restaurant",
+    "cuisine": "chinese; dessert",
+    "addr:housenumber": "294",
+    "addr:street": "La Trobe Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11411909948",
+   "lat": -37.810775,
+   "lng": 144.960422,
+   "tags": {
+    "name": "Unilodge Melbourne Central",
+    "tourism": "hotel",
+    "website": "https://www.unilodge.com.au/student-accommodation-melbourne/melbourne-central",
+    "addr:housenumber": "293-303",
+    "addr:street": "La Trobe Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/114574448",
+   "lat": -37.817729,
+   "lng": 144.965356,
+   "tags": {
+    "name": "DoubleTree by Hilton Hotel Melbourne - Flinders Street",
+    "tourism": "hotel",
+    "stars": "4.5",
+    "website": "https://www.hilton.com/en/hotels/melfsdi-doubletree-melbourne-flinders-street/",
+    "wikidata": "Q33382454",
+    "addr:housenumber": "270",
+    "addr:street": "Flinders Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/114607288",
+   "lat": -37.817033,
+   "lng": 144.965535,
+   "tags": {
+    "name": "Punt Hill Apartment Hotel",
+    "tourism": "hotel",
+    "website": "https://www.punthill.com.au/",
+    "addr:housenumber": "267",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11466742436",
+   "lat": -37.817183,
+   "lng": 144.964845,
+   "tags": {
+    "name": "Osaka Bench",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "289",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466742438",
+   "lat": -37.816972,
+   "lng": 144.965546,
+   "tags": {
+    "name": "Rosa Mexicano",
+    "amenity": "restaurant",
+    "cuisine": "mexican;fish_and_chips;sandwich",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466742441",
+   "lat": -37.817138,
+   "lng": 144.964981,
+   "tags": {
+    "name": "Q Ribs",
+    "amenity": "restaurant",
+    "cuisine": "chinese;barbecue",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466742442",
+   "lat": -37.816582,
+   "lng": 144.966254,
+   "tags": {
+    "name": "Ginger Olive",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466788784",
+   "lat": -37.816152,
+   "lng": 144.968323,
+   "tags": {
+    "name": "Nomad",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11466808566",
+   "lat": -37.814852,
+   "lng": 144.972203,
+   "tags": {
+    "name": "Botswana Butchery",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11466812432",
+   "lat": -37.81608,
+   "lng": 144.96863,
+   "tags": {
+    "name": "Kisume",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/11466812433",
+   "lat": -37.81588,
+   "lng": 144.969307,
+   "tags": {
+    "name": "Gimlet",
+    "amenity": "restaurant",
+    "addr:housenumber": "33",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11466812436",
+   "lat": -37.815843,
+   "lng": 144.968774,
+   "tags": {
+    "name": "Hazel",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11466832522",
+   "lat": -37.815291,
+   "lng": 144.970676,
+   "tags": {
+    "name": "Grill Americano",
+    "amenity": "restaurant",
+    "cuisine": "barbecue;american",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466832525",
+   "lat": -37.815229,
+   "lng": 144.970969,
+   "tags": {
+    "name": "Number 100",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11466832527",
+   "lat": -37.815305,
+   "lng": 144.971229,
+   "tags": {
+    "name": "Tazio",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/11466834913",
+   "lat": -37.814934,
+   "lng": 144.972592,
+   "tags": {
+    "name": "Punthill Manhattan",
+    "tourism": "hotel",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11585813764",
+   "lat": -37.810936,
+   "lng": 144.971352,
+   "tags": {
+    "name": "Matto Napoletano Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian;coffee_shop;tea;dessert;tiramisu;european",
+    "website": "https://mattonapoletano.com.au/",
+    "opening_hours": "Mo-Th 12:00-14:00,17:00-21:00; Fr 12:00-14:00,17:00-22:00; Sa 17:00-22:00; Su 17:00-21:00",
+    "addr:housenumber": "26",
+    "addr:street": "Liverpool Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11640347680",
+   "lat": -37.815977,
+   "lng": 144.965986,
+   "tags": {
+    "name": "Maccaroni Trattoria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.maccaronitrattoria.com/",
+    "addr:housenumber": "10-16",
+    "addr:street": "Manchester Lane"
+   }
+  },
+  {
+   "id": "node/11646739937",
+   "lat": -37.818799,
+   "lng": 144.962197,
+   "tags": {
+    "name": "St Mark's Road Co.",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/11726300811",
+   "lat": -37.809601,
+   "lng": 144.968212,
+   "tags": {
+    "name": "Operator Diner",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://operatordiner.com.au",
+    "addr:housenumber": "130",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11726300813",
+   "lat": -37.809531,
+   "lng": 144.968359,
+   "tags": {
+    "name": "Sakura Kaiten-Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://sakurakaitensushi.com.au"
+   }
+  },
+  {
+   "id": "node/11743241583",
+   "lat": -37.809238,
+   "lng": 144.968549,
+   "tags": {
+    "name": "New Kum Den",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/11747678770",
+   "lat": -37.812124,
+   "lng": 144.960642,
+   "tags": {
+    "name": "Nesuto",
+    "name:en": "Mjølner",
+    "amenity": "restaurant",
+    "cuisine": "norse",
+    "website": "https://mjolner.com.au/melbourne",
+    "opening_hours": "We-Su 17:00+",
+    "addr:housenumber": "106",
+    "addr:street": "Hardware Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11747692470",
+   "lat": -37.816883,
+   "lng": 144.95619,
+   "tags": {
+    "name": "Meriton Suites Melbourne",
+    "tourism": "hotel",
+    "addr:housenumber": "140",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11763285404",
+   "lat": -37.808692,
+   "lng": 144.960391,
+   "tags": {
+    "name": "Menya",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-21:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11763285405",
+   "lat": -37.808743,
+   "lng": 144.960423,
+   "tags": {
+    "name": "Rose Garden BBQ Shop",
+    "amenity": "restaurant",
+    "cuisine": "chinese;malaysian",
+    "opening_hours": "Mo-Sa 11:00-20:30; Su off",
+    "addr:housenumber": "4440",
+    "addr:street": "Elizabeth Street"
+   }
+  },
+  {
+   "id": "node/11763285407",
+   "lat": -37.80888,
+   "lng": 144.96049,
+   "tags": {
+    "name": "Shujinko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Su-Th 11:00-23:30, Fr,Sa 11:00-01:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11763285410",
+   "lat": -37.808777,
+   "lng": 144.960434,
+   "tags": {
+    "name": "Dragon Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese;soup",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11806550918",
+   "lat": -37.810687,
+   "lng": 144.961767,
+   "tags": {
+    "name": "Niku Shiki Melbourne Central",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://nikushiki.com.au",
+    "opening_hours": "Su-Th 11:00-21:00; Fr,Sa 11:00-22:00",
+    "addr:housenumber": "360",
+    "addr:street": "Elizabeth Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/11813469871",
+   "lat": -37.812119,
+   "lng": 144.966343,
+   "tags": {
+    "name": "Th Crane Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/11818256998",
+   "lat": -37.818046,
+   "lng": 144.961077,
+   "tags": {
+    "name": "Hotel No",
+    "tourism": "hotel",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11861189169",
+   "lat": -37.812128,
+   "lng": 144.964798,
+   "tags": {
+    "name": "-37.8120937, 144.9648869",
+    "name:en": "Biang! Biang! Swanston Street 古城秦味",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.biangbiang.com.au"
+   }
+  },
+  {
+   "id": "node/11861193669",
+   "lat": -37.809123,
+   "lng": 144.960491,
+   "tags": {
+    "name": "Biang! Biang! 古城秦味 Elizabeth",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.biangbiang.com.au"
+   }
+  },
+  {
+   "id": "node/1186813051",
+   "lat": -37.814556,
+   "lng": 144.965592,
+   "tags": {
+    "name": "ARU",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://aru.net.au/",
+    "addr:housenumber": "264-274",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12110063101",
+   "lat": -37.816554,
+   "lng": 144.962007,
+   "tags": {
+    "name": "Reine & La Rue",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://reineandlarue.melbourne/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12158995882",
+   "lat": -37.813263,
+   "lng": 144.970652,
+   "tags": {
+    "name": "Morena",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12175813199",
+   "lat": -37.81062,
+   "lng": 144.962405,
+   "tags": {
+    "name": "Ajisen Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen",
+    "opening_hours": "Mo-Th,Su 11:30-20:30; Fr-Sa 11:30-21:00; PH closed",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12189425008",
+   "lat": -37.812846,
+   "lng": 144.96139,
+   "tags": {
+    "name": "ALT PASTA BAR",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.altpastabar.com/",
+    "addr:housenumber": "30",
+    "addr:street": "Niagara Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12198120439",
+   "lat": -37.817164,
+   "lng": 144.963675,
+   "tags": {
+    "name": "Mensousai Mugen",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.mensousaimugen.com/",
+    "opening_hours": "Tu-Th 12:00-14:00; Tu-Sa 18:00-21:30; Su-Mo closed",
+    "addr:housenumber": "11",
+    "addr:street": "Bligh Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12230564407",
+   "lat": -37.823514,
+   "lng": 144.963227,
+   "tags": {
+    "name": "Roza's Kitchen Pizza & Burger Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "147",
+    "addr:street": "City Road",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12252005154",
+   "lat": -37.816532,
+   "lng": 144.959384,
+   "tags": {
+    "name": "Terrace Deli",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12259611356",
+   "lat": -37.811233,
+   "lng": 144.961556,
+   "tags": {
+    "name": "Paroro",
+    "amenity": "restaurant",
+    "cuisine": "korean;barbecue",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/12259611357",
+   "lat": -37.811053,
+   "lng": 144.961482,
+   "tags": {
+    "name": "Cathy's Hot Pot",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12264598493",
+   "lat": -37.808721,
+   "lng": 144.959278,
+   "tags": {
+    "name": "Yoi",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12264829285",
+   "lat": -37.81005,
+   "lng": 144.96168,
+   "tags": {
+    "name": "Bingsoo",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/12387333469",
+   "lat": -37.812348,
+   "lng": 144.968103,
+   "tags": {
+    "name": "Mensho Tokyo",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "opening_hours": "Mo-Su 12:00-15:00,17:00-22:00"
+   }
+  },
+  {
+   "id": "node/12387350279",
+   "lat": -37.812301,
+   "lng": 144.967666,
+   "tags": {
+    "name": "The Golden Star Anise",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "175",
+    "addr:street": "Russell Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12387410569",
+   "lat": -37.810611,
+   "lng": 144.966284,
+   "tags": {
+    "name": "Thai Town",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "25",
+    "addr:street": "Artemis Lane",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12387654804",
+   "lat": -37.812099,
+   "lng": 144.972296,
+   "tags": {
+    "name": "The Waiters Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "20",
+    "addr:street": "Meyers Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12387654805",
+   "lat": -37.812219,
+   "lng": 144.972345,
+   "tags": {
+    "name": "San Telmo",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "addr:housenumber": "14",
+    "addr:street": "Meyers Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12392810552",
+   "lat": -37.80906,
+   "lng": 144.959694,
+   "tags": {
+    "name": "Jojo Little Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "120",
+    "addr:street": "A'Beckett Street"
+   }
+  },
+  {
+   "id": "node/12405372312",
+   "lat": -37.814032,
+   "lng": 144.972791,
+   "tags": {
+    "name": "Hotel Sofitel",
+    "tourism": "hotel",
+    "website": "http://www.sofitel-melbourne.com",
+    "wikidata": "Q111407434"
+   }
+  },
+  {
+   "id": "node/12418154084",
+   "lat": -37.808906,
+   "lng": 144.962615,
+   "tags": {
+    "name": "No 1. Spicy Pot",
+    "amenity": "restaurant",
+    "cuisine": "hotpot",
+    "addr:housenumber": "31",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12418154372",
+   "lat": -37.809117,
+   "lng": 144.961942,
+   "tags": {
+    "name": "Surasang Melbourne",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://surasang.com.au",
+    "addr:housenumber": "55-59",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12418154694",
+   "lat": -37.809433,
+   "lng": 144.961752,
+   "tags": {
+    "name": "ChangGo Korean BBQ House",
+    "amenity": "restaurant",
+    "cuisine": "korean;barbecue",
+    "website": "https://new.express.adobe.com/webpage/q6BW0LY8K2gQm",
+    "addr:housenumber": "70-72",
+    "addr:street": "Little La Trobe Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12418154923",
+   "lat": -37.809167,
+   "lng": 144.962691,
+   "tags": {
+    "name": "Brady Hotels",
+    "tourism": "hotel",
+    "addr:housenumber": "22-32",
+    "addr:street": "Little La Trobe Street"
+   }
+  },
+  {
+   "id": "node/12437643799",
+   "lat": -37.810257,
+   "lng": 144.962264,
+   "tags": {
+    "name": "Mad Mex Fresh Mexican Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12437643800",
+   "lat": -37.810122,
+   "lng": 144.962812,
+   "tags": {
+    "name": "Shunjiko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12437661706",
+   "lat": -37.810182,
+   "lng": 144.963555,
+   "tags": {
+    "name": "Mala Spicy House",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/12437708002",
+   "lat": -37.810209,
+   "lng": 144.962554,
+   "tags": {
+    "name": "Sushi Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12457207739",
+   "lat": -37.809463,
+   "lng": 144.962562,
+   "tags": {
+    "name": "L Ying",
+    "amenity": "restaurant",
+    "cuisine": "chinese;japanese;taiwanese",
+    "addr:housenumber": "13",
+    "addr:street": "Baskerville Lane"
+   }
+  },
+  {
+   "id": "node/12457396911",
+   "lat": -37.813331,
+   "lng": 144.968146,
+   "tags": {
+    "name": "Qt Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.qthotels.com/melbourne/"
+   }
+  },
+  {
+   "id": "node/12479765013",
+   "lat": -37.817364,
+   "lng": 144.959514,
+   "tags": {
+    "name": "Macchiato",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/12482435924",
+   "lat": -37.810437,
+   "lng": 144.9659,
+   "tags": {
+    "name": "PappaRich",
+    "amenity": "restaurant",
+    "cuisine": "malaysian"
+   }
+  },
+  {
+   "id": "node/12483858293",
+   "lat": -37.810808,
+   "lng": 144.965586,
+   "tags": {
+    "name": "Mondo Di Pasta",
+    "amenity": "restaurant",
+    "cuisine": "italian;pasta",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12483880312",
+   "lat": -37.810521,
+   "lng": 144.965934,
+   "tags": {
+    "name": "Sushi Jiro",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12483880313",
+   "lat": -37.810662,
+   "lng": 144.96612,
+   "tags": {
+    "name": "Old Beijing",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/12483880314",
+   "lat": -37.810782,
+   "lng": 144.965418,
+   "tags": {
+    "name": "Cafe d'Hong Kong",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12483915174",
+   "lat": -37.812712,
+   "lng": 144.967313,
+   "tags": {
+    "name": "Pinchy's",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12483926912",
+   "lat": -37.81223,
+   "lng": 144.967197,
+   "tags": {
+    "name": "Sushi Hotaru",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12593987786",
+   "lat": -37.815123,
+   "lng": 144.957415,
+   "tags": {
+    "name": "Dumpling Kingdom",
+    "amenity": "restaurant",
+    "cuisine": "asian;dumplings",
+    "website": "https://www.mryum.com/dumplingkingdom",
+    "opening_hours": "Mo-Fr 11:00-14:00",
+    "addr:housenumber": "181",
+    "addr:street": "William Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12593987787",
+   "lat": -37.815153,
+   "lng": 144.95743,
+   "tags": {
+    "name": "Rock the Wok",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.rockthewok.com.au/",
+    "opening_hours": "Mo-Fr 09:00-15:00",
+    "addr:housenumber": "181",
+    "addr:street": "William Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12593987788",
+   "lat": -37.815187,
+   "lng": 144.957446,
+   "tags": {
+    "name": "Hello Chicken",
+    "amenity": "restaurant",
+    "cuisine": "korean;fried_chicken",
+    "website": "https://www.hellochicken.com.au/",
+    "opening_hours": "Mo-Fr 11:00-20:00",
+    "addr:housenumber": "181",
+    "addr:street": "William Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12593987790",
+   "lat": -37.815303,
+   "lng": 144.957495,
+   "tags": {
+    "name": "Sakae",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "addr:housenumber": "181",
+    "addr:street": "William Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12593994664",
+   "lat": -37.81551,
+   "lng": 144.95739,
+   "tags": {
+    "name": "Crisp",
+    "amenity": "restaurant",
+    "cuisine": "salad",
+    "website": "https://crisp.com.au/",
+    "opening_hours": "Mo-Fr 07:30-15:00",
+    "addr:street": "Goldsbrough Lane"
+   }
+  },
+  {
+   "id": "node/12594059472",
+   "lat": -37.815412,
+   "lng": 144.957331,
+   "tags": {
+    "name": "Chilangos Mexican Cantina",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://chilangos.com.au/",
+    "opening_hours": "Mo-Fr 10:00-20:30",
+    "addr:street": "Goldsbrough Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12606089990",
+   "lat": -37.809897,
+   "lng": 144.968324,
+   "tags": {
+    "name": "Reed House",
+    "amenity": "restaurant",
+    "website": "https://www.reedhousemelbourne.com"
+   }
+  },
+  {
+   "id": "node/12608572468",
+   "lat": -37.813749,
+   "lng": 144.960755,
+   "tags": {
+    "name": "Katsuhon",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "12:00-14:00,17:00-21:00",
+    "addr:housenumber": "200",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12744198701",
+   "lat": -37.812837,
+   "lng": 144.965931,
+   "tags": {
+    "name": "Divine Hotpot Train",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr 11:30-21:30; Sa 11:00-21:30; Su 11:00-21:00",
+    "addr:housenumber": "38A",
+    "addr:street": "Bourke Street Mall"
+   }
+  },
+  {
+   "id": "node/12816266101",
+   "lat": -37.809883,
+   "lng": 144.96139,
+   "tags": {
+    "name": "Wonton chicken soup",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-Su 10:00-00:00"
+   }
+  },
+  {
+   "id": "node/12818393807",
+   "lat": -37.812719,
+   "lng": 144.962242,
+   "tags": {
+    "name": "Xinjiang Lamien",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Fr 12:00-15:00,17:00-22:00; Sa-Su 12:00-22:00",
+    "addr:housenumber": "255",
+    "addr:street": "Elizabeth Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/12818393843",
+   "lat": -37.813318,
+   "lng": 144.961153,
+   "tags": {
+    "name": "Funghi e Tartufo",
+    "amenity": "restaurant",
+    "addr:housenumber": "60",
+    "addr:street": "Hardware Lane"
+   }
+  },
+  {
+   "id": "node/12818430736",
+   "lat": -37.815016,
+   "lng": 144.956322,
+   "tags": {
+    "name": "Lim Kopi",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "addr:housenumber": "542",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12818438890",
+   "lat": -37.814061,
+   "lng": 144.96137,
+   "tags": {
+    "name": "Hotel Nacional",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.hotelnacional.co/",
+    "opening_hours": "12:00-24:00",
+    "addr:housenumber": "23-25",
+    "addr:street": "Hardware Lane",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1282403369",
+   "lat": -37.813818,
+   "lng": 144.959939,
+   "tags": {
+    "name": "Gasthaus on Queen",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1282403408",
+   "lat": -37.81397,
+   "lng": 144.960011,
+   "tags": {
+    "name": "Sebastian Kakigori",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 15:00-22:00; Sa 13:00-22:30; Su 13:00-21:30",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1282403429",
+   "lat": -37.813654,
+   "lng": 144.959864,
+   "tags": {
+    "name": "215 Queens",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12882660078",
+   "lat": -37.814727,
+   "lng": 144.972553,
+   "tags": {
+    "name": "Kenzan",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/12882660738",
+   "lat": -37.812669,
+   "lng": 144.971047,
+   "tags": {
+    "name": "Antara",
+    "amenity": "restaurant",
+    "addr:housenumber": "128",
+    "addr:street": "Exhibition Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12882660739",
+   "lat": -37.810737,
+   "lng": 144.968116,
+   "tags": {
+    "name": "Jang Go Mama",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "147",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/12882669111",
+   "lat": -37.815534,
+   "lng": 144.97135,
+   "tags": {
+    "name": "Lee Ho Fook",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "11-15",
+    "addr:street": "Duckboard Place"
+   }
+  },
+  {
+   "id": "node/12882701219",
+   "lat": -37.810974,
+   "lng": 144.968256,
+   "tags": {
+    "name": "Sichuan House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo off; Tu-Fr 11:30-15:00,17:00-21:30; Sa 12:30-22:00; Su 12:30-21:30"
+   }
+  },
+  {
+   "id": "node/12882721567",
+   "lat": -37.812067,
+   "lng": 144.965718,
+   "tags": {
+    "name": "The Boiling Crab",
+    "amenity": "restaurant",
+    "cuisine": "seafood"
+   }
+  },
+  {
+   "id": "node/12882730208",
+   "lat": -37.812453,
+   "lng": 144.967309,
+   "tags": {
+    "name": "KatsuRetsu",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Sa 12:00-15:00,17:00-21:30; Su off",
+    "addr:housenumber": "200",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12882730209",
+   "lat": -37.812416,
+   "lng": 144.967285,
+   "tags": {
+    "name": "Old Street Hunan Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12882741742",
+   "lat": -37.813871,
+   "lng": 144.966902,
+   "tags": {
+    "name": "Soi 38",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.soi38.com",
+    "opening_hours": "Mo-Th,Su 11:00-15:00,17:00-22:00; Fr-Sa 11:00-15:00,17:00-23:00",
+    "addr:housenumber": "38",
+    "addr:street": "Royal Lane"
+   }
+  },
+  {
+   "id": "node/12905442701",
+   "lat": -37.813685,
+   "lng": 144.970898,
+   "tags": {
+    "name": "Yakimono",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://yakimono.com.au/",
+    "addr:housenumber": "80",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12920660501",
+   "lat": -37.816468,
+   "lng": 144.965541,
+   "tags": {
+    "name": "Jungle Juice",
+    "amenity": "restaurant",
+    "cuisine": "bagel",
+    "opening_hours": "Mo-Fr 07:30-17:00; Sa 08:30-17:00; Su 09:00-18:00",
+    "addr:housenumber": "20",
+    "addr:street": "Centre Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/12922704001",
+   "lat": -37.817371,
+   "lng": 144.96424,
+   "tags": {
+    "name": "Oh Pho",
+    "amenity": "restaurant",
+    "cuisine": "asian;noodles",
+    "addr:housenumber": "35",
+    "addr:street": "Elizabeth Street"
+   }
+  },
+  {
+   "id": "node/12988719754",
+   "lat": -37.813347,
+   "lng": 144.961263,
+   "tags": {
+    "name": "Max on Hardware",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.maxonhardware.com.au/",
+    "opening_hours": "Mo-Th,Su 11:30-21:00; Fr-Sa 11:30-21:30",
+    "addr:housenumber": "54-58",
+    "addr:street": "Hardware Lane"
+   }
+  },
+  {
+   "id": "node/130015082",
+   "lat": -37.815833,
+   "lng": 144.967425,
+   "tags": {
+    "name": "The Westin Melbourne",
+    "tourism": "hotel",
+    "website": "http://www.westinmelbourne.com",
+    "addr:housenumber": "205",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/130015233",
+   "lat": -37.816309,
+   "lng": 144.968379,
+   "tags": {
+    "name": "Adelphi Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q20085675"
+   }
+  },
+  {
+   "id": "node/13010526853",
+   "lat": -37.810107,
+   "lng": 144.959101,
+   "tags": {
+    "name": "Breakfast Hola",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13010526855",
+   "lat": -37.809789,
+   "lng": 144.959536,
+   "tags": {
+    "name": "Hua Lu Peking Duck",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13010526857",
+   "lat": -37.810145,
+   "lng": 144.958942,
+   "tags": {
+    "name": "Yuki Nau",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13010526858",
+   "lat": -37.810719,
+   "lng": 144.959009,
+   "tags": {
+    "name": "Mamao Thai Restaurant & Bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13028178717",
+   "lat": -37.812116,
+   "lng": 144.971118,
+   "tags": {
+    "name": "Fancy Hank's Barbecue Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "website": "https://fancyhanks.com/",
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "addr:housenumber": "79",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/13062520401",
+   "lat": -37.812944,
+   "lng": 144.960743,
+   "tags": {
+    "name": "Pho Thin",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.phothin.online/",
+    "opening_hours": "Mo-Su 10:30-20:30",
+    "addr:housenumber": "399",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/131107666",
+   "lat": -37.814458,
+   "lng": 144.95904,
+   "tags": {
+    "name": "Mantra on Little Bourke",
+    "tourism": "hotel",
+    "website": "https://www.mantra.com.au/victoria/melbourne-and-surrounds/melbourne/accommodation/hotels/mantra-on-little-bourke/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "471",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13113365666",
+   "lat": -37.806788,
+   "lng": 144.965516,
+   "tags": {
+    "name": "Carlton Megabytes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13113416613",
+   "lat": -37.806781,
+   "lng": 144.965471,
+   "tags": {
+    "name": "Dumpling Max",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13113438895",
+   "lat": -37.806769,
+   "lng": 144.96542,
+   "tags": {
+    "name": "the best quilin rice noodles",
+    "amenity": "restaurant",
+    "cuisine": "noodle"
+   }
+  },
+  {
+   "id": "node/13113448418",
+   "lat": -37.806761,
+   "lng": 144.96533,
+   "tags": {
+    "name": "Chinger Biang Biang Noodle",
+    "amenity": "restaurant",
+    "cuisine": "noodle"
+   }
+  },
+  {
+   "id": "node/13127544001",
+   "lat": -37.817425,
+   "lng": 144.964835,
+   "tags": {
+    "name": "Ali's Jumbo Kebabs",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13201816313",
+   "lat": -37.811833,
+   "lng": 144.966701,
+   "tags": {
+    "name": "Boonchoou",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "11",
+    "addr:street": "Heffernan Lane"
+   }
+  },
+  {
+   "id": "node/13201817436",
+   "lat": -37.811873,
+   "lng": 144.966431,
+   "tags": {
+    "name": "Taqueria Sin Nombre",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "12-14",
+    "addr:street": "Celestial Avenue"
+   }
+  },
+  {
+   "id": "node/13276878901",
+   "lat": -37.812032,
+   "lng": 144.966634,
+   "tags": {
+    "name": "D'Penyetz & D'Cendol",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "website": "https://www.dpenyetz.com.au/",
+    "opening_hours": "Mo-Su 11:30-21:30",
+    "addr:housenumber": "204",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/13281958001",
+   "lat": -37.81671,
+   "lng": 144.965526,
+   "tags": {
+    "name": "ShanDong MaMa Mini",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "5",
+    "addr:street": "Centre Place"
+   }
+  },
+  {
+   "id": "node/13290671980",
+   "lat": -37.814597,
+   "lng": 144.964633,
+   "tags": {
+    "name": "Holiday Inn Bourke Street Mall",
+    "tourism": "hotel",
+    "addr:housenumber": "296",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13290671986",
+   "lat": -37.814726,
+   "lng": 144.964716,
+   "tags": {
+    "name": "Hotel Indigo",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13300343085",
+   "lat": -37.819782,
+   "lng": 144.967733,
+   "tags": {
+    "name": "Saké",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13307925012",
+   "lat": -37.818459,
+   "lng": 144.957963,
+   "tags": {
+    "name": "Ronnie's",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.ronnies.melbourne/",
+    "opening_hours": "Mo 17:00-22:00; Tu-Fr 12:00-22:00; Sa 17:00-22:00",
+    "addr:housenumber": "525",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/13380768701",
+   "lat": -37.812197,
+   "lng": 144.967201,
+   "tags": {
+    "name": "Shunde Cuisine 寻味顺德",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://shundegroup.m.sea.restosuite.ai",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "200",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/13452190001",
+   "lat": -37.814659,
+   "lng": 144.957493,
+   "tags": {
+    "name": "Steakhouse Grill 66 CBD",
+    "amenity": "restaurant",
+    "cuisine": "grill;steak_house",
+    "website": "https://steakhouse66.com.au",
+    "opening_hours": "Mo-Su 11:30-21:30",
+    "addr:housenumber": "199",
+    "addr:street": "William Street"
+   }
+  },
+  {
+   "id": "node/13523309835",
+   "lat": -37.814602,
+   "lng": 144.960274,
+   "tags": {
+    "name": "Namoo Izakaya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13523330761",
+   "lat": -37.813604,
+   "lng": 144.961779,
+   "tags": {
+    "name": "Naru",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.naruyakitori.com.au",
+    "addr:housenumber": "369",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/13523330762",
+   "lat": -37.813668,
+   "lng": 144.961792,
+   "tags": {
+    "name": "Sushi Sho",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.sushisho.com.au/",
+    "addr:housenumber": "369",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/13523334560",
+   "lat": -37.814508,
+   "lng": 144.960276,
+   "tags": {
+    "name": "Sachi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Sa 11:30-14:30,17:30-21:00; Su 11:30-14:30",
+    "addr:housenumber": "179",
+    "addr:street": "Queen Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13523346008",
+   "lat": -37.813226,
+   "lng": 144.962431,
+   "tags": {
+    "name": "Shanghai Street",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Th 11:45-15:00,17:00-20:30; Fr-Sa 11:45-15:00,17:00-21:00; Su off",
+    "addr:housenumber": "342",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13555867023",
+   "lat": -37.814714,
+   "lng": 144.956988,
+   "tags": {
+    "name": "Dackie Chicken MAO La Tang",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/13555867024",
+   "lat": -37.81476,
+   "lng": 144.957024,
+   "tags": {
+    "name": "Shoku",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/13555867029",
+   "lat": -37.814793,
+   "lng": 144.956853,
+   "tags": {
+    "name": "Number 12 Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/13597292061",
+   "lat": -37.817228,
+   "lng": 144.964092,
+   "tags": {
+    "name": "Northeast China Family",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-We,Sa 11:00-15:00,17:00-21:30; Th-Fr 11:00-15:00,17:00-22:00; Su 17:00-21:30",
+    "addr:housenumber": "302",
+    "addr:street": "Flinders Lane",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13608661053",
+   "lat": -37.813721,
+   "lng": 144.973285,
+   "tags": {
+    "name": "Frenchie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://www.frenchierestaurant.au/",
+    "opening_hours": "Mo-Sa 17:00-00:00",
+    "addr:housenumber": "15",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/13616236338",
+   "lat": -37.809563,
+   "lng": 144.967194,
+   "tags": {
+    "name": "Bagelhut",
+    "amenity": "restaurant",
+    "addr:housenumber": "162",
+    "addr:street": "Little Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/13660181210",
+   "lat": -37.815907,
+   "lng": 144.961926,
+   "tags": {
+    "name": "Yummy Mono",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/13660588094",
+   "lat": -37.812085,
+   "lng": 144.961951,
+   "tags": {
+    "name": "China Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/13660588095",
+   "lat": -37.812015,
+   "lng": 144.961918,
+   "tags": {
+    "name": "Noodle Villa",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/1369710445",
+   "lat": -37.812145,
+   "lng": 144.969718,
+   "tags": {
+    "name": "Ramen Ya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "http://www.ramenya.com.au/",
+    "addr:housenumber": "108",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13700218401",
+   "lat": -37.81601,
+   "lng": 144.960613,
+   "tags": {
+    "name": "Roti Bar",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.rotibarmelbourne.com.au/",
+    "addr:housenumber": "416-418",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13700717402",
+   "lat": -37.813338,
+   "lng": 144.955806,
+   "tags": {
+    "name": "Seven Star Pocha",
+    "amenity": "restaurant",
+    "website": "https://se7enstar.com.au/",
+    "addr:housenumber": "535",
+    "addr:street": "Little Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/13700724501",
+   "lat": -37.813729,
+   "lng": 144.956005,
+   "tags": {
+    "name": "Hakata Gensuke",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://gensuke.com.au/"
+   }
+  },
+  {
+   "id": "node/13702846601",
+   "lat": -37.815422,
+   "lng": 144.963199,
+   "tags": {
+    "name": "Momo Central",
+    "amenity": "restaurant",
+    "cuisine": "nepalese",
+    "website": "https://momocentral.com.au/"
+   }
+  },
+  {
+   "id": "node/13704855101",
+   "lat": -37.814339,
+   "lng": 144.962215,
+   "tags": {
+    "name": "YX Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://hotpot.yxgroup.com.au/en"
+   }
+  },
+  {
+   "id": "node/13707522675",
+   "lat": -37.81864,
+   "lng": 144.958193,
+   "tags": {
+    "name": "Alluvial",
+    "amenity": "restaurant",
+    "website": "https://www.melbourne.intercontinental.com/dining/alluvial/"
+   }
+  },
+  {
+   "id": "node/13736526892",
+   "lat": -37.820886,
+   "lng": 144.96289,
+   "tags": {
+    "name": "Breslin Bar and Grill",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13739870354",
+   "lat": -37.820292,
+   "lng": 144.96701,
+   "tags": {
+    "name": "Jarrah Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1375371370",
+   "lat": -37.813159,
+   "lng": 144.968044,
+   "tags": {
+    "name": "Simpons Burgers",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.simpsonsburgers.com.au/",
+    "addr:housenumber": "143",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/1375526197",
+   "lat": -37.814973,
+   "lng": 144.959986,
+   "tags": {
+    "name": "Gorilla Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "460",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/13770192821",
+   "lat": -37.813378,
+   "lng": 144.955824,
+   "tags": {
+    "name": "Gami",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/13770192822",
+   "lat": -37.813292,
+   "lng": 144.955651,
+   "tags": {
+    "name": "Sevenstar Grill & Pocha",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/13778393697",
+   "lat": -37.814929,
+   "lng": 144.965401,
+   "tags": {
+    "name": "The Howey",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13783844599",
+   "lat": -37.81489,
+   "lng": 144.958664,
+   "tags": {
+    "name": "Sri Ananda Bhavan",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://melbourne.anandabhavan.com.au/"
+   }
+  },
+  {
+   "id": "node/13783937905",
+   "lat": -37.812371,
+   "lng": 144.961295,
+   "tags": {
+    "name": "OMI 380",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/13784696272",
+   "lat": -37.814695,
+   "lng": 144.958816,
+   "tags": {
+    "name": "Rosa's Canteen",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.rosascanteen.com.au/"
+   }
+  },
+  {
+   "id": "node/13784696275",
+   "lat": -37.814868,
+   "lng": 144.958746,
+   "tags": {
+    "name": "Oh Banh Mi",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/13827254549",
+   "lat": -37.817329,
+   "lng": 144.963011,
+   "tags": {
+    "name": "O-Bento",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/13827254580",
+   "lat": -37.817294,
+   "lng": 144.963857,
+   "tags": {
+    "name": "Aagaman",
+    "amenity": "restaurant",
+    "cuisine": "indian;nepalese",
+    "website": "https://aagamanrestaurant.com.au/"
+   }
+  },
+  {
+   "id": "node/13827254582",
+   "lat": -37.81727,
+   "lng": 144.963938,
+   "tags": {
+    "name": "Kan Eang",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://kaneanggroup.com/ked.html"
+   }
+  },
+  {
+   "id": "node/13837717387",
+   "lat": -37.815593,
+   "lng": 144.962085,
+   "tags": {
+    "name": "Oriental Teahouse",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://orientalteahouse.com.au/",
+    "addr:housenumber": "378",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13837717388",
+   "lat": -37.816104,
+   "lng": 144.962448,
+   "tags": {
+    "name": "Makan",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "website": "https://makaninmelbourne.com.au/",
+    "addr:housenumber": "360",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/13838640661",
+   "lat": -37.8165,
+   "lng": 144.966542,
+   "tags": {
+    "name": "Ministry of Crab",
+    "amenity": "restaurant",
+    "website": "https://ministryofcrab.com.au/",
+    "addr:housenumber": "226-228",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/13839058586",
+   "lat": -37.81627,
+   "lng": 144.96671,
+   "tags": {
+    "name": "Swanston Halal Food Centre",
+    "amenity": "restaurant",
+    "addr:housenumber": "55",
+    "addr:street": "Swanston Street"
+   }
+  },
+  {
+   "id": "node/13839385623",
+   "lat": -37.821628,
+   "lng": 144.960601,
+   "tags": {
+    "name": "Marmont",
+    "amenity": "restaurant",
+    "cuisine": "californian",
+    "website": "https://marmontbar.com/"
+   }
+  },
+  {
+   "id": "node/13851210614",
+   "lat": -37.813309,
+   "lng": 144.969825,
+   "tags": {
+    "name": "Izakaya Domo Eastend",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.izakayadomo.com.au/",
+    "opening_hours": "Mo-Fr 11:30-15:00,17:00-22:00; Sa 16:00-22:00; Su 16:00-21:30",
+    "addr:housenumber": "118",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/13859703763",
+   "lat": -37.816132,
+   "lng": 144.960017,
+   "tags": {
+    "name": "Sojourn",
+    "amenity": "restaurant",
+    "website": "https://www.racv.com.au/racv-club/restaurants-bars/city/sojourn.html",
+    "addr:street": "New Chancery Lane"
+   }
+  },
+  {
+   "id": "node/13859703765",
+   "lat": -37.816035,
+   "lng": 144.960109,
+   "tags": {
+    "name": "Chancery Lane",
+    "amenity": "restaurant",
+    "cuisine": "bistro",
+    "website": "https://chancerylane.com.au/"
+   }
+  },
+  {
+   "id": "node/13859787506",
+   "lat": -37.815755,
+   "lng": 144.962386,
+   "tags": {
+    "name": "Quando Quando Cucina & Bar",
+    "amenity": "restaurant",
+    "website": "https://www.quandoquando.com.au/",
+    "addr:housenumber": "377",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13859962731",
+   "lat": -37.815755,
+   "lng": 144.961556,
+   "tags": {
+    "name": "AYLA",
+    "amenity": "restaurant",
+    "cuisine": "nepalese",
+    "website": "https://aylamelbourne.com/",
+    "addr:housenumber": "392",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13871185397",
+   "lat": -37.812952,
+   "lng": 144.966861,
+   "tags": {
+    "name": "Pochana",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/13871466907",
+   "lat": -37.812151,
+   "lng": 144.966806,
+   "tags": {
+    "name": "Dessert Story",
+    "amenity": "restaurant",
+    "cuisine": "dessert"
+   }
+  },
+  {
+   "id": "node/13871466926",
+   "lat": -37.812944,
+   "lng": 144.965861,
+   "tags": {
+    "name": "Sushi Wago",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/13871466927",
+   "lat": -37.813076,
+   "lng": 144.966003,
+   "tags": {
+    "name": "Geprek",
+    "amenity": "restaurant",
+    "cuisine": "chicken;indonesian"
+   }
+  },
+  {
+   "id": "node/13871532857",
+   "lat": -37.815888,
+   "lng": 144.96623,
+   "tags": {
+    "name": "Me & Yogi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "227",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/13893164960",
+   "lat": -37.813357,
+   "lng": 144.963338,
+   "tags": {
+    "name": "Khaosan Lane",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://khaosanlane.com/"
+   }
+  },
+  {
+   "id": "node/13893164961",
+   "lat": -37.81349,
+   "lng": 144.96341,
+   "tags": {
+    "name": "Izakaya Domo",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.izakayadomo.com.au/"
+   }
+  },
+  {
+   "id": "node/13893269803",
+   "lat": -37.815887,
+   "lng": 144.961629,
+   "tags": {
+    "name": "A25 Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://a25.com.au/",
+    "addr:housenumber": "397",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/13893300042",
+   "lat": -37.810908,
+   "lng": 144.966177,
+   "tags": {
+    "name": "Hakata Gensuke Tori",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://gensuke.com.au/qv/"
+   }
+  },
+  {
+   "id": "node/13894963690",
+   "lat": -37.811917,
+   "lng": 144.960098,
+   "tags": {
+    "name": "Novotel",
+    "tourism": "hotel",
+    "website": "https://all.accor.com/hotel/A0B1/index.en.shtml",
+    "addr:housenumber": "399",
+    "addr:street": "Little Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/13904385820",
+   "lat": -37.813699,
+   "lng": 144.960964,
+   "tags": {
+    "name": "Spudbar",
+    "amenity": "restaurant",
+    "cuisine": "baked_potato",
+    "website": "https://www.spudbar.com.au/",
+    "addr:housenumber": "398",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/13909737161",
+   "lat": -37.812755,
+   "lng": 144.964691,
+   "tags": {
+    "name": "Mercure Welcome",
+    "tourism": "hotel",
+    "website": "https://www.mercurewelcome.com.au/",
+    "addr:housenumber": "265-281",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13911446282",
+   "lat": -37.813721,
+   "lng": 144.971008,
+   "tags": {
+    "name": "Society",
+    "amenity": "restaurant",
+    "website": "https://societyrestaurant.com/",
+    "addr:housenumber": "80",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/13915818311",
+   "lat": -37.815179,
+   "lng": 144.959244,
+   "tags": {
+    "name": "Villas",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://villasmelbourne.com.au/",
+    "addr:housenumber": "488",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/13915821698",
+   "lat": -37.817957,
+   "lng": 144.965175,
+   "tags": {
+    "name": "Shujinko",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Su-Th 11:00-23:30, Fr,Sa 11:00-24:00"
+   }
+  },
+  {
+   "id": "node/13916627608",
+   "lat": -37.809974,
+   "lng": 144.972206,
+   "tags": {
+    "name": "Heartbaker Bun Mee",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "201",
+    "addr:street": "Spring Street"
+   }
+  },
+  {
+   "id": "node/13931242005",
+   "lat": -37.80981,
+   "lng": 144.969263,
+   "tags": {
+    "name": "Melbourne Marriott Hotel",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/melmc-melbourne-marriott-hotel/overview/"
+   }
+  },
+  {
+   "id": "node/13931255761",
+   "lat": -37.809387,
+   "lng": 144.96851,
+   "tags": {
+    "name": "Ondo",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.ondomelbourne.com/",
+    "addr:housenumber": "115",
+    "addr:street": "Little Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/13931255765",
+   "lat": -37.809391,
+   "lng": 144.968629,
+   "tags": {
+    "name": "Brady Hotels Jones Lane",
+    "tourism": "hotel",
+    "website": "https://www.bradyhotels.com.au/jones-lane/",
+    "addr:housenumber": "111",
+    "addr:street": "Little Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/13953200633",
+   "lat": -37.816677,
+   "lng": 144.960546,
+   "tags": {
+    "name": "Treviso Bar & Dining",
+    "amenity": "restaurant",
+    "website": "https://www.treviso.com.au/",
+    "addr:housenumber": "4",
+    "addr:street": "Bank Place"
+   }
+  },
+  {
+   "id": "node/13953200634",
+   "lat": -37.816432,
+   "lng": 144.960426,
+   "tags": {
+    "name": "Curry Vault",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://curryvault.com.au/",
+    "addr:housenumber": "18-20",
+    "addr:street": "Bank Place"
+   }
+  },
+  {
+   "id": "node/13967406743",
+   "lat": -37.813939,
+   "lng": 144.959758,
+   "tags": {
+    "name": "Denmark House",
+    "amenity": "restaurant",
+    "cuisine": "danish",
+    "website": "https://denmarkhouse.com.au/",
+    "addr:housenumber": "428",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/13967406746",
+   "lat": -37.814212,
+   "lng": 144.959645,
+   "tags": {
+    "name": "Korchi City",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/13968059701",
+   "lat": -37.814454,
+   "lng": 144.958868,
+   "tags": {
+    "name": "Alibi",
+    "amenity": "restaurant",
+    "website": "https://www.alibikitchen.com.au/",
+    "addr:housenumber": "471",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/14001908223",
+   "lat": -37.81272,
+   "lng": 144.968939,
+   "tags": {
+    "name": "Dohtonbori",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "147",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/14001908224",
+   "lat": -37.812656,
+   "lng": 144.969126,
+   "tags": {
+    "name": "Oden",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "137",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/14072593763",
+   "lat": -37.814541,
+   "lng": 144.964434,
+   "tags": {
+    "name": "Yummi Go",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "325",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/14081122394",
+   "lat": -37.809533,
+   "lng": 144.960792,
+   "tags": {
+    "name": "Superbowls Rice Noodles",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "opening_hours": "Mo-Su 12:00-24:00",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/14112116403",
+   "lat": -37.811481,
+   "lng": 144.960918,
+   "tags": {
+    "name": "Sinjeon",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.sinjeon.com.au/stores",
+    "opening_hours": "Mo-Th,Su 11:45-20:45; Fr-Sa 11:45-21:15",
+    "addr:housenumber": "288",
+    "addr:street": "Little Lonsdale Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/14152584018",
+   "lat": -37.816115,
+   "lng": 144.960805,
+   "tags": {
+    "name": "Aki Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "105",
+    "addr:street": "Queen Street"
+   }
+  },
+  {
+   "id": "node/14174517076",
+   "lat": -37.817664,
+   "lng": 144.96493,
+   "tags": {
+    "name": "Desi Adda",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/14205392193",
+   "lat": -37.811372,
+   "lng": 144.97241,
+   "tags": {
+    "name": "Thong Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "18",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/14205392194",
+   "lat": -37.811358,
+   "lng": 144.972461,
+   "tags": {
+    "name": "Bharawan Da Dhaba",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "16",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/14243226511",
+   "lat": -37.809039,
+   "lng": 144.962064,
+   "tags": {
+    "name": "HANSIK MELBOURNE KOREAN RESTAURANT & BAR",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "51",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/14243226514",
+   "lat": -37.809162,
+   "lng": 144.961642,
+   "tags": {
+    "name": "B'Churrasco Brazilian BBQ Restaurant Melbourne",
+    "amenity": "restaurant",
+    "cuisine": "brazilian",
+    "website": "https://bchurrasco.com.au",
+    "opening_hours": "We-Th 17:30-21:30; Fr-Sa 17:30-23:00; Su 12:15-15:30,17:30-20:00",
+    "addr:housenumber": "61",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/1439015228",
+   "lat": -37.811212,
+   "lng": 144.971493,
+   "tags": {
+    "name": "ruyi Melbourne Chinese Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "16",
+    "addr:street": "Liverpool Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/1439909095",
+   "lat": -37.810568,
+   "lng": 144.969628,
+   "tags": {
+    "name": "Dumplings 2 Go",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "229",
+    "addr:street": "Exhibition Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1449431357",
+   "lat": -37.815667,
+   "lng": 144.972986,
+   "tags": {
+    "name": "Elchi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.elchirestaurant.com.au",
+    "addr:housenumber": "72",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/145246218",
+   "lat": -37.816731,
+   "lng": 144.961232,
+   "tags": {
+    "name": "Sebel Melbourne",
+    "tourism": "hotel",
+    "website": "http://accorhotels.com.au/accommodation/melbourne-vic/sebel-melbourne-flinders-lane"
+   }
+  },
+  {
+   "id": "node/1462106181",
+   "lat": -37.812068,
+   "lng": 144.969988,
+   "tags": {
+    "name": "Yamamoto Udon",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "108",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1474872900",
+   "lat": -37.810656,
+   "lng": 144.971905,
+   "tags": {
+    "name": "Lane Ways",
+    "amenity": "restaurant",
+    "addr:housenumber": "19-25",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/174844923",
+   "lat": -37.815692,
+   "lng": 144.964949,
+   "tags": {
+    "name": "Novotel Melbourne on Collins",
+    "tourism": "hotel",
+    "website": "https://www.novotelmelbourne.com.au/",
+    "addr:housenumber": "270",
+    "addr:street": "Collins Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/176668273",
+   "lat": -37.813008,
+   "lng": 144.964929,
+   "tags": {
+    "name": "Pullman Melbourne City Centre",
+    "tourism": "hotel",
+    "addr:housenumber": "195",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/176681485",
+   "lat": -37.812933,
+   "lng": 144.963206,
+   "tags": {
+    "name": "BreakFree Heritage on Little Bourke",
+    "tourism": "hotel",
+    "website": "https://www.breakfree.com.au/heritage-on-little-bourke/",
+    "addr:housenumber": "318",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/1767534158",
+   "lat": -37.820301,
+   "lng": 144.965362,
+   "tags": {
+    "name": "Pure South Dining",
+    "amenity": "restaurant",
+    "website": "https://www.leftbankmelbourne.com.au/"
+   }
+  },
+  {
+   "id": "node/1862871256",
+   "lat": -37.808849,
+   "lng": 144.959109,
+   "tags": {
+    "name": "Hotel Discovery",
+    "tourism": "hostel",
+    "website": "http://www.hoteldiscovery.com.au",
+    "addr:housenumber": "167",
+    "addr:street": "Franklin Street"
+   }
+  },
+  {
+   "id": "node/1973352751",
+   "lat": -37.81653,
+   "lng": 144.966434,
+   "tags": {
+    "name": "II.II.VI",
+    "amenity": "restaurant",
+    "website": "https://www.226.au/",
+    "addr:housenumber": "226-228",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2014786075",
+   "lat": -37.819985,
+   "lng": 144.966899,
+   "tags": {
+    "name": "The Deck",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2014865482",
+   "lat": -37.820027,
+   "lng": 144.966701,
+   "tags": {
+    "name": "Miyako",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/2103842421",
+   "lat": -37.812553,
+   "lng": 144.968306,
+   "tags": {
+    "name": "Udon Izakaya Maedaya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Su 11:30-14:30, 17:00-23:00",
+    "addr:housenumber": "164",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2103842846",
+   "lat": -37.812512,
+   "lng": 144.968407,
+   "tags": {
+    "name": "White Tomato",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "160-162",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2140978058",
+   "lat": -37.821528,
+   "lng": 144.961934,
+   "tags": {
+    "name": "The Meat and Wine Co.",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://themeatandwineco.com/",
+    "addr:housenumber": "3",
+    "addr:street": "Freshwater Place",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2162191907",
+   "lat": -37.810813,
+   "lng": 144.972548,
+   "tags": {
+    "name": "Federici Bistro",
+    "amenity": "restaurant",
+    "website": "https://www.federici.com.au/",
+    "addr:housenumber": "163",
+    "addr:street": "Spring Street"
+   }
+  },
+  {
+   "id": "node/2166249394",
+   "lat": -37.811871,
+   "lng": 144.969395,
+   "tags": {
+    "name": "HuTong Dumpling Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://hutong.com.au/",
+    "addr:housenumber": "14-16",
+    "addr:street": "Market Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217869809",
+   "lat": -37.810474,
+   "lng": 144.971818,
+   "tags": {
+    "name": "City Limits Hotel Studio Apartments",
+    "tourism": "hotel",
+    "addr:housenumber": "20",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2217880381",
+   "lat": -37.810724,
+   "lng": 144.971678,
+   "tags": {
+    "name": "Hochi Mama",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://hochimama.com.au/melbourne-cbd/",
+    "opening_hours": "Su-Th 12:00-15:00, 17:00-21:00; Fr-Sa 12:00-15:00, 17:00-22:00",
+    "addr:housenumber": "35",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217886009",
+   "lat": -37.810791,
+   "lng": 144.971501,
+   "tags": {
+    "name": "Daughter In Law",
+    "amenity": "restaurant",
+    "addr:housenumber": "39-41",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/2217894724",
+   "lat": -37.810948,
+   "lng": 144.970978,
+   "tags": {
+    "name": "Bodega Underground",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "55",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217903153",
+   "lat": -37.811266,
+   "lng": 144.969925,
+   "tags": {
+    "name": "Gold Noodle House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "85",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2217907300",
+   "lat": -37.811306,
+   "lng": 144.969672,
+   "tags": {
+    "name": "Chine on Paramount",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "101",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217911917",
+   "lat": -37.811437,
+   "lng": 144.969272,
+   "tags": {
+    "name": "Bangkok Jam",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "105",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/2217914918",
+   "lat": -37.811292,
+   "lng": 144.969101,
+   "tags": {
+    "name": "Shanghai Village Dumpling House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://shanghaivillage.com.au/",
+    "addr:housenumber": "112-114",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217922863",
+   "lat": -37.811548,
+   "lng": 144.968881,
+   "tags": {
+    "name": "Orchids Garden",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "119-121",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217926000",
+   "lat": -37.811347,
+   "lng": 144.968954,
+   "tags": {
+    "name": "Empress of China",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "120",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217929550",
+   "lat": -37.81162,
+   "lng": 144.968605,
+   "tags": {
+    "name": "Red Emperor",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://redemperor.com.au/",
+    "opening_hours": "Mo-Fr 11:30-15:00; Sa-Su 11:00-15:00",
+    "addr:housenumber": "131",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2217932992",
+   "lat": -37.811677,
+   "lng": 144.968412,
+   "tags": {
+    "name": "Ginza Teppanyaki",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "http://www.ginza139.com/",
+    "addr:housenumber": "139",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/2243040774",
+   "lat": -37.810475,
+   "lng": 144.961654,
+   "tags": {
+    "name": "Niku Shiki Premium Wagyu",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2243044939",
+   "lat": -37.809792,
+   "lng": 144.961366,
+   "tags": {
+    "name": "Bowltiful",
+    "amenity": "restaurant",
+    "website": "https://www.bowltiful.com.au/bowltiful-melbourne-cbd",
+    "opening_hours": "Mo-Su 10:00-02:00",
+    "addr:street": "Elizabeth Street"
+   }
+  },
+  {
+   "id": "node/2265091681",
+   "lat": -37.812673,
+   "lng": 144.969176,
+   "tags": {
+    "name": "Gangnam Pocha",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "141",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2296797592",
+   "lat": -37.817497,
+   "lng": 144.963774,
+   "tags": {
+    "name": "Randy Dragon",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2296798888",
+   "lat": -37.817329,
+   "lng": 144.963731,
+   "tags": {
+    "name": "Kim Sing",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "310",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/2296815142",
+   "lat": -37.817545,
+   "lng": 144.962911,
+   "tags": {
+    "name": "Vapiano",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://vapiano.com.au/",
+    "opening_hours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "334",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2296836980",
+   "lat": -37.818209,
+   "lng": 144.962643,
+   "tags": {
+    "name": "Maha",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://maharestaurant.com.au/",
+    "opening_hours": "Mo-Su 12:00-15:00, 18:00-22:00",
+    "addr:housenumber": "21",
+    "addr:street": "Bond Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2338171757",
+   "lat": -37.81152,
+   "lng": 144.97188,
+   "tags": {
+    "name": "Cafe On Bourke",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://www.cafeonbourke.com/",
+    "addr:housenumber": "50",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2344137729",
+   "lat": -37.811874,
+   "lng": 144.971882,
+   "tags": {
+    "name": "Shuji Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/2400989149",
+   "lat": -37.812763,
+   "lng": 144.965058,
+   "tags": {
+    "name": "Yappari Steak",
+    "amenity": "restaurant",
+    "cuisine": "japanese;steak_house",
+    "addr:housenumber": "215",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2400993465",
+   "lat": -37.812362,
+   "lng": 144.964886,
+   "tags": {
+    "name": "Mekong Vietnam",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "opening_hours": "Mo-Th 09:00-22:00; Fr-Sa 09:00-23:00; Su 10:00-22:00",
+    "addr:housenumber": "241",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2421608384",
+   "lat": -37.821957,
+   "lng": 144.959835,
+   "tags": {
+    "name": "Spice Temple",
+    "amenity": "restaurant",
+    "website": "http://www.rockpool.com/spicetemplemelbourne",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2421608390",
+   "lat": -37.821844,
+   "lng": 144.960079,
+   "tags": {
+    "name": "Rock Pool Bar & Grill",
+    "amenity": "restaurant",
+    "website": "http://www.rockpool.com",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2441155777",
+   "lat": -37.815696,
+   "lng": 144.95562,
+   "tags": {
+    "name": "Kedai Satay",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "addr:housenumber": "186",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2442071635",
+   "lat": -37.814305,
+   "lng": 144.965778,
+   "tags": {
+    "name": "Crossways Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.crosswaysfoodforlife.com.au/",
+    "opening_hours": "Mo-Sa 11:30-20:00; Su closed",
+    "addr:housenumber": "147",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/2447744024",
+   "lat": -37.812022,
+   "lng": 144.965161,
+   "tags": {
+    "name": "Cookie",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "http://cookie.net.au/",
+    "opening_hours": "Mo-Fr 00:00-01:00,12:00-24:00; Sa,Su 00:00-03:00,12:00-24:00",
+    "addr:housenumber": "252",
+    "addr:street": "Swanston Street"
+   }
+  },
+  {
+   "id": "node/2470810709",
+   "lat": -37.812778,
+   "lng": 144.967547,
+   "tags": {
+    "name": "Kakilang Char Koay Teow",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://kakilangckt.com/index.php/about-us/",
+    "opening_hours": "Mo-We,Su 11:00-20:30; Th-Sa 11:00-21:00",
+    "addr:housenumber": "190",
+    "addr:street": "Bourke Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2480892161",
+   "lat": -37.822415,
+   "lng": 144.965021,
+   "tags": {
+    "name": "Sopranos",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.sopranospizzapasta.com.au/",
+    "opening_hours": "Mo-Su 17:00-23:00",
+    "addr:housenumber": "91",
+    "addr:street": "City Road"
+   }
+  },
+  {
+   "id": "node/2490518041",
+   "lat": -37.810459,
+   "lng": 144.969604,
+   "tags": {
+    "name": "The Gate Keeper",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "233",
+    "addr:street": "Exhibition Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2491872775",
+   "lat": -37.813249,
+   "lng": 144.960973,
+   "tags": {
+    "name": "The Mill",
+    "amenity": "restaurant",
+    "website": "https://www.themillrestaurant.com.au/",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "71",
+    "addr:street": "Hardware Lane",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2503401611",
+   "lat": -37.808446,
+   "lng": 144.974301,
+   "tags": {
+    "name": "Home @ The Mansion",
+    "tourism": "hostel",
+    "website": "http://www.homemansion.com.au",
+    "addr:housenumber": "80",
+    "addr:street": "Victoria Parade",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2530237186",
+   "lat": -37.810736,
+   "lng": 144.957318,
+   "tags": {
+    "name": "Little Corner",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/2643285306",
+   "lat": -37.810528,
+   "lng": 144.962515,
+   "tags": {
+    "name": "Chili Padi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2687982804",
+   "lat": -37.816543,
+   "lng": 144.958097,
+   "tags": {
+    "name": "Simply Spanish",
+    "amenity": "restaurant",
+    "website": "https://www.simplyspanish.com.au/",
+    "addr:housenumber": "555",
+    "addr:street": "William Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2712358171",
+   "lat": -37.813265,
+   "lng": 144.962289,
+   "tags": {
+    "name": "Waku Waku",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "11:00-15:00,17:00-22:00",
+    "addr:housenumber": "346",
+    "addr:street": "Little Bouke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2790472399",
+   "lat": -37.819642,
+   "lng": 144.957436,
+   "tags": {
+    "name": "GAMI Chicken",
+    "amenity": "restaurant",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2790472400",
+   "lat": -37.819057,
+   "lng": 144.95877,
+   "tags": {
+    "name": "Shuji Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/2807819101",
+   "lat": -37.815494,
+   "lng": 144.963524,
+   "tags": {
+    "name": "Maniax",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2893319084",
+   "lat": -37.814071,
+   "lng": 144.961346,
+   "tags": {
+    "name": "Big Boy",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.bigboybbq.com.au/",
+    "opening_hours": "Su-We 12:00-21:00; Th-Sa 12:00-22:00",
+    "addr:housenumber": "28",
+    "addr:street": "Hardware Lane"
+   }
+  },
+  {
+   "id": "node/2918312501",
+   "lat": -37.811896,
+   "lng": 144.971813,
+   "tags": {
+    "name": "Sempre Pizza & Calzone",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "http://www.semprepizzamelbourne.com/main.php",
+    "addr:housenumber": "49",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/2960547033",
+   "lat": -37.816402,
+   "lng": 144.970453,
+   "tags": {
+    "name": "Desi Dhaba",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo-Fr 11:00-26:00, Sa-Su 12:00-26:00",
+    "addr:housenumber": "134",
+    "addr:street": "Flinders Street"
+   }
+  },
+  {
+   "id": "node/3069620883",
+   "lat": -37.812074,
+   "lng": 144.965604,
+   "tags": {
+    "name": "Shanghai Dumpling",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3116021429",
+   "lat": -37.811603,
+   "lng": 144.961706,
+   "tags": {
+    "name": "Mannaka",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3261072061",
+   "lat": -37.812281,
+   "lng": 144.968061,
+   "tags": {
+    "name": "Hakata Gensuke",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Su 11:30-22:00"
+   }
+  },
+  {
+   "id": "node/3269958063",
+   "lat": -37.808537,
+   "lng": 144.968759,
+   "tags": {
+    "name": "Shuji Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/3276141231",
+   "lat": -37.816641,
+   "lng": 144.966117,
+   "tags": {
+    "name": "Elio's Place",
+    "amenity": "restaurant",
+    "cuisine": "bistro",
+    "website": "https://www.eliosplace.com.au/",
+    "addr:housenumber": "238",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/3424227693",
+   "lat": -37.813698,
+   "lng": 144.973356,
+   "tags": {
+    "name": "Mamasita",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3644320993",
+   "lat": -37.811548,
+   "lng": 144.968192,
+   "tags": {
+    "name": "Famous Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/3644339493",
+   "lat": -37.811594,
+   "lng": 144.967913,
+   "tags": {
+    "name": "Crystal Jade",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/3841983798",
+   "lat": -37.810093,
+   "lng": 144.961037,
+   "tags": {
+    "name": "Hanbaobao",
+    "amenity": "restaurant",
+    "cuisine": "burger;chicken;chinese",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/3842047297",
+   "lat": -37.813966,
+   "lng": 144.96132,
+   "tags": {
+    "name": "Triim",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/3844062095",
+   "lat": -37.812152,
+   "lng": 144.967565,
+   "tags": {
+    "name": "Wonton House",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3844062102",
+   "lat": -37.812215,
+   "lng": 144.967584,
+   "tags": {
+    "name": "Ta-Ta House",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3877497057",
+   "lat": -37.814994,
+   "lng": 144.965876,
+   "tags": {
+    "name": "Om Vegetarian",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/3877513157",
+   "lat": -37.809993,
+   "lng": 144.96932,
+   "tags": {
+    "name": "Essence",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3881388074",
+   "lat": -37.807849,
+   "lng": 144.959976,
+   "tags": {
+    "name": "Dong Bun Bun",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 09:30-14:30, Mo-Su 16:30-21:00",
+    "addr:housenumber": "473",
+    "addr:street": "Elizabeth Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3926556218",
+   "lat": -37.812723,
+   "lng": 144.967674,
+   "tags": {
+    "name": "Udon Yasan",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/3933132079",
+   "lat": -37.816429,
+   "lng": 144.966786,
+   "tags": {
+    "name": "Kokoro Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.kokorosushi.com.au/",
+    "addr:housenumber": "55",
+    "addr:street": "Swanston Street"
+   }
+  },
+  {
+   "id": "node/4061250651",
+   "lat": -37.80925,
+   "lng": 144.96951,
+   "tags": {
+    "name": "Bros Sushi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4118936291",
+   "lat": -37.819797,
+   "lng": 144.967456,
+   "tags": {
+    "name": "Teatro",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://teatro.com.au/",
+    "opening_hours": "Mo-Su 11:30-21:00",
+    "addr:street": "Southbank Promenade"
+   }
+  },
+  {
+   "id": "node/4137979192",
+   "lat": -37.812867,
+   "lng": 144.967166,
+   "tags": {
+    "name": "Tim Ho Wan",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/4162603500",
+   "lat": -37.815959,
+   "lng": 144.968326,
+   "tags": {
+    "name": "Supernormal",
+    "amenity": "restaurant",
+    "addr:housenumber": "180",
+    "addr:street": "Flinders Lane",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4165983489",
+   "lat": -37.813546,
+   "lng": 144.961987,
+   "tags": {
+    "name": "Tipo 00",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://tipo00.com.au/",
+    "opening_hours": "Mo-Sa 11:30-22:00",
+    "addr:housenumber": "361",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/4223013192",
+   "lat": -37.821455,
+   "lng": 144.962389,
+   "tags": {
+    "name": "Criniti's",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "645",
+    "addr:street": "Freshwater Place",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4267698390",
+   "lat": -37.81015,
+   "lng": 144.958275,
+   "tags": {
+    "name": "City Tempo Hotel",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://citytempo.com.au/",
+    "addr:housenumber": "181",
+    "addr:street": "A'Beckett Street"
+   }
+  },
+  {
+   "id": "node/4301853491",
+   "lat": -37.815736,
+   "lng": 144.972547,
+   "tags": {
+    "name": "Gazi",
+    "amenity": "restaurant",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/4302808991",
+   "lat": -37.817797,
+   "lng": 144.968718,
+   "tags": {
+    "name": "Chocolate Buddha",
+    "amenity": "restaurant",
+    "addr:street": "Federation Square"
+   }
+  },
+  {
+   "id": "node/4302895907",
+   "lat": -37.814815,
+   "lng": 144.973027,
+   "tags": {
+    "name": "Cumulus Inc",
+    "amenity": "restaurant",
+    "cuisine": "australian",
+    "addr:housenumber": "45",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/4351781132",
+   "lat": -37.818793,
+   "lng": 144.962043,
+   "tags": {
+    "name": "Vibe",
+    "tourism": "hotel",
+    "addr:housenumber": "1",
+    "addr:street": "Queen Street"
+   }
+  },
+  {
+   "id": "node/4398451798",
+   "lat": -37.812537,
+   "lng": 144.96833,
+   "tags": {
+    "name": "Momo Central",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "opening_hours": "Mo-We 11:00-23:00, Th,Fr 11:00-03:00, Sa 12:00-03:00, Su 12:00-23:00"
+   }
+  },
+  {
+   "id": "node/4422320390",
+   "lat": -37.817106,
+   "lng": 144.965741,
+   "tags": {
+    "name": "Café Andiamo",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "36-38",
+    "addr:street": "Degraves Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4481224589",
+   "lat": -37.810721,
+   "lng": 144.963413,
+   "tags": {
+    "name": "Don Don",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4511498369",
+   "lat": -37.807607,
+   "lng": 144.966017,
+   "tags": {
+    "name": "Space Hotel",
+    "tourism": "hotel",
+    "stars": "3",
+    "website": "https://www.spacehotel.com.au",
+    "addr:housenumber": "380",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/4528696489",
+   "lat": -37.809933,
+   "lng": 144.967065,
+   "tags": {
+    "name": "Fukutontei",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "276",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4528753089",
+   "lat": -37.811513,
+   "lng": 144.968991,
+   "tags": {
+    "name": "Japanese Gyoza Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "115",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4528780390",
+   "lat": -37.813608,
+   "lng": 144.968693,
+   "tags": {
+    "name": "Izakaya Den",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Tu-Su 17:30-21:00+",
+    "addr:housenumber": "118",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4528789389",
+   "lat": -37.812663,
+   "lng": 144.967616,
+   "tags": {
+    "name": "Watanabe",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "200",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4540248490",
+   "lat": -37.811139,
+   "lng": 144.964242,
+   "tags": {
+    "name": "Dom's Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.saharamelbourne.com.au/",
+    "opening_hours": "We-Th 17:00-23:00; Fr-Sa 16:00-01:00",
+    "addr:housenumber": "301",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4542118797",
+   "lat": -37.815518,
+   "lng": 144.963107,
+   "tags": {
+    "name": "Oh! Banh Mi",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://ohbanhmi.cafe/",
+    "addr:housenumber": "34",
+    "addr:street": "Equitable Place",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4675693394",
+   "lat": -37.811412,
+   "lng": 144.959369,
+   "tags": {
+    "name": "Europa Melbourne",
+    "name:en": "Europa Melbourne",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/4716883908",
+   "lat": -37.815068,
+   "lng": 144.967441,
+   "tags": {
+    "name": "Bistrot d'Orsay",
+    "name:en": "Bistrot d'Orsay",
+    "amenity": "restaurant",
+    "website": "http://Bistrotdorsay.com.au",
+    "opening_hours": "Mo-Sa 11:30-15:00,17:00-18:00+",
+    "addr:housenumber": "184",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4721629193",
+   "lat": -37.81475,
+   "lng": 144.973202,
+   "tags": {
+    "name": "Fonda Mexican",
+    "name:en": "Fonda Mexican",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.fondamexican.com.au/",
+    "opening_hours": "Mo-Su 12:00-20:00",
+    "addr:housenumber": "31",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/4725005589",
+   "lat": -37.81194,
+   "lng": 144.96533,
+   "tags": {
+    "name": "Mesa Verde",
+    "name:en": "Mesa Verde",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4726222190",
+   "lat": -37.815838,
+   "lng": 144.971071,
+   "tags": {
+    "name": "Pastuso",
+    "name:en": "Pastuso",
+    "amenity": "restaurant",
+    "cuisine": "peruvian",
+    "website": "https://www.pastuso.com.au/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "19",
+    "addr:street": "AC/DC Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4728998189",
+   "lat": -37.812739,
+   "lng": 144.967494,
+   "tags": {
+    "name": "Tokyo Motto",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "200",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/4737579023",
+   "lat": -37.820219,
+   "lng": 144.965532,
+   "tags": {
+    "name": "Waterfront",
+    "name:en": "Waterfront",
+    "amenity": "restaurant",
+    "website": "https://waterfrontsouthgate.com.au/",
+    "addr:street": "Southgate Avenue",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "node/4737581622",
+   "lat": -37.820103,
+   "lng": 144.966209,
+   "tags": {
+    "name": "Bluetrain",
+    "name:en": "Bluetrain",
+    "amenity": "restaurant",
+    "website": "https://bluetrain.com.au/",
+    "addr:street": "Southgate Avenue",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "node/4737591530",
+   "lat": -37.816984,
+   "lng": 144.965468,
+   "tags": {
+    "name": "Pa Tong",
+    "name:en": "Pa Tong",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4737629222",
+   "lat": -37.815636,
+   "lng": 144.970118,
+   "tags": {
+    "name": "The Meatball And Wine Bar",
+    "name:en": "Meatballs",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4737767721",
+   "lat": -37.81265,
+   "lng": 144.967371,
+   "tags": {
+    "name": "Red Silks Restaurant",
+    "name:en": "Red Silks Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4740684528",
+   "lat": -37.812962,
+   "lng": 144.960789,
+   "tags": {
+    "name": "Hawker Boys",
+    "name:en": "Hawker Boys",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.hawkerboys.com.au/",
+    "addr:housenumber": "85",
+    "addr:street": "Hardware Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4788724032",
+   "lat": -37.811177,
+   "lng": 144.966665,
+   "tags": {
+    "name": "shujinkoramen",
+    "name:en": "shujinkoramen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4788724033",
+   "lat": -37.811892,
+   "lng": 144.964658,
+   "tags": {
+    "name": "Oppa",
+    "name:en": "Oppa",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4795887585",
+   "lat": -37.813451,
+   "lng": 144.96892,
+   "tags": {
+    "name": "Sezar",
+    "amenity": "restaurant",
+    "website": "https://sezar.com.au/",
+    "addr:housenumber": "6",
+    "addr:street": "Melbourne Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4840329225",
+   "lat": -37.815242,
+   "lng": 144.964191,
+   "tags": {
+    "name": "Dimkum Pies",
+    "name:en": "Dimkum Pies",
+    "amenity": "restaurant",
+    "addr:housenumber": "29",
+    "addr:street": "Block Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4842991526",
+   "lat": -37.814091,
+   "lng": 144.967745,
+   "tags": {
+    "name": "Meatmaiden",
+    "amenity": "restaurant",
+    "website": "https://www.meatmaiden.com.au/",
+    "addr:housenumber": "195",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4936374478",
+   "lat": -37.816589,
+   "lng": 144.969159,
+   "tags": {
+    "name": "MoVida",
+    "amenity": "restaurant",
+    "cuisine": "tapas",
+    "website": "https://www.movida.com.au/",
+    "opening_hours": "Mo-Tu 12:00-22:00; We-Su 12:00-22:30",
+    "addr:housenumber": "1",
+    "addr:street": "Hosier Lane"
+   }
+  },
+  {
+   "id": "node/4958385721",
+   "lat": -37.810729,
+   "lng": 144.963964,
+   "tags": {
+    "name": "St. Jerome's Hotel",
+    "name:en": "St. Jerome's Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/4959121421",
+   "lat": -37.812869,
+   "lng": 144.968454,
+   "tags": {
+    "name": "Thai Tide",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "171",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/4976357652",
+   "lat": -37.814048,
+   "lng": 144.966423,
+   "tags": {
+    "name": "OK Chicken",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "235-251",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/4976357653",
+   "lat": -37.814013,
+   "lng": 144.966586,
+   "tags": {
+    "name": "Salero Kito",
+    "amenity": "restaurant",
+    "cuisine": "indonesian"
+   }
+  },
+  {
+   "id": "node/4991364636",
+   "lat": -37.811842,
+   "lng": 144.9663,
+   "tags": {
+    "name": "Heyday Hong Kong Cafe",
+    "amenity": "restaurant",
+    "cuisine": "cantonese;all_day_breakfast",
+    "opening_hours": "Mo-Sa 11:00-21:30",
+    "addr:housenumber": "16",
+    "addr:street": "Celestial Avenue",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5040169822",
+   "lat": -37.820794,
+   "lng": 144.963203,
+   "tags": {
+    "name": "Soho Restaurant & Bar",
+    "name:en": "Soho Restaurant & Bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5045913921",
+   "lat": -37.811048,
+   "lng": 144.964296,
+   "tags": {
+    "name": "David's Master Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "addr:housenumber": "309",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5114990126",
+   "lat": -37.818445,
+   "lng": 144.957358,
+   "tags": {
+    "name": "Vue de Monde",
+    "amenity": "restaurant",
+    "cuisine": "french;fine_dining",
+    "website": "https://vuedemonde.com.au/",
+    "addr:housenumber": "525",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5114996122",
+   "lat": -37.813426,
+   "lng": 144.96183,
+   "tags": {
+    "name": "+39 Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.plus39.com.au/",
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "addr:housenumber": "362",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5130629221",
+   "lat": -37.818161,
+   "lng": 144.964471,
+   "tags": {
+    "name": "Phở Flinders",
+    "amenity": "restaurant",
+    "addr:housenumber": "292",
+    "addr:street": "Flinders Street"
+   }
+  },
+  {
+   "id": "node/5175879324",
+   "lat": -37.808526,
+   "lng": 144.960311,
+   "tags": {
+    "name": "Malaysian Laksa House",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "opening_hours": "Mo-Su 11:00-20:00; PH off"
+   }
+  },
+  {
+   "id": "node/5177851337",
+   "lat": -37.813477,
+   "lng": 144.961436,
+   "tags": {
+    "name": "YTI Garden Hotel",
+    "tourism": "hotel",
+    "website": "https://www.ytigarden.com/",
+    "addr:housenumber": "372-378",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5180978121",
+   "lat": -37.815584,
+   "lng": 144.970342,
+   "tags": {
+    "name": "Chin Chin",
+    "name:en": "Chin Chin",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5305535824",
+   "lat": -37.813127,
+   "lng": 144.971602,
+   "tags": {
+    "name": "Rare Steakhouse",
+    "amenity": "restaurant",
+    "addr:housenumber": "61",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/5388488024",
+   "lat": -37.814393,
+   "lng": 144.965802,
+   "tags": {
+    "name": "Gopal‘s Vegetarian Indian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://gopals.com.au/",
+    "opening_hours": "Mo-Th 11:30-21:00; Fr 11:30-21:30; Sa 11:30-21:00",
+    "addr:housenumber": "139",
+    "addr:street": "Swanston Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5430672221",
+   "lat": -37.817378,
+   "lng": 144.964372,
+   "tags": {
+    "name": "Flinders backpackers",
+    "tourism": "hostel",
+    "addr:housenumber": "39",
+    "addr:street": "Elizabeth Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5432897535",
+   "lat": -37.817355,
+   "lng": 144.964795,
+   "tags": {
+    "name": "Melbourne halal kebab & pizza take away food",
+    "amenity": "restaurant",
+    "cuisine": "kebab;pizza"
+   }
+  },
+  {
+   "id": "node/5453186021",
+   "lat": -37.81112,
+   "lng": 144.968343,
+   "tags": {
+    "name": "Fukuryu Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Su 11:30-15:00, 17:30-21:30",
+    "addr:street": "Corrs Lane"
+   }
+  },
+  {
+   "id": "node/5526651522",
+   "lat": -37.815281,
+   "lng": 144.962683,
+   "tags": {
+    "name": "Trattoria Emilia",
+    "amenity": "restaurant",
+    "website": "https://www.emiliamelbourne.com.au/",
+    "addr:housenumber": "360",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5625773126",
+   "lat": -37.81396,
+   "lng": 144.962024,
+   "tags": {
+    "name": "Portello Rosso",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5724988821",
+   "lat": -37.813017,
+   "lng": 144.960859,
+   "tags": {
+    "name": "Vons",
+    "amenity": "restaurant",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5740134021",
+   "lat": -37.811225,
+   "lng": 144.970973,
+   "tags": {
+    "name": "Ginger Boy",
+    "amenity": "restaurant",
+    "addr:housenumber": "27-29",
+    "addr:street": "Crossley Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5862755217",
+   "lat": -37.816756,
+   "lng": 144.957699,
+   "tags": {
+    "name": "Göz City",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 07:30-16:00",
+    "addr:housenumber": "502",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/5865377446",
+   "lat": -37.808931,
+   "lng": 144.9628,
+   "tags": {
+    "name": "Wonderbao",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.wonderbaokitchen.com.au",
+    "opening_hours": "Mo-Fr 08:00-18:00; Sa 11:00-16:00",
+    "addr:housenumber": "19-37",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/591372262",
+   "lat": -37.817537,
+   "lng": 144.966514,
+   "tags": {
+    "name": "Flora",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "238",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/591391653",
+   "lat": -37.81763,
+   "lng": 144.966163,
+   "tags": {
+    "name": "United Backpackers",
+    "tourism": "hostel",
+    "website": "https://unitedbackpackers.com.au/",
+    "addr:housenumber": "250",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/592833686",
+   "lat": -37.816027,
+   "lng": 144.969056,
+   "tags": {
+    "name": "Flinders Landing Apartments",
+    "tourism": "hotel",
+    "addr:housenumber": "161",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5928461724",
+   "lat": -37.811046,
+   "lng": 144.969015,
+   "tags": {
+    "name": "Punt Hill Apartment Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/5928461727",
+   "lat": -37.811489,
+   "lng": 144.969074,
+   "tags": {
+    "name": "Famous Hotpot & BBQ",
+    "amenity": "restaurant",
+    "addr:housenumber": "113",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/5928461730",
+   "lat": -37.811736,
+   "lng": 144.969176,
+   "tags": {
+    "name": "Shoya",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5928461733",
+   "lat": -37.8109,
+   "lng": 144.970316,
+   "tags": {
+    "name": "Secret Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.secret-kitchen.com.au/",
+    "addr:housenumber": "222",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/5928461736",
+   "lat": -37.811402,
+   "lng": 144.968789,
+   "tags": {
+    "name": "Golden Orchids",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5938036771",
+   "lat": -37.809472,
+   "lng": 144.97095,
+   "tags": {
+    "name": "Mellow Beans",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/594192881",
+   "lat": -37.815962,
+   "lng": 144.966522,
+   "tags": {
+    "name": "City Square Motel",
+    "tourism": "motel",
+    "website": "https://citysquaremotel.com.au/",
+    "addr:housenumber": "67-73",
+    "addr:street": "Swanston Street"
+   }
+  },
+  {
+   "id": "node/594773184",
+   "lat": -37.812455,
+   "lng": 144.965776,
+   "tags": {
+    "name": "Dae Jang Geum",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/594777050",
+   "lat": -37.812376,
+   "lng": 144.966169,
+   "tags": {
+    "name": "Spicy Fish Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "209",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/594798517",
+   "lat": -37.812254,
+   "lng": 144.966631,
+   "tags": {
+    "name": "Dragon Boat Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.dragonboat.com.au/",
+    "addr:housenumber": "203",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/595789347",
+   "lat": -37.810374,
+   "lng": 144.969361,
+   "tags": {
+    "name": "Curry Bowl",
+    "amenity": "restaurant",
+    "website": "https://curry-bowl.com.au/",
+    "addr:housenumber": "250",
+    "addr:street": "Elizabeth Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5960399785",
+   "lat": -37.816457,
+   "lng": 144.957836,
+   "tags": {
+    "name": "Burger Project",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.burgerproject.com/",
+    "opening_hours": "Mo-Sa 11:00-21:00",
+    "addr:housenumber": "555",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/597558756",
+   "lat": -37.814991,
+   "lng": 144.958212,
+   "tags": {
+    "name": "Quest on William",
+    "tourism": "hotel",
+    "website": "https://www.questapartments.com.au/Accommodation/56/Australia/Melbourne_CBD/Quest_On_William/Welcome.aspx",
+    "addr:housenumber": "172",
+    "addr:street": "William Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/597923767",
+   "lat": -37.811867,
+   "lng": 144.969217,
+   "tags": {
+    "name": "Flower Drum",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.flower-drum.com/",
+    "addr:housenumber": "17",
+    "addr:street": "Market Lane"
+   }
+  },
+  {
+   "id": "node/598032208",
+   "lat": -37.814688,
+   "lng": 144.967425,
+   "tags": {
+    "name": "Hotel Collins",
+    "tourism": "hotel",
+    "addr:housenumber": "182",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/598035322",
+   "lat": -37.814417,
+   "lng": 144.96683,
+   "tags": {
+    "name": "Mister Munro",
+    "amenity": "restaurant",
+    "addr:housenumber": "215",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/598049995",
+   "lat": -37.814822,
+   "lng": 144.968002,
+   "tags": {
+    "name": "The George on Collins",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.thegeorgeoncollins.com.au/",
+    "addr:housenumber": "162",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/598056712",
+   "lat": -37.812003,
+   "lng": 144.970078,
+   "tags": {
+    "name": "Jaisalmer Palace",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "98",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/5982185657",
+   "lat": -37.808973,
+   "lng": 144.963293,
+   "tags": {
+    "name": "Joomak",
+    "amenity": "restaurant",
+    "cuisine": "korean"
+   }
+  },
+  {
+   "id": "node/5982185675",
+   "lat": -37.80757,
+   "lng": 144.96046,
+   "tags": {
+    "name": "Elizabeth Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/598377897",
+   "lat": -37.813,
+   "lng": 144.968423,
+   "tags": {
+    "name": "Taco Bill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.tacobill.com.au/",
+    "addr:housenumber": "142",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/598377898",
+   "lat": -37.813054,
+   "lng": 144.968449,
+   "tags": {
+    "name": "Edoya",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "138",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/598400057",
+   "lat": -37.814304,
+   "lng": 144.964179,
+   "tags": {
+    "name": "Causeway Inn on the Mall",
+    "tourism": "hotel",
+    "website": "https://www.causeway.com.au/"
+   }
+  },
+  {
+   "id": "node/5984199985",
+   "lat": -37.812235,
+   "lng": 144.960493,
+   "tags": {
+    "name": "White Mojo",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5988192263",
+   "lat": -37.818255,
+   "lng": 144.957991,
+   "tags": {
+    "name": "InterContinental",
+    "tourism": "hotel",
+    "website": "https://www.melbourne.intercontinental.com/",
+    "addr:housenumber": "495",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/599928123",
+   "lat": -37.815282,
+   "lng": 144.973604,
+   "tags": {
+    "name": "Hotel Lindrum",
+    "tourism": "hotel",
+    "addr:housenumber": "26",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600744880",
+   "lat": -37.811055,
+   "lng": 144.967092,
+   "tags": {
+    "name": "Stalactites",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.stalactites.com.au/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "177-183",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600746441",
+   "lat": -37.811871,
+   "lng": 144.966194,
+   "tags": {
+    "name": "Supper Inn",
+    "amenity": "restaurant",
+    "cuisine": "chinese;cantonese",
+    "opening_hours": "Mo-Su 17:30-02:30",
+    "addr:housenumber": "15",
+    "addr:street": "Celestial Avenue",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600747172",
+   "lat": -37.811215,
+   "lng": 144.966549,
+   "tags": {
+    "name": "Tsindos Greek Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "197",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600747425",
+   "lat": -37.811202,
+   "lng": 144.966604,
+   "tags": {
+    "name": "Kra Ta Ron",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "195",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600747753",
+   "lat": -37.811527,
+   "lng": 144.96552,
+   "tags": {
+    "name": "Touché Hombre",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.touchehombre.com.au/",
+    "addr:housenumber": "233",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600759717",
+   "lat": -37.81114,
+   "lng": 144.967102,
+   "tags": {
+    "name": "China Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "235",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600781691",
+   "lat": -37.812297,
+   "lng": 144.965802,
+   "tags": {
+    "name": "Rice Workshop",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "238",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/600781697",
+   "lat": -37.812226,
+   "lng": 144.96591,
+   "tags": {
+    "name": "Crazy Wing",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/601754644",
+   "lat": -37.811281,
+   "lng": 144.96631,
+   "tags": {
+    "name": "Dion Restaurant and Bar",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "addr:housenumber": "205-207",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/601754759",
+   "lat": -37.811348,
+   "lng": 144.966106,
+   "tags": {
+    "name": "Pacific BBQ Cafe",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "213",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6037995386",
+   "lat": -37.812903,
+   "lng": 144.960757,
+   "tags": {
+    "name": "Pho Thìn",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/607756377",
+   "lat": -37.817443,
+   "lng": 144.964334,
+   "tags": {
+    "name": "Flinders Station Hotel",
+    "tourism": "hostel",
+    "website": "https://flindersbackpackers.com.au/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6089822072",
+   "lat": -37.815736,
+   "lng": 144.971413,
+   "tags": {
+    "name": "Tonka",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.tonkarestaurant.com.au/",
+    "opening_hours": "Mo-We 12:00-15:00,17:30-21:30; Th 12:00-15:00,17:30-22:30; Fr-Sa 12:00-22:30; Su 12:00-21:00",
+    "addr:housenumber": "20",
+    "addr:street": "Duckboard Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/611559246",
+   "lat": -37.818163,
+   "lng": 144.960808,
+   "tags": {
+    "name": "I Arepa",
+    "amenity": "restaurant",
+    "cuisine": "american;portuguese",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/611559414",
+   "lat": -37.818648,
+   "lng": 144.959947,
+   "tags": {
+    "name": "Shiraaz",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "http://www.shiraaz.com.au",
+    "addr:housenumber": "22",
+    "addr:street": "William Street"
+   }
+  },
+  {
+   "id": "node/611984580",
+   "lat": -37.815745,
+   "lng": 144.963028,
+   "tags": {
+    "name": "Causeway 353 Hotel",
+    "tourism": "hotel",
+    "website": "https://www.causeway.com.au/",
+    "addr:housenumber": "353",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/612015199",
+   "lat": -37.815921,
+   "lng": 144.963508,
+   "tags": {
+    "name": "Ibis Budget",
+    "tourism": "hotel",
+    "website": "http://ibisbudgethotel.ibis.com/",
+    "addr:housenumber": "97-103",
+    "addr:street": "Elizabeth Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/612726069",
+   "lat": -37.815636,
+   "lng": 144.961573,
+   "tags": {
+    "name": "Quest Fairfax House",
+    "tourism": "hotel",
+    "website": "https://www.servicedapartmentsmelbourne.com/quest-fairfax-house-serviced-apartments-melbourne_2_183.php",
+    "addr:housenumber": "392",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/612741100",
+   "lat": -37.815373,
+   "lng": 144.961915,
+   "tags": {
+    "name": "McKillops",
+    "amenity": "restaurant",
+    "addr:housenumber": "12",
+    "addr:street": "McKillop Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/613316144",
+   "lat": -37.814375,
+   "lng": 144.961984,
+   "tags": {
+    "name": "Curry Point",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "392",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6138135279",
+   "lat": -37.813928,
+   "lng": 144.973089,
+   "tags": {
+    "name": "Pope Joan",
+    "amenity": "restaurant",
+    "website": "https://www.popejoancity.com",
+    "addr:housenumber": "45",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/613991823",
+   "lat": -37.812024,
+   "lng": 144.964718,
+   "tags": {
+    "name": "Nelayan",
+    "amenity": "restaurant",
+    "cuisine": "indonesian",
+    "addr:housenumber": "265-267",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/614041180",
+   "lat": -37.811787,
+   "lng": 144.970894,
+   "tags": {
+    "name": "Grossi Florentino",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.grossiflorentino.com/",
+    "wikidata": "Q5610588",
+    "addr:housenumber": "80",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/614502269",
+   "lat": -37.813777,
+   "lng": 144.961173,
+   "tags": {
+    "name": "Mumchan",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.mumchan.com/",
+    "addr:housenumber": "395",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/614502473",
+   "lat": -37.813826,
+   "lng": 144.961014,
+   "tags": {
+    "name": "Palermo",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;argentinian",
+    "website": "https://www.palermo.melbourne/",
+    "addr:housenumber": "401",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/614502657",
+   "lat": -37.814327,
+   "lng": 144.96066,
+   "tags": {
+    "name": "Nirankar",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.nirankar.com.au/",
+    "addr:housenumber": "174",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6148822185",
+   "lat": -37.817367,
+   "lng": 144.96352,
+   "tags": {
+    "name": "Yum Yum Dumpling",
+    "amenity": "restaurant",
+    "cuisine": "chinese;dumpling"
+   }
+  },
+  {
+   "id": "node/6163160888",
+   "lat": -37.810648,
+   "lng": 144.961298,
+   "tags": {
+    "name": "Isshin Ramen Bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6163160890",
+   "lat": -37.809931,
+   "lng": 144.960963,
+   "tags": {
+    "name": "Lanzhou Beef Noodle Bar",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 10:30-23:00",
+    "addr:housenumber": "379",
+    "addr:street": "Elizabeth Street"
+   }
+  },
+  {
+   "id": "node/6163160894",
+   "lat": -37.810613,
+   "lng": 144.960955,
+   "tags": {
+    "name": "David’s Hot Pot",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/616545130",
+   "lat": -37.812319,
+   "lng": 144.961389,
+   "tags": {
+    "name": "Beef House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.shabushabu.com.au/",
+    "wikidata": "Q19599928",
+    "addr:housenumber": "380",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/616546821",
+   "lat": -37.811782,
+   "lng": 144.960324,
+   "tags": {
+    "name": "Sara",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "website": "https://sararamen.com.au/",
+    "opening_hours": "Mo-Th 11:30-14:30,17:30-21:00; Fr 11:30-14:30,17:30-22:00; Sa 11:30-22:00; Su 11:30-21:00",
+    "addr:housenumber": "391",
+    "addr:street": "Little Lonsdale Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/616546908",
+   "lat": -37.811852,
+   "lng": 144.960367,
+   "tags": {
+    "name": "CJ Lunchbar",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "391",
+    "addr:street": "Little Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/616935421",
+   "lat": -37.818514,
+   "lng": 144.960401,
+   "tags": {
+    "name": "The Trust",
+    "amenity": "restaurant",
+    "website": "https://www.thetrust.com.au/",
+    "addr:housenumber": "405-411",
+    "addr:street": "Flinders Lane"
+   }
+  },
+  {
+   "id": "node/616964019",
+   "lat": -37.812027,
+   "lng": 144.971522,
+   "tags": {
+    "name": "Spaghetti Tree",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.spaghettitree.com.au/",
+    "addr:housenumber": "59",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/617510806",
+   "lat": -37.812711,
+   "lng": 144.969082,
+   "tags": {
+    "name": "Izakaya Hachibeh",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "143-145",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/6175959885",
+   "lat": -37.815303,
+   "lng": 144.962946,
+   "tags": {
+    "name": "Nosh",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/619598442",
+   "lat": -37.816768,
+   "lng": 144.960401,
+   "tags": {
+    "name": "Mitre Tavern Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://www.mitretavern.com.au/",
+    "addr:housenumber": "5",
+    "addr:street": "Bank Place"
+   }
+  },
+  {
+   "id": "node/621048440",
+   "lat": -37.815772,
+   "lng": 144.960722,
+   "tags": {
+    "name": "Citiclub Hotel",
+    "tourism": "hotel",
+    "website": "https://www.cqmelbourne.com.au/",
+    "addr:housenumber": "113",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6212569186",
+   "lat": -37.812303,
+   "lng": 144.967271,
+   "tags": {
+    "name": "Mr Ramen San",
+    "amenity": "restaurant",
+    "website": "https://mrramensan.com.au",
+    "opening_hours": "Tu-Th 11:30-14:30, 17:00-21:00; Fr-Sa 11:30-15:00, 17:00-21:30; Su 11:30-15:00, 17:00-21:00",
+    "addr:housenumber": "Shop 12A"
+   }
+  },
+  {
+   "id": "node/621533164",
+   "lat": -37.814349,
+   "lng": 144.960009,
+   "tags": {
+    "name": "Adina Apartment Hotel Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.adinahotels.com.au/",
+    "addr:housenumber": "189",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/621540204",
+   "lat": -37.81487,
+   "lng": 144.958858,
+   "tags": {
+    "name": "MoVida Aqui",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "https://movida.com.au/pages/aqui",
+    "addr:housenumber": "500",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/621541320",
+   "lat": -37.814539,
+   "lng": 144.958735,
+   "tags": {
+    "name": "Sushi On",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "500",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/624924103",
+   "lat": -37.819428,
+   "lng": 144.959521,
+   "tags": {
+    "name": "Clarion Suites Gateway",
+    "tourism": "hotel",
+    "website": "https://www.clarionsuitesgateway.com.au/",
+    "addr:housenumber": "1",
+    "addr:street": "William Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/624924247",
+   "lat": -37.819324,
+   "lng": 144.959573,
+   "tags": {
+    "name": "Williams Bar & Cafe",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/624940916",
+   "lat": -37.819924,
+   "lng": 144.957628,
+   "tags": {
+    "name": "Tokyo Hot",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "8",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/624940919",
+   "lat": -37.819916,
+   "lng": 144.957596,
+   "tags": {
+    "name": "Monkey Bar Noodles & Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "addr:housenumber": "10",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/624943138",
+   "lat": -37.820057,
+   "lng": 144.957782,
+   "tags": {
+    "name": "Gurkhas Express",
+    "amenity": "restaurant",
+    "cuisine": "nepalese",
+    "website": "https://www.gurkhas.com.au/",
+    "addr:housenumber": "500",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/626250404",
+   "lat": -37.819162,
+   "lng": 144.95733,
+   "tags": {
+    "name": "Rare Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://www.raresteakhouse.com.au/",
+    "opening_hours": "Mo-Fr 12:00-15:00,17:00-23:00+; Sa 12:00-23:00+",
+    "addr:housenumber": "42-44",
+    "addr:street": "King Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/626259680",
+   "lat": -37.818638,
+   "lng": 144.957006,
+   "tags": {
+    "name": "Nosh",
+    "amenity": "restaurant",
+    "addr:housenumber": "68-70",
+    "addr:street": "King Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/627280015",
+   "lat": -37.812287,
+   "lng": 144.96922,
+   "tags": {
+    "name": "Ajisen Ramen",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/627280068",
+   "lat": -37.810937,
+   "lng": 144.972543,
+   "tags": {
+    "name": "European",
+    "amenity": "restaurant",
+    "website": "https://www.theeuropean.com.au/",
+    "addr:housenumber": "161",
+    "addr:street": "Spring Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6338923086",
+   "lat": -37.813246,
+   "lng": 144.962362,
+   "tags": {
+    "name": "Mr Ramen San",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "opening_hours": "Mo-Th 11:30-14:30,17:00-21:00; Fr-Sa 11:30-14:30,17:00-21:30; Su off",
+    "addr:housenumber": "344",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/633912829",
+   "lat": -37.815813,
+   "lng": 144.955797,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.com.au/"
+   }
+  },
+  {
+   "id": "node/633912856",
+   "lat": -37.815034,
+   "lng": 144.957123,
+   "tags": {
+    "name": "Koko Korean",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "9",
+    "addr:street": "Goldsbrough Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6340827185",
+   "lat": -37.814213,
+   "lng": 144.962665,
+   "tags": {
+    "name": "Shanghai Street",
+    "amenity": "restaurant",
+    "cuisine": "dumplings;chinese"
+   }
+  },
+  {
+   "id": "node/6344541343",
+   "lat": -37.813744,
+   "lng": 144.963508,
+   "tags": {
+    "name": "Ca De Vin",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.cadevin.com/",
+    "addr:housenumber": "Postal Lane",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/634777815",
+   "lat": -37.815038,
+   "lng": 144.955935,
+   "tags": {
+    "name": "Scugnizzo Ristorante",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://scugnizzo.com.au/",
+    "addr:housenumber": "558",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/635544144",
+   "lat": -37.81186,
+   "lng": 144.956743,
+   "tags": {
+    "name": "The Mint",
+    "amenity": "restaurant",
+    "website": "https://www.themint.com.au/",
+    "addr:housenumber": "318",
+    "addr:street": "William Street"
+   }
+  },
+  {
+   "id": "node/6360234792",
+   "lat": -37.811378,
+   "lng": 144.956467,
+   "tags": {
+    "name": "Oaks on Williams",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/639505849",
+   "lat": -37.814135,
+   "lng": 144.966171,
+   "tags": {
+    "name": "Sushi Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "148",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6440070650",
+   "lat": -37.811512,
+   "lng": 144.96697,
+   "tags": {
+    "name": "Xiao Jun Gan Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese;hotpot",
+    "opening_hours": "Mo-Su 17:00-03:00",
+    "addr:housenumber": "11-15",
+    "addr:street": "Waratah Place",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/645573442",
+   "lat": -37.812871,
+   "lng": 144.965104,
+   "tags": {
+    "name": "Samsam",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "website": "https://www.samsamchicken.com/"
+   }
+  },
+  {
+   "id": "node/659635763",
+   "lat": -37.816971,
+   "lng": 144.955752,
+   "tags": {
+    "name": "Ibis Styles Kingsgate Hotel",
+    "tourism": "hotel",
+    "contact:website": "http://www.kingsgatehotel.com.au",
+    "addr:housenumber": "131",
+    "addr:street": "King Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/660065940",
+   "lat": -37.811459,
+   "lng": 144.97208,
+   "tags": {
+    "name": "Takumi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.takumi.com.au/",
+    "addr:housenumber": "32",
+    "addr:street": "Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/660116815",
+   "lat": -37.811343,
+   "lng": 144.972505,
+   "tags": {
+    "name": "Sara",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "14",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/663117963",
+   "lat": -37.812081,
+   "lng": 144.971102,
+   "tags": {
+    "name": "Nando's",
+    "amenity": "restaurant",
+    "cuisine": "chicken;portuguese",
+    "website": "https://www.nandos.com.au/",
+    "addr:housenumber": "79-85",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/663123803",
+   "lat": -37.813206,
+   "lng": 144.956211,
+   "tags": {
+    "name": "Grill Room",
+    "amenity": "restaurant",
+    "addr:housenumber": "535",
+    "addr:street": "Little Lonsdale Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6634489585",
+   "lat": -37.81743,
+   "lng": 144.965888,
+   "tags": {
+    "name": "II Tempo Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "8",
+    "addr:street": "Degraves Street"
+   }
+  },
+  {
+   "id": "node/6634489586",
+   "lat": -37.817506,
+   "lng": 144.965789,
+   "tags": {
+    "name": "II Tempo 2 Pasta Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian;pasta;pizza",
+    "addr:housenumber": "11",
+    "addr:street": "Degraves Street"
+   }
+  },
+  {
+   "id": "node/6634515586",
+   "lat": -37.815658,
+   "lng": 144.963063,
+   "tags": {
+    "name": "11 Inch Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Mo-Fr 11:00-22:00; Sa-Su 17:00-22:00",
+    "addr:housenumber": "353 -359",
+    "addr:street": "Little Collins Street",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/6634515587",
+   "lat": -37.814268,
+   "lng": 144.961446,
+   "tags": {
+    "name": "Rice Paper Sister",
+    "amenity": "restaurant",
+    "cuisine": "asian;thai;vietnamese",
+    "opening_hours": "Su-Th 12:00-15:00, 17:30-19:00, 20:00-22:00; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "15",
+    "addr:street": "Hardware Lane",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6634718186",
+   "lat": -37.810066,
+   "lng": 144.963519,
+   "tags": {
+    "name": "Pancake Parlour",
+    "amenity": "restaurant",
+    "cuisine": "pancake",
+    "website": "https://www.pancakeparlour.com.au/locations",
+    "opening_hours": "Mo-Su 07:00-01:00",
+    "addr:street": "La Trobe Street"
+   }
+  },
+  {
+   "id": "node/663532430",
+   "lat": -37.814772,
+   "lng": 144.974243,
+   "tags": {
+    "name": "Mercure Melbourne Treasury Gardens",
+    "tourism": "hotel",
+    "website": "http://mercuremelbourne.com.au/",
+    "addr:housenumber": "13",
+    "addr:street": "Spring Street"
+   }
+  },
+  {
+   "id": "node/663914571",
+   "lat": -37.815439,
+   "lng": 144.971578,
+   "tags": {
+    "name": "The French Brasserie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://thefrenchbrasserie.com.au/",
+    "addr:housenumber": "2",
+    "addr:street": "Malthouse Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/663917415",
+   "lat": -37.815272,
+   "lng": 144.971372,
+   "tags": {
+    "name": "Terra Rossa",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://www.terrarossarb.com.au",
+    "addr:housenumber": "87",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/663917416",
+   "lat": -37.815285,
+   "lng": 144.971323,
+   "tags": {
+    "name": "Swiss Club Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "swiss"
+   }
+  },
+  {
+   "id": "node/6642220675",
+   "lat": -37.812311,
+   "lng": 144.961565,
+   "tags": {
+    "name": "Mamak",
+    "amenity": "restaurant",
+    "cuisine": "malaysian",
+    "website": "https://www.mamak.com.au/",
+    "opening_hours": "Mo-We 11:30-14:00; Mo-Tu 17:30-21:00; Th-Su 11:30-14:30; We-Th,Su 17:30-22:30; Fr 17:30-22:30; Sa 17:30-22:00",
+    "addr:housenumber": "366",
+    "addr:street": "Lonsdale Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/664317454",
+   "lat": -37.812815,
+   "lng": 144.96508,
+   "tags": {
+    "name": "Superhiro",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://www.superhiro.com.au/",
+    "opening_hours": "Mo-Th 10:00-23:00; Fr-Sa 10:00-24:00; Su 10:00-23:00",
+    "addr:housenumber": "211-213",
+    "addr:street": "Swanston Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6654973387",
+   "lat": -37.813601,
+   "lng": 144.955946,
+   "tags": {
+    "name": "Jan Gun",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/667680172",
+   "lat": -37.813361,
+   "lng": 144.971489,
+   "tags": {
+    "name": "Mantra 100 Exhibition",
+    "tourism": "hotel",
+    "addr:housenumber": "100",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/673062586",
+   "lat": -37.811754,
+   "lng": 144.971007,
+   "tags": {
+    "name": "Ombra Salumi Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.ombrabar.com.au/",
+    "addr:housenumber": "76",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/6765421858",
+   "lat": -37.815396,
+   "lng": 144.96434,
+   "tags": {
+    "name": "La Crêperie Saint Germain",
+    "amenity": "restaurant",
+    "addr:housenumber": "280",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/6775859228",
+   "lat": -37.814973,
+   "lng": 144.972392,
+   "tags": {
+    "name": "Ceccioni's",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/6775859229",
+   "lat": -37.81485,
+   "lng": 144.973054,
+   "tags": {
+    "name": "Cumulus Up",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6775864588",
+   "lat": -37.820675,
+   "lng": 144.963679,
+   "tags": {
+    "name": "Ludlow Bar and Dining Room",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/679022238",
+   "lat": -37.81843,
+   "lng": 144.968386,
+   "tags": {
+    "name": "Taxi Dining Room",
+    "amenity": "restaurant",
+    "website": "https://www.transporthotel.com.au/",
+    "wikidata": "Q7689616",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6800617681",
+   "lat": -37.814987,
+   "lng": 144.96404,
+   "tags": {
+    "name": "Gourmet Curry Hut",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/6800693288",
+   "lat": -37.815438,
+   "lng": 144.963142,
+   "tags": {
+    "name": "Sulwha",
+    "amenity": "restaurant",
+    "cuisine": "asian;dessert"
+   }
+  },
+  {
+   "id": "node/6800693299",
+   "lat": -37.815669,
+   "lng": 144.961825,
+   "tags": {
+    "name": "Greenstreat",
+    "amenity": "restaurant",
+    "cuisine": "salad",
+    "website": "https://www.greenstreat.com.au/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6847250585",
+   "lat": -37.81217,
+   "lng": 144.972322,
+   "tags": {
+    "name": "Pizza Pizza Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/6907081037",
+   "lat": -37.811291,
+   "lng": 144.958618,
+   "tags": {
+    "name": "Izakaya Minami",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6952842385",
+   "lat": -37.811955,
+   "lng": 144.96699,
+   "tags": {
+    "name": "Juicy Bao",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6968082585",
+   "lat": -37.812503,
+   "lng": 144.967363,
+   "tags": {
+    "name": "Shan Dong MaMa",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "200",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/7001120285",
+   "lat": -37.815578,
+   "lng": 144.962717,
+   "tags": {
+    "name": "Da Guido 365",
+    "amenity": "restaurant",
+    "cuisine": "italian_pizza;pizza;pasta",
+    "website": "https://www.daguido365.com.au/",
+    "addr:housenumber": "365",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/704113776",
+   "lat": -37.81286,
+   "lng": 144.968514,
+   "tags": {
+    "name": "Nana Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "addr:housenumber": "169",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/706906596",
+   "lat": -37.812701,
+   "lng": 144.972631,
+   "tags": {
+    "name": "Sheraton Melbourne Hotel",
+    "tourism": "hotel",
+    "website": "http://www.sheratonmelbourne.com",
+    "addr:housenumber": "27",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/711752038",
+   "lat": -37.811355,
+   "lng": 144.958834,
+   "tags": {
+    "name": "Quanjude Chinese Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.quanjude.com.au/",
+    "addr:housenumber": "299",
+    "addr:street": "Queen Street"
+   }
+  },
+  {
+   "id": "node/7167092345",
+   "lat": -37.81543,
+   "lng": 144.969839,
+   "tags": {
+    "name": "Goodlife Naturopathy",
+    "amenity": "restaurant",
+    "website": "http://www.goodlifenaturopathy.com/",
+    "addr:housenumber": "123",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/7213621995",
+   "lat": -37.811314,
+   "lng": 144.9726,
+   "tags": {
+    "name": "Butchers Diner",
+    "amenity": "restaurant",
+    "addr:housenumber": "10",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/7236241085",
+   "lat": -37.816117,
+   "lng": 144.970061,
+   "tags": {
+    "name": "Lucy Liu",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7263856217",
+   "lat": -37.818114,
+   "lng": 144.969268,
+   "tags": {
+    "name": "Mabu Mabu Big Esso",
+    "amenity": "restaurant",
+    "website": "https://www.mabumabu.com.au/",
+    "opening_hours": "Tu-Th 11:00-22:00; Fr-Su 11:00+; Mo closed"
+   }
+  },
+  {
+   "id": "node/726966333",
+   "lat": -37.809801,
+   "lng": 144.971353,
+   "tags": {
+    "name": "Oaks On Lonsdale",
+    "tourism": "hotel",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/726966501",
+   "lat": -37.809919,
+   "lng": 144.970875,
+   "tags": {
+    "name": "Comfort Apartments Melbourne Central",
+    "tourism": "hotel",
+    "website": "https://www.choicehotels.com/en-au/victoria/melbourne/comfort-inn-hotels/au971",
+    "addr:housenumber": "43",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/726967671",
+   "lat": -37.810606,
+   "lng": 144.96964,
+   "tags": {
+    "name": "Dumpling Sisters",
+    "amenity": "restaurant",
+    "addr:housenumber": "229",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/726967743",
+   "lat": -37.81069,
+   "lng": 144.969675,
+   "tags": {
+    "name": "Yamato 2",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "223",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/7708965507",
+   "lat": -37.810647,
+   "lng": 144.965979,
+   "tags": {
+    "name": "Top Pan",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/773059233",
+   "lat": -37.81181,
+   "lng": 144.969767,
+   "tags": {
+    "name": "The Paramount Serviced Apartments Melbourne",
+    "tourism": "hotel",
+    "website": "http://www.theparamount.com.au/",
+    "addr:housenumber": "108",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/799099786",
+   "lat": -37.81276,
+   "lng": 144.969363,
+   "tags": {
+    "name": "Citadines Melbourne on Bourke",
+    "tourism": "hotel",
+    "website": "http://www.citadines.com/",
+    "opening_hours": "24/7",
+    "addr:housenumber": "131-135",
+    "addr:street": "Bourke Street"
+   }
+  },
+  {
+   "id": "node/803090156",
+   "lat": -37.813918,
+   "lng": 144.968913,
+   "tags": {
+    "name": "Roma Ristorante",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://romamelbourne.com.au/",
+    "addr:housenumber": "120",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/803092876",
+   "lat": -37.813787,
+   "lng": 144.970507,
+   "tags": {
+    "name": "The Meat & Wine Co",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://themeatandwineco.com/",
+    "addr:housenumber": "86A",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/812694549",
+   "lat": -37.814737,
+   "lng": 144.970077,
+   "tags": {
+    "name": "Fifteen Melbourne",
+    "amenity": "restaurant",
+    "website": "http://www.fifteenmelbourne.com.au/",
+    "wikidata": "Q5447423"
+   }
+  },
+  {
+   "id": "node/812694552",
+   "lat": -37.814897,
+   "lng": 144.970329,
+   "tags": {
+    "name": "Il Solito Posto",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.ilsolitoposto.com.au/",
+    "addr:housenumber": "113",
+    "addr:street": "Collins Street"
+   }
+  },
+  {
+   "id": "node/8221440821",
+   "lat": -37.811639,
+   "lng": 144.967015,
+   "tags": {
+    "name": "New Kum Den Restaurant",
+    "name:en": "New Kum Den Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8221441120",
+   "lat": -37.816158,
+   "lng": 144.968293,
+   "tags": {
+    "name": "Om Nom Kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8221441121",
+   "lat": -37.812305,
+   "lng": 144.964846,
+   "tags": {
+    "name": "Dodee Paidang",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.dodeepaidang.com/",
+    "addr:housenumber": "255",
+    "addr:street": "Swanston Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/836016884",
+   "lat": -37.810942,
+   "lng": 144.971174,
+   "tags": {
+    "name": "Bamboo House",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.bamboohouse.com.au/",
+    "addr:housenumber": "47",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/836036540",
+   "lat": -37.811201,
+   "lng": 144.970681,
+   "tags": {
+    "name": "Rydges Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.rydges.com/hotel/RVMELB/Rydges-Melbourne.htm",
+    "addr:housenumber": "186",
+    "addr:street": "Exhibition Street",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/836036541",
+   "lat": -37.811036,
+   "lng": 144.971142,
+   "tags": {
+    "name": "Crossley Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "51",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/836036542",
+   "lat": -37.811108,
+   "lng": 144.97052,
+   "tags": {
+    "name": "Bossley",
+    "amenity": "restaurant",
+    "addr:housenumber": "186",
+    "addr:street": "Exhibition Street"
+   }
+  },
+  {
+   "id": "node/836036965",
+   "lat": -37.810713,
+   "lng": 144.971017,
+   "tags": {
+    "name": "Shark Fin Inn",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.sharkfin.com.au/",
+    "opening_hours": "Mo-Su 11:00-15:00,17:30-22:00",
+    "addr:housenumber": "50",
+    "addr:street": "Little Bourke Street"
+   }
+  },
+  {
+   "id": "node/836038832",
+   "lat": -37.810883,
+   "lng": 144.971349,
+   "tags": {
+    "name": "Punch Lane Wine Bar",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Fr 12:00-23:00+; Sa,Su 15:00-23:00+",
+    "addr:housenumber": "43",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/836038833",
+   "lat": -37.810623,
+   "lng": 144.971212,
+   "tags": {
+    "name": "Longrain",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.longrain.com/",
+    "addr:housenumber": "44",
+    "addr:street": "Little Bouke Street"
+   }
+  },
+  {
+   "id": "node/844369563",
+   "lat": -37.810871,
+   "lng": 144.967701,
+   "tags": {
+    "name": "Izakaya Chuji",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "165",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/844369565",
+   "lat": -37.810725,
+   "lng": 144.968421,
+   "tags": {
+    "name": "Hotel Grand Chancellor Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.grandchancellorhotels.com/melbourne",
+    "addr:housenumber": "131",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/844369566",
+   "lat": -37.810809,
+   "lng": 144.96799,
+   "tags": {
+    "name": "Dragon Boat Palace",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://www.dragonboat.com.au/",
+    "addr:housenumber": "149",
+    "addr:street": "Lonsdale Street"
+   }
+  },
+  {
+   "id": "node/844369567",
+   "lat": -37.811306,
+   "lng": 144.967858,
+   "tags": {
+    "name": "Mantra on Russell",
+    "tourism": "hotel",
+    "website": "https://www.mantra.com.au/Russell",
+    "addr:housenumber": "222",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/844667457",
+   "lat": -37.811039,
+   "lng": 144.967527,
+   "tags": {
+    "name": "Seoul House",
+    "amenity": "restaurant",
+    "cuisine": "korean",
+    "addr:housenumber": "234",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/844667461",
+   "lat": -37.810999,
+   "lng": 144.967506,
+   "tags": {
+    "name": "Pho Dzung",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "234B",
+    "addr:street": "Russell Street"
+   }
+  },
+  {
+   "id": "node/844679154",
+   "lat": -37.811313,
+   "lng": 144.968282,
+   "tags": {
+    "name": "Singapore Chicken Rice",
+    "amenity": "restaurant",
+    "cuisine": "Singaporean",
+    "addr:housenumber": "7-9",
+    "addr:street": "Corrs Lane",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/844679159",
+   "lat": -37.811598,
+   "lng": 144.968128,
+   "tags": {
+    "name": "Ishiya Japanese Stonegrill",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://ishiyastonegrill.com.au/",
+    "addr:housenumber": "152",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/844679169",
+   "lat": -37.811522,
+   "lng": 144.968325,
+   "tags": {
+    "name": "Shanghai Street Xiaolongbao And Dumpling",
+    "amenity": "restaurant",
+    "cuisine": "dumplings",
+    "opening_hours": "Mo-Su 12:00-15:00, 16:30-21:00",
+    "addr:housenumber": "146-148",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/8624899328",
+   "lat": -37.812185,
+   "lng": 144.964791,
+   "tags": {
+    "name": "Dragon Hot Pot",
+    "amenity": "restaurant",
+    "cuisine": "chinese;hotpot",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "addr:housenumber": "251",
+    "addr:street": "Swanston Street",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8911143013",
+   "lat": -37.810498,
+   "lng": 144.966219,
+   "tags": {
+    "name": "Meet Fresh",
+    "amenity": "restaurant",
+    "cuisine": "taiwanese",
+    "opening_hours": "Mo-Su 11:00-23:59",
+    "addr:housenumber": "24",
+    "addr:street": "Artemis Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/8911145480",
+   "lat": -37.810524,
+   "lng": 144.966126,
+   "tags": {
+    "name": "Sura Korean BBQ",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th,Su 12:00-22:00; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "26",
+    "addr:street": "Artemis Lane",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/8911149940",
+   "lat": -37.810459,
+   "lng": 144.966341,
+   "tags": {
+    "name": "Ippudo",
+    "name:en": "Ippudo",
+    "amenity": "restaurant",
+    "cuisine": "ramen",
+    "opening_hours": "Mo-Su 12:00-14:30,17:00-20:00",
+    "addr:housenumber": "18-22",
+    "addr:street": "Artemis Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9294848074",
+   "lat": -37.818194,
+   "lng": 144.960261,
+   "tags": {
+    "name": "W Melbourne",
+    "tourism": "hotel",
+    "addr:housenumber": "408",
+    "addr:street": "Flinders Lane",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9298174572",
+   "lat": -37.817852,
+   "lng": 144.965033,
+   "tags": {
+    "name": "Foodao",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/9301704740",
+   "lat": -37.82105,
+   "lng": 144.963798,
+   "tags": {
+    "name": "D.O.C PIZZA & MOZZARELLA BAR",
+    "amenity": "restaurant",
+    "cuisine": "pizza;mozzarella",
+    "website": "https://docgroup.net/",
+    "addr:housenumber": "6",
+    "addr:street": "Riverside Quay",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "node/9382944117",
+   "lat": -37.812119,
+   "lng": 144.966926,
+   "tags": {
+    "name": "West Lake Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "189",
+    "addr:street": "Little Bourke Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9632353823",
+   "lat": -37.817176,
+   "lng": 144.957258,
+   "tags": {
+    "name": "Henry and the Fox",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/968356711",
+   "lat": -37.808018,
+   "lng": 144.961751,
+   "tags": {
+    "name": "Bali Bagus",
+    "amenity": "restaurant",
+    "cuisine": "indonesian"
+   }
+  },
+  {
+   "id": "node/968356998",
+   "lat": -37.807998,
+   "lng": 144.961883,
+   "tags": {
+    "name": "No.1 Delicious",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "83",
+    "addr:street": "Franklin Street"
+   }
+  },
+  {
+   "id": "node/9748242971",
+   "lat": -37.815538,
+   "lng": 144.962986,
+   "tags": {
+    "name": "Sambar",
+    "amenity": "restaurant",
+    "cuisine": "brazilian",
+    "website": "https://bcosbrazilrestaurant.com.au/",
+    "addr:housenumber": "353",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "node/9748242972",
+   "lat": -37.815769,
+   "lng": 144.96312,
+   "tags": {
+    "name": "Dodee Paidang",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.dodeepaidang.com/",
+    "opening_hours": "Mo-Th 12:00-15:00,17:00-22:00; Fr 12:00-15:00,17:00-23:00; Sa 12:00-23:00; Su 12:00-22:00",
+    "addr:housenumber": "353",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "node/9748242973",
+   "lat": -37.815825,
+   "lng": 144.963244,
+   "tags": {
+    "name": "Decennium",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9839739717",
+   "lat": -37.809281,
+   "lng": 144.962514,
+   "tags": {
+    "name": "Yoo-dle",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "opening_hours": "12:00-21:30",
+    "addr:housenumber": "36",
+    "addr:street": "Little La Trobe Street"
+   }
+  },
+  {
+   "id": "node/9845967017",
+   "lat": -37.811782,
+   "lng": 144.96517,
+   "tags": {
+    "name": "Gong De Lin",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "node/9854205722",
+   "lat": -37.81819,
+   "lng": 144.964361,
+   "tags": {
+    "name": "Old Durbar",
+    "amenity": "restaurant",
+    "cuisine": "nepalese",
+    "website": "https://old-durbar.com.au/locations/flinders-restaurant/",
+    "opening_hours": "Mo-Th 11:30-22:30; Fr-Su 12:00-22:30",
+    "addr:housenumber": "294",
+    "addr:street": "Flinders Street",
+    "addr:postcode": "3000",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9858417571",
+   "lat": -37.814081,
+   "lng": 144.961353,
+   "tags": {
+    "name": "Lulu's Char Koay Tiao",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9886890117",
+   "lat": -37.811521,
+   "lng": 144.961687,
+   "tags": {
+    "name": "Shanghai Street",
+    "amenity": "restaurant",
+    "cuisine": "dumplings;chinese"
+   }
+  },
+  {
+   "id": "node/9896522061",
+   "lat": -37.815128,
+   "lng": 144.962996,
+   "tags": {
+    "name": "Hoi An",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese"
+   }
+  },
+  {
+   "id": "node/9896522064",
+   "lat": -37.815108,
+   "lng": 144.962961,
+   "tags": {
+    "name": "Thailander",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/9896539165",
+   "lat": -37.815223,
+   "lng": 144.963144,
+   "tags": {
+    "name": "Menya",
+    "amenity": "restaurant",
+    "cuisine": "noodle"
+   }
+  },
+  {
+   "id": "node/9896543417",
+   "lat": -37.815171,
+   "lng": 144.963007,
+   "tags": {
+    "name": "Shanghai Master",
+    "amenity": "restaurant",
+    "cuisine": "chinese"
+   }
+  },
+  {
+   "id": "node/9898727372",
+   "lat": -37.816742,
+   "lng": 144.966911,
+   "tags": {
+    "name": "Sushi Hub",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/9930910663",
+   "lat": -37.80744,
+   "lng": 144.963852,
+   "tags": {
+    "name": "Canto",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "414-418",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/9930942093",
+   "lat": -37.807489,
+   "lng": 144.96368,
+   "tags": {
+    "name": "Kaki Lima",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "https://kakilima.com.au/",
+    "opening_hours": "Mo-Fr 11:00-20:00; Sa-Su closed; PH closed",
+    "addr:housenumber": "414-418",
+    "addr:street": "Swanston Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/16313597",
+   "lat": -37.811421,
+   "lng": 144.976491,
+   "tags": {
+    "name": "Park Hyatt",
+    "tourism": "hotel",
+    "website": "https://www.melbourne.park.hyatt.com/"
+   }
+  },
+  {
+   "id": "relation/5964355",
+   "lat": -37.813623,
+   "lng": 144.969923,
+   "tags": {
+    "name": "Stamford Plaza Hotel",
+    "tourism": "hotel",
+    "website": "https://www.stamford.com.au/spm",
+    "addr:housenumber": "111",
+    "addr:street": "Little Collins Street"
+   }
+  },
+  {
+   "id": "way/11914778",
+   "lat": -37.820576,
+   "lng": 144.965711,
+   "tags": {
+    "name": "The Langham",
+    "tourism": "hotel",
+    "website": "https://www.langhamhotels.com/en/the-langham/melbourne/",
+    "wikidata": "Q7745448",
+    "addr:housenumber": "1",
+    "addr:street": "Southgate Avenue"
+   }
+  },
+  {
+   "id": "way/139193205",
+   "lat": -37.81778,
+   "lng": 144.960837,
+   "tags": {
+    "name": "Oaks on Market",
+    "tourism": "hotel",
+    "website": "http://www.oakshotelsresorts.com/oaks-on-market",
+    "addr:housenumber": "60",
+    "addr:street": "Market Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/225419339",
+   "lat": -37.810751,
+   "lng": 144.971998,
+   "tags": {
+    "name": "Hotel Ovolo",
+    "tourism": "hotel",
+    "website": "https://ovolohotels.com/hotels/19LBS/en/",
+    "addr:housenumber": "19",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/22931113",
+   "lat": -37.815129,
+   "lng": 144.969878,
+   "tags": {
+    "name": "Grand Hyatt Melbourne",
+    "tourism": "hotel",
+    "website": "https://melbourne.grand.hyatt.com",
+    "addr:housenumber": "123",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/245936248",
+   "lat": -37.809992,
+   "lng": 144.957489,
+   "tags": {
+    "name": "Nomads Melbourne",
+    "tourism": "hostel",
+    "addr:housenumber": "198",
+    "addr:street": "A'Beckett Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/26564428",
+   "lat": -37.806493,
+   "lng": 144.964171,
+   "tags": {
+    "name": "Panda Hotpot Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://pandahotpot.com.au/",
+    "addr:postcode": "3053"
+   }
+  },
+  {
+   "id": "way/272740130",
+   "lat": -37.820444,
+   "lng": 144.967064,
+   "tags": {
+    "name": "Quay West Suites",
+    "tourism": "hotel",
+    "website": "https://www.quaywestsuitesmelbourne.com.au/",
+    "addr:housenumber": "26",
+    "addr:street": "Southgate Avenue",
+    "addr:postcode": "3006"
+   }
+  },
+  {
+   "id": "way/306595149",
+   "lat": -37.812868,
+   "lng": 144.968841,
+   "tags": {
+    "name": "Melbourne CBD Central Apartment Hotel",
+    "tourism": "hotel",
+    "stars": "4",
+    "website": "https://www.melbournecbdcentral.com.au/",
+    "opening_hours": "Mo-Fr 07:30-19:30; Sa 08:00-16:00; Su 08:00-15:00",
+    "addr:housenumber": "155",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/306604273",
+   "lat": -37.806264,
+   "lng": 144.96542,
+   "tags": {
+    "name": "UniLodge on Campus",
+    "tourism": "hostel",
+    "website": "https://www.unilodge.com.au/student-accommodation-melbourne/on-campus",
+    "addr:housenumber": "9",
+    "addr:street": "Earl Street",
+    "addr:postcode": "3053"
+   }
+  },
+  {
+   "id": "way/32943319",
+   "lat": -37.811987,
+   "lng": 144.972932,
+   "tags": {
+    "name": "Windsor Hotel",
+    "tourism": "hotel",
+    "website": "https://www.thehotelwindsor.com.au/",
+    "wikidata": "Q12060553",
+    "addr:housenumber": "103-137",
+    "addr:street": "Spring Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/33841339",
+   "lat": -37.821323,
+   "lng": 144.965234,
+   "tags": {
+    "name": "Mercure",
+    "tourism": "hotel",
+    "addr:housenumber": "9",
+    "addr:street": "Riverside Quay",
+    "addr:postcode": "3006",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/427982471",
+   "lat": -37.814865,
+   "lng": 144.959605,
+   "tags": {
+    "name": "Hilton Melbourne Little Queen Street",
+    "tourism": "hotel",
+    "stars": "5",
+    "website": "https://www.hilton.com/en/hotels/melamhi-hilton-melbourne-little-queen-street/",
+    "addr:housenumber": "18",
+    "addr:street": "Little Queen Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/46203397",
+   "lat": -37.811166,
+   "lng": 144.972164,
+   "tags": {
+    "name": "Le Méridien Melbourne",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/melmd-le-meridien-melbourne/overview/",
+    "addr:housenumber": "20-30",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/46817475",
+   "lat": -37.814409,
+   "lng": 144.9672,
+   "tags": {
+    "name": "The Victoria Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "215",
+    "addr:street": "Little Collins Street",
+    "addr:postcode": "3000"
+   }
+  },
+  {
+   "id": "way/47121172",
+   "lat": -37.811777,
+   "lng": 144.967344,
+   "tags": {
+    "name": "Exford Hotel",
+    "tourism": "hostel",
+    "amenity": "pub",
+    "website": "https://www.exfordhotel.com.au/",
+    "wikidata": "Q111117587",
+    "addr:housenumber": "199",
+    "addr:street": "Russell Street",
+    "addr:postcode": "3000",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/518551120",
+   "lat": -37.82241,
+   "lng": 144.968271,
+   "tags": {
+    "name": "NGV Garden Restaurant",
+    "amenity": "restaurant",
+    "website": "https://www.ngv.vic.gov.au/plan-your-visit/dining/"
+   }
+  },
+  {
+   "id": "way/69965670",
+   "lat": -37.810491,
+   "lng": 144.971494,
+   "tags": {
+    "name": "Gordon House Apartments",
+    "tourism": "hotel",
+    "website": "https://gordonhouseapartments.com.au/",
+    "addr:housenumber": "24",
+    "addr:street": "Little Bourke Street",
+    "addr:postcode": "3000"
+   }
+  }
+ ]
+}

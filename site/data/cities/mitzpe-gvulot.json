@@ -1,0 +1,500 @@
+{
+ "v": 1,
+ "city": {
+  "id": "mitzpe-gvulot",
+  "name": "Mitzpe Gvulot",
+  "country": "IL",
+  "lat": 31.2111,
+  "lng": 34.4652,
+  "timezone": "Asia/Jerusalem"
+ },
+ "places": [
+  {
+   "id": "osm:node/4401707000",
+   "name": "תל שרוחן",
+   "nameEn": "Tel Sharuhen",
+   "kind": "viewpoint",
+   "lat": 31.281965,
+   "lng": 34.48266,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1548392",
+   "wikipedia": null,
+   "description": "archaeological site in Southern District, Israel",
+   "image": "Tell el-Farah South.jpg",
+   "notability": 15,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4859984848",
+   "name": "באר שמע",
+   "nameEn": "Be'er Shama",
+   "kind": "landmark",
+   "lat": 31.257319,
+   "lng": 34.544369,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6980263",
+   "wikipedia": null,
+   "description": "archaeological site in Negev, Israel",
+   "image": "Flickr - Government Press Office (GPO) - Be'er Shama Mosaic.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/204719210",
+   "name": "הגשר התלוי מעל נחל הבשור",
+   "nameEn": "Suspension bridge",
+   "kind": "attraction",
+   "lat": 31.220911,
+   "lng": 34.522674,
+   "address": null,
+   "website": null,
+   "wikidata": "Q102309301",
+   "wikipedia": "he:הגשר התלוי מעל נחל הבשור",
+   "description": "archaeological site in Israel",
+   "image": "הגשר התלוי מעל נחל הבשור.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4859970825",
+   "name": "מצפה גבולות",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 31.205121,
+   "lng": 34.455433,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16340855",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/8446793996",
+   "name": "Gvulot reception",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.210272,
+   "lng": 34.464953,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 95,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/11010437806",
+   "name": "بيت ابو خالد مهنا",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.373963,
+   "lng": 34.353218,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21004,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/11225202237",
+   "name": "منزل/احمد العبادلة",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.342046,
+   "lng": 34.303052,
+   "address": "شارع جمال عبد الناصر",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21201,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/11271915069",
+   "name": "منزل السيد .ابو احمد شبير",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.350332,
+   "lng": 34.3068,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21593,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/9863444121",
+   "name": "زبونة طرف الغرباوي",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.340559,
+   "lng": 34.294115,
+   "address": "شارع جمال عبد الناصر",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21716,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6085673385",
+   "name": "منزل محمد فارس",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.340778,
+   "lng": 34.293087,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21805,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/9782081017",
+   "name": "ابو طارق الديري",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.333457,
+   "lng": 34.284987,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21874,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6087404885",
+   "name": "منزل السيد عبد الرحيم الحلاق",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.344755,
+   "lng": 34.294142,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 22026,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/8446781385",
+   "name": "Pub Gvulot",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "burger"
+   ],
+   "lat": 31.210885,
+   "lng": 34.467116,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 184,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/8446781384",
+   "name": "Dining Room",
+   "nameEn": "Daining Room",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.210591,
+   "lng": 34.465739,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 76,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/5008572621",
+   "name": "مشاوي البابا",
+   "nameEn": "Albaba resturant",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "barbecue",
+    "grill"
+   ],
+   "lat": 31.346664,
+   "lng": 34.30205,
+   "address": "AlSeqaly St.",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Sa-Th 09:00-22:00; Fr 09:00-15:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 21624,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5008572421",
+   "name": "توب 5",
+   "nameEn": "Top 5",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "steak_house",
+    "burger",
+    "sandwich",
+    "chicken",
+    "curry",
+    "friture"
+   ],
+   "lat": 31.346714,
+   "lng": 34.301962,
+   "address": "AlSeqaly St.",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Sa-Th 09:55-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "09:55",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 21634,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/8096493818",
+   "name": "مطعم ابو خديجه",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.344016,
+   "lng": 34.306304,
+   "address": "شارع السنية",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-Su 09:00-16:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 21130,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/305244899",
+   "name": "مطعم السنابل",
+   "nameEn": "Al-Sanabel",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 31.343457,
+   "lng": 34.305282,
+   "address": "شارع السنية",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 21156,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/306012004",
+   "name": "AlMasry For Shawerma",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 31.344027,
+   "lng": 34.303223,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21341,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/302806808",
+   "name": "Amasy Resturant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 31.346298,
+   "lng": 34.30416,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 21453,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [],
+ "guide": {
+  "page": "Beer Sheva",
+  "url": "https://en.wikivoyage.org/wiki/Beer_Sheva"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T18:30:36Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T18:31:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:50:41Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:13:51Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

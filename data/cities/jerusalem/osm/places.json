@@ -1,0 +1,2135 @@
+{
+ "places": [
+  {
+   "id": "node/10018108615",
+   "lat": 31.762595,
+   "lng": 35.15789,
+   "tags": {
+    "name": "תצפית מנזר רוסי",
+    "name:en": "Moscovia Monastery Lookout",
+    "tourism": "viewpoint",
+    "wikipedia": "he:מנזר גורני"
+   }
+  },
+  {
+   "id": "node/10763200103",
+   "lat": 31.781774,
+   "lng": 35.205578,
+   "tags": {
+    "name": "אנדרטת נר הזיכרון",
+    "historic": "memorial",
+    "wikidata": "Q74804927",
+    "wikipedia": "he:אנדרטת נר הזיכרון (ירושלים)"
+   }
+  },
+  {
+   "id": "node/10804880205",
+   "lat": 31.790013,
+   "lng": 35.2439,
+   "tags": {
+    "name": "מצפה המשואות",
+    "name:en": "Masuot viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11500463669",
+   "lat": 31.784059,
+   "lng": 35.219879,
+   "tags": {
+    "name": "חצר בנימין",
+    "tourism": "attraction",
+    "historic": "building",
+    "wikidata": "Q16629714",
+    "wikipedia": "he:חצר בנימין בירושלים"
+   }
+  },
+  {
+   "id": "node/11942275507",
+   "lat": 31.788025,
+   "lng": 35.226485,
+   "tags": {
+    "name": "מעבר מנדלבאום",
+    "historic": "memorial",
+    "wikidata": "Q731063",
+    "wikipedia": "he:שער מנדלבאום"
+   }
+  },
+  {
+   "id": "node/12094807006",
+   "lat": 31.781478,
+   "lng": 35.222393,
+   "tags": {
+    "name": "אצבע עוג מלך הבשן",
+    "name:en": "Finger of Og",
+    "historic": "archaeological_site",
+    "wikidata": "Q5450236"
+   }
+  },
+  {
+   "id": "node/12805705801",
+   "lat": 31.779043,
+   "lng": 35.247667,
+   "tags": {
+    "name": "برج الكنيسة الروسية البيضاء",
+    "name:en": "Tower of the White Russian Church",
+    "tourism": "viewpoint",
+    "wikipedia": "he:כנסיית העלייה הרוסית"
+   }
+  },
+  {
+   "id": "node/12899629001",
+   "lat": 31.776933,
+   "lng": 35.230797,
+   "tags": {
+    "name": "Rooftop Viewpoint from Center of Old City",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/12905971301",
+   "lat": 31.753373,
+   "lng": 35.239965,
+   "tags": {
+    "name": "Viewpoint of Temple Mount",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/12957201141",
+   "lat": 31.78025,
+   "lng": 35.215604,
+   "tags": {
+    "name": "Knesset Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/12977805158",
+   "lat": 31.78327,
+   "lng": 35.216265,
+   "tags": {
+    "name": "Agrippas 12 Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12977805159",
+   "lat": 31.783288,
+   "lng": 35.21623,
+   "tags": {
+    "name": "marie Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12979554722",
+   "lat": 31.786572,
+   "lng": 35.209907,
+   "tags": {
+    "name": "Beita",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13017153351",
+   "lat": 31.745535,
+   "lng": 35.175295,
+   "tags": {
+    "name": "למורים",
+    "name:en": "Lemurs",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/13197000137",
+   "lat": 31.774323,
+   "lng": 35.172724,
+   "tags": {
+    "name": "מצפור הפרטיזנים",
+    "name:en": "The Partisan's Panorama",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/13197000158",
+   "lat": 31.774746,
+   "lng": 35.17595,
+   "tags": {
+    "name": "יד לילד",
+    "name:en": "Children's Memorial",
+    "historic": "monument",
+    "wikidata": "Q1188026"
+   }
+  },
+  {
+   "id": "node/1320343347",
+   "lat": 31.747163,
+   "lng": 35.176898,
+   "tags": {
+    "name": "אי קופי העכביש",
+    "name:en": "Spider Monkey Island",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320353167",
+   "lat": 31.748341,
+   "lng": 35.175626,
+   "tags": {
+    "name": "אריות",
+    "name:en": "Lions",
+    "tourism": "zoo",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1320353168",
+   "lat": 31.746873,
+   "lng": 35.177299,
+   "tags": {
+    "name": "ביתן חיות קטנות",
+    "name:en": "Small Animal Building",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320353169",
+   "lat": 31.747621,
+   "lng": 35.177256,
+   "tags": {
+    "name": "פינגווינים",
+    "name:en": "Penguins",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320353171",
+   "lat": 31.748058,
+   "lng": 35.17716,
+   "tags": {
+    "name": "תוכים",
+    "name:en": "Parrots",
+    "tourism": "zoo",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1320353172",
+   "lat": 31.748795,
+   "lng": 35.176347,
+   "tags": {
+    "name": "צפריית עופות הביצה",
+    "name:en": "Marsh Aviary",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320353173",
+   "lat": 31.74886,
+   "lng": 35.175797,
+   "tags": {
+    "name": "דובים",
+    "name:en": "Bears",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378048",
+   "lat": 31.744906,
+   "lng": 35.16964,
+   "tags": {
+    "name": "ארץ חיות התנ\"ך",
+    "name:en": "Bible Land Wildlife Preserve",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378068",
+   "lat": 31.744279,
+   "lng": 35.173885,
+   "tags": {
+    "name": "החצר הדרום אמריקאית",
+    "name:en": "South American Yard",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378072",
+   "lat": 31.744361,
+   "lng": 35.175135,
+   "tags": {
+    "name": "החצר האוסטרלית",
+    "name:en": "Australian Yard",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378077",
+   "lat": 31.745212,
+   "lng": 35.17392,
+   "tags": {
+    "name": "צפרייה טרופית",
+    "name:en": "Tropical Aviary",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378080",
+   "lat": 31.745504,
+   "lng": 35.174596,
+   "tags": {
+    "name": "צפריית עופות דורסים",
+    "name:en": "Birds of Prey Aviary",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378081",
+   "lat": 31.745951,
+   "lng": 35.175046,
+   "tags": {
+    "name": "שימפנזים",
+    "name:en": "Chimpanzees",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378083",
+   "lat": 31.744847,
+   "lng": 35.171839,
+   "tags": {
+    "name": "פילים",
+    "name:en": "Elephants",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378088",
+   "lat": 31.744728,
+   "lng": 35.17289,
+   "tags": {
+    "name": "פילים",
+    "name:en": "Elephants",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378092",
+   "lat": 31.746581,
+   "lng": 35.175368,
+   "tags": {
+    "name": "מנדרילים",
+    "name:en": "Mandrills",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378143",
+   "lat": 31.74461,
+   "lng": 35.17067,
+   "tags": {
+    "name": "יער האיילים",
+    "name:en": "Deer Forest",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/1320378165",
+   "lat": 31.744332,
+   "lng": 35.170214,
+   "tags": {
+    "name": "החצר האפריקאית",
+    "name:en": "African Savannah",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/13890571744",
+   "lat": 31.749088,
+   "lng": 35.230266,
+   "tags": {
+    "name": "מצפה אריאל",
+    "name:en": "Mitzpe Ariel",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1390118219",
+   "lat": 31.783519,
+   "lng": 35.227071,
+   "tags": {
+    "name": "מצפור תומר",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/14085891302",
+   "lat": 31.773767,
+   "lng": 35.174664,
+   "tags": {
+    "name": "ספר שמות קרבנות השואה",
+    "name:en": "The book of names of holocaust victims",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/14107854676",
+   "lat": 31.755977,
+   "lng": 35.231377,
+   "tags": {
+    "name": "Mitspe Chativat Yerushalayim",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1704024840",
+   "lat": 31.780563,
+   "lng": 35.219778,
+   "tags": {
+    "name": "מוזיאון המוזיקה העברי",
+    "name:en": "Hebrew Music Museum",
+    "tourism": "museum",
+    "website": "https://hebrewmusicmuseum.com/",
+    "addr:housenumber": "10",
+    "addr:street": "יואל משה סלומון"
+   }
+  },
+  {
+   "id": "node/1708075358",
+   "lat": 31.783314,
+   "lng": 35.220382,
+   "tags": {
+    "name": "מוזיאון הרב קוק",
+    "name:en": "Ha'Rav Kook Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/1731465814",
+   "lat": 31.768604,
+   "lng": 35.213024,
+   "tags": {
+    "name": "מוזיאון לאומנות האיסלאם",
+    "name:en": "Museum for Islamic Art",
+    "tourism": "museum",
+    "opening_hours": "Su off; Mo-We 10:00-15:00; Th 10:00-19:00; Fr,Sa 10:00-14:00",
+    "website": "https://www.islamicart.co.il/",
+    "wikidata": "Q2356342",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2026382545",
+   "lat": 31.793227,
+   "lng": 35.244884,
+   "tags": {
+    "name": "קבר ניקנור",
+    "name:en": "The Nicanor Tomb",
+    "tourism": "attraction",
+    "historic": "tomb",
+    "wikidata": "Q491928",
+    "wikipedia": "he:מערת ניקנור"
+   }
+  },
+  {
+   "id": "node/2150429833",
+   "lat": 31.781257,
+   "lng": 35.256147,
+   "tags": {
+    "name": "Olive Palace",
+    "name:en": "Olive Palace",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/2150558656",
+   "lat": 31.789722,
+   "lng": 35.230873,
+   "tags": {
+    "name": "Palestinian Heritage Museum of Dar al-Tifel",
+    "name:en": "Palestinian Heritage Museum of Dar al-Tifel",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/2152447945",
+   "lat": 31.777939,
+   "lng": 35.230612,
+   "tags": {
+    "name": "Archäologischer Park „Durch die Zeiten“",
+    "tourism": "museum",
+    "historic": "archaeological_site",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2278149441",
+   "lat": 31.80015,
+   "lng": 35.233421,
+   "tags": {
+    "name": "The White Statue",
+    "name:en": "The White Statue",
+    "historic": "monument",
+    "wikidata": "Q97208564",
+    "wikipedia": "he:אמונה (פסל)"
+   }
+  },
+  {
+   "id": "node/2659255023",
+   "lat": 31.801133,
+   "lng": 35.221209,
+   "tags": {
+    "name": "מערת האשכולות",
+    "historic": "archaeological_site",
+    "wikidata": "Q85992313",
+    "wikipedia": "he:מערת האשכולות"
+   }
+  },
+  {
+   "id": "node/2696108582",
+   "lat": 31.775863,
+   "lng": 35.242825,
+   "tags": {
+    "name": "מצפור רחבעם",
+    "name:en": "Rehav'am Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2710817408",
+   "lat": 31.780256,
+   "lng": 35.233346,
+   "tags": {
+    "name": "قوس إيك هومو",
+    "name:en": "Ecce Homo Arch",
+    "historic": "city_gate",
+    "wikidata": "Q1280187",
+    "wikipedia": "en:Ecce Homo (church)",
+    "addr:street": "طريق الآلام"
+   }
+  },
+  {
+   "id": "node/2915690864",
+   "lat": 31.775433,
+   "lng": 35.235675,
+   "tags": {
+    "name": "שער החפירות",
+    "tourism": "viewpoint",
+    "historic": "city_gate"
+   }
+  },
+  {
+   "id": "node/2953455008",
+   "lat": 31.777272,
+   "lng": 35.234297,
+   "tags": {
+    "name": "باب السلسلة",
+    "name:en": "Chain Gate",
+    "historic": "archaeological_site",
+    "wikidata": "Q6866410"
+   }
+  },
+  {
+   "id": "node/29944308",
+   "lat": 31.774826,
+   "lng": 35.234173,
+   "tags": {
+    "name": "שער האשפות",
+    "name:en": "Dung Gate",
+    "tourism": "attraction",
+    "wikidata": "Q204719",
+    "wikipedia": "he:שער האשפות"
+   }
+  },
+  {
+   "id": "node/321745309",
+   "lat": 31.776413,
+   "lng": 35.233161,
+   "tags": {
+    "name": "Western Wall Observation Point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/3309212388",
+   "lat": 31.770401,
+   "lng": 35.235123,
+   "tags": {
+    "name": "ברכת השילוח",
+    "name:en": "HaShiliach Pool",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q1483483",
+    "wikipedia": "he:בריכת השילוח",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/343653197",
+   "lat": 31.771532,
+   "lng": 35.22421,
+   "tags": {
+    "name": "טחנת הרוח",
+    "name:en": "Montefiore Windmill",
+    "tourism": "attraction",
+    "historic": "building",
+    "building": "tower",
+    "wikidata": "Q2676363",
+    "wikipedia": "he:טחנת הרוח במשכנות שאננים"
+   }
+  },
+  {
+   "id": "node/3512867683",
+   "lat": 31.800008,
+   "lng": 35.218461,
+   "tags": {
+    "name": "קברי הסנהדרין",
+    "name:en": "Tombs of the Sanhedrin",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q3531182"
+   }
+  },
+  {
+   "id": "node/3546614425",
+   "lat": 31.792266,
+   "lng": 35.164214,
+   "tags": {
+    "name": "בית הכנסת העתיק במוצא",
+    "name:en": "The old synagogue in Motza",
+    "historic": "archaeological_site",
+    "wikidata": "Q7060446",
+    "wikipedia": "he:בית הכנסת העתיק מוצא"
+   }
+  },
+  {
+   "id": "node/3547357042",
+   "lat": 31.7811,
+   "lng": 35.205276,
+   "tags": {
+    "name": "גן חטיבת פלמ\"ח הראל",
+    "name:en": "Palmach Harel Division Garden",
+    "historic": "monument",
+    "wikidata": "Q6705958"
+   }
+  },
+  {
+   "id": "node/3650760871",
+   "lat": 31.745259,
+   "lng": 35.169879,
+   "tags": {
+    "name": "זאבים",
+    "name:en": "Wolves",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4111176290",
+   "lat": 31.804354,
+   "lng": 35.193691,
+   "tags": {
+    "name": "מצפה נפתוח",
+    "name:en": "Nefto'ach lookout",
+    "tourism": "viewpoint",
+    "wikidata": "Q12036868"
+   }
+  },
+  {
+   "id": "node/4351586552",
+   "lat": 31.780134,
+   "lng": 35.220184,
+   "tags": {
+    "name": "ידידי ישראל",
+    "name:en": "Friends of Zion Museum",
+    "tourism": "museum",
+    "website": "https://www.fozmuseum.com/",
+    "wikidata": "Q19569019"
+   }
+  },
+  {
+   "id": "node/4555203244",
+   "lat": 31.770149,
+   "lng": 35.230389,
+   "tags": {
+    "name": "Oskar Schindler",
+    "name:en": "Oskar Schindler",
+    "tourism": "attraction",
+    "historic": "tomb",
+    "wikidata": "Q60029",
+    "wikipedia": "en:Oskar Schindler"
+   }
+  },
+  {
+   "id": "node/4741210447",
+   "lat": 31.777646,
+   "lng": 35.23233,
+   "tags": {
+    "name": "سوق المدينة القديمة",
+    "name:en": "Old City Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/4927333692",
+   "lat": 31.749244,
+   "lng": 35.176473,
+   "tags": {
+    "name": "לוטרות",
+    "name:en": "Otters",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4927333693",
+   "lat": 31.748918,
+   "lng": 35.176538,
+   "tags": {
+    "name": "צבים",
+    "name:en": "Tortoises",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4927333695",
+   "lat": 31.749091,
+   "lng": 35.17686,
+   "tags": {
+    "name": "פנדות אדומות",
+    "name:en": "Red pandas",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4927334239",
+   "lat": 31.745188,
+   "lng": 35.175125,
+   "tags": {
+    "name": "גן חיות לילדים",
+    "name:en": "Children's zoo",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4927334252",
+   "lat": 31.746534,
+   "lng": 35.176157,
+   "tags": {
+    "name": "טיגריסים",
+    "name:en": "Tigers",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/4927334267",
+   "lat": 31.74795,
+   "lng": 35.175597,
+   "tags": {
+    "name": "נמרים",
+    "name:en": "Leopards",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "node/5003920348",
+   "lat": 31.772857,
+   "lng": 35.229638,
+   "tags": {
+    "name": "שער ציון",
+    "name:en": "Zion Gate",
+    "tourism": "attraction",
+    "wikidata": "Q205416",
+    "wikipedia": "he:שער ציון"
+   }
+  },
+  {
+   "id": "node/5292455321",
+   "lat": 31.716014,
+   "lng": 35.201842,
+   "tags": {
+    "name": "مخيم بيت جبرين للاجئين",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5477091205",
+   "lat": 31.773138,
+   "lng": 35.173175,
+   "tags": {
+    "name": "אנדרטת הקרון",
+    "name:en": "The Cattle Car - Memorial to the Deportees",
+    "historic": "memorial",
+    "wikidata": "Q6595874"
+   }
+  },
+  {
+   "id": "node/560074118",
+   "lat": 31.778008,
+   "lng": 35.220491,
+   "tags": {
+    "name": "Mamilla Pool",
+    "name:en": "Mamilla Pool",
+    "historic": "ruins",
+    "wikidata": "Q2905533",
+    "wikipedia": "en:Mamilla Pool"
+   }
+  },
+  {
+   "id": "node/560652021",
+   "lat": 31.780396,
+   "lng": 35.218598,
+   "tags": {
+    "name": "מוזיאון יהדות איטליה",
+    "name:en": "Museum of Italian Jewish Art",
+    "tourism": "museum",
+    "website": "http://www.ijamuseum.org",
+    "wikidata": "Q20501925"
+   }
+  },
+  {
+   "id": "node/560652053",
+   "lat": 31.769269,
+   "lng": 35.225438,
+   "tags": {
+    "name": "מרכז בגין",
+    "name:en": "Menachem Begin Heritage Center",
+    "tourism": "museum",
+    "website": "https://www.begincenter.org.il/",
+    "wikidata": "Q2902741",
+    "addr:housenumber": "6",
+    "addr:street": "נכון"
+   }
+  },
+  {
+   "id": "node/560713948",
+   "lat": 31.781451,
+   "lng": 35.219338,
+   "tags": {
+    "name": "גלריית ברבור",
+    "name:en": "Barbur Gallery",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/560716500",
+   "lat": 31.775029,
+   "lng": 35.2309,
+   "tags": {
+    "name": "Cardo",
+    "name:en": "Cardo",
+    "historic": "ruins",
+    "wikidata": "Q2665632",
+    "wikipedia": "he:הקארדו (ירושלים)"
+   }
+  },
+  {
+   "id": "node/561085431",
+   "lat": 31.779305,
+   "lng": 35.226189,
+   "tags": {
+    "name": "השער החדש",
+    "name:en": "New Gate",
+    "tourism": "attraction",
+    "historic": "city_gate",
+    "wikidata": "Q1256221",
+    "wikipedia": "he:השער החדש"
+   }
+  },
+  {
+   "id": "node/561090383",
+   "lat": 31.790043,
+   "lng": 35.247441,
+   "tags": {
+    "name": "תצפית יהודאי",
+    "name:en": "Yehuda Observation Point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/561134517",
+   "lat": 31.775593,
+   "lng": 35.232698,
+   "tags": {
+    "name": "מוזיאון הבית השרוף",
+    "name:en": "Burnt House",
+    "tourism": "museum",
+    "wikidata": "Q4854786",
+    "wikipedia": "en:Burnt House"
+   }
+  },
+  {
+   "id": "node/561157424",
+   "lat": 31.776628,
+   "lng": 35.227544,
+   "tags": {
+    "name": "שער יפו",
+    "name:en": "Jaffa Gate",
+    "historic": "city_gate",
+    "wikidata": "Q312812",
+    "wikipedia": "he:שער יפו"
+   }
+  },
+  {
+   "id": "node/561176253",
+   "lat": 31.786347,
+   "lng": 35.226854,
+   "tags": {
+    "name": "מוזיאון על התפר",
+    "name:en": "Museum on the Seam",
+    "tourism": "museum",
+    "website": "https://www.mots.org.il/",
+    "wikidata": "Q15551224"
+   }
+  },
+  {
+   "id": "node/561323050",
+   "lat": 31.743277,
+   "lng": 35.177723,
+   "tags": {
+    "name": "מוזיאון פעיל עין יעל",
+    "name:en": "Ein Yael",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/561370169",
+   "lat": 31.779946,
+   "lng": 35.214448,
+   "tags": {
+    "name": "Artist's House",
+    "name:en": "Artist's House",
+    "tourism": "museum",
+    "wikidata": "Q6185101"
+   }
+  },
+  {
+   "id": "node/6002018186",
+   "lat": 31.717861,
+   "lng": 35.20541,
+   "tags": {
+    "name": "متحف فلسطين للتاريخ الطبيعي",
+    "name:en": "Palestine Museum of Natural History",
+    "tourism": "museum",
+    "opening_hours": "24/7",
+    "website": "https://www.palestinenature.org",
+    "wikidata": "Q109803747",
+    "addr:street": "Caritas Street"
+   }
+  },
+  {
+   "id": "node/6383070787",
+   "lat": 31.718236,
+   "lng": 35.205468,
+   "tags": {
+    "name": "متحف فلسطين للتاريخ الطبيعي",
+    "name:en": "Palestine Museum of Natural History",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:00-16:00",
+    "website": "https://www.palestinenature.org/",
+    "addr:street": "Mar Andreas campus of Bethlehem University in Al-Karkafa (not the main campus of Bethlehem University)"
+   }
+  },
+  {
+   "id": "node/6406261262",
+   "lat": 31.774442,
+   "lng": 35.175829,
+   "tags": {
+    "name": "עמוד הגבורה",
+    "name:en": "Pillar of Heroism",
+    "historic": "monument",
+    "wikidata": "Q56696132"
+   }
+  },
+  {
+   "id": "node/6430910748",
+   "lat": 31.79881,
+   "lng": 35.240073,
+   "tags": {
+    "name": "Jerusalem Memorial",
+    "name:en": "Jerusalem Memorial",
+    "historic": "memorial",
+    "wikidata": "Q63341767"
+   }
+  },
+  {
+   "id": "node/695075889",
+   "lat": 31.798159,
+   "lng": 35.22784,
+   "tags": {
+    "name": "גבעת התחמושת",
+    "name:en": "Ammunition Hill Memorial",
+    "tourism": "attraction",
+    "historic": "monument",
+    "wikidata": "Q2336243",
+    "wikipedia": "he:הקרב על גבעת התחמושת"
+   }
+  },
+  {
+   "id": "node/6992252554",
+   "lat": 31.771085,
+   "lng": 35.231941,
+   "tags": {
+    "name": "Memorial of Father Joseph Germer-Durand (1845-1917)",
+    "name:en": "Memorial of Father Joseph Germer-Durand (1845-1917)",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/7056322958",
+   "lat": 31.773512,
+   "lng": 35.236008,
+   "tags": {
+    "name": "מצפור הקברים",
+    "name:en": "Ancient Tomb Lookout",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7056388960",
+   "lat": 31.771458,
+   "lng": 35.224232,
+   "tags": {
+    "name": "רחבת תצפית \"תקוותו של גי\"",
+    "name:en": "Observation Point \"Guy's Hope\"",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/712772918",
+   "lat": 31.778434,
+   "lng": 35.204974,
+   "tags": {
+    "name": "מנורת הכנסת",
+    "name:en": "Knesset Menorah",
+    "historic": "memorial",
+    "wikidata": "Q2908614",
+    "wikipedia": "en:Knesset Menorah"
+   }
+  },
+  {
+   "id": "node/712774626",
+   "lat": 31.78605,
+   "lng": 35.209147,
+   "tags": {
+    "name": "מוזיאון גוש קטיף",
+    "name:en": "Gush Katif Museum",
+    "tourism": "museum",
+    "opening_hours": "Su-Th 10:00-18:00; Fr 09:00-13:00",
+    "wikidata": "Q7035571",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7613330285",
+   "lat": 31.775202,
+   "lng": 35.232142,
+   "tags": {
+    "name": "הרובע ההרודיאני",
+    "tourism": "museum",
+    "wikidata": "Q12406905"
+   }
+  },
+  {
+   "id": "node/8244013111",
+   "lat": 31.796464,
+   "lng": 35.196311,
+   "tags": {
+    "name": "لفتا‎",
+    "name:en": "Lifta",
+    "historic": "ruins",
+    "wikidata": "Q2599091",
+    "wikipedia": "en:Lifta"
+   }
+  },
+  {
+   "id": "node/8455358918",
+   "lat": 31.768861,
+   "lng": 35.225369,
+   "tags": {
+    "name": "כתף הינום",
+    "name:en": "Ketef Hinnom",
+    "historic": "archaeological_site",
+    "wikidata": "Q2662246"
+   }
+  },
+  {
+   "id": "node/888324539",
+   "lat": 31.773152,
+   "lng": 35.213146,
+   "tags": {
+    "name": "קבר יאסון",
+    "name:en": "Jason's Tomb",
+    "tourism": "attraction",
+    "historic": "tomb",
+    "wikidata": "Q2906579",
+    "wikipedia": "he:קבר יאסון"
+   }
+  },
+  {
+   "id": "node/8949006918",
+   "lat": 31.776276,
+   "lng": 35.221604,
+   "tags": {
+    "name": "המרכז העולמי למורשת יהודי צפון אפריקה",
+    "name:en": "North Africa Jewish Heritage Center",
+    "tourism": "museum",
+    "amenity": "community_centre",
+    "historic": "heritage_site",
+    "building": "yes",
+    "website": "https://mjc-jerusalem.com/",
+    "wikidata": "Q7029507"
+   }
+  },
+  {
+   "id": "node/9121003017",
+   "lat": 31.807466,
+   "lng": 35.191231,
+   "tags": {
+    "name": "מצפה גלעד",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9349356519",
+   "lat": 31.77903,
+   "lng": 35.229703,
+   "tags": {
+    "name": "Elia Photo Service",
+    "tourism": "gallery",
+    "addr:housenumber": "14",
+    "addr:street": "Aqabat El-Khanqa",
+    "addr:postcode": "PO box 14150"
+   }
+  },
+  {
+   "id": "node/9351241949",
+   "lat": 31.775947,
+   "lng": 35.236581,
+   "tags": {
+    "name": "השער הכפול",
+    "name:en": "Hulda Triple Gate",
+    "historic": "archaeological_site",
+    "wikidata": "Q2920336",
+    "wikipedia": "en:Huldah Gates"
+   }
+  },
+  {
+   "id": "node/9351338558",
+   "lat": 31.780439,
+   "lng": 35.233618,
+   "tags": {
+    "name": "Lithostrotos",
+    "historic": "archaeological_site",
+    "wikidata": "Q591994",
+    "wikipedia": "en:Gabbatha",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/9351425861",
+   "lat": 31.77631,
+   "lng": 35.237099,
+   "tags": {
+    "name": "اسطبلات سليمان",
+    "name:en": "Solomon's Stables",
+    "historic": "archaeological_site",
+    "wikidata": "Q2657964",
+    "wikipedia": "en:Solomon's Stables"
+   }
+  },
+  {
+   "id": "node/9351437161",
+   "lat": 31.775823,
+   "lng": 35.234592,
+   "tags": {
+    "name": "קשת רובינסון",
+    "name:en": "Robinson's Arch",
+    "historic": "archaeological_site",
+    "wikidata": "Q2906823",
+    "wikipedia": "en:Robinson's Arch"
+   }
+  },
+  {
+   "id": "node/9351475060",
+   "lat": 31.777283,
+   "lng": 35.229928,
+   "tags": {
+    "name": "Tarrace view point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9351478033",
+   "lat": 31.775468,
+   "lng": 35.233407,
+   "tags": {
+    "name": "מצפה הכותל",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/9580458523",
+   "lat": 31.774359,
+   "lng": 35.178412,
+   "tags": {
+    "name": "אנדרטת נצר אחרון",
+    "historic": "memorial",
+    "wikidata": "Q6867602"
+   }
+  },
+  {
+   "id": "relation/136164",
+   "lat": 31.77607,
+   "lng": 35.228081,
+   "tags": {
+    "name": "מגדל דוד",
+    "name:en": "Tower of David",
+    "historic": "castle",
+    "building": "yes",
+    "opening_hours": "09:00-16:00; Fr 09:00-14:00",
+    "website": "https://tod.org.il/",
+    "wikidata": "Q1177765",
+    "addr:postcode": "9114001"
+   }
+  },
+  {
+   "id": "relation/13919893",
+   "lat": 31.7727,
+   "lng": 35.20648,
+   "tags": {
+    "name": "עמק המצלבה",
+    "name:en": "Valley of the Cross",
+    "leisure": "park",
+    "wikidata": "Q2903480"
+   }
+  },
+  {
+   "id": "relation/13926261",
+   "lat": 31.775245,
+   "lng": 35.179092,
+   "tags": {
+    "name": "חלקת גדולי האומה",
+    "leisure": "park",
+    "wikidata": "Q12407534"
+   }
+  },
+  {
+   "id": "relation/14378775",
+   "lat": 31.775198,
+   "lng": 35.226452,
+   "tags": {
+    "name": "פארק טדי",
+    "name:en": "Park Tedy",
+    "leisure": "park",
+    "wikidata": "Q16129536"
+   }
+  },
+  {
+   "id": "relation/3820186",
+   "lat": 31.775575,
+   "lng": 35.23578,
+   "tags": {
+    "name": "حديقة القدس الأثرية",
+    "name:en": "Jerusalem Archaeological Park",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "website": "http://www.archpark.org.il/visiting_info.asp?id=6",
+    "wikidata": "Q6605079"
+   }
+  },
+  {
+   "id": "relation/3862591",
+   "lat": 31.773273,
+   "lng": 35.229049,
+   "tags": {
+    "name": "էդուարդ և Հելեն Մարտիկյան թանգարան",
+    "name:en": "Mardigian Armenian Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q6588394",
+    "wikipedia": "he:המוזיאון הארמני"
+   }
+  },
+  {
+   "id": "relation/5582006",
+   "lat": 31.784342,
+   "lng": 35.235852,
+   "tags": {
+    "name": "מוזיאון רוקפלר",
+    "name:en": "Rockefeller Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo,We,Th,Su 10:00-15:00; Sa 10:00-14:00; Tu,Fr,PH -1 day off",
+    "wikidata": "Q1430185",
+    "addr:housenumber": "27",
+    "addr:street": "Sultan Suleiman"
+   }
+  },
+  {
+   "id": "relation/7890568",
+   "lat": 31.767694,
+   "lng": 35.216955,
+   "tags": {
+    "name": "בית הנסן",
+    "name:en": "Hansen House",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q12404507",
+    "wikipedia": "en:Hansen House (Jerusalem)",
+    "addr:housenumber": "14",
+    "addr:street": "גדליהו אלון"
+   }
+  },
+  {
+   "id": "way/1002265723",
+   "lat": 31.719349,
+   "lng": 35.20209,
+   "tags": {
+    "name": "قبر راحيل",
+    "name:en": "Rachel's Tomb",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "wikidata": "Q2424300",
+    "wikipedia": "ar:مسجد بلال (بيت لحم)"
+   }
+  },
+  {
+   "id": "way/1005788918",
+   "lat": 31.779129,
+   "lng": 35.220097,
+   "tags": {
+    "name": "מוזיאון הסובלנות",
+    "name:en": "Museum of Tolerance",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q5059675",
+    "addr:housenumber": "32",
+    "addr:street": "הלל",
+    "addr:postcode": "9458132"
+   }
+  },
+  {
+   "id": "way/1069489956",
+   "lat": 31.767258,
+   "lng": 35.217164,
+   "tags": {
+    "name": "מגדל אסתר",
+    "name:en": "Ester Tower",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q137528397",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/1078567519",
+   "lat": 31.784802,
+   "lng": 35.212475,
+   "tags": {
+    "name": "שוק מחנה יהודה",
+    "name:en": "Machane Yehuda Shuk",
+    "amenity": "marketplace",
+    "opening_hours": "Su-Th 08:00-19:00; Fr 08:00-15:00",
+    "website": "https://www.machne.co.il",
+    "wikidata": "Q2918531",
+    "wikipedia": "en:Mahane Yehuda Market"
+   }
+  },
+  {
+   "id": "way/126086870",
+   "lat": 31.777179,
+   "lng": 35.229017,
+   "tags": {
+    "name": "בריכת חזקיהו",
+    "name:en": "Hizkyahu’s Pool",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q5749987",
+    "wikipedia": "en:Hezekiah's Pool"
+   }
+  },
+  {
+   "id": "way/126864878",
+   "lat": 31.781473,
+   "lng": 35.235991,
+   "tags": {
+    "name": "בית חסדא",
+    "name:en": "Pool of Bethesda",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q831297",
+    "wikipedia": "en:Pool of Bethesda",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/136009915",
+   "lat": 31.773449,
+   "lng": 35.202968,
+   "tags": {
+    "name": "היכל הספר",
+    "name:en": "Shrine of the Book",
+    "tourism": "museum",
+    "website": "https://www.imj.org.il/en/wings/shrine-book",
+    "wikidata": "Q174527",
+    "wikipedia": "en:Shrine of the Book",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/147608624",
+   "lat": 31.775009,
+   "lng": 35.234503,
+   "tags": {
+    "name": "מרכז דוידסון",
+    "name:en": "Davidson Center",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/147608637",
+   "lat": 31.774443,
+   "lng": 35.235098,
+   "tags": {
+    "name": "חפירות גבעתי",
+    "name:en": "Givati Parking Lot dig",
+    "historic": "archaeological_site",
+    "website": "https://www.cityofdavid.org.il/archeology/excavations/חניון-גבעתי",
+    "wikidata": "Q5565595",
+    "wikipedia": "he:חניון גבעתי (עיר דוד)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/158651618",
+   "lat": 31.783507,
+   "lng": 35.219766,
+   "tags": {
+    "name": "בית טיכו",
+    "name:en": "Ticho House",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.imj.org.il/en/wings/arts/ticho-house/",
+    "wikidata": "Q2620198",
+    "wikipedia": "en:Ticho House",
+    "addr:housenumber": "9",
+    "addr:street": "הרב קוק"
+   }
+  },
+  {
+   "id": "way/161036238",
+   "lat": 31.768404,
+   "lng": 35.219492,
+   "tags": {
+    "name": "גן השושנים",
+    "name:en": "Gan HaShoshanim",
+    "leisure": "park",
+    "wikidata": "Q6695560"
+   }
+  },
+  {
+   "id": "way/183962525",
+   "lat": 31.748621,
+   "lng": 35.223849,
+   "tags": {
+    "name": "בית עגנון",
+    "name:en": "Agnon House",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://agnonhouse.org.il/",
+    "wikidata": "Q7063298",
+    "wikipedia": "he:בית עגנון"
+   }
+  },
+  {
+   "id": "way/195100862",
+   "lat": 31.775381,
+   "lng": 35.232321,
+   "tags": {
+    "name": "בית הכנסת תפארת ישראל",
+    "name:en": "Tiferet Yisrael Synagogue",
+    "amenity": "place_of_worship",
+    "historic": "ruins",
+    "building": "synagogue",
+    "wikidata": "Q966792",
+    "wikipedia": "en:Tiferet Yisrael Synagogue"
+   }
+  },
+  {
+   "id": "way/20216954",
+   "lat": 31.772019,
+   "lng": 35.208249,
+   "tags": {
+    "name": "Monastery of the Cross",
+    "name:en": "Monastery of the Cross",
+    "amenity": "place_of_worship",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q1787112",
+    "wikipedia": "en:Monastery of the Cross"
+   }
+  },
+  {
+   "id": "way/216674312",
+   "lat": 31.774905,
+   "lng": 35.202444,
+   "tags": {
+    "name": "ארצות המקרא",
+    "name:en": "Bible Lands Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 09:30-17:30; We 09:30-21:30; Fr,Sa 10:00-14:00",
+    "website": "https://www.blmj.org/",
+    "wikidata": "Q126130",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/216820829",
+   "lat": 31.778395,
+   "lng": 35.20037,
+   "tags": {
+    "name": "מוזיאון המדע ע\"ש ברנרד בלומפילד",
+    "name:en": "Bloomfield Science Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q15199784",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/244544996",
+   "lat": 31.772368,
+   "lng": 35.181526,
+   "tags": {
+    "name": "הר הרצל",
+    "name:en": "Mount Herzl",
+    "tourism": "museum",
+    "building": "museum",
+    "wikidata": "Q206161"
+   }
+  },
+  {
+   "id": "way/287464874",
+   "lat": 31.777983,
+   "lng": 35.220622,
+   "tags": {
+    "name": "בריכת ממילא",
+    "name:en": "Mamila Pool",
+    "historic": "archaeological_site",
+    "wikidata": "Q2905533",
+    "wikipedia": "en:Mamilla Pool"
+   }
+  },
+  {
+   "id": "way/288395731",
+   "lat": 31.780845,
+   "lng": 35.236924,
+   "tags": {
+    "name": "باب الأسباط",
+    "name:en": "Lions' Gate",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q129278",
+    "wikipedia": "en:Lions' Gate"
+   }
+  },
+  {
+   "id": "way/291746174",
+   "lat": 31.782964,
+   "lng": 35.233682,
+   "tags": {
+    "name": "باب الساهرة",
+    "name:en": "Herod's Gate",
+    "tourism": "attraction",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q1484405",
+    "wikipedia": "ar:باب الساهرة"
+   }
+  },
+  {
+   "id": "way/291836689",
+   "lat": 31.779131,
+   "lng": 35.233955,
+   "tags": {
+    "name": "باب المجلس",
+    "name:en": "Gate of the Watchman",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q16765255",
+    "wikipedia": "en:Inspector's Gate"
+   }
+  },
+  {
+   "id": "way/291836691",
+   "lat": 31.776017,
+   "lng": 35.234776,
+   "tags": {
+    "name": "מוזיאון לאומנות האיסלם",
+    "name:en": "Museum of Islamic Art",
+    "tourism": "museum",
+    "building": "public",
+    "wikidata": "Q3407496"
+   }
+  },
+  {
+   "id": "way/291836693",
+   "lat": 31.778957,
+   "lng": 35.23709,
+   "tags": {
+    "name": "שער הרחמים",
+    "name:en": "Golden Gate",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q1367167",
+    "wikipedia": "en:Golden Gate (Jerusalem)"
+   }
+  },
+  {
+   "id": "way/291836716",
+   "lat": 31.779992,
+   "lng": 35.233737,
+   "tags": {
+    "name": "باب الغوانمة",
+    "name:en": "Gate of Bani Ghanem",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q25450229"
+   }
+  },
+  {
+   "id": "way/292083145",
+   "lat": 31.773951,
+   "lng": 35.232509,
+   "tags": {
+    "name": "כנסיית הניאה",
+    "name:en": "The New Church of the Theotokos",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q907482"
+   }
+  },
+  {
+   "id": "way/313842798",
+   "lat": 31.716657,
+   "lng": 35.201572,
+   "tags": {
+    "name": "متحف بيت لحم الاثري",
+    "name:en": "Bethlehem Historical Museum",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/313842801",
+   "lat": 31.717372,
+   "lng": 35.202461,
+   "tags": {
+    "name": "Palestinian Heritage Center",
+    "name:en": "Palestinian Heritage Center",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/324193641",
+   "lat": 31.774178,
+   "lng": 35.236093,
+   "tags": {
+    "name": "תצפית בית הצופה",
+    "name:en": "Beit Hatzofeh Lookout",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/345489257",
+   "lat": 31.754379,
+   "lng": 35.259754,
+   "tags": {
+    "name": "معهد الآثار",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/36842082",
+   "lat": 31.783653,
+   "lng": 35.157902,
+   "tags": {
+    "name": "מאגר בית זית",
+    "name:en": "Beit Zait Reservoir",
+    "tourism": "attraction",
+    "wikidata": "Q12034819"
+   }
+  },
+  {
+   "id": "way/375116051",
+   "lat": 31.783738,
+   "lng": 35.23047,
+   "tags": {
+    "name": "بستان قبر السيد المسيح",
+    "name:en": "The Garden Tomb",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "website": "https://gardentomb.com",
+    "wikidata": "Q1494672",
+    "wikipedia": "en:The Garden Tomb",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/397705156",
+   "lat": 31.76624,
+   "lng": 35.220011,
+   "tags": {
+    "name": "מוזיאון הטבע",
+    "name:en": "Nature Museum",
+    "tourism": "museum",
+    "website": "https://muzteva.org.il/",
+    "wikidata": "Q4198108",
+    "wikipedia": "he:מוזיאון הטבע (ירושלים)",
+    "addr:housenumber": "6",
+    "addr:street": "מוהליבר",
+    "addr:postcode": "91086",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/399215756",
+   "lat": 31.775685,
+   "lng": 35.182759,
+   "tags": {
+    "name": "היכל הזיכרון הלאומי",
+    "name:en": "National Memorial Hall",
+    "historic": "memorial",
+    "website": "http://nelech.co.il/2020/05/25/היכל-הזיכרון-הממלכתי-לחללי-מערכות-ישר/",
+    "wikidata": "Q2920806"
+   }
+  },
+  {
+   "id": "way/401390177",
+   "lat": 31.785363,
+   "lng": 35.212592,
+   "tags": {
+    "name": "השוק הגרוזיני",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/40608743",
+   "lat": 31.746515,
+   "lng": 35.170209,
+   "tags": {
+    "name": "גן החיות התנכי",
+    "name:en": "Jerusalem Biblical Zoo",
+    "tourism": "zoo",
+    "website": "https://www.jerusalemzoo.org/",
+    "wikidata": "Q2915736",
+    "wikipedia": "he:גן החיות התנ\"כי"
+   }
+  },
+  {
+   "id": "way/431865760",
+   "lat": 31.745,
+   "lng": 35.166566,
+   "tags": {
+    "name": "אקווריום ישראל",
+    "name:en": "Israel Aquarium",
+    "tourism": "zoo",
+    "website": "https://www.israel-aquarium.org.il/",
+    "wikidata": "Q30321431"
+   }
+  },
+  {
+   "id": "way/44122871",
+   "lat": 31.778165,
+   "lng": 35.220756,
+   "tags": {
+    "name": "בית עלמין ממילא",
+    "name:en": "Mamilla Cemetery",
+    "historic": "archaeological_site",
+    "wikidata": "Q1383277",
+    "wikipedia": "en:Mamilla Cemetery"
+   }
+  },
+  {
+   "id": "way/44123755",
+   "lat": 31.784786,
+   "lng": 35.212734,
+   "tags": {
+    "name": "שוק מחנה יהודה",
+    "name:en": "Machane Yehuda Market",
+    "amenity": "marketplace",
+    "building": "yes",
+    "wikidata": "Q2918531",
+    "wikipedia": "en:Mahane Yehuda Market"
+   }
+  },
+  {
+   "id": "way/44139577",
+   "lat": 31.770047,
+   "lng": 35.199825,
+   "tags": {
+    "name": "הגן הבוטני",
+    "name:en": "Botanical Garden",
+    "leisure": "park",
+    "wikidata": "Q503498"
+   }
+  },
+  {
+   "id": "way/44168865",
+   "lat": 31.78191,
+   "lng": 35.22407,
+   "tags": {
+    "name": "מוזיאון אסירי המחתרות",
+    "name:en": "Asirei HaMahtarot",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q2905161"
+   }
+  },
+  {
+   "id": "way/44172356",
+   "lat": 31.769841,
+   "lng": 35.222935,
+   "tags": {
+    "name": "גן פעמון הדרור",
+    "name:en": "Liberty Bell Park",
+    "leisure": "park",
+    "wikidata": "Q2777841"
+   }
+  },
+  {
+   "id": "way/44288303",
+   "lat": 31.77967,
+   "lng": 35.20365,
+   "tags": {
+    "name": "גן וואהל לוורדים",
+    "name:en": "Wohl Rose Park",
+    "leisure": "park",
+    "wikidata": "Q12073091"
+   }
+  },
+  {
+   "id": "way/44307909",
+   "lat": 31.77229,
+   "lng": 35.203245,
+   "tags": {
+    "name": "מוזיאון ישראל",
+    "name:en": "Israel Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo,We-Th,Su,PH 10:00-17:00; Tu 16:00-21:00; Fr 10:00-14:00; Sa 10:30-16:00",
+    "website": "https://www.imj.org.il",
+    "wikidata": "Q46815",
+    "addr:housenumber": "11",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/448218134",
+   "lat": 31.780248,
+   "lng": 35.215576,
+   "tags": {
+    "name": "בית פרומין",
+    "name:en": "Frumin House",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q5506497",
+    "wikipedia": "he:בית פרומין"
+   }
+  },
+  {
+   "id": "way/4705691",
+   "lat": 31.777425,
+   "lng": 35.218669,
+   "tags": {
+    "name": "גן העצמאות",
+    "name:en": "Independence Park",
+    "leisure": "park",
+    "wikidata": "Q589512"
+   }
+  },
+  {
+   "id": "way/4709575",
+   "lat": 31.77988,
+   "lng": 35.20697,
+   "tags": {
+    "name": "גן סאקר",
+    "name:en": "Sacher Park",
+    "leisure": "park",
+    "wikidata": "Q7396693"
+   }
+  },
+  {
+   "id": "way/52959221",
+   "lat": 31.77531,
+   "lng": 35.223068,
+   "tags": {
+    "name": "המכון האפיפיורי למקרא",
+    "name:en": "Pontifical Biblical Institute",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q55955575",
+    "wikipedia": "fr:Institut biblique pontifical (Jérusalem)",
+    "addr:housenumber": "3",
+    "addr:street": "פול אמיל בוטה",
+    "addr:postcode": "91004"
+   }
+  },
+  {
+   "id": "way/54478804",
+   "lat": 31.779764,
+   "lng": 35.224038,
+   "tags": {
+    "name": "גן דניאל",
+    "name:en": "Gan Daniel",
+    "leisure": "park",
+    "wikidata": "Q7001877",
+    "addr:postcode": "9120402"
+   }
+  },
+  {
+   "id": "way/546089500",
+   "lat": 31.771906,
+   "lng": 35.222591,
+   "tags": {
+    "name": "גן בלומפילד",
+    "name:en": "Bloomfield Park",
+    "leisure": "park",
+    "wikidata": "Q6549513"
+   }
+  },
+  {
+   "id": "way/553382306",
+   "lat": 31.774178,
+   "lng": 35.238231,
+   "tags": {
+    "name": "קבר בת פרעה",
+    "name:en": "Monolith of Silwan",
+    "tourism": "attraction",
+    "historic": "tomb",
+    "building": "yes",
+    "wikidata": "Q6901697",
+    "wikipedia": "he:קבר בת פרעה"
+   }
+  },
+  {
+   "id": "way/56711604",
+   "lat": 31.779598,
+   "lng": 35.239673,
+   "tags": {
+    "name": "حديقة الجثسيماني",
+    "name:en": "Garden of Gethsemane",
+    "leisure": "garden",
+    "wikidata": "Q205333",
+    "wikipedia": "en:Gethsemane"
+   }
+  },
+  {
+   "id": "way/57259644",
+   "lat": 31.77935,
+   "lng": 35.206083,
+   "tags": {
+    "name": "התחנה לחקר ציפורי ירושלים",
+    "name:en": "The Jerusalem Bird Observatory",
+    "leisure": "garden",
+    "wikidata": "Q2895560"
+   }
+  },
+  {
+   "id": "way/616186088",
+   "lat": 31.781678,
+   "lng": 35.230345,
+   "tags": {
+    "name": "باب العامود",
+    "name:en": "Damascus Gate",
+    "tourism": "attraction",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q947597",
+    "wikipedia": "ar:باب العامود"
+   }
+  },
+  {
+   "id": "way/620317519",
+   "lat": 31.777419,
+   "lng": 35.230006,
+   "tags": {
+    "name": "مورستان",
+    "name:en": "Muristan Market",
+    "amenity": "marketplace",
+    "wikidata": "Q1936208"
+   }
+  },
+  {
+   "id": "way/624799545",
+   "lat": 31.782291,
+   "lng": 35.231264,
+   "tags": {
+    "name": "מערת צדקיהו",
+    "name:en": "Zedekiah's cave",
+    "tourism": "museum",
+    "opening_hours": "Su-Th 09:00-18:00; Fr 09:00-14:00",
+    "wikidata": "Q184272",
+    "wikipedia": "en:Zedekiah's Cave",
+    "addr:street": "סולטן סולימאן"
+   }
+  },
+  {
+   "id": "way/655718796",
+   "lat": 31.776822,
+   "lng": 35.231129,
+   "tags": {
+    "name": "גגות גליציה",
+    "name:en": "Gagot Galizia",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "way/690881495",
+   "lat": 31.778465,
+   "lng": 35.229508,
+   "tags": {
+    "name": "Ἅγιος Τάφος",
+    "name:en": "Tomb of Christ",
+    "tourism": "attraction",
+    "amenity": "sacred_object",
+    "historic": "tomb",
+    "wikidata": "Q302",
+    "wikipedia": "en:Jesus"
+   }
+  },
+  {
+   "id": "way/708195069",
+   "lat": 31.773718,
+   "lng": 35.179051,
+   "tags": {
+    "name": "חלקת משפחת ז'בוטינסקי",
+    "leisure": "park",
+    "wikidata": "Q6811889"
+   }
+  },
+  {
+   "id": "way/73989602",
+   "lat": 31.774084,
+   "lng": 35.175198,
+   "tags": {
+    "name": "יד ושם",
+    "name:en": "Yad Va'Shem",
+    "tourism": "museum",
+    "wikidata": "Q156591"
+   }
+  },
+  {
+   "id": "way/74078313",
+   "lat": 31.774209,
+   "lng": 35.175218,
+   "tags": {
+    "name": "מוזיאון ההיסטוריה של השואה",
+    "name:en": "The Holocaust History Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Su-We 09:00-17:00; Th 09:00-20:00; Sa 09:00-14:00",
+    "website": "https://www.yadvashem.org/"
+   }
+  },
+  {
+   "id": "way/74078348",
+   "lat": 31.773946,
+   "lng": 35.174982,
+   "tags": {
+    "name": "אוהל יזכור",
+    "name:en": "Hall of Remembrance",
+    "historic": "memorial",
+    "building": "museum",
+    "wikidata": "Q6826871"
+   }
+  },
+  {
+   "id": "way/744674896",
+   "lat": 31.780574,
+   "lng": 35.23405,
+   "tags": {
+    "name": "Terra Sancta Museum",
+    "name:en": "Terra Sancta Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://www.terrasanctamuseum.org/",
+    "wikidata": "Q57272667",
+    "addr:housenumber": "1",
+    "addr:street": "Via Dolorosa",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/755420494",
+   "lat": 31.773242,
+   "lng": 35.172689,
+   "tags": {
+    "name": "גן חסידי אומות העולם",
+    "name:en": "Garden of the Righteous Among the Nations",
+    "leisure": "garden",
+    "wikidata": "Q5522412",
+    "wikipedia": "he:גן חסידי אומות העולם"
+   }
+  },
+  {
+   "id": "way/755420502",
+   "lat": 31.773103,
+   "lng": 35.236405,
+   "tags": {
+    "name": "פיר וורן",
+    "name:en": "Warren's Shaft",
+    "historic": "archaeological_site",
+    "website": "https://www.cityofdavid.org.il/",
+    "wikidata": "Q3655064",
+    "wikipedia": "en:Warren's Shaft",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/755420512",
+   "lat": 31.77377,
+   "lng": 35.235904,
+   "tags": {
+    "name": "Stepped Stone Structure",
+    "historic": "archaeological_site",
+    "wikidata": "Q3500659",
+    "wikipedia": "en:Stepped Stone Structure"
+   }
+  },
+  {
+   "id": "way/81414147",
+   "lat": 31.761528,
+   "lng": 35.172365,
+   "tags": {
+    "name": "גן רבינוביץ'",
+    "name:en": "Rabinovich Garden",
+    "leisure": "park",
+    "wikidata": "Q6697833",
+    "wikipedia": "he:גן רבינוביץ'"
+   }
+  },
+  {
+   "id": "way/888822900",
+   "lat": 31.776827,
+   "lng": 35.232369,
+   "tags": {
+    "name": "השוק הערבי",
+    "amenity": "marketplace",
+    "wikidata": "Q12411569"
+   }
+  }
+ ]
+}

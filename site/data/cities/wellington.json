@@ -12,6 +12,7 @@
   {
    "id": "osm:way/190557095",
    "name": "Museum of New Zealand Te Papa Tongarewa",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.29033,
    "lng": 174.781989,
@@ -51,6 +52,7 @@
   {
    "id": "osm:relation/12750214",
    "name": "Wellington Zoo",
+   "nameEn": null,
    "kind": "zoo",
    "lat": -41.32191,
    "lng": 174.784324,
@@ -69,6 +71,7 @@
   {
    "id": "osm:way/20266439",
    "name": "Wellington Botanic Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": -41.282533,
    "lng": 174.766134,
@@ -87,6 +90,7 @@
   {
    "id": "osm:way/250856271",
    "name": "Wellington Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.285311,
    "lng": 174.778131,
@@ -124,6 +128,7 @@
   {
    "id": "osm:node/1690510529",
    "name": "Zealandia",
+   "nameEn": null,
    "kind": "attraction",
    "lat": -41.291708,
    "lng": 174.75219,
@@ -142,6 +147,7 @@
   {
    "id": "osm:way/26640029",
    "name": "Newtown Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.320671,
    "lng": 174.782366,
@@ -160,6 +166,7 @@
   {
    "id": "osm:way/251420391",
    "name": "Adam Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.28859,
    "lng": 174.769133,
@@ -178,6 +185,7 @@
   {
    "id": "osm:way/263452531",
    "name": "Wellington City Gallery / Te Whare Toi",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.288435,
    "lng": 174.777311,
@@ -225,6 +233,7 @@
   {
    "id": "osm:way/264854202",
    "name": "Nairn Street Colonial Cottage",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.299296,
    "lng": 174.769961,
@@ -262,6 +271,7 @@
   {
    "id": "osm:node/175059306",
    "name": "The Bucket Fountain",
+   "nameEn": null,
    "kind": "attraction",
    "lat": -41.292228,
    "lng": 174.776324,
@@ -280,6 +290,7 @@
   {
    "id": "osm:way/895400049",
    "name": "Fort Ballance",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.294703,
    "lng": 174.834506,
@@ -298,6 +309,7 @@
   {
    "id": "osm:node/3846016569",
    "name": "Kaiwharawhara",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.259992,
    "lng": 174.791413,
@@ -316,6 +328,7 @@
   {
    "id": "osm:way/103733974",
    "name": "Massey Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.285041,
    "lng": 174.825992,
@@ -334,6 +347,7 @@
   {
    "id": "osm:node/5911562019",
    "name": "New Zealand Academy of Fine Arts",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.284744,
    "lng": 174.77801,
@@ -352,6 +366,7 @@
   {
    "id": "osm:way/264055222",
    "name": "SS Hikitia",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.289317,
    "lng": 174.78046,
@@ -370,6 +385,7 @@
   {
    "id": "osm:way/1051954498",
    "name": "Tomb of the Unknown Warrior",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.298875,
    "lng": 174.777214,
@@ -388,6 +404,7 @@
   {
    "id": "osm:node/293323936",
    "name": "Wright's Hill Fortress",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.295868,
    "lng": 174.738776,
@@ -406,6 +423,7 @@
   {
    "id": "osm:way/1259560429",
    "name": "Ōtari-Wilton’s Bush",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.267218,
    "lng": 174.754766,
@@ -424,6 +442,7 @@
   {
    "id": "osm:node/3326510389",
    "name": "Evans Bay Patent Slip",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.303852,
    "lng": 174.801919,
@@ -442,6 +461,7 @@
   {
    "id": "osm:way/171565205",
    "name": "Frank Kitts Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.287028,
    "lng": 174.77876,
@@ -460,6 +480,7 @@
   {
    "id": "osm:node/6717968767",
    "name": "Kau Point Battery",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.289806,
    "lng": 174.831645,
@@ -478,6 +499,7 @@
   {
    "id": "osm:way/1270466258",
    "name": "Mākara Peak Mountain Bike Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.291673,
    "lng": 174.71064,
@@ -496,6 +518,7 @@
   {
    "id": "osm:way/153924615",
    "name": "New Zealand Portrait Gallery",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.283582,
    "lng": 174.778202,
@@ -514,6 +537,7 @@
   {
    "id": "osm:way/153924707",
    "name": "Waitangi Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.2914,
    "lng": 174.784942,
@@ -532,6 +556,7 @@
   {
    "id": "osm:node/298326576",
    "name": "William Wakefield Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.300633,
    "lng": 174.781306,
@@ -550,6 +575,7 @@
   {
    "id": "osm:way/26716306",
    "name": "Martin Luckie Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.324534,
    "lng": 174.778317,
@@ -568,6 +594,7 @@
   {
    "id": "osm:way/202880717",
    "name": "Pukeahu National War Memorial Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.298592,
    "lng": 174.778075,
@@ -586,6 +613,7 @@
   {
    "id": "osm:node/10760537167",
    "name": "2011 Rugby World Cup Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -41.288508,
    "lng": 174.77816,
@@ -604,6 +632,7 @@
   {
    "id": "osm:node/5906608090",
    "name": "AVID gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.287454,
    "lng": 174.776476,
@@ -622,6 +651,7 @@
   {
    "id": "osm:node/10728579606",
    "name": "Amritsar Street Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.252821,
    "lng": 174.798733,
@@ -640,6 +670,7 @@
   {
    "id": "osm:way/624607128",
    "name": "Bolton St Cemetery Chapel",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.279463,
    "lng": 174.774314,
@@ -677,6 +708,7 @@
   {
    "id": "osm:way/252061659",
    "name": "Cable Car Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.285245,
    "lng": 174.767448,
@@ -714,6 +746,7 @@
   {
    "id": "osm:node/296293162",
    "name": "Centennial Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.294972,
    "lng": 174.79817,
@@ -732,6 +765,7 @@
   {
    "id": "osm:way/24617372",
    "name": "Central Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.30046,
    "lng": 174.767021,
@@ -750,6 +784,7 @@
   {
    "id": "osm:node/10560847473",
    "name": "Covenant",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.3012,
    "lng": 174.77962,
@@ -768,6 +803,7 @@
   {
    "id": "osm:node/298326385",
    "name": "Cricket Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.300047,
    "lng": 174.779385,
@@ -786,6 +822,7 @@
   {
    "id": "osm:way/556390300",
    "name": "Dorrie Leslie Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.338697,
    "lng": 174.793243,
@@ -804,6 +841,7 @@
   {
    "id": "osm:node/13605029501",
    "name": "Enjoy Contemporary Art Space",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.292602,
    "lng": 174.77554,
@@ -849,6 +887,7 @@
   {
    "id": "osm:node/1753424821",
    "name": "Fish Ladder",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.259789,
    "lng": 174.769289,
@@ -867,6 +906,7 @@
   {
    "id": "osm:node/6408866830",
    "name": "Greta Point Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.300468,
    "lng": 174.805521,
@@ -885,6 +925,7 @@
   {
    "id": "osm:node/6091848775",
    "name": "Harbourside Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -41.291251,
    "lng": 174.783271,
@@ -916,6 +957,7 @@
   {
    "id": "osm:node/10218649993",
    "name": "Highland Park Trig Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.261879,
    "lng": 174.781153,
@@ -934,6 +976,7 @@
   {
    "id": "osm:way/768675621",
    "name": "Hoggard Street Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.315389,
    "lng": 174.76759,
@@ -952,6 +995,7 @@
   {
    "id": "osm:node/2628264189",
    "name": "Holocaust Centre of New Zealand",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.297189,
    "lng": 174.772349,
@@ -988,6 +1032,7 @@
   {
    "id": "osm:way/256795384",
    "name": "Hungarian Garden",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.275167,
    "lng": 174.7775,
@@ -1006,6 +1051,7 @@
   {
    "id": "osm:node/5906316003",
    "name": "James Blackie",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.290435,
    "lng": 174.78597,
@@ -1024,6 +1070,7 @@
   {
    "id": "osm:node/307351536",
    "name": "James Hector Memorial Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.28417,
    "lng": 174.76323,
@@ -1042,6 +1089,7 @@
   {
    "id": "osm:way/343355722",
    "name": "Katherine Mansfield House and Garden",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.270158,
    "lng": 174.779851,
@@ -1060,6 +1108,7 @@
   {
    "id": "osm:node/3659565908",
    "name": "Kaukau Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.234164,
    "lng": 174.779886,
@@ -1078,6 +1127,7 @@
   {
    "id": "osm:node/2685676737",
    "name": "Khandallah Park Lower Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.241474,
    "lng": 174.789416,
@@ -1096,6 +1146,7 @@
   {
    "id": "osm:node/2065718761",
    "name": "Makara Peak Summit Viewing Deck",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.288564,
    "lng": 174.70732,
@@ -1114,6 +1165,7 @@
   {
    "id": "osm:node/783462498",
    "name": "Moko",
+   "nameEn": null,
    "kind": "attraction",
    "lat": -41.266099,
    "lng": 174.75248,
@@ -1132,6 +1184,7 @@
   {
    "id": "osm:node/170485240",
    "name": "Mount Victoria Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.296037,
    "lng": 174.794325,
@@ -1150,6 +1203,7 @@
   {
    "id": "osm:way/1066010977",
    "name": "Museum of New Zealand Te Papa Tongarewa Archives",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.298323,
    "lng": 174.779164,
@@ -1168,6 +1222,7 @@
   {
    "id": "osm:node/1933157621",
    "name": "Newtown Fruit & Vegetables Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -41.311006,
    "lng": 174.780043,
@@ -1199,6 +1254,7 @@
   {
    "id": "osm:node/8356441101",
    "name": "O'Neill Marriage Memorial",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.259336,
    "lng": 174.780698,
@@ -1217,6 +1273,7 @@
   {
    "id": "osm:node/6081979525",
    "name": "Page",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.287328,
    "lng": 174.776513,
@@ -1263,6 +1320,7 @@
   {
    "id": "osm:way/25563334",
    "name": "Prince of Wales Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.307068,
    "lng": 174.770093,
@@ -1281,6 +1339,7 @@
   {
    "id": "osm:node/13713510822",
    "name": "Real Aotearoa",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.327703,
    "lng": 174.800057,
@@ -1299,6 +1358,7 @@
   {
    "id": "osm:node/1166098689",
    "name": "Reserve Bank Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.278954,
    "lng": 174.77533,
@@ -1334,6 +1394,7 @@
   {
    "id": "osm:node/5919900528",
    "name": "Robert Heald Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.292402,
    "lng": 174.775151,
@@ -1379,6 +1440,7 @@
   {
    "id": "osm:node/11840425128",
    "name": "Space Place",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.284324,
    "lng": 174.767156,
@@ -1448,6 +1510,7 @@
   {
    "id": "osm:way/1315223913",
    "name": "Stellin Memorial Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -41.277599,
    "lng": 174.765071,
@@ -1466,6 +1529,7 @@
   {
    "id": "osm:node/7469489833",
    "name": "Te Ahumairangi Hill Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.275012,
    "lng": 174.765347,
@@ -1484,6 +1548,7 @@
   {
    "id": "osm:node/4630968664",
    "name": "TheFLOW Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.28806,
    "lng": 174.775519,
@@ -1502,6 +1567,7 @@
   {
    "id": "osm:node/8433352757",
    "name": "Thorndon Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.278837,
    "lng": 174.772156,
@@ -1520,6 +1586,7 @@
   {
    "id": "osm:node/12207742100",
    "name": "Twentysix Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.313618,
    "lng": 174.781292,
@@ -1538,6 +1605,7 @@
   {
    "id": "osm:node/8682259908",
    "name": "Victoria University Classics Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -41.28868,
    "lng": 174.768688,
@@ -1556,6 +1624,7 @@
   {
    "id": "osm:node/5928017579",
    "name": "Vincents Art Workshop",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -41.289811,
    "lng": 174.773819,
@@ -1574,6 +1643,7 @@
   {
    "id": "osm:node/447755989",
    "name": "Wind Turbine",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -41.310899,
    "lng": 174.745278,
@@ -1590,6 +1660,598 @@
    "hours": null
   }
  ],
+ "near": "centre",
+ "stay": [
+  {
+   "id": "osm:node/5729456523",
+   "name": "The Marion",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.294223,
+   "lng": 174.776611,
+   "address": "13-15 Marion Street",
+   "website": "https://www.themarionhostel.com",
+   "wikidata": "Q111117159",
+   "openingHours": "Mo-Su 14:00-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 859,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/356515969",
+   "name": "Quest Wellington",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.285543,
+   "lng": 174.776079,
+   "address": "33 Hunter Street, 6011",
+   "website": "https://www.questapartments.co.nz/properties/north-island/wellington/quest-wellington",
+   "wikidata": "Q112010214",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 107,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/638665198",
+   "name": "DoubleTree by Hilton Wellington",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.5,
+   "cuisine": null,
+   "lat": -41.28429,
+   "lng": 174.775746,
+   "address": "28 Grey Street, 6011",
+   "website": "https://www.hilton.com/en/hotels/wlgntdi-doubletree-wellington/?WT.mc_id=zDA0NZ1DT2DMH3LocalSearch4DGGeneric_May56WLGNTDI7EN8i1",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 249,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4331764789",
+   "name": "Terrace Villas",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.286702,
+   "lng": 174.77282,
+   "address": "202 The Terrace, 6011",
+   "website": "https://www.terracevillas.co.nz/",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 283,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/267032311",
+   "name": "Hotel St. George",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.2893,
+   "lng": 174.774376,
+   "address": "124 Willis Street, 6011",
+   "website": "https://www.stgeorgewellington.co.nz/",
+   "wikidata": "Q5911993",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 347,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4424409886",
+   "name": "Quest on Johnston",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.282808,
+   "lng": 174.776406,
+   "address": "35 Johnston Street, 6011",
+   "website": "https://www.questapartments.co.nz/Accommodation/155/New_Zealand/Wellington/Quest_On_Johnston/Welcome.aspx",
+   "wikidata": "Q111869982",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 411,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/260864052",
+   "name": "Astelia Apartment Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.290289,
+   "lng": 174.773748,
+   "address": "156 Willis Street, 6011",
+   "website": "https://www.villagegroup.co.nz/accommodation/astelia-apartment-hotel-wellington.htm",
+   "wikidata": "Q111869974",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 468,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/10296143331",
+   "name": "Aura Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -41.291292,
+   "lng": 174.777215,
+   "address": null,
+   "website": null,
+   "wikidata": "Q112010215",
+   "openingHours": "09:00-19:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "09:00",
+       "19:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 540,
+   "venuesNear": 1
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/14047928334",
+   "name": "Saigon Delights",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "vietnamese"
+   ],
+   "lat": -41.289172,
+   "lng": 174.776269,
+   "address": "81 Victoria Street",
+   "website": "www.saigondelights.co.nz",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-14:30,17:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:30"
+      ],
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 297,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4757467921",
+   "name": "Fisherman's Plate",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "vietnamese"
+   ],
+   "lat": -41.289112,
+   "lng": 174.775421,
+   "address": "12 Bond Street, 6011",
+   "website": "https://m.facebook.com/pages/Fishermans-Plate/172072822839933",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-15:00,17:00-21:00; Su,PH off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "17:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ],
+   "toVenueM": 298,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4301827603",
+   "name": "Bin 44",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "Craft_Beer"
+   ],
+   "lat": -41.284655,
+   "lng": 174.778835,
+   "address": "3 Queens Wharf Queens Wharf, 6011",
+   "website": "https://bin44.co.nz",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 10:30-23:00; Sa-Su 10:00-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 301,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4362125590",
+   "name": "Verve",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "cake",
+    "coffee_shop"
+   ],
+   "lat": -41.283782,
+   "lng": 174.775207,
+   "address": "250 Lambton Quay",
+   "website": "http://www.vervecafe.co.nz",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 07:00-04:30; Sa 09:00-04:30; Su 10:00-04:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "04:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "04:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "04:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 313,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/2667786068",
+   "name": "Saigon Restaurant & Bar",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "vietnamese"
+   ],
+   "lat": -41.28935,
+   "lng": 174.774459,
+   "address": "126 Willis Street, 6011",
+   "website": "https://www.saigon.nz",
+   "wikidata": null,
+   "openingHours": "11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 349,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/258708592",
+   "name": "Dockside",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "seafood"
+   ],
+   "lat": -41.284589,
+   "lng": 174.779525,
+   "address": "7 Queens Wharf",
+   "website": "https://dockside.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 12:00-21:00; Sa 11:00-21:00; Su 11:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 350,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/9928304317",
+   "name": "Le Saigon",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "vietnamese"
+   ],
+   "lat": -41.283219,
+   "lng": 174.77692,
+   "address": "146-150 Featherston Street",
+   "website": "https://www.lesaigon.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-14:30, 17:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "14:30"
+      ],
+      [
+       "17:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 370,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4733704822",
+   "name": "Burger Liquor",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "burger"
+   ],
+   "lat": -41.289907,
+   "lng": 174.77447,
+   "address": "129 Willis Street, 6011",
+   "website": "https://www.burgerliquor.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:30-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 405,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [],
+ "guide": {
+  "page": "Wellington",
+  "url": "https://en.wikivoyage.org/wiki/Wellington"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  }
+ },
  "provenance": {
   "osm": {
    "fetchedAt": "2026-09-25T14:15:44Z",
@@ -1597,9 +2259,19 @@
    "fetcherVersion": 1
   },
   "wikidata": {
-   "fetchedAt": "2026-09-25T14:16:16Z",
+   "fetchedAt": "2026-10-02T18:26:01Z",
    "fetcher": "scraper/cities/fetch.py",
-   "fetcherVersion": 1
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:52:55Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:14:21Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
   }
  }
 }

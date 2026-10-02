@@ -1,0 +1,41 @@
+{
+ "page": "Brighton",
+ "url": "https://en.wikivoyage.org/wiki/Brighton",
+ "items": [
+  {
+   "page": "Lewes",
+   "line": "[[Lewes]] – this gorgeous medieval town has a castle, as well as '''Glyndebourne Opera House''', a famous opera house, set in beautiful grounds where opera-goers eat gourmet picnics at intervals which can be brought in or ordered from their own catering service. {{mi|11}} from Brighton and 20 minutes away by train.",
+   "resolved": "Lewes",
+   "lat": 50.875627,
+   "lng": 0.017855
+  },
+  {
+   "page": "Dieppe",
+   "line": "[[Dieppe]], France – by ferry from [[Newhaven]] Harbour, about {{mi|9}} east of Brighton. Services are three daily and take around four hours. The service is operated by [https://www.dfds.com/en-gb/passenger-ferries/ferry-crossings/ferries-to-france/newhaven-dieppe DFDS]",
+   "resolved": "Dieppe",
+   "lat": 49.9222,
+   "lng": 1.0786
+  },
+  {
+   "page": "Rottingdean",
+   "line": "[[Rottingdean]] – in the east of Brighton, with memories of Kipling, Burne-Jones and several other artists.",
+   "resolved": "Rottingdean",
+   "lat": 50.815,
+   "lng": -0.065
+  },
+  {
+   "page": "London",
+   "line": "[[London]] – an hour away via train or 2 hours via coach.",
+   "resolved": "London",
+   "lat": 51.5086,
+   "lng": -0.1264
+  },
+  {
+   "page": "Worthing",
+   "line": "[[Worthing]] – There is no reason you wouldn't want to visit this lovely town. Short journey via train from Brighton Station.",
+   "resolved": "Worthing",
+   "lat": 50.81,
+   "lng": -0.374
+  }
+ ]
+}

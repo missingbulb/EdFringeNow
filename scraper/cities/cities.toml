@@ -1,9 +1,15 @@
-# The cities around our festivals, for the "time off" half of a plan: what is
-# open to see between shows. One [[city]] per festival city; the contract is
-# scraper/cities/README.md.
+# The cities around our festivals, for the "time off" half of a plan: where to
+# stay and eat, what is open to see between shows, and where to go for a day.
+# One [[city]] per festival city, its `name` exactly the registry's `city` for
+# the festivals it hosts; the contract is scraper/cities/README.md.
 #
 # `radius_m` bounds what counts as "in town" around the centre: wide enough for
 # a day's sightseeing, narrow enough that a planner's walk/transit maths holds.
+# `near_m` is how far from a festival venue a hotel or restaurant may be and
+# still be offered: a walk in a city, a short drive where the venue stands
+# alone in the countryside.
+# `wikivoyage` is the English Wikivoyage guide whose "Go next" section names the
+# day trips: the city's own, or the nearest town's where the place has none.
 
 [[city]]
 id = "edinburgh"
@@ -12,7 +18,20 @@ country = "GB"
 lat = 55.9533
 lng = -3.1883
 radius_m = 6000
+near_m = 1000
 timezone = "Europe/London"
+wikivoyage = "Edinburgh"
+
+[[city]]
+id = "north-berwick"
+name = "North Berwick"
+country = "GB"
+lat = 56.0586
+lng = -2.7196
+radius_m = 3000
+near_m = 1500
+timezone = "Europe/London"
+wikivoyage = "North Berwick"
 
 [[city]]
 id = "brighton"
@@ -21,7 +40,9 @@ country = "GB"
 lat = 50.8225
 lng = -0.1372
 radius_m = 6000
+near_m = 1000
 timezone = "Europe/London"
+wikivoyage = "Brighton"
 
 [[city]]
 id = "leicester"
@@ -30,7 +51,86 @@ country = "GB"
 lat = 52.6365
 lng = -1.1339
 radius_m = 6000
+near_m = 1000
 timezone = "Europe/London"
+wikivoyage = "Leicester"
+
+[[city]]
+id = "jerusalem"
+name = "Jerusalem"
+country = "IL"
+lat = 31.7683
+lng = 35.2137
+radius_m = 6000
+near_m = 1000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Jerusalem"
+
+[[city]]
+id = "tel-aviv"
+name = "Tel Aviv"
+country = "IL"
+lat = 32.0775
+lng = 34.78667
+radius_m = 6000
+near_m = 1000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Tel Aviv"
+
+[[city]]
+id = "haifa"
+name = "Haifa"
+country = "IL"
+lat = 32.794044
+lng = 34.989571
+radius_m = 6000
+near_m = 1000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Haifa"
+
+[[city]]
+id = "akko"
+name = "Akko"
+country = "IL"
+lat = 32.9236
+lng = 35.0705
+radius_m = 3000
+near_m = 1000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Akko"
+
+[[city]]
+id = "abu-ghosh"
+name = "Abu Ghosh"
+country = "IL"
+lat = 31.804722
+lng = 35.110833
+radius_m = 3000
+near_m = 4000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Abu Ghosh"
+
+[[city]]
+id = "capernaum"
+name = "Capernaum"
+country = "IL"
+lat = 32.8804
+lng = 35.5736
+radius_m = 6000
+near_m = 8000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Tiberias"
+
+[[city]]
+id = "mitzpe-gvulot"
+name = "Mitzpe Gvulot"
+country = "IL"
+lat = 31.2111
+lng = 34.4652
+radius_m = 10000
+near_m = 25000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Beer Sheva"
 
 [[city]]
 id = "melbourne"
@@ -39,7 +139,9 @@ country = "AU"
 lat = -37.8150
 lng = 144.9668
 radius_m = 8000
+near_m = 1000
 timezone = "Australia/Melbourne"
+wikivoyage = "Melbourne"
 
 [[city]]
 id = "auckland"
@@ -48,7 +150,9 @@ country = "NZ"
 lat = -36.8485
 lng = 174.7633
 radius_m = 8000
+near_m = 1000
 timezone = "Pacific/Auckland"
+wikivoyage = "Auckland"
 
 [[city]]
 id = "wellington"
@@ -57,4 +161,6 @@ country = "NZ"
 lat = -41.2865
 lng = 174.7762
 radius_m = 6000
+near_m = 1000
 timezone = "Pacific/Auckland"
+wikivoyage = "Wellington"

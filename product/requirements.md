@@ -2597,6 +2597,60 @@ itself: checking out opens the places that do.
   click and blocks the rest. Shows sold on the same page share one tab.
   </details>
 
+## 33. Around the city
+
+A trip is days in a city, not only its shows. Under the calendar, a drawer
+named for the trip's city gathers a short list of where to stay and where to
+eat near the festival's venues, the city's best-known sights, and the day
+trips its travel guide suggests, each linking to where to find out more. The
+lists come from open sources — OpenStreetMap, Wikidata and Wikivoyage — and the
+footer credits them under their licences.
+
+- `33.1` Under the calendar, the city's drawer opens on four short lists: places to stay and to eat near the venues, sights, and day trips, each one linked.
+
+  ![jerusalem-city-guide.33.1](requirements/screen/cases/jerusalem-city-guide.33.1.png) <!-- req-gallery:33.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Jerusalem trip. A place to stay or eat is offered where most of the
+  festival's venues are a walk (1 km) away, then where the reader can check
+  most before going (a website, mapped opening hours, stars or a cuisine),
+  then nearest a venue; each says how far its nearest venue is. Sights are the
+  city's best-known by how many Wikipedia editions describe them. Day trips
+  are the Wikivoyage guide's "Go next" destinations within 200 km, nearest
+  first, with the guide's own line about each. A place links to its own site
+  where OpenStreetMap maps one, and to its OpenStreetMap entry otherwise. The
+  lists are built by `scraper/cities/` (its README).
+  </details>
+
+- `33.2` While the city's lists are on the page, the footer credits OpenStreetMap's contributors under the ODbL and Wikivoyage under CC BY-SA, each linked.
+
+  ![jerusalem-guide-credit.33.2](requirements/screen/cases/jerusalem-guide-credit.33.2.png) <!-- req-gallery:33.2 -->
+
+- `33.3` A city with no lists yet shows no drawer and no credit for them.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:33.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven with the cities' registry failing to load: the calendar is drawn as
+  ever, and nothing on the page mentions the city's lists.
+  </details>
+
+- `33.4` On the real data, every city hosting a festival with a programme has its drawer, holding at most 8 places to stay, 8 to eat, 6 sights and 6 day trips.
+
+  <table><thead><tr><th align="left">List</th><th align="left">Holds at most</th></tr></thead><tbody><tr><td>Places to stay</td><td>8</td></tr><tr><td>Places to eat</td><td>8</td></tr><tr><td>Sights</td><td>6</td></tr><tr><td>Day trips</td><td>6</td></tr></tbody></table> <!-- req-gallery:33.4 -->
+
+  <details><summary>Notes</summary>
+
+  Every host city's lists are checked in the served data, since a festival
+  whose run is behind the year strip cannot be opened on the page but its
+  city still has lists; on the page, the drawer of each host city whose
+  festival the planner opens on is counted. Every city offers somewhere to
+  stay and to eat; a city whose Wikivoyage guide lists no destinations has
+  no day trips.
+  </details>
+
 ## 25. Never a list of thousands
 
 A festival programme can hold hundreds of events and a period can pool several

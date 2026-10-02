@@ -1,0 +1,210 @@
+{
+ "places": [
+  {
+   "id": "node/2056740228",
+   "lat": 32.921955,
+   "lng": 35.073141,
+   "tags": {
+    "name": "קאפו בורג'",
+    "name:en": "Kapo Burj (Tower Gate)",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056786929",
+   "lat": 32.919408,
+   "lng": 35.066139,
+   "tags": {
+    "name": "תצפית המגדלור",
+    "name:en": "The Lighthouse observation point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056786931",
+   "lat": 32.924834,
+   "lng": 35.067766,
+   "tags": {
+    "name": "בורג' אל-קרים",
+    "name:en": "Burj al-Karim lookout",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2056786939",
+   "lat": 32.919182,
+   "lng": 35.066404,
+   "tags": {
+    "name": "בורג' סנג'אק",
+    "name:en": "Burj Sanjak (Flag tower)",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056786952",
+   "lat": 32.920781,
+   "lng": 35.066288,
+   "tags": {
+    "name": "בורג' אל-קאשלה",
+    "name:en": "Burj el Kashla",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056805535",
+   "lat": 32.918584,
+   "lng": 35.072089,
+   "tags": {
+    "name": "מגדל הזבובים",
+    "name:en": "Tower of Flies",
+    "historic": "ruins",
+    "wikidata": "Q7829764",
+    "wikipedia": "he:מגדל הזבובים"
+   }
+  },
+  {
+   "id": "node/2056819879",
+   "lat": 32.923526,
+   "lng": 35.069138,
+   "tags": {
+    "name": "מוזיאון אסירי המחתרות",
+    "name:en": "Underground Prisoners Museum",
+    "tourism": "museum",
+    "website": "https://www.akko.org.il/en/Old-Acre-The-Underground-Prisoners-Museum-"
+   }
+  },
+  {
+   "id": "node/2056819895",
+   "lat": 32.923912,
+   "lng": 35.070169,
+   "tags": {
+    "name": "בורג' אל-חזנה",
+    "name:en": "Burj al-Hazneh",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056819917",
+   "lat": 32.923955,
+   "lng": 35.07325,
+   "tags": {
+    "name": "אוצרות בחומה",
+    "name:en": "Treasuries in The Wall",
+    "tourism": "museum",
+    "wikidata": "Q2680234"
+   }
+  },
+  {
+   "id": "node/2056819945",
+   "lat": 32.923227,
+   "lng": 35.06977,
+   "tags": {
+    "name": "אולמות האבירים",
+    "name:en": "Knights Halls",
+    "tourism": "museum",
+    "wikidata": "Q7002911"
+   }
+  },
+  {
+   "id": "node/2056834211",
+   "lat": 32.923218,
+   "lng": 35.069977,
+   "tags": {
+    "name": "מוזאון עוקשי",
+    "name:en": "Okashi museum",
+    "tourism": "museum",
+    "wikidata": "Q2742971"
+   }
+  },
+  {
+   "id": "node/2056841707",
+   "lat": 32.922997,
+   "lng": 35.072992,
+   "tags": {
+    "name": "המאוזוליאום",
+    "name:en": "Mausoleum View Point",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2056841708",
+   "lat": 32.924501,
+   "lng": 35.073389,
+   "tags": {
+    "name": "בורג' אל-קומאנדר",
+    "name:en": "Burj el Commander",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2063821870",
+   "lat": 32.923071,
+   "lng": 35.070422,
+   "tags": {
+    "name": "סביל",
+    "name:en": "Sebil Fountain",
+    "historic": "monument",
+    "wikidata": "Q105925037"
+   }
+  },
+  {
+   "id": "node/2063843490",
+   "lat": 32.922574,
+   "lng": 35.067008,
+   "tags": {
+    "name": "برج الحديد",
+    "name:en": "Burj al-Hadid",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/2063879191",
+   "lat": 32.922864,
+   "lng": 35.073257,
+   "tags": {
+    "name": "בורג' נאבי סלאח",
+    "name:en": "Burj Nabi Salah",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "way/196669714",
+   "lat": 32.926782,
+   "lng": 35.082097,
+   "tags": {
+    "name": "שוק",
+    "name:en": "Market",
+    "amenity": "marketplace",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/816116555",
+   "lat": 32.922843,
+   "lng": 35.069388,
+   "tags": {
+    "name": "חמאם אל-בשה",
+    "name:en": "The Turkish Bathhouse",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.akko.org.il/en/Hamam-al--Basha-",
+    "wikidata": "Q2944403",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/816116638",
+   "lat": 32.922776,
+   "lng": 35.071441,
+   "tags": {
+    "name": "השוק הלבן",
+    "name:en": "The white market",
+    "amenity": "marketplace",
+    "building": "yes",
+    "wikidata": "Q3018324"
+   }
+  }
+ ]
+}
