@@ -21,6 +21,7 @@ kind = "film"
 subtypes = ["film-international"]
 default_genre = "film"
 site = "https://www.haifaff.co.il"
+wikidata = "Q2908669"
 
 # The festival publishes one flat tariff, never a price per screening. So it is
 # served here, and performance prices stay null unless the programme gives one

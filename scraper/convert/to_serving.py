@@ -134,6 +134,8 @@ def build_index(festivals, built=None):
             "defaultGenre": f["default_genre"],
             "site": f["site"],
             "ticketing": ticketing_entry(f),
+            # Unknown is an absent key, never a zero.
+            **({"popularity": f["popularity"]} if "popularity" in f else {}),
             "editions": [edition_entry(f, ed, built) for ed in sorted(f["edition"], key=lambda e: e["id"])],
         })
     return {"v": schema.VERSION, "festivals": entries}
@@ -247,6 +249,25 @@ def selftest():
         with open(target, encoding="utf-8") as handle:
             assert handle.read() == "one\n"
         assert os.listdir(os.path.dirname(target)) == ["b.json"], os.listdir(os.path.dirname(target))
+
+        measured = os.path.join(scratch, "popularity.json")
+        festival = {"wikidata": "Q1"}
+        assert registry.popularity(festival, measured) is None  # unmeasured: unknown, not zero
+        for record, accepted in (
+            ({"wikidata": "Q1", "views": 0}, 0),
+            ({"wikidata": "Q1", "views": 1234}, 1234),
+            ({"wikidata": "Q1", "views": -1}, None),
+            ({"wikidata": "Q1", "views": 1.5}, None),
+            ({"wikidata": "Q1", "views": True}, None),
+            ({"wikidata": "Q1", "views": "12"}, None),
+            ({"wikidata": "Q1", "views": None}, None),
+            ({"wikidata": "Q2", "views": 5}, None),
+        ):
+            atomic_write(measured, json.dumps(record))
+            try:
+                assert registry.popularity(festival, measured) == accepted, record
+            except registry.RegistryError:
+                assert accepted is None, record
     finally:
         shutil.rmtree(scratch)
     print("convert to_serving selftest: ok")

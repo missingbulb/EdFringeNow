@@ -19,6 +19,7 @@ kind = "music"
 subtypes = ["music-indie", "music-israeli"]
 default_genre = "music"
 site = "https://indnegev.co.il"
+wikidata = "Q12403815"
 
 # One ticket is the whole festival (or a day of it); no set is sold on its own,
 # so every performance's price stays null.

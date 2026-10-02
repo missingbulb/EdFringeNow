@@ -25,6 +25,7 @@ dir = "ltr"
 kind = "fringe"
 default_genre = "other"
 site = "https://www.edfringe.com"
+wikidata = "Q368176"
 
 [ticketing]
 model = "central-box-office"

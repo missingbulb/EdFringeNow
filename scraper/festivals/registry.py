@@ -47,6 +47,10 @@ TICKETING_MODELS = ("central-box-office", "per-event-seller", "festival-pass", "
 
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 EDITION_RE = re.compile(r"^\d{4}$")
+QID_RE = re.compile(r"^Q[1-9]\d*$")
+# Written by popularity.py beside festival.toml; absent where the festival has
+# no Wikipedia article, so its popularity is unknown rather than zero.
+POPULARITY_FILE = "popularity.json"
 # How an edition reaches the browser. "block": this layer's converter writes its
 # serving block under site/data/festivals/. "edfringe-wire": the Edinburgh
 # Fringe's own pipeline (scraper/normalize.py) writes the files named in the
@@ -89,6 +93,8 @@ def _check(festival, path):
         raise RegistryError("%s: subtypes must be a list of lowercase-hyphen slugs" % where)
     if "region" in festival and not (isinstance(festival["region"], str) and festival["region"]):
         raise RegistryError("%s: region must be a state or region's name" % where)
+    if "wikidata" in festival and not (isinstance(festival["wikidata"], str) and QID_RE.match(festival["wikidata"])):
+        raise RegistryError("%s: wikidata %r is not a Wikidata item id (Q…)" % (where, festival["wikidata"]))
     if festival["default_genre"] not in GENRES:
         raise RegistryError("%s: default_genre %r not in %s" % (where, festival["default_genre"], GENRES))
     if festival["dir"] not in ("ltr", "rtl"):
@@ -201,7 +207,26 @@ def load(festival_dir):
         festival = tomllib.load(handle)
     _check(festival, path)
     festival["_dir"] = festival_dir
+    views = popularity(festival, os.path.join(festival_dir, POPULARITY_FILE))
+    if views is not None:
+        festival["popularity"] = views
     return festival
+
+
+def popularity(festival, path):
+    """The festival's measured views, or None where none is recorded."""
+    if not os.path.isfile(path):
+        return None
+    where = os.path.relpath(path, REPO_ROOT)
+    with open(path, encoding="utf-8") as handle:
+        record = json.load(handle)
+    if record.get("wikidata") != festival.get("wikidata"):
+        raise RegistryError("%s: measured for %r but festival.toml says wikidata = %r"
+                            % (where, record.get("wikidata"), festival.get("wikidata")))
+    views = record.get("views")
+    if isinstance(views, bool) or not isinstance(views, int) or views < 0:
+        raise RegistryError("%s: popularity %r is not a non-negative integer" % (where, views))
+    return views
 
 
 def load_all():

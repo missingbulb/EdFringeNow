@@ -21,6 +21,7 @@ kind = "music"
 subtypes = ["music-classical", "music-vocal"]
 default_genre = "music"
 site = "https://abugoshfestival.co.il"
+wikidata = "Q12410646"
 
 # Every concert has its own price, printed on its page and served per
 # performance; the outdoor courtyard sets are free.

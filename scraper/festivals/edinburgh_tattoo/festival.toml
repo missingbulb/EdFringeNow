@@ -22,6 +22,7 @@ kind = "music"
 subtypes = ["music-military"]
 default_genre = "music"
 site = "https://www.edintattoo.co.uk"
+wikidata = "Q1284748"
 
 [ticketing]
 model = "central-box-office"
