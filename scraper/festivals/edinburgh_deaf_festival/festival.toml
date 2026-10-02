@@ -29,6 +29,7 @@ format = "block"
 # events on Sun 16 Aug (the site's "about" blurb still says an earlier year's dates).
 first = "2026-08-07"
 last = "2026-08-16"
+sources = ["festival-site", "nominatim"]
 
 [[source]]
 id = "festival-site"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch comedy-festival.co.il's programme for one edition into its raw folder.
 
-Run by hand, on a machine that can reach the site — never on a schedule:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py --edition 2026
 

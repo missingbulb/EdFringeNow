@@ -14,7 +14,12 @@ festival.toml names. There is no availability and no central price, so the
 source declares neither role.
 """
 
+import os
 import sys
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(HERE))))
+import common
+
 if __name__ == "__main__":
-    sys.exit("nzicf find-a-show: no fetcher yet (see this file's docstring); nothing written")
+    common.not_ready("nzicf find-a-show: no fetcher yet (see this file's docstring); nothing written")

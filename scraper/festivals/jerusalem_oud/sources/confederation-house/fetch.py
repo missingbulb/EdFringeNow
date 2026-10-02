@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch Confederation House's Oud Festival programme for one edition into its raw folder.
 
-Run by hand, on a machine that can reach the site. Never run it on a schedule:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/jerusalem_oud/sources/confederation-house/fetch.py --edition 2026
 

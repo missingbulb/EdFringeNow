@@ -36,6 +36,7 @@ id = "2027"
 format = "block"
 first = "2027-04-30"
 last = "2027-05-23"
+sources = ["find-a-show"]
 
 [[source]]
 id = "find-a-show"

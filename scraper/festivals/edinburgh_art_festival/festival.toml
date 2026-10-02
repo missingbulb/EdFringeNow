@@ -28,6 +28,7 @@ format = "block"
 # Dates: the site's own tagline, "Returns 14—30 August 2026".
 first = "2026-08-14"
 last = "2026-08-30"
+sources = ["festival-site"]
 
 [[source]]
 id = "festival-site"

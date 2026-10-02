@@ -36,6 +36,7 @@ id = "2026"
 format = "block"
 first = "2026-08-07"
 last = "2026-08-29"
+sources = ["ticketing-api", "venues-research"]
 
 # "The 2027 show takes place from 6-28 August 2027", the 2027 show product's
 # description in the ticketing catalogue, read on 2026-09-25.
@@ -44,6 +45,7 @@ id = "2027"
 format = "block"
 first = "2027-08-06"
 last = "2027-08-28"
+sources = ["ticketing-api", "venues-research"]
 
 [[source]]
 id = "ticketing-api"
