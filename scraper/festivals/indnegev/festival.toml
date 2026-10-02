@@ -34,6 +34,7 @@ format = "block"
 # ordinal: the site prints none.
 first = "2026-10-15"
 last = "2026-10-17"
+sources = ["indnegev-site", "venues-research"]
 
 [[source]]
 id = "indnegev-site"

@@ -27,6 +27,7 @@ id = "2026"
 format = "block"
 first = "2026-08-15"
 last = "2026-08-30"
+sources = ["spektrix", "nominatim"]
 
 [[source]]
 id = "spektrix"

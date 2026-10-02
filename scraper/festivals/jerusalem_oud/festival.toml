@@ -37,6 +37,7 @@ format = "block"
 # edition, so it stays absent (null).
 first = "2026-11-05"
 last = "2026-11-12"
+sources = ["confederation-house", "venues-research"]
 
 [[source]]
 id = "confederation-house"

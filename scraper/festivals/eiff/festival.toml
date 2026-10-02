@@ -31,6 +31,7 @@ id = "2026"
 format = "block"
 first = "2026-08-13"
 last = "2026-08-19"
+sources = ["festival-site", "venues-research"]
 
 [[source]]
 id = "festival-site"
