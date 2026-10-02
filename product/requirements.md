@@ -2618,6 +2618,16 @@ footer credits them under their licences.
 
   <table><thead><tr><th align="left">List</th><th align="left">Holds at most</th></tr></thead><tbody><tr><td>Places to stay</td><td>8</td></tr><tr><td>Places to eat</td><td>8</td></tr><tr><td>Sights</td><td>6</td></tr><tr><td>Day trips</td><td>6</td></tr></tbody></table> <!-- req-gallery:33.4 -->
 
+  <details><summary>Notes</summary>
+
+  Every host city's lists are checked in the served data, since a festival
+  whose run is behind the year strip cannot be opened on the page but its
+  city still has lists; on the page, the drawer of each host city whose
+  festival the planner opens on is counted. Every city offers somewhere to
+  stay and to eat; a city whose Wikivoyage guide lists no destinations has
+  no day trips.
+  </details>
+
 ## 25. Never a list of thousands
 
 A festival programme can hold hundreds of events and a period can pool several

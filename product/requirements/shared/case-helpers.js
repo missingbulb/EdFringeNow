@@ -593,7 +593,14 @@ async function plannerReady(page, festivalId) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
+  await cityGuideSettled(page);
   await settle(page);
+}
+
+// The city's drawer loads beside the programme: it has settled once it says
+// whether it is shown, and a capture taken before that could go either way.
+function cityGuideSettled(page) {
+  return page.waitForSelector("#cityGuide[data-state]", { state: "attached", timeout: 20000 });
 }
 
 // The calendar's days, first to last, as ISO dates.
@@ -618,6 +625,7 @@ async function jerusalemReady(page) {
     const pop = document.querySelector("#footerVersion .version-pop");
     return pop && pop.textContent.includes("v0.0.0-spec");
   }, { timeout: 20000 });
+  await cityGuideSettled(page);
   await settle(page);
 }
 

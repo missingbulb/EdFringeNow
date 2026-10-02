@@ -27,6 +27,11 @@ export const FACET_OPTIONS = 30;
  * evening can have fifty shows starting at the same minute. */
 export const RIVAL_ROWS = 8;
 
+/* The most sights a city's drawer suggests: its best-known, a short list
+ * rather than the city's every museum. Where to stay and eat and the day trips
+ * arrive already short (scraper/cities/to_serving.py). */
+export const GUIDE_SIGHTS = 6;
+
 /* The longest planning period, in days. The calendar draws a column per day,
  * and past a month it is a list of columns rather than a calendar. */
 export const MAX_PERIOD_DAYS = 31;
