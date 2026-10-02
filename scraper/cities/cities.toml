@@ -78,6 +78,50 @@ timezone = "Asia/Jerusalem"
 wikivoyage = "Tel Aviv"
 
 [[city]]
+id = "ramat-gan"
+name = "Ramat Gan"
+country = "IL"
+lat = 32.0637
+lng = 34.8322
+radius_m = 5000
+near_m = 2500
+timezone = "Asia/Jerusalem"
+wikivoyage = "Ramat Gan"
+
+[[city]]
+id = "airport-city"
+name = "Airport City"
+country = "IL"
+lat = 31.986
+lng = 34.9162
+radius_m = 4000
+near_m = 8000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Lod"
+
+[[city]]
+id = "eilat"
+name = "Eilat"
+country = "IL"
+lat = 29.5569
+lng = 34.9517
+radius_m = 6000
+near_m = 1500
+timezone = "Asia/Jerusalem"
+wikivoyage = "Eilat"
+
+[[city]]
+id = "kfar-blum"
+name = "Kfar Blum"
+country = "IL"
+lat = 33.1725
+lng = 35.6097
+radius_m = 5000
+near_m = 10000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Kiryat Shemona"
+
+[[city]]
 id = "haifa"
 name = "Haifa"
 country = "IL"

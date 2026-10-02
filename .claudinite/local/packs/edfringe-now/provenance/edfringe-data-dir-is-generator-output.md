@@ -17,3 +17,10 @@
 - **Actor:** Claude, on the owner's request for hotels, restaurants and excursions per festival
   city.
 - **Model:** claude-opus-5-5
+
+## 2026-10-02 · policy-changed · names the city files of four more festival cities
+- **Reason:** nine new Israeli festivals brought Ramat Gan, Airport City, Eilat and Kfar Blum into
+  the registry, and each city's raw and serving files are named with their writer.
+- **Mechanism:** the coded check's allowlist.
+- **Actor:** Claude, on the coordinator's follow-up to the owner's city-cycle request.
+- **Model:** claude-opus-5-5

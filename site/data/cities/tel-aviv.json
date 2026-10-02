@@ -3015,8 +3015,8 @@
    "wikidata": "Q111415812",
    "openingHours": null,
    "hours": null,
-   "toVenueM": 298,
-   "venuesNear": 4
+   "toVenueM": 287,
+   "venuesNear": 5
   },
   {
    "id": "osm:node/1219941160",
@@ -3033,7 +3033,24 @@
    "openingHours": null,
    "hours": null,
    "toVenueM": 616,
-   "venuesNear": 3
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/13725354485",
+   "name": "קראון פלאזה",
+   "nameEn": "Crown Plaza",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.075185,
+   "lng": 34.792392,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 589,
+   "venuesNear": 4
   },
   {
    "id": "osm:node/11238376986",
@@ -3053,103 +3070,143 @@
    "venuesNear": 3
   },
   {
-   "id": "osm:node/13725354485",
-   "name": "קראון פלאזה",
-   "nameEn": "Crown Plaza",
+   "id": "osm:node/2079226681",
+   "name": "The Rothschild Hotel",
+   "nameEn": null,
    "kind": "hotel",
    "stars": null,
    "cuisine": null,
-   "lat": 32.075185,
-   "lng": 34.792392,
+   "lat": 32.067302,
+   "lng": 34.778059,
+   "address": "96 רוטשילד",
+   "website": "https://www.the-rothschild-hotel.com/en/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 633,
+   "venuesNear": 2
+  },
+  {
+   "id": "osm:node/2950317983",
+   "name": "the rothschild 71",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.065775,
+   "lng": 34.776788,
+   "address": "71 שדרות רוטשילד",
+   "website": "https://www.the-rothschild.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 834,
+   "venuesNear": 2
+  },
+  {
+   "id": "osm:node/10869224180",
+   "name": "מלון אטלס",
+   "nameEn": "Atlas Hotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.065334,
+   "lng": 34.776351,
    "address": null,
    "website": null,
    "wikidata": null,
    "openingHours": null,
    "hours": null,
-   "toVenueM": 589,
-   "venuesNear": 3
+   "toVenueM": 898,
+   "venuesNear": 2
   },
   {
-   "id": "osm:node/2079037428",
-   "name": "Jungle Jaffa Hostel",
-   "nameEn": null,
-   "kind": "hostel",
-   "stars": null,
-   "cuisine": null,
-   "lat": 32.052284,
-   "lng": 34.763392,
-   "address": "31 שארית ישראל, 6816517",
-   "website": "https://www.jj-hostel.com/",
-   "wikidata": null,
-   "openingHours": "24/7",
-   "hours": [
-    {
-     "dates": null,
-     "days": null,
-     "spans": [
-      [
-       "00:00",
-       "24:00"
-      ]
-     ]
-    }
-   ],
-   "toVenueM": 652,
-   "venuesNear": 1
-  },
-  {
-   "id": "osm:node/9967146016",
-   "name": "Center Chic",
-   "nameEn": null,
+   "id": "osm:way/90846147",
+   "name": "מלון דייויד אינטרקונטיננטל",
+   "nameEn": "David Intercontinental Hotel",
    "kind": "hotel",
    "stars": null,
    "cuisine": null,
-   "lat": 32.077769,
-   "lng": 34.774859,
-   "address": "2 זמנהוף",
-   "website": "https://www.atlas.co.il/center-hotel-tel-aviv",
-   "wikidata": "Q9185910",
+   "lat": 32.065367,
+   "lng": 34.76361,
+   "address": "12 קויפמן יחזקאל, 61501",
+   "website": "https://www.ihg.com/intercontinental/hotels/gb/en/tel-aviv/tlvha/hoteldetail",
+   "wikidata": "Q11713336",
    "openingHours": null,
    "hours": null,
-   "toVenueM": 665,
-   "venuesNear": 1
-  },
-  {
-   "id": "osm:node/9967146015",
-   "name": "Ciname Hotel",
-   "nameEn": null,
-   "kind": "hotel",
-   "stars": null,
-   "cuisine": null,
-   "lat": 32.078025,
-   "lng": 34.77477,
-   "address": "1 זמנהוף",
-   "website": "https://www.atlas.co.il/cinema-hotel-tel-aviv-israel",
-   "wikidata": "Q111415804",
-   "openingHours": null,
-   "hours": null,
-   "toVenueM": 691,
-   "venuesNear": 1
-  },
-  {
-   "id": "osm:node/4304581889",
-   "name": "Overstay TLV Hostel",
-   "nameEn": null,
-   "kind": "hotel",
-   "stars": null,
-   "cuisine": null,
-   "lat": 32.048285,
-   "lng": 34.765357,
-   "address": "בן צבי",
-   "website": "https://overstaytlv.com/",
-   "wikidata": null,
-   "openingHours": null,
-   "hours": null,
-   "toVenueM": 336,
+   "toVenueM": 7,
    "venuesNear": 1
   }
  ],
  "eat": [
+  {
+   "id": "osm:node/12737262824",
+   "name": "Zozobra",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian"
+   ],
+   "lat": 32.069257,
+   "lng": 34.785373,
+   "address": "96 החשמונאים",
+   "website": "https://zozobra.co.il/",
+   "wikidata": null,
+   "openingHours": "Su-We 12:00-22:00; Th-Sa 12:00-22:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 260,
+   "venuesNear": 5
+  },
+  {
+   "id": "osm:node/7769668171",
+   "name": "Benedict",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "breakfast"
+   ],
+   "lat": 32.071497,
+   "lng": 34.786532,
+   "address": "3 אלוף קלמן מגן",
+   "website": "https://www.benedict.co.il",
+   "wikidata": null,
+   "openingHours": "Su-Sa 8:00-00:00",
+   "hours": null,
+   "toVenueM": 311,
+   "venuesNear": 5
+  },
   {
    "id": "osm:node/3465151092",
    "name": "Piazza Rustico",
@@ -3185,8 +3242,57 @@
      ]
     }
    ],
-   "toVenueM": 382,
-   "venuesNear": 4
+   "toVenueM": 372,
+   "venuesNear": 5
+  },
+  {
+   "id": "osm:node/4666623690",
+   "name": "קלארו",
+   "nameEn": "claro;",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mediterranean"
+   ],
+   "lat": 32.070457,
+   "lng": 34.787898,
+   "address": "30 הארבעה",
+   "website": "https://www.clarotlv.com/",
+   "wikidata": null,
+   "openingHours": "Su-Th 12:00-02:00; Fr-Sa 09:00-02:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "02:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "02:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 432,
+   "venuesNear": 5
   },
   {
    "id": "osm:node/10932046652",
@@ -3240,154 +3346,7 @@
     }
    ],
    "toVenueM": 503,
-   "venuesNear": 4
-  },
-  {
-   "id": "osm:node/7769668171",
-   "name": "Benedict",
-   "nameEn": null,
-   "kind": "restaurant",
-   "stars": null,
-   "cuisine": [
-    "breakfast"
-   ],
-   "lat": 32.071497,
-   "lng": 34.786532,
-   "address": "3 אלוף קלמן מגן",
-   "website": "https://www.benedict.co.il",
-   "wikidata": null,
-   "openingHours": "Su-Sa 8:00-00:00",
-   "hours": null,
-   "toVenueM": 554,
-   "venuesNear": 4
-  },
-  {
-   "id": "osm:node/720955813",
-   "name": "דליקטסן בראסרי",
-   "nameEn": "Delicatessen Brassery",
-   "kind": "restaurant",
-   "stars": null,
-   "cuisine": [
-    "french"
-   ],
-   "lat": 32.0806,
-   "lng": 34.781543,
-   "address": "70 אבן גבירול",
-   "website": "https://www.delitlv.co.il/the-brasserie",
-   "wikidata": null,
-   "openingHours": "24/7",
-   "hours": [
-    {
-     "dates": null,
-     "days": null,
-     "spans": [
-      [
-       "00:00",
-       "24:00"
-      ]
-     ]
-    }
-   ],
-   "toVenueM": 593,
-   "venuesNear": 4
-  },
-  {
-   "id": "osm:node/4666623690",
-   "name": "קלארו",
-   "nameEn": "claro;",
-   "kind": "restaurant",
-   "stars": null,
-   "cuisine": [
-    "mediterranean"
-   ],
-   "lat": 32.070457,
-   "lng": 34.787898,
-   "address": "30 הארבעה",
-   "website": "https://www.clarotlv.com/",
-   "wikidata": null,
-   "openingHours": "Su-Th 12:00-02:00; Fr-Sa 09:00-02:00",
-   "hours": [
-    {
-     "dates": null,
-     "days": [
-      "su",
-      "mo",
-      "tu",
-      "we",
-      "th"
-     ],
-     "spans": [
-      [
-       "12:00",
-       "02:00"
-      ]
-     ]
-    },
-    {
-     "dates": null,
-     "days": [
-      "fr",
-      "sa"
-     ],
-     "spans": [
-      [
-       "09:00",
-       "02:00"
-      ]
-     ]
-    }
-   ],
-   "toVenueM": 698,
-   "venuesNear": 4
-  },
-  {
-   "id": "osm:node/12737262824",
-   "name": "Zozobra",
-   "nameEn": null,
-   "kind": "restaurant",
-   "stars": null,
-   "cuisine": [
-    "asian"
-   ],
-   "lat": 32.069257,
-   "lng": 34.785373,
-   "address": "96 החשמונאים",
-   "website": "https://zozobra.co.il/",
-   "wikidata": null,
-   "openingHours": "Su-We 12:00-22:00; Th-Sa 12:00-22:30",
-   "hours": [
-    {
-     "dates": null,
-     "days": [
-      "su",
-      "mo",
-      "tu",
-      "we"
-     ],
-     "spans": [
-      [
-       "12:00",
-       "22:00"
-      ]
-     ]
-    },
-    {
-     "dates": null,
-     "days": [
-      "th",
-      "fr",
-      "sa"
-     ],
-     "spans": [
-      [
-       "12:00",
-       "22:30"
-      ]
-     ]
-    }
-   ],
-   "toVenueM": 705,
-   "venuesNear": 4
+   "venuesNear": 5
   },
   {
    "id": "osm:node/9597836918",
@@ -3410,7 +3369,7 @@
    "openingHours": null,
    "hours": null,
    "toVenueM": 22,
-   "venuesNear": 4
+   "venuesNear": 5
   },
   {
    "id": "osm:node/7194886836",
@@ -3468,7 +3427,45 @@
     }
    ],
    "toVenueM": 219,
-   "venuesNear": 4
+   "venuesNear": 5
+  },
+  {
+   "id": "osm:node/2079006787",
+   "name": "מלכה",
+   "nameEn": "Malka",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.07829,
+   "lng": 34.788954,
+   "address": "2 דפנה",
+   "website": "https://ontopo.co.il/malka",
+   "wikidata": null,
+   "openingHours": "Su-Th 12:00-16:00,18:00-00:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ],
+      [
+       "18:00",
+       "00:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 232,
+   "venuesNear": 5
   }
  ],
  "trips": [
@@ -3561,7 +3558,7 @@
    "fetcherVersion": 2
   },
   "amenities": {
-   "fetchedAt": "2026-10-02T18:43:38Z",
+   "fetchedAt": "2026-10-02T19:29:50Z",
    "fetcher": "scraper/cities/fetch.py",
    "fetcherVersion": 2
   },
