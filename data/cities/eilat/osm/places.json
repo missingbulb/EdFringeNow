@@ -1,0 +1,257 @@
+{
+ "places": [
+  {
+   "id": "node/10574988488",
+   "lat": 29.577145,
+   "lng": 34.957409,
+   "tags": {
+    "name": "מצפור אליק",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1088097787",
+   "lat": 29.551766,
+   "lng": 34.95296,
+   "tags": {
+    "name": "מוזיאון להסטוריה אילת",
+    "name:en": "Eilat History Museum",
+    "tourism": "museum",
+    "website": "https://www.eilat-history.co.il/",
+    "wikidata": "Q56670341",
+    "addr:housenumber": "2",
+    "addr:street": "יותם"
+   }
+  },
+  {
+   "id": "node/1097258936",
+   "lat": 29.551817,
+   "lng": 34.953458,
+   "tags": {
+    "name": "Eilat Gallery",
+    "name:en": "Eilat Gallery",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/13885870201",
+   "lat": 29.542605,
+   "lng": 34.998741,
+   "tags": {
+    "name": "النافورة مول",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/13900542101",
+   "lat": 29.53914,
+   "lng": 35.006861,
+   "tags": {
+    "name": "Big Label 3",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/13914908801",
+   "lat": 29.533617,
+   "lng": 35.007532,
+   "tags": {
+    "name": "yara kids يارا كيدز",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/278478670",
+   "lat": 29.580125,
+   "lng": 34.899679,
+   "tags": {
+    "name": "הר שלמה",
+    "name:en": "Har Shlomo",
+    "tourism": "viewpoint",
+    "wikidata": "Q7211572"
+   }
+  },
+  {
+   "id": "node/3227767361",
+   "lat": 29.546967,
+   "lng": 34.967123,
+   "tags": {
+    "name": "אמפי תיאטרון",
+    "name:en": "Amphi Theater",
+    "tourism": "viewpoint",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4286413399",
+   "lat": 29.600045,
+   "lng": 34.972798,
+   "tags": {
+    "name": "טופ 94",
+    "name:en": "Top 94",
+    "tourism": "theme_park",
+    "website": "https://top94.co.il/",
+    "wikidata": "Q30527235",
+    "addr:housenumber": "1",
+    "addr:street": "השרברב"
+   }
+  },
+  {
+   "id": "node/5416497694",
+   "lat": 29.530147,
+   "lng": 35.003267,
+   "tags": {
+    "name": "Roof viewpoint",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/5817731454",
+   "lat": 29.531551,
+   "lng": 35.005219,
+   "tags": {
+    "name": "فندق دويك 3",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/666778396",
+   "lat": 29.549075,
+   "lng": 34.953277,
+   "tags": {
+    "name": "דגל הדיו",
+    "name:en": "Ink Flag",
+    "historic": "monument",
+    "wikidata": "Q55408502"
+   }
+  },
+  {
+   "id": "node/6785842921",
+   "lat": 29.534295,
+   "lng": 35.001599,
+   "tags": {
+    "name": "Prince Haya Park",
+    "leisure": "park",
+    "wikidata": "Q31866617"
+   }
+  },
+  {
+   "id": "relation/4717620",
+   "lat": 29.712738,
+   "lng": 34.890723,
+   "tags": {
+    "name": "שמורת טבע מסיב אילת",
+    "name:en": "Massive Eilat Nature Reserve",
+    "leisure": "nature_reserve",
+    "wikidata": "Q26766882"
+   }
+  },
+  {
+   "id": "way/107234118",
+   "lat": 29.530594,
+   "lng": 34.999934,
+   "tags": {
+    "name": "آيلة",
+    "name:en": "Ayla",
+    "historic": "archaeological_site",
+    "wikidata": "Q407451",
+    "wikipedia": "fr:Ayla"
+   }
+  },
+  {
+   "id": "way/115548703",
+   "lat": 29.534446,
+   "lng": 35.001915,
+   "tags": {
+    "name": "Prince Haya Park",
+    "leisure": "park",
+    "wikidata": "Q31866617"
+   }
+  },
+  {
+   "id": "way/486154423",
+   "lat": 29.533704,
+   "lng": 34.999075,
+   "tags": {
+    "name": "Aqaba Church",
+    "historic": "archaeological_site",
+    "wikidata": "Q2845916",
+    "wikipedia": "en:Aqaba Church"
+   }
+  },
+  {
+   "id": "way/744720267",
+   "lat": 29.559248,
+   "lng": 35.011722,
+   "tags": {
+    "name": "8th Reseidential Area Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/744720268",
+   "lat": 29.559026,
+   "lng": 35.01147,
+   "tags": {
+    "name": "8th Reseidential Area Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/744720270",
+   "lat": 29.558824,
+   "lng": 35.011245,
+   "tags": {
+    "name": "8th Reseidential Area Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "way/852999272",
+   "lat": 29.552172,
+   "lng": 34.957457,
+   "tags": {
+    "name": "פארק אופירה",
+    "name:en": "Ofira Park",
+    "leisure": "park",
+    "wikidata": "Q26768739"
+   }
+  },
+  {
+   "id": "way/93727476",
+   "lat": 29.572494,
+   "lng": 34.985074,
+   "tags": {
+    "name": "مرصد طيور العقبة",
+    "name:en": "Aqaba Bird Observatory",
+    "tourism": "attraction",
+    "leisure": "nature_reserve",
+    "wikidata": "Q31866612"
+   }
+  },
+  {
+   "id": "way/94204215",
+   "lat": 29.526069,
+   "lng": 34.936694,
+   "tags": {
+    "name": "ריף הדולפינים",
+    "name:en": "Dolphin Reef",
+    "tourism": "attraction",
+    "leisure": "resort",
+    "website": "https://www.dolphinreef.co.il/",
+    "wikidata": "Q5289642",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/959704964",
+   "lat": 29.551737,
+   "lng": 34.953022,
+   "tags": {
+    "name": "אילת עירי",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  }
+ ]
+}

@@ -1,0 +1,979 @@
+{
+ "places": [
+  {
+   "id": "node/12148492456",
+   "lat": 49.621385,
+   "lng": 6.149082,
+   "tags": {
+    "name": "Europa Experience Luxembourg",
+    "tourism": "museum",
+    "opening_hours": "Mo-Sa 10:00-18:00",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12864916169",
+   "lat": 49.612552,
+   "lng": 6.130556,
+   "tags": {
+    "name": "Galerie K",
+    "tourism": "gallery",
+    "opening_hours": "Fr, Sa 11:00-18:00",
+    "website": "https://www.galerie-k.lu/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/1303641442",
+   "lat": 49.600264,
+   "lng": 6.118411,
+   "tags": {
+    "name": "Monuments aux morts 1939-1945",
+    "historic": "memorial",
+    "wikidata": "Q13104197",
+    "wikipedia": "lb:Monument aux morts Hollerech"
+   }
+  },
+  {
+   "id": "node/13281370048",
+   "lat": 49.611645,
+   "lng": 6.127412,
+   "tags": {
+    "name": "YellowKorner",
+    "tourism": "gallery",
+    "opening_hours": "Mo off; Tu-Fr 11:00-18:00; Sa 10:00-18:00; Su off; PH off",
+    "website": "https://www.yellowkorner.com",
+    "addr:housenumber": "6",
+    "addr:street": "Rue Beck",
+    "addr:postcode": "1222"
+   }
+  },
+  {
+   "id": "node/13395436992",
+   "lat": 49.6148,
+   "lng": 6.146061,
+   "tags": {
+    "name": "ClausenArt",
+    "tourism": "gallery",
+    "website": "https://clausenart.lu/",
+    "addr:housenumber": "32",
+    "addr:street": "Rue de Clausen",
+    "addr:postcode": "1342"
+   }
+  },
+  {
+   "id": "node/13624818349",
+   "lat": 49.600452,
+   "lng": 6.128882,
+   "tags": {
+    "name": "1:1",
+    "tourism": "gallery",
+    "opening_hours": "Sa 13:00-18:00, open \"by appointment\"",
+    "website": "https://gallery1to1.com/",
+    "addr:housenumber": "31",
+    "addr:street": "Rue de Strasbourg",
+    "addr:postcode": "2561"
+   }
+  },
+  {
+   "id": "node/1428388942",
+   "lat": 49.595399,
+   "lng": 6.12119,
+   "tags": {
+    "name": "Mémorial de la déportation",
+    "historic": "memorial",
+    "wikidata": "Q13104204",
+    "wikipedia": "lb:Monument de la déportation civile et militaire"
+   }
+  },
+  {
+   "id": "node/1591592011",
+   "lat": 49.608956,
+   "lng": 6.128173,
+   "tags": {
+    "name": "Ravelin Pâté",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1591592059",
+   "lat": 49.608784,
+   "lng": 6.128234,
+   "tags": {
+    "name": "Priedegtstull",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/1591592081",
+   "lat": 49.609253,
+   "lng": 6.128092,
+   "tags": {
+    "name": "Fausse braie Beck-Jost",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1820831951",
+   "lat": 49.603511,
+   "lng": 6.130748,
+   "tags": {
+    "name": "Marché hebdomadaire",
+    "amenity": "marketplace",
+    "opening_hours": "Th 07:30-14:00"
+   }
+  },
+  {
+   "id": "node/2049071241",
+   "lat": 49.613166,
+   "lng": 6.150797,
+   "tags": {
+    "name": "Fort Dumoulin",
+    "historic": "fort",
+    "wikidata": "Q13102628",
+    "wikipedia": "lb:Fort Dumoulin"
+   }
+  },
+  {
+   "id": "node/2269863399",
+   "lat": 49.610217,
+   "lng": 6.121809,
+   "tags": {
+    "name": "Mahatma Gandhi",
+    "historic": "memorial",
+    "wikidata": "Q16762811",
+    "wikipedia": "lb:Buste vum Mahatma Gandhi am Stadpark zu Lëtzebuerg"
+   }
+  },
+  {
+   "id": "node/2308226011",
+   "lat": 49.614982,
+   "lng": 6.128279,
+   "tags": {
+    "name": "Joseph Kutter",
+    "historic": "memorial",
+    "wikidata": "Q16763779",
+    "wikipedia": "lb:Joseph-Kutter-Stèle",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2331847204",
+   "lat": 49.611264,
+   "lng": 6.130388,
+   "tags": {
+    "name": "Ratskeller",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 11:00-19:00",
+    "website": "https://cerclecite.lu/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/245572376",
+   "lat": 49.609301,
+   "lng": 6.12937,
+   "tags": {
+    "name": "Monument du souvenir",
+    "name:en": "Monument of Remembrance (Gëlle Fra)",
+    "historic": "memorial",
+    "wikidata": "Q1102519",
+    "wikipedia": "lb:Gëlle Fra"
+   }
+  },
+  {
+   "id": "node/3012367349",
+   "lat": 49.616395,
+   "lng": 6.139297,
+   "tags": {
+    "name": "Musée Dräi Eechelen",
+    "tourism": "museum",
+    "opening_hours": "Tu,Th-Su,PH 10:00-18:00; We 10:00-20:00",
+    "website": "https://m3e.public.lu/fr.html",
+    "wikidata": "Q15107302",
+    "wikipedia": "lb:Musée Dräi Eechelen - forteresse, histoire, identités",
+    "addr:housenumber": "5",
+    "addr:street": "Park Dräi Eechelen",
+    "addr:postcode": "1499",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3397343495",
+   "lat": 49.60612,
+   "lng": 6.139211,
+   "tags": {
+    "name": "Musée de la Police Grand-Ducale",
+    "tourism": "museum",
+    "addr:housenumber": "21A"
+   }
+  },
+  {
+   "id": "node/370138978",
+   "lat": 49.609847,
+   "lng": 6.132449,
+   "tags": {
+    "name": "Grande-Duchesse Charlotte",
+    "historic": "memorial",
+    "wikidata": "Q1187974",
+    "wikipedia": "lb:Groussherzogin-Charlotte-Monument (Stad Lëtzebuerg)",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/4315424507",
+   "lat": 49.615592,
+   "lng": 6.130647,
+   "tags": {
+    "name": "Panorama-Aufzug Pfaffenthal",
+    "name:en": "Pfaffenthal panorama elevator",
+    "tourism": "viewpoint",
+    "wikidata": "Q25583505",
+    "wikipedia": "en:Pfaffenthal Panoramic Elevator",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4750603426",
+   "lat": 49.609782,
+   "lng": 6.127167,
+   "tags": {
+    "name": "Casino Luxembourg - Forum d'art contemporain",
+    "tourism": "museum",
+    "opening_hours": "Mo, We, Fr-Su 11:00-19:00; Th 11:00-21:00",
+    "wikidata": "Q3019728",
+    "wikipedia": "en:Casino Luxembourg",
+    "addr:housenumber": "41",
+    "addr:street": "Rue Notre-Dame",
+    "addr:postcode": "2345",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5459427547",
+   "lat": 49.616795,
+   "lng": 6.146439,
+   "tags": {
+    "name": "Fort Parkhöhe",
+    "historic": "fort",
+    "wikidata": "Q13102619",
+    "wikipedia": "lb:Fort Parkhöhe"
+   }
+  },
+  {
+   "id": "node/5459427549",
+   "lat": 49.604048,
+   "lng": 6.134458,
+   "tags": {
+    "name": "Fort Wallis",
+    "historic": "fort",
+    "wikidata": "Q84089625"
+   }
+  },
+  {
+   "id": "node/5459427556",
+   "lat": 49.60693,
+   "lng": 6.121804,
+   "tags": {
+    "name": "Fort Rheinsheim",
+    "historic": "fort",
+    "wikidata": "Q25583742",
+    "wikipedia": "lb:Fort Rheinsheim"
+   }
+  },
+  {
+   "id": "node/5459427565",
+   "lat": 49.611396,
+   "lng": 6.122931,
+   "tags": {
+    "name": "Fort Louvigny",
+    "historic": "fort",
+    "wikidata": "Q83816364"
+   }
+  },
+  {
+   "id": "node/5459427569",
+   "lat": 49.617218,
+   "lng": 6.127743,
+   "tags": {
+    "name": "Fort Charles",
+    "historic": "fort",
+    "wikidata": "Q84089576"
+   }
+  },
+  {
+   "id": "node/5459427573",
+   "lat": 49.618734,
+   "lng": 6.136778,
+   "tags": {
+    "name": "Fort Olizy",
+    "historic": "fort",
+    "wikidata": "Q13102620",
+    "wikipedia": "lb:Fort Olizy"
+   }
+  },
+  {
+   "id": "node/5574033228",
+   "lat": 49.59692,
+   "lng": 6.137902,
+   "tags": {
+    "name": "Marché hebdomadaire",
+    "amenity": "marketplace",
+    "opening_hours": "Tu 16:00-19:00"
+   }
+  },
+  {
+   "id": "node/5896033554",
+   "lat": 49.610688,
+   "lng": 6.12379,
+   "tags": {
+    "name": "Victor Hugo",
+    "historic": "memorial",
+    "wikidata": "Q13101851",
+    "wikipedia": "lb:Buste vum Victor Hugo am Stadpark zu Lëtzebuerg"
+   }
+  },
+  {
+   "id": "node/621867608",
+   "lat": 49.611413,
+   "lng": 6.136201,
+   "tags": {
+    "name": "Bock",
+    "name:en": "The Bock",
+    "tourism": "viewpoint",
+    "wikidata": "Q2714250",
+    "wikipedia": "lb:Bockfiels",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/647495779",
+   "lat": 49.609429,
+   "lng": 6.129932,
+   "tags": {
+    "name": "Pétrusse Casemates",
+    "tourism": "attraction",
+    "wikidata": "Q13101673",
+    "wikipedia": "lb:Bastioun Beck",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/647570347",
+   "lat": 49.611289,
+   "lng": 6.128603,
+   "tags": {
+    "name": "Edmond de la Fontaine & Michel Lentz",
+    "historic": "monument",
+    "wikidata": "Q16763432"
+   }
+  },
+  {
+   "id": "node/651352911",
+   "lat": 49.60704,
+   "lng": 6.13408,
+   "tags": {
+    "name": "Monument National de la Solidarité Luxembourgeoise",
+    "historic": "memorial",
+    "wikidata": "Q13104205"
+   }
+  },
+  {
+   "id": "node/653147723",
+   "lat": 49.615131,
+   "lng": 6.119565,
+   "tags": {
+    "name": "Monument national de la résistance et de la déportation",
+    "historic": "memorial",
+    "wikidata": "Q13103031",
+    "wikipedia": "lb:Hinzerter Kräiz"
+   }
+  },
+  {
+   "id": "node/6845177495",
+   "lat": 49.595394,
+   "lng": 6.120819,
+   "tags": {
+    "name": "Deportation Museum",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/6869893409",
+   "lat": 49.611782,
+   "lng": 6.137252,
+   "tags": {
+    "name": "John of Bohemia plaque",
+    "historic": "memorial",
+    "wikidata": "Q81655252"
+   }
+  },
+  {
+   "id": "node/7067936475",
+   "lat": 49.605474,
+   "lng": 6.127811,
+   "tags": {
+    "name": "Galerie d’art contemporain ‘Am Tunnel’",
+    "tourism": "museum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/7203688295",
+   "lat": 49.607289,
+   "lng": 6.128535,
+   "tags": {
+    "name": "Musee de la Banque",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:00-17:30",
+    "website": "https://www.bcee.lu/",
+    "addr:housenumber": "1",
+    "addr:street": "Place de Metz",
+    "addr:postcode": "1930",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/765763891",
+   "lat": 49.60868,
+   "lng": 6.151538,
+   "tags": {
+    "name": "Hammer Dällchen",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7704516791",
+   "lat": 49.608971,
+   "lng": 6.13173,
+   "tags": {
+    "name": "Kaddish",
+    "historic": "memorial",
+    "wikidata": "Q55521088"
+   }
+  },
+  {
+   "id": "node/7773018734",
+   "lat": 49.60927,
+   "lng": 6.12936,
+   "tags": {
+    "name": "Gëlle Fra",
+    "historic": "monument",
+    "wikidata": "Q1102519",
+    "wikipedia": "en:Gëlle Fra"
+   }
+  },
+  {
+   "id": "node/8080240552",
+   "lat": 49.611663,
+   "lng": 6.136689,
+   "tags": {
+    "name": "Casemates du Bock",
+    "name:en": "Bock Casemates",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su, PH 09:45-17:00; Jan 1, Dec 24 off",
+    "website": "https://www.luxembourg-city.com/en/tours-activities/underground/bock-casemates",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8237181599",
+   "lat": 49.610959,
+   "lng": 6.126716,
+   "tags": {
+    "name": "Stater Maart",
+    "amenity": "marketplace",
+    "opening_hours": "We 07:30-14:00; Sa 07:30-14:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/847566789",
+   "lat": 49.611601,
+   "lng": 6.135508,
+   "tags": {
+    "name": "Pierre dite de Goethe",
+    "historic": "memorial",
+    "wikidata": "Q81695322"
+   }
+  },
+  {
+   "id": "node/8841437139",
+   "lat": 49.617402,
+   "lng": 6.125099,
+   "tags": {
+    "name": "Glacismaart",
+    "amenity": "marketplace",
+    "opening_hours": "Sep-Jul Su[3] 10:00-17:00"
+   }
+  },
+  {
+   "id": "relation/12586189",
+   "lat": 49.610001,
+   "lng": 6.123456,
+   "tags": {
+    "name": "Bastion du fort Lambert",
+    "historic": "ruins",
+    "building": "ruins",
+    "wikidata": "Q28227879"
+   }
+  },
+  {
+   "id": "relation/1966583",
+   "lat": 49.611038,
+   "lng": 6.127467,
+   "tags": {
+    "name": "Postgebai Stad Lëtzebuerg",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "civic",
+    "website": "https://hoteldespostes.lu/",
+    "wikidata": "Q58484385",
+    "wikipedia": "lb:Postgebai Stad Lëtzebuerg",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/20986707",
+   "lat": 49.607783,
+   "lng": 6.136815,
+   "tags": {
+    "name": "Écluse du Grund",
+    "historic": "ruins",
+    "building": "yes",
+    "wikidata": "Q16763637"
+   }
+  },
+  {
+   "id": "way/107444901",
+   "lat": 49.625718,
+   "lng": 6.105077,
+   "tags": {
+    "name": "Château de Septfontaines",
+    "historic": "castle",
+    "building": "yes",
+    "website": "http://www.chateaudeseptfontaines.com/",
+    "wikidata": "Q2970684",
+    "wikipedia": "en:Château de Septfontaines",
+    "addr:housenumber": "326",
+    "addr:street": "Rue de Rollingergrund",
+    "addr:postcode": "2441"
+   }
+  },
+  {
+   "id": "way/122763202",
+   "lat": 49.613336,
+   "lng": 6.12544,
+   "tags": {
+    "name": "Parc municipal Edouard André",
+    "name:en": "Edouard André Municipal Park",
+    "leisure": "park",
+    "wikidata": "Q6936260",
+    "wikipedia": "en:Municipal Park (Luxembourg City)"
+   }
+  },
+  {
+   "id": "way/1284253707",
+   "lat": 49.605667,
+   "lng": 6.135101,
+   "tags": {
+    "name": "Chapelle Saint-Quirin",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "historic": "yes",
+    "building": "chapel",
+    "wikidata": "Q13102879",
+    "wikipedia": "lb:Gräinskapell",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/161863480",
+   "lat": 49.64337,
+   "lng": 6.13776,
+   "tags": {
+    "name": "Ambassade de Russie",
+    "name:en": "Embassy of Russia",
+    "historic": "castle",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 08:30-12:30,14:00-18:00",
+    "website": "https://ambruslu.mid.ru",
+    "wikidata": "Q5369844",
+    "wikipedia": "fr:Ambassade de Russie au Luxembourg",
+    "addr:housenumber": "116A",
+    "addr:street": "Rue Cyprien Merjai",
+    "addr:postcode": "2145"
+   }
+  },
+  {
+   "id": "way/163103029",
+   "lat": 49.612531,
+   "lng": 6.133358,
+   "tags": {
+    "name": "Trois Tours",
+    "tourism": "attraction",
+    "building": "public",
+    "wikidata": "Q13102363",
+    "wikipedia": "lb:Dräi Tierm"
+   }
+  },
+  {
+   "id": "way/164179103",
+   "lat": 49.615241,
+   "lng": 6.1443,
+   "tags": {
+    "name": "Schlass La Fontaine",
+    "name:en": "\"La Fontaine\" Castle",
+    "tourism": "attraction",
+    "historic": "archaeological_site",
+    "wikidata": "Q13104967",
+    "wikipedia": "lb:Schlass La Fontaine"
+   }
+  },
+  {
+   "id": "way/164340780",
+   "lat": 49.597556,
+   "lng": 6.124658,
+   "tags": {
+    "name": "Fondation de l'Architecture et de l'ingénierie Luxembourg",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/170042243",
+   "lat": 49.613152,
+   "lng": 6.128547,
+   "tags": {
+    "name": "In Joy fine art",
+    "tourism": "gallery",
+    "opening_hours": "Mo-We \"Sur Rendez-Vous\", Th-Sa 10:30-18:00",
+    "website": "https://www.injoygallery.com/en",
+    "addr:housenumber": "26",
+    "addr:street": "Rue Beaumont",
+    "addr:postcode": "1219"
+   }
+  },
+  {
+   "id": "way/219168168",
+   "lat": 49.617173,
+   "lng": 6.129065,
+   "tags": {
+    "name": "Monument Robert Schuman",
+    "historic": "memorial",
+    "building": "yes",
+    "wikidata": "Q13104803",
+    "wikipedia": "lb:Robert-Schuman Monument"
+   }
+  },
+  {
+   "id": "way/26424184",
+   "lat": 49.616486,
+   "lng": 6.139428,
+   "tags": {
+    "name": "Fort Thüngen",
+    "historic": "fort",
+    "building": "yes",
+    "wikidata": "Q585990",
+    "wikipedia": "en:Fort Thüngen",
+    "addr:housenumber": "5",
+    "addr:street": "Park Dräi Eechelen",
+    "addr:postcode": "1499"
+   }
+  },
+  {
+   "id": "way/33767420",
+   "lat": 49.609699,
+   "lng": 6.135605,
+   "tags": {
+    "name": "Musée national d'histoire naturelle",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Su 10:00-18:00; Tu 10:00-20:00",
+    "wikidata": "Q6974489",
+    "wikipedia": "en:National Museum of Natural History, Luxembourg",
+    "addr:housenumber": "25",
+    "addr:street": "Rue Munster",
+    "addr:postcode": "2160",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/40525702",
+   "lat": 49.620706,
+   "lng": 6.110852,
+   "tags": {
+    "name": "Parc Tony Neuman",
+    "leisure": "park",
+    "wikidata": "Q13104470",
+    "wikipedia": "lb:Parc Tony-Neuman"
+   }
+  },
+  {
+   "id": "way/48994765",
+   "lat": 49.609966,
+   "lng": 6.133629,
+   "tags": {
+    "name": "Lëtzebuerg City Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu, We, Fr-Su 10:00-18:00; Th 10:00-20:00",
+    "website": "https://citymuseum.lu",
+    "wikidata": "Q2555232",
+    "wikipedia": "lb:Lëtzebuerg City Museum",
+    "addr:housenumber": "14",
+    "addr:street": "Rue du Saint-Esprit",
+    "addr:postcode": "1475",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/48994767",
+   "lat": 49.611717,
+   "lng": 6.13372,
+   "tags": {
+    "name": "Musée national d'histore et d'art Luxembourg",
+    "name:en": "National Museum of History and Art",
+    "tourism": "museum",
+    "building": "public",
+    "opening_hours": "Fr-We 10:00-18:00; Th 10:00-20:00",
+    "website": "https://www.nationalmusee.lu/",
+    "wikidata": "Q2585886",
+    "wikipedia": "en:National Museum of History and Art",
+    "addr:housenumber": "1",
+    "addr:street": "Marché-aux-Poissons",
+    "addr:postcode": "2345",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/48995150",
+   "lat": 49.611365,
+   "lng": 6.130179,
+   "tags": {
+    "name": "Cercle municipal",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q1054819",
+    "wikipedia": "lb:Cercle municipal"
+   }
+  },
+  {
+   "id": "way/49908579",
+   "lat": 49.615351,
+   "lng": 6.137615,
+   "tags": {
+    "name": "Fort Obergrünewald",
+    "historic": "fort",
+    "wikidata": "Q83788027"
+   }
+  },
+  {
+   "id": "way/50041968",
+   "lat": 49.608086,
+   "lng": 6.106695,
+   "tags": {
+    "name": "Place de Gand",
+    "leisure": "park",
+    "wikidata": "Q25583805",
+    "wikipedia": "lb:Place de Gand"
+   }
+  },
+  {
+   "id": "way/510260718",
+   "lat": 49.609744,
+   "lng": 6.135239,
+   "tags": {
+    "name": "Luxembourg City: Old Quarters & Fortifications",
+    "tourism": "attraction",
+    "opening_hours": "24/7",
+    "website": "https://luxembourg.public.lu/fr/visiter/que-faire/art-et-culture/forteresse",
+    "wikidata": "Q278386",
+    "wikipedia": "en:Fortress of Luxembourg",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/512532696",
+   "lat": 49.614677,
+   "lng": 6.144329,
+   "tags": {
+    "name": "Parc Mansfeld",
+    "leisure": "park",
+    "opening_hours": "Mar 01-Mar 31 07:30-20:00, Apr 01-Sep 30 07:00-22:00, Oct 01-Oct 31 07:30-20:00, Nov 10-Feb 28 07:30-18:00",
+    "wikidata": "Q104805127"
+   }
+  },
+  {
+   "id": "way/52345116",
+   "lat": 49.616302,
+   "lng": 6.133855,
+   "tags": {
+    "name": "Fort Niedergrünewald",
+    "historic": "fort",
+    "building": "yes",
+    "wikidata": "Q13102621",
+    "wikipedia": "lb:Fort Niedergrünewald"
+   }
+  },
+  {
+   "id": "way/526461841",
+   "lat": 49.60268,
+   "lng": 6.121767,
+   "tags": {
+    "name": "Parc Heintz",
+    "leisure": "park",
+    "wikidata": "Q13104473",
+    "wikipedia": "lb:Parc Heintz (Escher Strooss)"
+   }
+  },
+  {
+   "id": "way/53087984",
+   "lat": 49.613107,
+   "lng": 6.122488,
+   "tags": {
+    "name": "Villa Vauban",
+    "tourism": "museum",
+    "building": "public",
+    "opening_hours": "We-Mo 10:00-18:00, Fr 10:00-21:00",
+    "wikidata": "Q2223322",
+    "wikipedia": "en:Villa Vauban",
+    "addr:housenumber": "18",
+    "addr:street": "Avenue Émile Reuter",
+    "addr:postcode": "2090",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/546346007",
+   "lat": 49.612018,
+   "lng": 6.137665,
+   "tags": {
+    "name": "Dent Creuse",
+    "tourism": "attraction",
+    "building": "ruins",
+    "wikidata": "Q16763718",
+    "wikipedia": "lb:Huelen Zant"
+   }
+  },
+  {
+   "id": "way/55432249",
+   "lat": 49.599069,
+   "lng": 6.102746,
+   "tags": {
+    "name": "Musée de Tramways et de Bus",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th 13:30-17:30; Sa-Su,PH 10:00-18:00",
+    "wikidata": "Q4306482",
+    "wikipedia": "fr:Musée des tramways et de bus de la ville de Luxembourg",
+    "addr:housenumber": "63",
+    "addr:street": "Rue de Bouillon",
+    "addr:postcode": "1248",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/557327264",
+   "lat": 49.609655,
+   "lng": 6.127153,
+   "tags": {
+    "name": "Casino Luxembourg",
+    "tourism": "gallery",
+    "building": "yes",
+    "addr:housenumber": "41",
+    "addr:street": "Rue Notre-Dame",
+    "addr:postcode": "2345",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/9042342",
+   "lat": 49.616819,
+   "lng": 6.140025,
+   "tags": {
+    "name": "MUDAM",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu, Th-Su 10:00-18:00; We 10:00-21:00",
+    "website": "https://www.mudam.lu/",
+    "wikidata": "Q1955758",
+    "wikipedia": "en:MUDAM",
+    "addr:housenumber": "3",
+    "addr:street": "Park Dräi Eechelen",
+    "addr:postcode": "1499",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/945070573",
+   "lat": 49.611728,
+   "lng": 6.185747,
+   "tags": {
+    "name": "Luxembourg American Cemetery and Memorial",
+    "tourism": "attraction",
+    "opening_hours": "Mo-Su 09:00-17:00; Jan 1 off; Dec 25 off",
+    "wikidata": "Q1552790",
+    "wikipedia": "lb:Amerikaneschen Zaldotekierfecht zu Hamm"
+   }
+  },
+  {
+   "id": "way/94661928",
+   "lat": 49.611154,
+   "lng": 6.145647,
+   "tags": {
+    "name": "Fort Rumigny",
+    "historic": "fort",
+    "building": "yes",
+    "wikidata": "Q13102622",
+    "wikipedia": "lb:Fort Rumigny"
+   }
+  },
+  {
+   "id": "way/94661982",
+   "lat": 49.610606,
+   "lng": 6.143118,
+   "tags": {
+    "name": "Fort Rubamprez",
+    "historic": "fort",
+    "building": "yes",
+    "wikidata": "Q13102623",
+    "wikipedia": "lb:Fort Rubamprez"
+   }
+  },
+  {
+   "id": "way/9653074",
+   "lat": 49.610988,
+   "lng": 6.132913,
+   "tags": {
+    "name": "Palais Grand Ducal",
+    "name:en": "Grand Ducal Palace",
+    "tourism": "attraction",
+    "historic": "castle",
+    "building": "public",
+    "wikidata": "Q1205254",
+    "wikipedia": "lb:Groussherzogleche Palais"
+   }
+  },
+  {
+   "id": "way/9653953",
+   "lat": 49.606034,
+   "lng": 6.112186,
+   "tags": {
+    "name": "Parc de Merl",
+    "leisure": "park",
+    "wikidata": "Q7136378",
+    "wikipedia": "en:Parc Merl"
+   }
+  }
+ ]
+}

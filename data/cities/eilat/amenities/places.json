@@ -1,0 +1,1266 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "israman",
+   "venue": "royal-beach",
+   "lat": 29.54821,
+   "lng": 34.96328
+  },
+  {
+   "festival": "israman",
+   "venue": "royal-beach-hotel",
+   "lat": 29.54951,
+   "lng": 34.96301
+  },
+  {
+   "festival": "israman",
+   "venue": "royal-garden",
+   "lat": 29.55043,
+   "lng": 34.96338
+  },
+  {
+   "festival": "red-sea-jazz",
+   "venue": "eilat-port",
+   "lat": 29.55694,
+   "lng": 34.95167
+  },
+  {
+   "festival": "seeei-electricity-energy",
+   "venue": "dan-eilat",
+   "lat": 29.54866,
+   "lng": 34.9655
+  },
+  {
+   "festival": "seeei-electricity-energy",
+   "venue": "herods-boutique",
+   "lat": 29.54924,
+   "lng": 34.96748
+  },
+  {
+   "festival": "seeei-electricity-energy",
+   "venue": "herods-palace",
+   "lat": 29.54822,
+   "lng": 34.96748
+  }
+ ],
+ "places": [
+  {
+   "id": "node/1074832267",
+   "lat": 29.555329,
+   "lng": 34.954286,
+   "tags": {
+    "name": "palms hotel מלון פאלמס",
+    "tourism": "hotel",
+    "website": "https://www.palmshotel.co.il/",
+    "addr:housenumber": "2",
+    "addr:street": "שדרות התמרים",
+    "addr:postcode": "88000"
+   }
+  },
+  {
+   "id": "node/1074970418",
+   "lat": 29.554793,
+   "lng": 34.963345,
+   "tags": {
+    "name": "Astral Village",
+    "name:en": "Astral Village",
+    "tourism": "hotel",
+    "website": "https://www.astralhotels.co.il/astral-village",
+    "wikidata": "Q111415801"
+   }
+  },
+  {
+   "id": "node/1074970582",
+   "lat": 29.556458,
+   "lng": 34.963485,
+   "tags": {
+    "name": "Agamim",
+    "name:en": "Agamim",
+    "tourism": "hotel",
+    "wikidata": "Q111415825"
+   }
+  },
+  {
+   "id": "node/1074970598",
+   "lat": 29.555367,
+   "lng": 34.961666,
+   "tags": {
+    "name": "לאונרדו פריוילג׳",
+    "name:en": "Leonardo Privilege Eilat Hotel",
+    "tourism": "hotel",
+    "website": "https://www.fattal.co.il/leonardo-privilege-eilat-hotel"
+   }
+  },
+  {
+   "id": "node/1074970647",
+   "lat": 29.555496,
+   "lng": 34.959649,
+   "tags": {
+    "name": "YA Palma",
+    "name:en": "YA Palma",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1074970706",
+   "lat": 29.556854,
+   "lng": 34.961878,
+   "tags": {
+    "name": "ישורטל אגמים אילת",
+    "name:en": "Isrotel Agamim Eilat",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1074970713",
+   "lat": 29.554602,
+   "lng": 34.959837,
+   "tags": {
+    "name": "Magic Palace Eilat",
+    "name:en": "Magic Palace Eilat",
+    "tourism": "hotel",
+    "website": "https://www.fattal.co.il/u-magic-palace-eilat-hotel",
+    "wikidata": "Q51637450"
+   }
+  },
+  {
+   "id": "node/1074970853",
+   "lat": 29.553687,
+   "lng": 34.96367,
+   "tags": {
+    "name": "Rimonim Marina Club Eilat",
+    "name:en": "Rimonim Marina Club Eilat",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1074970856",
+   "lat": 29.555286,
+   "lng": 34.960468,
+   "tags": {
+    "name": "Leonardo Royal Resort Hotel Eilat",
+    "name:en": "Leonardo Royal Resort Hotel Eilat",
+    "tourism": "hotel",
+    "wikidata": "Q111399978"
+   }
+  },
+  {
+   "id": "node/1075029132",
+   "lat": 29.554158,
+   "lng": 34.964268,
+   "tags": {
+    "name": "Vista Hotel Eilat",
+    "name:en": "Vista Hotel Eilat",
+    "tourism": "hotel",
+    "website": "http://www.vistaeilat.co.il/",
+    "wikidata": "Q111888205"
+   }
+  },
+  {
+   "id": "node/1075130569",
+   "lat": 29.55193,
+   "lng": 34.959624,
+   "tags": {
+    "name": "קיסר",
+    "name:en": "Ceasar",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1087910190",
+   "lat": 29.548052,
+   "lng": 34.966434,
+   "tags": {
+    "name": "ג'ירף",
+    "name:en": "Giraffe Noodle Bar",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.giraffe.co.il/"
+   }
+  },
+  {
+   "id": "node/1087930741",
+   "lat": 29.552332,
+   "lng": 34.957529,
+   "tags": {
+    "name": "Barbis Diner & Bar",
+    "name:en": "Barbis Diner & Bar",
+    "amenity": "restaurant",
+    "cuisine": "american;burger",
+    "website": "http://www.rest.co.il/sites/Default.asp?txtRestID=6253",
+    "addr:housenumber": "19",
+    "addr:street": "תרשיש"
+   }
+  },
+  {
+   "id": "node/1087983696",
+   "lat": 29.55095,
+   "lng": 34.958161,
+   "tags": {
+    "name": "אולה",
+    "name:en": "Olla",
+    "amenity": "restaurant",
+    "cuisine": "tapas;spanish",
+    "website": "https://olla-tapas.co.il/",
+    "opening_hours": "Su-Th 12:30-23:00",
+    "addr:housenumber": "7",
+    "addr:street": "תרשיש"
+   }
+  },
+  {
+   "id": "node/1087993299",
+   "lat": 29.551335,
+   "lng": 34.951896,
+   "tags": {
+    "name": "Ginger Asian Kitchen",
+    "name:en": "Ginger Asian Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "asian;thai;chinese;japanese",
+    "website": "https://gingereilat.com/"
+   }
+  },
+  {
+   "id": "node/1088031434",
+   "lat": 29.558704,
+   "lng": 34.954993,
+   "tags": {
+    "name": "קאזה דו ברזיל",
+    "name:en": "Casa do Brasil",
+    "amenity": "restaurant",
+    "cuisine": "brazilian",
+    "website": "https://www.casadobrasil.co.il/",
+    "opening_hours": "12:00-22:00",
+    "addr:housenumber": "3",
+    "addr:street": "שדרות חטיבת גולני"
+   }
+  },
+  {
+   "id": "node/1088058177",
+   "lat": 29.548869,
+   "lng": 34.962789,
+   "tags": {
+    "name": "Boston Fish & Grill",
+    "name:en": "Boston Fish & Grill",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "http://www.boston-grill.co.il/"
+   }
+  },
+  {
+   "id": "node/1088065569",
+   "lat": 29.551948,
+   "lng": 34.95645,
+   "tags": {
+    "name": "Dalya Hotel",
+    "name:en": "Dalya Hotel",
+    "tourism": "hotel",
+    "website": "http://www.daliahotel.co.il"
+   }
+  },
+  {
+   "id": "node/1088077726",
+   "lat": 29.554501,
+   "lng": 34.962756,
+   "tags": {
+    "name": "Passador Meet & Wine",
+    "name:en": "Passador Meet & Wine",
+    "amenity": "restaurant",
+    "cuisine": "meat;wine",
+    "website": "https://www.passador.co.il/",
+    "addr:housenumber": "10",
+    "addr:street": "קאמן"
+   }
+  },
+  {
+   "id": "node/1088081695",
+   "lat": 29.548533,
+   "lng": 34.967153,
+   "tags": {
+    "name": "Denis Kingdom",
+    "name:en": "Denis Kingdom",
+    "amenity": "restaurant",
+    "cuisine": "fish;meat"
+   }
+  },
+  {
+   "id": "node/1088086965",
+   "lat": 29.551382,
+   "lng": 34.958476,
+   "tags": {
+    "name": "Spring Onion",
+    "name:en": "Spring Onion",
+    "amenity": "restaurant",
+    "cuisine": "fish"
+   }
+  },
+  {
+   "id": "node/1088092274",
+   "lat": 29.550112,
+   "lng": 34.955819,
+   "tags": {
+    "name": "פאפאיה",
+    "name:en": "Papaya beach restaurant meat & fish",
+    "amenity": "restaurant",
+    "cuisine": "fish"
+   }
+  },
+  {
+   "id": "node/1088092276",
+   "lat": 29.550901,
+   "lng": 34.955246,
+   "tags": {
+    "name": "La Barracuda",
+    "name:en": "La Barracuda",
+    "amenity": "restaurant",
+    "cuisine": "meat"
+   }
+  },
+  {
+   "id": "node/1088092287",
+   "lat": 29.552786,
+   "lng": 34.957115,
+   "tags": {
+    "name": "Park Avenue",
+    "name:en": "Park Avenue",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "addr:street": "פארק אופירה"
+   }
+  },
+  {
+   "id": "node/1088092298",
+   "lat": 29.550931,
+   "lng": 34.958447,
+   "tags": {
+    "name": "פסטורי",
+    "name:en": "Pastory",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "7",
+    "addr:street": "תרשיש"
+   }
+  },
+  {
+   "id": "node/1088092320",
+   "lat": 29.551582,
+   "lng": 34.959009,
+   "tags": {
+    "name": "תאיסתורי",
+    "name:en": "Thaistory",
+    "amenity": "restaurant",
+    "cuisine": "sushi;thai",
+    "addr:housenumber": "9",
+    "addr:street": "תרשיש",
+    "addr:postcode": "8804625"
+   }
+  },
+  {
+   "id": "node/1088110280",
+   "lat": 29.562484,
+   "lng": 34.959322,
+   "tags": {
+    "name": "El Gaucho Eilat",
+    "name:en": "El Gaucho Eilat",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://www.elgaucho.co.il/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:street": "הערבה"
+   }
+  },
+  {
+   "id": "node/1088124086",
+   "lat": 29.548484,
+   "lng": 34.964497,
+   "tags": {
+    "name": "פאפאגאיו בר",
+    "name:en": "Papagaio",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "contact:website": "http://www.papagaio.co.il"
+   }
+  },
+  {
+   "id": "node/1088128533",
+   "lat": 29.549616,
+   "lng": 34.95968,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/1088134125",
+   "lat": 29.562427,
+   "lng": 34.951145,
+   "tags": {
+    "name": "IL PENTOLINO",
+    "name:en": "IL PENTOLINO",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "opening_hours": "Mo-Su 08:00-24:00; Fr 08:00-15:00; Sa 18:00-24:00",
+    "addr:housenumber": "112",
+    "addr:street": "שדרות התמרים"
+   }
+  },
+  {
+   "id": "node/1088301884",
+   "lat": 29.551284,
+   "lng": 34.952198,
+   "tags": {
+    "name": "כוכב הים האדום",
+    "name:en": "Cochav HaYam HaAdom",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1097285055",
+   "lat": 29.563285,
+   "lng": 34.953773,
+   "tags": {
+    "name": "Pedro",
+    "name:en": "Pedro",
+    "amenity": "restaurant",
+    "cuisine": "fish;seafood;meat",
+    "opening_hours": "Mo-Sa 18:00-23:00",
+    "addr:housenumber": "17",
+    "addr:street": "שדרות יעלים"
+   }
+  },
+  {
+   "id": "node/1097776141",
+   "lat": 29.551479,
+   "lng": 34.951713,
+   "tags": {
+    "name": "אדומית",
+    "name:en": "Edomit",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1097776151",
+   "lat": 29.557462,
+   "lng": 34.946371,
+   "tags": {
+    "name": "Melony Club",
+    "name:en": "Melony Club",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1097776172",
+   "lat": 29.558492,
+   "lng": 34.954851,
+   "tags": {
+    "name": "נובה",
+    "name:en": "Nova",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1097776189",
+   "lat": 29.553866,
+   "lng": 34.952665,
+   "tags": {
+    "name": "סנטרל פארק",
+    "name:en": "Central Park Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1097791606",
+   "lat": 29.550782,
+   "lng": 34.957372,
+   "tags": {
+    "name": "דן נפטון",
+    "name:en": "Dan Neptune",
+    "tourism": "hotel",
+    "wikidata": "Q111399980"
+   }
+  },
+  {
+   "id": "node/1097791629",
+   "lat": 29.550565,
+   "lng": 34.95644,
+   "tags": {
+    "name": "מלון אסטראל",
+    "name:en": "Astral Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/12961579701",
+   "lat": 29.552066,
+   "lng": 34.942316,
+   "tags": {
+    "name": "Exodus Hostel & Dive Center",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/12964626101",
+   "lat": 29.553739,
+   "lng": 34.945611,
+   "tags": {
+    "name": "Fucaccia",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1299862149",
+   "lat": 29.550864,
+   "lng": 34.959311,
+   "tags": {
+    "name": "GULF Restaurant",
+    "name:en": "GULF Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1299968761",
+   "lat": 29.54952,
+   "lng": 34.958968,
+   "tags": {
+    "name": "חוף ממן",
+    "name:en": "Maman Beach",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1299993189",
+   "lat": 29.550715,
+   "lng": 34.955492,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/1299993292",
+   "lat": 29.550715,
+   "lng": 34.955406,
+   "tags": {
+    "name": "Optimi diary restaurant",
+    "name:en": "Optimi diary restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1762989871",
+   "lat": 29.54953,
+   "lng": 34.963186,
+   "tags": {
+    "name": "לה קוצ'ינה",
+    "name:en": "La Cuccina",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.lacuccina.co.il/"
+   }
+  },
+  {
+   "id": "node/1763001059",
+   "lat": 29.554145,
+   "lng": 34.963647,
+   "tags": {
+    "name": "New York New York",
+    "name:en": "New York New York",
+    "amenity": "restaurant",
+    "cuisine": "american"
+   }
+  },
+  {
+   "id": "node/1763004894",
+   "lat": 29.549246,
+   "lng": 34.962922,
+   "tags": {
+    "name": "ראנץ' האוס בר בורגר",
+    "name:en": "Ranch House Bar Burger",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "http://www.rest.co.il/sites/Default.asp?txtRestID=5705"
+   }
+  },
+  {
+   "id": "node/1763010099",
+   "lat": 29.550458,
+   "lng": 34.961685,
+   "tags": {
+    "name": "Buffalo Steak House",
+    "name:en": "Buffalo Steak House",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/1763014171",
+   "lat": 29.5489,
+   "lng": 34.962639,
+   "tags": {
+    "name": "וונגס גריל",
+    "name:en": "Wang`s Grill",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "http://www.rest.co.il/sites/Default.asp?txtRestID=3951"
+   }
+  },
+  {
+   "id": "node/1763017985",
+   "lat": 29.549152,
+   "lng": 34.965692,
+   "tags": {
+    "name": "Shipudey Hatikva",
+    "name:en": "Shipudey Hatikva",
+    "amenity": "restaurant",
+    "cuisine": "Meat",
+    "addr:housenumber": "6",
+    "addr:street": "הים"
+   }
+  },
+  {
+   "id": "node/1763020169",
+   "lat": 29.548012,
+   "lng": 34.964906,
+   "tags": {
+    "name": "שיפודי הבוסתן",
+    "name:en": "Shipudei Habustan",
+    "amenity": "restaurant",
+    "cuisine": "Meat"
+   }
+  },
+  {
+   "id": "node/1763027555",
+   "lat": 29.550197,
+   "lng": 34.958149,
+   "tags": {
+    "name": "שיפודי אילת",
+    "name:en": "Shipudey Eilat - Moriah",
+    "amenity": "restaurant",
+    "cuisine": "Meat"
+   }
+  },
+  {
+   "id": "node/1763031739",
+   "lat": 29.54812,
+   "lng": 34.966313,
+   "tags": {
+    "name": "לורנס",
+    "name:en": "Lawrence",
+    "amenity": "restaurant",
+    "cuisine": "fish",
+    "website": "https://herods.co.il/",
+    "addr:housenumber": "23",
+    "addr:street": "טיילת השלום"
+   }
+  },
+  {
+   "id": "node/1763919142",
+   "lat": 29.552574,
+   "lng": 34.962004,
+   "tags": {
+    "name": "מרינה גריל",
+    "name:en": "Marina Grill",
+    "amenity": "restaurant",
+    "cuisine": "steak_house"
+   }
+  },
+  {
+   "id": "node/1763919986",
+   "lat": 29.550959,
+   "lng": 34.961451,
+   "tags": {
+    "name": "טנדורי",
+    "name:en": "Tanduri",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.tandoori.co.il/",
+    "addr:street": "Tayelet Hamelech"
+   }
+  },
+  {
+   "id": "node/1763972919",
+   "lat": 29.549695,
+   "lng": 34.964538,
+   "tags": {
+    "name": "קפה בולבארד",
+    "name:en": "Café Boulevard",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop;dairy",
+    "website": "http://www.rest.co.il/sites/Default.asp?txtRestID=5706&txtNavID=2"
+   }
+  },
+  {
+   "id": "node/1763987699",
+   "lat": 29.550089,
+   "lng": 34.961689,
+   "tags": {
+    "name": "יאקימונו",
+    "name:en": "Yakimono Eilat",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "19",
+    "addr:street": "טיילת השלום"
+   }
+  },
+  {
+   "id": "node/1764005156",
+   "lat": 29.547287,
+   "lng": 34.952785,
+   "tags": {
+    "name": "Retro",
+    "name:en": "Retro",
+    "amenity": "restaurant",
+    "cuisine": "israeli",
+    "website": "https://www.starwoodhotels.com/lemeridien/property/dining/index.html?propertyID=1880",
+    "addr:street": "HaPalmach",
+    "addr:postcode": "88119"
+   }
+  },
+  {
+   "id": "node/1764033404",
+   "lat": 29.547548,
+   "lng": 34.952163,
+   "tags": {
+    "name": "Brasserie",
+    "name:en": "Brasserie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "addr:postcode": "88119"
+   }
+  },
+  {
+   "id": "node/2000545435",
+   "lat": 29.558236,
+   "lng": 34.952745,
+   "tags": {
+    "name": "Aviv Motel",
+    "name:en": "Aviv Motel",
+    "tourism": "motel",
+    "website": "http://www.avivhostel.co.il",
+    "addr:housenumber": "126",
+    "addr:street": "עופרים",
+    "addr:postcode": "88112"
+   }
+  },
+  {
+   "id": "node/2006107432",
+   "lat": 29.558013,
+   "lng": 34.952644,
+   "tags": {
+    "name": "Nathans White House",
+    "name:en": "Nathans White House",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/2175360628",
+   "lat": 29.55913,
+   "lng": 34.954838,
+   "tags": {
+    "name": "אכסנית בית הערבה",
+    "name:en": "Arava Hostel",
+    "tourism": "hostel",
+    "website": "https://www.aravahostel.com/",
+    "wikidata": "Q111125339"
+   }
+  },
+  {
+   "id": "node/2193046926",
+   "lat": 29.551254,
+   "lng": 34.958323,
+   "tags": {
+    "name": "רק בשרים",
+    "name:en": "Rak Bsarim",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "contact:website": "http://www.rakbsarim.co.il/",
+    "opening_hours": "Mo-Su 13:00-24:00"
+   }
+  },
+  {
+   "id": "node/2658718918",
+   "lat": 29.557977,
+   "lng": 34.952165,
+   "tags": {
+    "name": "Motel Sunset",
+    "name:en": "Motel Sunset",
+    "tourism": "hostel",
+    "wikidata": "Q111125335"
+   }
+  },
+  {
+   "id": "node/3092114248",
+   "lat": 29.558318,
+   "lng": 34.952565,
+   "tags": {
+    "name": "Aviv Motel",
+    "name:en": "Aviv Motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "node/3741776425",
+   "lat": 29.559962,
+   "lng": 34.95315,
+   "tags": {
+    "name": "המחבוא של אדי",
+    "name:en": "Eddie's Hide-A-Way",
+    "amenity": "restaurant",
+    "cuisine": "international;eclectic",
+    "addr:housenumber": "68",
+    "addr:street": "אגמונים"
+   }
+  },
+  {
+   "id": "node/392637143",
+   "lat": 29.55135,
+   "lng": 34.961842,
+   "tags": {
+    "name": "ישרוטל לגונה",
+    "name:en": "Isrotel: Lagoona All Inclusive",
+    "tourism": "hotel",
+    "website": "https://www.isrotel.com/lagoona",
+    "addr:postcode": "88000"
+   }
+  },
+  {
+   "id": "node/4277454189",
+   "lat": 29.551171,
+   "lng": 34.947734,
+   "tags": {
+    "name": "Rich Luxury Suites",
+    "name:en": "Rich Luxury Suites",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/448865597",
+   "lat": 29.547231,
+   "lng": 34.952219,
+   "tags": {
+    "name": "אריאה",
+    "name:en": "Aria",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/4588912395",
+   "lat": 29.554625,
+   "lng": 34.962538,
+   "tags": {
+    "name": "מסעדת מלון אמריקנה",
+    "name:en": "Americana Hotel Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4721553036",
+   "lat": 29.547904,
+   "lng": 34.967494,
+   "tags": {
+    "name": "לוויתן",
+    "name:en": "Whale",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4721553037",
+   "lat": 29.548149,
+   "lng": 34.965586,
+   "tags": {
+    "name": "Moses",
+    "name:en": "Moses",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/4936542621",
+   "lat": 29.551319,
+   "lng": 34.958202,
+   "tags": {
+    "name": "רק דגים",
+    "name:en": "Rak Dagim",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/538836773",
+   "lat": 29.551184,
+   "lng": 34.950538,
+   "tags": {
+    "name": "ADI Hotel",
+    "name:en": "ADI Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111856260"
+   }
+  },
+  {
+   "id": "node/540901029",
+   "lat": 29.55043,
+   "lng": 34.963378,
+   "tags": {
+    "name": "ישרוטל רויאל גארדן",
+    "name:en": "Royal Garden Eilat",
+    "tourism": "hotel",
+    "wikidata": "Q64498292"
+   }
+  },
+  {
+   "id": "node/540904945",
+   "lat": 29.554393,
+   "lng": 34.961079,
+   "tags": {
+    "name": "VERT Hotel Eilat",
+    "name:en": "VERT Hotel Eilat",
+    "tourism": "hotel",
+    "website": "https://www.vert-hotels.co.il/vert-eilat-hotel",
+    "wikidata": "Q51552819",
+    "addr:street": "קאמן",
+    "addr:postcode": "88000"
+   }
+  },
+  {
+   "id": "node/540910728",
+   "lat": 29.553485,
+   "lng": 34.961353,
+   "tags": {
+    "name": "Pago Pago",
+    "name:en": "Pago Pago",
+    "amenity": "restaurant",
+    "website": "https://www.pagopagorest.com/eng/index.htm"
+   }
+  },
+  {
+   "id": "node/540970749",
+   "lat": 29.551796,
+   "lng": 34.956546,
+   "tags": {
+    "name": "דודא",
+    "name:en": "DUDA",
+    "amenity": "restaurant",
+    "cuisine": "israeli",
+    "website": "https://www.2eat.co.il/duda/"
+   }
+  },
+  {
+   "id": "node/540991162",
+   "lat": 29.550242,
+   "lng": 34.958394,
+   "tags": {
+    "name": "לאונרדו פלזה",
+    "name:en": "Lenardo Plaza Eilat",
+    "tourism": "hotel",
+    "wikidata": "Q111399981"
+   }
+  },
+  {
+   "id": "node/541032123",
+   "lat": 29.54884,
+   "lng": 34.951699,
+   "tags": {
+    "name": "בית ההארחה אילת",
+    "name:en": "Eilat Guest House",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/569055116",
+   "lat": 29.55272,
+   "lng": 34.958583,
+   "tags": {
+    "name": "דן פנורמה",
+    "name:en": "Dan Panorama",
+    "tourism": "hotel",
+    "wikidata": "Q111399979"
+   }
+  },
+  {
+   "id": "node/6241643385",
+   "lat": 29.561188,
+   "lng": 34.95345,
+   "tags": {
+    "name": "משחזר של לאלו",
+    "name:en": "lalo’s restorant",
+    "amenity": "restaurant",
+    "cuisine": "moroccan",
+    "addr:street": "החורב"
+   }
+  },
+  {
+   "id": "node/6325900385",
+   "lat": 29.551396,
+   "lng": 34.952134,
+   "tags": {
+    "name": "Branja",
+    "name:en": "Branja",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/666778126",
+   "lat": 29.552279,
+   "lng": 34.962928,
+   "tags": {
+    "name": "ישרוטל ריביירה",
+    "name:en": "Riviera Club Eilat",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/6781493037",
+   "lat": 29.55071,
+   "lng": 34.952616,
+   "tags": {
+    "name": "Amdar",
+    "name:en": "Amdar",
+    "tourism": "hostel",
+    "wikidata": "Q111125344",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7019285059",
+   "lat": 29.559231,
+   "lng": 34.951268,
+   "tags": {
+    "name": "Pitagoras",
+    "name:en": "Pitagoras",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "opening_hours": "Mo-Th, Su 11:30-22:00; Fr 11:30-16:00",
+    "addr:housenumber": "83",
+    "addr:street": "שדרות התמרים"
+   }
+  },
+  {
+   "id": "node/7176808387",
+   "lat": 29.552395,
+   "lng": 34.961403,
+   "tags": {
+    "name": "מסעדת אנג'לינה",
+    "name:en": "Angelina restaurant",
+    "amenity": "restaurant",
+    "website": "https://www.isrotel.com/isrotel-king-solomon",
+    "opening_hours": "Su-Th 18:00-23:00, Sa 18:00-23:00",
+    "addr:housenumber": "1",
+    "addr:street": "אנטיב"
+   }
+  },
+  {
+   "id": "node/7280478085",
+   "lat": 29.548368,
+   "lng": 34.95175,
+   "tags": {
+    "name": "הלב הרחב",
+    "name:en": "Halev harahav",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7962983693",
+   "lat": 29.557255,
+   "lng": 34.960736,
+   "tags": {
+    "name": "לאונרדו קלאב אילת",
+    "name:en": "Lenardo Club Eilat",
+    "tourism": "hotel",
+    "wikidata": "Q111415831"
+   }
+  },
+  {
+   "id": "node/8572764319",
+   "lat": 29.54728,
+   "lng": 34.941919,
+   "tags": {
+    "name": "Ahla Villa",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/8883027519",
+   "lat": 29.55006,
+   "lng": 34.951448,
+   "tags": {
+    "name": "קלאב הוטל",
+    "name:en": "Club Hotel",
+    "tourism": "hotel",
+    "website": "https://www.clubhotels-israel.com/club-hotel-eilat",
+    "wikidata": "Q123492925"
+   }
+  },
+  {
+   "id": "way/1424764752",
+   "lat": 29.559099,
+   "lng": 34.956611,
+   "tags": {
+    "name": "Isla Brown 42°",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999361",
+   "lat": 29.55229,
+   "lng": 34.963513,
+   "tags": {
+    "name": "ישרוטל ריביירה קלאב",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999368",
+   "lat": 29.550524,
+   "lng": 34.964022,
+   "tags": {
+    "name": "Paradise",
+    "name:en": "Paradise (Royal Garden)",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999376",
+   "lat": 29.550063,
+   "lng": 34.964847,
+   "tags": {
+    "name": "ישרוטל ספורט קלאב",
+    "name:en": "Isrotel Sport Club Eilat",
+    "tourism": "hotel",
+    "website": "https://www.isrotel.co.il/isrotel-hotels/eilat-hotels/ישרוטל-ספורט-קלאב/"
+   }
+  },
+  {
+   "id": "way/852999384",
+   "lat": 29.549313,
+   "lng": 34.967507,
+   "tags": {
+    "name": "הרודס בוטיק",
+    "name:en": "Herod's Forum",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999388",
+   "lat": 29.548228,
+   "lng": 34.966878,
+   "tags": {
+    "name": "הרודס פאלאס",
+    "name:en": "Herod's Palace",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999399",
+   "lat": 29.548636,
+   "lng": 34.965193,
+   "tags": {
+    "name": "מלון דן אילת",
+    "name:en": "Dan Hotel Eilat",
+    "tourism": "hotel",
+    "wikidata": "Q22668358"
+   }
+  },
+  {
+   "id": "way/852999442",
+   "lat": 29.549406,
+   "lng": 34.963315,
+   "tags": {
+    "name": "'רויאל ביץ",
+    "name:en": "Royal Beach",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999480",
+   "lat": 29.550224,
+   "lng": 34.961403,
+   "tags": {
+    "name": "הילטון אילת מלכת שבא",
+    "name:en": "Hilton Queen of Sheeba Eilat",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999508",
+   "lat": 29.552474,
+   "lng": 34.962018,
+   "tags": {
+    "name": "ישרוטל המלך שלמה",
+    "name:en": "King Solomon",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/852999595",
+   "lat": 29.554836,
+   "lng": 34.962541,
+   "tags": {
+    "name": "אמריקנה",
+    "name:en": "Americana",
+    "tourism": "hotel",
+    "stars": "3",
+    "website": "https://www.americanahotel.co.il/"
+   }
+  },
+  {
+   "id": "way/853760622",
+   "lat": 29.550904,
+   "lng": 34.956017,
+   "tags": {
+    "name": "אסטרל סי סייד",
+    "name:en": "Astral Sea Side",
+    "tourism": "hotel",
+    "contact:website": "http://www.astralhotels.co.il"
+   }
+  },
+  {
+   "id": "way/853806922",
+   "lat": 29.551266,
+   "lng": 34.962718,
+   "tags": {
+    "name": "Tulip (Royal Garden)",
+    "name:en": "Tulip (Royal Garden)",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/959703849",
+   "lat": 29.556403,
+   "lng": 34.947173,
+   "tags": {
+    "name": "אכסניית המקלט",
+    "name:en": "Shelter Hostel",
+    "tourism": "hostel",
+    "contact:website": "http://www.shelterhostel.com",
+    "wikidata": "Q111125336",
+    "addr:housenumber": "149/1",
+    "addr:street": "האשל",
+    "addr:postcode": "88104"
+   }
+  },
+  {
+   "id": "way/959704006",
+   "lat": 29.557841,
+   "lng": 34.951372,
+   "tags": {
+    "name": "Corinne",
+    "name:en": "Corinne",
+    "tourism": "hostel",
+    "wikidata": "Q111856254"
+   }
+  },
+  {
+   "id": "way/959704024",
+   "lat": 29.558475,
+   "lng": 34.954431,
+   "tags": {
+    "name": "נווה אילת (נובה לשעבר)",
+    "name:en": "Neve Eilat",
+    "tourism": "hotel"
+   }
+  }
+ ]
+}

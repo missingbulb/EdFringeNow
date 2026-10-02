@@ -1,0 +1,97 @@
+{
+ "page": "Singapore",
+ "url": "https://en.wikivoyage.org/wiki/Singapore",
+ "items": [
+  {
+   "page": "Batam",
+   "line": "[[Batam]] &mdash; The nearest Indonesian island to Singapore, just a short ferry trip away. Mainly industrial and infamous for its vice trade, but has some resorts.",
+   "resolved": "Batam",
+   "lat": 1.0833,
+   "lng": 104.0333
+  },
+  {
+   "page": "Bintan",
+   "line": "[[Bintan]] &mdash; Indonesian island just 55&nbsp;min away by ferry, offering both high-end resorts and the \"real Indonesia\" experience.",
+   "resolved": "Bintan",
+   "lat": 1.0,
+   "lng": 104.5
+  },
+  {
+   "page": "Johor Bahru",
+   "line": "[[Johor Bahru]] &mdash; Malaysian city just across the Causeway. Just 20&nbsp;min by bus 950 from Woodlands Bus Interchange. Not much to look at, but popular for cheap eating, shopping, spa experiences and Legoland Malaysia.",
+   "resolved": "Johor Bahru",
+   "lat": 1.4833,
+   "lng": 103.7333
+  },
+  {
+   "page": "Kuala Lumpur",
+   "line": "[[Kuala Lumpur]] &mdash; Malaysia's vibrant capital. 45&nbsp;min by plane, 4&ndash;5&nbsp;hr by bus or 10&nbsp;hr by train.",
+   "resolved": "Kuala Lumpur",
+   "lat": 3.1394,
+   "lng": 101.6893
+  },
+  {
+   "page": "Malacca",
+   "line": "[[Malacca]] &mdash; Once one of the three Straits Settlements, now a sleepy colonial town and a {{UNESCO}}. 3&ndash;4&nbsp;hr by bus, although it might take a little longer due to border congestion.",
+   "resolved": "Malacca",
+   "lat": 2.2058,
+   "lng": 102.2563
+  },
+  {
+   "page": "Pulau Tioman",
+   "line": "[[Pulau Tioman]] &mdash; The nearest of Malaysia's [[East Coast (Malaysia)|East Coast]] paradise islands, reachable by bus & ferry.",
+   "resolved": "Tioman",
+   "lat": 2.8167,
+   "lng": 104.1833
+  },
+  {
+   "page": "Bali",
+   "line": "[[Bali]] &mdash; One of Indonesia's biggest tourist draws with its nice beaches and good food. About 2.5&nbsp;hr away by plane.",
+   "resolved": "Bali",
+   "lat": -8.43,
+   "lng": 115.167
+  },
+  {
+   "page": "Bangkok",
+   "line": "[[Bangkok]] &mdash; Thailand's capital and considered a food, shopping, and clubbing paradise by many Singaporeans. It is less than 2&nbsp;hr flight away, or 2&nbsp;nights by train, assuming you don't stop off in [[Kuala Lumpur]] or Butterworth (for [[Penang]]).",
+   "resolved": "Bangkok",
+   "lat": 13.752222,
+   "lng": 100.493889
+  },
+  {
+   "page": "Phuket",
+   "line": "[[Phuket]] &mdash; One of the largest islands in Thailand, is another popular destination for Singaporeans. It offers a great weekend getaway and is less than 2&nbsp;hr flight away. Relatively cheaper than Singapore, it is a great destination to hang around.",
+   "resolved": "Phuket",
+   "lat": 7.98376,
+   "lng": 98.33107
+  },
+  {
+   "page": "Ipoh",
+   "line": "[[Ipoh]] &mdash; The capital of the Malaysian state of Perak with many well-preserved colonial buildings, it is famous among Singaporeans for its food. 7&ndash;8&nbsp;hr away by coach, or 1&nbsp;hr by plane.",
+   "resolved": "Ipoh",
+   "lat": 4.6,
+   "lng": 101.07
+  },
+  {
+   "page": "Langkawi",
+   "line": "[[Langkawi]] &mdash; An island in the Malaysian state of Kedah, just south of the Thai border, famed for endless beaches. Just over an hour by plane.",
+   "resolved": "Langkawi",
+   "lat": 6.53,
+   "lng": 99.8
+  },
+  {
+   "page": "Penang",
+   "line": "[[Penang]] &mdash; One of the Straits Settlements, with a rich history and fabulous food. Its capital [[George Town (Malaysia)|George Town]] is a {{UNESCO}}. About 12&nbsp;hr away by coach, or 1&nbsp;hr if you choose to fly. Also popular for its medical tourism.",
+   "resolved": "Penang",
+   "lat": 5.36,
+   "lng": 100.37
+  },
+  {
+   "page": "Hong Kong",
+   "line": "[[Hong Kong]] &mdash; A business hub and often regarded as a rival of Singapore. About 3 1/2 hours away by flight, and a popular shopping and dining destination for Singaporeans.",
+   "resolved": "Hong Kong",
+   "lat": 22.27,
+   "lng": 114.17
+  }
+ ]
+}

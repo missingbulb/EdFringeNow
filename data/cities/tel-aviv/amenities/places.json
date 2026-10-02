@@ -2,6 +2,18 @@
  "nearM": 1000,
  "anchors": [
   {
+   "festival": "icisa",
+   "venue": "david-intercontinental",
+   "lat": 32.06539,
+   "lng": 34.76368
+  },
+  {
+   "festival": "israel-neurological-association",
+   "venue": "expo-tel-aviv",
+   "lat": 32.10541,
+   "lng": 34.80842
+  },
+  {
    "festival": "tel-aviv-festival",
    "venue": "beit-ariela",
    "lat": 32.0767,
@@ -30,6 +42,12 @@
    "venue": "tel-aviv-performing-arts-center",
    "lat": 32.0764,
    "lng": 34.7855
+  },
+  {
+   "festival": "tlvfest",
+   "venue": "tel-aviv-cinematheque",
+   "lat": 32.07083,
+   "lng": 34.78333
   }
  ],
  "places": [
@@ -49,6 +67,56 @@
    }
   },
   {
+   "id": "node/10142636076",
+   "lat": 32.109166,
+   "lng": 34.811118,
+   "tags": {
+    "name": "Israel",
+    "amenity": "restaurant",
+    "addr:housenumber": "51",
+    "addr:street": "Yigal Alon St",
+    "addr:postcode": "61210"
+   }
+  },
+  {
+   "id": "node/10187182249",
+   "lat": 32.072965,
+   "lng": 34.764993,
+   "tags": {
+    "name": "180° Boutique Hostel",
+    "tourism": "hostel",
+    "website": "https://www.180boutiquehostel.com/",
+    "wikidata": "Q111121303",
+    "addr:housenumber": "2",
+    "addr:street": "Yona HaNavi St"
+   }
+  },
+  {
+   "id": "node/10287259609",
+   "lat": 32.062412,
+   "lng": 34.772879,
+   "tags": {
+    "name": "Lily And Bloom Hotel",
+    "tourism": "hotel",
+    "website": "https://www.lilyandbloom.com/",
+    "wikidata": "Q111415824",
+    "addr:housenumber": "48",
+    "addr:street": "לילינבלום",
+    "addr:postcode": "6513455"
+   }
+  },
+  {
+   "id": "node/10727399152",
+   "lat": 32.069485,
+   "lng": 34.770288,
+   "tags": {
+    "name": "Kaful",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "2"
+   }
+  },
+  {
    "id": "node/10759261454",
    "lat": 32.077232,
    "lng": 34.786102,
@@ -58,12 +126,46 @@
    }
   },
   {
+   "id": "node/10778245405",
+   "lat": 32.060378,
+   "lng": 34.772104,
+   "tags": {
+    "name": "Pizza Lila",
+    "name:en": "Pizza Lila",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "Sa-Th 09:00-23:00",
+    "addr:housenumber": "4",
+    "addr:street": "מרחביה"
+   }
+  },
+  {
    "id": "node/10795083145",
    "lat": 32.077369,
    "lng": 34.788994,
    "tags": {
     "name": "Meatos Grill & Bar",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/10804333064",
+   "lat": 32.062812,
+   "lng": 34.771637,
+   "tags": {
+    "name": "Rothschild",
+    "tourism": "hotel",
+    "wikidata": "Q111415821"
+   }
+  },
+  {
+   "id": "node/10804346792",
+   "lat": 32.062155,
+   "lng": 34.768718,
+   "tags": {
+    "name": "Elkonin",
+    "tourism": "hotel",
+    "wikidata": "Q22005933"
    }
   },
   {
@@ -90,6 +192,20 @@
    }
   },
   {
+   "id": "node/10931741105",
+   "lat": 32.063851,
+   "lng": 34.771115,
+   "tags": {
+    "name": "גרין רול סושי בק",
+    "name:en": "The Green Roll: Vegan Sushi Bar",
+    "amenity": "restaurant",
+    "cuisine": "japanese;sushi",
+    "website": "https://thegreenroll.co.il",
+    "addr:housenumber": "15",
+    "addr:street": "אחד העם"
+   }
+  },
+  {
    "id": "node/10932046652",
    "lat": 32.077839,
    "lng": 34.777989,
@@ -105,6 +221,15 @@
    }
   },
   {
+   "id": "node/10942124877",
+   "lat": 32.066424,
+   "lng": 34.788191,
+   "tags": {
+    "name": "JO",
+    "tourism": "hotel"
+   }
+  },
+  {
    "id": "node/11032180205",
    "lat": 32.07671,
    "lng": 34.770428,
@@ -116,6 +241,17 @@
     "website": "https://laifu.co.il/",
     "addr:housenumber": "31",
     "addr:street": "בוגרשוב"
+   }
+  },
+  {
+   "id": "node/11091229844",
+   "lat": 32.066943,
+   "lng": 34.771596,
+   "tags": {
+    "name": "כשר למהדריז",
+    "name:en": "Italian cuisine glatt kosher",
+    "amenity": "restaurant",
+    "cuisine": "italian"
    }
   },
   {
@@ -160,6 +296,20 @@
    }
   },
   {
+   "id": "node/11607487058",
+   "lat": 32.064506,
+   "lng": 34.786162,
+   "tags": {
+    "name": "Frame Chef & Sushi Bar",
+    "name:en": "Frame Chef & Sushi Bar",
+    "amenity": "restaurant",
+    "cuisine": "cafe;sushi;burger",
+    "website": "https://frame-sushibar.co.il/",
+    "addr:housenumber": "38",
+    "addr:street": "המסגר"
+   }
+  },
+  {
    "id": "node/11678978180",
    "lat": 32.07735,
    "lng": 34.793717,
@@ -180,6 +330,21 @@
    }
   },
   {
+   "id": "node/11684986013",
+   "lat": 32.070266,
+   "lng": 34.769648,
+   "tags": {
+    "name": "Jango",
+    "name:en": "Jango",
+    "amenity": "restaurant",
+    "cuisine": "burger;meat",
+    "website": "https://www.jango-telaviv.co.il/",
+    "opening_hours": "Su-Th 18:00-00:00; Fr-Sa 12:00-00:00",
+    "addr:housenumber": "12",
+    "addr:street": "הלל הזקן"
+   }
+  },
+  {
    "id": "node/11849335669",
    "lat": 32.05569,
    "lng": 34.76685,
@@ -191,6 +356,65 @@
     "opening_hours": "Su-Th 18:00-23:30; Fr-Sa 09:00-23:30",
     "addr:housenumber": "72",
     "addr:street": "אברבנאל"
+   }
+  },
+  {
+   "id": "node/1185009362",
+   "lat": 32.073395,
+   "lng": 34.765569,
+   "tags": {
+    "name": "Liber Suites",
+    "name:en": "Liber Suites",
+    "tourism": "hotel",
+    "addr:housenumber": "6"
+   }
+  },
+  {
+   "id": "node/1185009366",
+   "lat": 32.073084,
+   "lng": 34.766135,
+   "tags": {
+    "name": "Hayarkon 48 Hostel",
+    "name:en": "Hayarkon 48 Hostel",
+    "tourism": "hostel",
+    "website": "https://www.hayarkon48.com/",
+    "addr:housenumber": "48",
+    "addr:street": "Hayarkon St."
+   }
+  },
+  {
+   "id": "node/1185083191",
+   "lat": 32.073401,
+   "lng": 34.766781,
+   "tags": {
+    "name": "מסעדת לונג סנג",
+    "name:en": "Long Sang",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "13"
+   }
+  },
+  {
+   "id": "node/1185083201",
+   "lat": 32.073239,
+   "lng": 34.76621,
+   "tags": {
+    "name": "Bell Hotel",
+    "name:en": "Bell Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111856114",
+    "addr:housenumber": "50"
+   }
+  },
+  {
+   "id": "node/1185083224",
+   "lat": 32.07345,
+   "lng": 34.76658,
+   "tags": {
+    "name": "Ethiopian Restaurant",
+    "name:en": "Ethiopian Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian"
    }
   },
   {
@@ -246,6 +470,74 @@
    }
   },
   {
+   "id": "node/12106439305",
+   "lat": 32.060724,
+   "lng": 34.770368,
+   "tags": {
+    "name": "רטרו ביס",
+    "name:en": "Retro Bis",
+    "amenity": "restaurant",
+    "cuisine": "regional"
+   }
+  },
+  {
+   "id": "node/12114461037",
+   "lat": 32.064017,
+   "lng": 34.771301,
+   "tags": {
+    "name": "Radler",
+    "name:en": "Radler",
+    "amenity": "restaurant",
+    "website": "https://radlertlv.com/",
+    "opening_hours": "Su-Th 19:00-00:00; Fr 12:00-15:00, 18:00-23:00; Sa 12:00-15:00, 19:00-23:00",
+    "addr:housenumber": "48",
+    "addr:street": "נחלת בנימין"
+   }
+  },
+  {
+   "id": "node/12114473827",
+   "lat": 32.065252,
+   "lng": 34.771668,
+   "tags": {
+    "name": "Trigger Meat & Wine",
+    "name:en": "Trigger Meat & Wine",
+    "amenity": "restaurant",
+    "cuisine": "meat",
+    "website": "https://www.trigertlv.co.il",
+    "opening_hours": "Su-Sa 12:00-23:00",
+    "addr:housenumber": "21",
+    "addr:street": "מונטיפיורי"
+   }
+  },
+  {
+   "id": "node/12114477414",
+   "lat": 32.065598,
+   "lng": 34.770624,
+   "tags": {
+    "name": "גשן",
+    "name:en": "Goshen",
+    "amenity": "restaurant",
+    "cuisine": "meat",
+    "website": "https://goshentlv.co.il/",
+    "opening_hours": "Su-Th 12:00-22:30; Sa (sunset+01:00)+",
+    "addr:housenumber": "30",
+    "addr:street": "נחלת בנימין"
+   }
+  },
+  {
+   "id": "node/12117313515",
+   "lat": 32.060876,
+   "lng": 34.769094,
+   "tags": {
+    "name": "Mirage",
+    "name:en": "Mirage",
+    "amenity": "restaurant",
+    "opening_hours": "Su-Sa 08:00-24:00",
+    "addr:housenumber": "9",
+    "addr:street": "יפו"
+   }
+  },
+  {
    "id": "node/12131047251",
    "lat": 32.057195,
    "lng": 34.767793,
@@ -289,6 +581,19 @@
    }
   },
   {
+   "id": "node/12159945050",
+   "lat": 32.061409,
+   "lng": 34.770206,
+   "tags": {
+    "name": "נונה",
+    "name:en": "Nuna",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "addr:housenumber": "20",
+    "addr:street": "הרצל"
+   }
+  },
+  {
    "id": "node/12165391488",
    "lat": 32.086011,
    "lng": 34.788309,
@@ -323,6 +628,53 @@
     "addr:street": "דרך מנחם בגין",
     "addr:postcode": "67021",
     "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12244120937",
+   "lat": 32.063119,
+   "lng": 34.770247,
+   "tags": {
+    "name": "Cafe Europa",
+    "name:en": "Cafe Europa",
+    "amenity": "restaurant",
+    "addr:housenumber": "9",
+    "addr:street": "שדרות רוטשילד"
+   }
+  },
+  {
+   "id": "node/12320289064",
+   "lat": 32.064615,
+   "lng": 34.787718,
+   "tags": {
+    "name": "אייל בפסאג'",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12434574007",
+   "lat": 32.060928,
+   "lng": 34.770212,
+   "tags": {
+    "name": "Lava",
+    "name:en": "Lava",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.instagram.com/lavatelaviv/",
+    "opening_hours": "Su-Tu 18:00-23:00; We-Sa 18:00-24:00"
+   }
+  },
+  {
+   "id": "node/12505246770",
+   "lat": 32.06482,
+   "lng": 34.772647,
+   "tags": {
+    "name": "שנסקי ברנסקי",
+    "name:en": "Shanski Branski",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "97",
+    "addr:street": "אלנבי"
    }
   },
   {
@@ -401,6 +753,21 @@
    }
   },
   {
+   "id": "node/12588084718",
+   "lat": 32.062544,
+   "lng": 34.769947,
+   "tags": {
+    "name": "PokeShop",
+    "name:en": "PokeShop",
+    "amenity": "restaurant",
+    "cuisine": "hawaiian",
+    "website": "https://pokeshop.co.il/",
+    "opening_hours": "Su-Th 11:00-23:00",
+    "addr:housenumber": "10",
+    "addr:street": "הרצל"
+   }
+  },
+  {
    "id": "node/12635329114",
    "lat": 32.074254,
    "lng": 34.791299,
@@ -463,6 +830,43 @@
    }
   },
   {
+   "id": "node/12857390749",
+   "lat": 32.057899,
+   "lng": 34.767093,
+   "tags": {
+    "name": "Gallianno",
+    "name:en": "Galliano",
+    "amenity": "restaurant",
+    "addr:housenumber": "17",
+    "addr:street": "אברבנאל"
+   }
+  },
+  {
+   "id": "node/12943579300",
+   "lat": 32.064436,
+   "lng": 34.77601,
+   "tags": {
+    "name": "Babica",
+    "name:en": "Babica",
+    "amenity": "restaurant",
+    "addr:housenumber": "60",
+    "addr:street": "שדרות רוטשילד"
+   }
+  },
+  {
+   "id": "node/12943589029",
+   "lat": 32.063905,
+   "lng": 34.773582,
+   "tags": {
+    "name": "בית גולדברג",
+    "name:en": "Beit Goldberg",
+    "amenity": "restaurant",
+    "opening_hours": "Su-Th 17:00-01:00; Fr 18:00-03:00; Sa 12:00-01:00",
+    "addr:housenumber": "35",
+    "addr:street": "שדרות רוטשילד"
+   }
+  },
+  {
    "id": "node/12944761385",
    "lat": 32.073287,
    "lng": 34.783333,
@@ -487,6 +891,16 @@
    }
   },
   {
+   "id": "node/12981671701",
+   "lat": 32.068778,
+   "lng": 34.762639,
+   "tags": {
+    "name": "Beach Club TLV",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 08:00-24:00"
+   }
+  },
+  {
    "id": "node/1308752064",
    "lat": 32.073676,
    "lng": 34.795831,
@@ -507,6 +921,15 @@
    }
   },
   {
+   "id": "node/13410795001",
+   "lat": 32.111232,
+   "lng": 34.816144,
+   "tags": {
+    "name": "GDB",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/13527207357",
    "lat": 32.07985,
    "lng": 34.774105,
@@ -514,6 +937,36 @@
     "name": "Alibi",
     "amenity": "restaurant",
     "addr:housenumber": "41"
+   }
+  },
+  {
+   "id": "node/13527216676",
+   "lat": 32.066858,
+   "lng": 34.770158,
+   "tags": {
+    "name": "Bar Vermini",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/13527219782",
+   "lat": 32.066241,
+   "lng": 34.770578,
+   "tags": {
+    "name": "Benjamin",
+    "amenity": "restaurant",
+    "addr:housenumber": "31"
+   }
+  },
+  {
+   "id": "node/13530036948",
+   "lat": 32.06327,
+   "lng": 34.762081,
+   "tags": {
+    "name": "WOM Beach Pod Hostel",
+    "tourism": "hostel",
+    "addr:housenumber": "2",
+    "addr:street": "Koifman Street"
    }
   },
   {
@@ -535,6 +988,40 @@
     "name": "Mayer Café",
     "amenity": "restaurant",
     "addr:housenumber": "98"
+   }
+  },
+  {
+   "id": "node/13532637271",
+   "lat": 32.065905,
+   "lng": 34.774164,
+   "tags": {
+    "name": "Hotel Fiori 41",
+    "tourism": "hotel",
+    "website": "https://adam-hotels.com/fiori41/",
+    "addr:housenumber": "41",
+    "addr:street": "Montefiore Street"
+   }
+  },
+  {
+   "id": "node/13532687766",
+   "lat": 32.06303,
+   "lng": 34.761986,
+   "tags": {
+    "name": "O Pod Hostel",
+    "tourism": "hostel",
+    "website": "https://www.theopodhotel.com/",
+    "addr:housenumber": "2",
+    "addr:street": "Koifman Street",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13541796405",
+   "lat": 32.067683,
+   "lng": 34.762116,
+   "tags": {
+    "name": "Chacoli",
+    "amenity": "restaurant"
    }
   },
   {
@@ -593,6 +1080,36 @@
    }
   },
   {
+   "id": "node/1950416514",
+   "lat": 32.058827,
+   "lng": 34.762075,
+   "tags": {
+    "name": "איטלקיה בתחנה",
+    "name:en": "Italkia be Tahana",
+    "amenity": "restaurant",
+    "cuisine": "italian;italian_pizza",
+    "website": "https://italiantlv.co.il/",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "addr:housenumber": "11א",
+    "addr:street": "אשקלון",
+    "addr:postcode": "6811834"
+   }
+  },
+  {
+   "id": "node/1989338568",
+   "lat": 32.062269,
+   "lng": 34.771988,
+   "tags": {
+    "name": "ויטרינה",
+    "name:en": "Vitrina Lili",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "40",
+    "addr:street": "לילינבלום",
+    "wheelchair": "no"
+   }
+  },
+  {
    "id": "node/2078969784",
    "lat": 32.0671,
    "lng": 34.786167,
@@ -618,6 +1135,31 @@
    }
   },
   {
+   "id": "node/2078991403",
+   "lat": 32.058114,
+   "lng": 34.767565,
+   "tags": {
+    "name": "The Urban Chalet",
+    "tourism": "hotel",
+    "website": "https://www.booking.com/hotel/il/the-urban-chalet-tl-byb-ypv.html",
+    "addr:housenumber": "15",
+    "addr:street": "3362"
+   }
+  },
+  {
+   "id": "node/2079003923",
+   "lat": 32.073236,
+   "lng": 34.767678,
+   "tags": {
+    "name": "Mugraby Hostel",
+    "name:en": "Mugraby Hostel",
+    "tourism": "hostel",
+    "website": "http://www.mugraby-hostel.com/",
+    "addr:housenumber": "19",
+    "addr:street": "אלנבי"
+   }
+  },
+  {
    "id": "node/2079006787",
    "lat": 32.07829,
    "lng": 34.788954,
@@ -629,6 +1171,47 @@
     "opening_hours": "Su-Th 12:00-16:00,18:00-00:00",
     "addr:housenumber": "2",
     "addr:street": "דפנה"
+   }
+  },
+  {
+   "id": "node/2079011985",
+   "lat": 32.063548,
+   "lng": 34.779479,
+   "tags": {
+    "name": "Magazzino",
+    "name:en": "Magazzino",
+    "amenity": "restaurant",
+    "cuisine": "italian;cake;dessert",
+    "website": "https://www.magazzino.co.il",
+    "opening_hours": "Su-Sa 12:00-00:00",
+    "addr:housenumber": "21",
+    "addr:street": "מנחם בגין",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2079015732",
+   "lat": 32.070591,
+   "lng": 34.765087,
+   "tags": {
+    "name": "Bezzo Pizza",
+    "name:en": "Bezzo Pizza",
+    "amenity": "restaurant",
+    "addr:housenumber": "22",
+    "addr:street": "הירקון"
+   }
+  },
+  {
+   "id": "node/2079035760",
+   "lat": 32.059711,
+   "lng": 34.771428,
+   "tags": {
+    "name": "Garger HaZahav",
+    "name:en": "Garger HaZahav",
+    "amenity": "restaurant",
+    "opening_hours": "Su 00:00-24:00; Mo-Th 10:00-20:00; Fr 09:00-15:00",
+    "addr:housenumber": "30",
+    "addr:street": "levinsky 30"
    }
   },
   {
@@ -647,6 +1230,18 @@
    }
   },
   {
+   "id": "node/2079039190",
+   "lat": 32.065745,
+   "lng": 34.773229,
+   "tags": {
+    "name": "יבנה מונטיפיורי",
+    "name:en": "Yavne Montefiore",
+    "amenity": "restaurant",
+    "addr:housenumber": "33",
+    "addr:street": "מונטיפיורי"
+   }
+  },
+  {
    "id": "node/2079041793",
    "lat": 32.065142,
    "lng": 34.777509,
@@ -658,6 +1253,38 @@
     "opening_hours": "Mo-Su 11:00-23:00",
     "addr:housenumber": "36",
     "addr:street": "נחמני"
+   }
+  },
+  {
+   "id": "node/2079195330",
+   "lat": 32.064139,
+   "lng": 34.771453,
+   "tags": {
+    "name": "מנטנטן",
+    "name:en": "Men Tenten",
+    "amenity": "restaurant",
+    "cuisine": "japanese;ramen;sushi",
+    "website": "https://www.mentententlv.com",
+    "opening_hours": "Sa-Tu 12:00-01:00; We, Fr 12:00-02:00; Th 12:00-03:00",
+    "addr:housenumber": "57",
+    "addr:street": "נחלת בנימין"
+   }
+  },
+  {
+   "id": "node/2079202591",
+   "lat": 32.063542,
+   "lng": 34.768453,
+   "tags": {
+    "name": "מקום של בשר",
+    "name:en": "Makom Shel Basar (The Place for Meat)",
+    "amenity": "restaurant",
+    "cuisine": "steak_house;local",
+    "website": "http://www.makomshelbasar.rest-e.co.il",
+    "opening_hours": "Mo-Sa 12:00-00:00",
+    "addr:housenumber": "64",
+    "addr:street": "שבזי",
+    "addr:postcode": "65144",
+    "wheelchair": "limited"
    }
   },
   {
@@ -676,6 +1303,34 @@
    }
   },
   {
+   "id": "node/2079214805",
+   "lat": 32.063314,
+   "lng": 34.768529,
+   "tags": {
+    "name": "משק ברזילי",
+    "name:en": "Meshek Barzilay",
+    "amenity": "restaurant",
+    "website": "https://www.meshekbarzilay.co.il/המסעדה/",
+    "opening_hours": "We-Th 18:00-23:00; Fr-Sa 12:00-23:00",
+    "addr:housenumber": "8",
+    "addr:street": "אחד העם"
+   }
+  },
+  {
+   "id": "node/2079215868",
+   "lat": 32.070575,
+   "lng": 34.769327,
+   "tags": {
+    "name": "Hotel Galileo",
+    "name:en": "Hotel Galileo",
+    "tourism": "hotel",
+    "wikidata": "Q111121315",
+    "addr:housenumber": "8",
+    "addr:street": "הלל הזקן",
+    "wheelchair": "yes"
+   }
+  },
+  {
    "id": "node/2079226681",
    "lat": 32.067302,
    "lng": 34.778059,
@@ -686,6 +1341,34 @@
     "website": "https://www.the-rothschild-hotel.com/en/",
     "addr:housenumber": "96",
     "addr:street": "רוטשילד"
+   }
+  },
+  {
+   "id": "node/2108063236",
+   "lat": 32.057295,
+   "lng": 34.761846,
+   "tags": {
+    "name": "חיים נלו גריל האוס",
+    "name:en": "Haim Nello Grill House",
+    "amenity": "restaurant",
+    "cuisine": "grill",
+    "contact:website": "http://www.rest.co.il/sites/Default.asp?txtRestID=9388",
+    "opening_hours": "Mo-Sa 12:00-24:00; Su off",
+    "addr:housenumber": "11",
+    "addr:street": "אילת"
+   }
+  },
+  {
+   "id": "node/2139853804",
+   "lat": 32.064572,
+   "lng": 34.77058,
+   "tags": {
+    "name": "סתווים - Stivim Restaurant - Coin Commerce",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "3",
+    "addr:street": "אחוזת בית",
+    "addr:postcode": "65252"
    }
   },
   {
@@ -732,6 +1415,29 @@
    }
   },
   {
+   "id": "node/2508732698",
+   "lat": 32.067277,
+   "lng": 34.772097,
+   "tags": {
+    "name": "La Repubblica",
+    "name:en": "La Repubblica",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2556132735",
+   "lat": 32.06847,
+   "lng": 34.766286,
+   "tags": {
+    "name": "גלבי - אוכל ביתי",
+    "name:en": "Galbi Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "23",
+    "addr:street": "Simtat HaCarmel",
+    "wheelchair": "yes"
+   }
+  },
+  {
    "id": "node/2672314363",
    "lat": 32.070276,
    "lng": 34.784422,
@@ -739,6 +1445,20 @@
     "name": "Porter & Sons",
     "name:en": "Porter & Sons",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2678712694",
+   "lat": 32.062699,
+   "lng": 34.773107,
+   "tags": {
+    "name": "Salaam Bombay",
+    "name:en": "Salaam Bombay",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "124",
+    "addr:street": "אלנבי",
+    "addr:postcode": "65818"
    }
   },
   {
@@ -815,6 +1535,17 @@
    }
   },
   {
+   "id": "node/3346678355",
+   "lat": 32.062086,
+   "lng": 34.77003,
+   "tags": {
+    "name": "Olive",
+    "name:en": "Olive",
+    "amenity": "restaurant",
+    "cuisine": "sandwich"
+   }
+  },
+  {
    "id": "node/3465151092",
    "lat": 32.073034,
    "lng": 34.786299,
@@ -855,6 +1586,66 @@
    }
   },
   {
+   "id": "node/3722560627",
+   "lat": 32.057631,
+   "lng": 34.764046,
+   "tags": {
+    "name": "נורמה ג'ין",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3734549064",
+   "lat": 32.06394,
+   "lng": 34.771619,
+   "tags": {
+    "name": "Zuppa",
+    "name:en": "Zuppa",
+    "amenity": "restaurant",
+    "cuisine": "soup",
+    "website": "https://www.zuppa.co.il/",
+    "addr:housenumber": "19",
+    "addr:street": "אחד העם"
+   }
+  },
+  {
+   "id": "node/384598569",
+   "lat": 32.061956,
+   "lng": 34.783623,
+   "tags": {
+    "name": "קופי בר",
+    "name:en": "Coffee Bar",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.coffeebar.co.il/",
+    "opening_hours": "Mo-Su 09:00-00:00",
+    "addr:housenumber": "13",
+    "addr:street": "יד חרוצים",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3930977358",
+   "lat": 32.073145,
+   "lng": 34.768256,
+   "tags": {
+    "name": "Arcadia Tower Hotel",
+    "name:en": "Arcadia Tower Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/3930983766",
+   "lat": 32.062653,
+   "lng": 34.773071,
+   "tags": {
+    "name": "Night Kitchen",
+    "name:en": "Night Kitchen",
+    "amenity": "restaurant",
+    "website": "https://nightkitchen.co.il/"
+   }
+  },
+  {
    "id": "node/4033655490",
    "lat": 32.081745,
    "lng": 34.781518,
@@ -862,6 +1653,20 @@
     "name": "בר גוריון",
     "name:en": "Bar Gurion",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4088125065",
+   "lat": 32.063175,
+   "lng": 34.770839,
+   "tags": {
+    "name": "Vong",
+    "name:en": "Vong",
+    "amenity": "restaurant",
+    "website": "https://vong.co.il/",
+    "opening_hours": "Mo-Th, Su 12:00-00:30; Fr, Sa 12:00-01:30",
+    "addr:housenumber": "15",
+    "addr:street": "Rothchild"
    }
   },
   {
@@ -875,6 +1680,47 @@
     "cuisine": "regional",
     "addr:housenumber": "27",
     "addr:street": "אבן גבירול"
+   }
+  },
+  {
+   "id": "node/4154893589",
+   "lat": 32.072939,
+   "lng": 34.764888,
+   "tags": {
+    "name": "Herbert Samuel By the Beach",
+    "name:en": "Herbert Samuel By the Beach",
+    "tourism": "hotel",
+    "wikidata": "Q111997756",
+    "addr:housenumber": "54",
+    "addr:street": "Retsif Herbert Samuel"
+   }
+  },
+  {
+   "id": "node/4172823889",
+   "lat": 32.065452,
+   "lng": 34.770111,
+   "tags": {
+    "name": "Brown TLV Hotel",
+    "name:en": "Brown TLV Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111399903",
+    "addr:housenumber": "25",
+    "addr:street": "קלישר"
+   }
+  },
+  {
+   "id": "node/4253786262",
+   "lat": 32.061854,
+   "lng": 34.76699,
+   "tags": {
+    "name": "בית איטלקי",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "http://www.italian-house.co.il/mobile/",
+    "opening_hours": "09:00-23:30",
+    "addr:housenumber": "27",
+    "addr:street": "פינס",
+    "wheelchair": "yes"
    }
   },
   {
@@ -915,6 +1761,16 @@
    }
   },
   {
+   "id": "node/4444435993",
+   "lat": 32.070561,
+   "lng": 34.764082,
+   "tags": {
+    "name": "Westside",
+    "name:en": "West Side",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/4486515206",
    "lat": 32.08506,
    "lng": 34.781918,
@@ -924,6 +1780,18 @@
     "amenity": "restaurant",
     "cuisine": "breakfast",
     "website": "http://thestreets.co.il/streets-ibn-gbirol/"
+   }
+  },
+  {
+   "id": "node/4486596789",
+   "lat": 32.069467,
+   "lng": 34.793782,
+   "tags": {
+    "name": "BBB",
+    "name:en": "BBB",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://burgus.co.il/?item=24&section=3"
    }
   },
   {
@@ -942,6 +1810,28 @@
    }
   },
   {
+   "id": "node/4683691389",
+   "lat": 32.06468,
+   "lng": 34.771703,
+   "tags": {
+    "name": "התאילנדית בסמטת הר סיני",
+    "name:en": "The Thai in Har Sainai",
+    "amenity": "restaurant",
+    "addr:housenumber": "1",
+    "addr:street": "הר סיני"
+   }
+  },
+  {
+   "id": "node/4719058338",
+   "lat": 32.065752,
+   "lng": 34.771757,
+   "tags": {
+    "name": "Zakaim",
+    "name:en": "Zakaim",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/4832284231",
    "lat": 32.056304,
    "lng": 34.767569,
@@ -949,6 +1839,41 @@
     "name": "Yoko Sushi Bar",
     "name:en": "Casbah",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4845766323",
+   "lat": 32.069209,
+   "lng": 34.768197,
+   "tags": {
+    "name": "מסעדת סיסי/אחים עוזרי",
+    "name:en": "Sisi Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4853967205",
+   "lat": 32.072986,
+   "lng": 34.765578,
+   "tags": {
+    "name": "Crown Sea Hostel",
+    "name:en": "Crown Sea Hostel",
+    "tourism": "hostel",
+    "website": "http://www.crownsea.com",
+    "addr:housenumber": "7",
+    "addr:street": "Yona HaNavi St."
+   }
+  },
+  {
+   "id": "node/4853967207",
+   "lat": 32.061606,
+   "lng": 34.766415,
+   "tags": {
+    "name": "Dormitory & Room in Neve Tzedek",
+    "name:en": "Dormitory & Room in Neve Tzedek",
+    "tourism": "hostel",
+    "addr:housenumber": "15",
+    "addr:street": "Sharabi St."
    }
   },
   {
@@ -978,6 +1903,20 @@
     "addr:housenumber": "54",
     "addr:street": "פרישמן",
     "addr:postcode": "6439505"
+   }
+  },
+  {
+   "id": "node/4989545303",
+   "lat": 32.06257,
+   "lng": 34.769865,
+   "tags": {
+    "name": "Donkey Fresh Mex",
+    "name:en": "Donkey Fresh Mex",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "11:30-23:30",
+    "addr:housenumber": "10",
+    "addr:street": "הרצל"
    }
   },
   {
@@ -1022,6 +1961,30 @@
    }
   },
   {
+   "id": "node/5249884926",
+   "lat": 32.06083,
+   "lng": 34.769775,
+   "tags": {
+    "name": "Saffe",
+    "name:en": "Saffe",
+    "amenity": "restaurant",
+    "cuisine": "syrian",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "בית הבד"
+   }
+  },
+  {
+   "id": "node/5254086921",
+   "lat": 32.064286,
+   "lng": 34.772507,
+   "tags": {
+    "name": "אמריקה בורגר",
+    "name:en": "America Burger",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/5288387321",
    "lat": 32.075344,
    "lng": 34.782607,
@@ -1030,6 +1993,67 @@
     "name:en": "Indira",
     "amenity": "restaurant",
     "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/5362929525",
+   "lat": 32.061845,
+   "lng": 34.770094,
+   "tags": {
+    "name": "הרצל 16",
+    "name:en": "Herzl 16",
+    "amenity": "restaurant",
+    "website": "https://www.herzl16.co.il/",
+    "opening_hours": "Su-Th 08:00-00:00; Fr 09:00-17:00; Sa 09:00-00:00",
+    "addr:housenumber": "16",
+    "addr:street": "הרצל",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5443060262",
+   "lat": 32.070389,
+   "lng": 34.764366,
+   "tags": {
+    "name": "רויאל ביץ'",
+    "name:en": "Royal Beach",
+    "tourism": "hotel",
+    "website": "https://www.isrotel.co.il/isrotel-hotels/tel-aviv/רויאל-ביץ-תל-אביב/",
+    "wikidata": "Q111399911",
+    "addr:street": "הירקון",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5483139421",
+   "lat": 32.061408,
+   "lng": 34.763707,
+   "tags": {
+    "name": "Suzannah",
+    "name:en": "Suzannah",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:00-23:00"
+   }
+  },
+  {
+   "id": "node/5551424422",
+   "lat": 32.064587,
+   "lng": 34.771685,
+   "tags": {
+    "name": "Shishko",
+    "name:en": "Shishko",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5624555527",
+   "lat": 32.062433,
+   "lng": 34.771069,
+   "tags": {
+    "name": "Vera",
+    "name:en": "Vera",
+    "tourism": "hotel",
+    "wikidata": "Q111399896"
    }
   },
   {
@@ -1043,6 +2067,35 @@
    }
   },
   {
+   "id": "node/5961333787",
+   "lat": 32.065122,
+   "lng": 34.771241,
+   "tags": {
+    "name": "Oasis",
+    "name:en": "Oasis",
+    "amenity": "restaurant",
+    "website": "https://www.oasistlv.co.il/",
+    "opening_hours": "Tu-Fr 19:00-24:00",
+    "addr:housenumber": "17",
+    "addr:street": "מונטיפיורי"
+   }
+  },
+  {
+   "id": "node/6005282986",
+   "lat": 32.069857,
+   "lng": 34.766559,
+   "tags": {
+    "name": "Balinjera",
+    "name:en": "Balinjera",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "website": "https://balinjera.com/",
+    "opening_hours": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
+    "addr:housenumber": "4",
+    "addr:street": "מל\"ן"
+   }
+  },
+  {
    "id": "node/603032202",
    "lat": 32.072743,
    "lng": 34.782044,
@@ -1052,6 +2105,22 @@
     "amenity": "restaurant",
     "addr:housenumber": "14",
     "addr:street": "אבן גבירול"
+   }
+  },
+  {
+   "id": "node/6041389430",
+   "lat": 32.068904,
+   "lng": 34.793635,
+   "tags": {
+    "name": "גומבה",
+    "name:en": "Goomba",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://goomba.co.il/tel-aviv/",
+    "opening_hours": "Su-Sa 12:00-23:00",
+    "addr:housenumber": "94",
+    "addr:street": "יגאל אלון",
+    "wheelchair": "yes"
    }
   },
   {
@@ -1082,6 +2151,39 @@
    }
   },
   {
+   "id": "node/6339319685",
+   "lat": 32.067956,
+   "lng": 34.76827,
+   "tags": {
+    "name": "Bocca Bocca",
+    "name:en": "Bocca Bocca",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6340271885",
+   "lat": 32.06445,
+   "lng": 34.775982,
+   "tags": {
+    "name": "Polly",
+    "name:en": "Polly",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "60",
+    "addr:street": "רוטשילד"
+   }
+  },
+  {
+   "id": "node/6344546585",
+   "lat": 32.057996,
+   "lng": 34.766074,
+   "tags": {
+    "name": "Shaffa",
+    "name:en": "Shaffa",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/636907331",
    "lat": 32.074082,
    "lng": 34.782002,
@@ -1091,6 +2193,16 @@
     "amenity": "restaurant",
     "addr:housenumber": "22",
     "addr:street": "אבן גבירול"
+   }
+  },
+  {
+   "id": "node/6470389885",
+   "lat": 32.069364,
+   "lng": 34.768408,
+   "tags": {
+    "name": "מגנדה",
+    "name:en": "Maganda",
+    "amenity": "restaurant"
    }
   },
   {
@@ -1112,6 +2224,16 @@
    }
   },
   {
+   "id": "node/6513769256",
+   "lat": 32.059135,
+   "lng": 34.767737,
+   "tags": {
+    "name": "Joz Ve Loz",
+    "name:en": "Joz Ve Loz",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/6578862205",
    "lat": 32.05657,
    "lng": 34.77088,
@@ -1119,6 +2241,28 @@
     "name": "Mezcalito",
     "name:en": "Arepa's",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6653156709",
+   "lat": 32.059952,
+   "lng": 34.771765,
+   "tags": {
+    "name": "טוני ואסתר",
+    "name:en": "Tony ve Esther",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6759353882",
+   "lat": 32.072309,
+   "lng": 34.768965,
+   "tags": {
+    "name": "מסעדה הסינית",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "44",
+    "addr:street": "אלנבי"
    }
   },
   {
@@ -1159,6 +2303,29 @@
    }
   },
   {
+   "id": "node/6929570285",
+   "lat": 32.06162,
+   "lng": 34.772262,
+   "tags": {
+    "name": "ARIA",
+    "name:en": "ARIA",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6932283385",
+   "lat": 32.065582,
+   "lng": 34.772715,
+   "tags": {
+    "name": "Isla Cafe",
+    "name:en": "Isla Cafe",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop;bakery;sandwich",
+    "addr:housenumber": "27",
+    "addr:street": "מונטיפיורי"
+   }
+  },
+  {
    "id": "node/6932290785",
    "lat": 32.071729,
    "lng": 34.779429,
@@ -1166,6 +2333,18 @@
     "name": "Milgo Milbar",
     "name:en": "Milgo Milbar",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6953819390",
+   "lat": 32.062323,
+   "lng": 34.769976,
+   "tags": {
+    "name": "Fleishman",
+    "name:en": "Fleishman",
+    "amenity": "restaurant",
+    "addr:housenumber": "12",
+    "addr:street": "הרצל"
    }
   },
   {
@@ -1178,6 +2357,33 @@
    }
   },
   {
+   "id": "node/700238677",
+   "lat": 32.073293,
+   "lng": 34.765029,
+   "tags": {
+    "name": "Hotel Golden Beach",
+    "name:en": "Hotel Golden Beach",
+    "tourism": "hotel",
+    "stars": "3",
+    "addr:housenumber": "56"
+   }
+  },
+  {
+   "id": "node/7069646328",
+   "lat": 32.061652,
+   "lng": 34.768647,
+   "tags": {
+    "name": "הטרקלין",
+    "name:en": "HaTraklin",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "website": "https://hatraklin.co.il/",
+    "addr:housenumber": "4",
+    "addr:street": "היכל התלמוד",
+    "wheelchair": "limited"
+   }
+  },
+  {
    "id": "node/7167056864",
    "lat": 32.056144,
    "lng": 34.767654,
@@ -1186,6 +2392,16 @@
     "name:en": "Florentin House",
     "tourism": "hostel",
     "wikidata": "Q111121300"
+   }
+  },
+  {
+   "id": "node/7167094871",
+   "lat": 32.063184,
+   "lng": 34.768289,
+   "tags": {
+    "name": "Meshek Barzilay",
+    "name:en": "Meshek Barzilay",
+    "amenity": "restaurant"
    }
   },
   {
@@ -1231,6 +2447,30 @@
    }
   },
   {
+   "id": "node/720999416",
+   "lat": 32.063262,
+   "lng": 34.7712,
+   "tags": {
+    "name": "רוסטיקו",
+    "name:en": "Rustico",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://www.rustico.co.il/",
+    "opening_hours": "Su 18:00-22:30; Mo-Th 18:00-23:00; Fr 12:30-23:00; Sa 12:30-22:30",
+    "addr:housenumber": "15",
+    "addr:street": "רוטשילד"
+   }
+  },
+  {
+   "id": "node/7623739085",
+   "lat": 32.061189,
+   "lng": 34.7635,
+   "tags": {
+    "name": "House of Dallal",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/7769668171",
    "lat": 32.071497,
    "lng": 34.786532,
@@ -1243,6 +2483,20 @@
     "addr:housenumber": "3",
     "addr:street": "אלוף קלמן מגן",
     "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7769735969",
+   "lat": 32.06385,
+   "lng": 34.779776,
+   "tags": {
+    "name": "Taizu",
+    "name:en": "Taizu",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "website": "https://www.taizu.co.il",
+    "addr:housenumber": "23",
+    "addr:street": "מנחם בגין"
    }
   },
   {
@@ -1298,6 +2552,20 @@
    }
   },
   {
+   "id": "node/902619087",
+   "lat": 32.069314,
+   "lng": 34.764753,
+   "tags": {
+    "name": "באבא יאגה",
+    "name:en": "Baba Yaga",
+    "amenity": "restaurant",
+    "cuisine": "seafood;russian",
+    "website": "https://www.babayaga.co.il/",
+    "addr:housenumber": "12",
+    "addr:street": "הירקון"
+   }
+  },
+  {
    "id": "node/9113990169",
    "lat": 32.072464,
    "lng": 34.774316,
@@ -1317,6 +2585,17 @@
     "website": "https://www.416tlv.com/",
     "addr:housenumber": "16",
     "addr:street": "הארבעה"
+   }
+  },
+  {
+   "id": "node/940680945",
+   "lat": 32.064088,
+   "lng": 34.771484,
+   "tags": {
+    "name": "כתית",
+    "name:en": "Catit",
+    "amenity": "restaurant",
+    "website": "https://www.catit.co.il/"
    }
   },
   {
@@ -1341,6 +2620,22 @@
     "amenity": "restaurant",
     "addr:housenumber": "73",
     "addr:street": "שדרות רוטשילד"
+   }
+  },
+  {
+   "id": "node/9833787217",
+   "lat": 32.061297,
+   "lng": 34.770249,
+   "tags": {
+    "name": "Port 19",
+    "name:en": "Port 19",
+    "amenity": "restaurant",
+    "cuisine": "burger;hot_dog",
+    "website": "https://port-19.co.il/",
+    "opening_hours": "Su 12:00-23:00; Mo-Fr 12:00-03:00; Sa 12:00-00:00",
+    "addr:housenumber": "20",
+    "addr:street": "הרצל",
+    "wheelchair": "yes"
    }
   },
   {
@@ -1390,12 +2685,35 @@
    }
   },
   {
+   "id": "node/9996976416",
+   "lat": 32.058168,
+   "lng": 34.766006,
+   "tags": {
+    "name": "Davi",
+    "amenity": "restaurant"
+   }
+  },
+  {
    "id": "node/9996989783",
    "lat": 32.079456,
    "lng": 34.773699,
    "tags": {
     "name": "Jusa",
     "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/126772768",
+   "lat": 32.056734,
+   "lng": 34.762593,
+   "tags": {
+    "name": "בית עמנואל",
+    "name:en": "Beit Immanuel",
+    "tourism": "hostel",
+    "website": "http://www.beitimmanuel.org/",
+    "wikidata": "Q7021811",
+    "addr:housenumber": "8",
+    "addr:street": "אוארבך"
    }
   },
   {
@@ -1411,6 +2729,53 @@
    }
   },
   {
+   "id": "way/203502508",
+   "lat": 32.064155,
+   "lng": 34.773481,
+   "tags": {
+    "name": "Townhouse Tel-Aviv",
+    "name:en": "Townhouse Tel-Aviv",
+    "tourism": "motel",
+    "contact:website": "http://www.townhousetelaviv.com/",
+    "addr:housenumber": "32",
+    "addr:street": "יבנה"
+   }
+  },
+  {
+   "id": "way/203949252",
+   "lat": 32.065492,
+   "lng": 34.773446,
+   "tags": {
+    "name": "Montefiore",
+    "name:en": "Montefiore",
+    "tourism": "hotel",
+    "wikidata": "Q111856095"
+   }
+  },
+  {
+   "id": "way/203949324",
+   "lat": 32.06567,
+   "lng": 34.772677,
+   "tags": {
+    "name": "Isla",
+    "name:en": "Isla",
+    "tourism": "hotel",
+    "addr:housenumber": "27",
+    "addr:street": "מונטיפיורי"
+   }
+  },
+  {
+   "id": "way/218656514",
+   "lat": 32.056837,
+   "lng": 34.762391,
+   "tags": {
+    "name": "מלון דריסקו תל אביב",
+    "name:en": "The Drisco Hotel Tel Aviv",
+    "tourism": "hotel",
+    "wikidata": "Q6939565"
+   }
+  },
+  {
    "id": "way/88500781",
    "lat": 32.077858,
    "lng": 34.773233,
@@ -1419,6 +2784,33 @@
     "name:en": "Backstage",
     "tourism": "hotel",
     "wikidata": "Q75753029"
+   }
+  },
+  {
+   "id": "way/90846144",
+   "lat": 32.064785,
+   "lng": 34.763066,
+   "tags": {
+    "name": "מלון דן פנורמה",
+    "name:en": "Dan Panorama Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q30526547"
+   }
+  },
+  {
+   "id": "way/90846147",
+   "lat": 32.065367,
+   "lng": 34.76361,
+   "tags": {
+    "name": "מלון דייויד אינטרקונטיננטל",
+    "name:en": "David Intercontinental Hotel",
+    "tourism": "hotel",
+    "website": "https://www.ihg.com/intercontinental/hotels/gb/en/tel-aviv/tlvha/hoteldetail",
+    "wikidata": "Q11713336",
+    "addr:housenumber": "12",
+    "addr:street": "קויפמן יחזקאל",
+    "addr:postcode": "61501",
+    "wheelchair": "yes"
    }
   }
  ]

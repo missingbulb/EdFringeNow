@@ -53,7 +53,7 @@ footer credits them wherever their data is shown.
 - **`wikivoyage`** (Wikivoyage, **CC BY-SA 4.0**) — the bulleted destinations
   of the guide's "Go next" section, each with the coordinates its own page
   gives. A guide whose Go next is prose rather than a list (Wellington, Beer
-  Sheva) yields no day trips. A place with no guide of its own names the
+  Sheva, New Orleans, Wichita, San Jose) yields no day trips. A place with no guide of its own names the
   nearest town's in `cities.toml`.
 - **curated hours** — where OSM maps no `opening_hours` for a sight worth
   suggesting, `curated/<city>.json` carries them by Wikidata id, each with the

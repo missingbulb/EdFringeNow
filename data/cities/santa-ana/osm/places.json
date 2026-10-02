@@ -1,0 +1,474 @@
+{
+ "places": [
+  {
+   "id": "node/11984476850",
+   "lat": 33.742333,
+   "lng": -117.823467,
+   "tags": {
+    "name": "Tustin Historical Society",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/6422834065",
+   "lat": 33.717886,
+   "lng": -117.885975,
+   "tags": {
+    "name": "Bristol Warner Marketplace",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/9330257478",
+   "lat": 33.746066,
+   "lng": -117.869011,
+   "tags": {
+    "name": "Grand Central Art Center",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9330257486",
+   "lat": 33.746127,
+   "lng": -117.868428,
+   "tags": {
+    "name": "Orange County Center for Contemporary Art",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9432239682",
+   "lat": 33.758662,
+   "lng": -117.827951,
+   "tags": {
+    "name": "Chemers Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9435349182",
+   "lat": 33.786845,
+   "lng": -117.85328,
+   "tags": {
+    "name": "Seeds Fine Art Exhibits",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9435349183",
+   "lat": 33.774785,
+   "lng": -117.867003,
+   "tags": {
+    "name": "Noah Fine Art",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "relation/7350741",
+   "lat": 33.76338,
+   "lng": -117.868245,
+   "tags": {
+    "name": "Bowers Museum of Cultural Art",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "2002",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/112268504",
+   "lat": 33.773553,
+   "lng": -117.860921,
+   "tags": {
+    "name": "Santiago Park",
+    "leisure": "park",
+    "wikidata": "Q49557858"
+   }
+  },
+  {
+   "id": "way/1189757785",
+   "lat": 33.74976,
+   "lng": -117.821415,
+   "tags": {
+    "name": "Columbus Tustin Park",
+    "leisure": "park",
+    "wikidata": "Q49479424",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/144682154",
+   "lat": 33.777427,
+   "lng": -117.850926,
+   "tags": {
+    "name": "Hart Park",
+    "leisure": "park",
+    "wikidata": "Q49498495"
+   }
+  },
+  {
+   "id": "way/144682395",
+   "lat": 33.78788,
+   "lng": -117.853099,
+   "tags": {
+    "name": "Plaza Square Park",
+    "leisure": "park",
+    "wikidata": "Q49544084",
+    "addr:housenumber": "99",
+    "addr:street": "Plaza Square",
+    "addr:postcode": "92866"
+   }
+  },
+  {
+   "id": "way/144682568",
+   "lat": 33.788264,
+   "lng": -117.857197,
+   "tags": {
+    "name": "Santa Fe Depot Park",
+    "leisure": "park",
+    "wikidata": "Q49557694"
+   }
+  },
+  {
+   "id": "way/144686934",
+   "lat": 33.716347,
+   "lng": -117.89704,
+   "tags": {
+    "name": "Adams Park",
+    "leisure": "park",
+    "website": "https://www.santa-ana.org/adams-park/",
+    "wikidata": "Q49471878",
+    "addr:housenumber": "2302",
+    "addr:street": "South Raitt Street",
+    "addr:postcode": "92704"
+   }
+  },
+  {
+   "id": "way/144687095",
+   "lat": 33.709586,
+   "lng": -117.893363,
+   "tags": {
+    "name": "Carl Thornton Park",
+    "leisure": "park",
+    "website": "https://www.santa-ana.org/carl-thornton-park/",
+    "wikidata": "Q49476964"
+   }
+  },
+  {
+   "id": "way/144688101",
+   "lat": 33.704034,
+   "lng": -117.874171,
+   "tags": {
+    "name": "Lillie King Park",
+    "leisure": "park",
+    "wikidata": "Q49516668"
+   }
+  },
+  {
+   "id": "way/144688386",
+   "lat": 33.714907,
+   "lng": -117.860848,
+   "tags": {
+    "name": "Delhi Park",
+    "leisure": "park",
+    "wikidata": "Q49482651"
+   }
+  },
+  {
+   "id": "way/144688671",
+   "lat": 33.746694,
+   "lng": -117.871607,
+   "tags": {
+    "name": "Birch Park",
+    "leisure": "park",
+    "website": "https://www.santa-ana.org/birch-park/",
+    "wikidata": "Q49474826"
+   }
+  },
+  {
+   "id": "way/144688973",
+   "lat": 33.748239,
+   "lng": -117.873257,
+   "tags": {
+    "name": "Sasscer Park",
+    "leisure": "park",
+    "wikidata": "Q49557989"
+   }
+  },
+  {
+   "id": "way/144689123",
+   "lat": 33.752994,
+   "lng": -117.864292,
+   "tags": {
+    "name": "French Park",
+    "leisure": "park",
+    "wikidata": "Q49491975"
+   }
+  },
+  {
+   "id": "way/144689623",
+   "lat": 33.743745,
+   "lng": -117.842009,
+   "tags": {
+    "name": "Santa Ana Zoo at Prentice Park",
+    "tourism": "zoo",
+    "leisure": "park",
+    "wikidata": "Q7419178",
+    "addr:housenumber": "1801",
+    "addr:street": "East Chestnut Avenue",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/144689809",
+   "lat": 33.751708,
+   "lng": -117.839787,
+   "tags": {
+    "name": "Cabrillo Park",
+    "leisure": "park",
+    "website": "https://www.santa-ana.org/cabrillo-park/",
+    "wikidata": "Q49476472"
+   }
+  },
+  {
+   "id": "way/144689917",
+   "lat": 33.755046,
+   "lng": -117.842722,
+   "tags": {
+    "name": "Mabury Park",
+    "leisure": "park",
+    "wikidata": "Q49520403"
+   }
+  },
+  {
+   "id": "way/144690182",
+   "lat": 33.765777,
+   "lng": -117.843836,
+   "tags": {
+    "name": "Portola Park",
+    "leisure": "park",
+    "wikidata": "Q49473263",
+    "addr:housenumber": "1700",
+    "addr:street": "East Santa Clara Avenue",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/144690737",
+   "lat": 33.771318,
+   "lng": -117.875038,
+   "tags": {
+    "name": "Fisher Park",
+    "leisure": "park",
+    "wikidata": "Q49489567"
+   }
+  },
+  {
+   "id": "way/144690842",
+   "lat": 33.775242,
+   "lng": -117.879493,
+   "tags": {
+    "name": "Morrison Park",
+    "leisure": "park",
+    "wikidata": "Q49515970",
+    "addr:housenumber": "2801",
+    "addr:street": "Westwood Avenue",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/144690998",
+   "lat": 33.777829,
+   "lng": -117.876944,
+   "tags": {
+    "name": "William W Eldridge Park",
+    "leisure": "park",
+    "wikidata": "Q49581157"
+   }
+  },
+  {
+   "id": "way/166973043",
+   "lat": 33.72232,
+   "lng": -117.819505,
+   "tags": {
+    "name": "Centennial Park",
+    "leisure": "park",
+    "website": "https://www.tustinca.org/Facilities/Facility/Details/Centennial-Park-12",
+    "wikidata": "Q49477416",
+    "addr:housenumber": "14722",
+    "addr:street": "Devonshire Avenue",
+    "addr:postcode": "92780"
+   }
+  },
+  {
+   "id": "way/166974304",
+   "lat": 33.732324,
+   "lng": -117.818699,
+   "tags": {
+    "name": "Frontier Park",
+    "leisure": "park",
+    "wikidata": "Q49492250"
+   }
+  },
+  {
+   "id": "way/166974509",
+   "lat": 33.744962,
+   "lng": -117.825517,
+   "tags": {
+    "name": "Pepper Tree Park",
+    "leisure": "park",
+    "wikidata": "Q49541317",
+    "addr:housenumber": "230",
+    "addr:street": "South C Street",
+    "addr:postcode": "92780"
+   }
+  },
+  {
+   "id": "way/206232556",
+   "lat": 33.786232,
+   "lng": -117.852351,
+   "tags": {
+    "name": "Avila's El Ranchito",
+    "amenity": "restaurant",
+    "historic": "church",
+    "building": "church",
+    "wikidata": "Q5452476",
+    "wikipedia": "en:First Baptist Church of Orange",
+    "addr:housenumber": "182",
+    "addr:street": "South Orange Street",
+    "addr:postcode": "92866"
+   }
+  },
+  {
+   "id": "way/206873457",
+   "lat": 33.788992,
+   "lng": -117.856599,
+   "tags": {
+    "name": "Hilbert Museum of California Art",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Su 10:00-17:00",
+    "website": "https://hilbertmuseum.org/",
+    "wikidata": "Q96381044",
+    "wikipedia": "en:Hilbert Museum of California Art"
+   }
+  },
+  {
+   "id": "way/211229233",
+   "lat": 33.744921,
+   "lng": -117.875409,
+   "tags": {
+    "name": "Flower Street Park",
+    "leisure": "park",
+    "wikidata": "Q49489994"
+   }
+  },
+  {
+   "id": "way/394467028",
+   "lat": 33.770497,
+   "lng": -117.868103,
+   "tags": {
+    "name": "Discovery Science Center",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://discoverycube.org/",
+    "wikidata": "Q5281966",
+    "wikipedia": "en:Discovery Cube Orange County",
+    "addr:housenumber": "2500",
+    "addr:street": "Main Street",
+    "addr:postcode": "92706",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/440953526",
+   "lat": 33.720974,
+   "lng": -117.831378,
+   "tags": {
+    "name": "Marconi Automotive Museum",
+    "tourism": "museum",
+    "building": "museum",
+    "opening_hours": "Tu-Sa 09:00 - 16:00",
+    "website": "https://marconimuseum.org/",
+    "addr:housenumber": "1302",
+    "addr:street": "Industrial Drive",
+    "addr:postcode": "92780",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/558632569",
+   "lat": 33.716192,
+   "lng": -117.82814,
+   "tags": {
+    "name": "Veterans Sports Park",
+    "leisure": "park",
+    "website": "https://tustinca.org/1136/Veterans-Sports-Park",
+    "wikidata": "Q140971107",
+    "addr:housenumber": "15445",
+    "addr:street": "Lansdowne Road",
+    "addr:postcode": "92782"
+   }
+  },
+  {
+   "id": "way/58560759",
+   "lat": 33.727937,
+   "lng": -117.857421,
+   "tags": {
+    "name": "Madison Park",
+    "leisure": "park",
+    "wikidata": "Q49520616"
+   }
+  },
+  {
+   "id": "way/741080732",
+   "lat": 33.721848,
+   "lng": -117.90954,
+   "tags": {
+    "name": "Heritage Museum of Orange County",
+    "tourism": "museum",
+    "website": "https://heritagemuseumoc.org",
+    "addr:housenumber": "3101",
+    "addr:street": "West Harvard Street",
+    "addr:postcode": "92704"
+   }
+  },
+  {
+   "id": "way/839528256",
+   "lat": 33.705514,
+   "lng": -117.838659,
+   "tags": {
+    "name": "Tustin Legacy Park",
+    "leisure": "park",
+    "website": "https://www.tustinca.org/Facilities/Facility/Details/Tustin-Legacy-Park-7",
+    "wikidata": "Q140968434",
+    "addr:postcode": "92780"
+   }
+  },
+  {
+   "id": "way/930452562",
+   "lat": 33.769986,
+   "lng": -117.86781,
+   "tags": {
+    "name": "Discovery Cube",
+    "tourism": "attraction",
+    "wikidata": "Q5281966",
+    "wikipedia": "en:Discovery Cube Orange County"
+   }
+  },
+  {
+   "id": "way/986013306",
+   "lat": 33.785874,
+   "lng": -117.845116,
+   "tags": {
+    "name": "City of Orange Historic Fire Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "addr:housenumber": "800",
+    "addr:street": "East Almond Avenue",
+    "addr:postcode": "92866"
+   }
+  }
+ ]
+}

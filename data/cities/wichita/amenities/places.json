@@ -1,0 +1,712 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "69fb4b9ffab7d2ee1bec6469",
+   "lat": 37.69079,
+   "lng": -97.32869
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "69fb4b9ffab7d2ee1bec646b",
+   "lat": 37.69113,
+   "lng": -97.32932
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "6aa957cacace3599f9b6eff9",
+   "lat": 37.66284,
+   "lng": -97.29118
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "6aa9587102ac588ffd371bdd",
+   "lat": 37.66348,
+   "lng": -97.29852
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "6aa959683cd6d89a0c56bf5d",
+   "lat": 37.68978,
+   "lng": -97.33559
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "6aa959e285d5edf858513e47",
+   "lat": 37.68806,
+   "lng": -97.33546
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "venue": "6aa95a6db1d24e8c8d870747",
+   "lat": 37.63941,
+   "lng": -97.31711
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10683315560",
+   "lat": 37.685834,
+   "lng": -97.333985,
+   "tags": {
+    "name": "Hilton Garden Inn Wichita Downtown",
+    "tourism": "hotel",
+    "website": "https://www.hilton.com/en/hotels/ictdtgi-hilton-garden-inn-wichita-downtown/",
+    "addr:housenumber": "401",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/11263576952",
+   "lat": 37.684414,
+   "lng": -97.345707,
+   "tags": {
+    "name": "Milkfloat",
+    "amenity": "restaurant",
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "535",
+    "addr:street": "West Douglas Avenue",
+    "addr:postcode": "67213"
+   }
+  },
+  {
+   "id": "node/11263639525",
+   "lat": 37.689235,
+   "lng": -97.32744,
+   "tags": {
+    "name": "Eggcetera",
+    "amenity": "restaurant",
+    "addr:housenumber": "242",
+    "addr:street": "North Mosley",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/12177188026",
+   "lat": 37.687991,
+   "lng": -97.351631,
+   "tags": {
+    "name": "Ty's Diner",
+    "amenity": "restaurant",
+    "opening_hours": "Tu-Sa 11:00-14:30",
+    "addr:housenumber": "928",
+    "addr:street": "West 2nd Street"
+   }
+  },
+  {
+   "id": "node/12964888080",
+   "lat": 37.691914,
+   "lng": -97.325084,
+   "tags": {
+    "name": "Station 8",
+    "amenity": "restaurant",
+    "cuisine": "barbecue"
+   }
+  },
+  {
+   "id": "node/13301876568",
+   "lat": 37.685734,
+   "lng": -97.330889,
+   "tags": {
+    "name": "HomeGrown",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;brunch",
+    "website": "https://www.homegrownwichita.com/",
+    "addr:housenumber": "645",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/13306240232",
+   "lat": 37.690486,
+   "lng": -97.329597,
+   "tags": {
+    "name": "Sushiya",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.sushiyawichita.com/",
+    "addr:housenumber": "325",
+    "addr:street": "North Mead Street"
+   }
+  },
+  {
+   "id": "node/13931853564",
+   "lat": 37.66442,
+   "lng": -97.278308,
+   "tags": {
+    "name": "Manna Wok",
+    "amenity": "restaurant",
+    "opening_hours": "Mo, Tu, Th-Sa 11:00-20:00",
+    "addr:housenumber": "4865",
+    "addr:street": "East Harry Street",
+    "addr:postcode": "67218"
+   }
+  },
+  {
+   "id": "node/14174455192",
+   "lat": 37.685422,
+   "lng": -97.326116,
+   "tags": {
+    "name": "Meddys",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 10:30-22:00"
+   }
+  },
+  {
+   "id": "node/14175804369",
+   "lat": 37.679626,
+   "lng": -97.336416,
+   "tags": {
+    "name": "Doo-Dah Diner",
+    "amenity": "restaurant",
+    "cuisine": "breakfast;american",
+    "website": "https://www.doodahdiner.com/",
+    "opening_hours": "Su 08:00-14:00; Mo-Fr 07:00-14:00; Sa 08:00-14:00",
+    "addr:housenumber": "206",
+    "addr:street": "E Kellog St",
+    "addr:postcode": "67202",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1593454864",
+   "lat": 37.691359,
+   "lng": -97.326769,
+   "tags": {
+    "name": "B&C Creations",
+    "amenity": "restaurant",
+    "addr:housenumber": "355",
+    "addr:street": "North Washington Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/1657273777",
+   "lat": 37.664195,
+   "lng": -97.290054,
+   "tags": {
+    "name": "Shanghai Chinese Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "3815",
+    "addr:street": "East Harry Street",
+    "addr:postcode": "67218-3722"
+   }
+  },
+  {
+   "id": "node/1660355355",
+   "lat": 37.650201,
+   "lng": -97.316827,
+   "tags": {
+    "name": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://locations.pizzahut.com/ks/wichita/1708-e-pawnee-st",
+    "addr:housenumber": "1708",
+    "addr:street": "E. Pawnee Street",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/1734899666",
+   "lat": 37.68623,
+   "lng": -97.327322,
+   "tags": {
+    "name": "Larkspur",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "904",
+    "addr:street": "East Douglas Avenue"
+   }
+  },
+  {
+   "id": "node/1734899691",
+   "lat": 37.688258,
+   "lng": -97.327791,
+   "tags": {
+    "name": "Hotel at Old Town",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1997192228",
+   "lat": 37.690086,
+   "lng": -97.329584,
+   "tags": {
+    "name": "Sabor Latin Bar & Grille",
+    "amenity": "restaurant",
+    "cuisine": "latin_american",
+    "website": "https://saborgrillwichita.com/",
+    "addr:housenumber": "309",
+    "addr:street": "North Mead Street",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/2716535007",
+   "lat": 37.685861,
+   "lng": -97.327023,
+   "tags": {
+    "name": "Beacon Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "website": "https://beaconrestaurant.restaurantwebexpert.com/",
+    "addr:housenumber": "900",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/2716538428",
+   "lat": 37.686808,
+   "lng": -97.327057,
+   "tags": {
+    "name": "Playa Azul",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4015944238",
+   "lat": 37.685934,
+   "lng": -97.316778,
+   "tags": {
+    "name": "Big Biscuit",
+    "amenity": "restaurant",
+    "addr:housenumber": "106",
+    "addr:street": "South Hydraulic Street",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/4015944241",
+   "lat": 37.685996,
+   "lng": -97.316358,
+   "tags": {
+    "name": "Tanya's Soup Kitchen",
+    "amenity": "restaurant",
+    "website": "https://www.tskwichita.com/",
+    "opening_hours": "Mo-Th 11:00-15:00; Fr,Sa 11:00-15:00,17:00-20:00",
+    "addr:housenumber": "1725",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/4017530755",
+   "lat": 37.686247,
+   "lng": -97.32702,
+   "tags": {
+    "name": "Wasabi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "914",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/4057414811",
+   "lat": 37.684162,
+   "lng": -97.348653,
+   "tags": {
+    "name": "Delano Barbeque Company",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "addr:housenumber": "710",
+    "addr:street": "West Douglas Avenue"
+   }
+  },
+  {
+   "id": "node/4057414812",
+   "lat": 37.683836,
+   "lng": -97.347192,
+   "tags": {
+    "name": "Sakura",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "605",
+    "addr:street": "West Douglas Avenue"
+   }
+  },
+  {
+   "id": "node/4057414814",
+   "lat": 37.684157,
+   "lng": -97.348303,
+   "tags": {
+    "name": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://locations.pizzahut.com/ks/wichita/700-w-douglas",
+    "addr:housenumber": "700",
+    "addr:street": "West Douglas",
+    "addr:postcode": "67203"
+   }
+  },
+  {
+   "id": "node/4301266460",
+   "lat": 37.689943,
+   "lng": -97.328684,
+   "tags": {
+    "name": "Old Chicago",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://oldchicago.com/locations/wichita-old-town",
+    "opening_hours": "Su-Th 11:00-25:00; Fr-Sa 11:00-25:00",
+    "addr:housenumber": "300",
+    "addr:street": "North Mead Street",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/4301277721",
+   "lat": 37.683896,
+   "lng": -97.346651,
+   "tags": {
+    "name": "The Monarch",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "website": "https://monarchwichita.com/",
+    "opening_hours": "Mo-Su 11:00-00:00"
+   }
+  },
+  {
+   "id": "node/4644239715",
+   "lat": 37.67846,
+   "lng": -97.338667,
+   "tags": {
+    "name": "Hotel At WaterWalk",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/4644239716",
+   "lat": 37.680289,
+   "lng": -97.338544,
+   "tags": {
+    "name": "Fairfield Inn & Suites Wichita Downtown",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/ictfd",
+    "addr:housenumber": "525",
+    "addr:street": "South Main Street",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/4644239718",
+   "lat": 37.682766,
+   "lng": -97.34136,
+   "tags": {
+    "name": "Hyatt Regency Wichita",
+    "tourism": "hotel",
+    "website": "https://www.hyatt.com/en-us/hotel/kansas/hyatt-regency-wichita/wicrw",
+    "addr:housenumber": "400",
+    "addr:street": "West Waterman",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "node/4644239719",
+   "lat": 37.687072,
+   "lng": -97.337065,
+   "tags": {
+    "name": "Guild Plaza Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/7485786336",
+   "lat": 37.686368,
+   "lng": -97.316866,
+   "tags": {
+    "name": "Piatto Neapolitan Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.piattoict.com/restaurant",
+    "addr:housenumber": "1706",
+    "addr:street": "East Douglas Avenue",
+    "addr:postcode": "67211"
+   }
+  },
+  {
+   "id": "node/761332313",
+   "lat": 37.663997,
+   "lng": -97.28533,
+   "tags": {
+    "name": "Ourr's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/761334419",
+   "lat": 37.665041,
+   "lng": -97.288634,
+   "tags": {
+    "name": "Denny's",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://locations.dennys.com/KS/WICHITA/247372",
+    "opening_hours": "24/7",
+    "addr:housenumber": "4024",
+    "addr:street": "East Harry Street",
+    "addr:postcode": "67218"
+   }
+  },
+  {
+   "id": "node/8638460963",
+   "lat": 37.683803,
+   "lng": -97.347453,
+   "tags": {
+    "name": "Yokohama Ramen",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/8828507229",
+   "lat": 37.683825,
+   "lng": -97.347845,
+   "tags": {
+    "name": "Picasso's Pizzeria",
+    "amenity": "restaurant",
+    "website": "https://picassospizzerias.com/",
+    "opening_hours": "Tu-Th 11:00-21:00; Fr, Sa 11:00-22:00; Su 11:00-20:00",
+    "addr:housenumber": "621",
+    "addr:street": "West Douglas Avenue"
+   }
+  },
+  {
+   "id": "relation/9392637",
+   "lat": 37.703473,
+   "lng": -97.335208,
+   "tags": {
+    "name": "Mark 8 Inn",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "way/189069147",
+   "lat": 37.690219,
+   "lng": -97.327912,
+   "tags": {
+    "name": "Courtyard by Marriott Wichita at Old Town",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/hotels/travel/ictdt-courtyard-wichita-at-old-town/",
+    "addr:housenumber": "820",
+    "addr:street": "East 2nd Street North",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "way/288569972",
+   "lat": 37.685659,
+   "lng": -97.329001,
+   "tags": {
+    "name": "The Depot Pizza & Taps",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/399133612",
+   "lat": 37.686382,
+   "lng": -97.331301,
+   "tags": {
+    "name": "Old Mill Tasty Shop",
+    "amenity": "restaurant",
+    "cuisine": "american"
+   }
+  },
+  {
+   "id": "way/399152854",
+   "lat": 37.685705,
+   "lng": -97.33532,
+   "tags": {
+    "name": "Ambassador Hotel Wichita, Autograph Collection",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/399152862",
+   "lat": 37.686359,
+   "lng": -97.342525,
+   "tags": {
+    "name": "Drury Plaza Hotel Broadview Wichita",
+    "tourism": "hotel",
+    "addr:housenumber": "400",
+    "addr:street": "West Douglas Avenue"
+   }
+  },
+  {
+   "id": "way/399152901",
+   "lat": 37.687217,
+   "lng": -97.337247,
+   "tags": {
+    "name": "Guild Plaza Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/399152923",
+   "lat": 37.685696,
+   "lng": -97.335796,
+   "tags": {
+    "name": "AC Hotel Wichita Downtown",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/ictad-ac-hotel-wichita-downtown/overview/",
+    "addr:housenumber": "105",
+    "addr:street": "South Broadway Avenue",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "way/401135528",
+   "lat": 37.68436,
+   "lng": -97.34566,
+   "tags": {
+    "name": "MilkFloat",
+    "amenity": "restaurant",
+    "cuisine": "ice_cream",
+    "addr:housenumber": "535",
+    "addr:street": "West Douglas Avenue",
+    "addr:postcode": "67213"
+   }
+  },
+  {
+   "id": "way/669400508",
+   "lat": 37.676247,
+   "lng": -97.335884,
+   "tags": {
+    "name": "Afton Motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "way/676441990",
+   "lat": 37.7027,
+   "lng": -97.335893,
+   "tags": {
+    "name": "Saigon",
+    "amenity": "restaurant",
+    "cuisine": "oriental"
+   }
+  },
+  {
+   "id": "way/676441996",
+   "lat": 37.703104,
+   "lng": -97.335221,
+   "tags": {
+    "name": "Town Manor Motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "way/676442003",
+   "lat": 37.700817,
+   "lng": -97.335952,
+   "tags": {
+    "name": "Little Saigon",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "way/676442004",
+   "lat": 37.701417,
+   "lng": -97.335909,
+   "tags": {
+    "name": "Kimlan Sandwiches",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://kimlansandwiches.com",
+    "addr:housenumber": "1035",
+    "addr:street": "North Broadway",
+    "addr:postcode": "67214"
+   }
+  },
+  {
+   "id": "way/676448145",
+   "lat": 37.699694,
+   "lng": -97.335958,
+   "tags": {
+    "name": "Sunflower Inn",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "way/676709518",
+   "lat": 37.678209,
+   "lng": -97.335919,
+   "tags": {
+    "name": "Wyndham Garden Wichita Downtown",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/676709522",
+   "lat": 37.676397,
+   "lng": -97.335907,
+   "tags": {
+    "name": "Trail Motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "way/677960105",
+   "lat": 37.697933,
+   "lng": -97.335872,
+   "tags": {
+    "name": "Artichoke Sandwichbar",
+    "amenity": "restaurant",
+    "cuisine": "sandwich",
+    "website": "https://artichokesandwichbar.com",
+    "addr:housenumber": "811",
+    "addr:street": "North Broadway Street",
+    "addr:postcode": "67214"
+   }
+  },
+  {
+   "id": "way/678082274",
+   "lat": 37.687098,
+   "lng": -97.331279,
+   "tags": {
+    "name": "Bite Me BBQ",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "addr:housenumber": "123",
+    "addr:street": "North Saint Francis Street",
+    "addr:postcode": "67202"
+   }
+  },
+  {
+   "id": "way/678082275",
+   "lat": 37.6872,
+   "lng": -97.331281,
+   "tags": {
+    "name": "Prost",
+    "amenity": "restaurant",
+    "cuisine": "german"
+   }
+  },
+  {
+   "id": "way/853985821",
+   "lat": 37.700966,
+   "lng": -97.334769,
+   "tags": {
+    "name": "316 Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/854024724",
+   "lat": 37.680838,
+   "lng": -97.347778,
+   "tags": {
+    "name": "Tanker BBQ",
+    "amenity": "restaurant",
+    "cuisine": "barbecue"
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "city": "berlin",
+ "source": "wikidata",
+ "fetchedAt": "2026-10-02T19:56:03Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://www.wikidata.org/w/api.php"
+ ],
+ "files": [
+  "entities.json"
+ ],
+ "notes": "wbgetentities for every Wikidata id the osm source links; sitelinks counts Wikipedia editions."
+}

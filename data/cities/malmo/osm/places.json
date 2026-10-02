@@ -1,0 +1,856 @@
+{
+ "places": [
+  {
+   "id": "node/11270939077",
+   "lat": 55.594418,
+   "lng": 13.013222,
+   "tags": {
+    "name": "Reptilcenter",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa,Su 12:00-18:00",
+    "addr:housenumber": "2",
+    "addr:street": "Norra Parkgatan",
+    "addr:postcode": "21422"
+   }
+  },
+  {
+   "id": "node/1179411764",
+   "lat": 55.601106,
+   "lng": 12.987098,
+   "tags": {
+    "name": "Människan och Pegasus",
+    "tourism": "artwork",
+    "historic": "monument",
+    "wikidata": "Q10593188",
+    "wikipedia": "sv:Människan och Pegasus"
+   }
+  },
+  {
+   "id": "node/11796068840",
+   "lat": 55.598506,
+   "lng": 13.031216,
+   "tags": {
+    "name": "Ateljéföreningen Sulfur",
+    "tourism": "gallery",
+    "website": "https://artworks.se/gallerier/ateljefoereningen-sulfur",
+    "addr:housenumber": "20J",
+    "addr:street": "Industrigatan"
+   }
+  },
+  {
+   "id": "node/11796068841",
+   "lat": 55.599537,
+   "lng": 13.034825,
+   "tags": {
+    "name": "Alta Art Space",
+    "tourism": "gallery",
+    "website": "https://www.altaartspace.org/",
+    "addr:housenumber": "40",
+    "addr:street": "Celsiusgatan"
+   }
+  },
+  {
+   "id": "node/11919745733",
+   "lat": 55.604218,
+   "lng": 13.009277,
+   "tags": {
+    "name": "Galleri Ping-Pong",
+    "tourism": "gallery",
+    "website": "https://www.galleripingpong.se/"
+   }
+  },
+  {
+   "id": "node/11920288480",
+   "lat": 55.60553,
+   "lng": 12.983198,
+   "tags": {
+    "name": "Museispårvägen",
+    "tourism": "museum",
+    "website": "https://www.mss.se/",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/11991596554",
+   "lat": 55.589029,
+   "lng": 13.00777,
+   "tags": {
+    "name": "FRANK",
+    "tourism": "gallery",
+    "website": "https://frankart.se",
+    "addr:housenumber": "3",
+    "addr:street": "Ahlmansgatan",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12162144902",
+   "lat": 55.589777,
+   "lng": 12.983748,
+   "tags": {
+    "name": "Monopoly Fanclub Sweden",
+    "tourism": "museum",
+    "website": "https://monopolyfanclub.com/",
+    "addr:housenumber": "66",
+    "addr:street": "Mariedalsvägen",
+    "addr:postcode": "217 61"
+   }
+  },
+  {
+   "id": "node/12212839191",
+   "lat": 55.609918,
+   "lng": 12.99788,
+   "tags": {
+    "name": "SIEGFRIED GUTMANN",
+    "historic": "memorial",
+    "wikidata": "Q65088606",
+    "wikipedia": "de:Liste der Stolpersteine in Schweden"
+   }
+  },
+  {
+   "id": "node/12212839192",
+   "lat": 55.609924,
+   "lng": 12.997879,
+   "tags": {
+    "name": "WALTER GERSON",
+    "historic": "memorial",
+    "wikidata": "Q65088606",
+    "wikipedia": "de:Liste der Stolpersteine in Schweden"
+   }
+  },
+  {
+   "id": "node/12212839193",
+   "lat": 55.60993,
+   "lng": 12.997878,
+   "tags": {
+    "name": "SCHULIM BÜRGER",
+    "historic": "memorial",
+    "wikidata": "Q65088606",
+    "wikipedia": "de:Liste der Stolpersteine in Schweden"
+   }
+  },
+  {
+   "id": "node/12271306785",
+   "lat": 55.593354,
+   "lng": 13.015663,
+   "tags": {
+    "name": "Junta",
+    "tourism": "gallery",
+    "website": "https://www.juntamalmo.se/",
+    "addr:housenumber": "18",
+    "addr:street": "Falsterbogatan",
+    "addr:postcode": "21436",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12320276874",
+   "lat": 55.589965,
+   "lng": 13.006711,
+   "tags": {
+    "name": "Marknadsbörsen",
+    "amenity": "marketplace",
+    "opening_hours": "We 17:00-20:00; Sa 09:00-16:00; Su 10:00-16:00",
+    "addr:housenumber": "4",
+    "addr:street": "Fricksgatan"
+   }
+  },
+  {
+   "id": "node/12610499383",
+   "lat": 55.602402,
+   "lng": 13.008836,
+   "tags": {
+    "name": "Brandmuséet",
+    "tourism": "museum",
+    "opening_hours": "\"by appointment only\"",
+    "website": "https://brandmuseumrsyd.se/",
+    "addr:housenumber": "20",
+    "addr:street": "Drottninggatan"
+   }
+  },
+  {
+   "id": "node/12652258009",
+   "lat": 55.603043,
+   "lng": 12.998209,
+   "tags": {
+    "name": "Galleri Format",
+    "tourism": "gallery",
+    "website": "https://galleriformat.nu/",
+    "addr:housenumber": "53",
+    "addr:street": "Stora Nygatan"
+   }
+  },
+  {
+   "id": "node/12811873859",
+   "lat": 55.595308,
+   "lng": 13.023832,
+   "tags": {
+    "name": "SPARK",
+    "tourism": "gallery",
+    "website": "https://www.sparkmalmo.org/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12953946097",
+   "lat": 55.615327,
+   "lng": 13.020906,
+   "tags": {
+    "name": "Digitaliseum",
+    "tourism": "gallery",
+    "opening_hours": "We, Th 17:00-19:00; Sa 12:00-16:00",
+    "website": "https://digitaliseum.org/",
+    "addr:housenumber": "1",
+    "addr:street": "Lodgatan"
+   }
+  },
+  {
+   "id": "node/1309301894",
+   "lat": 55.591598,
+   "lng": 13.008001,
+   "tags": {
+    "name": "Möllevångstorget",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 08:00-15:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13202600550",
+   "lat": 55.601069,
+   "lng": 13.006505,
+   "tags": {
+    "name": "REDAN Galleri",
+    "tourism": "gallery",
+    "website": "https://www.redangalleri.se/",
+    "addr:housenumber": "9",
+    "addr:street": "Amiralsgatan",
+    "addr:postcode": "211 41"
+   }
+  },
+  {
+   "id": "node/13514203268",
+   "lat": 55.615562,
+   "lng": 13.020301,
+   "tags": {
+    "name": "Kipi Konsthall",
+    "tourism": "gallery",
+    "website": "https://kipi.se",
+    "addr:housenumber": "4",
+    "addr:street": "Lodgatan",
+    "addr:postcode": "211 24"
+   }
+  },
+  {
+   "id": "node/13727028053",
+   "lat": 55.581951,
+   "lng": 13.022565,
+   "tags": {
+    "name": "Ateljé Filip Rahim Hansson",
+    "tourism": "gallery",
+    "website": "http://filiprahimhansson.com/",
+    "addr:housenumber": "2",
+    "addr:street": "Särlagatan",
+    "addr:postcode": "214 48"
+   }
+  },
+  {
+   "id": "node/13970154088",
+   "lat": 55.593935,
+   "lng": 13.0237,
+   "tags": {
+    "name": "Galleri KOAS",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Sa 13:00-17:00",
+    "website": "https://koasmalmo.se/",
+    "addr:housenumber": "2",
+    "addr:street": "Arildsgatan",
+    "addr:postcode": "214 39"
+   }
+  },
+  {
+   "id": "node/2016689391",
+   "lat": 55.606143,
+   "lng": 13.000225,
+   "tags": {
+    "name": "Karl X Gustav",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q102272988",
+    "wikipedia": "sv:Karl X Gustavs ryttarstaty, Malmö"
+   }
+  },
+  {
+   "id": "node/3414497893",
+   "lat": 55.60594,
+   "lng": 13.002747,
+   "tags": {
+    "name": "Teatermuseet",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 13:00-16:00",
+    "wikidata": "Q10576141",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/3786516975",
+   "lat": 55.605212,
+   "lng": 12.983794,
+   "tags": {
+    "name": "Fiskehoddorna",
+    "amenity": "marketplace",
+    "opening_hours": "Tu-Sa 06:30-13:00",
+    "wikidata": "Q10495778",
+    "wikipedia": "sv:Fiskehoddorna"
+   }
+  },
+  {
+   "id": "node/4396367887",
+   "lat": 55.595394,
+   "lng": 13.023898,
+   "tags": {
+    "name": "Molekyl Gallery",
+    "tourism": "gallery",
+    "website": "https://molekylgallery.com/",
+    "addr:housenumber": "4",
+    "addr:street": "Båstadsgatan",
+    "addr:postcode": "214 33",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/4396374389",
+   "lat": 55.595235,
+   "lng": 13.023797,
+   "tags": {
+    "name": "Galleri CC",
+    "tourism": "gallery",
+    "website": "https://gallericc.se/",
+    "addr:housenumber": "4",
+    "addr:street": "Båstadsgatan",
+    "addr:postcode": "214 33",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/4895458698",
+   "lat": 55.604751,
+   "lng": 12.986984,
+   "tags": {
+    "name": "Malmö Museer Slottsholmen",
+    "tourism": "museum",
+    "opening_hours": "Th 11:00-19:00; Tu,We,Fr-Su 11:00-17:00",
+    "website": "https://malmo.se/museer",
+    "addr:housenumber": "6",
+    "addr:street": "Malmöhusvägen",
+    "addr:postcode": "211 18",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4990174637",
+   "lat": 55.593075,
+   "lng": 13.008339,
+   "tags": {
+    "name": "Arkana",
+    "tourism": "gallery",
+    "opening_hours": "Sa-Su 13:00-16:00",
+    "website": "https://www.instagram.com/ateljearkana/",
+    "addr:housenumber": "37",
+    "addr:street": "Möllevångsgatan",
+    "addr:postcode": "214 20",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/5207987703",
+   "lat": 55.60688,
+   "lng": 13.02004,
+   "tags": {
+    "name": "Prison Island",
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "node/5349775440",
+   "lat": 55.582754,
+   "lng": 13.010343,
+   "tags": {
+    "name": "Oscar Olsson-museet",
+    "tourism": "museum",
+    "website": "http://www.oomuseet.se/",
+    "wikidata": "Q17487669",
+    "wikipedia": "sv:Oscar Olsson-museet",
+    "addr:housenumber": "15",
+    "addr:street": "Ystadvägen"
+   }
+  },
+  {
+   "id": "node/5598146586",
+   "lat": 55.595586,
+   "lng": 12.989845,
+   "tags": {
+    "name": "Galleri Ann-Katrin Braf",
+    "tourism": "gallery",
+    "website": "www.ann-katrinbraf.se",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6467664469",
+   "lat": 55.597857,
+   "lng": 12.993424,
+   "tags": {
+    "name": "Galleri Lohme",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/6797013185",
+   "lat": 55.604503,
+   "lng": 12.999206,
+   "tags": {
+    "name": "Form Design Center",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 11:00-17:00; Su 12:00-16:00",
+    "website": "https://www.formdesigncenter.com/",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7760658474",
+   "lat": 55.589435,
+   "lng": 12.938257,
+   "tags": {
+    "name": "Studio Gynning",
+    "tourism": "gallery",
+    "addr:street": "Limhamnsvägen"
+   }
+  },
+  {
+   "id": "node/9661532906",
+   "lat": 55.608289,
+   "lng": 13.034093,
+   "tags": {
+    "name": "Minnessten",
+    "historic": "memorial",
+    "wikidata": "Q18290090",
+    "wikipedia": "sv:Garnisonsplanteringen"
+   }
+  },
+  {
+   "id": "relation/10344681",
+   "lat": 55.610485,
+   "lng": 13.050288,
+   "tags": {
+    "name": "Beijers park",
+    "leisure": "park",
+    "wikidata": "Q3133813",
+    "wikipedia": "sv:Beijers park"
+   }
+  },
+  {
+   "id": "relation/11076658",
+   "lat": 55.601458,
+   "lng": 13.077904,
+   "tags": {
+    "name": "Bulltofta rekreationsområde",
+    "leisure": "park",
+    "wikidata": "Q4997067"
+   }
+  },
+  {
+   "id": "relation/12887996",
+   "lat": 55.603695,
+   "lng": 12.991494,
+   "tags": {
+    "name": "Kungsparken",
+    "leisure": "park",
+    "wikidata": "Q59032",
+    "wikipedia": "sv:Kungsparken, Malmö"
+   }
+  },
+  {
+   "id": "relation/19412138",
+   "lat": 55.613969,
+   "lng": 12.971692,
+   "tags": {
+    "name": "Daniaparken",
+    "leisure": "park",
+    "wikidata": "Q5216270"
+   }
+  },
+  {
+   "id": "relation/282978",
+   "lat": 55.604785,
+   "lng": 12.987115,
+   "tags": {
+    "name": "Malmöhus slott",
+    "historic": "castle",
+    "building": "yes",
+    "wikidata": "Q1810918",
+    "wikipedia": "sv:Malmöhus"
+   }
+  },
+  {
+   "id": "relation/55430",
+   "lat": 55.575891,
+   "lng": 13.05444,
+   "tags": {
+    "name": "Ögårdsparken",
+    "leisure": "park",
+    "wikidata": "Q18335292"
+   }
+  },
+  {
+   "id": "way/102924493",
+   "lat": 55.647076,
+   "lng": 13.042491,
+   "tags": {
+    "name": "Södra Lommabuktens naturreservat",
+    "leisure": "nature_reserve",
+    "website": "https://www.lansstyrelsen.se/skane/besoksmal/naturreservat/burlov-lomma/sodra-lommabukten.html",
+    "wikidata": "Q10708073"
+   }
+  },
+  {
+   "id": "way/1036504155",
+   "lat": 55.600897,
+   "lng": 13.00131,
+   "tags": {
+    "name": "Disgusting Food Museum",
+    "name:en": "Disgusting Food Museum",
+    "tourism": "museum",
+    "opening_hours": "We-Su 12:00-18:00",
+    "website": "https://disgustingfoodmuseum.com",
+    "addr:housenumber": "2",
+    "addr:street": "Södra Förstadsgatan",
+    "addr:postcode": "21120",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1359716157",
+   "lat": 55.6568,
+   "lng": 13.036255,
+   "tags": {
+    "name": "Strandhusens revlars naturreservat",
+    "leisure": "nature_reserve",
+    "website": "https://lomma.se/uppleva-och-gora/idrott-motion-natur-och-friluftsliv/friluftsliv-natur-och-motion/naturomraden-naturreservat/strandhusens-revlar-marint-reservat.html",
+    "wikidata": "Q89320245"
+   }
+  },
+  {
+   "id": "way/1513013759",
+   "lat": 55.611647,
+   "lng": 12.997051,
+   "tags": {
+    "name": "Bore",
+    "tourism": "museum",
+    "building": "boat",
+    "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Bore.html",
+    "addr:housenumber": "10",
+    "addr:street": "Skeppsbron",
+    "addr:postcode": "211 20"
+   }
+  },
+  {
+   "id": "way/187072516",
+   "lat": 55.607842,
+   "lng": 12.990852,
+   "tags": {
+    "name": "Malmö Saluhall",
+    "amenity": "marketplace",
+    "building": "yes",
+    "opening_hours": "Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00; Su 11:00-17:00",
+    "website": "https://www.malmosaluhall.se",
+    "addr:housenumber": "6",
+    "addr:street": "Gibraltargatan",
+    "addr:postcode": "211 18"
+   }
+  },
+  {
+   "id": "way/211680568",
+   "lat": 55.573251,
+   "lng": 12.998219,
+   "tags": {
+    "name": "Per Albin Hanssons födelsehem",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Fr 09:00-12:00",
+    "website": "https://www.peralbinhuset.se/",
+    "wikidata": "Q28934230",
+    "addr:housenumber": "91, 93",
+    "addr:street": "Per Albin Hanssons väg",
+    "addr:postcode": "21565"
+   }
+  },
+  {
+   "id": "way/22953383",
+   "lat": 55.590623,
+   "lng": 12.992064,
+   "tags": {
+    "name": "Pildammsparken",
+    "leisure": "park",
+    "wikidata": "Q1579207",
+    "wikipedia": "sv:Pildammsparken"
+   }
+  },
+  {
+   "id": "way/282047842",
+   "lat": 55.605767,
+   "lng": 13.02127,
+   "tags": {
+    "name": "Galleri Final",
+    "tourism": "gallery",
+    "building": "yes",
+    "addr:housenumber": "31",
+    "addr:street": "Kungsgatan",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/28417392",
+   "lat": 55.59348,
+   "lng": 13.013807,
+   "tags": {
+    "name": "Folkets park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q10497373"
+   }
+  },
+  {
+   "id": "way/28461042",
+   "lat": 55.605077,
+   "lng": 13.017778,
+   "tags": {
+    "name": "Rörsjöparken",
+    "leisure": "park",
+    "wikidata": "Q7386697",
+    "wikipedia": "sv:Rörsjöparken"
+   }
+  },
+  {
+   "id": "way/28553117",
+   "lat": 55.57407,
+   "lng": 12.979287,
+   "tags": {
+    "name": "Kroksbäcksparken",
+    "leisure": "park",
+    "wikidata": "Q10549384",
+    "wikipedia": "sv:Kroksbäcksparken"
+   }
+  },
+  {
+   "id": "way/28809216",
+   "lat": 55.590411,
+   "lng": 13.015232,
+   "tags": {
+    "name": "Jesusparken",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q120504903"
+   }
+  },
+  {
+   "id": "way/30025167",
+   "lat": 55.601464,
+   "lng": 12.988699,
+   "tags": {
+    "name": "Slottsparken",
+    "leisure": "park",
+    "wikidata": "Q7541449",
+    "wikipedia": "sv:Slottsparken, Malmö"
+   }
+  },
+  {
+   "id": "way/30053816",
+   "lat": 55.617678,
+   "lng": 12.976788,
+   "tags": {
+    "name": "Scaniaparken",
+    "leisure": "park",
+    "wikidata": "Q7430034"
+   }
+  },
+  {
+   "id": "way/35724417",
+   "lat": 55.604632,
+   "lng": 13.009567,
+   "tags": {
+    "name": "Moderna Museet",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-We,Fr-Su 11:00-17:00; Th 11:00-19:00",
+    "website": "https://www.modernamuseet.se/malmo/sv/",
+    "addr:housenumber": "2-4",
+    "addr:street": "Ola Billgrens plats",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/41688058",
+   "lat": 55.590017,
+   "lng": 13.045258,
+   "tags": {
+    "name": "Cronheimsparken",
+    "leisure": "park",
+    "wikidata": "Q5187705"
+   }
+  },
+  {
+   "id": "way/43137702",
+   "lat": 55.594949,
+   "lng": 12.975995,
+   "tags": {
+    "name": "Rönneholmsparken",
+    "leisure": "park",
+    "wikidata": "Q7386690"
+   }
+  },
+  {
+   "id": "way/50139701",
+   "lat": 55.604833,
+   "lng": 12.982778,
+   "tags": {
+    "name": "Teknikens och sjöfartens hus",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu,We,Fr-Su,PH 11:00-17:00; Th 11:00-19:00",
+    "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Malmo-museum/",
+    "wikidata": "Q10692063",
+    "wikipedia": "sv:Teknikens och sjöfartens hus",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/585939134",
+   "lat": 55.577588,
+   "lng": 13.040145,
+   "tags": {
+    "name": "Kastanjeplatsen",
+    "leisure": "park",
+    "wikidata": "Q124696081"
+   }
+  },
+  {
+   "id": "way/622466023",
+   "lat": 55.589754,
+   "lng": 12.94189,
+   "tags": {
+    "name": "Soldattorpet",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "way/622466029",
+   "lat": 55.589847,
+   "lng": 12.941754,
+   "tags": {
+    "name": "Limhamns museum",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q10562024"
+   }
+  },
+  {
+   "id": "way/625921964",
+   "lat": 55.565446,
+   "lng": 12.978072,
+   "tags": {
+    "name": "Kretseum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "http://www.kretseum.se/Kretseumhuset"
+   }
+  },
+  {
+   "id": "way/680764890",
+   "lat": 55.60692,
+   "lng": 13.001007,
+   "tags": {
+    "name": "Länsresidenset Malmö",
+    "historic": "castle",
+    "building": "office",
+    "wikidata": "Q10651202",
+    "wikipedia": "sv:Residenset i Malmö"
+   }
+  },
+  {
+   "id": "way/681243145",
+   "lat": 55.605371,
+   "lng": 13.005777,
+   "tags": {
+    "name": "Ebbas hus",
+    "tourism": "museum",
+    "building": "yes",
+    "wikidata": "Q10478963",
+    "wikipedia": "sv:Ebbas hus",
+    "addr:housenumber": "10",
+    "addr:street": "Snapperupsgatan",
+    "addr:postcode": "211 35"
+   }
+  },
+  {
+   "id": "way/708832835",
+   "lat": 55.598178,
+   "lng": 12.947465,
+   "tags": {
+    "name": "Naturum Öresund",
+    "tourism": "aquarium",
+    "building": "yes",
+    "opening_hours": "Tu-Fr 12:00-16:30; Sa 11:00-15:00",
+    "website": "https://www.naturumoresund.se/",
+    "wikidata": "Q135333973",
+    "addr:housenumber": "4",
+    "addr:street": "Ribersborgsstigen",
+    "addr:postcode": "216 13",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/74990267",
+   "lat": 55.608594,
+   "lng": 13.032087,
+   "tags": {
+    "name": "Gerlachs park",
+    "leisure": "park",
+    "wikidata": "Q5550935",
+    "wikipedia": "sv:Gerlachs park"
+   }
+  },
+  {
+   "id": "way/74990273",
+   "lat": 55.608401,
+   "lng": 13.034062,
+   "tags": {
+    "name": "Garnisonsplanteringen",
+    "leisure": "park",
+    "wikidata": "Q18290090",
+    "wikipedia": "sv:Garnisonsplanteringen"
+   }
+  },
+  {
+   "id": "way/933496567",
+   "lat": 55.605103,
+   "lng": 12.982555,
+   "tags": {
+    "name": "U3",
+    "tourism": "attraction",
+    "historic": "ship",
+    "building": "ship",
+    "website": "https://malmo.se/Uppleva-och-gora/Konst-och-museer/Malmo-Museer/Utstallningar/Aktuella-utstallningar/Fordon-och-farkoster/Ubaten-U3.html",
+    "wikidata": "Q10515204",
+    "wikipedia": "sv:HMS U3",
+    "wheelchair": "no"
+   }
+  }
+ ]
+}

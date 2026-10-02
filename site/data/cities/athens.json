@@ -1,0 +1,8175 @@
+{
+ "v": 1,
+ "city": {
+  "id": "athens",
+  "name": "Athens",
+  "country": "GR",
+  "lat": 37.9838,
+  "lng": 23.7275,
+  "timezone": "Europe/Athens"
+ },
+ "places": [
+  {
+   "id": "osm:way/910010406",
+   "name": "Παρθενών",
+   "nameEn": "Parthenon",
+   "kind": "landmark",
+   "lat": 37.971503,
+   "lng": 23.726618,
+   "address": null,
+   "website": null,
+   "wikidata": "Q10288",
+   "wikipedia": "el:Παρθενώνας",
+   "description": "former temple of Athena on the Athenian Acropolis, Greece",
+   "image": "The Parthenon in Athens.jpg",
+   "notability": 133,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/11268149",
+   "name": "Αρχαιολογικός χώρος Ακρόπολης",
+   "nameEn": "Archaeological site of the Acropolis",
+   "kind": "landmark",
+   "lat": 37.970909,
+   "lng": 23.727267,
+   "address": null,
+   "website": null,
+   "wikidata": "Q131013",
+   "wikipedia": "en:Acropolis of Athens",
+   "description": "ancient citadel above the city of Athens",
+   "image": "Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg",
+   "notability": 93,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3343545896",
+   "name": "Αρχαιολογικός Χώρος Ακαδημίας Πλάτωνος",
+   "nameEn": "Plato's Academy Archaeological Site",
+   "kind": "landmark",
+   "lat": 37.991368,
+   "lng": 23.708381,
+   "address": null,
+   "website": null,
+   "wikidata": "Q193093",
+   "wikipedia": "en:Platonic Academy",
+   "description": "ancient philosophical, research and educative center, founded by Plato in Athens",
+   "image": "Plato's Academy mosaic from Pompeii.jpg",
+   "notability": 66,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/5688115",
+   "name": "Αθήνα",
+   "nameEn": "Classical Athens",
+   "kind": "landmark",
+   "lat": 37.9696,
+   "lng": 23.724545,
+   "address": null,
+   "website": null,
+   "wikidata": "Q844930",
+   "wikipedia": "el:Αρχαία Αθήνα",
+   "description": "city-state in ancient Greece",
+   "image": "View of the Acropolis Athens (pixinn.net).jpg",
+   "notability": 53,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/910010334",
+   "name": "Ερέχθειο",
+   "nameEn": "Erechtheum",
+   "kind": "landmark",
+   "lat": 37.972101,
+   "lng": 23.726454,
+   "address": null,
+   "website": null,
+   "wikidata": "Q242741",
+   "wikipedia": "el:Ερέχθειο",
+   "description": "ancient Greek temple on the north side of the Acropolis of Athens",
+   "image": "Erechtheion Acropolis Athens.jpg",
+   "notability": 49,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/19023844",
+   "name": "Παναθηναϊκό Στάδιο",
+   "nameEn": "Panathenaic Stadium",
+   "kind": "landmark",
+   "lat": 37.968338,
+   "lng": 23.740963,
+   "address": null,
+   "website": null,
+   "wikidata": "Q208811",
+   "wikipedia": "en:Panathenaic Stadium",
+   "description": "stadium in Athens, Greece",
+   "image": "GR-athen-panathinaiko-stadion.jpg",
+   "notability": 46,
+   "highlight": true,
+   "openingHours": "Mar-Oct: 08:00-19:00, Nov-Feb: 08:00-17:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/82150737",
+   "name": "Λύκειο Αριστοτέλη",
+   "nameEn": "Aristotle's Lyceum",
+   "kind": "landmark",
+   "lat": 37.974027,
+   "lng": 23.7434,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1160664",
+   "wikipedia": null,
+   "description": "public meeting place in Classical Athens",
+   "image": "Athens Lyceum Archaeological Site 2.jpg",
+   "notability": 43,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/12352554",
+   "name": "Ναός Αθηνάς Νίκης",
+   "nameEn": "Athena Nike Temple",
+   "kind": "landmark",
+   "lat": 37.971529,
+   "lng": 23.724888,
+   "address": null,
+   "website": null,
+   "wikidata": "Q384813",
+   "wikipedia": "el:Ναός Αθηνάς Νίκης",
+   "description": "ancient Greek temple built in the fifth century CE on the Acropolis of Athens in honor of Athena as the goddess of victory, located in Athens Municipality, Greece",
+   "image": "Temple of Athena Nikè from Propylaea, Acropolis, Athens, Greece.jpg",
+   "notability": 42,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/2828",
+   "name": "Εθνικό Αρχαιολογικό Μουσείο",
+   "nameEn": "National Archaeological Museum",
+   "kind": "museum",
+   "lat": 37.989002,
+   "lng": 23.732652,
+   "address": "44 Πατησίων, 10682",
+   "website": null,
+   "wikidata": "Q637187",
+   "wikipedia": "el:Εθνικό Αρχαιολογικό Μουσείο",
+   "description": "museum in Athens, Greece",
+   "image": "Archäologisches Nationalmuseum Athen.jpg",
+   "notability": 41,
+   "highlight": true,
+   "openingHours": "Nov 01-Mar 31 08:30-15:30; Nov 01-Mar 31,Apr 01-May 13,May 14-Oct 31 Tu 13:00-20:00; Apr 01-May 13 09:00-16:00; May 14-Oct 31 08:00-20:00; Jan 01 off; Mar 25 off; May 01 off; Dec 25-26 off \"Orthodox Easter off\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/983921252",
+   "name": "Μουσείο Ακρόπολης",
+   "nameEn": "Acropolis Museum",
+   "kind": "museum",
+   "lat": 37.968523,
+   "lng": 23.728488,
+   "address": "15 Διονυσίου Αρεοπαγίτου, 11742",
+   "website": "https://www.theacropolismuseum.gr/",
+   "wikidata": "Q421084",
+   "wikipedia": "el:Μουσείο Ακρόπολης",
+   "description": "museum in Athens, Greece",
+   "image": "View of the Acropolis Museum from the Acropolis in Athens.jpg",
+   "notability": 37,
+   "highlight": true,
+   "openingHours": "Mo 08:00-16:00; Tu-Th, Sa-Su 08:00-20:00; Fr 08:00-22:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/27917370",
+   "name": "Ναός Ηφαίστου",
+   "nameEn": "Temple of Hephaestus",
+   "kind": "landmark",
+   "lat": 37.975604,
+   "lng": 23.721412,
+   "address": null,
+   "website": null,
+   "wikidata": "Q756824",
+   "wikipedia": "el:Ναός Ηφαίστου",
+   "description": "ancient Greek temple in Athens",
+   "image": "Greece-0176 (2215880732).jpg",
+   "notability": 37,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/63765671",
+   "name": "Ναός του Ολυμπίου Διός",
+   "nameEn": "Temple of Olympian Zeus",
+   "kind": "landmark",
+   "lat": 37.969369,
+   "lng": 23.733094,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1123019",
+   "wikipedia": "el:Ναός του Ολυμπίου Διός",
+   "description": "ancient Greek temple in Athens",
+   "image": "Temple of Olympian Zeus Athens Greece 1.jpg",
+   "notability": 37,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-18:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "18:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/11199493",
+   "name": "Αέρηδες",
+   "nameEn": "Tower of the Winds",
+   "kind": "landmark",
+   "lat": 37.974196,
+   "lng": 23.727028,
+   "address": null,
+   "website": null,
+   "wikidata": "Q372717",
+   "wikipedia": "el:Αέρηδες (μνημείο)",
+   "description": "a Roman tower in Athens that once housed an early weather vane, large clepsydra, and multiple sundials to function as an early clocktower",
+   "image": "Το Ωρολόγιον του Ανδρονίκου Κυρρήστου στις 16 Σεπτεμβρίου 2019.jpg",
+   "notability": 35,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/13139942",
+   "name": "Αρχαία Αγορά",
+   "nameEn": "Ancient Agora of Athens",
+   "kind": "landmark",
+   "lat": 37.974714,
+   "lng": 23.722804,
+   "address": null,
+   "website": null,
+   "wikidata": "Q395367",
+   "wikipedia": "el:Αρχαία Αγορά της Αθήνας",
+   "description": "major archaeological site of Athens",
+   "image": "AncientAgoraofAthensColour.jpg",
+   "notability": 34,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/16363966",
+   "name": "Πλατεία Συντάγματος",
+   "nameEn": "Syntagma Square",
+   "kind": "attraction",
+   "lat": 37.975528,
+   "lng": 23.734856,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1137997",
+   "wikipedia": "el:Πλατεία Συντάγματος",
+   "description": "square in Athens, Greece",
+   "image": "Πλατεία Συντάγματος 6386.jpg",
+   "notability": 34,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/10973697",
+   "name": "Θέατρο του Διονύσου",
+   "nameEn": "Theatre of Dionysus",
+   "kind": "landmark",
+   "lat": 37.970588,
+   "lng": 23.727715,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1227044",
+   "wikipedia": "el:Θέατρο του Διονύσου",
+   "description": "ancient theater in the Acropolis of Athens",
+   "image": "Theatre of Dionysus 1.jpg",
+   "notability": 33,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/13249184",
+   "name": "Ωδείο Ηρώδου Αττικού",
+   "nameEn": "Odeon of Herodes Atticus",
+   "kind": "landmark",
+   "lat": 37.970818,
+   "lng": 23.724544,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1328165",
+   "wikipedia": "el:Ωδείο Ηρώδου του Αττικού",
+   "description": "ancient theater in Athens Acropolis",
+   "image": "Wall Theatre Herodes Atticus Acropolis Athens Greece.jpg",
+   "notability": 32,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662894",
+   "name": "Νέον Βουλευτήριον",
+   "nameEn": "New Bouleuterion",
+   "kind": "landmark",
+   "lat": 37.97514,
+   "lng": 23.721822,
+   "address": null,
+   "website": null,
+   "wikidata": "Q751024",
+   "wikipedia": null,
+   "description": "council chambers of ancient Greek cities, the place where the Boulé, a senate, met.",
+   "image": "1999-Kienzle-Dia (711).jpg",
+   "notability": 30,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/2903266",
+   "name": "Αρχαιολογικός Χώρος Κεραμεικού",
+   "nameEn": "Archaeological site of Kerameikos",
+   "kind": "park",
+   "lat": 37.978621,
+   "lng": 23.718184,
+   "address": null,
+   "website": "http://odysseus.culture.gr/h/3/eh352.jsp?obj_id=2392",
+   "wikidata": "Q630974",
+   "wikipedia": null,
+   "description": "ancient graveyard and neighborhood in Athens",
+   "image": "Kerameikos Cemetery from Melidone Street on June 19, 2020.jpg",
+   "notability": 29,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662891",
+   "name": "Ηλιαία",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.974253,
+   "lng": 23.722455,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1129527",
+   "wikipedia": null,
+   "description": "largest court of ancient Athens",
+   "image": "Recinto de la Heliea. Stoa de Atalo al fondo. Ágora de Atenas.JPG",
+   "notability": 29,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/729674865",
+   "name": "Βιβλιοθήκη του Αδριανού",
+   "nameEn": "Hadrian's Library",
+   "kind": "landmark",
+   "lat": 37.9754,
+   "lng": 23.72655,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1455447",
+   "wikipedia": null,
+   "description": "Roman library in Athens",
+   "image": "Βιβλιοθήκη Αδριανού 4165.jpg",
+   "notability": 28,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/2429041",
+   "name": "Μουσείο Μπενάκη (Κτήριο Οδού Πειραιώς)",
+   "nameEn": "Benaki Museum (Pireos St. Annexe)",
+   "kind": "museum",
+   "lat": 37.974472,
+   "lng": 23.708275,
+   "address": "138 Πειραιώς, 11854",
+   "website": "https://www.benaki.gr/",
+   "wikidata": "Q816669",
+   "wikipedia": "el:Μουσείο Μπενάκη",
+   "description": "museum in Kolonaki, Athens, Greece",
+   "image": "Benaki Museum Athens.JPG",
+   "notability": 27,
+   "highlight": true,
+   "openingHours": "Su, Th 10:00-18:00; Fr-Sa 10:00-22:00; Mo-We off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/317915132",
+   "name": "Πνύκα",
+   "nameEn": "Pnyx",
+   "kind": "landmark",
+   "lat": 37.971465,
+   "lng": 23.719452,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1125096",
+   "wikipedia": "el:Πνύκα",
+   "description": "hill and archaeological site in Athens",
+   "image": "Pnyx-berg2.png",
+   "notability": 27,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6932670810",
+   "name": "Τμήμα του Νοτίου σκέλους των Μακρών Τειχών επί των οδών Τέω και Βρυούλων",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.962367,
+   "lng": 23.702615,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1163616",
+   "wikipedia": null,
+   "description": "city wall in ancient Athens",
+   "image": "Lange Mauern.png",
+   "notability": 27,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1584057565",
+   "name": "Άγαλμα Αθηνάς Προμάχου",
+   "nameEn": "Athena Promachos statue place",
+   "kind": "landmark",
+   "lat": 37.971817,
+   "lng": 23.725665,
+   "address": null,
+   "website": null,
+   "wikidata": "Q755221",
+   "wikipedia": "el:Άγαλμα της Προμάχου Αθηνάς",
+   "description": "ancient sculpture of Phidias in Athens Acropolis",
+   "image": "Atena Promacos.jpg",
+   "notability": 26,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/713354220",
+   "name": "Μητροπολιτικός Ναός Αθηνών",
+   "nameEn": "Metropolitan Cathedral of Athens",
+   "kind": "landmark",
+   "lat": 37.97531,
+   "lng": 23.730074,
+   "address": null,
+   "website": null,
+   "wikidata": "Q981372",
+   "wikipedia": "el:Μητροπολιτικός Ναός Αθηνών",
+   "description": "church building in Athens, Attica Region, Greece",
+   "image": "Μητρόπολη Αθηνών 3321.jpg",
+   "notability": 26,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/157180174",
+   "name": "Μνημείο Λυσικράτους",
+   "nameEn": "Choragic Monument of Lysicrates",
+   "kind": "landmark",
+   "lat": 37.97108,
+   "lng": 23.729938,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1160691",
+   "wikipedia": "el:Μνημείο του Λυσικράτη",
+   "description": "ancient Greek choragic monument in Athens",
+   "image": "Choragic Monument of Lysicrates.jpg",
+   "notability": 25,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3234302316",
+   "name": "Μνημείο πεσόντων του Πολυτεχνείου",
+   "nameEn": "Monument to the fallen of the Polytechnic University",
+   "kind": "landmark",
+   "lat": 37.987886,
+   "lng": 23.730677,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2628742",
+   "wikipedia": "el:Εξέγερση του Πολυτεχνείου",
+   "description": "massive demonstration of popular rejection of the Greek military junta of 1967-1974",
+   "image": "Athens Polytechnic 1973.png",
+   "notability": 23,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/11505137",
+   "name": "Εθνικός Κήπος",
+   "nameEn": "National Garden",
+   "kind": "park",
+   "lat": 37.973576,
+   "lng": 23.737467,
+   "address": null,
+   "website": null,
+   "wikidata": "Q646284",
+   "wikipedia": "el:Εθνικός Κήπος",
+   "description": "public park in Athens, Greece",
+   "image": "20140410 60 Athens National Gardens (13824726745).jpg",
+   "notability": 22,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/442128059",
+   "name": "Μνημείο Φιλοπάππου",
+   "nameEn": "Philopappos Monument",
+   "kind": "landmark",
+   "lat": 37.967363,
+   "lng": 23.721368,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1760491",
+   "wikipedia": "el:Μνημείο Φιλοπάππου",
+   "description": "ancient Greek mausoleum in Muses hill in Athens",
+   "image": "Philopappos monument.jpg",
+   "notability": 22,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8262155401",
+   "name": "Ποικίλη Στοά",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.976414,
+   "lng": 23.722617,
+   "address": null,
+   "website": null,
+   "wikidata": "Q936234",
+   "wikipedia": "en:Stoa Poikile",
+   "description": "ancient stoa in Athens",
+   "image": "Stoa Poikile 1.jpg",
+   "notability": 22,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/2150086",
+   "name": "Βουλή των Ελλήνων",
+   "nameEn": "Greek Parliament",
+   "kind": "attraction",
+   "lat": 37.975266,
+   "lng": 23.736995,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7084890",
+   "wikipedia": "el:Παλαιά Ανάκτορα",
+   "description": "building of the Hellenic Parliament, formerly a royal palace",
+   "image": "Attica 06-13 Athens 09 Parliament.jpg",
+   "notability": 21,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/220890927",
+   "name": "Μουσείο Κυκλαδικής Τέχνης",
+   "nameEn": "Museum of Cycladic Art",
+   "kind": "museum",
+   "lat": 37.97571,
+   "lng": 23.742307,
+   "address": "4 Νεοφύτου Δούκα, 10674",
+   "website": null,
+   "wikidata": "Q1230253",
+   "wikipedia": "el:Μουσείο Κυκλαδικής Τέχνης",
+   "description": "museum in Athens",
+   "image": "Cycladic female figurine 2.jpg",
+   "notability": 20,
+   "highlight": false,
+   "openingHours": "Mo,We,Fr,Sa 10:00-17:00; Th 10:00-20:00; Su 11:00-17:00; Tu off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "we",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/12352555",
+   "name": "Προπύλαια",
+   "nameEn": "Propylaea",
+   "kind": "landmark",
+   "lat": 37.971735,
+   "lng": 23.725104,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3407649",
+   "wikipedia": "el:Προπύλαια (Ακρόπολη Αθηνών)",
+   "description": "the gate of the Acropolis of Athens",
+   "image": "Propylaea-athens.jpg",
+   "notability": 20,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/175107932",
+   "name": "Πύλη του Αδριανού",
+   "nameEn": "Arch of Hadrian",
+   "kind": "landmark",
+   "lat": 37.970187,
+   "lng": 23.732013,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1567576",
+   "wikipedia": "el:Πύλη του Αδριανού",
+   "description": "Roman arch in Athens",
+   "image": "Attica 06-13 Athens 24 Arch of Hadrian.jpg",
+   "notability": 20,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/729674900",
+   "name": "Τζαμί Τζισταράκη",
+   "nameEn": "Tzistarakis Mosque",
+   "kind": "landmark",
+   "lat": 37.975966,
+   "lng": 23.726024,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15958739",
+   "wikipedia": "el:Τζαμί Τζισταράκη",
+   "description": "mosque in Greece",
+   "image": "Tzistarakis Mosque on March 7, 2020.jpg",
+   "notability": 20,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/318587297",
+   "name": "Βυζαντινό και Χριστιανικό Μουσείο",
+   "nameEn": "Byzantine and Christian Museum",
+   "kind": "museum",
+   "lat": 37.975011,
+   "lng": 23.744691,
+   "address": "22 Λεωφόρος Βασιλίσσης Σοφίας, 10675",
+   "website": null,
+   "wikidata": "Q1018775",
+   "wikipedia": "el:Βυζαντινό και Χριστιανικό Μουσείο",
+   "description": "museum in Athens, Greece",
+   "image": "BCMA Villa Ilissia.jpg",
+   "notability": 19,
+   "highlight": false,
+   "openingHours": "Mo,We-Su 09:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3844131091",
+   "name": "Νομισματικό Μουσείο",
+   "nameEn": "Numismatic Museum",
+   "kind": "museum",
+   "lat": 37.977827,
+   "lng": 23.735385,
+   "address": "12 Πανεπιστημίου, 10671",
+   "website": null,
+   "wikidata": "Q658339",
+   "wikipedia": "el:Νομισματικό Μουσείο Αθηνών",
+   "description": "museum",
+   "image": "Ιλίου Μέλαθρον 6649.jpg",
+   "notability": 19,
+   "highlight": false,
+   "openingHours": "Tu-Su 09:00-16:00; Mo off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/11197557",
+   "name": "Ρωμαϊκή Αγορά Αθηνών",
+   "nameEn": "Roman Agora of Athens",
+   "kind": "landmark",
+   "lat": 37.9743,
+   "lng": 23.726355,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1435551",
+   "wikipedia": "el:Ρωμαϊκή Αγορά της Αθήνας",
+   "description": "ancient square in Athens",
+   "image": "Athens Roman Agora.jpg",
+   "notability": 19,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/318587299",
+   "name": "Πολεμικό Μουσείο",
+   "nameEn": "War Museum",
+   "kind": "museum",
+   "lat": 37.975426,
+   "lng": 23.745335,
+   "address": "2 Ριζάρη, 10675",
+   "website": null,
+   "wikidata": "Q1788831",
+   "wikipedia": "el:Πολεμικό Μουσείο (Αθήνα)",
+   "description": "museum in Athens, Greece",
+   "image": "Artillery Officer pouch (1852-1868) - Athens War Museum.jpg",
+   "notability": 18,
+   "highlight": false,
+   "openingHours": "Nov-Mar Mo-Sa 09:00-17:00; Apr-Oct Mo-Sa 09:00-19:00; Su 09:00-15:00; PH 09:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "04-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/208068229",
+   "name": "Φετιχιέ Τζαμί",
+   "nameEn": "Fethiye Mosque",
+   "kind": "landmark",
+   "lat": 37.974499,
+   "lng": 23.726572,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5445954",
+   "wikipedia": "el:Φετιχιέ τζαμί Αθηνών",
+   "description": "building in Athens, Attica Region, Greece",
+   "image": "Φετιχιέ Τζαμί, Αθήνα 4250.jpg",
+   "notability": 18,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144928419",
+   "name": "Στοά Ευμένους",
+   "nameEn": "Stoa of Eumenes",
+   "kind": "landmark",
+   "lat": 37.970528,
+   "lng": 23.725994,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1905296",
+   "wikipedia": "el:Στοά Ευμένους",
+   "description": "ancient stoa in Athens Acropolis",
+   "image": "The Stoa of Eumenes in Athens on March 6, 2021.jpg",
+   "notability": 17,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/217268333",
+   "name": "Αρχαιολογικό Μουσείο Κεραμεικού",
+   "nameEn": "Kerameikos Archaeological Museum",
+   "kind": "museum",
+   "lat": 37.977989,
+   "lng": 23.716766,
+   "address": "148 Ερμού, 10553",
+   "website": null,
+   "wikidata": "Q2574469",
+   "wikipedia": "el:Αρχαιολογικό Μουσείο Κεραμεικού",
+   "description": "museum in Athens",
+   "image": "KAMA Façade musée.jpg",
+   "notability": 15,
+   "highlight": false,
+   "openingHours": "Nov-Mar Mo, Th-Su 08:00-17:00; Nov-Mar Tu 10:00-17:00; Apr-Oct Mo, Th-Su 08:00-20:00; Apr-Oct Tu 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662909",
+   "name": "Παλαιό Βουλευτήριον και Μητρώον",
+   "nameEn": "Metroon",
+   "kind": "landmark",
+   "lat": 37.975214,
+   "lng": 23.722084,
+   "address": null,
+   "website": null,
+   "wikidata": "Q739798",
+   "wikipedia": null,
+   "description": "ancient Greek shrine to a Mother goddess",
+   "image": "Metroon del Agora de Atenas.JPG",
+   "notability": 15,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662934",
+   "name": "Ἐλευσίνιον",
+   "nameEn": "Eleusinion",
+   "kind": "landmark",
+   "lat": 37.973314,
+   "lng": 23.724909,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1349784",
+   "wikipedia": "el:Ελευσίνιον",
+   "description": "ancient sanctuary of Eleusinian Demeter in Athens near the Ancient Agora",
+   "image": "Remains of the Eleusinion and the Late Roman Wall of Athens on December 3, 2020.jpg",
+   "notability": 15,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6222942407",
+   "name": "Δίπυλον",
+   "nameEn": "Dipylon",
+   "kind": "landmark",
+   "lat": 37.978536,
+   "lng": 23.718983,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3708916",
+   "wikipedia": "en:Dipylon",
+   "description": "Largest gate on the ancient city wall of Athens",
+   "image": "Dipylon, Kerameikos, Athens, 225754.jpg",
+   "notability": 14,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/383426705",
+   "name": "Ωδείο τού Αγρίππα",
+   "nameEn": "Odeon of Agrippa",
+   "kind": "landmark",
+   "lat": 37.975077,
+   "lng": 23.723153,
+   "address": null,
+   "website": null,
+   "wikidata": "Q745797",
+   "wikipedia": "en:Odeon of Agrippa",
+   "description": "odeon in the Ancient Agora of Athens",
+   "image": "Odeon of Agrippa Athens agora.jpg",
+   "notability": 14,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/144928418",
+   "name": "Αρρηφόριον",
+   "nameEn": "Arriforion",
+   "kind": "landmark",
+   "lat": 37.972195,
+   "lng": 23.725898,
+   "address": null,
+   "website": null,
+   "wikidata": "Q699480",
+   "wikipedia": "el:Αρρηφόριον",
+   "description": "building in Athens Acropolis",
+   "image": "AcropolisatathensSitePlan.png",
+   "notability": 13,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/265733746",
+   "name": "Κέντρο Πολιτισμού Ίδρυμα Σταύρος Νιάρχος",
+   "nameEn": "Stavros Niarchos Foundation Cultural Center",
+   "kind": "park",
+   "lat": 37.940975,
+   "lng": 23.693074,
+   "address": "364 Συγγρού, 17674",
+   "website": "https://www.snfcc.org/",
+   "wikidata": "Q17511186",
+   "wikipedia": null,
+   "description": "cultural center in Athens, Greece",
+   "image": null,
+   "notability": 13,
+   "highlight": false,
+   "openingHours": "06:00-24:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "06:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/11582245009",
+   "name": "Πανδρόσειο",
+   "nameEn": "Pandroseion",
+   "kind": "landmark",
+   "lat": 37.972059,
+   "lng": 23.726258,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2204137",
+   "wikipedia": "el:Πανδρόσειο",
+   "description": "ancient sanctuary in the Acropolis of Athens",
+   "image": "Ruins of the Pandroseion on May 19, 2020.jpg",
+   "notability": 13,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12609191254",
+   "name": "Badminton",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.987127,
+   "lng": 23.7744,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1224979",
+   "wikipedia": null,
+   "description": "municipality of Greece in Attica, part of Central Athens district",
+   "image": "Acropolis wide view.jpg",
+   "notability": 12,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/352100412",
+   "name": "Ασκληπιείο Αθηνών",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.970824,
+   "lng": 23.726388,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2278514",
+   "wikipedia": null,
+   "description": "temple complex in ancient Athens",
+   "image": "Asclepieion of Athens.jpg",
+   "notability": 12,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10655452393",
+   "name": "Μουσείο Αρχαίας Αγοράς",
+   "nameEn": "Museum of the Ancient Agora",
+   "kind": "museum",
+   "lat": 37.975021,
+   "lng": 23.724193,
+   "address": "24 Αδριανού, 10555",
+   "website": null,
+   "wikidata": "Q2383284",
+   "wikipedia": "en:Museum of the Ancient Agora",
+   "description": "museum in Athens, Greece",
+   "image": "Stoa of Attalus Ath.7.JPG",
+   "notability": 12,
+   "highlight": false,
+   "openingHours": "Nov-Mar Mo, Th-Su 08:00-17:00; Nov-Mar Tu 10:00-17:00; Apr-Oct Mo, Th-Su 08:00-20:00; Apr-Oct Tu 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662897",
+   "name": "Ναός του Απόλλωνος Πατρώου",
+   "nameEn": "Temple of Apollo Patroos",
+   "kind": "landmark",
+   "lat": 37.975557,
+   "lng": 23.722124,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3142437",
+   "wikipedia": "en:Temple of Apollo Patroos",
+   "description": "temple in the Ancient Agora of Athens",
+   "image": "Temple of Apollo Patroos.jpg",
+   "notability": 12,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/27790074",
+   "name": "Πεδίον Άρεως",
+   "nameEn": "Pedion Areos",
+   "kind": "park",
+   "lat": 37.99373,
+   "lng": 23.740445,
+   "address": null,
+   "website": "https://pediontouareostoparkomas.gr/",
+   "wikidata": "Q932606",
+   "wikipedia": null,
+   "description": "public park in Athens, Greece",
+   "image": "Pedion Areos08 25 05 623000.jpeg",
+   "notability": 12,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662889",
+   "name": "Βωμός 12 θεών",
+   "nameEn": "Altar of the 12 Gods",
+   "kind": "landmark",
+   "lat": 37.975717,
+   "lng": 23.722733,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2872376",
+   "wikipedia": null,
+   "description": "ancient altar in Athens, Greece",
+   "image": "AgoraAthens5thcentury.png",
+   "notability": 11,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662885",
+   "name": "Μνημείο επωνύμων ηρώων",
+   "nameEn": "Monument of the Eponymous Heroes",
+   "kind": "landmark",
+   "lat": 37.975075,
+   "lng": 23.722392,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2094507",
+   "wikipedia": "en:Monument of the Eponymous Heroes",
+   "description": "monument in ancient Athens",
+   "image": "Monument of the Eponymous Heroes.jpg",
+   "notability": 11,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662912",
+   "name": "Στοά του Ελευθερίου Διός",
+   "nameEn": "Stoa of Zeus Eleftherios",
+   "kind": "landmark",
+   "lat": 37.975836,
+   "lng": 23.722112,
+   "address": null,
+   "website": null,
+   "wikidata": "Q331355",
+   "wikipedia": "el:Στοά Ελευθερίου Διός",
+   "description": "stoa in the Ancient Agora of Athens",
+   "image": "Stoa of Zeus.jpg",
+   "notability": 11,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2096026721",
+   "name": "Ψυρρή",
+   "nameEn": "Psiri",
+   "kind": "attraction",
+   "lat": 37.978421,
+   "lng": 23.724942,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2984834",
+   "wikipedia": "el:Ψυρή",
+   "description": "neighborhood in Athens, Attica, Greece",
+   "image": "Psyrri square Athens.jpg",
+   "notability": 11,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/195162372",
+   "name": "Εβραϊκό Μουσείο Ελλάδος",
+   "nameEn": "The Jewish Museum of Greece",
+   "kind": "museum",
+   "lat": 37.972921,
+   "lng": 23.733196,
+   "address": "39 Νίκης, 10557",
+   "website": "https://www.jewishmuseum.gr/",
+   "wikidata": "Q930891",
+   "wikipedia": null,
+   "description": "museum in Athens",
+   "image": "The Jewish Museum of Greece.jpg",
+   "notability": 10,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-16:00; Su 10:00-16:00; Sa,PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/144928414",
+   "name": "Πάνδιον",
+   "nameEn": "Pandion",
+   "kind": "landmark",
+   "lat": 37.97152,
+   "lng": 23.727895,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3818592",
+   "wikipedia": "es:Santuario de Pandión",
+   "description": "ancient sanctuary in the Acropolis of Athens",
+   "image": "AcropolisatathensSitePlan.png",
+   "notability": 10,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/19040143",
+   "name": "Εθνικό Ιστορικό Μουσείο",
+   "nameEn": "National Historic Museum",
+   "kind": "museum",
+   "lat": 37.977631,
+   "lng": 23.732831,
+   "address": "13 Κολοκοτρώνη, 10561",
+   "website": null,
+   "wikidata": "Q19363322",
+   "wikipedia": "el:Εθνικό Ιστορικό Μουσείο",
+   "description": "neoclassical building in Athens, Greece",
+   "image": "Μέγαρο Παλαιάς Βουλής.jpg",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": "Tu-Su 08:30-14:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "14:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3005463590",
+   "name": "Επιγραφικό μουσείο",
+   "nameEn": "Epigraphical Museum",
+   "kind": "museum",
+   "lat": 37.988769,
+   "lng": 23.732331,
+   "address": "1 Τοσίτσα, 10682",
+   "website": null,
+   "wikidata": "Q2732854",
+   "wikipedia": "el:Επιγραφικό μουσείο",
+   "description": "museum in Athens, Greece",
+   "image": "EPMA-6794-IGI(3)48-Sacred law-2.JPG",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": "We-Mo 08:30-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/144928413",
+   "name": "Ναός της Ρώμης και του Αυγούστου",
+   "nameEn": "Temple of Rome and Augustus",
+   "kind": "landmark",
+   "lat": 37.971628,
+   "lng": 23.727309,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2145005",
+   "wikipedia": "el:Ναός της Ρώμης και του Αυγούστου",
+   "description": "a Roman temple in the Acropolis of Athens dating to the late 1st c. BCE",
+   "image": "2753 - Athens - Acropolis - Temple of Rome and Augustus - Photo by Giovanni Dall'Orto, Nov 09 2009.jpg",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662898",
+   "name": "Ναός τού Άρη",
+   "nameEn": "Temple of Mars",
+   "kind": "landmark",
+   "lat": 37.975531,
+   "lng": 23.722749,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2405583",
+   "wikipedia": null,
+   "description": "temple in the ancient agora of Athens",
+   "image": "Greece-0258 (2215096821).jpg",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/664834192",
+   "name": "Πομπείον",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.978205,
+   "lng": 23.718931,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2372311",
+   "wikipedia": "el:Πομπείον",
+   "description": "ancient structure in Athens, Greece",
+   "image": "1338 - Keramikos archaeological area, Athens - Pompeion - Photo by Giovanni Dall'Orto, Nov 12 2009.jpg",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/815455437",
+   "name": "Πύλη Αρχηγέτιδος Αθηνάς",
+   "nameEn": "Gate of Athena Archegetis",
+   "kind": "landmark",
+   "lat": 37.974529,
+   "lng": 23.72557,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5527012",
+   "wikipedia": "en:Gate of Athena Archegetis",
+   "description": null,
+   "image": "The entrance to the Roman Agora of Athens. 1st cent. B.C.jpg",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662915",
+   "name": "Στρατηγείον",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.97465,
+   "lng": 23.721476,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3082673",
+   "wikipedia": null,
+   "description": "administration place in ancient Athens",
+   "image": "Strategeion 2.JPG",
+   "notability": 9,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662887",
+   "name": "Βασίλειος Στοά",
+   "nameEn": "Royal Stoa",
+   "kind": "landmark",
+   "lat": 37.976119,
+   "lng": 23.722345,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1670679",
+   "wikipedia": "el:Βασίλειος Στοά",
+   "description": "ancient stoa in Athens",
+   "image": "Stoa Basileios.jpg",
+   "notability": 8,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/285129067",
+   "name": "Μουσείον της Πόλεως των Αθηνών",
+   "nameEn": "Museum of the City of Athens",
+   "kind": "museum",
+   "lat": 37.978876,
+   "lng": 23.73157,
+   "address": "7 Παπαρηγοπούλου, 10561",
+   "website": null,
+   "wikidata": "Q6941076",
+   "wikipedia": null,
+   "description": "museum in Greece",
+   "image": "Museum of the City of Athens.jpg",
+   "notability": 8,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-16:00; Tu off; Sa,Su 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5034411110",
+   "name": "Χορηγικό μνημείο Θρασσύλου",
+   "nameEn": "Choregic Monument of Thrasyllos",
+   "kind": "landmark",
+   "lat": 37.971118,
+   "lng": 23.727632,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2290491",
+   "wikipedia": null,
+   "description": "ancient monument in Athens",
+   "image": "Choragic Monument of Thrasyllos 02.jpg",
+   "notability": 8,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/400456875",
+   "name": "Ίδρυμα Βασίλη & Ελίζας Γουλανδρή",
+   "nameEn": "Basil & Elise Goulandris Foundation",
+   "kind": "museum",
+   "lat": 37.969798,
+   "lng": 23.742791,
+   "address": "13 Ερατοσθένους, 11635",
+   "website": "https://goulandris.gr/",
+   "wikidata": "Q33119180",
+   "wikipedia": null,
+   "description": "museum in Pangrati, Athens, Greece",
+   "image": "Building of the Basil & Elise Goulandris Foundation (cropped).jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": "We-Th, Sa-Mo 10:00-18:00; Fr 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/220926060",
+   "name": "Ίδρυμα Εικαστικών Τεχνών και Μουσικής Β&Μ Θεοχαράκη",
+   "nameEn": "B&M Theocharakis Foundation for the Fine Arts and Music",
+   "kind": "museum",
+   "lat": 37.976229,
+   "lng": 23.738358,
+   "address": "9 Βασιλίσσης Σοφίας, 10671",
+   "website": null,
+   "wikidata": "Q104527429",
+   "wikipedia": null,
+   "description": "foundation and art gallery in Athens",
+   "image": "Building during the day (B. & M. Theocharakis Foundation for the Fine Arts and Music).jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": "Fr-We 10:00-18:00, Th 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/5561338921",
+   "name": "Αρχαϊκός ναός Διονύσου",
+   "nameEn": "Archaic Temple of Dionysios",
+   "kind": "landmark",
+   "lat": 37.97007,
+   "lng": 23.727708,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2032467",
+   "wikipedia": null,
+   "description": "ancient Greek sanctuary under the Acropolis of Athens",
+   "image": "Athens Sanctuary of Dionysus Eleuthereus 3.jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1473619559",
+   "name": "Μνημείο Αγνώστου Στρατιώτου",
+   "nameEn": "Tomb of Unknown Soldier",
+   "kind": "landmark",
+   "lat": 37.975351,
+   "lng": 23.736366,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3531128",
+   "wikipedia": "el:Μνημείο του άγνωστου στρατιώτη (Ελλάδα)",
+   "description": "memorial to Greece's war dead, below the Parliament building",
+   "image": "Tomb of Unknown at Syntagma Square.jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5561338922",
+   "name": "Χορηγικό μνημείο Νικία",
+   "nameEn": "Choregic Monument of Nikias",
+   "kind": "attraction",
+   "lat": 37.970239,
+   "lng": 23.726959,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3323331",
+   "wikipedia": null,
+   "description": "choregic monument on Acropolis south slope",
+   "image": "Choragic Monument of Nicias.jpg",
+   "notability": 7,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/383426704",
+   "name": "South west Fountain House",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.974228,
+   "lng": 23.722176,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3076015",
+   "wikipedia": null,
+   "description": "structure in the Agora of Athens",
+   "image": "Pianta della fontana di SE dell'Agorà di Atene.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/426887028",
+   "name": "Μνημείο του Αγρίππα",
+   "nameEn": "Monument of Agrippa",
+   "kind": "landmark",
+   "lat": 37.971778,
+   "lng": 23.724841,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16327864",
+   "wikipedia": null,
+   "description": "monument base on the Acropolis of Athens",
+   "image": "Βάθρο του Αγρίππα, Ακρόπολη 6222.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/223175510",
+   "name": "Μουσείο Ελληνικών Λαϊκών Οργάνων",
+   "nameEn": "Museum of Greek Folk Musical Instruments",
+   "kind": "museum",
+   "lat": 37.974478,
+   "lng": 23.727551,
+   "address": "1-3 Διογένους, 10556",
+   "website": null,
+   "wikidata": "Q4306254",
+   "wikipedia": null,
+   "description": "musical instrument museum in Athens, Greece",
+   "image": "Μουσείο Ελληνικών Λαϊκών Οργάνων 1549.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "We-Mo 08:30-15:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "15:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/851609464",
+   "name": "Μουσείο Ιστορίας Πανεπιστημίου Αθηνών",
+   "nameEn": "Athens University History Museum",
+   "kind": "museum",
+   "lat": 37.97315,
+   "lng": 23.72692,
+   "address": "5 Θόλου, 10556",
+   "website": null,
+   "wikidata": "Q3555557",
+   "wikipedia": "el:Οικία Κλεάνθη - Σάουμπερτ",
+   "description": "university museum in Athens, Greece",
+   "image": "Μουσείο Ιστορίας Πανεπιστημίου Αθηνών 4257.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-14:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "14:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10992115218",
+   "name": "Μουσείο Μελέτης Ελληνικού Θεάτρου",
+   "nameEn": "Museum and Study Centre of the Greek Theatre",
+   "kind": "museum",
+   "lat": 37.981375,
+   "lng": 23.735311,
+   "address": null,
+   "website": null,
+   "wikidata": "Q1584857",
+   "wikipedia": "el:Θεατρικό Μουσείο - Κέντρο Μελέτης & Έρευνας Ελληνικού Θεάτρου",
+   "description": "museum in Greece",
+   "image": "Πνευματικό Κέντρο του Δήμου Αθηναίων 6645.jpg",
+   "notability": 6,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11486548887",
+   "name": "Maria Callas Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.975524,
+   "lng": 23.730786,
+   "address": "44 Μητροπόλεως",
+   "website": "https://mariacallasmuseum.gr/en/",
+   "wikidata": "Q123193468",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece dedicated to the renowned Greek soprano Maria Callas",
+   "image": "Maria Callas Museum, Athens.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5561180621",
+   "name": "Βωμός Διός Αγοραίου",
+   "nameEn": "Altar of Zeus Agoraios",
+   "kind": "landmark",
+   "lat": 37.975142,
+   "lng": 23.722512,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2891038",
+   "wikipedia": null,
+   "description": "ancient altar in Athens, Greece",
+   "image": "Altar of Zeus Agoraios at the Ancient Agora of Athens.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/316768543",
+   "name": "Ελληνικό Μουσείο Αυτοκινήτου",
+   "nameEn": "Hellenic Motor Museum",
+   "kind": "museum",
+   "lat": 37.991176,
+   "lng": 23.730243,
+   "address": "33-35 Ιουλιανού, 10433",
+   "website": null,
+   "wikidata": "Q1163632",
+   "wikipedia": "el:Ελληνικό Μουσείο Αυτοκινήτου",
+   "description": "car museum in Athens",
+   "image": null,
+   "notability": 5,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-17:00, Sa,Su 11:00-18:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263189180",
+   "name": "Θεόδωρος Κολοκοτρώνης",
+   "nameEn": "Theodoros Kolokotronis",
+   "kind": "landmark",
+   "lat": 37.977984,
+   "lng": 23.733043,
+   "address": null,
+   "website": null,
+   "wikidata": "Q4343385",
+   "wikipedia": "el:Θεόδωρος Κολοκοτρώνης",
+   "description": "statue in Athens",
+   "image": "Kolokotronis statue Athens 1.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/219472242",
+   "name": "Παλιά Πινακοθήκη Δήμου Αθηναίων",
+   "nameEn": "Municipal Gallery of Athens",
+   "kind": "museum",
+   "lat": 37.980864,
+   "lng": 23.7214,
+   "address": "51 Παναγή Τσαλδάρη (Πειραιώς), 10553",
+   "website": null,
+   "wikidata": "Q1576793",
+   "wikipedia": null,
+   "description": "art museum",
+   "image": "Municipal Gallery of Athens 002.jpg",
+   "notability": 5,
+   "highlight": false,
+   "openingHours": "\"Λειτουργεί μόνον όταν υπάρχει έκθεση\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/146815833",
+   "name": "Δελφίνιον",
+   "nameEn": "Temple of Apollo Delphinios",
+   "kind": "landmark",
+   "lat": 37.968571,
+   "lng": 23.732986,
+   "address": null,
+   "website": null,
+   "wikidata": "Q97206898",
+   "wikipedia": "el:Δελφίνιον",
+   "description": "ancient sanctuary in Athens",
+   "image": "Temple of Apollo Delphinios Athens 1.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/145662892",
+   "name": "Θόλος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.974872,
+   "lng": 23.721939,
+   "address": null,
+   "website": null,
+   "wikidata": "Q9087412",
+   "wikipedia": null,
+   "description": "round building in ancient Agora of Athens",
+   "image": "Tholos del Agora de Atenas3.JPG",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/223018298",
+   "name": "Λουτρό των Αέρηδων",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.973914,
+   "lng": 23.72776,
+   "address": "8 Κυρρήστου",
+   "website": null,
+   "wikidata": "Q38284122",
+   "wikipedia": "en:Aerides Bath",
+   "description": "Ottoman bath in Athens",
+   "image": "Λουτρό των Αέρηδων.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/267551016",
+   "name": "Μουσείο Κοσμήματος Ηλία Λαλαούνη",
+   "nameEn": "Ilias Lalaounis Jewelry Museum",
+   "kind": "museum",
+   "lat": 37.96932,
+   "lng": 23.726666,
+   "address": "12 Καλλισπέρη, 11742",
+   "website": "https://www.lalaounis-jewelrymuseum.gr/",
+   "wikidata": "Q15051919",
+   "wikipedia": null,
+   "description": "nonprofit museum specializing in the decorative arts and the art of jewelry",
+   "image": "Ilias Lalaounis Jewelry Museum.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": "Tu-Fr 09:00-15:00; We,Sa 10:00-18:00; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/177282540",
+   "name": "Μουσείο Φρυσίρα",
+   "nameEn": "Frissiras Museum",
+   "kind": "museum",
+   "lat": 37.972055,
+   "lng": 23.732572,
+   "address": "7 Μονής Αστερίου",
+   "website": "https://frissirasmuseum.gr",
+   "wikidata": "Q5504730",
+   "wikipedia": "el:Μουσείο Φρυσίρα",
+   "description": "contemporary art museum in Greece",
+   "image": "Frissiras Museum.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/479255983",
+   "name": "Ναός Αγροτέρας Αρτέμιδος",
+   "nameEn": "Temple of Artemis Agrotera",
+   "kind": "landmark",
+   "lat": 37.96753,
+   "lng": 23.735474,
+   "address": null,
+   "website": "https://www.artemisagrotera.org",
+   "wikidata": "Q20084335",
+   "wikipedia": null,
+   "description": "ancient temple in Athens",
+   "image": "Southward side of the Ionic Temple on the Ilissus in its present condition The figures represent the Vaiwode, or Turkish - Stuart James And Nicholas Revett - 1762.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/453815510",
+   "name": "Πλατεία Βάθης",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.987256,
+   "lng": 23.726295,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16327851",
+   "wikipedia": "el:Πλατεία Βάθης",
+   "description": "neighborhood in Athens, Greece",
+   "image": "9676190 orig.jpg",
+   "notability": 4,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/449650393",
+   "name": "Άλεξ Μυλωνά",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.977741,
+   "lng": 23.721587,
+   "address": "5 Πλατεία Αγίων Ασωμάτων, 10554",
+   "website": null,
+   "wikidata": "Q78033066",
+   "wikipedia": null,
+   "description": "museum in Athens Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/89943258",
+   "name": "Άλσος Βεΐκου",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 38.0275,
+   "lng": 23.765386,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3559333",
+   "wikipedia": "el:Άλσος Βεΐκου",
+   "description": "grove and neighborhood of Galatsi, Attica, Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/914492222",
+   "name": "Αρχοντικό Μπενιζέλων",
+   "nameEn": "Benizelos Mansion",
+   "kind": "museum",
+   "lat": 37.974132,
+   "lng": 23.729049,
+   "address": "96 Αδριανού",
+   "website": "https://archontiko-mpenizelon.gr/",
+   "wikidata": "Q12874094",
+   "wikipedia": null,
+   "description": "Ottoman-era house in Athens",
+   "image": "Αρχοντικό Μπενιζέλου 6545.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/152257802",
+   "name": "Βαρβάκειος Αγορά",
+   "nameEn": "Varvakios Market",
+   "kind": "market",
+   "lat": 37.980376,
+   "lng": 23.727626,
+   "address": "Αθηνάς",
+   "website": null,
+   "wikidata": "Q755345",
+   "wikipedia": null,
+   "description": "market in Athens",
+   "image": "Βαρβάκειος Αγορά 7959.JPG",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "Mo-Sa 07:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "07:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4686010702",
+   "name": "Ιερό Έρωτα και Αφροδίτης",
+   "nameEn": "Sanctuary of Eros and Aphrodite",
+   "kind": "landmark",
+   "lat": 37.972249,
+   "lng": 23.72702,
+   "address": "Peripatos",
+   "website": null,
+   "wikidata": "Q24204702",
+   "wikipedia": "el:Ιερό Αφροδίτης και Έρωτα",
+   "description": "sacred site on N slope of the Athens Acropolis",
+   "image": "Sanctuary of Aphrodite and Eros 7233938 cropped.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13556107171",
+   "name": "Κέντρο Μελετών Ακροπόλεως",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.968873,
+   "lng": 23.728694,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15260388",
+   "wikipedia": "el:Κέντρο Μελετών Ακροπόλεως",
+   "description": "archaeological museum in Athens, Greece",
+   "image": "Athens, Greece - panoramio (214).jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/220890939",
+   "name": "Μέγαρο Σταθάτου",
+   "nameEn": "Stathatos Mansion",
+   "kind": "museum",
+   "lat": 37.975672,
+   "lng": 23.742776,
+   "address": "31 Βασιλίσσης Σοφίας, 10674",
+   "website": null,
+   "wikidata": "Q3195477",
+   "wikipedia": "el:Μέγαρο Σταθάτου",
+   "description": "building in Attica Region, Attica Region, Greece",
+   "image": "Stathatos Mansion side.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/86320053",
+   "name": "Μεντρεσές Αθηνών",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.974578,
+   "lng": 23.727361,
+   "address": null,
+   "website": null,
+   "wikidata": "Q12880880",
+   "wikipedia": null,
+   "description": null,
+   "image": "Remains of an Ottoman Medrese in Athens on May 3, 2020.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4881298374",
+   "name": "Μνημείο Αλέξανδρου Γρηγορόπουλου",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.984698,
+   "lng": 23.734699,
+   "address": "Μεσολογγίου",
+   "website": null,
+   "wikidata": "Q108828162",
+   "wikipedia": null,
+   "description": "child murder case in Athens, Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/197644358",
+   "name": "Μουσείο Μαρίκας Κοτοπούλη",
+   "nameEn": "Marika Kotopouli Museum",
+   "kind": "museum",
+   "lat": 37.979828,
+   "lng": 23.769615,
+   "address": "17 Αλέξανδρου Παναγούλη, 15773",
+   "website": null,
+   "wikidata": "Q6763409",
+   "wikipedia": "el:Μουσείο Μαρίκας Κοτοπούλη",
+   "description": "museum in Greece",
+   "image": "Μouseio kotopouli Zografou entrance.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": "08:30-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "08:30",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/145662899",
+   "name": "Νομισματοκοπείον",
+   "nameEn": "Mint",
+   "kind": "landmark",
+   "lat": 37.973942,
+   "lng": 23.723996,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3321024",
+   "wikipedia": null,
+   "description": "The mint at the ancient site of Athens in Attica",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/909793331",
+   "name": "Πάνθεον",
+   "nameEn": "Pantheon",
+   "kind": "landmark",
+   "lat": 37.97457,
+   "lng": 23.727941,
+   "address": null,
+   "website": null,
+   "wikidata": "Q24204370",
+   "wikipedia": "el:Πάνθεον (Αθήνα)",
+   "description": "unlocated Hadrianic basilica in central Athens",
+   "image": "The partially restored Hadrianic Pantheon, a three-aisled basilica near the Library of Hadrian and the Roman Agora, Athens, Greece (14021502594).jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/70241707",
+   "name": "Πλατεία Μαβίλη",
+   "nameEn": "Mavili Square",
+   "kind": "park",
+   "lat": 37.982692,
+   "lng": 23.756609,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16332817",
+   "wikipedia": "el:Πλατεία Μαβίλη (Αθήνα)",
+   "description": "square in Athens, Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/383407579",
+   "name": "Ταινιοθήκη Της Ελλάδος",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.98099,
+   "lng": 23.712668,
+   "address": "48 Ιερά Οδός",
+   "website": "http://www.tainiothiki.gr",
+   "wikidata": "Q2973241",
+   "wikipedia": "en:Greek Film Archive",
+   "description": "film archive, museum and cinema in Athens, Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/232666775",
+   "name": "Υπαίθρια Γλυπτοθήκη Ψυχικού",
+   "nameEn": "Open Air Glyptotheque",
+   "kind": "gallery",
+   "lat": 38.01047,
+   "lng": 23.770535,
+   "address": null,
+   "website": null,
+   "wikidata": "Q18123329",
+   "wikipedia": null,
+   "description": "open-air sculpture display in Psychiko, Attiki, Greece",
+   "image": null,
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/489448988",
+   "name": "Χώρος Εθνικής Γλυπτοθήκης",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.986337,
+   "lng": 23.778262,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6972907",
+   "wikipedia": null,
+   "description": "sculpture museum in Athens, Greece",
+   "image": "NationalGlyptothequeOfGreece.jpg",
+   "notability": 3,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/451699264",
+   "name": "Άγιος Δημήτριος Λουμπαρδιάρης",
+   "nameEn": "Church of Agios Dimitrios Loumbardiaris",
+   "kind": "landmark",
+   "lat": 37.970083,
+   "lng": 23.720347,
+   "address": null,
+   "website": null,
+   "wikidata": "Q104473775",
+   "wikipedia": null,
+   "description": "Orthodox church building in Athens",
+   "image": "The Church of Saint Demetrius Loumbardiaris on May 28, 2020.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/132639902",
+   "name": "Μουσείο \"Ελευθέριος Βενιζέλος\"",
+   "nameEn": "\"Eleftherios Venizelos\" Museum",
+   "kind": "museum",
+   "lat": 37.980704,
+   "lng": 23.751863,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5358633",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/302592510",
+   "name": "Μουσείο Αφής",
+   "nameEn": "Tactual Museum",
+   "kind": "museum",
+   "lat": 37.945456,
+   "lng": 23.700021,
+   "address": null,
+   "website": "https://www.tactualmuseum.gr/",
+   "wikidata": "Q7674145",
+   "wikipedia": "en:Tactual Museum of Athens",
+   "description": "museum for the visually impaired in Kallithea, Athens, Greece.",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/223874917",
+   "name": "Μουσείο Ιστορίας της Ελληνικής Ενδυμασίας",
+   "nameEn": "Museum of the History of the Greek Costume",
+   "kind": "museum",
+   "lat": 37.978802,
+   "lng": 23.737521,
+   "address": "7 Δημοκρίτου, 10671",
+   "website": null,
+   "wikidata": "Q6941089",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Jan 1 off; Jan Mo-Fr 10:00-14:00; Aug off; Mar 25 off; Jan 1 off; Jan 6 off; Dec 25-26 off; May 1 off; Oct 25 off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-31"
+      ]
+     ],
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "08-01",
+       "08-31"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "03-25",
+       "03-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-06",
+       "01-06"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "05-01",
+       "05-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "10-25",
+       "10-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:way/321114256",
+   "name": "Μουσείο Μπενάκη Ισλαμικής Τέχνης",
+   "nameEn": "Benaki's Museum of Islamic Art",
+   "kind": "museum",
+   "lat": 37.979228,
+   "lng": 23.720341,
+   "address": "22 Αγίων Ασωμάτων, 10553",
+   "website": "https://www.benaki.gr/",
+   "wikidata": "Q59165188",
+   "wikipedia": null,
+   "description": "museum in Thiseio, Athens",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Th-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/82619458",
+   "name": "Πλατεία Αιγύπτου",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.991345,
+   "lng": 23.73182,
+   "address": null,
+   "website": null,
+   "wikidata": "Q19725037",
+   "wikipedia": "el:Πλατεία Αιγύπτου (Αθήνα)",
+   "description": "square in Athens, Greece",
+   "image": "Amaksostasio-aigyptoy.jpg",
+   "notability": 2,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4840589548",
+   "name": "Ψηφιακό Μουσείο της Ακαδημίας Πλάτωνος",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.994455,
+   "lng": 23.707293,
+   "address": null,
+   "website": "https://www.plato-academy.gr/museum",
+   "wikidata": "Q25535844",
+   "wikipedia": "el:Ψηφιακό Μουσείο της Ακαδημίας Πλάτωνος",
+   "description": "small museum in Athens with digital displays on Plato and his academy",
+   "image": null,
+   "notability": 2,
+   "highlight": false,
+   "openingHours": "Tu-Su 09:00-16:00; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/32225209",
+   "name": "Άλσος Νέας Φιλαδέλφειας",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 38.042376,
+   "lng": 23.74487,
+   "address": null,
+   "website": null,
+   "wikidata": "Q110276814",
+   "wikipedia": null,
+   "description": "park in Nea Filadelfeia, Attiki, Greece",
+   "image": "Nea Filadelfia lake.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/791538931",
+   "name": "Άλσος Νεας Σμύρνης",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.949597,
+   "lng": 23.71633,
+   "address": null,
+   "website": null,
+   "wikidata": "Q12872246",
+   "wikipedia": null,
+   "description": "park in Nea Smyrni, Attica, Greece",
+   "image": "Grove (Alsos) of NeaSmyrni, Attica, Greece.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25111549",
+   "name": "Άλσος Παγκρατίου",
+   "nameEn": "Alsos Pagkratiou",
+   "kind": "park",
+   "lat": 37.969051,
+   "lng": 23.74636,
+   "address": null,
+   "website": null,
+   "wikidata": "Q119844201",
+   "wikipedia": null,
+   "description": "park in the Pankrati neighborhood of Athens, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2131626015",
+   "name": "Ίδρυμα \"Κωνσταντίνος Γ. Καραμανλής\"",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 38.021903,
+   "lng": 23.768178,
+   "address": null,
+   "website": null,
+   "wikidata": "Q20750528",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/1741088",
+   "name": "Αττικό Άλσος",
+   "nameEn": "Attiko Alsos park",
+   "kind": "park",
+   "lat": 38.004125,
+   "lng": 23.75762,
+   "address": null,
+   "website": null,
+   "wikidata": "Q25163821",
+   "wikipedia": null,
+   "description": "park in Athens, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/463505941",
+   "name": "Βήμα του Φαίδρου",
+   "nameEn": "Bema of Phaedrus",
+   "kind": "landmark",
+   "lat": 37.970256,
+   "lng": 23.727776,
+   "address": null,
+   "website": null,
+   "wikidata": "Q85746507",
+   "wikipedia": "en:Bema of Phaidros",
+   "description": "platform in late phase of Theater of Dionysus in Athens",
+   "image": "The reliefs of the Theatre of Dionysus in Athens on March 3, 2020.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9517221231",
+   "name": "Βασιλική του Ιλισσού-Μαρτύριον Αγίου Λεωνίδη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.968312,
+   "lng": 23.736239,
+   "address": null,
+   "website": null,
+   "wikidata": "Q57016121",
+   "wikipedia": null,
+   "description": "early Christian basilica in Athens Municipality, Greece",
+   "image": "The upper part of the remains of the Early Christian Basilica of Ilissos on August 7, 2020.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3912027436",
+   "name": "Βιομηχανικό Μουσείο Φωταερίου",
+   "nameEn": "Industrial Gas Museum",
+   "kind": "museum",
+   "lat": 37.978244,
+   "lng": 23.713629,
+   "address": "100 Πειραιώς, 11854",
+   "website": null,
+   "wikidata": "Q116246225",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Tu-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3259778472",
+   "name": "Γουλιέλμος Γλάδστων",
+   "nameEn": "William Gladstone",
+   "kind": "landmark",
+   "lat": 37.98054,
+   "lng": 23.733151,
+   "address": null,
+   "website": null,
+   "wikidata": "Q52184689",
+   "wikipedia": null,
+   "description": "1886 portrait statue in Athens, Greece",
+   "image": "Ανδριάντας του Γλάδστωνος, Αθήνα 1244.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9144924853",
+   "name": "Ελληνικό Μουσείο Πληροφορικής",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.954619,
+   "lng": 23.677233,
+   "address": "2 Πέτρου Σπυρόπουλου, 18346",
+   "website": "https://elmp.gr",
+   "wikidata": "Q16737588",
+   "wikipedia": "el:Ελληνικό Μουσείο Πληροφορικής",
+   "description": "museum in Moschato, Attica, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo 09:00-15:00; Tu-Fr 09:00-17:00; Sa-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/363624623",
+   "name": "Ελληνικός Κόσμος",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.962665,
+   "lng": 23.690912,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5707194",
+   "wikipedia": null,
+   "description": "cultural centre and museum in Athens",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4785564674",
+   "name": "Επιτροπή Ποντιακών Μελετών",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.935274,
+   "lng": 23.7161,
+   "address": "73 Αγνώστων Μαρτύρων, 17123",
+   "website": "http://epm.gr",
+   "wikidata": "Q12877246",
+   "wikipedia": "el:Επιτροπή Ποντιακών Μελετών",
+   "description": null,
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Fr 10:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7935312381",
+   "name": "ΜνημεΙο Ολοκαυτώματος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.977751,
+   "lng": 23.719515,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16132695",
+   "wikipedia": null,
+   "description": "marble memorial to Greek Jews, outside the Kerameikos ancient cemetery, Athens",
+   "image": "Holocaust Memorial in Athens, Greece (5299043825).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/226947348",
+   "name": "Μουσείο ΕΑΜικής Εθνικής Αντίστασης",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.965519,
+   "lng": 23.759142,
+   "address": "16121",
+   "website": null,
+   "wikidata": "Q98273271",
+   "wikipedia": "el:Μουσείο ΕΑΜικής Εθνικής Αντίστασης Καισαριανής",
+   "description": "museum in Kaisariani, Greece",
+   "image": "National Resistance Memorial, Kaisariani, Greece. Faced looking at the west.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/175877498",
+   "name": "Μουσείο Ηρακλειδών",
+   "nameEn": "Herakleidon Museum",
+   "kind": "museum",
+   "lat": 37.975268,
+   "lng": 23.718625,
+   "address": "16 Ηρακλειδών, 11851",
+   "website": null,
+   "wikidata": "Q16252571",
+   "wikipedia": null,
+   "description": "museum in Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "We-Su 10:00-17:15; Jan 1 off; Easter off; Aug 15 off; Dec 25-26 off",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/834539464",
+   "name": "Μουσείο Λαϊκής Τέχνης και Παράδοσης",
+   "nameEn": "Museum of Folk Art and Tradition",
+   "kind": "museum",
+   "lat": 37.972653,
+   "lng": 23.731193,
+   "address": "6 Αγγελικής Χατζημιχάλη, 10558",
+   "website": null,
+   "wikidata": "Q12882149",
+   "wikipedia": null,
+   "description": "museum in Greece",
+   "image": "Hatzimichali house in Plaka, Athens.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/219467101",
+   "name": "Μουσείο Νεώτερης Κεραμεικής",
+   "nameEn": "Museum of Traditional Pottery",
+   "kind": "museum",
+   "lat": 37.978515,
+   "lng": 23.72018,
+   "address": "4-6 Μελιδώνη, 10553",
+   "website": null,
+   "wikidata": "Q5062634",
+   "wikipedia": null,
+   "description": "folk art museum in Athens, Greece",
+   "image": "Museum of traditional pottery.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/24220649",
+   "name": "Μπαρουτάδικο",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.998418,
+   "lng": 23.676663,
+   "address": null,
+   "website": null,
+   "wikidata": "Q75091187",
+   "wikipedia": null,
+   "description": "park in Egaleo, Attica, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/6693233",
+   "name": "Νέο Ψηφιακό Πλανητάριο Ιδρύματος Ευγενίδου",
+   "nameEn": "Eugenides Foundation New Digital Planetarium",
+   "kind": "museum",
+   "lat": 37.940092,
+   "lng": 23.696482,
+   "address": "387 Ανδρέα Συγγρού, 17564",
+   "website": "https://www.eef.edu.gr",
+   "wikidata": "Q12877355",
+   "wikipedia": "el:Ίδρυμα Ευγενίδου",
+   "description": "planetarium in Palaio Faliro, Athens, Greece",
+   "image": "EugenFound-019.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-Th 08:30-20:00, Fr-Sa 08:30-15:30",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/3259746372",
+   "name": "Παναγής Βαλλιάνος",
+   "nameEn": "Panagis Vallianos",
+   "kind": "landmark",
+   "lat": 37.981047,
+   "lng": 23.73288,
+   "address": null,
+   "website": null,
+   "wikidata": "Q52185169",
+   "wikipedia": null,
+   "description": "1900 portrait statue in Athens, Greece",
+   "image": "Statue of Panayis Athanase Vagliano.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6540927365",
+   "name": "Πατριάρχης Γρηγόριος Ε΄",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.980494,
+   "lng": 23.733842,
+   "address": null,
+   "website": null,
+   "wikidata": "Q52185679",
+   "wikipedia": "el:Ανδριάντας Πατριάρχη Γρηγορίου Ε΄",
+   "description": "1872 portrait statue by Fytalis in Greece",
+   "image": "Πατριάρχης Γρηγόριος Ε΄, Πανεπιστήμιο Αθηνών 6622.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/132626748",
+   "name": "Πλατεία Μεγάλης του Γένους Σχολής",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.976738,
+   "lng": 23.749445,
+   "address": null,
+   "website": null,
+   "wikidata": "Q81033801",
+   "wikipedia": "el:Πλατεία Μεγάλης του Γένους Σχολής",
+   "description": "triangular intersection in Athens",
+   "image": "Πλατεία Μεγάλης του Γένους Σχολής, (Αθήνα).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/835011156",
+   "name": "Πλατεία Ουρουγουάης",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.975686,
+   "lng": 23.751813,
+   "address": null,
+   "website": null,
+   "wikidata": "Q58069726",
+   "wikipedia": "el:Πλατεία Ουρουγουάης",
+   "description": "square in Athens, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/23213374",
+   "name": "Πλατεία Χρυσοστόμου Σμύρνης",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.948876,
+   "lng": 23.710132,
+   "address": null,
+   "website": null,
+   "wikidata": "Q15966790",
+   "wikipedia": null,
+   "description": "memorial park in Nea Smyrni, Greece",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/778533784",
+   "name": "Φυλακή του Σωκράτη",
+   "nameEn": "Prison of Socrates",
+   "kind": "landmark",
+   "lat": 37.969375,
+   "lng": 23.72081,
+   "address": null,
+   "website": null,
+   "wikidata": "Q47524277",
+   "wikipedia": null,
+   "description": "cave in Athens",
+   "image": "Fylakes Sokratous 7234124.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/6739124187",
+   "name": "321gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.018732,
+   "lng": 23.735318,
+   "address": "321 Πατησίων",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5403604482",
+   "name": "Alibi Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.979661,
+   "lng": 23.723483,
+   "address": "12 Σαρρή",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5657745357",
+   "name": "Allouche-Benias Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.97743,
+   "lng": 23.737943,
+   "address": "1 Κανάρη, 10671",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1600503933",
+   "name": "Arch of Hadrian",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.970157,
+   "lng": 23.732148,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13516652970",
+   "name": "Art In Gifts",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.974914,
+   "lng": 23.726167,
+   "address": "3 Δεξίππου",
+   "website": "https://www.instagram.com/reels/C7Dq6tONJSY/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13770447164",
+   "name": "Art Zone 42",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.972442,
+   "lng": 23.744066,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12846799949",
+   "name": "Athens Street Hub",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.980204,
+   "lng": 23.715726,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4777483721",
+   "name": "Bernier Eliades",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.976937,
+   "lng": 23.717843,
+   "address": null,
+   "website": "https://bernier-eliades.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 10:30-18:30; Sa 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "18:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7899630085",
+   "name": "Blank Wall Gallery",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 38.001927,
+   "lng": 23.739775,
+   "address": "55 Φωκίωνος Νέγρη",
+   "website": "https://www.blankwallgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 18:00-21:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "18:00",
+       "21:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9882733254",
+   "name": "City View",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.972396,
+   "lng": 23.723139,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10174041909",
+   "name": "Create art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.985365,
+   "lng": 23.740915,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12369505074",
+   "name": "European Centre",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.97605,
+   "lng": 23.727909,
+   "address": "74 Μητροπόλεως",
+   "website": "https://www.contemporaryspaceathens.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Su 14:00-19:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "19:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4043279900",
+   "name": "Evripides",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.978118,
+   "lng": 23.740139,
+   "address": "10 Ηράκλειτου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6066170498",
+   "name": "Galerie Lefakis",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.978236,
+   "lng": 23.740341,
+   "address": "12 Ηράκλειτου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/561695431",
+   "name": "Ilioupolis Fun Park",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 37.939722,
+   "lng": 23.754786,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6078091721",
+   "name": "Kaftayan Galleries",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.978126,
+   "lng": 23.742861,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10156821819",
+   "name": "Kapopoulos",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.977464,
+   "lng": 23.740387,
+   "address": "5-7",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10673342587",
+   "name": "Keramikos 23 art space",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.983146,
+   "lng": 23.722287,
+   "address": "23 Κεραμεικού, 10437",
+   "website": "https://www.keramikos23.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/8718593957",
+   "name": "Koraka",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.001065,
+   "lng": 23.735638,
+   "address": "21 Φωκίωνος Νέγρη, 11257",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13266014575",
+   "name": "Koren Art Space",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.96028,
+   "lng": 23.731029,
+   "address": "55 Ιππάρχου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6002397492",
+   "name": "Louvre",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.993565,
+   "lng": 23.727428,
+   "address": "38 Χέυδεν",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7040039863",
+   "name": "Luminous Eye",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.967298,
+   "lng": 23.727417,
+   "address": "2 Μητσαίων",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13087055286",
+   "name": "Makri St. peristyle (Athens)",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.968728,
+   "lng": 23.730303,
+   "address": null,
+   "website": null,
+   "wikidata": "Q110808213",
+   "wikipedia": null,
+   "description": "rescue excavation in Athens, 1962, said to be the Palladion courthouse",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13716229558",
+   "name": "Mini Greece Miniature Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.987063,
+   "lng": 23.727034,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/14333294",
+   "name": "Museum of Zoology",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.966441,
+   "lng": 23.785656,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/223325133",
+   "name": "MΟΥΣΕΙΟΝ - ΒΙΒΛΙΟΘΗΚΗ ΙΣΤΟΡΙΚΗΣ ΜΝΗΜΗΣ ΕΛ. ΒΕΝΙΧΕΛΟΥ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.978247,
+   "lng": 23.732174,
+   "address": "2 Χρήστου Λαδά, 10561",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6538479486",
+   "name": "Noise of art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.979727,
+   "lng": 23.710856,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13942313739",
+   "name": "Olivium Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.976273,
+   "lng": 23.725425,
+   "address": "4 Ηφαίστου, 10555",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-22:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "22:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4935560123",
+   "name": "Pandora",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.974781,
+   "lng": 23.727548,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9192582530",
+   "name": "ROMA GALLERY",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.978616,
+   "lng": 23.738918,
+   "address": "5 Ρώμα, 10673",
+   "website": "https://www.roma-gallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5131893206",
+   "name": "Roy",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.987576,
+   "lng": 23.762759,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13316508501",
+   "name": "Ruby Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.965683,
+   "lng": 23.743698,
+   "address": "Πλατεία Βαρνάβα",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9062001207",
+   "name": "Shaded view of a Roman agora",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.973931,
+   "lng": 23.727035,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4043279911",
+   "name": "Skoufa",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.977482,
+   "lng": 23.740541,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4782297723",
+   "name": "State of Concept",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.964309,
+   "lng": 23.724751,
+   "address": "19 Τούσα Μπότσαρη, 11741",
+   "website": "https://www.stateofconcept.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 16:30-20:30; Sa 13:00-17:00 || \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/14197371713",
+   "name": "The Blind Eye",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.977035,
+   "lng": 23.755852,
+   "address": "8 Ποταμιάνου Ηλ., 11528",
+   "website": "https://www.theblindeye.art/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We 20:30-22:30; Fr 18:00-20:00; Sa,Su 13:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "20:30",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "18:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "13:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4970330021",
+   "name": "The Breeder Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.984693,
+   "lng": 23.720067,
+   "address": "45 Ιάσονος, 10436",
+   "website": "https://thebreedersystem.com",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-19:00, Sa 11:00-17:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/4040706193",
+   "name": "Zoumpoulakis Galleries",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.977092,
+   "lng": 23.736475,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6593865157",
+   "name": "iFocus",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.982071,
+   "lng": 23.733124,
+   "address": null,
+   "website": "https://ifocus.gr/magazine/editors-choice/1516-ifocus-gallery",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/8119012631",
+   "name": "weekend.Athens",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.972963,
+   "lng": 23.692917,
+   "address": "15 Δήμητρος, 17778",
+   "website": "https://www.instagram.com/weekend.athens/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/286012226",
+   "name": "Άγαλμα Ελευθερίου Βενιζέλου",
+   "nameEn": "Statue of Eleftherios Venizelos",
+   "kind": "landmark",
+   "lat": 37.980111,
+   "lng": 23.753165,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707879",
+   "wikipedia": "el:Ελευθέριος Βενιζέλος",
+   "description": "1969 bronze statue in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/32039668",
+   "name": "Άλσος Ιλισίων",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.97406,
+   "lng": 23.756396,
+   "address": "Ούλωφ Πάλμε",
+   "website": null,
+   "wikidata": "Q127869355",
+   "wikipedia": null,
+   "description": "park in Athens, Greece near Syngros Hospital",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/423467472",
+   "name": "Άνδηρο",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.969007,
+   "lng": 23.720253,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10785199592",
+   "name": "Άντα",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.974725,
+   "lng": 23.76573,
+   "address": "82 Γρηγορίου Αυξεντίου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4324847490",
+   "name": "Έλλη Λαμπέτη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.98254,
+   "lng": 23.737118,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707875",
+   "wikipedia": null,
+   "description": "1998 portrait bust in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/455686511",
+   "name": "Ίδρυμα Μουσείο Εθνικής Αντιστάσεως ΝΑΠΟΛΕΩΝ ΖΕΡΒΑΣ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.983689,
+   "lng": 23.722026,
+   "address": "9 Λεωνίδου, 10437",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/321104684",
+   "name": "Ίδρυμα Παύλου και Αλεξάνδρας Κανελλοπούλου",
+   "nameEn": "Museum of Pavlos and Alexandra Kanellopoulou",
+   "kind": "museum",
+   "lat": 37.972947,
+   "lng": 23.726097,
+   "address": "12 Θεωρίας, 10555",
+   "website": "http://www.pacanellopoulosfoundation.org",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Su 08:00-15:00; Mo off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4678765921",
+   "name": "ΑΒΥΣΣΟΣ",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 37.994913,
+   "lng": 23.730824,
+   "address": "118 3ης Σεπτεμβρίου, 10434",
+   "website": "https://abyssos.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4050357095",
+   "name": "ΑΕΝΑΟΝ Αίθουσα Τέχνης",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.976275,
+   "lng": 23.741212,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8933445709",
+   "name": "Αίθουσα Τέχνης Κελεσάκου",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.02363,
+   "lng": 23.735031,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3946386512",
+   "name": "Αγκάθι",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.001691,
+   "lng": 23.736223,
+   "address": "12 Μηθύμνης, 11257",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3259796205",
+   "name": "Αδαμάντιος Κοραής",
+   "nameEn": "Adamantios Korais",
+   "kind": "landmark",
+   "lat": 37.9806,
+   "lng": 23.733601,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707916",
+   "wikipedia": null,
+   "description": "seated marble statue in Greece",
+   "image": "Adamantios Korais statue Athens.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569637119",
+   "name": "Αθανάσιος Διάκος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.992756,
+   "lng": 23.734945,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698466",
+   "wikipedia": null,
+   "description": "1937 portrait bust in Athens, Greece",
+   "image": "Athens Pedion tou Areos473.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263626151",
+   "name": "Αλέξανδρος Παναγούλης",
+   "nameEn": "Alexandros Panagoulis",
+   "kind": "landmark",
+   "lat": 37.982346,
+   "lng": 23.730894,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707867",
+   "wikipedia": "el:Αλέξανδρος Παναγούλης",
+   "description": "2012 portrait statue by Ach. Vasiliou in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7575743175",
+   "name": "Αλέξανδρος Παπάγος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.998536,
+   "lng": 23.784311,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111762615",
+   "wikipedia": null,
+   "description": "2000 statue in Papago, Greece by Iraklis Xanthopoulos",
+   "image": "Alexandros Papagos equestrian statue 10.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8656512676",
+   "name": "Αλίκη Βουγιουκλάκη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.98284,
+   "lng": 23.756802,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111357006",
+   "wikipedia": null,
+   "description": "marble statue in Athens of the famous Greek actress",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3267064099",
+   "name": "Αλεξάντερ Φλέμινγκ",
+   "nameEn": "Alexander Fleming",
+   "kind": "landmark",
+   "lat": 37.977583,
+   "lng": 23.706394,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139232",
+   "wikipedia": "el:Αλεξάντερ Φλέμινγκ",
+   "description": "public sculpture by Theodoros Kolokotronis in Greece, 1960",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10706452483",
+   "name": "Ανδριάντας του Βενιζέλου Ελευθέριου",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 38.004603,
+   "lng": 23.686661,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114138985",
+   "wikipedia": null,
+   "description": "public sculpture by Vasilis Karlos in Greece, 2000",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12383490949",
+   "name": "Αννα Κυριακακη",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.994175,
+   "lng": 23.730344,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7813657521",
+   "name": "Αριστοτέλης Βαλαωρίτης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.973489,
+   "lng": 23.736766,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698464",
+   "wikipedia": null,
+   "description": "1926 portrait bust in Athens, Greece",
+   "image": "Aristotelis Valaoritis bust National Garden Athens, Greece.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263172500",
+   "name": "Αρμένικο Χατσκάρ",
+   "nameEn": "Armenian Khachkar",
+   "kind": "landmark",
+   "lat": 37.974208,
+   "lng": 23.746747,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140356",
+   "wikipedia": null,
+   "description": "khachkar monument in Athens, Greece, 1996",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13254217871",
+   "name": "Αρχείο Καβάφη",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.96993,
+   "lng": 23.730699,
+   "address": "16Β Φρυνίχου, 10558",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu,Th,Sa 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "th",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1473619530",
+   "name": "Αχαρνική οδός και τάφοι",
+   "nameEn": "Acharnian road and tombs",
+   "kind": "landmark",
+   "lat": 37.98182,
+   "lng": 23.728601,
+   "address": null,
+   "website": null,
+   "wikidata": "Q38279577",
+   "wikipedia": null,
+   "description": "archaeological site in Athens",
+   "image": "Athens Kotzia square antiquities 1.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/11505131",
+   "name": "Βοτανικό Μουσείο",
+   "nameEn": "Botanical Museum",
+   "kind": "museum",
+   "lat": 37.974056,
+   "lng": 23.738903,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/217342425",
+   "name": "Γεωργικό Μουσείο",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.983214,
+   "lng": 23.702037,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3259735697",
+   "name": "Γεώργιος Αβέρωφ",
+   "nameEn": "Georgios Averof",
+   "kind": "landmark",
+   "lat": 37.969344,
+   "lng": 23.73928,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707915",
+   "wikipedia": "el:Γεώργιος Αβέρωφ",
+   "description": "1895 portrait statue by Vroutos in Greece",
+   "image": "20190513 504 athenes.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569638420",
+   "name": "Γεώργιος Καραϊσκάκης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.993054,
+   "lng": 23.734971,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698486",
+   "wikipedia": null,
+   "description": "1937 portrait bust in Athens, Greece",
+   "image": "Athens Pedion tou Areos464.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/815929555",
+   "name": "Γεώργιος Καραϊσκάκης",
+   "nameEn": "Georgios Karaiskakis",
+   "kind": "landmark",
+   "lat": 37.970766,
+   "lng": 23.739383,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698485",
+   "wikipedia": "el:Γεώργιος Καραϊσκάκης",
+   "description": "1966 equestrian statue by M. Tompros in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/463120316",
+   "name": "Δημοτική Πινακοθήκη «Σοφία Λασκαρίδου»",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.956808,
+   "lng": 23.699039,
+   "address": "120 Λασκαρίδου",
+   "website": null,
+   "wikidata": "Q56396808",
+   "wikipedia": null,
+   "description": "building in Kallithea Municipality, Greece",
+   "image": "Οικία Λασκαρίδου 11.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11009463822",
+   "name": "Δημοτική Πινακοθήκη Ψυχικού",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.013806,
+   "lng": 23.780544,
+   "address": "15 Κοκκώνη",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/320750537",
+   "name": "Δημόσιο Σήμα",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.981457,
+   "lng": 23.716368,
+   "address": null,
+   "website": null,
+   "wikidata": "Q116312064",
+   "wikipedia": null,
+   "description": "space for public burial in classical Athens",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4773051728",
+   "name": "Διατηρητέο Σταυροπούλου 15",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 38.001724,
+   "lng": 23.730479,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7813656989",
+   "name": "Διονύσιος Σολωμός",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.972429,
+   "lng": 23.738986,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111702733",
+   "wikipedia": null,
+   "description": "portrait bust in Athens, Greece",
+   "image": "D Solomos.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/382365831",
+   "name": "Δυτικοί λόφοι Αθηνών",
+   "nameEn": "Western hills of Athens",
+   "kind": "landmark",
+   "lat": 37.9696,
+   "lng": 23.719203,
+   "address": null,
+   "website": null,
+   "wikidata": "Q38279507",
+   "wikipedia": null,
+   "description": "archaeological site, Philopappus, Pnyx hills in Athens",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569610384",
+   "name": "Δόμνα Βισβίζη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.99309,
+   "lng": 23.734589,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707847",
+   "wikipedia": null,
+   "description": "2005 portrait bust in Pedio toy Areos, Athens, Greece",
+   "image": "Athens Pedion tou Areos462.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/59870652",
+   "name": "Εθνική Γλυπτοθήκη",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.986567,
+   "lng": 23.778457,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/59870653",
+   "name": "Εθνική Γλυπτοθήκη",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.987099,
+   "lng": 23.777954,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": "en:National Glyptotheque",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/60438321",
+   "name": "Εθνική Πινακοθήκη - Μουσείο Αλέξανδρου Σούτσου",
+   "nameEn": "National Gallery - Alexandros Soutsos Museum",
+   "kind": "museum",
+   "lat": 37.975619,
+   "lng": 23.749373,
+   "address": "50 Βασιλέως Κωνσταντίνου, 11634",
+   "website": "https://www.nationalgallery.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Mo 10:00-18:00; We 10:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su",
+      "mo"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/241550163",
+   "name": "Εθνικό Μουσείο Σύγχρονης Τέχνης",
+   "nameEn": "National Museum of Contemporary Art",
+   "kind": "museum",
+   "lat": 37.963041,
+   "lng": 23.725299,
+   "address": "Καλλιρόης, 11743",
+   "website": "https://www.emst.gr/",
+   "wikidata": null,
+   "wikipedia": "el:Εθνικό Μουσείο Σύγχρονης Τέχνης",
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-We,Fr-Su 11:00-19:00; Th 11:00-22:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3960520131",
+   "name": "Εκθεση Άνθρωποι και Εργαλεία",
+   "nameEn": "Man and Tools Exhibition",
+   "kind": "museum",
+   "lat": 37.973373,
+   "lng": 23.725784,
+   "address": "22 Πανός",
+   "website": "https://www.mnep.gr/gr/episkepsi/to-mouseio-tis-odou-panos-22/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 08:00-15:00; Tu off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4454686383",
+   "name": "Ελ. Βενιζέλος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.955993,
+   "lng": 23.70167,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139176",
+   "wikipedia": null,
+   "description": "public sculpture by Dimitris Gavalas in Greece, 2010",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3203039511",
+   "name": "Ελευθέριος Βενιζέλος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.946607,
+   "lng": 23.714788,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114138986",
+   "wikipedia": null,
+   "description": "public sculpture by Vasilis Karlos in Greece, 2004",
+   "image": "Statue of Eleftherios Venizelos, Nea Smyrni.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/844542140",
+   "name": "Ελευθέριος Βενιζέλος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.975912,
+   "lng": 23.73661,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707882",
+   "wikipedia": null,
+   "description": "1995 marble statue, parliament building, Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9976465941",
+   "name": "Ελληνικό Μουσείο Μετεωριτών",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 38.018734,
+   "lng": 23.732742,
+   "address": "27 Ιακωβίδου",
+   "website": "https://www.meteoritemuseum.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/317013390",
+   "name": "Εργαστήριο Γιάννη Παππά",
+   "nameEn": "Yannis Pappas Studio",
+   "kind": "museum",
+   "lat": 37.975962,
+   "lng": 23.769613,
+   "address": "38 Ανακρέοντος",
+   "website": null,
+   "wikidata": "Q93213417",
+   "wikipedia": null,
+   "description": "artist's museum in Zografou, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Tu-Su 10:00-14:00; We off; Th off; Sa off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "th"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/7813657427",
+   "name": "Ζαν Μορεάς",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.972283,
+   "lng": 23.737689,
+   "address": null,
+   "website": null,
+   "wikidata": "Q67191656",
+   "wikipedia": null,
+   "description": "portrait head in Athens, Greece",
+   "image": "Jean Moreas Bust 01.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263303961",
+   "name": "Η Ελλάς τον Βύρωνα",
+   "nameEn": "Greece crowning Lord Byron",
+   "kind": "landmark",
+   "lat": 37.970834,
+   "lng": 23.733566,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707937",
+   "wikipedia": null,
+   "description": "1896 public artwork in Athens, Greece",
+   "image": "\"Η Ελλάς τον Βύρωνα\", λεωφόρος Βασιλίσσης Όλγας - panoramio (1).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4418472291",
+   "name": "Ηρώο του Μουσαίου",
+   "nameEn": "Heroon of Mousaios",
+   "kind": "landmark",
+   "lat": 37.967626,
+   "lng": 23.721171,
+   "address": null,
+   "website": null,
+   "wikidata": "Q116312237",
+   "wikipedia": null,
+   "description": "hero-shrine and alleged tomb of the legendary poet Musaeus",
+   "image": "Remains of the Heroon of Musaeus (Mousaios) on 21 March 2020.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4538208563",
+   "name": "Ηρώον",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.984439,
+   "lng": 23.766195,
+   "address": null,
+   "website": null,
+   "wikidata": "Q113442977",
+   "wikipedia": null,
+   "description": "monument at Athens University Medical School, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3731777476",
+   "name": "Ηρώον Ελλήνων του Πόντου",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.956086,
+   "lng": 23.70299,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140306",
+   "wikipedia": null,
+   "description": "public sculpture by Efthymios Kalevras in Greece, 1970",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6602464587",
+   "name": "Θέα Δάφνης",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.954482,
+   "lng": 23.729725,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4362134281",
+   "name": "Θέα προς Φαληρικό Δέλτα",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.939993,
+   "lng": 23.690361,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3279145579",
+   "name": "Ιδιωτική Συλλογή Έργων Τέχνης Εθνικής Τραπέζης",
+   "nameEn": "Art Collection of National Bank of Greece",
+   "kind": "museum",
+   "lat": 37.981782,
+   "lng": 23.728955,
+   "address": "86 Aiolou, 10559",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "08:30-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "08:30",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12474394035",
+   "name": "Ινστιτούτο Σύγχρονης Ελληνικής Τέχνης (iset)",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.978014,
+   "lng": 23.735941,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/193403370",
+   "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.971614,
+   "lng": 23.732754,
+   "address": "38 Λεωφόρος Βασιλίσσης Αμαλίας",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/193403372",
+   "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.971529,
+   "lng": 23.732619,
+   "address": "38 Λεωφόρος Βασιλίσσης Αμαλίας",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/193403374",
+   "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.971714,
+   "lng": 23.732609,
+   "address": "38 Λεωφόρος Βασιλίσσης Αμαλίας",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/193403375",
+   "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.971381,
+   "lng": 23.73274,
+   "address": "38 Λεωφόρος Βασιλίσσης Αμαλίας",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/265859156",
+   "name": "Ιστορικό Υφαντουργείο ΣΕΝ",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.971477,
+   "lng": 23.732917,
+   "address": "38 Λεωφόρος Βασιλίσσης Αμαλίας",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3259796206",
+   "name": "Ιωάννης Καποδίστριας",
+   "nameEn": "Ioannis Kapodistrias",
+   "kind": "landmark",
+   "lat": 37.980687,
+   "lng": 23.733523,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707928",
+   "wikipedia": null,
+   "description": "1931 seated marble statue in Athens, Greece",
+   "image": "Statue of Ioannis Kapodistrias (Athens).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3731777477",
+   "name": "Κ. Δαβάκης",
+   "nameEn": "K. Davakis",
+   "kind": "landmark",
+   "lat": 37.955754,
+   "lng": 23.702572,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139993",
+   "wikipedia": null,
+   "description": "public sculpture by Achilleas Aperghis in Greece, 1953",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9166221049",
+   "name": "Κάστρο Οδού Μπιζανίου (Μάχης 23ης - 24ης Ιουλίου 1944)",
+   "nameEn": "Bizaniou Street Fort (of July 23 - 24, 1944 Battle)",
+   "kind": "museum",
+   "lat": 37.961254,
+   "lng": 23.705382,
+   "address": "10 Μπιζανίου, 17676",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/460963404",
+   "name": "Κάστρο Οδού Μπιζανίου (Μάχης 23ης - 24ης Ιουλίου 1944)",
+   "nameEn": "Bizaniou Street Fort (of July 23 - 24, 1944 Battle)",
+   "kind": "museum",
+   "lat": 37.961255,
+   "lng": 23.705392,
+   "address": "10 Μπιζανίου, 17676",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7518713430",
+   "name": "Κέντρο Σύγχρονης Τέχνης Ιλεάνα Τούντα",
+   "nameEn": "Ileana Tounta Contemporary Art Center",
+   "kind": "museum",
+   "lat": 37.986955,
+   "lng": 23.752146,
+   "address": "48 Αρματωλών και Κλεφτών, 11471",
+   "website": "https://art-tounta.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu,Th 15:00-20:00; We,Fr 12:00-20:00; Sa 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "th"
+     ],
+     "spans": [
+      [
+       "15:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/21281178",
+   "name": "Κέντρο Τεχνών",
+   "nameEn": "The Arts Center",
+   "kind": "gallery",
+   "lat": 37.980866,
+   "lng": 23.751964,
+   "address": "Βασιλίσσης Σοφίας, 11521",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 11:00-19:00; Sa,Su 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/8569653969",
+   "name": "Κωνσταντίνος Κανάρης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.9931,
+   "lng": 23.734458,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698500",
+   "wikipedia": null,
+   "description": "1937 portrait bust in Athens, Greece",
+   "image": "Πεδίον Άρεως. Κωνσταντίνος Κανάρης.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5303551622",
+   "name": "Κωνσταντίνος Νικολόπουλος",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 38.016785,
+   "lng": 23.739595,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707873",
+   "wikipedia": null,
+   "description": "1973 portrait bust in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12987375600",
+   "name": "Κώστας Μπανάσης",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.960897,
+   "lng": 23.752408,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6614268646",
+   "name": "Λέλα Καραγιάννη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.988285,
+   "lng": 23.732731,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698504",
+   "wikipedia": null,
+   "description": "1958 portrait bust in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569617877",
+   "name": "Λασκαρίνα Μπουμπουλίνα",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.992829,
+   "lng": 23.734123,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698503",
+   "wikipedia": null,
+   "description": "1937 portrait bust in Athens, Greece",
+   "image": "LaskarinaMpoumpoulina.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/387701704",
+   "name": "Λαϊκή Αγορά",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 38.022286,
+   "lng": 23.699888,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo 08:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/12495699628",
+   "name": "Λαϊκή Αγορά Καλλιδρομίου",
+   "nameEn": "Kallidromiou Farmers' Market",
+   "kind": "market",
+   "lat": 37.987664,
+   "lng": 23.737321,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Sa 08:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5570525857",
+   "name": "Λορέντζος Μαβίλης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.982798,
+   "lng": 23.756529,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111356844",
+   "wikipedia": null,
+   "description": "portrait bust in Plateia Mavili by P. I. Roumpos",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3830993874",
+   "name": "Λυκαβηττός",
+   "nameEn": "Lycabettus",
+   "kind": "viewpoint",
+   "lat": 37.981896,
+   "lng": 23.743183,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11637690900",
+   "name": "Λόφος Art Project",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.003264,
+   "lng": 23.745531,
+   "address": "39 Βελβενδού",
+   "website": "https://www.lofosartproject.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569627384",
+   "name": "Μάρκος Μπότσαρης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.993067,
+   "lng": 23.734826,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707846",
+   "wikipedia": null,
+   "description": "1937 portrait bust in Athens, Greece",
+   "image": "Πεδίον Άρεως. Μάρκος Μποτσάρης.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12616017194",
+   "name": "Μασούτης",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 38.015747,
+   "lng": 23.758692,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2382892203",
+   "name": "Μελίνα Μερκούρη",
+   "nameEn": "Melina Mercouri",
+   "kind": "landmark",
+   "lat": 37.969856,
+   "lng": 23.731426,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707862",
+   "wikipedia": "el:Μελίνα Μερκούρη",
+   "description": "1999 portrait bust in Athens, Greece",
+   "image": "Statue of Melina Mercouri (5986565301).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4350322458",
+   "name": "Μνημείο Εθνικής Αντίστασης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 38.008176,
+   "lng": 23.698079,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114119400",
+   "wikipedia": null,
+   "description": "public sculpture by Apostolos Fanakidis in Greece, 1989",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6606589077",
+   "name": "Μνημείο Εθνικής Αντίστασης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.961706,
+   "lng": 23.722317,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140338",
+   "wikipedia": null,
+   "description": "memorial in Greece, 1988",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263420237",
+   "name": "Μνημείο Εθνικής Συμφιλίωσης",
+   "nameEn": "Memorial of National Reconciliation",
+   "kind": "landmark",
+   "lat": 37.979456,
+   "lng": 23.731412,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111721850",
+   "wikipedia": null,
+   "description": "public art in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7786947209",
+   "name": "Μνημείο Πεσόντων",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.960929,
+   "lng": 23.752559,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139225",
+   "wikipedia": null,
+   "description": "war memorial in Greece by Vasos Georgiadis, 1957",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10832129355",
+   "name": "Μνημείο Πεσόντων Ιμίων",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.975177,
+   "lng": 23.742691,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707920",
+   "wikipedia": null,
+   "description": "1996 war memorial in Athens, Greece",
+   "image": "Monument for the Greek officers killed on Imia islands.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12153276749",
+   "name": "Μνημείο του Πολέμου της Κορέας",
+   "nameEn": "Korean War Memorial",
+   "kind": "landmark",
+   "lat": 37.98134,
+   "lng": 23.791111,
+   "address": null,
+   "website": null,
+   "wikidata": "Q113144770",
+   "wikipedia": null,
+   "description": "2003 monument in Attiki, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13569941907",
+   "name": "Μουσείο Αλέκος Φασιανός",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.990718,
+   "lng": 23.722396,
+   "address": "10439",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "We-Fr 11:00-16:00; Sa,Su 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/132639888",
+   "name": "Μουσείο Αντιδικτατορικής και Εθνικής Αντίστασης",
+   "nameEn": "Museum of Anti-Dictatorship and National Resistance",
+   "kind": "museum",
+   "lat": 37.981088,
+   "lng": 23.752074,
+   "address": null,
+   "website": null,
+   "wikidata": "Q112332552",
+   "wikipedia": null,
+   "description": "museum in Parko Eleftherias, Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11377308267",
+   "name": "Μουσείο Αρχαίας Ελληνικής Τεχνολογίας Κοτσανά",
+   "nameEn": "Museum of Ancient Greek Technology Kotsanas",
+   "kind": "museum",
+   "lat": 37.977684,
+   "lng": 23.738217,
+   "address": "6 Πινδάρου",
+   "website": "https://kotsanas.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/320782652",
+   "name": "Μουσείο Γιώργου Γουναρόπουλου",
+   "nameEn": "Museum of George Gounaropoulos",
+   "kind": "museum",
+   "lat": 37.974942,
+   "lng": 23.761755,
+   "address": "6 Γουναροπούλου, 15771",
+   "website": "https://www.gounaropoulos.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-We 09:00-13:30,17:00-20:00; Th-Sa 09:00-15:00; Jun-Aug Tu-We 09:00-13:30,18:00-21:00; Mo off; Su off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "13:30"
+      ],
+      [
+       "17:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "15:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "06-01",
+       "08-31"
+      ]
+     ],
+     "days": [
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "13:30"
+      ],
+      [
+       "18:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4568351771",
+   "name": "Μουσείο Γλυπτών & Ομοιωμάτων",
+   "nameEn": "Museum Sculptures and Effigies",
+   "kind": "museum",
+   "lat": 37.96613,
+   "lng": 23.734421,
+   "address": "2 Τιμολέοντος, 11636",
+   "website": null,
+   "wikidata": "Q98609805",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/849794330",
+   "name": "Μουσείο Ελληνικής Παιδικής Τέχνης",
+   "nameEn": "Museum of Greek Children’s Art",
+   "kind": "museum",
+   "lat": 37.973022,
+   "lng": 23.732521,
+   "address": "9 Κόδρου, 10558",
+   "website": null,
+   "wikidata": "Q108651215",
+   "wikipedia": null,
+   "description": "museum in Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Tu-Sa 10:00-14:00; Su 11:00-14:00; Mo off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "mo"
+     ],
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4262198430",
+   "name": "Μουσείο Ηρακλειδών (Παράρτημα)",
+   "nameEn": "Herakleidon Museum (Annex - Now closed)",
+   "kind": "museum",
+   "lat": 37.974961,
+   "lng": 23.719558,
+   "address": "37 Αποστόλου Παύλου, 11851",
+   "website": "https://herakleidon-art.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5980812063",
+   "name": "Μουσείο Μακρονήσου",
+   "nameEn": "Makronisos Museum",
+   "kind": "museum",
+   "lat": 37.979197,
+   "lng": 23.719943,
+   "address": "31 Αγίων Ασωμάτων, 10553",
+   "website": "http://www.pekam.org.gr/mouseio-makronhsou.html",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Fr 10:00-13:00; Sa-Su 11:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "13:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/1553268578",
+   "name": "Μουσείο Νεότερου Ελληνικού Πολιτισμού",
+   "nameEn": "Museum of Modern Greek Culture",
+   "kind": "museum",
+   "lat": 37.975386,
+   "lng": 23.725081,
+   "address": "10 Άρεως",
+   "website": "https://www.mnep.gr",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-16:30; Tu off; We-Su 08:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "16:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/5984988434",
+   "name": "Μουσείο Παξινού-Μινωτή",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.984715,
+   "lng": 23.725762,
+   "address": "20 Αγίου Κωνσταντίνου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "\"on appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/5980812064",
+   "name": "Μουσείο Πολιτικών Εξορίστων Άη Στράτη",
+   "nameEn": "Exile Museum",
+   "kind": "museum",
+   "lat": 37.979161,
+   "lng": 23.719852,
+   "address": "31 Αγίων Ασωμάτων, 10553",
+   "website": "http://www.exilemuseum.gr",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11210896979",
+   "name": "Μουσείο Σκίτσου",
+   "nameEn": "Sketch Museum",
+   "kind": "museum",
+   "lat": 37.988317,
+   "lng": 23.72462,
+   "address": "8 Παλαιολόγου Κωνσταντίνου, 10438",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Nov-Mar 08:30-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "11-01",
+       "03-31"
+      ]
+     ],
+     "days": null,
+     "spans": [
+      [
+       "08:30",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/193395906",
+   "name": "Μουσείο Χαρακτικής και Γραφικών Τεχνών",
+   "nameEn": "Museum of Engravings and Graphic Arts",
+   "kind": "museum",
+   "lat": 37.974139,
+   "lng": 23.730038,
+   "address": "10 Αγίας Φιλοθέης, 10558",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:30-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:30",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/450305803",
+   "name": "Μουσείο συναισθημάτων",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.966169,
+   "lng": 23.722937,
+   "address": "56 Τσάμη Καρατάσου, 11741",
+   "website": "https://mce.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/195310549",
+   "name": "Μουσείο της Τράπεζας της Ελλάδος",
+   "nameEn": "Museum of the Bank of Greece",
+   "kind": "museum",
+   "lat": 37.977951,
+   "lng": 23.734139,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111245509",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6534260972",
+   "name": "Μουσείο των ψευδαισθήσεων",
+   "nameEn": "Museum of Illusions",
+   "kind": "museum",
+   "lat": 37.97682,
+   "lng": 23.722763,
+   "address": "12 Άστιγγος, 10555",
+   "website": null,
+   "wikidata": "Q108674606",
+   "wikipedia": null,
+   "description": "museum in Athens, Greece",
+   "image": "20211104 athenes368.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "10:00-22:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "22:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/18178715",
+   "name": "Νέα Πινακοθήκη Δήμου Αθηναίων",
+   "nameEn": "New Athens Municipal Gallery",
+   "kind": "museum",
+   "lat": 37.98326,
+   "lng": 23.719221,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu 10:00-21:00; We-Sa 10:00-19:00; Su 10:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/4384294344",
+   "name": "Νίκος Μπελογιάννης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.989459,
+   "lng": 23.770977,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140263",
+   "wikipedia": null,
+   "description": "memorial in Greece, 2010",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9517245642",
+   "name": "Ναός του Μειλιχίου Διός",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.967537,
+   "lng": 23.735674,
+   "address": null,
+   "website": null,
+   "wikidata": "Q110833611",
+   "wikipedia": null,
+   "description": "ancient Athenian sanctuary south of the Ilissos river",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8569629064",
+   "name": "Νικηταράς",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.993025,
+   "lng": 23.73526,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698507",
+   "wikipedia": null,
+   "description": "1937 marble portrait bust in Athens, Greece",
+   "image": "Nikitaras.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10178218453",
+   "name": "Ξυλότεχνο",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 38.000654,
+   "lng": 23.73336,
+   "address": "157 Πατησίων",
+   "website": "Picture-on-wood.gr",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3259813930",
+   "name": "Οδυσσέας Ελύτης",
+   "nameEn": "Odysseas Elytis",
+   "kind": "landmark",
+   "lat": 37.978867,
+   "lng": 23.741605,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707881",
+   "wikipedia": "el:Οδυσσέας Ελύτης",
+   "description": "1977 portrait statue in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4773049839",
+   "name": "Πάρκο Ελευθερίας",
+   "nameEn": "Athens Municipality Arts Center, Parko Eleftherias",
+   "kind": "museum",
+   "lat": 38.004731,
+   "lng": 23.755953,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/32297021",
+   "name": "Πάρκο Ελευθερίας",
+   "nameEn": "Parko Eleftherias",
+   "kind": "park",
+   "lat": 37.980352,
+   "lng": 23.752591,
+   "address": null,
+   "website": null,
+   "wikidata": "Q112323831",
+   "wikipedia": null,
+   "description": "park in Athens, Greece",
+   "image": "Eleftherias Park.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/101926654",
+   "name": "Πάρκο Κυκλοφοριακής Αγωγής",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 38.03341,
+   "lng": 23.730093,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3800579734",
+   "name": "Παιδικό Μουσείο Αθηνών",
+   "nameEn": "Hellenic Children's Museum",
+   "kind": "museum",
+   "lat": 37.973357,
+   "lng": 23.743433,
+   "address": "17-19 Βασιλέως Γεωργίου Β΄, 10675",
+   "website": "https://www.hcm.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3828776141",
+   "name": "Περί Τεχνών Καρτέρης",
+   "nameEn": "Peritechnon Karteris",
+   "kind": "gallery",
+   "lat": 37.97606,
+   "lng": 23.742712,
+   "address": "5 Ηροδότου, 10674",
+   "website": "https://peri-technon.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Tu-Sa 11:00-14:30,17:00-20:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "14:30"
+      ],
+      [
+       "17:00",
+       "20:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/220948825",
+   "name": "Πινακοθήκη Νίκου Χατζηκυριάκου - Γκίκα",
+   "nameEn": "Nikos Hadjikyriakos - Ghika Gallery",
+   "kind": "museum",
+   "lat": 37.977257,
+   "lng": 23.736367,
+   "address": "3 Κριεζώτου, 10671",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Fr-Sa 10:00-18:00; Aug off; Mar 25 off; May 1 off; Aug 15 off; Oct 28 off; Dec 25-26 off; Jan 1 off; Jan 6 off; PH off",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    },
+    {
+     "dates": [
+      [
+       "08-01",
+       "08-31"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "03-25",
+       "03-25"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "05-01",
+       "05-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "08-15",
+       "08-15"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "10-28",
+       "10-28"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "12-25",
+       "12-26"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-01",
+       "01-01"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    },
+    {
+     "dates": [
+      [
+       "01-06",
+       "01-06"
+      ]
+     ],
+     "days": null,
+     "spans": []
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3263172503",
+   "name": "Πλάτων",
+   "nameEn": "Plato",
+   "kind": "landmark",
+   "lat": 37.97997,
+   "lng": 23.733815,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707940",
+   "wikipedia": "el:Πλάτων",
+   "description": "1885 seated marble statue by Drosis in Athens, Greece",
+   "image": "Πλάτωνας, Ακαδημία Αθηνών 6619.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/132656096",
+   "name": "Πλατεία Μαδρίτης",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.975045,
+   "lng": 23.75092,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111595436",
+   "wikipedia": null,
+   "description": "public square and green space in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/448520748",
+   "name": "Πνευματικό Κέντρο Κωνσταντινοπολιτών",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.986602,
+   "lng": 23.757707,
+   "address": "46 Δημητρίου Σούτσου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9060072714",
+   "name": "Προτομή ΓΙΑΝΝΗ ΓΑΛΛΟΥ",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.955975,
+   "lng": 23.702382,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140249",
+   "wikipedia": null,
+   "description": "public sculpture by Dimitris Armakolas in Greece, 1999",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8488344096",
+   "name": "Προτομή Του Κωστή Παλαμά",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 38.015206,
+   "lng": 23.693059,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139125",
+   "wikipedia": null,
+   "description": "public sculpture by Elisavet Valvi in Greece, 2005",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10706521825",
+   "name": "Προτομή του Δασκαλογίαννη",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 38.015589,
+   "lng": 23.705781,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114138977",
+   "wikipedia": null,
+   "description": "public sculpture by Markos Georgilakis in Greece, 2015",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263172504",
+   "name": "Ρήγας Φεραίος",
+   "nameEn": "Rigas Feraios",
+   "kind": "landmark",
+   "lat": 37.980907,
+   "lng": 23.733489,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707907",
+   "wikipedia": null,
+   "description": "1871 portrait statue in Athens, Greece",
+   "image": "National and Kapodistrian University of Athens, buildings and statues (5).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/369405009",
+   "name": "Σκεπαστή Αγορά Καλλιθέας",
+   "nameEn": "Market Hall of Kallithea",
+   "kind": "market",
+   "lat": 37.954829,
+   "lng": 23.702452,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10174056147",
+   "name": "Σκουμπρί",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.985672,
+   "lng": 23.741558,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7813657499",
+   "name": "Σπυρίδων Σαμάρας",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.972897,
+   "lng": 23.735887,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111698522",
+   "wikipedia": null,
+   "description": "1917 portrait bust in Athens, Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/11505127",
+   "name": "Συλλογή Ζώων - Φυτών",
+   "nameEn": "Animal - Bird Collection",
+   "kind": "zoo",
+   "lat": 37.973415,
+   "lng": 23.739307,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263172505",
+   "name": "Σωκράτης",
+   "nameEn": "Socrates",
+   "kind": "landmark",
+   "lat": 37.979928,
+   "lng": 23.733851,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707942",
+   "wikipedia": "el:Σωκράτης",
+   "description": "1885 seated marble statue in Athens, Greece",
+   "image": "Socrates by Leonidas Drosis, Athens - Academy of Athens.JPG",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3263172502",
+   "name": "Τζωρτζ Κάνινγκ",
+   "nameEn": "George Canning",
+   "kind": "landmark",
+   "lat": 37.985496,
+   "lng": 23.731251,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707890",
+   "wikipedia": "el:Τζωρτζ Κάνινγκ",
+   "description": "1834 portrait statue by Chantrey in Greece",
+   "image": "George Canning statue Athens.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/536021909",
+   "name": "Το Κάστρο του Υμηττού",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.956844,
+   "lng": 23.745275,
+   "address": "47 Αγραίων",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/929917397",
+   "name": "Το Σπίτι του Ελύτη",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.974114,
+   "lng": 23.725254,
+   "address": "4 Διοσκούρων, 10555",
+   "website": "https://www.elytishousemuseum.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7328943632",
+   "name": "Τσιμέντο με θέα",
+   "nameEn": "View from old cement building",
+   "kind": "viewpoint",
+   "lat": 38.023596,
+   "lng": 23.767838,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5605331222",
+   "name": "Υπαίθρια αγορά Μοναστηρακίου",
+   "nameEn": "Monastiraki Flea Market",
+   "kind": "market",
+   "lat": 37.976179,
+   "lng": 23.724748,
+   "address": "Ηφαίστου",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3369869106",
+   "name": "Φρεντερίκ Μιστράλ",
+   "nameEn": "Frederic Mistral",
+   "kind": "landmark",
+   "lat": 37.951925,
+   "lng": 23.694587,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140595",
+   "wikipedia": null,
+   "description": "public artwork in Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1292151643",
+   "name": "Χαρίλαος Τρικούπης",
+   "nameEn": "Charilaos Trikoupis",
+   "kind": "landmark",
+   "lat": 37.977567,
+   "lng": 23.733132,
+   "address": null,
+   "website": null,
+   "wikidata": "Q111707923",
+   "wikipedia": "el:Χαρίλαος Τρικούπης",
+   "description": "1920 portrait statue in Athens, Greece",
+   "image": "Athens Statue (28602909235).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/844542139",
+   "name": "Χαρίλαος Τρικούπης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.974806,
+   "lng": 23.736343,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114139875",
+   "wikipedia": null,
+   "description": "public sculpture by Yannis Pappas in Greece, 1987",
+   "image": "Charilaos Trikoupis statue Athens.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3946247170",
+   "name": "Χρυσόστομος Σμύρνης",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.94934,
+   "lng": 23.709629,
+   "address": null,
+   "website": null,
+   "wikidata": "Q114140071",
+   "wikipedia": null,
+   "description": "public sculpture by Thanasis Apartis in Greece, 1960",
+   "image": "Statue of Chrysostomos Smyrnis, Nea Smyrni.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14181091555",
+   "name": "Χώρος τέχνης \"ο\"",
+   "nameEn": "\"o\" art space",
+   "kind": "gallery",
+   "lat": 37.999951,
+   "lng": 23.737711,
+   "address": "36 Σποράδων, 11361",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/475536287",
+   "name": "Ψηφιακό Μουσείο Νέας Σμύρνης",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.94262,
+   "lng": 23.714212,
+   "address": "87 Ελευθερίου Βενιζέλου, 17123",
+   "website": "https://www.smyrnimuseum.gr/",
+   "wikidata": "Q135561258",
+   "wikipedia": null,
+   "description": "museum in Greece",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Mo-Fr 09:30-15:00, Mo-Tu 18:00-21:00, Sa 10:00-14:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/475536286",
+   "name": "Ψηφιακό Μουσείο Σμύρνης και Νέας Σμύρνης",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.94278,
+   "lng": 23.714216,
+   "address": "87 Λεωφόρος Ελευθερίου Βενιζέλου, 17123",
+   "website": "https://www.smyrnimuseum.gr/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo,Tu 09:30-15:30,18:00-21:00; We-Fr 09:30-15:30; Sa 10:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "15:30"
+      ],
+      [
+       "18:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "15:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/1635941903",
+   "name": "θέα Ακρόπολης",
+   "nameEn": "Panoramic View of Acropolis",
+   "kind": "viewpoint",
+   "lat": 37.972349,
+   "lng": 23.722569,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/1814574432",
+   "name": "O&B Athens Boutique Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 37.977568,
+   "lng": 23.721931,
+   "address": "7 Λεωκορίου, 10554",
+   "website": "https://oandbhotel.com",
+   "wikidata": "Q111400841",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 728,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/2433638377",
+   "name": "Hotel Rio Athens",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 3.0,
+   "cuisine": null,
+   "lat": 37.985386,
+   "lng": 23.719867,
+   "address": null,
+   "website": "https://hotel-rio.gr/",
+   "wikidata": "Q111133466",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 992,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/12138800714",
+   "name": "Iconic Athens Hostel",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.979857,
+   "lng": 23.712011,
+   "address": "24 Ευμολπιδών, 11854",
+   "website": "https://iconicathenshostel.com/",
+   "wikidata": "Q111123225",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 257,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/457637593",
+   "name": "Θησείο",
+   "nameEn": "Thissio",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.974086,
+   "lng": 23.719839,
+   "address": "25 Αποστόλου Παύλου",
+   "website": "https://www.hotelthissio.com",
+   "wikidata": "Q111999611",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 692,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4231996092",
+   "name": "Pella Inn",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.977147,
+   "lng": 23.723683,
+   "address": "104 Ερμού",
+   "website": null,
+   "wikidata": "Q111123228",
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 885,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/5130269728",
+   "name": "18 Micon str",
+   "nameEn": "18 Micon Street",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.97807,
+   "lng": 23.723818,
+   "address": null,
+   "website": "https://www.18miconstr.com/",
+   "wikidata": "Q111858282",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 892,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/2191490604",
+   "name": "Evripides Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.980345,
+   "lng": 23.723566,
+   "address": "79 Ευριπίδου, 10553",
+   "website": "https://www.evripideshotel.gr/",
+   "wikidata": "Q111123256",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 910,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/12246172764",
+   "name": "Anise Aluma Athens, Tapestry Collection by Hilton",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": 37.980575,
+   "lng": 23.723722,
+   "address": "82 Ευριπίδου",
+   "website": "https://www.hilton.com/en/hotels/athaaup-anise-aluma-athens",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 931,
+   "venuesNear": 1
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/3205790672",
+   "name": "La Piñata",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 37.978072,
+   "lng": 23.711806,
+   "address": null,
+   "website": "https://lapinatagr.com/",
+   "wikidata": null,
+   "openingHours": "Tu-Su 12:00-26:00",
+   "hours": null,
+   "toVenueM": 161,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/234440701",
+   "name": "Στα Καλά Καθούμενα",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "steak_house"
+   ],
+   "lat": 37.979713,
+   "lng": 23.713806,
+   "address": "25 - 27 - 29 Ιερά Οδός, 11854",
+   "website": "https://stakalakathoumena.com.gr",
+   "wikidata": null,
+   "openingHours": "Tu-Sa 18:00-02:00, Su 13:00-02:00",
+   "hours": null,
+   "toVenueM": 198,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3822870963",
+   "name": "Κάνδαυλος",
+   "nameEn": "Kandavlos",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "greek",
+    "σουβλατζίδικο"
+   ],
+   "lat": 37.978377,
+   "lng": 23.711061,
+   "address": "47 Περσεφόνης, 11854",
+   "website": "https://kandavlos.gr/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 12:00-06:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "06:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 231,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4698422193",
+   "name": "Lime Bistro",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "juice",
+    "coffee",
+    "tea",
+    "beer",
+    "wine",
+    "burger",
+    "dessert",
+    "salad"
+   ],
+   "lat": 37.977299,
+   "lng": 23.710106,
+   "address": "23 Δεκελέων, 11854",
+   "website": "https://limebistro23.wixsite.com/limebistro",
+   "wikidata": null,
+   "openingHours": "We,Th,Su 14:00-22:30; Fr-Sa 14:00-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "su"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "14:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 318,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3775667527",
+   "name": "Κανέλλα",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "greek"
+   ],
+   "lat": 37.980076,
+   "lng": 23.711193,
+   "address": "70 Κωνσταντινουπόλεως, 11854",
+   "website": "http://www.kanellagazi.gr",
+   "wikidata": null,
+   "openingHours": "Mo-Th 13:30-03:00; Fr-Sa 13:30-03:30; Su 13:30-03:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "13:30",
+       "03:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "13:30",
+       "03:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "13:30",
+       "03:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 320,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4367945390",
+   "name": "Αμπιμπάγιο",
+   "nameEn": "Abibayio",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "diner",
+    "fish",
+    "greek",
+    "grill",
+    "kebab",
+    "mediterranean",
+    "pasta",
+    "seafood"
+   ],
+   "lat": 37.975061,
+   "lng": 23.718579,
+   "address": "3 Ηρακλειδών, 11851",
+   "website": "https://www.abibayio.gr/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 12:00-00:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "00:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 538,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4275506011",
+   "name": "Sinathina",
+   "nameEn": "Sin Athina",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "breakfast",
+    "burger",
+    "cake",
+    "coffee_shop",
+    "crepe",
+    "diner",
+    "fish",
+    "greek",
+    "grill",
+    "ice_cream",
+    "international",
+    "kebab",
+    "local",
+    "mediterranean",
+    "pasta",
+    "sandwich",
+    "seafood",
+    "tea"
+   ],
+   "lat": 37.974766,
+   "lng": 23.71955,
+   "address": "2 Ηρακλειδών, 11851",
+   "website": "https://www.sinathina.gr/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 09:00-02:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "02:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 627,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4108931289",
+   "name": "Mirch",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "indian"
+   ],
+   "lat": 37.97701,
+   "lng": 23.723252,
+   "address": null,
+   "website": "https://mirch.com.gr/",
+   "wikidata": null,
+   "openingHours": "11:00-02:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "02:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 849,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Aegina",
+   "page": "Aegina",
+   "url": "https://en.wikivoyage.org/wiki/Aegina",
+   "description": null,
+   "lat": 37.74,
+   "lng": 23.44,
+   "km": 37
+  },
+  {
+   "name": "Sounio",
+   "page": "Sounio",
+   "url": "https://en.wikivoyage.org/wiki/Sounio",
+   "description": "Ktel bus starts from central Athens and also stop in some areas in south Athens. 1 hour from central Athens by car.",
+   "lat": 37.649167,
+   "lng": 24.028056,
+   "km": 46
+  },
+  {
+   "name": "Poros",
+   "page": "Poros",
+   "url": "https://en.wikivoyage.org/wiki/Poros",
+   "description": null,
+   "lat": 37.53274,
+   "lng": 23.44809,
+   "km": 56
+  },
+  {
+   "name": "Evia",
+   "page": "Evvia",
+   "url": "https://en.wikivoyage.org/wiki/Evvia",
+   "description": "Or Euboea, is the second-largest Greek island in area and population, after Crete, and in close proximity to Athens. In less than 1.5 hours by bus, train, or car, you can reach Chalkis, or Halkida, the island's capital city and enjoy the local beaches, Ottoman castle on the hill, the promenade with bars & restaurants. From here you can continue to Kymi and take the ferry to Skyros island or choose to explore the islands hidden gems.",
+   "lat": 38.5,
+   "lng": 24.0,
+   "km": 62
+  },
+  {
+   "name": "Kea",
+   "page": "Kea",
+   "url": "https://en.wikivoyage.org/wiki/Kea",
+   "description": "(also pronounced Tzia) is a very nearby destination, too, less than two hours from the port of Lavrio.",
+   "lat": 37.6167,
+   "lng": 24.333,
+   "km": 67
+  },
+  {
+   "name": "Corinth",
+   "page": "Corinth",
+   "url": "https://en.wikivoyage.org/wiki/Corinth",
+   "description": "Day trips to the Corinth Canal, the ancient theatre at Epidaurus and to the ancient sites of Olympia, Delphi and Mycenae are easy with a rental car.",
+   "lat": 37.9333,
+   "lng": 22.9333,
+   "km": 70
+  }
+ ],
+ "guide": {
+  "page": "Athens",
+  "url": "https://en.wikivoyage.org/wiki/Athens"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:11:24Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:12:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:12:34Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:12:53Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

@@ -78,6 +78,50 @@ timezone = "Asia/Jerusalem"
 wikivoyage = "Tel Aviv"
 
 [[city]]
+id = "ramat-gan"
+name = "Ramat Gan"
+country = "IL"
+lat = 32.0637
+lng = 34.8322
+radius_m = 5000
+near_m = 2500
+timezone = "Asia/Jerusalem"
+wikivoyage = "Ramat Gan"
+
+[[city]]
+id = "airport-city"
+name = "Airport City"
+country = "IL"
+lat = 31.986
+lng = 34.9162
+radius_m = 4000
+near_m = 8000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Lod"
+
+[[city]]
+id = "eilat"
+name = "Eilat"
+country = "IL"
+lat = 29.5569
+lng = 34.9517
+radius_m = 6000
+near_m = 1500
+timezone = "Asia/Jerusalem"
+wikivoyage = "Eilat"
+
+[[city]]
+id = "kfar-blum"
+name = "Kfar Blum"
+country = "IL"
+lat = 33.1725
+lng = 35.6097
+radius_m = 5000
+near_m = 10000
+timezone = "Asia/Jerusalem"
+wikivoyage = "Kiryat Shemona"
+
+[[city]]
 id = "haifa"
 name = "Haifa"
 country = "IL"
@@ -164,3 +208,179 @@ radius_m = 6000
 near_m = 1000
 timezone = "Pacific/Auckland"
 wikivoyage = "Wellington"
+
+[[city]]
+id = "london"
+name = "London"
+country = "GB"
+lat = 51.5074
+lng = -0.1278
+radius_m = 6000
+near_m = 1000
+timezone = "Europe/London"
+wikivoyage = "London"
+
+[[city]]
+id = "amsterdam"
+name = "Amsterdam"
+country = "NL"
+lat = 52.3676
+lng = 4.9041
+radius_m = 6000
+near_m = 1000
+timezone = "Europe/Amsterdam"
+wikivoyage = "Amsterdam"
+
+[[city]]
+id = "berlin"
+name = "Berlin"
+country = "DE"
+lat = 52.52
+lng = 13.405
+radius_m = 6000
+near_m = 1000
+timezone = "Europe/Berlin"
+wikivoyage = "Berlin"
+
+[[city]]
+id = "luxembourg"
+name = "Luxembourg"
+country = "LU"
+lat = 49.6116
+lng = 6.1319
+radius_m = 4000
+near_m = 1500
+timezone = "Europe/Luxembourg"
+wikivoyage = "Luxembourg (city)"
+
+[[city]]
+id = "rapperswil"
+name = "Rapperswil"
+country = "CH"
+lat = 47.2267
+lng = 8.8184
+radius_m = 3000
+near_m = 2000
+timezone = "Europe/Zurich"
+wikivoyage = "Rapperswil"
+
+[[city]]
+id = "malmo"
+name = "Malmö"
+country = "SE"
+lat = 55.605
+lng = 13.0038
+radius_m = 5000
+near_m = 1000
+timezone = "Europe/Stockholm"
+wikivoyage = "Malmö"
+
+[[city]]
+id = "athens"
+name = "Athens"
+country = "GR"
+lat = 37.9838
+lng = 23.7275
+radius_m = 6000
+near_m = 1000
+timezone = "Europe/Athens"
+wikivoyage = "Athens"
+
+[[city]]
+id = "singapore"
+name = "Singapore"
+country = "SG"
+lat = 1.2903
+lng = 103.852
+radius_m = 6000
+near_m = 1000
+timezone = "Asia/Singapore"
+wikivoyage = "Singapore"
+
+[[city]]
+id = "new-orleans"
+name = "New Orleans"
+country = "US"
+lat = 29.9511
+lng = -90.0715
+radius_m = 6000
+near_m = 1000
+timezone = "America/Chicago"
+wikivoyage = "New Orleans"
+
+[[city]]
+id = "wichita"
+name = "Wichita"
+country = "US"
+lat = 37.6872
+lng = -97.3301
+radius_m = 6000
+near_m = 1500
+timezone = "America/Chicago"
+wikivoyage = "Wichita"
+
+[[city]]
+id = "fort-lauderdale"
+name = "Fort Lauderdale"
+country = "US"
+lat = 26.1224
+lng = -80.1373
+radius_m = 6000
+near_m = 1500
+timezone = "America/New_York"
+wikivoyage = "Fort Lauderdale"
+
+[[city]]
+id = "tryon"
+name = "Tryon"
+country = "US"
+lat = 35.2087
+lng = -82.2387
+radius_m = 5000
+near_m = 15000
+timezone = "America/New_York"
+wikivoyage = "Hendersonville (North Carolina)"
+
+[[city]]
+id = "santa-fe"
+name = "Santa Fe"
+country = "US"
+lat = 35.687
+lng = -105.9378
+radius_m = 5000
+near_m = 1500
+timezone = "America/Denver"
+wikivoyage = "Santa Fe (New Mexico)"
+
+[[city]]
+id = "santa-ana"
+name = "Santa Ana"
+country = "US"
+lat = 33.7455
+lng = -117.8677
+radius_m = 5000
+near_m = 2000
+timezone = "America/Los_Angeles"
+wikivoyage = "Santa Ana (California)"
+
+[[city]]
+id = "san-jose"
+name = "San Jose"
+country = "US"
+lat = 37.3382
+lng = -121.8863
+radius_m = 6000
+near_m = 1500
+timezone = "America/Los_Angeles"
+wikivoyage = "San Jose (California)"
+
+[[city]]
+id = "san-francisco"
+name = "San Francisco"
+country = "US"
+lat = 37.7749
+lng = -122.4194
+radius_m = 6000
+near_m = 1000
+timezone = "America/Los_Angeles"
+wikivoyage = "San Francisco"

@@ -1,0 +1,1073 @@
+{
+ "v": 1,
+ "city": {
+  "id": "fort-lauderdale",
+  "name": "Fort Lauderdale",
+  "country": "US",
+  "lat": 26.1224,
+  "lng": -80.1373,
+  "timezone": "America/New_York"
+ },
+ "places": [
+  {
+   "id": "osm:way/158195363",
+   "name": "International Swimming Hall of Fame",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.116267,
+   "lng": -80.107678,
+   "address": null,
+   "website": "https://ishof.org/",
+   "wikidata": "Q744713",
+   "wikipedia": "en:International Swimming Hall of Fame",
+   "description": "hall of fame for swimmers, divers and water polo players in Fort Lauderdale, Florida",
+   "image": "USA.FL.FtLauderdale.ISHOF.01.jpg",
+   "notability": 19,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/532105760",
+   "name": "NSU Art Museum Fort Lauderdale",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.119591,
+   "lng": -80.142843,
+   "address": "1 East Las Olas Boulevard, 33301",
+   "website": "https://nsuartmuseum.org/",
+   "wikidata": "Q1685139",
+   "wikipedia": "en:Museum of Art Fort Lauderdale",
+   "description": "art museum in Fort Lauderdale, Florida, USA",
+   "image": "Fort Laud FL MoA01.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": "Tu-Sa 11:00-17:00; Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/49508471",
+   "name": "Hugh Taylor Birch State Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 26.14547,
+   "lng": -80.105133,
+   "address": "3109 East Sunrise Boulevard, 33304",
+   "website": "https://www.floridastateparks.org/hughtaylorbirch",
+   "wikidata": "Q3364064",
+   "wikipedia": null,
+   "description": "Florida state park",
+   "image": "Hugh Taylor Birch State Park.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Mo-Su 08:00-20:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "20:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:relation/7540489",
+   "name": "Museum of Discovery and Science",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.121075,
+   "lng": -80.147932,
+   "address": "401 Himmarshee Street, 33312",
+   "website": "https://mods.org/",
+   "wikidata": "Q6940839",
+   "wikipedia": null,
+   "description": "non-profit organization in the USA",
+   "image": "Fort Laud FL MoDaS01.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Mo-Sa 10:00-17:00; Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/135174795",
+   "name": "Bonnet House Museum and Gardens",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 26.135143,
+   "lng": -80.105616,
+   "address": "900 North Birch Road, 33304",
+   "website": "https://www.bonnethouse.org/",
+   "wikidata": "Q4942208",
+   "wikipedia": "en:Bonnet House",
+   "description": "historic house in Fort Lauderdale, Florida, U.S.A.",
+   "image": "Bonnet-house-gate.jpg",
+   "notability": 1,
+   "highlight": true,
+   "openingHours": "Tu-Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/463369841",
+   "name": "Swap Shop",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 26.137593,
+   "lng": -80.191718,
+   "address": "3291 West Sunrise Boulevard",
+   "website": null,
+   "wikidata": "Q5471478",
+   "wikipedia": "en:Fort Lauderdale Swap Shop",
+   "description": "drive-in movie theater and flea market in Fort Lauderdale, Florida",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9793802295",
+   "name": "Claudia Castillo Art Studio",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 26.156563,
+   "lng": -80.138447,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9792316655",
+   "name": "Ernesto Maranje Art & Design",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 26.132509,
+   "lng": -80.142269,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3231411866",
+   "name": "Historic Stranahan House Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.118436,
+   "lng": -80.137447,
+   "address": "335 Southeast 6th Avenue, 33301",
+   "website": "https://www.stranahanhouse.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1439350923",
+   "name": "Jungle Queen Riverboat",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 26.111271,
+   "lng": -80.106016,
+   "address": "801 Seabreeze Blvd.",
+   "website": "https://www.junglequeen.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9792394385",
+   "name": "MAC Art Galleries",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 26.134539,
+   "lng": -80.140216,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/9791395147",
+   "name": "Madeline Denaro Studio and Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 26.132118,
+   "lng": -80.141133,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/827973258",
+   "name": "Old Dillard Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.126206,
+   "lng": -80.155079,
+   "address": "1009 NW 4th St, 33311",
+   "website": "https://www.browardschools.com/Page/35769",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/14174171490",
+   "name": "Stonewall National Museum, Archives & Library",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.136778,
+   "lng": -80.130042,
+   "address": "1300 Sunrise Boulevard, 33304",
+   "website": "http://www.stonewall-museum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Fr 11:00-17:00; Sa-Su 11:00-15:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "15:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9792394386",
+   "name": "The Art Bloc",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 26.133746,
+   "lng": -80.14024,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/629566174",
+   "name": "The Fort Lauderdale Antique Car Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 26.102265,
+   "lng": -80.143518,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/772690980",
+   "name": "Victoria Park Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.135922,
+   "lng": -80.119868,
+   "address": "855 Northeast 20th Avenue, 33304",
+   "website": "http://thevictoriaparkhotel.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 178,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/611265319",
+   "name": "Riverside Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.118781,
+   "lng": -80.13632,
+   "address": "620 East Las Olas Boulevard, 33301",
+   "website": "https://www.riversidehotel.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 450,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/611265297",
+   "name": "Fairfield Inn & Suites Fort Lauderdale Downtown/Las Olas",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.121844,
+   "lng": -80.136846,
+   "address": "30 South Federal Highway, 33301",
+   "website": "https://www.marriott.com/fllld",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 761,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/936261406",
+   "name": "Oasis Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.107481,
+   "lng": -80.136208,
+   "address": "1200 South Miami Road, 33316",
+   "website": "https://www.oasishotelftl.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 874,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/316330850",
+   "name": "Travelodge Ft. Lauderdale",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.137619,
+   "lng": -80.130886,
+   "address": "1251 East Sunrise Boulevard, 33304",
+   "website": "http://www.travelodge.com/hotels/florida/fort-lauderdale/travelodge-fort-lauderdale/hotel-overview",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 956,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/821994531",
+   "name": "The Big Coconut Guesthouse",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.138049,
+   "lng": -80.130907,
+   "address": "1021 Northeast 13th Avenue, 33304",
+   "website": "http://thebigcoconutguesthouse.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 964,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/382162108",
+   "name": "Mary's Crew House",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.107487,
+   "lng": -80.134257,
+   "address": "816 SE 12th Street, 33316",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 938,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/738983622",
+   "name": "The Dalmar - Fort Lauderdale",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 26.124942,
+   "lng": -80.137932,
+   "address": "299 North Federal Highway, 33301",
+   "website": "https://www.marriott.com/en-us/hotels/flltx-the-dalmar-fort-lauderdale-a-tribute-portfolio-hotel/overview/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1093,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/14100157746",
+   "name": "Theos Estiatorio",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "greek"
+   ],
+   "lat": 26.137064,
+   "lng": -80.121258,
+   "address": "1826 East Sunrise Boulevard, 33304",
+   "website": "https://theosestiatorio.com/",
+   "wikidata": null,
+   "openingHours": "Tu-Th 17:00-21:30; Fr-Sa 17:00-22:30; Su 17:00-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "21:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 30,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/8707437914",
+   "name": "Heart Rock Sushi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi",
+    "thai"
+   ],
+   "lat": 26.137087,
+   "lng": -80.119786,
+   "address": "1970 East Sunrise Boulevard, 33304",
+   "website": "https://www.heartrocksushithaifl.com/",
+   "wikidata": null,
+   "openingHours": "Su-Th 11:30-22:15; Fr-Sa 11:30-22:45",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:15"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:45"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 159,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13315575869",
+   "name": "Big Louie's Pizzeria - Italian Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 26.137326,
+   "lng": -80.119701,
+   "address": "1990 East Sunrise Boulevard, 33304",
+   "website": "https://www.biglouies.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 12:00-21:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 174,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/14100196417",
+   "name": "Serafina Waterfront Trattoria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 26.136936,
+   "lng": -80.119261,
+   "address": "926 Northeast 20th Avenue, 33304",
+   "website": "https://serabythewater.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 17:00-22:00; Fr 17:00-23:00; Sa 11:30-23:00; Su 11:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "23:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 209,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13836794475",
+   "name": "Fat Boyz BBQ Downtown Fort Lauderdale",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "american",
+    "barbecue"
+   ],
+   "lat": 26.112755,
+   "lng": -80.1367,
+   "address": "706 South Federal Highway, 33316",
+   "website": "https://www.fatboyzbarbecue.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-21:00; Su 12:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 305,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/9796646020",
+   "name": "Cafe Vico - Italian Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 26.139559,
+   "lng": -80.120959,
+   "address": "1125 North Federal Highway, 33304",
+   "website": "https://cafevicorestaurant.com/",
+   "wikidata": null,
+   "openingHours": "Sa-Th 16:00-22:00; Fr 11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "16:00",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 308,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3217035506",
+   "name": "IHOP",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "breakfast",
+    "pancake"
+   ],
+   "lat": 26.139543,
+   "lng": -80.120445,
+   "address": "1101 North Federal Highway, 33304",
+   "website": "https://restaurants.ihop.com/en-us/fl/ft-lauderdale/breakfast-1101-n-federal-highway-360155",
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 317,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13875025195",
+   "name": "Darios Fort Lauderdale",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza",
+    "italian"
+   ],
+   "lat": 26.114581,
+   "lng": -80.141837,
+   "address": "110 Southeast 6th Street, 33301-5014",
+   "website": "https://dariosfortlauderdale.com",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 07:30-17:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "07:30",
+       "17:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 363,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Hollywood",
+   "page": "Hollywood (Florida)",
+   "url": "https://en.wikivoyage.org/wiki/Hollywood_%28Florida%29",
+   "description": "(Florida) Popping down to visit the night clubs and restaurants along Hollywood Blvd near Young Circle is a close and interesting evening outing. You can also see the Hollywood beach.",
+   "lat": 26.021389,
+   "lng": -80.175,
+   "km": 12
+  },
+  {
+   "name": "Miami Beach",
+   "page": "Miami Beach",
+   "url": "https://en.wikivoyage.org/wiki/Miami_Beach",
+   "description": null,
+   "lat": 25.79056,
+   "lng": -80.13,
+   "km": 37
+  },
+  {
+   "name": "Miami",
+   "page": "Miami",
+   "url": "https://en.wikivoyage.org/wiki/Miami",
+   "description": null,
+   "lat": 25.72909,
+   "lng": -80.23744,
+   "km": 45
+  },
+  {
+   "name": "Everglades National Park",
+   "page": "Everglades National Park",
+   "url": "https://en.wikivoyage.org/wiki/Everglades_National_Park",
+   "description": null,
+   "lat": 25.39,
+   "lng": -80.95,
+   "km": 115
+  }
+ ],
+ "guide": {
+  "page": "Fort Lauderdale",
+  "url": "https://en.wikivoyage.org/wiki/Fort_Lauderdale"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:30:07Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:30:08Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:30:14Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:30:24Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}
