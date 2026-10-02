@@ -627,7 +627,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🔧 _Logic leaf._ <!-- req-gallery:14.6 -->
   </details>
 
-- `14.7` Everything else is packed greedily, earliest finish first, with fully deterministic tie-breaks — the same inputs always give the same plan.
+- `14.7` Everything else is packed greedily, earliest finish first (within a capped day's spread, `14.11`), with fully deterministic tie-breaks — the same inputs always give the same plan.
 
   <details><summary>Proof</summary>
 
@@ -653,6 +653,26 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   <details><summary>Proof</summary>
 
   🔧 _Logic leaf._ <!-- req-gallery:14.10 -->
+  </details>
+
+- `14.11` A day held to fewer shows than it could fit spreads them across its hours, rather than packing the earliest.
+
+  <details><summary>Proof</summary>
+
+  🔧 _Logic leaf._ <!-- req-gallery:14.11 -->
+  </details>
+
+  <details><summary>Notes</summary>
+
+  The per-day maximum is a question of pace, not of when the day ends: a
+  reader who asks for two shows a day has not asked to be done by lunch. So
+  the hours the day's shows span are shared out between its places, and each
+  part of the day takes a show before any takes a second. Scarcity comes
+  first — a show with fewer performances left to it takes its hour whatever
+  part of the day it is in, and earliest finish orders only shows equally
+  scarce — and a reader who wants the day to end early says so with the day's
+  end, which the spread then works within. The same rule as the festival
+  planner's `20.22`, from the same shared code.
   </details>
 
 ## 15. Preferences and the schedule
