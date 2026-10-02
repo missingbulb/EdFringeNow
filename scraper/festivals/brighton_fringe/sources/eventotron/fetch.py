@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch Brighton Fringe's programme from its Eventotron box office, for one edition.
 
-Run by hand:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/brighton_fringe/sources/eventotron/fetch.py --edition <year>
 

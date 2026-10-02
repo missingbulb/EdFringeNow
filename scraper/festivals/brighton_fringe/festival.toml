@@ -28,6 +28,7 @@ id = "2026"
 format = "block"
 first = "2026-05-01"
 last = "2026-05-31"
+sources = ["eventotron"]
 
 [[source]]
 id = "eventotron"

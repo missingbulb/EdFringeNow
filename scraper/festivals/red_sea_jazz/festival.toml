@@ -1,0 +1,59 @@
+# The Red Sea Jazz Festival, Eilat: its identity, its editions, and the sources an
+# edition's information block is assembled from. Every key follows the contract
+# in scraper/festivals/README.md.
+
+id = "red-sea-jazz"
+name = "Red Sea Jazz Festival"
+name_local = "פסטיבל הג׳אז ים סוף"
+city = "Eilat"
+country = "IL"
+# Eilat (en.wikipedia.org/wiki/Eilat), whose port holds the festival's stages,
+# for the festival timeline and the travel maths between cities.
+lat = 29.5569
+lng = 34.9517
+timezone = "Asia/Jerusalem"
+lang = "he"
+dir = "rtl"
+kind = "music"
+subtypes = ["music-jazz"]
+default_genre = "music"
+site = "https://redseajazz.co.il/"
+
+# Each ticketed show links its own Ticketmaster page; festival passes are sold
+# there too. A few late sets and the nightly jam are free.
+[ticketing]
+model = "central-box-office"
+url = "https://redseajazz.co.il/lineup/"
+notes = "Tickets for each show, and festival passes, through Ticketmaster only (the festival's FAQ); each ticketed show on the lineup links its own Ticketmaster page. Eilat residents get a discount on showing ID. The Jasper 08 club sets and the nightly jam session are free entry."
+
+[[edition]]
+id = "2026"
+format = "block"
+# "the festival will mark its 40th edition" (the About page).
+ordinal = 40
+first = "2026-11-11"
+last = "2026-11-14"
+sources = ["festival-site", "venues-research"]
+
+[[source]]
+id = "festival-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/festival-site/fetch.py"
+adapter = "red_sea_jazz/festival_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "festival-site"]
+events = ["festival-site"]
+performances = ["festival-site"]

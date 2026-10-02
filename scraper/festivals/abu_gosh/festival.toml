@@ -40,6 +40,7 @@ id = "2026"
 format = "block"
 first = "2026-09-29"
 last = "2026-10-03"
+sources = ["abugosh-site", "venues-research"]
 
 [[source]]
 id = "abugosh-site"

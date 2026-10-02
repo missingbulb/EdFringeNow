@@ -295,9 +295,10 @@ next_last = "2026-10-21"
 schedule = "published"
 schedule_evidence = "106 sessions over three days in Hall 1 to 11 at Ramat Gan Academic College; (MA-01) Peace, Conflict and Media Narratives in Israeli Society, 19 Oct 09:00-10:30, Hall 1. api.eventact.com/o/v2/agenda/37945/14755/en/timetable, API-Token 50a7ed9768604ff2bef20dc2914469df"
 platform = "eventact"
-status = "candidate"
+status = "adopted"
+festival_id = "ais-conference"
 found_via = ["search-english-annual-meeting", "eventact"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "israeli-fish-model-meeting"
@@ -653,9 +654,10 @@ next_last = "2026-11-14"
 schedule = "published"
 schedule_evidence = "Over 40 shows on 4 stages in the server-rendered לוח זמנים block; The 3 Cohens, Port arena, 12.11 20:00"
 platform = "ticketmaster-il"
-status = "candidate"
+status = "adopted"
+festival_id = "red-sea-jazz"
 found_via = ["ticketing-fingerprint", "search-hebrew-programme"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "tlvfest"
@@ -671,9 +673,10 @@ next_last = "2026-10-31"
 schedule = "published"
 schedule_evidence = "56 screenings, server-rendered at the Tel Aviv Cinematheque; עורבים, 22/10/2026 18:00, אולם 2. tlvfest.com has no 2026 programme."
 platform = "tel-aviv-cinematheque"
-status = "candidate"
+status = "adopted"
+festival_id = "tlvfest"
 found_via = ["tel-aviv-cinematheque", "wikipedia-israel-categories"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "israman"
@@ -2528,9 +2531,10 @@ next_last = "2026-11-01"
 schedule = "published"
 schedule_evidence = "14 events on the Upper Galilee culture Smarticket tenant, server-rendered: [2] Shlomi Shaban and the piano, Beit HaAm Kfar Blum, Wednesday 28 October 2026 at 20:30; [3] Kav HaTzel, Klor Centre hall (Kfar Blum), 29 October 2026 at 10:30."
 platform = "smarticket"
-status = "candidate"
+status = "adopted"
+festival_id = "kol-hamusica"
 found_via = ["search-hebrew-programme", "smarticket"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "tel-aviv-jazz-festival"

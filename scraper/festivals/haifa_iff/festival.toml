@@ -53,6 +53,7 @@ format = "block"
 ordinal = 42
 first = "2026-09-25"
 last = "2026-10-03"
+sources = ["haifaff-site", "venues-research", "smarticket"]
 
 [[source]]
 id = "haifaff-site"

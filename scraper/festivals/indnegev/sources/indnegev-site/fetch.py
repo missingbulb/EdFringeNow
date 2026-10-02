@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch InDNegev's timetable for one edition into its raw folder.
 
-Run it by hand, on a machine that can reach the site. It never runs on a schedule:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/indnegev/sources/indnegev-site/fetch.py --edition 2026
 

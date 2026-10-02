@@ -424,6 +424,54 @@ export function compatible(a, b, options = {}) {
   return later.start >= earlier.end + requiredGapMinutes(earlier, later, options);
 }
 
+// --- spreading a capped day ------------------------------------------------
+
+/**
+ * Which part of its day a slot starts in, when a day is held to `maxPerDay`
+ * shows: the hours the slots' starts span that day are cut into one part per
+ * place. Left to the clock alone, a short day would fill from the morning.
+ * @param {Iterable<Slot>} slots every slot the day could take
+ * @param {number} maxPerDay
+ * @returns {((slot: Slot) => number)|null} null when the day is uncapped
+ */
+export function dayParts(slots, maxPerDay) {
+  if (!Number.isFinite(maxPerDay) || maxPerDay <= 0) return null;
+  const spans = new Map();
+  for (const s of slots) {
+    const span = spans.get(s.date);
+    if (!span) spans.set(s.date, { first: s.startMinuteOfDay, last: s.startMinuteOfDay });
+    else {
+      span.first = Math.min(span.first, s.startMinuteOfDay);
+      span.last = Math.max(span.last, s.startMinuteOfDay);
+    }
+  }
+  return (slot) => {
+    const span = spans.get(slot.date);
+    if (!span) return 0;
+    const part = Math.floor(((slot.startMinuteOfDay - span.first) * maxPerDay) / (span.last - span.first + 1));
+    return Math.max(0, Math.min(maxPerDay - 1, part));
+  };
+}
+
+/**
+ * Takes candidates ranked scarcest first a run of equal `freedom` at a time,
+ * each run twice: first only into the parts of a day nothing holds yet, then
+ * into whatever room is left — so the spread never leaves a day short and never
+ * outranks scarcity.
+ * @param {Array<{freedom: number}>} list ranked candidates
+ * @param {(run: object[], spread: boolean) => void} take
+ */
+export function takeSpread(list, take) {
+  for (let i = 0; i < list.length; ) {
+    let j = i;
+    while (j < list.length && list[j].freedom === list[i].freedom) j++;
+    const run = list.slice(i, j);
+    take(run, true);
+    take(run, false);
+    i = j;
+  }
+}
+
 // --- building an itinerary from the eligible slots ------------------------
 
 /**
@@ -438,6 +486,9 @@ export function compatible(a, b, options = {}) {
  * skipped (one-per-show), and a candidate is dropped if its day is already at
  * the per-day cap. Ties break deterministically (earliest start, then slug),
  * so the same inputs always yield the same plan — no wall-clock/random state.
+ * Under a per-day cap, the scarcest shows rank first and each day's places are
+ * spread across its hours (`dayParts`, `takeSpread`); earliest finish then
+ * orders only shows equally scarce.
  *
  * `forcedSlugs` are must-see shows placed in a first pass before the greedy
  * fill: each takes its earliest-finishing performance that doesn't clash with
@@ -591,25 +642,35 @@ export function buildSchedule(shows, options = {}) {
   }
 
   // --- Pass 2: greedy earliest-finish for everything else ------------------
+  // A capped day is spread across its hours (dayParts), and then the show with
+  // the fewest performances left to it ranks first, so the spread never takes
+  // a scarce show's only hour from it.
+  const partOf = dayParts([...slotsByShow.values()].flat(), maxPerDay);
   const candidates = [];
   for (const [slug, slots] of slotsByShow) {
     if (forcedSlugs.has(slug)) continue; // handled in pass 1
-    for (const slot of slots) candidates.push(slot);
+    for (const slot of slots) candidates.push({ slot, freedom: partOf ? slots.length : 0 });
   }
   candidates.sort(
     (a, b) =>
-      a.end - b.end ||
-      a.start - b.start ||
-      a.slug.localeCompare(b.slug) ||
-      a.date.localeCompare(b.date)
+      a.freedom - b.freedom ||
+      a.slot.end - b.slot.end ||
+      a.slot.start - b.slot.start ||
+      a.slot.slug.localeCompare(b.slot.slug) ||
+      a.slot.date.localeCompare(b.slot.date)
   );
-  for (const slot of candidates) {
-    if (placedShows.has(slot.slug)) continue; // one performance per show
-    const sameDay = perDay.get(slot.date) || [];
-    if (sameDay.length >= maxPerDay) continue; // day already full
-    if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
-    place(slot, false);
-  }
+  const take = (list, spread) => {
+    for (const { slot } of list) {
+      if (placedShows.has(slot.slug)) continue; // one performance per show
+      const sameDay = perDay.get(slot.date) || [];
+      if (sameDay.length >= maxPerDay) continue; // day already full
+      if (spread && sameDay.some((c) => partOf(c) === partOf(slot))) continue;
+      if (!sameDay.every((c) => compatible(c, slot, gapOpts))) continue; // clash
+      place(slot, false);
+    }
+  };
+  if (partOf) takeSpread(candidates, take);
+  else take(candidates, false);
 
   // Post-pass: drop under-populated days (min-per-day preference), but never a
   // day that holds a forced show.

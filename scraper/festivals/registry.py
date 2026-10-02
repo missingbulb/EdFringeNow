@@ -13,8 +13,10 @@ into another festival's or another edition's folder by construction.
 Standard library only (tomllib is 3.11+).
 """
 
+import json
 import os
 import re
+import sys
 import tomllib
 from datetime import date
 
@@ -155,12 +157,42 @@ def _check(festival, path):
         if src["kind"] == "curated" and not src.get("path"):
             raise RegistryError("%s: curated source %s names no path" % (where, sid))
 
+    _check_tool_sets(festival, editions, sources, where)
+
     for section, order in (festival.get("merge") or {}).items():
         if section not in SECTIONS:
             raise RegistryError("%s: [merge] names unknown section %r" % (where, section))
         unknown = [s for s in order if s not in ids]
         if unknown:
             raise RegistryError("%s: [merge] %s names unknown sources %s" % (where, section, unknown))
+
+
+def _check_tool_sets(festival, editions, sources, where):
+    """Every edition names its whole tool set: the [[source]] ids it is assembled from.
+
+    The [[source]] tables are the festival's tool library, written once and reused
+    from year to year; an edition picks from it, so a site or platform that changes
+    between years is a new source that only the new edition names.
+    """
+    ids = [src["id"] for src in sources]
+    used = set()
+    for ed in editions:
+        tools = ed.get("sources")
+        if not isinstance(tools, list) or not tools:
+            raise RegistryError(
+                "%s: edition %s names no tool set (sources = [...]) — "
+                "python3 scraper/festivals/migrate_edition_tools.py adds the festival's current one"
+                % (where, ed["id"])
+            )
+        if len(set(tools)) != len(tools):
+            raise RegistryError("%s: edition %s names a source twice in its tool set" % (where, ed["id"]))
+        unknown = [t for t in tools if t not in ids]
+        if unknown:
+            raise RegistryError("%s: edition %s names undeclared sources %s" % (where, ed["id"], unknown))
+        used.update(tools)
+    unused = [i for i in ids if i not in used]
+    if unused:
+        raise RegistryError("%s: sources %s are in no edition's tool set" % (where, unused))
 
 
 def load(festival_dir):
@@ -209,18 +241,40 @@ def source(festival, source_id):
     raise RegistryError("%s has no source %r" % (festival["id"], source_id))
 
 
-def raw_dir(festival, edition_id, source_id):
-    """data/festivals/<festival>/<edition>/<source>/ — built only from declared ids."""
+def edition_sources(festival, edition_id):
+    """The edition's tool set, as [[source]] tables in festival.toml order."""
+    tools = edition(festival, edition_id)["sources"]
+    return [src for src in festival["source"] if src["id"] in tools]
+
+
+def refresh_sources(festival, edition_id):
+    """The edition's fetched tools that carry ticket availability: what a rapid refresh re-runs."""
+    return [
+        src for src in edition_sources(festival, edition_id)
+        if src["kind"] == "fetched" and "availability" in src["roles"]
+    ]
+
+
+def _edition_source(festival, edition_id, source_id):
     ed = edition(festival, edition_id)
     src = source(festival, source_id)
+    if src["id"] not in ed["sources"]:
+        raise RegistryError(
+            "%s %s does not use source %s (its tool set is %s)" % (festival["id"], ed["id"], source_id, ed["sources"])
+        )
+    return ed, src
+
+
+def raw_dir(festival, edition_id, source_id):
+    """data/festivals/<festival>/<edition>/<source>/ — built only from declared ids."""
+    ed, src = _edition_source(festival, edition_id, source_id)
     if src["kind"] != "fetched":
         raise RegistryError("%s is curated; it has no per-edition raw folder" % source_id)
     return os.path.join(RAW_ROOT, festival["id"], ed["id"], src["id"])
 
 
 def cache_dir(festival, edition_id, source_id):
-    ed = edition(festival, edition_id)
-    src = source(festival, source_id)
+    ed, src = _edition_source(festival, edition_id, source_id)
     return os.path.join(CACHE_ROOT, festival["id"], ed["id"], src["id"])
 
 
@@ -229,3 +283,60 @@ def curated_path(festival, source_id):
     if src["kind"] != "curated":
         raise RegistryError("%s is fetched; it has no curated file" % source_id)
     return os.path.join(festival["_dir"], src["path"])
+
+
+# The editions plan: every edition's dates and tool set, which the unattended
+# update and refresh tasks read to decide whether any festival is in its window.
+# Derived from the festival.toml files, so it is written, never edited.
+PLAN = os.path.join(FESTIVALS_DIR, "editions.GENERATED.json")
+
+
+def plan(festivals):
+    editions = []
+    for festival in festivals.values():
+        for ed in festival["edition"]:
+            editions.append({
+                "festival": festival["id"],
+                "edition": ed["id"],
+                "format": ed["format"],
+                "first": ed["first"],
+                "last": ed["last"],
+                "tools": [src["id"] for src in edition_sources(festival, ed["id"])],
+                "refreshTools": [src["id"] for src in refresh_sources(festival, ed["id"])],
+            })
+    editions.sort(key=lambda e: (e["festival"], e["edition"]))
+    return {"v": 1, "writer": "scraper/festivals/registry.py --write", "editions": editions}
+
+
+def render_plan(festivals):
+    return json.dumps(plan(festivals), indent=1, ensure_ascii=False) + "\n"
+
+
+def main(argv):
+    try:
+        text = render_plan(load_all())
+    except RegistryError as error:
+        print("registry: %s" % error, file=sys.stderr)
+        return 1
+    if argv == ["--write"]:
+        with open(PLAN, "w", encoding="utf-8") as handle:
+            handle.write(text)
+        print("wrote %s" % os.path.relpath(PLAN, REPO_ROOT))
+        return 0
+    if argv == ["--check"]:
+        current = None
+        if os.path.isfile(PLAN):
+            with open(PLAN, encoding="utf-8") as handle:
+                current = handle.read()
+        if current != text:
+            print("%s is stale — regenerate with: python3 scraper/festivals/registry.py --write"
+                  % os.path.relpath(PLAN, REPO_ROOT), file=sys.stderr)
+            return 1
+        print("every festival.toml is valid and every edition names its tool set")
+        return 0
+    print("usage: registry.py --check | --write", file=sys.stderr)
+    return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

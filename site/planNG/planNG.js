@@ -2265,9 +2265,8 @@ function wireCheckout() {
  * is drawn from when the lane beside the card is hovered. */
 const contested = new Map();
 
-/* Past this many side-by-side rows, the rivals are no longer told apart: each
- * is a faint bar in one lane, so where they pile up the lane darkens. A Fringe
- * hour can have fifty. */
+/* Past this many side-by-side rows, the rows narrow to fit them all: a Fringe
+ * hour can have fifty rivals, and each still gets a bar of its own. */
 const RIVAL_LANES = 3;
 
 function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
@@ -2318,16 +2317,22 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
   if (slot.contenders.length) {
     contested.set(key, slot);
     // After the card in the DOM so a keyboard reaches the show first.
-    wrap.appendChild(rivalLane(slot, top, height, reach, y));
+    const lane = rivalLane(slot, top, height, reach, y);
+    // The card gives way to a crowded lane, so the slot carries its rows.
+    if (lane.classList.contains("sch-rivals--crowd")) {
+      wrap.classList.add("sch-slot--crowd");
+      wrap.style.setProperty("--lanes", lane.style.getPropertyValue("--lanes"));
+    }
+    wrap.appendChild(lane);
   }
   return wrap;
 }
 
 /* The shows this hour turned down, each drawn beside the card from its own
  * start to its own end, so how the others overlap the pick is something the
- * calendar shows rather than says. A few are packed into rows side by side;
- * past RIVAL_LANES rows they become one wash and a count (crowdWash). The
- * lane is one target, not a bar each: it opens the hour's list. */
+ * calendar shows rather than says. They are packed into rows side by side;
+ * past RIVAL_LANES rows the rows narrow and are painted together (crowdBars).
+ * The lane is one target, not a bar each: it opens the hour's list. */
 function rivalLane(slot, top, height, reach, y) {
   const rivals = slot.contenders;
   // Packed earliest first; contention.js hands them over scarcest first.
@@ -2339,30 +2344,39 @@ function rivalLane(slot, top, height, reach, y) {
     lanes[i] = rivalEnd(r);
     laneOf.set(r, i);
   }
+  const bars = rivals.map((r) => {
+    // An end nobody published, or one past the neighbouring cards, is drawn
+    // fading rather than capped.
+    const untimed = r.endMinuteOfDay === r.startMinuteOfDay;
+    const start = y(r.startMinuteOfDay);
+    const end = y(rivalEnd(r));
+    const from = clamp(start, ...reach);
+    const to = clamp(end, ...reach);
+    return {
+      lane: laneOf.get(r),
+      from: from - top,
+      len: Math.max(6, to - from),
+      openStart: start < from,
+      openEnd: untimed || end > to,
+    };
+  });
   const crowd = lanes.length > RIVAL_LANES;
   const lane = document.createElement("button");
   lane.innerHTML = crowd
-    ? crowdWash(rivals, top, height, y) + `<span class="sch-rivals-count">${rivals.length}</span>`
-    : rivals
-        .map((r) => {
-          // An end nobody published, or one past the neighbouring cards, is
-          // drawn fading rather than capped.
-          const untimed = r.endMinuteOfDay === r.startMinuteOfDay;
-          const start = y(r.startMinuteOfDay);
-          const end = y(rivalEnd(r));
-          const from = clamp(start, ...reach);
-          const to = clamp(end, ...reach);
+    ? crowdBars(bars, reach[0] - top, reach[1] - top)
+    : bars
+        .map((bar) => {
           const open =
-            (start < from ? " sch-rival--open-start" : "") + (untimed || end > to ? " sch-rival--open-end" : "");
+            (bar.openStart ? " sch-rival--open-start" : "") + (bar.openEnd ? " sch-rival--open-end" : "");
           return (
-            `<span class="sch-rival${open}" style="--from:${(from - top).toFixed(1)}px;` +
-            `--len:${Math.max(6, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
+            `<span class="sch-rival${open}" style="--from:${bar.from.toFixed(1)}px;` +
+            `--len:${bar.len.toFixed(1)}px;--lane:${bar.lane}"></span>`
           );
         })
         .join("");
   lane.type = "button";
   lane.className = "sch-rivals" + (crowd ? " sch-rivals--crowd" : "");
-  lane.style.setProperty("--lanes", crowd ? 1 : lanes.length);
+  lane.style.setProperty("--lanes", lanes.length);
   lane.setAttribute("aria-haspopup", "dialog");
   lane.setAttribute("aria-expanded", "false");
   lane.setAttribute("aria-label", t("rivals.more", { count: rivals.length }));
@@ -2376,30 +2390,25 @@ function rivalEnd(r) {
   return r.endMinuteOfDay === r.startMinuteOfDay ? r.startMinuteOfDay + ASSUMED_LENGTH_MIN : r.endMinuteOfDay;
 }
 
-/* A crowd drawn as one element, not one per show: a Fringe calendar has
- * hundreds of contested hours and the page has an element budget (26.2). The
- * wash runs down the pick's own slot, darker wherever more rivals overlap. */
-function crowdWash(rivals, top, height, y) {
-  const edges = new Set([0, height]);
-  const spans = rivals.map((r) => [
-    clamp(y(r.startMinuteOfDay) - top, 0, height),
-    clamp(y(rivalEnd(r)) - top, 0, height),
-  ]);
-  for (const [from, to] of spans) edges.add(from).add(to);
-  const cuts = [...edges].sort((a, b) => a - b);
-  const depth = cuts.slice(0, -1).map((at, i) => {
-    const mid = (at + cuts[i + 1]) / 2;
-    return spans.filter(([from, to]) => from <= mid && mid < to).length;
+/* A crowd's bars painted by one element, not one per show: a Fringe calendar
+ * has hundreds of contested hours and the page has an element budget (26.2).
+ * Each bar is a background layer in its own row, capped like .sch-rival; the
+ * rows' widths and shades come from the stylesheet. */
+function crowdBars(bars, reachTop, reachBottom) {
+  const layers = bars.map((bar) => {
+    const fill = bar.lane % 2 ? "var(--bar-alt)" : "var(--bar)";
+    const head = bar.openStart ? `transparent, ${fill} 10px` : `var(--cap) 0 2px, ${fill} 2px`;
+    const tail = bar.openEnd ? `${fill} calc(100% - 10px), transparent` : `${fill} calc(100% - 2px), var(--cap) 0`;
+    return (
+      `linear-gradient(${head}, ${tail}) ` +
+      `calc(${bar.lane} * var(--step)) ${(bar.from - reachTop).toFixed(1)}px / ` +
+      `var(--w) ${bar.len.toFixed(1)}px no-repeat`
+    );
   });
-  const most = Math.max(1, ...depth);
-  const stops = depth
-    .map((n, i) => {
-      const mix = Math.round(10 + (n / most) * 55);
-      const colour = `color-mix(in srgb, var(--violet) ${n ? mix : 0}%, transparent)`;
-      return `${colour} ${cuts[i].toFixed(1)}px ${cuts[i + 1].toFixed(1)}px`;
-    })
-    .join(", ");
-  return `<span class="sch-crowd" style="background: linear-gradient(to bottom, ${stops})"></span>`;
+  return (
+    `<span class="sch-crowd" style="top:${reachTop.toFixed(1)}px;` +
+    `height:${(reachBottom - reachTop).toFixed(1)}px;background:${layers.join(", ")}"></span>`
+  );
 }
 
 function buildTravelLeg(a, b, top, bottom) {

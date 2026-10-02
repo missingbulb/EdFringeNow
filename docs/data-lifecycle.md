@@ -8,9 +8,9 @@ plainly where it is not built yet.
 | # | Stage | Question it answers | Cadence | Where it lives | State |
 |---|---|---|---|---|---|
 | 1 | **Festival finder** | Which festivals exist that we could serve? | on request; the method itself grows | [`scraper/finder/`](../scraper/finder/README.md) | built |
-| 2 | **Festival tools** | For one festival's edition, which sites and APIs give us its data, and how? | once per edition, mostly reused year to year | `scraper/festivals/<dir>/festival.toml` and its `sources/` ([contract](../scraper/festivals/README.md)) | built per festival; per-edition tool sets not yet |
-| 3 | **Festival update** | What is the programme now? | periodic until the programme settles; repaired when a tool breaks | `scraper/festivals/collect.py`, `scraper/convert/to_serving.py` | built, run by hand |
-| 4 | **Events rapid refresh** | What is still on sale, and what changed? | frequent, during the festival and the weeks before it | Edinburgh Fringe only: the `refresh-tickets`, `refresh-shows` and `fetch-prices` tasks | Edinburgh only |
+| 2 | **Festival tools** | For one festival's edition, which sites and APIs give us its data, and how? | once per edition, mostly reused year to year | `scraper/festivals/<dir>/festival.toml`: its `[[source]]` tool library and each edition's `sources`, plus `sources/` and `platforms/` ([contract](../scraper/festivals/README.md)) | built per edition |
+| 3 | **Festival update** | What is the programme now? | daily from two weeks out, weekly from two months, monthly before; repaired when a tool breaks | `scraper/festivals/update.py` and the `festival-update` task | built, scheduled |
+| 4 | **Events rapid refresh** | What is still on sale, and what changed? | every scheduler tick, from three weeks before an edition until it closes | `update.py --refresh` and the `festival-refresh` task; for the Fringe, its `refresh-tickets`, `refresh-shows` and `fetch-prices` tasks | built, scheduled; Fringe tasks off |
 | C | **City cycle** | What else can a visitor do there: stay, eat, see, go on a trip? | slow; a city changes by the season | `scraper/cities/` | sights only |
 
 ## 1. Festival finder
@@ -34,22 +34,31 @@ its ticketing platform, its venues, where the prices and availability live. It e
 self-test on committed samples, and curated venue research. A tool a platform shares across
 festivals (Eventer, Eventotron, Spektrix) lives once in `scraper/festivals/platforms/`.
 
-Not built yet: sources are declared per festival, not per edition. A festival whose site or
-ticketing platform changes between years has no way to say that 2026 used one tool set and
-2027 another, beyond keeping the fetcher able to read both.
+Each edition names its whole tool set (`sources` on its `[[edition]]`), chosen from the
+festival's `[[source]]` library: a festival whose site or ticketing platform changes between
+years adds the new tool as a source only the new edition lists. `registry.py --check` refuses
+an edition that names none; `migrate_edition_tools.py` gives a `festival.toml` written before
+tool sets existed its current set.
 
 ## 3. Festival update
 
-Running the stage 2 tools to extract the festival's information: `collect.py` fetches every
-source of an edition into `data/festivals/`, and `to_serving.py` converts the raw into the
-serving block under `site/data/festivals/`. When a site changes and a tool breaks, the fix is
-made in stage 2's tool and the update re-run. Fetchers run by hand, by the owner's decision.
+Running the stage 2 tools to extract the festival's information: `update.py` picks every
+edition that is upcoming or live and due, fetches its tool set into `data/festivals/` and
+converts the raw into the serving block under `site/data/festivals/` (`collect.py` is the
+same for one edition, by hand). The `festival-update` task runs it daily in GitHub Actions
+and delivers the result on a pull request; each edition comes out `updated`, `not-ready` (its
+programme is not out) or `broken`, and a broken one fails the run with the festival named.
+The fix is made in stage 2's tool and the update re-run.
 
 ## 4. Events rapid refresh
 
 Ticket availability and show changes, refreshed often during the festival and in the weeks
-before it. Built for the Edinburgh Fringe (hourly ticket status in season, show updates,
-prices). For every other festival, availability is what the last stage 3 run saw.
+before it. For every festival whose edition has a tool carrying availability (a source with
+the `availability` role: Eventer, Spektrix, Eventotron, a festival's own ticketing API), the
+`festival-refresh` task re-runs those tools at every scheduler tick from three weeks before
+the edition opens until it closes. A festival with no such tool keeps the availability its
+last stage 3 run saw. The Edinburgh Fringe keeps its own tasks (ticket status, show updates,
+prices), currently switched off.
 
 ## C. The city cycle
 

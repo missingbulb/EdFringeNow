@@ -76,13 +76,17 @@ else
   echo "python3 not installed — skipping (CI always has it)" >&2
 fi
 
-step "Festival data — fetcher parse self-tests, converter self-test, serving drift check"
-# The small festivals' fetchers run by hand only, so their network half can only
-# be checked against the live sites; each one's parsing half runs offline and is
-# the only verification a fetcher change gets here. The converter's --check
+step "Festival data — tool sets, fetcher parse self-tests, converter self-test, serving drift check"
+# registry.py --check refuses an edition that names no tool set, and a stale
+# editions plan. The fetchers' network half can only be checked against the live
+# sites, by the update task or a person; each one's parsing half runs offline and
+# is the only verification a fetcher change gets here. The converter's --check
 # re-derives every committed serving file from the committed raw and fails on any
 # difference, so neither side of that pair can be edited alone.
 if command -v python3 >/dev/null 2>&1; then
+  python3 scraper/festivals/registry.py --check
+  python3 scraper/festivals/migrate_edition_tools.py --selftest
+  python3 scraper/festivals/update.py --selftest
   python3 scraper/festivals/common.py --selftest
   for parser in scraper/festivals/*/sources/*/parse.py; do
     [ -e "$parser" ] || continue
@@ -91,6 +95,9 @@ if command -v python3 >/dev/null 2>&1; then
   python3 scraper/festivals/platforms/eventotron.py --selftest
   python3 scraper/festivals/platforms/spektrix.py --selftest
   python3 scraper/festivals/platforms/eventer.py --selftest
+  python3 scraper/festivals/platforms/eventact.py --selftest
+  python3 scraper/festivals/platforms/cinematheque.py --selftest
+  python3 scraper/festivals/platforms/smarticket.py --selftest
   python3 scraper/convert/to_serving.py --selftest
   python3 scraper/convert/to_serving.py --check
 else

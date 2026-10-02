@@ -32,6 +32,7 @@ format = "block"
 # municipality's street programme 28-30.9. The edition spans both.
 first = "2026-09-27"
 last = "2026-10-01"
+sources = ["venues-research", "acco-tc", "eventer", "street-programme"]
 
 [[source]]
 id = "venues-research"
