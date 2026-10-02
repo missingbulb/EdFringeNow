@@ -2,12 +2,12 @@
  "festival": "indnegev",
  "edition": "2026",
  "source": "indnegev-site",
- "fetchedAt": "2026-09-27T09:18:12Z",
+ "fetchedAt": "2026-10-02T18:27:53Z",
  "fetcher": "scraper/festivals/indnegev/sources/indnegev-site/fetch.py",
  "fetcherVersion": 1,
  "urls": [
   "https://indnegev.co.il/schedule",
-  "https://indnegev.co.il/_next/static/chunks/520-3dd8d178ec72bfd6.js"
+  "https://indnegev.co.il/_next/static/chunks/520-060d5d7ef00b7010.js"
  ],
  "files": [
   "programme.json"

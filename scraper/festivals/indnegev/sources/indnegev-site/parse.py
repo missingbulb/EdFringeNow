@@ -11,7 +11,8 @@ What the site carries, and where:
     chunks it loads;
   * one of those chunks holds the whole timetable as literals: a list of sets
     `{id:"e0",name:"…",day:1,stage:"kof",start:1080,end:1120}` (optional
-    `tag:"…"`, and `scheduleOnly:!0` on the side programme), the stages
+    `tag:"…"`, and `scheduleOnly:!0` on the side programme, whose sets also
+    carry texts such as `lead`, `about` and `items:[{title,credit,text}]`), the stages
     `kof:{name:"במת הקוף",short:"קוף",…}` with their column order
     `["kof","pil",…]`, and the days `1:{label:"חמישי",date:"15.10",iso:"2026-10-15",…}`.
     `start`/`end` are minutes after midnight of the set's festival day, and run
@@ -49,44 +50,64 @@ def has_programme(js):
 
 
 def _js_string(text, i):
-    """The JS string literal opening at text[i] (a double quote) -> (value, index after it)."""
-    j = i + 1
-    while text[j] != '"':
+    """The JS string literal opening at text[i] (either quote) -> (value, index after it).
+
+    The minifier quotes a string with `'` when it holds a `"`.
+    """
+    quote, j = text[i], i + 1
+    while text[j] != quote:
         j += 2 if text[j] == "\\" else 1
-    body = text[i + 1:j]
+    body = re.sub(r'\\(.)|"', lambda m: '\\"' if m.group(0) == '"' else
+                  "'" if m.group(1) == "'" else m.group(0), text[i + 1:j])
     body = re.sub(r"\\x([0-9a-fA-F]{2})", lambda m: "\\u00" + m.group(1), body)
     return json.loads('"' + body + '"'), j + 1
 
 
-def _object(text, i):
-    """The flat object literal opening at text[i] ('{') -> (dict, index after it).
+_KEY_RE = re.compile(r"([A-Za-z_$][\w$]*):")
 
-    Values are strings, integers or the minifier's booleans (`!0`, `!1`); that
-    is every value a set carries, and anything else is refused.
+
+def _value(text, j, key):
+    """The literal value at text[j] -> (value, index after it).
+
+    Values are strings, integers, the minifier's booleans (`!0`, `!1`), and
+    arrays and objects of those; anything else is refused.
     """
+    if text[j] in "\"'":
+        return _js_string(text, j)
+    if text[j] == "{":
+        return _object(text, j)
+    if text[j] == "[":
+        items, j = [], j + 1
+        while text[j] != "]":
+            item, j = _value(text, j, key)
+            items.append(item)
+            if text[j] == ",":
+                j += 1
+        return items, j + 1
+    if text.startswith("!0", j) or text.startswith("!1", j):
+        return text[j + 1] == "0", j + 2
+    n = _NUMBER_RE.match(text, j)
+    if not n:
+        raise ValueError("unexpected value %r for %s" % (text[j:j + 40], key))
+    # The minifier writes 1000 as `1e3`.
+    return int(float(n.group(0))), n.end()
+
+
+def _object(text, i):
+    """The object literal opening at text[i] ('{') -> (dict, index after it)."""
     record, j = {}, i + 1
     while text[j] != "}":
-        m = re.compile(r"([A-Za-z_$][\w$]*):").match(text, j)
+        m = _KEY_RE.match(text, j)
         if not m:
             raise ValueError("unexpected %r in a set literal" % text[j:j + 40])
-        key, j = m.group(1), m.end()
-        if text[j] == '"':
-            value, j = _js_string(text, j)
-        elif text.startswith("!0", j) or text.startswith("!1", j):
-            value, j = text[j + 1] == "0", j + 2
-        else:
-            n = _NUMBER_RE.match(text, j)
-            if not n:
-                raise ValueError("unexpected value %r for %s" % (text[j:j + 40], key))
-            # The minifier writes 1000 as `1e3`.
-            value, j = int(float(n.group(0))), n.end()
-        record[key] = value
+        key = m.group(1)
+        record[key], j = _value(text, m.end(), key)
         if text[j] == ",":
             j += 1
     return record, j + 1
 
 
-_HIDE_RE = re.compile(r'let ([\w$]+)=([\w$]+)=>([^\n]+?),[\w$]+=\[\{id:"')
+_HIDE_RE = re.compile(r'let ([\w$]+)=([\w$]+)=>([^\n]+?),[\w$]+=\[(?:\.\.\.\[)?(?=\{id:")')
 _TERM_RE = re.compile(r'^(?:(?P<lit>"[^"]*"|-?\d+)(?P<lop>===|!==)(?P<lvar>[\w$]+)\.(?P<lkey>\w+)'
                       r'|(?P<rvar>[\w$]+)\.(?P<rkey>\w+)(?P<rop>===|!==|<=|>=|<|>)(?P<rlit>"[^"]*"|-?\d+))$')
 
@@ -94,19 +115,22 @@ _TERM_RE = re.compile(r'^(?:(?P<lit>"[^"]*"|-?\d+)(?P<lop>===|!==)(?P<lvar>[\w$]
 def hiding_rule(js):
     """The predicate the chunk filters its set list through before showing it.
 
-    The list is written `n=[…].filter(a=>!d(a))`, with `d` a disjunction of
-    conjunctions of comparisons on a set's fields, e.g.
-    `"adama"===a.stage||1===a.day&&"raket"===a.stage&&a.start<1320`. Returns it
-    as `[[(key, op, value), …], …]` (any clause true hides the set), or [] when
-    the list is not filtered. Anything outside that grammar is refused rather
-    than guessed at.
+    The list is written `n=[…].filter(a=>!d(a))`, or `s=[...[…].filter(a=>!n(a)),...d.E]`
+    when a second list (the side programme) is appended unfiltered, with `d` a
+    disjunction of conjunctions of comparisons on a set's fields, e.g.
+    `"adama"===a.stage||1===a.day&&"raket"===a.stage&&a.start<1320`. Returns
+    `(rule, (start, end))`: the rule as `[[(key, op, value), …], …]` (any clause
+    true hides the set) and the span of `js` holding the filtered list, or
+    `([], None)` when no list is filtered. Anything outside that grammar is
+    refused rather than guessed at.
     """
     m = _HIDE_RE.search(js)
     if not m:
-        return []
+        return [], None
     name, arg, body = m.groups()
-    if not re.search(r"\]\.filter\(([\w$]+)=>!%s\(\1\)\)" % re.escape(name), js):
-        return []
+    f = re.compile(r"\]\.filter\(([\w$]+)=>!%s\(\1\)\)" % re.escape(name)).search(js, m.end())
+    if not f:
+        return [], None
     rule = []
     for clause in body.split("||"):
         terms = []
@@ -120,7 +144,7 @@ def hiding_rule(js):
                 lit, op, key = t.group("rlit"), t.group("rop"), t.group("rkey")
             terms.append((key, op, json.loads(lit)))
         rule.append(terms)
-    return rule
+    return rule, (m.end(), f.start())
 
 
 _OPS = {
@@ -136,10 +160,11 @@ def hidden(record, rule):
 
 def parse_programme(js):
     """The programme chunk -> {days, stages, stageOrder, sets} in the site's own vocabulary."""
-    sets = []
+    sets, offsets = [], []
     for m in _SET_START_RE.finditer(js):
         record, _ = _object(js, m.start())
         sets.append(record)
+        offsets.append(m.start())
     stages = {code: {"name": _js_string('"%s"' % name, 0)[0], "short": _js_string('"%s"' % short, 0)[0]}
               for code, name, short in _STAGE_RE.findall(js)}
     order = _STAGE_ORDER_RE.search(js)
@@ -156,9 +181,9 @@ def parse_programme(js):
             raise ValueError("set %s is on day %r, which the programme does not date" % (s["id"], s["day"]))
         if s["stage"] not in stages:
             raise ValueError("set %s is on stage %r, which the programme does not name" % (s["id"], s["stage"]))
-    rule = hiding_rule(js)
-    for s in sets:
-        s["shown"] = not hidden(s, rule)
+    rule, span = hiding_rule(js)
+    for s, at in zip(sets, offsets):
+        s["shown"] = not (span and span[0] <= at < span[1] and hidden(s, rule))
     return {
         "days": days,
         "stages": stages,
@@ -217,9 +242,21 @@ def selftest():
     assert not any(s["shown"] for s in sets if s["stage"] == "adama")
     assert sets[-1]["end"] == 1080 and any(s["end"] == 1000 for s in sets)
 
-    assert hiding_rule('let d=a=>"adama"===a.stage||1===a.day&&"raket"===a.stage&&a.start<1320,n=[{id:"e0"}].filter(a=>!d(a))') == [
+    assert hiding_rule('let d=a=>"adama"===a.stage||1===a.day&&"raket"===a.stage&&a.start<1320,n=[{id:"e0"}].filter(a=>!d(a))')[0] == [
         [("stage", "===", "adama")], [("day", "===", 1), ("stage", "===", "raket"), ("start", "<", 1320)]]
-    assert hiding_rule('n=[{id:"e0"}]') == []
+    assert hiding_rule('n=[{id:"e0"}]') == ([], None)
+
+    # From 2026-10-02 the main list is filtered and the side programme appended
+    # after it, unfiltered, with texts in nested and single-quoted literals.
+    side = parse_programme(_sample("programme-chunk-side.txt"))["sets"]
+    assert len(side) == 156, len(side)
+    adama = [s for s in side if s["stage"] == "adama"]
+    assert adama and all(s["shown"] == s["id"].startswith("ad-") for s in adama), adama
+    assert all(s["shown"] for s in side if s["stage"] != "adama")
+    films = next(s for s in side if s["id"] == "ad-2-1320")["items"]
+    assert films[0] == {"title": "סקיצה", "credit": "שחר איצקין",
+                        "text": "בין ספות ונסיעות, יקי הצייר הבלתי מוכשר מחפש את עצמו ואיפה להעביר את הזמן."}, films[0]
+    assert next(s for s in side if s["id"] == "ad-1-1200")["about"].startswith("דרך יומניה האישיים")
     try:
         hiding_rule('let d=a=>a.name.startsWith("x"),n=[{id:"e0"}].filter(a=>!d(a))')
         raise AssertionError("an unreadable rule must be refused")
@@ -234,6 +271,10 @@ def selftest():
 
     record, end = _object('{id:"x",name:"a \\"b\\" \\xe9",day:2,stage:"kof",start:5,end:-1,flag:!1}', 0)
     assert record == {"id": "x", "name": 'a "b" é', "day": 2, "stage": "kof", "start": 5, "end": -1, "flag": False}
+    record, _ = _object(r"""{id:"y",about:'סולנית "המכשפות" it\'s \\ \n',day:1}""", 0)
+    assert record == {"id": "y", "about": 'סולנית "המכשפות" it\'s \\ \n', "day": 1}, record
+    record, _ = _object('{id:"z",items:[{title:"a",n:2},{title:"b"}],tags:["x",!0]}', 0)
+    assert record == {"id": "z", "items": [{"title": "a", "n": 2}, {"title": "b"}], "tags": ["x", True]}, record
     print("indnegev-site parse selftest ok (%d sets)" % len(sets))
 
 
