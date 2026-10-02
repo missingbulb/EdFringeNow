@@ -35,6 +35,7 @@ format = "block"
 # ordinal: the box office's festival page numbers no edition.
 first = "2026-10-28"
 last = "2026-11-01"
+sources = ["smarticket", "venues-research"]
 
 [[source]]
 id = "smarticket"

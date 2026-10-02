@@ -35,6 +35,18 @@
    ]
   },
   {
+   "festival": "ais-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-19",
+   "last": "2026-10-21",
+   "tools": [
+    "eventact-agenda",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "brighton-fringe",
    "edition": "2026",
    "format": "block",
@@ -233,6 +245,20 @@
    "refreshTools": []
   },
   {
+   "festival": "kol-hamusica",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-28",
+   "last": "2026-11-01",
+   "tools": [
+    "smarticket",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "smarticket"
+   ]
+  },
+  {
    "festival": "leicester-comedy",
    "edition": "2026",
    "format": "block",
@@ -270,6 +296,18 @@
    "refreshTools": []
   },
   {
+   "festival": "red-sea-jazz",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-11",
+   "last": "2026-11-14",
+   "tools": [
+    "festival-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "tel-aviv-festival",
    "edition": "2026",
    "format": "block",
@@ -282,6 +320,18 @@
    "refreshTools": [
     "festival-site"
    ]
+  },
+  {
+   "festival": "tlvfest",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-31",
+   "tools": [
+    "cinematheque",
+    "venues-research"
+   ],
+   "refreshTools": []
   }
  ]
 }

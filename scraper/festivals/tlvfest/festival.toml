@@ -34,6 +34,7 @@ format = "block"
 # ordinal: neither the programme nor the festival's page numbers the edition.
 first = "2026-10-22"
 last = "2026-10-31"
+sources = ["cinematheque", "venues-research"]
 
 [[source]]
 id = "cinematheque"

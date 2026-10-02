@@ -33,6 +33,7 @@ format = "block"
 ordinal = 40
 first = "2026-11-11"
 last = "2026-11-14"
+sources = ["festival-site", "venues-research"]
 
 [[source]]
 id = "festival-site"

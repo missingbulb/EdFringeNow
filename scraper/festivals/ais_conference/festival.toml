@@ -35,6 +35,7 @@ format = "block"
 ordinal = 42
 first = "2026-10-19"
 last = "2026-10-21"
+sources = ["eventact-agenda", "venues-research"]
 
 [[source]]
 id = "eventact-agenda"
