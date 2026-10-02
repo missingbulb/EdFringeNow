@@ -2079,7 +2079,7 @@ otherwise the one it covers most.
 
 - `23.37` The year's rows take the most searched festivals first: each goes on a row where it keeps clear of its neighbours, a festival of a week or more on the free row holding the fewest such, until the rows are 70% full.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.37 -->
+  <table><thead><tr><th align="left">Festivals (how searched)</th><th align="left">Rows</th><th align="left">Leading the trip</th><th align="left">Drawn on the rows</th></tr></thead><tbody><tr><td>Fringe 0–40 (900), Acco 10–20 (50), Haifa 50–55 (300)</td><td>2</td><td>none</td><td>1: Fringe, Haifa · 2: Acco</td></tr><tr><td>Fringe 0–30 (900), Haifa 40–70 (300), Acco 80–84 (50)</td><td>2</td><td>none</td><td>1: Fringe, Acco · 2: Haifa</td></tr><tr><td>Fringe 0–30 (900), Haifa 35–72 (300), Acco 75–80 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>Acco</td><td>1: Acco, Haifa</td></tr><tr><td>Fringe 0–10 (unknown), Acco 20–40 (unknown), Haifa 50–55 (40)</td><td>1</td><td>none</td><td>1: Haifa, Acco, Fringe</td></tr></tbody></table> <!-- req-gallery:23.37 -->
 
   <details><summary>Notes</summary>
 
@@ -2092,7 +2092,7 @@ otherwise the one it covers most.
 
 - `23.38` In a crowded year the rows carry bars without names, and every festival they leave out is drawn faintly behind them in its type's colour.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.38 -->
+  ![planng-year-crowd.23.38](requirements/screen/cases/planng-year-crowd.23.38.png) <!-- req-gallery:23.38 -->
 
   <details><summary>Notes</summary>
 
@@ -2103,7 +2103,7 @@ otherwise the one it covers most.
 
 - `23.39` Changing a filter moves the festivals rather than redrawing them: a festival still drawn glides to its new place, one promoted from behind grows into its row, and the rest fade out or in.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.39 -->
+  🚩 _Behavior leaf._ <!-- req-gallery:23.39 -->
 
   <details><summary>Notes</summary>
 
@@ -2112,11 +2112,11 @@ otherwise the one it covers most.
 
 - `23.40` Pointing along the year magnifies the weeks under the pointer, as a dock does, and a bar grown wide enough there shows its name.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.40 -->
+  ![planng-year-lens.23.40](requirements/screen/cases/planng-year-lens.23.40.png) <!-- req-gallery:23.40 -->
 
 - `23.41` Pointing at a type's picture shows its card: its name, how many festivals it holds, its subtypes and the next of its festivals.
 
-  ❓ _No case claims this leaf yet — the coverage gate is red._ <!-- req-gallery:23.41 -->
+  ![planng-type-card.23.41](requirements/screen/cases/planng-type-card.23.41.png) <!-- req-gallery:23.41 -->
 
 ## 24. How you are getting here
 
@@ -2146,7 +2146,7 @@ is looked up before the reader has said they fly.
 
 - `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
 
-- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's visible height, over the festivals beside the trip, and stay there while the festivals scroll.
+- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's rows, over the festivals beside the trip.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.11 -->
 

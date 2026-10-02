@@ -2,7 +2,7 @@
 const { jerusalemReady, routeCrowdedYear } = require("../../shared/case-helpers");
 
 /* Where the grips and the travel pictures sit, as distances from the middle of
- * the strip's visible rows, before and after scrolling those rows. */
+ * the strip's rows. */
 const place = (page) =>
   page.evaluate(() => {
     const rows = document.querySelector(".tl-rows").getBoundingClientRect();
@@ -18,7 +18,7 @@ const place = (page) =>
   });
 
 module.exports = {
-  description: "the travel pictures and the trip's grips sit at the middle of the strip's visible height, and stay there while the festivals scroll",
+  description: "the travel pictures and the trip's grips sit at the middle of the strip's rows, over the festivals beside the trip",
   page: "/planNG/?festival=jerusalem-comedy",
   viewport: "desktop",
   async verify(page, { origin, assert }) {
@@ -26,15 +26,7 @@ module.exports = {
     await page.goto(`${origin}/planNG/?festival=jerusalem-comedy`, { waitUntil: "load" });
     await jerusalemReady(page);
     const expected = { grips: [0, 0], ways: [0, 0] };
-    assert.deepEqual(await place(page), expected, "centred on the visible rows");
-
-    const scrolled = await page.evaluate(() => {
-      const rows = document.querySelector(".tl-rows");
-      rows.scrollTop = rows.scrollHeight;
-      return rows.scrollTop;
-    });
-    assert.ok(scrolled > 0, "the rows scroll");
-    assert.deepEqual(await place(page), expected, "and stay centred once scrolled");
+    assert.deepEqual(await place(page), expected, "centred on the rows");
 
     // A travel picture overlays the festivals beside the trip rather than
     // sitting in a lane beneath them.
