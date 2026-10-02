@@ -7,14 +7,28 @@
  * handle has to read the pointer the other way round.
  */
 
-import { dayFrac, monthTicks, stackRows, timelineBunches } from "./lib/timeline.js";
+import { dayFrac, fillRows, monthTicks, rankBars, timelineBars } from "./lib/timeline.js";
+import { typeOfKind } from "./lib/festival-filter.js";
 import { shiftDay } from "./lib/pool.js";
 import { escapeHtml, t } from "./i18n/i18n.js";
 
-const ROW_PX = 30;
-const LABEL_GAP_PX = 10;
-const LATE_FRAC = 0.72;
-const BAR_MIN_PX = 32;
+// As many rows as stand level with the types and the globe beside the year.
+const ROWS = 9;
+const ROW_PX = 20;
+const GAP_PX = 8;
+const BAR_PX = 12;
+const BAR_MIN_PX = 10;
+const FILL = 0.7;
+const NAMES_MAX = 10;
+const LONG_DAYS = 7;
+const FAINT_PX = 5;
+const LEAVE_MS = 450;
+// The lens: how far either side of the pointer it reaches, and how much it
+// widens the weeks right under it.
+const LENS_PX = 200;
+const LENS_POWER = 4;
+// A name inside a magnified bar is set a little smaller than beside one.
+const MAGNIFIED_TEXT = 0.9;
 // A holiday orb is sized for the eye, not the strip's scale: a one-day
 // holiday is a dot, and a longer break grows more slowly than its days.
 const ORB_PX = 10;
@@ -31,12 +45,7 @@ let cheerUntil = 0;
  * @param {string} o.todayISO
  * @param {string|null} o.focusKey the focused edition's key
  * @param {{from: string, to: string}|null} o.period the trip
- * @param {(festival: object, edition: object) => string} o.label a lone festival's words
- * @param {(festival: object) => string} [o.bunchBy] which festivals share a
- *   pill: those this gives the same answer for; by country when left out
- * @param {(bunch: object) => {name: string, tip: string}} o.bunchLabel a country's
- *   pill's words, when it holds more than one festival
- * @param {(country: string) => string} o.flag a country's flag, as HTML
+ * @param {(festival: object, edition: object) => string} o.label a festival's words
  * @param {(iso: string) => string} o.monthLabel
  * @param {(iso: string) => string} o.dayText a day as a handle announces it
  * @param {(days: number) => string} o.lengthText the trip's length, in words
@@ -46,8 +55,6 @@ let cheerUntil = 0;
  * @param {{html: string, settled: boolean, tip: string}|null} [o.travel] the
  *   picture beside each end of the trip saying how the reader gets there and
  *   back, or null where there is no journey to plan
- * @param {(bunch: object) => string} o.bunchCard the card a country's pill of
- *   several festivals shows, as HTML
  * @param {{from: string, to: string, days: number}[]} [o.breaks] the breaks the
  *   reader's public holidays make inside the span, an orb each on the months
  * @param {(brk: object) => string} [o.breakCard] the card an orb shows, as HTML
@@ -55,14 +62,14 @@ let cheerUntil = 0;
  */
 export function renderTimeline(host, o) {
   const { registry, span, todayISO, focusKey, period, label, monthLabel, dayText, lengthText, todayText, festivalCard } = o;
-  const { breaks = [], breakCard, bunchBy, bunchLabel, bunchCard, flag, travel = null, noneKey = "timeline.none" } = o;
+  const { breaks = [], breakCard, travel = null, noneKey = "timeline.none" } = o;
   const cards = [];
   const card = (html) => cards.push(html) - 1;
-  const bunches = timelineBunches(registry, span, bunchBy);
+  const bars = rankBars(timelineBars(registry, span), focusKey);
   const months = monthTicks(span)
     .map(
       (m, i) =>
-        `<span class="tl-month${i === 0 ? " tl-month--first" : ""}" style="inset-inline-start:${pct(m.frac)}">` +
+        `<span class="tl-month${i === 0 ? " tl-month--first" : ""}" data-frac="${m.frac}" style="inset-inline-start:${pct(m.frac)}">` +
         `${escapeHtml(monthLabel(m.date))}</span>`
     )
     .join("");
@@ -90,43 +97,6 @@ export function renderTimeline(host, o) {
     `<line class="dude-leg" x1="10" y1="21" x2="6.5" y2="33"/>` +
     `<line x1="10" y1="21" x2="13.5" y2="33"/>` +
     `</g></svg></span>`;
-  const items = bunches
-    .map((bunch) => {
-      const { lead } = bunch;
-      const many = bunch.bars.length > 1;
-      const focused = bunch.bars.some((bar) => bar.key === focusKey);
-      const words = many ? bunchLabel(bunch) : label(lead.festival, lead.edition);
-      const html = many ? bunchCard(bunch) : festivalCard(lead.festival, lead.edition, lead.hasData);
-      // Late in the year the label would run off the strip, so it is hung
-      // from the pill's far end and reads back towards the start instead;
-      // layoutRows() hangs any other whose label still overruns the same way.
-      const late = bunch.start > LATE_FRAC;
-      const place = late ? `inset-inline-end:${pct(1 - bunch.end)}` : `inset-inline-start:${pct(bunch.start)}`;
-      // Inside a country's pill each festival's run is a shade of its own, so
-      // the days most festivals share read darkest.
-      const width = bunch.end - bunch.start;
-      const runs = many
-        ? bunch.bars
-            .map(
-              (bar) =>
-                `<span class="tl-run" style="inset-inline-start:${pct((bar.start - bunch.start) / width)};` +
-                `width:${pct((bar.end - bar.start) / width)}"></span>`
-            )
-            .join("")
-        : "";
-      return (
-        `<button type="button" class="tl-item${focused ? " is-focus" : ""}${bunch.hasData ? "" : " is-empty"}` +
-        `${many ? " tl-item--bunch" : ""}${late ? " tl-item--late" : ""}"` +
-        ` data-edition="${escapeHtml(bunch.key)}" data-festival="${escapeHtml(lead.festival.id)}"` +
-        `${many ? ` data-bunch="${bunch.bars.length}"` : ""}` +
-        ` aria-pressed="${focused}" data-span="${width}" data-start="${bunch.start}" data-end="${bunch.end}"` +
-        `${late ? ` data-late="1"` : ""} style="${place}"` +
-        ` aria-label="${escapeHtml(words.tip)}" data-card="${card(html)}">` +
-        `<span class="tl-bar" aria-hidden="true">${runs}${flag(lead.festival.country)}</span>` +
-        `<span class="tl-label">${escapeHtml(words.name)}</span></button>`
-      );
-    })
-    .join("");
   const orbs = breaks
     .map((brk) => {
       const px = orbPx(brk.days);
@@ -138,55 +108,65 @@ export function renderTimeline(host, o) {
       );
     })
     .join("");
-  const scrolled = host.querySelector(".tl-rows")?.scrollTop || 0;
+  // The rows outlive the redraw, so a festival still drawn moves to its new
+  // place rather than being drawn afresh there (23.39).
+  const rows = host.querySelector(".tl-rows") || document.createElement("div");
+  rows.className = "tl-rows";
   host.innerHTML =
     `<div class="tl-months">${months}${orbs}${today}</div>` +
     `<div class="tl-track${shown ? " has-trip" : ""}" role="group" aria-label="${escapeHtml(t("timeline.label"))}">` +
-    `${band}<div class="tl-rows">${items}</div></div>` +
+    `${band}<div class="tl-rows-slot"></div></div>` +
     `<div class="tl-card" role="tooltip" hidden></div>`;
+  host.querySelector(".tl-rows-slot").replaceWith(rows);
   host._cards = cards;
-  wireRowScroll(host);
-  if (!bunches.length) {
-    host.querySelector(".tl-rows").insertAdjacentHTML(
-      "beforeend",
-      `<p class="tl-none" data-i18n-slot="${noneKey}">${escapeHtml(t(noneKey))}</p>`
-    );
+  const kept = new Map([...rows.querySelectorAll(".tl-item:not(.is-leaving)")].map((el) => [el.dataset.edition, el]));
+  rows.querySelector(".tl-none")?.remove();
+  const entering = [];
+  host._order = bars.map((bar) => {
+    const words = label(bar.festival, bar.edition);
+    let el = kept.get(bar.key);
+    kept.delete(bar.key);
+    if (!el) {
+      el = document.createElement("button");
+      el.type = "button";
+      el.innerHTML = `<span class="tl-bar" aria-hidden="true"></span><span class="tl-label"></span>`;
+      el.classList.add("is-entering");
+      entering.push(el);
+      rows.append(el);
+    }
+    const focused = bar.key === focusKey;
+    el.className = `tl-item${focused ? " is-focus" : ""}${bar.hasData ? "" : " is-empty"}${
+      el.classList.contains("is-entering") ? " is-entering" : ""
+    }`;
+    Object.assign(el.dataset, {
+      edition: bar.key,
+      festival: bar.festival.id,
+      type: typeOfKind(bar.festival.kind) || "",
+      start: bar.start,
+      end: bar.end,
+      long: String(bar.end - bar.start >= LONG_DAYS / span.days),
+      card: card(festivalCard(bar.festival, bar.edition, bar.hasData)),
+    });
+    el.setAttribute("aria-pressed", String(focused));
+    el.setAttribute("aria-label", words.tip);
+    el.querySelector(".tl-label").textContent = words.name;
+    return el;
+  });
+  for (const el of kept.values()) leave(el);
+  if (!bars.length) {
+    rows.insertAdjacentHTML("beforeend", `<p class="tl-none" data-i18n-slot="${noneKey}">${escapeHtml(t(noneKey))}</p>`);
   }
   layoutRows(host);
-  host.querySelector(".tl-rows").scrollTop = scrolled;
-  fadeEdges(host.querySelector(".tl-rows"));
+  wireLens(host);
+  if (entering.length) requestAnimationFrame(() => entering.forEach((el) => el.classList.remove("is-entering")));
 }
 
-/* The rows scroll under a strip that keeps its height; a fade at an edge says
- * more rows lie past it. A wheel turned over the trip's ends or its travel
- * pictures, which sit above the rows, still scrolls them. */
-function wireRowScroll(host) {
-  if (host._rowScroll) return;
-  host._rowScroll = true;
-  host.addEventListener(
-    "scroll",
-    (e) => {
-      if (e.target.classList?.contains("tl-rows")) fadeEdges(e.target);
-    },
-    true
-  );
-  host.addEventListener(
-    "wheel",
-    (e) => {
-      const rows = host.querySelector(".tl-rows");
-      if (!rows || !e.target.closest(".tl-track") || rows.contains(e.target)) return;
-      const room = e.deltaY > 0 ? rows.scrollHeight - rows.clientHeight - rows.scrollTop : rows.scrollTop;
-      if (room <= 0) return;
-      e.preventDefault();
-      rows.scrollTop += e.deltaY;
-    },
-    { passive: false }
-  );
-}
-
-function fadeEdges(rows) {
-  rows.classList.toggle("is-more-above", rows.scrollTop > 0);
-  rows.classList.toggle("is-more-below", rows.scrollTop + rows.clientHeight < rows.scrollHeight - 1);
+/* A festival the filters no longer draw fades out where it stands, then goes. */
+function leave(el) {
+  el.classList.add("is-leaving");
+  el.tabIndex = -1;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) el.remove();
+  else setTimeout(() => el.remove(), LEAVE_MS);
 }
 
 const pct = (f) => `${(f * 100).toFixed(3)}%`;
@@ -446,47 +426,131 @@ export function wireTripHandles(host, { span, trip, normalize, commit }) {
   });
 }
 
-/* Place an item from the pill's start, or hang it from the pill's far end. */
-function hang(el, fromEnd) {
-  el.classList.toggle("tl-item--late", fromEnd);
-  el.style.insetInlineStart = fromEnd ? "" : pct(Number(el.dataset.start));
-  el.style.insetInlineEnd = fromEnd ? pct(1 - Number(el.dataset.end)) : "";
+/* Where a faint festival sits across the strip's height: anywhere, but always
+ * the same place for the same festival. */
+function faintTop(key) {
+  let h = 0;
+  for (const ch of key) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return h % (ROWS * ROW_PX - FAINT_PX);
 }
 
-/** Stack the bars into rows once their labels can be measured. */
+/* A festival's box on the strip, along the year from its start. */
+function place(el, x, w, y, h) {
+  el.style.insetInlineStart = `${x}px`;
+  el.style.width = `${w}px`;
+  el.style.top = `${y}px`;
+  el.style.height = `${h}px`;
+}
+
+/**
+ * Put the festivals on the rows: by name while the year draws few enough
+ * that every name fits, else the most searched as bars alone until the rows
+ * are full enough, every other one faint behind them (23.37, 23.38).
+ */
 export function layoutRows(host) {
   const track = host.querySelector(".tl-track");
   if (!track) return;
-  const box = track.getBoundingClientRect();
-  if (!box.width) return;
-  const rtl = getComputedStyle(track).direction === "rtl";
-  const items = [...track.querySelectorAll(".tl-item")];
-  // A bar is as long as its run, but never shorter than something a finger
-  // can find: a five-day festival is a few pixels of a year on a phone.
-  for (const el of items) {
-    el.querySelector(".tl-bar").style.width = `${Math.max(BAR_MIN_PX, Number(el.dataset.span) * box.width)}px`;
-    if (!el.dataset.late) hang(el, false);
-  }
-  const extentOf = (el) => {
-    const r = el.getBoundingClientRect();
-    return rtl ? { from: box.right - r.right, to: box.right - r.left } : { from: r.left - box.left, to: r.right - box.left };
-  };
-  // Hung from its end only where that leaves less of the label off the strip.
-  for (const el of items) {
-    if (el.dataset.late) continue;
-    const over = extentOf(el).to - box.width;
-    if (over <= 0) continue;
-    hang(el, true);
-    if (-extentOf(el).from > over) hang(el, false);
-  }
-  const extents = items.map(extentOf);
-  const rows = stackRows(extents, LABEL_GAP_PX);
-  items.forEach((el, i) => {
-    el.style.top = `${rows[i] * ROW_PX}px`;
+  const width = track.getBoundingClientRect().width;
+  if (!width) return;
+  const items = (host._order || []).filter((el) => el.isConnected);
+  // A name's own width, read while it stands beside its bar.
+  for (const el of items) el.classList.remove("is-magnified");
+  for (const el of items) el.dataset.lw = el.querySelector(".tl-label").scrollWidth;
+  const geo = items.map((el) => {
+    const x = Number(el.dataset.start) * width;
+    return { x, w: Math.max(BAR_MIN_PX, (Number(el.dataset.end) - Number(el.dataset.start)) * width) };
   });
-  const count = rows.length ? Math.max(...rows) + 1 : 1;
-  const scroller = track.querySelector(".tl-rows");
-  scroller.style.height = `${count * ROW_PX + 6}px`;
-  fadeEdges(scroller);
+  let rows = null;
+  const late = geo.map(() => false);
+  if (items.length <= NAMES_MAX) {
+    // A name runs after its bar, or before it where it would run off the end.
+    const extents = items.map((el, i) => {
+      const { x, w } = geo[i];
+      const name = Number(el.dataset.lw) + 6;
+      late[i] = x + w + name > width && x - name >= 0;
+      return late[i] ? { from: x - name, to: x + w } : { from: x, to: x + w + name };
+    });
+    rows = fillRows(extents, { rows: ROWS, width, gap: GAP_PX, fill: Infinity });
+    if (rows.some((row) => row < 0)) rows = null;
+  }
+  const named = Boolean(rows);
+  rows ||= fillRows(
+    geo.map(({ x, w }, i) => ({ from: x, to: x + w, long: items[i].dataset.long === "true" })),
+    { rows: ROWS, width, gap: GAP_PX, fill: FILL }
+  );
+  track.classList.toggle("is-named", named);
+  items.forEach((el, i) => {
+    const faint = rows[i] < 0;
+    el.classList.toggle("is-faint", faint);
+    el.classList.toggle("tl-item--late", named && late[i]);
+    el.tabIndex = faint ? -1 : 0;
+    if (faint) el.setAttribute("aria-hidden", "true");
+    else el.removeAttribute("aria-hidden");
+    const h = faint ? FAINT_PX : BAR_PX;
+    const y = faint ? faintTop(el.dataset.edition) : rows[i] * ROW_PX + (ROW_PX - BAR_PX) / 2;
+    Object.assign(el.dataset, { x: geo[i].x, w: geo[i].w, y, h });
+    place(el, geo[i].x, geo[i].w, y, h);
+  });
+  host.querySelector(".tl-rows").style.height = `${ROWS * ROW_PX}px`;
+  host._lensWidth = width;
   fitWays(host);
+}
+
+
+/* Where a point along the strip lands under the lens: the weeks right under
+ * the pointer spread wide and those at the lens's rim close up, so nothing
+ * outside it moves. */
+function underLens(x, at) {
+  const d = x - at;
+  const far = Math.abs(d) / LENS_PX;
+  if (far >= 1) return x;
+  return at + Math.sign(d) * LENS_PX * (((LENS_POWER + 1) * far) / (LENS_POWER * far + 1));
+}
+
+/**
+ * Pointing along the year magnifies the weeks under the pointer, as a dock
+ * does: the festivals and the months there spread out, the bars nearest grow,
+ * and a bar grown wide enough shows its name (23.40).
+ */
+function wireLens(host) {
+  if (host._lens) return;
+  host._lens = true;
+  const lensAt = (e) => {
+    const track = host.querySelector(".tl-track");
+    if (!track || e.pointerType !== "mouse" || track.classList.contains("is-dragging")) return null;
+    const box = track.getBoundingClientRect();
+    if (e.clientY < box.top || e.clientY > box.bottom) return null;
+    return getComputedStyle(track).direction === "rtl" ? box.right - e.clientX : e.clientX - box.left;
+  };
+  host.addEventListener("pointermove", (e) => {
+    const at = lensAt(e);
+    if (at == null) return clearLens(host);
+    host.querySelector(".tl-track").classList.add("is-lens");
+    for (const el of host._order || []) {
+      if (!el.isConnected || el.classList.contains("is-leaving")) continue;
+      const x = Number(el.dataset.x);
+      const w = Number(el.dataset.w);
+      const left = underLens(x, at);
+      const right = underLens(x + w, at);
+      const near = Math.max(0, 1 - Math.abs(x + w / 2 - at) / LENS_PX);
+      const faint = el.classList.contains("is-faint");
+      const h = Number(el.dataset.h) + (faint ? 0 : Math.round(8 * near));
+      place(el, left, Math.max(BAR_MIN_PX, right - left), Number(el.dataset.y) - (h - Number(el.dataset.h)) / 2, h);
+      el.classList.toggle("is-magnified", !faint && near > 0 && right - left >= Number(el.dataset.lw) * MAGNIFIED_TEXT + 14);
+    }
+    const width = host._lensWidth || 0;
+    for (const m of host.querySelectorAll(".tl-month")) m.style.insetInlineStart = `${underLens(Number(m.dataset.frac) * width, at)}px`;
+  });
+  host.addEventListener("pointerleave", () => clearLens(host));
+}
+
+function clearLens(host) {
+  const track = host.querySelector(".tl-track");
+  if (!track || !track.classList.contains("is-lens")) return;
+  track.classList.remove("is-lens");
+  for (const el of host._order || []) {
+    el.classList.remove("is-magnified");
+    if (el.isConnected && el.dataset.x) place(el, Number(el.dataset.x), Number(el.dataset.w), Number(el.dataset.y), Number(el.dataset.h));
+  }
+  for (const m of host.querySelectorAll(".tl-month")) m.style.insetInlineStart = pct(Number(m.dataset.frac));
 }

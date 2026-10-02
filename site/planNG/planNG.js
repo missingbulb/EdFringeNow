@@ -75,6 +75,7 @@ import {
   NO_FILTER,
   areaPlace,
   cityPlace,
+  festivalMatches,
   filterOptions,
   filterRegistry,
   parentPlace,
@@ -87,7 +88,6 @@ import { createGlobe } from "./globe-view.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
 import { wireTips } from "./tip.js";
 import { showCityPhoto } from "./city-backdrop.js";
-import { flagSvg } from "./flags.js";
 import { cheer, layoutRows, renderTimeline, wireTimelineCards, wireTripHandles } from "./timeline-view.js";
 import { currentDir, currentIntlLocale, currentLocale, escapeHtml, initI18n, t, tHtml } from "./i18n/i18n.js";
 
@@ -3523,13 +3523,6 @@ function renderTimelineStrip() {
     todayText: t("timeline.today"),
     festivalCard,
     travel: travelIcons(),
-    bunchBy: state.stripFilter.place ? cityPlace : undefined,
-    bunchLabel: (bunch) => ({
-      name: t("bunch.label", { count: bunch.bars.length, name: wordmarkOf(bunch.lead.festival).join(" ") }),
-      tip: t("bunch.title", { count: bunch.bars.length, place: bunchPlaceName(bunch.lead.festival) }),
-    }),
-    bunchCard,
-    flag: (country) => flagSvg(country, "tl-flag"),
     breaks: state.holidays.doc ? holidayBreaks(state.holidays.doc, timelineSpan(todayISO()), currentLocale()) : [],
     breakCard,
   });
@@ -3661,45 +3654,12 @@ function stripPlaceName(place) {
   return area ? t(AREA_KEYS[area]) : t("globe.world");
 }
 
-/* Beside the year: the globe with the way back out over it and the place
- * menu under it, and the nine types' pictures with the chosen one's subtypes
- * under them, each offering only what the registry holds (23.24). */
+/* Beside the year: the globe with the way back out over it, and the nine
+ * types' pictures with the chosen one's subtypes under them, each offering
+ * only what the registry holds (23.24). */
 function renderStripFilters() {
   const f = state.stripFilter;
   const { places, types, subtypes } = filterOptions(state.registry, f);
-  const opt = (value, text, selected) =>
-    `<option value="${escapeHtml(value)}"${value === selected ? " selected" : ""}>${escapeHtml(text)}</option>`;
-  const byName = (a, b) => a.name.localeCompare(b.name, currentIntlLocale());
-  const indent = " ";
-  const areaGroups = [...new Set(places.map((p) => p.area))]
-    .map((area) => ({ area, name: area ? t(AREA_KEYS[area]) : "", countries: places.filter((p) => p.area === area) }))
-    .sort(byName)
-    .map(
-      (g) =>
-        `<optgroup label="${escapeHtml(g.name)}">` +
-        (g.area && g.countries.length > 1 ? opt(areaPlace(g.area), t("filter.allOf", { country: g.name }), f.place) : "") +
-        g.countries
-          .map((p) => ({ ...p, name: regionName(p.country) }))
-          .sort(byName)
-          .map(
-            (p) =>
-              opt(p.country, p.name, f.place) +
-              p.cities
-                .map((city) => cityPlace({ country: p.country, city }))
-                .map((place) => ({ place, name: stripPlaceName(place) }))
-                .sort(byName)
-                .map((c) => opt(c.place, indent + c.name, f.place))
-                .join("")
-          )
-          .join("") +
-        `</optgroup>`
-    )
-    .join("");
-  $("timelinePlace").innerHTML =
-    `<select class="opt-select tl-filter" data-filter="place" aria-label="${escapeHtml(t("filter.place"))}">` +
-    opt("", t("filter.anyPlace"), f.place) +
-    areaGroups +
-    `</select>`;
   const up = f.place ? parentPlace(state.registry, f.place) : null;
   $("timelineUp").innerHTML =
     up === null
@@ -3736,8 +3696,10 @@ function renderTypes(types, subtypes) {
             `</button>`
         )
         .join("") +
-      `</div><div class="tl-subtypes" role="radiogroup" aria-label="${escapeHtml(t("filter.subtype"))}"></div>`;
+      `</div><div class="tl-subtypes" role="radiogroup" aria-label="${escapeHtml(t("filter.subtype"))}"></div>` +
+      `<div class="tl-type-card" role="tooltip" hidden></div>`;
   }
+  host._typeCards = Object.fromEntries(types.map((type) => [type.id, typeCard(type)]));
   const tiles = [...host.querySelectorAll(".tl-type")];
   // Where each picture was is read only when the choice moves them.
   const moving = (host.dataset.type || "") !== f.type && !reducedMotion();
@@ -3769,6 +3731,66 @@ function renderTypes(types, subtypes) {
   if (!moving) return;
   glideTiles(before);
   if (offered && was !== f.type) unfold(chips);
+}
+
+/* What a type's picture says when pointed at: its name, how many festivals
+ * the place chosen holds of it, their subtypes and the next of them (23.41). */
+function typeCard(type) {
+  const filter = { place: state.stripFilter.place, type: type.id, subtype: "" };
+  const festivals = state.registry.festivals.filter((f) => festivalMatches(f, filter));
+  const subtypes = [...new Set(festivals.flatMap((f) => f.subtypes || []))]
+    .map(subtypeName)
+    .sort((a, b) => a.localeCompare(b, currentIntlLocale()));
+  const today = todayISO();
+  const next = festivals
+    .flatMap((festival) => festival.editions.filter((e) => e.lastDate >= today).map((edition) => ({ festival, edition })))
+    .sort((a, b) => a.edition.firstDate.localeCompare(b.edition.firstDate))[0];
+  return (
+    `<strong class="tl-card-title" data-i18n-slot="${TYPE_KEYS[type.id]}">${escapeHtml(t(TYPE_KEYS[type.id]))}</strong>` +
+    cardLine("typeCard.count", t("typeCard.count", { count: type.count })) +
+    (subtypes.length ? `<span class="tl-card-line is-muted">${escapeHtml(subtypes.join(" · "))}</span>` : "") +
+    (next
+      ? cardLine(
+          "typeCard.next",
+          t("typeCard.next", { name: festivalName(next.festival), dates: dateRange(next.edition.firstDate, next.edition.lastDate) }),
+          " is-good"
+        )
+      : "")
+  );
+}
+
+/* One card under the types, filled and placed beneath the picture the
+ * pointer or the keyboard is on. */
+function wireTypeCards(host) {
+  const show = (tile) => {
+    const box = host.querySelector(".tl-type-card");
+    const html = host._typeCards && host._typeCards[tile.dataset.type];
+    if (!box || html == null) return;
+    box.innerHTML = html;
+    box.hidden = false;
+    const outer = host.getBoundingClientRect();
+    const at = tile.getBoundingClientRect();
+    const width = box.offsetWidth;
+    box.style.left = `${Math.max(0, Math.min(at.left + at.width / 2 - outer.left - width / 2, outer.width - width))}px`;
+    box.style.top = `${at.bottom - outer.top + 4}px`;
+  };
+  const hide = () => {
+    const box = host.querySelector(".tl-type-card");
+    if (box) box.hidden = true;
+  };
+  host.addEventListener("pointerover", (e) => {
+    const tile = e.target.closest(".tl-type");
+    if (tile) show(tile);
+  });
+  host.addEventListener("pointerout", (e) => {
+    const tile = e.target.closest(".tl-type");
+    if (tile && !tile.contains(e.relatedTarget)) hide();
+  });
+  host.addEventListener("focusin", (e) => {
+    const tile = e.target.closest(".tl-type");
+    if (tile) show(tile);
+  });
+  host.addEventListener("focusout", hide);
 }
 
 const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -3846,30 +3868,6 @@ function programmeLine(edition, hasData) {
   if (!hasData) return cardLine("card.noProgramme", t("card.noProgramme"), " is-muted");
   if (edition.events == null) return cardLine("card.programme", t("card.programme"), " is-good");
   return cardLine("card.events", t("card.events", { count: edition.events }), " is-good");
-}
-
-/* Where a pill of several festivals is: its city once the place menu has
- * narrowed the strip to a country, else its region where the festivals name
- * one, else its country. */
-const bunchPlaceName = (festival) =>
-  state.stripFilter.place ? festivalCity(festival) : festival.region || regionName(festival.country);
-
-/* What a pill of several festivals says: how many, where, and each
- * one's name and dates. */
-function bunchCard(bunch) {
-  const { festival } = bunch.lead;
-  const title = t("bunch.title", { count: bunch.bars.length, place: bunchPlaceName(festival) });
-  return (
-    `<strong class="tl-card-title" data-i18n-slot="bunch.title">${escapeHtml(title)}</strong>` +
-    bunch.bars
-      .map(
-        (bar) =>
-          `<span class="tl-card-line${bar.hasData ? "" : " is-muted"}">` +
-          `<span class="tl-card-name">${escapeHtml(festivalName(bar.festival))}</span> · ` +
-          `${escapeHtml(dateRange(bar.edition.firstDate, bar.edition.lastDate))}</span>`
-      )
-      .join("")
-  );
 }
 
 /* What an orb says: the holidays in the break, how long a break it makes and
@@ -4402,10 +4400,7 @@ function wireTrip() {
     if (next) setTrip({ ...tripForEdition(next.edition), pick: next.key }, { fresh: true });
   });
   wireTimelineCards(year);
-  $("timelineFilters").addEventListener("change", (e) => {
-    const menu = e.target.closest("[data-filter]");
-    if (menu) setStripFilter(menu.dataset.filter, menu.value);
-  });
+  wireTypeCards($("timelineTypes"));
   // One type at a time: choosing the one already chosen lets go of it.
   $("timelineTypes").addEventListener("click", (e) => {
     const tile = e.target.closest(".tl-type");

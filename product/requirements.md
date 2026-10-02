@@ -1740,8 +1740,8 @@ calendar.
 ## 23. The year's festivals, and the trip's dates
 
 The top of the page is the year: every festival edition the registry knows,
-drawn at its dates with a city's festivals sharing one pill, and the reader's
-trip banded across it. The trip's first and last day are the reader's to set,
+drawn at its dates, the most searched on rows of their own and the rest faint
+behind them, and the reader's trip banded across it. The trip's first and last day are the reader's to set,
 by dragging either end of the band or the whole band along the year, and a
 festival is only a shortcut to its own run and a day either side. Nothing below
 is tied to one festival: the pool the calendar drafts from is every
@@ -1750,18 +1750,20 @@ one), that falls inside the trip and can be reached from the festival that
 leads it: the one the reader chose, while the trip still reaches it, and
 otherwise the one it covers most.
 
-- `23.1` A full-width timeline of the coming year, one pill per city's festivals, and the trip's dates banded across it.
+- `23.1` A full-width timeline of the coming year, each festival a bar on rows of its own with its name beside it, and the trip's dates banded across it.
 
   ![planng-timeline.23.1](requirements/screen/cases/planng-timeline.23.1.png) <!-- req-gallery:23.1 -->
 
   <details><summary>Notes</summary>
 
-  Twelve months from the start of the month before today. Pills whose runs
-  overlap are stacked on separate rows so no pill hides another; an edition
-  whose programme is not published yet is drawn hollow, and is still chosen
-  like any other. The pill of the festival that leads the trip is lit. Nothing
-  sits beneath the year: the trip's days are written on the band (23.12) and
-  the way there and back sits beside it (section 24).
+  Twelve months from the start of the month before today. Bars are never
+  drawn over one another, and a festival's name runs beside its bar only while
+  the year draws ten festivals or fewer and every name fits the rows (23.38
+  covers a crowded year). An edition whose programme is not published yet is
+  drawn hollow, and is still chosen like any other. The bar of the festival
+  that leads the trip is lit. Nothing sits beneath the year: the trip's days
+  are written on the band (23.12) and the way there and back sits beside it
+  (section 24).
   </details>
 
 - `23.2` Choosing a festival on the timeline sets the trip's dates to its run plus a day either side.
@@ -1949,32 +1951,6 @@ otherwise the one it covers most.
 
   ![planng-photo-credit.23.19](requirements/screen/cases/planng-photo-credit.23.19.png) <!-- req-gallery:23.19 -->
 
-- `23.20` A country's festivals whose runs meet share one pill (a state's, in a country as large as the United States or Australia): it spans all their runs with each run drawn inside it, carries the country's flag at its middle, and is labelled with how many festivals it holds and the one that leads them.
-
-  ![planng-city-pill.23.20](requirements/screen/cases/planng-city-pill.23.20.png) <!-- req-gallery:23.20 -->
-
-  <details><summary>Notes</summary>
-
-  Festivals are bunched by their registry country, or by the registry
-  `region` where a festival names one (a state of a large country), so
-  however many festivals a country holds at once the strip grows by at most
-  one row for it. Runs a week or less apart meet; a country's festivals
-  months apart stay separate pills. The leading festival is the one with a
-  published programme and the longest run, which is the Edinburgh Festival
-  Fringe among the United Kingdom's; a lone festival keeps its own pill and
-  name. The flag is the registry country's,
-  drawn rather than typed so it looks the same on every device, and a country
-  the page has no flag for shows none.
-  </details>
-
-- `23.21` Pointing at a country's pill shows its card: where, how many festivals, and each one's name and dates.
-
-  ![planng-city-card.23.21](requirements/screen/cases/planng-city-card.23.21.png) <!-- req-gallery:23.21 -->
-
-- `23.22` Choosing a country's pill sets the trip to its leading festival's run plus a day either side, and that festival leads the trip.
-
-  🚩 _Behavior leaf._ <!-- req-gallery:23.22 -->
-
 - `23.23` Dragging the band moves the whole trip, keeping its length and the festival chosen; a press that doesn't move still chooses the festival under it.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.23 -->
@@ -1986,25 +1962,26 @@ otherwise the one it covers most.
   the festival chosen while the moved dates still reach it (23.9).
   </details>
 
-- `23.24` Beside the year, a globe with a place menu under it and nine pictured festival types narrow the festivals it draws, drawn as one piece with the year: the same ring round the globe and the chosen type, and the same capsules for the globe's places, the subtypes and the trip's measure.
+- `23.24` The year sits between nine pictured festival types on its left and a desk globe on its right, both as tall as its rows and level with the first of them, and together they narrow the festivals it draws.
 
   ![planng-strip-filter.23.24](requirements/screen/cases/planng-strip-filter.23.24.png) <!-- req-gallery:23.24 -->
 
   <details><summary>Notes</summary>
 
   A place is an area (the British Isles, Europe, the Middle East and so
-  on, `site/planNG/lib/areas.js`), a country or one of its cities; a type is one of nine: film,
-  music, theatre, dance, comedy, art & books (the registry's `art` and
-  `literature`), mixed arts (`fringe` and `multi`), sports and academic; a
-  subtype is what sets one festival apart within its type (`film-documentary`,
-  `academic-biology`), a label on the festival and never on its events. The
-  globe is drawn to be used rather than to be right: flat cut-paper land on a
-  halftone sea, the countries with a festival in the page's colour. The place
-  menu offers only what the registry holds, grouped by area. Each type says
-  how many festivals the chosen place holds of it, and a type with none is
-  drawn faded. On a narrow screen the globe and the types sit side by side
-  above the year. Only the strip is narrowed: the pool the calendar drafts
-  from is the trip's, whatever the filters say.
+  on, `site/planNG/lib/areas.js`), a country or one of its cities, each chosen
+  on the globe; a type is one of nine: film, music, theatre, dance, comedy,
+  art & books (the registry's `art` and `literature`), mixed arts (`fringe`
+  and `multi`), sports and academic; a subtype is what sets one festival apart
+  within its type (`film-documentary`, `academic-biology`), a label on the
+  festival and never on its events. The globe is a desk globe: tan land on a
+  deep blue sea, shaded as a sphere, held in a brass ring on a wooden stand,
+  the countries with a festival in the page's colour. Each type's picture
+  carries how many festivals the chosen place holds of it, and a type with
+  none is drawn faded; its name is on its card (23.41). On a narrow screen the
+  types and the globe sit side by side above the year. Only the strip is
+  narrowed: the pool the calendar drafts from is the trip's, whatever the
+  filters say.
   </details>
 
 - `23.25` The filters keep a festival only when it matches place, type and subtype, and the festival leading the trip is always kept.
@@ -2020,21 +1997,6 @@ otherwise the one it covers most.
   Read against the live registry rather than the harness's frozen one, so a
   festival added without a photograph turns the build red instead of
   leaving a plain band where its city should be.
-  </details>
-
-- `23.27` With the place menu on a country, the strip bunches that country's festivals by city instead, so each city's festival can be chosen on its own.
-
-  ![planng-country-drill.23.27](requirements/screen/cases/planng-country-drill.23.27.png) <!-- req-gallery:23.27 -->
-
-- `23.28` However many festivals the year draws, the strip keeps its height: the rows past it scroll inside, faded at the edge to say more are there.
-
-  ![planng-year-height.23.28](requirements/screen/cases/planng-year-height.23.28.png) <!-- req-gallery:23.28 -->
-
-  <details><summary>Notes</summary>
-
-  Seven and a half rows show, so a half-hidden row also hints at the scroll.
-  The months, the trip's band and its ends stay put while the rows scroll
-  under them; a long unfiltered year is meant to invite the menus (23.24).
   </details>
 
 - `23.29` Dragging the globe spins it, and let go while still moving it keeps spinning, slowing to a stop.
@@ -2115,6 +2077,47 @@ otherwise the one it covers most.
 
   🚩 _Behavior leaf._ <!-- req-gallery:23.36 -->
 
+- `23.37` The year's rows take the most searched festivals first: each goes on a row where it keeps clear of its neighbours, a festival of a week or more on the free row holding the fewest such, until the rows are 70% full.
+
+  <table><thead><tr><th align="left">Festivals (how searched)</th><th align="left">Rows</th><th align="left">Leading the trip</th><th align="left">Drawn on the rows</th></tr></thead><tbody><tr><td>Fringe 0–40 (900), Acco 10–20 (50), Haifa 50–55 (300)</td><td>2</td><td>none</td><td>1: Fringe, Haifa · 2: Acco</td></tr><tr><td>Fringe 0–30 (900), Haifa 40–70 (300), Acco 80–84 (50)</td><td>2</td><td>none</td><td>1: Fringe, Acco · 2: Haifa</td></tr><tr><td>Fringe 0–30 (900), Haifa 35–72 (300), Acco 75–80 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>none</td><td>1: Fringe, Haifa</td></tr><tr><td>Fringe 0–50 (900), Acco 20–30 (300), Haifa 60–65 (50)</td><td>1</td><td>Acco</td><td>1: Acco, Haifa</td></tr><tr><td>Fringe 0–10 (unknown), Acco 20–40 (unknown), Haifa 50–55 (40)</td><td>1</td><td>none</td><td>1: Haifa, Acco, Fringe</td></tr></tbody></table> <!-- req-gallery:23.37 -->
+
+  <details><summary>Notes</summary>
+
+  How searched a festival is comes from the registry: its `popularity` where
+  the festival finder has measured it, else the events its programme holds,
+  and a longer run first among equals. The festival leading the trip always
+  takes the first place. A festival that fits no row is passed over for the
+  next. Ranking and filling are redone inside whatever the filters leave.
+  </details>
+
+- `23.38` In a crowded year the rows carry bars without names, and every festival they leave out is drawn faintly behind them in its type's colour.
+
+  ![planng-year-crowd.23.38](requirements/screen/cases/planng-year-crowd.23.38.png) <!-- req-gallery:23.38 -->
+
+  <details><summary>Notes</summary>
+
+  The strip has as many rows as fit the height of the types and the globe,
+  and never scrolls; a faint festival is placed anywhere across that height,
+  at its own dates. No text sits under the rows.
+  </details>
+
+- `23.39` Changing a filter moves the festivals rather than redrawing them: a festival still drawn glides to its new place, one promoted from behind grows into its row, and the rest fade out or in.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:23.39 -->
+
+  <details><summary>Notes</summary>
+
+  With reduced motion asked for they simply land.
+  </details>
+
+- `23.40` Pointing along the year magnifies the weeks under the pointer, as a dock does, and a bar grown wide enough there shows its name.
+
+  ![planng-year-lens.23.40](requirements/screen/cases/planng-year-lens.23.40.png) <!-- req-gallery:23.40 -->
+
+- `23.41` Pointing at a type's picture shows its card: its name, how many festivals it holds, its subtypes and the next of its festivals.
+
+  ![planng-type-card.23.41](requirements/screen/cases/planng-type-card.23.41.png) <!-- req-gallery:23.41 -->
+
 ## 24. How you are getting here
 
 The page asks, once, how the reader is getting to the festival, and only when
@@ -2143,7 +2146,7 @@ is looked up before the reader has said they fly.
 
 - `24.10` A travel picture with no room between its end of the trip and the strip's edge is left out, and the one at the other end still asks.
 
-- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's visible height, over the festivals beside the trip, and stay there while the festivals scroll.
+- `24.11` The travel pictures and the trip's grips sit at the middle of the strip's rows, over the festivals beside the trip.
 
   🚩 _Behavior leaf._ <!-- req-gallery:24.11 -->
 
