@@ -1,0 +1,58 @@
+# The New Orleans Film Festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md. The New Orleans Film Society's Oscar-
+# qualifying festival, in venues across the city.
+
+id = "new-orleans-film-festival"
+name = "New Orleans Film Festival"
+city = "New Orleans"
+country = "US"
+region = "Louisiana"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 29.9511
+lng = -90.0715
+timezone = "America/Chicago"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-independent"]
+default_genre = "film"
+site = "https://neworleansfilmsociety.org"
+
+[ticketing]
+model = "central-box-office"
+url = "https://nofs.eventive.org"
+notes = "Sold on nofs.eventive.org, where every screening has its own ticket page; passes cover most screenings. Prices are each screening's public ticket types."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+# The box office's welcome text calls it the 37th annual festival.
+ordinal = 37
+format = "block"
+first = "2026-10-22"
+last = "2026-10-27"
+sources = ["eventive", "nominatim"]
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "new_orleans_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "new_orleans_film_festival/nominatim.py"
+
+[merge]
+venues = ["eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

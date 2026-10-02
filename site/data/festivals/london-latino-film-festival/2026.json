@@ -1,0 +1,1374 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "london-latino-film-festival",
+  "edition": "2026",
+  "ordinal": 1,
+  "name": "London Latino Film Festival",
+  "nameLocal": null,
+  "city": "London",
+  "country": "GB",
+  "lat": 51.5074,
+  "lng": -0.1278,
+  "timezone": "Europe/London",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://londonlatinofilmfestival.org.uk",
+  "firstDate": "2026-10-02",
+  "lastDate": "2026-10-06",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://lolaff2026.eventive.org",
+   "notes": "Sold on lolaff2026.eventive.org, one ticket page per screening; some screenings sell at the partner cinema's own box office instead.",
+   "currency": "GBP"
+  }
+ },
+ "categories": [
+  {
+   "id": "6a7b4f3b14e9ab3854c17453",
+   "name": "LGBTQIA+"
+  },
+  {
+   "id": "6a7b4fd61c4880b549e616f4",
+   "name": "Children's Programme"
+  },
+  {
+   "id": "6a91ac66c975af73c380c864",
+   "name": "Guildhall"
+  },
+  {
+   "id": "6a91ace2503ec038a82cd2fa",
+   "name": "Workshops"
+  },
+  {
+   "id": "6aa45198bb393a6f9c36f17b",
+   "name": "Socials"
+  },
+  {
+   "id": "6abafe3a448d2dcd579b1ee3",
+   "name": "Portsoken"
+  },
+  {
+   "id": "6abafe6376e0a74f7dd554cc",
+   "name": "Canopy"
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a7b525cecc8cceba8137b6d",
+   "name": "Barbican Centre - Cinema 1",
+   "address": "Level -2 Silk St, London EC2Y 8DS",
+   "lat": 51.520758,
+   "lng": -0.092396,
+   "online": false,
+   "capacity": 280,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a83277446486f054c90bf85",
+   "name": "Barbican Centre - Cinema 3",
+   "address": "Beech St, Barbican, London EC1Y 8AA",
+   "lat": 51.520915,
+   "lng": -0.09292,
+   "online": false,
+   "capacity": 153,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a8327a4e51ce446865c8c4c",
+   "name": "ICA | Institute of Contemporary Arts - Cinema 1",
+   "address": "The Mall, London SW1Y 5AH",
+   "lat": 51.506082,
+   "lng": -0.130261,
+   "online": false,
+   "capacity": 186,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a832e0722178a45d7bbede6",
+   "name": "The Garden Cinema - Cinema 1",
+   "address": "39-41 Parker St, London WC2B 5PQ",
+   "lat": 51.516235,
+   "lng": -0.121342,
+   "online": false,
+   "capacity": 70,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a832e3155686a0c4f30549a",
+   "name": "BFI Stephen Street - Screen 1",
+   "address": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "lat": 51.517834,
+   "lng": -0.132989,
+   "online": false,
+   "capacity": 30,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a832f964c580e6ddc773db0",
+   "name": "Ciné Lumière - Screen 1",
+   "address": "17 Queensberry Place London SW7 2DT",
+   "lat": 51.494528,
+   "lng": -0.177148,
+   "online": false,
+   "capacity": 227,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a857ab2365982c54a5edbb7",
+   "name": "Regent Street Cinema",
+   "address": "307 Regent St., London W1B 2HW",
+   "lat": 51.516815,
+   "lng": -0.142851,
+   "online": false,
+   "capacity": 185,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a85bbd1b551126b01309ac8",
+   "name": "BFI Stephen Street - Screen 2",
+   "address": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "lat": 51.517834,
+   "lng": -0.132989,
+   "online": false,
+   "capacity": 30,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a85bc12c55980873e7d911a",
+   "name": "Ciné Lumière - Screen 2",
+   "address": "17 Queensberry Place London SW7 2DT",
+   "lat": 51.494528,
+   "lng": -0.177148,
+   "online": false,
+   "capacity": 34,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a85bdb494a2e07e9fae2552",
+   "name": "ICA | Institute of Contemporary Arts - Cinema 2",
+   "address": "The Mall, London SW1Y 5AH",
+   "lat": 51.506082,
+   "lng": -0.130261,
+   "online": false,
+   "capacity": 45,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a85be5eb78e310721d704c3",
+   "name": "Portsoken Community Centre",
+   "address": "20 Little Somerset St, London E1 8AH",
+   "lat": 51.513396,
+   "lng": -0.07443,
+   "online": false,
+   "capacity": 40,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a85bfe35028a5bbeb374a8e",
+   "name": "Instituto Cervantes - Sala Luis Cernuda",
+   "address": "15-19 Devereux Ct, Temple, London WC2R 3JJ",
+   "lat": 51.5129079,
+   "lng": -0.11275,
+   "online": false,
+   "capacity": 70,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a91a72070e72267010cb632",
+   "name": "Guildhall - Rehearsal Room 3",
+   "address": "Milton Court Building, 1 Milton Street, London, EC2Y 9BH",
+   "lat": 51.520254,
+   "lng": -0.090819,
+   "online": false,
+   "capacity": 60,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa9b1f74c7b1be4a2cf48b0",
+   "name": "Penny Squares at Canopy by Hilton London City",
+   "address": "11-15 Minories, London EC3N 1AX",
+   "lat": 51.51293,
+   "lng": -0.075287,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6aa9b290a68e38e8a80a1add",
+   "name": "St Clare Coffee and Bar at Canopy by Hilton London City",
+   "address": "11-15 Minories, London EC3N 1AX",
+   "lat": 51.51293,
+   "lng": -0.075287,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "6a9b5beb11f6b0c311dc5456",
+   "title": "Latin Dance Workshops",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a9b5beb11f6b0c311dc5456",
+   "genre": "talk",
+   "categories": [
+    "6a91ace2503ec038a82cd2fa",
+    "6abafe3a448d2dcd579b1ee3"
+   ],
+   "blurb": "Salsa dance workshops with Luanda Pau, founder and director of ALAFIA – Afro-Cuban Dance Festival London and the Afro-Cuban Dance Festival in Havana, and Afro-Cuban Artistic Lead at Acosta Dance Centre.\n\nNo experience or partner needed, just the will to dance and connect with people and culture.\n\nWear comfortable clothes, flat shoes, and let's dance!\n\nSessions at 10:30am and 11:30pm\n\nWhen booking your free ticket, make sure you choose the session that works for you.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1788586788325temp-1788586788302-cover.jpg"
+  },
+  {
+   "id": "films-6a7b4d47f835cf0f3c12b0b6",
+   "title": "Opening Night: Gala & Screening of Oca",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a7b4d47f835cf0f3c12b0b6",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Opening Gala of the London Latino Film Festival\n\nSchedule for the evening:\n\n18:30 — Doors open & Red Carpet\n\n19:30 — Opening Ceremony and Festival Welcoming\n\n20:00 — Screening of Oca\n\nNote:\n\nThe opening programme begins promptly at 19:30. For the comfort of all guests, no entry will be permitted after this time.\n\nEvening wear is encouraged, but there's no strict formal dress code.\n\nVenue accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities",
+   "durationMin": 109,
+   "imageUrl": "https://static-a.eventive.org/f09b00299da1d652b288ed7fc801ed2a.jpg"
+  },
+  {
+   "id": "films-6a832f517e785d64cd4d197a-6a8330ef6f2553cabbe1a980-6a84cfd493e9428e10d3c5e1-6a84fd27e81ee26268a13fda-6a850629d71e8ceef20af4f1",
+   "title": "Short Films: Memory, Family & Return + Filmmakers Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a85d14dd8be1165b61f465d",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This slot brings together five short films exploring themes of memory, family, return and identity. Across different generations and relationships between parents and children, the films reflect on what is passed down to us and what we inherit — memories, stories, identities and experiences. They move between being away from home and returning to it, often confronting memories that are complex, fragmented or difficult, and asking how these shape our sense of who we are and where we belong.\n\nACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences\n\nFurther access details: ICA Accessibility\n\nNOTES:\n\nPre screening Filmmakers Meet & Greet (10 minutes)\n\nPre screening Festival trailer (1 minute)\n\nContent warnings: Themes of family conflict, loss and grief, displacement, childhood experiences and emotional distress.\n\nThis programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk",
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/1787258429460temp-1787258429347-cover.jpg"
+  },
+  {
+   "id": "films-6a82ce25275e917d4b401510",
+   "title": "Espina + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82ce25275e917d4b401510",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Tired of being treated like a child because of his disability, 29-year-old Jonathan sets off from Mexico City to Panama with two unlikely companions. What begins as a trip before his spinal surgery soon reveals a deeper purpose: settling an old score.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/56d028eb84f3f22d3d8ddf44bb2987c6.jpg"
+  },
+  {
+   "id": "6a9b5d64b4445566678ab0c4",
+   "title": "The World of Colours - Children's play",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a9b5d64b4445566678ab0c4",
+   "genre": "family",
+   "categories": [
+    "6a7b4fd61c4880b549e616f4",
+    "6abafe3a448d2dcd579b1ee3"
+   ],
+   "blurb": "The Stars Theatre Company proudly presents a captivating, thought-provoking tale that weaves in subtle messages of inclusion and cultural diversity. Blending storytelling, theatre, puppetry, vibrant costumes, and music, the play invites children to accompany Flicts, a one-of-a-kind colour, who dreams of finding their place in the world. What unfolds is a joyful and touching story, reminding us all that being unique is something to celebrate, and that everyone has a place where they shine.\n\nThe play is for children aged 2 to 8 years old. The performance integrates text in English, Spanish and Portuguese.\n\nThere will be a colouring station open from 2:00pm to 3:45pm.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1788599405201temp-1788599405189-cover.jpg"
+  },
+  {
+   "id": "films-6a82cf7677f151297067bde5",
+   "title": "Concepción + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82cf7677f151297067bde5",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This captivating documentary explores the life and legacy of César Concepción (1909-1974), a maestro of La Plena, and trailblazer in Latin music. Featuring rare performances, personal interviews with Gilberto Santa Rosa, Danny Rivera, Rafael Ithier, Frank Grillo “Machito” and other iconic figures of his era, it brings his contributions to life while showcasing the timeless power of his music.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1787233729797temp-1787233729764-cover.jpg"
+  },
+  {
+   "id": "6a9fd91f2996618404fc2ba6",
+   "title": "Truco!: Cards, Camera and Community",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a9fd91f2996618404fc2ba6",
+   "genre": "family",
+   "categories": [
+    "6a7b4fd61c4880b549e616f4",
+    "6abafe3a448d2dcd579b1ee3"
+   ],
+   "blurb": "Learn to play, then watch it come to life on screen. Join Truqueros del Oeste for a hands-on introduction to Truco, the fast, loud, cheeky card game that is part of the cultural identity of the Río de la Plata region. Once you've got the basics (and probably lost a round or two), settle in for a screening of Truco, Fraser McGruer's short documentary about the community behind the game. Fraser will join the players themselves afterwards for an open conversation, not about filmmaking technique, but the game, the encounter of making it together, and what it means to hold onto a piece of home somewhere new.\n\nAbout Fraser Mc Guer\n\nFraser McGruer is a documentary photographer, filmmaker and audio producer based in Lincolnshire, working across the UK and internationally. His work explores how people understand themselves, the places they belong to and the experiences that shape their lives.\n\nMuch of his practice is rooted in communities and developed through participatory, collaborative ways of working. He believes documentary work is strongest when it is created with people rather than simply about them, reducing the traditional division between filmmaker and participant. Listening, conversation and trust are central to his process, whether he is working with photography, film, audio or a combination of forms. His projects frequently explore migration, ritual, mental health and heritage.\n\nChildren are welcome to join parents and carers, there will be a colouring station and children books for them to enjoy.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1788861019501temp-1788861019191-cover.jpg"
+  },
+  {
+   "id": "films-6a82d97d7fc155cc8bbb6cf0",
+   "title": "Strawberry and Chocolate - Fresa y Chocolate + Q&A with Jorge Perugorria",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d97d7fc155cc8bbb6cf0",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Set in Cuba in 1979, flamboyant artist Diego befriends David, a young university student and committed revolutionary. What begins as an unlikely encounter gradually develops into a genuine friendship as the two challenge each other’s views on identity, individuality and personal freedom.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/97a966300e31b86ab72542a99c1ceab7.jpg"
+  },
+  {
+   "id": "films-6a82c97a66a542ebf3a237be",
+   "title": "¡Quba! + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82c97a66a542ebf3a237be",
+   "genre": "film",
+   "categories": [],
+   "blurb": "ACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences\n\nFurther access details: ICA Accessibility",
+   "durationMin": 70,
+   "imageUrl": "https://static-a.eventive.org/178e20be7df40e72d5cf5d8ddd3d8204.jpg"
+  },
+  {
+   "id": "films-6a82dc10c50de5b91ec1ea82",
+   "title": "The Distinguished Citizen - El ciudadano ilustre + Q&A with Oscar Martínez",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82dc10c50de5b91ec1ea82",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Winner of the Goya for Best Iberoamerican Movie\n\nVolpi Cup for Best Actor at the 73rd Venice Film Festival\n\nAfter refusing big and prestigious awards all over the world, Mr. Mantovani, Literature Nobel Prize winner, accepts an invitation to visit his hometown in Argentina, which has been the inspiration for all of his books. It turns out that accepting this invitation is the worst idea of his life. Expect the unexpected when you have used real people as characters in your novels!",
+   "durationMin": 118,
+   "imageUrl": "https://static-a.eventive.org/6dab60ee6b8aa78044a40672ecf73d92.jpg"
+  },
+  {
+   "id": "films-6a84d8e20518f8a6e746a258",
+   "title": "Nunkui",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a84d8e20518f8a6e746a258",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Nunkui, the female spirit of the garden. Nunkui, the name of a Shuar girl in a lush world of plants, animals, spirits and an extended family. Between premonitory dreams and mining conflicts in the Amazonian Cóndor mountain range, Nunkui searches for her place in the world, influenced by her grandfather Yaunchu, an old Shuar leader.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1787091513129temp-1787091513101-cover.jpg"
+  },
+  {
+   "id": "films-6a82e13b3af184d65746861b",
+   "title": "Anina - Relaxed Screening",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82e13b3af184d65746861b",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Relaxed Screening: adjusted lighting and sound levels, no trailers, and movement or noise from the audience is welcome throughout. The film starts after a two-minute festival intro.\n\nEnglish subtitles included.\n\nSDH subtitles (Subtitles for Deaf and Hard of Hearing)\n\nFind more information about Relax Screenings at Ciné Lumière here\n\nIf you have any questions, please contact us at operations@londonlatinofilmfestival.org.uk; a team members will also be on hand during the screening if assistance is required.",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/bb89e264aabc551e91827ec3282296f9.jpg"
+  },
+  {
+   "id": "6a91a5ff712b742c7d4eb444",
+   "title": "'How To Make A Blockbuster’ - James Grant in conversation with Alec Marsh",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a91a5ff712b742c7d4eb444",
+   "genre": "talk",
+   "categories": [
+    "6a91ace2503ec038a82cd2fa",
+    "6a91ac66c975af73c380c864"
+   ],
+   "blurb": "Journalist and author, Alec Marsh, will interview acclaimed co-producer and Unit Production Manager James Grant, whose credits include Dune, Dune: Part Two, Skyfall and Spectre. The conversation will explore Grant’s career in film production, from managing complex international shoots to bringing some of cinema’s biggest productions to the screen, offering an insight into the realities, challenges and craft behind major filmmaking.\n\nAbout James Grant and Alec Marsh:\n\nJames Grant is a seasoned British Co-Producer and Unit Production Manager whose career spans some of the most ambitious productions in contemporary cinema. He began in location management, working on major productions including The Bourne Ultimatum, Quantum of Solace, Skyfall, and World War Z, before moving into international production management and overseeing complex overseas units for films including Dune, The Martian and Spectre. Grant went on to become Unit Production Manager on Denis Villeneuve’s Dune, helping deliver the complex, multi-location production that brought Frank Herbert’s epic to the screen, before returning as Co-Producer and UPM on Dune: Part Two, Enola Holmes 2, and Masters of the Universe, where he has continued to combine hands-on production expertise with senior producing responsibilities.\n\nAlec Marsh is a British author and journalist who has written for most of the UK’s leading national newspapers, including The Times, The Telegraph, The Guardian, Daily Mail and Daily Express, as well as publications including the New Statesman, The Spectator, and the National Geographic. As an author, Marsh has written the Drabble & Harris historical thriller series, comprising four novels with a fifth in development, as well as his separate Frank Champion detective series.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787940557031temp-1787940557008-cover.jpg"
+  },
+  {
+   "id": "films-6a8334c82db7720bdd5c4caa-6a849636f1a5476cb0ac7152-6a84cf045b14e5e835be1d3e-6a84e748d97b968696e6173c",
+   "title": "Short Films: Stories of Resilience + Filmmakers Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a85d5023574f88645ea39c1",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This slot brings together four short films exploring the theme of resilience. Across different contexts and forms, the films consider resilience as the capacity to move through what does not work, and to adapt to life’s challenges rather than remaining in a static state. Through acts of rebellion, resistance and fighting for what we value in the face of repression, as well as through creativity and joy, these films explore the different ways we find strength, agency and ways forward.\n\nACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences are included on 3 of the 4 films in this programme.\n\n⚠️ The final film, Cold Water / Agua Fría, does not currently have descriptive captions available. However, it will be screened with standard English subtitles\n\nFurther access details: ICA Accessibility\n\nNOTES:\n\nPre screening Filmmakers Meet & Greet (10 minutes)\n\nPre screening Festival trailer (1 minute)\n\nThis programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk",
+   "durationMin": 82,
+   "imageUrl": "https://static-a.eventive.org/1787258665675temp-1787258665572-cover.jpg"
+  },
+  {
+   "id": "6a91bd46c7f6744d6201633f",
+   "title": "'Stay In The Game' - Rejection & Resilience for Creatives with Natali Juste Simmonds",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a91bd46c7f6744d6201633f",
+   "genre": "talk",
+   "categories": [
+    "6a91ace2503ec038a82cd2fa",
+    "6a91ac66c975af73c380c864"
+   ],
+   "blurb": "Author and story consultant Natali Juste Simmonds leads Stay In The Game: Rejection & Resilience for Creatives, a practical session exploring how creatives can navigate rejection, setbacks and uncertainty without losing momentum. A published author of 12 novels, including the psychological thriller Good Girls Die Last, currently in development for TV with Natali attached as Executive Producer, she also shares her storytelling experience through lectures and workshops, including at Raindance Film School.\n\nNatali Simmonds is an author and story consultant working across film, entertainment and culture. She has written 12 published novels, including the psychological thriller Good Girls Die Last, which is currently in development for TV, with Natali attached as Executive Producer.\n\nShe is Head of Partnership Development at LoLaFF (the London Latino Film Festival), where she builds and manages relationships across the UK and Latin American film industries, connecting filmmakers, the BFI, brands, cultural organisations and industry leaders to create partnerships, opportunities and new audiences. Natali regularly shares her storytelling experience through guest lectures and workshops, including universities, writing institutions such as Professional Writing Academy and Jericho Writers, and Raindance Film School.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1788253760333temp-1788253760225-cover.jpg"
+  },
+  {
+   "id": "films-6a82cde26eaac08241ac65d4",
+   "title": "Dogs - Perros",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82cde26eaac08241ac65d4",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Summer in Uruguay. The Saldaña family are looking after the house of their well-off neighbors, the Pernas. Having the key to temptation, they decide to abuse their duties and spend the holidays there. What begins as an innocent game quickly escalates to a full-out confrontation between the families after the unexpected disappearance of the Pernas' dog.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1ba9c10dbb64b5107e1d677f70e4e7b2.jpg"
+  },
+  {
+   "id": "6a91c33e831a2b5ec4fce2c2",
+   "title": "'How to write an award-winning screenplay' with Oscar-winner screenwriter, Gonzalo Maza",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a91c33e831a2b5ec4fce2c2",
+   "genre": "talk",
+   "categories": [
+    "6a91ace2503ec038a82cd2fa",
+    "6a91ac66c975af73c380c864"
+   ],
+   "blurb": "Oscar-winning screenwriter Gonzalo Maza leads How to Write an Award-Winning Screenplay, offering an insight into the craft, creative decisions and storytelling techniques behind internationally acclaimed cinema. Best known for co-writing A Fantastic Woman, which won the Academy Award for Best International Feature Film, Maza brings extensive experience as a screenwriter, director, producer and writing consultant, including work with the Sundance Screenwriting Lab and Oxbelly Screenwriters Program. The session offers writers a rare opportunity to learn directly from an internationally recognised screenwriter and award-winning filmmaker.\n\nGonzalo Maza is an award-winning Chilean screenwriter, director and producer. He collaborated with director Sebastián Lelio on the screenplays for four of his films, including “Gloria” (2013) and “A Fantastic Woman” (“Una Mujer Fantástica,” 2017), both of which were selected for the official competition at the Berlin Film Festival.\n\n“A Fantastic Woman” won the Oscar for Best International Film in 2018 and, as its screenwriter, he was awarded the Silver Bear for Best Screenplay at the Berlin Film Festival and two Platino Awards (Ibero-American Academy Awards) for writing this film and “Gloria”. “Ella es Cristina” (“This is Cristina”, 2020), his first feature as director, was awarded the Jordan Ressler First Feature Award at the 2020 Miami Film Festival.\n\nAs a consultant, he’s been an advisor for the Sundance Screenwriting Lab and the Oxbelly Screenwriters Program, as well as many other similars in Morelia, Sao Paulo and Valdivia.\n\nSince 2016, Gonzalo and his family are based in London.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1788309787280temp-1788309787247-cover.jpg"
+  },
+  {
+   "id": "films-6a82db22a3c2df1b45c765cc",
+   "title": "Street Wanderers - Los Caminantes de la Calle",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82db22a3c2df1b45c765cc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Inspired by true events, Street Wanderers follows a prosecutor and a Chinese police officer investigating a powerful criminal network operating within Mendoza’s Chinese community. Using Cantonese wiretaps, they uncover a world of silence, fear and hidden loyalties.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/e69e21eb8b0f1255a796ae9177364ab2.jpg"
+  },
+  {
+   "id": "films-6a82caa37f7bedbd19d252c3",
+   "title": "Beloved Tropic - Querido Trópico + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82caa37f7bedbd19d252c3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "In Panama City, a Colombian immigrant employed as a home health aide, who harbors a secret, develops a touching and unexpected bond with a strong-willed, wealthy businesswoman struggling with encroaching dementia.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/85e11a5c547abe10d5651f27b82068a6.jpg"
+  },
+  {
+   "id": "films-6a82d61900a3a5d86c9ea249",
+   "title": "Life is Dance + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d61900a3a5d86c9ea249",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Life is Dance follows six Cubans across three generations, united by their passion for dance. From nostalgic dance halls to small-town competitions and dreams of becoming professional dancers, their stories reflect a changing Cuba filled with music, colour, joy and hope.",
+   "durationMin": 80,
+   "imageUrl": "https://static-a.eventive.org/1787100173989temp-1787100173923-cover.jpg"
+  },
+  {
+   "id": "6aa4504003bb2ed0adcc1e0f",
+   "title": "LoLaFF Queer Social",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6aa4504003bb2ed0adcc1e0f",
+   "genre": "other",
+   "categories": [
+    "6aa45198bb393a6f9c36f17b",
+    "6a7b4f3b14e9ab3854c17453",
+    "6abafe6376e0a74f7dd554cc"
+   ],
+   "blurb": "LoLaFF Fiesta y Pachanga series present\n\nA Sunday evening of fierce drag performances, Latin dance workshops, and DJ sets in collaboration with Lady Olé, and Casa de la Torres, two of London's most iconic queer parties for the Spanish-language communities and their allies.\n\nJoin Dramala Tina, Paquita de la Torres, Nicolás Macena, and Alejandro Asencio for one unforgettable afternoon dressed in pure gold and sequins as the October daylight fades fast. Expect drama, pop latino, and the best community in town, complemented by a curated selection of signature cocktails by Mezcal Reina\n\nThis is a free entry event. Book your ticket to secure your place.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1789510512836temp-1789510512804-cover.jpg"
+  },
+  {
+   "id": "films-6a82ddc12c38b547673b7bdc",
+   "title": "A Fantastic Woman - Una Mujer Fantástica + Intro with screenwriter Gonzalo Maza",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82ddc12c38b547673b7bdc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Marina's life is thrown into turmoil following the death of her partner. Mourning the loss of the man she loved, she finds herself under intense scrutiny from those with no regard for her privacy.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/54f1531e29fed24ff9cc88fbd684fc26.jpg"
+  },
+  {
+   "id": "films-6a82d86c899f453062ab1cbd",
+   "title": "Naira + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d86c899f453062ab1cbd",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Naira follows nine-year-old Naira, who lives with her mother in a remote Andean village in Peru. As they struggle with poverty and violence, Naira finds refuge in her imagination, poetry and the natural world around her. Inspired by an ancient Andean legend, she begins to dream of a way to change their lives and escape towards a better future.",
+   "durationMin": 97,
+   "imageUrl": "https://static-a.eventive.org/1787094833537temp-1787094833488-cover.jpg"
+  },
+  {
+   "id": "films-6a8452ad33ff1196b857ff6d-6a84cc425b14e5e835bdf9cd-6a84d142b0b0f08ff3f84397-6a84d6234764fb0e8baaa333-6a84d760f1a5476cb0b447e0-6a84da611057823356adec4c-6a8508b0d71e8ceef20b4c07",
+   "title": "Short Films: Latin Stories, British Shores",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6aa457abc2745b566b3956d5",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This slot brings together films by filmmakers based in the UK, foregrounding Latin voices and experiences within the British cultural landscape. Moving between documentary and fiction, the selection offers a space to celebrate, amplify and give visibility to Latin American and Latinx communities in the UK, as well as to the people and initiatives working to create space for these voices.",
+   "durationMin": 83,
+   "imageUrl": "https://static-a.eventive.org/1787431545795temp-1787431545676-cover.jpg"
+  },
+  {
+   "id": "films-6a7ed4cc42f7b7dff3bad801-6a84cb2b66e08b6e6c16715a-6a84e7e7b870fe528e5c45bf-6a85075dc4342f923648961c",
+   "title": "Short Films: Culture in Motion + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a85c0dd5c0bdc80e6cdd8cf",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This programme brings together five short films exploring different facets of culture, music and identity. Through diverse stories and forms, the films consider how cultural expression, heritage and personal experience shape our sense of self and belonging. From music and artistic expression to questions of self-acceptance, courage and asserting one’s identity, the selection explores the different ways we navigate and define who we are.\n\nACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences\n\nFurther accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities\n\nNOTES:\n\nDoors open at 4:30pm\n\nProgramme starts at 4:45pm\n\nFilmmakers Meet & Greet (10 minutes)\n\nFestival trailer (1 minute)\n\nThis programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787258847767temp-1787258847665-cover.jpg"
+  },
+  {
+   "id": "films-6a82e3fa6ebda126e35a0246",
+   "title": "The Adventures of Cipitio - Las aventuras de Cipitío",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82e3fa6ebda126e35a0246",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Organised by LoLaFF and the Embassy of El Salvador in the United Kingdom, Las Aventuras del Cipitío brings one of El Salvador’s most iconic mythological characters to new generations, highlighting values such as friendship, courage, and respect for nature. Based on traditional Nahuat stories, the series also promotes Náhuat, the country’s last surviving Indigenous language, blending ancestral traditions and mythology with the modern world and technology.",
+   "durationMin": 60,
+   "imageUrl": "https://static-a.eventive.org/1787234814938temp-1787234814902-cover.jpg"
+  },
+  {
+   "id": "films-6a82cafda57913db2feb22f3",
+   "title": "Cielo",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82cafda57913db2feb22f3",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Santa, an eight-year-old girl from the Bolivian Altiplano, sets out across the desert to fulfil a promise to her mother and take her to heaven. Along the way, she encounters a group of female wrestlers and a policeman who joins her unexpected journey toward salvation.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/d25b412447fbfede106f71fa1dcbb74f.jpg"
+  },
+  {
+   "id": "6aa7ce9f9079b0fe30721781",
+   "title": "After Office Social with LoLaFF",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6aa7ce9f9079b0fe30721781",
+   "genre": "other",
+   "categories": [
+    "6aa45198bb393a6f9c36f17b",
+    "6abafe6376e0a74f7dd554cc"
+   ],
+   "blurb": "Fiesta y Pachanga series\n\nConnect where the city meets cinema!\n\nJoin us after office hours to network with filmmakers, creatives, and fellow professionals in a vibrant atmosphere. Unwind to curated beats by our guest DJ while enjoying exclusive, signature Mezcal Reina cocktails available at exclusive happy hour prices for the duration of the event. Start the week in a creative way, step out of the office and into the festival spotlight!\n\nFree event organised in collaboration with Latinos in the City.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1789506760341temp-1789506760327-cover.jpg"
+  },
+  {
+   "id": "films-6a7ed5a27d32d48a9abe29d4-6a7ed5d78e4c26abba70441c-6a7ed600ed33b7e1bd0ad3e3-6a7ed63c8e4c26abba705332-6a7ed65b73d0e8c76bae955e-6a8501c9c672d78ed39f2110",
+   "title": "Short Films: Journeys of Belonging + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a860cc8179829d2233d8c27",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This programme brings together six short films exploring different journeys towards belonging. Through stories of migration, displacement, love, family and the search for home, the films consider what it means to feel connected to a place, a person or a community. Moving between different experiences and perspectives, the selection explores the ways we find, lose and redefine our sense of belonging.\n\nACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences are included on 5 of the 6 films in this programme.\n\n⚠️ The final film, Depeyizé, does not currently have descriptive captions available. However, it will be screened with standard English subtitles.\n\nFurther accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities\n\nNOTES:\n\nPre screening Filmmakers Meet & Greet (10 minutes)\n\nPre screening Festival trailer (1 minute)\n\nThis programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1787431344073temp-1787431343964-cover.jpg"
+  },
+  {
+   "id": "films-6a82d3adabfc1d1ad1f1894e",
+   "title": "I'd Do It All Over Again - Una y mil veces",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d3adabfc1d1ad1f1894e",
+   "genre": "film",
+   "categories": [],
+   "blurb": "After more than four decades in which fifty Uruguayans voluntarily fought alongside the Nicaraguan people in the 1979 revolution, several of the protagonists must overcome their fear of stirring up memories that left an indelible mark.",
+   "durationMin": 70,
+   "imageUrl": "https://static-a.eventive.org/1787099287143temp-1787099286943-cover.jpg"
+  },
+  {
+   "id": "films-6a82d69ea4a1e83d5b4680c4",
+   "title": "Martina's Search - A procura de Martina + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d69ea4a1e83d5b4680c4",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Martina’s Search follows an Argentine widow who has spent more than three decades searching for her grandson, one of the children who disappeared during Argentina’s military dictatorship. After being diagnosed with Alzheimer’s, she discovers he may be in Brazil and sets out to find him, holding onto her fading memories as time begins to slip away.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/aee729eddcead2b4f7fad0e106173ce8.jpg"
+  },
+  {
+   "id": "films-6a82dd34089b66d6388ff37f",
+   "title": "Yuli: The Carlos Acosta Story + Q&A with Carlos Acosta",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82dd34089b66d6388ff37f",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Yuli tells the story of Carlos Acosta’s journey from the streets of Havana to the world’s most prestigious ballet stages. Pushed into dance by his strict and demanding father, Carlos initially resists, but gradually discovers his talent and begins a remarkable career that would make him one of the world’s leading ballet dancers.",
+   "durationMin": 115,
+   "imageUrl": "https://static-a.eventive.org/bca69c35056f635e8f3a03ab6babc97e.jpg"
+  },
+  {
+   "id": "films-6a7ed67a0e89c826b7c6942b-6a7ed713abfbc36e0a9f171e-6a833c6abf795e5581a2162d-6a84c9568ceece3fc80e6f0e-6a84d2450518f8a6e745ba3a-6a84fe085028a5bbeb30085e-6a850de0dfb9ec8df305e33b",
+   "title": "Short Films: Portraits of Identity + Filmmaker Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/schedule/6a865266365982c54a6ef26a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "This programme brings together seven short films exploring identity in its many forms. Through stories of gender, sexuality, relationships, transformation and personal experience, the films examine how we understand ourselves and how we are seen by others. Moving between fiction, animation and documentary, the selection offers intimate and sometimes playful portraits of the different ways identity can be expressed, questioned and shaped.\n\nACCESSIBILITY INFORMATION:\n\nEnglish Descriptive Subtitles (Open Captions) for Deaf and Hard of Hearing audiences\n\nFurther accessibility details: https://www.barbican.org.uk/your-visit/accessibility/accessible-facilities\n\nNOTES:\n\nPre screening Filmmakers Meet & Greet (10 minutes)\n\nPre screening Festival trailer (1 minute)\n\nThis programme may contain content that some viewers find distressing or triggering. Content notes are provided as a guide for each film and may not be exhaustive, please refer to each film's listing for details, or contact us with any specific concerns at operations@londonlatinofilmfestival.org.uk",
+   "durationMin": 75,
+   "imageUrl": "https://static-a.eventive.org/1787428608596temp-1787428608495-cover.jpg"
+  },
+  {
+   "id": "films-6a82df0ae5fa60e42494dc44",
+   "title": "The Dance of the Kokorrdit - El viaje del Kokorrdit + Filmmakers Intro",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82df0ae5fa60e42494dc44",
+   "genre": "film",
+   "categories": [],
+   "blurb": "The Dance of the Kokorrdit follows Ayned, a young Wounaan woman disconnected from her roots, who travels with her uncle Areo into the Darién in search of the sacred Kokorrdit bird. Their journey through the jungle becomes a path back to her culture, traditions and identity.",
+   "durationMin": 72,
+   "imageUrl": "https://static-a.eventive.org/1787101207295temp-1787101207237-cover.jpg"
+  },
+  {
+   "id": "films-6a82c8793af184d657457c44",
+   "title": "A Bright Future - Un futuro brillante",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82c8793af184d657457c44",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Eighteen-year-old Elisa is chosen to go North, a promised land where the most promising young people are sent. But as her departure approaches and strange things begin to surface, Elisa starts to question whether this is the bright future everyone has imagined for her.",
+   "durationMin": 98,
+   "imageUrl": "https://static-a.eventive.org/6f4e289a9b746c3b1193f62956a51786.jpg"
+  },
+  {
+   "id": "films-6a82d51ea0582eb5e1e5ca56",
+   "title": "Letters to My Dead Parents - Cartas a mis padres muertos",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d51ea0582eb5e1e5ca56",
+   "genre": "film",
+   "categories": [],
+   "blurb": "What do you tell your dead parents? Combining family archives and glimpses of today, the filmmaker weaves together fifty years of his life and the socio-political history of Chile. The montage wanders through the ages, between light and shadow, without ever leaving the joy.",
+   "durationMin": 106,
+   "imageUrl": "https://static-a.eventive.org/64160c59ed8233bf0e060ba408d78289.jpg"
+  },
+  {
+   "id": "films-6a82ca0f7f7bedbd19d2363f",
+   "title": "Baracoa",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82ca0f7f7bedbd19d2363f",
+   "genre": "film",
+   "categories": [],
+   "blurb": "After the death of his father Felipe, Pepe discovers that his father has left part of the family estate to Jimmi, his doctor and a secret drag performer. Forced to travel together across Cuba, Pepe and Jimmi embark on an unexpected journey of reckoning, understanding and redemption.",
+   "durationMin": 107,
+   "imageUrl": "https://static-a.eventive.org/c86d2cba409f288c46b6bb34b0290ce8.jpg"
+  },
+  {
+   "id": "films-6a82d7b48933f752fa3d73c2",
+   "title": "Memories of Underdevelopment - Memorias del subdesarrollo",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82d7b48933f752fa3d73c2",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Sergio chooses to remain in Cuba while his wife and family leave for Miami. Alone in Havana, he observes the changes taking place around him while pursuing relationships with young women. When he meets Elena, he begins to see in her an image of the wife he has lost, forcing him to confront his own loneliness and contradictions.",
+   "durationMin": 99,
+   "imageUrl": "https://static-a.eventive.org/10c5901021e136ae368fca32594a8d61.jpg"
+  },
+  {
+   "id": "films-6a82db99baeefde4d020d72c",
+   "title": "Closing Night: Awards Ceremony & Celebration + Screening of Sugar Island",
+   "titleLocal": null,
+   "url": "https://lolaff2026.eventive.org/films/6a82db99baeefde4d020d72c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Closing Night of the London Latino Film Festival\n\nSchedule for the evening:\n\n17:45 — Doors open\n\n18:00 — Award ceremony & speeches\n\n18:30 — Screening of Sugar Island\n\n20:00 — Closing Celebration with with food, drink, and music\n\nAbout Sugar Island\n\nMakenya leaves behind fun and dancing with her friends in search for work; an unwanted pregnancy confronts her with sudden adulthood. The teenager lives alongside her grandfather and Mother in the Batey, a Dominican-Haitian community of sugarcane workers.\n\nCelebration\n\nAfter the film and Award Ceremony, stay with us for the Closing Celebration from 20:00 to 22:30, featuring a free bar kindly sponsored by Mezcal Reina and Cazcabel Tequila, with delicious wines from Uruguay and Elemental wines. Thank you also to Tajín, Amazon Grocery - Latinos at Amazon UK, Mexclub and Tacos MX for their catering support.\n\nNote:\n\nThe screening starts promptly at 18:00. For the comfort of all guests, there will be no access to the cinema room once it begins.",
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/be09584f28cc77191b289ccc1164263e.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "6a9b5beb11f6b0c311dc5456",
+   "eventId": "6a9b5beb11f6b0c311dc5456",
+   "venueId": "6a85be5eb78e310721d704c3",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "10:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a9b5beb11f6b0c311dc5456",
+   "free": true,
+   "status": "sold-out",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7b52933ebde8c3d4e63096",
+   "eventId": "films-6a7b4d47f835cf0f3c12b0b6",
+   "venueId": "6a7b525cecc8cceba8137b6d",
+   "roomId": null,
+   "date": "2026-10-02",
+   "start": "18:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a7b52933ebde8c3d4e63096",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a85d14dd8be1165b61f465d",
+   "eventId": "films-6a832f517e785d64cd4d197a-6a8330ef6f2553cabbe1a980-6a84cfd493e9428e10d3c5e1-6a84fd27e81ee26268a13fda-6a850629d71e8ceef20af4f1",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "12:15",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85d14dd8be1165b61f465d",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a8642b2693050c2090e92d4",
+   "eventId": "films-6a82ce25275e917d4b401510",
+   "venueId": "6a832e0722178a45d7bbede6",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "14:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8642b2693050c2090e92d4",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a9b5d64b4445566678ab0c4",
+   "eventId": "6a9b5d64b4445566678ab0c4",
+   "venueId": "6a85be5eb78e310721d704c3",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "14:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a9b5d64b4445566678ab0c4",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a85f1a19b1c36d06359020f",
+   "eventId": "films-6a82cf7677f151297067bde5",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "14:15",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85f1a19b1c36d06359020f",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a9fd91f2996618404fc2ba6",
+   "eventId": "6a9fd91f2996618404fc2ba6",
+   "venueId": "6a85be5eb78e310721d704c3",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "15:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a9fd91f2996618404fc2ba6",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a85f2e87872a6f966e2a0d0",
+   "eventId": "films-6a82d97d7fc155cc8bbb6cf0",
+   "venueId": "6a8327a4e51ce446865c8c4c",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "16:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85f2e87872a6f966e2a0d0",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a85db1e67a5b60f09adfc12",
+   "eventId": "films-6a82c97a66a542ebf3a237be",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "18:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85db1e67a5b60f09adfc12",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a86472da3289812a905dd62",
+   "eventId": "films-6a82dc10c50de5b91ec1ea82",
+   "venueId": "6a857ab2365982c54a5edbb7",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "19:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a86472da3289812a905dd62",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a8641de2b5304e9879e9404",
+   "eventId": "films-6a84d8e20518f8a6e746a258",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-03",
+   "start": "20:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8641de2b5304e9879e9404",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a864cdaf2153e36f7085bdc",
+   "eventId": "films-6a82e13b3af184d65746861b",
+   "venueId": "6a85bc12c55980873e7d911a",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "11:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a864cdaf2153e36f7085bdc",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a91a5ff712b742c7d4eb444",
+   "eventId": "6a91a5ff712b742c7d4eb444",
+   "venueId": "6a91a72070e72267010cb632",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "11:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a91a5ff712b742c7d4eb444",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 0.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a85d5023574f88645ea39c1",
+   "eventId": "films-6a8334c82db7720bdd5c4caa-6a849636f1a5476cb0ac7152-6a84cf045b14e5e835be1d3e-6a84e748d97b968696e6173c",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "12:15",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85d5023574f88645ea39c1",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a91bd46c7f6744d6201633f",
+   "eventId": "6a91bd46c7f6744d6201633f",
+   "venueId": "6a91a72070e72267010cb632",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "13:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a91bd46c7f6744d6201633f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 0.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a85f4146ed50c446691bb66",
+   "eventId": "films-6a82cde26eaac08241ac65d4",
+   "venueId": "6a8327a4e51ce446865c8c4c",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "14:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85f4146ed50c446691bb66",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a91c33e831a2b5ec4fce2c2",
+   "eventId": "6a91c33e831a2b5ec4fce2c2",
+   "venueId": "6a91a72070e72267010cb632",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "15:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a91c33e831a2b5ec4fce2c2",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 0.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a8635c8b78e310721e2a485",
+   "eventId": "films-6a82db22a3c2df1b45c765cc",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "16:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8635c8b78e310721e2a485",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a86436eee2a046a28779fb1",
+   "eventId": "films-6a82caa37f7bedbd19d252c3",
+   "venueId": "6a832e0722178a45d7bbede6",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "16:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a86436eee2a046a28779fb1",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a863667d71e8ceef21d9fc3",
+   "eventId": "films-6a82d61900a3a5d86c9ea249",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "18:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a863667d71e8ceef21d9fc3",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa4504003bb2ed0adcc1e0f",
+   "eventId": "6aa4504003bb2ed0adcc1e0f",
+   "venueId": "6aa9b1f74c7b1be4a2cf48b0",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "18:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6aa4504003bb2ed0adcc1e0f",
+   "free": true,
+   "status": "sold-out",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a86447340b67c26e31dd27f",
+   "eventId": "films-6a82ddc12c38b547673b7bdc",
+   "venueId": "6a857ab2365982c54a5edbb7",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "19:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a86447340b67c26e31dd27f",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a86376819cd03d85c0b9bd7",
+   "eventId": "films-6a82d86c899f453062ab1cbd",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-04",
+   "start": "20:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a86376819cd03d85c0b9bd7",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6aa457abc2745b566b3956d5",
+   "eventId": "films-6a8452ad33ff1196b857ff6d-6a84cc425b14e5e835bdf9cd-6a84d142b0b0f08ff3f84397-6a84d6234764fb0e8baaa333-6a84d760f1a5476cb0b447e0-6a84da611057823356adec4c-6a8508b0d71e8ceef20b4c07",
+   "venueId": "6a832e3155686a0c4f30549a",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "15:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6aa457abc2745b566b3956d5",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a85c0dd5c0bdc80e6cdd8cf",
+   "eventId": "films-6a7ed4cc42f7b7dff3bad801-6a84cb2b66e08b6e6c16715a-6a84e7e7b870fe528e5c45bf-6a85075dc4342f923648961c",
+   "venueId": "6a83277446486f054c90bf85",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "16:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a85c0dd5c0bdc80e6cdd8cf",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a8654ab4a5bb85a811f51bf",
+   "eventId": "films-6a82e3fa6ebda126e35a0246",
+   "venueId": "6a85bfe35028a5bbeb374a8e",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "17:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8654ab4a5bb85a811f51bf",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a8640cab35b8d54bf5e12d1",
+   "eventId": "films-6a82cafda57913db2feb22f3",
+   "venueId": "6a85bbd1b551126b01309ac8",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "17:15",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8640cab35b8d54bf5e12d1",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a863a8bcca00a9f2b677782",
+   "eventId": "films-6a8452ad33ff1196b857ff6d-6a84cc425b14e5e835bdf9cd-6a84d142b0b0f08ff3f84397-6a84d6234764fb0e8baaa333-6a84d760f1a5476cb0b447e0-6a84da611057823356adec4c-6a8508b0d71e8ceef20b4c07",
+   "venueId": "6a832e3155686a0c4f30549a",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "17:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a863a8bcca00a9f2b677782",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6aa7ce9f9079b0fe30721781",
+   "eventId": "6aa7ce9f9079b0fe30721781",
+   "venueId": "6aa9b290a68e38e8a80a1add",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "18:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6aa7ce9f9079b0fe30721781",
+   "free": true,
+   "status": "sold-out",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a860cc8179829d2233d8c27",
+   "eventId": "films-6a7ed5a27d32d48a9abe29d4-6a7ed5d78e4c26abba70441c-6a7ed600ed33b7e1bd0ad3e3-6a7ed63c8e4c26abba705332-6a7ed65b73d0e8c76bae955e-6a8501c9c672d78ed39f2110",
+   "venueId": "6a83277446486f054c90bf85",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "18:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a860cc8179829d2233d8c27",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a865261d32036e49714186d",
+   "eventId": "films-6a82d3adabfc1d1ad1f1894e",
+   "venueId": "6a85bc12c55980873e7d911a",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "18:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a865261d32036e49714186d",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a8648461436fd4cc073af54",
+   "eventId": "films-6a82d69ea4a1e83d5b4680c4",
+   "venueId": "6a832f964c580e6ddc773db0",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "18:45",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8648461436fd4cc073af54",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a8647b56d297b789702d6bb",
+   "eventId": "films-6a82dd34089b66d6388ff37f",
+   "venueId": "6a857ab2365982c54a5edbb7",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "19:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8647b56d297b789702d6bb",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a865266365982c54a6ef26a",
+   "eventId": "films-6a7ed67a0e89c826b7c6942b-6a7ed713abfbc36e0a9f171e-6a833c6abf795e5581a2162d-6a84c9568ceece3fc80e6f0e-6a84d2450518f8a6e745ba3a-6a84fe085028a5bbeb30085e-6a850de0dfb9ec8df305e33b",
+   "venueId": "6a83277446486f054c90bf85",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "20:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a865266365982c54a6ef26a",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 5.0,
+   "priceMax": 5.0
+  },
+  {
+   "id": "6a8654a6ac913a9df71c2991",
+   "eventId": "films-6a82df0ae5fa60e42494dc44",
+   "venueId": "6a85bc12c55980873e7d911a",
+   "roomId": null,
+   "date": "2026-10-05",
+   "start": "20:30",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8654a6ac913a9df71c2991",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a863984d575bf859135866c",
+   "eventId": "films-6a82c8793af184d657457c44",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-06",
+   "start": "12:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a863984d575bf859135866c",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a863a10e0b25a9101269015",
+   "eventId": "films-6a82d51ea0582eb5e1e5ca56",
+   "venueId": "6a85bdb494a2e07e9fae2552",
+   "roomId": null,
+   "date": "2026-10-06",
+   "start": "14:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a863a10e0b25a9101269015",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a8655c70b749cf288567749",
+   "eventId": "films-6a82ca0f7f7bedbd19d2363f",
+   "venueId": "6a85bc12c55980873e7d911a",
+   "roomId": null,
+   "date": "2026-10-06",
+   "start": "15:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a8655c70b749cf288567749",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a863896c56cd84033f3c544",
+   "eventId": "films-6a82d7b48933f752fa3d73c2",
+   "venueId": "6a8327a4e51ce446865c8c4c",
+   "roomId": null,
+   "date": "2026-10-06",
+   "start": "16:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a863896c56cd84033f3c544",
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "6a86494526fb7d3acae52017",
+   "eventId": "films-6a82db99baeefde4d020d72c",
+   "venueId": "6a832f964c580e6ddc773db0",
+   "roomId": null,
+   "date": "2026-10-06",
+   "start": "18:00",
+   "ticketUrl": "https://lolaff2026.eventive.org/schedule/6a86494526fb7d3acae52017",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 23.0,
+   "priceMax": 25.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim",
+   "venues-research"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/london-latino-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:09:25Z",
+    "fetcher": "scraper/festivals/london_latino_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/london-latino-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:34:32Z",
+    "fetcher": "scraper/festivals/london_latino_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/london_latino_film_festival/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.lng": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.name": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.online": [
+    "eventive"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

@@ -1,0 +1,1038 @@
+{
+ "schedule": "https://cfp.scaladays.org/scala26/schedule/",
+ "version": "0.7",
+ "conference": {
+  "acronym": "scala26",
+  "title": "Scala Days 2026",
+  "start": "2026-10-12",
+  "end": "2026-10-13",
+  "time_zone_name": "Europe/Berlin",
+  "rooms": [
+   {
+    "name": "Kesselhaus",
+    "capacity": null
+   },
+   {
+    "name": "Maschinenhaus",
+    "capacity": null
+   },
+   {
+    "name": "Palais Atelier",
+    "capacity": null
+   },
+   {
+    "name": "Frannz Salon: Lab 1",
+    "capacity": null
+   },
+   {
+    "name": "Frannz Salon: Lab 2",
+    "capacity": null
+   },
+   {
+    "name": "Frannz Salon: Lab 3",
+    "capacity": null
+   }
+  ],
+  "tracks": []
+ },
+ "talks": [
+  {
+   "code": "JEQ8GD",
+   "title": "Opening Session & Keynote",
+   "subtitle": "",
+   "type": "Keynote",
+   "track": null,
+   "language": "en",
+   "abstract": "Join us as we open ScalaDays 2026! After a short opening session, Martin Odersky, the founder of Scala, will deliver his keynote!",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/JEQ8GD/",
+   "logo": null,
+   "date": "2026-10-12T09:00:00+02:00",
+   "start": "09:00",
+   "duration": "01:00",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Martin Odersky"
+   ]
+  },
+  {
+   "code": "FZDGGW",
+   "title": "sbt 2.0: takeoff",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "sbt 2.0 is a new major series of sbt that propels itself to the modern standards. In this talk, we will focus on the new features such as the native client, Bazel-compatible caching, and new test command.\n\nWe will also go over the plugin migration effort, the differences between sbt 1 vs 2, and common pitfalls during migration.",
+   "description": "Building on 'sbt 2.0: go big' talk I gave, which provided visions and background around sbt 2.0 project, we can shift the focus more towards the user experience of sbt 2.0 (which would be available by Scala Days 2026).\n\n### Summary\nThe talk will pick up a few common tasks such as `test` and `run` that have completely changed its behavior, and explain the concrete differences between sbt 1 vs 2.\n\nWe will also focus on some of the `build.sbt` example that breaks cache hermeticity to highlight caching pitfalls.\n\n### Relevance\nI think this would be a relevant talk for the community given the wide usage of sbt (85.7% in 2026 survey), involvement of Scala Center + Sovereign Tech Agency, and hopefully general interest around what's new with sbt.\n\n### Takeaway\n- General understanding of key features such as common settings and cached tasks\n- Major differences between sbt 1 vs sbt 2\n- Pointers to learn about sbt or migration later",
+   "url": "https://cfp.scaladays.org/scala26/talk/FZDGGW/",
+   "logo": null,
+   "date": "2026-10-12T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Eugene Yokota"
+   ]
+  },
+  {
+   "code": "SLQC7Y",
+   "title": "Simpler User Interfaces with Capability-Passing",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Representing user interfaces as effects in the capability-passing style gives a simple framework for creating UIs. In this talk I'll explain how capability-passing works and use it to implement a simple terminal user interface library. We'll then discuss what general principles we can take from this, that can apply to any problem.",
+   "description": "**Description**\n\nModern user interface libraries represent interfaces as effects in the capability-passing style. Scala 3 has excellent support for this style of programming. I'll demonstrate this by implementing a simple terminal user interface framework in the capability-passing style. The resulting framework is straightforward to use, and catches certain classes of errors at compile-time. I'll then describe the general principles we can take from this exercise, giving you the mental models to use capability-passing in your own projects.\n\n**Goals**\n\nThe main goals of this talk are:\n\n1. To show that capability-passing is a useful tool, by building a simple terminal user interface framework with it.\n2. To abstract the design into general principles for creating frameworks using capability-passing. \n\n**Outline**\n\n- Effects, context, and capabilities. Explain three core ideas of effects, context, and capabilities. Describe the goals of an effect system: tracking effect usage and preventing effects when it is not safe to use them.\n- Interfaces are hard. From a simple UI example, examine the underlying issues and see why they are difficult to implement. We'll see we need to create two structures, the layout tree and the event graph, and these structures have mutual dependencies.\n- Modern frameworks. Look at an example modern user interface framework (probably Jetpack Compose, as it has all the features I want to show) and see how it solves the problems. Show that this is capability-passing, but not made explicit.\n- User Interfaces in Scala. Can we do better in Scala? Of course we can. Implement a basic terminal user interface framework in Scala. Show we can represent both the layout tree and event graph as capabilities, using just language features in Scala.\n- Type systems squash bugs. Show how we can use the type system to prevent simple but annoying bugs, such as using an event source outside a reactive scope. Talk about how capture-checking can prevent more bugs (but I probably won't have time to go into details.)\n- Capability-passing as a design strategy. Abstract what we've learned. We can build tree structures, more flexibly than with algebraic data types, using capability-passing. We can also build graph structures if we reify graph vertices. Finally, we can do away with sequencing combinators such as `map` and `flatMap` and just run in \"direct-style\". Show how this still retains desirable properties of reasoning and composition.",
+   "url": "https://cfp.scaladays.org/scala26/talk/SLQC7Y/",
+   "logo": null,
+   "date": "2026-10-12T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Noel Welsh"
+   ]
+  },
+  {
+   "code": "R87B7Z",
+   "title": "Securing Typelevel: Lessons from the GitHub SOS Fund",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Typelevel participated in the **GitHub Secure Open Source Fund** this year. This talk shares what we learned, what we are now doing to secure the Typelevel ecosystem, and **how you can improve security in your own projects**. We will also briefly discuss the requirements of the new EU Cyber Resilience Act.",
+   "description": "**Open source security has never mattered more.** In the last few years we have lived through Log4Shell, the xz backdoor, and a steady stream of npm and PyPI supply-chain attacks. AI is now being pointed at codebases to discover exploits at machine speed, and regulators have noticed: The EU's **Cyber Resilience Act** took its first effect in September 2026.\n\nEarlier this year, Typelevel was selected for the **GitHub Secure Open Source Fund**, a three-week intensive run by the GitHub Security Lab to help critical open source projects improve their security posture. We covered security advisories and incident response, threat modeling, hardening GitHub Actions, CodeQL, fuzzing and the security implications of AI and LLM tooling. This talk shares that work in three layers.\n\n**First, what we learned in the program:** the practices, the tooling, the homework and how any project, open source or internal, can apply them.\n\n**Second, what Typelevel is now doing across its ecosystem.** Some of these practices pre-dated the program, but the fund gave us the structure to review, formalise, and apply them consistently. We are now rolling out a shared baseline of repository settings across all Typelevel projects: private vulnerability reporting enabled, code scanning, secret scanning, MFA enforced for maintainers. We have also reviewed and updated the security documentation: an incident response plan, a threat model outline, and a fresh look at project licenses. We will also walk through how Typelevel handles a CVE end-to-end — from a private vulnerability report landing in our inbox, through coordinated disclosure, to the published advisory and patched release.\n\n**Third, the EU Cyber Resilience Act,** which was adopted in late 2024 and entered into force on 10 December 2024. Its first wave of obligations — mandatory reporting of actively exploited vulnerabilities and severe incidents to ENISA and national authorities — has applied since **11 September 2026**. Any company placing a Scala-based product on the EU market now falls under the regulation, and their compliance story has to account for every dependency they ship. We will share what Typelevel is working through as a foundation that sustains critical open source, and what that means for downstream users.\n\nIf you maintain an open source Scala library, ship a Scala service into production, or depend on the Typelevel stack, you will leave with **a checklist, a clearer view of what's coming and a working model for handling vulnerabilities** when they show up.",
+   "url": "https://cfp.scaladays.org/scala26/talk/R87B7Z/",
+   "logo": null,
+   "date": "2026-10-12T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Antonio Jimenez"
+   ]
+  },
+  {
+   "code": "QXAPMM",
+   "title": "A Distributed System On Fire: Diagnosing Failures with otel4s",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Learn to **diagnose realistic production failures** in a distributed Typelevel streaming platform. Through a curated set of incidents, you will debug failures using telemetry and iteratively improve observability through manual instrumentation with `otel4s`, leaving with a practical mental model for **telemetry-driven debugging in Scala**.",
+   "description": "This interactive lab puts you in front of a running distributed streaming platform built on the Typelevel stack (`cats-effect`, `fs2`, `http4s`, `smithy4s`, `skunk`, `otel4s`) and asks you to **diagnose what just broke**.\n\nThe system is realistic: several microservices communicating over both HTTP (public-facing API) and gRPC (internal), a streaming workload backed by `fs2` and Postgres, and a full observability stack (metrics, traces and logs) already wired up with `otel4s` and visualized with Grafana dashboards. \n\nEverything is pre-built, pre-deployed, and runs locally with a single command. If you would rather not run anything locally, the lab will be fully available as a GitHub Codespace.\n\nWe will work through a curated series of incidents covering two flavours of production pain:\n\n- **System-wide degradation:** A big chunk of the platform slows down or stops working for everyone.\n- **Tail-latency mysteries:** most users are fine, but a small fraction see slow or failing requests.\n\nFor each incident, you will get the symptoms, access to the running system and its observability backend, and time to investigate. We will guide you through a repeatable diagnosis pipeline — **metrics → traces → logs** — that scales from trivial bugs to genuinely tricky ones. At least one scenario is designed so that default instrumentation is not enough: you will add your own spans and attributes with `otel4s` to narrow down the problem.\n\nAfter each round we will walk through the diagnosis together and discuss what telemetry made visible that logs alone would not have.\n\nBy the end you will have a practical mental model for **telemetry-driven debugging in Scala**, hands-on familiarity with `otel4s` in a realistic distributed stack, and a take-home repository you can run locally to keep practising.\n\n**Setup requirements:** Docker, sbt, java 17+ or use github codespace.\n\n**Nice to have (but not required):**\n- Comfortable working with Scala and Cats Effect.\n- Familiarity with the basic ideas of distributed systems.",
+   "url": "https://cfp.scaladays.org/scala26/talk/QXAPMM/",
+   "logo": null,
+   "date": "2026-10-12T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 1",
+   "do_not_record": false,
+   "persons": [
+    "Antonio Jimenez",
+    "Maksym Ochenashko"
+   ]
+  },
+  {
+   "code": "RC939C",
+   "title": "Building Real Applications in Scala Native",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Scala Native is great! It creates small and fast binaries, and can access all operating systems features. This workshop will introduce working with Scala Native by building a terminal based application. We'll learn how to setup and build Native code, call into with system libraries, and use the archaic but powerful features of the terminal.",
+   "description": "**Overview**\n\nScala Native is a powerful tool, but underappreciated. The goal of this workshop is to show you how to work with Scala Native, and some of the unique features it unlocks. In particular the workshop will cover:\n\n1. Building tools with Scala Native, including project setup, building executables, and using the FFI.\n2. Knowledge of working with the terminal, at both a low-level (ANSI escape codes and C APIs), and a high-level (creating terminal user interfaces using a framework)\n3. An appreciation of the ecosystem that is available in Scala Native.\n\nThe core of this workshop will be building an application with a terminal user interface. The exact kind of application is to be determined; current ideas are:\n\n- an HTTP client like [Slumber](https://slumber.lucaspickering.me/);\n- a Bluesky client; or\n- a todo list.\n\nYou must have Scala Native installed before the workshop. Scala Native requires [some additional installation steps](https://scala-native.org/en/latest/user/setup.html) beyond installing just Scala. Furthermore, the operating system specific features we will use are only available in Unix-like systems (Linux or MacOS). If you are using Windows then you must be able to use [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).\n\n\n**Details**\n\n1. Creating a sbt project that uses Scala Native. The Scala Native plugin, cross-project setup and its advantages. Building and linking. Finding the executable.\n2. Interacting with the terminal. Basic ANSI escape codes. Features only available via operating system calls (tcgetattr, tcsetattr, ioctl). Using Scala Native's existing OS bindings.\n3. Using the FFI. Binding a C function in Scala Native. C types, memory allocation. Writing C stub code to produce the value of constants.\n4. Building the application. We'll switch to using [Terminus](https://www.creativescala.org/terminus/) so we don't have to build everything from scratch. This will allow us to explore the Scala Native ecosystem (e.g. Cats Effect.)",
+   "url": "https://cfp.scaladays.org/scala26/talk/RC939C/",
+   "logo": null,
+   "date": "2026-10-12T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 2",
+   "do_not_record": false,
+   "persons": [
+    "Noel Welsh"
+   ]
+  },
+  {
+   "code": "DYQWSL",
+   "title": "sbt 2.0 lab",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Come talk to the sbt maintainers at sbt 2.0 lab. The lab session will be a mix of prepared problems and build clinic to discuss porting your build to sbt 2.",
+   "description": "This lab session will be conducted by current sbt maintainers Eugene and Anatolii.\n\n### Summary\nWe'll prepare some example problems people can go through to experience the caching issues etc that we can finish in an hour. The next hour would be more open-ended discussion or Q&A about porting existing build to sbt 2.\n\n### Relevance\nHaving an in-person clinic time with the project maintainers makes conference a fruitful experience. This might also be an opportunity where people can discuss closed-sourced repo.",
+   "url": "https://cfp.scaladays.org/scala26/talk/DYQWSL/",
+   "logo": null,
+   "date": "2026-10-12T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 3",
+   "do_not_record": false,
+   "persons": [
+    "Eugene Yokota",
+    "Anatolii Kmetiuk"
+   ]
+  },
+  {
+   "code": "LS3ZDZ",
+   "title": "A brief history of Scala",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "What can one tiny function teach you about twenty years of Scala? We rewrite `isPalindrome` version by version and let the code tell the story. Watch it grow from classic Scala 2 into the modern Scala 3;  tail recursion, type classes, extension methods, all earning their place. A palindrome reads the same both ways, Scala's history does not.",
+   "description": "Scala has spent over two decades reinventing how to write code. New syntax arrives while some idioms slip into retirement, and the obvious way to express something in 2010 can look very different by 2026. Rather than march through the changelog, we tell that story with the help of a simple function: `isPalindrome`, as it evolves with Scala versions.\nWe start with a one-liner and let the problem itself pull in new language machinery, one feature at a time, only adding things when they are needed. We will look into generalizing from `String` to `Seq[A]`, using tail recursion with `@tailrec`, and sequence extractors `+:`/`:+` that peel a palindrome from both ends in a single pattern. Asking what \"equal\" even means walks us through type classes as implicits and their given/using reincarnation. We close by letting the answer say something more than just `true` or `false`, contrasting sealed-trait ADTs with Scala 3 enums, and wrapping the whole thing as a fluent extension method.\nEach step fits on a single slide, and together they become a tour of Scala's evolving style via type abstraction, recursion, the implicits-to-givens transition, ADTs, and extension methods.\nAudience members leave with a timeline of Scala's syntax and idiom changes, a clearer sense of why features were added rather than merely that they were. No prior history required; just a fondness for strings that read the same both ways.",
+   "url": "https://cfp.scaladays.org/scala26/talk/LS3ZDZ/",
+   "logo": null,
+   "date": "2026-10-12T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Odd Möller",
+    "Martin Zachrison"
+   ]
+  },
+  {
+   "code": "EYKYAL",
+   "title": "AI Multiplies — Let Scala Hold the Line",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "AI is a multiplier, not a fixer — point it at a mess, and it scales the mess up: defects climb, reviews balloon, tests become a farce. Scala's honest compiler and typed libraries are a base that holds as you push harder. We'll assemble the workflow around them with agents, context, deterministic refactors, hermetic builds and more.",
+   "description": "A year ago, my argument was that productivity lives in the whole development lifecycle, not in how fast anyone types. AI hasn't changed that — it made it unforgiving. The instinct is to treat an agent as a fixer, something you point at a problem to make it go away. It isn't. It's a multiplier, and a multiplier obeys whatever it's standing on. Direct it at a shaky team process, and nothing gets repaired; the shakiness simply scales. More defects, longer review queues, green test suites that are quietly wrong — and reworks that grow faster than anyone wants to admit.\nWhich reframes the whole question. It’s not \"how do we add AI?\", it’s \"what is it multiplying?\" For Scala teams, the honest answer is the language itself. Strongly typed libraries and a compiler that refuses to lie give you a foundation that gets firmer under pressure. This allows to discover failures at runtime - the kind of failures that only surface at runtime on production with other stacks.. The types you already have are complex enough. What's usually missing is a process built to lean on them.\nSo that's what we'll assemble, one component at a time, like building together a kit. Context Fabric, CI build for Machine Speeds, Tiered Review and testing strategies for the AI era. We will apply the same discipline we've been using in large monorepo teams — the Airbnb and Databricks tier — where we're seeing output climb by roughly half in a matter of months, but in a way that can be split and rearranged to match your context. You won't leave with a mandate to adopt all of it. You'll leave with the kit, the cost of each piece, and a clear sense of what to reach for next on your own Scala projects — a way to raise productivity and quality at the same time, instead of trading one for the other.",
+   "url": "https://cfp.scaladays.org/scala26/talk/EYKYAL/",
+   "logo": null,
+   "date": "2026-10-12T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Krzysztof Romanowski"
+   ]
+  },
+  {
+   "code": "SEEJRS",
+   "title": "How OOP Earned Our Trust and Let Us Down",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Object-oriented programming helped shape modern software engineering — but also gave us shared mutable state, fragile hierarchies, and accidental complexity. Using real Scala adoption stories, this talk explores why legacy OOP thinking fails and how functional principles help teams build simpler systems.",
+   "description": "Object-oriented programming dominated software development for decades. It improved code reuse, abstraction, and modelling, and many developers — myself included — started their careers with it. But over time, the same ideas often produced systems that became difficult to reason about: shared mutable state, deep inheritance trees, overengineered patterns, and growing technical debt.\n\nIn this talk, I’ll share lessons from real-world Scala adoption projects where the biggest challenge was not learning a new language, but bringing existing habits into a different paradigm. Instead of embracing immutability, pure functions, and explicit effects, teams often recreated familiar OOP architectures with shinier syntax — and repeated the same mistakes.\n\nThrough practical examples we’ll examine how good engineering intentions can still lead to systems that are harder to maintain and evolve.\n\nFinally, I’ll show how functional programming principles can help teams write simpler and more sustainable software — not only in Scala, but across modern language ecosystems. Attendees will leave with practical ideas for reducing accidental complexity and avoiding common overengineering traps.",
+   "url": "https://cfp.scaladays.org/scala26/talk/SEEJRS/",
+   "logo": null,
+   "date": "2026-10-12T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Pavel Kozlov"
+   ]
+  },
+  {
+   "code": "MKMNWA",
+   "title": "A Maiden Voyage into Open Source, Datatypes, and Scala",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "What optimizations can we find by making a simple change to a traditional data structure? In the summer of 2026 I developed a faster immutable linked list; implementing it was my first experience both writing Scala and working with an open source community. This talk explores my approach to data structure optimization and my acquisition of Scala.",
+   "description": "What if we take a traditional data structure and make a small change to it. What kind of optimizations and use cases could we exploit by simply thinking beyond what we already use every day. \n\nThis is a question I tackled with support from Google Summer of Code and the Typelevel community for 3 months through the summer of 2026. Immutable linked lists are important data structures for many functional programming applications, notably in concurrency, but what if a simple change could make them faster. Many of the most common operations we want on a list require as many pointer dereferences as elements in the list, including appending, concatenation, and methods like map and filter. Now imagine generalizing the idea of the linked list where instead of each node holding only a single element, each node holds a block of elements: each is an array of a constant size. By making this simple change, we can decrease pointer dereferences by a factor of the size of the block! Furthermore, we can use benchmarking to select an optimal block size and discover other areas where improvements can be made.\n\nI proposed the above project to Typelevel back in April of 2026. As for my background, I’ve loved functional programming since I took the introductory class in my third year of university. I went on to TA the class for three semesters, fortifying my functional programming foundations and learning how to teach a paradigm many students have never encountered before. \n\nWhen my project proposal was accepted and I began work on it, I had never touched a Scala program before. As of writing this description I am a mere 4 days into the project, and already I have learned so much about Scala. I expect the talk to be about the process of developing this block linked list datatype, interwoven with reflections and observations on the process of learning Scala and participating in the Typelevel community. \n\n\n\nThis talk has two primary goals:\n- To make exploring data structures optimizations approachable, worthwhile, and fun!\n- To give insight into the experience of learning Scala and contributing to open source for the first time.\n\n\nOutline of the proposed talk\n- Introduction/motivation\n- Project Description\n- Personal background\n- Overview of the process of developing the new datatype, through the lens of navigating a new community and programming language\n- Final reflections on the experience",
+   "url": "https://cfp.scaladays.org/scala26/talk/MKMNWA/",
+   "logo": null,
+   "date": "2026-10-12T12:10:00+02:00",
+   "start": "12:10",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "L Denney"
+   ]
+  },
+  {
+   "code": "GLEFDT",
+   "title": "Cats Go Wasm/WASI: Typelevel on Server-side WebAssembly",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Recent work in the [scala-wasm fork](https://github.com/scala-wasm/scala-wasm) of Scala.js has made it possible for Scala apps to run directly on the WebAssembly Component Model platform. In this talk, I will share my progress of porting Cats Effect and FS2 libraries to this shiny new architecture.",
+   "description": "[The WebAssembly Component Model](https://component-model.bytecodealliance.org/introduction.html) is a new platform for building secure, composable Wasm applications with explicitly defined, type-safe interfaces. All communication between Wasm components and the outside world has to go through standardized interfaces such as [WASI](https://wasi.dev/). As a result of this design, all Scala code directly accessing platform-specific APIs has to be ported over to this new platform.\n\nThis year, [my proposal](https://summerofcode.withgoogle.com/programs/2026/projects/vibpm0UF) to port core parts of the Typelevel stack onto the Wasm/WASI platform was chosen for the [Google Summer of Code program](https://summerofcode.withgoogle.com/). Even though the resulting code is still a prototype, it makes it possible for several real-world apps to \"just run\" as Wasm components with little to no changes.\n\nIn this lightning talk, I will briefly go over the set of core I/O mechanisms used by Cats Effect and FS2 and describe their prototype implementation for the WASI 0.2 API.",
+   "url": "https://cfp.scaladays.org/scala26/talk/GLEFDT/",
+   "logo": null,
+   "date": "2026-10-12T12:20:00+02:00",
+   "start": "12:20",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Mariusz Jakoniuk"
+   ]
+  },
+  {
+   "code": "XZN3MU",
+   "title": "Inline Traits for Specialization",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Inline traits are a language feature that eliminate allocations and virtual dispatch associated with trait composition in Scala. They do so by inlining their methods into their implementing subclasses. When inline traits are combined with the Specialized type class, they enable trait-based abstractions to be zero-cost.",
+   "description": "Specialization is a compiler transformation that optimizes generic program code such that code using primitive types can execute without significant overhead. The @specialized annotation in the Scala 2 programming language allowed programmers to direct the compiler to create optimized generic data structures for each primitive type. @specialized is used significantly in the implementation of high-performance Scala 2 libraries, allowing for performance without the productivity of generics. This optimization trades performance at the cost of extra space, as generic code must be specialized for each of the primitive types, scaling exponentially on the number of type parameters. Since the Scala 3 programming language has evolved significantly from Scala 2, the @specialized annotation is no longer available. This talk will briefly describe a new scheme of specialization for the Scala 3 compiler based on inline traits.",
+   "url": "https://cfp.scaladays.org/scala26/talk/XZN3MU/",
+   "logo": null,
+   "date": "2026-10-12T12:30:00+02:00",
+   "start": "12:30",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "James You"
+   ]
+  },
+  {
+   "code": "EDJA7U",
+   "title": "The state of Scala in 2026",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "With Scala 3.9 LTS out, three Scala distributions will exist in parallel: Scala Next (3.10+), the current 3.9 LTS and the old 3.3 LTS.\n\nWe will explain how to think about it: why you should migrate your libraries to 3.9 LTS, what cool features have we cooked up in Scala Next, and how the standard library can evolve now that it’s no longer frozen.",
+   "description": "[As I write this talk description, the first release candidate of the new Scala 3.9 LTS is being prepared in the background. By Scala Days ‘26, Scala 3.9 LTS will be out in the wild, likely with Scala Next already at 3.10 series.]\n\nScala 3.9 LTS is the second LTS series in the history of Scala, 3 years after its predecessor, 3.3 LTS. We bumped the required JDK to 17 and packed many new features, such as named tuples, better for comprehension loops, a new language runner (Scala CLI) or a bytecode optimizer.\n\nScala 3.3 LTS still works with older JDKs and will be supported for at least another year. That should be a sufficiently long window for the community to migrate, as currently it is the most widely used distribution. Scala 2.13 will also continue receiving security and bug fixes, as well as JDK compatibility updates.\n\nWe will take an early look at Scala 3.10, which will drop a number of legacy constructs to make space for new features.\n\nThe standard library is getting unfrozen and open to contributions from 3.10 onwards, with a dedicated process in SLC. We will explain how (and why) it differs from SIP and what kind of changes would be accepted.\n\nIn this talk we will trace where Scala is today, where we are taking it, and how you can help shape it.",
+   "url": "https://cfp.scaladays.org/scala26/talk/EDJA7U/",
+   "logo": null,
+   "date": "2026-10-12T14:10:00+02:00",
+   "start": "14:10",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Piotr Chabelski",
+    "Lukas Rytz"
+   ]
+  },
+  {
+   "code": "MM3RRZ",
+   "title": "Scala's LibGDX: A Report from the Trenches",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Java has LibGDX. Scala has powerful platforms, but not the same game-development story. SGE is my attempt to close that gap. This talk is about the engineering needed to make one Scala codebase run across desktop, browser, native and Android targets.",
+   "description": "In this talk I will describe how the initial goal of building a Scala game engine with LibGDX-like reach led to a series of deeper platform-engineering problems: how to port a large Java ecosystem with LLMs without trusting them blindly, how to track source parity, tests and coverage, how to build sbt tooling for multi-architecture JVM packaging and Scala Native cross-compilation, and how to ship native dependencies with the right linker flags for each platform.\n\nThe audience will see SGE as a case study in ambitious multi-platform Scala: what works today, what fights back, and what still needs to improve. The talk is not mainly about game design. It is about the infrastructure required to make Scala usable for desktop, browser, native and Android applications from one codebase.",
+   "url": "https://cfp.scaladays.org/scala26/talk/MM3RRZ/",
+   "logo": null,
+   "date": "2026-10-12T14:10:00+02:00",
+   "start": "14:10",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Mateusz Kubuszok"
+   ]
+  },
+  {
+   "code": "WQVZSC",
+   "title": "Quality Pipelines for Generative AI",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "How do you achieve reliable results from stochastic AI models? This talk presents practical techniques for building quality pipelines around generative AI that improve output quality before human review begins, making more effective use of limited human time and attention.",
+   "description": "Generative AI can generate useful content at extraordinary speed, but the quality and reliability of that output remain uneven. Raw AI output can contain subtle errors, inconsistencies, weak explanations, or questionable engineering choices. Human review remains essential, but once AI can generate content at scale, human attention itself becomes the bottleneck.\n\nThis talk presents an engineering approach to improving the quality of generative AI output before humans enter the loop. Rather than treating AI as a standalone assistant, we can build “quality pipelines” around it using deterministic programs, repeatable workflows, structured review loops, iterative refinement, and layered human vetting.\n\nAs a case study, I’ll describe work done for an STA (Sovereign Tech Fund) Scala Center project that focused on improving the documentation of the Scala standard library. We wrote Scala programs that inserted TODO markers into `.scala` source files where Scaladoc was missing. We then used long-running Scala scripts to orchestrate an AI-driven workflow that generated documentation, reviewed generated text, produced structured feedback, and iteratively refined the results one file at a time before multiple stages of human review.\n\nIn this talk, you will learn practical approaches to building quality pipelines around generative AI, including deterministic orchestration, structured review loops, iterative refinement, and layered human vetting. The session will focus on applying traditional software-engineering ideas to AI systems to achieve the quality you want while making the most effective use of the precious resource of human attention.",
+   "url": "https://cfp.scaladays.org/scala26/talk/WQVZSC/",
+   "logo": null,
+   "date": "2026-10-12T14:10:00+02:00",
+   "start": "14:10",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Bill Venners"
+   ]
+  },
+  {
+   "code": "7KYEXS",
+   "title": "Shopping for a Scala Framework",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "We present a new Scala framework that picks ideas from Django, Spring, Rails, and a few others, and integrates them in a way only Scala can.\n\nWe aim to show that building and deploying powerful applications can and should be easy in Scala, and not just for experts.",
+   "description": "Scala deserves a great web framework. We're building it.\n\nOur framework builds around a few big ideas:\n\n1. Your data model is the source of truth, and everything else (schemas, resources, endpoints, serialization) can be derived.\n2. Capabilities are visible in all critical signatures, so the compiler stops you if you're trying something without the necessary resources.\n3. Server-rendered, server-stateful UI with real-time updates over a tiny WebSocket runtime (a few KB).\n4. Boring infrastructure and simple commands. The framework comes with its own CLI to deploy applications in seconds.\n\nThe result combines (what we think are) the best parts of existing frameworks, like Rails, Spring, and Phoenix, with the power of Scala to produce an exceptionally high productivity framework.\n\nIn our talk we will create a non-trivial application in only thirty minutes, which will demonstrate the features we described above and prove our claim about productivity.\n\nBy the end of the talk, we hope that you'll get curious and excited enough to try this framework on a new project. This framework, if successful, has the potential to\n\n- put Scala back on the map for application development, 10 years after Play’s peak relevance;\n- attract newcomers to Scala; and\n- create new startups which are the beginning stage of the adoption cycle (in terms of both people and companies)\n\nand you are the first audience to see it live.",
+   "url": "https://cfp.scaladays.org/scala26/talk/7KYEXS/",
+   "logo": null,
+   "date": "2026-10-12T15:00:00+02:00",
+   "start": "15:00",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Daniel Ciocîrlan",
+    "Riccardo Cardin"
+   ]
+  },
+  {
+   "code": "9UMGZA",
+   "title": "On Folding",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Where does computation live? In origami, it lives in a paper crease. We build a functional crease pattern generator in Scala to explore what origami teaches us about programs. The insight is material before it is mathematical: pure functional programming emerges naturally from the physics of folding.",
+   "description": "This talk uses origami as a concrete, geometric setting for ideas that often stay abstract. We walk through the implementation of a crease pattern generator in Scala: a program that takes a set of folding rules and produces the geometric blueprint for an origami model. The patterns we generate, we fold into physical objects.\nAlong the way, the talk covers how to model a physical system as immutable data and how to encode mathematical laws as type constraints, so the compiler rejects invalid states. We are not using functional programming as a convenient tool. Instead, we are making the argument that origami is a form of computation, and that the math enforcing which folds are physically valid is a type system.\nThe audience will leave with a concrete example of type-driven design applied to a real domain, an intuition for why immutability and pure functions are not just good practice but sometimes the only model that fits, and (in the best case) the realisation that computation can live anywhere. Even in a sheet of paper.\nThis talk is aimed at beginners and experienced Scala developers alike. Its goal is less to close things down than to open them up.",
+   "url": "https://cfp.scaladays.org/scala26/talk/9UMGZA/",
+   "logo": null,
+   "date": "2026-10-12T15:00:00+02:00",
+   "start": "15:00",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Johanna Odersky"
+   ]
+  },
+  {
+   "code": "XSQMQV",
+   "title": "The State of Scala on WebAssembly",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "WebAssembly is increasingly used beyond browsers for serverless, sandboxing, AI workloads, and more. This talk explores the current state of Scala on Wasm with Scala.js and scala-wasm, an experimental project targeting standalone runtimes, WASI, and the Component Model. This session covers current capabilities, limitations, and future directions.",
+   "description": "WebAssembly is increasingly used beyond the browser for [serverless](https://www.akamai.com/blog/developers/build-serverless-functions-zero-cold-starts-webassembly-spin) platforms, [sandboxed execution, AI workloads](https://thenewstack.io/webassembly-sandboxing-ai-agents), and more. As the Wasm ecosystem grows, it is no longer limited to systems languages such as Rust and C++\n[Scala.js now supports a Wasm](https://www.scala-js.org/doc/project/webassembly.html) alongside JavaScript, and the [scala-wasm](https://github.com/scala-wasm/scala-wasm) project explores [Wasm/WASI](https://wasi.dev/), and the [Component Model](https://component-model.bytecodealliance.org/).\n\n**This talk covers what currently works and what remains experimental, what WASI and the Component Model are, how they can be used from Scala, and the practical benefits of compiling Scala to Wasm.**\n\nTopics include:\n\n- How to compile and run Scala applications on Wasm\n- The current state of the Scala Wasm backend\n- The basics of WASI and the Wasm Component Model\n- How Wasm sandboxing protects you from AI\n- How to build serverless Wasm applications in Scala",
+   "url": "https://cfp.scaladays.org/scala26/talk/XSQMQV/",
+   "logo": null,
+   "date": "2026-10-12T15:50:00+02:00",
+   "start": "15:50",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Rikito Taniguchi"
+   ]
+  },
+  {
+   "code": "LXXBWY",
+   "title": "Is metaprogramming just functional programming?",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Metaprogramming is the act of treating code as data, to transform it, yielding new programs. Is that not also what functional programming is all about? Similarly, what does compile time mean, when mixed with IO, where programs are constructed and run in separate phases? Let's talk about it together.",
+   "description": "What is metaprogramming? Definitionally it is just manipulating code as data, to produce new programs. By that logic, is `map` and `flatMap` not metaprogramming? Is is metaprogramming if you use `inline`? What about if you use quotes and splices?\n\nHow does compiletime vs runtime factor into this? How about with something like `IO`, where all you are really doing is putting together a program from smaller pieces? What does compiletime vs runtime mean there?\n\nHow about program analysis? That is metaprogramming, and not something functional programming can do as easily, right?\n\nI do not have the definitive answer to any of these questions, but I hope we can discuss them together, and maybe come closer to some idea about how metaprogramming and functional programming are similar, but possibly still different. If you've never interacted much with metaprogramming before, I hope I can give you an introduction of sort, not on how to do it, but why.",
+   "url": "https://cfp.scaladays.org/scala26/talk/LXXBWY/",
+   "logo": null,
+   "date": "2026-10-12T15:50:00+02:00",
+   "start": "15:50",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Kathryn Frid"
+   ]
+  },
+  {
+   "code": "JQPA8G",
+   "title": "Back to the roots - VirtusLab Scala Stack",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Scala is evolving to be more welcoming than ever. Explore the VirtusLab Scala Stack, an innovative toolkit that combines Scala 3 and Project Loom to champion direct-style programming by making concurrency more intuitive. With libraries like Ox and Tapir, the entry barrier is lowered, inviting new developers to build robust, scalable apps.​",
+   "description": "Scala was always meant to be simple, safe, and robust. It was designed to \"scale\" from short programs to big, efficient solutions. Features like higher-kinded types, the for-comprehension syntactic sugar, and Futures enabled efficient concurrency. Along the way, Scala’s sophisticated type system enabled the development of functional programming ecosystems around IO monads. This introduced principles such as referential transparency for scalability and fearless refactoring. But there was a price to pay: a steep learning curve and a reputation for complexity. These factors discourage new developers. \n\nToday, we have a solution and a way to attract new developers to Scala. The VirtusLab Scala Stack is a complete stack that combines established Scala libraries with some innovation from new ones, focusing on simple Scala through direct style. VirtusLab provides enterprise-grade support for libraries, tools, and the language itself.​\n\nThanks to VirtusLab Scala Stack, programmers can forget about abusing for-comprehension. Eager Futures and lazy IO monads no longer creep throughout the codebase. Developers can use the style familiar from other languages and ecosystems. This approach is supported by a strong type system together with resource safety. Could this be a new opening for Scala application development?​\n\nDuring the talk, I will walk you through examples of using different libraries from the VirtusLab Scala Stack family, showcasing what they look like in direct style and how they combine, resulting in simple-to-write and read yet robust and powerful code.",
+   "url": "https://cfp.scaladays.org/scala26/talk/JQPA8G/",
+   "logo": null,
+   "date": "2026-10-12T15:50:00+02:00",
+   "start": "15:50",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Jacek Kunicki"
+   ]
+  },
+  {
+   "code": "8PAEJW",
+   "title": "Caching in Scala using Cats Ref",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Modern distributed systems depend on caching for performance, yet implementing caching correctly and safely remains a persistent challenge. This talk explores how Cats Ref from the Typelevel ecosystem enables developers to build thread-safe, testable cache while maintaining functional purity.",
+   "description": "Through hands-on exploration of Cats `Ref` and a realistic API caching scenario, this talk exposes the subtle pitfalls that commonly catch developers off guard when implementing `Ref`. Rather than learning these lessons painfully through production incidents, the talk provides practical strategies to recognise, prevent, and test them from the start.\n\nThe talk will aim to establish foundational knowledge; what `Ref` is, why it represents the ideal abstraction for concurrent cache implementations, and how it maintains both safety and purity in the presence of mutability. Building on this foundation, the talk examines core caching principles, exploring when caching is appropriate and how to choose strategically between in-memory and cloud-based solutions. By the end attendees should gain confidence implementing `Ref` with a clear understanding of its behaviour and implications beyond that of caching.\n\nThe talk has been previously presented at London Scala User Group (LSUG) to a diverse audience, including those unfamiliar with the Typelevel stack. As the speaker I bring three years of production Scala experience, whereby I have used `Ref`  for caching large scale business data models for quick retrievals and dynamic configuration updates without server restarts. I aim to bring fresh perspectives on `Ref` with direct takeaways from my experiences with Typelevel stack.",
+   "url": "https://cfp.scaladays.org/scala26/talk/8PAEJW/",
+   "logo": null,
+   "date": "2026-10-12T16:40:00+02:00",
+   "start": "16:40",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Katrina Petrevice"
+   ]
+  },
+  {
+   "code": "8RMYG9",
+   "title": "Optimizing Scala bytecode for fun and profit",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Can high-level code have the same perf as low-level hand-tuned code?\nThat’s what Scala’s optimizer is for! Your call to map on a list turns into the same bytecode as if you had written a while loop.\nIn this talk, I’ll introduce bytecode and optimization basics, present the Scala optimizer, and discuss fundamental and temporary limitations.",
+   "description": "Every developer wants to write high-level declarative code that’s easier to maintain while also getting the performance benefits of low-level imperative code that doesn’t pay the costs of abstraction.\nThe Scala compiler has a bytecode optimizer to help reach that goal, and the JVM also performs its own optimizations.\nHowever, there are plenty of interesting problems and tradeoffs along the way. For instance, while inlining code can help avoid virtual calls and allocations, it can also cause slowdowns from having too much code to load and keep in the instruction cache. Even if a specific optimization is profitable, it may rely on such a specific code shape that it is too brittle to be depended upon.\nOptimization has its limits, and the JVM adds its own limitations on top of those, which aren’t the same as in other targets such as Scala.js.\n\nIn this talk, I'll discuss:\n- what bytecode is, and how the JVM interprets and compiles it;\n- a high-level view of optimizations, including inlining, store-load elimination, and so on;\n- how the optimizer is implemented, and what consequences this has on the optimizations it performs;\n- what developers can and cannot expect from the Scala compiler and the JVM; and\n- how the Scala optimizer could improve in the future.",
+   "url": "https://cfp.scaladays.org/scala26/talk/8RMYG9/",
+   "logo": null,
+   "date": "2026-10-12T16:40:00+02:00",
+   "start": "16:40",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Solal Pirelli"
+   ]
+  },
+  {
+   "code": "VJWHRZ",
+   "title": "Teaching Software Architecture using Scala",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "At Active Group, we have taught more than 30 three-day trainings on Functional Software Architecture since 2019, mostly to audiences with little or no prior exposure to functional programming.  For the examples, we use Scala or Haskell. I report on the constraints, successes, and learnings of this course.",
+   "description": "Since 2019, the International Software Architecture Qualification board has featured a three-day curriculum for Functional Software Architecture (\"FUNAR\") as part of its Advanced Level certification.  In our training implementing the curriculum, we work through exercises examples written in Scala (alternatively Haskell), among them a complete web application.  The short duration of the course (which is usually preceded by a one-day introduction to functional programming) puts significant constraints on how much and what it can cover, but also poses didactic challenges as all material must be explainable and carry over to other functional languages.  Over the past six years, we have continually assessed the effectiveness of the course and made many iterative improvements.  I'll report on our experience and draw some inferences not just about teaching but also about viable software architecture in Scala and what its advantages and differences are with traditional software architecture.",
+   "url": "https://cfp.scaladays.org/scala26/talk/VJWHRZ/",
+   "logo": null,
+   "date": "2026-10-12T16:40:00+02:00",
+   "start": "16:40",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Michael Sperber"
+   ]
+  },
+  {
+   "code": "MXTCZD",
+   "title": "Closing session Day 1",
+   "subtitle": "",
+   "type": "#ScalaDays",
+   "track": null,
+   "language": "en",
+   "abstract": "Join us as we wrap up Day one of ScalaDays 2026!",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/MXTCZD/",
+   "logo": null,
+   "date": "2026-10-12T18:00:00+02:00",
+   "start": "18:00",
+   "duration": "00:15",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": []
+  },
+  {
+   "code": "PCDP8E",
+   "title": "Community Party",
+   "subtitle": "",
+   "type": "#ScalaDays",
+   "track": null,
+   "language": "en",
+   "abstract": "ScalaDays is a good place to meet great people, and while there is ample time to chat and discuss during the conference, we also want to provide an opportunity for everyone to meet up outside of the regular conference program with our Community Party on Monday! \n\nOur Community Party is a casual meet-up in a relaxed atmosphere and provides a perfect opportunity to meet old and new friends, business contacts or get to know other participants of ScalaDays. We will offer food as well as alcoholic and non-alcoholic drinks.",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/PCDP8E/",
+   "logo": null,
+   "date": "2026-10-12T18:15:00+02:00",
+   "start": "18:15",
+   "duration": "04:00",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": []
+  },
+  {
+   "code": "CCL7JZ",
+   "title": "Welcome back!",
+   "subtitle": "",
+   "type": "#ScalaDays",
+   "track": null,
+   "language": "en",
+   "abstract": "Join us as we kick off Day 2 of ScalaDays 2026!",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/CCL7JZ/",
+   "logo": null,
+   "date": "2026-10-13T09:00:00+02:00",
+   "start": "09:00",
+   "duration": "00:15",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": []
+  },
+  {
+   "code": "J7ABJP",
+   "title": "Future of Programming",
+   "subtitle": "",
+   "type": "Keynote",
+   "track": null,
+   "language": "en",
+   "abstract": "tbd",
+   "description": "tbd",
+   "url": "https://cfp.scaladays.org/scala26/talk/J7ABJP/",
+   "logo": null,
+   "date": "2026-10-13T09:15:00+02:00",
+   "start": "09:15",
+   "duration": "00:45",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Nada Amin"
+   ]
+  },
+  {
+   "code": "ACGLZW",
+   "title": "A Typelevel Prospectus",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Learn more about Typelevel, the open source organization that stewards development of projects such as Cats Effect, http4s, and Circe, and offers one of the most comprehensive cross-platform stacks for the Scala ecosystem. In this talk, you will discover the people and processes driving this work and how you can participate.",
+   "description": "Typelevel as an organization has grown a lot in the last year, since we became a nonprofit Foundation. I am excited to share with the broader Scala community about everything we've accomplished, where we are going, and how they can become involved.\n\nThree goals for this talk are to:\n1. Give an overview of who Typelevel is and what we do.\n2. Provide transparency into our governance, community, and technical operations.\n3. Share opportunities and invite the community to become involved.\n\nAlong the way, I will briefly cover specific projects and initiatives in more detail, to highlight examples and success stories.\n\nMore broadly, perhaps this talk will also offer insights about how to foster community and sustainable growth in open source.",
+   "url": "https://cfp.scaladays.org/scala26/talk/ACGLZW/",
+   "logo": null,
+   "date": "2026-10-13T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Arman Bilge"
+   ]
+  },
+  {
+   "code": "H8NAKF",
+   "title": "Report: where are we going with the Standard Library?",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "This is an experience report on the process and progress of improving the Standard Library, Scala Toolkit and other core Scala modules under the resources provided by the Sovereign Tech Agency.",
+   "description": "Depending on circumstantial changes and progress reached by October the precise contents could change.\nHowever the talk would cover the process of delivering on the project: i.e. on which areas we put focus; limitations (i.e. when you have to say no to \"can't you just do X\"), and hopes for future. For example beyond concrete code proposals/delivered changes, there is plenty of material to draw from such as various community proposals, an appriasal of the state of the library ecosystem, report contents for the STA (including a roadmap of ideas that may not land but were at least considered.)",
+   "url": "https://cfp.scaladays.org/scala26/talk/H8NAKF/",
+   "logo": null,
+   "date": "2026-10-13T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "code": "K7ZLQH",
+   "title": "Mastering IntelliJ IDEA’s Debugger for Scala Development",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Debugging in Scala can be frustrating, but it doesn’t have to be. Discover how IntelliJ IDEA’s debugger thanks to features like conditional breakpoints and smart logging, can help you pinpoint bugs faster and with less hassle. Leave with practical tips to debug smarter, not harder.",
+   "description": "Debugging sounds like a very straightforward task. You place breakpoints, run the program, and see where it stops and what values the fields hold at that point. When it’s not enough, you make yourself a big warm mug of coffee, sprinkle the code with println statements, and mentally prepare for a day of reading logs and re-running the program over and over until it starts to make sense.\n\nBut if you have the right tools at your disposal, debugging in Scala does not have to be such a grueling task. This talk explores practical techniques and underused features of IntelliJ IDEA’s debugger to help you pinpoint bugs with precision, even in complex codebases. We will cover, among others, conditional breakpoints, log expressions, the call stack, the println debugger, and unsuspended breakpoints for logging. You will leave this talk with actionable insights to improve your debugging experience and reduce reliance on verbose log statements.",
+   "url": "https://cfp.scaladays.org/scala26/talk/K7ZLQH/",
+   "logo": null,
+   "date": "2026-10-13T10:30:00+02:00",
+   "start": "10:30",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Maciej Gorywoda"
+   ]
+  },
+  {
+   "code": "PRW8FG",
+   "title": "Build a production service with VirtusLab Scala Stack and AI",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Build and ship a production-ready microservice in direct-style Scala 3: no Futures, no IO monads. Set up an HTTP API with Tapir, concurrency and resilience with Ox, a type-safe SQL layer, and an sttp client, with AI assistance throughout. Type-safe, Loom-powered, and refreshingly simple Scala.",
+   "description": "This lab is a hands-on follow-up to the talk \"VirtusLab Scala Stack — back to the roots.\" The talk argues for direct-style Scala, in the lab, you write it. Over two hours you'll build a working microservice in Scala 3 without reaching for Futures or IO monads. The code reads as plain, sequential Scala, even though it's backed by a strong type system, automatic resource handling, and Java's virtual threads.\n\nWe start from a prepared project, so setup takes a few minutes rather than half the session. From there you'll add an HTTP API with Tapir and its generated OpenAPI docs, manage concurrency, timeouts, retries, resource safety, and error handling with Ox, read and write data through a typed SQL library (Parlance), and make outbound calls with sttp. You'll also see how AI coding assistants, guided by VirtusLab's open-source Scala skills, speed up writing idiomatic direct-style code. We finish with something most teams actually face: taking a piece of Future-based code and moving it to direct style, showing that you can migrate gradually.\n\nThe goal of this session is to show a lower-effort way into Scala for people who don't need full power of IO monads: less to learn, syntax that's familiar from other languages, and code that current AI tools handle well, while keeping Scala's type safety. After this workshop you will be able to start and structure a direct-style service yourself, with a clearer sense of when the style fits. The lab suits Scala developers curious about direct style, and anyone considering Scala 3 for backend work.",
+   "url": "https://cfp.scaladays.org/scala26/talk/PRW8FG/",
+   "logo": null,
+   "date": "2026-10-13T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 1",
+   "do_not_record": false,
+   "persons": [
+    "Piotr Janczyk"
+   ]
+  },
+  {
+   "code": "Y7ZCVR",
+   "title": "Build a webapp with Cats Effect and FS2",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Learn about Cats Effect and FS2 while building a collaborative webapp with Calico! In this lab you will build an interactive widget for a webapp. Along the way we will learn about the IO, Resource, Stream, and Signal monads, and how the Typelevel stack can be used to make frontend applications.",
+   "description": "Calico is a UI library for building interactive web applications using Cats Effect and FS2. This lab uses Calico as a learning aid to introduce attendees to the Typelevel stack and functional programming. By deploying Cats Effect and FS2 programs in an interactive webapp, they will get a real-time feedback loop to experiment with how different features of these libraries work in practice.\n\nBuilding frontend applications is also a case study of the powers of different kinds of monads: IO, Resource, Stream, and Signal all play important roles in Calico. It also helps develop a more nuanced view of concurrency, by considering the role of fibers in a single-threaded frontend application.\n\nWe will start by building a \"hello world\" widget together as an example. This is when we will cover the core concepts. Then, attendees will work in pairs to design and implement an interactive widgets using Calico. To make their component interactive, they will have to reach for different features of Cats Effect and FS2. We will assemble all of these widgets into a single webapp.\n\nI ran a version of this lab during the Typelevel Meetup last year. Here was the product:\nhttps://www.armanbilge.com/lausanne-meetup-aug-2025/\n\nBecause attendees will work on their own widgets in pairs, I think this lab will simultaneously be able to serve two audiences:\n(1) Attendees familiar with the Typelevel stack and want to have a taste of how it can be used to create frontend webapps with the Calico library.\n(2) Attendees new to Typelevel and functional programming who will get a feel for the capabilities of this paradigm via an interactive sandbox.",
+   "url": "https://cfp.scaladays.org/scala26/talk/Y7ZCVR/",
+   "logo": null,
+   "date": "2026-10-13T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 2",
+   "do_not_record": false,
+   "persons": [
+    "Arman Bilge"
+   ]
+  },
+  {
+   "code": "HM87YG",
+   "title": "Reactive UI with Laminar",
+   "subtitle": "",
+   "type": "Interactive labs",
+   "track": null,
+   "language": "en",
+   "abstract": "Laminar is a Scala.js-first approach to reactive UI for the web, combining declarative presentation with logic for how to make updates based on events or other state changes. Beyond basics, lets also explore interop with JS libraries, and even concerns such as code organisation, and effective error handling practises.",
+   "description": "This lab is all about becoming effective with the Laminar library for Scala.js: avoiding spaghetti code, managing events, and asynchronous communication with the backend. We would also consider concerns such as targeted updates to dynamic elements.  Example of interop can be with jQuery widgets. This would be project based. Probably covering some sort of CRUD application with form validation, and asynchronous search. (Perhaps it can be a more whimsical domain for entertainment purposes). I have 2 years professional experience using Laminar to build business applications.",
+   "url": "https://cfp.scaladays.org/scala26/talk/HM87YG/",
+   "logo": null,
+   "date": "2026-10-13T11:00:00+02:00",
+   "start": "11:00",
+   "duration": "02:00",
+   "room": "Frannz Salon: Lab 3",
+   "do_not_record": false,
+   "persons": [
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "code": "RSEGGV",
+   "title": "Where Scala meets AI",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "The AI revolution raises questions about the utility of various technologies, especially programming languages. And when it comes to developer experience, Scala might have just the right answers. We'll take a tour of how to use Scala efficiently for and with AI.",
+   "description": "The AI revolution raises questions about the utility of various technologies, especially programming languages. And when it comes to developer experience, Scala might have just the right answers.\n\nWe'll take a tour of how to use Scala efficiently for and with AI. We'll start by augmenting existing Scala development workflows with AI, leveraging Metals MCP and Cellar.\n\nNext, we'll teach AIs to write better Scala and more functional code. A short Scala skill makes a whole lot of difference in the quality of the generated code. Here we'll focus on the direct-style-Scala skill we've been developing, highlighting the main challenges that AI faced in our experiments.\n\nWe'll finish by looking at applications: using Scala to orchestrate coding agents and to orchestrate arbitrary business workflows. These are two broad categories. First, we'll take a hands-on look at Orca, which offers an API for setting up deterministic, AI-driven development flows.\n\nFor the second, we'll see how sttp-ai and chimp work together to provide the necessary Scala tooling to use AI models in your applications: talking to OpenAI/Claude APIs, running an agentic loop, using structured inputs & outputs. One theme will be constant: leaning on type safety and Scala's toolchain to deliver business value not only faster, but also with more reliability.\n\nIn each case, we'll show where Scala is better suited than alternatives for the problem at hand - and where it loses to the competition. Our goal will be to answer the question: in the age of AI, where does Scala have the upper hand",
+   "url": "https://cfp.scaladays.org/scala26/talk/RSEGGV/",
+   "logo": null,
+   "date": "2026-10-13T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Adam Warski"
+   ]
+  },
+  {
+   "code": "X9YKXK",
+   "title": "First-class Logical Refinement Types for Scala",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "What if assertions such as `x > 0` were part of the type system? We present a prototype implementation of *logical refinement types for Scala*: types like `{x: Int | x > 0}`. In our system, refinement types are first-class: they can be nested, used as type arguments, and related by subtyping. We demonstrate the system through concrete examples.",
+   "description": "This talk introduces *logical refinement types* for Scala 3 as a first-class language feature, backed by a working compiler prototype. A refinement type refines a base type `T` with a logical predicate `p(x)`, written `{x: T with p(x)}`: the set of values `x: T` for which `p(x)` holds. For example, `{x: Int with x > 0}` is the type of positive integers and `{x: List[Int] with x.nonEmpty}` the type of non-empty lists.\n\nThe idea appears in many languages under different names: [*refinement types* in Liquid Haskell](https://ucsd-progsys.github.io/liquidhaskell-tutorial/Tutorial_01_Introduction.html), [*boolean refinement types* in F\\*](https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html#boolean-refinement-types), [*subset types* in Dafny](https://dafny.org/latest/DafnyRef/DafnyRef#sec-subset-types), and [*subtypes* in Lean](https://lean-lang.org/doc/reference/latest/Basic-Types/Subtypes/). We call them *logical refinement types*, or *refinement types* for short, to distinguish them from Scala's existing [*refined types*](https://scala-lang.org/files/archive/spec/3.4/03-types.html#refined-types), which add members to a type rather than constrain its values with a predicate.\n\nIn short, refinement types move assertions into the type system. For the compiler to accept `e: {x: T with p(x)}`, it must prove that `p(e)` holds for every `e: T`, so `assert(p(e))` can never fail at runtime. This buys three things:\n\n1. **No runtime cost, total guarantees.** Predicates are checked at compile time, so there is no runtime overhead, and the property holds for *all* values rather than only those a test happens to exercise.\n2. **Composability.** Refinement types are ordinary types, so they nest without ceremony: `{x: Int with x > 0} => String` is a function that rejects non-positive inputs, and `List[{x: Int with x > 0}]` a list of positive integers.\n3. **Self-documenting APIs.** Pre- and post-conditions live in the signature instead of scattered `require`/`assert` calls, which also improves IDE support and documentation.\n\n### Syntax and Predicate Language\n\n`{x: T with p(x)}` is the *long form*. It introduces an explicit binder `x` for the value being refined, which is useful when no name is otherwise available, for example in type aliases or return types:\n\n```scala\ntype Pos = {x: Int with x > 0}\ndef fill(n: Pos, v: Int):\n  {res: List[Int] with res.size == n} = ???\n```\n\nWhen the value already has a name, as in a `val` or a parameter, the binder can be dropped. This *short form* reuses the existing name and desugars to the long form:\n\n```scala\nval x: Int with x > 0\n// desugars to:\nval x: {x: Int with x > 0}\n```\n\nPredicates also have to be something the compiler can reason about statically, so they must be *pure* and *terminating*. Concretely, the predicate language is a fragment of Scala: constants, stable identifiers, field selections over `val` fields, term and type applications, and constructors of case classes without initializers. Functions called from predicates are assumed pure and terminating; the prototype does not yet enforce this, so for now it is the programmer's responsibility.\n\n### Selfification\n\nScala already has precise types it usually throws away: the literal `42` has singleton type `42`, but `val x = 42` widens to `Int` unless annotated as `val x: 42 = 42`. Refinement types follow the same rule: they are *not* inferred from terms by default. This keeps the types Scala assigns unchanged, preserving source compatibility and avoiding a proliferation of fine-grained types that could hurt performance.\n\nInstead, the refinement type is written explicitly where it is wanted. When one is expected, the compiler tries to *selfify* the expression: it gives `e: T` the type `{x: T with x == e}`, lifting the expression into the type as long as it is a valid predicate.\n\n```scala\nval x: (Int with x == 42) = 42\nval y: (Int with y == n + 2) = n + 2\n```\n\n### Runtime checks\n\nWhen a property cannot be established statically, it can be recovered at runtime through pattern matching:\n\n```scala\ntype ID = {s: String with s.matches(idRegex)}\n\"12e7-e89b-12d3\" match\n  case _: ID => // s matches idRegex\n  case _     => // s does not match idRegex\n```\n\nWhen the program should simply fail if the predicate does not hold, the `runtimeChecked` method performs a dynamic check and throws otherwise.\n\nAs elsewhere in Scala, matching on erased type arguments is not supported: a `List[ID]` or an `ID => String` cannot be matched directly. For collections and similar cases, a custom [`TypeTest`](https://docs.scala-lang.org/scala3/reference/other-new-features/type-test.html) lifts the restriction.\n\n### Subtyping\n\nThe interesting question is how to decide whether one refinement type is a subtype of another. By definition, `{x: T with p(x)}` is a subtype of `{y: S with q(y)}` when `T <: S` and the predicates are related by implication: `p(x)` must imply `q(x)` for all `x`. The system has to establish both conditions.\n\nRather than calling out to an external SMT solver, we built a lightweight solver into the compiler, tuned for the cases that come up in everyday code. It combines three techniques: *equality reasoning*, using the E-Graph data structure to compute congruence closure (from `v == a` and `a > 3` it derives `v > 3`); *normalization*, putting arithmetic into canonical form so that `x + 3 * y` and `2 * y + x + y` are seen as equal; and *inlining of known refinements and definitions*, so that a value of type `Int with y == x + 1` (or even a plain `val y: Int = x + 1`) contributes `y == x + 1` to the reasoning. Refinement types also interoperate with the rest of the type system. For instance, the literal type `1` is a subtype of `{x: Int with x == 1}`, and hence of `{x: Int with x > 0}`.\n\n### Case studies\n\nThe heart of the talk is a tour of what refinement types can express. We present a few examples below.\n\n**Pre- and post-conditions in a signature.** The simplest use is constraining inputs. A color channel is a byte-ranged integer, and stating that once removes a whole class of bounds checks downstream:\n\n```scala\ntype ChannelValue = {v: Int with 0 <= v && v < 256}\ndef rgb(r: ChannelValue, g: ChannelValue, b: ChannelValue): Int\n```\n\n**Length-indexed collections.** Tracking a collection's size in its type turns length mismatches into compile errors. Here `concat` and `zip` carry exact length relations, and the compiler chains them to verify the final length on its own:\n\n```scala\ntype Vec[T]\n\nobject Vec:\n  def fill[T](n: Int, v: T): {r: Vec[T] with r.len == n} = ???\n\nextension [T](a: Vec[T])\n  def len: Int = ???\n  def concat(b: Vec[T]): {r: Vec[T] with r.len == a.len + b.len} = ???\n  def zip[S](b: Vec[S] with b.len == a.len): {r: Vec[(T, S)] with r.len == a.len} = ???\n\ndef example(n: Int, m: Int): {r: Vec[(String, Int)] with r.len == m + n} =\n  val v1 = Vec.fill(n, 0)\n  val v2 = Vec.fill(m, 1)\n  val v3 = v1.concat(v2)          // len == n + m\n  Vec.fill(m + n, \"\").zip(v3)     // checked: m + n == n + m\n```\n\n**Predicates as a dispatch key.** Because refinement types are real types, they participate in overload resolution. This for example allows us to ship a fast path that is only valid under a precondition, and let the type checker pick it when the precondition is known:\n\n```scala\ndef min(l: List[Int] with l.isSorted): Int = l.head  // O(1)\ndef min(l: List[Int]): Int = l.min                   // O(n)\n\ndef example(l: List[Int] with l.isSorted): Int = min(l)  // resolves to the O(1) overload\n```\n\n**A verified memoized Fibonacci.** Finally, we scale up to a more verification-flavored example: a memo table whose values are tied to the keys by a predicate, used to prove that a memoized `fib` returns exactly the same results as the reference definition:\n\n```scala\ncase class DepMap[K, V](p: (K, V) => Boolean):\n  def put(n: K, v: V with p(n, v)): Unit = ???\n  def get(n: K): Option[{res: V with p(n, res)}] = ???\n\ndef fib(n: Int): {r: Int with r == (if n <= 1 then 1 else fib(n - 1) + fib(n - 2))} =\n  if n <= 1 then 1 else fib(n - 1) + fib(n - 2)\n\nval cache: (DepMap[Int, Int] with cache == DepMap[Int, Int]((k, v) => v == fib(k))) =\n  DepMap[Int, Int]((k, v) => v == fib(k))\n\ndef fibMemo(n: Int): {res: Int with res == fib(n)} =\n  cache.get(n) match\n    case Some(res) => res\n    case None =>\n      val res: (Int with res == fib(n)) =\n        if n <= 1 then 1 else fibMemo(n - 1) + fibMemo(n - 2)\n      cache.put(n, res)\n      res\n```\n\n### Related Work\n\nIn the Scala ecosystem, libraries such as [Refined](https://github.com/fthomas/refined) and [Iron](https://github.com/Iltotore/iron) offer user-level encodings of refinement types using opaque type aliases and implicit evidence. The talk will compare our approach with these libraries, showing how integrating the checks directly into the compiler increases expressiveness, reduces boilerplate, and improves performance.",
+   "url": "https://cfp.scaladays.org/scala26/talk/X9YKXK/",
+   "logo": null,
+   "date": "2026-10-13T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Matt Bovel"
+   ]
+  },
+  {
+   "code": "SX7FTM",
+   "title": "Blazing-Fast Lambda Calculus via Metaprogramming",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Interpreting lambda calculus is simple but slow. Using multi-stage metaprogramming, we built a JIT that compiles each program to native JVM code at load time, running 2–10x faster than existing interpreters – including heavily optimized Rust and Haskell implementations. The surprising part: staging resulted in remarkably little code.",
+   "description": "Many systems ship small programs in a tiny language based on lambda calculus – functions, function calls, a handful of built-in operations, and constants – and run them with an interpreter. \nWe replaced the interpreter with a JIT that translates each program into native JVM code as it loads: a lambda becomes a JVM lambda, an application becomes a real function call, and built-ins and constants map onto efficient runtime primitives. \nWhat I find most compelling is how little code it took: multi-stage metaprogramming let us turn an interpreter into a compiler with surprisingly little code, which says a lot about how powerful the technique is. \nI'll walk through the staging approach, the benchmark results against existing interpreters, and the subtle pitfalls of JIT-compiling an untyped language while preserving exact evaluation semantics – a practical tour of runtime code generation and metaprogramming on the JVM.",
+   "url": "https://cfp.scaladays.org/scala26/talk/SX7FTM/",
+   "logo": null,
+   "date": "2026-10-13T11:20:00+02:00",
+   "start": "11:20",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Alex Nemish"
+   ]
+  },
+  {
+   "code": "H9VZ79",
+   "title": "Stop testing, start proving",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Tests and types are our correctness gates. But who verifies the gates themselves? With agentic codegen flooding our pipelines with code we didn't write, that question has never been more dangerous to ignore.\n\nIn this talk, we explore how theorem provers complement existing practices, adding mathematical certainty where it matters most.",
+   "description": "Tests and types are our correctness gates. Yet nobody verifies the gates themselves.\nWith agentic codegen flooding our pipelines at a scale we can't keep up with, that gap has never been more dangerous to ignore.\n\nThis talk is about industrializing formal verification: taking theorem provers from an academical tool to a practical, deployable tool for production engineering teams.\n\nWe'll look at how to identify the business logic that does: the invariants, state machines, and domain rules where a bug is not just an incident but a liability, how to scope verification to where it pays off and what are its limits.\n\nThen we will see how to ship proven code. We will present ways to deploy verified code across backends, frontends, event-driven systems, and even embedded firmware, and what changes in your architecture and codebase when correctness is a certitude.\n\nWhile writing proofs has been hard, writing a theorem statement is not. We'll see how AI-augmented workflows let you specify what must be true, and let the machine figure out why it is. The result is a new kind of correctness gate: interfaces, in both the type-theory and software sense, that are proven contracts, not assumptions.\n\nWe started by questioning our gates. We'll end with better ones.",
+   "url": "https://cfp.scaladays.org/scala26/talk/H9VZ79/",
+   "logo": null,
+   "date": "2026-10-13T12:10:00+02:00",
+   "start": "12:10",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Valentin Bergeron"
+   ]
+  },
+  {
+   "code": "T3HHRC",
+   "title": "Scala OSS vs. the LLM Era",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "LLMs are changing how people contribute to open source - but are they really helping? In this talk, we’ll look at compiler maintenance in the age of AI-generated PRs, issues and comments, and ask what maintainers gain, lose, and how the rules of contribution are changing.",
+   "description": "LLMs have lowered the barrier to contributing to open source, but for maintainers the picture is more complicated than “more contributions = better”. This talk looks at how the maintenance of open source projects, including the Scala 3 compiler, changes when AI-generated issues, comments, PRs and even design proposals start showing up.\n\nWe will walk through a real-looking low-effort LLM contribution and compare it with an actual fix. The interesting part is not whether the code compiles, but whether it solves the real compiler bug - or merely patches the single reproduction case that was given to the model.\n\nFrom there, we will zoom out to the broader stream of AI-generated open source activity: confident but wrong explanations, noisy GitHub comments, suspicious proposals, bot-authored pull requests. These examples show how much of maintainer work is not just writing code, but understanding intent, verifying claims, and deciding what is worth trusting.\n\nThis is not a talk about mocking AI users. Many of us use LLMs every day, sometimes very effectively. The goal is to show what maintainers now have to review, verify, and make sense of - and why it is surprisingly hard to tell whether the LLM era is making open source maintenance easier, harder, or simply different.",
+   "url": "https://cfp.scaladays.org/scala26/talk/T3HHRC/",
+   "logo": null,
+   "date": "2026-10-13T12:15:00+02:00",
+   "start": "12:15",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Patryk Zieliński"
+   ]
+  },
+  {
+   "code": "KKPB93",
+   "title": "AI on your desktop: secure automation using capture checking",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Local AI assistants like OpenClaw run with shell, browser, and credentials. Open chats make prompt injection a massive leak risk. Docker fails; approvals kill UX. TACIT opened the way: capture checking makes leaking information flows uncompilable. \n\nIn this talk, we will demo assistant security on browser automations against exploits.",
+   "description": "In this highly practical, demo-driven session, we will move from an exploit to a complete type-safe wrap:\n\n## 1. The Live Exploit\nWe will reproduce a live prompt-injection attack against an unsandboxed OpenClaw instance. We’ll show how a benign-looking incoming chat message tricks the agent into harvesting host tokens and broadcasting them to an external endpoint.\n\n## 2. The Zero-Rewrite MCP Wrap\nWe will walk through a 5-step architectural setup that intercepts agent actions over local MCP, disables built-in shell/file/network access, and routes all operations through TACIT's capability-typed REPL.\n\n## 3. Under the Hood: Scala 3 Capture Checking\nWe’ll tour the bleeding-edge static analysis machinery making this possible. Files under classified paths are automatically wrapped in a `Classified[String]` container. We will look at how the trait API leverages Scala 3 capture checking:\n```scala\ntrait Classified[+T]:\n  def map[B](op: T ->{any.rd} B): Classified[B]\n```\nThe pure `->{any.rd}` function arrow enforces at compile time that the mapping operation captures no escaping capabilities. You can safely map over the data or pass it to a trusted local LLM via `chat(Classified[String])`, but passing it to a cloud-facing `chat(String)` or shipping it over HTTP will fail to compile.\n\n## 4. Scaling Beyond OpenClaw\nBecause our security lever is the standard MCP protocol rather than application-specific code, this exact pattern generalizes. We will demonstrate the identical wrap instantly safeguarding other popular tools like Open Interpreter, Goose, and Cline.\n## 5. Plugging the Browser Side-Channel\nA wrap that only covers standard I/O leaves the web browser open as an escape hatch—an injected agent could easily navigate to local file paths or screenshot a sensitive app and ship the raw image to a cloud API. We will debut an origin-scoped `BrowserPermission` capability (built on Playwright) that introduces `Classified[Page]` and `Classified[Image]` boundaries. We will live-extend TACIT with under 30 lines of code to render this advanced browser leak path completely uncompilable.\nKey Takeaways\nYou will leave this talk with:\n\n1. **The MCP Security Blueprint**: A concrete, repeatable recipe for wrapping and securing any MCP-compliant agent without touching its source code.\n\n2. **A Shift from Containment to Proof**: A clear understanding of why traditional runtime sandboxing (Docker/WASM) cannot stop cognitive LLM exploits, and how information-flow control plugs the gap.\n\n3. **Production-Ready Capabilities**: A practical framework for shipping autonomous AI tools to non-technical users without risking leaked keys or compromised environments.",
+   "url": "https://cfp.scaladays.org/scala26/talk/KKPB93/",
+   "logo": null,
+   "date": "2026-10-13T12:20:00+02:00",
+   "start": "12:20",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Salim Belkhir"
+   ]
+  },
+  {
+   "code": "8KALEK",
+   "title": "DimWit - Tensor programming with wit",
+   "subtitle": "",
+   "type": "Lightning Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "We present DimWit, a system for writing readable numerical and machine learning code. DimWit's core feature is a trait-based implementation of the named tensor notation, which improves readability and type-safety compared to standard tensors. We illustrate how to write machine learning models using DimWit, and discuss our experience training GPT-2.",
+   "description": "In this session, we motivate why typed tensor computations are needed in machine learning and how named tensor notation helps us to write readable and type-safe code. We discuss the ongoing efforts in the Python community and argue that Scala already today can deliver what many Python library authors would like Python to support eventually. We present DimWit, a Scala library that implements named tensor notation as its core abstraction. We show how DimWit, which is built on top of Python’s JAX, can achieve efficiency on par with state-of-the-art libraries. We will also discuss our efforts to train GPT-2 (a 124M parameters) from scratch in Scala. We hope that this talk will show that Scala can be a better alternative to Python for expressing numerical computation and writing programs that are easier to reason about.\n\nRepository: https://github.com/dimwit-dev/dimwit",
+   "url": "https://cfp.scaladays.org/scala26/talk/8KALEK/",
+   "logo": null,
+   "date": "2026-10-13T12:25:00+02:00",
+   "start": "12:25",
+   "duration": "00:05",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Benjamin Meyer",
+    "Marcel Lüthi"
+   ]
+  },
+  {
+   "code": "HMWUPF",
+   "title": "Panel discussion",
+   "subtitle": "",
+   "type": "#ScalaDays",
+   "track": null,
+   "language": "en",
+   "abstract": "Panelists and topics to be announced!",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/HMWUPF/",
+   "logo": null,
+   "date": "2026-10-13T14:10:00+02:00",
+   "start": "14:10",
+   "duration": "00:45",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": []
+  },
+  {
+   "code": "HU3PVB",
+   "title": "Making the AI agents safe with Scala",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Everyone and their dog are building permanent AI agents, but nobody is solving the real problem - how to prevent the agent from doing something it should never, ever do while preserving its general problem-solving capability. In this talk, we will introduce the CapybaraClaw - the agent built with safety in mind that gives you the peace of mind.",
+   "description": "In this talk, we will introduce a project shared between EPFL and VirtusLab focused on building a production-grade, permanent AI agent based on the TACIT tool developed by Martin Odersky's team.\n\nhttps://github.com/lampepfl/capybaraclaw\n\nThe talk will be composed of:\n\n1) Introduction: We will explain what the landscape of permanent agents (like OpenClaw) looks like, what security and safety issues exist within these projects, and how that limits their implementation in serious contexts.\n2) Analysis of the problem space: we will address these weaknesses by decomposing the issue to find what the nature of the problem is - generality and elasticity vs severe limitations imposed by sandboxing, what solutions are proposed by AI companies, and finally we’ll describe how TACIT and CapybaraClaw solve whole categories of these problems by using Scala’s new capture checking facilities to enforce rules while preserving utility.\n3) Deep dive: We will walk through the agent’s architecture and capabilities in detail. The focus of this part is to show how Martin Odersky’s new approach unlocks stronger safety guarantees for AI agents.\n4) Summary: We’ll talk about the roadmap of the project and our goals, share links and source materials (whitepapers, CTF repos where Frontier AI was used to find exploits against TACIT, etc.).\n\nWhat the audience will learn: The primary benefit for attendees is the in-depth explanation of how the general and abstract system of Scala 3 capture checking and capabilities can be used productively in a use case that is much different from the usual coding.\n\nThe presenters for this talk may still change!",
+   "url": "https://cfp.scaladays.org/scala26/talk/HU3PVB/",
+   "logo": null,
+   "date": "2026-10-13T15:15:00+02:00",
+   "start": "15:15",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Łukasz Biały",
+    "Jakub Warchoł"
+   ]
+  },
+  {
+   "code": "FTJSQF",
+   "title": "Scoverage: Test Coverage for the Scala Codebases",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "You will learn about how to measure test coverage of your Scala codebase with Scoverage, the Scala 3 coverage tool. After learning the basics, we will dive deeper into how it is implemented, and talk about the hardening work done by the Scala Center to make the feature robust and reliable in interaction with the rest of the language features.",
+   "description": "Code coverage is a critical feature for robust quality assurance at the industry. It sounds simple: mark which lines ran. In Scala 3, Scoverage is a compiler feature: it rewrites typed trees, inserts tracking probes, and then hands the modified tree to every later compiler phase. That makes it available out-of-the-box for all Scala users with a simple compiler flag. Tight coupling with the compiler itself, though, poses a challenge in making it work with all compiler features.\n\nThis talk has a dual purpose. First, it is a guide to get started using coverage in your codebase. You will walk out of this 30-min talk having a useful skill of measuring how well your tests cover your code, thus contributing to reliability and robustness of your work.\n\nSecond, it is a technical deep dive into how coverage works under the hood, and what challenges we encountered making it work well. Coverage sits fairly early in the pipeline of compiler phases, and it modifies the trees heavily with instrumentation. Frequently, this breaks assumptions for the downstream phases that are responsible for all the numerous Scala 3 features. Examples include instrumentation interacting with erasure, singleton and wildcard types, capture checking, pattern matching, tail-recursion and infinite-loop warnings, constructor calls, parameterless methods, closures, and JVM method-size limits.\n\nThese are a lot of pieces interacting in complex ways. To make coverage work robustly, it is necessary to track, prioritize and fix breakages in a systematic way. In this talk, we will explore the process we use for that, as well as give some highlights of the typical breakages we encounter.\n\nSo the second purpose of this talk is to give a glimpse to a curious-minded engineer into the compiler internals. An industry practitioner will leave with a deep understanding not only of how to use the coverage feature, but also how it works under the hood. And for someone working on the compiler or just curious about how Scala works, it is a great opportunity to learn more about the compiler itself.",
+   "url": "https://cfp.scaladays.org/scala26/talk/FTJSQF/",
+   "logo": null,
+   "date": "2026-10-13T15:15:00+02:00",
+   "start": "15:15",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Anatolii Kmetiuk"
+   ]
+  },
+  {
+   "code": "WQVK9R",
+   "title": "Advocacy, Funding, and Patience: The Security Audit of Scala",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Gain insight into how security audits are carried out on large, complex projects like Scala. Hear about how open source security advocate Open Source Technology Improvement Fund partnered with Scala maintainers to source funds, scope and manage work, and create meaningful fixes in a piece of critical software in active production.",
+   "description": "This presentation will describe in detail the process of acquiring, designing, and executing a security audit on Scala. A project of this size and impact requires specific, nuanced security efforts beyond the capabilities of day-to-day operations. By introducing a skilled, experienced security team with a specific scope to the code, OSTIF created a custom security audit that created meaningful outcomes for the scala organization and project. As our ecosystem experiences unprecedented supply chain attacks and hacks, thoughts have turned to how the open source community can address and prevent exploits. \n\nFirst, our presenter will go over the process of creating an audit, how funding was sourced and stakeholders brought in. Then, the steps to selecting the audit team and determining the scope of work will be discussed, as well as the best security practices a project can perform especially ahead of formal security engagements. Using direct examples from our Scala audit of 2025-2026, OSTIF will show how an audit team directly collaborates with project maintainers to refine and specify their work to Scala’s needs and functions. Moving forward, the presentation will show the issues identified by the work and the steps taken by the Scala team to fix or address them as they move forward in development. Attendees will walk away with the knowledge of how a security audit works, what it does to a project in the short and long term, and a desire to contribute to Scala’s ongoing security and development.",
+   "url": "https://cfp.scaladays.org/scala26/talk/WQVK9R/",
+   "logo": null,
+   "date": "2026-10-13T16:05:00+02:00",
+   "start": "16:05",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Amir Montazery"
+   ]
+  },
+  {
+   "code": "8GCRBN",
+   "title": "Cyfra: Scala on GPU",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Learn how to accelerate Scala code by orders of magnitude with Cyfra.\n\nThere are many libraries that give you access to low-level GPU APIs, but a high-level, functional one is a different story. That’s why we created the Cyfra GPGPU framework. In this talk, we’ll demonstrate how to use it to build high-performance GPU applications with Scala.",
+   "description": "In this talk, we will show how to build high-performance Scala GPU applications with Cyfra. First, we will introduce the audience to the current landscape of GPU programming and explain our philosophy. Then, we will dive into our model of type-safe data pipelines and memory management. To complete the picture, we will also showcase a set of real-world applications, including an end-to-end LLM inference engine, written entirely in Scala.",
+   "url": "https://cfp.scaladays.org/scala26/talk/8GCRBN/",
+   "logo": null,
+   "date": "2026-10-13T16:05:00+02:00",
+   "start": "16:05",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Szymon Rodziewicz",
+    "Marcin Złakowski"
+   ]
+  },
+  {
+   "code": "JCX8GD",
+   "title": "Type-Driven AI: High quality Scala code with LLM",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "Speed without quality is debt. This talk shows how Scala's type system, combined with a multi-layer validation pipeline (compiler, linting, property tests, mutation testing, and formal verification) helped by a concepts inventory and types generation acts as a guardrail for LLM-generated code, keeping correctness non-negotiable.",
+   "description": "**DISCLAIMER**: This description and the above abstract have been partially generated by LLM\n\n### Overview\n\nAI coding assistants boost development speed, but without discipline they create fragile codebases. This session presents a production-tested, spec-driven workflow that uses Scala's type system and tooling ecosystem as a verification infrastructure. The final goal is to produce correct code without accumulating technical debt.\n\n### The Six Validation Rings\n\nThe workflow is organized around six concentric rings, each catching errors the previous one cannot:\n\n- **Ring 0 - The Compiler:** Strict flags and refined types (Iron library/Smithy IDLs) encode business constraints at the type level, rejecting invalid inputs before LLM output ever runs.\n- **Ring 1 - Static Analysis:** Scalafix and WartRemover enforce functional programming discipline and architectural boundaries through custom rules, acting as machine-checkable preconditions for all subsequent rings.\n- **Ring 2 - Property-Based Testing:** ScalaCheck verifies behavior correctness. LLMs generate properties better than implementations, so properties are defined first in the specs, then the implementation is generated and verified against them. Counterexamples feed back to the LLM as targeted fixes.\n- **Ring 3 - Mutation Testing:** Stryker4s exposes blind spots LLMs reliably create: tests that pass the happy path but miss edge cases. A mutation score below 80% triggers reinforcement, with surviving mutants fed back as prompts.\n- **Ring 4 - Formal Verification:** Stainless provides mathematical proof of correctness for pure, high-stakes logic (e.g., interest calculations), verifying all possible inputs via SMT conditions.\n- **Ring 5 - Runtime Telemetry:** After deployment, otel4s monitors contract conformance and Daut checks temporal event sequences against state machine properties. Violations automatically feed back into Ring 2, tightening the safety net over time.\n\nA concepts inventory is added in the loop to prevent the LLM from reinventing the wheel. Further, a Type Driven Development methodology is enforced by generating first the types and then the code fulfilling them.\n\n### Why It Matters\n\nThe perceived trade-off between speed and quality is false. Scala's tools turn quality into a correctness mechanism: sealed ADTs enable exhaustiveness checks, refined types make constraints enforceable, and pure functions enable formal verification. \n\n### What Attendees Will Learn\n\n- How to structure specs using EARS semi-formal language as a single source of truth\n- How to configure Scala's compiler and linting tools as automated guardrails\n- How to use property-based testing as a first-class generation target\n- How to apply mutation testing and formal verification where they add most value\n- How to close the loop between production runtime behavior and static verification using a workflow used daily on a 60K-line Scala codebase",
+   "url": "https://cfp.scaladays.org/scala26/talk/JCX8GD/",
+   "logo": null,
+   "date": "2026-10-13T16:55:00+02:00",
+   "start": "16:55",
+   "duration": "00:30",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": [
+    "Giovanni Ruggiero"
+   ]
+  },
+  {
+   "code": "8NF7WU",
+   "title": "Metals Reimagined - LSP in the age of LLMs",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "We are currently working on Metals 2, which is a new indexing and compilation approach, designed to make indexing as fast as possible and ensure the editor remains functional even if parts of the project fail to compile. Thanks to this even while working on large monorepos it should be possible to quickly set up your editor.",
+   "description": "Metals is the Scala and Java Language Server, providing IDE features within editors such as Visual Studio Code, Cursor, Zed, and Helix. This makes it essential for anyone looking to use new agentic tools. Many companies are now utilizing LLM trends to boost developer performance, but a major challenge has has been that Metals becomes less efficient as codebases scale—a common issue in large organizations.\n\nMetals 2 is a new indexing and compilation approach, designed to make indexing as fast as possible and ensure the codebase remains functional even if parts of the project fail to compile. Applying this to both Scala and Java code, Metals 2 aims to become the premier JVM language server. We are currently cooperating with multiple large monorepos testing and further enriching this approach.\n\nLet’s explore how this can enhance developer workflow to show the Scala developers that tooling can finally be great.",
+   "url": "https://cfp.scaladays.org/scala26/talk/8NF7WU/",
+   "logo": null,
+   "date": "2026-10-13T16:55:00+02:00",
+   "start": "16:55",
+   "duration": "00:30",
+   "room": "Maschinenhaus",
+   "do_not_record": false,
+   "persons": [
+    "Tomasz Godzik"
+   ]
+  },
+  {
+   "code": "HV9UPQ",
+   "title": "Bridging between Scala & Python with GraalVM",
+   "subtitle": "",
+   "type": "Talk",
+   "track": null,
+   "language": "en",
+   "abstract": "We will present our ongoing work to bridge between Scala 3 (& Kotlin) and Python 3 using GraalVM. We will explain how the interoperability was designed; how type hints map to Scala 3's type system, how other Python 3 concepts translate to Scala, and our the progress to publish python wheels to close.",
+   "description": "Thanks to its rich ecosystem of libraries, Python 3 has become the most widely used programming language over the last few years. In this session, we will present our ongoing work to bridge between Scala 3 and Python 3 using GraalVM. We will introduce the architecture and key decisions of our design and demonstrate how Python 3 code can be safely used seamlessly within a Scala 3 project. The audience will learn how Python type hints are represented within Scala and how other Python concepts are adapted to Scala. \nA key part of the ongoing effort is making popular Python libraries ready and available to be used within the JVM ecosystem using our tool. We will therefore report the current status of the ongoing work to publish the metadata necessary for the libraries to be used. The talk will also include practical demonstrations showing how python source code, and how the mentioned libraries, can be integrated with minimal boilerplate within Scala 3 projects. \nAt the end of the talk, the audience should be able to use all of the presented material and be able to build cross-language projects with all of their favourite Python libraries within their Scala 3 projects.",
+   "url": "https://cfp.scaladays.org/scala26/talk/HV9UPQ/",
+   "logo": null,
+   "date": "2026-10-13T16:55:00+02:00",
+   "start": "16:55",
+   "duration": "00:30",
+   "room": "Palais Atelier",
+   "do_not_record": false,
+   "persons": [
+    "Hamza Remmal"
+   ]
+  },
+  {
+   "code": "TDVER9",
+   "title": "Closing session Day 2",
+   "subtitle": "",
+   "type": "#ScalaDays",
+   "track": null,
+   "language": "en",
+   "abstract": "Join us as we wrap up Scala Days 2026!",
+   "description": "",
+   "url": "https://cfp.scaladays.org/scala26/talk/TDVER9/",
+   "logo": null,
+   "date": "2026-10-13T17:45:00+02:00",
+   "start": "17:45",
+   "duration": "00:15",
+   "room": "Kesselhaus",
+   "do_not_record": false,
+   "persons": []
+  }
+ ]
+}

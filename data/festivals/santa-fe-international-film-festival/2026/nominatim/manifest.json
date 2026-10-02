@@ -1,0 +1,15 @@
+{
+ "festival": "santa-fe-international-film-festival",
+ "edition": "2026",
+ "source": "nominatim",
+ "fetchedAt": "2026-10-02T18:34:14Z",
+ "fetcher": "scraper/festivals/santa_fe_international_film_festival/sources/nominatim/fetch.py",
+ "fetcherVersion": 3,
+ "urls": [
+  "https://nominatim.openstreetmap.org/search"
+ ],
+ "files": [
+  "geocode.json"
+ ],
+ "notes": "One free-text query per distinct venue address from eventive; first hit, rounded to 6 dp."
+}

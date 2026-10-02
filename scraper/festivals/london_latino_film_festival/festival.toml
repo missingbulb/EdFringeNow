@@ -1,0 +1,67 @@
+# The London Latino Film Festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md. Latin American cinema across London's
+# independent screens, in its first year.
+
+id = "london-latino-film-festival"
+name = "London Latino Film Festival"
+city = "London"
+country = "GB"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 51.5074
+lng = -0.1278
+timezone = "Europe/London"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-latin-american"]
+default_genre = "film"
+site = "https://londonlatinofilmfestival.org.uk"
+
+[ticketing]
+model = "central-box-office"
+url = "https://lolaff2026.eventive.org"
+notes = "Sold on lolaff2026.eventive.org, one ticket page per screening; some screenings sell at the partner cinema's own box office instead."
+currency = "GBP"
+
+[[edition]]
+id = "2026"
+# The box office's welcome text calls it the inaugural edition.
+ordinal = 1
+format = "block"
+first = "2026-10-02"
+last = "2026-10-06"
+sources = ["eventive", "nominatim", "venues-research"]
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "london_latino_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "london_latino_film_festival/nominatim.py"
+
+# Hand research for the venues the programme source leaves without an
+# address or a pin, each figure cited.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "london_latino_film_festival/venues_research.py"
+
+[merge]
+venues = ["venues-research", "eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]
