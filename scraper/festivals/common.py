@@ -48,6 +48,11 @@ def get(url, as_json=True, attempts=4, headers=None):
     return _request(urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})}), as_json, attempts)
 
 
+def get_bytes(url, attempts=4, headers=None):
+    """`get` for a file that is not text (a programme PDF): its bytes as served."""
+    return _request(urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})}), None, attempts)
+
+
 def post(url, body, as_json=True, attempts=4, headers=None):
     """`get`'s POST twin, for query APIs (Overpass) that take their query as a body."""
     request = urllib.request.Request(url, data=body, method="POST",
@@ -56,10 +61,14 @@ def post(url, body, as_json=True, attempts=4, headers=None):
 
 
 def _request(request, as_json, attempts):
+    """The response body: parsed JSON, text, or (as_json None) bytes."""
     for attempt in range(attempts):
         try:
             with urllib.request.urlopen(request, timeout=180) as response:
-                body = response.read().decode("utf-8")
+                body = response.read()
+            if as_json is None:
+                return body
+            body = body.decode("utf-8")
             return json.loads(body) if as_json else body
         except urllib.error.HTTPError as error:
             # A busy server (rate limit, gateway timeout) is worth waiting out;

@@ -26,7 +26,7 @@ module.exports = {
     await page.waitForSelector(".tl-card:not([hidden])");
     assert.match(await page.textContent(".tl-card"), /3,456 events in the programme/);
 
-    // Reached with the keyboard: the trip's handles lie over its own pill.
+    // Reached with the keyboard: the trip's handles lie over its own bar.
     await page.mouse.move(0, 0);
     await page.focus('.tl-item[data-festival="jerusalem-comedy"]');
     await page.waitForSelector(".tl-card:not([hidden])");

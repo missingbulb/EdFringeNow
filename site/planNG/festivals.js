@@ -149,6 +149,14 @@ export const CITY_PHOTOS = {
     source: "https://commons.wikimedia.org/wiki/File:Eilat_Hotels_2013.jpg",
     position: "center 40%",
   },
+  "Airport City": {
+    src: "/planNG/cities/airport-city.webp",
+    title: "Israel AirportCity FromAir",
+    author: "Sharshar",
+    ...CC_BY_SA_3,
+    source: "https://commons.wikimedia.org/wiki/File:Israel_AirportCity_FromAir.JPG",
+    position: "center 50%",
+  },
   "Kfar Blum": {
     src: "/planNG/cities/kfar-blum.webp",
     title: "Kfar Blum",

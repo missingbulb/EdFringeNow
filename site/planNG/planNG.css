@@ -1642,7 +1642,7 @@ body.festival-page {
 .timeline {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-areas: "place main types";
+  grid-template-areas: "types main place";
   column-gap: 14px;
   align-items: start;
 }
@@ -1691,35 +1691,63 @@ button.tl-chip:focus-visible {
   color: var(--paper);
 }
 
+/* The types and the globe stand level with the year's first row, as tall as
+   its rows. */
 .tl-place {
   grid-area: place;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  width: 164px;
-  margin-top: -22px;
-}
-/* The globe: a round lens onto a cut-paper earth. Its colours are read by the
-   canvas through a probe placed here. */
-.tl-lens {
   position: relative;
   width: 164px;
-  height: 164px;
-  --globe-sea: light-dark(#e4f0fa, #1a3043);
-  --globe-sea-deep: light-dark(#a8c8e6, #0b1824);
-  --globe-dot: light-dark(rgba(38, 86, 140, 0.2), rgba(255, 255, 255, 0.07));
-  --globe-land: light-dark(#fffaf0, #57513f);
-  --globe-land-shadow: light-dark(rgba(70, 55, 25, 0.3), rgba(0, 0, 0, 0.55));
+  height: 180px;
+  margin-top: 26px;
+}
+/* The globe: a desk globe, its sphere shaded and held in a brass ring on a
+   wooden stand. Its colours are read by the canvas through a probe placed
+   here. */
+.tl-lens {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin-inline: auto;
+  --globe-sea: light-dark(#3d7fb8, #2a5f8c);
+  --globe-sea-deep: light-dark(#16466f, #0c2740);
+  --globe-dot: light-dark(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.06));
+  --globe-land: light-dark(#e3cf96, #b9a46c);
+  --globe-land-shadow: light-dark(rgba(60, 40, 10, 0.45), rgba(0, 0, 0, 0.55));
   --globe-lit: color-mix(in srgb, var(--violet) 50%, var(--paper));
   --globe-picked: var(--violet);
-  --globe-line: light-dark(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.14));
-  --globe-ring: var(--violet);
+  --globe-line: light-dark(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.14));
+  --globe-ring: transparent;
   --globe-home: var(--paper);
   --globe-home-ink: var(--ink);
 }
 .tl-lens[hidden] {
   display: none;
+}
+/* Light falls on the globe from the upper left. */
+.tl-lens::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.1) 18%, transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(8, 20, 40, 0.45) 100%);
+  box-shadow: inset -10px -12px 22px rgba(0, 0, 0, 0.28);
+}
+.tl-badges,
+.tl-up-slot {
+  z-index: 1;
+}
+.tl-stand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 173px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
 }
 .tl-globe {
   display: block;
@@ -1801,11 +1829,12 @@ button.tl-chip:focus-visible {
    the other eight a row beneath it, and its subtypes chips under them. */
 .tl-types {
   grid-area: types;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 212px;
-  margin-top: -22px;
+  margin-top: 26px;
 }
 .tl-type-grid {
   display: grid;
@@ -1837,6 +1866,14 @@ button.tl-chip:focus-visible {
 }
 .tl-type:hover img {
   transform: translateY(-2px) rotate(-3deg);
+}
+/* A type in the grid is its picture alone; its name is on its card (23.41). */
+.tl-type[aria-pressed="false"] .tl-type-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 .tl-type-name {
   max-width: 66px;
@@ -1953,28 +1990,24 @@ button.tl-chip:focus-visible {
 .tl-subtypes:empty {
   display: none;
 }
-.tl-filter {
-  width: 100%;
-  height: 30px;
-  border-radius: 8px;
-  padding: 0 8px;
-  font-size: 0.8rem;
-  max-width: 100%;
-}
 @media (max-width: 620px) {
   .timeline {
     grid-template-columns: auto auto;
-    grid-template-areas: "place types" "main main";
+    grid-template-areas: "types place" "main main";
     justify-content: space-between;
     column-gap: 6px;
     row-gap: 12px;
   }
   .tl-place {
     width: 112px;
+    height: 124px;
   }
   .tl-lens {
-    width: 112px;
-    height: 112px;
+    width: 90px;
+    height: 90px;
+  }
+  .tl-stand {
+    height: 118px;
   }
   .tl-types {
     width: 206px;
@@ -2035,7 +2068,8 @@ button.tl-chip:focus-visible {
 }
 
 /* The card a festival or an orb shows when pointed at. */
-.tl-card {
+.tl-card,
+.tl-type-card {
   position: absolute;
   z-index: 5;
   display: flex;
@@ -2051,7 +2085,13 @@ button.tl-chip:focus-visible {
   color: var(--ink);
   pointer-events: none;
 }
-.tl-card[hidden] {
+.tl-type-card {
+  z-index: 6;
+  width: max-content;
+  max-width: 260px;
+}
+.tl-card[hidden],
+.tl-type-card[hidden] {
   display: none;
 }
 .tl-card-title {
@@ -2080,31 +2120,14 @@ button.tl-chip:focus-visible {
   border-inline-start: 0;
   padding-inline-start: 0;
 }
-/* The festivals' rows scroll inside a strip that keeps its height, however
-   many the year draws; the trip's band, its ends and the travel pictures stay
-   put over them. The scrollbar is left out so the rows keep the months' exact
-   width, and a fade at an edge says more rows lie past it. */
+/* The festivals' rows keep one height, as tall as the types and the globe
+   beside them; the trip's band, its ends and the travel pictures lie over
+   them. */
 .tl-track {
   position: relative;
 }
 .tl-rows {
   position: relative;
-  min-height: 64px;
-  max-height: calc(7.5 * 30px + 6px);
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.tl-rows::-webkit-scrollbar {
-  display: none;
-}
-.tl-rows.is-more-below {
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
-}
-.tl-rows.is-more-above {
-  mask-image: linear-gradient(to top, #000 calc(100% - 30px), transparent);
-}
-.tl-rows.is-more-above.is-more-below {
-  mask-image: linear-gradient(transparent, #000 30px, #000 calc(100% - 30px), transparent);
 }
 .tl-period {
   position: absolute;
@@ -2203,83 +2226,127 @@ button.tl-chip:focus-visible {
     animation: none;
   }
 }
+.timeline {
+  --type-academic: #3b82f6;
+  --type-art: #14b8a6;
+  --type-comedy: #facc15;
+  --type-dance: #ec4899;
+  --type-film: #ef4444;
+  --type-mixed: #6366f1;
+  --type-music: #9b5cf6;
+  --type-sports: #22c55e;
+  --type-theatre: #f59e0b;
+}
+/* A festival is a bar in its type's colour, at its dates, on its row. One the
+   rows have no room for lies faint behind them; changing the filters moves
+   each to its new place, and one that comes or goes fades (23.39). */
 .tl-item {
+  --tone: var(--muted);
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  height: 26px;
   padding: 0;
   border: 0;
   background: none;
   font: inherit;
   color: var(--ink);
   white-space: nowrap;
+  transition:
+    inset-inline-start 0.45s ease,
+    width 0.45s ease,
+    top 0.45s ease,
+    height 0.45s ease,
+    opacity 0.45s ease,
+    filter 0.45s ease;
 }
-.tl-item--late {
-  flex-direction: row-reverse;
+.tl-item[data-type="academic"] { --tone: var(--type-academic); }
+.tl-item[data-type="art"] { --tone: var(--type-art); }
+.tl-item[data-type="comedy"] { --tone: var(--type-comedy); }
+.tl-item[data-type="dance"] { --tone: var(--type-dance); }
+.tl-item[data-type="film"] { --tone: var(--type-film); }
+.tl-item[data-type="mixed"] { --tone: var(--type-mixed); }
+.tl-item[data-type="music"] { --tone: var(--type-music); }
+.tl-item[data-type="sports"] { --tone: var(--type-sports); }
+.tl-item[data-type="theatre"] { --tone: var(--type-theatre); }
+.tl-item.is-faint {
+  opacity: 0.22;
+  filter: saturate(0.45);
+  pointer-events: none;
+}
+.tl-item.is-entering,
+.tl-item.is-leaving {
+  opacity: 0;
+}
+.tl-item.is-leaving {
+  pointer-events: none;
+}
+.tl-track.is-lens .tl-item {
+  transition: opacity 0.45s ease, filter 0.45s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-item {
+    transition: none;
+  }
 }
 .tl-bar {
-  flex: 0 0 auto;
-  height: 12px;
-  border-radius: 6px;
-  background: var(--muted);
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--tone);
 }
 .tl-item.is-empty .tl-bar {
-  background: transparent;
-  border: 2px solid var(--muted);
+  background: color-mix(in srgb, var(--tone) 18%, var(--paper));
+  box-shadow: inset 0 0 0 2px var(--tone);
 }
+.tl-item:hover .tl-bar,
+.tl-item:focus-visible .tl-bar {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--tone);
+}
+/* A name is drawn only while every name fits beside its bar, or inside a bar
+   the lens has grown wide enough to hold it. */
 .tl-label {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: calc(100% + 6px);
+  translate: 0 -50%;
   font-size: 0.8rem;
   font-weight: 600;
+  line-height: 1;
   color: var(--muted);
+  visibility: hidden;
+}
+.tl-item--late .tl-label {
+  inset-inline-start: auto;
+  inset-inline-end: calc(100% + 6px);
+}
+.tl-track.is-named .tl-label {
+  visibility: visible;
 }
 .tl-item:hover .tl-label,
 .tl-item:focus-visible .tl-label {
   color: var(--ink);
 }
+.tl-track.is-lens .tl-item.is-magnified .tl-label {
+  visibility: visible;
+  inset-inline: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+.tl-track.is-lens .tl-item.is-magnified.is-empty .tl-label {
+  color: var(--ink);
+  text-shadow: none;
+}
+.tl-track.is-lens:not(.is-named) .tl-item:not(.is-magnified) .tl-label {
+  visibility: hidden;
+}
 .tl-item.is-focus .tl-bar {
-  background: var(--violet);
-  border-color: var(--violet);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--violet) 28%, transparent);
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--violet);
 }
 .tl-item.is-focus .tl-label {
   color: var(--violet-dark);
   font-weight: 800;
-}
-/* A city's pill: its flag at the middle, and inside a pill of several
-   festivals each one's run as a shade of its own, darkest where most of them
-   run at once. */
-.tl-bar {
-  position: relative;
-}
-.tl-item--bunch .tl-bar {
-  height: 14px;
-  border-radius: 7px;
-  background: color-mix(in srgb, var(--muted) 35%, transparent);
-  overflow: hidden;
-}
-.tl-run {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background: color-mix(in srgb, var(--muted) 45%, transparent);
-}
-.tl-item--bunch.is-focus .tl-bar {
-  background: color-mix(in srgb, var(--violet) 35%, transparent);
-}
-.tl-item--bunch.is-focus .tl-run {
-  background: color-mix(in srgb, var(--violet) 45%, transparent);
-}
-.tl-flag {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 12px;
-  transform: translate(-50%, -50%);
-  border-radius: 2px;
-  box-shadow: 0 0 0 1.5px var(--paper), 0 1px 3px color-mix(in srgb, var(--ink) 35%, transparent);
 }
 .tl-card-name {
   font-weight: 700;

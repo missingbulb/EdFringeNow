@@ -1,9 +1,9 @@
 "use strict";
 const { jerusalemReady, calendarSpans, pressPill } = require("../../shared/case-helpers");
 
-/* The band taken hold of on Jerusalem's own pill, inside it, and dragged on
+/* The band taken hold of on Jerusalem's own bar, inside it, and dragged on
  * two days: the trip moves whole and Jerusalem stays chosen; the drag is no
- * click on the pill. A press on the pill that doesn't move is one. */
+ * click on the bar. A press on the bar that doesn't move is one. */
 module.exports = {
   description: "dragging the band moves the whole trip, keeping its length and the festival chosen; a press that doesn't move still chooses the festival under it",
   page: "/planNG/?festival=jerusalem-comedy",
@@ -17,7 +17,7 @@ module.exports = {
       const track = document.querySelector(".tl-track").getBoundingClientRect();
       const bar = document.querySelector('.tl-item[data-festival="jerusalem-comedy"] .tl-bar').getBoundingClientRect();
       const band = document.querySelector(".tl-period").getBoundingClientRect();
-      // Mid-band, on the pill, clear of both ends' handles; moved two days of
+      // Mid-band, on the bar, clear of both ends' handles; moved two days of
       // the 365 the year shows, and a quarter more so the rounding lands on two.
       return { x: band.left + band.width / 2, y: bar.top + bar.height / 2, by: (track.width * 2.25) / 365 };
     });

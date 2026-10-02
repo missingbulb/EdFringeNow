@@ -67,8 +67,8 @@
          trip's dates between the two flight blocks, and the question of where
          the reader is coming from — see renderTripRow() and renderOriginCard()
          in planNG.js. -->
-    <!-- Beside the year, what narrows which festivals it draws: a globe of
-         badges and a place menu, and nine types with subtype chips. See
+    <!-- Beside the year, what narrows which festivals it draws: nine types
+         with subtype chips, and a desk globe of badges. See
          renderStripFilters() in planNG.js and globe-view.js. -->
     <section class="timeline" id="timeline" data-i18n-aria-label="timeline.label" aria-label="Фестивали года">
       <div class="tl-filters" id="timelineFilters" role="group" data-i18n-aria-label="filter.label" aria-label="Показать фестивали">
@@ -78,7 +78,20 @@
             <div class="tl-badges"></div>
             <div class="tl-up-slot" id="timelineUp"></div>
           </div>
-          <div id="timelinePlace"></div>
+          <svg class="tl-stand" viewBox="0 0 164 173" aria-hidden="true">
+            <defs>
+              <linearGradient id="standBrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc8c"/><stop offset=".45" stop-color="#c9952e"/><stop offset="1" stop-color="#7a5414"/></linearGradient>
+              <linearGradient id="standWood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6337"/><stop offset="1" stop-color="#4f2c12"/></linearGradient>
+            </defs>
+            <g transform="rotate(23 82 66)">
+              <path d="M82 -7 A73 73 0 0 1 82 139" fill="none" stroke="url(#standBrass)" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="82" cy="-7" r="3.2" fill="#c9952e"/>
+              <circle cx="82" cy="139" r="3.2" fill="#c9952e"/>
+            </g>
+            <path d="M78 140 Q82 150 76 158 L88 158 Q82 150 86 140 Z" fill="url(#standBrass)"/>
+            <ellipse cx="82" cy="163" rx="36" ry="7" fill="url(#standWood)"/>
+            <ellipse cx="82" cy="160.5" rx="32" ry="4.5" fill="#b07a46"/>
+          </svg>
         </div>
         <div class="tl-types" id="timelineTypes"></div>
       </div>

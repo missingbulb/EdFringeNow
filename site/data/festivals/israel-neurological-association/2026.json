@@ -1,0 +1,527 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "israel-neurological-association",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Israel Neurological Association Annual Conference",
+  "nameLocal": "הכנס השנתי של האיגוד הנוירולוגי בישראל",
+  "city": "Tel Aviv",
+  "country": "IL",
+  "lat": 32.1054,
+  "lng": 34.8084,
+  "timezone": "Asia/Jerusalem",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "academic",
+  "defaultGenre": "talk",
+  "site": "https://israelneurocongress.com/",
+  "firstDate": "2026-12-21",
+  "lastDate": "2026-12-22",
+  "ticketing": {
+   "model": "festival-pass",
+   "url": "https://reg.eventact.com//welcome?Form=irp8AAA&c=i7AI&Event=ip5cAAA&lang=he",
+   "notes": "Registration through EventAct. Early rates until 3 Dec 2026 for a specialist: both days ₪330 for association members, ₪630 for others; one day ₪220 or ₪365. Residents, retirees, nurses, paramedical staff, students and researchers pay less (the registration page's tables).",
+   "currency": "ILS",
+   "source": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "expo-tel-aviv",
+   "name": "Expo Tel Aviv",
+   "address": "Rokach Blvd 101, Tel Aviv-Yafo",
+   "lat": 32.1054141,
+   "lng": 34.8084224,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall-a3",
+     "name": "Hall A3",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-a4",
+     "name": "Hall A4",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "hall-a5",
+     "name": "Hall A5",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The site names the venue and its address but not the pavilion; plenaries and shared sessions fill Halls A3 and A4 together (the programme).",
+   "refs": [
+    "https://israelneurocongress.com/",
+    "https://www.openstreetmap.org/way/355090046"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "2026-12-21-0830-hall-a3",
+   "title": "Oral Session 1 – General Neurology",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-0830-hall-a4",
+   "title": "Oral Session 2 – Stroke & Vascular Diseases",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 70,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-0940-all-halls",
+   "title": "Opening Session",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 80,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-1130-all-halls",
+   "title": "Plenary Session 1",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Topic: Neuro-oncology",
+   "durationMin": 75,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-1330-all-halls",
+   "title": "Sponsored Lectures",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 120,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-1530-hall-a3",
+   "title": "Oral Session 3 – Movement Disorders",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-21-1530-hall-a4",
+   "title": "Oral Session 4 – Epilepsy",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a5",
+   "title": "Nurses Symposium",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 330,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a3",
+   "title": "Oral Session 5 : Neuromuscular Disease",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a4",
+   "title": "Oral Session 6: Headache",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-0930-all-halls",
+   "title": "Plenary Session 2",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Topic: Cognition",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-1130-all-halls",
+   "title": "Sponsored Lectures",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 150,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-1500-all-halls",
+   "title": "Plenary Session 3",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "Topic: Neuro – immunology",
+   "durationMin": 90,
+   "imageUrl": null
+  },
+  {
+   "id": "2026-12-22-1630-all-halls",
+   "title": "Israel Neurological Association Meeting",
+   "titleLocal": null,
+   "url": "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/",
+   "genre": "talk",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 60,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "2026-12-21-0830-hall-a3/2026-12-21/08:30",
+   "eventId": "2026-12-21-0830-hall-a3",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a3",
+   "date": "2026-12-21",
+   "start": "08:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-0830-hall-a4/2026-12-21/08:30",
+   "eventId": "2026-12-21-0830-hall-a4",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a4",
+   "date": "2026-12-21",
+   "start": "08:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-0940-all-halls/2026-12-21/09:40",
+   "eventId": "2026-12-21-0940-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-21",
+   "start": "09:40",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-1130-all-halls/2026-12-21/11:30",
+   "eventId": "2026-12-21-1130-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-21",
+   "start": "11:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-1330-all-halls/2026-12-21/13:30",
+   "eventId": "2026-12-21-1330-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-21",
+   "start": "13:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-1530-hall-a3/2026-12-21/15:30",
+   "eventId": "2026-12-21-1530-hall-a3",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a3",
+   "date": "2026-12-21",
+   "start": "15:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-21-1530-hall-a4/2026-12-21/15:30",
+   "eventId": "2026-12-21-1530-hall-a4",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a4",
+   "date": "2026-12-21",
+   "start": "15:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a5/2026-12-22/08:30",
+   "eventId": "2026-12-22-0830-hall-a5",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a5",
+   "date": "2026-12-22",
+   "start": "08:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a3/2026-12-22/08:30",
+   "eventId": "2026-12-22-0830-hall-a3",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a3",
+   "date": "2026-12-22",
+   "start": "08:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-0830-hall-a4/2026-12-22/08:30",
+   "eventId": "2026-12-22-0830-hall-a4",
+   "venueId": "expo-tel-aviv",
+   "roomId": "hall-a4",
+   "date": "2026-12-22",
+   "start": "08:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-0930-all-halls/2026-12-22/09:30",
+   "eventId": "2026-12-22-0930-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-22",
+   "start": "09:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-1130-all-halls/2026-12-22/11:30",
+   "eventId": "2026-12-22-1130-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-22",
+   "start": "11:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-1500-all-halls/2026-12-22/15:00",
+   "eventId": "2026-12-22-1500-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-22",
+   "start": "15:00",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-12-22-1630-all-halls/2026-12-22/16:30",
+   "eventId": "2026-12-22-1630-all-halls",
+   "venueId": "expo-tel-aviv",
+   "roomId": null,
+   "date": "2026-12-22",
+   "start": "16:30",
+   "ticketUrl": "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "congress-site"
+  ],
+  "performances": [
+   "congress-site"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "congress-site": {
+    "kind": "fetched",
+    "path": "data/festivals/israel-neurological-association/2026/congress-site",
+    "fetchedAt": "2026-10-02T18:48:48Z",
+    "fetcher": "scraper/festivals/israel_neurology/sources/congress-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/israel_neurology/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "congress-site"
+   ],
+   "events.categories": [
+    "congress-site"
+   ],
+   "events.durationMin": [
+    "congress-site"
+   ],
+   "events.imageUrl": [
+    "congress-site"
+   ],
+   "events.title": [
+    "congress-site"
+   ],
+   "events.titleLocal": [
+    "congress-site"
+   ],
+   "events.url": [
+    "congress-site"
+   ],
+   "performances.date": [
+    "congress-site"
+   ],
+   "performances.eventId": [
+    "congress-site"
+   ],
+   "performances.free": [
+    "congress-site"
+   ],
+   "performances.roomId": [
+    "congress-site"
+   ],
+   "performances.start": [
+    "congress-site"
+   ],
+   "performances.ticketUrl": [
+    "congress-site"
+   ],
+   "performances.venueId": [
+    "congress-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "congress-site": [
+    "2026-12-21 07:30 Gathering and Registration, Visit the Exhibition & ePoster Viewing (logistics)",
+    "2026-12-21 07:30 Parallel Scientific Sessions (a banner over the sessions below it)",
+    "2026-12-21 11:00 Coffee Break, ePoster Viewing & Visit the Exhibition (logistics)",
+    "2026-12-21 12:45 Lunch, ePoster Viewing & Visit the Exhibition (logistics)",
+    "2026-12-21 15:30 Parallel Scientific Sessions (a banner over the sessions below it)",
+    "2026-12-22 07:30 Gathering and Registration, Visit the Exhibition & ePoster Viewing (logistics)",
+    "2026-12-22 08:30 Parallel Scientific Sessions (a banner over the sessions below it)",
+    "2026-12-22 11:00 Coffee Break, ePoster Viewing & Visit the Exhibition (logistics)",
+    "2026-12-22 14:00 Lunch, ePoster Viewing & Visit the Exhibition (logistics)"
+   ]
+  }
+ }
+}

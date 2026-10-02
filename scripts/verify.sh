@@ -98,6 +98,8 @@ if command -v python3 >/dev/null 2>&1; then
   python3 scraper/festivals/platforms/eventact.py --selftest
   python3 scraper/festivals/platforms/cinematheque.py --selftest
   python3 scraper/festivals/platforms/smarticket.py --selftest
+  python3 scraper/festivals/platforms/pdf_grid.py --selftest
+  python3 scraper/festivals/platforms/forms_wizard.py --selftest
   python3 scraper/convert/to_serving.py --selftest
   python3 scraper/convert/to_serving.py --check
 else

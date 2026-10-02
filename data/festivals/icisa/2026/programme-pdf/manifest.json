@@ -1,0 +1,16 @@
+{
+ "festival": "icisa",
+ "edition": "2026",
+ "source": "programme-pdf",
+ "fetchedAt": "2026-10-02T18:41:58Z",
+ "fetcher": "scraper/festivals/icisa/sources/programme-pdf/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.icisa2026.com/program",
+  "https://www.icisa2026.com/_files/ugd/a41569_0e5c8f87e438417996b871d70fdae68f.pdf"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One record per cell of the programme PDF's daily grids (pdf_grid): its day, the time rows it spans as printed and their start and end, the halls it lies across as the header names them, and its lines in paragraphs, each marked bold or not and whether it fills the cell's width."
+}

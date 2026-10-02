@@ -1,8 +1,8 @@
 /* The year across the top of the page, as layout maths.
  *
  * Which twelve months it spans, where each month and each festival edition
- * falls along it, and which row an edition's bar sits on so that no bar or
- * label hides another. The renderer in ../planNG.js turns fractions into
+ * falls along it, and which festivals take the rows, in what order and on
+ * which row. The renderer in ../planNG.js turns fractions into
  * pixels; nothing here touches the DOM, so the rules are testable as rules.
  *
  * One bar per edition, always: an edition is drawn from the registry's dates,
@@ -68,46 +68,53 @@ export function timelineBars(registry, span) {
   return bars.sort((a, b) => a.start - b.start || a.festival.id.localeCompare(b.festival.id));
 }
 
-/**
- * The bars bunched by country: every edition in one country whose runs meet
- * (or come within `joinDays` of each other) is one pill, so a country holding
- * seven festivals at once costs the strip one row, not seven. A festival that
- * names a `region` (a state of a country as large as the US) bunches with
- * that region's alone. `placeOf` swaps in another grouping, such as
- * cityPlace() once the strip shows a single country.
- *
- * A bunch is led by the edition with a published programme and the longest
- * run, then the one that starts first: the one a reader most likely came for.
- * @returns {{key, lead, bars, start, end, hasData}[]} `key` is the lead's
- *   edition key; `bars` are the bunch's, in start order; `start`/`end` span them
- */
-export function timelineBunches(registry, span, placeOf = bunchPlace, joinDays = 7) {
-  const join = joinDays / span.days;
-  const open = new Map();
-  const bunches = [];
-  for (const bar of timelineBars(registry, span)) {
-    const place = placeOf(bar.festival);
-    const last = open.get(place);
-    if (last && bar.start <= last.end + join) {
-      last.bars.push(bar);
-      last.end = Math.max(last.end, bar.end);
-      continue;
-    }
-    const bunch = { bars: [bar], start: bar.start, end: bar.end };
-    open.set(place, bunch);
-    bunches.push(bunch);
-  }
-  return bunches.map((b) => {
-    const lead = [...b.bars].sort(
-      (x, y) => Number(y.hasData) - Number(x.hasData) || y.end - y.start - (x.end - x.start) || x.start - y.start
-    )[0];
-    return { key: lead.key, lead, bars: b.bars, start: b.start, end: b.end, hasData: b.bars.some((x) => x.hasData) };
-  });
+/* How searched a festival is: what the festival finder measured, else the
+ * events its programme holds; unknown ranks below every known count. */
+function searchedOf(bar) {
+  const measured = bar.festival.popularity ?? bar.edition.events;
+  return measured == null ? -1 : measured;
 }
 
-/** Where a festival bunches: its region where it names one, else its country. */
-export function bunchPlace(festival) {
-  return festival.region ? `${festival.country}|${festival.region}` : festival.country;
+/**
+ * The bars in the order the year's rows take them: the festival leading the
+ * trip first, then the most searched, a longer run first among equals.
+ * @param {object[]} bars from timelineBars()
+ * @param {string|null} focusKey
+ * @returns {object[]} a sorted copy
+ */
+export function rankBars(bars, focusKey) {
+  return [...bars].sort(
+    (a, b) =>
+      Number(b.key === focusKey) - Number(a.key === focusKey) ||
+      searchedOf(b) - searchedOf(a) ||
+      b.end - b.start - (a.end - a.start) ||
+      a.start - b.start
+  );
+}
+
+/**
+ * Which row each festival takes, in the order given, until the rows are
+ * `fill` full. A festival keeps `gap` clear of its neighbours on its row; a
+ * long one goes to the free row holding the fewest long ones, any other to
+ * the first free row; one that fits no row is passed over.
+ * @param {{from: number, to: number, long?: boolean}[]} extents in rank order
+ * @param {{rows: number, width: number, gap: number, fill: number}} o
+ * @returns {number[]} each festival's row, or -1 for one left off the rows
+ */
+export function fillRows(extents, { rows, width, gap, fill }) {
+  const taken = Array.from({ length: rows }, () => []);
+  const longs = new Array(rows).fill(0);
+  let used = 0;
+  return extents.map(({ from, to, long }) => {
+    if (used >= fill * rows * width) return -1;
+    const free = taken.flatMap((claims, row) => (claims.every(([a, b]) => to + gap <= a || from >= b + gap) ? [row] : []));
+    if (!free.length) return -1;
+    const row = long ? free.reduce((best, r) => (longs[r] < longs[best] ? r : best), free[0]) : free[0];
+    taken[row].push([from, to]);
+    if (long) longs[row]++;
+    used += to - from + gap;
+    return row;
+  });
 }
 
 /** The one spelling of "this edition of this festival" the page keys on. */
@@ -115,25 +122,3 @@ export function editionKey(festivalId, editionId) {
   return `${festivalId}@${editionId}`;
 }
 
-/**
- * Rows for the bars, so no two overlap. Each bar claims the stretch its bar
- * and its label cover together; a bar goes on the first row whose last claim
- * ended before this one starts.
- * @param {{from: number, to: number}[]} extents in any unit, one per bar, in
- *   the bars' order
- * @param {number} gap the space two claims on one row must keep between them
- * @returns {number[]} the row of each bar
- */
-export function stackRows(extents, gap = 0) {
-  const rowEnds = [];
-  return extents.map(({ from, to }) => {
-    let row = rowEnds.findIndex((end) => end + gap <= from);
-    if (row === -1) {
-      row = rowEnds.length;
-      rowEnds.push(to);
-    } else {
-      rowEnds[row] = to;
-    }
-    return row;
-  });
-}

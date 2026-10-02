@@ -190,14 +190,6 @@ export const STRINGS = {
     ru: "Показать фестивали",
     ja: "表示するフェスティバル",
   },
-  "filter.place": {
-    maxWidthPx: null,
-    unrendered: "the place menu's accessible name",
-    en: "Place",
-    he: "מקום",
-    ru: "Место",
-    ja: "場所",
-  },
   "filter.kind": {
     maxWidthPx: null,
     unrendered: "the type menu's accessible name",
@@ -214,30 +206,13 @@ export const STRINGS = {
     ru: "Подтип",
     ja: "サブタイプ",
   },
-  "filter.anyPlace": {
-    probe: ".tl-filter",
-    maxWidthPx: 190,
-    en: "Anywhere",
-    he: "בכל מקום",
-    ru: "Везде",
-    ja: "すべての場所",
-  },
   "filter.anySubtype": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Every subtype",
     he: "כל תתי־הסוגים",
     ru: "Все подтипы",
     ja: "すべてのサブタイプ",
-  },
-  "filter.allOf": {
-    probe: ".tl-filter",
-    maxWidthPx: 190,
-    sample: { country: "United Kingdom" },
-    en: "All of {country}",
-    he: "כל {country}",
-    ru: "{country} целиком",
-    ja: "{country}全体",
   },
   "filter.none": {
     probe: ".timeline",
@@ -311,7 +286,7 @@ export const STRINGS = {
     ja: "学術",
   },
   "area.british-isles": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "British Isles",
     he: "האיים הבריטיים",
@@ -319,7 +294,7 @@ export const STRINGS = {
     ja: "イギリス・アイルランド",
   },
   "area.europe": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Europe",
     he: "אירופה",
@@ -327,7 +302,7 @@ export const STRINGS = {
     ja: "ヨーロッパ",
   },
   "area.middle-east": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Middle East",
     he: "המזרח התיכון",
@@ -335,7 +310,7 @@ export const STRINGS = {
     ja: "中東",
   },
   "area.russia-central-asia": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Russia & Central Asia",
     he: "רוסיה ומרכז אסיה",
@@ -343,7 +318,7 @@ export const STRINGS = {
     ja: "ロシア・中央アジア",
   },
   "area.south-asia": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "South Asia",
     he: "דרום אסיה",
@@ -351,7 +326,7 @@ export const STRINGS = {
     ja: "南アジア",
   },
   "area.east-asia": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "East Asia",
     he: "מזרח אסיה",
@@ -359,7 +334,7 @@ export const STRINGS = {
     ja: "東アジア",
   },
   "area.oceania": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Oceania",
     he: "אוקיאניה",
@@ -367,7 +342,7 @@ export const STRINGS = {
     ja: "オセアニア",
   },
   "area.north-america": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "North America",
     he: "צפון אמריקה",
@@ -375,7 +350,7 @@ export const STRINGS = {
     ja: "北米",
   },
   "area.latin-america": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Latin America",
     he: "אמריקה הלטינית",
@@ -383,7 +358,7 @@ export const STRINGS = {
     ja: "中南米",
   },
   "area.africa": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Africa",
     he: "אפריקה",
@@ -391,7 +366,7 @@ export const STRINGS = {
     ja: "アフリカ",
   },
   "globe.world": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 120,
     en: "World",
     he: "העולם",
@@ -399,7 +374,7 @@ export const STRINGS = {
     ja: "世界",
   },
   "subtype.art-contemporary": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Contemporary art",
     he: "אמנות עכשווית",
@@ -407,7 +382,7 @@ export const STRINGS = {
     ja: "現代アート",
   },
   "subtype.comedy-standup": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Stand-up",
     he: "סטנדאפ",
@@ -415,7 +390,7 @@ export const STRINGS = {
     ja: "スタンダップ",
   },
   "subtype.film-international": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "International film",
     he: "קולנוע בינלאומי",
@@ -423,7 +398,7 @@ export const STRINGS = {
     ja: "国際映画",
   },
   "subtype.literature-books": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Books and authors",
     he: "ספרים וסופרים",
@@ -431,7 +406,7 @@ export const STRINGS = {
     ja: "本と作家",
   },
   "subtype.multi-deaf-arts": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Deaf arts",
     he: "אמנות חירשים",
@@ -439,7 +414,7 @@ export const STRINGS = {
     ja: "ろう者の芸術",
   },
   "subtype.music-military": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Military music",
     he: "מוזיקה צבאית",
@@ -447,7 +422,7 @@ export const STRINGS = {
     ja: "軍楽",
   },
   "subtype.theatre-alternative": {
-    probe: ".tl-filter",
+    probe: ".tl-chip",
     maxWidthPx: 190,
     en: "Alternative theatre",
     he: "תיאטרון אחר",
@@ -523,23 +498,23 @@ export const STRINGS = {
   "genre.film": { probe: ".tl-card", maxWidthPx: 120, en: "Film", he: "קולנוע", ru: "Кино", ja: "映画" },
   "genre.theatre": { probe: ".tl-card", maxWidthPx: 120, en: "Theatre", he: "תיאטרון", ru: "Театр", ja: "演劇" },
   "genre.fringe": { probe: ".tl-card", maxWidthPx: 120, en: "Fringe", he: "פרינג'", ru: "Фриндж", ja: "フリンジ" },
-  "bunch.label": {
-    probe: ".tl-label",
-    maxWidthPx: 340,
-    sample: { count: 7, name: "" },
-    en: "{count, plural, one {# festival} other {# festivals}} including {name}",
-    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}}, ביניהם {name}",
-    ru: "{count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}, среди них {name}",
-    ja: "{name}など{count}のフェスティバル",
+  "typeCard.count": {
+    probe: ".tl-type-card",
+    maxWidthPx: 280,
+    sample: { count: 12 },
+    en: "{count, plural, one {# festival} other {# festivals}}",
+    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}}",
+    ru: "{count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}",
+    ja: "{count}のフェスティバル",
   },
-  "bunch.title": {
-    probe: ".tl-card",
-    maxWidthPx: 320,
-    sample: { count: 7, place: "United Kingdom" },
-    en: "{place}: {count, plural, one {# festival} other {# festivals}}",
-    he: "{count, plural, one {פסטיבל אחד} two {שני פסטיבלים} other {# פסטיבלים}} ב{place}",
-    ru: "{place}: {count, plural, one {# фестиваль} few {# фестиваля} many {# фестивалей} other {# фестиваля}}",
-    ja: "{place}の{count}のフェスティバル",
+  "typeCard.next": {
+    probe: ".tl-type-card",
+    maxWidthPx: 360,
+    sample: { name: "Edinburgh Festival Fringe", dates: "7–31 Aug 2026" },
+    en: "Next: {name}, {dates}",
+    he: "הבא: {name}, {dates}",
+    ru: "Следующий: {name}, {dates}",
+    ja: "次は{name}（{dates}）",
   },
   "card.programme": {
     probe: ".tl-card",

@@ -292,41 +292,61 @@ async function moveTripEnd(page, end, iso) {
   await page.waitForFunction(([e, d]) => document.querySelector(`.tl-handle--${e}`)?.dataset.date === d, [end, iso], { timeout: 20000 });
 }
 
-/* The fixtures' year plus eight more festivals, each in a country of its own
- * (a country's festivals share one pill) and all running at once, so the year
- * draws more rows than the strip shows. None has a programme, so nothing else
- * on the page changes. */
+/* The fixtures' year plus two hundred and forty more festivals across the
+ * world, of every type, at dates spread over the whole year and each searched
+ * a different amount: far more than the strip's rows hold. None has a
+ * programme, so nothing else on the page changes. */
 const CROWD_TOWNS = [
-  ["Paris", "FR"],
-  ["Berlin", "DE"],
-  ["Madrid", "ES"],
-  ["Rome", "IT"],
-  ["Amsterdam", "NL"],
-  ["Lisbon", "PT"],
-  ["Dublin", "IE"],
-  ["Vienna", "AT"],
+  ["Paris", "FR", 48.9, 2.4],
+  ["Berlin", "DE", 52.5, 13.4],
+  ["Madrid", "ES", 40.4, -3.7],
+  ["Rome", "IT", 41.9, 12.5],
+  ["Amsterdam", "NL", 52.4, 4.9],
+  ["Lisbon", "PT", 38.7, -9.1],
+  ["Dublin", "IE", 53.3, -6.3],
+  ["Vienna", "AT", 48.2, 16.4],
+  ["Austin", "US", 30.3, -97.7],
+  ["Tokyo", "JP", 35.7, 139.7],
+  ["Melbourne", "AU", -37.8, 145],
+  ["Montreal", "CA", 45.5, -73.6],
 ];
+const CROWD_KINDS = ["music", "film", "theatre", "dance", "comedy", "art", "fringe", "sports", "academic", "literature"];
+const CROWD_DAYS = [3, 5, 10, 2, 21, 4, 8, 1, 14, 6];
+const isoDay = (t) => new Date(t).toISOString().slice(0, 10);
+
 async function routeCrowdedYear(page) {
   const registry = JSON.parse(fs.readFileSync(path.join(FIXTURES_DIR, "data", "festivals", "index.json"), "utf8"));
-  CROWD_TOWNS.forEach(([city, country], i) =>
+  for (let i = 0; i < 240; i++) {
+    const [city, country, lat, lng] = CROWD_TOWNS[i % CROWD_TOWNS.length];
+    const first = Date.UTC(2026, 6, 4) + ((i * 37) % 340) * 86400000;
     registry.festivals.push({
       id: `crowd-${i}`,
-      name: `${city} Festival`,
+      name: `${city} Festival ${i + 1}`,
       nameLocal: null,
       city,
       country,
-      lat: 48 + i / 10,
-      lng: 5,
+      lat,
+      lng,
       timezone: "Europe/Paris",
       lang: "en",
       dir: "ltr",
-      kind: "music",
-      defaultGenre: "music",
+      kind: CROWD_KINDS[i % CROWD_KINDS.length],
+      defaultGenre: CROWD_KINDS[i % CROWD_KINDS.length],
       site: "https://example.org",
       ticketing: { model: "per-event-seller", url: null },
-      editions: [{ id: "2027", ordinal: null, firstDate: "2027-01-10", lastDate: `2027-02-${String(10 + i).padStart(2, "0")}`, format: "block", dataUrl: null }],
-    })
-  );
+      popularity: ((i * 53) % 97) * 10 + 5,
+      editions: [
+        {
+          id: "2027",
+          ordinal: null,
+          firstDate: isoDay(first),
+          lastDate: isoDay(first + (CROWD_DAYS[i % CROWD_DAYS.length] - 1) * 86400000),
+          format: "block",
+          dataUrl: null,
+        },
+      ],
+    });
+  }
   await page.route("**/data/festivals/index.json", (route) =>
     route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(registry) })
   );
