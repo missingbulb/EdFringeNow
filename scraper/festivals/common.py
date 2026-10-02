@@ -1,4 +1,4 @@
-"""What every hand-run fetcher shares: the retrying GET, the edition guard, and
+"""What every fetcher shares: the retrying GET, the edition guard, and
 the atomic write of one source's raw folder.
 
 A fetcher knows one website; this module knows the contract every fetcher keeps
@@ -26,6 +26,18 @@ RETRY_STATUSES = (429, 502, 503, 504)
 USER_AGENT = "EdFringeNow-festival-fetcher/1.0 (+https://www.edfringenow.com)"
 
 
+# A fetcher's exit status for "nothing to fetch yet": the programme is not out, or
+# the fetcher is a placeholder. The update reports it apart from a breakage, which
+# is any other non-zero exit.
+EXIT_NOT_READY = 75
+
+
+def not_ready(reason):
+    """Exit as a fetcher with nothing to fetch yet; nothing is written."""
+    print(reason, file=sys.stderr)
+    sys.exit(EXIT_NOT_READY)
+
+
 class FetchRefused(Exception):
     """The site disagrees with the edition asked for; nothing is written."""
 
@@ -36,6 +48,11 @@ def get(url, as_json=True, attempts=4, headers=None):
     return _request(urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})}), as_json, attempts)
 
 
+def get_bytes(url, attempts=4, headers=None):
+    """`get` for a file that is not text (a programme PDF): its bytes as served."""
+    return _request(urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})}), None, attempts)
+
+
 def post(url, body, as_json=True, attempts=4, headers=None):
     """`get`'s POST twin, for query APIs (Overpass) that take their query as a body."""
     request = urllib.request.Request(url, data=body, method="POST",
@@ -44,10 +61,14 @@ def post(url, body, as_json=True, attempts=4, headers=None):
 
 
 def _request(request, as_json, attempts):
+    """The response body: parsed JSON, text, or (as_json None) bytes."""
     for attempt in range(attempts):
         try:
             with urllib.request.urlopen(request, timeout=180) as response:
-                body = response.read().decode("utf-8")
+                body = response.read()
+            if as_json is None:
+                return body
+            body = body.decode("utf-8")
             return json.loads(body) if as_json else body
         except urllib.error.HTTPError as error:
             # A busy server (rate limit, gateway timeout) is worth waiting out;
@@ -205,8 +226,10 @@ def selftest():
 
     festival = {
         "id": "acme-fest",
-        "edition": [{"id": "2026", "first": "2026-10-01", "last": "2026-10-03", "ordinal": None},
-                    {"id": "2025", "first": "2025-10-01", "last": "2025-10-03", "ordinal": None}],
+        "edition": [{"id": "2026", "first": "2026-10-01", "last": "2026-10-03", "ordinal": None,
+                     "sources": ["acme-site", "acme-geo"]},
+                    {"id": "2025", "first": "2025-10-01", "last": "2025-10-03", "ordinal": None,
+                     "sources": ["acme-site"]}],
         "source": [{"id": "acme-site", "kind": "fetched"}, {"id": "acme-geo", "kind": "fetched"}],
     }
     edition = festival["edition"][0]
@@ -258,6 +281,11 @@ def selftest():
         try:
             registry.raw_dir(festival, "2024", "acme-site")
             raise AssertionError("an undeclared edition must have no raw folder")
+        except registry.RegistryError:
+            pass
+        try:
+            registry.raw_dir(festival, "2025", "acme-geo")
+            raise AssertionError("a source outside the edition's tool set must have no raw folder")
         except registry.RegistryError:
             pass
     finally:

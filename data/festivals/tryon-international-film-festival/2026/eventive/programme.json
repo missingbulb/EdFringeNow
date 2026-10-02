@@ -1,0 +1,3009 @@
+{
+ "tenant": "triff2026",
+ "site": "https://triff2026.eventive.org",
+ "displayName": "TRIFF 2026",
+ "displayTimezone": "America/New_York",
+ "currency": "usd",
+ "eventBucket": "691b8a9994bdbc299cd494b0",
+ "edition": "2026",
+ "events": [
+  {
+   "id": "691b8a9a94bdbc299cd4956b",
+   "name": "Media Arts Day",
+   "description": "<p><strong>Media Arts Day</strong></p><p><em>Thursday, October 8 | Sunnydale</em></p><p><br></p><p>Join us for the&nbsp;<strong>4th Annual Media Arts Day</strong>&nbsp;at the Tryon International Film Festival — a dynamic event designed for students, emerging creatives, and anyone passionate about film and media.</p><p><br></p><p>This event offers a full day of connection and inspiration. Attendees will enjoy:</p><p><br></p><p>🎬&nbsp;<strong>Student Film Screenings</strong></p><p>🎓&nbsp;<strong>Career &amp; Education Fair</strong></p><p>🎤&nbsp;<strong>A Special Lecture by Producer Frank M. Calo and Voiceover + MOCAP Artist, Actress, and Director Francesca Calo. </strong></p><p>🤝&nbsp;<strong>Networking with Employers, Educators, and Filmmakers</strong></p><p><strong>* A boxed lunch will be served</strong></p><p><br></p><p>Whether you're exploring careers in the arts or simply looking to be inspired, Media Arts Day is your chance to engage with the future of film in a supportive, hands-on environment.</p><p><br></p><p>For special accommodations or questions, please contact us at&nbsp;<strong>triffeducation@gmail.com</strong>.</p><p><br></p><p>We can’t wait to welcome you!</p><p><br></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\">﻿*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-08T13:00:00.000Z",
+   "end_time": "2026-10-08T18:00:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787790795048temp-1787790795041-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a849ab0f1e772f689dce37b",
+     "name": "A Butler's Job",
+     "short_description": null,
+     "description": "<p>A Butler's Job follows Amos, the impeccably mannered butler, to a sickly detective kidnapped by a seemingly nefarious vampiric organization. With his master incapacitated, Amos, with no detective training, no combat experience, and only an encyclopedic knowledge of tea and etiquette, takes to the streets of London to unravel the mystery. If he can polish silverware to a shine, surely he can shine some light on this case... right?</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787075454783temp-1787075454770-poster.jpg",
+     "runtime": "4"
+    },
+    {
+     "id": "6a849aaff1e772f689dce34b",
+     "name": "Before Our Vows",
+     "short_description": null,
+     "description": "<p>Before Our Vows follows Evelyn and Calvin on the morning of their wedding, when they choose to run from the ceremony and spend the day together instead. As they wander through the city, sharing small and spontaneous moments, they begin to create their own version of what a wedding day and marriage can be. Through some dreamy visuals and overlapping vows, the film will explore how two people from different worlds can come together without losing themselves. It's not a story about escaping commitment, but about choosing a love that's honest and true.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079169477temp-1787079169460-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce371",
+     "name": "Between",
+     "short_description": null,
+     "description": null,
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079182978temp-1787079182966-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce36d",
+     "name": "Black Pearl",
+     "short_description": null,
+     "description": "<p>In the early ‘60s, an African American family returns from the unprejudiced environment of Atlantic Beach to an all-white neighborhood. Raymond, the oldest of three siblings, struggles watching his twin sisters realize that the world they live in is more prejudiced than they believed.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079196028temp-1787079196014-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce379",
+     "name": "Borrowed Land",
+     "short_description": null,
+     "description": "<p>BORROWED LAND is a poetic short film exploring family legacy, ancestral connection, and the sacred responsibility of preserving the land for future generations.</p>\n<p>Set on over 100 years of family land in the foothills of North Carolina, this inspirational visual journey follows the wonder of childhood through the eyes of a grandson discovering nature, freedom, and heritage, while generations past and present reflect on what it truly means to protect something greater than ourselves. Through intimate imagery, breathtaking landscapes, spoken-word narration, and quiet moments of reflection, the film challenges the idea of ownership, revealing that the land is not something we possess—but something we are entrusted to protect.</p>\n<p>Guided by the timeless truth,</p>\n<p>\"We do not inherit the land from our ancestors… we borrow it from our children,\"</p>\n<p>Borrowed Land is a meditation on stewardship, memory, and hope that reminds us our greatest inheritance is not the land itself, but the responsibility to leave it better than we found it.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079206961temp-1787079206943-poster.jpg",
+     "runtime": "4"
+    },
+    {
+     "id": "6a849aaff1e772f689dce361",
+     "name": "Chien Thang",
+     "short_description": null,
+     "description": "<p>Short 30 second fight animation</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "1"
+    },
+    {
+     "id": "6a849aaff1e772f689dce353",
+     "name": "Cooked!",
+     "short_description": null,
+     "description": "<p>Armed only with his mom's instructions, a clueless boy's attempt to cook dinner is seasoned with chaos and served with a side of mayhem.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079225336temp-1787079225321-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849aaff1e772f689dce35b",
+     "name": "Cycles",
+     "short_description": null,
+     "description": "<p>Life seems to repeat over and over becoming an endless cycle. As life gets more stressful something pulls Emma out of that hole.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787075768611temp-1787075768600-poster.jpg",
+     "runtime": "1"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce37d",
+     "name": "Dream of the Miner's Child",
+     "short_description": null,
+     "description": "<p>The Daughter of an Appalachian coal miner tries to warn her father of her prophetic nightmare depicting his death.  </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "2"
+    },
+    {
+     "id": "6a849aaff1e772f689dce35f",
+     "name": "empty nester.",
+     "short_description": null,
+     "description": "<p>empty nester: a term used to describe a parent whose children have grown up and left home.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "1"
+    },
+    {
+     "id": "6a849aaff1e772f689dce359",
+     "name": "Farm",
+     "short_description": null,
+     "description": "<p>Your world can collapse in a single moment.</p>\n<p>…And not only because of big politics. You might be forced to leave your country, to move to a new school.</p>\n<p>But you can always find happiness in the most unexpected place — where you are understood. You only need to find it, or build that place yourself.</p>\n<p>How to create your own “farm.”</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "10"
+    },
+    {
+     "id": "6a849aaff1e772f689dce351",
+     "name": "finding rhythm",
+     "short_description": null,
+     "description": "<p>Amid the pressure of his band’s debut performance, a drummer strains to keep time and rhythm under the scrutiny of an unforgiving audience; only to lead to a profound realization that changes everything.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787075876663temp-1787075876654-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849aaff1e772f689dce35d",
+     "name": "First Night Out",
+     "short_description": null,
+     "description": "<p>A twenty something attends her first party in the big city.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079293087temp-1787079293077-poster.jpg",
+     "runtime": "2"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce36b",
+     "name": "Generation by Generation",
+     "short_description": null,
+     "description": "<p>Generation by Generation is a short documentary exploring the immigrant pursuit of the American Dream, interlacing home movies shot by parents with modern-day footage captured by their daughter.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079325723temp-1787079325711-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce37f",
+     "name": "Guardian's Lament",
+     "short_description": null,
+     "description": "<p>Guardian’s Lament is a 3D animated short film about a dilapidated Robot who resides within a magical forest. Content in his solitude, the ancient guardian undergoes a meticulous routine tending to the Forest Heart: the embodiment of the forest’s wellbeing and the Robot’s life source. When his peaceful sanctuary is breached by a restless Creature, chaos and destruction follow suit. Will the two manage to set aside their differences and work together to save the forest they call home?</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079334186temp-1787079334173-poster.jpg",
+     "runtime": "8"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce381",
+     "name": "Half a Woman",
+     "short_description": null,
+     "description": "<p>The woman with one eye and one glove is visited by a man who has known her for many years. It is he who narrates her life, starting with a past in which she was “whole,” almost perfect.</p>\n<p>But as the narrative progresses, the tone shifts. The man begins to describe her as a monstrosity, breaking her down into pieces and erasing her identity. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787076043700temp-1787076043684-poster.jpg",
+     "runtime": "5"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce375",
+     "name": "Holding On To Xiao",
+     "short_description": null,
+     "description": null,
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787076073492temp-1787076073478-poster.jpg",
+     "runtime": "6"
+    },
+    {
+     "id": "6a849aaff1e772f689dce357",
+     "name": "Home",
+     "short_description": null,
+     "description": "<p>A reserved college student reluctantly shares a deeply personal love story with his best friend, recounting a vibrant, complicated “relationship” that shaped his childhood and still tugs at his heart, forcing him to confront what he truly left behind.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079360414temp-1787079360399-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849aaff1e772f689dce369",
+     "name": "Little",
+     "short_description": null,
+     "description": "<p>Seven-year-old Fran makes a pact with his mother to learn everything about his father at the age of fourteen.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787088404759temp-1787088404748-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a849aaff1e772f689dce365",
+     "name": "Pearly Gate",
+     "short_description": null,
+     "description": "<p>A newly-dead soul awakens outside the gates of Heaven.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "1"
+    },
+    {
+     "id": "6a849aaff1e772f689dce34f",
+     "name": "Primitive",
+     "short_description": null,
+     "description": "<p>In 2035, Iris uses her AI for everything. But when her AI runs out of battery, she's left with... herself. Welcome to the future of helplessness.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787096591906temp-1787096591892-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849aaff1e772f689dce367",
+     "name": "RedScale",
+     "short_description": null,
+     "description": "<p>Two friends end up losing a friend along the way. We go through their lives grieving </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079402386temp-1787079402380-poster.jpg",
+     "runtime": "1"
+    },
+    {
+     "id": "6a849aaff1e772f689dce34d",
+     "name": "Revolution",
+     "short_description": null,
+     "description": "<p>After a simple command crosses a line, one boy becomes witness to a revolution that he never meant to start.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787096507364temp-1787096507354-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a849aaff1e772f689dce355",
+     "name": "Roots at Home",
+     "short_description": null,
+     "description": "<p>A young family finds purpose and sustenance from their family garden</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787076271077temp-1787076271066-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce377",
+     "name": "Septima Clark: Mother of Liberation",
+     "short_description": null,
+     "description": "<p>We don't often hear about the role of women in the Civil Rights Movement. Mostly, we focus on amazing male leaders, like Dr. Martin Luther King Jr., who were its spokespersons. However, there were women behind the scenes putting in the underappreciated, necessary work, like Septima Clark. She was faced with hardship after hardship, whether it be her early education, the discrimination she faced as a Black teacher, or a member of the then-controversial Civil Rights Movement. Nevertheless, she persevered and created something great, educating thousands through \"Citizenship Schools.\" By highlighting her innovative method of empowerment, through education, I hope to shed light on the power of a single vision.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "7"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce373",
+     "name": "The House Basilus",
+     "short_description": null,
+     "description": "<p>In the 1920s, a young woman grieving the deaths of her parents must battle against the manipulations of her older brother after coming into an unexpected fortune.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079447512temp-1787079447500-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a849aaff1e772f689dce363",
+     "name": "The Little Mermaid",
+     "short_description": null,
+     "description": null,
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "1"
+    },
+    {
+     "id": "6a849ab0f1e772f689dce36f",
+     "name": "Toy Soldiers",
+     "short_description": null,
+     "description": "<p>After fleeing a battlefront in an apocalyptic America, four teenage soldiers find refuge in a house built on memory. As the group unwinds in their new surroundings, they learn that shelter doesn’t always mean safety. Group leader Natalie must find a way to protect her friends.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787079473598temp-1787079473587-poster.jpg",
+     "runtime": "13"
+    }
+   ]
+  },
+  {
+   "id": "6a84d5210518f8a6e74615e2",
+   "name": "Italian Dinner @ The Fitz *Not an official festival event*",
+   "description": "<p><strong><em>*Not an official festival event*</em></strong></p><p><br></p><p>The Fitzgerald hosts an Italian dinner each Thursday evening. Prices range from $14-$30. If you're looking for a fantastic meal just across the street from the Welcome Reception, look no further!</p><p><br></p><p>Open to the public.</p>",
+   "short_description": null,
+   "start_time": "2026-10-08T21:00:00.000Z",
+   "end_time": "2026-10-09T02:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956f",
+   "name": "Opening Reception",
+   "description": "<p>Kick off the Tryon International Film Festival with our lively Welcome Reception! Join filmmakers, industry professionals, and film lovers for an evening of networking, celebration, and community spirit. It’s the perfect opportunity to meet fellow creatives, share your passion for film, and get energized for the exciting days ahead. </p><p><br></p><p>*Food and drink will be for sale at this event.</p>",
+   "short_description": null,
+   "start_time": "2026-10-08T22:00:00.000Z",
+   "end_time": "2026-10-09T01:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950b",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787791120586temp-1787791120578-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956a",
+   "name": "Shooting Your Documentary with Alison Marek",
+   "description": "<p><strong>Join Alison Marek as she helps you sharpen your eye for documentary technique and craft.</strong></p><p><br></p><p>In this hands-on workshop, Alison will walk you through the essentials of preparing to shoot a documentary, sharing the practical shooting strategies she uses in her own work. You’ll then watch the trailer for her current film along with selected scenes in progress. Together, the group will critique the footage—discussing what works, what could be stronger, and how different approaches might shape the story. Attendees may even break into small crews to brainstorm alternative ways of capturing the material.</p><p><br></p><p>You’ll leave with sharper critical skills, a clearer sense of how to approach your own documentary projects, and the satisfaction of knowing your feedback is helping shape a stronger film.</p><p><br></p><p><em>*A boxed lunch will be served</em></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em>*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T13:00:00.000Z",
+   "end_time": "2026-10-09T13:50:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787850095428temp-1787850095421-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a851e5a6c6a1c417fc1618f",
+   "name": "The Nuts and Bolts of Filmmaking with Frank Calo",
+   "description": "<p>Join returning TRIFF judge and instructor Frank Calo for an updated look at the essentials of making films in today’s industry.</p><p><br></p><p>This year’s session brings fresh insights into the current landscape—what’s shifting for filmmakers, the new realities of production and distribution, and practical ways independent creators can take control and start making their own work. Frank will break down the core principles of filmmaking while connecting them to the latest trends and opportunities, giving you clear, actionable guidance whether you’re just starting out or looking to level up your next project.</p><p><br></p><p>Walk away with a sharper understanding of the industry as it stands now—and the confidence to put those nuts-and-bolts skills into practice.</p><p><br></p><p><em>*A boxed lunch will be served</em></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\"><span class=\"ql-cursor\">﻿</span>*Made possible with grant funding from the Community Foundation of Henderson County</em></p><p><br></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T14:00:00.000Z",
+   "end_time": "2026-10-09T14:50:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787850075967temp-1787850075959-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a851e8d365982c54a5c1a80",
+   "name": "Protecting Human-Born Story: A New Platform for Independent Film from 213 TV with David Sonkin",
+   "description": "<p>Join 213 TV founder David Sonkin for a look at a creator-first entertainment platform - and why protecting the future of human-born story, is benefitting from a new approach. Discover how 213 TV integrates the roles of studio, streamer, and marketplace, connecting development, funding, streaming, audience engagement, revenue participation, project packaging, and buyer access. It is a connected ecosystem designed to help indie voices find audiences, build value, and move forward without getting lost in financial uncertainty, analytical turmoil, or algorithmic labyrinths.</p><p><br></p><p><br></p><p><em>*A boxed lunch will be served</em></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\">﻿*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T15:00:00.000Z",
+   "end_time": "2026-10-09T15:50:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787850046483temp-1787850046476-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a851eae4aa5ef0d42a1d8a1",
+   "name": "Animation, Acting, Voiceover & Motion Capture with Francesca Calo",
+   "description": "<p>Join bicoastal actor, voice actress, director, and motion-capture performer Francesca Calo for an insightful session exploring the interconnected worlds of animation, acting, voiceover, and performance capture.</p><p>*2026 Emmy + Oscar Nominated</p><p><br></p><p>Drawing from her experience across film, television, anime, video games, and live-action (including credits in <em>Ocean’s Eight</em>, <em>Mare of Easttown</em>, <em>Little Amélie or the Character of Rain</em>, <em>Gundam SEED Destiny</em>, and titles like <em>Wasteland 3</em> and <em>Path to Nowhere</em>), Francesca will share practical techniques and industry insights for bringing characters to life—whether through the mic, on camera, or in a mocap suit.</p><p><br></p><p>You’ll gain a clearer understanding of how these disciplines overlap, what casting and performance look like in today’s animation and interactive media landscape, and actionable approaches you can apply to your own projects.</p><p>Whether you’re an actor looking to expand into voice or performance capture, or a filmmaker interested in animation storytelling, this session offers valuable tools and perspective from a working professional.</p><p><br></p><p><em>*A boxed lunch will be served</em></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\"><span class=\"ql-cursor\">﻿</span>*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T16:00:00.000Z",
+   "end_time": "2026-10-09T16:50:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/17522739226299343b3167e33cf5714df.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a851f2534cfd46f50c94b80",
+   "name": "Education Institute Lunch *RSVP so we can save you a plate*",
+   "description": "<p><strong>Join us for the Education Institute Lunch</strong></p><p><br></p><p>Take a break and connect with TRIFF instructors, judges, and fellow filmmakers over a casual meal. This is your chance to continue the conversation, ask questions, share ideas, and build relationships in a relaxed setting while the Education Institute programs are underway.</p><p><br></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T16:50:00.000Z",
+   "end_time": "2026-10-09T17:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/17522739226299343b3167e33cf5714df.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a851f6f13836e9b1a33a5f9",
+   "name": "Smart Marketing and Paid Ads for Indie Films: Do’s & Don’ts with Jazelle Foster",
+   "description": "<p>Join Jazelle Foster of Creatives Meet Marketing for a practical session on running your own paid advertising campaigns for an independent film.</p><p><br></p><p>Drawing from her experience helping creatives turn marketing into a strategic (and creative) extension of their work, Jazelle will break down the essential do’s and don’ts of building effective ad campaigns—covering audience targeting, budgeting, creative strategy, tracking results, and common pitfalls that waste money. You’ll leave with clearer, more confident approaches for getting your film in front of the right viewers without relying solely on traditional publicity.</p><p><br></p><p>Whether you’re promoting a completed project or planning your next release, this workshop offers actionable guidance tailored to the realities of independent filmmaking.</p><p><br></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\"><span class=\"ql-cursor\">﻿</span>*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T17:30:00.000Z",
+   "end_time": "2026-10-09T18:20:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787850292123temp-1787850292117-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a85200d5586fe5f0f18d993",
+   "name": "Screenwriting & Film Financing with Kevin Bernhardt",
+   "description": "<p>Join screenwriter and producer Kevin Bernhardt for a practical session on the dual craft of writing scripts that attract financing—and navigating the realities of getting independent films funded and made.</p><p><br></p><p>With credits on more than 25 produced films featuring talent such as Orlando Bloom, Kevin Bacon, Nick Nolte, Ben Foster, Michael Caine, Chris Rock, and others (<em>Peaceful Warrior</em>, <em>Elephant White</em>, <em>Medieval</em>, <em>Echo Boomers</em>, and more), Kevin brings hard-won insight into what makes a screenplay financeable and how projects move from page to production. He’ll cover key principles of commercial storytelling, packaging, investor expectations, and the practical steps independent filmmakers can take to strengthen both their scripts and their financing strategies.</p><p><br></p><p>Whether you’re developing a new project or refining an existing one, this session offers clear, experience-based guidance from a working writer-producer who has successfully bridged the gap between creative vision and real-world financing.</p><p><br></p><p><em>**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\"><span class=\"ql-cursor\">﻿</span>*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T18:30:00.000Z",
+   "end_time": "2026-10-09T19:20:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787850848429temp-1787850848421-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a839c005f8441122a3cc06a",
+   "name": "Gala Pre Game",
+   "description": "<p>Continue networking and socializing on Trade Street! </p><p><br></p><p>Visit Railside, Sagrada, Brooks Tavern, The Tryon Bottle, or Side Street Pizza with other filmmakers before the big night begins! </p>",
+   "short_description": null,
+   "start_time": "2026-10-09T19:30:00.000Z",
+   "end_time": "2026-10-09T21:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49514",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a839c90aa96d311976b4049",
+   "name": "All Access Passholders Pre-Gala Party",
+   "description": "<p>All Access Passholders (including Filmmakers, Judges, and Sponsors) are invited to join us at Mirrorball Gallery for a pre-gala party! Use your drink tickets for wine and beer, or purchase drinks from the cocktail bar. Hang out in Mirrorball's lounge setting before the big night!</p>",
+   "short_description": null,
+   "start_time": "2026-10-09T20:00:00.000Z",
+   "end_time": "2026-10-09T21:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950b",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787851187117temp-1787851187108-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "All Access Passholders Exclusive Ticket",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956e",
+   "name": "Friday Evening Gala *RSVP so we can save you a plate*",
+   "description": "<p><span style=\"color: rgb(33, 33, 33);\">🎟️ </span><strong style=\"color: rgb(33, 33, 33);\">FRIDAY GALA + FEATURE FILM </strong></p><p><strong style=\"color: rgb(33, 33, 33);\">*RSVP Required</strong></p><p><br></p><p><span style=\"color: rgb(33, 33, 33);\">Step into the spotlight with access to:</span></p><p><br></p><p><span style=\"color: rgb(33, 33, 33);\">• Opening Night Gala</span></p><p><span style=\"color: rgb(33, 33, 33);\">• Small Plate Bites for Dinner</span></p><p><span style=\"color: rgb(33, 33, 33);\">• Red Carpet Experience</span></p><p><span style=\"color: rgb(33, 33, 33);\">• Feature Film Screening</span></p><p><br></p><p><span style=\"color: rgb(33, 33, 33);\">🥂 </span><em style=\"color: rgb(33, 33, 33);\">An unforgettable night of glamour, storytelling, and celebration to kick off the festival weekend.</em></p><p><br></p><p><em style=\"color: rgb(33, 33, 33);\">**Sponsored by Oaklore Distillery </em></p>",
+   "short_description": null,
+   "start_time": "2026-10-09T21:00:00.000Z",
+   "end_time": "2026-10-10T03:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787851416670temp-1787851416664-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 10000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49591",
+   "name": "Same Same but Different Screening *RSVP so we can save you a seat*",
+   "description": "<p>Join us for a screening of S<em>ame Same but Different </em>to bring in TRIFF 2026!</p><p><br></p><p>All Access and Gala pass holders are invited to join us for this event.</p>",
+   "short_description": null,
+   "start_time": "2026-10-09T23:00:00.000Z",
+   "end_time": "2026-10-10T01:00:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cf",
+     "name": "Film Screening"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "Gala Attendees Only",
+   "ticket_buckets": [
+    {
+     "name": "VIP + Gala Passholders",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6aaad997fe5d685e67f019e5",
+     "name": "Same Same But Different",
+     "short_description": null,
+     "description": "An Iranian immigrant agrees to marry her boss's son to stay in the U.S., but their simple green card wedding on Cape Cod gets complicated when her two Iranian best friends arrive with their own American boyfriends and cross-cultural baggage in tow.",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/166152eae6f2a350c574575ee332185f.jpg?w=300",
+     "runtime": "104"
+    }
+   ]
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49594",
+   "name": "Friday Night Afterparty",
+   "description": "<p>Keep the celebration going long after the credits roll!</p><p><br></p><p>Join filmmakers, artists, and film lovers for our official Festival Afterparty — a night of music, dancing, and unforgettable connections.</p><p><br></p><p>Raise a glass, let loose, and toast to the magic of cinema in true festival style.</p><p><br></p><p>*Free + open to the public</p><p>*Cash bar</p>",
+   "short_description": null,
+   "start_time": "2026-10-10T01:00:00.000Z",
+   "end_time": "2026-10-10T03:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950b",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787851670889temp-1787851670883-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49572",
+   "name": "Coffee + Creative Conversations with Sam Sokolow *RSVP so we can save you a plate*",
+   "description": "<p>Start your day with great coffee, delicious pastries, and inspiring conversations! This relaxed gathering is designed for filmmakers to connect, share ideas, and spark creativity in a welcoming, casual atmosphere. Whether you’re looking to network, find collaborators, or simply chat about your craft, this brunch is the perfect place to fuel both your body and your creative spirit.</p><p><br></p><p>Join us for meaningful dialogue and community building over coffee and tasty bites!</p><p><br></p><p>*Guest Speaker: Sam Sokolow</p><p><em>*Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation</em></p><p><em>﻿*Made possible with grant funding from the Community Fund of Western North Carolina</em></p><p><em style=\"color: rgb(62, 62, 62);\"><span class=\"ql-cursor\">﻿</span>*Made possible with grant funding from the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T13:00:00.000Z",
+   "end_time": "2026-10-10T15:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787851774430temp-1787851774424-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51fa",
+   "name": "Whistle Down Wind | 01:26:42",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T14:00:00.000Z",
+   "end_time": "2026-10-10T15:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de39a",
+     "name": "Whistle Down Wind",
+     "short_description": null,
+     "description": "<p>When a drunken teenage kiss propels Janie and Alex's quirky friendship into a hidden love affair, the conservative ideologies of their hometown force them to confront the truth about their sexualities, and the bitter future of their relationship.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880104071temp-1785880104056-poster.jpg",
+     "runtime": "86"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5067",
+   "name": "Short Block A - (1:26:27) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T15:00:00.000Z",
+   "end_time": "2026-10-10T16:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3a0",
+     "name": "Comedy Damage",
+     "short_description": null,
+     "description": "<p>Comedy Damage is a dark comedy about a burned out, middle aged comedian who pays a visit to an \"Entertainment\nPsychologist.\" He hopes to get his mojo back, but more importantly, his comedy license, as in this dystopian world,\ncomedy is highly regulated by an impenetrable government bureaucracy.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879357367temp-1785879357356-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3ec",
+     "name": "The 60 Year Detour",
+     "short_description": null,
+     "description": "<p>\"The 60 Year Detour,\" follows the life of a man named Luke as he transitions from a youth defined by materialism to an elder seeking spiritual peace. Spanning several decades, the narrative moves from the fashionable streets of Milan to the high-stakes finance world of New York and the superficial wellness culture of Los Angeles. Along the way, Luke’s relentless pursuit of status and digital connectivity costs him his marriage and his sense of self. After hitting rock bottom in Atlanta, he eventually abandons his technology and vanity to live a life of solitude and presence in the natural landscape of New Zealand. Ultimately, the story frames his decades of greed and distraction not as failures, but as a necessary, long-winded journey toward inner mercy and silence. Filmed in Italy, New Zealand, Atlanta, New York and LA.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1790777492095temp-1790777491360-poster.jpg",
+     "runtime": "25"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3ce",
+     "name": "The Poplar Trees",
+     "short_description": null,
+     "description": "<p>An impoverished couple cross the Himalaya, on foot, to seek work in a faraway village, but the only job left is to collect fallen poplar leaves and to chop wood, in return for food and lodging. </p>\n<p>A young couple trek across steep mountains for a better life in a village that is more prosperous than their own. But it is late in the harvest and the only job left is to collect leaves and chop wood to prepare for the winter. Their employer, a rich widow, warns that they will not get a salary, only food and lodging. </p>\n<p>As the man, Kunga, chops wood, his visibly pregnant wife, Pema, collects fallen leaves. One day, the employer’s son Tashi visits the poplar trees where, out of conern for her condition, he offers Pema a ride on his horse and carries the basket of leaves. Kunga sees his wife with Tashi, seemingly enjoying herself. He asks Pema if she is developing feelings for Tashi but she will only say that Tashi is a kind man.</p>\n<p>A friend and monk advises Tashi that it’s better to express love through compassion, offering support, than to seek physical attachment with one who is already married and carrying child. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880001810temp-1785880001796-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de348",
+     "name": "THE VOICE OF DESPAIR",
+     "short_description": null,
+     "description": "<p>The Voice of Despair delivers a powerful affecting narrative told from a new perspective - that of an unborn child. Conceived because of a brutal sexual assault, the film brings the audience within the womb of his mother.\nAs the war rages on outside, The Voice of Despair through this haunting inner monologue, explores the silent traumas of the Ukrainian war, the violation of innocence, and the unspoken resilience. It sheds light on the personal cost of conflict through a voice that was never intended to be heard.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "14"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de35e",
+     "name": "Afloat",
+     "short_description": null,
+     "description": "<p>Afloat follows Owen, a young man burdened by shame, fear, and trauma, who returns home and takes an experimental pill meant to erase emotional pain. What he hopes will heal him only makes things worse.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879233011temp-1785879232999-poster.jpg",
+     "runtime": "26"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c1",
+   "name": "Documentary Short Block D - (48:01) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T15:00:00.000Z",
+   "end_time": "2026-10-10T16:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de34e",
+     "name": "Wildfire Kitchen",
+     "short_description": null,
+     "description": "<p>In February 2024, Chile's deadliest wildfires ignited in the Valparaíso region, decimating its hillside poor and rural communities. But in the aftermath of this disaster, ollas comunes — grassroots community kitchens — emerged to feed hundreds each day.  These 'ollas' were a labor of love, a practice for which to channel care through grief and solidarity through despair. Interwoven with the filmmaker's self-reflexive experience, Wildfire Kitchen tells the stories of three such 'ollas' and the women who led them. Juxtaposing the horrific with the hopeful, this documentary is a testament to the power of community care in the face of catastrophic loss. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880125235temp-1785880125223-poster.jpg",
+     "runtime": "34"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3b2",
+     "name": "Listen: LP's & The Power Of Music",
+     "short_description": null,
+     "description": "<p>Listen is a short documentary exploring the resurgence of vinyl records & physical media, digging deep into music's power in our everyday lives.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879611398temp-1785879611384-poster.jpg",
+     "runtime": "13"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51dd",
+   "name": "Equestrian Block L - (1:29:00) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T15:00:00.000Z",
+   "end_time": "2026-10-10T16:45:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3de",
+     "name": "Medicine of the Herd",
+     "short_description": null,
+     "description": "<p><strong>Four strangers. Four weeks. Seventeen rescued horses. They arrive to learn about horses, only to discover the horses have something to teach them about themselves.</strong></p><p><br></p><p>Medicine of the Herd is a feature documentary that follows four strangers through a month-long immersive retreat with a herd of seventeen rescued horses in Northern Nevada. They arrive to learn about horses, only to discover the horses are teaching them. Through relationships built on trust, choice, and mutual respect, each participant is invited into a journey of healing, connection, and a deeper understanding of what the horse-human bond can become.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787603086722temp-1787603086641-poster.jpg",
+     "runtime": "80"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3b6",
+     "name": "Heart Horse",
+     "short_description": null,
+     "description": "<p>Heart Horse is a short documentary set in the golden light of Alicante, Spain, following Ebba Nilsson, a young equestrian, and Ella, her mare of nine years. When everything in her life changed, Ebba let go of almost everything she had built, and turned down a fortune, to keep the one horse she trusts completely. A quiet portrait of devotion, and the rare trust between a rider and her horse.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879501686temp-1785879501675-poster.jpg",
+     "runtime": "9"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d1",
+   "name": "Student Short Block H - (1:28:55) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T16:00:00.000Z",
+   "end_time": "2026-10-10T17:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49512",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de33a",
+     "name": "Detention!",
+     "short_description": null,
+     "description": "<p>Oh the misery of high school detention! An imaginative and antsy young student is sent to detention and wastes the time away by day dreaming about kicking his teacher’s ass.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879378599temp-1785879378586-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de34c",
+     "name": "Loving Emma",
+     "short_description": null,
+     "description": "<p>Haunted by memories of a lost love and unsure of what she truly wants, a young college student spirals through longing and regret as she navigates the fragile space between past and present - stuck between the memory of a connection and the reality of distance.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879645053temp-1785879645040-poster.jpg",
+     "runtime": "18"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de358",
+     "name": "Betrayal",
+     "short_description": null,
+     "description": "<p>In a tightly regulated utopian society, two inquisitive children stumble upon their parents' hidden lives—unraveling a dark truth that threatens to dismantle the illusion of their perfect world.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879275352temp-1785879275348-poster.jpg",
+     "runtime": "16"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3b8",
+     "name": "TILL DEATH",
+     "short_description": null,
+     "description": "<p>After a wealthy man suddenly goes missing, his wife, who he was attempting to divorce, becomes the primary suspect of a cunning detective's investigation.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880066325temp-1785880066314-poster.jpg",
+     "runtime": "6"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de368",
+     "name": "THE BORDER",
+     "short_description": null,
+     "description": "<p>In a nameless land, at night, two teenagers who communicate through an invented sign language decide to escape. Wrapped in blankets, they cross an arid and hostile territory toward an invisible border. Unseen by those who watch, they run toward freedom, while indifference turns into tragedy. THE BORDER is a silent, universal fable about love, war, and the moment when it is already too late to choose.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879949409temp-1785879949397-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de35a",
+     "name": "ker",
+     "short_description": null,
+     "description": "<p>A young man tasked with guarding a mosque is forced to secretly shelter his lover inside the sacred place for several days. Their hidden presence pushes them across multiple red lines — from the risk of being discovered by religious authorities to the intimate realities of love and the human body. Any revelation could destroy his life and turn their fragile refuge into a catastrophe.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879578962temp-1785879578947-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3e0",
+     "name": "The Lizard",
+     "short_description": null,
+     "description": "<p>When a popular\nhigh school girl lands her\ndream homecoming date,\nshe awakens into a\npsychological nightmare\nwhere a single pimple on\nher face mutates into a\nrelentless force that strips\nher confidence, distorts her\nreality, and leaves scars\nfar deeper than the mirror\ncan show.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879987349temp-1785879987337-poster.jpg",
+     "runtime": "7"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ff",
+   "name": "The Yak Herder | 01:28:54",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T16:00:00.000Z",
+   "end_time": "2026-10-10T17:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3cc",
+     "name": "The Yak Herder",
+     "short_description": null,
+     "description": "<p>Tsering and his wife Bamu, along with their three daughters, embark on their annual trek to the high-altitude Himalayan summer pastures, where they tend to their yaks. Their tranquil yet demanding life unfolds with ritualistic grace – from morning prayers and shared meals to the daily labor of herding yaks and gathering firewood. In the evenings, they join fellow herders for communal meals, laughter, and camaraderie, highlighting the warmth of their close-knit community. But as rising costs threaten their way of life, Tsering and Bamu face a harsh reality: yak herding no longer provides enough to support their children’s education. With dreams of a brighter future for their daughters, they seek help from local politicians and explore options to send them to school. When nothing materializes, the couple faces an agonizing decision – sell their beloved animals to fund their children’s education and enter the guesthouse business, marking the end of an era. The day they sell their yaks is both heartbreaking and hopeful, as the family leaves behind the only life they’ve ever known, clinging to the hope that education will offer a better future for their children. In this poignant tale of tradition, sacrifice, and the pursuit of a better life, The Yak Herder captures the struggle between holding onto the past and embracing an uncertain future.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880057908temp-1785880057895-poster.jpg",
+     "runtime": "88"
+    }
+   ]
+  },
+  {
+   "id": "6a8f78349806d192cdc329f8",
+   "name": "All Access Passholders Lounge",
+   "description": "<p>All Access Passholders are invited to join us at Carri Bass' Studio for light refreshments and snacks! Mingle with other filmmakers, grab a cool drink, and relax! </p>",
+   "short_description": null,
+   "start_time": "2026-10-10T16:00:00.000Z",
+   "end_time": "2026-10-10T22:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950e",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c5",
+   "name": "Documentary Short Block E - (52:16) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T16:30:00.000Z",
+   "end_time": "2026-10-10T17:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3f4",
+     "name": "Raising Cane -- The Cherokee and Rivercane",
+     "short_description": null,
+     "description": "<p>Rivercane has been an environmental guardian in the South for millions of years.  It was also a staple for Southeastern native tribes.  They used it as food, they built their homes with it, they used it for blowguns for fish weirs, for mats and for basketry. Had rivercane still been in place during Helene, the damage would likely have been far less severe than it was.\nThis is the story of the deep Cherokee connection to cane and how they and regional conservationists are working to bring it back.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879786781temp-1785879786770-poster.jpg",
+     "runtime": "40"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3da",
+     "name": "Puma Matriarchs of Torres Del Paine",
+     "short_description": null,
+     "description": "<p>The film chronicles the lives of three mother Pumas (aka Mountain Lions, Cougars) as they survive and thrive in the rugged terrain of Chilean Patagonia. These three matriarchs, Sarmiento, Rupestra and Petaca, drive the dynamics of living and dominating their respective territories. Raising their kits, teaching them how to catch prey and hunting that prey increase these cats’ chances of surviving in this beautiful but challenging habitat. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879776673temp-1785879776662-poster.jpg",
+     "runtime": "12"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b1",
+   "name": "Short Block B - (01:15:45) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T17:00:00.000Z",
+   "end_time": "2026-10-10T18:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de33c",
+     "name": "Sit with Me While I Die",
+     "short_description": null,
+     "description": "<p>A priest must reconcile his lifelong dogmatic views on suffering with real life pain, examining how we will die, the intersection of faith and death, and specifically with how we may, or may not, be called to suffer at the inevitable end. Set against the backdrop of medical aid in dying, and death with dignity. </p>\n<p>There are many kinds of death. And some are better than others. The best are peaceful, where we leave each other in love. Memento Amoris. Remember you must love.\n    — Alex Garland (Dr Ian Kelson)</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879820564temp-1785879820549-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de36c",
+     "name": "A Second Chance",
+     "short_description": null,
+     "description": "<p>Traumatized by her past relationship, Katie seeks solace with a new lover. However, she soon discovers that her emotional wounds remain unhealed.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879224955temp-1785879224941-poster.jpg",
+     "runtime": "17"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de374",
+     "name": "Stranger's",
+     "short_description": null,
+     "description": "<p>A surprise visit between estranged sisters over family keepsakes reopens old wounds neither is prepared to relive.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879884727temp-1785879884713-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3ee",
+     "name": "5 Hours Earlier",
+     "short_description": null,
+     "description": "<p>A family facing an impossible situation must decide how far they're willing to go for the people they love.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879151736temp-1785879151723-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de39e",
+     "name": "Embrace",
+     "short_description": null,
+     "description": "<p>Embrace is a psychological drama that explores how trauma echoes across generations, revealing how we often fail to recognize in others what we refuse to face in ourselves. The film follows Douglas, a withdrawn war veteran struggling with depression, who is forced to confront his emotional isolation when his estranged daughter comes to live with him, only to recognize his own inner turmoil reflected back in her. The film seeks to create an experience that is both deeply personal and universally resonant, with the goal of bringing awareness to challenging issues such as PTSD, suicide, and self-harm.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879400169temp-1785879400155-poster.jpg",
+     "runtime": "21"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de38c",
+     "name": "A Dog's Life",
+     "short_description": null,
+     "description": "<p>A detective tries to cope with a great loss.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879190210temp-1785879190198-poster.jpg",
+     "runtime": "7"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51e2",
+   "name": "Equestrian Short Dramatic Block M - (1:35:45) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T17:00:00.000Z",
+   "end_time": "2026-10-10T18:45:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de360",
+     "name": "Cowboy Meditations",
+     "short_description": null,
+     "description": "<p>Cowboy and poet Dick Gibford embodies the landscape where he lives: tough, timeless and resilient. He is a link to the Old West and an antidote to modern times.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "55"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3ca",
+     "name": "Today's Wild West - Desert Caballeros Trail Ride",
+     "short_description": null,
+     "description": "<p>Saddle up for the week long 79th Annual Desert Caballeros Trail Ride in the Sonoran Desert outside Wickenburg, Arizona </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "28"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3e6",
+     "name": "Equus",
+     "short_description": null,
+     "description": "<p>\"Equus\" is a music video created by the critically-acclaimed Australian progressive metal band Ne Obliviscaris. The song appears on the band's latest album, 'Exul'. It's about the people and animals who were killed or displaced during the brushfires that occured in Australia from 2019-2020. </p>\n<p>Included in our submission is a short explanatory video from the song's lyricist, director and producer, Xen. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "12"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c9",
+   "name": "Documentary Short Block F - (74:51) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T18:00:00.000Z",
+   "end_time": "2026-10-10T19:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3aa",
+     "name": "Free Joan Little",
+     "short_description": null,
+     "description": "<p>FREE JOAN LITTLE tells the story of the 1975 groundbreaking case of Joan Little who was the first woman in U.S history to be acquitted for using deadly force to resist sexual assault.  Joan was a Black incarcerated woman in North Carolina who killed her white prison guard who was trying to rape her.  Little’s murder trial became a cause celebre bringing together prominent advocates, black power activists , white feminists and  anti-death penalty activists while catalyzing a nationwide discussion on sexual assault.  With rare archival footage, contemporary interviews and  the folk anthem that carried her cause, FREE JOAN LITTLE  captures the spirit of resistance that made history.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879431497temp-1785879431484-poster.jpg",
+     "runtime": "38"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de380",
+     "name": "Inside The Ingate : Devon",
+     "short_description": null,
+     "description": "<p>What sets Inside the Ingate apart is its raw honesty and real connection to the equestrian world\nUnlike polished highlight reels, our docuseries doesn’t shy away from the tough moments—the nerves, the setbacks, the mental game. It’s a true reflection of what riders actually experience at a horse show. \nThrough cinematic visuals and authentic storytelling, we bring viewers into the heart of the sport, showcasing not just the competition, but the emotion, dedication, and resilience behind it. \nIt’s more than just a series—it’s a tribute to the people who live and breathe this lifestyle.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879538574temp-1785879538559-poster.jpg",
+     "runtime": "22"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3c8",
+     "name": "Honoring Long Person",
+     "short_description": null,
+     "description": "<p>In the sacred geography of the Cherokee homeland, rivers do not merely cut through the land—they carry memory, sustenance, and spirit. They are the lifeblood of a people whose connection to water predates written history. This documentary seeks to honor that connection, with humility and care, through the voices of those who know it best: Cherokee elders, leaders, stewards, and visionaries.</p>\n<p>From the crystalline streams of the Oconaluftee to the broader reach of the Little Tennessee and Tuckasegee Rivers, we follow the course of “Long Person” (Yvwi Ganvhida) — a revered being in Cherokee cosmology, whose head begins in the mountains and whose feet reach the sea. </p>\n<p>This deeply symbolic understanding reflects both a cosmological truth and an ecological mandate: to live in harmony with the river, and to protect it, as it has always protected us.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879516101temp-1785879516087-poster.jpg",
+     "runtime": "14"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d5",
+   "name": "Student Short Block J - (1:24:54) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T18:00:00.000Z",
+   "end_time": "2026-10-10T19:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49512",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de36a",
+     "name": "The Tale of a Village",
+     "short_description": null,
+     "description": "<p>Ireland, 1924. A 17-year-old illustrator risks her freedom to expose abuse inside a convent for unmarried girls through her drawings before the authorities can silence her.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880029356temp-1785880029344-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3a6",
+     "name": "Not Enough",
+     "short_description": null,
+     "description": "<p>A young couple on vacation deal with insecurities arising as they talk about their future together.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879719176temp-1785879719163-poster.jpg",
+     "runtime": "11"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3c4",
+     "name": "Conscious",
+     "short_description": null,
+     "description": "<p>Dylan's sleepless nights come back to haunt him.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879369026temp-1785879369013-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3d4",
+     "name": "Sweet Dreams",
+     "short_description": null,
+     "description": "<p>When two friends attempt to enter their dreams to get a break from reality, they must confront their own subconscious; for better or worse.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879901679temp-1785879901663-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de37a",
+     "name": "GONS",
+     "short_description": null,
+     "description": "<p>A mysterious video game kit brings the game to life, and a group of afterschool kids must uncover what’s happening—and how to stop it.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879448079temp-1785879448066-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de336",
+     "name": "My Plastic Mother",
+     "short_description": null,
+     "description": "<p>Eki, living by the landfill, searches for a memento to honor his late mother. Battling the relentless rain, landslides, and looming threats from scavengers and machinery, he fears her memory could be lost beneath the waste forever.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879706582temp-1785879706570-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a84d3bdbc939a5d283867eb",
+     "name": "The Witches of Pool Bottom",
+     "short_description": null,
+     "description": "<p>When a teenage girl’s body-image fears become physical, she decides to destroy them.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787090049660temp-1787090049646-poster.jpg",
+     "runtime": "7"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5203",
+   "name": "Baby Love | 01:29:27",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T18:00:00.000Z",
+   "end_time": "2026-10-10T19:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de370",
+     "name": "Baby Love",
+     "short_description": null,
+     "description": "<p>Rhiannon “Baby Love” Mitchell is an MMA fighter on the brink of self-destruction who battles through underground fight circuits, facing physical and emotional turmoil. When a series of concussions threaten her career, she is forced into an unconventional equine therapy program. Skeptical and defiant, she gradually bonds with the horses and the program’s patients, rediscovering her inner strength and confronting her past. As she heals, she must decide whether to return to the cage or forge a new path.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879268050temp-1785879268035-poster.jpg",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b5",
+   "name": "Short Block C - (1:19:32) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T18:45:00.000Z",
+   "end_time": "2026-10-10T20:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3dc",
+     "name": "Figaro, Figaro",
+     "short_description": null,
+     "description": "<p>An aspiring opera singer prepares for his big break audition while balancing his responsibilities as a father and husband.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879418354temp-1785879418341-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3c0",
+     "name": "A Salt & Battery",
+     "short_description": null,
+     "description": "<p>A grandfather's wish to be taxidermied after death turns out to be closer he thinks, once his investigative granddaughter discovers his murder may already be underway.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879216034temp-1785879216019-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de34a",
+     "name": "WANNA BE A STAR!",
+     "short_description": null,
+     "description": "<p>A frustrated actress looses her temper with an indie film director.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880078578temp-1785880078569-poster.jpg",
+     "runtime": "5"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3e4",
+     "name": "Sticks & Holler",
+     "short_description": null,
+     "description": "<p>In a small Appalachian town where crime is as routine as Sunday church, Teddy’s drowning in debt, grief, and bad decisions. When he turns to his hitman uncle for help, he drags his reckless friends into a scheme that spirals out of control. With a drug dealer closing in and the law catching up, Teddy’s running out of time and excuses.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879874506temp-1785879874492-poster.jpg",
+     "runtime": "29"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3f0",
+     "name": "Happy Pines",
+     "short_description": null,
+     "description": "<p>A disgraced athlete seeking a second chance enrolls in an exclusive self-improvement retreat where success comes at an unimaginable price. As the program’s methods grow increasingly disturbing, she must decide just how much she's willing to sacrifice to reclaim her future.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879480706temp-1785879480689-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3e8",
+     "name": "Somebody's Hero",
+     "short_description": null,
+     "description": "<p>Thirteen-year-old Mitchell dreams of becoming a cop and helping people in trouble. Being bullied at school for his weight, Mitchell feels rejected and unseen—until a frightening moment forces him to face real danger, summon true courage, and discover the hero within.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879840703temp-1785879840689-poster.jpg",
+     "runtime": "15"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51e6",
+   "name": "Equestrian Short Dramatic Block N - (94:30) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T19:00:00.000Z",
+   "end_time": "2026-10-10T20:45:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3ba",
+     "name": "Dr SOS from Kazahstan -Return of the Wild Horses",
+     "short_description": null,
+     "description": "<p>Relocation is not easy – especially when it involves wild horses flying more than 4,500 kilometers on a military aircraft.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879390414temp-1785879390399-poster.jpg",
+     "runtime": "48"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3be",
+     "name": "Beyond the Herd",
+     "short_description": null,
+     "description": "<p>Interweaving the rhythms of daily life on the ranch and wild horses on the range, \"Beyond the Herd\" tells the story of Mexican-American equestrians Amber and Isidro. Their kinship with mustangs echoes their own experiences with discrimination and 'otherness.' As resources dwindle for wild horses, their bond becomes a symbol of resilience, transforming once-wild mustangs into lifelong companions.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879285663temp-1785879285648-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3d2",
+     "name": "2026 Belmont-Met Mile Stakes at Saratoga",
+     "short_description": null,
+     "description": "<p>Saratoga Racetrack hosted the classic 2026 Belmont Stakes and Met Mile races. They attracted the most prestigious thoroughbred racehorses and trainers in the country all vying for Millions of Dollars in purse money and honors enabling them to compete in equally lucrative and important races later in the year. We spoke to many prominent owners, trainers, and jockeys who shared their perspectives. This was the last Belmont Stakes to be run at Saratoga now that the Belmont Stakes returns to the newly constructed Belmont Park in 2027. 17.6min video</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1790706324613temp-1790706324405-poster.jpg",
+     "runtime": "17"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51cd",
+   "name": "Documentary Short Block G - (74:00) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T20:00:00.000Z",
+   "end_time": "2026-10-10T21:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de356",
+     "name": "Healing from Helene",
+     "short_description": null,
+     "description": "<p>People in communities like Hartford and Newport lost virtually everything in Helene's flooding. This is their story of healing amid the hardship of restarting.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879492297temp-1785879492284-poster.jpg",
+     "runtime": "22"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de37c",
+     "name": "Call of the Jab",
+     "short_description": null,
+     "description": "<p>Inspired by his grandmother's stories, Call of the Jab follows Joshua across two timelines: young Joshua's formative summer with his grandmother in Grenada, and adult Joshua's return to the island years after with his father.</p>\n<p>One warm evening, young Joshua asks his grandmother about the Jab Jab. He later encounters the legendary folkloric masquerader in the sugarcane fields behind her home and flees in fear. </p>\n<p>With the help of his father, adult Joshua retraces his steps on the island, in search of the Jab Jab he encountered as a child over twenty-five years ago. His journey leads him beneath the sea to Grenada's Coral Carnival, where submerged sculptures and ancestral folklore merge, bringing to life the stories that shaped him.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879336441temp-1785879336422-poster.jpg",
+     "runtime": "15"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3b0",
+     "name": "The Bridge",
+     "short_description": null,
+     "description": "<p>Drafted by the Detroit Tigers 50 years ago, Mike Wilson never made it to the Major Leagues. Instead, he devoted his life to coaching youth baseball in Detroit, continuing a legacy started by his father. Now overseeing historic Hamtramck Stadium, the former Negro League ballpark where he fell in love with the game, Mike’s story reveals how mentorship, community, and baseball can shape generations.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879969571temp-1785879969556-poster.jpg",
+     "runtime": "17"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de352",
+     "name": "The True Cost Of Power",
+     "short_description": null,
+     "description": "<p>When the small town of Carrboro dares to sue Duke Energy for decades of climate deception, a damning pattern emerges of corporate power run amok. Despite knowing about climate risks since the 1960s, North Carolina's monopoly energy utility has systematically misled the public while positioning itself as a clean energy leader. Through exclusive access to scientists, investigative journalists, and frontline communities, this documentary exposes the true cost of corporate power when billions in climate damages are paid by everyone except those who caused them. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880037418temp-1785880037403-poster.jpg",
+     "runtime": "18"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d9",
+   "name": "Animation Block K - (54:32) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T20:00:00.000Z",
+   "end_time": "2026-10-10T21:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49512",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3c2",
+     "name": "Stardust to Stardust",
+     "short_description": null,
+     "description": "<p>A mysterious accident leaves an astronaut floating in space. She encounters living stars in different stages of the star cycle as she journeys to find their creator.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879866332temp-1785879866314-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de340",
+     "name": "Looking for You",
+     "short_description": null,
+     "description": "<p>Shemp, the main character of 2021’s wonderful ‘Shots of Light’ returns to the screen as an intergalactic hero, on the search for their soulmate. \nIn ‘Looking for You’, Shemp is tasked with rescuing Cardboardia... and makes the discovery of a lifetime!</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879634408temp-1785879634393-poster.jpg",
+     "runtime": "3"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de332",
+     "name": "Anyone lived in a pretty how town",
+     "short_description": null,
+     "description": "<p>In a picturesque town, a man named “anyone\" rejoices in the beauty of everyday life and celebrates the natural world. The people around him, however, are more focused on conforming to modern society, and ostracize anyone for being different.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879247830temp-1785879247816-poster.jpg",
+     "runtime": "8"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de372",
+     "name": "Liberation",
+     "short_description": null,
+     "description": "<p>A mysterious young girl races to free a doomed calf from a factory farm before it's too late.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879599987temp-1785879599973-poster.jpg",
+     "runtime": "4"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de394",
+     "name": "BRIDGE -My Little Friends-",
+     "short_description": null,
+     "description": "<p>\"I'll bring Shiro to you.I promise!\" Jin, the cat, made this promise to Mugi, who is deeply sad about losing her beloved dog, Shiro.\nJin loves Mugi very much and, after hearing the story of the \"Rainbow Bridge\" from his owner Aki, he decides to take Mugi to meet Shiro at theRainbow Bridge! Can Jin heal Mugi's sadness? With the help of nearby pigeons and squirrels, Jin's great plan is now underway!</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879329251temp-1785879329238-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de396",
+     "name": "Bloom",
+     "short_description": null,
+     "description": "<p>After a young man awakes from a hypnotic trance in a strange land he must search high and low for a way to escape his lonely existence. Will his curiosity and ingenuity be able to withstand repeated failures and the familiar draw to complacency, or will he find a way to break through his limits and explore the great beyond?</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879307853temp-1785879307844-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3ea",
+     "name": "When Mountains Speak",
+     "short_description": null,
+     "description": "<p>A cry drifts on the wind, beckoning the Pilgrim toward a cavern deep beneath a sacred mountain. There, in the mountain’s heart, they commune with a fading god and receive a cryptic vision of a path that could change the fate of the world. At a crossroads between the known and the unknowable, the Pilgrim must make a choice that will shape everything to come.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "8"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5207",
+   "name": "Summer Lost | 01:22:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T20:00:00.000Z",
+   "end_time": "2026-10-10T21:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de354",
+     "name": "Summer Lost",
+     "short_description": null,
+     "description": "<p>Official Selection:\n2026 Atlanta Film Festival\n2026 RiverRun International Film Festival\n2026 Macon Film Festival\n2026 OUT at the Movies International Film Festival\n2026 Cinema Diverse: The Palm Springs LGBTQ Film Festival\n2026 Tryon International Film Festival</p>\n<p>A man attempts to keep his terminal illness a secret while attending a wedding, but an unexpected romance reshapes his future as well as his past.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879892346temp-1785879892333-poster.jpg",
+     "runtime": "82"
+    }
+   ]
+  },
+  {
+   "id": "6a860852d949804f28f42d22",
+   "name": "Fireside Chat - The Human Part of the Story with Steve Esteb + Homayra Sellier *RSVP so we can save you a seat*",
+   "description": "<p>A SPECIAL CONVERSATION ON ADVOCACY AND SURVIVORSHIP</p><p><br></p><p>Featuring filmmaker and educator Steven Esteb in conversation with Homayra Sellier, founder of Innocence in Danger, an international organization dedicated to protecting children from sexual abuse and exploitation, and Carré Otis, the former international model and actor who has become a prominent advocate for survivors of sexual abuse and greater accountability within the modeling and entertainment industries.</p><p><br></p><p>The discussion will focus on Sellier's work as an advocate and the intersection of filmmaking, human rights, survivorship and social change. The conversation will also address the advocacy work of Otis has publicly shared her experiences of abuse as a teenager and has spent years working to raise awareness about exploitation and support survivors. The conversation will explore how artists, filmmakers and advocates can use storytelling to bring difficult issues into the public conversation and amplify voices that might otherwise go unheard.</p>",
+   "short_description": null,
+   "start_time": "2026-10-10T20:30:00.000Z",
+   "end_time": "2026-10-10T22:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787852669797temp-1787852669790-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49573",
+   "name": "Saturday Evening Networking Block Party on Pacolet Street",
+   "description": "<p>Join filmmakers, industry guests, and film lovers for an evening of connection and celebration at our signature Saturday Networking Block Party! Set on Pacolet Street, mingle with creatives from around the globe in a relaxed, festive atmosphere with drinks, light bites, and live entertainment at The Fitzgerald and Mirrorball Gallery!</p><p><br></p><p>Whether you're here to swap stories, spark collaborations, or simply unwind after a day of screenings, this event is a festival favorite — and not to be missed!</p><p><br></p><p><strong>Open to the public. </strong></p><p><br></p><p><strong>*Sponsored by Oaklore Distillery, Tito's Vodka + Biltmore Winery</strong></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T22:00:00.000Z",
+   "end_time": "2026-10-11T02:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787853974466temp-1787853974460-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba520b",
+   "name": "Everyone Calls Me Mike | 01:28:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T22:00:00.000Z",
+   "end_time": "2026-10-10T23:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3b4",
+     "name": "Everyone Calls Me Mike",
+     "short_description": null,
+     "description": "<p>While sailing around the world, Jean, Isabelle, and her son Damien stop in Djibouti, where they meet Mike, a young African who helps them fix their boat. As they set sail for the dangerous Aden Gulf, Jean decides to embark with Mike, who wants to start a new life. A few days later, off the Somalian coast, a fishing boat approaches, and their journey takes a dramatic turn.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879410066temp-1785879410054-poster.jpg",
+     "runtime": "88"
+    }
+   ]
+  },
+  {
+   "id": "6a839dcdc584feb1b6b8dbc0",
+   "name": "Equestrian Reception *RSVP so we can save you a drink*",
+   "description": "<p>Join us for a reception celebrating our Equestrian Films and Filmmakers! </p><p><br></p><p>Sponsored by EQUUS Television</p>",
+   "short_description": null,
+   "start_time": "2026-10-10T22:00:00.000Z",
+   "end_time": "2026-10-10T23:00:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a84d6d8e8c0c6a8508757ec",
+   "name": "Paws for a Break with Foothills Humane Society",
+   "description": "<p>With so much going on at the festival, \"paws\" and take a break with some furry friends! Join us and the Foothills Humane Society in front of The Fitzgerald and cuddle with puppies! Always a fan fave, and open to the public!</p>",
+   "short_description": null,
+   "start_time": "2026-10-10T22:00:00.000Z",
+   "end_time": "2026-10-11T00:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787852266652temp-1787852266644-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a84de7c0518f8a6e747522d",
+   "name": "A Conversation with Marti King Young (Asst. to the Exec Producer of Will Trent)",
+   "description": "<p>Join <span style=\"color: rgb(34, 34, 34);\">Marti King Young as she talks screenwriting, producing </span><em style=\"color: rgb(34, 34, 34);\">Will Trent</em><span style=\"color: rgb(34, 34, 34);\">, and more! </span></p><p><br></p><p><span style=\"color: rgb(34, 34, 34);\">Learn more about Marti here: </span><a href=\"https://www.imdb.com/name/nm3861885/?_ssoLoop=1\" target=\"_blank\">https://www.imdb.com/name/nm3861885/?_ssoLoop=1</a></p><p><br></p><p><em>*Free and open to the public! </em></p><p><em>**Made possible with funding from the Mary F. Kessler Fund at the Polk County Community Foundation, the Community Fund of Western North Carolina, and the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-10T22:00:00.000Z",
+   "end_time": "2026-10-10T22:50:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787854139642temp-1787854139632-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b9",
+   "name": "Where the Horses Heal the Soul | 1:30:05 + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-10T23:30:00.000Z",
+   "end_time": "2026-10-11T01:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de390",
+     "name": "Where the Horses Heal the Soul",
+     "short_description": null,
+     "description": "<p>Where the Horses Heal the Soul follows children, adults, and veterans living with physical, cognitive, and emotional challenges. At ROCK Ride On Center for Kids, a Texas nonprofit providing equine-assisted services, they find a lifeline forward through the bond between human and horse. As participants enter the arena, uncertainty slowly gives way to confidence. Through the motion of riding and the calming presence of horses, walls begin to come down and healing takes hold. This documentary is a moving portrait of breakthrough and determination as participants at ROCK discover connection, courage, and purpose, revealing how horses can help transform lives.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880095530temp-1785880095516-poster.jpg",
+     "runtime": "90"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba520f",
+   "name": "Goody | 01:35:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T00:00:00.000Z",
+   "end_time": "2026-10-11T01:45:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de344",
+     "name": "Goody",
+     "short_description": null,
+     "description": "<p>Goody follows twenty-year old Guelia Pedat, raised Catholic by her overbearing mother and unknowingly suffering from OCD that manifests through an irrational adherence to religious rituals. After losing her faith and years after the death of her beloved older brother she still blames herself despite a lack of involvement.  Throughout this Southern Gothic Coming of Age story, Goody connects to childhood friends and navigates new relationships as she spirals to new lows and must find a way to free herself from grief.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879461260temp-1785879461248-poster.jpg",
+     "runtime": "95"
+    }
+   ]
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49571",
+   "name": "Brunch with a Filmmaker *RSVP so we can save you a plate*",
+   "description": "<p><strong>*For All Access Passholders*</strong></p><p><strong>*RSVP Required</strong></p><p><br></p><p>Join us for an intimate and inspiring brunch where you’ll have the unique opportunity to sit down with a featured filmmaker. Share stories, ask questions, and gain insider insights into the creative process, challenges, and triumphs of filmmaking. This relaxed, conversational setting is perfect for building connections and fueling your passion for storytelling—one delicious bite at a time.</p><p><br></p><p>*catered by Ashley Menetre</p>",
+   "short_description": null,
+   "start_time": "2026-10-11T13:00:00.000Z",
+   "end_time": "2026-10-11T15:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950f",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787854566460temp-1787854566454-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "All Access Passholders",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ea",
+   "name": "Short Block P - (1:08:38) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T15:00:00.000Z",
+   "end_time": "2026-10-11T16:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de350",
+     "name": "SAGAH",
+     "short_description": null,
+     "description": "<p>After filing a complaint, Sagah is summoned to the police station. But how do you tell the unspeakable when you're suffering from complex post-traumatic stress disorder?</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879811559temp-1785879811545-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de33e",
+     "name": "Why Dogs Howl",
+     "short_description": null,
+     "description": "<p>After meeting online, a BOY  and  GIRL are out on their first date.  It rapidly devolves into the BOY vomiting out his life in a Howl that ultimately encompasses the entire universe.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880114655temp-1785880114643-poster.jpg",
+     "runtime": "4"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de362",
+     "name": "The Spirit We Move With",
+     "short_description": null,
+     "description": "<p>\"The Spirit We Move With\" explores the rich history and enduring culture of the Gullah Geechee community on Hilton Head Island. Descendants of enslaved West and Central Africans who gained freedom prior to Emancipation, the Gullah Geechee preserved deep cultural traditions along the coastal Southeast. </p>\n<p>Through nearly a year of interviews and immersive storytelling, the film reveals how this resilient community overcame generations of challenges while safeguarding their traditions, stories, and way of life. Celebrated today for their vibrant heritage, the Gullah Geechee people offer a moving testament to strength, identity, and cultural survival.</p>\n<p>Winner: Best Documentary Short - Columbus International Film & Animation Festival (2026)\nWinner: Best Documentary Short - Georgia Shorts Film Festival (2026)\nFinalist: 2026 Shorty Award (Best Documentary)\nSemi-Finalist: Best Documentary Short - Journey Home Film Festival (Atlanta: 2026)\nOfficial Selection – Virginia Black Film Festival (2026)\nOfficial Selection - Black History Film Festival (2026)\nOfficial Selection - Rapport Festival (2026)\nOfficial Selection - American Stories Film Festival (2026)\nOfficial Selection - London Globe Festival (2026)\nOfficial Selection - New York African Film Festival (2026)\nOfficial Selection - Tryon International Film Festival (2026)</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880018913temp-1785880018899-poster.jpg",
+     "runtime": "19"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de37e",
+     "name": "Oxtail & Anime",
+     "short_description": null,
+     "description": "<p>A beautifully spirited barista brews her last cup of coffee as\nshe suddenly suffers a medical emergency due to a pre-existing\nheart condition that leaves her loved ones and co-workers in a\nfrenzy.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787946752401temp-1787946752388-poster.jpg",
+     "runtime": "17"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de35c",
+     "name": "Fractures",
+     "short_description": null,
+     "description": "<p>Fractures follows a father as he struggles to balance the needs of his young daughter, Sophie, while navigating the tension between his new partner and his late wife's mother. Set during Sophie's 7th birthday, the film explores themes of unresolved grief and family conflict, exposing the emotional cracks that threaten to tear them apart.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "9"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5213",
+   "name": "Invasive: Modern Dentistry Reimagined | 01:55:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T15:00:00.000Z",
+   "end_time": "2026-10-11T17:15:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3e2",
+     "name": "Invasive: Modern Dentistry Reimagined",
+     "short_description": null,
+     "description": "<p>For millions without access to traditional dental care, a cavity can become a lifelong crisis. INVASIVE follows the pioneers challenging dentistry’s drill-and-fill model with simple, evidence-based treatments that preserve teeth and bring care to the communities that need it most.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879567134temp-1785879567123-poster.jpg",
+     "runtime": "115"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5223",
+   "name": "The Dwellers | 01:24:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T15:00:00.000Z",
+   "end_time": "2026-10-11T16:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de388",
+     "name": "The Dwellers",
+     "short_description": null,
+     "description": "<p>An intimate look at the personal stories of eight congregants of The Dwelling - a faith group ministering to the needs of the local unhoused community of Winston - Salem. Using an innovative approach to creative writing & to increasing self-awareness, local non-profit Authoring Action encouraged and challenged the participants in crafting their powerful stories.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1790456228492temp-1790456227996-poster.jpg",
+     "runtime": "84"
+    }
+   ]
+  },
+  {
+   "id": "6a85fbf0c20de0715ddcc79c",
+   "name": "Creating Documentaries with Jeff Lieberman + E. Vincent Martinez",
+   "description": "<p>Join documentary filmmakers Jeff Lieberman and E. Vincent Martinez for a conversation on the craft of nonfiction storytelling—and what stood out to them while watching and judging this year’s TRIFF documentaries.</p><p><br></p><p>Jeff Lieberman, Emmy- and WGA-nominated director and founder of Re-Emerging Films (<em>Bella!</em>, <em>The Amazing Nina Simone</em>, <em>Re-Emerging: The Jews of Nigeria</em>), and E. Vincent Martinez, Tryon-based filmmaker and visual artist (<em>Bringle: A Tale of Two Makers</em>, <em>Iron Pearls</em>), will share insights from their own work alongside reflections on the films they reviewed for the festival.</p><p><br></p><p>Expect practical discussion about the documentary process, creative choices that resonate, and the particular joys and challenges of evaluating the year’s submissions. A thoughtful exchange for filmmakers and documentary enthusiasts alike.</p><p><br></p><p><br></p><p><br></p>",
+   "short_description": null,
+   "start_time": "2026-10-11T15:30:00.000Z",
+   "end_time": "2026-10-11T16:20:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787854780092temp-1787854780086-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a8f78b4ab773cead9882614",
+   "name": "All Access Passholders Lounge",
+   "description": "<p>All Access Passholders are invited to join us at Carri Bass' Studio for light refreshments and snacks! Mingle with other filmmakers, grab a cool drink, and relax! </p>",
+   "short_description": null,
+   "start_time": "2026-10-11T16:00:00.000Z",
+   "end_time": "2026-10-11T22:00:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950e",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a84ed3033d46290a98c807c",
+   "name": "A Conversation with Honey Head Films",
+   "description": "<p>Join us for a conversation with Honey Head's Kristi Ray and Erika Arlee as they chat all things indie film world!</p><p><br></p><p><em>*This event is free and open to the public</em></p><p><em>**Made possible with funding from the Mary F. Kessler Fund from the Polk County Community Foundation, the Community Fund of Western North Carolina, + the Community Foundation of Henderson County</em></p>",
+   "short_description": null,
+   "start_time": "2026-10-11T16:30:00.000Z",
+   "end_time": "2026-10-11T17:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494cd",
+     "name": "Education"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787854841060temp-1787854841051-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ee",
+   "name": "Short Block Q - (1:08:35) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T16:45:00.000Z",
+   "end_time": "2026-10-11T18:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de334",
+     "name": "Sky to Soil",
+     "short_description": null,
+     "description": "<p>A young couple with conflicting desires for intimacy attempt to navigate the emotional complexities of what should be a joyful one-year anniversary.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879829012temp-1785879829000-poster.jpg",
+     "runtime": "12"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de392",
+     "name": "Intertwined",
+     "short_description": null,
+     "description": "<p>Marci’s arrival to a new city finds her facing a crippling fear that conflicts with her determination to fulfill a promise.  She follows a handsome local barista named Kurt to his home and work in search of an answer to her pressing question.  Marci’s opportunities, days, and courage dwindle as she holds out for the right moment, the right place, and the right sign.  As time runs out, she must confront what brought her to Kurt and reveal the truth to him.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879557435temp-1785879557420-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de346",
+     "name": "Blue Wednesday",
+     "short_description": null,
+     "description": "<p>Set against the cultural upheaval of 1960s New York City, the musical-drama 'Blue Wednesday' follows Jackie, an orphan suddenly given the chance to attend college, who becomes caught between the promised future she’s been handed and the gritty, awakening world of artists and activists fighting for change. As the truth behind her mysterious benefactor is revealed, Jackie must choose who she wants to become, and what she’s willing to risk to get there.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879315142temp-1785879315129-poster.jpg",
+     "runtime": "39"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51bd",
+   "name": "Spirt of the Pony Express | 1:17:00 + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T17:00:00.000Z",
+   "end_time": "2026-10-11T18:45:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3d8",
+     "name": "Spirit of the pony express",
+     "short_description": null,
+     "description": "<p>Spirit of the Pony Express tells the story of the legendary mail route that once connected a divided nation and celebrates the institutions and individuals who keep its history alive today. In 2010, we followed the National Pony Express Association's cross-country re-ride from Sacramento, California to St. Joseph, Missouri, staged for the Sesquicentennial of the historic route. Along the trail to California, we interviewed the people of St. Joseph and the teachers, historians, and everyday people who have dedicated their lives to preserving the memory of this pivotal chapter in the development of the United States.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879848164temp-1785879848150-poster.jpg",
+     "runtime": "77"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5227",
+   "name": "Papertown | 01:23:44",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T17:00:00.000Z",
+   "end_time": "2026-10-11T18:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3ac",
+     "name": "Papertown",
+     "short_description": null,
+     "description": "<p>When the paper mill that defined Canton, North Carolina announced it would close, the town had just three months before its largest employer—and a core part of its identity—was gone. Filmed in real time, this documentary captures the shock, unanswered questions, and growing anger as rumors swirl, corporate leaders stay silent, and news emerges of executives profiting from stock trades days before the announcement. Through grief, resilience, and uncertainty, the people of Canton confront life without the industry that shaped them for generations.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "83"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5217",
+   "name": "REVOLUTION'S DAUGHTER | 01:24:20",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T17:30:00.000Z",
+   "end_time": "2026-10-11T19:15:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de38e",
+     "name": "REVOLUTION'S DAUGHTER",
+     "short_description": null,
+     "description": "<p>A powerful documentary portrait of identity, legacy, and the price of dissent, Revolution's Daughter follows Alina as she confronts the myth of her father and the reality of the revolution he led. Through her story—and the voices of the Cuban exile community in Miami and beyond—the film explores the deep scars of displacement, the complexity of heritage, and the enduring spirit of a people divided by politics but united by culture, memory, and the hope for change.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879803052temp-1785879803037-poster.jpg",
+     "runtime": "84"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51f2",
+   "name": "Short Block R - (01:35:43) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T18:30:00.000Z",
+   "end_time": "2026-10-11T20:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3ae",
+     "name": "Guardian Angels",
+     "short_description": null,
+     "description": "<p>A wisecracking guardian and her favorite nemesis wage a secret, slapstick war over one blissfully oblivious family. </p>\n<p>Foxy is the guardian assigned to one ordinary family who have no idea they're being protected… or hunted. When her recurring nemesis Viper resurfaces with an arsenal of stuff toys and icecream, Foxy and her comms-tech Angie have one chaotic afternoon to keep the peace without the family ever noticing the cartoon war raging just out of frame.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879471335temp-1785879471324-poster.jpg",
+     "runtime": "9"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de338",
+     "name": "Can I Come In?",
+     "short_description": null,
+     "description": "<p>At the dawn of an apocalyptic event, as society and civility stand on the brink, an unwanted visitor knocks on the door where a group of displaced neighbors shelter together.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879348869temp-1785879348858-poster.jpg",
+     "runtime": "10"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de366",
+     "name": "The Recluse",
+     "short_description": null,
+     "description": "<p>In early 2025 a breach at the Oak Ridge National Laboratory puts residents of Oak Ridge and surrounding counties at risk.  During a mandatory curfew imposed by local officials, a man reluctantly allows strangers who show up at his doorstep to spend the night waiting inside, and it quickly becomes evident that things are not as they seem.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785880011362temp-1785880011353-poster.jpg",
+     "runtime": "13"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de38a",
+     "name": "Prometheus",
+     "short_description": null,
+     "description": "<p>Five wealthy investors, in search of redemption and answers to life's ultimate questions, face an uncomfortable truth. But does ultimate knowledge come with a price?</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879760633temp-1785879760622-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de378",
+     "name": "Moonlight Blue",
+     "short_description": null,
+     "description": "<p>Home alone and waiting for her boyfriend to return from his work trip, Emma finds herself trapped in a nightmare. Stuck in a dreamlike moonlit simulacrum of her beachside apartment, Emma is stalked by a shadow-like, violent entity lurking in her own home. She will need to discover how to survive and escape, and may also discover horrors about her past and relationship as well.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879684020temp-1785879684007-poster.jpg",
+     "runtime": "20"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3d6",
+     "name": "OUT OF MILK",
+     "short_description": null,
+     "description": "<p>To avoid a simple trip to the store for milk, a man turns to his neighbors for help and inadvertently uncovers a terrifying truth about the world around him.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879752914temp-1785879752903-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de364",
+     "name": "Temporia",
+     "short_description": null,
+     "description": "<p>A woman visits a botanist with the power to bend nature itself, and with her enchanted herb she journeys through space and time to reach her husband, only to learn that saving him may unleash a dangerous new future.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879909012temp-1785879909000-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3f2",
+     "name": "Starlight",
+     "short_description": null,
+     "description": "<p>A man must travel the multiverse to uncover the mystery of what happened to his lost friend and find a way to save her.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1787075670436temp-1787075670334-poster.jpg",
+     "runtime": "20"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba522b",
+   "name": "GIRLS DON´T CRY | 01:29:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T19:00:00.000Z",
+   "end_time": "2026-10-11T20:45:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de342",
+     "name": "GIRLS DON´T CRY",
+     "short_description": null,
+     "description": "<p>What does it mean to be a girl in the world today? How do they fare in a restrictive world? The documentary “Girls Don’t Cry” is about the longing of six girls from six countries, longing for a self-determined life in freedom, their desire to fall in love, without paternalism, without others having power over their bodies, with equal rights.\nWe see Nancy, Sheelan, Selenna, Nina, Paige and Sinai deal with the crisis of puberty, their self-confident decisions in difficult situations, their courageous fight against brutal traditions such as circumcision, against social constraints and pressure, against beauty mania and prejudice. Being young and cool, even in the face of trauma and loss.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879437886temp-1785879437875-poster.jpg",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6a84d292129073f5c85bfe8c",
+   "name": "Equestrian Short Dramatic Block T - (1:34:30) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T19:00:00.000Z",
+   "end_time": "2026-10-11T20:45:00.000Z",
+   "venue": "6a7d0a5839f772f2778b9969",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3bc",
+     "name": "ON THE FRINGE",
+     "short_description": null,
+     "description": "<p>On the Fringe follows Chilean show jumper Gabriela Reutter as she chases a place among the world’s top 300 riders and a chance to represent her country on the Olympic stage. Behind the glamour of elite competition lies a relentless reality of financial sacrifice, family pressure, setbacks, and the unwavering determination required to pursue a dream that only a handful of riders will ever achieve. Through one athlete’s journey, the film offers an intimate look inside the world of show jumping and introduces audiences to the passion, resilience, and community that define equestrian sport.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879736183temp-1785879736169-poster.jpg",
+     "runtime": "45"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3a8",
+     "name": "My Lucky Star",
+     "short_description": null,
+     "description": "<p>A heartwarming animated micro-short that brings the magic of children's literature to the screen. Beneath a sky filled with stars, Ella and Little Feat embark on a journey of friendship, perseverance, and wonder. Inspired by the constellation Pegasus, they learn that dreams, determination, and a little bit of belief can carry them farther than they ever imagined.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "1"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3a2",
+     "name": "BIG WISHES for LITTLE FEAT",
+     "short_description": null,
+     "description": "<p>Big Wishes for Little Feat: A magical tale set in the Kingdom of Belgium. A story that will ignite the imagination with rich colorful illustrations by award-winning, Italian illustrator, Paolo d’ Altan.  Central to the book’s charm is imagery of stars and constellations to which a little girl and her horse both look for inspiration, confidence, and faith in themselves, as they learn how to turn disappointments into achievements. A tale about true friendship, facing and overcoming obstacles and, most importantly, always believing. A quirky aunt adds to the fun of this tale of, happy endings and new beginnings </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879296553temp-1785879296532-poster.jpg",
+     "runtime": "1"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de386",
+     "name": "Kiss Of Gold | Episode 1",
+     "short_description": null,
+     "description": "<p>Episode One of Kiss of Gold introduces a striking palomino stallion as he begins his journey through the Florida Winter Circuit. Blending elegance in the ring with a quiet, approachable nature in the barn, the episode explores the balance between performance and partnership that defines a modern hunter.</p>\n<p>Through early preparation, training rides, and behind-the-scenes moments, we are introduced to the team shaping his season and the expectations that come with a horse of his presence and pedigree. This opening chapter sets the tone for a story rooted not just in competition, but in the process, pressure, and precision that unfold long before the results.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879587421temp-1785879587406-poster.jpg",
+     "runtime": "8"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de384",
+     "name": "The Amateurs.",
+     "short_description": null,
+     "description": "<p>This mockumentary sitcom dives into the world of adult amateur equestrians—where confidence is often performative, emotions run high, and no one quite knows what they’re doing… but everyone has strong opinions anyway. Through awkward interviews, barn drama, and painfully relatable moments, the series captures the chaos, humor, and quiet vulnerability of chasing big goals in a space where you’re never quite a professional—but it still feels like everything is on the line.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879922790temp-1785879922777-poster.jpg",
+     "runtime": "7"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de382",
+     "name": "Inside The Ingate | Episode 3",
+     "short_description": null,
+     "description": "<p>I am pleased to submit Episode 3 of Inside The Ingate for consideration. This episode centers around the Hunter Derby, following both professional and amateur riders as they navigate one of the sport’s most demanding and visually compelling classes. Through a behind-the-scenes lens, the film captures not only the performance, but the preparation, pressure, and moments that don’t go according to plan. By highlighting imperfect rounds and the way riders adapt in real time, the episode showcases the professionalism, composure, and horsemanship required at every level. Inside The Ingate is built on the idea that the most meaningful stories in this sport are found not in perfection, but in how riders respond to the unexpected, and Episode 3 brings that perspective to life through the lens of the Hunter Derby.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879546525temp-1785879546515-poster.jpg",
+     "runtime": "26"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba521b",
+   "name": "A Life Reimagined: The George Masa Story | 01:30:05",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T19:30:00.000Z",
+   "end_time": "2026-10-11T21:15:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de376",
+     "name": "A Life Reimagined: The George Masa Story",
+     "short_description": null,
+     "description": "<p>A Japanese immigrant’s photography and passion for the Appalachian mountains in the 1920’s changed America. For almost 100 years George Masa’s story was a mystery - until now.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879199350temp-1785879199336-poster.jpg",
+     "runtime": "90"
+    }
+   ]
+  },
+  {
+   "id": "6a85229d365982c54a5c69f1",
+   "name": "Reception for \"Living Archive\" - Urban League of the Upstate + Studio 9.22",
+   "description": "<p><strong>Reception for <em>Living Archive</em></strong></p><p><em>Honoring Dr. Warren Carson</em></p><p><br></p><p>Join us for a special reception celebrating <em>Living Archive</em>, a documentary short that honors the life and enduring influence of Dr. Warren Carson—educator, scholar, and community leader whose dedication to literature, service, and mentorship has shaped generations.</p><p><br></p><p>Through interviews, poetry, and archival storytelling, the film explores how one life can inspire countless others. Director Brittany Brackett will be present for the occasion.</p><p><br></p><p>Sponsored by the Urban League of the Upstate and Studio 9.22. Includes one free drink ticket. </p>",
+   "short_description": null,
+   "start_time": "2026-10-11T19:30:00.000Z",
+   "end_time": "2026-10-11T21:30:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950a",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1787855116424temp-1787855116415-cover.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51f6",
+   "name": "Short Block S - (1:31:40) + Q&A",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T20:30:00.000Z",
+   "end_time": "2026-10-11T22:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd49508",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3a4",
+     "name": "Miss Arlene",
+     "short_description": null,
+     "description": "<p>After a bullied diabetic boy befriends a quirky elderly baker, their unlikely friendship blossoms in the kitchen. Which takes us to a heartwarming story about the healing power of friendship, the joy of discovery, and the recipe for finding your passion-one whisk at a time.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879672183temp-1785879672169-poster.jpg",
+     "runtime": "26"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de3d0",
+     "name": "Inflatable Dragons",
+     "short_description": null,
+     "description": "<p>After his family tries to force him into retirement, an aging man runs away from home and spends a weekend on the beach, but his escape turns into a more meaningful getaway than he expected. Adapted from the book \"A Week at Surfside Beach\".</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879526576temp-1785879526564-poster.jpg",
+     "runtime": "24"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de398",
+     "name": "Masterpiece",
+     "short_description": null,
+     "description": "<p>Two passionate lovers unite their artistic souls on a canvas, channeling their deepest emotions and shared experiences. As their painting evolves, it becomes a reflection of their connection and relationship.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879652733temp-1785879652723-poster.jpg",
+     "runtime": "31"
+    },
+    {
+     "id": "6a722fe8b96cc074a19de36e",
+     "name": "Are We Just Flowers?",
+     "short_description": null,
+     "description": "<p>A poem about a flower goes through an existential crisis.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879256049temp-1785879256039-poster.jpg",
+     "runtime": "10"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba522f",
+   "name": "Fulfilling the Promise — Teachers, Students, and the Declaration of Independence | 50:00",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T21:00:00.000Z",
+   "end_time": "2026-10-11T22:15:00.000Z",
+   "venue": "691b8a9a94bdbc299cd4950d",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de39c",
+     "name": "Fulfilling the Promise — Teachers, Students, and the Declaration of Independence",
+     "short_description": null,
+     "description": "<p>\"Fulfilling the Promise\" is a timely portrait of civic education that asks a question at the heart of the American experiment: are we living up to our founding principles?</p>\n<p>Through four schools in Brooklyn, New York, Boston, Massachusetts, Durango, Colorado, and Carlisle, Pennsylvania, the film shows how teachers and students bring the Declaration of Independence to life, discussing its principles through the framework of civil discourse. </p>\n<p>Not merely an appreciation of the history of the Declaration, this documentary explores how teachers and students play a vital role in keeping these principles alive and, as Dr. King noted in his “I have a Dream” speech, better fulfilling the promise of the Declaration as a promissory note for future generations. </p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": null,
+     "runtime": "50"
+    }
+   ]
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba521f",
+   "name": "Living Archive | 00:29:40",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T21:30:00.000Z",
+   "end_time": "2026-10-11T22:15:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a722fe8b96cc074a19de3c6",
+     "name": "Living Archive",
+     "short_description": null,
+     "description": "<p>Living Archive is a documentary short celebrating the life and legacy of Dr. Warren Carson, an educator, scholar, and community leader whose commitment to literature, service, and mentorship shaped generations of students and citizens. Through interviews, poetry, and archival storytelling, the film explores how one life can inspire countless others.</p>",
+     "still_image": null,
+     "cover_image": null,
+     "poster_image": "https://static-a.eventive.org/1785879625108temp-1785879625093-poster.jpg",
+     "runtime": "29"
+    }
+   ]
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49570",
+   "name": "Awards Ceremony",
+   "description": "<p>Celebrate the outstanding talent and creativity showcased at the Tryon International Film Festival during our Awards Ceremony. Join filmmakers, industry professionals, and film enthusiasts for an elegant evening honoring the best in storytelling, directing, acting, and technical achievement. Experience the excitement as winners are announced and trophies are presented, marking the culmination of a vibrant festival weekend.</p><p><br></p><p>This event is free and open to the public. </p>",
+   "short_description": null,
+   "start_time": "2026-10-11T23:00:00.000Z",
+   "end_time": "2026-10-12T00:30:00.000Z",
+   "venue": "6a7f667887c45cb9d7ba51fd",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/17522745721086fb1b46e0c570e9fb6d0.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49596",
+   "name": "TRIFF26 Afterparty",
+   "description": "<p>Join us as we celebrate our filmmakers and cheers to weekend of artistry and community! </p><p><br></p><p>Say your goodbyes in this warm reception and afterparty! </p><p><br></p><p>*Food and drink will be for sale. </p><p><br></p><p>The event is free and open to the public.</p>",
+   "short_description": null,
+   "start_time": "2026-10-12T00:30:00.000Z",
+   "end_time": "2026-10-12T03:00:00.000Z",
+   "venue": "6abda92605f1d5982e6e5d44",
+   "tags": [
+    {
+     "id": "691b8a9a94bdbc299cd494ce",
+     "name": "Hospitality"
+    }
+   ],
+   "cover": "https://static-a.eventive.org/1755800891033d6744013709564142761.jpg",
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": "RSVP",
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 0,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": []
+  }
+ ],
+ "venues": [
+  {
+   "id": "691b8a9a94bdbc299cd49508",
+   "name": "Tryon Fine Arts Center Veh Stage",
+   "short_name": "TFAC Veh Stage",
+   "address": "34 Melrose Ave, Tryon, NC",
+   "addressLine": "34 Melrose Ave, Tryon, NC",
+   "default_capacity": 250
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950a",
+   "name": "The Fitzgerald",
+   "short_name": null,
+   "address": "69 Pacolet St, Tryon, NC",
+   "addressLine": "69 Pacolet St, Tryon, NC",
+   "default_capacity": 400
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950b",
+   "name": "Mirrorball Gallery",
+   "short_name": null,
+   "address": "84 Pacolet St, Tryon, NC",
+   "addressLine": "84 Pacolet St, Tryon, NC",
+   "default_capacity": 150
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950d",
+   "name": "Tryon Fine Arts Center Pavilion",
+   "short_name": "TFAC - Pavilion",
+   "address": "34 Melrose Ave, Tryon, NC",
+   "addressLine": "34 Melrose Ave, Tryon, NC",
+   "default_capacity": 200
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950e",
+   "name": "Carri Bass Photography Studio",
+   "short_name": null,
+   "address": "92 Pacolet St, Tryon, NC",
+   "addressLine": "92 Pacolet St, Tryon, NC",
+   "default_capacity": 80
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950f",
+   "name": "The Greenlife Inn at the Mimosa",
+   "short_name": "The Greenlife",
+   "address": "65 Mimosa Inn Dr., Tryon, NC",
+   "addressLine": "65 Mimosa Inn Dr., Tryon, NC",
+   "default_capacity": 300
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49512",
+   "name": "Tryon Depot Room ",
+   "short_name": null,
+   "address": null,
+   "addressLine": null,
+   "default_capacity": null
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49514",
+   "name": "The Tryon Bottle",
+   "short_name": null,
+   "address": "15 Trade St, Tryon, NC",
+   "addressLine": "15 Trade St, Tryon, NC",
+   "default_capacity": 150
+  },
+  {
+   "id": "6a7d0a5839f772f2778b9969",
+   "name": "Sunnydale",
+   "short_name": null,
+   "address": "334 S Trade St, Tryon, NC 28782",
+   "addressLine": "334 S Trade St, Tryon, NC 28782",
+   "default_capacity": 150
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51fd",
+   "name": "Tryon Theatre ",
+   "short_name": null,
+   "address": null,
+   "addressLine": null,
+   "default_capacity": 200
+  },
+  {
+   "id": "6abda92605f1d5982e6e5d44",
+   "name": "Railside Bar + Grill",
+   "short_name": null,
+   "address": "62 N Trade St, Tryon, NC",
+   "addressLine": "62 N Trade St, Tryon, NC",
+   "default_capacity": null
+  }
+ ],
+ "outOfEdition": [
+  "Meet + Greet with Marlyn Mason (2026-04-04)"
+ ]
+}

@@ -1,0 +1,1312 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "red-sea-jazz",
+  "edition": "2026",
+  "ordinal": 40,
+  "name": "Red Sea Jazz Festival",
+  "nameLocal": "פסטיבל הג׳אז ים סוף",
+  "city": "Eilat",
+  "country": "IL",
+  "lat": 29.5569,
+  "lng": 34.9517,
+  "timezone": "Asia/Jerusalem",
+  "lang": "he",
+  "dir": "rtl",
+  "kind": "music",
+  "defaultGenre": "music",
+  "site": "https://redseajazz.co.il/",
+  "firstDate": "2026-11-11",
+  "lastDate": "2026-11-14",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://redseajazz.co.il/lineup/",
+   "notes": "Tickets for each show, and festival passes, through Ticketmaster only (the festival's FAQ); each ticketed show on the lineup links its own Ticketmaster page. Eilat residents get a discount on showing ID. The Jasper 08 club sets and the nightly jam session are free entry."
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "eilat-port",
+   "name": "נמל אילת",
+   "address": null,
+   "lat": 29.556944,
+   "lng": 34.951667,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "port-arena",
+     "name": "Port Arena",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "red-note-club",
+     "name": "Red Note Club",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "the-present",
+     "name": "de Present",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "the-future",
+     "name": "de Future",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "plaza",
+     "name": "הרחבה הציבורית",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": "The compound has accessible paths, accessible toilets and seating set aside near the stages; ask customer service ahead for assistance.",
+   "notes": "The festival's compound in the Port of Eilat: four stages within walking distance of each other (the Port Arena, the Red Note jazz club, The Present and The Future), joined by the public plaza, which also has free sets (the About and FAQ pages). Shuttles run from the hotels. Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Eilat",
+    "https://redseajazz.co.il/faq/"
+   ]
+  },
+  {
+   "id": "jasper-08-agamim",
+   "name": "Jasper 08, מלון ישרוטל אגמים",
+   "address": null,
+   "lat": 29.556944,
+   "lng": 34.951667,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Jasper 08 club at the Isrotel Agamim hotel, where the free late sets and the nightly jam session play (the FAQ). Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Eilat"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "2026-11-11-1830-red-note-club",
+   "title": "דני גוטפריד והמייסדים",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%93%d7%a0%d7%99-%d7%92%d7%95%d7%98%d7%a4%d7%a8%d7%99%d7%93-%d7%95%d7%94%d7%9e%d7%99%d7%99%d7%a1%d7%93%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מופע פותח\nמפגש הפסגה של גיבורי הג'אז הישראלי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_DANNI-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-1845-the-future",
+   "title": "Zafio",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/zafio/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "פיוז'ן מהפנט המשלב פסנתר, סינת' ומקצבים עתידניים \"The Raft\"",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ZAPFIO-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-2000-port-arena",
+   "title": "עידן רייכל “אבני דרך”",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a2%d7%99%d7%93%d7%9f-%d7%a8%d7%99%d7%99%d7%9b%d7%9c-%d7%90%d7%91%d7%a0%d7%99-%d7%93%d7%a8%d7%9a/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפקת מקור מיוחדת לפסטיבל ה-40\nאורחים: אבטה בריהון, אלי דג'יברי, זהר פרסקו, יוסי פיין, ינקלה סגל, שבחיה בת ישראל, שחר חזיזה, תום אורן",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_REICHEL-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-11-2030-the-present",
+   "title": "חמישיית שי זלמן",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%97%d7%9e%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%a9%d7%99-%d7%96%d7%9c%d7%9e%d7%9f/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "במחווה לגרוב המהפכני של דיזי גילספי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ZALMAN-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-2130-red-note-club",
+   "title": "Keren Ann + Avishai Cohen feat .Big Vicious",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a7%d7%a8%d7%9f-%d7%90%d7%9f-%d7%90%d7%91%d7%99%d7%a9%d7%99-%d7%9b%d7%94%d7%9f-%d7%95big-vicious/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nמפגש חד פעמי על ווליום גבוה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/RSJF26s_1200x900_שAVISHAI_KEREN-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-2145-the-future",
+   "title": "The Slices",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/the-slices/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "השקת אלבום\nבשורת פאנק-ג'אז חדשה, מרעננת ובועטת",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_THE_SLICE-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-11-2230-jasper-08-agamim",
+   "title": "Aybie Group",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%90%d7%99%d7%99%d7%91%d7%99-%d7%93%d7%a8%d7%95%d7%a8%d7%99-%d7%99%d7%a9%d7%a8%d7%90%d7%9c%d7%99/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nחצוצרה ושירה במפגש אינדי-ג'אז",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_AYBIE-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-11-2230-port-arena",
+   "title": "דודו טסה – אורחת מיוחדת: מאיו שבירו",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%93%d7%95%d7%93%d7%95-%d7%98%d7%a1%d7%94-%d7%9e%d7%90%d7%a8%d7%97-%d7%90%d7%aa-%d7%9e%d7%99%d7%95-%d7%a9%d7%91%d7%99%d7%a8%d7%95/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nמופע להקה ומפגש סוחף של גיטרות, צ׳לו וכלי נשיפה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_DUDU-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-2245-the-present",
+   "title": "שלישיית אלון ניר",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%9c%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%90%d7%9c%d7%95%d7%9f-%d7%a0%d7%99%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "השקת אלבום\nיומן מסע מוזיקלי מרחבי הגלובוס - ״Names, Places״",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ALON-768x576.jpg"
+  },
+  {
+   "id": "2026-11-11-2330-jasper-08-agamim",
+   "title": "Jam Session במלון אגמים",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/news/%d7%92%d7%90%d7%9e%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nמ-23:30 ועד השעות הקטנות של הלילה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/באנרים-לוח-הופעות-768x142.png"
+  },
+  {
+   "id": "2026-11-12-1500-red-note-club",
+   "title": "”תתחצף ותענה” מנגנים מתי כספי",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%9e%d7%a0%d7%92%d7%a0%d7%99%d7%9d-%d7%9e%d7%aa%d7%99-%d7%9b%d7%a1%d7%a4%d7%99-%d7%aa%d7%aa%d7%97%d7%a6%d7%a3-%d7%95%d7%aa%d7%a2%d7%a0%d7%94/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפקת מקור מיוחדת לפסטיבל ה-40\nיחזקאל רז, מאיה דוניץ, ניתאי הרשקוביץ, סתיו אחאי, עומרי מור, קטיה טובול, רועי בן-סירה, תומר בר",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/RSJF26s_1200x900_MATI-768x510.jpg"
+  },
+  {
+   "id": "2026-11-12-1515-the-future",
+   "title": "אבטה בריהון ופרויקט אדיס קן",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%90%d7%91%d7%98%d7%94-%d7%91%d7%a8%d7%99%d7%94%d7%95%d7%9f-%d7%95%d7%a4%d7%a8%d7%95%d7%99%d7%a7%d7%98-%d7%90%d7%93%d7%99%d7%a1-%d7%a7%d7%9f/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "אלבום חדש\nאפרו-ג'אז אתיופי ומוזיקת נשמה שחודרת לעומק",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ABETA-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-1615-the-present",
+   "title": "יונתן אבישי אנסמבל – Walk with me",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%99%d7%95%d7%a0%d7%aa%d7%9f-%d7%90%d7%91%d7%99%d7%a9%d7%99-%d7%90%d7%a0%d7%a1%d7%9e%d7%91%d7%9c-walk-with-me/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפסנתרן בעל המגע החד-פעמי מנהיג אנסמבל צבעוני",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_YONATAN-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-1615-port-arena",
+   "title": "תזמורת ירושלים מזרח ומערב ומאסטרו תום כהן יחד עם מאיה בלזיצמן וגיא מינטוס",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%aa%d7%96%d7%9e%d7%95%d7%a8%d7%aa-%d7%99%d7%a8%d7%95%d7%a9%d7%9c%d7%99%d7%9d-%d7%9e%d7%96%d7%a8%d7%97-%d7%9e%d7%a2%d7%a8%d7%91-%d7%9e%d7%a6%d7%99%d7%92%d7%94-%d7%90%d7%aa-%d7%9e%d7%90%d7%99%d7%94/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "חוויה תזמורתית סוחפת בין מזרח ומערב, בין צ׳לו לפסנתר",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_JERUSLAM-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-1715-plaza",
+   "title": "CJS BIG BAND",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/cjs-big-band/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nהביג בנד של המרכז ללימודי ג׳אז תל-אביב | בתמיכת משפחת רכבי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/WhatsApp-Image-2026-09-01-at-11.38.27-768x576.jpeg"
+  },
+  {
+   "id": "2026-11-12-1745-red-note-club",
+   "title": "עומרי מור “Original Folk Songs” אורח מיוחד: ז׳וקה פרפיניאן",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%a2%d7%95%d7%9e%d7%a8%d7%99-%d7%9e%d7%95%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nמגנים ג'אז פולק ממרוקו ועד ברזיל",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_OMRI_MOR-1-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-1815-the-future",
+   "title": "חמישיית מיקה ריעני",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%a2%d7%99%d7%99%d7%aa-%d7%9e%d7%99%d7%a7%d7%94-%d7%a8%d7%99%d7%a2%d7%a0%d7%99/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "החצוצרנית שלוקחת למסע מהפנט בין ג'אז עכשווי למסורת הודית",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_RIANI-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-12-1915-the-present",
+   "title": "שלישיית אמיר ברסלר",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%9c%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%90%d7%9e%d7%99%d7%a8-%d7%91%d7%a8%d7%a1%d7%9c%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "ג׳אז חדש - בין אקוסטי לאלקטרוני",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_AMIR-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-1915-port-arena",
+   "title": "גידי גוב אורחים: עמיר בניון ורונה קינן",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%92%d7%99%d7%93%d7%99-%d7%92%d7%95%d7%91-b-side-%d7%90%d7%95%d7%a8%d7%97%d7%99%d7%9d-%d7%a2%d7%9e%d7%99%d7%a8-%d7%91%d7%a0%d7%99%d7%95%d7%9f-%d7%95%d7%a8%d7%95%d7%a0%d7%94-%d7%a7%d7%99%d7%a0%d7%9f/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nה- B-SIDES מהרפרטואר של גידי זוכים לפרשנות חדשה בעיבודים מיוחדים",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_GIDI-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-2045-red-note-club",
+   "title": "Eli Degibri Quartet – My One and Only Love",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%a2%d7%99%d7%99%d7%aa-%d7%90%d7%9c%d7%99-%d7%93%d7%92%d7%99%d7%91%d7%a8%d7%99-my-one-and-only-love/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "השקת אלבום\nמופע בכורה חגיגי לאלבומו העשירי | אורח מיוחד: ג'ס קורן",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ELI-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-2100-the-future",
+   "title": "X GESHEM אנסמבל מיתר",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/geshem-x-%d7%90%d7%a0%d7%a1%d7%9e%d7%91%d7%9c-%d7%9e%d7%99%d7%aa%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מחווה קוסטית אלקטרונית ללייבל Warp Records",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/RSJF26s_1200x900_GESHEM-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-2215-port-arena",
+   "title": "מירי מסיקה והביג בנד",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%9e%d7%99%d7%a8%d7%99-%d7%9e%d7%a1%d7%99%d7%a7%d7%94-%d7%95%d7%aa%d7%96%d7%9e%d7%95%d7%a8%d7%aa%d7%94/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפקת מקור\nלהיטים, דיוות ומחזות זמר בעיבודי ג׳אז חדשים ובליווי רביעיית מיתר",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_MIRI-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-12-2230-the-present",
+   "title": "מינואט",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%9e%d7%99%d7%a0%d7%95%d7%90%d7%98-%d7%94%d7%90%d7%99%d7%97%d7%95%d7%93/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "שובו של הרכב הפיוז'ן המיתולוגי באינטרפרטציה עכשווית",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_MINUET-768x576.jpg"
+  },
+  {
+   "id": "2026-11-12-2230-jasper-08-agamim",
+   "title": "Sandia – סיפור לילה",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/sandia-%d7%a1%d7%99%d7%a4%d7%95%d7%a8-%d7%9c%d7%99%d7%9c%d7%94/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nג'אז מזרח-תיכוני עדכני",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_SANDIA-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-12-2330-jasper-08-agamim",
+   "title": "Jam Session במלון אגמים",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/news/%d7%92%d7%90%d7%9e%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nמ-23:30 ועד השעות הקטנות של הלילה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/באנרים-לוח-הופעות-768x142.png"
+  },
+  {
+   "id": "2026-11-13-1400-the-future",
+   "title": "אורי קפלן וליהו מלמד – Reverie Ensemble",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%90%d7%95%d7%a8%d7%99-%d7%a7%d7%a4%d7%9c%d7%9f-%d7%95%d7%9c%d7%99%d7%94%d7%95-%d7%9e%d7%9c%d7%9e%d7%93-reverie-ensemble/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הרהור בחלום: מסע מוזיקלי קולנועי בהשראת פסקולים משנות ה-70",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ORI_KAPLAN-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1400-red-note-club",
+   "title": "שלומי שבן והפסנתר אורחים: האחים קדוש",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%9c%d7%95%d7%9e%d7%99-%d7%a9%d7%91%d7%9f-%d7%95%d7%94%d7%a4%d7%a1%d7%a0%d7%aa%d7%a8-%d7%9e%d7%90%d7%a8%d7%97-%d7%90%d7%aa-%d7%94%d7%90%d7%97%d7%99%d7%9d-%d7%a7%d7%93%d7%95%d7%a9/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nבין פסנתר עוד ומקאם - מפגש עולמות מוזיקאלים",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_SHABAN-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1500-port-arena",
+   "title": "רביד פלוטניק מארח את ישי סוויסה",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%93-%d7%a4%d7%9c%d7%95%d7%98%d7%a0%d7%99%d7%a7/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מלך הראפ של המזרח התיכון במופע להקה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_RAVID-1-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1515-the-present",
+   "title": "חמישיית מורדי פרבר “The Mordy Ferber Songbook”",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%97%d7%9e%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%9e%d7%95%d7%a8%d7%93%d7%99-%d7%a4%d7%a8%d7%91%d7%a8-the-mordy-ferber-songbook/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "השקת אלבום\nסיפורו של אחד מגדולי גיטריסטי הג'אז",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/RSJF26s_1200x900_MORDI-768x510.jpg"
+  },
+  {
+   "id": "2026-11-13-1630-red-note-club",
+   "title": "גל דה פז",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%92%d7%9c-%d7%93%d7%94-%d7%a4%d7%96/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מופע להקה מיוחד וחסר מעצורים",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_GAL-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1645-the-future",
+   "title": "נרקיס רעם",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a0%d7%a8%d7%a7%d7%99%d7%a1-%d7%a8%d7%a2%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "גרוב חצוף, נאו-סול וטקסטים אישיים נוגעים בלב",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_NARKIS-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1730-the-present",
+   "title": "רביעיית אלברט בגר",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%a2%d7%99%d7%99%d7%aa-%d7%90%d7%9c%d7%91%d7%a8%d7%98-%d7%91%d7%92%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "ג'אז חופשי ועוצמתי מפי אחת מאושיות הז'אנר",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_ALBERT-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1845-red-note-club",
+   "title": "מאור כהן ותזמורת הג’אז הישראלית",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%9e%d7%90%d7%95%d7%a8-%d7%9b%d7%94%d7%9f-%d7%95%d7%aa%d7%96%d7%9e%d7%95%d7%a8%d7%aa-%d7%94%d7%92%d7%90%d7%96-%d7%94%d7%99%d7%a9%d7%a8%d7%90%d7%9c%d7%99%d7%aa/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nמביאים את וגאס לאילת",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_MAOR-1-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-1900-the-future",
+   "title": "שלישיית שרון מנסור",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%9c%d7%99%d7%a9%d7%99%d7%99%d7%aa-%d7%a9%d7%a8%d7%95%d7%9f-%d7%9e%d7%a0%d7%a1%d7%95%d7%a8/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "פיוז'ן של ג'אז, פרוג וים תיכון",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_SHARON-1-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-2015-port-arena",
+   "title": "יוני רכטר – “עוד סיפור” ועוד…",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%99%d7%95%d7%a0%d7%99-%d7%a8%d7%9b%d7%98%d7%a8-%d7%a2%d7%95%d7%93-%d7%a1%d7%99%d7%a4%d7%95%d7%a8-%d7%95%d7%a2%d7%95%d7%93/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפקת מקור מיוחדת לפסטיבל ה-40\nמנגנים משירי התקליט בהפקה חדשה עם הרכב קולי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_YONI-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-13-2030-the-present",
+   "title": "שלישיית יוגב שטרית",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a9%d7%9c%d7%99%d7%a9%d7%99%d7%aa-%d7%99%d7%95%d7%92%d7%91-%d7%a9%d7%98%d7%a8%d7%99%d7%aa/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "ג'אז אנדלוסי מלוטש ושורשי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_YOGEV-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-13-2145-the-future",
+   "title": "רביעיית טוקי שטרן",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%a2%d7%99%d7%99%d7%aa-%d7%98%d7%95%d7%a7%d7%99-%d7%a9%d7%98%d7%a8%d7%9f/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "״הכל עובר״ - פופ-ג'אז עכשווי וסוחף",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_TOKI-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-2145-red-note-club",
+   "title": "3 Cohens Sextet",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%94%d7%9b%d7%94%d7%a0%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "שלושת השגרירים של הג'אז הישראלי בעולם חוזרים הביתה עם שישייה חד-פעמית",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_3COHENS-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-13-2230-jasper-08-agamim",
+   "title": "חואניטה כהן סמית׳",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%97%d7%95%d7%90%d7%a0%d7%99%d7%98%d7%94-%d7%9b%d7%94%d7%9f-%d7%a1%d7%9e%d7%99%d7%aa/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nסולו פסנתר ושירה מפי אגדת ג'אז נדירה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_HUANITA-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-13-2300-port-arena",
+   "title": "תמיר גרינברג",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%aa%d7%9e%d7%99%d7%a8-%d7%92%d7%a8%d7%99%d7%a0%d7%91%d7%a8%d7%92-%d7%95%d7%90%d7%95%d7%a8%d7%97%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "Friday Night Late Night Jammmmmmm",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_TAMIR-768x576.jpg"
+  },
+  {
+   "id": "2026-11-13-2330-jasper-08-agamim",
+   "title": "Jam Session במלון אגמים",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/news/%d7%92%d7%90%d7%9e%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "כניסה חופשית\nמ-23:30 ועד השעות הקטנות של הלילה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/באנרים-לוח-הופעות-768x142.png"
+  },
+  {
+   "id": "2026-11-14-1100-red-note-club",
+   "title": "יוסי פיין וחברים",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%99%d7%95%d7%a1%d7%99-%d7%a4%d7%99%d7%99%d7%9f-%d7%95%d7%97%d7%91%d7%a8%d7%99%d7%9d/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "השקת אלבום\nמנגנים \"גם וגם\" - גרוב פנאקי רב-תרבותי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_YOSSI-768x576.jpg"
+  },
+  {
+   "id": "2026-11-14-1145-the-future",
+   "title": "רביעיית סתיו אחאי",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/stav/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "\"תקווה ונחמה\" השירים שהפכו לפסקול של חיינו בפרשנות חדשה",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_STAV-1-768x510.jpg"
+  },
+  {
+   "id": "2026-11-14-1245-red-note-club",
+   "title": "פלד מארח את עלמה גוב ועדן דרסו",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a4%d7%9c%d7%93-%d7%9e%d7%90%d7%a8%d7%97-%d7%90%d7%aa-%d7%a2%d7%9c%d7%9e%d7%94-%d7%92%d7%95%d7%91-%d7%95%d7%a2%d7%93%d7%9f-%d7%93%d7%a8%d7%a1%d7%95/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מיוחד לפסטיבל\nמסיבת שבת של ביטים, דיסטורשן, ראפ ואנרגיה מתפרצת",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_PELED-768x576.jpg"
+  },
+  {
+   "id": "2026-11-14-1345-the-present",
+   "title": "רביעיית קטיה טובול",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%a8%d7%91%d7%99%d7%a2%d7%99%d7%99%d7%aa-%d7%a7%d7%98%d7%99%d7%94-%d7%98%d7%95%d7%91%d7%95%d7%9c/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "הפקת מקור\nמחווה לאלבום הרוחני \"Africa\" של Pharoah Sanders משנת 1987",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/08/RSJF26s_1200x900_KATYA-768x576.jpg"
+  },
+  {
+   "id": "2026-11-14-1415-port-arena",
+   "title": "בלקן ביט בוקס מארחים את קרולינה וטדי נגוסה",
+   "titleLocal": null,
+   "url": "https://redseajazz.co.il/artist/%d7%91%d7%9c%d7%a7%d7%9f-%d7%91%d7%99%d7%98-%d7%91%d7%95%d7%a7%d7%a1-%d7%9e%d7%90%d7%a8%d7%97%d7%99%d7%9d-%d7%90%d7%aa-%d7%98%d7%93%d7%99-%d7%a0%d7%92%d7%95%d7%a1%d7%94-%d7%95%d7%a7%d7%a8%d7%95%d7%9c/",
+   "genre": "music",
+   "categories": [],
+   "blurb": "חגיגת סיום\nמופע נעילה מפלצתי וחד-פעמי",
+   "durationMin": null,
+   "imageUrl": "https://redseajazz.co.il/wp-content/uploads/sites/4/2026/09/RSJF26s_1200x900_BALKAN-768x510.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "2026-11-11-1830-red-note-club/2026-11-11/18:30",
+   "eventId": "2026-11-11-1830-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-11",
+   "start": "18:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN19/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-1845-the-future/2026-11-11/18:45",
+   "eventId": "2026-11-11-1845-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-11",
+   "start": "18:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF24/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2000-port-arena/2026-11-11/20:00",
+   "eventId": "2026-11-11-2000-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-11",
+   "start": "20:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP21/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2030-the-present/2026-11-11/20:30",
+   "eventId": "2026-11-11-2030-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-11",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP01/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2130-red-note-club/2026-11-11/21:30",
+   "eventId": "2026-11-11-2130-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-11",
+   "start": "21:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN20/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2145-the-future/2026-11-11/21:45",
+   "eventId": "2026-11-11-2145-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-11",
+   "start": "21:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF25/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2230-jasper-08-agamim/2026-11-11/22:30",
+   "eventId": "2026-11-11-2230-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-11",
+   "start": "22:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2230-port-arena/2026-11-11/22:30",
+   "eventId": "2026-11-11-2230-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-11",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP22/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2245-the-present/2026-11-11/22:45",
+   "eventId": "2026-11-11-2245-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-11",
+   "start": "22:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP02/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-11-2330-jasper-08-agamim/2026-11-11/23:30",
+   "eventId": "2026-11-11-2330-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-11",
+   "start": "23:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1500-red-note-club/2026-11-12/15:00",
+   "eventId": "2026-11-12-1500-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-12",
+   "start": "15:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN21/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1515-the-future/2026-11-12/15:15",
+   "eventId": "2026-11-12-1515-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-12",
+   "start": "15:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF26/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1615-the-present/2026-11-12/16:15",
+   "eventId": "2026-11-12-1615-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-12",
+   "start": "16:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP03/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1615-port-arena/2026-11-12/16:15",
+   "eventId": "2026-11-12-1615-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-12",
+   "start": "16:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP23/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1715-plaza/2026-11-12/17:15",
+   "eventId": "2026-11-12-1715-plaza",
+   "venueId": "eilat-port",
+   "roomId": "plaza",
+   "date": "2026-11-12",
+   "start": "17:15",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1745-red-note-club/2026-11-12/17:45",
+   "eventId": "2026-11-12-1745-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-12",
+   "start": "17:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN22/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1815-the-future/2026-11-12/18:15",
+   "eventId": "2026-11-12-1815-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-12",
+   "start": "18:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF27/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1915-the-present/2026-11-12/19:15",
+   "eventId": "2026-11-12-1915-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-12",
+   "start": "19:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP04/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-1915-port-arena/2026-11-12/19:15",
+   "eventId": "2026-11-12-1915-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-12",
+   "start": "19:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP24/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2045-red-note-club/2026-11-12/20:45",
+   "eventId": "2026-11-12-2045-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-12",
+   "start": "20:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN23/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2100-the-future/2026-11-12/21:00",
+   "eventId": "2026-11-12-2100-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-12",
+   "start": "21:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF28/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2215-port-arena/2026-11-12/22:15",
+   "eventId": "2026-11-12-2215-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-12",
+   "start": "22:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP25/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2230-the-present/2026-11-12/22:30",
+   "eventId": "2026-11-12-2230-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-12",
+   "start": "22:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP05/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2230-jasper-08-agamim/2026-11-12/22:30",
+   "eventId": "2026-11-12-2230-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-12",
+   "start": "22:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-12-2330-jasper-08-agamim/2026-11-12/23:30",
+   "eventId": "2026-11-12-2330-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-12",
+   "start": "23:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1400-the-future/2026-11-13/14:00",
+   "eventId": "2026-11-13-1400-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-13",
+   "start": "14:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF29/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1400-red-note-club/2026-11-13/14:00",
+   "eventId": "2026-11-13-1400-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-13",
+   "start": "14:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN24/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1500-port-arena/2026-11-13/15:00",
+   "eventId": "2026-11-13-1500-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-13",
+   "start": "15:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP26/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1515-the-present/2026-11-13/15:15",
+   "eventId": "2026-11-13-1515-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-13",
+   "start": "15:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP06/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1630-red-note-club/2026-11-13/16:30",
+   "eventId": "2026-11-13-1630-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-13",
+   "start": "16:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN25/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1645-the-future/2026-11-13/16:45",
+   "eventId": "2026-11-13-1645-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-13",
+   "start": "16:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF30/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1730-the-present/2026-11-13/17:30",
+   "eventId": "2026-11-13-1730-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-13",
+   "start": "17:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP07/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1845-red-note-club/2026-11-13/18:45",
+   "eventId": "2026-11-13-1845-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-13",
+   "start": "18:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN26/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-1900-the-future/2026-11-13/19:00",
+   "eventId": "2026-11-13-1900-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-13",
+   "start": "19:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF31/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2015-port-arena/2026-11-13/20:15",
+   "eventId": "2026-11-13-2015-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-13",
+   "start": "20:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP27/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2030-the-present/2026-11-13/20:30",
+   "eventId": "2026-11-13-2030-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-13",
+   "start": "20:30",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP08/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2145-the-future/2026-11-13/21:45",
+   "eventId": "2026-11-13-2145-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-13",
+   "start": "21:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF32/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2145-red-note-club/2026-11-13/21:45",
+   "eventId": "2026-11-13-2145-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-13",
+   "start": "21:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN27/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2230-jasper-08-agamim/2026-11-13/22:30",
+   "eventId": "2026-11-13-2230-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-13",
+   "start": "22:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2300-port-arena/2026-11-13/23:00",
+   "eventId": "2026-11-13-2300-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-13",
+   "start": "23:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP28/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-13-2330-jasper-08-agamim/2026-11-13/23:30",
+   "eventId": "2026-11-13-2330-jasper-08-agamim",
+   "venueId": "jasper-08-agamim",
+   "roomId": null,
+   "date": "2026-11-13",
+   "start": "23:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-14-1100-red-note-club/2026-11-14/11:00",
+   "eventId": "2026-11-14-1100-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-14",
+   "start": "11:00",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN28/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-14-1145-the-future/2026-11-14/11:45",
+   "eventId": "2026-11-14-1145-the-future",
+   "venueId": "eilat-port",
+   "roomId": "the-future",
+   "date": "2026-11-14",
+   "start": "11:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDF33/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-14-1245-red-note-club/2026-11-14/12:45",
+   "eventId": "2026-11-14-1245-red-note-club",
+   "venueId": "eilat-port",
+   "roomId": "red-note-club",
+   "date": "2026-11-14",
+   "start": "12:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MRN29/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-14-1345-the-present/2026-11-14/13:45",
+   "eventId": "2026-11-14-1345-the-present",
+   "venueId": "eilat-port",
+   "roomId": "the-present",
+   "date": "2026-11-14",
+   "start": "13:45",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MDP09/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "2026-11-14-1415-port-arena/2026-11-14/14:15",
+   "eventId": "2026-11-14-1415-port-arena",
+   "venueId": "eilat-port",
+   "roomId": "port-arena",
+   "date": "2026-11-14",
+   "start": "14:15",
+   "ticketUrl": "https://www.ticketmaster.co.il/event/MEP29/ALL/iw",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "festival-site"
+  ],
+  "performances": [
+   "festival-site"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "festival-site": {
+    "kind": "fetched",
+    "path": "data/festivals/red-sea-jazz/2026/festival-site",
+    "fetchedAt": "2026-10-02T18:15:15Z",
+    "fetcher": "scraper/festivals/red_sea_jazz/sources/festival-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/red_sea_jazz/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "festival-site"
+   ],
+   "events.categories": [
+    "festival-site"
+   ],
+   "events.durationMin": [
+    "festival-site"
+   ],
+   "events.genre": [
+    "festival-site"
+   ],
+   "events.imageUrl": [
+    "festival-site"
+   ],
+   "events.title": [
+    "festival-site"
+   ],
+   "events.titleLocal": [
+    "festival-site"
+   ],
+   "events.url": [
+    "festival-site"
+   ],
+   "performances.date": [
+    "festival-site"
+   ],
+   "performances.eventId": [
+    "festival-site"
+   ],
+   "performances.free": [
+    "festival-site"
+   ],
+   "performances.roomId": [
+    "festival-site"
+   ],
+   "performances.start": [
+    "festival-site"
+   ],
+   "performances.ticketUrl": [
+    "festival-site"
+   ],
+   "performances.venueId": [
+    "festival-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

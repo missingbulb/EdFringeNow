@@ -1,0 +1,2549 @@
+{
+ "nearM": 1500,
+ "anchors": [
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b6b",
+   "lat": 35.68363,
+   "lng": -105.94613
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b6c",
+   "lat": 35.67304,
+   "lng": -105.93694
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b6e",
+   "lat": 35.68312,
+   "lng": -105.9492
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b6f",
+   "lat": 35.68503,
+   "lng": -105.94647
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b70",
+   "lat": 35.68791,
+   "lng": -105.94106
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b76",
+   "lat": 35.68223,
+   "lng": -105.94492
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b78",
+   "lat": 35.68252,
+   "lng": -105.94967
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b7c",
+   "lat": 35.68675,
+   "lng": -105.94101
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "69d6a79ebcb03e3c86214b7d",
+   "lat": 35.68831,
+   "lng": -105.93997
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "6aa41cec204a1a7614851ac7",
+   "lat": 35.65508,
+   "lng": -105.97578
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "6aa41f123f08d87d160ff353",
+   "lat": 35.68134,
+   "lng": -105.94981
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "6aa41f737da35a420b6ef4a6",
+   "lat": 35.69878,
+   "lng": -105.95407
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "6ab1954bf841b0180a6f5713",
+   "lat": 35.67365,
+   "lng": -105.93813
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "venue": "6ab57d8396ab82b134a591c0",
+   "lat": 35.68346,
+   "lng": -105.94925
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10738069467",
+   "lat": 35.686517,
+   "lng": -105.938994,
+   "tags": {
+    "name": "Mac Santa Fe",
+    "amenity": "restaurant",
+    "cuisine": "macaroni;mac_and_cheese",
+    "addr:housenumber": "115",
+    "addr:street": "East Water Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/10826145442",
+   "lat": 35.68653,
+   "lng": -105.938984,
+   "tags": {
+    "name": "Sushi 8",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "66",
+    "addr:street": "East San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11011505263",
+   "lat": 35.682027,
+   "lng": -105.964101,
+   "tags": {
+    "name": "The Kitchen Table Commercial Kitchen",
+    "amenity": "restaurant",
+    "addr:housenumber": "313",
+    "addr:street": "Camino Alire"
+   }
+  },
+  {
+   "id": "node/11029367296",
+   "lat": 35.683452,
+   "lng": -105.948663,
+   "tags": {
+    "name": "Crepas-Oh! The Crepe House",
+    "amenity": "restaurant",
+    "cuisine": "crepe",
+    "addr:housenumber": "500",
+    "addr:street": "Market Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11083296193",
+   "lat": 35.686264,
+   "lng": -105.93999,
+   "tags": {
+    "name": "Market Steer",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "addr:housenumber": "210",
+    "addr:street": "Don Gaspar Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11270781149",
+   "lat": 35.688632,
+   "lng": -105.94035,
+   "tags": {
+    "name": "Fiesta Oaxaca",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://fiestaoaxacasf.com",
+    "opening_hours": "Mo-Sa 11:30-20:00",
+    "addr:housenumber": "135",
+    "addr:street": "West Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11270781152",
+   "lat": 35.688569,
+   "lng": -105.940179,
+   "tags": {
+    "name": "Flamenco Cabaret",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "135",
+    "addr:street": "West Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11273364632",
+   "lat": 35.688991,
+   "lng": -105.937857,
+   "tags": {
+    "name": "La Boca",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "http://www.labocasantafe.com/",
+    "addr:housenumber": "125",
+    "addr:street": "West Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/11273405329",
+   "lat": 35.688081,
+   "lng": -105.937251,
+   "tags": {
+    "name": "Inn of the Anasazi",
+    "tourism": "hotel",
+    "addr:housenumber": "113",
+    "addr:street": "Washington Avenue"
+   }
+  },
+  {
+   "id": "node/11755492902",
+   "lat": 35.657425,
+   "lng": -105.96061,
+   "tags": {
+    "name": "Golden Land Cafe",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "720",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "node/12069208904",
+   "lat": 35.682087,
+   "lng": -105.943879,
+   "tags": {
+    "name": "The Parador",
+    "tourism": "guest_house",
+    "addr:housenumber": "220",
+    "addr:street": "West Manhattan Avenue"
+   }
+  },
+  {
+   "id": "node/12162448746",
+   "lat": 35.661728,
+   "lng": -105.962453,
+   "tags": {
+    "name": "Unit B",
+    "amenity": "restaurant",
+    "addr:housenumber": "821",
+    "addr:street": "West San Mateo Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/12162448777",
+   "lat": 35.664829,
+   "lng": -105.973753,
+   "tags": {
+    "name": "Tokyo Cafe",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "addr:housenumber": "1847",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "node/12409494734",
+   "lat": 35.662958,
+   "lng": -105.965157,
+   "tags": {
+    "name": "Blue Lotus",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "1807",
+    "addr:street": "2nd Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/12578750224",
+   "lat": 35.658356,
+   "lng": -105.974287,
+   "tags": {
+    "name": "Joy's Sushi Bar",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "opening_hours": "Mo-Sa 11:00-20:00",
+    "addr:housenumber": "1644",
+    "addr:street": "Saint Michaels Drive",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/13253073335",
+   "lat": 35.654836,
+   "lng": -105.976304,
+   "tags": {
+    "name": "Tender Fire Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.tenderfirekitchen.com/",
+    "addr:housenumber": "1025",
+    "addr:street": "Midtown Calle Central",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/13370301240",
+   "lat": 35.683049,
+   "lng": -105.948277,
+   "tags": {
+    "name": "Nuckoll's BBQ",
+    "amenity": "restaurant",
+    "cuisine": "barbecue"
+   }
+  },
+  {
+   "id": "node/13824897896",
+   "lat": 35.6891,
+   "lng": -105.936587,
+   "tags": {
+    "name": "Versos",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "105",
+    "addr:street": "East Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/14121057565",
+   "lat": 35.656969,
+   "lng": -105.98776,
+   "tags": {
+    "name": "Mystic Mesa",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://themysticsantafe.com/cafe-and-bar/",
+    "opening_hours": "We,Th 16:00-23:00, Fr,Sa 16:00-24:00, Su-Tu off",
+    "addr:housenumber": "2810",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87507"
+   }
+  },
+  {
+   "id": "node/2115061977",
+   "lat": 35.688126,
+   "lng": -105.940442,
+   "tags": {
+    "name": "Palace Prime",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.palacesantafe.com/",
+    "addr:housenumber": "142",
+    "addr:street": "West Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/3163223005",
+   "lat": 35.687444,
+   "lng": -105.939167,
+   "tags": {
+    "name": "Plaza Cafe",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://www.plazacafedowntown.com/",
+    "opening_hours": "Mo-Su 07:00-21:00",
+    "addr:housenumber": "54",
+    "addr:street": "Lincoln Avenue"
+   }
+  },
+  {
+   "id": "node/3195181745",
+   "lat": 35.687534,
+   "lng": -105.941036,
+   "tags": {
+    "name": "Tia Sophia's Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "Mo-Sa 07:00-14:00; Su 08:00-13:00",
+    "wikidata": "Q135910261",
+    "addr:housenumber": "210",
+    "addr:street": "West San Francisco Street"
+   }
+  },
+  {
+   "id": "node/4032210935",
+   "lat": 35.686594,
+   "lng": -105.939652,
+   "tags": {
+    "name": "Cafe Pasqual's",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "wikidata": "Q120068946",
+    "addr:housenumber": "121",
+    "addr:street": "Don Gaspar Avenue"
+   }
+  },
+  {
+   "id": "node/4102146035",
+   "lat": 35.665654,
+   "lng": -105.970978,
+   "tags": {
+    "name": "Cottonwood Court Motel",
+    "tourism": "motel",
+    "addr:housenumber": "1742",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4102146040",
+   "lat": 35.679833,
+   "lng": -105.948954,
+   "tags": {
+    "name": "Santa Fe Sage Inn",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "node/4102146044",
+   "lat": 35.682477,
+   "lng": -105.945317,
+   "tags": {
+    "name": "Santa Fe Motel and Inn",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "node/4102146048",
+   "lat": 35.683707,
+   "lng": -105.938548,
+   "tags": {
+    "name": "Inn of the Five Graces",
+    "tourism": "hotel",
+    "wikidata": "Q111393494"
+   }
+  },
+  {
+   "id": "node/4102146050",
+   "lat": 35.688296,
+   "lng": -105.937126,
+   "tags": {
+    "name": "Hotel Chimayo de Santa Fe",
+    "tourism": "hotel",
+    "website": "https://www.hotelchimayo.com/",
+    "addr:housenumber": "125",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4102146052",
+   "lat": 35.687104,
+   "lng": -105.9336,
+   "tags": {
+    "name": "The Downtown Motel",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "node/4102146053",
+   "lat": 35.6848,
+   "lng": -105.932881,
+   "tags": {
+    "name": "Inn on the Alameda",
+    "tourism": "hotel",
+    "website": "https://www.innonthealameda.com/",
+    "addr:housenumber": "303",
+    "addr:street": "East Alameda Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4215678089",
+   "lat": 35.673247,
+   "lng": -105.949422,
+   "tags": {
+    "name": "Pyramid Cafe",
+    "name:en": "Pyramid Cafe",
+    "amenity": "restaurant",
+    "cuisine": "greek;mediterranean;tunisian",
+    "website": "https://www.pyramidcafesf.com/",
+    "opening_hours": "Mo-Sa 11:00-14:30, 16:00-20:30",
+    "addr:housenumber": "505",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4251906189",
+   "lat": 35.658659,
+   "lng": -105.974628,
+   "tags": {
+    "name": "Annapurna’s World Vegetarian Cafe",
+    "amenity": "restaurant",
+    "addr:housenumber": "1620",
+    "addr:street": "Saint Michaels Drive",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4571036859",
+   "lat": 35.68648,
+   "lng": -105.9393,
+   "tags": {
+    "name": "The Wrap",
+    "amenity": "restaurant",
+    "cuisine": "sandwich",
+    "addr:housenumber": "113",
+    "addr:street": "East Water Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4571036863",
+   "lat": 35.687192,
+   "lng": -105.939483,
+   "tags": {
+    "name": "San Francisco Street Bar & Grill",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "50",
+    "addr:street": "East San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4576174032",
+   "lat": 35.680202,
+   "lng": -105.924681,
+   "tags": {
+    "name": "El Farol Restaurant & Cantina",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "https://www.elfarolsantafe.com/",
+    "opening_hours": "closed",
+    "addr:housenumber": "808",
+    "addr:street": "Canyon Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4576222457",
+   "lat": 35.680564,
+   "lng": -105.925368,
+   "tags": {
+    "name": "Geronimo",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "website": "https://www.geronimorestaurant.com/",
+    "opening_hours": "17:30-21:30",
+    "addr:housenumber": "724",
+    "addr:street": "Canyon Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4578410213",
+   "lat": 35.685125,
+   "lng": -105.933166,
+   "tags": {
+    "name": "Tulsi",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "addr:housenumber": "839",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4578436726",
+   "lat": 35.684282,
+   "lng": -105.937289,
+   "tags": {
+    "name": "El Sendero Inn",
+    "tourism": "hotel",
+    "addr:housenumber": "311",
+    "addr:street": "Old Santa Fe Trail",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4578436727",
+   "lat": 35.684453,
+   "lng": -105.937424,
+   "tags": {
+    "name": "Zeng Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "311",
+    "addr:street": "Old Santa Fe Trail",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4582137023",
+   "lat": 35.687332,
+   "lng": -105.939214,
+   "tags": {
+    "name": "Thunderbird Bar & Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican;american",
+    "website": "https://www.thunderbirdsantafe.com/",
+    "opening_hours": "Mo-Th, Su 11:30-21:00; Fr, Sa 11:30-22:00",
+    "addr:housenumber": "50",
+    "addr:street": "Lincoln Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4582144484",
+   "lat": 35.687139,
+   "lng": -105.940208,
+   "tags": {
+    "name": "La Fogata Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "http://places.singleplatform.com/la-fogata-grill-3/menu?ref=google",
+    "addr:housenumber": "112",
+    "addr:street": "West San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4582201492",
+   "lat": 35.688227,
+   "lng": -105.942731,
+   "tags": {
+    "name": "Il Vicino Wood Oven Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "http://ilvicino.com/santa-fe-nm/",
+    "opening_hours": "Su-Th 11:00-22:00; Fr-Sa 11:00-23:00",
+    "addr:housenumber": "321",
+    "addr:street": "West San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4673538625",
+   "lat": 35.672783,
+   "lng": -105.952063,
+   "tags": {
+    "name": "Empire Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "522",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4691581634",
+   "lat": 35.65828,
+   "lng": -105.961301,
+   "tags": {
+    "name": "Chow's Asian Bistro",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://mychows.com/",
+    "addr:housenumber": "720",
+    "addr:street": "Saint Michaels Drive",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4691581635",
+   "lat": 35.658999,
+   "lng": -105.961171,
+   "tags": {
+    "name": "Farafina",
+    "amenity": "restaurant",
+    "cuisine": "african;caribbean",
+    "opening_hours": "Tu-Su 16:00-23:00",
+    "addr:housenumber": "730",
+    "addr:street": "Saint Michaels Drive",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4691618623",
+   "lat": 35.662763,
+   "lng": -105.965066,
+   "tags": {
+    "name": "Back Roads Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://backroadpizza.com/menus/",
+    "opening_hours": "11:30-21:00; Fr,Sa 11:30-22:00",
+    "addr:housenumber": "1807",
+    "addr:street": "2nd Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4700353320",
+   "lat": 35.690202,
+   "lng": -105.936439,
+   "tags": {
+    "name": "Santacafé",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://santacafe.com/",
+    "wikidata": "Q17030608",
+    "addr:housenumber": "231",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4702458223",
+   "lat": 35.689176,
+   "lng": -105.936644,
+   "tags": {
+    "name": "Izmi Sushi",
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "website": "http://www.izmisantafe.com/",
+    "addr:housenumber": "105",
+    "addr:street": "East Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/472503289",
+   "lat": 35.688,
+   "lng": -105.944032,
+   "tags": {
+    "name": "Casa Chimayo Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "409",
+    "addr:street": "West Water Street"
+   }
+  },
+  {
+   "id": "node/4742340921",
+   "lat": 35.689568,
+   "lng": -105.943582,
+   "tags": {
+    "name": "Pranzo",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "addr:housenumber": "321",
+    "addr:street": "Johnson Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743015984",
+   "lat": 35.689096,
+   "lng": -105.942618,
+   "tags": {
+    "name": "TerraCotta Wine Bistro",
+    "amenity": "restaurant",
+    "cuisine": "wine",
+    "website": "https://terracottawinebistro.com/",
+    "opening_hours": "Mo-Sa 11:30-21:00; Su 16:00-21:00",
+    "addr:housenumber": "304",
+    "addr:street": "Johnson Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743015987",
+   "lat": 35.688883,
+   "lng": -105.94196,
+   "tags": {
+    "name": "Old House Restaurant",
+    "amenity": "restaurant",
+    "website": "https://www.eldoradohotel.com/old-house",
+    "opening_hours": "Mo 06:30-14:00; Tu-Fr 06:30-14:00,17:30-22:00; Sa 06:30-12:00,17:30-22:00; Su 06:30-12:00",
+    "addr:housenumber": "309",
+    "addr:street": "West San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743112840",
+   "lat": 35.685431,
+   "lng": -105.939751,
+   "tags": {
+    "name": "Alkemē",
+    "amenity": "restaurant",
+    "cuisine": "taiwanese;vietnamese",
+    "website": "https://alkeme-santafe.com",
+    "opening_hours": "Tu-Sa 17:00-20:45",
+    "wikidata": "Q124359306",
+    "addr:housenumber": "227",
+    "addr:street": "Don Gaspar Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743112847",
+   "lat": 35.686381,
+   "lng": -105.940029,
+   "tags": {
+    "name": "Tabla de los Santos",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "http://tablasantafe.com/",
+    "addr:housenumber": "210",
+    "addr:street": "Don Gaspar Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743141240",
+   "lat": 35.685774,
+   "lng": -105.938919,
+   "tags": {
+    "name": "India Palace",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "http://places.singleplatform.com/india-palace-15/menu",
+    "opening_hours": "Mo-Su 11:00-14:30, 17:00-22:00",
+    "addr:housenumber": "227",
+    "addr:street": "Don Gaspar Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743141242",
+   "lat": 35.688304,
+   "lng": -105.93716,
+   "tags": {
+    "name": "Estevan",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.estevanrestaurante.com/",
+    "addr:housenumber": "125",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743191470",
+   "lat": 35.689532,
+   "lng": -105.93797,
+   "tags": {
+    "name": "Tres Colores",
+    "amenity": "restaurant",
+    "cuisine": "regional;mexican",
+    "website": "http://facebook.com/Tres-Colores-992159257485682/",
+    "opening_hours": "Mo-Sa 08:30-19:00; Su 11:00-19:00",
+    "addr:housenumber": "101",
+    "addr:street": "West Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743191471",
+   "lat": 35.689358,
+   "lng": -105.937461,
+   "tags": {
+    "name": "Horno",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "95",
+    "addr:street": "West Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743198077",
+   "lat": 35.689241,
+   "lng": -105.937886,
+   "tags": {
+    "name": "La Boca",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "http://www.labocasantafe.com/",
+    "addr:housenumber": "72",
+    "addr:street": "West Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743367996",
+   "lat": 35.686605,
+   "lng": -105.940539,
+   "tags": {
+    "name": "Coyote Cafe & Rooftop Cantina",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://coyotecafe.com",
+    "wikidata": "Q133862591",
+    "addr:housenumber": "132",
+    "addr:street": "West Water Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4743376394",
+   "lat": 35.687954,
+   "lng": -105.937387,
+   "tags": {
+    "name": "Burrito Company",
+    "amenity": "restaurant",
+    "cuisine": "burrito;mexican",
+    "website": "https://burritocompanysf.com",
+    "opening_hours": "Mo-Fr 07:30-16:00; Sa,Su 08:00-16:30",
+    "wikidata": "Q135910842",
+    "addr:housenumber": "111",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4773385435",
+   "lat": 35.673222,
+   "lng": -105.949268,
+   "tags": {
+    "name": "Saigon Cafe",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "http://saigoncafe-sf.com",
+    "opening_hours": "Mo-Fr 11:00-20:00",
+    "addr:housenumber": "501",
+    "addr:street": "Cordova Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/4773515961",
+   "lat": 35.673107,
+   "lng": -105.948789,
+   "tags": {
+    "name": "Annapurna's",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "opening_hours": "Mo-Sa 07:00-17:00",
+    "addr:housenumber": "1100",
+    "addr:street": "Don Diego Avenue",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4773516145",
+   "lat": 35.673108,
+   "lng": -105.950644,
+   "tags": {
+    "name": "Mariscos La Playa",
+    "amenity": "restaurant",
+    "cuisine": "mexican;seafood",
+    "website": "https://mariscoslaplayarestaurant.com/",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "537",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4773847541",
+   "lat": 35.6742,
+   "lng": -105.952391,
+   "tags": {
+    "name": "Paper Dosa",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://www.paper-dosa.com/",
+    "addr:housenumber": "551",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/4988257544",
+   "lat": 35.6726,
+   "lng": -105.950881,
+   "tags": {
+    "name": "The New Baking Company",
+    "amenity": "restaurant",
+    "cuisine": "american;mexican;cafe;bakery;burrito",
+    "website": "http://thenewbakingco.com",
+    "opening_hours": "Mo-Su 07:00-14:30",
+    "addr:housenumber": "504",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/5094977882",
+   "lat": 35.688088,
+   "lng": -105.940805,
+   "tags": {
+    "name": "Los Magueyes Mexican Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "http://los-magueyes.letseat.at/",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa-Su 11:00-22:00",
+    "addr:housenumber": "28",
+    "addr:street": "Burro Alley",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5099021234",
+   "lat": 35.656547,
+   "lng": -105.990046,
+   "tags": {
+    "name": "Mariscos Costa Azul",
+    "amenity": "restaurant",
+    "cuisine": "new_mexican;seafood;mexican",
+    "website": "http://www.mariscoscostaazul.com/",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "2875",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87507"
+   }
+  },
+  {
+   "id": "node/5106056910",
+   "lat": 35.692236,
+   "lng": -105.950146,
+   "tags": {
+    "name": "Atrisco Cafe & Bar",
+    "amenity": "restaurant",
+    "cuisine": "mexican;new_mexican",
+    "website": "https://www.atriscocafe.com/",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa-Su 08:00-21:00",
+    "addr:housenumber": "193",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5106059787",
+   "lat": 35.695063,
+   "lng": -105.951881,
+   "tags": {
+    "name": "Jinja Bar & Bistro",
+    "amenity": "restaurant",
+    "cuisine": "asian;fusion",
+    "website": "https://www.jinjabistro.com/",
+    "opening_hours": "Mo-Fr 11:00-22:00; Sa-Su 12:00-22:00",
+    "addr:housenumber": "510",
+    "addr:street": "North Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5106059788",
+   "lat": 35.694801,
+   "lng": -105.950869,
+   "tags": {
+    "name": "Crackin' Crab",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "addr:housenumber": "604",
+    "addr:street": "North Guadalupe Street"
+   }
+  },
+  {
+   "id": "node/5106085543",
+   "lat": 35.692365,
+   "lng": -105.950921,
+   "tags": {
+    "name": "Sabor Peruano",
+    "amenity": "restaurant",
+    "cuisine": "peruvian",
+    "website": "https://www.saborperuanosf.com/",
+    "addr:housenumber": "163",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5106100393",
+   "lat": 35.692921,
+   "lng": -105.949833,
+   "tags": {
+    "name": "Pizza Etc. (moved)",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pizzaetc.com/",
+    "opening_hours": "Mo-Su 11:00-20:00",
+    "addr:housenumber": "151",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5115613993",
+   "lat": 35.68393,
+   "lng": -105.946419,
+   "tags": {
+    "name": "Tomasita’s",
+    "amenity": "restaurant",
+    "cuisine": "regional;new_mexican;mexican",
+    "website": "https://tomasitas.com",
+    "wikidata": "Q135969608",
+    "addr:housenumber": "500",
+    "addr:street": "South Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5383042754",
+   "lat": 35.658574,
+   "lng": -105.974593,
+   "tags": {
+    "name": "Anthony’s Grill",
+    "amenity": "restaurant",
+    "website": "https://agniayurveda.com/",
+    "opening_hours": "Mo-Su 11:00-20:00",
+    "addr:housenumber": "1622",
+    "addr:street": "Saint Michaels Drive",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/5585491375",
+   "lat": 35.683961,
+   "lng": -105.943376,
+   "tags": {
+    "name": "Pizza Centro",
+    "amenity": "restaurant",
+    "cuisine": "pizza;italian",
+    "website": "https://www.pizzacentronys.com/downtown-menu.html",
+    "opening_hours": "Mo-Su 11:30-20:30",
+    "addr:housenumber": "418",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5585491376",
+   "lat": 35.684031,
+   "lng": -105.943695,
+   "tags": {
+    "name": "Cleopatra Cafe",
+    "amenity": "restaurant",
+    "cuisine": "greek;mediterranean;gyros",
+    "website": "https://www.cleopatrasantafe.com/",
+    "opening_hours": "11:00-20:00",
+    "addr:housenumber": "418",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5585499427",
+   "lat": 35.683855,
+   "lng": -105.943483,
+   "tags": {
+    "name": "Yin Yang Buffet",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "https://www.santafeyinyang.com/",
+    "opening_hours": "Mo-Th 11:30-20:30; Fr,Sa 11:30-21:00; Su 12:00-20:00",
+    "addr:housenumber": "418",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/5857551272",
+   "lat": 35.688766,
+   "lng": -105.937662,
+   "tags": {
+    "name": "The Bull Ring",
+    "amenity": "restaurant",
+    "cuisine": "steak_house",
+    "addr:housenumber": "150",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6410917556",
+   "lat": 35.689499,
+   "lng": -105.943948,
+   "tags": {
+    "name": "Pizzeria & Trattoria da Lino",
+    "amenity": "restaurant",
+    "cuisine": "italian;pizza;gelato;beer;burger",
+    "website": "https://pizzeriadalino.square.site/",
+    "opening_hours": "Mo-Sa 11:00-22:00",
+    "addr:housenumber": "204",
+    "addr:street": "North Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6413025181",
+   "lat": 35.689103,
+   "lng": -105.959351,
+   "tags": {
+    "name": "Valentina's",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "945",
+    "addr:street": "West Alameda Street"
+   }
+  },
+  {
+   "id": "node/6485147218",
+   "lat": 35.698999,
+   "lng": -105.953664,
+   "tags": {
+    "name": "Hilltop Bar & Grill",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6486827366",
+   "lat": 35.6847,
+   "lng": -105.945609,
+   "tags": {
+    "name": "Paloma",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "401",
+    "addr:street": "South Guadalupe Street"
+   }
+  },
+  {
+   "id": "node/6486827367",
+   "lat": 35.685819,
+   "lng": -105.944975,
+   "tags": {
+    "name": "Cowgirl",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "website": "https://cowgirlsantafe.com/",
+    "opening_hours": "Mo-Th, Su 11:30-21:00; Fr, Sa 11:30-22:00",
+    "addr:housenumber": "319",
+    "addr:street": "South Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6516835696",
+   "lat": 35.686062,
+   "lng": -105.945021,
+   "tags": {
+    "name": "Kohnami Japanese Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6516913937",
+   "lat": 35.683342,
+   "lng": -105.938258,
+   "tags": {
+    "name": "Raaga-Go Indian Takeout",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6534332510",
+   "lat": 35.688053,
+   "lng": -105.943603,
+   "tags": {
+    "name": "Dinner For Two",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6534344018",
+   "lat": 35.68792,
+   "lng": -105.945252,
+   "tags": {
+    "name": "Mille French Cafe & Creperie",
+    "amenity": "restaurant",
+    "cuisine": "french",
+    "opening_hours": "We-Su 07:00-15:00",
+    "addr:housenumber": "451",
+    "addr:street": "West Alameda Street"
+   }
+  },
+  {
+   "id": "node/6534344020",
+   "lat": 35.688186,
+   "lng": -105.942481,
+   "tags": {
+    "name": "Agave Lounge",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6536091406",
+   "lat": 35.690822,
+   "lng": -105.943781,
+   "tags": {
+    "name": "New York on Catron",
+    "amenity": "restaurant",
+    "cuisine": "bagel;coffee_shop;deli;regional"
+   }
+  },
+  {
+   "id": "node/6577793262",
+   "lat": 35.68756,
+   "lng": -105.940341,
+   "tags": {
+    "name": "Apothecary",
+    "amenity": "restaurant",
+    "addr:housenumber": "133",
+    "addr:street": "West San Francisco Street"
+   }
+  },
+  {
+   "id": "node/6577812343",
+   "lat": 35.686451,
+   "lng": -105.941162,
+   "tags": {
+    "name": "El Callejon",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.elcallejonsantafe.com",
+    "addr:housenumber": "208",
+    "addr:street": "Galisteo Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6577834395",
+   "lat": 35.687052,
+   "lng": -105.935312,
+   "tags": {
+    "name": "Palacio Cafe",
+    "amenity": "restaurant",
+    "cuisine": "sandwich",
+    "website": "http://www.palaciosantafe.com/",
+    "opening_hours": "07:30-16:00; Tu off",
+    "addr:housenumber": "209",
+    "addr:street": "East Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6577834397",
+   "lat": 35.687454,
+   "lng": -105.936991,
+   "tags": {
+    "name": "The Shed",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "opening_hours": "Mo-Sa 11:00-14:30,17:00-21:00",
+    "wikidata": "Q120068947",
+    "addr:housenumber": "113",
+    "addr:street": "East Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6577834404",
+   "lat": 35.690117,
+   "lng": -105.937175,
+   "tags": {
+    "name": "Osteria D'Assisi",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/6604103734",
+   "lat": 35.689155,
+   "lng": -105.958954,
+   "tags": {
+    "name": "Phở Kim",
+    "name:en": "Pho Kim",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "919",
+    "addr:street": "West Alameda Street"
+   }
+  },
+  {
+   "id": "node/6604103737",
+   "lat": 35.689166,
+   "lng": -105.959049,
+   "tags": {
+    "name": "Masa Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "addr:housenumber": "927",
+    "addr:street": "West Alameda Street"
+   }
+  },
+  {
+   "id": "node/6612559223",
+   "lat": 35.683504,
+   "lng": -105.938112,
+   "tags": {
+    "name": "Pink Adobe",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6612559225",
+   "lat": 35.684029,
+   "lng": -105.93765,
+   "tags": {
+    "name": "315",
+    "amenity": "restaurant",
+    "cuisine": "wine;french",
+    "addr:street": "Old Santa Fe Trail"
+   }
+  },
+  {
+   "id": "node/6612559228",
+   "lat": 35.685753,
+   "lng": -105.941271,
+   "tags": {
+    "name": "The Pantry Rio",
+    "amenity": "restaurant",
+    "cuisine": "american;regional",
+    "website": "https://pantryrio.com",
+    "opening_hours": "Mo-Su 07:30-14:30",
+    "addr:housenumber": "229",
+    "addr:street": "Galisteo Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6612576081",
+   "lat": 35.683185,
+   "lng": -105.933257,
+   "tags": {
+    "name": "Caffe Greco",
+    "amenity": "restaurant",
+    "addr:housenumber": "233",
+    "addr:street": "East Canyon Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6615412166",
+   "lat": 35.681509,
+   "lng": -105.943281,
+   "tags": {
+    "name": "Restaurant Martín",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://restaurantmartin.com/",
+    "addr:housenumber": "526",
+    "addr:street": "Galisteo Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6629919094",
+   "lat": 35.69244,
+   "lng": -105.951779,
+   "tags": {
+    "name": "El Sabo",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "153A",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6654286630",
+   "lat": 35.658938,
+   "lng": -105.974647,
+   "tags": {
+    "name": "Santa Fe Bite",
+    "amenity": "restaurant",
+    "cuisine": "burger",
+    "addr:housenumber": "1616",
+    "addr:street": "Saint Michaels Drive",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/6656063065",
+   "lat": 35.658961,
+   "lng": -105.98169,
+   "tags": {
+    "name": "Pho Ava",
+    "amenity": "restaurant",
+    "cuisine": "vietnamese",
+    "website": "https://www.phoava.net/",
+    "addr:housenumber": "2430",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "node/6698142604",
+   "lat": 35.683991,
+   "lng": -105.942609,
+   "tags": {
+    "name": "Tune Up Cafe II",
+    "amenity": "restaurant",
+    "addr:housenumber": "204",
+    "addr:street": "Montezuma Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/6711655118",
+   "lat": 35.688484,
+   "lng": -105.942115,
+   "tags": {
+    "name": "CAVA",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean"
+   }
+  },
+  {
+   "id": "node/6713337016",
+   "lat": 35.686717,
+   "lng": -105.937856,
+   "tags": {
+    "name": "La Plazuela",
+    "amenity": "restaurant",
+    "addr:housenumber": "100",
+    "addr:street": "East San Francisco Street"
+   }
+  },
+  {
+   "id": "node/6713337027",
+   "lat": 35.686489,
+   "lng": -105.937935,
+   "tags": {
+    "name": "La Fiesta Lounge",
+    "amenity": "restaurant",
+    "addr:housenumber": "100",
+    "addr:street": "East San Francisco Street"
+   }
+  },
+  {
+   "id": "node/6796090937",
+   "lat": 35.692156,
+   "lng": -105.950991,
+   "tags": {
+    "name": "Dr. Field Goods Kitchen",
+    "amenity": "restaurant",
+    "addr:housenumber": "187B",
+    "addr:street": "Paseo de Peralta"
+   }
+  },
+  {
+   "id": "node/7489500965",
+   "lat": 35.672685,
+   "lng": -105.951309,
+   "tags": {
+    "name": "Fun Noodle Bar",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "website": "https://www.facebook.com/FunNoodleBarSantaFe/",
+    "opening_hours": "11:00-21:00",
+    "addr:housenumber": "514",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/8026804505",
+   "lat": 35.667144,
+   "lng": -105.969002,
+   "tags": {
+    "name": "Desert Chateau",
+    "tourism": "motel",
+    "addr:housenumber": "1622",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "node/8045739032",
+   "lat": 35.686631,
+   "lng": -105.939005,
+   "tags": {
+    "name": "Dumpling Tea",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "opening_hours": "Mo-Su 11:00-20:30",
+    "addr:housenumber": "66",
+    "addr:street": "East San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/8090048352",
+   "lat": 35.685488,
+   "lng": -105.945009,
+   "tags": {
+    "name": "Zacatlán",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://zacatlanrestaurant.com/about"
+   }
+  },
+  {
+   "id": "node/8090048370",
+   "lat": 35.680197,
+   "lng": -105.96534,
+   "tags": {
+    "name": "Ras Rody's Jamaican Vegan",
+    "amenity": "restaurant",
+    "cuisine": "jamaican",
+    "addr:housenumber": "1320",
+    "addr:street": "Agua Fria Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/8523104815",
+   "lat": 35.685305,
+   "lng": -105.938475,
+   "tags": {
+    "name": "Sazón",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://sazonsantafe.com/",
+    "opening_hours": "Mo-Sa 17:00-20:00",
+    "addr:housenumber": "221",
+    "addr:street": "Shelby Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/9043661196",
+   "lat": 35.687829,
+   "lng": -105.94209,
+   "tags": {
+    "name": "Ortiz Restaurant & Bar",
+    "amenity": "restaurant",
+    "addr:housenumber": "100",
+    "addr:street": "Sandoval Street"
+   }
+  },
+  {
+   "id": "node/9043661198",
+   "lat": 35.68544,
+   "lng": -105.939838,
+   "tags": {
+    "name": "Open Kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9106298248",
+   "lat": 35.683281,
+   "lng": -105.938165,
+   "tags": {
+    "name": "Rio Chama",
+    "amenity": "restaurant",
+    "cuisine": "steak_house"
+   }
+  },
+  {
+   "id": "node/9246321043",
+   "lat": 35.681583,
+   "lng": -105.947157,
+   "tags": {
+    "name": "Bruno’s Pizzeria",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://pieslingers.co/brunos",
+    "opening_hours": "Mo-Tu 11:00-16:00; We-Fr 11:00-15:00",
+    "addr:housenumber": "1512",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/9251690248",
+   "lat": 35.661701,
+   "lng": -105.98083,
+   "tags": {
+    "name": "Jesushi Santa Fe",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://www.facebook.com/Jesushi-santa-fe-106534374523362/",
+    "addr:housenumber": "2217",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "node/9673044680",
+   "lat": 35.689483,
+   "lng": -105.93672,
+   "tags": {
+    "name": "Market Steer Steakhouse",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "addr:housenumber": "213",
+    "addr:street": "Washington Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/9698290218",
+   "lat": 35.682097,
+   "lng": -105.945294,
+   "tags": {
+    "name": "Radish & Rye",
+    "amenity": "restaurant",
+    "website": "https://radishandrye.com/",
+    "addr:housenumber": "505",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "node/9753445734",
+   "lat": 35.658432,
+   "lng": -105.972094,
+   "tags": {
+    "name": "Chabelita",
+    "amenity": "restaurant",
+    "addr:housenumber": "1722",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "node/9753445737",
+   "lat": 35.658276,
+   "lng": -105.972073,
+   "tags": {
+    "name": "Lulu",
+    "amenity": "restaurant",
+    "addr:housenumber": "1722",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "node/9753445749",
+   "lat": 35.65849,
+   "lng": -105.972102,
+   "tags": {
+    "name": "Pizza Espiritu",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "1722",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "relation/6820720",
+   "lat": 35.681757,
+   "lng": -105.94327,
+   "tags": {
+    "name": "El Farolito",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "relation/6991491",
+   "lat": 35.665538,
+   "lng": -105.972647,
+   "tags": {
+    "name": "Thunderbird Inn",
+    "tourism": "motel",
+    "addr:housenumber": "1821",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "relation/7085901",
+   "lat": 35.687586,
+   "lng": -105.942661,
+   "tags": {
+    "name": "Hilton Santa Fe Historic Plaza",
+    "tourism": "hotel",
+    "website": "http://www.historicplazahotelsantafe.com/",
+    "wikidata": "Q56427654",
+    "addr:housenumber": "100",
+    "addr:street": "Sandoval Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/1141891914",
+   "lat": 35.663884,
+   "lng": -105.97336,
+   "tags": {
+    "name": "El Rey Court",
+    "tourism": "hotel",
+    "website": "https://elreycourt.com/",
+    "wikidata": "Q5352018",
+    "addr:housenumber": "1862",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/1153371673",
+   "lat": 35.663385,
+   "lng": -105.976601,
+   "tags": {
+    "name": "Mampuku Ramen",
+    "amenity": "restaurant",
+    "cuisine": "noodle",
+    "addr:housenumber": "1965",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "way/1184833507",
+   "lat": 35.660386,
+   "lng": -105.977931,
+   "tags": {
+    "name": "Jambo Cafe",
+    "amenity": "restaurant",
+    "cuisine": "caribbean;african",
+    "opening_hours": "Mo-Sa 08:00-21:00",
+    "addr:housenumber": "2010",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/1313871642",
+   "lat": 35.681214,
+   "lng": -105.938527,
+   "tags": {
+    "name": "Bo's Authentic Thai",
+    "amenity": "restaurant",
+    "cuisine": "thai",
+    "website": "https://www.facebook.com/bosauthenticthai/",
+    "opening_hours": "Mo-Fr 11:00-18:00; Sa 11:00-17:30"
+   }
+  },
+  {
+   "id": "way/1313871643",
+   "lat": 35.681147,
+   "lng": -105.938553,
+   "tags": {
+    "name": "Il Encanto",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://il-encanto.square.site/",
+    "opening_hours": "Mo-Sa 11:00-20:00"
+   }
+  },
+  {
+   "id": "way/1313871644",
+   "lat": 35.681075,
+   "lng": -105.93851,
+   "tags": {
+    "name": "Santafamous Street Eats",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/1313871645",
+   "lat": 35.681063,
+   "lng": -105.938389,
+   "tags": {
+    "name": "Fusion Tacos",
+    "amenity": "restaurant",
+    "cuisine": "mexican;breakfast;ramen;salad",
+    "website": "https://fusiontacosnm.com/",
+    "opening_hours": "Mo-Fr 09:00-18:00; Sa 09:00-17:00; Su off"
+   }
+  },
+  {
+   "id": "way/1313871647",
+   "lat": 35.681069,
+   "lng": -105.938169,
+   "tags": {
+    "name": "Santa Fe Barbeque",
+    "amenity": "restaurant",
+    "cuisine": "barbecue",
+    "website": "https://www.santafebbq.com/",
+    "opening_hours": "Tu-Sa 11:00-17:00"
+   }
+  },
+  {
+   "id": "way/1314062344",
+   "lat": 35.685734,
+   "lng": -105.932674,
+   "tags": {
+    "name": "La Posada de Santa Fe, a Tribute Portfolio Resort & Spa",
+    "tourism": "hotel",
+    "website": "https://www.marriott.com/en-us/hotels/saflc-la-posada-de-santa-fe-a-tribute-portfolio-resort-and-spa/overview/",
+    "addr:housenumber": "330",
+    "addr:street": "East Palace Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/1452019782",
+   "lat": 35.690404,
+   "lng": -105.944906,
+   "tags": {
+    "name": "Chopstix",
+    "amenity": "restaurant",
+    "cuisine": "asian;chinese;korean",
+    "addr:housenumber": "238",
+    "addr:street": "North Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/1552413304",
+   "lat": 35.664881,
+   "lng": -105.964863,
+   "tags": {
+    "name": "Lago Cafe",
+    "amenity": "restaurant",
+    "cuisine": "cuban",
+    "website": "https://lagocafe.com/#menu",
+    "addr:housenumber": "1704",
+    "addr:street": "Lena Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/227400794",
+   "lat": 35.685526,
+   "lng": -105.948627,
+   "tags": {
+    "name": "Guadalupe Inn",
+    "tourism": "hotel",
+    "addr:housenumber": "604",
+    "addr:street": "Agua Fria Street"
+   }
+  },
+  {
+   "id": "way/227851058",
+   "lat": 35.659426,
+   "lng": -105.974991,
+   "tags": {
+    "name": "Carniceria Latinos Unidos",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "1602",
+    "addr:street": "Saint Michaels Drive",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/243925979",
+   "lat": 35.686417,
+   "lng": -105.934587,
+   "tags": {
+    "name": "Drury Plaza Hotel in Santa Fe",
+    "tourism": "hotel",
+    "contact:website": "https://www.druryplazahotelsantafe.com/",
+    "addr:housenumber": "828",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/290191330",
+   "lat": 35.690516,
+   "lng": -105.945302,
+   "tags": {
+    "name": "WorldMark Santa Fe",
+    "tourism": "hotel",
+    "addr:housenumber": "138",
+    "addr:street": "Park Avenue",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/317447968",
+   "lat": 35.685093,
+   "lng": -105.942534,
+   "tags": {
+    "name": "Piñon Court by La Fonda",
+    "tourism": "hotel",
+    "website": "https://pinoncourt.com/",
+    "addr:housenumber": "201",
+    "addr:street": "Montezuma St",
+    "addr:postcode": "87501",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/317447969",
+   "lat": 35.685296,
+   "lng": -105.940361,
+   "tags": {
+    "name": "Del Charro Saloon",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "101",
+    "addr:street": "West Alameda Street"
+   }
+  },
+  {
+   "id": "way/318069350",
+   "lat": 35.674242,
+   "lng": -105.952672,
+   "tags": {
+    "name": "Maria's of Santa Fe",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "website": "https://www.marias-santafe.com/",
+    "addr:housenumber": "555",
+    "addr:street": "West Cordova Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/318069364",
+   "lat": 35.660306,
+   "lng": -105.982523,
+   "tags": {
+    "name": "Yamas Greek Rotiserrie",
+    "amenity": "restaurant",
+    "cuisine": "greek",
+    "website": "https://www.yamasgreek.com/",
+    "opening_hours": "Mo-Su 11:00-20:00",
+    "addr:housenumber": "2411",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/435898308",
+   "lat": 35.664884,
+   "lng": -105.972414,
+   "tags": {
+    "name": "The Pantry Resturant",
+    "amenity": "restaurant",
+    "cuisine": "mexican;american",
+    "website": "https://www.pantrysantafe.com/",
+    "opening_hours": "Mo-Sa 06:30-21:00, Su 07:00-21:00",
+    "addr:housenumber": "1820",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/461696643",
+   "lat": 35.688586,
+   "lng": -105.942104,
+   "tags": {
+    "name": "Eldorado Hotel and Spa",
+    "tourism": "hotel",
+    "website": "https://www.eldoradohotel.com/",
+    "addr:housenumber": "309",
+    "addr:street": "West San Francisco Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/461729155",
+   "lat": 35.683682,
+   "lng": -105.937712,
+   "tags": {
+    "name": "Upper Crust Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://uppercrustpizza.com",
+    "wikidata": "Q135916346",
+    "addr:housenumber": "329",
+    "addr:street": "Old Santa Fe Trail",
+    "addr:postcode": "87501-2707"
+   }
+  },
+  {
+   "id": "way/461766418",
+   "lat": 35.682297,
+   "lng": -105.946385,
+   "tags": {
+    "name": "Hotel Santa Fe, The Hacienda and Spa",
+    "tourism": "hotel",
+    "addr:housenumber": "1501",
+    "addr:street": "Paseo de Peralta"
+   }
+  },
+  {
+   "id": "way/461767941",
+   "lat": 35.682939,
+   "lng": -105.945038,
+   "tags": {
+    "name": "Dumpling Cafe",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "addr:housenumber": "500",
+    "addr:street": "Sandoval Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/461776239",
+   "lat": 35.686498,
+   "lng": -105.946132,
+   "tags": {
+    "name": "Joseph's Culinary Pub",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "http://www.josephsofsantafe.com/",
+    "opening_hours": "We-Su 17:00-21:00",
+    "addr:housenumber": "428",
+    "addr:street": "Agua Fria Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/461791399",
+   "lat": 35.680736,
+   "lng": -105.947775,
+   "tags": {
+    "name": "Motel 6",
+    "tourism": "motel",
+    "addr:housenumber": "646",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/461791419",
+   "lat": 35.680643,
+   "lng": -105.94681,
+   "tags": {
+    "name": "Shake Foundation",
+    "amenity": "restaurant",
+    "cuisine": "burger;milkshake;american",
+    "website": "https://shakefoundation.com/",
+    "opening_hours": "Mo-Th 11:00-19:00; Fr-Sa 11:00-20:00; Su 11:00-18:00",
+    "addr:housenumber": "631",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/461791425",
+   "lat": 35.680249,
+   "lng": -105.946796,
+   "tags": {
+    "name": "Vinaigrette",
+    "amenity": "restaurant",
+    "cuisine": "salad",
+    "website": "https://www.vinaigretteonline.com/",
+    "opening_hours": "Mo-Sa 11:00-21:00",
+    "addr:housenumber": "709",
+    "addr:street": "Don Cubero Alley",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/461791447",
+   "lat": 35.679105,
+   "lng": -105.949113,
+   "tags": {
+    "name": "The Sage Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "725",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/461796150",
+   "lat": 35.677723,
+   "lng": -105.952219,
+   "tags": {
+    "name": "El Chile Toreado",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://elchiletoreado.com/",
+    "opening_hours": "Mo-Fr 07:30-14:30, Sa 07:30-14:00",
+    "addr:housenumber": "807",
+    "addr:street": "Early Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/461796895",
+   "lat": 35.675102,
+   "lng": -105.957184,
+   "tags": {
+    "name": "Burrito Spot",
+    "amenity": "restaurant",
+    "cuisine": "mexican;regional",
+    "website": "https://burrito-spot.business.site/",
+    "addr:housenumber": "1057",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/462014360",
+   "lat": 35.690641,
+   "lng": -105.944467,
+   "tags": {
+    "name": "Santa Fe Bees Restaurant",
+    "amenity": "restaurant",
+    "addr:housenumber": "235",
+    "addr:street": "North Guadalupe Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/462014364",
+   "lat": 35.690021,
+   "lng": -105.943699,
+   "tags": {
+    "name": "Bumble Bee's Baja Grill",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "http://bumblebeesbajagrill.com",
+    "opening_hours": "Su-Th 11:00-20:00; Fr-Sa 11:00-20:30",
+    "addr:housenumber": "301",
+    "addr:street": "Jefferson Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/463027607",
+   "lat": 35.679146,
+   "lng": -105.952737,
+   "tags": {
+    "name": "La Choza",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "http://www.lachozasf.com/",
+    "addr:housenumber": "905",
+    "addr:street": "Alarid Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/463032596",
+   "lat": 35.66167,
+   "lng": -105.978212,
+   "tags": {
+    "name": "Dion's Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "addr:housenumber": "2014",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/463032597",
+   "lat": 35.661896,
+   "lng": -105.977393,
+   "tags": {
+    "name": "Weck's",
+    "amenity": "restaurant",
+    "cuisine": "breakfast",
+    "addr:housenumber": "2000",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "way/470304017",
+   "lat": 35.681875,
+   "lng": -105.952933,
+   "tags": {
+    "name": "Casa Pacifica BnB",
+    "tourism": "guest_house",
+    "website": "http://casapacificabnb.com/",
+    "addr:housenumber": "1705",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/472254327",
+   "lat": 35.662003,
+   "lng": -105.965374,
+   "tags": {
+    "name": "Casa Bonita",
+    "amenity": "restaurant",
+    "cuisine": "american;regional",
+    "addr:housenumber": "1814",
+    "addr:street": "2nd Street",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/474256827",
+   "lat": 35.660282,
+   "lng": -105.982897,
+   "tags": {
+    "name": "India House",
+    "amenity": "restaurant",
+    "cuisine": "indian",
+    "website": "https://indiahousenm.com/",
+    "opening_hours": "Tu-Su 11:00-14:30,17:00-21:30",
+    "addr:housenumber": "2501",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/474729646",
+   "lat": 35.662294,
+   "lng": -105.963892,
+   "tags": {
+    "name": "Midtown Bistro",
+    "amenity": "restaurant",
+    "cuisine": "fine_dining",
+    "website": "https://www.midtownbistrosf.com/",
+    "addr:housenumber": "901",
+    "addr:street": "West San Mateo Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/475415505",
+   "lat": 35.659668,
+   "lng": -105.970821,
+   "tags": {
+    "name": "Sunrise Family Restaraunt",
+    "amenity": "restaurant",
+    "cuisine": "american;new_mexican",
+    "addr:housenumber": "1851",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "way/475714888",
+   "lat": 35.657632,
+   "lng": -105.988177,
+   "tags": {
+    "name": "Cafe Castro",
+    "amenity": "restaurant",
+    "cuisine": "new_mexican",
+    "website": "https://cafecastroSF.com",
+    "opening_hours": "Tu-Su 11:00-21:00",
+    "addr:housenumber": "2811",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "way/475920315",
+   "lat": 35.698628,
+   "lng": -105.954043,
+   "tags": {
+    "name": "Hotel Glorieta",
+    "tourism": "hotel",
+    "website": "https://www.hotelglorietasantafe.com/",
+    "addr:housenumber": "750",
+    "addr:street": "North Saint Francis Drive",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/478995707",
+   "lat": 35.68007,
+   "lng": -105.923638,
+   "tags": {
+    "name": "The Teahouse",
+    "amenity": "restaurant",
+    "cuisine": "tea;coffee_shop;pastry",
+    "addr:housenumber": "821",
+    "addr:street": "Canyon Road",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/480310826",
+   "lat": 35.656623,
+   "lng": -105.987679,
+   "tags": {
+    "name": "The Mystic",
+    "tourism": "motel",
+    "website": "https://themysticsantafe.com/",
+    "addr:housenumber": "2810",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87507",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/634443239",
+   "lat": 35.663167,
+   "lng": -105.977794,
+   "tags": {
+    "name": "Red Enchilada",
+    "amenity": "restaurant",
+    "cuisine": "mexican;new_mexican;latin_american",
+    "addr:housenumber": "1310",
+    "addr:street": "Osage Avenue"
+   }
+  },
+  {
+   "id": "way/646758518",
+   "lat": 35.68248,
+   "lng": -105.948846,
+   "tags": {
+    "name": "Second Street Brewery at The Railyard",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "website": "https://secondstreetbrewery.com/locations/railyard/",
+    "opening_hours": "Mo-Sa 11:00-22:00; Su 11:00-21:00",
+    "addr:housenumber": "1607",
+    "addr:street": "Paseo de Peralta",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/673282174",
+   "lat": 35.657945,
+   "lng": -105.961208,
+   "tags": {
+    "name": "Kai Sushi",
+    "amenity": "restaurant",
+    "cuisine": "sushi",
+    "website": "https://selflane.com/bizs/kai-sushi-dining_santa-fe_nm",
+    "opening_hours": "Mo-Fr 11:30-14:30, 16:30-21:00; Sa 16:30-21:00",
+    "addr:housenumber": "720",
+    "addr:street": "Saint Michaels Drive"
+   }
+  },
+  {
+   "id": "way/681807458",
+   "lat": 35.655693,
+   "lng": -105.990013,
+   "tags": {
+    "name": "Wok",
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "website": "http://woksantafe.com",
+    "opening_hours": "Mo-Th 11:00-21:00; Fr,Sa 11:00-21:30; Su 12:00-20:00",
+    "addr:housenumber": "2860",
+    "addr:street": "Cerrillos Road"
+   }
+  },
+  {
+   "id": "way/681807459",
+   "lat": 35.65576,
+   "lng": -105.990078,
+   "tags": {
+    "name": "Dr. Field Goods Kitchen",
+    "amenity": "restaurant",
+    "cuisine": "new_mexican",
+    "website": "https://drfieldgoods.com/",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "2860",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87505"
+   }
+  },
+  {
+   "id": "way/725189766",
+   "lat": 35.686237,
+   "lng": -105.934911,
+   "tags": {
+    "name": "Drury Plaza Hotel in Santa Fe",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/725192816",
+   "lat": 35.685318,
+   "lng": -105.936783,
+   "tags": {
+    "name": "Inn and Spa at Loretto",
+    "tourism": "hotel",
+    "wikidata": "Q111393492",
+    "addr:housenumber": "211",
+    "addr:street": "Old Santa Fe Trail",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/725192818",
+   "lat": 35.686478,
+   "lng": -105.937436,
+   "tags": {
+    "name": "La Fonda on the Plaza",
+    "tourism": "hotel",
+    "addr:housenumber": "100",
+    "addr:street": "East San Francisco Street"
+   }
+  },
+  {
+   "id": "way/729362259",
+   "lat": 35.689252,
+   "lng": -105.936486,
+   "tags": {
+    "name": "The Palace Modern",
+    "tourism": "hotel",
+    "addr:housenumber": "105",
+    "addr:street": "East Marcy Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/729362270",
+   "lat": 35.68884,
+   "lng": -105.933847,
+   "tags": {
+    "name": "Inn at the Paseo",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "way/729362273",
+   "lat": 35.688944,
+   "lng": -105.934212,
+   "tags": {
+    "name": "Antingua Inn",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "way/729362278",
+   "lat": 35.688427,
+   "lng": -105.934053,
+   "tags": {
+    "name": "Josie Casa de Comida",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/746588461",
+   "lat": 35.684718,
+   "lng": -105.942441,
+   "tags": {
+    "name": "Piñon Court",
+    "tourism": "motel",
+    "website": "https://oldsantafeinn.com/",
+    "addr:housenumber": "320",
+    "addr:street": "Galisteo Street"
+   }
+  },
+  {
+   "id": "way/845128073",
+   "lat": 35.680865,
+   "lng": -105.959418,
+   "tags": {
+    "name": "Leo's Santa fe",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "addr:housenumber": "1200",
+    "addr:street": "Hickox Street",
+    "addr:postcode": "87501"
+   }
+  },
+  {
+   "id": "way/865645588",
+   "lat": 35.65664,
+   "lng": -105.991048,
+   "tags": {
+    "name": "El Chile Toreado",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://elchiletoreado.com/",
+    "opening_hours": "Tu-Fr 08:00-14:30,Sa 08:00-14:00",
+    "addr:housenumber": "1311",
+    "addr:street": "Siler Road",
+    "addr:postcode": "87507"
+   }
+  },
+  {
+   "id": "way/979713332",
+   "lat": 35.654684,
+   "lng": -105.990702,
+   "tags": {
+    "name": "Days Inn Santa Fe",
+    "tourism": "hotel",
+    "website": "https://www.wyndhamhotels.com/days-inn/santa-fe-new-mexico/days-inn-santa-fe-new-mexico/overview",
+    "addr:housenumber": "2900",
+    "addr:street": "Cerrillos Road",
+    "addr:postcode": "87507"
+   }
+  }
+ ]
+}

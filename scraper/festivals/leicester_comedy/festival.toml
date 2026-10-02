@@ -21,6 +21,7 @@ kind = "comedy"
 subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedy-festival.co.uk"
+wikidata = "Q6519169"
 
 [ticketing]
 model = "central-box-office"
@@ -33,6 +34,7 @@ id = "2026"
 format = "block"
 first = "2026-02-04"
 last = "2026-02-22"
+sources = ["eventotron"]
 
 [[source]]
 id = "eventotron"

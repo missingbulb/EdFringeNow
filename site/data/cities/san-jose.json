@@ -1,0 +1,2403 @@
+{
+ "v": 1,
+ "city": {
+  "id": "san-jose",
+  "name": "San Jose",
+  "country": "US",
+  "lat": 37.3382,
+  "lng": -121.8863,
+  "timezone": "America/Los_Angeles"
+ },
+ "places": [
+  {
+   "id": "osm:relation/14180282",
+   "name": "Rosicrucian Egyptian Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.333483,
+   "lng": -121.922874,
+   "address": "1660 Park Avenue, 95126",
+   "website": "https://egyptianmuseum.org/",
+   "wikidata": "Q3354610",
+   "wikipedia": "en:Rosicrucian Egyptian Museum",
+   "description": "building in San Jose, California, United States",
+   "image": "Rc egyptian museum.jpg",
+   "notability": 8,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28642314",
+   "name": "Rosicrucian Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.333883,
+   "lng": -121.922616,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7368869",
+   "wikipedia": null,
+   "description": "park in San Jose, Santa Clara County, United States of America",
+   "image": "Rosiuni.jpg",
+   "notability": 6,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/37908759",
+   "name": "Municipal Rose Garden",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.331782,
+   "lng": -121.928599,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/facilities/facility/details/municipalrosegarden-74",
+   "wikidata": "Q3442578",
+   "wikipedia": "en:San Jose Municipal Rose Garden",
+   "description": "historic American rose garden in San Jose, California",
+   "image": "San Jose Municipal Rose Garden.JPG",
+   "notability": 4,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28517757",
+   "name": "Guadalupe River Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.331004,
+   "lng": -121.895489,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49496676",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": "Guadalupe river park visitors.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26133274",
+   "name": "Guadalupe River Park & Gardens",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.347224,
+   "lng": -121.907899,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5926344",
+   "wikipedia": "es:Jardines y parque del Guadalupe River",
+   "description": "park in San Jose, California, United States",
+   "image": "Guadalupe river park visitors.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28465238",
+   "name": "Happy Hollow Park and Zoo",
+   "nameEn": null,
+   "kind": "zoo",
+   "lat": 37.325902,
+   "lng": -121.863013,
+   "address": "1300 Senter Road, 95112",
+   "website": null,
+   "wikidata": "Q5652828",
+   "wikipedia": "en:Happy Hollow Park & Zoo",
+   "description": "zoo and amusement park in San Jose, California",
+   "image": "Happy Hollow Park & Zoo -San Jose, California, USA-2Oct2011 (1).jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/454614968",
+   "name": "Japanese Friendship Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 37.321962,
+   "lng": -121.861008,
+   "address": "1300 Senter Road, 95112",
+   "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2835/",
+   "wikidata": "Q633365",
+   "wikipedia": "en:Japanese Friendship Garden (San Jose)",
+   "description": null,
+   "image": "UpperPondAtJapaneseFriendshipGarden.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28464518",
+   "name": "San Jose Flea Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.367571,
+   "lng": -121.876837,
+   "address": "1590 Berryessa Road, 95133",
+   "website": "https://www.sjfm.com/",
+   "wikidata": "Q7414449",
+   "wikipedia": "en:San Jose Flea Market",
+   "description": "shopping mall",
+   "image": "San Jose Flea Market 02.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/9566144",
+   "name": "San José Museum of Art",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.333666,
+   "lng": -121.890025,
+   "address": "110 South Market Street, 95113",
+   "website": "https://sjmusart.org/",
+   "wikidata": "Q7414466",
+   "wikipedia": "en:San Jose Museum of Art",
+   "description": "art museum in San Jose, California, United States",
+   "image": "San Jose Museum of Art.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25967139",
+   "name": "The Tech Interactive",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.331427,
+   "lng": -121.890207,
+   "address": "201 South Market Street, 95113",
+   "website": "https://www.thetech.org/",
+   "wikidata": "Q7768226",
+   "wikipedia": "en:The Tech Interactive",
+   "description": "science and technology center in San Jose, California, United States",
+   "image": "The Tech Museum of Innovation in Downtown San Jose.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28503277",
+   "name": "Viet Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.320293,
+   "lng": -121.859969,
+   "address": null,
+   "website": "https://sites.google.com/view/viet-museum-sanjose/",
+   "wikidata": "Q7928444",
+   "wikipedia": null,
+   "description": "museum in San Jose, California",
+   "image": "Vietmuseum.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/277753316",
+   "name": "de Saisset Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.34995,
+   "lng": -121.940624,
+   "address": null,
+   "website": "https://www.scu.edu/desaisset/",
+   "wikidata": "Q3329750",
+   "wikipedia": null,
+   "description": "museum in Santa Clara, California",
+   "image": "De Saisset Museum.jpg",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": "Tu-Su 11:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/25966765",
+   "name": "Backesto Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.352238,
+   "lng": -121.884418,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2094/2028",
+   "wikidata": "Q49473384",
+   "wikipedia": "en:Backesto Park",
+   "description": "park in San Jose, California, United States",
+   "image": "Backesto Park Fountain (6230693918).jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "sunrise-(sunset+01:00)",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/25967349",
+   "name": "Children’s Discovery Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.326713,
+   "lng": -121.891833,
+   "address": "180 Woz Way, 95110",
+   "website": "https://www.cdm.org/",
+   "wikidata": "Q5098072",
+   "wikipedia": "en:Children's Discovery Museum of San Jose",
+   "description": "non-profit organization in the USA",
+   "image": "Children's Discovery Museum of San Jose.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "We-Fr 09:30-12:30; Sa,Su 09:30-12:30,13:30-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "12:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "09:30",
+       "12:30"
+      ],
+      [
+       "13:30",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/37878993",
+   "name": "Chinese Cultural Garden",
+   "nameEn": null,
+   "kind": "garden",
+   "lat": 37.364646,
+   "lng": -121.853445,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5100429",
+   "wikipedia": "en:Chinese Cultural Garden",
+   "description": "park in California, United States of America",
+   "image": "Chinese Cultural Garden Gate.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/314805986",
+   "name": "Circle of Palms Plaza",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.333437,
+   "lng": -121.889718,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5121482",
+   "wikipedia": null,
+   "description": "public square in San Jose, California, United States",
+   "image": "Kluft-photo-Circle-of-Palms-San-Jose-April-2008-Img 0778.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/835902732",
+   "name": "César E. Chávez Monument",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.335834,
+   "lng": -121.88131,
+   "address": null,
+   "website": null,
+   "wikidata": "Q124352927",
+   "wikipedia": "en:Arch of Dignity, Equality, and Justice",
+   "description": "art installation at San Jose State University, United States",
+   "image": "Cesar-chavez-arch.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/350276465",
+   "name": "Kelley Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.323599,
+   "lng": -121.858356,
+   "address": null,
+   "website": null,
+   "wikidata": "Q6385737",
+   "wikipedia": "en:Kelley Park",
+   "description": "park in San Jose, California, United States",
+   "image": "KelleyParkSign-cropped.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/52639338",
+   "name": "Memorial Cross Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.366763,
+   "lng": -121.941097,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49524681",
+   "wikipedia": "en:Memorial Cross Park",
+   "description": "park in Santa Clara, California, United States",
+   "image": "Memorial Cross Park 5.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/336684229",
+   "name": "Movimiento de Arte y Cultura Latino Americana",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.328506,
+   "lng": -121.884428,
+   "address": "510 South 1st Street, 95113",
+   "website": "https://maclaarte.org/",
+   "wikidata": "Q86900200",
+   "wikipedia": "en:Movimiento de Arte y Cultura Latino Americana",
+   "description": "Latinx-focused visual arts, arts education, and performing arts space in San Jose, California, United States",
+   "image": "MACLA in SoFA.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Mo-Fr 09:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/158245358",
+   "name": "Parque de los Pobladores",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.327948,
+   "lng": -121.884607,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2325/2028",
+   "wikidata": "Q49539757",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": null,
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25774716",
+   "name": "Plaza de César E. Chávez",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.332144,
+   "lng": -121.889468,
+   "address": null,
+   "website": null,
+   "wikidata": "Q7203677",
+   "wikipedia": "en:Plaza de César Chávez",
+   "description": "urban plaza and park in downtown San Jose, California, United States",
+   "image": "Downtown san jose south market st (cropped).jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/13098946533",
+   "name": "Portuguese Historical Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.319536,
+   "lng": -121.858259,
+   "address": null,
+   "website": "https://portuguesemuseum.org/",
+   "wikidata": "Q7232646",
+   "wikipedia": "en:Portuguese Historical Museum",
+   "description": null,
+   "image": "PortugueseHistoricalMuseum-cropped.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": "Su 12:00-15:30 || \"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:relation/14641921",
+   "name": "Saint James Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.338887,
+   "lng": -121.891182,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/Facilities/Facility/Details/St-James-Park-130",
+   "wikidata": "Q49555790",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": "Sign at the entrance to St. James Park in the City of San Jose.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10052566494",
+   "name": "Works/San José",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.33592,
+   "lng": -121.888756,
+   "address": "38 South 2nd Street, 95113",
+   "website": null,
+   "wikidata": "Q106986491",
+   "wikipedia": "en:WORKS San José",
+   "description": "nonprofit cultural center in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/746262258",
+   "name": "Arena Green",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.333363,
+   "lng": -121.899041,
+   "address": null,
+   "website": "https://www.grpg.org/river-park-gardens/arena-green/",
+   "wikidata": "Q49472846",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38341951",
+   "name": "Biebrach Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.319564,
+   "lng": -121.894142,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49474674",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/358549060",
+   "name": "Cadwallader Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.3196,
+   "lng": -121.877007,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49476501",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/34897813",
+   "name": "Cahill Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.328942,
+   "lng": -121.904987,
+   "address": null,
+   "website": null,
+   "wikidata": "Q100763621",
+   "wikipedia": null,
+   "description": "park in San Jose, California",
+   "image": "San Jose - Cahill Park (10285790453) (cropped).jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/11282523160",
+   "name": "Chinese American Historical Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.319739,
+   "lng": -121.858204,
+   "address": "635 Phelan Avenue, 95112",
+   "website": "https://chcp.org/Museum",
+   "wikidata": "Q123159442",
+   "wikipedia": null,
+   "description": "history museum in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/10149678",
+   "name": "Columbus Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.344689,
+   "lng": -121.908801,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49479388",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/358838338",
+   "name": "Coyote Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.376329,
+   "lng": -121.889956,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49480767",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/39423142",
+   "name": "Emma Prusch Farm Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.340174,
+   "lng": -121.846559,
+   "address": "647 South King Road, 95122",
+   "website": "https://pruschfarmpark.org/",
+   "wikidata": "Q5372927",
+   "wikipedia": null,
+   "description": "park in San Jose, California",
+   "image": "EmmaPruschFarmhouse.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "06:30-sunset",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/26251839",
+   "name": "Flickinger Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.388152,
+   "lng": -121.873796,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49489911",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/157782526",
+   "name": "Fremont Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.350347,
+   "lng": -121.951189,
+   "address": "1303 Fremont Street, 95050-4734",
+   "website": null,
+   "wikidata": "Q49491931",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1214909036",
+   "name": "Heinlenville Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.350641,
+   "lng": -121.893719,
+   "address": "650 North 6th Street, 95112",
+   "website": null,
+   "wikidata": "Q123023221",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "sunrise-(sunset+01:00)",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/28714347",
+   "name": "Hester Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.33206,
+   "lng": -121.926035,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49500535",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": "Hester Park, San Jose, California, US.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/28465159",
+   "name": "History Park at Kelley Park",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.320044,
+   "lng": -121.858124,
+   "address": "635 Phelan Avenue, 95112",
+   "website": "https://historysanjose.org/wp/plan-your-visit/history-park/",
+   "wikidata": "Q104600028",
+   "wikipedia": "en:History Park",
+   "description": "open-air historical museum at Kelly Park in San Jose, California, United States",
+   "image": "History Park, San Jose, California, US.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38341937",
+   "name": "Institute of Contemporary Art San José",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.327845,
+   "lng": -121.883934,
+   "address": "560 South 1st Street, 95113",
+   "website": "https://www.icasanjose.org/",
+   "wikidata": "Q19647913",
+   "wikipedia": "en:Institute of Contemporary Art San José",
+   "description": "art center and gallery in San Jose, California, United States",
+   "image": "San Jose Institute of Contemporary Art.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Th-Su 12:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/350497048",
+   "name": "Japanese American Museum of San Jose",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.347503,
+   "lng": -121.893711,
+   "address": "535 North 5th Street, 95112",
+   "website": "https://www.jamsj.org/",
+   "wikidata": "Q6158083",
+   "wikipedia": "en:Japanese American Museum of San Jose",
+   "description": "museum in San Jose, California",
+   "image": "2017 Japanese American Museum of San Jose.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "Mo-We off; Th-Su 12:00-16:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "16:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/28517709",
+   "name": "John P. McEnery Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.331185,
+   "lng": -121.895092,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49523553",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38900250",
+   "name": "Larry J. Marsalli Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.354826,
+   "lng": -121.944502,
+   "address": "1425 Lafayette Street, 95050",
+   "website": null,
+   "wikidata": "Q49512720",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/37909748",
+   "name": "Lincoln Glen Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.2898,
+   "lng": -121.889223,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49516849",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/183386613",
+   "name": "Luis María Peralta Adobe",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.336384,
+   "lng": -121.894766,
+   "address": "180 West Saint John Street, 95110",
+   "website": null,
+   "wikidata": "Q7166894",
+   "wikipedia": "en:Peralta Adobe",
+   "description": "building in California, United States",
+   "image": "PeraltaAdobe-cropped.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "\"by appointment\"",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/28414010",
+   "name": "Overfelt Gardens Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.364635,
+   "lng": -121.85484,
+   "address": "2145 McKee Road, 95133",
+   "website": null,
+   "wikidata": "Q7113642",
+   "wikipedia": "en:Overfelt Gardens",
+   "description": "park in California, United States of America",
+   "image": "Overfelt Park.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38681310",
+   "name": "Palm Haven Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.315707,
+   "lng": -121.900675,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49537141",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/832395219",
+   "name": "Pellier Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.338053,
+   "lng": -121.895976,
+   "address": "183 West Saint James Street, 95110",
+   "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2331/",
+   "wikidata": "Q122976840",
+   "wikipedia": "en:Pellier Park",
+   "description": "park in San Jose, California, United States",
+   "image": "Picture of Pellier Park featuring informational billboard.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25966406",
+   "name": "Raymond Bernal Junior Memorial Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.355584,
+   "lng": -121.895687,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49474491",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "sunrise-(sunset+01:00)",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/38605628",
+   "name": "River Glen Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.301806,
+   "lng": -121.88753,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49550695",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/788329567",
+   "name": "Roberto Adobe & Suñol House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.315793,
+   "lng": -121.906248,
+   "address": "770 Lincoln Avenue, 95126",
+   "website": "https://californiapioneers.com/visit/roberto-adobe-sunol-house-museum/",
+   "wikidata": "Q89536560",
+   "wikipedia": null,
+   "description": "Historic house in California, United States",
+   "image": "USA-San Jose-Antonio Suñol house-1.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/25910908",
+   "name": "Ryland Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.342343,
+   "lng": -121.896815,
+   "address": "401 North 1st Street, 95112",
+   "website": null,
+   "wikidata": "Q49555193",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38341935",
+   "name": "San Jose Museum of Quilts & Textiles",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.328242,
+   "lng": -121.884237,
+   "address": "520 South 1st Street, 95113",
+   "website": "https://sj-mqt.org/",
+   "wikidata": "Q7414467",
+   "wikipedia": "en:San Jose Museum of Quilts & Textiles",
+   "description": "art museum in California , United States",
+   "image": "San Jose Museum of Quilts & Textiles - San Jose, CA - DSC03666.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/86483249",
+   "name": "Santa Clara County Fairgrounds",
+   "nameEn": null,
+   "kind": "attraction",
+   "lat": 37.300027,
+   "lng": -121.851409,
+   "address": "344 Tully Road, 95111",
+   "website": "https://www.thefairgrounds.org/",
+   "wikidata": "Q96404960",
+   "wikipedia": "en:Santa Clara County Fairgrounds",
+   "description": "fairground in San Jose, California, United States",
+   "image": "2005-SantaClaraFairgroundsTetFestEntrance.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/95542838",
+   "name": "South Bay Historical Railroad Society",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.353099,
+   "lng": -121.936236,
+   "address": "1005 Railroad Avenue, 95050",
+   "website": "https://sbhrs.org/",
+   "wikidata": "Q7566263",
+   "wikipedia": null,
+   "description": "organization",
+   "image": "South Bay Historical Railroad Society 1359 01.JPG",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26252506",
+   "name": "Vinci Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.380856,
+   "lng": -121.872238,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49575563",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/36743453",
+   "name": "Wallenberg Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.287417,
+   "lng": -121.895965,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49576439",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38900409",
+   "name": "Washington Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.341992,
+   "lng": -121.942633,
+   "address": "295 Monroe Street, 95050",
+   "website": null,
+   "wikidata": "Q49577065",
+   "wikipedia": null,
+   "description": "park in Santa Clara, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/26252629",
+   "name": "Watson Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.357131,
+   "lng": -121.8761,
+   "address": "1082 Jackson Street, 95112",
+   "website": null,
+   "wikidata": "Q49577705",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "sunrise-(sunset+01:00)",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:way/23954642",
+   "name": "Welch Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.325882,
+   "lng": -121.824257,
+   "address": null,
+   "website": null,
+   "wikidata": "Q49578172",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": "Welch Park, San Jose, California, US.jpg",
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/38605636",
+   "name": "Wilcox Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.294135,
+   "lng": -121.899954,
+   "address": "1782 Wilcox Way, 95125",
+   "website": null,
+   "wikidata": "Q49580504",
+   "wikipedia": null,
+   "description": "park in the United States of America",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": "24/7",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/37894041",
+   "name": "Willow Street Frank Bramhall Park",
+   "nameEn": null,
+   "kind": "park",
+   "lat": 37.303727,
+   "lng": -121.909454,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/facilities/Facility/Details/70",
+   "wikidata": "Q49581428",
+   "wikipedia": null,
+   "description": "park in Santa Clara County, California, United States",
+   "image": null,
+   "notability": 1,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/165327330",
+   "name": "Anno Domini Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.330685,
+   "lng": -121.886092,
+   "address": "366 South 1st Street, 95113",
+   "website": "https://www.galleryad.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6300735619",
+   "name": "Backesto Fountain",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.351895,
+   "lng": -121.885168,
+   "address": null,
+   "website": null,
+   "wikidata": "Q109767529",
+   "wikipedia": null,
+   "description": "fountain in Backesto Park in San Jose, California, United States, the oldest extent structure by Solon and Schemmel Tile Company",
+   "image": "Backesto Park Fountain (6230693918).jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/347004805",
+   "name": "Carmel and Thomas Fallon House",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.336914,
+   "lng": -121.894895,
+   "address": "175 West Saint John Street, 95110",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12556901787",
+   "name": "Don Mateo Foods",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.346092,
+   "lng": -121.869404,
+   "address": "1062 East Santa Clara Street, 95116",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3622806326",
+   "name": "Downtown San Jose Farmers’ Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.335651,
+   "lng": -121.893231,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Fr 10:00-14:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "14:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/10050528225",
+   "name": "Empire Seven Studios",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.348165,
+   "lng": -121.891171,
+   "address": null,
+   "website": "https://www.empiresevenstudios.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/368174453",
+   "name": "Hellenic Heritage Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.319445,
+   "lng": -121.857765,
+   "address": null,
+   "website": "https://www.nationalhellenicmuseum.org/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8671046749",
+   "name": "Hudson Gateway Place LLC",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.369617,
+   "lng": -121.923427,
+   "address": "2001;2033;2055,2077;2099 Gateway Place, 95110",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/1432665954",
+   "name": "Japanese American Internment Memorial",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.332375,
+   "lng": -121.886534,
+   "address": null,
+   "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2575/1396",
+   "wikidata": "Q136409175",
+   "wikipedia": null,
+   "description": "memorial by Ruth Asawa in San Jose, California, United States",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6521383066",
+   "name": "Japantown Certified Farmer’s Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.353837,
+   "lng": -121.892972,
+   "address": null,
+   "website": "https://www.japantownsanjose.org/sunday-farmers-market",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "May-Oct Su 08:00-12:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "05-01",
+       "10-31"
+      ]
+     ],
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "12:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/9882743742",
+   "name": "Jeff Garcia Hall of Champions",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.320949,
+   "lng": -121.870209,
+   "address": null,
+   "website": "https://sjsuspartans.com/facilities/jeff-garcia-hall-of-champions/27",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8363956537",
+   "name": "KALEID Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.331306,
+   "lng": -121.886727,
+   "address": "320 South 1st Street, 95113",
+   "website": "https://www.kaleidgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Th-Fr 12:00-19:00; Sa 12:00-17:00; Fr[1] 17:00-21:00",
+   "hoursSource": "osm",
+   "hours": null
+  },
+  {
+   "id": "osm:node/12813408990",
+   "name": "Little Italy Museum and Cultural Center",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 37.335261,
+   "lng": -121.898463,
+   "address": "323 West Saint John Street, 95110",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4942533434",
+   "name": "Mexican Farmers Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.305598,
+   "lng": -121.853004,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12530023760",
+   "name": "Mi Rancho Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.324497,
+   "lng": -121.896974,
+   "address": "494 Auzerais Avenue, 95126",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4882162581",
+   "name": "Object Art Gallery",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.348729,
+   "lng": -121.893766,
+   "address": "592 North 5th Street, 95112",
+   "website": "https://www.artobjectgallery.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/411543648",
+   "name": "Olympics Black Power Statue",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 37.335495,
+   "lng": -121.882551,
+   "address": null,
+   "website": null,
+   "wikidata": "Q104790872",
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/7121798609",
+   "name": "Paseo Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.336319,
+   "lng": -121.881477,
+   "address": "211 South 9th Street, 95112",
+   "website": "https://new.dineoncampus.com/sjsu/campus-map/paseo-market",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 08:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/338746231",
+   "name": "San Pedro Square Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.336457,
+   "lng": -121.894643,
+   "address": null,
+   "website": "https://sanpedrosquaremarket.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/39018501",
+   "name": "San Pedro Square Market Hall",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.336376,
+   "lng": -121.894967,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6521383065",
+   "name": "Taylor Street Night Market",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.353931,
+   "lng": -121.892725,
+   "address": null,
+   "website": "https://www.mvblfeast.com/taylorstreetmarket",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "May-Aug: Th 17:00-21:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": [
+      [
+       "05-01",
+       "08-31"
+      ]
+     ],
+     "days": [
+      "th"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "21:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:way/230610712",
+   "name": "The Alameda ArtWorks",
+   "nameEn": null,
+   "kind": "gallery",
+   "lat": 37.3309,
+   "lng": -121.910995,
+   "address": "1064 The Alameda, 95126",
+   "website": "https://www.thealamedaartworks.com/",
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/3634866139",
+   "name": "Urban Kiosk",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.339288,
+   "lng": -121.88351,
+   "address": "330 East Santa Clara Street, 95112",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/765864912",
+   "name": "Vườn Truyền Thống Việt;Viet Heritage Garden",
+   "nameEn": "Viet Heritage Garden",
+   "kind": "park",
+   "lat": 37.323757,
+   "lng": -121.855179,
+   "address": null,
+   "website": null,
+   "wikidata": "Q130376474",
+   "wikipedia": null,
+   "description": "park in San Jose, California, United States",
+   "image": "Viet Heritage Garden, San Jose, California, US.jpg",
+   "notability": 0,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4635066104",
+   "name": "Wildflower Meadow",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 37.335665,
+   "lng": -121.869289,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/10218891993",
+   "name": "World Ginseng & Health Products",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 37.386641,
+   "lng": -121.883962,
+   "address": "1698 Hostetter Road, 95131",
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Sa 10:00-18:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "18:00"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "near": "centre",
+ "stay": [
+  {
+   "id": "osm:relation/5339214",
+   "name": "Signia",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.333059,
+   "lng": -121.88902,
+   "address": "170 South Market Street, 95113",
+   "website": "https://www.hilton.com/en/hotels/sjcsmhh-signia-san-jose/",
+   "wikidata": "Q5430607",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 620,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:relation/13363041",
+   "name": "Four Points by Sheraton San Jose Downtown",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.332113,
+   "lng": -121.887986,
+   "address": "211 South 1st Street, 95113",
+   "website": "https://www.marriott.com/hotels/travel/sjcfp-four-points-san-jose-downtown/",
+   "wikidata": "Q5911764",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 693,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/39020075",
+   "name": "The Westin San Jose",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.330977,
+   "lng": -121.887456,
+   "address": "302 South Market Street, 95113",
+   "website": "https://www.marriott.com/hotels/travel/sjcwi-the-westin-san-jose/",
+   "wikidata": "Q5911936",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 810,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/37918472",
+   "name": "San Jose Marriott",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.330317,
+   "lng": -121.888339,
+   "address": "301 South Market Street, 95113",
+   "website": "https://www.marriott.com/hotels/travel/sjcsj-san-jose-marriott/",
+   "wikidata": "Q111393440",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 895,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/10048461452",
+   "name": "WhyHotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.338334,
+   "lng": -121.887467,
+   "address": null,
+   "website": "https://www.placemakr.com/locations/san-jose/whyhotel-downtown-san-jose/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 104,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4824007621",
+   "name": "Hotel Clariana",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.337032,
+   "lng": -121.888103,
+   "address": "100 East Santa Clara Street, 95113",
+   "website": "http://www.hotelclariana.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 206,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:relation/7325175",
+   "name": "Signia by Hilton San Jose",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.333005,
+   "lng": -121.889065,
+   "address": "170 South Market Street, 95113",
+   "website": null,
+   "wikidata": "Q5430607",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 627,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/39018269",
+   "name": "Hotel De Anza",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 37.334415,
+   "lng": -121.895073,
+   "address": "233 West Santa Clara Street, 95113",
+   "website": null,
+   "wikidata": "Q5244224",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 882,
+   "venuesNear": 1
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/3478559713",
+   "name": "The City Fish",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "fish_and_chips"
+   ],
+   "lat": 37.336351,
+   "lng": -121.88971,
+   "address": "30 East Santa Clara Street, 95113",
+   "website": "https://www.thecityfish.online/",
+   "wikidata": null,
+   "openingHours": "Mo-We,Su 11:00-21:00; Th-Sa 11:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 365,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3624046601",
+   "name": "Angelou’s Mexican Grill",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": 37.3348,
+   "lng": -121.889327,
+   "address": "78 South 1st Street, 95113",
+   "website": "https://angelousmexicangrill.com/",
+   "wikidata": null,
+   "openingHours": "Mo-Th 10:30-21:30; Fr,Sa 10:30-23:30; Su off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "21:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:30",
+       "23:30"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ],
+   "toVenueM": 463,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3634565759",
+   "name": "Angkor Chef",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "cambodian"
+   ],
+   "lat": 37.334628,
+   "lng": -121.889203,
+   "address": "86 South 1st Street, 95113-2406",
+   "website": "https://angkorchef.square.site/",
+   "wikidata": null,
+   "openingHours": "Mo,Su off; Tu-Th 11:30-21:00; Fr 11:30-22:00; Sa 12:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "su"
+     ],
+     "spans": []
+    },
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "fr"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 473,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4878743820",
+   "name": "Paseo Fresh",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "american",
+    "sandwich",
+    "salad",
+    "soup"
+   ],
+   "lat": 37.336374,
+   "lng": -121.88147,
+   "address": "211 South 9th Street, 95112",
+   "website": "https://new.dineoncampus.com/sjsu/campus-map/paseo-fresh-deli-coffee",
+   "wikidata": null,
+   "openingHours": "Mo-Su 08:00-16:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "16:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 473,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3215367502",
+   "name": "Élyse Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "french",
+    "vietnamese"
+   ],
+   "lat": 37.334545,
+   "lng": -121.889145,
+   "address": "96 South 1st Street, 95113",
+   "website": "https://www.elyserestaurant.com/",
+   "wikidata": null,
+   "openingHours": "Tu-Sa 17:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "17:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 478,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/7121798607",
+   "name": "Japanese Fusion",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese"
+   ],
+   "lat": 37.336418,
+   "lng": -121.881375,
+   "address": "211 South 9th Street, 95112",
+   "website": "https://new.dineoncampus.com/sjsu/campus-map/japanese-fusion",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 10:00-17:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 478,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/13322885549",
+   "name": "Suni Sushi",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi"
+   ],
+   "lat": 37.333814,
+   "lng": -121.885065,
+   "address": "119 Paseo De San Antonio",
+   "website": "https://pos.chowbus.com/online-ordering/store/sumi-sushi/21287",
+   "wikidata": null,
+   "openingHours": "11:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 500,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/3630274640",
+   "name": "Spoonfish Poke",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "seafood"
+   ],
+   "lat": 37.333689,
+   "lng": -121.885617,
+   "address": "111 Paseo De San Antonio, 95112",
+   "website": "https://direct.chownow.com/order/40331/locations/61237",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-19:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "19:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 505,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [],
+ "guide": {
+  "page": "San Jose (California)",
+  "url": "https://en.wikivoyage.org/wiki/San_Jose_%28California%29"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T20:40:51Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T20:41:03Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T20:41:57Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T20:41:58Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

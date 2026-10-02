@@ -83,6 +83,7 @@ import {
   withFilter,
 } from "./lib/festival-filter.js";
 import { areaOf } from "./lib/areas.js";
+import { CITIES_URL, cityEntryFor, cuisineWords, guideLists, readsLocalNames, roundedDistance } from "./lib/city-guide.js";
 import { centreOf, project } from "./lib/globe.js";
 import { createGlobe } from "./globe-view.js";
 import { leadEdition, normalizeTrip, tripForEdition, tripFromQuery } from "./lib/trip.js";
@@ -166,6 +167,11 @@ const state = {
   // The reader's own public holidays: whose, and the file's contents once read.
   holidays: { country: null, guessed: false, doc: null },
   editions: new Map(), // dataUrl -> Promise of an adapted catalogue
+  // The cities' registry, each city's lists as fetched (dataUrl -> Promise),
+  // and the lists of the city the leading festival is held in, or null.
+  cities: null,
+  cityFiles: new Map(),
+  guide: null,
   browsePages: 1,
   poolSlugs: new Set(),
   kinds: new Map(), // slug -> the shared kind it is filed under
@@ -519,6 +525,143 @@ function renderChrome() {
         }
       )
     : "";
+
+  // The credits the city's lists carry under their licences, while they are shown.
+  const link = (href, text) => `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
+  const guide = state.guide && $("cityGuide").dataset.state === "shown" ? state.guide : null;
+  const licences = (guide && guide.licences) || {};
+  $("footerGuide").innerHTML = guide
+    ? `<br><span data-i18n-slot="footer.places">${tHtml("footer.places", {}, {
+        osm: link(licences.osm.credit, "OpenStreetMap"),
+        licence: link(licences.osm.url, licences.osm.name),
+      })}</span>` +
+      (guide.trips.length && licences.wikivoyage
+        ? `<br><span data-i18n-slot="footer.trips">${tHtml("footer.trips", {}, {
+            guide: link(guide.guide.url, `Wikivoyage: ${guide.guide.page}`),
+            licence: link(licences.wikivoyage.url, licences.wikivoyage.name),
+          })}</span>`
+        : "")
+    : "";
+}
+
+// --- the trip's city --------------------------------------------------------
+//
+// Where to stay and eat near the venues, what to see and where to go for a
+// day, from the lists scraper/cities/ builds for every festival city. A city
+// without lists, or whose lists fail to load, draws no drawer at all.
+
+const GUIDE_LISTS = [
+  { list: "stay", emoji: "\u{1F6CF}", key: "guide.stay" },
+  { list: "eat", emoji: "\u{1F37D}", key: "guide.eat" },
+  { list: "see", emoji: "\u{1F3DB}", key: "guide.see" },
+  { list: "trips", emoji: "\u{1F68C}", key: "guide.trips" },
+];
+
+const STAY_KIND_KEYS = {
+  hotel: "guide.kind.hotel",
+  guest_house: "guide.kind.guest_house",
+  hostel: "guide.kind.hostel",
+  motel: "guide.kind.motel",
+};
+
+let guideAsked = 0;
+
+async function loadCityGuide() {
+  const festival = state.focus && state.focus.festival;
+  const asked = ++guideAsked;
+  let guide = null;
+  try {
+    if (festival) {
+      if (!state.cities) state.cities = await fetchJsonOk(CITIES_URL);
+      const entry = cityEntryFor(state.cities, festival);
+      if (entry) {
+        if (!state.cityFiles.has(entry.dataUrl)) state.cityFiles.set(entry.dataUrl, fetchJsonOk(entry.dataUrl));
+        guide = await state.cityFiles.get(entry.dataUrl);
+      }
+    }
+  } catch (err) {
+    // Lists that will not load are lists the page does without; the drawer's
+    // state says which way it went.
+    console.warn("city lists unavailable", err);
+    state.cities = null;
+    state.cityFiles.clear();
+  }
+  if (asked !== guideAsked) return;
+  state.guide = guide;
+  renderCityGuide();
+  renderChrome();
+}
+
+async function fetchJsonOk(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  return res.json();
+}
+
+function distanceText(metres) {
+  const { value, unit } = roundedDistance(metres);
+  return new Intl.NumberFormat(currentIntlLocale(), { style: "unit", unit, unitDisplay: "short" }).format(value);
+}
+
+/* What the drawer says under a place's name: a line of what it is and how far,
+ * and the source's own note about it (a cuisine, a description), which is
+ * English and kept in its own block so it reads the same in a right-to-left page. */
+function guideLines(list, item, near) {
+  const from = (m) => t(near === "centre" ? "guide.toCentre" : "guide.toVenue", { distance: distanceText(m) });
+  const capital = (text) => text && text.charAt(0).toUpperCase() + text.slice(1);
+  let meta;
+  let note = null;
+  if (list === "stay") {
+    const stars = item.stars ? "\u2605".repeat(Math.min(5, Math.round(item.stars))) : null;
+    meta = [t(STAY_KIND_KEYS[item.kind]), stars, from(item.toVenueM)];
+  } else if (list === "eat") {
+    meta = [from(item.toVenueM)];
+    note = cuisineWords(item.cuisine);
+  } else if (list === "see") {
+    meta = [];
+    note = capital(item.description);
+  } else {
+    meta = [t("guide.away", { distance: distanceText(item.km * 1000) })];
+    note = item.description;
+  }
+  const line = meta.filter(Boolean).join(" · ");
+  return (
+    (line ? `<span class="guide-meta">${escapeHtml(line)}</span>` : "") +
+    (note ? `<span class="guide-note" lang="en" dir="ltr">${escapeHtml(note)}</span>` : "")
+  );
+}
+
+function renderCityGuide() {
+  const el = $("cityGuide");
+  const guide = state.guide;
+  const festival = state.focus && state.focus.festival;
+  const lists = guide && festival ? guideLists(guide, { localReader: readsLocalNames(guide.city.country, currentLocale()) }) : null;
+  const shown = lists && GUIDE_LISTS.some(({ list }) => lists[list].length);
+  el.hidden = !shown;
+  el.dataset.state = shown ? "shown" : "absent";
+  if (!shown) {
+    el.open = false;
+    $("cityGuideBody").innerHTML = "";
+    return;
+  }
+  const title = $("cityGuideTitle");
+  title.textContent = t("guide.title", { city: festivalCity(festival) });
+  $("cityGuideBody").innerHTML = GUIDE_LISTS.filter(({ list }) => lists[list].length)
+    .map(
+      ({ list, emoji, key }) =>
+        `<section class="guide-list" data-guide-list="${list}">` +
+        `<h3 class="guide-head"><span class="guide-emoji" aria-hidden="true">${emoji}</span>` +
+        `<span data-i18n-slot="${key}">${escapeHtml(t(key))}</span></h3><ul>` +
+        lists[list]
+          .map(
+            (item) =>
+              `<li class="guide-item"><a class="guide-name" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">` +
+              `${escapeHtml(item.title)}</a>${guideLines(list, item, guide.near)}</li>`
+          )
+          .join("") +
+        `</ul></section>`
+    )
+    .join("");
 }
 
 // --- the board ------------------------------------------------------------
@@ -2265,9 +2408,8 @@ function wireCheckout() {
  * is drawn from when the lane beside the card is hovered. */
 const contested = new Map();
 
-/* Past this many side-by-side rows, the rivals are no longer told apart: each
- * is a faint bar in one lane, so where they pile up the lane darkens. A Fringe
- * hour can have fifty. */
+/* Past this many side-by-side rows, the rows narrow to fit them all: a Fringe
+ * hour can have fifty rivals, and each still gets a bar of its own. */
 const RIVAL_LANES = 3;
 
 function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
@@ -2318,16 +2460,22 @@ function buildScheduleBlock(slot, top, rawBottom, ceiling, reach, y) {
   if (slot.contenders.length) {
     contested.set(key, slot);
     // After the card in the DOM so a keyboard reaches the show first.
-    wrap.appendChild(rivalLane(slot, top, height, reach, y));
+    const lane = rivalLane(slot, top, height, reach, y);
+    // The card gives way to a crowded lane, so the slot carries its rows.
+    if (lane.classList.contains("sch-rivals--crowd")) {
+      wrap.classList.add("sch-slot--crowd");
+      wrap.style.setProperty("--lanes", lane.style.getPropertyValue("--lanes"));
+    }
+    wrap.appendChild(lane);
   }
   return wrap;
 }
 
 /* The shows this hour turned down, each drawn beside the card from its own
  * start to its own end, so how the others overlap the pick is something the
- * calendar shows rather than says. A few are packed into rows side by side;
- * past RIVAL_LANES rows they become one wash and a count (crowdWash). The
- * lane is one target, not a bar each: it opens the hour's list. */
+ * calendar shows rather than says. They are packed into rows side by side;
+ * past RIVAL_LANES rows the rows narrow and are painted together (crowdBars).
+ * The lane is one target, not a bar each: it opens the hour's list. */
 function rivalLane(slot, top, height, reach, y) {
   const rivals = slot.contenders;
   // Packed earliest first; contention.js hands them over scarcest first.
@@ -2339,30 +2487,39 @@ function rivalLane(slot, top, height, reach, y) {
     lanes[i] = rivalEnd(r);
     laneOf.set(r, i);
   }
+  const bars = rivals.map((r) => {
+    // An end nobody published, or one past the neighbouring cards, is drawn
+    // fading rather than capped.
+    const untimed = r.endMinuteOfDay === r.startMinuteOfDay;
+    const start = y(r.startMinuteOfDay);
+    const end = y(rivalEnd(r));
+    const from = clamp(start, ...reach);
+    const to = clamp(end, ...reach);
+    return {
+      lane: laneOf.get(r),
+      from: from - top,
+      len: Math.max(6, to - from),
+      openStart: start < from,
+      openEnd: untimed || end > to,
+    };
+  });
   const crowd = lanes.length > RIVAL_LANES;
   const lane = document.createElement("button");
   lane.innerHTML = crowd
-    ? crowdWash(rivals, top, height, y) + `<span class="sch-rivals-count">${rivals.length}</span>`
-    : rivals
-        .map((r) => {
-          // An end nobody published, or one past the neighbouring cards, is
-          // drawn fading rather than capped.
-          const untimed = r.endMinuteOfDay === r.startMinuteOfDay;
-          const start = y(r.startMinuteOfDay);
-          const end = y(rivalEnd(r));
-          const from = clamp(start, ...reach);
-          const to = clamp(end, ...reach);
+    ? crowdBars(bars, reach[0] - top, reach[1] - top)
+    : bars
+        .map((bar) => {
           const open =
-            (start < from ? " sch-rival--open-start" : "") + (untimed || end > to ? " sch-rival--open-end" : "");
+            (bar.openStart ? " sch-rival--open-start" : "") + (bar.openEnd ? " sch-rival--open-end" : "");
           return (
-            `<span class="sch-rival${open}" style="--from:${(from - top).toFixed(1)}px;` +
-            `--len:${Math.max(6, to - from).toFixed(1)}px;--lane:${laneOf.get(r)}"></span>`
+            `<span class="sch-rival${open}" style="--from:${bar.from.toFixed(1)}px;` +
+            `--len:${bar.len.toFixed(1)}px;--lane:${bar.lane}"></span>`
           );
         })
         .join("");
   lane.type = "button";
   lane.className = "sch-rivals" + (crowd ? " sch-rivals--crowd" : "");
-  lane.style.setProperty("--lanes", crowd ? 1 : lanes.length);
+  lane.style.setProperty("--lanes", lanes.length);
   lane.setAttribute("aria-haspopup", "dialog");
   lane.setAttribute("aria-expanded", "false");
   lane.setAttribute("aria-label", t("rivals.more", { count: rivals.length }));
@@ -2376,30 +2533,25 @@ function rivalEnd(r) {
   return r.endMinuteOfDay === r.startMinuteOfDay ? r.startMinuteOfDay + ASSUMED_LENGTH_MIN : r.endMinuteOfDay;
 }
 
-/* A crowd drawn as one element, not one per show: a Fringe calendar has
- * hundreds of contested hours and the page has an element budget (26.2). The
- * wash runs down the pick's own slot, darker wherever more rivals overlap. */
-function crowdWash(rivals, top, height, y) {
-  const edges = new Set([0, height]);
-  const spans = rivals.map((r) => [
-    clamp(y(r.startMinuteOfDay) - top, 0, height),
-    clamp(y(rivalEnd(r)) - top, 0, height),
-  ]);
-  for (const [from, to] of spans) edges.add(from).add(to);
-  const cuts = [...edges].sort((a, b) => a - b);
-  const depth = cuts.slice(0, -1).map((at, i) => {
-    const mid = (at + cuts[i + 1]) / 2;
-    return spans.filter(([from, to]) => from <= mid && mid < to).length;
+/* A crowd's bars painted by one element, not one per show: a Fringe calendar
+ * has hundreds of contested hours and the page has an element budget (26.2).
+ * Each bar is a background layer in its own row, capped like .sch-rival; the
+ * rows' widths and shades come from the stylesheet. */
+function crowdBars(bars, reachTop, reachBottom) {
+  const layers = bars.map((bar) => {
+    const fill = bar.lane % 2 ? "var(--bar-alt)" : "var(--bar)";
+    const head = bar.openStart ? `transparent, ${fill} 10px` : `var(--cap) 0 2px, ${fill} 2px`;
+    const tail = bar.openEnd ? `${fill} calc(100% - 10px), transparent` : `${fill} calc(100% - 2px), var(--cap) 0`;
+    return (
+      `linear-gradient(${head}, ${tail}) ` +
+      `calc(${bar.lane} * var(--step)) ${(bar.from - reachTop).toFixed(1)}px / ` +
+      `var(--w) ${bar.len.toFixed(1)}px no-repeat`
+    );
   });
-  const most = Math.max(1, ...depth);
-  const stops = depth
-    .map((n, i) => {
-      const mix = Math.round(10 + (n / most) * 55);
-      const colour = `color-mix(in srgb, var(--violet) ${n ? mix : 0}%, transparent)`;
-      return `${colour} ${cuts[i].toFixed(1)}px ${cuts[i + 1].toFixed(1)}px`;
-    })
-    .join(", ");
-  return `<span class="sch-crowd" style="background: linear-gradient(to bottom, ${stops})"></span>`;
+  return (
+    `<span class="sch-crowd" style="top:${reachTop.toFixed(1)}px;` +
+    `height:${(reachBottom - reachTop).toFixed(1)}px;background:${layers.join(", ")}"></span>`
+  );
 }
 
 function buildTravelLeg(a, b, top, bottom) {
@@ -3478,6 +3630,7 @@ function wireSearch() {
 /* Everything the page drew itself, redrawn in the language just chosen. The
  * static markup is the i18n module's own job; this is the rest. */
 function retranslate() {
+  renderCityGuide();
   renderChrome();
   if (!state.catalogue) return;
   renderTimelineStrip();
@@ -3989,6 +4142,7 @@ async function setTrip(trip, { fresh = false, moved = null } = {}) {
   }
   renderTimelineStrip();
   refreshFares();
+  loadCityGuide();
   if (!state.focus) return;
   await loadPool();
 }

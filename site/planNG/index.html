@@ -314,6 +314,18 @@
     </section>
     </details>
 
+    <!-- ===================== The trip's city ===================== -->
+    <!-- Where to stay and eat near the venues, what to see, where to go for a
+         day: drawn only once the city's lists have loaded. -->
+    <details class="drawer city-guide" id="cityGuide" hidden>
+      <summary class="drawer-summary">
+        <span class="drawer-caret" aria-hidden="true">▸</span>
+        <span class="drawer-title" id="cityGuideTitle" data-i18n-slot="guide.title"></span>
+        <span class="drawer-count" data-i18n="guide.summary">Where to stay and eat, what to see, where to go for a day</span>
+      </summary>
+      <div class="panel guide-body" id="cityGuideBody"></div>
+    </details>
+
   </main>
 
   <footer class="site-footer">
@@ -321,7 +333,7 @@
       <a href="/" class="logo">EdFringe<span class="logo-now">Now</span></a>
       <span class="footer-copy"><span id="footerVersion" class="footer-version" title="version 1.11002.25"><span data-i18n="footer.rights">© 2026 Missing Bulb</span></span>
         <br><span id="footerData" data-i18n-slot="footer.dataFrom"></span>
-        <br><span id="footerPhoto" data-i18n-slot="footer.photo"></span></span>
+        <br><span id="footerPhoto" data-i18n-slot="footer.photo"></span><span id="footerGuide"></span></span>
     </div>
   </footer>
 

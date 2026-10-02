@@ -1,0 +1,38 @@
+{
+ "about": "Hand research for the venues the festival's Eventive box office lists without an address the geocoder can place, keyed by the box office's venue id. Each pin is the OpenStreetMap feature named in its basis.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "69d6a79ebcb03e3c86214b7c": {
+   "name": "Collected Works",
+   "address": {
+    "value": "202 Galisteo Street, Santa Fe, NM 87501",
+    "source": "https://www.openstreetmap.org/node/4582171509"
+   },
+   "coordinates": {
+    "lat": 35.6867503,
+    "lng": -105.941007,
+    "basis": "OpenStreetMap's Collected Works Bookstore and Coffeehouse (node 4582171509)"
+   }
+  },
+  "6aa41f737da35a420b6ef4a6": {
+   "name": "Lady Duff's at Hotel Glorieta",
+   "coordinates": {
+    "lat": 35.6987754,
+    "lng": -105.9540748,
+    "basis": "OpenStreetMap's Hotel Glorieta (way 475920315)"
+   }
+  },
+  "6ab1954bf841b0180a6f5713": {
+   "name": "CCA Santa Fe",
+   "address": {
+    "value": "1050 Old Pecos Trail, Santa Fe, NM 87505",
+    "source": "https://www.openstreetmap.org/node/6515865236"
+   },
+   "coordinates": {
+    "lat": 35.6736544,
+    "lng": -105.938127,
+    "basis": "OpenStreetMap's Center for Contemporary Arts (node 6515865236)"
+   }
+  }
+ }
+}

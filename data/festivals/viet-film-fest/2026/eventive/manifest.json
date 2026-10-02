@@ -1,0 +1,16 @@
+{
+ "festival": "viet-film-fest",
+ "edition": "2026",
+ "source": "eventive",
+ "fetchedAt": "2026-10-02T18:08:49Z",
+ "fetcher": "scraper/festivals/viet_film_fest/sources/eventive/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://vietfilmfest2026.eventive.org/schedule",
+  "https://api.eventive.org/event_buckets/6a29d6aa4de75c8c0f789050/events?api_key=<the tenant's public api_key>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Eventive's public events API for the tenant's bucket, unauthenticated (the key is the one the box office ships). In-person screenings in the edition only; start_time is UTC; prices in cents (scraper/festivals/platforms/eventive.py)."
+}

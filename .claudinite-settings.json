@@ -89,7 +89,9 @@
   "taskScheduler": {
     "disabledTasks": [
       "edfringe/refresh-shows",
-      "edfringe/refresh-tickets"
+      "edfringe/refresh-tickets",
+      "edfringe-now/festival-update",
+      "edfringe-now/festival-refresh"
     ],
     "agenticTaskInvocationEndpoints": {
       "default": {

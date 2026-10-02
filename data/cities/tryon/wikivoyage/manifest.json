@@ -1,0 +1,14 @@
+{
+ "city": "tryon",
+ "source": "wikivoyage",
+ "fetchedAt": "2026-10-02T20:34:03Z",
+ "fetcher": "scraper/cities/fetch.py",
+ "fetcherVersion": 2,
+ "urls": [
+  "https://en.wikivoyage.org/wiki/Hendersonville_%28North_Carolina%29"
+ ],
+ "files": [
+  "gonext.json"
+ ],
+ "notes": "The guide's Go next section (action=raw), and each destination it links for its {{geo}}. Wikivoyage text is CC BY-SA 4.0."
+}

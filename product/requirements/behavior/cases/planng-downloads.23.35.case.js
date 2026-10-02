@@ -42,7 +42,8 @@ module.exports = {
     const fetched = [];
     page.on("request", (request) => {
       const { pathname } = new URL(request.url());
-      if (pathname.startsWith("/data/")) fetched.push(pathname);
+      // Programmes and their registry; the city's lists (section 33) are not a programme.
+      if (pathname.startsWith("/data/festivals/")) fetched.push(pathname);
     });
 
     await page.goto(`${origin}/planNG/`, { waitUntil: "load" });

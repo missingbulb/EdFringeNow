@@ -1,0 +1,61 @@
+# The Association for Israel Studies' annual conference: its identity, its
+# editions, and the sources an edition's information block is assembled from.
+# Every key follows the contract in scraper/festivals/README.md.
+
+id = "ais-conference"
+name = "Association for Israel Studies Annual Conference"
+city = "Ramat Gan"
+country = "IL"
+# Ramat Gan Academic College, the 2026 host (he.wikipedia.org's coordinates for
+# it), for the festival timeline and the travel maths between cities.
+lat = 32.0637
+lng = 34.8322
+timezone = "Asia/Jerusalem"
+# The programme is published in English.
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-israel-studies", "academic-social-sciences"]
+default_genre = "talk"
+site = "https://aisisraelstudies.org/conference/conference/"
+
+# Admission is a conference registration for all three days; no session is
+# sold on its own, so performance prices stay null.
+[ticketing]
+model = "festival-pass"
+url = "https://ws.eventact.com/AIS2026/Registration"
+notes = "Registration for the general public through the conference's EventAct registration page: faculty $180, non-faculty $120, students $90 (the conference page's own figures). Presenters must also be current AIS members."
+currency = "USD"
+source = "https://aisisraelstudies.org/conference/conference/"
+
+[[edition]]
+id = "2026"
+format = "block"
+# "42nd Conference of the Association for Israel Studies" (the conference page).
+ordinal = 42
+first = "2026-10-19"
+last = "2026-10-21"
+sources = ["eventact-agenda", "venues-research"]
+
+[[source]]
+id = "eventact-agenda"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/eventact-agenda/fetch.py"
+adapter = "ais_conference/eventact_agenda.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "eventact-agenda"]
+events = ["eventact-agenda"]
+performances = ["eventact-agenda"]

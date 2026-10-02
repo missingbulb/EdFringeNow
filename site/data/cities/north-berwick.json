@@ -1,0 +1,470 @@
+{
+ "v": 1,
+ "city": {
+  "id": "north-berwick",
+  "name": "North Berwick",
+  "country": "GB",
+  "lat": 56.0586,
+  "lng": -2.7196,
+  "timezone": "Europe/London"
+ },
+ "places": [
+  {
+   "id": "osm:way/73550202",
+   "name": "Scottish Seabird Centre",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 56.061317,
+   "lng": -2.717357,
+   "address": null,
+   "website": null,
+   "wikidata": "Q3476360",
+   "wikipedia": "en:Scottish Seabird Centre",
+   "description": "building in East Lothian, Scotland, UK",
+   "image": "The Scottish Seabird Centre - geograph.org.uk - 1034395.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": "Mo-Su 10:00-17:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "17:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/3018836406",
+   "name": "Castle Hill",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 56.057424,
+   "lng": -2.707058,
+   "address": null,
+   "website": null,
+   "wikidata": "Q65117501",
+   "wikipedia": "en:North Berwick Castle",
+   "description": "former castle in Scotland",
+   "image": null,
+   "notability": 1,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/4308887315",
+   "name": "Coastal Communities Museum",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 56.058474,
+   "lng": -2.714575,
+   "address": "School Road, EH39 4JU",
+   "website": "https://www.coastalmuseum.org/",
+   "wikidata": "Q113370279",
+   "wikipedia": null,
+   "description": "museum in North Berwick, Scotland, UK",
+   "image": null,
+   "notability": 0,
+   "highlight": false,
+   "openingHours": "Th-Su 11:00-22:00",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "22:00"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2951382063",
+   "name": "Why Not?",
+   "nameEn": null,
+   "kind": "market",
+   "lat": 56.058115,
+   "lng": -2.721251,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:node/13955561843",
+   "name": "Folly Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 56.05842,
+   "lng": -2.727783,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 222,
+   "venuesNear": 5
+  },
+  {
+   "id": "osm:node/2249466016",
+   "name": "35a Quality Street",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 56.059058,
+   "lng": -2.71734,
+   "address": "35a Quality Street, EH39 4HR",
+   "website": "https://www.35aqualitystreet.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 126,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/513064956",
+   "name": "Marine North Berwick",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 56.059428,
+   "lng": -2.738742,
+   "address": "18 Cromwell Road, EH39 4LZ",
+   "website": "https://marineandlawn.com/marinenorthberwick/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 0,
+   "venuesNear": 2
+  },
+  {
+   "id": "osm:node/513064970",
+   "name": "Nether Abbey Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 56.058134,
+   "lng": -2.73518,
+   "address": "20 Dirleton Avenue, EH39 4BQ",
+   "website": "https://netherabbey.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 264,
+   "venuesNear": 2
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/4755436306",
+   "name": "Poonthais",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "thai"
+   ],
+   "lat": 56.057949,
+   "lng": -2.722996,
+   "address": "7 Westgate, EH39 4AE",
+   "website": "http://www.poonthais.com/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 143,
+   "venuesNear": 5
+  },
+  {
+   "id": "osm:way/73550193",
+   "name": "Rocketeer Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "seafood"
+   ],
+   "lat": 56.06066,
+   "lng": -2.717836,
+   "address": "26 Victoria Road, EH39 4JL",
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Mo-We 09:00-17:00; Th-Sa 09:00-20:00; Su 09:00-18:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "17:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "18:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 0,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1647180291",
+   "name": "Zitto",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 56.058813,
+   "lng": -2.716876,
+   "address": "10 Quality Street, EH39 4HP",
+   "website": "https://zitto.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 92,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1647182001",
+   "name": "No. 12 Hotel & Bistro",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 56.058917,
+   "lng": -2.716907,
+   "address": "12 Quality Street, EH39 4HP",
+   "website": "http://no12qualitystreet.co.uk/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 104,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1647216850",
+   "name": "The Grange",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "steak_house"
+   ],
+   "lat": 56.058449,
+   "lng": -2.718474,
+   "address": "35 High Street, EH39 4HH",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 126,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/2244978351",
+   "name": "Cucina Amore",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 56.059136,
+   "lng": -2.717364,
+   "address": "37-39 Quality Street, EH39 4HR",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 135,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1647153998",
+   "name": "Lucky House",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese"
+   ],
+   "lat": 56.058003,
+   "lng": -2.722504,
+   "address": "125-127 High Street, EH39 4HB",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 159,
+   "venuesNear": 4
+  },
+  {
+   "id": "osm:node/1647165449",
+   "name": "Osteria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 56.058297,
+   "lng": -2.719816,
+   "address": "71 High Street, EH39 4HG",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 202,
+   "venuesNear": 4
+  }
+ ],
+ "trips": [
+  {
+   "name": "Gullane",
+   "page": "Gullane",
+   "url": "https://en.wikivoyage.org/wiki/Gullane",
+   "description": "Follow the coast road west past woodlands, sand hills, golf courses and crumbling old castles, through Gullane and Aberlady to Musselburgh, thence into Edinburgh.",
+   "lat": 56.03711,
+   "lng": -2.8265,
+   "km": 7
+  },
+  {
+   "name": "Haddington",
+   "page": "Haddington",
+   "url": "https://en.wikivoyage.org/wiki/Haddington",
+   "description": "Inland is the Museum of Flight near Haddington, the hill fort of Traprain Law, Glenkinchie whisky distillery, and the rolling Lammermuir Hills.",
+   "lat": 55.9585,
+   "lng": -2.7843,
+   "km": 12
+  },
+  {
+   "name": "Dunbar",
+   "page": "Dunbar",
+   "url": "https://en.wikivoyage.org/wiki/Dunbar",
+   "description": "East is Dunbar, a fishing port embellished by a nuclear power station.",
+   "lat": 56.002725,
+   "lng": -2.516901,
+   "km": 14
+  },
+  {
+   "name": "Eyemouth",
+   "page": "Eyemouth",
+   "url": "https://en.wikivoyage.org/wiki/Eyemouth",
+   "description": "St Abbs, Eyemouth and Burnmouth are picturesque villages beneath the Berwickshire cliffs, then you cross the border to Berwick-upon-Tweed in Northumberland.",
+   "lat": 55.87232,
+   "lng": -2.08934,
+   "km": 44
+  }
+ ],
+ "guide": {
+  "page": "North Berwick",
+  "url": "https://en.wikivoyage.org/wiki/North_Berwick"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T18:55:09Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T18:55:09Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:40:18Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:12:47Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

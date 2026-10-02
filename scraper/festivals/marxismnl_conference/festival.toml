@@ -1,0 +1,60 @@
+# MarxismNL Conference: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# MarxismNL's research conference, Pulling the Emergency Brake: panels at the
+# International Institute of Social History, evening keynotes at the IIRE.
+
+id = "marxismnl-conference"
+name = "MarxismNL Conference"
+city = "Amsterdam"
+country = "NL"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 52.3676
+lng = 4.9041
+timezone = "Europe/Amsterdam"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-politics"]
+default_genre = "talk"
+site = "https://marxism-nl.org"
+
+[ticketing]
+model = "other"
+url = "https://forms.gle/peVgY3Pqgh2Cw2hz7"
+notes = "Public registration by the form the conference page links; the page names no fee."
+
+[[edition]]
+id = "2026"
+# The conference page announces "our first conference".
+ordinal = 1
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-07"
+last = "2026-10-09"
+sources = ["venues-research", "pretalx"]
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "marxismnl_conference/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "marxismnl_conference/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

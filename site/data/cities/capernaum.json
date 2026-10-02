@@ -1,0 +1,651 @@
+{
+ "v": 1,
+ "city": {
+  "id": "capernaum",
+  "name": "Capernaum",
+  "country": "IL",
+  "lat": 32.8804,
+  "lng": 35.5736,
+  "timezone": "Asia/Jerusalem"
+ },
+ "places": [
+  {
+   "id": "osm:way/551062314",
+   "name": "כפר נחום",
+   "nameEn": "Capernahum",
+   "kind": "landmark",
+   "lat": 32.880689,
+   "lng": 35.575519,
+   "address": null,
+   "website": null,
+   "wikidata": "Q59174",
+   "wikipedia": "he:כפר נחום",
+   "description": "village at Lake Tiberias in the north of historical Judea, associated with Jesus",
+   "image": "Kafarnaum BW 7.JPG",
+   "notability": 61,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/278473357",
+   "name": "חורבת מנים",
+   "nameEn": "Horbat Minnim",
+   "kind": "landmark",
+   "lat": 32.864951,
+   "lng": 35.536474,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2915281",
+   "wikipedia": "he:חורבת מנים",
+   "description": "8th-century Islamic palace in Israel",
+   "image": "Tabgha Ein Sheva 1903.jpg",
+   "notability": 14,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/12312179065",
+   "name": "Tel Kinarot",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 32.869946,
+   "lng": 35.539524,
+   "address": null,
+   "website": null,
+   "wikidata": "Q5533392",
+   "wikipedia": null,
+   "description": "ancient city",
+   "image": "Tell el-Oreme (Kinneret) von Westen.jpg",
+   "notability": 13,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:way/124018117",
+   "name": "בית הכנסת כפר נחום",
+   "nameEn": "Synagogue of Capernaum",
+   "kind": "landmark",
+   "lat": 32.881047,
+   "lng": 35.575408,
+   "address": null,
+   "website": null,
+   "wikidata": "Q2916829",
+   "wikipedia": null,
+   "description": "archaeological site in Israel",
+   "image": "Kafarnaum BW 7.JPG",
+   "notability": 7,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:relation/12941438",
+   "name": "שמורת טבע הבטיחה",
+   "nameEn": "Betiha Nature Reserve",
+   "kind": "park",
+   "lat": 32.882156,
+   "lng": 35.628156,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16131046",
+   "wikipedia": null,
+   "description": "valley in Syria",
+   "image": "Baticha valley (997009324153305171.jpg",
+   "notability": 5,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/8914538517",
+   "name": "בית הבק",
+   "nameEn": null,
+   "kind": "landmark",
+   "lat": 32.893417,
+   "lng": 35.618527,
+   "address": null,
+   "website": null,
+   "wikidata": "Q61126306",
+   "wikipedia": "he:בית הבק",
+   "description": "building in Israel",
+   "image": "בית הבק בצל האקליפטוסים.JPG",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/1191217932",
+   "name": "חורבת כור",
+   "nameEn": "Horvat Kur",
+   "kind": "landmark",
+   "lat": 32.884705,
+   "lng": 35.536865,
+   "address": null,
+   "website": null,
+   "wikidata": "Q65234568",
+   "wikipedia": null,
+   "description": "archaeological site",
+   "image": "בית הכנסת בחורבת כור.jpg",
+   "notability": 2,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/6925430685",
+   "name": "Caphernaum The Town of Jesus",
+   "nameEn": null,
+   "kind": "museum",
+   "lat": 32.880599,
+   "lng": 35.574926,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": "Mo-Su 08:00-16:30",
+   "hoursSource": "osm",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "08:00",
+       "16:30"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osm:node/2300388652",
+   "name": "ח. כרי דשא",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 32.928833,
+   "lng": 35.579848,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5649594781",
+   "name": "מצפה חנה",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 32.915924,
+   "lng": 35.596825,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/5649594782",
+   "name": "מצפה רינה",
+   "nameEn": null,
+   "kind": "viewpoint",
+   "lat": 32.915535,
+   "lng": 35.594994,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/2117626003",
+   "name": "מצפה שגב",
+   "nameEn": "Segev lookout",
+   "kind": "viewpoint",
+   "lat": 32.924701,
+   "lng": 35.607759,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/1353602826",
+   "name": "נבל דוד",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.887737,
+   "lng": 35.576783,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 866,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/902639676",
+   "name": "אכסניית אנ\"א כרי דשא",
+   "nameEn": "HI Karei Deshe",
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.862748,
+   "lng": 35.535657,
+   "address": null,
+   "website": "https://en.iyha.org.il/karei-deshe-kinneret-hostel",
+   "wikidata": "Q6786300",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 4049,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/643422769",
+   "name": "מלון כינר גליל",
+   "nameEn": "Kinar Galil hotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.861225,
+   "lng": 35.644826,
+   "address": null,
+   "website": null,
+   "wikidata": "Q38219356",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 6990,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/4841481760",
+   "name": "חקוק בלב",
+   "nameEn": "Hakuk Balev",
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.879869,
+   "lng": 35.49534,
+   "address": null,
+   "website": "https://www.hakukbalev.co.il/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 7305,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/1073556449",
+   "name": "Solaya Kinneret",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.831519,
+   "lng": 35.515154,
+   "address": null,
+   "website": "https://www.solayakineret.com",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 7703,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/914810992",
+   "name": "אכסניית הר האושר",
+   "nameEn": "Mount of Beatitudes Guest House",
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.881578,
+   "lng": 35.555849,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1659,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/915270956",
+   "name": "Pilgerhaus Tabgha",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.869846,
+   "lng": 35.543344,
+   "address": "14950",
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3057,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/1252007083",
+   "name": "עדיליון",
+   "nameEn": "Adilion",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.891819,
+   "lng": 35.509123,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 6149,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:way/742242034",
+   "name": "St. Peter Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mediterranean"
+   ],
+   "lat": 32.891212,
+   "lng": 35.593715,
+   "address": null,
+   "website": "https://st-peters-restaurant.business.site",
+   "wikidata": null,
+   "openingHours": "11:30-15:30",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "11:30",
+       "15:30"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 2231,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/789963907",
+   "name": "מסעדת אבו סלאח",
+   "nameEn": "Abu Salah",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "meat",
+    "arab"
+   ],
+   "lat": 32.916482,
+   "lng": 35.545592,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "08:30-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "08:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 4784,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/10134814917",
+   "name": "Tibi’s",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.904651,
+   "lng": 35.550268,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "Su-Sa 12:30-23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:30",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 3462,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6985075784",
+   "name": "Ali's Restaurant",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "fish"
+   ],
+   "lat": 32.863904,
+   "lng": 35.538012,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 3795,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/931732210",
+   "name": "cafeteria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.881058,
+   "lng": 35.557062,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1542,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/895708933",
+   "name": "k. hanahal",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": null,
+   "lat": 32.845279,
+   "lng": 35.51676,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 6590,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [
+  {
+   "name": "Sea of Galilee",
+   "page": "Sea of Galilee region",
+   "url": "https://en.wikivoyage.org/wiki/Sea_of_Galilee_region",
+   "description": "The Sea of Galilee offers interesting destinations, easily reachable from Tiberias, including the famous and beautiful churches about 12 km northeast, and Arbel mountain northwest.",
+   "lat": 32.79997,
+   "lng": 35.58815,
+   "km": 9
+  },
+  {
+   "name": "Golan Heights",
+   "page": "Golan Heights",
+   "url": "https://en.wikivoyage.org/wiki/Golan_Heights",
+   "description": "Golan Heights is just across the lake.",
+   "lat": 32.981,
+   "lng": 35.749,
+   "km": 20
+  },
+  {
+   "name": "Nazareth",
+   "page": "Nazareth",
+   "url": "https://en.wikivoyage.org/wiki/Nazareth",
+   "description": "The largest Arab city in Israel and best known as the home of Joseph and Mary.",
+   "lat": 32.701944,
+   "lng": 35.303333,
+   "km": 32
+  },
+  {
+   "name": "Jenin",
+   "page": "Jenin",
+   "url": "https://en.wikivoyage.org/wiki/Jenin",
+   "description": "Its name means The spring of gardens. Read above on how to accomplish the trip there.",
+   "lat": 32.466667,
+   "lng": 35.3,
+   "km": 53
+  },
+  {
+   "name": "Jericho",
+   "page": "Jericho",
+   "url": "https://en.wikivoyage.org/wiki/Jericho",
+   "description": "One of the oldest settlements in the world and the Middle East, and a great starting point for nearby Kalya Beach at the Dead Sea. Going south, stop at Belvoir Castle for a great view across the fertile Jordan valley.",
+   "lat": 31.85,
+   "lng": 35.45,
+   "km": 115
+  },
+  {
+   "name": "Jerusalem",
+   "page": "Jerusalem",
+   "url": "https://en.wikivoyage.org/wiki/Jerusalem",
+   "description": "Besides the Dead Sea, a central focus for most people coming to this region.",
+   "lat": 31.7833,
+   "lng": 35.2167,
+   "km": 127
+  }
+ ],
+ "guide": {
+  "page": "Tiberias",
+  "url": "https://en.wikivoyage.org/wiki/Tiberias"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T18:28:41Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T18:29:00Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:50:09Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:13:50Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

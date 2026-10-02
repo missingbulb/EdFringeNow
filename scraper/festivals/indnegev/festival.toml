@@ -19,6 +19,7 @@ kind = "music"
 subtypes = ["music-indie", "music-israeli"]
 default_genre = "music"
 site = "https://indnegev.co.il"
+wikidata = "Q12403815"
 
 # One ticket is the whole festival (or a day of it); no set is sold on its own,
 # so every performance's price stays null.
@@ -34,6 +35,7 @@ format = "block"
 # ordinal: the site prints none.
 first = "2026-10-15"
 last = "2026-10-17"
+sources = ["indnegev-site", "venues-research"]
 
 [[source]]
 id = "indnegev-site"

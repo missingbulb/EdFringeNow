@@ -1,0 +1,38 @@
+{
+ "about": "Hand research for the venues the festival's Eventive box office lists without an address the geocoder can place, keyed by the box office's venue id. Each pin is the OpenStreetMap feature named in its basis.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "691b8a9a94bdbc299cd4950f": {
+   "name": "The Greenlife Inn at the Mimosa",
+   "coordinates": {
+    "lat": 35.2261677,
+    "lng": -82.2357932,
+    "basis": "OpenStreetMap's Mimosa Inn (way 16727760)"
+   }
+  },
+  "691b8a9a94bdbc299cd49512": {
+   "name": "Tryon Depot Room",
+   "address": {
+    "value": "22 Depot Street, Tryon, NC 28782",
+    "source": "https://www.openstreetmap.org/way/362333963"
+   },
+   "coordinates": {
+    "lat": 35.2088457,
+    "lng": -82.2391673,
+    "basis": "OpenStreetMap's Tryon Depot (way 362333963)"
+   }
+  },
+  "6a7f667887c45cb9d7ba51fd": {
+   "name": "Tryon Theatre",
+   "address": {
+    "value": "45 South Trade Street, Tryon, NC 28782",
+    "source": "https://www.openstreetmap.org/way/738601802"
+   },
+   "coordinates": {
+    "lat": 35.2083038,
+    "lng": -82.2374748,
+    "basis": "OpenStreetMap's Tryon Theatre (way 738601802)"
+   }
+  }
+ }
+}

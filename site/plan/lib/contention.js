@@ -15,7 +15,7 @@
 //
 // Pure. Same inputs, same draft, every time.
 
-import { compatible, eligibleSlots, normalizeMealBreaks, slotKey, withinDayWindow } from "./engine.js";
+import { compatible, dayParts, eligibleSlots, normalizeMealBreaks, slotKey, takeSpread, withinDayWindow } from "./engine.js";
 
 /**
  * Identity of one verdict against one performance: which show, which night.
@@ -196,31 +196,13 @@ export function draftCalendar(shows, options = {}) {
   for (const [slug, slots] of pool) freedom.set(slug, slots.length);
 
   // A day held to fewer shows than it could fit is shared out between its
-  // places: the hours the day's programme spans are cut into one part per
-  // place, each taken by one show before any takes a second. Left to the clock
-  // alone, a short day would fill from the morning.
-  const parts = Number.isFinite(maxPerDay) && maxPerDay > 0 ? maxPerDay : 0;
-  const spans = new Map();
-  for (const slots of pool.values()) {
-    for (const s of slots) {
-      const span = spans.get(s.date);
-      if (!span) spans.set(s.date, { first: s.startMinuteOfDay, last: s.startMinuteOfDay });
-      else {
-        span.first = Math.min(span.first, s.startMinuteOfDay);
-        span.last = Math.max(span.last, s.startMinuteOfDay);
-      }
-    }
-  }
-  const partOf = (slot) => {
-    if (!parts) return 0;
-    const { first, last } = spans.get(slot.date);
-    return Math.min(parts - 1, Math.floor(((slot.startMinuteOfDay - first) * parts) / (last - first + 1)));
-  };
+  // places, each part of its hours taken by one show before any takes a second.
+  const partOf = dayParts([...pool.values()].flat(), maxPerDay);
 
   const candidates = [];
   for (const [slug, slots] of pool) {
     for (const slot of slots) {
-      candidates.push({ ...slot, freedom: freedom.get(slug), part: partOf(slot), contenders: [], verdict: null });
+      candidates.push({ ...slot, freedom: freedom.get(slug), part: partOf ? partOf(slot) : 0, contenders: [], verdict: null });
     }
   }
   candidates.sort(byScarcity);
@@ -251,22 +233,13 @@ export function draftCalendar(shows, options = {}) {
   // it outranks the day you described. `tasteCap` is the limit on shows from
   // outside your kinds, which neither verdict is held to.
   //
-  // Each run of equally scarce candidates is taken twice: first only into the
-  // parts of a day nothing holds yet, then into whatever room is left, so the
-  // spread never leaves a day short and never outranks scarcity.
+  // A capped pass spreads each day across its hours (takeSpread).
   const sweep = (list, verdict, dayCap, tasteCap) => {
-    if (!dayCap || !parts) {
+    if (!dayCap || !partOf) {
       take(list, verdict, dayCap, tasteCap, false);
       return;
     }
-    for (let i = 0; i < list.length; ) {
-      let j = i;
-      while (j < list.length && list[j].freedom === list[i].freedom) j++;
-      const run = list.slice(i, j);
-      take(run, verdict, dayCap, tasteCap, true);
-      take(run, verdict, dayCap, tasteCap, false);
-      i = j;
-    }
+    takeSpread(list, (run, spread) => take(run, verdict, dayCap, tasteCap, spread));
   };
   const take = (list, verdict, dayCap, tasteCap, spread) => {
     for (const cand of list) {

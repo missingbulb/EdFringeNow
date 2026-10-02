@@ -17,7 +17,8 @@ Three scripts, on three different clocks:
 The festival planner (`/planNG/`) reads these same files for the Fringe, through
 its registry entry in [`festivals/edfringe/`](festivals/edfringe/festival.toml).
 The other festivals use a separate, festival-generic layer:
-hand-run fetchers under [`festivals/`](festivals/README.md) write per-edition raw
+the fetchers under [`festivals/`](festivals/README.md), run by the `festival-update`
+and `festival-refresh` tasks or by hand, write per-edition raw
 into `data/festivals/`, and [`convert/`](convert/to_serving.py) turns it into
 `site/data/festivals/`. Its contract — fetcher vs raw vs converter, adding an
 edition or a source — is [festivals/README.md](festivals/README.md).

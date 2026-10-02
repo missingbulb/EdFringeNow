@@ -17,6 +17,7 @@ kind = "film"
 subtypes = ["film-international"]
 default_genre = "film"
 site = "https://www.edfilmfest.org"
+wikidata = "Q1284745"
 
 [ticketing]
 model = "central-box-office"
@@ -31,6 +32,7 @@ id = "2026"
 format = "block"
 first = "2026-08-13"
 last = "2026-08-19"
+sources = ["festival-site", "venues-research"]
 
 [[source]]
 id = "festival-site"

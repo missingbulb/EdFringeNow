@@ -2,6 +2,7 @@
 """Convert one festival edition's raw into its serving block, or prove the committed ones current.
 
     python3 scraper/convert/to_serving.py <festival-id> <edition>   # write that edition
+    python3 scraper/convert/to_serving.py --all                     # write every edition whose raw is present
     python3 scraper/convert/to_serving.py --index                   # rewrite the registry alone
     python3 scraper/convert/to_serving.py --check                   # re-derive everything, diff, exit 1 on drift
     python3 scraper/convert/to_serving.py --selftest
@@ -14,6 +15,11 @@ each atomically: `site/data/festivals/<festival>/<edition>.json`, the registry
 edition's declared legacy file, if any. No other festival's or edition's data
 is written; the registry reads each edition's committed programme only to count
 its events.
+
+`--all` writes every block edition whose required raw is present, and the
+registry, for a run that fetched several festivals before converting any: the
+registry counts every ready edition's events, so converting one of them alone
+fails while another has raw but no serving file yet.
 
 `--index` rewrites the registry alone, for a pipeline that changes a
 programme this converter does not write (the Edinburgh Fringe's own wire
@@ -134,6 +140,8 @@ def build_index(festivals, built=None):
             "defaultGenre": f["default_genre"],
             "site": f["site"],
             "ticketing": ticketing_entry(f),
+            # Unknown is an absent key, never a zero.
+            **({"popularity": f["popularity"]} if "popularity" in f else {}),
             "editions": [edition_entry(f, ed, built) for ed in sorted(f["edition"], key=lambda e: e["id"])],
         })
     return {"v": schema.VERSION, "festivals": entries}
@@ -186,6 +194,13 @@ def write(festival_id, edition_id):
     for path, text in outputs.items():
         atomic_write(path, text)
         print("wrote %s" % os.path.relpath(path, registry.REPO_ROOT))
+
+
+def write_all():
+    outputs = expected_outputs()
+    for path, text in sorted(outputs.items()):
+        atomic_write(path, text)
+    print("wrote %d serving file(s) and the registry" % (len(outputs) - 1))
 
 
 def write_index():
@@ -247,6 +262,25 @@ def selftest():
         with open(target, encoding="utf-8") as handle:
             assert handle.read() == "one\n"
         assert os.listdir(os.path.dirname(target)) == ["b.json"], os.listdir(os.path.dirname(target))
+
+        measured = os.path.join(scratch, "popularity.json")
+        festival = {"wikidata": "Q1"}
+        assert registry.popularity(festival, measured) is None  # unmeasured: unknown, not zero
+        for record, accepted in (
+            ({"wikidata": "Q1", "views": 0}, 0),
+            ({"wikidata": "Q1", "views": 1234}, 1234),
+            ({"wikidata": "Q1", "views": -1}, None),
+            ({"wikidata": "Q1", "views": 1.5}, None),
+            ({"wikidata": "Q1", "views": True}, None),
+            ({"wikidata": "Q1", "views": "12"}, None),
+            ({"wikidata": "Q1", "views": None}, None),
+            ({"wikidata": "Q2", "views": 5}, None),
+        ):
+            atomic_write(measured, json.dumps(record))
+            try:
+                assert registry.popularity(festival, measured) == accepted, record
+            except registry.RegistryError:
+                assert accepted is None, record
     finally:
         shutil.rmtree(scratch)
     print("convert to_serving selftest: ok")
@@ -255,6 +289,13 @@ def selftest():
 def main(argv):
     if argv == ["--check"]:
         return check()
+    if argv == ["--all"]:
+        try:
+            write_all()
+        except (ConvertError, merge.MergeError, registry.RegistryError) as error:
+            print(error, file=sys.stderr)
+            return 1
+        return 0
     if argv == ["--index"]:
         try:
             write_index()

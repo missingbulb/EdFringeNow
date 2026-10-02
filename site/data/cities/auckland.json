@@ -12,6 +12,7 @@
   {
    "id": "osm:relation/19745928",
    "name": "Sky Tower",
+   "nameEn": null,
    "kind": "attraction",
    "lat": -36.848466,
    "lng": 174.762184,
@@ -60,6 +61,7 @@
   {
    "id": "osm:way/23906678",
    "name": "Tāmaki Paenga Hira / Auckland War Memorial Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.860751,
    "lng": 174.777811,
@@ -129,6 +131,7 @@
   {
    "id": "osm:way/1200029569",
    "name": "Y turret of HMNZS Achilles",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.83049,
    "lng": 174.790845,
@@ -147,6 +150,7 @@
   {
    "id": "osm:way/154430110",
    "name": "Toi o Tāmaki / Auckland Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.851276,
    "lng": 174.766372,
@@ -195,6 +199,7 @@
   {
    "id": "osm:way/37789882",
    "name": "Auckland Zoo",
+   "nameEn": null,
    "kind": "zoo",
    "lat": -36.862579,
    "lng": 174.721218,
@@ -242,6 +247,7 @@
   {
    "id": "osm:way/6029919",
    "name": "Pukekawa / Auckland Domain",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.859073,
    "lng": 174.775673,
@@ -260,6 +266,7 @@
   {
    "id": "osm:way/28529921",
    "name": "SEA LIFE Kelly Tarlton's Aquarium",
+   "nameEn": null,
    "kind": "zoo",
    "lat": -36.846349,
    "lng": 174.817169,
@@ -297,6 +304,7 @@
   {
    "id": "osm:way/26829058",
    "name": "Freyberg Field",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.897804,
    "lng": 174.736433,
@@ -315,6 +323,7 @@
   {
    "id": "osm:way/464276992",
    "name": "KZ1 Yacht",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.84235,
    "lng": 174.763508,
@@ -333,6 +342,7 @@
   {
    "id": "osm:way/261494115",
    "name": "Maungawhau / Mount Eden",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.876215,
    "lng": 174.764333,
@@ -351,6 +361,7 @@
   {
    "id": "osm:relation/19733460",
    "name": "Museum of Transport and Technology",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.863567,
    "lng": 174.720193,
@@ -369,6 +380,7 @@
   {
    "id": "osm:way/154260841",
    "name": "New Zealand Maritime Museum Hui Te Ananui a Tangaroa",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.841544,
    "lng": 174.763321,
@@ -416,6 +428,7 @@
   {
    "id": "osm:relation/9640389",
    "name": "Cornwall Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.898231,
    "lng": 174.784265,
@@ -434,6 +447,7 @@
   {
    "id": "osm:node/13937022004",
    "name": "Gus Fisher",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.846794,
    "lng": 174.769339,
@@ -480,6 +494,7 @@
   {
    "id": "osm:relation/9636962",
    "name": "Albert Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.850364,
    "lng": 174.768045,
@@ -498,6 +513,7 @@
   {
    "id": "osm:node/2942780456",
    "name": "Artspace",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.857824,
    "lng": 174.757901,
@@ -516,6 +532,7 @@
   {
    "id": "osm:way/48922561",
    "name": "Colin Maiden Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.881606,
    "lng": 174.847167,
@@ -534,6 +551,7 @@
   {
    "id": "osm:relation/11545382",
    "name": "Myers Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.855602,
    "lng": 174.761309,
@@ -552,6 +570,7 @@
   {
    "id": "osm:way/50884023",
    "name": "Newmarket Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.865648,
    "lng": 174.783939,
@@ -570,6 +589,7 @@
   {
    "id": "osm:way/84950915",
    "name": "Ngahue Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.881372,
    "lng": 174.843041,
@@ -588,6 +608,7 @@
   {
    "id": "osm:way/43435523",
    "name": "Parnell Rose Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": -36.850804,
    "lng": 174.786298,
@@ -606,6 +627,7 @@
   {
    "id": "osm:way/324441679",
    "name": "Tuff Crater Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.802554,
    "lng": 174.755158,
@@ -624,6 +646,7 @@
   {
    "id": "osm:way/7977840",
    "name": "Waiatarau / Victoria Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.846672,
    "lng": 174.753877,
@@ -642,6 +665,7 @@
   {
    "id": "osm:node/11378811324",
    "name": "General Assembly House",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.849131,
    "lng": 174.773328,
@@ -660,6 +684,7 @@
   {
    "id": "osm:node/10690527934",
    "name": "Objectspace",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.857994,
    "lng": 174.747437,
@@ -678,6 +703,7 @@
   {
    "id": "osm:node/2135671125",
    "name": "Albert Park South African War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.8499,
    "lng": 174.767827,
@@ -696,6 +722,7 @@
   {
    "id": "osm:relation/14143211",
    "name": "Albert Park Tunnels",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.850129,
    "lng": 174.770126,
@@ -714,6 +741,7 @@
   {
    "id": "osm:way/291024485",
    "name": "Alberton",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.889949,
    "lng": 174.724638,
@@ -732,6 +760,7 @@
   {
    "id": "osm:way/4369988",
    "name": "Basque Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.864417,
    "lng": 174.757508,
@@ -750,6 +779,7 @@
   {
    "id": "osm:node/5237158395",
    "name": "Eden Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": -36.876793,
    "lng": 174.767723,
@@ -787,6 +817,7 @@
   {
    "id": "osm:node/262078398",
    "name": "Fort Takapuna",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.815121,
    "lng": 174.806014,
@@ -805,6 +836,7 @@
   {
    "id": "osm:relation/14867816",
    "name": "Fowlds Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.873588,
    "lng": 174.729046,
@@ -823,6 +855,7 @@
   {
    "id": "osm:node/8758735744",
    "name": "Gow Langsford Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.851113,
    "lng": 174.765908,
@@ -877,6 +910,7 @@
   {
    "id": "osm:way/5755691",
    "name": "Gribblehirst Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.880282,
    "lng": 174.738079,
@@ -895,6 +929,7 @@
   {
    "id": "osm:way/26113845",
    "name": "Keith Hay Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.918324,
    "lng": 174.743713,
@@ -913,6 +948,7 @@
   {
    "id": "osm:way/50047080",
    "name": "Kepa Bush Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.862797,
    "lng": 174.830651,
@@ -931,6 +967,7 @@
   {
    "id": "osm:way/49743412",
    "name": "Kohimarama Beach",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.850114,
    "lng": 174.844471,
@@ -949,6 +986,7 @@
   {
    "id": "osm:way/27034065",
    "name": "Madills Farm Recreation Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.85619,
    "lng": 174.844578,
@@ -967,6 +1005,7 @@
   {
    "id": "osm:way/162154097",
    "name": "Maota Sāmoa / Sāmoa House",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.857236,
    "lng": 174.757993,
@@ -985,6 +1024,7 @@
   {
    "id": "osm:relation/13218743",
    "name": "Monte Cecilia Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.912934,
    "lng": 174.763833,
@@ -1003,6 +1043,7 @@
   {
    "id": "osm:node/729413110",
    "name": "Queen Victoria",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.850268,
    "lng": 174.768079,
@@ -1021,6 +1062,7 @@
   {
    "id": "osm:way/690838704",
    "name": "Saint Johns Bush",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.872192,
    "lng": 174.841028,
@@ -1039,6 +1081,7 @@
   {
    "id": "osm:way/15238484",
    "name": "Seddon Fields",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.859441,
    "lng": 174.718011,
@@ -1057,6 +1100,7 @@
   {
    "id": "osm:node/4218297096",
    "name": "Sir George Grey",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.850089,
    "lng": 174.767733,
@@ -1075,6 +1119,7 @@
   {
    "id": "osm:node/2133445498",
    "name": "Symonds Street NZ Wars memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.855782,
    "lng": 174.765992,
@@ -1093,6 +1138,7 @@
   {
    "id": "osm:node/11472957264",
    "name": "Tautai Pacific Arts Trust",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.857818,
    "lng": 174.757928,
@@ -1139,6 +1185,7 @@
   {
    "id": "osm:way/7977838",
    "name": "Tuna Mau / Western Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.856545,
    "lng": 174.751601,
@@ -1157,6 +1204,7 @@
   {
    "id": "osm:way/32874208",
    "name": "Waiatarua Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.882545,
    "lng": 174.824985,
@@ -1175,6 +1223,7 @@
   {
    "id": "osm:way/37789725",
    "name": "Western Springs Lakeside Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.865193,
    "lng": 174.723188,
@@ -1193,6 +1242,7 @@
   {
    "id": "osm:node/5539567580",
    "name": "Ōwairaka",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.880727,
    "lng": 174.72293,
@@ -1211,6 +1261,7 @@
   {
    "id": "osm:relation/10671258",
    "name": "Alan Wood Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.897791,
    "lng": 174.711344,
@@ -1229,6 +1280,7 @@
   {
    "id": "osm:way/43099612",
    "name": "Alberon Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.855231,
    "lng": 174.784507,
@@ -1247,6 +1299,7 @@
   {
    "id": "osm:way/23894136",
    "name": "Alten Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.850912,
    "lng": 174.773416,
@@ -1265,6 +1318,7 @@
   {
    "id": "osm:way/621633321",
    "name": "Amey Daldy Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.84353,
    "lng": 174.755272,
@@ -1283,6 +1337,7 @@
   {
    "id": "osm:way/705658456",
    "name": "Aramoana Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.817013,
    "lng": 174.785437,
@@ -1301,6 +1356,7 @@
   {
    "id": "osm:way/8082652",
    "name": "Arch Hill Scenic Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.867106,
    "lng": 174.740532,
@@ -1319,6 +1375,7 @@
   {
    "id": "osm:way/1278403702",
    "name": "Arch of Remembrance",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.917777,
    "lng": 174.779307,
@@ -1337,6 +1394,7 @@
   {
    "id": "osm:node/8322342315",
    "name": "Art Select Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.868545,
    "lng": 174.7772,
@@ -1355,6 +1413,7 @@
   {
    "id": "osm:node/13807205904",
    "name": "Art by the Sea",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.783487,
    "lng": 174.7735,
@@ -1403,6 +1462,7 @@
   {
    "id": "osm:way/24216948",
    "name": "Arthur S Richards Memorial Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.902775,
    "lng": 174.750258,
@@ -1432,6 +1492,7 @@
   {
    "id": "osm:way/958058632",
    "name": "Auckland Cenotaph",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.85984,
    "lng": 174.777811,
@@ -1450,6 +1511,7 @@
   {
    "id": "osm:way/1485551949",
    "name": "Auckland Fish Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.841311,
    "lng": 174.756277,
@@ -1468,6 +1530,7 @@
   {
    "id": "osm:node/11062962905",
    "name": "Auckland Night Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.840549,
    "lng": 174.756401,
@@ -1499,6 +1562,7 @@
   {
    "id": "osm:relation/19252404",
    "name": "Auckland Normal Intermediate School memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.883478,
    "lng": 174.765231,
@@ -1517,6 +1581,7 @@
   {
    "id": "osm:way/23616405",
    "name": "Balmain Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.823616,
    "lng": 174.80858,
@@ -1535,6 +1600,7 @@
   {
    "id": "osm:way/23700398",
    "name": "Bayswater Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.812564,
    "lng": 174.782457,
@@ -1553,6 +1619,7 @@
   {
    "id": "osm:way/24203701",
    "name": "Belmont Rose Gardens",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.807549,
    "lng": 174.790302,
@@ -1571,6 +1638,7 @@
   {
    "id": "osm:way/607122344",
    "name": "Birkenhead Historical Society Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.808645,
    "lng": 174.721045,
@@ -1589,6 +1657,7 @@
   {
    "id": "osm:node/13008927595",
    "name": "Birkenhead War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.808434,
    "lng": 174.721497,
@@ -1607,6 +1676,7 @@
   {
    "id": "osm:way/27376217",
    "name": "Birkenhead War Memorial Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.805451,
    "lng": 174.721296,
@@ -1625,6 +1695,7 @@
   {
    "id": "osm:way/9779132",
    "name": "Bridgman Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.877928,
    "lng": 174.760922,
@@ -1643,6 +1714,7 @@
   {
    "id": "osm:node/13685790203",
    "name": "Cabello",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.882299,
    "lng": 174.748821,
@@ -1661,6 +1733,7 @@
   {
    "id": "osm:way/71870973",
    "name": "Chatswood Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.817174,
    "lng": 174.718561,
@@ -1679,6 +1752,7 @@
   {
    "id": "osm:relation/13263167",
    "name": "Chelsea Estate Heritage Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.816995,
    "lng": 174.722044,
@@ -1697,6 +1771,7 @@
   {
    "id": "osm:node/259134231",
    "name": "Churton Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.846964,
    "lng": 174.770442,
@@ -1715,6 +1790,7 @@
   {
    "id": "osm:way/978018207",
    "name": "Clifton",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.873915,
    "lng": 174.767723,
@@ -1733,6 +1809,7 @@
   {
    "id": "osm:node/13800353401",
    "name": "Coastal Signs",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.857878,
    "lng": 174.757689,
@@ -1751,6 +1828,7 @@
   {
    "id": "osm:way/24471807",
    "name": "Coyle Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.851923,
    "lng": 174.704816,
@@ -1769,6 +1847,7 @@
   {
    "id": "osm:relation/13311707",
    "name": "Daldy Street Linear Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.842998,
    "lng": 174.755032,
@@ -1787,6 +1866,7 @@
   {
    "id": "osm:node/12979542254",
    "name": "Daniel Neilson memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.918689,
    "lng": 174.780336,
@@ -1805,6 +1885,7 @@
   {
    "id": "osm:way/23616448",
    "name": "Devonport Domain",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.826922,
    "lng": 174.806982,
@@ -1823,6 +1904,7 @@
   {
    "id": "osm:node/4218297100",
    "name": "Devonport First World War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.83155,
    "lng": 174.797347,
@@ -1841,6 +1923,7 @@
   {
    "id": "osm:way/339842574",
    "name": "Devonport Museum",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.824838,
    "lng": 174.8027,
@@ -1859,6 +1942,7 @@
   {
    "id": "osm:node/2135671172",
    "name": "Devonport South African War Memorial Fountain",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.830963,
    "lng": 174.797678,
@@ -1877,6 +1961,7 @@
   {
    "id": "osm:node/12273266531",
    "name": "Devonport execution site",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.831663,
    "lng": 174.800753,
@@ -1895,6 +1980,7 @@
   {
    "id": "osm:way/15089894",
    "name": "Dove-Myer Robinson Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.85009,
    "lng": 174.787214,
@@ -1924,6 +2010,7 @@
   {
    "id": "osm:node/832543535",
    "name": "Dredge Driving Wheels",
+   "nameEn": null,
    "kind": "attraction",
    "lat": -36.836477,
    "lng": 174.759245,
@@ -1942,6 +2029,7 @@
   {
    "id": "osm:node/9518193208",
    "name": "Dutch war memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.849122,
    "lng": 174.786827,
@@ -1960,6 +2048,7 @@
   {
    "id": "osm:node/14007365205",
    "name": "Dxexpxoxt",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.83174,
    "lng": 174.796833,
@@ -1978,6 +2067,7 @@
   {
    "id": "osm:way/24428982",
    "name": "Edendale Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.88839,
    "lng": 174.736601,
@@ -1996,6 +2086,7 @@
   {
    "id": "osm:way/23261267",
    "name": "Emily Place Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.846866,
    "lng": 174.770467,
@@ -2014,6 +2105,7 @@
   {
    "id": "osm:node/12576740015",
    "name": "Epsom War Memorial Arch",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.885259,
    "lng": 174.775456,
@@ -2032,6 +2124,7 @@
   {
    "id": "osm:way/39670025",
    "name": "Eric Armishaw Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.869235,
    "lng": 174.69806,
@@ -2050,6 +2143,7 @@
   {
    "id": "osm:way/8015527",
    "name": "Essex Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.881921,
    "lng": 174.761373,
@@ -2068,6 +2162,7 @@
   {
    "id": "osm:node/13773205007",
    "name": "Eyes on Fire",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.859933,
    "lng": 174.752217,
@@ -2086,6 +2181,7 @@
   {
    "id": "osm:node/11234947362",
    "name": "Flagstaff Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.830771,
    "lng": 174.797989,
@@ -2134,6 +2230,7 @@
   {
    "id": "osm:node/13316172496",
    "name": "Folly",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.899404,
    "lng": 174.789189,
@@ -2152,6 +2249,7 @@
   {
    "id": "osm:way/24203768",
    "name": "Fort Takapuna Historic Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.815455,
    "lng": 174.805366,
@@ -2170,6 +2268,7 @@
   {
    "id": "osm:way/7977831",
    "name": "Fraser Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.851219,
    "lng": 174.777314,
@@ -2188,6 +2287,7 @@
   {
    "id": "osm:node/8813321418",
    "name": "Fred Ambler Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.848533,
    "lng": 174.786276,
@@ -2206,6 +2306,7 @@
   {
    "id": "osm:way/853583732",
    "name": "Fukuoka Friendship Garden",
+   "nameEn": null,
    "kind": "garden",
    "lat": -36.864813,
    "lng": 174.720666,
@@ -2243,6 +2344,7 @@
   {
    "id": "osm:node/13951073401",
    "name": "Gallery 373",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.858287,
    "lng": 174.782205,
@@ -2261,6 +2363,7 @@
   {
    "id": "osm:node/12984421360",
    "name": "Gloucester Park plaques",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.918546,
    "lng": 174.779729,
@@ -2279,6 +2382,7 @@
   {
    "id": "osm:way/1362143886",
    "name": "GoodNewsForYou Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.849836,
    "lng": 174.76435,
@@ -2297,6 +2401,7 @@
   {
    "id": "osm:way/25518552",
    "name": "Gould Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.787055,
    "lng": 174.774759,
@@ -2315,6 +2420,7 @@
   {
    "id": "osm:way/1307156069",
    "name": "Grey Lynn Farmers Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.8595,
    "lng": 174.732896,
@@ -2346,6 +2452,7 @@
   {
    "id": "osm:relation/17928214",
    "name": "Grey Lynn Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.860063,
    "lng": 174.739856,
@@ -2364,6 +2471,7 @@
   {
    "id": "osm:node/13783706602",
    "name": "Handcrafted Modern",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.857105,
    "lng": 174.747605,
@@ -2382,6 +2490,7 @@
   {
    "id": "osm:way/245534706",
    "name": "Hauraki Corner Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.79693,
    "lng": 174.778867,
@@ -2411,6 +2520,7 @@
   {
    "id": "osm:way/97522184",
    "name": "Henderson Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.776748,
    "lng": 174.77426,
@@ -2429,6 +2539,7 @@
   {
    "id": "osm:way/27574739",
    "name": "Heron Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.885537,
    "lng": 174.697297,
@@ -2447,6 +2558,7 @@
   {
    "id": "osm:relation/20709742",
    "name": "Hinemoa Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.8216,
    "lng": 174.734446,
@@ -2465,6 +2577,7 @@
   {
    "id": "osm:node/13897833106",
    "name": "Hollywood Fish Farm",
+   "nameEn": null,
    "kind": "zoo",
    "lat": -36.911771,
    "lng": 174.74878,
@@ -2502,6 +2615,7 @@
   {
    "id": "osm:way/987215732",
    "name": "Homewood Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.818381,
    "lng": 174.712873,
@@ -2520,6 +2634,7 @@
   {
    "id": "osm:node/13161276014",
    "name": "Horse trough",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.845017,
    "lng": 174.76137,
@@ -2538,6 +2653,7 @@
   {
    "id": "osm:way/24622874",
    "name": "Jellicoe Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.918229,
    "lng": 174.780337,
@@ -2556,6 +2672,7 @@
   {
    "id": "osm:way/319531583",
    "name": "John Kay Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.806912,
    "lng": 174.707222,
@@ -2574,6 +2691,7 @@
   {
    "id": "osm:node/3367433155",
    "name": "John Logan Campbell Monument",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.888456,
    "lng": 174.775895,
@@ -2592,6 +2710,7 @@
   {
    "id": "osm:node/13412687472",
    "name": "Karanga Plaza Tidal Steps",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.841312,
    "lng": 174.759244,
@@ -2610,6 +2729,7 @@
   {
    "id": "osm:way/71869987",
    "name": "Kauri Glen Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.806069,
    "lng": 174.735451,
@@ -2628,6 +2748,7 @@
   {
    "id": "osm:relation/13263168",
    "name": "Kauri Point Centennial Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.822926,
    "lng": 174.71324,
@@ -2646,6 +2767,7 @@
   {
    "id": "osm:way/160486445",
    "name": "Kauri Point Domain",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.816523,
    "lng": 174.700863,
@@ -2664,6 +2786,7 @@
   {
    "id": "osm:way/25518584",
    "name": "Killarney Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.785892,
    "lng": 174.76609,
@@ -2682,6 +2805,7 @@
   {
    "id": "osm:way/245376345",
    "name": "Kitewao Street Esplanade Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.793793,
    "lng": 174.753633,
@@ -2700,6 +2824,7 @@
   {
    "id": "osm:node/13951008608",
    "name": "Kkang K Pop Store",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.869224,
    "lng": 174.77795,
@@ -2718,6 +2843,7 @@
   {
    "id": "osm:node/13021997820",
    "name": "Korean War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.849065,
    "lng": 174.786107,
@@ -2736,6 +2862,7 @@
   {
    "id": "osm:way/504140825",
    "name": "Kūkūwai Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.899442,
    "lng": 174.717457,
@@ -2754,6 +2881,7 @@
   {
    "id": "osm:node/14007364905",
    "name": "Land & Seas Art Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.833133,
    "lng": 174.796249,
@@ -2772,6 +2900,7 @@
   {
    "id": "osm:node/13956713804",
    "name": "Lett Thomas",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.858087,
    "lng": 174.75778,
@@ -2817,6 +2946,7 @@
   {
    "id": "osm:way/200902332",
    "name": "Linley Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.793561,
    "lng": 174.732732,
@@ -2835,6 +2965,7 @@
   {
    "id": "osm:node/5183728181",
    "name": "Lord Freyberg",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.847908,
    "lng": 174.766643,
@@ -2853,6 +2984,7 @@
   {
    "id": "osm:way/24041436",
    "name": "Lumsden Green",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.867204,
    "lng": 174.778019,
@@ -2871,6 +3003,7 @@
   {
    "id": "osm:way/667820851",
    "name": "MOTAT Aviation Hall",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.861152,
    "lng": 174.713864,
@@ -2889,6 +3022,7 @@
   {
    "id": "osm:way/120612031",
    "name": "MOTAT Great North Road",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.867168,
    "lng": 174.727193,
@@ -2907,6 +3041,7 @@
   {
    "id": "osm:way/24206223",
    "name": "Marivare Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.885458,
    "lng": 174.77527,
@@ -2925,6 +3060,7 @@
   {
    "id": "osm:node/14174421485",
    "name": "Maungawhau Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.867449,
    "lng": 174.759021,
@@ -2943,6 +3079,7 @@
   {
    "id": "osm:node/12520261884",
    "name": "Memorial Lych Gate",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.881397,
    "lng": 174.802364,
@@ -2961,6 +3098,7 @@
   {
    "id": "osm:way/7977848",
    "name": "Meola Reef Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.857391,
    "lng": 174.712068,
@@ -2979,6 +3117,7 @@
   {
    "id": "osm:node/1225171553",
    "name": "Michael Joseph Savage Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.845643,
    "lng": 174.826065,
@@ -2997,6 +3136,7 @@
   {
    "id": "osm:node/8592325958",
    "name": "Minefield Observation Post",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.829383,
    "lng": 174.811593,
@@ -3015,6 +3155,7 @@
   {
    "id": "osm:node/11764568084",
    "name": "Moana Fresh",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.894659,
    "lng": 174.69687,
@@ -3060,6 +3201,7 @@
   {
    "id": "osm:way/24203709",
    "name": "Montgomery Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.809832,
    "lng": 174.794234,
@@ -3078,6 +3220,7 @@
   {
    "id": "osm:node/12918866908",
    "name": "Monument to John Green Kay",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.806505,
    "lng": 174.706771,
@@ -3096,6 +3239,7 @@
   {
    "id": "osm:way/23875242",
    "name": "Mount Albert War Memorial Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.878568,
    "lng": 174.724924,
@@ -3114,6 +3258,7 @@
   {
    "id": "osm:way/24160261",
    "name": "Mount Cambria Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.824849,
    "lng": 174.802077,
@@ -3132,6 +3277,7 @@
   {
    "id": "osm:node/4295694795",
    "name": "Mount Eden Summit",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.878076,
    "lng": 174.764433,
@@ -3150,6 +3296,7 @@
   {
    "id": "osm:relation/19235984",
    "name": "Mount Eden WWI memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.877101,
    "lng": 174.756744,
@@ -3168,6 +3315,7 @@
   {
    "id": "osm:relation/14243696",
    "name": "Mount Victoria Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.826913,
    "lng": 174.799236,
@@ -3186,6 +3334,7 @@
   {
    "id": "osm:way/24636078",
    "name": "Murray Halberg Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.896527,
    "lng": 174.714384,
@@ -3204,6 +3353,7 @@
   {
    "id": "osm:way/44771876",
    "name": "Māhuhu ki te Rangi Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.847008,
    "lng": 174.775237,
@@ -3222,6 +3372,7 @@
   {
    "id": "osm:way/338268688",
    "name": "National Museum of the Royal New Zealand Navy",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.82885,
    "lng": 174.809341,
@@ -3259,6 +3410,7 @@
   {
    "id": "osm:way/900519692",
    "name": "Needles Eye Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.819495,
    "lng": 174.739526,
@@ -3277,6 +3429,7 @@
   {
    "id": "osm:way/588243561",
    "name": "Nell Fisher Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.812836,
    "lng": 174.726585,
@@ -3306,6 +3459,7 @@
   {
    "id": "osm:way/48081081",
    "name": "Ngāoho Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.849523,
    "lng": 174.777134,
@@ -3324,6 +3478,7 @@
   {
    "id": "osm:relation/16706375",
    "name": "Nicholson Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.883424,
    "lng": 174.764636,
@@ -3342,6 +3497,7 @@
   {
    "id": "osm:way/1347029538",
    "name": "Northcote War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.810848,
    "lng": 174.743415,
@@ -3360,6 +3516,7 @@
   {
    "id": "osm:node/8001552365",
    "name": "Nothing Happened plaque",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.831956,
    "lng": 174.797214,
@@ -3378,6 +3535,7 @@
   {
    "id": "osm:node/4884576568",
    "name": "Oakley Creek Waterfall",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.88218,
    "lng": 174.703141,
@@ -3396,6 +3554,7 @@
   {
    "id": "osm:way/24041514",
    "name": "Olympic Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.865405,
    "lng": 174.778591,
@@ -3414,6 +3573,7 @@
   {
    "id": "osm:way/188726506",
    "name": "One Tree Hill Obelisk",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.90012,
    "lng": 174.783186,
@@ -3432,6 +3592,7 @@
   {
    "id": "osm:node/4295678492",
    "name": "One Tree Hill Summit",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.9,
    "lng": 174.783148,
@@ -3450,6 +3611,7 @@
   {
    "id": "osm:way/71867486",
    "name": "Onewa Domain",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.791866,
    "lng": 174.750196,
@@ -3468,6 +3630,7 @@
   {
    "id": "osm:way/24455353",
    "name": "Outhwaite Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.864533,
    "lng": 174.770363,
@@ -3486,6 +3649,7 @@
   {
    "id": "osm:way/23894210",
    "name": "Parliament Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.849314,
    "lng": 174.77313,
@@ -3504,6 +3668,7 @@
   {
    "id": "osm:node/13971814401",
    "name": "Parnell Farmer's Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.863339,
    "lng": 174.780007,
@@ -3522,6 +3687,7 @@
   {
    "id": "osm:node/14007364907",
    "name": "Peter Roas Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.831878,
    "lng": 174.796027,
@@ -3557,6 +3723,7 @@
   {
    "id": "osm:way/1286479195",
    "name": "Point Erin Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.838859,
    "lng": 174.741998,
@@ -3575,6 +3742,7 @@
   {
    "id": "osm:way/10720723",
    "name": "Potters Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.886598,
    "lng": 174.749013,
@@ -3593,6 +3761,7 @@
   {
    "id": "osm:way/11037468",
    "name": "Potters Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.787164,
    "lng": 174.771164,
@@ -3622,6 +3791,7 @@
   {
    "id": "osm:way/1360852789",
    "name": "Queen Sweet Art & Print",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.852943,
    "lng": 174.764008,
@@ -3640,6 +3810,7 @@
   {
    "id": "osm:way/24161095",
    "name": "Quinton Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.816729,
    "lng": 174.76845,
@@ -3669,6 +3840,7 @@
   {
    "id": "osm:node/8347192637",
    "name": "Railway Street Studios",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.865031,
    "lng": 174.779898,
@@ -3703,6 +3875,7 @@
   {
    "id": "osm:node/12520088674",
    "name": "Remuera Primary School War Memorial Gates",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.881379,
    "lng": 174.792993,
@@ -3721,6 +3894,7 @@
   {
    "id": "osm:node/12520206002",
    "name": "Remuera War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.881278,
    "lng": 174.802238,
@@ -3739,6 +3913,7 @@
   {
    "id": "osm:way/244653971",
    "name": "Saint Mary's Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.846892,
    "lng": 174.745111,
@@ -3768,6 +3943,7 @@
   {
    "id": "osm:way/24428965",
    "name": "Sandringham Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.892773,
    "lng": 174.736768,
@@ -3797,6 +3973,7 @@
   {
    "id": "osm:way/43043315",
    "name": "Scarborough Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.854324,
    "lng": 174.781847,
@@ -3815,6 +3992,7 @@
   {
    "id": "osm:way/1119743020",
    "name": "Sir Dove-Myer Robinson",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.852231,
    "lng": 174.763638,
@@ -3833,6 +4011,7 @@
   {
    "id": "osm:node/13668188901",
    "name": "So / Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.845295,
    "lng": 174.768372,
@@ -3851,6 +4030,7 @@
   {
    "id": "osm:relation/17551789",
    "name": "Stanley Bay Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.825572,
    "lng": 174.781945,
@@ -3869,6 +4049,7 @@
   {
    "id": "osm:node/12426967123",
    "name": "State of the arts",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.844083,
    "lng": 174.753225,
@@ -3887,6 +4068,7 @@
   {
    "id": "osm:way/154263259",
    "name": "Studio One – Toi Tū",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.858935,
    "lng": 174.751744,
@@ -3905,6 +4087,7 @@
   {
    "id": "osm:way/24822175",
    "name": "Suffolk Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.863193,
    "lng": 174.754129,
@@ -3923,6 +4106,7 @@
   {
    "id": "osm:node/10677655822",
    "name": "Suite",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.853121,
    "lng": 174.745503,
@@ -3941,6 +4125,7 @@
   {
    "id": "osm:way/67561360",
    "name": "Sylvan Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.776513,
    "lng": 174.768442,
@@ -3970,6 +4155,7 @@
   {
    "id": "osm:way/258618727",
    "name": "Tahaki Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.87304,
    "lng": 174.76383,
@@ -3988,6 +4174,7 @@
   {
    "id": "osm:node/8163524686",
    "name": "Tainui Landing Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.829159,
    "lng": 174.805458,
@@ -4006,6 +4193,7 @@
   {
    "id": "osm:node/10219129729",
    "name": "Takapuna School Memorial Gate",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.78781,
    "lng": 174.768871,
@@ -4024,6 +4212,7 @@
   {
    "id": "osm:node/1301715052",
    "name": "Takapuna War Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.789114,
    "lng": 174.773204,
@@ -4042,6 +4231,7 @@
   {
    "id": "osm:node/4295685100",
    "name": "Tank Farm Viewpoint",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.836513,
    "lng": 174.758893,
@@ -4060,6 +4250,7 @@
   {
    "id": "osm:way/37356481",
    "name": "Te Auaunga Oakley Creek Walkway",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.880913,
    "lng": 174.703133,
@@ -4078,6 +4269,7 @@
   {
    "id": "osm:way/23904019",
    "name": "Te Taoū Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.848279,
    "lng": 174.775126,
@@ -4096,6 +4288,7 @@
   {
    "id": "osm:way/24461712",
    "name": "Te Tātua-a-Riukiuta / Big King Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.902076,
    "lng": 174.754468,
@@ -4114,6 +4307,7 @@
   {
    "id": "osm:way/45420320",
    "name": "Teal Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.847457,
    "lng": 174.788535,
@@ -4132,6 +4326,7 @@
   {
    "id": "osm:node/8373364793",
    "name": "The Poi Room",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.868581,
    "lng": 174.77719,
@@ -4191,6 +4386,7 @@
   {
    "id": "osm:way/25737163",
    "name": "Thomas Bloodworth Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.864506,
    "lng": 174.789248,
@@ -4209,6 +4405,7 @@
   {
    "id": "osm:way/1318375848",
    "name": "Thorne Bay Recreation Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.778807,
    "lng": 174.777444,
@@ -4227,6 +4424,7 @@
   {
    "id": "osm:relation/12094278",
    "name": "Three Kings Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.906777,
    "lng": 174.755596,
@@ -4245,6 +4443,7 @@
   {
    "id": "osm:node/14007637310",
    "name": "TimeCapsule Gallery",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.829707,
    "lng": 174.798017,
@@ -4263,6 +4462,7 @@
   {
    "id": "osm:way/705660843",
    "name": "Torpedo Bay Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.829147,
    "lng": 174.805403,
@@ -4281,6 +4481,7 @@
   {
    "id": "osm:way/24636170",
    "name": "Underwood Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.897288,
    "lng": 174.723098,
@@ -4299,6 +4500,7 @@
   {
    "id": "osm:way/23616419",
    "name": "Vauxhall Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.825152,
    "lng": 174.804523,
@@ -4317,6 +4519,7 @@
   {
    "id": "osm:way/23191014",
    "name": "Walker Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.86481,
    "lng": 174.703145,
@@ -4335,6 +4538,7 @@
   {
    "id": "osm:node/4964973321",
    "name": "Wesley Market",
+   "nameEn": null,
    "kind": "market",
    "lat": -36.900293,
    "lng": 174.731687,
@@ -4367,6 +4571,7 @@
   {
    "id": "osm:node/12584650528",
    "name": "Wesley Training College Memorial",
+   "nameEn": null,
    "kind": "landmark",
    "lat": -36.904798,
    "lng": 174.750633,
@@ -4385,6 +4590,7 @@
   {
    "id": "osm:way/8082871",
    "name": "Western Springs Lakeside Park Outer Fields",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.86556,
    "lng": 174.72865,
@@ -4403,6 +4609,7 @@
   {
    "id": "osm:node/6157377478",
    "name": "Whare Tinei Ahi / Fire Station",
+   "nameEn": null,
    "kind": "museum",
    "lat": -36.867632,
    "lng": 174.727583,
@@ -4421,6 +4628,7 @@
   {
    "id": "osm:node/4281458060",
    "name": "Wilkies Lookout",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.875975,
    "lng": 174.766851,
@@ -4439,6 +4647,7 @@
   {
    "id": "osm:way/12260642",
    "name": "Windmill Green",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.88617,
    "lng": 174.762158,
@@ -4457,6 +4666,7 @@
   {
    "id": "osm:relation/12361561",
    "name": "Windsor Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.831748,
    "lng": 174.797851,
@@ -4475,6 +4685,7 @@
   {
    "id": "osm:way/56004899",
    "name": "Withiel Thomas Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.874972,
    "lng": 174.772044,
@@ -4493,6 +4704,7 @@
   {
    "id": "osm:way/305475904",
    "name": "Wolseley Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.874956,
    "lng": 174.733921,
@@ -4511,6 +4723,7 @@
   {
    "id": "osm:node/4295694797",
    "name": "Wynyard Quarter Metal Structure Viewpoint",
+   "nameEn": null,
    "kind": "viewpoint",
    "lat": -36.840066,
    "lng": 174.755665,
@@ -4529,6 +4742,7 @@
   {
    "id": "osm:way/626356537",
    "name": "Zion Hill Reserve",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.809846,
    "lng": 174.725107,
@@ -4558,6 +4772,7 @@
   {
    "id": "osm:node/13956713806",
    "name": "masterworks",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.862784,
    "lng": 174.758629,
@@ -4592,6 +4807,7 @@
   {
    "id": "osm:node/13826183303",
    "name": "orexart",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.851447,
    "lng": 174.744959,
@@ -4610,6 +4826,7 @@
   {
    "id": "osm:node/14007637316",
    "name": "satellite 2",
+   "nameEn": null,
    "kind": "gallery",
    "lat": -36.830342,
    "lng": 174.797675,
@@ -4628,6 +4845,7 @@
   {
    "id": "osm:way/24636072",
    "name": "Ōwairaka Park",
+   "nameEn": null,
    "kind": "park",
    "lat": -36.895948,
    "lng": 174.722216,
@@ -4644,6 +4862,513 @@
    "hours": null
   }
  ],
+ "near": "centre",
+ "stay": [
+  {
+   "id": "osm:way/609071943",
+   "name": "SkyCity Grand Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 5.0,
+   "cuisine": null,
+   "lat": -36.84941,
+   "lng": 174.762572,
+   "address": "90 Federal Street, 1010",
+   "website": "https://www.skycityauckland.co.nz/hotels/skycity-grand/",
+   "wikidata": "Q111408298",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 120,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/292861434",
+   "name": "Choice Back Packers",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -36.850872,
+   "lng": 174.765156,
+   "address": "10 Wellesley Street East, 1010",
+   "website": "https://choice-backpackers.aucklandcityhotels.net",
+   "wikidata": "Q118959424",
+   "openingHours": "10:00-22:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "10:00",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 311,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/260078287",
+   "name": "Grand Millennium Auckland",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -36.852947,
+   "lng": 174.760758,
+   "address": "71 Mayoral Drive",
+   "website": "https://www.millenniumhotels.com/en/auckland/grand-millennium-auckland/",
+   "wikidata": "Q98536182",
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 544,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/162652866",
+   "name": "Mercure Auckland Queen Street",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 4.0,
+   "cuisine": null,
+   "lat": -36.856868,
+   "lng": 174.762176,
+   "address": "500 Queen Street, 1010",
+   "website": "https://all.accor.com/hotel/B1R9/index.en.shtml",
+   "wikidata": "Q138650302",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 936,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/131472049",
+   "name": "Cordis",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 5.0,
+   "cuisine": null,
+   "lat": -36.857408,
+   "lng": 174.763545,
+   "address": "83 Symonds Street, 1010",
+   "website": "http://www.cordishotels.com/en/auckland/",
+   "wikidata": "Q6486057",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 991,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/154260838",
+   "name": "Hilton Auckland",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": 5.0,
+   "cuisine": null,
+   "lat": -36.839796,
+   "lng": 174.765839,
+   "address": "147 Quay Street",
+   "website": "https://hilton.com/en/hotels/aklhihi-hilton-auckland",
+   "wikidata": "Q28053246",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 994,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/292861410",
+   "name": "President Hotel",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -36.848469,
+   "lng": 174.764285,
+   "address": "27 Victoria Street West",
+   "website": "https://cpghotels.com/hotels/president-hotel",
+   "wikidata": "Q111870458",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 88,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/331750515",
+   "name": "Crowne Plaza Auckland",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": -36.849801,
+   "lng": 174.763203,
+   "address": null,
+   "website": "https://auckland.crowneplaza.com/",
+   "wikidata": "Q98536179",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 145,
+   "venuesNear": 1
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/11237559194",
+   "name": "Casa Victoria",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "tapas",
+    "burger"
+   ],
+   "lat": -36.848286,
+   "lng": 174.763202,
+   "address": null,
+   "website": "https://www.casavictoria.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 06:30-21:00; Su,PH off",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "06:30",
+       "21:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": []
+    }
+   ],
+   "toVenueM": 25,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/9816325217",
+   "name": "Mr Taco",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "mexican"
+   ],
+   "lat": -36.848177,
+   "lng": 174.762798,
+   "address": null,
+   "website": "https://m.facebook.com/107637254343422/",
+   "wikidata": null,
+   "openingHours": "Mo-Fr 09:00-19:00; Sa 10:00-20:00; Su 11:00-17:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr"
+     ],
+     "spans": [
+      [
+       "09:00",
+       "19:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "sa"
+     ],
+     "spans": [
+      [
+       "10:00",
+       "20:00"
+      ]
+     ]
+    },
+    {
+     "dates": null,
+     "days": [
+      "su"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "17:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 57,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/4383563190",
+   "name": "Federal Delicatessen",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "Delicatessen"
+   ],
+   "lat": -36.848928,
+   "lng": 174.762472,
+   "address": "86 Federal Street, 1010",
+   "website": "https://thefed.co.nz",
+   "wikidata": null,
+   "openingHours": "Mo-Th 08:00-15:00; Fr-Sa 08:00-21:00, Su 08:00-16:00",
+   "hours": null,
+   "toVenueM": 88,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/1538399997",
+   "name": "BBQ King 得记",
+   "nameEn": "BBQ King Restaurant",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese"
+   ],
+   "lat": -36.848171,
+   "lng": 174.765091,
+   "address": "187-189 Queen Street",
+   "website": "https://www.bbqking.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo-Su 11:30-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 164,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/11245212438",
+   "name": "Nahm",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "thai"
+   ],
+   "lat": -36.85013,
+   "lng": 174.763697,
+   "address": "39 Elliott Street",
+   "website": "https://www.nahm.co.nz/auckland",
+   "wikidata": null,
+   "openingHours": "Tu-Su 11:30-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "11:30",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 185,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/11082118230",
+   "name": "De Niro Ristorante",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": -36.850173,
+   "lng": 174.763506,
+   "address": null,
+   "website": "https://www.elliottstables.co.nz/deniro",
+   "wikidata": null,
+   "openingHours": "Mo-Su 12:00-21:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa",
+      "su"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "21:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 187,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/12107161753",
+   "name": "Jungle 8",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian"
+   ],
+   "lat": -36.850275,
+   "lng": 174.763322,
+   "address": null,
+   "website": "https://www.jungle8.co.nz/",
+   "wikidata": null,
+   "openingHours": "Mo off; Tu-Th 17:00-21:00+; Fr-Su 12:00-21:00+",
+   "hours": null,
+   "toVenueM": 197,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:node/8232349958",
+   "name": "Go Ramen",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "japanese"
+   ],
+   "lat": -36.848395,
+   "lng": 174.76605,
+   "address": "10 Durham Street East",
+   "website": "https://goramen.co.nz",
+   "wikidata": null,
+   "openingHours": "Mo-Sa 11:00-20:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "11:00",
+       "20:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 245,
+   "venuesNear": 1
+  }
+ ],
+ "trips": [
+  {
+   "name": "Rangitoto Island",
+   "page": "Rangitoto Island",
+   "url": "https://en.wikivoyage.org/wiki/Rangitoto_Island",
+   "description": "Take a ferry to Rangitoto Island. Rangitoto Island has trails around much of the island, as well as a bridge that connects to the neighboring Motutapu Island, and is a great hike for even the most inexperienced hikers. Rangitoto Island has several lava caves that can be crawled or climbed through as well as a spectacular 360 degree view at the summit (only about an hour hike on the most direct trail). This is one of the more convenient islands that is nearby as it is only 20-25 minutes by ferry.",
+   "lat": -36.786742,
+   "lng": 174.860115,
+   "km": 11
+  },
+  {
+   "name": "Waiheke Island",
+   "page": "Waiheke Island",
+   "url": "https://en.wikivoyage.org/wiki/Waiheke_Island",
+   "description": "Go wine tasting on Waiheke Island. It's home to an abundance of art galleries, some fantastic wines and has some of the best beaches in the area. You can rent a scooter and get around the island fairly quickly. Can get crowded during the weekends, but very quiet during the week. It seems a world away from Auckland, but is only 35 minutes by ferry.",
+   "lat": -36.8,
+   "lng": 175.08,
+   "km": 29
+  },
+  {
+   "name": "Rotorua",
+   "page": "Rotorua",
+   "url": "https://en.wikivoyage.org/wiki/Rotorua",
+   "description": "Hamilton, Waitomo Caves and Taupo are all within several hours drive and all have a lot to offer.",
+   "lat": -38.137778,
+   "lng": 176.251389,
+   "km": 194
+  }
+ ],
+ "guide": {
+  "page": "Auckland",
+  "url": "https://en.wikivoyage.org/wiki/Auckland"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
  "provenance": {
   "osm": {
    "fetchedAt": "2026-09-25T14:11:43Z",
@@ -4651,9 +5376,19 @@
    "fetcherVersion": 1
   },
   "wikidata": {
-   "fetchedAt": "2026-09-25T14:21:02Z",
+   "fetchedAt": "2026-10-02T18:25:05Z",
    "fetcher": "scraper/cities/fetch.py",
-   "fetcherVersion": 1
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T18:52:04Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T18:14:20Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
   }
  }
 }

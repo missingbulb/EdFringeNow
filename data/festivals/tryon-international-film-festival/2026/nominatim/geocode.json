@@ -1,0 +1,52 @@
+{
+ "results": [
+  {
+   "query": "15 Trade St, Tryon, NC",
+   "matched": "15 Trade St, Tryon, NC",
+   "lat": 35.208715,
+   "lng": -82.238114
+  },
+  {
+   "query": "334 S Trade St, Tryon, NC 28782",
+   "matched": "334 S Trade St, Tryon, NC 28782",
+   "lat": 35.204148,
+   "lng": -82.238362
+  },
+  {
+   "query": "34 Melrose Ave, Tryon, NC",
+   "matched": "34 Melrose Ave, Tryon, NC",
+   "lat": 35.20757,
+   "lng": -82.239682
+  },
+  {
+   "query": "62 N Trade St, Tryon, NC",
+   "matched": "62 N Trade St, Tryon, NC",
+   "lat": 35.208913,
+   "lng": -82.238371
+  },
+  {
+   "query": "65 Mimosa Inn Dr., Tryon, NC",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "69 Pacolet St, Tryon, NC",
+   "matched": "69 Pacolet St, Tryon, NC",
+   "lat": 35.208246,
+   "lng": -82.2394
+  },
+  {
+   "query": "84 Pacolet St, Tryon, NC",
+   "matched": "84 Pacolet St, Tryon, NC",
+   "lat": 35.208563,
+   "lng": -82.239838
+  },
+  {
+   "query": "92 Pacolet St, Tryon, NC",
+   "matched": "92 Pacolet St, Tryon, NC",
+   "lat": 35.208559,
+   "lng": -82.239892
+  }
+ ]
+}

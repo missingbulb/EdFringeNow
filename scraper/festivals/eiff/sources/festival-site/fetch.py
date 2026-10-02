@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch the Edinburgh International Film Festival's programme into its raw folder.
 
-Run by hand, on a machine that can reach the site — never on a schedule:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/eiff/sources/festival-site/fetch.py --edition 2026
 

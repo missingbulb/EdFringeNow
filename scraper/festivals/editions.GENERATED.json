@@ -1,0 +1,614 @@
+{
+ "v": 1,
+ "writer": "scraper/festivals/registry.py --write",
+ "editions": [
+  {
+   "festival": "abu-gosh",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-09-29",
+   "last": "2026-10-03",
+   "tools": [
+    "abugosh-site",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "abugosh-site"
+   ]
+  },
+  {
+   "festival": "acco",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-09-27",
+   "last": "2026-10-01",
+   "tools": [
+    "venues-research",
+    "acco-tc",
+    "eventer",
+    "street-programme"
+   ],
+   "refreshTools": [
+    "acco-tc",
+    "eventer",
+    "street-programme"
+   ]
+  },
+  {
+   "festival": "ais-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-19",
+   "last": "2026-10-21",
+   "tools": [
+    "eventact-agenda",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "brighton-fringe",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-05-01",
+   "last": "2026-05-31",
+   "tools": [
+    "eventotron"
+   ],
+   "refreshTools": [
+    "eventotron"
+   ]
+  },
+  {
+   "festival": "edfringe",
+   "edition": "2026",
+   "format": "edfringe-wire",
+   "first": "2026-08-07",
+   "last": "2026-08-31",
+   "tools": [
+    "edfringe-listing",
+    "edfringe-prices",
+    "edfringe-tickets",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "edfringe-tickets"
+   ]
+  },
+  {
+   "festival": "edinburgh-art-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-14",
+   "last": "2026-08-30",
+   "tools": [
+    "festival-site"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "edinburgh-book-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-15",
+   "last": "2026-08-30",
+   "tools": [
+    "spektrix",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "spektrix"
+   ]
+  },
+  {
+   "festival": "edinburgh-deaf-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-07",
+   "last": "2026-08-16",
+   "tools": [
+    "festival-site",
+    "nominatim"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "edinburgh-tattoo",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-07",
+   "last": "2026-08-29",
+   "tools": [
+    "ticketing-api",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "ticketing-api"
+   ]
+  },
+  {
+   "festival": "edinburgh-tattoo",
+   "edition": "2027",
+   "format": "block",
+   "first": "2027-08-06",
+   "last": "2027-08-28",
+   "tools": [
+    "ticketing-api",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "ticketing-api"
+   ]
+  },
+  {
+   "festival": "eif",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-07",
+   "last": "2026-08-30",
+   "tools": [
+    "spektrix",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "spektrix"
+   ]
+  },
+  {
+   "festival": "eiff",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-08-13",
+   "last": "2026-08-19",
+   "tools": [
+    "festival-site",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "festival-site"
+   ]
+  },
+  {
+   "festival": "fringe-by-the-sea",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-07-31",
+   "last": "2026-08-09",
+   "tools": [
+    "festival-site",
+    "nominatim"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "hack-lu",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-20",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "haifa-iff",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-09-25",
+   "last": "2026-10-03",
+   "tools": [
+    "haifaff-site",
+    "venues-research",
+    "smarticket"
+   ],
+   "refreshTools": [
+    "smarticket"
+   ]
+  },
+  {
+   "festival": "iaem",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-21",
+   "last": "2026-10-21",
+   "tools": [
+    "forms-wizard",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "icisa",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-17",
+   "last": "2026-11-19",
+   "tools": [
+    "programme-pdf",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "indnegev",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-15",
+   "last": "2026-10-17",
+   "tools": [
+    "indnegev-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "isra",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-18",
+   "last": "2026-10-20",
+   "tools": [
+    "eventact-agenda",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "israel-neurological-association",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-12-21",
+   "last": "2026-12-22",
+   "tools": [
+    "congress-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "israman",
+   "edition": "2027",
+   "format": "block",
+   "first": "2027-01-27",
+   "last": "2027-01-30",
+   "tools": [
+    "festival-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "jerusalem-comedy",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-18",
+   "last": "2026-10-22",
+   "tools": [
+    "comedy-festival-site",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "jerusalem-oud",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-05",
+   "last": "2026-11-12",
+   "tools": [
+    "confederation-house",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "kol-hamusica",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-28",
+   "last": "2026-11-01",
+   "tools": [
+    "smarticket",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "smarticket"
+   ]
+  },
+  {
+   "festival": "leicester-comedy",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-02-04",
+   "last": "2026-02-22",
+   "tools": [
+    "eventotron"
+   ],
+   "refreshTools": [
+    "eventotron"
+   ]
+  },
+  {
+   "festival": "litquake",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-04",
+   "last": "2026-10-24",
+   "tools": [
+    "sched",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "sched"
+   ]
+  },
+  {
+   "festival": "london-latino-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-02",
+   "last": "2026-10-06",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "marxismnl-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-07",
+   "last": "2026-10-09",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "matrix-conference",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-20",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "micf",
+   "edition": "2027",
+   "format": "block",
+   "first": "2027-03-24",
+   "last": "2027-04-18",
+   "tools": [
+    "umbraco-api"
+   ],
+   "refreshTools": [
+    "umbraco-api"
+   ]
+  },
+  {
+   "festival": "new-orleans-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-27",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "nzicf",
+   "edition": "2027",
+   "format": "block",
+   "first": "2027-04-30",
+   "last": "2027-05-23",
+   "tools": [
+    "find-a-show"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "outshine-lgbtq-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-15",
+   "last": "2026-10-25",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "pycon-greece",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-12",
+   "last": "2026-10-13",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "red-sea-jazz",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-11",
+   "last": "2026-11-14",
+   "tools": [
+    "festival-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "santa-fe-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-14",
+   "last": "2026-10-19",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "scala-days",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-12",
+   "last": "2026-10-13",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "seeei-electricity-energy",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-10",
+   "last": "2026-11-13",
+   "tools": [
+    "programme-pdf",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "silicon-valley-jewish-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-10",
+   "last": "2026-10-25",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "singapore-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-21",
+   "last": "2026-11-07",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "swiss-python-summit",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-23",
+   "tools": [
+    "venues-research",
+    "pretalx"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "tallgrass-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-15",
+   "last": "2026-10-18",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "tel-aviv-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-01",
+   "last": "2026-11-08",
+   "tools": [
+    "venues-research",
+    "festival-site"
+   ],
+   "refreshTools": [
+    "festival-site"
+   ]
+  },
+  {
+   "festival": "tlvfest",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-22",
+   "last": "2026-10-31",
+   "tools": [
+    "cinematheque",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "tryon-international-film-festival",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-08",
+   "last": "2026-10-11",
+   "tools": [
+    "eventive",
+    "nominatim",
+    "venues-research"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  },
+  {
+   "festival": "viet-film-fest",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-08",
+   "last": "2026-10-23",
+   "tools": [
+    "eventive",
+    "nominatim"
+   ],
+   "refreshTools": [
+    "eventive"
+   ]
+  }
+ ]
+}

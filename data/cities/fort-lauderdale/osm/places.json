@@ -1,0 +1,222 @@
+{
+ "places": [
+  {
+   "id": "node/14174171490",
+   "lat": 26.136778,
+   "lng": -80.130042,
+   "tags": {
+    "name": "Stonewall National Museum, Archives & Library",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 11:00-17:00; Sa-Su 11:00-15:00",
+    "website": "http://www.stonewall-museum.org/",
+    "addr:housenumber": "1300",
+    "addr:street": "Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "node/1439350923",
+   "lat": 26.111271,
+   "lng": -80.106016,
+   "tags": {
+    "name": "Jungle Queen Riverboat",
+    "tourism": "viewpoint",
+    "website": "https://www.junglequeen.com/",
+    "addr:housenumber": "801",
+    "addr:street": "Seabreeze Blvd.",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3231411866",
+   "lat": 26.118436,
+   "lng": -80.137447,
+   "tags": {
+    "name": "Historic Stranahan House Museum",
+    "tourism": "museum",
+    "website": "https://www.stranahanhouse.org/",
+    "addr:housenumber": "335",
+    "addr:street": "Southeast 6th Avenue",
+    "addr:postcode": "33301"
+   }
+  },
+  {
+   "id": "node/9791395147",
+   "lat": 26.132118,
+   "lng": -80.141133,
+   "tags": {
+    "name": "Madeline Denaro Studio and Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9792316655",
+   "lat": 26.132509,
+   "lng": -80.142269,
+   "tags": {
+    "name": "Ernesto Maranje Art & Design",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9792394385",
+   "lat": 26.134539,
+   "lng": -80.140216,
+   "tags": {
+    "name": "MAC Art Galleries",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9792394386",
+   "lat": 26.133746,
+   "lng": -80.14024,
+   "tags": {
+    "name": "The Art Bloc",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/9793802295",
+   "lat": 26.156563,
+   "lng": -80.138447,
+   "tags": {
+    "name": "Claudia Castillo Art Studio",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "relation/7540489",
+   "lat": 26.121075,
+   "lng": -80.147932,
+   "tags": {
+    "name": "Museum of Discovery and Science",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Sa 10:00-17:00; Su 12:00-17:00",
+    "website": "https://mods.org/",
+    "wikidata": "Q6940839",
+    "addr:housenumber": "401",
+    "addr:street": "Himmarshee Street",
+    "addr:postcode": "33312",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/135174795",
+   "lat": 26.135143,
+   "lng": -80.105616,
+   "tags": {
+    "name": "Bonnet House Museum and Gardens",
+    "leisure": "park",
+    "opening_hours": "Tu-Su 11:00-16:00",
+    "website": "https://www.bonnethouse.org/",
+    "wikidata": "Q4942208",
+    "wikipedia": "en:Bonnet House",
+    "addr:housenumber": "900",
+    "addr:street": "North Birch Road",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/158195363",
+   "lat": 26.116267,
+   "lng": -80.107678,
+   "tags": {
+    "name": "International Swimming Hall of Fame",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://ishof.org/",
+    "wikidata": "Q744713",
+    "wikipedia": "en:International Swimming Hall of Fame"
+   }
+  },
+  {
+   "id": "way/276050099",
+   "lat": 26.135006,
+   "lng": -80.104765,
+   "tags": {
+    "name": "Bonnet House",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Su 11:00-16:00",
+    "website": "https://www.bonnethouse.org/",
+    "wikidata": "Q4942208",
+    "addr:housenumber": "900",
+    "addr:street": "North Birch Road",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/463369841",
+   "lat": 26.137593,
+   "lng": -80.191718,
+   "tags": {
+    "name": "Swap Shop",
+    "amenity": "marketplace",
+    "wikidata": "Q5471478",
+    "wikipedia": "en:Fort Lauderdale Swap Shop",
+    "addr:housenumber": "3291",
+    "addr:street": "West Sunrise Boulevard"
+   }
+  },
+  {
+   "id": "way/49508471",
+   "lat": 26.14547,
+   "lng": -80.105133,
+   "tags": {
+    "name": "Hugh Taylor Birch State Park",
+    "leisure": "park",
+    "opening_hours": "Mo-Su 08:00-20:30",
+    "website": "https://www.floridastateparks.org/hughtaylorbirch",
+    "wikidata": "Q3364064",
+    "addr:housenumber": "3109",
+    "addr:street": "East Sunrise Boulevard",
+    "addr:postcode": "33304"
+   }
+  },
+  {
+   "id": "way/532105760",
+   "lat": 26.119591,
+   "lng": -80.142843,
+   "tags": {
+    "name": "NSU Art Museum Fort Lauderdale",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Sa 11:00-17:00; Su 12:00-17:00",
+    "website": "https://nsuartmuseum.org/",
+    "wikidata": "Q1685139",
+    "wikipedia": "en:Museum of Art Fort Lauderdale",
+    "addr:housenumber": "1",
+    "addr:street": "East Las Olas Boulevard",
+    "addr:postcode": "33301",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/629566174",
+   "lat": 26.102265,
+   "lng": -80.143518,
+   "tags": {
+    "name": "The Fort Lauderdale Antique Car Museum",
+    "tourism": "museum",
+    "building": "yes"
+   }
+  },
+  {
+   "id": "way/827973258",
+   "lat": 26.126206,
+   "lng": -80.155079,
+   "tags": {
+    "name": "Old Dillard Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.browardschools.com/Page/35769",
+    "addr:housenumber": "1009",
+    "addr:street": "NW 4th St",
+    "addr:postcode": "33311"
+   }
+  }
+ ]
+}

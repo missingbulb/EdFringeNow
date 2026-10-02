@@ -1,0 +1,1998 @@
+{
+ "nearM": 1000,
+ "anchors": [
+  {
+   "festival": "jerusalem-comedy",
+   "venue": "בית-הקפה-נוקטורנו-ירושלים",
+   "lat": 31.78049,
+   "lng": 35.21369
+  },
+  {
+   "festival": "jerusalem-comedy",
+   "venue": "בית-מזיא-ירושלים",
+   "lat": 31.78215,
+   "lng": 35.21514
+  },
+  {
+   "festival": "jerusalem-comedy",
+   "venue": "בסרביה-בר",
+   "lat": 31.78113,
+   "lng": 35.21578
+  },
+  {
+   "festival": "jerusalem-comedy",
+   "venue": "היכל-התרבות-בית-העם-ירושלים",
+   "lat": 31.78066,
+   "lng": 35.21281
+  },
+  {
+   "festival": "jerusalem-comedy",
+   "venue": "סטודיו-למשחק-ניסן-נתיב-ירושלים",
+   "lat": 31.77972,
+   "lng": 35.21258
+  },
+  {
+   "festival": "jerusalem-oud",
+   "venue": "confederation-house",
+   "lat": 31.77419,
+   "lng": 35.22497
+  },
+  {
+   "festival": "jerusalem-oud",
+   "venue": "jerusalem-theatre",
+   "lat": 31.76891,
+   "lng": 35.21564
+  },
+  {
+   "festival": "jerusalem-oud",
+   "venue": "khan-theatre",
+   "lat": 31.76853,
+   "lng": 35.22461
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10075307017",
+   "lat": 31.780044,
+   "lng": 35.22568,
+   "tags": {
+    "name": "Notre Dame Bistro",
+    "amenity": "restaurant",
+    "website": "https://www.notredamecenter.org/bistro",
+    "addr:housenumber": "3",
+    "addr:street": "HaTsanhanim"
+   }
+  },
+  {
+   "id": "node/10244439955",
+   "lat": 31.782149,
+   "lng": 35.207335,
+   "tags": {
+    "name": "קפה גן סיפור",
+    "name:en": "Gan Sipur",
+    "amenity": "restaurant",
+    "website": "https://www.gansipur.co.il/Jerusalem",
+    "opening_hours": "Su-Th 08:00-00:00, Fr 08:00-13:00, Sa 19:30-00:00"
+   }
+  },
+  {
+   "id": "node/10556979851",
+   "lat": 31.779344,
+   "lng": 35.22364,
+   "tags": {
+    "name": "Anthony’s pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/10799731407",
+   "lat": 31.78229,
+   "lng": 35.220345,
+   "tags": {
+    "name": "מסעדה אתיופית",
+    "name:en": "Ethiopian restaurant",
+    "amenity": "restaurant",
+    "cuisine": "ethiopian",
+    "opening_hours": "Mo-Su 10:00-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "החבצלת"
+   }
+  },
+  {
+   "id": "node/10840069261",
+   "lat": 31.77908,
+   "lng": 35.222532,
+   "tags": {
+    "name": "Tacos Luis",
+    "amenity": "restaurant",
+    "cuisine": "mexican"
+   }
+  },
+  {
+   "id": "node/11799581639",
+   "lat": 31.777157,
+   "lng": 35.219671,
+   "tags": {
+    "name": "Deja Bu",
+    "amenity": "restaurant",
+    "website": "https://www.dejabu.co.il",
+    "opening_hours": "Mo-Th,1700-0200; Fr,1200-0200",
+    "addr:housenumber": "1",
+    "addr:street": "מנשה בן ישראל"
+   }
+  },
+  {
+   "id": "node/12815456001",
+   "lat": 31.781645,
+   "lng": 35.220906,
+   "tags": {
+    "name": "Central Boutique Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "3",
+    "addr:street": "הלני המלכה",
+    "addr:postcode": "94221"
+   }
+  },
+  {
+   "id": "node/12913445950",
+   "lat": 31.780119,
+   "lng": 35.226762,
+   "tags": {
+    "name": "New Gate Hostel",
+    "tourism": "hostel",
+    "website": "https://www.newgatehostel.com/",
+    "addr:housenumber": "3",
+    "addr:street": "HaTsanhanim",
+    "addr:postcode": "9120402"
+   }
+  },
+  {
+   "id": "node/12957411124",
+   "lat": 31.781277,
+   "lng": 35.219868,
+   "tags": {
+    "name": "Sushiya",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/12957411127",
+   "lat": 31.782701,
+   "lng": 35.221834,
+   "tags": {
+    "name": "Nikolai Pilgrim's Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/12958839687",
+   "lat": 31.779916,
+   "lng": 35.218867,
+   "tags": {
+    "name": "Ichikdana",
+    "amenity": "restaurant",
+    "cuisine": "indian"
+   }
+  },
+  {
+   "id": "node/12958862559",
+   "lat": 31.779926,
+   "lng": 35.214473,
+   "tags": {
+    "name": "Mona",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12958952654",
+   "lat": 31.778291,
+   "lng": 35.216248,
+   "tags": {
+    "name": "Chakra",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/12967031054",
+   "lat": 31.781262,
+   "lng": 35.219069,
+   "tags": {
+    "name": "Smart hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/13419278801",
+   "lat": 31.776896,
+   "lng": 35.22774,
+   "tags": {
+    "name": "Fayruz Restaurant",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "addr:housenumber": "52",
+    "addr:street": "הפטריארכיה הלטינית"
+   }
+  },
+  {
+   "id": "node/13535431394",
+   "lat": 31.78143,
+   "lng": 35.21963,
+   "tags": {
+    "name": "Herbert Samuel",
+    "tourism": "hotel",
+    "addr:housenumber": "25",
+    "addr:street": "שמאי"
+   }
+  },
+  {
+   "id": "node/13535438303",
+   "lat": 31.775396,
+   "lng": 35.232455,
+   "tags": {
+    "name": "Tokyo",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/13799211350",
+   "lat": 31.775985,
+   "lng": 35.2116,
+   "tags": {
+    "name": "שאבעסBISTRO",
+    "amenity": "restaurant",
+    "cuisine": "cholent;shabbos",
+    "addr:housenumber": "5",
+    "addr:street": "אבן שפרוט",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1404739176",
+   "lat": 31.769991,
+   "lng": 35.22598,
+   "tags": {
+    "name": "לבן בסינמטק",
+    "name:en": "Lavan at the Cinemateque",
+    "amenity": "restaurant",
+    "cuisine": "international"
+   }
+  },
+  {
+   "id": "node/14049939785",
+   "lat": 31.774049,
+   "lng": 35.231687,
+   "tags": {
+    "name": "The Sephardic House",
+    "tourism": "hotel",
+    "website": "https://www.sephardichouse.co.il/",
+    "addr:housenumber": "1",
+    "addr:street": "Batei Mahase",
+    "addr:postcode": "9751494"
+   }
+  },
+  {
+   "id": "node/14057431743",
+   "lat": 31.774583,
+   "lng": 35.23009,
+   "tags": {
+    "name": "Heritage House",
+    "tourism": "hostel",
+    "website": "https://heritage.org.il/",
+    "addr:housenumber": "7",
+    "addr:street": "HaMalakh"
+   }
+  },
+  {
+   "id": "node/14057431744",
+   "lat": 31.774464,
+   "lng": 35.230311,
+   "tags": {
+    "name": "Schuster House",
+    "tourism": "hostel",
+    "website": "https://heritage.org.il/",
+    "addr:housenumber": "13",
+    "addr:street": "HaNevel Street"
+   }
+  },
+  {
+   "id": "node/14067445573",
+   "lat": 31.778301,
+   "lng": 35.227512,
+   "tags": {
+    "name": "Casa Nova",
+    "tourism": "hostel",
+    "addr:housenumber": "10",
+    "addr:street": "Casa Nova Road"
+   }
+  },
+  {
+   "id": "node/14067445574",
+   "lat": 31.77825,
+   "lng": 35.227716,
+   "tags": {
+    "name": "Petrakis Inn",
+    "tourism": "hotel",
+    "addr:housenumber": "7",
+    "addr:street": "Casa Nova Road"
+   }
+  },
+  {
+   "id": "node/1406870393",
+   "lat": 31.772866,
+   "lng": 35.214879,
+   "tags": {
+    "name": "קפה יהושע",
+    "name:en": "Joshua coffee",
+    "amenity": "restaurant",
+    "cuisine": "international",
+    "website": "http://yehoshua.rest-e.co.il/",
+    "addr:housenumber": "17",
+    "addr:street": "עזה",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/14071754490",
+   "lat": 31.777606,
+   "lng": 35.22988,
+   "tags": {
+    "name": "Panoramic Golden City Restaurant Cafe Roof",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/14088515598",
+   "lat": 31.777385,
+   "lng": 35.226982,
+   "tags": {
+    "name": "Rosary Sisters House of Prayer - Old. City",
+    "tourism": "guest_house",
+    "website": "https://rosarysistersoldcity.org/",
+    "addr:housenumber": "1",
+    "addr:street": "Latin Patriarchate Road"
+   }
+  },
+  {
+   "id": "node/14088642581",
+   "lat": 31.776926,
+   "lng": 35.227687,
+   "tags": {
+    "name": "מלון גלוריה",
+    "name:en": "Gloria Hotel (Annex)",
+    "tourism": "hotel",
+    "website": "https://gloria-hotel.com/",
+    "addr:housenumber": "33-41",
+    "addr:street": "Latin Patriarchate Road"
+   }
+  },
+  {
+   "id": "node/1418089446",
+   "lat": 31.780231,
+   "lng": 35.221793,
+   "tags": {
+    "name": "Malka",
+    "name:en": "Malka",
+    "amenity": "restaurant",
+    "cuisine": "american"
+   }
+  },
+  {
+   "id": "node/1419590085",
+   "lat": 31.76327,
+   "lng": 35.218829,
+   "tags": {
+    "name": "Roza",
+    "name:en": "Roza",
+    "amenity": "restaurant",
+    "cuisine": "spanish"
+   }
+  },
+  {
+   "id": "node/1419595824",
+   "lat": 31.780595,
+   "lng": 35.220621,
+   "tags": {
+    "name": "Roza",
+    "name:en": "Roza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1685095089",
+   "lat": 31.786011,
+   "lng": 35.210969,
+   "tags": {
+    "name": "בית אביטל",
+    "name:en": "Beit Avital",
+    "tourism": "hotel",
+    "wikidata": "Q111997820",
+    "addr:housenumber": "141",
+    "addr:street": "יפו"
+   }
+  },
+  {
+   "id": "node/1697824002",
+   "lat": 31.777134,
+   "lng": 35.222286,
+   "tags": {
+    "name": "מלון מצודת דוד",
+    "name:en": "David Citadel Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1702550675",
+   "lat": 31.771589,
+   "lng": 35.222462,
+   "tags": {
+    "name": "קפה פרדיסו",
+    "name:en": "Caffe Perdiso",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1702561250",
+   "lat": 31.772049,
+   "lng": 35.220601,
+   "tags": {
+    "name": "פרימה רויאל",
+    "name:en": "Prima Royale",
+    "tourism": "hotel",
+    "website": "https://www.prima-hotels-israel.com/prima-royal-jerusalem-hotel",
+    "addr:housenumber": "3",
+    "addr:street": "מנדלי מוכר ספרים"
+   }
+  },
+  {
+   "id": "node/1703341665",
+   "lat": 31.777335,
+   "lng": 35.216664,
+   "tags": {
+    "name": "שרתון פלאזה",
+    "name:en": "Sheraton Plaza",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1703936209",
+   "lat": 31.778397,
+   "lng": 35.223103,
+   "tags": {
+    "name": "מסעדת open",
+    "name:en": "Open Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1704007892",
+   "lat": 31.781284,
+   "lng": 35.21915,
+   "tags": {
+    "name": "אוויל",
+    "name:en": "Awill",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1704008026",
+   "lat": 31.781489,
+   "lng": 35.216741,
+   "tags": {
+    "name": "הולידיי",
+    "name:en": "Holiday",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1708046711",
+   "lat": 31.781905,
+   "lng": 35.220194,
+   "tags": {
+    "name": "גולדן ג'רוזלם",
+    "name:en": "Golden Jerusalem",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1720645851",
+   "lat": 31.779846,
+   "lng": 35.215053,
+   "tags": {
+    "name": "מונטיפיורי",
+    "name:en": "Montefiore",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/1723672640",
+   "lat": 31.781943,
+   "lng": 35.216363,
+   "tags": {
+    "name": "מרבד הקסמים",
+    "name:en": "Marved Ha'Kesamim",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/1723912965",
+   "lat": 31.782964,
+   "lng": 35.217571,
+   "tags": {
+    "name": "פעמונים",
+    "name:en": "Paamonim Jerusalem Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111399987",
+    "addr:housenumber": "4",
+    "addr:street": "אגריפס",
+    "addr:postcode": "9422904"
+   }
+  },
+  {
+   "id": "node/1729362042",
+   "lat": 31.783751,
+   "lng": 35.213144,
+   "tags": {
+    "name": "Aricha Sabich",
+    "name:en": "Aricha Sabich",
+    "amenity": "restaurant",
+    "website": "https://www.facebook.com/Aricha.Sabich/",
+    "opening_hours": "Mo-Th 09:30-23:00; Fr 09:30-14:00; Su 09:30-23:00",
+    "addr:housenumber": "83",
+    "addr:street": "אגריפס"
+   }
+  },
+  {
+   "id": "node/1730674152",
+   "lat": 31.768321,
+   "lng": 35.227385,
+   "tags": {
+    "name": "הר ציון",
+    "name:en": "Har Tzion",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/2022791791",
+   "lat": 31.784879,
+   "lng": 35.215629,
+   "tags": {
+    "name": "אברהם הוסטל",
+    "name:en": "Falkenfahrt 2023",
+    "tourism": "hostel",
+    "website": "https://www.abrahamhostels.com",
+    "wikidata": "Q111119211",
+    "addr:housenumber": "67",
+    "addr:street": "הנביאים"
+   }
+  },
+  {
+   "id": "node/2406673409",
+   "lat": 31.785711,
+   "lng": 35.212604,
+   "tags": {
+    "name": "המוציא",
+    "amenity": "restaurant",
+    "addr:housenumber": "4",
+    "addr:street": "משיח ברוכוף"
+   }
+  },
+  {
+   "id": "node/2493256218",
+   "lat": 31.768219,
+   "lng": 35.226725,
+   "tags": {
+    "name": "מלון הר ציון",
+    "name:en": "Mount Zion Hotel",
+    "tourism": "hotel",
+    "website": "http://www.mountzionjerusalemhotel.com",
+    "wikidata": "Q12409208"
+   }
+  },
+  {
+   "id": "node/2533310863",
+   "lat": 31.784076,
+   "lng": 35.212754,
+   "tags": {
+    "name": "Pasta Basta",
+    "name:en": "Pasta Basta",
+    "amenity": "restaurant",
+    "cuisine": "pasta",
+    "addr:housenumber": "8",
+    "addr:street": "התות"
+   }
+  },
+  {
+   "id": "node/2611239340",
+   "lat": 31.771787,
+   "lng": 35.222186,
+   "tags": {
+    "name": "P2",
+    "name:en": "P2",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/2686925030",
+   "lat": 31.785303,
+   "lng": 35.211647,
+   "tags": {
+    "name": "Ishtabach",
+    "name:en": "Ishtabach",
+    "amenity": "restaurant",
+    "addr:housenumber": "7",
+    "addr:street": "בית יעקב"
+   }
+  },
+  {
+   "id": "node/2818046024",
+   "lat": 31.778889,
+   "lng": 35.231068,
+   "tags": {
+    "name": "Hebron Hostel",
+    "name:en": "Hebron Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/2838914554",
+   "lat": 31.785213,
+   "lng": 35.211197,
+   "tags": {
+    "name": "מחניודה",
+    "name:en": "Machneyuda",
+    "amenity": "restaurant",
+    "cuisine": "mediterranean;regional",
+    "website": "https://www.machneyuda.co.il/",
+    "wikidata": "Q6820422"
+   }
+  },
+  {
+   "id": "node/321743226",
+   "lat": 31.777304,
+   "lng": 35.225847,
+   "tags": {
+    "name": "רימון",
+    "name:en": "Rimon",
+    "amenity": "restaurant",
+    "cuisine": "italian"
+   }
+  },
+  {
+   "id": "node/3243260544",
+   "lat": 31.781994,
+   "lng": 35.21852,
+   "tags": {
+    "name": "Zion Hotel",
+    "name:en": "Zion Hotel",
+    "tourism": "hotel",
+    "website": "https://hotelzion.com/wb/pages/home.php",
+    "addr:housenumber": "10",
+    "addr:street": "דורות ראשונים",
+    "addr:postcode": "94625"
+   }
+  },
+  {
+   "id": "node/3354245036",
+   "lat": 31.782238,
+   "lng": 35.229603,
+   "tags": {
+    "name": "العايد",
+    "name:en": "Al-A’yed Restaurant",
+    "amenity": "restaurant",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/343668818",
+   "lat": 31.78049,
+   "lng": 35.218122,
+   "tags": {
+    "name": "מלון מגדל ירושלים",
+    "name:en": "Jerusalem Tower",
+    "tourism": "hotel",
+    "stars": "3",
+    "wikidata": "Q16129945",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/366517977",
+   "lat": 31.771534,
+   "lng": 35.222388,
+   "tags": {
+    "name": "Olive & Fish",
+    "name:en": "Olive & Fish",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3749005285",
+   "lat": 31.77739,
+   "lng": 35.233989,
+   "tags": {
+    "name": "Gate of the Chain Hostel",
+    "name:en": "Gate of the Chain Hostel",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/3930363769",
+   "lat": 31.782309,
+   "lng": 35.220984,
+   "tags": {
+    "name": "Jerusalem Inn by Smart Hotels",
+    "name:en": "Jerusalem Inn",
+    "tourism": "hotel",
+    "website": "http://en.smarthotels.co.il/our-hotels/jerusalem-inn/",
+    "addr:housenumber": "7",
+    "addr:street": "הורקנוס"
+   }
+  },
+  {
+   "id": "node/4086343903",
+   "lat": 31.779965,
+   "lng": 35.22229,
+   "tags": {
+    "name": "The Post Hostel",
+    "name:en": "The Post Hostel",
+    "tourism": "hostel",
+    "website": "https://theposthostel.com/",
+    "wikidata": "Q111997818",
+    "addr:housenumber": "23",
+    "addr:street": "יפו"
+   }
+  },
+  {
+   "id": "node/4104487735",
+   "lat": 31.779897,
+   "lng": 35.232051,
+   "tags": {
+    "name": "مطعم وبيتزا الباسطي",
+    "name:en": "Basti",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "70",
+    "addr:street": "الواد"
+   }
+  },
+  {
+   "id": "node/4323427290",
+   "lat": 31.776785,
+   "lng": 35.228006,
+   "tags": {
+    "name": "מלון ניו אימפריאל",
+    "name:en": "New Imperial Hotel",
+    "tourism": "hotel",
+    "website": "https://www.newimperial.com/",
+    "wikidata": "Q20502066",
+    "addr:street": "Jaffa Gate"
+   }
+  },
+  {
+   "id": "node/4323468589",
+   "lat": 31.774593,
+   "lng": 35.22705,
+   "tags": {
+    "name": "האקליפטוס",
+    "name:en": "The Eucalyptus Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "regional;local",
+    "website": "https://www.the-eucalyptus.com/",
+    "opening_hours": "Su-Th 18:00-23:00; Sa 20:15-23:00",
+    "wikidata": "Q60752511"
+   }
+  },
+  {
+   "id": "node/4358273397",
+   "lat": 31.780556,
+   "lng": 35.214138,
+   "tags": {
+    "name": "MENZA",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4409642393",
+   "lat": 31.785222,
+   "lng": 35.211918,
+   "tags": {
+    "name": "עזורה",
+    "name:en": "Azura",
+    "amenity": "restaurant",
+    "cuisine": "local",
+    "wikidata": "Q123477399"
+   }
+  },
+  {
+   "id": "node/4443280390",
+   "lat": 31.7765,
+   "lng": 35.230426,
+   "tags": {
+    "name": "Gästehaus des Propstes von Jerusalem",
+    "name:en": "Lutheran Hospice",
+    "tourism": "hotel",
+    "website": "https://www.guesthouse-jerusalem.com/",
+    "addr:street": "סנט מארק"
+   }
+  },
+  {
+   "id": "node/4450000357",
+   "lat": 31.780872,
+   "lng": 35.219915,
+   "tags": {
+    "name": "Zuni",
+    "name:en": "Zuni",
+    "amenity": "restaurant",
+    "opening_hours": "24/7"
+   }
+  },
+  {
+   "id": "node/4488849290",
+   "lat": 31.779023,
+   "lng": 35.221736,
+   "tags": {
+    "name": "חומוס בן סירה",
+    "name:en": "Houmus Ben Sira",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4580755056",
+   "lat": 31.768691,
+   "lng": 35.215448,
+   "tags": {
+    "name": "טלביה",
+    "name:en": "Talbiye",
+    "amenity": "restaurant",
+    "website": "https://www.talbiye.com/",
+    "opening_hours": "09:00-16:30,17:00-00:00",
+    "addr:housenumber": "5",
+    "addr:street": "שופן",
+    "addr:postcode": "9219005"
+   }
+  },
+  {
+   "id": "node/4817475223",
+   "lat": 31.779951,
+   "lng": 35.229192,
+   "tags": {
+    "name": "Jaber bakery",
+    "name:en": "Jaber bakery",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4839731005",
+   "lat": 31.783896,
+   "lng": 35.212241,
+   "tags": {
+    "name": "חומוס ארבעס",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4880282128",
+   "lat": 31.767485,
+   "lng": 35.22434,
+   "tags": {
+    "name": "אדום",
+    "name:en": "Adom",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4995235125",
+   "lat": 31.779597,
+   "lng": 35.232505,
+   "tags": {
+    "name": "أبو شكري",
+    "name:en": "Abu Shukri",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "63",
+    "addr:street": "Al Wadi Street"
+   }
+  },
+  {
+   "id": "node/5018172021",
+   "lat": 31.784742,
+   "lng": 35.21288,
+   "tags": {
+    "name": "Manou bashouk",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5018172022",
+   "lat": 31.78472,
+   "lng": 35.212126,
+   "tags": {
+    "name": "Azura",
+    "amenity": "restaurant",
+    "cuisine": "regional"
+   }
+  },
+  {
+   "id": "node/5018172023",
+   "lat": 31.779141,
+   "lng": 35.230038,
+   "tags": {
+    "name": "Amigo emil",
+    "amenity": "restaurant",
+    "addr:street": "Aqabat El-Khanqa"
+   }
+  },
+  {
+   "id": "node/5038899422",
+   "lat": 31.775471,
+   "lng": 35.217878,
+   "tags": {
+    "name": "La Piedra",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/5155559674",
+   "lat": 31.767737,
+   "lng": 35.216782,
+   "tags": {
+    "name": "עפאים",
+    "name:en": "Ofaimme",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "addr:housenumber": "17",
+    "addr:street": "יעקב שסקין"
+   }
+  },
+  {
+   "id": "node/5174102522",
+   "lat": 31.778955,
+   "lng": 35.222311,
+   "tags": {
+    "name": "אולפן מורשה",
+    "name:en": "Ulpan Morasha",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/536524554",
+   "lat": 31.780267,
+   "lng": 35.221712,
+   "tags": {
+    "name": "ג'פניקה",
+    "name:en": "Japanika",
+    "amenity": "restaurant",
+    "cuisine": "japanese"
+   }
+  },
+  {
+   "id": "node/5472975322",
+   "lat": 31.77676,
+   "lng": 35.230342,
+   "tags": {
+    "name": "New Swedish Hostel",
+    "name:en": "New Swedish Hostel",
+    "tourism": "hostel",
+    "addr:housenumber": "29 (67)",
+    "addr:street": "דוד",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5517221925",
+   "lat": 31.777196,
+   "lng": 35.227557,
+   "tags": {
+    "name": "מלון גלוריה",
+    "name:en": "Gloria Hotel",
+    "tourism": "hotel",
+    "website": "https://gloria-hotel.com/",
+    "addr:housenumber": "33-41",
+    "addr:street": "Latin Patriarchate Road"
+   }
+  },
+  {
+   "id": "node/559897732",
+   "lat": 31.770863,
+   "lng": 35.224919,
+   "tags": {
+    "name": "The Maurice M. Dwek Guest House",
+    "name:en": "The Maurice M. Dwek Guest House",
+    "tourism": "guest_house",
+    "website": "https://www.mishkenot.org.il/guest-house/",
+    "wikidata": "Q1898349"
+   }
+  },
+  {
+   "id": "node/560074149",
+   "lat": 31.779623,
+   "lng": 35.221108,
+   "tags": {
+    "name": "BBB",
+    "name:en": "BBB",
+    "amenity": "restaurant",
+    "cuisine": "burger"
+   }
+  },
+  {
+   "id": "node/560354901",
+   "lat": 31.78621,
+   "lng": 35.207542,
+   "tags": {
+    "name": "מסעדת אמא",
+    "name:en": "Ima",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/560372942",
+   "lat": 31.76353,
+   "lng": 35.219684,
+   "tags": {
+    "name": "קפית",
+    "name:en": "Caffit",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/560715129",
+   "lat": 31.781278,
+   "lng": 35.219904,
+   "tags": {
+    "name": "תמול שלשום",
+    "name:en": "Tmol Shilshom",
+    "amenity": "restaurant",
+    "addr:housenumber": "5",
+    "addr:street": "יואל משה סלומון"
+   }
+  },
+  {
+   "id": "node/560715182",
+   "lat": 31.779743,
+   "lng": 35.222286,
+   "tags": {
+    "name": "המרקיה",
+    "name:en": "Hamarakia",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/560807172",
+   "lat": 31.775117,
+   "lng": 35.221496,
+   "tags": {
+    "name": "מלון אלדן",
+    "name:en": "Eldan",
+    "tourism": "hotel",
+    "wikidata": "Q111399973"
+   }
+  },
+  {
+   "id": "node/561068509",
+   "lat": 31.779145,
+   "lng": 35.222207,
+   "tags": {
+    "name": "קבלייר",
+    "name:en": "Cavalier",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/561068650",
+   "lat": 31.778677,
+   "lng": 35.222059,
+   "tags": {
+    "name": "צ'לו",
+    "name:en": "Cielo",
+    "amenity": "restaurant",
+    "website": "https://www.cielo.rest.co.il/"
+   }
+  },
+  {
+   "id": "node/561070672",
+   "lat": 31.784837,
+   "lng": 35.210904,
+   "tags": {
+    "name": "סימה",
+    "name:en": "Sima",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/561130763",
+   "lat": 31.762947,
+   "lng": 35.223716,
+   "tags": {
+    "name": "קולוני",
+    "name:en": "Colony",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/561281308",
+   "lat": 31.772779,
+   "lng": 35.221501,
+   "tags": {
+    "name": "דן פנורמה",
+    "name:en": "Dan Panorama",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/561281769",
+   "lat": 31.772184,
+   "lng": 35.222518,
+   "tags": {
+    "name": "Cassia Hotel",
+    "name:en": "Cassia Hotel",
+    "tourism": "hotel",
+    "addr:housenumber": "32",
+    "addr:street": "דוד המלך",
+    "addr:postcode": "9410158"
+   }
+  },
+  {
+   "id": "node/562633314",
+   "lat": 31.776791,
+   "lng": 35.228597,
+   "tags": {
+    "name": "بيت شباب البتراء الجديدة",
+    "name:en": "New Petra Hostel",
+    "tourism": "hostel",
+    "website": "http://newpetrahostel.com/booking/"
+   }
+  },
+  {
+   "id": "node/568723405",
+   "lat": 31.781786,
+   "lng": 35.216886,
+   "tags": {
+    "name": "פינתי",
+    "name:en": "Pinati",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5708558921",
+   "lat": 31.775442,
+   "lng": 35.228854,
+   "tags": {
+    "name": "Հայկական պանդոկ",
+    "name:en": "Armenian Tavern",
+    "amenity": "restaurant",
+    "cuisine": "armenian",
+    "addr:housenumber": "79",
+    "addr:street": "Armenian Patriarchate Road"
+   }
+  },
+  {
+   "id": "node/571778166",
+   "lat": 31.782205,
+   "lng": 35.219609,
+   "tags": {
+    "name": "ג'רוזלם הוסטל",
+    "name:en": "Jerusalem Hostel",
+    "tourism": "hostel",
+    "website": "https://www.jerusalem-hostel.com/",
+    "wikidata": "Q111119215",
+    "addr:housenumber": "44",
+    "addr:street": "יפו"
+   }
+  },
+  {
+   "id": "node/5835976777",
+   "lat": 31.780151,
+   "lng": 35.23072,
+   "tags": {
+    "name": "Golden Gate Hostel",
+    "name:en": "Golden Gate Hostel",
+    "tourism": "hostel",
+    "website": "http://www.goldengate4.com/",
+    "addr:housenumber": "10",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6001264885",
+   "lat": 31.781355,
+   "lng": 35.220215,
+   "tags": {
+    "name": "Shanty",
+    "name:en": "Shanty",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6165145722",
+   "lat": 31.782022,
+   "lng": 35.220045,
+   "tags": {
+    "name": "Kaplan Hotel",
+    "name:en": "Kaplan",
+    "tourism": "hotel",
+    "addr:housenumber": "1",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6175639085",
+   "lat": 31.785249,
+   "lng": 35.211579,
+   "tags": {
+    "name": "מסעדת אישטבח",
+    "name:en": "Ishtabach",
+    "amenity": "restaurant",
+    "cuisine": "regional",
+    "addr:housenumber": "1",
+    "addr:street": "השקמה",
+    "addr:postcode": "9432301"
+   }
+  },
+  {
+   "id": "node/6187490291",
+   "lat": 31.785369,
+   "lng": 35.2114,
+   "tags": {
+    "name": "Pizza Flora",
+    "name:en": "Pizza Flora",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "website": "https://www.facebook.com/Pizzeria-Flora-פלורה-593331977476100/",
+    "opening_hours": "Su 12:00-00:00; Mo-Th 12:00-00:00; Fr 12:00-15:00; Sa 18:30-00:00",
+    "addr:housenumber": "2",
+    "addr:street": "הדקל"
+   }
+  },
+  {
+   "id": "node/6187490293",
+   "lat": 31.785333,
+   "lng": 35.212139,
+   "tags": {
+    "name": "Argento",
+    "name:en": "Argento",
+    "amenity": "restaurant",
+    "cuisine": "argentinian",
+    "website": "https://www.facebook.com/Argento-אמפנדס-בשוק-1367369123296962/",
+    "opening_hours": "Mo-Tu 11:30-22:00; We-Th 11:30-23:00; Fr 10:30-15:30; Su 11:30-22:00"
+   }
+  },
+  {
+   "id": "node/6195852402",
+   "lat": 31.773494,
+   "lng": 35.22169,
+   "tags": {
+    "name": "Angelica",
+    "name:en": "Angelica",
+    "amenity": "restaurant",
+    "cuisine": "meat;fish",
+    "website": "https://www.angelicarest.com/",
+    "opening_hours": "Mo-Th 12:30-22:30; Su 18:00-22:30",
+    "addr:housenumber": "4",
+    "addr:street": "וושינגטון"
+   }
+  },
+  {
+   "id": "node/6274686485",
+   "lat": 31.781842,
+   "lng": 35.218953,
+   "tags": {
+    "name": "Burgers Bar",
+    "name:en": "Kosher",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/635730100",
+   "lat": 31.780859,
+   "lng": 35.21964,
+   "tags": {
+    "name": "Harmony",
+    "name:en": "Harmony",
+    "tourism": "hotel",
+    "stars": "3",
+    "wikidata": "Q111415807"
+   }
+  },
+  {
+   "id": "node/6380547453",
+   "lat": 31.779905,
+   "lng": 35.222468,
+   "tags": {
+    "name": "Koresh Hotel",
+    "name:en": "Koresh Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/6426669648",
+   "lat": 31.779647,
+   "lng": 35.221897,
+   "tags": {
+    "name": "Eitan and Jonathan Bistro Bar",
+    "name:en": "Eitan and Jonathan Bar",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 16:30-02:00",
+    "addr:housenumber": "10",
+    "addr:street": "שלומציון המלכה"
+   }
+  },
+  {
+   "id": "node/6465228685",
+   "lat": 31.778028,
+   "lng": 35.228979,
+   "tags": {
+    "name": "Costas Greek Restaurant",
+    "name:en": "Costas Greek Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "greek"
+   }
+  },
+  {
+   "id": "node/6653239687",
+   "lat": 31.784895,
+   "lng": 35.21181,
+   "tags": {
+    "name": "Hachapuria Mahane Yehuda Market",
+    "amenity": "restaurant",
+    "cuisine": "georgian",
+    "website": "bit.ly/2NyRnvk"
+   }
+  },
+  {
+   "id": "node/6653239689",
+   "lat": 31.782184,
+   "lng": 35.229638,
+   "tags": {
+    "name": "حمص ءكرماوي",
+    "name:en": "Ikermawi Hommus",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/671288954",
+   "lat": 31.780714,
+   "lng": 35.220846,
+   "tags": {
+    "name": "בארוד",
+    "name:en": "Barood",
+    "amenity": "restaurant",
+    "wikidata": "Q60753332"
+   }
+  },
+  {
+   "id": "node/673826201",
+   "lat": 31.779751,
+   "lng": 35.218024,
+   "tags": {
+    "name": "Focaccia Bar",
+    "name:en": "Focaccia Bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6767547288",
+   "lat": 31.77718,
+   "lng": 35.227349,
+   "tags": {
+    "name": "Nafoura",
+    "name:en": "Nafoura",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6800194999",
+   "lat": 31.780322,
+   "lng": 35.2177,
+   "tags": {
+    "name": "הקוביה",
+    "name:en": "HaKubbeiyah",
+    "amenity": "restaurant",
+    "cuisine": "regional;moroccan;local;mediterranean",
+    "website": "https://www.chefchaouenjrs.com",
+    "opening_hours": "Su-We 11:30-23:30; Th 11:30-01:30; Fr 11:30-17:00; Sa 21:00-01:30",
+    "addr:housenumber": "19",
+    "addr:street": "הלל"
+   }
+  },
+  {
+   "id": "node/685536761",
+   "lat": 31.780065,
+   "lng": 35.23249,
+   "tags": {
+    "name": "مستشفى الأرمنية",
+    "name:en": "Armenian Hospice",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/6878405685",
+   "lat": 31.782581,
+   "lng": 35.220702,
+   "tags": {
+    "name": "Jeru Caps Hotel",
+    "name:en": "ElShaday",
+    "tourism": "hostel",
+    "addr:housenumber": "9",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/6955038347",
+   "lat": 31.780877,
+   "lng": 35.217769,
+   "tags": {
+    "name": "Cinema Hostel",
+    "name:en": "Cinema Hostel",
+    "tourism": "hostel",
+    "website": "https://www.cinema-hostel.com/"
+   }
+  },
+  {
+   "id": "node/6987300985",
+   "lat": 31.781114,
+   "lng": 35.221113,
+   "tags": {
+    "name": "sambooki",
+    "name:en": "SamBooki",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Su 07:00-21:00",
+    "addr:housenumber": "34",
+    "addr:street": "יפו"
+   }
+  },
+  {
+   "id": "node/701248333",
+   "lat": 31.776463,
+   "lng": 35.230034,
+   "tags": {
+    "name": "Citadel Hostel",
+    "name:en": "Citadel Hostel",
+    "tourism": "hostel",
+    "website": "https://citadelyouthhostel.com/",
+    "wikidata": "Q111119214",
+    "addr:housenumber": "20",
+    "addr:street": "סנט מארק",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7090301385",
+   "lat": 31.776797,
+   "lng": 35.228164,
+   "tags": {
+    "name": "Samara Restaurant Cafe",
+    "name:en": "Samara Restaurant Cafe",
+    "amenity": "restaurant",
+    "addr:street": "Omar Ibn El-Khattab Square"
+   }
+  },
+  {
+   "id": "node/7139854785",
+   "lat": 31.77971,
+   "lng": 35.230923,
+   "tags": {
+    "name": "Hashimi",
+    "name:en": "Hashimi",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/7176905659",
+   "lat": 31.779928,
+   "lng": 35.221939,
+   "tags": {
+    "name": "נויה",
+    "name:en": "Noya",
+    "amenity": "restaurant",
+    "opening_hours": "Su-Th 12:00-23:00",
+    "addr:housenumber": "3",
+    "addr:street": "שלומציון המלכה"
+   }
+  },
+  {
+   "id": "node/7431513885",
+   "lat": 31.777563,
+   "lng": 35.230177,
+   "tags": {
+    "name": "Celia restaurant",
+    "name:en": "Celia restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7554445485",
+   "lat": 31.767713,
+   "lng": 35.22432,
+   "tags": {
+    "name": "חאנליה",
+    "name:en": "Hanaleh",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7554559985",
+   "lat": 31.777354,
+   "lng": 35.225658,
+   "tags": {
+    "name": "Kedma Mamila",
+    "name:en": "Kedma Brasserie",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7619688191",
+   "lat": 31.780573,
+   "lng": 35.220231,
+   "tags": {
+    "name": "Kangaroo",
+    "name:en": "Kangaroo",
+    "amenity": "restaurant",
+    "cuisine": "georgian"
+   }
+  },
+  {
+   "id": "node/7944723885",
+   "lat": 31.781122,
+   "lng": 35.217869,
+   "tags": {
+    "name": "Pizza Hut",
+    "name:en": "Pizza Hut",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/868246327",
+   "lat": 31.772135,
+   "lng": 35.21339,
+   "tags": {
+    "name": "קרוסלה",
+    "name:en": "Carusell",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/873785129",
+   "lat": 31.771694,
+   "lng": 35.213397,
+   "tags": {
+    "name": "סושי רחביה",
+    "name:en": "Sushi Rechavia",
+    "amenity": "restaurant",
+    "cuisine": "sushi"
+   }
+  },
+  {
+   "id": "node/875679326",
+   "lat": 31.768964,
+   "lng": 35.225259,
+   "tags": {
+    "name": "St Andrew's Scottish Guest House",
+    "name:en": "St Andrew's Scottish Guest House",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "node/8812310017",
+   "lat": 31.767237,
+   "lng": 35.229304,
+   "tags": {
+    "name": "בית בגיא",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/8990432917",
+   "lat": 31.766755,
+   "lng": 35.225245,
+   "tags": {
+    "name": "הסדנא",
+    "name:en": "HaSadna",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9206943717",
+   "lat": 31.777582,
+   "lng": 35.221919,
+   "tags": {
+    "name": "Waldorf Astoria Jerusalem",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "node/9351201678",
+   "lat": 31.779405,
+   "lng": 35.230945,
+   "tags": {
+    "name": "Hashimi Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "relation/19228634",
+   "lat": 31.778179,
+   "lng": 35.227379,
+   "tags": {
+    "name": "קאזה נובה",
+    "name:en": "Casa Nova",
+    "tourism": "hotel",
+    "contact:website": "https://casanovaj.custodia.org/",
+    "wikidata": "Q6654773",
+    "addr:housenumber": "10",
+    "addr:street": "Casa Nova Road"
+   }
+  },
+  {
+   "id": "way/124551395",
+   "lat": 31.778095,
+   "lng": 35.223576,
+   "tags": {
+    "name": "מלון ממילה",
+    "name:en": "Mamila Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q20502063"
+   }
+  },
+  {
+   "id": "way/126783156",
+   "lat": 31.776077,
+   "lng": 35.228886,
+   "tags": {
+    "name": "Christ Church Guest House",
+    "name:en": "Christ Church Guest House",
+    "tourism": "hostel",
+    "website": "https://www.cmj-israel.org/CMJ-Ministries/Christ-Church-Guest-House/Guest-House-Overview"
+   }
+  },
+  {
+   "id": "way/1392513727",
+   "lat": 31.778836,
+   "lng": 35.231168,
+   "tags": {
+    "name": "Hebron Khan Hostel",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "way/1470870039",
+   "lat": 31.768108,
+   "lng": 35.215614,
+   "tags": {
+    "name": "Theatron Hotel",
+    "tourism": "hotel",
+    "opening_hours": "24/7",
+    "addr:housenumber": "16",
+    "addr:street": "Chopin"
+   }
+  },
+  {
+   "id": "way/157293735",
+   "lat": 31.777158,
+   "lng": 35.216773,
+   "tags": {
+    "name": "שרתון",
+    "tourism": "hotel",
+    "stars": "5",
+    "addr:housenumber": "47",
+    "addr:street": "המלך ג׳ורג׳"
+   }
+  },
+  {
+   "id": "way/157551044",
+   "lat": 31.777347,
+   "lng": 35.221612,
+   "tags": {
+    "name": "מלון וולדורף אסטוריה ירושלים",
+    "name:en": "Waldorf Astoria Jerusalem",
+    "tourism": "hotel",
+    "stars": "5",
+    "website": "https://www.hilton.com/en/hotels/jrswawa-waldorf-astoria-jerusalem/?SEO_id=OTHR-EMEA-WA-JRSWAWA",
+    "wikidata": "Q7035131",
+    "addr:housenumber": "26-28",
+    "addr:street": "אגרון",
+    "addr:postcode": "9419008"
+   }
+  },
+  {
+   "id": "way/158062661",
+   "lat": 31.775785,
+   "lng": 35.223977,
+   "tags": {
+    "name": "בית שמואל",
+    "name:en": "Beit Shmuel",
+    "tourism": "hotel",
+    "website": "http://www.beitshmuel.com",
+    "wikidata": "Q7026583",
+    "addr:housenumber": "6",
+    "addr:street": "Eliyahu Shama"
+   }
+  },
+  {
+   "id": "way/160318257",
+   "lat": 31.782902,
+   "lng": 35.215605,
+   "tags": {
+    "name": "מלון בוטיק אגריפס",
+    "name:en": "Boutique Agripas Hotel",
+    "tourism": "hotel",
+    "wikidata": "Q111399984"
+   }
+  },
+  {
+   "id": "way/160319388",
+   "lat": 31.780916,
+   "lng": 35.214084,
+   "tags": {
+    "name": "Bezalel Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/163734844",
+   "lat": 31.763942,
+   "lng": 35.223221,
+   "tags": {
+    "name": "German Hospice St. Charles",
+    "name:en": "German Hospice St. Charles",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "way/163738760",
+   "lat": 31.762057,
+   "lng": 35.216923,
+   "tags": {
+    "name": "וילה בראון מושבה",
+    "name:en": "וילה בראון מושבה",
+    "tourism": "hotel",
+    "website": "https://brownhotels.co.il/villa-brown-moshava-hotel"
+   }
+  },
+  {
+   "id": "way/166574238",
+   "lat": 31.766366,
+   "lng": 35.226209,
+   "tags": {
+    "name": "אריאל",
+    "name:en": "Dan Boutigue Jerusalem",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/261381108",
+   "lat": 31.777459,
+   "lng": 35.222355,
+   "tags": {
+    "name": "Waldorf Astoria",
+    "tourism": "hotel",
+    "stars": "5",
+    "website": "https://waldorfastoria3.hilton.com/en/hotels/israel/waldorf-astoria-jerusalem-JRSWAWA/index.html",
+    "addr:street": "אגרון",
+    "addr:postcode": "9419008",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/272625376",
+   "lat": 31.788643,
+   "lng": 35.22021,
+   "tags": {
+    "name": "אולמי סאטמר",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/279371755",
+   "lat": 31.786579,
+   "lng": 35.223308,
+   "tags": {
+    "name": "אולמי בערגער",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/279377694",
+   "lat": 31.786635,
+   "lng": 35.221373,
+   "tags": {
+    "name": "אולמי בנות ירושלים",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/280245179",
+   "lat": 31.787143,
+   "lng": 35.213923,
+   "tags": {
+    "name": "אולמי דרכי דוד",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/280246862",
+   "lat": 31.787096,
+   "lng": 35.212477,
+   "tags": {
+    "name": "אולמי דרכי דוד",
+    "name:en": "Darcfei David Hall",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/290812330",
+   "lat": 31.77732,
+   "lng": 35.22768,
+   "tags": {
+    "name": "Gloria Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/290812336",
+   "lat": 31.776807,
+   "lng": 35.228058,
+   "tags": {
+    "name": "New Imperial Hotel",
+    "name:en": "New Imperial Hotel",
+    "tourism": "hotel",
+    "website": "https://www.newimperial.com/",
+    "addr:street": "Jaffa Gate"
+   }
+  },
+  {
+   "id": "way/38548747",
+   "lat": 31.774378,
+   "lng": 35.222634,
+   "tags": {
+    "name": "מלון המלך דוד",
+    "name:en": "King David Hotel",
+    "tourism": "hotel",
+    "stars": "5",
+    "wikidata": "Q1375672",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/44169052",
+   "lat": 31.77431,
+   "lng": 35.221558,
+   "tags": {
+    "name": "ימקא",
+    "name:en": "YMCA",
+    "tourism": "hostel",
+    "wikidata": "Q6185163",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/44718472",
+   "lat": 31.775299,
+   "lng": 35.217155,
+   "tags": {
+    "name": "פרימה המלכים",
+    "name:en": "Prima Kings",
+    "tourism": "hotel",
+    "wikidata": "Q111399954"
+   }
+  },
+  {
+   "id": "way/44718473",
+   "lat": 31.776297,
+   "lng": 35.217862,
+   "tags": {
+    "name": "לאונרדו פלאזה",
+    "name:en": "Leonardo Plaza",
+    "tourism": "hotel",
+    "website": "https://www.leonardo-hotels.co.il/",
+    "wikidata": "Q12409211",
+    "addr:housenumber": "47",
+    "addr:street": "המלך ג׳ורג׳",
+    "addr:postcode": "91076"
+   }
+  },
+  {
+   "id": "way/44860166",
+   "lat": 31.781917,
+   "lng": 35.216063,
+   "tags": {
+    "name": "לב ירושלים",
+    "name:en": "Lev Yerushalayim",
+    "tourism": "hotel",
+    "wikidata": "Q111856241",
+    "addr:housenumber": "6",
+    "addr:street": "מרדכי עליאש"
+   }
+  },
+  {
+   "id": "way/45081548",
+   "lat": 31.776898,
+   "lng": 35.223326,
+   "tags": {
+    "name": "מלון מצודת דוד",
+    "name:en": "David Citadel Hotel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/52890125",
+   "lat": 31.780324,
+   "lng": 35.232135,
+   "tags": {
+    "name": "التكية النمساوية للعائلة المقدسة",
+    "name:en": "Austrian Hospice of the Holy Family",
+    "tourism": "hostel",
+    "contact:website": "http://www.austrianhospice.com",
+    "wikidata": "Q306632",
+    "addr:housenumber": "37",
+    "addr:street": "Via Dolorosa",
+    "addr:postcode": "91194",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/53474876",
+   "lat": 31.779144,
+   "lng": 35.230637,
+   "tags": {
+    "name": "הוספיס מסדר סנט ג'ון",
+    "name:en": "Hospice of the Order of St John",
+    "tourism": "guest_house",
+    "addr:street": "Aqabat El-Khanga"
+   }
+  },
+  {
+   "id": "way/54420258",
+   "lat": 31.778447,
+   "lng": 35.224983,
+   "tags": {
+    "name": "מלון פנינת ירושלים (נטוש(",
+    "name:en": "Jerusalem Pearl Hotel (abandoned)",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "way/55496091",
+   "lat": 31.780002,
+   "lng": 35.225951,
+   "tags": {
+    "name": "מלון נוטרדאם סנטר",
+    "name:en": "Notre Dame of Jerusalem Center (Pontifical)",
+    "tourism": "hotel",
+    "website": "https://www.notredamecenter.org/",
+    "addr:housenumber": "3",
+    "addr:street": "HaTsanhanim",
+    "addr:postcode": "9120402"
+   }
+  },
+  {
+   "id": "way/620317530",
+   "lat": 31.777239,
+   "lng": 35.229893,
+   "tags": {
+    "name": "Papa Andreas",
+    "name:en": "Papa Andreas",
+    "amenity": "restaurant",
+    "cuisine": "regional"
+   }
+  },
+  {
+   "id": "way/73850233",
+   "lat": 31.770581,
+   "lng": 35.221933,
+   "tags": {
+    "name": "ענבל",
+    "name:en": "The Inbal Jerusalem Hotel",
+    "tourism": "hotel",
+    "website": "https://www.inbalhotel.com",
+    "wikidata": "Q6013917"
+   }
+  }
+ ]
+}

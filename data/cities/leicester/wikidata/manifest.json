@@ -1,9 +1,9 @@
 {
  "city": "leicester",
  "source": "wikidata",
- "fetchedAt": "2026-09-25T14:23:01Z",
+ "fetchedAt": "2026-10-02T18:21:07Z",
  "fetcher": "scraper/cities/fetch.py",
- "fetcherVersion": 1,
+ "fetcherVersion": 2,
  "urls": [
   "https://www.wikidata.org/w/api.php"
  ],

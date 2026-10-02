@@ -627,7 +627,7 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   🔧 _Logic leaf._ <!-- req-gallery:14.6 -->
   </details>
 
-- `14.7` Everything else is packed greedily, earliest finish first, with fully deterministic tie-breaks — the same inputs always give the same plan.
+- `14.7` Everything else is packed greedily, earliest finish first (within a capped day's spread, `14.11`), with fully deterministic tie-breaks — the same inputs always give the same plan.
 
   <details><summary>Proof</summary>
 
@@ -653,6 +653,26 @@ frozen fixture dataset ([requirements/shared/reference-now.js](requirements/shar
   <details><summary>Proof</summary>
 
   🔧 _Logic leaf._ <!-- req-gallery:14.10 -->
+  </details>
+
+- `14.11` A day held to fewer shows than it could fit spreads them across its hours, rather than packing the earliest.
+
+  <details><summary>Proof</summary>
+
+  🔧 _Logic leaf._ <!-- req-gallery:14.11 -->
+  </details>
+
+  <details><summary>Notes</summary>
+
+  The per-day maximum is a question of pace, not of when the day ends: a
+  reader who asks for two shows a day has not asked to be done by lunch. So
+  the hours the day's shows span are shared out between its places, and each
+  part of the day takes a show before any takes a second. Scarcity comes
+  first — a show with fewer performances left to it takes its hour whatever
+  part of the day it is in, and earliest finish orders only shows equally
+  scarce — and a reader who wants the day to end early says so with the day's
+  end, which the spread then works within. The same rule as the festival
+  planner's `20.22`, from the same shared code.
   </details>
 
 ## 15. Preferences and the schedule
@@ -1227,7 +1247,7 @@ rather than as a control panel.
   <details><summary>Notes</summary>
 
   A few rivals are packed side by side, so how each overlaps the pick shows at
-  a glance; past three rows they are too many to tell apart, which is `20.15`.
+  a glance; past three rows they are drawn thinner, which is `20.15`.
   Bars stop at the neighbouring cards, so none is read as belonging to another
   hour; an end cut off there, or one nobody published (such a show is drawn
   for the hour the draft assumes it runs), fades out instead of taking a cap.
@@ -1249,15 +1269,18 @@ rather than as a control panel.
   `20.11`. A click opens the same list, for a touch screen.
   </details>
 
-- `20.15` An hour with more rivals than fit side by side draws them as one wash under a count.
+- `20.15` An hour with more rivals than fit side by side still draws each as its own bar capped at its own start and end, in thinner rows across a wider lane.
 
   ![planng-crowd.20.15](requirements/screen/cases/planng-crowd.20.15.png) <!-- req-gallery:20.15 -->
 
   <details><summary>Notes</summary>
 
-  Past three rows the shows are no longer told apart: the lane becomes one
-  wash down the pick's slot, darkest where the most of them overlap, and the
-  number at its top says how many there are. One element however many shows,
+  Past three rows the lane widens, up to a quarter of the slot, and its rows
+  narrow to fit them all, alternating two shades so neighbouring rows stay
+  apart (only the tiniest columns merge them into one strip), and every
+  rival keeps the bar and caps of `20.2`: where each starts and stops reads
+  off the calendar however busy the hour. No count: the bars are the count.
+  The bars of a crowded lane are painted by one element however many shows,
   so a whole Fringe stays inside the page's budget (`26.2`). Resting on it
   opens the same list as `20.3`, which names the scarcest few and counts the
   rest.
@@ -2575,6 +2598,60 @@ itself: checking out opens the places that do.
 
   One tab per press, because a browser lets a page open one window for each
   click and blocks the rest. Shows sold on the same page share one tab.
+  </details>
+
+## 33. Around the city
+
+A trip is days in a city, not only its shows. Under the calendar, a drawer
+named for the trip's city gathers a short list of where to stay and where to
+eat near the festival's venues, the city's best-known sights, and the day
+trips its travel guide suggests, each linking to where to find out more. The
+lists come from open sources — OpenStreetMap, Wikidata and Wikivoyage — and the
+footer credits them under their licences.
+
+- `33.1` Under the calendar, the city's drawer opens on four short lists: places to stay and to eat near the venues, sights, and day trips, each one linked.
+
+  ![jerusalem-city-guide.33.1](requirements/screen/cases/jerusalem-city-guide.33.1.png) <!-- req-gallery:33.1 -->
+
+  <details><summary>Notes</summary>
+
+  The Jerusalem trip. A place to stay or eat is offered where most of the
+  festival's venues are a walk (1 km) away, then where the reader can check
+  most before going (a website, mapped opening hours, stars or a cuisine),
+  then nearest a venue; each says how far its nearest venue is. Sights are the
+  city's best-known by how many Wikipedia editions describe them. Day trips
+  are the Wikivoyage guide's "Go next" destinations within 200 km, nearest
+  first, with the guide's own line about each. A place links to its own site
+  where OpenStreetMap maps one, and to its OpenStreetMap entry otherwise. The
+  lists are built by `scraper/cities/` (its README).
+  </details>
+
+- `33.2` While the city's lists are on the page, the footer credits OpenStreetMap's contributors under the ODbL and Wikivoyage under CC BY-SA, each linked.
+
+  ![jerusalem-guide-credit.33.2](requirements/screen/cases/jerusalem-guide-credit.33.2.png) <!-- req-gallery:33.2 -->
+
+- `33.3` A city with no lists yet shows no drawer and no credit for them.
+
+  🚩 _Behavior leaf._ <!-- req-gallery:33.3 -->
+
+  <details><summary>Notes</summary>
+
+  Driven with the cities' registry failing to load: the calendar is drawn as
+  ever, and nothing on the page mentions the city's lists.
+  </details>
+
+- `33.4` On the real data, every city hosting a festival with a programme has its drawer, holding at most 8 places to stay, 8 to eat, 6 sights and 6 day trips.
+
+  <table><thead><tr><th align="left">List</th><th align="left">Holds at most</th></tr></thead><tbody><tr><td>Places to stay</td><td>8</td></tr><tr><td>Places to eat</td><td>8</td></tr><tr><td>Sights</td><td>6</td></tr><tr><td>Day trips</td><td>6</td></tr></tbody></table> <!-- req-gallery:33.4 -->
+
+  <details><summary>Notes</summary>
+
+  Every host city's lists are checked in the served data, since a festival
+  whose run is behind the year strip cannot be opened on the page but its
+  city still has lists; on the page, the drawer of each host city whose
+  festival the planner opens on is counted. Every city offers somewhere to
+  stay and to eat; a city whose Wikivoyage guide lists no destinations has
+  no day trips.
   </details>
 
 ## 25. Never a list of thousands

@@ -1,0 +1,32 @@
+{
+ "about": "Hand-curated venue research for the Red Sea Jazz Festival, keyed by the codes its festival-site adapter gives the lineup's stages. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "eilat-port": {
+   "name": "נמל אילת",
+   "address": null,
+   "coordinates": {"lat": 29.556944, "lng": 34.951667, "basis": "approximate: Eilat's own coordinates; the port is on the city's southern shore", "source": "https://en.wikipedia.org/wiki/Eilat"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "port-arena", "name": "Port Arena", "capacity": null, "layout": null},
+    {"id": "red-note-club", "name": "Red Note Club", "capacity": null, "layout": null},
+    {"id": "the-present", "name": "de Present", "capacity": null, "layout": null},
+    {"id": "the-future", "name": "de Future", "capacity": null, "layout": null},
+    {"id": "plaza", "name": "הרחבה הציבורית", "capacity": null, "layout": null}
+   ],
+   "accessibility": {"value": "The compound has accessible paths, accessible toilets and seating set aside near the stages; ask customer service ahead for assistance.", "source": "https://redseajazz.co.il/faq/"},
+   "notes": "The festival's compound in the Port of Eilat: four stages within walking distance of each other (the Port Arena, the Red Note jazz club, The Present and The Future), joined by the public plaza, which also has free sets (the About and FAQ pages). Shuttles run from the hotels."
+  },
+  "jasper-08-agamim": {
+   "name": "Jasper 08, מלון ישרוטל אגמים",
+   "address": null,
+   "coordinates": {"lat": 29.556944, "lng": 34.951667, "basis": "approximate: Eilat's own coordinates; the hotel is in the city's hotel district", "source": "https://en.wikipedia.org/wiki/Eilat"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Jasper 08 club at the Isrotel Agamim hotel, where the free late sets and the nightly jam session play (the FAQ)."
+  }
+ }
+}

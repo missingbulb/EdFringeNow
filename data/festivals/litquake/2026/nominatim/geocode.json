@@ -1,0 +1,340 @@
+{
+ "results": [
+  {
+   "query": "447 Minna, 447 Minna St, San Francisco",
+   "matched": "447 Minna St, San Francisco",
+   "lat": 37.781079,
+   "lng": -122.407325
+  },
+  {
+   "query": "524 Union, 524 Union St, San Francisco",
+   "matched": "524 Union St, San Francisco",
+   "lat": 37.800649,
+   "lng": -122.408181
+  },
+  {
+   "query": "American Bookbinders Museum, 355 Clementina St, San Francisco",
+   "matched": "American Bookbinders Museum, 355 Clementina St, San Francisco",
+   "lat": 37.781342,
+   "lng": -122.402774
+  },
+  {
+   "query": "Arc Gallery, 1246 Folsom St, San Francisco",
+   "matched": "Arc Gallery, 1246 Folsom St, San Francisco",
+   "lat": 37.774555,
+   "lng": -122.41089
+  },
+  {
+   "query": "BATS Improv Theatre, Landmark Building B, San Francisco, CA 94109, USA",
+   "matched": "Landmark Building B, San Francisco, CA 94109, USA",
+   "lat": 37.806626,
+   "lng": -122.431798
+  },
+  {
+   "query": "Book Club of California, 47 Kearny St, San Francisco, CA 94108",
+   "matched": "47 Kearny St, San Francisco, CA 94108",
+   "lat": 37.78847,
+   "lng": -122.403976
+  },
+  {
+   "query": "Book Society, 2945 College Ave, Berkeley, CA 94705",
+   "matched": "2945 College Ave, Berkeley, CA 94705",
+   "lat": 37.857609,
+   "lng": -122.2529
+  },
+  {
+   "query": "Calvary Presbyterian, 2515 Fillmore Ave, San Francisco",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "Chapter 510, 546 9th St, Oakland, CA. 94607",
+   "matched": "546 9th St, Oakland, CA. 94607",
+   "lat": 37.801851,
+   "lng": -122.275601
+  },
+  {
+   "query": "City Lights, 261 Columbus Ave, San Francisco",
+   "matched": "City Lights, 261 Columbus Ave, San Francisco",
+   "lat": 37.797652,
+   "lng": -122.406617
+  },
+  {
+   "query": "Clio’s, 353 Grand Ave, Oakland",
+   "matched": "Clio’s, 353 Grand Ave, Oakland",
+   "lat": 37.80875,
+   "lng": -122.255978
+  },
+  {
+   "query": "Decentered Arts, 1175 Folsom St, San Francisco",
+   "matched": "Decentered Arts, 1175 Folsom St, San Francisco",
+   "lat": 37.775338,
+   "lng": -122.409203
+  },
+  {
+   "query": "Et al., 2831a Mission St, San Francisco",
+   "matched": "Et al., 2831a Mission St, San Francisco",
+   "lat": 37.751692,
+   "lng": -122.418244
+  },
+  {
+   "query": "First Presbyterian Church of Oakland Fellowship Hall, 2619 Broadway, Oakland",
+   "matched": "2619 Broadway, Oakland",
+   "lat": 37.815106,
+   "lng": -122.264673
+  },
+  {
+   "query": "First Presbyterian Church of Oakland Sanctuary, 2619 Broadway, Oakland, CA 94612, USA",
+   "matched": "2619 Broadway, Oakland, CA 94612, USA",
+   "lat": 37.815106,
+   "lng": -122.264673
+  },
+  {
+   "query": "GLBT Historical Society, 4127 18th St, San Francisco, CA 94114",
+   "matched": "GLBT Historical Society, 4127 18th St, San Francisco, CA 94114",
+   "lat": 37.760766,
+   "lng": -122.435607
+  },
+  {
+   "query": "Galeria de la Raza, 2779 Folsom St, San Francisco",
+   "matched": "2779 Folsom St, San Francisco",
+   "lat": 37.752943,
+   "lng": -122.413746
+  },
+  {
+   "query": "Gilman Brewing, 912 Gilman St, Berkeley",
+   "matched": "Gilman Brewing, 912 Gilman St, Berkeley",
+   "lat": 37.879479,
+   "lng": -122.299851
+  },
+  {
+   "query": "Grace Cathedral, 1100 California St, San Francisco",
+   "matched": "1100 California St, San Francisco",
+   "lat": 37.789016,
+   "lng": -122.433033
+  },
+  {
+   "query": "Gray Area Theater, 2665 Mission St, San Francisco 94110",
+   "matched": "Gray Area Theater, 2665 Mission St, San Francisco 94110",
+   "lat": 37.754406,
+   "lng": -122.418511
+  },
+  {
+   "query": "Great Lawn, Yerba Buena Gardens, 700 Mission Street, San Francisco, CA",
+   "matched": "700 Mission Street, San Francisco, CA",
+   "lat": 37.786237,
+   "lng": -122.402187
+  },
+  {
+   "query": "JCC East Bay Community Campus, 5957 Chabot Rd, Oakland, CA94618",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "JCCSF Kanbar Hall, 3200 California St, San Francisco",
+   "matched": "3200 California St, San Francisco",
+   "lat": 37.787385,
+   "lng": -122.447844
+  },
+  {
+   "query": "KALW, 220 Montgomery St, Suite 100, San Francisco, CA 94104",
+   "matched": "KALW, 220 Montgomery St, San Francisco, CA 94104",
+   "lat": 37.791424,
+   "lng": -122.402288
+  },
+  {
+   "query": "KQED Commons, 2601 Mariposa ST, San Francisco, CA",
+   "matched": "2601 Mariposa ST, San Francisco, CA",
+   "lat": 37.762623,
+   "lng": -122.409722
+  },
+  {
+   "query": "Kerouac Alley, 275 Columbus Ave, San Francisco",
+   "matched": "275 Columbus Ave, San Francisco",
+   "lat": 37.797631,
+   "lng": -122.406488
+  },
+  {
+   "query": "La Reyna Bakery, 3114 24th St, San Francisco",
+   "matched": "La Reyna Bakery, 3114 24th St, San Francisco",
+   "lat": 37.752574,
+   "lng": -122.4146
+  },
+  {
+   "query": "Make-Out Room, 3225 22nd St, San Francisco",
+   "matched": "Make-Out Room, 3225 22nd St, San Francisco",
+   "lat": 37.755301,
+   "lng": -122.419366
+  },
+  {
+   "query": "Mechanics’ Institute, 57 Post St, San Francisco",
+   "matched": "Mechanics’ Institute, 57 Post St, San Francisco",
+   "lat": 37.788845,
+   "lng": -122.403035
+  },
+  {
+   "query": "Medicine for Nightmares, 3036 24th St, San Francisco",
+   "matched": "Medicine for Nightmares, 3036 24th St, San Francisco",
+   "lat": 37.752705,
+   "lng": -122.41269
+  },
+  {
+   "query": "Mrs. Dalloway's, 2904 College Ave, Berkeley CA 94705",
+   "matched": "Mrs. Dalloway's, 2904 College Ave, Berkeley CA 94705",
+   "lat": 37.858214,
+   "lng": -122.253322
+  },
+  {
+   "query": "Multiple Locations, Mission District, San Francisco",
+   "matched": "Mission District, San Francisco",
+   "lat": 37.768905,
+   "lng": -122.419534
+  },
+  {
+   "query": "Museum of the African Diaspora, 685 Mission St, San Francisco",
+   "matched": "Museum of the African Diaspora, 685 Mission St, San Francisco",
+   "lat": 37.786469,
+   "lng": -122.401473
+  },
+  {
+   "query": "Nosh Box, 1116 Folsom St, San Francisco",
+   "matched": "Nosh Box, 1116 Folsom St, San Francisco",
+   "lat": 37.776517,
+   "lng": -122.408396
+  },
+  {
+   "query": "Omnivore Books on Food, 3885a Cesar Chavez St, San Francisco, CA 94131",
+   "matched": "Omnivore Books on Food, 3885a Cesar Chavez St, San Francisco, CA 94131",
+   "lat": 37.747634,
+   "lng": -122.42679
+  },
+  {
+   "query": "Page Street Co-Writing, 297 Page St, San Francisco",
+   "matched": "297 Page St, San Francisco",
+   "lat": 37.77353,
+   "lng": -122.425519
+  },
+  {
+   "query": "Pegasus Books, 2349 Shattuck Ave, Berkeley, CA 97404",
+   "matched": "Pegasus Books, 2349 Shattuck Ave, Berkeley, CA 97404",
+   "lat": 37.866518,
+   "lng": -122.267321
+  },
+  {
+   "query": "Roxie Theater, 3117 16th St, San Francisco",
+   "matched": "3117 16th St, San Francisco",
+   "lat": 37.764671,
+   "lng": -122.422431
+  },
+  {
+   "query": "SFPL Haight Branch, 1833 Page St, San Francisco",
+   "matched": "1833 Page St, San Francisco",
+   "lat": 37.770165,
+   "lng": -122.451019
+  },
+  {
+   "query": "SFPL Main Branch, 100 Larkin St, San Francisco",
+   "matched": "100 Larkin St, San Francisco",
+   "lat": 37.779188,
+   "lng": -122.415783
+  },
+  {
+   "query": "SFPL Main Branch, Koret Auditorium, 100 Larkin St, San Francisco",
+   "matched": "100 Larkin St, San Francisco",
+   "lat": 37.779188,
+   "lng": -122.415783
+  },
+  {
+   "query": "San Francisco",
+   "matched": "San Francisco",
+   "lat": 37.787936,
+   "lng": -122.40752
+  },
+  {
+   "query": "San Francisco Center for the Book, 375 Rhode Island St, San Francisco, CA 94103",
+   "matched": "San Francisco Center for the Book, 375 Rhode Island St, San Francisco, CA 94103",
+   "lat": 37.765372,
+   "lng": -122.402408
+  },
+  {
+   "query": "Sausalito Books by the Bay, 100 Bay St, Sausalito",
+   "matched": "100 Bay St, Sausalito",
+   "lat": 37.857629,
+   "lng": -122.480222
+  },
+  {
+   "query": "St. Joseph’s Art Society, 1401 Howard St, San Francisco",
+   "matched": "1401 Howard St, San Francisco",
+   "lat": 37.773615,
+   "lng": -122.414298
+  },
+  {
+   "query": "Sydney Goldstein Theater, 275 Hayes St, San Francisco",
+   "matched": "275 Hayes St, San Francisco",
+   "lat": 37.776892,
+   "lng": -122.420963
+  },
+  {
+   "query": "Telegraph Hill Books, 1501 Grant Ave, San Francisco",
+   "matched": "Telegraph Hill Books, 1501 Grant Ave, San Francisco",
+   "lat": 37.80076,
+   "lng": -122.40773
+  },
+  {
+   "query": "The Community Room, Sports Basement Berkeley, 2727 Milvia St, Berkeley, CA 94703",
+   "matched": "Sports Basement Berkeley, 2727 Milvia St, Berkeley, CA 94703",
+   "lat": 37.85972,
+   "lng": -122.268749
+  },
+  {
+   "query": "The Crown, 2523 Broadway, Oakland",
+   "matched": "The Crown, 2523 Broadway, Oakland",
+   "lat": 37.814512,
+   "lng": -122.265241
+  },
+  {
+   "query": "The Drawing Room: Annex, 599 Valencia St, San Francisco",
+   "matched": "599 Valencia St, San Francisco",
+   "lat": 37.763496,
+   "lng": -122.42143
+  },
+  {
+   "query": "The Lost Church SF, 988 Columbus Ave, San Francisco",
+   "matched": "The Lost Church SF, 988 Columbus Ave, San Francisco",
+   "lat": 37.803423,
+   "lng": -122.414373
+  },
+  {
+   "query": "The Stud, 1123 Folsom St, San Francisco",
+   "matched": "The Stud, 1123 Folsom St, San Francisco",
+   "lat": 37.776165,
+   "lng": -122.408364
+  },
+  {
+   "query": "The Treeline, Sports Basement Bryant, 1590 Bryant St, San Francisco",
+   "matched": "Sports Basement Bryant, 1590 Bryant St, San Francisco",
+   "lat": 37.767098,
+   "lng": -122.411132
+  },
+  {
+   "query": "Vintage Berkeley Wine Shop (Vine St), 2113 Vine St, Berkeley, CA 94709",
+   "matched": "2113 Vine St, Berkeley, CA 94709",
+   "lat": 37.880572,
+   "lng": -122.268545
+  },
+  {
+   "query": "Vogue Theater, 3290 Sacramento St, San Francisco",
+   "matched": "Vogue Theater, 3290 Sacramento St, San Francisco",
+   "lat": 37.788434,
+   "lng": -122.446724
+  },
+  {
+   "query": "YBCA Screening Room, 701 Mission St, San Francisco",
+   "matched": "701 Mission St, San Francisco",
+   "lat": 37.785894,
+   "lng": -122.402327
+  }
+ ]
+}

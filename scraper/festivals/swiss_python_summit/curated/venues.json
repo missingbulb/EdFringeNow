@@ -1,0 +1,19 @@
+{
+ "about": "Hand-curated venue research for Swiss Python Summit, keyed by the code the pretalx adapter gives each building. Every figure is {value, source}; coordinates carry the basis they rest on.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "ost-campus": {
+   "name": "OST Campus Rapperswil",
+   "address": {
+    "value": "Oberseestrasse 10, 8640 Rapperswil-Jona",
+    "source": "https://www.python-summit.ch/venue/"
+   },
+   "coordinates": {
+    "lat": 47.2230879,
+    "lng": 8.8164773,
+    "basis": "OpenStreetMap's OST RJ Gebäude 4 (way 34754484)"
+   },
+   "notes": "The eastern Switzerland university of applied sciences' campus beside Rapperswil station; the summit is in the Aula of building 4, upstairs (python-summit.ch/venue)."
+  }
+ }
+}

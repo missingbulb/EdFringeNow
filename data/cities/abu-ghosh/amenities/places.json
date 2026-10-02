@@ -1,0 +1,270 @@
+{
+ "nearM": 4000,
+ "anchors": [
+  {
+   "festival": "abu-gosh",
+   "venue": "benedictine-crypt",
+   "lat": 31.80743,
+   "lng": 35.10739
+  },
+  {
+   "festival": "abu-gosh",
+   "venue": "kiryat-yearim-church",
+   "lat": 31.80857,
+   "lng": 35.10383
+  }
+ ],
+ "places": [
+  {
+   "id": "node/10690706714",
+   "lat": 31.801962,
+   "lng": 35.126547,
+   "tags": {
+    "name": "איכר הארץ",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/2872794091",
+   "lat": 31.830534,
+   "lng": 35.072273,
+   "tags": {
+    "name": "המטבח של רמה",
+    "name:en": "Rama's Kitchen",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/3743833950",
+   "lat": 31.788792,
+   "lng": 35.113904,
+   "tags": {
+    "name": "اجتماع الدراجين",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4198584289",
+   "lat": 31.810936,
+   "lng": 35.120188,
+   "tags": {
+    "name": "חדר אוכל",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4449974674",
+   "lat": 31.80737,
+   "lng": 35.112776,
+   "tags": {
+    "name": "أبو شكري",
+    "name:en": "Abu Shukri",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/4449974675",
+   "lat": 31.807314,
+   "lng": 35.113032,
+   "tags": {
+    "name": "مطعم أبو غوش‎",
+    "name:en": "Abu Ghosh Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5163384412",
+   "lat": 31.795278,
+   "lng": 35.068707,
+   "tags": {
+    "name": "מוזה בהר",
+    "amenity": "restaurant",
+    "cuisine": "french"
+   }
+  },
+  {
+   "id": "node/5593444754",
+   "lat": 31.790023,
+   "lng": 35.117336,
+   "tags": {
+    "name": "ماجدة",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5593444755",
+   "lat": 31.791998,
+   "lng": 35.116219,
+   "tags": {
+    "name": "مطعم رشتا",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/5731988222",
+   "lat": 31.80157,
+   "lng": 35.126239,
+   "tags": {
+    "name": "נאיה",
+    "amenity": "restaurant",
+    "cuisine": "asian"
+   }
+  },
+  {
+   "id": "node/5808381153",
+   "lat": 31.837344,
+   "lng": 35.126856,
+   "tags": {
+    "name": "Nero Huoshya",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "node/6247814285",
+   "lat": 31.800762,
+   "lng": 35.121268,
+   "tags": {
+    "name": "הלבנונית",
+    "name:en": "Lebanese Food",
+    "amenity": "restaurant",
+    "cuisine": "lebanese",
+    "opening_hours": "Mo-Su 08:00-21:00",
+    "addr:housenumber": "88",
+    "addr:street": "شارع السلام"
+   }
+  },
+  {
+   "id": "node/636119362",
+   "lat": 31.793073,
+   "lng": 35.14447,
+   "tags": {
+    "name": "פינתי",
+    "name:en": "Pinati",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/6620918985",
+   "lat": 31.808842,
+   "lng": 35.07487,
+   "tags": {
+    "name": "קדמא אולם אירועים",
+    "name:en": "Kedma hall",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/7198406034",
+   "lat": 31.802046,
+   "lng": 35.119023,
+   "tags": {
+    "name": "שווארמה אל בלד",
+    "amenity": "restaurant",
+    "opening_hours": "Su-Sa 09:00-23:00",
+    "addr:housenumber": "84",
+    "addr:street": "شارع السلام"
+   }
+  },
+  {
+   "id": "node/908842777",
+   "lat": 31.800613,
+   "lng": 35.118098,
+   "tags": {
+    "name": "מסעדת נעורה",
+    "name:en": "Naaura Restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9138891141",
+   "lat": 31.80665,
+   "lng": 35.121011,
+   "tags": {
+    "name": "סעידה",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/110306665",
+   "lat": 31.784558,
+   "lng": 35.119348,
+   "tags": {
+    "name": "מלון צובה",
+    "name:en": "Tzuba Hotel",
+    "tourism": "hotel",
+    "website": "https://www.tzubahotel.co.il/"
+   }
+  },
+  {
+   "id": "way/362067901",
+   "lat": 31.804545,
+   "lng": 35.092311,
+   "tags": {
+    "name": "פונדק אלביס",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "way/539039997",
+   "lat": 31.810131,
+   "lng": 35.089352,
+   "tags": {
+    "name": "מלון לוגוס",
+    "name:en": "Logos Hotel",
+    "tourism": "hotel",
+    "stars": "3",
+    "website": "https://logoshotel.co.il",
+    "opening_hours": "24/7",
+    "addr:postcode": "90895",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/539463399",
+   "lat": 31.790453,
+   "lng": 35.112717,
+   "tags": {
+    "name": "שנקליש",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Th 09:00-15:00; Fr-Sa 09:00-17:00; Su off",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/897711817",
+   "lat": 31.811995,
+   "lng": 35.118195,
+   "tags": {
+    "name": "מלון כרמים",
+    "name:en": "Cramim hotel",
+    "tourism": "hotel",
+    "website": "https://www.isrotelexclusivecollection.co.il/kiryat_anavim/",
+    "wikidata": "Q57556515",
+    "addr:postcode": "908330"
+   }
+  },
+  {
+   "id": "way/911552477",
+   "lat": 31.81023,
+   "lng": 35.089322,
+   "tags": {
+    "name": "מסעדה",
+    "name:en": "Masade",
+    "amenity": "restaurant",
+    "cuisine": "middle_eastern",
+    "website": "https://logoshotel.co.il/קולינריה-במסעדת-המלון/",
+    "opening_hours": "Su-Sa 07:30-10:00; Fr 08:00-12:00"
+   }
+  },
+  {
+   "id": "way/921337131",
+   "lat": 31.80089,
+   "lng": 35.121288,
+   "tags": {
+    "name": "המסעדה הלבנונית",
+    "name:en": "Lebanese Food Restaurant",
+    "amenity": "restaurant"
+   }
+  }
+ ]
+}

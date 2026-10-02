@@ -1,0 +1,461 @@
+{
+ "nearM": 2000,
+ "anchors": [
+  {
+   "festival": "viet-film-fest",
+   "venue": "6a29d6aa4de75c8c0f7890b2",
+   "lat": 33.74811,
+   "lng": -117.86525
+  },
+  {
+   "festival": "viet-film-fest",
+   "venue": "6a29d6aa4de75c8c0f7890b5",
+   "lat": 33.76337,
+   "lng": -117.86823
+  }
+ ],
+ "places": [
+  {
+   "id": "node/11144883099",
+   "lat": 33.77462,
+   "lng": -117.851995,
+   "tags": {
+    "name": "Bangkok Taste",
+    "amenity": "restaurant",
+    "cuisine": "thai"
+   }
+  },
+  {
+   "id": "node/13309075297",
+   "lat": 33.748172,
+   "lng": -117.866044,
+   "tags": {
+    "name": "Sivar Treats",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://sivartreats.com/",
+    "opening_hours": "Mo 11:00-14:00; Fr-Sa 11:00-21:00; Su,Tu,We,Th 11:00-20:00",
+    "addr:housenumber": "201",
+    "addr:street": "East 4th Street",
+    "addr:postcode": "92701-4688"
+   }
+  },
+  {
+   "id": "node/14011518488",
+   "lat": 33.773659,
+   "lng": -117.884017,
+   "tags": {
+    "name": "Punta Marina",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "website": "https://punta-marina.hey-restaurants.com/#location",
+    "addr:housenumber": "1241",
+    "addr:street": "West Memory Lane",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "node/14155567601",
+   "lat": 33.747763,
+   "lng": -117.86548,
+   "tags": {
+    "name": "Loosies Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza",
+    "opening_hours": "We,Th 12:00-22:00; Fr,Sa 12:00-24:00; Su 12:00-20:00",
+    "addr:housenumber": "300",
+    "addr:street": "East 4th Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/14155582301",
+   "lat": 33.748224,
+   "lng": -117.86686,
+   "tags": {
+    "name": "Tacos Los Cholos",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "website": "https://www.tacosloscholos.net/santaana.html",
+    "opening_hours": "Mo-Th 11:00-24:00; Fr-Sa 11:00-25:00; Su 11:00-22:00",
+    "addr:housenumber": "113",
+    "addr:street": "East 4th Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/14222546801",
+   "lat": 33.75086,
+   "lng": -117.867769,
+   "tags": {
+    "name": "Fat of the Land",
+    "amenity": "restaurant",
+    "cuisine": "spanish",
+    "website": "https://www.fatofthelandbar.com/",
+    "opening_hours": "Su 16:00-21:00; Mo-We 17:00-22:00; Th 16:00-22:00; Fr-Sa 16:00-23:00",
+    "addr:housenumber": "700",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/3195181710",
+   "lat": 33.747853,
+   "lng": -117.865747,
+   "tags": {
+    "name": "Playground",
+    "amenity": "restaurant",
+    "website": "http://playgrounddtsa.com/",
+    "opening_hours": "Tu-Th 17:00-22:00; Fr,Sa 17:00-24:00"
+   }
+  },
+  {
+   "id": "node/4931685695",
+   "lat": 33.76325,
+   "lng": -117.868189,
+   "tags": {
+    "name": "Tangata At The Bowers Museum",
+    "amenity": "restaurant",
+    "cuisine": "sandwich"
+   }
+  },
+  {
+   "id": "node/5351859458",
+   "lat": 33.74812,
+   "lng": -117.865449,
+   "tags": {
+    "name": "Taquerias Guadalajara",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "305",
+    "addr:street": "East 4th Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/5368978005",
+   "lat": 33.747648,
+   "lng": -117.866747,
+   "tags": {
+    "name": "4th Street Market",
+    "amenity": "restaurant",
+    "cuisine": "american;asian;burger;chicken;chinese;coffee_shop;greek;ice_cream;international;kebab;mexican;pizza;sandwich;seafood;thai",
+    "contact:website": "https://www.4thstreetmarket.com",
+    "opening_hours": "Mo-Th, Su 11:00-21:00;Fr-Sa 11:00-22:00",
+    "addr:housenumber": "201",
+    "addr:street": "East 4th Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/6033119747",
+   "lat": 33.747452,
+   "lng": -117.866727,
+   "tags": {
+    "name": "Las Cazuelas",
+    "amenity": "restaurant",
+    "cuisine": "mexican"
+   }
+  },
+  {
+   "id": "node/7356761701",
+   "lat": 33.749041,
+   "lng": -117.867335,
+   "tags": {
+    "name": "Munchies Vegan Diner",
+    "amenity": "restaurant",
+    "addr:housenumber": "515",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/7356761702",
+   "lat": 33.749272,
+   "lng": -117.867447,
+   "tags": {
+    "name": "McFadden Public Market",
+    "amenity": "restaurant",
+    "addr:housenumber": "515",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/7356761704",
+   "lat": 33.747323,
+   "lng": -117.865431,
+   "tags": {
+    "name": "Kaizen Shabu",
+    "amenity": "restaurant",
+    "addr:housenumber": "303",
+    "addr:street": "North Spurgeon Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "node/8931077477",
+   "lat": 33.773938,
+   "lng": -117.868672,
+   "tags": {
+    "name": "Panini Kabob Grill",
+    "amenity": "restaurant",
+    "opening_hours": "Mo-Fr 10:00-21:00; Sa-Su 08:00-21:00",
+    "addr:housenumber": "2800",
+    "addr:street": "Main Street",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "node/9330257479",
+   "lat": 33.746955,
+   "lng": -117.869467,
+   "tags": {
+    "name": "Chapter One",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9330257484",
+   "lat": 33.746423,
+   "lng": -117.869523,
+   "tags": {
+    "name": "Congregation Ale House",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "node/9445913489",
+   "lat": 33.775043,
+   "lng": -117.871066,
+   "tags": {
+    "name": "Blaze Pizza",
+    "amenity": "restaurant",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "id": "node/9445913491",
+   "lat": 33.77319,
+   "lng": -117.866501,
+   "tags": {
+    "name": "DönerG Mediterranean Grill",
+    "amenity": "restaurant",
+    "cuisine": "turkish",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/6143784",
+   "lat": 33.77179,
+   "lng": -117.868345,
+   "tags": {
+    "name": "Red Roof Inn Santa Ana",
+    "tourism": "hotel",
+    "addr:housenumber": "2600",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/1271879019",
+   "lat": 33.77314,
+   "lng": -117.866428,
+   "tags": {
+    "name": "Sushi Kuchi",
+    "amenity": "restaurant",
+    "website": "https://santaana.sushikuchi.com",
+    "addr:housenumber": "131",
+    "addr:street": "East Memory Lane",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/1271879020",
+   "lat": 33.773126,
+   "lng": -117.86653,
+   "tags": {
+    "name": "DönerG Mediterranean Grill",
+    "amenity": "restaurant",
+    "website": "https://donerg.com/",
+    "addr:housenumber": "121",
+    "addr:street": "East Memory Lane",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/158259811",
+   "lat": 33.772046,
+   "lng": -117.867854,
+   "tags": {
+    "name": "Polly's Pies Restaurant",
+    "amenity": "restaurant",
+    "cuisine": "american",
+    "addr:housenumber": "2660",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/184332340",
+   "lat": 33.774362,
+   "lng": -117.866885,
+   "tags": {
+    "name": "Olive Garden",
+    "amenity": "restaurant",
+    "cuisine": "italian",
+    "website": "https://olivegarden.com",
+    "addr:housenumber": "2791",
+    "addr:street": "North Main Street"
+   }
+  },
+  {
+   "id": "way/348506469",
+   "lat": 33.762771,
+   "lng": -117.867175,
+   "tags": {
+    "name": "Santa Ana Travel Inn",
+    "tourism": "motel",
+    "addr:housenumber": "2005",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/786039748",
+   "lat": 33.759774,
+   "lng": -117.881305,
+   "tags": {
+    "name": "The Olde Ship",
+    "amenity": "restaurant",
+    "addr:housenumber": "1120",
+    "addr:street": "West 17th Street",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/786039749",
+   "lat": 33.760257,
+   "lng": -117.881702,
+   "tags": {
+    "name": "El Rincon Chilango",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "1133",
+    "addr:street": "West 17th Street",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/786938179",
+   "lat": 33.742252,
+   "lng": -117.867467,
+   "tags": {
+    "name": "Lucky Guys Burgers",
+    "amenity": "restaurant",
+    "addr:housenumber": "401",
+    "addr:street": "South Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/786938183",
+   "lat": 33.741085,
+   "lng": -117.867442,
+   "tags": {
+    "name": "Mariscos La Sirena",
+    "amenity": "restaurant",
+    "cuisine": "seafood",
+    "addr:housenumber": "515",
+    "addr:street": "South Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/786938184",
+   "lat": 33.740902,
+   "lng": -117.867499,
+   "tags": {
+    "name": "La Cemita Poblana",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "519",
+    "addr:street": "South Main Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/883986705",
+   "lat": 33.770354,
+   "lng": -117.851692,
+   "tags": {
+    "name": "La Casa De Marcos Mexican Food",
+    "amenity": "restaurant",
+    "cuisine": "mexican",
+    "addr:housenumber": "2501",
+    "addr:street": "North Grand Avenue",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/932753455",
+   "lat": 33.745989,
+   "lng": -117.845504,
+   "tags": {
+    "name": "Motel 6 Santa Ana, CA",
+    "tourism": "motel",
+    "addr:housenumber": "1623",
+    "addr:street": "East 1st Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/932754035",
+   "lat": 33.746199,
+   "lng": -117.848446,
+   "tags": {
+    "name": "El Cortez Lodge",
+    "tourism": "motel",
+    "addr:housenumber": "1503",
+    "addr:street": "East 1st Street",
+    "addr:postcode": "92701"
+   }
+  },
+  {
+   "id": "way/932758278",
+   "lat": 33.766488,
+   "lng": -117.867866,
+   "tags": {
+    "name": "Golden West Lodge",
+    "tourism": "motel",
+    "addr:housenumber": "2222",
+    "addr:street": "North Main Street",
+    "addr:postcode": "92706"
+   }
+  },
+  {
+   "id": "way/932758974",
+   "lat": 33.774258,
+   "lng": -117.853708,
+   "tags": {
+    "name": "Civic Center Inn",
+    "tourism": "motel",
+    "addr:housenumber": "2720",
+    "addr:street": "North Grand Avenue",
+    "addr:postcode": "92705"
+   }
+  },
+  {
+   "id": "way/992333312",
+   "lat": 33.744807,
+   "lng": -117.846781,
+   "tags": {
+    "name": "Holiday Inn Express",
+    "tourism": "hotel",
+    "addr:housenumber": "1600",
+    "addr:street": "East 1st Street",
+    "addr:postcode": "92701"
+   }
+  }
+ ]
+}

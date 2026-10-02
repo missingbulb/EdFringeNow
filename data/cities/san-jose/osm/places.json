@@ -1,0 +1,1113 @@
+{
+ "places": [
+  {
+   "id": "node/10050528225",
+   "lat": 37.348165,
+   "lng": -121.891171,
+   "tags": {
+    "name": "Empire Seven Studios",
+    "tourism": "gallery",
+    "website": "https://www.empiresevenstudios.com/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10052566494",
+   "lat": 37.33592,
+   "lng": -121.888756,
+   "tags": {
+    "name": "Works/San José",
+    "tourism": "gallery",
+    "wikidata": "Q106986491",
+    "wikipedia": "en:WORKS San José",
+    "addr:housenumber": "38",
+    "addr:street": "South 2nd Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/10218891993",
+   "lat": 37.386641,
+   "lng": -121.883962,
+   "tags": {
+    "name": "World Ginseng & Health Products",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 10:00-18:00",
+    "addr:housenumber": "1698",
+    "addr:street": "Hostetter Road",
+    "addr:postcode": "95131",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11282523160",
+   "lat": 37.319739,
+   "lng": -121.858204,
+   "tags": {
+    "name": "Chinese American Historical Museum",
+    "name:en": "Chinese American Historical Museum",
+    "tourism": "museum",
+    "website": "https://chcp.org/Museum",
+    "wikidata": "Q123159442",
+    "addr:housenumber": "635",
+    "addr:street": "Phelan Avenue",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/12530023760",
+   "lat": 37.324497,
+   "lng": -121.896974,
+   "tags": {
+    "name": "Mi Rancho Market",
+    "amenity": "marketplace",
+    "building": "retail",
+    "addr:housenumber": "494",
+    "addr:street": "Auzerais Avenue",
+    "addr:postcode": "95126"
+   }
+  },
+  {
+   "id": "node/12556901787",
+   "lat": 37.346092,
+   "lng": -121.869404,
+   "tags": {
+    "name": "Don Mateo Foods",
+    "amenity": "marketplace",
+    "building": "retail",
+    "addr:housenumber": "1062",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95116"
+   }
+  },
+  {
+   "id": "node/12813408990",
+   "lat": 37.335261,
+   "lng": -121.898463,
+   "tags": {
+    "name": "Little Italy Museum and Cultural Center",
+    "tourism": "museum",
+    "addr:housenumber": "323",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/13098946533",
+   "lat": 37.319536,
+   "lng": -121.858259,
+   "tags": {
+    "name": "Portuguese Historical Museum",
+    "tourism": "museum",
+    "opening_hours": "Su 12:00-15:30 || \"by appointment\"",
+    "website": "https://portuguesemuseum.org/",
+    "wikidata": "Q7232646",
+    "wikipedia": "en:Portuguese Historical Museum"
+   }
+  },
+  {
+   "id": "node/358838338",
+   "lat": 37.376329,
+   "lng": -121.889956,
+   "tags": {
+    "name": "Coyote Park",
+    "leisure": "park",
+    "wikidata": "Q49480767"
+   }
+  },
+  {
+   "id": "node/3622806326",
+   "lat": 37.335651,
+   "lng": -121.893231,
+   "tags": {
+    "name": "Downtown San Jose Farmers’ Market",
+    "amenity": "marketplace",
+    "opening_hours": "Fr 10:00-14:00"
+   }
+  },
+  {
+   "id": "node/3634866139",
+   "lat": 37.339288,
+   "lng": -121.88351,
+   "tags": {
+    "name": "Urban Kiosk",
+    "amenity": "marketplace",
+    "addr:housenumber": "330",
+    "addr:street": "East Santa Clara Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/368174453",
+   "lat": 37.319445,
+   "lng": -121.857765,
+   "tags": {
+    "name": "Hellenic Heritage Museum",
+    "tourism": "museum",
+    "website": "https://www.nationalhellenicmuseum.org/"
+   }
+  },
+  {
+   "id": "node/4635066104",
+   "lat": 37.335665,
+   "lng": -121.869289,
+   "tags": {
+    "name": "Wildflower Meadow",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/4882162581",
+   "lat": 37.348729,
+   "lng": -121.893766,
+   "tags": {
+    "name": "Object Art Gallery",
+    "tourism": "gallery",
+    "website": "https://www.artobjectgallery.com/",
+    "addr:housenumber": "592",
+    "addr:street": "North 5th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/4942533434",
+   "lat": 37.305598,
+   "lng": -121.853004,
+   "tags": {
+    "name": "Mexican Farmers Market",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/6300735619",
+   "lat": 37.351895,
+   "lng": -121.885168,
+   "tags": {
+    "name": "Backesto Fountain",
+    "historic": "memorial",
+    "wikidata": "Q109767529"
+   }
+  },
+  {
+   "id": "node/6521383065",
+   "lat": 37.353931,
+   "lng": -121.892725,
+   "tags": {
+    "name": "Taylor Street Night Market",
+    "amenity": "marketplace",
+    "opening_hours": "May-Aug: Th 17:00-21:00",
+    "website": "https://www.mvblfeast.com/taylorstreetmarket"
+   }
+  },
+  {
+   "id": "node/6521383066",
+   "lat": 37.353837,
+   "lng": -121.892972,
+   "tags": {
+    "name": "Japantown Certified Farmer’s Market",
+    "amenity": "marketplace",
+    "opening_hours": "May-Oct Su 08:00-12:00",
+    "website": "https://www.japantownsanjose.org/sunday-farmers-market"
+   }
+  },
+  {
+   "id": "node/7121798609",
+   "lat": 37.336319,
+   "lng": -121.881477,
+   "tags": {
+    "name": "Paseo Market",
+    "amenity": "marketplace",
+    "building": "student_union",
+    "opening_hours": "Mo-Sa 08:00-18:00",
+    "website": "https://new.dineoncampus.com/sjsu/campus-map/paseo-market",
+    "addr:housenumber": "211",
+    "addr:street": "South 9th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "node/8363956537",
+   "lat": 37.331306,
+   "lng": -121.886727,
+   "tags": {
+    "name": "KALEID Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Th-Fr 12:00-19:00; Sa 12:00-17:00; Fr[1] 17:00-21:00",
+    "website": "https://www.kaleidgallery.com/",
+    "addr:housenumber": "320",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "node/8671046749",
+   "lat": 37.369617,
+   "lng": -121.923427,
+   "tags": {
+    "name": "Hudson Gateway Place LLC",
+    "tourism": "gallery",
+    "addr:housenumber": "2001;2033;2055,2077;2099",
+    "addr:street": "Gateway Place",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "node/9882743742",
+   "lat": 37.320949,
+   "lng": -121.870209,
+   "tags": {
+    "name": "Jeff Garcia Hall of Champions",
+    "tourism": "museum",
+    "website": "https://sjsuspartans.com/facilities/jeff-garcia-hall-of-champions/27"
+   }
+  },
+  {
+   "id": "relation/10149678",
+   "lat": 37.344689,
+   "lng": -121.908801,
+   "tags": {
+    "name": "Columbus Park",
+    "leisure": "park",
+    "wikidata": "Q49479388"
+   }
+  },
+  {
+   "id": "relation/14180282",
+   "lat": 37.333483,
+   "lng": -121.922874,
+   "tags": {
+    "name": "Rosicrucian Egyptian Museum",
+    "name:en": "Rosicrucian Egyptian Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://egyptianmuseum.org/",
+    "wikidata": "Q3354610",
+    "wikipedia": "en:Rosicrucian Egyptian Museum",
+    "addr:housenumber": "1660",
+    "addr:street": "Park Avenue",
+    "addr:postcode": "95126",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/14641921",
+   "lat": 37.338887,
+   "lng": -121.891182,
+   "tags": {
+    "name": "Saint James Park",
+    "leisure": "park",
+    "website": "https://www.sanjoseca.gov/Facilities/Facility/Details/St-James-Park-130",
+    "wikidata": "Q49555790"
+   }
+  },
+  {
+   "id": "relation/9566144",
+   "lat": 37.333666,
+   "lng": -121.890025,
+   "tags": {
+    "name": "San José Museum of Art",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://sjmusart.org/",
+    "wikidata": "Q7414466",
+    "wikipedia": "en:San Jose Museum of Art",
+    "addr:housenumber": "110",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/1214909036",
+   "lat": 37.350641,
+   "lng": -121.893719,
+   "tags": {
+    "name": "Heinlenville Park",
+    "leisure": "park",
+    "opening_hours": "sunrise-(sunset+01:00)",
+    "wikidata": "Q123023221",
+    "addr:housenumber": "650",
+    "addr:street": "North 6th Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/1432665954",
+   "lat": 37.332375,
+   "lng": -121.886534,
+   "tags": {
+    "name": "Japanese American Internment Memorial",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2575/1396",
+    "wikidata": "Q136409175"
+   }
+  },
+  {
+   "id": "way/157782526",
+   "lat": 37.350347,
+   "lng": -121.951189,
+   "tags": {
+    "name": "Fremont Park",
+    "leisure": "park",
+    "wikidata": "Q49491931",
+    "addr:housenumber": "1303",
+    "addr:street": "Fremont Street",
+    "addr:postcode": "95050-4734"
+   }
+  },
+  {
+   "id": "way/158245358",
+   "lat": 37.327948,
+   "lng": -121.884607,
+   "tags": {
+    "name": "Parque de los Pobladores",
+    "leisure": "park",
+    "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2325/2028",
+    "wikidata": "Q49539757"
+   }
+  },
+  {
+   "id": "way/165327330",
+   "lat": 37.330685,
+   "lng": -121.886092,
+   "tags": {
+    "name": "Anno Domini Gallery",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://www.galleryad.com/",
+    "addr:housenumber": "366",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/183386613",
+   "lat": 37.336384,
+   "lng": -121.894766,
+   "tags": {
+    "name": "Luis María Peralta Adobe",
+    "name:en": "Luis María Peralta Adobe",
+    "tourism": "museum",
+    "historic": "house",
+    "building": "house",
+    "opening_hours": "\"by appointment\"",
+    "wikidata": "Q7166894",
+    "wikipedia": "en:Peralta Adobe",
+    "addr:housenumber": "180",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/230610712",
+   "lat": 37.3309,
+   "lng": -121.910995,
+   "tags": {
+    "name": "The Alameda ArtWorks",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "yes",
+    "website": "https://www.thealamedaartworks.com/",
+    "addr:housenumber": "1064",
+    "addr:street": "The Alameda",
+    "addr:postcode": "95126"
+   }
+  },
+  {
+   "id": "way/23954642",
+   "lat": 37.325882,
+   "lng": -121.824257,
+   "tags": {
+    "name": "Welch Park",
+    "leisure": "park",
+    "wikidata": "Q49578172"
+   }
+  },
+  {
+   "id": "way/25774716",
+   "lat": 37.332144,
+   "lng": -121.889468,
+   "tags": {
+    "name": "Plaza de César E. Chávez",
+    "leisure": "park",
+    "wikidata": "Q7203677",
+    "wikipedia": "en:Plaza de César Chávez"
+   }
+  },
+  {
+   "id": "way/25910908",
+   "lat": 37.342343,
+   "lng": -121.896815,
+   "tags": {
+    "name": "Ryland Park",
+    "leisure": "park",
+    "wikidata": "Q49555193",
+    "addr:housenumber": "401",
+    "addr:street": "North 1st Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/25966406",
+   "lat": 37.355584,
+   "lng": -121.895687,
+   "tags": {
+    "name": "Raymond Bernal Junior Memorial Park",
+    "leisure": "park",
+    "opening_hours": "sunrise-(sunset+01:00)",
+    "wikidata": "Q49474491"
+   }
+  },
+  {
+   "id": "way/25966765",
+   "lat": 37.352238,
+   "lng": -121.884418,
+   "tags": {
+    "name": "Backesto Park",
+    "leisure": "park",
+    "opening_hours": "sunrise-(sunset+01:00)",
+    "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2094/2028",
+    "wikidata": "Q49473384",
+    "wikipedia": "en:Backesto Park"
+   }
+  },
+  {
+   "id": "way/25967139",
+   "lat": 37.331427,
+   "lng": -121.890207,
+   "tags": {
+    "name": "The Tech Interactive",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://www.thetech.org/",
+    "wikidata": "Q7768226",
+    "wikipedia": "en:The Tech Interactive",
+    "addr:housenumber": "201",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/25967161",
+   "lat": 37.333666,
+   "lng": -121.890025,
+   "tags": {
+    "name": "San José Museum of Art",
+    "tourism": "gallery",
+    "building": "yes",
+    "website": "https://sjmusart.org/",
+    "wikidata": "Q7414466",
+    "addr:housenumber": "110",
+    "addr:street": "South Market Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/25967349",
+   "lat": 37.326713,
+   "lng": -121.891833,
+   "tags": {
+    "name": "Children’s Discovery Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "We-Fr 09:30-12:30; Sa,Su 09:30-12:30,13:30-16:30",
+    "website": "https://www.cdm.org/",
+    "wikidata": "Q5098072",
+    "wikipedia": "en:Children's Discovery Museum of San Jose",
+    "addr:housenumber": "180",
+    "addr:street": "Woz Way",
+    "addr:postcode": "95110",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/26133274",
+   "lat": 37.347224,
+   "lng": -121.907899,
+   "tags": {
+    "name": "Guadalupe River Park & Gardens",
+    "leisure": "park",
+    "wikidata": "Q5926344",
+    "wikipedia": "es:Jardines y parque del Guadalupe River"
+   }
+  },
+  {
+   "id": "way/26251839",
+   "lat": 37.388152,
+   "lng": -121.873796,
+   "tags": {
+    "name": "Flickinger Park",
+    "leisure": "park",
+    "wikidata": "Q49489911"
+   }
+  },
+  {
+   "id": "way/26252506",
+   "lat": 37.380856,
+   "lng": -121.872238,
+   "tags": {
+    "name": "Vinci Park",
+    "leisure": "park",
+    "wikidata": "Q49575563"
+   }
+  },
+  {
+   "id": "way/26252629",
+   "lat": 37.357131,
+   "lng": -121.8761,
+   "tags": {
+    "name": "Watson Park",
+    "leisure": "park",
+    "opening_hours": "sunrise-(sunset+01:00)",
+    "wikidata": "Q49577705",
+    "addr:housenumber": "1082",
+    "addr:street": "Jackson Street",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/277753316",
+   "lat": 37.34995,
+   "lng": -121.940624,
+   "tags": {
+    "name": "de Saisset Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu-Su 11:00-16:00",
+    "website": "https://www.scu.edu/desaisset/",
+    "wikidata": "Q3329750"
+   }
+  },
+  {
+   "id": "way/28414010",
+   "lat": 37.364635,
+   "lng": -121.85484,
+   "tags": {
+    "name": "Overfelt Gardens Park",
+    "leisure": "park",
+    "wikidata": "Q7113642",
+    "wikipedia": "en:Overfelt Gardens",
+    "addr:housenumber": "2145",
+    "addr:street": "McKee Road",
+    "addr:postcode": "95133"
+   }
+  },
+  {
+   "id": "way/28464518",
+   "lat": 37.367571,
+   "lng": -121.876837,
+   "tags": {
+    "name": "San Jose Flea Market",
+    "amenity": "marketplace",
+    "website": "https://www.sjfm.com/",
+    "wikidata": "Q7414449",
+    "wikipedia": "en:San Jose Flea Market",
+    "addr:housenumber": "1590",
+    "addr:street": "Berryessa Road",
+    "addr:postcode": "95133"
+   }
+  },
+  {
+   "id": "way/28465159",
+   "lat": 37.320044,
+   "lng": -121.858124,
+   "tags": {
+    "name": "History Park at Kelley Park",
+    "tourism": "museum",
+    "leisure": "park",
+    "website": "https://historysanjose.org/wp/plan-your-visit/history-park/",
+    "wikidata": "Q104600028",
+    "wikipedia": "en:History Park",
+    "addr:housenumber": "635",
+    "addr:street": "Phelan Avenue",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/28465238",
+   "lat": 37.325902,
+   "lng": -121.863013,
+   "tags": {
+    "name": "Happy Hollow Park and Zoo",
+    "tourism": "zoo",
+    "wikidata": "Q5652828",
+    "wikipedia": "en:Happy Hollow Park & Zoo",
+    "addr:housenumber": "1300",
+    "addr:street": "Senter Road",
+    "addr:postcode": "95112"
+   }
+  },
+  {
+   "id": "way/28503277",
+   "lat": 37.320293,
+   "lng": -121.859969,
+   "tags": {
+    "name": "Viet Museum",
+    "name:en": "Viet Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://sites.google.com/view/viet-museum-sanjose/",
+    "wikidata": "Q7928444"
+   }
+  },
+  {
+   "id": "way/28517709",
+   "lat": 37.331185,
+   "lng": -121.895092,
+   "tags": {
+    "name": "John P. McEnery Park",
+    "leisure": "park",
+    "wikidata": "Q49523553"
+   }
+  },
+  {
+   "id": "way/28517757",
+   "lat": 37.331004,
+   "lng": -121.895489,
+   "tags": {
+    "name": "Guadalupe River Park",
+    "leisure": "park",
+    "wikidata": "Q49496676"
+   }
+  },
+  {
+   "id": "way/28642314",
+   "lat": 37.333883,
+   "lng": -121.922616,
+   "tags": {
+    "name": "Rosicrucian Park",
+    "leisure": "park",
+    "wikidata": "Q7368869"
+   }
+  },
+  {
+   "id": "way/28714347",
+   "lat": 37.33206,
+   "lng": -121.926035,
+   "tags": {
+    "name": "Hester Park",
+    "leisure": "park",
+    "wikidata": "Q49500535"
+   }
+  },
+  {
+   "id": "way/314805986",
+   "lat": 37.333437,
+   "lng": -121.889718,
+   "tags": {
+    "name": "Circle of Palms Plaza",
+    "leisure": "park",
+    "wikidata": "Q5121482"
+   }
+  },
+  {
+   "id": "way/336684229",
+   "lat": 37.328506,
+   "lng": -121.884428,
+   "tags": {
+    "name": "Movimiento de Arte y Cultura Latino Americana",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "yes",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://maclaarte.org/",
+    "wikidata": "Q86900200",
+    "wikipedia": "en:Movimiento de Arte y Cultura Latino Americana",
+    "addr:housenumber": "510",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/338746231",
+   "lat": 37.336457,
+   "lng": -121.894643,
+   "tags": {
+    "name": "San Pedro Square Market",
+    "amenity": "marketplace",
+    "website": "https://sanpedrosquaremarket.com/"
+   }
+  },
+  {
+   "id": "way/347004805",
+   "lat": 37.336914,
+   "lng": -121.894895,
+   "tags": {
+    "name": "Carmel and Thomas Fallon House",
+    "tourism": "museum",
+    "building": "house",
+    "addr:housenumber": "175",
+    "addr:street": "West Saint John Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/34897813",
+   "lat": 37.328942,
+   "lng": -121.904987,
+   "tags": {
+    "name": "Cahill Park",
+    "leisure": "park",
+    "wikidata": "Q100763621"
+   }
+  },
+  {
+   "id": "way/350276465",
+   "lat": 37.323599,
+   "lng": -121.858356,
+   "tags": {
+    "name": "Kelley Park",
+    "leisure": "park",
+    "wikidata": "Q6385737",
+    "wikipedia": "en:Kelley Park"
+   }
+  },
+  {
+   "id": "way/350497048",
+   "lat": 37.347503,
+   "lng": -121.893711,
+   "tags": {
+    "name": "Japanese American Museum of San Jose",
+    "name:en": "Japanese American Museum of San Jose",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-We off; Th-Su 12:00-16:00",
+    "website": "https://www.jamsj.org/",
+    "wikidata": "Q6158083",
+    "wikipedia": "en:Japanese American Museum of San Jose",
+    "addr:housenumber": "535",
+    "addr:street": "North 5th Street",
+    "addr:postcode": "95112",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/358549060",
+   "lat": 37.3196,
+   "lng": -121.877007,
+   "tags": {
+    "name": "Cadwallader Park",
+    "leisure": "park",
+    "wikidata": "Q49476501"
+   }
+  },
+  {
+   "id": "way/36743453",
+   "lat": 37.287417,
+   "lng": -121.895965,
+   "tags": {
+    "name": "Wallenberg Park",
+    "leisure": "park",
+    "wikidata": "Q49576439"
+   }
+  },
+  {
+   "id": "way/37878993",
+   "lat": 37.364646,
+   "lng": -121.853445,
+   "tags": {
+    "name": "Chinese Cultural Garden",
+    "leisure": "garden",
+    "wikidata": "Q5100429",
+    "wikipedia": "en:Chinese Cultural Garden"
+   }
+  },
+  {
+   "id": "way/37894041",
+   "lat": 37.303727,
+   "lng": -121.909454,
+   "tags": {
+    "name": "Willow Street Frank Bramhall Park",
+    "leisure": "park",
+    "website": "https://www.sanjoseca.gov/facilities/Facility/Details/70",
+    "wikidata": "Q49581428"
+   }
+  },
+  {
+   "id": "way/37908759",
+   "lat": 37.331782,
+   "lng": -121.928599,
+   "tags": {
+    "name": "Municipal Rose Garden",
+    "tourism": "attraction",
+    "leisure": "park",
+    "website": "https://www.sanjoseca.gov/facilities/facility/details/municipalrosegarden-74",
+    "wikidata": "Q3442578",
+    "wikipedia": "en:San Jose Municipal Rose Garden"
+   }
+  },
+  {
+   "id": "way/37909748",
+   "lat": 37.2898,
+   "lng": -121.889223,
+   "tags": {
+    "name": "Lincoln Glen Park",
+    "leisure": "park",
+    "wikidata": "Q49516849"
+   }
+  },
+  {
+   "id": "way/38341935",
+   "lat": 37.328242,
+   "lng": -121.884237,
+   "tags": {
+    "name": "San Jose Museum of Quilts & Textiles",
+    "tourism": "museum",
+    "building": "yes",
+    "website": "https://sj-mqt.org/",
+    "wikidata": "Q7414467",
+    "wikipedia": "en:San Jose Museum of Quilts & Textiles",
+    "addr:housenumber": "520",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/38341937",
+   "lat": 37.327845,
+   "lng": -121.883934,
+   "tags": {
+    "name": "Institute of Contemporary Art San José",
+    "tourism": "gallery",
+    "amenity": "arts_centre",
+    "building": "yes",
+    "opening_hours": "Th-Su 12:00-17:00",
+    "website": "https://www.icasanjose.org/",
+    "wikidata": "Q19647913",
+    "wikipedia": "en:Institute of Contemporary Art San José",
+    "addr:housenumber": "560",
+    "addr:street": "South 1st Street",
+    "addr:postcode": "95113"
+   }
+  },
+  {
+   "id": "way/38341951",
+   "lat": 37.319564,
+   "lng": -121.894142,
+   "tags": {
+    "name": "Biebrach Park",
+    "leisure": "park",
+    "wikidata": "Q49474674"
+   }
+  },
+  {
+   "id": "way/38605628",
+   "lat": 37.301806,
+   "lng": -121.88753,
+   "tags": {
+    "name": "River Glen Park",
+    "leisure": "park",
+    "wikidata": "Q49550695"
+   }
+  },
+  {
+   "id": "way/38605636",
+   "lat": 37.294135,
+   "lng": -121.899954,
+   "tags": {
+    "name": "Wilcox Park",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q49580504",
+    "addr:housenumber": "1782",
+    "addr:street": "Wilcox Way",
+    "addr:postcode": "95125"
+   }
+  },
+  {
+   "id": "way/38681310",
+   "lat": 37.315707,
+   "lng": -121.900675,
+   "tags": {
+    "name": "Palm Haven Park",
+    "leisure": "park",
+    "wikidata": "Q49537141"
+   }
+  },
+  {
+   "id": "way/38900250",
+   "lat": 37.354826,
+   "lng": -121.944502,
+   "tags": {
+    "name": "Larry J. Marsalli Park",
+    "leisure": "park",
+    "wikidata": "Q49512720",
+    "addr:housenumber": "1425",
+    "addr:street": "Lafayette Street",
+    "addr:postcode": "95050"
+   }
+  },
+  {
+   "id": "way/38900409",
+   "lat": 37.341992,
+   "lng": -121.942633,
+   "tags": {
+    "name": "Washington Park",
+    "leisure": "park",
+    "wikidata": "Q49577065",
+    "addr:housenumber": "295",
+    "addr:street": "Monroe Street",
+    "addr:postcode": "95050"
+   }
+  },
+  {
+   "id": "way/39018501",
+   "lat": 37.336376,
+   "lng": -121.894967,
+   "tags": {
+    "name": "San Pedro Square Market Hall",
+    "amenity": "marketplace",
+    "building": "retail"
+   }
+  },
+  {
+   "id": "way/39423142",
+   "lat": 37.340174,
+   "lng": -121.846559,
+   "tags": {
+    "name": "Emma Prusch Farm Park",
+    "leisure": "park",
+    "opening_hours": "06:30-sunset",
+    "website": "https://pruschfarmpark.org/",
+    "wikidata": "Q5372927",
+    "addr:housenumber": "647",
+    "addr:street": "South King Road",
+    "addr:postcode": "95122"
+   }
+  },
+  {
+   "id": "way/411543648",
+   "lat": 37.335495,
+   "lng": -121.882551,
+   "tags": {
+    "name": "Olympics Black Power Statue",
+    "historic": "monument",
+    "wikidata": "Q104790872"
+   }
+  },
+  {
+   "id": "way/454614968",
+   "lat": 37.321962,
+   "lng": -121.861008,
+   "tags": {
+    "name": "Japanese Friendship Garden",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2835/",
+    "wikidata": "Q633365",
+    "wikipedia": "en:Japanese Friendship Garden (San Jose)",
+    "addr:housenumber": "1300",
+    "addr:street": "Senter Road",
+    "addr:postcode": "95112",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/52639338",
+   "lat": 37.366763,
+   "lng": -121.941097,
+   "tags": {
+    "name": "Memorial Cross Park",
+    "leisure": "park",
+    "wikidata": "Q49524681",
+    "wikipedia": "en:Memorial Cross Park"
+   }
+  },
+  {
+   "id": "way/746262258",
+   "lat": 37.333363,
+   "lng": -121.899041,
+   "tags": {
+    "name": "Arena Green",
+    "leisure": "park",
+    "website": "https://www.grpg.org/river-park-gardens/arena-green/",
+    "wikidata": "Q49472846"
+   }
+  },
+  {
+   "id": "way/765864912",
+   "lat": 37.323757,
+   "lng": -121.855179,
+   "tags": {
+    "name": "Vườn Truyền Thống Việt;Viet Heritage Garden",
+    "name:en": "Viet Heritage Garden",
+    "leisure": "park",
+    "wikidata": "Q130376474"
+   }
+  },
+  {
+   "id": "way/788329567",
+   "lat": 37.315793,
+   "lng": -121.906248,
+   "tags": {
+    "name": "Roberto Adobe & Suñol House",
+    "tourism": "museum",
+    "website": "https://californiapioneers.com/visit/roberto-adobe-sunol-house-museum/",
+    "wikidata": "Q89536560",
+    "addr:housenumber": "770",
+    "addr:street": "Lincoln Avenue",
+    "addr:postcode": "95126"
+   }
+  },
+  {
+   "id": "way/832395219",
+   "lat": 37.338053,
+   "lng": -121.895976,
+   "tags": {
+    "name": "Pellier Park",
+    "leisure": "park",
+    "website": "https://www.sanjoseca.gov/Home/Components/FacilityDirectory/FacilityDirectory/2331/",
+    "wikidata": "Q122976840",
+    "wikipedia": "en:Pellier Park",
+    "addr:housenumber": "183",
+    "addr:street": "West Saint James Street",
+    "addr:postcode": "95110"
+   }
+  },
+  {
+   "id": "way/835902732",
+   "lat": 37.335834,
+   "lng": -121.88131,
+   "tags": {
+    "name": "César E. Chávez Monument",
+    "historic": "monument",
+    "wikidata": "Q124352927",
+    "wikipedia": "en:Arch of Dignity, Equality, and Justice"
+   }
+  },
+  {
+   "id": "way/86483249",
+   "lat": 37.300027,
+   "lng": -121.851409,
+   "tags": {
+    "name": "Santa Clara County Fairgrounds",
+    "tourism": "attraction",
+    "leisure": "sports_centre",
+    "amenity": "events_venue",
+    "website": "https://www.thefairgrounds.org/",
+    "wikidata": "Q96404960",
+    "wikipedia": "en:Santa Clara County Fairgrounds",
+    "addr:housenumber": "344",
+    "addr:street": "Tully Road",
+    "addr:postcode": "95111"
+   }
+  },
+  {
+   "id": "way/95542838",
+   "lat": 37.353099,
+   "lng": -121.936236,
+   "tags": {
+    "name": "South Bay Historical Railroad Society",
+    "tourism": "museum",
+    "building": "train_station",
+    "website": "https://sbhrs.org/",
+    "wikidata": "Q7566263",
+    "addr:housenumber": "1005",
+    "addr:street": "Railroad Avenue",
+    "addr:postcode": "95050"
+   }
+  }
+ ]
+}

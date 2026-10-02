@@ -1,129 +1,20 @@
 #!/usr/bin/env python3
-"""Pure parsing of the EventAct open API's agenda answers for ISRA (no network, no files).
+"""ISRA's EventAct agenda answers, read by the shared EventAct parser (no network, no files).
 
-Two answers are read. The agenda's `timetable` lists every activity by day with
-its halls and type; a session's `session` answer lists its lectures, their
-speakers and the speakers' portraits.
-
-The timetable carries the day twice: the table's `date` (month-first,
-"10/18/2026") and each activity's own `date` (day-first, "18/10/2026 08:00:00").
-Its per-table `startDate` is the agenda's last day on every table, so it is
-never read. The two readings must agree, or the activity is refused.
+The parsing itself is scraper/festivals/platforms/eventact.py; this file keeps
+the self-test over answers captured from ISRA's own agenda.
 
     python3 scraper/festivals/isra/sources/eventact-agenda/parse.py --selftest
 """
 
-import html
 import json
 import os
-import re
 import sys
 
-SAMPLES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "samples")
-# The portrait EventAct shows for a speaker who uploaded none.
-PLACEHOLDER_PORTRAIT = "images.eventact.com/eventact/participant.png"
-
-
-def text(value):
-    """A field that may hold HTML (`subTitle`, some titles) as plain text, or None."""
-    if not value:
-        return None
-    value = re.sub(r"(?i)<br\s*/?>|</p>", "\n", value)
-    value = html.unescape(re.sub(r"<[^>]+>", "", value))
-    lines = [re.sub(r"\s+", " ", line).strip() for line in value.split("\n")]
-    return "\n".join(line for line in lines if line) or None
-
-
-def widget(page):
-    """The programme page's embedded agenda widget -> {event, agenda, key}, or None.
-
-    The key is the public API token the page itself hands every visitor's browser.
-    """
-    tag = re.search(r"<ea-program\b([^>]*)>", page)
-    if not tag:
-        return None
-    attrs = dict(re.findall(r'(\w+)="([^"]*)"', tag.group(1)))
-    if not (attrs.get("event", "").isdigit() and attrs.get("agenda", "").isdigit() and attrs.get("key")):
-        return None
-    return {"event": int(attrs["event"]), "agenda": int(attrs["agenda"]), "key": attrs["key"]}
-
-
-def _iso_month_first(value):
-    month, day, year = value.split("/")
-    return "%04d-%02d-%02d" % (int(year), int(month), int(day))
-
-
-def _iso_day_first(value):
-    day, month, year = value.split(" ")[0].split("/")
-    return "%04d-%02d-%02d" % (int(year), int(month), int(day))
-
-
-def activities(timetable):
-    """Every activity of the timetable, in its order, with one checked ISO date."""
-    out = []
-    for table in timetable["tables"]:
-        day = _iso_month_first(table["date"])
-        for activity in table["activities"]:
-            own = _iso_day_first(activity["date"])
-            if own != day:
-                raise ValueError("activity %s: its date %s disagrees with its day table %s" % (activity["id"], own, day))
-            out.append({
-                "id": activity["id"],
-                "title": text(activity["title"]),
-                "type": activity["type"],
-                "date": day,
-                "start": activity["activityStartTime"],
-                "end": activity["activityEndTime"],
-                "halls": activity["halls"],
-                "description": text(activity["description"]),
-            })
-    return out
-
-
-def _portrait(person):
-    logo = person.get("logo") or ""
-    return logo if logo.startswith("http") and PLACEHOLDER_PORTRAIT not in logo else None
-
-
-def session(answer):
-    """A session answer -> its note, chairs, lectures with speakers, and a picture.
-
-    The picture is the first real portrait among the presenting speakers, in
-    lecture order (else any chair's): the only per-session image the
-    programme shows. None when every speaker carries the placeholder.
-    """
-    lectures = []
-    for lecture in answer.get("lectures") or []:
-        institutes = {i["index"]: i.get("displayName") for i in lecture.get("institutes") or []}
-        speakers = []
-        for author in lecture.get("authors") or []:
-            if not author.get("isPresenting"):
-                continue
-            where = [institutes.get(i) for i in author.get("instituteIndexs") or []]
-            speakers.append({
-                "name": text(author["displayName"]),
-                "institute": next((w for w in where if w), None),
-                "portrait": _portrait(author),
-            })
-        lectures.append({
-            "id": lecture["lectureID"],
-            "start": lecture["startTime"],
-            "end": lecture["endTime"],
-            "title": text(lecture["title"]),
-            "notes": text(lecture.get("notes")),
-            "speakers": speakers,
-        })
-    chairs = [
-        {"name": text(c.get("displayName") or c.get("name")), "portrait": _portrait(c)}
-        for c in answer.get("chairmen") or []
-    ]
-    portraits = [s["portrait"] for l in lectures for s in l["speakers"]] + [c["portrait"] for c in chairs]
-    return {
-        "note": text(answer.get("subTitle")),
-        "chairs": chairs,
-        "lectures": lectures,
-        "image": next((p for p in portraits if p), None),
-    }
+HERE = os.path.dirname(os.path.abspath(__file__))
+SAMPLES = os.path.join(HERE, "samples")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "platforms"))
+from eventact import activities, session, text, widget
 
 
 def _sample(name):

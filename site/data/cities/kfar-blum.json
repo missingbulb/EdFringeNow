@@ -1,0 +1,463 @@
+{
+ "v": 1,
+ "city": {
+  "id": "kfar-blum",
+  "name": "Kfar Blum",
+  "country": "IL",
+  "lat": 33.1725,
+  "lng": 35.6097,
+  "timezone": "Asia/Jerusalem"
+ },
+ "places": [
+  {
+   "id": "osm:node/9386606817",
+   "name": "תל נעמה",
+   "nameEn": "En Na`ima",
+   "kind": "landmark",
+   "lat": 33.175323,
+   "lng": 35.594645,
+   "address": null,
+   "website": null,
+   "wikidata": "Q16131239",
+   "wikipedia": "he:תל נעמה",
+   "description": "hill in Northern District, Israel",
+   "image": "Tel Naama (Schwartz farm) 2.JPG",
+   "notability": 3,
+   "highlight": true,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  },
+  {
+   "id": "osm:node/278473225",
+   "name": "עין שחר",
+   "nameEn": "Ein Sahar",
+   "kind": "viewpoint",
+   "lat": 33.2,
+   "lng": 35.65,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "wikipedia": null,
+   "description": null,
+   "image": null,
+   "notability": null,
+   "highlight": false,
+   "openingHours": null,
+   "hoursSource": null,
+   "hours": null
+  }
+ ],
+ "near": "venues",
+ "stay": [
+  {
+   "id": "osm:way/1065053882",
+   "name": "פסטורל כפר בלום",
+   "nameEn": "Pastoral Kfar Blum",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.174759,
+   "lng": 35.611225,
+   "address": null,
+   "website": "https://www.kfarblum-hotel.co.il/?Lang=eng",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 315,
+   "venuesNear": 1
+  },
+  {
+   "id": "osm:way/601012794",
+   "name": "הגושרים מלון בטבע",
+   "nameEn": "Hagoshrim Hotel and Nature",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.222107,
+   "lng": 35.621303,
+   "address": "1222500",
+   "website": "https://www.hagoshrim-hotel.co.il/",
+   "wikidata": "Q64769233",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 5651,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/909175920",
+   "name": "בית ספר שדה חרמון",
+   "nameEn": null,
+   "kind": "hostel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.23516,
+   "lng": 35.672268,
+   "address": null,
+   "website": "https://www.teva.org.il/field-school/hermon",
+   "wikidata": "Q6588816",
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 9102,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/9152590049",
+   "name": "הווילג' מלון מטיילים על הירדן",
+   "nameEn": "The Village Jordan Riverside TravelHotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.186177,
+   "lng": 35.618188,
+   "address": null,
+   "website": "https://www.travelhotels.co.il/מלונות_מטיילים/The-Village-Jordan-Riverside-TravelHotel/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 1741,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/6835215030",
+   "name": "מלון מטיילים ארץ דפנה",
+   "nameEn": null,
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.227349,
+   "lng": 35.639057,
+   "address": null,
+   "website": "https://www.travelhotels.co.il/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 6710,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/794384867",
+   "name": "מלון גליליון",
+   "nameEn": "Galilon Hotel",
+   "kind": "hotel",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.117979,
+   "lng": 35.573135,
+   "address": null,
+   "website": "http://www.galilion.co.il/",
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 6927,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/4553569460",
+   "name": "סוף הדרך",
+   "nameEn": "Sof Haderech",
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.246884,
+   "lng": 35.550384,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": "24/7",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "00:00",
+       "24:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 9970,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5743331521",
+   "name": "בכפר אירוח כפרי",
+   "nameEn": null,
+   "kind": "guest_house",
+   "stars": null,
+   "cuisine": null,
+   "lat": 33.19388,
+   "lng": 35.657262,
+   "address": null,
+   "website": null,
+   "wikidata": null,
+   "openingHours": null,
+   "hours": null,
+   "toVenueM": 5037,
+   "venuesNear": 0
+  }
+ ],
+ "eat": [
+  {
+   "id": "osm:node/5147987288",
+   "name": "Uma",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "asian",
+    "chinese",
+    "japanese",
+    "burger"
+   ],
+   "lat": 33.17007,
+   "lng": 35.57062,
+   "address": null,
+   "website": "https://umarest.co.il",
+   "wikidata": "Q66827629",
+   "openingHours": "Su-Sa 12:00-00:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "00:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 3647,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:way/1505630120",
+   "name": "קלומפוס",
+   "nameEn": "Klompos",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "burger"
+   ],
+   "lat": 33.228711,
+   "lng": 35.640543,
+   "address": null,
+   "website": "https://foccacia.co.il/clompus/",
+   "wikidata": "Q64767028",
+   "openingHours": "12:00 - 23:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": null,
+     "spans": [
+      [
+       "12:00",
+       "23:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 6905,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/1831037546",
+   "name": "Cheese",
+   "nameEn": null,
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "italian"
+   ],
+   "lat": 33.200519,
+   "lng": 35.606872,
+   "address": "המייסדים",
+   "website": "https://cheeserestaurant.co.il/",
+   "wikidata": null,
+   "openingHours": "Su-Th 9:30-24:00; Fr 9:00-23:00",
+   "hours": null,
+   "toVenueM": 3158,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5147983274",
+   "name": "ארבורגר",
+   "nameEn": "Arburger",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "meat",
+    "burger"
+   ],
+   "lat": 33.170073,
+   "lng": 35.570518,
+   "address": null,
+   "website": "https://www.2eat.co.il/uma/",
+   "wikidata": null,
+   "openingHours": "Su-Sa 12:00-00:00",
+   "hours": [
+    {
+     "dates": null,
+     "days": [
+      "su",
+      "mo",
+      "tu",
+      "we",
+      "th",
+      "fr",
+      "sa"
+     ],
+     "spans": [
+      [
+       "12:00",
+       "00:00"
+      ]
+     ]
+    }
+   ],
+   "toVenueM": 3657,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/5143538759",
+   "name": "בטעם הסיני",
+   "nameEn": "Chinese Taste",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "chinese"
+   ],
+   "lat": 33.197943,
+   "lng": 35.57611,
+   "address": null,
+   "website": "http://bataam-hasini.inforu.mobi/",
+   "wikidata": null,
+   "openingHours": "Mo-Th, Su 11:00-22:30",
+   "hours": null,
+   "toVenueM": 4238,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/2318762536",
+   "name": "אצה",
+   "nameEn": "Atza",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "sushi"
+   ],
+   "lat": 33.192907,
+   "lng": 35.571015,
+   "address": null,
+   "website": "https://atza.co.il/he/branches/259",
+   "wikidata": null,
+   "openingHours": "Mo-Th, Su 11:00-23:00; Fr 11:00-14:30; Sa 18:00-23:00",
+   "hours": null,
+   "toVenueM": 4274,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/2318762527",
+   "name": "פיצה האט",
+   "nameEn": "Pizza Hut",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "pizza"
+   ],
+   "lat": 33.192871,
+   "lng": 35.570791,
+   "address": null,
+   "website": "https://www1.pizzahut.co.il/סניף_קרית_שמונה",
+   "wikidata": null,
+   "openingHours": "Mo-Th, Su 11:00-22:30; Fr 11:00-16:00; Sa 20:20-22:30",
+   "hours": null,
+   "toVenueM": 4289,
+   "venuesNear": 0
+  },
+  {
+   "id": "osm:node/2430258140",
+   "name": "מאמא חלסה",
+   "nameEn": "Mama Chalsa",
+   "kind": "restaurant",
+   "stars": null,
+   "cuisine": [
+    "regional"
+   ],
+   "lat": 33.195931,
+   "lng": 35.570507,
+   "address": null,
+   "website": "https://www.2eat.co.il/mama-chalsa/",
+   "wikidata": null,
+   "openingHours": "Su-Th 12:00+",
+   "hours": null,
+   "toVenueM": 4502,
+   "venuesNear": 0
+  }
+ ],
+ "trips": [
+  {
+   "name": "Golan Heights",
+   "page": "Golan Heights",
+   "url": "https://en.wikivoyage.org/wiki/Golan_Heights",
+   "description": "If you've made it this far, you might as well continue a few last kilometers east. In particular, northern Golan attractions like Mount Hermon and Nimrod Castle are very close to Kiryat Shmonah, Tel Dan, and other northern Galilee Panhandle destinations.",
+   "lat": 32.981,
+   "lng": 35.749,
+   "km": 25
+  }
+ ],
+ "guide": {
+  "page": "Galilee Panhandle",
+  "url": "https://en.wikivoyage.org/wiki/Galilee_Panhandle"
+ },
+ "licences": {
+  "osm": {
+   "name": "ODbL",
+   "url": "https://opendatacommons.org/licenses/odbl/",
+   "attribution": "© OpenStreetMap contributors",
+   "credit": "https://www.openstreetmap.org/copyright"
+  },
+  "wikidata": {
+   "name": "CC0",
+   "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "attribution": "Wikidata"
+  },
+  "wikivoyage": {
+   "name": "CC BY-SA 4.0",
+   "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "attribution": "Wikivoyage contributors"
+  }
+ },
+ "provenance": {
+  "osm": {
+   "fetchedAt": "2026-10-02T19:28:24Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikidata": {
+   "fetchedAt": "2026-10-02T19:29:01Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "amenities": {
+   "fetchedAt": "2026-10-02T19:29:32Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  },
+  "wikivoyage": {
+   "fetchedAt": "2026-10-02T19:29:36Z",
+   "fetcher": "scraper/cities/fetch.py",
+   "fetcherVersion": 2
+  }
+ }
+}

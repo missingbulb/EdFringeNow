@@ -102,16 +102,16 @@ def edition_ready(festival, edition_id):
     edition = registry.edition(festival, edition_id)
     return all(
         SourceInput(festival, edition, src, {}).present()
-        for src in festival["source"]
+        for src in registry.edition_sources(festival, edition_id)
         if src["required"]
     )
 
 
 def collect(festival, edition_id):
-    """Run every present source's adapter, in festival.toml order."""
+    """Run the adapter of every present source in the edition's tool set, in festival.toml order."""
     edition = registry.edition(festival, edition_id)
     partials, provenance, absent = {}, {}, []
-    for src in festival["source"]:
+    for src in registry.edition_sources(festival, edition_id):
         inp = SourceInput(festival, edition, src, partials)
         if not inp.present():
             if src["required"]:

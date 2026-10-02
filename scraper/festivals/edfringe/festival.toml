@@ -25,6 +25,7 @@ dir = "ltr"
 kind = "fringe"
 default_genre = "other"
 site = "https://www.edfringe.com"
+wikidata = "Q368176"
 
 [ticketing]
 model = "central-box-office"
@@ -40,6 +41,7 @@ format = "edfringe-wire"
 # by extending a day at a time.
 first = "2026-08-07"
 last = "2026-08-31"
+sources = ["edfringe-listing", "edfringe-prices", "edfringe-tickets", "venues-research"]
 
 # The committed files an edfringe-wire edition is served from, and the script
 # that writes them. Paths are from the repo root.

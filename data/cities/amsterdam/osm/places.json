@@ -1,0 +1,4829 @@
+{
+ "places": [
+  {
+   "id": "node/1027330946",
+   "lat": 52.350703,
+   "lng": 4.877753,
+   "tags": {
+    "name": "Monument voor gefusilleerde verzetstrijders",
+    "historic": "memorial",
+    "wikidata": "Q61904267",
+    "wikipedia": "nl:Verzetsmonument Apollolaan",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1028402695",
+   "lat": 52.369576,
+   "lng": 4.901227,
+   "tags": {
+    "name": "Grenspaal",
+    "historic": "memorial",
+    "website": "https://www.buitenbeeldinbeeld.nl/Amsterdam_C/schildpad.htm",
+    "wikidata": "Q46909830",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/10820210238",
+   "lat": 52.368346,
+   "lng": 4.903503,
+   "tags": {
+    "name": "Decembermoorden",
+    "historic": "memorial",
+    "wikidata": "Q583569",
+    "wikipedia": "nl:Decembermoorden"
+   }
+  },
+  {
+   "id": "node/10829651271",
+   "lat": 52.38238,
+   "lng": 4.887876,
+   "tags": {
+    "name": "Hooffzaak",
+    "tourism": "gallery",
+    "website": "http://www.hooffzaak.nl",
+    "addr:housenumber": "54",
+    "addr:street": "Haarlemmerdijk",
+    "addr:postcode": "1013JE",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10860711745",
+   "lat": 52.379113,
+   "lng": 4.833385,
+   "tags": {
+    "name": "Reina Prinsen Geerligs",
+    "historic": "memorial",
+    "wikidata": "Q116684018"
+   }
+  },
+  {
+   "id": "node/10863690358",
+   "lat": 52.384526,
+   "lng": 4.832213,
+   "tags": {
+    "name": "Monument Haarlemmerweg",
+    "historic": "memorial",
+    "wikidata": "Q101623602",
+    "wikipedia": "nl:Monument aan de Haarlemmerweg"
+   }
+  },
+  {
+   "id": "node/10891561773",
+   "lat": 52.363053,
+   "lng": 4.888451,
+   "tags": {
+    "name": "Carré d'artistes",
+    "tourism": "gallery",
+    "opening_hours": "Mo 12:00-18:00; Tu-Sa 10:00-18:00; Su 12:00-17:00",
+    "addr:housenumber": "57",
+    "addr:street": "Nieuwe Spiegelstraat",
+    "addr:postcode": "1017DD",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/10899508449",
+   "lat": 52.364943,
+   "lng": 4.890202,
+   "tags": {
+    "name": "AbrahamArt",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Su 11:00-19:00",
+    "website": "https://www.abrahamart.com",
+    "addr:housenumber": "7",
+    "addr:street": "Nieuwe Spiegelstraat",
+    "addr:postcode": "1017DB",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/10899546449",
+   "lat": 52.393372,
+   "lng": 4.851887,
+   "tags": {
+    "name": "Galerie Lieve Hemel",
+    "tourism": "gallery",
+    "opening_hours": "We-Su 14:00-19:00",
+    "website": "https://www.lievehemel.nl",
+    "addr:housenumber": "15",
+    "addr:street": "Elementenstraat",
+    "addr:postcode": "1014AR"
+   }
+  },
+  {
+   "id": "node/10908955130",
+   "lat": 52.360389,
+   "lng": 4.919009,
+   "tags": {
+    "name": "Albert",
+    "historic": "memorial",
+    "wikidata": "Q2282158",
+    "wikipedia": "nl:Politie Hond Albert"
+   }
+  },
+  {
+   "id": "node/10926500253",
+   "lat": 52.363221,
+   "lng": 4.886728,
+   "tags": {
+    "name": "Galerie AdK Actuele Kunst",
+    "tourism": "gallery",
+    "opening_hours": "Th-Sa 12:00-17:30; Su[1] 12:00-17:30 ||\"by reservation\"",
+    "addr:housenumber": "534",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1017KJ",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/10940140722",
+   "lat": 52.364134,
+   "lng": 4.898072,
+   "tags": {
+    "name": "Enari Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 12:00-18:00",
+    "website": "https://www.enari.gallery",
+    "addr:housenumber": "44-H",
+    "addr:street": "Utrechtsestraat",
+    "addr:postcode": "1017VP"
+   }
+  },
+  {
+   "id": "node/10944401505",
+   "lat": 52.360948,
+   "lng": 4.839218,
+   "tags": {
+    "name": "Amsterdam",
+    "name:en": "Overtoomse Veld",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/11028112658",
+   "lat": 52.328793,
+   "lng": 4.875102,
+   "tags": {
+    "name": "Herdenkingsmonument",
+    "historic": "memorial",
+    "wikidata": "Q66828853",
+    "wikipedia": "nl:Herdenkingsmonument (Mischa Rakier)"
+   }
+  },
+  {
+   "id": "node/11134000559",
+   "lat": 52.37207,
+   "lng": 4.885222,
+   "tags": {
+    "name": "Grimm",
+    "tourism": "gallery",
+    "opening_hours": "\"by appointment\"",
+    "website": "https://grimmgallery.com",
+    "addr:housenumber": "241",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1016EA"
+   }
+  },
+  {
+   "id": "node/11171957087",
+   "lat": 52.373947,
+   "lng": 4.91232,
+   "tags": {
+    "name": "Energetica - Rooftop NEMO Science Center",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11185144775",
+   "lat": 52.362414,
+   "lng": 4.883548,
+   "tags": {
+    "name": "Rembrandts Amsterdam Experience",
+    "tourism": "museum",
+    "website": "https://rembrandtsamsterdam.com/"
+   }
+  },
+  {
+   "id": "node/11191674883",
+   "lat": 52.380688,
+   "lng": 4.880713,
+   "tags": {
+    "name": "The London Police x SUYE",
+    "tourism": "gallery",
+    "addr:housenumber": "127",
+    "addr:street": "Marnixstraat",
+    "addr:postcode": "1015VK",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11211112314",
+   "lat": 52.3804,
+   "lng": 4.886785,
+   "tags": {
+    "name": "Kahmann Gallery",
+    "tourism": "gallery",
+    "website": "https://www.kahmanngallery.com/",
+    "addr:housenumber": "9",
+    "addr:street": "Lindengracht",
+    "addr:postcode": "1015KB"
+   }
+  },
+  {
+   "id": "node/1135509041",
+   "lat": 52.367287,
+   "lng": 4.890665,
+   "tags": {
+    "name": "Torture Museum",
+    "name:en": "Torture Museum",
+    "tourism": "museum",
+    "opening_hours": "10:00-23:00",
+    "website": "https://www.torturemuseum.org",
+    "wikidata": "Q17146713",
+    "wikipedia": "nl:Torture Museum Amsterdam",
+    "addr:housenumber": "449",
+    "addr:street": "Singel",
+    "addr:postcode": "1012WP",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/11377634987",
+   "lat": 52.376056,
+   "lng": 4.883929,
+   "tags": {
+    "name": "MenM",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11414416006",
+   "lat": 52.386066,
+   "lng": 4.887897,
+   "tags": {
+    "name": "De Kleine Werf",
+    "tourism": "gallery",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11415096963",
+   "lat": 52.38333,
+   "lng": 4.885843,
+   "tags": {
+    "name": "The Route",
+    "tourism": "gallery",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/11416885052",
+   "lat": 52.381836,
+   "lng": 4.885505,
+   "tags": {
+    "name": "Van Zijll Langhout",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11528244902",
+   "lat": 52.334902,
+   "lng": 4.864491,
+   "tags": {
+    "name": "VU ART SCIENCE GALLERY",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 12:00-18:00",
+    "website": "https://www.artsciencegallery.nl/",
+    "addr:housenumber": "1111",
+    "addr:street": "De Boelelaan",
+    "addr:postcode": "1081HV"
+   }
+  },
+  {
+   "id": "node/11747827418",
+   "lat": 52.377302,
+   "lng": 4.88169,
+   "tags": {
+    "name": "What Art Can Do",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11747871779",
+   "lat": 52.375933,
+   "lng": 4.882516,
+   "tags": {
+    "name": "Galilea",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11747878164",
+   "lat": 52.37556,
+   "lng": 4.882891,
+   "tags": {
+    "name": "atelier paradis",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11871509445",
+   "lat": 52.378869,
+   "lng": 4.882911,
+   "tags": {
+    "name": "Arttra",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11871516586",
+   "lat": 52.378617,
+   "lng": 4.883062,
+   "tags": {
+    "name": "Kleine Atelier",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11891253823",
+   "lat": 52.370343,
+   "lng": 4.888863,
+   "tags": {
+    "name": "Oxfort House Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/11898704281",
+   "lat": 52.364653,
+   "lng": 4.889662,
+   "tags": {
+    "name": "Umbria",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11925139796",
+   "lat": 52.379438,
+   "lng": 4.882829,
+   "tags": {
+    "name": "Salon Petit Bonheur",
+    "tourism": "gallery",
+    "opening_hours": "Sa 11:00-17:00",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11941618050",
+   "lat": 52.374254,
+   "lng": 4.878123,
+   "tags": {
+    "name": "Galerie Staaf",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/11944513513",
+   "lat": 52.366064,
+   "lng": 4.904488,
+   "tags": {
+    "name": "Telefoon van de Wind Hoftuin",
+    "name:en": "Wind phone Hoftuin",
+    "historic": "memorial",
+    "website": "https://www.humanitas.nl/afdeling/amsterdam_en_diemen/Wat-we-doen/telefoon-van-de-wind-Hoftuin/",
+    "wikidata": "Q126193138"
+   }
+  },
+  {
+   "id": "node/11964914826",
+   "lat": 52.372587,
+   "lng": 4.892593,
+   "tags": {
+    "name": "Madame Tussauds Amsterdam",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 09:30-19:30",
+    "website": "https://www.madametussauds.com/amsterdam",
+    "wikidata": "Q3275333",
+    "wikipedia": "nl:Madame Tussauds Amsterdam",
+    "addr:housenumber": "20",
+    "addr:street": "Dam",
+    "addr:postcode": "1012NP",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/11982866309",
+   "lat": 52.382204,
+   "lng": 4.885949,
+   "tags": {
+    "name": "Gallery238",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12006306952",
+   "lat": 52.366979,
+   "lng": 4.869797,
+   "tags": {
+    "name": "Ilove Illustration Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Th-Sa 13:00-17:00",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12041138783",
+   "lat": 52.384682,
+   "lng": 4.885685,
+   "tags": {
+    "name": "Elliott",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-18:00",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12041139481",
+   "lat": 52.384597,
+   "lng": 4.885849,
+   "tags": {
+    "name": "The Loft",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12080452710",
+   "lat": 52.384353,
+   "lng": 4.874209,
+   "tags": {
+    "name": "Bastiaen",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12081392358",
+   "lat": 52.374225,
+   "lng": 4.900497,
+   "tags": {
+    "name": "Nishi Japanese Mini Mall",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/12104114110",
+   "lat": 52.37856,
+   "lng": 4.871428,
+   "tags": {
+    "name": "Kleur & Co",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12117241457",
+   "lat": 52.375121,
+   "lng": 4.887287,
+   "tags": {
+    "name": "Casa Luna",
+    "tourism": "gallery",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12117262733",
+   "lat": 52.374627,
+   "lng": 4.889936,
+   "tags": {
+    "name": "Oode",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12117435608",
+   "lat": 52.388381,
+   "lng": 4.871864,
+   "tags": {
+    "name": "Uitzichtheuvel",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/12348470717",
+   "lat": 52.372249,
+   "lng": 4.878717,
+   "tags": {
+    "name": "Serieuze Zaken",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 14:00-18:00",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/1237228907",
+   "lat": 52.367641,
+   "lng": 4.884837,
+   "tags": {
+    "name": "Huis Marseille",
+    "name:en": "Marseille House",
+    "tourism": "museum",
+    "opening_hours": "Fr-We 10:00-18:00, Th 10:00-09:00; PH off",
+    "website": "https://www.huismarseille.nl/",
+    "wikidata": "Q2141968",
+    "wikipedia": "nl:Huis Marseille",
+    "addr:housenumber": "401",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1016EK",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1256758841",
+   "lat": 52.359766,
+   "lng": 4.98974,
+   "tags": {
+    "name": "BBD Kunst",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 11:00-19:00; Su 13:00-18:00",
+    "addr:street": "Johan van der Keukenstraat"
+   }
+  },
+  {
+   "id": "node/12662916563",
+   "lat": 52.384335,
+   "lng": 4.900812,
+   "tags": {
+    "name": "Eye Filmmuseum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-19:00",
+    "website": "https://www.eyefilm.nl/",
+    "wikidata": "Q1538389",
+    "wikipedia": "nl:Eye Filmmuseum",
+    "addr:housenumber": "1",
+    "addr:street": "IJpromenade",
+    "addr:postcode": "1031KT",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12716456403",
+   "lat": 52.365118,
+   "lng": 4.940017,
+   "tags": {
+    "name": "Marjolein Poels",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12750096410",
+   "lat": 52.354674,
+   "lng": 4.932549,
+   "tags": {
+    "name": "Galerie Pavonia",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/12800396949",
+   "lat": 52.376525,
+   "lng": 4.899666,
+   "tags": {
+    "name": "Plaquette Chet Baker",
+    "historic": "memorial",
+    "wikidata": "Q115596068",
+    "wikipedia": "nl:Plaquette Chet Baker"
+   }
+  },
+  {
+   "id": "node/12836730848",
+   "lat": 52.359242,
+   "lng": 4.900055,
+   "tags": {
+    "name": "De Nieuwe Schatkamer",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "website": "https://www.denieuweschatkamer.nl/",
+    "addr:housenumber": "61",
+    "addr:street": "Frederiksplein",
+    "addr:postcode": "1017XL",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/12837827701",
+   "lat": 52.375172,
+   "lng": 4.899366,
+   "tags": {
+    "name": "Ons' Lieve Heer op Solder",
+    "name:en": "Our Lord in the Attic",
+    "tourism": "museum",
+    "opening_hours": "Mo-Sa 10:00-17:00; Su 13:00-17:00",
+    "website": "https://www.opsolder.nl/",
+    "wikidata": "Q493160",
+    "wikipedia": "nl:Museum Ons' Lieve Heer op Solder",
+    "addr:housenumber": "38",
+    "addr:street": "Oudezijds Voorburgwal",
+    "addr:postcode": "1012GD",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/12855425778",
+   "lat": 52.371384,
+   "lng": 4.931241,
+   "tags": {
+    "name": "Cacaomuseum",
+    "tourism": "museum",
+    "opening_hours": "We-Sa 10:00-18:00",
+    "website": "https://cacaomuseum.nl/",
+    "addr:housenumber": "175",
+    "addr:street": "Czaar Peterstraat",
+    "addr:postcode": "1018PK",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1293163366",
+   "lat": 52.377487,
+   "lng": 4.891126,
+   "tags": {
+    "name": "Multatuli Museum",
+    "tourism": "museum",
+    "opening_hours": "Fr 10:00-17:00, Sa-Su 12:00-17:00, PH off",
+    "website": "https://www.multatuli-museum.nl",
+    "wikidata": "Q18169482",
+    "wikipedia": "nl:Multatuli Museum",
+    "addr:housenumber": "20",
+    "addr:street": "Korsjespoortsteeg",
+    "addr:postcode": "1015AR",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1293223805",
+   "lat": 52.370221,
+   "lng": 4.899522,
+   "tags": {
+    "name": "Zuiderkerkstoren",
+    "name:en": "Zuiderkerk Tower",
+    "tourism": "attraction",
+    "wikidata": "Q1886733",
+    "wikipedia": "nl:Zuiderkerkstoren (Amsterdam)"
+   }
+  },
+  {
+   "id": "node/12944465898",
+   "lat": 52.400851,
+   "lng": 4.93236,
+   "tags": {
+    "name": "Galerie du Nord",
+    "tourism": "gallery",
+    "website": "https://www.galeriedunord-amsterdam.nl/",
+    "addr:housenumber": "1730B",
+    "addr:street": "Buikslotermeerplein"
+   }
+  },
+  {
+   "id": "node/1299850584",
+   "lat": 52.362716,
+   "lng": 4.882906,
+   "tags": {
+    "name": "Max Euwe Centrum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 12:00-16:00",
+    "website": "https://www.maxeuwe.nl/",
+    "wikidata": "Q2533298",
+    "wikipedia": "nl:Max Euwe Centrum",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/1310554563",
+   "lat": 52.360639,
+   "lng": 4.900116,
+   "tags": {
+    "name": "Anthony Winkler Prins",
+    "historic": "memorial",
+    "wikidata": "Q56395614",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1310974825",
+   "lat": 52.371762,
+   "lng": 4.896959,
+   "tags": {
+    "name": "Hash Marihuana & Hemp Museum",
+    "name:en": "Hash Marihuana & Hemp Museum",
+    "tourism": "museum",
+    "opening_hours": "10:00-22:00",
+    "website": "https://hashmuseum.com/amsterdam",
+    "wikidata": "Q3783595",
+    "wikipedia": "nl:Hash Marihuana & Hemp Museum",
+    "addr:housenumber": "148",
+    "addr:street": "Oudezijds Achterburgwal",
+    "addr:postcode": "1012DV",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/13243317065",
+   "lat": 52.37558,
+   "lng": 4.899605,
+   "tags": {
+    "name": "Het Majoor Bosshardthuis",
+    "tourism": "museum",
+    "website": "https://www.majoorbosshardthuis.nl/",
+    "addr:housenumber": "19",
+    "addr:street": "Oudezijds Armsteeg",
+    "addr:postcode": "1012GP",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/13391749758",
+   "lat": 52.366222,
+   "lng": 4.892698,
+   "tags": {
+    "name": "Galerie WIHH",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 12:00-18:00",
+    "website": "https://www.whatishappeninghere.com",
+    "addr:housenumber": "73",
+    "addr:street": "Reguliersdwarsstraat",
+    "addr:postcode": "1017BK"
+   }
+  },
+  {
+   "id": "node/13394945621",
+   "lat": 52.38004,
+   "lng": 4.886014,
+   "tags": {
+    "name": "boxxx",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/1351488785",
+   "lat": 52.371635,
+   "lng": 4.938714,
+   "tags": {
+    "name": "Biologische woensdagmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "We 10:00-18:00"
+   }
+  },
+  {
+   "id": "node/13788973601",
+   "lat": 52.401351,
+   "lng": 4.933842,
+   "tags": {
+    "name": "KiMu",
+    "tourism": "museum",
+    "opening_hours": "We 10:00-18:00; Sa-Su 10:00-17:00",
+    "website": "https://www.kimu.nl/",
+    "addr:housenumber": "487",
+    "addr:street": "Termini",
+    "addr:postcode": "1025XM"
+   }
+  },
+  {
+   "id": "node/13790249844",
+   "lat": 52.378763,
+   "lng": 4.879504,
+   "tags": {
+    "name": "Marjan de Voogd Porcelain",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/13792107302",
+   "lat": 52.384441,
+   "lng": 4.92888,
+   "tags": {
+    "name": "PARK",
+    "tourism": "theme_park",
+    "website": "https://parkamsterdam.nl",
+    "addr:housenumber": "38",
+    "addr:street": "Aambeeldstraat",
+    "addr:postcode": "1021KB"
+   }
+  },
+  {
+   "id": "node/13874687468",
+   "lat": 52.359043,
+   "lng": 4.881282,
+   "tags": {
+    "name": "House of Bols",
+    "tourism": "museum",
+    "website": "https://www.houseofbols.com",
+    "addr:housenumber": "14",
+    "addr:street": "Paulus Potterstraat",
+    "addr:postcode": "1071CZ",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/13994515293",
+   "lat": 52.384834,
+   "lng": 4.870896,
+   "tags": {
+    "name": "Art Inside",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/14020161727",
+   "lat": 52.386131,
+   "lng": 4.873156,
+   "tags": {
+    "name": "Museum Amsterdam in motion",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/14108449042",
+   "lat": 52.353587,
+   "lng": 4.923853,
+   "tags": {
+    "name": "Flor de Simpang-club",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "node/1453925355",
+   "lat": 52.378563,
+   "lng": 4.845785,
+   "tags": {
+    "name": "Bos en Lommerplein markt",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-We, Fr 09:00-18:00; Th 09:00-20:00; Sa 09:00-17:00",
+    "website": "https://www.bosenlommerplein.com/",
+    "addr:housenumber": "23b",
+    "addr:street": "Leeuwendalersweg",
+    "addr:postcode": "1055JE"
+   }
+  },
+  {
+   "id": "node/1503919213",
+   "lat": 52.372553,
+   "lng": 4.900089,
+   "tags": {
+    "name": "Nieuwmarkt",
+    "name:en": "New Market",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Fr 10:00-18:30; Sa 09:00-18:30; Su 09:00-17:00",
+    "website": "https://amsterdamnieuwmarkt.nl/markt/",
+    "wikidata": "Q1568693",
+    "wikipedia": "nl:Nieuwmarkt (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1515589705",
+   "lat": 52.345568,
+   "lng": 4.900234,
+   "tags": {
+    "name": "Anne Frank",
+    "historic": "memorial",
+    "wikidata": "Q27929393",
+    "wikipedia": "nl:Beeld van Anne Frank (Merwedeplein)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1574833853",
+   "lat": 52.355494,
+   "lng": 4.82679,
+   "tags": {
+    "name": "Bevrijde vogel",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q116684020",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/1603111723",
+   "lat": 52.348162,
+   "lng": 4.883511,
+   "tags": {
+    "name": "Monument voor de Canadese militairen",
+    "name:en": "Amsterdam Memorial to the Canadian Liberators",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q2203950",
+    "wikipedia": "nl:Amsterdam dankt zijn Canadezen"
+   }
+  },
+  {
+   "id": "node/1611202846",
+   "lat": 52.368622,
+   "lng": 4.901193,
+   "tags": {
+    "name": "Waterloopleinmarkt",
+    "name:en": "Waterlooplein Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 09:30-18:00"
+   }
+  },
+  {
+   "id": "node/1727571380",
+   "lat": 52.370153,
+   "lng": 4.882602,
+   "tags": {
+    "name": "Houseboat Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.houseboatmuseum.nl",
+    "wikidata": "Q14544962",
+    "addr:housenumber": "296K",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1016HW",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1758868082",
+   "lat": 52.359251,
+   "lng": 4.874418,
+   "tags": {
+    "name": "Mama Baranka (Moeder Rots)",
+    "historic": "memorial",
+    "website": "https://amsterdam.kunstwacht.nl/kunstwerken/bekijk/471-mama-baranka",
+    "wikidata": "Q77924636",
+    "wikipedia": "nl:Mama Baranka",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1843775915",
+   "lat": 52.36761,
+   "lng": 4.898855,
+   "tags": {
+    "name": "Monument Joods Verzet 1940-'45",
+    "name:en": "Jewish WW2 resistance memorial",
+    "historic": "memorial",
+    "wikidata": "Q2280024",
+    "wikipedia": "nl:Joods Verzetsmonument",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/1843810119",
+   "lat": 52.374343,
+   "lng": 4.883535,
+   "tags": {
+    "name": "Anne Frank",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q28873418",
+    "wikipedia": "nl:Beeld van Anne Frank (Westermarkt)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/1982750021",
+   "lat": 52.378619,
+   "lng": 4.883635,
+   "tags": {
+    "name": "Pianola Museum",
+    "name:en": "Pianola Museum",
+    "tourism": "museum",
+    "opening_hours": "Fr,Sa 13:00-17:00; Su 13:00-16:00",
+    "website": "https://www.pianola.nl",
+    "wikidata": "Q15124806",
+    "addr:housenumber": "106",
+    "addr:street": "Westerstraat",
+    "addr:postcode": "1015MN"
+   }
+  },
+  {
+   "id": "node/2291985786",
+   "lat": 52.367195,
+   "lng": 4.892703,
+   "tags": {
+    "name": "Het Muizenhuis",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-18:00; PH 10:00-17:00; Apr 27 off",
+    "website": "https://hetmuizenhuis.nl/pages/mini-museum-kom-op-bezoek-het-muizenhuis",
+    "addr:housenumber": "8",
+    "addr:street": "Muntplein",
+    "addr:postcode": "1012WR",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2323985111",
+   "lat": 52.362032,
+   "lng": 4.886836,
+   "tags": {
+    "name": "van der Laag",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/249443118",
+   "lat": 52.344915,
+   "lng": 4.90797,
+   "tags": {
+    "name": "Samen Spelen Samen Leven",
+    "historic": "memorial",
+    "wikidata": "Q76531090",
+    "wikipedia": "nl:Kindermonument Markt voor Joden"
+   }
+  },
+  {
+   "id": "node/2505986109",
+   "lat": 52.358745,
+   "lng": 4.890086,
+   "tags": {
+    "name": "Fusillade",
+    "historic": "memorial",
+    "wikidata": "Q22329084",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/250624672",
+   "lat": 52.363988,
+   "lng": 4.893263,
+   "tags": {
+    "name": "foam",
+    "tourism": "museum",
+    "opening_hours": "Sa-We 10:00-18:00; Th-Fr 10:00-21:00",
+    "website": "https://www.foam.org/",
+    "wikidata": "Q5422840",
+    "wikipedia": "nl:Foam Fotografiemuseum Amsterdam",
+    "addr:housenumber": "609",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1017DS",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/250624673",
+   "lat": 52.369369,
+   "lng": 4.90125,
+   "tags": {
+    "name": "Rembrandthuis",
+    "name:en": "Rembrandt House",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; Jan 05-Feb 13 10:00-17:00; Feb 14-Mar 27 10:00-18:00; Mar 28-May 10 10:00-19:00; May 11-Nov 01 10:00-18:00; Nov 02-Dec 18 10:00-17:00; Dec 19-31 10:00-18:00; Apr 27 off; Dec 25 off; Dec 24 10:00-17:00; Dec 31 10:00-17:00",
+    "website": "https://www.rembrandthuis.nl",
+    "wikidata": "Q277316",
+    "wikipedia": "nl:Rembrandthuis",
+    "addr:housenumber": "4",
+    "addr:street": "Jodenbreestraat",
+    "addr:postcode": "1011NK",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2506563644",
+   "lat": 52.349862,
+   "lng": 4.89904,
+   "tags": {
+    "name": "Museum De Dageraad",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 13:00-17:00",
+    "website": "https://www.dedageraad.nl",
+    "wikidata": "Q17234586",
+    "wikipedia": "nl:De Dageraad (Amsterdam)",
+    "addr:housenumber": "128",
+    "addr:street": "Burgemeester Tellegenstraat",
+    "addr:postcode": "1073KG",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/251147170",
+   "lat": 52.376582,
+   "lng": 4.897275,
+   "tags": {
+    "name": "Venustempel Sexmuseum",
+    "name:en": "Sexmuseum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://sexmuseumamsterdam.nl/",
+    "wikidata": "Q3329876",
+    "wikipedia": "nl:Sexmuseum",
+    "addr:housenumber": "18",
+    "addr:street": "Damrak",
+    "addr:postcode": "1012LH",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/251528292",
+   "lat": 52.370198,
+   "lng": 4.892168,
+   "tags": {
+    "name": "The Amsterdam Dungeon",
+    "name:en": "The Amsterdam Dungeon",
+    "tourism": "attraction",
+    "opening_hours": "Su-Th 11:00-18:00; Fr-Sa 11:00-19:00",
+    "website": "https://www.thedungeons.com/amsterdam/en/",
+    "wikidata": "Q2134254",
+    "wikipedia": "nl:Amsterdam Dungeon",
+    "addr:housenumber": "78",
+    "addr:street": "Rokin",
+    "addr:postcode": "1012KW",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2631625098",
+   "lat": 52.375617,
+   "lng": 4.880796,
+   "tags": {
+    "name": "Electric Ladyland",
+    "tourism": "museum",
+    "opening_hours": "Tu-Sa 14:00-18:00",
+    "website": "http://electric-lady-land.com/",
+    "wikidata": "Q41574019",
+    "wikipedia": "en:Electric Ladyland (museum)",
+    "addr:housenumber": "5",
+    "addr:street": "Tweede Leliedwarsstraat",
+    "addr:postcode": "1015TB",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2655813687",
+   "lat": 52.350509,
+   "lng": 4.899041,
+   "tags": {
+    "name": "Van Buurenmonument",
+    "historic": "memorial",
+    "wikidata": "Q17292273",
+    "wikipedia": "nl:Van Buurenmonument",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/26611707",
+   "lat": 52.362688,
+   "lng": 4.92244,
+   "tags": {
+    "name": "Wereldmuseum Amsterdam",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-17:00",
+    "website": "https://amsterdam.wereldmuseum.nl/",
+    "wikidata": "Q1131589",
+    "wikipedia": "nl:Wereldmuseum Amsterdam",
+    "addr:housenumber": "2",
+    "addr:street": "Linnaeusstraat",
+    "addr:postcode": "1092CK",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2720811704",
+   "lat": 52.380364,
+   "lng": 4.884635,
+   "tags": {
+    "name": "Kersgallery",
+    "tourism": "gallery",
+    "addr:housenumber": "148-H",
+    "addr:street": "Lindengracht",
+    "addr:postcode": "1015KK",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2720881874",
+   "lat": 52.378923,
+   "lng": 4.885406,
+   "tags": {
+    "name": "Marion Bloem",
+    "tourism": "gallery",
+    "addr:housenumber": "28-H",
+    "addr:street": "Westerstraat",
+    "addr:postcode": "1015MK"
+   }
+  },
+  {
+   "id": "node/2720883245",
+   "lat": 52.377851,
+   "lng": 4.883489,
+   "tags": {
+    "name": "KochxBos Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-18:00",
+    "website": "https://kochxbos.com",
+    "addr:housenumber": "36",
+    "addr:street": "Eerste Anjeliersdwarsstraat",
+    "addr:postcode": "1015NR"
+   }
+  },
+  {
+   "id": "node/2720888389",
+   "lat": 52.377203,
+   "lng": 4.879091,
+   "tags": {
+    "name": "Atelier Jérôme Schlomoff",
+    "tourism": "gallery",
+    "addr:housenumber": "66-H",
+    "addr:street": "Lijnbaansgracht",
+    "addr:postcode": "1015GV"
+   }
+  },
+  {
+   "id": "node/2720969322",
+   "lat": 52.376385,
+   "lng": 4.884233,
+   "tags": {
+    "name": "Amsterdam Cheese Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Sa 09:00-22:00; Su 09:00-21:00",
+    "website": "https://www.cheesemuseumamsterdam.com/",
+    "addr:housenumber": "112",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1015EA",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2720969403",
+   "lat": 52.376317,
+   "lng": 4.884175,
+   "tags": {
+    "name": "Amsterdam Tulip Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://amsterdamtulipmuseum.com",
+    "wikidata": "Q2020907",
+    "wikipedia": "nl:Amsterdam Tulip Museum",
+    "addr:housenumber": "116",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1015EA",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2721575004",
+   "lat": 52.380659,
+   "lng": 4.89092,
+   "tags": {
+    "name": "Gallery 100",
+    "tourism": "gallery",
+    "opening_hours": "Th-Su 13:00-18:00",
+    "website": "https://www.gallery100.com",
+    "addr:housenumber": "100-H",
+    "addr:street": "Haarlemmerstraat",
+    "addr:postcode": "1013EW",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2721723103",
+   "lat": 52.374896,
+   "lng": 4.892495,
+   "tags": {
+    "name": "Galerie Carolien O'Breen",
+    "tourism": "gallery",
+    "opening_hours": "We-Fr 12:00-18:00; Sa 13:00-18:00",
+    "website": "https://carolineobreen.com/",
+    "addr:housenumber": "54",
+    "addr:street": "Sint Nicolaasstraat",
+    "addr:postcode": "1012NK"
+   }
+  },
+  {
+   "id": "node/2721723210",
+   "lat": 52.374753,
+   "lng": 4.894891,
+   "tags": {
+    "name": "Body Worlds",
+    "tourism": "museum",
+    "opening_hours": "Su-Fr 09:00-20:00; Sa 09:00-22:00",
+    "website": "https://bodyworlds.nl/en",
+    "addr:housenumber": "66",
+    "addr:street": "Damrak",
+    "addr:postcode": "1012LM",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2721771431",
+   "lat": 52.376823,
+   "lng": 4.895485,
+   "tags": {
+    "name": "Dead End AI Gallery",
+    "tourism": "gallery",
+    "website": "https://www.deadendgallery.nl/",
+    "addr:housenumber": "16A",
+    "addr:street": "Oude Braak",
+    "addr:postcode": "1012PS"
+   }
+  },
+  {
+   "id": "node/2721822615",
+   "lat": 52.370148,
+   "lng": 4.881823,
+   "tags": {
+    "name": "Galerie Bart",
+    "tourism": "gallery",
+    "opening_hours": "Mo-We off; Th-Su 13:00-18:00",
+    "website": "https://www.galeriebart.nl",
+    "addr:housenumber": "16",
+    "addr:street": "Elandsgracht",
+    "addr:postcode": "1016TW"
+   }
+  },
+  {
+   "id": "node/2721942970",
+   "lat": 52.36999,
+   "lng": 4.884254,
+   "tags": {
+    "name": "Felix Meritis",
+    "tourism": "attraction",
+    "amenity": "community_centre",
+    "opening_hours": "\"depends on the even\"",
+    "website": "https://felixmeritis.nl",
+    "wikidata": "Q2920003",
+    "wikipedia": "nl:Felix Meritis",
+    "addr:housenumber": "324",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1016EZ",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2722211473",
+   "lat": 52.370192,
+   "lng": 4.889538,
+   "tags": {
+    "name": "The Amsterdam Toy Museum",
+    "tourism": "museum",
+    "website": "https://theamsterdamtoymuseum.com/",
+    "addr:housenumber": "310",
+    "addr:street": "Nieuwezijds Voorburgwal",
+    "addr:postcode": "1012RV"
+   }
+  },
+  {
+   "id": "node/2724000727",
+   "lat": 52.369115,
+   "lng": 4.889711,
+   "tags": {
+    "name": "Houten Huis",
+    "tourism": "attraction",
+    "wikidata": "Q2200239",
+    "wikipedia": "nl:Het Houten Huys",
+    "addr:housenumber": "34",
+    "addr:street": "Begijnhof",
+    "addr:postcode": "1012WV"
+   }
+  },
+  {
+   "id": "node/2724102309",
+   "lat": 52.368464,
+   "lng": 4.893243,
+   "tags": {
+    "name": "UvA Bijzondere Collecties",
+    "name:en": "Bijzondere Collecties",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-17:00",
+    "website": "https://bijzonderecollecties.uva.nl",
+    "wikidata": "Q2100495",
+    "wikipedia": "nl:Bijzondere Collecties van de Universiteit van Amsterdam",
+    "addr:housenumber": "129",
+    "addr:street": "Oude Turfmarkt",
+    "addr:postcode": "1012GC",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2724249689",
+   "lat": 52.372474,
+   "lng": 4.89358,
+   "tags": {
+    "name": "Ripley's Believe It or Not",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-21:00",
+    "website": "https://www.ripleys.com/amsterdam",
+    "addr:housenumber": "21",
+    "addr:street": "Dam",
+    "addr:postcode": "1012JS",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2724283878",
+   "lat": 52.373751,
+   "lng": 4.895988,
+   "tags": {
+    "name": "W139",
+    "tourism": "gallery",
+    "website": "https://w139.nl",
+    "wikidata": "Q2429597",
+    "wikipedia": "nl:W139",
+    "addr:housenumber": "139",
+    "addr:street": "Warmoesstraat",
+    "addr:postcode": "1012JB"
+   }
+  },
+  {
+   "id": "node/2724369153",
+   "lat": 52.372112,
+   "lng": 4.897255,
+   "tags": {
+    "name": "Hemp Gallery",
+    "tourism": "museum",
+    "website": "https://hashmuseum.com/en/amsterdam/hemp-gallery",
+    "addr:housenumber": "130",
+    "addr:street": "Oudezijds Achterburgwal",
+    "addr:postcode": "1012DT",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2725914421",
+   "lat": 52.365606,
+   "lng": 4.891548,
+   "tags": {
+    "name": "Kattenkabinet",
+    "name:en": "Cat Cabinet",
+    "tourism": "museum",
+    "opening_hours": "Sa,Su 12:00-17:00; Mo-Fr 10:00-17:00",
+    "website": "https://www.kattenkabinet.nl/",
+    "wikidata": "Q2916386",
+    "wikipedia": "nl:KattenKabinet",
+    "addr:housenumber": "497",
+    "addr:street": "Herengracht",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2729937250",
+   "lat": 52.364369,
+   "lng": 4.887286,
+   "tags": {
+    "name": "Slewe Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-18:00",
+    "website": "https://slewe.nl",
+    "addr:housenumber": "105A-H",
+    "addr:street": "Kerkstraat",
+    "addr:postcode": "1017GD"
+   }
+  },
+  {
+   "id": "node/2729938472",
+   "lat": 52.363808,
+   "lng": 4.888919,
+   "tags": {
+    "name": "Villa del Arte",
+    "tourism": "gallery",
+    "opening_hours": "Mo-Su 10:30-18:30",
+    "website": "https://villadelarte.com",
+    "addr:housenumber": "34",
+    "addr:street": "Nieuwe Spiegelstraat",
+    "addr:postcode": "1017DG",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/2736376527",
+   "lat": 52.363805,
+   "lng": 4.889132,
+   "tags": {
+    "name": "Jaski Gallery",
+    "tourism": "gallery",
+    "opening_hours": "Mo off; Tu-Su 12:00-18:00",
+    "website": "https://www.jaski.nl",
+    "addr:housenumber": "29",
+    "addr:street": "Nieuwe Spiegelstraat",
+    "addr:postcode": "1017DB",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2736378567",
+   "lat": 52.363407,
+   "lng": 4.893813,
+   "tags": {
+    "name": "Museum of Illusions",
+    "tourism": "museum",
+    "addr:housenumber": "676",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1017ET"
+   }
+  },
+  {
+   "id": "node/2737805178",
+   "lat": 52.365053,
+   "lng": 4.90068,
+   "tags": {
+    "name": "Collectie Six",
+    "tourism": "museum",
+    "opening_hours": "\"only after reservation\"",
+    "website": "https://collectiesix.nl",
+    "wikidata": "Q2370540",
+    "wikipedia": "nl:Collectie Six",
+    "addr:housenumber": "218",
+    "addr:street": "Amstel",
+    "addr:postcode": "1017AJ",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2741083161",
+   "lat": 52.373853,
+   "lng": 4.912111,
+   "tags": {
+    "name": "Nemo",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 09:30-17:30",
+    "website": "https://www.nemosciencemuseum.nl",
+    "wikidata": "Q1422000",
+    "wikipedia": "nl:NEMO Science Museum",
+    "addr:housenumber": "2",
+    "addr:street": "Oosterdok",
+    "addr:postcode": "1011VX",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2741083668",
+   "lat": 52.371509,
+   "lng": 4.912474,
+   "tags": {
+    "name": "Arcam",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 13:00-17:00",
+    "website": "https://www.arcam.nl/",
+    "wikidata": "Q2098441",
+    "wikipedia": "nl:ARCAM",
+    "addr:housenumber": "600",
+    "addr:street": "Prins Hendrikkade",
+    "addr:postcode": "1011VX",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2742811299",
+   "lat": 52.365652,
+   "lng": 4.902214,
+   "tags": {
+    "name": "H'ART Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; Dec 25,Jan 1 12:00-17:00",
+    "website": "https://hartmuseum.nl",
+    "wikidata": "Q1350009",
+    "wikipedia": "nl:H'ART Museum",
+    "addr:housenumber": "51",
+    "addr:street": "Amstel",
+    "addr:postcode": "1018EJ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2742863349",
+   "lat": 52.362935,
+   "lng": 4.917793,
+   "tags": {
+    "name": "Rijksakademie van beeldende kunsten",
+    "tourism": "gallery",
+    "website": "https://www.rijksakademie.nl/",
+    "wikidata": "Q1321672",
+    "addr:housenumber": "470",
+    "addr:street": "Sarphatistraat",
+    "addr:postcode": "1018GW"
+   }
+  },
+  {
+   "id": "node/2742884279",
+   "lat": 52.366872,
+   "lng": 4.91101,
+   "tags": {
+    "name": "Nationaal Holocaustmuseum",
+    "name:en": "National Holocaust Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://jck.nl/locatie/nationaal-holocaustmuseum",
+    "wikidata": "Q26822174",
+    "addr:housenumber": "27",
+    "addr:street": "Plantage Middenlaan",
+    "addr:postcode": "1018DB",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2742996045",
+   "lat": 52.36615,
+   "lng": 4.913129,
+   "tags": {
+    "name": "Groote Museum",
+    "tourism": "museum",
+    "opening_hours": "10:00-17:00; Tu 10:00-22:00",
+    "website": "https://www.grootemuseum.nl/",
+    "wikidata": "Q115172749",
+    "wikipedia": "nl:Groote Museum (Artis)",
+    "addr:housenumber": "41A",
+    "addr:street": "Plantage Middenlaan",
+    "addr:postcode": "1018DC",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2743107412",
+   "lat": 52.370994,
+   "lng": 4.932272,
+   "tags": {
+    "name": "NEVERNEVERLAND",
+    "tourism": "gallery",
+    "website": "https://www.nevernever.nl",
+    "addr:housenumber": "70",
+    "addr:street": "Frans de Wollantstraat",
+    "addr:postcode": "1018SC"
+   }
+  },
+  {
+   "id": "node/2743545086",
+   "lat": 52.368653,
+   "lng": 4.914747,
+   "tags": {
+    "name": "Gallerie Weerdruk",
+    "tourism": "gallery",
+    "website": "https://www.weerdruk.nl/galerie-weerdruk/",
+    "addr:housenumber": "42A",
+    "addr:street": "Entrepotdok",
+    "addr:postcode": "1018AD"
+   }
+  },
+  {
+   "id": "node/2745499790",
+   "lat": 52.387491,
+   "lng": 4.885537,
+   "tags": {
+    "name": "Galerie Van Gelder",
+    "tourism": "gallery",
+    "website": "http://www.galerievangelder.com",
+    "addr:housenumber": "9A",
+    "addr:street": "Planciusstraat",
+    "addr:postcode": "1013MD"
+   }
+  },
+  {
+   "id": "node/275445586",
+   "lat": 52.354103,
+   "lng": 4.86287,
+   "tags": {
+    "name": "Koningin Emma",
+    "historic": "memorial",
+    "wikidata": "Q3061423",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2788448922",
+   "lat": 52.38738,
+   "lng": 4.865328,
+   "tags": {
+    "name": "Boerderij Westerpark",
+    "tourism": "zoo",
+    "opening_hours": "Tu-Fr 10:00-15:00",
+    "website": "https://boerderijwesterpark.nl/",
+    "addr:housenumber": "10",
+    "addr:street": "Overbrakerpad",
+    "addr:postcode": "1014AZ",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/280067059",
+   "lat": 52.344886,
+   "lng": 4.856155,
+   "tags": {
+    "name": "Olympiahuis",
+    "tourism": "attraction",
+    "wikidata": "Q993056",
+    "wikipedia": "nl:Olympiahuisje",
+    "addr:housenumber": "2",
+    "addr:street": "Stadionplein",
+    "addr:postcode": "1076CM"
+   }
+  },
+  {
+   "id": "node/2808551139",
+   "lat": 52.383073,
+   "lng": 4.842803,
+   "tags": {
+    "name": "De Bouwput",
+    "tourism": "gallery",
+    "website": "https://debouwput.com",
+    "addr:housenumber": "74",
+    "addr:street": "Ferdinand Huyckstraat",
+    "addr:postcode": "1061HW"
+   }
+  },
+  {
+   "id": "node/2812753276",
+   "lat": 52.379227,
+   "lng": 4.923318,
+   "tags": {
+    "name": "Java-Blend Amsterdam",
+    "tourism": "gallery",
+    "amenity": "cafe",
+    "opening_hours": "Mo-Tu 08:30-16:00, We-Fr 08:30-20:00; Sa-Su 10:00-20:00",
+    "addr:housenumber": "1",
+    "addr:street": "Tosaristraat",
+    "addr:postcode": "1019RT",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2816348371",
+   "lat": 52.377627,
+   "lng": 4.91633,
+   "tags": {
+    "name": "IJ-toren",
+    "tourism": "attraction",
+    "wikidata": "Q2050341",
+    "wikipedia": "nl:IJ-toren",
+    "addr:housenumber": "55",
+    "addr:street": "Piet Heinkade",
+    "addr:postcode": "1019GM"
+   }
+  },
+  {
+   "id": "node/2816504554",
+   "lat": 52.358716,
+   "lng": 4.881962,
+   "tags": {
+    "name": "Moco Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Th, Su 09:00-19:00; Fr, Sa 09:00-20:00",
+    "website": "https://mocomuseum.com/",
+    "wikidata": "Q26832671",
+    "wikipedia": "nl:Moco Museum",
+    "addr:housenumber": "20",
+    "addr:street": "Honthorststraat",
+    "addr:postcode": "1071DE",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/2817453537",
+   "lat": 52.357399,
+   "lng": 4.88861,
+   "tags": {
+    "name": "Galerie van Campen",
+    "tourism": "gallery",
+    "opening_hours": "Sa 12:00-17:00 || \"By appointment\"",
+    "addr:housenumber": "34-H",
+    "addr:street": "Eerste Jacob van Campenstraat",
+    "addr:postcode": "1072BE",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2817510118",
+   "lat": 52.357503,
+   "lng": 4.898591,
+   "tags": {
+    "name": "Home Couture by Bernie",
+    "tourism": "gallery",
+    "opening_hours": "\"By appointment\"",
+    "website": "https://homecouturebybernie.com",
+    "addr:housenumber": "116-H",
+    "addr:street": "Stadhouderskade",
+    "addr:postcode": "1073AZ"
+   }
+  },
+  {
+   "id": "node/2817512397",
+   "lat": 52.356238,
+   "lng": 4.894796,
+   "tags": {
+    "name": "Studio Stefan Scholten",
+    "tourism": "gallery",
+    "website": "https://www.stefanscholten.com/",
+    "addr:housenumber": "166-H",
+    "addr:street": "Gerard Doustraat",
+    "addr:postcode": "1073VZ"
+   }
+  },
+  {
+   "id": "node/2817515795",
+   "lat": 52.35784,
+   "lng": 4.891784,
+   "tags": {
+    "name": "Heineken Experience",
+    "name:en": "Heineken Experience",
+    "tourism": "museum",
+    "opening_hours": "Mo-Th 10:30-19:30; Fr-Su 10:30-21:00",
+    "website": "https://heineken.com/Heineken-Experience",
+    "wikidata": "Q2087161",
+    "wikipedia": "nl:Heineken Experience",
+    "addr:housenumber": "78",
+    "addr:street": "Stadhouderskade",
+    "addr:postcode": "1072AE",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/2817533884",
+   "lat": 52.357791,
+   "lng": 4.899916,
+   "tags": {
+    "name": "Fabric Inspired X Artitude",
+    "tourism": "gallery",
+    "opening_hours": "\"By appointment\"",
+    "addr:housenumber": "127-H",
+    "addr:street": "Stadhouderskade",
+    "addr:postcode": "1074AV"
+   }
+  },
+  {
+   "id": "node/2817535568",
+   "lat": 52.356266,
+   "lng": 4.901141,
+   "tags": {
+    "name": "Wim Heldens Atelier/Studio",
+    "tourism": "gallery",
+    "opening_hours": "\"By appointment\"",
+    "website": "https://www.wimheldens.com",
+    "addr:housenumber": "56-H",
+    "addr:street": "Tweede Jan Steenstraat",
+    "addr:postcode": "1074CP"
+   }
+  },
+  {
+   "id": "node/2817558030",
+   "lat": 52.355874,
+   "lng": 4.896647,
+   "tags": {
+    "name": "Kijkpunt muPe",
+    "tourism": "gallery",
+    "opening_hours": "Fr-Sa 13:00-18:00",
+    "website": "http://mathilde.mupe.nl",
+    "addr:housenumber": "227-H",
+    "addr:street": "Govert Flinckstraat",
+    "addr:postcode": "1073BW"
+   }
+  },
+  {
+   "id": "node/2826851966",
+   "lat": 52.362291,
+   "lng": 4.926446,
+   "tags": {
+    "name": "Daniela Kastavarac",
+    "tourism": "gallery",
+    "addr:housenumber": "44A",
+    "addr:street": "Eerste Van Swindenstraat",
+    "addr:postcode": "1093GE"
+   }
+  },
+  {
+   "id": "node/2829444231",
+   "lat": 52.35409,
+   "lng": 4.944791,
+   "tags": {
+    "name": "Kinderboerderij De Werf",
+    "tourism": "zoo",
+    "opening_hours": "11:00-17:00",
+    "website": "https://www.kinderboerderij-de-werf.nl",
+    "addr:housenumber": "59",
+    "addr:street": "Archimedeslaan",
+    "addr:postcode": "1098PX",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "node/2839358054",
+   "lat": 52.346084,
+   "lng": 4.938307,
+   "tags": {
+    "name": "Tot Zover",
+    "name:en": "Funerary museum",
+    "tourism": "museum",
+    "opening_hours": "We-Su 11:00-17:00",
+    "website": "https://www.totzover.nl/",
+    "wikidata": "Q2383603",
+    "wikipedia": "nl:Nederlands Uitvaart Museum Tot Zover",
+    "addr:housenumber": "124",
+    "addr:street": "Kruislaan",
+    "addr:postcode": "1097GA",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2847159974",
+   "lat": 52.391194,
+   "lng": 4.904037,
+   "tags": {
+    "name": "Nxt Museum",
+    "tourism": "museum",
+    "opening_hours": "Su,We-Th 11:00-20:30; Fr-Sa 11:00-22:30",
+    "website": "https://nxtmuseum.com",
+    "addr:housenumber": "22",
+    "addr:street": "Asterweg",
+    "addr:postcode": "1031HP",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/2848801798",
+   "lat": 52.388188,
+   "lng": 4.926006,
+   "tags": {
+    "name": "Museum Amsterdam Noord",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 13:00-17:00; Mo-We off",
+    "website": "https://museumamsterdamnoord.nl/",
+    "wikidata": "Q2787871",
+    "wikipedia": "nl:Museum Amsterdam-Noord",
+    "addr:housenumber": "28A",
+    "addr:street": "Zamenhofstraat",
+    "addr:postcode": "1022AD",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/286575969",
+   "lat": 52.358647,
+   "lng": 4.891456,
+   "tags": {
+    "name": "Van Randwijk-monument",
+    "historic": "memorial",
+    "wikidata": "Q62109549",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/287752748",
+   "lat": 52.374714,
+   "lng": 4.889431,
+   "tags": {
+    "name": "Multatuli",
+    "historic": "memorial",
+    "wikidata": "Q105071883"
+   }
+  },
+  {
+   "id": "node/290735740",
+   "lat": 52.366453,
+   "lng": 4.916424,
+   "tags": {
+    "name": "Westerman Monument",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q91023695"
+   }
+  },
+  {
+   "id": "node/295868730",
+   "lat": 52.366004,
+   "lng": 4.896595,
+   "tags": {
+    "name": "Rembrandt",
+    "name:en": "Rembrandt van Rijn statue",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q17302737",
+    "wikipedia": "nl:Rembrandtmonument",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3096322936",
+   "lat": 52.356536,
+   "lng": 4.881376,
+   "tags": {
+    "name": "Zigeunermonument - Hel en Vuur",
+    "historic": "memorial",
+    "wikidata": "Q2311026",
+    "wikipedia": "nl:Zigeunermonument Hel en vuur"
+   }
+  },
+  {
+   "id": "node/34050744",
+   "lat": 52.365603,
+   "lng": 4.899015,
+   "tags": {
+    "name": "Willet-Holthuysen",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa-Su 11:00-17:00",
+    "website": "https://www.willetholthuysen.nl/",
+    "wikidata": "Q1886176",
+    "wikipedia": "nl:Huis Willet-Holthuysen",
+    "addr:housenumber": "605",
+    "addr:street": "Herengracht",
+    "addr:postcode": "1017CE",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/34050759",
+   "lat": 52.363464,
+   "lng": 4.893378,
+   "tags": {
+    "name": "Museum Van Loon",
+    "name:en": "Museum Van Loon",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; Dec 24,31 10:00-15:00; Apr 27,Dec 25,Jan 1 off",
+    "website": "https://www.museumvanloon.nl/",
+    "wikidata": "Q2191110",
+    "wikipedia": "nl:Museum Van Loon",
+    "addr:housenumber": "672",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1017ET",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/34050776",
+   "lat": 52.366153,
+   "lng": 4.927969,
+   "tags": {
+    "name": "Museum Suriname",
+    "tourism": "museum",
+    "website": "https://surinamemuseum.nl/",
+    "addr:housenumber": "19-21",
+    "addr:street": "Zeeburgerdijk",
+    "addr:postcode": "1093SK"
+   }
+  },
+  {
+   "id": "node/34050787",
+   "lat": 52.375521,
+   "lng": 4.882688,
+   "tags": {
+    "name": "Theo Thijssen Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 12:00-17:00",
+    "website": "https://theothijssenmuseum.nl",
+    "wikidata": "Q111154596",
+    "wikipedia": "nl:Theo Thijssen Museum",
+    "addr:housenumber": "16",
+    "addr:street": "Eerste Leliedwarsstraat",
+    "addr:postcode": "1015TA",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/34050790",
+   "lat": 52.370431,
+   "lng": 4.890429,
+   "tags": {
+    "name": "Amsterdam Museum",
+    "name:en": "Amsterdam Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.amsterdammuseum.nl/",
+    "wikidata": "Q1820897",
+    "wikipedia": "nl:Amsterdam Museum",
+    "addr:housenumber": "92",
+    "addr:street": "Kalverstraat",
+    "addr:postcode": "1012PH",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/34050791",
+   "lat": 52.368805,
+   "lng": 4.893055,
+   "tags": {
+    "name": "Allard Pierson Museum",
+    "name:en": "Allard Pierson Museum",
+    "tourism": "museum",
+    "website": "https://allardpierson.nl/",
+    "wikidata": "Q1244372",
+    "wikipedia": "nl:Allard Pierson Museum",
+    "addr:housenumber": "127",
+    "addr:street": "Oude Turfmarkt",
+    "addr:postcode": "1012GC",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/34051159",
+   "lat": 52.367196,
+   "lng": 4.905015,
+   "tags": {
+    "name": "De Dokwerker",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q1179838",
+    "wikipedia": "nl:De Dokwerker",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3695000426",
+   "lat": 52.377584,
+   "lng": 4.895312,
+   "tags": {
+    "name": "Annick van Hardeveld",
+    "historic": "memorial",
+    "wikidata": "Q106769973",
+    "wikipedia": "nl:Monument voor Annick van Hardeveld"
+   }
+  },
+  {
+   "id": "node/3718945686",
+   "lat": 52.367832,
+   "lng": 4.867647,
+   "tags": {
+    "name": "P.W. Janssen",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q109837768",
+    "wikipedia": "nl:Monument Peter Wilhelm Janssen",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/3769314876",
+   "lat": 52.37123,
+   "lng": 4.89771,
+   "tags": {
+    "name": "Walenpoortje",
+    "name:en": "Walen Gate",
+    "tourism": "attraction",
+    "wikidata": "Q17288856"
+   }
+  },
+  {
+   "id": "node/383293393",
+   "lat": 52.333962,
+   "lng": 4.898396,
+   "tags": {
+    "name": "Rozenoord",
+    "historic": "memorial",
+    "wikidata": "Q4465231",
+    "wikipedia": "nl:Fusilladeplaats Rozenoord"
+   }
+  },
+  {
+   "id": "node/3974788765",
+   "lat": 52.384671,
+   "lng": 4.864302,
+   "tags": {
+    "name": "Banksy museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 07:00-17:00",
+    "website": "https://museumbanksy.nl",
+    "addr:housenumber": "8",
+    "addr:street": "Van Slingelandtplein",
+    "addr:postcode": "1051DD"
+   }
+  },
+  {
+   "id": "node/432506873",
+   "lat": 52.366439,
+   "lng": 4.911154,
+   "tags": {
+    "name": "Hollandsche Schouwburg",
+    "tourism": "museum",
+    "historic": "memorial",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.hollandscheschouwburg.nl/en",
+    "wikidata": "Q2206529",
+    "wikipedia": "nl:Hollandsche Schouwburg",
+    "addr:housenumber": "24",
+    "addr:street": "Plantage Middenlaan",
+    "addr:postcode": "1018DE",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4339597847",
+   "lat": 52.373393,
+   "lng": 4.8928,
+   "tags": {
+    "name": "Damslachtoffers 7 mei 1945",
+    "name:en": "Dam Square Victims 7 mei 1945",
+    "historic": "memorial",
+    "website": "https://de-dam-zevenmei1945.nl/",
+    "wikidata": "Q26710500",
+    "wikipedia": "nl:Monument voor Damslachtoffers 7 mei 1945",
+    "addr:housenumber": "2",
+    "addr:street": "Dam",
+    "addr:postcode": "1012NP",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4360169257",
+   "lat": 52.369282,
+   "lng": 4.895102,
+   "tags": {
+    "name": "Gasthuispoort",
+    "tourism": "attraction",
+    "wikidata": "Q17308727"
+   }
+  },
+  {
+   "id": "node/4362812617",
+   "lat": 52.361191,
+   "lng": 4.872112,
+   "tags": {
+    "name": "Levend Paardenmuseum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Fr 13:00-19:00; Sa,Su 11:00-17:00; Apr 27,easter +49 days,Jan 1 off",
+    "website": "https://levendpaardenmuseum.nl/",
+    "wikidata": "Q110995934",
+    "addr:housenumber": "140",
+    "addr:street": "Vondelstraat",
+    "addr:postcode": "1054GT",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4382053996",
+   "lat": 52.383856,
+   "lng": 4.902103,
+   "tags": {
+    "name": "A'dam Lookout",
+    "tourism": "viewpoint",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "website": "https://www.adamlookout.com/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4383681597",
+   "lat": 52.366891,
+   "lng": 4.912689,
+   "tags": {
+    "name": "Micropia",
+    "tourism": "museum",
+    "opening_hours": "Mo-We 09:00-18:00; Th-Sa 09:00-20:00; Su 09:00-18:00",
+    "website": "https://www.micropia.nl/",
+    "wikidata": "Q18169481",
+    "wikipedia": "nl:Micropia",
+    "addr:housenumber": "38-40",
+    "addr:street": "Plantage Kerklaan",
+    "addr:postcode": "1018CZ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/440085927",
+   "lat": 52.367941,
+   "lng": 4.909206,
+   "tags": {
+    "name": "Auschwitzmonument",
+    "name:en": "Auschwitz Memorial",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q2224689",
+    "wikipedia": "nl:Auschwitzmonument (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/440419242",
+   "lat": 52.367808,
+   "lng": 4.912728,
+   "tags": {
+    "name": "Verzetsmuseum",
+    "name:en": "Dutch Resistance Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa,Su 11:00-17:00",
+    "website": "https://www.verzetsmuseum.org/",
+    "wikidata": "Q828307",
+    "wikipedia": "nl:Verzetsmuseum Amsterdam",
+    "addr:housenumber": "61",
+    "addr:street": "Plantage Kerklaan",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/440673917",
+   "lat": 52.365058,
+   "lng": 4.895853,
+   "tags": {
+    "name": "Thorbecke",
+    "name:en": "Thorbecke statue",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q17302703",
+    "wikipedia": "nl:Standbeeld van Johan Rudolph Thorbecke",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/440673918",
+   "lat": 52.359861,
+   "lng": 4.888709,
+   "tags": {
+    "name": "Simon Carmiggelt",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q56641054",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/441327444",
+   "lat": 52.390488,
+   "lng": 4.873726,
+   "tags": {
+    "name": "Museum Het Schip",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 11:00-17:00",
+    "website": "https://www.hetschip.nl",
+    "wikidata": "Q1616115",
+    "wikipedia": "nl:Museum Het Schip",
+    "addr:housenumber": "45",
+    "addr:street": "Oostzaanstraat",
+    "addr:postcode": "1013WG",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4455625697",
+   "lat": 52.358642,
+   "lng": 4.852373,
+   "tags": {
+    "name": "Levensboom",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q27139393"
+   }
+  },
+  {
+   "id": "node/4457150327",
+   "lat": 52.365524,
+   "lng": 4.908849,
+   "tags": {
+    "name": "Luther Museum Amsterdam",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 11:00-17:00",
+    "website": "https://luthermuseum.nl",
+    "wikidata": "Q2205322",
+    "addr:housenumber": "570",
+    "addr:street": "Nieuwe Keizersgracht",
+    "addr:postcode": "1018VG"
+   }
+  },
+  {
+   "id": "node/4473578904",
+   "lat": 52.37262,
+   "lng": 4.891944,
+   "tags": {
+    "name": "Plaquette 7 mei 1945",
+    "historic": "memorial",
+    "website": "https://de-dam-zevenmei1945.nl/",
+    "wikidata": "Q3476414",
+    "wikipedia": "nl:Schietpartij op de Dam op 7 mei 1945",
+    "addr:housenumber": "2",
+    "addr:street": "Kalverstraat",
+    "addr:postcode": "1012PC"
+   }
+  },
+  {
+   "id": "node/4493496259",
+   "lat": 52.376147,
+   "lng": 4.899985,
+   "tags": {
+    "name": "Sint Olofskapel",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "church",
+    "wikidata": "Q3128167",
+    "wikipedia": "nl:Sint Olofskapel"
+   }
+  },
+  {
+   "id": "node/4526198051",
+   "lat": 52.359588,
+   "lng": 4.922365,
+   "tags": {
+    "name": "De Schreeuw",
+    "historic": "memorial",
+    "wikidata": "Q920580",
+    "wikipedia": "nl:De Schreeuw (beeld)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4531828514",
+   "lat": 52.378431,
+   "lng": 4.906168,
+   "tags": {
+    "name": "Living by Numbers",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "website": "https://www.aidsmonument.nl/",
+    "wikidata": "Q68103938",
+    "wikipedia": "nl:HIV/AIDSmonument"
+   }
+  },
+  {
+   "id": "node/4562247261",
+   "lat": 52.369392,
+   "lng": 4.894681,
+   "tags": {
+    "name": "Huis aan 3 grachten",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "house",
+    "wikidata": "Q2035791",
+    "wikipedia": "nl:Huis aan de Drie Grachten"
+   }
+  },
+  {
+   "id": "node/4563246656",
+   "lat": 52.339922,
+   "lng": 4.892879,
+   "tags": {
+    "name": "The Upside Down social media museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 09:30-19:00; Fr,Sa 09:30-20:00",
+    "website": "https://the-upsidedown.com/",
+    "addr:housenumber": "5",
+    "addr:street": "Europaboulevard",
+    "addr:postcode": "1079PC"
+   }
+  },
+  {
+   "id": "node/4586166413",
+   "lat": 52.359946,
+   "lng": 4.899631,
+   "tags": {
+    "name": "Monument Walraven van Hall",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "website": "https://www.walravenvanhall.nl",
+    "wikidata": "Q56395610",
+    "wikipedia": "nl:Monument Walraven van Hall",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4651652895",
+   "lat": 52.364762,
+   "lng": 4.895876,
+   "tags": {
+    "name": "7 Bruggen op een rij",
+    "name:en": "7 Bridges in a row",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4672250949",
+   "lat": 52.373923,
+   "lng": 4.891692,
+   "tags": {
+    "name": "Nieuwe Kerk",
+    "name:en": "New Church",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.nieuwekerk.nl/",
+    "wikidata": "Q1419675",
+    "wikipedia": "nl:Nieuwe Kerk (Amsterdam)",
+    "addr:housenumber": "12",
+    "addr:street": "Dam",
+    "addr:postcode": "1012NP",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4715157543",
+   "lat": 52.373913,
+   "lng": 4.89921,
+   "tags": {
+    "name": "Erotisch Museum",
+    "name:en": "Erotic Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 13:00-20:00",
+    "website": "https://erotisch-museum.nl/",
+    "addr:housenumber": "54",
+    "addr:street": "Oudezijds Achterburgwal",
+    "addr:postcode": "1012DP",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4734528821",
+   "lat": 52.370998,
+   "lng": 4.898026,
+   "tags": {
+    "name": "Oost-Indisch Huis",
+    "name:en": "Dutch East Indian Company",
+    "tourism": "attraction",
+    "wikidata": "Q2223310",
+    "wikipedia": "nl:Oost-Indisch Huis (Amsterdam)"
+   }
+  },
+  {
+   "id": "node/4831331895",
+   "lat": 52.3842,
+   "lng": 4.902329,
+   "tags": {
+    "name": "This is Holland",
+    "tourism": "attraction",
+    "website": "https://www.thisisholland.com/",
+    "wikidata": "Q42116414",
+    "wikipedia": "nl:This is Holland",
+    "addr:housenumber": "51",
+    "addr:street": "Overhoeksplein",
+    "addr:postcode": "1031KS",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4848325321",
+   "lat": 52.34443,
+   "lng": 4.949977,
+   "tags": {
+    "name": "Middenstip Stadion De Meer",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q44712398",
+    "wikipedia": "nl:Middenstip (beeld)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4848331962",
+   "lat": 52.343613,
+   "lng": 4.947728,
+   "tags": {
+    "name": "Muurschildering Johan Cruijff",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q55823825",
+    "wikipedia": "nl:Muurschildering Johan Cruijff",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4856997726",
+   "lat": 52.354324,
+   "lng": 4.882004,
+   "tags": {
+    "name": "Mieke Zilverberg",
+    "tourism": "gallery",
+    "website": "https://www.miekezilverberg.com/",
+    "addr:housenumber": "67 B",
+    "addr:street": "Frans van Mierisstraat",
+    "addr:postcode": "1071RL"
+   }
+  },
+  {
+   "id": "node/4866454999",
+   "lat": 52.373962,
+   "lng": 4.895992,
+   "tags": {
+    "name": "Amsterdam Exchange Experience",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su off \"reconstruction work\"",
+    "website": "https://www.euronext.com/nl/markets/amsterdam/amsterdam-exchange-experience",
+    "addr:housenumber": "5",
+    "addr:street": "Beursplein",
+    "addr:postcode": "1012JW",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/4866728902",
+   "lat": 52.373164,
+   "lng": 4.898433,
+   "tags": {
+    "name": "Off the Wall",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/4866733949",
+   "lat": 52.373646,
+   "lng": 4.898975,
+   "tags": {
+    "name": "Red Light Secrets",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 11:00-22:00; Fr,Sa 11:00-23:00",
+    "website": "https://www.redlightsecrets.com/",
+    "addr:housenumber": "60",
+    "addr:street": "Oudezijds Achterburgwal",
+    "addr:postcode": "1012DP",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/4866733955",
+   "lat": 52.373518,
+   "lng": 4.898855,
+   "tags": {
+    "name": "Kompakt meets Oz",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/487106862",
+   "lat": 52.365565,
+   "lng": 4.91363,
+   "tags": {
+    "name": "Kunstenaarsverzet",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q112787543",
+    "wikipedia": "nl:Monument voor het kunstenaarsverzet 1940-1945"
+   }
+  },
+  {
+   "id": "node/4903621033",
+   "lat": 52.325134,
+   "lng": 4.887514,
+   "tags": {
+    "name": "Monument voor het Ondergedoken Kind en Beschermer",
+    "historic": "memorial",
+    "wikidata": "Q57908267",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4909411075",
+   "lat": 52.367892,
+   "lng": 4.88622,
+   "tags": {
+    "name": "Grachtenhuis",
+    "name:en": "Museum of the Canals",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-17:00",
+    "website": "https://grachten.museum/",
+    "wikipedia": "nl:Grachtenmuseum Amsterdam",
+    "addr:housenumber": "386",
+    "addr:street": "Herengracht",
+    "addr:postcode": "1016CJ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/4952719221",
+   "lat": 52.369175,
+   "lng": 4.892307,
+   "tags": {
+    "name": "Ruiterstandbeeld van Koningin Wilhelmina",
+    "name:en": "Equestrian statue of Queen Wilhelmina",
+    "tourism": "attraction",
+    "historic": "memorial",
+    "wikidata": "Q1993531",
+    "wikipedia": "nl:Ruiterstandbeeld koningin Wilhelmina (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5040911439",
+   "lat": 52.380038,
+   "lng": 4.883459,
+   "tags": {
+    "name": "Lindenmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:00-16:00",
+    "website": "https://www.jordaanmarkten.nl/lindenmarkt.html"
+   }
+  },
+  {
+   "id": "node/527375036",
+   "lat": 52.347035,
+   "lng": 4.893249,
+   "tags": {
+    "name": "Mahatma Gandhi",
+    "historic": "memorial",
+    "wikidata": "Q57597483",
+    "wikipedia": "nl:Standbeeld van Mahatma Gandhi (Amsterdam)"
+   }
+  },
+  {
+   "id": "node/5413780868",
+   "lat": 52.35696,
+   "lng": 4.882248,
+   "tags": {
+    "name": "Ravensbrück-monument",
+    "name:en": "Ravensbrück memorial",
+    "historic": "memorial",
+    "wikidata": "Q42171765",
+    "wikipedia": "nl:Vrouwen van Ravensbrück 1940-1945",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/5563094882",
+   "lat": 52.378517,
+   "lng": 4.884078,
+   "tags": {
+    "name": "Lapjesmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Mo 09:00-13:00",
+    "website": "https://www.jordaanmarkten.nl/westerstraatmarktmarkt.html"
+   }
+  },
+  {
+   "id": "node/5563094883",
+   "lat": 52.380282,
+   "lng": 4.885117,
+   "tags": {
+    "name": "Lindenmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:00-16:00",
+    "website": "https://www.jordaanmarkten.nl/lindenmarkt.html"
+   }
+  },
+  {
+   "id": "node/5567846282",
+   "lat": 52.373013,
+   "lng": 4.826245,
+   "tags": {
+    "name": "Van Eesteren Museum",
+    "tourism": "museum",
+    "opening_hours": "Th-Su 12:00-17:00; Jan 1, Apr 27, Jul 1, Dec 25-26 off",
+    "website": "https://vaneesterenmuseum.nl",
+    "wikidata": "Q2794022",
+    "wikipedia": "nl:Van Eesteren Museum",
+    "addr:housenumber": "31",
+    "addr:street": "Noordzijde",
+    "addr:postcode": "1064GV",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/560616773",
+   "lat": 52.354462,
+   "lng": 4.895573,
+   "tags": {
+    "name": "Sarphatimonument",
+    "historic": "memorial",
+    "wikidata": "Q15625206",
+    "wikipedia": "nl:Sarphatimonument",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5659414215",
+   "lat": 52.358722,
+   "lng": 4.882742,
+   "tags": {
+    "name": "Museum Market",
+    "amenity": "marketplace",
+    "opening_hours": "Su[3] 12:00-18:00",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/5660403824",
+   "lat": 52.36697,
+   "lng": 4.889769,
+   "tags": {
+    "name": "Henri's Little Cheese Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su,PH 09:00-19:00; Dec-Feb Mo-Su,PH 10:00-18:00",
+    "addr:housenumber": "484",
+    "addr:street": "Singel",
+    "addr:postcode": "1017AW",
+    "fee": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/5756367437",
+   "lat": 52.35573,
+   "lng": 4.894361,
+   "tags": {
+    "name": "Albert Cuypmarkt",
+    "amenity": "marketplace"
+   }
+  },
+  {
+   "id": "node/5768607654",
+   "lat": 52.376977,
+   "lng": 4.884019,
+   "tags": {
+    "name": "Guy Olivier",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "node/5802390568",
+   "lat": 52.361683,
+   "lng": 4.917708,
+   "tags": {
+    "name": "Vincent Hall",
+    "tourism": "gallery",
+    "addr:housenumber": "55",
+    "addr:street": "Mauritskade",
+    "addr:postcode": "1092AD",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/5968581986",
+   "lat": 52.362304,
+   "lng": 4.897676,
+   "tags": {
+    "name": "Plantenmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Mar-Dec Mo 09:00-15:00"
+   }
+  },
+  {
+   "id": "node/6132284086",
+   "lat": 52.36507,
+   "lng": 4.904029,
+   "tags": {
+    "name": "Schaduwkade",
+    "name:en": "Shadow quay",
+    "historic": "memorial",
+    "website": "https://www.schaduwkade.nl/",
+    "wikidata": "Q61992041",
+    "wikipedia": "nl:De Schaduwkade",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6436387485",
+   "lat": 52.367097,
+   "lng": 4.897141,
+   "tags": {
+    "name": "Dancing Houses",
+    "tourism": "viewpoint",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/6741685223",
+   "lat": 52.401946,
+   "lng": 4.893854,
+   "tags": {
+    "name": "STRAAT",
+    "tourism": "museum",
+    "opening_hours": "Mo 12:00-17:00; Tu-Su 10:00-17:00",
+    "website": "https://straatmuseum.com",
+    "addr:housenumber": "1",
+    "addr:street": "NDSM-plein",
+    "addr:postcode": "1033WC",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/6842002785",
+   "lat": 52.401278,
+   "lng": 4.896595,
+   "tags": {
+    "name": "IJ-Hallen",
+    "amenity": "marketplace",
+    "website": "https://ijhallen.nl",
+    "addr:housenumber": "1",
+    "addr:street": "NDSM-plein",
+    "addr:postcode": "1033WC"
+   }
+  },
+  {
+   "id": "node/7090657585",
+   "lat": 52.366654,
+   "lng": 4.884859,
+   "tags": {
+    "name": "kruising Leidsegracht-Keizersgracht",
+    "name:en": "Leidsegracht-Keizersgracht intersection",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/7178942858",
+   "lat": 52.360167,
+   "lng": 4.89179,
+   "tags": {
+    "name": "Lumen Travo",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 13:00-18:00",
+    "website": "https://www.lumentravo.nl",
+    "addr:housenumber": "314",
+    "addr:street": "Lijnbaansgracht",
+    "addr:postcode": "1017WZ",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7178942859",
+   "lat": 52.360156,
+   "lng": 4.892103,
+   "tags": {
+    "name": "Albada Jelgersma Gallery",
+    "tourism": "gallery",
+    "opening_hours": "We-Sa 11:00-18:00",
+    "website": "https://www.albada-jelgersma.com",
+    "addr:housenumber": "318",
+    "addr:street": "Lijnbaansgracht",
+    "addr:postcode": "1017WZ",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7178942860",
+   "lat": 52.360163,
+   "lng": 4.892014,
+   "tags": {
+    "name": "AKINCI",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Sa 13:00-18:00",
+    "website": "https://akinci.nl",
+    "addr:housenumber": "317",
+    "addr:street": "Lijnbaansgracht",
+    "addr:postcode": "1017WZ",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "node/7280426256",
+   "lat": 52.376244,
+   "lng": 4.910278,
+   "tags": {
+    "name": "Vriend van Bavink",
+    "tourism": "gallery",
+    "opening_hours": "Tu-Fr 10:00-17:30; Sa 13:00-17:30",
+    "website": "https://www.vanbavinkgallery.com/",
+    "addr:housenumber": "243",
+    "addr:street": "Oosterdokskade",
+    "addr:postcode": "1011DL"
+   }
+  },
+  {
+   "id": "node/7316511261",
+   "lat": 52.370517,
+   "lng": 4.896312,
+   "tags": {
+    "name": "Spinhuispoort",
+    "name:en": "Spinhuis Gate",
+    "tourism": "attraction",
+    "wikidata": "Q17306709",
+    "addr:housenumber": "1",
+    "addr:street": "Spinhuissteeg",
+    "addr:postcode": "1012CJ"
+   }
+  },
+  {
+   "id": "node/7397368926",
+   "lat": 52.362838,
+   "lng": 4.883253,
+   "tags": {
+    "name": "Gedenksteen",
+    "historic": "memorial",
+    "wikidata": "Q57594301",
+    "wikipedia": "nl:Gedenksteen voor het voormalig Huis van Bewaring"
+   }
+  },
+  {
+   "id": "node/7429916463",
+   "lat": 52.339951,
+   "lng": 4.909258,
+   "tags": {
+    "name": "Martin Luther King",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q92135154",
+    "wikipedia": "nl:Beeld van Martin Luther King",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "node/7800877214",
+   "lat": 52.376342,
+   "lng": 4.887449,
+   "tags": {
+    "name": "Embassy of the Free Mind",
+    "tourism": "museum",
+    "opening_hours": "We-Su 10:00-17:00",
+    "website": "https://embassyofthefreemind.com",
+    "wikidata": "Q56452182",
+    "wikipedia": "nl:Embassy of the Free Mind",
+    "addr:housenumber": "123",
+    "addr:street": "Keizersgracht",
+    "addr:postcode": "1015CJ",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/7889987286",
+   "lat": 52.343471,
+   "lng": 4.938024,
+   "tags": {
+    "name": "Buchenwaldmonument",
+    "name:en": "Buchenwald Memorial",
+    "historic": "memorial",
+    "wikidata": "Q88594878",
+    "wikipedia": "nl:Buchenwaldmonument"
+   }
+  },
+  {
+   "id": "node/7931659141",
+   "lat": 52.377634,
+   "lng": 4.878829,
+   "tags": {
+    "name": "Bevrijdingslinde",
+    "historic": "memorial",
+    "wikidata": "Q30239162",
+    "wikipedia": "nl:Bevrijdingslinde van de Jordaankinderen"
+   }
+  },
+  {
+   "id": "node/8038085986",
+   "lat": 52.410708,
+   "lng": 4.85378,
+   "tags": {
+    "name": "Uitzichtpunt",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "node/8108706646",
+   "lat": 52.373009,
+   "lng": 4.9489,
+   "tags": {
+    "name": "Pythonbrug",
+    "tourism": "viewpoint",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "node/8335928712",
+   "lat": 52.364125,
+   "lng": 4.885338,
+   "tags": {
+    "name": "Pijpenkabinet",
+    "name:en": "Amsterdam Pipe Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Sa 12:00-18:00",
+    "website": "https://www.pipemuseum.nl",
+    "wikidata": "Q2218690",
+    "wikipedia": "nl:Amsterdam Pipe Museum",
+    "addr:housenumber": "488",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1017KH",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/855243398",
+   "lat": 52.365366,
+   "lng": 4.902387,
+   "tags": {
+    "name": "Amsterdam Museum",
+    "tourism": "museum",
+    "website": "https://www.amsterdammuseum.nl/",
+    "addr:housenumber": "51",
+    "addr:street": "Amstel",
+    "addr:postcode": "1018EJ",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/8691559806",
+   "lat": 52.362665,
+   "lng": 4.882952,
+   "tags": {
+    "name": "Tranen",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q70328427",
+    "wikipedia": "nl:Tranen voor het verzet"
+   }
+  },
+  {
+   "id": "node/9039056397",
+   "lat": 52.368506,
+   "lng": 4.886137,
+   "tags": {
+    "name": "Art Zoo Museum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 10:00-17:00; Jan 1 off; Apr 27 off; Dec 25 off",
+    "website": "https://www.artzoo.com",
+    "addr:housenumber": "368",
+    "addr:street": "Herengracht",
+    "addr:postcode": "1016CH",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "node/9039126487",
+   "lat": 52.38996,
+   "lng": 4.938581,
+   "tags": {
+    "name": "Beeldenbos Noord",
+    "tourism": "attraction",
+    "leisure": "park",
+    "website": "https://www.beeldenbosnoord.nl/",
+    "wikidata": "Q108290266"
+   }
+  },
+  {
+   "id": "node/9104808940",
+   "lat": 52.365706,
+   "lng": 4.904975,
+   "tags": {
+    "name": "Nationaal Holocaust Namenmonument",
+    "historic": "memorial",
+    "website": "https://www.holocaustnamenmonument.nl/",
+    "wikidata": "Q66023853",
+    "wikipedia": "nl:Holocaust Namenmonument"
+   }
+  },
+  {
+   "id": "node/9271847554",
+   "lat": 52.366078,
+   "lng": 4.899514,
+   "tags": {
+    "name": "Our House",
+    "tourism": "museum",
+    "website": "https://www.our-house.com",
+    "addr:housenumber": "26",
+    "addr:street": "Amstelstraat",
+    "addr:postcode": "1017DA",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "relation/12711771",
+   "lat": 52.355998,
+   "lng": 4.904246,
+   "tags": {
+    "name": "Huis met de Kabouters",
+    "tourism": "attraction",
+    "wikidata": "Q2110563",
+    "wikipedia": "nl:Huis met de Kabouters"
+   }
+  },
+  {
+   "id": "relation/14035050",
+   "lat": 52.36259,
+   "lng": 4.846829,
+   "tags": {
+    "name": "Rembrandtpark",
+    "leisure": "park",
+    "wikidata": "Q3460619",
+    "wikipedia": "nl:Rembrandtpark"
+   }
+  },
+  {
+   "id": "relation/17080648",
+   "lat": 52.357205,
+   "lng": 4.868582,
+   "tags": {
+    "name": "Vondelpark",
+    "leisure": "park",
+    "wikidata": "Q1419691",
+    "wikipedia": "nl:Vondelpark",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "relation/3580875",
+   "lat": 52.373145,
+   "lng": 4.891336,
+   "tags": {
+    "name": "Koninklijk Paleis",
+    "name:en": "Royal Palace",
+    "tourism": "attraction",
+    "historic": "castle",
+    "building": "yes",
+    "opening_hours": "10:00-17:00",
+    "website": "https://www.paleisamsterdam.nl/",
+    "wikidata": "Q1056152",
+    "wikipedia": "nl:Paleis op de Dam",
+    "addr:housenumber": "147",
+    "addr:street": "Nieuwezijds Voorburgwal",
+    "addr:postcode": "1012RJ"
+   }
+  },
+  {
+   "id": "relation/3584291",
+   "lat": 52.370881,
+   "lng": 4.898007,
+   "tags": {
+    "name": "Oost-Indisch Huis",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q2223310",
+    "wikipedia": "nl:Oost-Indisch Huis (Amsterdam)"
+   }
+  },
+  {
+   "id": "relation/3584292",
+   "lat": 52.371941,
+   "lng": 4.898315,
+   "tags": {
+    "name": "Wijnkopersgildehuis",
+    "name:en": "Wine buyers' guildhall",
+    "tourism": "attraction",
+    "building": "house",
+    "wikidata": "Q2164887",
+    "wikipedia": "nl:Wijnkopersgildehuis"
+   }
+  },
+  {
+   "id": "relation/3697339",
+   "lat": 52.362545,
+   "lng": 4.921623,
+   "tags": {
+    "name": "Koninklijk Instituut voor de Tropen",
+    "name:en": "Royal Tropical Institute",
+    "tourism": "attraction",
+    "building": "yes",
+    "website": "https://www.kit.nl/",
+    "wikidata": "Q39530035"
+   }
+  },
+  {
+   "id": "relation/6577680",
+   "lat": 52.358203,
+   "lng": 4.881143,
+   "tags": {
+    "name": "Van Gogh Museum",
+    "name:en": "Van Gogh Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Sa-Th 09:00-18:00; Fr 09:00-22:00",
+    "website": "https://www.vangoghmuseum.nl/",
+    "wikidata": "Q224124",
+    "wikipedia": "nl:Van Gogh Museum",
+    "addr:housenumber": "7",
+    "addr:street": "Paulus Potterstraat",
+    "addr:postcode": "1071CX",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "relation/7112728",
+   "lat": 52.356054,
+   "lng": 4.894968,
+   "tags": {
+    "name": "Albert Cuyp-markt",
+    "name:en": "Albert Cuyp market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 09:00-17:00",
+    "website": "https://albertcuyp-markt.amsterdam/",
+    "wikidata": "Q2342892",
+    "addr:housenumber": "1073",
+    "addr:street": "Albert Cuypstraat"
+   }
+  },
+  {
+   "id": "relation/7350368",
+   "lat": 52.329185,
+   "lng": 4.873489,
+   "tags": {
+    "name": "Gijsbrecht van Aemstelpark",
+    "leisure": "park",
+    "opening_hours": "24/7",
+    "wikidata": "Q1883754",
+    "wikipedia": "nl:Gijsbrecht van Aemstelpark"
+   }
+  },
+  {
+   "id": "way/112951656",
+   "lat": 52.372991,
+   "lng": 4.912696,
+   "tags": {
+    "name": "Museumhaven",
+    "tourism": "museum",
+    "historic": "ship",
+    "opening_hours": "24/7",
+    "website": "https://www.museumhavenamsterdam.nl/",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/114120359",
+   "lat": 52.370293,
+   "lng": 4.899748,
+   "tags": {
+    "name": "Zuiderkerk",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "church",
+    "wikidata": "Q228629",
+    "wikipedia": "nl:Zuiderkerk (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/1175615280",
+   "lat": 52.384093,
+   "lng": 4.909042,
+   "tags": {
+    "name": "Moestuinschool",
+    "leisure": "garden",
+    "opening_hours": "24/7",
+    "website": "https://www.moestuinschoolamsterdam.nl/"
+   }
+  },
+  {
+   "id": "way/1210813975",
+   "lat": 52.368228,
+   "lng": 4.91369,
+   "tags": {
+    "name": "Mahatma Gandhi Plantsoen",
+    "leisure": "garden",
+    "wikidata": "Q122818171",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/1230678745",
+   "lat": 52.363278,
+   "lng": 4.883438,
+   "tags": {
+    "name": "Kleine-Gartmanplantsoen",
+    "tourism": "attraction",
+    "wikidata": "Q2186079",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1231991755",
+   "lat": 52.363968,
+   "lng": 4.88233,
+   "tags": {
+    "name": "Leidseplein",
+    "tourism": "attraction",
+    "wikidata": "Q1409805",
+    "wikipedia": "nl:Leidseplein (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1268819095",
+   "lat": 52.340501,
+   "lng": 4.910685,
+   "tags": {
+    "name": "Martin Luther Kingpark",
+    "leisure": "park",
+    "wikidata": "Q2285562"
+   }
+  },
+  {
+   "id": "way/1287492683",
+   "lat": 52.37201,
+   "lng": 4.914786,
+   "tags": {
+    "name": "Het Scheepvaartmuseum",
+    "name:en": "The National Maritime Museum",
+    "tourism": "museum",
+    "opening_hours": "Tu-Su 10:00-17:00; SH Mo-Su 10:00-17:00; Jan 01,Apr 27,Dec 25 off",
+    "website": "https://www.hetscheepvaartmuseum.nl",
+    "wikidata": "Q1616123",
+    "wikipedia": "nl:Het Scheepvaartmuseum",
+    "addr:housenumber": "1",
+    "addr:street": "Kattenburgerplein",
+    "addr:postcode": "1018KK",
+    "fee": "yes",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/1312422204",
+   "lat": 52.327888,
+   "lng": 4.959212,
+   "tags": {
+    "name": "Thérèse Schwartzepark",
+    "leisure": "park",
+    "wikidata": "Q117302816",
+    "wikipedia": "nl:Thérèse Schwartzepark"
+   }
+  },
+  {
+   "id": "way/13308960",
+   "lat": 52.352134,
+   "lng": 4.986665,
+   "tags": {
+    "name": "Diemerpark",
+    "leisure": "park",
+    "wikidata": "Q1220779",
+    "wikipedia": "nl:Diemerpark"
+   }
+  },
+  {
+   "id": "way/1344387596",
+   "lat": 52.34046,
+   "lng": 4.916358,
+   "tags": {
+    "name": "Park Somerlust",
+    "leisure": "park",
+    "wikidata": "Q26710903",
+    "wikipedia": "nl:Park Somerlust"
+   }
+  },
+  {
+   "id": "way/1350510553",
+   "lat": 52.379661,
+   "lng": 4.821184,
+   "tags": {
+    "name": "Vrijheidscarillon",
+    "amenity": "bell",
+    "historic": "memorial",
+    "wikidata": "Q2383533",
+    "wikipedia": "nl:Vrijheidscarillon",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/1387185788",
+   "lat": 52.358655,
+   "lng": 4.917908,
+   "tags": {
+    "name": "Nationaal monument Slavernijverleden",
+    "historic": "memorial",
+    "wikidata": "Q2554437",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/145953534",
+   "lat": 52.366954,
+   "lng": 4.891405,
+   "tags": {
+    "name": "Bloemenmarkt",
+    "name:en": "Flower Market",
+    "tourism": "attraction",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 09:00-17:30; Su 11:30-17:30",
+    "wikidata": "Q643079",
+    "wikipedia": "nl:Bloemenmarkt",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/163010461",
+   "lat": 52.371518,
+   "lng": 4.815044,
+   "tags": {
+    "name": "Kinderboerderij Sloterpark",
+    "tourism": "zoo",
+    "website": "https://www.kinderboerderijen.nl/kinderboerderij-sloterpark",
+    "addr:housenumber": "2",
+    "addr:street": "President Allendelaan",
+    "addr:postcode": "1064GW"
+   }
+  },
+  {
+   "id": "way/168680619",
+   "lat": 52.37282,
+   "lng": 4.893689,
+   "tags": {
+    "name": "Nationaal Monument",
+    "name:en": "National Monument",
+    "historic": "monument",
+    "wikidata": "Q473851",
+    "wikipedia": "nl:Nationaal Monument op de Dam",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/174193863",
+   "lat": 52.374067,
+   "lng": 4.886715,
+   "tags": {
+    "name": "Huis Bartolotti",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Th-Sa 10:00-16:00; Su 12:00-16:00",
+    "website": "https://www.museumhuizen.nl/nl/huis-bartolotti",
+    "wikidata": "Q2205055",
+    "wikipedia": "nl:Huis Bartolotti",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/199199043",
+   "lat": 52.368119,
+   "lng": 4.92018,
+   "tags": {
+    "name": "Werf 't Kromhout",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Tu 10:00-15:00 || \"on appointment\"",
+    "addr:housenumber": "147",
+    "addr:street": "Hoogte Kadijk",
+    "addr:postcode": "1018BJ",
+    "fee": "yes"
+   }
+  },
+  {
+   "id": "way/21592446",
+   "lat": 52.338496,
+   "lng": 4.905222,
+   "tags": {
+    "name": "Martin Luther Kingpark",
+    "leisure": "park",
+    "wikidata": "Q2285562"
+   }
+  },
+  {
+   "id": "way/219160281",
+   "lat": 52.389126,
+   "lng": 4.932024,
+   "tags": {
+    "name": "W.H. Vliegenbos",
+    "leisure": "park",
+    "wikidata": "Q2290261",
+    "wikipedia": "nl:Vliegenbos"
+   }
+  },
+  {
+   "id": "way/219166975",
+   "lat": 52.361904,
+   "lng": 4.950647,
+   "tags": {
+    "name": "Flevopark",
+    "leisure": "park",
+    "wikidata": "Q2335366",
+    "wikipedia": "nl:Flevopark"
+   }
+  },
+  {
+   "id": "way/220886085",
+   "lat": 52.371893,
+   "lng": 4.870082,
+   "tags": {
+    "name": "Bilderdijkpark",
+    "leisure": "park",
+    "wikidata": "Q2312608"
+   }
+  },
+  {
+   "id": "way/221101231",
+   "lat": 52.379402,
+   "lng": 4.877335,
+   "tags": {
+    "name": "Frederik Hendrikplantsoen",
+    "leisure": "park",
+    "wikidata": "Q2550411",
+    "wikipedia": "nl:Frederik Hendrikplantsoen"
+   }
+  },
+  {
+   "id": "way/221261837",
+   "lat": 52.367973,
+   "lng": 4.867671,
+   "tags": {
+    "name": "Bellamyplein",
+    "leisure": "park",
+    "wikidata": "Q4328726",
+    "wikipedia": "nl:Bellamyplein"
+   }
+  },
+  {
+   "id": "way/23108728",
+   "lat": 52.361284,
+   "lng": 4.871872,
+   "tags": {
+    "name": "Hollandsche Manege",
+    "name:en": "Dutch Equestrian School Museum Hollandsche Manege",
+    "tourism": "attraction",
+    "leisure": "sports_centre",
+    "building": "yes",
+    "website": "https://dehollandschemanege.nl/",
+    "wikidata": "Q2191087",
+    "wikipedia": "nl:Hollandsche Manege",
+    "addr:housenumber": "140",
+    "addr:street": "Vondelstraat",
+    "addr:postcode": "1054GT",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/23624514",
+   "lat": 52.416422,
+   "lng": 4.887606,
+   "tags": {
+    "name": "Diereneiland",
+    "tourism": "zoo",
+    "website": "https://hetdiereneiland.nl/"
+   }
+  },
+  {
+   "id": "way/23935953",
+   "lat": 52.387273,
+   "lng": 4.872306,
+   "tags": {
+    "name": "Westerpark",
+    "leisure": "park",
+    "wikidata": "Q2187279",
+    "wikipedia": "nl:Westerpark (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/244424254",
+   "lat": 52.371732,
+   "lng": 4.860927,
+   "tags": {
+    "name": "De Krommert",
+    "leisure": "park",
+    "opening_hours": "sunrise-sunset",
+    "wikidata": "Q1892977",
+    "wikipedia": "nl:De Krommert"
+   }
+  },
+  {
+   "id": "way/24979184",
+   "lat": 52.374804,
+   "lng": 4.851734,
+   "tags": {
+    "name": "Erasmuspark",
+    "leisure": "park",
+    "wikidata": "Q3122189",
+    "wikipedia": "nl:Erasmuspark"
+   }
+  },
+  {
+   "id": "way/255660371",
+   "lat": 52.377297,
+   "lng": 4.853969,
+   "tags": {
+    "name": "Kinderboerderij Nieuw Bos en Lommer",
+    "tourism": "zoo",
+    "leisure": "playground",
+    "website": "https://kinderboerderijnbl.wordpress.com/",
+    "fee": "no"
+   }
+  },
+  {
+   "id": "way/25649232",
+   "lat": 52.349006,
+   "lng": 4.870451,
+   "tags": {
+    "name": "Veroneseplantsoen",
+    "leisure": "park",
+    "wikidata": "Q85306745",
+    "wikipedia": "nl:Veroneseplantsoen"
+   }
+  },
+  {
+   "id": "way/25653454",
+   "lat": 52.346566,
+   "lng": 4.873384,
+   "tags": {
+    "name": "Prof. Durrerplantsoen",
+    "leisure": "park",
+    "wikidata": "Q52349325"
+   }
+  },
+  {
+   "id": "way/256834524",
+   "lat": 52.337302,
+   "lng": 4.968446,
+   "tags": {
+    "name": "Kinderboerderij Diemen",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "website": "https://www.kinderboerderijdiemen.nl/"
+   }
+  },
+  {
+   "id": "way/25800735",
+   "lat": 52.363442,
+   "lng": 4.880066,
+   "tags": {
+    "name": "Leidsebosje",
+    "leisure": "park",
+    "wikidata": "Q2355276",
+    "wikipedia": "nl:Leidsebosje"
+   }
+  },
+  {
+   "id": "way/25965389",
+   "lat": 52.357402,
+   "lng": 4.881608,
+   "tags": {
+    "name": "Museumplein",
+    "name:en": "Museum Square",
+    "leisure": "park",
+    "wikidata": "Q639321",
+    "wikipedia": "nl:Museumplein"
+   }
+  },
+  {
+   "id": "way/26037982",
+   "lat": 52.342728,
+   "lng": 4.881793,
+   "tags": {
+    "name": "Beatrixpark",
+    "leisure": "park",
+    "wikidata": "Q1845531",
+    "wikipedia": "nl:Beatrixpark (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/26219780",
+   "lat": 52.387206,
+   "lng": 4.865689,
+   "tags": {
+    "name": "Kinderboerderij Westerpark",
+    "tourism": "zoo",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/26341034",
+   "lat": 52.368786,
+   "lng": 4.889851,
+   "tags": {
+    "name": "Spui",
+    "tourism": "attraction",
+    "wikidata": "Q281703",
+    "wikipedia": "nl:Spui (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/264902667",
+   "lat": 52.377525,
+   "lng": 4.853491,
+   "tags": {
+    "name": "Wachterliedplantsoen",
+    "leisure": "park",
+    "wikidata": "Q2620380",
+    "wikipedia": "nl:Wachterliedplantsoen"
+   }
+  },
+  {
+   "id": "way/26516487",
+   "lat": 52.328205,
+   "lng": 4.894235,
+   "tags": {
+    "name": "Amstelpark",
+    "leisure": "park",
+    "website": "https://www.amsterdam.info/parks/amstelpark/",
+    "wikidata": "Q655469",
+    "wikipedia": "nl:Amstelpark"
+   }
+  },
+  {
+   "id": "way/26517033",
+   "lat": 52.311743,
+   "lng": 4.833295,
+   "tags": {
+    "name": "Amsterdamse Bos",
+    "leisure": "park",
+    "wikidata": "Q511560",
+    "wikipedia": "nl:Amsterdamse Bos"
+   }
+  },
+  {
+   "id": "way/26525897",
+   "lat": 52.366529,
+   "lng": 4.916247,
+   "tags": {
+    "name": "Hollandse Tuin",
+    "leisure": "garden",
+    "wikidata": "Q17302647",
+    "wikipedia": "nl:Hollandse Tuin (Artis)"
+   }
+  },
+  {
+   "id": "way/26658363",
+   "lat": 52.369439,
+   "lng": 4.890068,
+   "tags": {
+    "name": "Begijnhof",
+    "name:en": "Begijnhof",
+    "tourism": "attraction",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "wikidata": "Q1629214",
+    "wikipedia": "nl:Begijnhof (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/266604553",
+   "lat": 52.376382,
+   "lng": 4.887456,
+   "tags": {
+    "name": "Het Huis met den Hoofden",
+    "tourism": "attraction",
+    "building": "commercial",
+    "wikidata": "Q961901",
+    "wikipedia": "nl:Huis met de Hoofden"
+   }
+  },
+  {
+   "id": "way/266949472",
+   "lat": 52.373459,
+   "lng": 4.898194,
+   "tags": {
+    "name": "de Wallen",
+    "name:en": "Red Light District",
+    "tourism": "attraction",
+    "wikidata": "Q447664",
+    "wikipedia": "nl:De Wallen",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/267091468",
+   "lat": 52.373726,
+   "lng": 4.900075,
+   "tags": {
+    "name": "Fo Guang Shan He Hua Tempel",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "opening_hours": "Tu-Su 13:00-17:00",
+    "website": "https://ibps.nl/he-hua-temple/",
+    "wikidata": "Q2780472",
+    "wikipedia": "nl:He Hua Tempel",
+    "addr:housenumber": "110",
+    "addr:street": "Zeedijk",
+    "addr:postcode": "1012BB",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/268782366",
+   "lat": 52.372175,
+   "lng": 4.908071,
+   "tags": {
+    "name": "West-Indisch Pakhuis",
+    "name:en": "West Indian Warehouse",
+    "tourism": "attraction",
+    "building": "commercial",
+    "wikidata": "Q14518704"
+   }
+  },
+  {
+   "id": "way/27590846",
+   "lat": 52.332651,
+   "lng": 4.860581,
+   "tags": {
+    "name": "Botanische Tuin Zuidas",
+    "name:en": "Botanical Garden Zuidas",
+    "leisure": "garden",
+    "opening_hours": "Su-Th 09:00-17:00; Fr-Sa 12:00-17:00",
+    "website": "https://botanischetuinzuidas.nl/",
+    "wikidata": "Q2610973",
+    "wikipedia": "nl:Botanische tuin Zuidas",
+    "addr:housenumber": "8",
+    "addr:street": "Van der Boechorststraat",
+    "addr:postcode": "1081BT"
+   }
+  },
+  {
+   "id": "way/277145000",
+   "lat": 52.35015,
+   "lng": 4.86568,
+   "tags": {
+    "name": "Monument Indië-Nederland",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q2577520",
+    "wikipedia": "nl:Monument Indië-Nederland",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/277950873",
+   "lat": 52.368636,
+   "lng": 4.937413,
+   "tags": {
+    "name": "Museum Perron Oost",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "\"Viewing from outside only\"",
+    "website": "https://www.museumperronoost.nl/",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/29989787",
+   "lat": 52.359861,
+   "lng": 4.884996,
+   "tags": {
+    "name": "Rijksmuseum",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "website": "https://www.rijksmuseum.nl/",
+    "wikidata": "Q190804",
+    "wikipedia": "nl:Rijksmuseum Amsterdam",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/314540466",
+   "lat": 52.363153,
+   "lng": 4.927288,
+   "tags": {
+    "name": "Dappermarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Mo-Sa 09:00-17:00",
+    "website": "https://www.dappermarkt.nl",
+    "wikidata": "Q1165557",
+    "wikipedia": "nl:Dappermarkt",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/31527079",
+   "lat": 52.366643,
+   "lng": 4.907775,
+   "tags": {
+    "name": "Hortus Botanicus",
+    "tourism": "attraction",
+    "leisure": "garden",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "website": "https://www.dehortus.nl/",
+    "wikidata": "Q1576733",
+    "wikipedia": "nl:Hortus Botanicus Amsterdam",
+    "addr:housenumber": "2a",
+    "addr:street": "Plantage Middenlaan",
+    "addr:postcode": "1018DD"
+   }
+  },
+  {
+   "id": "way/324827054",
+   "lat": 52.372343,
+   "lng": 4.914231,
+   "tags": {
+    "name": "Amsterdam",
+    "tourism": "attraction",
+    "historic": "ship",
+    "building": "ship",
+    "wikidata": "Q478353",
+    "wikipedia": "nl:Amsterdam (schip, 1990)",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/330724416",
+   "lat": 52.362797,
+   "lng": 4.890143,
+   "tags": {
+    "name": "Deutzenhofje",
+    "leisure": "garden",
+    "wikidata": "Q2609918",
+    "wikipedia": "nl:Deutzenhofje"
+   }
+  },
+  {
+   "id": "way/33202039",
+   "lat": 52.384967,
+   "lng": 4.88308,
+   "tags": {
+    "name": "Haarlemmerpoort",
+    "tourism": "yes",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q2343931",
+    "wikipedia": "nl:Haarlemmerpoort (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/33207504",
+   "lat": 52.387163,
+   "lng": 4.880756,
+   "tags": {
+    "name": "Domela Nieuwenhuisplantsoen",
+    "leisure": "park",
+    "wikidata": "Q15874583",
+    "wikipedia": "nl:Domela Nieuwenhuisplantsoen"
+   }
+  },
+  {
+   "id": "way/338649319",
+   "lat": 52.342427,
+   "lng": 4.850758,
+   "tags": {
+    "name": "Park de Schinkeleilanden",
+    "leisure": "park",
+    "wikidata": "Q21170398"
+   }
+  },
+  {
+   "id": "way/338752113",
+   "lat": 52.350461,
+   "lng": 4.929925,
+   "tags": {
+    "name": "Park Frankendael",
+    "leisure": "park",
+    "wikidata": "Q2195300"
+   }
+  },
+  {
+   "id": "way/34912979",
+   "lat": 52.370501,
+   "lng": 4.862278,
+   "tags": {
+    "name": "Natuurtuin Slatuinen",
+    "leisure": "garden",
+    "opening_hours": "Th 10:00-16:00; Su[1] 13:00-16:00",
+    "website": "http://natuurtuinslatuinen.wixsite.com/slatuinen2"
+   }
+  },
+  {
+   "id": "way/35692106",
+   "lat": 52.349217,
+   "lng": 4.892807,
+   "tags": {
+    "name": "Kinderboerderij de Pijp",
+    "tourism": "zoo",
+    "website": "https://www.kinderboerderijen.nl/vereniging-kinderboerderij-de-pijp-dp2"
+   }
+  },
+  {
+   "id": "way/368014349",
+   "lat": 52.367385,
+   "lng": 4.845243,
+   "tags": {
+    "name": "Uylenburg",
+    "tourism": "zoo",
+    "opening_hours": "Mo-We,Fr,Sa 10:00-19:00; Th 10:00-12:30",
+    "website": "https://www.impulskinderopvang.nl/locaties/kinderboerderij-de-uylenburg",
+    "wikidata": "Q139590121",
+    "addr:housenumber": "420",
+    "addr:street": "Staalmeesterslaan",
+    "addr:postcode": "1057PH",
+    "fee": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/37737807",
+   "lat": 52.374453,
+   "lng": 4.884731,
+   "tags": {
+    "name": "Homomonument",
+    "historic": "memorial",
+    "website": "https://www.homomonument.nl/",
+    "wikidata": "Q51411",
+    "wikipedia": "nl:Homomonument (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/378141759",
+   "lat": 52.35959,
+   "lng": 4.887292,
+   "tags": {
+    "name": "Carel Willinkplantsoen",
+    "leisure": "park",
+    "wikidata": "Q21292171"
+   }
+  },
+  {
+   "id": "way/4366722",
+   "lat": 52.360224,
+   "lng": 4.920422,
+   "tags": {
+    "name": "Oosterpark",
+    "leisure": "park",
+    "wikidata": "Q2718912",
+    "wikipedia": "nl:Oosterpark (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/4366723",
+   "lat": 52.366046,
+   "lng": 4.916707,
+   "tags": {
+    "name": "Artis",
+    "tourism": "zoo",
+    "opening_hours": "Mar 01-Oct 31 09:00-18:00; Nov 01-Feb 28 09:00-17:00",
+    "website": "https://www.artis.nl/nl/",
+    "wikidata": "Q713124",
+    "wikipedia": "nl:Artis",
+    "addr:housenumber": "38-40",
+    "addr:street": "Plantage Kerklaan",
+    "addr:postcode": "1018CZ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/4376560",
+   "lat": 52.367865,
+   "lng": 4.908654,
+   "tags": {
+    "name": "Wertheimpark",
+    "leisure": "park",
+    "wikidata": "Q3149634",
+    "wikipedia": "nl:Wertheimpark"
+   }
+  },
+  {
+   "id": "way/44021056",
+   "lat": 52.368606,
+   "lng": 4.864099,
+   "tags": {
+    "name": "Zimmerhoeve",
+    "tourism": "zoo",
+    "website": "https://www.zimmerhoeve.nl",
+    "wikidata": "Q139374159",
+    "fee": "no",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/44508819",
+   "lat": 52.357908,
+   "lng": 4.879835,
+   "tags": {
+    "name": "Stedelijk Museum Amsterdam",
+    "name:en": "Stedelijk Museum Amsterdam",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "website": "https://www.stedelijk.nl/",
+    "wikidata": "Q42175133",
+    "wikipedia": "nl:Stedelijk Museum Amsterdam",
+    "addr:housenumber": "10",
+    "addr:street": "Museumplein",
+    "addr:postcode": "1071DJ",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/45038672",
+   "lat": 52.363733,
+   "lng": 4.919475,
+   "tags": {
+    "name": "Muiderpoort",
+    "historic": "city_gate",
+    "building": "yes",
+    "wikidata": "Q1976404",
+    "wikipedia": "nl:Muiderpoort (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/451443669",
+   "lat": 52.366359,
+   "lng": 4.900881,
+   "tags": {
+    "name": "Blauwbrug",
+    "tourism": "viewpoint",
+    "wikidata": "Q883126",
+    "wikipedia": "nl:Blauwbrug",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/455467181",
+   "lat": 52.37301,
+   "lng": 4.948894,
+   "tags": {
+    "name": "Pythonbrug",
+    "name:en": "Python Bridge",
+    "tourism": "attraction",
+    "wikidata": "Q1912236",
+    "wikipedia": "nl:Pythonbrug",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/45981486",
+   "lat": 52.349557,
+   "lng": 4.831263,
+   "tags": {
+    "name": "Staalmanpark",
+    "leisure": "park",
+    "wikidata": "Q19545893",
+    "wikipedia": "nl:Staalmanpark"
+   }
+  },
+  {
+   "id": "way/482063087",
+   "lat": 52.401697,
+   "lng": 4.922637,
+   "tags": {
+    "name": "De Buiktuin",
+    "tourism": "zoo",
+    "opening_hours": "Mo-Su 10:00-16:00"
+   }
+  },
+  {
+   "id": "way/487473058",
+   "lat": 52.365168,
+   "lng": 4.818093,
+   "tags": {
+    "name": "Sloterpark",
+    "leisure": "park",
+    "wikidata": "Q2660476",
+    "wikipedia": "nl:Sloterpark",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/493003731",
+   "lat": 52.379368,
+   "lng": 4.886774,
+   "tags": {
+    "name": "Noordermarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Mo 09:00-13:00 open \"Brocante\"; Sa 09:00-16:00 open \"Biologische Boerenmarkt\"",
+    "website": "https://www.noordermarkt-amsterdam.nl/"
+   }
+  },
+  {
+   "id": "way/533755352",
+   "lat": 52.389499,
+   "lng": 4.910098,
+   "tags": {
+    "name": "Pekmarkt",
+    "amenity": "marketplace",
+    "opening_hours": "We,Fr,Sa 09:00-17:00",
+    "website": "http://www.pekmarkt.nl/"
+   }
+  },
+  {
+   "id": "way/536787142",
+   "lat": 52.35465,
+   "lng": 4.817959,
+   "tags": {
+    "name": "Piet Wiedijkpark",
+    "leisure": "park",
+    "wikidata": "Q2119692"
+   }
+  },
+  {
+   "id": "way/545029841",
+   "lat": 52.345329,
+   "lng": 4.930767,
+   "tags": {
+    "name": "Darwinplantsoen",
+    "leisure": "park",
+    "wikidata": "Q31942374"
+   }
+  },
+  {
+   "id": "way/545032852",
+   "lat": 52.366265,
+   "lng": 4.906694,
+   "tags": {
+    "name": "Hortusplantsoen",
+    "leisure": "park",
+    "wikidata": "Q7476523",
+    "wikipedia": "nl:Hortusplantsoen"
+   }
+  },
+  {
+   "id": "way/57857390",
+   "lat": 52.372773,
+   "lng": 4.900316,
+   "tags": {
+    "name": "Waag",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q2466999",
+    "wikipedia": "nl:Waag (Amsterdam)",
+    "addr:housenumber": "4",
+    "addr:street": "Nieuwmarkt",
+    "addr:postcode": "1012CR",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/57857592",
+   "lat": 52.374361,
+   "lng": 4.898072,
+   "tags": {
+    "name": "Oude Kerk",
+    "name:en": "Old Church",
+    "tourism": "museum",
+    "historic": "yes",
+    "building": "church",
+    "opening_hours": "Mo-Sa 10:00-18:00; Su 13:00-17:30",
+    "website": "https://www.oudekerk.nl/",
+    "wikidata": "Q623558",
+    "wikipedia": "nl:Oude Kerk (Amsterdam)",
+    "addr:housenumber": "23",
+    "addr:street": "Oudekerksplein",
+    "addr:postcode": "1012GX",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/57857987",
+   "lat": 52.36715,
+   "lng": 4.903818,
+   "tags": {
+    "name": "Joods Museum",
+    "name:en": "Jewish Museum",
+    "tourism": "museum",
+    "building": "yes",
+    "opening_hours": "Mo-Su 11:00-17:00",
+    "website": "https://www.jhm.nl",
+    "wikidata": "Q702726",
+    "wikipedia": "nl:Joods Museum (Nederland)",
+    "addr:housenumber": "1",
+    "addr:street": "Nieuwe Amstelstraat",
+    "addr:postcode": "1011PL",
+    "fee": "yes",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/57858502",
+   "lat": 52.375045,
+   "lng": 4.896277,
+   "tags": {
+    "name": "Beurs van Berlage",
+    "name:en": "Berlage's Stock Market",
+    "tourism": "attraction",
+    "building": "yes",
+    "website": "https://www.beursvanberlage.com/",
+    "wikidata": "Q851200",
+    "wikipedia": "nl:Beurs van Berlage",
+    "addr:housenumber": "243",
+    "addr:street": "Damrak",
+    "addr:postcode": "1012ZJ"
+   }
+  },
+  {
+   "id": "way/57859248",
+   "lat": 52.376358,
+   "lng": 4.902238,
+   "tags": {
+    "name": "Schreierstoren",
+    "name:en": "Weepers' Tower",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q610402",
+    "wikipedia": "nl:Schreierstoren",
+    "addr:housenumber": "94",
+    "addr:street": "Prins Hendrikkade",
+    "addr:postcode": "1012AE",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/57859504",
+   "lat": 52.361235,
+   "lng": 4.96637,
+   "tags": {
+    "name": "Gemeenlandshuis",
+    "tourism": "museum",
+    "historic": "yes",
+    "building": "yes",
+    "opening_hours": "Su[1] 12:00-16:00",
+    "website": "https://www.museumhuizen.nl/nl/gemeenlandshuis-amsterdam",
+    "wikidata": "Q4328492",
+    "wikipedia": "nl:Gemeenlandshuis van Diemen"
+   }
+  },
+  {
+   "id": "way/57861363",
+   "lat": 52.367539,
+   "lng": 4.905343,
+   "tags": {
+    "name": "Portugese Synagoge",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "synagogue",
+    "wikidata": "Q1853707",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/57862728",
+   "lat": 52.367059,
+   "lng": 4.893221,
+   "tags": {
+    "name": "Munttoren",
+    "name:en": "Mint Tower",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q1429748",
+    "wikipedia": "nl:Munttoren (Amsterdam)",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/57862882",
+   "lat": 52.349342,
+   "lng": 4.856685,
+   "tags": {
+    "name": "Haarlemmermeerstation",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q4648414",
+    "wikipedia": "nl:Station Amsterdam Haarlemmermeer"
+   }
+  },
+  {
+   "id": "way/57863677",
+   "lat": 52.374317,
+   "lng": 4.904134,
+   "tags": {
+    "name": "Scheepvaarthuis",
+    "name:en": "The Shipping House",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q2078885",
+    "wikipedia": "nl:Scheepvaarthuis"
+   }
+  },
+  {
+   "id": "way/57863916",
+   "lat": 52.366824,
+   "lng": 4.90688,
+   "tags": {
+    "name": "Drie-klimaten-kas",
+    "name:en": "Three-climate Greenhouse",
+    "tourism": "attraction",
+    "building": "greenhouse",
+    "wikidata": "Q128103526"
+   }
+  },
+  {
+   "id": "way/57864086",
+   "lat": 52.372039,
+   "lng": 4.905658,
+   "tags": {
+    "name": "Montelbaanstoren",
+    "tourism": "attraction",
+    "historic": "yes",
+    "building": "commercial",
+    "wikidata": "Q1946061",
+    "wikipedia": "nl:Montelbaanstoren",
+    "addr:housenumber": "2",
+    "addr:street": "Oudeschans",
+    "addr:postcode": "1011KX"
+   }
+  },
+  {
+   "id": "way/585781666",
+   "lat": 52.373275,
+   "lng": 4.900603,
+   "tags": {
+    "name": "Chinatown",
+    "tourism": "attraction",
+    "wikidata": "Q1073613",
+    "wikipedia": "nl:Chinatown (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/601081859",
+   "lat": 52.375155,
+   "lng": 4.884098,
+   "tags": {
+    "name": "Anne Frank Huis",
+    "name:en": "Anne Frank House",
+    "tourism": "museum",
+    "opening_hours": "Mo-Su,PH 09:00-22:00 open \"Online tickets only\"; Jan 01 12:00-22:00; Apr 27 09:00-17:00; May 04 09:00-17:00; 2026 Sep 20 09:00-17:00; 2026 Sep 21 off; 2026 Nov 07 09:00-18:30; Dec 25 09:00-17:00; Dec 31 09:00-17:00",
+    "website": "https://www.annefrank.org/",
+    "wikidata": "Q165366",
+    "wikipedia": "nl:Anne Frank Huis",
+    "addr:housenumber": "267",
+    "addr:street": "Prinsengracht",
+    "addr:postcode": "1016GV",
+    "fee": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "id": "way/601096321",
+   "lat": 52.363581,
+   "lng": 4.902358,
+   "tags": {
+    "name": "Magere Brug",
+    "tourism": "attraction",
+    "historic": "bridge",
+    "wikidata": "Q1344400",
+    "wikipedia": "nl:Magere Brug"
+   }
+  },
+  {
+   "id": "way/604753359",
+   "lat": 52.394594,
+   "lng": 4.920635,
+   "tags": {
+    "name": "Noorderpark",
+    "leisure": "park",
+    "wikidata": "Q2480678",
+    "wikipedia": "nl:Noorderpark (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/606929667",
+   "lat": 52.375325,
+   "lng": 4.898227,
+   "tags": {
+    "name": "Warmoesstraat",
+    "tourism": "attraction",
+    "wikidata": "Q389909",
+    "wikipedia": "nl:Warmoesstraat (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/610234798",
+   "lat": 52.369259,
+   "lng": 4.896372,
+   "tags": {
+    "name": "Oudemanhuispoort",
+    "tourism": "attraction",
+    "wikidata": "Q2686362",
+    "wikipedia": "nl:Oudemanhuispoort"
+   }
+  },
+  {
+   "id": "way/61096610",
+   "lat": 52.355454,
+   "lng": 4.875782,
+   "tags": {
+    "name": "zuiderMRKT",
+    "amenity": "marketplace",
+    "opening_hours": "Sa 09:30-17:00",
+    "website": "https://www.zuidermrkt.nl/"
+   }
+  },
+  {
+   "id": "way/620153627",
+   "lat": 52.358722,
+   "lng": 4.956625,
+   "tags": {
+    "name": "Jeugdland|Maakland",
+    "tourism": "theme_park",
+    "leisure": "playground",
+    "opening_hours": "Tu-Su 10:00-17:00",
+    "website": "https://jeugdlandamsterdam.nl/",
+    "wheelchair": "limited"
+   }
+  },
+  {
+   "id": "way/6316270",
+   "lat": 52.35442,
+   "lng": 4.896386,
+   "tags": {
+    "name": "Sarphatipark",
+    "leisure": "park",
+    "wikidata": "Q645372",
+    "wikipedia": "nl:Sarphatipark"
+   }
+  },
+  {
+   "id": "way/6316354",
+   "lat": 52.377936,
+   "lng": 4.83072,
+   "tags": {
+    "name": "Gerbrandypark",
+    "leisure": "park",
+    "wikidata": "Q2632605",
+    "wikipedia": "nl:Gerbrandypark (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/671264366",
+   "lat": 52.392557,
+   "lng": 4.878419,
+   "tags": {
+    "name": "Houthavenpark",
+    "leisure": "park",
+    "wikidata": "Q106730240",
+    "wikipedia": "nl:Houthavenpark"
+   }
+  },
+  {
+   "id": "way/697293448",
+   "lat": 52.38597,
+   "lng": 4.888739,
+   "tags": {
+    "name": "De Dierencapel",
+    "tourism": "zoo",
+    "opening_hours": "Tu-Su 09:00-17:00",
+    "website": "https://www.dedierencapel.nl",
+    "addr:housenumber": "207",
+    "addr:street": "Bickersgracht",
+    "addr:postcode": "1013LH"
+   }
+  },
+  {
+   "id": "way/712688223",
+   "lat": 52.399456,
+   "lng": 4.935331,
+   "tags": {
+    "name": "Buikslotermeermarkt",
+    "amenity": "marketplace",
+    "opening_hours": "Mo 08:30-17:00; Tu-Sa 08:00-18:00"
+   }
+  },
+  {
+   "id": "way/7371071",
+   "lat": 52.369364,
+   "lng": 4.895584,
+   "tags": {
+    "name": "Oudemanhuispoort",
+    "tourism": "attraction",
+    "wikidata": "Q2686362",
+    "wikipedia": "nl:Oudemanhuispoort"
+   }
+  },
+  {
+   "id": "way/7371675",
+   "lat": 52.374072,
+   "lng": 4.8963,
+   "tags": {
+    "name": "Warmoesstraat",
+    "tourism": "attraction",
+    "wikidata": "Q389909",
+    "wikipedia": "nl:Warmoesstraat (Amsterdam)"
+   }
+  },
+  {
+   "id": "way/737341484",
+   "lat": 52.376695,
+   "lng": 4.938832,
+   "tags": {
+    "name": "Mien Ruysplantsoen",
+    "leisure": "park",
+    "wikidata": "Q66981243",
+    "wikipedia": "nl:Mien Ruysplantsoen"
+   }
+  },
+  {
+   "id": "way/737380719",
+   "lat": 52.373159,
+   "lng": 4.934518,
+   "tags": {
+    "name": "Rietlandpark",
+    "leisure": "park",
+    "wikidata": "Q1938287",
+    "wikipedia": "nl:Rietlandpark"
+   }
+  },
+  {
+   "id": "way/73998749",
+   "lat": 52.368932,
+   "lng": 4.864413,
+   "tags": {
+    "name": "Zimmerterrein",
+    "leisure": "park",
+    "wikidata": "Q15884220",
+    "wikipedia": "nl:Zimmerterrein"
+   }
+  },
+  {
+   "id": "way/73999192",
+   "lat": 52.360041,
+   "lng": 4.874019,
+   "tags": {
+    "name": "Vondelmonument",
+    "tourism": "artwork",
+    "historic": "memorial",
+    "wikidata": "Q15624921",
+    "wikipedia": "nl:Vondelmonument",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/74603474",
+   "lat": 52.366006,
+   "lng": 4.828391,
+   "tags": {
+    "name": "Kröller-Müllerpark",
+    "leisure": "park",
+    "wikidata": "Q52324598"
+   }
+  },
+  {
+   "id": "way/776263071",
+   "lat": 52.380665,
+   "lng": 4.881943,
+   "tags": {
+    "name": "Constantiahofje",
+    "leisure": "garden",
+    "wikidata": "Q1919633",
+    "wikipedia": "nl:Constantiahofje"
+   }
+  },
+  {
+   "id": "way/78090886",
+   "lat": 52.366724,
+   "lng": 4.867031,
+   "tags": {
+    "name": "Ten Katemarkt",
+    "amenity": "marketplace",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/812982275",
+   "lat": 52.322525,
+   "lng": 4.877135,
+   "tags": {
+    "name": "'t Kleine Loopveld",
+    "leisure": "park",
+    "wikidata": "Q2744224",
+    "wikipedia": "nl:'t Kleine Loopveld"
+   }
+  },
+  {
+   "id": "way/897155293",
+   "lat": 52.338222,
+   "lng": 4.917029,
+   "tags": {
+    "name": "Bella Vistapark",
+    "leisure": "park",
+    "wikidata": "Q107182484",
+    "wikipedia": "nl:Bella Vistapark"
+   }
+  },
+  {
+   "id": "way/94517266",
+   "lat": 52.367049,
+   "lng": 4.868158,
+   "tags": {
+    "name": "De Hallen",
+    "tourism": "attraction",
+    "building": "yes",
+    "wikidata": "Q16466032",
+    "wikipedia": "nl:De Hallen (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/94756489",
+   "lat": 52.373123,
+   "lng": 4.892609,
+   "tags": {
+    "name": "Dam",
+    "name:en": "Dam Square",
+    "tourism": "attraction",
+    "wikidata": "Q839050",
+    "wikipedia": "nl:Dam (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "id": "way/99205257",
+   "lat": 52.374563,
+   "lng": 4.883919,
+   "tags": {
+    "name": "Westerkerk",
+    "name:en": "Westerkerk",
+    "tourism": "attraction",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "opening_hours": "Mo-Fr 11:00-15:00",
+    "website": "https://www.westerkerk.nl/",
+    "wikidata": "Q1130722",
+    "wikipedia": "nl:Westerkerk (Amsterdam)",
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}
