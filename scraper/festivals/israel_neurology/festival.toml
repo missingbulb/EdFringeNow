@@ -1,0 +1,61 @@
+# The Israel Neurological Association's annual conference: its identity, its
+# editions, and the sources an edition's information block is assembled from.
+# Every key follows the contract in scraper/festivals/README.md.
+
+id = "israel-neurological-association"
+name = "Israel Neurological Association Annual Conference"
+name_local = "הכנס השנתי של האיגוד הנוירולוגי בישראל"
+city = "Tel Aviv"
+country = "IL"
+# Expo Tel Aviv (OSM way 355090046), the 2026 venue, for the festival
+# timeline and the travel maths between cities.
+lat = 32.1054
+lng = 34.8084
+timezone = "Asia/Jerusalem"
+# The site is in Hebrew; the programme is published in English.
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-medicine"]
+default_genre = "talk"
+site = "https://israelneurocongress.com/"
+
+# Admission is a conference registration, for both days or one; no session is
+# sold on its own, so performance prices stay null.
+[ticketing]
+model = "festival-pass"
+url = "https://reg.eventact.com//welcome?Form=irp8AAA&c=i7AI&Event=ip5cAAA&lang=he"
+notes = "Registration through EventAct. Early rates until 3 Dec 2026 for a specialist: both days ₪330 for association members, ₪630 for others; one day ₪220 or ₪365. Residents, retirees, nurses, paramedical staff, students and researchers pay less (the registration page's tables)."
+currency = "ILS"
+source = "https://israelneurocongress.com/%d7%94%d7%a8%d7%a9%d7%9e%d7%94-%d7%9c%d7%9b%d7%a0%d7%a1-%d7%94%d7%a9%d7%a0%d7%aa%d7%99-2026/"
+
+[[edition]]
+id = "2026"
+format = "block"
+# ordinal: the site prints none.
+first = "2026-12-21"
+last = "2026-12-22"
+sources = ["congress-site", "venues-research"]
+
+[[source]]
+id = "congress-site"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/congress-site/fetch.py"
+adapter = "israel_neurology/congress_site.py"
+
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "platforms/curated_venues.py"
+
+# Field precedence per section: for each field, the first source listed here that
+# supplies it wins.
+[merge]
+venues = ["venues-research", "congress-site"]
+events = ["congress-site"]
+performances = ["congress-site"]

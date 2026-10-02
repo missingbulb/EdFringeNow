@@ -147,6 +147,8 @@ vocabulary, its `adapter` names the generic one directly, as a curated
 | EventAct agenda widget (`api.eventact.com/o/v2/agenda`) | `eventact.py` | ISRA, AIS conference | every session by day and hall, its lectures, presenting speakers and portraits |
 | Tel Aviv Cinematheque programme page (+ its load-more call) | `cinematheque.py` | TLVFest | one card per screening: film page, still, length, director, language, blurb, hall, order link |
 | Smarticket box office (listing + performance pages) | `smarticket.py` | Kol HaMusica | one record per performance from its JSON-LD Event: start, place, running time, price, availability, picture, description |
+| A programme PDF ruled into a grid | `pdf_grid.py` | ICISA, SEEEI Electricity & Energy | the grid's cells by their ruling lines, each cell's lines with bold and wrap marks, right-to-left text in reading order; installs pdfminer.six into the git-ignored cache when missing |
+| Forms Wizard conference site (`<event>.forms-wizard.biz`) | `forms_wizard.py` | IAEM assembly | every agenda item by day: icon, title, time, people, place, description tables as rows of cells |
 | Nominatim (OSM) | `nominatim.py` | any source with street addresses | coordinates for them, one request a second |
 
 ### A placeholder festival

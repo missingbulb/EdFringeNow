@@ -438,6 +438,72 @@
    ]
   },
   {
+   "id": "iaem",
+   "name": "Israeli Association for Emergency Medicine Annual Scientific Assembly",
+   "nameLocal": "הכנס השנתי של האיגוד הישראלי לרפואה דחופה",
+   "city": "Airport City",
+   "country": "IL",
+   "lat": 31.986,
+   "lng": 34.9162,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://emergencymedicine-2026.forms-wizard.biz/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://emergencymedicine-2026.forms-wizard.biz/users/new"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-21",
+     "lastDate": "2026-10-21",
+     "format": "block",
+     "dataUrl": "/data/festivals/iaem/2026.json",
+     "events": 9
+    }
+   ]
+  },
+  {
+   "id": "icisa",
+   "name": "ICISA, International Conference of the Israel Society of Anesthesiologists",
+   "nameLocal": "הכנס הבינלאומי של איגוד הרופאים המרדימים",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0654,
+   "lng": 34.7637,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.icisa2026.com/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://icisa2026-reg.forms-wizard.biz/users/new"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-17",
+     "lastDate": "2026-11-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/icisa/2026.json",
+     "events": 63
+    }
+   ]
+  },
+  {
    "id": "indnegev",
    "name": "InDNegev",
    "nameLocal": "אינדינגב",
@@ -502,6 +568,72 @@
      "format": "block",
      "dataUrl": "/data/festivals/isra/2026.json",
      "events": 26
+    }
+   ]
+  },
+  {
+   "id": "israel-neurological-association",
+   "name": "Israel Neurological Association Annual Conference",
+   "nameLocal": "הכנס השנתי של האיגוד הנוירולוגי בישראל",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.1054,
+   "lng": 34.8084,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-medicine"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://israelneurocongress.com/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://reg.eventact.com//welcome?Form=irp8AAA&c=i7AI&Event=ip5cAAA&lang=he"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-12-21",
+     "lastDate": "2026-12-22",
+     "format": "block",
+     "dataUrl": "/data/festivals/israel-neurological-association/2026.json",
+     "events": 14
+    }
+   ]
+  },
+  {
+   "id": "israman",
+   "name": "Challenge ISRAMAN",
+   "nameLocal": "צ'אלנג' ישראמן",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5482,
+   "lng": 34.9633,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "sports",
+   "subtypes": [
+    "sports-triathlon"
+   ],
+   "defaultGenre": "other",
+   "site": "https://israman.co.il/",
+   "ticketing": {
+    "model": "other",
+    "url": "https://israman.co.il/?page_id=33067"
+   },
+   "editions": [
+    {
+     "id": "2027",
+     "ordinal": null,
+     "firstDate": "2027-01-27",
+     "lastDate": "2027-01-30",
+     "format": "block",
+     "dataUrl": "/data/festivals/israman/2027.json",
+     "events": 21
     }
    ]
   },
@@ -736,6 +868,39 @@
      "format": "block",
      "dataUrl": "/data/festivals/red-sea-jazz/2026.json",
      "events": 46
+    }
+   ]
+  },
+  {
+   "id": "seeei-electricity-energy",
+   "name": "Electricity & Energy, the SEEEI Annual Convention",
+   "nameLocal": "חשמל ואנרגיה, הכנס השנתי של אגודת מהנדסי החשמל והאלקטרוניקה בישראל",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5492,
+   "lng": 34.9675,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-engineering"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.electricity2026.com/en",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://reg.eventact.com//welcome?Form=in5cAAA&c=iJwg&Event=iSpMAAA&lang=en"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-11-10",
+     "lastDate": "2026-11-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/seeei-electricity-energy/2026.json",
+     "events": 56
     }
    ]
   },

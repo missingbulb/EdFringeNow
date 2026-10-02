@@ -1,0 +1,21 @@
+{
+ "about": "Hand-curated venue research for ICISA, keyed by the code its programme-pdf adapter gives the conference hotel, with the halls its programme grid names. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "david-intercontinental": {
+   "name": "The David InterContinental Hotel Tel Aviv",
+   "address": {"value": "Kaufmann St 12, Tel Aviv", "source": "https://www.icisa2026.com/conferencevenue"},
+   "coordinates": {"lat": 32.0653939, "lng": 34.7636824, "basis": "the hotel's OpenStreetMap outline (way 90846147)", "source": "https://www.openstreetmap.org/way/90846147"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "hall-a", "name": "Hall A", "capacity": null, "layout": null},
+    {"id": "hall-b", "name": "Hall B", "capacity": null, "layout": null},
+    {"id": "hall-c", "name": "Hall C", "capacity": null, "layout": null},
+    {"id": "hall-d", "name": "Hall D", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "On-site parking at the hotel, first come first served, at a discounted daily fee with the conference's parking-card encoder (the venue page)."
+  }
+ }
+}

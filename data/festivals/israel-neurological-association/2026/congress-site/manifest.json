@@ -1,0 +1,15 @@
+{
+ "festival": "israel-neurological-association",
+ "edition": "2026",
+ "source": "congress-site",
+ "fetchedAt": "2026-10-02T18:48:48Z",
+ "fetcher": "scraper/festivals/israel_neurology/sources/congress-site/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://israelneurocongress.com/%d7%aa%d7%9b%d7%a0%d7%99%d7%aa-%d7%94%d7%9b%d7%a0%d7%a1-2026/"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One record per non-empty cell of the programme's daily tables: its day, the halls its columns are headed with, the time rows it runs through as printed (a blank time cell counts as the timed row above) and their start and end, and its text."
+}

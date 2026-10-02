@@ -692,9 +692,10 @@ next_last = "2027-01-30"
 schedule = "published"
 schedule_evidence = "Full weekend schedule and start-wave table, server-rendered: race day Fri 29.1.2027, 06:10 CHALLENGE ISRAMAN 226 Elite start, Royal Beach; briefings Thu 28.1 in the Alon ve-Ela hall, Royal Beach hotel"
 platform = "custom"
-status = "candidate"
+status = "adopted"
+festival_id = "israman"
 found_via = ["search-hebrew-programme"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "soundtrack-festival"
@@ -2077,9 +2078,10 @@ next_first = "2026-12-21"
 next_last = "2026-12-22"
 schedule = "published"
 schedule_evidence = "Session-level HTML grid by hall (Expo Tel Aviv pavilion 10, Halls A3 to A5): Oral Session 2, Stroke & Vascular Diseases, 21 Dec 2026 08:30-09:40, Hall A4. Session titles only, no per-talk rows yet."
-status = "candidate"
+status = "adopted"
+festival_id = "israel-neurological-association"
 found_via = ["ima-events-calendar", "kenes-israel"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "icisa"
@@ -2095,9 +2097,10 @@ next_first = "2026-11-17"
 next_last = "2026-11-19"
 schedule = "published"
 schedule_evidence = "Six-page preliminary programme PDF, a grid of Hall A to Hall D per time slot: Tuesday 17 Nov 2026 08:30-09:30, Monitoring - All those Waves (first column, Hall A). The column-to-hall mapping is read from the PDF's header row; confirm on the final programme."
-status = "candidate"
+status = "adopted"
+festival_id = "icisa"
 found_via = ["ima-events-calendar", "kld-events"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "iaem-annual"
@@ -2113,10 +2116,10 @@ next_first = "2026-10-21"
 next_last = "2026-10-21"
 schedule = "published"
 schedule_evidence = "Conference Agenda section of the site, per session with hall: Plenary Session 21 Oct 2026 09:00-10:45, Hall A (Avenue, Airport City), then parallel sessions 11:15-13:00. One conference day plus pre-conference workshops on 20 Oct."
-status = "candidate"
-reason = "One day, but several parallel halls."
+status = "adopted"
+festival_id = "iaem"
 found_via = ["ima-events-calendar", "forms-wizard"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "israel-transplantation-society-annual"
@@ -2148,12 +2151,13 @@ city = "Eilat"
 site = "https://www.electricity2026.com/en"
 programme = "https://www.electricity2026.com/en/_files/ugd/e0b3f6_c7713a1d74894a29bfc29b6f02c248b6.pdf"
 next_first = "2026-11-10"
-next_last = "2026-11-12"
+next_last = "2026-11-13"
 schedule = "published"
-schedule_evidence = "Four-page programme PDF with rooms: Workshop A, Energy Storage Technologies, Management and Maintenance, Tuesday 10 Nov 2026 15:30, Herods Boutique Hotel, Kings AB. The site's home page still shows 2025 text and third-party listings say 11-14 Nov at the Dan Eilat; trust the PDF."
-status = "candidate"
+schedule_evidence = "Four-page programme PDF with rooms: Workshop A, Energy Storage Technologies, Management and Maintenance, Tuesday 10 Nov 2026 15:30, Herods Boutique Hotel, Kings AB. The site's home page still shows 2025 text and third-party listings say 11-14 Nov at the Dan Eilat; trust the PDF, whose last day is Friday 13 Nov."
+status = "adopted"
+festival_id = "seeei-electricity-energy"
 found_via = ["search-english-annual-meeting", "kenes-israel"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "ism-annual-meeting"

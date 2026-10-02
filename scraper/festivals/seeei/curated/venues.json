@@ -1,0 +1,51 @@
+{
+ "about": "Hand-curated venue research for the Electricity & Energy convention, keyed by the codes its programme-pdf adapter gives the three hotels its frame programme names, with the halls it names in each. Every figure is {value, source}, or null when nobody could cite it; coordinates carry the basis they rest on and their source.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "herods-boutique": {
+   "name": "Herods Boutique Eilat",
+   "address": null,
+   "coordinates": {"lat": 29.5492432, "lng": 34.9674756, "basis": "the hotel's OpenStreetMap outline (way 852999384)", "source": "https://www.openstreetmap.org/way/852999384"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "herods-boutique-kings-ab", "name": "Kings AB", "capacity": null, "layout": null},
+    {"id": "herods-boutique-kings-c", "name": "Kings C", "capacity": null, "layout": null},
+    {"id": "herods-boutique-queens", "name": "Queens", "capacity": null, "layout": null},
+    {"id": "herods-boutique-queens-a", "name": "Queens A", "capacity": null, "layout": null},
+    {"id": "herods-boutique-queens-c", "name": "Queens C", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The convention's main hotel: the plenaries meet in Kings AB, and the exhibition fills the pavilion and the Kings lobby (the frame programme)."
+  },
+  "herods-palace": {
+   "name": "Herods Palace Eilat",
+   "address": null,
+   "coordinates": {"lat": 29.5482215, "lng": 34.9674841, "basis": "the hotel's OpenStreetMap outline (way 852999388)", "source": "https://www.openstreetmap.org/way/852999388"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "herods-palace-lawrence", "name": "Lawrence", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "Next door to Herods Boutique; one of the two on-site registration desks (the registration page)."
+  },
+  "dan-eilat": {
+   "name": "Dan Eilat",
+   "address": null,
+   "coordinates": {"lat": 29.5486649, "lng": 34.9655035, "basis": "the hotel's OpenStreetMap outline (way 852999399)", "source": "https://www.openstreetmap.org/way/852999399"},
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {"id": "dan-eilat-blue", "name": "Blue", "capacity": null, "layout": null},
+    {"id": "dan-eilat-blue-a", "name": "Blue A", "capacity": null, "layout": null},
+    {"id": "dan-eilat-blue-b", "name": "Blue B", "capacity": null, "layout": null},
+    {"id": "dan-eilat-coral", "name": "Coral", "capacity": null, "layout": null},
+    {"id": "dan-eilat-tarshish", "name": "Tarshish", "capacity": null, "layout": null},
+    {"id": "dan-eilat-fiesta", "name": "Fiesta", "capacity": null, "layout": null}
+   ],
+   "accessibility": null,
+   "notes": "The second conference hotel, a short walk along the promenade from the Herods hotels; the programme spells one hall both Tarshis and Tarshish, served here as Tarshish."
+  }
+ }
+}

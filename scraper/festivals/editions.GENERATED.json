@@ -196,6 +196,30 @@
    ]
   },
   {
+   "festival": "iaem",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-10-21",
+   "last": "2026-10-21",
+   "tools": [
+    "forms-wizard",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "icisa",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-17",
+   "last": "2026-11-19",
+   "tools": [
+    "programme-pdf",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
    "festival": "indnegev",
    "edition": "2026",
    "format": "block",
@@ -215,6 +239,30 @@
    "last": "2026-10-20",
    "tools": [
     "eventact-agenda",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "israel-neurological-association",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-12-21",
+   "last": "2026-12-22",
+   "tools": [
+    "congress-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "israman",
+   "edition": "2027",
+   "format": "block",
+   "first": "2027-01-27",
+   "last": "2027-01-30",
+   "tools": [
+    "festival-site",
     "venues-research"
    ],
    "refreshTools": []
@@ -303,6 +351,18 @@
    "last": "2026-11-14",
    "tools": [
     "festival-site",
+    "venues-research"
+   ],
+   "refreshTools": []
+  },
+  {
+   "festival": "seeei-electricity-energy",
+   "edition": "2026",
+   "format": "block",
+   "first": "2026-11-10",
+   "last": "2026-11-13",
+   "tools": [
+    "programme-pdf",
     "venues-research"
    ],
    "refreshTools": []

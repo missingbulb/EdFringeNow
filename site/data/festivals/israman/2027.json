@@ -1,0 +1,788 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "israman",
+  "edition": "2027",
+  "ordinal": null,
+  "name": "Challenge ISRAMAN",
+  "nameLocal": "צ'אלנג' ישראמן",
+  "city": "Eilat",
+  "country": "IL",
+  "lat": 29.5482,
+  "lng": 34.9633,
+  "timezone": "Asia/Jerusalem",
+  "lang": "he",
+  "dir": "rtl",
+  "kind": "sports",
+  "defaultGenre": "other",
+  "site": "https://israman.co.il/",
+  "firstDate": "2027-01-27",
+  "lastDate": "2027-01-30",
+  "ticketing": {
+   "model": "other",
+   "url": "https://israman.co.il/?page_id=33067",
+   "notes": "Race entry through the organiser's registration page until 4 Jan 2027 or until the 1,500 places fill. Late entry (9 Sep 2026 - 4 Jan 2027): ₪2,730 for CHALLENGE ISRAMAN 226, ₪1,890 for 113; a relay member ₪840 or ₪650. Charged in dollars at the day's rate. Spectators need no ticket.",
+   "currency": "ILS",
+   "source": "https://israman.co.il/?page_id=33067"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "royal-beach",
+   "name": "Royal Beach (חוף רויאל)",
+   "address": null,
+   "lat": 29.5482099,
+   "lng": 34.9632751,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The swim start, point (3) on the schedule's map, and the swim-course clinics.",
+   "refs": [
+    "https://www.openstreetmap.org/way/853978689"
+   ]
+  },
+  {
+   "id": "royal-beach-hotel",
+   "name": "Isrotel Royal Beach",
+   "address": null,
+   "lat": 29.5495139,
+   "lng": 34.9630063,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "alon-ve-ela",
+     "name": "Alon ve-Ela hall (אלון ואלה)",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The athletes' briefings, through the hotel's main entrance (the schedule).",
+   "refs": [
+    "https://www.openstreetmap.org/way/852999442"
+   ]
+  },
+  {
+   "id": "royal-garden",
+   "name": "Isrotel Royal Garden",
+   "address": null,
+   "lat": 29.5504301,
+   "lng": 34.9633785,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "expo",
+     "name": "Expo compound, car park",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "wow",
+     "name": "WOW hall",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The expo compound in the car park is point (2) on the schedule's map, where the race winners arrive.",
+   "refs": [
+    "https://www.openstreetmap.org/node/540901029"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "expo",
+   "title": "אקספו",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "אקספו בחניית מלון ישרוטל רויאל גארדן",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "briefing-1045",
+   "title": "תדריך 226 בעברית",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "תדריך 226 בעברית במלון רויאל ביץ' – אולם \"אלון ואלה\" (כניסה ראשית רויאל ביץ')",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "briefing-1130",
+   "title": "תדריך CHALLENGE ISRAMAN 113 קבוצות גיל : עד 39, 50-54 ושליחים, עברית",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "תדריך CHALLENGE ISRAMAN 113 קבוצות גיל : עד 39, 50-54 ושליחים, עברית במלון רויאל ביץ' – אולם \"אלון ואלה\" (כניסה ראשית רויאל ביץ')",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "briefing-1215",
+   "title": "תדריך CHALLENGE ISRAMAN 113 קבוצות גיל : 40-49 , 55+ עברית",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "תדריך CHALLENGE ISRAMAN 113 קבוצות גיל : 40-49 , 55+ עברית במלון רויאל ביץ' – אולם \"אלון ואלה\" (כניסה ראשית רויאל ביץ')",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "briefing-1300",
+   "title": "תדריך 226&CHALLENGE ISRAMAN 113 באנגלית",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "תדריך 226&CHALLENGE ISRAMAN 113 באנגלית במלון רויאל ביץ' – אולם \"אלון ואלה\" (כניסה ראשית רויאל ביץ')",
+   "durationMin": 30,
+   "imageUrl": null
+  },
+  {
+   "id": "swim-clinic",
+   "title": "הדרכה וסימולציית מסלול השחייה בהדרכת זוהר גלילי בחוף התחרות",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "הדרכה וסימולציית מסלול השחייה בהדרכת זוהר גלילי בחוף התחרות – חוף רויאל ביץ' (הדרכה חינם)",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "winner-113",
+   "title": "הגעת המנצח במקצה החצי",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "הגעת המנצח במקצה החצי (2) (שעה משוערת)",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "winner-226",
+   "title": "הגעת המנצח במקצה CHALLENGE ISRAMAN 226 – המלא",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "הגעת המנצח במקצה CHALLENGE ISRAMAN 226 – המלא (2) (שעה משוערת)",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "finish-party",
+   "title": "מסיבת קו סיום עד אחרון המסיימים",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "מסיבת קו סיום עד אחרון המסיימים",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0610-elite-226",
+   "title": "זינוק CHALLENGE ISRAMAN 226 – Elite 226",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: WHITE · צבע צמיד: WHITE",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0612-ag-226",
+   "title": "זינוק CHALLENGE ISRAMAN 226 – AG 226",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GOLD · צבע צמיד: WHITE",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0612-relay-226",
+   "title": "זינוק CHALLENGE ISRAMAN 226 – Relay 226",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: ORANGE · צבע צמיד: ORANGE",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0710-elite",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – Elite",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: WHITE · צבע צמיד: GOLD",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0715-up-to-39",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – Up to 39",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GRAY · צבע צמיד: BLUE",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0720-45-49",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – 45-49",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GRAY · צבע צמיד: YELLOW",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0725-40-44-60",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – 40-44 & 60+",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GRAY · צבע צמיד: GREEN",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0730-50-54",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – 50-54",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GRAY · צבע צמיד: PURPLE",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0735-55-59",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – 55-59",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: GRAY · צבע צמיד: BROWN",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "start-0740-relay",
+   "title": "זינוק CHALLENGE ISRAMAN 113 – Relay",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "צבע כובע שחייה: PINK · צבע צמיד: PINK",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "red-sea-swim-cup",
+   "title": "משחה גרמין גביע הים אדום -GARMIN Red Sea-Swim Cup 2027",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "משחה גרמין גביע הים אדום -GARMIN Red Sea-Swim Cup 2027",
+   "durationMin": 180,
+   "imageUrl": null
+  },
+  {
+   "id": "closing-ceremony",
+   "title": "טקס סיום",
+   "titleLocal": null,
+   "url": "https://israman.co.il/?page_id=313",
+   "genre": "other",
+   "categories": [],
+   "blurb": "טקס סיום במלון ישרוטל רויאל גארדן אולם WOW",
+   "durationMin": 90,
+   "imageUrl": null
+  }
+ ],
+ "performances": [
+  {
+   "id": "expo/2027-01-27/16:00",
+   "eventId": "expo",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-27",
+   "start": "16:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "expo/2027-01-28/09:00",
+   "eventId": "expo",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-28",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "briefing-1045/2027-01-28/10:45",
+   "eventId": "briefing-1045",
+   "venueId": "royal-beach-hotel",
+   "roomId": "alon-ve-ela",
+   "date": "2027-01-28",
+   "start": "10:45",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "briefing-1130/2027-01-28/11:30",
+   "eventId": "briefing-1130",
+   "venueId": "royal-beach-hotel",
+   "roomId": "alon-ve-ela",
+   "date": "2027-01-28",
+   "start": "11:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "briefing-1215/2027-01-28/12:15",
+   "eventId": "briefing-1215",
+   "venueId": "royal-beach-hotel",
+   "roomId": "alon-ve-ela",
+   "date": "2027-01-28",
+   "start": "12:15",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "briefing-1300/2027-01-28/13:00",
+   "eventId": "briefing-1300",
+   "venueId": "royal-beach-hotel",
+   "roomId": "alon-ve-ela",
+   "date": "2027-01-28",
+   "start": "13:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "swim-clinic/2027-01-28/12:00",
+   "eventId": "swim-clinic",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-28",
+   "start": "12:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "swim-clinic/2027-01-28/13:30",
+   "eventId": "swim-clinic",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-28",
+   "start": "13:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "expo/2027-01-29/10:00",
+   "eventId": "expo",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-29",
+   "start": "10:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "winner-113/2027-01-29/11:00",
+   "eventId": "winner-113",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-29",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "winner-226/2027-01-29/16:00",
+   "eventId": "winner-226",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-29",
+   "start": "16:00",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "finish-party/2027-01-29/20:30",
+   "eventId": "finish-party",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-29",
+   "start": "20:30",
+   "ticketUrl": null,
+   "free": true,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0610-elite-226/2027-01-29/06:10",
+   "eventId": "start-0610-elite-226",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "06:10",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0612-ag-226/2027-01-29/06:12",
+   "eventId": "start-0612-ag-226",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "06:12",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0612-relay-226/2027-01-29/06:12",
+   "eventId": "start-0612-relay-226",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "06:12",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0710-elite/2027-01-29/07:10",
+   "eventId": "start-0710-elite",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:10",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0715-up-to-39/2027-01-29/07:15",
+   "eventId": "start-0715-up-to-39",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:15",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0720-45-49/2027-01-29/07:20",
+   "eventId": "start-0720-45-49",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:20",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0725-40-44-60/2027-01-29/07:25",
+   "eventId": "start-0725-40-44-60",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:25",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0730-50-54/2027-01-29/07:30",
+   "eventId": "start-0730-50-54",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:30",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0735-55-59/2027-01-29/07:35",
+   "eventId": "start-0735-55-59",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:35",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "start-0740-relay/2027-01-29/07:40",
+   "eventId": "start-0740-relay",
+   "venueId": "royal-beach",
+   "roomId": null,
+   "date": "2027-01-29",
+   "start": "07:40",
+   "ticketUrl": "https://israman.co.il/?page_id=33067",
+   "free": false,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "red-sea-swim-cup/2027-01-30/06:30",
+   "eventId": "red-sea-swim-cup",
+   "venueId": null,
+   "roomId": null,
+   "date": "2027-01-30",
+   "start": "06:30",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "expo/2027-01-30/09:00",
+   "eventId": "expo",
+   "venueId": "royal-garden",
+   "roomId": "expo",
+   "date": "2027-01-30",
+   "start": "09:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  },
+  {
+   "id": "closing-ceremony/2027-01-30/11:00",
+   "eventId": "closing-ceremony",
+   "venueId": "royal-garden",
+   "roomId": "wow",
+   "date": "2027-01-30",
+   "start": "11:00",
+   "ticketUrl": null,
+   "free": null,
+   "status": "unknown",
+   "priceMin": null,
+   "priceMax": null
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "festival-site"
+  ],
+  "performances": [
+   "festival-site"
+  ],
+  "availability": [],
+  "prices": []
+ },
+ "provenance": {
+  "sources": {
+   "festival-site": {
+    "kind": "fetched",
+    "path": "data/festivals/israman/2027/festival-site",
+    "fetchedAt": "2026-10-02T19:00:05Z",
+    "fetcher": "scraper/festivals/israman/sources/festival-site/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/israman/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "festival-site"
+   ],
+   "events.categories": [
+    "festival-site"
+   ],
+   "events.durationMin": [
+    "festival-site"
+   ],
+   "events.genre": [
+    "festival-site"
+   ],
+   "events.imageUrl": [
+    "festival-site"
+   ],
+   "events.title": [
+    "festival-site"
+   ],
+   "events.titleLocal": [
+    "festival-site"
+   ],
+   "events.url": [
+    "festival-site"
+   ],
+   "performances.date": [
+    "festival-site"
+   ],
+   "performances.eventId": [
+    "festival-site"
+   ],
+   "performances.free": [
+    "festival-site"
+   ],
+   "performances.roomId": [
+    "festival-site"
+   ],
+   "performances.start": [
+    "festival-site"
+   ],
+   "performances.ticketUrl": [
+    "festival-site"
+   ],
+   "performances.venueId": [
+    "festival-site"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "festival-site": [
+    "2027-01-27 16:00 חלוקת ערכות משתתף במלון ישרוטל ספורט קלאב (1) – מתחם הכנסים (kit pickup)",
+    "2027-01-27 16:00 טיפולי אופניים של מכונאים במתחם האקספו בחניית מלון ישרוטל רויאל גארדן (2) (bike service)",
+    "2027-01-28 10:00 טיפולי אופניים של מכונאים במתחם האקספו בחניית מלון ישרוטל רויאל גארדן (2) (bike service)",
+    "2027-01-28 10:00 חלוקת ערכות משתתף במלון ישרוטל ספורט קלאב (1) – מתחם הכנסים (kit pickup)",
+    "2027-01-28 13:30 הכנסת אופניים וקסדות + הפקדת תיקי T1/T2 בחצר מלון ספורט (1) הכניסה למשתתפים בלבד! (bike and bag check-in)",
+    "2027-01-28 17:30 מסיבת עיתונאים – מלון ספורט. (for the press)",
+    "2027-01-28 20:00 חלוקת ערכות מאוחרת וצ'ק אין T1/T2 – בתוספת תשלום 150 ש\"ח (במלון ישרוטל ספורט קלאב (1) – מתחם הכנסים) **התשלום מראש. יש לפנות לשירות הלקוחות באמצעות הצור קשר באתר (kit pickup)",
+    "2027-01-29 05:00 פתיחת שטח החלפה (1) להתארגנות אחרונה והפקדת תיקי T1 (transition area)",
+    "2027-01-29 06:10 סגירת שטח החלפה | הזנקות חוף רויאל ביץ (3) (transition area)",
+    "2027-01-29 --:-- לו\"ז הזנקות כמפורט בטבלה – הזנקות חוף רויאל ביץ (3) (the start waves, read from the table)",
+    "2027-01-29 09:00 הסעות ל- T2 וחזרה מתחם ההסעה ליד מלון אמריקנה (4) (shuttles)",
+    "2027-01-29 10:30 שידור ישיר בערוץ 5plus (56) (a television broadcast, at no venue)",
+    "2027-01-29 15:00 איסוף אופניים ותיקים משטח ההחלפה בחצר מלון ישרוטל ספורט קלאב (1) (kit collection)",
+    "2027-01-29 23:23 נעילת קו סיום (the finish line's closing time)",
+    "2027-01-30 10:30 אבדות ומציאות ברחבת המשרדים במלון ספורט (1) (lost property)"
+   ]
+  }
+ }
+}
