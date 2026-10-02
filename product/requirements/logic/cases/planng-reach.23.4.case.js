@@ -4,10 +4,11 @@
 // pool, judged from the focused festival's city. verify() runs every row
 // through the shipped rule.
 const CITY = {
-  Jerusalem: { lat: 31.7683, lng: 35.2137 },
-  Haifa: { lat: 32.794044, lng: 34.989571 },
-  Acco: { lat: 32.9236, lng: 35.0705 },
-  Edinburgh: { lat: 55.9533, lng: -3.1883 },
+  Jerusalem: { country: "IL", lat: 31.7683, lng: 35.2137 },
+  Haifa: { country: "IL", lat: 32.794044, lng: 34.989571 },
+  Acco: { country: "IL", lat: 32.9236, lng: 35.0705 },
+  Brighton: { country: "GB", lat: 50.8225, lng: -0.1372 },
+  Edinburgh: { country: "GB", lat: 55.9533, lng: -3.1883 },
 };
 
 const TABLE = {
@@ -15,8 +16,9 @@ const TABLE = {
   rows: [
     ["Haifa, 25 Sep – 3 Oct", "Acco, 27 Sep – 1 Oct", "16 km", "all: 27 Sep – 1 Oct"],
     ["Haifa, 25 Sep – 3 Oct", "Jerusalem, 18 – 22 Oct", "116 km", "all: 18 – 22 Oct"],
-    ["Jerusalem, 18 – 22 Oct", "Edinburgh, 10 – 30 Oct", "4000 km", "10 – 16 Oct and 24 – 30 Oct"],
-    ["Jerusalem, 18 – 22 Oct", "Edinburgh, 19 – 21 Oct", "4000 km", "none"],
+    ["Brighton, 18 – 22 Oct", "Edinburgh, 10 – 30 Oct", "605 km", "10 – 16 Oct and 24 – 30 Oct"],
+    ["Brighton, 18 – 22 Oct", "Edinburgh, 19 – 21 Oct", "605 km", "none"],
+    ["Jerusalem, 18 – 22 Oct", "Edinburgh, 10 – 30 Oct", "4000 km", "none: another country"],
   ],
 };
 
@@ -29,7 +31,7 @@ function festivalOf(cell) {
   return { festivalId: city, ...CITY[city], firstDate: iso(m[1], m[2] || m[4]), lastDate: iso(m[3], m[4]) };
 }
 function rangesOf(cell) {
-  if (cell === "none") return [];
+  if (cell.startsWith("none")) return [];
   return cell
     .replace(/^all: /, "")
     .split(" and ")
@@ -40,7 +42,7 @@ function rangesOf(cell) {
 }
 
 module.exports = {
-  description: "a festival joins the pool whole when a day-trip away, and a far one only on nights you could travel to it",
+  description: "a festival in another country never joins the pool; one in the same country joins whole when a day-trip away, and a far one only on nights you could travel to it",
   table: TABLE,
   async verify(assert) {
     const { poolReach } = await import("../../../../site/shared/feasibility.js");
@@ -58,7 +60,13 @@ module.exports = {
       assert.deepEqual(entry.nights, rangesOf(nights), `${row}: nights`);
       assert.equal(
         entry.verdict,
-        nights === "none" ? "out" : nights.startsWith("all") ? "day-trip" : "partly",
+        nights === "none: another country"
+          ? "abroad"
+          : nights === "none"
+            ? "out"
+            : nights.startsWith("all")
+              ? "day-trip"
+              : "partly",
         `${row}: verdict`
       );
     }

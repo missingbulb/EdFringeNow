@@ -2,6 +2,7 @@
 """Convert one festival edition's raw into its serving block, or prove the committed ones current.
 
     python3 scraper/convert/to_serving.py <festival-id> <edition>   # write that edition
+    python3 scraper/convert/to_serving.py --index                   # rewrite the registry alone
     python3 scraper/convert/to_serving.py --check                   # re-derive everything, diff, exit 1 on drift
     python3 scraper/convert/to_serving.py --selftest
 
@@ -11,7 +12,12 @@ write anything if a single problem is found. Only then are its files replaced,
 each atomically: `site/data/festivals/<festival>/<edition>.json`, the registry
 `site/data/festivals/index.json` (rebuilt from every festival.toml), and the
 edition's declared legacy file, if any. No other festival's or edition's data
-is read or written.
+is written; the registry reads each edition's committed programme only to count
+its events.
+
+`--index` rewrites the registry alone, for a pipeline that changes a
+programme this converter does not write (the Edinburgh Fringe's own wire
+files) and so moves its count.
 
 `--check` is the gate verify.sh runs: every committed serving file must be
 exactly what the committed raw converts to today, and nothing may sit under
@@ -59,7 +65,19 @@ def site_url(repo_path):
     return "/" + repo_path[len("site/"):]
 
 
-def edition_entry(festival, ed):
+def events_in(path, built):
+    """How many events the programme at `path` holds: a serving block's
+    `events`, or a wire catalogue's shows. Read from `built` (path -> text) when
+    this run is writing it, else from the committed file."""
+    text = built.get(path)
+    if text is None:
+        with open(path, encoding="utf-8") as handle:
+            text = handle.read()
+    doc = json.loads(text)
+    return len(doc["events"] if isinstance(doc, dict) else doc)
+
+
+def edition_entry(festival, ed, built):
     entry = {
         "id": ed["id"],
         "ordinal": ed["ordinal"],
@@ -74,9 +92,14 @@ def edition_entry(festival, ed):
         present = os.path.isfile(os.path.join(registry.REPO_ROOT, wire["catalogue"]))
         entry["dataUrl"] = site_url(wire["catalogue"]) if present else None
         entry["wire"] = {"lookups": site_url(wire["lookups"]), "availability": site_url(wire["availability"])}
+        programme = os.path.join(registry.REPO_ROOT, wire["catalogue"])
     else:
         # Declared but not yet fetched: listed, with nothing to load.
         entry["dataUrl"] = data_url(festival["id"], ed["id"]) if merge.edition_ready(festival, ed["id"]) else None
+        programme = serving_path(festival["id"], ed["id"])
+    # The count the year's strip shows before any programme is downloaded;
+    # null where there is no programme to count.
+    entry["events"] = events_in(programme, built) if entry["dataUrl"] else None
     return entry
 
 
@@ -87,7 +110,10 @@ def ticketing_entry(festival):
     return {"model": table.get("model"), "url": table.get("url")}
 
 
-def build_index(festivals):
+def build_index(festivals, built=None):
+    """The registry. `built` is path -> text of the programmes this run writes,
+    counted in place of their committed copies."""
+    built = built or {}
     entries = []
     for fid in sorted(festivals):
         f = festivals[fid]
@@ -108,7 +134,7 @@ def build_index(festivals):
             "defaultGenre": f["default_genre"],
             "site": f["site"],
             "ticketing": ticketing_entry(f),
-            "editions": [edition_entry(f, ed) for ed in sorted(f["edition"], key=lambda e: e["id"])],
+            "editions": [edition_entry(f, ed, built) for ed in sorted(f["edition"], key=lambda e: e["id"])],
         })
     return {"v": schema.VERSION, "festivals": entries}
 
@@ -155,20 +181,26 @@ def write(festival_id, edition_id):
             % (festival_id, edition_id, festival["wire"]["converter"])
         )
     outputs = build_edition(festival, edition_id)
-    outputs[INDEX] = render(build_index(festivals))
+    outputs[INDEX] = render(build_index(festivals, outputs))
     # Everything is built and validated before the first byte is written.
     for path, text in outputs.items():
         atomic_write(path, text)
         print("wrote %s" % os.path.relpath(path, registry.REPO_ROOT))
 
 
+def write_index():
+    atomic_write(INDEX, render(build_index(registry.load_all())))
+    print("wrote %s" % os.path.relpath(INDEX, registry.REPO_ROOT))
+
+
 def expected_outputs():
     festivals = registry.load_all()
-    outputs = {INDEX: render(build_index(festivals))}
+    outputs = {}
     for festival in festivals.values():
         for ed in festival["edition"]:
             if ed["format"] == "block" and merge.edition_ready(festival, ed["id"]):
                 outputs.update(build_edition(festival, ed["id"]))
+    outputs[INDEX] = render(build_index(festivals, outputs))
     return outputs
 
 
@@ -223,6 +255,13 @@ def selftest():
 def main(argv):
     if argv == ["--check"]:
         return check()
+    if argv == ["--index"]:
+        try:
+            write_index()
+        except registry.RegistryError as error:
+            print(error, file=sys.stderr)
+            return 1
+        return 0
     if argv == ["--selftest"]:
         selftest()
         return 0

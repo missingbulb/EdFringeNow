@@ -549,6 +549,15 @@ export const STRINGS = {
     ru: "Программа опубликована",
     ja: "プログラム公開中",
   },
+  "card.events": {
+    probe: ".tl-card",
+    maxWidthPx: 280,
+    sample: { count: 4122 },
+    en: "{count, plural, one {# event} other {# events}} in the programme",
+    he: "{count, plural, one {אירוע אחד} two {שני אירועים} other {# אירועים}} בתוכנייה",
+    ru: "{count, plural, one {# событие} few {# события} many {# событий} other {# события}} в программе",
+    ja: "プログラムに{count}件のイベント",
+  },
   "card.noProgramme": {
     probe: ".tl-card",
     maxWidthPx: 280,
@@ -883,6 +892,20 @@ export const STRINGS = {
   },
 
   // ----------------------------------------------------------- board states --
+  "state.pick.title": {
+    maxWidthPx: 560,
+    en: "Choose a festival on the year above",
+    he: "בחרו פסטיבל בשנה שלמעלה",
+    ru: "Выберите фестиваль на годовой шкале выше",
+    ja: "上の年表からフェスティバルを選んでください",
+  },
+  "state.pick.sub": {
+    maxWidthPx: 560,
+    en: "Its programme loads once you do.",
+    he: "התוכנייה שלו תיטען כשתבחרו.",
+    ru: "Его программа загрузится, как только вы выберете.",
+    ja: "選ぶとプログラムが読み込まれます。",
+  },
   "state.loading.title": {
     maxWidthPx: 560,
     en: "Loading the programme…",
@@ -1372,6 +1395,15 @@ export const STRINGS = {
     he: "במרחק {km} ק״מ · רחוק מדי",
     ru: "в {km} км · слишком далеко",
     ja: "{km} km・遠すぎます",
+  },
+  "prefs.festivals.abroad": {
+    probe: ".pref-check-word",
+    maxWidthPx: 300,
+    sample: { km: "3,650" },
+    en: "{km} km away · another country",
+    he: "במרחק {km} ק״מ · מדינה אחרת",
+    ru: "в {km} км · другая страна",
+    ja: "{km} km・別の国",
   },
   "prefs.festivals.online": {
     probe: ".pref-check-word",

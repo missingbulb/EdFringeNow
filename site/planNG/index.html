@@ -92,6 +92,12 @@
       <p class="board-count" id="boardCount" role="status" aria-live="polite"></p>
     </div>
 
+    <!-- Before any festival is chosen: nothing is downloaded but the year. -->
+    <div id="pickState" class="state-panel" hidden role="status">
+      <p class="state-title" data-i18n="state.pick.title">Choose a festival on the year above</p>
+      <p class="state-sub" data-i18n="state.pick.sub">Its programme loads once you do.</p>
+    </div>
+
     <div id="loadingState" class="state-panel" hidden role="status" aria-live="polite">
       <div class="state-spinner" aria-hidden="true"></div>
       <p class="state-title" data-i18n="state.loading.title">Loading the programme…</p>
@@ -111,9 +117,9 @@
     </div>
 
     <!-- ===================== The calendar ===================== -->
-    <!-- The page leads with the calendar: it drafts from the whole programme
-         before the reader has said anything, so there is no empty state to
-         reveal it from and no upload standing in front of it. -->
+    <!-- Once a festival is chosen the page leads with the calendar: it drafts
+         from the whole programme before the reader has said anything else, so
+         there is no upload standing in front of it. -->
     <section class="panel plan-card" id="planPanel" data-i18n-aria-label="plan.label" aria-label="Your festival, drafted">
 
       <div class="plan-result" id="planResult">
