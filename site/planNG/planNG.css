@@ -575,11 +575,24 @@ body.festival-page {
 .sch-rivals:hover .sch-rival, .sch-rivals[aria-expanded="true"] .sch-rival {
   background: color-mix(in srgb, var(--violet) 70%, var(--paper));
 }
-/* Too many to tell apart: one wash down the pick's slot, darkest where the
-   most shows overlap (its stops are drawn in crowdWash), and a count. */
-.sch-crowd { position: absolute; inset: 0; border-radius: 3px; pointer-events: none; }
+/* More rows than fit: the lane widens, never past a quarter of the slot, and
+   its rows narrow to fit them all, a pixel apart while there is room and
+   touching after that, in two shades so touching rows still read as two. */
+.sch-slot--crowd { container-type: inline-size; --crowd-w: clamp(22px, calc(var(--lanes) * 3px - 1px), 25cqi); }
+.sch-slot--crowd .sch-show { inset-inline-end: calc(var(--crowd-w) + 2px); }
+.sch-rivals--crowd { width: var(--crowd-w); }
+.sch-crowd {
+  --gap: clamp(0px, calc((var(--crowd-w) - 2px - var(--lanes) * 2px) / (var(--lanes) - 1)), 1px);
+  --w: calc((var(--crowd-w) - 2px - (var(--lanes) - 1) * var(--gap)) / var(--lanes));
+  --step: calc(var(--w) + var(--gap));
+  --bar: color-mix(in srgb, var(--violet) 45%, var(--paper));
+  --bar-alt: color-mix(in srgb, var(--violet) 28%, var(--paper));
+  --cap: var(--violet-dark);
+  position: absolute; inset-inline: 1px; pointer-events: none;
+}
 .sch-rivals--crowd:hover .sch-crowd, .sch-rivals--crowd[aria-expanded="true"] .sch-crowd {
-  box-shadow: inset 0 0 0 1px var(--violet);
+  --bar: color-mix(in srgb, var(--violet) 70%, var(--paper));
+  --bar-alt: color-mix(in srgb, var(--violet) 52%, var(--paper));
 }
 /* Narrow columns give the lane less of the card; the tiniest merge its rows,
    since a bar a pixel or two wide says nothing. */
@@ -589,14 +602,17 @@ body.festival-page {
 .schedule.cols-tiny .sch-slot--contested .sch-show { inset-inline-end: 6px; }
 .schedule.cols-tiny .sch-rivals { width: 5px; }
 .schedule.cols-tiny .sch-rival { --w: 5px; inset-inline-start: 0; border-width: 0; }
-.schedule.cols-narrow .sch-rivals-count { display: none; }
-/* On paper of its own, since under it the washes may be solid. */
-.sch-rivals-count {
-  position: absolute; top: 1px; inset-inline: 0; pointer-events: none;
-  padding: 1px 0; border-radius: 3px;
-  background: var(--paper); box-shadow: 0 0 0 1px var(--violet);
-  font-size: 0.5rem; font-weight: 700; line-height: 1.2; text-align: center;
-  color: var(--violet); font-variant-numeric: tabular-nums;
+.schedule.cols-narrow .sch-slot--crowd { --crowd-w: clamp(12px, calc(var(--lanes) * 2px), 25cqi); }
+.schedule.cols-narrow .sch-slot--crowd .sch-show { inset-inline-end: calc(var(--crowd-w) + 1px); }
+.schedule.cols-narrow .sch-rivals--crowd { width: var(--crowd-w); }
+/* Merged in the tiniest, each bar faint, so the strip darkens where they
+   pile up. */
+.schedule.cols-tiny .sch-slot--crowd { --crowd-w: 5px; }
+.schedule.cols-tiny .sch-slot--crowd .sch-show { inset-inline-end: 6px; }
+.schedule.cols-tiny .sch-rivals--crowd { width: 5px; }
+.schedule.cols-tiny .sch-crowd {
+  --w: 5px; --step: 0px; inset-inline: 0;
+  --bar: color-mix(in srgb, var(--violet) 25%, transparent); --bar-alt: var(--bar); --cap: var(--bar);
 }
 
 /* A card the reader has fixed in place, and one they have favourited: the

@@ -1227,7 +1227,7 @@ rather than as a control panel.
   <details><summary>Notes</summary>
 
   A few rivals are packed side by side, so how each overlaps the pick shows at
-  a glance; past three rows they are too many to tell apart, which is `20.15`.
+  a glance; past three rows they are drawn thinner, which is `20.15`.
   Bars stop at the neighbouring cards, so none is read as belonging to another
   hour; an end cut off there, or one nobody published (such a show is drawn
   for the hour the draft assumes it runs), fades out instead of taking a cap.
@@ -1249,15 +1249,18 @@ rather than as a control panel.
   `20.11`. A click opens the same list, for a touch screen.
   </details>
 
-- `20.15` An hour with more rivals than fit side by side draws them as one wash under a count.
+- `20.15` An hour with more rivals than fit side by side still draws each as its own bar capped at its own start and end, in thinner rows across a wider lane.
 
   ![planng-crowd.20.15](requirements/screen/cases/planng-crowd.20.15.png) <!-- req-gallery:20.15 -->
 
   <details><summary>Notes</summary>
 
-  Past three rows the shows are no longer told apart: the lane becomes one
-  wash down the pick's slot, darkest where the most of them overlap, and the
-  number at its top says how many there are. One element however many shows,
+  Past three rows the lane widens, up to a quarter of the slot, and its rows
+  narrow to fit them all, alternating two shades so neighbouring rows stay
+  apart (only the tiniest columns merge them into one strip), and every
+  rival keeps the bar and caps of `20.2`: where each starts and stops reads
+  off the calendar however busy the hour. No count: the bars are the count.
+  The bars of a crowded lane are painted by one element however many shows,
   so a whole Fringe stays inside the page's budget (`26.2`). Resting on it
   opens the same list as `20.3`, which names the scarcest few and counts the
   rest.
