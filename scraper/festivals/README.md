@@ -34,6 +34,7 @@ kind = "comedy"                   # film | fringe | comedy | theatre | music | d
 subtypes = ["comedy-standup"]     # optional; what sets this festival apart within its kind, `<kind>-<what>`
 default_genre = "comedy"          # an event's genre when its adapter assigns none
 site = "https://…"
+wikidata = "Q…"                   # optional; the festival's Wikidata item, where it has one
 
 [ticketing]                       # optional, served as festival.ticketing
 model = "central-box-office"      # how tickets are sold: registry.TICKETING_MODELS
@@ -172,10 +173,22 @@ default.
 
 The registry `site/data/festivals/index.json` is `{v, festivals[]}`, each with the
 festival identity above, `ticketing: {model, url}` (each null where the
-festival's `[ticketing]` does not say) and `editions[{id, ordinal, firstDate, lastDate, format,
-dataUrl}]` (`dataUrl` null until the edition's required raw exists; an
-`edfringe-wire` edition also carries `wire: {lookups, availability}`). The browser loads both
+festival's `[ticketing]` does not say), `popularity` where measured (below) and
+`editions[{id, ordinal, firstDate, lastDate, format, dataUrl}]` (`dataUrl` null
+until the edition's required raw exists; an `edfringe-wire` edition also carries
+`wire: {lookups, availability}`). The browser loads both
 through `site/shared/festival-catalogue.js`.
+
+## Popularity
+
+`popularity` is the festival's Wikipedia user pageviews over the last 12 full
+months, summed over every language edition's article on its Wikidata item.
+`python3 scraper/festivals/popularity.py` measures every festival with a
+`wikidata` QID into `<dir>/popularity.json` (committed input, by hand like the
+fetchers); `python3 scraper/convert/to_serving.py --index` then carries it into
+the registry. A festival with no QID, or whose item has no Wikipedia article, has
+no `popularity` key: unknown, never zero. `popularity.py --find` lists Wikidata
+candidates for festivals with no QID; a person picks one into `festival.toml`.
 
 ## Adding an edition
 

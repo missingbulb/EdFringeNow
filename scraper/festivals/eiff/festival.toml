@@ -17,6 +17,7 @@ kind = "film"
 subtypes = ["film-international"]
 default_genre = "film"
 site = "https://www.edfilmfest.org"
+wikidata = "Q1284745"
 
 [ticketing]
 model = "central-box-office"

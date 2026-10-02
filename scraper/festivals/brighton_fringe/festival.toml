@@ -16,6 +16,7 @@ dir = "ltr"
 kind = "fringe"
 default_genre = "other"
 site = "https://www.brightonfringe.org"
+wikidata = "Q4967649"
 
 [ticketing]
 model = "central-box-office"

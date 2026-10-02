@@ -23,6 +23,7 @@ kind = "comedy"
 subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedyfestival.co.nz"
+wikidata = "Q7015452"
 
 [ticketing]
 model = "per-event-seller"

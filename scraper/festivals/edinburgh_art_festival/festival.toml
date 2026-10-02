@@ -15,6 +15,7 @@ kind = "art"
 subtypes = ["art-contemporary"]
 default_genre = "other"
 site = "https://edinburghartfestival.com"
+wikidata = "Q5338146"
 
 [ticketing]
 model = "per-event-seller"

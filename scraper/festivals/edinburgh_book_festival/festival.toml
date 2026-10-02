@@ -15,6 +15,7 @@ kind = "literature"
 subtypes = ["literature-books"]
 default_genre = "talk"
 site = "https://www.edbookfest.co.uk"
+wikidata = "Q4351301"
 
 [ticketing]
 model = "central-box-office"

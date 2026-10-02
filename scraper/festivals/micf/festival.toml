@@ -21,6 +21,7 @@ kind = "comedy"
 subtypes = ["comedy-standup"]
 default_genre = "comedy"
 site = "https://www.comedyfestival.com.au"
+wikidata = "Q17012417"
 
 [ticketing]
 model = "central-box-office"
