@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch the Acco Theatre Centre's festival listing from its Eventer producer page, for one edition.
 
-Run by hand:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/acco/sources/eventer/fetch.py --edition <year>
 

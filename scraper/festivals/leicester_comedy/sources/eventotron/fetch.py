@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch the Leicester Comedy Festival's programme from its Eventotron box office, for one edition.
 
-Run by hand:
+Run by the festival update (`scraper/festivals/update.py`), or by hand:
 
     python3 scraper/festivals/leicester_comedy/sources/eventotron/fetch.py --edition <year>
 
