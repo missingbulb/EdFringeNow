@@ -1,0 +1,588 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "kol-hamusica",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Voice of Music in the Upper Galilee (Kol HaMusica)",
+  "nameLocal": "פסטיבל קול המוסיקה בגליל העליון",
+  "city": "Kfar Blum",
+  "country": "IL",
+  "lat": 33.1725,
+  "lng": 35.6097,
+  "timezone": "Asia/Jerusalem",
+  "lang": "he",
+  "dir": "rtl",
+  "kind": "music",
+  "defaultGenre": "music",
+  "site": "https://www.kol-hamusica.org.il/",
+  "firstDate": "2026-10-28",
+  "lastDate": "2026-11-01",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94",
+   "notes": "Tickets for each performance through the Upper Galilee Regional Council culture department's Smarticket box office (phone 04-6816640), one price per performance; festival information from the Pastoral hotel (04-6836611).",
+   "currency": "ILS",
+   "source": "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+  }
+ },
+ "categories": [],
+ "venues": [
+  {
+   "id": "beit-haam-kfar-blum",
+   "name": "בית העם כפר בלום",
+   "address": null,
+   "lat": 33.172222,
+   "lng": 35.609722,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Kfar Blum's community hall. The box office says parking is in the Emek HaHula high school car park only. Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Kfar_Blum"
+   ]
+  },
+  {
+   "id": "domus-galilaeae",
+   "name": "דומוס גלילאה",
+   "address": null,
+   "lat": 32.902164,
+   "lng": 35.551778,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "Domus Galilaeae, the Neocatechumenal centre on the Mount of Beatitudes above the Sea of Galilee, about 35 km south of Kfar Blum.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Domus_Galilaeae"
+   ]
+  },
+  {
+   "id": "jordan-bank",
+   "name": "שפת הירדן",
+   "address": null,
+   "lat": 33.172222,
+   "lng": 35.609722,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The family picnic plays outdoors on the bank of the Jordan; the box office gives its place only as \"outside\" and names no meeting point. Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Kfar_Blum"
+   ]
+  },
+  {
+   "id": "klor-centre",
+   "name": "מרכז קלור לאומנויות הבמה",
+   "address": null,
+   "lat": 33.172222,
+   "lng": 35.609722,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [
+    {
+     "id": "hall",
+     "name": "אולם מרכז קלור",
+     "capacity": null,
+     "layout": null
+    },
+    {
+     "id": "theatre",
+     "name": "אולם תיאטרון מרכז קלור",
+     "capacity": null,
+     "layout": null
+    }
+   ],
+   "accessibility": null,
+   "notes": "The Klor Centre for the Performing Arts in Kfar Blum; the box office names two of its halls, its hall (morning concerts) and its theatre hall (unreserved seating). Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Kfar_Blum"
+   ]
+  },
+  {
+   "id": "pastoral-hotel",
+   "name": "מלון פסטורל, כפר בלום",
+   "address": null,
+   "lat": 33.172222,
+   "lng": 35.609722,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": "The Pastoral hotel in Kfar Blum, the festival's home: its lawns and halls hold the Café Concert, the Work in Focus talks and the evening concerts. The box office names no hall. Coordinates are approximate, not a published pin.",
+   "refs": [
+    "https://en.wikipedia.org/wiki/Kfar_Blum"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "show-5293",
+   "title": "שלומי שבן והפסנתר",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_2__%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%A9%D7%91%D7%9F_%D7%95%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8/?id=5293",
+   "genre": "music",
+   "categories": [],
+   "blurb": "אחד היוצרים המעניינים והמקוריים של המוזיקה הישראלית במופע סולו עם פסנתר כנף.\nערב עם מיטב שיריו.\nהמופע של שלומי שבן הוא אקורד הפתיחה של פסטיבל קול המוזיקה בגליל העליון.\n\"וואו. אם צריך לבחור מילה אחת שכזאת בשביל לתאר את ההופעה של שלומי שבן, אין ברירה אלא ללכת על \"וואו\". עמית סלונים – וואלה.\nקרדיט צילום: דודי חסון",
+   "durationMin": 70,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa12ad7050fc126205653.jpg"
+  },
+  {
+   "id": "show-5316",
+   "title": "קו הצל - מוזיקה על אגדות ועל זיכרון",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_3__%D7%A7%D7%95_%D7%94%D7%A6%D7%9C_-_%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94_%D7%A2%D7%9C_%D7%90%D7%92%D7%93%D7%95%D7%AA_%D7%95%D7%A2%D7%9C_%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F/?id=5316",
+   "genre": "music",
+   "categories": [],
+   "blurb": "קו הצל - מוזיקה על אגדות ועל זיכרון\nבנט סורנסן (Sørensen Bent) - ליל ירח מתוך קו הצל (Schattenlinie) לקלרינט, ויולה, ופסנתר 4'\nדני ארדמן, איתמר רינגל, רננה גוטמן\nרוברט שומן - סיפורי אגדה לקלרינט, ויולה ופסנתר 16'\nדני ארדמן, איתמר רינגל, רננה גוטמן\nרוברט שומן - חלום בהקיץ (Träumerei (מתוך תמונות ילדות, לחליל, ויולה, ונבל 4'\nרותם ברטן, איתמר רינגל, מרינה פרדין\nהאיא מוסטפה - שקט במגרש המשחקים, לזכר ילדי מג'דל שמס 8'\nרותם ברטן, איתמר רינגל, מרינה פרדין\nיוהנס ברהמס - סונטה מס. 2 אופ. 100 בלה מז'ור לכינור ופסנתר 20'\nרועי שילוח, עפרה יצחקי",
+   "durationMin": 60,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6abaf9d992300963165764.jpg"
+  },
+  {
+   "id": "show-5317",
+   "title": "יצירה בפוקוס - ואז ידעתי שזו רוח",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_4__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_%D7%95%D7%90%D7%96_%D7%99%D7%93%D7%A2%D7%AA%D7%99_%D7%A9%D7%96%D7%95_%D7%A8%D7%95%D7%97_/?id=5317",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "יצירה בפוקוס - עפרה יצחקי משוחחת על היצירה ואז ידעתי שזו רוח מאת המלחין היפני טורו טקמיצו.\nהכניסה חופשית בהרשמה מראש/ הכניסה ללא עלות אך נדרשת הזמנת כרטיס.",
+   "durationMin": 30,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa1308f9bbe9144352224.jpg"
+  },
+  {
+   "id": "show-5320",
+   "title": "לב בחורף - קלאסיקות מוזיקליות צרפתיות",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_6__%D7%9C%D7%91_%D7%91%D7%97%D7%95%D7%A8%D7%A3_-_%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%A7%D7%95%D7%AA_%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%9C%D7%99%D7%95%D7%AA_%D7%A6%D7%A8%D7%A4%D7%AA%D7%99%D7%95%D7%AA/?id=5320",
+   "genre": "music",
+   "categories": [],
+   "blurb": "קלאסיקות מוזיקליות צרפתיות, וביניהן קטעים קצרים מתוך הקלאסיקה הקולנועית הצרפתית \"לב בחורף\", שבמרכזה המוזיקה של מוריס רוול.\nאריק סאטי - גימנופדי מס' 1 לכינור ונבל\nנגנים: רועי שילוח, מרינה פרדין\nז'ול מאסנה - הרהורים מתוך תאיס לכינור ונבל\nנגנים: רועי שילוח, מרינה פרדין\nטורו טקמיצו - ואז ידעתי שזו רוח (\"And then I knew 'twas Wind\") לחליל, ויולה ונבל\nנגנים: רותם ברטן, איתמר רינגל, מרינה פרדין\nמוריס רוול - מבוא ואלגרו לחליל, קלרינט, נבל ורביעיית מיתרים\nנגנים: רותם ברטן, דני ארדמן, מרינה פרדין, נטשה שר, ניצן ברתנא, איתמר רינגל, אלה טובי\nהפסקה\nמוריס רוול - קטעים מתוך אמא אווזה לפסנתר בארבע ידיים\nנגנים: אורי צבי הכהן, עפרה יצחקי\nמוריס רוול - שלישייה לפסנתר, כינור וצ'לו\nנגנים: רועי שילוח, לינור כץ, עפרה יצחקי\nהדרן\nנגנים: רועי שילוח, לינור כץ, עפרה יצחקי\nמשך הקונצרט: 90 דקות",
+   "durationMin": 90,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aba3f5bddc24983333046.jpg"
+  },
+  {
+   "id": "show-5321",
+   "title": "בעקבות הזמן האבוד - קלאסיקות, עיבודים ומחוות",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_7__%D7%91%D7%A2%D7%A7%D7%91%D7%95%D7%AA_%D7%94%D7%96%D7%9E%D7%9F_%D7%94%D7%90%D7%91%D7%95%D7%93_-_%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%A7%D7%95%D7%AA__%D7%A2%D7%99%D7%91%D7%95%D7%93%D7%99%D7%9D_%D7%95%D7%9E%D7%97%D7%95%D7%95%D7%AA/?id=5321",
+   "genre": "music",
+   "categories": [],
+   "blurb": "\"בעקבות הזמן האבוד\" - קלאסיקות, עיבודים ומחוות.\nדומניקו סקרלטי - סונטה ק64. ברה מינור, בעיבוד לשלישיית פסנתר\nנגנים: ניצן ברתנא, לינור כץ, רננה גוטמן\nולנטין סילבסטרוב - פרקים מתוך רגעים של מוצרט לכינור, צ'לו ופסנתר\nנגנים: ניצן ברתנא, לינור כץ, רננה גוטמן\nוולפגנג אמדאוס מוצרט - שלישייה לכינור, צ'לו ופסנתר בסי במול מז'ור, ק. 502\nנגנים: ניצן ברתנא, לינור כץ, רננה גוטמן\nדומניקו סקרלטי - שתי סונטות לפסנתר\nסונטה ק. 213 ברה מינור\nסונטה ק. 492 ברה מז'ור\nנגן: אורי צבי הכהן\nאון קדוש – מחווה לסקרלטי לחליל, נבל ושלישיית מיתרים\nיצירה מוזמנת לפסטיבל קול המוסיקה בגליל העליון (בתמיכת המכון למוזיקה ישראלית)\nנגנים: נטשה שר, יוני גרטנר, אלה טובי, רותם ברטן, מרינה פרדין\nדומניקו סקרלטי בעיבוד ז'אן פרנסה - סונטות לחליל, נבל ושלישיית מיתרים\nנגנים: נטשה שר, יוני גרטנר, אלה טובי, רותם ברטן, מרינה פרדין\nמשך הקונצרט: 70 דקות.\nבתמיכת המכון למוסיקה ישראלית",
+   "durationMin": 70,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6abb0c8cb03bc893544779.jpg"
+  },
+  {
+   "id": "show-5322",
+   "title": "פיקניק לכל המשפחה על שפת הירדן עם תזמורת הרחוב הירושלמית ומרכז קלור",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_8__%D7%A4%D7%99%D7%A7%D7%A0%D7%99%D7%A7_%D7%9C%D7%9B%D7%9C_%D7%94%D7%9E%D7%A9%D7%A4%D7%97%D7%94_%D7%A2%D7%9C_%D7%A9%D7%A4%D7%AA_%D7%94%D7%99%D7%A8%D7%93%D7%9F_%D7%A2%D7%9D_%D7%AA%D7%96%D7%9E%D7%95%D7%A8%D7%AA_%D7%94%D7%A8%D7%97%D7%95%D7%91_%D7%94%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%9E%D7%99%D7%AA_%D7%95%D7%9E%D7%A8%D7%9B%D7%96_%D7%A7%D7%9C%D7%95%D7%A8/?id=5322",
+   "genre": "family",
+   "categories": [],
+   "blurb": "זמן משפחתי על שפת הירדן עם תזמורת הרחוב הירושלמית ומרכז קלור בפרוייקט מוזיקלי-קהילתי, בניצוח עידו שפיטלניק.\nהכניסה חופשית.\nפרטים מדוייקים ינתנו בהמשך.",
+   "durationMin": 60,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aba5264e7010032399702.jpg"
+  },
+  {
+   "id": "show-5323",
+   "title": "יצירה בפוקוס - 100 שנה לקורטאג",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_9__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_100_%D7%A9%D7%A0%D7%94_%D7%9C%D7%A7%D7%95%D7%A8%D7%98%D7%90%D7%92/?id=5323",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "לרגל מאה שנה להולדתו של גיאורגי קורטאג, אחד מענקי המוזיקה במאה העשרים – שיחה על המוזיקה שלו עם עפרה יצחקי, הקרנת קטע מראיון אתו, וביצוע מיצירותיו.\nגיאורגי קורטאג - קטעים לקונטרבס סולו מתוך סימנים, משחקים, מסרים\nנגן: אורי ארבל\nגיאורגי קורטאג - קטעים לחליל סולו מתוך סצנות אופ. 39\nנגנית: רותם ברטן\nהכניסה חופשית אך נדרשת הרשמה מראש/ הכניסה ללא עלות אך נדרשת הזמנת כרטיס\nמשך האירוע: 30 דקות.",
+   "durationMin": 30,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa1321413eac460944153.jpg"
+  },
+  {
+   "id": "show-5324",
+   "title": "יצירה בפוקוס - שיחה אישית עם עפרה יצחקי",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_10__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_%D7%A9%D7%99%D7%97%D7%94_%D7%90%D7%99%D7%A9%D7%99%D7%AA_%D7%A2%D7%9D_%D7%A2%D7%A4%D7%A8%D7%94_%D7%99%D7%A6%D7%97%D7%A7%D7%99/?id=5324",
+   "genre": "talk",
+   "categories": [],
+   "blurb": "שיחה עם עפרה יצחקי, המנהלת האומנותית של הפסטיבל, בשילוב קטעי נגינה בפסנתר.\nמשך המפגש : 45 דקות",
+   "durationMin": 45,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa13215b409a229953570.jpg"
+  },
+  {
+   "id": "show-5329",
+   "title": "רפסודיה אמריקאית",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_11__%D7%A8%D7%A4%D7%A1%D7%95%D7%93%D7%99%D7%94_%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%90%D7%99%D7%AA_/?id=5329",
+   "genre": "music",
+   "categories": [],
+   "blurb": "רפסודיה אמריקאית - קלאסיקות אמריקאיות לרביעיית מיתרים, בשילוב קריאה ממיטב המשוררים והפילוסופים האמריקאים, ומבחר גוספלס ושירי עם אמריקאים. בהשתתפות הזמרת והשחקנית אולה שור.\nסמואל בארבר - אדאג’יו למיתרים מתוך רביעייה אופ. 11\nנגנים: נטשה שר, ניצן ברתנא, יוני גרטנר, אלה טובי\nסמואל בארבר - Sure on the Shining Night\nמשתתפים: מקהלת הגליל העליון\nפלורנס פרייס - מתוך רביעיית מיתרים מס. 2 בלה מינור – פרק שלישי, JUBA\nנגנים: נטשה שר, ניצן ברתנא, יוני גרטנר, אלה טובי\nפלורנס פרייס - Resignation\nמשתתפים: מקהלת הגליל העליון\nאהרן קופלנד - Ching-A-Ring-Chaw\nמשתתפים: מקהלת הגליל העליון\nמורטון גולד - מתוך Gig s’Benny לקלרינט וקונטרבס – פרקים 5,6,8\nנגנים: דני ארדמן, אורי ארבל\nעממי אמריקאי/ עיבוד: שאבון לויד - Sometimes I feel like a Motherless Child\nמשתתפים: דני ארדמן, אורי ארבל, מקהלת הגליל העליון\nהפסקה\nלאונרד ברנשטיין - פתיחה לאופרטה 'קנדיד' בעיבוד לחמישיית כלי נשיפה מעץ\nנגנים: חמישיית תל אביב\nשירים מתוך מחזות זמר (מאת מרק בליצשטיין ואחרים)\nמשתתפות: אולה שור, עפרה יצחקי\nג'ורג' גרשווין - רפסודיה בכחול בעיבוד לפסנתר וחמישיית כלי נשיפה מעץ\nנגנים: חמישיית תל אביב, עפרה יצחקי\nAmerica מתוך סיפור הפרברים\nנגנים חמישיית תל אביב\nמשך הקונצרט: 90 דקות",
+   "durationMin": 90,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aba69305e4c5686236374.jpg"
+  },
+  {
+   "id": "show-5328",
+   "title": "סרנדה לימונדה - קונצרט ילדים | פטר והזאב",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_12__%D7%A1%D7%A8%D7%A0%D7%93%D7%94_%D7%9C%D7%99%D7%9E%D7%95%D7%A0%D7%93%D7%94_-_%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98_%D7%99%D7%9C%D7%93%D7%99%D7%9D_%7C_%D7%A4%D7%98%D7%A8_%D7%95%D7%94%D7%96%D7%90%D7%91/?id=5328",
+   "genre": "family",
+   "categories": [],
+   "blurb": "סרנדה לימונדה: פטר והזאב\nהמעשייה האהובה והמפורסמת של פרוקופייב מקבלת לבוש חדש, צבעוני ומלא חיים בגרסה מיוחדת המשלבת מוזיקה, משחק ותנועה, בבימויו של ארי טפרברג.\nנגני ההרכב הופכים גם למספרי הסיפור ולדמויותיו: הם נעים על הבמה ומשתמשים בשלל חפצים - ובהם כלי הנגינה עצמם - כדי לברוא את עולמם של פטר, הזאב ושאר גיבורי המעשייה. לאורך המופע הילדים פוגשים מקרוב את כלי הנשיפה השונים ונסחפים אל חדוות הנגינה המשותפת.\nבביצוע חמישיית תל אביב, מהרכבי כלי הנשיפה הקאמריים המובילים בישראל. מאז היווסדה בשנת 2009 היא מופיעה בקביעות באולמות הקונצרטים המרכזיים בארץ ובעולם, משלבת מצוינות אמנותית עם פעילות חינוכית ענפה, וזכתה בשנת 2024 בפרס ע\"ש דניאל בנימיני להרכב קאמרי קבוע מטעם משרד התרבות.\nהמופע הופק בתמיכת קרן פטריק ולינה דרהי.\nרואי אמוץ - חליל | דמיטרי מלכין - אבוב | דני ארדמן - קלרינט | איתמר לשם - קרן | נדב כהן - בסון\nמשך המופע: כ־45 דקות | מיועד לילדים מגיל 4 ומעלה.\nהקונצרט יתקיים באולם התיאטרון במרכז קלור, כפר בלום. מקומות הישיבה לא מסומנים.\nצילום: יאיר מיוחס",
+   "durationMin": 60,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa131d8b8447674073145.jpg"
+  },
+  {
+   "id": "show-5327",
+   "title": "כי סערת עלי - אהבה ותשוקה בשירים ובמוזיקה",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_13__%D7%9B%D7%99_%D7%A1%D7%A2%D7%A8%D7%AA_%D7%A2%D7%9C%D7%99_-_%D7%90%D7%94%D7%91%D7%94_%D7%95%D7%AA%D7%A9%D7%95%D7%A7%D7%94_%D7%91%D7%A9%D7%99%D7%A8%D7%99%D7%9D_%D7%95%D7%91%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94/?id=5327",
+   "genre": "music",
+   "categories": [],
+   "blurb": "\"כי סערת עלי\" - אהבה ותשוקה בשירים, מוזיקה, וטקסטים.\nמקבץ שירי אהבה עבריים – כי סערת עלי, סליחות, ועוד\nמשתתפות: אולה שור, עפרה יצחקי\nסרגיי רחמנינוב - שלישייה אלגית מס. 1 בסול מינור לכינור, צ'לו ופסנתר\nנגנים: נטשה שר, לינור כץ, רננה גוטמן\nארנולד שנברג - ליל זוך לשישיית מיתרים, בעקבות פואמה מאת ריכרד דהמל\nנגנים: ניצן ברתנא, נטשה שר, יוני גרטנר, טלי קרביץ-פרג, לינור כץ, אלה טובי\nמשך הקונצרט 70 דק'",
+   "durationMin": 70,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aba3cbb27a96464774689.jpg"
+  },
+  {
+   "id": "show-5331",
+   "title": "אנסמבל ססיליה בדומוס גלילאה",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_14__%D7%90%D7%A0%D7%A1%D7%9E%D7%91%D7%9C_%D7%A1%D7%A1%D7%99%D7%9C%D7%99%D7%94_%D7%91%D7%93%D7%95%D7%9E%D7%95%D7%A1_%D7%92%D7%9C%D7%99%D7%9C%D7%90%D7%94/?id=5331",
+   "genre": "music",
+   "categories": [],
+   "blurb": "אנסמבל ססיליה בתוכנית המשלבת מוזיקה קלאסית-ליטורגית עם עיבודים חדשים לשירים ישראליים אהובים.\nלוטם טאוב, תום בן ישי – סופרן; תמרה נבות, מאיה הלר – אלט; תם קרני, עמרי אייזנבוד – טנור; גיא פלץ, יואב וייס– באס\nהקונצרט יתקיים בדומוס גליליאה, ליד ורד הגליל.\nמשך הקונצרט: 70 דקות\nצילום: יואל לוי",
+   "durationMin": 70,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aa1320a852a0494003563.jpg"
+  },
+  {
+   "id": "show-5332",
+   "title": "נורית גלרון במופע להקה",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_15__%D7%A0%D7%95%D7%A8%D7%99%D7%AA_%D7%92%D7%9C%D7%A8%D7%95%D7%9F_%D7%91%D7%9E%D7%95%D7%A4%D7%A2_%D7%9C%D7%94%D7%A7%D7%94_/?id=5332",
+   "genre": "music",
+   "categories": [],
+   "blurb": "נורית גלרון, מהיוצרות והמבצעות הבולטות והאהובות במוזיקה הישראלית, מגיעה לפסטיבל עם המופע החדש שלה, הכולל את מיטב שיריה בעיבודים חדשים. במהלך הערב יצטרפו אליה נגני הפסטיבל לביצועים משותפים של שירים נבחרים, בעיבודים שנוצרו במיוחד עבור פסטיבל קול המוסיקה בגליל העליון.\nלאורך הקריירה שלה שיתפה גלרון פעולה עם שורה ארוכה של יוצרים ומבצעים ובנתה רפרטואר מהעשירים והמשמעותיים בישראל.\nהמופע יכלול מבחר משיריה שהפכו לנכסי צאן ברזל, בהם \"יש לי סימפטיה\", \"אני אשתגע\", \"אתה הולך לישון מוקדם\", \"זה הגשם\", \"סוס מעץ\", \"ילדות נשכחת\" ועוד.\nבפתיחת המופע:\nוולפגנג אמדאוס מוצרט - רביעייה לחליל ומיתרים ברה מז'ור ק. 285\nנגנים: רותם ברטן, נטשה שר, טלי קרביץ-פרג, אלה טובי\nחמישה שירים עם נורית גלרון (עיבודים לתכנית זו: יונתן קרת)\nנגנים: רותם ברטן, דני ארדמן, נטשה שר, טלי קרביץ-פרג, אלה טובי, מרינה פרדין, רננה גוטמן\nצילום: הלה עמנואל",
+   "durationMin": 60,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6a9d37ea9ccb9618062890.jpg"
+  },
+  {
+   "id": "show-5333",
+   "title": "נחל שלי",
+   "titleLocal": null,
+   "url": "https://galil-elion.smarticket.co.il/_16__%D7%A0%D7%97%D7%9C_%D7%A9%D7%9C%D7%99/?id=5333",
+   "genre": "music",
+   "categories": [],
+   "blurb": "מוזיקה על מים וטבע, בשילוב נופי הגליל העליון\nהקונצרט מוקדש לזכרו של פושקו (עופר מושקוביץ'), צלם הפסטיבל וחלק מרוחו החיה, שנהרג מאש כוחותינו בחצר ביתו בקיבוץ משגב עם במרץ 2026.\nלאה גולדברג/ סשה ארגוב - נחל שלי – בעיבוד לחמישייה (מוזמן לפסטיבל, מעבד: אביב בנימין)\nנגנים: ניצן ברתנא, יוני גרטנר, לינור כץ, אורי ארבל, עפרה יצחקי\nלואיז פרנק - מתוך חמישיית פסנתר מס. 1 אופ. 30 – פרק שני, אדאג'יו נון טרופו\nנגנים: ניצן ברתנא, יוני גרטנר, לינור כץ, אורי ארבל, עפרה יצחקי\nנעמה פרל צדוק – חמישיית פסנתר\nיצירה מוזמנת לפסטיבל קול המוסיקה בגליל העליון (בתמיכת המכון למוזיקה ישראלית)\nנגנים: ניצן ברתנא, יוני גרטנר, לינור כץ, אורי ארבל, עפרה יצחקי\nפרנץ שוברט - חמישיית פסנתר בלה מז'ור, ד. 667 \"דג השמך\"\nנגנים: ניצן ברתנא, יוני גרטנר, לינור כץ, אורי ארבל, עפרה יצחקי\nשיר ישראלי בעיבוד לחמישייה (מוזמן לפסטיבל, מעבד: אביב בנימין)\nנגנים: ניצן ברתנא, יוני גרטנר, לינור כץ, אורי ארבל, עפרה יצחקי\nמשך הקונצרט: 70 דקות\nבתמיכת המכון למוסיקה ישראלית",
+   "durationMin": 70,
+   "imageUrl": "https://galil-elion.smarticket.co.il//uploads/thumbs/thmb6aba3f5cc9b69213924147.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "perf-5293",
+   "eventId": "show-5293",
+   "venueId": "beit-haam-kfar-blum",
+   "roomId": null,
+   "date": "2026-10-28",
+   "start": "20:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_2__%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%A9%D7%91%D7%9F_%D7%95%D7%94%D7%A4%D7%A1%D7%A0%D7%AA%D7%A8/?id=5293",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 150,
+   "priceMax": 150
+  },
+  {
+   "id": "perf-5316",
+   "eventId": "show-5316",
+   "venueId": "klor-centre",
+   "roomId": "hall",
+   "date": "2026-10-29",
+   "start": "10:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_3__%D7%A7%D7%95_%D7%94%D7%A6%D7%9C_-_%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94_%D7%A2%D7%9C_%D7%90%D7%92%D7%93%D7%95%D7%AA_%D7%95%D7%A2%D7%9C_%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F/?id=5316",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 85,
+   "priceMax": 85
+  },
+  {
+   "id": "perf-5317",
+   "eventId": "show-5317",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "16:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_4__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_%D7%95%D7%90%D7%96_%D7%99%D7%93%D7%A2%D7%AA%D7%99_%D7%A9%D7%96%D7%95_%D7%A8%D7%95%D7%97_/?id=5317",
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "perf-5320",
+   "eventId": "show-5320",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-10-29",
+   "start": "20:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_6__%D7%9C%D7%91_%D7%91%D7%97%D7%95%D7%A8%D7%A3_-_%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%A7%D7%95%D7%AA_%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%9C%D7%99%D7%95%D7%AA_%D7%A6%D7%A8%D7%A4%D7%AA%D7%99%D7%95%D7%AA/?id=5320",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "perf-5321",
+   "eventId": "show-5321",
+   "venueId": "klor-centre",
+   "roomId": "hall",
+   "date": "2026-10-30",
+   "start": "10:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_7__%D7%91%D7%A2%D7%A7%D7%91%D7%95%D7%AA_%D7%94%D7%96%D7%9E%D7%9F_%D7%94%D7%90%D7%91%D7%95%D7%93_-_%D7%A7%D7%9C%D7%90%D7%A1%D7%99%D7%A7%D7%95%D7%AA__%D7%A2%D7%99%D7%91%D7%95%D7%93%D7%99%D7%9D_%D7%95%D7%9E%D7%97%D7%95%D7%95%D7%AA/?id=5321",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 85,
+   "priceMax": 85
+  },
+  {
+   "id": "perf-5322",
+   "eventId": "show-5322",
+   "venueId": "jordan-bank",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "16:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_8__%D7%A4%D7%99%D7%A7%D7%A0%D7%99%D7%A7_%D7%9C%D7%9B%D7%9C_%D7%94%D7%9E%D7%A9%D7%A4%D7%97%D7%94_%D7%A2%D7%9C_%D7%A9%D7%A4%D7%AA_%D7%94%D7%99%D7%A8%D7%93%D7%9F_%D7%A2%D7%9D_%D7%AA%D7%96%D7%9E%D7%95%D7%A8%D7%AA_%D7%94%D7%A8%D7%97%D7%95%D7%91_%D7%94%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%9E%D7%99%D7%AA_%D7%95%D7%9E%D7%A8%D7%9B%D7%96_%D7%A7%D7%9C%D7%95%D7%A8/?id=5322",
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "perf-5323",
+   "eventId": "show-5323",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "16:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_9__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_100_%D7%A9%D7%A0%D7%94_%D7%9C%D7%A7%D7%95%D7%A8%D7%98%D7%90%D7%92/?id=5323",
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "perf-5324",
+   "eventId": "show-5324",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "17:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_10__%D7%99%D7%A6%D7%99%D7%A8%D7%94_%D7%91%D7%A4%D7%95%D7%A7%D7%95%D7%A1_-_%D7%A9%D7%99%D7%97%D7%94_%D7%90%D7%99%D7%A9%D7%99%D7%AA_%D7%A2%D7%9D_%D7%A2%D7%A4%D7%A8%D7%94_%D7%99%D7%A6%D7%97%D7%A7%D7%99/?id=5324",
+   "free": true,
+   "status": "free",
+   "priceMin": 0,
+   "priceMax": 0
+  },
+  {
+   "id": "perf-5329",
+   "eventId": "show-5329",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-10-30",
+   "start": "20:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_11__%D7%A8%D7%A4%D7%A1%D7%95%D7%93%D7%99%D7%94_%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%90%D7%99%D7%AA_/?id=5329",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 120,
+   "priceMax": 120
+  },
+  {
+   "id": "perf-5328",
+   "eventId": "show-5328",
+   "venueId": "klor-centre",
+   "roomId": "theatre",
+   "date": "2026-10-31",
+   "start": "10:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_12__%D7%A1%D7%A8%D7%A0%D7%93%D7%94_%D7%9C%D7%99%D7%9E%D7%95%D7%A0%D7%93%D7%94_-_%D7%A7%D7%95%D7%A0%D7%A6%D7%A8%D7%98_%D7%99%D7%9C%D7%93%D7%99%D7%9D_%7C_%D7%A4%D7%98%D7%A8_%D7%95%D7%94%D7%96%D7%90%D7%91/?id=5328",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 65,
+   "priceMax": 65
+  },
+  {
+   "id": "perf-5327",
+   "eventId": "show-5327",
+   "venueId": "klor-centre",
+   "roomId": "hall",
+   "date": "2026-10-31",
+   "start": "10:30",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_13__%D7%9B%D7%99_%D7%A1%D7%A2%D7%A8%D7%AA_%D7%A2%D7%9C%D7%99_-_%D7%90%D7%94%D7%91%D7%94_%D7%95%D7%AA%D7%A9%D7%95%D7%A7%D7%94_%D7%91%D7%A9%D7%99%D7%A8%D7%99%D7%9D_%D7%95%D7%91%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94/?id=5327",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 85,
+   "priceMax": 85
+  },
+  {
+   "id": "perf-5331",
+   "eventId": "show-5331",
+   "venueId": "domus-galilaeae",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "17:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_14__%D7%90%D7%A0%D7%A1%D7%9E%D7%91%D7%9C_%D7%A1%D7%A1%D7%99%D7%9C%D7%99%D7%94_%D7%91%D7%93%D7%95%D7%9E%D7%95%D7%A1_%D7%92%D7%9C%D7%99%D7%9C%D7%90%D7%94/?id=5331",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 95,
+   "priceMax": 95
+  },
+  {
+   "id": "perf-5332",
+   "eventId": "show-5332",
+   "venueId": "beit-haam-kfar-blum",
+   "roomId": null,
+   "date": "2026-10-31",
+   "start": "21:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_15__%D7%A0%D7%95%D7%A8%D7%99%D7%AA_%D7%92%D7%9C%D7%A8%D7%95%D7%9F_%D7%91%D7%9E%D7%95%D7%A4%D7%A2_%D7%9C%D7%94%D7%A7%D7%94_/?id=5332",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 150,
+   "priceMax": 150
+  },
+  {
+   "id": "perf-5333",
+   "eventId": "show-5333",
+   "venueId": "pastoral-hotel",
+   "roomId": null,
+   "date": "2026-11-01",
+   "start": "11:00",
+   "ticketUrl": "https://galil-elion.smarticket.co.il/_16__%D7%A0%D7%97%D7%9C_%D7%A9%D7%9C%D7%99/?id=5333",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 120,
+   "priceMax": 120
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "venues-research"
+  ],
+  "events": [
+   "smarticket"
+  ],
+  "performances": [
+   "smarticket"
+  ],
+  "availability": [
+   "smarticket"
+  ],
+  "prices": [
+   "smarticket"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "smarticket": {
+    "kind": "fetched",
+    "path": "data/festivals/kol-hamusica/2026/smarticket",
+    "fetchedAt": "2026-10-02T18:12:25Z",
+    "fetcher": "scraper/festivals/kol_hamusica/sources/smarticket/fetch.py",
+    "fetcherVersion": 1
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/kol_hamusica/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "events.blurb": [
+    "smarticket"
+   ],
+   "events.categories": [
+    "smarticket"
+   ],
+   "events.durationMin": [
+    "smarticket"
+   ],
+   "events.genre": [
+    "smarticket"
+   ],
+   "events.imageUrl": [
+    "smarticket"
+   ],
+   "events.title": [
+    "smarticket"
+   ],
+   "events.titleLocal": [
+    "smarticket"
+   ],
+   "events.url": [
+    "smarticket"
+   ],
+   "performances.date": [
+    "smarticket"
+   ],
+   "performances.eventId": [
+    "smarticket"
+   ],
+   "performances.free": [
+    "smarticket"
+   ],
+   "performances.priceMax": [
+    "smarticket"
+   ],
+   "performances.priceMin": [
+    "smarticket"
+   ],
+   "performances.roomId": [
+    "smarticket"
+   ],
+   "performances.start": [
+    "smarticket"
+   ],
+   "performances.status": [
+    "smarticket"
+   ],
+   "performances.ticketUrl": [
+    "smarticket"
+   ],
+   "performances.venueId": [
+    "smarticket"
+   ],
+   "venues.accessibility": [
+    "venues-research"
+   ],
+   "venues.address": [
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "venues-research"
+   ],
+   "venues.lat": [
+    "venues-research"
+   ],
+   "venues.layout": [
+    "venues-research"
+   ],
+   "venues.lng": [
+    "venues-research"
+   ],
+   "venues.name": [
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ],
+   "venues.rooms": [
+    "venues-research"
+   ]
+  },
+  "skipped": {}
+ }
+}

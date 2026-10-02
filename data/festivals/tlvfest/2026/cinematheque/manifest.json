@@ -1,0 +1,16 @@
+{
+ "festival": "tlvfest",
+ "edition": "2026",
+ "source": "cinematheque",
+ "fetchedAt": "2026-10-02T18:10:34Z",
+ "fetcher": "scraper/festivals/tlvfest/sources/cinematheque/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://www.cinema.co.il/%D7%AA%D7%9B%D7%A0%D7%99%D7%AA-%D7%94%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C/",
+  "https://www.cinema.co.il/wp-admin/admin-ajax.php (POST action=load_more_posts&paged=<n>&category_id=<id>)"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "One card per screening from the programme page's by-date tab and the theme's own load-more call, in the page's own words (scraper/festivals/platforms/cinematheque.py)."
+}

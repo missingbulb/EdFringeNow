@@ -70,6 +70,7 @@ const UK = {
  * `position` is where the photograph's subject sits, for `object-position`. */
 const CC0 = { licence: "CC0", licenceUrl: "https://creativecommons.org/publicdomain/zero/1.0/" };
 const CC_BY_2 = { licence: "CC BY 2.0", licenceUrl: "https://creativecommons.org/licenses/by/2.0/" };
+const CC_BY_4 = { licence: "CC BY 4.0", licenceUrl: "https://creativecommons.org/licenses/by/4.0/" };
 const CC_BY_SA_2 = { licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" };
 const CC_BY_SA_3 = { licence: "CC BY-SA 3.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/3.0/" };
 const CC_BY_SA_4 = { licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" };
@@ -131,6 +132,30 @@ export const CITY_PHOTOS = {
     ...CC_BY_SA_4,
     source: "https://commons.wikimedia.org/wiki/File:Negev_W%C3%BCste_bei_Be%27er_Sheva_7.JPG",
     position: "center 45%",
+  },
+  "Ramat Gan": {
+    src: "/planNG/cities/ramat-gan.webp",
+    title: "Ramat Gan Diamond Exchange District",
+    author: "Horizon206",
+    ...CC_BY_4,
+    source: "https://commons.wikimedia.org/wiki/File:Ramat_Gan_Diamond_Exchange_District.jpg",
+    position: "center 40%",
+  },
+  "Eilat": {
+    src: "/planNG/cities/eilat.webp",
+    title: "Eilat Hotels 2013",
+    author: "Oyoyoy",
+    ...CC_BY_SA_3,
+    source: "https://commons.wikimedia.org/wiki/File:Eilat_Hotels_2013.jpg",
+    position: "center 40%",
+  },
+  "Kfar Blum": {
+    src: "/planNG/cities/kfar-blum.webp",
+    title: "Kfar Blum",
+    author: "Nizzan Cohen",
+    ...CC_BY_4,
+    source: "https://commons.wikimedia.org/wiki/File:Kfar_Blum.jpg",
+    position: "center 50%",
   },
   "Edinburgh": {
     src: "/planNG/cities/edinburgh.webp",

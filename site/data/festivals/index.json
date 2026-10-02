@@ -69,6 +69,40 @@
    ]
   },
   {
+   "id": "ais-conference",
+   "name": "Association for Israel Studies Annual Conference",
+   "nameLocal": null,
+   "city": "Ramat Gan",
+   "country": "IL",
+   "lat": 32.0637,
+   "lng": 34.8322,
+   "timezone": "Asia/Jerusalem",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-israel-studies",
+    "academic-social-sciences"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://aisisraelstudies.org/conference/conference/",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://ws.eventact.com/AIS2026/Registration"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 42,
+     "firstDate": "2026-10-19",
+     "lastDate": "2026-10-21",
+     "format": "block",
+     "dataUrl": "/data/festivals/ais-conference/2026.json",
+     "events": 106
+    }
+   ]
+  },
+  {
    "id": "brighton-fringe",
    "name": "Brighton Fringe",
    "nameLocal": null,
@@ -539,6 +573,40 @@
    ]
   },
   {
+   "id": "kol-hamusica",
+   "name": "Voice of Music in the Upper Galilee (Kol HaMusica)",
+   "nameLocal": "פסטיבל קול המוסיקה בגליל העליון",
+   "city": "Kfar Blum",
+   "country": "IL",
+   "lat": 33.1725,
+   "lng": 35.6097,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-classical",
+    "music-chamber"
+   ],
+   "defaultGenre": "music",
+   "site": "https://www.kol-hamusica.org.il/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://galil-elion.smarticket.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%A7%D7%95%D7%9C_%D7%94%D7%9E%D7%95%D7%A1%D7%99%D7%A7%D7%94"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-28",
+     "lastDate": "2026-11-01",
+     "format": "block",
+     "dataUrl": "/data/festivals/kol-hamusica/2026.json",
+     "events": 14
+    }
+   ]
+  },
+  {
    "id": "leicester-comedy",
    "name": "Leicester Comedy Festival",
    "nameLocal": null,
@@ -639,6 +707,39 @@
    ]
   },
   {
+   "id": "red-sea-jazz",
+   "name": "Red Sea Jazz Festival",
+   "nameLocal": "פסטיבל הג׳אז ים סוף",
+   "city": "Eilat",
+   "country": "IL",
+   "lat": 29.5569,
+   "lng": 34.9517,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "music",
+   "subtypes": [
+    "music-jazz"
+   ],
+   "defaultGenre": "music",
+   "site": "https://redseajazz.co.il/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://redseajazz.co.il/lineup/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 40,
+     "firstDate": "2026-11-11",
+     "lastDate": "2026-11-14",
+     "format": "block",
+     "dataUrl": "/data/festivals/red-sea-jazz/2026.json",
+     "events": 46
+    }
+   ]
+  },
+  {
    "id": "tel-aviv-festival",
    "name": "Tel Aviv Festival",
    "nameLocal": "פסטיבל תל־אביב",
@@ -669,6 +770,39 @@
      "format": "block",
      "dataUrl": "/data/festivals/tel-aviv-festival/2026.json",
      "events": 54
+    }
+   ]
+  },
+  {
+   "id": "tlvfest",
+   "name": "TLVFest, Tel Aviv International LGBTQ+ Film Festival",
+   "nameLocal": "פסטיבל קולנוע גאה",
+   "city": "Tel Aviv",
+   "country": "IL",
+   "lat": 32.0708,
+   "lng": 34.7833,
+   "timezone": "Asia/Jerusalem",
+   "lang": "he",
+   "dir": "rtl",
+   "kind": "film",
+   "subtypes": [
+    "film-lgbtq"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.cinema.co.il/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C-%D7%92%D7%90%D7%94/",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://www.cinema.co.il/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-31",
+     "format": "block",
+     "dataUrl": "/data/festivals/tlvfest/2026.json",
+     "events": 58
     }
    ]
   }

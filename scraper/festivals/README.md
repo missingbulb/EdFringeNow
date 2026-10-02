@@ -104,13 +104,18 @@ A ticketing or listings platform several festivals use is fetched by one module
 under `scraper/festivals/platforms/`, and each festival's `fetch.py` is a thin
 call into it; the matching generic adapter is under
 `scraper/convert/adapters/platforms/`, and the festival's own adapter adds only
-its vocabulary (genre names, what counts as public).
+its vocabulary (genre names, what counts as public). Where a festival adds no
+vocabulary, its `adapter` names the generic one directly, as a curated
+`venues-research` source in the plain shape names `platforms/curated_venues.py`.
 
 | platform | module | festivals | carries |
 |---|---|---|---|
 | Eventotron (WordPress) | `eventotron.py` | Brighton Fringe, Leicester Comedy | events, performances, venues with coordinates, price bands, sold-out marks |
 | Spektrix public API v3 | `spektrix.py` | EIF, Book Festival | events, instances, venues, price lists, seats available of capacity |
 | Eventer producer page (`/user/<user>/getData`) | `eventer.py` | Acco | one event per performance: title line (hall, runtime), ticket types and prices, tickets left, description, picture |
+| EventAct agenda widget (`api.eventact.com/o/v2/agenda`) | `eventact.py` | ISRA, AIS conference | every session by day and hall, its lectures, presenting speakers and portraits |
+| Tel Aviv Cinematheque programme page (+ its load-more call) | `cinematheque.py` | TLVFest | one card per screening: film page, still, length, director, language, blurb, hall, order link |
+| Smarticket box office (listing + performance pages) | `smarticket.py` | Kol HaMusica | one record per performance from its JSON-LD Event: start, place, running time, price, availability, picture, description |
 | Nominatim (OSM) | `nominatim.py` | any source with street addresses | coordinates for them, one request a second |
 
 ### A placeholder festival

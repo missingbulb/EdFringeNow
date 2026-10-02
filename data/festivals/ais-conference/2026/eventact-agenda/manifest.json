@@ -1,0 +1,17 @@
+{
+ "festival": "ais-conference",
+ "edition": "2026",
+ "source": "eventact-agenda",
+ "fetchedAt": "2026-10-02T18:07:39Z",
+ "fetcher": "scraper/festivals/ais_conference/sources/eventact-agenda/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://program.eventact.com/Program/iOZQAAA/iozk/en",
+  "https://api.eventact.com/o/v2/agenda/<eventId>/<agendaId>/en/timetable",
+  "https://api.eventact.com/o/v2/agenda/<eventId>/<sessionId>/session"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "The programme page embeds EventAct's agenda widget (event, agenda, public API token); the timetable gives every activity with its day, times, halls and EventAct type; each session answer gives its lectures, presenting speakers and their portraits (scraper/festivals/platforms/eventact.py)."
+}
