@@ -19,6 +19,7 @@ kind = "literature"
 subtypes = ["literature-books"]
 default_genre = "talk"
 site = "https://www.litquake.org"
+wikidata = "Q6648715"
 
 [ticketing]
 model = "other"

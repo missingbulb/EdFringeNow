@@ -18,6 +18,7 @@ kind = "film"
 subtypes = ["film-international"]
 default_genre = "film"
 site = "https://sgiff.com"
+wikidata = "Q2739478"
 
 [ticketing]
 model = "central-box-office"

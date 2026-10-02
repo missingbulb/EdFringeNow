@@ -19,6 +19,7 @@ kind = "film"
 subtypes = ["film-independent"]
 default_genre = "film"
 site = "https://triff2026.eventive.org"
+wikidata = "Q125625257"
 
 [ticketing]
 model = "central-box-office"

@@ -20,6 +20,7 @@ kind = "academic"
 subtypes = ["academic-computer-science"]
 default_genre = "talk"
 site = "https://2026.matrix.org"
+wikidata = "Q140264374"
 
 [ticketing]
 model = "festival-pass"

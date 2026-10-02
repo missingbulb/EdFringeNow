@@ -19,6 +19,7 @@ kind = "film"
 subtypes = ["film-independent"]
 default_genre = "film"
 site = "https://neworleansfilmsociety.org"
+wikidata = "Q7010717"
 
 [ticketing]
 model = "central-box-office"

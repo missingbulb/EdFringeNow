@@ -20,6 +20,7 @@ kind = "academic"
 subtypes = ["academic-computer-security"]
 default_genre = "talk"
 site = "https://hack.lu"
+wikidata = "Q5637157"
 
 [ticketing]
 model = "festival-pass"

@@ -19,6 +19,7 @@ kind = "film"
 subtypes = ["film-international"]
 default_genre = "film"
 site = "https://santafe.film"
+wikidata = "Q125625175"
 
 [ticketing]
 model = "central-box-office"

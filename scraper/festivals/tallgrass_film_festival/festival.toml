@@ -18,6 +18,7 @@ kind = "film"
 subtypes = ["film-independent"]
 default_genre = "film"
 site = "https://tallgrassfilm.org"
+wikidata = "Q7680126"
 
 [ticketing]
 model = "central-box-office"
