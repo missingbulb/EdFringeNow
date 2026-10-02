@@ -1,0 +1,381 @@
+{
+ "tenant": "svjff",
+ "site": "https://svjff.eventive.org",
+ "displayName": "Silicon Valley Jewish Film Festival",
+ "displayTimezone": "America/Los_Angeles",
+ "currency": "usd",
+ "eventBucket": "6a5795cd1658ed89c8c82b97",
+ "edition": "2026",
+ "events": [
+  {
+   "id": "6a6c8b7186a94912995d568c",
+   "name": "Once Upon My Mother",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T02:30:00.000Z",
+   "end_time": "2026-10-11T04:30:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c25",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2a",
+     "name": "Drama"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a69071751e18bdbd8efff92",
+     "name": "Once Upon My Mother",
+     "short_description": "Based on a true story, a Moroccan Jewish mother in the Parisian suburbs will do whatever it takes to give her son the best life despite his physical setbacks.",
+     "description": "<p>A triumphant celebration of unconditional love, Once Upon My Mother is a joyful, heartwarming family saga that radiates faith, devotion, and the transformative power of maternal love. Inspired by Roland Perez's beloved bestselling autobiography, this irresistible cinematic gem transports us to France, 1963. When Esther, a spirited Moroccan-Jewish immigrant raising six children in the Parisian suburbs, learns her newborn son Roland has been born with a clubfoot, she refuses to accept the doctors' grim prognosis. With fierce determination, boundless love, and an unshakeable belief in miracles, she embarks on a decades-long crusade to ensure her son doesn't just walk, he soars.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/ce9ebffe6650bc02a9edb15791d9aa46.jpg\"></p><p><br></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/b5b0646d04b01061102f0b09235ba202.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1785269734963temp-1785269734845-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557733666temp-1786557733654-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785269720674temp-1785269720643-poster.jpg",
+     "runtime": "102"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8da35c349f796d0e1164",
+   "name": "Reading Lolita in Tehran",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-11T23:00:00.000Z",
+   "end_time": "2026-10-12T01:00:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c25",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2a",
+     "name": "Drama"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a690e78ae5c290e827ae63a",
+     "name": "Reading Lolita in Tehran",
+     "short_description": "This drama follows women in post-revolutionary Iran who gather to read forbidden Western literature, using books as a path to resistance.",
+     "description": "<p>Directed by acclaimed Israeli filmmaker Eran Riklis (Lemon Tree, The Syrian Bride), Reading Lolita in Tehran brings Azar Nafisi’s bestselling memoir to the screen. The film, set in Iran, follows a courageous former professor who secretly gathers seven of her most dedicated female students to read forbidden Western classics. As fundamentalists tighten their grip on Iranian society, the women remove their veils and share their hopes, loves, disappointments, and struggles with identity and femininity. Through their clandestine engagement with literature, they discover the transformative power of storytelling, forging paths toward personal freedom and resilience in an oppressive world.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/d047c12729bd93781a40f4473f37e636.jpg\"></p><p><br></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/3b4413b6fd9e0e0cd2bac6ef23fef4de.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1785270042104temp-1785270041969-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557517237temp-1786557517224-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785270042723temp-1785270042538-poster.jpg",
+     "runtime": "108"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8dd5991c9bb4cb0ee814",
+   "name": "Blue Marks",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-12T02:00:00.000Z",
+   "end_time": "2026-10-12T04:00:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c25",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2a",
+     "name": "Drama"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a58c1a3eace555b6df579a6",
+     "name": "Blue Marks",
+     "short_description": "The dreams of an Israeli fashion student in Paris are shattered after a violent encounter leaves her with an unwanted pregnancy, leading her to seek revenge.",
+     "description": "<p>Iris, a young Israeli woman, arrives in Paris to start a new life and study fashion design. Everything seems to be going well but a chance encounter with a handsome Parisian on the Metro turns violent and she is left with an unwanted pregnancy. Now the mother of a child she never wanted, she is drawn to taking her revenge on the man, who ruined her life and killed her dreams. Starring Noa Ohayon, Lior Ashkenazi, and Yael Abecassis.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/b50b900d46ecd0f26a77b68fcc2b9031.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1786218654675temp-1786218654558-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786646499344temp-1786646499331-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1786028070370temp-1786028070349-poster.jpg",
+     "runtime": "110"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8e17991c9bb4cb0eec17",
+   "name": "David",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T21:00:00.000Z",
+   "end_time": "2026-10-18T23:00:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c24",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c34",
+     "name": "Animation"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 1000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a58c371fdbfd2aedff5321b",
+     "name": "David",
+     "short_description": "An animated biblical musical retelling of the young shepherd David's rise from obscurity to destiny.",
+     "description": "<p>Family Film ,Animated ,Rated PG</p><p><br></p><p>From the songs of his mother’s heart to the whispers of a faithful God, David’s story begins in quiet devotion. When the giant Goliath rises to terrorize a nation, a young shepherd armed with only a sling, a few stones, and unshakable faith steps forward. Pursued by power and driven by purpose, his journey tests the limits of loyalty, love, and courage, culminating in a battle not just for a crown, but for the soul of a kingdom.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/e2761decf2c3e8618e19a337f2f1163e.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1784202196106temp-1784202195983-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557611779temp-1786557611767-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1784202200703temp-1784202200692-poster.jpg",
+     "runtime": "115"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8e47b6e2054a8ac42e06",
+   "name": "Sapiro v. Ford: The Jew Who Sued Henry Ford",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-18T23:30:00.000Z",
+   "end_time": "2026-10-19T01:30:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c24",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2e",
+     "name": "Documentary"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a6a105c48e45b41321261f4",
+     "name": "Sapiro v. Ford: The Jew Who Sued Henry Ford",
+     "short_description": "This documentary recounts how Aaron Sapiro sued Henry Ford for libel over anti-semitic attacks, creating a landmark confrontation over hate speech.",
+     "description": "<p>This fascinating film tells the riveting true story of Aaron Sapiro, a young Jewish lawyer who took on one of America’s most powerful men and most notorious antisemites, Henry Ford. In the 1920s, as Ford’s anti-Jewish publications incited hatred across the nation, Sapiro filed an unprecedented libel suit, challenging the limits of hate speech long before such laws existed.In a David-versus-Goliath showdown, Sapiro forced the industrial titan to back down, issue an apology, and shutter his hate-filled newspaper, leaving a legacy that resonates today. As antisemitism rises and the struggle to balance free speech with protection against hate continues, Sapiro v. Ford examines the enduring question: how can societies confront power, prejudice, and propaganda while upholding justice?</p><p><br></p><p><strong>Northern California premiere</strong></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/561e63279131e7836c1cd49baade6cd5.jpg\"></p><p><br></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/210be6925f5e8504aedd7555ffed5be6.jpg\"></p>",
+     "still_image": null,
+     "cover_image": "https://static-a.eventive.org/1786558327391temp-1786558327379-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785336039587temp-1785336039556-poster.jpg",
+     "runtime": "68"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8e768d03244a45a75c7f",
+   "name": "Franz",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-19T02:00:00.000Z",
+   "end_time": "2026-10-19T04:00:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c24",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2a",
+     "name": "Drama"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a6904247d3490987f5a0e7c",
+     "name": "Franz",
+     "short_description": "This bold portrait of Franz Kafka fuses biography, memory, and surreal invention to illuminate the inner world of one of the twentieth century’s most celebrated writers.",
+     "description": "<p>Agnieszka Holland's unconventional biopic portrays Franz Kafka as a Czech Jewish writer shaped by Prague, family pressure, bureaucratic life, illness, and literary obsession. Using a fragmented, kaleidoscopic style that mirrors Kafka's inner world, the film traces the forces that shaped one of modern literature's most enduring imaginations.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/ffab673982123576ef3ff07c0fa2f96a.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1785267485449temp-1785267485308-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557714269temp-1786557714256-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785267485928temp-1785267485899-poster.jpg",
+     "runtime": "127"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8e9be08c89ad07635385",
+   "name": "Dust Bowls and Jewish Souls",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-25T01:30:00.000Z",
+   "end_time": "2026-10-25T03:30:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c24",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2e",
+     "name": "Documentary"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a58c464a213f506a80cc14d",
+     "name": "Dust Bowls and Jewish Souls: Another Side of Woody Guthrie",
+     "short_description": "Discover the lesser-known Jewish dimension of Woody Guthrie's life and how Jewish culture shaped his music.",
+     "description": "<p>A documentary revealing the lesser-known Jewish dimension of Woody Guthrie’s life and the influence of Yiddish poet Aliza Greenblatt on his music and worldview. Many know Woody Guthrie as the quintessential Oklahoman balladeer who wrote “This Land Is Your Land,” and inspired Bob Dylan but few are aware that Jewish culture had a hand in shaping his private life and career. Dust Bowls and Jewish Souls explores Guthrie’s moving relationship with his mother-in-law, prominent Yiddish poet Aliza Greenblatt, and the impact she had on his songwriting.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/ff75f586abeef750e0a048baa8110b71.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1784202694066temp-1784202693945-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557688008temp-1786557687998-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1784202552991temp-1784202552738-poster.jpg",
+     "runtime": "89"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8ecf991c9bb4cb0f0a8b",
+   "name": "The Road Between Us",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-25T03:30:00.000Z",
+   "end_time": "2026-10-25T05:30:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c24",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2e",
+     "name": "Documentary"
+    }
+   ],
+   "cover": null,
+   "tickets_available": true,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 2000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a6a14e9b2cd361d9f4bb5d1",
+     "name": "The Road Between Us: The Ultimate Rescue",
+     "short_description": "This harrowing story reconstructs an Israeli general's drive from Tel Aviv to Kibbutz Nahal Oz to rescue his family.",
+     "description": "<p>This harrowing real-life story follows retired Israeli general Noam Tibon, who on October 7, 2023, received a desperate text from his son: terrorists had stormed his home, and he, his wife, and their two young daughters feared for their lives. With no time to spare, Noam and his wife, Gali, embarked on a ten-hour mission across a country under siege to save their family. Relying only on his instincts and military training, Noam navigated ambushes, roadblocks, and a collapsing security system in a relentless race against time. Directed by acclaimed Canadian filmmaker Barry Avrich (Howie Mandel: But, Enough About Me; Without Precendent: The Supreme Life of Rosalie Abella), the film retraces every step of that day, blending intimate firsthand testimony with the raw urgency of a survival thriller. Set against the backdrop of one of Israel’s darkest days, The Road Between Us: The Ultimate Rescue is both a gripping cinematic retelling of an extraordinary rescue and an unflinching look at the failures and resilience revealed on October 7. At its core, it is a profoundly human story about courage, family, and the power of love in the face of unimaginable terror.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/ed391b4dce0b2c9c3e9d3962907053f4.jpg\"></p><p><br></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/88891e438e7b258630d5bc59e7ac70ba.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1785337247098temp-1785337246971-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557746035temp-1786557746020-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785337197935temp-1785337197914-poster.jpg",
+     "runtime": "95"
+    }
+   ]
+  },
+  {
+   "id": "6a6c8d51f33867fccd393c00",
+   "name": "Tell Me Everything",
+   "description": null,
+   "short_description": null,
+   "start_time": "2026-10-26T02:00:00.000Z",
+   "end_time": "2026-10-26T04:00:00.000Z",
+   "venue": "6a5795cd1658ed89c8c82c25",
+   "tags": [
+    {
+     "id": "6a5795cd1658ed89c8c82c2a",
+     "name": "Drama"
+    }
+   ],
+   "cover": null,
+   "tickets_available": false,
+   "hide_tickets_button": false,
+   "tickets_button_label": null,
+   "ticket_buckets": [
+    {
+     "name": "General Admission",
+     "price": 4000,
+     "public": true,
+     "is_active": true
+    }
+   ],
+   "films": [
+    {
+     "id": "6a6a118ee2d06521999171e2",
+     "name": "Tell Me Everything",
+     "short_description": "A boy uncovers a secret about the father he idolizes that threatens to tear his family apart.",
+     "description": "<p><strong>Israel’s Selection for the Oscar’s \"Best International Feature\"</strong></p><p>Filmmaker Moshe Rosenthal (Karaoke) crafts a powerful drama centering on 12-year-old Boaz, whose discovery of a painful secret about his father shatters his idealized view of him. As he nears his bar mitzvah, Boaz grapples with questions of masculinity, identity, and family while confronting feelings of shame, confusion, and anger. Spanning several years, his journey reflects a deep longing to repair their fractured relationship and understand his father more fully. Through intimate storytelling and rich period detail, framing the story during the late 1980s as paranoia regarding HIV was rampant, the film becomes a poignant coming-of-age tale about loss, acceptance, and the challenge of truly seeing a parent beyond illusion. “A captivating, deeply moving father-son story.” - The Sundance Film Festival.</p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/fc8fed82ef2f9062ee4579019364e4a0.jpg\"></p><p><br></p><p><br></p><p><img src=\"https://storage.googleapis.com/eventive-static/4ab067360842487e63fa16eabb3712c9.jpg\"></p>",
+     "still_image": "https://static-a.eventive.org/1785336385287temp-1785336385179-still.jpg",
+     "cover_image": "https://static-a.eventive.org/1786557772843temp-1786557772831-cover.jpg",
+     "poster_image": "https://static-a.eventive.org/1785336385522temp-1785336385494-poster.jpg",
+     "runtime": "109"
+    }
+   ]
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a5795cd1658ed89c8c82c24",
+   "name": "AMC 14",
+   "short_name": null,
+   "address": "700 El Paseo de Saratoga, San Jose 95130",
+   "addressLine": "700 El Paseo de Saratoga, San Jose 95130",
+   "default_capacity": null
+  },
+  {
+   "id": "6a5795cd1658ed89c8c82c25",
+   "name": "JCC Palo Alto",
+   "short_name": "JCC Palo Alto",
+   "address": "3921 Fabian Way , Palo Alto  94303",
+   "addressLine": "3921 Fabian Way , Palo Alto  94303",
+   "default_capacity": 100
+  }
+ ],
+ "outOfEdition": []
+}

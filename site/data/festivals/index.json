@@ -371,6 +371,39 @@
    ]
   },
   {
+   "id": "hack-lu",
+   "name": "hack.lu",
+   "nameLocal": null,
+   "city": "Luxembourg",
+   "country": "LU",
+   "lat": 49.6116,
+   "lng": 6.1319,
+   "timezone": "Europe/Luxembourg",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-security"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://hack.lu",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/circl/2026.hack.lu/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 20,
+     "firstDate": "2026-10-20",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/hack-lu/2026.json",
+     "events": 82
+    }
+   ]
+  },
+  {
    "id": "haifa-iff",
    "name": "Haifa International Film Festival",
    "nameLocal": "פסטיבל הסרטים הבינלאומי חיפה",
@@ -572,6 +605,139 @@
    ]
   },
   {
+   "id": "litquake",
+   "name": "Litquake",
+   "nameLocal": null,
+   "city": "San Francisco",
+   "country": "US",
+   "region": "California",
+   "lat": 37.7749,
+   "lng": -122.4194,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "literature",
+   "subtypes": [
+    "literature-books"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.litquake.org",
+   "ticketing": {
+    "model": "other",
+    "url": "https://litquake2026.sched.com"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-04",
+     "lastDate": "2026-10-24",
+     "format": "block",
+     "dataUrl": "/data/festivals/litquake/2026.json",
+     "events": 93
+    }
+   ]
+  },
+  {
+   "id": "london-latino-film-festival",
+   "name": "London Latino Film Festival",
+   "nameLocal": null,
+   "city": "London",
+   "country": "GB",
+   "lat": 51.5074,
+   "lng": -0.1278,
+   "timezone": "Europe/London",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-latin-american"
+   ],
+   "defaultGenre": "film",
+   "site": "https://londonlatinofilmfestival.org.uk",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://lolaff2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 1,
+     "firstDate": "2026-10-02",
+     "lastDate": "2026-10-06",
+     "format": "block",
+     "dataUrl": "/data/festivals/london-latino-film-festival/2026.json",
+     "events": 39
+    }
+   ]
+  },
+  {
+   "id": "marxismnl-conference",
+   "name": "MarxismNL Conference",
+   "nameLocal": null,
+   "city": "Amsterdam",
+   "country": "NL",
+   "lat": 52.3676,
+   "lng": 4.9041,
+   "timezone": "Europe/Amsterdam",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-politics"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://marxism-nl.org",
+   "ticketing": {
+    "model": "other",
+    "url": "https://forms.gle/peVgY3Pqgh2Cw2hz7"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 1,
+     "firstDate": "2026-10-07",
+     "lastDate": "2026-10-09",
+     "format": "block",
+     "dataUrl": "/data/festivals/marxismnl-conference/2026.json",
+     "events": 77
+    }
+   ]
+  },
+  {
+   "id": "matrix-conference",
+   "name": "The Matrix Conference",
+   "nameLocal": null,
+   "city": "Malmö",
+   "country": "SE",
+   "lat": 55.605,
+   "lng": 13.0038,
+   "timezone": "Europe/Stockholm",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://2026.matrix.org",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/matrix/matrix-conf-2026/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-20",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/matrix-conference/2026.json",
+     "events": 70
+    }
+   ]
+  },
+  {
    "id": "micf",
    "name": "Melbourne International Comedy Festival",
    "nameLocal": null,
@@ -602,6 +768,40 @@
      "format": "block",
      "dataUrl": null,
      "events": null
+    }
+   ]
+  },
+  {
+   "id": "new-orleans-film-festival",
+   "name": "New Orleans Film Festival",
+   "nameLocal": null,
+   "city": "New Orleans",
+   "country": "US",
+   "region": "Louisiana",
+   "lat": 29.9511,
+   "lng": -90.0715,
+   "timezone": "America/Chicago",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://neworleansfilmsociety.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://nofs.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 37,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-27",
+     "format": "block",
+     "dataUrl": "/data/festivals/new-orleans-film-festival/2026.json",
+     "events": 121
     }
    ]
   },
@@ -639,6 +839,274 @@
    ]
   },
   {
+   "id": "outshine-lgbtq-film-festival",
+   "name": "OUTshine LGBTQ+ Film Festival (Fall Edition)",
+   "nameLocal": null,
+   "city": "Fort Lauderdale",
+   "country": "US",
+   "region": "Florida",
+   "lat": 26.1224,
+   "lng": -80.1373,
+   "timezone": "America/New_York",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-queer"
+   ],
+   "defaultGenre": "film",
+   "site": "https://outshinefilm.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://outshinefall2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-25",
+     "format": "block",
+     "dataUrl": "/data/festivals/outshine-lgbtq-film-festival/2026.json",
+     "events": 36
+    }
+   ]
+  },
+  {
+   "id": "pycon-greece",
+   "name": "PyCon Greece",
+   "nameLocal": null,
+   "city": "Athens",
+   "country": "GR",
+   "lat": 37.9838,
+   "lng": 23.7275,
+   "timezone": "Europe/Athens",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://2026.pycon.gr",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://pretix.eu/pygreece/pycon-gr-2026/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 2,
+     "firstDate": "2026-10-12",
+     "lastDate": "2026-10-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/pycon-greece/2026.json",
+     "events": 51
+    }
+   ]
+  },
+  {
+   "id": "santa-fe-international-film-festival",
+   "name": "Santa Fe International Film Festival",
+   "nameLocal": null,
+   "city": "Santa Fe",
+   "country": "US",
+   "region": "New Mexico",
+   "lat": 35.687,
+   "lng": -105.9378,
+   "timezone": "America/Denver",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://santafe.film",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://sfiff.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-14",
+     "lastDate": "2026-10-19",
+     "format": "block",
+     "dataUrl": "/data/festivals/santa-fe-international-film-festival/2026.json",
+     "events": 119
+    }
+   ]
+  },
+  {
+   "id": "scala-days",
+   "name": "Scala Days",
+   "nameLocal": null,
+   "city": "Berlin",
+   "country": "DE",
+   "lat": 52.52,
+   "lng": 13.405,
+   "timezone": "Europe/Berlin",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://scaladays.org",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://tickets.plainschwarz.com/scaladays26/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-12",
+     "lastDate": "2026-10-13",
+     "format": "block",
+     "dataUrl": "/data/festivals/scala-days/2026.json",
+     "events": 50
+    }
+   ]
+  },
+  {
+   "id": "silicon-valley-jewish-film-festival",
+   "name": "Silicon Valley Jewish Film Festival",
+   "nameLocal": null,
+   "city": "San Jose",
+   "country": "US",
+   "region": "California",
+   "lat": 37.3382,
+   "lng": -121.8863,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-jewish"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.svjff.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://svjff.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-10",
+     "lastDate": "2026-10-25",
+     "format": "block",
+     "dataUrl": "/data/festivals/silicon-valley-jewish-film-festival/2026.json",
+     "events": 9
+    }
+   ]
+  },
+  {
+   "id": "singapore-international-film-festival",
+   "name": "Singapore International Film Festival",
+   "nameLocal": null,
+   "city": "Singapore",
+   "country": "SG",
+   "lat": 1.2903,
+   "lng": 103.852,
+   "timezone": "Asia/Singapore",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-international"
+   ],
+   "defaultGenre": "film",
+   "site": "https://sgiff.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://sgiff.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 37,
+     "firstDate": "2026-10-21",
+     "lastDate": "2026-11-07",
+     "format": "block",
+     "dataUrl": "/data/festivals/singapore-international-film-festival/2026.json",
+     "events": 106
+    }
+   ]
+  },
+  {
+   "id": "swiss-python-summit",
+   "name": "Swiss Python Summit",
+   "nameLocal": null,
+   "city": "Rapperswil",
+   "country": "CH",
+   "lat": 47.2267,
+   "lng": 8.8184,
+   "timezone": "Europe/Zurich",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "academic",
+   "subtypes": [
+    "academic-computer-science"
+   ],
+   "defaultGenre": "talk",
+   "site": "https://www.python-summit.ch",
+   "ticketing": {
+    "model": "festival-pass",
+    "url": "https://www.python-summit.ch/register/"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-22",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/swiss-python-summit/2026.json",
+     "events": 22
+    }
+   ]
+  },
+  {
+   "id": "tallgrass-film-festival",
+   "name": "Tallgrass Film Festival",
+   "nameLocal": null,
+   "city": "Wichita",
+   "country": "US",
+   "region": "Kansas",
+   "lat": 37.6872,
+   "lng": -97.3301,
+   "timezone": "America/Chicago",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://tallgrassfilm.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://tallgrassfilmfestival2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": 24,
+     "firstDate": "2026-10-15",
+     "lastDate": "2026-10-18",
+     "format": "block",
+     "dataUrl": "/data/festivals/tallgrass-film-festival/2026.json",
+     "events": 49
+    }
+   ]
+  },
+  {
    "id": "tel-aviv-festival",
    "name": "Tel Aviv Festival",
    "nameLocal": "פסטיבל תל־אביב",
@@ -669,6 +1137,74 @@
      "format": "block",
      "dataUrl": "/data/festivals/tel-aviv-festival/2026.json",
      "events": 54
+    }
+   ]
+  },
+  {
+   "id": "tryon-international-film-festival",
+   "name": "Tryon International Film Festival",
+   "nameLocal": null,
+   "city": "Tryon",
+   "country": "US",
+   "region": "North Carolina",
+   "lat": 35.2087,
+   "lng": -82.2387,
+   "timezone": "America/New_York",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-independent"
+   ],
+   "defaultGenre": "film",
+   "site": "https://triff2026.eventive.org",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://triff2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-08",
+     "lastDate": "2026-10-11",
+     "format": "block",
+     "dataUrl": "/data/festivals/tryon-international-film-festival/2026.json",
+     "events": 62
+    }
+   ]
+  },
+  {
+   "id": "viet-film-fest",
+   "name": "Viet Film Fest",
+   "nameLocal": null,
+   "city": "Santa Ana",
+   "country": "US",
+   "region": "California",
+   "lat": 33.7455,
+   "lng": -117.8677,
+   "timezone": "America/Los_Angeles",
+   "lang": "en",
+   "dir": "ltr",
+   "kind": "film",
+   "subtypes": [
+    "film-diaspora"
+   ],
+   "defaultGenre": "film",
+   "site": "https://www.vietfilmfest.com",
+   "ticketing": {
+    "model": "central-box-office",
+    "url": "https://vietfilmfest2026.eventive.org"
+   },
+   "editions": [
+    {
+     "id": "2026",
+     "ordinal": null,
+     "firstDate": "2026-10-08",
+     "lastDate": "2026-10-23",
+     "format": "block",
+     "dataUrl": "/data/festivals/viet-film-fest/2026.json",
+     "events": 29
     }
    ]
   }

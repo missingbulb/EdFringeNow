@@ -1,0 +1,1880 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "tryon-international-film-festival",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Tryon International Film Festival",
+  "nameLocal": null,
+  "city": "Tryon",
+  "country": "US",
+  "lat": 35.2087,
+  "lng": -82.2387,
+  "timezone": "America/New_York",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://triff2026.eventive.org",
+  "firstDate": "2026-10-08",
+  "lastDate": "2026-10-11",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://triff2026.eventive.org",
+   "notes": "Sold and RSVPed on triff2026.eventive.org, one page per screening or event; the festival's own website could not be reached to confirm, so the box office stands as its site.",
+   "currency": "USD"
+  }
+ },
+ "categories": [
+  {
+   "id": "691b8a9a94bdbc299cd494cd",
+   "name": "Education"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd494ce",
+   "name": "Hospitality"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd494cf",
+   "name": "Film Screening"
+  }
+ ],
+ "venues": [
+  {
+   "id": "691b8a9a94bdbc299cd49508",
+   "name": "Tryon Fine Arts Center Veh Stage",
+   "address": "34 Melrose Ave, Tryon, NC",
+   "lat": 35.20757,
+   "lng": -82.239682,
+   "online": false,
+   "capacity": 250,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950a",
+   "name": "The Fitzgerald",
+   "address": "69 Pacolet St, Tryon, NC",
+   "lat": 35.208246,
+   "lng": -82.2394,
+   "online": false,
+   "capacity": 400,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950b",
+   "name": "Mirrorball Gallery",
+   "address": "84 Pacolet St, Tryon, NC",
+   "lat": 35.208563,
+   "lng": -82.239838,
+   "online": false,
+   "capacity": 150,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950d",
+   "name": "Tryon Fine Arts Center Pavilion",
+   "address": "34 Melrose Ave, Tryon, NC",
+   "lat": 35.20757,
+   "lng": -82.239682,
+   "online": false,
+   "capacity": 200,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950e",
+   "name": "Carri Bass Photography Studio",
+   "address": "92 Pacolet St, Tryon, NC",
+   "lat": 35.208559,
+   "lng": -82.239892,
+   "online": false,
+   "capacity": 80,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4950f",
+   "name": "The Greenlife Inn at the Mimosa",
+   "address": "65 Mimosa Inn Dr., Tryon, NC",
+   "lat": 35.2261677,
+   "lng": -82.2357932,
+   "online": false,
+   "capacity": 300,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49512",
+   "name": "Tryon Depot Room",
+   "address": "22 Depot Street, Tryon, NC 28782",
+   "lat": 35.2088457,
+   "lng": -82.2391673,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": [
+    "https://www.openstreetmap.org/way/362333963"
+   ]
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49514",
+   "name": "The Tryon Bottle",
+   "address": "15 Trade St, Tryon, NC",
+   "lat": 35.208715,
+   "lng": -82.238114,
+   "online": false,
+   "capacity": 150,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a7d0a5839f772f2778b9969",
+   "name": "Sunnydale",
+   "address": "334 S Trade St, Tryon, NC 28782",
+   "lat": 35.204148,
+   "lng": -82.238362,
+   "online": false,
+   "capacity": 150,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51fd",
+   "name": "Tryon Theatre",
+   "address": "45 South Trade Street, Tryon, NC 28782",
+   "lat": 35.2083038,
+   "lng": -82.2374748,
+   "online": false,
+   "capacity": 200,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": [
+    "https://www.openstreetmap.org/way/738601802"
+   ]
+  },
+  {
+   "id": "6abda92605f1d5982e6e5d44",
+   "name": "Railside Bar + Grill",
+   "address": "62 N Trade St, Tryon, NC",
+   "lat": 35.208913,
+   "lng": -82.238371,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6a849aaff1e772f689dce34b-6a849aaff1e772f689dce34d-6a849aaff1e772f689dce34f-6a849aaff1e772f689dce351-6a849aaff1e772f689dce353-6a849aaff1e772f689dce355-6a849aaff1e772f689dce357-6a849aaff1e772f689dce359-6a849aaff1e772f689dce35b-6a849aaff1e772f689dce35d-6a849aaff1e772f689dce35f-6a849aaff1e772f689dce361-6a849aaff1e772f689dce363-6a849aaff1e772f689dce365-6a849aaff1e772f689dce367-6a849aaff1e772f689dce369-6a849ab0f1e772f689dce36b-6a849ab0f1e772f689dce36d-6a849ab0f1e772f689dce36f-6a849ab0f1e772f689dce371-6a849ab0f1e772f689dce373-6a849ab0f1e772f689dce375-6a849ab0f1e772f689dce377-6a849ab0f1e772f689dce379-6a849ab0f1e772f689dce37b-6a849ab0f1e772f689dce37d-6a849ab0f1e772f689dce37f-6a849ab0f1e772f689dce381",
+   "title": "Media Arts Day",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956b",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Media Arts Day\n\nThursday, October 8 | Sunnydale\n\nJoin us for the 4th Annual Media Arts Day at the Tryon International Film Festival — a dynamic event designed for students, emerging creatives, and anyone passionate about film and media.\n\nThis event offers a full day of connection and inspiration. Attendees will enjoy:\n\n🎬 Student Film Screenings\n\n🎓 Career & Education Fair\n\n🎤 A Special Lecture by Producer Frank M. Calo and Voiceover + MOCAP Artist, Actress, and Director Francesca Calo.\n\n🤝 Networking with Employers, Educators, and Filmmakers\n\n* A boxed lunch will be served\n\nWhether you're exploring careers in the arts or simply looking to be inspired, Media Arts Day is your chance to engage with the future of film in a supportive, hands-on environment.\n\nFor special accommodations or questions, please contact us at triffeducation@gmail.com.\n\nWe can’t wait to welcome you!\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": 143,
+   "imageUrl": "https://static-a.eventive.org/1787790795048temp-1787790795041-cover.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956f",
+   "title": "Opening Reception",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956f",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Kick off the Tryon International Film Festival with our lively Welcome Reception! Join filmmakers, industry professionals, and film lovers for an evening of networking, celebration, and community spirit. It’s the perfect opportunity to meet fellow creatives, share your passion for film, and get energized for the exciting days ahead.\n\n*Food and drink will be for sale at this event.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787791120586temp-1787791120578-cover.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956a",
+   "title": "Shooting Your Documentary with Alison Marek",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956a",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join Alison Marek as she helps you sharpen your eye for documentary technique and craft.\n\nIn this hands-on workshop, Alison will walk you through the essentials of preparing to shoot a documentary, sharing the practical shooting strategies she uses in her own work. You’ll then watch the trailer for her current film along with selected scenes in progress. Together, the group will critique the footage—discussing what works, what could be stronger, and how different approaches might shape the story. Attendees may even break into small crews to brainstorm alternative ways of capturing the material.\n\nYou’ll leave with sharper critical skills, a clearer sense of how to approach your own documentary projects, and the satisfaction of knowing your feedback is helping shape a stronger film.\n\n*A boxed lunch will be served\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787850095428temp-1787850095421-cover.jpg"
+  },
+  {
+   "id": "6a851e5a6c6a1c417fc1618f",
+   "title": "The Nuts and Bolts of Filmmaking with Frank Calo",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a851e5a6c6a1c417fc1618f",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join returning TRIFF judge and instructor Frank Calo for an updated look at the essentials of making films in today’s industry.\n\nThis year’s session brings fresh insights into the current landscape—what’s shifting for filmmakers, the new realities of production and distribution, and practical ways independent creators can take control and start making their own work. Frank will break down the core principles of filmmaking while connecting them to the latest trends and opportunities, giving you clear, actionable guidance whether you’re just starting out or looking to level up your next project.\n\nWalk away with a sharper understanding of the industry as it stands now—and the confidence to put those nuts-and-bolts skills into practice.\n\n*A boxed lunch will be served\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787850075967temp-1787850075959-cover.jpg"
+  },
+  {
+   "id": "6a851e8d365982c54a5c1a80",
+   "title": "Protecting Human-Born Story: A New Platform for Independent Film from 213 TV with David Sonkin",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a851e8d365982c54a5c1a80",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join 213 TV founder David Sonkin for a look at a creator-first entertainment platform - and why protecting the future of human-born story, is benefitting from a new approach. Discover how 213 TV integrates the roles of studio, streamer, and marketplace, connecting development, funding, streaming, audience engagement, revenue participation, project packaging, and buyer access. It is a connected ecosystem designed to help indie voices find audiences, build value, and move forward without getting lost in financial uncertainty, analytical turmoil, or algorithmic labyrinths.\n\n*A boxed lunch will be served\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787850046483temp-1787850046476-cover.jpg"
+  },
+  {
+   "id": "6a851eae4aa5ef0d42a1d8a1",
+   "title": "Animation, Acting, Voiceover & Motion Capture with Francesca Calo",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a851eae4aa5ef0d42a1d8a1",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join bicoastal actor, voice actress, director, and motion-capture performer Francesca Calo for an insightful session exploring the interconnected worlds of animation, acting, voiceover, and performance capture.\n\n*2026 Emmy + Oscar Nominated\n\nDrawing from her experience across film, television, anime, video games, and live-action (including credits in Ocean’s Eight, Mare of Easttown, Little Amélie or the Character of Rain, Gundam SEED Destiny, and titles like Wasteland 3 and Path to Nowhere), Francesca will share practical techniques and industry insights for bringing characters to life—whether through the mic, on camera, or in a mocap suit.\n\nYou’ll gain a clearer understanding of how these disciplines overlap, what casting and performance look like in today’s animation and interactive media landscape, and actionable approaches you can apply to your own projects.\n\nWhether you’re an actor looking to expand into voice or performance capture, or a filmmaker interested in animation storytelling, this session offers valuable tools and perspective from a working professional.\n\n*A boxed lunch will be served\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/17522739226299343b3167e33cf5714df.jpg"
+  },
+  {
+   "id": "6a851f2534cfd46f50c94b80",
+   "title": "Education Institute Lunch *RSVP so we can save you a plate*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a851f2534cfd46f50c94b80",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join us for the Education Institute Lunch\n\nTake a break and connect with TRIFF instructors, judges, and fellow filmmakers over a casual meal. This is your chance to continue the conversation, ask questions, share ideas, and build relationships in a relaxed setting while the Education Institute programs are underway.\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/17522739226299343b3167e33cf5714df.jpg"
+  },
+  {
+   "id": "6a851f6f13836e9b1a33a5f9",
+   "title": "Smart Marketing and Paid Ads for Indie Films: Do’s & Don’ts with Jazelle Foster",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a851f6f13836e9b1a33a5f9",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join Jazelle Foster of Creatives Meet Marketing for a practical session on running your own paid advertising campaigns for an independent film.\n\nDrawing from her experience helping creatives turn marketing into a strategic (and creative) extension of their work, Jazelle will break down the essential do’s and don’ts of building effective ad campaigns—covering audience targeting, budgeting, creative strategy, tracking results, and common pitfalls that waste money. You’ll leave with clearer, more confident approaches for getting your film in front of the right viewers without relying solely on traditional publicity.\n\nWhether you’re promoting a completed project or planning your next release, this workshop offers actionable guidance tailored to the realities of independent filmmaking.\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787850292123temp-1787850292117-cover.jpg"
+  },
+  {
+   "id": "6a85200d5586fe5f0f18d993",
+   "title": "Screenwriting & Film Financing with Kevin Bernhardt",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a85200d5586fe5f0f18d993",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join screenwriter and producer Kevin Bernhardt for a practical session on the dual craft of writing scripts that attract financing—and navigating the realities of getting independent films funded and made.\n\nWith credits on more than 25 produced films featuring talent such as Orlando Bloom, Kevin Bacon, Nick Nolte, Ben Foster, Michael Caine, Chris Rock, and others (Peaceful Warrior, Elephant White, Medieval, Echo Boomers, and more), Kevin brings hard-won insight into what makes a screenplay financeable and how projects move from page to production. He’ll cover key principles of commercial storytelling, packaging, investor expectations, and the practical steps independent filmmakers can take to strengthen both their scripts and their financing strategies.\n\nWhether you’re developing a new project or refining an existing one, this session offers clear, experience-based guidance from a working writer-producer who has successfully bridged the gap between creative vision and real-world financing.\n\n**Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787850848429temp-1787850848421-cover.jpg"
+  },
+  {
+   "id": "6a839c005f8441122a3cc06a",
+   "title": "Gala Pre Game",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a839c005f8441122a3cc06a",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Continue networking and socializing on Trade Street!\n\nVisit Railside, Sagrada, Brooks Tavern, The Tryon Bottle, or Side Street Pizza with other filmmakers before the big night begins!",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6a839c90aa96d311976b4049",
+   "title": "All Access Passholders Pre-Gala Party",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a839c90aa96d311976b4049",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "All Access Passholders (including Filmmakers, Judges, and Sponsors) are invited to join us at Mirrorball Gallery for a pre-gala party! Use your drink tickets for wine and beer, or purchase drinks from the cocktail bar. Hang out in Mirrorball's lounge setting before the big night!",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787851187117temp-1787851187108-cover.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956e",
+   "title": "Friday Evening Gala *RSVP so we can save you a plate*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956e",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "🎟️ FRIDAY GALA + FEATURE FILM\n\n*RSVP Required\n\nStep into the spotlight with access to:\n\n• Opening Night Gala\n\n• Small Plate Bites for Dinner\n\n• Red Carpet Experience\n\n• Feature Film Screening\n\n🥂 An unforgettable night of glamour, storytelling, and celebration to kick off the festival weekend.\n\n**Sponsored by Oaklore Distillery",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787851416670temp-1787851416664-cover.jpg"
+  },
+  {
+   "id": "films-6aaad997fe5d685e67f019e5",
+   "title": "Same Same but Different Screening *RSVP so we can save you a seat*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6aaad997fe5d685e67f019e5",
+   "genre": "film",
+   "categories": [
+    "691b8a9a94bdbc299cd494cf"
+   ],
+   "blurb": "Join us for a screening of Same Same but Different to bring in TRIFF 2026!\n\nAll Access and Gala pass holders are invited to join us for this event.",
+   "durationMin": 104,
+   "imageUrl": "https://static-a.eventive.org/166152eae6f2a350c574575ee332185f.jpg?w=300"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49594",
+   "title": "Friday Night Afterparty",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49594",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Keep the celebration going long after the credits roll!\n\nJoin filmmakers, artists, and film lovers for our official Festival Afterparty — a night of music, dancing, and unforgettable connections.\n\nRaise a glass, let loose, and toast to the magic of cinema in true festival style.\n\n*Free + open to the public\n\n*Cash bar",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787851670889temp-1787851670883-cover.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49572",
+   "title": "Coffee + Creative Conversations with Sam Sokolow *RSVP so we can save you a plate*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49572",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Start your day with great coffee, delicious pastries, and inspiring conversations! This relaxed gathering is designed for filmmakers to connect, share ideas, and spark creativity in a welcoming, casual atmosphere. Whether you’re looking to network, find collaborators, or simply chat about your craft, this brunch is the perfect place to fuel both your body and your creative spirit.\n\nJoin us for meaningful dialogue and community building over coffee and tasty bites!\n\n*Guest Speaker: Sam Sokolow\n\n*Made possible from funding provided by the Mary F. Kessler Fund at the Polk County Community Foundation\n\n*Made possible with grant funding from the Community Fund of Western North Carolina\n\n*Made possible with grant funding from the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787851774430temp-1787851774424-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de39a",
+   "title": "Whistle Down Wind | 01:26:42",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de39a",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When a drunken teenage kiss propels Janie and Alex's quirky friendship into a hidden love affair, the conservative ideologies of their hometown force them to confront the truth about their sexualities, and the bitter future of their relationship.",
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/1785880104071temp-1785880104056-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de348-6a722fe8b96cc074a19de35e-6a722fe8b96cc074a19de3a0-6a722fe8b96cc074a19de3ce-6a722fe8b96cc074a19de3ec",
+   "title": "Short Block A - (1:26:27) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5067",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 85,
+   "imageUrl": "https://static-a.eventive.org/1785879357367temp-1785879357356-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de34e-6a722fe8b96cc074a19de3b2",
+   "title": "Documentary Short Block D - (48:01) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c1",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 47,
+   "imageUrl": "https://static-a.eventive.org/1785880125235temp-1785880125223-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3b6-6a722fe8b96cc074a19de3de",
+   "title": "Equestrian Block L - (1:29:00) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51dd",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1787603086722temp-1787603086641-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de33a-6a722fe8b96cc074a19de34c-6a722fe8b96cc074a19de358-6a722fe8b96cc074a19de35a-6a722fe8b96cc074a19de368-6a722fe8b96cc074a19de3b8-6a722fe8b96cc074a19de3e0",
+   "title": "Student Short Block H - (1:28:55) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d1",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 86,
+   "imageUrl": "https://static-a.eventive.org/1785879378599temp-1785879378586-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3cc",
+   "title": "The Yak Herder | 01:28:54",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3cc",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Tsering and his wife Bamu, along with their three daughters, embark on their annual trek to the high-altitude Himalayan summer pastures, where they tend to their yaks. Their tranquil yet demanding life unfolds with ritualistic grace – from morning prayers and shared meals to the daily labor of herding yaks and gathering firewood. In the evenings, they join fellow herders for communal meals, laughter, and camaraderie, highlighting the warmth of their close-knit community. But as rising costs threaten their way of life, Tsering and Bamu face a harsh reality: yak herding no longer provides enough to support their children’s education. With dreams of a brighter future for their daughters, they seek help from local politicians and explore options to send them to school. When nothing materializes, the couple faces an agonizing decision – sell their beloved animals to fund their children’s education and enter the guesthouse business, marking the end of an era. The day they sell their yaks is both heartbreaking and hopeful, as the family leaves behind the only life they’ve ever known, clinging to the hope that education will offer a better future for their children. In this poignant tale of tradition, sacrifice, and the pursuit of a better life, The Yak Herder captures the struggle between holding onto the past and embracing an uncertain future.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1785880057908temp-1785880057895-poster.jpg"
+  },
+  {
+   "id": "6a8f78349806d192cdc329f8",
+   "title": "All Access Passholders Lounge",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a8f78349806d192cdc329f8",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "All Access Passholders are invited to join us at Carri Bass' Studio for light refreshments and snacks! Mingle with other filmmakers, grab a cool drink, and relax!",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3da-6a722fe8b96cc074a19de3f4",
+   "title": "Documentary Short Block E - (52:16) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c5",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 52,
+   "imageUrl": "https://static-a.eventive.org/1785879786781temp-1785879786770-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de33c-6a722fe8b96cc074a19de36c-6a722fe8b96cc074a19de374-6a722fe8b96cc074a19de38c-6a722fe8b96cc074a19de39e-6a722fe8b96cc074a19de3ee",
+   "title": "Short Block B - (01:15:45) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51b1",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 74,
+   "imageUrl": "https://static-a.eventive.org/1785879820564temp-1785879820549-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de360-6a722fe8b96cc074a19de3ca-6a722fe8b96cc074a19de3e6",
+   "title": "Equestrian Short Dramatic Block M - (1:35:45) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51e2",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 95,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de380-6a722fe8b96cc074a19de3aa-6a722fe8b96cc074a19de3c8",
+   "title": "Documentary Short Block F - (74:51) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c9",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 74,
+   "imageUrl": "https://static-a.eventive.org/1785879431497temp-1785879431484-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de336-6a722fe8b96cc074a19de36a-6a722fe8b96cc074a19de37a-6a722fe8b96cc074a19de3a6-6a722fe8b96cc074a19de3c4-6a722fe8b96cc074a19de3d4-6a84d3bdbc939a5d283867eb",
+   "title": "Student Short Block J - (1:24:54) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d5",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1785880029356temp-1785880029344-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de370",
+   "title": "Baby Love | 01:29:27",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de370",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Rhiannon “Baby Love” Mitchell is an MMA fighter on the brink of self-destruction who battles through underground fight circuits, facing physical and emotional turmoil. When a series of concussions threaten her career, she is forced into an unconventional equine therapy program. Skeptical and defiant, she gradually bonds with the horses and the program’s patients, rediscovering her inner strength and confronting her past. As she heals, she must decide whether to return to the cage or forge a new path.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1785879268050temp-1785879268035-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de34a-6a722fe8b96cc074a19de3c0-6a722fe8b96cc074a19de3dc-6a722fe8b96cc074a19de3e4-6a722fe8b96cc074a19de3e8-6a722fe8b96cc074a19de3f0",
+   "title": "Short Block C - (1:19:32) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51b5",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 76,
+   "imageUrl": "https://static-a.eventive.org/1785879418354temp-1785879418341-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3ba-6a722fe8b96cc074a19de3be-6a722fe8b96cc074a19de3d2",
+   "title": "Equestrian Short Dramatic Block N - (94:30) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51e6",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1785879390414temp-1785879390399-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de352-6a722fe8b96cc074a19de356-6a722fe8b96cc074a19de37c-6a722fe8b96cc074a19de3b0",
+   "title": "Documentary Short Block G - (74:00) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51cd",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 72,
+   "imageUrl": "https://static-a.eventive.org/1785879492297temp-1785879492284-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de332-6a722fe8b96cc074a19de340-6a722fe8b96cc074a19de372-6a722fe8b96cc074a19de394-6a722fe8b96cc074a19de396-6a722fe8b96cc074a19de3c2-6a722fe8b96cc074a19de3ea",
+   "title": "Animation Block K - (54:32) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d9",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 52,
+   "imageUrl": "https://static-a.eventive.org/1785879866332temp-1785879866314-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de354",
+   "title": "Summer Lost | 01:22:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de354",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Official Selection:\n\n2026 Atlanta Film Festival\n\n2026 RiverRun International Film Festival\n\n2026 Macon Film Festival\n\n2026 OUT at the Movies International Film Festival\n\n2026 Cinema Diverse: The Palm Springs LGBTQ Film Festival\n\n2026 Tryon International Film Festival\n\nA man attempts to keep his terminal illness a secret while attending a wedding, but an unexpected romance reshapes his future as well as his past.",
+   "durationMin": 82,
+   "imageUrl": "https://static-a.eventive.org/1785879892346temp-1785879892333-poster.jpg"
+  },
+  {
+   "id": "6a860852d949804f28f42d22",
+   "title": "Fireside Chat - The Human Part of the Story with Steve Esteb + Homayra Sellier *RSVP so we can save you a seat*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a860852d949804f28f42d22",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "A SPECIAL CONVERSATION ON ADVOCACY AND SURVIVORSHIP\n\nFeaturing filmmaker and educator Steven Esteb in conversation with Homayra Sellier, founder of Innocence in Danger, an international organization dedicated to protecting children from sexual abuse and exploitation, and Carré Otis, the former international model and actor who has become a prominent advocate for survivors of sexual abuse and greater accountability within the modeling and entertainment industries.\n\nThe discussion will focus on Sellier's work as an advocate and the intersection of filmmaking, human rights, survivorship and social change. The conversation will also address the advocacy work of Otis has publicly shared her experiences of abuse as a teenager and has spent years working to raise awareness about exploitation and support survivors. The conversation will explore how artists, filmmakers and advocates can use storytelling to bring difficult issues into the public conversation and amplify voices that might otherwise go unheard.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787852669797temp-1787852669790-cover.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49573",
+   "title": "Saturday Evening Networking Block Party on Pacolet Street",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49573",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Join filmmakers, industry guests, and film lovers for an evening of connection and celebration at our signature Saturday Networking Block Party! Set on Pacolet Street, mingle with creatives from around the globe in a relaxed, festive atmosphere with drinks, light bites, and live entertainment at The Fitzgerald and Mirrorball Gallery!\n\nWhether you're here to swap stories, spark collaborations, or simply unwind after a day of screenings, this event is a festival favorite — and not to be missed!\n\nOpen to the public.\n\n*Sponsored by Oaklore Distillery, Tito's Vodka + Biltmore Winery",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787853974466temp-1787853974460-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3b4",
+   "title": "Everyone Calls Me Mike | 01:28:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3b4",
+   "genre": "film",
+   "categories": [],
+   "blurb": "While sailing around the world, Jean, Isabelle, and her son Damien stop in Djibouti, where they meet Mike, a young African who helps them fix their boat. As they set sail for the dangerous Aden Gulf, Jean decides to embark with Mike, who wants to start a new life. A few days later, off the Somalian coast, a fishing boat approaches, and their journey takes a dramatic turn.",
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1785879410066temp-1785879410054-poster.jpg"
+  },
+  {
+   "id": "6a839dcdc584feb1b6b8dbc0",
+   "title": "Equestrian Reception *RSVP so we can save you a drink*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a839dcdc584feb1b6b8dbc0",
+   "genre": "other",
+   "categories": [],
+   "blurb": "Join us for a reception celebrating our Equestrian Films and Filmmakers!\n\nSponsored by EQUUS Television",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6a84d6d8e8c0c6a8508757ec",
+   "title": "Paws for a Break with Foothills Humane Society",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a84d6d8e8c0c6a8508757ec",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "With so much going on at the festival, \"paws\" and take a break with some furry friends! Join us and the Foothills Humane Society in front of The Fitzgerald and cuddle with puppies! Always a fan fave, and open to the public!",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787852266652temp-1787852266644-cover.jpg"
+  },
+  {
+   "id": "6a84de7c0518f8a6e747522d",
+   "title": "A Conversation with Marti King Young (Asst. to the Exec Producer of Will Trent)",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a84de7c0518f8a6e747522d",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join Marti King Young as she talks screenwriting, producing Will Trent, and more!\n\nLearn more about Marti here: https://www.imdb.com/name/nm3861885/?_ssoLoop=1\n\n*Free and open to the public!\n\n**Made possible with funding from the Mary F. Kessler Fund at the Polk County Community Foundation, the Community Fund of Western North Carolina, and the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787854139642temp-1787854139632-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de390",
+   "title": "Where the Horses Heal the Soul | 1:30:05 + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de390",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Where the Horses Heal the Soul follows children, adults, and veterans living with physical, cognitive, and emotional challenges. At ROCK Ride On Center for Kids, a Texas nonprofit providing equine-assisted services, they find a lifeline forward through the bond between human and horse. As participants enter the arena, uncertainty slowly gives way to confidence. Through the motion of riding and the calming presence of horses, walls begin to come down and healing takes hold. This documentary is a moving portrait of breakthrough and determination as participants at ROCK discover connection, courage, and purpose, revealing how horses can help transform lives.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1785880095530temp-1785880095516-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de344",
+   "title": "Goody | 01:35:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de344",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Goody follows twenty-year old Guelia Pedat, raised Catholic by her overbearing mother and unknowingly suffering from OCD that manifests through an irrational adherence to religious rituals. After losing her faith and years after the death of her beloved older brother she still blames herself despite a lack of involvement. Throughout this Southern Gothic Coming of Age story, Goody connects to childhood friends and navigates new relationships as she spirals to new lows and must find a way to free herself from grief.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1785879461260temp-1785879461248-poster.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49571",
+   "title": "Brunch with a Filmmaker *RSVP so we can save you a plate*",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49571",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "*For All Access Passholders*\n\n*RSVP Required\n\nJoin us for an intimate and inspiring brunch where you’ll have the unique opportunity to sit down with a featured filmmaker. Share stories, ask questions, and gain insider insights into the creative process, challenges, and triumphs of filmmaking. This relaxed, conversational setting is perfect for building connections and fueling your passion for storytelling—one delicious bite at a time.\n\n*catered by Ashley Menetre",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787854566460temp-1787854566454-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de33e-6a722fe8b96cc074a19de350-6a722fe8b96cc074a19de35c-6a722fe8b96cc074a19de362-6a722fe8b96cc074a19de37e",
+   "title": "Short Block P - (1:08:38) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51ea",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 62,
+   "imageUrl": "https://static-a.eventive.org/1785879811559temp-1785879811545-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3e2",
+   "title": "Invasive: Modern Dentistry Reimagined | 01:55:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3e2",
+   "genre": "film",
+   "categories": [],
+   "blurb": "For millions without access to traditional dental care, a cavity can become a lifelong crisis. INVASIVE follows the pioneers challenging dentistry’s drill-and-fill model with simple, evidence-based treatments that preserve teeth and bring care to the communities that need it most.",
+   "durationMin": 115,
+   "imageUrl": "https://static-a.eventive.org/1785879567134temp-1785879567123-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de388",
+   "title": "The Dwellers | 01:24:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de388",
+   "genre": "film",
+   "categories": [],
+   "blurb": "An intimate look at the personal stories of eight congregants of The Dwelling - a faith group ministering to the needs of the local unhoused community of Winston - Salem. Using an innovative approach to creative writing & to increasing self-awareness, local non-profit Authoring Action encouraged and challenged the participants in crafting their powerful stories.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1790456228492temp-1790456227996-poster.jpg"
+  },
+  {
+   "id": "6a85fbf0c20de0715ddcc79c",
+   "title": "Creating Documentaries with Jeff Lieberman + E. Vincent Martinez",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a85fbf0c20de0715ddcc79c",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join documentary filmmakers Jeff Lieberman and E. Vincent Martinez for a conversation on the craft of nonfiction storytelling—and what stood out to them while watching and judging this year’s TRIFF documentaries.\n\nJeff Lieberman, Emmy- and WGA-nominated director and founder of Re-Emerging Films (Bella!, The Amazing Nina Simone, Re-Emerging: The Jews of Nigeria), and E. Vincent Martinez, Tryon-based filmmaker and visual artist (Bringle: A Tale of Two Makers, Iron Pearls), will share insights from their own work alongside reflections on the films they reviewed for the festival.\n\nExpect practical discussion about the documentary process, creative choices that resonate, and the particular joys and challenges of evaluating the year’s submissions. A thoughtful exchange for filmmakers and documentary enthusiasts alike.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787854780092temp-1787854780086-cover.jpg"
+  },
+  {
+   "id": "6a8f78b4ab773cead9882614",
+   "title": "All Access Passholders Lounge",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a8f78b4ab773cead9882614",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "All Access Passholders are invited to join us at Carri Bass' Studio for light refreshments and snacks! Mingle with other filmmakers, grab a cool drink, and relax!",
+   "durationMin": null,
+   "imageUrl": null
+  },
+  {
+   "id": "6a84ed3033d46290a98c807c",
+   "title": "A Conversation with Honey Head Films",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a84ed3033d46290a98c807c",
+   "genre": "talk",
+   "categories": [
+    "691b8a9a94bdbc299cd494cd"
+   ],
+   "blurb": "Join us for a conversation with Honey Head's Kristi Ray and Erika Arlee as they chat all things indie film world!\n\n*This event is free and open to the public\n\n**Made possible with funding from the Mary F. Kessler Fund from the Polk County Community Foundation, the Community Fund of Western North Carolina, + the Community Foundation of Henderson County",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787854841060temp-1787854841051-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de334-6a722fe8b96cc074a19de346-6a722fe8b96cc074a19de392",
+   "title": "Short Block Q - (1:08:35) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51ee",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 64,
+   "imageUrl": "https://static-a.eventive.org/1785879829012temp-1785879829000-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3d8",
+   "title": "Spirt of the Pony Express | 1:17:00 + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3d8",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Spirit of the Pony Express tells the story of the legendary mail route that once connected a divided nation and celebrates the institutions and individuals who keep its history alive today. In 2010, we followed the National Pony Express Association's cross-country re-ride from Sacramento, California to St. Joseph, Missouri, staged for the Sesquicentennial of the historic route. Along the trail to California, we interviewed the people of St. Joseph and the teachers, historians, and everyday people who have dedicated their lives to preserving the memory of this pivotal chapter in the development of the United States.",
+   "durationMin": 77,
+   "imageUrl": "https://static-a.eventive.org/1785879848164temp-1785879848150-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3ac",
+   "title": "Papertown | 01:23:44",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3ac",
+   "genre": "film",
+   "categories": [],
+   "blurb": "When the paper mill that defined Canton, North Carolina announced it would close, the town had just three months before its largest employer—and a core part of its identity—was gone. Filmed in real time, this documentary captures the shock, unanswered questions, and growing anger as rumors swirl, corporate leaders stay silent, and news emerges of executives profiting from stock trades days before the announcement. Through grief, resilience, and uncertainty, the people of Canton confront life without the industry that shaped them for generations.",
+   "durationMin": 83,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de38e",
+   "title": "REVOLUTION'S DAUGHTER | 01:24:20",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de38e",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A powerful documentary portrait of identity, legacy, and the price of dissent, Revolution's Daughter follows Alina as she confronts the myth of her father and the reality of the revolution he led. Through her story—and the voices of the Cuban exile community in Miami and beyond—the film explores the deep scars of displacement, the complexity of heritage, and the enduring spirit of a people divided by politics but united by culture, memory, and the hope for change.",
+   "durationMin": 84,
+   "imageUrl": "https://static-a.eventive.org/1785879803052temp-1785879803037-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de338-6a722fe8b96cc074a19de364-6a722fe8b96cc074a19de366-6a722fe8b96cc074a19de378-6a722fe8b96cc074a19de38a-6a722fe8b96cc074a19de3ae-6a722fe8b96cc074a19de3d6-6a722fe8b96cc074a19de3f2",
+   "title": "Short Block R - (01:35:43) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51f2",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 93,
+   "imageUrl": "https://static-a.eventive.org/1785879471335temp-1785879471324-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de342",
+   "title": "GIRLS DON´T CRY | 01:29:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de342",
+   "genre": "film",
+   "categories": [],
+   "blurb": "What does it mean to be a girl in the world today? How do they fare in a restrictive world? The documentary “Girls Don’t Cry” is about the longing of six girls from six countries, longing for a self-determined life in freedom, their desire to fall in love, without paternalism, without others having power over their bodies, with equal rights.\n\nWe see Nancy, Sheelan, Selenna, Nina, Paige and Sinai deal with the crisis of puberty, their self-confident decisions in difficult situations, their courageous fight against brutal traditions such as circumcision, against social constraints and pressure, against beauty mania and prejudice. Being young and cool, even in the face of trauma and loss.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1785879437886temp-1785879437875-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de382-6a722fe8b96cc074a19de384-6a722fe8b96cc074a19de386-6a722fe8b96cc074a19de3a2-6a722fe8b96cc074a19de3a8-6a722fe8b96cc074a19de3bc",
+   "title": "Equestrian Short Dramatic Block T - (1:34:30) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a84d292129073f5c85bfe8c",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 88,
+   "imageUrl": "https://static-a.eventive.org/1785879736183temp-1785879736169-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de376",
+   "title": "A Life Reimagined: The George Masa Story | 01:30:05",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de376",
+   "genre": "film",
+   "categories": [],
+   "blurb": "A Japanese immigrant’s photography and passion for the Appalachian mountains in the 1920’s changed America. For almost 100 years George Masa’s story was a mystery - until now.",
+   "durationMin": 90,
+   "imageUrl": "https://static-a.eventive.org/1785879199350temp-1785879199336-poster.jpg"
+  },
+  {
+   "id": "6a85229d365982c54a5c69f1",
+   "title": "Reception for \"Living Archive\" - Urban League of the Upstate + Studio 9.22",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a85229d365982c54a5c69f1",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Reception for Living Archive\n\nHonoring Dr. Warren Carson\n\nJoin us for a special reception celebrating Living Archive, a documentary short that honors the life and enduring influence of Dr. Warren Carson—educator, scholar, and community leader whose dedication to literature, service, and mentorship has shaped generations.\n\nThrough interviews, poetry, and archival storytelling, the film explores how one life can inspire countless others. Director Brittany Brackett will be present for the occasion.\n\nSponsored by the Urban League of the Upstate and Studio 9.22. Includes one free drink ticket.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1787855116424temp-1787855116415-cover.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de36e-6a722fe8b96cc074a19de398-6a722fe8b96cc074a19de3a4-6a722fe8b96cc074a19de3d0",
+   "title": "Short Block S - (1:31:40) + Q&A",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51f6",
+   "genre": "film",
+   "categories": [],
+   "blurb": null,
+   "durationMin": 91,
+   "imageUrl": "https://static-a.eventive.org/1785879672183temp-1785879672169-poster.jpg"
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de39c",
+   "title": "Fulfilling the Promise — Teachers, Students, and the Declaration of Independence | 50:00",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de39c",
+   "genre": "film",
+   "categories": [],
+   "blurb": "\"Fulfilling the Promise\" is a timely portrait of civic education that asks a question at the heart of the American experiment: are we living up to our founding principles?\n\nThrough four schools in Brooklyn, New York, Boston, Massachusetts, Durango, Colorado, and Carlisle, Pennsylvania, the film shows how teachers and students bring the Declaration of Independence to life, discussing its principles through the framework of civil discourse.\n\nNot merely an appreciation of the history of the Declaration, this documentary explores how teachers and students play a vital role in keeping these principles alive and, as Dr. King noted in his “I have a Dream” speech, better fulfilling the promise of the Declaration as a promissory note for future generations.",
+   "durationMin": 50,
+   "imageUrl": null
+  },
+  {
+   "id": "films-6a722fe8b96cc074a19de3c6",
+   "title": "Living Archive | 00:29:40",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/films/6a722fe8b96cc074a19de3c6",
+   "genre": "film",
+   "categories": [],
+   "blurb": "Living Archive is a documentary short celebrating the life and legacy of Dr. Warren Carson, an educator, scholar, and community leader whose commitment to literature, service, and mentorship shaped generations of students and citizens. Through interviews, poetry, and archival storytelling, the film explores how one life can inspire countless others.",
+   "durationMin": 29,
+   "imageUrl": "https://static-a.eventive.org/1785879625108temp-1785879625093-poster.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49570",
+   "title": "Awards Ceremony",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49570",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Celebrate the outstanding talent and creativity showcased at the Tryon International Film Festival during our Awards Ceremony. Join filmmakers, industry professionals, and film enthusiasts for an elegant evening honoring the best in storytelling, directing, acting, and technical achievement. Experience the excitement as winners are announced and trophies are presented, marking the culmination of a vibrant festival weekend.\n\nThis event is free and open to the public.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/17522745721086fb1b46e0c570e9fb6d0.jpg"
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49596",
+   "title": "TRIFF26 Afterparty",
+   "titleLocal": null,
+   "url": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49596",
+   "genre": "other",
+   "categories": [
+    "691b8a9a94bdbc299cd494ce"
+   ],
+   "blurb": "Join us as we celebrate our filmmakers and cheers to weekend of artistry and community!\n\nSay your goodbyes in this warm reception and afterparty!\n\n*Food and drink will be for sale.\n\nThe event is free and open to the public.",
+   "durationMin": null,
+   "imageUrl": "https://static-a.eventive.org/1755800891033d6744013709564142761.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "691b8a9a94bdbc299cd4956b",
+   "eventId": "films-6a849aaff1e772f689dce34b-6a849aaff1e772f689dce34d-6a849aaff1e772f689dce34f-6a849aaff1e772f689dce351-6a849aaff1e772f689dce353-6a849aaff1e772f689dce355-6a849aaff1e772f689dce357-6a849aaff1e772f689dce359-6a849aaff1e772f689dce35b-6a849aaff1e772f689dce35d-6a849aaff1e772f689dce35f-6a849aaff1e772f689dce361-6a849aaff1e772f689dce363-6a849aaff1e772f689dce365-6a849aaff1e772f689dce367-6a849aaff1e772f689dce369-6a849ab0f1e772f689dce36b-6a849ab0f1e772f689dce36d-6a849ab0f1e772f689dce36f-6a849ab0f1e772f689dce371-6a849ab0f1e772f689dce373-6a849ab0f1e772f689dce375-6a849ab0f1e772f689dce377-6a849ab0f1e772f689dce379-6a849ab0f1e772f689dce37b-6a849ab0f1e772f689dce37d-6a849ab0f1e772f689dce37f-6a849ab0f1e772f689dce381",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "09:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956b",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956f",
+   "eventId": "691b8a9a94bdbc299cd4956f",
+   "venueId": "691b8a9a94bdbc299cd4950b",
+   "roomId": null,
+   "date": "2026-10-08",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956a",
+   "eventId": "691b8a9a94bdbc299cd4956a",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "09:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a851e5a6c6a1c417fc1618f",
+   "eventId": "6a851e5a6c6a1c417fc1618f",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "10:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a851e5a6c6a1c417fc1618f",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a851e8d365982c54a5c1a80",
+   "eventId": "6a851e8d365982c54a5c1a80",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a851e8d365982c54a5c1a80",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a851eae4aa5ef0d42a1d8a1",
+   "eventId": "6a851eae4aa5ef0d42a1d8a1",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "12:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a851eae4aa5ef0d42a1d8a1",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a851f2534cfd46f50c94b80",
+   "eventId": "6a851f2534cfd46f50c94b80",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "12:50",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a851f2534cfd46f50c94b80",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a851f6f13836e9b1a33a5f9",
+   "eventId": "6a851f6f13836e9b1a33a5f9",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "13:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a851f6f13836e9b1a33a5f9",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a85200d5586fe5f0f18d993",
+   "eventId": "6a85200d5586fe5f0f18d993",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "14:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a85200d5586fe5f0f18d993",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a839c005f8441122a3cc06a",
+   "eventId": "6a839c005f8441122a3cc06a",
+   "venueId": "691b8a9a94bdbc299cd49514",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "15:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a839c005f8441122a3cc06a",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a839c90aa96d311976b4049",
+   "eventId": "6a839c90aa96d311976b4049",
+   "venueId": "691b8a9a94bdbc299cd4950b",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "16:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a839c90aa96d311976b4049",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd4956e",
+   "eventId": "691b8a9a94bdbc299cd4956e",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "17:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd4956e",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 100.0,
+   "priceMax": 100.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49591",
+   "eventId": "films-6aaad997fe5d685e67f019e5",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "19:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49591",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49594",
+   "eventId": "691b8a9a94bdbc299cd49594",
+   "venueId": "691b8a9a94bdbc299cd4950b",
+   "roomId": null,
+   "date": "2026-10-09",
+   "start": "21:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49594",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49572",
+   "eventId": "691b8a9a94bdbc299cd49572",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "09:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49572",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51fa",
+   "eventId": "films-6a722fe8b96cc074a19de39a",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "10:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51fa",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5067",
+   "eventId": "films-6a722fe8b96cc074a19de348-6a722fe8b96cc074a19de35e-6a722fe8b96cc074a19de3a0-6a722fe8b96cc074a19de3ce-6a722fe8b96cc074a19de3ec",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5067",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c1",
+   "eventId": "films-6a722fe8b96cc074a19de34e-6a722fe8b96cc074a19de3b2",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51dd",
+   "eventId": "films-6a722fe8b96cc074a19de3b6-6a722fe8b96cc074a19de3de",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51dd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d1",
+   "eventId": "films-6a722fe8b96cc074a19de33a-6a722fe8b96cc074a19de34c-6a722fe8b96cc074a19de358-6a722fe8b96cc074a19de35a-6a722fe8b96cc074a19de368-6a722fe8b96cc074a19de3b8-6a722fe8b96cc074a19de3e0",
+   "venueId": "691b8a9a94bdbc299cd49512",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "12:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ff",
+   "eventId": "films-6a722fe8b96cc074a19de3cc",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "12:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51ff",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a8f78349806d192cdc329f8",
+   "eventId": "6a8f78349806d192cdc329f8",
+   "venueId": "691b8a9a94bdbc299cd4950e",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "12:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a8f78349806d192cdc329f8",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c5",
+   "eventId": "films-6a722fe8b96cc074a19de3da-6a722fe8b96cc074a19de3f4",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "12:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b1",
+   "eventId": "films-6a722fe8b96cc074a19de33c-6a722fe8b96cc074a19de36c-6a722fe8b96cc074a19de374-6a722fe8b96cc074a19de38c-6a722fe8b96cc074a19de39e-6a722fe8b96cc074a19de3ee",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "13:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51b1",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51e2",
+   "eventId": "films-6a722fe8b96cc074a19de360-6a722fe8b96cc074a19de3ca-6a722fe8b96cc074a19de3e6",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "13:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51e2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51c9",
+   "eventId": "films-6a722fe8b96cc074a19de380-6a722fe8b96cc074a19de3aa-6a722fe8b96cc074a19de3c8",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51c9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d5",
+   "eventId": "films-6a722fe8b96cc074a19de336-6a722fe8b96cc074a19de36a-6a722fe8b96cc074a19de37a-6a722fe8b96cc074a19de3a6-6a722fe8b96cc074a19de3c4-6a722fe8b96cc074a19de3d4-6a84d3bdbc939a5d283867eb",
+   "venueId": "691b8a9a94bdbc299cd49512",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5203",
+   "eventId": "films-6a722fe8b96cc074a19de370",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5203",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b5",
+   "eventId": "films-6a722fe8b96cc074a19de34a-6a722fe8b96cc074a19de3c0-6a722fe8b96cc074a19de3dc-6a722fe8b96cc074a19de3e4-6a722fe8b96cc074a19de3e8-6a722fe8b96cc074a19de3f0",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "14:45",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51b5",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51e6",
+   "eventId": "films-6a722fe8b96cc074a19de3ba-6a722fe8b96cc074a19de3be-6a722fe8b96cc074a19de3d2",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "15:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51e6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51cd",
+   "eventId": "films-6a722fe8b96cc074a19de352-6a722fe8b96cc074a19de356-6a722fe8b96cc074a19de37c-6a722fe8b96cc074a19de3b0",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "16:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51cd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51d9",
+   "eventId": "films-6a722fe8b96cc074a19de332-6a722fe8b96cc074a19de340-6a722fe8b96cc074a19de372-6a722fe8b96cc074a19de394-6a722fe8b96cc074a19de396-6a722fe8b96cc074a19de3c2-6a722fe8b96cc074a19de3ea",
+   "venueId": "691b8a9a94bdbc299cd49512",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "16:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51d9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5207",
+   "eventId": "films-6a722fe8b96cc074a19de354",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "16:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5207",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a860852d949804f28f42d22",
+   "eventId": "6a860852d949804f28f42d22",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "16:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a860852d949804f28f42d22",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49573",
+   "eventId": "691b8a9a94bdbc299cd49573",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49573",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba520b",
+   "eventId": "films-6a722fe8b96cc074a19de3b4",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba520b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a839dcdc584feb1b6b8dbc0",
+   "eventId": "6a839dcdc584feb1b6b8dbc0",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a839dcdc584feb1b6b8dbc0",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a84d6d8e8c0c6a8508757ec",
+   "eventId": "6a84d6d8e8c0c6a8508757ec",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a84d6d8e8c0c6a8508757ec",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a84de7c0518f8a6e747522d",
+   "eventId": "6a84de7c0518f8a6e747522d",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "18:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a84de7c0518f8a6e747522d",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51b9",
+   "eventId": "films-6a722fe8b96cc074a19de390",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "19:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51b9",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba520f",
+   "eventId": "films-6a722fe8b96cc074a19de344",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "20:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba520f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49571",
+   "eventId": "691b8a9a94bdbc299cd49571",
+   "venueId": "691b8a9a94bdbc299cd4950f",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "09:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49571",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ea",
+   "eventId": "films-6a722fe8b96cc074a19de33e-6a722fe8b96cc074a19de350-6a722fe8b96cc074a19de35c-6a722fe8b96cc074a19de362-6a722fe8b96cc074a19de37e",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51ea",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5213",
+   "eventId": "films-6a722fe8b96cc074a19de3e2",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5213",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5223",
+   "eventId": "films-6a722fe8b96cc074a19de388",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "11:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5223",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a85fbf0c20de0715ddcc79c",
+   "eventId": "6a85fbf0c20de0715ddcc79c",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "11:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a85fbf0c20de0715ddcc79c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a8f78b4ab773cead9882614",
+   "eventId": "6a8f78b4ab773cead9882614",
+   "venueId": "691b8a9a94bdbc299cd4950e",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "12:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a8f78b4ab773cead9882614",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a84ed3033d46290a98c807c",
+   "eventId": "6a84ed3033d46290a98c807c",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "12:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a84ed3033d46290a98c807c",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51ee",
+   "eventId": "films-6a722fe8b96cc074a19de334-6a722fe8b96cc074a19de346-6a722fe8b96cc074a19de392",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "12:45",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51ee",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51bd",
+   "eventId": "films-6a722fe8b96cc074a19de3d8",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "13:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51bd",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5227",
+   "eventId": "films-6a722fe8b96cc074a19de3ac",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "13:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5227",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba5217",
+   "eventId": "films-6a722fe8b96cc074a19de38e",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "13:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba5217",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51f2",
+   "eventId": "films-6a722fe8b96cc074a19de338-6a722fe8b96cc074a19de364-6a722fe8b96cc074a19de366-6a722fe8b96cc074a19de378-6a722fe8b96cc074a19de38a-6a722fe8b96cc074a19de3ae-6a722fe8b96cc074a19de3d6-6a722fe8b96cc074a19de3f2",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "14:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51f2",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba522b",
+   "eventId": "films-6a722fe8b96cc074a19de342",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "15:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba522b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a84d292129073f5c85bfe8c",
+   "eventId": "films-6a722fe8b96cc074a19de382-6a722fe8b96cc074a19de384-6a722fe8b96cc074a19de386-6a722fe8b96cc074a19de3a2-6a722fe8b96cc074a19de3a8-6a722fe8b96cc074a19de3bc",
+   "venueId": "6a7d0a5839f772f2778b9969",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "15:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a84d292129073f5c85bfe8c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba521b",
+   "eventId": "films-6a722fe8b96cc074a19de376",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "15:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba521b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a85229d365982c54a5c69f1",
+   "eventId": "6a85229d365982c54a5c69f1",
+   "venueId": "691b8a9a94bdbc299cd4950a",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "15:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a85229d365982c54a5c69f1",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba51f6",
+   "eventId": "films-6a722fe8b96cc074a19de36e-6a722fe8b96cc074a19de398-6a722fe8b96cc074a19de3a4-6a722fe8b96cc074a19de3d0",
+   "venueId": "691b8a9a94bdbc299cd49508",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "16:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba51f6",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba522f",
+   "eventId": "films-6a722fe8b96cc074a19de39c",
+   "venueId": "691b8a9a94bdbc299cd4950d",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "17:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba522f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a7f667887c45cb9d7ba521f",
+   "eventId": "films-6a722fe8b96cc074a19de3c6",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "17:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/6a7f667887c45cb9d7ba521f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49570",
+   "eventId": "691b8a9a94bdbc299cd49570",
+   "venueId": "6a7f667887c45cb9d7ba51fd",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "19:00",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49570",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  },
+  {
+   "id": "691b8a9a94bdbc299cd49596",
+   "eventId": "691b8a9a94bdbc299cd49596",
+   "venueId": "6abda92605f1d5982e6e5d44",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "20:30",
+   "ticketUrl": "https://triff2026.eventive.org/schedule/691b8a9a94bdbc299cd49596",
+   "free": true,
+   "status": "free",
+   "priceMin": 0.0,
+   "priceMax": 0.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim",
+   "venues-research"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/tryon-international-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:08:36Z",
+    "fetcher": "scraper/festivals/tryon_international_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/tryon-international-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:33:42Z",
+    "fetcher": "scraper/festivals/tryon_international_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   },
+   "venues-research": {
+    "kind": "curated",
+    "path": "scraper/festivals/tryon_international_film_festival/curated/venues.json"
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.lng": [
+    "nominatim",
+    "venues-research"
+   ],
+   "venues.name": [
+    "eventive",
+    "venues-research"
+   ],
+   "venues.notes": [
+    "venues-research"
+   ],
+   "venues.online": [
+    "eventive"
+   ],
+   "venues.refs": [
+    "venues-research"
+   ]
+  },
+  "skipped": {
+   "eventive": [
+    "Meet + Greet with Marlyn Mason (2026-04-04)",
+    "Italian Dinner @ The Fitz *Not an official festival event* (2026-10-08T21:00:00.000Z)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,57 @@
+# Scala Days: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# The Scala programming language's conference, in 2026 at the Kulturbrauerei
+# in Prenzlauer Berg.
+
+id = "scala-days"
+name = "Scala Days"
+city = "Berlin"
+country = "DE"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 52.52
+lng = 13.405
+timezone = "Europe/Berlin"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+default_genre = "talk"
+site = "https://scaladays.org"
+
+[ticketing]
+model = "festival-pass"
+url = "https://tickets.plainschwarz.com/scaladays26/"
+notes = "One conference ticket covers both days; the site's ticket widget sells from this pretix shop."
+
+[[edition]]
+id = "2026"
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-12"
+last = "2026-10-13"
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "scala_days/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "scala_days/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

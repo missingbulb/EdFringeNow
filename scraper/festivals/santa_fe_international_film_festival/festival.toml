@@ -1,0 +1,65 @@
+# The Santa Fe International Film Festival: who it is, its editions, and the
+# sources an edition's information block is assembled from. The contract every
+# key follows is scraper/festivals/README.md. Six days of screenings, panels and
+# parties across Santa Fe's cinemas and galleries.
+
+id = "santa-fe-international-film-festival"
+name = "Santa Fe International Film Festival"
+city = "Santa Fe"
+country = "US"
+region = "New Mexico"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 35.687
+lng = -105.9378
+timezone = "America/Denver"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-international"]
+default_genre = "film"
+site = "https://santafe.film"
+
+[ticketing]
+model = "central-box-office"
+url = "https://sfiff.eventive.org"
+notes = "Sold on sfiff.eventive.org, one ticket page per screening or event."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-10-14"
+last = "2026-10-19"
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "santa_fe_international_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "santa_fe_international_film_festival/nominatim.py"
+
+# Hand research for the venues the programme source leaves without an
+# address or a pin, each figure cited.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "santa_fe_international_film_festival/venues_research.py"
+
+[merge]
+venues = ["venues-research", "eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

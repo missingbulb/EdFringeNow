@@ -1,0 +1,70 @@
+{
+ "results": [
+  {
+   "query": "11-15 Minories, London EC3N 1AX",
+   "matched": "11-15 Minories, London EC3N 1AX",
+   "lat": 51.51293,
+   "lng": -0.075287
+  },
+  {
+   "query": "15-19 Devereux Ct, Temple, London WC2R 3JJ",
+   "matched": null,
+   "lat": null,
+   "lng": null
+  },
+  {
+   "query": "17 Queensberry Place London SW7 2DT",
+   "matched": "17 Queensberry Place London SW7 2DT",
+   "lat": 51.494528,
+   "lng": -0.177148
+  },
+  {
+   "query": "20 Little Somerset St, London E1 8AH",
+   "matched": "20 Little Somerset St, London E1 8AH",
+   "lat": 51.513396,
+   "lng": -0.07443
+  },
+  {
+   "query": "307 Regent St., London W1B 2HW",
+   "matched": "307 Regent St., London W1B 2HW",
+   "lat": 51.516815,
+   "lng": -0.142851
+  },
+  {
+   "query": "39-41 Parker St, London WC2B 5PQ",
+   "matched": "39-41 Parker St, London WC2B 5PQ",
+   "lat": 51.516235,
+   "lng": -0.121342
+  },
+  {
+   "query": "BFI Building, 21 Stephen St, London W1T 1LN",
+   "matched": "21 Stephen St, London W1T 1LN",
+   "lat": 51.517834,
+   "lng": -0.132989
+  },
+  {
+   "query": "Beech St, Barbican, London EC1Y 8AA",
+   "matched": "Beech St, Barbican, London EC1Y 8AA",
+   "lat": 51.520915,
+   "lng": -0.09292
+  },
+  {
+   "query": "Level -2 Silk St, London EC2Y 8DS",
+   "matched": "Level -2 Silk St, London EC2Y 8DS",
+   "lat": 51.520758,
+   "lng": -0.092396
+  },
+  {
+   "query": "Milton Court Building, 1 Milton Street, London, EC2Y 9BH",
+   "matched": "1 Milton Street, London, EC2Y 9BH",
+   "lat": 51.520254,
+   "lng": -0.090819
+  },
+  {
+   "query": "The Mall, London SW1Y 5AH",
+   "matched": "The Mall, London SW1Y 5AH",
+   "lat": 51.506082,
+   "lng": -0.130261
+  }
+ ]
+}

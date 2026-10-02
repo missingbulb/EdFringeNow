@@ -1,0 +1,56 @@
+# The Tallgrass Film Festival: who it is, its editions, and the sources an
+# edition's information block is assembled from. The contract every key follows
+# is scraper/festivals/README.md. Independent film in downtown Wichita.
+
+id = "tallgrass-film-festival"
+name = "Tallgrass Film Festival"
+city = "Wichita"
+country = "US"
+region = "Kansas"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 37.6872
+lng = -97.3301
+timezone = "America/Chicago"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-independent"]
+default_genre = "film"
+site = "https://tallgrassfilm.org"
+
+[ticketing]
+model = "central-box-office"
+url = "https://tallgrassfilmfestival2026.eventive.org"
+notes = "Sold on tallgrassfilmfestival2026.eventive.org, one ticket page per screening; some events are pass-holders only."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+# The box office's welcome text calls it the 24th Annual Tallgrass Film Festival.
+ordinal = 24
+format = "block"
+first = "2026-10-15"
+last = "2026-10-18"
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "tallgrass_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "tallgrass_film_festival/nominatim.py"
+
+[merge]
+venues = ["eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

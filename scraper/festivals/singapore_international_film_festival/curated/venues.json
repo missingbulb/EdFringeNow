@@ -1,0 +1,62 @@
+{
+ "about": "Hand research for the venues the festival's Eventive box office lists without an address the geocoder can place, keyed by the box office's venue id. Each pin is the OpenStreetMap feature named in its basis.",
+ "researchedAt": "2026-10-02",
+ "venues": {
+  "6aad0040b82604c6f75ad615": {
+   "name": "National Museum Singapore, Gallery Theatre",
+   "coordinates": {
+    "lat": 1.2965476,
+    "lng": 103.8483167,
+    "basis": "OpenStreetMap's National Museum of Singapore (way 32342169)"
+   }
+  },
+  "6aad0040b82604c6f75ad618": {
+   "name": "Marina Bay Sands, Sands Theatre",
+   "coordinates": {
+    "lat": 1.2849222,
+    "lng": 103.8606279,
+    "basis": "OpenStreetMap's Marina Bay Sands Theatre (node 1907922924)"
+   }
+  },
+  "6aad0040b82604c6f75ad623": {
+   "name": "Golden Village VivoCity",
+   "coordinates": {
+    "lat": 1.2643707,
+    "lng": 103.8229537,
+    "basis": "OpenStreetMap's VivoCity mall (relation 2353588)"
+   }
+  },
+  "6ab3f06f9651fe03e0a6fb6a": {
+   "name": "Golden Village VivoCity",
+   "coordinates": {
+    "lat": 1.2643707,
+    "lng": 103.8229537,
+    "basis": "OpenStreetMap's VivoCity mall (relation 2353588)"
+   }
+  },
+  "6aad0040b82604c6f75ad624": {
+   "name": "Golden Village Cineleisure, Hall 1",
+   "coordinates": {
+    "lat": 1.3015044,
+    "lng": 103.8364803,
+    "basis": "OpenStreetMap's Cathay Cineleisure Orchard (way 42010371)"
+   }
+  },
+  "6aad0040b82604c6f75ad625": {
+   "name": "Golden Village Cineleisure, Hall 2",
+   "coordinates": {
+    "lat": 1.3015044,
+    "lng": 103.8364803,
+    "basis": "OpenStreetMap's Cathay Cineleisure Orchard (way 42010371)"
+   }
+  },
+  "6aad0040b82604c6f75ad626": {
+   "name": "Golden Village Cineleisure, Hall 4",
+   "coordinates": {
+    "lat": 1.3015044,
+    "lng": 103.8364803,
+    "basis": "OpenStreetMap's Cathay Cineleisure Orchard (way 42010371)"
+   }
+  }
+ }
+}

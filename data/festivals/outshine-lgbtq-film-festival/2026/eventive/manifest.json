@@ -1,0 +1,16 @@
+{
+ "festival": "outshine-lgbtq-film-festival",
+ "edition": "2026",
+ "source": "eventive",
+ "fetchedAt": "2026-10-02T18:09:49Z",
+ "fetcher": "scraper/festivals/outshine_lgbtq_film_festival/sources/eventive/fetch.py",
+ "fetcherVersion": 1,
+ "urls": [
+  "https://outshinefall2026.eventive.org/schedule",
+  "https://api.eventive.org/event_buckets/6aa99726170f9b1e5e61a943/events?api_key=<the tenant's public api_key>"
+ ],
+ "files": [
+  "programme.json"
+ ],
+ "notes": "Eventive's public events API for the tenant's bucket, unauthenticated (the key is the one the box office ships). In-person screenings in the edition only; start_time is UTC; prices in cents (scraper/festivals/platforms/eventive.py)."
+}

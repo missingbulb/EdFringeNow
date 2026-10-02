@@ -1,0 +1,65 @@
+# The Tryon International Film Festival: who it is, its editions, and the
+# sources an edition's information block is assembled from. The contract every
+# key follows is scraper/festivals/README.md. Independent film in a foothills
+# town of the Blue Ridge.
+
+id = "tryon-international-film-festival"
+name = "Tryon International Film Festival"
+city = "Tryon"
+country = "US"
+region = "North Carolina"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 35.2087
+lng = -82.2387
+timezone = "America/New_York"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-independent"]
+default_genre = "film"
+site = "https://triff2026.eventive.org"
+
+[ticketing]
+model = "central-box-office"
+url = "https://triff2026.eventive.org"
+notes = "Sold and RSVPed on triff2026.eventive.org, one page per screening or event; the festival's own website could not be reached to confirm, so the box office stands as its site."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-10-08"
+last = "2026-10-11"
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "tryon_international_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "tryon_international_film_festival/nominatim.py"
+
+# Hand research for the venues the programme source leaves without an
+# address or a pin, each figure cited.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "tryon_international_film_festival/venues_research.py"
+
+[merge]
+venues = ["venues-research", "eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

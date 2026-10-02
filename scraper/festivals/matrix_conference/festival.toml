@@ -1,0 +1,57 @@
+# The Matrix Conference: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# The Matrix open-communication protocol's conference: two days of talks
+# between hackathon days.
+
+id = "matrix-conference"
+name = "The Matrix Conference"
+city = "Malmö"
+country = "SE"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 55.605
+lng = 13.0038
+timezone = "Europe/Stockholm"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+default_genre = "talk"
+site = "https://2026.matrix.org"
+
+[ticketing]
+model = "festival-pass"
+url = "https://pretix.eu/matrix/matrix-conf-2026/"
+notes = "One conference ticket, with an all-day buffet, sold on pretix through the site's ticket widget."
+
+[[edition]]
+id = "2026"
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-20"
+last = "2026-10-23"
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "matrix_conference/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "matrix_conference/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

@@ -1,0 +1,55 @@
+# The Viet Film Fest: who it is, its editions, and the sources an edition's
+# information block is assembled from. The contract every key follows is
+# scraper/festivals/README.md. VAALA's international Vietnamese film festival:
+# four days at The Frida Cinema, and an encore later in the month.
+
+id = "viet-film-fest"
+name = "Viet Film Fest"
+city = "Santa Ana"
+country = "US"
+region = "California"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 33.7455
+lng = -117.8677
+timezone = "America/Los_Angeles"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-diaspora"]
+default_genre = "film"
+site = "https://www.vietfilmfest.com"
+
+[ticketing]
+model = "central-box-office"
+url = "https://vietfilmfest2026.eventive.org"
+notes = "Sold on vietfilmfest2026.eventive.org, one ticket page per screening."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-10-08"
+last = "2026-10-23"
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "viet_film_fest/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "viet_film_fest/nominatim.py"
+
+[merge]
+venues = ["eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

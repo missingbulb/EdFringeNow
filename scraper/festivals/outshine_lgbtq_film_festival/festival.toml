@@ -1,0 +1,65 @@
+# The OUTshine LGBTQ+ Film Festival (Fall Edition): who it is, its editions, and
+# the sources an edition's information block is assembled from. The contract
+# every key follows is scraper/festivals/README.md. South Florida's LGBTQ+ film
+# festival, in Fort Lauderdale and Miami cinemas.
+
+id = "outshine-lgbtq-film-festival"
+name = "OUTshine LGBTQ+ Film Festival (Fall Edition)"
+city = "Fort Lauderdale"
+country = "US"
+region = "Florida"
+# The city's centre, for the festival timeline and travel maths between
+# cities; venues carry their own coordinates.
+lat = 26.1224
+lng = -80.1373
+timezone = "America/New_York"
+lang = "en"
+dir = "ltr"
+kind = "film"
+subtypes = ["film-queer"]
+default_genre = "film"
+site = "https://outshinefilm.com"
+
+[ticketing]
+model = "central-box-office"
+url = "https://outshinefall2026.eventive.org"
+notes = "Sold on outshinefall2026.eventive.org, one ticket page per screening; the box office counts 46 editions over 28 years, which is not one ordinal, so none is served."
+currency = "USD"
+
+[[edition]]
+id = "2026"
+format = "block"
+first = "2026-10-15"
+last = "2026-10-25"
+
+[[source]]
+id = "eventive"
+kind = "fetched"
+roles = ["events", "performances", "venues", "availability", "prices"]
+required = true
+fetcher = "sources/eventive/fetch.py"
+adapter = "outshine_lgbtq_film_festival/eventive.py"
+
+# The box office prints street addresses but no coordinates.
+[[source]]
+id = "nominatim"
+kind = "fetched"
+roles = ["venues"]
+required = true
+fetcher = "sources/nominatim/fetch.py"
+adapter = "outshine_lgbtq_film_festival/nominatim.py"
+
+# Hand research for the venues the programme source leaves without an
+# address or a pin, each figure cited.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "outshine_lgbtq_film_festival/venues_research.py"
+
+[merge]
+venues = ["venues-research", "eventive", "nominatim"]
+events = ["eventive"]
+performances = ["eventive"]

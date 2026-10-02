@@ -1,0 +1,422 @@
+{
+ "v": 1,
+ "festival": {
+  "id": "silicon-valley-jewish-film-festival",
+  "edition": "2026",
+  "ordinal": null,
+  "name": "Silicon Valley Jewish Film Festival",
+  "nameLocal": null,
+  "city": "San Jose",
+  "country": "US",
+  "lat": 37.3382,
+  "lng": -121.8863,
+  "timezone": "America/Los_Angeles",
+  "lang": "en",
+  "dir": "ltr",
+  "kind": "film",
+  "defaultGenre": "film",
+  "site": "https://www.svjff.org",
+  "firstDate": "2026-10-10",
+  "lastDate": "2026-10-25",
+  "ticketing": {
+   "model": "central-box-office",
+   "url": "https://svjff.eventive.org",
+   "notes": "Sold on svjff.eventive.org, one ticket page per screening.",
+   "currency": "USD"
+  }
+ },
+ "categories": [
+  {
+   "id": "6a5795cd1658ed89c8c82c2a",
+   "name": "Drama"
+  },
+  {
+   "id": "6a5795cd1658ed89c8c82c2e",
+   "name": "Documentary"
+  },
+  {
+   "id": "6a5795cd1658ed89c8c82c34",
+   "name": "Animation"
+  }
+ ],
+ "venues": [
+  {
+   "id": "6a5795cd1658ed89c8c82c24",
+   "name": "AMC 14",
+   "address": "700 El Paseo de Saratoga, San Jose 95130",
+   "lat": 37.288602,
+   "lng": -121.989977,
+   "online": false,
+   "capacity": null,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  },
+  {
+   "id": "6a5795cd1658ed89c8c82c25",
+   "name": "JCC Palo Alto",
+   "address": "3921 Fabian Way , Palo Alto  94303",
+   "lat": 37.423639,
+   "lng": -122.103463,
+   "online": false,
+   "capacity": 100,
+   "layout": null,
+   "rooms": [],
+   "accessibility": null,
+   "notes": null,
+   "refs": []
+  }
+ ],
+ "events": [
+  {
+   "id": "films-6a69071751e18bdbd8efff92",
+   "title": "Once Upon My Mother",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a69071751e18bdbd8efff92",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2a"
+   ],
+   "blurb": "Based on a true story, a Moroccan Jewish mother in the Parisian suburbs will do whatever it takes to give her son the best life despite his physical setbacks.",
+   "durationMin": 102,
+   "imageUrl": "https://static-a.eventive.org/1785269734963temp-1785269734845-still.jpg"
+  },
+  {
+   "id": "films-6a690e78ae5c290e827ae63a",
+   "title": "Reading Lolita in Tehran",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a690e78ae5c290e827ae63a",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2a"
+   ],
+   "blurb": "This drama follows women in post-revolutionary Iran who gather to read forbidden Western literature, using books as a path to resistance.",
+   "durationMin": 108,
+   "imageUrl": "https://static-a.eventive.org/1785270042104temp-1785270041969-still.jpg"
+  },
+  {
+   "id": "films-6a58c1a3eace555b6df579a6",
+   "title": "Blue Marks",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a58c1a3eace555b6df579a6",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2a"
+   ],
+   "blurb": "The dreams of an Israeli fashion student in Paris are shattered after a violent encounter leaves her with an unwanted pregnancy, leading her to seek revenge.",
+   "durationMin": 110,
+   "imageUrl": "https://static-a.eventive.org/1786218654675temp-1786218654558-still.jpg"
+  },
+  {
+   "id": "films-6a58c371fdbfd2aedff5321b",
+   "title": "David",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a58c371fdbfd2aedff5321b",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c34"
+   ],
+   "blurb": "An animated biblical musical retelling of the young shepherd David's rise from obscurity to destiny.",
+   "durationMin": 115,
+   "imageUrl": "https://static-a.eventive.org/1784202196106temp-1784202195983-still.jpg"
+  },
+  {
+   "id": "films-6a6a105c48e45b41321261f4",
+   "title": "Sapiro v. Ford: The Jew Who Sued Henry Ford",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a6a105c48e45b41321261f4",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2e"
+   ],
+   "blurb": "This documentary recounts how Aaron Sapiro sued Henry Ford for libel over anti-semitic attacks, creating a landmark confrontation over hate speech.",
+   "durationMin": 68,
+   "imageUrl": "https://static-a.eventive.org/1786558327391temp-1786558327379-cover.jpg"
+  },
+  {
+   "id": "films-6a6904247d3490987f5a0e7c",
+   "title": "Franz",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a6904247d3490987f5a0e7c",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2a"
+   ],
+   "blurb": "This bold portrait of Franz Kafka fuses biography, memory, and surreal invention to illuminate the inner world of one of the twentieth century’s most celebrated writers.",
+   "durationMin": 127,
+   "imageUrl": "https://static-a.eventive.org/1785267485449temp-1785267485308-still.jpg"
+  },
+  {
+   "id": "films-6a58c464a213f506a80cc14d",
+   "title": "Dust Bowls and Jewish Souls",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a58c464a213f506a80cc14d",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2e"
+   ],
+   "blurb": "Discover the lesser-known Jewish dimension of Woody Guthrie's life and how Jewish culture shaped his music.",
+   "durationMin": 89,
+   "imageUrl": "https://static-a.eventive.org/1784202694066temp-1784202693945-still.jpg"
+  },
+  {
+   "id": "films-6a6a14e9b2cd361d9f4bb5d1",
+   "title": "The Road Between Us",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a6a14e9b2cd361d9f4bb5d1",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2e"
+   ],
+   "blurb": "This harrowing story reconstructs an Israeli general's drive from Tel Aviv to Kibbutz Nahal Oz to rescue his family.",
+   "durationMin": 95,
+   "imageUrl": "https://static-a.eventive.org/1785337247098temp-1785337246971-still.jpg"
+  },
+  {
+   "id": "films-6a6a118ee2d06521999171e2",
+   "title": "Tell Me Everything",
+   "titleLocal": null,
+   "url": "https://svjff.eventive.org/films/6a6a118ee2d06521999171e2",
+   "genre": "film",
+   "categories": [
+    "6a5795cd1658ed89c8c82c2a"
+   ],
+   "blurb": "A boy uncovers a secret about the father he idolizes that threatens to tear his family apart.",
+   "durationMin": 109,
+   "imageUrl": "https://static-a.eventive.org/1785336385287temp-1785336385179-still.jpg"
+  }
+ ],
+ "performances": [
+  {
+   "id": "6a6c8b7186a94912995d568c",
+   "eventId": "films-6a69071751e18bdbd8efff92",
+   "venueId": "6a5795cd1658ed89c8c82c25",
+   "roomId": null,
+   "date": "2026-10-10",
+   "start": "19:30",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8b7186a94912995d568c",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  },
+  {
+   "id": "6a6c8da35c349f796d0e1164",
+   "eventId": "films-6a690e78ae5c290e827ae63a",
+   "venueId": "6a5795cd1658ed89c8c82c25",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "16:00",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8da35c349f796d0e1164",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8dd5991c9bb4cb0ee814",
+   "eventId": "films-6a58c1a3eace555b6df579a6",
+   "venueId": "6a5795cd1658ed89c8c82c25",
+   "roomId": null,
+   "date": "2026-10-11",
+   "start": "19:00",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8dd5991c9bb4cb0ee814",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8e17991c9bb4cb0eec17",
+   "eventId": "films-6a58c371fdbfd2aedff5321b",
+   "venueId": "6a5795cd1658ed89c8c82c24",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "14:00",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8e17991c9bb4cb0eec17",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 10.0,
+   "priceMax": 10.0
+  },
+  {
+   "id": "6a6c8e47b6e2054a8ac42e06",
+   "eventId": "films-6a6a105c48e45b41321261f4",
+   "venueId": "6a5795cd1658ed89c8c82c24",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "16:30",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8e47b6e2054a8ac42e06",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8e768d03244a45a75c7f",
+   "eventId": "films-6a6904247d3490987f5a0e7c",
+   "venueId": "6a5795cd1658ed89c8c82c24",
+   "roomId": null,
+   "date": "2026-10-18",
+   "start": "19:00",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8e768d03244a45a75c7f",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8e9be08c89ad07635385",
+   "eventId": "films-6a58c464a213f506a80cc14d",
+   "venueId": "6a5795cd1658ed89c8c82c24",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "18:30",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8e9be08c89ad07635385",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8ecf991c9bb4cb0f0a8b",
+   "eventId": "films-6a6a14e9b2cd361d9f4bb5d1",
+   "venueId": "6a5795cd1658ed89c8c82c24",
+   "roomId": null,
+   "date": "2026-10-24",
+   "start": "20:30",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8ecf991c9bb4cb0f0a8b",
+   "free": false,
+   "status": "on-sale",
+   "priceMin": 20.0,
+   "priceMax": 20.0
+  },
+  {
+   "id": "6a6c8d51f33867fccd393c00",
+   "eventId": "films-6a6a118ee2d06521999171e2",
+   "venueId": "6a5795cd1658ed89c8c82c25",
+   "roomId": null,
+   "date": "2026-10-25",
+   "start": "19:00",
+   "ticketUrl": "https://svjff.eventive.org/schedule/6a6c8d51f33867fccd393c00",
+   "free": false,
+   "status": "sold-out",
+   "priceMin": 40.0,
+   "priceMax": 40.0
+  }
+ ],
+ "sources": {
+  "festival": [
+   "festival.toml"
+  ],
+  "venues": [
+   "eventive",
+   "nominatim"
+  ],
+  "events": [
+   "eventive"
+  ],
+  "performances": [
+   "eventive"
+  ],
+  "availability": [
+   "eventive"
+  ],
+  "prices": [
+   "eventive"
+  ]
+ },
+ "provenance": {
+  "sources": {
+   "eventive": {
+    "kind": "fetched",
+    "path": "data/festivals/silicon-valley-jewish-film-festival/2026/eventive",
+    "fetchedAt": "2026-10-02T18:10:00Z",
+    "fetcher": "scraper/festivals/silicon_valley_jewish_film_festival/sources/eventive/fetch.py",
+    "fetcherVersion": 1
+   },
+   "nominatim": {
+    "kind": "fetched",
+    "path": "data/festivals/silicon-valley-jewish-film-festival/2026/nominatim",
+    "fetchedAt": "2026-10-02T18:34:43Z",
+    "fetcher": "scraper/festivals/silicon_valley_jewish_film_festival/sources/nominatim/fetch.py",
+    "fetcherVersion": 3
+   }
+  },
+  "absent": [],
+  "fields": {
+   "categories.name": [
+    "eventive"
+   ],
+   "events.blurb": [
+    "eventive"
+   ],
+   "events.categories": [
+    "eventive"
+   ],
+   "events.durationMin": [
+    "eventive"
+   ],
+   "events.genre": [
+    "eventive"
+   ],
+   "events.imageUrl": [
+    "eventive"
+   ],
+   "events.title": [
+    "eventive"
+   ],
+   "events.url": [
+    "eventive"
+   ],
+   "performances.date": [
+    "eventive"
+   ],
+   "performances.eventId": [
+    "eventive"
+   ],
+   "performances.free": [
+    "eventive"
+   ],
+   "performances.priceMax": [
+    "eventive"
+   ],
+   "performances.priceMin": [
+    "eventive"
+   ],
+   "performances.start": [
+    "eventive"
+   ],
+   "performances.status": [
+    "eventive"
+   ],
+   "performances.ticketUrl": [
+    "eventive"
+   ],
+   "performances.venueId": [
+    "eventive"
+   ],
+   "venues.address": [
+    "eventive"
+   ],
+   "venues.capacity": [
+    "eventive"
+   ],
+   "venues.lat": [
+    "nominatim"
+   ],
+   "venues.lng": [
+    "nominatim"
+   ],
+   "venues.name": [
+    "eventive"
+   ],
+   "venues.online": [
+    "eventive"
+   ]
+  },
+  "skipped": {}
+ }
+}

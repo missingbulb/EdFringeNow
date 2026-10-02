@@ -1,0 +1,57 @@
+# Swiss Python Summit: who it is, its editions, and the sources an edition's information
+# block is assembled from. The contract every key follows is
+# scraper/festivals/README.md.
+#
+# Two days on Python, a general day and a data-science day, in one aula on the
+# OST campus by Rapperswil station.
+
+id = "swiss-python-summit"
+name = "Swiss Python Summit"
+city = "Rapperswil"
+country = "CH"
+# The city's centre, for the festival timeline and travel maths between
+# cities; the venue carries its own coordinates.
+lat = 47.2267
+lng = 8.8184
+timezone = "Europe/Zurich"
+lang = "en"
+dir = "ltr"
+kind = "academic"
+subtypes = ["academic-computer-science"]
+default_genre = "talk"
+site = "https://www.python-summit.ch"
+
+[ticketing]
+model = "festival-pass"
+url = "https://www.python-summit.ch/register/"
+notes = "One ticket per conference day or both, from the summit's registration page."
+
+[[edition]]
+id = "2026"
+format = "block"
+# The schedule export's own start and end.
+first = "2026-10-22"
+last = "2026-10-23"
+
+# Where the building is: the schedule knows only its rooms.
+[[source]]
+id = "venues-research"
+kind = "curated"
+roles = ["venues"]
+required = true
+path = "curated/venues.json"
+adapter = "swiss_python_summit/venues_research.py"
+
+[[source]]
+id = "pretalx"
+kind = "fetched"
+roles = ["events", "performances", "venues"]
+required = true
+fetcher = "sources/pretalx/fetch.py"
+adapter = "swiss_python_summit/pretalx.py"
+
+# The research names and places the building, pretalx its rooms.
+[merge]
+venues = ["venues-research", "pretalx"]
+events = ["pretalx"]
+performances = ["pretalx"]

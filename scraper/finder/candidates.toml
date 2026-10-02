@@ -524,9 +524,10 @@ next_last = "2026-10-23"
 schedule = "published"
 schedule_evidence = "92 talks in 6 rooms; The Panopticon Paradox: Cybersecurity in the Digital Age, 20 Oct 09:00, room Europe (pretalx schedule.json)"
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "hack-lu"
 found_via = ["pretalx"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "pycon-es"
@@ -560,9 +561,10 @@ next_last = "2026-10-09"
 schedule = "published"
 schedule_evidence = "78 talks in 5 rooms; Keynote Panel I: Imperialism Today, 7 Oct 20:00, IIRE (pretalx schedule.json)"
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "marxismnl-conference"
 found_via = ["pretalx"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "world-history-association-conference"
@@ -1150,9 +1152,10 @@ next_last = "2026-10-13"
 schedule = "published"
 schedule_evidence = "51 talks in 8 rooms; Making Music from Math with Python, 12 Oct 14:00, room Purifier Stage (pretalx schedule.json). The city is inferred from its Europe/Athens time zone."
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "pycon-greece"
 found_via = ["pretalx"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "scala-days"
@@ -1168,9 +1171,10 @@ next_last = "2026-10-13"
 schedule = "published"
 schedule_evidence = "50 talks in 6 rooms; Shopping for a Scala Framework, 12 Oct 15:00, room Kesselhaus (pretalx schedule.json). The city is inferred from its Europe/Berlin time zone and the Kesselhaus room."
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "scala-days"
 found_via = ["pretalx", "pretalx-instances"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "matrix-conference"
@@ -1186,9 +1190,10 @@ next_last = "2026-10-23"
 schedule = "published"
 schedule_evidence = "71 talks in 4 rooms; Project Hydra (phase 2+3): further improving the security of the federation protocol, 21 Oct 15:15, room Sofya (pretalx schedule.json)."
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "matrix-conference"
 found_via = ["pretalx", "pretalx-instances"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "swiss-python-summit"
@@ -1204,9 +1209,10 @@ next_last = "2026-10-23"
 schedule = "published"
 schedule_evidence = "22 talks in 1 rooms; Profiling Python: From cProfile to Sampling, 22 Oct 14:30, room Aula 4.101 (pretalx schedule.json)."
 platform = "pretalx"
-status = "candidate"
+status = "adopted"
+festival_id = "swiss-python-summit"
 found_via = ["pretalx", "pretalx-instances"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "correctiv-lokal-konferenz"
@@ -1707,9 +1713,10 @@ next_last = "2026-10-27"
 schedule = "published"
 schedule_evidence = "101 in-person screenings at 11 venues; Narrative Shorts: Love Letters, 24 Oct 16:15, The Broad Theater 4 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "new-orleans-film-festival"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "monadnock-international-film-festival"
@@ -1741,9 +1748,10 @@ next_last = "2026-11-07"
 schedule = "published"
 schedule_evidence = "139 in-person screenings at 20 venues; Fujiko, 25 Oct 14:00, Golden Village Bugis+, Hall 3 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "singapore-international-film-festival"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "tallgrass-film-festival"
@@ -1758,9 +1766,10 @@ next_last = "2026-10-18"
 schedule = "published"
 schedule_evidence = "70 in-person screenings at 13 venues; VORTEX Experimental Shorts, 16 Oct 17:15, BOULEVARD THEATRE 6 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "tallgrass-film-festival"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "tryon-international-film-festival"
@@ -1775,9 +1784,10 @@ next_last = "2026-10-11"
 schedule = "published"
 schedule_evidence = "63 in-person screenings at 11 venues; Student Short Block H - (1:28:55) + Q&A, 10 Oct 12:00, Tryon Depot Room (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "tryon-international-film-festival"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "viet-film-fest"
@@ -1792,9 +1802,10 @@ next_last = "2026-10-23"
 schedule = "published"
 schedule_evidence = "35 in-person screenings at 3 venues; Hair, Paper, Water..., 9 Oct 13:00, Frida Cinema - Theater 2 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "viet-film-fest"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "santa-fe-international-film-festival"
@@ -1809,9 +1820,10 @@ next_last = "2026-10-19"
 schedule = "published"
 schedule_evidence = "147 in-person screenings at 23 venues; Faust, 16 Oct 11:45, Sky Cinemas Midtown 2 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "santa-fe-international-film-festival"
 found_via = ["eventive"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "london-latino-film-festival"
@@ -1826,9 +1838,10 @@ next_last = "2026-10-06"
 schedule = "published"
 schedule_evidence = "40 in-person screenings at 15 venues; Short Films: Stories of Resilience + Filmmakers Intro, 4 Oct 12:15, ICA | Institute of Contemporary Arts - Cinema 2 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "london-latino-film-festival"
 found_via = ["eventive", "eventive-discovery"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "outshine-lgbtq-film-festival"
@@ -1843,9 +1856,10 @@ next_last = "2026-10-25"
 schedule = "published"
 schedule_evidence = "36 in-person screenings at 6 venues; Ballroom, 18 Oct 13:00, Gateway Theatre Fort Lauderdale (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "outshine-lgbtq-film-festival"
 found_via = ["eventive", "eventive-discovery"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "wildscreen-festival"
@@ -1879,9 +1893,10 @@ next_last = "2026-10-25"
 schedule = "published"
 schedule_evidence = "9 in-person screenings at 2 venues; David, 18 Oct 14:00, AMC 14 (Eventive API)"
 platform = "eventive"
-status = "candidate"
+status = "adopted"
+festival_id = "silicon-valley-jewish-film-festival"
 found_via = ["eventive", "eventive-discovery"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "sundance-film-festival"
@@ -1930,9 +1945,10 @@ next_last = "2026-10-24"
 schedule = "published"
 schedule_evidence = "105 sessions at 60 locations; Tilar J. Mazzeo: The Sea Captain's Wife, 13 Oct 18:30, Mechanics' Institute, 57 Post St (Sched all.ics, times given in UTC). A few pre-festival events start in September and the Lit Crawl closes it on 24 Oct; the exact first day is approximate."
 platform = "sched"
-status = "candidate"
+status = "adopted"
+festival_id = "litquake"
 found_via = ["sched"]
-checked = "2026-09-29"
+checked = "2026-10-02"
 
 [[candidate]]
 id = "fiat-ifta-world-conference"
