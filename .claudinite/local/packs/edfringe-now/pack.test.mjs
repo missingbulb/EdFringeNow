@@ -344,6 +344,7 @@ const declaredRules = loadDeclaredChecks(__dirname);
 const reviewRequestRule = declaredRules.find((r) => r.id === "edfringe-no-review-request-from-pr-author");
 const actionsListPerPageRule = declaredRules.find((r) => r.id === "edfringe-actions-list-workflow-runs-needs-perpage");
 const noGhCliRule = declaredRules.find((r) => r.id === "edfringe-no-gh-cli");
+const noNpmPlaywrightRule = declaredRules.find((r) => r.id === "edfringe-no-npm-install-playwright");
 
 test("requesting the repo owner as a PR reviewer is flagged, on create and on update", () => {
   for (const tool of ["mcp__github__create_pull_request", "mcp__github__update_pull_request"]) {
@@ -452,6 +453,29 @@ test("a word merely starting with gh is not flagged", () => {
 test("a Bash command with no gh invocation at all is not this check's business (relevance-first)", () => {
   const out = guardFindings(noGhCliRule, { name: "Bash", input: { command: "git status" } });
   assert.deepEqual(out, []);
+});
+
+// --- edfringe-no-npm-install-playwright: a fresh install pulls a Playwright
+// build the image has no browser for ---
+
+test("npm installing playwright is flagged in its spellings", () => {
+  for (const command of [
+    "npm i playwright",
+    "npm install --no-save playwright",
+    "cd /tmp/x && npm i -D playwright@latest",
+    "npm add playwright",
+  ]) {
+    const out = guardFindings(noNpmPlaywrightRule, { name: "Bash", input: { command } });
+    assert.equal(out.length, 1, `expected a finding for ${JSON.stringify(command)}`);
+    assert.match(out[0].fix, /\/opt\/node22\/lib\/node_modules\/playwright\/index\.mjs/);
+  }
+});
+
+test("other npm commands and other packages are not flagged by the playwright rule", () => {
+  for (const command of ["npm install", "npm i leaflet", "npm run test:ui", "npm i playwright-core-helper-notes", "echo playwright"]) {
+    const out = guardFindings(noNpmPlaywrightRule, { name: "Bash", input: { command } });
+    assert.deepEqual(out, [], `expected no finding for ${JSON.stringify(command)}`);
+  }
 });
 
 test("the pack loads the checks and stays hand-declared", async () => {

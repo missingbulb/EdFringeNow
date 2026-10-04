@@ -61,11 +61,6 @@ requirements harness's are the `requirements-harness` skill; each loads when its
   import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
   ```
 
-- **A bare `import 'playwright'` failing with `ERR_MODULE_NOT_FOUND`** — use the absolute import
-  above rather than `npm i playwright`: a fresh install pulls a newer Playwright that wants a
-  browser build the image doesn't ship, and in the repo root it dirties `package.json`.
-  (npm-playwright-scratchpad)
-
 - **The Now page throwing `L is not defined` under Playwright** — Leaflet loads from `unpkg.com`,
   which the browser can't reach here; route `https://unpkg.com/**` to the matching file in
   `product/requirements/shared/harness/vendor/leaflet/` before navigating. (site-index-htmls)

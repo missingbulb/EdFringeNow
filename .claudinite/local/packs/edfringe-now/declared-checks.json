@@ -47,5 +47,21 @@
         "fix": "use the matching mcp__github__* tool instead of the gh CLI"
       }
     ]
+  },
+  {
+    "id": "edfringe-no-npm-install-playwright",
+    "on_fail": "block",
+    "since": "2026-10-04",
+    "scope": "action",
+    "failureMessage": "a fresh Playwright install pulls a build the image has no browser for, and in the repo root dirties package.json",
+    "guardToolCalls": [
+      {
+        "tool": "Bash",
+        "inputField": "command",
+        "match": "/(^|[;&|]\\s*|\\n\\s*)npm\\s+(?:i|install|add)\\b[^;&|\\n]*\\s(?<pkg>playwright)(?:@\\S*)?(?=\\s|$)/",
+        "what": "a {tool} call running `npm` to install {pkg}",
+        "fix": "import the preinstalled global build instead: `import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';`"
+      }
+    ]
   }
 ]

@@ -28,3 +28,9 @@
 - **Reason:** the owner asked to trim rule prose to zero story ("Trim to zero, unless crucial to
   understand severity"); the incident history lives on this file.
 - **Actor:** @missingbulb (owner).
+
+## 2026-10-04 · retired · converted to the edfringe-no-npm-install-playwright check (item #1015)
+- **Reason:** converted to the check `edfringe-no-npm-install-playwright`, which carries the
+  absolute-import fix; the prose was deleted whole.
+- **Actor:** the prose-to-checks-sweep run, item #1015.
+- **Model:** Claude Sonnet 5.5
