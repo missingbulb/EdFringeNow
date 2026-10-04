@@ -73,7 +73,7 @@ and outdoor — a materially different offer from the ticketed August cluster.
 | **Hidden Door** | 3–7 Jun | pop-up arts festival, The Paper Factory |
 | **Meadows Festival** | 6–7 Jun | free community weekend, one park |
 | **International Children's Festival (Imaginate)** | May–Jun | children's theatre |
-| **Jazz & Blues Festival** | 17–26 Jul | 100–170+ concerts (sources differ), clubs to concert halls |
+| **Jazz & Blues Festival** | 17–26 Jul | 110+ concerts per the 2026 programme announcement (older sources say 100–170+), clubs to concert halls |
 | **Edinburgh Festival Carnival / Multicultural Festival** | 19 Jul | one-day city-centre parade |
 | **Folk & Food Festival** | 24 Jul–2 Aug | free-entry food and folk, George Square Gardens |
 
@@ -259,6 +259,8 @@ blurbs and belongs in the competitor page once someone actually uses them.
 - [Edinburgh Festivals inject £852m a year into the Scottish economy (The Edinburgh Reporter)](https://theedinburghreporter.co.uk/2026/06/edinburgh-festivals-inject-852m-a-year-into-scottish-economy-new-study-reveals/)
 - [Outdoor activities in Edinburgh (Edinburgh Tourism)](https://www.edinburghtourism.org/outdoor-activities-edinburgh/)
 - [10 awesome things to do in Edinburgh in summer (Grumpy Camel)](https://www.grumpycamel.com/things-to-do-in-edinburgh-in-summer/)
+- [Edinburgh Jazz and Blues Festival 2026 returns with 110 shows across the city (Blues Matters Magazine, via search snippet; not opened first-hand)](https://bluesmatters.com/news/edinburgh-jazz-and-blues-festival-2026-returns-with-110-shows-across-the-city/)
+- [Edinburgh Jazz & Blues Festival 2026 (Creative Scotland, via search snippet; not opened first-hand)](https://www.creativescotland.com/news-stories/latest-news/archive/2026/04/edinburgh-jazz--blues-festival-2026)
 
 ## Open questions
 
@@ -279,8 +281,11 @@ blurbs and belongs in the competitor page once someone actually uses them.
   parameter list, and its events are produced with the Fringe — so they may
   appear under `fringe` with no distinguishing marker, which would make the
   festival invisible in a festival filter.
-- **Jazz & Blues event count.** Sources say "over 170 performances", "more than
-  100 concerts" and "over 150 concerts" — no authoritative figure found.
+- **Jazz & Blues event count.** Narrowed 2026-10-04: coverage of the 2026
+  programme announcement (via search snippets) gives "more than 110 concerts"
+  for 17–26 July — the earlier "over 170" and "over 150" figures look like
+  other years' or wider counts. Still not read first-hand: the festival's own
+  site and the Edinburgh Festival City page both refused connections here.
 - **Cross-festival audience behaviour.** Still no *current*, Fringe-specific
   data on how many Fringe-goers attend a second festival, or whether the two
   are the same crowd — [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md)
@@ -351,3 +356,7 @@ blurbs and belongs in the competitor page once someone actually uses them.
   cluster stays ~82%; no conclusion moved, only the figures — propagated from
   the same update on
   [edinburgh-market-and-audience/](../edinburgh-market-and-audience/README.md).
+- **2026-10-04** — narrowed the Jazz & Blues event-count open question to "more
+  than 110 concerts" for the 2026 programme, attributed to Blues Matters and
+  Creative Scotland coverage as surfaced by search; updated the season table
+  row to match. Headline findings unchanged.
