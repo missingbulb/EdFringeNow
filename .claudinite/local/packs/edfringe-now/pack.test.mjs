@@ -420,8 +420,7 @@ test("a different tool with no perPage is never flagged by this rule", () => {
   assert.deepEqual(out, []);
 });
 
-// --- edfringe-no-gh-cli: the gh CLI is not installed in this environment, so
-// a command invoking it always fails ---
+// --- edfringe-no-gh-cli: the gh CLI is not wired to the session's GitHub access ---
 
 test("a Bash command invoking the gh CLI is flagged", () => {
   const out = guardFindings(noGhCliRule, { name: "Bash", input: { command: "gh pr view 123" } });

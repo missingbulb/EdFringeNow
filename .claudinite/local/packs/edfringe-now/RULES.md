@@ -101,7 +101,8 @@ requirements harness's are the `requirements-harness` skill; each loads when its
   request through `page.route('**/*', …)` fulfilled by `curl`, where the probe shows `curl`
   reaches the host. (offsite-screenshot-via-curl)
 
-- **Building a command or poll on `gh`** — it is not installed here; use the GitHub MCP tools,
+- **Building a command or poll on `gh`** — the session's `gh` is not wired to its own GitHub
+  access (`GH_TOKEN` is reported invalid); use the GitHub MCP tools,
   and never suppress a poll condition's stderr, which is what would have said so.
   (no-gh-cli)
 
