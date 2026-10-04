@@ -30,10 +30,10 @@ const ALLOWED_PATTERNS = [
 // findings and this file's own prose cannot drift apart.
 const DATA_ROOTS = ['site/data/', 'data/'];
 
-// Grandfathered: the pre-pipeline mock dataset the design-concepts prototypes
-// still load, documented as such in README.md. It is not normalizer output and
-// never will be; it is exempt by name so the rule can stay strict for everything
-// else. Do not add to this list — new data comes from the normalizer.
+// Exempt by name because no pattern above matches them. `site/data/venues.json`
+// is the normalizer's shared lookup. `data/shows.json` is the pre-pipeline mock
+// dataset the design-concepts prototypes still load: it is not normalizer output
+// and never will be. Do not add to this list — new data comes from the normalizer.
 const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json']);
 
 // The one committed file under data/ that is an *input* to normalize.py rather
@@ -45,7 +45,7 @@ const ALLOWED_FILES = new Set(['site/data/venues.json', 'data/shows.json']);
 // this entry got, which is why it is one name and not a pattern.
 const ALLOWED_INPUTS = new Map([
   ['data/prices.json', 'scraper/fetch_prices.py'],
-  // The small festivals' raw: each file a hand-run fetcher writes under its own
+  // The small festivals' raw: each file a fetcher writes under its own
   // data/festivals/<festival>/<edition>/<source>/, and the converter only reads.
   ['data/festivals/jerusalem-comedy/2026/comedy-festival-site/manifest.json', 'scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py'],
   ['data/festivals/jerusalem-comedy/2026/comedy-festival-site/programme.json', 'scraper/festivals/jerusalem/sources/comedy-festival-site/fetch.py'],
