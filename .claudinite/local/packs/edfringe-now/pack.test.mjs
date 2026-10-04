@@ -467,7 +467,7 @@ test("npm installing playwright is flagged in its spellings", () => {
   ]) {
     const out = guardFindings(noNpmPlaywrightRule, { name: "Bash", input: { command } });
     assert.equal(out.length, 1, `expected a finding for ${JSON.stringify(command)}`);
-    assert.match(out[0].fix, /\/opt\/node22\/lib\/node_modules\/playwright\/index\.mjs/);
+    assert.match(out[0].what, /install playwright$/);
   }
 });
 
