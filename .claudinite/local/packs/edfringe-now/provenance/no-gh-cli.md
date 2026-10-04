@@ -14,3 +14,11 @@
 - **Actor:** the prose-to-checks-sweep run, item #925.
 - **Model:** Claude Sonnet 5
 - **Mechanism:** edfringe-no-gh-cli, a declared action-scope check on the Bash tool.
+
+## 2026-10-04 · reworded · gh is installed; claim narrowed to its auth (item #1016)
+- **Reason:** revalidation (item #1016) found `gh` 2.89.0 at /usr/local/bin/gh, so "not installed"
+  was stale; `gh auth status` reports the GH_TOKEN invalid, though a read-only `gh api` call
+  returned. The rule and check now claim only that gh is not wired to the session's GitHub access,
+  and the check still blocks.
+- **Actor:** the rule-revalidation run, item #1016.
+- **Model:** Claude Sonnet 5
