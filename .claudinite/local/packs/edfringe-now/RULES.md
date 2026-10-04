@@ -20,9 +20,6 @@ requirements harness's are the `requirements-harness` skill; each loads when its
   `converge-item.mjs` and leaves the issue closed but still wearing its live status label.
   (never-closes-n-own-issue)
 
-- **Writing a PR body** — this repo has no PR template, so write it from the commit message
-  without searching for one. (no-pr-template)
-
 - **Reaching for `verify-in-production` after merging a change to what the site renders or
   does** — file nothing: the goldens, `npm run test:ui` and a look at the served page run before
   the merge. Reserve it for non-user-facing infra whose effect first appears in a deploy, a

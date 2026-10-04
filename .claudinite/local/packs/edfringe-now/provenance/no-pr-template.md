@@ -6,3 +6,10 @@
 - **Actor:** @missingbulb (owner).
 - **Mechanism:** a rule in the local pack's RULES.md; nothing a file edit predicts brings a session
   to it, so it stays prose.
+
+## 2026-10-04 · retired · the canon's git-github skill now carries the templateless-repo rule
+- **Reason:** git-github-advanced, "Once a repo is confirmed templateless, stop searching for a PR
+  template" says "write the body from the commit message and skip the lookup"; the local line only
+  added this repo's name.
+- **Actor:** the growth-dedup run (#1014).
+- **Model:** Claude
