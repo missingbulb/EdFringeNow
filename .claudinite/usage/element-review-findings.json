@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-05T00:00:00Z",
+  "generated": "2026-10-06T00:00:00Z",
   "window": {
-    "from": "2026-09-07",
-    "to": "2026-10-04",
+    "from": "2026-09-08",
+    "to": "2026-10-05",
     "daysCovered": 28,
     "previous": {
-      "from": "2026-08-10",
-      "to": "2026-09-06",
+      "from": "2026-08-11",
+      "to": "2026-09-07",
       "daysCovered": 1
     },
-    "foldedThrough": "2026-10-04",
+    "foldedThrough": "2026-10-05",
     "subjects": {
       "skills": 44,
       "checks": 89,
@@ -1315,7 +1315,7 @@
         "activity": 170.01556
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-forced-only-small",
@@ -1334,7 +1334,7 @@
         "tokens": 240
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-forced-only-small",
@@ -1353,7 +1353,7 @@
         "tokens": 193
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1373,7 +1373,7 @@
         "moments": 127
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1393,7 +1393,7 @@
         "moments": 405
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1413,7 +1413,7 @@
         "moments": 541
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1433,7 +1433,7 @@
         "moments": 19
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1453,7 +1453,7 @@
         "moments": 579
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1473,7 +1473,7 @@
         "moments": 71
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1493,7 +1493,7 @@
         "moments": 15
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1513,7 +1513,7 @@
         "moments": 38
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "skill-triggered-missing-moments",
@@ -1533,7 +1533,7 @@
         "moments": 186
       },
       "since": "2026-09-22",
-      "lasting": false
+      "lasting": true
     },
     {
       "rule": "trigger-fires-unfollowed",
@@ -3107,7 +3107,7 @@
       "pack": null,
       "name": "previous.activity",
       "need": 120,
-      "have": 2
+      "have": 1
     },
     {
       "rule": "guard-overruled",
