@@ -5,7 +5,7 @@
 - **Model:** Claude
 - **Mechanism:** an hourly scheduler task in the `edfringe` pack, `agent_model: 'none'`, whose
   precondition acts only in August, 08:00-23:59 Edinburgh.
-- **Landed:** #101, Refs missingbulb/Claudinite#394
+- **Landed:** #101
 
 ## 2026-08-06 · policy-changed · push to origin HEAD:main explicitly (#235)
 - **Reason:** diagnosed as `actions/checkout` leaving the branch with no upstream, failing the bare
@@ -60,7 +60,7 @@
 - **Landed:** #545, Closes #544
 
 ## 2026-09-02 · policy-changed · declare preconditions, not a precondition function (#586)
-- **Source:** missingbulb/Claudinite#1617.
+- **Source:** a fleet-wide canon change.
 - **Reason:** the `precondition()` function form was retired fleet-wide so one mechanism decides
   every task.
 - **Actor:** @missingbulb (owner).

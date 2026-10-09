@@ -85,9 +85,7 @@ dispatch the scheduler with `wake=cloudflare-site/site-release`.
 
 ## Development
 
-Shared Claude working guidelines are vendored into this repo as committed files
-via [Claudinite](https://github.com/missingbulb/Claudinite) and refreshed by its
-nightly maintenance — no session-time fetch. Session hooks and the
-`Claudinite checks` CI workflow run the conformance sweep from the committed
-snapshot, so every branch judges by the version it carries. How the vendored
-mount works lives in the Claudinite repo (`mount/DESIGN.md`).
+Shared Claude working guidelines come from [Claudinite](https://claudinite.com)
+packs, kept current by its scheduled update tasks. Session hooks and CI run the
+conformance checks from what the branch carries, so every branch judges by the
+version it holds.

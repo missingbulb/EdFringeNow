@@ -37,8 +37,8 @@ const OUTCOMES = ["no_code_changes", "fresh_pr", "amend_existing_or_create_new_p
 // window. Pinned here so turning either into a full standing schedule is a
 // deliberate edit to this file rather than a token nobody re-reads. The
 // declarative precondition is the ONLY gate mechanism — the `precondition`
-// function form and its `precondition_signals` companion are retired
-// (missingbulb/Claudinite#1617), so both are asserted ABSENT rather than present.
+// function form and its `precondition_signals` companion are retired,
+// so both are asserted ABSENT rather than present.
 const DECLARED = [
   ["refresh-shows", refreshShows, "request", undefined, {}],
   ["refresh-tickets", refreshTickets, "schedule", ["in-festival"], ticketTerms],
